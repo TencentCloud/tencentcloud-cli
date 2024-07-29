@@ -56,6 +56,14 @@
         "title": "success1"
       }
     ],
+    "DescribeCFWAssetStatistics": [
+      {
+        "document": "资产中心统计",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCFWAssetStatistics\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"NetworkTotal\": 0,\n        \"ClbTotal\": 0,\n        \"NatTotal\": 0,\n        \"PublicAssetTotal\": 0,\n        \"CVMAssetTotal\": 0,\n        \"CFGTotal\": 0,\n        \"PortTotal\": 0,\n        \"WebsiteTotal\": 0,\n        \"ServerTotal\": 0,\n        \"WeakPasswordTotal\": 0,\n        \"VULTotal\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "资产中心统计"
+      }
+    ],
     "DescribeCVMAssetInfo": [
       {
         "document": "接口测试",

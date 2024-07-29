@@ -381,7 +381,7 @@
     "CreatePartnerAutoSignAuthUrl": {
       "document": "创建他方自动签授权链接，通过该链接可进入小程序进行合作方企业的自动签授权，若当前企业未开通企业自动签，通过该链接会先引导开通本企业自动签。\n该接口效果同控制台： 企业设置-> 扩展服务 -> 企业自动签署 -> 合作企业方授权\n\n\n\n注: \n1. <font color='red'>所在企业的超管、法人才有权限调用此接口</font>(Agent.ProxyOperator.OpenId 需要传递超管或者法人的OpenId)\n2. 已经在授权中或者授权成功的企业，无法重复授权",
       "input": "CreatePartnerAutoSignAuthUrlRequest",
-      "name": "创建他方企业自动签授权链接",
+      "name": "创建他方企业自动签授权链接（他方授权 ，我方授权）",
       "output": "CreatePartnerAutoSignAuthUrlResponse",
       "status": "online"
     },
@@ -6725,6 +6725,15 @@
           "name": "SealTypes",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "他方授权给我方：- false：我方授权他方，AuthorizedOrganizationName代表【被授权方】企业名称- true：他方授权我方，AuthorizedOrganizationName代表【授权方】企业名称",
+          "example": "无",
+          "member": "bool",
+          "name": "AuthToMe",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

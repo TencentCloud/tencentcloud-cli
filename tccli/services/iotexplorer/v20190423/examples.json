@@ -349,7 +349,7 @@
     "DescribeCloudStorageAIService": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudStorageAIService\n<公共请求参数>\n\n{\n    \"ProductId\": \"KH6Q8C4N0D\",\n    \"DeviceName\": \"aaa_31400554_1\",\n    \"ServiceType\": \"PackageDetect\"\n}",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudStorageAIService\n<公共请求参数>\n\n{\n    \"ProductId\": \"KH6Q8C4N0D\",\n    \"DeviceName\": \"aaa_31400554_1\",\n    \"ServiceType\": \"Highlight\"\n}",
         "output": "{\n    \"Response\": {\n        \"Enabled\": true,\n        \"ROI\": \"{}\",\n        \"Config\": \"{\\\"param1\\\":\\\"value1\\\"}\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "查询设备云存AI服务"
       }
@@ -373,7 +373,7 @@
     "DescribeCloudStorageAIServiceTasks": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudStorageAIServiceTasks\n<公共请求参数>\n\n{\n    \"ProductId\": \"KH6Q8C4N0D\",\n    \"DeviceName\": \"aaa_31400554_1\",\n    \"ServiceType\": \"PackageDetect\",\n    \"Offset\": 0,\n    \"Limit\": 20\n}",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudStorageAIServiceTasks\n<公共请求参数>\n\n{\n    \"ProductId\": \"KH6Q8C4N0D\",\n    \"DeviceName\": \"aaa_31400554_1\",\n    \"ServiceType\": \"Highlight\",\n    \"Offset\": 0,\n    \"Limit\": 20\n}",
         "output": "{\n    \"Response\": {\n        \"Tasks\": [\n            {\n                \"TaskId\": \"fb066d7a-baac-4706-acda-058f56f82759\",\n                \"ProductId\": \"TQBDY6RPI9\",\n                \"DeviceName\": \"cs_112114601_2\",\n                \"ChannelId\": 0,\n                \"ServiceType\": \"PackageDetect\",\n                \"StartTime\": 1710487888,\n                \"EndTime\": 1710487898,\n                \"Status\": 3,\n                \"Result\": \"{\\\"param1\\\":\\\"value1\\\"}\",\n                \"Files\": [\n                    \"output.mp4\"\n                ],\n                \"CreateTime\": 1710490000,\n                \"UpdateTime\": 1710490000\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "查询设备云存 AI 分析任务列表"
       }
@@ -923,9 +923,15 @@
     "ModifyCloudStorageAIService": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCloudStorageAIService\n<公共请求参数>\n\n{\n    \"ProductId\": \"KH6Q8C4N0D\",\n    \"DeviceName\": \"aaa_31400554_1\",\n    \"ServiceType\": \"PackageDetect\",\n    \"Enabled\": true\n}",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCloudStorageAIService\n<公共请求参数>\n\n{\n    \"ProductId\": \"KH6Q8C4N0D\",\n    \"DeviceName\": \"aaa_31400554_1\",\n    \"ServiceType\": \"Highlight\",\n    \"Enabled\": true\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
-        "title": "修改设备云存AI服务开通状态"
+        "title": "修改云存AI服务启用状态"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCloudStorageAIService\n<公共请求参数>\n\n{\n    \"ProductId\": \"KH6Q8C4N0D\",\n    \"DeviceName\": \"aaa_31400554_1\",\n    \"ServiceType\": \"Highlight\",\n    \"Config\": \"{\\\"param1\\\":\\\"value1\\\"}\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "修改云存AI服务配置参数"
       }
     ],
     "ModifyCloudStorageAIServiceCallback": [

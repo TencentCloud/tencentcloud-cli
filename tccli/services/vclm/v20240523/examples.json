@@ -16,6 +16,20 @@
         "title": "调用成功示例"
       }
     ],
+    "DescribePortraitSingJob": [
+      {
+        "document": "处理中",
+        "input": "POST / HTTP/1.1\nHost: vclm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePortraitSingJob\n<公共请求参数>\n\n{\n    \"JobId\": \"1199964964965990400\"\n}",
+        "output": "{\n    \"Response\": {\n        \"JobId\": \"1199964964965990400\",\n        \"RequestId\": \"0819265a-1bd7-4e0a-94a6-18463ae9b20e\",\n        \"ResultVideoUrl\": \"\",\n        \"StatusCode\": \"RUN\",\n        \"StatusMsg\": \"处理中\"\n    }\n}",
+        "title": "调用示例-处理中"
+      },
+      {
+        "document": "任务完成",
+        "input": "POST / HTTP/1.1\nHost: vclm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePortraitSingJob\n<公共请求参数>\n\n{\n    \"JobId\": \"1199964964965990400\"\n}",
+        "output": "{\n    \"Response\": {\n        \"JobId\": \"1199964964965990400\",\n        \"RequestId\": \"2564192f-1af0-4d1d-ac92-fac0f5844f73\",\n        \"ResultVideoUrl\": \"https://***.mp4\",\n        \"StatusCode\": \"DONE\",\n        \"StatusMsg\": \"处理完成\"\n    }\n}",
+        "title": "调用成功-任务完成"
+      }
+    ],
     "DescribeVideoStylizationJob": [
       {
         "document": "成功调用",
@@ -44,6 +58,38 @@
         "input": "POST / HTTP/1.1\nHost: vclm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitImageAnimateJob\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://xxx/image-animate/user_input/1.png\",\n    \"TemplateId\": \"ke3\",\n    \"EnableAudio\": true\n}",
         "output": "{\n    \"Response\": {\n        \"JobId\": \"1194931538865782784\",\n        \"RequestId\": \"4e6722ba-367b-454e-add0-681a5c50fe20\"\n    }\n}",
         "title": "调用成功示例"
+      }
+    ],
+    "SubmitPortraitSingJob": [
+      {
+        "document": "调用成功",
+        "input": "POST / HTTP/1.1\nHost: vclm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitPortraitSingJob\n<公共请求参数>\n\n{\n    \"AudioUrl\": \"https://***/test.mp3\",\n    \"ImageUrl\": \"https://***/test.png\"\n}",
+        "output": "{\n    \"Response\": {\n        \"JobId\": \"1199964964965990400\",\n        \"RequestId\": \"79655032-c347-4f05-af23-ae80f7ff47eb\"\n    }\n}",
+        "title": "调用成功-图片url地址"
+      },
+      {
+        "document": "音频时长超限",
+        "input": "POST / HTTP/1.1\nHost: vclm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitPortraitSingJob\n<公共请求参数>\n\n{\n    \"AudioUrl\": \"https://***/durationInvalid.m4a\",\n    \"ImageUrl\": \"https://***/aj.jpg\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue.InvalidAudioDuration\",\n            \"Message\": \"音频时长超出限定范围。上传音频的时长要求：在1秒到60秒范围内\"\n        },\n        \"RequestId\": \"9d314f18-3670-4793-bf4b-619b43494ac7\"\n    }\n}",
+        "title": "调用失败-音频时长超限"
+      },
+      {
+        "document": "图片分辨率超限",
+        "input": "POST / HTTP/1.1\nHost: vclm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitPortraitSingJob\n<公共请求参数>\n\n{\n    \"AudioUrl\": \"https://***/test.mp3\",\n    \"ImageUrl\": \"https://***/resolutionInvalid.jpg\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue.InvalidImageResolution\",\n            \"Message\": \"图片分辨率超出限定范围。上传图片的长边分辨率要求：在0到2560范围内\"\n        },\n        \"RequestId\": \"29498231-20eb-43d1-bb3b-cc9e07978699\"\n    }\n}",
+        "title": "调用失败-图片分辨率超限"
+      },
+      {
+        "document": "图片宽高比超限",
+        "input": "POST / HTTP/1.1\nHost: vclm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitPortraitSingJob\n<公共请求参数>\n\n{\n    \"AudioUrl\": \"https://***/test.mp3\",\n    \"ImageUrl\": \"https://***/ratioInvalid.jpg\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue.InvalidImageAspectRatio\",\n            \"Message\": \"图片宽高比超出限定范围。上传图片的宽高比要求：在0.5到2.0范围内\"\n        },\n        \"RequestId\": \"3c9cb9bd-5b2a-4b18-a890-73f7712ca2ce\"\n    }\n}",
+        "title": "调用失败-图片宽高比超限"
+      },
+      {
+        "document": "图片大小超限",
+        "input": "POST / HTTP/1.1\nHost: vclm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitPortraitSingJob\n<公共请求参数>\n\n{\n    \"AudioUrl\": \"https://***/test.mp3\",\n    \"ImageUrl\": \"https://***/storageInvalid.jpg\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue.InvalidImageSize\",\n            \"Message\": \"图片大小超出限定范围。上传图片的大小要求：在0MB到10MB范围内\"\n        },\n        \"RequestId\": \"cd17e6bb-afdb-4bed-8a15-55c461333104\"\n    }\n}",
+        "title": "调用失败-图片大小超限"
       }
     ],
     "SubmitVideoStylizationJob": [

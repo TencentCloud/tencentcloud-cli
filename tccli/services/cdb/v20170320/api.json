@@ -20012,6 +20012,7 @@
           "example": "‘’",
           "member": "string",
           "name": "TagKey",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -20022,12 +20023,13 @@
           "example": "‘’",
           "member": "string",
           "name": "TagValue",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "TagInfoUnit": {
       "document": "tag信息单元",

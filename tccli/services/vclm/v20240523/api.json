@@ -14,6 +14,13 @@
       "output": "DescribeImageAnimateJobResponse",
       "status": "online"
     },
+    "DescribePortraitSingJob": {
+      "document": "用于查询图片唱演任务。\n支持提交音频和图片生成唱演视频，满足社交娱乐、互动营销等场景的需求。",
+      "input": "DescribePortraitSingJobRequest",
+      "name": "查询图片唱演任务",
+      "output": "DescribePortraitSingJobResponse",
+      "status": "online"
+    },
     "DescribeVideoStylizationJob": {
       "document": "用于查询视频风格化任务。视频风格化支持将输入视频生成特定风格的视频。生成后的视频画面风格多样、流畅自然，能够满足社交娱乐、互动营销、视频素材制作等场景的需求。",
       "input": "DescribeVideoStylizationJobRequest",
@@ -33,6 +40,13 @@
       "input": "SubmitImageAnimateJobRequest",
       "name": "提交图片跳舞任务",
       "output": "SubmitImageAnimateJobResponse",
+      "status": "online"
+    },
+    "SubmitPortraitSingJob": {
+      "document": "用于提交图片唱演任务。\n支持提交音频和图片生成唱演视频，满足社交娱乐、互动营销等场景的需求。",
+      "input": "SubmitPortraitSingJobRequest",
+      "name": "提交图片唱演任务",
+      "output": "SubmitPortraitSingJobResponse",
       "status": "online"
     },
     "SubmitVideoStylizationJob": {
@@ -231,6 +245,73 @@
           "disabled": false,
           "document": "结果视频URL。有效期 24 小时。",
           "example": "https://aiar.com/xxx/result.mp4",
+          "member": "string",
+          "name": "ResultVideoUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePortraitSingJobRequest": {
+      "document": "DescribePortraitSingJob请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "1199999431088685056",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePortraitSingJobResponse": {
+      "document": "DescribePortraitSingJob返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "1199999431088685056",
+          "member": "string",
+          "name": "JobId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务状态码\n—RUN：处理中\n—FAIL：处理失败\n—STOP：处理终止\n—DONE：处理完成",
+          "example": "[\"RUN\",\"FAIL\",\"STOP\",\"DONE\"]",
+          "member": "string",
+          "name": "StatusCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务状态信息",
+          "example": "[\"处理中\",\"处理失败\",\"处理中止\",\"处理完成\"]",
+          "member": "string",
+          "name": "StatusMsg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "生成视频的URL地址\n有效期24小时",
+          "example": "https://***/video.mp4",
           "member": "string",
           "name": "ResultVideoUrl",
           "output_required": false,
@@ -519,6 +600,61 @@
           "disabled": false,
           "document": "任务ID。",
           "example": "无",
+          "member": "string",
+          "name": "JobId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SubmitPortraitSingJobRequest": {
+      "document": "SubmitPortraitSingJob请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "传入音频URL地址。音频要求：\n—音频时长：不超过60秒\n—音频格式：mp3、wav、m4a",
+          "example": "https://***/audio.mp3",
+          "member": "string",
+          "name": "AudioUrl",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "传入图片URL地址，图片要求：\n—图片格式：jpg、jpeg、png\n—图片分辨率：长边不超过2560\n—图片大小：不超过6M\n—图片宽高比：图片【宽：高】在1:2到2:1范围内",
+          "example": "https://***/image.jpg",
+          "member": "string",
+          "name": "ImageUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "传入图片Base64编码。\n—图片Base64编码与URL地址必传其一",
+          "example": "MIIHNjCCBh6gAwIBAgIQCVe4E0h49mzI0NcSqMy1+jANBgkqhkiG9w0BAQsFADB1 MQswCQYDVQQGEwJVUzEVMBMG",
+          "member": "string",
+          "name": "ImageBase64",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SubmitPortraitSingJobResponse": {
+      "document": "SubmitPortraitSingJob返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "1199999431088685056",
           "member": "string",
           "name": "JobId",
           "output_required": false,

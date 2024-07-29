@@ -168,36 +168,7 @@ Output:
 }
 ```
 
-**Example 6: 错误示例-创建个人用户签署链接，传错签署人姓名**
-
-1. 给个人用户创建签署链接
-2. 用户姓名不是合同的参与人
-
-Input: 
-
-```
-tccli ess CreateFlowSignUrl --cli-unfold-argument  \
-    --Operator.UserId yDRCLUUgygq2xun5UuO4zjEwg0vjoimj \
-    --FlowApproverInfos.0.ApproverType 1 \
-    --FlowApproverInfos.0.ApproverMobile 13200000000 \
-    --FlowApproverInfos.0.ApproverName 张三 \
-    --FlowId yDwFmUUckpstqfvzUE1h3jo1f3cqjkGm
-```
-
-Output: 
-```
-{
-    "Response": {
-        "Error": {
-            "Code": "ResourceNotFound",
-            "Message": "无法找到参与人"
-        },
-        "RequestId": "s1693832578941223891"
-    }
-}
-```
-
-**Example 7: 创建个人用户H5签署链接(签署完成后跳转到指定地址)**
+**Example 6: 创建个人用户H5签署链接(签署完成后跳转到指定地址)**
 
 1. 给个人用户创建签署链接
 2. 签署完成后跳转到指定页面地址(设置跳转地址JumpUrl)
@@ -228,6 +199,35 @@ Output:
             }
         ],
         "RequestId": "s1693832180480950012"
+    }
+}
+```
+
+**Example 7: 错误示例-创建个人用户签署链接，传错签署人姓名**
+
+1. 给个人用户创建签署链接
+2. 用户姓名不是合同的参与人
+
+Input: 
+
+```
+tccli ess CreateFlowSignUrl --cli-unfold-argument  \
+    --Operator.UserId yDRCLUUgygq2xun5UuO4zjEwg0vjoimj \
+    --FlowApproverInfos.0.ApproverType 1 \
+    --FlowApproverInfos.0.ApproverMobile 13200000000 \
+    --FlowApproverInfos.0.ApproverName 张三 \
+    --FlowId yDwFmUUckpstqfvzUE1h3jo1f3cqjkGm
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Error": {
+            "Code": "ResourceNotFound",
+            "Message": "无法找到参与人"
+        },
+        "RequestId": "s1693832578941223891"
     }
 }
 ```

@@ -4345,6 +4345,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规则最近命中时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LastHitTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -4866,7 +4876,7 @@
         },
         {
           "disabled": false,
-          "document": "已使用的地址模版数",
+          "document": "已使用的地址模板数",
           "example": "0",
           "member": "int64",
           "name": "UsedTemplateCount",
@@ -4876,7 +4886,7 @@
         },
         {
           "disabled": false,
-          "document": "地址模版配额数量",
+          "document": "地址模板配额数量",
           "example": "10",
           "member": "int64",
           "name": "TemplateQuotaCount",

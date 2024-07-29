@@ -5398,6 +5398,16 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据加工类型。0：标准加工任务；1：前置加工任务。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "DataTransformType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -6600,7 +6610,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<br><li> taskName\n\n按照【加工任务名称】进行过滤。\n类型：String\n\n必选：否\n\n<br><li> taskId\n\n按照【加工任务id】进行过滤。\n类型：String\n\n必选：否\n\n<br><li> topicId\n\n按照【源topicId】进行过滤。\n类型：String\n\n必选：否\n\n每次请求的Filters的上限为10，Filter.Values的上限为100。",
+          "document": "- taskName\n按照【加工任务名称】进行过滤。\n类型：String\n必选：否\n\n- taskId\n按照【加工任务id】进行过滤。\n类型：String\n必选：否\n\n- topicId\n按照【源topicId】进行过滤。\n类型：String\n必选：否\n- status\n按照【 任务运行状态】进行过滤。 1：准备中，2：运行中，3：停止中，4：已停止\n类型：String\n必选：否\n- hasServiceLog\n按照【是否开启服务日志】进行过滤。 1：未开启，2：已开启\n类型：String\n必选：否\n- dstTopicType\n按照【目标topic类型】进行过滤。  1：固定，2：动态\n类型：String\n必选：否\n\n每次请求的Filters的上限为10，Filter.Values的上限为100。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",

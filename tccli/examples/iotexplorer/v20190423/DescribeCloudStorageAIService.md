@@ -8,7 +8,7 @@ Input:
 tccli iotexplorer DescribeCloudStorageAIService --cli-unfold-argument  \
     --ProductId KH6Q8C4N0D \
     --DeviceName aaa_31400554_1 \
-    --ServiceType PackageDetect
+    --ServiceType Highlight
 ```
 
 Output: 

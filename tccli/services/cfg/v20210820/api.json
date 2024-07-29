@@ -1,5 +1,12 @@
 {
   "actions": {
+    "CreateTaskFromAction": {
+      "document": "从动作创建演练",
+      "input": "CreateTaskFromActionRequest",
+      "name": "从动作创建演练",
+      "output": "CreateTaskFromActionResponse",
+      "status": "online"
+    },
     "CreateTaskFromTemplate": {
       "document": "从经验库创建演练",
       "input": "CreateTaskFromTemplateRequest",
@@ -12,6 +19,27 @@
       "input": "DeleteTaskRequest",
       "name": "删除任务",
       "output": "DeleteTaskResponse",
+      "status": "online"
+    },
+    "DescribeActionFieldConfigList": {
+      "document": "根据动作ID获取动作栏位动态配置参数信息，里面包含动作自有和通用两部分参数。",
+      "input": "DescribeActionFieldConfigListRequest",
+      "name": "获取动作栏位配置参数列表",
+      "output": "DescribeActionFieldConfigListResponse",
+      "status": "online"
+    },
+    "DescribeActionLibraryList": {
+      "document": "获取混沌演练平台的动作库列表",
+      "input": "DescribeActionLibraryListRequest",
+      "name": "获取动作库列表",
+      "output": "DescribeActionLibraryListResponse",
+      "status": "online"
+    },
+    "DescribeObjectTypeList": {
+      "document": "查询对象类型列表",
+      "input": "DescribeObjectTypeListRequest",
+      "name": "查询对象类型列表",
+      "output": "DescribeObjectTypeListResponse",
       "status": "online"
     },
     "DescribeTask": {
@@ -92,6 +120,128 @@
     "serviceShortName": "cfg"
   },
   "objects": {
+    "ActionFieldConfigDetail": {
+      "document": "动作动态参数返回格式",
+      "members": [
+        {
+          "disabled": false,
+          "document": "组件类型\n可选项如下：\ninput  文本框\ntextarea  多行文本框\nnumber  数值输入框\nselect   选择器\ncascader  级联选择器\nradio  单选\ntime   时间选择",
+          "example": "input",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "组件label",
+          "example": "开机时间",
+          "member": "string",
+          "name": "Lable",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "组件唯一标识， 传回后端时的key",
+          "example": "open_time",
+          "member": "string",
+          "name": "Field",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "默认值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "默认值",
+          "member": "string",
+          "name": "DefaultValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "支持配置项如下,可根据需要选择配置项，不需要配置是设置空{}：\n\n{\n\n  placeholder: string (占位符)\n\n  tooltip: string (提示信息)\n\n  reg: RegExp (对输入内容格式进行正则校验的规则)\n\n  max: number (对于输入框，限制最大输入字符数，对于数值输入框，设置上限)\n\n  min: number (对于数值输入框，设置下限)\n\n  step: number (设置数值输入框的步长，默认为1)\n\n  format: string (时间选择的格式，如YYYY-MM-DD表示年月日, YYYY-MM-DD HH:mm:ss 表示时分秒)\n\n  separator:  string[] (多行输入框的分隔符，不传或者为空时表示不分隔，直接返回用户输入的文本字符串)\n\n  multiple: boolean (是否多选,对选择器和级联选择器有效)\n\n  options:  选择器的选项【支持以下两种形式】\n\n直接给定选项数组  { value: string; label: string }[]\n通过调接口获取选项                                                                                                                                       { api: string(接口地址),                                                                                                                                       params: string[] (接口参数,对应于参数配置的field，前端根据field对应的所有组件的输入值作为参数查询数据， 为空时在组件加载时直接请求数据)                                                                                                    }\n}",
+          "example": "{}",
+          "member": "string",
+          "name": "Config",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否必填 (0 -- 否   1-- 是)",
+          "example": "0",
+          "member": "uint64",
+          "name": "Required",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "compute配置依赖的其他field满足的条件时通过校验（如：三个表单项中必须至少有一个填写了）\n\n[fieldName,\n\n{ config:  此项保留，等待后面具体场景细化  }\n\n]",
+          "example": "{}",
+          "member": "string",
+          "name": "Validate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否可见",
+          "example": "{}",
+          "member": "string",
+          "name": "Visible",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ActionFieldConfigResult": {
+      "document": "动作栏位配置结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "动作ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "ActionId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "动作名称",
+          "example": "关机",
+          "member": "string",
+          "name": "ActionName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "动作对应的栏位配置详情",
+          "example": "无",
+          "member": "ActionFieldConfigDetail",
+          "name": "ConfigDetail",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ActionFilter": {
       "document": "动作库筛选栏位",
       "members": [
@@ -117,6 +267,212 @@
         }
       ],
       "usage": "in"
+    },
+    "ActionLibraryListResult": {
+      "document": "动作库数据列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "动作名称",
+          "example": "Esc关机",
+          "member": "string",
+          "name": "ActionName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "动作描述",
+          "example": "Windows内Cpu满载",
+          "member": "string",
+          "name": "Desc",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "动作类型。范围：[\"平台\",\"自定义\"]",
+          "example": "平台",
+          "member": "string",
+          "name": "ActionType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2021-08-01 12:20:20",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建人",
+          "example": "李四",
+          "member": "string",
+          "name": "Creator",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间",
+          "example": "2021-08-01 13:20:20",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "动作风险描述",
+          "example": "执行后不可逆",
+          "member": "string",
+          "name": "RiskDesc",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "动作ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "ActionId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "动作属性（ 1：故障  2：恢复）",
+          "example": "1",
+          "member": "uint64",
+          "name": "AttributeId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "关联的动作ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "RelationActionId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作命令",
+          "example": "ls -l",
+          "member": "string",
+          "name": "ActionCommand",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "动作类型( 0 -- tat   1 -- 云API）",
+          "example": "1",
+          "member": "uint64",
+          "name": "ActionCommandType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自定义动作的参数，json string",
+          "example": "{\"Command\": \"ff\", \"CommandParameters\": \"{}\", \"CommandType\": \"she",
+          "member": "string",
+          "name": "ActionContent",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "二级分类\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "服务器资源",
+          "member": "string",
+          "name": "ResourceType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "动作描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "<p>调用云api <a href=\\\"https://cloud.tencent.com/document/product/2",
+          "member": "string",
+          "name": "ActionDetail",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否允许当前账号使用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsAllowed",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "最佳实践案例的链接地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http//qq.com",
+          "member": "string",
+          "name": "ActionBestCase",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "对象类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CVM",
+          "member": "string",
+          "name": "ObjectType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "监控指标ID列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[1,2,3,4]",
+          "member": "uint64",
+          "name": "MetricIdList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否是新动作\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsNewAction",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "ApmServiceInfo": {
       "document": "应用性能监控产品中应用信息",
@@ -156,6 +512,97 @@
         }
       ],
       "usage": "both"
+    },
+    "CreateTaskFromActionRequest": {
+      "document": "CreateTaskFromAction请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "动作ID，可从动作列表接口DescribeActionLibraryList获取",
+          "example": "127",
+          "member": "uint64",
+          "name": "TaskActionId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "参与演练的实例ID",
+          "example": "[\"ins-87b12frpq\"]",
+          "member": "string",
+          "name": "TaskInstances",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "演练名称，不填则默认取动作名称",
+          "example": "演练名称",
+          "member": "string",
+          "name": "TaskTitle",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "演练描述，不填则默认取动作描述",
+          "example": "演练描述",
+          "member": "string",
+          "name": "TaskDescription",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "动作通用参数，需要json序列化传入，可以从动作详情接口DescribeActionFieldConfigList获取，不填默认使用动作默认参数",
+          "example": "\"{\\\"ActionTimeout\\\":1800,\\\"AfterTimeWait\\\":0,\\\"PreTimeWait\\\":0,\\\"AliasTitle\\\":\\\"\\\"}\"",
+          "member": "string",
+          "name": "TaskActionGeneralConfiguration",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "动作自定义参数，需要json序列化传入，可以从动作详情接口DescribeActionFieldConfigList获取，不填默认使用动作默认参数，注意：必填参数，是没有默认值的 ，务必保证传入有效值",
+          "example": "\"{\\\"timeout\\\":200,\\\"percentage\\\":80}\"",
+          "member": "string",
+          "name": "TaskActionCustomConfiguration",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "演练自动暂停时间，单位分钟, 不填则默认为60",
+          "example": "60",
+          "member": "uint64",
+          "name": "TaskPauseDuration",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTaskFromActionResponse": {
+      "document": "CreateTaskFromAction返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "创建成功的演练ID",
+          "example": "50",
+          "member": "uint64",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CreateTaskFromTemplateRequest": {
       "document": "CreateTaskFromTemplate请求参数结构体",
@@ -220,6 +667,201 @@
     "DeleteTaskResponse": {
       "document": "DeleteTask返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeActionFieldConfigListRequest": {
+      "document": "DescribeActionFieldConfigList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "动作ID列表",
+          "example": "[1,2,3]",
+          "member": "uint64",
+          "name": "ActionIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "对象类型ID",
+          "example": "10",
+          "member": "uint64",
+          "name": "ObjectTypeId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeActionFieldConfigListResponse": {
+      "document": "DescribeActionFieldConfigList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "通用栏位配置列表",
+          "example": "[{\"ActionId\": 4, \"ActionName\": \"CPU利用率高\", \"ConfigDetail\": [     {\"Type\": \"input\", \"Lable\": \"动作别名\", \"Field\": \"AliasTitle\", \"DefaultValue\": \"\", \"Config\": \"{}\", \"Required\": 0,      \"Validate\": \"{}\", \"Visible\": \"{}\"}]}]",
+          "member": "ActionFieldConfigResult",
+          "name": "Common",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "动作栏位配置列表",
+          "example": "[{\"ActionId\": 4, \"ActionName\": \"CPU利用率高\", \"ConfigDetail\": [     {\"Type\": \"number\", \"Lable\": \"cpu利用率(%)\", \"Field\": \"percentage\", \"DefaultValue\": \"90\",      \"Config\": \"{\\\"max\\\": 100, \\\"min\\\": 0}\", \"Required\": 0, \"Validate\": \"{}\", \"Visible\": \"{}\"}]}]",
+          "member": "ActionFieldConfigResult",
+          "name": "Results",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源下线信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"ResourceId\": 4, \"ResourceDeleteTime\": \"2023-12-14\",\"ResourceDeleteMessage\": \"由于该动作不具备手动中止能力，已将该动作下线。现有新的故障动作替换，请参考<a href=\\\"https://cloud.tencent.com/document/product/1500/102833\\\" target=\\\"_blank\\\">探针管理</a>文档，在实例安装探针后重新创建新的演练执行。\"}",
+          "member": "ResourceOffline",
+          "name": "ResourceOffline",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeActionLibraryListRequest": {
+      "document": "DescribeActionLibraryList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "0-100",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "默认值0",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "对象类型ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "ObjectType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "Keyword取值{\"动作名称\": \"a_title\", \"描述\": \"a_desc\", \"动作类型\": \"a_type\", \"创建时间\": \"a_create_time\", \"二级分类\": \"a_resource_type\"}",
+          "example": "无",
+          "member": "ActionFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "动作分类，1表示故障动作，2表示恢复动作",
+          "example": "[1,2]",
+          "member": "int64",
+          "name": "Attribute",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "筛选项 -动作ID",
+          "example": "无",
+          "member": "uint64",
+          "name": "ActionIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeActionLibraryListResponse": {
+      "document": "DescribeActionLibraryList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询结果列表",
+          "example": "无",
+          "member": "ActionLibraryListResult",
+          "name": "Results",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "符合记录条数",
+          "example": "1000",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeObjectTypeListRequest": {
+      "document": "DescribeObjectTypeList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "所支持的对象\n0：全平台产品\n1：平台接入的对象\n2：应用所支持的部分对象",
+          "example": "1",
+          "member": "int64",
+          "name": "SupportType",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeObjectTypeListResponse": {
+      "document": "DescribeObjectTypeList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "对象类型列表",
+          "example": "[{\"Key\":\"NatGatewayId\",\"Header\":\"实例ID\",\"Transfer\":null,\"JsonParse\":null},{\"Key\":\"NatGatewayName\",\"Header\":\"实例名称\",\"Transfer\":null,\"JsonParse\":null},{\"Key\":\"InternetMaxBandwidthOut\",\"Header\":\"最大出带宽(Mbps)\",\"Transfer\":null,\"JsonParse\":null},{\"Key\":\"MaxConcurrentConnection\",\"Header\":\"最大并发连接数\",\"Transfer\":null,\"JsonParse\":null},{\"Key\":\"VpcId\",\"Header\":\"VPC-ID\",\"Transfer\":null,\"JsonParse\":null}]",
+          "member": "ObjectType",
+          "name": "ObjectTypeList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -909,6 +1551,190 @@
       ],
       "type": "object"
     },
+    "ObjectType": {
+      "document": "对象类型",
+      "members": [
+        {
+          "disabled": false,
+          "document": "对象类型ID",
+          "example": "1",
+          "member": "int64",
+          "name": "ObjectTypeId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对象类型名称",
+          "example": "CVM",
+          "member": "string",
+          "name": "ObjectTypeTitle",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对象类型第一级",
+          "example": "主机",
+          "member": "string",
+          "name": "ObjectTypeLevelOne",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对象类型参数",
+          "example": "无",
+          "member": "ObjectTypeConfig",
+          "name": "ObjectTypeParams",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "tke接口json解析规则，null不需要解析\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"NameSpace\": \"$.metadata.name\", \"WorkloadName\": \"$.metadata.name\"}",
+          "member": "ObjectTypeJsonParse",
+          "name": "ObjectTypeJsonParse",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否包含新动作\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "ObjectHasNewAction",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ObjectTypeConfig": {
+      "document": "对象类型配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "主键",
+          "example": "instanceId",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对象类型配置字段列表",
+          "example": "无",
+          "member": "ObjectTypeConfigFields",
+          "name": "Fields",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ObjectTypeConfigFields": {
+      "document": "对象类型字段类型",
+      "members": [
+        {
+          "disabled": false,
+          "document": "instanceId",
+          "example": "instanceId",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例id",
+          "example": "实例id",
+          "member": "string",
+          "name": "Header",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "字段值是否需要转译，当不需要转译时，此字段返回null\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Transfer",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "tke的pod字段信息解析\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "JsonParse",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ObjectTypeJsonParse": {
+      "document": "标准pod对象类型下拉数据的解析",
+      "members": [
+        {
+          "disabled": false,
+          "document": "命名空间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"$.metadata.name\"",
+          "member": "string",
+          "name": "NameSpace",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "工作负载名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"$.metadata.name\"",
+          "member": "string",
+          "name": "WorkloadName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "节点IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"$.metadata.name\"",
+          "member": "string",
+          "name": "LanIP",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "节点ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"$.metadata.name\"",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "PolicyTriggerLog": {
       "document": "护栏策略触发日志",
       "members": [
@@ -964,6 +1790,45 @@
         }
       ],
       "usage": "out"
+    },
+    "ResourceOffline": {
+      "document": "资源下线",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "ResourceId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源下线时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2024-01-01",
+          "member": "string",
+          "name": "ResourceDeleteTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源下线提示\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "该动作所使用所使用探针工具功能不完善，已将该动作下线。",
+          "member": "string",
+          "name": "ResourceDeleteMessage",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "TagWithCreate": {
       "document": "用于传入创建、编辑标签",

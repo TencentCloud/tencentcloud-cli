@@ -3040,7 +3040,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExportAssetRecentMachineInfo\n<公共请求参数>\n\n{\n    \"BeginDate\": \"2020-09-22\",\n    \"EndDate\": \"2020-09-22\"\n}",
-        "output": "{\n    \"Response\": {\n        \"DownloadUrl\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"DownloadUrl\": \"http://xx/xxx\",\n        \"RequestId\": \"abcs12434\"\n    }\n}",
         "title": "导出主机概况趋势"
       }
     ],

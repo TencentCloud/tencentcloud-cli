@@ -612,16 +612,16 @@
         "title": "创建个人用户H5签署链接，使用视频认证方式"
       },
       {
-        "document": "1. 给个人用户创建签署链接\n2. 用户姓名不是合同的参与人",
-        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFlowSignUrl\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDRCLUUgygq2xun5UuO4zjEwg0vjoimj\"\n    },\n    \"FlowApproverInfos\": [\n        {\n            \"ApproverType\": 1,\n            \"ApproverMobile\": \"13200000000\",\n            \"ApproverName\": \"张三\"\n        }\n    ],\n    \"FlowId\": \"yDwFmUUckpstqfvzUE1h3jo1f3cqjkGm\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"ResourceNotFound\",\n            \"Message\": \"无法找到参与人\"\n        },\n        \"RequestId\": \"s1693832578941223891\"\n    }\n}",
-        "title": "错误示例-创建个人用户签署链接，传错签署人姓名"
-      },
-      {
         "document": "1. 给个人用户创建签署链接\n2. 签署完成后跳转到指定页面地址(设置跳转地址JumpUrl)",
         "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFlowSignUrl\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDRCLUUgygq2xun5UuO4zjEwg0vjoimj\"\n    },\n    \"FlowApproverInfos\": [\n        {\n            \"ApproverType\": 1,\n            \"ApproverMobile\": \"13200000000\",\n            \"ApproverName\": \"典子谦\"\n        }\n    ],\n    \"JumpUrl\": \"https://www.example.com\",\n    \"FlowId\": \"yDwFmUUckpstqfvzUE1h3jo1f3cqjkGm\"\n}",
         "output": "{\n    \"Response\": {\n        \"FlowApproverUrlInfos\": [\n            {\n                \"ApproverMobile\": \"13200000000\",\n                \"ApproverName\": \"典子谦\",\n                \"ApproverType\": 1,\n                \"LongUrl\": \"https://quick.test.qian.tencent.cn/home?ApproverIdCardNumber=MioqKi**Kio2&ApproverMobile=MTk***NjA%3D&ApproverName=%25**A&ApproverType=1&Code=yDwJCUUck****V2R5K&CodeType=QUICK&FlowId=yDwF**1f3cqjkGm&ShowHeader=1&shortKey=yDwq5**M5GlG1c&token=bR8**HA\",\n                \"SignUrl\": \"https://essurl.cn/bR8**HA\"\n            }\n        ],\n        \"RequestId\": \"s1693832180480950012\"\n    }\n}",
         "title": "创建个人用户H5签署链接(签署完成后跳转到指定地址)"
+      },
+      {
+        "document": "1. 给个人用户创建签署链接\n2. 用户姓名不是合同的参与人",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFlowSignUrl\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDRCLUUgygq2xun5UuO4zjEwg0vjoimj\"\n    },\n    \"FlowApproverInfos\": [\n        {\n            \"ApproverType\": 1,\n            \"ApproverMobile\": \"13200000000\",\n            \"ApproverName\": \"张三\"\n        }\n    ],\n    \"FlowId\": \"yDwFmUUckpstqfvzUE1h3jo1f3cqjkGm\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"ResourceNotFound\",\n            \"Message\": \"无法找到参与人\"\n        },\n        \"RequestId\": \"s1693832578941223891\"\n    }\n}",
+        "title": "错误示例-创建个人用户签署链接，传错签署人姓名"
       }
     ],
     "CreateIntegrationDepartment": [
