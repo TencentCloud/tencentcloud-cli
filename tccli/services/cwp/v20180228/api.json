@@ -11302,7 +11302,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11312,7 +11312,7 @@
           "example": "dadada",
           "member": "string",
           "name": "Uuid",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11322,7 +11322,7 @@
           "example": "dadasda",
           "member": "string",
           "name": "Quuid",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11332,7 +11332,7 @@
           "example": "127.0.0.1",
           "member": "string",
           "name": "Hostip",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11342,7 +11342,7 @@
           "example": "root",
           "member": "string",
           "name": "User",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11352,7 +11352,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Platform",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11362,7 +11362,7 @@
           "example": "rm",
           "member": "string",
           "name": "BashCmd",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11372,7 +11372,7 @@
           "example": "1",
           "member": "uint64",
           "name": "RuleId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11382,7 +11382,7 @@
           "example": "1",
           "member": "string",
           "name": "RuleName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11392,7 +11392,7 @@
           "example": "1",
           "member": "uint64",
           "name": "RuleLevel",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11402,7 +11402,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11412,7 +11412,7 @@
           "example": "2021-03-30 19:17:28",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11422,7 +11422,7 @@
           "example": "主机",
           "member": "string",
           "name": "MachineName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11432,7 +11432,7 @@
           "example": "1",
           "member": "uint64",
           "name": "DetectBy",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -11442,7 +11442,7 @@
           "example": "1",
           "member": "string",
           "name": "Pid",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -11452,7 +11452,7 @@
           "example": "1.exe",
           "member": "string",
           "name": "Exe",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -11462,7 +11462,7 @@
           "example": "2021-03-30 19:17:28",
           "member": "string",
           "name": "ModifyTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -11472,7 +11472,7 @@
           "example": "0",
           "member": "uint64",
           "name": "RuleCategory",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -11482,7 +11482,17 @@
           "example": "rm -rf /tmp/t*",
           "member": "string",
           "name": "RegexBashCmd",
-          "required": true,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "主机HostName\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ins-1324",
+          "member": "string",
+          "name": "HostName",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         }
@@ -11714,7 +11724,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11724,7 +11734,7 @@
           "example": "dadada",
           "member": "string",
           "name": "Uuid",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11734,7 +11744,7 @@
           "example": "dadasda",
           "member": "string",
           "name": "Quuid",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11744,7 +11754,7 @@
           "example": "127.0.0.1",
           "member": "string",
           "name": "HostIp",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11754,7 +11764,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Platform",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11764,7 +11774,7 @@
           "example": "rm",
           "member": "string",
           "name": "BashCmd",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11774,7 +11784,7 @@
           "example": "1",
           "member": "uint64",
           "name": "RuleId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11784,7 +11794,7 @@
           "example": "1",
           "member": "string",
           "name": "RuleName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11794,7 +11804,7 @@
           "example": "1",
           "member": "uint64",
           "name": "RuleLevel",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11804,7 +11814,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11814,7 +11824,7 @@
           "example": "2021-03-30 19:17:28",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11824,7 +11834,7 @@
           "example": "主机",
           "member": "string",
           "name": "MachineName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11834,7 +11844,7 @@
           "example": "1.exe",
           "member": "string",
           "name": "Exe",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -11844,7 +11854,7 @@
           "example": "2021-03-30 19:17:28",
           "member": "string",
           "name": "ModifyTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -11854,7 +11864,7 @@
           "example": "0",
           "member": "uint64",
           "name": "RuleCategory",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -11864,7 +11874,7 @@
           "example": "rm -rf /tmp/t*",
           "member": "string",
           "name": "RegexBashCmd",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -11874,7 +11884,7 @@
           "example": "\"[{\"pid\":1234,\"exe\":\"/usr/bin/bash\",\"account\":\"root:root\",\"cmdl\"",
           "member": "string",
           "name": "PsTree",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -11884,7 +11894,7 @@
           "example": "建议方案",
           "member": "string",
           "name": "SuggestScheme",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -11894,7 +11904,7 @@
           "example": "描述",
           "member": "string",
           "name": "HarmDescribe",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -11904,7 +11914,7 @@
           "example": "[\"标签1\",\"标签2\"]",
           "member": "string",
           "name": "Tags",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -11914,7 +11924,7 @@
           "example": "[\"http://www.tencent.com\"]",
           "member": "string",
           "name": "References",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -11924,7 +11934,7 @@
           "example": "124.2.4.55",
           "member": "string",
           "name": "MachineWanIp",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -11934,7 +11944,7 @@
           "example": "ONLINE",
           "member": "string",
           "name": "MachineStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -11944,7 +11954,7 @@
           "example": "test",
           "member": "string",
           "name": "User",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -11954,7 +11964,17 @@
           "example": "1234",
           "member": "string",
           "name": "Pid",
-          "required": true,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据来源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DetectBy",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         }
@@ -38393,7 +38413,17 @@
           "example": "xx",
           "member": "string",
           "name": "DownloadUrl",
-          "required": true,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -40744,7 +40774,17 @@
           "example": "xxx",
           "member": "string",
           "name": "DownloadUrl",
-          "required": true,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务id",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },

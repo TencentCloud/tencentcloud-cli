@@ -1,5 +1,13 @@
 {
   "actions": {
+    "ControlAIConversation": [
+      {
+        "document": "当您想让机器人主动播报文本的时候，可以使用该接口",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ControlAIConversation\n<公共请求参数>\n\n{\n    \"TaskId\": \"your-taskid\",\n    \"Command\": \"ServerPushText\",\n    \"ServerPushText\": {\n        \"Text\": \"你好很高兴为您服务\",\n        \"Interrupt\": true\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx-xxx\"\n    }\n}",
+        "title": "发送播报文本"
+      }
+    ],
     "CreateCloudRecording": [
       {
         "document": "启动SdkAppId 为 1234 指定房间（房间号为3560）的云端录制。\n\n房间空闲等待时间设置为1分钟。\n录制模式为合流模式。\n录制的流类型为音视频。\n默认订阅所有用户的流。\n录制视频的宽度360，录制视频的高度640，帧率15，比特率500,000bps，默认背景色。\n录制视频布局模式为九宫格布局。\n存储至腾讯云点播VOD",

@@ -20206,21 +20206,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "虚拟地址的类型，1-外网TGW；2-基础网络；3-VPC网络；4-腾讯云支持环境",
-          "example": "",
+          "document": "虚拟地址的类型，1-外网TGW；2-基础网络；3-VPC网络；4-腾讯云支撑环境地址； 5-RO实例特有，支撑环境物理机地址。",
+          "example": "3",
           "member": "int64",
           "name": "VipType",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "VipInfo数组",
-          "example": "",
+          "example": "[]",
           "member": "VipInfo",
           "name": "VipList",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -21658,6 +21660,7 @@
           "example": "‘’",
           "member": "string",
           "name": "TagKey",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -21668,12 +21671,13 @@
           "example": "‘’",
           "member": "string",
           "name": "TagValue",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "TagInfoUnit": {
       "document": "tag信息单元",

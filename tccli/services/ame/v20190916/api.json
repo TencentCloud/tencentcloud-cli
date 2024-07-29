@@ -1,11 +1,11 @@
 {
   "actions": {
     "DescribeStations": {
-      "document": "该服务后续会停用，不再建议使用",
+      "document": "产品下线，云api申请下线\n\n该服务后续会停用，不再建议使用",
       "input": "DescribeStationsRequest",
       "name": "获取分类内容（Station）列表",
       "output": "DescribeStationsResponse",
-      "status": "online"
+      "status": "deprecated"
     }
   },
   "metadata": {

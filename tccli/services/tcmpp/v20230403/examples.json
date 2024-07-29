@@ -23,6 +23,14 @@
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Id\": 0,\n            \"MNPType\": \"abc\",\n            \"MNPId\": \"abc\",\n            \"MNPName\": \"abc\",\n            \"MNPIcon\": \"abc\",\n            \"MNPIntro\": \"abc\",\n            \"MNPDesc\": \"abc\",\n            \"CreateUser\": \"abc\",\n            \"CreateTime\": 0,\n            \"OnlineStatus\": 0,\n            \"Applications\": [\n                {\n                    \"ApplicationId\": \"abc\",\n                    \"ApplicationName\": \"abc\"\n                }\n            ],\n            \"Tags\": [\n                \"abc\"\n            ]\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "demo"
       }
+    ],
+    "ModifySensitiveAPIAuditStatus": [
+      {
+        "document": "demo",
+        "input": "POST / HTTP/1.1\nHost: tcmpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySensitiveAPIAuditStatus\n<公共请求参数>\n\n{\n    \"AuditNo\": \"abc\",\n    \"AuditStatus\": 0,\n    \"AuditNote\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Result\": true\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "demo"
+      }
     ]
   },
   "version": "1.0"

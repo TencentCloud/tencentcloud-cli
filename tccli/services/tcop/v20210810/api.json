@@ -32,7 +32,7 @@
   "metadata": {
     "apiVersion": "2021-08-10",
     "api_brief": "提供给第三方机构、政企快速发排课、课程管理、学员信息管理、ISV的SRCM工具等服务",
-    "serviceNameCN": "腾讯云可观测平台",
+    "serviceNameCN": "腾讯课堂开放平台",
     "serviceShortName": "tcop"
   },
   "objects": {

@@ -20,6 +20,13 @@
       "name": "小程序详情",
       "output": "DescribeMNPDetailResponse",
       "status": "online"
+    },
+    "ModifySensitiveAPIAuditStatus": {
+      "document": "敏感API审核",
+      "input": "ModifySensitiveAPIAuditStatusRequest",
+      "name": "敏感API审核",
+      "output": "ModifySensitiveAPIAuditStatusResponse",
+      "status": "online"
     }
   },
   "metadata": {
@@ -50,6 +57,22 @@
           "name": "ApplicationName",
           "required": false,
           "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "BooleanInfo": {
+      "document": "用于操作成功后无业务数据返回时Data对象使用",
+      "members": [
+        {
+          "disabled": false,
+          "document": "操作成功后无业务数据返回对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true、false",
+          "member": "bool",
+          "name": "Result",
+          "output_required": true,
+          "type": "bool",
           "value_allowed_null": true
         }
       ],
@@ -521,6 +544,70 @@
         }
       ],
       "usage": "out"
+    },
+    "ModifySensitiveAPIAuditStatusRequest": {
+      "document": "ModifySensitiveAPIAuditStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "审核单号",
+          "example": "无",
+          "member": "string",
+          "name": "AuditNo",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "审核状态 20 驳回 30 通过",
+          "example": "无",
+          "member": "int64",
+          "name": "AuditStatus",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "审核备注",
+          "example": "无",
+          "member": "string",
+          "name": "AuditNote",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "全局团队ID",
+          "example": "无",
+          "member": "string",
+          "name": "GlobalTeamId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySensitiveAPIAuditStatusResponse": {
+      "document": "ModifySensitiveAPIAuditStatus返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "响应",
+          "example": "无",
+          "member": "BooleanInfo",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ResourceIdStringInfo": {
       "document": "统一操作成功返回ID数据",

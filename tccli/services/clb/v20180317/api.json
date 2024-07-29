@@ -3786,7 +3786,7 @@
         },
         {
           "disabled": false,
-          "document": "调度算法。\nip_hash_3（默认）：3元组hash\nip_hash_3_consistent：三元组对称hash",
+          "document": "调度算法。",
           "example": "ip_hash_3",
           "member": "string",
           "name": "ScheduleAlgorithm",
@@ -12636,7 +12636,7 @@
         },
         {
           "disabled": false,
-          "document": "健康检查协议。支持icmp和tcp，默认为tcp。",
+          "document": "健康检查使用的协议。V2新版目标组类型支持取值 TCP | HTTP | PING | CUSTOM，其中UDP监听协议支持PING/CUSTOM，默认为PING，TCP监听协议支持TCP/HTTP/CUSTOM，默认值为TCP；gwlb目标组类型支持icmp和tcp，默认为tcp。",
           "example": "icmp",
           "member": "string",
           "name": "Protocol",
@@ -12647,7 +12647,7 @@
         },
         {
           "disabled": false,
-          "document": "健康检查端口。CheckProtocal 为icmp时，端口为0。",
+          "document": "自定义探测相关参数。健康检查端口，默认为后端服务的端口，除非您希望指定特定端口，否则建议留空。\nv2目标组中仅适用于TCP/UDP目标组。\n",
           "example": "0",
           "member": "int64",
           "name": "Port",
@@ -12710,6 +12710,105 @@
           "required": false,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "健康检查状态码（仅适用于HTTP/HTTPS目标组、TCP目标组的HTTP健康检查方式）。可选值：1~31，默认 31。 1 表示探测后返回值 1xx 代表健康，2 表示返回 2xx 代表健康，4 表示返回 3xx 代表健康，8 表示返回 4xx 代表健康，16 表示返回 5xx 代表健康。若希望多种返回码都可代表健康，则将相应的值相加。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "504",
+          "member": "int64",
+          "name": "HttpCode",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "健康检查域名（仅适用于HTTP/HTTPS目标组和TCP目标组的HTTP健康检查方式。针对TCP目标组，当使用HTTP健康检查方式时，该参数为必填项）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "www.xxxx.com",
+          "member": "string",
+          "name": "HttpCheckDomain",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "健康检查路径（仅适用于HTTP/HTTPS转发规则、TCP监听器的HTTP健康检查方式）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/xxx\t/xxx",
+          "member": "string",
+          "name": "HttpCheckPath",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "健康检查方法（仅适用于HTTP/HTTPS转发规则、TCP监听器的HTTP健康检查方式），默认值：HEAD，可选值HEAD或GET。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "HEAD",
+          "member": "string",
+          "name": "HttpCheckMethod",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "取CUSTOM时，必填此字段，代表健康检查的输入格式，可取值：HEX或TEXT；取值为HEX时，SendContext和RecvContext的字符只能在0123456789ABCDEF中选取且长度必须是偶数位。（仅适用于TCP/UDP目标组）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "TEXT",
+          "member": "string",
+          "name": "ContextType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自定义探测相关参数。健康检查协议CheckType的值取CUSTOM时，必填此字段，代表健康检查发送的请求内容，只允许ASCII可见字符，最大长度限制500。（仅适用于TCP/UDP目标组）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SendContext",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自定义探测相关参数。健康检查协议CheckType的值取CUSTOM时，必填此字段，代表健康检查返回的结果，只允许ASCII可见字符，最大长度限制500。（仅适用于TCP/UDP目标组）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RecvContext",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "HTTP版本。健康检查协议CheckType的值取HTTP时，必传此字段，代表后端服务的HTTP版本：HTTP/1.0、HTTP/1.1；（仅适用于TCP目标组）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "HTTP/1.1",
+          "member": "string",
+          "name": "HttpVersion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "GRPC健康检查状态码（仅适用于后端转发协议为GRPC的规则）。默认值为 12，可输入值为数值、多个数值、或者范围，例如 20 或 20,25 或 0-99。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12",
+          "member": "string",
+          "name": "ExtendedCode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
