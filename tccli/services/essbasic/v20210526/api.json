@@ -954,11 +954,20 @@
         },
         {
           "disabled": false,
+          "document": "合同流程的签署截止时间，格式为Unix标准时间戳（秒），如果在签署截止时间前未完成签署，则合同状态会变为已过期，导致合同作废。",
+          "example": "1604912664",
+          "member": "int64",
+          "name": "Deadline",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
           "document": "合同流程的类别分类（可自定义名称，如销售合同/入职合同等），最大长度为200个字符，仅限中文、字母、数字和下划线组成。",
           "example": "销售合同",
           "member": "string",
           "name": "FlowType",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
@@ -967,17 +976,8 @@
           "example": "张三2023年的入职公司财务部的合同",
           "member": "string",
           "name": "FlowDescription",
-          "required": true,
+          "required": false,
           "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "合同流程的签署截止时间，格式为Unix标准时间戳（秒），如果在签署截止时间前未完成签署，则合同状态会变为已过期，导致合同作废。",
-          "example": "1604912664",
-          "member": "int64",
-          "name": "Deadline",
-          "required": true,
-          "type": "int"
         },
         {
           "disabled": false,

@@ -3,7 +3,7 @@
     "ConfirmVideoTranslateJob": {
       "document": "确认视频翻译结果",
       "input": "ConfirmVideoTranslateJobRequest",
-      "name": "确认视频翻译结果",
+      "name": "确认视频转译结果",
       "output": "ConfirmVideoTranslateJobResponse",
       "status": "online"
     },

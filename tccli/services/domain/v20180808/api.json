@@ -1856,7 +1856,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "业务ID",
+          "document": "业务ID，通过接口DescribeBiddingList返回结果中获取",
           "example": "P0011702977661022561",
           "member": "string",
           "name": "BusinessId",

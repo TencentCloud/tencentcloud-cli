@@ -99,7 +99,7 @@
       "status": "online"
     },
     "CreateFlowApprovers": {
-      "document": "适用场景： 当通过模板或文件发起合同时，若未指定企业签署人信息，则可调用此接口补充或添加签署人。同一签署人可补充多个员工作为或签署人，最终实际签署人取决于谁先领取合同完成签署。\n\n限制条件：\n\n1.本企业（发起方企业）企业微信签署人仅支持通过企业微信UserId或姓名+手机号进行补充。\n2.本企业（发起方企业）非企业微信签署人仅支持通过姓名+手机号进行补充。\n3.他方企业仅支持通过姓名+手机号进行补充。\n4.个人签署人支持通过姓名+手机号进行补充，补充动态签署人时：若个人用户已完成实名，则可通过姓名+证件号码进行补充。",
+      "document": "**适用场景 ：**\n\n当通过模板或文件发起合同时， 签署人不制定， 等合同发起后再指定 可以用下面2种方案\n\n<b><font color=\"red\">1. 或签合同</font>: 若未指定企业签署人信息（只指定企业的名字），合同变成或签合同（个人签署方不支持或签合同）</b>。需调用此接口补充或添加签署人。或签签署人在控制台上的展示样式如下（会带有<b>或签</b>标识）：\n![image](https://qcloudimg.tencent-cloud.cn/raw/b2715f0236faee807cfc0521f93cf01b.png)\n<b><font color=\"red\">2. 动态签署人合同</font>: 若未指定具体签署人的信息，则合同变成动态签署人合同</b>。需调用此接口补充或添加签署人。可以参考文档  [动态签署人合同](https://qian.tencent.com/developers/company/dynamic_signer/) 。动态签署人在控制台上的展示样式如下：\n![image](https://qcloudimg.tencent-cloud.cn/raw/2729477978e020c3bbb4d2e767bb78eb.png)\n\n实际签署人需要通过[获取跳转至腾讯电子签小程序的签署链接](https://qian.tencent.com/developers/companyApis/startFlows/CreateSchemeUrl/)生成的链接进入小程序，领取合同并签署。同一签署环节可补充多个员工作为或签署人，最终实际签署人取决于谁先领取合同完成签署。\n\n\n**限制条件**：\n\n1.本企业（发起方企业）企业微信签署人仅支持通过企业微信UserId或姓名+手机号进行补充。\n\n2.本企业（发起方企业）非企业微信签署人仅支持通过姓名+手机号进行补充。\n\n3.他方企业仅支持通过姓名+手机号进行补充。\n\n4.个人签署人支持通过姓名+手机号进行补充（若<b>个人用户已完成实名</b>，动态签署人合同也可以可通过姓名+证件号码进行补充）\n\n\n**整体流程如下图：**\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/29a0fba0ceebf9227849459947384862.png)",
       "input": "CreateFlowApproversRequest",
       "name": "补充签署流程签署人信息",
       "output": "CreateFlowApproversResponse",
@@ -2884,7 +2884,7 @@
         },
         {
           "disabled": false,
-          "document": "补充企业签署人信息。\n\n- 如果发起方指定的补充签署人是企业微信签署人（ApproverSource=WEWORKAPP），则需要提供企业微信UserId进行补充；\n\n- 如果不指定，则使用姓名和手机号进行补充。",
+          "document": "补充签署环节签署候选人信息。\n\n注：` 如果发起方指定的补充签署人是企业微信签署人（ApproverSource=WEWORKAPP），则需要提供企业微信UserId进行补充； 如果不指定，则使用姓名和手机号进行补充。`",
           "example": "无",
           "member": "FillApproverInfo",
           "name": "Approvers",
@@ -2902,7 +2902,7 @@
         },
         {
           "disabled": false,
-          "document": "签署人信息补充方式\n\n<ul><li>**0**: 添加或签人候选人，或签支持一个节点传多个签署人，不传值默认或签。\n注: `或签只支持企业签署方`</li>\n<li>**1**: 表示往未指定签署人的节点，添加一个明确的签署人，支持企业或个人签署方。</li></ul>",
+          "document": "签署人信息补充方式\n\n<ul><li>**0**: <font color=\"red\">或签合同</font>添加签署候选人，或签支持一个节点传多个签署人，不传值默认或签。\n注: `或签只支持企业签署方`</li>\n<li>**1**: <font color=\"red\">动态签署人合同</font>的添加签署候选人，支持企业或个人签署方。</li></ul>",
           "example": "无",
           "member": "int64",
           "name": "FillApproverType",

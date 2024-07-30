@@ -12457,19 +12457,19 @@
       "members": [
         {
           "disabled": false,
-          "document": "搜索字段，模糊搜索groupName字段",
-          "example": "foo-group",
+          "document": "分组所属应用ID。",
+          "example": "application-xxx",
           "member": "string",
-          "name": "SearchWord",
-          "required": false,
+          "name": "ApplicationId",
+          "required": true,
           "type": "string"
         },
         {
           "disabled": false,
-          "document": "分组所属应用ID。必填",
-          "example": "application-xxx",
+          "document": "搜索字段，模糊搜索groupName字段",
+          "example": "foo-group",
           "member": "string",
-          "name": "ApplicationId",
+          "name": "SearchWord",
           "required": false,
           "type": "string"
         },
@@ -12539,6 +12539,7 @@
           "example": "null",
           "member": "ContainGroupResult",
           "name": "Result",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },

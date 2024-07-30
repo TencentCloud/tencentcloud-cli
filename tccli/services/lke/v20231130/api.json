@@ -816,6 +816,39 @@
           "required": false,
           "type": "float",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否使用上下文指代轮次\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "IsUseContext",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "上下文记忆轮数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "HistoryLimit",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "使用类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UsageType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -1041,8 +1074,8 @@
         },
         {
           "disabled": false,
-          "document": "应用头像",
-          "example": "无",
+          "document": "应用头像url，在CreateApp和ModifyApp中作为入参必填。\n作为入参传入说明：\n1. 传入的url图片限制为jpeg和png，大小限制为500KB，url链接需允许head请求。\n2. 如果用户没有对象存储，可使用“获取文件上传临时密钥”(DescribeStorageCredential)接口，获取cos临时密钥和上传路径，自行上传头像至cos中并获取访问链接。",
+          "example": "https://cdn.xiaowei.qq.com/static/lke/app-icon-knowledge_qa.png",
           "member": "string",
           "name": "Avatar",
           "output_required": true,
@@ -5331,6 +5364,34 @@
       ],
       "usage": "both"
     },
+    "HistorySummary": {
+      "document": "多轮历史信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "助手\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Assistant",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "User",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "IgnoreUnsatisfiedReplyRequest": {
       "document": "IgnoreUnsatisfiedReply请求参数结构体",
       "members": [
@@ -5384,6 +5445,100 @@
         }
       ],
       "type": "object"
+    },
+    "InvokeAPI": {
+      "document": "请求的API信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "请求方法，如GET/POST等\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Method",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "请求地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Url",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "header参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "StrValue",
+          "name": "HeaderValues",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "入参Query\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "StrValue",
+          "name": "QueryValues",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Post请求的原始数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RequestPostBody",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "返回的原始数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ResponseBody",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "出参\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ValueInfo",
+          "name": "ResponseValues",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "异常信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FailMessage",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "IsTransferIntentRequest": {
       "document": "IsTransferIntent请求参数结构体",
@@ -5560,6 +5715,17 @@
           "required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否打开推荐问题开关\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "UseRecommended",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -5653,6 +5819,45 @@
           "output_required": false,
           "required": false,
           "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源状态 1：资源可用；2：资源已用尽\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "ResourceStatus",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "KnowledgeSummary": {
+      "document": "检索知识",
+      "members": [
+        {
+          "disabled": false,
+          "document": "1是问答 2是文档片段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "知识内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Content",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -7629,6 +7834,28 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源状态 1：资源可用；2：资源已用尽\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "ResourceStatus",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "提示词内容字符限制\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"8K\", \"256K\"]",
+          "member": "string",
+          "name": "PromptWordsLimit",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -8800,6 +9027,89 @@
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "调试信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ProcedureDebugging",
+          "name": "Debugging",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "计费资源状态，1：可用，2：不可用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "ResourceStatus",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ProcedureDebugging": {
+      "document": "调试信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "检索query\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Content",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "系统prompt\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "System",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "多轮历史信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "HistorySummary",
+          "name": "Histories",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "检索知识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KnowledgeSummary",
+          "name": "Knowledge",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务流程\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TaskFlowSummary",
+          "name": "TaskFlow",
+          "output_required": false,
+          "required": false,
+          "type": "object",
           "value_allowed_null": true
         }
       ],
@@ -10036,6 +10346,67 @@
       ],
       "type": "object"
     },
+    "RunNodeInfo": {
+      "document": "节点信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "节点类型，0:未指定，1:开始节点，2:API节点，3:询问节点，4:答案节点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "NodeType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "节点ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "NodeId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "节点名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "NodeName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "请求的API\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InvokeAPI",
+          "name": "InvokeApi",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当前节点的所有槽位的值，key：SlotID。没有值的时候也要返回空。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ValueInfo",
+          "name": "SlotValues",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "SaveDocRequest": {
       "document": "SaveDoc请求参数结构体",
       "members": [
@@ -10274,6 +10645,34 @@
       ],
       "type": "object"
     },
+    "StrValue": {
+      "document": "字符串KV信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "SummaryConfig": {
       "document": "知识摘要应用配置",
       "members": [
@@ -10407,6 +10806,56 @@
         }
       ],
       "usage": "out"
+    },
+    "TaskFlowSummary": {
+      "document": "任务流程调试信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务流程名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "IntentName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实体列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ValueInfo",
+          "name": "UpdatedSlotValues",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "节点列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RunNodeInfo",
+          "name": "RunNodes",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "意图判断\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Purposes",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "TaskParams": {
       "document": "任务参数",
@@ -10546,6 +10995,17 @@
           "output_required": false,
           "required": false,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "执行过程信息TraceId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TraceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -10763,6 +11223,100 @@
         }
       ],
       "usage": "out"
+    },
+    "ValueInfo": {
+      "document": "任务流程参数信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "值ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Id",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "值类型：0:未知或者空, 1:string, 2:int, 3:float, 4:bool, 5:array(字符串数组), 6: object_array(结构体数组), 7: object(结构体)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "ValueType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "string\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ValueStr",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "int（避免精度丢失使用字符串返回）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ValueInt",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "float\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "ValueFloat",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "bool\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "ValueBool",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "array\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ValueStrArray",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "VerifyQARequest": {
       "document": "VerifyQA请求参数结构体",

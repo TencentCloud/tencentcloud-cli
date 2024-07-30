@@ -1460,6 +1460,15 @@
           "name": "OrFilters",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "数据来源",
+          "example": "service_runtime_thread_pool",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

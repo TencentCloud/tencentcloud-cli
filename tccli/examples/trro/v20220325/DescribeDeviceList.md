@@ -6,9 +6,12 @@ Input:
 
 ```
 tccli trro DescribeDeviceList --cli-unfold-argument  \
-    --ProjectId f3glr49rc96pralw \
-    --SearchWords xx \
-    --DeviceType field
+    --ProjectId abc \
+    --DeviceType field \
+    --SearchWords abc \
+    --PageSize 10 \
+    --PageNumber 1 \
+    --DeviceStatus 
 ```
 
 Output: 
@@ -21,7 +24,7 @@ Output:
         "Devices": [
             {
                 "DeviceName": "test1",
-                "ProjectId": "xx",
+                "ProjectId": "abc",
                 "LastReportTime": "2022-03-22T08:00:00+08:00",
                 "DeviceStatus": "offline",
                 "DeviceType": "field",

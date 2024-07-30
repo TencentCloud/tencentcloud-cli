@@ -631,7 +631,7 @@
       "status": "online"
     },
     "DescribeTaskResult": {
-      "document": "查询任务结果",
+      "document": "查询任务结果，仅支持30天以内的任务查询结果，且返回数据大小超过近50M会进行截断。",
       "input": "DescribeTaskResultRequest",
       "name": "查询任务结果(用于: SparkSQL、PrestoSQL、Spark作业任务)",
       "output": "DescribeTaskResultResponse",
@@ -9289,6 +9289,15 @@
           "name": "Offset",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤类型，支持如下的过滤类型，传参Name应为以下其中一个, engine-generation - String（引擎时代： supersql：supersql引擎，native：标准引擎）：notebook-keyword - String（数据引擎名称或sessionid或sessionname的模糊搜索）",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -10515,7 +10524,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务唯一ID",
+          "document": "任务唯一ID，仅支持30天内的任务",
           "example": "fdd9c5fa21ca11eca6fb5254006c64af",
           "member": "string",
           "name": "TaskId",
@@ -10897,6 +10906,24 @@
           "name": "DataEngineConfigCommand",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否使用托管存储作为结果存储",
+          "example": "false",
+          "member": "bool",
+          "name": "UseLakeFs",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "用户自定义结果存储路径",
+          "example": "cosn://test-bucket/dir",
+          "member": "string",
+          "name": "CustomResultPath",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -10910,6 +10937,7 @@
           "example": "[xxx]",
           "member": "DataEngineBasicInfo",
           "name": "DataEngineBasicInfos",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -10919,6 +10947,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },

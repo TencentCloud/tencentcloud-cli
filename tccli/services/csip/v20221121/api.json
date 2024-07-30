@@ -5374,7 +5374,7 @@
         {
           "disabled": false,
           "document": "过滤内容",
-          "example": "无",
+          "example": "{}",
           "member": "Filter",
           "name": "Filter",
           "required": false,
@@ -5383,7 +5383,7 @@
         {
           "disabled": false,
           "document": "资产标签",
-          "example": "无",
+          "example": "[]",
           "member": "AssetTag",
           "name": "Tags",
           "required": false,

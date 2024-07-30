@@ -28,11 +28,15 @@ Output:
                     "CpuRequest": "",
                     "MemLimit": "4096.00",
                     "GroupName": "test",
+                    "RepoName": "tsf_410xxxxxxx/test",
                     "CreateTime": "",
                     "NamespaceId": "namespace-xxxxxxx",
                     "MemRequest": "",
                     "ClusterName": "示例",
-                    "NamespaceName": "test"
+                    "NamespaceName": "test",
+                    "Alias": "test",
+                    "KubeInjectEnable": true,
+                    "UpdatedTime": ""
                 }
             ]
         }
