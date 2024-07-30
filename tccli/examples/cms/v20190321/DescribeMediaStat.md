@@ -1,18 +1,18 @@
 **Example 1: 定制化接口音视频统计结果查询示例**
 
-
+定制化接口音视频统计结果查询示例
 
 Input: 
 
 ```
 tccli cms DescribeMediaStat --cli-unfold-argument  \
     --UserAppId 0 \
-    --BizTypes xx \
-    --UserSubUin xx \
-    --MediaType xx \
-    --StartTime xx \
-    --UserUin xx \
-    --EndTime xx
+    --UserUin abc \
+    --UserSubUin abc \
+    --MediaType abc \
+    --StartTime abc \
+    --EndTime abc \
+    --BizTypes abc
 ```
 
 Output: 

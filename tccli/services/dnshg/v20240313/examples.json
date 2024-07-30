@@ -1,0 +1,43 @@
+{
+  "actions": {
+    "CreateQueryTask": [
+      {
+        "document": "添加任务",
+        "input": "POST / HTTP/1.1\nHost: dnshg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateQueryTask\n<公共请求参数>\n\n{\n    \"TaskType\": 1,\n    \"StartTime\": \"2024-04-01\",\n    \"EndTime\": \"2024-04-02\",\n    \"Contents\": [\n        \"1.1.1.1\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e2f3f70d-834f-4e6d-9e87-26333f00db05\",\n        \"TaskId\": \"tid-E3kQM2qbbO\"\n    }\n}",
+        "title": "添加任务"
+      }
+    ],
+    "DescribeDomainDispose": [
+      {
+        "document": "查询封禁记录",
+        "input": "POST / HTTP/1.1\nHost: dnshg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDomainDispose\n<公共请求参数>\n\n{\n    \"CommandId\": \"cid-fnkKvSgK1L\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CommandId\": \"cid-fnkKvSgK1L\",\n        \"DisposeType\": 1,\n        \"DisposeWay\": 3,\n        \"DomainList\": [\n            {\n                \"Area\": \"1\",\n                \"DisposeTime\": null,\n                \"Domain\": \"wwww.young49.cn\",\n                \"ForwardIp\": null,\n                \"Reason\": \"\",\n                \"Status\": 1\n            }\n        ],\n        \"RequestId\": \"7f63a160-c3f1-443d-a490-25a5908540f1\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查询封禁记录"
+      }
+    ],
+    "DescribeQueryTask": [
+      {
+        "document": "获取查询任务列表",
+        "input": "POST / HTTP/1.1\nHost: dnshg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeQueryTask\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"TaskId\",\n            \"Values\": [\n                \"gggg\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"493f3e26-55f5-46ee-bc21-3e46cd4d59ec\",\n        \"TaskList\": [\n            {\n                \"Contents\": [\n                    \"s.fs2.dfsdf2\"\n                ],\n                \"CreatedAt\": \"2024-05-24 11:34:10\",\n                \"EndTime\": \"2024-05-18\",\n                \"Result\": \"https://pdns-release-fz-prelog-1258344699.cos-internal.ap-guangzhou.tencentcos.cn/hg_log_result/tid-YF1GkvEhBA/result.txt?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDEPrPr6DLMLMKBxmXTfp7NbryF3qfZTTb%26q-sign-time%3D1716542882%3B1717147682%26q-key-time%3D1716542882%3B1717147682%26q-header-list%3Dhost%26q-url-param-list%3D%26q-signature%3D4d79d6cc735134659be0ab1915be3af5670c06fb\",\n                \"StartTime\": \"2024-05-18\",\n                \"Status\": 1,\n                \"TaskId\": \"tid-YF1GkvEhBA\",\n                \"TaskType\": 2\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
+        "title": "获取查询任务列表"
+      }
+    ],
+    "DisposeDomain": [
+      {
+        "document": "下发封禁",
+        "input": "POST / HTTP/1.1\nHost: dnshg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DisposeDomain\n<公共请求参数>\n\n{\n    \"DisposeType\": 1,\n    \"DomainList\": [\n        {\n            \"Domain\": \"wwww.young49.cn\"\n        }\n    ],\n    \"DisposeWay\": 3,\n    \"Reason\": \"11\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CommandId\": \"cid-fnkKvSgK1L\",\n        \"RequestId\": \"b72f61fe-5ca8-4b7f-aef0-381165f2b3dd\"\n    }\n}",
+        "title": "下发封禁"
+      },
+      {
+        "document": "错误实例",
+        "input": "POST / HTTP/1.1\nHost: dnshg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DisposeDomain\n<公共请求参数>\n\n{\n    \"DisposeType\": 1,\n    \"DomainList\": [\n        {\n            \"Domain\": \"a.com\"\n        }\n    ],\n    \"DisposeWay\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InternalError\",\n            \"Message\": \"内部服务错误，请稍后重试。\"\n        },\n        \"RequestId\": \"14b5167d-fd84-4a3e-9cd1-debe9982ff44\"\n    }\n}",
+        "title": "错误实例"
+      }
+    ]
+  },
+  "version": "1.0"
+}

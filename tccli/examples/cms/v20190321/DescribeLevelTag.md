@@ -1,6 +1,6 @@
 **Example 1: 获取成功示例**
 
-
+获取成功
 
 Input: 
 
@@ -103,14 +103,14 @@ Output:
 
 **Example 2: 分级标签查询和返回**
 
-
+分级标签
 
 Input: 
 
 ```
 tccli cms DescribeLevelTag --cli-unfold-argument  \
-    --ParentTag xx \
-    --Type xx
+    --Type abc \
+    --ParentTag abc
 ```
 
 Output: 
@@ -119,17 +119,17 @@ Output:
     "Response": {
         "LevelTagList": [
             {
-                "Code": "xx",
-                "Name": "xx",
-                "Scene": "xx",
-                "TagType": "xx",
+                "Code": "abc",
+                "Name": "abc",
+                "Cname": "abc",
+                "Scene": "abc",
                 "Priority": 0,
-                "Cname": "xx",
-                "BackGroundColor": "xx",
-                "FontColor": "xx"
+                "FontColor": "abc",
+                "BackGroundColor": "abc",
+                "TagType": "abc"
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

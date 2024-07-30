@@ -14,8 +14,8 @@ Output:
 ```
 {
     "Response": {
-        "Count": 1,
-        "RequestId": 123123123
+        "Count": 0,
+        "RequestId": "abc"
     }
 }
 ```

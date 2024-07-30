@@ -504,7 +504,7 @@
         },
         {
           "disabled": false,
-          "document": "名单类型 [1 黑名单 2 白名单 3 其他名单]",
+          "document": "名单类型 [1 黑名单 2白名单]",
           "example": "无",
           "member": "int64",
           "name": "ListType",
@@ -513,7 +513,7 @@
         },
         {
           "disabled": false,
-          "document": "数据类型id",
+          "document": "数据类型id [1 手机号 2 QQopenId 3 wechatOpenId 4 ip 6 idfa 7 imei]",
           "example": "无",
           "member": "int64",
           "name": "DataType",

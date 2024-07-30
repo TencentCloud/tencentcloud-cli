@@ -340,6 +340,8 @@ tccli/services/dlc/v20210125/api.json
 tccli/services/dlc/v20210125/examples.json
 tccli/services/dms/__init__.py
 tccli/services/dms/dms_client.py
+tccli/services/dnshg/__init__.py
+tccli/services/dnshg/dnshg_client.py
 tccli/services/dnspod/__init__.py
 tccli/services/dnspod/dnspod_client.py
 tccli/services/dnspod/v20210323/api.json

@@ -1,3 +1,188 @@
+# Release 3.0.1045.1
+
+## 应用性能监控(apm) 版本：2021-06-22
+
+### 第 12 次发布
+
+发布时间：2024-07-31 01:07:53
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeMetricRecords](http://document.tencentcloudapi.woa.com/document/product/1463/68254)
+
+	* 新增入参：Type
+
+
+
+
+## 腾讯云数据仓库 TCHouse-D(cdwdoris) 版本：2021-12-28
+
+### 第 19 次发布
+
+发布时间：2024-07-31 01:10:19
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateWorkloadGroup](http://document.tencentcloudapi.woa.com/document/product/1706/84358)
+* [DeleteWorkloadGroup](http://document.tencentcloudapi.woa.com/document/product/1706/84357)
+* [DescribeFederationToken](http://document.tencentcloudapi.woa.com/document/product/1706/84365)
+* [DescribeGoodsDetail](http://document.tencentcloudapi.woa.com/document/product/1706/84364)
+* [DescribeInstanceUsedSubnets](http://document.tencentcloudapi.woa.com/document/product/1706/84363)
+* [DescribeRegionZone](http://document.tencentcloudapi.woa.com/document/product/1706/84362)
+* [DescribeReplicaVersion](http://document.tencentcloudapi.woa.com/document/product/1706/84361)
+* [DescribeRestoreTaskDetail](http://document.tencentcloudapi.woa.com/document/product/1706/84360)
+* [DescribeSqlApis](http://document.tencentcloudapi.woa.com/document/product/1706/84359)
+* [DescribeUserBindWorkloadGroup](http://document.tencentcloudapi.woa.com/document/product/1706/84356)
+* [DescribeWorkloadGroup](http://document.tencentcloudapi.woa.com/document/product/1706/84355)
+* [FitClsLog](http://document.tencentcloudapi.woa.com/document/product/1706/84354)
+* [ModifyInstanceKeyValConfigs](http://document.tencentcloudapi.woa.com/document/product/1706/84353)
+* [ModifySecurityGroups](http://document.tencentcloudapi.woa.com/document/product/1706/84352)
+* [ModifyUserBindWorkloadGroup](http://document.tencentcloudapi.woa.com/document/product/1706/84351)
+* [ModifyUserPrivilegesV3](http://document.tencentcloudapi.woa.com/document/product/1706/84350)
+* [ModifyWorkloadGroup](http://document.tencentcloudapi.woa.com/document/product/1706/84349)
+* [ModifyWorkloadGroupStatus](http://document.tencentcloudapi.woa.com/document/product/1706/84348)
+* [ReduceInstance](http://document.tencentcloudapi.woa.com/document/product/1706/84347)
+
+新增数据结构：
+
+* [BindUser](http://document.tencentcloudapi.woa.com/document/product/1706/80309#BindUser)
+* [InstanceConfigItem](http://document.tencentcloudapi.woa.com/document/product/1706/80309#InstanceConfigItem)
+* [RegionAreaInfo](http://document.tencentcloudapi.woa.com/document/product/1706/80309#RegionAreaInfo)
+* [RegionInfo](http://document.tencentcloudapi.woa.com/document/product/1706/80309#RegionInfo)
+* [ResourceNodeDiskSpec](http://document.tencentcloudapi.woa.com/document/product/1706/80309#ResourceNodeDiskSpec)
+* [ResourceNodeSpec](http://document.tencentcloudapi.woa.com/document/product/1706/80309#ResourceNodeSpec)
+* [RestoreStatus](http://document.tencentcloudapi.woa.com/document/product/1706/80309#RestoreStatus)
+* [SpecExtra](http://document.tencentcloudapi.woa.com/document/product/1706/80309#SpecExtra)
+* [UpdateUserPrivileges](http://document.tencentcloudapi.woa.com/document/product/1706/80309#UpdateUserPrivileges)
+* [UserWorkloadGroup](http://document.tencentcloudapi.woa.com/document/product/1706/80309#UserWorkloadGroup)
+* [VersionReplicaItem](http://document.tencentcloudapi.woa.com/document/product/1706/80309#VersionReplicaItem)
+* [WorkloadGroupConfig](http://document.tencentcloudapi.woa.com/document/product/1706/80309#WorkloadGroupConfig)
+* [ZoneInfo](http://document.tencentcloudapi.woa.com/document/product/1706/80309#ZoneInfo)
+
+
+
+## 内容安全(cms) 版本：2019-03-21
+
+### 第 7 次发布
+
+发布时间：2024-07-31 01:12:05
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [EvilCount](http://document.tencentcloudapi.woa.com/document/product/1604/76800#EvilCount)
+
+	* <font color="#dd0000">**修改成员**：</font>Duration
+
+
+
+
+## 数据湖计算 DLC(dlc) 版本：2021-01-25
+
+### 第 109 次发布
+
+发布时间：2024-07-31 01:14:30
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeNotebookSessions](http://document.tencentcloudapi.woa.com/document/product/1342/77042)
+
+	* 新增入参：Filters
+
+* [DescribeUpdatableDataEngines](http://document.tencentcloudapi.woa.com/document/product/1342/82595)
+
+	* 新增入参：UseLakeFs, CustomResultPath
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 148 次发布
+
+发布时间：2024-07-31 01:16:37
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [BaseFlowInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#BaseFlowInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>FlowType, FlowDescription
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 远程实时操控(trro) 版本：2022-03-25
+
+### 第 5 次发布
+
+发布时间：2024-07-31 01:25:54
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeDeviceList](http://document.tencentcloudapi.woa.com/document/product/1714/80477)
+
+	* 新增入参：DeviceStatus
+
+
+新增数据结构：
+
+* [MultiNet](http://document.tencentcloudapi.woa.com/document/product/1714/80497#MultiNet)
+
+修改数据结构：
+
+* [SessionDeviceDetail](http://document.tencentcloudapi.woa.com/document/product/1714/80497#SessionDeviceDetail)
+
+	* 新增成员：RenderCost, ConfigWidth, ConfigHeight, FrameDelta, MaxFrameDelta, TotalBitrateEstimate, Lag100Duration, Lag150Duration, MultiMode, MultiNet
+
+
+
+
+## 微服务平台 TSF(tsf) 版本：2018-03-26
+
+### 第 50 次发布
+
+发布时间：2024-07-31 01:26:25
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeContainerGroups](http://document.tencentcloudapi.woa.com/document/product/649/36068)
+
+	* <font color="#dd0000">**修改入参**：</font>ApplicationId
+
+
+
+
 # Release 3.0.1044.1
 
 ## 正版曲库直通车(ame) 版本：2019-09-16

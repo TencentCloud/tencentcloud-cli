@@ -1352,7 +1352,7 @@
           "example": "无",
           "member": "LevelTag",
           "name": "LevelTagList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1571,7 +1571,7 @@
           "example": "无",
           "member": "MediaStatData",
           "name": "Summary",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -1581,7 +1581,7 @@
           "example": "无",
           "member": "MediaDetailStat",
           "name": "Details",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1708,7 +1708,7 @@
           "example": "1",
           "member": "TrendData",
           "name": "Results",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -1852,6 +1852,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Count",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -1862,7 +1863,8 @@
           "example": "1",
           "member": "uint64",
           "name": "Duration",
-          "required": false,
+          "output_required": true,
+          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1872,12 +1874,13 @@
           "example": "1",
           "member": "uint64",
           "name": "EvilType",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "Field": {
       "document": "更新通用结构",
@@ -3580,36 +3583,39 @@
       "members": [
         {
           "disabled": false,
-          "document": "统计日期, 如\"20190401\"",
+          "document": "统计日期, 如\"20190401\"\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
           "name": "Date",
+          "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "服务类型，如\"Text\"",
+          "document": "服务类型，如\"Text\"\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
           "name": "ServiceType",
+          "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "服务类型下对应的恶意统计",
+          "document": "服务类型下对应的恶意统计\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "EvilCount",
           "name": "Counts",
+          "output_required": false,
           "required": false,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "Similar": {
       "document": "相似度详情",

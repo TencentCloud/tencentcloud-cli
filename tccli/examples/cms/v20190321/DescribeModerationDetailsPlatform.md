@@ -6,18 +6,18 @@ Input:
 
 ```
 tccli cms DescribeModerationDetailsPlatform --cli-unfold-argument  \
-    --OrderBy xx \
+    --OrderBy abc \
     --EndDate 2020-09-22 \
-    --Filters.0.Values xx \
-    --Filters.0.Name xx \
     --BeginDate 2020-09-22 \
-    --CustomUin xx \
-    --CustomSubAccountUin xx \
+    --CustomUin abc \
+    --CustomSubAccountUin abc \
     --Limit 0 \
-    --OrderField xx \
+    --OrderField abc \
     --Offset 0 \
-    --CustomAppId xx \
-    --Channel 0
+    --CustomAppId abc \
+    --Channel 0 \
+    --Filters.0.Name abc \
+    --Filters.0.Values abc
 ```
 
 Output: 

@@ -1,0 +1,556 @@
+{
+  "actions": {
+    "CreateQueryTask": {
+      "document": "查询解析日志",
+      "input": "CreateQueryTaskRequest",
+      "name": "创建查询任务",
+      "output": "CreateQueryTaskResponse",
+      "status": "online"
+    },
+    "DescribeDomainDispose": {
+      "document": "查询处置结果",
+      "input": "DescribeDomainDisposeRequest",
+      "name": "查询域名处置列表",
+      "output": "DescribeDomainDisposeResponse",
+      "status": "online"
+    },
+    "DescribeQueryTask": {
+      "document": "获取查询任务数据",
+      "input": "DescribeQueryTaskRequest",
+      "name": "获取查询任务",
+      "output": "DescribeQueryTaskResponse",
+      "status": "online"
+    },
+    "DisposeDomain": {
+      "document": "域名处置",
+      "input": "DisposeDomainRequest",
+      "name": "域名处置",
+      "output": "DisposeDomainResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2024-03-13",
+    "api_brief": "主要提供给内部合规调用",
+    "serviceNameCN": "解析合规",
+    "serviceShortName": "dnshg"
+  },
+  "objects": {
+    "CreateQueryTaskRequest": {
+      "document": "CreateQueryTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "1: 5.2IP关联域名解析记录查询 ；2: 5.3历史递归缓存解析记录查询 ；3:    5.4子域名解析记录查询 ； 4:  5.5域名解析信息查询",
+          "example": "无",
+          "member": "uint64",
+          "name": "TaskType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "日志开始时间",
+          "example": "2024-03-31",
+          "member": "date",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "日志结束时间",
+          "example": "2024-04-30",
+          "member": "date",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询内容（查询类型不一样，查询的内容也会不一样）",
+          "example": "[\"a.com\", \"b.com\"]",
+          "member": "string",
+          "name": "Contents",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateQueryTaskResponse": {
+      "document": "CreateQueryTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "id",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDomainDisposeRequest": {
+      "document": "DescribeDomainDispose请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "下发域名处置时会返回这个id",
+          "example": "cid-abcdefgh",
+          "member": "string",
+          "name": "CommandId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "limit",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "offset",
+          "example": "10",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDomainDisposeResponse": {
+      "document": "DescribeDomainDispose返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "处置ID",
+          "example": "无",
+          "member": "string",
+          "name": "CommandId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总量",
+          "example": "100",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "处置类型：0：解除（即撤销处置）;1：域名处置",
+          "example": "无",
+          "member": "uint64",
+          "name": "DisposeType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "处置类型为1时必填，1：停止解析2：清理缓存3：停止解析且清理缓存",
+          "example": "无",
+          "member": "uint64",
+          "name": "DisposeWay",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "处置的域名列表",
+          "example": "无",
+          "member": "DomainDisposeStatus",
+          "name": "DomainList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeQueryTaskRequest": {
+      "document": "DescribeQueryTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "过滤参数",
+          "example": "[]",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "offset",
+          "example": "100",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "limit",
+          "example": "100",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeQueryTaskResponse": {
+      "document": "DescribeQueryTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "total",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务数据",
+          "example": "无",
+          "member": "TaskInfo",
+          "name": "TaskList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DisposeDomainRequest": {
+      "document": "DisposeDomain请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "0：解除（即撤销处置）;1：域名处置",
+          "example": "1",
+          "member": "uint64",
+          "name": "DisposeType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "需要处置的域名列表",
+          "example": "无",
+          "member": "DomainDispose",
+          "name": "DomainList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "处置类型为1时必填，1：停止解析2：清理缓存3：停止解析且清理缓存",
+          "example": "无",
+          "member": "uint64",
+          "name": "DisposeWay",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "处置原因，可为空",
+          "example": "无",
+          "member": "string",
+          "name": "Reason",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "处置域名时返回的ID，可为空",
+          "example": "无",
+          "member": "string",
+          "name": "CommandId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DisposeDomainResponse": {
+      "document": "DisposeDomain返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "本次处置的ID",
+          "example": "cid-abcdefg",
+          "member": "string",
+          "name": "CommandId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DomainDispose": {
+      "document": "处置的域名信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "主域名",
+          "example": "qq.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "生效范围（预留，暂未使用）",
+          "example": "1",
+          "member": "string",
+          "name": "Area",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "劫持的IP（可为空，默认0.0.0.0）",
+          "example": "0.0.0.0",
+          "member": "string",
+          "name": "ForwardIp",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "DomainDisposeStatus": {
+      "document": "域名处置状态",
+      "members": [
+        {
+          "disabled": false,
+          "document": "处置的时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2024-04-01 10:00:00",
+          "member": "string",
+          "name": "DisposeTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "qq.com",
+          "member": "string",
+          "name": "Domain",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "生效范围（预留，暂未使用）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "Area",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "状态：0未处置 1已处置 2处置中 -1执行异常",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "处置失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "系统异常",
+          "member": "string",
+          "name": "Reason",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "转发的IP（默认是0.0.0.0）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.0.0.0",
+          "member": "string",
+          "name": "ForwardIp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "Filter": {
+      "document": "过滤参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要过滤的参数名",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需要过滤的参数值",
+          "example": "[\"\",\"\"]",
+          "member": "string",
+          "name": "Values",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
+    "TaskInfo": {
+      "document": "查询任务明细",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "1: 5.2IP关联域名解析记录查询 ；2: 5.3历史递归缓存解析记录查询 ；3:    5.4子域名解析记录查询 ； 4:  5.5域名解析信息查询\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TaskType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "查询内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Contents",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2024-03-01",
+          "member": "date",
+          "name": "StartTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2024-04-01",
+          "member": "date",
+          "name": "EndTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "状态：0未开始，1成功，2执行中、-1失败\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2024-04-01 01:01:01",
+          "member": "string",
+          "name": "CreatedAt",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务结果：\n1、如果结果是成功，此字段是一个COS链接\n2、如果结果是失败，此字段是失败原因\n3、如果是其他状态，此字段没用\n\n结果特别说明：\n返回字段特别说明：\nResult，任务结果：\n（1）结果定义：\n1、如果结果是成功，此字段是一个COS链接\n2、如果结果是失败，此字段是失败原因\n3、如果是其他状态，此字段没用\n（2）任务结果文件格式：\n{\n\"condition_1\": [\n\"cos_url_1\",\"cos_url_2\",...\n],\n\"condition_2\": [\n\"cos_url_3\", \"cos_url_4\",...\n]\n}\n其中：\n1、condition_?：为查询条件，可能是域名和IP\n2、cos_url_?：授权的COS地址，有效期7天，存储的是最终的查询结果\n3、如果返回结果为成功，且返回的是空的结果，则condition_?下是一个空的数组，比如{\"condition_1\": [],\"condition_2\": []}\n（3）cos_url_?文件说明\n1、结果文件为gz压缩的文件\n2、结果的每个字段都是用“#”号分割\n（4）cos_url_?文件结构说明\n1、如果是根据域名查询，结构为\n主域名#子域名#请求类型#解析结果#应答类型#解析量#请求日期\n示例：\nzlatara-goldshop.ba#zlatara-goldshop.ba.#A#185.212.108.137#CNAME|A|A#6#20240509\n应答类型可能会存在多个，如果有多个，用“|”分割\n2、如果是根据IP查询，结构为：\nIP#域名#日期\n示例：1.28.145.240#cdn.uviewui.com.#20240518\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://pdns-release-fz-prelog-1258344699.cos-internal.ap-guangzhou.tencentcos.cn/hg_log_result/tid-gggg/result.txt?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDEPrPr6DLMLMKBxmXTfp7NbryF3qfZTTb%26q-sign-time%3D1716465834%3B1717070634%26q-key-time%3D1716465834%3B1717070634%26q-header-list%3Dhost%26q-url-param-list%3D%26q-signature%3D0f8415f4f9a9de4cbb2739fcb36dc690d50e41c4",
+          "member": "string",
+          "name": "Result",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

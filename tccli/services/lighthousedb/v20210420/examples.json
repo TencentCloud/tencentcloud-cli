@@ -60,7 +60,7 @@
       {
         "document": "",
         "input": "https://lighthousedb.tencentcloudapi.com/?Action=SetRenewFlag\n&ResourceIds.0=cynosdbmysql-ins-xxxxxxx\n&AutoRenewFlag=1\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Count\": 1,\n        \"RequestId\": 123123123\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Count\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "设置自动续费标识"
       }
     ]
