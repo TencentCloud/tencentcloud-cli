@@ -1104,7 +1104,7 @@
           "example": "无",
           "member": "GroupType",
           "name": "GroupTypeList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2900,7 +2900,7 @@
           "example": "Porn",
           "member": "string",
           "name": "GroupEname",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2910,7 +2910,7 @@
           "example": "有关色情的内容",
           "member": "string",
           "name": "GroupMsg",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2920,9 +2920,19 @@
           "example": "色情",
           "member": "string",
           "name": "GroupName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "二级标签是否生效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "GroupValid",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

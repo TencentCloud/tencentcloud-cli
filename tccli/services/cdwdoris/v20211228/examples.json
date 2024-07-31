@@ -1,5 +1,21 @@
 {
   "actions": {
+    "CancelBackupJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CancelBackupJob\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"BackUpJobId\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorMsg\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "test"
+      }
+    ],
+    "CreateBackUpSchedule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBackUpSchedule\n<公共请求参数>\n\n{\n    \"ScheduleId\": 0,\n    \"WeekDays\": \"1\",\n    \"BackUpTables\": [\n        {\n            \"Table\": \"1\",\n            \"TotalBytes\": 0,\n            \"Database\": \"1\"\n        }\n    ],\n    \"ExecuteHour\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "CreateInstanceNew": [
       {
         "document": "创建集群",
@@ -16,6 +32,14 @@
         "title": "创建资源组"
       }
     ],
+    "DeleteBackUpData": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteBackUpData\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"BackUpJobId\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "DeleteWorkloadGroup": [
       {
         "document": "",
@@ -24,12 +48,68 @@
         "title": "删除资源组"
       }
     ],
+    "DescribeAreaRegion": [
+      {
+        "document": "集群列表页上显示地域信息及各个地域的集群总数",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAreaRegion\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"Name\": \"abc\",\n                \"Desc\": \"abc\",\n                \"Regions\": [\n                    {\n                        \"Name\": \"abc\",\n                        \"Desc\": \"abc\",\n                        \"RegionId\": 0,\n                        \"Zones\": [\n                            {\n                                \"Name\": \"abc\",\n                                \"Desc\": \"abc\",\n                                \"ZoneId\": 0,\n                                \"Encrypt\": 0\n                            }\n                        ],\n                        \"Count\": 0,\n                        \"IsInternationalSite\": 1,\n                        \"Bucket\": \"abc\"\n                    }\n                ]\n            }\n        ],\n        \"FrontEndRules\": [\n            {\n                \"ID\": 0,\n                \"Name\": \"abc\",\n                \"Rule\": \"abc\"\n            }\n        ],\n        \"AvailableWhiteListNames\": [\n            \"abc\"\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "获取各地域列表"
+      }
+    ],
+    "DescribeBackUpJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBackUpJob\n<公共请求参数>\n\n{\n    \"InstanceId\": \"1\",\n    \"PageNum\": 0,\n    \"PageSize\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"BackUpJobs\": [\n            {\n                \"JobId\": 0,\n                \"Snapshot\": \"abc\",\n                \"BackUpSize\": 0,\n                \"BackUpTime\": \"abc\",\n                \"ExpireTime\": \"abc\",\n                \"JobStatus\": \"abc\",\n                \"BackupType\": 0,\n                \"BackupTimeType\": 0,\n                \"DorisSourceInfo\": {\n                    \"Host\": \"abc\",\n                    \"Port\": 0,\n                    \"User\": \"abc\",\n                    \"Password\": \"abc\"\n                },\n                \"JobStatusNum\": 0\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "DescribeBackUpJobDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBackUpJobDetail\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"BackUpJobId\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"TableContents\": [\n            {\n                \"Table\": \"xx\",\n                \"TotalBytes\": 0,\n                \"Database\": \"xx\"\n            }\n        ]\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "DescribeBackUpSchedules": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBackUpSchedules\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "获取备份、迁移任务"
+      }
+    ],
+    "DescribeBackUpTables": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBackUpTables\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdwdoris-123\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AvailableTables\": [\n            {\n                \"Table\": \"tablename1\",\n                \"TotalBytes\": 0,\n                \"Database\": \"db1\"\n            }\n        ],\n        \"RequestId\": \"request1\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "DescribeBackUpTaskDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBackUpTaskDetail\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"BackUpJobId\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorMsg\": \"xx\",\n        \"BackupStatus\": [\n            {\n                \"Status\": \"xx\",\n                \"FinishedTime\": \"xx\",\n                \"BackupObjects\": \"xx\",\n                \"SnapshotName\": \"xx\",\n                \"TaskErrMsg\": \"xx\",\n                \"JobId\": 0,\n                \"UnfinishedTasks\": \"xx\",\n                \"State\": \"xx\",\n                \"SnapshotFinishedTime\": \"xx\",\n                \"Timeout\": 0,\n                \"UploadFinishedTime\": \"xx\",\n                \"Progress\": \"xx\",\n                \"CreateTime\": \"xx\",\n                \"DbName\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "DescribeClusterConfigs": [
       {
         "document": "在xml方式下修改配置文件内容时，获取集群配置文件内容",
         "input": "https://cdwdoris.tencentcloudapi.com/\n?Action=DescribeClusterConfigs\n&InstanceId=cdwch-xxxx\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"ClusterConfList\": [\n            {\n                \"NeedRestart\": 1,\n                \"OriParam\": \"ss=sc\",\n                \"KeyConf\": \"ss=sc\",\n                \"FileConf\": \"ss=sc\",\n                \"FileName\": \"test\"\n            }\n        ],\n        \"RequestId\": \"xx-aa\"\n    }\n}",
         "title": "获取集群配置文件内容"
+      }
+    ],
+    "DescribeClusterConfigsHistory": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterConfigsHistory\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"ConfigFileNames\": [\n        \"abc\"\n    ],\n    \"Offset\": 0,\n    \"Limit\": 0,\n    \"StartTime\": \"abc\",\n    \"EndTime\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"ClusterConfHistory\": [\n            {\n                \"FileName\": \"abc\",\n                \"NewConfValue\": \"abc\",\n                \"OldConfValue\": \"abc\",\n                \"Remark\": \"abc\",\n                \"ModifyTime\": \"abc\",\n                \"UserUin\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "test"
       }
     ],
     "DescribeDatabaseAuditDownload": [
@@ -48,12 +128,44 @@
         "title": "DescribeDatabaseAuditRecords"
       }
     ],
+    "DescribeDatabaseAuditResource": [
+      {
+        "document": "获取审计日志的相关信息",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDatabaseAuditResource\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Databases\": [\n            \"abc\"\n        ],\n        \"Users\": [\n            \"abc\"\n        ],\n        \"SqlTypes\": [\n            \"abc\"\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "DescribeDatabaseAuditResource"
+      }
+    ],
+    "DescribeDmsSqlHistory": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDmsSqlHistory\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"QueryNodeList\": [\n            \"abc\"\n        ],\n        \"QueryStatusList\": [\n            \"abc\"\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询历史执行记录"
+      }
+    ],
+    "DescribeDorisMetricFiles": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDorisMetricFiles\n<公共请求参数>\n\n{\n    \"ApiType\": \"abc\",\n    \"DescribeMetricsFileReq\": {\n        \"InstanceType\": \"abc\",\n        \"MetricType\": \"abc\",\n        \"IfAttention\": 0\n    },\n    \"ModifyMetricFileReq\": {\n        \"Id\": 0,\n        \"IfAttention\": \"abc\"\n    },\n    \"InstanceId\": \"abc\",\n    \"ModifyAttentionMetricFileReq\": {\n        \"InstanceType\": \"abc\",\n        \"MetricType\": \"abc\",\n        \"Name\": \"abc\",\n        \"IfAttention\": 0\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorMsg\": \"abc\",\n        \"ReturnData\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "DescribeDorisMetricFiles"
+      }
+    ],
     "DescribeFederationToken": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFederationToken\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "获取联合临时密钥"
+      }
+    ],
+    "DescribeFrontEnd": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFrontEnd\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"532418ac-e131-437f-9fe7-4c7d0f3e31c4\"\n    }\n}",
+        "title": "示例"
       }
     ],
     "DescribeGoodsDetail": [
@@ -94,6 +206,22 @@
         "title": "查询节点角色"
       }
     ],
+    "DescribeInstanceNodesRole": [
+      {
+        "document": "查看机器角色信息",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceNodesRole\n<公共请求参数>\n\n{\n    \"InstanceId\": \"1\",\n    \"IpFilter\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorMsg\": \"1\",\n        \"NodeInfos\": [\n            {\n                \"Status\": 0,\n                \"Ip\": \"1\",\n                \"NodeRole\": \"1\",\n                \"NodeName\": \"1\"\n            }\n        ],\n        \"RequestId\": \"1\",\n        \"TotalCount\": 0\n    }\n}",
+        "title": "DescribeInstanceNodesRole"
+      }
+    ],
+    "DescribeInstanceOperations": [
+      {
+        "document": "获取集群操作列表",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceOperations\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdwch-exs8Mnql\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxx-xxxx-xxxxx-xxxxx\",\n        \"TotalCount\": 2,\n        \"Operations\": [\n            {\n                \"Name\": \"CreateInstance\",\n                \"Desc\": \"创建集群\",\n                \"Result\": \"Success\",\n                \"Level\": \"Normal\",\n                \"LevelDesc\": \"一般\",\n                \"StartTime\": \"2020-10-22 13:28:53\",\n                \"EndTime\": \"2020-10-22 13:28:53\",\n                \"JobId\": 123\n            },\n            {\n                \"Name\": \"ModifyInstance\",\n                \"Desc\": \"变配集群\",\n                \"Result\": \"Success\",\n                \"Level\": \"HighRisk\",\n                \"LevelDesc\": \"高危\",\n                \"StartTime\": \"2020-10-22 14:38:53\",\n                \"EndTime\": \"2020-10-22 14:38:53\",\n                \"JobId\": 124\n            }\n        ]\n    }\n}",
+        "title": "获取集群操作列表"
+      }
+    ],
     "DescribeInstanceState": [
       {
         "document": "需要展现集群状态以及操作进度",
@@ -116,6 +244,14 @@
         "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstances\n<公共请求参数>\n\n{\n    \"Limit\": 10,\n    \"SearchInstanceName\": \"\",\n    \"SearchInstanceId\": \"\",\n    \"Offset\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"InstancesList\": [\n            {\n                \"InstanceId\": \"abc\",\n                \"InstanceName\": \"abc\",\n                \"Status\": \"abc\",\n                \"Version\": \"abc\",\n                \"Region\": \"abc\",\n                \"Zone\": \"abc\",\n                \"VpcId\": \"abc\",\n                \"SubnetId\": \"abc\",\n                \"PayMode\": \"abc\",\n                \"CreateTime\": \"abc\",\n                \"ExpireTime\": \"abc\",\n                \"MasterSummary\": {\n                    \"Spec\": \"abc\",\n                    \"NodeSize\": 0,\n                    \"Core\": 0,\n                    \"Memory\": 0,\n                    \"Disk\": 0,\n                    \"DiskType\": \"abc\",\n                    \"DiskDesc\": \"abc\",\n                    \"AttachCBSSpec\": {\n                        \"DiskType\": \"abc\",\n                        \"DiskSize\": 0,\n                        \"DiskCount\": 0,\n                        \"DiskDesc\": \"abc\"\n                    },\n                    \"SubProductType\": \"abc\",\n                    \"SpecCore\": 0,\n                    \"SpecMemory\": 0,\n                    \"DiskCount\": 0,\n                    \"Encrypt\": 0,\n                    \"MaxDiskSize\": 0\n                },\n                \"CoreSummary\": {\n                    \"Spec\": \"abc\",\n                    \"NodeSize\": 0,\n                    \"Core\": 0,\n                    \"Memory\": 0,\n                    \"Disk\": 0,\n                    \"DiskType\": \"abc\",\n                    \"DiskDesc\": \"abc\",\n                    \"AttachCBSSpec\": {\n                        \"DiskType\": \"abc\",\n                        \"DiskSize\": 0,\n                        \"DiskCount\": 0,\n                        \"DiskDesc\": \"abc\"\n                    },\n                    \"SubProductType\": \"abc\",\n                    \"SpecCore\": 0,\n                    \"SpecMemory\": 0,\n                    \"DiskCount\": 0,\n                    \"Encrypt\": 0,\n                    \"MaxDiskSize\": 0\n                },\n                \"HA\": \"abc\",\n                \"HaType\": 0,\n                \"AccessInfo\": \"abc\",\n                \"Id\": 0,\n                \"RegionId\": 0,\n                \"ZoneDesc\": \"abc\",\n                \"FlowMsg\": \"abc\",\n                \"StatusDesc\": \"abc\",\n                \"RenewFlag\": true,\n                \"Tags\": [\n                    {\n                        \"TagKey\": \"abc\",\n                        \"TagValue\": \"abc\"\n                    }\n                ],\n                \"Monitor\": \"abc\",\n                \"HasClsTopic\": true,\n                \"ClsTopicId\": \"abc\",\n                \"ClsLogSetId\": \"abc\",\n                \"EnableXMLConfig\": 0,\n                \"RegionDesc\": \"abc\",\n                \"Eip\": \"abc\",\n                \"CosMoveFactor\": 0,\n                \"Kind\": \"abc\",\n                \"CosBucketName\": \"abc\",\n                \"CanAttachCbs\": true,\n                \"BuildVersion\": \"abc\",\n                \"Components\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "获取实例列表"
+      }
+    ],
+    "DescribeInstancesHealthState": [
+      {
+        "document": "集群健康检查",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstancesHealthState\n<公共请求参数>\n\n{\n    \"InstanceID\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "DescribeInstancesHealthState"
       }
     ],
     "DescribeRegionZone": [
@@ -156,6 +292,14 @@
         "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSlowQueryRecordsDownload\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"QueryDurationMs\": 0,\n    \"StartTime\": \"abc\",\n    \"EndTime\": \"abc\",\n    \"DurationMs\": \"abc\"\n}",
         "output": "{\n    \"Response\": {\n        \"CosUrl\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "DescribeSlowQueryRecordsDownload"
+      }
+    ],
+    "DescribeSpec": [
+      {
+        "document": "购买页拉取集群的数据节点和zookeeper节点的规格列表",
+        "input": "https://cdwdoris.tencentcloudapi.com/?Action=DescribeSpec\n&Zone=ap-guangzhou-1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"10058bc0-40e7-4eb0-9b4d\",\n        \"MasterSpec\": [\n            {\n                \"Name\": \"SCH3\",\n                \"Cpu\": 2,\n                \"Mem\": 4,\n                \"Type\": \"STANDARD\",\n                \"DataDisk\": {\n                    \"DiskCount\": 1,\n                    \"MaxDiskSize\": 32000,\n                    \"MinDiskSize\": 100,\n                    \"DiskType\": \"CLOUD_HSSD\",\n                    \"DiskDesc\": \"增强型SSD云硬盘\"\n                },\n                \"SystemDisk\": {\n                    \"DiskCount\": 1,\n                    \"MaxDiskSize\": 50,\n                    \"MinDiskSize\": 50,\n                    \"DiskType\": \"CLOUD_PREMIUM\",\n                    \"DiskDesc\": \"高性能云硬盘\"\n                },\n                \"MaxNodeSize\": 50,\n                \"Available\": true,\n                \"ComputeSpecDesc\": \"2核4G\"\n            }\n        ],\n        \"CoreSpec\": [\n            {\n                \"Name\": \"SCH6\",\n                \"Cpu\": 4,\n                \"Mem\": 16,\n                \"Type\": \"STANDARD\",\n                \"DataDisk\": {\n                    \"DiskCount\": 1,\n                    \"MaxDiskSize\": 32000,\n                    \"MinDiskSize\": 100,\n                    \"DiskType\": \"CLOUD_HSSD\",\n                    \"DiskDesc\": \"增强型SSD云硬盘\"\n                },\n                \"SystemDisk\": {\n                    \"DiskCount\": 1,\n                    \"MaxDiskSize\": 50,\n                    \"MinDiskSize\": 50,\n                    \"DiskType\": \"CLOUD_PREMIUM\",\n                    \"DiskDesc\": \"高性能云硬盘\"\n                },\n                \"MaxNodeSize\": 50,\n                \"Available\": true,\n                \"ComputeSpecDesc\": \"4核16G\"\n            }\n        ],\n        \"AttachCBSSpec\": [\n            {\n                \"DiskCount\": 1,\n                \"MaxDiskSize\": 32000,\n                \"MinDiskSize\": 100,\n                \"DiskType\": \"CLOUD_HSSD\",\n                \"DiskDesc\": \"增强型SSD云硬盘\"\n            }\n        ]\n    }\n}",
+        "title": "获取集群规格"
       }
     ],
     "DescribeSqlApis": [
@@ -214,6 +358,14 @@
         "title": "示例"
       }
     ],
+    "ModifyNodeStatus": [
+      {
+        "document": "调整节点状态",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyNodeStatus\n<公共请求参数>\n\n{\n    \"InstanceId\": \"11\",\n    \"NodeInfos\": [\n        {\n            \"Status\": 0,\n            \"Ip\": \"11\",\n            \"NodeRole\": \"11\",\n            \"NodeName\": \"11\"\n        }\n    ],\n    \"OperationCode\": \"11\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx-xxx\",\n        \"FlowId\": 0,\n        \"ErrorMsg\": \"\"\n    }\n}",
+        "title": "调整节点状态"
+      }
+    ],
     "ModifySecurityGroups": [
       {
         "document": "",
@@ -254,6 +406,22 @@
         "title": "开启或关闭资源组"
       }
     ],
+    "OpenBackUp": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OpenBackUp\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdwdoris-itrbbn1z\",\n    \"CosBucketName\": \"carson-test-1301087413\",\n    \"OperationType\": \"open\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3f8a0da4-f950-4ab5-9b20-c347528bd220\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "RecoverBackUpJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RecoverBackUpJob\n<公共请求参数>\n\n{\n    \"InstanceId\": \"1\",\n    \"BackUpJobId\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "ReduceInstance": [
       {
         "document": "",
@@ -268,6 +436,14 @@
         "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResizeDisk\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdwdoris-asdfxw\",\n    \"Type\": \"CORE\",\n    \"DiskSize\": 3000\n}",
         "output": "{\n    \"Response\": {\n        \"FlowId\": \"1231\",\n        \"InstanceId\": \"cdwch-auqej7a\",\n        \"ErrorMsg\": \"\",\n        \"RequestId\": \"xasdfkqe2-a12q29-axdfas\"\n    }\n}",
         "title": "云盘扩容示例"
+      }
+    ],
+    "RestartClusterForConfigs": [
+      {
+        "document": "在集群配置页面修改集群接口",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RestartClusterForConfigs\n<公共请求参数>\n\n{\n    \"InstanceId\": \"1\",\n    \"ConfigName\": \"11\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx-xxx\",\n        \"FlowId\": 0,\n        \"ErrorMsg\": \"\"\n    }\n}",
+        "title": "修改集群配置接口"
       }
     ],
     "RestartClusterForNode": [

@@ -3,7 +3,7 @@
     "CreateNameList": {
       "document": "创建黑白名单列表的数据 包含列表名称 列表名单类型id 关联场景id 数据类型id 记录状态 备注 数据来源 手动输入数据或cos文件key",
       "input": "CreateNameListRequest",
-      "name": "创建黑白名单列表数据",
+      "name": "创建黑白名单",
       "output": "CreateNameListResponse",
       "status": "online"
     },
@@ -24,28 +24,28 @@
     "DescribeNameList": {
       "document": "列表展示黑白名单列表数据, 包含列表名称, 名单类型, 数据类型, 数据来源, 描述, 状态等",
       "input": "DescribeNameListRequest",
-      "name": "黑白名单列表",
+      "name": "查询黑白名单",
       "output": "DescribeNameListResponse",
       "status": "online"
     },
     "DescribeNameListDataList": {
       "document": "黑白名单详情数据展示 名单id 客户appid uin 数据内容 开始时间和结束时间 状态 描述",
       "input": "DescribeNameListDataListRequest",
-      "name": "黑白名单详情列表",
+      "name": "查询黑白名单数据",
       "output": "DescribeNameListDataListResponse",
       "status": "online"
     },
     "DescribeNameListDetail": {
       "document": "查询黑白名单列表详情",
       "input": "DescribeNameListDetailRequest",
-      "name": "查询黑白名单列表详情",
+      "name": "查询黑白名单详情",
       "output": "DescribeNameListDetailResponse",
       "status": "online"
     },
     "ImportNameListData": {
       "document": "新增黑白名单详情数据 手动导入或批量导入",
       "input": "ImportNameListDataRequest",
-      "name": "黑白名单详情新增详情",
+      "name": "添加黑白名单数据",
       "output": "ImportNameListDataResponse",
       "status": "online"
     },
@@ -59,14 +59,14 @@
     "ModifyNameList": {
       "document": "修改列表数据 列表名称 列表类型 数据类型 状态 备注",
       "input": "ModifyNameListRequest",
-      "name": "修改黑白名单列表数据",
+      "name": "修改黑白名单",
       "output": "ModifyNameListResponse",
       "status": "online"
     },
     "ModifyNameListData": {
       "document": "修改黑白名单列表详情 详情内容 开始和结束时间 状态 备注等",
       "input": "ModifyNameListDataRequest",
-      "name": "修改名单列表详情数据",
+      "name": "修改黑白名单数据",
       "output": "ModifyNameListDataResponse",
       "status": "online"
     }
@@ -126,7 +126,7 @@
         {
           "disabled": false,
           "document": "业务入参",
-          "example": "",
+          "example": "无",
           "member": "InputCreateNameListFront",
           "name": "BusinessSecurityData",
           "required": true,
@@ -141,7 +141,7 @@
         {
           "disabled": false,
           "document": "业务出参",
-          "example": "",
+          "example": "无",
           "member": "OutputCreateNameListFront",
           "name": "Data",
           "output_required": true,
@@ -231,7 +231,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "黑白名单具体数据",
+          "document": "名单数据内容",
           "example": "无",
           "member": "string",
           "name": "DataContent",
@@ -240,7 +240,7 @@
         },
         {
           "disabled": false,
-          "document": "黑白名单数据描述",
+          "document": "名单数据描述",
           "example": "无",
           "member": "string",
           "name": "DataRemark",
@@ -249,7 +249,7 @@
         },
         {
           "disabled": false,
-          "document": "黑白名单开始时间",
+          "document": "名单数据开始时间，时间格式示例\"2024-05-05 12:10:15\"",
           "example": "无",
           "member": "string",
           "name": "StartTime",
@@ -258,7 +258,7 @@
         },
         {
           "disabled": false,
-          "document": "黑白名单结束时间",
+          "document": "名单数据结束时间，时间格式示例\"2024-05-05 12:10:15\"",
           "example": "无",
           "member": "string",
           "name": "EndTime",
@@ -311,7 +311,7 @@
         {
           "disabled": false,
           "document": "业务入参",
-          "example": "",
+          "example": "无",
           "member": "InputDeleteNameListFront",
           "name": "BusinessSecurityData",
           "required": true,
@@ -326,7 +326,7 @@
         {
           "disabled": false,
           "document": "业务出参",
-          "example": "",
+          "example": "无",
           "member": "OutputDeleteNameListFront",
           "name": "Data",
           "output_required": true,
@@ -348,7 +348,7 @@
         {
           "disabled": false,
           "document": "业务入参",
-          "example": "",
+          "example": "无",
           "member": "InputDescribeDataListFront",
           "name": "BusinessSecurityData",
           "required": true,
@@ -363,7 +363,7 @@
         {
           "disabled": false,
           "document": "业务出参",
-          "example": "",
+          "example": "无",
           "member": "OutputDescribeDataListFrontData",
           "name": "Data",
           "output_required": true,
@@ -422,7 +422,7 @@
         {
           "disabled": false,
           "document": "业务入参",
-          "example": "",
+          "example": "无",
           "member": "InputDescribeNameListFront",
           "name": "BusinessSecurityData",
           "required": true,
@@ -437,7 +437,7 @@
         {
           "disabled": false,
           "document": "业务出参",
-          "example": "",
+          "example": "无",
           "member": "OutputDescribeNameListFrontFixListData",
           "name": "Data",
           "output_required": true,
@@ -459,7 +459,7 @@
         {
           "disabled": false,
           "document": "业务入参",
-          "example": "",
+          "example": "无",
           "member": "InputImportNameListDataFront",
           "name": "BusinessSecurityData",
           "required": true,
@@ -474,7 +474,7 @@
         {
           "disabled": false,
           "document": "业务出参",
-          "example": "",
+          "example": "无",
           "member": "OutputImportNameListDataFront",
           "name": "Data",
           "output_required": true,
@@ -491,11 +491,11 @@
       "type": "object"
     },
     "InputCreateNameListFront": {
-      "document": "添加名单入参",
+      "document": "创建黑白名单入参",
       "members": [
         {
           "disabled": false,
-          "document": "列表名称",
+          "document": "名单名称",
           "example": "无",
           "member": "string",
           "name": "ListName",
@@ -513,7 +513,7 @@
         },
         {
           "disabled": false,
-          "document": "数据类型id [1 手机号 2 QQopenId 3 wechatOpenId 4 ip 6 idfa 7 imei]",
+          "document": "数据类型[1 手机号 2 qqOpenId 3 2echatOpenId 4 ip 6 idfa 7 imei]",
           "example": "无",
           "member": "int64",
           "name": "DataType",
@@ -522,7 +522,7 @@
         },
         {
           "disabled": false,
-          "document": "记录状态 [1 启用 2 停用 3 已删除]",
+          "document": "记录状态 [1 启用 2 停用]",
           "example": "无",
           "member": "int64",
           "name": "Status",
@@ -531,7 +531,7 @@
         },
         {
           "disabled": false,
-          "document": "关联场景id",
+          "document": "关联场景ID",
           "example": "无",
           "member": "int64",
           "name": "EventId",
@@ -549,7 +549,7 @@
         },
         {
           "disabled": false,
-          "document": "数据来源 [1 本地上传 2 手工录入]",
+          "document": "数据来源，固定传2（手工录入）",
           "example": "无",
           "member": "int64",
           "name": "DataSource",
@@ -636,7 +636,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "黑白名单数据ID列表",
+          "document": "黑白名单数据ID集合",
           "example": "无",
           "member": "int64",
           "name": "NameListDataIdList",
@@ -647,11 +647,11 @@
       "usage": "in"
     },
     "InputDeleteNameListFront": {
-      "document": "修改名单列表状态",
+      "document": "删除黑白名单入参",
       "members": [
         {
           "disabled": false,
-          "document": "修改名单列表状态",
+          "document": "名单ID",
           "example": "无",
           "member": "int64",
           "name": "NameListId",
@@ -660,7 +660,7 @@
         },
         {
           "disabled": false,
-          "document": "记录状态 [1 启用 2 停用 3 已删除]",
+          "document": "名单状态",
           "example": "无",
           "member": "int64",
           "name": "Status",
@@ -671,11 +671,11 @@
       "usage": "in"
     },
     "InputDescribeDataListFront": {
-      "document": "黑白名单详情列表数据入参",
+      "document": "查询黑白名单数据入参",
       "members": [
         {
           "disabled": false,
-          "document": "黑白名单列表Id",
+          "document": "名单ID",
           "example": "无",
           "member": "int64",
           "name": "NameListId",
@@ -684,7 +684,7 @@
         },
         {
           "disabled": false,
-          "document": "分页当前页数",
+          "document": "当前页数",
           "example": "无",
           "member": "int64",
           "name": "PageNumber",
@@ -693,7 +693,7 @@
         },
         {
           "disabled": false,
-          "document": "当前页数量",
+          "document": "每页显示条数\t",
           "example": "无",
           "member": "int64",
           "name": "PageSize",
@@ -702,7 +702,7 @@
         },
         {
           "disabled": false,
-          "document": "搜索关键字 匹配内容或备注",
+          "document": "搜索关键字，按照名单数据名称或加密名单数据名称搜索",
           "example": "无",
           "member": "string",
           "name": "KeyWord",
@@ -711,7 +711,7 @@
         },
         {
           "disabled": false,
-          "document": "黑白名单列表状态",
+          "document": "黑白名单列表状态[1 启用 2 停用]",
           "example": "无",
           "member": "int64",
           "name": "Status",
@@ -722,11 +722,11 @@
       "usage": "in"
     },
     "InputDescribeNameListDetail": {
-      "document": "查询黑白名单列表详情业务入参",
+      "document": "查询黑白名单详情入参",
       "members": [
         {
           "disabled": false,
-          "document": "名单列表ID",
+          "document": "名单ID",
           "example": "无",
           "member": "int64",
           "name": "NameListId",
@@ -737,7 +737,7 @@
       "usage": "in"
     },
     "InputDescribeNameListFront": {
-      "document": "黑白名单列表入参",
+      "document": "查询黑白名单入参",
       "members": [
         {
           "disabled": false,
@@ -750,7 +750,7 @@
         },
         {
           "disabled": false,
-          "document": "分页大小",
+          "document": "每页显示条数",
           "example": "无",
           "member": "int64",
           "name": "PageSize",
@@ -768,7 +768,7 @@
         },
         {
           "disabled": false,
-          "document": "名单类型 [1.黑名单 2.白名单 3.其他名单]",
+          "document": "名单类型 [1 黑名单 2 白名单]",
           "example": "无",
           "member": "int64",
           "name": "ListType",
@@ -777,7 +777,7 @@
         },
         {
           "disabled": false,
-          "document": "数据类型ID",
+          "document": "数据类型[1 手机号 2 qqOpenId 3 wechatOpenId 4 ip 6 idfa 7 imei]",
           "example": "无",
           "member": "int64",
           "name": "DataType",
@@ -786,7 +786,7 @@
         },
         {
           "disabled": false,
-          "document": "搜索关键字",
+          "document": "关键字，按照名单名称搜索",
           "example": "无",
           "member": "string",
           "name": "KeyWord",
@@ -795,7 +795,7 @@
         },
         {
           "disabled": false,
-          "document": "记录状态",
+          "document": "记录状态[1 启用 2 停用]",
           "example": "无",
           "member": "int64",
           "name": "Status",
@@ -804,7 +804,7 @@
         },
         {
           "disabled": false,
-          "document": "黑白名单列表Id",
+          "document": "名单ID",
           "example": "无",
           "member": "int64",
           "name": "NameListId",
@@ -841,11 +841,11 @@
       "usage": "in"
     },
     "InputImportNameListDataFront": {
-      "document": "添加详情列表数据",
+      "document": "添加名单数据入参",
       "members": [
         {
           "disabled": false,
-          "document": "黑白名单列表Id",
+          "document": "名单ID",
           "example": "无",
           "member": "int64",
           "name": "NameListId",
@@ -854,7 +854,7 @@
         },
         {
           "disabled": false,
-          "document": "数据来源 [2 手工录入]",
+          "document": "数据来源，固定传2（手工录入）",
           "example": "无",
           "member": "int64",
           "name": "DataSource",
@@ -1123,11 +1123,11 @@
       "usage": "in"
     },
     "InputModifyNameFront": {
-      "document": "修改黑白名单列表入参",
+      "document": "修改黑白名单入参",
       "members": [
         {
           "disabled": false,
-          "document": "黑白名单列表id",
+          "document": "名单ID",
           "example": "无",
           "member": "int64",
           "name": "NameListId",
@@ -1136,7 +1136,7 @@
         },
         {
           "disabled": false,
-          "document": "列表名称",
+          "document": "名单名称",
           "example": "无",
           "member": "string",
           "name": "ListName",
@@ -1145,7 +1145,7 @@
         },
         {
           "disabled": false,
-          "document": "列表类型id [1 黑名单 2 白名单 3 其他名单]",
+          "document": "名单类型[1 黑名单 2 白名单]",
           "example": "无",
           "member": "int64",
           "name": "ListType",
@@ -1154,7 +1154,7 @@
         },
         {
           "disabled": false,
-          "document": "数据类型id",
+          "document": "数据类型[1 手机号 2 qqOpenId 3 2echatOpenId 4 ip 6 idfa 7 imei]",
           "example": "无",
           "member": "int64",
           "name": "DataType",
@@ -1163,7 +1163,7 @@
         },
         {
           "disabled": false,
-          "document": "名单状态 [1 启用 2 停用 3 已删除]",
+          "document": "名单状态 [1 启用 2 停用]",
           "example": "无",
           "member": "int64",
           "name": "Status",
@@ -1183,11 +1183,11 @@
       "usage": "in"
     },
     "InputModifyNameListDataFront": {
-      "document": "修改名单列表详情数据入参",
+      "document": "名单数据集合",
       "members": [
         {
           "disabled": false,
-          "document": "黑白名单详情列表数据id",
+          "document": "名单数据ID",
           "example": "无",
           "member": "int64",
           "name": "NameListDataId",
@@ -1196,7 +1196,7 @@
         },
         {
           "disabled": false,
-          "document": "数据内容",
+          "document": "名单数据内容",
           "example": "无",
           "member": "string",
           "name": "DataContent",
@@ -1205,7 +1205,7 @@
         },
         {
           "disabled": false,
-          "document": "开始时间",
+          "document": "名单数据开始时间，时间格式示例\"2024-05-05 12:10:15\"",
           "example": "无",
           "member": "string",
           "name": "StartTime",
@@ -1214,7 +1214,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间",
+          "document": "名单数据结束时间，时间格式示例\"2024-05-05 12:10:15\"",
           "example": "无",
           "member": "string",
           "name": "EndTime",
@@ -1223,7 +1223,7 @@
         },
         {
           "disabled": false,
-          "document": "记录状态 [-2 已删除 -1 草稿箱 0 草稿 1 启用 2 停用]",
+          "document": "记录状态 [1 启用 2 停用]",
           "example": "无",
           "member": "int64",
           "name": "Status",
@@ -1232,7 +1232,7 @@
         },
         {
           "disabled": false,
-          "document": "描述",
+          "document": "名单数据描述",
           "example": "无",
           "member": "string",
           "name": "Remark",
@@ -1243,17 +1243,16 @@
       "usage": "in"
     },
     "InputModifyNameListDataFrontListData": {
-      "document": "黑白名单详情修改数据组入参",
+      "document": "修改黑白名单数据入参",
       "members": [
         {
           "disabled": false,
-          "document": "黑白名单详情列表数据",
-          "example": "",
+          "document": "名单数据集合",
+          "example": "无",
           "member": "InputModifyNameListDataFront",
           "name": "DataList",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         }
       ],
       "usage": "in"
@@ -1310,7 +1309,7 @@
         {
           "disabled": false,
           "document": "业务入参",
-          "example": "",
+          "example": "无",
           "member": "InputModifyNameListDataFrontListData",
           "name": "BusinessSecurityData",
           "required": true,
@@ -1325,7 +1324,7 @@
         {
           "disabled": false,
           "document": "业务出参",
-          "example": "",
+          "example": "无",
           "member": "OutputModifyNameListFront",
           "name": "Data",
           "output_required": true,
@@ -1347,7 +1346,7 @@
         {
           "disabled": false,
           "document": "业务入参",
-          "example": "",
+          "example": "无",
           "member": "InputModifyNameFront",
           "name": "BusinessSecurityData",
           "required": true,
@@ -1362,7 +1361,7 @@
         {
           "disabled": false,
           "document": "业务出参",
-          "example": "",
+          "example": "无",
           "member": "OutputModifyNameFront",
           "name": "Data",
           "output_required": true,
@@ -1494,35 +1493,35 @@
       "usage": "out"
     },
     "OutputCreateNameListFront": {
-      "document": "创建黑白名单列表出参",
+      "document": "创建黑白名单出参",
       "members": [
         {
           "disabled": false,
-          "document": "错误码",
-          "example": "",
+          "document": "错误码，0 表示成功，非0表示失败错误码。 0：成功 1002：参数错误 4300：未开通服务 6000：系统内部错误",
+          "example": "无",
           "member": "int64",
           "name": "Code",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "错误信息",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Message",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "空数组\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Value",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -1530,11 +1529,11 @@
       "usage": "out"
     },
     "OutputDeleteNameListData": {
-      "document": "删除黑白名单接口业务出参",
+      "document": "删除黑白名单出参",
       "members": [
         {
           "disabled": false,
-          "document": "错误码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "错误码，0 表示成功，非0表示失败错误码。 0：成功 1002：参数错误 4300：未开通服务 6000：系统内部错误\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
           "name": "Code",
@@ -1566,35 +1565,35 @@
       "usage": "out"
     },
     "OutputDeleteNameListFront": {
-      "document": "删除名单列表状态出参",
+      "document": "删除黑白名单出参",
       "members": [
         {
           "disabled": false,
-          "document": "错误码",
-          "example": "",
+          "document": "错误码，0 表示成功，非0表示失败错误码。 0：成功 1002：参数错误 4300：未开通服务 6000：系统内部错误",
+          "example": "无",
           "member": "int64",
           "name": "Code",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "错误信息",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Message",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "空数组\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Value",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -1602,11 +1601,11 @@
       "usage": "out"
     },
     "OutputDescribeDataListFront": {
-      "document": "黑白列表详情出参",
+      "document": "黑白名单数据信息",
       "members": [
         {
           "disabled": false,
-          "document": "名单详情id",
+          "document": "名单数据ID",
           "example": "无",
           "member": "int64",
           "name": "NameListDataId",
@@ -1616,7 +1615,7 @@
         },
         {
           "disabled": false,
-          "document": "对应黑白名单id",
+          "document": "名单ID",
           "example": "无",
           "member": "int64",
           "name": "NameListId",
@@ -1646,7 +1645,7 @@
         },
         {
           "disabled": false,
-          "document": "数据内容",
+          "document": "名单数据内容",
           "example": "无",
           "member": "string",
           "name": "DataContent",
@@ -1656,7 +1655,7 @@
         },
         {
           "disabled": false,
-          "document": "数据来源 [1 本地上传 2 手工录入]",
+          "document": "数据来源，固定传2（手工录入）",
           "example": "无",
           "member": "int64",
           "name": "DataSource",
@@ -1666,7 +1665,7 @@
         },
         {
           "disabled": false,
-          "document": "开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "名单数据开始时间，时间格式示例\"2024-05-05 12:10:15\"\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "StartTime",
@@ -1676,7 +1675,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "名单数据结束时间，时间格式示例\"2024-05-05 12:10:15\"\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "EndTime",
@@ -1686,7 +1685,7 @@
         },
         {
           "disabled": false,
-          "document": "记录状态 [-2 已删除 -1 草稿箱 0 草稿 1 启用 2 停用]",
+          "document": "名单数据状态 [1 启用 2 停用]",
           "example": "无",
           "member": "int64",
           "name": "Status",
@@ -1696,7 +1695,7 @@
         },
         {
           "disabled": false,
-          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "名单数据描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "Remark",
@@ -1706,7 +1705,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "名单数据创建时间，时间格式示例\"2024-05-05 12:10:15\"",
           "example": "无",
           "member": "string",
           "name": "CreateTime",
@@ -1746,7 +1745,7 @@
         },
         {
           "disabled": false,
-          "document": "更新时间",
+          "document": "名单数据更新时间，时间格式示例\"2024-05-05 12:10:15\"",
           "example": "无",
           "member": "string",
           "name": "UpdateTime",
@@ -1766,7 +1765,7 @@
         },
         {
           "disabled": false,
-          "document": "加密数据内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "加密名单数据内容\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "EncryptDataContent",
@@ -1778,7 +1777,7 @@
       "usage": "out"
     },
     "OutputDescribeDataListFrontData": {
-      "document": "详情列表出参数组",
+      "document": "查询黑白名单数据出参",
       "members": [
         {
           "disabled": false,
@@ -1792,7 +1791,7 @@
         },
         {
           "disabled": false,
-          "document": "OutputDescribeDataListFront 数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "OutputDescribeDataListFront",
           "name": "List",
@@ -1802,7 +1801,7 @@
         },
         {
           "disabled": false,
-          "document": "错误码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "错误码，0 表示成功，非0表示失败错误码。 0：成功 1002：参数错误 4300：未开通服务 6000：系统内部错误\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
           "name": "Code",
@@ -1822,7 +1821,7 @@
         },
         {
           "disabled": false,
-          "document": "黑白名单数据列表信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "黑白名单数据信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "OuntputDescribeDataListInfo",
           "name": "Value",
@@ -1834,11 +1833,11 @@
       "usage": "out"
     },
     "OutputDescribeNameListDetail": {
-      "document": "黑白名单列表详情业务出参",
+      "document": "黑白名单详情出参",
       "members": [
         {
           "disabled": false,
-          "document": "黑白名单列表ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "名单ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
           "name": "NameListId",
@@ -1848,7 +1847,7 @@
         },
         {
           "disabled": false,
-          "document": "黑白名单列表名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "名单名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "ListName",
@@ -1858,7 +1857,7 @@
         },
         {
           "disabled": false,
-          "document": "名单类型 [1. 黑名单 2. 白名单 3. 其他名单]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "名单类型 [1 黑名单 2 白名单]\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
           "name": "ListType",
@@ -1868,7 +1867,7 @@
         },
         {
           "disabled": false,
-          "document": "数据类型，1:手机号 2:qq openId  3:wechatOpenId  4:ip  5:devToken 6:idfa 7:imei\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据类型[1 手机号 2 qqOpenId 3 2echatOpenId 4 ip 6 idfa 7 imei]\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
           "name": "DataType",
@@ -1888,7 +1887,7 @@
         },
         {
           "disabled": false,
-          "document": "名单列表状态，1:启用、2：停用、3：已删除\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "名单列表状态 [1 启用 2 停用]\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
           "name": "Status",
@@ -1898,7 +1897,7 @@
         },
         {
           "disabled": false,
-          "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "Remark",
@@ -1908,7 +1907,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建时间，时间格式示例\"2024-05-05 12:10:15\"\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "CreateTime",
@@ -1918,7 +1917,7 @@
         },
         {
           "disabled": false,
-          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "更新时间，时间格式示例\"2024-05-05 12:10:15\"\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "UpdateTime",
@@ -1928,7 +1927,7 @@
         },
         {
           "disabled": false,
-          "document": "加密类型，0: 无需加密，1: MD5加密，2: SHA256加密\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "加密类型 [0 无需加密，1 MD5加密，2 SHA256加密]\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
           "name": "EncryptionType",
@@ -1940,11 +1939,11 @@
       "usage": "out"
     },
     "OutputDescribeNameListDetailFront": {
-      "document": "列表详情业务出参",
+      "document": "查询列表详情出参",
       "members": [
         {
           "disabled": false,
-          "document": "错误码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "错误码，0 表示成功，非0表示失败错误码。 0：成功 1002：参数错误 4300：未开通服务 6000：系统内部错误\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
           "name": "Code",
@@ -1976,7 +1975,7 @@
       "usage": "out"
     },
     "OutputDescribeNameListFrontFix": {
-      "document": "黑白名单列表出参修复API环境错误",
+      "document": "黑白名单信息",
       "members": [
         {
           "disabled": false,
@@ -2020,7 +2019,7 @@
         },
         {
           "disabled": false,
-          "document": "名单类型 [1. 黑名单 2. 白名单 3. 其他名单]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "名单类型 [1 黑名单 2 白名单]\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
           "name": "ListType",
@@ -2030,7 +2029,7 @@
         },
         {
           "disabled": false,
-          "document": "数据类型",
+          "document": "数据类型[1 手机号 2 qqOpenId 3 2echatOpenId 4 ip 6 idfa 7 imei]",
           "example": "无",
           "member": "int64",
           "name": "DataType",
@@ -2050,7 +2049,7 @@
         },
         {
           "disabled": false,
-          "document": "记录状态 [1 启用 2 停用 3 已删除]",
+          "document": "记录状态 [1 启用 2 停用]",
           "example": "无",
           "member": "int64",
           "name": "Status",
@@ -2070,7 +2069,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "创建时间，时间格式示例\"2024-05-05 12:10:15\"",
           "example": "无",
           "member": "string",
           "name": "CreateTime",
@@ -2100,7 +2099,7 @@
         },
         {
           "disabled": false,
-          "document": "更新时间",
+          "document": "更新时间，时间格式示例\"2024-05-05 12:10:15\"",
           "example": "无",
           "member": "string",
           "name": "UpdateTime",
@@ -2142,11 +2141,11 @@
       "usage": "out"
     },
     "OutputDescribeNameListFrontFixListData": {
-      "document": "OutputDescribeNameListFrontFix 数组对象",
+      "document": "查询黑白名单出参",
       "members": [
         {
           "disabled": false,
-          "document": "数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
           "name": "Count",
@@ -2156,7 +2155,7 @@
         },
         {
           "disabled": false,
-          "document": "数组对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "OutputDescribeNameListFrontFix",
           "name": "List",
@@ -2166,7 +2165,7 @@
         },
         {
           "disabled": false,
-          "document": "错误码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "错误码，0 表示成功，非0表示失败错误码。 0：成功 1002：参数错误 4300：未开通服务 6000：系统内部错误\n\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
           "name": "Code",
@@ -2198,7 +2197,7 @@
       "usage": "out"
     },
     "OutputDescribeNameListInfo": {
-      "document": "查询黑白名单列表Value",
+      "document": "黑白名单信息",
       "members": [
         {
           "disabled": false,
@@ -2224,35 +2223,35 @@
       "usage": "out"
     },
     "OutputImportNameListDataFront": {
-      "document": "黑白名单详情新增详情出参",
+      "document": "添加黑白名单数据出参",
       "members": [
         {
           "disabled": false,
-          "document": "错误码",
-          "example": "",
+          "document": "错误码，0 表示成功，非0表示失败错误码。 0：成功 1002：参数错误 4300：未开通服务 6000：系统内部错误",
+          "example": "无",
           "member": "int64",
           "name": "Code",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "错误信息",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Message",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "空数组\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Value",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -2402,35 +2401,35 @@
       "usage": "out"
     },
     "OutputModifyNameFront": {
-      "document": "修改黑白名单列表出参",
+      "document": "修改黑白名单出参",
       "members": [
         {
           "disabled": false,
-          "document": "错误码",
-          "example": "",
+          "document": "错误码，0 表示成功，非0表示失败错误码。 0：成功 1002：参数错误 4300：未开通服务 6000：系统内部错误",
+          "example": "无",
           "member": "int64",
           "name": "Code",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "错误信息",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Message",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "空数组\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Value",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -2438,35 +2437,35 @@
       "usage": "out"
     },
     "OutputModifyNameListFront": {
-      "document": "修改黑白名单列表详情出参",
+      "document": "修改黑白名单数据出参",
       "members": [
         {
           "disabled": false,
-          "document": "错误码",
-          "example": "",
+          "document": "错误码，0 表示成功，非0表示失败错误码。 0：成功 1002：参数错误 4300：未开通服务 6000：系统内部错误",
+          "example": "无",
           "member": "int64",
           "name": "Code",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "错误信息",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Message",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "空数组\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Value",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }

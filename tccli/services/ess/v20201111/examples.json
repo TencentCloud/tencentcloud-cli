@@ -248,7 +248,7 @@
       {
         "document": "企业需要员工授权执业章使用权限给企业时，调用接口产生二维码",
         "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateEmployeeQualificationSealQrCode\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDxVwUyKQWho8CUuO4zjEyQOAgwvr4Zy\"\n    },\n    \"HintText\": \"请授权执业章\"\n}",
-        "output": "{\n    \"Response\": {\n        \"QrcodeBase64\": \"/9ji1/Z**************/2Q==\",\n        \"RequestId\": \"s1720524882444991481\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"QrcodeBase64\": \"/9j/2wCEAAEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQ（剩余的其他图片base64字符串省略）\",\n        \"RequestId\": \"5e94bc41-4767-4e98-943d-b9a455499847\"\n    }\n}",
         "title": "生成员工执业章授权二维码"
       }
     ],
@@ -699,8 +699,8 @@
     "CreateIntegrationSubOrganizationActiveRecord": [
       {
         "document": "通过此接口，创建子企业激活记录，集团企业管理员可针对未激活的成员企业进行授权。",
-        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateIntegrationSubOrganizationActiveRecord\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"abc\"\n    },\n    \"SubOrganizationIds\": [\n        \"123456\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"FailedSubOrganizationIds\": [],\n        \"RequestId\": \"yDxbWUyKQDxgXVUuO4zjEB8mxCcDjAyF\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateIntegrationSubOrganizationActiveRecord\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDxVwUyKQWho8CUuO4zjEyQOAgwvr4Zy\"\n    },\n    \"SubOrganizationIds\": [\n        \"yDxbWUyKQDxgXVUuO4zjEB8mxCcDjAyF\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"FailedSubOrganizationIds\": [],\n        \"RequestId\": \"c858d512-c8fe-4c98-bfa4-f704947698d7\"\n    }\n}",
         "title": "创建成员企业激活记录"
       }
     ],

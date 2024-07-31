@@ -3006,6 +3006,15 @@
           "name": "SourceClusterNamespace",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "拓展类型",
+          "example": "无",
+          "member": "string",
+          "name": "ExtentType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

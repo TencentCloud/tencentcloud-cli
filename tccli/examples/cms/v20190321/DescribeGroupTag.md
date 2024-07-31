@@ -1,6 +1,6 @@
 **Example 1: 正常调用**
 
-
+正常调用
 
 Input: 
 
@@ -82,7 +82,7 @@ Input:
 ```
 tccli cms DescribeGroupTag --cli-unfold-argument  \
     --HideStatus True \
-    --TagType xx
+    --TagType abc
 ```
 
 Output: 
@@ -95,19 +95,19 @@ Output:
                     {
                         "LabelGroupList": [
                             {
-                                "GroupEname": "xx",
-                                "GroupMsg": "xx",
-                                "GroupName": "xx"
+                                "GroupEname": "abc",
+                                "GroupMsg": "abc",
+                                "GroupName": "abc"
                             }
                         ],
-                        "GroupClassName": "xx",
-                        "GroupClassEname": "xx"
+                        "GroupClassName": "abc",
+                        "GroupClassEname": "abc"
                     }
                 ],
-                "TagType": "xx"
+                "TagType": "abc"
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```
