@@ -17,14 +17,14 @@
     "CreateCluster": {
       "document": "创建EMR集群实例",
       "input": "CreateClusterRequest",
-      "name": "创建EMR集群实例",
+      "name": "创建EMR集群实例(新)",
       "output": "CreateClusterResponse",
       "status": "online"
     },
     "CreateInstance": {
       "document": "创建EMR集群实例",
       "input": "CreateInstanceRequest",
-      "name": "创建EMR实例",
+      "name": "创建EMR实例(旧)",
       "output": "CreateInstanceResponse",
       "status": "online"
     },
@@ -2097,6 +2097,15 @@
           "name": "ZoneResourceConfiguration",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "cos桶路径，创建StarRocks存算分离集群时用到",
+          "example": "无",
+          "member": "string",
+          "name": "CosBucket",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2110,7 +2119,7 @@
           "example": "emr-xxxxx",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2413,6 +2422,15 @@
           "name": "MultiZoneSettings",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "cos桶路径，创建StarRocks存算分离集群时用到",
+          "example": "无",
+          "member": "string",
+          "name": "CosBucket",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

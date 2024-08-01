@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli ess CreateIntegrationSubOrganizationActiveRecord --cli-unfold-argument  \
-    --Operator.UserId abc \
-    --SubOrganizationIds 123456
+    --Operator.UserId yDxVwUyKQWho8CUuO4zjEyQOAgwvr4Zy \
+    --SubOrganizationIds yDxbWUyKQDxgXVUuO4zjEB8mxCcDjAyF
 ```
 
 Output: 
@@ -15,7 +15,7 @@ Output:
 {
     "Response": {
         "FailedSubOrganizationIds": [],
-        "RequestId": "yDxbWUyKQDxgXVUuO4zjEB8mxCcDjAyF"
+        "RequestId": "c858d512-c8fe-4c98-bfa4-f704947698d7"
     }
 }
 ```

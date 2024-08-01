@@ -408,6 +408,14 @@
         "title": "获取组织成员访问身份列表"
       }
     ],
+    "ListOrganizationService": [
+      {
+        "document": "获取集团服务设置列表",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListOrganizationService\n<公共请求参数>\n\n{\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"ServiceId\": 1,\n                \"ProductName\": \"CloudAudit\",\n                \"IsAssign\": 1,\n                \"CanAssignCount\": 5,\n                \"Description\": \"\",\n                \"MemberNum\": \"0\",\n                \"Document\": \"\",\n                \"ConsoleUrl\": \"\",\n                \"IsUsageStatus\": 2,\n                \"Product\": \"cloudaudit\",\n                \"ServiceGrant\": 2,\n                \"GrantStatus\": \"Disabled\",\n                \"IsSetManagementScope\": 2\n            }\n        ],\n        \"RequestId\": \"1d744bef-fa56-40e9-8e3b-5a88b122ad5e\",\n        \"Total\": 1\n    }\n}",
+        "title": "获取集团服务设置列表"
+      }
+    ],
     "ListPolicies": [
       {
         "document": "查看策略列表数据",

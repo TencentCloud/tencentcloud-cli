@@ -428,6 +428,17 @@ Output:
 
 推荐使用 API Explorer 调用接口，见本文档顶部说明。该示例说明hunyuan-vision模型如何调用接口。
 
+ImageUrl.Url 支持图片链接以及图片 base64 两种方式
+jpeg 图片转 base64 示例 (其他图片格式注意修改为对应的 MIME 类型, 如 image/png, image/webp, image/bmp 等):
+
+```python
+import base64
+
+with open("1.jpeg", 'rb') as image_file:
+    encoded_image = base64.b64encode(image_file.read())
+    print("data:image/jpeg;base64,"+encoded_image.decode('utf-8'))
+```
+
 Input: 
 
 ```

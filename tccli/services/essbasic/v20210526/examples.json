@@ -756,7 +756,7 @@
       {
         "document": "企业需要员工授权执业章使用权限给企业时，调用接口产生二维码",
         "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateEmployeeQualificationSealQrCode\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"yDwfwUUgygormhg1UuS2eARxjMT0mxAw\",\n        \"ProxyOrganizationOpenId\": \"org_zhangsan\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"n02468\"\n        }\n    },\n    \"HintText\": \"我是提示文字\"\n}",
-        "output": "{\n    \"Response\": {\n        \"QrcodeBase64\": \"/9ji1/Z**************/2Q==\",\n        \"RequestId\": \"s1720524882444991481\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"QrcodeBase64\": \"/9j/2wCEAAEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQ（剩余的其他图片base64字符串省略）\",\n        \"RequestId\": \"5e94bc41-4767-4e98-943d-b9a455499847\"\n    }\n}",
         "title": "生成员工执业章授权二维码"
       }
     ],

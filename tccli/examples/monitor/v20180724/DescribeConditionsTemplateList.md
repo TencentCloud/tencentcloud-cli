@@ -19,83 +19,100 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "853dafdc-22d4-4e9d-88a7-ebc43abf7cef",
+        "Total": 0,
         "TemplateGroupList": [
             {
                 "Conditions": [
                     {
                         "AlarmNotifyPeriod": 0,
                         "AlarmNotifyType": 0,
-                        "CalcType": "",
-                        "CalcValue": "",
-                        "ContinueTime": "",
-                        "MetricDisplayName": "机器重启",
-                        "MetricID": 25,
-                        "Period": 60,
-                        "RuleID": 5001158,
-                        "Unit": ""
+                        "CalcType": "abc",
+                        "CalcValue": "abc",
+                        "ContinueTime": "abc",
+                        "MetricID": 0,
+                        "MetricDisplayName": "abc",
+                        "Period": 0,
+                        "RuleID": 0,
+                        "Unit": "abc",
+                        "IsAdvanced": 0,
+                        "IsOpen": 0,
+                        "ProductId": "abc",
+                        "HierarchicalValue": {
+                            "Remind": "abc",
+                            "Warn": "abc",
+                            "Serious": "abc"
+                        }
                     }
                 ],
                 "EventConditions": [
                     {
-                        "AlarmNotifyPeriod": "0",
-                        "AlarmNotifyType": "0",
-                        "EventDisplayName": "ping不可达",
-                        "EventID": "42",
-                        "RuleID": "5001160"
+                        "AlarmNotifyPeriod": "abc",
+                        "AlarmNotifyType": "abc",
+                        "EventID": "abc",
+                        "EventDisplayName": "abc",
+                        "RuleID": "abc",
+                        "MetricName": "abc"
                     }
                 ],
-                "GroupID": 1998664,
-                "GroupName": "test",
-                "InsertTime": 1567074714,
-                "LastEditUin": 1500000687,
-                "IsUnionRule": 0,
                 "PolicyGroups": [
                     {
                         "CanSetDefault": true,
-                        "Enable": true,
-                        "GroupID": 1998665,
-                        "GroupName": "test2",
-                        "InsertTime": 1567075011,
+                        "GroupID": 0,
+                        "GroupName": "abc",
+                        "InsertTime": 0,
                         "IsDefault": 0,
-                        "LastEditUin": 1500000687,
-                        "NoShieldedInstanceCount": 1,
-                        "ParentGroupID": 1998664,
+                        "Enable": true,
+                        "LastEditUin": 0,
+                        "NoShieldedInstanceCount": 0,
+                        "ParentGroupID": 0,
                         "ProjectID": 0,
                         "ReceiverInfos": [
                             {
-                                "EndTime": 57599,
-                                "NeedSendNotice": 1,
+                                "EndTime": 0,
+                                "NeedSendNotice": 0,
                                 "NotifyWay": [
-                                    "EMAIL",
-                                    "SMS"
+                                    "abc"
                                 ],
-                                "PersonInterval": 60,
-                                "ReceiverGroupList": null,
-                                "ReceiverType": "group",
-                                "ReceiverUserList": null,
+                                "PersonInterval": 0,
+                                "ReceiverGroupList": [
+                                    0
+                                ],
+                                "ReceiverType": "abc",
+                                "ReceiverUserList": [
+                                    0
+                                ],
                                 "RecoverNotify": [
-                                    "SMS"
+                                    "abc"
                                 ],
-                                "RoundInterval": 60,
-                                "RoundNumber": 2,
-                                "SendFor": null,
-                                "StartTime": 57600,
-                                "UIDList": null
+                                "RoundInterval": 0,
+                                "RoundNumber": 0,
+                                "SendFor": [
+                                    "abc"
+                                ],
+                                "StartTime": 0,
+                                "UIDList": [
+                                    0
+                                ]
                             }
                         ],
-                        "Remark": "test2",
-                        "TotalInstanceCount": 1,
-                        "UpdateTime": 1567075012,
-                        "ViewName": "cvm_device"
+                        "Remark": "abc",
+                        "UpdateTime": 0,
+                        "TotalInstanceCount": 0,
+                        "ViewName": "abc",
+                        "IsUnionRule": 0
                     }
                 ],
-                "Remark": "test",
-                "UpdateTime": 1567074881,
-                "ViewName": "cvm_device"
+                "GroupID": 0,
+                "GroupName": "abc",
+                "InsertTime": 0,
+                "LastEditUin": 0,
+                "Remark": "abc",
+                "UpdateTime": 0,
+                "ViewName": "abc",
+                "IsUnionRule": 0
             }
         ],
-        "Total": 1
+        "RequestId": "abc"
     }
 }
 ```

@@ -26184,6 +26184,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "生成的字幕文件格式，填空字符串表示不生成字幕文件，可选值：\n<li>vtt：生成 WebVTT 字幕文件。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SubtitleFormat",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -26215,6 +26226,15 @@
           "example": "无",
           "member": "string",
           "name": "DestinationLanguage",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "生成的字幕文件格式，填空字符串表示不生成字幕文件，可选值：\n<li>vtt：生成 WebVTT 字幕文件。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "SubtitleFormat",
           "required": false,
           "type": "string"
         }

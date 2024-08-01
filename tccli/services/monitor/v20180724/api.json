@@ -3246,7 +3246,7 @@
         },
         {
           "disabled": false,
-          "document": "回调通知 最多3个",
+          "document": "回调通知 最多6个",
           "example": "无",
           "member": "URLNotice",
           "name": "URLNotices",
@@ -3283,7 +3283,7 @@
           "example": "notice-abcdef",
           "member": "string",
           "name": "NoticeId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8056,7 +8056,7 @@
           "example": "1",
           "member": "int64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8066,7 +8066,7 @@
           "example": "无",
           "member": "TemplateGroup",
           "name": "TemplateGroupList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -15010,7 +15010,7 @@
         },
         {
           "disabled": false,
-          "document": "回调通知 最多3个",
+          "document": "回调通知 最多6个",
           "example": "无",
           "member": "URLNotice",
           "name": "URLNotices",

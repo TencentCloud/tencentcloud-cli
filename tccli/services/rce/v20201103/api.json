@@ -1,10 +1,73 @@
 {
   "actions": {
+    "CreateNameList": {
+      "document": "创建黑白名单列表的数据 包含列表名称 列表名单类型id 关联场景id 数据类型id 记录状态 备注 数据来源 手动输入数据或cos文件key",
+      "input": "CreateNameListRequest",
+      "name": "创建黑白名单",
+      "output": "CreateNameListResponse",
+      "status": "online"
+    },
+    "DeleteNameList": {
+      "document": "修改黑白名单状态 关闭 开启 删除",
+      "input": "DeleteNameListRequest",
+      "name": "删除黑白名单",
+      "output": "DeleteNameListResponse",
+      "status": "online"
+    },
+    "DeleteNameListData": {
+      "document": "删除黑白名单数据",
+      "input": "DeleteNameListDataRequest",
+      "name": "删除黑白名单数据",
+      "output": "DeleteNameListDataResponse",
+      "status": "online"
+    },
+    "DescribeNameList": {
+      "document": "列表展示黑白名单列表数据, 包含列表名称, 名单类型, 数据类型, 数据来源, 描述, 状态等",
+      "input": "DescribeNameListRequest",
+      "name": "查询黑白名单",
+      "output": "DescribeNameListResponse",
+      "status": "online"
+    },
+    "DescribeNameListDataList": {
+      "document": "黑白名单详情数据展示 名单id 客户appid uin 数据内容 开始时间和结束时间 状态 描述",
+      "input": "DescribeNameListDataListRequest",
+      "name": "查询黑白名单数据",
+      "output": "DescribeNameListDataListResponse",
+      "status": "online"
+    },
+    "DescribeNameListDetail": {
+      "document": "查询黑白名单列表详情",
+      "input": "DescribeNameListDetailRequest",
+      "name": "查询黑白名单详情",
+      "output": "DescribeNameListDetailResponse",
+      "status": "online"
+    },
+    "ImportNameListData": {
+      "document": "新增黑白名单详情数据 手动导入或批量导入",
+      "input": "ImportNameListDataRequest",
+      "name": "添加黑白名单数据",
+      "output": "ImportNameListDataResponse",
+      "status": "online"
+    },
     "ManageMarketingRisk": {
       "document": "全栈式风控引擎（RiskControlEngine，RCE）是基于人工智能技术和腾讯20年风控实战沉淀，依托腾讯海量业务构建的风控引擎，以轻量级的 SaaS 服务方式接入，帮助您快速解决注册、登录、营销活动等关键场景遇到的欺诈问题，实时防御黑灰产作恶。",
       "input": "ManageMarketingRiskRequest",
       "name": "全栈式风控引擎",
       "output": "ManageMarketingRiskResponse",
+      "status": "online"
+    },
+    "ModifyNameList": {
+      "document": "修改列表数据 列表名称 列表类型 数据类型 状态 备注",
+      "input": "ModifyNameListRequest",
+      "name": "修改黑白名单",
+      "output": "ModifyNameListResponse",
+      "status": "online"
+    },
+    "ModifyNameListData": {
+      "document": "修改黑白名单列表详情 详情内容 开始和结束时间 状态 备注等",
+      "input": "ModifyNameListDataRequest",
+      "name": "修改黑白名单数据",
+      "output": "ModifyNameListDataResponse",
       "status": "online"
     }
   },
@@ -56,6 +119,43 @@
         }
       ],
       "usage": "in"
+    },
+    "CreateNameListRequest": {
+      "document": "CreateNameList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "业务入参",
+          "example": "无",
+          "member": "InputCreateNameListFront",
+          "name": "BusinessSecurityData",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateNameListResponse": {
+      "document": "CreateNameList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "业务出参",
+          "example": "无",
+          "member": "OutputCreateNameListFront",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "DataAuthorizationInfo": {
       "document": "数据授权信息",
@@ -126,6 +226,330 @@
       ],
       "usage": "in"
     },
+    "DataContentInfo": {
+      "document": "黑白名单导入名单数据的业务入参数据结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "名单数据内容",
+          "example": "无",
+          "member": "string",
+          "name": "DataContent",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "名单数据描述",
+          "example": "无",
+          "member": "string",
+          "name": "DataRemark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "名单数据开始时间，时间格式示例\"2024-05-05 12:10:15\"",
+          "example": "无",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "名单数据结束时间，时间格式示例\"2024-05-05 12:10:15\"",
+          "example": "无",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "DeleteNameListDataRequest": {
+      "document": "DeleteNameListData请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "业务入参",
+          "example": "无",
+          "member": "InputDeleteNameListData",
+          "name": "BusinessSecurityData",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteNameListDataResponse": {
+      "document": "DeleteNameListData返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "业务出参",
+          "example": "无",
+          "member": "OutputDeleteNameListData",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteNameListRequest": {
+      "document": "DeleteNameList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "业务入参",
+          "example": "无",
+          "member": "InputDeleteNameListFront",
+          "name": "BusinessSecurityData",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteNameListResponse": {
+      "document": "DeleteNameList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "业务出参",
+          "example": "无",
+          "member": "OutputDeleteNameListFront",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNameListDataListRequest": {
+      "document": "DescribeNameListDataList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "业务入参",
+          "example": "无",
+          "member": "InputDescribeDataListFront",
+          "name": "BusinessSecurityData",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNameListDataListResponse": {
+      "document": "DescribeNameListDataList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "业务出参",
+          "example": "无",
+          "member": "OutputDescribeDataListFrontData",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNameListDetailRequest": {
+      "document": "DescribeNameListDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "业务入参\t",
+          "example": "无",
+          "member": "InputDescribeNameListDetail",
+          "name": "BusinessSecurityData",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNameListDetailResponse": {
+      "document": "DescribeNameListDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "黑白名单列表详情业务出参",
+          "example": "无",
+          "member": "OutputDescribeNameListDetailFront",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNameListRequest": {
+      "document": "DescribeNameList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "业务入参",
+          "example": "无",
+          "member": "InputDescribeNameListFront",
+          "name": "BusinessSecurityData",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNameListResponse": {
+      "document": "DescribeNameList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "业务出参",
+          "example": "无",
+          "member": "OutputDescribeNameListFrontFixListData",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ImportNameListDataRequest": {
+      "document": "ImportNameListData请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "业务入参",
+          "example": "无",
+          "member": "InputImportNameListDataFront",
+          "name": "BusinessSecurityData",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ImportNameListDataResponse": {
+      "document": "ImportNameListData返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "业务出参",
+          "example": "无",
+          "member": "OutputImportNameListDataFront",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "InputCreateNameListFront": {
+      "document": "创建黑白名单入参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "名单名称",
+          "example": "无",
+          "member": "string",
+          "name": "ListName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "名单类型 [1 黑名单 2白名单]",
+          "example": "无",
+          "member": "int64",
+          "name": "ListType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "数据类型[1 手机号 2 qqOpenId 3 2echatOpenId 4 ip 6 idfa 7 imei]",
+          "example": "无",
+          "member": "int64",
+          "name": "DataType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "描述",
+          "example": "无",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "加密类型[0 无需加密 1 MD5加密 2 SHA256加密]",
+          "example": "无",
+          "member": "int64",
+          "name": "EncryptionType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "场景Code，all_scene代表全部场景",
+          "example": "无",
+          "member": "string",
+          "name": "SceneCode",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
     "InputCryptoManageMarketingRisk": {
       "document": "全栈式风控引擎入参",
       "members": [
@@ -162,6 +586,162 @@
       ],
       "usage": "in"
     },
+    "InputDeleteNameListData": {
+      "document": "删除黑白名单数据业务入参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "黑白名单数据ID集合",
+          "example": "无",
+          "member": "int64",
+          "name": "NameListDataIdList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
+    "InputDeleteNameListFront": {
+      "document": "删除黑白名单入参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "名单ID",
+          "example": "无",
+          "member": "int64",
+          "name": "NameListId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "usage": "in"
+    },
+    "InputDescribeDataListFront": {
+      "document": "查询黑白名单数据入参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "名单ID",
+          "example": "无",
+          "member": "int64",
+          "name": "NameListId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "当前页数",
+          "example": "无",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页显示条数\t",
+          "example": "无",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "搜索关键字，按照名单数据名称或加密名单数据名称搜索",
+          "example": "无",
+          "member": "string",
+          "name": "KeyWord",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "黑白名单列表状态[1 启用 2 停用]",
+          "example": "无",
+          "member": "int64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "usage": "in"
+    },
+    "InputDescribeNameListDetail": {
+      "document": "查询黑白名单详情入参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "名单ID",
+          "example": "无",
+          "member": "int64",
+          "name": "NameListId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "usage": "in"
+    },
+    "InputDescribeNameListFront": {
+      "document": "查询黑白名单入参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "当前页数",
+          "example": "无",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页显示条数",
+          "example": "无",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "名单类型 [1 黑名单 2 白名单]",
+          "example": "无",
+          "member": "int64",
+          "name": "ListType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "数据类型[1 手机号 2 qqOpenId 3 wechatOpenId 4 ip 6 idfa 7 imei]",
+          "example": "无",
+          "member": "int64",
+          "name": "DataType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "关键字，按照名单名称搜索",
+          "example": "无",
+          "member": "string",
+          "name": "KeyWord",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "记录状态[1 启用 2 停用]",
+          "example": "无",
+          "member": "int64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "usage": "in"
+    },
     "InputDetails": {
       "document": "入参的详细参数信息",
       "members": [
@@ -184,6 +764,39 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "InputImportNameListDataFront": {
+      "document": "添加名单数据入参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "名单ID",
+          "example": "无",
+          "member": "int64",
+          "name": "NameListId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "数据来源，固定传2（手工录入）",
+          "example": "无",
+          "member": "int64",
+          "name": "DataSource",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "黑白名单数据内容",
+          "example": "无",
+          "member": "DataContentInfo",
+          "name": "DataContentInfo",
+          "required": false,
+          "type": "list"
         }
       ],
       "usage": "in"
@@ -401,6 +1014,123 @@
       ],
       "usage": "in"
     },
+    "InputModifyNameFront": {
+      "document": "修改黑白名单入参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "名单ID",
+          "example": "无",
+          "member": "int64",
+          "name": "NameListId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "名单名称",
+          "example": "无",
+          "member": "string",
+          "name": "ListName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "名单状态 [1 启用 2 停用]",
+          "example": "无",
+          "member": "int64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "描述",
+          "example": "无",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "InputModifyNameListDataFront": {
+      "document": "名单数据集合",
+      "members": [
+        {
+          "disabled": false,
+          "document": "名单数据ID",
+          "example": "无",
+          "member": "int64",
+          "name": "NameListDataId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "名单数据内容",
+          "example": "无",
+          "member": "string",
+          "name": "DataContent",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "名单数据开始时间，时间格式示例\"2024-05-05 12:10:15\"",
+          "example": "无",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "名单数据结束时间，时间格式示例\"2024-05-05 12:10:15\"",
+          "example": "无",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "记录状态 [1 启用 2 停用]",
+          "example": "无",
+          "member": "int64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "名单数据描述",
+          "example": "无",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "InputModifyNameListDataFrontListData": {
+      "document": "修改黑白名单数据入参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "名单数据集合",
+          "example": "无",
+          "member": "InputModifyNameListDataFront",
+          "name": "DataList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
     "ManageMarketingRiskRequest": {
       "document": "ManageMarketingRisk请求参数结构体",
       "members": [
@@ -433,6 +1163,80 @@
           "document": "业务出参",
           "example": "无",
           "member": "OutputManageMarketingRisk",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyNameListDataRequest": {
+      "document": "ModifyNameListData请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "业务入参",
+          "example": "无",
+          "member": "InputModifyNameListDataFrontListData",
+          "name": "BusinessSecurityData",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyNameListDataResponse": {
+      "document": "ModifyNameListData返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "业务出参",
+          "example": "无",
+          "member": "OutputModifyNameListFront",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyNameListRequest": {
+      "document": "ModifyNameList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "业务入参",
+          "example": "无",
+          "member": "InputModifyNameFront",
+          "name": "BusinessSecurityData",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyNameListResponse": {
+      "document": "ModifyNameList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "业务出参",
+          "example": "无",
+          "member": "OutputModifyNameFront",
           "name": "Data",
           "output_required": true,
           "type": "object",
@@ -535,6 +1339,648 @@
         }
       ],
       "usage": "in"
+    },
+    "OuntputDescribeDataListInfo": {
+      "document": "黑白名单数据列表信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Count",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OutputDescribeDataListFront",
+          "name": "List",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "OutputCreateNameListFront": {
+      "document": "创建黑白名单出参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "错误码，0 表示成功，非0表示失败错误码。 0：成功 1002：参数错误 4300：未开通服务 6000：系统内部错误",
+          "example": "无",
+          "member": "int64",
+          "name": "Code",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息",
+          "example": "无",
+          "member": "string",
+          "name": "Message",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "空数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Value",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "OutputDeleteNameListData": {
+      "document": "删除黑白名单出参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "错误码，0 表示成功，非0表示失败错误码。 0：成功 1002：参数错误 4300：未开通服务 6000：系统内部错误\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Code",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Message",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "空数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Value",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "OutputDeleteNameListFront": {
+      "document": "删除黑白名单出参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "错误码，0 表示成功，非0表示失败错误码。 0：成功 1002：参数错误 4300：未开通服务 6000：系统内部错误",
+          "example": "无",
+          "member": "int64",
+          "name": "Code",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息",
+          "example": "无",
+          "member": "string",
+          "name": "Message",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "空数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Value",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "OutputDescribeDataListFront": {
+      "document": "黑白名单数据信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "名单数据ID",
+          "example": "无",
+          "member": "int64",
+          "name": "NameListDataId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "名单ID",
+          "example": "无",
+          "member": "int64",
+          "name": "NameListId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "名单数据内容",
+          "example": "无",
+          "member": "string",
+          "name": "DataContent",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据来源，固定传2（手工录入）",
+          "example": "无",
+          "member": "int64",
+          "name": "DataSource",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "名单数据开始时间，时间格式示例\"2024-05-05 12:10:15\"\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "名单数据结束时间，时间格式示例\"2024-05-05 12:10:15\"\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "名单数据状态 [1 启用 2 停用]",
+          "example": "无",
+          "member": "int64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "名单数据描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Remark",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "名单数据创建时间，时间格式示例\"2024-05-05 12:10:15\"",
+          "example": "无",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "名单数据更新时间，时间格式示例\"2024-05-05 12:10:15\"",
+          "example": "无",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "加密名单数据内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "EncryptDataContent",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "OutputDescribeDataListFrontData": {
+      "document": "查询黑白名单数据出参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "错误码，0 表示成功，非0表示失败错误码。 0：成功 1002：参数错误 4300：未开通服务 6000：系统内部错误\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Code",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "黑白名单数据信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OuntputDescribeDataListInfo",
+          "name": "Value",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "OutputDescribeNameListDetail": {
+      "document": "黑白名单详情出参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "名单ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "NameListId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "名单名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ListName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "名单类型 [1 黑名单 2 白名单]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "ListType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据类型[1 手机号 2 qqOpenId 3 2echatOpenId 4 ip 6 idfa 7 imei]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "DataType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "场景Code\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SceneCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "名单列表状态 [1 启用 2 停用]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Remark",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间，时间格式示例\"2024-05-05 12:10:15\"\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "更新时间，时间格式示例\"2024-05-05 12:10:15\"\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "加密类型 [0 无需加密，1 MD5加密，2 SHA256加密]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "EncryptionType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "OutputDescribeNameListDetailFront": {
+      "document": "查询列表详情出参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "错误码，0 表示成功，非0表示失败错误码。 0：成功 1002：参数错误 4300：未开通服务 6000：系统内部错误\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Code",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "列表详情信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OutputDescribeNameListDetail",
+          "name": "Value",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "OutputDescribeNameListFrontFix": {
+      "document": "黑白名单信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "名单ID",
+          "example": "无",
+          "member": "int64",
+          "name": "NameListId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "名单名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ListName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "名单类型 [1 黑名单 2 白名单]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "ListType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据类型[1 手机号 2 qqOpenId 3 2echatOpenId 4 ip 6 idfa 7 imei]",
+          "example": "无",
+          "member": "int64",
+          "name": "DataType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "记录状态 [1 启用 2 停用]",
+          "example": "无",
+          "member": "int64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Remark",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间，时间格式示例\"2024-05-05 12:10:15\"",
+          "example": "无",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间，时间格式示例\"2024-05-05 12:10:15\"",
+          "example": "无",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "有效数据/数据总数",
+          "example": "无",
+          "member": "string",
+          "name": "EffectCount",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "加密类型[0 无需加密 1 MD5加密 2 SHA256加密]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "EncryptionType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "场景Code，all_scene代表全部场景\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SceneCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "OutputDescribeNameListFrontFixListData": {
+      "document": "查询黑白名单出参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "错误码，0 表示成功，非0表示失败错误码。 0：成功 1002：参数错误 4300：未开通服务 6000：系统内部错误\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Code",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "黑白名单列表信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OutputDescribeNameListInfo",
+          "name": "Value",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "OutputDescribeNameListInfo": {
+      "document": "黑白名单信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Count",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OutputDescribeNameListFrontFix",
+          "name": "List",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "OutputImportNameListDataFront": {
+      "document": "添加黑白名单数据出参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "错误码，0 表示成功，非0表示失败错误码。 0：成功 1002：参数错误 4300：未开通服务 6000：系统内部错误",
+          "example": "无",
+          "member": "int64",
+          "name": "Code",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息",
+          "example": "无",
+          "member": "string",
+          "name": "Message",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "空数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Value",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "OutputManageMarketingRisk": {
       "document": "全栈式风控引擎出参",
@@ -663,6 +2109,78 @@
           "name": "RiskInformation",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "OutputModifyNameFront": {
+      "document": "修改黑白名单出参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "错误码，0 表示成功，非0表示失败错误码。 0：成功 1002：参数错误 4300：未开通服务 6000：系统内部错误",
+          "example": "无",
+          "member": "int64",
+          "name": "Code",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息",
+          "example": "无",
+          "member": "string",
+          "name": "Message",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "空数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Value",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "OutputModifyNameListFront": {
+      "document": "修改黑白名单数据出参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "错误码，0 表示成功，非0表示失败错误码。 0：成功 1002：参数错误 4300：未开通服务 6000：系统内部错误",
+          "example": "无",
+          "member": "int64",
+          "name": "Code",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息",
+          "example": "无",
+          "member": "string",
+          "name": "Message",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "空数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Value",
+          "output_required": true,
+          "type": "list",
           "value_allowed_null": true
         }
       ],

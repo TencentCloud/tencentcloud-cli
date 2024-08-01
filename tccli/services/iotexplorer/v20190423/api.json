@@ -77,6 +77,13 @@
       "output": "CreateBatchProductionResponse",
       "status": "online"
     },
+    "CreateCloudStorageAIService": {
+      "document": "开通设备云存AI分析服务",
+      "input": "CreateCloudStorageAIServiceRequest",
+      "name": "开通设备云存AI分析服务",
+      "output": "CreateCloudStorageAIServiceResponse",
+      "status": "online"
+    },
     "CreateDevice": {
       "document": "创建设备",
       "input": "CreateDeviceRequest",
@@ -908,6 +915,13 @@
       "input": "ResetCloudStorageRequest",
       "name": "重置云存服务",
       "output": "ResetCloudStorageResponse",
+      "status": "online"
+    },
+    "ResetCloudStorageAIService": {
+      "document": "重置指定设备的云存 AI 服务",
+      "input": "ResetCloudStorageAIServiceRequest",
+      "name": "重置设备云存AI分析服务",
+      "output": "ResetCloudStorageAIServiceResponse",
       "status": "online"
     },
     "ResetCloudStorageEvent": {
@@ -2316,6 +2330,79 @@
           "member": "string",
           "name": "BatchProductionId",
           "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCloudStorageAIServiceRequest": {
+      "document": "CreateCloudStorageAIService请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品 ID",
+          "example": "H541SOP191",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备名称",
+          "example": "event_36502632_1",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "云存 AI 套餐 ID。可选值：\n\n- `1m_low_od`：低功耗目标检测月套餐\n- `1y_low_od`：低功耗目标检测年套餐\n- `1m_ev_od`：事件目标检测月套餐\n- `1y_ev_od`：事件目标检测年套餐\n- `1m_ft_od`：全时目标检测月套餐\n- `1y_ft_od`：全时目标检测年套餐\n- `1m_low_hl`：低功耗视频浓缩月套餐\n- `1y_low_hl`：低功耗视频浓缩年套餐\n- `1m_ev_hl`：事件视频浓缩月套餐\n- `1y_ev_hl`：事件视频浓缩年套餐\n- `1m_ft_hl`：全时视频浓缩月套餐\n- `1y_ft_hl`：全时视频浓缩年套餐",
+          "example": "1m_ev_hl",
+          "member": "string",
+          "name": "PackageId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "通道 ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "ChannelId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "订单 ID",
+          "example": "20240208123456",
+          "member": "string",
+          "name": "OrderId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCloudStorageAIServiceResponse": {
+      "document": "CreateCloudStorageAIService返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "订单 ID",
+          "example": "20240208123456",
+          "member": "string",
+          "name": "OrderId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3916,6 +4003,46 @@
     "DescribeCloudStorageAIServiceResponse": {
       "document": "DescribeCloudStorageAIService返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "云存 AI 套餐类型。可能取值：\n\n- `1`：全时套餐\n- `2`：事件套餐\n- `3`：低功耗套餐\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Type",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "云存 AI 套餐生效状态。可能取值：\n\n- `0`：未开通或已过期\n- `1`：生效中\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "云存 AI 套餐过期时间 UNIX 时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1719294987",
+          "member": "uint64",
+          "name": "ExpireTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "user1",
+          "member": "string",
+          "name": "UserId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
         {
           "disabled": false,
           "document": "视频分析启用状态",
@@ -12375,6 +12502,69 @@
     },
     "RemoveUserByRoomIdFromTRTCResponse": {
       "document": "RemoveUserByRoomIdFromTRTC返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ResetCloudStorageAIServiceRequest": {
+      "document": "ResetCloudStorageAIService请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品 ID",
+          "example": "TQBDY6RPI9",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备名称",
+          "example": "cs_112114601_2",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "云存 AI 服务类型。可选值：\n- `RealtimeObjectDetect`：目标检测\n- `Highlight`：视频浓缩",
+          "example": "Highlight",
+          "member": "string",
+          "name": "ServiceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "通道 ID",
+          "example": "0",
+          "member": "uint64",
+          "name": "ChannelId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "用户 ID",
+          "example": "user1",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ResetCloudStorageAIServiceResponse": {
+      "document": "ResetCloudStorageAIService返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

@@ -385,6 +385,20 @@
       "output": "DescribeProxySlowLogResponse",
       "status": "online"
     },
+    "DescribeRedisClusterOverview": {
+      "document": "查询Redis独享集群概览信息",
+      "input": "DescribeRedisClusterOverviewRequest",
+      "name": "查询Redis独享集群概览信息",
+      "output": "DescribeRedisClusterOverviewResponse",
+      "status": "online"
+    },
+    "DescribeRedisClusters": {
+      "document": "查询Redis独享集群列表",
+      "input": "DescribeRedisClustersRequest",
+      "name": "查询Redis独享集群列表",
+      "output": "DescribeRedisClustersResponse",
+      "status": "online"
+    },
     "DescribeReplicationGroup": {
       "document": "本接口（DescribeReplicationGroup）用于查询复制组。",
       "input": "DescribeReplicationGroupRequest",
@@ -1186,6 +1200,152 @@
           "name": "Updatetime",
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CDCResource": {
+      "document": "redis独享集群详细信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户的Appid",
+          "example": "125639021",
+          "member": "int64",
+          "name": "AppId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "地域id",
+          "example": "1",
+          "member": "int64",
+          "name": "RegionId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可用区id",
+          "example": "100002",
+          "member": "int64",
+          "name": "ZoneId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "redis独享集群id",
+          "example": "crs-cdc-p8ktf94h",
+          "member": "string",
+          "name": "RedisClusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "计费模式，1-包年包月，0-按量计费",
+          "example": "1",
+          "member": "int64",
+          "name": "PayMode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "项目id",
+          "example": "0",
+          "member": "int64",
+          "name": "ProjectId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自动续费标识，0 - 默认状态（手动续费）；1 - 自动续费；2 - 明确不自动续费",
+          "example": "1",
+          "member": "int64",
+          "name": "AutoRenewFlag",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "独享集群名称",
+          "example": "测试实例1",
+          "member": "string",
+          "name": "ClusterName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例创建时间",
+          "example": "2022-05-06 20:01:23",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例到期时间",
+          "example": "2022-06-06 20:01:23",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群状态：1-流程中，2-运行中，3-已隔离",
+          "example": "2",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "基础管控资源包",
+          "example": "无",
+          "member": "ResourceBundle",
+          "name": "BaseBundles",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源包列表",
+          "example": "无",
+          "member": "ResourceBundle",
+          "name": "ResourceBundles",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "所属本地专有集群id",
+          "example": "cluster-0astoh6a",
+          "member": "string",
+          "name": "DedicatedClusterId",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -5102,6 +5262,172 @@
       ],
       "type": "object"
     },
+    "DescribeRedisClusterOverviewRequest": {
+      "document": "DescribeRedisClusterOverview请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "本地专用集群id",
+          "example": "cluster-0astoh6a",
+          "member": "string",
+          "name": "DedicatedClusterId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRedisClusterOverviewResponse": {
+      "document": "DescribeRedisClusterOverview返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源包总数",
+          "example": "4",
+          "member": "int64",
+          "name": "TotalBundle",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源包总内存大小，单位：GB",
+          "example": "48",
+          "member": "int64",
+          "name": "TotalMemory",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRedisClustersRequest": {
+      "document": "DescribeRedisClusters请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Redis独享集群id",
+          "example": "['crs-cdc-p8ktf94h']",
+          "member": "string",
+          "name": "RedisClusterIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "集群状态：1-流程中，2-运行中，3-已隔离",
+          "example": "[1,2]",
+          "member": "int64",
+          "name": "Status",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "项目ID数组",
+          "example": "[0]",
+          "member": "int64",
+          "name": "ProjectIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "续费模式：0 - 默认状态（手动续费）；1 - 自动续费；2 - 明确不自动续费",
+          "example": "[0,1,2]",
+          "member": "int64",
+          "name": "AutoRenewFlag",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "Redis独享集群名称",
+          "example": "测试集群1",
+          "member": "string",
+          "name": "ClusterName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "搜索关键词：支持集群Id、集群名称",
+          "example": "crs-cdc-p8ktf94h",
+          "member": "string",
+          "name": "SearchKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页限制返回大小，不传则默认为20",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，取Limit整数倍",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "本地专用集群id",
+          "example": "cluster-0astoh6a",
+          "member": "string",
+          "name": "DedicatedClusterId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRedisClustersResponse": {
+      "document": "DescribeRedisClusters返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群总数",
+          "example": "10",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "CDC集群资源列表",
+          "example": "无",
+          "member": "CDCResource",
+          "name": "Resources",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeReplicationGroupInstanceRequest": {
       "document": "DescribeReplicationGroupInstance请求参数结构体",
       "members": [
@@ -7632,6 +7958,36 @@
           "example": "txcloud-paas-crs-xxx",
           "member": "string",
           "name": "PolarisServer",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "CDC Redis集群ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RedisClusterId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "CDC 集群ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DedicatedClusterId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "产品版本。<ul><li>local：本地盘。</li><li>cloud：云盘版。</li><li>cdc：CDC 集群版本。</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cloud",
+          "member": "string",
+          "name": "ProductVersion",
           "output_required": true,
           "type": "string",
           "value_allowed_null": true
@@ -10547,6 +10903,42 @@
         }
       ],
       "type": "object"
+    },
+    "ResourceBundle": {
+      "document": "redis独享集群资源包",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源包名称",
+          "example": "resource-bundle-small-1",
+          "member": "string",
+          "name": "ResourceBundleName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可售卖内存，单位：GB",
+          "example": "48",
+          "member": "int64",
+          "name": "AvailableMemory",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源包个数",
+          "example": "1",
+          "member": "int64",
+          "name": "Count",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "ResourceTag": {
       "document": "API购买实例绑定标签",

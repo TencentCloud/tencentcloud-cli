@@ -99,7 +99,7 @@
       "status": "online"
     },
     "DeleteUserQuota": {
-      "document": "指定条件删除文件系统配额",
+      "document": "指定条件删除文件系统配额（仅部分Turbo实例能使用，若需要调用请提交工单与我们联系）",
       "input": "DeleteUserQuotaRequest",
       "name": "删除文件系统配额",
       "output": "DeleteUserQuotaResponse",
@@ -218,7 +218,7 @@
       "status": "online"
     },
     "SetUserQuota": {
-      "document": "设置文件系统配额，提供UID/GID的配额设置的接口",
+      "document": "设置文件系统配额，提供UID/GID的配额设置的接口（仅部分Turbo实例能使用，若需要调用请提交工单与我们联系）",
       "input": "SetUserQuotaRequest",
       "name": "设置文件系统配额",
       "output": "SetUserQuotaResponse",
@@ -1770,7 +1770,7 @@
         },
         {
           "disabled": false,
-          "document": "指定配额类型，包括Uid、Gid",
+          "document": "指定配额类型，包括Uid、Gid、Dir",
           "example": "Uid",
           "member": "string",
           "name": "UserType",
@@ -1783,7 +1783,16 @@
           "example": "1000",
           "member": "string",
           "name": "UserId",
-          "required": true,
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设置目录配额的目录的绝对路径",
+          "example": "/cfs/xx",
+          "member": "string",
+          "name": "DirectoryPath",
+          "required": false,
           "type": "string"
         }
       ],
@@ -3698,7 +3707,7 @@
         },
         {
           "disabled": false,
-          "document": "指定配额类型，包括Uid、Gid",
+          "document": "指定配额类型，包括Uid、Gid，Dir，分别代表用户配额，用户组配额，目录配额",
           "example": "Uid",
           "member": "string",
           "name": "UserType",
@@ -3711,12 +3720,12 @@
           "example": "1000",
           "member": "string",
           "name": "UserId",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
           "disabled": false,
-          "document": "容量硬限制，单位GiB",
+          "document": "容量硬限制，单位GiB。设置范围10-10000000。",
           "example": "10",
           "member": "uint64",
           "name": "CapacityHardLimit",
@@ -3725,12 +3734,21 @@
         },
         {
           "disabled": false,
-          "document": "文件硬限制，单位个",
+          "document": "文件硬限制，单位个。设置范围1000-100000000",
           "example": "10000",
           "member": "uint64",
           "name": "FileHardLimit",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "需设置目录配额的目录绝对路径，不同目录不可存在包含关系",
+          "example": "/cfs/xx",
+          "member": "string",
+          "name": "DirectoryPath",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

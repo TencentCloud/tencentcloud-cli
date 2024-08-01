@@ -16,8 +16,8 @@ Output:
 ```
 {
     "Response": {
-        "QrcodeBase64": "/9ji1/Z**************/2Q==",
-        "RequestId": "s1720524882444991481"
+        "QrcodeBase64": "/9j/2wCEAAEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQ（剩余的其他图片base64字符串省略）",
+        "RequestId": "5e94bc41-4767-4e98-943d-b9a455499847"
     }
 }
 ```

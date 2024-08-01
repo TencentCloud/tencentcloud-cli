@@ -151,6 +151,15 @@
           "name": "SearchInfo",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "搜索引文角标开关。\n说明：\n1. 配合EnableEnhancement和SearchInfo参数使用。打开后，回答中命中搜索的结果会在片段后增加角标标志，对应SearchInfo列表中的链接。\n2. false：开关关闭，true：开关打开。\n3. 未传值时默认开关关闭（false）。",
+          "example": "false",
+          "member": "bool",
+          "name": "Citation",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -190,7 +199,7 @@
         },
         {
           "disabled": false,
-          "document": "本轮对话的 ID。",
+          "document": "本次请求的 RequestId。",
           "example": "9c772634-8824-43e8-bc24-8bc4c19b9151",
           "member": "string",
           "name": "Id",

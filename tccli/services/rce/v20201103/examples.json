@@ -1,11 +1,83 @@
 {
   "actions": {
+    "CreateNameList": [
+      {
+        "document": "",
+        "input": "https://rce.tencentcloudapi.com/?Action=CreateNameList\n&BusinessSecurityData.ListName=\"手机黑库\"\n&BusinessSecurityData.SceneCode=\"all_scene\"\n&BusinessSecurityData.Remark=\"测试\"\n&BusinessSecurityData.DataType=2\n&BusinessSecurityData.ListType=2\n\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Code\": 0,\n            \"Message\": \"OK\",\n            \"Value\": []\n        },\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
+        "title": "CreateNameList"
+      }
+    ],
+    "DeleteNameList": [
+      {
+        "document": "",
+        "input": "https://rce.tencentcloudapi.com/?Action=DeleteNameList\n&BusinessSecurityData.NameListId=33\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Code\": 0,\n            \"Message\": \"OK\",\n            \"Value\": []\n        },\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
+        "title": "DeleteNameList"
+      }
+    ],
+    "DeleteNameListData": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rce.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteNameListData\n<公共请求参数>\n\n{\n    \"BusinessSecurityData\": {\n        \"NameListDataIdList\": [\n            177773\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Code\": 0,\n            \"Message\": \"OK\",\n            \"Value\": null\n        },\n        \"RequestId\": \"8bf7ba3a-80cd-4d24-af5e-e02acee93539\"\n    }\n}",
+        "title": "删除名单数据"
+      }
+    ],
+    "DescribeNameList": [
+      {
+        "document": "",
+        "input": "https://rce.tencentcloudapi.com/?Action=DescribeNameList\n\n&BusinessSecurityData.Status=1\n&BusinessSecurityData.DataType=1\n&BusinessSecurityData.ListType=1\n&BusinessSecurityData.PageNumber=1\n&BusinessSecurityData.PageSize=10\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Data\": {},\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
+        "title": "DescribeNameList"
+      }
+    ],
+    "DescribeNameListDataList": [
+      {
+        "document": "",
+        "input": "https://rce.tencentcloudapi.com/?Action=DescribeNameListDataList\n&BusinessSecurityData.NameListId=33\n&BusinessSecurityData.Status=1\n&BusinessSecurityData.PageNumber=1\n&BusinessSecurityData.PageSize=10\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Data\": {},\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
+        "title": "DescribeNameListDataList"
+      }
+    ],
+    "DescribeNameListDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rce.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNameListDetail\n<公共请求参数>\n\n{\n    \"BusinessSecurityData\": {\n        \"NameListId\": 2446\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Code\": 0,\n            \"Message\": \"OK\",\n            \"Value\": {\n                \"NameListId\": 2446,\n                \"ListName\": \"测试\",\n                \"ListType\": 1,\n                \"DataType\": 4,\n                \"SceneCode\": \"all_scene\",\n                \"Status\": 1,\n                \"Remark\": \"测试\",\n                \"CreateTime\": \"2024-05-22 14:58:21\",\n                \"UpdateTime\": \"2024-07-15 14:29:35\",\n                \"EncryptionType\": 0\n            }\n        },\n        \"RequestId\": \"bd2f3d71-9102-4c24-b581-4d4f22ebd077\"\n    }\n}",
+        "title": "查询黑白名单详情"
+      }
+    ],
+    "ImportNameListData": [
+      {
+        "document": "",
+        "input": "https://rce.tencentcloudapi.com/?Action=ImportNameListData\n&BusinessSecurityData.NameListId=33\n&BusinessSecurityData.DataSource=2\n&BusinessSecurityData.DataContentInfo.0.DataContent=\"xxx.xx.0.1\";\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Message\": \"OK\",\n            \"Code\": 0,\n            \"Value\": []\n        },\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
+        "title": "ImportNameListData"
+      }
+    ],
     "ManageMarketingRisk": [
       {
         "document": "使用手机号MD5请求方式",
         "input": "POST / HTTP/1.1\nHost: rce.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ManageMarketingRisk\n<公共请求参数>\n\n{\n    \"BusinessSecurityData\": {\n        \"Account\": {\n            \"AccountType\": 10004,\n            \"OtherAccount\": {\n                \"AccountId\": \"3ac9aa********************526ed9\"\n            }\n        },\n        \"SceneCode\": \"e_activity_antirush\",\n        \"UserIp\": \"113.***.***.150\",\n        \"PostTime\": 1712841851\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Code\": 0,\n            \"Message\": \"OK\",\n            \"UUid\": \"9a570741-****-****-****-****0b788232\",\n            \"Value\": {\n                \"AssociateAccount\": \"\",\n                \"ConstId\": \"\",\n                \"PostTime\": 1712841851,\n                \"RiskInformation\": null,\n                \"RiskLevel\": \"reject\",\n                \"RiskType\": [\n                    201,\n                    1,\n                    21,\n                    11,\n                    2011\n                ],\n                \"UserId\": \"3ac9aa********************526ed9\",\n                \"UserIp\": \"113.***.***.150\"\n            }\n        },\n        \"RequestId\": \"5d9e8c5d-****-****-****-1c0dca666edb\"\n    }\n}",
         "title": "ManageMarketingRisk"
+      }
+    ],
+    "ModifyNameList": [
+      {
+        "document": "",
+        "input": "https://rce.tencentcloudapi.com/?Action=ModifyNameList\n&BusinessSecurityData.NameListId=33\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Message\": \"OK\",\n            \"Code\": 0,\n            \"Value\": []\n        },\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
+        "title": "ModifyNameList"
+      }
+    ],
+    "ModifyNameListData": [
+      {
+        "document": "",
+        "input": "https://rce.tencentcloudapi.com/?Action=ModifyNameListData\n&BusinessSecurityData.DataList.0.Status=1\n&BusinessSecurityData.DataList.0.Remark=\"测试\"\n&BusinessSecurityData.DataList.0.DataContent=\"xxx.xx.12.123\"\n&BusinessSecurityData.DataList.0.NameListDataId=73\n&BusinessSecurityData.DataList.0.StartTime=\"2020-03-02 20:50:00\"\n&BusinessSecurityData.DataList.0.EndTime=\"2020-03-02 20:50:00\"\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Code\": 0,\n            \"Message\": \"OK\",\n            \"Value\": []\n        },\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
+        "title": "ModifyNameListData"
       }
     ]
   },

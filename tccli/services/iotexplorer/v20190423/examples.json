@@ -118,6 +118,44 @@
         "title": "新建量产 - 系统生成"
       }
     ],
+    "CreateCloudStorageAIService": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudStorageAIService\n<公共请求参数>\n\n{\n    \"ProductId\": \"H541SOP191\",\n    \"DeviceName\": \"event_36502632_1\",\n    \"PackageId\": \"1m_ev_hl\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a9a9d232-01c0-494a-baa3-57c384463c3f\",\n        \"OrderId\": \"3c189db8-4637-4f7d-aee5-9d6172c2c9ec\"\n    }\n}",
+        "title": "开通成功"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudStorageAIService\n<公共请求参数>\n\n{\n    \"ProductId\": \"H541SOP191\",\n    \"DeviceName\": \"event_36502632_1\",\n    \"PackageId\": \"1m_ev_hl\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameter\",\n            \"Message\": \"设备未创建或已删除，请检查后重新操作\"\n        },\n        \"RequestId\": \"053656d4-7694-47c4-9ed3-1d853454f8c7\"\n    }\n}",
+        "title": "开通失败：指定的设备不存在"
+      },
+      {
+        "document": "设备当前无生效的云存套餐，尝试开通云存 AI 套餐时开通失败",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudStorageAIService\n<公共请求参数>\n\n{\n    \"ProductId\": \"H541SOP191\",\n    \"DeviceName\": \"event_36502632_1\",\n    \"PackageId\": \"1m_ev_hl\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"FailedOperation.CloudStoragePackageRequired\",\n            \"Message\": \"需先开通云存套餐\"\n        },\n        \"RequestId\": \"4d85001c-1f75-486e-b96c-f75e37b2b9a9\"\n    }\n}",
+        "title": "开通失败：设备未开通云存套餐"
+      },
+      {
+        "document": "设备当前生效云存月套餐，尝试开通云存 AI 年套餐时开通失败",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudStorageAIService\n<公共请求参数>\n\n{\n    \"ProductId\": \"H541SOP191\",\n    \"DeviceName\": \"event_36502632_1\",\n    \"PackageId\": \"1y_ft_od\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"UnsupportedOperation.CloudStoragePackageTimeMismatch\",\n            \"Message\": \"云存套餐与云存 AI 套餐时长不匹配\"\n        },\n        \"RequestId\": \"703a2a1d-1d7b-4625-a151-a985b17f32a5\"\n    }\n}",
+        "title": "开通失败：云存套餐与云存 AI 套餐时长不匹配"
+      },
+      {
+        "document": "设备当前生效全时云存套餐，尝试开通事件云存 AI 套餐时开通失败",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudStorageAIService\n<公共请求参数>\n\n{\n    \"ProductId\": \"H541SOP191\",\n    \"DeviceName\": \"event_36502632_1\",\n    \"PackageId\": \"1m_ev_od\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"UnsupportedOperation.CloudStoragePackageTypeMismatch\",\n            \"Message\": \"云存套餐与云存 AI 套餐类型不匹配\"\n        },\n        \"RequestId\": \"884a9ffd-426f-48bf-ab6a-79a5bb1631c1\"\n    }\n}",
+        "title": "开通失败：云存套餐与云存 AI 套餐类型不匹配"
+      },
+      {
+        "document": "设备当前生效事件云存月套餐（过期时间为 2024年12月1日 00:00:00），且设备当前生效云存 AI 事件视频浓缩月套餐（过期时间同样为 2024年12月1日 00:00:00），尝试继续追加开通云存 AI 事件视频浓缩月套餐时开通失败",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudStorageAIService\n<公共请求参数>\n\n{\n    \"ProductId\": \"H541SOP191\",\n    \"DeviceName\": \"event_36502632_1\",\n    \"PackageId\": \"1m_ev_hl\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"FailedOperation.CloudStorageAIPackageExpireTimeExceeded\",\n            \"Message\": \"云存 AI 套餐生效时长不能超过当前云存套餐生效时长\"\n        },\n        \"RequestId\": \"4d85001c-1f75-486e-b96c-f75e37b2b9a9\"\n    }\n}",
+        "title": "开通失败：云存 AI 套餐有效时长超过云存套餐的有效时长"
+      }
+    ],
     "CreateDevice": [
       {
         "document": "创建设备",
@@ -350,7 +388,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudStorageAIService\n<公共请求参数>\n\n{\n    \"ProductId\": \"KH6Q8C4N0D\",\n    \"DeviceName\": \"aaa_31400554_1\",\n    \"ServiceType\": \"Highlight\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Enabled\": true,\n        \"ROI\": \"{}\",\n        \"Config\": \"{\\\"param1\\\":\\\"value1\\\"}\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Enabled\": true,\n        \"ROI\": \"{}\",\n        \"Config\": \"{\\\"param1\\\":\\\"value1\\\"}\",\n        \"Type\": 1,\n        \"Status\": 1,\n        \"ExpireTime\": 1719294987,\n        \"UserId\": \"user1\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "查询设备云存AI服务"
       }
     ],
@@ -1098,6 +1136,26 @@
         "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResetCloudStorage\n<公共请求参数>\n\n{\n    \"DeviceName\": \"event_36502632_1\",\n    \"ProductId\": \"H541SOP191\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "ResetCloudStorage"
+      }
+    ],
+    "ResetCloudStorageAIService": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResetCloudStorageAIService\n<公共请求参数>\n\n{\n    \"ProductId\": \"H541SOP191\",\n    \"DeviceName\": \"event_36502632_1\",\n    \"ServiceType\": \"RealtimeObjectDetect\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a9a9d232-01c0-494a-baa3-57c384463c3f\"\n    }\n}",
+        "title": "重置目标检测服务"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResetCloudStorageAIService\n<公共请求参数>\n\n{\n    \"ProductId\": \"H541SOP191\",\n    \"DeviceName\": \"event_36502632_1\",\n    \"ServiceType\": \"Highlight\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a9a9d232-01c0-494a-baa3-57c384463c3f\"\n    }\n}",
+        "title": "重置视频浓缩服务"
+      },
+      {
+        "document": "传入 ChannelId 指定要操作的通道",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResetCloudStorageAIService\n<公共请求参数>\n\n{\n    \"ProductId\": \"H541SOP191\",\n    \"DeviceName\": \"event_36502632_1\",\n    \"ServiceType\": \"Highlight\",\n    \"ChannelId\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a9a9d232-01c0-494a-baa3-57c384463c3f\"\n    }\n}",
+        "title": "重置指定通道的云存 AI 服务"
       }
     ],
     "ResetCloudStorageEvent": [
