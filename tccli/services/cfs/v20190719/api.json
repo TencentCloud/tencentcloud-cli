@@ -4738,10 +4738,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "指定配额类型，包括Uid、Gid",
+          "document": "指定配额类型，包括Uid、Gid、Dir",
           "example": "Uid",
           "member": "string",
           "name": "UserType",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -4752,6 +4753,7 @@
           "example": "1000",
           "member": "string",
           "name": "UserId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -4762,6 +4764,7 @@
           "example": "10",
           "member": "uint64",
           "name": "CapacityHardLimit",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -4772,6 +4775,7 @@
           "example": "10000",
           "member": "uint64",
           "name": "FileHardLimit",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -4782,6 +4786,7 @@
           "example": "cfs-1245",
           "member": "string",
           "name": "FileSystemId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -4792,6 +4797,7 @@
           "example": "9",
           "member": "uint64",
           "name": "CapacityUsed",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -4802,8 +4808,31 @@
           "example": "9999",
           "member": "uint64",
           "name": "FileUsed",
+          "output_required": true,
           "required": false,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "目录配额的目录绝对路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/cfs/xx",
+          "member": "string",
+          "name": "DirectoryPath",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "配置规则状态，inavailable---配置中，available --已生效，deleting--删除中，deleted 已删除，failed--配置失败\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "available",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

@@ -3310,7 +3310,7 @@
         },
         {
           "disabled": false,
-          "document": "策略名称，不超过20字符",
+          "document": "策略名称，不超过60字符",
           "example": "云服务器告警策略",
           "member": "string",
           "name": "PolicyName",
@@ -6151,7 +6151,7 @@
         },
         {
           "disabled": false,
-          "document": "根据监控类型过滤，不选默认查所有类型。\"MT_QCE\"=云产品监控，支持的枚举值有：\"MT_QCE\"=云产品监控；\"MT_TAW\"=应用性能监控；\"MT_RUM\"=前端性能监控；\"MT_PROBE\"=云拨测",
+          "document": "根据监控类型过滤，不选默认查所有类型。\"MT_QCE\"=云产品监控，支持的枚举值有：\"MT_QCE\"=云产品监控；\"MT_TAW\"=应用性能监控；\"MT_RUM\"=前端性能监控；\"MT_PROBE\"=云拨测，\"MT_TRTC\"=实时音视频，\n\"MT_RUMAPP\"=终端性能监控",
           "example": "MT_QCE",
           "member": "string",
           "name": "MonitorTypes",
@@ -7629,7 +7629,7 @@
           "example": "无",
           "member": "DescribeBasicAlarmListAlarms",
           "name": "Alarms",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -7639,7 +7639,7 @@
           "example": "2",
           "member": "int64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -7649,7 +7649,7 @@
           "example": "This method is deprecated! Use `DescribeAlarmHistories` instead!",
           "member": "string",
           "name": "Warning",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -10519,7 +10519,7 @@
           "example": "无",
           "member": "DescribePolicyGroupListGroup",
           "name": "GroupList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -10529,7 +10529,7 @@
           "example": "142",
           "member": "int64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -10539,7 +10539,7 @@
           "example": "This method is deprecated! Use `DescribeAlarmPolicies` instead!",
           "member": "string",
           "name": "Warning",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
