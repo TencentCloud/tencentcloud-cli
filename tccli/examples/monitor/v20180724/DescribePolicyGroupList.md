@@ -17,108 +17,99 @@ Output:
     "Response": {
         "GroupList": [
             {
+                "GroupId": 0,
+                "GroupName": "abc",
+                "IsOpen": true,
+                "ViewName": "abc",
+                "LastEditUin": "abc",
+                "UpdateTime": 0,
+                "InsertTime": 0,
+                "UseSum": 0,
+                "NoShieldedSum": 0,
+                "IsDefault": 0,
                 "CanSetDefault": true,
+                "ParentGroupId": 0,
+                "Remark": "abc",
+                "ProjectId": 0,
                 "Conditions": [
                     {
-                        "AlarmNotifyPeriod": 86400,
+                        "MetricShowName": "abc",
+                        "Period": 0,
+                        "MetricId": 0,
+                        "RuleId": 0,
+                        "Unit": "abc",
                         "AlarmNotifyType": 0,
-                        "CalcType": 1,
-                        "CalcValue": "0",
-                        "ContinueTime": 60,
-                        "MetricId": 33,
-                        "MetricShowName": "CPU利用率",
-                        "Period": 60,
-                        "RuleId": 1111111,
-                        "Unit": "%"
+                        "AlarmNotifyPeriod": 0,
+                        "CalcType": 0,
+                        "CalcValue": "abc",
+                        "ContinueTime": 0,
+                        "MetricName": "abc"
                     }
                 ],
-                "ConditionsTemp": null,
                 "EventConditions": [
                     {
+                        "EventId": 0,
+                        "RuleId": 0,
+                        "EventShowName": "abc",
                         "AlarmNotifyPeriod": 0,
-                        "AlarmNotifyType": 0,
-                        "EventId": 42,
-                        "EventShowName": "ping不可达",
-                        "RuleId": 1111112
+                        "AlarmNotifyType": 0
                     }
                 ],
-                "GroupId": 1111111,
-                "GroupName": "复制-test",
-                "InsertTime": 1531122504,
-                "InstanceGroup": null,
-                "IsDefault": 0,
-                "IsOpen": true,
-                "LastEditUin": "1500000000",
-                "NoShieldedSum": 0,
-                "ParentGroupId": 0,
-                "ProjectId": 0,
                 "ReceiverInfos": [
                     {
-                        "EndTime": 86400,
-                        "NeedSendNotice": 1,
-                        "NotifyWay": [
-                            "EMAIL",
-                            "SMS"
-                        ],
-                        "PersonInterval": 60,
                         "ReceiverGroupList": [
-                            1111
+                            0
                         ],
-                        "ReceiverType": "group",
-                        "ReceiverUserList": [],
-                        "RecoverNotify": [
-                            "SMS"
+                        "ReceiverUserList": [
+                            0
                         ],
-                        "RoundInterval": 60,
-                        "RoundNumber": 2,
-                        "SendFor": [],
                         "StartTime": 0,
-                        "UidList": null
+                        "EndTime": 0,
+                        "ReceiverType": "abc",
+                        "NotifyWay": [
+                            "abc"
+                        ],
+                        "UidList": [
+                            0
+                        ],
+                        "RoundNumber": 0,
+                        "RoundInterval": 0,
+                        "PersonInterval": 0,
+                        "NeedSendNotice": 0,
+                        "SendFor": [
+                            "abc"
+                        ],
+                        "RecoverNotify": [
+                            "abc"
+                        ],
+                        "ReceiveLanguage": "abc"
                     }
                 ],
-                "Remark": "",
-                "UpdateTime": 1577689096,
-                "UseSum": 0,
-                "ViewName": "cvm_device"
-            },
-            {
-                "CanSetDefault": false,
-                "Conditions": [
-                    {
-                        "AlarmNotifyPeriod": 0,
-                        "AlarmNotifyType": 0,
-                        "CalcType": 1,
-                        "CalcValue": "0.85",
-                        "ContinueTime": 300,
-                        "MetricId": 1220,
-                        "MetricShowName": "磁盘使用百分比",
-                        "Period": 60,
-                        "RuleId": 1111113,
-                        "Unit": ""
-                    }
-                ],
-                "ConditionsTemp": null,
-                "EventConditions": null,
-                "GroupId": 1111112,
-                "GroupName": "默认",
-                "InsertTime": 1565792922,
-                "InstanceGroup": null,
-                "IsDefault": 1,
-                "IsOpen": true,
-                "LastEditUin": "1500000687",
-                "NoShieldedSum": 1,
-                "ParentGroupId": 0,
-                "ProjectId": 0,
-                "ReceiverInfos": null,
-                "Remark": "",
-                "UpdateTime": 1565792922,
-                "UseSum": 1,
-                "ViewName": "CKAFKA_INSTANCE"
+                "ConditionsTemp": {
+                    "GroupId": 0,
+                    "GroupName": "abc",
+                    "ViewName": "abc",
+                    "Remark": "abc",
+                    "LastEditUin": "abc",
+                    "UpdateTime": 0,
+                    "InsertTime": 0,
+                    "IsUnionRule": 0
+                },
+                "InstanceGroup": {
+                    "InstanceGroupId": 0,
+                    "ViewName": "abc",
+                    "LastEditUin": "abc",
+                    "GroupName": "abc",
+                    "InstanceSum": 0,
+                    "UpdateTime": 0,
+                    "InsertTime": 0
+                },
+                "IsUnionRule": 0
             }
         ],
-        "RequestId": "5fdf1257-6024-4b59-b924-2b995080f0bd",
-        "Total": 142,
-        "Warning": "This method is deprecated! Use `DescribeAlarmPolicies` instead!"
+        "Total": 0,
+        "Warning": "abc",
+        "RequestId": "abc"
     }
 }
 ```

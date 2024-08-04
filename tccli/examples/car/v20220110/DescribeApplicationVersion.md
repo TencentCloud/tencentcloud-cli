@@ -23,6 +23,7 @@ Output:
                     "ap-chinese-mainland",
                     "na-north-america-fusion"
                 ],
+                "ApplicationVersionUpdateMode": "FULL",
                 "CreateTime": "2021-08-29T08:00:30Z"
             }
         ],

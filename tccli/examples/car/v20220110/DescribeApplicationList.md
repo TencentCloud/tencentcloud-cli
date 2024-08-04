@@ -39,6 +39,7 @@ Output:
                             "ap-chinese-mainland",
                             "na-north-america-fusion"
                         ],
+                        "ApplicationVersionUpdateMode": "FULL",
                         "CreateTime": "2021-08-29T08:00:30Z"
                     }
                 ],
@@ -82,6 +83,7 @@ Output:
                         "ApplicationVersionName": "abc",
                         "CreateTime": "2020-09-22T00:00:00+00:00",
                         "ApplicationVersionRegions": [],
+                        "ApplicationVersionUpdateMode": "",
                         "ApplicationVersionSize": 0
                     }
                 ],

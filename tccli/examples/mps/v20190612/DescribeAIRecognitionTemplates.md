@@ -54,7 +54,8 @@ Output:
                 "TranslateConfigure": {
                     "Switch": "abc",
                     "SourceLanguage": "abc",
-                    "DestinationLanguage": "abc"
+                    "DestinationLanguage": "abc",
+                    "SubtitleFormat": "abc"
                 },
                 "CreateTime": "abc",
                 "UpdateTime": "abc",
@@ -121,7 +122,8 @@ Output:
                 "TranslateConfigure": {
                     "Switch": "abc",
                     "SourceLanguage": "abc",
-                    "DestinationLanguage": "abc"
+                    "DestinationLanguage": "abc",
+                    "SubtitleFormat": "abc"
                 },
                 "CreateTime": "abc",
                 "UpdateTime": "abc",

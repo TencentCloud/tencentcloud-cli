@@ -17,19 +17,23 @@ Output:
         "Items": [
             {
                 "ServiceId": 1,
-                "ProductName": "云审计",
+                "ProductName": "CloudAudit",
                 "IsAssign": 1,
                 "CanAssignCount": 5,
-                "Description": "test",
+                "Description": "",
                 "MemberNum": "0",
-                "Document": "HTTP://XXX",
+                "Document": "",
                 "ConsoleUrl": "",
-                "IsUsageStatus": 2
+                "IsUsageStatus": 2,
+                "Product": "cloudaudit",
+                "ServiceGrant": 2,
+                "GrantStatus": "Disabled",
+                "IsSetManagementScope": 2
             }
         ],
         "RequestId": "1d744bef-fa56-40e9-8e3b-5a88b122ad5e",
         "Total": 1,
-        "AssignManageTotal": 2
+        "AssignManageTotal": 0
     }
 }
 ```

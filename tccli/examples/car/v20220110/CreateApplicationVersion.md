@@ -7,7 +7,9 @@ Input:
 ```
 tccli car CreateApplicationVersion --cli-unfold-argument  \
     --ApplicationId xxx \
-    --ApplicationFileName xxx.zip
+    --ApplicationFileName xxx.zip \
+    --ApplicationVersionRegions ap-chinese-mainland na-north-america-fusion \
+    --ApplicationVersionUpdateMode INCREMENT
 ```
 
 Output: 
@@ -23,6 +25,7 @@ Output:
                 "ap-chinese-mainland",
                 "na-north-america-fusion"
             ],
+            "ApplicationVersionUpdateMode": "INCREMENT",
             "CreateTime": "2020-09-22T00:00:00+00:00"
         },
         "RequestId": "4eb17e58-68da-4e9a-b298-0894723c9022"

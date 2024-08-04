@@ -174,7 +174,7 @@
         },
         {
           "disabled": false,
-          "document": "音频中的语言类型，支持语言列表<li> zh : 中文 </li> <li> en : 英文 </li>",
+          "document": "源语言，支持：\nzh：中文\nen：英语\nja：日语\nko：韩语\nyue：粤语",
           "example": "zh",
           "member": "string",
           "name": "Source",
@@ -183,7 +183,7 @@
         },
         {
           "disabled": false,
-          "document": "翻译目标语言类型，支持的语言列表<li> zh : 中文 </li> <li> en : 英文 </li>",
+          "document": "目标语言，各源语言的目标语言支持列表如下\n<li>zh（中文）：en（英语）、ja（日语）、ko（韩语）、yue（粤语）</li>\n<li>en（英语）：zh（中文）</li>\n<li>ja（日语）：zh（中文）</li>\n<li>ko（韩语）：zh（中文）</li>\n<li>yue（粤语）：zh（中文）</li>",
           "example": "en",
           "member": "string",
           "name": "Target",
@@ -273,7 +273,7 @@
         },
         {
           "disabled": false,
-          "document": "音频中的语言类型，支持语言列表<li> zh : 中文 </li> <li> en : 英文 </li>",
+          "document": "源语言，支持：\nzh：中文\nen：英语\nja：日语\nko：韩语\nyue：粤语",
           "example": "zh",
           "member": "string",
           "name": "Source",
@@ -282,7 +282,7 @@
         },
         {
           "disabled": false,
-          "document": "翻译目标语言类型，支持的语言列表<li> zh : 中文 </li> <li> en : 英文 </li>",
+          "document": "目标语言，各源语言的目标语言支持列表如下\n<li>zh（中文）：en（英语）、ja（日语）、ko（韩语）、yue（粤语）</li>\n<li>en（英语）：zh（中文）</li>\n<li>ja（日语）：zh（中文）</li>\n<li>ko（韩语）：zh（中文）</li>\n<li>yue（粤语）：zh（中文）</li>",
           "example": "en",
           "member": "string",
           "name": "Target",

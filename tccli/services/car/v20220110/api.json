@@ -386,6 +386,15 @@
           "name": "ApplicationVersionRegions",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "应用版本更新方式",
+          "example": "\"FULL|INCREMENT\"",
+          "member": "string",
+          "name": "ApplicationVersionUpdateMode",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1677,6 +1686,16 @@
           "name": "ApplicationVersionRegions",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "应用版本更新方式：\nFULL：全量更新、\nINCREMENT：增量更新\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"FULL|INCREMENT\"",
+          "member": "string",
+          "name": "ApplicationVersionUpdateMode",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

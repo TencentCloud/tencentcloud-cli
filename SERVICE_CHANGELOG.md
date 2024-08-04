@@ -1,29 +1,10 @@
 # 本版本更新包含以下内容：
 
-## 大模型图像创作引擎(aiart) 版本：2022-12-29
+## 应用云渲染(car) 版本：2022-01-10
 
-### 第 9 次发布
+### 第 10 次发布
 
-发布时间：2024-08-01 01:07:37
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [ReplaceBackground](http://document.tencentcloudapi.woa.com/document/product/1728/84198)
-
-	* <font color="#dd0000">**修改入参**：</font>Prompt
-
-
-
-
-## 应用管理平台(camp) 版本：2022-09-20
-
-### 第 39 次发布
-
-发布时间：2024-08-01 01:09:25
+发布时间：2024-08-05 01:09:14
 
 本次发布包含了以下内容：
 
@@ -31,73 +12,25 @@
 
 修改接口：
 
-* [CreateConfig](http://document.tencentcloudapi.woa.com/document/product/1609/78005)
+* [CreateApplicationVersion](http://document.tencentcloudapi.woa.com/document/product/1710/81859)
 
-	* 新增入参：ExtentType
-
-
+	* 新增入参：ApplicationVersionUpdateMode
 
 
-## 腾讯云数据仓库 TCHouse-D(cdwdoris) 版本：2021-12-28
+修改数据结构：
 
-### 第 20 次发布
+* [UserApplicationVersion](http://document.tencentcloudapi.woa.com/document/product/1710/81862#UserApplicationVersion)
 
-发布时间：2024-08-01 01:10:36
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [CancelBackupJob](http://document.tencentcloudapi.woa.com/document/product/1706/84372)
-* [CreateBackUpSchedule](http://document.tencentcloudapi.woa.com/document/product/1706/84371)
-* [DeleteBackUpData](http://document.tencentcloudapi.woa.com/document/product/1706/84370)
-* [DescribeAreaRegion](http://document.tencentcloudapi.woa.com/document/product/1706/84387)
-* [DescribeBackUpJob](http://document.tencentcloudapi.woa.com/document/product/1706/84386)
-* [DescribeBackUpJobDetail](http://document.tencentcloudapi.woa.com/document/product/1706/84385)
-* [DescribeBackUpSchedules](http://document.tencentcloudapi.woa.com/document/product/1706/84384)
-* [DescribeBackUpTables](http://document.tencentcloudapi.woa.com/document/product/1706/84383)
-* [DescribeBackUpTaskDetail](http://document.tencentcloudapi.woa.com/document/product/1706/84382)
-* [DescribeClusterConfigsHistory](http://document.tencentcloudapi.woa.com/document/product/1706/84381)
-* [DescribeDatabaseAuditResource](http://document.tencentcloudapi.woa.com/document/product/1706/84380)
-* [DescribeDmsSqlHistory](http://document.tencentcloudapi.woa.com/document/product/1706/84379)
-* [DescribeDorisMetricFiles](http://document.tencentcloudapi.woa.com/document/product/1706/84378)
-* [DescribeFrontEnd](http://document.tencentcloudapi.woa.com/document/product/1706/84377)
-* [DescribeInstanceNodesRole](http://document.tencentcloudapi.woa.com/document/product/1706/84376)
-* [DescribeInstanceOperations](http://document.tencentcloudapi.woa.com/document/product/1706/84375)
-* [DescribeInstancesHealthState](http://document.tencentcloudapi.woa.com/document/product/1706/84374)
-* [DescribeSpec](http://document.tencentcloudapi.woa.com/document/product/1706/84373)
-* [ModifyNodeStatus](http://document.tencentcloudapi.woa.com/document/product/1706/84369)
-* [OpenBackUp](http://document.tencentcloudapi.woa.com/document/product/1706/84368)
-* [RecoverBackUpJob](http://document.tencentcloudapi.woa.com/document/product/1706/84367)
-* [RestartClusterForConfigs](http://document.tencentcloudapi.woa.com/document/product/1706/84366)
-
-新增数据结构：
-
-* [BackUpJobDisplay](http://document.tencentcloudapi.woa.com/document/product/1706/80309#BackUpJobDisplay)
-* [BackupCosInfo](http://document.tencentcloudapi.woa.com/document/product/1706/80309#BackupCosInfo)
-* [BackupStatus](http://document.tencentcloudapi.woa.com/document/product/1706/80309#BackupStatus)
-* [BackupTableContent](http://document.tencentcloudapi.woa.com/document/product/1706/80309#BackupTableContent)
-* [ClusterConfigsHistory](http://document.tencentcloudapi.woa.com/document/product/1706/80309#ClusterConfigsHistory)
-* [CosSourceInfo](http://document.tencentcloudapi.woa.com/document/product/1706/80309#CosSourceInfo)
-* [DescribeMetricsFileReq](http://document.tencentcloudapi.woa.com/document/product/1706/80309#DescribeMetricsFileReq)
-* [DiskSpec](http://document.tencentcloudapi.woa.com/document/product/1706/80309#DiskSpec)
-* [DorisSourceInfo](http://document.tencentcloudapi.woa.com/document/product/1706/80309#DorisSourceInfo)
-* [FrontEndRule](http://document.tencentcloudapi.woa.com/document/product/1706/80309#FrontEndRule)
-* [InstanceOperation](http://document.tencentcloudapi.woa.com/document/product/1706/80309#InstanceOperation)
-* [ModifyMetricFileStruct](http://document.tencentcloudapi.woa.com/document/product/1706/80309#ModifyMetricFileStruct)
-* [ModifyMetricFileStructNew](http://document.tencentcloudapi.woa.com/document/product/1706/80309#ModifyMetricFileStructNew)
-* [NodeInfos](http://document.tencentcloudapi.woa.com/document/product/1706/80309#NodeInfos)
-* [ResourceSpec](http://document.tencentcloudapi.woa.com/document/product/1706/80309#ResourceSpec)
+	* 新增成员：ApplicationVersionUpdateMode
 
 
 
-## 内容安全(cms) 版本：2019-03-21
 
-### 第 8 次发布
+## 文件存储(cfs) 版本：2019-07-19
 
-发布时间：2024-08-01 01:12:22
+### 第 22 次发布
+
+发布时间：2024-08-05 01:10:24
 
 本次发布包含了以下内容：
 
@@ -105,41 +38,18 @@
 
 修改数据结构：
 
-* [LabelGroup](http://document.tencentcloudapi.woa.com/document/product/1604/76800#LabelGroup)
+* [UserQuota](http://document.tencentcloudapi.woa.com/document/product/582/38175#UserQuota)
 
-	* 新增成员：GroupValid
-
-
-
-
-## 弹性 MapReduce(emr) 版本：2019-01-03
-
-### 第 57 次发布
-
-发布时间：2024-08-01 01:20:23
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [CreateCluster](http://document.tencentcloudapi.woa.com/document/product/589/76813)
-
-	* 新增入参：CosBucket
-
-* [CreateInstance](http://document.tencentcloudapi.woa.com/document/product/589/34261)
-
-	* 新增入参：CosBucket
+	* 新增成员：DirectoryPath, Status
 
 
 
 
-## 集团账号管理(organization) 版本：2021-03-31
+## 云数据库 SQL Server(sqlserver) 版本：2018-03-28
 
-### 第 38 次发布
+### 第 42 次发布
 
-发布时间：2024-08-01 01:25:40
+发布时间：2024-08-05 01:22:07
 
 本次发布包含了以下内容：
 
@@ -147,15 +57,7 @@
 
 新增接口：
 
-* [ListOrganizationService](http://document.tencentcloudapi.woa.com/document/product/850/84389)
-
-新增数据结构：
-
-* [OrganizationServiceAssign](http://document.tencentcloudapi.woa.com/document/product/850/67060#OrganizationServiceAssign)
-
-
-
-## 集团账号管理(organization) 版本：2018-12-25
+* [CutXEvents](http://document.tencentcloudapi.woa.com/document/product/238/84392)
 
 
 
@@ -10850,6 +10752,28 @@
 
 ## 应用云渲染(car) 版本：2022-01-10
 
+### 第 10 次发布
+
+发布时间：2024-08-05 01:09:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateApplicationVersion](http://document.tencentcloudapi.woa.com/document/product/1710/81859)
+
+	* 新增入参：ApplicationVersionUpdateMode
+
+
+修改数据结构：
+
+* [UserApplicationVersion](http://document.tencentcloudapi.woa.com/document/product/1710/81862#UserApplicationVersion)
+
+	* 新增成员：ApplicationVersionUpdateMode
+
+
 ### 第 9 次发布
 
 发布时间：2024-05-31 01:08:59
@@ -13204,6 +13128,25 @@
 
 
 ## 云数据库 MySQL(cdb) 版本：2017-03-20
+
+### 第 107 次发布
+
+发布时间：2024-08-02 01:06:08
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateDBInstance](http://document.tencentcloudapi.woa.com/document/product/236/15871)
+
+	* 新增入参：DataProtectVolume, DiskType
+
+* [CreateDBInstanceHour](http://document.tencentcloudapi.woa.com/document/product/236/15865)
+
+	* 新增入参：DataProtectVolume, DiskType
+
 
 ### 第 106 次发布
 
@@ -17371,46 +17314,46 @@
 
 新增接口：
 
-* [[CancelBackupJob](http://document.tencentcloudapi.woa.com/document/product/1706/84372)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[CreateBackUpSchedule](http://document.tencentcloudapi.woa.com/document/product/1706/84371)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DeleteBackUpData](http://document.tencentcloudapi.woa.com/document/product/1706/84370)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeAreaRegion](http://document.tencentcloudapi.woa.com/document/product/1706/84387)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeBackUpJob](http://document.tencentcloudapi.woa.com/document/product/1706/84386)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeBackUpJobDetail](http://document.tencentcloudapi.woa.com/document/product/1706/84385)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeBackUpSchedules](http://document.tencentcloudapi.woa.com/document/product/1706/84384)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeBackUpTables](http://document.tencentcloudapi.woa.com/document/product/1706/84383)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeBackUpTaskDetail](http://document.tencentcloudapi.woa.com/document/product/1706/84382)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeClusterConfigsHistory](http://document.tencentcloudapi.woa.com/document/product/1706/84381)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeDatabaseAuditResource](http://document.tencentcloudapi.woa.com/document/product/1706/84380)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeDmsSqlHistory](http://document.tencentcloudapi.woa.com/document/product/1706/84379)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeDorisMetricFiles](http://document.tencentcloudapi.woa.com/document/product/1706/84378)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeFrontEnd](http://document.tencentcloudapi.woa.com/document/product/1706/84377)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeInstanceNodesRole](http://document.tencentcloudapi.woa.com/document/product/1706/84376)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeInstanceOperations](http://document.tencentcloudapi.woa.com/document/product/1706/84375)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeInstancesHealthState](http://document.tencentcloudapi.woa.com/document/product/1706/84374)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeSpec](http://document.tencentcloudapi.woa.com/document/product/1706/84373)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ModifyNodeStatus](http://document.tencentcloudapi.woa.com/document/product/1706/84369)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[OpenBackUp](http://document.tencentcloudapi.woa.com/document/product/1706/84368)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[RecoverBackUpJob](http://document.tencentcloudapi.woa.com/document/product/1706/84367)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[RestartClusterForConfigs](http://document.tencentcloudapi.woa.com/document/product/1706/84366)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [CancelBackupJob](http://document.tencentcloudapi.woa.com/document/product/1706/84372)
+* [CreateBackUpSchedule](http://document.tencentcloudapi.woa.com/document/product/1706/84371)
+* [DeleteBackUpData](http://document.tencentcloudapi.woa.com/document/product/1706/84370)
+* [DescribeAreaRegion](http://document.tencentcloudapi.woa.com/document/product/1706/84387)
+* [DescribeBackUpJob](http://document.tencentcloudapi.woa.com/document/product/1706/84386)
+* [DescribeBackUpJobDetail](http://document.tencentcloudapi.woa.com/document/product/1706/84385)
+* [DescribeBackUpSchedules](http://document.tencentcloudapi.woa.com/document/product/1706/84384)
+* [DescribeBackUpTables](http://document.tencentcloudapi.woa.com/document/product/1706/84383)
+* [DescribeBackUpTaskDetail](http://document.tencentcloudapi.woa.com/document/product/1706/84382)
+* [DescribeClusterConfigsHistory](http://document.tencentcloudapi.woa.com/document/product/1706/84381)
+* [DescribeDatabaseAuditResource](http://document.tencentcloudapi.woa.com/document/product/1706/84380)
+* [DescribeDmsSqlHistory](http://document.tencentcloudapi.woa.com/document/product/1706/84379)
+* [DescribeDorisMetricFiles](http://document.tencentcloudapi.woa.com/document/product/1706/84378)
+* [DescribeFrontEnd](http://document.tencentcloudapi.woa.com/document/product/1706/84377)
+* [DescribeInstanceNodesRole](http://document.tencentcloudapi.woa.com/document/product/1706/84376)
+* [DescribeInstanceOperations](http://document.tencentcloudapi.woa.com/document/product/1706/84375)
+* [DescribeInstancesHealthState](http://document.tencentcloudapi.woa.com/document/product/1706/84374)
+* [DescribeSpec](http://document.tencentcloudapi.woa.com/document/product/1706/84373)
+* [ModifyNodeStatus](http://document.tencentcloudapi.woa.com/document/product/1706/84369)
+* [OpenBackUp](http://document.tencentcloudapi.woa.com/document/product/1706/84368)
+* [RecoverBackUpJob](http://document.tencentcloudapi.woa.com/document/product/1706/84367)
+* [RestartClusterForConfigs](http://document.tencentcloudapi.woa.com/document/product/1706/84366)
 
 新增数据结构：
 
-* [[BackUpJobDisplay](http://document.tencentcloudapi.woa.com/document/product/1706/80309#BackUpJobDisplay)](http://document.tencentcloudapi.woa.com/document/product/1706/80309#[BackUpJobDisplay](http://document.tencentcloudapi.woa.com/document/product/1706/80309#BackUpJobDisplay))
-* [[BackupCosInfo](http://document.tencentcloudapi.woa.com/document/product/1706/80309#BackupCosInfo)](http://document.tencentcloudapi.woa.com/document/product/1706/80309#[BackupCosInfo](http://document.tencentcloudapi.woa.com/document/product/1706/80309#BackupCosInfo))
-* [[BackupStatus](http://document.tencentcloudapi.woa.com/document/product/1706/80309#BackupStatus)](http://document.tencentcloudapi.woa.com/document/product/1706/80309#[BackupStatus](http://document.tencentcloudapi.woa.com/document/product/1706/80309#BackupStatus))
-* [[BackupTableContent](http://document.tencentcloudapi.woa.com/document/product/1706/80309#BackupTableContent)](http://document.tencentcloudapi.woa.com/document/product/1706/80309#[BackupTableContent](http://document.tencentcloudapi.woa.com/document/product/1706/80309#BackupTableContent))
-* [[ClusterConfigsHistory](http://document.tencentcloudapi.woa.com/document/product/1706/80309#ClusterConfigsHistory)](http://document.tencentcloudapi.woa.com/document/product/1706/80309#[ClusterConfigsHistory](http://document.tencentcloudapi.woa.com/document/product/1706/80309#ClusterConfigsHistory))
-* [[CosSourceInfo](http://document.tencentcloudapi.woa.com/document/product/1706/80309#CosSourceInfo)](http://document.tencentcloudapi.woa.com/document/product/1706/80309#[CosSourceInfo](http://document.tencentcloudapi.woa.com/document/product/1706/80309#CosSourceInfo))
-* [[DescribeMetricsFileReq](http://document.tencentcloudapi.woa.com/document/product/1706/80309#DescribeMetricsFileReq)](http://document.tencentcloudapi.woa.com/document/product/1706/80309#[DescribeMetricsFileReq](http://document.tencentcloudapi.woa.com/document/product/1706/80309#DescribeMetricsFileReq))
-* [[DiskSpec](http://document.tencentcloudapi.woa.com/document/product/1706/80309#DiskSpec)](http://document.tencentcloudapi.woa.com/document/product/1706/80309#[DiskSpec](http://document.tencentcloudapi.woa.com/document/product/1706/80309#DiskSpec))
-* [[DorisSourceInfo](http://document.tencentcloudapi.woa.com/document/product/1706/80309#DorisSourceInfo)](http://document.tencentcloudapi.woa.com/document/product/1706/80309#[DorisSourceInfo](http://document.tencentcloudapi.woa.com/document/product/1706/80309#DorisSourceInfo))
-* [[FrontEndRule](http://document.tencentcloudapi.woa.com/document/product/1706/80309#FrontEndRule)](http://document.tencentcloudapi.woa.com/document/product/1706/80309#[FrontEndRule](http://document.tencentcloudapi.woa.com/document/product/1706/80309#FrontEndRule))
-* [[InstanceOperation](http://document.tencentcloudapi.woa.com/document/product/1706/80309#InstanceOperation)](http://document.tencentcloudapi.woa.com/document/product/1706/80309#[InstanceOperation](http://document.tencentcloudapi.woa.com/document/product/1706/80309#InstanceOperation))
-* [[ModifyMetricFileStruct](http://document.tencentcloudapi.woa.com/document/product/1706/80309#ModifyMetricFileStruct)](http://document.tencentcloudapi.woa.com/document/product/1706/80309#[ModifyMetricFileStruct](http://document.tencentcloudapi.woa.com/document/product/1706/80309#ModifyMetricFileStruct))
-* [[ModifyMetricFileStructNew](http://document.tencentcloudapi.woa.com/document/product/1706/80309#ModifyMetricFileStructNew)](http://document.tencentcloudapi.woa.com/document/product/1706/80309#[ModifyMetricFileStructNew](http://document.tencentcloudapi.woa.com/document/product/1706/80309#ModifyMetricFileStructNew))
-* [[NodeInfos](http://document.tencentcloudapi.woa.com/document/product/1706/80309#NodeInfos)](http://document.tencentcloudapi.woa.com/document/product/1706/80309#[NodeInfos](http://document.tencentcloudapi.woa.com/document/product/1706/80309#NodeInfos))
-* [[ResourceSpec](http://document.tencentcloudapi.woa.com/document/product/1706/80309#ResourceSpec)](http://document.tencentcloudapi.woa.com/document/product/1706/80309#[ResourceSpec](http://document.tencentcloudapi.woa.com/document/product/1706/80309#ResourceSpec))
+* [BackUpJobDisplay](http://document.tencentcloudapi.woa.com/document/product/1706/80309#BackUpJobDisplay)
+* [BackupCosInfo](http://document.tencentcloudapi.woa.com/document/product/1706/80309#BackupCosInfo)
+* [BackupStatus](http://document.tencentcloudapi.woa.com/document/product/1706/80309#BackupStatus)
+* [BackupTableContent](http://document.tencentcloudapi.woa.com/document/product/1706/80309#BackupTableContent)
+* [ClusterConfigsHistory](http://document.tencentcloudapi.woa.com/document/product/1706/80309#ClusterConfigsHistory)
+* [CosSourceInfo](http://document.tencentcloudapi.woa.com/document/product/1706/80309#CosSourceInfo)
+* [DescribeMetricsFileReq](http://document.tencentcloudapi.woa.com/document/product/1706/80309#DescribeMetricsFileReq)
+* [DiskSpec](http://document.tencentcloudapi.woa.com/document/product/1706/80309#DiskSpec)
+* [DorisSourceInfo](http://document.tencentcloudapi.woa.com/document/product/1706/80309#DorisSourceInfo)
+* [FrontEndRule](http://document.tencentcloudapi.woa.com/document/product/1706/80309#FrontEndRule)
+* [InstanceOperation](http://document.tencentcloudapi.woa.com/document/product/1706/80309#InstanceOperation)
+* [ModifyMetricFileStruct](http://document.tencentcloudapi.woa.com/document/product/1706/80309#ModifyMetricFileStruct)
+* [ModifyMetricFileStructNew](http://document.tencentcloudapi.woa.com/document/product/1706/80309#ModifyMetricFileStructNew)
+* [NodeInfos](http://document.tencentcloudapi.woa.com/document/product/1706/80309#NodeInfos)
+* [ResourceSpec](http://document.tencentcloudapi.woa.com/document/product/1706/80309#ResourceSpec)
 
 ### 第 19 次发布
 
@@ -18169,6 +18112,44 @@
 
 
 ## 文件存储(cfs) 版本：2019-07-19
+
+### 第 22 次发布
+
+发布时间：2024-08-05 01:10:24
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [UserQuota](http://document.tencentcloudapi.woa.com/document/product/582/38175#UserQuota)
+
+	* 新增成员：DirectoryPath, Status
+
+
+### 第 21 次发布
+
+发布时间：2024-08-02 01:07:10
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DeleteUserQuota](http://document.tencentcloudapi.woa.com/document/product/582/76556)
+
+	* 新增入参：DirectoryPath
+
+	* <font color="#dd0000">**修改入参**：</font>UserId
+
+* [SetUserQuota](http://document.tencentcloudapi.woa.com/document/product/582/76554)
+
+	* 新增入参：DirectoryPath
+
+	* <font color="#dd0000">**修改入参**：</font>UserId
+
 
 ### 第 20 次发布
 
@@ -28662,6 +28643,21 @@
 
 
 ## 云安全一体化平台(csip) 版本：2022-11-21
+
+### 第 41 次发布
+
+发布时间：2024-08-02 01:08:54
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeAlertList](http://document.tencentcloudapi.woa.com/document/product/1726/83767)
+
+	* 新增出参：ReturnCode, ReturnMsg
+
 
 ### 第 40 次发布
 
@@ -69430,6 +69426,25 @@
 
 ## 媒体处理(mps) 版本：2019-06-12
 
+### 第 59 次发布
+
+发布时间：2024-08-02 01:17:57
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [TranslateConfigureInfo](http://document.tencentcloudapi.woa.com/document/product/862/37615#TranslateConfigureInfo)
+
+	* 新增成员：SubtitleFormat
+
+* [TranslateConfigureInfoForUpdate](http://document.tencentcloudapi.woa.com/document/product/862/37615#TranslateConfigureInfoForUpdate)
+
+	* 新增成员：SubtitleFormat
+
+
 ### 第 58 次发布
 
 发布时间：2024-07-11 02:00:18
@@ -75522,11 +75537,11 @@
 
 新增接口：
 
-* [[ListOrganizationService](http://document.tencentcloudapi.woa.com/document/product/850/84389)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [ListOrganizationService](http://document.tencentcloudapi.woa.com/document/product/850/84389)
 
 新增数据结构：
 
-* [[OrganizationServiceAssign](http://document.tencentcloudapi.woa.com/document/product/850/67060#OrganizationServiceAssign)](http://document.tencentcloudapi.woa.com/document/product/850/67060#[OrganizationServiceAssign](http://document.tencentcloudapi.woa.com/document/product/850/67060#OrganizationServiceAssign))
+* [OrganizationServiceAssign](http://document.tencentcloudapi.woa.com/document/product/850/67060#OrganizationServiceAssign)
 
 ### 第 37 次发布
 
@@ -78549,6 +78564,31 @@
 
 
 ## 云数据库Redis(redis) 版本：2018-04-12
+
+### 第 46 次发布
+
+发布时间：2024-08-02 01:19:26
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeRedisClusterOverview](http://document.tencentcloudapi.woa.com/document/product/239/84391)
+* [DescribeRedisClusters](http://document.tencentcloudapi.woa.com/document/product/239/84390)
+
+新增数据结构：
+
+* [CDCResource](http://document.tencentcloudapi.woa.com/document/product/239/20022#CDCResource)
+* [ResourceBundle](http://document.tencentcloudapi.woa.com/document/product/239/20022#ResourceBundle)
+
+修改数据结构：
+
+* [InstanceSet](http://document.tencentcloudapi.woa.com/document/product/239/20022#InstanceSet)
+
+	* 新增成员：RedisClusterId, DedicatedClusterId, ProductVersion
+
 
 ### 第 45 次发布
 
@@ -82114,6 +82154,18 @@
 
 
 ## 云数据库 SQL Server(sqlserver) 版本：2018-03-28
+
+### 第 42 次发布
+
+发布时间：2024-08-05 01:22:07
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[CutXEvents](http://document.tencentcloudapi.woa.com/document/product/238/84392)](http://document.tencentcloudapi.woa.com/document/product/#/#)
 
 ### 第 41 次发布
 
@@ -100869,6 +100921,21 @@
 
 ## 实时音视频(trtc) 版本：2019-07-22
 
+### 第 62 次发布
+
+发布时间：2024-08-02 01:24:04
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [McuUserInfoParams](http://document.tencentcloudapi.woa.com/document/product/647/44055#McuUserInfoParams)
+
+	* 新增成员：SoundLevel
+
+
 ### 第 61 次发布
 
 发布时间：2024-07-30 01:26:11
@@ -102092,6 +102159,21 @@
 
 
 ## 微服务引擎(tse) 版本：2020-12-07
+
+### 第 68 次发布
+
+发布时间：2024-08-02 01:24:15
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [KongActiveHealthCheck](http://document.tencentcloudapi.woa.com/document/product/1364/54942#KongActiveHealthCheck)
+
+	* 新增成员：Timeout
+
 
 ### 第 67 次发布
 

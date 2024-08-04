@@ -1,3 +1,66 @@
+# Release 3.0.1047.1
+
+## 应用云渲染(car) 版本：2022-01-10
+
+### 第 10 次发布
+
+发布时间：2024-08-05 01:09:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateApplicationVersion](http://document.tencentcloudapi.woa.com/document/product/1710/81859)
+
+	* 新增入参：ApplicationVersionUpdateMode
+
+
+修改数据结构：
+
+* [UserApplicationVersion](http://document.tencentcloudapi.woa.com/document/product/1710/81862#UserApplicationVersion)
+
+	* 新增成员：ApplicationVersionUpdateMode
+
+
+
+
+## 文件存储(cfs) 版本：2019-07-19
+
+### 第 22 次发布
+
+发布时间：2024-08-05 01:10:24
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [UserQuota](http://document.tencentcloudapi.woa.com/document/product/582/38175#UserQuota)
+
+	* 新增成员：DirectoryPath, Status
+
+
+
+
+## 云数据库 SQL Server(sqlserver) 版本：2018-03-28
+
+### 第 42 次发布
+
+发布时间：2024-08-05 01:22:07
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CutXEvents](http://document.tencentcloudapi.woa.com/document/product/238/84392)
+
+
+
 # Release 3.0.1046.1
 
 ## 大模型图像创作引擎(aiart) 版本：2022-12-29
