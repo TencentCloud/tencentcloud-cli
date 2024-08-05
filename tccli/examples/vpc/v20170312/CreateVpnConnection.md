@@ -13,7 +13,7 @@ tccli vpc CreateVpnConnection --cli-unfold-argument  \
     --Tags.0.Key city \
     --IPSECOptionsSpecification.PfsDhGroup NULL \
     --IPSECOptionsSpecification.EncryptAlgorithm 3DES-CBC \
-    --IPSECOptionsSpecification.IntegrityAlgorith MD5 \
+    --IPSECOptionsSpecification.IntegrityAlgorith SHA1 \
     --SecurityPolicyDatabases.0.LocalCidrBlock 10.8.4.0/24 \
     --SecurityPolicyDatabases.0.RemoteCidrBlock 58.211.1.0/24 \
     --VpnGatewayId vpngw-1w9tue3d \
@@ -34,11 +34,11 @@ Output:
 {
     "Response": {
         "VpnConnection": {
-            "VpcId": "vpc-kozprpc9",
-            "VpnConnectionId": "vpnx-p0j11j28",
-            "VpnConnectionName": "test-con",
-            "VpnGatewayId": "vpngw-ecvft20x",
-            "CustomerGatewayId": "cgw-7lhl5331",
+            "VpcId": "vpc-gapcv96p",
+            "VpnConnectionId": "",
+            "VpnConnectionName": "TEST_CONN",
+            "VpnGatewayId": "vpngw-1w9tue3d",
+            "CustomerGatewayId": "cgw-qa9sxpy7",
             "State": "PENDING",
             "PreShareKey": "123456",
             "NegotiationType": "",
@@ -52,21 +52,21 @@ Output:
             "NetStatus": "",
             "SecurityPolicyDatabaseSet": [],
             "IKEOptionsSpecification": {
-                "PropoEncryAlgorithm": "AES-CBC-256",
-                "PropoAuthenAlgorithm": "SHA",
-                "ExchangeMode": "AGGRESSIVE",
+                "PropoEncryAlgorithm": "3DES-CBC",
+                "PropoAuthenAlgorithm": "MD5",
+                "ExchangeMode": "MAIN",
                 "LocalIdentity": "ADDRESS",
                 "RemoteIdentity": "ADDRESS",
-                "LocalAddress": "122.152.199.99",
-                "RemoteAddress": "39.97.38.104",
+                "LocalAddress": "58.211.2.5",
+                "RemoteAddress": "1.2.3.4",
                 "LocalFqdnName": "",
                 "RemoteFqdnName": "",
-                "DhGroupName": "GROUP2",
+                "DhGroupName": "GROUP1",
                 "IKESaLifetimeSeconds": 86400,
                 "IKEVersion": "IKEV1"
             },
             "IPSECOptionsSpecification": {
-                "EncryptAlgorithm": "AES-CBC-256",
+                "EncryptAlgorithm": "3DES-CBC",
                 "IntegrityAlgorith": "SHA1",
                 "IPSECSaLifetimeSeconds": 3600,
                 "IPSECSaLifetimeTraffic": 1843200,

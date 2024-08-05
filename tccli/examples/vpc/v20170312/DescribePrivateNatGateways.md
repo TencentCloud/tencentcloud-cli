@@ -21,6 +21,7 @@ Output:
                 "Status": "AVAILABLE",
                 "CrossDomain": false,
                 "CreatedTime": "2022-09-29 15:58:00",
+                "DirectConnectGatewayIds": [],
                 "TagSet": []
             }
         ],
@@ -60,7 +61,14 @@ Output:
                         "Key": "负责人",
                         "Value": "abc"
                     }
-                ]
+                ],
+                "DirectConnectGatewayIds": [],
+                "NatType": "DCG",
+                "CrossDomainInfo": {
+                    "CcnId": "ccn-123abcef",
+                    "LocalVpcId": "vpc-12345678",
+                    "PeerVpcId": "vpc-abcdefgh"
+                }
             }
         ],
         "RequestId": "e13d67ca-4b7b-4337-b8c5-7df7707c89ca"

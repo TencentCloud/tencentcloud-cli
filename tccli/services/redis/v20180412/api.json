@@ -7965,7 +7965,7 @@
         {
           "disabled": false,
           "document": "CDC Redis集群ID。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "crs-cluster-m1sy****",
           "member": "string",
           "name": "RedisClusterId",
           "output_required": true,
@@ -7975,7 +7975,7 @@
         {
           "disabled": false,
           "document": "CDC 集群ID。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "cluster-3x6j****",
           "member": "string",
           "name": "DedicatedClusterId",
           "output_required": true,

@@ -841,7 +841,7 @@
       "status": "online"
     },
     "DeleteVpnConnection": {
-      "document": "本接口（DeleteVpnConnection）用于删除VPN通道。",
+      "document": "本接口（DeleteVpnConnection）用于删除VPN通道。\n>?本接口为异步接口\n>",
       "input": "DeleteVpnConnectionRequest",
       "name": "删除VPN通道",
       "output": "DeleteVpnConnectionResponse",
@@ -27222,6 +27222,42 @@
       ],
       "usage": "both"
     },
+    "PrivateNatCrossDomainInfo": {
+      "document": "私网NAT网关跨域信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "跨域私网NAT关联的云联网ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ccn-4as5s8ga",
+          "member": "string",
+          "name": "CcnId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "跨域私网NAT本端Vpc\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "vpc-noam856a",
+          "member": "string",
+          "name": "LocalVpcId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "跨域私网NAT对端Vpc\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "vpc-noam856a",
+          "member": "string",
+          "name": "PeerVpcId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "PrivateNatDestinationIpPortTranslationNatRule": {
       "document": "本端目的IP端口转换复杂结构",
       "members": [
@@ -27379,6 +27415,56 @@
           "name": "TagSet",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "专线网关唯一`ID`\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DirectConnectGatewayIds",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "私网网关类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "DCG",
+          "member": "string",
+          "name": "NatType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "私网NAT跨域信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PrivateNatCrossDomainInfo",
+          "name": "CrossDomainInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否VPC型私网网关\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "True",
+          "member": "bool",
+          "name": "VpcType",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "跨域私网NAT关联的云联网ID\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ccn-asj6o7cd",
+          "member": "string",
+          "name": "CcnId",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

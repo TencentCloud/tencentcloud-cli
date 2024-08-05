@@ -22,6 +22,7 @@ Output:
                 "NatGatewayName": "test_nat",
                 "NatGatewayId": "intranat-0g3blj80",
                 "TagSet": [],
+                "DirectConnectGatewayIds": [],
                 "CreatedTime": "2022-10-01 00:00:00"
             }
         ],

@@ -2140,7 +2140,7 @@
         {
           "disabled": false,
           "document": "DSPA实例ID。",
-          "example": "无",
+          "example": "dspa-a1b2c3",
           "member": "string",
           "name": "DspaId",
           "required": true,
@@ -2149,7 +2149,7 @@
         {
           "disabled": false,
           "document": "绑定的COS桶信息。",
-          "example": "无",
+          "example": "[item]",
           "member": "CosResourceItem",
           "name": "BindCosResourceItems",
           "required": false,
@@ -2158,7 +2158,7 @@
         {
           "disabled": false,
           "document": "解绑的COS桶信息。",
-          "example": "无",
+          "example": "[item]",
           "member": "CosResourceItem",
           "name": "UnbindCosResourceItems",
           "required": false,
@@ -2173,9 +2173,10 @@
         {
           "disabled": false,
           "document": "绑定结果数组",
-          "example": "无",
+          "example": "[cosResult]",
           "member": "CosTaskResult",
           "name": "CosTaskResults",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4124,7 +4125,7 @@
         {
           "disabled": false,
           "document": "本次更新的ID号，用来标记一次完整的更新过程。",
-          "example": "无",
+          "example": "123",
           "member": "string",
           "name": "UpdateId",
           "required": true,
@@ -4133,7 +4134,7 @@
         {
           "disabled": false,
           "document": "资源列表。",
-          "example": "无",
+          "example": "[item1,itme2]",
           "member": "DspaUserResourceMeta",
           "name": "Items",
           "required": true,
@@ -4148,40 +4149,40 @@
         {
           "disabled": false,
           "document": "本次更新的ID号，用来标记一次完整的更新过程。",
-          "example": "无",
+          "example": "123",
           "member": "string",
           "name": "UpdateId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "资源类型，支持：cdb（云数据库 MySQL）、dcdb（TDSQL MySQL版）、mariadb（云数据库 MariaDB）、postgres（云数据库 PostgreSQL）、cynosdbpg（TDSQL-C PostgreSQL版）、cynosdbmysql（TDSQL-C MySQL版）",
-          "example": "无",
+          "example": "cbd",
           "member": "string",
           "name": "MetaType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "DSPA实例ID。",
-          "example": "无",
+          "example": "dspa-a1b2",
           "member": "string",
           "name": "DspaId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "资源所处地域。",
-          "example": "无",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "ResourceRegion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9908,7 +9909,7 @@
         {
           "disabled": false,
           "document": "元数据类型",
-          "example": "无",
+          "example": "cdb",
           "member": "string",
           "name": "MetaTypes",
           "required": false,
@@ -9923,7 +9924,7 @@
         {
           "disabled": false,
           "document": "支持的元数据类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "cdb",
           "member": "DSPAMetaType",
           "name": "Metas",
           "output_required": true,
@@ -9933,7 +9934,7 @@
         {
           "disabled": false,
           "document": "最大支持每批次同步数量",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "MaxDBInstanceLimit",
           "output_required": false,
@@ -13561,7 +13562,7 @@
         {
           "disabled": false,
           "document": "用户资源ID。",
-          "example": "无",
+          "example": "1321",
           "member": "string",
           "name": "ResourceId",
           "output_required": true,
@@ -13572,7 +13573,7 @@
         {
           "disabled": false,
           "document": "资源名称。",
-          "example": "无",
+          "example": "cos-absf2",
           "member": "string",
           "name": "ResourceName",
           "output_required": true,
@@ -13583,7 +13584,7 @@
         {
           "disabled": false,
           "document": "资源VIP。",
-          "example": "无",
+          "example": "127.0.0.2",
           "member": "string",
           "name": "ResourceVip",
           "output_required": true,
@@ -13594,7 +13595,7 @@
         {
           "disabled": false,
           "document": "资源端口。",
-          "example": "无",
+          "example": "7890",
           "member": "uint64",
           "name": "ResourceVPort",
           "output_required": true,
@@ -13605,7 +13606,7 @@
         {
           "disabled": false,
           "document": "资源被创建时间。",
-          "example": "无",
+          "example": "2024-01-02",
           "member": "string",
           "name": "ResourceCreateTime",
           "output_required": true,
@@ -13616,7 +13617,7 @@
         {
           "disabled": false,
           "document": "用户资源VPC ID 字符串。",
-          "example": "无",
+          "example": "3131",
           "member": "string",
           "name": "ResourceUniqueVpcId",
           "output_required": true,
@@ -13627,7 +13628,7 @@
         {
           "disabled": false,
           "document": "用户资源Subnet ID 字符串。",
-          "example": "无",
+          "example": "32141",
           "member": "string",
           "name": "ResourceUniqueSubnetId",
           "output_required": true,
@@ -13649,7 +13650,7 @@
         {
           "disabled": false,
           "document": "资源所处地域。",
-          "example": "无",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "ResourceRegion",
           "output_required": true,
@@ -13660,7 +13661,7 @@
         {
           "disabled": false,
           "document": "资源被同步时间。",
-          "example": "无",
+          "example": "2024-02-04",
           "member": "string",
           "name": "ResourceSyncTime",
           "output_required": true,
@@ -13671,7 +13672,7 @@
         {
           "disabled": false,
           "document": "资源被授权状态。",
-          "example": "无",
+          "example": "success",
           "member": "string",
           "name": "AuthStatus",
           "output_required": true,
@@ -13682,7 +13683,7 @@
         {
           "disabled": false,
           "document": "资源创建类型，cloud-云原生资源，build-用户自建资源。",
-          "example": "无",
+          "example": "cloud",
           "member": "string",
           "name": "BuildType",
           "output_required": true,
@@ -13693,7 +13694,7 @@
         {
           "disabled": false,
           "document": "主实例ID。",
-          "example": "无",
+          "example": "12321",
           "member": "string",
           "name": "MasterInsId",
           "output_required": true,
@@ -13704,7 +13705,7 @@
         {
           "disabled": false,
           "document": "用户资源VPC ID 整数。",
-          "example": "1",
+          "example": "3213",
           "member": "uint64",
           "name": "ResourceVpcId",
           "output_required": true,
@@ -13715,7 +13716,7 @@
         {
           "disabled": false,
           "document": "用户资源Subnet ID 整数。",
-          "example": "1",
+          "example": "2313",
           "member": "uint64",
           "name": "ResourceSubnetId",
           "output_required": true,
@@ -13737,7 +13738,7 @@
         {
           "disabled": false,
           "document": "资源版本号。",
-          "example": "无",
+          "example": "1",
           "member": "string",
           "name": "ResourceVersion",
           "output_required": true,
@@ -13759,7 +13760,7 @@
         {
           "disabled": false,
           "document": "授权账号名",
-          "example": "无",
+          "example": "admin",
           "member": "string",
           "name": "ResourceAuthAccount",
           "output_required": true,
@@ -13769,8 +13770,8 @@
         },
         {
           "disabled": false,
-          "document": "x\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "实例类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "type",
           "member": "string",
           "name": "InstanceType",
           "output_required": false,
@@ -13780,8 +13781,8 @@
         },
         {
           "disabled": false,
-          "document": "x\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "实例值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "value",
           "member": "string",
           "name": "InstanceValue",
           "output_required": false,
@@ -15128,7 +15129,7 @@
         {
           "disabled": false,
           "document": "DSPA实例ID。",
-          "example": "无",
+          "example": "dspa-a1b2c3",
           "member": "string",
           "name": "DspaId",
           "required": true,
@@ -15137,7 +15138,7 @@
         {
           "disabled": false,
           "document": "过滤项。\n可过滤值包括：\nResoureRegion - 资源所处地域，需要填写完整地域名称，不支持模糊匹配。\n\nAuthStatus - authorized（已授权）、unauthorized（未授权）、deleted（资源已被删除），不支持模糊匹配，需要填写完整。\n\nBuildType - cloud（云原生资源）、build（用户自建资源），不支持模糊匹配，需要填写完整。\n\nMetaType - cdb（云数据Mysql）、dcdb（TDSQL MySQL版）、mariadb（云数据库 MariaDB）、postgres（云数据库 PostgreSQL）、cynosdbmysql（TDSQL-C MySQL版）、cos（对象存储）、mysql_like_proto（自建型Mysql协议类关系型数据库）、postgre_like_proto（自建型Postgre协议类关系型数据库）。\n\nResourceId - 资源ID，支持模糊搜索。",
-          "example": "无",
+          "example": "[filter]",
           "member": "DspaDataSourceMngFilter",
           "name": "Filters",
           "required": false,
@@ -15146,7 +15147,7 @@
         {
           "disabled": false,
           "document": "分页步长，默认为100。",
-          "example": "无",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -15155,7 +15156,7 @@
         {
           "disabled": false,
           "document": "分页偏移量，默认为0。",
-          "example": "无",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -15179,18 +15180,20 @@
         {
           "disabled": false,
           "document": "DSPA实例ID。",
-          "example": "无",
+          "example": "dspa-1",
           "member": "string",
           "name": "DspaId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "用户资源列表。",
-          "example": "无",
+          "example": "[123]",
           "member": "DspaUserResourceMeta",
           "name": "Resources",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -15200,6 +15203,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -15259,15 +15263,6 @@
           "type": "string"
         },
         {
-          "disabled": true,
-          "document": "最新风险项Id",
-          "example": "1",
-          "member": "uint64",
-          "name": "RiskLatestTableId",
-          "required": true,
-          "type": "int"
-        },
-        {
           "disabled": false,
           "document": "风险状态（waiting:待处理，processing:处理中，finished:已处理，ignored:已忽略）",
           "example": "finished",
@@ -15277,9 +15272,18 @@
           "type": "string"
         },
         {
+          "disabled": true,
+          "document": "最新风险项Id",
+          "example": "1",
+          "member": "uint64",
+          "name": "RiskLatestTableId",
+          "required": false,
+          "type": "int"
+        },
+        {
           "disabled": false,
           "document": "备注",
-          "example": "无",
+          "example": "remark",
           "member": "string",
           "name": "Note",
           "required": false,
@@ -17469,7 +17473,7 @@
         {
           "disabled": false,
           "document": "风险描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "未加密的敏感数据在被窃取或泄露时可能会导致严重的后果",
           "member": "string",
           "name": "RiskDescription",
           "output_required": true,
@@ -17491,7 +17495,7 @@
         {
           "disabled": false,
           "document": "安全产品（可能有多个）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[item]",
           "member": "SecurityProduct",
           "name": "SecurityProduct",
           "output_required": true,
@@ -17557,7 +17561,7 @@
         {
           "disabled": false,
           "document": "风险面\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "database_security",
           "member": "string",
           "name": "RiskSide",
           "output_required": false,
@@ -17579,7 +17583,7 @@
         {
           "disabled": false,
           "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "处理备注",
           "member": "string",
           "name": "Remark",
           "output_required": false,
@@ -18067,6 +18071,7 @@
           "example": "T-ce",
           "member": "string",
           "name": "ProductName",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -18077,12 +18082,13 @@
           "example": "http://xxxx",
           "member": "string",
           "name": "ReferUrl",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "SensitiveLevel": {
       "document": "敏感等级分布",
