@@ -12071,7 +12071,7 @@
           "example": "ap-guangzhou-6",
           "member": "string",
           "name": "SlaveZones",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

@@ -8,14 +8,6 @@
         "title": "一句话识别相关接口"
       }
     ],
-    "SimultaneousInterpreting": [
-      {
-        "document": "会场同传",
-        "input": "https://aai.tencentcloudapi.com/?Action=SimultaneousInterpreting\r\n&IsEnd=0\r\n&OpenTranslate=1\r\n&ProjectId=1093177\r\n&RecEngineModelType=16k_zh\r\n&SourceLanguage=zh\r\n&SubServiceType=3\r\n&TargetLanguage=en\r\n&VoiceFormat=1\r\n&VoiceId=0234567890abcdef\r\n&Data=ddddd\r\n&DataLen=5\r\n&Seq=0\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"AsrText\": \"你好世界。\",\n        \"NmtText\": \"Hello world.\",\n        \"RequestId\": \"980fae23-e210-4da4-97d8-3ecc131feea5\"\n    }\n}",
-        "title": "同传接口调用"
-      }
-    ],
     "TextToVoice": [
       {
         "document": "",

@@ -1,3 +1,71 @@
+# Release 3.0.1048.1
+
+## 智能语音(aai) 版本：2018-05-22
+
+### 第 5 次发布
+
+发布时间：2024-08-06 01:07:17
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* SimultaneousInterpreting
+
+
+
+## 集团账号管理(organization) 版本：2021-03-31
+
+### 第 39 次发布
+
+发布时间：2024-08-06 01:20:46
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateOrgServiceAssign](http://document.tencentcloudapi.woa.com/document/product/850/84487)
+* [DeleteOrgServiceAssign](http://document.tencentcloudapi.woa.com/document/product/850/84486)
+* [ListOrgServiceAssignMember](http://document.tencentcloudapi.woa.com/document/product/850/84488)
+
+新增数据结构：
+
+* [NodeMainInfo](http://document.tencentcloudapi.woa.com/document/product/850/67060#NodeMainInfo)
+* [OrganizationServiceAssignMember](http://document.tencentcloudapi.woa.com/document/product/850/67060#OrganizationServiceAssignMember)
+
+
+
+## 集团账号管理(organization) 版本：2018-12-25
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 146 次发布
+
+发布时间：2024-08-06 01:26:30
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [PrivateNatCrossDomainInfo](http://document.tencentcloudapi.woa.com/document/product/215/15824#PrivateNatCrossDomainInfo)
+
+修改数据结构：
+
+* [PrivateNatGateway](http://document.tencentcloudapi.woa.com/document/product/215/15824#PrivateNatGateway)
+
+	* 新增成员：GatewayType, DirectConnectGatewayIds, NatType, CrossDomainInfo, VpcType, CcnId
+
+
+
+
 # Release 3.0.1047.1
 
 ## 应用云渲染(car) 版本：2022-01-10

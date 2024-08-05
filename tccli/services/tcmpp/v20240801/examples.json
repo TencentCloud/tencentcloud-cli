@@ -1,0 +1,565 @@
+{
+  "actions": {
+    "AddTeamMember": [
+      {
+        "document": "demo",
+        "input": "POST / HTTP/1.1\nHost: tcmpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddTeamMember\n<公共请求参数>\n\n{\n    \"TeamId\": \"abc\",\n    \"MemberList\": [\n        {\n            \"UserId\": \"abc\",\n            \"UserRoleId\": 0\n        }\n    ],\n    \"PlatformId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Result\": true\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
+    "CheckGlobalDomain": [
+      {
+        "document": "demo",
+        "input": "POST / HTTP/1.1\nHost: tcmpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckGlobalDomain\n<公共请求参数>\n\n{\n    \"DomainUrlList\": [\n        \"abc\"\n    ],\n    \"PlatformId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"RepeatUrls\": [\n                \"abc\"\n            ],\n            \"ExistsWhiteUrls\": [\n                \"abc\"\n            ],\n            \"ExistsBlackUrls\": [\n                \"abc\"\n            ]\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
+    "CreateApplication": [
+      {
+        "document": "demo",
+        "input": "POST / HTTP/1.1\nHost: tcmpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateApplication\n\n{\n    \"ApplicationName\": \"abc\",\n    \"AndroidAppKey\": \"abc\",\n    \"IosAppKey\": \"abc\",\n    \"Logo\": \"http://baidu.com\",\n    \"PlatformId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ResourceId\": \"abc\"\n        },\n        \"RequestId\": \"a3a8754d19214815ba0af3010b871b91\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
+    "CreateConsoleMNPVersionCompileTask": [
+      {
+        "document": "demo",
+        "input": "POST / HTTP/1.1\nHost: tcmpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateConsoleMNPVersionCompileTask\n<公共请求参数>\n\n{\n    \"MNPId\": \"abc\",\n    \"MNPVersion\": \"abc\",\n    \"FileUrl\": \"abc\",\n    \"FileInnerUrl\": \"abc\",\n    \"PlatformId\": \"abc\",\n    \"TaskType\": 0,\n    \"MNPVersionIntro\": \"abc\",\n    \"MNPVersionDesc\": \"abc\",\n    \"SourceType\": 0,\n    \"ReleaseChannel\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"TaskId\": \"abc\"\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
+    "CreateDomain": [
+      {
+        "document": "demo",
+        "input": "POST / HTTP/1.1\nHost: tcmpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDomain\n<公共请求参数>\n\n{\n    \"MNPId\": \"abc\",\n    \"Domain\": [\n        {\n            \"DomainUrlList\": [\n                \"abc\"\n            ],\n            \"DomainType\": 0\n        }\n    ],\n    \"PlatformId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
+    "CreateGlobalDomain": [
+      {
+        "document": "demo",
+        "input": "POST / HTTP/1.1\nHost: tcmpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateGlobalDomain\n<公共请求参数>\n\n{\n    \"DomainUrlList\": [\n        \"abc\"\n    ],\n    \"DomainType\": 0,\n    \"PlatformId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Result\": true,\n            \"RepeatUrls\": [\n                \"abc\"\n            ],\n            \"ExistsWhiteUrls\": [\n                \"abc\"\n            ],\n            \"ExistsBlackUrls\": [\n                \"abc\"\n            ]\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
+    "CreateMNP": [
+      {
+        "document": "demo",
+        "input": "POST / HTTP/1.1\nHost: tcmpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMNP\n<公共请求参数>\n\n{\n    \"MNPType\": \"abc\",\n    \"MNPName\": \"abc\",\n    \"MNPIcon\": \"abc\",\n    \"MNPIntro\": \"abc\",\n    \"MNPDesc\": \"abc\",\n    \"PlatformId\": \"abc\",\n    \"TeamId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ResourceId\": \"abc\"\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
+    "CreateOnlineApply": [
+      {
+        "document": "demo",
+        "input": "POST / HTTP/1.1\nHost: tcmpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOnlineApply\n<公共请求参数>\n\n{\n    \"MNPVersionId\": 0,\n    \"PlatformId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Result\": true\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
+    "CreatePlatformAudit": [
+      {
+        "document": "demo",
+        "input": "POST / HTTP/1.1\nHost: tcmpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePlatformAudit\n<公共请求参数>\n\n{\n    \"MNPVersionId\": 0,\n    \"ApplyAction\": \"abc\",\n    \"PlatformId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Result\": true\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
+    "CreateSensitiveAPI": [
+      {
+        "document": "demo",
+        "input": "POST / HTTP/1.1\nHost: tcmpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSensitiveAPI\n<公共请求参数>\n\n{\n    \"ApplicationId\": \"abc\",\n    \"ApiList\": [\n        {\n            \"ApiName\": \"abc\",\n            \"ApiDesc\": \"abc\",\n            \"ApiType\": 0\n        }\n    ],\n    \"PlatformId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Result\": true\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
+    "CreateSensitiveApiApply": [
+      {
+        "document": "demo",
+        "input": "POST / HTTP/1.1\nHost: tcmpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSensitiveApiApply\n<公共请求参数>\n\n{\n    \"APIId\": \"abc\",\n    \"ApplyReason\": \"abc\",\n    \"MNPId\": \"abc\",\n    \"PlatformId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ResourceId\": \"abc\"\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
+    "CreateTeam": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcmpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTeam\n<公共请求参数>\n\n{\n    \"TeamName\": \"abc\",\n    \"AdminUserId\": \"abc\",\n    \"TeamRoleTypeList\": [\n        0\n    ],\n    \"Remark\": \"abc\",\n    \"PlatformId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "DEMO"
+      }
+    ],
+    "CreateTeamMember": [
+      {
+        "document": "demo",
+        "input": "POST / HTTP/1.1\nHost: tcmpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTeamMember\n<公共请求参数>\n\n{\n    \"UserName\": \"abc\",\n    \"UserAccount\": \"abc\",\n    \"UserPassword\": \"abc\",\n    \"TeamId\": \"abc\",\n    \"RoleId\": 0,\n    \"KeyId\": \"abc\",\n    \"PlatformId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"UserId\": \"abc\"\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
+    "CreateUser": [
+      {
+        "document": "demo",
+        "input": "POST / HTTP/1.1\nHost: tcmpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateUser\n<公共请求参数>\n\n{\n    \"UserAccount\": \"abc\",\n    \"UserName\": \"abc\",\n    \"AccountType\": 0,\n    \"Password\": \"abc\",\n    \"KeyId\": \"abc\",\n    \"PlatformId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ResourceId\": \"abc\"\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
+    "DeleteApplication": [
+      {
+        "document": "demo",
+        "input": "POST / HTTP/1.1\nHost: tcmpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteApplication\n<公共请求参数>\n\n{\n    \"ApplicationId\": \"abc\",\n    \"PlatformId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Result\": true\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
+    "DeleteGlobalDomain": [
+      {
+        "document": "demo",
+        "input": "POST / HTTP/1.1\nHost: tcmpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteGlobalDomain\n<公共请求参数>\n\n{\n    \"DomainId\": 0,\n    \"PlatformId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Result\": true\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
+    "DeleteMNP": [
+      {
+        "document": "demo",
+        "input": "POST / HTTP/1.1\nHost: tcmpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteMNP\n<公共请求参数>\n\n{\n    \"MNPId\": \"abc\",\n    \"PlatformId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Result\": true\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
+    "DeleteSensitiveAPI": [
+      {
+        "document": "demo",
+        "input": "POST / HTTP/1.1\nHost: tcmpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSensitiveAPI\n<公共请求参数>\n\n{\n    \"ApiId\": \"abc\",\n    \"PlatformId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Result\": true\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
+    "DeleteTeam": [
+      {
+        "document": "demo",
+        "input": "POST / HTTP/1.1\nHost: tcmpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteTeam\n<公共请求参数>\n\n{\n    \"TeamId\": \"abc\",\n    \"PlatformId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Result\": true\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
+    "DeleteTeamMember": [
+      {
+        "document": "demo",
+        "input": "POST / HTTP/1.1\nHost: tcmpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteTeamMember\n<公共请求参数>\n\n{\n    \"TeamId\": \"abc\",\n    \"UserId\": \"abc\",\n    \"PlatformId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Result\": true\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
+    "DeleteUser": [
+      {
+        "document": "demo",
+        "input": "POST / HTTP/1.1\nHost: tcmpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteUser\n<公共请求参数>\n\n{\n    \"UserId\": \"abc\",\n    \"PlatformId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Result\": true\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
+    "DescribeApplication": [
+      {
+        "document": "demo",
+        "input": "POST / HTTP/1.1\nHost: tcmpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeApplication\n<公共请求参数>\n\n{\n    \"ApplicationId\": \"abc\",\n    \"PlatformId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ApplicationID\": \"abc\",\n            \"AppIdentityID\": 0,\n            \"ApplicationName\": \"abc\",\n            \"ApplicationEnglishName\": \"abc\",\n            \"Logo\": \"abc\",\n            \"Remark\": \"abc\",\n            \"AndroidAppKey\": \"abc\",\n            \"IosAppKey\": \"abc\",\n            \"CreateUser\": \"abc\",\n            \"CreateTime\": \"abc\",\n            \"UpdateUser\": \"abc\",\n            \"UpdateTime\": \"abc\",\n            \"BindMNPCount\": 0,\n            \"BindMNPList\": [\n                {\n                    \"MNPId\": \"abc\",\n                    \"MNPName\": \"abc\",\n                    \"MNPIcon\": \"abc\",\n                    \"MNPType\": \"abc\",\n                    \"MNPIntro\": \"abc\",\n                    \"MNPDesc\": \"abc\",\n                    \"EffectStatus\": 0,\n                    \"EffectMNPVersion\": \"abc\",\n                    \"MNPOnlineVersion\": \"abc\",\n                    \"OnlineStatus\": 0\n                }\n            ],\n            \"Intro\": \"abc\",\n            \"AndroidAppUrl\": \"abc\",\n            \"IosAppUrl\": \"abc\"\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
+    "DescribeApplicationConfig": [
+      {
+        "document": "demo",
+        "input": "POST / HTTP/1.1\nHost: tcmpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeApplicationConfig\n<公共请求参数>\n\n{\n    \"ApplicationId\": \"abc\",\n    \"AppType\": 0,\n    \"PlatformId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"File\": \"abc\"\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
+    "DescribeApplicationList": [
+      {
+        "document": "demo",
+        "input": "POST / HTTP/1.1\nHost: tcmpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeApplicationList\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 0,\n    \"PlatformId\": \"abc\",\n    \"Keyword\": \"abc\",\n    \"TeamId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"TotalCount\": 0,\n            \"DataList\": [\n                {\n                    \"CustomerID\": \"abc\",\n                    \"ApplicationID\": \"abc\",\n                    \"AppIdentityID\": 0,\n                    \"ApplicationName\": \"abc\",\n                    \"ApplicationEnglishName\": \"abc\",\n                    \"Logo\": \"abc\",\n                    \"Remark\": \"abc\",\n                    \"AndroidAppKey\": \"abc\",\n                    \"IosAppKey\": \"abc\",\n                    \"CreateUser\": \"abc\",\n                    \"CreateTime\": \"abc\",\n                    \"UpdateUser\": \"abc\",\n                    \"UpdateTime\": \"abc\",\n                    \"Intro\": \"abc\",\n                    \"IosAppUrl\": \"abc\",\n                    \"AndroidAppUrl\": \"abc\"\n                }\n            ]\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
+    "DescribeApplicationMNPVersionAuditList": [
+      {
+        "document": "demo",
+        "input": "POST / HTTP/1.1\nHost: tcmpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeApplicationMNPVersionAuditList\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 0,\n    \"PlatformId\": \"abc\",\n    \"AuditStatusList\": [\n        0\n    ],\n    \"Keyword\": \"abc\",\n    \"ApplicationId\": \"abc\",\n    \"TeamId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"TotalCount\": 0,\n            \"DataList\": [\n                {\n                    \"AuditNo\": \"abc\",\n                    \"ApplicationId\": \"abc\",\n                    \"AuditStatus\": 0,\n                    \"MNPId\": \"abc\",\n                    \"MNPVersion\": \"abc\",\n                    \"MNPVersionId\": 0,\n                    \"ApplyUser\": \"abc\",\n                    \"ApplyTime\": \"abc\",\n                    \"MNPName\": \"abc\",\n                    \"MNPIcon\": \"abc\",\n                    \"ApplicationName\": \"abc\",\n                    \"ApplicationLogo\": \"abc\",\n                    \"TeamId\": \"abc\",\n                    \"TeamName\": \"abc\",\n                    \"ApplicationAndUrl\": \"abc\",\n                    \"ApplicationIOSUrl\": \"abc\",\n                    \"MNPQrCodeUrl\": \"abc\",\n                    \"MNPType\": \"abc\",\n                    \"AuditUser\": \"abc\",\n                    \"AuditTime\": \"abc\",\n                    \"AuditNote\": \"abc\"\n                }\n            ]\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
+    "DescribeConsoleMNPVersionCompileTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcmpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConsoleMNPVersionCompileTask\n<公共请求参数>\n\n{\n    \"BusinessId\": \"abc\",\n    \"PlatformId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"MNPId\": \"abc\",\n            \"TaskId\": \"abc\",\n            \"TaskStatus\": 0,\n            \"TaskMsg\": \"abc\",\n            \"QrCodeUrl\": \"abc\",\n            \"PkgSize\": 0,\n            \"SubPkgInfos\": [\n                {\n                    \"PkgName\": \"abc\",\n                    \"PathPrefix\": \"abc\",\n                    \"PkgSize\": 0\n                }\n            ],\n            \"QrCodeContent\": \"abc\",\n            \"ExtInfo\": {\n                \"TCMPPErrMsg\": \"abc\",\n                \"WXErrMsg\": \"abc\",\n                \"WXQrCode\": \"abc\",\n                \"SizeInfo\": \"abc\"\n            }\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
+    "DescribeDomainInfo": [
+      {
+        "document": "demo",
+        "input": "POST / HTTP/1.1\nHost: tcmpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDomainInfo\n<公共请求参数>\n\n{\n    \"MNPId\": \"abc\",\n    \"PlatformId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"DomainUrl\": \"abc\",\n                \"DomainType\": 0\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
+    "DescribeDomainTeamList": [
+      {
+        "document": "demo",
+        "input": "POST / HTTP/1.1\nHost: tcmpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDomainTeamList\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 0,\n    \"PlatformId\": \"abc\",\n    \"Keyword\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"TotalCount\": 0,\n            \"DataList\": [\n                {\n                    \"TeamId\": \"abc\",\n                    \"TeamName\": \"abc\",\n                    \"CreateUser\": \"abc\",\n                    \"CreateTime\": \"abc\"\n                }\n            ]\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
+    "DescribeGlobalDomainList": [
+      {
+        "document": "demo",
+        "input": "POST / HTTP/1.1\nHost: tcmpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGlobalDomainList\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 0,\n    \"PlatformId\": \"abc\",\n    \"DomainTypes\": [\n        0\n    ],\n    \"Keyword\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"TotalCount\": 0,\n            \"DataList\": [\n                {\n                    \"DomainId\": 0,\n                    \"CustomerID\": \"abc\",\n                    \"DomainURL\": \"abc\",\n                    \"DomainType\": 0,\n                    \"CreateUser\": \"abc\",\n                    \"CreateTime\": \"abc\",\n                    \"UpdateUser\": \"abc\",\n                    \"UpdateTime\": \"abc\"\n                }\n            ]\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
+    "DescribeMNPBoard": [
+      {
+        "document": "demo",
+        "input": "POST / HTTP/1.1\nHost: tcmpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMNPBoard\n<公共请求参数>\n\n{\n    \"MNPId\": \"abc\",\n    \"PlatformId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"MNPId\": \"abc\",\n                \"MNPVersionId\": 0,\n                \"MNPName\": \"abc\",\n                \"MNPIcon\": \"abc\",\n                \"MNPType\": \"abc\",\n                \"MNPIntro\": \"abc\",\n                \"MNPDesc\": \"abc\",\n                \"CreateUser\": \"abc\",\n                \"CreateTime\": \"abc\",\n                \"MNPVersion\": \"abc\",\n                \"MNPVersionIntro\": \"abc\",\n                \"Phase\": \"abc\",\n                \"AuditStatus\": 0,\n                \"AuditNo\": \"abc\",\n                \"ShowCase\": 0\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
+    "DescribeMNPDetail": [
+      {
+        "document": "demo",
+        "input": "POST / HTTP/1.1\nHost: tcmpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMNPDetail\n<公共请求参数>\n\n{\n    \"MNPId\": \"abc\",\n    \"PlatformId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"MNPType\": \"abc\",\n            \"MNPId\": \"abc\",\n            \"MNPName\": \"abc\",\n            \"MNPIcon\": \"abc\",\n            \"MNPIntro\": \"abc\",\n            \"MNPDesc\": \"abc\",\n            \"CreateUser\": \"abc\",\n            \"CreateTime\": 0,\n            \"OnlineStatus\": 0,\n            \"Applications\": [\n                {\n                    \"ApplicationId\": \"abc\",\n                    \"ApplicationName\": \"abc\"\n                }\n            ],\n            \"Tags\": [\n                \"abc\"\n            ]\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
+    "DescribeMNPManagerDetail": [
+      {
+        "document": "demo",
+        "input": "POST / HTTP/1.1\nHost: tcmpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMNPDetailV2\n<公共请求参数>\n\n{\n    \"MNPId\": \"abc\",\n    \"PlatformId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"MNPType\": \"abc\",\n            \"MNPId\": \"abc\",\n            \"MNPName\": \"abc\",\n            \"MNPIcon\": \"abc\",\n            \"MNPIntro\": \"abc\",\n            \"MNPDesc\": \"abc\",\n            \"CreateTime\": \"abc\",\n            \"CreateUser\": \"abc\",\n            \"AccessStatus\": 0,\n            \"TeamName\": \"abc\",\n            \"TeamId\": \"abc\"\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
+    "DescribeMNPManagerList": [
+      {
+        "document": "demo",
+        "input": "POST / HTTP/1.1\nHost: tcmpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMNPManagerList\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 0,\n    \"PlatformId\": \"abc\",\n    \"Keyword\": \"abc\",\n    \"TeamId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"TotalCount\": 0,\n            \"DataList\": [\n                {\n                    \"MNPId\": \"abc\",\n                    \"MNPIcon\": \"abc\",\n                    \"MNPName\": \"abc\",\n                    \"TeamName\": \"abc\",\n                    \"AccessStatus\": 0\n                }\n            ]\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
+    "DescribeMNPPrivacy": [
+      {
+        "document": "demo",
+        "input": "POST / HTTP/1.1\nHost: tcmpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMNPPrivacy\n<公共请求参数>\n\n{\n    \"MNPId\": \"abc\",\n    \"PlatformId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
+    "DescribeMNPType": [
+      {
+        "document": "demo",
+        "input": "POST / HTTP/1.1\nHost: tcmpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMNPType\n<公共请求参数>\n\n{\n    \"PlatformId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"TypeName\": \"abc\",\n                \"TypeValue\": [\n                    \"abc\"\n                ]\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
+    "DescribeMNPVersionPreview": [
+      {
+        "document": "demo",
+        "input": "POST / HTTP/1.1\nHost: tcmpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMNPVersionPreview\n<公共请求参数>\n\n{\n    \"MNPId\": \"abc\",\n    \"MNPVersionId\": 0,\n    \"PlatformId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"MNPId\": \"abc\",\n            \"MNPName\": \"abc\",\n            \"MNPDesc\": \"abc\",\n            \"MNPVersion\": \"abc\",\n            \"MNPVersionIntro\": \"abc\",\n            \"QRCodeUrl\": \"abc\",\n            \"AppList\": [\n                {\n                    \"ApplicationId\": \"abc\",\n                    \"ApplicationName\": \"abc\",\n                    \"ApplicationAndUrl\": \"abc\",\n                    \"ApplicationIOSUrl\": \"abc\",\n                    \"ApplicationIcon\": \"abc\"\n                }\n            ],\n            \"TestEntrancePath\": \"abc\"\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
+    "DescribeOfflineMNPPackage": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcmpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOfflineMNPPackage\n<公共请求参数>\n\n{\n    \"MNPId\": \"abc\",\n    \"PlatformId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Data\": \"abc\"\n        },\n        \"RequestId\": \"11154253799a45a3a0acf7c90a1b9df5\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
+    "DescribeOnlineVersion": [
+      {
+        "document": "demo",
+        "input": "POST / HTTP/1.1\nHost: tcmpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOnlineVersion\n<公共请求参数>\n\n{\n    \"MNPId\": \"abc\",\n    \"PlatformId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"TotalCount\": 0,\n            \"DataList\": [\n                {\n                    \"MNPId\": \"abc\",\n                    \"MNPVersion\": \"abc\",\n                    \"MNPVersionId\": 0,\n                    \"MNPVersionNote\": \"abc\",\n                    \"UpdateTime\": \"abc\"\n                }\n            ]\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
+    "DescribeRoleDetail": [
+      {
+        "document": "demo",
+        "input": "POST / HTTP/1.1\nHost: tcmpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRoleDetail\n<公共请求参数>\n\n{\n    \"RoleId\": 0,\n    \"PlatformId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"RoleId\": 0,\n            \"RoleName\": \"abc\",\n            \"TeamId\": \"abc\",\n            \"TeamName\": \"abc\",\n            \"ResourceIds\": [\n                \"abc\"\n            ]\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
+    "DescribeRoleList": [
+      {
+        "document": "demo",
+        "input": "POST / HTTP/1.1\nHost: tcmpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRoleList\n\n{\n    \"Offset\": 0,\n    \"Limit\": 0,\n    \"Keyword\": \"abc\",\n    \"TeamId\": \"abc\",\n    \"PlatformId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"TotalCount\": 0,\n            \"DataList\": [\n                {\n                    \"RoleId\": 0,\n                    \"RoleName\": \"abc\",\n                    \"TeamName\": \"abc\",\n                    \"CreateTime\": \"abc\",\n                    \"RoleType\": 0\n                }\n            ]\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
+    "DescribeSensitiveAPIAuditList": [
+      {
+        "document": "demo",
+        "input": "POST / HTTP/1.1\nHost: tcmpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSensitiveAPIAuditList\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 0,\n    \"AuditStatusList\": [\n        0\n    ],\n    \"Keyword\": \"abc\",\n    \"PlatformId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"TotalCount\": 0,\n            \"DataList\": [\n                {\n                    \"AuditNo\": \"abc\",\n                    \"ApiId\": \"abc\",\n                    \"ApiName\": \"abc\",\n                    \"ApiMethod\": \"abc\",\n                    \"MNPId\": \"abc\",\n                    \"MNPName\": \"abc\",\n                    \"ApplyUser\": \"abc\",\n                    \"ApplyTime\": \"abc\",\n                    \"ApplyNote\": \"abc\",\n                    \"AuditStatus\": 0,\n                    \"AuditUser\": \"abc\",\n                    \"AuditTime\": \"abc\",\n                    \"AuditNote\": \"abc\",\n                    \"ApiType\": 1,\n                    \"ApiDesc\": \"desc\"\n                }\n            ]\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
+    "DescribeSensitiveAPIList": [
+      {
+        "document": "demo",
+        "input": "POST / HTTP/1.1\nHost: tcmpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSensitiveAPIList\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 0,\n    \"Keyword\": \"abc\",\n    \"PlatformId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"TotalCount\": 0,\n            \"DataList\": [\n                {\n                    \"ApiId\": \"abc\",\n                    \"ApiName\": \"abc\",\n                    \"ApiMethod\": \"abc\",\n                    \"ApiDesc\": \"abc\",\n                    \"CreateUser\": \"abc\",\n                    \"CreateTime\": \"abc\",\n                    \"UpdateUser\": \"abc\",\n                    \"UpdateTime\": \"abc\",\n                    \"APIType\": 1,\n                    \"Status\": 1\n                }\n            ]\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
+    "DescribeSensitiveApiApplyDetail": [
+      {
+        "document": "demo",
+        "input": "POST / HTTP/1.1\nHost: tcmpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSensitiveApiApplyDetail\n<公共请求参数>\n\n{\n    \"AuditNo\": \"abc\",\n    \"PlatformId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"APIId\": \"abc\",\n            \"APIMethod\": \"abc\",\n            \"ApplyReason\": \"abc\",\n            \"RejectReason\": \"abc\",\n            \"AuditStatus\": 0,\n            \"APIDesc\": \"111\",\n            \"APIType\": 1\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
+    "DescribeSensitiveApiAuthList": [
+      {
+        "document": "demo",
+        "input": "POST / HTTP/1.1\nHost: tcmpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSensitiveApiAuthList\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 0,\n    \"MNPId\": \"abc\",\n    \"PlatformId\": \"abc\",\n    \"ApplicationId\": \"abc\",\n    \"Keyword\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"TotalCount\": 0,\n            \"DataList\": [\n                {\n                    \"APIId\": \"abc\",\n                    \"APIName\": \"abc\",\n                    \"APIMethod\": \"abc\",\n                    \"APIStatus\": 0,\n                    \"APIApplyStatus\": 0,\n                    \"RejectReason\": \"abc\",\n                    \"APIDesc\": \"desc\",\n                    \"APIType\": 1\n                }\n            ]\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
+    "DescribeSimpleApplicationInfoList": [
+      {
+        "document": "demo",
+        "input": "POST / HTTP/1.1\nHost: tcmpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSimpleApplicationInfoList\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 0,\n    \"PlatformId\": \"abc\",\n    \"Keyword\": \"abc\",\n    \"LoadAssistantApp\": true,\n    \"MNPId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"TotalCount\": 0,\n            \"DataList\": [\n                {\n                    \"ApplicationID\": \"abc\",\n                    \"AppIdentityID\": 0,\n                    \"ApplicationName\": \"abc\"\n                }\n            ]\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
+    "DescribeSimpleTeamList": [
+      {
+        "document": "demo",
+        "input": "POST / HTTP/1.1\nHost: tcmpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSimpleTeamList\n<公共请求参数>\n\n{\n    \"PlatformId\": \"abc\",\n    \"TeamRoleTypeList\": [\n        0\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"TotalCount\": 0,\n            \"DataList\": [\n                {\n                    \"Key\": \"abc\",\n                    \"Value\": \"abc\"\n                }\n            ]\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
+    "DescribeTeam": [
+      {
+        "document": "demo",
+        "input": "POST / HTTP/1.1\nHost: tcmpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTeam\n<公共请求参数>\n\n{\n    \"TeamId\": \"abc\",\n    \"PlatformId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"TeamName\": \"abc\",\n            \"TeamRoleType\": 0,\n            \"AdminUserAccount\": \"abc\",\n            \"CreateUser\": \"abc\",\n            \"CreateTime\": \"abc\",\n            \"MemberCount\": 0,\n            \"BindTeamName\": \"abc\",\n            \"RegisterLink\": \"abc\"\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
+    "DescribeTeamDomainList": [
+      {
+        "document": "demo",
+        "input": "POST / HTTP/1.1\nHost: tcmpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTeamDomainList\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 0,\n    \"TeamId\": \"abc\",\n    \"PlatformId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"TotalCount\": 0,\n            \"DataList\": [\n                {\n                    \"DomainId\": 0,\n                    \"MNPId\": \"abc\",\n                    \"MNPName\": \"abc\",\n                    \"DomainUrl\": \"abc\",\n                    \"DomainType\": 0,\n                    \"Status\": 0,\n                    \"CreateUser\": \"abc\",\n                    \"CreateTime\": \"abc\"\n                }\n            ]\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
+    "DescribeTeamList": [
+      {
+        "document": "demo",
+        "input": "POST / HTTP/1.1\nHost: tcmpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTeamList\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 0,\n    \"PlatformId\": \"abc\",\n    \"Keyword\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"TotalCount\": 0,\n            \"DataList\": [\n                {\n                    \"TeamId\": \"abc\",\n                    \"TeamName\": \"abc\",\n                    \"AdminUserId\": \"abc\",\n                    \"AdminUserAccount\": \"abc\",\n                    \"AdminUserName\": \"abc\",\n                    \"MemberCount\": 0,\n                    \"TeamRoleTypeList\": [\n                        0\n                    ]\n                }\n            ]\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
+    "DescribeTeamMemberList": [
+      {
+        "document": "demo",
+        "input": "POST / HTTP/1.1\nHost: tcmpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTeamMemberList\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 0,\n    \"PlatformId\": \"abc\",\n    \"TeamId\": \"abc\",\n    \"Keyword\": \"abc\",\n    \"RoleIds\": [\n        0\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"TotalCount\": 0,\n            \"DataList\": [\n                {\n                    \"UserId\": \"abc\",\n                    \"UserAccount\": \"abc\",\n                    \"UserName\": \"abc\",\n                    \"TeamId\": \"abc\",\n                    \"TeamName\": \"abc\",\n                    \"TeamRoleName\": \"abc\",\n                    \"TeamRoleId\": 0,\n                    \"CanEdit\": true\n                }\n            ]\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
+    "DescribeTeamMembers": [
+      {
+        "document": "demo",
+        "input": "POST / HTTP/1.1\nHost: tcmpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTeamMembers\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 0,\n    \"TeamId\": \"abc\",\n    \"PlatformId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"TotalCount\": 0,\n            \"DataList\": [\n                {\n                    \"UserId\": \"abc\",\n                    \"UserAccount\": \"abc\",\n                    \"UserName\": \"abc\",\n                    \"UserRoles\": \"abc\"\n                }\n            ]\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
+    "DescribeTempSecret4UploadFile2Cos": [
+      {
+        "document": "demo",
+        "input": "POST / HTTP/1.1\nHost: tcmpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTempSecret4UploadFile2Cos\n<公共请求参数>\n\n{\n    \"BusinessName\": \"tcmpp\",\n    \"Suffix\": \".png\",\n    \"PlatformId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Bucket\": \"abc\",\n            \"Region\": \"abc\",\n            \"Path\": \"abc\",\n            \"TempSecretId\": \"abc\",\n            \"TempSecretKey\": \"abc\",\n            \"Token\": \"abc\"\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
+    "DescribeUserDetail": [
+      {
+        "document": "demo",
+        "input": "POST / HTTP/1.1\nHost: tcmpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserDetail\n<公共请求参数>\n\n{\n    \"UserId\": \"abc\",\n    \"PlatformId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"UserId\": \"abc\",\n            \"UserAccount\": \"abc\",\n            \"AccountType\": 0,\n            \"UserName\": \"abc\"\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
+    "DescribeUserList": [
+      {
+        "document": "demo",
+        "input": "POST / HTTP/1.1\nHost: tcmpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserList\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 0,\n    \"PlatformId\": \"abc\",\n    \"Keyword\": \"abc\",\n    \"AccountType\": 0,\n    \"TeamId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"TotalCount\": 0,\n            \"DataList\": [\n                {\n                    \"UserId\": \"abc\",\n                    \"UserAccount\": \"abc\",\n                    \"Teams\": \"abc\",\n                    \"AccountType\": 0,\n                    \"UserName\": \"abc\",\n                    \"CreateTime\": \"abc\"\n                }\n            ]\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
+    "DisableTeamDomain": [
+      {
+        "document": "demo",
+        "input": "POST / HTTP/1.1\nHost: tcmpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DisableTeamDomain\n<公共请求参数>\n\n{\n    \"DomainId\": 0,\n    \"PlatformId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Result\": true\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
+    "ModifyApplication": [
+      {
+        "document": "demo",
+        "input": "POST / HTTP/1.1\nHost: tcmpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyApplication\n<公共请求参数>\n\n{\n    \"ApplicationId\": \"abc\",\n    \"ApplicationName\": \"abc\",\n    \"Intro\": \"abc\",\n    \"Logo\": \"abc\",\n    \"PlatformId\": \"abc\",\n    \"AndroidAppKey\": \"abc\",\n    \"IosAppKey\": \"abc\",\n    \"Remark\": \"abc\",\n    \"AndroidAppURL\": \"abc\",\n    \"IosAppURL\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Result\": true\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
+    "ModifyApplicationAppKey": [
+      {
+        "document": "demo",
+        "input": "POST / HTTP/1.1\nHost: tcmpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyApplicationAppKey\n<公共请求参数>\n\n{\n    \"ApplicationId\": \"abc\",\n    \"PlatformId\": \"abc\",\n    \"AndroidAppKey\": \"abc\",\n    \"IOSAppKey\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Result\": true\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
+    "ModifyApplicationAppUrl": [
+      {
+        "document": "demo",
+        "input": "POST / HTTP/1.1\nHost: tcmpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyApplicationAppUrl\n<公共请求参数>\n\n{\n    \"ApplicationId\": \"abc\",\n    \"PlatformId\": \"abc\",\n    \"AndroidAppURL\": \"abc\",\n    \"IOSAppURL\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Result\": true\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
+    "ModifyDomain": [
+      {
+        "document": "demo",
+        "input": "POST / HTTP/1.1\nHost: tcmpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDomain\n<公共请求参数>\n\n{\n    \"MNPId\": \"abc\",\n    \"PlatformId\": \"abc\",\n    \"Domain\": [\n        {\n            \"DomainUrlList\": [\n                \"abc\"\n            ],\n            \"DomainType\": 0\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Result\": true\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
+    "ModifyGlobalDomain": [
+      {
+        "document": "demo",
+        "input": "POST / HTTP/1.1\nHost: tcmpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyGlobalDomain\n<公共请求参数>\n\n{\n    \"DomainId\": 0,\n    \"DomainUrl\": \"abc\",\n    \"PlatformId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Result\": 0\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
+    "ModifyMNP": [
+      {
+        "document": "demo",
+        "input": "POST / HTTP/1.1\nHost: tcmpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyMNP\n<公共请求参数>\n\n{\n    \"MNPType\": \"abc\",\n    \"MNPName\": \"abc\",\n    \"MNPIntro\": \"abc\",\n    \"MNPDesc\": \"abc\",\n    \"MNPId\": \"abc\",\n    \"PlatformId\": \"abc\",\n    \"MNPIcon\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ResourceId\": 0\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
+    "ModifyMNPStatusOffline": [
+      {
+        "document": "demo",
+        "input": "POST / HTTP/1.1\nHost: tcmpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyMNPStatusOffline\n<公共请求参数>\n\n{\n    \"MNPId\": \"abc\",\n    \"PlatformId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Result\": true\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
+    "ModifyMNPVersionPreview": [
+      {
+        "document": "demo",
+        "input": "POST / HTTP/1.1\nHost: tcmpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyMNPVersionPreview\n<公共请求参数>\n\n{\n    \"MNPId\": \"abc\",\n    \"ActionType\": 0,\n    \"MNPVersionId\": 0,\n    \"PlatformId\": \"abc\",\n    \"TestEntrancePath\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Result\": true\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
+    "ModifyOnlineVersion": [
+      {
+        "document": "demo",
+        "input": "POST / HTTP/1.1\nHost: tcmpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyOnlineVersion\n<公共请求参数>\n\n{\n    \"MNPId\": \"abc\",\n    \"MNPVersionId\": 0,\n    \"PlatformId\": \"abc\",\n    \"MNPVersion\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Result\": true\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
+    "ModifyPlatformAuditStatus": [
+      {
+        "document": "demo",
+        "input": "POST / HTTP/1.1\nHost: tcmpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPlatformAuditStatus\n<公共请求参数>\n\n{\n    \"AuditNo\": \"abc\",\n    \"AuditResult\": 0,\n    \"PlatformId\": \"abc\",\n    \"AuditNote\": \"abc\",\n    \"AuditItems\": [\n        {\n            \"ApplicationId\": \"abc\",\n            \"AuditStatus\": 0,\n            \"AuditNote\": \"abc\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Result\": true\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
+    "ModifySensitiveAPIAuditStatus": [
+      {
+        "document": "demo",
+        "input": "POST / HTTP/1.1\nHost: tcmpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySensitiveAPIAuditStatus\n<公共请求参数>\n\n{\n    \"AuditNo\": \"abc\",\n    \"AuditStatus\": 0,\n    \"PlatformId\": \"abc\",\n    \"AuditNote\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Result\": true\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
+    "ModifyTeam": [
+      {
+        "document": "demo",
+        "input": "POST / HTTP/1.1\nHost: tcmpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTeam\n<公共请求参数>\n\n{\n    \"TeamId\": \"abc\",\n    \"TeamName\": \"abc\",\n    \"PlatformId\": \"abc\",\n    \"AdminUserId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Result\": true\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
+    "ModifyTeamMember": [
+      {
+        "document": "demo",
+        "input": "POST / HTTP/1.1\nHost: tcmpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTeamMember\n<公共请求参数>\n\n{\n    \"TeamId\": \"abc\",\n    \"UserId\": \"abc\",\n    \"RoleId\": 0,\n    \"PlatformId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Result\": true\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
+    "ModifyUser": [
+      {
+        "document": "demo",
+        "input": "POST / HTTP/1.1\nHost: tcmpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyUser\n<公共请求参数>\n\n{\n    \"UserId\": \"abc\",\n    \"UserName\": \"abc\",\n    \"AccountType\": 0,\n    \"PlatformId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Result\": true\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
+    "ModifyUserPassword": [
+      {
+        "document": "demo",
+        "input": "POST / HTTP/1.1\nHost: tcmpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyUserPassword\n<公共请求参数>\n\n{\n    \"UserId\": \"abc\",\n    \"Password\": \"abc\",\n    \"KeyId\": \"abc\",\n    \"PlatformId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Result\": true\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "demo"
+      }
+    ]
+  },
+  "version": "1.0"
+}
