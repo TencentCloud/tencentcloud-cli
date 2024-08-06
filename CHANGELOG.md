@@ -1,3 +1,221 @@
+# Release 3.0.1049.1
+
+## 云顾问(advisor) 版本：2020-07-21
+
+### 第 15 次发布
+
+发布时间：2024-08-07 01:07:22
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeResourceBelong](http://document.tencentcloudapi.woa.com/document/product/1660/84504)
+
+新增数据结构：
+
+* [ResourceFilter](http://document.tencentcloudapi.woa.com/document/product/1660/78752#ResourceFilter)
+
+
+
+## 云服务器(cvm) 版本：2019-12-12
+
+
+
+## 云服务器(cvm) 版本：2017-03-12
+
+### 第 80 次发布
+
+发布时间：2024-08-07 01:12:19
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ZoneInfo](http://document.tencentcloudapi.woa.com/document/product/213/15753#ZoneInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>ZoneType
+
+
+
+
+## 腾讯云小程序平台(tcmpp) 版本：2024-08-01
+
+### 第 2 次发布
+
+发布时间：2024-08-07 01:24:26
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreatePresetKey](http://document.tencentcloudapi.woa.com/document/product/1754/84505)
+
+新增数据结构：
+
+* [PresetResp](http://document.tencentcloudapi.woa.com/document/product/1754/84473#PresetResp)
+
+
+
+## 腾讯云小程序平台(tcmpp) 版本：2023-04-03
+
+
+
+## 设备安全(tds) 版本：2022-08-01
+
+### 第 3 次发布
+
+发布时间：2024-08-07 01:25:46
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeFraudUltimate](http://document.tencentcloudapi.woa.com/document/product/1719/80585)
+
+	* 新增入参：DataAuthorization
+
+
+新增数据结构：
+
+* [DataAuthorizationInfo](http://document.tencentcloudapi.woa.com/document/product/1719/80588#DataAuthorizationInfo)
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 147 次发布
+
+发布时间：2024-08-07 01:27:48
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [AssignIpv6Addresses](http://document.tencentcloudapi.woa.com/document/product/215/34469)
+
+	* 新增入参：ClientToken, IsCrossTenant, VpcAppId, VpcUin, VpcSubAccountUin
+
+* [UnassignIpv6Addresses](http://document.tencentcloudapi.woa.com/document/product/215/34467)
+
+	* 新增入参：IsCrossTenant, VpcAppId, VpcUin, VpcSubAccountUin
+
+
+
+
+## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
+
+### 第 62 次发布
+
+发布时间：2024-08-07 01:29:19
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeTaskLineage](http://document.tencentcloudapi.woa.com/document/product/1607/84507)
+
+修改接口：
+
+* [CreateOpsMakePlan](http://document.tencentcloudapi.woa.com/document/product/1607/81337)
+
+	* 新增入参：MakeExtList, SameSelfWorkflowDependType, SelfWorkflowDependency
+
+* [DescribeDatabaseMetas](http://document.tencentcloudapi.woa.com/document/product/1607/82945)
+
+	* 新增入参：PageSize, PageNumber
+
+* [DescribeOpsMakePlanInstances](http://document.tencentcloudapi.woa.com/document/product/1607/81309)
+
+	* 新增入参：StateList
+
+* [DescribeTableMeta](http://document.tencentcloudapi.woa.com/document/product/1607/82944)
+
+	* 新增入参：SearchNames
+
+	* 新增出参：LifecycleInfo, TagVoteSumList
+
+* [DescribeTableSchemaInfo](http://document.tencentcloudapi.woa.com/document/product/1607/77681)
+
+	* 新增入参：Env, Model, DevDatasourceId
+
+* [ModifyRule](http://document.tencentcloudapi.woa.com/document/product/1607/77628)
+
+	* 新增入参：TargetDatabaseName, TargetSchemaName, TargetTableName
+
+
+新增数据结构：
+
+* [LifecycleInfo](http://document.tencentcloudapi.woa.com/document/product/1607/77747#LifecycleInfo)
+* [TagVoteSum](http://document.tencentcloudapi.woa.com/document/product/1607/77747#TagVoteSum)
+* [TaskLineageInfo](http://document.tencentcloudapi.woa.com/document/product/1607/77747#TaskLineageInfo)
+* [TaskLineageInfoPair](http://document.tencentcloudapi.woa.com/document/product/1607/77747#TaskLineageInfoPair)
+
+修改数据结构：
+
+* [AlarmEventInfo](http://document.tencentcloudapi.woa.com/document/product/1607/77747#AlarmEventInfo)
+
+	* 新增成员：AlarmReason
+
+* [ColumnMeta](http://document.tencentcloudapi.woa.com/document/product/1607/77747#ColumnMeta)
+
+	* 新增成员：InfluxCategory
+
+* [DatabaseInfo](http://document.tencentcloudapi.woa.com/document/product/1607/77747#DatabaseInfo)
+
+	* 新增成员：ClusterDeployType, SchemaName
+
+* [IntegrationNodeSchema](http://document.tencentcloudapi.woa.com/document/product/1607/77747#IntegrationNodeSchema)
+
+	* 新增成员：Category
+
+* [Rule](http://document.tencentcloudapi.woa.com/document/product/1607/77747#Rule)
+
+	* 新增成员：DatasourceType, SchemaName, TargetSchemaName
+
+* [RuleExecConfig](http://document.tencentcloudapi.woa.com/document/product/1607/77747#RuleExecConfig)
+
+	* 新增成员：DlcGroupName
+
+* [RuleExecResultDetail](http://document.tencentcloudapi.woa.com/document/product/1607/77747#RuleExecResultDetail)
+
+	* 新增成员：ClusterDeployType
+
+* [RuleGroup](http://document.tencentcloudapi.woa.com/document/product/1607/77747#RuleGroup)
+
+	* 新增成员：SchemaName, ClusterDeployType
+
+* [RuleGroupExecResult](http://document.tencentcloudapi.woa.com/document/product/1607/77747#RuleGroupExecResult)
+
+	* 新增成员：DatabaseName, RuleGroupTableId, ClusterDeployType, InstanceId, DsEnvType
+
+* [TableInfo](http://document.tencentcloudapi.woa.com/document/product/1607/77747#TableInfo)
+
+	* 新增成员：TableType
+
+* [TableMeta](http://document.tencentcloudapi.woa.com/document/product/1607/77747#TableMeta)
+
+	* 新增成员：Environment, Schema
+
+* [TableQualityDetail](http://document.tencentcloudapi.woa.com/document/product/1607/77747#TableQualityDetail)
+
+	* 新增成员：SchemaName, RuleGroupTableId
+
+
+
+
 # Release 3.0.1048.1
 
 ## 智能语音(aai) 版本：2018-05-22

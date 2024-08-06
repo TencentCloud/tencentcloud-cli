@@ -48,6 +48,14 @@
         "title": "获取云架构产品列表"
       }
     ],
+    "DescribeResourceBelong": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: advisor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeResourceBelong\n<公共请求参数>\n\n{\n    \"ProductId\": \"Auto Scaling\",\n    \"RegionId\": \"ap-guangzhou\",\n    \"ResourceIds\": [\n        \"test-resource-id\"\n    ],\n    \"PluginKey\": \"3b554194-0641-4d1b-ahsdqwkdhj-wsdwsd\",\n    \"Conditions\": [\n        {\n            \"Key\": \"ClusterId\",\n            \"Value\": \"cls-nt48x5zs\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"BelongResourceIds\": [\n            \"test-resource-id-1\"\n        ],\n        \"NotBelongResourceIds\": [\n            \"abc\"\n        ],\n        \"RequestId\": \"4b8d2f80-755a-4beb-9d26-232306c0a9b1\"\n    }\n}",
+        "title": "正常请求示例"
+      }
+    ],
     "DescribeStrategies": [
       {
         "document": "",

@@ -772,6 +772,8 @@ tccli/services/tag/v20180813/api.json
 tccli/services/tag/v20180813/examples.json
 tccli/services/tan/__init__.py
 tccli/services/tan/tan_client.py
+tccli/services/tandon/__init__.py
+tccli/services/tandon/tandon_client.py
 tccli/services/taop/__init__.py
 tccli/services/taop/taop_client.py
 tccli/services/tat/__init__.py

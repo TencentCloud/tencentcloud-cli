@@ -1,0 +1,13 @@
+{
+  "actions": {
+    "GetUserCurrentConversations": [
+      {
+        "document": "",
+        "input": "https://ticket.tencentcloudapi.com/?Action=GetUserCurrentConversations\r\n&PostUin=23432\r\n&OwnerUin=37213\r\n&Source=MC\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"gtrertre\"\n    }\n}",
+        "title": "示例"
+      }
+    ]
+  },
+  "version": "1.0"
+}

@@ -1,0 +1,37 @@
+{
+  "actions": {
+    "GetUserCurrentConversations": {
+      "document": "获取用户当前会话列表",
+      "input": "GetUserCurrentConversationsRequest",
+      "name": "获取用户当前会话列表",
+      "output": "GetUserCurrentConversationsResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2023-01-04",
+    "api_brief": "腾讯云安灯",
+    "serviceNameCN": "腾讯云安灯",
+    "serviceShortName": "tandon"
+  },
+  "objects": {
+    "GetUserCurrentConversationsRequest": {
+      "document": "GetUserCurrentConversations请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "GetUserCurrentConversationsResponse": {
+      "document": "GetUserCurrentConversations返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

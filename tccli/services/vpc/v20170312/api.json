@@ -5171,6 +5171,51 @@
           "name": "Ipv6AddressCount",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。",
+          "example": "无",
+          "member": "string",
+          "name": "ClientToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否跨租户创建网卡。默认为false。",
+          "example": "无",
+          "member": "bool",
+          "name": "IsCrossTenant",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "VPC实例所属APPID。",
+          "example": "无",
+          "member": "string",
+          "name": "VpcAppId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "VPC实例所属UIN。",
+          "example": "无",
+          "member": "string",
+          "name": "VpcUin",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "VPC实例所属SubAccountUin。",
+          "example": "无",
+          "member": "string",
+          "name": "VpcSubAccountUin",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -5184,6 +5229,7 @@
           "example": "无",
           "member": "Ipv6Address",
           "name": "Ipv6AddressSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -45466,6 +45512,42 @@
           "name": "Ipv6Addresses",
           "required": true,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否跨租户创建网卡。默认为false。",
+          "example": "无",
+          "member": "bool",
+          "name": "IsCrossTenant",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "VPC实例所属APPID。",
+          "example": "无",
+          "member": "string",
+          "name": "VpcAppId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "VPC实例所属UIN。",
+          "example": "无",
+          "member": "string",
+          "name": "VpcUin",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "VPC实例所属SubAccountUin。",
+          "example": "无",
+          "member": "string",
+          "name": "VpcSubAccountUin",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
