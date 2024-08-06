@@ -3583,6 +3583,15 @@
           "name": "Ipv6AddressCount",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。",
+          "example": "无",
+          "member": "string",
+          "name": "ClientToken",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3596,6 +3605,7 @@
           "example": "无",
           "member": "Ipv6Address",
           "name": "Ipv6AddressSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

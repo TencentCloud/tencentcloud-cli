@@ -6313,7 +6313,7 @@
           "example": "0",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -6323,7 +6323,7 @@
           "example": "无",
           "member": "CloudBaseRunServerVersionItem",
           "name": "VersionItems",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -6333,7 +6333,7 @@
           "example": "xx",
           "member": "string",
           "name": "ServerName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6343,7 +6343,7 @@
           "example": "1",
           "member": "bool",
           "name": "IsPublic",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -6353,7 +6353,7 @@
           "example": "xx",
           "member": "string",
           "name": "ImageRepo",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6363,7 +6363,7 @@
           "example": "xx",
           "member": "string",
           "name": "TrafficType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6373,7 +6373,17 @@
           "example": "\"oneclick\"",
           "member": "string",
           "name": "SourceType",
-          "required": true,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "服务标签, function: 托管函数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "function",
+          "member": "string",
+          "name": "Tag",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         },

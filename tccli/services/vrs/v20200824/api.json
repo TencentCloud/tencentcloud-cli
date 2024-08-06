@@ -22,7 +22,7 @@
       "status": "online"
     },
     "DetectEnvAndSoundQuality": {
-      "document": "本接口用于检测音频的环境和音频质量。\n• 请求方法为 HTTP POST , Content-Type为\"application/json; charset=utf-8\"\n• 签名方法参考 公共参数 中签名方法v3。",
+      "document": "本接口用于检测音频的环境和音频质量。\n对于一句话声音复刻，音频时长需大于3s，小于15s，文件大小不能超过2MB，音频需为单声道，位深为16bit。建议格式：wav、单声道、采样率48kHz或24kHz \n• 请求方法为 HTTP POST , Content-Type为\"application/json; charset=utf-8\"\n• 签名方法参考 公共参数 中签名方法v3。",
       "input": "DetectEnvAndSoundQualityRequest",
       "name": "环境检测和音频质量检测",
       "output": "DetectEnvAndSoundQualityResponse",
@@ -139,7 +139,7 @@
         },
         {
           "disabled": false,
-          "document": "音频ID集合",
+          "document": "音频ID集合。（一句话声音复刻仅需填写一个音质检测接口返回的AudioId）",
           "example": "无",
           "member": "string",
           "name": "AudioIdList",
@@ -184,7 +184,7 @@
         },
         {
           "disabled": false,
-          "document": "复刻类型。 0 - 轻量版声音复刻（默认）。",
+          "document": "复刻类型。\n0 - 轻量版声音复刻（默认）；\n5 - 一句话声音复刻。",
           "example": "无",
           "member": "int64",
           "name": "TaskType",
@@ -193,7 +193,7 @@
         },
         {
           "disabled": false,
-          "document": "校验音频ID。",
+          "document": "校验音频ID。（仅基础版声音复刻使用）",
           "example": "无",
           "member": "string",
           "name": "VPRAudioId",
@@ -291,7 +291,7 @@
         },
         {
           "disabled": false,
-          "document": "音色id。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "音色id。（若为一句话复刻时，该值为固定值“200000000”）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
           "name": "VoiceType",
@@ -306,6 +306,26 @@
           "member": "string",
           "name": "ErrorMsg",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务过期时间。（当复刻类型为一句话复刻时展示）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ExpireTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "快速复刻音色ID。（当复刻类型为一句话复刻时展示）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FastVoiceType",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         }
@@ -374,10 +394,19 @@
         },
         {
           "disabled": false,
-          "document": "音频采样率：\n\n16000：16k（默认）",
+          "document": "音频采样率。\n16000：16k（默认）；\n24000：24k（仅一句话声音复刻支持）；\n48000：48k（仅一句话声音复刻支持）。",
           "example": "无",
           "member": "int64",
           "name": "SampleRate",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "复刻类型。\n0 - 轻量版声音复刻（默认）;\n5 - 一句话声音复刻。",
+          "example": "无",
+          "member": "int64",
+          "name": "TaskType",
           "required": false,
           "type": "int"
         }
@@ -547,7 +576,35 @@
     },
     "GetTrainingTextRequest": {
       "document": "GetTrainingText请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "复刻类型。\n0 - 轻量版声音复刻（默认）;\n5 - 一句话声音复刻。",
+          "example": "0",
+          "member": "int64",
+          "name": "TaskType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "音色场景。（仅支持一句话声音复刻，其余复刻类型不生效） \n0 - 通用场景（默认）； \n1 - 聊天场景； \n2 - 阅读场景； \n3 - 资讯播报场景。",
+          "example": "0",
+          "member": "int64",
+          "name": "Domain",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "文本语种。（仅支持一句话声音复刻，其余复刻类型不生效） \n1 - 中文（默认）。",
+          "example": "1",
+          "member": "int64",
+          "name": "TextLanguage",
+          "required": false,
+          "type": "int"
+        }
+      ],
       "type": "object"
     },
     "GetTrainingTextResponse": {
@@ -574,7 +631,17 @@
     },
     "GetVRSVoiceTypesRequest": {
       "document": "GetVRSVoiceTypes请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "复刻类型。\n0 - 除快速声音复刻外其他复刻类型（默认）；\n5 - 一句话声音复刻。",
+          "example": "无",
+          "member": "int64",
+          "name": "TaskType",
+          "required": false,
+          "type": "int"
+        }
+      ],
       "type": "object"
     },
     "GetVRSVoiceTypesResponse": {
@@ -646,7 +713,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "音色id",
+          "document": "音色id。（若为一句话复刻时，该值为固定值“200000000”）",
           "example": "无",
           "member": "int64",
           "name": "VoiceType",
@@ -713,6 +780,26 @@
           "output_required": true,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务过期时间。（当复刻类型为一句话复刻时展示）\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ExpireTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "快速复刻音色ID。（当复刻类型为一句话复刻时展示）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FastVoiceType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

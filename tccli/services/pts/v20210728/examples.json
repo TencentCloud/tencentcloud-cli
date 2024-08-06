@@ -3,8 +3,8 @@
     "AbortCronJobs": [
       {
         "document": "停止定时任务",
-        "input": "POST / HTTP/1.1\nHost: pts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AbortCronJobs\n<公共请求参数>\n\n{\n    \"ProjectId\": \"xx\",\n    \"CronJobIds\": [\n        \"xx\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: pts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AbortCronJobs\n<公共请求参数>\n\n{\n    \"ProjectId\": \"project-xx\",\n    \"CronJobIds\": [\n        \"cron-xx\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-xx\"\n    }\n}",
         "title": "停止定时任务"
       }
     ],
@@ -91,8 +91,8 @@
     "DeleteCronJobs": [
       {
         "document": "删除定时任务",
-        "input": "POST / HTTP/1.1\nHost: pts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCronJobs\n<公共请求参数>\n\n{\n    \"ProjectId\": \"xx\",\n    \"CronJobIds\": [\n        \"xx\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: pts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCronJobs\n<公共请求参数>\n\n{\n    \"ProjectId\": \"project-xx\",\n    \"CronJobIds\": [\n        \"cron-xx\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-xx\"\n    }\n}",
         "title": "删除定时任务"
       }
     ],
@@ -323,16 +323,16 @@
     "RestartCronJobs": [
       {
         "document": "重启状态为已中止的定时任务",
-        "input": "POST / HTTP/1.1\nHost: pts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RestartCronJobs\n<公共请求参数>\n\n{\n    \"ProjectId\": \"xx\",\n    \"CronJobIds\": [\n        \"xx\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: pts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RestartCronJobs\n<公共请求参数>\n\n{\n    \"ProjectId\": \"project-xx\",\n    \"CronJobIds\": [\n        \"cron-xx\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-xx\"\n    }\n}",
         "title": "重启定时任务"
       }
     ],
     "StartJob": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: pts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartJob\n<公共请求参数>\n\n{\n    \"ProjectId\": \"project-xx\",\n    \"JobOwner\": \"xx\",\n    \"ScenarioId\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"JobId\": \"job-xx\"\n    }\n}",
+        "document": "创建并启动任务",
+        "input": "POST / HTTP/1.1\nHost: pts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartJob\n<公共请求参数>\n\n{\n    \"ProjectId\": \"project-xx\",\n    \"JobOwner\": \"xiaohong\",\n    \"ScenarioId\": \"scenario-xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-xx\",\n        \"JobId\": \"job-xx\"\n    }\n}",
         "title": "创建并启动任务"
       }
     ],

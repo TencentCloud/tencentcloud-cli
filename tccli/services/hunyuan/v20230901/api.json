@@ -1,5 +1,12 @@
 {
   "actions": {
+    "ActivateService": {
+      "document": "开通服务",
+      "input": "ActivateServiceRequest",
+      "name": "开通服务",
+      "output": "ActivateServiceResponse",
+      "status": "online"
+    },
     "ChatCompletions": {
       "document": "腾讯混元大模型是由腾讯研发的大语言模型，具备强大的中文创作能力，复杂语境下的逻辑推理能力，以及可靠的任务执行能力。本接口支持流式或非流式调用，当使用流式调用时为 SSE 协议。\n\n 1. 本接口暂不支持返回图片内容。\n 2. 默认每种模型单账号限制并发数为 5 路，如您有提高并发限制的需求请 [联系我们](https://cloud.tencent.com/act/event/Online_service) 。\n 3. 请使用 SDK 调用本接口，每种开发语言的 SDK Git 仓库 examples/hunyuan/v20230901/ 目录下有提供示例供参考。SDK 链接在文档下方 “**开发者资源 - SDK**” 部分提供。\n 4. 我们推荐您使用 API Explorer，方便快速地在线调试接口和下载各语言的示例代码，[点击打开](https://console.cloud.tencent.com/api/explorer?Product=hunyuan&Version=2023-09-01&Action=ChatCompletions)。",
       "input": "ChatCompletionsRequest",
@@ -28,6 +35,13 @@
       "output": "QueryHunyuanImageJobResponse",
       "status": "online"
     },
+    "SetPayMode": {
+      "document": "设置付费模式",
+      "input": "SetPayModeRequest",
+      "name": "设置付费模式",
+      "output": "SetPayModeResponse",
+      "status": "online"
+    },
     "SubmitHunyuanImageJob": {
       "document": "混元生图接口基于混元大模型，将根据输入的文本描述，智能生成与之相关的结果图。分为提交任务和查询任务2个接口。\n提交任务：输入文本等，提交一个混元生图异步任务，获得任务 ID。\n查询任务：根据任务 ID 查询任务的处理状态、处理结果，任务处理完成后可获得生成图像结果。\n并发任务数（并发）说明：并发任务数指能同时处理的任务数量。混元生图默认提供1个并发任务数，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后才能开始处理下一个任务。",
       "input": "SubmitHunyuanImageJobRequest",
@@ -50,6 +64,33 @@
     "serviceShortName": "hunyuan"
   },
   "objects": {
+    "ActivateServiceRequest": {
+      "document": "ActivateService请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "开通之后，是否关闭后付费；默认为0，不关闭；1为关闭",
+          "example": "0",
+          "member": "uint64",
+          "name": "PayMode",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ActivateServiceResponse": {
+      "document": "ActivateService返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ChatCompletionsRequest": {
       "document": "ChatCompletions请求参数结构体",
       "members": [
@@ -91,7 +132,7 @@
         },
         {
           "disabled": false,
-          "document": "说明：\n1. 影响输出文本的多样性，取值越大，生成文本的多样性越强。\n2. 取值区间为 [0.0, 1.0]，未传值时使用各模型推荐值。\n3. 非必要不建议使用，不合理的取值会影响效果。",
+          "document": "说明：\n1. 影响输出文本的多样性，取值区间为 [0.0, 1.0]。取值越大，生成文本的多样性越强。\n2. 模型已有默认参数，不传值时使用各模型推荐值，不推荐用户修改。",
           "example": "无",
           "member": "float",
           "name": "TopP",
@@ -100,7 +141,7 @@
         },
         {
           "disabled": false,
-          "document": "说明：\n1. 较高的数值会使输出更加随机，而较低的数值会使其更加集中和确定。\n2. 取值区间为 [0.0, 2.0]，未传值时使用各模型推荐值。\n3. 非必要不建议使用，不合理的取值会影响效果。",
+          "document": "说明：\n1. 影响模型输出多样性，取值区间为 [0.0, 2.0]。较高的数值会使输出更加多样化和不可预测，而较低的数值会使其更加集中和确定。\n2. 模型已有默认参数，不传值时使用各模型推荐值，不推荐用户修改。",
           "example": "无",
           "member": "float",
           "name": "Temperature",
@@ -864,6 +905,33 @@
         }
       ],
       "usage": "both"
+    },
+    "SetPayModeRequest": {
+      "document": "SetPayMode请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "设置后付费状态，0：后付费；1：预付费",
+          "example": "无",
+          "member": "int64",
+          "name": "PayMode",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "SetPayModeResponse": {
+      "document": "SetPayMode返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "SubmitHunyuanImageJobRequest": {
       "document": "SubmitHunyuanImageJob请求参数结构体",

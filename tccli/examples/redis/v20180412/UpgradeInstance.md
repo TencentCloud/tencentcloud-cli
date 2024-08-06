@@ -1,15 +1,13 @@
-**Example 1: 请求示例**
+**Example 1: 变更规格**
 
-
+变更实例的内存配置
 
 Input: 
 
 ```
 tccli redis UpgradeInstance --cli-unfold-argument  \
     --InstanceId crs-5qlr**** \
-    --MemSize 4096 \
-    --RedisShardNum 5 \
-    --RedisReplicasNum 3
+    --MemSize 4096
 ```
 
 Output: 

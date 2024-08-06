@@ -694,7 +694,7 @@
       "status": "online"
     },
     "UpgradeInstance": {
-      "document": "变更实例配置",
+      "document": "本接口（UpgradeInstance）用于变更实例的配置规格。",
       "input": "UpgradeInstanceRequest",
       "name": "变更实例配置",
       "output": "UpgradeInstanceResponse",
@@ -3015,7 +3015,7 @@
         },
         {
           "disabled": false,
-          "document": "实例ID过滤信息列表",
+          "document": "实例ID过滤信息列表，数组最大长度限制为100",
           "example": "[\"crs-nh47ubwr\\n\"]",
           "member": "string",
           "name": "InstanceIds",
@@ -3115,6 +3115,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3124,6 +3125,7 @@
           "example": "无",
           "member": "RedisCommonInstanceList",
           "name": "InstanceDetails",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3589,7 +3591,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "订单交易ID数组，即 [CreateInstances](https://cloud.tencent.com/document/api/239/20026) 的输出参数DealId。",
+          "document": "订单交易ID数组，即 [CreateInstances](https://cloud.tencent.com/document/api/239/20026) 的输出参数DealId。数组最大长度限制为10",
           "example": "[\"6959052\\n\"]",
           "member": "string",
           "name": "DealIds",
@@ -3608,6 +3610,7 @@
           "example": "无",
           "member": "TradeDealDetail",
           "name": "DealDetails",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4149,6 +4152,7 @@
           "example": "10",
           "member": "int64",
           "name": "ProxyCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4158,6 +4162,7 @@
           "example": "无",
           "member": "ProxyNodes",
           "name": "Proxy",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -4167,6 +4172,7 @@
           "example": "10",
           "member": "int64",
           "name": "RedisCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4176,6 +4182,7 @@
           "example": "无",
           "member": "RedisNodes",
           "name": "Redis",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -4185,6 +4192,7 @@
           "example": "5",
           "member": "int64",
           "name": "TendisCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4194,6 +4202,7 @@
           "example": "无",
           "member": "TendisNodes",
           "name": "Tendis",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -4956,7 +4965,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "产品类型数组。\n- 2：Redis 2.8 内存版（标准架构）。\n- 3：CKV 3.2 内存版（标准架构）。\n- 4：CKV 3.2 内存版（集群架构）。\n- 6：Redis 4.0 内存版（标准架构）。\n- 7：Redis 4.0 内存版（集群架构）。\n- 8：Redis 5.0 内存版（标准架构）。\n- 9：Redis 5.0 内存版（集群架构）。\n- 15：Redis 6.2 内存版（标准架构）。\n- 16：Redis 6.2 内存版（集群架构）。",
+          "document": "产品类型数组。\n- 2：Redis 2.8 内存版（标准架构）。\n- 3：CKV 3.2 内存版（标准架构）。\n- 4：CKV 3.2 内存版（集群架构）。\n- 6：Redis 4.0 内存版（标准架构）。\n- 7：Redis 4.0 内存版（集群架构）。\n- 8：Redis 5.0 内存版（标准架构）。\n- 9：Redis 5.0 内存版（集群架构）。\n- 15：Redis 6.2 内存版（标准架构）。\n- 16：Redis 6.2 内存版（集群架构）。\n- 17：Redis 7.0 内存版（标准架构）。\n- 18：Redis 7.0 内存版（集群架构）。",
           "example": "6",
           "member": "int64",
           "name": "ProductTypes",
@@ -4965,7 +4974,7 @@
         },
         {
           "disabled": false,
-          "document": "模板名称数组。",
+          "document": "模板名称数组。数组最大长度限制为50",
           "example": "[\"CustomParamTemplate\"]",
           "member": "string",
           "name": "TemplateNames",
@@ -4974,7 +4983,7 @@
         },
         {
           "disabled": false,
-          "document": "模板ID数组。",
+          "document": "模板ID数组。数组最大长度限制为50",
           "example": "[\"crs-cfg-sa23d5d3\"]",
           "member": "string",
           "name": "TemplateIds",
@@ -9201,7 +9210,7 @@
         },
         {
           "disabled": false,
-          "document": "实例Id",
+          "document": "实例Id，每次请求的实例的上限为10。",
           "example": "[\"crs-r3nqjq3n\",\"crs-9bvd9b8v\"]",
           "member": "string",
           "name": "InstanceIds",
@@ -11807,7 +11816,7 @@
         },
         {
           "disabled": false,
-          "document": "多AZ实例，增加副本时的附带信息，包括副本的可用区和副本的类型（NodeType为1）。非多AZ实例不需要配置该参数。",
+          "document": "多AZ实例，增加副本时的节点信息，包括副本的 ID 编号及可用区信息。非多AZ实例不需要配置该参数。",
           "example": "无",
           "member": "RedisNodeInfo",
           "name": "NodeSet",
@@ -11826,7 +11835,7 @@
           "example": "200010798",
           "member": "string",
           "name": "DealId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

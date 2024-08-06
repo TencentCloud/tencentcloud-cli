@@ -18224,7 +18224,7 @@
           "example": "无",
           "member": "string",
           "name": "Title",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -18234,7 +18234,7 @@
           "example": "无",
           "member": "string",
           "name": "Number",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -18244,7 +18244,7 @@
           "example": "无",
           "member": "string",
           "name": "Date",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -18254,7 +18254,7 @@
           "example": "无",
           "member": "string",
           "name": "PretaxAmount",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -18264,7 +18264,7 @@
           "example": "无",
           "member": "string",
           "name": "Tax",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -18274,7 +18274,7 @@
           "example": "无",
           "member": "string",
           "name": "Total",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -18284,7 +18284,7 @@
           "example": "无",
           "member": "string",
           "name": "TotalCn",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -18294,7 +18294,7 @@
           "example": "无",
           "member": "string",
           "name": "Seller",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -18304,7 +18304,7 @@
           "example": "无",
           "member": "string",
           "name": "SellerTaxID",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -18314,7 +18314,7 @@
           "example": "无",
           "member": "string",
           "name": "Buyer",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -18324,7 +18324,7 @@
           "example": "无",
           "member": "string",
           "name": "BuyerTaxID",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -18334,7 +18334,7 @@
           "example": "无",
           "member": "string",
           "name": "Issuer",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -18344,7 +18344,7 @@
           "example": "无",
           "member": "string",
           "name": "Remark",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -18354,7 +18354,7 @@
           "example": "无",
           "member": "string",
           "name": "SubTotal",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -18364,7 +18364,7 @@
           "example": "无",
           "member": "string",
           "name": "SubTax",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -18374,8 +18374,18 @@
           "example": "无",
           "member": "VatElectronicItemInfo",
           "name": "VatElectronicItems",
-          "required": false,
+          "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "业务类型标志",
+          "example": "无",
+          "member": "string",
+          "name": "ServiceTypeLabel",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

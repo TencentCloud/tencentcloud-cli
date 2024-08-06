@@ -6,15 +6,15 @@ Input:
 
 ```
 tccli pts AbortCronJobs --cli-unfold-argument  \
-    --ProjectId xx \
-    --CronJobIds xx
+    --ProjectId project-xx \
+    --CronJobIds cron-xx
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx"
+        "RequestId": "req-xx"
     }
 }
 ```

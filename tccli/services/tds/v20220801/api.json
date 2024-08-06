@@ -36,6 +36,66 @@
     "serviceShortName": "tds"
   },
   "objects": {
+    "DataAuthorizationInfo": {
+      "document": "数据授权信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据委托方、需求方：客户主体名称。",
+          "example": "某某有限公司",
+          "member": "string",
+          "name": "DataProviderName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据受托方、提供方：腾讯云主体名称。\n\n固定填：腾讯云计算（北京）有限责任公司",
+          "example": "腾讯云计算（北京）有限责任公司",
+          "member": "string",
+          "name": "DataRecipientName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "客户请求所涉及的用户个人信息类型，支持多选。实际以接口请求传参为准。\n1-手机号；\n2-微信开放账号；\n3-QQ开放账号；\n4-IP地址；",
+          "example": "[1, 4]",
+          "member": "uint64",
+          "name": "UserDataType",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "客户是否已按合规指南要求获取用户授权，同意客户委托腾讯云处理入参信息，结合已合法收集的用户数据进行必要处理得出服务结果，并返回给客户。\n\n1-已授权；其它值为未授权。",
+          "example": "1",
+          "member": "uint64",
+          "name": "IsAuthorize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "客户获得的用户授权期限时间戳（单位秒）。\n\n不填或0默认无固定期限。",
+          "example": "1719805604",
+          "member": "uint64",
+          "name": "AuthorizationTerm",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "客户获得用户授权所依赖的协议地址。",
+          "example": "https://www.*****.com/*****",
+          "member": "string",
+          "name": "PrivacyPolicyLink",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
     "DescribeFraudBaseRequest": {
       "document": "DescribeFraudBase请求参数结构体",
       "members": [
@@ -403,6 +463,15 @@
           "name": "QQOpenId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据授权信息",
+          "example": "无",
+          "member": "DataAuthorizationInfo",
+          "name": "DataAuthorization",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"

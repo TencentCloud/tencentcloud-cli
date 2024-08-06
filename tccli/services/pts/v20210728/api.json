@@ -6803,7 +6803,7 @@
           "example": "job-xx",
           "member": "string",
           "name": "JobId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7268,8 +7268,8 @@
         },
         {
           "disabled": false,
-          "document": "场景名",
-          "example": "test",
+          "document": "场景名；调用该接口时，请将 Scenario 中不需要修改的字段保持原样也作为接口的入参，否则场景可能会不可用。",
+          "example": "scenario name",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -7287,7 +7287,7 @@
         {
           "disabled": false,
           "document": "压测场景的模式类型。取值范围：pts-http 代表简单模式，pts-js 代表脚本模式，pts-jmeter 代表 JMeter 模式。",
-          "example": "k6",
+          "example": "pts-http",
           "member": "string",
           "name": "Type",
           "required": false,

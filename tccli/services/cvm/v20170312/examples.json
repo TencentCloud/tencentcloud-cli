@@ -512,16 +512,10 @@
     ],
     "InquiryPriceRenewInstances": [
       {
-        "document": "续费实例询价",
-        "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquiryPriceRenewInstances\n<公共请求参数>\n\n{\n    \"InstanceChargePrepaid\": {\n        \"RenewFlag\": \"NOTIFY_AND_MANUAL_RENEW\",\n        \"Period\": 1\n    },\n    \"InstanceIds\": [\n        \"ins-2zvpghhc\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"Price\": {\n            \"InstancePrice\": {\n                \"OriginalPrice\": 120.0,\n                \"DiscountPrice\": 1.2\n            }\n        },\n        \"RequestId\": \"e2e81b08-d747-455e-b27a-aecc5acafdba\"\n    }\n}",
+        "document": "续费实例询价，时长为一个月",
+        "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquiryPriceRenewInstances\n<公共请求参数>\n\n{\n    \"InstanceChargePrepaid\": {\n        \"Period\": 1\n    },\n    \"InstanceIds\": [\n        \"ins-2zvpghhc\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Price\": {\n            \"InstancePrice\": {\n                \"OriginalPrice\": 120,\n                \"DiscountPrice\": 1.2\n            }\n        },\n        \"RequestId\": \"e2e81b08-d747-455e-b27a-aecc5acafdba\"\n    }\n}",
         "title": "续费实例询价"
-      },
-      {
-        "document": "查询单个实例费用信息",
-        "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquiryPriceRenewInstances\n<公共请求参数>\n\n{\n    \"InstanceChargePrepaid\": {\n        \"RenewFlag\": \"NOTIFY_AND_AUTO_RENEW\",\n        \"Period\": 1\n    },\n    \"InstanceIds\": [\n        \"ins-xlsl6f2h\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"Price\": {\n            \"InstancePrice\": {},\n            \"BandwidthPrice\": {}\n        },\n        \"RequestId\": \"e2e81b08-d747-455e-b27a-aecc5acafdba\"\n    }\n}",
-        "title": "查询单个实例费用信息"
       }
     ],
     "InquiryPriceResetInstance": [
@@ -870,7 +864,7 @@
       {
         "document": "同步镜像img-o3ycss2p到广州",
         "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SyncImages\n<公共请求参数>\n\n{\n    \"ImageIds\": [\n        \"img-o3ycss2p\"\n    ],\n    \"DestinationRegions\": [\n        \"ap-guangzhou\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"ImageSet\": [\n            {\n                \"ImageId\": \"img-o3ycss2p\",\n                \"Region\": \"ap-guangzhou\"\n            }\n        ],\n        \"RequestId\": \"71e69b56-32be-4412-ab45-49eded6a87be\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ImageSet\": [],\n        \"RequestId\": \"71e69b56-32be-4412-ab45-49eded6a87be\"\n    }\n}",
         "title": "同步镜像"
       },
       {

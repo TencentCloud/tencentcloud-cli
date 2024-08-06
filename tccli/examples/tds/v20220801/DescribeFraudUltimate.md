@@ -14,7 +14,13 @@ tccli tds DescribeFraudUltimate --cli-unfold-argument  \
     --WeChatOpenId oEsXuszxxxxxxxxxxxxxxxx4qvEk \
     --PhoneNumber 15800000000 \
     --ClientIP 223.73.63.151 \
-    --QQOpenId ECA1B7XXXXXXXXXXXXXXXXXXXX06625D
+    --QQOpenId ECA1B7XXXXXXXXXXXXXXXXXXXX06625D \
+    --DataAuthorization.DataProviderName 某某有限公司 \
+    --DataAuthorization.DataRecipientName 腾讯云计算（北京）有限责任公司 \
+    --DataAuthorization.UserDataType 1 2 3 4 \
+    --DataAuthorization.IsAuthorize 1 \
+    --DataAuthorization.AuthorizationTerm 1719805604 \
+    --DataAuthorization.PrivacyPolicyLink https://www.*****.com/*
 ```
 
 Output: 
