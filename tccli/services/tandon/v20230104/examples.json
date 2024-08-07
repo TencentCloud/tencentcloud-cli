@@ -1,10 +1,206 @@
 {
   "actions": {
+    "AddCommonComment": [
+      {
+        "document": "",
+        "input": "https://ticket.tencentcloudapi.com/?Action=CommonAddComment\r\n&TicketId=201812051342\r\n&Comment=test\r\n&SecretContent=text\r\n&OwnerUin=772516182\r\n&PostUin=772516182\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "例子"
+      }
+    ],
+    "AppraiseTicket": [
+      {
+        "document": "",
+        "input": "https://ticket.tencentcloudapi.com/?Action=AppraiseTicket\r\n&TicketId=3927018\r\n&PostUin=446457888\r\n&ServiceChannel=37\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"546\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "AssignIncidentManager": [
+      {
+        "document": "pra举手触发",
+        "input": "POST / HTTP/1.1\nHost: ticket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AssignIncidentManager\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"123123\"\n    }\n}",
+        "title": "rpa触发"
+      }
+    ],
+    "BatchGetTicketStatus": [
+      {
+        "document": "",
+        "input": "https://ticket.tencentcloudapi.com/?Action=BatchGetTicketStatus\r\n&TicketIdList.0=字符串&TicketIdList.1=字符串\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"75419a0a-4fd9-4359-a5d9-afbcd8415114\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "CloseCommonTicket": [
+      {
+        "document": "",
+        "input": "https://ticket.tencentcloudapi.com/?Action=CommonCloseTicket\r\n&Content=test\r\n&TicketId=201812051132\r\n&OwnerUin=772516182\r\n&PostUin=772516182\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "例子"
+      }
+    ],
+    "CloseTicket": [
+      {
+        "document": "",
+        "input": "https://ticket.tencentcloudapi.com/?Action=CloseTicket\r\n&TicketId=3927018\r\n&PostUin=446457888\r\n&ServiceChannel=37\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"546\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "CreateCommonTicket": [
+      {
+        "document": "",
+        "input": "https://ticket.tencentcloudapi.com/?Action=CommonCreateTicket\r\n&Content=test\r\n&TimePeriod=2\r\n&LevelId=1\r\n&OwnerUin=772516182\r\n&PostUin=772516182\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "例子"
+      }
+    ],
+    "CreateInternalTicket": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ticket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InternalCreateTicket\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"546\"\n    }\n}",
+        "title": "图片附件示例"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ticket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InternalCreateTicket\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"546\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "GetAppraisalOptions": [
+      {
+        "document": "",
+        "input": "https://ticket.tencentcloudapi.com/?Action=GetAppraisalOptions\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "GetCommonCategoryList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ticket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CommonGetCategoryList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"123\"\n    }\n}",
+        "title": "例子"
+      }
+    ],
+    "GetCommonCategoryListById": [
+      {
+        "document": "",
+        "input": "https://ticket.tencentcloudapi.com/?Action=CommonGetCategoryListById\n&Level2Id=1107\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2c3fb836-7bf0-4fb0-a943-2a16fb080216\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "GetCommonTicketDetail": [
+      {
+        "document": "",
+        "input": "https://ticket.tencentcloudapi.com/?Action=CommonGetTicketDetail\r\n&TicketId=201812051120\r\n&OwnerUin=772516182\r\n&PostUin=772516182\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"123\"\n    }\n}",
+        "title": "例子"
+      }
+    ],
+    "GetCommonTicketList": [
+      {
+        "document": "",
+        "input": "https://ticket.tencentcloudapi.com/?Action=CommonGetTicketList\r\n&Content=test\r\n&OwnerUin=772516182\r\n&PostUin=772516182\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1234\"\n    }\n}",
+        "title": "例子"
+      }
+    ],
+    "GetCosKeysAndPrefix": [
+      {
+        "document": "",
+        "input": "https://ticket.tencentcloudapi.com/?Action=GetCosKeysAndPrefix\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "GetInternalServiceScene": [
+      {
+        "document": "",
+        "input": "https://ticket.tencentcloudapi.com/?Action=InternalServiceScene\r\n&ServiceChannel=30\r\n&ParentId=11016\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"546\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "GetInternalTicket": [
+      {
+        "document": "",
+        "input": "https://ticket.tencentcloudapi.com/?Action=InternalGetTicket\r\n&TicketId=3927491\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"546\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "GetOpenTicketInfo": [
+      {
+        "document": "",
+        "input": "https://ticket.tencentcloudapi.com/?Action=GetOpenTicketInfo\n&TicketId=3935406\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fbfd29d1-bbf3-4c2e-81fc-9d69162c759f\"\n    }\n}",
+        "title": "获取工单信息示例"
+      }
+    ],
+    "GetTicketOperation": [
+      {
+        "document": "获取工单操作流水示例3927021",
+        "input": "POST / HTTP/1.1\nHost: ticket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetTicketOperation\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"52544120-2791-11ed-ae23-acde48001122\"\n    }\n}",
+        "title": "获取工单操作流水示例3927021"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ticket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetTicketOperation\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1b761145-291f-43b4-bde3-f075873cc831\"\n    }\n}",
+        "title": "获取工单流水实例工单7389223"
+      }
+    ],
     "GetUserCurrentConversations": [
       {
         "document": "",
         "input": "https://ticket.tencentcloudapi.com/?Action=GetUserCurrentConversations\r\n&PostUin=23432\r\n&OwnerUin=37213\r\n&Source=MC\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"gtrertre\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "GetUserTicket": [
+      {
+        "document": "",
+        "input": "https://ticket.tencentcloudapi.com/?Action=GetUserTicket\r\n&TicketId=3927018\r\n&ServiceChannel=37\r\n&PostUin=47326\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"546\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "GetUserTicketList": [
+      {
+        "document": "",
+        "input": "https://ticket.tencentcloudapi.com/?Action=GetUserTicketList\r\n&ServiceChannel=37\r\n&PostUin=5435345\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"546\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "RemindCommonTicket": [
+      {
+        "document": "",
+        "input": "https://ticket.tencentcloudapi.com/?Action=CommonRemindTicket\r\n&TicketId=201812051234\r\n&OwnerUin=772516182\r\n&PostUin=772516182\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "例子"
+      }
+    ],
+    "ReplyTicket": [
+      {
+        "document": "",
+        "input": "https://ticket.tencentcloudapi.com/?Action=ReplyTicket\r\n&TicketId=201812051342\r\n&PostUin=446457888\r\n&ExternReply=dsfjlgh\r\n&ServiceChannel=37\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ab55560d-eb03-4b6f-a0a0-a1ee0b34f01e\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "UrgeTicket": [
+      {
+        "document": "",
+        "input": "https://ticket.tencentcloudapi.com/?Action=UrgeTicket\r\n&TicketId=3927018\r\n&PostUin=446457888\r\n&ServiceChannel=37\r\n&ExternReply=催单内容\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"546\"\n    }\n}",
         "title": "示例"
       }
     ]

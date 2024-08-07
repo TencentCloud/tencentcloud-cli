@@ -40,14 +40,6 @@
         "title": "编辑物联卡备注信息"
       }
     ],
-    "RenewCards": [
-      {
-        "document": "为两张卡片续费。",
-        "input": "POST / HTTP/1.1\nHost: ic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RenewCards\n<公共请求参数>\n\n{\n    \"Iccids\": [\n        \"89314304010606595418\"\n    ],\n    \"Sdkappid\": 1,\n    \"RenewNum\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0a4dae1c-8a44-4f36-bf18-97564c27a29911\",\n        \"Data\": {}\n    }\n}",
-        "title": "卡片续费"
-      }
-    ],
     "SendMultiSms": [
       {
         "document": "",

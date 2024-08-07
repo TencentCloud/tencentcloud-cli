@@ -1,10 +1,171 @@
 {
   "actions": {
+    "AddCommonComment": {
+      "document": "供第三方接口调用的添加评论",
+      "input": "AddCommonCommentRequest",
+      "name": "添加评论通用接口",
+      "output": "AddCommonCommentResponse",
+      "status": "online"
+    },
+    "AppraiseTicket": {
+      "document": "用户评价工单",
+      "input": "AppraiseTicketRequest",
+      "name": "用户评价工单",
+      "output": "AppraiseTicketResponse",
+      "status": "online"
+    },
+    "AssignIncidentManager": {
+      "document": "工单事件经理派单接口，根据具体业务场景，分派工单事件经理并通知",
+      "input": "AssignIncidentManagerRequest",
+      "name": "工单事件经理派单",
+      "output": "AssignIncidentManagerResponse",
+      "status": "online"
+    },
+    "BatchGetTicketStatus": {
+      "document": "批量获取工单状态",
+      "input": "BatchGetTicketStatusRequest",
+      "name": "批量获取工单状态",
+      "output": "BatchGetTicketStatusResponse",
+      "status": "online"
+    },
+    "CloseCommonTicket": {
+      "document": "提供给第三方调用的关闭工单，当工单状态为 未处理 时, 可调用 CloseCommonTicket 对工单进行撤销, 当工单进入处理中后, 不能直接关闭工单, 需工单状态转为 待确认 后, 可调用 CloseCommonTicket 接口关单, 此时, 需传入满意度(1-5), 以及评价内容",
+      "input": "CloseCommonTicketRequest",
+      "name": "关闭工单通用接口",
+      "output": "CloseCommonTicketResponse",
+      "status": "online"
+    },
+    "CloseTicket": {
+      "document": "用户结单或者撤单接口",
+      "input": "CloseTicketRequest",
+      "name": "用户结单或者撤单",
+      "output": "CloseTicketResponse",
+      "status": "online"
+    },
+    "CreateCommonTicket": {
+      "document": "提供给第三方调用的创建工单",
+      "input": "CreateCommonTicketRequest",
+      "name": "创建工单通用接口",
+      "output": "CreateCommonTicketResponse",
+      "status": "online"
+    },
+    "CreateInternalTicket": {
+      "document": "提供给内部通道建单",
+      "input": "CreateInternalTicketRequest",
+      "name": "创建内部通道工单",
+      "output": "CreateInternalTicketResponse",
+      "status": "online"
+    },
+    "GetAppraisalOptions": {
+      "document": "获取评价选项",
+      "input": "GetAppraisalOptionsRequest",
+      "name": "获取评价选项",
+      "output": "GetAppraisalOptionsResponse",
+      "status": "online"
+    },
+    "GetCommonCategoryList": {
+      "document": "供第三获取官网分类",
+      "input": "GetCommonCategoryListRequest",
+      "name": "第三方获取官网分类信息",
+      "output": "GetCommonCategoryListResponse",
+      "status": "online"
+    },
+    "GetCommonCategoryListById": {
+      "document": "第三方通过二级分类Id获取三级分类",
+      "input": "GetCommonCategoryListByIdRequest",
+      "name": "第三方获取子分类信息",
+      "output": "GetCommonCategoryListByIdResponse",
+      "status": "online"
+    },
+    "GetCommonTicketDetail": {
+      "document": "供第三方接口获取工单详情",
+      "input": "GetCommonTicketDetailRequest",
+      "name": "获取工单详情通用接口",
+      "output": "GetCommonTicketDetailResponse",
+      "status": "online"
+    },
+    "GetCommonTicketList": {
+      "document": "供第三方接口获取工单列表",
+      "input": "GetCommonTicketListRequest",
+      "name": "获取工单列表通用接口",
+      "output": "GetCommonTicketListResponse",
+      "status": "online"
+    },
+    "GetCosKeysAndPrefix": {
+      "document": "获取cos临时密钥和前缀",
+      "input": "GetCosKeysAndPrefixRequest",
+      "name": "获取cos临时密钥和前缀",
+      "output": "GetCosKeysAndPrefixResponse",
+      "status": "online"
+    },
+    "GetInternalServiceScene": {
+      "document": "供内部建单选择工单归档",
+      "input": "GetInternalServiceSceneRequest",
+      "name": "获取内部通道工单归档",
+      "output": "GetInternalServiceSceneResponse",
+      "status": "online"
+    },
+    "GetInternalTicket": {
+      "document": "内部通道工单详情",
+      "input": "GetInternalTicketRequest",
+      "name": "获取工单详情",
+      "output": "GetInternalTicketResponse",
+      "status": "online"
+    },
+    "GetOpenTicketInfo": {
+      "document": "获取工单状态，当前处理人，优先级，工单归档，工单处理耗时，结单信息，评价信息，外部回复流水等工单相关信息",
+      "input": "GetOpenTicketInfoRequest",
+      "name": "获取工单信息(内部调用)",
+      "output": "GetOpenTicketInfoResponse",
+      "status": "online"
+    },
+    "GetTicketOperation": {
+      "document": "获取工单操作流水列表",
+      "input": "GetTicketOperationRequest",
+      "name": "获取工单操作流水列表",
+      "output": "GetTicketOperationResponse",
+      "status": "online"
+    },
     "GetUserCurrentConversations": {
       "document": "获取用户当前会话列表",
       "input": "GetUserCurrentConversationsRequest",
       "name": "获取用户当前会话列表",
       "output": "GetUserCurrentConversationsResponse",
+      "status": "online"
+    },
+    "GetUserTicket": {
+      "document": "用户获取andon工单详情",
+      "input": "GetUserTicketRequest",
+      "name": "用户获取andon工单详情",
+      "output": "GetUserTicketResponse",
+      "status": "online"
+    },
+    "GetUserTicketList": {
+      "document": "用户获取andon工单列表",
+      "input": "GetUserTicketListRequest",
+      "name": "用户获取andon工单列表",
+      "output": "GetUserTicketListResponse",
+      "status": "online"
+    },
+    "RemindCommonTicket": {
+      "document": "供第三方接口调用的催单",
+      "input": "RemindCommonTicketRequest",
+      "name": "通用催单接口",
+      "output": "RemindCommonTicketResponse",
+      "status": "online"
+    },
+    "ReplyTicket": {
+      "document": "用户回复工单",
+      "input": "ReplyTicketRequest",
+      "name": "用户回复工单",
+      "output": "ReplyTicketResponse",
+      "status": "online"
+    },
+    "UrgeTicket": {
+      "document": "用户催单",
+      "input": "UrgeTicketRequest",
+      "name": "用户催单",
+      "output": "UrgeTicketResponse",
       "status": "online"
     }
   },
@@ -15,6 +176,312 @@
     "serviceShortName": "tandon"
   },
   "objects": {
+    "AddCommonCommentRequest": {
+      "document": "AddCommonComment请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "AddCommonCommentResponse": {
+      "document": "AddCommonComment返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AppraiseTicketRequest": {
+      "document": "AppraiseTicket请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "AppraiseTicketResponse": {
+      "document": "AppraiseTicket返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AssignIncidentManagerRequest": {
+      "document": "AssignIncidentManager请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "AssignIncidentManagerResponse": {
+      "document": "AssignIncidentManager返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BatchGetTicketStatusRequest": {
+      "document": "BatchGetTicketStatus请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "BatchGetTicketStatusResponse": {
+      "document": "BatchGetTicketStatus返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CloseCommonTicketRequest": {
+      "document": "CloseCommonTicket请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "CloseCommonTicketResponse": {
+      "document": "CloseCommonTicket返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CloseTicketRequest": {
+      "document": "CloseTicket请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "CloseTicketResponse": {
+      "document": "CloseTicket返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCommonTicketRequest": {
+      "document": "CreateCommonTicket请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "CreateCommonTicketResponse": {
+      "document": "CreateCommonTicket返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateInternalTicketRequest": {
+      "document": "CreateInternalTicket请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "CreateInternalTicketResponse": {
+      "document": "CreateInternalTicket返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetAppraisalOptionsRequest": {
+      "document": "GetAppraisalOptions请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "GetAppraisalOptionsResponse": {
+      "document": "GetAppraisalOptions返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetCommonCategoryListByIdRequest": {
+      "document": "GetCommonCategoryListById请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "GetCommonCategoryListByIdResponse": {
+      "document": "GetCommonCategoryListById返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetCommonCategoryListRequest": {
+      "document": "GetCommonCategoryList请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "GetCommonCategoryListResponse": {
+      "document": "GetCommonCategoryList返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetCommonTicketDetailRequest": {
+      "document": "GetCommonTicketDetail请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "GetCommonTicketDetailResponse": {
+      "document": "GetCommonTicketDetail返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetCommonTicketListRequest": {
+      "document": "GetCommonTicketList请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "GetCommonTicketListResponse": {
+      "document": "GetCommonTicketList返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetCosKeysAndPrefixRequest": {
+      "document": "GetCosKeysAndPrefix请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "GetCosKeysAndPrefixResponse": {
+      "document": "GetCosKeysAndPrefix返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetInternalServiceSceneRequest": {
+      "document": "GetInternalServiceScene请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "GetInternalServiceSceneResponse": {
+      "document": "GetInternalServiceScene返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetInternalTicketRequest": {
+      "document": "GetInternalTicket请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "GetInternalTicketResponse": {
+      "document": "GetInternalTicket返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetOpenTicketInfoRequest": {
+      "document": "GetOpenTicketInfo请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "GetOpenTicketInfoResponse": {
+      "document": "GetOpenTicketInfo返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetTicketOperationRequest": {
+      "document": "GetTicketOperation请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "GetTicketOperationResponse": {
+      "document": "GetTicketOperation返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "GetUserCurrentConversationsRequest": {
       "document": "GetUserCurrentConversations请求参数结构体",
       "members": [],
@@ -22,6 +489,91 @@
     },
     "GetUserCurrentConversationsResponse": {
       "document": "GetUserCurrentConversations返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetUserTicketListRequest": {
+      "document": "GetUserTicketList请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "GetUserTicketListResponse": {
+      "document": "GetUserTicketList返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetUserTicketRequest": {
+      "document": "GetUserTicket请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "GetUserTicketResponse": {
+      "document": "GetUserTicket返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RemindCommonTicketRequest": {
+      "document": "RemindCommonTicket请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "RemindCommonTicketResponse": {
+      "document": "RemindCommonTicket返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ReplyTicketRequest": {
+      "document": "ReplyTicket请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "ReplyTicketResponse": {
+      "document": "ReplyTicket返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UrgeTicketRequest": {
+      "document": "UrgeTicket请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "UrgeTicketResponse": {
+      "document": "UrgeTicket返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

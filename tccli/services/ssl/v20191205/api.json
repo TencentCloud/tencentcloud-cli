@@ -1055,6 +1055,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Tags",
+          "name": "Tags",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -2326,7 +2336,7 @@
           "example": "无",
           "member": "string",
           "name": "CompanyName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2336,7 +2346,7 @@
           "example": "无",
           "member": "int64",
           "name": "CompanyId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2346,7 +2356,7 @@
           "example": "无",
           "member": "string",
           "name": "CompanyCountry",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2356,7 +2366,7 @@
           "example": "无",
           "member": "string",
           "name": "CompanyProvince",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2366,7 +2376,7 @@
           "example": "无",
           "member": "string",
           "name": "CompanyCity",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2376,7 +2386,7 @@
           "example": "无",
           "member": "string",
           "name": "CompanyAddress",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2386,7 +2396,7 @@
           "example": "无",
           "member": "string",
           "name": "CompanyPhone",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2396,7 +2406,7 @@
           "example": "无",
           "member": "string",
           "name": "IdType",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2406,8 +2416,18 @@
           "example": "无",
           "member": "string",
           "name": "IdNumber",
-          "required": false,
+          "output_required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Tags",
+          "name": "Tags",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -5433,7 +5453,7 @@
           "example": "无",
           "member": "CompanyInfo",
           "name": "Companies",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5443,7 +5463,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7352,7 +7372,7 @@
           "example": "无",
           "member": "ManagerInfo",
           "name": "Managers",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7362,7 +7382,7 @@
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7898,7 +7918,7 @@
           "example": "无",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7908,7 +7928,7 @@
           "example": "无",
           "member": "string",
           "name": "ManagerFirstName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7918,7 +7938,7 @@
           "example": "无",
           "member": "string",
           "name": "ManagerLastName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7928,7 +7948,7 @@
           "example": "无",
           "member": "string",
           "name": "ManagerPosition",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7938,7 +7958,7 @@
           "example": "无",
           "member": "string",
           "name": "ManagerPhone",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7948,7 +7968,7 @@
           "example": "无",
           "member": "string",
           "name": "ManagerMail",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7958,7 +7978,7 @@
           "example": "无",
           "member": "string",
           "name": "ManagerDepartment",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7968,7 +7988,7 @@
           "example": "无",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7978,7 +7998,7 @@
           "example": "无",
           "member": "int64",
           "name": "DomainCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7988,7 +8008,7 @@
           "example": "无",
           "member": "int64",
           "name": "CertCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7998,7 +8018,7 @@
           "example": "无",
           "member": "int64",
           "name": "ManagerId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8008,7 +8028,7 @@
           "example": "无",
           "member": "string",
           "name": "ExpireTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8018,7 +8038,7 @@
           "example": "无",
           "member": "string",
           "name": "SubmitAuditTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8028,7 +8048,7 @@
           "example": "无",
           "member": "string",
           "name": "VerifyTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8038,7 +8058,17 @@
           "example": "无",
           "member": "ManagerStatusInfo",
           "name": "StatusInfo",
-          "required": true,
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Tags",
+          "name": "Tags",
+          "output_required": false,
           "type": "list",
           "value_allowed_null": true
         }

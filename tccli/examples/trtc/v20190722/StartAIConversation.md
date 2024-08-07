@@ -16,7 +16,7 @@ tccli trtc StartAIConversation --cli-unfold-argument  \
     --SessionId session_1234567890abcdef \
     --STTConfig.Language en-US \
     --STTConfig.AlternativeLanguage en-US zh \
-    --LLMConfig {"LLMType": "openai", "Model": "gpt-3.5-turbo", "APIKey": "xxx", "APIBaseUrl": "http://xxxx-api.woa.com/v1", "Streaming": true} \
+    --LLMConfig {"LLMType": "openai", "Model": "gpt-3.5-turbo", "APIKey": "xxx", "APIUrl": "http://xxxx-api.woa.com/v1/chat/completions", "Streaming": true} \
     --TTSConfig {"TTSType": "tencent", "AppId": 130000000, "SecretId": "AKIDxxxxx", "SecretKey": "HlDxxxxxx", "VoiceType": 1008, "Speed": 1}
 ```
 

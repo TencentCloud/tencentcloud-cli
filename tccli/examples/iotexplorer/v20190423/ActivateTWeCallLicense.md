@@ -16,7 +16,15 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "abc",
+        "FailureList": [],
+        "SuccessList": [
+            {
+                "ModelId": "modelId",
+                "Sn": "productId_deviceName",
+                "ExpireTime": 356123
+            }
+        ]
     }
 }
 ```

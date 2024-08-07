@@ -6,44 +6,47 @@ Input:
 
 ```
 tccli ssl DescribeManagers --cli-unfold-argument  \
+    --CompanyId 0 \
     --Offset 0 \
-    --ManagerName xx \
     --Limit 0 \
-    --CompanyId 0
+    --ManagerName abc \
+    --ManagerMail abc \
+    --Status abc \
+    --SearchKey abc
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "TotalCount": 1,
         "Managers": [
             {
-                "Status": "xx",
-                "ManagerFirstName": "xx",
-                "ManagerPhone": "xx",
-                "ManagerLastName": "xx",
-                "SubmitAuditTime": "xx",
-                "CertCount": 2,
-                "ManagerPosition": "xx",
-                "VerifyTime": "xx",
-                "ManagerId": 22,
-                "ExpireTime": "xx",
-                "ManagerMail": "xx",
+                "Status": "abc",
+                "ManagerFirstName": "abc",
+                "ManagerLastName": "abc",
+                "ManagerPosition": "abc",
+                "ManagerPhone": "abc",
+                "ManagerMail": "abc",
+                "ManagerDepartment": "abc",
+                "CreateTime": "abc",
+                "DomainCount": 0,
+                "CertCount": 0,
+                "ManagerId": 0,
+                "ExpireTime": "abc",
+                "SubmitAuditTime": "abc",
+                "VerifyTime": "abc",
                 "StatusInfo": [
                     {
-                        "Status": "xx",
-                        "ExpireTime": "xx",
-                        "Type": "xx",
-                        "CreateTime": "xx"
+                        "Type": "abc",
+                        "Status": "abc",
+                        "CreateTime": "abc",
+                        "ExpireTime": "abc"
                     }
-                ],
-                "DomainCount": 2,
-                "ManagerDepartment": "xx",
-                "CreateTime": "xx"
+                ]
             }
         ],
-        "RequestId": "xx"
+        "TotalCount": 0,
+        "RequestId": "abc"
     }
 }
 ```
