@@ -176,12 +176,15 @@ class ServiceCommand(BaseCommand):
         service_model = self._get_service_model()
         for action in service_model["actions"]:
             action_model = service_model["actions"][action]
+            action_caller = action_model.get("action_caller", None)
+            if not action_caller:
+                action_caller = Services.action_caller(self._service_name)()[action]
             command_map[action] = ActionCommand(
                 service_name=self._service_name,
                 version=self._version,
                 action_name=action,
                 action_model=action_model,
-                action_caller=Services.action_caller(self._service_name)()[action],
+                action_caller=action_caller,
             )
         return command_map
 
