@@ -1293,6 +1293,15 @@
           "name": "ClearDisasterRecoverGroupIds",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否清空实例标签列表，非必填，默认为 false。\n填 true 代表清空实例标签列表，清空后基于此新创建的云主机将不会绑定列表中的标签。",
+          "example": "false",
+          "member": "bool",
+          "name": "ClearInstanceTags",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -1802,7 +1811,7 @@
         },
         {
           "disabled": false,
-          "document": "实例计费类型，CVM默认值按照POSTPAID_BY_HOUR处理。\n<br><li>POSTPAID_BY_HOUR：按小时后付费\n<br><li>SPOTPAID：竞价付费\n<br><li>PREPAID：预付费，即包年包月",
+          "document": "实例计费类型，CVM默认值按照POSTPAID_BY_HOUR处理。\n<li>POSTPAID_BY_HOUR：按小时后付费</li>\n<li>SPOTPAID：竞价付费</li>\n<li>PREPAID：预付费，即包年包月</li>",
           "example": "无",
           "member": "string",
           "name": "InstanceChargeType",
@@ -1838,7 +1847,7 @@
         },
         {
           "disabled": false,
-          "document": "实例类型校验策略，取值包括 ALL 和 ANY，默认取值为ANY。\n<br><li> ALL，所有实例类型（InstanceType）都可用则通过校验，否则校验报错。\n<br><li> ANY，存在任何一个实例类型（InstanceType）可用则通过校验，否则校验报错。\n\n实例类型不可用的常见原因包括该实例类型售罄、对应云盘售罄等。\n如果 InstanceTypes 中一款机型不存在或者已下线，则无论 InstanceTypesCheckPolicy 采用何种取值，都会校验报错。",
+          "document": "实例类型校验策略，取值包括 ALL 和 ANY，默认取值为ANY。\n<li> ALL，所有实例类型（InstanceType）都可用则通过校验，否则校验报错。</li>\n<li> ANY，存在任何一个实例类型（InstanceType）可用则通过校验，否则校验报错。</li>\n\n实例类型不可用的常见原因包括该实例类型售罄、对应云盘售罄等。\n如果 InstanceTypes 中一款机型不存在或者已下线，则无论 InstanceTypesCheckPolicy 采用何种取值，都会校验报错。",
           "example": "无",
           "member": "string",
           "name": "InstanceTypesCheckPolicy",
@@ -1892,7 +1901,7 @@
         },
         {
           "disabled": false,
-          "document": "云盘类型选择策略，默认取值 ORIGINAL，取值范围：\n<br><li>ORIGINAL：使用设置的云盘类型\n<br><li>AUTOMATIC：自动选择当前可用的云盘类型",
+          "document": "云盘类型选择策略，默认取值 ORIGINAL，取值范围：\n<li>ORIGINAL：使用设置的云盘类型</li>\n<li>AUTOMATIC：自动选择当前可用的云盘类型</li>",
           "example": "ORIGINAL",
           "member": "string",
           "name": "DiskTypePolicy",
@@ -1938,6 +1947,7 @@
           "example": "asc-23h37kyn",
           "member": "string",
           "name": "LaunchConfigurationId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3934,20 +3944,33 @@
       "members": [
         {
           "disabled": false,
-          "document": "云服务器的主机名。\n<br><li> 点号（.）和短横线（-）不能作为 HostName 的首尾字符，不能连续使用。\n<br><li> 不支持 Windows 实例。\n<br><li> 其他类型（Linux 等）实例：字符长度为[2, 40]，允许支持多个点号，点之间为一段，每段允许字母（不限制大小写）、数字和短横线（-）组成。不允许为纯数字。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "云服务器的主机名。\n<li> 点号（.）和短横线（-）不能作为 HostName 的首尾字符，不能连续使用。</li> \n<li> 不支持 Windows 实例。</li> \n<li> 其他类型（Linux 等）实例：字符长度为[2, 40]，允许支持多个点号，点之间为一段，每段允许字母（不限制大小写）、数字和短横线（-）组成。不允许为纯数字。</li> \n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "aaa",
           "member": "string",
           "name": "HostName",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "云服务器主机名的风格，取值范围包括 ORIGINAL 和  UNIQUE，默认为 ORIGINAL。\n<br><li> ORIGINAL，AS 直接将入参中所填的 HostName 传递给 CVM，CVM 可能会对 HostName 追加序列号，伸缩组中实例的 HostName 会出现冲突的情况。\n<br><li> UNIQUE，入参所填的 HostName 相当于主机名前缀，AS 和 CVM 会对其进行拓展，伸缩组中实例的 HostName 可以保证唯一。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "云服务器主机名的风格，取值范围包括 ORIGINAL 和  UNIQUE，默认为 ORIGINAL。\n<li> ORIGINAL，AS 直接将入参中所填的 HostName 传递给 CVM，CVM 可能会对 HostName 追加序列号，伸缩组中实例的 HostName 会出现冲突的情况。</li> \n<li> UNIQUE，入参所填的 HostName 相当于主机名前缀，AS 和 CVM 会对其进行拓展，伸缩组中实例的 HostName 可以保证唯一。</li> \n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ORIGINAL",
           "member": "string",
           "name": "HostNameStyle",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "云服务器的主机名后缀。\n<li> 点号（.）和短横线（-）不能作为 HostNameSuffix 的首尾字符，不能连续使用。</li> \n<li> 不支持 Windows 实例。</li> \n<li>其他类型（Linux 等）实例：字符长度为[1, 37]，且与 HostName 的长度和不能超过 39，允许支持多个点号，点之间为一段，每段允许字母（不限制大小写）、数字和短横线（-）组成。</li> \n假设后缀名称为 suffix，原主机名为 test.0，最终主机名为 test.0.suffix。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "suffix",
+          "member": "string",
+          "name": "HostNameSuffix",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -5386,7 +5409,7 @@
         },
         {
           "disabled": false,
-          "document": "实例类型校验策略，在实际修改 InstanceTypes 时发挥作用，取值包括 ALL 和 ANY，默认取值为ANY。\n<br><li> ALL，所有实例类型（InstanceType）都可用则通过校验，否则校验报错。\n<br><li> ANY，存在任何一个实例类型（InstanceType）可用则通过校验，否则校验报错。\n\n实例类型不可用的常见原因包括该实例类型售罄、对应云盘售罄等。\n如果 InstanceTypes 中一款机型不存在或者已下线，则无论 InstanceTypesCheckPolicy 采用何种取值，都会校验报错。",
+          "document": "实例类型校验策略，在实际修改 InstanceTypes 时发挥作用，取值包括 ALL 和 ANY，默认取值为ANY。\n<li> ALL，所有实例类型（InstanceType）都可用则通过校验，否则校验报错。</li> \n<li> ANY，存在任何一个实例类型（InstanceType）可用则通过校验，否则校验报错。</li> \n实例类型不可用的常见原因包括该实例类型售罄、对应云盘售罄等。\n如果 InstanceTypes 中一款机型不存在或者已下线，则无论 InstanceTypesCheckPolicy 采用何种取值，都会校验报错。",
           "example": "ALL",
           "member": "string",
           "name": "InstanceTypesCheckPolicy",
@@ -5431,7 +5454,7 @@
         },
         {
           "disabled": false,
-          "document": "实例计费类型。具体取值范围如下：\n<br><li>POSTPAID_BY_HOUR：按小时后付费\n<br><li>SPOTPAID：竞价付费\n<br><li>PREPAID：预付费，即包年包月",
+          "document": "实例计费类型。具体取值范围如下：\n<li>POSTPAID_BY_HOUR：按小时后付费</li>\n<li>SPOTPAID：竞价付费</li>\n<li>PREPAID：预付费，即包年包月</li>",
           "example": "POSTPAID_BY_HOUR",
           "member": "string",
           "name": "InstanceChargeType",
@@ -5458,7 +5481,7 @@
         },
         {
           "disabled": false,
-          "document": "云盘类型选择策略，取值范围：\n<br><li>ORIGINAL：使用设置的云盘类型。\n<br><li>AUTOMATIC：自动选择当前可用的云盘类型。",
+          "document": "云盘类型选择策略，取值范围：\n<li>ORIGINAL：使用设置的云盘类型。</li>\n<li>AUTOMATIC：自动选择当前可用的云盘类型。</li>",
           "example": "ORIGINAL",
           "member": "string",
           "name": "DiskTypePolicy",
@@ -5513,7 +5536,7 @@
         {
           "disabled": false,
           "document": "CAM角色名称。可通过DescribeRoleList接口返回值中的roleName获取。",
-          "example": "无",
+          "example": "TestRole",
           "member": "string",
           "name": "CamRoleName",
           "required": false,
@@ -5522,7 +5545,7 @@
         {
           "disabled": false,
           "document": "高性能计算集群ID。<br>\n注意：此字段默认为空。",
-          "example": "无",
+          "example": "hpc-abcd1234",
           "member": "string",
           "name": "HpcClusterId",
           "required": false,
@@ -5554,6 +5577,15 @@
           "name": "LoginSettings",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "实例标签列表。通过指定该参数，可以为扩容的实例绑定标签。最多支持指定10个标签。\n该参数会覆盖原有的实例标签列表，如需新增标签，需将新标签和原有标签一并传入。",
+          "example": "[{\"Key\":\"Test\",\"Value\":\"test\"}]",
+          "member": "InstanceTag",
+          "name": "InstanceTags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

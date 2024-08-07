@@ -267,7 +267,7 @@
       "status": "online"
     },
     "StartAIConversation": {
-      "document": "启动一个任务，机器人将进入TRTC房间，与指定成员进行AI对话",
+      "document": "启动AI对话任务，AI通道机器人进入TRTC房间，与房间内指定的成员进行AI对话，适用于智能客服，AI口语教师等场景\n\nTRTC AI对话功能内置语音转文本能力，同时提供通道服务，即客户可灵活指定第三方AI模型（LLM）服务和文本转音频（TTS)服务，更多[功能说明](https://cloud.tencent.com/document/product/647/108901)。",
       "input": "StartAIConversationRequest",
       "name": "开始AI对话任务",
       "output": "StartAIConversationResponse",
@@ -506,13 +506,24 @@
         },
         {
           "disabled": false,
-          "document": "房间内推流用户全部退出后超过MaxIdleTime秒，后台自动关闭任务，默认值是60s。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "房间内超过MaxIdleTime 没有推流，后台自动关闭任务，默认值是60s。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "uint64",
           "name": "MaxIdleTime",
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "机器人的欢迎语\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "WelcomeMessage",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -1153,7 +1164,7 @@
         },
         {
           "disabled": false,
-          "document": "唯一标识一次任务。",
+          "document": "任务的唯一标识，在启动任务时生成",
           "example": "无",
           "member": "string",
           "name": "TaskId",
@@ -4926,7 +4937,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "语音识别支持的语言，默认是\"zh\"。目前全量支持的语言如下，等号左面是语言英文名，右面是Language字段需要填写的值，该值遵循[ISO639](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes)：\n中文 Chinese = \"zh\"\n中文繁体 Chinese_TW = \"zh-TW\" \n中文方言 Chinese_DIALECT = \"zh-dialect\"\nEnglish = \"en\"\nVietnamese = \"vi\"\nJapanese = \"ja\"\nKorean = \"ko\"\nIndonesia = \"id\"\nThai = \"th\"\nPortuguese = \"pt\"\nTurkish = \"tr\"\nArabic = \"ar\"\nSpanish = \"es\"\nHindi = \"hi\"\nFrench = \"fr\"\nMalay = \"ms\"\nFilipino = \"fil\"\nGerman = \"de\"\nItalian = \"it\"\nRussian = \"ru\"\n\n注意：\n如果缺少满足您需求的语言，请联系我们技术人员。",
+          "document": "语音转文字支持识别的语言，默认是\"zh\" 中文\n目前全量支持的语言如下，等号左面是语言英文名，右面是Language字段需要填写的值，该值遵循[ISO639](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes)：\n可通过购买「语音转文本时长包」解锁或领取包月套餐体验版解锁此功能。\n\n语音转文本支持语言类型如下：\n- Chinese = \"zh\" # 中文\n- Chinese_TW = \"zh-TW\" # 中国台湾\n- English = \"en\" # 英语\n- Chinese_YUE = \"zh-yue\" # 中国粤语\n- Chinese_DIALECT = \"zh-dialect\" # 中国方言\n- English = \"en\" # 英语\n- Vietnamese = \"vi\" # 越南语\n- Japanese = \"ja\" # 日语\n- Korean = \"ko\" # 汉语\n- Indonesia = \"id\" # 印度尼西亚语\n- Thai = \"th\" # 泰语\n- Portuguese = \"pt\" # 葡萄牙语\n- Turkish = \"tr\" # 土耳其语\n- Arabic = \"ar\" # 阿拉伯语\n- Spanish = \"es\" # 西班牙语\n- Hindi = \"hi\" # 印地语\n- French = \"fr\" # 法语\n- Malay = \"ms\" # 马来语\n- Filipino = \"fil\" # 菲律宾语\n- German = \"de\" # 德语\n- Italian = \"it\" # 意大利语\n- Russian = \"ru\" # 俄语\n\n注意：\n如果缺少满足您需求的语言，请联系我们技术人员。\n示例值：zh",
           "example": "zh",
           "member": "string",
           "name": "Language",
@@ -4935,7 +4946,7 @@
         },
         {
           "disabled": false,
-          "document": "额外的可能替代语言，最多3个，仅高级版支持。Language指定中文方言时，不能设置该字段。",
+          "document": "发起模糊识别额外可能替代语言类型,最多填写3种语言类型。\n注：Language指定为\"zh-dialect\" # 中国方言 时，不支持模糊识别，该字段无效",
           "example": "无",
           "member": "string",
           "name": "AlternativeLanguage",
@@ -4953,7 +4964,7 @@
         },
         {
           "disabled": false,
-          "document": "翻译功能支持的语言，如果填写，则会启用翻译，不填则只会使用语音识别。\n目前全量支持的语言如下，等号左面是语言英文名，右面是Language字段需要填写的值，该值遵循[ISO639](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes)：\nChinese = \"zh\"\nChinese_TW = \"zh-TW\" \nEnglish = \"en\"\nVietnamese = \"vi\"\nJapanese = \"ja\"\nKorean = \"ko\"\nIndonesia = \"id\"\nThai = \"th\"\nPortuguese = \"pt\"\nTurkish = \"tr\"\nArabic = \"ar\"\nSpanish = \"es\"\nHindi = \"hi\"\nFrench = \"fr\"\nMalay = \"ms\"\nFilipino = \"fil\"\nGerman = \"de\"\nItalian = \"it\"\nRussian = \"ru\"\n\n注意：\n如果缺少满足您需求的语言，请联系我们技术人员。",
+          "document": "翻译功能支持的语言，如果填写，则会启用翻译，不填则只会使用语音识别。\n注：文本翻译功能需要购买「语音转文本时长包」解锁或领取包月套餐-体验版解。\n目前全量支持的语言如下，等号左面是语言英文名，右面是Language字段需要填写的值，该值遵循[ISO639](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes)：\nChinese = \"zh\"\nChinese_TW = \"zh-TW\"\nEnglish = \"en\"\nVietnamese = \"vi\"\nJapanese = \"ja\"\nKorean = \"ko\"\nIndonesia = \"id\"\nThai = \"th\"\nPortuguese = \"pt\"\nTurkish = \"tr\"\nArabic = \"ar\"\nSpanish = \"es\"\nHindi = \"hi\"\nFrench = \"fr\"\nMalay = \"ms\"\nFilipino = \"fil\"\nGerman = \"de\"\nItalian = \"it\"\nRussian = \"ru\"\n\n注意：\n如果缺少满足您需求的语言，请联系我们技术人员。\n示例值：en",
           "example": "en",
           "member": "string",
           "name": "TranslationLanguage",
@@ -5295,7 +5306,7 @@
         },
         {
           "disabled": false,
-          "document": "额外识别可能替代语言,最多3个, 需高级版支持,Language指定方言时，不允许设置该字段\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "发起模糊识别额外可能替代语言类型,最多填写3种语言类型, \n注：Language指定为\"zh-dialect\" # 中国方言 时，不支持模糊识别，该字段无效\n\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "AlternativeLanguage",
@@ -5517,6 +5528,15 @@
           "name": "Interrupt",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "播报完文本后，是否自动关闭对话任务",
+          "example": "无",
+          "member": "bool",
+          "name": "StopAfterPlay",
+          "required": false,
+          "type": "bool"
         }
       ],
       "usage": "in"
@@ -5635,8 +5655,8 @@
         },
         {
           "disabled": false,
-          "document": "调用方传入的唯一Id，服务端用来去重。",
-          "example": "无",
+          "document": "调用方传入的唯一Id，可用于客户侧防止重复发起任务以及可以通过该字段查询任务状态。",
+          "example": "conversation_1_2",
           "member": "string",
           "name": "SessionId",
           "required": false,
@@ -6155,6 +6175,33 @@
           "example": "无",
           "member": "int64",
           "name": "SeekSecond",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "开启自动旁路推流，请确认控制台已经开启该功能。",
+          "example": "无",
+          "member": "bool",
+          "name": "AutoPush",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "循环播放次数, 取值范围[-1, 1000],  默认1次。\n - 0 无效值\n - -1 循环播放, 需要主动调用停止接口或设置MaxDuration\n",
+          "example": "无",
+          "member": "int64",
+          "name": "RepeatNum",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "循环播放最大时长,仅支持RepeatNum设置-1时生效，取值范围[1, 10080]，单位分钟。",
+          "example": "无",
+          "member": "int64",
+          "name": "MaxDuration",
           "required": false,
           "type": "int"
         }

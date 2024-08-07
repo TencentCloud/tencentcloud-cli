@@ -1122,26 +1122,28 @@
       "members": [
         {
           "disabled": false,
-          "document": "扩缩容类型",
+          "document": "扩缩容类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cpu, mem, cpu/mem",
           "member": "string",
           "name": "PolicyType",
+          "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "扩缩容阈值",
+          "document": "扩缩容阈值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "60",
           "member": "uint64",
           "name": "PolicyThreshold",
+          "output_required": false,
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "LogServiceInfo": {
       "document": "云日志服务相关信息",
@@ -1450,6 +1452,7 @@
           "example": "test-1gbtbgkjf8f48e2c",
           "member": "string",
           "name": "EnvId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1460,6 +1463,7 @@
           "example": "test",
           "member": "string",
           "name": "ServerName",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1470,6 +1474,7 @@
           "example": "[\"PUBLIC\", \"OA\", \"MINIAPP\", \"VPC\", \"\"]",
           "member": "string",
           "name": "OpenAccessTypes",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -1480,6 +1485,7 @@
           "example": "0.25",
           "member": "float",
           "name": "Cpu",
+          "output_required": true,
           "required": true,
           "type": "float",
           "value_allowed_null": false
@@ -1490,6 +1496,7 @@
           "example": "0.25",
           "member": "float",
           "name": "Mem",
+          "output_required": true,
           "required": true,
           "type": "float",
           "value_allowed_null": false
@@ -1500,6 +1507,7 @@
           "example": "1",
           "member": "uint64",
           "name": "MinNum",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -1510,6 +1518,7 @@
           "example": "2",
           "member": "uint64",
           "name": "MaxNum",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -1520,6 +1529,7 @@
           "example": "cpu, mem, cpu/mem",
           "member": "HpaPolicy",
           "name": "PolicyDetails",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -1530,6 +1540,7 @@
           "example": "stdout",
           "member": "string",
           "name": "CustomLogs",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1540,6 +1551,7 @@
           "example": "{\"MYSQL_USERNAME\":\"root\"}",
           "member": "string",
           "name": "EnvParams",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1550,6 +1562,7 @@
           "example": "2",
           "member": "uint64",
           "name": "InitialDelaySeconds",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -1560,6 +1573,7 @@
           "example": "\"2022-03-10 19:44:07\"",
           "member": "string",
           "name": "CreateTime",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1570,6 +1584,7 @@
           "example": "8080",
           "member": "int64",
           "name": "Port",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -1580,6 +1595,7 @@
           "example": "true",
           "member": "bool",
           "name": "HasDockerfile",
+          "output_required": true,
           "required": true,
           "type": "bool",
           "value_allowed_null": false
@@ -1590,6 +1606,7 @@
           "example": "\"Dickerfile\"",
           "member": "string",
           "name": "Dockerfile",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1600,6 +1617,7 @@
           "example": "src/",
           "member": "string",
           "name": "BuildDir",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1610,6 +1628,7 @@
           "example": "none",
           "member": "string",
           "name": "LogType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -1620,6 +1639,7 @@
           "example": "无",
           "member": "string",
           "name": "LogSetId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -1630,6 +1650,7 @@
           "example": "无",
           "member": "string",
           "name": "LogTopicId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -1640,9 +1661,21 @@
           "example": "json",
           "member": "string",
           "name": "LogParseType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务标签, function: 函数托管\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Tag",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

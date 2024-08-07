@@ -1405,6 +1405,15 @@
           "name": "DisasterRecoverGroupAffinity",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "子产品ID枚举值： 开源版：\"sp_es_io2\"， 基础版：\"sp_es_basic\"，白金版：\"sp_es_platinum\"，企业版：\"sp_es_enterprise\"，CDC白金版：\"sp_es_cdc_platinum\"，日志增强版：\"sp_es_enlogging\"，tsearch：\"sp_tsearch_io2\"，logstash：\"sp_es_logstash\" ，可以为空，为空的时候后台取LicenseType映射该字段",
+          "example": "sp_es_platinum",
+          "member": "string",
+          "name": "SubProductCode",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2840,6 +2849,15 @@
           "name": "VpcIds",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "cdc集群id",
+          "example": "cluster-262n63e8",
+          "member": "string",
+          "name": "CdcId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -6086,6 +6104,16 @@
           "name": "DisasterRecoverGroupAffinity",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "子产品ID枚举值： 开源版：\"sp_es_io2\"， 基础版：\"sp_es_basic\"，白金版：\"sp_es_platinum\"，企业版：\"sp_es_enterprise\"，CDC白金版：\"sp_es_cdc_platinum\"，日志增强版：\"sp_es_enlogging\"，tsearch：\"sp_tsearch_io2\"，logstash：\"sp_es_logstash\" ，可以为空，为空的时候后台取LicenseType映射该字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "sp_es_platinum",
+          "member": "string",
+          "name": "SubProductCode",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

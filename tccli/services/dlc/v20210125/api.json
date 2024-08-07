@@ -17971,6 +17971,24 @@
           "name": "DataEngineConfigCommand",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否使用lakefs作为结果存储",
+          "example": "false",
+          "member": "bool",
+          "name": "UseLakeFs",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "用户自定义结果路径",
+          "example": "cosn://test-bucket/dir",
+          "member": "string",
+          "name": "CustomResultPath",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

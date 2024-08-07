@@ -20,7 +20,9 @@ Output:
                 "CompanyProvince": "广东",
                 "CompanyCity": "深圳",
                 "CompanyAddress": "深南大道",
-                "CompanyPhone": "2132323"
+                "CompanyPhone": "2132323",
+                "IdType": "",
+                "IdNumber": "xxx"
             }
         ],
         "RequestId": "5779b652-9c64-45b3-a6f4-641db7376a2e"

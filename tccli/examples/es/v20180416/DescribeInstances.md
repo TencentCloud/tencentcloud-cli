@@ -160,7 +160,8 @@ Output:
                 ],
                 "ProcessPercent": 0.5,
                 "EnableHybridStorage": true,
-                "HasKernelUpgrade": true
+                "HasKernelUpgrade": true,
+                "SubProductCode": "sp_es_platium"
             }
         ],
         "RequestId": "xxxx"

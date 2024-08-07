@@ -6570,6 +6570,15 @@
           "name": "DevelopmentParams",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "新建数据源的项目ID",
+          "example": "12323",
+          "member": "string",
+          "name": "ProjectId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -14322,7 +14331,7 @@
         },
         {
           "disabled": false,
-          "document": "查询filter",
+          "document": "查询filter;默认查询任务的开发态，如需查询生产态任务需添加{\"Values\":[\"true\"],\"Name\":\"ProductionState\"};如需查询查询任务状态需要查询生产态任务列表",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -25149,7 +25158,7 @@
         },
         {
           "disabled": false,
-          "document": "1:未开始|2:操作中|3:运行中|4:暂停|5:任务停止中|6:停止|7:执行失败|20:异常|21:未知|\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "0:新建(任务开发态默认状态)|1:未开始|2:操作中|3:运行中|4:暂停|5:任务停止中|6:停止|7:执行失败|20:异常|21:未知|\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
           "member": "int64",
           "name": "Status",
