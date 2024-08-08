@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli pts DeleteScenarios --cli-unfold-argument  \
-    --ProjectId xx \
+    --ProjectId project-xx \
     --DeleteJobs True \
     --ScenarioIds scenario-xx
 ```
@@ -15,7 +15,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "xx"
+        "RequestId": "req-xx"
     }
 }
 ```

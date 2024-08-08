@@ -98,6 +98,14 @@
         "title": "创建特殊采集配置任务"
       }
     ],
+    "CreateConsoleSharing": [
+      {
+        "document": "创建控制台检索页/仪表盘免登陆分享站点",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateConsoleSharing\n<公共请求参数>\n\n{\n    \"SharingConfig\": {\n        \"Name\": \"my-sharing\",\n        \"Type\": 1,\n        \"VerifyCode\": \"lEC0V0\",\n        \"DurationMilliseconds\": 1800000,\n        \"NowTime\": 1706787306086,\n        \"IsLockTimeRange\": true,\n        \"IsLockQuery\": true,\n        \"Params\": [\n            {\n                \"Name\": \"query\"\n            }\n        ],\n        \"Resources\": [\n            \"qcs::cls:ap-guangzhou:uin/10000000001:topic/c1306921-2180-3e45-9azb-31d12217871e6\"\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"SharingUrl\": \"https://clsshare.tencent-cloud.com/s/13cez28h\",\n        \"SharingId\": \"13cez28h\",\n        \"RequestId\": \"714cf720-43e9-460b-bd9a-42a193ca3d94\"\n    }\n}",
+        "title": "创建控制台匿名分享请求示例"
+      }
+    ],
     "CreateConsumer": [
       {
         "document": "CLS 日志投递Ckafka之后，您可以对日志进行实时计算后入库。",
@@ -250,6 +258,14 @@
         "title": "删除应用到机器组的采集配置"
       }
     ],
+    "DeleteConsoleSharing": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteConsoleSharing\n<公共请求参数>\n\n{\n    \"SharingId\": \"13cez28h\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"714cf720-43e9-460b-bd9a-42a193ca3d94\"\n    }\n}",
+        "title": "删除控制台匿名分享请求示例"
+      }
+    ],
     "DeleteConsumer": [
       {
         "document": "",
@@ -400,6 +416,14 @@
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConfigs\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Key\": \"topicId\",\n            \"Values\": [\n                \"97e8a872-xxxx-4644-9d3c-603d95051458\"\n            ]\n        }\n    ],\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
         "output": "{\n    \"Response\": {\n        \"Configs\": [\n            {\n                \"ConfigId\": \"02f11930-xxxx-4dca-8c9b-b6a147223945\",\n                \"Name\": \"test\",\n                \"LogFormat\": \"\",\n                \"Path\": \"/test/**/test\",\n                \"LogType\": \"minimalist_log\",\n                \"ExtractRule\": {\n                    \"TimeKey\": \"\",\n                    \"TimeFormat\": \"\",\n                    \"Delimiter\": \"\",\n                    \"LogRegex\": \"\",\n                    \"BeginRegex\": \"\",\n                    \"Keys\": null,\n                    \"FilterKeyRegex\": [],\n                    \"UnMatchUpLoadSwitch\": false,\n                    \"UnMatchLogKey\": null,\n                    \"Backtracking\": 0,\n                    \"IsGBK\": 0,\n                    \"JsonStandard\": 0,\n                    \"Protocol\": \"\",\n                    \"Address\": \"\",\n                    \"ParseProtocol\": \"\",\n                    \"MetadataType\": 0,\n                    \"PathRegex\": \"\",\n                    \"MetaTags\": []\n                },\n                \"ExcludePaths\": null,\n                \"Output\": \"97e8a872-xxxx-4644-9d3c-603d95051458\",\n                \"UpdateTime\": \"2022-09-02 14:26:49\",\n                \"CreateTime\": \"2022-09-02 14:26:49\",\n                \"UserDefineRule\": \"\",\n                \"AdvancedConfig\": \"\"\n            }\n        ],\n        \"TotalCount\": 2,\n        \"RequestId\": \"6eff3561-xxxx-4502-b625-3eb26c4ab450\"\n    }\n}",
         "title": "获取采集配置"
+      }
+    ],
+    "DescribeConsoleSharingList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConsoleSharingList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"714cf720-43e9-460b-bd9a-42a193ca3d94\"\n    }\n}",
+        "title": "批量查询控制台检索页/仪表盘免登陆分享站点示例"
       }
     ],
     "DescribeConsumer": [
@@ -628,6 +652,14 @@
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyConfigExtra\n<公共请求参数>\n\n{\n    \"ConfigExtraId\": \"6ef60bec-0242-43af-bb20-270359fb54a8\",\n    \"Name\": \"testname\",\n    \"TopicId\": \"6ef60bec-0242-43af-bb20-270359fb54a8\",\n    \"Type\": \"host_file\",\n    \"HostFile\": {\n        \"LogPath\": \"/var/log/tmep\",\n        \"FilePattern\": \"*.log\",\n        \"CustomLabels\": [\n            \"key1=value1\",\n            \"key=value2\"\n        ]\n    },\n    \"LogType\": \"minimalist_log\",\n    \"ExtractRule\": {\n        \"TimeKey\": \"date\",\n        \"TimeFormat\": \"%Y-%m-%d %H:%M:%S\",\n        \"Delimiter\": \"|\",\n        \"LogRegex\": \".*\",\n        \"BeginRegex\": \"^\",\n        \"Keys\": [\n            \"date\",\n            \"\",\n            \"content\"\n        ],\n        \"FilterKeyRegex\": [\n            {\n                \"Key\": \"xxx-xxx\",\n                \"Regex\": \"ssss\"\n            }\n        ],\n        \"UnMatchLogKey\": \"testlog\",\n        \"UnMatchUpLoadSwitch\": true,\n        \"Backtracking\": -1\n    },\n    \"ExcludePaths\": [\n        {\n            \"Type\": \"xxx-xxx\",\n            \"Value\": \"xxx-xxx\"\n        }\n    ],\n    \"UserDefineRule\": \"xxx-xxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a8\"\n    }\n}",
         "title": "修改特殊采集配置任务"
+      }
+    ],
+    "ModifyConsoleSharing": [
+      {
+        "document": "目前仅支持修改有效期",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyConsoleSharing\n<公共请求参数>\n\n{\n    \"SharingId\": \"13cez28h\",\n    \"DurationMilliseconds\": 1800000\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"714cf720-43e9-460b-bd9a-42a193ca3d94\"\n    }\n}",
+        "title": "修改控制台匿名分享请求示例"
       }
     ],
     "ModifyConsumer": [

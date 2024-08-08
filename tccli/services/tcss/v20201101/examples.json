@@ -36,6 +36,12 @@
         "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddComplianceAssetPolicySetToWhitelist\n<公共请求参数>\n\n{\n    \"AssetPolicySetList\": [\n        {\n            \"CustomerPolicyItemIdSet\": [\n                1\n            ],\n            \"CustomerAssetItemId\": 1\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "忽略检测项+资产列表"
+      },
+      {
+        "document": "忽略资产未通过检测项",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddComplianceAssetPolicySetToWhitelist\n<公共请求参数>\n\n{\n    \"AssetPolicySetList\": [\n        {\n            \"CustomerAssetItemId\": 2202462,\n            \"CustomerPolicyItemIdSet\": [\n                2809\n            ]\n        }\n    ],\n    \"AssetType\": \"ASSET_CONTAINER\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5728fa7b-e88a-4cb0-aabb-a403c470ca36\"\n    }\n}",
+        "title": "忽略资产未通过检测项"
       }
     ],
     "AddCompliancePolicyAssetSetToWhitelist": [
@@ -518,6 +524,12 @@
         "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteComplianceAssetPolicySetFromWhitelist\n<公共请求参数>\n\n{\n    \"AssetItemId\": 10001,\n    \"CustomerPolicyItemIdSet\": [\n        10001,\n        10002\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "忽略检测项+资产列表"
+      },
+      {
+        "document": "取消资产忽略项",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteComplianceAssetPolicySetFromWhitelist\n<公共请求参数>\n\n{\n    \"AssetItemId\": 2202462,\n    \"CustomerPolicyItemIdSet\": [\n        2809\n    ],\n    \"AssetType\": \"ASSET_CONTAINER\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"925e6419-1fb8-4169-a96c-020e3ae9171e\"\n    }\n}",
+        "title": "取消资产忽略项"
       }
     ],
     "DeleteCompliancePolicyAssetSetFromWhitelist": [
@@ -1216,10 +1228,10 @@
     ],
     "DescribeComplianceAssetDetailInfo": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeComplianceAssetDetailInfo\n<公共请求参数>\n\n{\n    \"CustomerAssetId\": 123456789\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxx\",\n        \"AssetDetailInfo\": {\n            \"CustomerAssetId\": 123456789,\n            \"AssetType\": \"ASSET_CONTAINDER\",\n            \"AssetName\": \"happy-jekins\",\n            \"HostIP\": \"xx\",\n            \"HostName\": \"xx\",\n            \"NodeName\": \"worker-node-1\",\n            \"CheckStatus\": \"CHECK_FINISHED\",\n            \"AssetCreateTime\": \"2021-03-31 00:00:00\",\n            \"AssetStatus\": \"ASSET_NORMAL\",\n            \"LastCheckTime\": \"2021-04-02 16:42:00\",\n            \"PassedPolicyItemCount\": 100,\n            \"FailedPolicyItemCount\": 10,\n            \"CheckResult\": \"RESULT_PASSED\"\n        },\n        \"ContainerDetailInfo\": {\n            \"ContainerId\": \"xxxx\",\n            \"PodName\": \"happy-jekins\"\n        },\n        \"K8SDetailInfo\": {\n            \"ClusterName\": \"xx\"\n        },\n        \"HostDetailInfo\": {\n            \"DockerVersion\": \"xx\",\n            \"K8SVersion\": \"xx\"\n        },\n        \"ImageDetailInfo\": {\n            \"ImageTag\": \"xx\",\n            \"ImageName\": \"xx\",\n            \"Repository\": \"xx\",\n            \"ImageId\": \"xx\"\n        }\n    }\n}",
-        "title": "查询某个资产的详情"
+        "document": "请求资产详细信息",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeComplianceAssetDetailInfo\n<公共请求参数>\n\n{\n    \"CustomerAssetId\": 2202462,\n    \"AssetType\": \"ASSET_CONTAINER\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AssetDetailInfo\": {\n            \"AssetCreateTime\": \"2024-07-24 11:32:45\",\n            \"AssetName\": \"my-elasticsearch-container\",\n            \"AssetStatus\": \"ASSET_STOPPED\",\n            \"AssetType\": \"ASSET_CONTAINER\",\n            \"CheckResult\": \"RESULT_FAILED\",\n            \"CheckStatus\": \"CHECK_FINISHED\",\n            \"CustomerAssetId\": 2202462,\n            \"FailedPolicyItemCount\": 7,\n            \"HostIP\": \"172.16.49.104\",\n            \"HostName\": \"VM-49-104-centos\",\n            \"LastCheckTime\": \"2024-07-24 11:17:15\",\n            \"NodeName\": \"云镜漏洞测试机-目标机器\",\n            \"PassedPolicyItemCount\": 17\n        },\n        \"ContainerDetailInfo\": {\n            \"ContainerId\": \"e822238a07e0\",\n            \"PodName\": \"\"\n        },\n        \"HostDetailInfo\": {\n            \"ContainerdVersion\": \"\",\n            \"DockerVersion\": \"\",\n            \"K8SVersion\": \"\"\n        },\n        \"ImageDetailInfo\": {\n            \"ImageId\": \"\",\n            \"ImageName\": \"\",\n            \"ImageTag\": \"\",\n            \"Repository\": \"\"\n        },\n        \"K8SDetailInfo\": {\n            \"ClusterName\": \"\",\n            \"ClusterVersion\": \"\"\n        },\n        \"RequestId\": \"ae46673b-3930-4874-9144-a514653d232c\"\n    }\n}",
+        "title": "请求资产详细信息"
       }
     ],
     "DescribeComplianceAssetList": [
@@ -1232,10 +1244,10 @@
     ],
     "DescribeComplianceAssetPolicyItemList": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeComplianceAssetPolicyItemList\n<公共请求参数>\n\n{\n    \"CustomerAssetId\": 123456,\n    \"Offset\": 10,\n    \"Limit\": 10,\n    \"Filters\": [\n        {\n            \"Name\": \"RiskLevel\",\n            \"Values\": [\n                \"RISK_CRITICAL\",\n                \"RISK_HIGH\"\n            ],\n            \"ExactMatch\": true\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxx\",\n        \"TotalCount\": 123,\n        \"AssetPolicyItemList\": [\n            {\n                \"CustomerPolicyItemId\": 10001,\n                \"BasePolicyItemId\": 1,\n                \"Name\": \"审计Docker文件和目录\",\n                \"Category\": \"xxx\",\n                \"BenchmarkStandardId\": 123,\n                \"BenchmarkStandardName\": \"CIS Docker\",\n                \"RiskLevel\": \"RISK_HIGH\",\n                \"CheckStatus\": \"CHECK_FINISHED\",\n                \"CheckResult\": \"RESULT_FAILED\",\n                \"WhitelistId\": 12345,\n                \"FixSuggestion\": \"xxxx\",\n                \"LastCheckTime\": \"2021-04-02 16:00:00\"\n            }\n        ]\n    }\n}",
-        "title": "查询某资产下的检测项列表"
+        "document": "请求资产检测项列表",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeComplianceAssetPolicyItemList\n<公共请求参数>\n\n{\n    \"CustomerAssetId\": 2202462,\n    \"Offset\": 0,\n    \"Limit\": 3,\n    \"AssetType\": \"ASSET_CONTAINER\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AssetPolicyItemList\": [\n            {\n                \"BasePolicyItemId\": 142,\n                \"BenchmarkStandardId\": 1,\n                \"BenchmarkStandardName\": \"CIS Docker\",\n                \"Category\": \"CATEGORY_DOCKER_RUNTIME\",\n                \"CheckResult\": \"RESULT_PASSED\",\n                \"CheckStatus\": \"CHECK_FINISHED\",\n                \"CustomerPolicyItemId\": 2809,\n                \"FixSuggestion\": \"使用--health-cmd和其他参数运行容器。 例如，docker run -d --health-cmd ='stat /etc/passwd || exit1'nginx。\",\n                \"LastCheckTime\": \"2024-07-24 11:12:16\",\n                \"Name\": \"检查容器运行时的健康状态\",\n                \"RiskLevel\": \"1\",\n                \"VerifyInfo\": \"e822238a07e0d193a12c0608f2d821812664d3d9cf5871cc9bedc9eab562e602:Healthcheck=null\\n\",\n                \"WhitelistId\": 0\n            },\n            {\n                \"BasePolicyItemId\": 141,\n                \"BenchmarkStandardId\": 1,\n                \"BenchmarkStandardName\": \"CIS Docker\",\n                \"Category\": \"CATEGORY_DOCKER_RUNTIME\",\n                \"CheckResult\": \"RESULT_PASSED\",\n                \"CheckStatus\": \"CHECK_FINISHED\",\n                \"CustomerPolicyItemId\": 2808,\n                \"FixSuggestion\": \"如无必须，不要使用 --cgroup-parent 选项在docker运行。\",\n                \"LastCheckTime\": \"2024-07-24 11:12:16\",\n                \"Name\": \"确保cgroup安全使用\",\n                \"RiskLevel\": \"1\",\n                \"VerifyInfo\": \"e822238a07e0d193a12c0608f2d821812664d3d9cf5871cc9bedc9eab562e602:CgroupParent=\\n\",\n                \"WhitelistId\": 0\n            },\n            {\n                \"BasePolicyItemId\": 140,\n                \"BenchmarkStandardId\": 1,\n                \"BenchmarkStandardName\": \"CIS Docker\",\n                \"Category\": \"CATEGORY_DOCKER_RUNTIME\",\n                \"CheckResult\": \"RESULT_PASSED\",\n                \"CheckStatus\": \"CHECK_FINISHED\",\n                \"CustomerPolicyItemId\": 2807,\n                \"FixSuggestion\": \"在docker exec命令中不要使用--privileged选项。\",\n                \"LastCheckTime\": \"2024-07-24 11:12:16\",\n                \"Name\": \"确保docker exec命令不能使用特权选项\",\n                \"RiskLevel\": \"2\",\n                \"VerifyInfo\": \"e822238a07e0d193a12c0608f2d821812664d3d9cf5871cc9bedc9eab562e602:ExecIDs=null\\n\",\n                \"WhitelistId\": 0\n            }\n        ],\n        \"RequestId\": \"dc08e10e-5ac8-4e94-9321-6c2f89d8ed5c\",\n        \"TotalCount\": 24\n    }\n}",
+        "title": "请求资产检测项列表"
       }
     ],
     "DescribeCompliancePeriodTaskList": [
@@ -1282,7 +1294,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeComplianceTaskPolicyItemSummaryList\n<公共请求参数>\n\n{\n    \"AssetType\": \"ASSET_CONTAINER\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxx\",\n        \"TaskId\": 123456,\n        \"TotalCount\": 123,\n        \"PolicyItemSummaryList\": [\n            {\n                \"CustomerPolicyItemId\": 10001,\n                \"BasePolicyItemId\": 1,\n                \"Name\": \"审计Docker文件和目录\",\n                \"Category\": \"xxx\",\n                \"BenchmarkStandardName\": \"CIS_Docker\",\n                \"BenchmarkStandardId\": 123,\n                \"RiskLevel\": \"xx\",\n                \"AssetType\": \"xxx\",\n                \"LastCheckTime\": \"2020-09-22 00:00:00\",\n                \"CheckStatus\": \"CHECK_FINISHED\",\n                \"CheckResult\": \"xx\",\n                \"PassedAssetCount\": 100,\n                \"FailedAssetCount\": 20,\n                \"WhitelistId\": 12345,\n                \"FixSuggestion\": \"xxxx\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 1,\n        \"TotalCount\": 1,\n        \"PolicyItemSummaryList\": [\n            {\n                \"CustomerPolicyItemId\": 1,\n                \"BasePolicyItemId\": 1,\n                \"Name\": \"abc\",\n                \"Category\": \"abc\",\n                \"BenchmarkStandardName\": \"abc\",\n                \"RiskLevel\": \"abc\",\n                \"AssetType\": \"abc\",\n                \"LastCheckTime\": \"2020-09-22 00:00:00\",\n                \"CheckStatus\": \"abc\",\n                \"CheckResult\": \"abc\",\n                \"PassedAssetCount\": 1,\n                \"FailedAssetCount\": 1,\n                \"WhitelistId\": 1,\n                \"FixSuggestion\": \"abc\",\n                \"BenchmarkStandardId\": 1,\n                \"ApplicableVersion\": \"abc\",\n                \"Description\": \"abc\",\n                \"AuditProcedure\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "查询上次任务的检测项的汇总信息列表"
       }
     ],
@@ -2692,6 +2704,12 @@
         "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ScanComplianceAssets\n<公共请求参数>\n\n{\n    \"CustomerAssetIdSet\": [\n        123,\n        456,\n        789\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxx\",\n        \"TaskId\": 123\n    }\n}",
         "title": "重新扫描指定的资产"
+      },
+      {
+        "document": "检测资产",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ScanComplianceAssets\n<公共请求参数>\n\n{\n    \"CustomerAssetIdSet\": [\n        2202462\n    ],\n    \"AssetType\": \"ASSET_CONTAINER\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c8dda80e-f4bc-4a3a-a165-b81e4e4c9cb2\",\n        \"TaskId\": 2535\n    }\n}",
+        "title": "检测资产"
       }
     ],
     "ScanComplianceAssetsByPolicyItem": [
@@ -2700,6 +2718,12 @@
         "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ScanComplianceAssetsByPolicyItem\n<公共请求参数>\n\n{\n    \"CustomerPolicyItemId\": 10001,\n    \"CustomerAssetIdSet\": [\n        123,\n        456,\n        789\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxx\",\n        \"TaskId\": 123\n    }\n}",
         "title": "用指定的检测项重新检测选定的资产"
+      },
+      {
+        "document": "检测策略下资产",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ScanComplianceAssetsByPolicyItem\n<公共请求参数>\n\n{\n    \"CustomerPolicyItemId\": 2798,\n    \"CustomerAssetIdSet\": [\n        2202462\n    ],\n    \"AssetType\": \"ASSET_CONTAINER\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1f25995a-d6f2-4b3d-aea5-719288998970\",\n        \"TaskId\": 2540\n    }\n}",
+        "title": "检测策略下资产"
       }
     ],
     "ScanCompliancePolicyItems": [
@@ -2716,6 +2740,12 @@
         "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ScanComplianceScanFailedAssets\n<公共请求参数>\n\n{\n    \"CustomerAssetIdSet\": [\n        123,\n        456,\n        789\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxx\",\n        \"TaskId\": 123\n    }\n}",
         "title": "重新检测上次检测失败的资产"
+      },
+      {
+        "document": "再次扫描失败资产",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ScanComplianceScanFailedAssets\n<公共请求参数>\n\n{\n    \"CustomerAssetIdSet\": [\n        2202462\n    ],\n    \"AssetType\": \"ASSET_CONTAINER\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"03546211-26e8-47d0-92f4-ed8250df32c5\",\n        \"TaskId\": 2538\n    }\n}",
+        "title": "再次扫描失败资产"
       }
     ],
     "SetCheckMode": [

@@ -413,7 +413,7 @@
         {
           "disabled": false,
           "document": "中断原因",
-          "example": "1",
+          "example": "0 unknown reason; 1 abort by user; 2 abort by sla rules",
           "member": "int64",
           "name": "AbortReason",
           "required": false,
@@ -1164,7 +1164,7 @@
           "example": "cron-xx",
           "member": "string",
           "name": "CronJobId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2254,7 +2254,7 @@
           "example": "无",
           "member": "AlertChannelRecord",
           "name": "AlertChannelSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -2264,7 +2264,7 @@
           "example": "10",
           "member": "uint64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2364,7 +2364,7 @@
           "example": "无",
           "member": "AlertRecord",
           "name": "AlertRecordSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -2374,7 +2374,7 @@
           "example": "2",
           "member": "uint64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2728,7 +2728,7 @@
           "example": "无",
           "member": "File",
           "name": "FileSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -2738,7 +2738,7 @@
           "example": "10",
           "member": "int64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2865,7 +2865,7 @@
           "example": "无",
           "member": "Job",
           "name": "JobSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -2875,7 +2875,7 @@
           "example": "10",
           "member": "int64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },

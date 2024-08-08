@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli pts DescribeAlertChannels --cli-unfold-argument  \
-    --OrderBy xx \
+    --OrderBy asc \
     --Ascend True \
     --Limit 1 \
     --Offset 1 \
-    --ProjectIds xx
+    --ProjectIds project-xx
 ```
 
 Output: 
@@ -19,19 +19,19 @@ Output:
     "Response": {
         "AlertChannelSet": [
             {
-                "Status": {
-                    "SendNotice": 1,
-                    "AbortJob": 1
-                },
-                "NoticeId": "xx",
-                "ProjectId": "xx",
-                "UpdatedAt": "xx",
-                "AMPConsumerId": "xx",
-                "CreatedAt": "xx"
+                "Status": 1,
+                "NoticeId": "notice-xx",
+                "ProjectId": "projecct-xx",
+                "UpdatedAt": "2022-09-09 13:11:12",
+                "AMPConsumerId": "consumer-xx",
+                "CreatedAt": "2022-09-09 13:11:12",
+                "AppId": 0,
+                "Uin": "abc",
+                "SubAccountUin": "abc"
             }
         ],
         "Total": 1,
-        "RequestId": "xx"
+        "RequestId": "req-xx"
     }
 }
 ```

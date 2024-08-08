@@ -70,6 +70,13 @@
       "output": "CheckAccountDeleteResponse",
       "status": "online"
     },
+    "CreateOrgServiceAssign": {
+      "document": "添加集团服务委派管理员",
+      "input": "CreateOrgServiceAssignRequest",
+      "name": "添加集团服务委派管理员",
+      "output": "CreateOrgServiceAssignResponse",
+      "status": "online"
+    },
     "CreateOrganization": {
       "document": "创建企业组织",
       "input": "CreateOrganizationRequest",
@@ -124,6 +131,13 @@
       "input": "DeleteAccountRequest",
       "name": "删除成员账号",
       "output": "DeleteAccountResponse",
+      "status": "online"
+    },
+    "DeleteOrgServiceAssign": {
+      "document": "删除集团服务委派管理员",
+      "input": "DeleteOrgServiceAssignRequest",
+      "name": "删除集团服务委派管理员",
+      "output": "DeleteOrgServiceAssignResponse",
       "status": "online"
     },
     "DeleteOrganization": {
@@ -348,6 +362,13 @@
       "input": "ListNonCompliantResourceRequest",
       "name": "获取成员标签检测不合规资源列表",
       "output": "ListNonCompliantResourceResponse",
+      "status": "online"
+    },
+    "ListOrgServiceAssignMember": {
+      "document": "获取集团服务委派管理员列表",
+      "input": "ListOrgServiceAssignMemberRequest",
+      "name": "获取集团服务委派管理员列表",
+      "output": "ListOrgServiceAssignMemberResponse",
       "status": "online"
     },
     "ListOrganizationIdentity": {
@@ -992,6 +1013,69 @@
       ],
       "type": "object"
     },
+    "CreateOrgServiceAssignRequest": {
+      "document": "CreateOrgServiceAssign请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集团服务ID。可以通过[ListOrganizationService](https://cloud.tencent.com/document/product/850/109561)获取",
+          "example": "1",
+          "member": "uint64",
+          "name": "ServiceId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "委派管理员Uin列表。 最大长度20个",
+          "example": "[111111111111]",
+          "member": "int64",
+          "name": "MemberUins",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "委派管理员管理范围。 取值：1-全部成员 2-部分成员，默认值1",
+          "example": "1",
+          "member": "uint64",
+          "name": "ManagementScope",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "管理的成员Uin列表。ManagementScope为2时该参数有效",
+          "example": "[]",
+          "member": "int64",
+          "name": "ManagementScopeUins",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "管理的部门ID列表。ManagementScope为2时该参数有效",
+          "example": "[]",
+          "member": "int64",
+          "name": "ManagementScopeNodeIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateOrgServiceAssignResponse": {
+      "document": "CreateOrgServiceAssign返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateOrganizationIdentityRequest": {
       "document": "CreateOrganizationIdentity请求参数结构体",
       "members": [
@@ -1447,6 +1531,42 @@
     },
     "DeleteAccountResponse": {
       "document": "DeleteAccount返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteOrgServiceAssignRequest": {
+      "document": "DeleteOrgServiceAssign请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集团服务ID。可以通过[ListOrganizationService](https://cloud.tencent.com/document/product/850/109561)获取",
+          "example": "1",
+          "member": "uint64",
+          "name": "ServiceId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "委派管理员Uin。",
+          "example": "111111111111",
+          "member": "int64",
+          "name": "MemberUin",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteOrgServiceAssignResponse": {
+      "document": "DeleteOrgServiceAssign返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -3552,6 +3672,71 @@
       ],
       "type": "object"
     },
+    "ListOrgServiceAssignMemberRequest": {
+      "document": "ListOrgServiceAssignMember请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "偏移量。取值是limit的整数倍，默认值 : 0",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "限制数目。取值范围：1~50，默认值：10",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "集团服务ID。可以通过[ListOrganizationService](https://cloud.tencent.com/document/product/850/109561)获取",
+          "example": "1",
+          "member": "uint64",
+          "name": "ServiceId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ListOrgServiceAssignMemberResponse": {
+      "document": "ListOrgServiceAssignMember返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "委派管理员列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OrganizationServiceAssignMember",
+          "name": "Items",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ListOrganizationIdentityRequest": {
       "document": "ListOrganizationIdentity请求参数结构体",
       "members": [
@@ -4363,6 +4548,32 @@
         }
       ],
       "type": "object"
+    },
+    "NodeMainInfo": {
+      "document": "部门主要信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "部门ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "NodeId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "部门名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "运营部",
+          "member": "string",
+          "name": "NodeName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "NotAllowReason": {
       "document": "不允许删除的原因。",
@@ -5351,6 +5562,102 @@
           "name": "IsSetManagementScope",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "OrganizationServiceAssignMember": {
+      "document": "集团服务委派成员信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集团服务ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "ServiceId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "集团服务产品名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CloudAudit",
+          "member": "string",
+          "name": "ProductName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "委派管理员Uin。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "111111111111",
+          "member": "int64",
+          "name": "MemberUin",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "委派管理员名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "mamber_name",
+          "member": "string",
+          "name": "MemberName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "启用状态 。取值：0-服务无启用状态  1-已启用  2-未启用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "UsageStatus",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "委派时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-03-12 12:19:12",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "委派管理员管理范围。取值: 1-全部成员  2-部分成员\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "ManagementScope",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "管理的成员Uin列表。ManagementScope值为2时该参数有效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "MemberMainInfo",
+          "name": "ManagementScopeMembers",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "管理的部门ID列表。ManagementScope值为2时该参数有效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "NodeMainInfo",
+          "name": "ManagementScopeNodes",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],

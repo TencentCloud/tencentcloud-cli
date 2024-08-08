@@ -1,51 +1,54 @@
-**Example 1: 查询某个资产的详情**
+**Example 1: 请求资产详细信息**
 
-
+请求资产详细信息
 
 Input: 
 
 ```
 tccli tcss DescribeComplianceAssetDetailInfo --cli-unfold-argument  \
-    --CustomerAssetId 123456789
+    --CustomerAssetId 2202462 \
+    --AssetType ASSET_CONTAINER
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xxxxx",
         "AssetDetailInfo": {
-            "CustomerAssetId": 123456789,
-            "AssetType": "ASSET_CONTAINDER",
-            "AssetName": "happy-jekins",
-            "HostIP": "xx",
-            "HostName": "xx",
-            "NodeName": "worker-node-1",
+            "AssetCreateTime": "2024-07-24 11:32:45",
+            "AssetName": "my-elasticsearch-container",
+            "AssetStatus": "ASSET_STOPPED",
+            "AssetType": "ASSET_CONTAINER",
+            "CheckResult": "RESULT_FAILED",
             "CheckStatus": "CHECK_FINISHED",
-            "AssetCreateTime": "2021-03-31 00:00:00",
-            "AssetStatus": "ASSET_NORMAL",
-            "LastCheckTime": "2021-04-02 16:42:00",
-            "PassedPolicyItemCount": 100,
-            "FailedPolicyItemCount": 10,
-            "CheckResult": "RESULT_PASSED"
+            "CustomerAssetId": 2202462,
+            "FailedPolicyItemCount": 7,
+            "HostIP": "172.16.49.104",
+            "HostName": "VM-49-104-centos",
+            "LastCheckTime": "2024-07-24 11:17:15",
+            "NodeName": "云镜漏洞测试机-目标机器",
+            "PassedPolicyItemCount": 17
         },
         "ContainerDetailInfo": {
-            "ContainerId": "xxxx",
-            "PodName": "happy-jekins"
-        },
-        "K8SDetailInfo": {
-            "ClusterName": "xx"
+            "ContainerId": "e822238a07e0",
+            "PodName": ""
         },
         "HostDetailInfo": {
-            "DockerVersion": "xx",
-            "K8SVersion": "xx"
+            "ContainerdVersion": "",
+            "DockerVersion": "",
+            "K8SVersion": ""
         },
         "ImageDetailInfo": {
-            "ImageTag": "xx",
-            "ImageName": "xx",
-            "Repository": "xx",
-            "ImageId": "xx"
-        }
+            "ImageId": "",
+            "ImageName": "",
+            "ImageTag": "",
+            "Repository": ""
+        },
+        "K8SDetailInfo": {
+            "ClusterName": "",
+            "ClusterVersion": ""
+        },
+        "RequestId": "ae46673b-3930-4874-9144-a514653d232c"
     }
 }
 ```
