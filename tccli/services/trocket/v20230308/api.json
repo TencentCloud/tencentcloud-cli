@@ -126,6 +126,13 @@
       "output": "DescribeConsumerGroupListResponse",
       "status": "online"
     },
+    "DescribeConsumerLag": {
+      "document": "查询指定消费组堆积数。",
+      "input": "DescribeConsumerLagRequest",
+      "name": "查询指定消费组堆积数",
+      "output": "DescribeConsumerLagResponse",
+      "status": "online"
+    },
     "DescribeFusionInstanceList": {
       "document": "获取实例列表，Filters参数使用说明如下：\n1. InstanceName, 名称模糊查询\n2. InstanceId，实例ID查询\n3. InstanceType, 实例类型查询，支持多选\n4. Version，实例版本查询\n当使用TagFilters查询时，Filters参数失效。",
       "input": "DescribeFusionInstanceListRequest",
@@ -1603,6 +1610,70 @@
           "member": "string",
           "name": "Remark",
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConsumerLagRequest": {
+      "document": "DescribeConsumerLag请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "rocketmq-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "消费组名称",
+          "example": "group_test",
+          "member": "string",
+          "name": "ConsumerGroup",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "命名空间，4.x集群必填",
+          "example": "namespace_test",
+          "member": "string",
+          "name": "Namespace",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "订阅主题，不为空则查询订阅了该主题的消费组的堆积",
+          "example": "topic_test",
+          "member": "string",
+          "name": "SubscribeTopic",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConsumerLagResponse": {
+      "document": "DescribeConsumerLag返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "堆积数",
+          "example": "100",
+          "member": "int64",
+          "name": "ConsumerLag",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {

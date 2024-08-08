@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli pts CreateCronJob --cli-unfold-argument  \
-    --ProjectId xx \
-    --ScenarioId xx \
-    --ScenarioName xx \
-    --Name xx \
+    --ProjectId project-xx \
+    --ScenarioId scenario-xx \
+    --ScenarioName scenario name \
+    --Name cron name \
     --CronExpression */1 * * * * \
     --FrequencyType 1 \
     --EndTime 2020-09-22T00:00:00+00:00 \
-    --NoticeId xx \
+    --NoticeId notice-xx \
     --JobOwner tom
 ```
 
@@ -21,7 +21,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "xx",
+        "RequestId": "req-xx",
         "CronJobId": "cron-xx"
     }
 }

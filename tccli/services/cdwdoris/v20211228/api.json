@@ -273,6 +273,13 @@
       "output": "DescribeUserBindWorkloadGroupResponse",
       "status": "online"
     },
+    "DescribeUserPolicy": {
+      "document": "获取 Doris 用户的详细信息，包括账户信息、权限主机和权限配置。",
+      "input": "DescribeUserPolicyRequest",
+      "name": "描述用户权限",
+      "output": "DescribeUserPolicyResponse",
+      "status": "online"
+    },
     "DescribeWorkloadGroup": {
       "document": "获取资源组信息",
       "input": "DescribeWorkloadGroupRequest",
@@ -414,6 +421,45 @@
     "serviceShortName": "cdwdoris"
   },
   "objects": {
+    "AccountDetailInfo": {
+      "document": "账户详细信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户名\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
+          "member": "string",
+          "name": "UserName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "主机名或IP地址，表示用户所属的主机\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
+          "member": "string",
+          "name": "Host",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户描述信息\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
+          "member": "string",
+          "name": "UserDescription",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "AttachCBSSpec": {
       "document": "集群内节点的规格磁盘规格描述",
       "members": [
@@ -1755,6 +1801,34 @@
         }
       ],
       "usage": "out"
+    },
+    "DatabasePermissions": {
+      "document": "数据库权限",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据库名称\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "db1",
+          "member": "string",
+          "name": "DatabaseName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "权限名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"ALTER_PRIV\",\"DELETE_PRIV\",\"INSERT_PRIV\",\"UPDATE_PRIV\"]",
+          "member": "string",
+          "name": "Permissions",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "DeleteBackUpDataRequest": {
       "document": "DeleteBackUpData请求参数结构体",
@@ -4595,6 +4669,80 @@
       ],
       "type": "object"
     },
+    "DescribeUserPolicyRequest": {
+      "document": "DescribeUserPolicy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例 ID",
+          "example": "cdwdoris-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "使用该用户进行操作，该用户需要有对应的权限。如果该TCHouse-D集群使用CAM用户注册内核账户，则不需要填写",
+          "example": "xx",
+          "member": "string",
+          "name": "UserName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户对应的密码。如果该TCHouse-D集群使用CAM用户注册内核账户，则不需要填写",
+          "example": "xx",
+          "member": "string",
+          "name": "PassWord",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "支持单个 IP 形式的地址，也支持填入%表示不做限制",
+          "example": "%",
+          "member": "string",
+          "name": "WhiteHost",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserPolicyResponse": {
+      "document": "DescribeUserPolicy返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "账户详细信息",
+          "example": "无",
+          "member": "AccountDetailInfo",
+          "name": "AccountInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "与不同主机关联的权限配置信息",
+          "example": "无",
+          "member": "PermissionHostInfo",
+          "name": "Permissions",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeWorkloadGroupRequest": {
       "document": "DescribeWorkloadGroup请求参数结构体",
       "members": [
@@ -6625,6 +6773,45 @@
       ],
       "type": "object"
     },
+    "PermissionHostInfo": {
+      "document": "权限总览",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户在全局范围内的权限列表，可以应用于所有数据库和表\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "GlobalPermissions",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "键为数据库名称，值为该数据库上用户的权限列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DatabasePermissions",
+          "name": "DatabasePermissions",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "键为表的完整名称，值为该表上用户的权限列表\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TablePermissions",
+          "name": "TablePermissions",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "RecoverBackUpJobRequest": {
       "document": "RecoverBackUpJob请求参数结构体",
       "members": [
@@ -7998,6 +8185,34 @@
         }
       ],
       "usage": "in"
+    },
+    "TablePermissions": {
+      "document": "表级别权限",
+      "members": [
+        {
+          "disabled": false,
+          "document": "表的完整名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "table1",
+          "member": "string",
+          "name": "TableName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "表权限\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"ALTER_PRIV\",\"DELETE_PRIV\",\"INSERT_PRIV\",\"UPDATE_PRIV\"]",
+          "member": "string",
+          "name": "Permissions",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "Tag": {
       "document": "标签描述",

@@ -2837,9 +2837,10 @@
         {
           "disabled": false,
           "document": "攻击封禁类型标签",
-          "example": "",
+          "example": "“”",
           "member": "string",
           "name": "AttackTags",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -2847,9 +2848,10 @@
         {
           "disabled": false,
           "document": "攻击次数阈值",
-          "example": "",
+          "example": "1",
           "member": "int64",
           "name": "AttackThreshold",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -2857,9 +2859,10 @@
         {
           "disabled": false,
           "document": "自动封禁状态",
-          "example": "",
+          "example": "1",
           "member": "int64",
           "name": "DefenseStatus",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -2867,9 +2870,10 @@
         {
           "disabled": false,
           "document": "攻击时间阈值",
-          "example": "",
+          "example": "1",
           "member": "int64",
           "name": "TimeThreshold",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -2877,9 +2881,10 @@
         {
           "disabled": false,
           "document": "自动封禁时间",
-          "example": "",
+          "example": "1",
           "member": "int64",
           "name": "DenyTimeThreshold",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -2887,9 +2892,10 @@
         {
           "disabled": false,
           "document": "最后更新时间",
-          "example": "",
+          "example": "“”",
           "member": "datetime_iso",
           "name": "LastUpdateTime",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false

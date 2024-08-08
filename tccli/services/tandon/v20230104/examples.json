@@ -203,6 +203,20 @@
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"546\"\n    }\n}",
         "title": "示例"
       }
+    ],
+    "WriteTaskResult": [
+      {
+        "document": "正常写回工具诊断结果",
+        "input": "POST / HTTP/1.1\nHost: ticket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: WriteTaskResult\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"123-yy\"\n    }\n}",
+        "title": "正常写回工具诊断结果"
+      },
+      {
+        "document": "非法的taskId",
+        "input": "POST / HTTP/1.1\nHost: ticket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: WriteTaskResult\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameter\",\n            \"Message\": \"参数错误，taskId 不能为空\"\n        },\n        \"RequestId\": \"\"\n    }\n}",
+        "title": "非法的taskId"
+      }
     ]
   },
   "version": "1.0"

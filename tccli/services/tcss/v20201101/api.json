@@ -4152,6 +4152,15 @@
           "name": "AssetPolicySetList",
           "required": true,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "扫描资产类型 <li>ASSET_CONTAINER Docker容器</li> <li>ASSET_IMAGE Docker镜像</li> <li>ASSET_HOST Docker主机</li> <li>ASSET_K8S Kubernetes</li> <li>ASSET_CONTAINERD Containerd主机</li> <li>ASSET_CONTAINERD_CONTAINER Containerd容器</li>",
+          "example": "ASSET_CONTAINER",
+          "member": "string",
+          "name": "AssetType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -7212,7 +7221,7 @@
           "example": "ASSET_CONTAINER",
           "member": "string",
           "name": "AssetType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7222,7 +7231,7 @@
           "example": "true",
           "member": "bool",
           "name": "IsCustomerFirstCheck",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -7232,7 +7241,7 @@
           "example": "CHECK_RUNNING",
           "member": "string",
           "name": "CheckStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7242,7 +7251,7 @@
           "example": "90",
           "member": "float",
           "name": "CheckProgress",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },
@@ -7252,7 +7261,7 @@
           "example": "0",
           "member": "uint64",
           "name": "PassedPolicyItemCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7262,7 +7271,7 @@
           "example": "0",
           "member": "uint64",
           "name": "FailedPolicyItemCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7272,7 +7281,7 @@
           "example": "0",
           "member": "uint64",
           "name": "FailedCriticalPolicyItemCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7282,7 +7291,7 @@
           "example": "0",
           "member": "uint64",
           "name": "FailedHighRiskPolicyItemCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7292,7 +7301,7 @@
           "example": "0",
           "member": "uint64",
           "name": "FailedMediumRiskPolicyItemCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7302,7 +7311,7 @@
           "example": "0",
           "member": "uint64",
           "name": "FailedLowRiskPolicyItemCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7312,7 +7321,7 @@
           "example": "0",
           "member": "uint64",
           "name": "NoticePolicyItemCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7322,7 +7331,7 @@
           "example": "0",
           "member": "uint64",
           "name": "PassedAssetCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7332,7 +7341,7 @@
           "example": "0",
           "member": "uint64",
           "name": "FailedAssetCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7342,7 +7351,7 @@
           "example": "90",
           "member": "float",
           "name": "AssetPassedRate",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -7352,7 +7361,7 @@
           "example": "0",
           "member": "uint64",
           "name": "ScanFailedAssetCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7362,7 +7371,7 @@
           "example": "100",
           "member": "float",
           "name": "CheckCostTime",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },
@@ -7372,7 +7381,7 @@
           "example": "2021-04-07 11:35:00",
           "member": "datetime",
           "name": "LastCheckTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7382,7 +7391,7 @@
           "example": "无",
           "member": "CompliancePeriodTaskRule",
           "name": "PeriodRule",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -7392,7 +7401,7 @@
           "example": "0",
           "member": "uint64",
           "name": "OpenPolicyItemCount",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -7402,7 +7411,37 @@
           "example": "0",
           "member": "uint64",
           "name": "IgnoredPolicyItemCount",
-          "required": false,
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总检测项数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalPolicyItemCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "检测主机数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "DetectHostCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当前任务剩余时间，单位秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "uint64",
+          "name": "LeftTime",
+          "output_required": false,
           "type": "int",
           "value_allowed_null": true
         }
@@ -7798,7 +7837,7 @@
           "example": "12345",
           "member": "uint64",
           "name": "CustomerPolicyItemId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7808,7 +7847,7 @@
           "example": "123",
           "member": "uint64",
           "name": "BasePolicyItemId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7818,7 +7857,7 @@
           "example": "Docker",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7828,7 +7867,7 @@
           "example": "无",
           "member": "string",
           "name": "Category",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7838,7 +7877,7 @@
           "example": "无",
           "member": "string",
           "name": "BenchmarkStandardName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7848,7 +7887,7 @@
           "example": "无",
           "member": "string",
           "name": "RiskLevel",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7858,7 +7897,7 @@
           "example": "ASSET_CONTAINER",
           "member": "string",
           "name": "AssetType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7868,7 +7907,7 @@
           "example": "2021-04-06 20:53:00",
           "member": "datetime",
           "name": "LastCheckTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7878,7 +7917,7 @@
           "example": "CHECK_RUNNING",
           "member": "string",
           "name": "CheckStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7888,7 +7927,7 @@
           "example": "无",
           "member": "string",
           "name": "CheckResult",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7898,7 +7937,7 @@
           "example": "123",
           "member": "uint64",
           "name": "PassedAssetCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -7908,7 +7947,7 @@
           "example": "123",
           "member": "uint64",
           "name": "FailedAssetCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -7918,7 +7957,7 @@
           "example": "123",
           "member": "uint64",
           "name": "WhitelistId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -7928,7 +7967,7 @@
           "example": "无",
           "member": "string",
           "name": "FixSuggestion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7938,7 +7977,7 @@
           "example": "123",
           "member": "uint64",
           "name": "BenchmarkStandardId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7948,7 +7987,7 @@
           "example": "k8s 1.16-1.23, tke 1.24",
           "member": "string",
           "name": "ApplicableVersion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7958,7 +7997,7 @@
           "example": "无",
           "member": "string",
           "name": "Description",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7968,8 +8007,18 @@
           "example": "无",
           "member": "string",
           "name": "AuditProcedure",
-          "required": false,
+          "output_required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否开启\n<li>0 关闭</li>\n<li>1 开启</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "IsEnable",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -11740,6 +11789,15 @@
           "name": "CustomerPolicyItemIdSet",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "扫描资产类型 <li>ASSET_CONTAINER Docker容器</li> <li>ASSET_IMAGE Docker镜像</li> <li>ASSET_HOST Docker主机</li> <li>ASSET_K8S Kubernetes</li> <li>ASSET_CONTAINERD Containerd主机</li> <li>ASSET_CONTAINERD_CONTAINER Containerd容器</li>",
+          "example": "ASSET_CONTAINER",
+          "member": "string",
+          "name": "AssetType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -19068,6 +19126,15 @@
           "name": "CustomerAssetId",
           "required": true,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "资产类型 <li>ASSET_CONTAINER Docker容器</li> <li>ASSET_IMAGE Docker镜像</li> <li>ASSET_HOST Docker主机</li> <li>ASSET_K8S Kubernetes</li> <li>ASSET_CONTAINERD Containerd主机</li> <li>ASSET_CONTAINERD_CONTAINER Containerd容器</li>",
+          "example": "ASSET_CONTAINER",
+          "member": "string",
+          "name": "AssetType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -19081,7 +19148,7 @@
           "example": "无",
           "member": "ComplianceAssetDetailInfo",
           "name": "AssetDetailInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -19091,7 +19158,7 @@
           "example": "无",
           "member": "ComplianceContainerDetailInfo",
           "name": "ContainerDetailInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -19101,7 +19168,7 @@
           "example": "无",
           "member": "ComplianceImageDetailInfo",
           "name": "ImageDetailInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -19111,7 +19178,7 @@
           "example": "无",
           "member": "ComplianceHostDetailInfo",
           "name": "HostDetailInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -19121,7 +19188,7 @@
           "example": "无",
           "member": "ComplianceK8SDetailInfo",
           "name": "K8SDetailInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -19240,12 +19307,21 @@
         },
         {
           "disabled": false,
-          "document": "过滤器列表。Name字段支持\nRiskLevel",
+          "document": "过滤器列表。Name字段支持\nRiskLevel， AppId",
           "example": "无",
           "member": "ComplianceFilters",
           "name": "Filters",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "资产类型 <li>ASSET_CONTAINER Docker容器</li> <li>ASSET_IMAGE Docker镜像</li> <li>ASSET_HOST Docker主机</li> <li>ASSET_K8S Kubernetes</li> <li>ASSET_CONTAINERD Containerd主机</li> <li>ASSET_CONTAINERD_CONTAINER Containerd容器</li>",
+          "example": "ASSET_CONTAINER",
+          "member": "string",
+          "name": "AssetType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -19259,7 +19335,7 @@
           "example": "10",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -19269,7 +19345,7 @@
           "example": "无",
           "member": "ComplianceAssetPolicyItem",
           "name": "AssetPolicyItemList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -19609,7 +19685,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件。\nName - String\nName 可取值：ItemType, StandardId,  RiskLevel。\n当为K8S资产时，还可取ClusterName。",
+          "document": "过滤条件 <li>Name      string 检测项名字</li> <li>ItemType  string 检测项类型</li> <li>RiskLevel string 威胁等级</li> <li>IsOpen    int    是否开启</li>",
           "example": "无",
           "member": "ComplianceFilters",
           "name": "Filters",
@@ -19628,7 +19704,7 @@
           "example": "123",
           "member": "uint64",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -19638,7 +19714,7 @@
           "example": "123",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -19648,7 +19724,7 @@
           "example": "无",
           "member": "CompliancePolicyItemSummary",
           "name": "PolicyItemSummaryList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -39613,6 +39689,15 @@
           "name": "CustomerAssetIdSet",
           "required": true,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "扫描资产类型 <li>ASSET_CONTAINER Docker容器</li> <li>ASSET_IMAGE Docker镜像</li> <li>ASSET_HOST Docker主机</li> <li>ASSET_K8S Kubernetes</li> <li>ASSET_CONTAINERD Containerd主机</li> <li>ASSET_CONTAINERD_CONTAINER Containerd容器</li>",
+          "example": "ASSET_CONTAINER",
+          "member": "string",
+          "name": "AssetType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -39626,7 +39711,7 @@
           "example": "123",
           "member": "uint64",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -39650,6 +39735,15 @@
           "name": "CustomerAssetIdSet",
           "required": true,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "扫描资产类型 <li>ASSET_CONTAINER Docker容器</li> <li>ASSET_IMAGE Docker镜像</li> <li>ASSET_HOST Docker主机</li> <li>ASSET_K8S Kubernetes</li> <li>ASSET_CONTAINERD Containerd主机</li> <li>ASSET_CONTAINERD_CONTAINER Containerd容器</li>",
+          "example": "ASSET_CONTAINER",
+          "member": "string",
+          "name": "AssetType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -39663,7 +39757,7 @@
           "example": "123",
           "member": "uint64",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -39724,6 +39818,15 @@
           "name": "CustomerAssetIdSet",
           "required": true,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "扫描资产类型 <li>ASSET_CONTAINER Docker容器</li> <li>ASSET_IMAGE Docker镜像</li> <li>ASSET_HOST Docker主机</li> <li>ASSET_K8S Kubernetes</li> <li>ASSET_CONTAINERD Containerd主机</li> <li>ASSET_CONTAINERD_CONTAINER Containerd容器</li>",
+          "example": "ASSET_CONTAINER",
+          "member": "string",
+          "name": "AssetType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -39737,7 +39840,7 @@
           "example": "123",
           "member": "uint64",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },

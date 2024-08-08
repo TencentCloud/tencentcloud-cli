@@ -591,6 +591,15 @@
           "name": "PluginKey",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否需要返回资源详情, 非必填，默认为true",
+          "example": "true",
+          "member": "bool",
+          "name": "IsNeedDetail",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

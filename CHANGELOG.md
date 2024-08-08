@@ -1,3 +1,180 @@
+# Release 3.0.1051.1
+
+## 云顾问(advisor) 版本：2020-07-21
+
+### 第 16 次发布
+
+发布时间：2024-08-09 01:07:19
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeArchSync](http://document.tencentcloudapi.woa.com/document/product/1660/84043)
+
+	* 新增入参：IsNeedDetail
+
+
+
+
+## 大模型图像创作引擎(aiart) 版本：2022-12-29
+
+### 第 10 次发布
+
+发布时间：2024-08-09 01:07:24
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ChangeClothes](http://document.tencentcloudapi.woa.com/document/product/1728/84219)
+
+	* 新增入参：LogoParam
+
+
+
+
+## 腾讯云数据仓库 TCHouse-D(cdwdoris) 版本：2021-12-28
+
+### 第 21 次发布
+
+发布时间：2024-08-09 01:10:19
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeUserPolicy](http://document.tencentcloudapi.woa.com/document/product/1706/84534)
+
+新增数据结构：
+
+* [AccountDetailInfo](http://document.tencentcloudapi.woa.com/document/product/1706/80309#AccountDetailInfo)
+* [DatabasePermissions](http://document.tencentcloudapi.woa.com/document/product/1706/80309#DatabasePermissions)
+* [PermissionHostInfo](http://document.tencentcloudapi.woa.com/document/product/1706/80309#PermissionHostInfo)
+* [TablePermissions](http://document.tencentcloudapi.woa.com/document/product/1706/80309#TablePermissions)
+
+
+
+## 日志服务(cls) 版本：2020-10-16
+
+### 第 81 次发布
+
+发布时间：2024-08-09 01:11:37
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateConsoleSharing](http://document.tencentcloudapi.woa.com/document/product/614/84538)
+* [DeleteConsoleSharing](http://document.tencentcloudapi.woa.com/document/product/614/84537)
+* [DescribeConsoleSharingList](http://document.tencentcloudapi.woa.com/document/product/614/84536)
+* [ModifyConsoleSharing](http://document.tencentcloudapi.woa.com/document/product/614/84535)
+
+新增数据结构：
+
+* [ConsoleSharingConfig](http://document.tencentcloudapi.woa.com/document/product/614/56471#ConsoleSharingConfig)
+* [ConsoleSharingParam](http://document.tencentcloudapi.woa.com/document/product/614/56471#ConsoleSharingParam)
+
+
+
+## 腾讯云安灯(tandon) 版本：2023-01-04
+
+### 第 3 次发布
+
+发布时间：2024-08-09 01:23:13
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [WriteTaskResult](http://document.tencentcloudapi.woa.com/document/product/1769/84539)
+
+
+
+## 容器安全服务(tcss) 版本：2020-11-01
+
+### 第 20 次发布
+
+发布时间：2024-08-09 01:24:27
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [AddComplianceAssetPolicySetToWhitelist](http://document.tencentcloudapi.woa.com/document/product/1662/79117)
+
+	* 新增入参：AssetType
+
+* [DeleteComplianceAssetPolicySetFromWhitelist](http://document.tencentcloudapi.woa.com/document/product/1662/79112)
+
+	* 新增入参：AssetType
+
+* [DescribeComplianceAssetDetailInfo](http://document.tencentcloudapi.woa.com/document/product/1662/79109)
+
+	* 新增入参：AssetType
+
+* [DescribeComplianceAssetPolicyItemList](http://document.tencentcloudapi.woa.com/document/product/1662/79107)
+
+	* 新增入参：AssetType
+
+* [ScanComplianceAssets](http://document.tencentcloudapi.woa.com/document/product/1662/79097)
+
+	* 新增入参：AssetType
+
+* [ScanComplianceAssetsByPolicyItem](http://document.tencentcloudapi.woa.com/document/product/1662/79096)
+
+	* 新增入参：AssetType
+
+* [ScanComplianceScanFailedAssets](http://document.tencentcloudapi.woa.com/document/product/1662/79094)
+
+	* 新增入参：AssetType
+
+
+修改数据结构：
+
+* [ComplianceAssetSummary](http://document.tencentcloudapi.woa.com/document/product/1662/79121#ComplianceAssetSummary)
+
+	* 新增成员：TotalPolicyItemCount, DetectHostCount, LeftTime
+
+	* <font color="#dd0000">**修改成员**：</font>OpenPolicyItemCount, IgnoredPolicyItemCount
+
+* [CompliancePolicyItemSummary](http://document.tencentcloudapi.woa.com/document/product/1662/79121#CompliancePolicyItemSummary)
+
+	* 新增成员：IsEnable
+
+	* <font color="#dd0000">**修改成员**：</font>Description, AuditProcedure
+
+
+
+
+## 消息队列 RocketMQ 版(trocket) 版本：2023-03-08
+
+### 第 18 次发布
+
+发布时间：2024-08-09 01:26:29
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeConsumerLag](http://document.tencentcloudapi.woa.com/document/product/1739/84540)
+
+
+
 # Release 3.0.1050.1
 
 ## 弹性伸缩(as) 版本：2018-04-19

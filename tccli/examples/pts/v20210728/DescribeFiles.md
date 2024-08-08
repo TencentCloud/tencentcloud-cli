@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli pts DescribeFiles --cli-unfold-argument  \
-    --ProjectIds xx \
+    --ProjectIds project-xx \
     --Offset 0 \
-    --FileIds xx \
+    --FileIds file-xx \
     --Limit 0 \
-    --FileName xx \
+    --FileName file name \
     --Kind 1
 ```
 
@@ -18,191 +18,38 @@ Output:
 ```
 {
     "Response": {
-        "Total": 0,
         "FileSet": [
             {
-                "Status": 0,
-                "Kind": 0,
-                "HeaderInFile": true,
-                "Name": "xx",
-                "Type": "xx",
-                "TailLines": [
-                    "xx"
-                ],
-                "FileInfos": [
-                    {
-                        "UpdatedAt": "2020-09-22T00:00:00+00:00",
-                        "Type": "xx",
-                        "Name": "xx",
-                        "Size": 0
-                    }
-                ],
-                "LineCount": 0,
-                "ScenarioSet": [
-                    {
-                        "SubAccountUin": "xx",
-                        "DomainNameConfig": {
-                            "HostAliases": [
-                                {
-                                    "IP": "xx",
-                                    "HostNames": [
-                                        "xx"
-                                    ]
-                                }
-                            ],
-                            "DNSConfig": {
-                                "Nameservers": [
-                                    "xx"
-                                ]
-                            }
-                        },
-                        "SLAId": "xx",
-                        "Type": "xx",
-                        "CronId": "xx",
-                        "Status": 0,
-                        "Description": "xx",
-                        "SLAPolicy": {
-                            "AlertChannel": {
-                                "NoticeId": "xx",
-                                "AMPConsumerId": "xx"
-                            },
-                            "SLARules": [
-                                {
-                                    "For": "xx",
-                                    "Metric": "xx",
-                                    "Aggregation": "xx",
-                                    "Value": 0.0,
-                                    "AbortFlag": true,
-                                    "LabelFilter": [
-                                        {
-                                            "LabelName": "xx",
-                                            "LabelValue": "xx"
-                                        }
-                                    ],
-                                    "Condition": "xx"
-                                }
-                            ]
-                        },
-                        "AppId": 0,
-                        "UpdatedAt": "xx",
-                        "Configs": [
-                            "xx"
-                        ],
-                        "Protocols": [
-                            {
-                                "UpdatedAt": "2020-09-22T00:00:00+00:00",
-                                "Type": "xx",
-                                "Name": "xx",
-                                "Size": 0
-                            }
-                        ],
-                        "Datasets": [
-                            {
-                                "HeaderInFile": true,
-                                "Name": "xx",
-                                "TailLines": [
-                                    "xx"
-                                ],
-                                "LineCount": 0,
-                                "Split": true,
-                                "UpdatedAt": "2020-09-22T00:00:00+00:00",
-                                "HeaderColumns": [
-                                    "xx"
-                                ],
-                                "HeadLines": [
-                                    "xx"
-                                ],
-                                "Type": "xx",
-                                "Size": 0
-                            }
-                        ],
-                        "Name": "xx",
-                        "ScenarioId": "xx",
-                        "ProjectId": "xx",
-                        "TestScripts": [
-                            {
-                                "Name": "xx",
-                                "EncodedHttpArchive": "xx",
-                                "UpdatedAt": "2020-09-22T00:00:00+00:00",
-                                "Size": 0,
-                                "Type": "xx",
-                                "EncodedContent": "xx"
-                            }
-                        ],
-                        "Extensions": [
-                            "xx"
-                        ],
-                        "RequestFiles": [
-                            {
-                                "UpdatedAt": "2020-09-22T00:00:00+00:00",
-                                "Type": "xx",
-                                "Name": "xx",
-                                "Size": 0
-                            }
-                        ],
-                        "Load": {
-                            "VpcLoadDistribution": {
-                                "VpcId": "xx",
-                                "Region": "xx",
-                                "RegionId": 0,
-                                "SubnetIds": [
-                                    "xx"
-                                ]
-                            },
-                            "GeoRegionsLoadDistribution": [
-                                {
-                                    "Region": "xx",
-                                    "RegionId": 0,
-                                    "Percentage": 0
-                                }
-                            ],
-                            "LoadSpec": {
-                                "ScriptOrigin": {
-                                    "DurationSeconds": 0,
-                                    "MachineSpecification": "xx",
-                                    "MachineNumber": 0
-                                },
-                                "RequestsPerSecond": {
-                                    "DurationSeconds": 0,
-                                    "MaxRequestsPerSecond": 0
-                                },
-                                "Concurrency": {
-                                    "MaxRequestsPerSecond": 0,
-                                    "Stages": [
-                                        {
-                                            "DurationSeconds": 0,
-                                            "TargetVirtualUsers": 0
-                                        }
-                                    ],
-                                    "IterationCount": 0
-                                }
-                            }
-                        },
-                        "EncodedScripts": "xx",
-                        "Uin": "xx",
-                        "CreatedAt": "xx",
-                        "Plugins": [
-                            {
-                                "UpdatedAt": "2020-09-22T00:00:00+00:00",
-                                "Type": "xx",
-                                "Name": "xx",
-                                "Size": 0
-                            }
-                        ]
-                    }
-                ],
-                "HeaderColumns": [
-                    "xx"
-                ],
+                "AppId": 1258344690,
+                "Uin": "438167612",
+                "SubAccountUin": "100019497941",
+                "CreatedAt": "2023-04-11T15:20:18+08:00",
+                "UpdatedAt": "2023-04-11T15:20:18+08:00",
+                "FileId": "file-218d0901",
+                "ProjectId": "project-r92xzqe3",
+                "Kind": 1,
+                "Name": "demo.csv",
+                "Size": 18,
+                "Type": "CSV",
+                "Status": 2,
+                "LineCount": 3,
                 "HeadLines": [
-                    "xx"
+                    "msg\r",
+                    "world\r",
+                    "pts"
                 ],
-                "FileId": "xx",
-                "UpdatedAt": "2020-09-22T00:00:00+00:00",
-                "Size": 0
+                "TailLines": [],
+                "HeaderInFile": true,
+                "HeaderColumns": [
+                    "msg"
+                ],
+                "FileInfos": null,
+                "ScenarioSet": null,
+                "AppID": 0
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "7baba29e-5545-44e8-b39e-9be261d6369a",
+        "Total": 36
     }
 }
 ```

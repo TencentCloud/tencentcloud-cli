@@ -6,13 +6,13 @@ Input:
 
 ```
 tccli pts DescribeAlertRecords --cli-unfold-argument  \
-    --OrderBy xx \
-    --JobIds xx \
+    --OrderBy asc \
+    --JobIds job-xx \
     --Ascend True \
     --Limit 1 \
     --Offset 1 \
-    --ProjectIds xx \
-    --ScenarioIds xx
+    --ProjectIds project-xx \
+    --ScenarioIds scenario-xx
 ```
 
 Output: 
@@ -31,11 +31,16 @@ Output:
                 "ScenarioId": "scenario-lkbg8f20",
                 "ScenarioName": "my-scenario",
                 "JobId": "job-b8eklbx8",
+                "JobSLAId": "sla-954oc2vs",
                 "JobSLADescription": "this is a test",
-                "Status": 1
+                "Status": {
+                    "AbortJob": 1,
+                    "SendNotice": 1
+                },
+                "Target": "abc"
             }
         ],
-        "RequestId": "xx",
+        "RequestId": "req-xx",
         "Total": 1
     }
 }

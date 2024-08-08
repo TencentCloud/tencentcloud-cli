@@ -19,3 +19,25 @@ Output:
 }
 ```
 
+**Example 2: 忽略资产未通过检测项**
+
+忽略资产未通过检测项
+
+Input: 
+
+```
+tccli tcss AddComplianceAssetPolicySetToWhitelist --cli-unfold-argument  \
+    --AssetPolicySetList.0.CustomerAssetItemId 2202462 \
+    --AssetPolicySetList.0.CustomerPolicyItemIdSet 2809 \
+    --AssetType ASSET_CONTAINER
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "5728fa7b-e88a-4cb0-aabb-a403c470ca36"
+    }
+}
+```
+

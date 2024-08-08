@@ -13,28 +13,31 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "xxxxx",
-        "TaskId": 123456,
-        "TotalCount": 123,
+        "TaskId": 1,
+        "TotalCount": 1,
         "PolicyItemSummaryList": [
             {
-                "CustomerPolicyItemId": 10001,
+                "CustomerPolicyItemId": 1,
                 "BasePolicyItemId": 1,
-                "Name": "审计Docker文件和目录",
-                "Category": "xxx",
-                "BenchmarkStandardName": "CIS_Docker",
-                "BenchmarkStandardId": 123,
-                "RiskLevel": "xx",
-                "AssetType": "xxx",
+                "Name": "abc",
+                "Category": "abc",
+                "BenchmarkStandardName": "abc",
+                "RiskLevel": "abc",
+                "AssetType": "abc",
                 "LastCheckTime": "2020-09-22 00:00:00",
-                "CheckStatus": "CHECK_FINISHED",
-                "CheckResult": "xx",
-                "PassedAssetCount": 100,
-                "FailedAssetCount": 20,
-                "WhitelistId": 12345,
-                "FixSuggestion": "xxxx"
+                "CheckStatus": "abc",
+                "CheckResult": "abc",
+                "PassedAssetCount": 1,
+                "FailedAssetCount": 1,
+                "WhitelistId": 1,
+                "FixSuggestion": "abc",
+                "BenchmarkStandardId": 1,
+                "ApplicableVersion": "abc",
+                "Description": "abc",
+                "AuditProcedure": "abc"
             }
-        ]
+        ],
+        "RequestId": "abc"
     }
 }
 ```
