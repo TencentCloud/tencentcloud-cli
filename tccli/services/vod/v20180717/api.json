@@ -17280,8 +17280,20 @@
           "example": "TEHD-100",
           "member": "string",
           "name": "Type",
+          "output_required": true,
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "视频码率上限，当 Type 指定了极速高清类型时有效。\n不填或填0表示不设视频码率上限。",
+          "example": "0",
+          "member": "uint64",
+          "name": "MaxVideoBitrate",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

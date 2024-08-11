@@ -446,7 +446,7 @@
         },
         {
           "disabled": false,
-          "document": "私有化默认分组id-名称-操作系统\n1\t全网终端\tWin\n2\t未分组终端\tWin\n30000000\t服务器\tWin\n40000101\t全网终端\tLinux\n40000102\t未分组终端\tLinux\n40000103\t服务器\tLinux\n40000201\t全网终端\tmacOS\n40000202\t未分组终端\tmacOS\n40000203\t服务器\tmacOS\n40000401\t全网终端\tAndroid\n40000402\t未分组终端\tAndroid\n40000501\t全网终端\tiOS\n40000502\t未分组终端\tiOS",
+          "document": "【和GroupIds必须有一个填写】设备分组id（需要和OsType匹配）\nid-名称-操作系统\n1\t全网终端\tWin\n2\t未分组终端\tWin\n30000000\t服务器\tWin\n40000101\t全网终端\tLinux\n40000102\t未分组终端\tLinux\n40000103\t服务器\tLinux\n40000201\t全网终端\tmacOS\n40000202\t未分组终端\tmacOS\n40000203\t服务器\tmacOS\n40000401\t全网终端\tAndroid\n40000402\t未分组终端\tAndroid\n40000501\t全网终端\tiOS\n40000502\t未分组终端\tiOS",
           "example": "1",
           "member": "int64",
           "name": "GroupId",
@@ -455,7 +455,7 @@
         },
         {
           "disabled": false,
-          "document": "系统类型（0: win，1：linux，2: mac，3: win_srv，4：android，5：ios   默认值0）",
+          "document": "【必填】操作系统类型（0: win，1：linux，2: mac，3: win_srv，4：android，5：ios   默认值0），需要和GroupId或者GroupIds匹配",
           "example": "0",
           "member": "int64",
           "name": "OsType",
@@ -464,7 +464,7 @@
         },
         {
           "disabled": false,
-          "document": "在线状态 2 在线 0，1 离线",
+          "document": "在线状态 （2表示在线，0或者1表示离线）",
           "example": "2",
           "member": "int64",
           "name": "OnlineStatus",
@@ -491,7 +491,7 @@
         },
         {
           "disabled": false,
-          "document": "获取第几页--兼容旧接口,参数同Condition(只支持32位)",
+          "document": "获取第几页--兼容旧接口,参数同Condition",
           "example": "1",
           "member": "int64",
           "name": "PageNum",
@@ -500,7 +500,7 @@
         },
         {
           "disabled": false,
-          "document": "每页获取数--兼容旧接口,参数同Condition(只支持32位)",
+          "document": "每页获取数--兼容旧接口,参数同Condition",
           "example": "20",
           "member": "int64",
           "name": "PageSize",

@@ -92,11 +92,11 @@
       "status": "online"
     },
     "CreateCloudProtectServiceOrderRecord": {
-      "document": "云护航服务使用完成后，该接口可以确认收货",
+      "document": "云护航计费产品已下线\n\n云护航服务使用完成后，该接口可以确认收货",
       "input": "CreateCloudProtectServiceOrderRecordRequest",
       "name": "云护航服务确认收货",
       "output": "CreateCloudProtectServiceOrderRecordResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateEmergencyVulScan": {
       "document": "创建应急漏洞扫描任务",
@@ -3281,6 +3281,13 @@
       "input": "ModifyRansomDefenseStrategyStatusRequest",
       "name": "批量修改防勒索策略状态",
       "output": "ModifyRansomDefenseStrategyStatusResponse",
+      "status": "online"
+    },
+    "ModifyReverseShellRulesAggregation": {
+      "document": "编辑反弹Shell规则（支持多服务器选择）",
+      "input": "ModifyReverseShellRulesAggregationRequest",
+      "name": "编辑反弹Shell规则（支持多服务器选择）-聚合版本-支持正则",
+      "output": "ModifyReverseShellRulesAggregationResponse",
       "status": "online"
     },
     "ModifyRiskDnsPolicy": {
@@ -48460,6 +48467,132 @@
     },
     "ModifyRansomDefenseStrategyStatusResponse": {
       "document": "ModifyRansomDefenseStrategyStatus返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyReverseShellRulesAggregationRequest": {
+      "document": "ModifyReverseShellRulesAggregation请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则ID(新增时请留空)",
+          "example": "1",
+          "member": "uint64",
+          "name": "Id",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "客户端ID数组",
+          "example": "[]",
+          "member": "string",
+          "name": "Uuids",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "主机IP",
+          "example": "xxx",
+          "member": "string",
+          "name": "HostIp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "目标IP",
+          "example": "xxx",
+          "member": "string",
+          "name": "DestIp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "目标端口",
+          "example": "xxx",
+          "member": "string",
+          "name": "DestPort",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "进程名",
+          "example": "xxx",
+          "member": "string",
+          "name": "ProcessName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否全局规则(默认否)",
+          "example": "1",
+          "member": "uint64",
+          "name": "IsGlobal",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "事件列表和详情点击加白时关联的事件id (新增规则时请留空)",
+          "example": "12",
+          "member": "uint64",
+          "name": "EventId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "加白方式， 0:常规加白 1:正则加白",
+          "example": "1",
+          "member": "uint64",
+          "name": "WhiteType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "正则表达式",
+          "example": "*abc*",
+          "member": "string",
+          "name": "RuleRegexp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "处理历史事件， 0:不处理 1:处理",
+          "example": "1",
+          "member": "uint64",
+          "name": "HandleHistory",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "批次id",
+          "example": "85c909fe-c87c-11e9-a100-5cb90191ae78",
+          "member": "string",
+          "name": "GroupID",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyReverseShellRulesAggregationResponse": {
+      "document": "ModifyReverseShellRulesAggregation返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

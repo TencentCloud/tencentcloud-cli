@@ -7,11 +7,32 @@
       "output": "CreateLibraryResponse",
       "status": "online"
     },
+    "CreateUser": {
+      "document": "新建用户。",
+      "input": "CreateUserRequest",
+      "name": "新建用户",
+      "output": "CreateUserResponse",
+      "status": "online"
+    },
+    "CreateUserLifecycle": {
+      "document": "设置用户生命周期。如果指定的用户已经设置了生命周期，重复调用此接口将覆盖已有的设置。也可用于清除指定用户的生命周期。",
+      "input": "CreateUserLifecycleRequest",
+      "name": "设置用户生命周期",
+      "output": "CreateUserLifecycleResponse",
+      "status": "online"
+    },
     "DeleteLibrary": {
       "document": "删除 PaaS 服务媒体库",
       "input": "DeleteLibraryRequest",
       "name": "删除媒体库",
       "output": "DeleteLibraryResponse",
+      "status": "online"
+    },
+    "DeleteUser": {
+      "document": "一次删除多个用户。",
+      "input": "DeleteUserRequest",
+      "name": "批量删除用户",
+      "output": "DeleteUserResponse",
       "status": "online"
     },
     "DescribeLibraries": {
@@ -49,11 +70,25 @@
       "output": "DescribeTrafficPackagesResponse",
       "status": "online"
     },
+    "DescribeUserLifecycle": {
+      "document": "查询用户生命周期。",
+      "input": "DescribeUserLifecycleRequest",
+      "name": "查询用户生命周期",
+      "output": "DescribeUserLifecycleResponse",
+      "status": "online"
+    },
     "ModifyLibrary": {
       "document": "修改 PaaS 服务媒体库配置项",
       "input": "ModifyLibraryRequest",
       "name": "修改媒体库配置项",
       "output": "ModifyLibraryResponse",
+      "status": "online"
+    },
+    "ModifyUser": {
+      "document": "更新用户信息。",
+      "input": "ModifyUserRequest",
+      "name": "更新用户信息",
+      "output": "ModifyUserResponse",
       "status": "online"
     },
     "SendSmsCode": {
@@ -151,6 +186,365 @@
       ],
       "type": "object"
     },
+    "CreateUserLifecycleRequest": {
+      "document": "CreateUserLifecycle请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "媒体库 ID。",
+          "example": "smh08gcw6500e6jl",
+          "member": "string",
+          "name": "LibraryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用于唯一查找用户的过滤器。",
+          "example": "{ \"Key\": \"PhoneNumber\", \"Value\": \"+86-13800000000\" }",
+          "member": "UserFilter",
+          "name": "Filter",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "隔离时间，当时间超过该时间点后，指定用户将无法登录，但他的账号信息、文件资源会被保留，可以通过再次调用本接口更新隔离时间，恢复登录。如不指定，则代表不设置隔离时间，且当前用户已经设置的隔离时间会被删除。",
+          "example": "2025-06-30T15:59:59Z",
+          "member": "datetime_iso",
+          "name": "IsolateTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "销毁时间，当时间超过该时间点后，指定用户的资源将被销毁且无法通过再次调用此接口更新时间。如果同时指定了 IsolateTime 则不能早于 IsolateTime 指定的时间。如不指定，则代表不设置销毁时间，且当前用户已经设置的销毁时间会被删除。",
+          "example": "2025-07-30T15:59:59Z",
+          "member": "datetime_iso",
+          "name": "DestroyTime",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateUserLifecycleResponse": {
+      "document": "CreateUserLifecycle返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户 ID。",
+          "example": "user18llqxtbrcvgn",
+          "member": "string",
+          "name": "UserId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "设置的隔离时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2025-06-30T15:59:59.999Z",
+          "member": "datetime_iso",
+          "name": "IsolateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "设置的销毁时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2020-10-14T10:17:57.953Z",
+          "member": "datetime_iso",
+          "name": "DestroyTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateUserRequest": {
+      "document": "CreateUser请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "媒体库 ID。",
+          "example": "smh08gcw6500e6jl",
+          "member": "string",
+          "name": "LibraryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户角色，当只支持 user。",
+          "example": "user",
+          "member": "string",
+          "name": "Role",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否启用。",
+          "example": "true",
+          "member": "bool",
+          "name": "Enabled",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "手机号国家码，不传默认为 null，此时无法使用该登录方式进行登录。",
+          "example": "+86",
+          "member": "string",
+          "name": "CountryCode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "手机号码，不传默认为 null，此时无法使用该登录方式进行登录。如果与同一媒体库内已有手机号重复则报错。CountryCode 和 PhoneNumber 必须同时传入或同时不传入。",
+          "example": "13800138000",
+          "member": "string",
+          "name": "PhoneNumber",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "邮箱，不传默认为 null，此时无法使用该登录方式进行登录。如果与同一媒体库内已有邮箱重复则报错。",
+          "example": "admin@mail.foobar.com",
+          "member": "string",
+          "name": "Email",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "账号，不传默认为 null，此时无法使用该登录方式进行登录。如果与同一媒体库内已有账号重复则报错。只能使用大小写字母、数字、中划线、下划线、小数点，长度不超过 50 个字符。",
+          "example": "account_name",
+          "member": "string",
+          "name": "AccountName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "密码的 base64 形式，不传默认为 null，此时无法使用该登录方式进行登录。AccountName 和 AccountPassword 必须同时传入或同时不传入。",
+          "example": "UEBzc3cwcmQ=",
+          "member": "string",
+          "name": "AccountPassword",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "第三方账号 ID，用于关联第三方账号体系，不传默认为 null，此时无法使用该登录方式进行登录。如果与同一媒体库内已有第三方账号重复则报错。只能使用大小写字母、数字、中划线、下划线、小数点，长度不超过 200 个字符。",
+          "example": "x53mYVqykfPqTCqekbNwwa4aXk4",
+          "member": "string",
+          "name": "AccountUserId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "备注。不超过 255 个字符。",
+          "example": "腾讯云助手账号",
+          "member": "string",
+          "name": "Comment",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "昵称。不超过 100 个字符。",
+          "example": "腾讯云助手",
+          "member": "string",
+          "name": "Nickname",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户头像地址。不超过 255 个字符。",
+          "example": "https://cloudcache.tencent-cloud.com/qcloud/portal/kit/images/slice/logo.23996906.svg",
+          "member": "string",
+          "name": "Avatar",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义信息。不超过 255 个字符。",
+          "example": "无",
+          "member": "string",
+          "name": "Customize",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateUserResponse": {
+      "document": "CreateUser返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户所在的媒体库 ID。",
+          "example": "smh08gcw6500e6jl",
+          "member": "string",
+          "name": "LibraryId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户 ID。",
+          "example": "user18llqxtbrcvgn",
+          "member": "string",
+          "name": "UserId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户创建时间。",
+          "example": "2024-07-07T03:45:26Z",
+          "member": "datetime_iso",
+          "name": "CreationTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户角色.",
+          "example": "user",
+          "member": "string",
+          "name": "Role",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否启用。",
+          "example": "true",
+          "member": "bool",
+          "name": "Enabled",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "手机号国家码，如未指定则为 null。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "+86",
+          "member": "string",
+          "name": "CountryCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "手机号码，如未指定则为 null。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "13800000000",
+          "member": "string",
+          "name": "PhoneNumber",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "邮箱，如未指定则为 null。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "admin@mail.foobar.com",
+          "member": "string",
+          "name": "Email",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "账号，如未指定则为 null。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "account_name",
+          "member": "string",
+          "name": "AccountName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "第三方账号 ID，用于关联第三方账号体系，如未指定则为 null。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "x53mYVqykfPqTCqekbNwwa4aXk4",
+          "member": "string",
+          "name": "AccountUserId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "备注。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "腾讯云助手账号",
+          "member": "string",
+          "name": "Comment",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "昵称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "腾讯云助手",
+          "member": "string",
+          "name": "Nickname",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户头像地址。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://cloudcache.tencent-cloud.com/qcloud/portal/kit/images/slice/logo.23996906.svg",
+          "member": "string",
+          "name": "Avatar",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自定义信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Customize",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteLibraryRequest": {
       "document": "DeleteLibrary请求参数结构体",
       "members": [
@@ -168,6 +562,42 @@
     },
     "DeleteLibraryResponse": {
       "document": "DeleteLibrary返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteUserRequest": {
+      "document": "DeleteUser请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "媒体库 ID。",
+          "example": "smh08gcw6500e6jl",
+          "member": "string",
+          "name": "LibraryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用于唯一查找用户的过滤器数组，数组之间为 **或** 的关系，即满足任意一个过滤器的用户，都将被删除，单次传入的过滤器最多为 100 个。",
+          "example": "[ { \"Key\": \"PhoneNumber\", \"Value\": \"+86-13800000000\" }, { \"Key\": \"Email\", \"Value\": \"admin@mail.foobar.com\" } ]",
+          "member": "UserFilter",
+          "name": "Filters",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteUserResponse": {
+      "document": "DeleteUser返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -537,6 +967,72 @@
           "output_required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserLifecycleRequest": {
+      "document": "DescribeUserLifecycle请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "媒体库 ID。",
+          "example": "smh08gcw6500e6jl",
+          "member": "string",
+          "name": "LibraryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用于唯一查找用户的过滤器。",
+          "example": "{ \"Key\": \"PhoneNumber\", \"Value\": \"+86-13800000000\" }",
+          "member": "UserFilter",
+          "name": "Filter",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserLifecycleResponse": {
+      "document": "DescribeUserLifecycle返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户 ID。",
+          "example": "user18llqxtbrcvgn",
+          "member": "string",
+          "name": "UserId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "设置的隔离时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2025-06-30T15:59:59Z",
+          "member": "datetime_iso",
+          "name": "IsolateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "设置的销毁时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2025-07-30T15:59:59Z",
+          "member": "datetime_iso",
+          "name": "DestroyTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1009,6 +1505,290 @@
       ],
       "type": "object"
     },
+    "ModifyUserRequest": {
+      "document": "ModifyUser请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "媒体库 ID。",
+          "example": "smh08gcw6500e6jl",
+          "member": "string",
+          "name": "LibraryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用于唯一查找用户的过滤器。",
+          "example": "{ \"Key\": \"PhoneNumber\", \"Value\": \"+86-13800000000\" }",
+          "member": "UserFilter",
+          "name": "Filter",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "用户角色，当只支持 user。",
+          "example": "user",
+          "member": "string",
+          "name": "Role",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否启用。",
+          "example": "true",
+          "member": "bool",
+          "name": "Enabled",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "手机号国家码，不传默认为 null，此时无法使用该登录方式进行登录。",
+          "example": "+86",
+          "member": "string",
+          "name": "CountryCode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "手机号码，不传默认为 null，此时无法使用该登录方式进行登录。如果与同一媒体库内已有手机号重复则报错。CountryCode 和 PhoneNumber 必须同时传入或同时不传入。",
+          "example": "13800138000",
+          "member": "string",
+          "name": "PhoneNumber",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "邮箱，不传默认为 null，此时无法使用该登录方式进行登录。如果与同一媒体库内已有邮箱重复则报错。",
+          "example": "admin@mail.foobar.com",
+          "member": "string",
+          "name": "Email",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "账号，不传默认为 null，此时无法使用该登录方式进行登录。如果与同一媒体库内已有账号重复则报错。只能使用大小写字母、数字、中划线、下划线、小数点，长度不超过 50 个字符。",
+          "example": "account_name",
+          "member": "string",
+          "name": "AccountName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "密码的 base64 形式，不传默认为 null，此时无法使用该登录方式进行登录。AccountName 和 AccountPassword 必须同时传入或同时不传入。",
+          "example": "UEBzc3cwcmQ=",
+          "member": "string",
+          "name": "AccountPassword",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "第三方账号 ID，用于关联第三方账号体系，不传默认为 null，此时无法使用该登录方式进行登录。如果与同一媒体库内已有第三方账号重复则报错。只能使用大小写字母、数字、中划线、下划线、小数点，长度不超过 200 个字符。",
+          "example": "x53mYVqykfPqTCqekbNwwa4aXk4",
+          "member": "string",
+          "name": "AccountUserId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "备注。不超过 255 个字符。",
+          "example": "腾讯云助手账号",
+          "member": "string",
+          "name": "Comment",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "昵称。不超过 100 个字符。",
+          "example": "腾讯云助手",
+          "member": "string",
+          "name": "Nickname",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户头像地址。不超过 255 个字符。",
+          "example": "https://cloudcache.tencent-cloud.com/qcloud/portal/kit/images/slice/logo.23996906.svg",
+          "member": "string",
+          "name": "Avatar",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义信息。不超过 255 个字符。",
+          "example": "无",
+          "member": "string",
+          "name": "Customize",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyUserResponse": {
+      "document": "ModifyUser返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户所在的媒体库 ID。",
+          "example": "smh08gcw6500e6jl",
+          "member": "string",
+          "name": "LibraryId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户 ID。",
+          "example": "user18llqxtbrcvgn",
+          "member": "string",
+          "name": "UserId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户创建时间。",
+          "example": "2024-07-07T03:45:26Z",
+          "member": "datetime_iso",
+          "name": "CreationTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户角色.",
+          "example": "user",
+          "member": "string",
+          "name": "Role",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否启用。",
+          "example": "true",
+          "member": "bool",
+          "name": "Enabled",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "手机号国家码，如未指定则为 null。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "+86",
+          "member": "string",
+          "name": "CountryCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "手机号码，如未指定则为 null。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "13800000000",
+          "member": "string",
+          "name": "PhoneNumber",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "邮箱，如未指定则为 null。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "admin@mail.foobar.com",
+          "member": "string",
+          "name": "Email",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "账号，如未指定则为 null。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "account_name",
+          "member": "string",
+          "name": "AccountName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "第三方账号 ID，用于关联第三方账号体系，如未指定则为 null。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "x53mYVqykfPqTCqekbNwwa4aXk4",
+          "member": "string",
+          "name": "AccountUserId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "备注。",
+          "example": "腾讯云助手账号",
+          "member": "string",
+          "name": "Comment",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "昵称。",
+          "example": "腾讯云助手",
+          "member": "string",
+          "name": "Nickname",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户头像地址。",
+          "example": "https://cloudcache.tencent-cloud.com/qcloud/portal/kit/images/slice/logo.23996906.svg",
+          "member": "string",
+          "name": "Avatar",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自定义信息。",
+          "example": "无",
+          "member": "string",
+          "name": "Customize",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "SendSmsCodeRequest": {
       "document": "SendSmsCode请求参数结构体",
       "members": [
@@ -1168,6 +1948,30 @@
         }
       ],
       "usage": "out"
+    },
+    "UserFilter": {
+      "document": "用于唯一查找用户的过滤器。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "过滤类型，当前支持：UserId、PhoneNumber、Email、AccountName、AccountUserId。",
+          "example": "PhoneNumber",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤值，只支持完全匹配，不支持模糊搜索。针对不同的 Key，Value 的取值如下：\nUserId: user12345678abcde\nPhoneNumber: +86-13800000000（格式为：{CountryCode}-{PhoneNumber}）\nEmail: admin@mail.foobar.com\nAccountName: account_name\nAccountUserId: x53mYVqykfPqTCqekbNwwa4aXk4",
+          "example": "+86-13800000000",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
     },
     "VerifySmsCodeRequest": {
       "document": "VerifySmsCode请求参数结构体",

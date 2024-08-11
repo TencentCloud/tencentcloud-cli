@@ -3806,6 +3806,14 @@
         "title": "批量修改防勒索策略状态"
       }
     ],
+    "ModifyReverseShellRulesAggregation": [
+      {
+        "document": "增加正则规则",
+        "input": "POST / HTTP/1.1\nHost: xxx\nContent-Type: application/json\nX-TC-Action: ModifyReverseShellRulesAggregation\n<公共请求参数>\n\n{\n    \"IsGlobal\": 1,\n    \"WhiteType\": 1,\n    \"RuleRegexp\": \"xxx\",\n    \"HandleHistory\": 1,\n    \"GroupID\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1\"\n    }\n}",
+        "title": "增加正则规则"
+      }
+    ],
     "ModifyRiskDnsPolicy": [
       {
         "document": "",

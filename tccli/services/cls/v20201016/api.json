@@ -13348,7 +13348,16 @@
         },
         {
           "disabled": false,
-          "document": "表示单次查询返回的原始日志条数，默认为100，最大值为1000，获取后续日志需使用Context参数\n注意：\n* 仅当检索分析语句(Query)不包含SQL时有效\n* SQL结果条数指定方式参考<a href=\"https://cloud.tencent.com/document/product/614/58977\" target=\"_blank\">SQL LIMIT语法</a>",
+          "document": "原始日志是否按时间排序返回；可选值：asc(升序)、desc(降序)，默认为 desc\n注意：\n* 仅当检索分析语句(Query)不包含SQL时有效\n* SQL结果排序方式参考<a href=\"https://cloud.tencent.com/document/product/614/58978\" target=\"_blank\">SQL ORDER BY语法</a>",
+          "example": "asc",
+          "member": "string",
+          "name": "Sort",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "表示单次查询返回的原始日志条数，默认为100，最大值为1000。\n注意：\n* 仅当检索分析语句(Query)不包含SQL时有效\n* SQL结果条数指定方式参考<a href=\"https://cloud.tencent.com/document/product/614/58977\" target=\"_blank\">SQL LIMIT语法</a>\n\n可通过两种方式获取后续更多日志：\n* Context:透传上次接口返回的Context值，获取后续更多日志，总计最多可获取1万条原始日志\n* Offset:偏移量，表示从第几行开始返回原始日志，无日志条数限制",
           "example": "100",
           "member": "int64",
           "name": "Limit",
@@ -13357,12 +13366,12 @@
         },
         {
           "disabled": false,
-          "document": "原始日志是否按时间排序返回；可选值：asc(升序)、desc(降序)，默认为 desc\n注意：\n* 仅当检索分析语句(Query)不包含SQL时有效\n* SQL结果排序方式参考<a href=\"https://cloud.tencent.com/document/product/614/58978\" target=\"_blank\">SQL ORDER BY语法</a>",
-          "example": "asc",
-          "member": "string",
-          "name": "Sort",
+          "document": "查询原始日志的偏移量，表示从第几行开始返回原始日志，默认为0。 \n注意：\n* 仅当检索分析语句(Query)不包含SQL时有效\n* 不能与Context参数同时使用\n* 仅适用于单日志主题检索",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
           "required": false,
-          "type": "string"
+          "type": "int"
         },
         {
           "disabled": false,

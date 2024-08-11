@@ -161,6 +161,13 @@
       "output": "DescribeResourceScheduleResponse",
       "status": "online"
     },
+    "DescribeServiceNodeInfos": {
+      "document": "查询服务进程信息",
+      "input": "DescribeServiceNodeInfosRequest",
+      "name": "查询服务进程信息",
+      "output": "DescribeServiceNodeInfosResponse",
+      "status": "online"
+    },
     "DescribeTrinoQueryInfo": {
       "document": "获取trino查询结果",
       "input": "DescribeTrinoQueryInfoRequest",
@@ -180,6 +187,13 @@
       "input": "DescribeYarnApplicationsRequest",
       "name": "获取Yarn的任务信息",
       "output": "DescribeYarnApplicationsResponse",
+      "status": "online"
+    },
+    "DescribeYarnScheduleHistory": {
+      "document": "查看yarn资源调度的调度历史",
+      "input": "DescribeYarnScheduleHistoryRequest",
+      "name": "yarn资源调度-调度历史",
+      "output": "DescribeYarnScheduleHistoryResponse",
       "status": "online"
     },
     "InquirePriceRenewEmr": {
@@ -257,6 +271,13 @@
       "input": "ModifyUserManagerPwdRequest",
       "name": "修改用户密码（用户管理）",
       "output": "ModifyUserManagerPwdResponse",
+      "status": "online"
+    },
+    "ModifyYarnDeploy": {
+      "document": "部署生效",
+      "input": "ModifyYarnDeployRequest",
+      "name": "部署生效",
+      "output": "ModifyYarnDeployResponse",
       "status": "online"
     },
     "RunJobFlow": {
@@ -4277,6 +4298,172 @@
       ],
       "type": "object"
     },
+    "DescribeServiceNodeInfosRequest": {
+      "document": "DescribeServiceNodeInfos请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "emr-3qg9lptu",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "页码",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "页大小",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "搜索字段",
+          "example": "null",
+          "member": "string",
+          "name": "SearchText",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "'配置状态，-2：配置失败，-1:配置过期，1：已同步', -99 '全部'",
+          "example": "null",
+          "member": "int64",
+          "name": "ConfStatus",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件：维护状态\n0代表所有状态\n1代表正常模式\n2代表维护模式\n",
+          "example": "无",
+          "member": "int64",
+          "name": "MaintainStateId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件：操作状态\n0代表所有状态\n1代表已启动\n2代表已停止",
+          "example": "无",
+          "member": "int64",
+          "name": "OperatorStateId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件：健康状态\n\"0\"代表不可用\n\"1\"代表良好\n\"-2\"代表未知\n\"-99\"代表所有\n\"-3\"代表存在隐患\n\"-4\"代表未探测",
+          "example": "无",
+          "member": "string",
+          "name": "HealthStateId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务组件名称，都是大写比如YARN",
+          "example": "无",
+          "member": "string",
+          "name": "ServiceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "节点名称\nmaster\ncore\ntask\ncommon\nrouter\n",
+          "example": "无",
+          "member": "string",
+          "name": "NodeTypeName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件：dn是否处于维护状态\n0代表所有状态\n1代表处于维护状态",
+          "example": "1",
+          "member": "int64",
+          "name": "DataNodeMaintenanceId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "支持搜索的字段",
+          "example": "无",
+          "member": "SearchItem",
+          "name": "SearchFields",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeServiceNodeInfosResponse": {
+      "document": "DescribeServiceNodeInfos返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "TotalCnt",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "进程信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ServiceNodeDetailInfo",
+          "name": "ServiceNodeList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "集群所有节点的别名序列化\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "string",
+          "name": "AliasInfo",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "支持的FlagNode列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "string",
+          "name": "SupportNodeFlagFilterList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeTrinoQueryInfoRequest": {
       "document": "DescribeTrinoQueryInfo请求参数结构体",
       "members": [
@@ -4516,6 +4703,127 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeYarnScheduleHistoryRequest": {
+      "document": "DescribeYarnScheduleHistory请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群id",
+          "example": "emr-2xef56",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "1722873600",
+          "member": "uint64",
+          "name": "StartTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "1722873600",
+          "member": "uint64",
+          "name": "EndTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "页码",
+          "example": "1",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "页大小",
+          "example": "10",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "调度器类型 可选值为“ALL”，\"Capacity Scheduler\", \"Fair Scheduler\"",
+          "example": "Capacity Scheduler",
+          "member": "string",
+          "name": "SchedulerType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务类型0:等待执行，1:执行中，2：完成，-1:失败 ，-99:全部",
+          "example": "2",
+          "member": "int64",
+          "name": "TaskState",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeYarnScheduleHistoryResponse": {
+      "document": "DescribeYarnScheduleHistory返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SchedulerTaskInfo",
+          "name": "Tasks",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务详情总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "调度类型筛选列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SchedulerNameList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "状态筛选列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "StateList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -5647,6 +5955,42 @@
         }
       ],
       "usage": "both"
+    },
+    "HealthStatus": {
+      "document": "进程健康状态",
+      "members": [
+        {
+          "disabled": false,
+          "document": "运行正常",
+          "example": "1",
+          "member": "int64",
+          "name": "Code",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "运行正常",
+          "example": "良好",
+          "member": "string",
+          "name": "Text",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "运行正常",
+          "example": "端口探测在5s内响应",
+          "member": "string",
+          "name": "Desc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "HiveQuery": {
       "document": "Hive查询详情",
@@ -7953,6 +8297,71 @@
     "ModifyUserManagerPwdResponse": {
       "document": "ModifyUserManagerPwd返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyYarnDeployRequest": {
+      "document": "ModifyYarnDeploy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群id",
+          "example": "emr-xx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "切换后的调度器，可选值为fair、capacity",
+          "example": "fair",
+          "member": "string",
+          "name": "NewScheduler",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "现在使用的调度器，可选值为fair、capacity",
+          "example": "capacity",
+          "member": "string",
+          "name": "OldScheduler",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyYarnDeployResponse": {
+      "document": "ModifyYarnDeploy返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "为false不点亮部署生效、重置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "IsDraft",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "错误信息，预留\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ErrorMsg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -10474,6 +10883,62 @@
       ],
       "usage": "out"
     },
+    "RestartPolicy": {
+      "document": "组件重启策略",
+      "members": [
+        {
+          "disabled": false,
+          "document": "重启策略名。",
+          "example": "",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略展示名称。",
+          "example": "",
+          "member": "string",
+          "name": "DisplayName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略描述。",
+          "example": "",
+          "member": "string",
+          "name": "Describe",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "批量重启节点数可选范围。",
+          "example": "",
+          "member": "int64",
+          "name": "BatchSizeRange",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否是默认策略。",
+          "example": "",
+          "member": "string",
+          "name": "IsDefault",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "RunJobFlowRequest": {
       "document": "RunJobFlow请求参数结构体",
       "members": [
@@ -11272,6 +11737,118 @@
       ],
       "usage": "in"
     },
+    "SchedulerTaskDetail": {
+      "document": "调度任务详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "步骤\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "重启",
+          "member": "string",
+          "name": "Step",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "进度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10%",
+          "member": "string",
+          "name": "Progress",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "失败信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FailReason",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用来获取详情的id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "39986",
+          "member": "uint64",
+          "name": "JobId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SchedulerTaskInfo": {
+      "document": "yarn资源调度历史",
+      "members": [
+        {
+          "disabled": false,
+          "document": "调度器类型",
+          "example": "capacity",
+          "member": "string",
+          "name": "SchedulerName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作类型",
+          "example": "无",
+          "member": "string",
+          "name": "OperatorName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "State",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SchedulerTaskDetail",
+          "name": "Details",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "ScriptBootstrapActionConfig": {
       "document": "添加引导操作",
       "members": [
@@ -11376,6 +11953,298 @@
         }
       ],
       "usage": "both"
+    },
+    "ServiceNodeDetailInfo": {
+      "document": "服务进程信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "进程所在节点IP",
+          "example": "10.10.10.10",
+          "member": "string",
+          "name": "Ip",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "进程类型",
+          "example": "66",
+          "member": "int64",
+          "name": "NodeType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "进程名称",
+          "example": "PrestoSql-Worker",
+          "member": "string",
+          "name": "NodeName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务组件状态",
+          "example": "1",
+          "member": "int64",
+          "name": "ServiceStatus",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "进程监控状态",
+          "example": "1",
+          "member": "int64",
+          "name": "MonitorStatus",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务组件状态",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "进程端口信息",
+          "example": " \"\"",
+          "member": "string",
+          "name": "PortsInfo",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最近重启时间",
+          "example": "2021-09-01 11:31:55",
+          "member": "string",
+          "name": "LastRestartTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点类型",
+          "example": "2",
+          "member": "int64",
+          "name": "Flag",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "配置组ID",
+          "example": "1",
+          "member": "int64",
+          "name": "ConfGroupId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "配置组名称",
+          "example": "prestosql-defaultGroup",
+          "member": "string",
+          "name": "ConfGroupName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点是否需要重启",
+          "example": "1",
+          "member": "int64",
+          "name": "ConfStatus",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "进程探测信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "ServiceProcessFunctionInfo",
+          "name": "ServiceDetectionInfo",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "节点类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "core",
+          "member": "string",
+          "name": "NodeFlagFilter",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "进程健康状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "HealthStatus",
+          "name": "HealthStatus",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "角色是否支持监控\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsSupportRoleMonitor",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "暂停策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "RestartPolicy",
+          "name": "StopPolicies",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "测试环境api强校验，现网没有，emrcc接口返回有。不加会报错\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "”“",
+          "member": "string",
+          "name": "HAState",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "NameService名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "NameService",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否支持联邦\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "IsFederation",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "datanode是否是维护状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1表示处于维护状态",
+          "member": "int64",
+          "name": "DataNodeMaintenanceState",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ServiceProcessFunctionInfo": {
+      "document": "进程检测信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "探测告警级别\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DetectAlert",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": true,
+          "document": "探测功能描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DetetcFunctionKey",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": true,
+          "document": "探测功能结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DetetcFunctionValue",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": true,
+          "document": "探测结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DetetcTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "探测功能描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DetectFunctionKey",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "探测功能结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DetectFunctionValue",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "探测结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DetectTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "ShortNodeInfo": {
       "document": "节点信息",

@@ -274,7 +274,7 @@
       "status": "online"
     },
     "StartAITranscription": {
-      "document": "这个接口调用后，后台会启动转录机器人，实时进行语音识别并下发字幕和转录消息。\n转录机器人支持两种拉流方式，通过TranscriptionMode字段控制：\n- 拉取全房间的流。\n- 拉取特定用户的流。\n\n服务端通过TRTC的自定义消息实时下发字幕和会议记录，CmdId固定是1。客户端只需监听自定义消息的回调即可，比如[c++回调](https://cloud.tencent.com/document/product/647/79637#4cd82f4edb24992a15a25187089e1565)。其他客户端比如安卓、Web等同样可在该链接处找到。\n\n服务端实时下发的消息是JSON字符串，实时字幕具体格式如下：\n`{\n    \"type\": \"subtitle\",\n    \"userid\": \"xxx\",\n    \"text\": \"xxx\",\n    \"translation_text\": \"xxx\",\n    \"start_time\": \"00:00:02\",\n    \"end_time\": \"00:00:05\"\n}`\n字段作用如下：\n- type是subtitle，表示这是实时字幕消息。\n- userid表示是哪个用户说的话。\n- text是语音识别出的文本。\n- translation_text是text翻译后的文本，如果不启用翻译，则是空字符串。\n- start_time和end_time表示该字幕消息从任务开启后的开始和结束时间。\n\n转录消息具体格式如下：\n`{\n    \"type\": \"transcription\",\n    \"userid\": \"xxx\",\n    \"text\": \"xxx\",\n    \"translation_text\": \"xx\",\n    \"start_time\": \"00:00:02\",\n    \"end_time\": \"00:00:05\"\n}`\n字段作用如下：\n- type是transcription，表示这是转录消息。\n- 其余字段同实时字幕消息。\n\n转录消息和实时字幕消息的区别是，转录消息是完整的一句话，实时字幕消息则是这一句话的中间阶段。\n假如有一句完整的话，“今天天气怎么样？”，那么服务的下发消息的顺序可能是这样：\n- 字幕消息，“今天”\n- 字幕消息，“今天天气”\n- 字幕消息，“今天天气怎么样”\n- 转录消息，“今天天气怎么样？”",
+      "document": "这个接口调用后，后台会启动转录机器人，实时进行语音识别并下发字幕和转录消息。\n转录机器人支持两种拉流方式，通过TranscriptionMode字段控制：\n- 拉取全房间的流。\n- 拉取特定用户的流。\n\n服务端通过TRTC的自定义消息实时下发字幕和会议记录，CmdId固定是1。客户端只需监听自定义消息的回调即可，比如[c++回调](https://cloud.tencent.com/document/product/647/79637#4cd82f4edb24992a15a25187089e1565)。其他客户端比如安卓、Web等同样可在该链接处找到。\n\n服务端实时下发的消息是JSON字符串，实时字幕具体格式如下：\n`{\n    \"type\": \"subtitle\",\n    \"userid\": \"xxx\",\n    \"text\": \"xxx\",\n    \"start_time\": \"00:00:02\",\n    \"end_time\": \"00:00:05\"\n}`\n字段作用如下：\n- type是subtitle，表示这是实时字幕消息。\n- userid表示是哪个用户说的话。\n- text是语音识别出的文本。\n- start_time和end_time表示该字幕消息从任务开启后的开始和结束时间。\n\n转录消息具体格式如下：\n`{\n    \"type\": \"transcription\",\n    \"userid\": \"xxx\",\n    \"text\": \"xxx\",\n    \"start_time\": \"00:00:02\",\n    \"end_time\": \"00:00:05\"\n}`\n字段作用如下：\n- type是transcription，表示这是转录消息。\n- 其余字段同实时字幕消息。\n\n转录消息和实时字幕消息的区别是，转录消息是完整的一句话，实时字幕消息则是这一句话的中间阶段。\n假如有一句完整的话，“今天天气怎么样？”，那么服务的下发消息的顺序可能是这样：\n- 字幕消息，“今天”\n- 字幕消息，“今天天气”\n- 字幕消息，“今天天气怎么样”\n- 转录消息，“今天天气怎么样？”",
       "input": "StartAITranscriptionRequest",
       "name": "开始AI转录任务",
       "output": "StartAITranscriptionResponse",
@@ -4937,7 +4937,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "语音转文字支持识别的语言，默认是\"zh\" 中文\n目前全量支持的语言如下，等号左面是语言英文名，右面是Language字段需要填写的值，该值遵循[ISO639](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes)：\n可通过购买「语音转文本时长包」解锁或领取包月套餐体验版解锁此功能。\n\n语音转文本支持语言类型如下：\n- Chinese = \"zh\" # 中文\n- Chinese_TW = \"zh-TW\" # 中国台湾\n- English = \"en\" # 英语\n- Chinese_YUE = \"zh-yue\" # 中国粤语\n- Chinese_DIALECT = \"zh-dialect\" # 中国方言\n- English = \"en\" # 英语\n- Vietnamese = \"vi\" # 越南语\n- Japanese = \"ja\" # 日语\n- Korean = \"ko\" # 汉语\n- Indonesia = \"id\" # 印度尼西亚语\n- Thai = \"th\" # 泰语\n- Portuguese = \"pt\" # 葡萄牙语\n- Turkish = \"tr\" # 土耳其语\n- Arabic = \"ar\" # 阿拉伯语\n- Spanish = \"es\" # 西班牙语\n- Hindi = \"hi\" # 印地语\n- French = \"fr\" # 法语\n- Malay = \"ms\" # 马来语\n- Filipino = \"fil\" # 菲律宾语\n- German = \"de\" # 德语\n- Italian = \"it\" # 意大利语\n- Russian = \"ru\" # 俄语\n\n注意：\n如果缺少满足您需求的语言，请联系我们技术人员。\n示例值：zh",
+          "document": "语音转文字支持识别的语言，默认是\"zh\" 中文\n目前全量支持的语言如下，等号左面是语言英文名，右面是Language字段需要填写的值，该值遵循[ISO639](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes)：\n可通过购买「语音转文本时长包」解锁或领取包月套餐体验版解锁此功能。\n\n语音转文本支持语言类型如下：\n- Chinese = \"zh\" # 中文\n- Chinese_TW = \"zh-TW\" # 中国台湾\n- English = \"en\" # 英语\n- Chinese_YUE = \"zh-yue\" # 中国粤语\n- Chinese_DIALECT = \"zh-dialect\" # 中国方言\n- English = \"en\" # 英语\n- Vietnamese = \"vi\" # 越南语\n- Japanese = \"ja\" # 日语\n- Korean = \"ko\" # 汉语\n- Indonesia = \"id\" # 印度尼西亚语\n- Thai = \"th\" # 泰语\n- Portuguese = \"pt\" # 葡萄牙语\n- Turkish = \"tr\" # 土耳其语\n- Arabic = \"ar\" # 阿拉伯语\n- Spanish = \"es\" # 西班牙语\n- Hindi = \"hi\" # 印地语\n- French = \"fr\" # 法语\n- Malay = \"ms\" # 马来语\n- Filipino = \"fil\" # 菲律宾语\n- German = \"de\" # 德语\n- Italian = \"it\" # 意大利语\n- Russian = \"ru\" # 俄语\n\n注意：\n如果缺少满足您需求的语言，请联系我们技术人员。",
           "example": "zh",
           "member": "string",
           "name": "Language",
@@ -4955,17 +4955,17 @@
         },
         {
           "disabled": true,
-          "document": "使用的模型，目前支持tencent和google，默认是tencent。",
-          "example": "tencent",
+          "document": "目前已不支持",
+          "example": "无",
           "member": "string",
           "name": "Model",
           "required": false,
           "type": "string"
         },
         {
-          "disabled": false,
-          "document": "翻译功能支持的语言，如果填写，则会启用翻译，不填则只会使用语音识别。\n注：文本翻译功能需要购买「语音转文本时长包」解锁或领取包月套餐-体验版解。\n目前全量支持的语言如下，等号左面是语言英文名，右面是Language字段需要填写的值，该值遵循[ISO639](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes)：\nChinese = \"zh\"\nChinese_TW = \"zh-TW\"\nEnglish = \"en\"\nVietnamese = \"vi\"\nJapanese = \"ja\"\nKorean = \"ko\"\nIndonesia = \"id\"\nThai = \"th\"\nPortuguese = \"pt\"\nTurkish = \"tr\"\nArabic = \"ar\"\nSpanish = \"es\"\nHindi = \"hi\"\nFrench = \"fr\"\nMalay = \"ms\"\nFilipino = \"fil\"\nGerman = \"de\"\nItalian = \"it\"\nRussian = \"ru\"\n\n注意：\n如果缺少满足您需求的语言，请联系我们技术人员。\n示例值：en",
-          "example": "en",
+          "disabled": true,
+          "document": "目前已不支持",
+          "example": "无",
           "member": "string",
           "name": "TranslationLanguage",
           "required": false,
