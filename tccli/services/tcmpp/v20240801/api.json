@@ -227,7 +227,7 @@
     "DescribeMNPManagerDetail": {
       "document": "查询小程序详情",
       "input": "DescribeMNPManagerDetailRequest",
-      "name": "查询小程序详情",
+      "name": "小程序列表查询小程序详情",
       "output": "DescribeMNPManagerDetailResponse",
       "status": "online"
     },

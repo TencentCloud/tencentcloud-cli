@@ -56,6 +56,14 @@
         "title": "例子"
       }
     ],
+    "CreateConversation": [
+      {
+        "document": "",
+        "input": "https://ticket.tencentcloudapi.com/?Action=CreateConversation\n&PostUin=23432\n&OwnerUin=37324654\n&Source=MC\n&CategoryId=116\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"06575a2114d3d12d7e06f9135e464d42\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "CreateInternalTicket": [
       {
         "document": "",

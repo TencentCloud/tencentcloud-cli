@@ -8,12 +8,36 @@
         "title": "创建媒体库"
       }
     ],
+    "CreateUser": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: smh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateUser\n<公共请求参数>\n\n{\n    \"LibraryId\": \"smh08gcw6500e6jl\",\n    \"Role\": \"user\",\n    \"Enabled\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"LibraryId\": \"smh08gcw6500e6jl\",\n        \"UserId\": \"user18llqxtbrcvgn\",\n        \"CreationTime\": \"2024-07-07T03:45:26Z\",\n        \"Role\": \"user\",\n        \"Enabled\": true,\n        \"CountryCode\": null,\n        \"PhoneNumber\": null,\n        \"Email\": null,\n        \"AccountName\": null,\n        \"AccountUserId\": null,\n        \"Comment\": \"\",\n        \"Nickname\": \"\",\n        \"Avatar\": \"\",\n        \"Customize\": \"\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "新建用户"
+      }
+    ],
+    "CreateUserLifecycle": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: smh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateUserLifecycle\n<公共请求参数>\n\n{\n    \"LibraryId\": \"smh08gcw6500e6jl\",\n    \"Filter\": {\n        \"Key\": \"PhoneNumber\",\n        \"Value\": \"+86-13800000000\"\n    },\n    \"IsolateTime\": \"2025-06-30T15:59:59Z\",\n    \"DestroyTime\": \"2025-07-30T15:59:59Z\"\n}",
+        "output": "{\n    \"Response\": {\n        \"UserId\": \"user18llqxtbrcvgn\",\n        \"IsolateTime\": \"2025-06-30T15:59:59Z\",\n        \"DestroyTime\": \"2025-07-30T15:59:59Z\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "设置用户生命周期"
+      }
+    ],
     "DeleteLibrary": [
       {
         "document": "删除媒体库",
         "input": "POST / HTTP/1.1 \nHost: smh.tencentcloudapi.com \nContent-Type: application/json \nX-TC-Action: DeleteLibrary \n\n{\n    \"LibraryId\": \"smh0q8nrvsg7t6y6\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ea829232-caa0-4dfe-9bbb-2f428cfae08c\"\n    }\n}",
         "title": "删除媒体库"
+      }
+    ],
+    "DeleteUser": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: smh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteUser\n<公共请求参数>\n\n{\n    \"LibraryId\": \"smh08gcw6500e6jl\",\n    \"Filters\": [\n        {\n            \"Key\": \"PhoneNumber\",\n            \"Value\": \"+86-13800000000\"\n        },\n        {\n            \"Key\": \"Email\",\n            \"Value\": \"admin@mail.foobar.com\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "删除多个用户"
       }
     ],
     "DescribeLibraries": [
@@ -56,12 +80,28 @@
         "title": "查询官方实例"
       }
     ],
+    "DescribeUserLifecycle": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: smh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserLifecycle\n<公共请求参数>\n\n{\n    \"LibraryId\": \"smh08gcw6500e6jl\",\n    \"Filter\": {\n        \"Key\": \"PhoneNumber\",\n        \"Value\": \"+86-13800000000\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"UserId\": \"user18llqxtbrcvgn\",\n        \"IsolateTime\": \"2025-06-30T15:59:59Z\",\n        \"DestroyTime\": \"2025-07-30T15:59:59Z\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "查询用户生命周期"
+      }
+    ],
     "ModifyLibrary": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: smh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLibrary\n<公共请求参数>\n\n{\n    \"Remark\": \"新备注\",\n    \"LibraryId\": \"smh1jjexrwwoa9ok\",\n    \"LibraryExtension\": {\n        \"EnableFileHistory\": \"true\",\n        \"UseRecycleBin\": \"true\"\n    },\n    \"Name\": \"新名字\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8dfefe57-2188-4e66-b5ef-07e493b003ce\"\n    }\n}",
         "title": "修改媒体库配置项"
+      }
+    ],
+    "ModifyUser": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: smh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyUser\n<公共请求参数>\n\n{\n    \"LibraryId\": \"smh08gcw6500e6jl\",\n    \"Filter\": {\n        \"Key\": \"PhoneNumber\",\n        \"Value\": \"+86-13800000000\"\n    },\n    \"CountryCode\": \"+86\",\n    \"PhoneNumber\": \"13800138000\"\n}",
+        "output": "{\n    \"Response\": {\n        \"LibraryId\": \"smh08gcw6500e6jl\",\n        \"UserId\": \"user18llqxtbrcvgn\",\n        \"CreationTime\": \"2024-07-07T03:45:26Z\",\n        \"Role\": \"user\",\n        \"Enabled\": true,\n        \"CountryCode\": \"+86\",\n        \"PhoneNumber\": \"13800138000\",\n        \"Email\": null,\n        \"AccountName\": null,\n        \"AccountUserId\": null,\n        \"Comment\": \"\",\n        \"Nickname\": \"\",\n        \"Avatar\": \"\",\n        \"Customize\": \"\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "更新用户信息"
       }
     ],
     "SendSmsCode": [

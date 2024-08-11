@@ -1,3 +1,171 @@
+# Release 3.0.1052.1
+
+## 大模型图像创作引擎(aiart) 版本：2022-12-29
+
+### 第 11 次发布
+
+发布时间：2024-08-12 01:07:13
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ReplaceBackground](http://document.tencentcloudapi.woa.com/document/product/1728/84198)
+
+	* 新增入参：Product
+
+
+
+
+## 日志服务(cls) 版本：2020-10-16
+
+### 第 82 次发布
+
+发布时间：2024-08-12 01:11:22
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [SearchLog](http://document.tencentcloudapi.woa.com/document/product/614/56447)
+
+	* 新增入参：Offset
+
+
+
+
+## 主机安全(cwp) 版本：2018-02-28
+
+### 第 94 次发布
+
+发布时间：2024-08-12 01:12:19
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ModifyReverseShellRulesAggregation](http://document.tencentcloudapi.woa.com/document/product/296/84541)
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* CreateCloudProtectServiceOrderRecord
+
+
+
+## 弹性 MapReduce(emr) 版本：2019-01-03
+
+### 第 58 次发布
+
+发布时间：2024-08-12 01:15:50
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeServiceNodeInfos](http://document.tencentcloudapi.woa.com/document/product/589/84544)
+* [DescribeYarnScheduleHistory](http://document.tencentcloudapi.woa.com/document/product/589/84543)
+* [ModifyYarnDeploy](http://document.tencentcloudapi.woa.com/document/product/589/84542)
+
+新增数据结构：
+
+* [HealthStatus](http://document.tencentcloudapi.woa.com/document/product/589/33981#HealthStatus)
+* [OrderPair](http://document.tencentcloudapi.woa.com/document/product/589/33981#OrderPair)
+* [RestartPolicy](http://document.tencentcloudapi.woa.com/document/product/589/33981#RestartPolicy)
+* [SchedulerTaskDetail](http://document.tencentcloudapi.woa.com/document/product/589/33981#SchedulerTaskDetail)
+* [SchedulerTaskInfo](http://document.tencentcloudapi.woa.com/document/product/589/33981#SchedulerTaskInfo)
+* [ServiceNodeDetailInfo](http://document.tencentcloudapi.woa.com/document/product/589/33981#ServiceNodeDetailInfo)
+* [ServiceProcessFunctionInfo](http://document.tencentcloudapi.woa.com/document/product/589/33981#ServiceProcessFunctionInfo)
+
+
+
+## 智能媒资托管(smh) 版本：2021-07-12
+
+### 第 2 次发布
+
+发布时间：2024-08-12 01:22:16
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateUser](http://document.tencentcloudapi.woa.com/document/product/1689/84549)
+* [CreateUserLifecycle](http://document.tencentcloudapi.woa.com/document/product/1689/84548)
+* [DeleteUser](http://document.tencentcloudapi.woa.com/document/product/1689/84547)
+* [DescribeUserLifecycle](http://document.tencentcloudapi.woa.com/document/product/1689/84546)
+* [ModifyUser](http://document.tencentcloudapi.woa.com/document/product/1689/84545)
+
+新增数据结构：
+
+* [UserFilter](http://document.tencentcloudapi.woa.com/document/product/1689/79772#UserFilter)
+
+
+
+## SSL 证书(ssl) 版本：2019-12-05
+
+### 第 65 次发布
+
+发布时间：2024-08-12 01:22:52
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateCSR](http://document.tencentcloudapi.woa.com/document/product/400/81789)
+
+	* 新增入参：Tags
+
+
+
+
+## 腾讯云安灯(tandon) 版本：2023-01-04
+
+### 第 4 次发布
+
+发布时间：2024-08-12 01:23:19
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateConversation](http://document.tencentcloudapi.woa.com/document/product/1769/84550)
+
+
+
+## 实时音视频(trtc) 版本：2019-07-22
+
+### 第 64 次发布
+
+发布时间：2024-08-12 01:26:10
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [UpdateStreamIngest](http://document.tencentcloudapi.woa.com/document/product/647/84551)
+
+修改数据结构：
+
+* [RecognizeConfig](http://document.tencentcloudapi.woa.com/document/product/647/44055#RecognizeConfig)
+
+
+
+
 # Release 3.0.1051.1
 
 ## 云顾问(advisor) 版本：2020-07-21

@@ -49,6 +49,13 @@
       "output": "CreateCommonTicketResponse",
       "status": "online"
     },
+    "CreateConversation": {
+      "document": "创建会话",
+      "input": "CreateConversationRequest",
+      "name": "创建会话",
+      "output": "CreateConversationResponse",
+      "status": "online"
+    },
     "CreateInternalTicket": {
       "document": "提供给内部通道建单",
       "input": "CreateInternalTicketRequest",
@@ -292,6 +299,23 @@
     },
     "CreateCommonTicketResponse": {
       "document": "CreateCommonTicket返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateConversationRequest": {
+      "document": "CreateConversation请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "CreateConversationResponse": {
+      "document": "CreateConversation返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
