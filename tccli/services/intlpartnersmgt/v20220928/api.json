@@ -1,5 +1,12 @@
 {
   "actions": {
+    "AllocateCreditPool": {
+      "document": "一级经销商分配二级经销商信用池",
+      "input": "AllocateCreditPoolRequest",
+      "name": "分配二级经销商信用池",
+      "output": "AllocateCreditPoolResponse",
+      "status": "online"
+    },
     "AllocateCustomerCredit": {
       "document": "合作伙伴可以为关联客户设置信用额度，包括调高额度、降低额度、设置额度为0\n1、信用额度长期有效，不会定期清0；\n2、可用信用额度为0，会触发客户停服，请谨慎操作；\n3、如需限制客户新购，但不影响已购产品使用，可与渠道经理申请客户欠费不停服特权后，设置可用信用额度为0；\n4、设置的额度，为当前可用信用额度的增量，最大不能超过合作伙伴可分配的剩余额度，设置负数代表回收额度，可用信用额度最低设置为0。",
       "input": "AllocateCustomerCreditRequest",
@@ -245,6 +252,62 @@
         }
       ],
       "usage": "out"
+    },
+    "AllocateCreditPoolRequest": {
+      "document": "AllocateCreditPool请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "二级经销商uin",
+          "example": "290345834534875",
+          "member": "int64",
+          "name": "SubAgentUin",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分配金额",
+          "example": "234.5464",
+          "member": "float",
+          "name": "Credit",
+          "required": true,
+          "type": "float"
+        }
+      ],
+      "type": "object"
+    },
+    "AllocateCreditPoolResponse": {
+      "document": "AllocateCreditPool返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "现在总剩余额度",
+          "example": "343452",
+          "member": "float",
+          "name": "RemainingCredit",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "已分配的总额度",
+          "example": "34532.2341",
+          "member": "float",
+          "name": "TotalCredit",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "AllocateCustomerCreditRequest": {
       "document": "AllocateCustomerCredit请求参数结构体",

@@ -6,13 +6,13 @@ Input:
 
 ```
 tccli tcmpp CreateMNP --cli-unfold-argument  \
-    --MNPType abc \
-    --MNPName abc \
-    --MNPIcon abc \
-    --MNPIntro abc \
-    --MNPDesc abc \
-    --PlatformId abc \
-    --TeamId abc
+    --PlatformId T02245JR9111721GKOI \
+    --TeamId 6519624807 \
+    --MNPName apiminiprogram \
+    --MNPType Life Service->144_Lilliputian Services \
+    --MNPIntro api create mini program \
+    --MNPDesc api create mini program \
+    --MNPIcon https://127.0.0.1/console/20240812101023-f1ae758593.jpeg
 ```
 
 Output: 
@@ -20,9 +20,9 @@ Output:
 {
     "Response": {
         "Data": {
-            "ResourceId": "abc"
+            "ResourceId": "mp1mkdcf53ob2h8m"
         },
-        "RequestId": "abc"
+        "RequestId": "e5b444cb698246b6852bd980114ca151"
     }
 }
 ```

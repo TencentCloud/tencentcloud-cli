@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli tcmpp CreatePlatformAudit --cli-unfold-argument  \
-    --MNPVersionId 0 \
-    --ApplyAction abc \
-    --PlatformId abc
+    --PlatformId T02245JR9111721GKOI \
+    --MNPVersionId 2494 \
+    --ApplyAction submit
 ```
 
 Output: 
@@ -18,7 +18,7 @@ Output:
         "Data": {
             "Result": true
         },
-        "RequestId": "abc"
+        "RequestId": "ed62f5b57d62459eb9c0cff331ad7b22"
     }
 }
 ```

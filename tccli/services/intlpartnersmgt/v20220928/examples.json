@@ -1,5 +1,13 @@
 {
   "actions": {
+    "AllocateCreditPool": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: intlpartnersmgt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AllocateCreditPool\n<公共请求参数>\n\n{\n    \"SubAgentUin\": 23427433726,\n    \"Credit\": 234.345\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCredit\": 345365,\n        \"RemainingCredit\": 3214.345,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "分配信用池"
+      }
+    ],
     "AllocateCustomerCredit": [
       {
         "document": "",

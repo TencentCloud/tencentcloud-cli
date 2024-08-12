@@ -1,120 +1,26 @@
 # 本版本更新包含以下内容：
 
-## 大模型图像创作引擎(aiart) 版本：2022-12-29
-
-### 第 11 次发布
-
-发布时间：2024-08-12 01:07:13
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [ReplaceBackground](http://document.tencentcloudapi.woa.com/document/product/1728/84198)
-
-	* 新增入参：Product
-
-
-
-
-## 日志服务(cls) 版本：2020-10-16
-
-### 第 82 次发布
-
-发布时间：2024-08-12 01:11:22
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [SearchLog](http://document.tencentcloudapi.woa.com/document/product/614/56447)
-
-	* 新增入参：Offset
-
-
-
-
 ## 主机安全(cwp) 版本：2018-02-28
 
-### 第 94 次发布
+### 第 95 次发布
 
-发布时间：2024-08-12 01:12:19
+发布时间：2024-08-13 01:33:26
 
 本次发布包含了以下内容：
 
 改善已有的文档。
-
-新增接口：
-
-* [ModifyReverseShellRulesAggregation](http://document.tencentcloudapi.woa.com/document/product/296/84541)
 
 <font color="#dd0000">**预下线接口**：</font>
 
-* CreateCloudProtectServiceOrderRecord
+* DescribeCloudProtectServiceOrderList
 
 
 
-## 弹性 MapReduce(emr) 版本：2019-01-03
+## Elasticsearch Service(es) 版本：2018-04-16
 
-### 第 58 次发布
+### 第 68 次发布
 
-发布时间：2024-08-12 01:15:50
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [DescribeServiceNodeInfos](http://document.tencentcloudapi.woa.com/document/product/589/84544)
-* [DescribeYarnScheduleHistory](http://document.tencentcloudapi.woa.com/document/product/589/84543)
-* [ModifyYarnDeploy](http://document.tencentcloudapi.woa.com/document/product/589/84542)
-
-新增数据结构：
-
-* [HealthStatus](http://document.tencentcloudapi.woa.com/document/product/589/33981#HealthStatus)
-* [OrderPair](http://document.tencentcloudapi.woa.com/document/product/589/33981#OrderPair)
-* [RestartPolicy](http://document.tencentcloudapi.woa.com/document/product/589/33981#RestartPolicy)
-* [SchedulerTaskDetail](http://document.tencentcloudapi.woa.com/document/product/589/33981#SchedulerTaskDetail)
-* [SchedulerTaskInfo](http://document.tencentcloudapi.woa.com/document/product/589/33981#SchedulerTaskInfo)
-* [ServiceNodeDetailInfo](http://document.tencentcloudapi.woa.com/document/product/589/33981#ServiceNodeDetailInfo)
-* [ServiceProcessFunctionInfo](http://document.tencentcloudapi.woa.com/document/product/589/33981#ServiceProcessFunctionInfo)
-
-
-
-## 智能媒资托管(smh) 版本：2021-07-12
-
-### 第 2 次发布
-
-发布时间：2024-08-12 01:22:16
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [CreateUser](http://document.tencentcloudapi.woa.com/document/product/1689/84549)
-* [CreateUserLifecycle](http://document.tencentcloudapi.woa.com/document/product/1689/84548)
-* [DeleteUser](http://document.tencentcloudapi.woa.com/document/product/1689/84547)
-* [DescribeUserLifecycle](http://document.tencentcloudapi.woa.com/document/product/1689/84546)
-* [ModifyUser](http://document.tencentcloudapi.woa.com/document/product/1689/84545)
-
-新增数据结构：
-
-* [UserFilter](http://document.tencentcloudapi.woa.com/document/product/1689/79772#UserFilter)
-
-
-
-## SSL 证书(ssl) 版本：2019-12-05
-
-### 第 65 次发布
-
-发布时间：2024-08-12 01:22:52
+发布时间：2024-08-13 01:50:50
 
 本次发布包含了以下内容：
 
@@ -122,46 +28,73 @@
 
 修改接口：
 
-* [CreateCSR](http://document.tencentcloudapi.woa.com/document/product/400/81789)
+* [DescribeServerlessSpaceUser](http://document.tencentcloudapi.woa.com/document/product/845/83425)
 
-	* 新增入参：Tags
-
-
-
-
-## 腾讯云安灯(tandon) 版本：2023-01-04
-
-### 第 4 次发布
-
-发布时间：2024-08-12 01:23:19
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [CreateConversation](http://document.tencentcloudapi.woa.com/document/product/1769/84550)
+	* 新增入参：IsInnerProduct
 
 
 
-## 实时音视频(trtc) 版本：2019-07-22
 
-### 第 64 次发布
+## 智能全局流量管理(igtm) 版本：2023-10-24
 
-发布时间：2024-08-12 01:26:10
+### 第 8 次发布
+
+发布时间：2024-08-13 01:58:34
 
 本次发布包含了以下内容：
 
 改善已有的文档。
-
-新增接口：
-
-* [UpdateStreamIngest](http://document.tencentcloudapi.woa.com/document/product/647/84551)
 
 修改数据结构：
 
-* [RecognizeConfig](http://document.tencentcloudapi.woa.com/document/product/647/44055#RecognizeConfig)
+* [Strategy](http://document.tencentcloudapi.woa.com/document/product/1696/83274#Strategy)
+
+	* 新增成员：ActivateMainPoolId, ActivateLevel
+
+
+
+
+## 智能全局流量管理(igtm) 版本：2021-09-07
+
+
+
+## 国际合作伙伴管理(intlpartnersmgt) 版本：2022-09-28
+
+### 第 15 次发布
+
+发布时间：2024-08-13 01:58:56
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [AllocateCreditPool](http://document.tencentcloudapi.woa.com/document/product/1724/84552)
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 148 次发布
+
+发布时间：2024-08-13 02:46:06
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [CCN](http://document.tencentcloudapi.woa.com/document/product/215/15824#CCN)
+
+	* 新增成员：Ipv6Flag
+
+* [CcnRoute](http://document.tencentcloudapi.woa.com/document/product/215/15824#CcnRoute)
+
+	* 新增成员：AliasType, AliasInstanceId
+
+	* <font color="#dd0000">**修改成员**：</font>RouteId
 
 
 
@@ -31514,6 +31447,18 @@
 
 ## 主机安全(cwp) 版本：2018-02-28
 
+### 第 95 次发布
+
+发布时间：2024-08-13 01:33:26
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* DescribeCloudProtectServiceOrderList
+
 ### 第 94 次发布
 
 发布时间：2024-08-12 01:12:19
@@ -31524,7 +31469,7 @@
 
 新增接口：
 
-* [[ModifyReverseShellRulesAggregation](http://document.tencentcloudapi.woa.com/document/product/296/84541)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [ModifyReverseShellRulesAggregation](http://document.tencentcloudapi.woa.com/document/product/296/84541)
 
 <font color="#dd0000">**预下线接口**：</font>
 
@@ -45490,19 +45435,19 @@
 
 新增接口：
 
-* [[DescribeServiceNodeInfos](http://document.tencentcloudapi.woa.com/document/product/589/84544)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeYarnScheduleHistory](http://document.tencentcloudapi.woa.com/document/product/589/84543)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ModifyYarnDeploy](http://document.tencentcloudapi.woa.com/document/product/589/84542)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeServiceNodeInfos](http://document.tencentcloudapi.woa.com/document/product/589/84544)
+* [DescribeYarnScheduleHistory](http://document.tencentcloudapi.woa.com/document/product/589/84543)
+* [ModifyYarnDeploy](http://document.tencentcloudapi.woa.com/document/product/589/84542)
 
 新增数据结构：
 
-* [[HealthStatus](http://document.tencentcloudapi.woa.com/document/product/589/33981#HealthStatus)](http://document.tencentcloudapi.woa.com/document/product/589/33981#[HealthStatus](http://document.tencentcloudapi.woa.com/document/product/589/33981#HealthStatus))
-* [[OrderPair](http://document.tencentcloudapi.woa.com/document/product/589/33981#OrderPair)](http://document.tencentcloudapi.woa.com/document/product/589/33981#[OrderPair](http://document.tencentcloudapi.woa.com/document/product/589/33981#OrderPair))
-* [[RestartPolicy](http://document.tencentcloudapi.woa.com/document/product/589/33981#RestartPolicy)](http://document.tencentcloudapi.woa.com/document/product/589/33981#[RestartPolicy](http://document.tencentcloudapi.woa.com/document/product/589/33981#RestartPolicy))
-* [[SchedulerTaskDetail](http://document.tencentcloudapi.woa.com/document/product/589/33981#SchedulerTaskDetail)](http://document.tencentcloudapi.woa.com/document/product/589/33981#[SchedulerTaskDetail](http://document.tencentcloudapi.woa.com/document/product/589/33981#SchedulerTaskDetail))
-* [[SchedulerTaskInfo](http://document.tencentcloudapi.woa.com/document/product/589/33981#SchedulerTaskInfo)](http://document.tencentcloudapi.woa.com/document/product/589/33981#[SchedulerTaskInfo](http://document.tencentcloudapi.woa.com/document/product/589/33981#SchedulerTaskInfo))
-* [[ServiceNodeDetailInfo](http://document.tencentcloudapi.woa.com/document/product/589/33981#ServiceNodeDetailInfo)](http://document.tencentcloudapi.woa.com/document/product/589/33981#[ServiceNodeDetailInfo](http://document.tencentcloudapi.woa.com/document/product/589/33981#ServiceNodeDetailInfo))
-* [[ServiceProcessFunctionInfo](http://document.tencentcloudapi.woa.com/document/product/589/33981#ServiceProcessFunctionInfo)](http://document.tencentcloudapi.woa.com/document/product/589/33981#[ServiceProcessFunctionInfo](http://document.tencentcloudapi.woa.com/document/product/589/33981#ServiceProcessFunctionInfo))
+* [HealthStatus](http://document.tencentcloudapi.woa.com/document/product/589/33981#HealthStatus)
+* [OrderPair](http://document.tencentcloudapi.woa.com/document/product/589/33981#OrderPair)
+* [RestartPolicy](http://document.tencentcloudapi.woa.com/document/product/589/33981#RestartPolicy)
+* [SchedulerTaskDetail](http://document.tencentcloudapi.woa.com/document/product/589/33981#SchedulerTaskDetail)
+* [SchedulerTaskInfo](http://document.tencentcloudapi.woa.com/document/product/589/33981#SchedulerTaskInfo)
+* [ServiceNodeDetailInfo](http://document.tencentcloudapi.woa.com/document/product/589/33981#ServiceNodeDetailInfo)
+* [ServiceProcessFunctionInfo](http://document.tencentcloudapi.woa.com/document/product/589/33981#ServiceProcessFunctionInfo)
 
 ### 第 57 次发布
 
@@ -46825,6 +46770,21 @@
 
 
 ## Elasticsearch Service(es) 版本：2018-04-16
+
+### 第 68 次发布
+
+发布时间：2024-08-13 01:50:50
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeServerlessSpaceUser](http://document.tencentcloudapi.woa.com/document/product/845/83425)
+
+	* 新增入参：IsInnerProduct
+
 
 ### 第 67 次发布
 
@@ -57573,6 +57533,21 @@
 
 ## 智能全局流量管理(igtm) 版本：2023-10-24
 
+### 第 8 次发布
+
+发布时间：2024-08-13 01:58:34
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Strategy](http://document.tencentcloudapi.woa.com/document/product/1696/83274#Strategy)
+
+	* 新增成员：ActivateMainPoolId, ActivateLevel
+
+
 ### 第 7 次发布
 
 发布时间：2024-06-28 01:18:45
@@ -57988,6 +57963,18 @@
 
 
 ## 国际合作伙伴管理(intlpartnersmgt) 版本：2022-09-28
+
+### 第 15 次发布
+
+发布时间：2024-08-13 01:58:56
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[AllocateCreditPool](http://document.tencentcloudapi.woa.com/document/product/1724/84552)](http://document.tencentcloudapi.woa.com/document/product/#/#)
 
 ### 第 14 次发布
 
@@ -82004,15 +81991,15 @@
 
 新增接口：
 
-* [[CreateUser](http://document.tencentcloudapi.woa.com/document/product/1689/84549)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[CreateUserLifecycle](http://document.tencentcloudapi.woa.com/document/product/1689/84548)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DeleteUser](http://document.tencentcloudapi.woa.com/document/product/1689/84547)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeUserLifecycle](http://document.tencentcloudapi.woa.com/document/product/1689/84546)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ModifyUser](http://document.tencentcloudapi.woa.com/document/product/1689/84545)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [CreateUser](http://document.tencentcloudapi.woa.com/document/product/1689/84549)
+* [CreateUserLifecycle](http://document.tencentcloudapi.woa.com/document/product/1689/84548)
+* [DeleteUser](http://document.tencentcloudapi.woa.com/document/product/1689/84547)
+* [DescribeUserLifecycle](http://document.tencentcloudapi.woa.com/document/product/1689/84546)
+* [ModifyUser](http://document.tencentcloudapi.woa.com/document/product/1689/84545)
 
 新增数据结构：
 
-* [[UserFilter](http://document.tencentcloudapi.woa.com/document/product/1689/79772#UserFilter)](http://document.tencentcloudapi.woa.com/document/product/1689/79772#[UserFilter](http://document.tencentcloudapi.woa.com/document/product/1689/79772#UserFilter))
+* [UserFilter](http://document.tencentcloudapi.woa.com/document/product/1689/79772#UserFilter)
 
 ### 第 1 次发布
 
@@ -86334,7 +86321,7 @@
 
 新增接口：
 
-* [[CreateConversation](http://document.tencentcloudapi.woa.com/document/product/1769/84550)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [CreateConversation](http://document.tencentcloudapi.woa.com/document/product/1769/84550)
 
 ### 第 3 次发布
 
@@ -101749,7 +101736,7 @@
 
 新增接口：
 
-* [[UpdateStreamIngest](http://document.tencentcloudapi.woa.com/document/product/647/84551)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [UpdateStreamIngest](http://document.tencentcloudapi.woa.com/document/product/647/84551)
 
 修改数据结构：
 
@@ -108971,6 +108958,27 @@
 
 
 ## 私有网络(vpc) 版本：2017-03-12
+
+### 第 148 次发布
+
+发布时间：2024-08-13 02:46:06
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [CCN](http://document.tencentcloudapi.woa.com/document/product/215/15824#CCN)
+
+	* 新增成员：Ipv6Flag
+
+* [CcnRoute](http://document.tencentcloudapi.woa.com/document/product/215/15824#CcnRoute)
+
+	* 新增成员：AliasType, AliasInstanceId
+
+	* <font color="#dd0000">**修改成员**：</font>RouteId
+
 
 ### 第 147 次发布
 

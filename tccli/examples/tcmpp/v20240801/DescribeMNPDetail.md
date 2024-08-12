@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tcmpp DescribeMNPDetail --cli-unfold-argument  \
-    --MNPId abc \
-    --PlatformId abc
+    --PlatformId T02245JR9111721GKOI \
+    --MNPId mp1mkdcf53ob2h8m
 ```
 
 Output: 
@@ -15,26 +15,20 @@ Output:
 {
     "Response": {
         "Data": {
-            "MNPType": "abc",
-            "MNPId": "abc",
-            "MNPName": "abc",
-            "MNPIcon": "abc",
-            "MNPIntro": "abc",
-            "MNPDesc": "abc",
-            "CreateUser": "abc",
-            "CreateTime": 0,
+            "MNPType": "Life Service->Lilliputian Services",
+            "MNPName": "apiminiprogram",
+            "MNPId": "mp1mkdcf53ob2h8m",
+            "MNPIcon": "https://127.0.0.1/console/20240812101023-f1ae758593.jpeg",
+            "MNPIntro": "api create mini program",
+            "MNPDesc": "api create mini program",
+            "Tags": null,
+            "CreateUser": "murphypeng_mini",
+            "CreateTime": 1723428625,
             "OnlineStatus": 0,
-            "Applications": [
-                {
-                    "ApplicationId": "abc",
-                    "ApplicationName": "abc"
-                }
-            ],
-            "Tags": [
-                "abc"
-            ]
+            "Applications": null,
+            "Status": 0
         },
-        "RequestId": "abc"
+        "RequestId": "fc8c9245e37b49d3911ed0b38336c232"
     }
 }
 ```

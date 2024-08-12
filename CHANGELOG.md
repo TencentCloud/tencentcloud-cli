@@ -1,3 +1,104 @@
+# Release 3.0.1053.1
+
+## 主机安全(cwp) 版本：2018-02-28
+
+### 第 95 次发布
+
+发布时间：2024-08-13 01:33:26
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* DescribeCloudProtectServiceOrderList
+
+
+
+## Elasticsearch Service(es) 版本：2018-04-16
+
+### 第 68 次发布
+
+发布时间：2024-08-13 01:50:50
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeServerlessSpaceUser](http://document.tencentcloudapi.woa.com/document/product/845/83425)
+
+	* 新增入参：IsInnerProduct
+
+
+
+
+## 智能全局流量管理(igtm) 版本：2023-10-24
+
+### 第 8 次发布
+
+发布时间：2024-08-13 01:58:34
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Strategy](http://document.tencentcloudapi.woa.com/document/product/1696/83274#Strategy)
+
+	* 新增成员：ActivateMainPoolId, ActivateLevel
+
+
+
+
+## 智能全局流量管理(igtm) 版本：2021-09-07
+
+
+
+## 国际合作伙伴管理(intlpartnersmgt) 版本：2022-09-28
+
+### 第 15 次发布
+
+发布时间：2024-08-13 01:58:56
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [AllocateCreditPool](http://document.tencentcloudapi.woa.com/document/product/1724/84552)
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 148 次发布
+
+发布时间：2024-08-13 02:46:06
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [CCN](http://document.tencentcloudapi.woa.com/document/product/215/15824#CCN)
+
+	* 新增成员：Ipv6Flag
+
+* [CcnRoute](http://document.tencentcloudapi.woa.com/document/product/215/15824#CcnRoute)
+
+	* 新增成员：AliasType, AliasInstanceId
+
+	* <font color="#dd0000">**修改成员**：</font>RouteId
+
+
+
+
 # Release 3.0.1052.1
 
 ## 大模型图像创作引擎(aiart) 版本：2022-12-29

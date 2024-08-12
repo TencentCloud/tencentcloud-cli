@@ -1219,11 +1219,11 @@
       "status": "online"
     },
     "DescribeCloudProtectServiceOrderList": {
-      "document": "查询云护航服务订单列表",
+      "document": "云护航计费产品已下线\n\n查询云护航服务订单列表",
       "input": "DescribeCloudProtectServiceOrderListRequest",
       "name": "查询云护航服务订单列表",
       "output": "DescribeCloudProtectServiceOrderListResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeComponentStatistics": {
       "document": "本接口 (DescribeComponentStatistics) 用于获取组件统计列表数据。",

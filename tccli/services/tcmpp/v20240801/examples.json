@@ -27,8 +27,8 @@
     "CreateConsoleMNPVersionCompileTask": [
       {
         "document": "demo",
-        "input": "POST / HTTP/1.1\nHost: tcmpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateConsoleMNPVersionCompileTask\n<公共请求参数>\n\n{\n    \"MNPId\": \"abc\",\n    \"MNPVersion\": \"abc\",\n    \"FileUrl\": \"abc\",\n    \"FileInnerUrl\": \"abc\",\n    \"PlatformId\": \"abc\",\n    \"TaskType\": 0,\n    \"MNPVersionIntro\": \"abc\",\n    \"MNPVersionDesc\": \"abc\",\n    \"SourceType\": 0,\n    \"ReleaseChannel\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"TaskId\": \"abc\"\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tcmpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateConsoleMNPVersionCompileTask\n<公共请求参数>\n\n{\n    \"PlatformId\": \"T02245JR9111721GKOI\",\n    \"MNPId\": \"mp1mkdcf53ob2h8m\",\n    \"TaskType\": 2,\n    \"MNPVersion\": \"1.0.1\",\n    \"MNPVersionIntro\": \"console add version 1.0.1\",\n    \"MNPVersionDesc\": \"console add version 1.0.1\",\n    \"FileUrl\": \"https://127.0.0.1/T02245JR9111721GKOI/console/20240812103013-9e9153aa5d.zip\",\n    \"FileInnerUrl\": \"https://127.0.0.1/T02245JR9111721GKOI/console/20240812103013-9e9153aa5d.zip\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"TaskId\": \"2024081210302952548\",\n            \"RoomId\": \"\",\n            \"WSUrl\": \"wss://api.tcmpp-staging.tmfcloud.com:8082/ws\"\n        },\n        \"RequestId\": \"473e70538f1c4dafac52054480a6386a\"\n    }\n}",
         "title": "demo"
       }
     ],
@@ -51,24 +51,24 @@
     "CreateMNP": [
       {
         "document": "demo",
-        "input": "POST / HTTP/1.1\nHost: tcmpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMNP\n<公共请求参数>\n\n{\n    \"MNPType\": \"abc\",\n    \"MNPName\": \"abc\",\n    \"MNPIcon\": \"abc\",\n    \"MNPIntro\": \"abc\",\n    \"MNPDesc\": \"abc\",\n    \"PlatformId\": \"abc\",\n    \"TeamId\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ResourceId\": \"abc\"\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tcmpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMNP\n<公共请求参数>\n\n{\n    \"PlatformId\": \"T02245JR9111721GKOI\",\n    \"TeamId\": \"6519624807\",\n    \"MNPName\": \"apiminiprogram\",\n    \"MNPType\": \"Life Service->144_Lilliputian Services\",\n    \"MNPIntro\": \"api create mini program\",\n    \"MNPDesc\": \"api create mini program\",\n    \"MNPIcon\": \"https://127.0.0.1/console/20240812101023-f1ae758593.jpeg\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ResourceId\": \"mp1mkdcf53ob2h8m\"\n        },\n        \"RequestId\": \"e5b444cb698246b6852bd980114ca151\"\n    }\n}",
         "title": "demo"
       }
     ],
     "CreateOnlineApply": [
       {
         "document": "demo",
-        "input": "POST / HTTP/1.1\nHost: tcmpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOnlineApply\n<公共请求参数>\n\n{\n    \"MNPVersionId\": 0,\n    \"PlatformId\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Result\": true\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tcmpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOnlineApply\n<公共请求参数>\n\n{\n    \"PlatformId\": \"T02245JR9111721GKOI\",\n    \"MNPVersionId\": 2494\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Result\": true\n        },\n        \"RequestId\": \"40cd417a996d4ff296702872c49e1b83\"\n    }\n}",
         "title": "demo"
       }
     ],
     "CreatePlatformAudit": [
       {
         "document": "demo",
-        "input": "POST / HTTP/1.1\nHost: tcmpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePlatformAudit\n<公共请求参数>\n\n{\n    \"MNPVersionId\": 0,\n    \"ApplyAction\": \"abc\",\n    \"PlatformId\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Result\": true\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tcmpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePlatformAudit\n<公共请求参数>\n\n{\n    \"PlatformId\": \"T02245JR9111721GKOI\",\n    \"MNPVersionId\": 2494,\n    \"ApplyAction\": \"submit\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Result\": true\n        },\n        \"RequestId\": \"ed62f5b57d62459eb9c0cff331ad7b22\"\n    }\n}",
         "title": "demo"
       }
     ],
@@ -211,8 +211,8 @@
     "DescribeConsoleMNPVersionCompileTask": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tcmpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConsoleMNPVersionCompileTask\n<公共请求参数>\n\n{\n    \"BusinessId\": \"abc\",\n    \"PlatformId\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"MNPId\": \"abc\",\n            \"TaskId\": \"abc\",\n            \"TaskStatus\": 0,\n            \"TaskMsg\": \"abc\",\n            \"QrCodeUrl\": \"abc\",\n            \"PkgSize\": 0,\n            \"SubPkgInfos\": [\n                {\n                    \"PkgName\": \"abc\",\n                    \"PathPrefix\": \"abc\",\n                    \"PkgSize\": 0\n                }\n            ],\n            \"QrCodeContent\": \"abc\",\n            \"ExtInfo\": {\n                \"TCMPPErrMsg\": \"abc\",\n                \"WXErrMsg\": \"abc\",\n                \"WXQrCode\": \"abc\",\n                \"SizeInfo\": \"abc\"\n            }\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tcmpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConsoleMNPVersionCompileTask\n<公共请求参数>\n\n{\n    \"PlatformId\": \"T02245JR9111721GKOI\",\n    \"BusinessId\": \"2024081210302952548\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"MNPId\": \"mp1mkdcf53ob2h8m\",\n            \"TaskId\": \"2024081210302952548\",\n            \"TaskStatus\": 60,\n            \"TaskMsg\": \"Success\",\n            \"QrCodeUrl\": \"https://127.0.0.1/T02245JR9111721GKOI/mpp/mp1mkdcf53ob2h8m-1.0.1-1723429831031.png\",\n            \"QrCodeContent\": \"tcmpp://applet/?appId=mp1mkdcf53ob2h8m&type=2&businessId=4q46grhbm8oannl2i6&timestamp=1723429831\",\n            \"PkgSize\": 31296,\n            \"SubPkgInfos\": [\n                {\n                    \"PkgName\": \"__APP__\",\n                    \"PathPrefix\": \"__APP__\",\n                    \"PkgSize\": 31296\n                }\n            ],\n            \"ExtInfo\": {\n                \"TCMPPErrMsg\": \"\",\n                \"WXErrMsg\": \"\",\n                \"WXQrCode\": \"\",\n                \"SizeInfo\": \"{\\\"total\\\":13,\\\"subPackages\\\":null}\"\n            }\n        },\n        \"RequestId\": \"e95cd4436bd2417ba63638571e32b1dc\"\n    }\n}",
         "title": "demo"
       }
     ],
@@ -251,8 +251,8 @@
     "DescribeMNPDetail": [
       {
         "document": "demo",
-        "input": "POST / HTTP/1.1\nHost: tcmpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMNPDetail\n<公共请求参数>\n\n{\n    \"MNPId\": \"abc\",\n    \"PlatformId\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"MNPType\": \"abc\",\n            \"MNPId\": \"abc\",\n            \"MNPName\": \"abc\",\n            \"MNPIcon\": \"abc\",\n            \"MNPIntro\": \"abc\",\n            \"MNPDesc\": \"abc\",\n            \"CreateUser\": \"abc\",\n            \"CreateTime\": 0,\n            \"OnlineStatus\": 0,\n            \"Applications\": [\n                {\n                    \"ApplicationId\": \"abc\",\n                    \"ApplicationName\": \"abc\"\n                }\n            ],\n            \"Tags\": [\n                \"abc\"\n            ]\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tcmpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMNPDetail\n<公共请求参数>\n\n{\n    \"PlatformId\": \"T02245JR9111721GKOI\",\n    \"MNPId\": \"mp1mkdcf53ob2h8m\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"MNPType\": \"Life Service->Lilliputian Services\",\n            \"MNPName\": \"apiminiprogram\",\n            \"MNPId\": \"mp1mkdcf53ob2h8m\",\n            \"MNPIcon\": \"https://127.0.0.1/console/20240812101023-f1ae758593.jpeg\",\n            \"MNPIntro\": \"api create mini program\",\n            \"MNPDesc\": \"api create mini program\",\n            \"Tags\": null,\n            \"CreateUser\": \"murphypeng_mini\",\n            \"CreateTime\": 1723428625,\n            \"OnlineStatus\": 0,\n            \"Applications\": null,\n            \"Status\": 0\n        },\n        \"RequestId\": \"fc8c9245e37b49d3911ed0b38336c232\"\n    }\n}",
         "title": "demo"
       }
     ],
@@ -267,8 +267,8 @@
     "DescribeMNPManagerList": [
       {
         "document": "demo",
-        "input": "POST / HTTP/1.1\nHost: tcmpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMNPManagerList\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 0,\n    \"PlatformId\": \"abc\",\n    \"Keyword\": \"abc\",\n    \"TeamId\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"TotalCount\": 0,\n            \"DataList\": [\n                {\n                    \"MNPId\": \"abc\",\n                    \"MNPIcon\": \"abc\",\n                    \"MNPName\": \"abc\",\n                    \"TeamName\": \"abc\",\n                    \"AccessStatus\": 0\n                }\n            ]\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tcmpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMNPManagerList\n<公共请求参数>\n\n{\n    \"PlatformId\": \"T02245JR9111721GKOI\",\n    \"Keyword\": \"\",\n    \"TeamId\": \"6519624807\",\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"TotalCount\": 1,\n            \"DataList\": [\n                {\n                    \"MNPId\": \"mp1mkdcf53ob2h8m\",\n                    \"MNPName\": \"apiminiprogram\",\n                    \"MNPIcon\": \"https://127.0.0.1/console/20240812101023-f1ae758593.jpeg\",\n                    \"TeamName\": \"MiniApp\",\n                    \"AccessStatus\": 0,\n                    \"Status\": 0\n                }\n            ]\n        },\n        \"RequestId\": \"a25029ca836e4d33b085717b7107645a\"\n    }\n}",
         "title": "demo"
       }
     ],
@@ -523,8 +523,8 @@
     "ModifyPlatformAuditStatus": [
       {
         "document": "demo",
-        "input": "POST / HTTP/1.1\nHost: tcmpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPlatformAuditStatus\n<公共请求参数>\n\n{\n    \"AuditNo\": \"abc\",\n    \"AuditResult\": 0,\n    \"PlatformId\": \"abc\",\n    \"AuditNote\": \"abc\",\n    \"AuditItems\": [\n        {\n            \"ApplicationId\": \"abc\",\n            \"AuditStatus\": 0,\n            \"AuditNote\": \"abc\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Result\": true\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tcmpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPlatformAuditStatus\n<公共请求参数>\n\n{\n    \"PlatformId\": \"T02245JR9111721GKOI\",\n    \"AuditNo\": \"aud06ndxthykkw75l3\",\n    \"AuditNote\": \"\",\n    \"AuditResult\": 3,\n    \"AuditItems\": [\n        {\n            \"ApplicationId\": \"app-i8kxgprhks\",\n            \"AuditStatus\": 3,\n            \"AuditNote\": \"\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Result\": true\n        },\n        \"RequestId\": \"accd370371a14145bf44f269ec2fab03\"\n    }\n}",
         "title": "demo"
       }
     ],
