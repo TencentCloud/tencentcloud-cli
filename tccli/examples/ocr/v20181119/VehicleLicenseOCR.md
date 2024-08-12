@@ -58,6 +58,7 @@ Output:
         "FrontInfo": null,
         "BackInfo": {
             "PlateNo": "皖AC4L50",
+            "FuelType": "",
             "FileNo": "A00-00476807",
             "AllowNum": "5人",
             "TotalMass": "1837kg",
@@ -98,6 +99,7 @@ Output:
     "Response": {
         "FrontInfo": null,
         "BackInfo": {
+            "FuelType": "",
             "PlateNo": "皖AC4L50",
             "FileNo": "A00-00476807",
             "AllowNum": "5人",

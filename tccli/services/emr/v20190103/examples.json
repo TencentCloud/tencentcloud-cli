@@ -195,7 +195,7 @@
     "DescribeTrinoQueryInfo": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInsightList\n<公共请求参数>\n\n{\n    \"InstanceId\": \"emr-d82w3t9p\",\n    \"PageSize\": 10,\n    \"StartTime\": 1701792000,\n    \"EndTime\": 1701878399,\n    \"Page\": 1\n}",
+        "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTrinoQueryInfo\n<公共请求参数>\n\n{\n    \"InstanceId\": \"emr-d82w3t9p\",\n    \"PageSize\": 10,\n    \"StartTime\": 1701792000,\n    \"EndTime\": 1701878399,\n    \"Page\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"QueryInfoList\": [\n            {\n                \"Catalog\": \"hive\",\n                \"ClientIpAddr\": \"10.0.1.104\",\n                \"CompletedSplits\": \"\",\n                \"CpuTime\": 0,\n                \"CumulativeMemory\": 0,\n                \"DurationMillis\": 0,\n                \"EndTime\": 0,\n                \"Id\": \"20240708_111543_00007_lcmdbi8z\",\n                \"InternalNetworkBytes\": 0,\n                \"OutputBytes\": 0,\n                \"PeakUserMemoryBytes\": 0,\n                \"PhysicalInputBytes\": 0,\n                \"ProcessedInputBytes\": 0,\n                \"SqlCompileTime\": 0,\n                \"StartTime\": 0,\n                \"State\": \"QUEUED\",\n                \"Statement\": \"create table impala_ranger\",\n                \"User\": \"hadoop\",\n                \"WrittenBytes\": 0\n            }\n        ],\n        \"RequestId\": \"cfbbbe0f-5d30-4bf7-b87b-428b14ac3ws22\",\n        \"TotalCount\": 18\n    }\n}",
         "title": "获取trino查询结果"
       }

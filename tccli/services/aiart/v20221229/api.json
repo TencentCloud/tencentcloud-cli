@@ -31,7 +31,7 @@
     "QueryTextToImageProJob": {
       "document": "本接口已迁移至腾讯混元大模型-混元生图，即将停止此处维护，可切换至 [混元生图 API](https://cloud.tencent.com/document/product/1729/105970) 继续使用。\n文生图（高级版）接口基于高级版文生图大模型，将根据输入的文本描述，智能生成与之相关的结果图。分为提交任务和查询任务2个接口。\n提交任务：输入文本等，提交一个文生图（高级版）异步任务，获得任务 ID。\n查询任务：根据任务 ID 查询任务的处理状态、处理结果，任务处理完成后可获得生成图像结果。\n并发任务数（并发）说明：并发任务数指能同时处理的任务数量。文生图（高级版）默认提供1个并发任务数，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后才能开始处理下一个任务。",
       "input": "QueryTextToImageProJobRequest",
-      "name": "查询文生图（高级版）任务",
+      "name": "查询文生图（高级版）任务（即将下线）",
       "output": "QueryTextToImageProJobResponse",
       "status": "online"
     },
@@ -59,7 +59,7 @@
     "SubmitTextToImageProJob": {
       "document": "本接口已迁移至腾讯混元大模型-混元生图，即将停止此处维护，可切换至 [混元生图 API](https://cloud.tencent.com/document/product/1729/105969) 继续使用。\n文生图（高级版）接口基于高级版文生图大模型，将根据输入的文本描述，智能生成与之相关的结果图。分为提交任务和查询任务2个接口。\n提交任务：输入文本等，提交一个文生图（高级版）异步任务，获得任务 ID。\n查询任务：根据任务 ID 查询任务的处理状态、处理结果，任务处理完成后可获得生成图像结果。\n并发任务数（并发）说明：并发任务数指能同时处理的任务数量。文生图（高级版）默认提供1个并发任务数，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后才能开始处理下一个任务。",
       "input": "SubmitTextToImageProJobRequest",
-      "name": "提交文生图（高级版）任务",
+      "name": "提交文生图（高级版）任务（即将下线）",
       "output": "SubmitTextToImageProJobResponse",
       "status": "online"
     },
@@ -73,7 +73,7 @@
     "TextToImage": {
       "document": "**本接口已迁移至腾讯混元大模型-文生图轻量版，即将停止此处维护，可切换至 [文生图轻量版 API](https://cloud.tencent.com/document/product/1729/108738) 继续使用。**\n\n智能文生图接口基于文生图（标准版）模型，将根据输入的文本描述，智能生成与之相关的结果图。\n\n智能文生图默认提供3个并发任务数，代表最多能同时处理3个已提交的任务，上一个任务处理完毕后才能开始处理下一个任务。",
       "input": "TextToImageRequest",
-      "name": "智能文生图",
+      "name": "智能文生图（即将下线）",
       "output": "TextToImageResponse",
       "status": "online"
     },
@@ -221,7 +221,7 @@
         },
         {
           "disabled": false,
-          "document": "输入图 Base64 数据。\n算法将根据输入的图片，结合文本描述智能生成与之相关的图像。\nBase64 和 Url 必须提供一个，如果都提供以 Url 为准。\n图片限制：单边分辨率小于5000，转成 Base64 字符串后小于 6MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。",
+          "document": "输入图 Base64 数据。\nBase64 和 Url 必须提供一个，如果都提供以 Url 为准。\n图片限制：单边分辨率小于5000，转成 Base64 字符串后小于 6MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。",
           "example": "无",
           "member": "string",
           "name": "InputImage",
@@ -230,7 +230,7 @@
         },
         {
           "disabled": false,
-          "document": "输入图 Url。\n算法将根据输入的图片，结合文本描述智能生成与之相关的图像。\nBase64 和 Url 必须提供一个，如果都提供以 Url 为准。\n图片限制：单边分辨率小于5000，转成 Base64 字符串后小于 6MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。",
+          "document": "输入图 Url。\nBase64 和 Url 必须提供一个，如果都提供以 Url 为准。\n图片限制：单边分辨率小于5000，转成 Base64 字符串后小于 6MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。",
           "example": "无",
           "member": "string",
           "name": "InputUrl",
