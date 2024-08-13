@@ -672,6 +672,14 @@
         "title": "验证不通过"
       }
     ],
+    "CreateBatchInitOrganizationUrl": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBatchInitOrganizationUrl\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"ProxyOrganizationOpenId\": \"\",\n        \"AppId\": \"yDKHHUUckpacc9ijUuXGmVcuzACNH5pF\"\n    },\n    \"ProxyOrganizationOpenIds\": [\n        \"tencent-testorg-cd\",\n        \"tencent-testorg-ca\",\n        \"tencent-testorg-zhangy\",\n        \"tencent-testorg-tianjing\",\n        \"tencent-testorg-hongkong\"\n    ],\n    \"OperateTypes\": [\n        \"OPEN_AUTO_SIGN\",\n        \"CREATE_SEAL\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"MiniAppPath\": \"pages/guide/index?to=BATCH_INITIALIZATION_ORGANIZATIONS&shortKey=yDAHpURDfyLc5LgBhXb6\",\n        \"OperateLongUrl\": \"https://res.ess.tencent.cn/cdn/h5-activity-dev/jump-mp.html?to=BATCH_INITIALIZATION_ORGANIZATIONS&shortKey=yDCHpURDfyLc5LgBhXb6\",\n        \"OperateShortUrl\": \"https://essurl.cn/zahbUBHxW3\",\n        \"QRCodeUrl\": \"https://dyn.ess.tencent.cn/imgs/qrcode_urls/batch_initialization_organizations/yDCHHUUckpacc9ijUuXGmVcuzZCNH5pF.png\",\n        \"RequestId\": \"s1723520103899037060\"\n    }\n}",
+        "title": "创建批量操作企业初始化链接"
+      }
+    ],
     "CreateBatchOrganizationRegistrationTasks": [
       {
         "document": "用户同时创建3个企业， 创建链接成功",

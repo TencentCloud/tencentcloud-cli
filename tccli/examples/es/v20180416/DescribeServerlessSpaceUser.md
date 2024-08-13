@@ -27,7 +27,8 @@ Output:
                 "IndicesScope": [
                     "abc"
                 ],
-                "PrivilegeType": 0
+                "PrivilegeType": 0,
+                "UserType": 0
             }
         ],
         "TotalCount": 0,

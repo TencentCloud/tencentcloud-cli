@@ -7,6 +7,13 @@
       "output": "CancelBackupJobResponse",
       "status": "online"
     },
+    "CopyTableDatas": {
+      "document": "复制源端表到目标表",
+      "input": "CopyTableDatasRequest",
+      "name": "复制表",
+      "output": "CopyTableDatasResponse",
+      "status": "online"
+    },
     "CreateBackUpSchedule": {
       "document": "创建或者修改备份策略",
       "input": "CreateBackUpScheduleRequest",
@@ -14,11 +21,25 @@
       "output": "CreateBackUpScheduleResponse",
       "status": "online"
     },
+    "CreateDatabase": {
+      "document": "创建一个TCHouse-D库",
+      "input": "CreateDatabaseRequest",
+      "name": "创建库",
+      "output": "CreateDatabaseResponse",
+      "status": "online"
+    },
     "CreateInstanceNew": {
       "document": "通过API创建集群",
       "input": "CreateInstanceNewRequest",
       "name": "集群创建",
       "output": "CreateInstanceNewResponse",
+      "status": "online"
+    },
+    "CreateTable": {
+      "document": "在指定库下创建一个TCHouse-D表",
+      "input": "CreateTableRequest",
+      "name": "创建表",
+      "output": "CreateTableResponse",
       "status": "online"
     },
     "CreateWorkloadGroup": {
@@ -33,6 +54,13 @@
       "input": "DeleteBackUpDataRequest",
       "name": "删除备份数据",
       "output": "DeleteBackUpDataResponse",
+      "status": "online"
+    },
+    "DeleteTable": {
+      "document": "删除指定库下的指定表",
+      "input": "DeleteTableRequest",
+      "name": "删除指定库下的表",
+      "output": "DeleteTableResponse",
       "status": "online"
     },
     "DeleteWorkloadGroup": {
@@ -96,6 +124,20 @@
       "input": "DescribeClusterConfigsHistoryRequest",
       "name": "获取集群配置文件修改历史",
       "output": "DescribeClusterConfigsHistoryResponse",
+      "status": "online"
+    },
+    "DescribeCreateTablesDDL": {
+      "document": "批量获取建表DDL",
+      "input": "DescribeCreateTablesDDLRequest",
+      "name": "获取建表DDL",
+      "output": "DescribeCreateTablesDDLResponse",
+      "status": "online"
+    },
+    "DescribeDatabase": {
+      "document": "获取某个数据源下的库信息",
+      "input": "DescribeDatabaseRequest",
+      "name": "获取数据库信息",
+      "output": "DescribeDatabaseResponse",
       "status": "online"
     },
     "DescribeDatabaseAuditDownload": {
@@ -182,6 +224,13 @@
       "output": "DescribeInstanceNodesRoleResponse",
       "status": "online"
     },
+    "DescribeInstanceOperationHistory": {
+      "document": "拉取该集群的操作列表。此接口支持分页查询，并可按时间范围筛选操作记录",
+      "input": "DescribeInstanceOperationHistoryRequest",
+      "name": "查询doris集群操作日志",
+      "output": "DescribeInstanceOperationHistoryResponse",
+      "status": "online"
+    },
     "DescribeInstanceOperations": {
       "document": "在集群详情页面，拉取该集群的操作",
       "input": "DescribeInstanceOperationsRequest",
@@ -266,6 +315,20 @@
       "output": "DescribeSqlApisResponse",
       "status": "online"
     },
+    "DescribeTable": {
+      "document": "可通过此接口获取表信息，仅支持查询 TCHouse-D 内部 catalog 中的表信息",
+      "input": "DescribeTableRequest",
+      "name": "获取表信息",
+      "output": "DescribeTableResponse",
+      "status": "online"
+    },
+    "DescribeTableList": {
+      "document": "获取指定数据源和库下的表列表",
+      "input": "DescribeTableListRequest",
+      "name": "获取表列表",
+      "output": "DescribeTableListResponse",
+      "status": "online"
+    },
     "DescribeUserBindWorkloadGroup": {
       "document": "获取当前集群各用户绑定的资源信息",
       "input": "DescribeUserBindWorkloadGroupRequest",
@@ -294,11 +357,39 @@
       "output": "DestroyInstanceResponse",
       "status": "online"
     },
+    "ExecuteParametrizedQuery": {
+      "document": "执行一个带参数的SQL查询语句，并返回查询结果",
+      "input": "ExecuteParametrizedQueryRequest",
+      "name": "带参数的sql查询",
+      "output": "ExecuteParametrizedQueryResponse",
+      "status": "online"
+    },
+    "ExecuteSelectQuery": {
+      "document": "根据指定的数据库和表名，查询数据，并支持字段选择和分页",
+      "input": "ExecuteSelectQueryRequest",
+      "name": "执行sql查询",
+      "output": "ExecuteSelectQueryResponse",
+      "status": "online"
+    },
     "FitClsLog": {
       "document": "给已存在集群，配置日志服务",
       "input": "FitClsLogRequest",
       "name": "新增日志服务接口",
       "output": "FitClsLogResponse",
+      "status": "online"
+    },
+    "InsertDatasToTable": {
+      "document": "用于腾讯云数据仓库TCHouse-D插入数据的API接口",
+      "input": "InsertDatasToTableRequest",
+      "name": "插入数据",
+      "output": "InsertDatasToTableResponse",
+      "status": "online"
+    },
+    "ModifyDatabaseTableAccess": {
+      "document": "用于对Doris数据库中的库表进行授权（GRANT）和取消授权（REVOKE）",
+      "input": "ModifyDatabaseTableAccessRequest",
+      "name": "修改库表权限",
+      "output": "ModifyDatabaseTableAccessResponse",
       "status": "online"
     },
     "ModifyInstance": {
@@ -364,6 +455,13 @@
       "output": "OpenBackUpResponse",
       "status": "online"
     },
+    "QueryTableData": {
+      "document": "根据指定的数据库和表名，查询数据，并支持字段选择和分页",
+      "input": "QueryTableDataRequest",
+      "name": "查询表数据",
+      "output": "QueryTableDataResponse",
+      "status": "online"
+    },
     "RecoverBackUpJob": {
       "document": "备份恢复",
       "input": "RecoverBackUpJobRequest",
@@ -411,6 +509,20 @@
       "input": "ScaleUpInstanceRequest",
       "name": "计算资源垂直变配",
       "output": "ScaleUpInstanceResponse",
+      "status": "online"
+    },
+    "UpdateDatabase": {
+      "document": "用于修改指定数据库的属性，包括设置数据量配额、重命名数据库、设置副本数量配额和修改数据库的其他属性。",
+      "input": "UpdateDatabaseRequest",
+      "name": "更新数据库",
+      "output": "UpdateDatabaseResponse",
+      "status": "online"
+    },
+    "UpdateTableSchema": {
+      "document": "用于修改指定表的属性，接口参数与创建表的一致。",
+      "input": "UpdateTableSchemaRequest",
+      "name": "修改表属性",
+      "output": "UpdateTableSchemaResponse",
       "status": "online"
     }
   },
@@ -1204,6 +1316,122 @@
       ],
       "usage": "out"
     },
+    "Column": {
+      "document": "表的列信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "列名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "name",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "列类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "string",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "聚合类型，表为聚合模型（AGG_KEY）时，设置了聚合类型的列为指标列，其他列为维度列。 聚合类型： ●SUM：求和，多行的 Value 进行累加。 ●REPLACE：替代，下一批数据中的 Value 会替换之前导入过的行中的 Value。 ●MAX：保留最大值。\n ●MIN：保留最小值。 ●REPLACE_IF_NOT_NULL：非空值替换。和 REPLACE 的区别在于对于 null 值，不做替换。 ●HLL_UNION：HLL 类型的列的聚合方式，通过 HyperLogLog 算法聚合。 ●BITMAP_UNION：BIMTAP 类型的列的聚合方式，进行位图的并集聚合。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "MIN",
+          "member": "string",
+          "name": "AggType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "该列值是否允许为Null\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "IsNull",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否为Key列。不同数据模型的含义：\n●DUP_KEY：其后指定的列为排序列。\n●AGG_KEY：其后指定的列为维度列。\n●UNI_KEY：其后指定的列为主键列。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsKey",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "列的默认值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "bob",
+          "member": "string",
+          "name": "DefaultValue",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否为分区列。分区列必须是Key列\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsPartition",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否为分桶列。聚合模型和主键模型的分桶列必须是Key列，明细模型的分桶列可以是任意列。\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "IsDistribution",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否为自增列。TCHouse-D 2.1版本之后支持\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "AutoInc",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "列描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "用户名称",
+          "member": "string",
+          "name": "Comment",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "ConfigKeyValue": {
       "document": "返回配置的文件内容（key-value）",
       "members": [
@@ -1259,6 +1487,106 @@
         }
       ],
       "usage": "out"
+    },
+    "CopyTableDatasRequest": {
+      "document": "CopyTableDatas请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源ID，建表所用的TCHouse-D资源ID。",
+          "example": "cdwdoris-bjizjxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "源端表所在的库名",
+          "example": "sourceDB",
+          "member": "string",
+          "name": "CopiedFromDb",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "源端表名",
+          "example": "sourceTable",
+          "member": "string",
+          "name": "CopiedFromTable",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "目标表所在的库名",
+          "example": "targetDB",
+          "member": "string",
+          "name": "CopyToDb",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "目标表名，如果该表已存在，则要保证和源端表相同的表结构",
+          "example": "targetTable",
+          "member": "string",
+          "name": "CopyToTable",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "使用该用户进行操作，该用户需要有对应的权限。如果该TCHouse-D集群使用CAM用户注册内核账户，则不需要填写",
+          "example": "user",
+          "member": "string",
+          "name": "UserName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户对应的密码。如果该TCHouse-D集群使用CAM用户注册内核账户，则不需要填写",
+          "example": "***",
+          "member": "string",
+          "name": "PassWord",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "目标表的数据是否被覆盖。默认为false不覆盖",
+          "example": "false",
+          "member": "bool",
+          "name": "IsDataOverwrite",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "CopyTableDatasResponse": {
+      "document": "CopyTableDatas返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CosSourceInfo": {
       "document": "客户提供cos认证信息。",
@@ -1395,6 +1723,79 @@
     "CreateBackUpScheduleResponse": {
       "document": "CreateBackUpSchedule返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDatabaseRequest": {
+      "document": "CreateDatabase请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源ID，建表所用的TCHouse-D资源ID。",
+          "example": "cdwdoris-bjizjxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需要创建的库名",
+          "example": "demo",
+          "member": "string",
+          "name": "DbName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "使用该用户进行操作，该用户需要有对应的权限。如果该TCHouse-D集群使用CAM用户注册内核账户，则不需要填写",
+          "example": "user",
+          "member": "string",
+          "name": "UserName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户对应的密码。如果该TCHouse-D集群使用CAM用户注册内核账户，则不需要填写",
+          "example": "***",
+          "member": "string",
+          "name": "PassWord",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "库属性。对应相同属性的key，表属性的优先级高于库属性",
+          "example": "无",
+          "member": "Property",
+          "name": "Properties",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDatabaseResponse": {
+      "document": "CreateDatabase返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -1620,6 +2021,170 @@
       ],
       "usage": "in"
     },
+    "CreateTableRequest": {
+      "document": "CreateTable请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源ID，建表所用的TCHouse-D资源ID。",
+          "example": "cdwdoris-bjizjxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "表所在的库，如果不存在，则创建",
+          "example": "demo",
+          "member": "string",
+          "name": "DbName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需要创建的表名",
+          "example": "test",
+          "member": "string",
+          "name": "TableName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "表的数据模型： ●AGG_KEY：聚合模型； ●UNI_KEY：主键模型； ●DUP_KEY：明细模型",
+          "example": "AGG_KEY",
+          "member": "string",
+          "name": "KeysType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "表的列信息",
+          "example": "无",
+          "member": "Column",
+          "name": "Columns",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "分桶信息",
+          "example": "无",
+          "member": "Distribution",
+          "name": "Distribution",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "使用该用户进行操作，该用户需要有对应的权限。如果该TCHouse-D集群使用CAM用户注册内核账户，则不需要填写",
+          "example": "user",
+          "member": "string",
+          "name": "UserName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户对应的密码。如果该TCHouse-D集群使用CAM用户注册内核账户，则不需要填写",
+          "example": "***",
+          "member": "string",
+          "name": "PassWord",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "索引信息。倒排索引和N-Gram索引可以通过该参数配置。前缀索引与排续键和key列相关，不需要额外配置。BloomFilter索引需要则表属性中配置\"bloom_filter_columns\"",
+          "example": "无",
+          "member": "IndexInfo",
+          "name": "IndexInfos",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "分区信息",
+          "example": "无",
+          "member": "Partition",
+          "name": "Partition",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "表描述",
+          "example": "This is a table",
+          "member": "string",
+          "name": "TableComment",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "表属性",
+          "example": "无",
+          "member": "Property",
+          "name": "Properties",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTableResponse": {
+      "document": "CreateTable返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTablesDDL": {
+      "document": "建表的DDL信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "库名\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "demo",
+          "member": "string",
+          "name": "DbName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "表的DDL信息\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TablesDDL",
+          "name": "TablesDDLs",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "CreateWorkloadGroupRequest": {
       "document": "CreateWorkloadGroup请求参数结构体",
       "members": [
@@ -1830,6 +2395,73 @@
       ],
       "usage": "both"
     },
+    "DbInfo": {
+      "document": "数据库信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据库名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "demo",
+          "member": "string",
+          "name": "DbName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "库属性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Property",
+          "name": "Properties",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "元数据地址（数据源为Hive或DLC时会有该信息）\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "hdfs://HDFS1009138/hive/warehouse/hdfs_text",
+          "member": "string",
+          "name": "Location",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "DbTablesInfo": {
+      "document": "库表信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "库名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "demo",
+          "member": "string",
+          "name": "DbName",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "该库下对应的表列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TablesName",
+          "output_required": false,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "DeleteBackUpDataRequest": {
       "document": "DeleteBackUpData请求参数结构体",
       "members": [
@@ -1866,6 +2498,88 @@
     "DeleteBackUpDataResponse": {
       "document": "DeleteBackUpData返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTableRequest": {
+      "document": "DeleteTable请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源ID，建表所用的TCHouse-D资源ID。",
+          "example": "cdwdoris-bjizjxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需要删除表所在的库名",
+          "example": "demo",
+          "member": "string",
+          "name": "DbName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需要删除的表名",
+          "example": "test",
+          "member": "string",
+          "name": "TableName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "使用该用户进行操作，该用户需要有对应的权限。如果该TCHouse-D集群使用CAM用户注册内核账户，则不需要填写",
+          "example": "user",
+          "member": "string",
+          "name": "UserName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户对应的密码。如果该TCHouse-D集群使用CAM用户注册内核账户，则不需要填写",
+          "example": "***",
+          "member": "string",
+          "name": "PassWord",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "True：系统不会检查该表是否存在未完成的事务，表将直接被删除且不能被恢复 False：在一段时间内，被删除的表可以被恢复（默认值）",
+          "example": "false",
+          "member": "bool",
+          "name": "IsForce",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTableResponse": {
+      "document": "DeleteTable返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -2418,6 +3132,89 @@
       ],
       "type": "object"
     },
+    "DescribeCreateTablesDDLRequest": {
+      "document": "DescribeCreateTablesDDL请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源ID，TCHouse-D资源ID。",
+          "example": "cdwdoris-bjizjxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需要获取建表DDL的库表",
+          "example": "无",
+          "member": "DbTablesInfo",
+          "name": "DbTablesInfos",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "使用该用户进行操作，该用户需要有对应的权限。如果该TCHouse-D集群使用CAM用户注册内核账户，则不需要填写",
+          "example": "user",
+          "member": "string",
+          "name": "UserName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户对应的密码。如果该TCHouse-D集群使用CAM用户注册内核账户，则不需要填写",
+          "example": "***",
+          "member": "string",
+          "name": "PassWord",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否需要隐藏分区信息",
+          "example": "false",
+          "member": "bool",
+          "name": "IsBrief",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCreateTablesDDLResponse": {
+      "document": "DescribeCreateTablesDDL返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "建表的DDL信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CreateTablesDDL",
+          "name": "CreateTablesDDLs",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeDatabaseAuditDownloadRequest": {
       "document": "DescribeDatabaseAuditDownload请求参数结构体",
       "members": [
@@ -2792,6 +3589,98 @@
           "name": "Catalogs",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDatabaseRequest": {
+      "document": "DescribeDatabase请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源ID，建表所用的TCHouse-D资源ID。",
+          "example": "cdwdoris-bjizjxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "使用该用户进行操作，该用户需要有对应的权限。如果该TCHouse-D集群使用CAM用户注册内核账户，则不需要填写",
+          "example": "user",
+          "member": "string",
+          "name": "UserName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户对应的密码。如果该TCHouse-D集群使用CAM用户注册内核账户，则不需要填写",
+          "example": "***",
+          "member": "string",
+          "name": "PassWord",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询库所在的数据源，不填则默认为内部数据源（internal）。",
+          "example": "internal",
+          "member": "string",
+          "name": "CatalogName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需要查询的数据库信息。该参数和FilterDbName不填时，默认查询当前数据源的所有数据库信息",
+          "example": "demo",
+          "member": "string",
+          "name": "DbNames",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "展示经过过滤的库信息，例如\"%infor\"表示以infor结尾的数据库名称。该参数只支持CatalogName为internal的场景。",
+          "example": "%infor",
+          "member": "string",
+          "name": "FilterDbName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDatabaseResponse": {
+      "document": "DescribeDatabase返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据库信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DbInfo",
+          "name": "DbInfos",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "错误信息",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": true
         },
         {
@@ -3586,6 +4475,107 @@
           "member": "NodeInfos",
           "name": "NodeInfos",
           "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceOperationHistoryRequest": {
+      "document": "DescribeInstanceOperationHistory请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "页码，默认1 ",
+          "example": "无",
+          "member": "uint64",
+          "name": "PageNum",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页记录数,默认10",
+          "example": "无",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "无",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "无",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "使用该用户进行操作，该用户需要有对应的权限。如果该TCHouse-D集群使用CAM用户注册内核账户，则不需要填写",
+          "example": "无",
+          "member": "string",
+          "name": "UserName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户对应的密码。如果该TCHouse-D集群使用CAM用户注册内核账户，则不需要填写",
+          "example": "无",
+          "member": "string",
+          "name": "PassWord",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceOperationHistoryResponse": {
+      "document": "DescribeInstanceOperationHistory返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "操作记录总数",
+          "example": "无",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作记录具体数据",
+          "example": "无",
+          "member": "InstanceOperation",
+          "name": "Operations",
+          "output_required": false,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4622,6 +5612,232 @@
       ],
       "type": "object"
     },
+    "DescribeTableListRequest": {
+      "document": "DescribeTableList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源ID，建表所用的TCHouse-D资源ID。",
+          "example": "cdwdoris-bjizjxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需要获取表列表的库",
+          "example": "demo",
+          "member": "string",
+          "name": "DbName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "使用该用户进行操作，该用户需要有对应的权限。如果该TCHouse-D集群使用CAM用户注册内核账户，则不需要填写",
+          "example": "user",
+          "member": "string",
+          "name": "UserName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户对应的密码。如果该TCHouse-D集群使用CAM用户注册内核账户，则不需要填写",
+          "example": "***",
+          "member": "string",
+          "name": "PassWord",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询库所在的数据源，不填则默认为内部数据源（internal）。",
+          "example": "internal",
+          "member": "string",
+          "name": "CatalogName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTableListResponse": {
+      "document": "DescribeTableList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "表名列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"test1\",\"test2\"]",
+          "member": "string",
+          "name": "TableNames",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTableRequest": {
+      "document": "DescribeTable请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源ID，建表所用的TCHouse-D资源ID。",
+          "example": "cdwdoris-bjizjxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "表所在的库名",
+          "example": "demo",
+          "member": "string",
+          "name": "DbName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "表名（目前仅支持内表）",
+          "example": "test",
+          "member": "string",
+          "name": "TableName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "使用该用户进行操作，该用户需要有对应的权限。如果该TCHouse-D集群使用CAM用户注册内核账户，则不需要填写",
+          "example": "user",
+          "member": "string",
+          "name": "UserName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户对应的密码。如果该TCHouse-D集群使用CAM用户注册内核账户，则不需要填写",
+          "example": "***",
+          "member": "string",
+          "name": "PassWord",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTableResponse": {
+      "document": "DescribeTable返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "表的数据模型： ●AGG_KEY：聚合模型； ●UNI_KEY：主键模型； ●DUP_KEY：明细模型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "AGG_KEY",
+          "member": "string",
+          "name": "KeysType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "表的列信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Column",
+          "name": "Columns",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "索引信息。倒排索引和N-Gram索引可以通过该参数查看。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "IndexInfo",
+          "name": "IndexInfos",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分区信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Partition",
+          "name": "Partition",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分桶信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Distribution",
+          "name": "Distribution",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "表描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "This is a table",
+          "member": "string",
+          "name": "TableComment",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "表属性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Property",
+          "name": "Properties",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeUserBindWorkloadGroupRequest": {
       "document": "DescribeUserBindWorkloadGroup请求参数结构体",
       "members": [
@@ -4913,6 +6129,34 @@
       ],
       "usage": "both"
     },
+    "Distribution": {
+      "document": "表的分桶信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分桶形式：\n●Hash：哈希分桶\n●Random：随机数分桶\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Hash",
+          "member": "string",
+          "name": "DistributionType",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分桶数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Count",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "DorisSourceInfo": {
       "document": "外部doris集群的连接信息",
       "members": [
@@ -4958,6 +6202,239 @@
         }
       ],
       "usage": "both"
+    },
+    "ExecuteParametrizedQueryRequest": {
+      "document": "ExecuteParametrizedQuery请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据库名称",
+          "example": "db1",
+          "member": "string",
+          "name": "Database",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "SQL 查询语句",
+          "example": "select xxx",
+          "member": "string",
+          "name": "Sql",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询参数数组",
+          "example": "无",
+          "member": "PropertiesMap",
+          "name": "QueryParameter",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "页码，默认为1",
+          "example": "1",
+          "member": "uint64",
+          "name": "PageNum",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页记录数，默认为10",
+          "example": "10",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "使用该用户进行操作，该用户需要有对应的权限。如果该TCHouse-D集群使用CAM用户注册内核账户，则不需要填写",
+          "example": "无",
+          "member": "string",
+          "name": "UserName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户对应的密码。如果该TCHouse-D集群使用CAM用户注册内核账户，则不需要填写",
+          "example": "无",
+          "member": "string",
+          "name": "PassWord",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ExecuteParametrizedQueryResponse": {
+      "document": "ExecuteParametrizedQuery返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询结果的总记录数",
+          "example": "100",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "查询结果的字段名数组",
+          "example": "[\"id\", \"name\", \"age\"]",
+          "member": "string",
+          "name": "Fields",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "查询结果的字段类型数组",
+          "example": "[\"int64\", \"string\", \"int64\"]",
+          "member": "string",
+          "name": "FieldTypes",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "返回的数据记录数组，每个元素是一个数组，包含对应字段的值",
+          "example": "无",
+          "member": "Rows",
+          "name": "Rows",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ExecuteSelectQueryRequest": {
+      "document": "ExecuteSelectQuery请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据库名称",
+          "example": "db1",
+          "member": "string",
+          "name": "Database",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "SQL 查询语句，只支持select语句",
+          "example": "select xxx",
+          "member": "string",
+          "name": "Query",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "页码，默认为1",
+          "example": "1",
+          "member": "uint64",
+          "name": "PageNum",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页记录数，默认为10",
+          "example": "10",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "使用该用户进行操作，该用户需要有对应的权限。如果该TCHouse-D集群使用CAM用户注册内核账户，则不需要填写",
+          "example": "无",
+          "member": "string",
+          "name": "UserName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户对应的密码。如果该TCHouse-D集群使用CAM用户注册内核账户，则不需要填写",
+          "example": "无",
+          "member": "string",
+          "name": "PassWord",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ExecuteSelectQueryResponse": {
+      "document": "ExecuteSelectQuery返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询结果的总记录数",
+          "example": "100",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "查询结果的字段名数组",
+          "example": "[\"id\", \"name\", \"age\"]",
+          "member": "string",
+          "name": "Fields",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "查询结果的字段类型数组",
+          "example": "[\"int64\", \"string\", \"int64\"]",
+          "member": "string",
+          "name": "FieldTypes",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "返回的数据记录数组，每个元素是一个数组，包含对应字段的值",
+          "example": "无",
+          "member": "Rows",
+          "name": "Rows",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "FitClsLogRequest": {
       "document": "FitClsLog请求参数结构体",
@@ -5059,6 +6536,205 @@
         }
       ],
       "usage": "out"
+    },
+    "IndexInfo": {
+      "document": "表的索引信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "索引名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "idx1",
+          "member": "string",
+          "name": "IdxName",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "建立该索引的列名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "name",
+          "member": "string",
+          "name": "ColumnName",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "索引类型：\n●INVERTED：倒排索引\n●NGRAM_BF：N-Gram索引\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "INVERTED",
+          "member": "string",
+          "name": "IdxType",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "索引属性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Property",
+          "name": "IdxProperties",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "索引描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "This is a inverted index1",
+          "member": "string",
+          "name": "IdxComment",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "InsertDatasToTableRequest": {
+      "document": "InsertDatasToTable请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据库名称",
+          "example": "db1",
+          "member": "string",
+          "name": "Database",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "表名称",
+          "example": "tb1",
+          "member": "string",
+          "name": "Table",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否严格模式",
+          "example": "true",
+          "member": "bool",
+          "name": "Strict",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "最大过滤比例，范围0~1.0",
+          "example": "0.5",
+          "member": "float",
+          "name": "MaxFilterRatio",
+          "required": false,
+          "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "列名数组",
+          "example": "[\"col1\", \"col2\", \"col3\"]",
+          "member": "string",
+          "name": "Columns",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "数据行",
+          "example": "[[\"value1\", \"value2\", \"value3\"],[\"value4\", \"value5\", \"value6\"]]",
+          "member": "Rows",
+          "name": "Rows",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "插入数据的标签",
+          "example": "无",
+          "member": "string",
+          "name": "Label",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "使用该用户进行操作，该用户需要有对应的权限。如果该TCHouse-D集群使用CAM用户注册内核账户，则不需要填写",
+          "example": "无",
+          "member": "string",
+          "name": "UserName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户对应的密码。如果该TCHouse-D集群使用CAM用户注册内核账户，则不需要填写",
+          "example": "无",
+          "member": "string",
+          "name": "PassWord",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "列类型",
+          "example": "string",
+          "member": "string",
+          "name": "ColumnTypes",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "InsertDatasToTableResponse": {
+      "document": "InsertDatasToTable返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "插入操作是否成功",
+          "example": "无",
+          "member": "bool",
+          "name": "Success",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作结果的消息描述",
+          "example": "无",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "插入的数据行数",
+          "example": "2",
+          "member": "string",
+          "name": "InsertCount",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "InstanceConfigItem": {
       "document": "KV配置",
@@ -5820,6 +7496,135 @@
         }
       ],
       "usage": "out"
+    },
+    "ListInfo": {
+      "document": "List类型分区的信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分区名\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "partition_name1",
+          "member": "string",
+          "name": "PartitionName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "各分区列的枚举值\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "EnumValues",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ModifyDatabaseTableAccessRequest": {
+      "document": "ModifyDatabaseTableAccess请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据库名称",
+          "example": "db1",
+          "member": "string",
+          "name": "Database",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "表名称，如果为空，则表示对整个数据库授权",
+          "example": "tb1",
+          "member": "string",
+          "name": "Table",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "权限列表",
+          "example": "[\"SELECT_PRIV\", \"LOAD_PRIV\"]",
+          "member": "string",
+          "name": "Privileges",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "角色名称，如果授权给角色",
+          "example": "无",
+          "member": "string",
+          "name": "Role",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "操作类型，\"GRANT\" 或 \"REVOKE\"",
+          "example": "GRANT",
+          "member": "string",
+          "name": "GrantOrRevoke",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "使用该用户进行操作，该用户需要有对应的权限。如果该TCHouse-D集群使用CAM用户注册内核账户，则不需要填写",
+          "example": "无",
+          "member": "string",
+          "name": "UserName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户对应的密码。如果该TCHouse-D集群使用CAM用户注册内核账户，则不需要填写",
+          "example": "无",
+          "member": "string",
+          "name": "PassWord",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDatabaseTableAccessResponse": {
+      "document": "ModifyDatabaseTableAccess返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "操作是否成功",
+          "example": "无",
+          "member": "bool",
+          "name": "Success",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作结果的消息描述",
+          "example": "无",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ModifyInstanceKeyValConfigsRequest": {
       "document": "ModifyInstanceKeyValConfigs请求参数结构体",
@@ -6773,6 +8578,56 @@
       ],
       "type": "object"
     },
+    "Partition": {
+      "document": "表的分区信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分区类型：\n●Range：分区列通常为时间类型或整数类型。支持4中写法。\n●List：分区值为枚举值。\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Range",
+          "member": "string",
+          "name": "PartitionType",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否自动分区\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "AutoPartition",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分区类型为Range时的分区信息\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RangeInfo",
+          "name": "RangeInfos",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分区类型为List时的分区信息\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ListInfo",
+          "name": "ListInfos",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "PermissionHostInfo": {
       "document": "权限总览",
       "members": [
@@ -6807,6 +8662,266 @@
           "output_required": false,
           "required": false,
           "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "PropertiesMap": {
+      "document": "property属性",
+      "members": [
+        {
+          "disabled": false,
+          "document": "key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PropertyKey",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "value\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PropertyValue",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "Property": {
+      "document": "库、表、索引等的属性信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "属性键\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "replication_allocation",
+          "member": "string",
+          "name": "PropertyKey",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "属性值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tag.location.default: 1",
+          "member": "string",
+          "name": "PropertyValue",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "QueryTableDataRequest": {
+      "document": "QueryTableData请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据库名称",
+          "example": "db1",
+          "member": "string",
+          "name": "Database",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "表名称",
+          "example": "tb1",
+          "member": "string",
+          "name": "Table",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "要查询的字段数组",
+          "example": "[\"id\", \"name\", \"age\"]",
+          "member": "string",
+          "name": "SelectedFields",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "页码，默认1 ",
+          "example": "1",
+          "member": "uint64",
+          "name": "PageNum",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页记录数,默认10",
+          "example": "10",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "使用该用户进行操作，该用户需要有对应的权限。如果该TCHouse-D集群使用CAM用户注册内核账户，则不需要填写",
+          "example": "无",
+          "member": "string",
+          "name": "UserName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户对应的密码。如果该TCHouse-D集群使用CAM用户注册内核账户，则不需要填写",
+          "example": "无",
+          "member": "string",
+          "name": "PassWord",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryTableDataResponse": {
+      "document": "QueryTableData返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询结果的总记录数",
+          "example": "100",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "查询结果的字段名数组",
+          "example": "[\"id\", \"name\", \"age\"]",
+          "member": "string",
+          "name": "Fields",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "查询结果的字段类型数组",
+          "example": "[\"int64\", \"string\", \"int64\"]",
+          "member": "string",
+          "name": "FieldTypes",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "返回的数据记录数组，每个元素是一个数组，包含对应字段的值",
+          "example": "无",
+          "member": "Rows",
+          "name": "Rows",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RangeInfo": {
+      "document": "Range类型分区的信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Range分区类型：\n●FIXED：定义分区的左闭右开区间\n●LESS THAN：仅定义分区上界\n●BATCH RANGE：批量创建数字类型和时间类型的RANGE分区，定义分区的左闭右开区间，设定步长\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "FIXED",
+          "member": "string",
+          "name": "RangeType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分区名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "partition_name1",
+          "member": "string",
+          "name": "PartitionName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "RangeType为FIXED或BATCH RANGE时各分区列的左闭区间\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "(\"2011-02-01\")",
+          "member": "string",
+          "name": "Left",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "RangeType为FIXED或BATCH RANGE时各分区列的右开区间\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "(\"2012-02-01\")",
+          "member": "string",
+          "name": "Right",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "RangeType为LESS THAN时各分区列的上界\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "(\"2017-02-01\")",
+          "member": "string",
+          "name": "Max",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "RangeType为BATCH RANGE的步长\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "StepLength",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "RangeType为BATCH RANGE或自动分区时填写。表示分区列是时间类型时的步长单位。\n●YEAR：年\n●MONTH：月\n●WEEK：周\n●DAY：日\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "DAY",
+          "member": "string",
+          "name": "Unit",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -7811,6 +9926,23 @@
       ],
       "usage": "out"
     },
+    "Rows": {
+      "document": "多行数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "一行数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DataRow",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "ScaleOutInstanceRequest": {
       "document": "ScaleOutInstance请求参数结构体",
       "members": [
@@ -8214,6 +10346,34 @@
       ],
       "usage": "both"
     },
+    "TablesDDL": {
+      "document": "表的DDL信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "表名\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "unique_alltype_col13",
+          "member": "string",
+          "name": "TableName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "建表的DDL语句\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CREATE TABLE `unique_alltype_col13` (`date` ...",
+          "member": "string",
+          "name": "DDLInfo",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "Tag": {
       "document": "标签描述",
       "members": [
@@ -8239,6 +10399,225 @@
         }
       ],
       "usage": "both"
+    },
+    "UpdateDatabaseRequest": {
+      "document": "UpdateDatabase请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "要修改的数据库名称",
+          "example": "db1",
+          "member": "string",
+          "name": "DbName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "修改操作类型，如：\"SET_QUOTA\", \"RENAME\", \"SET_REPLICA_QUOTA\", \"SET_PROPERTIES\" Modify the operation type, such as: \"SET_QUOTA\", \"RENAME\", \"SET_REPLICA_QUOTA\", \"SET_PROPERTIES\"",
+          "example": "无",
+          "member": "string",
+          "name": "Operation",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "配额值，用于设置数据量或副本数量配额",
+          "example": "无",
+          "member": "string",
+          "name": "Quota",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "新数据库名称，用于重命名操作",
+          "example": "无",
+          "member": "string",
+          "name": "NewDbName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "要设置的属性键值对",
+          "example": "无",
+          "member": "PropertiesMap",
+          "name": "Properties",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "使用该用户进行操作，该用户需要有对应的权限。如果该TCHouse-D集群使用CAM用户注册内核账户，则不需要填写",
+          "example": "无",
+          "member": "string",
+          "name": "UserName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户对应的密码。如果该TCHouse-D集群使用CAM用户注册内核账户，则不需要填写",
+          "example": "无",
+          "member": "string",
+          "name": "PassWord",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateDatabaseResponse": {
+      "document": "UpdateDatabase返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "操作是否成功。",
+          "example": "无",
+          "member": "bool",
+          "name": "Success",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作结果的消息描述。",
+          "example": "无",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateTableSchemaRequest": {
+      "document": "UpdateTableSchema请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源ID，建表所用的TCHouse-D资源ID",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "使用该用户进行操作，该用户需要有对应的权限。如果该TCHouse-D集群使用CAM用户注册内核账户，则不需要填写",
+          "example": "无",
+          "member": "string",
+          "name": "UserName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户对应的密码。如果该TCHouse-D集群使用CAM用户注册内核账户，则不需要填写",
+          "example": "无",
+          "member": "string",
+          "name": "PassWord",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据库名称",
+          "example": "无",
+          "member": "string",
+          "name": "DbName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "表名",
+          "example": "无",
+          "member": "string",
+          "name": "TableName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "列",
+          "example": "无",
+          "member": "Column",
+          "name": "Columns",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "索引信息。倒排索引和N-Gram索引可以通过该参数配置。前缀索引与排续键和key列相关，不需要额外配置。BloomFilter索引需要则表属性中配置\"bloom_filter_columns\"",
+          "example": "无",
+          "member": "IndexInfo",
+          "name": "IndexInfos",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "分桶信息",
+          "example": "无",
+          "member": "Distribution",
+          "name": "Distribution",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "表描述",
+          "example": "无",
+          "member": "string",
+          "name": "TableComment",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "表属性",
+          "example": "无",
+          "member": "Property",
+          "name": "Properties",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateTableSchemaResponse": {
+      "document": "UpdateTableSchema返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "错误信息",
+          "example": "无",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "UpdateUserPrivileges": {
       "document": "更新用户权限结构体",

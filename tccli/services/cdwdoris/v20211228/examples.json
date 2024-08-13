@@ -8,6 +8,14 @@
         "title": "test"
       }
     ],
+    "CopyTableDatas": [
+      {
+        "document": "复制SourceDb.SourceTable表到TargetDb.TargetTable",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CopyTableDatas\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdwdoris-bjizjxxx\",\n    \"CopiedFromDb\": \"SourceDb\",\n    \"CopiedFromTable\": \"SourceTable\",\n    \"CopyToDb\": \"TargetDb\",\n    \"CopyToTable\": \"TargetTable\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Message\": \"\",\n        \"RequestId\": \"894fc11c-393c-4ab7-bfac-ba64af52b1f9\"\n    }\n}",
+        "title": "复制表"
+      }
+    ],
     "CreateBackUpSchedule": [
       {
         "document": "",
@@ -16,12 +24,28 @@
         "title": "示例"
       }
     ],
+    "CreateDatabase": [
+      {
+        "document": "创建一个demo库",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDatabase\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdwdoris-bjizjxxx\",\n    \"DbName\": \"demo\",\n    \"Properties\": [\n        {\n            \"PropertyKey\": \"replication_allocation\",\n            \"PropertyValue\": \"tag.location.default: 1\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Message\": \"\",\n        \"RequestId\": \"494d3ca4-1d4d-483a-b172-1fdd4acee042\"\n    }\n}",
+        "title": "创建库"
+      }
+    ],
     "CreateInstanceNew": [
       {
         "document": "创建集群",
         "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateInstanceNew\n<公共请求参数>\n\n{\n    \"InstanceName\": \"test-按量-hazk2节点\",\n    \"Zone\": \"ap-beijing-2\",\n    \"FeSpec\": {\n        \"SpecName\": \"S_4_16_H\",\n        \"Count\": 3,\n        \"DiskSize\": 200\n    },\n    \"BeSpec\": {\n        \"SpecName\": \"S_4_16_H\",\n        \"Count\": 3,\n        \"DiskSize\": 1000\n    },\n    \"HaFlag\": true,\n    \"UserVPCId\": \"vpc-8visjoh9\",\n    \"UserSubnetId\": \"subnet-03ij1dki\",\n    \"ProductVersion\": \"1.2\",\n    \"DorisUserPwd\": \"ujA7xa2*1\",\n    \"ChargeProperties\": {\n        \"ChargeType\": \"POSTPAID_BY_HOUR\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"InstanceId\": \"cdwdoris-aijqera\",\n        \"FlowId\": \"1231\",\n        \"RequestId\": \"lweinasd-28kamasd-xasdas\",\n        \"ErrorMsg\": \"\"\n    }\n}",
         "title": "集群创建示例"
+      }
+    ],
+    "CreateTable": [
+      {
+        "document": "在demo库下创建一个test表",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTable\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdwdoris-bjizjxxx\",\n    \"DbName\": \"demo\",\n    \"TableName\": \"test\",\n    \"KeysType\": \"AGG_KEY\",\n    \"Columns\": [\n        {\n            \"Name\": \"user_id\",\n            \"Type\": \"LARGEINT\",\n            \"IsNull\": false,\n            \"IsKey\": true,\n            \"IsPartition\": false,\n            \"IsDistribution\": true,\n            \"Comment\": \"用户id\"\n        },\n        {\n            \"Name\": \"date\",\n            \"Type\": \"DATE\",\n            \"IsNull\": false,\n            \"IsKey\": true,\n            \"IsPartition\": true,\n            \"IsDistribution\": false,\n            \"Comment\": \"数据灌入日期时间\"\n        },\n        {\n            \"Name\": \"city\",\n            \"Type\": \"VARCHAR(20)\",\n            \"IsNull\": true,\n            \"IsKey\": true,\n            \"IsPartition\": false,\n            \"IsDistribution\": false,\n            \"Comment\": \"用户所在城市\"\n        },\n        {\n            \"Name\": \"last_visit_date\",\n            \"Type\": \"DATETIME\",\n            \"AggType\": \"REPLACE\",\n            \"IsNull\": false,\n            \"DefaultValue\": \"1970-01-01 00:00:00\",\n            \"IsKey\": false,\n            \"IsPartition\": false,\n            \"IsDistribution\": false,\n            \"Comment\": \"用户最后一次访问时间\"\n        },\n        {\n            \"Name\": \"cost\",\n            \"Type\": \"BIGINT\",\n            \"AggType\": \"SUM\",\n            \"IsNull\": false,\n            \"DefaultValue\": \"0\",\n            \"IsKey\": false,\n            \"IsPartition\": false,\n            \"IsDistribution\": false,\n            \"Comment\": \"用户总消费\"\n        }\n    ],\n    \"Partition\": {\n        \"AutoPartition\": false,\n        \"PartitionType\": \"Range\",\n        \"RangeInfos\": [\n            {\n                \"RangeType\": \"LESS THAN\",\n                \"PartitionName\": \"0201\",\n                \"Max\": \"(\\\"2017-02-01\\\")\"\n            },\n            {\n                \"RangeType\": \"FIXED\",\n                \"PartitionName\": \"0202\",\n                \"Left\": \"(\\\"2011-02-01\\\")\",\n                \"Right\": \"(\\\"2012-02-01\\\")\"\n            }\n        ]\n    },\n    \"Distribution\": {\n        \"DistributionType\": \"Hash\",\n        \"Count\": 3\n    },\n    \"TableComment\": \"example\",\n    \"Properties\": [\n        {\n            \"PropertyKey\": \"replication_allocation\",\n            \"PropertyValue\": \"tag.location.default: 1\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f8f5e0af-7d36-4b49-8b4d-9c103deef55a\"\n    }\n}",
+        "title": "创建表"
       }
     ],
     "CreateWorkloadGroup": [
@@ -38,6 +62,14 @@
         "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteBackUpData\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"BackUpJobId\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "示例"
+      }
+    ],
+    "DeleteTable": [
+      {
+        "document": "删除demo库下的test表",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteTable\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdwdoris-bjizjxxx\",\n    \"DbName\": \"demo\",\n    \"TableName\": \"test\",\n    \"IsForce\": false\n}",
+        "output": "{\n    \"Response\": {\n        \"Message\": \"\",\n        \"RequestId\": \"41de726a-0bd6-4794-8324-5fd73c312886\"\n    }\n}",
+        "title": "删除指定库下的表"
       }
     ],
     "DeleteWorkloadGroup": [
@@ -110,6 +142,22 @@
         "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterConfigsHistory\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"ConfigFileNames\": [\n        \"abc\"\n    ],\n    \"Offset\": 0,\n    \"Limit\": 0,\n    \"StartTime\": \"abc\",\n    \"EndTime\": \"abc\"\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"ClusterConfHistory\": [\n            {\n                \"FileName\": \"abc\",\n                \"NewConfValue\": \"abc\",\n                \"OldConfValue\": \"abc\",\n                \"Remark\": \"abc\",\n                \"ModifyTime\": \"abc\",\n                \"UserUin\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "test"
+      }
+    ],
+    "DescribeCreateTablesDDL": [
+      {
+        "document": "获取建表ddl",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCreateTablesDDL\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdwdoris-bjizjxxx\",\n    \"DbTablesInfos\": [\n        {\n            \"DbName\": \"demo1\",\n            \"TablesName\": [\n                \"unique_idx_col13\"\n            ]\n        },\n        {\n            \"DbName\": \"demo2\",\n            \"TablesName\": [\n                \"duplicate_list_partition\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"CreateTablesDDLs\": [\n            {\n                \"DbName\": \"demo1\",\n                \"TablesDDLs\": [\n                    {\n                        \"DDLInfo\": \"CREATE TABLE `unique_idx_col13` (\\n  `user_id` LARGEINT NOT NULL COMMENT '用户id',\\n  `date` DATE NOT NULL COMMENT '数据导入日期时间',\\n  `city` VARCHAR(20) NULL COMMENT '用户所在城市',\\n  `age` SMALLINT NULL COMMENT '用户年龄',\\n  `sex` TINYINT NULL COMMENT '用户性别',\\n  `f6_decimal` DECIMAL(10, 6) NULL COMMENT 'DECIMAL列',\\n  `f7_boolean` BOOLEAN NULL COMMENT 'BOOLEAN列 0代表false，1代表true',\\n  `f8_double` DOUBLE NULL COMMENT 'DOUBLE列',\\n  `f9_float` FLOAT NULL COMMENT 'FLOAT列',\\n  `f10_string` TEXT NULL COMMENT 'STRING列',\\n  `last_visit_date` DATETIME NULL COMMENT '用户最后一次访问时间',\\n  `cost` BIGINT NULL COMMENT '用户总消费，默认0',\\n  `max_dwell_time` INT NULL COMMENT '用户最大停留时间,默认0'\\n) ENGINE=OLAP\\nUNIQUE KEY(`user_id`, `date`, `city`)\\nDISTRIBUTED BY HASH(`user_id`) BUCKETS 1\\nPROPERTIES (\\n\\\"replication_allocation\\\" = \\\"tag.location.default: 1\\\",\\n\\\"min_load_replica_num\\\" = \\\"-1\\\",\\n\\\"is_being_synced\\\" = \\\"false\\\",\\n\\\"storage_medium\\\" = \\\"hdd\\\",\\n\\\"storage_format\\\" = \\\"V2\\\",\\n\\\"inverted_index_storage_format\\\" = \\\"V1\\\",\\n\\\"enable_unique_key_merge_on_write\\\" = \\\"true\\\",\\n\\\"light_schema_change\\\" = \\\"true\\\",\\n\\\"disable_auto_compaction\\\" = \\\"false\\\",\\n\\\"enable_single_replica_compaction\\\" = \\\"false\\\",\\n\\\"group_commit_interval_ms\\\" = \\\"10000\\\",\\n\\\"group_commit_data_bytes\\\" = \\\"134217728\\\",\\n\\\"enable_mow_light_delete\\\" = \\\"false\\\"\\n);\",\n                        \"TableName\": \"unique_idx_col13\"\n                    }\n                ]\n            },\n            {\n                \"DbName\": \"demo2\",\n                \"TablesDDLs\": [\n                    {\n                        \"DDLInfo\": \"CREATE TABLE `duplicate_list_partition` (\\n  `user_id` LARGEINT NOT NULL COMMENT '用户id',\\n  `date` DATE NOT NULL COMMENT '数据导入日期时间',\\n  `city` VARCHAR(20) NOT NULL COMMENT '用户所在城市',\\n  `age` SMALLINT NULL COMMENT '用户年龄',\\n  `sex` TINYINT NULL COMMENT '用户性别',\\n  `f6_decimal` DECIMAL(10, 6) NULL COMMENT 'DECIMAL列',\\n  `f7_boolean` BOOLEAN NULL COMMENT 'BOOLEAN列 0代表false，1代表true',\\n  `f8_double` DOUBLE NULL COMMENT 'DOUBLE列',\\n  `f9_float` FLOAT NULL COMMENT 'FLOAT列',\\n  `f10_string` TEXT NULL COMMENT 'STRING列',\\n  `last_visit_date` DATETIME NULL COMMENT '用户最后一次访问时间',\\n  `cost` BIGINT NULL COMMENT '用户总消费，默认0',\\n  `max_dwell_time` INT NULL COMMENT '用户最大停留时间,默认0'\\n) ENGINE=OLAP\\nDUPLICATE KEY(`user_id`, `date`, `city`)\\nPARTITION BY LIST(`city`)\\n(PARTITION city_bj VALUES IN (\\\"Beijing\\\",\\\"beijing\\\",\\\"BEIJING\\\",\\\"BeiJing\\\",\\\"北京\\\") (\\\"storage_policy\\\" = \\\"20240806-16-48-降冷\\\"),\\nPARTITION city_cd VALUES IN (\\\"Chengdu\\\",\\\"chengdu\\\",\\\"CHENGDU\\\",\\\"ChengDu\\\",\\\"成都\\\") (\\\"storage_policy\\\" = \\\"20240806-16-48-降冷\\\"),\\nPARTITION city_sh VALUES IN (\\\"Shanghai\\\",\\\"shanghai\\\",\\\"SHANGHAI\\\",\\\"ShangHai\\\",\\\"上海\\\") (\\\"storage_policy\\\" = \\\"20240806-16-48-降冷\\\"),\\nPARTITION add_p1 VALUES IN (\\\"haha1\\\") (\\\"storage_policy\\\" = \\\"20240806-16-48-降冷\\\"),\\nPARTITION add_p10 VALUES IN (\\\"haha10\\\") (\\\"storage_policy\\\" = \\\"20240806-16-48-降冷\\\"),\\nPARTITION add_p11 VALUES IN (\\\"haha11\\\") (\\\"storage_policy\\\" = \\\"20240806-16-48-降冷\\\"),\\nPARTITION add_p12 VALUES IN (\\\"haha12\\\") (\\\"storage_policy\\\" = \\\"20240806-16-48-降冷\\\"),\\nPARTITION add_p13 VALUES IN (\\\"haha13\\\") (\\\"storage_policy\\\" = \\\"20240806-16-48-降冷\\\"),\\nPARTITION add_p14 VALUES IN (\\\"haha14\\\") (\\\"storage_policy\\\" = \\\"20240806-16-48-降冷\\\"),\\nPARTITION add_p15 VALUES IN (\\\"haha15\\\") (\\\"storage_policy\\\" = \\\"20240806-16-48-降冷\\\"),\\nPARTITION add_p16 VALUES IN (\\\"haha16\\\") (\\\"storage_policy\\\" = \\\"20240806-16-48-降冷\\\"),\\nPARTITION add_p17 VALUES IN (\\\"haha17\\\") (\\\"storage_policy\\\" = \\\"20240806-16-48-降冷\\\"),\\nPARTITION add_p18 VALUES IN (\\\"haha18\\\") (\\\"storage_policy\\\" = \\\"20240806-16-48-降冷\\\"),\\nPARTITION add_p19 VALUES IN (\\\"haha19\\\") (\\\"storage_policy\\\" = \\\"20240806-16-48-降冷\\\"),\\nPARTITION add_p2 VALUES IN (\\\"haha2\\\") (\\\"storage_policy\\\" = \\\"20240806-16-48-降冷\\\"),\\nPARTITION add_p20 VALUES IN (\\\"haha20\\\") (\\\"storage_policy\\\" = \\\"20240806-16-48-降冷\\\"),\\nPARTITION add_p21 VALUES IN (\\\"haha21\\\") (\\\"storage_policy\\\" = \\\"20240806-16-48-降冷\\\"),\\nPARTITION add_p22 VALUES IN (\\\"haha22\\\") (\\\"storage_policy\\\" = \\\"20240806-16-48-降冷\\\"),\\nPARTITION add_p23 VALUES IN (\\\"haha23\\\") (\\\"storage_policy\\\" = \\\"20240806-16-48-降冷\\\"),\\nPARTITION add_p24 VALUES IN (\\\"haha24\\\") (\\\"storage_policy\\\" = \\\"20240806-16-48-降冷\\\"),\\nPARTITION add_p25 VALUES IN (\\\"haha25\\\") (\\\"storage_policy\\\" = \\\"20240806-16-48-降冷\\\"),\\nPARTITION add_p26 VALUES IN (\\\"haha26\\\") (\\\"storage_policy\\\" = \\\"20240806-16-48-降冷\\\"),\\nPARTITION add_p27 VALUES IN (\\\"haha27\\\") (\\\"storage_policy\\\" = \\\"20240806-16-48-降冷\\\"),\\nPARTITION add_p28 VALUES IN (\\\"haha28\\\") (\\\"storage_policy\\\" = \\\"20240806-16-48-降冷\\\"),\\nPARTITION add_p29 VALUES IN (\\\"haha29\\\") (\\\"storage_policy\\\" = \\\"20240806-16-48-降冷\\\"),\\nPARTITION add_p3 VALUES IN (\\\"haha3\\\") (\\\"storage_policy\\\" = \\\"20240806-16-48-降冷\\\"),\\nPARTITION add_p30 VALUES IN (\\\"haha30\\\") (\\\"storage_policy\\\" = \\\"20240806-16-48-降冷\\\"),\\nPARTITION add_p4 VALUES IN (\\\"haha4\\\") (\\\"storage_policy\\\" = \\\"20240806-16-48-降冷\\\"),\\nPARTITION add_p5 VALUES IN (\\\"haha5\\\") (\\\"storage_policy\\\" = \\\"20240806-16-48-降冷\\\"),\\nPARTITION add_p6 VALUES IN (\\\"haha6\\\") (\\\"storage_policy\\\" = \\\"20240806-16-48-降冷\\\"),\\nPARTITION add_p7 VALUES IN (\\\"haha7\\\") (\\\"storage_policy\\\" = \\\"20240806-16-48-降冷\\\"),\\nPARTITION add_p8 VALUES IN (\\\"haha8\\\") (\\\"storage_policy\\\" = \\\"20240806-16-48-降冷\\\"),\\nPARTITION add_p9 VALUES IN (\\\"haha9\\\") (\\\"storage_policy\\\" = \\\"20240806-16-48-降冷\\\"),\\nPARTITION wh_partition_0 VALUES IN (\\\"wuhan0\\\") (\\\"storage_policy\\\" = \\\"20240806-16-48-降冷\\\"),\\nPARTITION wh_partition_1 VALUES IN (\\\"wuhan1\\\") (\\\"storage_policy\\\" = \\\"20240806-16-48-降冷\\\"),\\nPARTITION wh_partition_10 VALUES IN (\\\"wuhan10\\\") (\\\"storage_policy\\\" = \\\"20240806-16-48-降冷\\\"),\\nPARTITION wh_partition_2 VALUES IN (\\\"wuhan2\\\") (\\\"storage_policy\\\" = \\\"20240806-16-48-降冷\\\"),\\nPARTITION wh_partition_3 VALUES IN (\\\"wuhan3\\\") (\\\"storage_policy\\\" = \\\"20240806-16-48-降冷\\\"),\\nPARTITION wh_partition_4 VALUES IN (\\\"wuhan4\\\") (\\\"storage_policy\\\" = \\\"20240806-16-48-降冷\\\"),\\nPARTITION wh_partition_5 VALUES IN (\\\"wuhan5\\\") (\\\"storage_policy\\\" = \\\"20240806-16-48-降冷\\\"),\\nPARTITION wh_partition_6 VALUES IN (\\\"wuhan6\\\") (\\\"storage_policy\\\" = \\\"20240806-16-48-降冷\\\"),\\nPARTITION wh_partition_7 VALUES IN (\\\"wuhan7\\\") (\\\"storage_policy\\\" = \\\"20240806-16-48-降冷\\\"),\\nPARTITION wh_partition_8 VALUES IN (\\\"wuhan8\\\") (\\\"storage_policy\\\" = \\\"20240806-16-48-降冷\\\"),\\nPARTITION wh_partition_9 VALUES IN (\\\"wuhan9\\\") (\\\"storage_policy\\\" = \\\"20240806-16-48-降冷\\\"))\\nDISTRIBUTED BY HASH(`user_id`) BUCKETS 1\\nPROPERTIES (\\n\\\"replication_allocation\\\" = \\\"tag.location.default: 3\\\",\\n\\\"min_load_replica_num\\\" = \\\"-1\\\",\\n\\\"is_being_synced\\\" = \\\"false\\\",\\n\\\"storage_medium\\\" = \\\"hdd\\\",\\n\\\"storage_format\\\" = \\\"V2\\\",\\n\\\"inverted_index_storage_format\\\" = \\\"V1\\\",\\n\\\"light_schema_change\\\" = \\\"true\\\",\\n\\\"disable_auto_compaction\\\" = \\\"false\\\",\\n\\\"enable_single_replica_compaction\\\" = \\\"false\\\",\\n\\\"group_commit_interval_ms\\\" = \\\"10000\\\",\\n\\\"group_commit_data_bytes\\\" = \\\"134217728\\\"\\n);\",\n                        \"TableName\": \"duplicate_list_partition\"\n                    }\n                ]\n            }\n        ],\n        \"Message\": \"\",\n        \"RequestId\": \"f8f5e0af-7d36-4b49-8b4d-9c103deef55a\"\n    }\n}",
+        "title": "获取建表ddl"
+      }
+    ],
+    "DescribeDatabase": [
+      {
+        "document": "获取internal数据源的库信息",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDatabase\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdwdoris-bjizjxxx\",\n    \"CatalogName\": \"internal\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DbInfos\": [\n            {\n                \"DbName\": \"test\",\n                \"Location\": \"\",\n                \"Properties\": null\n            },\n            {\n                \"DbName\": \"db1\",\n                \"Location\": \"\",\n                \"Properties\": [\n                    {\n                        \"PropertyKey\": \"min_load_replica_num\",\n                        \"PropertyValue\": \"-1\"\n                    },\n                    {\n                        \"PropertyKey\": \"replication_allocation\",\n                        \"PropertyValue\": \"tag.location.default: 3\"\n                    }\n                ]\n            }\n        ],\n        \"Message\": \"\",\n        \"RequestId\": \"43516a7e-aa6c-4f43-8435-71d4e41dbd8a\"\n    }\n}",
+        "title": "获取数据库信息"
       }
     ],
     "DescribeDatabaseAuditDownload": [
@@ -214,6 +262,14 @@
         "title": "DescribeInstanceNodesRole"
       }
     ],
+    "DescribeInstanceOperationHistory": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceOperationHistory\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"PageNum\": 1,\n    \"PageSize\": 1,\n    \"StartTime\": \"abc\",\n    \"EndTime\": \"abc\",\n    \"UserName\": \"abc\",\n    \"PassWord\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Operations\": [\n            {\n                \"Name\": \"abc\",\n                \"Result\": \"abc\",\n                \"Desc\": \"abc\",\n                \"Level\": \"abc\",\n                \"LevelDesc\": \"abc\",\n                \"StartTime\": \"abc\",\n                \"EndTime\": \"abc\",\n                \"ResultDesc\": \"abc\",\n                \"OperateUin\": \"abc\",\n                \"JobId\": 0,\n                \"OperationDetail\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询操作记录"
+      }
+    ],
     "DescribeInstanceOperations": [
       {
         "document": "获取集群操作列表",
@@ -310,6 +366,22 @@
         "title": "查询ck集群信息"
       }
     ],
+    "DescribeTable": [
+      {
+        "document": "获取demo库下test表的表信息",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTable\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdwdoris-bjizjxxx\",\n    \"DbName\": \"demo\",\n    \"TableName\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Columns\": [\n            {\n                \"AggType\": \"\",\n                \"AutoInc\": false,\n                \"Comment\": \"用户id\",\n                \"DefaultValue\": \"\",\n                \"IsDistribution\": true,\n                \"IsKey\": true,\n                \"IsNull\": false,\n                \"IsPartition\": false,\n                \"Name\": \"user_id\",\n                \"Type\": \"LARGEINT\"\n            },\n            {\n                \"AggType\": \"\",\n                \"AutoInc\": false,\n                \"Comment\": \"数据灌入日期时间\",\n                \"DefaultValue\": \"\",\n                \"IsDistribution\": false,\n                \"IsKey\": true,\n                \"IsNull\": false,\n                \"IsPartition\": true,\n                \"Name\": \"date\",\n                \"Type\": \"DATE\"\n            },\n            {\n                \"AggType\": \"\",\n                \"AutoInc\": false,\n                \"Comment\": \"用户所在城市\",\n                \"DefaultValue\": \"\",\n                \"IsDistribution\": false,\n                \"IsKey\": true,\n                \"IsNull\": true,\n                \"IsPartition\": false,\n                \"Name\": \"city\",\n                \"Type\": \"VARCHAR(20)\"\n            },\n            {\n                \"AggType\": \"REPLACE\",\n                \"AutoInc\": false,\n                \"Comment\": \"用户最后一次访问时间\",\n                \"DefaultValue\": \"1970-01-01 00:00:00\",\n                \"IsDistribution\": false,\n                \"IsKey\": false,\n                \"IsNull\": false,\n                \"IsPartition\": false,\n                \"Name\": \"last_visit_date\",\n                \"Type\": \"DATETIME\"\n            },\n            {\n                \"AggType\": \"SUM\",\n                \"AutoInc\": false,\n                \"Comment\": \"用户总消费\",\n                \"DefaultValue\": \"0\",\n                \"IsDistribution\": false,\n                \"IsKey\": false,\n                \"IsNull\": false,\n                \"IsPartition\": false,\n                \"Name\": \"cost\",\n                \"Type\": \"BIGINT\"\n            }\n        ],\n        \"Distribution\": {\n            \"Count\": 3,\n            \"DistributionType\": \"Hash\"\n        },\n        \"IndexInfos\": null,\n        \"KeysType\": \"AGG_KEY\",\n        \"Message\": \"\",\n        \"Partition\": {\n            \"AutoPartition\": false,\n            \"ListInfos\": null,\n            \"PartitionType\": \"Range\",\n            \"RangeInfos\": [\n                {\n                    \"Left\": \"\",\n                    \"Max\": \"(\\\"2017-02-01\\\")\",\n                    \"PartitionName\": \"0201\",\n                    \"RangeType\": \"LESS THAN\",\n                    \"Right\": \"\",\n                    \"StepLength\": 0,\n                    \"Unit\": \"\"\n                },\n                {\n                    \"Left\": \"(\\\"2011-02-01\\\")\",\n                    \"Max\": \"\",\n                    \"PartitionName\": \"0202\",\n                    \"RangeType\": \"FIXED\",\n                    \"Right\": \"(\\\"2012-02-01\\\")\",\n                    \"StepLength\": 0,\n                    \"Unit\": \"\"\n                }\n            ]\n        },\n        \"Properties\": [\n            {\n                \"PropertyKey\": \"replication_allocation\",\n                \"PropertyValue\": \"tag.location.default: 1\"\n            }\n        ],\n        \"RequestId\": \"f4f99674-26f1-49c9-86eb-40f146f26b97\",\n        \"TableComment\": \"example\"\n    }\n}",
+        "title": "获取表信息"
+      }
+    ],
+    "DescribeTableList": [
+      {
+        "document": "获取internal数据源和demo库下的表列表",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTableList\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdwdoris-bjizjxxx\",\n    \"DbName\": \"demo\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Message\": \"\",\n        \"RequestId\": \"28caf1f1-9192-477c-94d4-e910b87ca0fc\",\n        \"TableNames\": [\n            \"test\",\n            \"table\"\n        ]\n    }\n}",
+        "title": "获取表列表"
+      }
+    ],
     "DescribeUserBindWorkloadGroup": [
       {
         "document": "",
@@ -342,12 +414,44 @@
         "title": "集群销毁示例"
       }
     ],
+    "ExecuteParametrizedQuery": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExecuteParametrizedQuery\n<公共请求参数>\n\n{\n    \"Database\": \"abc\",\n    \"Sql\": \"abc\",\n    \"QueryParameter\": [\n        {\n            \"PropertyKey\": \"abc\",\n            \"PropertyValue\": \"abc\"\n        }\n    ],\n    \"PageNum\": 1,\n    \"PageSize\": 1,\n    \"UserName\": \"abc\",\n    \"PassWord\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Fields\": [\n            \"abc\"\n        ],\n        \"FieldTypes\": [\n            \"abc\"\n        ],\n        \"Rows\": [\n            {\n                \"DataRow\": [\n                    \"abc\"\n                ]\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "带参数查询"
+      }
+    ],
+    "ExecuteSelectQuery": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExecuteSelectQuery\n<公共请求参数>\n\n{\n    \"Database\": \"abc\",\n    \"Query\": \"abc\",\n    \"PageNum\": 1,\n    \"PageSize\": 1,\n    \"UserName\": \"abc\",\n    \"PassWord\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Fields\": [\n            \"abc\"\n        ],\n        \"FieldTypes\": [\n            \"abc\"\n        ],\n        \"Rows\": [\n            {\n                \"DataRow\": [\n                    \"abc\"\n                ]\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "根据sql查询"
+      }
+    ],
     "FitClsLog": [
       {
         "document": "在集群配置页面修改集群接口",
         "input": "https://cdwdoris.tencentcloudapi.com/\n?Action=FitClsLog\n&InstanceId=cdwch-xxxx\n&ClsLogSetId=xxxx\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx-xxx\",\n        \"FlowId\": 0,\n        \"ErrorMsg\": \"\"\n    }\n}",
         "title": "修改集群配置接口"
+      }
+    ],
+    "InsertDatasToTable": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InsertDatasToTable\n<公共请求参数>\n\n{\n    \"Database\": \"abc\",\n    \"Table\": \"abc\",\n    \"Strict\": true,\n    \"MaxFilterRatio\": 0,\n    \"Columns\": [\n        \"abc\"\n    ],\n    \"Rows\": [\n        {\n            \"DataRow\": [\n                \"abc\"\n            ]\n        }\n    ],\n    \"Label\": \"abc\",\n    \"UserName\": \"abc\",\n    \"PassWord\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Success\": true,\n        \"Message\": \"abc\",\n        \"InsertCount\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "插入"
+      }
+    ],
+    "ModifyDatabaseTableAccess": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDatabaseTableAccess\n<公共请求参数>\n\n{\n    \"Database\": \"abc\",\n    \"Table\": \"abc\",\n    \"Privileges\": [\n        \"abc\"\n    ],\n    \"Role\": \"abc\",\n    \"GrantOrRevoke\": \"abc\",\n    \"UserName\": \"abc\",\n    \"PassWord\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Success\": true,\n        \"Message\": \"Permissions granted successfully.\",\n        \"RequestId\": \"xxxx-xxxx-xxxx-xxxx\"\n    }\n}",
+        "title": "授权"
       }
     ],
     "ModifyInstance": [
@@ -422,6 +526,14 @@
         "title": "示例"
       }
     ],
+    "QueryTableData": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryTableData\n<公共请求参数>\n\n{\n    \"Database\": \"abc\",\n    \"Table\": \"abc\",\n    \"SelectedFields\": [\n        \"abc\"\n    ],\n    \"PageNum\": 1,\n    \"PageSize\": 1,\n    \"UserName\": \"abc\",\n    \"PassWord\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Fields\": [\n            \"abc\"\n        ],\n        \"FieldTypes\": [\n            \"abc\"\n        ],\n        \"Rows\": [\n            {\n                \"DataRow\": [\n                    \"abc\"\n                ]\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询表"
+      }
+    ],
     "RecoverBackUpJob": [
       {
         "document": "",
@@ -476,6 +588,22 @@
         "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ScaleUpInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdwdoris-xad3fa9\",\n    \"SpecName\": \"S_8_32_H\",\n    \"Type\": \"CORE\"\n}",
         "output": "{\n    \"Response\": {\n        \"FlowId\": \"1231\",\n        \"InstanceId\": \"cdwch-auqej7a\",\n        \"ErrorMsg\": \"\",\n        \"RequestId\": \"xasdfkqe2-a12q29-axdfas\"\n    }\n}",
         "title": "节点垂直变配示例"
+      }
+    ],
+    "UpdateDatabase": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateDatabase\n<公共请求参数>\n\n{\n    \"DbName\": \"xxx\",\n    \"Operation\": \"SET_QUOTA\",\n    \"Quota\": \"10T\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Success\": true,\n        \"Message\": \"Database quota set successfully.\",\n        \"RequestId\": \"xxxx-xxxx-xxxx-xxxx\"\n    }\n}",
+        "title": "更新"
+      }
+    ],
+    "UpdateTableSchema": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateTableSchema\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"UserName\": \"abc\",\n    \"PassWord\": \"abc\",\n    \"DbName\": \"abc\",\n    \"TableName\": \"abc\",\n    \"Columns\": [\n        {\n            \"Name\": \"abc\",\n            \"Type\": \"abc\",\n            \"AggType\": \"abc\",\n            \"IsNull\": true,\n            \"IsKey\": true,\n            \"DefaultValue\": \"abc\",\n            \"IsPartition\": true,\n            \"IsDistribution\": true,\n            \"AutoInc\": true,\n            \"Comment\": \"abc\"\n        }\n    ],\n    \"IndexInfos\": [\n        {\n            \"IdxName\": \"abc\",\n            \"ColumnName\": \"abc\",\n            \"IdxType\": \"abc\",\n            \"IdxProperties\": [\n                {\n                    \"PropertyKey\": \"abc\",\n                    \"PropertyValue\": \"abc\"\n                }\n            ],\n            \"IdxComment\": \"abc\"\n        }\n    ],\n    \"Distribution\": {\n        \"DistributionType\": \"abc\",\n        \"Count\": 0\n    },\n    \"TableComment\": \"abc\",\n    \"Properties\": [\n        {\n            \"PropertyKey\": \"abc\",\n            \"PropertyValue\": \"abc\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx-xxx-xxx\"\n    }\n}",
+        "title": "修改表"
       }
     ]
   },

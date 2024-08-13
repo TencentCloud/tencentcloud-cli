@@ -521,7 +521,7 @@
         },
         {
           "disabled": false,
-          "document": "实例名称",
+          "document": "集群名称",
           "example": "testName",
           "member": "string",
           "name": "Name",
@@ -557,7 +557,7 @@
         },
         {
           "disabled": false,
-          "document": "实例绑定的VPC信息",
+          "document": "集群绑定的VPC信息，必填",
           "example": "[]",
           "member": "VpcInfo",
           "name": "VpcList",
@@ -566,7 +566,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启公网",
+          "document": "是否开启公网，默认值为false表示不开启",
           "example": "true",
           "member": "bool",
           "name": "EnablePublic",
@@ -575,7 +575,16 @@
         },
         {
           "disabled": false,
-          "document": "公网带宽（单位：兆）",
+          "document": "公网是否按流量计费，默认值为false表示不按流量计费",
+          "example": "false",
+          "member": "bool",
+          "name": "BillingFlow",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "公网带宽（单位：兆），默认值为0。如果开启公网，该字段必须为大于0的正整数",
           "example": "2",
           "member": "int64",
           "name": "Bandwidth",
@@ -602,7 +611,7 @@
         },
         {
           "disabled": false,
-          "document": "付费模式（0: 后付费；1: 预付费）",
+          "document": "付费模式（0: 后付费；1: 预付费），默认值为0",
           "example": "0",
           "member": "int64",
           "name": "PayMode",
@@ -611,7 +620,7 @@
         },
         {
           "disabled": false,
-          "document": "是否自动续费（0: 不自动续费；1: 自动续费）",
+          "document": "是否自动续费（0: 不自动续费；1: 自动续费），默认值为0",
           "example": "1",
           "member": "int64",
           "name": "RenewFlag",
@@ -620,7 +629,7 @@
         },
         {
           "disabled": false,
-          "document": "购买时长（单位：月）",
+          "document": "购买时长（单位：月），默认值为1",
           "example": "1",
           "member": "int64",
           "name": "TimeSpan",
@@ -5648,7 +5657,7 @@
         {
           "disabled": false,
           "document": "消费组名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "group1",
           "member": "string",
           "name": "GroupName",
           "output_required": true,
@@ -5659,7 +5668,7 @@
         {
           "disabled": false,
           "document": "备注信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "remark1",
           "member": "string",
           "name": "Remark",
           "output_required": false,
@@ -5670,7 +5679,7 @@
         {
           "disabled": false,
           "document": "是否已导入，作为入参时无效\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "Imported",
           "output_required": true,
@@ -5681,7 +5690,7 @@
         {
           "disabled": false,
           "document": "命名空间，仅4.x集群有效\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "namespace1",
           "member": "string",
           "name": "Namespace",
           "output_required": false,
@@ -5692,12 +5701,56 @@
         {
           "disabled": false,
           "document": "导入状态\nUnknown 未知\nSuccess 成功\nFailure 失败\nAlreadyExists 已存在\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "Success",
           "member": "string",
           "name": "ImportStatus",
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "4.x的命名空间，出参使用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "namespace1",
+          "member": "string",
+          "name": "NamespaceV4",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "4.x的消费组名，出参使用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "group1",
+          "member": "string",
+          "name": "GroupNameV4",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "4.x的完整命名空间，出参使用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "namespace1",
+          "member": "string",
+          "name": "FullNamespaceV4",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否为顺序投递，5.0有效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "ConsumeMessageOrderly",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
           "value_allowed_null": true
         }
       ],

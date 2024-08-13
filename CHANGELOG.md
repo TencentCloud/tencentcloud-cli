@@ -1,3 +1,330 @@
+# Release 3.0.1054.1
+
+## 费用中心(billing) 版本：2018-07-09
+
+### 第 60 次发布
+
+发布时间：2024-08-14 01:12:45
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [UsageDetails](http://document.tencentcloudapi.woa.com/document/product/555/19183#UsageDetails)
+
+	* 新增成员：ProductCode, SubProductCode, BillingItemCode, SubBillingItemCode, ProductEnName, SubProductEnName, CalcUnit, Action
+
+* [UsageRecords](http://document.tencentcloudapi.woa.com/document/product/555/19183#UsageRecords)
+
+	* 新增成员：PayMode, VoucherId, PayScene, SeqId
+
+
+
+
+## 腾讯云数据仓库 TCHouse-D(cdwdoris) 版本：2021-12-28
+
+### 第 22 次发布
+
+发布时间：2024-08-14 01:22:59
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CopyTableDatas](http://document.tencentcloudapi.woa.com/document/product/1706/84581)
+* [CreateDatabase](http://document.tencentcloudapi.woa.com/document/product/1706/84580)
+* [CreateTable](http://document.tencentcloudapi.woa.com/document/product/1706/84579)
+* [DeleteTable](http://document.tencentcloudapi.woa.com/document/product/1706/84578)
+* [DescribeCreateTablesDDL](http://document.tencentcloudapi.woa.com/document/product/1706/84577)
+* [DescribeDatabase](http://document.tencentcloudapi.woa.com/document/product/1706/84576)
+* [DescribeInstanceOperationHistory](http://document.tencentcloudapi.woa.com/document/product/1706/84575)
+* [DescribeTable](http://document.tencentcloudapi.woa.com/document/product/1706/84574)
+* [DescribeTableList](http://document.tencentcloudapi.woa.com/document/product/1706/84573)
+* [ExecuteParametrizedQuery](http://document.tencentcloudapi.woa.com/document/product/1706/84572)
+* [ExecuteSelectQuery](http://document.tencentcloudapi.woa.com/document/product/1706/84571)
+* [InsertDatasToTable](http://document.tencentcloudapi.woa.com/document/product/1706/84584)
+* [ModifyDatabaseTableAccess](http://document.tencentcloudapi.woa.com/document/product/1706/84583)
+* [QueryTableData](http://document.tencentcloudapi.woa.com/document/product/1706/84570)
+* [UpdateDatabase](http://document.tencentcloudapi.woa.com/document/product/1706/84582)
+* [UpdateTableSchema](http://document.tencentcloudapi.woa.com/document/product/1706/84569)
+
+新增数据结构：
+
+* [Column](http://document.tencentcloudapi.woa.com/document/product/1706/80309#Column)
+* [CreateTablesDDL](http://document.tencentcloudapi.woa.com/document/product/1706/80309#CreateTablesDDL)
+* [DbInfo](http://document.tencentcloudapi.woa.com/document/product/1706/80309#DbInfo)
+* [DbTablesInfo](http://document.tencentcloudapi.woa.com/document/product/1706/80309#DbTablesInfo)
+* [Distribution](http://document.tencentcloudapi.woa.com/document/product/1706/80309#Distribution)
+* [IndexInfo](http://document.tencentcloudapi.woa.com/document/product/1706/80309#IndexInfo)
+* [ListInfo](http://document.tencentcloudapi.woa.com/document/product/1706/80309#ListInfo)
+* [Partition](http://document.tencentcloudapi.woa.com/document/product/1706/80309#Partition)
+* [PropertiesMap](http://document.tencentcloudapi.woa.com/document/product/1706/80309#PropertiesMap)
+* [Property](http://document.tencentcloudapi.woa.com/document/product/1706/80309#Property)
+* [RangeInfo](http://document.tencentcloudapi.woa.com/document/product/1706/80309#RangeInfo)
+* [Rows](http://document.tencentcloudapi.woa.com/document/product/1706/80309#Rows)
+* [TablesDDL](http://document.tencentcloudapi.woa.com/document/product/1706/80309#TablesDDL)
+
+
+
+## Elasticsearch Service(es) 版本：2018-04-16
+
+### 第 69 次发布
+
+发布时间：2024-08-14 01:51:06
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateServerlessSpaceV2](http://document.tencentcloudapi.woa.com/document/product/845/83428)
+
+	* 新增入参：TagList
+
+* [DescribeServerlessMetrics](http://document.tencentcloudapi.woa.com/document/product/845/84200)
+
+	* 新增入参：DurationType
+
+	* 新增出参：IndexTraffic, ReadReqTimes, WriteReqTimes, DocCount
+
+* [DescribeServerlessSpaces](http://document.tencentcloudapi.woa.com/document/product/845/77391)
+
+	* 新增入参：IsInnerProduct, TagList
+
+
+修改数据结构：
+
+* [ServerlessIndexMetaField](http://document.tencentcloudapi.woa.com/document/product/845/30634#ServerlessIndexMetaField)
+
+	* 新增成员：IndexTraffic
+
+* [ServerlessSpace](http://document.tencentcloudapi.woa.com/document/product/845/30634#ServerlessSpace)
+
+	* 新增成员：TagList
+
+* [ServerlessSpaceUser](http://document.tencentcloudapi.woa.com/document/product/845/30634#ServerlessSpaceUser)
+
+	* 新增成员：UserType
+
+
+
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 98 次发布
+
+发布时间：2024-08-14 01:52:06
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateBatchInitOrganizationUrl](http://document.tencentcloudapi.woa.com/document/product/1668/84585)
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 149 次发布
+
+发布时间：2024-08-14 01:53:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateBatchInitOrganizationUrl](http://document.tencentcloudapi.woa.com/document/product/1595/84586)
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 移动应用安全(ms) 版本：2018-04-08
+
+### 第 9 次发布
+
+发布时间：2024-08-14 02:14:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* CancelEncryptTask
+* CreateBindInstance
+* CreateCosSecKeyInstance
+* CreateEncryptInstance
+* CreateOrderInstance
+* CreateResourceInstances
+* CreateShieldInstance
+* CreateShieldPlanInstance
+* DeleteShieldInstances
+* DescribeApkDetectionResult
+* DescribeEncryptInstances
+* DescribeEncryptPlan
+* DescribeOrderInstances
+* DescribeResourceInstances
+* DescribeShieldInstances
+* DescribeShieldPlanInstance
+* DescribeShieldResult
+* DescribeUrlDetectionResult
+* DescribeUserBaseInfoInstance
+* DestroyResourceInstances
+* RequestLocalTask
+* UpdateAppBindNameInstances
+* UpdateClientState
+* UpdateLocalTaskResult
+
+
+
+## 集团账号管理(organization) 版本：2021-03-31
+
+### 第 40 次发布
+
+发布时间：2024-08-14 02:16:48
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [AddExternalSAMLIdPCertificate](http://document.tencentcloudapi.woa.com/document/product/850/84641)
+* [AddPermissionPolicyToRoleConfiguration](http://document.tencentcloudapi.woa.com/document/product/850/84613)
+* [AddUserToGroup](http://document.tencentcloudapi.woa.com/document/product/850/84596)
+* [ClearExternalSAMLIdentityProvider](http://document.tencentcloudapi.woa.com/document/product/850/84640)
+* [CreateGroup](http://document.tencentcloudapi.woa.com/document/product/850/84595)
+* [CreateRoleAssignment](http://document.tencentcloudapi.woa.com/document/product/850/84633)
+* [CreateRoleConfiguration](http://document.tencentcloudapi.woa.com/document/product/850/84612)
+* [CreateUser](http://document.tencentcloudapi.woa.com/document/product/850/84603)
+* [CreateUserSyncProvisioning](http://document.tencentcloudapi.woa.com/document/product/850/84625)
+* [DeleteGroup](http://document.tencentcloudapi.woa.com/document/product/850/84594)
+* [DeleteRoleAssignment](http://document.tencentcloudapi.woa.com/document/product/850/84632)
+* [DeleteRoleConfiguration](http://document.tencentcloudapi.woa.com/document/product/850/84611)
+* [DeleteUser](http://document.tencentcloudapi.woa.com/document/product/850/84602)
+* [DeleteUserSyncProvisioning](http://document.tencentcloudapi.woa.com/document/product/850/84624)
+* [DescribeIdentityCenter](http://document.tencentcloudapi.woa.com/document/product/850/84618)
+* [DismantleRoleConfiguration](http://document.tencentcloudapi.woa.com/document/product/850/84631)
+* [GetExternalSAMLIdentityProvider](http://document.tencentcloudapi.woa.com/document/product/850/84639)
+* [GetGroup](http://document.tencentcloudapi.woa.com/document/product/850/84593)
+* [GetProvisioningTaskStatus](http://document.tencentcloudapi.woa.com/document/product/850/84623)
+* [GetRoleConfiguration](http://document.tencentcloudapi.woa.com/document/product/850/84610)
+* [GetTaskStatus](http://document.tencentcloudapi.woa.com/document/product/850/84630)
+* [GetUser](http://document.tencentcloudapi.woa.com/document/product/850/84601)
+* [GetUserSyncProvisioning](http://document.tencentcloudapi.woa.com/document/product/850/84622)
+* [GetZoneSAMLServiceProviderInfo](http://document.tencentcloudapi.woa.com/document/product/850/84638)
+* [GetZoneStatistics](http://document.tencentcloudapi.woa.com/document/product/850/84617)
+* [ListExternalSAMLIdPCertificates](http://document.tencentcloudapi.woa.com/document/product/850/84637)
+* [ListGroupMembers](http://document.tencentcloudapi.woa.com/document/product/850/84592)
+* [ListGroups](http://document.tencentcloudapi.woa.com/document/product/850/84591)
+* [ListJoinedGroupsForUser](http://document.tencentcloudapi.woa.com/document/product/850/84590)
+* [ListPermissionPoliciesInRoleConfiguration](http://document.tencentcloudapi.woa.com/document/product/850/84609)
+* [ListRoleAssignments](http://document.tencentcloudapi.woa.com/document/product/850/84629)
+* [ListRoleConfigurationProvisionings](http://document.tencentcloudapi.woa.com/document/product/850/84608)
+* [ListRoleConfigurations](http://document.tencentcloudapi.woa.com/document/product/850/84607)
+* [ListTasks](http://document.tencentcloudapi.woa.com/document/product/850/84628)
+* [ListUserSyncProvisionings](http://document.tencentcloudapi.woa.com/document/product/850/84621)
+* [ListUsers](http://document.tencentcloudapi.woa.com/document/product/850/84600)
+* [OpenIdentityCenter](http://document.tencentcloudapi.woa.com/document/product/850/84616)
+* [ProvisionRoleConfiguration](http://document.tencentcloudapi.woa.com/document/product/850/84627)
+* [RemoveExternalSAMLIdPCertificate](http://document.tencentcloudapi.woa.com/document/product/850/84636)
+* [RemovePermissionPolicyFromRoleConfiguration](http://document.tencentcloudapi.woa.com/document/product/850/84606)
+* [RemoveUserFromGroup](http://document.tencentcloudapi.woa.com/document/product/850/84589)
+* [SetExternalSAMLIdentityProvider](http://document.tencentcloudapi.woa.com/document/product/850/84635)
+* [UpdateGroup](http://document.tencentcloudapi.woa.com/document/product/850/84588)
+* [UpdateRoleConfiguration](http://document.tencentcloudapi.woa.com/document/product/850/84605)
+* [UpdateUser](http://document.tencentcloudapi.woa.com/document/product/850/84599)
+* [UpdateUserStatus](http://document.tencentcloudapi.woa.com/document/product/850/84598)
+* [UpdateUserSyncProvisioning](http://document.tencentcloudapi.woa.com/document/product/850/84620)
+* [UpdateZone](http://document.tencentcloudapi.woa.com/document/product/850/84615)
+
+新增数据结构：
+
+* [GroupInfo](http://document.tencentcloudapi.woa.com/document/product/850/67060#GroupInfo)
+* [GroupMembers](http://document.tencentcloudapi.woa.com/document/product/850/67060#GroupMembers)
+* [JoinedGroups](http://document.tencentcloudapi.woa.com/document/product/850/67060#JoinedGroups)
+* [PolicyDetail](http://document.tencentcloudapi.woa.com/document/product/850/67060#PolicyDetail)
+* [RoleAssignmentInfo](http://document.tencentcloudapi.woa.com/document/product/850/67060#RoleAssignmentInfo)
+* [RoleAssignments](http://document.tencentcloudapi.woa.com/document/product/850/67060#RoleAssignments)
+* [RoleConfiguration](http://document.tencentcloudapi.woa.com/document/product/850/67060#RoleConfiguration)
+* [RoleConfigurationProvisionings](http://document.tencentcloudapi.woa.com/document/product/850/67060#RoleConfigurationProvisionings)
+* [RolePolicie](http://document.tencentcloudapi.woa.com/document/product/850/67060#RolePolicie)
+* [RoleProvisioningsTask](http://document.tencentcloudapi.woa.com/document/product/850/67060#RoleProvisioningsTask)
+* [SAMLIdPCertificate](http://document.tencentcloudapi.woa.com/document/product/850/67060#SAMLIdPCertificate)
+* [SAMLIdentityProviderConfiguration](http://document.tencentcloudapi.woa.com/document/product/850/67060#SAMLIdentityProviderConfiguration)
+* [SAMLServiceProvider](http://document.tencentcloudapi.woa.com/document/product/850/67060#SAMLServiceProvider)
+* [TaskInfo](http://document.tencentcloudapi.woa.com/document/product/850/67060#TaskInfo)
+* [TaskStatus](http://document.tencentcloudapi.woa.com/document/product/850/67060#TaskStatus)
+* [UserInfo](http://document.tencentcloudapi.woa.com/document/product/850/67060#UserInfo)
+* [UserProvisioning](http://document.tencentcloudapi.woa.com/document/product/850/67060#UserProvisioning)
+* [UserProvisioningsTask](http://document.tencentcloudapi.woa.com/document/product/850/67060#UserProvisioningsTask)
+* [UserSyncProvisioning](http://document.tencentcloudapi.woa.com/document/product/850/67060#UserSyncProvisioning)
+* [ZoneStatistics](http://document.tencentcloudapi.woa.com/document/product/850/67060#ZoneStatistics)
+
+
+
+## 集团账号管理(organization) 版本：2018-12-25
+
+
+
+## 自动化助手(tat) 版本：2020-10-28
+
+### 第 15 次发布
+
+发布时间：2024-08-14 02:28:55
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeScenes](http://document.tencentcloudapi.woa.com/document/product/1340/84643)
+
+新增数据结构：
+
+* [Scene](http://document.tencentcloudapi.woa.com/document/product/1340/52687#Scene)
+
+
+
+## 消息队列 RocketMQ 版(trocket) 版本：2023-03-08
+
+### 第 19 次发布
+
+发布时间：2024-08-14 02:42:07
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateInstance](http://document.tencentcloudapi.woa.com/document/product/1739/81897)
+
+	* 新增入参：BillingFlow
+
+
+修改数据结构：
+
+* [SourceClusterGroupConfig](http://document.tencentcloudapi.woa.com/document/product/1739/81437#SourceClusterGroupConfig)
+
+	* 新增成员：NamespaceV4, GroupNameV4, FullNamespaceV4, ConsumeMessageOrderly
+
+
+
+
 # Release 3.0.1053.1
 
 ## 主机安全(cwp) 版本：2018-02-28
