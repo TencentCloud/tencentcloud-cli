@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli iss DescribeUserDevice --cli-unfold-argument  \
-    --DeviceId da238a8c-****-4a5b-****-ddba25945b48
+    --DeviceId da238a8c-****-4a5b-****-************
 ```
 
 Output: 
@@ -15,13 +15,13 @@ Output:
     "Response": {
         "Data": {
             "AccessProtocol": 1,
-            "ClusterId": "12345678-abcd-efgh-ijkl-1234567890abcd",
+            "ClusterId": "********-****-****-****-************",
             "ClusterName": "",
             "Code": "2*****vkVe",
             "Description": "",
             "GatewayId": "",
             "GatewayName": "",
-            "DeviceId": "12345678-abcd-efgh-ijkl-1234567890abcd",
+            "DeviceId": "da238a8c-****-4a5b-****-************",
             "Ip": "",
             "Manufacturer": "",
             "Name": "iss-qta-dont-delete",
@@ -78,7 +78,7 @@ Input:
 
 ```
 tccli iss DescribeUserDevice --cli-unfold-argument  \
-    --DeviceId 66666666-53e4-4a79-a16e-8504f8366a531
+    --DeviceId 66666666-****-****-****-************
 ```
 
 Output: 

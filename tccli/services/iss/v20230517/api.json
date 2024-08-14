@@ -2248,6 +2248,24 @@
           "name": "SNCode",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "RTMP推流地址自定义AppName（仅RTMP需要，支持英文、数字组合限制32个字符内）",
+          "example": "live",
+          "member": "string",
+          "name": "AppName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "RTMP推流地址自定义StreamName（仅RTMP需要，支持英文、数字组合限制32个字符内）",
+          "example": "00cuDZBadN",
+          "member": "string",
+          "name": "StreamName",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3444,6 +3462,15 @@
           "name": "ClusterId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "域名类型，0:拉流域名 1:推流域名",
+          "example": "1",
+          "member": "int64",
+          "name": "DomainType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -3895,6 +3922,26 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "RTMP推流地址自定义appName\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "live",
+          "member": "string",
+          "name": "AppName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "RTMP推流地址自定义streamName\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "00cuDZBadN",
+          "member": "string",
+          "name": "StreamName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -4107,6 +4154,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "域名类型 0:拉流域名 1:推流域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "DomainType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -4188,6 +4245,7 @@
           "example": "无",
           "member": "DescribeDomainData",
           "name": "Data",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

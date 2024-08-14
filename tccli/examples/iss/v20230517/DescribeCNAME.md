@@ -6,7 +6,8 @@ Input:
 
 ```
 tccli iss DescribeCNAME --cli-unfold-argument  \
-    --ClusterId ********-****-****-****-************
+    --ClusterId ********-****-****-****-************ \
+    --DomainType 0
 ```
 
 Output: 

@@ -231,6 +231,13 @@
       "output": "OrderFlowPackageResponse",
       "status": "online"
     },
+    "OrderPerLicense": {
+      "document": "购买一次性授权License",
+      "input": "OrderPerLicenseRequest",
+      "name": "订购一次性授权License",
+      "output": "OrderPerLicenseResponse",
+      "status": "online"
+    },
     "SetNotifyUrl": {
       "document": "设置用户流量告警信息接口，通过该接口设置流量包告警阈值以及告警时回调的url和key",
       "input": "SetNotifyUrlRequest",
@@ -3842,6 +3849,79 @@
         {
           "disabled": false,
           "document": "流量包的唯一资源ID",
+          "example": "56d11777-50f7-4c60-9c89-e7076c8529a9-0",
+          "member": "string",
+          "name": "ResourceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "OrderPerLicenseRequest": {
+      "document": "OrderPerLicense请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "购买永久授权License的设备ID，如果是厂商未激活设备采用HardwareId",
+          "example": "\"mna-test1\"",
+          "member": "string",
+          "name": "DeviceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备类型，0: SDK，1: CPE，作为用户创建或激活设备时传0，作为厂商创建待激活设备时传1",
+          "example": "0",
+          "member": "int64",
+          "name": "Type",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "购买失败后是否回滚（删除）设备，默认true，如果设备绑定了生效中的流量包则不能回滚。",
+          "example": "true",
+          "member": "bool",
+          "name": "RollBack",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否自动选择代金券，默认false。\n有多张券时的选择策略：按照可支付订单全部金额的券，先到期的券，可抵扣金额最大的券，余额最小的券，现金券 这个优先级进行扣券，且最多只抵扣一张券。",
+          "example": "false",
+          "member": "bool",
+          "name": "AutoVoucher",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "指定代金券ID。自动选择代金券时此参数无效。目前只允许传入一张代金券。\n注：若指定的代金券不符合订单抵扣条件，则正常支付，不扣券",
+          "example": "[\"OLSKVPGO4KUIU8HFDTEST1\"]",
+          "member": "string",
+          "name": "VoucherIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "OrderPerLicenseResponse": {
+      "document": "OrderPerLicense返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "一次性授权License的资源ID",
           "example": "56d11777-50f7-4c60-9c89-e7076c8529a9-0",
           "member": "string",
           "name": "ResourceId",

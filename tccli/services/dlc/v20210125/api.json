@@ -4865,6 +4865,7 @@
           "example": "name1",
           "member": "string",
           "name": "Name",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -4875,6 +4876,7 @@
           "example": "desc1",
           "member": "string",
           "name": "Description",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -4885,6 +4887,7 @@
           "example": "EXTERNAL",
           "member": "string",
           "name": "Type",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -4895,6 +4898,7 @@
           "example": "1",
           "member": "int64",
           "name": "Position",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -4905,6 +4909,7 @@
           "example": "无",
           "member": "KVPair",
           "name": "Params",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -4915,6 +4920,7 @@
           "example": "无",
           "member": "KVPair",
           "name": "BizParams",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -4925,6 +4931,7 @@
           "example": "false",
           "member": "bool",
           "name": "IsPartition",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": true
@@ -12682,6 +12689,46 @@
           "output_required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否是用户默认桶，0：默认桶，1：非默认桶\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "DefaultBucket",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "托管存储short name\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "DLC-Storage-123456",
+          "member": "string",
+          "name": "ShortName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "桶描述信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test bucket",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "托管桶状态，当前取值为：creating、bind、readOnly、isolate\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "creating",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -15250,7 +15297,7 @@
         {
           "disabled": false,
           "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Status",
           "output_required": false,
@@ -15541,7 +15588,7 @@
         {
           "disabled": false,
           "document": "过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "100",
           "member": "int64",
           "name": "Expiration",
           "output_required": false,
@@ -15552,12 +15599,34 @@
         {
           "disabled": false,
           "document": "是否删表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "DropTable",
           "output_required": false,
           "required": false,
           "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "过期字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "pt",
+          "member": "string",
+          "name": "ExpiredField",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "过期字段格式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "yyyy-MM-dd",
+          "member": "string",
+          "name": "ExpiredFieldFormat",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -15569,7 +15638,7 @@
         {
           "disabled": false,
           "document": "是否继承\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "true",
           "member": "string",
           "name": "Inherit",
           "output_required": false,
@@ -15626,7 +15695,19 @@
     },
     "SmartOptimizerWrittenPolicy": {
       "document": "SmartOptimizerWrittenPolicy",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "none/enable/disable/default\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "enable",
+          "member": "string",
+          "name": "WrittenEnable",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
       "usage": "both"
     },
     "SmartPolicy": {
@@ -16603,76 +16684,105 @@
       "members": [
         {
           "disabled": false,
-          "document": "字段名称",
+          "document": "字段名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "Name",
+          "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "字段类型",
+          "document": "字段类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "Type",
+          "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "字段描述",
+          "document": "字段描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "Comment",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "字段默认值",
+          "document": "字段默认值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "Default",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "字段是否是非空",
+          "document": "字段是否是非空\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "bool",
           "name": "NotNull",
+          "output_required": false,
           "required": false,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "表示整个 numeric 的长度,取值1-38",
+          "document": "表示整个 numeric 的长度,取值1-38\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
           "name": "Precision",
+          "output_required": false,
           "required": false,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "表示小数部分的长度\nScale小于Precision",
+          "document": "表示小数部分的长度\nScale小于Precision\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
           "name": "Scale",
+          "output_required": false,
           "required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "字段位置，小的在前\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Position",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否为分区字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "IsPartition",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "TPartition": {
       "document": "表分区字段信息",
@@ -16683,6 +16793,7 @@
           "example": "无",
           "member": "string",
           "name": "Name",
+          "output_required": false,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -16693,6 +16804,7 @@
           "example": "无",
           "member": "string",
           "name": "Type",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -16703,6 +16815,7 @@
           "example": "无",
           "member": "string",
           "name": "Comment",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -16713,6 +16826,7 @@
           "example": "无",
           "member": "string",
           "name": "PartitionType",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -16723,6 +16837,7 @@
           "example": "无",
           "member": "string",
           "name": "PartitionFormat",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -16733,6 +16848,7 @@
           "example": "无",
           "member": "int64",
           "name": "PartitionDot",
+          "output_required": false,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -16743,6 +16859,7 @@
           "example": "无",
           "member": "string",
           "name": "Transform",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -16753,12 +16870,13 @@
           "example": "无",
           "member": "string",
           "name": "TransformArgs",
+          "output_required": false,
           "required": false,
           "type": "list",
           "value_allowed_null": false
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "TableBaseInfo": {
       "document": "数据表配置信息",

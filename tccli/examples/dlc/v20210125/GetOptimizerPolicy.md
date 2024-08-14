@@ -22,6 +22,7 @@ tccli dlc GetOptimizerPolicy --cli-unfold-argument  \
     --SmartPolicy.Policy.Resources.0.Favor.0.DataBase abc \
     --SmartPolicy.Policy.Resources.0.Favor.0.Table abc \
     --SmartPolicy.Policy.Resources.0.Status 0 \
+    --SmartPolicy.Policy.Written.WrittenEnable abc \
     --SmartPolicy.Policy.Lifecycle.LifecycleEnable abc \
     --SmartPolicy.Policy.Lifecycle.Expiration 0 \
     --SmartPolicy.Policy.Lifecycle.DropTable True \
@@ -51,7 +52,9 @@ Output:
                     "Status": 0
                 }
             ],
-            "Written": {},
+            "Written": {
+                "WrittenEnable": "abc"
+            },
             "Lifecycle": {
                 "LifecycleEnable": "abc",
                 "Expiration": 0,

@@ -10852,6 +10852,17 @@
           "required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "签署方是否可以转他人处理\n\n<ul><li> **false** : ( 默认)可以转他人处理</li>\n<li> **true** :不可以转他人处理</li></ul>",
+          "example": "无",
+          "member": "bool",
+          "name": "NoTransfer",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

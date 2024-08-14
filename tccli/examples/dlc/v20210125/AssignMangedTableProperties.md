@@ -33,6 +33,7 @@ tccli dlc AssignMangedTableProperties --cli-unfold-argument  \
     --TableBaseInfo.SmartPolicy.Policy.Resources.0.Favor.0.DataBase abc \
     --TableBaseInfo.SmartPolicy.Policy.Resources.0.Favor.0.Table abc \
     --TableBaseInfo.SmartPolicy.Policy.Resources.0.Status 0 \
+    --TableBaseInfo.SmartPolicy.Policy.Written.WrittenEnable abc \
     --TableBaseInfo.SmartPolicy.Policy.Lifecycle.LifecycleEnable abc \
     --TableBaseInfo.SmartPolicy.Policy.Lifecycle.Expiration 0 \
     --TableBaseInfo.SmartPolicy.Policy.Lifecycle.DropTable True \

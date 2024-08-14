@@ -57,7 +57,9 @@ Output:
                                 "Status": 0
                             }
                         ],
-                        "Written": {},
+                        "Written": {
+                            "WrittenEnable": "abc"
+                        },
                         "Lifecycle": {
                             "LifecycleEnable": "abc",
                             "Expiration": 0,

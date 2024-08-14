@@ -201,6 +201,15 @@
           "name": "Citation",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启极速版搜索，默认false，不开启；在开启且命中搜索时，会启用极速版搜索，流式输出首字返回更快。",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableSpeedSearch",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
