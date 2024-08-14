@@ -15021,7 +15021,7 @@
           "example": "某产品",
           "member": "string",
           "name": "ProductName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -15031,7 +15031,87 @@
           "example": "某子产品",
           "member": "string",
           "name": "SubProductName",
-          "required": true,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "产品码\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ProductCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "子产品码\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SubProductCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "计费项码\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "BillingItemCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "计费细项码\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SubBillingItemCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "产品英文名\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ProductEnName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "子产品英文名\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SubProductEnName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "结算周期\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CalcUnit",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "payMode为prepay 且 payScene为common的情况下存在\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Action",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         }
@@ -15047,7 +15127,7 @@
           "example": "123",
           "member": "int64",
           "name": "UsedAmount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -15057,7 +15137,7 @@
           "example": "2020-01-01",
           "member": "string",
           "name": "UsedTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -15067,8 +15147,48 @@
           "example": "无",
           "member": "UsageDetails",
           "name": "UsageDetails",
-          "required": true,
+          "output_required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "付费模式",
+          "example": "prePay",
+          "member": "string",
+          "name": "PayMode",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "查询的券id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "VoucherId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "交易场景：（adjust：调账、common：正常交易场景）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PayScene",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "唯一id,对应交易:预付费的dealName,调账/后付费的outTradeNo\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SeqId",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

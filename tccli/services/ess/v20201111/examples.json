@@ -88,6 +88,14 @@
         "title": "获取批量撤销签署流程链接部分成功"
       }
     ],
+    "CreateBatchInitOrganizationUrl": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBatchInitOrganizationUrl\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDxjOXXgydjfxgnzUuO4zjEWA07rD2xl\"\n    },\n    \"OperateTypes\": [\n        \"OPEN_AUTO_SIGN\",\n        \"AUTH_JOIN_ORGANIZATION_GROUP\",\n        \"CREATE_SEAL\"\n    ],\n    \"OrganizationIds\": [\n        \"yDCpSUUckpao78exUIqrf58JQDTLbbTr\",\n        \"yDCpSUUckpao696tUIqrf5x1nPoxNy7C\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"MiniAppPath\": \"pages/guide/index?to=BATCH_INITIALIZATION_ORGANIZATIONS&shortKey=yDAHpURDfyLc5LgBhXb6\",\n        \"OperateLongUrl\": \"https://res.ess.tencent.cn/cdn/h5-activity-dev/jump-mp.html?to=BATCH_INITIALIZATION_ORGANIZATIONS&shortKey=yDCHpURDfyLc5LgBhXb6\",\n        \"OperateShortUrl\": \"https://essurl.cn/zahbUBHxW3\",\n        \"QRCodeUrl\": \"https://dyn.ess.tencent.cn/imgs/qrcode_urls/batch_initialization_organizations/yDCHHUUckpacc9ijUuXGmVcuzZCNH5pF.png\",\n        \"RequestId\": \"s1723520103899037060\"\n    }\n}",
+        "title": "创建批量操作企业初始化链接"
+      }
+    ],
     "CreateBatchOrganizationRegistrationTasks": [
       {
         "document": "",

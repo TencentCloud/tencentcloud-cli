@@ -8,6 +8,14 @@
         "title": "接受加入共享单元邀请"
       }
     ],
+    "AddExternalSAMLIdPCertificate": [
+      {
+        "document": "添加SAML签名证书",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddExternalSAMLIdPCertificate\n<公共请求参数>\n\n{\n    \"ZoneId\": \"z-dsj3ieme\",\n    \"X509Certificate\": \"nMIIBtjCCAVugAwIBAgITBmyf1XSXNmY*****\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CertificateId\": \"idp-c-2jd8923je29****\",\n        \"RequestId\": \"2ccd7ed1-24b4-4882-8f4a-5580b430bce7\"\n    }\n}",
+        "title": "添加SAML签名证书"
+      }
+    ],
     "AddOrganizationMemberEmail": [
       {
         "document": "",
@@ -22,6 +30,14 @@
         "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddOrganizationNode\n<公共请求参数>\n\n{\n    \"Name\": \"test\",\n    \"ParentNodeId\": 123\n}",
         "output": "{\n    \"Response\": {\n        \"NodeId\": 1001,\n        \"RequestId\": \"b46d2afe-6893-4529-bc96-2c82d9214957\"\n    }\n}",
         "title": "添加企业组织节点"
+      }
+    ],
+    "AddPermissionPolicyToRoleConfiguration": [
+      {
+        "document": "为权限配置添加策略",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddPermissionPolicyToRoleConfiguration\n<公共请求参数>\n\n{\n    \"ZoneId\": \"z-29wm2iwn\",\n    \"RoleConfigurationId\": \"rc-aiwmsiw\",\n    \"RolePolicyType\": \"System\",\n    \"RolePolicyNames\": [\n        \"TestPolicy\"\n    ],\n    \"CustomPolicyDocument\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e297543a-80de-4039-83c8-9d324545\"\n    }\n}",
+        "title": "为权限配置添加策略"
       }
     ],
     "AddShareUnit": [
@@ -46,6 +62,14 @@
         "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddShareUnitResources\n<公共请求参数>\n\n{\n    \"Area\": \"ap-guangzhou\",\n    \"Type\": \"secret\",\n    \"Resources\": [\n        {\n            \"ProductResourceId\": \"sec***002\"\n        }\n    ],\n    \"UnitId\": \"shareUnit-xhre**ra2p\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ef007aa-2dc5-4729-a880-b7ac69d94714\"\n    }\n}",
         "title": "添加共享单元资源"
+      }
+    ],
+    "AddUserToGroup": [
+      {
+        "document": "为用户组添加用户",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddUserToGroup\n<公共请求参数>\n\n{\n    \"ZoneId\": \"z-d8dh38bd\",\n    \"GroupId\": \"g-dsuen8n\",\n    \"UserId\": \"u-s3ndin23\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e297543a-80de-4039-83c8-9d324545\"\n    }\n}",
+        "title": "为用户组添加用户"
       }
     ],
     "AttachPolicy": [
@@ -78,6 +102,22 @@
         "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckAccountDelete\n<公共请求参数>\n\n{\n    \"MemberUin\": 111111111111\n}",
         "output": "{\n    \"Response\": {\n        \"AllowDelete\": true,\n        \"NotAllowReason\": {\n            \"IsCreateMember\": true,\n            \"DeletionPermission\": true,\n            \"IsAssignManager\": false,\n            \"IsAuthManager\": false,\n            \"IsShareManager\": false,\n            \"OperateProcess\": false,\n            \"BillingPermission\": true,\n            \"ExistResources\": [],\n            \"DetectFailedResources\": []\n        },\n        \"RequestId\": \"71295d81-d334-4fc0-af6a-5ac3d5e84b26\"\n    }\n}",
         "title": "成员账号删除检查"
+      }
+    ],
+    "ClearExternalSAMLIdentityProvider": [
+      {
+        "document": "清空SAML身份提供商配置信息",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ClearExternalSAMLIdentityProvider\n<公共请求参数>\n\n{\n    \"ZoneId\": \"z-du3jd83***\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2ccd7ed1-24b4-4882-8f4a-5580b430bce7\"\n    }\n}",
+        "title": "清空SAML身份提供商配置信息"
+      }
+    ],
+    "CreateGroup": [
+      {
+        "document": "创建用户组",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateGroup\n<公共请求参数>\n\n{\n    \"ZoneId\": \"z-7cbs6s6gs***\",\n    \"GroupName\": \"testGroup\",\n    \"Description\": \"this is group\"\n}",
+        "output": "{\n    \"Response\": {\n        \"GroupInfo\": {\n            \"GroupName\": \"testGroup\",\n            \"Description\": \"this is group\",\n            \"CreateTime\": \"2024-01-01 12:12:12\",\n            \"GroupType\": \"Manual\",\n            \"UpdateTime\": \"2024-01-01 12:12:12\",\n            \"GroupId\": \"g-8sh7baix****\",\n            \"MemberCount\": 0\n        },\n        \"RequestId\": \"e297543a-80de-4039-83c8-9d35d4545\"\n    }\n}",
+        "title": "创建用户组"
       }
     ],
     "CreateOrgServiceAssign": [
@@ -144,12 +184,52 @@
         "title": "创建策略"
       }
     ],
+    "CreateRoleAssignment": [
+      {
+        "document": " 在成员账号上授权",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRoleAssignment\n<公共请求参数>\n\n{\n    \"ZoneId\": \"z-djw83n***\",\n    \"RoleAssignmentInfo\": [\n        {\n            \"RoleConfigurationId\": \"rc-sjsiw2***\",\n            \"TargetType\": \"MemberUin\",\n            \"TargetUin\": 1000023222,\n            \"PrincipalType\": \"User\",\n            \"PrincipalId\": \"u-0829jd8d***\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Tasks\": [\n            {\n                \"TaskId\": \"t-sowmiwm\",\n                \"RoleConfigurationId\": \"r-sjsosmsss\",\n                \"RoleConfigurationName\": \"test\",\n                \"TargetUin\": 10000323432,\n                \"TargetType\": \"MemberUin\",\n                \"PrincipalId\": \"u-djiem3o***\",\n                \"PrincipalType\": \"User\",\n                \"TaskType\": \"CreateRoleAssignment\",\n                \"Status\": \"InProgress\"\n            }\n        ],\n        \"RequestId\": \"10accfa5-15ed-41fa-9e09-7efffd8e9345\"\n    }\n}",
+        "title": " 在成员账号上授权"
+      }
+    ],
+    "CreateRoleConfiguration": [
+      {
+        "document": "创建权限配置",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRoleConfiguration\n<公共请求参数>\n\n{\n    \"ZoneId\": \"z-33923n\",\n    \"RoleConfigurationName\": \"test\",\n    \"Description\": \"this is role configuration\",\n    \"SessionDuration\": 900,\n    \"RelayState\": \"https://console.cloud.tencent.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RoleConfigurationInfo\": {\n            \"RoleConfigurationId\": \"rc-s2ns92ns***\",\n            \"RoleConfigurationName\": \"test\",\n            \"Description\": \"this is role configuration\",\n            \"SessionDuration\": 900,\n            \"RelayState\": \"https://console.cloud.tencent.com\",\n            \"CreateTime\": \"2019-01-01 12:12:12\",\n            \"UpdateTime\": \"2019-01-01 12:12:12\"\n        },\n        \"RequestId\": \"e297543a-80de-4039-83c8-9d324545\"\n    }\n}",
+        "title": "创建权限配置"
+      }
+    ],
+    "CreateUser": [
+      {
+        "document": "创建用户",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateUser\n<公共请求参数>\n\n{\n    \"ZoneId\": \"z-33w3je****\",\n    \"UserName\": \"Alice\",\n    \"FirstName\": \"Alice\",\n    \"LastName\": \"Alice\",\n    \"DisplayName\": \"Alice\",\n    \"Description\": \"this is user\",\n    \"Email\": \"Alice@example.com\",\n    \"UserStatus\": \"Enabled\"\n}",
+        "output": "{\n    \"Response\": {\n        \"UserInfo\": {\n            \"UserName\": \"Alice\",\n            \"FirstName\": \"Alice\",\n            \"LastName\": \"Alice\",\n            \"DisplayName\": \"Alice\",\n            \"Description\": \"this is user\",\n            \"Email\": \"Alice@example.com\",\n            \"UserStatus\": \"Enabled\",\n            \"UserType\": \"Manual\",\n            \"UserId\": \"u-2342ds2s\",\n            \"CreateTime\": \"2024-02-02 12:12:12\",\n            \"UpdateTime\": \"2024-02-02 12:12:12\"\n        },\n        \"RequestId\": \"e297543a-80de-4039-83c8-9d35d4545\"\n    }\n}",
+        "title": "创建用户"
+      }
+    ],
+    "CreateUserSyncProvisioning": [
+      {
+        "document": "创建子用户同步任务",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateUserSyncProvisioning\n<公共请求参数>\n\n{\n    \"ZoneId\": \"z-di3nd8e***\",\n    \"UserSyncProvisionings\": [\n        {\n            \"DuplicationStrategy\": \"KeepBoth\",\n            \"DeletionStrategy\": \"Delete\",\n            \"Description\": \"this is cam user sync provisioning\",\n            \"PrincipalId\": \"u-sienmcien\",\n            \"PrincipalType\": \"User\",\n            \"TargetType\": \"MemberUin\",\n            \"TargetUin\": 1000234382342\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Tasks\": [\n            {\n                \"TaskId\": \"t-duedin****\",\n                \"TargetUin\": 1000289211,\n                \"TargetType\": \"MemberUin\",\n                \"TaskType\": \"StartProvisioning\",\n                \"TaskStatus\": \"InProgress\",\n                \"UserProvisioningId\": \"upe-d8n3d9***\",\n                \"PrincipalId\": \"u-dend83***\",\n                \"PrincipalType\": \"User\",\n                \"PrincipalName\": \"test\",\n                \"DuplicationStrategy\": \"KeepBoth\",\n                \"DeletionStrategy\": \"Delete\"\n            }\n        ],\n        \"RequestId\": \"e297543a-80de-4039-83c8-34545s45\"\n    }\n}",
+        "title": "创建子用户同步任务"
+      }
+    ],
     "DeleteAccount": [
       {
         "document": "删除成员账号",
         "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAccount\n<公共请求参数>\n\n{\n    \"MemberUin\": 111111111111\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"71295d81-d334-4fc0-af6a-5ac3d5e84b26\"\n    }\n}",
         "title": "删除成员账号"
+      }
+    ],
+    "DeleteGroup": [
+      {
+        "document": "删除用户组",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteGroup\n<公共请求参数>\n\n{\n    \"ZoneId\": \"z-d8d7djd***\",\n    \"GroupId\": \"g-sudnd7d88\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e297543a-80de-4039-83c8-9d324545\"\n    }\n}",
+        "title": "删除用户组"
       }
     ],
     "DeleteOrgServiceAssign": [
@@ -216,6 +296,22 @@
         "title": "删除策略"
       }
     ],
+    "DeleteRoleAssignment": [
+      {
+        "document": "移除成员账号上的授权",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRoleAssignment\n<公共请求参数>\n\n{\n    \"ZoneId\": \"z-2ms923mw\",\n    \"RoleConfigurationId\": \"rc-smw9em32\",\n    \"TargetType\": \"MemberUin\",\n    \"TargetUin\": 10000332,\n    \"PrincipalType\": \"User\",\n    \"PrincipalId\": \"u-siwnwiene\",\n    \"DeprovisionStrategy\": \"DeprovisionForLastRoleAssignmentOnAccount\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Task\": {\n            \"TaskId\": \"t-0md93jfd3\",\n            \"RoleConfigurationId\": \"rc-dsk3323\",\n            \"RoleConfigurationName\": \"test\",\n            \"TargetUin\": 100032333,\n            \"TargetType\": \"MemberUin\",\n            \"PrincipalId\": \"u-siwnwiene\",\n            \"PrincipalType\": \"User\",\n            \"TaskType\": \"DeleteRolesAssignment\",\n            \"Status\": \"InProgress\"\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "移除成员账号上的授权"
+      }
+    ],
+    "DeleteRoleConfiguration": [
+      {
+        "document": "删除权限配置信息",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRoleConfiguration\n<公共请求参数>\n\n{\n    \"ZoneId\": \"z-2jsoi3ms\",\n    \"RoleConfigurationId\": \"rc-ais2ismwo2\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e297543a-80de-4039-83c8-9d324545\"\n    }\n}",
+        "title": "删除权限配置信息"
+      }
+    ],
     "DeleteShareUnit": [
       {
         "document": "",
@@ -240,12 +336,36 @@
         "title": "删除共享单元资源"
       }
     ],
+    "DeleteUser": [
+      {
+        "document": "删除用户",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteUser\n<公共请求参数>\n\n{\n    \"ZoneId\": \"z-33mdo34md\",\n    \"UserId\": \"u-2sks3m2\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e297543a-80de-4039-83c8-34545s45\"\n    }\n}",
+        "title": "删除用户"
+      }
+    ],
+    "DeleteUserSyncProvisioning": [
+      {
+        "document": "删除子用户同步任务",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteUserSyncProvisioning\n<公共请求参数>\n\n{\n    \"ZoneId\": \"z-dssmowmsd\",\n    \"UserProvisioningId\": \"up-sxins8snds\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Tasks\": {\n            \"TaskId\": \"t-duedin****\",\n            \"TargetUin\": 1000289211,\n            \"TargetType\": \"MemberUin\",\n            \"TaskType\": \"DeleteProvisioning\",\n            \"TaskStatus\": \"InProgress\",\n            \"UserProvisioningId\": \"upe-d8n3d9***\",\n            \"PrincipalId\": \"u-dend83***\",\n            \"PrincipalType\": \"User\",\n            \"PrincipalName\": \"test\",\n            \"DuplicationStrategy\": \"KeepBoth\",\n            \"DeletionStrategy\": \"Delete\"\n        },\n        \"RequestId\": \"e297543a-80de-4039-83c8-9d324545\"\n    }\n}",
+        "title": "删除子用户同步任务"
+      }
+    ],
     "DescribeEffectivePolicy": [
       {
         "document": "查询目标关联的有效策略",
         "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEffectivePolicy\n<公共请求参数>\n\n{\n    \"TargetId\": 111111111111\n}",
         "output": "{\n    \"Response\": {\n        \"EffectivePolicy\": {\n            \"TargetId\": 111111111111,\n            \"PolicyContent\": \"{\\\"tags\\\":{\\\"aaa\\\":{\\\"tag_key\\\":\\\"aaa\\\",\\\"tag_value\\\":[\\\"111\\\",\\\"222\\\"],\\\"resource_type_scope\\\":[\\\"cvm:instance\\\",\\\"cvm:volume\\\",\\\"cvm:keypair\\\",\\\"cvm:image\\\"]},\\\"bbb\\\":{\\\"tag_key\\\":\\\"bbb\\\",\\\"tag_value\\\":[\\\"333\\\"]}}}\",\n            \"LastUpdatedTimestamp\": 1668394639\n        },\n        \"RequestId\": \"b46d2afe-6893-4529-bc96-2c82d9214957\"\n    }\n}",
         "title": "查询目标关联的有效策略"
+      }
+    ],
+    "DescribeIdentityCenter": [
+      {
+        "document": "获取用户cam身份中心服务信息",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIdentityCenter\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"CreateTime\": \"2024-05-30 10:50:11\",\n        \"RequestId\": \"da9a32a5-f6d5-4ef5-be20-0ee16b63bb6d\",\n        \"ScimSyncStatus\": \"Disabled\",\n        \"ServiceStatus\": \"Enabled\",\n        \"UpdateTime\": \"2024-06-25 10:08:21\",\n        \"ZoneId\": \"z-vft38p2hq8tq\",\n        \"ZoneName\": \"testwu\"\n    }\n}",
+        "title": "获取用户cam身份中心服务信息"
       }
     ],
     "DescribeOrganization": [
@@ -400,12 +520,124 @@
         "title": "禁用策略类型"
       }
     ],
+    "DismantleRoleConfiguration": [
+      {
+        "document": "解除权限配置在成员账号上的部署",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DismantleRoleConfiguration\n<公共请求参数>\n\n{\n    \"ZoneId\": \"z-disanisa\",\n    \"RoleConfigurationId\": \"rc-daosmqa\",\n    \"TargetType\": \"Member\",\n    \"TargetUin\": 1000023292\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d95c7cc0-195d-4818-aa3a-e7dc73eafe37\",\n        \"Task\": {\n            \"RoleConfigurationId\": \"rc-4plmus8fdfsb\",\n            \"RoleConfigurationName\": \"testConfiguration1\",\n            \"TargetType\": \"MemberUin\",\n            \"TargetUin\": 700000145543,\n            \"TaskId\": \"t-2xdmzwphpsbd\",\n            \"TaskStatus\": \"InProgress\",\n            \"TaskType\": \"CreateRoleAssignment\"\n        }\n    }\n}",
+        "title": "解除权限配置在成员账号上的部署"
+      }
+    ],
     "EnablePolicyType": [
       {
         "document": "启用策略类型",
         "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnablePolicyType\n<公共请求参数>\n\n{\n    \"OrganizationId\": 80001,\n    \"PolicyType\": \"SERVICE_CONTROL_POLICY\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"fd498970-3ffb-440e-a3bf-f6faa43eeb08\"\n    }\n}",
         "title": "启用策略类型"
+      }
+    ],
+    "GetExternalSAMLIdentityProvider": [
+      {
+        "document": "查询SAML身份提供商配置信息",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetExternalSAMLIdentityProvider\n<公共请求参数>\n\n{\n    \"ZoneId\": \"z-dm239d****\"\n}",
+        "output": "{\n    \"Response\": {\n        \"SAMLIdentityProviderConfiguration\": {\n            \"EntityId\": \"http://www.okta.com/2jd83ne9m*****\",\n            \"SSOStatus\": \"Enabled\",\n            \"EncodedMetadataDocument\": \"PD94bWwgdmVyc2lvbj0iMS4wIj8+CjxFbnRpdHlEZXNjcmlwdG9yIHhtbG5zPSJ1cm46b2FzaXM6bmFtZXM6dGM6U0FNTDoydpbi5jb20vc2FtbC9tZXRhZGF0YS8xN2NkYjEyOC03N**********\",\n            \"CertificateIds\": [\n                \"idp-c-2jd8923je29****\"\n            ],\n            \"LoginUrl\": \"https://dev-xxxxxx.okta.com/app/dev-xxxxxx_cloudssodemo_1/2jd83ne9m****/sso/saml\",\n            \"CreateTime\": \"2024-01-01 12:12:12\",\n            \"UpdateTime\": \"2024-01-01 12:12:12\"\n        },\n        \"RequestId\": \"2ccd7ed1-24b4-4882-8f4a-5580b430bce7\"\n    }\n}",
+        "title": "查询SAML身份提供商配置信息"
+      }
+    ],
+    "GetGroup": [
+      {
+        "document": "查询用户组信息",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetGroup\n<公共请求参数>\n\n{\n    \"ZoneId\": \"z-ws9sdj8****\",\n    \"GroupId\": \"g-sushsia7s8\"\n}",
+        "output": "{\n    \"Response\": {\n        \"GroupInfo\": {\n            \"GroupName\": \"testGroup\",\n            \"Description\": \"this is group\",\n            \"CreateTime\": \"2024-01-01 12:12:12\",\n            \"GroupType\": \"Manual\",\n            \"UpdateTime\": \"2024-01-01 12:12:12\",\n            \"GroupId\": \"g-sushsia7s8\",\n            \"MemberCount\": 20\n        },\n        \"RequestId\": \"e297543a-80de-4039-83c8-9d324545\"\n    }\n}",
+        "title": "查询用户组信息"
+      }
+    ],
+    "GetProvisioningTaskStatus": [
+      {
+        "document": "查询用户同步异步任务的状态",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetProvisioningTaskStatus\n<公共请求参数>\n\n{\n    \"ZoneId\": \"z-djw98wnd***\",\n    \"TaskId\": \"t-d8wjd8j3****\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskStatus\": {\n            \"Status\": \"Success\",\n            \"TaskId\": \"z-dnsudniw****\",\n            \"TaskType\": \"StartProvisioning\",\n            \"FailureReason\": \"\"\n        },\n        \"RequestId\": \"e297543a-80de-4039-83c8-9d35d4545\"\n    }\n}",
+        "title": "查询用户同步异步任务的状态"
+      }
+    ],
+    "GetRoleConfiguration": [
+      {
+        "document": "查询权限配置信息",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetRoleConfiguration\n<公共请求参数>\n\n{\n    \"ZoneId\": \"z-2s2osm2***\",\n    \"RoleConfigurationId\": \"rc-odmo23w\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RoleConfigurationInfo\": {\n            \"RoleConfigurationId\": \"rc-s2ns92ns***\",\n            \"RoleConfigurationName\": \"test\",\n            \"Description\": \"this is role configuration\",\n            \"SessionDuration\": 900,\n            \"RelayState\": \"https://console.cloud.tencent.com\",\n            \"CreateTime\": \"2019-01-01 12:12:12\",\n            \"UpdateTime\": \"2019-01-01 12:12:12\"\n        },\n        \"RequestId\": \"e297543a-80de-4039-83c8-9d324545\"\n    }\n}",
+        "title": "查询权限配置信息"
+      }
+    ],
+    "GetTaskStatus": [
+      {
+        "document": "查询异步任务的状态",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetTaskStatus\n<公共请求参数>\n\n{\n    \"ZoneId\": \"z-dsiwnw***\",\n    \"TaskId\": \"t-duxj***\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskStatus\": {\n            \"Status\": \"Success\",\n            \"TaskId\": \"z-dksodm***\",\n            \"TaskType\": \"ProvisionRoleConfiguration\",\n            \"FailureReason\": \"fielded\"\n        },\n        \"RequestId\": \"e297543a-80de-4039-83c8-9d324545\"\n    }\n}",
+        "title": "查询异步任务的状态"
+      }
+    ],
+    "GetUser": [
+      {
+        "document": "查询用户信息",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetUser\n<公共请求参数>\n\n{\n    \"UserId\": \"u-4i293bf3indh\",\n    \"ZoneId\": \"z-hfp2qqncf343\"\n}",
+        "output": "{\n    \"Response\": {\n        \"UserInfo\": {\n            \"UserName\": \"test\",\n            \"FirstName\": \"test\",\n            \"LastName\": \"test\",\n            \"DisplayName\": \"test\",\n            \"Description\": \"this is user\",\n            \"Email\": \"test@example.com\",\n            \"UserStatus\": \"Enabled\",\n            \"UserType\": \"Manual\",\n            \"UserId\": \"u-2jsal3jdxk\",\n            \"CreateTime\": \"2024-03-12 12:12:12\",\n            \"UpdateTime\": \"2024-03-12 12:12:12\"\n        },\n        \"RequestId\": \"e297543a-80de-4039-83c8-34545s45\"\n    }\n}",
+        "title": "查询用户信息"
+      }
+    ],
+    "GetUserSyncProvisioning": [
+      {
+        "document": "查询CAM用户同步",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetUserSyncProvisioning\n<公共请求参数>\n\n{\n    \"ZoneId\": \"z-dimd3d***\",\n    \"UserProvisioningId\": \"up-imei3rdiem\"\n}",
+        "output": "{\n    \"Response\": {\n        \"UserProvisioning\": {\n            \"UserProvisioningId\": \"up-siwnei3nso\",\n            \"Description\": \"this is cam user sync\",\n            \"Status\": \"Enabled\",\n            \"PrincipalId\": \"u-swnd8wn3\",\n            \"PrincipalName\": \"test\",\n            \"PrincipalType\": \"User\",\n            \"TargetUin\": \"10000338332\",\n            \"TargetName\": \"test\",\n            \"TargetType\": \"MemberUin\",\n            \"DuplicationStrategy\": \"KeepBoth\",\n            \"DeletionStrategy\": \"Delete\",\n            \"CreateTime\": \"2024-01-01 12:12:12\",\n            \"UpdateTime\": \"2024-01-01 12:12:12\"\n        },\n        \"RequestId\": \"e297543a-80de-4039-83c8-9d324545\"\n    }\n}",
+        "title": "查询CAM用户同步"
+      }
+    ],
+    "GetZoneSAMLServiceProviderInfo": [
+      {
+        "document": "查询SAML服务提供商配置信息",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetZoneSAMLServiceProviderInfo\n<公共请求参数>\n\n{\n    \"ZoneId\": \"z-di3d9em***\"\n}",
+        "output": "{\n    \"Response\": {\n        \"SAMLServiceProvider\": {\n            \"EntityId\": \"https://tencentcloudsso.com/saml/sp/z-doekeie****\",\n            \"ZoneId\": \"z-doekeie****\",\n            \"EncodedMetadataDocument\": \"JTNDJTNGeG1sJTIwdmVyc2lvbiUzRCUyMjEuMCUyMiUyMGVuY29kaW5nJTNEJTIy***\",\n            \"AcsUrl\": \"https://tencentcloudsso.com/saml/acs/d9wjd-d93je9-2me****\"\n        },\n        \"RequestId\": \"e297543a-80de-4039-83c8-9d324545\"\n    }\n}",
+        "title": "查询SAML服务提供商配置信息"
+      }
+    ],
+    "GetZoneStatistics": [
+      {
+        "document": "查询空间的统计信息",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetZoneStatistics\n<公共请求参数>\n\n{\n    \"ZoneId\": \"z-siwns82n****\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ZoneStatistics\": {\n            \"UserQuota\": 1000,\n            \"GroupQuota\": 500,\n            \"RoleConfigurationQuota\": 1000,\n            \"SystemPolicyPerRoleConfigurationQuota\": 20,\n            \"UserCount\": 10,\n            \"GroupCount\": 2,\n            \"RoleConfigurationCount\": 3,\n            \"UserProvisioningCount\": 0,\n            \"RoleConfigurationSyncCount\": 0\n        },\n        \"RequestId\": \"e297543a-80de-4039-83c8-9d324545\"\n    }\n}",
+        "title": "查询空间的统计信息"
+      }
+    ],
+    "ListExternalSAMLIdPCertificates": [
+      {
+        "document": "查询SAML签名证书列表",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListExternalSAMLIdPCertificates\n<公共请求参数>\n\n{\n    \"ZoneId\": \"z-xj239dj23***\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCounts\": 20,\n        \"SAMLIdPCertificates\": [\n            {\n                \"SerialNumber\": \"1347934239****\",\n                \"Issuer\": \"5.6.54.22.1.9.1=#dj39dj39e3w9rm3e2e3****,CN=dev-xxxxxx,OU=SSOProvider,O=Okta\",\n                \"Version\": \"1\",\n                \"CertificateId\": \"idp-c-2jd8923je29****\",\n                \"PublicKey\": \"nMIIBtjCCAVugAwIBAgITBmyf1XSXNmY****\",\n                \"SignatureAlgorithm\": \"SHA256withRSA\",\n                \"NotAfter\": \"2030-06-23 07:04:37\",\n                \"NotBefore\": \"2010-06-23 07:04:37\",\n                \"Subject\": \"5.6.54.22.1.9.1=#dj39dj39e3w9rm3e2e3****,CN=dev-xxxxxx,OU=SSOProvider,O=Okta\",\n                \"X509Certificate\": \"nMIIBtjCCAVugAwIBAgITBmyf1XSXNmY****\"\n            }\n        ],\n        \"RequestId\": \"2ccd7ed1-24b4-4882-8f4a-5580b430bce7\"\n    }\n}",
+        "title": "查询SAML签名证书列表"
+      }
+    ],
+    "ListGroupMembers": [
+      {
+        "document": "查询用户组中的用户列表",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListGroupMembers\n<公共请求参数>\n\n{\n    \"ZoneId\": \"z-ds932j9m3\",\n    \"GroupId\": \"g29sn2389e\",\n    \"NextToken\": \"\",\n    \"MaxResults\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"NextToken\": \"OTM0YzE4MzY2ZjdhMWM0MYZDhnYaxsiYTLI=\",\n        \"TotalCounts\": 20,\n        \"MaxResults\": 10,\n        \"IsTruncated\": true,\n        \"GroupMembers\": [\n            {\n                \"UserName\": \"test\",\n                \"DisplayName\": \"test\",\n                \"Description\": \"this is test user\",\n                \"Email\": \"123456@qq.com\",\n                \"UserStatus\": \"Enabled\",\n                \"UserType\": \"Manual\",\n                \"UserId\": \"u-d032med3\",\n                \"JoinTime\": \"2024-01-01 12:12:12\"\n            }\n        ],\n        \"RequestId\": \"e297543a-80de-4039-83c8-9d324545\"\n    }\n}",
+        "title": "查询用户组中的用户列表"
+      }
+    ],
+    "ListGroups": [
+      {
+        "document": "查询用户组列表",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListGroups\n<公共请求参数>\n\n{\n    \"ZoneId\": \"z-32s7dhd8s***\",\n    \"MaxResults\": \"20\",\n    \"GroupType\": \"Manual\"\n}",
+        "output": "{\n    \"Response\": {\n        \"NextToken\": \"OTM0YzE4MzY2ZjdhMWM0MYZD******\",\n        \"Groups\": [\n            {\n                \"GroupName\": \"testGroup\",\n                \"Description\": \"thsi is group\",\n                \"CreateTime\": \"2024-01-01 12:12:12\",\n                \"GroupType\": \"Manual\",\n                \"UpdateTime\": \"2024-01-01 12:12:12\",\n                \"GroupId\": \"g-q8shs8h****\",\n                \"MemberCount\": 20\n            }\n        ],\n        \"MaxResults\": 10,\n        \"TotalCounts\": 30,\n        \"IsTruncated\": true,\n        \"RequestId\": \"e297543a-80de-4039-83c8-9d35d4545\"\n    }\n}",
+        "title": "查询用户组列表"
+      }
+    ],
+    "ListJoinedGroupsForUser": [
+      {
+        "document": "查询用户加入的用户组",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListJoinedGroupsForUser\n<公共请求参数>\n\n{\n    \"ZoneId\": \"z-2o3meo3\",\n    \"UserId\": \"u-3od3e3d\",\n    \"NextToken\": \"\",\n    \"MaxResults\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"NextToken\": \"OTM0YzE4MzY2ZjdhMWM0MYZDhnYaxsiYTLI=\",\n        \"TotalCounts\": 20,\n        \"MaxResults\": 10,\n        \"IsTruncated\": true,\n        \"JoinedGroups\": [\n            {\n                \"GroupName\": \"testGroup\",\n                \"Description\": \"this is testGroup\",\n                \"GroupId\": \"g-s23nw3e\",\n                \"GroupType\": \"Manual\",\n                \"JoinTime\": \"2021-01-01 12:12:12\"\n            }\n        ],\n        \"RequestId\": \"e297543a-80de-4039-83c8-9d324545\"\n    }\n}",
+        "title": "查询用户加入的用户组"
       }
     ],
     "ListNonCompliantResource": [
@@ -440,6 +672,14 @@
         "title": "获取集团服务设置列表"
       }
     ],
+    "ListPermissionPoliciesInRoleConfiguration": [
+      {
+        "document": "获取权限配置中的策略列表",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListPermissionPoliciesInRoleConfiguration\n<公共请求参数>\n\n{\n    \"ZoneId\": \"z-d83js823n\",\n    \"RoleConfigurationId\": \"rc-s93jw3ns\",\n    \"RolePolicyType\": \"System\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCounts\": 20,\n        \"RolePolicies\": [\n            {\n                \"RolePolicyName\": \"adminPolciy\",\n                \"RolePolicyType\": \"System\",\n                \"RolePolicyDocument\": \"\",\n                \"AddTime\": \"2020-01-01 12:12:12\"\n            }\n        ],\n        \"RequestId\": \"e297543a-80de-4039-83c8-9d324545\"\n    }\n}",
+        "title": "获取权限配置中的策略列表"
+      }
+    ],
     "ListPolicies": [
       {
         "document": "查看策略列表数据",
@@ -456,6 +696,30 @@
         "title": "查询目标关联的策略列表"
       }
     ],
+    "ListRoleAssignments": [
+      {
+        "document": "查询授权列表",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListRoleAssignments\n<公共请求参数>\n\n{\n    \"ZoneId\": \"z-ssmdsowm**\",\n    \"RoleConfigurationId\": \"rc2-as245usjsm\",\n    \"MaxResults\": 30,\n    \"NextToken\": \"\",\n    \"TargetType\": \"MemeberUin\",\n    \"TargetUin\": \"10000238922\",\n    \"PrincipalType\": \"User\",\n    \"PrincipalId\": \"u-ss342md**\"\n}",
+        "output": "{\n    \"Response\": {\n        \"NextToken\": \"abc\",\n        \"TotalCounts\": 30,\n        \"MaxResults\": 10,\n        \"IsTruncated\": true,\n        \"RoleAssignments\": [\n            {\n                \"RoleConfigurationId\": \"ec-swidn****\",\n                \"RoleConfigurationName\": \"test\",\n                \"TargetUin\": 100000322,\n                \"TargetType\": \"MemberUin\",\n                \"TargetName\": \"test\",\n                \"PrincipalId\": \"u-ssiisn***\",\n                \"PrincipalType\": \"User\",\n                \"PrincipalName\": \"testConfig\",\n                \"CreateTime\": \"2024-01-01 12:12:12\",\n                \"UpdateTime\": \"2024-01-01 12:12:12\"\n            }\n        ],\n        \"RequestId\": \"e297543a-80de-4039-83c8-9d324545\"\n    }\n}",
+        "title": "查询授权列表"
+      }
+    ],
+    "ListRoleConfigurationProvisionings": [
+      {
+        "document": " 查询权限配置部署列表",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListRoleConfigurationProvisionings\n<公共请求参数>\n\n{\n    \"ZoneId\": \"z-d8wj\",\n    \"RoleConfigurationId\": \"up-dnsisns***\",\n    \"MaxResults\": 20,\n    \"NextToken\": \"abc\",\n    \"TargetType\": \"MemberUin\",\n    \"TargetUin\": 1000329122,\n    \"DeploymentStatus\": \"DeployedRequired\",\n    \"Filter\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"NextToken\": \"\",\n        \"TotalCounts\": 30,\n        \"MaxResults\": 10,\n        \"IsTruncated\": true,\n        \"RoleConfigurationProvisionings\": [\n            {\n                \"DeploymentStatus\": \"DeployedRequired\",\n                \"RoleConfigurationId\": \"rc-sjwiwm2ww**\",\n                \"RoleConfigurationName\": \"testConfiguration\",\n                \"TargetUin\": 10003292021,\n                \"TargetName\": \"test\",\n                \"TargetType\": \"MemberUin\",\n                \"CreateTime\": \"2024-01-01 12:12:12\",\n                \"UpdateTime\": \"2024-01-01 12:12:12\"\n            }\n        ],\n        \"RequestId\": \"2ccd7ed1-24b4-4882-8f4a-5580b430bce7\"\n    }\n}",
+        "title": " 查询权限配置部署列表"
+      }
+    ],
+    "ListRoleConfigurations": [
+      {
+        "document": "查询权限配置列表",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListRoleConfiguration\n<公共请求参数>\n\n{\n    \"ZoneId\": \"z-s9h39sdn2\",\n    \"NextToken\": \"sisndpmfisdnlk\",\n    \"MaxResults\": 10,\n    \"Filter\": \"RoleConfigurationName eqTestRoleConfiguration\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCounts\": 20,\n        \"MaxResults\": 10,\n        \"IsTruncated\": true,\n        \"NextToken\": \"3si2ns92ns82bos\",\n        \"RoleConfigurations\": [\n            {\n                \"RoleConfigurationId\": \"rc-s2ns92ns***\",\n                \"RoleConfigurationName\": \"test\",\n                \"Description\": \"this is role configuration\",\n                \"SessionDuration\": 900,\n                \"RelayState\": \"https://console.cloud.tencent.com\",\n                \"CreateTime\": \"2019-01-01 12:12:12\",\n                \"UpdateTime\": \"2019-01-01 12:12:12\"\n            }\n        ],\n        \"RequestId\": \"e297543a-80de-4039-83c8-9d324545\"\n    }\n}",
+        "title": "查询权限配置列表"
+      }
+    ],
     "ListTargetsForPolicy": [
       {
         "document": "查询某个指定策略关联的目标列表",
@@ -464,12 +728,52 @@
         "title": "查询某个指定策略关联的目标列表"
       }
     ],
+    "ListTasks": [
+      {
+        "document": "查询异步任务列表",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListTasks\n<公共请求参数>\n\n{\n    \"ZoneId\": \"z-djwidnwidj\",\n    \"PrincipalId\": \"u-xj8sncidnc\",\n    \"NextToken\": \"xownw8db38dbe8fne==-\",\n    \"MaxResults\": 1,\n    \"PrincipalType\": \"User\",\n    \"TargetUin\": 1000023423,\n    \"TargetType\": \"Member\",\n    \"RoleConfigurationId\": \"rc-xjw9dsmw\",\n    \"Status\": \"InProgress\",\n    \"TaskType\": \"CreateRoleAssignment\"\n}",
+        "output": "{\n    \"Response\": {\n        \"NextToken\": \"abc\",\n        \"TotalCounts\": 0,\n        \"MaxResults\": 0,\n        \"IsTruncated\": true,\n        \"Tasks\": [\n            {\n                \"TaskId\": \"t-xsinsxinsdk\",\n                \"RoleConfigurationId\": \"rc-xmw9xjdsd\",\n                \"RoleConfigurationName\": \"配置\",\n                \"TargetUin\": 1000232234,\n                \"TargetType\": \"User\",\n                \"PrincipalId\": \"u-xm89dnsujs\",\n                \"PrincipalType\": \"Member\",\n                \"TaskType\": \"CreateRoleAssignment\",\n                \"Status\": \"InProgress\",\n                \"FailureReason\": \"test\"\n            }\n        ],\n        \"RequestId\": \"e297543a-80de-4039-83c8-9d35d4545\"\n    }\n}",
+        "title": "查询异步任务列表"
+      }
+    ],
+    "ListUserSyncProvisionings": [
+      {
+        "document": "查询CAM用户同步列表",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListUserSyncProvisionings\n<公共请求参数>\n\n{\n    \"ZoneId\": \"z-dsjsisnus\",\n    \"PrincipalId\": \"u-sjs9smss\",\n    \"NextToken\": \"\",\n    \"MaxResults\": 10,\n    \"PrincipalType\": \"User\",\n    \"TargetUin\": 100003324902,\n    \"TargetType\": \"MemberUin\",\n    \"Filter\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"NextToken\": \"OTM0YzE4MzY2ZjdhMWM0MYZDhnYaxsiYTLI=\",\n        \"TotalCounts\": 30,\n        \"MaxResults\": 10,\n        \"IsTruncated\": true,\n        \"UserProvisionings\": [\n            {\n                \"UserProvisioningId\": \"up-siwnei3nso\",\n                \"Description\": \"this is cam user sync\",\n                \"Status\": \"Enabled\",\n                \"PrincipalId\": \"u-swnd8wn3\",\n                \"PrincipalName\": \"test\",\n                \"PrincipalType\": \"User\",\n                \"TargetUin\": \"10000338332\",\n                \"TargetName\": \"test\",\n                \"DuplicationStrategy\": \"KeepBoth\",\n                \"DeletionStrategy\": \"Delete\",\n                \"CreateTime\": \"2024-01-01 12:12:12\",\n                \"UpdateTime\": \"2024-01-01 12:12:12\",\n                \"TargetType\": \"MemberUin\"\n            }\n        ],\n        \"RequestId\": \"e297543a-80de-4039-83c8-9d35d4545\"\n    }\n}",
+        "title": "查询CAM用户同步列表"
+      }
+    ],
+    "ListUsers": [
+      {
+        "document": "查询用户列表",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListUsers\n<公共请求参数>\n\n{\n    \"ZoneId\": \"z-2sw22w3\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCounts\": 50,\n        \"MaxResults\": 20,\n        \"Users\": [\n            {\n                \"UserName\": \"test\",\n                \"FirstName\": \"test\",\n                \"LastName\": \"test\",\n                \"DisplayName\": \"test\",\n                \"Description\": \"this is user\",\n                \"Email\": \"test@example\",\n                \"UserStatus\": \"Enabled\",\n                \"UserType\": \"Manual\",\n                \"UserId\": \"u-2s334e3***\",\n                \"CreateTime\": \"2024-03-12 12:12:12\",\n                \"UpdateTime\": \"2024-03-12 12:12:12\"\n            }\n        ],\n        \"NextToken\": \"OTM0YzE4MzY2ZjdhMWM0MYZDhnYaxsiYTLI=\",\n        \"IsTruncated\": true,\n        \"RequestId\": \"e297543a-80de-4039-83c8-9d35d4545\"\n    }\n}",
+        "title": "查询用户列表"
+      }
+    ],
     "MoveOrganizationNodeMembers": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: MoveOrganizationNodeMembers\n<公共请求参数>\n\n{\n    \"MemberUin\": [\n        111111111111\n    ],\n    \"NodeId\": 1001\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b46d2afe-6893-4529-bc96-2c82d9214957\"\n    }\n}",
         "title": "移动成员到指定企业组织节点"
+      }
+    ],
+    "OpenIdentityCenter": [
+      {
+        "document": "开通CIC服务",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OpenIdentityCenter\n<公共请求参数>\n\n{\n    \"ZoneName\": \"testName\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ZoneId\": \"z-dj3jk*****\",\n        \"RequestId\": \"e297543a-80de-4039-83c8-9d324f45\"\n    }\n}",
+        "title": "开通CIC服务"
+      }
+    ],
+    "ProvisionRoleConfiguration": [
+      {
+        "document": "将权限配置部署到成员账号上",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ProvisionRoleConfiguration\n<公共请求参数>\n\n{\n    \"ZoneId\": \"z-disndw****\",\n    \"RoleConfigurationId\": \"rc-sians9wn****\",\n    \"TargetType\": \"MemberUin\",\n    \"TargetUin\": 10000293120\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d95c7cc0-195d-4818-aa3a-e7dc73eafe37\",\n        \"Task\": {\n            \"RoleConfigurationId\": \"rc-4plmus8fdfsb\",\n            \"RoleConfigurationName\": \"testConfiguration1\",\n            \"TargetType\": \"MemberUin\",\n            \"TargetUin\": 700000145543,\n            \"TaskId\": \"t-2xdmzwphpsbd\",\n            \"TaskStatus\": \"InProgress\",\n            \"TaskType\": \"CreateRoleAssignment\"\n        }\n    }\n}",
+        "title": "将权限配置部署到成员账号上"
       }
     ],
     "QuitOrganization": [
@@ -486,6 +790,46 @@
         "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RejectJoinShareUnitInvitation\n<公共请求参数>\n\n{\n    \"UnitId\": \"shareUnit-xhreo**2p\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"f9ca56e2-1c27-483f-a78f-eaafc949b158\"\n    }\n}",
         "title": "拒绝加入共享单元邀请"
+      }
+    ],
+    "RemoveExternalSAMLIdPCertificate": [
+      {
+        "document": "移除SAML签名证书",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RemoveExternalSAMLIdPCertificate\n<公共请求参数>\n\n{\n    \"ZoneId\": \"z-2js923necd***\",\n    \"CertificateId\": \"idp-c-2jd8923je29****\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2ccd7ed1-24b4-4882-8f4a-5580b430bce7\"\n    }\n}",
+        "title": "移除SAML签名证书"
+      }
+    ],
+    "RemovePermissionPolicyFromRoleConfiguration": [
+      {
+        "document": "为权限配置移除策略",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RemovePermissionPolicyFromRoleConfiguration\n<公共请求参数>\n\n{\n    \"ZoneId\": \"z-djw9dn3i****\",\n    \"RoleConfigurationId\": \"rc-swidddws***\",\n    \"RolePolicyType\": \"System\",\n    \"RolePolicyName\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2ccd7ed1-24b4-4882-8f4a-5580b430bce7\"\n    }\n}",
+        "title": "为权限配置移除策略"
+      }
+    ],
+    "RemoveUserFromGroup": [
+      {
+        "document": "从用户组中移除用户",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RemoveUserFromGroup\n<公共请求参数>\n\n{\n    \"ZoneId\": \"z-d83n8sn3\",\n    \"GroupId\": \"g-du3n83nd\",\n    \"UserId\": \"u-sd823ns82n\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e297543a-80de-4039-83c8-9d324545\"\n    }\n}",
+        "title": "从用户组中移除用户"
+      }
+    ],
+    "SetExternalSAMLIdentityProvider": [
+      {
+        "document": "配置SAML身份提供商信息",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetExternalSAMLIdentityProvider\n<公共请求参数>\n\n{\n    \"ZoneId\": \"z-d3ideodm***\",\n    \"EncodedMetadataDocument\": \"JTNDJTNGeG1sJTIwdmVyc2lvbiUzRCUyMjEuMCUyMiUyMGVuY29kaW5******\",\n    \"SSOStatus\": \"Enabled\",\n    \"EntityId\": \"http://www.okta.com/xd83nd83nd****\",\n    \"LoginUrl\": \"https://dev-xxxxxx.okta.com/app/dev-xxxxxx_cloudssodemo_1/xd83nd83nd****/sso/saml\",\n    \"X509Certificate\": \"MIIC8DCCAdigAwIBAgIQP9eomUYGeoND****\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2ccd7ed1-24b4-4882-8f4a-5580b430bce7\"\n    }\n}",
+        "title": "配置SAML身份提供商信息"
+      }
+    ],
+    "UpdateGroup": [
+      {
+        "document": "修改用户组信息",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateGroup\n<公共请求参数>\n\n{\n    \"ZoneId\": \"z-s8shs8bd***\",\n    \"GroupId\": \"g-s8dhdn3\",\n    \"NewGroupName\": \"testGroup\",\n    \"NewDescription\": \"this is group.\"\n}",
+        "output": "{\n    \"Response\": {\n        \"GroupInfo\": {\n            \"GroupName\": \"testGroup\",\n            \"Description\": \"this is group\",\n            \"CreateTime\": \"2024-01-01 12:12:12\",\n            \"GroupType\": \"Manual\",\n            \"UpdateTime\": \"2024-01-01 12:12:12\",\n            \"GroupId\": \"g-w8hd8n***\",\n            \"MemberCount\": 20\n        },\n        \"RequestId\": \"e297543a-80de-4039-83c8-9d324545\"\n    }\n}",
+        "title": "修改用户组信息"
       }
     ],
     "UpdateOrganizationIdentity": [
@@ -528,12 +872,52 @@
         "title": "编辑策略"
       }
     ],
+    "UpdateRoleConfiguration": [
+      {
+        "document": "修改权限配置信息",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateRoleConfiguration\n<公共请求参数>\n\n{\n    \"ZoneId\": \"z-22m23mo2\",\n    \"RoleConfigurationId\": \"rc-ai3n9si2m\",\n    \"NewDescription\": \"this is role configuration\",\n    \"NewSessionDuration\": 900,\n    \"NewRelayState\": \"https://console.cloud.tencent.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RoleConfigurationInfo\": {\n            \"RoleConfigurationId\": \"rc-s2ns92ns***\",\n            \"RoleConfigurationName\": \"test\",\n            \"Description\": \"this is role configuration\",\n            \"SessionDuration\": 900,\n            \"RelayState\": \"https://console.cloud.tencent.com\",\n            \"CreateTime\": \"2019-01-01 12:12:12\",\n            \"UpdateTime\": \"2019-01-01 12:12:12\"\n        },\n        \"RequestId\": \"e297543a-80de-4039-83c8-9d324545\"\n    }\n}",
+        "title": "修改权限配置信息"
+      }
+    ],
     "UpdateShareUnit": [
       {
         "document": "",
         "input": "https://organization.tencentcloudapi.com/?Action=UpdateShareUnit\n&UnitId=shareUnit-xhreo**2p\n&Description=share unit\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"42a5622f-d1bc-4d7f-b08a-01adc8d9cec9\"\n    }\n}",
         "title": "更新共享单元"
+      }
+    ],
+    "UpdateUser": [
+      {
+        "document": "修改用户信息",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateUser\n<公共请求参数>\n\n{\n    \"ZoneId\": \"z-343nh23kn\",\n    \"UserId\": \"u-3324sfdds\",\n    \"NewFirstName\": \"test\",\n    \"NewLastName\": \"test\",\n    \"NewDisplayName\": \"test\",\n    \"NewDescription\": \"this is user.\",\n    \"NewEmail\": \"test@example.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"UserInfo\": {\n            \"UserName\": \"test\",\n            \"FirstName\": \"test\",\n            \"LastName\": \"test\",\n            \"DisplayName\": \"test\",\n            \"Description\": \"this is user\",\n            \"Email\": \"test@example.com\",\n            \"UserStatus\": \"test\",\n            \"UserType\": \"Manual\",\n            \"UserId\": \"u-33sjadjsk\",\n            \"CreateTime\": \"2024-01-01 12:12:12\",\n            \"UpdateTime\": \"2024-01-01 12:12:12\"\n        },\n        \"RequestId\": \"e297543a-80de-4039-83c8-34545s45\"\n    }\n}",
+        "title": "修改用户信息"
+      }
+    ],
+    "UpdateUserStatus": [
+      {
+        "document": "修改用户状态",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateUserStatus\n<公共请求参数>\n\n{\n    \"ZoneId\": \"z-dwesfeas2\",\n    \"UserId\": \"u-d3eedws\",\n    \"NewUserStatus\": \"Disabled\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e297543a-80de-4039-83c8-34545s45\"\n    }\n}",
+        "title": "修改用户状态"
+      }
+    ],
+    "UpdateUserSyncProvisioning": [
+      {
+        "document": " 修改CAM用户同步",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateUserSyncProvisioning\n<公共请求参数>\n\n{\n    \"ZoneId\": \"z-susn8xnsis\",\n    \"UserProvisioningId\": \"up-xusjdjsss\",\n    \"NewDescription\": \"this is cam user sync\",\n    \"NewDuplicationStateful\": \"KeepBoth\",\n    \"NewDeletionStrategy\": \"Delete\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e297543a-80de-4039-83c8-9d324545\"\n    }\n}",
+        "title": " 修改CAM用户同步"
+      }
+    ],
+    "UpdateZone": [
+      {
+        "document": "修改空间名",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateZone\n<公共请求参数>\n\n{\n    \"ZoneId\": \"z-vft38p2hq8tq\",\n    \"NewZoneName\": \"testzone\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"14effcdf-fbae-44fb-ab21-e2e0cc6edde6\"\n    }\n}",
+        "title": "修改空间名"
       }
     ]
   },

@@ -35,6 +35,13 @@
       "output": "CreateBatchCancelFlowUrlResponse",
       "status": "online"
     },
+    "CreateBatchInitOrganizationUrl": {
+      "document": "支持企业进行批量初始化操作：\n\n此接口存在以下限制：\n1. 若批量操作中包含<font  color=\"red\">加入集团企业</font>操作,则调用此接口的员工须有<font  color=\"red\">集团企业管理权限</font>。\n2. 批量操作的企业需要已经完成电子签的认证流程。\n3. 通过此接口生成的链接在小程序端进行操作时，操作人需要是<font  color=\"red\">所有企业的超管或法人</font>。\n4. 批量操作的企业，需要是<a href=\"https://qian.tencent.com/developers/companyApis/organizations/CreateOrganizationAuthUrl\" target=\"_blank\">通过平台方引导认证</a>的企业。\n5. <font  color=\"red\">操作链接过期时间默认为生成链接后7天。</font>",
+      "input": "CreateBatchInitOrganizationUrlRequest",
+      "name": "批量操作企业初始化",
+      "output": "CreateBatchInitOrganizationUrlResponse",
+      "status": "online"
+    },
     "CreateBatchOrganizationRegistrationTasks": {
       "document": "本接口（CreateBatchOrganizationRegistrationTasks）用于批量创建企业认证链接\n该接口为异步提交任务接口,需要跟查询企业批量认证链接(DescribeBatchOrganizationRegistrationUrls) 配合使用.\n\n批量创建链接有以下限制：\n\n1. 单次最多创建10个企业。\n2. 一天同一家企业最多创建8000家企业。\n3. 同一批创建的企业不能重复 其中包括 企业名称，企业统一信用代码\n4. 跳转到小程序的实现，参考微信官方文档（分为全屏、半屏两种方式），如何配置也可以请参考: 跳转电子签小程序配置\n\n注：\n\n1. **此接口需要购买单独的实名套餐包方可调用，如有需求请联系对接人员评估**\n  \n2. 如果生成的链接是APP链接，跳转到小程序的实现，参考微信官方文档（分为<a href=\"https://developers.weixin.qq.com/miniprogram/dev/api/navigate/wx.navigateToMiniProgram.html\">全屏</a>、<a href=\"https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/openEmbeddedMiniProgram.html\">半屏</a>两种方式），如何配置也可以请参考: <a href=\"https://qian.tencent.com/developers/company/openwxminiprogram\">跳转电子签小程序配置</a>\n  \n\n**腾讯电子签小程序的AppID 和 原始Id如下:**\n\n| 小程序 | AppID | 原始ID |\n| --- | --- | --- |\n| 腾讯电子签（正式版） | wxa023b292fd19d41d | gh_da88f6188665 |\n| 腾讯电子签Demo | wx371151823f6f3edf | gh_39a5d3de69fa |",
       "input": "CreateBatchOrganizationRegistrationTasksRequest",
@@ -2116,6 +2123,100 @@
           "example": "无",
           "member": "string",
           "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBatchInitOrganizationUrlRequest": {
+      "document": "CreateBatchInitOrganizationUrl请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "执行本接口操作的员工信息。\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "初始化操作类型\n<ul><li>CREATE_SEAL : 创建印章</li>\n<li>AUTH_JOIN_ORGANIZATION_GROUP : 加入集团企业</li>\n<li>OPEN_AUTO_SIGN :开通企业自动签署</li></ul>",
+          "example": "无",
+          "member": "string",
+          "name": "OperateTypes",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "批量操作的企业Id列表，最大支持50个",
+          "example": "无",
+          "member": "string",
+          "name": "OrganizationIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBatchInitOrganizationUrlResponse": {
+      "document": "CreateBatchInitOrganizationUrl返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "小程序路径",
+          "example": "无",
+          "member": "string",
+          "name": "MiniAppPath",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作长链",
+          "example": "无",
+          "member": "string",
+          "name": "OperateLongUrl",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作短链",
+          "example": "无",
+          "member": "string",
+          "name": "OperateShortUrl",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作二维码",
+          "example": "无",
+          "member": "string",
+          "name": "QRCodeUrl",
           "output_required": true,
           "type": "string",
           "value_allowed_null": false

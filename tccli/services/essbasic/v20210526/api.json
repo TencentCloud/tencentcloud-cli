@@ -315,6 +315,13 @@
       "output": "ChannelVerifyPdfResponse",
       "status": "online"
     },
+    "CreateBatchInitOrganizationUrl": {
+      "document": "支持企业进行批量初始化操作：\n\n此接口存在以下限制：\n1. 批量操作的企业需要已经完成电子签的认证流程。\n2. 通过此接口生成的链接在小程序端进行操作时，操作人需要是<font  color=\"red\">所有企业的超管或法人</font>。\n3. 批量操作的企业，需要是本方第三方应用下的企业。\n4. <font  color=\"red\">操作链接过期时间默认为生成链接后7天。</font>",
+      "input": "CreateBatchInitOrganizationUrlRequest",
+      "name": "批量操作企业初始化",
+      "output": "CreateBatchInitOrganizationUrlResponse",
+      "status": "online"
+    },
     "CreateBatchOrganizationRegistrationTasks": {
       "document": "该接口用于批量创建企业认证链接， 可以支持PC浏览器，H5和小程序三种途径。\n此接口为异步提交任务接口，需要与[查询子企业批量认证链接](https://qcloudimg.tencent-cloud.cn/raw/1d3737991b2a3be78002bd78a47d6917.png)配合使用，整体流程如下图。\n![image](https://qcloudimg.tencent-cloud.cn/raw/654aa2a72ab7d42f06464ea33c50c3bb.png)\n\n\n\n**注意**\n\n1. 单次最多创建10个子企业。\n2. 一天内，同一家企业最多创建8000个子企业。\n3. 同一批创建的子客户不能重复，包括企业名称、企业统一信用代码和子客户经办人openId。\n4. 跳转到小程序的实现，请参考微信官方文档（分为<a href=\"https://developers.weixin.qq.com/miniprogram/dev/api/navigate/wx.navigateToMiniProgram.html\">全屏</a>、<a href=\"https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/openEmbeddedMiniProgram.html\">半屏</a>两种方式）。如何配置跳转电子签小程序，可参考：<a href=\"https://qian.tencent.com/developers/company/openwxminiprogram\">跳转电子签小程序配置</a>。\n\n\n\n**腾讯电子签小程序的AppID 和 原始Id如下:**\n\n| 小程序 | AppID | 原始ID |\n| ------------ | ------------ | ------------ |\n| 腾讯电子签（正式版） | wxa023b292fd19d41d | gh_da88f6188665 |\n| 腾讯电子签Demo | wx371151823f6f3edf | gh_39a5d3de69fa |",
       "input": "CreateBatchOrganizationRegistrationTasksRequest",
@@ -5840,6 +5847,91 @@
         }
       ],
       "usage": "in"
+    },
+    "CreateBatchInitOrganizationUrlRequest": {
+      "document": "CreateBatchInitOrganizationUrl请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用相关信息。 此接口Agent.AppId 必填。",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "初始化操作类型\n<ul><li>CREATE_SEAL : 创建印章</li>\n<li>OPEN_AUTO_SIGN :开通企业自动签署</li></ul>",
+          "example": "无",
+          "member": "string",
+          "name": "OperateTypes",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "批量操作的企业列表在第三方平台的企业Id列表，即ProxyOrganizationOpenId列表,最大支持50个",
+          "example": "无",
+          "member": "string",
+          "name": "ProxyOrganizationOpenIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBatchInitOrganizationUrlResponse": {
+      "document": "CreateBatchInitOrganizationUrl返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "小程序路径",
+          "example": "无",
+          "member": "string",
+          "name": "MiniAppPath",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作长链",
+          "example": "无",
+          "member": "string",
+          "name": "OperateLongUrl",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作短链",
+          "example": "无",
+          "member": "string",
+          "name": "OperateShortUrl",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作二维码",
+          "example": "无",
+          "member": "string",
+          "name": "QRCodeUrl",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CreateBatchOrganizationRegistrationTasksRequest": {
       "document": "CreateBatchOrganizationRegistrationTasks请求参数结构体",

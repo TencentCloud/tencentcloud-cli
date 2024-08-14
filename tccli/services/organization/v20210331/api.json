@@ -7,6 +7,13 @@
       "output": "AcceptJoinShareUnitInvitationResponse",
       "status": "online"
     },
+    "AddExternalSAMLIdPCertificate": {
+      "document": "添加SAML签名证书",
+      "input": "AddExternalSAMLIdPCertificateRequest",
+      "name": "添加SAML签名证书",
+      "output": "AddExternalSAMLIdPCertificateResponse",
+      "status": "online"
+    },
     "AddOrganizationMemberEmail": {
       "document": "添加组织成员邮箱",
       "input": "AddOrganizationMemberEmailRequest",
@@ -19,6 +26,13 @@
       "input": "AddOrganizationNodeRequest",
       "name": "添加企业组织节点",
       "output": "AddOrganizationNodeResponse",
+      "status": "online"
+    },
+    "AddPermissionPolicyToRoleConfiguration": {
+      "document": "为权限配置添加策略",
+      "input": "AddPermissionPolicyToRoleConfigurationRequest",
+      "name": "为权限配置添加策略",
+      "output": "AddPermissionPolicyToRoleConfigurationResponse",
       "status": "online"
     },
     "AddShareUnit": {
@@ -40,6 +54,13 @@
       "input": "AddShareUnitResourcesRequest",
       "name": "添加共享单元资源",
       "output": "AddShareUnitResourcesResponse",
+      "status": "online"
+    },
+    "AddUserToGroup": {
+      "document": "为用户组添加用户",
+      "input": "AddUserToGroupRequest",
+      "name": "为用户组添加用户",
+      "output": "AddUserToGroupResponse",
       "status": "online"
     },
     "AttachPolicy": {
@@ -68,6 +89,20 @@
       "input": "CheckAccountDeleteRequest",
       "name": "成员账号删除检查",
       "output": "CheckAccountDeleteResponse",
+      "status": "online"
+    },
+    "ClearExternalSAMLIdentityProvider": {
+      "document": "清空SAML身份提供商配置信息",
+      "input": "ClearExternalSAMLIdentityProviderRequest",
+      "name": "清空SAML身份提供商配置信息",
+      "output": "ClearExternalSAMLIdentityProviderResponse",
+      "status": "online"
+    },
+    "CreateGroup": {
+      "document": "创建用户组",
+      "input": "CreateGroupRequest",
+      "name": "创建用户组",
+      "output": "CreateGroupResponse",
       "status": "online"
     },
     "CreateOrgServiceAssign": {
@@ -126,11 +161,46 @@
       "output": "CreatePolicyResponse",
       "status": "online"
     },
+    "CreateRoleAssignment": {
+      "document": "在成员账号上授权",
+      "input": "CreateRoleAssignmentRequest",
+      "name": "在成员账号上授权",
+      "output": "CreateRoleAssignmentResponse",
+      "status": "online"
+    },
+    "CreateRoleConfiguration": {
+      "document": "创建权限配置",
+      "input": "CreateRoleConfigurationRequest",
+      "name": "创建权限配置",
+      "output": "CreateRoleConfigurationResponse",
+      "status": "online"
+    },
+    "CreateUser": {
+      "document": "创建用户",
+      "input": "CreateUserRequest",
+      "name": "创建用户",
+      "output": "CreateUserResponse",
+      "status": "online"
+    },
+    "CreateUserSyncProvisioning": {
+      "document": "创建子用户同步任务",
+      "input": "CreateUserSyncProvisioningRequest",
+      "name": "创建CAM用户同步",
+      "output": "CreateUserSyncProvisioningResponse",
+      "status": "online"
+    },
     "DeleteAccount": {
       "document": "删除成员账号",
       "input": "DeleteAccountRequest",
       "name": "删除成员账号",
       "output": "DeleteAccountResponse",
+      "status": "online"
+    },
+    "DeleteGroup": {
+      "document": "删除用户组",
+      "input": "DeleteGroupRequest",
+      "name": "删除用户组",
+      "output": "DeleteGroupResponse",
       "status": "online"
     },
     "DeleteOrgServiceAssign": {
@@ -189,6 +259,20 @@
       "output": "DeletePolicyResponse",
       "status": "online"
     },
+    "DeleteRoleAssignment": {
+      "document": "移除成员账号上的授权",
+      "input": "DeleteRoleAssignmentRequest",
+      "name": "移除成员账号上的授权",
+      "output": "DeleteRoleAssignmentResponse",
+      "status": "online"
+    },
+    "DeleteRoleConfiguration": {
+      "document": "删除权限配置信息",
+      "input": "DeleteRoleConfigurationRequest",
+      "name": "删除权限配置信息",
+      "output": "DeleteRoleConfigurationResponse",
+      "status": "online"
+    },
     "DeleteShareUnit": {
       "document": "删除共享单元。",
       "input": "DeleteShareUnitRequest",
@@ -210,11 +294,32 @@
       "output": "DeleteShareUnitResourcesResponse",
       "status": "online"
     },
+    "DeleteUser": {
+      "document": "删除用户",
+      "input": "DeleteUserRequest",
+      "name": "删除用户",
+      "output": "DeleteUserResponse",
+      "status": "online"
+    },
+    "DeleteUserSyncProvisioning": {
+      "document": "删除子用户同步任务",
+      "input": "DeleteUserSyncProvisioningRequest",
+      "name": "删除CAM用户同步",
+      "output": "DeleteUserSyncProvisioningResponse",
+      "status": "online"
+    },
     "DescribeEffectivePolicy": {
       "document": "查询目标关联的有效策略",
       "input": "DescribeEffectivePolicyRequest",
       "name": "查询目标关联的有效策略",
       "output": "DescribeEffectivePolicyResponse",
+      "status": "online"
+    },
+    "DescribeIdentityCenter": {
+      "document": "获取cam身份中心服务信息",
+      "input": "DescribeIdentityCenterRequest",
+      "name": "获取用户cam身份中心服务信息",
+      "output": "DescribeIdentityCenterResponse",
       "status": "online"
     },
     "DescribeOrganization": {
@@ -350,11 +455,109 @@
       "output": "DisablePolicyTypeResponse",
       "status": "online"
     },
+    "DismantleRoleConfiguration": {
+      "document": "解除权限配置在成员账号上的部署",
+      "input": "DismantleRoleConfigurationRequest",
+      "name": "解除访问配置部署到成员账号上的部署",
+      "output": "DismantleRoleConfigurationResponse",
+      "status": "online"
+    },
     "EnablePolicyType": {
       "document": "启用策略类型",
       "input": "EnablePolicyTypeRequest",
       "name": "启用策略类型",
       "output": "EnablePolicyTypeResponse",
+      "status": "online"
+    },
+    "GetExternalSAMLIdentityProvider": {
+      "document": "查询SAML身份提供商配置信息",
+      "input": "GetExternalSAMLIdentityProviderRequest",
+      "name": "查询SAML身份提供商配置信息",
+      "output": "GetExternalSAMLIdentityProviderResponse",
+      "status": "online"
+    },
+    "GetGroup": {
+      "document": "查询用户组信息",
+      "input": "GetGroupRequest",
+      "name": "查询用户组信息",
+      "output": "GetGroupResponse",
+      "status": "online"
+    },
+    "GetProvisioningTaskStatus": {
+      "document": "查询用户同步异步任务的状态",
+      "input": "GetProvisioningTaskStatusRequest",
+      "name": "查询用户同步异步任务的状态",
+      "output": "GetProvisioningTaskStatusResponse",
+      "status": "online"
+    },
+    "GetRoleConfiguration": {
+      "document": "查询权限配置信息",
+      "input": "GetRoleConfigurationRequest",
+      "name": "查询权限配置信息",
+      "output": "GetRoleConfigurationResponse",
+      "status": "online"
+    },
+    "GetTaskStatus": {
+      "document": "查询异步任务的状态",
+      "input": "GetTaskStatusRequest",
+      "name": "查询异步任务的状态",
+      "output": "GetTaskStatusResponse",
+      "status": "online"
+    },
+    "GetUser": {
+      "document": "查询用户信息",
+      "input": "GetUserRequest",
+      "name": "查询用户信息",
+      "output": "GetUserResponse",
+      "status": "online"
+    },
+    "GetUserSyncProvisioning": {
+      "document": "查询CAM用户同步",
+      "input": "GetUserSyncProvisioningRequest",
+      "name": "查询CAM用户同步",
+      "output": "GetUserSyncProvisioningResponse",
+      "status": "online"
+    },
+    "GetZoneSAMLServiceProviderInfo": {
+      "document": "查询SAML服务提供商配置信息",
+      "input": "GetZoneSAMLServiceProviderInfoRequest",
+      "name": "查询SAML服务提供商信息",
+      "output": "GetZoneSAMLServiceProviderInfoResponse",
+      "status": "online"
+    },
+    "GetZoneStatistics": {
+      "document": "查询空间的统计信息",
+      "input": "GetZoneStatisticsRequest",
+      "name": "查询空间的统计信息",
+      "output": "GetZoneStatisticsResponse",
+      "status": "online"
+    },
+    "ListExternalSAMLIdPCertificates": {
+      "document": "查询SAML签名证书列表",
+      "input": "ListExternalSAMLIdPCertificatesRequest",
+      "name": "查询SAML签名证书列表",
+      "output": "ListExternalSAMLIdPCertificatesResponse",
+      "status": "online"
+    },
+    "ListGroupMembers": {
+      "document": "查询用户组中的用户列表",
+      "input": "ListGroupMembersRequest",
+      "name": "查询用户组中的用户列表",
+      "output": "ListGroupMembersResponse",
+      "status": "online"
+    },
+    "ListGroups": {
+      "document": "查询用户组列表",
+      "input": "ListGroupsRequest",
+      "name": "查询用户组列表",
+      "output": "ListGroupsResponse",
+      "status": "online"
+    },
+    "ListJoinedGroupsForUser": {
+      "document": "查询用户加入的用户组",
+      "input": "ListJoinedGroupsForUserRequest",
+      "name": "查询用户加入的用户组",
+      "output": "ListJoinedGroupsForUserResponse",
       "status": "online"
     },
     "ListNonCompliantResource": {
@@ -385,6 +588,13 @@
       "output": "ListOrganizationServiceResponse",
       "status": "online"
     },
+    "ListPermissionPoliciesInRoleConfiguration": {
+      "document": "获取权限配置中的策略列表",
+      "input": "ListPermissionPoliciesInRoleConfigurationRequest",
+      "name": "获取权限配置中的策略列表",
+      "output": "ListPermissionPoliciesInRoleConfigurationResponse",
+      "status": "online"
+    },
     "ListPolicies": {
       "document": "本接口（ListPolicies）可用于查询查看策略列表数据",
       "input": "ListPoliciesRequest",
@@ -399,6 +609,27 @@
       "output": "ListPoliciesForTargetResponse",
       "status": "online"
     },
+    "ListRoleAssignments": {
+      "document": "查询授权列表",
+      "input": "ListRoleAssignmentsRequest",
+      "name": "查询授权列表",
+      "output": "ListRoleAssignmentsResponse",
+      "status": "online"
+    },
+    "ListRoleConfigurationProvisionings": {
+      "document": "查询权限配置部署列表",
+      "input": "ListRoleConfigurationProvisioningsRequest",
+      "name": "查询权限配置部署列表",
+      "output": "ListRoleConfigurationProvisioningsResponse",
+      "status": "online"
+    },
+    "ListRoleConfigurations": {
+      "document": "查询权限配置列表",
+      "input": "ListRoleConfigurationsRequest",
+      "name": "查询权限配置列表",
+      "output": "ListRoleConfigurationsResponse",
+      "status": "online"
+    },
     "ListTargetsForPolicy": {
       "document": "本接口（ListTargetsForPolicy）查询某个指定策略关联的目标列表",
       "input": "ListTargetsForPolicyRequest",
@@ -406,11 +637,46 @@
       "output": "ListTargetsForPolicyResponse",
       "status": "online"
     },
+    "ListTasks": {
+      "document": "查询异步任务列表",
+      "input": "ListTasksRequest",
+      "name": "查询异步任务列表",
+      "output": "ListTasksResponse",
+      "status": "online"
+    },
+    "ListUserSyncProvisionings": {
+      "document": "查询CAM用户同步列表",
+      "input": "ListUserSyncProvisioningsRequest",
+      "name": "查询CAM用户同步列表",
+      "output": "ListUserSyncProvisioningsResponse",
+      "status": "online"
+    },
+    "ListUsers": {
+      "document": "查询用户列表",
+      "input": "ListUsersRequest",
+      "name": "查询用户列表",
+      "output": "ListUsersResponse",
+      "status": "online"
+    },
     "MoveOrganizationNodeMembers": {
       "document": "移动成员到指定企业组织节点",
       "input": "MoveOrganizationNodeMembersRequest",
       "name": "移动成员到指定企业组织节点",
       "output": "MoveOrganizationNodeMembersResponse",
+      "status": "online"
+    },
+    "OpenIdentityCenter": {
+      "document": "开通CIC服务",
+      "input": "OpenIdentityCenterRequest",
+      "name": "开通cam身份中心服务",
+      "output": "OpenIdentityCenterResponse",
+      "status": "online"
+    },
+    "ProvisionRoleConfiguration": {
+      "document": "将权限配置部署到成员账号上",
+      "input": "ProvisionRoleConfigurationRequest",
+      "name": "将访问配置部署到成员账号上",
+      "output": "ProvisionRoleConfigurationResponse",
       "status": "online"
     },
     "QuitOrganization": {
@@ -425,6 +691,41 @@
       "input": "RejectJoinShareUnitInvitationRequest",
       "name": "拒绝加入共享单元邀请",
       "output": "RejectJoinShareUnitInvitationResponse",
+      "status": "online"
+    },
+    "RemoveExternalSAMLIdPCertificate": {
+      "document": "移除SAML签名证书",
+      "input": "RemoveExternalSAMLIdPCertificateRequest",
+      "name": "移除SAML签名证书",
+      "output": "RemoveExternalSAMLIdPCertificateResponse",
+      "status": "online"
+    },
+    "RemovePermissionPolicyFromRoleConfiguration": {
+      "document": "为权限配置移除策略",
+      "input": "RemovePermissionPolicyFromRoleConfigurationRequest",
+      "name": "为权限配置移除策略",
+      "output": "RemovePermissionPolicyFromRoleConfigurationResponse",
+      "status": "online"
+    },
+    "RemoveUserFromGroup": {
+      "document": "从用户组中移除用户",
+      "input": "RemoveUserFromGroupRequest",
+      "name": "从用户组中移除用户",
+      "output": "RemoveUserFromGroupResponse",
+      "status": "online"
+    },
+    "SetExternalSAMLIdentityProvider": {
+      "document": "配置SAML身份提供商信息",
+      "input": "SetExternalSAMLIdentityProviderRequest",
+      "name": "配置SAML身份提供商信息",
+      "output": "SetExternalSAMLIdentityProviderResponse",
+      "status": "online"
+    },
+    "UpdateGroup": {
+      "document": "修改用户组信息",
+      "input": "UpdateGroupRequest",
+      "name": "修改用户组信息",
+      "output": "UpdateGroupResponse",
       "status": "online"
     },
     "UpdateOrganizationIdentity": {
@@ -462,11 +763,46 @@
       "output": "UpdatePolicyResponse",
       "status": "online"
     },
+    "UpdateRoleConfiguration": {
+      "document": "修改权限配置信息",
+      "input": "UpdateRoleConfigurationRequest",
+      "name": "修改权限配置信息",
+      "output": "UpdateRoleConfigurationResponse",
+      "status": "online"
+    },
     "UpdateShareUnit": {
       "document": "更新共享单元。",
       "input": "UpdateShareUnitRequest",
       "name": "更新共享单元",
       "output": "UpdateShareUnitResponse",
+      "status": "online"
+    },
+    "UpdateUser": {
+      "document": "修改用户信息",
+      "input": "UpdateUserRequest",
+      "name": "修改用户信息",
+      "output": "UpdateUserResponse",
+      "status": "online"
+    },
+    "UpdateUserStatus": {
+      "document": "修改用户状态",
+      "input": "UpdateUserStatusRequest",
+      "name": "修改用户状态",
+      "output": "UpdateUserStatusResponse",
+      "status": "online"
+    },
+    "UpdateUserSyncProvisioning": {
+      "document": "创建子用户同步任务",
+      "input": "UpdateUserSyncProvisioningRequest",
+      "name": "更新CAM用户同步",
+      "output": "UpdateUserSyncProvisioningResponse",
+      "status": "online"
+    },
+    "UpdateZone": {
+      "document": "更新用户空间名",
+      "input": "UpdateZoneRequest",
+      "name": "修改空间名",
+      "output": "UpdateZoneResponse",
       "status": "online"
     }
   },
@@ -495,6 +831,52 @@
     "AcceptJoinShareUnitInvitationResponse": {
       "document": "AcceptJoinShareUnitInvitation返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddExternalSAMLIdPCertificateRequest": {
+      "document": "AddExternalSAMLIdPCertificate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "空间ID。",
+          "example": "z-2js923necd***",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "PEM 格式的 X509 证书。  由 SAML 身份提供商提供。",
+          "example": "MIIBtjCCAVugAwIBAgITBmyf1XSXNmY/Owua2eiedgPySjAKBggqhkjOPQQDAjA5******",
+          "member": "string",
+          "name": "X509Certificate",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddExternalSAMLIdPCertificateResponse": {
+      "document": "AddExternalSAMLIdPCertificate返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "SAML 签名证书 ID。",
+          "example": "idp-c-2jd8923je29****",
+          "member": "string",
+          "name": "CertificateId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -614,6 +996,78 @@
           "type": "int",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddPermissionPolicyToRoleConfigurationRequest": {
+      "document": "AddPermissionPolicyToRoleConfiguration请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "空间 ID",
+          "example": "z-29n23ien",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "权限配置 ID",
+          "example": "rc-so2msow",
+          "member": "string",
+          "name": "RoleConfigurationId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "权限策略类型。取值：  System：系统策略。复用 CAM 的系统策略。 Custom: 自定义策略。按照 CAM 权限策略语法和结构编写的自定义策略。 前期只支持系统策略，自定义策略后期在支持",
+          "example": "System",
+          "member": "string",
+          "name": "RolePolicyType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "权限策略名称，长度最大为 20策略，每个策略长度最大32个字符。",
+          "example": "[\"TestPolicy\",\"Admin\"]",
+          "member": "string",
+          "name": "RolePolicyNames",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "策略详情。",
+          "example": "[{'PolicyId':426322, 'PolicyName':'QcloudAccessForOceanusRole'}]",
+          "member": "PolicyDetail",
+          "name": "RolePolicies",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "自定义策略内容。长度：最大 4096 个字符。当RolePolicyType为Inline时，该参数必须配置。关于权限策略的语法和结构，请参见权限策略语法和结构。",
+          "example": "{   \"Version\": \"1\",   \"Statement\": [     {       \"Effect\": \"Allow\",       \"Action\": \"*\",       \"Resource\": \"*\"     }   ] }",
+          "member": "string",
+          "name": "CustomPolicyDocument",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddPermissionPolicyToRoleConfigurationResponse": {
+      "document": "AddPermissionPolicyToRoleConfiguration返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -777,6 +1231,51 @@
           "type": "string",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddUserToGroupRequest": {
+      "document": "AddUserToGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "空间 ID。",
+          "example": "z-2d8shd8***",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户组 ID。",
+          "example": "g-2xdb82n8***",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户 ID。",
+          "example": "u-28sh72be",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddUserToGroupResponse": {
+      "document": "AddUserToGroup返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -1001,6 +1500,88 @@
           "member": "NotAllowReason",
           "name": "NotAllowReason",
           "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ClearExternalSAMLIdentityProviderRequest": {
+      "document": "ClearExternalSAMLIdentityProvider请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "空间ID。",
+          "example": "z-2js923necd***",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ClearExternalSAMLIdentityProviderResponse": {
+      "document": "ClearExternalSAMLIdentityProvider返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateGroupRequest": {
+      "document": "CreateGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "空间 ID。",
+          "example": "z-23c3ad2wa",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户组的名称。  格式：允许英文字母、数字和特殊字符-。 长度：最大 128 个字符。",
+          "example": "TestGroup",
+          "member": "string",
+          "name": "GroupName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户组的描述。  长度：最大 1024 个字符。",
+          "example": "This is a group.",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateGroupResponse": {
+      "document": "CreateGroup返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户组信息。",
+          "example": "{\"GroupName\":\"testGroup\",\"Description\":\"this is group\",\"CreateTime\":\"2024-01-01 12:12:12\",\"GroupType\":\"Manual\",\"UpdateTime\":\"2024-01-01 12:12:12\",\"GroupId\":\"g-8sh7baix****\",\"MemberCount\":0}",
+          "member": "GroupInfo",
+          "name": "GroupInfo",
+          "output_required": false,
           "type": "object",
           "value_allowed_null": false
         },
@@ -1514,6 +2095,271 @@
       ],
       "type": "object"
     },
+    "CreateRoleAssignmentRequest": {
+      "document": "CreateRoleAssignment请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "空间 ID。",
+          "example": "z-00fc2p61****",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "授权成员账号信息，最多授权50条。",
+          "example": "无",
+          "member": "RoleAssignmentInfo",
+          "name": "RoleAssignmentInfo",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRoleAssignmentResponse": {
+      "document": "CreateRoleAssignment返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务详情。",
+          "example": "[{\"TaskId\":\"t-sowmiwm\",\"RoleConfigurationId\":\"r-sjsosmsss\",\"RoleConfigurationName\":\"test\",\"TargetUin\":10000323432,\"TargetType\":\"MemberUin\",\"PrincipalId\":\"u-djiem3o***\",\"PrincipalType\":\"User\",\"TaskType\":\"CreateRoleAssignment\",\"Status\":\"InProgress\"}]",
+          "member": "TaskInfo",
+          "name": "Tasks",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRoleConfigurationRequest": {
+      "document": "CreateRoleConfiguration请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "空间 ID。",
+          "example": "z-232ns223s",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "访问配置名称。格式：包含英文字母、数字或短划线（-）。 长度：最大 128 个字符。",
+          "example": "test",
+          "member": "string",
+          "name": "RoleConfigurationName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "访问配置的描述。 长度：最大 1024 个字符。",
+          "example": "this is role configuration",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "会话持续时间。 CIC用户使用访问配置访问集团账号目标账号时，会话最多保持的时间。 单位：秒。 取值范围：900~43200（15 分钟~12 小时）。 默认值：3600（1 小时）。",
+          "example": "900",
+          "member": "int64",
+          "name": "SessionDuration",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "初始访问页面。 CIC用户使用访问配置访问集团账号目标账号时，初始访问的页面地址。 该页面必须是腾讯云控制台页面。默认为空，表示跳转到腾讯云控制台首页。",
+          "example": "https://console.cloud.tencent.com",
+          "member": "string",
+          "name": "RelayState",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRoleConfigurationResponse": {
+      "document": "CreateRoleConfiguration返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "配置访问详情",
+          "example": "{\"RoleConfigurationId\":\"rc-s2ns92ns***\",\"RoleConfigurationName\":\"test\",\"Description\":\"this is role configuration\",\"SessionDuration\":900,\"RelayState\":\"https://console.cloud.tencent.com\",\"CreateTime\":\"2019-01-01 12:12:12\",\"UpdateTime\":\"2019-01-01 12:12:12\"}",
+          "member": "RoleConfiguration",
+          "name": "RoleConfigurationInfo",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateUserRequest": {
+      "document": "CreateUser请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "空间 ID。",
+          "example": "z-00fc2p61****",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户名称。空间内必须唯一。不支持修改。  格式：包含数字、英文字母和特殊符号+ = , . @ - _ 。  长度：最大 64 个字符",
+          "example": "Alice",
+          "member": "string",
+          "name": "UserName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户的姓。  长度：最大 64 个字符。",
+          "example": "Alice",
+          "member": "string",
+          "name": "FirstName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户的名。  长度：最大 64 个字符。",
+          "example": "Alice",
+          "member": "string",
+          "name": "LastName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户的显示名称。  长度：最大 256 个字符。",
+          "example": "Alice",
+          "member": "string",
+          "name": "DisplayName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户的描述。  长度：最大 1024 个字符。",
+          "example": "This is a user.",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户的电子邮箱。目录内必须唯一。  长度：最大 128 个字符。",
+          "example": "Alice@example.com",
+          "member": "string",
+          "name": "Email",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户的状态。取值：  Enabled（默认值）：启用。 Disabled：禁用。",
+          "example": "Enabled",
+          "member": "string",
+          "name": "UserStatus",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateUserResponse": {
+      "document": "CreateUser返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户详情",
+          "example": "{\"ZoneId\": \"z-3fee3r3r3\"}",
+          "member": "UserInfo",
+          "name": "UserInfo",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateUserSyncProvisioningRequest": {
+      "document": "CreateUserSyncProvisioning请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "空间ID。",
+          "example": "z-d8wj832n***",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "CAM用户同步信息。",
+          "example": "无",
+          "member": "UserSyncProvisioning",
+          "name": "UserSyncProvisionings",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateUserSyncProvisioningResponse": {
+      "document": "CreateUserSyncProvisioning返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务详细。",
+          "example": "[{\"TaskId\":\"t-duedin****\",\"TargetUin\":1000289211,\"TargetType\":\"MemberUin\",\"TaskType\":\"StartProvisioning\",\"TaskStatus\":\"InProgress\",\"UserProvisioningId\":\"upe-d8n3d9***\",\"PrincipalId\":\"u-dend83***\",\"PrincipalType\":\"User\",\"PrincipalName\":\"test\",\"DuplicationStrategy\":\"KeepBoth\",\"DeletionStrategy\":\"Delete\"}]",
+          "member": "UserProvisioningsTask",
+          "name": "Tasks",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteAccountRequest": {
       "document": "DeleteAccount请求参数结构体",
       "members": [
@@ -1531,6 +2377,42 @@
     },
     "DeleteAccountResponse": {
       "document": "DeleteAccount返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteGroupRequest": {
+      "document": "DeleteGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "空间 ID。",
+          "example": "z-3ds8dgs8***",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户组的 ID。",
+          "example": "g-2e92j39n",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteGroupResponse": {
+      "document": "DeleteGroup返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1774,6 +2656,133 @@
       ],
       "type": "object"
     },
+    "DeleteRoleAssignmentRequest": {
+      "document": "DeleteRoleAssignment请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "空间 ID。",
+          "example": "z-00fc2p61****",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "权限配置ID。",
+          "example": "rc-sisjdia",
+          "member": "string",
+          "name": "RoleConfigurationId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "同步的集团账号目标账号的类型，ManagerUin管理账号;MemberUin成员账号",
+          "example": "MemberUin",
+          "member": "string",
+          "name": "TargetType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "集团账号目标账号的UIN",
+          "example": "10003i32i2",
+          "member": "int64",
+          "name": "TargetUin",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "CAM用户同步的身份类型。取值： User：表示该 CAM 用户同步的身份是CIC用户。 Group：表示该 CAM 用户同步的身份是CIC用户组。",
+          "example": "User",
+          "member": "string",
+          "name": "PrincipalType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "CAM用户同步的身份 ID。取值： 当PrincipalType取值为Group时，该值为CIC 用户组 ID（g-********）， 当PrincipalType取值为User时，该值为CIC 用户 ID（u-********）。 \t",
+          "example": "u-sniassda****",
+          "member": "string",
+          "name": "PrincipalId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "当您移除一个集团账号目标账号上使用某访问配置的最后一个授权时，是否同时解除访问配置部署。取值： DeprovisionForLastRoleAssignmentOnAccount：解除访问配置部署。 None（默认值）：不解除访问配置部署。",
+          "example": "无",
+          "member": "string",
+          "name": "DeprovisionStrategy",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRoleAssignmentResponse": {
+      "document": "DeleteRoleAssignment返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务详情",
+          "example": "{\"TaskId\":\"t-0md93jfd3\",\"RoleConfigurationId\":\"rc-dsk3323\",\"RoleConfigurationName\":\"test\",\"TargetUin\":100032333,\"TargetType\":\"MemberUin\",\"PrincipalId\":\"u-siwnwiene\",\"PrincipalType\":\"User\",\"TaskType\":\"DeleteRolesAssignment\",\"Status\":\"InProgress\"}",
+          "member": "TaskInfo",
+          "name": "Task",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRoleConfigurationRequest": {
+      "document": "DeleteRoleConfiguration请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "空间 ID",
+          "example": "z-29n23ien",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "权限配置 ID",
+          "example": "rc-so2msow",
+          "member": "string",
+          "name": "RoleConfigurationId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRoleConfigurationResponse": {
+      "document": "DeleteRoleConfiguration返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteShareUnitMembersRequest": {
       "document": "DeleteShareUnitMembers请求参数结构体",
       "members": [
@@ -1900,6 +2909,88 @@
       ],
       "type": "object"
     },
+    "DeleteUserRequest": {
+      "document": "DeleteUser请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "空间 ID。",
+          "example": "z-33isn3ie**",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户 ID。",
+          "example": "u-34nesn3u",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteUserResponse": {
+      "document": "DeleteUser返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteUserSyncProvisioningRequest": {
+      "document": "DeleteUserSyncProvisioning请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "空间ID。",
+          "example": "z-d8wj832n***",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户同步的ID。",
+          "example": "up-sjisnw8ois",
+          "member": "string",
+          "name": "UserProvisioningId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteUserSyncProvisioningResponse": {
+      "document": "DeleteUserSyncProvisioning返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务详情。",
+          "example": "{\"TaskId\":\"t-duedin****\",\"TargetUin\":1000289211,\"TargetType\":\"MemberUin\",\"TaskType\":\"DeleteProvisioning\",\"TaskStatus\":\"InProgress\",\"UserProvisioningId\":\"upe-d8n3d9***\",\"PrincipalId\":\"u-dend83***\",\"PrincipalType\":\"User\",\"PrincipalName\":\"test\",\"DuplicationStrategy\":\"KeepBoth\",\"DeletionStrategy\":\"Delete\"}",
+          "member": "UserProvisioningsTask",
+          "name": "Tasks",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeEffectivePolicyRequest": {
       "document": "DescribeEffectivePolicy请求参数结构体",
       "members": [
@@ -1926,6 +3017,83 @@
           "name": "EffectivePolicy",
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIdentityCenterRequest": {
+      "document": "DescribeIdentityCenter请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeIdentityCenterResponse": {
+      "document": "DescribeIdentityCenter返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "空间ID。z-前缀开头，后面是12位随机数字/小写字母",
+          "example": "z-00fdsg****",
+          "member": "string",
+          "name": "ZoneId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "空间名，必须全局唯一。包含小写字母、数字和短划线（-）。不能以短划线（-）开头或结尾，且不能有两个连续的短划线（-）。长度：2~64 个字符。",
+          "example": "testName",
+          "member": "string",
+          "name": "ZoneName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务开启状态，Disabled代表未开通，Enabled代表已开通",
+          "example": "Enabled",
+          "member": "string",
+          "name": "ServiceStatus",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "SCIM 同步状态。Enabled：启用。 Disabled：禁用。",
+          "example": "Enabled",
+          "member": "string",
+          "name": "ScimSyncStatus",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2024-04-29 15:04:05",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间",
+          "example": "2024-04-29 15:04:05",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -3476,6 +4644,70 @@
       ],
       "type": "object"
     },
+    "DismantleRoleConfigurationRequest": {
+      "document": "DismantleRoleConfiguration请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "空间 ID。",
+          "example": "z-00fc2p61****",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "权限配置ID。",
+          "example": "rc-sisjdia",
+          "member": "string",
+          "name": "RoleConfigurationId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "同步的集团账号目标账号的类型，ManagerUin管理账号;MemberUin成员账号。",
+          "example": "MemberUin",
+          "member": "string",
+          "name": "TargetType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "同步的集团账号目标账号的UIN。",
+          "example": "10003i32i2",
+          "member": "int64",
+          "name": "TargetUin",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DismantleRoleConfigurationResponse": {
+      "document": "DismantleRoleConfiguration返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务详情。",
+          "example": "{\"RoleConfigurationId\":\"rc-4plmus8fdfsb\",\"RoleConfigurationName\":\"testConfiguration1\",\"TargetType\":\"MemberUin\",\"TargetUin\":700000145543,\"TaskId\":\"t-2xdmzwphpsbd\",\"TaskStatus\":\"InProgress\",\"TaskType\":\"CreateRoleAssignment\"}",
+          "member": "RoleProvisioningsTask",
+          "name": "Task",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "EffectivePolicy": {
       "document": "有效策略。",
       "members": [
@@ -3548,6 +4780,581 @@
       ],
       "type": "object"
     },
+    "GetExternalSAMLIdentityProviderRequest": {
+      "document": "GetExternalSAMLIdentityProvider请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "空间ID。",
+          "example": "z-2js923necd***",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetExternalSAMLIdentityProviderResponse": {
+      "document": "GetExternalSAMLIdentityProvider返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "saml 身份提供商配置信息。",
+          "example": "{\"EntityId\":\"http://www.okta.com/2jd83ne9m*****\",\"SSOStatus\":\"Enabled\",\"EncodedMetadataDocument\":\"PD94bWwgdmVyc2lvbj0iMS4wIj8+CjxFbnRpdHlEZXNjcmlwdG9yIHhtbG5zPSJ1cm46b2FzaXM6bmFtZXM6dGM6U0FNTDoydpbi5jb20vc2FtbC9tZXRhZGF0YS8xN2NkYjEyOC03N**********\",\"CertificateIds\":[\"idp-c-2jd8923je29****\"],\"LoginUrl\":\"https://dev-xxxxxx.okta.com/app/dev-xxxxxx_cloudssodemo_1/2jd83ne9m****/sso/saml\",\"CreateTime\":\"2024-01-01 12:12:12\",\"UpdateTime\":\"2024-01-01 12:12:12\"}",
+          "member": "SAMLIdentityProviderConfiguration",
+          "name": "SAMLIdentityProviderConfiguration",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetGroupRequest": {
+      "document": "GetGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "空间 ID。",
+          "example": "z-23s8xh7sd***",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户组的 ID。",
+          "example": "g-sd8sh8sdno***",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetGroupResponse": {
+      "document": "GetGroup返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户组信息",
+          "example": "{\"GroupName\": \"testGroup\",       \"Description\": \"this is group\",       \"CreateTime\": \"2024-01-01 12:12:12\",       \"GroupType\": \"Manual\",       \"UpdateTime\": \"2024-01-01 12:12:12\",       \"GroupId\": \"g-sushsia7s8\",       \"MemberCount\": 20}",
+          "member": "GroupInfo",
+          "name": "GroupInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetProvisioningTaskStatusRequest": {
+      "document": "GetProvisioningTaskStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "空间ID。",
+          "example": "z-2s9j28****",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务ID。",
+          "example": "t-x8jd983n****",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetProvisioningTaskStatusResponse": {
+      "document": "GetProvisioningTaskStatus返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务状态信息。",
+          "example": "{\"Status\":\"Success\",\"TaskId\":\"z-dnsudniw****\",\"TaskType\":\"StartProvisioning\",\"FailureReason\":\"\"}",
+          "member": "TaskStatus",
+          "name": "TaskStatus",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetRoleConfigurationRequest": {
+      "document": "GetRoleConfiguration请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "空间 ID",
+          "example": "z-28sn28s***",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "权限配置ID",
+          "example": "rc-2e29scc***",
+          "member": "string",
+          "name": "RoleConfigurationId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetRoleConfigurationResponse": {
+      "document": "GetRoleConfiguration返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "权限配置详情",
+          "example": "{\"RoleConfigurationId\":\"rc-s2ns92ns***\",\"RoleConfigurationName\":\"test\",\"Description\":\"this is role configuration\",\"SessionDuration\":900,\"RelayState\":\"https://console.cloud.tencent.com\",\"CreateTime\":\"2019-01-01 12:12:12\",\"UpdateTime\":\"2019-01-01 12:12:12\"}",
+          "member": "RoleConfiguration",
+          "name": "RoleConfigurationInfo",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetTaskStatusRequest": {
+      "document": "GetTaskStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "空间ID。",
+          "example": "z-2s9j28****",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务ID。",
+          "example": "t-x8jd983n****",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetTaskStatusResponse": {
+      "document": "GetTaskStatus返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务状态信息。",
+          "example": "{\"Status\":\"Success\",\"TaskId\":\"z-dksodm***\",\"TaskType\":\"ProvisionRoleConfiguration\",\"FailureReason\":\"fielded\"}",
+          "member": "TaskStatus",
+          "name": "TaskStatus",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetUserRequest": {
+      "document": "GetUser请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户 ID。",
+          "example": "u-23w3nwlsa",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "空间 ID。",
+          "example": "z-hfp2qqncfthb",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetUserResponse": {
+      "document": "GetUser返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户信息。",
+          "example": "{\"UserName\":\"test\",\"FirstName\":\"test\",\"LastName\":\"test\",\"DisplayName\":\"test\",\"Description\":\"this is user\",\"Email\":\"test@example.com\",\"UserStatus\":\"Enabled\",\"UserType\":\"Manual\",\"UserId\":\"u-2jsal3jdxk\",\"CreateTime\":\"2024-03-12 12:12:12\",\"UpdateTime\":\"2024-03-12 12:12:12\"}",
+          "member": "UserInfo",
+          "name": "UserInfo",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetUserSyncProvisioningRequest": {
+      "document": "GetUserSyncProvisioning请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "空间ID。",
+          "example": "z-d8wj832n***",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "CAM 用户同步的 ID。",
+          "example": "up-xe93jd93je",
+          "member": "string",
+          "name": "UserProvisioningId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetUserSyncProvisioningResponse": {
+      "document": "GetUserSyncProvisioning返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "CAM 用户同步信息。",
+          "example": "{\"UserProvisioningId\":\"up-siwnei3nso\",\"Description\":\"this is cam user sync\",\"Status\":\"Enabled\",\"PrincipalId\":\"u-swnd8wn3\",\"PrincipalName\":\"test\",\"PrincipalType\":\"User\",\"TargetUin\":\"10000338332\",\"TargetName\":\"test\",\"TargetType\":\"MemberUin\",\"DuplicationStrategy\":\"KeepBoth\",\"DeletionStrategy\":\"Delete\",\"CreateTime\":\"2024-01-01 12:12:12\",\"UpdateTime\":\"2024-01-01 12:12:12\"}",
+          "member": "UserProvisioning",
+          "name": "UserProvisioning",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetZoneSAMLServiceProviderInfoRequest": {
+      "document": "GetZoneSAMLServiceProviderInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "空间ID。",
+          "example": "z-2js923necd***",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetZoneSAMLServiceProviderInfoResponse": {
+      "document": "GetZoneSAMLServiceProviderInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "saml服务提供商配置信息",
+          "example": "{\"EntityId\":\"https://tencentcloudsso.com/saml/sp/z-doekeie****\",\"ZoneId\":\"z-doekeie****\",\"EncodedMetadataDocument\":\"JTNDJTNGeG1sJTIwdmVyc2lvbiUzRCUyMjEuMCUyMiUyMGVuY29kaW5nJTNEJTIy***\",\"AcsUrl\":\"https://tencentcloudsso.com/saml/acs/d9wjd-d93je9-2me****\"}",
+          "member": "SAMLServiceProvider",
+          "name": "SAMLServiceProvider",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetZoneStatisticsRequest": {
+      "document": "GetZoneStatistics请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "空间ID",
+          "example": "z-2d2nq982n***",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetZoneStatisticsResponse": {
+      "document": "GetZoneStatistics返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "空间的统计信息。",
+          "example": "{\"UserQuota\":1000,\"GroupQuota\":500,\"RoleConfigurationQuota\":1000,\"SystemPolicyPerRoleConfigurationQuota\":20,\"UserCount\":10,\"GroupCount\":2,\"RoleConfigurationCount\":3,\"UserProvisioningCount\":0,\"RoleConfigurationSyncCount\":0}",
+          "member": "ZoneStatistics",
+          "name": "ZoneStatistics",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GroupInfo": {
+      "document": "用户组信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户组的名称。",
+          "example": "TestGroup",
+          "member": "string",
+          "name": "GroupName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户组的描述。",
+          "example": "This is a group.",
+          "member": "string",
+          "name": "Description",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户组的创建时间。",
+          "example": "2024-01-01 12:12:12",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户组的类型  Manual：手动创建，Synchronized：外部导入。",
+          "example": "Manual",
+          "member": "string",
+          "name": "GroupType",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户组的修改时间。",
+          "example": "2024-01-01 12:12:12",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户组的 ID。",
+          "example": "g-3x3s34fr2***",
+          "member": "string",
+          "name": "GroupId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "组员数量。",
+          "example": "10",
+          "member": "int64",
+          "name": "MemberCount",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "如果有入参FilterUsers，用户在用户组返回true，否则返回false",
+          "example": "true",
+          "member": "bool",
+          "name": "IsSelected",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "GroupMembers": {
+      "document": "用户信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询username。",
+          "example": "Alice",
+          "member": "string",
+          "name": "UserName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户的显示名称。",
+          "example": "Alice",
+          "member": "string",
+          "name": "DisplayName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户的描述。",
+          "example": "this is user.",
+          "member": "string",
+          "name": "Description",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户的电子邮箱。目录内必须唯一。",
+          "example": "Alice@example.com",
+          "member": "string",
+          "name": "Email",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户状态 Enabled：启用， Disabled：禁用。",
+          "example": "Enabled",
+          "member": "string",
+          "name": "UserStatus",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户类型  Manual：手动创建，Synchronized：外部导入。",
+          "example": "Manual",
+          "member": "string",
+          "name": "UserType",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户 ID",
+          "example": "u-a34wsd32",
+          "member": "string",
+          "name": "UserId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户加入用户组的时间",
+          "example": "2021-12-12 12:12:12",
+          "member": "string",
+          "name": "JoinTime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "IdentityPolicy": {
       "document": "组织身份策略",
       "members": [
@@ -3597,6 +5404,471 @@
         }
       ],
       "usage": "both"
+    },
+    "JoinedGroups": {
+      "document": "用户加入的用户组",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户组的名称。",
+          "example": "测试组",
+          "member": "string",
+          "name": "GroupName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户组的描述。",
+          "example": "这个是测试组",
+          "member": "string",
+          "name": "Description",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户组 ID。",
+          "example": "g-asnwuwi**",
+          "member": "string",
+          "name": "GroupId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户组的类型。取值：\n\nManual：手动创建。\nSynchronized：外部同步。",
+          "example": "Manual",
+          "member": "string",
+          "name": "GroupType",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "加入用户组的时间",
+          "example": "2021-01-01 12:12:12",
+          "member": "string",
+          "name": "JoinTime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ListExternalSAMLIdPCertificatesRequest": {
+      "document": "ListExternalSAMLIdPCertificates请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "空间ID。",
+          "example": "z-2js923necd***",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListExternalSAMLIdPCertificatesResponse": {
+      "document": "ListExternalSAMLIdPCertificates返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "符合请求参数条件的数据总条数。",
+          "example": "5",
+          "member": "int64",
+          "name": "TotalCounts",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "SAML 签名证书列表",
+          "example": "[{\"SerialNumber\":\"1347934239****\",\"Issuer\":\"5.6.54.22.1.9.1=#dj39dj39e3w9rm3e2e3****,CN=dev-xxxxxx,OU=SSOProvider,O=Okta\",\"Version\":\"1\",\"CertificateId\":\"idp-c-2jd8923je29****\",\"PublicKey\":\"nMIIBtjCCAVugAwIBAgITBmyf1XSXNmY****\",\"SignatureAlgorithm\":\"SHA256withRSA\",\"NotAfter\":\"2030-06-23 07:04:37\",\"NotBefore\":\"2010-06-23 07:04:37\",\"Subject\":\"5.6.54.22.1.9.1=#dj39dj39e3w9rm3e2e3****,CN=dev-xxxxxx,OU=SSOProvider,O=Okta\",\"X509Certificate\":\"nMIIBtjCCAVugAwIBAgITBmyf1XSXNmY****\"}]",
+          "member": "SAMLIdPCertificate",
+          "name": "SAMLIdPCertificates",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListGroupMembersRequest": {
+      "document": "ListGroupMembers请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "空间 ID。",
+          "example": "z-2d8shd8***",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户组ID。",
+          "example": "g-28sn23n***",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询返回结果下一页的令牌。首次调用 API 不需要NextToken。  当您首次调用 API 时，如果返回数据总条数超过MaxResults限制，数据会被截断，只返回MaxResults条数据，同时，返回参数IsTruncated为true，返回一个NextToken。您可以使用上一次返回的NextToken继续调用 API，其他请求参数保持不变，查询被截断的数据。您可以按此方法多次查询，直到IsTruncated为false，表示全部数据查询完毕。",
+          "example": "OTM0YzE4MzY2ZjdhMWM0MYZDhnYaxsiYTLI=",
+          "member": "string",
+          "name": "NextToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "每页的最大数据条数。  取值范围：1~100。  默认值：10。",
+          "example": "10",
+          "member": "int64",
+          "name": "MaxResults",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "用户类型  Manual：手动创建，Synchronized：外部导入。",
+          "example": "Manual",
+          "member": "string",
+          "name": "UserType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListGroupMembersResponse": {
+      "document": "ListGroupMembers返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询返回结果下一页的令牌。  说明 只有IsTruncated为true时，才显示该参数。",
+          "example": "OTM0YzE4MzY2ZjdhMWM0MYZDhnYaxsiYTLI=",
+          "member": "string",
+          "name": "NextToken",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "符合请求参数条件的数据总条数。",
+          "example": "20",
+          "member": "int64",
+          "name": "TotalCounts",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "每页的最大数据条数。",
+          "example": "10",
+          "member": "int64",
+          "name": "MaxResults",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "返回结果是否被截断。取值：  true：已截断。 false：未截断。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsTruncated",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户组的用户列表",
+          "example": " [{\"UserName\": \"test\",\"DisplayName\": \"test\",\"Description\": \"this is test user\",\"Email\": \"123456@qq.com\",\"UserStatus\": \"Enabled\",\"UserType\": \"Manual\",\"UserId\": \"u-d032med3\", \"JoinTime\": \"2024-01-01 12:12:12\"}]",
+          "member": "GroupMembers",
+          "name": "GroupMembers",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListGroupsRequest": {
+      "document": "ListGroups请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "空间 ID。",
+          "example": "z-3ds73bs****",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询返回结果下一页的令牌。首次调用 API 不需要NextToken。  当您首次调用 API 时，如果返回数据总条数超过MaxResults限制，数据会被截断，只返回MaxResults条数据，同时，返回参数IsTruncated为true，返回一个NextToken。您可以使用上一次返回的NextToken继续调用 API，其他请求参数保持不变，查询被截断的数据。您可以按此方法多次查询，直到IsTruncated为false，表示全部数据查询完毕。",
+          "example": "OTM0YzE4MzY2ZjdhMWM0MYZDhnYaxsiYTLI=",
+          "member": "string",
+          "name": "NextToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "每页的最大数据条数。  取值范围：1~100。  默认值：10。",
+          "example": "20",
+          "member": "int64",
+          "name": "MaxResults",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件。  格式：<Attribute> <Operator> <Value>，不区分大小写。目前，<Attribute>只支持GroupName，<Operator>只支持eq（Equals）和sw（Start With）。  示例：Filter = \"GroupName sw test\"，表示查询名称以 test 开头的全部用户组。Filter = \"GroupName eq testgroup\"，表示查询名称为 testgroup 的用户组。",
+          "example": "GroupName eq testGroup",
+          "member": "string",
+          "name": "Filter",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户组的类型  Manual：手动创建，Synchronized：外部导入。",
+          "example": "Manual",
+          "member": "string",
+          "name": "GroupType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "筛选的用户，该用户关联的用户组会返回IsSelected=1",
+          "example": "[\"u-dnjw8dndjde\",\"u-dniwsnsas\"]",
+          "member": "string",
+          "name": "FilterUsers",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "排序的字段，目前只支持CreateTime，默认是CreateTime字段",
+          "example": "CreateTime",
+          "member": "string",
+          "name": "SortField",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序类型：Desc 倒序 Asc  正序，需要你和SortField一起设置",
+          "example": "Desc",
+          "member": "string",
+          "name": "SortType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListGroupsResponse": {
+      "document": "ListGroups返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询返回结果下一页的令牌。  说明 只有IsTruncated为true时，才显示该参数。",
+          "example": "OTM0YzE4MzY2ZjdhMWM0MYZDhnYaxsiYTLI=",
+          "member": "string",
+          "name": "NextToken",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户组列表。",
+          "example": "[{\"GroupName\":\"testGroup\",\"Description\":\"thsi is group\",\"CreateTime\":\"2024-01-01 12:12:12\",\"GroupType\":\"Manual\",\"UpdateTime\":\"2024-01-01 12:12:12\",\"GroupId\":\"g-q8shs8h****\",\"MemberCount\":20}]",
+          "member": "GroupInfo",
+          "name": "Groups",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "每页的最大数据条数。",
+          "example": "10",
+          "member": "int64",
+          "name": "MaxResults",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "符合请求参数条件的数据总条数。",
+          "example": "20",
+          "member": "int64",
+          "name": "TotalCounts",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "返回结果是否被截断。取值：  true：已截断。 false：未截断。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsTruncated",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListJoinedGroupsForUserRequest": {
+      "document": "ListJoinedGroupsForUser请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "空间 ID。",
+          "example": "z-2d8shd8***",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户ID",
+          "example": "u-28sn23n***",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询返回结果下一页的令牌。首次调用 API 不需要NextToken。  当您首次调用 API 时，如果返回数据总条数超过MaxResults限制，数据会被截断，只返回MaxResults条数据，同时，返回参数IsTruncated为true，返回一个NextToken。您可以使用上一次返回的NextToken继续调用 API，其他请求参数保持不变，查询被截断的数据。您可以按此方法多次查询，直到IsTruncated为false，表示全部数据查询完毕。",
+          "example": "OTM0YzE4MzY2ZjdhMWM0MYZDhnYaxsiYTLI=",
+          "member": "string",
+          "name": "NextToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "每页的最大数据条数。  取值范围：1~100。  默认值：10。",
+          "example": "无",
+          "member": "int64",
+          "name": "MaxResults",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ListJoinedGroupsForUserResponse": {
+      "document": "ListJoinedGroupsForUser返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询返回结果下一页的令牌。  说明 只有IsTruncated为true时，才显示该参数。",
+          "example": "OTM0YzE4MzY2ZjdhMWM0MYZDhnYaxsiYTLI=",
+          "member": "string",
+          "name": "NextToken",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "符合请求参数条件的数据总条数。",
+          "example": "20",
+          "member": "int64",
+          "name": "TotalCounts",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "每页的最大数据条数。",
+          "example": "10",
+          "member": "int64",
+          "name": "MaxResults",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "返回结果是否被截断。取值：  true：已截断。 false：未截断。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsTruncated",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户加入的用户组列表",
+          "example": " [{\"GroupName\": \"testGroup\",         \"Description\": \"this is testGroup\",         \"GroupId\": \"g-s23nw3e\",         \"GroupType\": \"Manual\",         \"JoinTime\": \"2021-01-01 12:12:12\"} ]",
+          "member": "JoinedGroups",
+          "name": "JoinedGroups",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ListNonCompliantResourceRequest": {
       "document": "ListNonCompliantResource请求参数结构体",
@@ -3875,6 +6147,80 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListPermissionPoliciesInRoleConfigurationRequest": {
+      "document": "ListPermissionPoliciesInRoleConfiguration请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "空间 ID",
+          "example": "z-289s28wn***",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "权限配置 ID",
+          "example": "rc-si2e3i3me",
+          "member": "string",
+          "name": "RoleConfigurationId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "权限策略类型。取值：  System：系统策略。复用 CAM 的系统策略。 Custom: 自定义策略。按照 CAM 权限策略语法和结构编写的自定义策略。",
+          "example": "System",
+          "member": "string",
+          "name": "RolePolicyType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "按策略名称搜索",
+          "example": "QcloudPolicyTest",
+          "member": "string",
+          "name": "Filter",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListPermissionPoliciesInRoleConfigurationResponse": {
+      "document": "ListPermissionPoliciesInRoleConfiguration返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "权限策略总个数。",
+          "example": "20",
+          "member": "int64",
+          "name": "TotalCounts",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "权限策略列表。",
+          "example": "[{\"RolePolicyName\":\"adminPolciy\",\"RolePolicyType\":\"System\",\"RolePolicyDocument\":\"\",\"AddTime\":\"2020-01-01 12:12:12\"}]",
+          "member": "RolePolicie",
+          "name": "RolePolicies",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -4219,6 +6565,417 @@
       ],
       "usage": "out"
     },
+    "ListRoleAssignmentsRequest": {
+      "document": "ListRoleAssignments请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "空间 ID。",
+          "example": "z-2d8shd8***",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "权限配置ID。",
+          "example": "rc-sd8sdn8sns",
+          "member": "string",
+          "name": "RoleConfigurationId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "每页的最大数据条数。  取值范围：1~100。  默认值：10。",
+          "example": "10",
+          "member": "int64",
+          "name": "MaxResults",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询返回结果下一页的令牌。首次调用 API 不需要NextToken。  当您首次调用 API 时，如果返回数据总条数超过MaxResults限制，数据会被截断，只返回MaxResults条数据，同时，返回参数IsTruncated为true，返回一个NextToken。您可以使用上一次返回的NextToken继续调用 API，其他请求参数保持不变，查询被截断的数据。您可以按此方法多次查询，直到IsTruncated为false，表示全部数据查询完毕。",
+          "example": "OTM0YzE4MzY2ZjdhMWM0MYZDhnYaxsiYTLI=",
+          "member": "string",
+          "name": "NextToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "同步的集团账号目标账号的类型，ManagerUin管理账号;MemberUin成员账号",
+          "example": "MemberUin",
+          "member": "string",
+          "name": "TargetType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "同步的集团账号目标账号的UIN。",
+          "example": "1000038292",
+          "member": "int64",
+          "name": "TargetUin",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "CAM 用户同步的身份类型。取值： User：表示该 CAM 用户同步的身份是CIC用户。 Group：表示该 CAM 用户同步的身份是CIC用户组。",
+          "example": "User",
+          "member": "string",
+          "name": "PrincipalType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "CAM 用户同步的身份 ID。取值： 当PrincipalType取值为Group时，该值为CIC 用户组 ID（g-********）。 当PrincipalType取值为User时，该值为CIC 用户 ID（u-********）。",
+          "example": "u-djwismoa***",
+          "member": "string",
+          "name": "PrincipalId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询条件，目前只支持权限配置名称查询。",
+          "example": "test",
+          "member": "string",
+          "name": "Filter",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListRoleAssignmentsResponse": {
+      "document": "ListRoleAssignments返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询返回结果下一页的令牌。  说明 只有IsTruncated为true时，才显示该参数。",
+          "example": "OTM0YzE4MzY2ZjdhMWM0MYZDhnYaxsiYTLI=",
+          "member": "string",
+          "name": "NextToken",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "符合请求参数条件的数据总条数。",
+          "example": "20",
+          "member": "int64",
+          "name": "TotalCounts",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "每页的最大数据条数。",
+          "example": "10",
+          "member": "int64",
+          "name": "MaxResults",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "返回结果是否被截断。取值：  true：已截断。 false：未截断。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsTruncated",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集团账号目标账号的授权列表。",
+          "example": "[{\"RoleConfigurationId\":\"ec-swidn****\",\"RoleConfigurationName\":\"test\",\"TargetUin\":100000322,\"TargetType\":\"MemberUin\",\"TargetName\":\"test\",\"PrincipalId\":\"u-ssiisn***\",\"PrincipalType\":\"User\",\"PrincipalName\":\"testConfig\",\"CreateTime\":\"2024-01-01 12:12:12\",\"UpdateTime\":\"2024-01-01 12:12:12\"}]",
+          "member": "RoleAssignments",
+          "name": "RoleAssignments",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListRoleConfigurationProvisioningsRequest": {
+      "document": "ListRoleConfigurationProvisionings请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "空间 ID。",
+          "example": "z-2d8shd8***",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "权限配置ID。",
+          "example": "r-sd8sdn8sns",
+          "member": "string",
+          "name": "RoleConfigurationId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "每页的最大数据条数。  取值范围：1~100。  默认值：10。",
+          "example": "10",
+          "member": "int64",
+          "name": "MaxResults",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询返回结果下一页的令牌。首次调用 API 不需要NextToken。  当您首次调用 API 时，如果返回数据总条数超过MaxResults限制，数据会被截断，只返回MaxResults条数据，同时，返回参数IsTruncated为true，返回一个NextToken。您可以使用上一次返回的NextToken继续调用 API，其他请求参数保持不变，查询被截断的数据。您可以按此方法多次查询，直到IsTruncated为false，表示全部数据查询完毕。",
+          "example": "OTM0YzE4MzY2ZjdhMWM0MYZDhnYaxsiYTLI=",
+          "member": "string",
+          "name": "NextToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "同步的集团账号目标账号的类型，ManagerUin管理账号;MemberUin成员账号",
+          "example": "MemberUin",
+          "member": "string",
+          "name": "TargetType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "同步的集团账号目标账号的UIN。",
+          "example": "1000038292",
+          "member": "int64",
+          "name": "TargetUin",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "Deployed: 部署成功 DeployedRequired：需要重新部署 DeployFailed：部署失败",
+          "example": "Deployed",
+          "member": "string",
+          "name": "DeploymentStatus",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "支持配置名称搜索。",
+          "example": "test",
+          "member": "string",
+          "name": "Filter",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListRoleConfigurationProvisioningsResponse": {
+      "document": "ListRoleConfigurationProvisionings返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询返回结果下一页的令牌。  说明 只有IsTruncated为true时，才显示该参数。",
+          "example": "OTM0YzE4MzY2ZjdhMWM0MYZDhnYaxsiYTLI=",
+          "member": "string",
+          "name": "NextToken",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "符合请求参数条件的数据总条数。",
+          "example": "20",
+          "member": "int64",
+          "name": "TotalCounts",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "每页的最大数据条数。",
+          "example": "10",
+          "member": "int64",
+          "name": "MaxResults",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "返回结果是否被截断。取值：  true：已截断。 false：未截断。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsTruncated",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "部成员账号列表。",
+          "example": "[{\"DeploymentStatus\":\"DeployedRequired\",\"RoleConfigurationId\":\"rc-sjwiwm2ww**\",\"RoleConfigurationName\":\"testConfiguration\",\"TargetUin\":10003292021,\"TargetName\":\"test\",\"TargetType\":\"MemberUin\",\"CreateTime\":\"2024-01-01 12:12:12\",\"UpdateTime\":\"2024-01-01 12:12:12\"}]",
+          "member": "RoleConfigurationProvisionings",
+          "name": "RoleConfigurationProvisionings",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListRoleConfigurationsRequest": {
+      "document": "ListRoleConfigurations请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "空间 ID。",
+          "example": "z-3ds73bs****",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询返回结果下一页的令牌。首次调用 API 不需要NextToken。  当您首次调用 API 时，如果返回数据总条数超过MaxResults限制，数据会被截断，只返回MaxResults条数据，同时，返回参数IsTruncated为true，返回一个NextToken。您可以使用上一次返回的NextToken继续调用 API，其他请求参数保持不变，查询被截断的数据。您可以按此方法多次查询，直到IsTruncated为false，表示全部数据查询完毕。",
+          "example": "OTM0YzE4MzY2ZjdhMWM0MYZDhnYaxsiYTLI=",
+          "member": "string",
+          "name": "NextToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "每页的最大数据条数。  取值范围：1~100。  默认值：10。",
+          "example": "20",
+          "member": "int64",
+          "name": "MaxResults",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件。不区分大小写。目前，只支持 RoleConfigurationName，只支持 eq（Equals）和 sw（Start With）。 示例：Filter = \"RoleConfigurationName，只支持 sw test\"，表示查询名称以 test 开头的全部访问配置。Filter = \"RoleConfigurationName，只支持 eq TestRoleConfiguration\"，表示查询名称为 TestRoleConfiguration 的访问配置。",
+          "example": "RoleConfigurationName eq TestRoleConfiguration",
+          "member": "string",
+          "name": "Filter",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "检索成员账号是否配置过权限，如果配置过返回IsSelected: true, 否则返回false。",
+          "example": "[100002322,1000033232]",
+          "member": "int64",
+          "name": "FilterTargets",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "授权的用户UserId或者用户组的GroupId，必须和入参数FilterTargets一起设置",
+          "example": "u-s9wme92ne",
+          "member": "string",
+          "name": "PrincipalId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListRoleConfigurationsResponse": {
+      "document": "ListRoleConfigurations返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "符合请求参数条件的数据总条数。",
+          "example": "20",
+          "member": "int64",
+          "name": "TotalCounts",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "每页的最大数据条数。",
+          "example": "10",
+          "member": "int64",
+          "name": "MaxResults",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "返回结果是否被截断。取值：  true：已截断。 false：未截断。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsTruncated",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "查询返回结果下一页的令牌。  说明 只有IsTruncated为true时，才显示该参数。",
+          "example": "OTM0YzE4MzY2ZjdhMWM0MYZDhnYaxsiYTLI=",
+          "member": "string",
+          "name": "NextToken",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "权限配置列表。",
+          "example": "[{\"RoleConfigurationId\":\"rc-s2ns92ns***\",\"RoleConfigurationName\":\"test\",\"Description\":\"this is role configuration\",\"SessionDuration\":900,\"RelayState\":\"https://console.cloud.tencent.com\",\"CreateTime\":\"2019-01-01 12:12:12\",\"UpdateTime\":\"2019-01-01 12:12:12\"}]",
+          "member": "RoleConfiguration",
+          "name": "RoleConfigurations",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ListTargetsForPolicyNode": {
       "document": "查询某个指定SCP策略关联的目标列表",
       "members": [
@@ -4345,6 +7102,453 @@
           "name": "List",
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListTasksRequest": {
+      "document": "ListTasks请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "空间 ID。",
+          "example": "z-2d8shd8***",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "CAM 用户同步的身份 ID。取值：  当PrincipalType取值为Group时，该值为CIC用户组 ID（g-********）。 当PrincipalType取值为User时，该值为CIC用户 ID（u-********）。",
+          "example": "u-siws8sn***",
+          "member": "string",
+          "name": "PrincipalId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询返回结果下一页的令牌。首次调用 API 不需要NextToken。  当您首次调用 API 时，如果返回数据总条数超过MaxResults限制，数据会被截断，只返回MaxResults条数据，同时，返回参数IsTruncated为true，返回一个NextToken。您可以使用上一次返回的NextToken继续调用 API，其他请求参数保持不变，查询被截断的数据。您可以按此方法多次查询，直到IsTruncated为false，表示全部数据查询完毕。",
+          "example": "OTM0YzE4MzY2ZjdhMWM0MYZDhnYaxsiYTLI=",
+          "member": "string",
+          "name": "NextToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "每页的最大数据条数。  取值范围：1~100。  默认值：10。",
+          "example": "10",
+          "member": "int64",
+          "name": "MaxResults",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "CAM 用户同步的身份类型。取值：  User：表示该 CAM 用户同步的身份是CIC用户。 Group：表示该 CAM 用户同步的身份是CIC用户组。",
+          "example": "User",
+          "member": "string",
+          "name": "PrincipalType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "同步的集团账号目标账号的UIN。",
+          "example": "10000229322",
+          "member": "int64",
+          "name": "TargetUin",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "同步的集团账号目标账号的类型，ManagerUin管理账号;MemberUin成员账号",
+          "example": "MemberUin",
+          "member": "string",
+          "name": "TargetType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "权限配置ID。",
+          "example": "rc-s92jd93je",
+          "member": "string",
+          "name": "RoleConfigurationId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "InProgress：任务执行中。 Success：任务执行成功。 Failed：任务执行失败。",
+          "example": "InProgress",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务类型。",
+          "example": "CreateRoleAssignment",
+          "member": "string",
+          "name": "TaskType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListTasksResponse": {
+      "document": "ListTasks返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询返回结果下一页的令牌。  说明 只有IsTruncated为true时，才显示该参数。",
+          "example": "OTM0YzE4MzY2ZjdhMWM0MYZDhnYaxsiYTLI=",
+          "member": "string",
+          "name": "NextToken",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "符合请求参数条件的数据总条数。",
+          "example": "20",
+          "member": "int64",
+          "name": "TotalCounts",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "每页的最大数据条数。",
+          "example": "10",
+          "member": "int64",
+          "name": "MaxResults",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "返回结果是否被截断。取值：  true：已截断。 false：未截断。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsTruncated",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务详情",
+          "example": "[{\"TaskId\":\"t-xsinsxinsdk\",\"RoleConfigurationId\":\"rc-xmw9xjdsd\",\"RoleConfigurationName\":\"配置\",\"TargetUin\":1000232234,\"TargetType\":\"User\",\"PrincipalId\":\"u-xm89dnsujs\",\"PrincipalType\":\"Member\",\"TaskType\":\"CreateRoleAssignment\",\"Status\":\"InProgress\",\"FailureReason\":\"test\"}]",
+          "member": "TaskInfo",
+          "name": "Tasks",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListUserSyncProvisioningsRequest": {
+      "document": "ListUserSyncProvisionings请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "空间 ID。",
+          "example": "z-2d8shd8***",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "CAM 用户同步的身份 ID。取值：  当PrincipalType取值为Group时，该值为CIC用户组 ID（g-********）。 当PrincipalType取值为User时，该值为CIC用户 ID（u-********）。",
+          "example": "u-siws8sn***",
+          "member": "string",
+          "name": "PrincipalId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询返回结果下一页的令牌。首次调用 API 不需要NextToken。  当您首次调用 API 时，如果返回数据总条数超过MaxResults限制，数据会被截断，只返回MaxResults条数据，同时，返回参数IsTruncated为true，返回一个NextToken。您可以使用上一次返回的NextToken继续调用 API，其他请求参数保持不变，查询被截断的数据。您可以按此方法多次查询，直到IsTruncated为false，表示全部数据查询完毕。",
+          "example": "OTM0YzE4MzY2ZjdhMWM0MYZDhnYaxsiYTLI=",
+          "member": "string",
+          "name": "NextToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "每页的最大数据条数。  取值范围：1~100。  默认值：10。",
+          "example": "10",
+          "member": "int64",
+          "name": "MaxResults",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "CAM 用户同步的身份类型。取值：  User：表示该 CAM 用户同步的身份是CIC用户。 Group：表示该 CAM 用户同步的身份是CIC用户组。",
+          "example": "无",
+          "member": "string",
+          "name": "PrincipalType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "集团账号目标账号的UIN。",
+          "example": "10000229322",
+          "member": "int64",
+          "name": "TargetUin",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "同步的集团账号目标账号的类型，ManagerUin管理账号;MemberUin成员账号",
+          "example": "MemberUin",
+          "member": "string",
+          "name": "TargetType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "检测条件。",
+          "example": "up-aiwn9inss",
+          "member": "string",
+          "name": "Filter",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListUserSyncProvisioningsResponse": {
+      "document": "ListUserSyncProvisionings返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询返回结果下一页的令牌。  说明 只有IsTruncated为true时，才显示该参数。",
+          "example": "OTM0YzE4MzY2ZjdhMWM0MYZDhnYaxsiYTLI=",
+          "member": "string",
+          "name": "NextToken",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "符合请求参数条件的数据总条数。",
+          "example": "20",
+          "member": "int64",
+          "name": "TotalCounts",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "每页的最大数据条数。",
+          "example": "10",
+          "member": "int64",
+          "name": "MaxResults",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "返回结果是否被截断。取值：  true：已截断。 false：未截断。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsTruncated",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "CAM同步的用户列表。",
+          "example": "[{\"UserProvisioningId\":\"up-siwnei3nso\",\"Description\":\"this is cam user sync\",\"Status\":\"Enabled\",\"PrincipalId\":\"u-swnd8wn3\",\"PrincipalName\":\"test\",\"PrincipalType\":\"User\",\"TargetUin\":\"10000338332\",\"TargetName\":\"test\",\"DuplicationStrategy\":\"KeepBoth\",\"DeletionStrategy\":\"Delete\",\"CreateTime\":\"2024-01-01 12:12:12\",\"UpdateTime\":\"2024-01-01 12:12:12\",\"TargetType\":\"MemberUin\"}]",
+          "member": "UserProvisioning",
+          "name": "UserProvisionings",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListUsersRequest": {
+      "document": "ListUsers请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "空间 ID。",
+          "example": "z-00fc2p61****",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户状态 Enabled：启用， Disabled：禁用。",
+          "example": "Enabled",
+          "member": "string",
+          "name": "UserStatus",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户类型  Manual：手动创建，Synchronized：外部导入。",
+          "example": "Manual",
+          "member": "string",
+          "name": "UserType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件。  目前仅支持用户名，邮箱，用户userId，描述",
+          "example": "test",
+          "member": "string",
+          "name": "Filter",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "每页的最大数据条数。  取值范围：1~100。  默认值：10。",
+          "example": "10",
+          "member": "int64",
+          "name": "MaxResults",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询返回结果下一页的令牌。首次调用 API 不需要NextToken。  当您首次调用 API 时，如果返回数据总条数超过MaxResults限制，数据会被截断，只返回MaxResults条数据，同时，返回参数IsTruncated为true，返回一个NextToken。您可以使用上一次返回的NextToken继续调用 API，其他请求参数保持不变，查询被截断的数据。您可以按此方法经过多次查询，直到IsTruncated为false时，表示全部数据查询完毕。",
+          "example": "OTM0YzE4MzY2ZjdhMWM0MYZDhnYaxsiYTLI=",
+          "member": "string",
+          "name": "NextToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "筛选的用户组，该用户组关联的子用户会返回IsSelected=1",
+          "example": "[\"g-sjwidjssd\", \"g-djsiendidmd\"]",
+          "member": "string",
+          "name": "FilterGroups",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "排序的字段，目前只支持CreateTime，默认是CreateTime字段",
+          "example": "CreateTime",
+          "member": "string",
+          "name": "SortField",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序类型：Desc 倒序 Asc  正序，需要你和SortField一起设置",
+          "example": "Desc",
+          "member": "string",
+          "name": "SortType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListUsersResponse": {
+      "document": "ListUsers返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "符合请求参数条件的数据总条数。",
+          "example": "20",
+          "member": "int64",
+          "name": "TotalCounts",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "每页的最大数据条数。",
+          "example": "10",
+          "member": "int64",
+          "name": "MaxResults",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户列表。",
+          "example": "[{\"UserName\": \"test\",         \"FirstName\": \"test\",         \"LastName\": \"test\",         \"DisplayName\": \"test\",         \"Description\": \"this is user\",         \"Email\": \"test@example\",         \"UserStatus\": \"Enabled\",         \"UserType\": \"Manual\",         \"UserId\": \"u-2s334e3***\",         \"CreateTime\": \"2024-03-12 12:12:12\",         \"UpdateTime\": \"2024-03-12 12:12:12\"}]",
+          "member": "UserInfo",
+          "name": "Users",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "查询返回结果下一页的令牌。只有IsTruncated为true时，才显示该参数。",
+          "example": "OTM0YzE4MzY2ZjdhMWM0MYZDhnYaxsiYTLI",
+          "member": "string",
+          "name": "NextToken",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "返回结果是否被截断。取值：  true：已截断。 false：未截断。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsTruncated",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -4670,6 +7874,43 @@
         }
       ],
       "usage": "out"
+    },
+    "OpenIdentityCenterRequest": {
+      "document": "OpenIdentityCenter请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "空间名，必须全局唯一。包含小写字母、数字和短划线（-）。不能以短划线（-）开头或结尾，且不能有两个连续的短划线（-）。长度：2~64 个字符。",
+          "example": "testName",
+          "member": "string",
+          "name": "ZoneName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "OpenIdentityCenterResponse": {
+      "document": "OpenIdentityCenter返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "空间ID。z-前缀开头，后面是12位随机数字/小写字母",
+          "example": "z-00fdsg****",
+          "member": "string",
+          "name": "ZoneId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "OrgFinancialByMonth": {
       "document": "按月获取组织财务信息",
@@ -5663,6 +8904,34 @@
       ],
       "usage": "out"
     },
+    "PolicyDetail": {
+      "document": "策略详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "策略ID。",
+          "example": "426322",
+          "member": "int64",
+          "name": "PolicyId",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "QcloudAccessForOceanusRole",
+          "member": "string",
+          "name": "PolicyName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "ProductResource": {
       "document": "产品资源",
       "members": [
@@ -5686,6 +8955,70 @@
         }
       ],
       "usage": "in"
+    },
+    "ProvisionRoleConfigurationRequest": {
+      "document": "ProvisionRoleConfiguration请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "空间 ID。",
+          "example": "z-00fc2p61****",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "权限配置ID。",
+          "example": "rc-sisjdia",
+          "member": "string",
+          "name": "RoleConfigurationId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "同步的集团账号目标账号的类型，ManagerUin管理账号;MemberUin成员账号。",
+          "example": "MemberUin",
+          "member": "string",
+          "name": "TargetType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "集团账号目标账号的UIN。",
+          "example": "10003i32i2",
+          "member": "int64",
+          "name": "TargetUin",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ProvisionRoleConfigurationResponse": {
+      "document": "ProvisionRoleConfiguration返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务详情。",
+          "example": "{\"RoleConfigurationId\":\"rc-4plmus8fdfsb\",\"RoleConfigurationName\":\"testConfiguration1\",\"TargetType\":\"MemberUin\",\"TargetUin\":700000145543,\"TaskId\":\"t-2xdmzwphpsbd\",\"TaskStatus\":\"InProgress\",\"TaskType\":\"CreateRoleAssignment\"}",
+          "member": "RoleProvisioningsTask",
+          "name": "Task",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "QuitOrganizationRequest": {
       "document": "QuitOrganization请求参数结构体",
@@ -5741,6 +9074,150 @@
       ],
       "type": "object"
     },
+    "RemoveExternalSAMLIdPCertificateRequest": {
+      "document": "RemoveExternalSAMLIdPCertificate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "空间ID。",
+          "example": "z-2js923necd***",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "PEM 格式的 X509 证书。  由 SAML 身份提供商提供。",
+          "example": "dp-c-2jd8923je29****",
+          "member": "string",
+          "name": "CertificateId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RemoveExternalSAMLIdPCertificateResponse": {
+      "document": "RemoveExternalSAMLIdPCertificate返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RemovePermissionPolicyFromRoleConfigurationRequest": {
+      "document": "RemovePermissionPolicyFromRoleConfiguration请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "空间 ID",
+          "example": "z-29n23ien",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "权限配置 ID",
+          "example": "rc-so2msow",
+          "member": "string",
+          "name": "RoleConfigurationId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "权限策略类型。取值：  System：系统策略。复用 CAM 的系统策略。 Custom: 自定义策略。按照 CAM 权限策略语法和结构编写的自定义策略。",
+          "example": "System",
+          "member": "string",
+          "name": "RolePolicyType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "权限策略名称，长度最大为 32 个字符。",
+          "example": "TestPolicy",
+          "member": "string",
+          "name": "RolePolicyName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "策略ID。",
+          "example": "426322",
+          "member": "int64",
+          "name": "RolePolicyId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "RemovePermissionPolicyFromRoleConfigurationResponse": {
+      "document": "RemovePermissionPolicyFromRoleConfiguration返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RemoveUserFromGroupRequest": {
+      "document": "RemoveUserFromGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "空间ID。",
+          "example": "z-28sjh238n",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户组ID。",
+          "example": "g-28sh28ne",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户ID。",
+          "example": "u-0su23n9nd",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RemoveUserFromGroupResponse": {
+      "document": "RemoveUserFromGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ResourceTagMapping": {
       "document": "资源及关联的标签",
       "members": [
@@ -5776,6 +9253,836 @@
         }
       ],
       "usage": "out"
+    },
+    "RoleAssignmentInfo": {
+      "document": "授权成员账号信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "CAM 用户同步的身份 ID。取值：\n当PrincipalType取值为Group时，该值为CIC用户组 ID（g-********）。\n当PrincipalType取值为User时，该值为CIC用户 ID（u-********）。",
+          "example": "u-xuec8dnd",
+          "member": "string",
+          "name": "PrincipalId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "CAM 用户同步的身份类型。取值：\n\nUser：表示该 CAM 用户同步的身份是CIC用户。\nGroup：表示该 CAM 用户同步的身份是CIC用户组。",
+          "example": "User",
+          "member": "string",
+          "name": "PrincipalType",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "同步集团账号目标账号的UIN。",
+          "example": "100003829343",
+          "member": "int64",
+          "name": "TargetUin",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "同步集团账号目标账号的类型，ManagerUin管理账号;MemberUin成员账号",
+          "example": "MemberUin",
+          "member": "string",
+          "name": "TargetType",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "权限配置ID。",
+          "example": "rc-s82nd93ne***",
+          "member": "string",
+          "name": "RoleConfigurationId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "RoleAssignments": {
+      "document": "成员账号的授权详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "权限配置ID。",
+          "example": "rc-sksom***",
+          "member": "string",
+          "name": "RoleConfigurationId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "权限配置名称。",
+          "example": "test",
+          "member": "string",
+          "name": "RoleConfigurationName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集团账号目标账号的UIN。",
+          "example": "1000029322",
+          "member": "int64",
+          "name": "TargetUin",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "同步的集团账号目标账号的类型，ManagerUin管理账号;MemberUin成员账号。",
+          "example": "MemberUin",
+          "member": "string",
+          "name": "TargetType",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "CAM 用户同步的身份 ID。取值： 当PrincipalType取值为Group时，该值为CIC 用户组 ID（g-********）。 当PrincipalType取值为User时，该值为CIC 用户 ID（u-********）。",
+          "example": "u-dwidn***",
+          "member": "string",
+          "name": "PrincipalId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "CAM 用户同步的身份类型。取值： User：表示该 CAM 用户同步的身份是CIC用户。 Group：表示该 CAM 用户同步的身份是CIC用户组。",
+          "example": "User",
+          "member": "string",
+          "name": "PrincipalType",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户名称或者用户组名称",
+          "example": "test",
+          "member": "string",
+          "name": "PrincipalName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间。",
+          "example": "2024-01-01 12:12:12",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间。",
+          "example": "2024-01-01 12:12:12",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集团账号目标账号的名称。",
+          "example": "test",
+          "member": "string",
+          "name": "TargetName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "RoleConfiguration": {
+      "document": "CIC权限配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "权限配置配置ID。",
+          "example": "rc-3334342dws****",
+          "member": "string",
+          "name": "RoleConfigurationId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "权限配置配名称。",
+          "example": "test",
+          "member": "string",
+          "name": "RoleConfigurationName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "权限配置的描述。",
+          "example": "this is role configuration",
+          "member": "string",
+          "name": "Description",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "会话持续时间。CIC 用户使用访问配置访问成员账号时，会话最多保持的时间。\n单位：秒。",
+          "example": "900",
+          "member": "int64",
+          "name": "SessionDuration",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "初始访问页面。CIC 用户使用访问配置访问成员账号时，初始访问的页面地址。",
+          "example": "https://console.cloud.tencent.com/",
+          "member": "string",
+          "name": "RelayState",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "权限配置的创建时间。",
+          "example": "2019-01-01 12:12:12",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "权限配置的更新时间。",
+          "example": "2019-01-01 12:12:12",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "如果有入参FilterTargets查询成员账号是否配置过权限，配置了返回true，否则返回false。",
+          "example": "false",
+          "member": "bool",
+          "name": "IsSelected",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "RoleConfigurationProvisionings": {
+      "document": "权限配置同步",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Deployed: 部署成功 DeployedRequired：需要重新部署 DeployFailed：部署失败",
+          "example": "DeployedRequired",
+          "member": "string",
+          "name": "DeploymentStatus",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "权限配置ID。",
+          "example": "rc-sk9mwq**",
+          "member": "string",
+          "name": "RoleConfigurationId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "权限配置名称。",
+          "example": "test",
+          "member": "string",
+          "name": "RoleConfigurationName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集团账号目标账号的UIN",
+          "example": "100003921",
+          "member": "int64",
+          "name": "TargetUin",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集团账号目标账号的名称。",
+          "example": "test",
+          "member": "string",
+          "name": "TargetName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间，",
+          "example": "2021-01-01 13:12:12",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "修改时间，",
+          "example": "权限配置ID。",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "同步的集团账号目标账号的类型，ManagerUin管理账号;MemberUin成员账号",
+          "example": "ManagerUin",
+          "member": "string",
+          "name": "TargetType",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "RolePolicie": {
+      "document": "CIC的权限策略",
+      "members": [
+        {
+          "disabled": false,
+          "document": "策略ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "426322",
+          "member": "int64",
+          "name": "RolePolicyId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "权限策略名称",
+          "example": "AdminPolicy",
+          "member": "string",
+          "name": "RolePolicyName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "权限策略类型",
+          "example": "Custom",
+          "member": "string",
+          "name": "RolePolicyType",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自定义策略内容。仅自定义策略返回该参数。",
+          "example": "{\\\"Statement\\\": [{\\\"Action\\\": \\\"*\\\",\\\"Effect\\\": \\\"Allow\\\",\\\"Resource\\\": \\\"*\\\"}],\\\"Version\\\": \\\"1\\\"}",
+          "member": "string",
+          "name": "RolePolicyDocument",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "权限策略被添加到权限配置的时间。",
+          "example": "2019-01-01 12:12:12",
+          "member": "string",
+          "name": "AddTime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "RoleProvisioningsTask": {
+      "document": "同步部署角色任务状态信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID。",
+          "example": "InProgress",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "权限配置ID。",
+          "example": "t-s8n28n2***",
+          "member": "string",
+          "name": "RoleConfigurationId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "权限配置名称。",
+          "example": "ProvisionRoleConfiguration",
+          "member": "string",
+          "name": "RoleConfigurationName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "授权的集团账号目标账号的UIN",
+          "example": "100000232323",
+          "member": "int64",
+          "name": "TargetUin",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "同步的集团账号目标账号的类型，ManagerUin管理账号;MemberUin成员账号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "MemberUin",
+          "member": "string",
+          "name": "TargetType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务类型。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CreateRoleAssignment",
+          "member": "string",
+          "name": "TaskType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务状态：InProgress: 进行中，Failed: 失败 3:Success: 成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "InProgress",
+          "member": "string",
+          "name": "TaskStatus",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "SAMLIdPCertificate": {
+      "document": "SAML 签名证书信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "证书序列号。",
+          "example": "1347934239****",
+          "member": "string",
+          "name": "SerialNumber",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "证书颁发者。",
+          "example": "5.6.54.22.1.9.1=#dj39dj39e3w9rm3e2e3****,CN=dev-xxxxxx,OU=SSOProvider,O=Okta",
+          "member": "string",
+          "name": "Issuer",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "证书版本。",
+          "example": "1",
+          "member": "int64",
+          "name": "Version",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "证书ID。",
+          "example": "idp-c-2jd8923je29****",
+          "member": "string",
+          "name": "CertificateId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "PEM 格式的公钥证书（Base64 编码）。",
+          "example": "nMIIBtjCCAVugAwIBAgITBmyf1XSXNmY****",
+          "member": "string",
+          "name": "PublicKey",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "证书的签名算法。",
+          "example": "SHA256withRSA",
+          "member": "string",
+          "name": "SignatureAlgorithm",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "证书的过期时间。",
+          "example": "2030-06-23 07:04:37",
+          "member": "string",
+          "name": "NotAfter",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "证书的创建时间。",
+          "example": "2013-06-23 07:04:37",
+          "member": "string",
+          "name": "NotBefore",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "证书的主体。",
+          "example": "5.6.54.22.1.9.1=#dj39dj39e3w9rm3e2e3****,CN=dev-xxxxxx,OU=SSOProvider,O=Okta",
+          "member": "string",
+          "name": "Subject",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "PEM 格式的 X509 证书。",
+          "example": "nMIIBtjCCAVugAwIBAgITBmyf1XSXNmY****",
+          "member": "string",
+          "name": "X509Certificate",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "SAMLIdentityProviderConfiguration": {
+      "document": "saml 身份提供商配置信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "IdP 标识。",
+          "example": "http://www.okta.com/2jd83ne9m*****",
+          "member": "string",
+          "name": "EntityId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "SSO 登录的启用状态。取值：  Enabled：启用。 Disabled（默认值）：禁用。",
+          "example": "Enbaled",
+          "member": "string",
+          "name": "SSOStatus",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "IdP 元数据文档（Base64 编码）。",
+          "example": "PD94bWwgdmVyc2lvbj0iMS4****",
+          "member": "string",
+          "name": "EncodedMetadataDocument",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "X509证书ID。",
+          "example": "[\"idp-c-2jd8923je29****\"]",
+          "member": "string",
+          "name": "CertificateIds",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "IdP 的登录地址。",
+          "example": "https://dev-xxxxxx.okta.com/app/dev-xxxxxx_cloudssodemo_1/2jd83ne9m****/sso/saml",
+          "member": "string",
+          "name": "LoginUrl",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间。",
+          "example": "2024-01-01 12:12:12",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间。",
+          "example": "2024-01-01 12:12:12",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "SAMLServiceProvider": {
+      "document": "SAML服务提供商信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "https://tencentcloudsso.com/saml/sp/z-sjw8ensa**",
+          "example": "SP 标识。",
+          "member": "string",
+          "name": "EntityId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "空间ID。",
+          "example": "z-sjw8ensa**",
+          "member": "string",
+          "name": "ZoneId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "SP 元数据文档（Base64 编码）。",
+          "example": "JTNDJTNGeG1sJTIwdmVyc2lvbiUzRCUyMjEuMCUyMiUyMGVuY29kaW5nJTNEJTIy*****",
+          "member": "string",
+          "name": "EncodedMetadataDocument",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "SP 的 ACS URL。",
+          "example": "https://tencentcloudsso.com/saml/acs/swedx-22a20du2-x2je9****",
+          "member": "string",
+          "name": "AcsUrl",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "SetExternalSAMLIdentityProviderRequest": {
+      "document": "SetExternalSAMLIdentityProvider请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "空间ID。",
+          "example": "z-2js923necd***",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "IdP 元数据文档（Base64 编码）。  由支持 SAML 2.0 协议的 IdP 提供。",
+          "example": "PD94bWwgdmVyc2lvbj0iMS4****",
+          "member": "string",
+          "name": "EncodedMetadataDocument",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "SSO 登录的启用状态。取值：  Enabled：启用。 Disabled（默认值）：禁用。",
+          "example": "Enabled",
+          "member": "string",
+          "name": "SSOStatus",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "IdP 标识。",
+          "example": "http://www.okta.com/2jd83ne9m*****",
+          "member": "string",
+          "name": "EntityId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "IdP 的登录地址。",
+          "example": "https://dev-xxxxxx.okta.com/app/dev-xxxxxx_cloudssodemo_1/2jd83ne9m****/sso/saml",
+          "member": "string",
+          "name": "LoginUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "PEM 格式的 X509 证书。指定该参数会替换所有已经存在的证书。",
+          "example": "MIIBtjCCAVugAwIBAgITBmyf1XSXNmY/Owua2eiedgPySjAKBggqhkjOPQQDAjA5***",
+          "member": "string",
+          "name": "X509Certificate",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SetExternalSAMLIdentityProviderResponse": {
+      "document": "SetExternalSAMLIdentityProvider返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ShareArea": {
       "document": "共享地域",
@@ -6019,6 +10326,236 @@
         }
       ],
       "usage": "out"
+    },
+    "TaskInfo": {
+      "document": "任务状态信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID。",
+          "example": "InProgress",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "权限配置ID。",
+          "example": "t-s8n28n2***",
+          "member": "string",
+          "name": "RoleConfigurationId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "权限配置名称。",
+          "example": "ProvisionRoleConfiguration",
+          "member": "string",
+          "name": "RoleConfigurationName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "授权的目标成员账号的UIN",
+          "example": "100000232323",
+          "member": "int64",
+          "name": "TargetUin",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "同步的目标账号的类型，ManagerUin管理账号;MemberUin成员账号",
+          "example": "MemberUin",
+          "member": "string",
+          "name": "TargetType",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户授权的身份ID,如果是身份类型是CIC用户,则为用户ID; 如果是用户组，则为用户组ID;",
+          "example": "u-dw2isaw***",
+          "member": "string",
+          "name": "PrincipalId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户授权的身份类型, User代表CIC用户, Group代表CIC用户组",
+          "example": "User",
+          "member": "string",
+          "name": "PrincipalType",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务类型。",
+          "example": "CreateRoleAssignment",
+          "member": "string",
+          "name": "TaskType",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "InProgress：任务执行中。 Success：任务执行成功。 Failed：任务执行失败。",
+          "example": "InProgress",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "失败",
+          "member": "string",
+          "name": "FailureReason",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "TaskStatus": {
+      "document": "任务状态信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务状态。取值：  InProgress：任务执行中。 Success：任务执行成功。 Failed：任务执行失败。",
+          "example": "InProgress",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务 ID。",
+          "example": "t-s8n28n2***",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务类型。取值：\nProvisionRoleConfiguration：部署权限配置。\nDeprovisionRoleConfiguration：解除权限配置部署。\nCreateRoleAssignment：在成员 账号上授权。\nDeleteRoleAssignment：移除 成员 账号上的授权。",
+          "example": "ProvisionRoleConfiguration",
+          "member": "string",
+          "name": "TaskType",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务失败原因。\n说明\n只有Status为Failed，才会显示该参数。",
+          "example": "部署失败",
+          "member": "string",
+          "name": "FailureReason",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "UpdateGroupRequest": {
+      "document": "UpdateGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "空间 ID。",
+          "example": "z-d8hssis****",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户组ID。",
+          "example": "g-s8sidnid",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "新的用户组名称。",
+          "example": "testGroup",
+          "member": "string",
+          "name": "NewGroupName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "新的用户组描述。",
+          "example": "this is group",
+          "member": "string",
+          "name": "NewDescription",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateGroupResponse": {
+      "document": "UpdateGroup返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户组信息。",
+          "example": "{\"GroupName\": \"testGroup\",       \"Description\": \"this is group\",       \"CreateTime\": \"2024-01-01 12:12:12\",       \"GroupType\": \"Manual\",       \"UpdateTime\": \"2024-01-01 12:12:12\",       \"GroupId\": \"g-w8hd8n***\",       \"MemberCount\": 20}",
+          "member": "GroupInfo",
+          "name": "GroupInfo",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "UpdateOrganizationIdentityRequest": {
       "document": "UpdateOrganizationIdentity请求参数结构体",
@@ -6317,6 +10854,79 @@
       ],
       "type": "object"
     },
+    "UpdateRoleConfigurationRequest": {
+      "document": "UpdateRoleConfiguration请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "空间 ID",
+          "example": "z-29n23ien",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "权限配置 ID",
+          "example": "rc-so2msow",
+          "member": "string",
+          "name": "RoleConfigurationId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "新的访问配置描述。  长度：最大 1024 个字符。",
+          "example": "this is role configuration",
+          "member": "string",
+          "name": "NewDescription",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "新的会话持续时间。  CIC 用户使用访问配置访问集团账号目标账号时，会话最多保持的时间。  单位：秒。  取值范围：900-43200（15 分钟-12 小时）。",
+          "example": "900",
+          "member": "int64",
+          "name": "NewSessionDuration",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "新的初始访问页面。  CIC 用户使用访问配置访问集团账号目标账号时，初始访问的页面地址。  该页面必须是腾讯云控制台页面。",
+          "example": "https://console.cloud.tencent.com",
+          "member": "string",
+          "name": "NewRelayState",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateRoleConfigurationResponse": {
+      "document": "UpdateRoleConfiguration返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "权限配置详情",
+          "example": "{\"RoleConfigurationId\":\"rc-s2ns92ns***\",\"RoleConfigurationName\":\"test\",\"Description\":\"this is role configuration\",\"SessionDuration\":900,\"RelayState\":\"https://console.cloud.tencent.com\",\"CreateTime\":\"2019-01-01 12:12:12\",\"UpdateTime\":\"2019-01-01 12:12:12\"}",
+          "member": "RoleConfiguration",
+          "name": "RoleConfigurationInfo",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "UpdateShareUnitRequest": {
       "document": "UpdateShareUnit请求参数结构体",
       "members": [
@@ -6370,6 +10980,843 @@
         }
       ],
       "type": "object"
+    },
+    "UpdateUserRequest": {
+      "document": "UpdateUser请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "空间 ID。",
+          "example": "z-22b2usba2",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户 ID。",
+          "example": "u-33ks8w9n3",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户的名。",
+          "example": "test",
+          "member": "string",
+          "name": "NewFirstName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户的姓。",
+          "example": "test",
+          "member": "string",
+          "name": "NewLastName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户的显示名称。",
+          "example": "test",
+          "member": "string",
+          "name": "NewDisplayName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户的描述。",
+          "example": "this is user.",
+          "member": "string",
+          "name": "NewDescription",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户的电子邮箱。",
+          "example": "test@example.com",
+          "member": "string",
+          "name": "NewEmail",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateUserResponse": {
+      "document": "UpdateUser返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户信息",
+          "example": "{\"UserName\":\"test\",\"FirstName\":\"test\",\"LastName\":\"test\",\"DisplayName\":\"test\",\"Description\":\"this is user\",\"Email\":\"test@example.com\",\"UserStatus\":\"test\",\"UserType\":\"Manual\",\"UserId\":\"u-33sjadjsk\",\"CreateTime\":\"2024-01-01 12:12:12\",\"UpdateTime\":\"2024-01-01 12:12:12\"}",
+          "member": "UserInfo",
+          "name": "UserInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateUserStatusRequest": {
+      "document": "UpdateUserStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "空间 ID。",
+          "example": "z-3ks9b3kdm**",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户 ID。",
+          "example": "u-ds9sbs823**",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户的状态。取值：  Enabled：启用。 Disabled：禁用。",
+          "example": "Enabled",
+          "member": "string",
+          "name": "NewUserStatus",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateUserStatusResponse": {
+      "document": "UpdateUserStatus返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateUserSyncProvisioningRequest": {
+      "document": "UpdateUserSyncProvisioning请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "空间ID。",
+          "example": "z-d8wj832n***",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户同步的iD",
+          "example": "up-sjisnw8ois",
+          "member": "string",
+          "name": "UserProvisioningId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户同步描述。",
+          "example": "this is cam sync provisioning",
+          "member": "string",
+          "name": "NewDescription",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "冲突策略。当CIC 用户同步到 CAM 时，如果 CAM 中存在同名用户时的处理策略。取值： KeepBoth：两者都保留。当CIC 用户被同步到 CAM 时，如果 CAM 已经存在同名用户，则对CIC 用户的用户名添加后缀_cic后尝试创建该用户名的 CAM 用户。 TakeOver：替换。当CIC 用户被同步到 CAM 时，如果 CAM 已经存在同名用户，则直接将已经存在的 CAM 用户替换为CIC 同步用户。 ",
+          "example": "KeepBoth",
+          "member": "string",
+          "name": "NewDuplicationStateful",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "删除策略。删除 CAM 用户同步时，对已同步的 CAM 用户的处理策略。取值： Delete：删除。删除 CAM 用户同步时，会删除从CIC 已经同步到 CAM 中的 CAM 用户。 Keep：保留。删除 RAM 用户同步时，会保留从CIC 已经同步到 CAM 中的 CAM 用户。 ",
+          "example": "Delete",
+          "member": "string",
+          "name": "NewDeletionStrategy",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateUserSyncProvisioningResponse": {
+      "document": "UpdateUserSyncProvisioning返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateZoneRequest": {
+      "document": "UpdateZone请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "空间ID。z-前缀开头，后面是12位随机数字/小写字母",
+          "example": "z-00fdsg****",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "空间名，必须全局唯一。包含小写字母、数字和短划线（-）。不能以短划线（-）开头或结尾，且不能有两个连续的短划线（-）。长度：2~64 个字符。",
+          "example": "testName",
+          "member": "string",
+          "name": "NewZoneName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateZoneResponse": {
+      "document": "UpdateZone返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UserInfo": {
+      "document": "用户信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询username。",
+          "example": "Alice",
+          "member": "string",
+          "name": "UserName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户的名。",
+          "example": "Alice",
+          "member": "string",
+          "name": "FirstName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户的姓。",
+          "example": "Alice",
+          "member": "string",
+          "name": "LastName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户的显示名称。",
+          "example": "Alice",
+          "member": "string",
+          "name": "DisplayName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户的描述。",
+          "example": "this is user.",
+          "member": "string",
+          "name": "Description",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户的电子邮箱。目录内必须唯一。",
+          "example": "Alice@example.com",
+          "member": "string",
+          "name": "Email",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户状态 Enabled：启用， Disabled：禁用。",
+          "example": "Enabled",
+          "member": "string",
+          "name": "UserStatus",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户类型  Manual：手动创建，Synchronized：外部导入。",
+          "example": "Manual",
+          "member": "string",
+          "name": "UserType",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户 ID",
+          "example": "u-a34wsd32",
+          "member": "string",
+          "name": "UserId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户的创建时间",
+          "example": "2024-03-26 12:03:42",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户的修改时间",
+          "example": "2024-03-26 19:12:17",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否选中",
+          "example": "false",
+          "member": "bool",
+          "name": "IsSelected",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "UserProvisioning": {
+      "document": "用户同步信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "CAM 用户同步的状态。取值：\n\nEnabled：CAM 用户同步已启用。\nDisabled：CAM 用户同步未启用。",
+          "example": "up-swns92ns",
+          "member": "string",
+          "name": "UserProvisioningId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "描述。",
+          "example": "this is cam user provisioning",
+          "member": "string",
+          "name": "Description",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "CAM 用户同步的状态。取值：\nEnabled：CAM 用户同步已启用。\nDisabled：CAM 用户同步未启用。",
+          "example": "Enabled",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "CAM 用户同步的身份 ID。取值：\n当PrincipalType取值为Group时，该值为CIC用户组 ID（g-********）。\n当PrincipalType取值为User时，该值为CIC用户 ID（u-********）。",
+          "example": "u-xuec8dnd",
+          "member": "string",
+          "name": "PrincipalId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "CAM 用户同步的身份名称。取值：\n当PrincipalType取值为Group时，该值为CIC用户组名称。\n当PrincipalType取值为User时，该值为CIC用户名称。",
+          "example": "testUser",
+          "member": "string",
+          "name": "PrincipalName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "CAM 用户同步的身份类型。取值：\n\nUser：表示该 CAM 用户同步的身份是CIC用户。\nGroup：表示该 CAM 用户同步的身份是CIC用户组。",
+          "example": "User",
+          "member": "string",
+          "name": "PrincipalType",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集团账号目标账号的UIN。",
+          "example": "100003829343",
+          "member": "int64",
+          "name": "TargetUin",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集团账号目标账号的名称。",
+          "example": "test",
+          "member": "string",
+          "name": "TargetName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "冲突策略。当CIC 用户同步到 CAM 时，如果 CAM 中存在同名用户时的处理策略。取值： KeepBoth：两者都保留。当CIC 用户被同步到 CAM 时，如果 CAM 已经存在同名用户，则对CIC 用户的用户名添加后缀_cic后尝试创建该用户名的 CAM 用户。 TakeOver：替换。当CIC 用户被同步到 CAM 时，如果 CAM 已经存在同名用户，则直接将已经存在的 CAM 用户替换为CIC 同步用户。",
+          "example": "KeepBoth",
+          "member": "string",
+          "name": "DuplicationStrategy",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "删除策略。删除 CAM 用户同步时，对已同步的 CAM 用户的处理策略。取值： Delete：删除。删除 CAM 用户同步时，会删除从CIC 已经同步到 CAM 中的 CAM 用户。 Keep：保留。删除 RAM 用户同步时，会保留从CIC 已经同步到 CAM 中的 CAM 用户。",
+          "example": "Delete",
+          "member": "string",
+          "name": "DeletionStrategy",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间。",
+          "example": "2024-01-01 12:12:12",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间。",
+          "example": "2024-01-01 12:12:12",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "同步的集团账号目标账号的类型，ManagerUin管理账号;MemberUin成员账号",
+          "example": "MemberUin",
+          "member": "string",
+          "name": "TargetType",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "UserProvisioningsTask": {
+      "document": "用户同步任务状态信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID。",
+          "example": "InProgress",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "授权的集团账号目标账号的UIN",
+          "example": "100000232323",
+          "member": "int64",
+          "name": "TargetUin",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "同步的集团账号目标账号的类型，ManagerUin管理账号;MemberUin成员账号",
+          "example": "MemberUin",
+          "member": "string",
+          "name": "TargetType",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务类型。StartProvisioning：用户同步，DeleteProvisioning：删除用户同步",
+          "example": "StartProvisioning",
+          "member": "string",
+          "name": "TaskType",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务状态：InProgress: 进行中，Failed: 失败 3:Success: 成功",
+          "example": "InProgress",
+          "member": "string",
+          "name": "TaskStatus",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户同步ID。",
+          "example": "ur-ska9dhw",
+          "member": "string",
+          "name": "UserProvisioningId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": " CAM 用户同步的身份 ID。取值： 当PrincipalType取值为Group时，该值为CIC 用户组 ID（g-********）。 当PrincipalType取值为User时，该值为CIC 用户 ID（u-********）。",
+          "example": "u-cm9xjsw***",
+          "member": "string",
+          "name": "PrincipalId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "CAM 用户同步的身份类型。取值： User：表示该 CAM 用户同步的身份是CIC 用户。 Group：表示该 CAM 用户同步的身份是CIC 用户组。",
+          "example": "User",
+          "member": "string",
+          "name": "PrincipalType",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户或者用户组名称。",
+          "example": "test",
+          "member": "string",
+          "name": "PrincipalName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "冲突策略。KeepBoth:两者都保留;TakeOver:替换",
+          "example": "KeepBoth",
+          "member": "string",
+          "name": "DuplicationStrategy",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "删除策略。Delete:删除;Keep:保留",
+          "example": "Delete",
+          "member": "string",
+          "name": "DeletionStrategy",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "UserSyncProvisioning": {
+      "document": "CAM用户同步信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "描述。",
+          "example": "this is cam user provisioning",
+          "member": "string",
+          "name": "Description",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "CAM 用户同步的身份 ID。取值：\n当PrincipalType取值为Group时，该值为CIC用户组 ID（g-********）。\n当PrincipalType取值为User时，该值为CIC用户 ID（u-********）。",
+          "example": "u-xuec8dnd",
+          "member": "string",
+          "name": "PrincipalId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "CAM 用户同步的身份类型。取值：\n\nUser：表示该 CAM 用户同步的身份是CIC用户。\nGroup：表示该 CAM 用户同步的身份是CIC用户组。",
+          "example": "User",
+          "member": "string",
+          "name": "PrincipalType",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "同步的集团账号目标账号的UIN。",
+          "example": "100003829343",
+          "member": "int64",
+          "name": "TargetUin",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "冲突策略。当CIC 用户同步到 CAM 时，如果 CAM 中存在同名用户时的处理策略。取值： KeepBoth：两者都保留。当CIC 用户被同步到 CAM 时，如果 CAM 已经存在同名用户，则对CIC 用户的用户名添加后缀_cic后尝试创建该用户名的 CAM 用户。 TakeOver：替换。当CIC 用户被同步到 CAM 时，如果 CAM 已经存在同名用户，则直接将已经存在的 CAM 用户替换为CIC 同步用户。",
+          "example": "KeepBoth",
+          "member": "string",
+          "name": "DuplicationStrategy",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "删除策略。删除 CAM 用户同步时，对已同步的 CAM 用户的处理策略。取值： Delete：删除。删除 CAM 用户同步时，会删除从CIC 已经同步到 CAM 中的 CAM 用户。 Keep：保留。删除 RAM 用户同步时，会保留从CIC 已经同步到 CAM 中的 CAM 用户。",
+          "example": "Delete",
+          "member": "string",
+          "name": "DeletionStrategy",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "同步的集团账号目标账号的类型，ManagerUin管理账号;MemberUin成员账号",
+          "example": "MemberUin",
+          "member": "string",
+          "name": "TargetType",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ZoneStatistics": {
+      "document": "CIC的空间统计",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户配额。",
+          "example": "1000",
+          "member": "int64",
+          "name": "UserQuota",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户组配额。",
+          "example": "500",
+          "member": "int64",
+          "name": "GroupQuota",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "权限配置配额。",
+          "example": "1000",
+          "member": "int64",
+          "name": "RoleConfigurationQuota",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "权限配置绑定的系统策略配额。",
+          "example": "20",
+          "member": "int64",
+          "name": "SystemPolicyPerRoleConfigurationQuota",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户数。",
+          "example": "12",
+          "member": "int64",
+          "name": "UserCount",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户组数。",
+          "example": "10",
+          "member": "int64",
+          "name": "GroupCount",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "权限配置数",
+          "example": "3",
+          "member": "int64",
+          "name": "RoleConfigurationCount",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "同步用户数。",
+          "example": "12",
+          "member": "int64",
+          "name": "UserProvisioningCount",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "同步角色数。",
+          "example": "10",
+          "member": "int64",
+          "name": "RoleConfigurationSyncCount",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     }
   },
   "version": "1.0"

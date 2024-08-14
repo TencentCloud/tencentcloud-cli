@@ -5750,7 +5750,7 @@
         },
         {
           "disabled": false,
-          "document": "识别语言类型。\n支持自动识别语言类型，同时支持自选语言种类，默认中英文混合(zh)，各种语言均支持与英文混合的文字识别。\n可选值：\nzh：中英混合\nzh_rare：支持英文、数字、中文生僻字、繁体字，特殊符号等\nauto：自动\nmix：混合语种\njap：日语\nkor：韩语\nspa：西班牙语\nfre：法语\nger：德语\npor：葡萄牙语\nvie：越语\nmay：马来语\nrus：俄语\nita：意大利语\nhol：荷兰语\nswe：瑞典语\nfin：芬兰语\ndan：丹麦语\nnor：挪威语\nhun：匈牙利语\ntha：泰语\nhi：印地语\nara：阿拉伯语",
+          "document": "识别语言类型。\n支持自动识别语言类型，同时支持自选语言种类，默认中英文混合(zh)，各种语言均支持与英文混合的文字识别。\n可选值：\nzh：中英混合\nzh_rare：支持英文、数字、中文生僻字、繁体字，特殊符号等\nauto：自动\nmix：多语言混排场景中,自动识别混合语言的文本\njap：日语\nkor：韩语\nspa：西班牙语\nfre：法语\nger：德语\npor：葡萄牙语\nvie：越语\nmay：马来语\nrus：俄语\nita：意大利语\nhol：荷兰语\nswe：瑞典语\nfin：芬兰语\ndan：丹麦语\nnor：挪威语\nhun：匈牙利语\ntha：泰语\nhi：印地语\nara：阿拉伯语",
           "example": "无",
           "member": "string",
           "name": "LanguageType",

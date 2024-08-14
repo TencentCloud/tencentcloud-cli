@@ -176,7 +176,7 @@
       "status": "online"
     },
     "DescribeServerlessMetrics": {
-      "document": "获取serverless实例对应指标，获取space维度时不需要传入indexid，获取index时不需要传入spaceid",
+      "document": "获取serverless实例对应指标，获取space维度时不需要传入indexid，获取index时不需要传入spaceid\n获取一段时间时间范围内的指标数据",
       "input": "DescribeServerlessMetricsRequest",
       "name": "获取实例对应的监控指标",
       "output": "DescribeServerlessMetricsResponse",
@@ -1833,6 +1833,15 @@
           "name": "ZoneId",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "标签信息",
+          "example": "无",
+          "member": "TagInfo",
+          "name": "TagList",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -3404,12 +3413,21 @@
         },
         {
           "disabled": false,
-          "document": "指标类型，暂时只支持Storage",
+          "document": "指标类型，暂时只支持Storage(存储大小),AllMetric(所有存储指标：索引流量、存储大小、文档数量、读请求和写请求)",
           "example": "[\"Storage\"]",
           "member": "string",
           "name": "MetricType",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "时间长度类型DurationType(1: 3小时, 2: 昨天1天,3: 今日0点到现在)",
+          "example": "1",
+          "member": "int64",
+          "name": "DurationType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -3425,6 +3443,46 @@
           "name": "Storage",
           "output_required": false,
           "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "IndexTraffic指标值，单位byte",
+          "example": "2262158.88",
+          "member": "float",
+          "name": "IndexTraffic",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "读请求数，单位次数",
+          "example": "100",
+          "member": "int64",
+          "name": "ReadReqTimes",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "写请求数，单位次数",
+          "example": "100",
+          "member": "int64",
+          "name": "WriteReqTimes",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文档数量，单位个数",
+          "example": "100",
+          "member": "int64",
+          "name": "DocCount",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -3593,6 +3651,15 @@
           "name": "Limit",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "标签信息",
+          "example": "无",
+          "member": "TagInfo",
+          "name": "TagList",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -8403,6 +8470,16 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "3782478.47\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "索引流量，单位byte",
+          "member": "float",
+          "name": "IndexTraffic",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -8729,6 +8806,16 @@
           "name": "ClusterType",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "key:value\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "空间标签信息",
+          "member": "TagInfo",
+          "name": "TagList",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
