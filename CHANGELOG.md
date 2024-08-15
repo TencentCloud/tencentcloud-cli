@@ -1,3 +1,254 @@
+# Release 3.0.1055.1
+
+## 费用中心(billing) 版本：2018-07-09
+
+### 第 61 次发布
+
+发布时间：2024-08-15 01:08:36
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeMeasureDeductionDetails](http://document.tencentcloudapi.woa.com/document/product/555/82324)
+
+	* 新增入参：OrderBy, SortBy
+
+
+
+
+## 云联络中心(ccc) 版本：2020-02-10
+
+### 第 58 次发布
+
+发布时间：2024-08-15 01:10:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [AbortAgentCruiseDialingCampaign](http://document.tencentcloudapi.woa.com/document/product/679/84646)
+* [CreateAgentCruiseDialingCampaign](http://document.tencentcloudapi.woa.com/document/product/679/84645)
+* [DescribeAgentCruiseDialingCampaign](http://document.tencentcloudapi.woa.com/document/product/679/84644)
+
+
+
+## 腾讯云数据仓库 TCHouse-D(cdwdoris) 版本：2021-12-28
+
+### 第 23 次发布
+
+发布时间：2024-08-15 01:11:06
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeQueryAnalyse](http://document.tencentcloudapi.woa.com/document/product/1706/84647)
+
+新增数据结构：
+
+* [QueryDetails](http://document.tencentcloudapi.woa.com/document/product/1706/80309#QueryDetails)
+
+
+
+## 数据湖计算 DLC(dlc) 版本：2021-01-25
+
+### 第 111 次发布
+
+发布时间：2024-08-15 01:15:55
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [AlterDLCTable](http://document.tencentcloudapi.woa.com/document/product/1342/84655)
+* [CheckGrantedPermission](http://document.tencentcloudapi.woa.com/document/product/1342/84648)
+* [CopyDLCTable](http://document.tencentcloudapi.woa.com/document/product/1342/84654)
+* [CreateDLCTable](http://document.tencentcloudapi.woa.com/document/product/1342/84653)
+* [DescribeDLCTable](http://document.tencentcloudapi.woa.com/document/product/1342/84652)
+* [DescribeDLCTableList](http://document.tencentcloudapi.woa.com/document/product/1342/84651)
+* [DescribeDMSDatabaseList](http://document.tencentcloudapi.woa.com/document/product/1342/84650)
+* [DescribeJob](http://document.tencentcloudapi.woa.com/document/product/1342/84659)
+* [DescribeJobs](http://document.tencentcloudapi.woa.com/document/product/1342/84658)
+* [DescribeQuery](http://document.tencentcloudapi.woa.com/document/product/1342/84657)
+* [DescribeTaskStatistics](http://document.tencentcloudapi.woa.com/document/product/1342/84656)
+* [DropDLCTable](http://document.tencentcloudapi.woa.com/document/product/1342/84649)
+
+新增数据结构：
+
+* [CheckPermission](http://document.tencentcloudapi.woa.com/document/product/1342/53778#CheckPermission)
+* [DLCTable](http://document.tencentcloudapi.woa.com/document/product/1342/53778#DLCTable)
+* [DMSDatabaseInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#DMSDatabaseInfo)
+* [DMSSourceDatabaseInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#DMSSourceDatabaseInfo)
+* [ExternalDataConfiguration](http://document.tencentcloudapi.woa.com/document/product/1342/53778#ExternalDataConfiguration)
+* [JobResponseInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#JobResponseInfo)
+* [PermissionResponseInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#PermissionResponseInfo)
+* [ResourceBaseInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#ResourceBaseInfo)
+* [StatisticInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#StatisticInfo)
+
+修改数据结构：
+
+* [LakeFsInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#LakeFsInfo)
+
+	* 新增成员：DefaultBucket, ShortName, Description, Status
+
+* [SmartOptimizerLifecyclePolicy](http://document.tencentcloudapi.woa.com/document/product/1342/53778#SmartOptimizerLifecyclePolicy)
+
+	* 新增成员：ExpiredField, ExpiredFieldFormat
+
+* [TColumn](http://document.tencentcloudapi.woa.com/document/product/1342/53778#TColumn)
+
+	* 新增成员：Position, IsPartition
+
+
+
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 99 次发布
+
+发布时间：2024-08-15 01:18:16
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateBatchOrganizationAuthorizationUrl](http://document.tencentcloudapi.woa.com/document/product/1668/84660)
+
+修改数据结构：
+
+* [Recipient](http://document.tencentcloudapi.woa.com/document/product/1668/79360#Recipient)
+
+	* 新增成员：NoTransfer
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 150 次发布
+
+发布时间：2024-08-15 01:18:34
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Recipient](http://document.tencentcloudapi.woa.com/document/product/1595/75258#Recipient)
+
+	* 新增成员：NoTransfer
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 数据加速器 GooseFS(goosefs) 版本：2022-05-19
+
+### 第 9 次发布
+
+发布时间：2024-08-15 01:19:22
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ClientNodeAttribute](http://document.tencentcloudapi.woa.com/document/product/1716/81241#ClientNodeAttribute)
+
+	* 新增成员：VpcId, SubnetId, InstanceId, MountPoint
+
+* [LinuxNodeAttribute](http://document.tencentcloudapi.woa.com/document/product/1716/81241#LinuxNodeAttribute)
+
+	* 新增成员：MountPoint
+
+
+
+
+## 智能视图计算平台(iss) 版本：2023-05-17
+
+### 第 18 次发布
+
+发布时间：2024-08-15 01:22:23
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [AddUserDevice](http://document.tencentcloudapi.woa.com/document/product/1740/81498)
+
+	* 新增入参：AppName, StreamName
+
+* [DescribeCNAME](http://document.tencentcloudapi.woa.com/document/product/1740/81519)
+
+	* 新增入参：DomainType
+
+
+修改数据结构：
+
+* [DescribeDeviceData](http://document.tencentcloudapi.woa.com/document/product/1740/81572#DescribeDeviceData)
+
+	* 新增成员：AppName, StreamName
+
+* [DescribeDomainData](http://document.tencentcloudapi.woa.com/document/product/1740/81572#DescribeDomainData)
+
+	* 新增成员：DomainType
+
+
+
+
+## 多网聚合加速(mna) 版本：2021-01-19
+
+### 第 21 次发布
+
+发布时间：2024-08-15 01:23:47
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [OrderPerLicense](http://document.tencentcloudapi.woa.com/document/product/1385/84661)
+
+
+
+## 实时音视频(trtc) 版本：2019-07-22
+
+### 第 65 次发布
+
+发布时间：2024-08-15 01:31:34
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [AgentConfig](http://document.tencentcloudapi.woa.com/document/product/647/44055#AgentConfig)
+
+	* 新增成员：InterruptMode, InterruptSpeechDuration
+
+
+
+
 # Release 3.0.1054.1
 
 ## 费用中心(billing) 版本：2018-07-09

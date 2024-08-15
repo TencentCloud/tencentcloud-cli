@@ -282,6 +282,14 @@
         "title": "示例1"
       }
     ],
+    "OrderPerLicense": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OrderPerLicense\n<公共请求参数>\n\n{\n    \"DeviceId\": \"abc\",\n    \"Type\": 0,\n    \"AutoVoucher\": true,\n    \"VoucherIds\": [\n        \"abc\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1206563f-f13f-4647-aaa8-37fa86954cc4-1\",\n        \"ResourceId\": \"56d11777-50f7-4c60-9c89-e7076c8529a9-0\"\n    }\n}",
+        "title": "示例1"
+      }
+    ],
     "SetNotifyUrl": [
       {
         "document": "",

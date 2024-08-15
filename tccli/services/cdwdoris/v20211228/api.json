@@ -266,6 +266,13 @@
       "output": "DescribeInstancesHealthStateResponse",
       "status": "online"
     },
+    "DescribeQueryAnalyse": {
+      "document": "获取 Doris 用户的 SQL 查询详细信息",
+      "input": "DescribeQueryAnalyseRequest",
+      "name": "查询分析",
+      "output": "DescribeQueryAnalyseResponse",
+      "status": "online"
+    },
     "DescribeRegionZone": {
       "document": "购买页获取地域及可用区列表、内核版本、网络规则等",
       "input": "DescribeRegionZoneRequest",
@@ -1409,7 +1416,7 @@
         },
         {
           "disabled": false,
-          "document": "是否为自增列。TCHouse-D 2.1版本之后支持\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否为自增列。TCHouse-D 2.1版本之后支持\n限制：\n1、仅DUP_KEY和UNI_KEY模型表可以包含自增列\n2、一张表最多只能包含一个自增列\n3、自增列的类型必须是BIGINT类型，且必须不为空\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
           "name": "AutoInc",
@@ -5003,6 +5010,173 @@
         }
       ],
       "usage": "in"
+    },
+    "DescribeQueryAnalyseRequest": {
+      "document": "DescribeQueryAnalyse请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例 ID",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "使用该用户进行操作，该用户需要有对应的权限。如果该TCHouse-D集群使用CAM用户注册内核账户，则不需要填写",
+          "example": "无",
+          "member": "string",
+          "name": "UserName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户对应的密码。如果该TCHouse-D集群使用CAM用户注册内核账户，则不需要填写",
+          "example": "无",
+          "member": "string",
+          "name": "PassWord",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "运行所属时间段开始时间",
+          "example": "\"2024-07-10 10:00:00\"",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "运行所属时间段结束时间",
+          "example": "\"2024-07-11 10:00:00\"",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "SQL 片段（支持模糊查询）",
+          "example": "select * from xxx",
+          "member": "string",
+          "name": "SQLFragment",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Catalog 筛选条件",
+          "example": "catalog1",
+          "member": "string",
+          "name": "CatalogFilter",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "库名筛选条件",
+          "example": "db1",
+          "member": "string",
+          "name": "DatabaseFilter",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "SQL 类型筛选条件",
+          "example": "select",
+          "member": "string",
+          "name": "SQLTypeFilter",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段",
+          "example": "Duration",
+          "member": "string",
+          "name": "SortField",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序顺序，asc（升序）或 desc（降序）",
+          "example": "asc",
+          "member": "string",
+          "name": "SortOrder",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeQueryAnalyseResponse": {
+      "document": "DescribeQueryAnalyse返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询明细",
+          "example": "无",
+          "member": "QueryDetails",
+          "name": "QueryDetails",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总记录数",
+          "example": "无",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前页码",
+          "example": "无",
+          "member": "uint64",
+          "name": "CurrentPage",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "每页记录数",
+          "example": "无",
+          "member": "uint64",
+          "name": "PageSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总页数",
+          "example": "无",
+          "member": "uint64",
+          "name": "TotalPages",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "DescribeRegionZoneRequest": {
       "document": "DescribeRegionZone请求参数结构体",
@@ -8718,6 +8892,144 @@
           "output_required": false,
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "QueryDetails": {
+      "document": "查询分析详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "发起用户\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "testuser",
+          "member": "string",
+          "name": "Initiator",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "访问源地址\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "192.168.1.1",
+          "member": "string",
+          "name": "SourceAddress",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "初始请求 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InitialRequestId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "catalog名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "information_schema",
+          "member": "string",
+          "name": "Catalog",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "库名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "db1",
+          "member": "string",
+          "name": "Database",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "SQL 类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "select",
+          "member": "string",
+          "name": "SQLType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "SQL 语句\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "SELECT * FROM testdb.table",
+          "member": "string",
+          "name": "SQLStatement",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "执行开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"2024-07-10 10:00:00\"",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "运行时长（s）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "120",
+          "member": "uint64",
+          "name": "Duration",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "读取行数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "15000",
+          "member": "uint64",
+          "name": "RowsRead",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "读取数据量（MB）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "30.5",
+          "member": "float",
+          "name": "DataRead",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "内存使用量（MB）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "256.0",
+          "member": "float",
+          "name": "MemoryUsage",
+          "output_required": false,
+          "required": false,
+          "type": "float",
           "value_allowed_null": true
         }
       ],

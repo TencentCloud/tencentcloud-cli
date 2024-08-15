@@ -19,7 +19,8 @@ Output:
                 "HaveCert": 0,
                 "Id": "********-****-****-****-**********",
                 "InternalDomain": "******************************.play-ivc.tencentivc.cn",
-                "PlayDomain": "******.com.cn"
+                "PlayDomain": "******.com.cn",
+                "DomainType": 0
             }
         ],
         "RequestId": "7c69cd07-ee8e-4682-ab63-64a2e94d24f9"

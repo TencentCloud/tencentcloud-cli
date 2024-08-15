@@ -310,6 +310,14 @@
         "title": "DescribeInstancesHealthState"
       }
     ],
+    "DescribeQueryAnalyse": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeQueryAnalyse\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"UserName\": \"abc\",\n    \"PassWord\": \"abc\",\n    \"StartTime\": \"abc\",\n    \"EndTime\": \"abc\",\n    \"SQLFragment\": \"abc\",\n    \"CatalogFilter\": \"abc\",\n    \"DatabaseFilter\": \"abc\",\n    \"SQLTypeFilter\": \"abc\",\n    \"SortField\": \"abc\",\n    \"SortOrder\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"QueryDetails\": [\n            {\n                \"Initiator\": \"abc\",\n                \"SourceAddress\": \"abc\",\n                \"InitialRequestId\": \"abc\",\n                \"Catalog\": \"abc\",\n                \"Database\": \"abc\",\n                \"SQLType\": \"abc\",\n                \"SQLStatement\": \"abc\",\n                \"StartTime\": \"abc\",\n                \"Duration\": 1,\n                \"RowsRead\": 1,\n                \"DataRead\": 0,\n                \"MemoryUsage\": 0\n            }\n        ],\n        \"TotalCount\": 1,\n        \"CurrentPage\": 1,\n        \"PageSize\": 1,\n        \"TotalPages\": 1,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询"
+      }
+    ],
     "DescribeRegionZone": [
       {
         "document": "购买页获取地域及可用区列表、内核版本、网络规则等",

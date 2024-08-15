@@ -85,13 +85,13 @@
     "AddUserDevice": [
       {
         "document": " ",
-        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddUserDevice\n<公共请求参数>\n\n{\n    \"Name\": \"rtmp10087\",\n    \"AccessProtocol\": 1,\n    \"Type\": 1,\n    \"OrganizationId\": \"192\",\n    \"ClusterId\": \"4169d92e-60ad-4c16-ac7e-d313abdd0790\"\n}",
+        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddUserDevice\n<公共请求参数>\n\n{\n    \"Name\": \"rtmp10087\",\n    \"AccessProtocol\": 1,\n    \"Type\": 1,\n    \"OrganizationId\": \"192\",\n    \"ClusterId\": \"4169d92e-****-****-****-************\"\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"AccessProtocol\": 1,\n            \"AppId\": 1300000000,\n            \"ClusterId\": \"4169d92e-****-4c16-****-d313****0790\",\n            \"ClusterName\": \"上海一区\",\n            \"Code\": \"0******Ofl\",\n            \"Description\": \"\",\n            \"GatewayId\": \"\",\n            \"DeviceId\": \"********-53e4-****-a16e-*************\",\n            \"Ip\": \"\",\n            \"Name\": \"rtmp10087\",\n            \"OrganizationId\": 1000192,\n            \"Password\": \"\",\n            \"Port\": 0,\n            \"TransportProtocol\": 0,\n            \"Type\": 1,\n            \"Username\": \"\",\n            \"ProtocolType\": 1,\n            \"Status\": 1\n        },\n        \"RequestId\": \"6836e76d-8e7d-48d3-98c2-bc0df3bf23c2\"\n    }\n}",
         "title": "rtmp成功"
       },
       {
         "document": " ",
-        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddUserDevice\n<公共请求参数>\n\n{\n    \"Name\": \"rtmp10086\",\n    \"AccessProtocol\": 1,\n    \"Type\": 2,\n    \"OrganizationId\": \"10092\",\n    \"ClusterId\": \"12345678-abcd-efgh-ijkl-1234567890abcd\"\n}",
+        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddUserDevice\n<公共请求参数>\n\n{\n    \"Name\": \"rtmp10086\",\n    \"AccessProtocol\": 1,\n    \"Type\": 2,\n    \"OrganizationId\": \"10092\",\n    \"ClusterId\": \"12345678-****-****-****-************\"\n}",
         "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue\",\n            \"Message\": \"无效的参数\"\n        },\n        \"RequestId\": \"1647459e-2715-4adb-a074-0c3d4df7d6a4\"\n    }\n}",
         "title": "设备类型错误"
       },
@@ -100,6 +100,12 @@
         "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddUserDevice\n<公共请求参数>\n\n{\n    \"Name\": \"rtmp10086\",\n    \"AccessProtocol\": 1,\n    \"Type\": 2,\n    \"OrganizationId\": \"10092\",\n    \"ClusterId\": \"********-60ad-*****-ac7e-d******dd0790\"\n}",
         "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue.InvalidDeviceType\",\n            \"Message\": \"无效的设备类型\"\n        },\n        \"RequestId\": \"d4a82b07-08a2-47ba-8f22-04ce429a0dcd\"\n    }\n}",
         "title": "无效的设备类型"
+      },
+      {
+        "document": "成功",
+        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddUserDevice\n<公共请求参数>\n\n{\n    \"Name\": \"testrtmp\",\n    \"AccessProtocol\": 1,\n    \"Type\": 1,\n    \"OrganizationId\": \"189\",\n    \"ClusterId\": \"4169d92e-****-****-****-************\",\n    \"TransportProtocol\": 0,\n    \"Password\": \"123\",\n    \"ProtocolType\": 0,\n    \"AppName\": \"testapp\",\n    \"StreamName\": \"teststream\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"AccessProtocol\": 1,\n            \"AppId\": 1300056079,\n            \"ClusterId\": \"4169d92e-****-****-****-************\",\n            \"ClusterName\": \"上海一区\",\n            \"Code\": \"0HQq******\",\n            \"Description\": \"\",\n            \"DeviceId\": \"f1f9baae-****-****-****-************\",\n            \"GatewayId\": \"\",\n            \"Ip\": \"\",\n            \"Name\": \"testrtmp\",\n            \"OrganizationId\": 189,\n            \"Password\": \"123\",\n            \"Port\": 0,\n            \"ProtocolType\": 0,\n            \"Status\": 0,\n            \"TransportProtocol\": 0,\n            \"Type\": 1,\n            \"Username\": \"\"\n        },\n        \"RequestId\": \"56d8591d-85cb-498d-a5b6-52133305e69c\"\n    }\n}",
+        "title": "success"
       }
     ],
     "BatchOperateDevice": [
@@ -299,7 +305,7 @@
     "DescribeCNAME": [
       {
         "document": " ",
-        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCNAME\n<公共请求参数>\n\n{\n    \"ClusterId\": \"********-****-****-****-************\"\n}",
+        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCNAME\n<公共请求参数>\n\n{\n    \"ClusterId\": \"********-****-****-****-************\",\n    \"DomainType\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": \"****************.play-ivc.ap-shanghai.tencentivc.cn\",\n        \"RequestId\": \"91297e34-b7bc-4d90-9c14-20bcd08f0db4\"\n    }\n}",
         "title": "成功"
       }
@@ -338,7 +344,7 @@
       {
         "document": " ",
         "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDomain\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"AppId\": 1300000000,\n                \"ClusterId\": \"********-****-****-****-**********\",\n                \"ClusterName\": \"上海一区\",\n                \"HaveCert\": 0,\n                \"Id\": \"********-****-****-****-**********\",\n                \"InternalDomain\": \"******************************.play-ivc.tencentivc.cn\",\n                \"PlayDomain\": \"******.com.cn\"\n            }\n        ],\n        \"RequestId\": \"7c69cd07-ee8e-4682-ab63-64a2e94d24f9\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"AppId\": 1300000000,\n                \"ClusterId\": \"********-****-****-****-**********\",\n                \"ClusterName\": \"上海一区\",\n                \"HaveCert\": 0,\n                \"Id\": \"********-****-****-****-**********\",\n                \"InternalDomain\": \"******************************.play-ivc.tencentivc.cn\",\n                \"PlayDomain\": \"******.com.cn\",\n                \"DomainType\": 0\n            }\n        ],\n        \"RequestId\": \"7c69cd07-ee8e-4682-ab63-64a2e94d24f9\"\n    }\n}",
         "title": "成功"
       }
     ],
@@ -491,8 +497,8 @@
     "DescribeUserDevice": [
       {
         "document": "ok",
-        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserDevice\n<公共请求参数>\n\n{\n    \"DeviceId\": \"da238a8c-****-4a5b-****-ddba25945b48\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"AccessProtocol\": 1,\n            \"ClusterId\": \"12345678-abcd-efgh-ijkl-1234567890abcd\",\n            \"ClusterName\": \"\",\n            \"Code\": \"2*****vkVe\",\n            \"Description\": \"\",\n            \"GatewayId\": \"\",\n            \"GatewayName\": \"\",\n            \"DeviceId\": \"12345678-abcd-efgh-ijkl-1234567890abcd\",\n            \"Ip\": \"\",\n            \"Manufacturer\": \"\",\n            \"Name\": \"iss-qta-dont-delete\",\n            \"OrganizationId\": \"22\",\n            \"Password\": \"\",\n            \"Port\": 0,\n            \"ProtocolType\": 0,\n            \"ProtocolTypeName\": \"\",\n            \"PushStreamUrl\": \"rtmp://81.**.54.**/live/2*****4vkVe\",\n            \"Region\": \"\",\n            \"SipDomain\": \"\",\n            \"SipId\": \"\",\n            \"SipIp\": \"\",\n            \"SipPort\": 0,\n            \"Status\": 0,\n            \"TransportProtocol\": 0,\n            \"Type\": 1,\n            \"Username\": \"\"\n        },\n        \"RequestId\": \"c3e6cbee-7a30-49b0-8415-af3cc46fe257\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserDevice\n<公共请求参数>\n\n{\n    \"DeviceId\": \"da238a8c-****-4a5b-****-************\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"AccessProtocol\": 1,\n            \"ClusterId\": \"********-****-****-****-************\",\n            \"ClusterName\": \"\",\n            \"Code\": \"2*****vkVe\",\n            \"Description\": \"\",\n            \"GatewayId\": \"\",\n            \"GatewayName\": \"\",\n            \"DeviceId\": \"da238a8c-****-4a5b-****-************\",\n            \"Ip\": \"\",\n            \"Manufacturer\": \"\",\n            \"Name\": \"iss-qta-dont-delete\",\n            \"OrganizationId\": \"22\",\n            \"Password\": \"\",\n            \"Port\": 0,\n            \"ProtocolType\": 0,\n            \"ProtocolTypeName\": \"\",\n            \"PushStreamUrl\": \"rtmp://81.**.54.**/live/2*****4vkVe\",\n            \"Region\": \"\",\n            \"SipDomain\": \"\",\n            \"SipId\": \"\",\n            \"SipIp\": \"\",\n            \"SipPort\": 0,\n            \"Status\": 0,\n            \"TransportProtocol\": 0,\n            \"Type\": 1,\n            \"Username\": \"\"\n        },\n        \"RequestId\": \"c3e6cbee-7a30-49b0-8415-af3cc46fe257\"\n    }\n}",
         "title": "rtmp"
       },
       {
@@ -503,7 +509,7 @@
       },
       {
         "document": " ",
-        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserDevice\n<公共请求参数>\n\n{\n    \"DeviceId\": \"66666666-53e4-4a79-a16e-8504f8366a531\"\n}",
+        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserDevice\n<公共请求参数>\n\n{\n    \"DeviceId\": \"66666666-****-****-****-************\"\n}",
         "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue.InvalidDeviceId\",\n            \"Message\": \"无效的设备Id\"\n        },\n        \"RequestId\": \"c3c7c853-e5cf-4829-87f8-375b0623d750\"\n    }\n}",
         "title": "无效的设备Id错误"
       }

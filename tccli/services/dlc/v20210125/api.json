@@ -21,6 +21,13 @@
       "output": "AddUsersToWorkGroupResponse",
       "status": "online"
     },
+    "AlterDLCTable": {
+      "document": "无用接口\n\nDLC元数据更新表",
+      "input": "AlterDLCTableRequest",
+      "name": "DLC元数据更新表",
+      "output": "AlterDLCTableResponse",
+      "status": "deprecated"
+    },
     "AlterDMSDatabase": {
       "document": "DMS元数据更新库",
       "input": "AlterDMSDatabaseRequest",
@@ -119,6 +126,13 @@
       "output": "CheckDataEngineImageCanBeUpgradeResponse",
       "status": "online"
     },
+    "CheckGrantedPermission": {
+      "document": "检查权限状态",
+      "input": "CheckGrantedPermissionRequest",
+      "name": "检查授予权限",
+      "output": "CheckGrantedPermissionResponse",
+      "status": "online"
+    },
     "CheckLockMetaData": {
       "document": "元数据锁检查",
       "input": "CheckLockMetaDataRequest",
@@ -133,11 +147,25 @@
       "output": "CheckRegionCHDFSEnableResponse",
       "status": "online"
     },
+    "CopyDLCTable": {
+      "document": "DLC元数据复制表",
+      "input": "CopyDLCTableRequest",
+      "name": "DLC元数据复制表",
+      "output": "CopyDLCTableResponse",
+      "status": "online"
+    },
     "CreateCHDFSBindingProduct": {
       "document": "此接口（CreateCHDFSBindingProduct）用于创建元数据加速桶和产品绑定关系",
       "input": "CreateCHDFSBindingProductRequest",
       "name": "创建元数据加速桶和产品绑定关系",
       "output": "CreateCHDFSBindingProductResponse",
+      "status": "online"
+    },
+    "CreateDLCTable": {
+      "document": "DLC元数据创建表",
+      "input": "CreateDLCTableRequest",
+      "name": "DLC元数据创建表",
+      "output": "CreateDLCTableResponse",
       "status": "online"
     },
     "CreateDMSDatabase": {
@@ -378,11 +406,32 @@
       "output": "DescribeDLCCatalogAccessResponse",
       "status": "online"
     },
+    "DescribeDLCTable": {
+      "document": "DLC元数据获取表",
+      "input": "DescribeDLCTableRequest",
+      "name": "DLC元数据获取表",
+      "output": "DescribeDLCTableResponse",
+      "status": "online"
+    },
+    "DescribeDLCTableList": {
+      "document": "DLC元数据获取表列表",
+      "input": "DescribeDLCTableListRequest",
+      "name": "DLC元数据获取表列表",
+      "output": "DescribeDLCTableListResponse",
+      "status": "online"
+    },
     "DescribeDMSDatabase": {
       "document": "DMS元数据获取库",
       "input": "DescribeDMSDatabaseRequest",
       "name": "DMS元数据获取库",
       "output": "DescribeDMSDatabaseResponse",
+      "status": "online"
+    },
+    "DescribeDMSDatabaseList": {
+      "document": "DMS元数据获取库列表",
+      "input": "DescribeDMSDatabaseListRequest",
+      "name": "DMS元数据获取库列表",
+      "output": "DescribeDMSDatabaseListResponse",
       "status": "online"
     },
     "DescribeDMSPartitions": {
@@ -490,6 +539,20 @@
       "output": "DescribeGovernEventRuleResponse",
       "status": "online"
     },
+    "DescribeJob": {
+      "document": "查询作业信息",
+      "input": "DescribeJobRequest",
+      "name": "获取作业",
+      "output": "DescribeJobResponse",
+      "status": "online"
+    },
+    "DescribeJobs": {
+      "document": "获取作业信息列表",
+      "input": "DescribeJobsRequest",
+      "name": "获取作业信息列表",
+      "output": "DescribeJobsResponse",
+      "status": "online"
+    },
     "DescribeLakeFsDirSummary": {
       "document": "查询托管存储指定目录的Summary",
       "input": "DescribeLakeFsDirSummaryRequest",
@@ -558,6 +621,13 @@
       "input": "DescribeOtherCHDFSBindingListRequest",
       "name": "查询其他产品元数据加速桶绑定列表",
       "output": "DescribeOtherCHDFSBindingListResponse",
+      "status": "online"
+    },
+    "DescribeQuery": {
+      "document": "获取查询信息",
+      "input": "DescribeQueryRequest",
+      "name": "获取查询结果",
+      "output": "DescribeQueryResponse",
       "status": "online"
     },
     "DescribeResultDownload": {
@@ -672,6 +742,13 @@
       "output": "DescribeTaskResultResponse",
       "status": "online"
     },
+    "DescribeTaskStatistics": {
+      "document": "描述任务统计信息",
+      "input": "DescribeTaskStatisticsRequest",
+      "name": "获取任务统计数据",
+      "output": "DescribeTaskStatisticsResponse",
+      "status": "online"
+    },
     "DescribeTasks": {
       "document": "该接口（DescribleTasks）用于查询任务列表",
       "input": "DescribeTasksRequest",
@@ -782,6 +859,13 @@
       "input": "DetachWorkGroupPolicyRequest",
       "name": "解绑工作组鉴权策略",
       "output": "DetachWorkGroupPolicyResponse",
+      "status": "online"
+    },
+    "DropDLCTable": {
+      "document": "DLC元数据删除表",
+      "input": "DropDLCTableRequest",
+      "name": "DLC元数据删除表",
+      "output": "DropDLCTableResponse",
       "status": "online"
     },
     "DropDMSDatabase": {
@@ -1184,6 +1268,134 @@
     "AddUsersToWorkGroupResponse": {
       "document": "AddUsersToWorkGroup返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AlterDLCTableRequest": {
+      "document": "AlterDLCTable请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "当前数据库名",
+          "example": "database1",
+          "member": "string",
+          "name": "CurrentDatabaseName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "当前数据表名",
+          "example": "table1",
+          "member": "string",
+          "name": "CurrentName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据表基本配置信息",
+          "example": "无",
+          "member": "TableBaseInfo",
+          "name": "TableBaseInfo",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "表类型",
+          "example": "INTERNAL_TABLE",
+          "member": "string",
+          "name": "TableType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "引擎名称",
+          "example": "engine1",
+          "member": "string",
+          "name": "DataEngineName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据表列信息",
+          "example": "无",
+          "member": "TColumn",
+          "name": "Columns",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "数据表分区信息",
+          "example": "无",
+          "member": "TPartition",
+          "name": "Partitions",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "数据表属性信息",
+          "example": "无",
+          "member": "Property",
+          "name": "Properties",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "外表配置信息",
+          "example": "无",
+          "member": "ExternalDataConfiguration",
+          "name": "ExternalDataConfiguration",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "资源组名称",
+          "example": "group1",
+          "member": "string",
+          "name": "ResourceGroupName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AlterDLCTableResponse": {
+      "document": "AlterDLCTable返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "DLC表信息对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DLCTable",
+          "name": "DLCTable",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "更新托管存储内部表SQL语句说明",
+          "example": "无",
+          "member": "string",
+          "name": "Execution",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -2338,6 +2550,43 @@
       ],
       "type": "object"
     },
+    "CheckGrantedPermissionRequest": {
+      "document": "CheckGrantedPermission请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "权限检查",
+          "example": "无",
+          "member": "CheckPermission",
+          "name": "CheckPermission",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckGrantedPermissionResponse": {
+      "document": "CheckGrantedPermission返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "权限状态",
+          "example": "无",
+          "member": "PermissionResponseInfo",
+          "name": "PermissionResponses",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CheckLockMetaDataRequest": {
       "document": "CheckLockMetaData请求参数结构体",
       "members": [
@@ -2411,6 +2660,34 @@
         }
       ],
       "type": "object"
+    },
+    "CheckPermission": {
+      "document": "检查权限信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "权限类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "show",
+          "member": "string",
+          "name": "AccessType",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ResourceBaseInfo",
+          "name": "ResourceBaseInfo",
+          "output_required": false,
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "CheckRegionCHDFSEnableRequest": {
       "document": "CheckRegionCHDFSEnable请求参数结构体",
@@ -2661,6 +2938,97 @@
       ],
       "usage": "out"
     },
+    "CopyDLCTableRequest": {
+      "document": "CopyDLCTable请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "源数据表名称描述",
+          "example": "无",
+          "member": "DMSSourceDatabaseInfo",
+          "name": "SourceData",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "目标数据库名",
+          "example": "database1",
+          "member": "string",
+          "name": "DestinationDatabaseName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "目标数据表名",
+          "example": "table1",
+          "member": "string",
+          "name": "DestinationTableName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "引擎名称",
+          "example": "engine1",
+          "member": "string",
+          "name": "DataEngineName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否创建新表",
+          "example": "true",
+          "member": "bool",
+          "name": "IsCreateTable",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "catalog名",
+          "example": "DataLakeLog",
+          "member": "string",
+          "name": "Catalog",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源组名",
+          "example": "ResourceGroupName1",
+          "member": "string",
+          "name": "ResourceGroupName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CopyDLCTableResponse": {
+      "document": "CopyDLCTable返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "fdd9c5fa21ca11eca6fb5254006c64af",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CosPermission": {
       "document": "cos权限描述",
       "members": [
@@ -2752,6 +3120,116 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDLCTableRequest": {
+      "document": "CreateDLCTable请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据表配置信息",
+          "example": "无",
+          "member": "TableBaseInfo",
+          "name": "TableBaseInfo",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "表类型",
+          "example": "INTERNAL_TABLE",
+          "member": "string",
+          "name": "TableType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据表列信息",
+          "example": "无",
+          "member": "TColumn",
+          "name": "Columns",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "数据表分区信息",
+          "example": "无",
+          "member": "TPartition",
+          "name": "Partitions",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "数据表属性信息",
+          "example": "无",
+          "member": "Property",
+          "name": "Properties",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "外部表配置信息",
+          "example": "无",
+          "member": "ExternalDataConfiguration",
+          "name": "ExternalDataConfiguration",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "引擎名称",
+          "example": "engine1",
+          "member": "string",
+          "name": "DataEngineName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源组名称",
+          "example": "group1",
+          "member": "string",
+          "name": "ResourceGroupname",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDLCTableResponse": {
+      "document": "CreateDLCTable返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "DLC表信息对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DLCTable",
+          "name": "DLCTable",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建托管存储内部表SQL语句说明",
+          "example": "create table `table1` ()",
+          "member": "string",
+          "name": "Execution",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -5054,6 +5532,142 @@
       ],
       "usage": "both"
     },
+    "DLCTable": {
+      "document": "查询表信息对象",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据表基础信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TableBaseInfo",
+          "name": "TableBaseInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据表列信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TColumn",
+          "name": "Columns",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据表分区信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TPartition",
+          "name": "Partitions",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据存储路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cosn://test-bucket-123242/csvdata/",
+          "member": "string",
+          "name": "Location",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据表属性信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Property",
+          "name": "Properties",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据表更新信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1611579344000",
+          "member": "string",
+          "name": "ModifiedTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据表创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1611579344000",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据格式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+          "member": "string",
+          "name": "InputFormat",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据存储大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1024",
+          "member": "int64",
+          "name": "StorageSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据表行数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "RecordCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "物化视图名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "MapMaterializedViewName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "访问热点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "HeatValue",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "外部表配置信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ExternalDataConfiguration",
+          "name": "ExternalDataConfiguration",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "DMSColumn": {
       "document": "迁移列对象",
       "members": [
@@ -5063,6 +5677,7 @@
           "example": "name1",
           "member": "string",
           "name": "Name",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -5073,6 +5688,7 @@
           "example": "desc1",
           "member": "string",
           "name": "Description",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -5083,6 +5699,7 @@
           "example": "EXTERNAL",
           "member": "string",
           "name": "Type",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -5093,6 +5710,7 @@
           "example": "1",
           "member": "int64",
           "name": "Position",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -5103,6 +5721,7 @@
           "example": "无",
           "member": "KVPair",
           "name": "Params",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -5113,6 +5732,7 @@
           "example": "无",
           "member": "KVPair",
           "name": "BizParams",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -5123,6 +5743,7 @@
           "example": "false",
           "member": "bool",
           "name": "IsPartition",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": true
@@ -5155,6 +5776,52 @@
         }
       ],
       "usage": "both"
+    },
+    "DMSDatabaseInfo": {
+      "document": "元数据数据库对象",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据库名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "database1",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Schema名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "schema1",
+          "member": "string",
+          "name": "SchemaName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "存储地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cosn://test-bucket-123242/csvdata/",
+          "member": "string",
+          "name": "Location",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "基础对象信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Asset",
+          "name": "Asset",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "DMSPartition": {
       "document": "迁移元数据分区对象",
@@ -5432,6 +6099,34 @@
           "member": "DMSColumnOrder",
           "name": "SortColumns",
           "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "DMSSourceDatabaseInfo": {
+      "document": "源数据库描述",
+      "members": [
+        {
+          "disabled": false,
+          "document": "源数据库名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "databaseName1",
+          "member": "string",
+          "name": "SourceDatabaseName",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "源数据库中表名数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"tablename1\"]",
+          "member": "string",
+          "name": "SourceTableNameList",
+          "output_required": false,
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -7709,6 +8404,326 @@
       ],
       "type": "object"
     },
+    "DescribeDLCTableListRequest": {
+      "document": "DescribeDLCTableList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据库名",
+          "example": "database1",
+          "member": "string",
+          "name": "DbName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Catalog名",
+          "example": "DataLakeCatalog",
+          "member": "string",
+          "name": "Catalog",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询列表过滤条件",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "表类型",
+          "example": "INTERNAL_TABLE",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "2006-01-02 15:04:05",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "2006-01-02 15:04:05",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页参数",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页参数",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段",
+          "example": "create_time",
+          "member": "string",
+          "name": "Sort",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序规则：true升序，false降序",
+          "example": "true",
+          "member": "bool",
+          "name": "Asc",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "数据格式类型，hive，iceberg等",
+          "example": "hive",
+          "member": "string",
+          "name": "TableFormat",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDLCTableListResponse": {
+      "document": "DescribeDLCTableList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "DLC元数据列表信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DLCTable",
+          "name": "TableList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "统计值",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDLCTableRequest": {
+      "document": "DescribeDLCTable请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据库名称",
+          "example": "database1",
+          "member": "string",
+          "name": "DbName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据表名称",
+          "example": "table1",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Catalog名称",
+          "example": "DataLakeCatalog",
+          "member": "string",
+          "name": "Catalog",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "关键词",
+          "example": "tablename",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "匹配规则",
+          "example": "*",
+          "member": "string",
+          "name": "Pattern",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "表类型",
+          "example": "INTERNAL_TABLE",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDLCTableResponse": {
+      "document": "DescribeDLCTable返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据表信息对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DLCTable",
+          "name": "DLCTable",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDMSDatabaseListRequest": {
+      "document": "DescribeDMSDatabaseList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据库名",
+          "example": "database1",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Schema名",
+          "example": "schema1",
+          "member": "string",
+          "name": "SchemaName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "匹配规则",
+          "example": "*",
+          "member": "string",
+          "name": "Pattern",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页参数，单页大小",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页参数",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段",
+          "example": "create_time",
+          "member": "string",
+          "name": "Sort",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段：true升序，false降序",
+          "example": "true",
+          "member": "bool",
+          "name": "Asc",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDMSDatabaseListResponse": {
+      "document": "DescribeDMSDatabaseList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "DMS数据库对象列表",
+          "example": "无",
+          "member": "DMSDatabaseInfo",
+          "name": "DatabaseList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据库总数",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeDMSDatabaseRequest": {
       "document": "DescribeDMSDatabase请求参数结构体",
       "members": [
@@ -9181,6 +10196,165 @@
       ],
       "type": "object"
     },
+    "DescribeJobRequest": {
+      "document": "DescribeJob请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "作业Id",
+          "example": "9e20f9c021cb11ec835f5254006c64af",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeJobResponse": {
+      "document": "DescribeJob返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "作业名称",
+          "example": "Job1",
+          "member": "string",
+          "name": "JobName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务统计信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "StatisticInfo",
+          "name": "StatisticInfo",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "作业配置",
+          "example": "无",
+          "member": "string",
+          "name": "JobConfiguration",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "作业状态",
+          "example": "2",
+          "member": "int64",
+          "name": "JobStatus",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeJobsRequest": {
+      "document": "DescribeJobs请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询关键字",
+          "example": "jobname",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "匹配模式",
+          "example": "*",
+          "member": "string",
+          "name": "Pattern",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页参数",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页参数",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段",
+          "example": "create_time",
+          "member": "string",
+          "name": "Sort",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段：true：升序（默认），false：降序",
+          "example": "true",
+          "member": "bool",
+          "name": "Asc",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeJobsResponse": {
+      "document": "DescribeJobs返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "作业信息列表",
+          "example": "无",
+          "member": "JobResponseInfo",
+          "name": "JobList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "统计信息",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeLakeFsDirSummaryRequest": {
       "document": "DescribeLakeFsDirSummary请求参数结构体",
       "members": [],
@@ -9767,6 +10941,83 @@
           "name": "Total",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeQueryRequest": {
+      "document": "DescribeQuery请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务Id",
+          "example": "fdd9c5fa21ca11eca6fb5254006c64af",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeQueryResponse": {
+      "document": "DescribeQuery返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务Id",
+          "example": "fdd9c5fa21ca11eca6fb5254006c64af",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前正在执行的SQL，一个任务包含一个SQL",
+          "example": "select 1",
+          "member": "string",
+          "name": "SQL",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前执行的任务类型分为DDL、DML、DQL。",
+          "example": "DDL",
+          "member": "string",
+          "name": "SQLType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务当前状态，0：初始化中 1：任务运行中 2：任务执行成功 3：数据写入中 4：排队中 -1：任务执行失败 -3：用户手动终止。任务执行成功才会返回任务执行结果。",
+          "example": "2",
+          "member": "int64",
+          "name": "State",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "查询结果默认数据集",
+          "example": "{\"Schema\":[\"name\",\"age\"],\"Data\":[{\"name\":\"29\",\"age\":\"Michael\"}]}",
+          "member": "string",
+          "name": "DataSet",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -11033,6 +12284,43 @@
       ],
       "type": "object"
     },
+    "DescribeTaskStatisticsRequest": {
+      "document": "DescribeTaskStatistics请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务Id",
+          "example": "task1",
+          "member": "string",
+          "name": "TaskId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTaskStatisticsResponse": {
+      "document": "DescribeTaskStatistics返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务统计信息",
+          "example": "无",
+          "member": "StatisticInfo",
+          "name": "StatisticInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeTasksCostInfoRequest": {
       "document": "DescribeTasksCostInfo请求参数结构体",
       "members": [
@@ -12225,6 +13513,69 @@
       ],
       "type": "object"
     },
+    "DropDLCTableRequest": {
+      "document": "DropDLCTable请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "引擎名称",
+          "example": "engine1",
+          "member": "string",
+          "name": "DataEngineName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据库名称",
+          "example": "dabase1",
+          "member": "string",
+          "name": "DbName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据表名称",
+          "example": "table1",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否删除数据",
+          "example": "true",
+          "member": "bool",
+          "name": "DeleteData",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "资源组名称",
+          "example": "group1",
+          "member": "string",
+          "name": "ResourceGroupName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DropDLCTableResponse": {
+      "document": "DropDLCTable返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DropDMSDatabaseRequest": {
       "document": "DropDMSDatabase请求参数结构体",
       "members": [
@@ -12560,6 +13911,78 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ExternalDataConfiguration": {
+      "document": "外部表配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "元数据存储对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DMSSds",
+          "name": "Sds",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "视图文本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "select 1",
+          "member": "string",
+          "name": "ViewOriginalText",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "视图文本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "select 1",
+          "member": "string",
+          "name": "ViewExpandedText",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "hive维护版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Retention",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "生命周期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "LifeTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DMSPartition",
+          "name": "Partitions",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -13067,6 +14490,56 @@
       ],
       "usage": "out"
     },
+    "JobResponseInfo": {
+      "document": "作业信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "作业名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "job1",
+          "member": "string",
+          "name": "JobName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "统计信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "StatisticInfo",
+          "name": "StatisticInfo",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "作业配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "JobConfiguration",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "作业的当前状态，0：初始化中 1：作业运行中 2：作业执行成功 3：数据写入中 4：排队中 -1：作业执行失败 -3：用户手动终止。作业执行成功才会返回作业执行结果。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "JobStatus",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "KVPair": {
       "document": "配置格式",
       "members": [
@@ -13263,6 +14736,46 @@
           "output_required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否是用户默认桶，0：默认桶，1：非默认桶\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "DefaultBucket",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "托管存储short name\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "DLC-Storage-123456",
+          "member": "string",
+          "name": "ShortName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "桶描述信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test bucket",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "托管桶状态，当前取值为：creating、bind、readOnly、isolate\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "creating",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -15277,6 +16790,45 @@
       ],
       "usage": "both"
     },
+    "PermissionResponseInfo": {
+      "document": "权限信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "权限类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "show",
+          "member": "string",
+          "name": "AccessType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ResourceBaseInfo",
+          "name": "ResourceBaseInfo",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "鉴权结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "Allowed",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "Policy": {
       "document": "权限对象",
       "members": [
@@ -15946,6 +17498,78 @@
       ],
       "type": "object"
     },
+    "ResourceBaseInfo": {
+      "document": "资源基础信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "catalog名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "catalog1",
+          "member": "string",
+          "name": "Catalog",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "schema名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "schema1",
+          "member": "string",
+          "name": "Schema",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "表名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "table1",
+          "member": "string",
+          "name": "Table",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "视图名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "view1",
+          "member": "string",
+          "name": "View",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "库名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "database1",
+          "member": "string",
+          "name": "Database",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "函数名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "function1",
+          "member": "string",
+          "name": "Function",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "ResourceInfo": {
       "document": "ResourceInfo",
       "members": [
@@ -16007,7 +17631,7 @@
         {
           "disabled": false,
           "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Status",
           "output_required": false,
@@ -16455,7 +18079,7 @@
         {
           "disabled": false,
           "document": "过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "100",
           "member": "int64",
           "name": "Expiration",
           "output_required": false,
@@ -16466,12 +18090,34 @@
         {
           "disabled": false,
           "document": "是否删表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "DropTable",
           "output_required": false,
           "required": false,
           "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "过期字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "pt",
+          "member": "string",
+          "name": "ExpiredField",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "过期字段格式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "yyyy-MM-dd",
+          "member": "string",
+          "name": "ExpiredFieldFormat",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -16483,7 +18129,7 @@
         {
           "disabled": false,
           "document": "是否继承\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "true",
           "member": "string",
           "name": "Inherit",
           "output_required": false,
@@ -17587,6 +19233,100 @@
       ],
       "usage": "out"
     },
+    "StatisticInfo": {
+      "document": "任务统计信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "fdd9c5fa21ca11eca6fb5254006c64af",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "扫描的数据量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1024",
+          "member": "int64",
+          "name": "TotalProcessedBytes",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "计算时间:ms\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "42",
+          "member": "int64",
+          "name": "UsedTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1632991895728",
+          "member": "int64",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1632991895728",
+          "member": "int64",
+          "name": "EndTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务开始执行时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1632991895728",
+          "member": "int64",
+          "name": "StartTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "受影响的行数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "RowsAffect",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务持续时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "int64",
+          "name": "TotalTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "StreamingStatistics": {
       "document": "spark流任务统计信息",
       "members": [
@@ -17825,76 +19565,105 @@
       "members": [
         {
           "disabled": false,
-          "document": "字段名称",
+          "document": "字段名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "Name",
+          "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "字段类型",
+          "document": "字段类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "Type",
+          "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "字段描述",
+          "document": "字段描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "Comment",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "字段默认值",
+          "document": "字段默认值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "Default",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "字段是否是非空",
+          "document": "字段是否是非空\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "bool",
           "name": "NotNull",
+          "output_required": false,
           "required": false,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "表示整个 numeric 的长度,取值1-38",
+          "document": "表示整个 numeric 的长度,取值1-38\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
           "name": "Precision",
+          "output_required": false,
           "required": false,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "表示小数部分的长度\nScale小于Precision",
+          "document": "表示小数部分的长度\nScale小于Precision\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
           "name": "Scale",
+          "output_required": false,
           "required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "字段位置，小的在前\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Position",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否为分区字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "IsPartition",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "TPartition": {
       "document": "表分区字段信息",
@@ -17905,6 +19674,7 @@
           "example": "无",
           "member": "string",
           "name": "Name",
+          "output_required": false,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -17915,6 +19685,7 @@
           "example": "无",
           "member": "string",
           "name": "Type",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -17925,6 +19696,7 @@
           "example": "无",
           "member": "string",
           "name": "Comment",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -17935,6 +19707,7 @@
           "example": "无",
           "member": "string",
           "name": "PartitionType",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -17945,6 +19718,7 @@
           "example": "无",
           "member": "string",
           "name": "PartitionFormat",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -17955,6 +19729,7 @@
           "example": "无",
           "member": "int64",
           "name": "PartitionDot",
+          "output_required": false,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -17965,6 +19740,7 @@
           "example": "无",
           "member": "string",
           "name": "Transform",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -17975,12 +19751,13 @@
           "example": "无",
           "member": "string",
           "name": "TransformArgs",
+          "output_required": false,
           "required": false,
           "type": "list",
           "value_allowed_null": false
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "TableBaseInfo": {
       "document": "数据表配置信息",

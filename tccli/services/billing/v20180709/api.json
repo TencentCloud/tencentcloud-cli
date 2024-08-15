@@ -14773,6 +14773,24 @@
           "name": "SubProductCode",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段：\"endTime\"",
+          "example": "endTime",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序方式：asc，desc，默认asc （未传OrderBy，SortBy为默认）",
+          "example": "desc",
+          "member": "string",
+          "name": "SortBy",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -14786,6 +14804,7 @@
           "example": "无",
           "member": "DescribeMeasureDeductionDetailsData",
           "name": "Data",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },

@@ -10,7 +10,7 @@ tccli iss AddUserDevice --cli-unfold-argument  \
     --AccessProtocol 1 \
     --Type 1 \
     --OrganizationId 192 \
-    --ClusterId 4169d92e-60ad-4c16-ac7e-d313abdd0790
+    --ClusterId 4169d92e-****-****-****-************
 ```
 
 Output: 
@@ -54,7 +54,7 @@ tccli iss AddUserDevice --cli-unfold-argument  \
     --AccessProtocol 1 \
     --Type 2 \
     --OrganizationId 10092 \
-    --ClusterId 12345678-abcd-efgh-ijkl-1234567890abcd
+    --ClusterId 12345678-****-****-****-************
 ```
 
 Output: 
@@ -94,6 +94,55 @@ Output:
             "Message": "无效的设备类型"
         },
         "RequestId": "d4a82b07-08a2-47ba-8f22-04ce429a0dcd"
+    }
+}
+```
+
+**Example 4: success**
+
+成功
+
+Input: 
+
+```
+tccli iss AddUserDevice --cli-unfold-argument  \
+    --Name testrtmp \
+    --AccessProtocol 1 \
+    --Type 1 \
+    --OrganizationId 189 \
+    --ClusterId 4169d92e-****-****-****-************ \
+    --TransportProtocol 0 \
+    --Password 123 \
+    --ProtocolType 0 \
+    --AppName testapp \
+    --StreamName teststream
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Data": {
+            "AccessProtocol": 1,
+            "AppId": 1300056079,
+            "ClusterId": "4169d92e-****-****-****-************",
+            "ClusterName": "上海一区",
+            "Code": "0HQq******",
+            "Description": "",
+            "DeviceId": "f1f9baae-****-****-****-************",
+            "GatewayId": "",
+            "Ip": "",
+            "Name": "testrtmp",
+            "OrganizationId": 189,
+            "Password": "123",
+            "Port": 0,
+            "ProtocolType": 0,
+            "Status": 0,
+            "TransportProtocol": 0,
+            "Type": 1,
+            "Username": ""
+        },
+        "RequestId": "56d8591d-85cb-498d-a5b6-52133305e69c"
     }
 }
 ```

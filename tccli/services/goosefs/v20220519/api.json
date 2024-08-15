@@ -405,7 +405,7 @@
           "example": "10.0.1.2",
           "member": "string",
           "name": "ClientNodeIp",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -415,7 +415,7 @@
           "example": "active",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -425,9 +425,49 @@
           "example": "extend",
           "member": "string",
           "name": "ClientType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点所属vpcid\t",
+          "example": "vpc-5ke3uoww",
+          "member": "string",
+          "name": "VpcId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点所属子网id",
+          "example": "subnet-ihijdp5h",
+          "member": "string",
+          "name": "SubnetId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "cvmId",
+          "example": "ins-m1r9uwdp\t",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自定义挂载点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/test",
+          "member": "string",
+          "name": "MountPoint",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1417,8 +1457,7 @@
           "member": "string",
           "name": "InstanceId",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1427,8 +1466,7 @@
           "member": "string",
           "name": "VpcId",
           "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1437,8 +1475,7 @@
           "member": "string",
           "name": "SubnetId",
           "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1447,8 +1484,16 @@
           "member": "string",
           "name": "LinuxClientNodeIp",
           "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义挂载点",
+          "example": "/test",
+          "member": "string",
+          "name": "MountPoint",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"
