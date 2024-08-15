@@ -156,6 +156,20 @@
         "title": "开通失败：云存 AI 套餐有效时长超过云存套餐的有效时长"
       }
     ],
+    "CreateCloudStorageAIServiceTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudStorageAIServiceTask\n<公共请求参数>\n\n{\n    \"ProductId\": \"TQBDY6RPI9\",\n    \"DeviceName\": \"cs_112114601_2\",\n    \"ServiceType\": \"Highlight\",\n    \"StartTime\": 1710487888,\n    \"EndTime\": 1710487898,\n    \"ChannelId\": 0,\n    \"Config\": \"{}\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c497cdcb-8eaf-46b0-8850-311cfb278798\",\n        \"TaskId\": \"fb066d7a-baac-4706-acda-058f56f82759\"\n    }\n}",
+        "title": "创建设备云存 AI 分析任务"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudStorageAIServiceTask\n<公共请求参数>\n\n{\n    \"ProductId\": \"TQBDY6RPI9\",\n    \"DeviceName\": \"cs_112114601_2\",\n    \"ServiceType\": \"Highlight\",\n    \"StartTime\": 1710487888,\n    \"EndTime\": 1710487898,\n    \"ChannelId\": 0,\n    \"Config\": \"{}\",\n    \"VideoURLs\": [\n        \"https://example.com/video.mp4\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c497cdcb-8eaf-46b0-8850-311cfb278798\",\n        \"TaskId\": \"fb066d7a-baac-4706-acda-058f56f82759\"\n    }\n}",
+        "title": "使用外部数据源创建云存 AI 分析任务"
+      }
+    ],
     "CreateDevice": [
       {
         "document": "创建设备",

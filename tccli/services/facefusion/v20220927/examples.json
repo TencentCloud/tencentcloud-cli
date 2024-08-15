@@ -29,6 +29,14 @@
         "output": "{\n    \"Response\": {\n        \"FusedImage\": \"https://xxxx.cos.ap-guangzhou.myqcloud.com/facefusion/FuseFaceUltra/xxxxx\",\n        \"RequestId\": \"06f9b251-fa48-435e-b391-145d67919b2c\"\n    }\n}",
         "title": "调用成功示例"
       }
+    ],
+    "QueryVideoFaceFusionJob": [
+      {
+        "document": "查询视频人脸融合任务",
+        "input": "https://facefusion.tencentcloudapi.com/?Action=QueryVideoFaceFusionJob\n&JobId=C0a5EXaNR7JzGvlg\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"JobStatusCode\": 7,\n        \"JobStatus\": \"处理完成\",\n        \"VideoFaceFusionOutput\": {\n            \"VideoUrl\": \"http://bda-video-bodyseg-1254418846.cos.ap-guangzhou.myqcloud.com/video_fusion_test/1.0/251006455/20210119164402_83ecff39-2e4a-41d5-8562-1f8898326565_qc_300314_789050_75_1611045834157_result.mp4\",\n            \"VideoMD5\": \"3AA00F9A2914DF3F2268628C45C4E4CE\",\n            \"Width\": 720,\n            \"Height\": 1280,\n            \"FPS\": 25,\n            \"DurationInSec\": 15.079999923706,\n            \"Frame\": 375\n        },\n        \"JobErrorCode\": \"\",\n        \"JobErrorMsg\": \"\",\n        \"RequestId\": \"ef13456e-8174-4418-8e51-a724257c9a3a\"\n    }\n}",
+        "title": "查询视频人脸融合任务"
+      }
     ]
   },
   "version": "1.0"

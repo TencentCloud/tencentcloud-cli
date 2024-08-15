@@ -12,8 +12,8 @@ tccli cls ModifyDashboardSubscribe --cli-unfold-argument  \
     --Cron 0 0 10 L * ? \
     --SubscribeData.DashboardTime 2022-05-01T00:00:00.000 2022-05-31T23:59:59.999 \
     --SubscribeData.StyleLayout 1 \
-    --SubscribeData.TemplateVariables.0.Key topic_id \
-    --SubscribeData.TemplateVariables.1.Key variable_1 \
+    --SubscribeData.TemplateVariables.0.Key name \
+    --SubscribeData.TemplateVariables.0.Values abc \
     --SubscribeData.NoticeModes.0.ReceiverType Uin \
     --SubscribeData.NoticeModes.0.Values 168053 \
     --SubscribeData.NoticeModes.0.ReceiverChannels Sms \

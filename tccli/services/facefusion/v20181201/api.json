@@ -20,6 +20,13 @@
       "name": "选脸融合",
       "output": "FuseFaceResponse",
       "status": "online"
+    },
+    "SubmitVideoFaceFusionJob": {
+      "document": "视频人脸融合异步处理任务，成功提交任务后返回任务的Job id 、预计完成时间以及目前队列长度。",
+      "input": "SubmitVideoFaceFusionJobRequest",
+      "name": "视频人脸融合",
+      "output": "SubmitVideoFaceFusionJobResponse",
+      "status": "online"
     }
   },
   "metadata": {
@@ -263,42 +270,38 @@
         {
           "disabled": false,
           "document": "人脸框左上角横坐标。",
-          "example": "",
+          "example": "1",
           "member": "int64",
           "name": "X",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "人脸框左上角纵坐标。",
-          "example": "",
+          "example": "1",
           "member": "int64",
           "name": "Y",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "人脸框宽度。",
-          "example": "",
+          "example": "30",
           "member": "int64",
           "name": "Width",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "人脸框高度。",
-          "example": "",
+          "example": "30",
           "member": "int64",
           "name": "Height",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         }
       ],
       "usage": "in"
@@ -555,6 +558,39 @@
       ],
       "usage": "in"
     },
+    "LogoParam": {
+      "document": "logo参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标识图片位于融合结果图中的坐标，将按照坐标对标识图片进行位置和大小的拉伸匹配。\nWidth、Height <= 2160。",
+          "example": "{}",
+          "member": "FaceRect",
+          "name": "LogoRect",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "logo图片Url地址。\n●base64 和 url 必须提供一个，如果都提供以 url 为准。\n●支持图片格式：支持jpg或png。",
+          "example": "string",
+          "member": "string",
+          "name": "LogoUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "logo图片base64。\n●base64 和 url 必须提供一个，如果都提供以 url 为准。\n●支持图片格式：支持jpg或png。",
+          "example": "string",
+          "member": "string",
+          "name": "LogoImage",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
     "MaterialFaceList": {
       "document": "人脸信息",
       "members": [
@@ -586,7 +622,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "输入图片base64。",
+          "document": "输入图片base64。\n●base64 和 url 必须提供一个，如果都提供以 url 为准。\n●素材图片限制：图片中面部尺寸大于34 * 34；图片尺寸大于64 * 64。（图片编码之后可能会大30%左右，建议合理控制图片大小）。\n●支持图片格式：支持jpg或png。",
           "example": "string",
           "member": "string",
           "name": "Image",
@@ -595,7 +631,7 @@
         },
         {
           "disabled": false,
-          "document": "输入图片url。\nUrl、Image必须提供一个，如果都提供，只使用 Url。",
+          "document": "输入图片url。\n●base64 和 url 必须提供一个，如果都提供以 url 为准。\n●素材图片限制：图片中面部尺寸大于34 * 34；图片尺寸大于64 * 64。（图片编码之后可能会大30%左右，建议合理控制图片大小）。\n●支持图片格式：支持jpg或png。",
           "example": "string",
           "member": "string",
           "name": "Url",
@@ -604,7 +640,7 @@
         },
         {
           "disabled": false,
-          "document": "输入图片人脸位置信息（人脸框）。不填默认取输入图中最大人脸。",
+          "document": "输入图片人脸位置信息（人脸框）。不填默认取输入图中最大人脸。\nWidth、Height >= 30。",
           "example": "{}",
           "member": "FaceRect",
           "name": "InputImageFaceRect",
@@ -628,23 +664,21 @@
       "members": [
         {
           "disabled": false,
-          "document": "MetaData的Key",
+          "document": "MetaData的Key，长度不能超过32。",
           "example": "string",
           "member": "string",
           "name": "MetaKey",
           "required": true,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
-          "document": "MetaData的Value",
+          "document": "MetaData的Value，长度不能超过256。",
           "example": "string",
           "member": "string",
           "name": "MetaValue",
           "required": true,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -754,6 +788,136 @@
         }
       ],
       "usage": "out"
+    },
+    "SubmitVideoFaceFusionJobRequest": {
+      "document": "SubmitVideoFaceFusionJob请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "活动 ID，请在视频人脸融合控制台查看。",
+          "example": "300314",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "素材 ID，请在视频人脸融合控制台查看。",
+          "example": "qc_300314_789050_75",
+          "member": "string",
+          "name": "ModelId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户人脸图片、素材模板图的人脸位置信息。不能超过1个。",
+          "example": "[{",
+          "member": "MergeInfo",
+          "name": "MergeInfos",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "0表示不需要不适宜内容识别，1表示需要不适宜内容识别。默认值为0。\n请注意，不适宜内容识别服务开启后，您需要根据返回结果自行判断是否调整您的业务逻辑。例如提示您的用户图片非法，请更换图片。\n**<font color=#1E90FF>注意：因业务调整，此字段后面会下线，不建议使用。</font>**",
+          "example": "0",
+          "member": "int64",
+          "name": "CelebrityIdentify",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "视频水印Logo参数",
+          "example": "{}",
+          "member": "LogoParam",
+          "name": "LogoParam",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "对象存储预签名地址(PUT方法)，填值则最终融合的视频上传到此地址。\n**<font color=#1E90FF>注意：如果此地址上传失败，则会返回腾讯侧默认兜底的地址。</font>**",
+          "example": "无",
+          "member": "string",
+          "name": "UserDesignatedUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户ip",
+          "example": "string",
+          "member": "string",
+          "name": "UserIp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "视频元数据字段",
+          "example": "无",
+          "member": "MetaData",
+          "name": "MetaData",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "SubmitVideoFaceFusionJobResponse": {
+      "document": "SubmitVideoFaceFusionJob返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "视频人脸融合任务的Job id",
+          "example": "C0a5EXaNR7JzGvlg",
+          "member": "string",
+          "name": "JobId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "视频人脸融合任务预估处理时间，粒度为秒",
+          "example": "30",
+          "member": "float",
+          "name": "EstimatedProcessTime",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "视频人脸融合任务等待队列长度",
+          "example": "1",
+          "member": "int64",
+          "name": "JobQueueLength",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "不适宜内容识别结果。该数组的顺序和请求中mergeinfo的顺序一致，一一对应\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FuseFaceReviewResult",
+          "name": "ReviewResultSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     }
   },
   "version": "1.0"

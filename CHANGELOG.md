@@ -1,3 +1,360 @@
+# Release 3.0.1056.1
+
+## 云联络中心(ccc) 版本：2020-02-10
+
+### 第 59 次发布
+
+发布时间：2024-08-16 01:10:04
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ModifyStaff](http://document.tencentcloudapi.woa.com/document/product/679/75093)
+
+	* 新增入参：StaffNo
+
+
+
+
+## 混沌演练平台(cfg) 版本：2021-08-20
+
+### 第 11 次发布
+
+发布时间：2024-08-16 01:11:16
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [TemplateGroupAction](http://document.tencentcloudapi.woa.com/document/product/1694/79907#TemplateGroupAction)
+
+	* 新增成员：ActionRisk
+
+
+
+
+## 日志服务(cls) 版本：2020-10-16
+
+### 第 83 次发布
+
+发布时间：2024-08-16 01:12:34
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ConsoleSharingConfig](http://document.tencentcloudapi.woa.com/document/product/614/56471#ConsoleSharingConfig)
+
+	* 新增成员：IsSupportLogExport
+
+
+
+
+## 主机安全(cwp) 版本：2018-02-28
+
+### 第 96 次发布
+
+发布时间：2024-08-16 01:13:43
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [CanFixVulInfo](http://document.tencentcloudapi.woa.com/document/product/296/19867#CanFixVulInfo)
+
+	* 新增成员：VulCategory
+
+* [CreateVulFixTaskQuuids](http://document.tencentcloudapi.woa.com/document/product/296/19867#CreateVulFixTaskQuuids)
+
+	* 新增成员：FixMethod
+
+* [VulFixStatusInfo](http://document.tencentcloudapi.woa.com/document/product/296/19867#VulFixStatusInfo)
+
+	* 新增成员：FixMethod
+
+
+
+
+## 数据湖计算 DLC(dlc) 版本：2021-01-25
+
+### 第 112 次发布
+
+发布时间：2024-08-16 01:16:06
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* AlterDLCTable
+
+
+
+## 人脸融合(facefusion) 版本：2022-09-27
+
+### 第 6 次发布
+
+发布时间：2024-08-16 01:18:41
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [QueryVideoFaceFusionJob](http://document.tencentcloudapi.woa.com/document/product/670/84680)
+
+新增数据结构：
+
+* [VideoFaceFusionOutput](http://document.tencentcloudapi.woa.com/document/product/670/78443#VideoFaceFusionOutput)
+
+
+
+## 人脸融合(facefusion) 版本：2018-12-01
+
+### 第 5 次发布
+
+发布时间：2024-08-16 01:18:37
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [SubmitVideoFaceFusionJob](http://document.tencentcloudapi.woa.com/document/product/670/84679)
+
+新增数据结构：
+
+* [LogoParam](http://document.tencentcloudapi.woa.com/document/product/670/31062#LogoParam)
+
+
+
+## 物联网开发平台(iotexplorer) 版本：2019-04-23
+
+### 第 49 次发布
+
+发布时间：2024-08-16 01:20:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateCloudStorageAIServiceTask](http://document.tencentcloudapi.woa.com/document/product/1081/84681)
+
+修改数据结构：
+
+* [CloudStorageAIServiceTask](http://document.tencentcloudapi.woa.com/document/product/1081/34988#CloudStorageAIServiceTask)
+
+	* 新增成员：CustomId
+
+
+
+
+## 轻量应用服务器(lighthouse) 版本：2020-03-24
+
+### 第 56 次发布
+
+发布时间：2024-08-16 01:21:40
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeInstances](http://document.tencentcloudapi.woa.com/document/product/1207/47573)
+
+	* 新增入参：OrderField, Order
+
+
+
+
+## 媒体处理(mps) 版本：2019-06-12
+
+### 第 60 次发布
+
+发布时间：2024-08-16 01:23:13
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [MediaVideoStreamItem](http://document.tencentcloudapi.woa.com/document/product/862/37615#MediaVideoStreamItem)
+
+	* 新增成员：FpsNumerator, FpsDenominator
+
+* [VideoTemplateInfo](http://document.tencentcloudapi.woa.com/document/product/862/37615#VideoTemplateInfo)
+
+	* 新增成员：FpsDenominator
+
+* [VideoTemplateInfoForUpdate](http://document.tencentcloudapi.woa.com/document/product/862/37615#VideoTemplateInfoForUpdate)
+
+	* 新增成员：FpsDenominator
+
+
+
+
+## 腾讯云安灯(tandon) 版本：2023-01-04
+
+### 第 5 次发布
+
+发布时间：2024-08-16 01:26:46
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [AppraiseTicket](http://document.tencentcloudapi.woa.com/document/product/1769/84520)
+
+	* 新增入参：TicketId, PostUin, ServiceChannel, ServiceRate, IsSolve, ServiceAppraise, Appraise
+
+	* 新增出参：Data
+
+* [CloseTicket](http://document.tencentcloudapi.woa.com/document/product/1769/84531)
+
+	* 新增入参：TicketId, PostUin, ServiceChannel
+
+	* 新增出参：Data
+
+* [CreateInternalTicket](http://document.tencentcloudapi.woa.com/document/product/1769/84529)
+
+	* 新增入参：ServiceChannel, Question, OwnerUin, PostUin, Creator, ServiceScene, InternalFeedbackUser, QuestionStartTime, Priority, AffectedCustomers, QcloudCategoryId, PhoneRegionCode, Phone, CustomFields, Title, OperatorDuty, CcPerson
+
+	* 新增出参：Data
+
+* [GetCommonCategoryList](http://document.tencentcloudapi.woa.com/document/product/1769/84511)
+
+	* 新增入参：Area, VisibleChannel, PostUin, OwnerUin, ApplyChannel
+
+	* 新增出参：Data
+
+* [GetCommonCategoryListById](http://document.tencentcloudapi.woa.com/document/product/1769/84528)
+
+	* 新增入参：Level2Id, Area, VisibleChannel, PostUin, OwnerUin, ApplyChannel
+
+	* 新增出参：Data
+
+* [GetCosKeysAndPrefix](http://document.tencentcloudapi.woa.com/document/product/1769/84509)
+
+	* 新增入参：PostUin
+
+	* 新增出参：Data
+
+* [GetUserTicket](http://document.tencentcloudapi.woa.com/document/product/1769/84525)
+
+	* 新增入参：TicketId, ServiceChannel, PostUin
+
+	* 新增出参：Data
+
+* [GetUserTicketList](http://document.tencentcloudapi.woa.com/document/product/1769/84524)
+
+	* 新增入参：PostUin, ServiceChannel, Page, Limit, TicketId, StartTime, EndTime, OrderField, Order, ExternStatusList, Keyword
+
+	* 新增出参：Data
+
+* [ReplyTicket](http://document.tencentcloudapi.woa.com/document/product/1769/84522)
+
+	* 新增入参：TicketId, PostUin, ExternReply, ServiceChannel
+
+	* 新增出参：Data
+
+* [UrgeTicket](http://document.tencentcloudapi.woa.com/document/product/1769/84513)
+
+	* 新增入参：TicketId, PostUin, ServiceChannel, ExternReply
+
+	* 新增出参：Data
+
+
+新增数据结构：
+
+* [CategoryExtraConfig](http://document.tencentcloudapi.woa.com/document/product/1769/84684#CategoryExtraConfig)
+* [ChildrenCategory](http://document.tencentcloudapi.woa.com/document/product/1769/84684#ChildrenCategory)
+* [CompatibleCosCredentials](http://document.tencentcloudapi.woa.com/document/product/1769/84684#CompatibleCosCredentials)
+* [CompatibleCosSTS](http://document.tencentcloudapi.woa.com/document/product/1769/84684#CompatibleCosSTS)
+* [ExternOperationData](http://document.tencentcloudapi.woa.com/document/product/1769/84684#ExternOperationData)
+* [FirstCategory](http://document.tencentcloudapi.woa.com/document/product/1769/84684#FirstCategory)
+* [FirstCell](http://document.tencentcloudapi.woa.com/document/product/1769/84684#FirstCell)
+* [GetUserTicketData](http://document.tencentcloudapi.woa.com/document/product/1769/84684#GetUserTicketData)
+* [GetUserTicketListData](http://document.tencentcloudapi.woa.com/document/product/1769/84684#GetUserTicketListData)
+* [InternalCreateTicketData](http://document.tencentcloudapi.woa.com/document/product/1769/84684#InternalCreateTicketData)
+* [MCCategoriesByIdData](http://document.tencentcloudapi.woa.com/document/product/1769/84684#MCCategoriesByIdData)
+* [MCCategoriesDatas](http://document.tencentcloudapi.woa.com/document/product/1769/84684#MCCategoriesDatas)
+* [MCCustomField](http://document.tencentcloudapi.woa.com/document/product/1769/84684#MCCustomField)
+* [SecondCell](http://document.tencentcloudapi.woa.com/document/product/1769/84684#SecondCell)
+* [ThirdCategory](http://document.tencentcloudapi.woa.com/document/product/1769/84684#ThirdCategory)
+* [ThirdCell](http://document.tencentcloudapi.woa.com/document/product/1769/84684#ThirdCell)
+* [ThirdCustomFields](http://document.tencentcloudapi.woa.com/document/product/1769/84684#ThirdCustomFields)
+* [UserTicketsData](http://document.tencentcloudapi.woa.com/document/product/1769/84684#UserTicketsData)
+
+
+
+## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+
+### 第 111 次发布
+
+发布时间：2024-08-16 01:28:33
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeRocketMQPublicAccessPoint](http://document.tencentcloudapi.woa.com/document/product/1179/81959)
+
+	* 新增出参：BillingFlow
+
+* [SetRocketMQPublicAccessPoint](http://document.tencentcloudapi.woa.com/document/product/1179/81958)
+
+	* 新增入参：BillingFlow
+
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 149 次发布
+
+发布时间：2024-08-16 01:31:15
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [CCN](http://document.tencentcloudapi.woa.com/document/product/215/15824#CCN)
+
+	* 新增成员：MrtbAggregatePolicyFlag, MrtbPolicyValueFlag
+
+* [CcnRouteTableBroadcastPolicy](http://document.tencentcloudapi.woa.com/document/product/215/15824#CcnRouteTableBroadcastPolicy)
+
+	* 新增成员：OperateAsPath, AsPathOperateMode, OperateCommunitySet, CommunityOperateMode
+
+* [CcnRouteTableInputPolicy](http://document.tencentcloudapi.woa.com/document/product/215/15824#CcnRouteTableInputPolicy)
+
+	* 新增成员：OperateAsPath, AsPathOperateMode
+
+
+
+
 # Release 3.0.1055.1
 
 ## 费用中心(billing) 版本：2018-07-09

@@ -13323,7 +13323,7 @@
           "example": "1373",
           "member": "uint64",
           "name": "VulId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -13333,7 +13333,7 @@
           "example": "本地提权漏洞",
           "member": "string",
           "name": "VulName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -13343,7 +13343,7 @@
           "example": "[]",
           "member": "VulInfoHostInfo",
           "name": "HostList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -13353,8 +13353,18 @@
           "example": "[\"需要重启\"]",
           "member": "string",
           "name": "FixTag",
-          "required": true,
+          "output_required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "漏洞分类1 web cms漏洞,2应用漏洞,4linux软件漏洞,5windows系统漏洞\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "VulCategory",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -15133,8 +15143,7 @@
           "member": "uint64",
           "name": "VulId",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -15143,8 +15152,16 @@
           "member": "string",
           "name": "Quuids",
           "required": true,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "修复方式 0组件更新或者安装补丁,1禁用服务",
+          "example": "0",
+          "member": "uint64",
+          "name": "FixMethod",
+          "required": false,
+          "type": "int"
         }
       ],
       "usage": "in"
@@ -59449,7 +59466,7 @@
           "example": "12",
           "member": "uint64",
           "name": "VulId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -59459,7 +59476,7 @@
           "example": "本地提权漏洞",
           "member": "string",
           "name": "VulName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -59469,7 +59486,7 @@
           "example": "80",
           "member": "uint64",
           "name": "Progress",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -59479,7 +59496,7 @@
           "example": "[]",
           "member": "VulFixStatusHostInfo",
           "name": "HostList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -59489,7 +59506,7 @@
           "example": "1",
           "member": "uint64",
           "name": "FailCnt",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -59499,7 +59516,17 @@
           "example": "0",
           "member": "uint64",
           "name": "FixSuccessCnt",
-          "required": true,
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "修复方式 0组件更新或者安装补丁,1禁用服务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "FixMethod",
+          "output_required": false,
           "type": "int",
           "value_allowed_null": true
         }

@@ -1,0 +1,209 @@
+{
+  "actions": {
+    "RagSearch": {
+      "document": "RagSearch",
+      "input": "RagSearchRequest",
+      "name": "RagSearch",
+      "output": "RagSearchResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2024-07-30",
+    "api_brief": "RagSearch，提供问答API 接口和服务，帮助开发者构建高效、可靠的应用程序",
+    "serviceNameCN": "AI 搜索增强 RAG",
+    "serviceShortName": "ragsearch"
+  },
+  "objects": {
+    "Choice": {
+      "document": "Choice",
+      "members": [
+        {
+          "disabled": false,
+          "document": "/\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/",
+          "member": "string",
+          "name": "FinishReason",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "/\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/",
+          "member": "Delta",
+          "name": "Delta",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "/\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/",
+          "member": "Message",
+          "name": "Message",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "Delta": {
+      "document": "Delta",
+      "members": [
+        {
+          "disabled": false,
+          "document": "/\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/",
+          "member": "string",
+          "name": "Role",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "/\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/",
+          "member": "string",
+          "name": "Content",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "Message": {
+      "document": "Message",
+      "members": [
+        {
+          "disabled": false,
+          "document": "/\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Role",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "/\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Content",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "RagSearchRequest": {
+      "document": "RagSearch请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "知识库搜索query",
+          "example": "大楼炭经卷是什么",
+          "member": "string",
+          "name": "Query",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "工作流ID",
+          "example": "flow-xxxxxx",
+          "member": "string",
+          "name": "WorkFlowId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "大模型生成语言控制参数， zh-CN表示中文；en-US表示英文",
+          "example": "zh-CN",
+          "member": "string",
+          "name": "LLMLanguage",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "流式调用开关",
+          "example": "true",
+          "member": "bool",
+          "name": "Stream",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "RagSearchResponse": {
+      "document": "RagSearch返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "/",
+          "example": "/",
+          "member": "string",
+          "name": "Note",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "/",
+          "example": "/",
+          "member": "Choice",
+          "name": "Choices",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "生成时间戳",
+          "example": "1722252025",
+          "member": "uint64",
+          "name": "Created",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "/",
+          "example": "无",
+          "member": "string",
+          "name": "Id",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。本接口为流式响应接口，当请求成功时，RequestId 会被放在 HTTP 响应的 Header \"X-TC-RequestId\" 中。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

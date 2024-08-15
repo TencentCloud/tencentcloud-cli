@@ -682,6 +682,8 @@ tccli/services/pts/v20210728/api.json
 tccli/services/pts/v20210728/examples.json
 tccli/services/qinge/__init__.py
 tccli/services/qinge/qinge_client.py
+tccli/services/ragsearch/__init__.py
+tccli/services/ragsearch/ragsearch_client.py
 tccli/services/rce/__init__.py
 tccli/services/rce/rce_client.py
 tccli/services/rce/v20201103/api.json

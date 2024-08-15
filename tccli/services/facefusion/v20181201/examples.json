@@ -29,6 +29,14 @@
         "output": "{\n    \"Response\": {\n        \"FusedImage\": \"/9/tetwtwe\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\",\n        \"ReviewResultSet\": [\n            {\n                \"Category\": \"Politics\",\n                \"Code\": \"0\",\n                \"CodeDescription\": \"OK\",\n                \"Suggestion\": \"PASS\",\n                \"Confidence\": 30,\n                \"DetailSet\": [\n                    {\n                        \"Field\": \"\",\n                        \"Label\": \"\",\n                        \"Confidence\": 30,\n                        \"Suggestion\": \"PASS\"\n                    }\n                ]\n            }\n        ]\n    }\n}",
         "title": "人脸融合-选脸融合"
       }
+    ],
+    "SubmitVideoFaceFusionJob": [
+      {
+        "document": "视频人脸融合提交任务",
+        "input": "POST / HTTP/1.1\nHost: facefusion.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitVideoFaceFusionJob\n<公共请求参数>\n\n{\n    \"ProjectId\": \"100646\",\n    \"MergeInfos\": [\n        {\n            \"Url\": \"http://i2.sinaimg.cn/ty/nba/2015-07-05/U10236P6T12D7648505F44DT20150705114547.jpg\"\n        }\n    ],\n    \"ModelId\": \"qc_100646_154021_9\"\n}",
+        "output": "{\n    \"Response\": {\n        \"JobId\": \"C0a5EXaNR7JzGvlg\",\n        \"EstimatedProcessTime\": 30,\n        \"JobQueueLength\": 1,\n        \"ReviewResultSet\": [\n            {\n                \"Category\": \"Politics\",\n                \"Code\": \"0\",\n                \"CodeDescription\": \"OK\",\n                \"Suggestion\": \"PASS\",\n                \"Confidence\": 30,\n                \"DetailSet\": [\n                    {\n                        \"Field\": \"\",\n                        \"Label\": \"丁俊晖\",\n                        \"Confidence\": 30,\n                        \"Suggestion\": \"PASS\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"83ecff39-2e4a-41d5-8562-1f8898326565\"\n    }\n}",
+        "title": "视频人脸融合"
+      }
     ]
   },
   "version": "1.0"

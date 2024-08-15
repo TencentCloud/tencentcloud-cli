@@ -12,7 +12,7 @@
       {
         "document": "",
         "input": "https://ticket.tencentcloudapi.com/?Action=AppraiseTicket\r\n&TicketId=3927018\r\n&PostUin=446457888\r\n&ServiceChannel=37\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"546\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [],\n        \"RequestId\": \"546\"\n    }\n}",
         "title": "示例"
       }
     ],
@@ -44,7 +44,7 @@
       {
         "document": "",
         "input": "https://ticket.tencentcloudapi.com/?Action=CloseTicket\r\n&TicketId=3927018\r\n&PostUin=446457888\r\n&ServiceChannel=37\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"546\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [],\n        \"RequestId\": \"546\"\n    }\n}",
         "title": "示例"
       }
     ],
@@ -67,14 +67,14 @@
     "CreateInternalTicket": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: ticket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InternalCreateTicket\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"546\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: ticket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InternalCreateTicket\n<公共请求参数>\n\n{\n    \"ServiceChannel\": \"30\",\n    \"InternalFeedbackUser\": \"longerwu\",\n    \"Question\": \"测试<br/>[img src=https://ticket-10039692.cos.ap-shanghai.myqcloud.com/1803240383_1575373437314_png]测试<br/>[attach src=https://ticket-10039692.cos.ap-shanghai.myqcloud.com/1803240383_1572321187787_test.txt]\",\n    \"Title\": \"自研上云测试工单\",\n    \"Creator\": \"raulyang\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"TicketId\": 3927491,\n            \"Url\": \"http://andon.cloud.tencent.com/ticket/nologin/redirect?id=3927491&sign=15c2c21db665ccc858e5ece2f63e1ca0\"\n        },\n        \"RequestId\": \"546\"\n    }\n}",
         "title": "图片附件示例"
       },
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: ticket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InternalCreateTicket\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"546\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: ticket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InternalCreateTicket\n<公共请求参数>\n\n{\n    \"ServiceChannel\": \"36\",\n    \"Question\": \"问题描述\",\n    \"Creator\": \"raulyang\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"TicketId\": 3927491,\n            \"Url\": \"http://andon.cloud.tencent.com/ticket/nologin/redirect?id=3927491&sign=15c2c21db665ccc858e5ece2f63e1ca0\"\n        },\n        \"RequestId\": \"546\"\n    }\n}",
         "title": "示例"
       }
     ],
@@ -89,8 +89,8 @@
     "GetCommonCategoryList": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: ticket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CommonGetCategoryList\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"123\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: ticket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CommonGetCategoryList\n<公共请求参数>\n\n{\n    \"VisibleChannel\": \"123\",\n    \"OwnerUin\": \"123\",\n    \"PostUin\": \"123\",\n    \"Area\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Categories\": [\n                {\n                    \"Cell\": {\n                        \"Visible\": 0,\n                        \"Weights\": 1,\n                        \"Name\": \"123\",\n                        \"Description\": \"123\"\n                    },\n                    \"Id\": 1,\n                    \"Children\": [\n                        {\n                            \"Cell\": {\n                                \"Name\": \"123\",\n                                \"Visible\": 0,\n                                \"Weights\": 1,\n                                \"Common\": 1,\n                                \"ImgUrl\": \"123\",\n                                \"Description\": \"123\"\n                            },\n                            \"Id\": 1\n                        }\n                    ]\n                },\n                {\n                    \"Cell\": {\n                        \"Visible\": 0,\n                        \"Weights\": 1,\n                        \"Name\": \"123\",\n                        \"Description\": \"123\"\n                    },\n                    \"Id\": 1,\n                    \"Children\": [\n                        {\n                            \"Cell\": {\n                                \"Description\": \"123\",\n                                \"Visible\": 0,\n                                \"Weights\": 1,\n                                \"Common\": 0,\n                                \"ImgUrl\": \"123\",\n                                \"Name\": \"123\"\n                            },\n                            \"Id\": 1\n                        },\n                        {\n                            \"Cell\": {\n                                \"Name\": \"123\",\n                                \"Visible\": 0,\n                                \"Weights\": 1,\n                                \"Common\": 1,\n                                \"ImgUrl\": \"123\",\n                                \"Description\": \"123\"\n                            },\n                            \"Id\": 1\n                        }\n                    ]\n                }\n            ],\n            \"BaseCategory\": [\n                {\n                    \"ApplyChannel\": 0,\n                    \"CategoryName\": \"123\",\n                    \"CategoryId\": 0,\n                    \"ParentId\": 0\n                }\n            ]\n        },\n        \"RequestId\": \"123\"\n    }\n}",
         "title": "例子"
       }
     ],
@@ -98,7 +98,7 @@
       {
         "document": "",
         "input": "https://ticket.tencentcloudapi.com/?Action=CommonGetCategoryListById\n&Level2Id=1107\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2c3fb836-7bf0-4fb0-a943-2a16fb080216\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Level1Name\": \"abc\",\n            \"Level2Name\": \"abc\",\n            \"Categories\": [\n                {\n                    \"Id\": 1,\n                    \"Cell\": {\n                        \"Name\": \"abc\",\n                        \"Description\": \"abc\",\n                        \"Weights\": 1,\n                        \"Queue\": 1,\n                        \"ServiceSceneCode\": 1,\n                        \"Support\": 1,\n                        \"EnableTicketAssistantAnswer\": 1,\n                        \"Visible\": 0\n                    },\n                    \"CustomFields\": [\n                        {\n                            \"FieldId\": 1,\n                            \"Name\": \"abc\",\n                            \"Type\": \"abc\",\n                            \"Copywriter\": \"abc\",\n                            \"Remark\": \"abc\",\n                            \"Required\": 0,\n                            \"Options\": \"abc\",\n                            \"Weights\": 1,\n                            \"ApplyChannel\": \"abc\",\n                            \"ParentFieldId\": 1\n                        }\n                    ]\n                }\n            ]\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "示例"
       }
     ],
@@ -122,7 +122,7 @@
       {
         "document": "",
         "input": "https://ticket.tencentcloudapi.com/?Action=GetCosKeysAndPrefix\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ExpiredTime\": 1575260550,\n            \"Credentials\": {\n                \"SessionToken\": \"123x\",\n                \"TmpSecretId\": \"123x\",\n                \"TmpSecretKey\": \"123x\"\n            },\n            \"Bucket\": \"ticket-10039692\",\n            \"Region\": \"ap-shanghai\",\n            \"Prefix\": \"46234534_123dsf-324-34g-4ghh_\"\n        },\n        \"RequestId\": \"1\"\n    }\n}",
         "title": "示例"
       }
     ],
@@ -176,7 +176,7 @@
       {
         "document": "",
         "input": "https://ticket.tencentcloudapi.com/?Action=GetUserTicket\r\n&TicketId=3927018\r\n&ServiceChannel=37\r\n&PostUin=47326\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"546\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"TicketId\": 0,\n            \"Uin\": \"abc\",\n            \"OwnerUin\": \"abc\",\n            \"Question\": \"abc\",\n            \"ServiceChannel\": 0,\n            \"RelatedPhoneNumber\": \"abc\",\n            \"RelatedRegionCode\": \"abc\",\n            \"CreateTime\": \"abc\",\n            \"UpdateTime\": \"abc\",\n            \"ExternStatus\": 0,\n            \"ExternStatusDisplay\": \"abc\",\n            \"ServiceRate\": 0,\n            \"UnsatisfyReason\": 0,\n            \"HasComplaint\": 0,\n            \"Priority\": 0,\n            \"Appraise\": \"abc\",\n            \"AppraiseTime\": \"abc\",\n            \"FirstLevelName\": \"abc\",\n            \"SecondLevelName\": \"abc\",\n            \"ThirdLevelName\": \"abc\",\n            \"ExternOperations\": [\n                {\n                    \"OperationId\": 0,\n                    \"ExternReply\": \"abc\",\n                    \"OperateTime\": \"abc\",\n                    \"OperatorType\": 0,\n                    \"SecretContent\": \"abc\",\n                    \"Operator\": \"abc\",\n                    \"TargetExternStatus\": 0,\n                    \"TargetExternStatusDisplay\": \"abc\"\n                }\n            ],\n            \"CustomFieldList\": [\n                {\n                    \"FieldId\": 1,\n                    \"FieldName\": \"abc\",\n                    \"FieldValue\": \"abc\",\n                    \"Types\": \"abc\",\n                    \"FieldKV\": \"abc\",\n                    \"Weights\": 1\n                }\n            ]\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "示例"
       }
     ],
@@ -184,7 +184,7 @@
       {
         "document": "",
         "input": "https://ticket.tencentcloudapi.com/?Action=GetUserTicketList\r\n&ServiceChannel=37\r\n&PostUin=5435345\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"546\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"TotalCount\": 0,\n            \"WaitingCount\": 0,\n            \"HandlingCount\": 0,\n            \"Data\": [\n                {\n                    \"TicketId\": 0,\n                    \"Uin\": \"abc\",\n                    \"OwnerUin\": \"abc\",\n                    \"Question\": \"abc\",\n                    \"ServiceChannel\": 0,\n                    \"RelatedPhoneNumber\": \"abc\",\n                    \"RelatedRegionCode\": \"abc\",\n                    \"CreateTime\": \"abc\",\n                    \"UpdateTime\": \"abc\",\n                    \"ExternStatus\": 0,\n                    \"ExternStatusDisplay\": \"abc\",\n                    \"ServiceRate\": 0,\n                    \"UnsatisfyReason\": 0,\n                    \"HasComplaint\": 0,\n                    \"Priority\": 0,\n                    \"Appraise\": \"abc\",\n                    \"AppraiseTime\": \"abc\",\n                    \"ThirdLevelName\": \"abc\"\n                }\n            ]\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "示例"
       }
     ],
@@ -200,7 +200,7 @@
       {
         "document": "",
         "input": "https://ticket.tencentcloudapi.com/?Action=ReplyTicket\r\n&TicketId=201812051342\r\n&PostUin=446457888\r\n&ExternReply=dsfjlgh\r\n&ServiceChannel=37\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ab55560d-eb03-4b6f-a0a0-a1ee0b34f01e\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [],\n        \"RequestId\": \"ab55560d-eb03-4b6f-a0a0-a1ee0b34f01e\"\n    }\n}",
         "title": "示例"
       }
     ],
@@ -208,7 +208,7 @@
       {
         "document": "",
         "input": "https://ticket.tencentcloudapi.com/?Action=UrgeTicket\r\n&TicketId=3927018\r\n&PostUin=446457888\r\n&ServiceChannel=37\r\n&ExternReply=催单内容\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"546\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [],\n        \"RequestId\": \"546\"\n    }\n}",
         "title": "示例"
       }
     ],

@@ -7688,7 +7688,7 @@
         {
           "disabled": false,
           "document": "各分区列的枚举值\n\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"\\\"beijing\\\"\", \"\\\"shanghai\\\"\"]",
           "member": "string",
           "name": "EnumValues",
           "output_required": false,

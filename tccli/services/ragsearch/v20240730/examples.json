@@ -1,0 +1,19 @@
+{
+  "actions": {
+    "RagSearch": [
+      {
+        "document": "RagSearch",
+        "input": "POST / HTTP/1.1\nHost: ragsearch.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RagSearch\n<公共请求参数>\n\n{\n    \"Query\": \"What sutras did Sakyamuni write\",\n    \"WorkFlowId\": \"flow-okbt9fh8\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Created\": 1723023402,\n        \"Note\": \"\",\n        \"Choices\": [\n            {\n                \"FinishReason\": \"stop\",\n                \"Message\": {\n                    \"Role\": \"assistant\",\n                    \"Content\": \"Sakyamuni wrote many sutras, but the specific document provided does not contain the information needed to answer your question. If you have access to a comprehensive collection of Buddhist scriptures, you may find a list of sutras attributed to Sakyamuni there.\"\n                }\n            }\n        ],\n        \"RequestId\": \"8cdb8fe0-54a0-11ef-af25-525400cb110a\"\n    }\n}",
+        "title": "RagSearch"
+      },
+      {
+        "document": "NoAnswerResponse",
+        "input": "POST / HTTP/1.1\nHost: ragsearch.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RagSearch\n<公共请求参数>\n\n{\n    \"Query\": \"p.2223\",\n    \"WorkFlowId\": \"flow-okbt9fh8\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Created\": 1723693346,\n        \"Id\": \"85307482-4686-46a4-bd8a-0fa78dd906f9\",\n        \"Choices\": [\n            {\n                \"FinishReason\": \"stop\",\n                \"Message\": {\n                    \"Role\": \"assistant\",\n                    \"Content\": \"抱歉，根据现有的文档内容无法回答这一问题。\"\n                }\n            }\n        ],\n        \"RequestId\": \"85307482-4686-46a4-bd8a-0fa78dd906f9\"\n    }\n}",
+        "title": "NoAnswerResponse"
+      }
+    ]
+  },
+  "version": "1.0"
+}

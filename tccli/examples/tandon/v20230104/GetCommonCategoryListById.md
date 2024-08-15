@@ -13,7 +13,40 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "2c3fb836-7bf0-4fb0-a943-2a16fb080216"
+        "Data": {
+            "Level1Name": "abc",
+            "Level2Name": "abc",
+            "Categories": [
+                {
+                    "Id": 1,
+                    "Cell": {
+                        "Name": "abc",
+                        "Description": "abc",
+                        "Weights": 1,
+                        "Queue": 1,
+                        "ServiceSceneCode": 1,
+                        "Support": 1,
+                        "EnableTicketAssistantAnswer": 1,
+                        "Visible": 0
+                    },
+                    "CustomFields": [
+                        {
+                            "FieldId": 1,
+                            "Name": "abc",
+                            "Type": "abc",
+                            "Copywriter": "abc",
+                            "Remark": "abc",
+                            "Required": 0,
+                            "Options": "abc",
+                            "Weights": 1,
+                            "ApplyChannel": "abc",
+                            "ParentFieldId": 1
+                        }
+                    ]
+                }
+            ]
+        },
+        "RequestId": "abc"
     }
 }
 ```

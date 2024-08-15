@@ -209,12 +209,86 @@
     },
     "AppraiseTicketRequest": {
       "document": "AppraiseTicket请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "工单id",
+          "example": "11085326",
+          "member": "int64",
+          "name": "TicketId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "工单提交者Uin",
+          "example": "1619605915",
+          "member": "string",
+          "name": "PostUin",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "工单通道",
+          "example": "27",
+          "member": "int64",
+          "name": "ServiceChannel",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "评价星级",
+          "example": "3",
+          "member": "int64",
+          "name": "ServiceRate",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否解决 1=是，0=否",
+          "example": "2",
+          "member": "int64",
+          "name": "IsSolve",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "服务评价/不满意原因",
+          "example": "1",
+          "member": "int64",
+          "name": "ServiceAppraise",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "评价内容",
+          "example": "content",
+          "member": "string",
+          "name": "Appraise",
+          "required": false,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "AppraiseTicketResponse": {
       "document": "AppraiseTicket返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "返回格式",
+          "example": "[]",
+          "member": "string",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -258,6 +332,78 @@
       ],
       "type": "object"
     },
+    "CategoryExtraConfig": {
+      "document": "官网分类额外配置（兜底分类展示）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用渠道\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "ApplyChannel",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分类id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "CategoryId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分类父级id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "ParentId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分类名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "费用中心",
+          "member": "string",
+          "name": "CategoryName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ChildrenCategory": {
+      "document": "二级分类",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分类ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "Id",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "二级分类属性",
+          "example": "1",
+          "member": "SecondCell",
+          "name": "Cell",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "CloseCommonTicketRequest": {
       "document": "CloseCommonTicket请求参数结构体",
       "members": [],
@@ -277,12 +423,50 @@
     },
     "CloseTicketRequest": {
       "document": "CloseTicket请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "工单id",
+          "example": "1102313",
+          "member": "int64",
+          "name": "TicketId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "工单提交者Uin",
+          "example": "3123411",
+          "member": "string",
+          "name": "PostUin",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "工单通道",
+          "example": "30",
+          "member": "int64",
+          "name": "ServiceChannel",
+          "required": true,
+          "type": "int"
+        }
+      ],
       "type": "object"
     },
     "CloseTicketResponse": {
       "document": "CloseTicket返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "返回格式",
+          "example": "[]",
+          "member": "string",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -291,6 +475,98 @@
         }
       ],
       "type": "object"
+    },
+    "CompatibleCosCredentials": {
+      "document": "CosSTS Credentials",
+      "members": [
+        {
+          "disabled": false,
+          "document": "token",
+          "example": "1",
+          "member": "string",
+          "name": "SessionToken",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "secretId",
+          "example": "2",
+          "member": "string",
+          "name": "TmpSecretId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "secretKey",
+          "example": "3",
+          "member": "string",
+          "name": "TmpSecretKey",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CompatibleCosSTS": {
+      "document": "CosSts对象",
+      "members": [
+        {
+          "disabled": false,
+          "document": "过期时间",
+          "example": "1",
+          "member": "uint64",
+          "name": "ExpiredTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "密钥",
+          "example": "{}",
+          "member": "CompatibleCosCredentials",
+          "name": "Credentials",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "桶",
+          "example": "234",
+          "member": "string",
+          "name": "Bucket",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "地域",
+          "example": "23",
+          "member": "string",
+          "name": "Region",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "前缀",
+          "example": "1",
+          "member": "string",
+          "name": "Prefix",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "CreateCommonTicketRequest": {
       "document": "CreateCommonTicket请求参数结构体",
@@ -328,12 +604,176 @@
     },
     "CreateInternalTicketRequest": {
       "document": "CreateInternalTicket请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务通道，30=自研上云，35=CSIG知识平台，36=AMP监控, 37=SaaS产品，61=星云平台告警",
+          "example": "36",
+          "member": "int64",
+          "name": "ServiceChannel",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "问题描述",
+          "example": "问题描述",
+          "member": "string",
+          "name": "Question",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "客户父账号UIN",
+          "example": "2100084270",
+          "member": "string",
+          "name": "OwnerUin",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "客户子账号UIN",
+          "example": "2100084270",
+          "member": "string",
+          "name": "PostUin",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "工单创建人",
+          "example": "raulyang",
+          "member": "string",
+          "name": "Creator",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "工单归档ID",
+          "example": "14051",
+          "member": "int64",
+          "name": "ServiceScene",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "内部反馈人RTX(自研上云通道必填)",
+          "example": "无",
+          "member": "string",
+          "name": "InternalFeedbackUser",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "问题发生时间",
+          "example": "无",
+          "member": "string",
+          "name": "QuestionStartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "优先级:0=>L2，1=>L3，2=>L4",
+          "example": "2",
+          "member": "int64",
+          "name": "Priority",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "影响的客户",
+          "example": "无",
+          "member": "string",
+          "name": "AffectedCustomers",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "官网分类ID",
+          "example": "486",
+          "member": "int64",
+          "name": "QcloudCategoryId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "区号",
+          "example": "86",
+          "member": "string",
+          "name": "PhoneRegionCode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "客户手机号",
+          "example": "15100011111",
+          "member": "string",
+          "name": "Phone",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义字段",
+          "example": "无",
+          "member": "MCCustomField",
+          "name": "CustomFields",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "问题标题(自研上云通道必填),最长255个字符",
+          "example": "hello",
+          "member": "string",
+          "name": "Title",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "处理人队列（和Creator字段二选一）",
+          "example": "10",
+          "member": "int64",
+          "name": "OperatorDuty",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "抄送人，多人用英文分号隔开",
+          "example": "v_amayliu;v_xuqxu",
+          "member": "string",
+          "name": "CcPerson",
+          "required": false,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "CreateInternalTicketResponse": {
       "document": "CreateInternalTicket返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "建单返回",
+          "example": "无",
+          "member": "InternalCreateTicketData",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -342,6 +782,174 @@
         }
       ],
       "type": "object"
+    },
+    "ExternOperationData": {
+      "document": "工单详情外部回复",
+      "members": [
+        {
+          "disabled": false,
+          "document": "操作id",
+          "example": "1",
+          "member": "int64",
+          "name": "OperationId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "外部回复",
+          "example": "abc",
+          "member": "string",
+          "name": "ExternReply",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作时间",
+          "example": "abc",
+          "member": "string",
+          "name": "OperateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作人类型，1=客户， 2=客服，3=系统",
+          "example": "1",
+          "member": "int64",
+          "name": "OperatorType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "机密信息",
+          "example": "abc",
+          "member": "string",
+          "name": "SecretContent",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作人",
+          "example": "abc",
+          "member": "string",
+          "name": "Operator",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目标外部状态id",
+          "example": "1",
+          "member": "int64",
+          "name": "TargetExternStatus",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目标外部状态显示",
+          "example": "abc",
+          "member": "string",
+          "name": "TargetExternStatusDisplay",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "FirstCategory": {
+      "document": "一级分类",
+      "members": [
+        {
+          "disabled": false,
+          "document": "一级分类ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "Id",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "一级分类属性",
+          "example": "[]",
+          "member": "FirstCell",
+          "name": "Cell",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "二级分类数组",
+          "example": "[]",
+          "member": "ChildrenCategory",
+          "name": "Children",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "FirstCell": {
+      "document": "一级分类属性",
+      "members": [
+        {
+          "disabled": false,
+          "document": "一级分类名称",
+          "example": "1",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "一级分类描述",
+          "example": "1",
+          "member": "string",
+          "name": "Description",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "一级分类权重",
+          "example": "1",
+          "member": "uint64",
+          "name": "Weights",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否可见",
+          "example": "1",
+          "member": "int64",
+          "name": "Visible",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "GetAppraisalOptionsRequest": {
       "document": "GetAppraisalOptions请求参数结构体",
@@ -362,12 +970,77 @@
     },
     "GetCommonCategoryListByIdRequest": {
       "document": "GetCommonCategoryListById请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "二级分类ID",
+          "example": "1107",
+          "member": "uint64",
+          "name": "Level2Id",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "地域",
+          "example": "111",
+          "member": "string",
+          "name": "Area",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "可见渠道",
+          "example": "MC",
+          "member": "string",
+          "name": "VisibleChannel",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "子UIN",
+          "example": "2100084270",
+          "member": "string",
+          "name": "PostUin",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "主UIN",
+          "example": "2100084270",
+          "member": "string",
+          "name": "OwnerUin",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "应用通道  1-MC工单，2-在线支持",
+          "example": "[1]",
+          "member": "int64",
+          "name": "ApplyChannel",
+          "required": false,
+          "type": "list"
+        }
+      ],
       "type": "object"
     },
     "GetCommonCategoryListByIdResponse": {
       "document": "GetCommonCategoryListById返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "通过二级分类ID获取的三级分类和表单数据",
+          "example": "无",
+          "member": "MCCategoriesByIdData",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -379,12 +1052,68 @@
     },
     "GetCommonCategoryListRequest": {
       "document": "GetCommonCategoryList请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "地域",
+          "example": "2",
+          "member": "uint64",
+          "name": "Area",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "可见渠道，获取不同渠道下的分类",
+          "example": "\"1\"",
+          "member": "string",
+          "name": "VisibleChannel",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "子UIN",
+          "example": "\"\"",
+          "member": "string",
+          "name": "PostUin",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "主UIN",
+          "example": "\"\"",
+          "member": "string",
+          "name": "OwnerUin",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "应用场景",
+          "example": "2",
+          "member": "int64",
+          "name": "ApplyChannel",
+          "required": false,
+          "type": "int"
+        }
+      ],
       "type": "object"
     },
     "GetCommonCategoryListResponse": {
       "document": "GetCommonCategoryList返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "MC分类数据",
+          "example": "无",
+          "member": "MCCategoriesDatas",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -430,12 +1159,32 @@
     },
     "GetCosKeysAndPrefixRequest": {
       "document": "GetCosKeysAndPrefix请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户子UIN",
+          "example": "1",
+          "member": "string",
+          "name": "PostUin",
+          "required": false,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "GetCosKeysAndPrefixResponse": {
       "document": "GetCosKeysAndPrefix返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "cos临时密钥和授权prefix",
+          "example": "无",
+          "member": "CompatibleCosSTS",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -530,14 +1279,396 @@
       ],
       "type": "object"
     },
+    "GetUserTicketData": {
+      "document": "获取用户工单详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "工单id",
+          "example": "11094733",
+          "member": "int64",
+          "name": "TicketId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工单Uin",
+          "example": "100010874851",
+          "member": "string",
+          "name": "Uin",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "OwnerUin工单主账号Uin",
+          "example": "100010874851",
+          "member": "string",
+          "name": "OwnerUin",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "问题描述",
+          "example": "abc",
+          "member": "string",
+          "name": "Question",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工单通道",
+          "example": "3",
+          "member": "int64",
+          "name": "ServiceChannel",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "手机号",
+          "example": "151***",
+          "member": "string",
+          "name": "RelatedPhoneNumber",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "手机区号",
+          "example": "+86",
+          "member": "string",
+          "name": "RelatedRegionCode",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工单创建时间",
+          "example": "2024-05-13 00:15:32",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工单更新时间",
+          "example": "2024-05-13 00:15:32",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "客户可见状态id",
+          "example": "3",
+          "member": "int64",
+          "name": "ExternStatus",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "客户可见状态显示",
+          "example": "abc",
+          "member": "string",
+          "name": "ExternStatusDisplay",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "评价星级",
+          "example": "0",
+          "member": "int64",
+          "name": "ServiceRate",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "不满意原因",
+          "example": "1",
+          "member": "int64",
+          "name": "UnsatisfyReason",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否投诉，1=是，0=否",
+          "example": "1",
+          "member": "int64",
+          "name": "HasComplaint",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "优先级",
+          "example": "1",
+          "member": "int64",
+          "name": "Priority",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "评价内容",
+          "example": "1",
+          "member": "string",
+          "name": "Appraise",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "评价时间",
+          "example": "1",
+          "member": "string",
+          "name": "AppraiseTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "一级分类名称",
+          "example": "1",
+          "member": "string",
+          "name": "FirstLevelName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "二级分类名称",
+          "example": "1",
+          "member": "string",
+          "name": "SecondLevelName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "三级分类名称",
+          "example": "1",
+          "member": "string",
+          "name": "ThirdLevelName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "外部回复",
+          "example": "[]",
+          "member": "ExternOperationData",
+          "name": "ExternOperations",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自定义字段",
+          "example": "[]",
+          "member": "MCCustomField",
+          "name": "CustomFieldList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "GetUserTicketListData": {
+      "document": "获取用户工单列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数， 供分页使用",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "待我处理数量",
+          "example": "1",
+          "member": "int64",
+          "name": "WaitingCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "处理中数量",
+          "example": "1",
+          "member": "int64",
+          "name": "HandlingCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工单列表",
+          "example": "[]",
+          "member": "UserTicketsData",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "GetUserTicketListRequest": {
       "document": "GetUserTicketList请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "工单提交者Uin",
+          "example": "21313521",
+          "member": "string",
+          "name": "PostUin",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务通道",
+          "example": "30",
+          "member": "int64",
+          "name": "ServiceChannel",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页",
+          "example": "1",
+          "member": "int64",
+          "name": "Page",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页limit",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "工单id",
+          "example": "11023412",
+          "member": "int64",
+          "name": "TicketId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "0",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "0",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段",
+          "example": "factKey",
+          "member": "string",
+          "name": "OrderField",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "0=正序，1=倒序",
+          "example": "0",
+          "member": "int64",
+          "name": "Order",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "状态列表",
+          "example": "1",
+          "member": "int64",
+          "name": "ExternStatusList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "问题描述关键字",
+          "example": "queryKey",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "GetUserTicketListResponse": {
       "document": "GetUserTicketList返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "用户工单列表返回",
+          "example": "无",
+          "member": "GetUserTicketListData",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -549,12 +1680,50 @@
     },
     "GetUserTicketRequest": {
       "document": "GetUserTicket请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "工单id",
+          "example": "11023132",
+          "member": "int64",
+          "name": "TicketId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "工单通道",
+          "example": "30",
+          "member": "int64",
+          "name": "ServiceChannel",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "工单提交者Uin",
+          "example": "213312731",
+          "member": "string",
+          "name": "PostUin",
+          "required": true,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "GetUserTicketResponse": {
       "document": "GetUserTicket返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "工单详情",
+          "example": "无",
+          "member": "GetUserTicketData",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -563,6 +1732,176 @@
         }
       ],
       "type": "object"
+    },
+    "InternalCreateTicketData": {
+      "document": "内部建单返回",
+      "members": [
+        {
+          "disabled": false,
+          "document": "工单id",
+          "example": "11322137",
+          "member": "int64",
+          "name": "TicketId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工单链接",
+          "example": "abc",
+          "member": "string",
+          "name": "Url",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "MCCategoriesByIdData": {
+      "document": "通过二级分类获取三级分类和表单字段数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "一级分类名称",
+          "example": "1",
+          "member": "string",
+          "name": "Level1Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "二级分类名称",
+          "example": "1",
+          "member": "string",
+          "name": "Level2Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "三级分类数组",
+          "example": "1",
+          "member": "ThirdCategory",
+          "name": "Categories",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "MCCategoriesDatas": {
+      "document": "MC分类数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分类数组",
+          "example": "[]",
+          "member": "FirstCategory",
+          "name": "Categories",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "兜底分类配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "CategoryExtraConfig",
+          "name": "BaseCategory",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "最近（三次）咨询的二级分类\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "int64",
+          "name": "LatestCategory",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "MCCustomField": {
+      "document": "MC工单自定义字段",
+      "members": [
+        {
+          "disabled": false,
+          "document": "字段ID",
+          "example": "无",
+          "member": "uint64",
+          "name": "FieldId",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "字段名字",
+          "example": "无",
+          "member": "string",
+          "name": "FieldName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "字段值",
+          "example": "无",
+          "member": "string",
+          "name": "FieldValue",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "字段类型",
+          "example": "无",
+          "member": "string",
+          "name": "Types",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "字段键值",
+          "example": "无",
+          "member": "string",
+          "name": "FieldKV",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "顺序权重",
+          "example": "无",
+          "member": "uint64",
+          "name": "Weights",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "RemindCommonTicketRequest": {
       "document": "RemindCommonTicket请求参数结构体",
@@ -583,29 +1922,59 @@
     },
     "ReplyTicketRequest": {
       "document": "ReplyTicket请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "工单id",
+          "example": "112312312",
+          "member": "int64",
+          "name": "TicketId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "工单提交者Uin",
+          "example": "521312342",
+          "member": "string",
+          "name": "PostUin",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "外部回复",
+          "example": "reply content",
+          "member": "string",
+          "name": "ExternReply",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "工单通道",
+          "example": "39",
+          "member": "int64",
+          "name": "ServiceChannel",
+          "required": true,
+          "type": "int"
+        }
+      ],
       "type": "object"
     },
     "ReplyTicketResponse": {
       "document": "ReplyTicket返回参数结构体",
       "members": [
         {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "disabled": false,
+          "document": "返回格式",
+          "example": "[]",
           "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "UrgeTicketRequest": {
-      "document": "UrgeTicket请求参数结构体",
-      "members": [],
-      "type": "object"
-    },
-    "UrgeTicketResponse": {
-      "document": "UrgeTicket返回参数结构体",
-      "members": [
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -614,6 +1983,550 @@
         }
       ],
       "type": "object"
+    },
+    "SecondCell": {
+      "document": "二级分类属性",
+      "members": [
+        {
+          "disabled": false,
+          "document": "二级分类名称",
+          "example": "1",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "二级分类描述",
+          "example": "1",
+          "member": "string",
+          "name": "Description",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否通用",
+          "example": "1",
+          "member": "int64",
+          "name": "Common",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分类排序权重",
+          "example": "1",
+          "member": "uint64",
+          "name": "Weights",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "图片url地址",
+          "example": "1",
+          "member": "string",
+          "name": "ImgUrl",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否可见",
+          "example": "1",
+          "member": "int64",
+          "name": "Visible",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ThirdCategory": {
+      "document": "三级分类",
+      "members": [
+        {
+          "disabled": false,
+          "document": "三级分类ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "Id",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "三级分类属性",
+          "example": "[]",
+          "member": "ThirdCell",
+          "name": "Cell",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "三级自定义字段",
+          "example": "[]",
+          "member": "ThirdCustomFields",
+          "name": "CustomFields",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ThirdCell": {
+      "document": "三级分类属性",
+      "members": [
+        {
+          "disabled": false,
+          "document": "三级分类名称",
+          "example": "MySQL实例升级提醒",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分类描述",
+          "example": "MySQL实例升级提醒",
+          "member": "string",
+          "name": "Description",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分类权重",
+          "example": "100",
+          "member": "uint64",
+          "name": "Weights",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "派单队列",
+          "example": "3",
+          "member": "uint64",
+          "name": "Queue",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务场景",
+          "example": "13617",
+          "member": "uint64",
+          "name": "ServiceSceneCode",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "支持渠道，0=工单， 1=IM",
+          "example": "1",
+          "member": "uint64",
+          "name": "Support",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启官网提交工单时使用智能客服首答 0-否 1-是",
+          "example": "1",
+          "member": "uint64",
+          "name": "EnableTicketAssistantAnswer",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否可见",
+          "example": "1",
+          "member": "int64",
+          "name": "Visible",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ThirdCustomFields": {
+      "document": "三级分类自定义字段",
+      "members": [
+        {
+          "disabled": false,
+          "document": "字段ID",
+          "example": "1396",
+          "member": "uint64",
+          "name": "FieldId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "字段名称",
+          "example": "11",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "字段类型",
+          "example": "label",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "字段文案",
+          "example": "11",
+          "member": "string",
+          "name": "Copywriter",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备注默认值",
+          "example": "''",
+          "member": "string",
+          "name": "Remark",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否必填",
+          "example": "1",
+          "member": "int64",
+          "name": "Required",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可选参数",
+          "example": "22",
+          "member": "string",
+          "name": "Options",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "字段展示权重",
+          "example": "100",
+          "member": "uint64",
+          "name": "Weights",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用通道",
+          "example": "[1,2]",
+          "member": "string",
+          "name": "ApplyChannel",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "父级id",
+          "example": "0",
+          "member": "uint64",
+          "name": "ParentFieldId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "UrgeTicketRequest": {
+      "document": "UrgeTicket请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "工单id",
+          "example": "11085328",
+          "member": "int64",
+          "name": "TicketId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "提交者uin",
+          "example": "1619605915",
+          "member": "string",
+          "name": "PostUin",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "工单通道",
+          "example": "27",
+          "member": "int64",
+          "name": "ServiceChannel",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "外部回复/催单内容",
+          "example": "content",
+          "member": "string",
+          "name": "ExternReply",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UrgeTicketResponse": {
+      "document": "UrgeTicket返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "回参格式",
+          "example": "[]",
+          "member": "string",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UserTicketsData": {
+      "document": "用户获取工单列表工单字段",
+      "members": [
+        {
+          "disabled": false,
+          "document": "工单id",
+          "example": "11094733",
+          "member": "int64",
+          "name": "TicketId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户Uin",
+          "example": "100010874851",
+          "member": "string",
+          "name": "Uin",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户OwnerUin",
+          "example": "100010874851",
+          "member": "string",
+          "name": "OwnerUin",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "问题描述",
+          "example": "问题描述",
+          "member": "string",
+          "name": "Question",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务通道",
+          "example": "3",
+          "member": "int64",
+          "name": "ServiceChannel",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "手机号",
+          "example": "151*******",
+          "member": "string",
+          "name": "RelatedPhoneNumber",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "手机区号",
+          "example": "+86",
+          "member": "string",
+          "name": "RelatedRegionCode",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "0",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间",
+          "example": "0",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "客户可见状态id",
+          "example": "0",
+          "member": "int64",
+          "name": "ExternStatus",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "客户可见状态显示",
+          "example": "0",
+          "member": "string",
+          "name": "ExternStatusDisplay",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "评价星级",
+          "example": "1",
+          "member": "int64",
+          "name": "ServiceRate",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "不满意原因",
+          "example": "1",
+          "member": "int64",
+          "name": "UnsatisfyReason",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否投诉过",
+          "example": "1",
+          "member": "int64",
+          "name": "HasComplaint",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "优先级",
+          "example": "1",
+          "member": "int64",
+          "name": "Priority",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "评价内容",
+          "example": "1",
+          "member": "string",
+          "name": "Appraise",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "评价时间",
+          "example": "1",
+          "member": "string",
+          "name": "AppraiseTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "三级分类名称",
+          "example": "1",
+          "member": "string",
+          "name": "ThirdLevelName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "WriteTaskResultRequest": {
       "document": "WriteTaskResult请求参数结构体",

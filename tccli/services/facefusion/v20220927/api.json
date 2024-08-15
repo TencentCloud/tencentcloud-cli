@@ -20,6 +20,13 @@
       "name": "图片人脸融合专业版",
       "output": "FuseFaceUltraResponse",
       "status": "online"
+    },
+    "QueryVideoFaceFusionJob": {
+      "document": "通过Job Id查询视频人脸融合任务的进度和状态",
+      "input": "QueryVideoFaceFusionJobRequest",
+      "name": "查询视频人脸融合任务",
+      "output": "QueryVideoFaceFusionJobResponse",
+      "status": "online"
     }
   },
   "metadata": {
@@ -157,8 +164,7 @@
           "member": "int64",
           "name": "X",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -167,28 +173,25 @@
           "member": "int64",
           "name": "Y",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "人脸框宽度。",
-          "example": "1",
+          "example": "30",
           "member": "int64",
           "name": "Width",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "人脸框高度。",
-          "example": "1",
+          "example": "30",
           "member": "int64",
           "name": "Height",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         }
       ],
       "usage": "in"
@@ -225,7 +228,7 @@
         },
         {
           "disabled": false,
-          "document": "用户人脸图片、素材模板图的人脸位置信息。",
+          "document": "用户人脸图片、素材模板图的人脸位置信息。不能超过6个。",
           "example": "[]",
           "member": "MergeInfo",
           "name": "MergeInfos",
@@ -285,8 +288,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "RspImgType 为 url 时，返回结果的 url， RspImgType 为 base64 时返回 base64 数据。",
-          "example": "string",
+          "document": "RspImgType 为 url 时，返回结果的 url（有效期7天）， RspImgType 为 base64 时返回 base64 数据。",
+          "example": "http://cloud.com/result.png",
           "member": "string",
           "name": "FusedImage",
           "output_required": true,
@@ -483,7 +486,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "元数据",
+          "document": "元数据，个数不能大于1。",
           "example": "[]",
           "member": "MetaData",
           "name": "MetaData",
@@ -498,7 +501,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "标识图片位于融合结果图中的坐标，将按照坐标对标识图片进行位置和大小的拉伸匹配",
+          "document": "标识图片位于融合结果图中的坐标，将按照坐标对标识图片进行位置和大小的拉伸匹配。",
           "example": "{}",
           "member": "FaceRect",
           "name": "LogoRect",
@@ -507,7 +510,7 @@
         },
         {
           "disabled": false,
-          "document": "标识图片Url地址",
+          "document": "标识图片Url地址。\n●base64 和 url 必须提供一个，如果都提供以 url 为准。\n●支持图片格式：支持jpg或png。",
           "example": "string",
           "member": "string",
           "name": "LogoUrl",
@@ -516,7 +519,7 @@
         },
         {
           "disabled": false,
-          "document": "标识图片base64",
+          "document": "标识图片base64\n●base64 和 url 必须提供一个，如果都提供以 url 为准。\n●支持图片格式：支持jpg或png。",
           "example": "string",
           "member": "string",
           "name": "LogoImage",
@@ -557,7 +560,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "输入图片base64",
+          "document": "输入图片base64。\n●base64 和 url 必须提供一个，如果都提供以 url 为准。\n●素材图片限制：图片中面部尺寸大于34 * 34；图片尺寸大于64 * 64。（图片编码之后可能会大30%左右，建议合理控制图片大小）。\n●支持图片格式：支持jpg或png",
           "example": "string",
           "member": "string",
           "name": "Image",
@@ -566,7 +569,7 @@
         },
         {
           "disabled": false,
-          "document": "输入图片url",
+          "document": "输入图片url。\n●base64 和 url 必须提供一个，如果都提供以 url 为准。\n●素材图片限制：图片中面部尺寸大于34 * 34；图片尺寸大于64 * 64。（图片编码之后可能会大30%左右，建议合理控制图片大小）。\n●支持图片格式：支持jpg或png",
           "example": "string",
           "member": "string",
           "name": "Url",
@@ -575,7 +578,7 @@
         },
         {
           "disabled": false,
-          "document": "上传的图片人脸位置信息（人脸框）",
+          "document": "上传的图片人脸位置信息（人脸框）\nWidth、Height >= 30。",
           "example": "{}",
           "member": "FaceRect",
           "name": "InputImageFaceRect",
@@ -593,7 +596,7 @@
         },
         {
           "disabled": false,
-          "document": "模板中人脸位置信息(人脸框)，不填默认取最大人脸。此字段仅适用于图片融合自定义模板素材场景。",
+          "document": "模板中人脸位置信息(人脸框)，不填默认取最大人脸。此字段仅适用于图片融合自定义模板素材场景。\nWidth、Height >= 30。",
           "example": "无",
           "member": "FaceRect",
           "name": "TemplateFaceRect",
@@ -701,6 +704,159 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "QueryVideoFaceFusionJobRequest": {
+      "document": "QueryVideoFaceFusionJob请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "视频人脸融合任务的Job id",
+          "example": "C0a5EXaNR7JzGvlg",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryVideoFaceFusionJobResponse": {
+      "document": "QueryVideoFaceFusionJob返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "当前任务状态：排队中、处理中、处理失败或者处理完成",
+          "example": "处理完成",
+          "member": "string",
+          "name": "JobStatus",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "视频人脸融合输出的结果信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{             \"VideoUrl\": \"http://bda-video-bodyseg-1254418846.c",
+          "member": "VideoFaceFusionOutput",
+          "name": "VideoFaceFusionOutput",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务状态码，1-排队中，3-处理中，5-处理失败，7-处理完成\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "JobStatusCode",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务处理失败错误码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "string",
+          "member": "string",
+          "name": "JobErrorCode",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务处理失败错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "string",
+          "member": "string",
+          "name": "JobErrorMsg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "VideoFaceFusionOutput": {
+      "document": "视频人脸融合返回结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "视频人脸融合输出的视频url地址",
+          "example": "无",
+          "member": "string",
+          "name": "VideoUrl",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "视频人脸融合输出的视频MD5，用于校验",
+          "example": "无",
+          "member": "string",
+          "name": "VideoMD5",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "视频宽度",
+          "example": "无",
+          "member": "int64",
+          "name": "Width",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "视频高度",
+          "example": "无",
+          "member": "int64",
+          "name": "Height",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "每秒传输帧数",
+          "example": "无",
+          "member": "int64",
+          "name": "FPS",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "视频播放时长，单位为秒",
+          "example": "无",
+          "member": "float",
+          "name": "DurationInSec",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "帧数",
+          "example": "无",
+          "member": "int64",
+          "name": "Frame",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
