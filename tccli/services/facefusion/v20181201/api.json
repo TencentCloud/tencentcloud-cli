@@ -263,42 +263,38 @@
         {
           "disabled": false,
           "document": "人脸框左上角横坐标。",
-          "example": "",
+          "example": "1",
           "member": "int64",
           "name": "X",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "人脸框左上角纵坐标。",
-          "example": "",
+          "example": "1",
           "member": "int64",
           "name": "Y",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "人脸框宽度。",
-          "example": "",
+          "example": "30",
           "member": "int64",
           "name": "Width",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "人脸框高度。",
-          "example": "",
+          "example": "30",
           "member": "int64",
           "name": "Height",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         }
       ],
       "usage": "in"
@@ -586,7 +582,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "输入图片base64。",
+          "document": "输入图片base64。\n●base64 和 url 必须提供一个，如果都提供以 url 为准。\n●素材图片限制：图片中面部尺寸大于34 * 34；图片尺寸大于64 * 64。（图片编码之后可能会大30%左右，建议合理控制图片大小）。\n●支持图片格式：支持jpg或png。",
           "example": "string",
           "member": "string",
           "name": "Image",
@@ -595,7 +591,7 @@
         },
         {
           "disabled": false,
-          "document": "输入图片url。\nUrl、Image必须提供一个，如果都提供，只使用 Url。",
+          "document": "输入图片url。\n●base64 和 url 必须提供一个，如果都提供以 url 为准。\n●素材图片限制：图片中面部尺寸大于34 * 34；图片尺寸大于64 * 64。（图片编码之后可能会大30%左右，建议合理控制图片大小）。\n●支持图片格式：支持jpg或png。",
           "example": "string",
           "member": "string",
           "name": "Url",
@@ -604,7 +600,7 @@
         },
         {
           "disabled": false,
-          "document": "输入图片人脸位置信息（人脸框）。不填默认取输入图中最大人脸。",
+          "document": "输入图片人脸位置信息（人脸框）。不填默认取输入图中最大人脸。\nWidth、Height >= 30。",
           "example": "{}",
           "member": "FaceRect",
           "name": "InputImageFaceRect",
@@ -628,23 +624,21 @@
       "members": [
         {
           "disabled": false,
-          "document": "MetaData的Key",
+          "document": "MetaData的Key，长度不能超过32。",
           "example": "string",
           "member": "string",
           "name": "MetaKey",
           "required": true,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
-          "document": "MetaData的Value",
+          "document": "MetaData的Value，长度不能超过256。",
           "example": "string",
           "member": "string",
           "name": "MetaValue",
           "required": true,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         }
       ],
       "usage": "in"

@@ -5,13 +5,16 @@
 Input: 
 
 ```
-tccli cls DescribeDashboardSubscribes --cli-unfold-argument ```
+tccli cls DescribeDashboardSubscribes --cli-unfold-argument  \
+    --Offset 10 \
+    --Limit 30
+```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx"
+        "RequestId": "6ef60bec-0242-43af-bb20-270359fb54a7"
     }
 }
 ```

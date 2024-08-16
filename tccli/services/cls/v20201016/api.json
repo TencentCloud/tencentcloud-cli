@@ -372,7 +372,7 @@
       "status": "online"
     },
     "DescribeDashboardSubscribes": {
-      "document": " 本接口用于获取仪表盘订阅列表，支持分页",
+      "document": "本接口用于获取仪表盘订阅列表，支持分页",
       "input": "DescribeDashboardSubscribesRequest",
       "name": "获取仪表盘订阅列表",
       "output": "DescribeDashboardSubscribesResponse",
@@ -2512,8 +2512,8 @@
         },
         {
           "disabled": false,
-          "document": "开始时间，支持绝对时间(13位时间戳字符串)/相对时间字符串",
-          "example": "now-1d或'1706781017413'",
+          "document": "默认查询范围的开始时间点，支持绝对时间(13位Unix时间戳)或相对时间表达式",
+          "example": "'1706781017413'或now-7d",
           "member": "string",
           "name": "StartTime",
           "output_required": false,
@@ -2523,8 +2523,8 @@
         },
         {
           "disabled": false,
-          "document": "结束时间，支持绝对时间(13位时间戳字符串)/相对时间字符串",
-          "example": "now或'1706780117413'",
+          "document": "默认查询范围的结束时间点，支持绝对时间(13位Unix时间戳)或相对时间表达式。注意，结束时间点要大于开始时间点",
+          "example": "'1706791017413'或now",
           "member": "string",
           "name": "EndTime",
           "output_required": false,
@@ -2534,8 +2534,8 @@
         },
         {
           "disabled": false,
-          "document": "当StartTime/EndTime为相对时间时，基于NowTime计算绝对时间，默认为创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1706787306086",
+          "document": "仅当StartTime/EndTime为相对时间时使用，基于NowTime计算绝对时间，默认为创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1706797306086",
           "member": "uint64",
           "name": "NowTime",
           "output_required": false,
@@ -2545,7 +2545,7 @@
         },
         {
           "disabled": false,
-          "document": "params参数列表，当Type为2时支持\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "默认的检索分析语句，仅当Type为2时使用\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[     {         \"Name\":\"query\",         \"Values\":[             \"* | select *\"         ]     } ]",
           "member": "ConsoleSharingParam",
           "name": "Params",
@@ -2556,8 +2556,8 @@
         },
         {
           "disabled": false,
-          "document": "是否允许访问者自行修改检索分析时间范围，默认不锁定",
-          "example": "true",
+          "document": "是否允许访问者自行修改检索分析时间范围。默认不锁定（false）",
+          "example": "false",
           "member": "bool",
           "name": "IsLockTimeRange",
           "output_required": true,
@@ -2567,14 +2567,25 @@
         },
         {
           "disabled": false,
-          "document": "是否允许访问者自行修改日志检索语句。在检索页分享中表示检索语句锁定状态；在仪表盘中表示过滤变量锁定状态",
-          "example": "true",
+          "document": "是否允许访问者自行修改日志检索语句。在检索页分享中表示检索语句锁定状态；在仪表盘中表示过滤变量锁定状态。默认不锁定（false）",
+          "example": "false",
           "member": "bool",
           "name": "IsLockQuery",
           "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "检索页分享是否允许访问者下载日志，默认不允许（false）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "IsSupportLogExport",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -4038,7 +4049,44 @@
     },
     "CreateDashboardSubscribeRequest": {
       "document": "CreateDashboardSubscribe请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "仪表盘订阅名称。",
+          "example": "仪表盘-CLS-日报",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "仪表盘id。",
+          "example": "xxx-xxx-xxx-xxx",
+          "member": "string",
+          "name": "DashboardId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "订阅时间cron表达式，格式为：{秒数} {分钟} {小时} {日期} {月份} {星期}；（有效数据为：{分钟} {小时} {日期} {月份} {星期}）。<br><li/>{秒数} 取值范围： 0 ~ 59 <br><li/>{分钟} 取值范围： 0 ~ 59  <br><li/>{小时} 取值范围： 0 ~ 23  <br><li/>{日期} 取值范围： 1 ~ 31 AND (dayOfMonth最后一天： L) <br><li/>{月份} 取值范围： 1 ~ 12 <br><li/>{星期} 取值范围： 0 ~ 6 【0:星期日， 6星期六】",
+          "example": "\"0 0 10 L * ?\"",
+          "member": "string",
+          "name": "Cron",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "仪表盘订阅数据。",
+          "example": "无",
+          "member": "DashboardSubscribeData",
+          "name": "SubscribeData",
+          "required": true,
+          "type": "object"
+        }
+      ],
       "type": "object"
     },
     "CreateDashboardSubscribeResponse": {
@@ -5889,7 +5937,17 @@
     },
     "DeleteDashboardSubscribeRequest": {
       "document": "DeleteDashboardSubscribe请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "仪表盘订阅记录id。",
+          "example": "id",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int"
+        }
+      ],
       "type": "object"
     },
     "DeleteDashboardSubscribeResponse": {
@@ -6811,7 +6869,35 @@
     },
     "DescribeDashboardSubscribesRequest": {
       "document": "DescribeDashboardSubscribes请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "<br><li/> dashboardId：按照【仪表盘id】进行过滤。类型：String必选：否<br><br><li/> 每次请求的Filters的上限为10，Filter.Values的上限为100。",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "分页的偏移量，默认值为0。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页单页限制数目，默认值为20，最大值100。",
+          "example": "30",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
       "type": "object"
     },
     "DescribeDashboardSubscribesResponse": {
@@ -11038,7 +11124,53 @@
     },
     "ModifyDashboardSubscribeRequest": {
       "document": "ModifyDashboardSubscribe请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "仪表盘订阅id。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "仪表盘id。",
+          "example": "xxx-xxx-xxx-xxx",
+          "member": "string",
+          "name": "DashboardId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "仪表盘订阅名称。",
+          "example": "仪表盘-CLS-日报",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "订阅时间cron表达式，格式为：{秒数} {分钟} {小时} {日期} {月份} {星期}；（有效数据为：{分钟} {小时} {日期} {月份} {星期}）。",
+          "example": "\"0 0 10 L * ?\"",
+          "member": "string",
+          "name": "Cron",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "仪表盘订阅数据。",
+          "example": "无",
+          "member": "DashboardSubscribeData",
+          "name": "SubscribeData",
+          "required": false,
+          "type": "object"
+        }
+      ],
       "type": "object"
     },
     "ModifyDashboardSubscribeResponse": {

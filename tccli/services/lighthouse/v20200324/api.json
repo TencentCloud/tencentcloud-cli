@@ -4231,6 +4231,24 @@
           "name": "Limit",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "指定排序字段 。取值范围： \"EXPIRED_TIME\"：依据实例的到期时间排序。 \n 不传入此字段时, 优先返回实例状态为“待回收”的实例, 其余实例以“创建时间”倒序返回。",
+          "example": "EXPIRED_TIME",
+          "member": "string",
+          "name": "OrderField",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "输出实例列表的排列顺序。取值范围：\n\"ASC\"：升序排列。\n\"DESC\"：降序排列。\n默认按升序排序。当传入该字段时，必须指定OrderField。",
+          "example": "DESC",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

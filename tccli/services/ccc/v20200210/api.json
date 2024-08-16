@@ -5461,6 +5461,15 @@
         },
         {
           "disabled": false,
+          "document": "座席工号",
+          "example": "114514",
+          "member": "string",
+          "name": "StaffNo",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "绑定技能组ID列表",
           "example": "[123,134]",
           "member": "int64",

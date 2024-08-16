@@ -125,7 +125,7 @@
     "CreateDashboardSubscribe": [
       {
         "document": "创建仪表盘订阅",
-        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDashboardSubscribe\n<公共请求参数>\n\n{}",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDashboardSubscribe\n<公共请求参数>\n\n{\n    \"Name\": \"每月最后一天早晨10点\",\n    \"DashboardId\": \"xxx-xxxxxx-xxxxxxx-xxxxxxxx\",\n    \"Cron\": \"0 0 10 L * ?\",\n    \"SubscribeData\": {\n        \"DashboardTime\": [\n            \"2022-05-01T00:00:00.000\",\n            \"2022-05-31T23:59:59.999\"\n        ],\n        \"TemplateVariables\": [\n            {\n                \"Key\": \"name\",\n                \"Values\": [\n                    \"abc\"\n                ]\n            }\n        ],\n        \"NoticeModes\": [\n            {\n                \"ReceiverType\": \"Uin\",\n                \"Values\": [\n                    \"168053\"\n                ],\n                \"ReceiverChannels\": [\n                    \"Sms\"\n                ]\n            },\n            {\n                \"ReceiverType\": \"Group\",\n                \"Values\": [\n                    \"10721522\",\n                    \"9553840\"\n                ],\n                \"ReceiverChannels\": [\n                    \"Sms\"\n                ]\n            },\n            {\n                \"ReceiverType\": \"Email\",\n                \"Values\": [\n                    \"3333@qq.com\",\n                    \"xxx@163.com\"\n                ],\n                \"ReceiverChannels\": []\n            }\n        ]\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "创建仪表盘订阅"
       }
@@ -277,7 +277,7 @@
     "DeleteDashboardSubscribe": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDashboardSubscribe\n<公共请求参数>\n\n{}",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDashboardSubscribe\n<公共请求参数>\n\n{\n    \"Id\": 10\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "创建仪表盘订阅"
       }
@@ -445,8 +445,8 @@
     "DescribeDashboardSubscribes": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDashboardSubscribes\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDashboardSubscribes\n<公共请求参数>\n\n{\n    \"Filters\": [],\n    \"Offset\": 10,\n    \"Limit\": 30\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "获取仪表盘订阅列表"
       }
     ],
@@ -681,7 +681,7 @@
     "ModifyDashboardSubscribe": [
       {
         "document": "修改仪表盘订阅",
-        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDashboardSubscribe\n<公共请求参数>\n\n{}",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDashboardSubscribe\n<公共请求参数>\n\n{\n    \"Id\": 1,\n    \"Name\": \"每月最后一天早晨10点\",\n    \"DashboardId\": \"xxx-xxxxxx-xxxxxxx-xxxxxxxx\",\n    \"Cron\": \"0 0 10 L * ?\",\n    \"SubscribeData\": {\n        \"DashboardTime\": [\n            \"2022-05-01T00:00:00.000\",\n            \"2022-05-31T23:59:59.999\"\n        ],\n        \"TemplateVariables\": [\n            {\n                \"Key\": \"name\",\n                \"Values\": [\n                    \"abc\"\n                ]\n            }\n        ],\n        \"NoticeModes\": [\n            {\n                \"ReceiverType\": \"Uin\",\n                \"Values\": [\n                    \"168053\"\n                ],\n                \"ReceiverChannels\": [\n                    \"Sms\"\n                ]\n            },\n            {\n                \"ReceiverType\": \"Group\",\n                \"Values\": [\n                    \"10721522\",\n                    \"9553840\"\n                ],\n                \"ReceiverChannels\": [\n                    \"Sms\"\n                ]\n            },\n            {\n                \"ReceiverType\": \"Email\",\n                \"Values\": [\n                    \"3333@qq.com\",\n                    \"xxx@163.com\"\n                ],\n                \"ReceiverChannels\": []\n            }\n        ]\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "修改仪表盘订阅"
       }

@@ -63,6 +63,13 @@
       "output": "ClassifyDetectOCRResponse",
       "status": "online"
     },
+    "ClassifyStoreName": {
+      "document": "本接口用于识别门头照分类标签信息",
+      "input": "ClassifyStoreNameRequest",
+      "name": "门头照分类",
+      "output": "ClassifyStoreNameResponse",
+      "status": "online"
+    },
     "CreateAIFormTask": {
       "document": "本接口可创建智能表单录入任务，支持多个识别图片和PDF的URL上传，返回含有识别内容的操作页面URL。\n\n智能表单录入产品提供高准确率的表单识别技术和人工核对工具，支持自定义字段，将识别结果自动填入到自定义条目中，并提供人工操作工具，完成整个表单识别过程。适用性强，可对票据、合同、货单等文件的识别，适用于金融、货代、保险、档案等领域。本产品免费公测中，您可以点击demo（超链接：https://ocr.smartform.cloud.tencent.com/）试用，如需购买请与商务团队联系。",
       "input": "CreateAIFormTaskRequest",
@@ -411,6 +418,13 @@
       "input": "RecognizePhilippinesVoteIDOCRRequest",
       "name": "菲律宾VoteID识别",
       "output": "RecognizePhilippinesVoteIDOCRResponse",
+      "status": "online"
+    },
+    "RecognizeStoreName": {
+      "document": "本接口用于识别门头照文字识别结果以及对应分类标签信息",
+      "input": "RecognizeStoreNameRequest",
+      "name": "门头照识别",
+      "output": "RecognizeStoreNameResponse",
       "status": "online"
     },
     "RecognizeTableAccurateOCR": {
@@ -2532,6 +2546,52 @@
           "member": "ClassifyDetectInfo",
           "name": "ClassifyDetectInfos",
           "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ClassifyStoreNameRequest": {
+      "document": "ClassifyStoreName请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n支持的图片像素：需介于20-10000px之间。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "example": "无",
+          "member": "string",
+          "name": "ImageBase64",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "图片的 Url 地址。支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。支持的图片像素：需介于20-10000px之间。图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "example": "https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/docume",
+          "member": "string",
+          "name": "ImageUrl",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ClassifyStoreNameResponse": {
+      "document": "ClassifyStoreName返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "门头照标签",
+          "example": "无",
+          "member": "string",
+          "name": "StoreLabel",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -10657,11 +10717,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "类型（二维码、条形码）",
+          "document": "类型包括\n二维码：QR_CODE\n一维码：EAN-13、EAN-8、EAN-2、UPC-A、UPC-E、CODE-39、CODE-93、CODE-128 \nPDF：PDF_417\nDataMatrix：DATA_MATRIX\n小程序码：WX_CODE",
           "example": "无",
           "member": "string",
           "name": "TypeName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10671,7 +10731,7 @@
           "example": "无",
           "member": "string",
           "name": "Url",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10681,7 +10741,7 @@
           "example": "无",
           "member": "QrcodePositionObj",
           "name": "Position",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         }
@@ -13115,6 +13175,72 @@
       ],
       "type": "object"
     },
+    "RecognizeStoreNameRequest": {
+      "document": "RecognizeStoreName请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n支持的图片像素：需介于20-10000px之间。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "example": "无",
+          "member": "string",
+          "name": "ImageBase64",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "图片的 Url 地址。支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。支持的图片像素：需介于20-10000px之间。图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "example": "https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/docume",
+          "member": "string",
+          "name": "ImageUrl",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RecognizeStoreNameResponse": {
+      "document": "RecognizeStoreName返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "门头照名称",
+          "example": "无",
+          "member": "StoreInfo",
+          "name": "StoreInfo",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "图片旋转角度（角度制），文本的水平方向为0°，顺时针为正，逆时针为负",
+          "example": "无",
+          "member": "float",
+          "name": "Angle",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "门头照标签",
+          "example": "无",
+          "member": "string",
+          "name": "StoreLabel",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "RecognizeTableAccurateOCRRequest": {
       "document": "RecognizeTableAccurateOCR请求参数结构体",
       "members": [
@@ -15166,6 +15292,42 @@
         }
       ],
       "type": "object"
+    },
+    "StoreInfo": {
+      "document": "门头照识别结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "识别出的字段名称(关键字)，支持以下字段：\n付款开户行、收款开户行、付款账号、收款账号、回单类型、回单编号、币种、流水号、凭证号码、交易机构、交易金额、手续费、日期等字段信息。",
+          "example": "商店名称",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "识别出的字段名称对应的值，也就是字段Name对应的字符串结果。",
+          "example": "Everyday Chain",
+          "member": "string",
+          "name": "Value",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文本行在旋转纠正之后的图像中的像素坐标",
+          "example": "无",
+          "member": "Rect",
+          "name": "Rect",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "StructuralItem": {
       "document": "智能结构化识别",

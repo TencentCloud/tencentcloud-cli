@@ -10642,7 +10642,7 @@
         {
           "disabled": false,
           "document": "转自适应码流模板唯一标识过滤条件，数组长度限制：100。",
-          "example": "[\"10001\\n\"]",
+          "example": "[10001]",
           "member": "uint64",
           "name": "Definitions",
           "required": false,
@@ -19596,6 +19596,26 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "帧率分子部分\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "30",
+          "member": "int64",
+          "name": "FpsNumerator",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "帧率分母部分\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "FpsDenominator",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -26759,7 +26779,7 @@
         },
         {
           "disabled": false,
-          "document": "视频帧率，取值范围：[0, 120]，单位：Hz。 当取值为 0，表示帧率和原始视频保持一致。\n注意：自适应码率时取值范围是 [0, 60]",
+          "document": "视频帧率，取值范围：\n当FpsDenominator的值为空时，范围：[0, 120]，单位：Hz；\n当FpsDenominator的值不为空时，Fps/FpsDenominator的范围：[0,120]\n当取值为 0，表示帧率和原始视频保持一致。",
           "example": "0",
           "member": "int64",
           "name": "Fps",
@@ -26770,7 +26790,7 @@
         },
         {
           "disabled": false,
-          "document": "视频流的码率，取值范围：0 和 [128, 35000]，单位：kbps。\n当取值为 0，表示视频码率和原始视频保持一致。",
+          "document": "视频流的码率，取值范围：0 和 [128, 100000]，单位：kbps。\n当取值为 0，表示视频码率和原始视频保持一致。",
           "example": "0",
           "member": "int64",
           "name": "Bitrate",
@@ -26855,6 +26875,17 @@
           "required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "帧率分母部分\n注意：值必须大于0\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "FpsDenominator",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -26875,7 +26906,7 @@
         },
         {
           "disabled": false,
-          "document": "视频帧率，取值范围：[0, 120]，单位：Hz。 当取值为 0，表示帧率和原始视频保持一致。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "视频帧率，取值范围：\n当FpsDenominator的值为空时，范围：[0, 120]，单位：Hz；\n当FpsDenominator的值不为空时，Fps/FpsDenominator的范围：[0,120]\n当取值为 0，表示帧率和原始视频保持一致。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "Fps",
@@ -26886,7 +26917,7 @@
         },
         {
           "disabled": false,
-          "document": "视频流的码率，取值范围：0 和 [128, 35000]，单位：kbps。\n当取值为 0，表示视频码率和原始视频保持一致。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "视频流的码率，取值范围：0 和 [128, 100000]，单位：kbps。\n当取值为 0，表示视频码率和原始视频保持一致。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "Bitrate",
@@ -26978,6 +27009,17 @@
           "example": "无",
           "member": "int64",
           "name": "SegmentType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "帧率分母部分\n注意：值必须大于0\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "FpsDenominator",
           "output_required": false,
           "required": false,
           "type": "int",

@@ -1,165 +1,165 @@
 {
   "actions": {
     "CancelEncryptTask": {
-      "document": "产品已经停止售卖\n\n该接口供渠道合作应用加固使用，接口调用有白名单用户限制，取消渠道合作加固中的任务",
+      "document": "该接口供渠道合作应用加固使用，接口调用有白名单用户限制，取消渠道合作加固中的任务",
       "input": "CancelEncryptTaskRequest",
       "name": "取消渠道合作加固任务",
       "output": "CancelEncryptTaskResponse",
-      "status": "deprecated"
+      "status": "online"
     },
     "CreateBindInstance": {
-      "document": "产品已经停止售卖\n\n将应用和资源进行绑定。（注意：根据国家互联网用户实名制相关要求，使用该产品前，需先完成实名认证。）",
+      "document": "将应用和资源进行绑定。（注意：根据国家互联网用户实名制相关要求，使用该产品前，需先完成实名认证。）",
       "input": "CreateBindInstanceRequest",
       "name": "将应用绑定到资源",
       "output": "CreateBindInstanceResponse",
-      "status": "deprecated"
+      "status": "online"
     },
     "CreateCosSecKeyInstance": {
-      "document": "产品已经停止售卖\n\n获取云COS文件存储临时密钥，密钥仅限于临时上传文件，有访问限制和时效性，请保管好临时密钥。",
+      "document": "获取云COS文件存储临时密钥，密钥仅限于临时上传文件，有访问限制和时效性，请保管好临时密钥。",
       "input": "CreateCosSecKeyInstanceRequest",
       "name": "获取云COS临时密钥",
       "output": "CreateCosSecKeyInstanceResponse",
-      "status": "deprecated"
+      "status": "online"
     },
     "CreateEncryptInstance": {
-      "document": "产品已经停止售卖\n\n该接口供渠道合作应用加固使用，接口调用有白名单用户限制，用于创建加固任务。",
+      "document": "该接口供渠道合作应用加固使用，接口调用有白名单用户限制，用于创建加固任务。",
       "input": "CreateEncryptInstanceRequest",
       "name": "创建渠道合作应用加固任务",
       "output": "CreateEncryptInstanceResponse",
-      "status": "deprecated"
+      "status": "online"
     },
     "CreateOrderInstance": {
-      "document": "产品已经停止售卖\n\n该接口供渠道合作应用加固使用，接口调用有白名单用户限制。\n订单类型有：免费试用、按年收费、按次收费。\n应用加固支持的平台类型有：android加固 、ios源码混淆 、sdk加固、applet小程序加固",
+      "document": "该接口供渠道合作应用加固使用，接口调用有白名单用户限制。\n订单类型有：免费试用、按年收费、按次收费。\n应用加固支持的平台类型有：android加固 、ios源码混淆 、sdk加固、applet小程序加固",
       "input": "CreateOrderInstanceRequest",
       "name": "创建渠道合作应用加固订单",
       "output": "CreateOrderInstanceResponse",
-      "status": "deprecated"
+      "status": "online"
     },
     "CreateResourceInstances": {
-      "document": "产品已经停止售卖\n\n用户可以使用该接口自建资源，只支持白名单用户",
+      "document": "用户可以使用该接口自建资源，只支持白名单用户",
       "input": "CreateResourceInstancesRequest",
       "name": "创建资源",
       "output": "CreateResourceInstancesResponse",
-      "status": "deprecated"
+      "status": "online"
     },
     "CreateShieldInstance": {
-      "document": "产品已经停止售卖\n\n用户通过该接口提交应用进行应用加固，加固后需通过DescribeShieldResult接口查询加固结果。（注意：根据国家互联网用户实名制相关要求，使用该产品前，需先完成实名认证。）",
+      "document": "用户通过该接口提交应用进行应用加固，加固后需通过DescribeShieldResult接口查询加固结果。（注意：根据国家互联网用户实名制相关要求，使用该产品前，需先完成实名认证。）",
       "input": "CreateShieldInstanceRequest",
       "name": "提交加固基础数据",
       "output": "CreateShieldInstanceResponse",
-      "status": "deprecated"
+      "status": "online"
     },
     "CreateShieldPlanInstance": {
-      "document": "产品已经停止售卖\n\n对资源进行策略新增。（注意：根据国家互联网用户实名制相关要求，使用该产品前，需先完成实名认证。）",
+      "document": "对资源进行策略新增。（注意：根据国家互联网用户实名制相关要求，使用该产品前，需先完成实名认证。）",
       "input": "CreateShieldPlanInstanceRequest",
       "name": "新增加固策略",
       "output": "CreateShieldPlanInstanceResponse",
-      "status": "deprecated"
+      "status": "online"
     },
     "DeleteShieldInstances": {
-      "document": "产品已经停止售卖\n\n删除一个或者多个app加固信息。（注意：根据国家互联网用户实名制相关要求，使用该产品前，需先完成实名认证。）",
+      "document": "删除一个或者多个app加固信息。（注意：根据国家互联网用户实名制相关要求，使用该产品前，需先完成实名认证。）",
       "input": "DeleteShieldInstancesRequest",
       "name": "批量删除提交过的app信息",
       "output": "DeleteShieldInstancesResponse",
-      "status": "deprecated"
+      "status": "online"
     },
     "DescribeApkDetectionResult": {
-      "document": "产品已经停止售卖\n\n该接口采用同步模式请求腾讯APK云检测服务，即时返回检测数据，需要用户用轮询的方式调用本接口来进行样本送检并获取检测结果(每隔60s发送一次请求，传相同的参数，重试30次)，一般情况下0.5h内会出检测结果，最长时间是3h。当Result为ok并且ResultList数组非空有值时，代表检测完毕，若长时间获取不到检测结果，请联系客服。",
+      "document": "该接口采用同步模式请求腾讯APK云检测服务，即时返回检测数据，需要用户用轮询的方式调用本接口来进行样本送检并获取检测结果(每隔60s发送一次请求，传相同的参数，重试30次)，一般情况下0.5h内会出检测结果，最长时间是3h。当Result为ok并且ResultList数组非空有值时，代表检测完毕，若长时间获取不到检测结果，请联系客服。",
       "input": "DescribeApkDetectionResultRequest",
       "name": "环境安全检测-apk检测",
       "output": "DescribeApkDetectionResultResponse",
-      "status": "deprecated"
+      "status": "online"
     },
     "DescribeEncryptInstances": {
-      "document": "产品已经停止售卖\n\n该接口供渠道合作应用加固使用，接口调用有白名单用户限制，用于查询加固任务，入参中的条件过滤字段均为精准匹配。支持功能点: 1. 多任务分页查询  2.根据任务Id唯一值查询单记录",
+      "document": "该接口供渠道合作应用加固使用，接口调用有白名单用户限制，用于查询加固任务，入参中的条件过滤字段均为精准匹配。支持功能点: 1. 多任务分页查询  2.根据任务Id唯一值查询单记录",
       "input": "DescribeEncryptInstancesRequest",
       "name": "查询渠道合作加固任务",
       "output": "DescribeEncryptInstancesResponse",
-      "status": "deprecated"
+      "status": "online"
     },
     "DescribeEncryptPlan": {
-      "document": "产品已经停止售卖\n\n该接口供渠道合作应用加固使用，接口调用有白名单用户限制。入参中的条件过滤字段均为精准匹配。",
+      "document": "该接口供渠道合作应用加固使用，接口调用有白名单用户限制。入参中的条件过滤字段均为精准匹配。",
       "input": "DescribeEncryptPlanRequest",
       "name": "载入渠道合作加固上次使用的加固配置",
       "output": "DescribeEncryptPlanResponse",
-      "status": "deprecated"
+      "status": "online"
     },
     "DescribeOrderInstances": {
-      "document": "产品已经停止售卖\n\n该接口供渠道合作应用加固使用，接口调用有白名单用户限制。 接口返回的结果为：创建订单后，订单审批状态信息，以及与订单关联的资源状态等信息，入参中的条件过滤字段均为精准匹配.\n接口功能点：\n1.支持多订单分页查询；\n2.支持唯一订单号精准匹配查询；\n3.支持唯一资源号精准匹配查询；",
+      "document": "该接口供渠道合作应用加固使用，接口调用有白名单用户限制。 接口返回的结果为：创建订单后，订单审批状态信息，以及与订单关联的资源状态等信息，入参中的条件过滤字段均为精准匹配.\n接口功能点：\n1.支持多订单分页查询；\n2.支持唯一订单号精准匹配查询；\n3.支持唯一资源号精准匹配查询；",
       "input": "DescribeOrderInstancesRequest",
       "name": "查询渠道合作应用加固订单信息",
       "output": "DescribeOrderInstancesResponse",
-      "status": "deprecated"
+      "status": "online"
     },
     "DescribeResourceInstances": {
-      "document": "产品已经停止售卖\n\n获取某个用户的所有资源信息。（注意：根据国家互联网用户实名制相关要求，使用该产品前，需先完成实名认证。）",
+      "document": "获取某个用户的所有资源信息。（注意：根据国家互联网用户实名制相关要求，使用该产品前，需先完成实名认证。）",
       "input": "DescribeResourceInstancesRequest",
       "name": "获取用户的所有资源信息",
       "output": "DescribeResourceInstancesResponse",
-      "status": "deprecated"
+      "status": "online"
     },
     "DescribeShieldInstances": {
-      "document": "产品已经停止售卖\n\n本接口用于查看app列表。\n可以通过指定任务唯一标识ItemId来查询指定app的详细信息，或通过设定过滤器来查询满足过滤条件的app的详细信息。 指定偏移(Offset)和限制(Limit)来选择结果中的一部分，默认返回满足条件的前20个app信息。（注意：根据国家互联网用户实名制相关要求，使用该产品前，需先完成实名认证。）\n",
+      "document": "本接口用于查看app列表。\n可以通过指定任务唯一标识ItemId来查询指定app的详细信息，或通过设定过滤器来查询满足过滤条件的app的详细信息。 指定偏移(Offset)和限制(Limit)来选择结果中的一部分，默认返回满足条件的前20个app信息。（注意：根据国家互联网用户实名制相关要求，使用该产品前，需先完成实名认证。）\n",
       "input": "DescribeShieldInstancesRequest",
       "name": "用户查询提交过的app列表",
       "output": "DescribeShieldInstancesResponse",
-      "status": "deprecated"
+      "status": "online"
     },
     "DescribeShieldPlanInstance": {
-      "document": "产品已经停止售卖\n\n查询加固策略。（注意：根据国家互联网用户实名制相关要求，使用该产品前，需先完成实名认证。）",
+      "document": "查询加固策略。（注意：根据国家互联网用户实名制相关要求，使用该产品前，需先完成实名认证。）",
       "input": "DescribeShieldPlanInstanceRequest",
       "name": "查询加固策略",
       "output": "DescribeShieldPlanInstanceResponse",
-      "status": "deprecated"
+      "status": "online"
     },
     "DescribeShieldResult": {
-      "document": "产品已经停止售卖\n\n通过唯一标识获取加固的结果。（注意：根据国家互联网用户实名制相关要求，使用该产品前，需先完成实名认证。）",
+      "document": "通过唯一标识获取加固的结果。（注意：根据国家互联网用户实名制相关要求，使用该产品前，需先完成实名认证。）",
       "input": "DescribeShieldResultRequest",
       "name": "查询加固结果",
       "output": "DescribeShieldResultResponse",
-      "status": "deprecated"
+      "status": "online"
     },
     "DescribeUrlDetectionResult": {
-      "document": "产品已经停止售卖\n\n移动安全-网址检测服务",
+      "document": "移动安全-网址检测服务",
       "input": "DescribeUrlDetectionResultRequest",
       "name": "移动安全-查询网址检测结果服务",
       "output": "DescribeUrlDetectionResultResponse",
-      "status": "deprecated"
+      "status": "online"
     },
     "DescribeUserBaseInfoInstance": {
-      "document": "产品已经停止售卖\n\n获取用户基础信息",
+      "document": "获取用户基础信息",
       "input": "DescribeUserBaseInfoInstanceRequest",
       "name": "获取用户基础信息",
       "output": "DescribeUserBaseInfoInstanceResponse",
-      "status": "deprecated"
+      "status": "online"
     },
     "DestroyResourceInstances": {
-      "document": "产品已经停止售卖\n\n渠道合作资源销毁\n安卓应用加固-按年收费资源销毁，其他类型暂不支持",
+      "document": "渠道合作资源销毁\n安卓应用加固-按年收费资源销毁，其他类型暂不支持",
       "input": "DestroyResourceInstancesRequest",
       "name": "渠道订单：资源销毁",
       "output": "DestroyResourceInstancesResponse",
-      "status": "deprecated"
+      "status": "online"
     },
     "RequestLocalTask": {
-      "document": "产品已经停止售卖\n\nclient任务请求",
+      "document": "client任务请求",
       "input": "RequestLocalTaskRequest",
       "name": "client任务请求地址",
       "output": "RequestLocalTaskResponse",
-      "status": "deprecated"
+      "status": "online"
     },
     "UpdateClientState": {
-      "document": "产品已经停止售卖\n\n更新client状态，需要白名单",
+      "document": "更新client状态，需要白名单",
       "input": "UpdateClientStateRequest",
       "name": "更新client状态",
       "output": "UpdateClientStateResponse",
-      "status": "deprecated"
+      "status": "online"
     },
     "UpdateLocalTaskResult": {
-      "document": "产品已经停止售卖\n\n更新本地任务执行结果",
+      "document": "更新本地任务执行结果",
       "input": "UpdateLocalTaskResultRequest",
       "name": "更新本地任务结果",
       "output": "UpdateLocalTaskResultResponse",
-      "status": "deprecated"
+      "status": "online"
     }
   },
   "metadata": {
