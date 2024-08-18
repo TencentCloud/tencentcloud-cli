@@ -1882,6 +1882,15 @@
           "name": "TableResultType",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "智能文档解析返回结果的格式\n0：只返回全文MD；\n1：只返回每一页的OCR原始Json；\n2：只返回每一页的MD，\n3：返回全文MD + 每一页的OCR原始Json；\n4：返回全文MD + 每一页的MD，\n默认值为3（返回全文MD + 每一页的OCR原始Json）\n\n",
+          "example": "3",
+          "member": "string",
+          "name": "ResultType",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"

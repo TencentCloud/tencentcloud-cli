@@ -3699,6 +3699,15 @@
           "name": "Product",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "会话统计的维度信息,可以多个维度。",
+          "example": "无",
+          "member": "StatDimension",
+          "name": "StatDimensions",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -3712,9 +3721,19 @@
           "example": "无",
           "member": "MySqlProcess",
           "name": "ProcessList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "sql会话统计信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "StatisticInfo",
+          "name": "Statistics",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -8824,6 +8843,102 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "StatDimension": {
+      "document": "会话统计的维度信息,可以多个维度",
+      "members": [
+        {
+          "disabled": false,
+          "document": "维度名称，目前仅支持：SqlTag。",
+          "example": "SqlTag",
+          "member": "string",
+          "name": "Dimension",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "SQL 标签过滤与统计信息\n示例：\n\n示例 1：[p=position] 统计包含 p=position 标签的 SQL 会话。\n示例 2：[p] 统计包含 p 标签的 SQL 会话。\n示例 3：[p=position, c=idCard] 统计同时包含 p=position 标签和 c=idCard 标签的 SQL 会话。",
+          "example": "p=postion1",
+          "member": "string",
+          "name": "Data",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
+    "StatisticDataInfo": {
+      "document": "统计分析维度下的统计数据详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "统计维度的值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "p=dbbrain,kk=cc",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "平均时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "23.1",
+          "member": "float",
+          "name": "TimeAvg",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "238.2",
+          "member": "float",
+          "name": "TimeSum",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数量。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "Count",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "StatisticInfo": {
+      "document": "sql会话统计信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "统计分析的维度。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "SqlTag",
+          "member": "string",
+          "name": "Dimension",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "统计分析的维度下的统计数据详情。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "StatisticDataInfo",
+          "name": "Data",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

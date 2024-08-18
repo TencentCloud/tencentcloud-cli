@@ -819,6 +819,13 @@
       "output": "ModifyDatabaseMdfResponse",
       "status": "online"
     },
+    "ModifyDatabasePrivilege": {
+      "document": "本接口（ModifyDatabasePrivilege）用于修改实例数据库权限。",
+      "input": "ModifyDatabasePrivilegeRequest",
+      "name": "修改实例数据库权限",
+      "output": "ModifyDatabasePrivilegeResponse",
+      "status": "online"
+    },
     "ModifyDatabaseShrinkMDF": {
       "document": "本接口(ModifyDatabaseShrinkDMF)用于收缩数据库mdf(Shrink mdf)。",
       "input": "ModifyDatabaseShrinkMDFRequest",
@@ -1323,18 +1330,16 @@
           "member": "string",
           "name": "UserName",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
-          "document": "账号权限变更信息",
+          "document": "账号权限变更信息。参数DBPrivileges和AccAllDB只能二选一",
           "example": "无",
           "member": "DBPrivilegeModifyInfo",
           "name": "DBPrivileges",
           "required": true,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         },
         {
           "disabled": false,
@@ -1343,8 +1348,7 @@
           "member": "bool",
           "name": "IsAdmin",
           "required": false,
-          "type": "bool",
-          "value_allowed_null": false
+          "type": "bool"
         },
         {
           "disabled": false,
@@ -1353,8 +1357,16 @@
           "member": "string",
           "name": "AccountType",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "全量修改指定账号下的所有DB权限，只支持特殊权限账号和普通权限账号。参数DBPrivileges和AccAllDB只能二选一",
+          "example": "无",
+          "member": "SelectAllDB",
+          "name": "AccAllDB",
+          "required": false,
+          "type": "object"
         }
       ],
       "usage": "in"
@@ -5022,6 +5034,32 @@
           "name": "Encryption",
           "required": false,
           "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "DataBasePrivilegeModifyInfo": {
+      "document": "数据库账号权限变更信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据库名称",
+          "example": "",
+          "member": "string",
+          "name": "DataBaseName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据库权限变更信息",
+          "example": "",
+          "member": "AccountPrivilege",
+          "name": "AccountPrivileges",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "in"
@@ -14134,6 +14172,52 @@
       ],
       "type": "object"
     },
+    "ModifyDatabasePrivilegeRequest": {
+      "document": "ModifyDatabasePrivilege请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据库实例ID，形如mssql-njj2mtpl",
+          "example": "mssql-njj2mtpl",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据库权限变更信息",
+          "example": "无",
+          "member": "DataBasePrivilegeModifyInfo",
+          "name": "DataBaseSet",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDatabasePrivilegeResponse": {
+      "document": "ModifyDatabasePrivilege返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "异步任务流程ID",
+          "example": "30321",
+          "member": "uint64",
+          "name": "FlowId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyDatabaseShrinkMDFRequest": {
       "document": "ModifyDatabaseShrinkMDF请求参数结构体",
       "members": [
@@ -16587,6 +16671,21 @@
         }
       ],
       "usage": "out"
+    },
+    "SelectAllDB": {
+      "document": "DB权限修改类型",
+      "members": [
+        {
+          "disabled": false,
+          "document": "权限变更信息。ReadWrite表示可读写，ReadOnly表示只读，Delete表示删除账号对该DB的权限，DBOwner所有者",
+          "example": "ReadWrite",
+          "member": "string",
+          "name": "Privilege",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
     },
     "SlaveZones": {
       "document": "备可用区信息",

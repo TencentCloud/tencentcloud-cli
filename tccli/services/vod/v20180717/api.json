@@ -15390,7 +15390,7 @@
         },
         {
           "disabled": false,
-          "document": "轮播播单标识过滤条件，数组长度限制：100。",
+          "document": "过滤条件：轮播播单标识，数组长度限制：100。",
           "example": "[\"1234\"]",
           "member": "string",
           "name": "RoundPlayIds",
@@ -15399,7 +15399,43 @@
         },
         {
           "disabled": false,
-          "document": "分页偏移量，默认值：0。",
+          "document": "过滤条件，轮播播单状态，可选值： <li>Enabled：启动状态；</li> <li>Disabled：停止状态。</li>",
+          "example": "Enabled",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件：轮播播单创建时间。",
+          "example": "1",
+          "member": "TimeRange",
+          "name": "CreateTime",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件：轮播播单更新时间。",
+          "example": "无",
+          "member": "TimeRange",
+          "name": "UpdateTime",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "翻页标识，分批拉取时使用：当单次请求无法拉取所有数据，接口将会返回 ScrollToken，下一次请求携带该 Token，将会从下一条记录开始获取。",
+          "example": "无",
+          "member": "string",
+          "name": "ScrollToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页偏移量，默认值：0。已经废弃，请根据 ScrollToken 参数进行分批次查询。",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -15423,7 +15459,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "符合过滤条件的轮播播单总数。",
+          "document": "符合过滤条件的轮播播单总数。已经废弃，分批次查询请请使用 ScrollToken 参数。",
           "example": "100",
           "member": "int64",
           "name": "TotalCount",
@@ -15439,6 +15475,16 @@
           "name": "RoundPlaySet",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "翻页标识，当请求未返回所有数据，该字段表示下一条记录的 ID。当该字段为空，说明已无更多数据。",
+          "example": "无",
+          "member": "string",
+          "name": "ScrollToken",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -25583,7 +25629,7 @@
         },
         {
           "disabled": false,
-          "document": "播放状态，可选值：\n<li>Disabled：结束播放，结束后轮播任务不能再次启动。</li>\n",
+          "document": "播放状态，可选值：<li>Disabled：停止播放。</li><li>Enabled：启播时长到达后启动播放。</li>",
           "example": "Disabled",
           "member": "string",
           "name": "Status",
@@ -32981,7 +33027,7 @@
       "usage": "out"
     },
     "RoundPlayListItemInfo": {
-      "document": "轮播媒体文件信息",
+      "document": "轮播播放节目信息",
       "members": [
         {
           "disabled": false,
@@ -33002,6 +33048,17 @@
           "name": "AudioVideoType",
           "output_required": true,
           "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "播放节目的 ID，由系统分配。",
+          "example": "a01",
+          "member": "string",
+          "name": "ItemId",
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },

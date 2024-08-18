@@ -1,4 +1,4 @@
-**Example 1: 示例**
+**Example 1:  不加密请求示例**
 
 疑似高风险攻击
 
@@ -46,6 +46,36 @@ Output:
             "Message": "图片解码失败。"
         },
         "RequestId": "0e77ad29-ad65-4901-9efc-b49a6e0a357b"
+    }
+}
+```
+
+**Example 3: 全包体加密请求示例**
+
+全包体加密请求示例
+
+Input: 
+
+```
+tccli faceid DetectAIFakeFaces --cli-unfold-argument  \
+    --Encryption.Algorithm AES-256-CBC \
+    --Encryption.EncryptList EncryptionBody \
+    --Encryption.CiphertextBlob qwRTgn+52FAvnfrGL1oPBsXG4FLBd42YRw \
+    --Encryption.Iv vqfsaEOpGJESA== \
+    --EncryptedBody v32onREKL6bk6WHOGFEjE2M6kvqybGCVTjlm
+```
+
+Output: 
+```
+{
+    "Response": {
+        "AttackRiskDetailList": [
+            {
+                "Type": "SuspectedWatermark"
+            }
+        ],
+        "AttackRiskLevel": "High",
+        "RequestId": "2dd93e6f-5121-4bac-8c64-d6ad646663d2"
     }
 }
 ```

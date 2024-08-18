@@ -15,17 +15,30 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "24665720-8c93-11eb-bee6-e98cea0e6794",
         "ProcessList": [
             {
-                "Host": "127.0.0.1:42036",
-                "State": "",
-                "Command": "Sleep",
-                "Time": "1179",
-                "ID": "171588317",
-                "User": "root",
-                "Info": "",
-                "DB": "test"
+                "Command": "Query",
+                "DB": "",
+                "Host": "100.98.212.252:29285",
+                "ID": "2075425",
+                "Info": "/* p = 2342 , f=abd */  select sleep(1000)",
+                "State": "User sleep",
+                "Time": "103",
+                "User": "root"
+            }
+        ],
+        "RequestId": "7d0d84f2-d4c0-4349-b5a3-cd70b6efbdfe",
+        "Statistics": [
+            {
+                "Data": [
+                    {
+                        "Count": 1,
+                        "Name": "f=abd,p=2342",
+                        "TimeAvg": 103,
+                        "TimeSum": 103
+                    }
+                ],
+                "Dimension": "SqlTag"
             }
         ]
     }

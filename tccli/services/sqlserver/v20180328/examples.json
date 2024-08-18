@@ -966,6 +966,14 @@
         "title": "收缩数据库mdf"
       }
     ],
+    "ModifyDatabasePrivilege": [
+      {
+        "document": "以数据库维度修改权限",
+        "input": "https://sqlserver.tencentcloudapi.com/?Action=ModifyDatabasePrivilege\n&InstanceId=mssql-njj2mtpl\n&DataBaseSet.0.DataBaseName=testuser\n&DataBaseSet.0.AccountPrivileges.0.UserName=testdb\n&DataBaseSet.0.AccountPrivileges.0.Privilege=ReadOnly\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8a61e500-aa33-454c-9ec2-da2a368c39ab\",\n        \"FlowId\": \"30321\"\n    }\n}",
+        "title": "修改数据库的权限"
+      }
+    ],
     "ModifyDatabaseShrinkMDF": [
       {
         "document": "",

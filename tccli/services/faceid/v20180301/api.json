@@ -1079,7 +1079,7 @@
           "example": "iVBORw0KGgoAA......",
           "member": "string",
           "name": "FaceInput",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
@@ -1088,8 +1088,26 @@
           "example": "true",
           "member": "int64",
           "name": "FaceInputType",
-          "required": true,
+          "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否需要对请求信息进行全包体加密； 支持的加密算法:AES-256-CBC、SM4-GCM； 有加密需求的用户可使用此参数，详情请点击左侧链接。",
+          "example": "无",
+          "member": "Encryption",
+          "name": "Encryption",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "加密后的密文； 加密前的数据格式如下:{\"FaceInput\":\"AAAAA\",\"FaceInputType\":1}",
+          "example": "无",
+          "member": "string",
+          "name": "EncryptedBody",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

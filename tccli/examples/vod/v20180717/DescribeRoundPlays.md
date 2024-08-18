@@ -24,6 +24,7 @@ Output:
                 "PlayBackMode": "Loop",
                 "RoundPlaylist": [
                     {
+                        "ItemId": "a01",
                         "AudioVideoType": "Transcode",
                         "Definition": 100,
                         "FileId": "528xxx5487985271487"

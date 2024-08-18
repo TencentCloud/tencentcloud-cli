@@ -268,7 +268,7 @@
       {
         "document": "",
         "input": "https://dbbrain.tencentcloudapi.com/?Action=DescribeMySqlProcessList\n&Product=mysql\n&InstanceId=cdb-test\n&User=root\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"24665720-8c93-11eb-bee6-e98cea0e6794\",\n        \"ProcessList\": [\n            {\n                \"Host\": \"127.0.0.1:42036\",\n                \"State\": \"\",\n                \"Command\": \"Sleep\",\n                \"Time\": \"1179\",\n                \"ID\": \"171588317\",\n                \"User\": \"root\",\n                \"Info\": \"\",\n                \"DB\": \"test\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ProcessList\": [\n            {\n                \"Command\": \"Query\",\n                \"DB\": \"\",\n                \"Host\": \"100.98.212.252:29285\",\n                \"ID\": \"2075425\",\n                \"Info\": \"/* p = 2342 , f=abd */  select sleep(1000)\",\n                \"State\": \"User sleep\",\n                \"Time\": \"103\",\n                \"User\": \"root\"\n            }\n        ],\n        \"RequestId\": \"7d0d84f2-d4c0-4349-b5a3-cd70b6efbdfe\",\n        \"Statistics\": [\n            {\n                \"Data\": [\n                    {\n                        \"Count\": 1,\n                        \"Name\": \"f=abd,p=2342\",\n                        \"TimeAvg\": 103,\n                        \"TimeSum\": 103\n                    }\n                ],\n                \"Dimension\": \"SqlTag\"\n            }\n        ]\n    }\n}",
         "title": "查询实时线程列表。"
       }
     ],

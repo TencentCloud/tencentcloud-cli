@@ -310,6 +310,14 @@
         "title": "查询ck集群信息"
       }
     ],
+    "DescribeTableList": [
+      {
+        "document": "获取internal数据源和demo库下的表列表",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTableList\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdwdoris-bjizjxxx\",\n    \"DbName\": \"demo\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Message\": \"\",\n        \"RequestId\": \"28caf1f1-9192-477c-94d4-e910b87ca0fc\",\n        \"TableNames\": [\n            \"test\",\n            \"table\"\n        ]\n    }\n}",
+        "title": "获取表列表"
+      }
+    ],
     "DescribeUserBindWorkloadGroup": [
       {
         "document": "",

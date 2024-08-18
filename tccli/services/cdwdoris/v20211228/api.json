@@ -266,6 +266,13 @@
       "output": "DescribeSqlApisResponse",
       "status": "online"
     },
+    "DescribeTableList": {
+      "document": "获取指定数据源和库下的表列表",
+      "input": "DescribeTableListRequest",
+      "name": "获取表列表",
+      "output": "DescribeTableListResponse",
+      "status": "online"
+    },
     "DescribeUserBindWorkloadGroup": {
       "document": "获取当前集群各用户绑定的资源信息",
       "input": "DescribeUserBindWorkloadGroupRequest",
@@ -4539,6 +4546,89 @@
     "DescribeSqlApisResponse": {
       "document": "DescribeSqlApis返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTableListRequest": {
+      "document": "DescribeTableList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源ID，建表所用的TCHouse-D资源ID。",
+          "example": "cdwdoris-bjizjxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需要获取表列表的库",
+          "example": "demo",
+          "member": "string",
+          "name": "DbName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "使用该用户进行操作，该用户需要有对应的权限。如果该TCHouse-D集群使用CAM用户注册内核账户，则不需要填写",
+          "example": "user",
+          "member": "string",
+          "name": "UserName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户对应的密码。如果该TCHouse-D集群使用CAM用户注册内核账户，则不需要填写",
+          "example": "***",
+          "member": "string",
+          "name": "PassWord",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询库所在的数据源，不填则默认为内部数据源（internal）。",
+          "example": "internal",
+          "member": "string",
+          "name": "CatalogName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTableListResponse": {
+      "document": "DescribeTableList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "表名列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"test1\",\"test2\"]",
+          "member": "string",
+          "name": "TableNames",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

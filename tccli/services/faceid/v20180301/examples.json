@@ -87,13 +87,19 @@
         "document": "疑似高风险攻击",
         "input": "POST / HTTP/1.1\nHost: faceid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetectAIFakeFaces\n<公共请求参数>\n\n{\n    \"FaceInputType\": 1,\n    \"FaceInput\": \"VBORw0KGgoAAAANSUhEUgAAAkYAAAI9CAYAAADfOLduAAABQ2lDQ1BJQ0MgUHJvZmlsZQAAKJFjYGASSCwoyGFhYGDIzSspCnJ3UoiIjFJgf87AziDBwMcgwqCQmFxc4BgQ4ANUwgCjUcG3awyMIPqyLsgsz5I1BWZcn/xff7Y4dPvimWmY6lEAV0pqcTKQ/gPEyckFRSUMDIwJQLZyeUkBiN0CZIsUAR0FZM8AsdMh7DUgdhKEfQCsJiTIGci+AmQLJGckpgDZT4BsnSQk8XQkNtReEOD0CFBwNTI3LiTgVpJBSWpFCYh2zi+oLMpMzyhRcASGUKqCZ16yno6CkYGRMQMDKLwhqj/fAIcjoxgHQqzwKgODhTyQ8RQhlniBgWH3OgYG4Z8IMWUDBgYeoGn7/AsSixLhDmD8xlKcZmwEYXNvZ2Bgnfb//+dwBgZ2TQaGv9f///+9/f//v8sYGJhvMTAc+AYADqxgzYM88zoAAAA4ZVhJZk1NACoAAAAIAAGHaQAEAAAAAQAAABoAAAAAAAKgAgAEAAAAAQAAAkagAwAEAAAAAQAAAj0AAAAAi/M5dAAAQABJREFUeAHsvWd35EiSbYsIRlCkViW6pmq6Wry71vz/fzEf3n2fpufd\"\n}",
         "output": "{\n    \"Response\": {\n        \"AttackRiskDetailList\": [\n            {\n                \"Type\": \"SuspectedWatermark\"\n            }\n        ],\n        \"AttackRiskLevel\": \"High\",\n        \"RequestId\": \"2dd93e6f-5121-4bac-8c64-d6ad646663d2\"\n    }\n}",
-        "title": "示例"
+        "title": " 不加密请求示例"
       },
       {
         "document": "图片解码失败",
         "input": "POST / HTTP/1.1\nHost: faceid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetectAIFakeFaces\n<公共请求参数>\n\n{\n    \"FaceInputType\": 2,\n    \"FaceInput\": \"AAAAHGZ0eXBtcDQyAAAAAWlzb21tcDQxbXA0MgAADXNtb292AAAAbG12aGQAAAAA2qNvttqjb7cAAB9AAACYFgABAAABAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAAAJ/XRyYWsAAABcdGtoZAAAAAHao2+22qNvtwAAAAEAAAAAAACYFgAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAEAAAAADwAAAAtAAAAAAACRlZHRzAAAAHGVsc3QAAAAAAAAAAQAAmBYAAAAUAAEAAAAACXVtZGlhAAAAIG1kaGQAAAAA2qNvttqjb7cAAAJYAAALaFXEAAAAAAAxaGRscgAAAAAAAAAAdmlkZQAAAAAAAAAAAAAAAENvcmUgTWVkaWEgVmlkZW8AAAAJHG1pbmYAAAAUdm1oZAAAAAEAAAAAAAAAAAAAACRkaW5mAAAAHGRyZWYAAAAAAAAAAQ\"\n}",
         "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"FailedOperation.ImageDecodeFailed\",\n            \"Message\": \"图片解码失败。\"\n        },\n        \"RequestId\": \"0e77ad29-ad65-4901-9efc-b49a6e0a357b\"\n    }\n}",
         "title": "异常示例"
+      },
+      {
+        "document": "全包体加密请求示例",
+        "input": "POST / HTTP/1.1\nHost: faceid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetectAIGCContent\n<公共请求参数>\n\n{\n    \"Encryption\": {\n        \"Algorithm\": \"AES-256-CBC\",\n        \"EncryptList\": [\n            \"EncryptionBody\"\n        ],\n        \"CiphertextBlob\": \"qwRTgn+52FAvnfrGL1oPBsXG4FLBd42YRw\",\n        \"Iv\": \"vqfsaEOpGJESA==\"\n    },\n    \"EncryptedBody\": \"v32onREKL6bk6WHOGFEjE2M6kvqybGCVTjlm\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AttackRiskDetailList\": [\n            {\n                \"Type\": \"SuspectedWatermark\"\n            }\n        ],\n        \"AttackRiskLevel\": \"High\",\n        \"RequestId\": \"2dd93e6f-5121-4bac-8c64-d6ad646663d2\"\n    }\n}",
+        "title": "全包体加密请求示例"
       }
     ],
     "DetectAuth": [

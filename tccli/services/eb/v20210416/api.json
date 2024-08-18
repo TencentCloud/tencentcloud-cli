@@ -744,6 +744,7 @@
           "example": "eb-xxxxxxxx",
           "member": "string",
           "name": "EventBusId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
