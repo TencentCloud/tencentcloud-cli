@@ -2839,11 +2839,11 @@
       "usage": "out"
     },
     "AiQualityControlTaskInput": {
-      "document": "视频质检输入参数类型",
+      "document": "媒体质检输入参数类型",
       "members": [
         {
           "disabled": false,
-          "document": "媒体质检模板 ID 。暂时可以直接使用 预设模板ID 10，后面控制台支持用户配置自定义模板。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "媒体质检模板 ID 。\n可以直接使用预设模板，也可以在控制台自定义模板。预设模板如下：\n- 10：开启所有质检项；\n- 20：仅开启格式诊断对应质检项；\n- 30：仅开启无参考打分对应质检项；\n- 40：仅开启画面质量对应质检项。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
           "member": "uint64",
           "name": "Definition",
@@ -13875,31 +13875,31 @@
       "members": [
         {
           "disabled": false,
-          "document": "诊断出的异常类别。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "诊断出的异常类别，取值范围：\nDecodeParamException：解码参数异常\nTimeStampException：时间戳异常\nFrameException： 帧率异常\nStreamStatusException：流状态异常\nStreamInfo：流信息异常\nStreamAbnormalCharacteristics：流特征异常\nDecodeException：解码异常\nHLSRequirements：HLS 格式异常\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "DecodeException",
           "member": "string",
           "name": "Category",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "诊断出的具体异常类型。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "诊断出的具体异常类型，取值如下：\n\nVideoResolutionChanged：视频分辨率变化\nAudioSampleRateChanged：音频采样率变化\nAudioChannelsChanged：音频通道数变化\nParameterSetsChanged：流参数集信息发生变化\nDarOrSarInvalid：视频的宽高比异常\nTimestampFallback：DTS时间戳回退\nDtsJitter：DTS抖动过大\nPtsJitter：PTS抖动过大\nAACDurationDeviation：AAC帧时间戳间隔不合理\nAudioDroppingFrames：音频丢帧\nVideoDroppingFrames：视频丢帧\nAVTimestampInterleave：音视频交织不合理\nPtsLessThanDts：媒体流的 pts 小于 dts\nReceiveFpsJitter：网络接收帧率抖动过大\nReceiveFpsTooSmall：网络接收视频帧率过小\nFpsJitter：通过PTS计算得到的流帧率抖动过大\nStreamOpenFailed：流打开失败\nStreamEnd：流结束\nStreamParseFailed：流解析失败\nVideoFirstFrameNotIdr：首帧不是IDR帧\nStreamNALUError：NALU起始码错误\nTsStreamNoAud：mpegts的H26x流缺失 AUD NALU\nAudioStreamLack：无音频流\nVideoStreamLack：无视频流\nLackAudioRecover：缺失音频流恢复\nLackVideoRecover：缺失视频流恢复\nVideoBitrateOutofRange：视频流码率(kbps)超出范围\nAudioBitrateOutofRange：音频流码率(kbps)超出范围\nVideoDecodeFailed：视频解码错误\nAudioDecodeFailed：音频解码错误\nAudioOutOfPhase：双通道音频相位相反\nVideoDuplicatedFrame：视频流中存在重复帧\nAudioDuplicatedFrame：音频流中存在重复帧\nVideoRotation：视频画面旋转\nTsMultiPrograms：MPEG2-TS流有多个program\nMp4InvalidCodecFourcc：MP4中codec fourcc不符合Apple HLS要求\nHLSBadM3u8Format：无效的m3u8文件\nHLSInvalidMasterM3u8：无效的main m3u8文件\nHLSInvalidMediaM3u8：无效的media m3u8文件\nHLSMasterM3u8Recommended：main m3u8缺少标准推荐的参数\nHLSMediaM3u8Recommended：media m3u8缺少标准推荐的参数\nHLSMediaM3u8DiscontinuityExist：media m3u8存在EXT-X-DISCONTINUITY\nHLSMediaSegmentsStreamNumChange：切片的流数目发生变化\nHLSMediaSegmentsPTSJitterDeviation：切片间PTS跳变且没有EXT-X-DISCONTINUITY\nHLSMediaSegmentsDTSJitterDeviation：切片间DTS跳变且没有EXT-X-DISCONTINUITY\nTimecodeTrackExist：MP4存在tmcd轨道\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "VideoDecodeFailed",
           "member": "string",
           "name": "Type",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "诊断出异常开始的PTS时间戳。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "5.966",
           "member": "float",
           "name": "Timestamp",
-          "required": false,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },
@@ -13909,27 +13909,27 @@
           "example": "无",
           "member": "string",
           "name": "Description",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "诊断到异常的北京时间，采用 ISO 日期格式。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2023-06-09T06:54:32Z",
           "member": "string",
           "name": "DateTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "诊断出的异常级别。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "诊断出的异常级别，取值范围：\nFatal：影响后续播放和解析，\nError： 可能会影响播放，\nWarning： 可能会有潜在风险，但不一定会影响播放，\nNotice：比较重要的流信息，\nInfo：一般性的流信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Fatal",
           "member": "string",
           "name": "SeverityLevel",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -16332,15 +16332,35 @@
       "usage": "out"
     },
     "LiveStreamAiQualityControlResultInfo": {
-      "document": "直播流质检结果",
+      "document": "直播流媒体质检结果",
       "members": [
         {
-          "disabled": false,
-          "document": "质检结果列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "disabled": true,
+          "document": "内容质检结果列表。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "QualityControlResult",
           "name": "QualityControlResults",
-          "required": true,
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": true,
+          "document": "格式诊断结果列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DiagnoseResult",
+          "name": "DiagnoseResults",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "内容质检结果列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "QualityControlResult",
+          "name": "QualityControlResultSet",
+          "output_required": false,
           "type": "list",
           "value_allowed_null": true
         },
@@ -16349,8 +16369,8 @@
           "document": "格式诊断结果列表。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DiagnoseResult",
-          "name": "DiagnoseResults",
-          "required": false,
+          "name": "DiagnoseResultSet",
+          "output_required": false,
           "type": "list",
           "value_allowed_null": true
         }
@@ -23111,8 +23131,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "质检项名称。",
-          "example": "Blur",
+          "document": "质检项名称。质检项取值如下：\n<li>LowEvaluation：无参考打分</li>\n<li>Mosaic：马赛克检测</li>\n<li>CrashScreen：花屏检测</li>\n<li>VideoFreezedFrame：视频冻结</li>\n<li>Blur：模糊检测</li>\n<li>BlackWhiteEdge：黑白边检测</li>\n<li>SolidColorScreen：纯色屏检测</li>\n<li>LowLighting：低光照</li>\n<li>HighLighting：过曝</li>\n<li>NoVoice：静音检测</li>\n<li>LowVoice：低音检测</li>\n<li>HighVoice：爆音检测</li>\n<li>Jitter：抖动检测</li>\n<li>Noise：噪点检测</li>\n<li>QRCode：二维码检测</li>\n<li>BarCode：条形码检测</li>\n<li>AppletCode：小程序码检测</li>\n<li>VideoResolutionChanged：视频分辨率变化</li>\n<li>AudioSampleRateChanged：音频采样率变化</li>\n<li>AudioChannelsChanged：音频通道数变化</li>\n<li>ParameterSetsChanged：流参数集信息发生变化</li>\n<li>DarOrSarInvalid：视频的宽高比异常</li>\n<li>TimestampFallback：DTS时间戳回退</li>\n<li>DtsJitter：DTS抖动过大</li>\n<li>PtsJitter：PTS抖动过大</li>\n<li>AACDurationDeviation：AAC帧时间戳间隔不合理</li>\n<li>AudioDroppingFrames：音频丢帧</li>\n<li>VideoDroppingFrames：视频丢帧</li>\n<li>AVTimestampInterleave：音视频交织不合理</li>\n<li>PtsLessThanDts：媒体流的 pts 小于 dts</li>\n<li>ReceiveFpsJitter：网络接收帧率抖动过大</li>\n<li>ReceiveFpsTooSmall：网络接收视频帧率过小</li>\n<li>FpsJitter：通过PTS计算得到的流帧率抖动过大</li>\n<li>StreamOpenFailed：流打开失败</li>\n<li>StreamEnd：流结束</li>\n<li>StreamParseFailed：流解析失败</li>\n<li>VideoFirstFrameNotIdr：首帧不是IDR帧</li>\n<li>StreamNALUError：NALU起始码错误</li>\n<li>TsStreamNoAud：mpegts的H26x流缺失 AUD NALU</li>\n<li>AudioStreamLack：无音频流</li>\n<li>VideoStreamLack：无视频流</li>\n<li>LackAudioRecover：缺失音频流恢复</li>\n<li>LackVideoRecover：缺失视频流恢复</li>\n<li>VideoBitrateOutofRange：视频流码率(kbps)超出范围</li>\n<li>AudioBitrateOutofRange：音频流码率(kbps)超出范围</li>\n<li>VideoDecodeFailed：视频解码错误</li>\n<li>AudioDecodeFailed：音频解码错误</li>\n<li>AudioOutOfPhase：双通道音频相位相反</li>\n<li>VideoDuplicatedFrame：视频流中存在重复帧</li>\n<li>AudioDuplicatedFrame：音频流中存在重复帧</li>\n<li>VideoRotation：视频画面旋转</li>\n<li>TsMultiPrograms：MPEG2-TS流有多个program</li>\n<li>Mp4InvalidCodecFourcc：MP4中codec fourcc不符合Apple HLS要求</li>\n<li>HLSBadM3u8Format：无效的m3u8文件</li>\n<li>HLSInvalidMasterM3u8：无效的main m3u8文件</li>\n<li>HLSInvalidMediaM3u8：无效的media m3u8文件</li>\n<li>HLSMasterM3u8Recommended：main m3u8缺少标准推荐的参数</li>\n<li>HLSMediaM3u8Recommended：media m3u8缺少标准推荐的参数</li>\n<li>HLSMediaM3u8DiscontinuityExist：media m3u8存在EXT-X-DISCONTINUITY</li>\n<li>HLSMediaSegmentsStreamNumChange：切片的流数目发生变化</li>\n<li>HLSMediaSegmentsPTSJitterDeviation：切片间PTS跳变且没有EXT-X-DISCONTINUITY</li>\n<li>HLSMediaSegmentsDTSJitterDeviation：切片间DTS跳变且没有EXT-X-DISCONTINUITY</li>\n<li>TimecodeTrackExist：MP4存在tmcd轨道</li>",
+          "example": "无",
           "member": "string",
           "name": "Type",
           "output_required": true,
@@ -23123,7 +23143,7 @@
         {
           "disabled": false,
           "document": "能力配置开关，可选值：\n<li>ON：开启；</li>\n<li>OFF：关闭。</li>\n默认值：ON。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "ON",
+          "example": "无",
           "member": "string",
           "name": "Switch",
           "output_required": false,
@@ -23144,7 +23164,7 @@
         },
         {
           "disabled": false,
-          "document": "采样间隔时间，取值范围：[0, 60000]，单位：ms。\n默认值 0。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "采样间隔时间，单位：ms。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1000",
           "member": "uint64",
           "name": "IntervalTime",
@@ -23155,7 +23175,7 @@
         },
         {
           "disabled": false,
-          "document": "异常持续时间，取值范围：[0, 60000]，单位：ms。\n默认值 0。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "异常持续时间，单位：ms。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100",
           "member": "uint64",
           "name": "Duration",
@@ -23166,8 +23186,8 @@
         },
         {
           "disabled": false,
-          "document": "检测分值的阈值，使用数学区间格式，当检测值超出区间范围会触发回调。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[0.5, 2.0]",
+          "document": "检测项对应的阈值，不同检测项对应阈值不同。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Threshold",
           "output_required": false,

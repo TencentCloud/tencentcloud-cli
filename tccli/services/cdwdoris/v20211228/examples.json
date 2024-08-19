@@ -8,11 +8,27 @@
         "title": "test"
       }
     ],
+    "CheckCoolDownWorkingVariableConfigCorrect": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckCoolDownWorkingVariableConfigCorrect\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorMsg\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "CreateBackUpSchedule": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBackUpSchedule\n<公共请求参数>\n\n{\n    \"ScheduleId\": 0,\n    \"WeekDays\": \"1\",\n    \"BackUpTables\": [\n        {\n            \"Table\": \"1\",\n            \"TotalBytes\": 0,\n            \"Database\": \"1\"\n        }\n    ],\n    \"ExecuteHour\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "CreateCoolDownPolicy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCoolDownPolicy\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"PolicyName\": \"abc\",\n    \"CoolDownTtl\": \"abc\",\n    \"CoolDownDatetime\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorMsg\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "示例"
       }
     ],
@@ -112,6 +128,30 @@
         "title": "test"
       }
     ],
+    "DescribeCoolDownBackends": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCoolDownBackends\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorMsg\": \"abc\",\n        \"List\": [\n            {\n                \"Host\": \"abc\",\n                \"DataUsedCapacity\": \"abc\",\n                \"TotalCapacity\": \"abc\",\n                \"RemoteUsedCapacity\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "DescribeCoolDownPolicies": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCoolDownPolicies\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorMsg\": \"abc\",\n        \"List\": [\n            {\n                \"PolicyName\": \"abc\",\n                \"CooldownDatetime\": \"abc\",\n                \"CooldownTtl\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "DescribeCoolDownTableData": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCoolDownTableData\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"DatabaseName\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorMsg\": \"abc\",\n        \"List\": [\n            {\n                \"TableName\": \"abc\",\n                \"Size\": \"abc\",\n                \"RemoteSize\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "DescribeDatabaseAuditDownload": [
       {
         "document": "下载数据库审计日志",
@@ -126,54 +166,6 @@
         "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDatabaseAuditRecords\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"StartTime\": \"abc\",\n    \"EndTime\": \"abc\",\n    \"PageSize\": 0,\n    \"PageNum\": 0,\n    \"OrderType\": \"abc\",\n    \"User\": \"abc\",\n    \"DbName\": \"abc\",\n    \"SqlType\": \"abc\",\n    \"Sql\": \"abc\",\n    \"Users\": [\n        \"abc\"\n    ],\n    \"DbNames\": [\n        \"abc\"\n    ],\n    \"SqlTypes\": [\n        \"abc\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"SlowQueryRecords\": {\n            \"OsUser\": \"abc\",\n            \"InitialQueryId\": \"abc\",\n            \"Sql\": \"abc\",\n            \"QueryStartTime\": \"abc\",\n            \"DurationMs\": 0,\n            \"ReadRows\": 0,\n            \"ResultRows\": 0,\n            \"ResultBytes\": 1,\n            \"MemoryUsage\": 0,\n            \"InitialAddress\": \"abc\",\n            \"DbName\": \"abc\",\n            \"SqlType\": \"abc\"\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "DescribeDatabaseAuditRecords"
-      }
-    ],
-    "DescribeDatabaseAuditResource": [
-      {
-        "document": "获取审计日志的相关信息",
-        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDatabaseAuditResource\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Databases\": [\n            \"abc\"\n        ],\n        \"Users\": [\n            \"abc\"\n        ],\n        \"SqlTypes\": [\n            \"abc\"\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
-        "title": "DescribeDatabaseAuditResource"
-      }
-    ],
-    "DescribeDmsSqlHistory": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDmsSqlHistory\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"QueryNodeList\": [\n            \"abc\"\n        ],\n        \"QueryStatusList\": [\n            \"abc\"\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
-        "title": "查询历史执行记录"
-      }
-    ],
-    "DescribeDorisMetricFiles": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDorisMetricFiles\n<公共请求参数>\n\n{\n    \"ApiType\": \"abc\",\n    \"DescribeMetricsFileReq\": {\n        \"InstanceType\": \"abc\",\n        \"MetricType\": \"abc\",\n        \"IfAttention\": 0\n    },\n    \"ModifyMetricFileReq\": {\n        \"Id\": 0,\n        \"IfAttention\": \"abc\"\n    },\n    \"InstanceId\": \"abc\",\n    \"ModifyAttentionMetricFileReq\": {\n        \"InstanceType\": \"abc\",\n        \"MetricType\": \"abc\",\n        \"Name\": \"abc\",\n        \"IfAttention\": 0\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"ErrorMsg\": \"abc\",\n        \"ReturnData\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
-        "title": "DescribeDorisMetricFiles"
-      }
-    ],
-    "DescribeFederationToken": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFederationToken\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
-        "title": "获取联合临时密钥"
-      }
-    ],
-    "DescribeFrontEnd": [
-      {
-        "document": "示例",
-        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFrontEnd\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"532418ac-e131-437f-9fe7-4c7d0f3e31c4\"\n    }\n}",
-        "title": "示例"
-      }
-    ],
-    "DescribeGoodsDetail": [
-      {
-        "document": "生成计费相关接口的GoodsDetail结构",
-        "input": "https://cdwdoris.tencentcloudapi.com/\n?Action=DescribeGoodsDetail\n&Zone=ap-chongqing-1\n&HaFlag=true\n&UserVPCId=vpc-xxx\n&UserSubnetId=subnet-xxxx\n&ProductVersion=20.7.2.30\n&Case=CREATE\n&ChargeProperties.ChargeType=\"PREPAID\"\n&ChargeProperties.RenewFlag=1\n&ChargeProperties.TimeSpan=1\n&ChargeProperties.TimeUnit=m\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Type\": \"sp_cdwch_standard\",\n        \"GoodsCategoryId\": 1,\n        \"GoodsDetail\": \"{\\\"context\\\":{\\\"AppID\\\":1258469122,\\\"AutoRenewFlag\\\":0,\\\"Case\\\":\\\"CREATE\\\",\\\"Channel\\\":0,\\\"ChargeProperties\\\":{\\\"ChargeType\\\":\\\"PREPAID\\\",\\\"RenewFlag\\\":1,\\\"TimeSpan\\\":1,\\\"TimeUnit\\\":\\\"m\\\"},\\\"Components\\\":[\\\"clickhouse-20.7.2.30\\\",\\\"zookeeper-3.4.9\\\"],\\\"DealName\\\":\\\"\\\",\\\"EMRInstanceID\\\":\\\"\\\",\\\"EMRInstanceNo\\\":0,\\\"ExpiredTime\\\":\\\"\\\",\\\"HAInstance\\\":true,\\\"ImageID\\\":\\\"\\\",\\\"InstanceName\\\":\\\"\\\",\\\"InstanceType\\\":\\\"\\\",\\\"ModifyConfigItems\\\":null,\\\"OperateUin\\\":\\\"\\\",\\\"Password\\\":\\\"\\\",\\\"ProductID\\\":0,\\\"Region\\\":\\\"ap-guangzhou\\\",\\\"RenewPeriod\\\":0,\\\"ResourceAppID\\\":0,\\\"ResourceOperateUin\\\":\\\"\\\",\\\"ResourceUin\\\":\\\"\\\",\\\"Resources\\\":[{\\\"Count\\\":2,\\\"DiskSpec\\\":{\\\"DiskCount\\\":0,\\\"DiskSize\\\":0,\\\"DiskType\\\":\\\"\\\"},\\\"SpecName\\\":\\\"CVM.S2\\\",\\\"Type\\\":\\\"DATA\\\"},{\\\"Count\\\":1,\\\"DiskSpec\\\":{\\\"DiskCount\\\":0,\\\"DiskSize\\\":0,\\\"DiskType\\\":\\\"\\\"},\\\"SpecName\\\":\\\"CVM.S2\\\",\\\"Type\\\":\\\"COMMON\\\"}],\\\"SecurityGroupID\\\":\\\"\\\",\\\"ServiceName\\\":\\\"ClickHouse\\\",\\\"StackID\\\":\\\"\\\",\\\"Tags\\\":{\\\"ResourceType\\\":\\\"\\\",\\\"Tags\\\":null},\\\"TimeSpan\\\":1,\\\"TimeUnit\\\":\\\"m\\\",\\\"Topology\\\":\\\"\\\",\\\"TraceID\\\":\\\"trace-vudbhcyqe15awen3\\\",\\\"Uin\\\":\\\"100010640219\\\",\\\"UserSubnetID\\\":\\\"subnet-xx111\\\",\\\"UserVPCID\\\":\\\"vpc-xxx\\\",\\\"VIPType\\\":0,\\\"Version\\\":\\\"20.7.2.30\\\",\\\"Zone\\\":\\\"ap-guangzhou-4\\\",\\\"instanceId\\\":\\\"cdwch-bbi1k4he\\\",\\\"modifySpec\\\":null},\\\"curDeadline\\\":\\\"\\\",\\\"goodsNum\\\":1,\\\"pid\\\":123,\\\"productCode\\\":\\\"p_cdwch\\\",\\\"productInfo\\\":{\\\"可用区\\\":\\\"ap-guangzhou-4\\\",\\\"地域\\\":\\\"ap-guangzhou\\\",\\\"集群\\\":\\\"cdwch-bbi1k4he\\\"},\\\"sa2_cpu2_mem4\\\":\\\"3\\\",\\\"subProductCode\\\":\\\"p_sub_iaas\\\",\\\"timeSpan\\\":1,\\\"timeUnit\\\":\\\"m\\\"}\",\n        \"GoodsNum\": 1,\n        \"PayMode\": 1,\n        \"RegionId\": 1,\n        \"ZoneId\": 100004,\n        \"ResourceId\": \"cdwch-bbi1k4he\",\n        \"RequestId\": \"xxx-xxx-xxx-xxx\"\n    }\n}",
-        "title": "生成GoodsDetail"
       }
     ],
     "DescribeInstance": [
@@ -254,22 +246,6 @@
         "title": "DescribeInstancesHealthState"
       }
     ],
-    "DescribeRegionZone": [
-      {
-        "document": "购买页获取地域及可用区列表、内核版本、网络规则等",
-        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRegionZone\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"Name\": \"abc\",\n                \"Desc\": \"abc\",\n                \"Regions\": [\n                    {\n                        \"Name\": \"abc\",\n                        \"Desc\": \"abc\",\n                        \"RegionId\": 0,\n                        \"Zones\": [\n                            {\n                                \"Name\": \"abc\",\n                                \"Desc\": \"abc\",\n                                \"ZoneId\": 0,\n                                \"Encrypt\": 0\n                            }\n                        ],\n                        \"Count\": 0,\n                        \"IsInternationalSite\": 1,\n                        \"Bucket\": \"abc\"\n                    }\n                ]\n            }\n        ],\n        \"Versions\": [\n            \"abc\"\n        ],\n        \"VpcRule\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
-        "title": "购买页获取地域及可用区列表"
-      }
-    ],
-    "DescribeReplicaVersion": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeReplicaVersion\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"ReplicaFlagItem\": {\n            \"ReplicaFlag\": 0,\n            \"ErrorMsg\": \"xx\"\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
-        "title": "DescribeReplicaVersion"
-      }
-    ],
     "DescribeRestoreTaskDetail": [
       {
         "document": "",
@@ -342,12 +318,12 @@
         "title": "集群销毁示例"
       }
     ],
-    "FitClsLog": [
+    "ModifyCoolDownPolicy": [
       {
-        "document": "在集群配置页面修改集群接口",
-        "input": "https://cdwdoris.tencentcloudapi.com/\n?Action=FitClsLog\n&InstanceId=cdwch-xxxx\n&ClsLogSetId=xxxx\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx-xxx\",\n        \"FlowId\": 0,\n        \"ErrorMsg\": \"\"\n    }\n}",
-        "title": "修改集群配置接口"
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCoolDownPolicy\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"PolicyName\": \"abc\",\n    \"CoolDownTtl\": \"abc\",\n    \"CoolDownDatetime\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorMsg\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "示例"
       }
     ],
     "ModifyInstance": [
@@ -414,12 +390,20 @@
         "title": "开启或关闭资源组"
       }
     ],
-    "OpenBackUp": [
+    "OpenCoolDown": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OpenBackUp\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdwdoris-itrbbn1z\",\n    \"CosBucketName\": \"carson-test-1301087413\",\n    \"OperationType\": \"open\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3f8a0da4-f950-4ab5-9b20-c347528bd220\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OpenCoolDown\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorMsg\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "示例"
+      }
+    ],
+    "OpenCoolDownPolicy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OpenCoolDownPolicy\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"DatabaseName\": \"abc\",\n    \"TableName\": \"abc\",\n    \"OperationType\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorMsg\": \"abc\",\n        \"QueryDocument\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "开通"
       }
     ],
     "RecoverBackUpJob": [
@@ -476,6 +460,14 @@
         "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ScaleUpInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdwdoris-xad3fa9\",\n    \"SpecName\": \"S_8_32_H\",\n    \"Type\": \"CORE\"\n}",
         "output": "{\n    \"Response\": {\n        \"FlowId\": \"1231\",\n        \"InstanceId\": \"cdwch-auqej7a\",\n        \"ErrorMsg\": \"\",\n        \"RequestId\": \"xasdfkqe2-a12q29-axdfas\"\n    }\n}",
         "title": "节点垂直变配示例"
+      }
+    ],
+    "UpdateCoolDown": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateCoolDown\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"Enable\": 1,\n    \"Bucket\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorMsg\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "示例"
       }
     ]
   },

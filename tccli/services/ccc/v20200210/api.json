@@ -2966,20 +2966,20 @@
       "document": "DescribeChatMessages请求参数结构体",
       "members": [
         {
-          "disabled": true,
-          "document": "实例 ID（废弃）",
-          "example": "0",
-          "member": "int64",
-          "name": "InstanceId",
-          "required": false,
-          "type": "int"
-        },
-        {
           "disabled": false,
           "document": "应用 ID，可以查看 https://console.cloud.tencent.com/ccc",
           "example": "1400000000",
           "member": "int64",
           "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": true,
+          "document": "实例 ID（废弃）",
+          "example": "0",
+          "member": "int64",
+          "name": "InstanceId",
           "required": false,
           "type": "int"
         },

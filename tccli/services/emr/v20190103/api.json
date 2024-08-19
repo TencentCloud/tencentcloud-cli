@@ -6944,6 +6944,15 @@
           "name": "ComputeResourceId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "扩容资源类型",
+          "example": "HOST",
+          "member": "string",
+          "name": "HardwareResourceType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

@@ -467,6 +467,14 @@
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"71993312-6ab8-4768-9124-118e0a20c45f\",\n        \"TaskId\": \"xxxx\"\n    }\n}",
         "title": "更新混音和布局参数"
       }
+    ],
+    "UpdateStreamIngest": [
+      {
+        "document": "更新SdkAppId为1234567890下的TaskId为1234的StreamUrl",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateStreamIngest\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1234567890,\n    \"TaskId\": \"1234\",\n    \"StreamUrl\": \"https://a.b/test.mp4\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": \"InProgress\",\n        \"RequestId\": \"71993312-6ab8-4768-9124-118e0a20c45f\"\n    }\n}",
+        "title": "更新任务"
+      }
     ]
   },
   "version": "1.0"

@@ -311,7 +311,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "结束标志位，可能为 stop 或 sensitive。\nstop 表示输出正常结束，sensitive 只在开启流式输出审核时会出现，表示安全审核未通过。",
+          "document": "结束标志位，可能为 stop、 sensitive或者tool_calls。\nstop 表示输出正常结束。\nsensitive 只在开启流式输出审核时会出现，表示安全审核未通过。\ntool_calls 标识函数调用。",
           "example": "stop",
           "member": "string",
           "name": "FinishReason",

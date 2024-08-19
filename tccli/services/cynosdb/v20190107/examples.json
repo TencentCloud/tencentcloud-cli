@@ -330,6 +330,14 @@
         "title": "查询备份文件列表"
       }
     ],
+    "DescribeBinlogConfig": [
+      {
+        "document": "查询binlog配置信息",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBinlogConfig\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BinlogCrossRegionsConfigUpdateTime\": \"abc\",\n        \"BinlogConfig\": {\n            \"BinlogSaveDays\": 0,\n            \"BinlogCrossRegionsEnable\": \"abc\",\n            \"BinlogCrossRegions\": \"abc\"\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询binlog配置信息"
+      }
+    ],
     "DescribeBinlogDownloadUrl": [
       {
         "document": "",
@@ -774,6 +782,14 @@
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBackupName\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-xxxxxxxx\",\n    \"BackupId\": 1000,\n    \"BackupName\": \"backupfile-01\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"9e56617c-c7cc-44e1-a967-6beb418ad5e7\"\n    }\n}",
         "title": "修改备份文件备注名"
+      }
+    ],
+    "ModifyBinlogConfig": [
+      {
+        "document": "修改binlog配置信息",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBinlogConfig\n<公共请求参数>\n\n{\n    \"ClusterId\": \"abc\",\n    \"BinlogConfig\": {\n        \"BinlogSaveDays\": 0,\n        \"BinlogCrossRegionsEnable\": \"abc\",\n        \"BinlogCrossRegions\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "修改binlog配置信息"
       }
     ],
     "ModifyBinlogSaveDays": [
