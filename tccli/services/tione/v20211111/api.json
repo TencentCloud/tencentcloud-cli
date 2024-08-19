@@ -1776,6 +1776,17 @@
         },
         {
           "disabled": false,
+          "document": "存储用途\n可选值为 BUILTIN_CODE, BUILTIN_DATA, BUILTIN_MODEL, USER_DATA, USER_CODE, USER_MODEL, OUTPUT, OTHER\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "BUILTIN_CODE",
+          "member": "string",
+          "name": "DataSourceUsage",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
           "document": "DATASET、COS、CFS、CFSTurbo、GooseFSx、HDFS、WEDATA_HDFS\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "DATASET",
           "member": "string",
@@ -7920,6 +7931,16 @@
           "example": "NORMAL",
           "member": "string",
           "name": "ResourceGroupSWType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "服务的归档状态  Waiting 等待归档中，Archived 已归档\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Archived",
+          "member": "string",
+          "name": "ArchiveStatus",
           "output_required": false,
           "type": "string",
           "value_allowed_null": true

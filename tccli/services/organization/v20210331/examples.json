@@ -104,6 +104,14 @@
         "title": "成员账号删除检查"
       }
     ],
+    "CheckMemberAuthRelation": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckMemberAuthRelation\n<公共请求参数>\n\n{\n    \"HostUin\": 100000547473,\n    \"MemberUins\": [\n        100000547476,\n        100000547476\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"CheckStatus\": [\n            {\n                \"Message\": \"auth info not same\",\n                \"Code\": \"FailedOperation.AuthInfoNotSame\",\n                \"MemberUin\": 100000547476\n            },\n            {\n                \"Message\": \"Success\",\n                \"Code\": \"Success\",\n                \"MemberUin\": 100000547475\n            }\n        ],\n        \"RequestId\": \"e1fac9c7-5663-401d-90bd-522b60f8b689\"\n    }\n}",
+        "title": "检查管理员和成员企业实名是否互信"
+      }
+    ],
     "ClearExternalSAMLIdentityProvider": [
       {
         "document": "清空SAML身份提供商配置信息",

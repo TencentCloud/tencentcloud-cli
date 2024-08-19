@@ -44371,10 +44371,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源ID，如果ResourceType为USERDEFINED，可以为空",
+          "document": "资源ID，如果ResourceType为USERDEFINED，可以为空字符串",
           "example": "subnet-7aed90al",
           "member": "string",
           "name": "ResourceId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -44385,6 +44386,7 @@
           "example": "SUBNET",
           "member": "string",
           "name": "ResourceType",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -44395,6 +44397,7 @@
           "example": "172.168.100.0/24",
           "member": "string",
           "name": "PrivateIpAddress",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -44405,6 +44408,7 @@
           "example": "['180.12.59.43']",
           "member": "string",
           "name": "PublicIpAddresses",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -44415,6 +44419,7 @@
           "example": "test",
           "member": "string",
           "name": "Description",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -44425,6 +44430,7 @@
           "example": "snat-3nptcfvp",
           "member": "string",
           "name": "NatGatewaySnatId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -44435,6 +44441,7 @@
           "example": "nat-3nptcfvp",
           "member": "string",
           "name": "NatGatewayId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -44445,6 +44452,7 @@
           "example": "vpc-oty76xyl",
           "member": "string",
           "name": "VpcId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -44455,6 +44463,7 @@
           "example": "2021-03-14 13:59:00",
           "member": "string",
           "name": "CreatedTime",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true

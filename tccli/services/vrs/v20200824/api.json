@@ -206,6 +206,15 @@
           "name": "VPRAudioId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "引擎类型。空为默认引擎",
+          "example": "无",
+          "member": "string",
+          "name": "EngineType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -423,6 +432,15 @@
           "example": "无",
           "member": "int64",
           "name": "TaskType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "语言类型。1 - 中文",
+          "example": "无",
+          "member": "int64",
+          "name": "VoiceLanguage",
           "required": false,
           "type": "int"
         }

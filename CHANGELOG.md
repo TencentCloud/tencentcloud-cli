@@ -1,3 +1,193 @@
+# Release 3.0.1057.1
+
+## 云联络中心(ccc) 版本：2020-02-10
+
+### 第 60 次发布
+
+发布时间：2024-08-20 01:12:19
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeChatMessages](http://document.tencentcloudapi.woa.com/document/product/679/49676)
+
+	* <font color="#dd0000">**修改入参**：</font>SdkAppId
+
+
+
+
+## 腾讯云数据仓库 TCHouse-D(cdwdoris) 版本：2021-12-28
+
+### 第 24 次发布
+
+发布时间：2024-08-20 01:13:16
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CheckCoolDownWorkingVariableConfigCorrect](http://document.tencentcloudapi.woa.com/document/product/1706/84694)
+* [CreateCoolDownPolicy](http://document.tencentcloudapi.woa.com/document/product/1706/84690)
+* [DescribeCoolDownBackends](http://document.tencentcloudapi.woa.com/document/product/1706/84693)
+* [DescribeCoolDownPolicies](http://document.tencentcloudapi.woa.com/document/product/1706/84692)
+* [DescribeCoolDownTableData](http://document.tencentcloudapi.woa.com/document/product/1706/84691)
+* [ModifyCoolDownPolicy](http://document.tencentcloudapi.woa.com/document/product/1706/84689)
+* [OpenCoolDown](http://document.tencentcloudapi.woa.com/document/product/1706/84688)
+* [OpenCoolDownPolicy](http://document.tencentcloudapi.woa.com/document/product/1706/84687)
+* [UpdateCoolDown](http://document.tencentcloudapi.woa.com/document/product/1706/84686)
+
+<font color="#dd0000">**删除接口**：</font>
+
+* DescribeDatabaseAuditResource
+* DescribeDmsSqlHistory
+* DescribeDorisMetricFiles
+* DescribeFederationToken
+* DescribeFrontEnd
+* DescribeGoodsDetail
+* DescribeRegionZone
+* DescribeReplicaVersion
+* FitClsLog
+* OpenBackUp
+
+新增数据结构：
+
+* [CoolDownBackend](http://document.tencentcloudapi.woa.com/document/product/1706/80309#CoolDownBackend)
+* [CoolDownPolicyInfo](http://document.tencentcloudapi.woa.com/document/product/1706/80309#CoolDownPolicyInfo)
+* [CoolDownTableDataInfo](http://document.tencentcloudapi.woa.com/document/product/1706/80309#CoolDownTableDataInfo)
+
+<font color="#dd0000">**删除数据结构**：</font>
+
+* DescribeMetricsFileReq
+* ModifyMetricFileStruct
+* ModifyMetricFileStructNew
+* ResourceNodeDiskSpec
+* ResourceNodeSpec
+* SpecExtra
+* VersionReplicaItem
+
+
+
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+
+### 第 93 次发布
+
+发布时间：2024-08-20 01:16:52
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeBinlogConfig](http://document.tencentcloudapi.woa.com/document/product/1003/84696)
+* [ModifyBinlogConfig](http://document.tencentcloudapi.woa.com/document/product/1003/84695)
+
+新增数据结构：
+
+* [BinlogConfigInfo](http://document.tencentcloudapi.woa.com/document/product/1003/48097#BinlogConfigInfo)
+
+
+
+## 弹性 MapReduce(emr) 版本：2019-01-03
+
+### 第 59 次发布
+
+发布时间：2024-08-20 01:19:42
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [InquiryPriceScaleOutInstance](http://document.tencentcloudapi.woa.com/document/product/589/34265)
+
+	* 新增入参：HardwareResourceType
+
+
+
+
+## 媒体处理(mps) 版本：2019-06-12
+
+### 第 61 次发布
+
+发布时间：2024-08-20 01:24:59
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DiagnoseResult](http://document.tencentcloudapi.woa.com/document/product/862/37615#DiagnoseResult)
+
+	* <font color="#dd0000">**修改成员**：</font>Category, Type, Timestamp, Description, DateTime, SeverityLevel
+
+* [LiveStreamAiQualityControlResultInfo](http://document.tencentcloudapi.woa.com/document/product/862/37615#LiveStreamAiQualityControlResultInfo)
+
+	* 新增成员：QualityControlResultSet, DiagnoseResultSet
+
+	* <font color="#dd0000">**修改成员**：</font>DiagnoseResults
+
+
+
+
+## 集团账号管理(organization) 版本：2021-03-31
+
+### 第 41 次发布
+
+发布时间：2024-08-20 01:25:48
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CheckMemberAuthRelation](http://document.tencentcloudapi.woa.com/document/product/850/84697)
+
+新增数据结构：
+
+* [StatusInfo](http://document.tencentcloudapi.woa.com/document/product/850/67060#StatusInfo)
+
+
+
+## 集团账号管理(organization) 版本：2018-12-25
+
+
+
+## TI-ONE 训练平台(tione) 版本：2021-11-11
+
+### 第 65 次发布
+
+发布时间：2024-08-20 01:31:02
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DataConfig](http://document.tencentcloudapi.woa.com/document/product/851/74915#DataConfig)
+
+	* 新增成员：DataSourceUsage
+
+* [Service](http://document.tencentcloudapi.woa.com/document/product/851/74915#Service)
+
+	* 新增成员：ArchiveStatus
+
+
+
+
+## TI-ONE 训练平台(tione) 版本：2019-10-22
+
+
+
 # Release 3.0.1056.1
 
 ## 云联络中心(ccc) 版本：2020-02-10
