@@ -1,3 +1,200 @@
+# Release 3.0.1058.1
+
+## 应用管理平台(camp) 版本：2022-09-20
+
+### 第 40 次发布
+
+发布时间：2024-08-21 01:09:27
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribePods](http://document.tencentcloudapi.woa.com/document/product/1609/77969)
+
+	* 新增出参：Counts
+
+
+新增数据结构：
+
+* [CountValues](http://document.tencentcloudapi.woa.com/document/product/1609/78009#CountValues)
+* [ItemCount](http://document.tencentcloudapi.woa.com/document/product/1609/78009#ItemCount)
+
+
+
+## 腾讯云数据仓库 TCHouse-D(cdwdoris) 版本：2021-12-28
+
+### 第 25 次发布
+
+发布时间：2024-08-21 01:10:48
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ActionAlterUser](http://document.tencentcloudapi.woa.com/document/product/1706/84698)
+
+新增数据结构：
+
+* [UserInfo](http://document.tencentcloudapi.woa.com/document/product/1706/80309#UserInfo)
+
+修改数据结构：
+
+* [InstanceInfo](http://document.tencentcloudapi.woa.com/document/product/1706/80309#InstanceInfo)
+
+	* 新增成员：EnableDlc, AccountType
+
+
+
+
+## TDSQL MySQL 版(dcdb) 版本：2018-04-11
+
+### 第 45 次发布
+
+发布时间：2024-08-21 01:15:21
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [UpgradeDCDBInstance](http://document.tencentcloudapi.woa.com/document/product/557/16136)
+
+	* 新增入参：SwitchStartTime, SwitchEndTime, SwitchAutoRetry
+
+
+
+
+## 人脸核身(faceid) 版本：2018-03-01
+
+### 第 67 次发布
+
+发布时间：2024-08-21 01:18:02
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CheckIdCardInformation](http://document.tencentcloudapi.woa.com/document/product/1007/47276)
+
+	* 新增入参：IsEncryptResponse, Encryption
+
+	* 新增出参：EncryptedBody
+
+
+
+
+## 实时音视频(trtc) 版本：2019-07-22
+
+### 第 66 次发布
+
+发布时间：2024-08-21 01:28:52
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [UpdateAIConversation](http://document.tencentcloudapi.woa.com/document/product/647/84699)
+
+
+
+## 微服务引擎(tse) 版本：2020-12-07
+
+### 第 69 次发布
+
+发布时间：2024-08-21 01:29:05
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeGovernanceInstances](http://document.tencentcloudapi.woa.com/document/product/1364/83385)
+
+	* 新增入参：Location
+
+	* 新增出参：Location
+
+
+新增数据结构：
+
+* [Location](http://document.tencentcloudapi.woa.com/document/product/1364/54942#Location)
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 150 次发布
+
+发布时间：2024-08-21 01:29:59
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [AddressTemplate](http://document.tencentcloudapi.woa.com/document/product/215/15824#AddressTemplate)
+
+	* 新增成员：TagSet, AddressTotalCount
+
+	* <font color="#dd0000">**修改成员**：</font>CreatedTime
+
+* [AddressTemplateGroup](http://document.tencentcloudapi.woa.com/document/product/215/15824#AddressTemplateGroup)
+
+	* 新增成员：TagSet, AddressTemplateTotalCount
+
+	* <font color="#dd0000">**修改成员**：</font>CreatedTime
+
+* [EndPoint](http://document.tencentcloudapi.woa.com/document/product/215/15824#EndPoint)
+
+	* 新增成员：TagSet
+
+* [EndPointService](http://document.tencentcloudapi.woa.com/document/product/215/15824#EndPointService)
+
+	* 新增成员：TagSet
+
+* [HaVip](http://document.tencentcloudapi.woa.com/document/product/215/15824#HaVip)
+
+	* 新增成员：TagSet
+
+* [LocalGateway](http://document.tencentcloudapi.woa.com/document/product/215/15824#LocalGateway)
+
+	* 新增成员：TagSet, LocalGatewayId
+
+* [NetDetect](http://document.tencentcloudapi.woa.com/document/product/215/15824#NetDetect)
+
+	* 新增成员：TagSet
+
+* [ServiceTemplate](http://document.tencentcloudapi.woa.com/document/product/215/15824#ServiceTemplate)
+
+	* 新增成员：TagSet, ServiceTotalCount
+
+	* <font color="#dd0000">**修改成员**：</font>CreatedTime
+
+* [ServiceTemplateGroup](http://document.tencentcloudapi.woa.com/document/product/215/15824#ServiceTemplateGroup)
+
+	* 新增成员：TagSet, ServiceTemplateTotalCount
+
+	* <font color="#dd0000">**修改成员**：</font>CreatedTime
+
+* [SnapshotPolicy](http://document.tencentcloudapi.woa.com/document/product/215/15824#SnapshotPolicy)
+
+	* 新增成员：TagSet
+
+
+
+
 # Release 3.0.1057.1
 
 ## 云联络中心(ccc) 版本：2020-02-10

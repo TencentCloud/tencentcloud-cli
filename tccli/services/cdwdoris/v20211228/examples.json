@@ -1,5 +1,13 @@
 {
   "actions": {
+    "ActionAlterUser": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ActionAlterUser\n<公共请求参数>\n\n{\n    \"UserInfo\": {\n        \"InstanceId\": \"abc\",\n        \"UserName\": \"abc\",\n        \"PassWord\": \"abc\",\n        \"WhiteHost\": \"abc\",\n        \"OldWhiteHost\": \"abc\",\n        \"Describe\": \"abc\",\n        \"OldPwd\": \"abc\"\n    },\n    \"ApiType\": \"abc\",\n    \"UserPrivilege\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorMsg\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "新增、修改ck集群用户"
+      }
+    ],
     "CancelBackupJob": [
       {
         "document": "",

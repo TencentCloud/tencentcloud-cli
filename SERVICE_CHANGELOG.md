@@ -1,10 +1,10 @@
 # 本版本更新包含以下内容：
 
-## 云联络中心(ccc) 版本：2020-02-10
+## 应用管理平台(camp) 版本：2022-09-20
 
-### 第 60 次发布
+### 第 40 次发布
 
-发布时间：2024-08-20 01:12:19
+发布时间：2024-08-21 01:09:27
 
 本次发布包含了以下内容：
 
@@ -12,71 +12,23 @@
 
 修改接口：
 
-* [DescribeChatMessages](http://document.tencentcloudapi.woa.com/document/product/679/49676)
+* [DescribePods](http://document.tencentcloudapi.woa.com/document/product/1609/77969)
 
-	* <font color="#dd0000">**修改入参**：</font>SdkAppId
+	* 新增出参：Counts
 
+
+新增数据结构：
+
+* [CountValues](http://document.tencentcloudapi.woa.com/document/product/1609/78009#CountValues)
+* [ItemCount](http://document.tencentcloudapi.woa.com/document/product/1609/78009#ItemCount)
 
 
 
 ## 腾讯云数据仓库 TCHouse-D(cdwdoris) 版本：2021-12-28
 
-### 第 24 次发布
+### 第 25 次发布
 
-发布时间：2024-08-20 01:13:16
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [CheckCoolDownWorkingVariableConfigCorrect](http://document.tencentcloudapi.woa.com/document/product/1706/84694)
-* [CreateCoolDownPolicy](http://document.tencentcloudapi.woa.com/document/product/1706/84690)
-* [DescribeCoolDownBackends](http://document.tencentcloudapi.woa.com/document/product/1706/84693)
-* [DescribeCoolDownPolicies](http://document.tencentcloudapi.woa.com/document/product/1706/84692)
-* [DescribeCoolDownTableData](http://document.tencentcloudapi.woa.com/document/product/1706/84691)
-* [ModifyCoolDownPolicy](http://document.tencentcloudapi.woa.com/document/product/1706/84689)
-* [OpenCoolDown](http://document.tencentcloudapi.woa.com/document/product/1706/84688)
-* [OpenCoolDownPolicy](http://document.tencentcloudapi.woa.com/document/product/1706/84687)
-* [UpdateCoolDown](http://document.tencentcloudapi.woa.com/document/product/1706/84686)
-
-<font color="#dd0000">**删除接口**：</font>
-
-* DescribeDatabaseAuditResource
-* DescribeDmsSqlHistory
-* DescribeDorisMetricFiles
-* DescribeFederationToken
-* DescribeFrontEnd
-* DescribeGoodsDetail
-* DescribeRegionZone
-* DescribeReplicaVersion
-* FitClsLog
-* OpenBackUp
-
-新增数据结构：
-
-* [CoolDownBackend](http://document.tencentcloudapi.woa.com/document/product/1706/80309#CoolDownBackend)
-* [CoolDownPolicyInfo](http://document.tencentcloudapi.woa.com/document/product/1706/80309#CoolDownPolicyInfo)
-* [CoolDownTableDataInfo](http://document.tencentcloudapi.woa.com/document/product/1706/80309#CoolDownTableDataInfo)
-
-<font color="#dd0000">**删除数据结构**：</font>
-
-* DescribeMetricsFileReq
-* ModifyMetricFileStruct
-* ModifyMetricFileStructNew
-* ResourceNodeDiskSpec
-* ResourceNodeSpec
-* SpecExtra
-* VersionReplicaItem
-
-
-
-## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
-
-### 第 93 次发布
-
-发布时间：2024-08-20 01:16:52
+发布时间：2024-08-21 01:10:48
 
 本次发布包含了以下内容：
 
@@ -84,20 +36,26 @@
 
 新增接口：
 
-* [DescribeBinlogConfig](http://document.tencentcloudapi.woa.com/document/product/1003/84696)
-* [ModifyBinlogConfig](http://document.tencentcloudapi.woa.com/document/product/1003/84695)
+* [ActionAlterUser](http://document.tencentcloudapi.woa.com/document/product/1706/84698)
 
 新增数据结构：
 
-* [BinlogConfigInfo](http://document.tencentcloudapi.woa.com/document/product/1003/48097#BinlogConfigInfo)
+* [UserInfo](http://document.tencentcloudapi.woa.com/document/product/1706/80309#UserInfo)
+
+修改数据结构：
+
+* [InstanceInfo](http://document.tencentcloudapi.woa.com/document/product/1706/80309#InstanceInfo)
+
+	* 新增成员：EnableDlc, AccountType
 
 
 
-## 弹性 MapReduce(emr) 版本：2019-01-03
 
-### 第 59 次发布
+## TDSQL MySQL 版(dcdb) 版本：2018-04-11
 
-发布时间：2024-08-20 01:19:42
+### 第 45 次发布
+
+发布时间：2024-08-21 01:15:21
 
 本次发布包含了以下内容：
 
@@ -105,43 +63,39 @@
 
 修改接口：
 
-* [InquiryPriceScaleOutInstance](http://document.tencentcloudapi.woa.com/document/product/589/34265)
+* [UpgradeDCDBInstance](http://document.tencentcloudapi.woa.com/document/product/557/16136)
 
-	* 新增入参：HardwareResourceType
-
-
+	* 新增入参：SwitchStartTime, SwitchEndTime, SwitchAutoRetry
 
 
-## 媒体处理(mps) 版本：2019-06-12
 
-### 第 61 次发布
 
-发布时间：2024-08-20 01:24:59
+## 人脸核身(faceid) 版本：2018-03-01
+
+### 第 67 次发布
+
+发布时间：2024-08-21 01:18:02
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改数据结构：
+修改接口：
 
-* [DiagnoseResult](http://document.tencentcloudapi.woa.com/document/product/862/37615#DiagnoseResult)
+* [CheckIdCardInformation](http://document.tencentcloudapi.woa.com/document/product/1007/47276)
 
-	* <font color="#dd0000">**修改成员**：</font>Category, Type, Timestamp, Description, DateTime, SeverityLevel
+	* 新增入参：IsEncryptResponse, Encryption
 
-* [LiveStreamAiQualityControlResultInfo](http://document.tencentcloudapi.woa.com/document/product/862/37615#LiveStreamAiQualityControlResultInfo)
-
-	* 新增成员：QualityControlResultSet, DiagnoseResultSet
-
-	* <font color="#dd0000">**修改成员**：</font>DiagnoseResults
+	* 新增出参：EncryptedBody
 
 
 
 
-## 集团账号管理(organization) 版本：2021-03-31
+## 实时音视频(trtc) 版本：2019-07-22
 
-### 第 41 次发布
+### 第 66 次发布
 
-发布时间：2024-08-20 01:25:48
+发布时间：2024-08-21 01:28:52
 
 本次发布包含了以下内容：
 
@@ -149,23 +103,40 @@
 
 新增接口：
 
-* [CheckMemberAuthRelation](http://document.tencentcloudapi.woa.com/document/product/850/84697)
+* [UpdateAIConversation](http://document.tencentcloudapi.woa.com/document/product/647/84699)
+
+
+
+## 微服务引擎(tse) 版本：2020-12-07
+
+### 第 69 次发布
+
+发布时间：2024-08-21 01:29:05
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeGovernanceInstances](http://document.tencentcloudapi.woa.com/document/product/1364/83385)
+
+	* 新增入参：Location
+
+	* 新增出参：Location
+
 
 新增数据结构：
 
-* [StatusInfo](http://document.tencentcloudapi.woa.com/document/product/850/67060#StatusInfo)
+* [Location](http://document.tencentcloudapi.woa.com/document/product/1364/54942#Location)
 
 
 
-## 集团账号管理(organization) 版本：2018-12-25
+## 私有网络(vpc) 版本：2017-03-12
 
+### 第 150 次发布
 
-
-## TI-ONE 训练平台(tione) 版本：2021-11-11
-
-### 第 65 次发布
-
-发布时间：2024-08-20 01:31:02
+发布时间：2024-08-21 01:29:59
 
 本次发布包含了以下内容：
 
@@ -173,18 +144,54 @@
 
 修改数据结构：
 
-* [DataConfig](http://document.tencentcloudapi.woa.com/document/product/851/74915#DataConfig)
+* [AddressTemplate](http://document.tencentcloudapi.woa.com/document/product/215/15824#AddressTemplate)
 
-	* 新增成员：DataSourceUsage
+	* 新增成员：TagSet, AddressTotalCount
 
-* [Service](http://document.tencentcloudapi.woa.com/document/product/851/74915#Service)
+	* <font color="#dd0000">**修改成员**：</font>CreatedTime
 
-	* 新增成员：ArchiveStatus
+* [AddressTemplateGroup](http://document.tencentcloudapi.woa.com/document/product/215/15824#AddressTemplateGroup)
 
+	* 新增成员：TagSet, AddressTemplateTotalCount
 
+	* <font color="#dd0000">**修改成员**：</font>CreatedTime
 
+* [EndPoint](http://document.tencentcloudapi.woa.com/document/product/215/15824#EndPoint)
 
-## TI-ONE 训练平台(tione) 版本：2019-10-22
+	* 新增成员：TagSet
+
+* [EndPointService](http://document.tencentcloudapi.woa.com/document/product/215/15824#EndPointService)
+
+	* 新增成员：TagSet
+
+* [HaVip](http://document.tencentcloudapi.woa.com/document/product/215/15824#HaVip)
+
+	* 新增成员：TagSet
+
+* [LocalGateway](http://document.tencentcloudapi.woa.com/document/product/215/15824#LocalGateway)
+
+	* 新增成员：TagSet, LocalGatewayId
+
+* [NetDetect](http://document.tencentcloudapi.woa.com/document/product/215/15824#NetDetect)
+
+	* 新增成员：TagSet
+
+* [ServiceTemplate](http://document.tencentcloudapi.woa.com/document/product/215/15824#ServiceTemplate)
+
+	* 新增成员：TagSet, ServiceTotalCount
+
+	* <font color="#dd0000">**修改成员**：</font>CreatedTime
+
+* [ServiceTemplateGroup](http://document.tencentcloudapi.woa.com/document/product/215/15824#ServiceTemplateGroup)
+
+	* 新增成员：TagSet, ServiceTemplateTotalCount
+
+	* <font color="#dd0000">**修改成员**：</font>CreatedTime
+
+* [SnapshotPolicy](http://document.tencentcloudapi.woa.com/document/product/215/15824#SnapshotPolicy)
+
+	* 新增成员：TagSet
+
 
 
 
@@ -8865,7 +8872,7 @@
 
 
 
-## 二进制软件成分分析(bsca) 版本：2021-08-11
+## 软件成分分析(bsca) 版本：2021-08-11
 
 ### 第 6 次发布
 
@@ -9749,6 +9756,26 @@
 
 
 ## 应用管理平台(camp) 版本：2022-09-20
+
+### 第 40 次发布
+
+发布时间：2024-08-21 01:09:27
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribePods](http://document.tencentcloudapi.woa.com/document/product/1609/77969)
+
+	* 新增出参：Counts
+
+
+新增数据结构：
+
+* [[CountValues](http://document.tencentcloudapi.woa.com/document/product/1609/78009#CountValues)](http://document.tencentcloudapi.woa.com/document/product/1609/78009#[CountValues](http://document.tencentcloudapi.woa.com/document/product/1609/78009#CountValues))
+* [[ItemCount](http://document.tencentcloudapi.woa.com/document/product/1609/78009#ItemCount)](http://document.tencentcloudapi.woa.com/document/product/1609/78009#[ItemCount](http://document.tencentcloudapi.woa.com/document/product/1609/78009#ItemCount))
 
 ### 第 39 次发布
 
@@ -17608,6 +17635,29 @@
 
 ## 腾讯云数据仓库 TCHouse-D(cdwdoris) 版本：2021-12-28
 
+### 第 25 次发布
+
+发布时间：2024-08-21 01:10:48
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[ActionAlterUser](http://document.tencentcloudapi.woa.com/document/product/1706/84698)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[UserInfo](http://document.tencentcloudapi.woa.com/document/product/1706/80309#UserInfo)](http://document.tencentcloudapi.woa.com/document/product/1706/80309#[UserInfo](http://document.tencentcloudapi.woa.com/document/product/1706/80309#UserInfo))
+
+修改数据结构：
+
+* [InstanceInfo](http://document.tencentcloudapi.woa.com/document/product/1706/80309#InstanceInfo)
+
+	* 新增成员：EnableDlc, AccountType
+
+
 ### 第 24 次发布
 
 发布时间：2024-08-20 01:13:16
@@ -17618,15 +17668,15 @@
 
 新增接口：
 
-* [[CheckCoolDownWorkingVariableConfigCorrect](http://document.tencentcloudapi.woa.com/document/product/1706/84694)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[CreateCoolDownPolicy](http://document.tencentcloudapi.woa.com/document/product/1706/84690)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeCoolDownBackends](http://document.tencentcloudapi.woa.com/document/product/1706/84693)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeCoolDownPolicies](http://document.tencentcloudapi.woa.com/document/product/1706/84692)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeCoolDownTableData](http://document.tencentcloudapi.woa.com/document/product/1706/84691)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ModifyCoolDownPolicy](http://document.tencentcloudapi.woa.com/document/product/1706/84689)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[OpenCoolDown](http://document.tencentcloudapi.woa.com/document/product/1706/84688)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[OpenCoolDownPolicy](http://document.tencentcloudapi.woa.com/document/product/1706/84687)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[UpdateCoolDown](http://document.tencentcloudapi.woa.com/document/product/1706/84686)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [CheckCoolDownWorkingVariableConfigCorrect](http://document.tencentcloudapi.woa.com/document/product/1706/84694)
+* [CreateCoolDownPolicy](http://document.tencentcloudapi.woa.com/document/product/1706/84690)
+* [DescribeCoolDownBackends](http://document.tencentcloudapi.woa.com/document/product/1706/84693)
+* [DescribeCoolDownPolicies](http://document.tencentcloudapi.woa.com/document/product/1706/84692)
+* [DescribeCoolDownTableData](http://document.tencentcloudapi.woa.com/document/product/1706/84691)
+* [ModifyCoolDownPolicy](http://document.tencentcloudapi.woa.com/document/product/1706/84689)
+* [OpenCoolDown](http://document.tencentcloudapi.woa.com/document/product/1706/84688)
+* [OpenCoolDownPolicy](http://document.tencentcloudapi.woa.com/document/product/1706/84687)
+* [UpdateCoolDown](http://document.tencentcloudapi.woa.com/document/product/1706/84686)
 
 <font color="#dd0000">**删除接口**：</font>
 
@@ -17643,9 +17693,9 @@
 
 新增数据结构：
 
-* [[CoolDownBackend](http://document.tencentcloudapi.woa.com/document/product/1706/80309#CoolDownBackend)](http://document.tencentcloudapi.woa.com/document/product/1706/80309#[CoolDownBackend](http://document.tencentcloudapi.woa.com/document/product/1706/80309#CoolDownBackend))
-* [[CoolDownPolicyInfo](http://document.tencentcloudapi.woa.com/document/product/1706/80309#CoolDownPolicyInfo)](http://document.tencentcloudapi.woa.com/document/product/1706/80309#[CoolDownPolicyInfo](http://document.tencentcloudapi.woa.com/document/product/1706/80309#CoolDownPolicyInfo))
-* [[CoolDownTableDataInfo](http://document.tencentcloudapi.woa.com/document/product/1706/80309#CoolDownTableDataInfo)](http://document.tencentcloudapi.woa.com/document/product/1706/80309#[CoolDownTableDataInfo](http://document.tencentcloudapi.woa.com/document/product/1706/80309#CoolDownTableDataInfo))
+* [CoolDownBackend](http://document.tencentcloudapi.woa.com/document/product/1706/80309#CoolDownBackend)
+* [CoolDownPolicyInfo](http://document.tencentcloudapi.woa.com/document/product/1706/80309#CoolDownPolicyInfo)
+* [CoolDownTableDataInfo](http://document.tencentcloudapi.woa.com/document/product/1706/80309#CoolDownTableDataInfo)
 
 <font color="#dd0000">**删除数据结构**：</font>
 
@@ -34815,12 +34865,12 @@
 
 新增接口：
 
-* [[DescribeBinlogConfig](http://document.tencentcloudapi.woa.com/document/product/1003/84696)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ModifyBinlogConfig](http://document.tencentcloudapi.woa.com/document/product/1003/84695)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeBinlogConfig](http://document.tencentcloudapi.woa.com/document/product/1003/84696)
+* [ModifyBinlogConfig](http://document.tencentcloudapi.woa.com/document/product/1003/84695)
 
 新增数据结构：
 
-* [[BinlogConfigInfo](http://document.tencentcloudapi.woa.com/document/product/1003/48097#BinlogConfigInfo)](http://document.tencentcloudapi.woa.com/document/product/1003/48097#[BinlogConfigInfo](http://document.tencentcloudapi.woa.com/document/product/1003/48097#BinlogConfigInfo))
+* [BinlogConfigInfo](http://document.tencentcloudapi.woa.com/document/product/1003/48097#BinlogConfigInfo)
 
 ### 第 92 次发布
 
@@ -38631,6 +38681,21 @@
 
 
 ## TDSQL MySQL 版(dcdb) 版本：2018-04-11
+
+### 第 45 次发布
+
+发布时间：2024-08-21 01:15:21
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [UpgradeDCDBInstance](http://document.tencentcloudapi.woa.com/document/product/557/16136)
+
+	* 新增入参：SwitchStartTime, SwitchEndTime, SwitchAutoRetry
+
 
 ### 第 44 次发布
 
@@ -53994,6 +54059,23 @@
 
 
 ## 人脸核身(faceid) 版本：2018-03-01
+
+### 第 67 次发布
+
+发布时间：2024-08-21 01:18:02
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CheckIdCardInformation](http://document.tencentcloudapi.woa.com/document/product/1007/47276)
+
+	* 新增入参：IsEncryptResponse, Encryption
+
+	* 新增出参：EncryptedBody
+
 
 ### 第 66 次发布
 
@@ -76718,11 +76800,11 @@
 
 新增接口：
 
-* [[CheckMemberAuthRelation](http://document.tencentcloudapi.woa.com/document/product/850/84697)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [CheckMemberAuthRelation](http://document.tencentcloudapi.woa.com/document/product/850/84697)
 
 新增数据结构：
 
-* [[StatusInfo](http://document.tencentcloudapi.woa.com/document/product/850/67060#StatusInfo)](http://document.tencentcloudapi.woa.com/document/product/850/67060#[StatusInfo](http://document.tencentcloudapi.woa.com/document/product/850/67060#StatusInfo))
+* [StatusInfo](http://document.tencentcloudapi.woa.com/document/product/850/67060#StatusInfo)
 
 ### 第 40 次发布
 
@@ -102860,6 +102942,18 @@
 
 ## 实时音视频(trtc) 版本：2019-07-22
 
+### 第 66 次发布
+
+发布时间：2024-08-21 01:28:52
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[UpdateAIConversation](http://document.tencentcloudapi.woa.com/document/product/647/84699)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
 ### 第 65 次发布
 
 发布时间：2024-08-15 01:31:34
@@ -104156,6 +104250,27 @@
 
 
 ## 微服务引擎(tse) 版本：2020-12-07
+
+### 第 69 次发布
+
+发布时间：2024-08-21 01:29:05
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeGovernanceInstances](http://document.tencentcloudapi.woa.com/document/product/1364/83385)
+
+	* 新增入参：Location
+
+	* 新增出参：Location
+
+
+新增数据结构：
+
+* [[Location](http://document.tencentcloudapi.woa.com/document/product/1364/54942#Location)](http://document.tencentcloudapi.woa.com/document/product/1364/54942#[Location](http://document.tencentcloudapi.woa.com/document/product/1364/54942#Location))
 
 ### 第 68 次发布
 
@@ -110107,6 +110222,65 @@
 
 
 ## 私有网络(vpc) 版本：2017-03-12
+
+### 第 150 次发布
+
+发布时间：2024-08-21 01:29:59
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [AddressTemplate](http://document.tencentcloudapi.woa.com/document/product/215/15824#AddressTemplate)
+
+	* 新增成员：TagSet, AddressTotalCount
+
+	* <font color="#dd0000">**修改成员**：</font>CreatedTime
+
+* [AddressTemplateGroup](http://document.tencentcloudapi.woa.com/document/product/215/15824#AddressTemplateGroup)
+
+	* 新增成员：TagSet, AddressTemplateTotalCount
+
+	* <font color="#dd0000">**修改成员**：</font>CreatedTime
+
+* [EndPoint](http://document.tencentcloudapi.woa.com/document/product/215/15824#EndPoint)
+
+	* 新增成员：TagSet
+
+* [EndPointService](http://document.tencentcloudapi.woa.com/document/product/215/15824#EndPointService)
+
+	* 新增成员：TagSet
+
+* [HaVip](http://document.tencentcloudapi.woa.com/document/product/215/15824#HaVip)
+
+	* 新增成员：TagSet
+
+* [LocalGateway](http://document.tencentcloudapi.woa.com/document/product/215/15824#LocalGateway)
+
+	* 新增成员：TagSet, LocalGatewayId
+
+* [NetDetect](http://document.tencentcloudapi.woa.com/document/product/215/15824#NetDetect)
+
+	* 新增成员：TagSet
+
+* [ServiceTemplate](http://document.tencentcloudapi.woa.com/document/product/215/15824#ServiceTemplate)
+
+	* 新增成员：TagSet, ServiceTotalCount
+
+	* <font color="#dd0000">**修改成员**：</font>CreatedTime
+
+* [ServiceTemplateGroup](http://document.tencentcloudapi.woa.com/document/product/215/15824#ServiceTemplateGroup)
+
+	* 新增成员：TagSet, ServiceTemplateTotalCount
+
+	* <font color="#dd0000">**修改成员**：</font>CreatedTime
+
+* [SnapshotPolicy](http://document.tencentcloudapi.woa.com/document/product/215/15824#SnapshotPolicy)
+
+	* 新增成员：TagSet
+
 
 ### 第 149 次发布
 

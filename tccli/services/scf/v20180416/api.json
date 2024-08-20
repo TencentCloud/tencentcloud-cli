@@ -6157,7 +6157,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志类型，可填\nLog\nTrace",
+          "document": "日志类型，可填LogTrace",
           "example": "Log",
           "member": "string",
           "name": "Type",

@@ -65,7 +65,8 @@ Output:
                 "CurrentRevision": "abc",
                 "UpdateRevision": "abc",
                 "WebShell": "abc",
-                "CreatedAt": "2020-09-22T00:00:00+00:00"
+                "CreatedAt": "2020-09-22T00:00:00+00:00",
+                "IPV6": "abc"
             }
         ],
         "TotalCount": 0,
@@ -74,6 +75,16 @@ Output:
                 "Name": "abc",
                 "Values": [
                     "abc"
+                ]
+            }
+        ],
+        "Counts": [
+            {
+                "Name": "abc",
+                "Values": [
+                    {
+                        "Name": "abc"
+                    }
                 ]
             }
         ],

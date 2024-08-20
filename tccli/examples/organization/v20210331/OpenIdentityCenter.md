@@ -1,6 +1,6 @@
-**Example 1: 开通CIC服务**
+**Example 1: 开通身份中心服务（CIC）**
 
-开通CIC服务
+开通身份中心服务（CIC）
 
 Input: 
 
