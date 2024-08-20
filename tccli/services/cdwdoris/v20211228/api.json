@@ -1,5 +1,12 @@
 {
   "actions": {
+    "ActionAlterUser": {
+      "document": "新增和修改用户接口",
+      "input": "ActionAlterUserRequest",
+      "name": "新增、修改用户接口",
+      "output": "ActionAlterUserResponse",
+      "status": "online"
+    },
     "CancelBackupJob": {
       "document": "取消对应的备份实例任务",
       "input": "CancelBackupJobRequest",
@@ -414,6 +421,61 @@
     "serviceShortName": "cdwdoris"
   },
   "objects": {
+    "ActionAlterUserRequest": {
+      "document": "ActionAlterUser请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户信息",
+          "example": "cdwch-xxxx",
+          "member": "UserInfo",
+          "name": "UserInfo",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "api接口类型",
+          "example": "AddSystemUser",
+          "member": "string",
+          "name": "ApiType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户权限类型 0:普通用户 1:管理员",
+          "example": "1",
+          "member": "int64",
+          "name": "UserPrivilege",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ActionAlterUserResponse": {
+      "document": "ActionAlterUser返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "ErrorMsg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "AttachCBSSpec": {
       "document": "集群内节点的规格磁盘规格描述",
       "members": [
@@ -5073,6 +5135,26 @@
           "output_required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否启用DLC 0:关闭 1:开启\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "EnableDlc",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "账户类型 0:普通用户 1:CAM用户\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "AccountType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -7682,6 +7764,75 @@
           "name": "IsSetGlobalCatalog",
           "required": false,
           "type": "bool"
+        }
+      ],
+      "usage": "in"
+    },
+    "UserInfo": {
+      "document": "新增或是修改用户",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群实例id",
+          "example": "cdwch-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户名",
+          "example": "test",
+          "member": "string",
+          "name": "UserName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "密码",
+          "example": "password",
+          "member": "string",
+          "name": "PassWord",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户链接来自的 IP",
+          "example": "10.0.2.123",
+          "member": "string",
+          "name": "WhiteHost",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "修改前用户链接来自的 IP",
+          "example": "10.0.2.1",
+          "member": "string",
+          "name": "OldWhiteHost",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "描述",
+          "example": "描述",
+          "member": "string",
+          "name": "Describe",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "旧密码",
+          "example": "pwd—***",
+          "member": "string",
+          "name": "OldPwd",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"

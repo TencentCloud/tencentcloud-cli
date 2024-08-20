@@ -316,9 +316,9 @@
       "status": "online"
     },
     "DescribeIdentityCenter": {
-      "document": "获取cam身份中心服务信息",
+      "document": "获取集团账号身份中心服务信息",
       "input": "DescribeIdentityCenterRequest",
-      "name": "获取用户cam身份中心服务信息",
+      "name": "获取集团账号身份中心服务信息",
       "output": "DescribeIdentityCenterResponse",
       "status": "online"
     },
@@ -458,7 +458,7 @@
     "DismantleRoleConfiguration": {
       "document": "解除权限配置在成员账号上的部署",
       "input": "DismantleRoleConfigurationRequest",
-      "name": "解除访问配置部署到成员账号上的部署",
+      "name": "解除权限配置部署",
       "output": "DismantleRoleConfigurationResponse",
       "status": "online"
     },
@@ -666,16 +666,16 @@
       "status": "online"
     },
     "OpenIdentityCenter": {
-      "document": "开通CIC服务",
+      "document": "开通身份中心服务（CIC）",
       "input": "OpenIdentityCenterRequest",
-      "name": "开通cam身份中心服务",
+      "name": "开通集团账号身份中心服务",
       "output": "OpenIdentityCenterResponse",
       "status": "online"
     },
     "ProvisionRoleConfiguration": {
       "document": "将权限配置部署到成员账号上",
       "input": "ProvisionRoleConfigurationRequest",
-      "name": "将访问配置部署到成员账号上",
+      "name": "将权限配置部署到成员账号上",
       "output": "ProvisionRoleConfigurationResponse",
       "status": "online"
     },
@@ -2155,7 +2155,7 @@
         },
         {
           "disabled": false,
-          "document": "访问配置名称。格式：包含英文字母、数字或短划线（-）。 长度：最大 128 个字符。",
+          "document": "权限配置名称。格式：包含英文字母、数字或短划线（-）。 长度：最大 128 个字符。",
           "example": "test",
           "member": "string",
           "name": "RoleConfigurationName",
@@ -2164,7 +2164,7 @@
         },
         {
           "disabled": false,
-          "document": "访问配置的描述。 长度：最大 1024 个字符。",
+          "document": "权限配置的描述。 长度：最大 1024 个字符。",
           "example": "this is role configuration",
           "member": "string",
           "name": "Description",
@@ -2173,7 +2173,7 @@
         },
         {
           "disabled": false,
-          "document": "会话持续时间。 CIC用户使用访问配置访问集团账号目标账号时，会话最多保持的时间。 单位：秒。 取值范围：900~43200（15 分钟~12 小时）。 默认值：3600（1 小时）。",
+          "document": "会话持续时间。 CIC用户使用权限配置访问集团账号目标账号时，会话最多保持的时间。 单位：秒。 取值范围：900 ~ 43200（15 分钟~12 小时）。 默认值：3600（1 小时）。",
           "example": "900",
           "member": "int64",
           "name": "SessionDuration",
@@ -2182,7 +2182,7 @@
         },
         {
           "disabled": false,
-          "document": "初始访问页面。 CIC用户使用访问配置访问集团账号目标账号时，初始访问的页面地址。 该页面必须是腾讯云控制台页面。默认为空，表示跳转到腾讯云控制台首页。",
+          "document": "初始访问页面。 CIC用户使用权限配置访问集团账号目标账号时，初始访问的页面地址。 该页面必须是腾讯云控制台页面。默认为空，表示跳转到腾讯云控制台首页。",
           "example": "https://console.cloud.tencent.com",
           "member": "string",
           "name": "RelayState",
@@ -2697,7 +2697,7 @@
         },
         {
           "disabled": false,
-          "document": "CAM用户同步的身份类型。取值： User：表示该 CAM 用户同步的身份是CIC用户。 Group：表示该 CAM 用户同步的身份是CIC用户组。",
+          "document": "CAM 用户同步的身份类型。取值： User：表示同步的身份是用户。 Group：表示同步的身份是用户组。",
           "example": "User",
           "member": "string",
           "name": "PrincipalType",
@@ -2706,7 +2706,7 @@
         },
         {
           "disabled": false,
-          "document": "CAM用户同步的身份 ID。取值： 当PrincipalType取值为Group时，该值为CIC 用户组 ID（g-********）， 当PrincipalType取值为User时，该值为CIC 用户 ID（u-********）。 \t",
+          "document": "用户同步 ID。取值： 当PrincipalType取值为Group时，该值为用户组 ID（g-********）， 当PrincipalType取值为User时，该值为用户 ID（u-********）。 \t",
           "example": "u-sniassda****",
           "member": "string",
           "name": "PrincipalId",
@@ -2715,7 +2715,7 @@
         },
         {
           "disabled": false,
-          "document": "当您移除一个集团账号目标账号上使用某访问配置的最后一个授权时，是否同时解除访问配置部署。取值： DeprovisionForLastRoleAssignmentOnAccount：解除访问配置部署。 None（默认值）：不解除访问配置部署。",
+          "document": "当您移除一个集团账号目标账号上使用某权限配置的最后一个授权时，是否同时解除权限配置部署。取值： DeprovisionForLastRoleAssignmentOnAccount：解除权限配置部署。 None（默认值）：不解除权限配置部署。",
           "example": "无",
           "member": "string",
           "name": "DeprovisionStrategy",
@@ -6624,7 +6624,7 @@
         },
         {
           "disabled": false,
-          "document": "CAM 用户同步的身份类型。取值： User：表示该 CAM 用户同步的身份是CIC用户。 Group：表示该 CAM 用户同步的身份是CIC用户组。",
+          "document": "CAM 用户同步的身份类型。取值： User：表示同步的身份是用户。 Group：表示同步的身份是用户组。",
           "example": "User",
           "member": "string",
           "name": "PrincipalType",
@@ -6633,7 +6633,7 @@
         },
         {
           "disabled": false,
-          "document": "CAM 用户同步的身份 ID。取值： 当PrincipalType取值为Group时，该值为CIC 用户组 ID（g-********）。 当PrincipalType取值为User时，该值为CIC 用户 ID（u-********）。",
+          "document": "用户同步 ID。取值： 当PrincipalType取值为Group时，该值为用户组 ID（g-****)，当PrincipalType取值为User时，该值为用户 ID （u-****）。",
           "example": "u-djwismoa***",
           "member": "string",
           "name": "PrincipalId",
@@ -6886,7 +6886,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件。不区分大小写。目前，只支持 RoleConfigurationName，只支持 eq（Equals）和 sw（Start With）。 示例：Filter = \"RoleConfigurationName，只支持 sw test\"，表示查询名称以 test 开头的全部访问配置。Filter = \"RoleConfigurationName，只支持 eq TestRoleConfiguration\"，表示查询名称为 TestRoleConfiguration 的访问配置。",
+          "document": "过滤条件。不区分大小写。目前，只支持 RoleConfigurationName，只支持 eq（Equals）和 sw（Start With）。 示例：Filter = \"RoleConfigurationName，只支持 sw test\"，表示查询名称以 test 开头的全部权限配置。Filter = \"RoleConfigurationName，只支持 eq TestRoleConfiguration\"，表示查询名称为 TestRoleConfiguration 的权限配置。",
           "example": "RoleConfigurationName eq TestRoleConfiguration",
           "member": "string",
           "name": "Filter",
@@ -7126,7 +7126,7 @@
         },
         {
           "disabled": false,
-          "document": "CAM 用户同步的身份 ID。取值：  当PrincipalType取值为Group时，该值为CIC用户组 ID（g-********）。 当PrincipalType取值为User时，该值为CIC用户 ID（u-********）。",
+          "document": "用户同步 ID。取值： 当PrincipalType取值为Group时，该值为用户组 ID（g-****）， 当PrincipalType取值为User时，该值为用户 ID（u-****）。",
           "example": "u-siws8sn***",
           "member": "string",
           "name": "PrincipalId",
@@ -7153,7 +7153,7 @@
         },
         {
           "disabled": false,
-          "document": "CAM 用户同步的身份类型。取值：  User：表示该 CAM 用户同步的身份是CIC用户。 Group：表示该 CAM 用户同步的身份是CIC用户组。",
+          "document": "CAM 用户同步的身份类型。取值： User：表示同步的身份是用户。 Group：表示同步的身份是用户组。",
           "example": "User",
           "member": "string",
           "name": "PrincipalType",
@@ -7284,7 +7284,7 @@
         },
         {
           "disabled": false,
-          "document": "CAM 用户同步的身份 ID。取值：  当PrincipalType取值为Group时，该值为CIC用户组 ID（g-********）。 当PrincipalType取值为User时，该值为CIC用户 ID（u-********）。",
+          "document": "用户同步 ID。取值：  当PrincipalType取值为Group时，该值为用户组 ID（g-********）。 当PrincipalType取值为User时，该值为用户 ID（u-********）。",
           "example": "u-siws8sn***",
           "member": "string",
           "name": "PrincipalId",
@@ -7311,7 +7311,7 @@
         },
         {
           "disabled": false,
-          "document": "CAM 用户同步的身份类型。取值：  User：表示该 CAM 用户同步的身份是CIC用户。 Group：表示该 CAM 用户同步的身份是CIC用户组。",
+          "document": "CAM 用户同步的身份类型。取值： User：表示同步的身份是用户。 Group：表示同步的身份是用户组。",
           "example": "无",
           "member": "string",
           "name": "PrincipalType",
@@ -10877,7 +10877,7 @@
         },
         {
           "disabled": false,
-          "document": "新的访问配置描述。  长度：最大 1024 个字符。",
+          "document": "新的权限配置描述。  长度：最大 1024 个字符。",
           "example": "this is role configuration",
           "member": "string",
           "name": "NewDescription",
@@ -10886,7 +10886,7 @@
         },
         {
           "disabled": false,
-          "document": "新的会话持续时间。  CIC 用户使用访问配置访问集团账号目标账号时，会话最多保持的时间。  单位：秒。  取值范围：900-43200（15 分钟-12 小时）。",
+          "document": "新的会话持续时间。  CIC 用户使用权限配置访问集团账号目标账号时，会话最多保持的时间。  单位：秒。  取值范围：900-43200（15 分钟-12 小时）。",
           "example": "900",
           "member": "int64",
           "name": "NewSessionDuration",
@@ -10895,7 +10895,7 @@
         },
         {
           "disabled": false,
-          "document": "新的初始访问页面。  CIC 用户使用访问配置访问集团账号目标账号时，初始访问的页面地址。  该页面必须是腾讯云控制台页面。",
+          "document": "新的初始访问页面。  CIC 用户使用权限配置访问集团账号目标账号时，初始访问的页面地址。  该页面必须是腾讯云控制台页面。",
           "example": "https://console.cloud.tencent.com",
           "member": "string",
           "name": "NewRelayState",

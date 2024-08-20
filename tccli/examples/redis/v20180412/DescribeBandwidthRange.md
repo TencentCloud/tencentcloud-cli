@@ -17,7 +17,7 @@ Output:
         "MaxAddBandwidth": 0,
         "BaseBandwidth": 0,
         "AddBandwidth": 0,
-        "RequestId": "xx"
+        "RequestId": "5e4ebf65-7ac6-42a2-de84-8fa5c00dd9a2"
     }
 }
 ```

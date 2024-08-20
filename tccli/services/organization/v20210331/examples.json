@@ -362,10 +362,10 @@
     ],
     "DescribeIdentityCenter": [
       {
-        "document": "获取用户cam身份中心服务信息",
+        "document": "获取集团账号身份中心服务信息",
         "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIdentityCenter\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"CreateTime\": \"2024-05-30 10:50:11\",\n        \"RequestId\": \"da9a32a5-f6d5-4ef5-be20-0ee16b63bb6d\",\n        \"ScimSyncStatus\": \"Disabled\",\n        \"ServiceStatus\": \"Enabled\",\n        \"UpdateTime\": \"2024-06-25 10:08:21\",\n        \"ZoneId\": \"z-vft38p2hq8tq\",\n        \"ZoneName\": \"testwu\"\n    }\n}",
-        "title": "获取用户cam身份中心服务信息"
+        "title": "获取集团账号身份中心服务信息"
       }
     ],
     "DescribeOrganization": [
@@ -762,10 +762,10 @@
     ],
     "OpenIdentityCenter": [
       {
-        "document": "开通CIC服务",
+        "document": "开通身份中心服务（CIC）",
         "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OpenIdentityCenter\n<公共请求参数>\n\n{\n    \"ZoneName\": \"testName\"\n}",
         "output": "{\n    \"Response\": {\n        \"ZoneId\": \"z-dj3jk*****\",\n        \"RequestId\": \"e297543a-80de-4039-83c8-9d324f45\"\n    }\n}",
-        "title": "开通CIC服务"
+        "title": "开通身份中心服务（CIC）"
       }
     ],
     "ProvisionRoleConfiguration": [

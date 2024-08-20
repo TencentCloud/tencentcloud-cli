@@ -274,7 +274,7 @@
       "status": "online"
     },
     "StartAITranscription": {
-      "document": "这个接口调用后，后台会启动转录机器人，实时进行语音识别并下发字幕和转录消息。\n转录机器人支持两种拉流方式，通过TranscriptionMode字段控制：\n- 拉取全房间的流。\n- 拉取特定用户的流。\n\n服务端通过TRTC的自定义消息实时下发字幕和会议记录，CmdId固定是1。客户端只需监听自定义消息的回调即可，比如[c++回调](https://cloud.tencent.com/document/product/647/79637#4cd82f4edb24992a15a25187089e1565)。其他客户端比如安卓、Web等同样可在该链接处找到。\n\n服务端实时下发的消息是JSON字符串，实时字幕具体格式如下：\n`{\n    \"type\": \"subtitle\",\n    \"userid\": \"xxx\",\n    \"text\": \"xxx\",\n    \"start_time\": \"00:00:02\",\n    \"end_time\": \"00:00:05\"\n}`\n字段作用如下：\n- type是subtitle，表示这是实时字幕消息。\n- userid表示是哪个用户说的话。\n- text是语音识别出的文本。\n- start_time和end_time表示该字幕消息从任务开启后的开始和结束时间。\n\n转录消息具体格式如下：\n`{\n    \"type\": \"transcription\",\n    \"userid\": \"xxx\",\n    \"text\": \"xxx\",\n    \"start_time\": \"00:00:02\",\n    \"end_time\": \"00:00:05\"\n}`\n字段作用如下：\n- type是transcription，表示这是转录消息。\n- 其余字段同实时字幕消息。\n\n转录消息和实时字幕消息的区别是，转录消息是完整的一句话，实时字幕消息则是这一句话的中间阶段。\n假如有一句完整的话，“今天天气怎么样？”，那么服务的下发消息的顺序可能是这样：\n- 字幕消息，“今天”\n- 字幕消息，“今天天气”\n- 字幕消息，“今天天气怎么样”\n- 转录消息，“今天天气怎么样？”",
+      "document": "启动转录机器人，后台会通过机器人拉流进行实时进行语音识别并下发字幕和转录消息。\n转录机器人支持两种拉流方式，通过TranscriptionMode字段控制：\n- 拉取全房间的流。\n- 拉取特定用户的流。\n\n服务端通过TRTC的自定义消息实时下发字幕以及转录消息，CmdId固定是1。客户端只需监听自定义消息的回调即可，比如[c++回调](https://cloud.tencent.com/document/product/647/79637#4cd82f4edb24992a15a25187089e1565)。其他客户端比如安卓、Web等同样可在该链接处找到。",
       "input": "StartAITranscriptionRequest",
       "name": "开始AI转录任务",
       "output": "StartAITranscriptionResponse",
@@ -370,6 +370,13 @@
       "name": "总结转录文本",
       "output": "SummarizeTranscriptionResponse",
       "status": "deprecated"
+    },
+    "UpdateAIConversation": {
+      "document": "更新AIConversation参数",
+      "input": "UpdateAIConversationRequest",
+      "name": "更新AI对话",
+      "output": "UpdateAIConversationResponse",
+      "status": "online"
     },
     "UpdatePublishCdnStream": {
       "document": "接口说明：\n成功发起混流转推后，可以使用此接口来更新任务。仅在任务进行时有效，任务退出后更新将会返回错误。更新操作为增量更新模式。\n注意：为了保障推流的稳定性，更新不支持任务在纯音频、音视频、纯视频之间进行切换。",
@@ -7007,6 +7014,78 @@
         }
       ],
       "usage": "out"
+    },
+    "UpdateAIConversationRequest": {
+      "document": "UpdateAIConversation请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "唯一标识一个任务",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "不填写则不进行更新，机器人的欢迎语",
+          "example": "无",
+          "member": "string",
+          "name": "WelcomeMessage",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "不填写则不进行更新。智能打断模式，0表示服务端自动打断，1表示服务端不打断，由端上发送打断信令进行打断",
+          "example": "无",
+          "member": "uint64",
+          "name": "InterruptMode",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "不填写则不进行更新。InterruptMode为0时使用，单位为毫秒，默认为500ms。表示服务端检测到持续InterruptSpeechDuration毫秒的人声则进行打断",
+          "example": "无",
+          "member": "uint64",
+          "name": "InterruptSpeechDuration",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "不填写则不进行更新，LLM配置，详情见StartAIConversation接口",
+          "example": "无",
+          "member": "string",
+          "name": "LLMConfig",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "不填写则不进行更新，TTS配置，详情见StartAIConversation接口",
+          "example": "无",
+          "member": "string",
+          "name": "TTSConfig",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateAIConversationResponse": {
+      "document": "UpdateAIConversation返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "UpdatePublishCdnStreamRequest": {
       "document": "UpdatePublishCdnStream请求参数结构体",

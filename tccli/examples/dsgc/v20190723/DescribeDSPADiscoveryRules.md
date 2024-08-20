@@ -24,6 +24,7 @@ Output:
                 "Name": "abc",
                 "Description": "abc",
                 "Source": 0,
+                "Status": 1,
                 "RDBRules": {
                     "Status": 0,
                     "MatchOperator": "abc",

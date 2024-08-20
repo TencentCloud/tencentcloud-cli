@@ -186,7 +186,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBandwidthRange\n<公共请求参数>\n\n{\n    \"InstanceId\": \"crs-sa5****\"\n}",
-        "output": "{\n    \"Response\": {\n        \"MinAddBandwidth\": 0,\n        \"MaxAddBandwidth\": 0,\n        \"BaseBandwidth\": 0,\n        \"AddBandwidth\": 0,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"MinAddBandwidth\": 0,\n        \"MaxAddBandwidth\": 0,\n        \"BaseBandwidth\": 0,\n        \"AddBandwidth\": 0,\n        \"RequestId\": \"5e4ebf65-7ac6-42a2-de84-8fa5c00dd9a2\"\n    }\n}",
         "title": "请求示例"
       }
     ],
@@ -354,7 +354,7 @@
       {
         "document": "获取集群版实例分片信息",
         "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceShards\n<公共请求参数>\n\n{\n    \"InstanceId\": \"crs-7pon****\",\n    \"FilterSlave\": true\n}",
-        "output": "{\n    \"Response\": {\n        \"InstanceShards\": [\n            {\n                \"Connected\": 1,\n                \"Keys\": 274171,\n                \"Role\": 0,\n                \"Runid\": \"edd1020ca1e3767c0d281d205964d168a2f5XXXX\",\n                \"ShardId\": \"1\",\n                \"ShardName\": \"crs-7pon****-001-02\",\n                \"Slots\": \"[\\\"0-5460\\\"]\",\n                \"Storage\": 92353816,\n                \"StorageSlope\": 0\n            },\n            {\n                \"Connected\": 1,\n                \"Keys\": 272958,\n                \"Role\": 0,\n                \"Runid\": \"8f8b3760bfbea22e0fad8a0a9575d7716801XXXX\",\n                \"ShardId\": \"3\",\n                \"ShardName\": \"crs-XXXXXXXX-003-01\",\n                \"Slots\": \"[\\\"10923-16383\\\"]\",\n                \"Storage\": 92096256,\n                \"StorageSlope\": 0\n            },\n            {\n                \"Connected\": 1,\n                \"Keys\": 273074,\n                \"Role\": 0,\n                \"Runid\": \"b6ed2e93ed754054f06220b995d42f4a07c2XXXX\",\n                \"ShardId\": \"2\",\n                \"ShardName\": \"crs-XXXXXXXX-002-01\",\n                \"Slots\": \"[\\\"5461-10922\\\"]\",\n                \"Storage\": 92149456,\n                \"StorageSlope\": 0\n            }\n        ],\n        \"RequestId\": \"9a57167a-f1a3-47ad-XXXX-b0ad835630a5\",\n        \"TotalCount\": 3\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceShards\": [\n            {\n                \"ShardName\": \"abc\",\n                \"ShardId\": \"abc\",\n                \"Role\": 0,\n                \"Keys\": 0,\n                \"Slots\": \"abc\",\n                \"Storage\": 0,\n                \"StorageSlope\": 0,\n                \"Runid\": \"abc\",\n                \"RunId\": \"abc\",\n                \"Connected\": 0\n            }\n        ],\n        \"TotalCount\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "请求示例"
       }
     ],

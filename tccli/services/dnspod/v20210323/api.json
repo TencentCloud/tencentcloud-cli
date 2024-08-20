@@ -7202,6 +7202,7 @@
           "example": "161",
           "member": "uint64",
           "name": "RecordId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },

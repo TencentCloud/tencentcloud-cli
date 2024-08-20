@@ -23,7 +23,18 @@ Output:
                 "RuleId": 1,
                 "RuleName": "银行卡",
                 "LevelId": 5,
-                "LevelName": "S3"
+                "RuleStatus": 1,
+                "LevelName": "S3",
+                "RuleEffectItems": [
+                    {
+                        "Name": "结构化数据",
+                        "Value": 1
+                    },
+                    {
+                        "Name": "非机构化数据",
+                        "Value": 2
+                    }
+                ]
             },
             {
                 "Id": 2,
@@ -31,7 +42,18 @@ Output:
                 "RuleId": 2,
                 "RuleName": "信用卡",
                 "LevelId": 6,
-                "LevelName": "S2"
+                "RuleStatus": 0,
+                "LevelName": "S2",
+                "RuleEffectItems": [
+                    {
+                        "Name": "结构化数据",
+                        "Value": 1
+                    },
+                    {
+                        "Name": "非机构化数据",
+                        "Value": 2
+                    }
+                ]
             }
         ]
     }

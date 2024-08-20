@@ -8178,6 +8178,15 @@
           "name": "Limit",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "地域",
+          "example": "无",
+          "member": "Location",
+          "name": "Location",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -8203,6 +8212,16 @@
           "name": "Content",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "地域",
+          "example": "无",
+          "member": "Location",
+          "name": "Location",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": false
         },
         {
@@ -12849,6 +12868,45 @@
         }
       ],
       "usage": "in"
+    },
+    "Location": {
+      "document": "新增Location字段，展示zone/region/campus",
+      "members": [
+        {
+          "disabled": false,
+          "document": "大区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "huanan",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "guangzhou",
+          "member": "string",
+          "name": "Zone",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "机房\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "guangzhou-1",
+          "member": "string",
+          "name": "Campus",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "Metadata": {
       "document": "元数据信息",

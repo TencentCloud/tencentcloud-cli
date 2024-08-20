@@ -57,7 +57,7 @@
       "status": "online"
     },
     "DetectAIFakeFaces": {
-      "document": "提供对人脸图片/视频的AI合成、翻拍、水印等攻击痕迹的检测，增强图片/视频防伪能力",
+      "document": "基于多模态的AI大模型算法，提供对人脸图片、视频的防攻击检测能力，可针对性有效识别高仿真的AIGC换脸、高清翻拍、批量黑产攻击、水印等攻击痕迹，增强对图片和视频的防伪安全能力。",
       "input": "DetectAIFakeFacesRequest",
       "name": "AI人脸防护盾",
       "output": "DetectAIFakeFacesResponse",
@@ -776,6 +776,24 @@
           "name": "IsEncrypt",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否需要对响应体加密",
+          "example": "false",
+          "member": "bool",
+          "name": "IsEncryptResponse",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否需要对返回中的敏感信息进行加密,需指定加密算法Algorithm、CBC加密的初始向量、加密后的对称密钥。",
+          "example": "无",
+          "member": "Encryption",
+          "name": "Encryption",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -912,6 +930,16 @@
           "output_required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "加密后的数据",
+          "example": "无",
+          "member": "string",
+          "name": "EncryptedBody",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

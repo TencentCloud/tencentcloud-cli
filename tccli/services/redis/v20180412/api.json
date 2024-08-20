@@ -1530,7 +1530,7 @@
           "example": "10856",
           "member": "int64",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1576,7 +1576,7 @@
           "example": "16658",
           "member": "int64",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1831,7 +1831,7 @@
           "example": "486489",
           "member": "int64",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2421,7 +2421,7 @@
           "example": "123456",
           "member": "int64",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2540,6 +2540,7 @@
           "example": "1",
           "member": "int64",
           "name": "AutoBackupType",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2549,6 +2550,7 @@
           "example": "[\"Monday\",\"Tuesday\"]",
           "member": "string",
           "name": "WeekDays",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2558,6 +2560,7 @@
           "example": "01:00-02:00",
           "member": "string",
           "name": "TimePeriod",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2567,6 +2570,7 @@
           "example": "7",
           "member": "int64",
           "name": "BackupStorageDays",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2576,6 +2580,7 @@
           "example": "7",
           "member": "int64",
           "name": "BinlogStorageDays",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2621,6 +2626,7 @@
           "example": "678362566696298532848117",
           "member": "string",
           "name": "BackupId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2630,6 +2636,7 @@
           "example": "\"2022-03-24 11:52:20\"",
           "member": "string",
           "name": "StartTime",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2639,6 +2646,7 @@
           "example": "\"2022-03-24 11:59:16\"",
           "member": "string",
           "name": "EndTime",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2648,6 +2656,7 @@
           "example": "\"1\"",
           "member": "string",
           "name": "BackupType",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2657,6 +2666,7 @@
           "example": "2",
           "member": "int64",
           "name": "Status",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2666,6 +2676,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "Remark",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2675,6 +2686,7 @@
           "example": "0",
           "member": "int64",
           "name": "Locked",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2684,6 +2696,7 @@
           "example": "10240",
           "member": "int64",
           "name": "BackupSize",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2693,6 +2706,7 @@
           "example": "6",
           "member": "int64",
           "name": "InstanceType",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2702,6 +2716,7 @@
           "example": "4096",
           "member": "int64",
           "name": "MemSize",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2711,6 +2726,7 @@
           "example": "3",
           "member": "int64",
           "name": "ShardNum",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2720,6 +2736,7 @@
           "example": "1",
           "member": "int64",
           "name": "ReplicasNum",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2877,6 +2894,7 @@
           "example": "[\"http://example.com/download/rdb/1.rdb\"]",
           "member": "string",
           "name": "DownloadUrl",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2886,6 +2904,7 @@
           "example": "[\"http://example.com/download/rdb/1.rdb\"]",
           "member": "string",
           "name": "InnerDownloadUrl",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2895,6 +2914,7 @@
           "example": "[\"1.rdb\"]",
           "member": "string",
           "name": "Filenames",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -2904,6 +2924,7 @@
           "example": "无",
           "member": "BackupDownloadInfo",
           "name": "BackupInfos",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -2940,7 +2961,7 @@
           "example": "1",
           "member": "int64",
           "name": "BaseBandwidth",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2950,7 +2971,7 @@
           "example": "1",
           "member": "int64",
           "name": "AddBandwidth",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2960,7 +2981,7 @@
           "example": "1",
           "member": "int64",
           "name": "MinAddBandwidth",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2970,7 +2991,7 @@
           "example": "1",
           "member": "int64",
           "name": "MaxAddBandwidth",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3273,6 +3294,7 @@
           "example": "无",
           "member": "Account",
           "name": "Accounts",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -3282,6 +3304,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3372,6 +3395,7 @@
           "example": "2",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3381,6 +3405,7 @@
           "example": "无",
           "member": "RedisBackupSet",
           "name": "BackupSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3417,7 +3442,7 @@
           "example": "dts-l2g434lt",
           "member": "string",
           "name": "JobId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3427,7 +3452,7 @@
           "example": "redis_dts_test28",
           "member": "string",
           "name": "JobName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3437,7 +3462,7 @@
           "example": "10",
           "member": "int64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3447,7 +3472,7 @@
           "example": "已失败",
           "member": "string",
           "name": "StatusDesc",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3457,7 +3482,7 @@
           "example": "0",
           "member": "int64",
           "name": "Offset",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3467,7 +3492,7 @@
           "example": "2019-08-16 17:10:13",
           "member": "string",
           "name": "CutDownTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3477,7 +3502,7 @@
           "example": "无",
           "member": "DescribeInstanceDTSInstanceInfo",
           "name": "SrcInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -3487,7 +3512,7 @@
           "example": "无",
           "member": "DescribeInstanceDTSInstanceInfo",
           "name": "DstInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -3505,8 +3530,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "地域ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "地域 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "int64",
           "name": "RegionId",
           "required": true,
@@ -3515,8 +3540,8 @@
         },
         {
           "disabled": false,
-          "document": "实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "实例 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -3525,8 +3550,8 @@
         },
         {
           "disabled": false,
-          "document": "仓库ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "仓库ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "int64",
           "name": "SetId",
           "required": true,
@@ -3535,8 +3560,8 @@
         },
         {
           "disabled": false,
-          "document": "可用区ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "可用区ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "int64",
           "name": "ZoneId",
           "required": true,
@@ -3545,8 +3570,8 @@
         },
         {
           "disabled": false,
-          "document": "实例类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "实例类型。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "int64",
           "name": "Type",
           "required": true,
@@ -3555,8 +3580,8 @@
         },
         {
           "disabled": false,
-          "document": "实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "实例名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "InstanceName",
           "required": true,
@@ -3565,8 +3590,8 @@
         },
         {
           "disabled": false,
-          "document": "实例访问地址\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "实例访问地址。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Vip",
           "required": true,
@@ -3575,8 +3600,8 @@
         },
         {
           "disabled": false,
-          "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "状态。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "int64",
           "name": "Status",
           "required": true,
@@ -4257,7 +4282,7 @@
           "example": "2",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4267,7 +4292,7 @@
           "example": "无",
           "member": "InstanceParamHistory",
           "name": "InstanceParamHistory",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4304,6 +4329,7 @@
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4313,6 +4339,7 @@
           "example": "无",
           "member": "InstanceEnumParam",
           "name": "InstanceEnumParam",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4322,6 +4349,7 @@
           "example": "无",
           "member": "InstanceIntegerParam",
           "name": "InstanceIntegerParam",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4331,6 +4359,7 @@
           "example": "无",
           "member": "InstanceTextParam",
           "name": "InstanceTextParam",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4340,6 +4369,7 @@
           "example": "无",
           "member": "InstanceMultiParam",
           "name": "InstanceMultiParam",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4422,6 +4452,7 @@
           "example": "无",
           "member": "InstanceClusterShard",
           "name": "InstanceShards",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4431,6 +4462,7 @@
           "example": "6",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4903,6 +4935,7 @@
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4912,6 +4945,7 @@
           "example": "crs-cfg-rhlppeye",
           "member": "string",
           "name": "TemplateId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4921,15 +4955,17 @@
           "example": "CustomParamTemplate",
           "member": "string",
           "name": "Name",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "产品类型。\n- 2：Redis 2.8内存版（标准架构）。\n- 3：CKV 3.2内存版（标准架构）。\n- 4：CKV 3.2内存版（集群架构）。\n- 5：Redis 2.8内存版（单机）。\n- 6：Redis 4.0内存版（标准架构）。\n- 7：Redis 4.0内存版（集群架构）。\n- 8：Redis 5.0内存版（标准架构）。\n- 9：Redis 5.0内存版（集群架构）。\n- 15：Redis 6.2内存版（标准架构）。\n- 16：Redis 6.2内存版（集群架构）。",
+          "document": "产品类型。\n- 2：Redis 2.8 内存版（标准架构）。\n- 3：CKV 3.2 内存版（标准架构）。\n- 4：CKV 3.2 内存版（集群架构）。\n- 5：Redis 2.8 内存版（单机）。\n- 6：Redis 4.0 内存版（标准架构）。\n- 7：Redis 4.0 内存版（集群架构）。\n- 8：Redis 5.0 内存版（标准架构）。\n- 9：Redis 5.0 内存版（集群架构）。\n- 15：Redis 6.2 内存版（标准架构）。\n- 16：Redis 6.2 内存版（集群架构）。\n- 17：Redis 7.0 内存版（标准架构）。\n- 18：Redis 7.0 内存版（集群架构）。",
           "example": "6",
           "member": "uint64",
           "name": "ProductType",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4939,6 +4975,7 @@
           "example": "MyCustomParamTemplate",
           "member": "string",
           "name": "Description",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4948,6 +4985,7 @@
           "example": "无",
           "member": "ParameterDetail",
           "name": "Items",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5250,6 +5288,7 @@
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5259,6 +5298,7 @@
           "example": "无",
           "member": "InstanceProxySlowlogDetail",
           "name": "InstanceProxySlowLogDetail",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5612,6 +5652,7 @@
           "example": "https://",
           "member": "string",
           "name": "CertDownloadUrl",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5621,6 +5662,7 @@
           "example": "2022-05-31 10:47:29",
           "member": "string",
           "name": "UrlExpiredTime",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5630,6 +5672,7 @@
           "example": "false",
           "member": "bool",
           "name": "SSLConfig",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -5639,6 +5682,7 @@
           "example": "false",
           "member": "bool",
           "name": "FeatureSupport",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -5648,6 +5692,7 @@
           "example": "1",
           "member": "int64",
           "name": "Status",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6179,7 +6224,7 @@
           "example": "15236",
           "member": "int64",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -6270,7 +6315,7 @@
           "example": "OK",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6280,7 +6325,7 @@
           "example": "16321",
           "member": "int64",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -8546,6 +8591,7 @@
           "example": "6954227",
           "member": "int64",
           "name": "TaskId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -10789,7 +10835,7 @@
           "example": "6954225",
           "member": "string",
           "name": "DealId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

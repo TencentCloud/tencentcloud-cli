@@ -3069,7 +3069,7 @@
           "example": "name",
           "member": "string",
           "name": "AddressTemplateName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3079,7 +3079,7 @@
           "example": "ipm-3iv46d0c",
           "member": "string",
           "name": "AddressTemplateId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3089,7 +3089,7 @@
           "example": "[\"2.2.2.2\"]",
           "member": "string",
           "name": "AddressSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3099,7 +3099,7 @@
           "example": "2021-03-02 14:41:15",
           "member": "string",
           "name": "CreatedTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3109,9 +3109,19 @@
           "example": "无",
           "member": "AddressInfo",
           "name": "AddressExtraSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签键值对。\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Tag",
+          "name": "TagSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -3122,52 +3132,62 @@
         {
           "disabled": false,
           "document": "IP地址模板集合名称。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "AddressTemplateGroupName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "IP地址模板集合实例ID，例如：ipmg-dih8xdbq。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "AddressTemplateGroupId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "IP地址模板ID。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "AddressTemplateIdSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "创建时间。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "CreatedTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "IP地址模板实例。",
-          "example": "",
+          "example": "无",
           "member": "AddressTemplateItem",
           "name": "AddressTemplateSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签键值对。\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Tag",
+          "name": "TagSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -20436,6 +20456,16 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签键值对。\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Tag",
+          "name": "TagSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -20571,6 +20601,16 @@
           "name": "BusinessIpType",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签键值对。\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Tag",
+          "name": "TagSet",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -21206,6 +21246,16 @@
           "name": "FlushedTime",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签键值对。\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Tag",
+          "name": "TagSet",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -22593,7 +22643,7 @@
           "example": "cluster-gbo27yc4",
           "member": "string",
           "name": "CdcId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -22603,17 +22653,17 @@
           "example": "vpc-m0c2kcun",
           "member": "string",
           "name": "VpcId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "本地网关实例ID",
+          "document": "本地网关实例ID（计划弃用）",
           "example": "lgw-1234erty",
           "member": "string",
           "name": "UniqLocalGwId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -22623,7 +22673,7 @@
           "example": "test",
           "member": "string",
           "name": "LocalGatewayName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -22633,7 +22683,7 @@
           "example": "192.168.15.55",
           "member": "string",
           "name": "LocalGwIp",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -22643,7 +22693,27 @@
           "example": "2021-03-24 15:31:56",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签键值对。\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Tag",
+          "name": "TagSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "本地网关实例ID（计划起用）",
+          "example": "lgw-1234erty",
+          "member": "string",
+          "name": "LocalGatewayId",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         }
@@ -26244,6 +26314,16 @@
           "name": "CreateTime",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签键值对。\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Tag",
+          "name": "TagSet",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -30092,7 +30172,7 @@
           "example": "ppm-f5n1f8da",
           "member": "string",
           "name": "ServiceTemplateId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -30102,7 +30182,7 @@
           "example": "name",
           "member": "string",
           "name": "ServiceTemplateName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -30112,7 +30192,7 @@
           "example": "[\"tcp:80\"]",
           "member": "string",
           "name": "ServiceSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -30122,7 +30202,7 @@
           "example": "2021-03-02 14:41:15",
           "member": "string",
           "name": "CreatedTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -30132,9 +30212,19 @@
           "example": "无",
           "member": "ServicesInfo",
           "name": "ServiceExtraSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签键值对。\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Tag",
+          "name": "TagSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -30145,52 +30235,62 @@
         {
           "disabled": false,
           "document": "协议端口模板集合实例ID，例如：ppmg-2klmrefu。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "ServiceTemplateGroupId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "协议端口模板集合名称。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "ServiceTemplateGroupName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "协议端口模板实例ID。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "ServiceTemplateIdSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "创建时间。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "CreatedTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "协议端口模板实例信息。",
-          "example": "",
+          "example": "无",
           "member": "ServiceTemplate",
           "name": "ServiceTemplateSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签键值对。\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Tag",
+          "name": "TagSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -30458,6 +30558,7 @@
           "example": "test",
           "member": "string",
           "name": "SnapshotPolicyName",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -30468,6 +30569,7 @@
           "example": "time",
           "member": "string",
           "name": "BackupType",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -30478,6 +30580,7 @@
           "example": "12",
           "member": "uint64",
           "name": "KeepTime",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -30488,6 +30591,7 @@
           "example": "True",
           "member": "bool",
           "name": "CreateNewCos",
+          "output_required": true,
           "required": true,
           "type": "bool",
           "value_allowed_null": true
@@ -30498,6 +30602,7 @@
           "example": "ap-guangzhou",
           "member": "string",
           "name": "CosRegion",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -30508,6 +30613,7 @@
           "example": "test-123123123",
           "member": "string",
           "name": "CosBucket",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -30518,6 +30624,7 @@
           "example": "sspolicy-hx8an9sr",
           "member": "string",
           "name": "SnapshotPolicyId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -30528,6 +30635,7 @@
           "example": "无",
           "member": "BackupPolicy",
           "name": "BackupPolicies",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -30538,6 +30646,7 @@
           "example": "True",
           "member": "bool",
           "name": "Enable",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": false
@@ -30548,8 +30657,20 @@
           "example": "2021-03-02 14:41:15",
           "member": "string",
           "name": "CreateTime",
+          "output_required": true,
           "required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签键值对。\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Tag",
+          "name": "TagSet",
+          "output_required": false,
+          "required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],

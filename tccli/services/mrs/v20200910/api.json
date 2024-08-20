@@ -6465,6 +6465,7 @@
           "example": "无",
           "member": "TextType",
           "name": "TextTypeList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -6546,6 +6547,7 @@
           "example": "无",
           "member": "Template",
           "name": "Template",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -6555,6 +6557,7 @@
           "example": "无",
           "member": "TextType",
           "name": "TextTypeList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },

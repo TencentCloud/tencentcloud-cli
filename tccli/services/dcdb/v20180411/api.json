@@ -9325,6 +9325,33 @@
           "name": "Zones",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "切换开始时间，格式如: \"2019-12-12 07:00:00\"。开始时间必须在当前时间一个小时以后，3天以内。",
+          "example": "2019-12-12 07:00:00",
+          "member": "string",
+          "name": "SwitchStartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "切换结束时间, 格式如: \"2019-12-12 07:15:00\"，结束时间必须大于开始时间。",
+          "example": "2019-12-12 07:15:00",
+          "member": "string",
+          "name": "SwitchEndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否自动重试。 0：不自动重试 1：自动重试",
+          "example": "1",
+          "member": "int64",
+          "name": "SwitchAutoRetry",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -9338,7 +9365,7 @@
           "example": "20180103110035",
           "member": "string",
           "name": "DealName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
