@@ -13876,6 +13876,7 @@
           "example": "无",
           "member": "Template",
           "name": "Template",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },

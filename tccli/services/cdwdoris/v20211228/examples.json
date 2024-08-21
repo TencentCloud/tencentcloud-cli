@@ -326,6 +326,14 @@
         "title": "集群销毁示例"
       }
     ],
+    "ModifyClusterConfigs": [
+      {
+        "document": "在集群配置页面修改集群配置文件接口，xml模式",
+        "input": "https://cdwdoris.tencentcloudapi.com/\n?Action=ModifyClusterConfigs\n&InstanceId=cdwch-xxxx\n&ModifyConfContext.0.FileName=xxxx\n&ModifyConfContext.0.OldConfValue=xxxxx\n&ModifyConfContext.0.NewConfValue=xxxx\n&Remark=xxxxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx-xxx\",\n        \"FlowId\": 0,\n        \"ErrorMsg\": \"\"\n    }\n}",
+        "title": "修改集群配置文件接口"
+      }
+    ],
     "ModifyCoolDownPolicy": [
       {
         "document": "",

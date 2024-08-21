@@ -280,6 +280,13 @@
       "output": "DestroyInstanceResponse",
       "status": "online"
     },
+    "ModifyClusterConfigs": {
+      "document": "在集群配置页面修改集群配置文件接口，xml模式",
+      "input": "ModifyClusterConfigsRequest",
+      "name": "修改集群配置文件",
+      "output": "ModifyClusterConfigsResponse",
+      "status": "online"
+    },
     "ModifyCoolDownPolicy": {
       "document": "修改冷热分层策略",
       "input": "ModifyCoolDownPolicyRequest",
@@ -1312,6 +1319,52 @@
         }
       ],
       "usage": "out"
+    },
+    "ConfigSubmitContext": {
+      "document": "配置文件修改信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "配置文件名称",
+          "example": "config.xml",
+          "member": "string",
+          "name": "FileName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "配置文件新内容，base64编码",
+          "example": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHlhbmRleD4K",
+          "member": "string",
+          "name": "NewConfValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "配置文件旧内容，base64编码",
+          "example": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHlhbmRleD4K",
+          "member": "string",
+          "name": "OldConfValue",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件路径",
+          "example": "/use/local/server/",
+          "member": "string",
+          "name": "FilePath",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "CoolDownBackend": {
       "document": "冷热分层backend节点信息",
@@ -5390,6 +5443,71 @@
         }
       ],
       "usage": "out"
+    },
+    "ModifyClusterConfigsRequest": {
+      "document": "ModifyClusterConfigs请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID，例如cdwch-xxxx",
+          "example": "cdwch-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "配置文件修改信息",
+          "example": "无",
+          "member": "ConfigSubmitContext",
+          "name": "ModifyConfContext",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "修改原因",
+          "example": "为了性能提升",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyClusterConfigsResponse": {
+      "document": "ModifyClusterConfigs返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "流程相关信息",
+          "example": "-",
+          "member": "int64",
+          "name": "FlowId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息",
+          "example": "-",
+          "member": "string",
+          "name": "ErrorMsg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ModifyCoolDownPolicyRequest": {
       "document": "ModifyCoolDownPolicy请求参数结构体",

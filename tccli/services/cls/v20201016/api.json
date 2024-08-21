@@ -4175,6 +4175,15 @@
           "name": "PreviewLogStatistics",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "数据加工类型。0：标准加工任务； 1：前置加工任务。前置加工任务将采集的日志处理完成后，再写入日志主题。",
+          "example": "0",
+          "member": "uint64",
+          "name": "DataTransformType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

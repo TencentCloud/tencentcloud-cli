@@ -66,7 +66,7 @@
     "ClassifyStoreName": {
       "document": "本接口用于识别门头照分类标签信息",
       "input": "ClassifyStoreNameRequest",
-      "name": "门头照分类",
+      "name": "商户照片分类",
       "output": "ClassifyStoreNameResponse",
       "status": "online"
     },
@@ -423,7 +423,7 @@
     "RecognizeStoreName": {
       "document": "本接口用于识别门头照文字识别结果以及对应分类标签信息",
       "input": "RecognizeStoreNameRequest",
-      "name": "门头照识别",
+      "name": "商户门头照识别",
       "output": "RecognizeStoreNameResponse",
       "status": "online"
     },

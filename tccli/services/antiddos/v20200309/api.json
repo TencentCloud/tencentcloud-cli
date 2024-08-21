@@ -1851,7 +1851,7 @@
         },
         {
           "disabled": false,
-          "document": "是否是商业模式优化-普惠版\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否标准版2.0 0: 包含标准版2.0 1: 只查询标准版2.0 2: 不查标准版2.0\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
           "name": "PlanCntFlag",
@@ -4857,6 +4857,15 @@
           "name": "Export",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "源站，模糊查询",
+          "example": "1.1.1.1:80",
+          "member": "string",
+          "name": "Source",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

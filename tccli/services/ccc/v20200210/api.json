@@ -7275,6 +7275,16 @@
         },
         {
           "disabled": false,
+          "document": "AsrUrl的状态：Complete\n已完成;\nProcessing\n正在生成中;\nNotExists\n无记录(未开启生成离线asr或者无套餐包)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Complete",
+          "member": "string",
+          "name": "AsrStatus",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
           "document": "录音转存第三方COS地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "https://xxxxx",
           "member": "string",

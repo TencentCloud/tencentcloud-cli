@@ -113,7 +113,7 @@
       "status": "online"
     },
     "DescribeCertificateBindResourceTaskDetail": {
-      "document": "查询CreateCertificateBindResourceSyncTask任务结果， 返回证书关联云资源异步任务结果， 支持以下云资源：clb、cdn、waf、live、vod、ddos、tke、apigateway、tcb、teo（edgeOne）",
+      "document": "查询CreateCertificateBindResourceSyncTask任务结果， 返回证书关联云资源异步任务结果， 支持以下云资源：clb、cdn、waf、live、vod、ddos、tke、apigateway、tcb、teo（edgeOne）、cos",
       "input": "DescribeCertificateBindResourceTaskDetailRequest",
       "name": "查询证书关联云资源任务结果 - 返回关联详情",
       "output": "DescribeCertificateBindResourceTaskDetailResponse",
@@ -2713,7 +2713,7 @@
           "example": "无",
           "member": "int64",
           "name": "ManagerId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8180,7 +8180,7 @@
           "example": "无",
           "member": "int64",
           "name": "ManagerId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -10498,7 +10498,7 @@
           "example": "23",
           "member": "int64",
           "name": "ManagerId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
