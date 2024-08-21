@@ -383,7 +383,7 @@
         },
         {
           "disabled": false,
-          "document": "动作类型( 0 -- tat   1 -- 云API）",
+          "document": "动作类型（0 -- tat   1 -- 云API）",
           "example": "1",
           "member": "uint64",
           "name": "ActionCommandType",
@@ -394,7 +394,7 @@
         {
           "disabled": false,
           "document": "自定义动作的参数，json string",
-          "example": "{\"Command\": \"ff\", \"CommandParameters\": \"{}\", \"CommandType\": \"she",
+          "example": "{\"Command\": \"ff\", \"CommandParameters\": \"{}\", \"CommandType\": \"shell\"}",
           "member": "string",
           "name": "ActionContent",
           "output_required": true,

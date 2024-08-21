@@ -4187,7 +4187,7 @@
     "UpdateAddrOfSvcInternal": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateAddrOfSvcInternal\n<公共请求参数>\n\n{\n    \"UpdateAddrOfSvcRequest\": [\n        {\n            \"SvcId\": \"123123\",\n            \"Vip\": \"12.2.2.3\",\n            \"OldVirtualPort\": \"3700\",\n            \"OldVip\": \"12.2.2.3\",\n            \"VirtualPort\": \"3600\"\n        }\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateAddrOfSvcInternal\n<公共请求参数>\n\n{\n    \"UpdateAddrOfSvcRequest\": [\n        {\n            \"SvcId\": \"123123\",\n            \"Vip\": \"12.2.2.3\",\n            \"VirtualPort\": 3600,\n            \"OldVpcId\": 1234567,\n            \"OldProtocol\": 6,\n            \"OldVip\": \"12.2.2.3\",\n            \"OldVirtualPort\": 3700\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"UpdateAddrOfSvcResult\": [\n            {\n                \"SvcId\": \"vpce-kifyia9o\",\n                \"ErrorCode\": 0,\n                \"ErrorInfo\": \"success\"\n            }\n        ],\n        \"ReturnCode\": 0,\n        \"RequestId\": \"1b2534de-3f38-4913-921a-af5ff1a9cb73\"\n    }\n}",
         "title": "SVC更新地址"
       }

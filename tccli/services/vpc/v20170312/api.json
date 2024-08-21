@@ -20520,6 +20520,33 @@
           "name": "Mask",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否使用分页",
+          "example": "无",
+          "member": "bool",
+          "name": "SupportLimit",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认为0",
+          "example": "无",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "返回数量，默认为20，最大值为100。\t",
+          "example": "无",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -20533,7 +20560,7 @@
           "example": "无",
           "member": "VpcOssIp",
           "name": "IpSet",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -30721,6 +30748,7 @@
           "example": "123123",
           "member": "string",
           "name": "SvcId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -30731,6 +30759,7 @@
           "example": "12.2.2.3",
           "member": "string",
           "name": "Vip",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -30741,6 +30770,7 @@
           "example": "3600",
           "member": "int64",
           "name": "VirtualPort",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -30751,6 +30781,7 @@
           "example": "12.2.2.3",
           "member": "string",
           "name": "OldVip",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -30761,9 +30792,32 @@
           "example": "3700",
           "member": "int64",
           "name": "OldVirtualPort",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "原DFW APIv2名称: updateAddrOfSvc.oldVpcid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1234567",
+          "member": "int64",
+          "name": "OldVpcId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "原DFW APIv2名称: updateAddrOfSvc.oldProtocol\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "6",
+          "member": "int64",
+          "name": "OldProtocol",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -43631,7 +43685,7 @@
           "example": "vpc-m0c2kcun",
           "member": "string",
           "name": "VpcId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -43641,7 +43695,7 @@
           "example": "0",
           "member": "uint64",
           "name": "VpcGatewayAttrFlag",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -43651,7 +43705,7 @@
           "example": "0",
           "member": "uint64",
           "name": "ToaHostIpFlag",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -43661,7 +43715,7 @@
           "example": "10.112.98.185",
           "member": "string",
           "name": "VpcGatewayIp",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -43671,7 +43725,7 @@
           "example": "0",
           "member": "uint64",
           "name": "SnatFlag",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -43681,7 +43735,7 @@
           "example": "0",
           "member": "uint64",
           "name": "LbType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -43691,7 +43745,7 @@
           "example": "172.16.48.216",
           "member": "string",
           "name": "Vip",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -43701,7 +43755,7 @@
           "example": "1",
           "member": "uint64",
           "name": "StickyMaxCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -43711,7 +43765,7 @@
           "example": "0",
           "member": "uint64",
           "name": "StickyFlag",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -43721,7 +43775,7 @@
           "example": "vpcgw-7hk7255d",
           "member": "string",
           "name": "VipVpcGatewayId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -43731,7 +43785,7 @@
           "example": "23",
           "member": "uint64",
           "name": "VirtualPort",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -43741,7 +43795,7 @@
           "example": "udp",
           "member": "string",
           "name": "Protocol",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -43751,7 +43805,7 @@
           "example": "0",
           "member": "uint64",
           "name": "BypassFlag",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -43761,7 +43815,7 @@
           "example": "0",
           "member": "uint64",
           "name": "ResetFlag",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -43771,7 +43825,7 @@
           "example": "0",
           "member": "uint64",
           "name": "HealthFlag",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -43781,7 +43835,7 @@
           "example": "0",
           "member": "uint64",
           "name": "RsZoneVpcGatewayId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -43791,7 +43845,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -43801,7 +43855,7 @@
           "example": "0",
           "member": "uint64",
           "name": "SubnetRouteAlgorithm",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -43811,7 +43865,7 @@
           "example": "0",
           "member": "uint64",
           "name": "StickyTimeout",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -43821,7 +43875,7 @@
           "example": "1",
           "member": "uint64",
           "name": "VipSetId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -43831,7 +43885,7 @@
           "example": "无",
           "member": "string",
           "name": "Business",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -43841,7 +43895,7 @@
           "example": "无",
           "member": "uint64",
           "name": "GroupId",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -43851,7 +43905,7 @@
           "example": "0",
           "member": "uint64",
           "name": "RemoteVpcId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -43861,7 +43915,7 @@
           "example": "29",
           "member": "uint64",
           "name": "IpType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -43871,7 +43925,7 @@
           "example": "vpcgw-7hk7255d",
           "member": "string",
           "name": "VpcGatewayId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -43881,7 +43935,7 @@
           "example": "vpcgw-7hk7255d",
           "member": "string",
           "name": "ClassicVpcGatewayId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -43891,7 +43945,7 @@
           "example": "0",
           "member": "uint64",
           "name": "SetId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -43901,7 +43955,7 @@
           "example": "0",
           "member": "uint64",
           "name": "VpcGatewayZoneId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -43911,7 +43965,7 @@
           "example": "无",
           "member": "ServiceRoute",
           "name": "RouteSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -43921,9 +43975,19 @@
           "example": "122211",
           "member": "uint64",
           "name": "VpcNumId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "fakeToaIp用于填充假的客户端 IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "192.168.0.1",
+          "member": "string",
+          "name": "FakeToaIp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -46042,7 +46106,7 @@
           "example": "无",
           "member": "DfwOssSvcOperateResult",
           "name": "UpdateAddrOfSvcResult",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -46052,7 +46116,7 @@
           "example": "0",
           "member": "int64",
           "name": "ReturnCode",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -56392,6 +56456,28 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "原VPC OSS APIv2名称: AddService. bDelPipRoute",
+          "example": "0",
+          "member": "int64",
+          "name": "DelPipRouteFlag",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "原VPC OSS APIv2名称: AddService. fakeToaIp\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "192.168.0.1",
+          "member": "string",
+          "name": "FakeToaIp",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -57568,6 +57654,7 @@
           "example": "1",
           "member": "int64",
           "name": "VpcId",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -57578,6 +57665,7 @@
           "example": "vpc-jmaywf6r",
           "member": "string",
           "name": "UniqueVpcId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -57588,6 +57676,7 @@
           "example": "1",
           "member": "int64",
           "name": "GroupId",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -57598,6 +57687,7 @@
           "example": "tcp",
           "member": "string",
           "name": "Protocol",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -57608,6 +57698,7 @@
           "example": "172.16.0.18",
           "member": "string",
           "name": "Vip",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -57618,6 +57709,7 @@
           "example": "22",
           "member": "int64",
           "name": "VirtualPort",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -57628,6 +57720,7 @@
           "example": "1",
           "member": "int64",
           "name": "LbType",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -57638,6 +57731,7 @@
           "example": "0",
           "member": "int64",
           "name": "StickFlag",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -57648,6 +57742,7 @@
           "example": "1",
           "member": "int64",
           "name": "StickTimeout",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -57658,6 +57753,7 @@
           "example": "0",
           "member": "int64",
           "name": "StickMaxCount",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -57668,6 +57764,7 @@
           "example": "1",
           "member": "int64",
           "name": "ResetFlag",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -57678,6 +57775,7 @@
           "example": "1",
           "member": "int64",
           "name": "ToaHostIpFlag",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -57688,6 +57786,7 @@
           "example": "1",
           "member": "int64",
           "name": "BypassFlag",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -57698,6 +57797,7 @@
           "example": "1",
           "member": "int64",
           "name": "RealServerAllDeadAsAliveFlag",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -57708,6 +57808,7 @@
           "example": "1",
           "member": "int64",
           "name": "RouteGroupFlag",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -57718,6 +57819,7 @@
           "example": "xxx",
           "member": "string",
           "name": "UniqueRouteGroupId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -57728,6 +57830,7 @@
           "example": "1",
           "member": "int64",
           "name": "RouteGroupId",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -57738,9 +57841,21 @@
           "example": "eks",
           "member": "string",
           "name": "Business",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "原VPC OSS APIv2名称: UpdateServiceProperty.fakeToaIp\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "192.168.0.1",
+          "member": "string",
+          "name": "FakeToaIp",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

@@ -3691,6 +3691,15 @@
           "name": "BurstPerformanceOperation",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "修改云硬盘的写入权限。取值：READ_ONLY，表示允许读取，禁止写入；READ_WRITE，表示允许读取，允许写入。",
+          "example": "READ_ONLY",
+          "member": "string",
+          "name": "WriteMode",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

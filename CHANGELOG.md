@@ -1,3 +1,145 @@
+# Release 3.0.1059.1
+
+## T-Sec-DDoS防护(Anti-DDoS)(antiddos) 版本：2020-03-09
+
+### 第 59 次发布
+
+发布时间：2024-08-22 01:07:46
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeBGPIPL7Rules](http://document.tencentcloudapi.woa.com/document/product/1021/82973)
+
+	* 新增入参：Source
+
+
+
+
+## 云硬盘(cbs) 版本：2017-03-12
+
+### 第 35 次发布
+
+发布时间：2024-08-22 01:10:08
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ModifyDiskAttributes](http://document.tencentcloudapi.woa.com/document/product/362/15659)
+
+	* 新增入参：WriteMode
+
+
+
+
+## 云联络中心(ccc) 版本：2020-02-10
+
+### 第 61 次发布
+
+发布时间：2024-08-22 01:10:15
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [TelCdrInfo](http://document.tencentcloudapi.woa.com/document/product/679/47715#TelCdrInfo)
+
+	* 新增成员：AsrStatus
+
+
+
+
+## 腾讯云数据仓库 TCHouse-D(cdwdoris) 版本：2021-12-28
+
+### 第 26 次发布
+
+发布时间：2024-08-22 01:11:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ModifyClusterConfigs](http://document.tencentcloudapi.woa.com/document/product/1706/84700)
+
+新增数据结构：
+
+* [ConfigSubmitContext](http://document.tencentcloudapi.woa.com/document/product/1706/80309#ConfigSubmitContext)
+
+
+
+## 日志服务(cls) 版本：2020-10-16
+
+### 第 84 次发布
+
+发布时间：2024-08-22 01:13:06
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateDataTransform](http://document.tencentcloudapi.woa.com/document/product/614/72184)
+
+	* 新增入参：DataTransformType
+
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 151 次发布
+
+发布时间：2024-08-22 01:30:49
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeIpInternal](http://document.tencentcloudapi.woa.com/document/product/215/75114)
+
+	* 新增入参：SupportLimit, Offset, Limit
+
+	* <font color="#dd0000">**修改出参**：</font>IpSet
+
+* [UpdateAddrOfSvcInternal](http://document.tencentcloudapi.woa.com/document/product/215/75974)
+
+	* <font color="#dd0000">**修改出参**：</font>UpdateAddrOfSvcResult, ReturnCode
+
+
+修改数据结构：
+
+* [DfwOssUpdateAddrOfSvcRequest](http://document.tencentcloudapi.woa.com/document/product/215/15824#DfwOssUpdateAddrOfSvcRequest)
+
+	* 新增成员：OldVpcId, OldProtocol
+
+* [Service](http://document.tencentcloudapi.woa.com/document/product/215/15824#Service)
+
+	* 新增成员：FakeToaIp
+
+* [VpcOssNewService](http://document.tencentcloudapi.woa.com/document/product/215/15824#VpcOssNewService)
+
+	* 新增成员：DelPipRouteFlag, FakeToaIp
+
+* [VpcOssServicePropertyRequest](http://document.tencentcloudapi.woa.com/document/product/215/15824#VpcOssServicePropertyRequest)
+
+	* 新增成员：FakeToaIp
+
+
+
+
 # Release 3.0.1058.1
 
 ## 应用管理平台(camp) 版本：2022-09-20
