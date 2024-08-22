@@ -1,13 +1,13 @@
-**Example 1: demo**
+**Example 1: DeleteApplication**
 
-demo
+
 
 Input: 
 
 ```
 tccli tcmpp DeleteApplication --cli-unfold-argument  \
-    --ApplicationId abc \
-    --PlatformId abc
+    --ApplicationId app-wan09utwt4 \
+    --PlatformId T04257DS9431720WTAG
 ```
 
 Output: 
@@ -17,7 +17,7 @@ Output:
         "Data": {
             "Result": true
         },
-        "RequestId": "abc"
+        "RequestId": "01ee5448aad4415fbe6253c2a581a9ae"
     }
 }
 ```

@@ -1,15 +1,15 @@
-**Example 1: demo**
+**Example 1: ModifyTeamMember**
 
-demo
+
 
 Input: 
 
 ```
 tccli tcmpp ModifyTeamMember --cli-unfold-argument  \
-    --TeamId abc \
-    --UserId abc \
-    --RoleId 0 \
-    --PlatformId abc
+    --TeamId 3686677859 \
+    --UserId U20240820175742EEOXFS \
+    --RoleId 20071 \
+    --PlatformId T04257DS9431720WTAG
 ```
 
 Output: 
@@ -19,7 +19,7 @@ Output:
         "Data": {
             "Result": true
         },
-        "RequestId": "abc"
+        "RequestId": "fe1c619c-8eec-41f6-99b5-79819e219da4"
     }
 }
 ```

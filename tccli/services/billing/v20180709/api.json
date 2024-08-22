@@ -5980,6 +5980,78 @@
       ],
       "usage": "both"
     },
+    "BindProperty": {
+      "document": "绑定属性",
+      "members": [
+        {
+          "disabled": false,
+          "document": "key值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PropertyKey",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "value值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PropertyValue",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "BindRecords": {
+      "document": "绑定记录",
+      "members": [
+        {
+          "disabled": false,
+          "document": "绑定对象Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"resourceId\"",
+          "member": "string",
+          "name": "BindObjectId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "绑定属性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "BindProperty",
+          "name": "Properties",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"2024-08-01 00:00:00\"",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"2024-08-07 00:00:00\"",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "BudgetConditionsForm": {
       "document": "预算管理自定义费用范围参数",
       "members": [
@@ -18911,6 +18983,16 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "绑定记录\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BindRecords",
+          "name": "BindRecords",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -19394,6 +19476,16 @@
           "example": "无",
           "member": "DescribeMeasureResourceAccountAttribute",
           "name": "AccountAttributes",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "绑定记录\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BindRecords",
+          "name": "BindRecords",
           "output_required": false,
           "type": "list",
           "value_allowed_null": true

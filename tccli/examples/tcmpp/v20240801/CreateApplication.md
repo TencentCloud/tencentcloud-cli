@@ -1,16 +1,20 @@
-**Example 1: demo**
+**Example 1: CreateApplication**
 
-demo
+
 
 Input: 
 
 ```
 tccli tcmpp CreateApplication --cli-unfold-argument  \
-    --ApplicationName abc \
-    --AndroidAppKey abc \
-    --IosAppKey abc \
-    --Logo http://baidu.com \
-    --PlatformId abc
+    --ApplicationName test \
+    --Logo http://127.0..0.1/T04257DS9431720WTAG/console/20240819193433-a67c2b912e.png \
+    --PlatformId T04257DS9431720WTAG \
+    --AndroidAppKey com.test \
+    --IosAppKey com.test \
+    --Intro test \
+    --Remark testtest \
+    --TeamId 9213128346 \
+    --ApplicationType 1
 ```
 
 Output: 
@@ -18,9 +22,9 @@ Output:
 {
     "Response": {
         "Data": {
-            "ResourceId": "abc"
+            "ResourceId": "app-0lcjnpmdpr"
         },
-        "RequestId": "a3a8754d19214815ba0af3010b871b91"
+        "RequestId": "b4bbc366-892c-4ec2-9edc-2a572c1770b4"
     }
 }
 ```

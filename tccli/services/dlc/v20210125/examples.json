@@ -948,6 +948,14 @@
         "title": "获取用户列表信息"
       }
     ],
+    "DescribeUsersGroups": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUsersGroups\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"UsersGroups\": {\n            \"UserAppId\": \"abc\",\n            \"UserGroupInfo\": [\n                {\n                    \"UserId\": \"abc\",\n                    \"GroupIds\": [\n                        0\n                    ]\n                }\n            ]\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "获取工作组列表"
+      }
+    ],
     "DescribeViews": [
       {
         "document": "",

@@ -1,13 +1,13 @@
-**Example 1: demo**
+**Example 1: DeleteGlobalDomain**
 
-demo
+
 
 Input: 
 
 ```
 tccli tcmpp DeleteGlobalDomain --cli-unfold-argument  \
-    --DomainId 0 \
-    --PlatformId abc
+    --DomainId 5561 \
+    --PlatformId T04257DS9431720WTAG
 ```
 
 Output: 
@@ -17,7 +17,7 @@ Output:
         "Data": {
             "Result": true
         },
-        "RequestId": "abc"
+        "RequestId": "8622f24e-f735-4e4b-ba3e-71088823c379"
     }
 }
 ```

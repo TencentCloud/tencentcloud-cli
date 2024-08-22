@@ -1,13 +1,13 @@
-**Example 1: demo**
+**Example 1: DeleteUser**
 
-demo
+
 
 Input: 
 
 ```
 tccli tcmpp DeleteUser --cli-unfold-argument  \
-    --UserId abc \
-    --PlatformId abc
+    --UserId U20240819174742HGXHXT \
+    --PlatformId T04257DS9431720WTAG
 ```
 
 Output: 
@@ -17,7 +17,7 @@ Output:
         "Data": {
             "Result": true
         },
-        "RequestId": "abc"
+        "RequestId": "e6687e03-d5ba-4215-9b0f-1171fff115f1"
     }
 }
 ```

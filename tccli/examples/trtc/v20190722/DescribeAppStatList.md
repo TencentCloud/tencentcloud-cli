@@ -34,6 +34,7 @@ Output:
                 "BizSubScheme": 1,
                 "UiMode": 0,
                 "CreateTime": "string",
+                "CreateTimeStamp": 123,
                 "License": "string",
                 "SubProductCode": "string",
                 "ID": 1,

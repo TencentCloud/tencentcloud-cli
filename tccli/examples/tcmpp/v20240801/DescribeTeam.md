@@ -1,13 +1,13 @@
-**Example 1: demo**
+**Example 1: DescribeTeam**
 
-demo
+
 
 Input: 
 
 ```
 tccli tcmpp DescribeTeam --cli-unfold-argument  \
-    --TeamId abc \
-    --PlatformId abc
+    --TeamId 1363731006 \
+    --PlatformId T04257DS9431720WTAG
 ```
 
 Output: 
@@ -15,16 +15,18 @@ Output:
 {
     "Response": {
         "Data": {
-            "TeamName": "abc",
-            "TeamRoleType": 0,
-            "AdminUserAccount": "abc",
-            "CreateUser": "abc",
-            "CreateTime": "abc",
-            "MemberCount": 0,
-            "BindTeamName": "abc",
-            "RegisterLink": "abc"
+            "TeamName": "autotest_mini_team",
+            "TeamRoleType": 1,
+            "AdminUserAccount": "autotest_op",
+            "CreateUser": "admin",
+            "CreateTime": "1720678574",
+            "MemberCount": 8,
+            "BindMiniTeamCount": 0,
+            "BindTeamName": "autotest_app_team",
+            "RegisterLink": "",
+            "ApplicationName": "autotest_app"
         },
-        "RequestId": "abc"
+        "RequestId": "70f3c710-c3ea-46a2-a80d-49100a8acaf7"
     }
 }
 ```

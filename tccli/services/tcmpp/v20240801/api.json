@@ -1,9 +1,9 @@
 {
   "actions": {
     "AddTeamMember": {
-      "document": "将用户添加到团队内",
+      "document": "添加团队成员",
       "input": "AddTeamMemberRequest",
-      "name": "将用户添加到团队内",
+      "name": "添加团队成员",
       "output": "AddTeamMemberResponse",
       "status": "online"
     },
@@ -14,11 +14,25 @@
       "output": "CheckGlobalDomainResponse",
       "status": "online"
     },
+    "ConfigureMNPPreview": {
+      "document": "设置小程序体验版本",
+      "input": "ConfigureMNPPreviewRequest",
+      "name": "设置小程序体验版本",
+      "output": "ConfigureMNPPreviewResponse",
+      "status": "online"
+    },
     "CreateApplication": {
-      "document": "新增应用",
+      "document": "创建应用",
       "input": "CreateApplicationRequest",
-      "name": "新增应用",
+      "name": "创建应用",
       "output": "CreateApplicationResponse",
+      "status": "online"
+    },
+    "CreateApplicationSensitiveAPI": {
+      "document": "创建应用敏感API",
+      "input": "CreateApplicationSensitiveAPIRequest",
+      "name": "创建应用敏感API",
+      "output": "CreateApplicationSensitiveAPIResponse",
       "status": "online"
     },
     "CreateConsoleMNPVersionCompileTask": {
@@ -42,11 +56,46 @@
       "output": "CreateGlobalDomainResponse",
       "status": "online"
     },
+    "CreateGlobalDomainACL": {
+      "document": "创建全局域名白名单或黑名单列表",
+      "input": "CreateGlobalDomainACLRequest",
+      "name": "创建全局域名白名单或黑名单列表",
+      "output": "CreateGlobalDomainACLResponse",
+      "status": "online"
+    },
     "CreateMNP": {
       "document": "创建小程序",
       "input": "CreateMNPRequest",
       "name": "创建小程序",
       "output": "CreateMNPResponse",
+      "status": "online"
+    },
+    "CreateMNPApproval": {
+      "document": "创建小程序审核申请",
+      "input": "CreateMNPApprovalRequest",
+      "name": "创建小程序审核申请",
+      "output": "CreateMNPApprovalResponse",
+      "status": "online"
+    },
+    "CreateMNPDomainACL": {
+      "document": "创建小程序服务域名白名单或黑名单列表",
+      "input": "CreateMNPDomainACLRequest",
+      "name": "创建小程序服务域名白名单或黑名单列表",
+      "output": "CreateMNPDomainACLResponse",
+      "status": "online"
+    },
+    "CreateMNPSensitiveAPIPermissionApproval": {
+      "document": "创建小程序调用敏感API权限申请",
+      "input": "CreateMNPSensitiveAPIPermissionApprovalRequest",
+      "name": "创建小程序调用敏感API权限申请",
+      "output": "CreateMNPSensitiveAPIPermissionApprovalResponse",
+      "status": "online"
+    },
+    "CreateMNPVersion": {
+      "document": "创建小程序版本",
+      "input": "CreateMNPVersionRequest",
+      "name": "创建小程序版本",
+      "output": "CreateMNPVersionResponse",
       "status": "online"
     },
     "CreateOnlineApply": {
@@ -85,9 +134,9 @@
       "status": "online"
     },
     "CreateTeam": {
-      "document": "新建团队",
+      "document": "创建团队",
       "input": "CreateTeamRequest",
-      "name": "新建团队",
+      "name": "创建团队",
       "output": "CreateTeamResponse",
       "status": "online"
     },
@@ -112,10 +161,17 @@
       "output": "DeleteApplicationResponse",
       "status": "online"
     },
+    "DeleteApplicationSensitiveAPI": {
+      "document": "删除应用敏感API",
+      "input": "DeleteApplicationSensitiveAPIRequest",
+      "name": "删除应用敏感API",
+      "output": "DeleteApplicationSensitiveAPIResponse",
+      "status": "online"
+    },
     "DeleteGlobalDomain": {
       "document": "删除白名单或黑名单中的域名",
       "input": "DeleteGlobalDomainRequest",
-      "name": "删除白名单或黑名单中的域名",
+      "name": "删除全局域名白名单或黑名单列表中的域名",
       "output": "DeleteGlobalDomainResponse",
       "status": "online"
     },
@@ -155,9 +211,9 @@
       "status": "online"
     },
     "DescribeApplication": {
-      "document": "查询应用详细信息",
+      "document": "查询应用详情",
       "input": "DescribeApplicationRequest",
-      "name": "查询应用详细信息",
+      "name": "查询应用详情",
       "output": "DescribeApplicationResponse",
       "status": "online"
     },
@@ -168,10 +224,17 @@
       "output": "DescribeApplicationConfigResponse",
       "status": "online"
     },
+    "DescribeApplicationConfigFile": {
+      "document": "查询应用的配置文件",
+      "input": "DescribeApplicationConfigFileRequest",
+      "name": "查询应用配置文件",
+      "output": "DescribeApplicationConfigFileResponse",
+      "status": "online"
+    },
     "DescribeApplicationList": {
-      "document": "查询应用列表数据",
+      "document": "查询应用列表",
       "input": "DescribeApplicationListRequest",
-      "name": "查询应用列表数据",
+      "name": "查询应用列表",
       "output": "DescribeApplicationListResponse",
       "status": "online"
     },
@@ -180,6 +243,13 @@
       "input": "DescribeApplicationMNPVersionAuditListRequest",
       "name": "查询小程序版本审核列表",
       "output": "DescribeApplicationMNPVersionAuditListResponse",
+      "status": "online"
+    },
+    "DescribeApplicationSensitiveAPIList": {
+      "document": "查询应用敏感API列表",
+      "input": "DescribeApplicationSensitiveAPIListRequest",
+      "name": "查询应用敏感API列表",
+      "output": "DescribeApplicationSensitiveAPIListResponse",
       "status": "online"
     },
     "DescribeConsoleMNPVersionCompileTask": {
@@ -203,11 +273,39 @@
       "output": "DescribeDomainTeamListResponse",
       "status": "online"
     },
+    "DescribeGlobalDomainACL": {
+      "document": "查询全局域名黑名单和白名单列表",
+      "input": "DescribeGlobalDomainACLRequest",
+      "name": "查询全局域名黑名单和白名单列表",
+      "output": "DescribeGlobalDomainACLResponse",
+      "status": "online"
+    },
     "DescribeGlobalDomainList": {
       "document": "查询域名黑名单和白名单列表",
       "input": "DescribeGlobalDomainListRequest",
       "name": "查询域名黑名单和白名单列表",
       "output": "DescribeGlobalDomainListResponse",
+      "status": "online"
+    },
+    "DescribeMNP": {
+      "document": "查询小程序详情",
+      "input": "DescribeMNPRequest",
+      "name": "查询小程序详情",
+      "output": "DescribeMNPResponse",
+      "status": "online"
+    },
+    "DescribeMNPAllStageVersions": {
+      "document": "查询小程序版本管理详细信息",
+      "input": "DescribeMNPAllStageVersionsRequest",
+      "name": "查询小程序所有研发阶段版本",
+      "output": "DescribeMNPAllStageVersionsResponse",
+      "status": "online"
+    },
+    "DescribeMNPApprovalList": {
+      "document": "查询小程序版本审核列表",
+      "input": "DescribeMNPApprovalListRequest",
+      "name": "查询小程序审核申请列表",
+      "output": "DescribeMNPApprovalListResponse",
       "status": "online"
     },
     "DescribeMNPBoard": {
@@ -217,11 +315,32 @@
       "output": "DescribeMNPBoardResponse",
       "status": "online"
     },
+    "DescribeMNPCategory": {
+      "document": "查询小程序类型列表",
+      "input": "DescribeMNPCategoryRequest",
+      "name": "查询小程序分类",
+      "output": "DescribeMNPCategoryResponse",
+      "status": "online"
+    },
     "DescribeMNPDetail": {
       "document": "查询小程序详细信息",
       "input": "DescribeMNPDetailRequest",
       "name": "查询小程序详细信息",
       "output": "DescribeMNPDetailResponse",
+      "status": "online"
+    },
+    "DescribeMNPDomainACL": {
+      "document": "查询小程序服务域名白名单或黑名单列表详情",
+      "input": "DescribeMNPDomainACLRequest",
+      "name": "查询小程序服务域名白名单或黑名单列表详情",
+      "output": "DescribeMNPDomainACLResponse",
+      "status": "online"
+    },
+    "DescribeMNPList": {
+      "document": "查询小程序列表",
+      "input": "DescribeMNPListRequest",
+      "name": "查询小程序列表",
+      "output": "DescribeMNPListResponse",
       "status": "online"
     },
     "DescribeMNPManagerDetail": {
@@ -234,8 +353,22 @@
     "DescribeMNPManagerList": {
       "document": "查询小程序列表",
       "input": "DescribeMNPManagerListRequest",
-      "name": "查询小程序列表",
+      "name": "查询小程序管理列表",
       "output": "DescribeMNPManagerListResponse",
+      "status": "online"
+    },
+    "DescribeMNPOfflinePackageURL": {
+      "document": "DescribeMNPOfflinePackageURL",
+      "input": "DescribeMNPOfflinePackageURLRequest",
+      "name": "查询小程序离线包下载地址",
+      "output": "DescribeMNPOfflinePackageURLResponse",
+      "status": "online"
+    },
+    "DescribeMNPPreview": {
+      "document": "查询小程序体验版详细信息",
+      "input": "DescribeMNPPreviewRequest",
+      "name": "查询小程序预览详情",
+      "output": "DescribeMNPPreviewResponse",
       "status": "online"
     },
     "DescribeMNPPrivacy": {
@@ -245,11 +378,46 @@
       "output": "DescribeMNPPrivacyResponse",
       "status": "online"
     },
+    "DescribeMNPReleasedVersionHistory": {
+      "document": "查询小程序发布版本历史列表",
+      "input": "DescribeMNPReleasedVersionHistoryRequest",
+      "name": "查询小程序发布版本历史列表",
+      "output": "DescribeMNPReleasedVersionHistoryResponse",
+      "status": "online"
+    },
+    "DescribeMNPSensitiveAPIPermissionApproval": {
+      "document": "查询小程序调用敏感API权限申请详情",
+      "input": "DescribeMNPSensitiveAPIPermissionApprovalRequest",
+      "name": "查询小程序调用敏感API权限申请详情",
+      "output": "DescribeMNPSensitiveAPIPermissionApprovalResponse",
+      "status": "online"
+    },
+    "DescribeMNPSensitiveAPIPermissionApprovalList": {
+      "document": "查询小程序调用敏感API权限申请列表",
+      "input": "DescribeMNPSensitiveAPIPermissionApprovalListRequest",
+      "name": "查询小程序调用敏感API权限申请列表",
+      "output": "DescribeMNPSensitiveAPIPermissionApprovalListResponse",
+      "status": "online"
+    },
+    "DescribeMNPSensitiveAPIPermissionList": {
+      "document": "查询小程序可调用敏感API列表",
+      "input": "DescribeMNPSensitiveAPIPermissionListRequest",
+      "name": "查询小程序可调用敏感API列表",
+      "output": "DescribeMNPSensitiveAPIPermissionListResponse",
+      "status": "online"
+    },
     "DescribeMNPType": {
       "document": "查询小程序类型列表",
       "input": "DescribeMNPTypeRequest",
       "name": "查询小程序类型列表",
       "output": "DescribeMNPTypeResponse",
+      "status": "online"
+    },
+    "DescribeMNPVersion": {
+      "document": "查询小程序版本创建结果",
+      "input": "DescribeMNPVersionRequest",
+      "name": "查询小程序版本创建结果",
+      "output": "DescribeMNPVersionResponse",
       "status": "online"
     },
     "DescribeMNPVersionPreview": {
@@ -281,9 +449,9 @@
       "status": "online"
     },
     "DescribeRoleList": {
-      "document": "查询角色列表数据",
+      "document": "查询角色列表",
       "input": "DescribeRoleListRequest",
-      "name": "查询角色列表数据",
+      "name": "查询角色列表",
       "output": "DescribeRoleListResponse",
       "status": "online"
     },
@@ -330,9 +498,9 @@
       "status": "online"
     },
     "DescribeTeam": {
-      "document": "查询团队详情信息",
+      "document": "查询团队详情",
       "input": "DescribeTeamRequest",
-      "name": "查询团队详情信息",
+      "name": "查询团队详情",
       "output": "DescribeTeamResponse",
       "status": "online"
     },
@@ -344,9 +512,9 @@
       "status": "online"
     },
     "DescribeTeamList": {
-      "document": "查询当前角色权限可查看的团队列表",
+      "document": "查询的团队列表",
       "input": "DescribeTeamListRequest",
-      "name": "查询当前角色权限可查看的团队列表",
+      "name": "查询团队列表",
       "output": "DescribeTeamListResponse",
       "status": "online"
     },
@@ -371,6 +539,13 @@
       "output": "DescribeTempSecret4UploadFile2CosResponse",
       "status": "online"
     },
+    "DescribeUser": {
+      "document": "查询用户详情",
+      "input": "DescribeUserRequest",
+      "name": "查询用户详情",
+      "output": "DescribeUserResponse",
+      "status": "online"
+    },
     "DescribeUserDetail": {
       "document": "查询用户详细信息",
       "input": "DescribeUserDetailRequest",
@@ -385,11 +560,25 @@
       "output": "DescribeUserListResponse",
       "status": "online"
     },
+    "DisableApplicationSensitiveAPI": {
+      "document": "设置应用敏感API为受限状态",
+      "input": "DisableApplicationSensitiveAPIRequest",
+      "name": "设置应用敏感API为受限状态",
+      "output": "DisableApplicationSensitiveAPIResponse",
+      "status": "online"
+    },
     "DisableTeamDomain": {
       "document": "将企业已备案的域名禁用",
       "input": "DisableTeamDomainRequest",
       "name": "将企业已备案的域名禁用",
       "output": "DisableTeamDomainResponse",
+      "status": "online"
+    },
+    "EnableApplicationSensitiveAPI": {
+      "document": "设置应用敏感API为开放状态",
+      "input": "EnableApplicationSensitiveAPIRequest",
+      "name": "设置应用敏感API为开放状态",
+      "output": "EnableApplicationSensitiveAPIResponse",
       "status": "online"
     },
     "ModifyApplication": {
@@ -434,10 +623,17 @@
       "output": "ModifyMNPResponse",
       "status": "online"
     },
+    "ModifyMNPDomain": {
+      "document": "编辑小程序域名信息",
+      "input": "ModifyMNPDomainRequest",
+      "name": "修改小程序域名信息",
+      "output": "ModifyMNPDomainResponse",
+      "status": "online"
+    },
     "ModifyMNPStatusOffline": {
       "document": "下架小程序",
       "input": "ModifyMNPStatusOfflineRequest",
-      "name": "下架小程序",
+      "name": "从应用中下架小程序",
       "output": "ModifyMNPStatusOfflineResponse",
       "status": "online"
     },
@@ -477,16 +673,16 @@
       "status": "online"
     },
     "ModifyTeamMember": {
-      "document": "修改团队成员角色",
+      "document": "修改团队成员信息",
       "input": "ModifyTeamMemberRequest",
-      "name": "修改团队成员角色",
+      "name": "修改团队成员信息",
       "output": "ModifyTeamMemberResponse",
       "status": "online"
     },
     "ModifyUser": {
-      "document": "编辑用户信息",
+      "document": "修改用户信息",
       "input": "ModifyUserRequest",
-      "name": "编辑用户信息",
+      "name": "修改用户信息",
       "output": "ModifyUserResponse",
       "status": "online"
     },
@@ -495,6 +691,41 @@
       "input": "ModifyUserPasswordRequest",
       "name": "重置用户密码",
       "output": "ModifyUserPasswordResponse",
+      "status": "online"
+    },
+    "ProcessMNPApproval": {
+      "document": "对小程序版本发布申请进行审批",
+      "input": "ProcessMNPApprovalRequest",
+      "name": "处理小程序审核申请",
+      "output": "ProcessMNPApprovalResponse",
+      "status": "online"
+    },
+    "ProcessMNPSensitiveAPIPermissionApproval": {
+      "document": "对敏感API调用权限申请进行审批",
+      "input": "ProcessMNPSensitiveAPIPermissionApprovalRequest",
+      "name": "处理小程序调用敏感API权限申请",
+      "output": "ProcessMNPSensitiveAPIPermissionApprovalResponse",
+      "status": "online"
+    },
+    "ReleaseMNPVersion": {
+      "document": "发布小程序版本",
+      "input": "ReleaseMNPVersionRequest",
+      "name": "发布小程序版本",
+      "output": "ReleaseMNPVersionResponse",
+      "status": "online"
+    },
+    "RemoveMNP": {
+      "document": "下架小程序",
+      "input": "RemoveMNPRequest",
+      "name": "下架小程序",
+      "output": "RemoveMNPResponse",
+      "status": "online"
+    },
+    "RollbackMNPVersion": {
+      "document": "回滚小程序线上版本",
+      "input": "RollbackMNPVersionRequest",
+      "name": "回滚小程序线上版本",
+      "output": "RollbackMNPVersionResponse",
       "status": "online"
     }
   },
@@ -559,560 +790,6 @@
         }
       ],
       "type": "object"
-    },
-    "ApplicationDetail": {
-      "document": "应用详情",
-      "members": [
-        {
-          "disabled": false,
-          "document": "应用ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "ApplicationID",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "产品ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "int64",
-          "name": "AppIdentityID",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "应用名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "ApplicationName",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "应用英文名称（该字段暂未使用）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "ApplicationEnglishName",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "应用图标\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "Logo",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "Remark",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "安卓包名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "AndroidAppKey",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "iOS bundleId\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "IosAppKey",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "创建人\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "CreateUser",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "CreateTime",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "更新人\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "UpdateUser",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "UpdateTime",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "绑定小程序数量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "int64",
-          "name": "BindMNPCount",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "绑定小程序列表信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "ApplicationMNPRelInfoResp",
-          "name": "BindMNPList",
-          "output_required": true,
-          "type": "list",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "应用简介\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "Intro",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "安卓 APP下载地址\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "AndroidAppUrl",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "iOS APP 下载地址\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "IosAppUrl",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "团队ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "TeamId",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "团队名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "TeamName",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "隐私API数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "int64",
-          "name": "SensitiveApiCount",
-          "output_required": false,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "应用类型 1-测试 2-正式\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "int64",
-          "name": "ApplicationType",
-          "output_required": false,
-          "type": "int",
-          "value_allowed_null": true
-        }
-      ],
-      "usage": "out"
-    },
-    "ApplicationInfo": {
-      "document": "应用信息",
-      "members": [
-        {
-          "disabled": false,
-          "document": "平台ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "CustomerID",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "应用ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "ApplicationID",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "产品ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "int64",
-          "name": "AppIdentityID",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "ApplicationName",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "英文名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "ApplicationEnglishName",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "图标",
-          "example": "无",
-          "member": "string",
-          "name": "Logo",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "备注",
-          "example": "无",
-          "member": "string",
-          "name": "Remark",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "安卓包名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "AndroidAppKey",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "iOS bundleId\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "IosAppKey",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "创建人\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "CreateUser",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "CreateTime",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "更新人\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "UpdateUser",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "UpdateTime",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "简介",
-          "example": "无",
-          "member": "string",
-          "name": "Intro",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "iOS APP 下载地址",
-          "example": "无",
-          "member": "string",
-          "name": "IosAppUrl",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "安卓 APP 下载地址",
-          "example": "无",
-          "member": "string",
-          "name": "AndroidAppUrl",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "团队ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "TeamId",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "团队名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "TeamName",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "隐私API数量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "int64",
-          "name": "SensitiveApiCount",
-          "output_required": false,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "应用类型 1-测试 2-正式\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "uint64",
-          "name": "ApplicationType",
-          "output_required": false,
-          "type": "int",
-          "value_allowed_null": true
-        }
-      ],
-      "usage": "out"
-    },
-    "ApplicationMNPRelInfoResp": {
-      "document": "应用绑定信息",
-      "members": [
-        {
-          "disabled": false,
-          "document": "小程序ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "MNPId",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "小程序名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "MNPName",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "小程序图标\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "MNPIcon",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "小程序类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "MNPType",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "简介\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "MNPIntro",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "MNPDesc",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "生效状态 1 未生效 2 生效\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "int64",
-          "name": "EffectStatus",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "生效版本\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "EffectMNPVersion",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "上线版本\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "MNPOnlineVersion",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "0 未上线 1 上线\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "int64",
-          "name": "OnlineStatus",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": true
-        }
-      ],
-      "usage": "out"
-    },
-    "ApplicationPageInfo": {
-      "document": "应用分页信息",
-      "members": [
-        {
-          "disabled": false,
-          "document": "总记录条数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "int64",
-          "name": "TotalCount",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "列表信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "ApplicationInfo",
-          "name": "DataList",
-          "output_required": true,
-          "type": "list",
-          "value_allowed_null": true
-        }
-      ],
-      "usage": "out"
     },
     "ApplicationSimpleInfo": {
       "document": "应用信息",
@@ -1201,6 +878,39 @@
         }
       ],
       "usage": "out"
+    },
+    "ApprovalItem": {
+      "document": "处理小程序审核明细",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用ID",
+          "example": "无",
+          "member": "string",
+          "name": "AppId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "审批结果  2-审核不通过\n3-审核通过",
+          "example": "无",
+          "member": "int64",
+          "name": "ApprovalResult",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "审核记录，审批不通过时必填",
+          "example": "无",
+          "member": "string",
+          "name": "ApprovalNote",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
     },
     "AuditInfoReq": {
       "document": "审核内容对象",
@@ -1297,6 +1007,79 @@
       ],
       "type": "object"
     },
+    "ConfigureMNPPreviewRequest": {
+      "document": "ConfigureMNPPreview请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "小程序ID",
+          "example": "无",
+          "member": "string",
+          "name": "MNPId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "1 设置 2取消",
+          "example": "无",
+          "member": "int64",
+          "name": "ActionType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "小程序版本id",
+          "example": "无",
+          "member": "int64",
+          "name": "MNPVersionId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "平台ID",
+          "example": "无",
+          "member": "string",
+          "name": "PlatformId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "体验地址页面路径",
+          "example": "无",
+          "member": "string",
+          "name": "PreivewEntrancePath",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ConfigureMNPPreviewResponse": {
+      "document": "ConfigureMNPPreview返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "响应数据",
+          "example": "无",
+          "member": "BooleanInfo",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateApplicationRequest": {
       "document": "CreateApplication请求参数结构体",
       "members": [
@@ -1329,7 +1112,34 @@
         },
         {
           "disabled": false,
-          "document": "安卓包名",
+          "document": "团队ID",
+          "example": "无",
+          "member": "string",
+          "name": "TeamId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "应用类型 1-测试 2-正式",
+          "example": "无",
+          "member": "int64",
+          "name": "ApplicationType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "简介",
+          "example": "无",
+          "member": "string",
+          "name": "Intro",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "安卓App 包名",
           "example": "无",
           "member": "string",
           "name": "AndroidAppKey",
@@ -1338,19 +1148,10 @@
         },
         {
           "disabled": false,
-          "document": "iOS bundleId",
+          "document": "iOS App bundleId",
           "example": "无",
           "member": "string",
           "name": "IosAppKey",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "简介",
-          "example": "无",
-          "member": "string",
-          "name": "Intro",
           "required": false,
           "type": "string"
         },
@@ -1362,42 +1163,6 @@
           "name": "Remark",
           "required": false,
           "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "安卓APP 下载地址",
-          "example": "无",
-          "member": "string",
-          "name": "AndroidAppURL",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "iOS APP 下载地址",
-          "example": "无",
-          "member": "string",
-          "name": "IosAppURL",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "团队ID",
-          "example": "无",
-          "member": "string",
-          "name": "TeamId",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "应用类型 1-测试 2-正式",
-          "example": "无",
-          "member": "int64",
-          "name": "ApplicationType",
-          "required": false,
-          "type": "int"
         }
       ],
       "type": "object"
@@ -1410,6 +1175,100 @@
           "document": "响应数据",
           "example": "无",
           "member": "ResourceIdStringInfo",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateApplicationSensitiveAPIReq": {
+      "document": "新增敏感API请求对象",
+      "members": [
+        {
+          "disabled": false,
+          "document": "API名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "APIName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "API描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "APIDesc",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "API类型 1-系统API 2-自定义API\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "APIType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "CreateApplicationSensitiveAPIRequest": {
+      "document": "CreateApplicationSensitiveAPI请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用ID",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "新增API列表",
+          "example": "无",
+          "member": "CreateApplicationSensitiveAPIReq",
+          "name": "APIList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "平台ID",
+          "example": "无",
+          "member": "string",
+          "name": "PlatformId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateApplicationSensitiveAPIResponse": {
+      "document": "CreateApplicationSensitiveAPI返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "响应数据",
+          "example": "无",
+          "member": "BooleanInfo",
           "name": "Data",
           "output_required": true,
           "type": "object",
@@ -1621,6 +1480,61 @@
       ],
       "type": "object"
     },
+    "CreateGlobalDomainACLRequest": {
+      "document": "CreateGlobalDomainACL请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名列表",
+          "example": "无",
+          "member": "string",
+          "name": "DomainUrlList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "域名类型 1 白名单 2 黑名单",
+          "example": "无",
+          "member": "int64",
+          "name": "DomainType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "平台ID",
+          "example": "无",
+          "member": "string",
+          "name": "PlatformId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateGlobalDomainACLResponse": {
+      "document": "CreateGlobalDomainACL返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "响应数据",
+          "example": "无",
+          "member": "CreateGlobalDomainResp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateGlobalDomainRequest": {
       "document": "CreateGlobalDomain请求参数结构体",
       "members": [
@@ -1722,6 +1636,116 @@
       ],
       "type": "object"
     },
+    "CreateMNPApprovalRequest": {
+      "document": "CreateMNPApproval请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "小程序版本ID",
+          "example": "无",
+          "member": "int64",
+          "name": "MNPVersionId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "submit-发起审核，cancel-撤销审核",
+          "example": "无",
+          "member": "string",
+          "name": "ApplyAction",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "平台ID",
+          "example": "无",
+          "member": "string",
+          "name": "PlatformId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateMNPApprovalResponse": {
+      "document": "CreateMNPApproval返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "响应数据",
+          "example": "无",
+          "member": "BooleanInfo",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateMNPDomainACLRequest": {
+      "document": "CreateMNPDomainACL请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "小程序ID",
+          "example": "无",
+          "member": "string",
+          "name": "MNPId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "域名列表",
+          "example": "无",
+          "member": "CreateDomainParam",
+          "name": "Domain",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "平台ID",
+          "example": "无",
+          "member": "string",
+          "name": "PlatformId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateMNPDomainACLResponse": {
+      "document": "CreateMNPDomainACL返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "响应数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BooleanInfo",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateMNPRequest": {
       "document": "CreateMNP请求参数结构体",
       "members": [
@@ -1796,13 +1820,77 @@
       "members": [
         {
           "disabled": false,
-          "document": "响应数据",
+          "document": "响应小程序ID",
           "example": "无",
           "member": "ResourceIdStringInfo",
           "name": "Data",
           "output_required": true,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateMNPSensitiveAPIPermissionApprovalRequest": {
+      "document": "CreateMNPSensitiveAPIPermissionApproval请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "API Id",
+          "example": "无",
+          "member": "string",
+          "name": "APIId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "申请原因",
+          "example": "无",
+          "member": "string",
+          "name": "ApplyReason",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "小程序Id",
+          "example": "无",
+          "member": "string",
+          "name": "MNPId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "平台Id",
+          "example": "无",
+          "member": "string",
+          "name": "PlatformId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateMNPSensitiveAPIPermissionApprovalResponse": {
+      "document": "CreateMNPSensitiveAPIPermissionApproval返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "响应数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ResourceIdStringInfo",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1851,6 +1939,96 @@
         }
       ],
       "usage": "both"
+    },
+    "CreateMNPVersionRequest": {
+      "document": "CreateMNPVersion请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "小程序ID",
+          "example": "无",
+          "member": "string",
+          "name": "MNPId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "版本号",
+          "example": "无",
+          "member": "string",
+          "name": "MNPVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "IDE导出小程序文件，并上传至文件服务器后的文件地址",
+          "example": "无",
+          "member": "string",
+          "name": "FileUrl",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "平台ID",
+          "example": "无",
+          "member": "string",
+          "name": "PlatformId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "版本介绍",
+          "example": "无",
+          "member": "string",
+          "name": "MNPVersionIntro",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateMNPVersionResp": {
+      "document": "创建小程序版本响应数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "小程序版本编译任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "CreateMNPVersionResponse": {
+      "document": "CreateMNPVersion返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "响应数据",
+          "example": "无",
+          "member": "CreateMNPVersionResp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CreateOnlineApplyRequest": {
       "document": "CreateOnlineApply请求参数结构体",
@@ -2302,7 +2480,7 @@
         },
         {
           "disabled": false,
-          "document": "团队权限类型 1 小程序 2 应用 (多选累加)",
+          "document": "团队权限类型 1 小程序 2 应用 (目前只支持传其中一个类型)",
           "example": "无",
           "member": "int64",
           "name": "TeamRoleTypeList",
@@ -2310,12 +2488,12 @@
           "type": "list"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "全局团队ID，接口调用时默认-1",
           "example": "无",
           "member": "string",
           "name": "GlobalTeamId",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
@@ -2478,6 +2656,52 @@
           "output_required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteApplicationSensitiveAPIRequest": {
+      "document": "DeleteApplicationSensitiveAPI请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "API ID",
+          "example": "无",
+          "member": "string",
+          "name": "APIId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "平台ID",
+          "example": "无",
+          "member": "string",
+          "name": "PlatformId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteApplicationSensitiveAPIResponse": {
+      "document": "DeleteApplicationSensitiveAPI返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "响应数据",
+          "example": "无",
+          "member": "BooleanInfo",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -2773,6 +2997,61 @@
       ],
       "type": "object"
     },
+    "DescribeApplicationConfigFileRequest": {
+      "document": "DescribeApplicationConfigFile请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用ID",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "应用类型 2 安卓 3 iOS",
+          "example": "无",
+          "member": "int64",
+          "name": "AppType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "平台ID",
+          "example": "无",
+          "member": "string",
+          "name": "PlatformId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApplicationConfigFileResponse": {
+      "document": "DescribeApplicationConfigFile返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "响应数据",
+          "example": "无",
+          "member": "DownloadApplicationConfigResp",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeApplicationConfigRequest": {
       "document": "DescribeApplicationConfig请求参数结构体",
       "members": [
@@ -2828,6 +3107,172 @@
       ],
       "type": "object"
     },
+    "DescribeApplicationListData": {
+      "document": "应用信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "App 标识Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "AppIdentityId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "图标",
+          "example": "无",
+          "member": "string",
+          "name": "Logo",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备注",
+          "example": "无",
+          "member": "string",
+          "name": "Remark",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "安卓App 包名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AndroidAppKey",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "iOS App bundleId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "IosAppKey",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CreateUser",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "更新人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UpdateUser",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "简介",
+          "example": "无",
+          "member": "string",
+          "name": "Intro",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "团队Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TeamId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "团队名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TeamName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "敏感API数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "SensitiveApiCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "应用类型 1-测试 2-正式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "ApplicationType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "DescribeApplicationListRequest": {
       "document": "DescribeApplicationList请求参数结构体",
       "members": [
@@ -2879,6 +3324,32 @@
       ],
       "type": "object"
     },
+    "DescribeApplicationListResp": {
+      "document": "查询应用列表响应对象",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总记录条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "列表信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DescribeApplicationListData",
+          "name": "DataList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "DescribeApplicationListResponse": {
       "document": "DescribeApplicationList返回参数结构体",
       "members": [
@@ -2886,7 +3357,7 @@
           "disabled": false,
           "document": "响应数据",
           "example": "无",
-          "member": "ApplicationPageInfo",
+          "member": "DescribeApplicationListResp",
           "name": "Data",
           "output_required": true,
           "type": "object",
@@ -3269,7 +3740,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用ID",
+          "document": "应用Id",
           "example": "无",
           "member": "string",
           "name": "ApplicationId",
@@ -3278,7 +3749,7 @@
         },
         {
           "disabled": false,
-          "document": "平台ID",
+          "document": "平台Id",
           "example": "无",
           "member": "string",
           "name": "PlatformId",
@@ -3288,6 +3759,172 @@
       ],
       "type": "object"
     },
+    "DescribeApplicationResp": {
+      "document": "应用详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "产品ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "AppIdentityId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "应用名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "应用图标\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Logo",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Remark",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "安卓包名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AndroidAppKey",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "iOS bundleId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "IosAppKey",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CreateUser",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "更新人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UpdateUser",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "应用简介\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Intro",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "团队ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TeamId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "团队名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TeamName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "隐私API数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "SensitiveApiCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "应用类型 1-测试 2-正式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "ApplicationType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "DescribeApplicationResponse": {
       "document": "DescribeApplication返回参数结构体",
       "members": [
@@ -3295,7 +3932,271 @@
           "disabled": false,
           "document": "响应数据",
           "example": "无",
-          "member": "ApplicationDetail",
+          "member": "DescribeApplicationResp",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApplicationSensitiveAPIListData": {
+      "document": "查询应用敏感API列表数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "APIID",
+          "example": "无",
+          "member": "string",
+          "name": "APIId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "API名称",
+          "example": "无",
+          "member": "string",
+          "name": "APIName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "API方法",
+          "example": "无",
+          "member": "string",
+          "name": "APIMethod",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "API描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "APIDesc",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "新增人",
+          "example": "无",
+          "member": "string",
+          "name": "CreateUser",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "无",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新用户",
+          "example": "无",
+          "member": "string",
+          "name": "UpdateUser",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间",
+          "example": "无",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "应用名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "团队ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TeamId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "团队名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TeamName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "应用图标\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationLogo",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "API类型 1-系统API 2 自定义API\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "APIType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "API状态 0 公开 1 受限\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeApplicationSensitiveAPIListRequest": {
+      "document": "DescribeApplicationSensitiveAPIList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分页的偏移量",
+          "example": "无",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页的条数",
+          "example": "无",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "平台ID",
+          "example": "无",
+          "member": "string",
+          "name": "PlatformId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "应用ID",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询关键字（Api名称或者方法）",
+          "example": "无",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "团队ID",
+          "example": "无",
+          "member": "string",
+          "name": "TeamId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApplicationSensitiveAPIListResp": {
+      "document": "查询应用敏感API列表响应对象",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总记录条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "列表信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DescribeApplicationSensitiveAPIListData",
+          "name": "DataList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeApplicationSensitiveAPIListResponse": {
+      "document": "DescribeApplicationSensitiveAPIList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "响应数据",
+          "example": "无",
+          "member": "DescribeApplicationSensitiveAPIListResp",
           "name": "Data",
           "output_required": true,
           "type": "object",
@@ -3564,6 +4465,79 @@
       ],
       "type": "object"
     },
+    "DescribeGlobalDomainACLRequest": {
+      "document": "DescribeGlobalDomainACL请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分页的偏移量",
+          "example": "无",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页的条数",
+          "example": "无",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "平台ID",
+          "example": "无",
+          "member": "string",
+          "name": "PlatformId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "域名类型 1 白名单 2 黑名单",
+          "example": "无",
+          "member": "int64",
+          "name": "DomainTypes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "查询域名",
+          "example": "无",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGlobalDomainACLResponse": {
+      "document": "DescribeGlobalDomainACL返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "响应数据",
+          "example": "无",
+          "member": "DescribeGlobalDomainsResp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeGlobalDomainListRequest": {
       "document": "DescribeGlobalDomainList请求参数结构体",
       "members": [
@@ -3637,6 +4611,467 @@
       ],
       "type": "object"
     },
+    "DescribeGlobalDomainsListData": {
+      "document": "全局域名列表信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "DomainId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DomainUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "类型 1 白名单 2 黑名单\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "DomainType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CreateUser",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "更新人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UpdateUser",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeGlobalDomainsResp": {
+      "document": "全局域名分页列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "域名信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DescribeGlobalDomainsListData",
+          "name": "DataList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeMNPAllStageVersionsRequest": {
+      "document": "DescribeMNPAllStageVersions请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "小程序ID",
+          "example": "无",
+          "member": "string",
+          "name": "MNPId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "平台ID",
+          "example": "无",
+          "member": "string",
+          "name": "PlatformId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMNPAllStageVersionsResponse": {
+      "document": "DescribeMNPAllStageVersions返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "响应数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DescribeMPAllStageVersionsResp",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMNPApprovalListData": {
+      "document": "应用-小程序审核列表信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "审核单号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ApprovalNo",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "应用ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "审核状态 1-审核中 2-审核不通过 3-审核通过 4-审核撤销\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "ApprovalStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "小程序ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "MNPId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "小程序版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "MNPVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "小程序版本ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "MNPVersionId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "申请人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ApplyUser",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "申请时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ApplyTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "小程序名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "MNPName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "小程序图标\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "MNPIcon",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "应用名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "应用图标\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationLogo",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "团队ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TeamId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "团队名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TeamName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "小程序审核二维码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "MNPQrCodeUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "小程序类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "MNPType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "审核人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ApprovalUser",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "审核时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ApprovalTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "审核备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ApprovalNote",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeMNPApprovalListRequest": {
+      "document": "DescribeMNPApprovalList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分页的偏移量",
+          "example": "无",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页的条数",
+          "example": "无",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "平台ID",
+          "example": "无",
+          "member": "string",
+          "name": "PlatformId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "审批状态 1 审核中 2 不通过 3 通过 4 撤销",
+          "example": "无",
+          "member": "int64",
+          "name": "ApprovalStatusList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "查询关键字（小程序名称）",
+          "example": "无",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "应用ID",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "团队ID",
+          "example": "无",
+          "member": "string",
+          "name": "TeamId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMNPApprovalListResp": {
+      "document": "应用-小程序审核列表分页",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总记录条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "列表信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DescribeMNPApprovalListData",
+          "name": "DataList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeMNPApprovalListResponse": {
+      "document": "DescribeMNPApprovalList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "响应数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DescribeMNPApprovalListResp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeMNPBoardRequest": {
       "document": "DescribeMNPBoard请求参数结构体",
       "members": [
@@ -3683,6 +5118,43 @@
       ],
       "type": "object"
     },
+    "DescribeMNPCategoryRequest": {
+      "document": "DescribeMNPCategory请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "平台ID",
+          "example": "无",
+          "member": "string",
+          "name": "PlatformId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMNPCategoryResponse": {
+      "document": "DescribeMNPCategory返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "响应数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MNPTypeDefine",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeMNPDetailRequest": {
       "document": "DescribeMNPDetail请求参数结构体",
       "members": [
@@ -3715,6 +5187,316 @@
           "document": "响应数据\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MNPDetail",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMNPDomainACLRequest": {
+      "document": "DescribeMNPDomainACL请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "小程序ID",
+          "example": "无",
+          "member": "string",
+          "name": "MNPId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "平台ID",
+          "example": "无",
+          "member": "string",
+          "name": "PlatformId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMNPDomainACLResponse": {
+      "document": "DescribeMNPDomainACL返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "响应数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DescribeDomainInfoParam",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMNPListData": {
+      "document": "小程序管理页列表数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "小程序ID",
+          "example": "无",
+          "member": "string",
+          "name": "MNPId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "小程序图标",
+          "example": "无",
+          "member": "string",
+          "name": "MNPIcon",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "小程序名称",
+          "example": "无",
+          "member": "string",
+          "name": "MNPName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "所属团队名称",
+          "example": "无",
+          "member": "string",
+          "name": "TeamName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "小程序分类",
+          "example": "无",
+          "member": "string",
+          "name": "MNPType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "小程序上下架状态 1-已上架 2 下架\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "小程序简介\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "MNPIntro",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CreateUser",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "更新人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UpdateUser",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "应用名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "小程序绑定应用生效状态 1-未生效 2-已生效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "EffectStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "小程序绑定应用生效版本ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "EffectMNPVersionId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "小程序绑定应用生效版本号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "EffectMNPVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeMNPListRequest": {
+      "document": "DescribeMNPList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分页的偏移量",
+          "example": "无",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页的条数",
+          "example": "无",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "平台ID",
+          "example": "无",
+          "member": "string",
+          "name": "PlatformId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询关键字（小程序名称）",
+          "example": "无",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "团队ID",
+          "example": "无",
+          "member": "string",
+          "name": "TeamId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "应用ID",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMNPListResp": {
+      "document": "小程序主页小程序列表响应对象",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总记录条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "列表信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DescribeMNPListData",
+          "name": "DataList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeMNPListResponse": {
+      "document": "DescribeMNPList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "响应数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DescribeMNPListResp",
           "name": "Data",
           "output_required": true,
           "type": "object",
@@ -4066,6 +5848,183 @@
       ],
       "type": "object"
     },
+    "DescribeMNPOfflinePackageURLRequest": {
+      "document": "DescribeMNPOfflinePackageURL请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "小程序ID",
+          "example": "无",
+          "member": "string",
+          "name": "MNPId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "平台ID",
+          "example": "无",
+          "member": "string",
+          "name": "PlatformId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMNPOfflinePackageURLResponse": {
+      "document": "DescribeMNPOfflinePackageURL返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "响应数据",
+          "example": "无",
+          "member": "StringData",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMNPPreviewRequest": {
+      "document": "DescribeMNPPreview请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "小程序ID",
+          "example": "无",
+          "member": "string",
+          "name": "MNPId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "小程序版本id",
+          "example": "无",
+          "member": "int64",
+          "name": "MNPVersionId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "平台ID",
+          "example": "无",
+          "member": "string",
+          "name": "PlatformId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMNPPreviewResp": {
+      "document": "查询体验版本响应对象",
+      "members": [
+        {
+          "disabled": false,
+          "document": "小程序ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "MNPId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "小程序名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "MNPName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "小程序说明\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "MNPDesc",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "小程序版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "MNPVersion",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "小程序版本简介\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "MNPVersionIntro",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "小程序版本二维码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "QRCodeUrl",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "体验入口地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PreviewEntrancePath",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeMNPPreviewResponse": {
+      "document": "DescribeMNPPreview返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "响应数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DescribeMNPPreviewResp",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeMNPPrivacyRequest": {
       "document": "DescribeMNPPrivacy请求参数结构体",
       "members": [
@@ -4102,6 +6061,739 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMNPReleasedVersionHistoryRequest": {
+      "document": "DescribeMNPReleasedVersionHistory请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "小程序ID",
+          "example": "无",
+          "member": "string",
+          "name": "MNPId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "平台ID",
+          "example": "无",
+          "member": "string",
+          "name": "PlatformId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMNPReleasedVersionHistoryResponse": {
+      "document": "DescribeMNPReleasedVersionHistory返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "响应数据",
+          "example": "无",
+          "member": "DescribeRevertOnlineVersionPageResp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMNPRequest": {
+      "document": "DescribeMNP请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "小程序ID",
+          "example": "无",
+          "member": "string",
+          "name": "MNPId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "平台ID",
+          "example": "无",
+          "member": "string",
+          "name": "PlatformId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMNPResponse": {
+      "document": "DescribeMNP返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "响应数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DescribeMNPManagerDetailData",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMNPSensitiveAPIPermissionApprovalData": {
+      "document": "查询小程序调用敏感API权限申请详情数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "API ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "APIId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "API 方法\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "APIMethod",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "申请原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ApplyReason",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "驳回原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RejectReason",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "审批状态 20-审核驳回 30-审核通过\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "ApprovalStatus",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "API功能描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "APIDesc",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "API类型 1-系统 2-自定义\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "APIType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeMNPSensitiveAPIPermissionApprovalListData": {
+      "document": "查询小程序调用敏感API权限申请列表数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "审批单号",
+          "example": "无",
+          "member": "string",
+          "name": "ApprovalNo",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "敏感API ID",
+          "example": "无",
+          "member": "string",
+          "name": "APIId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "API名称",
+          "example": "无",
+          "member": "string",
+          "name": "APIName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "API方法",
+          "example": "无",
+          "member": "string",
+          "name": "APIMethod",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "小程序ID",
+          "example": "无",
+          "member": "string",
+          "name": "MNPId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "小程序名称",
+          "example": "无",
+          "member": "string",
+          "name": "MNPName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "申请人",
+          "example": "无",
+          "member": "string",
+          "name": "ApplyUser",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "申请时间",
+          "example": "无",
+          "member": "string",
+          "name": "ApplyTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "申请备注",
+          "example": "无",
+          "member": "string",
+          "name": "ApplyNote",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "审批状态 1-申请中 20-审批驳回 30-审批通过",
+          "example": "无",
+          "member": "int64",
+          "name": "ApprovalStatus",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "审核用户\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ApprovalUser",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "审核时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ApprovalTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "审核备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ApprovalNote",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "应用ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "应用名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "应用图标\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationLogo",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "API类型 1-系统 2-自定义\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "APIType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "API功能描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "APIDesc",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeMNPSensitiveAPIPermissionApprovalListRequest": {
+      "document": "DescribeMNPSensitiveAPIPermissionApprovalList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分页的偏移量",
+          "example": "无",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页的条数",
+          "example": "无",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "平台ID",
+          "example": "无",
+          "member": "string",
+          "name": "PlatformId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "审批状态 1-申请中 20-审批驳回 30-审批通过",
+          "example": "无",
+          "member": "int64",
+          "name": "ApprovalStatusList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "查询关键字（Api名称或者Api方法或者应用名称）",
+          "example": "无",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMNPSensitiveAPIPermissionApprovalListResp": {
+      "document": "查询小程序调用敏感API权限申请列表响应对象",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总记录条数",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "列表信息",
+          "example": "无",
+          "member": "DescribeMNPSensitiveAPIPermissionApprovalListData",
+          "name": "DataList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeMNPSensitiveAPIPermissionApprovalListResponse": {
+      "document": "DescribeMNPSensitiveAPIPermissionApprovalList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "响应数据",
+          "example": "无",
+          "member": "DescribeMNPSensitiveAPIPermissionApprovalListResp",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMNPSensitiveAPIPermissionApprovalRequest": {
+      "document": "DescribeMNPSensitiveAPIPermissionApproval请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "审批编号",
+          "example": "无",
+          "member": "string",
+          "name": "ApprovalNo",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "平台ID",
+          "example": "无",
+          "member": "string",
+          "name": "PlatformId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMNPSensitiveAPIPermissionApprovalResponse": {
+      "document": "DescribeMNPSensitiveAPIPermissionApproval返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "响应数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DescribeMNPSensitiveAPIPermissionApprovalData",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMNPSensitiveAPIPermissionListData": {
+      "document": "查询小程序可调用敏感API列表数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "API ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "APIId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "API 名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "APIName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "API方法\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "APIMethod",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "API状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "APIStatus",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "API申请状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "APIApplyStatus",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "驳回原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RejectReason",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "审批单号",
+          "example": "无",
+          "member": "string",
+          "name": "ApprovalNo",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "应用图标\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationIcon",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "应用名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "API类型1-系统API 2-自定义API\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "APIType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "API功能描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "APIDesc",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeMNPSensitiveAPIPermissionListRequest": {
+      "document": "DescribeMNPSensitiveAPIPermissionList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分页的偏移量",
+          "example": "无",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页的条数",
+          "example": "无",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "小程序ID",
+          "example": "无",
+          "member": "string",
+          "name": "MNPId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "平台ID",
+          "example": "无",
+          "member": "string",
+          "name": "PlatformId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "应用ID",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询关键字（接口名称）",
+          "example": "无",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMNPSensitiveAPIPermissionListResp": {
+      "document": "查询小程序可调用敏感API列表响应对象",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总记录条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "列表数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DescribeMNPSensitiveAPIPermissionListData",
+          "name": "DataList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeMNPSensitiveAPIPermissionListResponse": {
+      "document": "DescribeMNPSensitiveAPIPermissionList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "响应参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DescribeMNPSensitiveAPIPermissionListResp",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -4384,6 +7076,284 @@
         }
       ],
       "type": "object"
+    },
+    "DescribeMNPVersionRequest": {
+      "document": "DescribeMNPVersion请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "CreateMNPVersion接口响应TaskId",
+          "example": "无",
+          "member": "string",
+          "name": "BusinessId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "平台ID",
+          "example": "无",
+          "member": "string",
+          "name": "PlatformId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMNPVersionResp": {
+      "document": "查询小程序版本创建结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "小程序ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "MNPId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "1 新增 20 运行中 30 失败 60 成功 \n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "TaskStatus",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务状态信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TaskMsg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeMNPVersionResponse": {
+      "document": "DescribeMNPVersion返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "响应数据",
+          "example": "无",
+          "member": "DescribeMNPVersionResp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMPAllStageVersionsResp": {
+      "document": "查询小程序所有研发阶段版本响应对象",
+      "members": [
+        {
+          "disabled": false,
+          "document": "小程序id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "MNPId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "小程序版本主键id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "MNPVersionId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "小程序名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "MNPName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "小程序头像\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "MNPIcon",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "小程序分类\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "MNPType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "小程序简介\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "MNPIntro",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "小程序说明\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "MNPDesc",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "开发者\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CreateUser",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "开发者创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "小程序版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "MNPVersion",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "版本功能介绍\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "MNPVersionIntro",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "阶段 Develop Platform Online\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Phase",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "0 待审核\"；\"1 审核中\"； \"2 审核驳回\"； \"3 审核通过\"； \"4 审核撤销\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "ApprovalStatus",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "审核单号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ApprovalNo",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否体验版\n\" 非体验版；1 体验版\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "ShowCase",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "回滚版本号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "RollbackVersion",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "上架状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "版本当前主状态  \"0 待审核\"；\"1 审核中\"； \"2 审核驳回\"； \"3 审核通过\"； \"4 审核撤销\"\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "VersionCurrentStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "DescribeOfflineMNPPackageRequest": {
       "document": "DescribeOfflineMNPPackage请求参数结构体",
@@ -5603,6 +8573,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用名称，小程序团队详情存在该值",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -6516,7 +9496,7 @@
           "value_allowed_null": true
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "所属团队\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -6563,6 +9543,16 @@
           "name": "Status",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "团队名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TeamName",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -6676,6 +9666,98 @@
       ],
       "type": "object"
     },
+    "DescribeUserRequest": {
+      "document": "DescribeUser请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户ID",
+          "example": "无",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "平台ID",
+          "example": "无",
+          "member": "string",
+          "name": "PlatformId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserResponse": {
+      "document": "DescribeUser返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "响应数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DescribeUserDetailResp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DisableApplicationSensitiveAPIRequest": {
+      "document": "DisableApplicationSensitiveAPI请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "平台ID",
+          "example": "无",
+          "member": "string",
+          "name": "PlatformId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "API ID",
+          "example": "无",
+          "member": "string",
+          "name": "APIId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DisableApplicationSensitiveAPIResponse": {
+      "document": "DisableApplicationSensitiveAPI返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "响应数据",
+          "example": "无",
+          "member": "BooleanInfo",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DisableEnterpriseDomainResp": {
       "document": "禁用备案域名响应",
       "members": [
@@ -6753,6 +9835,52 @@
         }
       ],
       "usage": "out"
+    },
+    "EnableApplicationSensitiveAPIRequest": {
+      "document": "EnableApplicationSensitiveAPI请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "平台ID",
+          "example": "无",
+          "member": "string",
+          "name": "PlatformId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "API ID",
+          "example": "无",
+          "member": "string",
+          "name": "APIId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EnableApplicationSensitiveAPIResponse": {
+      "document": "EnableApplicationSensitiveAPI返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "响应数据",
+          "example": "无",
+          "member": "BooleanInfo",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "GlobalDomainCheckResp": {
       "document": "全局域名检查响应",
@@ -7310,7 +10438,7 @@
         },
         {
           "disabled": false,
-          "document": "安卓包名",
+          "document": "安卓App 包名",
           "example": "无",
           "member": "string",
           "name": "AndroidAppKey",
@@ -7319,7 +10447,7 @@
         },
         {
           "disabled": false,
-          "document": "iOS bundleId",
+          "document": "iOS App bundleId",
           "example": "无",
           "member": "string",
           "name": "IosAppKey",
@@ -7332,24 +10460,6 @@
           "example": "无",
           "member": "string",
           "name": "Remark",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "安卓 APP 下载地址",
-          "example": "无",
-          "member": "string",
-          "name": "AndroidAppURL",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "iOS APP 下载地址",
-          "example": "无",
-          "member": "string",
-          "name": "IosAppURL",
           "required": false,
           "type": "string"
         }
@@ -7478,6 +10588,61 @@
           "output_required": false,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyMNPDomainRequest": {
+      "document": "ModifyMNPDomain请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "小程序ID",
+          "example": "无",
+          "member": "string",
+          "name": "MNPId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "平台ID",
+          "example": "无",
+          "member": "string",
+          "name": "PlatformId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "域名列表",
+          "example": "无",
+          "member": "CreateDomainParam",
+          "name": "Domain",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyMNPDomainResponse": {
+      "document": "ModifyMNPDomain返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "响应数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BooleanInfo",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -8129,6 +11294,15 @@
           "name": "PlatformId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": true,
+          "document": "账号",
+          "example": "无",
+          "member": "string",
+          "name": "UserAccount",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -8170,6 +11344,125 @@
         }
       ],
       "usage": "out"
+    },
+    "ProcessMNPApprovalRequest": {
+      "document": "ProcessMNPApproval请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "审批单号",
+          "example": "无",
+          "member": "string",
+          "name": "ApprovalNo",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "平台ID",
+          "example": "无",
+          "member": "string",
+          "name": "PlatformId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "审批明细",
+          "example": "无",
+          "member": "ApprovalItem",
+          "name": "ApprovalItems",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ProcessMNPApprovalResponse": {
+      "document": "ProcessMNPApproval返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "响应数据",
+          "example": "无",
+          "member": "BooleanInfo",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ProcessMNPSensitiveAPIPermissionApprovalRequest": {
+      "document": "ProcessMNPSensitiveAPIPermissionApproval请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "审批单号",
+          "example": "无",
+          "member": "string",
+          "name": "ApprovalNo",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "审批状态 20 驳回 30 通过",
+          "example": "无",
+          "member": "int64",
+          "name": "ApprovalStatus",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "平台Id",
+          "example": "无",
+          "member": "string",
+          "name": "PlatformId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "审批备注",
+          "example": "无",
+          "member": "string",
+          "name": "ApprovalNote",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ProcessMNPSensitiveAPIPermissionApprovalResponse": {
+      "document": "ProcessMNPSensitiveAPIPermissionApproval返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "响应数据",
+          "example": "无",
+          "member": "BooleanInfo",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "QueryOnlineVersionResp": {
       "document": "查询小程序上线版本ID",
@@ -8227,6 +11520,98 @@
       ],
       "usage": "out"
     },
+    "ReleaseMNPVersionRequest": {
+      "document": "ReleaseMNPVersion请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "小程序版本ID",
+          "example": "无",
+          "member": "int64",
+          "name": "MNPVersionId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "平台ID",
+          "example": "无",
+          "member": "string",
+          "name": "PlatformId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ReleaseMNPVersionResponse": {
+      "document": "ReleaseMNPVersion返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "响应数据",
+          "example": "无",
+          "member": "BooleanInfo",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RemoveMNPRequest": {
+      "document": "RemoveMNP请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "小程序ID",
+          "example": "无",
+          "member": "string",
+          "name": "MNPId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "平台ID",
+          "example": "无",
+          "member": "string",
+          "name": "PlatformId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RemoveMNPResponse": {
+      "document": "RemoveMNP返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "响应数据",
+          "example": "无",
+          "member": "BooleanInfo",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ResourceIdInfo": {
       "document": "统一操作成功返回ID数据-整型",
       "members": [
@@ -8258,6 +11643,70 @@
         }
       ],
       "usage": "out"
+    },
+    "RollbackMNPVersionRequest": {
+      "document": "RollbackMNPVersion请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "小程序ID",
+          "example": "无",
+          "member": "string",
+          "name": "MNPId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "小程序版本ID",
+          "example": "无",
+          "member": "int64",
+          "name": "MNPVersionId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "平台ID",
+          "example": "无",
+          "member": "string",
+          "name": "PlatformId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "小程序版本号",
+          "example": "无",
+          "member": "string",
+          "name": "MNPVersion",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RollbackMNPVersionResponse": {
+      "document": "RollbackMNPVersion返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "响应数据",
+          "example": "无",
+          "member": "BooleanInfo",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "SensitiveApiAuditInfoPageResp": {
       "document": "敏感API审核分页",

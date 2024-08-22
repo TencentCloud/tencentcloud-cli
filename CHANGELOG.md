@@ -1,3 +1,297 @@
+# Release 3.0.1060.1
+
+## 费用中心(billing) 版本：2018-07-09
+
+### 第 62 次发布
+
+发布时间：2024-08-23 01:08:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [BindProperty](http://document.tencentcloudapi.woa.com/document/product/555/19183#BindProperty)
+* [BindRecords](http://document.tencentcloudapi.woa.com/document/product/555/19183#BindRecords)
+
+修改数据结构：
+
+* [MeasureAccountDosages](http://document.tencentcloudapi.woa.com/document/product/555/19183#MeasureAccountDosages)
+
+	* 新增成员：BindRecords
+
+* [MeasureResourceDetails](http://document.tencentcloudapi.woa.com/document/product/555/19183#MeasureResourceDetails)
+
+	* 新增成员：BindRecords
+
+
+
+
+## 主机安全(cwp) 版本：2018-02-28
+
+### 第 97 次发布
+
+发布时间：2024-08-23 01:13:36
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateMalwareWhiteList](http://document.tencentcloudapi.woa.com/document/product/296/82297)
+
+	* 新增入参：IsHandleHistoryEvents
+
+* [DescribeScanVulSetting](http://document.tencentcloudapi.woa.com/document/product/296/58237)
+
+	* 新增出参：ScanMethod
+
+* [DescribeWarningHostConfig](http://document.tencentcloudapi.woa.com/document/product/296/82219)
+
+	* 新增出参：ExcludedQuuids
+
+* [ModifyWarningHostConfig](http://document.tencentcloudapi.woa.com/document/product/296/82206)
+
+	* 新增入参：ExcludedQuuids
+
+* [ModifyWebHookPolicy](http://document.tencentcloudapi.woa.com/document/product/296/82205)
+
+	* 新增入参：ExcludedQuuids
+
+* [ScanVul](http://document.tencentcloudapi.woa.com/document/product/296/57375)
+
+	* 新增入参：ScanMethod
+
+* [ScanVulSetting](http://document.tencentcloudapi.woa.com/document/product/296/58235)
+
+	* 新增入参：ScanMethod
+
+
+
+
+## 数据湖计算 DLC(dlc) 版本：2021-01-25
+
+### 第 113 次发布
+
+发布时间：2024-08-23 01:16:13
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeUsersGroups](http://document.tencentcloudapi.woa.com/document/product/1342/84713)
+
+新增数据结构：
+
+* [UserGroupInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#UserGroupInfo)
+* [UsersGroups](http://document.tencentcloudapi.woa.com/document/product/1342/53778#UsersGroups)
+
+
+
+## 多网聚合加速(mna) 版本：2021-01-19
+
+### 第 22 次发布
+
+发布时间：2024-08-23 01:23:10
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DeviceBaseInfo](http://document.tencentcloudapi.woa.com/document/product/1385/55846#DeviceBaseInfo)
+
+	* 新增成员：Sn, Vendor
+
+
+
+
+## 腾讯云可观测平台(monitor) 版本：2018-07-24
+
+### 第 86 次发布
+
+发布时间：2024-08-23 01:23:24
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [UserNotice](http://document.tencentcloudapi.woa.com/document/product/248/30354#UserNotice)
+
+	* 新增成员：VoiceConfirmKey
+
+
+
+
+## 前端性能监控(rum) 版本：2021-06-22
+
+### 第 34 次发布
+
+发布时间：2024-08-23 01:25:44
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeDataLogUrlStatistics](http://document.tencentcloudapi.woa.com/document/product/1464/60495)
+
+	* 新增入参：ErrorMsg
+
+
+
+
+## 腾讯云小程序平台(tcmpp) 版本：2024-08-01
+
+### 第 3 次发布
+
+发布时间：2024-08-23 01:27:48
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ConfigureMNPPreview](http://document.tencentcloudapi.woa.com/document/product/1754/84744)
+* [CreateApplicationSensitiveAPI](http://document.tencentcloudapi.woa.com/document/product/1754/84725)
+* [CreateGlobalDomainACL](http://document.tencentcloudapi.woa.com/document/product/1754/84746)
+* [CreateMNPApproval](http://document.tencentcloudapi.woa.com/document/product/1754/84743)
+* [CreateMNPDomainACL](http://document.tencentcloudapi.woa.com/document/product/1754/84742)
+* [CreateMNPSensitiveAPIPermissionApproval](http://document.tencentcloudapi.woa.com/document/product/1754/84724)
+* [CreateMNPVersion](http://document.tencentcloudapi.woa.com/document/product/1754/84741)
+* [DeleteApplicationSensitiveAPI](http://document.tencentcloudapi.woa.com/document/product/1754/84718)
+* [DescribeApplicationConfigFile](http://document.tencentcloudapi.woa.com/document/product/1754/84726)
+* [DescribeApplicationSensitiveAPIList](http://document.tencentcloudapi.woa.com/document/product/1754/84723)
+* [DescribeGlobalDomainACL](http://document.tencentcloudapi.woa.com/document/product/1754/84745)
+* [DescribeMNP](http://document.tencentcloudapi.woa.com/document/product/1754/84740)
+* [DescribeMNPAllStageVersions](http://document.tencentcloudapi.woa.com/document/product/1754/84739)
+* [DescribeMNPApprovalList](http://document.tencentcloudapi.woa.com/document/product/1754/84729)
+* [DescribeMNPCategory](http://document.tencentcloudapi.woa.com/document/product/1754/84738)
+* [DescribeMNPDomainACL](http://document.tencentcloudapi.woa.com/document/product/1754/84728)
+* [DescribeMNPList](http://document.tencentcloudapi.woa.com/document/product/1754/84737)
+* [DescribeMNPOfflinePackageURL](http://document.tencentcloudapi.woa.com/document/product/1754/84736)
+* [DescribeMNPPreview](http://document.tencentcloudapi.woa.com/document/product/1754/84735)
+* [DescribeMNPReleasedVersionHistory](http://document.tencentcloudapi.woa.com/document/product/1754/84734)
+* [DescribeMNPSensitiveAPIPermissionApproval](http://document.tencentcloudapi.woa.com/document/product/1754/84722)
+* [DescribeMNPSensitiveAPIPermissionApprovalList](http://document.tencentcloudapi.woa.com/document/product/1754/84721)
+* [DescribeMNPSensitiveAPIPermissionList](http://document.tencentcloudapi.woa.com/document/product/1754/84717)
+* [DescribeMNPVersion](http://document.tencentcloudapi.woa.com/document/product/1754/84733)
+* [DescribeUser](http://document.tencentcloudapi.woa.com/document/product/1754/84719)
+* [DisableApplicationSensitiveAPI](http://document.tencentcloudapi.woa.com/document/product/1754/84716)
+* [EnableApplicationSensitiveAPI](http://document.tencentcloudapi.woa.com/document/product/1754/84715)
+* [ModifyMNPDomain](http://document.tencentcloudapi.woa.com/document/product/1754/84727)
+* [ProcessMNPApproval](http://document.tencentcloudapi.woa.com/document/product/1754/84732)
+* [ProcessMNPSensitiveAPIPermissionApproval](http://document.tencentcloudapi.woa.com/document/product/1754/84714)
+* [ReleaseMNPVersion](http://document.tencentcloudapi.woa.com/document/product/1754/84731)
+* [RemoveMNP](http://document.tencentcloudapi.woa.com/document/product/1754/84435)
+* [RollbackMNPVersion](http://document.tencentcloudapi.woa.com/document/product/1754/84730)
+
+修改接口：
+
+* [CreateApplication](http://document.tencentcloudapi.woa.com/document/product/1754/84424)
+
+	* <font color="#dd0000">**删除入参**：</font>AndroidAppURL, IosAppURL
+
+	* <font color="#dd0000">**修改入参**：</font>TeamId, ApplicationType, Intro
+
+* [CreateTeam](http://document.tencentcloudapi.woa.com/document/product/1754/84462)
+
+	* <font color="#dd0000">**修改入参**：</font>GlobalTeamId
+
+* [DescribeApplication](http://document.tencentcloudapi.woa.com/document/product/1754/84422)
+
+	* <font color="#dd0000">**修改出参**：</font>Data
+
+* [DescribeApplicationList](http://document.tencentcloudapi.woa.com/document/product/1754/84420)
+
+	* <font color="#dd0000">**修改出参**：</font>Data
+
+* [ModifyApplication](http://document.tencentcloudapi.woa.com/document/product/1754/84418)
+
+	* <font color="#dd0000">**删除入参**：</font>AndroidAppURL, IosAppURL
+
+* [ModifyUser](http://document.tencentcloudapi.woa.com/document/product/1754/84408)
+
+	* 新增入参：UserAccount
+
+
+新增数据结构：
+
+* [ApprovalItem](http://document.tencentcloudapi.woa.com/document/product/1754/84473#ApprovalItem)
+* [CreateApplicationSensitiveAPIReq](http://document.tencentcloudapi.woa.com/document/product/1754/84473#CreateApplicationSensitiveAPIReq)
+* [CreateMNPVersionResp](http://document.tencentcloudapi.woa.com/document/product/1754/84473#CreateMNPVersionResp)
+* [DescribeApplicationListData](http://document.tencentcloudapi.woa.com/document/product/1754/84473#DescribeApplicationListData)
+* [DescribeApplicationListResp](http://document.tencentcloudapi.woa.com/document/product/1754/84473#DescribeApplicationListResp)
+* [DescribeApplicationResp](http://document.tencentcloudapi.woa.com/document/product/1754/84473#DescribeApplicationResp)
+* [DescribeApplicationSensitiveAPIListData](http://document.tencentcloudapi.woa.com/document/product/1754/84473#DescribeApplicationSensitiveAPIListData)
+* [DescribeApplicationSensitiveAPIListResp](http://document.tencentcloudapi.woa.com/document/product/1754/84473#DescribeApplicationSensitiveAPIListResp)
+* [DescribeGlobalDomainsListData](http://document.tencentcloudapi.woa.com/document/product/1754/84473#DescribeGlobalDomainsListData)
+* [DescribeGlobalDomainsResp](http://document.tencentcloudapi.woa.com/document/product/1754/84473#DescribeGlobalDomainsResp)
+* [DescribeMNPApprovalListData](http://document.tencentcloudapi.woa.com/document/product/1754/84473#DescribeMNPApprovalListData)
+* [DescribeMNPApprovalListResp](http://document.tencentcloudapi.woa.com/document/product/1754/84473#DescribeMNPApprovalListResp)
+* [DescribeMNPListData](http://document.tencentcloudapi.woa.com/document/product/1754/84473#DescribeMNPListData)
+* [DescribeMNPListResp](http://document.tencentcloudapi.woa.com/document/product/1754/84473#DescribeMNPListResp)
+* [DescribeMNPPreviewResp](http://document.tencentcloudapi.woa.com/document/product/1754/84473#DescribeMNPPreviewResp)
+* [DescribeMNPSensitiveAPIPermissionApprovalData](http://document.tencentcloudapi.woa.com/document/product/1754/84473#DescribeMNPSensitiveAPIPermissionApprovalData)
+* [DescribeMNPSensitiveAPIPermissionApprovalListData](http://document.tencentcloudapi.woa.com/document/product/1754/84473#DescribeMNPSensitiveAPIPermissionApprovalListData)
+* [DescribeMNPSensitiveAPIPermissionApprovalListResp](http://document.tencentcloudapi.woa.com/document/product/1754/84473#DescribeMNPSensitiveAPIPermissionApprovalListResp)
+* [DescribeMNPSensitiveAPIPermissionListData](http://document.tencentcloudapi.woa.com/document/product/1754/84473#DescribeMNPSensitiveAPIPermissionListData)
+* [DescribeMNPSensitiveAPIPermissionListResp](http://document.tencentcloudapi.woa.com/document/product/1754/84473#DescribeMNPSensitiveAPIPermissionListResp)
+* [DescribeMNPVersionResp](http://document.tencentcloudapi.woa.com/document/product/1754/84473#DescribeMNPVersionResp)
+* [DescribeMPAllStageVersionsResp](http://document.tencentcloudapi.woa.com/document/product/1754/84473#DescribeMPAllStageVersionsResp)
+
+<font color="#dd0000">**删除数据结构**：</font>
+
+* ApplicationDetail
+* ApplicationInfo
+* ApplicationMNPRelInfoResp
+* ApplicationPageInfo
+
+修改数据结构：
+
+* [DescribeTeamDetailResp](http://document.tencentcloudapi.woa.com/document/product/1754/84473#DescribeTeamDetailResp)
+
+	* 新增成员：ApplicationName
+
+* [DescribeUserListData](http://document.tencentcloudapi.woa.com/document/product/1754/84473#DescribeUserListData)
+
+	* 新增成员：TeamName
+
+
+
+
+## 腾讯云小程序平台(tcmpp) 版本：2023-04-03
+
+
+
+## 实时音视频(trtc) 版本：2019-07-22
+
+### 第 67 次发布
+
+发布时间：2024-08-23 01:31:21
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [SdkAppInfo](http://document.tencentcloudapi.woa.com/document/product/647/44055#SdkAppInfo)
+
+	* 新增成员：CreateTimeStamp
+
+
+
+
 # Release 3.0.1059.1
 
 ## T-Sec-DDoS防护(Anti-DDoS)(antiddos) 版本：2020-03-09

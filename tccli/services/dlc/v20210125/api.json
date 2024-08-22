@@ -819,6 +819,13 @@
       "output": "DescribeUsersResponse",
       "status": "online"
     },
+    "DescribeUsersGroups": {
+      "document": "获取用户工作组列表",
+      "input": "DescribeUsersGroupsRequest",
+      "name": "获取用户工作组列表",
+      "output": "DescribeUsersGroupsResponse",
+      "status": "online"
+    },
     "DescribeViews": {
       "document": "本接口（DescribeViews）用于查询数据视图列表。",
       "input": "DescribeViewsRequest",
@@ -12912,6 +12919,52 @@
       ],
       "type": "object"
     },
+    "DescribeUsersGroupsRequest": {
+      "document": "DescribeUsersGroups请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户AppId",
+          "example": "123098736",
+          "member": "string",
+          "name": "UserAppId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "子账号uin列表",
+          "example": "无",
+          "member": "string",
+          "name": "UserIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUsersGroupsResponse": {
+      "document": "DescribeUsersGroups返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户工作组详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "UsersGroups",
+          "name": "UsersGroups",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeUsersRequest": {
       "document": "DescribeUsers请求参数结构体",
       "members": [
@@ -21302,6 +21355,34 @@
       ],
       "usage": "out"
     },
+    "UserGroupInfo": {
+      "document": "用户工作组信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户子账号Uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1123002323",
+          "member": "string",
+          "name": "UserId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户工作组id列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "GroupIds",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "UserIdSetOfWorkGroupId": {
       "document": "绑定到同一个工作组的用户Id的集合",
       "members": [
@@ -21611,6 +21692,34 @@
         }
       ],
       "usage": "out"
+    },
+    "UsersGroups": {
+      "document": "用户工作组信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户AppId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "124233222",
+          "member": "string",
+          "name": "UserAppId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "子账号工作做信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "UserGroupInfo",
+          "name": "UserGroupInfo",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "ViewBaseInfo": {
       "document": "视图基本配置信息",

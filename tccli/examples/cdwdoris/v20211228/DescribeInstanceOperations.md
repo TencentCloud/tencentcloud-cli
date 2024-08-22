@@ -13,30 +13,23 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "xxxx-xxxx-xxxxx-xxxxx",
-        "TotalCount": 2,
+        "TotalCount": 0,
         "Operations": [
             {
-                "Name": "CreateInstance",
-                "Desc": "创建集群",
-                "Result": "Success",
-                "Level": "Normal",
-                "LevelDesc": "一般",
-                "StartTime": "2020-10-22 13:28:53",
-                "EndTime": "2020-10-22 13:28:53",
-                "JobId": 123
-            },
-            {
-                "Name": "ModifyInstance",
-                "Desc": "变配集群",
-                "Result": "Success",
-                "Level": "HighRisk",
-                "LevelDesc": "高危",
-                "StartTime": "2020-10-22 14:38:53",
-                "EndTime": "2020-10-22 14:38:53",
-                "JobId": 124
+                "Name": "abc",
+                "Result": "abc",
+                "Desc": "abc",
+                "Level": "abc",
+                "LevelDesc": "abc",
+                "StartTime": "abc",
+                "EndTime": "abc",
+                "ResultDesc": "abc",
+                "OperateUin": "abc",
+                "JobId": 0,
+                "OperationDetail": "abc"
             }
-        ]
+        ],
+        "RequestId": "abc"
     }
 }
 ```

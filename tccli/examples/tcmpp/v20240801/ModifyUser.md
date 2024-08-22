@@ -1,15 +1,15 @@
-**Example 1: demo**
+**Example 1: ModifyUser**
 
-demo
+
 
 Input: 
 
 ```
 tccli tcmpp ModifyUser --cli-unfold-argument  \
-    --UserId abc \
-    --UserName abc \
-    --AccountType 0 \
-    --PlatformId abc
+    --UserId U20240819174742HGXHXT \
+    --UserName ModifyUserName0819174740 \
+    --AccountType 3 \
+    --PlatformId T04257DS9431720WTAG
 ```
 
 Output: 
@@ -19,7 +19,7 @@ Output:
         "Data": {
             "Result": true
         },
-        "RequestId": "abc"
+        "RequestId": "614eb698-a69c-4e80-aec9-b05544935a18"
     }
 }
 ```

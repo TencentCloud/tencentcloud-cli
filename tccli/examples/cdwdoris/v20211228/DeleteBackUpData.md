@@ -6,15 +6,16 @@ Input:
 
 ```
 tccli cdwdoris DeleteBackUpData --cli-unfold-argument  \
-    --InstanceId xx \
-    --BackUpJobId 0
+    --InstanceId abc \
+    --BackUpJobId 0 \
+    --IsDeleteAll True
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

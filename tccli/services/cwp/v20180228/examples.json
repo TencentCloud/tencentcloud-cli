@@ -2360,7 +2360,7 @@
       {
         "document": "使用appid查询定时检测配置的信息",
         "input": "https://cwp.tencentcloudapi.com/?Action=DescribeScanVulSetting\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"VulCategories\": \"xx\",\n        \"TimerTime\": \"xx\",\n        \"VulLevels\": \"xx\",\n        \"VulEmergency\": 1,\n        \"RequestId\": \"xx\",\n        \"TimerInterval\": 1,\n        \"EndTime\": \"\",\n        \"EnableScan\": 1,\n        \"StartTime\": \"\",\n        \"ClickTimeout\": 0,\n        \"Uuids\": []\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"VulCategories\": \"abc\",\n        \"VulLevels\": \"abc\",\n        \"TimerInterval\": 1,\n        \"TimerTime\": \"abc\",\n        \"VulEmergency\": 1,\n        \"StartTime\": \"abc\",\n        \"EnableScan\": 1,\n        \"EndTime\": \"abc\",\n        \"ClickTimeout\": 1,\n        \"Uuids\": [\n            \"abc\"\n        ],\n        \"ScanMethod\": 1,\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "查询定时检测配置信息"
       }
     ],

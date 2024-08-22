@@ -1,13 +1,13 @@
-**Example 1: demo**
+**Example 1: DeleteMNP**
 
-demo
+
 
 Input: 
 
 ```
 tccli tcmpp DeleteMNP --cli-unfold-argument  \
-    --MNPId abc \
-    --PlatformId abc
+    --MNPId mpub1oskm7olulc5 \
+    --PlatformId T04257DS9431720WTAG
 ```
 
 Output: 
@@ -17,7 +17,7 @@ Output:
         "Data": {
             "Result": true
         },
-        "RequestId": "abc"
+        "RequestId": "e82b6b6c-44c9-458a-abd2-910f8309b712"
     }
 }
 ```

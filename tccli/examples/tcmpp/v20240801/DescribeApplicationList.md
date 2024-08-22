@@ -1,16 +1,16 @@
-**Example 1: demo**
+**Example 1: DescribeApplicationList**
 
-demo
+
 
 Input: 
 
 ```
 tccli tcmpp DescribeApplicationList --cli-unfold-argument  \
+    --TeamId  \
+    --Limit 20 \
     --Offset 0 \
-    --Limit 0 \
-    --PlatformId abc \
-    --Keyword abc \
-    --TeamId abc
+    --Keyword  \
+    --PlatformId T04827BQ9761718REMX
 ```
 
 Output: 
@@ -21,11 +21,9 @@ Output:
             "TotalCount": 0,
             "DataList": [
                 {
-                    "CustomerID": "abc",
-                    "ApplicationID": "abc",
-                    "AppIdentityID": 0,
+                    "ApplicationId": "abc",
+                    "AppIdentityId": 0,
                     "ApplicationName": "abc",
-                    "ApplicationEnglishName": "abc",
                     "Logo": "abc",
                     "Remark": "abc",
                     "AndroidAppKey": "abc",
@@ -35,8 +33,10 @@ Output:
                     "UpdateUser": "abc",
                     "UpdateTime": "abc",
                     "Intro": "abc",
-                    "IosAppUrl": "abc",
-                    "AndroidAppUrl": "abc"
+                    "TeamId": "abc",
+                    "TeamName": "abc",
+                    "SensitiveApiCount": 0,
+                    "ApplicationType": 0
                 }
             ]
         },

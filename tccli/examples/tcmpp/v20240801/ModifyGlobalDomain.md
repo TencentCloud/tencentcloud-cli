@@ -1,14 +1,14 @@
-**Example 1: demo**
+**Example 1: ModifyGlobalDomain**
 
-demo
+
 
 Input: 
 
 ```
 tccli tcmpp ModifyGlobalDomain --cli-unfold-argument  \
-    --DomainId 0 \
-    --DomainUrl abc \
-    --PlatformId abc
+    --DomainId 5561 \
+    --DomainUrl openapi.autotest.domain.modifyqdg \
+    --PlatformId T04257DS9431720WTAG
 ```
 
 Output: 
@@ -18,7 +18,7 @@ Output:
         "Data": {
             "Result": 0
         },
-        "RequestId": "abc"
+        "RequestId": "67d00265-ab68-44c1-a3d3-284f7bb478c3"
     }
 }
 ```

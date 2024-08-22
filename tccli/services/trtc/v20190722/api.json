@@ -6566,6 +6566,16 @@
         },
         {
           "disabled": false,
+          "document": "创建时间戳。",
+          "example": "1608543012",
+          "member": "uint64",
+          "name": "CreateTimeStamp",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "。",
           "example": "0",
           "member": "uint64",

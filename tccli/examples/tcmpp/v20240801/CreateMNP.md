@@ -1,6 +1,6 @@
-**Example 1: demo**
+**Example 1: CreateMNP**
 
-demo
+
 
 Input: 
 
