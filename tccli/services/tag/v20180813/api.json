@@ -134,7 +134,7 @@
       "status": "online"
     },
     "DescribeTagsSeq": {
-      "document": "用于查询已建立的标签列表。\n",
+      "document": "用于查询已建立的标签列表。",
       "input": "DescribeTagsSeqRequest",
       "name": "按顺序查询标签列表",
       "output": "DescribeTagsSeqResponse",
@@ -331,7 +331,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "业务的英文简称，即资源六段式第三段。资源六段式的描述方式参考：https://cloud.tencent.com/document/product/651/89122",
+          "document": "业务类型，示例 cvm 。资源所属业务名称（资源六段式中的第三段）",
           "example": "cvm",
           "member": "string",
           "name": "ServiceType",
@@ -376,7 +376,7 @@
         },
         {
           "disabled": false,
-          "document": "资源前缀（资源六段式中最后一段\"/\"前面的部分），cos存储桶不需要传入该字段，其他云资源必填",
+          "document": "资源前缀（资源六段式中最后一段\"/\"前面的部分，例如“qcs::ckafka:ap-shanghai:uin/123456789:ckafkaId/ckafka-o85jq584” 中资源前缀为ckafkaId），cos存储桶不需要传入该字段，其他云资源必填",
           "example": "instance",
           "member": "string",
           "name": "ResourcePrefix",
@@ -475,7 +475,7 @@
         },
         {
           "disabled": false,
-          "document": "[ 资源六段式描述 ](https://cloud.tencent.com/document/product/598/10606)",
+          "document": "资源六段式。示例：qcs::ckafka:ap-shanghai:uin/123456789:ckafkaId/ckafka-o85jq584",
           "example": "qcs::cvm:ap-beijing:uin/12345:instance/12345",
           "member": "string",
           "name": "Resource",
@@ -648,7 +648,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "业务类型",
+          "document": "业务类型，示例 cvm 。资源所属业务名称（资源六段式中的第三段）",
           "example": "cvm",
           "member": "string",
           "name": "ServiceType",
@@ -657,7 +657,7 @@
         },
         {
           "disabled": false,
-          "document": "资源前缀",
+          "document": "资源前缀，示例 instance",
           "example": "instance",
           "member": "string",
           "name": "ResourcePrefix",
@@ -675,7 +675,7 @@
         },
         {
           "disabled": false,
-          "document": "资源所在地域",
+          "document": "资源所在地域，示例：ap-guangzhou 不区分地域的资源不需要传入该字段，区分地域的资源必填",
           "example": "ap-beijing",
           "member": "string",
           "name": "ResourceRegion",
@@ -769,8 +769,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "业务类型",
-          "example": "",
+          "document": "业务类型，示例 cvm 。指资源所属业务类型，也是资源六段式中的第三段，例如qcs::ckafka:ap-shanghai:uin/123456789:ckafkaId/ckafka-o85jq584中业务类型为ckafka",
+          "example": "ckafka",
           "member": "string",
           "name": "ServiceType",
           "required": true,
@@ -778,8 +778,8 @@
         },
         {
           "disabled": false,
-          "document": "资源前缀",
-          "example": "",
+          "document": "该业务类型对应的资源前缀，示例 cvm对应instance、image、volume等。也是资源六段式中的第六段，例如qcs::ckafka:ap-shanghai:uin/123456789:ckafkaId/ckafka-o85jq584中资源前缀为ckafkaId。cos存储桶为非必填，其他云资源为必填",
+          "example": "ckafkaId",
           "member": "string",
           "name": "ResourcePrefix",
           "required": true,
@@ -788,7 +788,7 @@
         {
           "disabled": false,
           "document": "资源唯一标记",
-          "example": "",
+          "example": "[ \"ckafka-o85jq584\" ]",
           "member": "string",
           "name": "ResourceIds",
           "required": true,
@@ -796,8 +796,8 @@
         },
         {
           "disabled": false,
-          "document": "资源所在地域",
-          "example": "",
+          "document": "资源所在地域，示例：ap-guangzhou 不区分地域的资源不需要传入该字段，区分地域的资源必填",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "ResourceRegion",
           "required": true,
@@ -806,7 +806,7 @@
         {
           "disabled": false,
           "document": "数据偏移量，默认为 0, 必须为Limit参数的整数倍",
-          "example": "",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -815,7 +815,7 @@
         {
           "disabled": false,
           "document": "每页大小，默认为 15",
-          "example": "",
+          "example": "15",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -830,36 +830,40 @@
         {
           "disabled": false,
           "document": "结果总数",
-          "example": "",
+          "example": "450",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "数据位移偏量",
-          "example": "",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "每页大小",
-          "example": "",
+          "example": "15",
           "member": "uint64",
           "name": "Limit",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "标签列表",
-          "example": "",
+          "example": "[ ]",
           "member": "TagResource",
           "name": "Tags",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -877,7 +881,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "业务类型",
+          "document": "业务类型，示例 cvm 。指资源所属业务类型，也是资源六段式中的第三段，例如qcs::ckafka:ap-shanghai:uin/123456789:ckafkaId/ckafka-o85jq584中业务类型为ckafka",
           "example": "cvm",
           "member": "string",
           "name": "ServiceType",
@@ -886,7 +890,7 @@
         },
         {
           "disabled": false,
-          "document": "资源前缀",
+          "document": "该业务类型对应的资源前缀，示例 cvm对应instance、image、volume等。也是资源六段式中的第六段，例如qcs::ckafka:ap-shanghai:uin/123456789:ckafkaId/ckafka-o85jq584中资源前缀为ckafkaId。cos存储桶为非必填，其他云资源为必填",
           "example": "instance",
           "member": "string",
           "name": "ResourcePrefix",
@@ -895,7 +899,7 @@
         },
         {
           "disabled": false,
-          "document": "资源地域",
+          "document": "资源所在地域，示例：ap-guangzhou 不区分地域的资源不需要传入该字段，区分地域的资源必填",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "ResourceRegion",
@@ -950,6 +954,7 @@
           "example": "100",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -959,6 +964,7 @@
           "example": "0",
           "member": "uint64",
           "name": "Offset",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -968,6 +974,7 @@
           "example": "100",
           "member": "uint64",
           "name": "Limit",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -977,6 +984,7 @@
           "example": "无",
           "member": "ResourceIdTag",
           "name": "Rows",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -994,8 +1002,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "创建者uin",
-          "example": "",
+          "document": "资源创建者UIN",
+          "example": "123456789",
           "member": "uint64",
           "name": "CreateUin",
           "required": false,
@@ -1003,8 +1011,8 @@
         },
         {
           "disabled": false,
-          "document": "资源所在地域",
-          "example": "",
+          "document": "资源所在地域，示例：ap-guangzhou 。不区分地域的资源则不需要传入该字段，区分地域的资源必填",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "ResourceRegion",
           "required": false,
@@ -1012,8 +1020,8 @@
         },
         {
           "disabled": false,
-          "document": "业务类型",
-          "example": "",
+          "document": "业务类型，示例 ckafka。指资源所属业务类型，也是资源六段式中的第三段，例如qcs::ckafka:ap-shanghai:uin/123456789:ckafkaId/ckafka-o85jq584中业务类型为ckafka",
+          "example": "ckafka",
           "member": "string",
           "name": "ServiceType",
           "required": false,
@@ -1021,8 +1029,8 @@
         },
         {
           "disabled": false,
-          "document": "资源前缀",
-          "example": "",
+          "document": "该业务类型对应的资源前缀，示例 cvm对应instance、image、volume等。也是资源六段式中的第六段，例如qcs::ckafka:ap-shanghai:uin/123456789:ckafkaId/ckafka-o85jq584中资源前缀为ckafkaId",
+          "example": "ckafkaId",
           "member": "string",
           "name": "ResourcePrefix",
           "required": false,
@@ -1030,8 +1038,8 @@
         },
         {
           "disabled": false,
-          "document": "资源唯一标识。只输入ResourceId进行查询可能会查询较慢，或者无法匹配到结果，建议在输入ResourceId的同时也输入ServiceType、ResourcePrefix和ResourceRegion（不区分地域的资源可忽略该参数）",
-          "example": "",
+          "document": "资源唯一标识（资源六段式中最后一段\"/\"后面的部分）。注：只输入ResourceId查询时，如资源量大可能较慢，或无法匹配到结果，建议在输入ResourceId的同时也输入ServiceType、ResourcePrefix和ResourceRegion（不区分地域的资源可忽略该参数）。若传入的是cos资源的Id，则CosResourceId 字段请同时传1。",
+          "example": "ckafka-o85jq584",
           "member": "string",
           "name": "ResourceId",
           "required": false,
@@ -1040,7 +1048,7 @@
         {
           "disabled": false,
           "document": "数据偏移量，默认为 0, 必须为Limit参数的整数倍",
-          "example": "",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -1049,7 +1057,7 @@
         {
           "disabled": false,
           "document": "每页大小，默认为 15",
-          "example": "",
+          "example": "15",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -1057,8 +1065,8 @@
         },
         {
           "disabled": false,
-          "document": "是否是cos的资源（0或者1），输入的ResourceId为cos资源时必填",
-          "example": "",
+          "document": "是否为cos的资源，取值 0 表示：非cos资源。取值1 表示：cos资源，且此时ResourceId也为必填。不填则默认为 0 ",
+          "example": "0",
           "member": "uint64",
           "name": "CosResourceId",
           "required": false,
@@ -1073,36 +1081,40 @@
         {
           "disabled": false,
           "document": "结果总数",
-          "example": "",
+          "example": "320",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "数据位移偏量",
-          "example": "",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "每页大小\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "15",
           "member": "uint64",
           "name": "Limit",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "资源标签",
-          "example": "",
+          "example": "[]",
           "member": "TagResource",
           "name": "Rows",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1156,7 +1168,7 @@
         },
         {
           "disabled": false,
-          "document": "资源前缀",
+          "document": "该业务类型对应的资源前缀，示例 cvm对应instance、image、volume等。也是资源六段式中的第六段，例如qcs::ckafka:ap-shanghai:uin/123456789:ckafkaId/ckafka-o85jq584中资源前缀为ckafkaId。cos存储桶为非必填，其他云资源为必填",
           "example": "instance",
           "member": "string",
           "name": "ResourcePrefix",
@@ -1174,7 +1186,7 @@
         },
         {
           "disabled": false,
-          "document": "资源所在地域",
+          "document": "资源所在地域，示例：ap-guangzhou 不区分地域的资源不需要传入该字段，区分地域的资源必填",
           "example": "ap-beijing",
           "member": "string",
           "name": "ResourceRegion",
@@ -1183,7 +1195,7 @@
         },
         {
           "disabled": false,
-          "document": "业务类型",
+          "document": "业务类型，示例 cvm 。指资源所属业务类型，也是资源六段式中的第三段，例如qcs::ckafka:ap-shanghai:uin/123456789:ckafkaId/ckafka-o85jq584中业务类型为ckafka",
           "example": "cvm",
           "member": "string",
           "name": "ServiceType",
@@ -1202,7 +1214,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1212,7 +1224,7 @@
           "example": "0",
           "member": "uint64",
           "name": "Offset",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1222,7 +1234,7 @@
           "example": "15",
           "member": "uint64",
           "name": "Limit",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1232,7 +1244,7 @@
           "example": "无",
           "member": "ResourceTag",
           "name": "Rows",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1251,7 +1263,7 @@
         {
           "disabled": false,
           "document": "标签过滤数组",
-          "example": "",
+          "example": "[ { \"TagKey\":\"abc\", \"TagValue\": \"123\"} ]",
           "member": "TagFilter",
           "name": "TagFilters",
           "required": true,
@@ -1260,7 +1272,7 @@
         {
           "disabled": false,
           "document": "创建标签者uin",
-          "example": "",
+          "example": "12345",
           "member": "uint64",
           "name": "CreateUin",
           "required": false,
@@ -1269,7 +1281,7 @@
         {
           "disabled": false,
           "document": "数据偏移量，默认为 0, 必须为Limit参数的整数倍",
-          "example": "",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -1278,7 +1290,7 @@
         {
           "disabled": false,
           "document": "每页大小，默认为 15",
-          "example": "",
+          "example": "15",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -1286,8 +1298,8 @@
         },
         {
           "disabled": false,
-          "document": "资源前缀",
-          "example": "",
+          "document": "该业务类型对应的资源前缀，示例 cvm对应instance、image、volume等。也是资源六段式中的第六段，例如qcs::ckafka:ap-shanghai:uin/123456789:ckafkaId/ckafka-o85jq584中资源前缀为ckafkaId。cos存储桶为非必填，其他云资源为必填",
+          "example": "ckafkaId",
           "member": "string",
           "name": "ResourcePrefix",
           "required": false,
@@ -1296,7 +1308,7 @@
         {
           "disabled": false,
           "document": "资源唯一标记",
-          "example": "",
+          "example": "ckafka-o85jq584",
           "member": "string",
           "name": "ResourceId",
           "required": false,
@@ -1304,8 +1316,8 @@
         },
         {
           "disabled": false,
-          "document": "资源所在地域",
-          "example": "",
+          "document": "资源所在地域，示例：ap-guangzhou 不区分地域的资源不需要传入该字段，区分地域的资源必填",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "ResourceRegion",
           "required": false,
@@ -1313,8 +1325,8 @@
         },
         {
           "disabled": false,
-          "document": "业务类型",
-          "example": "",
+          "document": "业务类型，示例 cvm 。指资源所属业务类型，也是资源六段式中的第三段，例如qcs::ckafka:ap-shanghai:uin/123456789:ckafkaId/ckafka-o85jq584中业务类型为ckafka",
+          "example": "ckafka",
           "member": "string",
           "name": "ServiceType",
           "required": false,
@@ -1329,36 +1341,40 @@
         {
           "disabled": false,
           "document": "结果总数",
-          "example": "",
+          "example": "20",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "数据位移偏量",
-          "example": "",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "每页大小",
-          "example": "",
+          "example": "15",
           "member": "uint64",
           "name": "Limit",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "资源标签",
-          "example": "",
+          "example": "[ ]",
           "member": "ResourceTag",
           "name": "Rows",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1403,7 +1419,7 @@
         },
         {
           "disabled": false,
-          "document": "是否展现项目",
+          "document": "是否展现项目。1:展示  0:不展示",
           "example": "0",
           "member": "uint64",
           "name": "ShowProject",
@@ -1726,7 +1742,7 @@
         },
         {
           "disabled": false,
-          "document": "是否展现项目标签",
+          "document": "是否展现项目标签。1:展示  0:不展示",
           "example": "1",
           "member": "uint64",
           "name": "ShowProject",
@@ -1794,7 +1810,7 @@
         {
           "disabled": false,
           "document": "标签键,与标签值同时存在或同时不存在，不存在时表示查询该用户所有标签",
-          "example": "",
+          "example": "key123",
           "member": "string",
           "name": "TagKey",
           "required": false,
@@ -1803,7 +1819,7 @@
         {
           "disabled": false,
           "document": "标签值,与标签键同时存在或同时不存在，不存在时表示查询该用户所有标签",
-          "example": "",
+          "example": "val123",
           "member": "string",
           "name": "TagValue",
           "required": false,
@@ -1812,7 +1828,7 @@
         {
           "disabled": false,
           "document": "数据偏移量，默认为 0, 必须为Limit参数的整数倍",
-          "example": "",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -1821,7 +1837,7 @@
         {
           "disabled": false,
           "document": "每页大小，默认为 15",
-          "example": "",
+          "example": "15",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -1830,7 +1846,7 @@
         {
           "disabled": false,
           "document": "创建者用户 Uin，不传或为空只将 Uin 作为条件查询",
-          "example": "",
+          "example": "12345",
           "member": "uint64",
           "name": "CreateUin",
           "required": false,
@@ -1839,7 +1855,7 @@
         {
           "disabled": false,
           "document": "标签键数组,与标签值同时存在或同时不存在，不存在时表示查询该用户所有标签,当与TagKey同时传递时只取本值",
-          "example": "",
+          "example": "[ \"key1\", \"key2\" ]",
           "member": "string",
           "name": "TagKeys",
           "required": false,
@@ -1847,8 +1863,8 @@
         },
         {
           "disabled": false,
-          "document": "是否展现项目标签",
-          "example": "",
+          "document": "是否展现项目标签。1:展示  0:不展示",
+          "example": "0",
           "member": "uint64",
           "name": "ShowProject",
           "required": false,
@@ -1863,36 +1879,40 @@
         {
           "disabled": false,
           "document": "结果总数",
-          "example": "",
+          "example": "15",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "数据位移偏量",
-          "example": "",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "每页大小",
-          "example": "",
+          "example": "15",
           "member": "uint64",
           "name": "Limit",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "标签列表",
-          "example": "",
+          "example": "[ ]",
           "member": "TagWithDelete",
           "name": "Tags",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1910,7 +1930,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源所属业务名称（资源六段式中的第三段）",
+          "document": "业务类型，示例 cvm 。指资源所属业务类型，也是资源六段式中的第三段，例如qcs::ckafka:ap-shanghai:uin/123456789:ckafkaId/ckafka-o85jq584中业务类型为ckafka",
           "example": "cvm",
           "member": "string",
           "name": "ServiceType",
@@ -1937,7 +1957,7 @@
         },
         {
           "disabled": false,
-          "document": "资源所在地域，不区分地域的资源不需要传入该字段，区分地域的资源必填",
+          "document": "资源所在地域，示例：ap-guangzhou 。不区分地域的资源则不需要传入该字段，区分地域的资源必填",
           "example": "ap-beijing",
           "member": "string",
           "name": "ResourceRegion",
@@ -1946,7 +1966,7 @@
         },
         {
           "disabled": false,
-          "document": "资源前缀（资源六段式中最后一段\"/\"前面的部分），cos存储桶不需要传入该字段，其他云资源必填",
+          "document": "该业务类型对应的资源前缀，示例 cvm对应instance、image、volume等。也是资源六段式中的第六段，例如qcs::ckafka:ap-shanghai:uin/123456789:ckafkaId/ckafka-o85jq584中资源前缀为ckafkaId。cos存储桶为非必填，其他云资源为必填",
           "example": "instance",
           "member": "string",
           "name": "ResourcePrefix",
@@ -2341,7 +2361,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源所属业务名称（资源六段式中的第三段）",
+          "document": "业务类型，示例 cvm 。资源所属业务名称（资源六段式中的第三段）",
           "example": "cmv",
           "member": "string",
           "name": "ServiceType",
@@ -2377,7 +2397,7 @@
         },
         {
           "disabled": false,
-          "document": "资源所在地域，不区分地域的资源不需要传入该字段，区分地域的资源必填",
+          "document": "资源所在地域，示例：ap-guangzhou 不区分地域的资源不需要传入该字段，区分地域的资源必填",
           "example": "ap-beijing",
           "member": "string",
           "name": "ResourceRegion",
@@ -2386,7 +2406,7 @@
         },
         {
           "disabled": false,
-          "document": "资源前缀（资源六段式中最后一段\"/\"前面的部分），cos存储桶不需要传入该字段，其他云资源必填",
+          "document": "资源前缀（资源六段式中最后一段\"/\"前面的部分），例如“qcs::ckafka:ap-shanghai:uin/123456789:ckafkaId/ckafka-o85jq584” 中资源前缀为ckafkaId），cos存储桶不需要传入该字段，其他云资源必填",
           "example": "instance",
           "member": "string",
           "name": "ResourcePrefix",

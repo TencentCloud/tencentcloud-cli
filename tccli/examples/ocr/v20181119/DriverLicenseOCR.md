@@ -35,7 +35,8 @@ Output:
         "GenerateTime": "",
         "State": "",
         "BackPageName": "",
-        "BackPageCardCode": ""
+        "BackPageCardCode": "",
+        "DriverLicenseType": ""
     }
 }
 ```
@@ -81,7 +82,8 @@ Output:
         "GenerateTime": "",
         "State": "",
         "BackPageName": "",
-        "BackPageCardCode": ""
+        "BackPageCardCode": "",
+        "DriverLicenseType": ""
     }
 }
 ```
@@ -123,7 +125,8 @@ Output:
         "GenerateTime": "",
         "State": "",
         "BackPageName": "",
-        "BackPageCardCode": ""
+        "BackPageCardCode": "",
+        "DriverLicenseType": ""
     }
 }
 ```
@@ -164,7 +167,8 @@ Output:
         "GenerateTime": "",
         "State": "未处理",
         "BackPageName": "",
-        "BackPageCardCode": ""
+        "BackPageCardCode": "",
+        "DriverLicenseType": ""
     }
 }
 ```

@@ -52,7 +52,7 @@
     "DeleteBackUpData": {
       "document": "删除备份数据",
       "input": "DeleteBackUpDataRequest",
-      "name": "删除备份数据",
+      "name": "删除备份实例",
       "output": "DeleteBackUpDataResponse",
       "status": "online"
     },
@@ -108,7 +108,7 @@
     "DescribeClusterConfigs": {
       "document": "获取集群的最新的几个配置文件（config.xml、metrika.xml、user.xml）的内容，显示给用户",
       "input": "DescribeClusterConfigsRequest",
-      "name": "获取集群配置文件内容",
+      "name": "获取集群配置文件",
       "output": "DescribeClusterConfigsResponse",
       "status": "online"
     },
@@ -185,7 +185,7 @@
     "DescribeInstanceOperations": {
       "document": "在集群详情页面，拉取该集群的操作",
       "input": "DescribeInstanceOperationsRequest",
-      "name": "拉取集群操作列表",
+      "name": "获取集群操作审计记录",
       "output": "DescribeInstanceOperationsResponse",
       "status": "online"
     },
@@ -246,7 +246,7 @@
       "status": "online"
     },
     "DescribeSqlApis": {
-      "document": "针对驱动sql命令查询ck集群接口",
+      "document": "针对驱动sql命令查询集群接口",
       "input": "DescribeSqlApisRequest",
       "name": "通过sql查询集群信息",
       "output": "DescribeSqlApisResponse",
@@ -304,7 +304,7 @@
     "ModifyInstanceKeyValConfigs": {
       "document": "KV模式修改配置接口",
       "input": "ModifyInstanceKeyValConfigsRequest",
-      "name": "KV模式修改配置接口",
+      "name": "修改BE或FE配置",
       "output": "ModifyInstanceKeyValConfigsResponse",
       "status": "online"
     },
@@ -332,7 +332,7 @@
     "ModifyUserPrivilegesV3": {
       "document": "修改用户权限,支持catalog，全部db，部分db表三种权限设置类别",
       "input": "ModifyUserPrivilegesV3Request",
-      "name": "修改权接口",
+      "name": "修改权限接口",
       "output": "ModifyUserPrivilegesV3Response",
       "status": "online"
     },
@@ -367,7 +367,7 @@
     "RecoverBackUpJob": {
       "document": "备份恢复",
       "input": "RecoverBackUpJobRequest",
-      "name": "备份恢复",
+      "name": "恢复备份的数据",
       "output": "RecoverBackUpJobResponse",
       "status": "online"
     },
@@ -2134,7 +2134,7 @@
         },
         {
           "disabled": false,
-          "document": "是否删除所有数据",
+          "document": "是否删除所有实例",
           "example": "true",
           "member": "bool",
           "name": "IsDeleteAll",
@@ -3453,7 +3453,7 @@
           "example": "20",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3463,7 +3463,7 @@
           "example": "-",
           "member": "InstanceOperation",
           "name": "Operations",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -6207,10 +6207,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "节点在doris中明朝n",
+          "document": "节点名称",
           "example": "\"BE\"",
           "member": "string",
           "name": "NodeName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -6221,6 +6222,7 @@
           "example": "1",
           "member": "int64",
           "name": "Status",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -6231,6 +6233,7 @@
           "example": "\"192.168.0.1\"",
           "member": "string",
           "name": "Ip",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -6241,6 +6244,7 @@
           "example": "\"CORE”",
           "member": "string",
           "name": "NodeRole",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -6251,6 +6255,7 @@
           "example": "\"FE\"",
           "member": "string",
           "name": "ComponentName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -6261,6 +6266,7 @@
           "example": "\"2021-02-12\"",
           "member": "string",
           "name": "LastRestartTime",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false

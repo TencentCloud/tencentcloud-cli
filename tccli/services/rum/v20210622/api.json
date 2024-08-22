@@ -2912,6 +2912,15 @@
           "name": "Env",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "js异常信息",
+          "example": "Script error.",
+          "member": "string",
+          "name": "ErrorMsg",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

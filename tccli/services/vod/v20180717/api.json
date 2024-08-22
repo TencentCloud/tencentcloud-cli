@@ -827,14 +827,14 @@
       "status": "online"
     },
     "ExtractCopyRightWatermark": {
-      "document": "提取版权水印信息。",
+      "document": "该 API 已经<font color='red'>不再维护</font>。如果有盗录溯源需求，请参考 [幽灵水印](https://cloud.tencent.com/document/product/266/94228)。",
       "input": "ExtractCopyRightWatermarkRequest",
       "name": "提取版权水印",
       "output": "ExtractCopyRightWatermarkResponse",
       "status": "online"
     },
     "ExtractTraceWatermark": {
-      "document": "用于提取溯源水印。",
+      "document": "该 API 已经<font color='red'>不再维护</font>。如果有盗录溯源需求，请参考 [幽灵水印](https://cloud.tencent.com/document/product/266/94228)。",
       "input": "ExtractTraceWatermarkRequest",
       "name": "提取溯源水印",
       "output": "ExtractTraceWatermarkResponse",
@@ -1691,6 +1691,7 @@
           "example": "10",
           "member": "uint64",
           "name": "Definition",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -1701,26 +1702,29 @@
           "example": "[]",
           "member": "WatermarkInput",
           "name": "WatermarkSet",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "溯源水印。",
+          "document": "溯源水印，该功能已不再支持使用。",
           "example": "无",
           "member": "TraceWatermarkInput",
           "name": "TraceWatermark",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "版权水印。",
+          "document": "版权水印，该功能已不再支持使用。",
           "example": "无",
           "member": "CopyRightWatermarkInput",
           "name": "CopyRightWatermark",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": false
@@ -1731,6 +1735,7 @@
           "example": "[]",
           "member": "string",
           "name": "SubtitleSet",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -18763,11 +18768,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "播放者的 ID，以十六进制表示，共6位，该参数用于 [溯源水印](https://cloud.tencent.com/document/product/266/75789) 使用场景。",
+          "document": "播放者的 ID，以十六进制表示，共6位。",
           "example": "abc",
           "member": "string",
           "name": "Uv",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -18777,7 +18782,7 @@
           "example": "abc",
           "member": "string",
           "name": "Uid",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -36384,7 +36389,7 @@
         },
         {
           "disabled": false,
-          "document": "溯源水印。",
+          "document": "溯源水印，该功能已不再支持使用。",
           "example": "无",
           "member": "TraceWatermarkInput",
           "name": "TraceWatermark",
@@ -36395,7 +36400,7 @@
         },
         {
           "disabled": false,
-          "document": "版权水印。",
+          "document": "版权水印，该功能已不再支持使用。",
           "example": "无",
           "member": "CopyRightWatermarkInput",
           "name": "CopyRightWatermark",

@@ -8094,6 +8094,7 @@
           "example": "无",
           "member": "ShipperInfo",
           "name": "Shippers",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -8103,6 +8104,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -12036,7 +12038,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "执行周期， 可选值：`Period`、`Fixed`。\n\n- Period：固定频率\n- Fixed：固定时间",
+          "document": "执行周期， 可选值：`Period`、`Fixed`、`Cron`。\n\n- Period：固定频率\n- Fixed：固定时间\n- Cron：Cron表达式",
           "example": "无",
           "member": "string",
           "name": "Type",

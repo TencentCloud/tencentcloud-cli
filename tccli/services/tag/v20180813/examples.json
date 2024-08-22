@@ -97,8 +97,8 @@
     "DescribeResourceTagsByResourceIdsSeq": [
       {
         "document": "",
-        "input": "https://tag.tencentcloudapi.com/?Action=DescribeResourceTagsByResourceIdsSeq\r\n&ServiceType=cvm&ResourcePrefix=instance&ResourceRegion=ap-beijing&ResourceIds.0=ins-1234\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Offset\": 0,\n        \"Limit\": 15,\n        \"Tags\": [\n            {\n                \"TagKey\": \"字符串\",\n                \"TagValue\": \"字符串\",\n                \"TagKeyMd5\": \"cc4dd1da7e1a754534215f02fb9ba85d\",\n                \"TagValueMd5\": \"cc4dd1da7e1a754534215f02fb9ba85d\",\n                \"ResourceId\": \"ins-1234\"\n            }\n        ],\n        \"RequestId\": \"34bdd6cc-34b0-4ef4-9051-be9a5294be8e\"\n    }\n}",
+        "input": "https://tag.tencentcloudapi.com/?Action=DescribeResourceTagsByResourceIdsSeq\n&ServiceType=cvm\n&ResourcePrefix=instance\n&ResourceRegion=ap-guangzhou\n&ResourceIds.0=ins-1234\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Offset\": 0,\n        \"Limit\": 15,\n        \"Tags\": [\n            {\n                \"ServiceType\": \"cvm\",\n                \"TagKey\": \"字符串\",\n                \"TagValue\": \"字符串\",\n                \"TagKeyMd5\": \"cc4dd1da7e1a754534215f02fb9ba85d\",\n                \"TagValueMd5\": \"cc4dd1da7e1a754534215f02fb9ba85d\",\n                \"ResourceId\": \"ins-1234\"\n            }\n        ],\n        \"RequestId\": \"34bdd6cc-34b0-4ef4-9051-be9a5294be8e\"\n    }\n}",
         "title": "查看资源关联的标签"
       }
     ],

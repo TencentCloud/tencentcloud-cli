@@ -14655,6 +14655,15 @@
           "name": "EventId",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "对历史待处理执行加白操作；0是不处理，1是处理",
+          "example": "1",
+          "member": "uint64",
+          "name": "IsHandleHistoryEvents",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -32189,6 +32198,7 @@
           "example": "1",
           "member": "string",
           "name": "VulCategories",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -32198,6 +32208,7 @@
           "example": "1",
           "member": "string",
           "name": "VulLevels",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -32207,6 +32218,7 @@
           "example": "xxx",
           "member": "uint64",
           "name": "TimerInterval",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -32216,6 +32228,7 @@
           "example": "xxx",
           "member": "string",
           "name": "TimerTime",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -32225,6 +32238,7 @@
           "example": "1",
           "member": "uint64",
           "name": "VulEmergency",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -32234,6 +32248,7 @@
           "example": "00:00",
           "member": "string",
           "name": "StartTime",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -32243,6 +32258,7 @@
           "example": "1",
           "member": "uint64",
           "name": "EnableScan",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -32252,6 +32268,7 @@
           "example": "00:00",
           "member": "string",
           "name": "EndTime",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -32261,6 +32278,7 @@
           "example": "600",
           "member": "uint64",
           "name": "ClickTimeout",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -32270,7 +32288,18 @@
           "example": "['']",
           "member": "string",
           "name": "Uuids",
+          "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "0版本比对,2版本比对+poc",
+          "example": "0",
+          "member": "uint64",
+          "name": "ScanMethod",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -36085,7 +36114,7 @@
           "example": "1",
           "member": "int64",
           "name": "HostRange",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -36095,7 +36124,7 @@
           "example": "无",
           "member": "string",
           "name": "ItemLabels",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -36105,7 +36134,7 @@
           "example": "无",
           "member": "string",
           "name": "Quuids",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -36115,7 +36144,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -36125,9 +36154,19 @@
           "example": "无",
           "member": "string",
           "name": "ItemLabelIds",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "需排除的机器列表",
+          "example": "无",
+          "member": "string",
+          "name": "ExcludedQuuids",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -48974,6 +49013,15 @@
           "name": "ItemLabelIds",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "需排除的机器列表",
+          "example": "无",
+          "member": "string",
+          "name": "ExcludedQuuids",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -49098,6 +49146,15 @@
           "example": "无",
           "member": "string",
           "name": "Quuids",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "需排除的机器列表\t",
+          "example": "无",
+          "member": "string",
+          "name": "ExcludedQuuids",
           "required": false,
           "type": "list"
         }
@@ -54952,6 +55009,15 @@
           "name": "VulIds",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "0版本比对，2版本比对+poc",
+          "example": "0",
+          "member": "uint64",
+          "name": "ScanMethod",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -55061,6 +55127,15 @@
           "name": "Uuids",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "0版本比对，2版本比对+poc",
+          "example": "0",
+          "member": "uint64",
+          "name": "ScanMethod",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

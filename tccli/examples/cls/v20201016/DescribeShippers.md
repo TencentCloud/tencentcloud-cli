@@ -35,7 +35,13 @@ Output:
                     "Format": "json"
                 },
                 "CreateTime": "2020-10-01 17:10:32",
-                "FilenameMode": 0
+                "FilenameMode": 0,
+                "StartTime": 0,
+                "EndTime": 0,
+                "Progress": 0,
+                "RemainTime": 0,
+                "HistoryStatus": 0,
+                "StorageType": ""
             }
         ],
         "TotalCount": 1,

@@ -312,6 +312,7 @@
           "example": "\"true\"",
           "member": "string",
           "name": "Data",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },

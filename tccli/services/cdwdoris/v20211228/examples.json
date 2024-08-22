@@ -59,8 +59,8 @@
     "DeleteBackUpData": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteBackUpData\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"BackUpJobId\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteBackUpData\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"BackUpJobId\": 0,\n    \"IsDeleteAll\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "示例"
       }
     ],
@@ -218,7 +218,7 @@
       {
         "document": "获取集群操作列表",
         "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceOperations\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdwch-exs8Mnql\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxx-xxxx-xxxxx-xxxxx\",\n        \"TotalCount\": 2,\n        \"Operations\": [\n            {\n                \"Name\": \"CreateInstance\",\n                \"Desc\": \"创建集群\",\n                \"Result\": \"Success\",\n                \"Level\": \"Normal\",\n                \"LevelDesc\": \"一般\",\n                \"StartTime\": \"2020-10-22 13:28:53\",\n                \"EndTime\": \"2020-10-22 13:28:53\",\n                \"JobId\": 123\n            },\n            {\n                \"Name\": \"ModifyInstance\",\n                \"Desc\": \"变配集群\",\n                \"Result\": \"Success\",\n                \"Level\": \"HighRisk\",\n                \"LevelDesc\": \"高危\",\n                \"StartTime\": \"2020-10-22 14:38:53\",\n                \"EndTime\": \"2020-10-22 14:38:53\",\n                \"JobId\": 124\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"Operations\": [\n            {\n                \"Name\": \"abc\",\n                \"Result\": \"abc\",\n                \"Desc\": \"abc\",\n                \"Level\": \"abc\",\n                \"LevelDesc\": \"abc\",\n                \"StartTime\": \"abc\",\n                \"EndTime\": \"abc\",\n                \"ResultDesc\": \"abc\",\n                \"OperateUin\": \"abc\",\n                \"JobId\": 0,\n                \"OperationDetail\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "获取集群操作列表"
       }
     ],
@@ -288,10 +288,10 @@
     ],
     "DescribeSqlApis": [
       {
-        "document": "查询ck集群信息",
+        "document": "查询集群信息",
         "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSqlApis\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
-        "title": "查询ck集群信息"
+        "title": "查询集群信息"
       }
     ],
     "DescribeTableList": [

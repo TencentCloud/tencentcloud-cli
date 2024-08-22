@@ -1293,6 +1293,26 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "设备sn\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"123\"",
+          "member": "string",
+          "name": "Sn",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "厂商\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"abc\"",
+          "member": "string",
+          "name": "Vendor",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

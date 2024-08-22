@@ -8,7 +8,7 @@ Input:
 tccli tag DescribeResourceTagsByResourceIdsSeq --cli-unfold-argument  \
     --ServiceType cvm \
     --ResourcePrefix instance \
-    --ResourceRegion ap-beijing \
+    --ResourceRegion ap-guangzhou \
     --ResourceIds ins-1234
 ```
 
@@ -21,6 +21,7 @@ Output:
         "Limit": 15,
         "Tags": [
             {
+                "ServiceType": "cvm",
                 "TagKey": "字符串",
                 "TagValue": "字符串",
                 "TagKeyMd5": "cc4dd1da7e1a754534215f02fb9ba85d",
