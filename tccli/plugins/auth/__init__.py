@@ -23,11 +23,11 @@ _spec = {
         "loginRequest": {
             "members": [
                 {
-                    "name": "no-browser",
-                    "member": "bool",
-                    "type": "bool",
+                    "name": "browser",
+                    "member": "string",
+                    "type": "string",
                     "required": False,
-                    "document": "use this option to authorize without a web browser",
+                    "document": "use browser=no to indicate no browser login mode",
                 },
             ],
         },

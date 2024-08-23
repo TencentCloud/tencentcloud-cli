@@ -1,35 +1,106 @@
 # coding: utf-8
+import base64
+import json
+import random
+import string
 import sys
+from urllib import urlencode
 
 import texts
 import webbrowser
 
-_app_id = 700001249938
-_redirect_url = "https://cli.cloud.tencent.com/oauth"
+import token_api
+
+_APP_ID = 700001249938
+_REDIRECT_URL = "https://cli.cloud.tencent.com/oauth"
+
+_START_SEARCH_PORT = 9000
+_END_SEARCH_PORT = _START_SEARCH_PORT + 100
 
 
 def login_command_entrypoint(args, parsed_globals):
-    print(args)
-
-    language = parsed_globals.get("language", "zh-CN")
+    language = parsed_globals.get("language")
+    if not language:
+        language = "zh-CN"
     texts.set_lang(language)
 
-    no_browser = args.get("no-browser", False)
+    browser = args.get("browser")
 
-    if no_browser:
-        login_no_browser()
+    login(browser != "no")
+
+
+def login(use_browser):
+    characters = string.ascii_letters + string.digits
+    state = ''.join(random.choice(characters) for _ in range(10))
+
+    if use_browser:
+        token = _get_token(state)
     else:
-        login()
+        token = _get_token_no_browser(state)
+
+    if token["state"] != state:
+        raise ValueError("invalid state %s" % token["state"])
+
+    print(token)
+    # print("refresh_token", token_api.refresh_token(token["refresh_token"], token["open_id"]))
+    print("tmp_key", token_api.get_temp_key(token["access_token"]))
 
 
-def login():
-    state = "qwer"
-    entrypoint_url = "https://https://cloud.tencent.com/open/authorize?scope=login&app_id=%s&redirect_url=%s&state=%s" % (
-        _app_id, _redirect_url, state)
-    if not webbrowser.open(entrypoint_url):
-        print(texts.get("login_failed_no_browser"))
+def _get_token(state):
+    import browser_flow
+
+    port, result_queue = browser_flow.try_run(_START_SEARCH_PORT, _END_SEARCH_PORT)
+
+    redirect_params = {
+        "redirect_url": "http://localhost:%d" % port,
+    }
+    redirect_query = urlencode(redirect_params)
+    redirect_url = _REDIRECT_URL + "?" + redirect_query
+    url_params = {
+        "scope": "login",
+        "app_id": _APP_ID,
+        "redirect_url": redirect_url,
+        "state": state,
+    }
+    url_query = urlencode(url_params)
+    auth_url = "https://cloud.tencent.com/open/authorize?" + url_query
+
+    if not webbrowser.open(auth_url):
+        print(texts.get("login_failed_due_to_no_browser"))
         sys.exit(1)
 
-
-def login_no_browser():
     print(texts.get("login_prompt"))
+    print(auth_url)
+
+    result = result_queue.get()
+    if isinstance(result, Exception):
+        raise result
+
+    return result
+
+
+def _get_token_no_browser(state):
+    redirect_params = {
+        "browser": "no",
+    }
+    redirect_query = urlencode(redirect_params)
+    redirect_url = _REDIRECT_URL + "?" + redirect_query
+    url_params = {
+        "scope": "login",
+        "app_id": _APP_ID,
+        "redirect_url": redirect_url,
+        "state": state,
+    }
+    url_query = urlencode(url_params)
+    auth_url = "https://cloud.tencent.com/open/authorize?" + url_query
+
+    print(texts.get("login_prompt_no_browser"))
+    print(auth_url)
+
+    try:
+        input_func = raw_input
+    except NameError:
+        input_func = input
+
+    user_input = input_func(texts.get("login_prompt_code_no_browser"))
+    return json.loads(base64.b64decode(user_input))
