@@ -231,6 +231,13 @@
       "output": "DescribeQuestionListResponse",
       "status": "online"
     },
+    "DescribeRecordStream": {
+      "document": "录制流查询",
+      "input": "DescribeRecordStreamRequest",
+      "name": "获取流信息",
+      "output": "DescribeRecordStreamResponse",
+      "status": "online"
+    },
     "DescribeRoom": {
       "document": "获取房间配置信息",
       "input": "DescribeRoomRequest",
@@ -3079,6 +3086,82 @@
           "name": "QuestionInfo",
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRecordStreamRequest": {
+      "document": "DescribeRecordStream请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "学校ID",
+          "example": "12345",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "房间ID",
+          "example": "9090",
+          "member": "uint64",
+          "name": "RoomId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRecordStreamResponse": {
+      "document": "DescribeRecordStream返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "学校ID",
+          "example": "328910",
+          "member": "uint64",
+          "name": "SchoolId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "课堂ID",
+          "example": "123",
+          "member": "uint64",
+          "name": "ClassId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "课堂类型",
+          "example": "2",
+          "member": "uint64",
+          "name": "ClassType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户流信息",
+          "example": "无",
+          "member": "SingleStreamInfo",
+          "name": "StreamInfo",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -6763,6 +6846,111 @@
         }
       ],
       "type": "object"
+    },
+    "SingleStreamInfo": {
+      "document": "录制流信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "string",
+          "name": "UserId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1233",
+          "member": "uint64",
+          "name": "StartTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "21412",
+          "member": "uint64",
+          "name": "StopTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总时长\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12",
+          "member": "uint64",
+          "name": "Duration",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文件格式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "mp4",
+          "member": "string",
+          "name": "FileFormat",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "流url\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http://123.com",
+          "member": "string",
+          "name": "RecordUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "流大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "uint64",
+          "name": "RecordSize",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "流ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1238392",
+          "member": "string",
+          "name": "VideoId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "流类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "mix",
+          "member": "string",
+          "name": "Role",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "StartRoomRequest": {
       "document": "StartRoom请求参数结构体",

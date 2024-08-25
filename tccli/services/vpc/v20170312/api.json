@@ -20042,6 +20042,7 @@
           "example": "无",
           "member": "string",
           "name": "SslClientConfigsSet",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -20051,6 +20052,7 @@
           "example": "无",
           "member": "SslClientConfig",
           "name": "SslClientConfig",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -20060,6 +20062,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Authenticated",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },

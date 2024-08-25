@@ -282,6 +282,14 @@
         "title": "示例"
       }
     ],
+    "DescribeRecordStream": [
+      {
+        "document": "获取流信息",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRecordStream\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1,\n    \"RoomId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"ClassId\": 3211258275,\n        \"ClassType\": 2,\n        \"RequestId\": \"6a0cd621-e6df-46a5-8ce8-29800e49679d\",\n        \"SchoolId\": 39233193,\n        \"StreamInfo\": [\n            {\n                \"Duration\": 224,\n                \"FileFormat\": \"mp4\",\n                \"RecordSize\": 14966923,\n                \"RecordUrl\": \"https://20910970.vod2.myqcloud.com/6cac6e5evodcq100915970/adcjfhbshgahd87/f0.mp4\",\n                \"Role\": \"main\",\n                \"StartTime\": 1721099743,\n                \"StopTime\": 1721099964,\n                \"UserId\": \"2TW2Kv091028NAmYkCQlsrT1lXgk\",\n                \"VideoId\": \"125312342212911616\"\n            }\n        ]\n    }\n}",
+        "title": "DescribeRecordStream"
+      }
+    ],
     "DescribeRoom": [
       {
         "document": "获取房间信息",

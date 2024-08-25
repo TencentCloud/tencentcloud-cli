@@ -2208,7 +2208,7 @@
       {
         "document": "下载SSL-VPN-CLIENT配置",
         "input": "https://vpc.tencentcloudapi.com/?Action=DownloadVpnGatewaySslClientCert\n&SslVpnClientId=vpnc--84tby4k2\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"SslClientConfig\": [\n            {\n                \"SslVpnCert\": \"-----BEGIN CERTIFICATE-----......\",\n                \"SslVpnKey\": \"-----BEGIN PRIVATE KEY-----......\",\n                \"SslVpnRootCert\": \"-----BEGIN CERTIFICATE-----......\",\n                \"SslVpnClientConfiguration\": \"client\\ndev tun\\nproto udp\\nremote......\"\n            }\n        ],\n        \"Authenticated\": 1,\n        \"RequestId\": \"d3c01d8b-0363-41d4-a8be-3cfcf2c69711\",\n        \"SslClientConfigsSet\": \"${SslClientConfigsSet}\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"SslClientConfigsSet\": \"abc\",\n        \"SslClientConfig\": [\n            {\n                \"SslVpnClientConfiguration\": \"abc\",\n                \"SslVpnRootCert\": \"abc\",\n                \"SslVpnKey\": \"abc\",\n                \"SslVpnCert\": \"abc\",\n                \"SslVpnClientId\": \"abc\"\n            }\n        ],\n        \"Authenticated\": 1,\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "下载SSL-VPN-CLIENT配置"
       }
     ],

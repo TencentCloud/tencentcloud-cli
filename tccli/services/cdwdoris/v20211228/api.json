@@ -3661,7 +3661,7 @@
         },
         {
           "disabled": false,
-          "document": "\"\" 或者  某个集群Id",
+          "document": "为空：代表当前appId下所有集群 或者  某个集群Id",
           "example": "\"\"",
           "member": "string",
           "name": "Input",
@@ -3676,7 +3676,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "出参\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "base64编码后的数据，包含了集群的健康信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
           "name": "Data",
@@ -7955,6 +7955,15 @@
           "example": "pwd—***",
           "member": "string",
           "name": "OldPwd",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "绑定的子用户uin",
+          "example": "123124123",
+          "member": "string",
+          "name": "CamUin",
           "required": false,
           "type": "string"
         }
