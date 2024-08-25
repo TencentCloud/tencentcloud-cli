@@ -1,3 +1,90 @@
+# Release 3.0.1061.1
+
+## 腾讯云数据仓库 TCHouse-D(cdwdoris) 版本：2021-12-28
+
+### 第 27 次发布
+
+发布时间：2024-08-26 01:10:48
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [UserInfo](http://document.tencentcloudapi.woa.com/document/product/1706/80309#UserInfo)
+
+	* 新增成员：CamUin
+
+
+
+
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+
+### 第 94 次发布
+
+发布时间：2024-08-26 01:14:21
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ClusterInstanceDetail](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ClusterInstanceDetail)
+
+	* 新增成员：InstanceStorageType
+
+* [CynosdbInstance](http://document.tencentcloudapi.woa.com/document/product/1003/48097#CynosdbInstance)
+
+	* 新增成员：InstanceStorageType
+
+
+
+
+## 云数据库 MongoDB(mongodb) 版本：2019-07-25
+
+### 第 32 次发布
+
+发布时间：2024-08-26 01:21:54
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ModifyDBInstanceSpec](http://document.tencentcloudapi.woa.com/document/product/240/38565)
+
+	* <font color="#dd0000">**修改入参**：</font>Memory, Volume
+
+
+
+
+## 云数据库 MongoDB(mongodb) 版本：2018-04-08
+
+
+
+## 文本内容安全(tms) 版本：2020-12-29
+
+### 第 10 次发布
+
+发布时间：2024-08-26 01:28:31
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* AnswerQuestion
+
+
+
+## 文本内容安全(tms) 版本：2020-07-13
+
+
+
 # Release 3.0.1060.1
 
 ## 费用中心(billing) 版本：2018-07-09
