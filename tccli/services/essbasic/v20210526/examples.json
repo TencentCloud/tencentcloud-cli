@@ -608,7 +608,7 @@
       {
         "document": "查看个人自动签状态, 同时也会返回自动签license类型，如果是 0 类型，则同时会返回开始和过期时间。",
         "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelDescribeUserAutoSignStatus\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"OpenId\": \"\",\n        \"ClientIp\": \"\",\n        \"CustomUserId\": \"\",\n        \"ProxyIp\": \"\",\n        \"Channel\": \"\"\n    },\n    \"SceneKey\": \"E_PRESCRIPTION_AUTO_SIGN\",\n    \"Agent\": {\n        \"ProxyAppId\": \"c17bdf9c2a7bdcb32611f4d0200fef3d\",\n        \"ProxyOrganizationOpenId\": \"d7c13a8b81340cce9e3968c0ee248f04\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"00498cc8500be9cxxxxxxx3aff766cac\"\n        },\n        \"AppId\": \"65fb0c591044be8a1f60aa382cc5ed0e\"\n    },\n    \"UserInfo\": {\n        \"Name\": \"小明\",\n        \"IdCardNumber\": \"610000000000000000\",\n        \"IdCardType\": \"ID_CARD\"\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"IsOpen\": true,\n        \"LicenseFrom\": 1684411624,\n        \"LicenseTo\": 1715947624,\n        \"RequestId\": \"5beb5f54-cf3d-4c26-a4ee-a97c85196a3e\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"IsOpen\": true,\n        \"LicenseFrom\": 1684411624,\n        \"LicenseTo\": 1715947624,\n        \"SealId\": \"yDCbaUUckpwxv0ulUyZJC13u24H1GMOK\",\n        \"RequestId\": \"5beb5f54-cf3d-4c26-a4ee-a97c85196a3e\"\n    }\n}",
         "title": "查看个人自动签开启状态"
       }
     ],

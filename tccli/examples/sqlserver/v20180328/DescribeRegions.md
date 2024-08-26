@@ -39,12 +39,6 @@ Output:
                 "RegionState": "UNAVAILABLE"
             },
             {
-                "Region": "na-toronto",
-                "RegionName": "北美",
-                "RegionId": 6,
-                "RegionState": "UNAVAILABLE"
-            },
-            {
                 "Region": "ap-beijing",
                 "RegionName": "北京",
                 "RegionId": 8,

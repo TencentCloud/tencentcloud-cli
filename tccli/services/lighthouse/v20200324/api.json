@@ -56,6 +56,13 @@
       "output": "CreateBlueprintResponse",
       "status": "online"
     },
+    "CreateBlueprintForMigrate": {
+      "document": "本接口(CreateBlueprintForMigrate)用于通过在线迁移临时实例创建自定义镜像。",
+      "input": "CreateBlueprintForMigrateRequest",
+      "name": "通过在线迁移临时实例创建镜像",
+      "output": "CreateBlueprintForMigrateResponse",
+      "status": "online"
+    },
     "CreateDiskBackup": {
       "document": "本接口 ( CreateDiskBackup  ) 用于创建指定云硬盘（当前只支持数据盘）的备份点。",
       "input": "CreateDiskBackupRequest",
@@ -89,6 +96,13 @@
       "input": "CreateFirewallTemplateRulesRequest",
       "name": "创建防火墙模板规则",
       "output": "CreateFirewallTemplateRulesResponse",
+      "status": "online"
+    },
+    "CreateInstanceForMigrate": {
+      "document": "本接口(CreateInstanceForMigrate)用于创建一台在线迁移临时实例。",
+      "input": "CreateInstanceForMigrateRequest",
+      "name": "创建在线迁移临时实例",
+      "output": "CreateInstanceForMigrateResponse",
       "status": "online"
     },
     "CreateInstanceSnapshot": {
@@ -390,6 +404,13 @@
       "input": "DescribeInstancesDiskNumRequest",
       "name": "查询实例挂载云硬盘数量",
       "output": "DescribeInstancesDiskNumResponse",
+      "status": "online"
+    },
+    "DescribeInstancesForMigrate": {
+      "document": "本接口（DescribeInstancesForMigrate）用于查询一个或多个在线迁移临时实例的详细信息。\n\n* 可以根据临时实例 ID 查询在线迁移临时实例的详细信息。\n* 如果参数为空，返回当前用户一定数量（Limit 所指定的数量，默认为 20）的实例。",
+      "input": "DescribeInstancesForMigrateRequest",
+      "name": "查看在线迁移临时实例列表",
+      "output": "DescribeInstancesForMigrateResponse",
       "status": "online"
     },
     "DescribeInstancesReturnable": {
@@ -782,6 +803,13 @@
       "input": "TerminateInstancesRequest",
       "name": "销毁实例",
       "output": "TerminateInstancesResponse",
+      "status": "online"
+    },
+    "TerminateInstancesForMigrate": {
+      "document": "本接口(TerminateInstancesForMigrate)用于销毁在线迁移临时实例。",
+      "input": "TerminateInstancesForMigrateRequest",
+      "name": "销毁在线迁移临时实例",
+      "output": "TerminateInstancesForMigrateResponse",
       "status": "online"
     }
   },
@@ -2304,6 +2332,52 @@
       ],
       "usage": "in"
     },
+    "CreateBlueprintForMigrateRequest": {
+      "document": "CreateBlueprintForMigrate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "在线迁移临时实例 ID。可通过[DescribeInstancesForMigrate](https://tcloud4api.woa.com/document/product/1211/673999?!preview&!document=1)接口返回值中的InstanceId获取。",
+          "example": "lhmins-m9oaw2cp",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "镜像名称。最大长度60。",
+          "example": "migrate-from-abc",
+          "member": "string",
+          "name": "BlueprintName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBlueprintForMigrateResponse": {
+      "document": "CreateBlueprintForMigrate返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自定义镜像 ID。",
+          "example": "lhbp-i7vqx7r5",
+          "member": "string",
+          "name": "BlueprintId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateBlueprintRequest": {
       "document": "CreateBlueprint请求参数结构体",
       "members": [
@@ -2649,6 +2723,61 @@
           "name": "TemplateRuleIdSet",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateInstanceForMigrateRequest": {
+      "document": "CreateInstanceForMigrate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用于保证请求幂等性的字符串。该字符串由客户生成，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。",
+          "example": "migrate-test-abc",
+          "member": "string",
+          "name": "ClientToken",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "系统类型。LINUX_UNIX 或者 WINDOWS。",
+          "example": "LINUX_UNIX",
+          "member": "string",
+          "name": "OsType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "系统云硬盘信息。创建在线迁移临时实例时，不需要传 DiskId。",
+          "example": "无",
+          "member": "DiskForMigrate",
+          "name": "SystemDisk",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateInstanceForMigrateResponse": {
+      "document": "CreateInstanceForMigrate返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "在线迁移临时实例 ID。",
+          "example": "lhmins-m9oaw2cp",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -5019,6 +5148,71 @@
       ],
       "type": "object"
     },
+    "DescribeInstancesForMigrateRequest": {
+      "document": "DescribeInstancesForMigrate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "在线迁移临时实例 ID 列表。每次请求批量实例的上限为 100。可通过[DescribeInstancesForMigrate](https://tcloud4api.woa.com/document/product/1211/673999?!preview&!document=1)接口返回值中的InstanceId获取。",
+          "example": "[\"lhmins-4r4pvtbg\"]",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认为 0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/product/1207/47578)中的相关小节。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "返回数量，默认为 20，最大值为 100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/product/1207/47578)中的相关小节。",
+          "example": "1",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstancesForMigrateResponse": {
+      "document": "DescribeInstancesForMigrate返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "符合条件的在线迁移临时实例数量。",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "在线迁移临时实例详细信息列表。",
+          "example": "无",
+          "member": "InstanceForMigrate",
+          "name": "InstanceSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeInstancesRequest": {
       "document": "DescribeInstances请求参数结构体",
       "members": [
@@ -6426,6 +6620,34 @@
         }
       ],
       "usage": "out"
+    },
+    "DiskForMigrate": {
+      "document": "描述了在线迁移临时实例云硬盘信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云硬盘大小，单位 GB。取值范围是[1, 450]。",
+          "example": "20",
+          "member": "uint64",
+          "name": "DiskSize",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "CBS 云硬盘 ID。\n作为入参时，不需要传该参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "disk-issyxx1m",
+          "member": "string",
+          "name": "DiskId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "DiskPrice": {
       "document": "云硬盘价格",
@@ -8027,6 +8249,142 @@
           "name": "DeniedActions",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "InstanceForMigrate": {
+      "document": "描述了在线迁移临时实例信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "在线迁移临时实例 ID。",
+          "example": "lhmins-m9oaw2cp",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "CVM 实例 ID。",
+          "example": "ins-mt5cxaxs",
+          "member": "string",
+          "name": "OriginInstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "系统云硬盘信息。",
+          "example": "无",
+          "member": "DiskForMigrate",
+          "name": "SystemDisk",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例的 CPU 核数，单位：核。",
+          "example": "2",
+          "member": "int64",
+          "name": "CPU",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例内存容量，单位：GB 。",
+          "example": "8",
+          "member": "int64",
+          "name": "Memory",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "CVM 实例全局唯一 ID。",
+          "example": "dab281fb-dd6c-4b3f-ae30-36da354ac20e",
+          "member": "string",
+          "name": "Uuid",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例系统类型。LINUX_UNIX 或 WINDOWS。",
+          "example": "WINDOWS",
+          "member": "string",
+          "name": "OsType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "CVM 实例机型。",
+          "example": "S2.MEDIUM8",
+          "member": "string",
+          "name": "InstanceType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "CVM 实例主网卡的公网 IP。 ",
+          "example": "[\"43.128.117.26\"]",
+          "member": "string",
+          "name": "PublicIpAddresses",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例状态。取值范围： \n<li>PENDING：表示创建中</li><li>LAUNCH_FAILED：表示创建失败</li><li>RUNNING：表示运行中</li><li>STOPPED：表示关机</li><li>STARTING：表示开机中</li><li>STOPPING：表示关机中</li><li>REBOOTING：表示重启中</li><li>SHUTDOWN：表示停止待销毁</li><li>TERMINATING：表示销毁中</li><li>DELETING：表示删除中</li><li>FREEZING：表示冻结中</li><li>ENTER_RESCUE_MODE：表示进入救援模式中</li><li>RESCUE_MODE：表示救援模式</li><li>EXIT_RESCUE_MODE：表示退出救援模式中</li>",
+          "example": "RUNNING",
+          "member": "string",
+          "name": "InstanceState",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例的最新操作。例：StopInstances、ResetInstance。注意：此字段可能返回 空值，表示取不到有效值。",
+          "example": "CreateBlueprintForMigrate",
+          "member": "string",
+          "name": "LatestOperation",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例的最新操作状态。取值范围： \nSUCCESS：表示操作成功 \nOPERATING：表示操作执行中 \nFAILED：表示操作失败 \n注意：此字段可能返回 空值，表示取不到有效值。",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "LatestOperationState",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例最新操作的唯一请求 ID。 \n注意：此字段可能返回 空值，表示取不到有效值。",
+          "example": "f498d99d-2647-4c1c-a234-36f0e082e7ba",
+          "member": "string",
+          "name": "LatestOperationRequestId",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -10665,6 +11023,33 @@
     },
     "TerminateDisksResponse": {
       "document": "TerminateDisks返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "TerminateInstancesForMigrateRequest": {
+      "document": "TerminateInstancesForMigrate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "在线迁移临时实例 ID 列表。每次请求批量实例的上限为 100。可通过[DescribeInstancesForMigrate](https://tcloud4api.woa.com/document/product/1211/673999?!preview&!document=1)接口返回值中的InstanceId获取。",
+          "example": "[\"lhmins-dlxf9hs3\"]",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "TerminateInstancesForMigrateResponse": {
+      "document": "TerminateInstancesForMigrate返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

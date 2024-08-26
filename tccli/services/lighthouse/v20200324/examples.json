@@ -64,6 +64,14 @@
         "title": "使用实例创建镜像"
       }
     ],
+    "CreateBlueprintForMigrate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBlueprintForMigrate\n<公共请求参数>\n\n{\n    \"BlueprintName\": \"test-0006\",\n    \"InstanceId\": \"lhmins-m9oaw2cp\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BlueprintId\": \"lhbp-i7vqx7r5\",\n        \"RequestId\": \"e4907750-3aa0-488d-a146-aeab66513441\"\n    }\n}",
+        "title": "通过在线迁移临时实例创建自定义镜像"
+      }
+    ],
     "CreateDiskBackup": [
       {
         "document": "创建云硬盘备份点",
@@ -102,6 +110,14 @@
         "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFirewallTemplateRules\n<公共请求参数>\n\n{\n    \"TemplateId\": \"lhft-6brh0ciy\",\n    \"TemplateRules\": [\n        {\n            \"Protocol\": \"TCP\",\n            \"Port\": \"81\",\n            \"CidrBlock\": \"0.0.0.0/0\",\n            \"Action\": \"ACCEPT\",\n            \"FirewallRuleDescription\": \"tcp 80\"\n        },\n        {\n            \"Protocol\": \"UDP\",\n            \"Port\": \"81\",\n            \"CidrBlock\": \"0.0.0.0/0\",\n            \"Action\": \"DROP\",\n            \"FirewallRuleDescription\": \"udp 80\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"740970ad-8118-4cc7-bf35-5ca5352a682f\",\n        \"TemplateRuleIdSet\": [\n            \"lhftr-hmp4bn7q2o\",\n            \"lhftr-b9evg1gakk\"\n        ]\n    }\n}",
         "title": "创建防火墙模板规则"
+      }
+    ],
+    "CreateInstanceForMigrate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateInstanceForMigrate\n<公共请求参数>\n\n{\n    \"ClientToken\": \"migrate-test-abc\",\n    \"OsType\": \"LINUX_UNIX\",\n    \"SystemDisk\": {\n        \"DiskSize\": 30\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceId\": \"lhmins-m9oaw2cp\",\n        \"RequestId\": \"ed584db5-817b-4a88-bb0e-c9112a2be9f8\"\n    }\n}",
+        "title": "使用一台 Linux 在线迁移临时实例"
       }
     ],
     "CreateInstanceSnapshot": [
@@ -452,6 +468,14 @@
         "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstancesDiskNum\n<公共请求参数>\n\n{\n    \"InstanceIds\": [\n        \"lhins-anxwfvxh\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"AttachDetailSet\": [\n            {\n                \"InstanceId\": \"lhins-anxwfvxh\",\n                \"AttachedDiskCount\": 1,\n                \"MaxAttachCount\": 5\n            }\n        ],\n        \"RequestId\": \"3a73da61-4f9a-453b-bc11-553383f5d59d\"\n    }\n}",
         "title": "查询实例挂载云盘数量"
+      }
+    ],
+    "DescribeInstancesForMigrate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstancesForMigrate\n<公共请求参数>\n\n{\n    \"InstanceIds\": [\n        \"lhmins-4r4pvtbg\"\n    ],\n    \"Offset\": 0,\n    \"Limit\": 20\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"InstanceSet\": [\n            {\n                \"InstanceId\": \"lhmins-4r4pvtbg\",\n                \"OriginInstanceId\": \"ins-mt5cxaxs\",\n                \"SystemDisk\": {\n                    \"DiskSize\": 50,\n                    \"DiskId\": \"disk-issyxx1m\"\n                },\n                \"CPU\": 2,\n                \"Memory\": 8,\n                \"Uuid\": \"dab281fb-dd6c-4b3f-ae30-36da354ac20e\",\n                \"OsType\": \"WINDOWS\",\n                \"InstanceType\": \"S2.MEDIUM8\",\n                \"PublicIpAddresses\": [\n                    \"10.1.128.14\"\n                ],\n                \"InstanceState\": \"RUNNING\",\n                \"LatestOperation\": \"CreateBlueprintForMigrate\",\n                \"LatestOperationState\": \"SUCCESS\",\n                \"LatestOperationRequestId\": \"e4907750-3aa0-488d-a146-aeab66513441\"\n            }\n        ],\n        \"RequestId\": \"242ff914-0de6-4462-b5fc-6e4c88aa4b07\"\n    }\n}",
+        "title": "指定在线临时实例ID查询"
       }
     ],
     "DescribeInstancesReturnable": [
@@ -900,6 +924,14 @@
         "input": "https://lighthouse.tencentcloudapi.com/?Action=TerminateInstances\n&InstanceIds.0=lhins-ruy9d2tw\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"abecf549-b609-4210-8e48-0ff76bbcd1fe\"\n    }\n}",
         "title": "销毁实例"
+      }
+    ],
+    "TerminateInstancesForMigrate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TerminateInstancesForMigrate\n<公共请求参数>\n\n{\n    \"InstanceIds\": [\n        \"lhmins-dlxf9hs3\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"aa76a376-e945-41a0-92e5-63df37b09cff\"\n    }\n}",
+        "title": "销毁在线迁移临时实例"
       }
     ]
   },

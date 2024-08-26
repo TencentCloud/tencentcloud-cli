@@ -1,10 +1,33 @@
 # 本版本更新包含以下内容：
 
+## 费用中心(billing) 版本：2018-07-09
+
+### 第 63 次发布
+
+发布时间：2024-08-27 01:08:42
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [MeasureAccountDosages](http://document.tencentcloudapi.woa.com/document/product/555/19183#MeasureAccountDosages)
+
+	* 新增成员：AutoPurchaseFlag, AutoPurchaseStatus, AutoPurchaseFailType
+
+* [MeasureResourceDetails](http://document.tencentcloudapi.woa.com/document/product/555/19183#MeasureResourceDetails)
+
+	* 新增成员：AutoPurchaseFlag, AutoPurchaseStatus, AutoPurchaseFailType
+
+
+
+
 ## 腾讯云数据仓库 TCHouse-D(cdwdoris) 版本：2021-12-28
 
-### 第 27 次发布
+### 第 28 次发布
 
-发布时间：2024-08-26 01:10:48
+发布时间：2024-08-27 01:11:04
 
 本次发布包含了以下内容：
 
@@ -14,39 +37,16 @@
 
 * [UserInfo](http://document.tencentcloudapi.woa.com/document/product/1706/80309#UserInfo)
 
-	* 新增成员：CamUin
+	* 新增成员：CamRangerGroupIds
 
 
 
 
-## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+## Elasticsearch Service(es) 版本：2018-04-16
 
-### 第 94 次发布
+### 第 70 次发布
 
-发布时间：2024-08-26 01:14:21
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [ClusterInstanceDetail](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ClusterInstanceDetail)
-
-	* 新增成员：InstanceStorageType
-
-* [CynosdbInstance](http://document.tencentcloudapi.woa.com/document/product/1003/48097#CynosdbInstance)
-
-	* 新增成员：InstanceStorageType
-
-
-
-
-## 云数据库 MongoDB(mongodb) 版本：2019-07-25
-
-### 第 32 次发布
-
-发布时间：2024-08-26 01:21:54
+发布时间：2024-08-27 01:17:32
 
 本次发布包含了以下内容：
 
@@ -54,34 +54,144 @@
 
 修改接口：
 
-* [ModifyDBInstanceSpec](http://document.tencentcloudapi.woa.com/document/product/240/38565)
+* [CreateInstance](http://document.tencentcloudapi.woa.com/document/product/845/30633)
 
-	* <font color="#dd0000">**修改入参**：</font>Memory, Volume
+	* 新增入参：ReadWriteMode
 
+* [UpdateInstance](http://document.tencentcloudapi.woa.com/document/product/845/30629)
 
-
-
-## 云数据库 MongoDB(mongodb) 版本：2018-04-08
-
+	* 新增入参：ReadWriteMode
 
 
-## 文本内容安全(tms) 版本：2020-12-29
+修改数据结构：
 
-### 第 10 次发布
+* [InstanceInfo](http://document.tencentcloudapi.woa.com/document/product/845/30634#InstanceInfo)
 
-发布时间：2024-08-26 01:28:31
+	* 新增成员：CosBucketStorageSize, ReadWriteMode
+
+
+
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 101 次发布
+
+发布时间：2024-08-27 01:17:49
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-<font color="#dd0000">**删除接口**：</font>
+修改接口：
 
-* AnswerQuestion
+* [DescribeUserAutoSignStatus](http://document.tencentcloudapi.woa.com/document/product/1668/79354)
+
+	* 新增出参：SealId
 
 
 
-## 文本内容安全(tms) 版本：2020-07-13
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 151 次发布
+
+发布时间：2024-08-27 01:18:05
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ChannelDescribeUserAutoSignStatus](http://document.tencentcloudapi.woa.com/document/product/1595/81609)
+
+	* 新增出参：SealId
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 轻量应用服务器(lighthouse) 版本：2020-03-24
+
+### 第 57 次发布
+
+发布时间：2024-08-27 01:21:11
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateBlueprintForMigrate](http://document.tencentcloudapi.woa.com/document/product/1207/84747)
+* [CreateInstanceForMigrate](http://document.tencentcloudapi.woa.com/document/product/1207/84750)
+* [DescribeInstancesForMigrate](http://document.tencentcloudapi.woa.com/document/product/1207/84749)
+* [TerminateInstancesForMigrate](http://document.tencentcloudapi.woa.com/document/product/1207/84748)
+
+新增数据结构：
+
+* [DiskForMigrate](http://document.tencentcloudapi.woa.com/document/product/1207/47576#DiskForMigrate)
+* [InstanceForMigrate](http://document.tencentcloudapi.woa.com/document/product/1207/47576#InstanceForMigrate)
+
+
+
+## 云函数(scf) 版本：2018-04-16
+
+### 第 49 次发布
+
+发布时间：2024-08-27 01:24:48
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [PublishLayerVersion](http://document.tencentcloudapi.woa.com/document/product/583/41383)
+
+	* 新增入参：Tags
+
+
+
+
+## SSL 证书(ssl) 版本：2019-12-05
+
+### 第 66 次发布
+
+发布时间：2024-08-27 01:25:42
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Certificates](http://document.tencentcloudapi.woa.com/document/product/400/41679#Certificates)
+
+	* 新增成员：CertRevokedTime
+
+
+
+
+## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
+
+### 第 64 次发布
+
+发布时间：2024-08-27 01:31:41
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Apply](http://document.tencentcloudapi.woa.com/document/product/1607/77747#Apply)
+
+	* 新增成员：ApplyId
+
 
 
 
@@ -6722,6 +6832,25 @@
 
 
 ## 费用中心(billing) 版本：2018-07-09
+
+### 第 63 次发布
+
+发布时间：2024-08-27 01:08:42
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [MeasureAccountDosages](http://document.tencentcloudapi.woa.com/document/product/555/19183#MeasureAccountDosages)
+
+	* 新增成员：AutoPurchaseFlag, AutoPurchaseStatus, AutoPurchaseFailType
+
+* [MeasureResourceDetails](http://document.tencentcloudapi.woa.com/document/product/555/19183#MeasureResourceDetails)
+
+	* 新增成员：AutoPurchaseFlag, AutoPurchaseStatus, AutoPurchaseFailType
+
 
 ### 第 62 次发布
 
@@ -17593,6 +17722,21 @@
 
 
 ## 腾讯云数据仓库 TCHouse-D(cdwdoris) 版本：2021-12-28
+
+### 第 28 次发布
+
+发布时间：2024-08-27 01:11:04
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [UserInfo](http://document.tencentcloudapi.woa.com/document/product/1706/80309#UserInfo)
+
+	* 新增成员：CamRangerGroupIds
+
 
 ### 第 27 次发布
 
@@ -47382,6 +47526,32 @@
 
 ## Elasticsearch Service(es) 版本：2018-04-16
 
+### 第 70 次发布
+
+发布时间：2024-08-27 01:17:32
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateInstance](http://document.tencentcloudapi.woa.com/document/product/845/30633)
+
+	* 新增入参：ReadWriteMode
+
+* [UpdateInstance](http://document.tencentcloudapi.woa.com/document/product/845/30629)
+
+	* 新增入参：ReadWriteMode
+
+
+修改数据结构：
+
+* [InstanceInfo](http://document.tencentcloudapi.woa.com/document/product/845/30634#InstanceInfo)
+
+	* 新增成员：CosBucketStorageSize, ReadWriteMode
+
+
 ### 第 69 次发布
 
 发布时间：2024-08-14 01:51:06
@@ -48909,6 +49079,21 @@
 
 
 ## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 101 次发布
+
+发布时间：2024-08-27 01:17:49
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeUserAutoSignStatus](http://document.tencentcloudapi.woa.com/document/product/1668/79354)
+
+	* 新增出参：SealId
+
 
 ### 第 100 次发布
 
@@ -51073,6 +51258,21 @@
 
 
 ## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 151 次发布
+
+发布时间：2024-08-27 01:18:05
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ChannelDescribeUserAutoSignStatus](http://document.tencentcloudapi.woa.com/document/product/1595/81609)
+
+	* 新增出参：SealId
+
 
 ### 第 150 次发布
 
@@ -63376,6 +63576,26 @@
 
 
 ## 轻量应用服务器(lighthouse) 版本：2020-03-24
+
+### 第 57 次发布
+
+发布时间：2024-08-27 01:21:11
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[CreateBlueprintForMigrate](http://document.tencentcloudapi.woa.com/document/product/1207/84747)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[CreateInstanceForMigrate](http://document.tencentcloudapi.woa.com/document/product/1207/84750)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeInstancesForMigrate](http://document.tencentcloudapi.woa.com/document/product/1207/84749)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[TerminateInstancesForMigrate](http://document.tencentcloudapi.woa.com/document/product/1207/84748)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[DiskForMigrate](http://document.tencentcloudapi.woa.com/document/product/1207/47576#DiskForMigrate)](http://document.tencentcloudapi.woa.com/document/product/1207/47576#[DiskForMigrate](http://document.tencentcloudapi.woa.com/document/product/1207/47576#DiskForMigrate))
+* [[InstanceForMigrate](http://document.tencentcloudapi.woa.com/document/product/1207/47576#InstanceForMigrate)](http://document.tencentcloudapi.woa.com/document/product/1207/47576#[InstanceForMigrate](http://document.tencentcloudapi.woa.com/document/product/1207/47576#InstanceForMigrate))
 
 ### 第 56 次发布
 
@@ -81804,6 +82024,21 @@
 
 ## 云函数(scf) 版本：2018-04-16
 
+### 第 49 次发布
+
+发布时间：2024-08-27 01:24:48
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [PublishLayerVersion](http://document.tencentcloudapi.woa.com/document/product/583/41383)
+
+	* 新增入参：Tags
+
+
 ### 第 48 次发布
 
 发布时间：2024-07-02 01:23:04
@@ -85203,6 +85438,21 @@
 
 
 ## SSL 证书(ssl) 版本：2019-12-05
+
+### 第 66 次发布
+
+发布时间：2024-08-27 01:25:42
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Certificates](http://document.tencentcloudapi.woa.com/document/product/400/41679#Certificates)
+
+	* 新增成员：CertRevokedTime
+
 
 ### 第 65 次发布
 
@@ -116693,6 +116943,21 @@
 
 
 ## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
+
+### 第 64 次发布
+
+发布时间：2024-08-27 01:31:41
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Apply](http://document.tencentcloudapi.woa.com/document/product/1607/77747#Apply)
+
+	* 新增成员：ApplyId
+
 
 ### 第 63 次发布
 

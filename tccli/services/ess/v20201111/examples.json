@@ -1498,7 +1498,7 @@
       {
         "document": "查看个人自动签状态, 同时也会返回自动签license类型，如果是 0 类型，则同时会返回开始和过期时间。",
         "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserAutoSignStatus\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"ClientIp\": \"1.2.3.4\",\n        \"UserId\": \"yDRCLUUgygq2xu********Ewg0vjoimj\"\n    },\n    \"UserInfo\": {\n        \"Name\": \"典子谦\",\n        \"IdCardType\": \"ID_CARD\",\n        \"IdCardNumber\": \"620000198802020000\"\n    },\n    \"SceneKey\": \"E_PRESCRIPTION_AUTO_SIGN\"\n}",
-        "output": "{\n    \"Response\": {\n        \"IsOpen\": true,\n        \"LicenseFrom\": 1684412179,\n        \"LicenseTo\": 1715948179,\n        \"LicenseType\": 0,\n        \"RequestId\": \"5beb5fxxxxx-a97c85196a3e\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"IsOpen\": true,\n        \"LicenseFrom\": 1684412179,\n        \"LicenseTo\": 1715948179,\n        \"LicenseType\": 0,\n        \"SealId\": \"yDCbaUUckpwxv0ulUyZJC13u24H1GMOK\",\n        \"RequestId\": \"5beb5fxxxxx-a97c85196a3e\"\n    }\n}",
         "title": "查看个人自动签状态"
       }
     ],

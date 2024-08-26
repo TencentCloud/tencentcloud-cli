@@ -18993,6 +18993,36 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源包设置用尽续购标志位 0:未设置 1:用尽到期新购 2:用尽新购 3:到期新购\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "AutoPurchaseFlag",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源包新购状态AutoPurchaseFlag不为0时有效， 1:待新购 100:新购成功 50:新购失败\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "AutoPurchaseStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "新购失败类型AutoPurchaseStatus为50时有效；1:未知异常 2:超时每日配额 3:发货失败 4:用户余额不足\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "AutoPurchaseFailType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -19488,6 +19518,36 @@
           "name": "BindRecords",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源包设置用尽续购标志位 0:未设置 1:用尽到期新购 2:用尽新购 3:到期新购\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "AutoPurchaseFlag",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源包新购状态AutoPurchaseFlag不为0时有效， 1:待新购 100:新购成功 50:新购失败\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "AutoPurchaseStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "新购失败类型AutoPurchaseStatus为50时有效；1:未知异常 2:超时每日配额 3:发货失败 4:用户余额不足\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "AutoPurchaseFailType",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
