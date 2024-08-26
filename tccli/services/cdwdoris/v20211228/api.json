@@ -7966,6 +7966,15 @@
           "name": "CamUin",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "ranger group id列表",
+          "example": "[]",
+          "member": "int64",
+          "name": "CamRangerGroupIds",
+          "required": false,
+          "type": "list"
         }
       ],
       "usage": "in"

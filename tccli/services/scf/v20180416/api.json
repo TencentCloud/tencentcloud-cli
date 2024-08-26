@@ -3627,7 +3627,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像函数端口设置\n默认值: 9000\n-1: 无端口镜像函数\n其他: 取值范围 0 ~ 65535\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "镜像函数端口设置，可指定镜像类型\nWeb Server镜像：9000\nJob 镜像：-1\n注意：此字段可能返回 null，表示取不到有效值。\n默认值：9000\n示例值：9000\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "9000",
           "member": "int64",
           "name": "ImagePort",
@@ -5358,6 +5358,15 @@
           "name": "LicenseInfo",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "层Tag 参数，以键值对数组形式传入",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -5371,6 +5380,7 @@
           "example": "1",
           "member": "int64",
           "name": "LayerVersion",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },

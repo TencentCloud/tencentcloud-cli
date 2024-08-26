@@ -22,6 +22,7 @@ Output:
         "LicenseFrom": 1684412179,
         "LicenseTo": 1715948179,
         "LicenseType": 0,
+        "SealId": "yDCbaUUckpwxv0ulUyZJC13u24H1GMOK",
         "RequestId": "5beb5fxxxxx-a97c85196a3e"
     }
 }

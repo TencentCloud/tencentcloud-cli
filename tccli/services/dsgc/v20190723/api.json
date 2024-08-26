@@ -9890,6 +9890,24 @@
         },
         {
           "disabled": false,
+          "document": "偏移量，默认为0。",
+          "example": "1",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "返回数量，默认为20，最大值为100。",
+          "example": "1",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
           "document": "可信分排序，ASC-升序\nDESC降序",
           "example": "ASC",
           "member": "string",

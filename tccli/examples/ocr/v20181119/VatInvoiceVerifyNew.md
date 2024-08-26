@@ -10,7 +10,7 @@ tccli ocr VatInvoiceVerifyNew --cli-unfold-argument  \
     --InvoiceNo 04138864 \
     --InvoiceDate 2022-11-16 \
     --Amount 498.90 \
-    --CheckCode 00000000005672311400 \
+    --CheckCode 311400 \
     --RegionCode 4400 \
     --SellerTaxCode 44078819091887401X \
     --EnableCommonElectronic True

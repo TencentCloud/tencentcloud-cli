@@ -28,6 +28,7 @@ Output:
         "IsOpen": true,
         "LicenseFrom": 1684411624,
         "LicenseTo": 1715947624,
+        "SealId": "yDCbaUUckpwxv0ulUyZJC13u24H1GMOK",
         "RequestId": "5beb5f54-cf3d-4c26-a4ee-a97c85196a3e"
     }
 }
