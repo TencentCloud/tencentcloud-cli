@@ -12,6 +12,7 @@ import webbrowser
 from tccli import oauth
 
 _APP_ID = 700001249938
+_AUTH_URL = "https://cloud.tencent.com/open/authorize"
 _REDIRECT_URL = "https://cli.cloud.tencent.com/oauth"
 
 _START_SEARCH_PORT = 9000
@@ -30,17 +31,17 @@ def login_command_entrypoint(args, parsed_globals):
 
     browser = args.get("browser")
 
-    login(browser != "no", profile)
+    login(browser != "no", profile, language)
 
 
-def login(use_browser, profile):
+def login(use_browser, profile, language):
     characters = string.ascii_letters + string.digits
     state = ''.join(random.choice(characters) for _ in range(10))
 
     if use_browser:
-        token = _get_token(state)
+        token = _get_token(state, language)
     else:
-        token = _get_token_no_browser(state)
+        token = _get_token_no_browser(state, language)
 
     if token["state"] != state:
         raise ValueError("invalid state %s" % token["state"])
@@ -49,16 +50,17 @@ def login(use_browser, profile):
     oauth.save_credential(token, cred, profile)
 
     print("")
-    print(texts.get("cred_has_been_written_to") % oauth.cred_path_of_profile(profile))
+    print(texts.get("login_success") % oauth.cred_path_of_profile(profile))
 
 
-def _get_token(state):
+def _get_token(state, language):
     import browser_flow
 
     port, result_queue = browser_flow.try_run(_START_SEARCH_PORT, _END_SEARCH_PORT)
 
     redirect_params = {
         "redirect_url": "http://localhost:%d" % port,
+        "lang": language,
     }
     redirect_query = urlencode(redirect_params)
     redirect_url = _REDIRECT_URL + "?" + redirect_query
@@ -69,7 +71,7 @@ def _get_token(state):
         "state": state,
     }
     url_query = urlencode(url_params)
-    auth_url = "https://cloud.tencent.com/open/authorize?" + url_query
+    auth_url = _AUTH_URL + "?" + url_query
 
     if not webbrowser.open(auth_url):
         print(texts.get("login_failed_due_to_no_browser"))
@@ -85,9 +87,10 @@ def _get_token(state):
     return result
 
 
-def _get_token_no_browser(state):
+def _get_token_no_browser(state, language):
     redirect_params = {
         "browser": "no",
+        "lang": language,
     }
     redirect_query = urlencode(redirect_params)
     redirect_url = _REDIRECT_URL + "?" + redirect_query
@@ -98,7 +101,7 @@ def _get_token_no_browser(state):
         "state": state,
     }
     url_query = urlencode(url_params)
-    auth_url = "https://cloud.tencent.com/open/authorize?" + url_query
+    auth_url = _AUTH_URL + "?" + url_query
 
     print(texts.get("login_prompt_no_browser"))
     print("")
