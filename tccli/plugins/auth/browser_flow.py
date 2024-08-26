@@ -1,5 +1,6 @@
 import traceback
-from BaseHTTPServer import BaseHTTPRequestHandler
+import BaseHTTPServer
+import SocketServer
 import socket
 from threading import Thread
 
@@ -13,12 +14,22 @@ except ImportError:
     from http.server import HTTPServer
 
 
-class HTTPHandler(BaseHTTPRequestHandler):
+# chrome keeps previous connection alive, so use threading to avoid blocking
+class ThreadingHTTPServer(SocketServer.ThreadingTCPServer):
+    allow_reuse_address = 1
+
+    def server_bind(self):
+        """Override server_bind to store the server name."""
+        SocketServer.TCPServer.server_bind(self)
+        host, port = self.socket.getsockname()[:2]
+        self.server_name = socket.getfqdn(host)
+        self.server_port = port
+
+
+class HTTPHandler(BaseHTTPServer.BaseHTTPRequestHandler):
     result_queue = Queue(1)
-    shutdown = None
 
     def do_GET(self):
-        print("req")
         try:
             parsed_url = urlparse(self.path)
             query_vals = parse_qs(parsed_url.query)
@@ -30,17 +41,15 @@ class HTTPHandler(BaseHTTPRequestHandler):
             state = query_vals.get("state")[0]
             redirect_url = query_vals.get("redirect_url")[0]
             self.result_queue.put({
-                "open_id": open_id,
-                "access_token": access_token,
-                "refresh_token": refresh_token,
-                "expires_at": expires_at,
+                "openId": open_id,
+                "accessToken": access_token,
+                "refreshToken": refresh_token,
+                "expiresAt": expires_at,
                 "state": state,
             })
             self.send_response(307)
             self.send_header("Location", redirect_url)
             self.end_headers()
-            print("shutdown")
-            self.shutdown()
         except Exception:
             err = traceback.format_exc()
             print(err)
@@ -50,6 +59,7 @@ class HTTPHandler(BaseHTTPRequestHandler):
             self.wfile.write(err)
             self.wfile.flush()
 
+    # suppress debug message
     def log_message(self, format, *args):
         pass
 
@@ -60,13 +70,11 @@ def try_run(start_search_port, end_search_port):
     while port <= end_search_port:
         server_address = ('', port)
         try:
-            httpd = HTTPServer(server_address, HTTPHandler)
-            HTTPServer.request_queue_size = 1024
-            HTTPServer.shutdown = httpd.shutdown
+            ThreadingHTTPServer.daemon_threads = True
+            httpd = ThreadingHTTPServer(server_address, HTTPHandler)
             t = Thread(target=httpd.serve_forever)
             t.setDaemon(True)
             t.start()
-            print("start", port)
             return port, HTTPHandler.result_queue
         except socket.error:
             port += 1

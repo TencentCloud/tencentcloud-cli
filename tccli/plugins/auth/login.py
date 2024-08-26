@@ -9,7 +9,7 @@ from urllib import urlencode
 import texts
 import webbrowser
 
-import token_api
+from tccli import oauth
 
 _APP_ID = 700001249938
 _REDIRECT_URL = "https://cli.cloud.tencent.com/oauth"
@@ -24,12 +24,16 @@ def login_command_entrypoint(args, parsed_globals):
         language = "zh-CN"
     texts.set_lang(language)
 
+    profile = parsed_globals.get("profile", "default")
+    if not profile:
+        profile = "default"
+
     browser = args.get("browser")
 
-    login(browser != "no")
+    login(browser != "no", profile)
 
 
-def login(use_browser):
+def login(use_browser, profile):
     characters = string.ascii_letters + string.digits
     state = ''.join(random.choice(characters) for _ in range(10))
 
@@ -41,9 +45,11 @@ def login(use_browser):
     if token["state"] != state:
         raise ValueError("invalid state %s" % token["state"])
 
-    print(token)
-    # print("refresh_token", token_api.refresh_token(token["refresh_token"], token["open_id"]))
-    print("tmp_key", token_api.get_temp_key(token["access_token"]))
+    cred = oauth.get_temp_cred(token["accessToken"])
+    oauth.save_credential(token, cred, profile)
+
+    print("")
+    print(texts.get("cred_has_been_written_to") % oauth.cred_path_of_profile(profile))
 
 
 def _get_token(state):
@@ -95,6 +101,7 @@ def _get_token_no_browser(state):
     auth_url = "https://cloud.tencent.com/open/authorize?" + url_query
 
     print(texts.get("login_prompt_no_browser"))
+    print("")
     print(auth_url)
 
     try:
