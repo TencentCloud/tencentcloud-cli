@@ -44,7 +44,10 @@ def maybe_refresh_credential(profile):
         save_credential(token_info, new_cred, profile)
 
     except KeyError as e:
-        raise ConfigurationError("your credential file(%s) is corrupted, %s" % (cred_path, e))
+        print("failed to refresh credential, your credential file(%s) is corrupted, %s" % (cred_path, e))
+
+    except Exception as e:
+        print("failed to refresh credential, %s" % e)
 
 
 def refresh_user_token(ref_token, open_id):
