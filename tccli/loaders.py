@@ -9,7 +9,7 @@ from tccli.utils import Utils
 from tccli import __version__
 from tccli.services import SERVICE_VERSIONS
 from collections import OrderedDict
-import plugin
+import tccli.plugin as plugin
 
 BASE_TYPE = ["int64", "uint64", "string", "float", "bool", "date", "datetime", "datetime_iso", "binary"]
 CLI_BASE_TYPE = ["Integer", "String", "Float", "Timestamp", "Boolean", "Binary"]

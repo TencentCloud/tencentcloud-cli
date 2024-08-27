@@ -32,15 +32,16 @@ def maybe_refresh_credential(profile):
             return
 
         token_info = cred["oauth"]
+        site = token_info["site"]
         access_expires = token_info["expiresAt"]
         if access_expires - now < _ACCESS_REFRESH_SAFE_DUR:
             refresh_token = token_info["refreshToken"]
             open_id = token_info["openId"]
-            new_token = refresh_user_token(refresh_token, open_id)
+            new_token = refresh_user_token(refresh_token, open_id, site)
             token_info.update(new_token)
 
         access_token = token_info["accessToken"]
-        new_cred = get_temp_cred(access_token)
+        new_cred = get_temp_cred(access_token, site)
         save_credential(token_info, new_cred, profile)
 
     except KeyError as e:
@@ -50,12 +51,13 @@ def maybe_refresh_credential(profile):
         print("failed to refresh credential, %s" % e)
 
 
-def refresh_user_token(ref_token, open_id):
+def refresh_user_token(ref_token, open_id, site):
     api_endpoint = _API_ENDPOINT + "/refresh_user_token"
     body = {
         "TraceId": str(uuid.uuid4()),
         "RefreshToken": ref_token,
         "OpenId": open_id,
+        "Site": site,
     }
     http_response = requests.post(api_endpoint, json=body, verify=False)
     resp = http_response.json()
@@ -69,11 +71,12 @@ def refresh_user_token(ref_token, open_id):
     }
 
 
-def get_temp_cred(access_token):
+def get_temp_cred(access_token, site):
     api_endpoint = _API_ENDPOINT + "/get_temp_cred"
     body = {
         "TraceId": str(uuid.uuid4()),
         "AccessToken": access_token,
+        "Site": site,
     }
     http_response = requests.post(api_endpoint, json=body, verify=False)
     resp = http_response.json()
@@ -107,6 +110,7 @@ def save_credential(token, new_cred, profile):
             "accessToken": token["accessToken"],
             "expiresAt": token["expiresAt"],
             "refreshToken": token["refreshToken"],
+            "site": token["site"],
         },
     }
     with open(cred_path, "w") as cred_file:

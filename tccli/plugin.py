@@ -1,7 +1,8 @@
 import importlib
 import logging
 import pkgutil
-import plugins
+
+import tccli.plugins as plugins
 
 _plugins = {}
 _imported = False

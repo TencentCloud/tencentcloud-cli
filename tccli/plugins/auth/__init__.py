@@ -1,5 +1,5 @@
 # encoding: utf-8
-from login import login_command_entrypoint
+from tccli.plugins.auth.login import login_command_entrypoint
 
 service_name = "auth"
 service_version = "2024-08-20"

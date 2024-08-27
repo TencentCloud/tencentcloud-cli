@@ -14,6 +14,7 @@ from tccli import oauth
 _APP_ID = 700001249938
 _AUTH_URL = "https://cloud.tencent.com/open/authorize"
 _REDIRECT_URL = "https://cli.cloud.tencent.com/oauth"
+_SITE = "cn"
 
 _START_SEARCH_PORT = 9000
 _END_SEARCH_PORT = _START_SEARCH_PORT + 100
@@ -46,7 +47,9 @@ def login(use_browser, profile, language):
     if token["state"] != state:
         raise ValueError("invalid state %s" % token["state"])
 
-    cred = oauth.get_temp_cred(token["accessToken"])
+    token["site"] = _SITE
+
+    cred = oauth.get_temp_cred(token["accessToken"], _SITE)
     oauth.save_credential(token, cred, profile)
 
     print("")
@@ -61,6 +64,7 @@ def _get_token(state, language):
     redirect_params = {
         "redirect_url": "http://localhost:%d" % port,
         "lang": language,
+        "site": _SITE,
     }
     redirect_query = urlencode(redirect_params)
     redirect_url = _REDIRECT_URL + "?" + redirect_query
