@@ -5496,6 +5496,24 @@
           "name": "Catalogs",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "数据库名",
+          "example": "无",
+          "member": "string",
+          "name": "DatabaseName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "表名",
+          "example": "无",
+          "member": "string",
+          "name": "TableName",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -6518,11 +6536,38 @@
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "列类型",
           "example": "string",
           "member": "string",
           "name": "ColumnTypes",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "列类型数组",
+          "example": "[\"int64\",\"string\",\"int64\"]",
+          "member": "string",
+          "name": "Types",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "catalog名称，不填默认是internal",
+          "example": "internal",
+          "member": "string",
+          "name": "CatalogName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例id",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceId",
           "required": false,
           "type": "string"
         }

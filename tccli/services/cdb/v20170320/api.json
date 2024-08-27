@@ -4385,6 +4385,45 @@
       ],
       "type": "object"
     },
+    "ClusterInfo": {
+      "document": "集群版节点信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "节点id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"dbn-ipffzoum\"",
+          "member": "string",
+          "name": "NodeId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "节点类型：主节点，从节点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"master\"",
+          "member": "string",
+          "name": "Role",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"ap-guangzhou\"",
+          "member": "string",
+          "name": "Zone",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "ClusterNodeInfo": {
       "document": "集群版实例节点信息",
       "members": [
@@ -10473,6 +10512,15 @@
           "name": "CdcIds",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否获取集群版实例节点信息，可填：true或false",
+          "example": "无",
+          "member": "bool",
+          "name": "QueryClusterInfo",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -13503,6 +13551,7 @@
           "example": "5",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -13512,6 +13561,7 @@
           "example": "无",
           "member": "TaskDetail",
           "name": "Items",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -14398,7 +14448,7 @@
       "type": "object"
     },
     "InstClusterExtInfo": {
-      "document": "实例集群类型扩展信息，InstClusterExtInfo:{\"ExtType\":\"cdc\", \"ExtId\":\"cluster_cdctest\"}",
+      "document": "实例集群类型扩展信息，InstClusterExtInfo:{\"ExtType\":\"cdc\", \"ExtId\":\"cluster_cdctest\",\"ExtName\":\"独享集群test\"}",
       "members": [
         {
           "disabled": false,
@@ -14416,6 +14466,16 @@
           "example": "cluster_cdc_test",
           "member": "string",
           "name": "ExtId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "金融围拢/CDC/独享集群名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "独享集群测试",
+          "member": "string",
+          "name": "ExtName",
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
@@ -15189,6 +15249,16 @@
           "name": "InstClusterExtInfo",
           "output_required": false,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例集群版节点信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ClusterInfo",
+          "name": "ClusterInfo",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],

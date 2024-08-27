@@ -1,11 +1,27 @@
 {
   "actions": {
+    "CreateAndExecuteSparkJob": [
+      {
+        "document": "创建并运行spark任务",
+        "input": "POST / HTTP/1.1\nHost: tchousex.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAndExecuteSparkJob\n<公共请求参数>\n\n{\n    \"PathSource\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "CreateAndExecuteSparkJob"
+      }
+    ],
     "DescribeInstanceVip": [
       {
         "document": "获取集群的vip相关信息",
         "input": "POST / HTTP/1.1\nHost: tchousex.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceVip\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"Cluster\": \"abc\"\n}",
         "output": "{\n    \"Response\": {\n        \"ErrorMsg\": \"abc\",\n        \"VipInfo\": [\n            {\n                \"InstanceId\": \"abc\",\n                \"VirtualCluster\": \"abc\",\n                \"ResourceId\": \"abc\",\n                \"Status\": 0,\n                \"Vip\": \"abc\",\n                \"Port\": 0\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "DescribeInstanceVip"
+      }
+    ],
+    "DescribeInstancesV1": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: tchousex.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstancesV1\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"35dce1e2-d095-4d76-ad9e-ddf8e3c83dab\"\n    }\n}",
+        "title": "示例"
       }
     ],
     "ExecuteSqlForBI": [

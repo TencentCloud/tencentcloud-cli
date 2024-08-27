@@ -1,3 +1,275 @@
+# Release 3.0.1063.1
+
+## 云数据库 MySQL(cdb) 版本：2017-03-20
+
+### 第 108 次发布
+
+发布时间：2024-08-28 01:10:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeDBInstances](http://document.tencentcloudapi.woa.com/document/product/236/15872)
+
+	* 新增入参：QueryClusterInfo
+
+
+新增数据结构：
+
+* [ClusterInfo](http://document.tencentcloudapi.woa.com/document/product/236/15878#ClusterInfo)
+
+修改数据结构：
+
+* [InstClusterExtInfo](http://document.tencentcloudapi.woa.com/document/product/236/15878#InstClusterExtInfo)
+
+	* 新增成员：ExtName
+
+* [InstanceInfo](http://document.tencentcloudapi.woa.com/document/product/236/15878#InstanceInfo)
+
+	* 新增成员：ClusterInfo
+
+
+
+
+## 腾讯云数据仓库 TCHouse-D(cdwdoris) 版本：2021-12-28
+
+### 第 29 次发布
+
+发布时间：2024-08-28 01:11:41
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeSqlApis](http://document.tencentcloudapi.woa.com/document/product/1706/84359)
+
+	* 新增入参：DatabaseName, TableName
+
+* [InsertDatasToTable](http://document.tencentcloudapi.woa.com/document/product/1706/84584)
+
+	* 新增入参：Types, CatalogName, InstanceId
+
+
+
+
+## 负载均衡(clb) 版本：2023-04-17
+
+
+
+## 负载均衡(clb) 版本：2018-03-17
+
+### 第 69 次发布
+
+发布时间：2024-08-28 01:12:54
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ModifyRule](http://document.tencentcloudapi.woa.com/document/product/214/30679)
+
+	* 新增入参：OAuth
+
+
+新增数据结构：
+
+* [OAuth](http://document.tencentcloudapi.woa.com/document/product/214/30694#OAuth)
+
+修改数据结构：
+
+* [RuleOutput](http://document.tencentcloudapi.woa.com/document/product/214/30694#RuleOutput)
+
+	* 新增成员：OAuth
+
+
+
+
+## 云安全一体化平台(csip) 版本：2022-11-21
+
+### 第 42 次发布
+
+发布时间：2024-08-28 01:14:31
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeCVMAssets](http://document.tencentcloudapi.woa.com/document/product/1726/80805)
+
+	* 新增出参：ProtectStatusList
+
+
+修改数据结构：
+
+* [AlertExtraInfo](http://document.tencentcloudapi.woa.com/document/product/1726/80814#AlertExtraInfo)
+
+	* 新增成员：ProcessName, PID, PodName, PodID, Response, SystemCall, Verb, LogID, Different, EventType, Description, TargetAddress, MaliciousRequestDomain, RuleType, RequestURI, RequestUser, RequestObject, ResponseObject, FileType, TIType, SourceIP
+
+* [AlertInfo](http://document.tencentcloudapi.woa.com/document/product/1726/80814#AlertInfo)
+
+	* 新增成员：LogType, LogSearch
+
+* [CVMAssetVO](http://document.tencentcloudapi.woa.com/document/product/1726/80814#CVMAssetVO)
+
+	* 新增成员：ProtectStatus, OfflineTime
+
+* [RoleInfo](http://document.tencentcloudapi.woa.com/document/product/1726/80814#RoleInfo)
+
+	* 新增成员：ContainerName, ContainerID
+
+
+
+
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+
+### 第 95 次发布
+
+发布时间：2024-08-28 01:16:18
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [OpenClusterReadOnlyInstanceGroupAccess](http://document.tencentcloudapi.woa.com/document/product/1003/81456)
+
+	* 新增入参：ClusterId, Port, SecurityGroupIds
+
+	* 新增出参：FlowId
+
+
+
+
+## 集团账号管理(organization) 版本：2021-03-31
+
+### 第 42 次发布
+
+发布时间：2024-08-28 01:28:22
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [SendOrgMemberAccountBindEmail](http://document.tencentcloudapi.woa.com/document/product/850/84751)
+
+
+
+## 集团账号管理(organization) 版本：2018-12-25
+
+
+
+## 云函数(scf) 版本：2018-04-16
+
+### 第 50 次发布
+
+发布时间：2024-08-28 01:29:58
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [LayerVersionInfo](http://document.tencentcloudapi.woa.com/document/product/583/17244#LayerVersionInfo)
+
+	* 新增成员：Tags
+
+	* <font color="#dd0000">**修改成员**：</font>CompatibleRuntimes, AddTime, Description, LicenseInfo, Status, Stamp
+
+
+
+
+## 腾讯云数据仓库TCHouse-X(tchousex) 版本：2023-04-11
+
+### 第 3 次发布
+
+发布时间：2024-08-28 01:32:01
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateAndExecuteSparkJob](http://document.tencentcloudapi.woa.com/document/product/1741/84752)
+* [DescribeInstancesV1](http://document.tencentcloudapi.woa.com/document/product/1741/84753)
+
+
+
+## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+
+### 第 112 次发布
+
+发布时间：2024-08-28 01:35:09
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [PulsarProClusterInfo](http://document.tencentcloudapi.woa.com/document/product/1179/46089#PulsarProClusterInfo)
+
+	* 新增成员：ExpireTime
+
+
+
+
+## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
+
+### 第 65 次发布
+
+发布时间：2024-08-28 01:41:35
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [BatchCreateTaskVersionAsync](http://document.tencentcloudapi.woa.com/document/product/1607/83085)
+* [DescribePendingSubmitTaskList](http://document.tencentcloudapi.woa.com/document/product/1607/84754)
+* [DescribeWorkflowSchedulerInfoDs](http://document.tencentcloudapi.woa.com/document/product/1607/83044)
+* [GetCosToken](http://document.tencentcloudapi.woa.com/document/product/1607/83095)
+* [JudgeResourceFile](http://document.tencentcloudapi.woa.com/document/product/1607/83208)
+* [RenewWorkflowSchedulerInfoDs](http://document.tencentcloudapi.woa.com/document/product/1607/83020)
+
+新增数据结构：
+
+* [AiOpsEventListenerDTO](http://document.tencentcloudapi.woa.com/document/product/1607/77747#AiOpsEventListenerDTO)
+* [AiopsDLCResourceConfigDto](http://document.tencentcloudapi.woa.com/document/product/1607/77747#AiopsDLCResourceConfigDto)
+* [AiopsScriptInfo](http://document.tencentcloudapi.woa.com/document/product/1607/77747#AiopsScriptInfo)
+* [AiopsSimpleTaskDto](http://document.tencentcloudapi.woa.com/document/product/1607/77747#AiopsSimpleTaskDto)
+* [BatchResultDs](http://document.tencentcloudapi.woa.com/document/product/1607/77747#BatchResultDs)
+* [BatchTaskOperateNew](http://document.tencentcloudapi.woa.com/document/product/1607/77747#BatchTaskOperateNew)
+* [CosTokenResponse](http://document.tencentcloudapi.woa.com/document/product/1607/77747#CosTokenResponse)
+* [DescribePendingSubmitTaskInfo](http://document.tencentcloudapi.woa.com/document/product/1607/77747#DescribePendingSubmitTaskInfo)
+* [ExtResourceFlagDto](http://document.tencentcloudapi.woa.com/document/product/1607/77747#ExtResourceFlagDto)
+* [ParamInfoDs](http://document.tencentcloudapi.woa.com/document/product/1607/77747#ParamInfoDs)
+* [TaskSubmitPreCheckDetailInfo](http://document.tencentcloudapi.woa.com/document/product/1607/77747#TaskSubmitPreCheckDetailInfo)
+* [WorkflowScheduleDtoDs](http://document.tencentcloudapi.woa.com/document/product/1607/77747#WorkflowScheduleDtoDs)
+
+修改数据结构：
+
+* [TaskOpsDto](http://document.tencentcloudapi.woa.com/document/product/1607/77747#TaskOpsDto)
+
+	* 新增成员：TaskExtInfo, EventListenerInfos, ScriptInfo, DLCResourceConfig, ParentTaskInfos, ExtResourceFlag
+
+
+
+
 # Release 3.0.1062.1
 
 ## 费用中心(billing) 版本：2018-07-09
