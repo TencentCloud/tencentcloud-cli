@@ -2,57 +2,24 @@
 
 ## 云数据库 MySQL(cdb) 版本：2017-03-20
 
-### 第 108 次发布
+### 第 109 次发布
 
-发布时间：2024-08-28 01:10:38
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [DescribeDBInstances](http://document.tencentcloudapi.woa.com/document/product/236/15872)
-
-	* 新增入参：QueryClusterInfo
-
-
-新增数据结构：
-
-* [ClusterInfo](http://document.tencentcloudapi.woa.com/document/product/236/15878#ClusterInfo)
-
-修改数据结构：
-
-* [InstClusterExtInfo](http://document.tencentcloudapi.woa.com/document/product/236/15878#InstClusterExtInfo)
-
-	* 新增成员：ExtName
-
-* [InstanceInfo](http://document.tencentcloudapi.woa.com/document/product/236/15878#InstanceInfo)
-
-	* 新增成员：ClusterInfo
-
-
-
-
-## 腾讯云数据仓库 TCHouse-D(cdwdoris) 版本：2021-12-28
-
-### 第 29 次发布
-
-发布时间：2024-08-28 01:11:41
+发布时间：2024-08-29 01:10:03
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
+新增接口：
+
+* [DescribeInstanceUpgradeCheckJob](http://document.tencentcloudapi.woa.com/document/product/236/84756)
+* [SubmitInstanceUpgradeCheckJob](http://document.tencentcloudapi.woa.com/document/product/236/84755)
+
 修改接口：
 
-* [DescribeSqlApis](http://document.tencentcloudapi.woa.com/document/product/1706/84359)
+* [UpgradeDBInstanceEngineVersion](http://document.tencentcloudapi.woa.com/document/product/236/15870)
 
-	* 新增入参：DatabaseName, TableName
-
-* [InsertDatasToTable](http://document.tencentcloudapi.woa.com/document/product/1706/84584)
-
-	* 新增入参：Types, CatalogName, InstanceId
+	* 新增入参：IgnoreErrKeyword
 
 
 
@@ -63,9 +30,28 @@
 
 ## 负载均衡(clb) 版本：2018-03-17
 
-### 第 69 次发布
+### 第 70 次发布
 
-发布时间：2024-08-28 01:12:54
+发布时间：2024-08-29 01:12:02
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [LoadBalancer](http://document.tencentcloudapi.woa.com/document/product/214/30694#LoadBalancer)
+
+	* 新增成员：Exclusive
+
+
+
+
+## 运维安全中心（堡垒机）(dasb) 版本：2019-10-18
+
+### 第 29 次发布
+
+发布时间：2024-08-29 01:15:15
 
 本次发布包含了以下内容：
 
@@ -73,29 +59,25 @@
 
 修改接口：
 
-* [ModifyRule](http://document.tencentcloudapi.woa.com/document/product/214/30679)
+* [BindDeviceResource](http://document.tencentcloudapi.woa.com/document/product/1492/74784)
 
-	* 新增入参：OAuth
+	* <font color="#dd0000">**修改入参**：</font>ResourceId
 
-
-新增数据结构：
-
-* [OAuth](http://document.tencentcloudapi.woa.com/document/product/214/30694#OAuth)
 
 修改数据结构：
 
-* [RuleOutput](http://document.tencentcloudapi.woa.com/document/product/214/30694#RuleOutput)
+* [Resource](http://document.tencentcloudapi.woa.com/document/product/1492/74806#Resource)
 
-	* 新增成员：OAuth
-
-
+	* 新增成员：Trial
 
 
-## 云安全一体化平台(csip) 版本：2022-11-21
 
-### 第 42 次发布
 
-发布时间：2024-08-28 01:14:31
+## 邮件推送(ses) 版本：2020-10-02
+
+### 第 23 次发布
+
+发布时间：2024-08-29 01:25:54
 
 本次发布包含了以下内容：
 
@@ -103,169 +85,26 @@
 
 修改接口：
 
-* [DescribeCVMAssets](http://document.tencentcloudapi.woa.com/document/product/1726/80805)
+* [CreateReceiverDetailWithData](http://document.tencentcloudapi.woa.com/document/product/1288/70776)
 
-	* 新增出参：ProtectStatusList
+	* 新增出参：TotalCount, ValidCount, TooLongCount, EmptyEmailCount, RepeatCount
+
+* [ListReceiverDetails](http://document.tencentcloudapi.woa.com/document/product/1288/81910)
+
+	* 新增入参：CreateTimeBegin, CreateTimeEnd, Status
+
+	* 新增出参：ValidCount, InvalidCount
 
 
 修改数据结构：
 
-* [AlertExtraInfo](http://document.tencentcloudapi.woa.com/document/product/1726/80814#AlertExtraInfo)
+* [ReceiverData](http://document.tencentcloudapi.woa.com/document/product/1288/51053#ReceiverData)
 
-	* 新增成员：ProcessName, PID, PodName, PodID, Response, SystemCall, Verb, LogID, Different, EventType, Description, TargetAddress, MaliciousRequestDomain, RuleType, RequestURI, RequestUser, RequestObject, ResponseObject, FileType, TIType, SourceIP
+	* 新增成员：InvalidCount
 
-* [AlertInfo](http://document.tencentcloudapi.woa.com/document/product/1726/80814#AlertInfo)
+* [ReceiverDetail](http://document.tencentcloudapi.woa.com/document/product/1288/51053#ReceiverDetail)
 
-	* 新增成员：LogType, LogSearch
-
-* [CVMAssetVO](http://document.tencentcloudapi.woa.com/document/product/1726/80814#CVMAssetVO)
-
-	* 新增成员：ProtectStatus, OfflineTime
-
-* [RoleInfo](http://document.tencentcloudapi.woa.com/document/product/1726/80814#RoleInfo)
-
-	* 新增成员：ContainerName, ContainerID
-
-
-
-
-## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
-
-### 第 95 次发布
-
-发布时间：2024-08-28 01:16:18
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [OpenClusterReadOnlyInstanceGroupAccess](http://document.tencentcloudapi.woa.com/document/product/1003/81456)
-
-	* 新增入参：ClusterId, Port, SecurityGroupIds
-
-	* 新增出参：FlowId
-
-
-
-
-## 集团账号管理(organization) 版本：2021-03-31
-
-### 第 42 次发布
-
-发布时间：2024-08-28 01:28:22
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [SendOrgMemberAccountBindEmail](http://document.tencentcloudapi.woa.com/document/product/850/84751)
-
-
-
-## 集团账号管理(organization) 版本：2018-12-25
-
-
-
-## 云函数(scf) 版本：2018-04-16
-
-### 第 50 次发布
-
-发布时间：2024-08-28 01:29:58
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [LayerVersionInfo](http://document.tencentcloudapi.woa.com/document/product/583/17244#LayerVersionInfo)
-
-	* 新增成员：Tags
-
-	* <font color="#dd0000">**修改成员**：</font>CompatibleRuntimes, AddTime, Description, LicenseInfo, Status, Stamp
-
-
-
-
-## 腾讯云数据仓库TCHouse-X(tchousex) 版本：2023-04-11
-
-### 第 3 次发布
-
-发布时间：2024-08-28 01:32:01
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [CreateAndExecuteSparkJob](http://document.tencentcloudapi.woa.com/document/product/1741/84752)
-* [DescribeInstancesV1](http://document.tencentcloudapi.woa.com/document/product/1741/84753)
-
-
-
-## 消息队列 TDMQ(tdmq) 版本：2020-02-17
-
-### 第 112 次发布
-
-发布时间：2024-08-28 01:35:09
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [PulsarProClusterInfo](http://document.tencentcloudapi.woa.com/document/product/1179/46089#PulsarProClusterInfo)
-
-	* 新增成员：ExpireTime
-
-
-
-
-## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
-
-### 第 65 次发布
-
-发布时间：2024-08-28 01:41:35
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [BatchCreateTaskVersionAsync](http://document.tencentcloudapi.woa.com/document/product/1607/83085)
-* [DescribePendingSubmitTaskList](http://document.tencentcloudapi.woa.com/document/product/1607/84754)
-* [DescribeWorkflowSchedulerInfoDs](http://document.tencentcloudapi.woa.com/document/product/1607/83044)
-* [GetCosToken](http://document.tencentcloudapi.woa.com/document/product/1607/83095)
-* [JudgeResourceFile](http://document.tencentcloudapi.woa.com/document/product/1607/83208)
-* [RenewWorkflowSchedulerInfoDs](http://document.tencentcloudapi.woa.com/document/product/1607/83020)
-
-新增数据结构：
-
-* [AiOpsEventListenerDTO](http://document.tencentcloudapi.woa.com/document/product/1607/77747#AiOpsEventListenerDTO)
-* [AiopsDLCResourceConfigDto](http://document.tencentcloudapi.woa.com/document/product/1607/77747#AiopsDLCResourceConfigDto)
-* [AiopsScriptInfo](http://document.tencentcloudapi.woa.com/document/product/1607/77747#AiopsScriptInfo)
-* [AiopsSimpleTaskDto](http://document.tencentcloudapi.woa.com/document/product/1607/77747#AiopsSimpleTaskDto)
-* [BatchResultDs](http://document.tencentcloudapi.woa.com/document/product/1607/77747#BatchResultDs)
-* [BatchTaskOperateNew](http://document.tencentcloudapi.woa.com/document/product/1607/77747#BatchTaskOperateNew)
-* [CosTokenResponse](http://document.tencentcloudapi.woa.com/document/product/1607/77747#CosTokenResponse)
-* [DescribePendingSubmitTaskInfo](http://document.tencentcloudapi.woa.com/document/product/1607/77747#DescribePendingSubmitTaskInfo)
-* [ExtResourceFlagDto](http://document.tencentcloudapi.woa.com/document/product/1607/77747#ExtResourceFlagDto)
-* [ParamInfoDs](http://document.tencentcloudapi.woa.com/document/product/1607/77747#ParamInfoDs)
-* [TaskSubmitPreCheckDetailInfo](http://document.tencentcloudapi.woa.com/document/product/1607/77747#TaskSubmitPreCheckDetailInfo)
-* [WorkflowScheduleDtoDs](http://document.tencentcloudapi.woa.com/document/product/1607/77747#WorkflowScheduleDtoDs)
-
-修改数据结构：
-
-* [TaskOpsDto](http://document.tencentcloudapi.woa.com/document/product/1607/77747#TaskOpsDto)
-
-	* 新增成员：TaskExtInfo, EventListenerInfos, ScriptInfo, DLCResourceConfig, ParentTaskInfos, ExtResourceFlag
+	* 新增成员：Reason, Status, EmailId
 
 
 
@@ -13623,6 +13462,26 @@
 
 ## 云数据库 MySQL(cdb) 版本：2017-03-20
 
+### 第 109 次发布
+
+发布时间：2024-08-29 01:10:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeInstanceUpgradeCheckJob](http://document.tencentcloudapi.woa.com/document/product/236/84756)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[SubmitInstanceUpgradeCheckJob](http://document.tencentcloudapi.woa.com/document/product/236/84755)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+修改接口：
+
+* [UpgradeDBInstanceEngineVersion](http://document.tencentcloudapi.woa.com/document/product/236/15870)
+
+	* 新增入参：IgnoreErrKeyword
+
+
 ### 第 108 次发布
 
 发布时间：2024-08-28 01:10:38
@@ -13640,7 +13499,7 @@
 
 新增数据结构：
 
-* [[ClusterInfo](http://document.tencentcloudapi.woa.com/document/product/236/15878#ClusterInfo)](http://document.tencentcloudapi.woa.com/document/product/236/15878#[ClusterInfo](http://document.tencentcloudapi.woa.com/document/product/236/15878#ClusterInfo))
+* [ClusterInfo](http://document.tencentcloudapi.woa.com/document/product/236/15878#ClusterInfo)
 
 修改数据结构：
 
@@ -22889,6 +22748,21 @@
 
 ## 负载均衡(clb) 版本：2018-03-17
 
+### 第 70 次发布
+
+发布时间：2024-08-29 01:12:02
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [LoadBalancer](http://document.tencentcloudapi.woa.com/document/product/214/30694#LoadBalancer)
+
+	* 新增成员：Exclusive
+
+
 ### 第 69 次发布
 
 发布时间：2024-08-28 01:12:54
@@ -22906,7 +22780,7 @@
 
 新增数据结构：
 
-* [[OAuth](http://document.tencentcloudapi.woa.com/document/product/214/30694#OAuth)](http://document.tencentcloudapi.woa.com/document/product/214/30694#[OAuth](http://document.tencentcloudapi.woa.com/document/product/214/30694#OAuth))
+* [OAuth](http://document.tencentcloudapi.woa.com/document/product/214/30694#OAuth)
 
 修改数据结构：
 
@@ -37340,6 +37214,28 @@
 
 
 ## 运维安全中心（堡垒机）(dasb) 版本：2019-10-18
+
+### 第 29 次发布
+
+发布时间：2024-08-29 01:15:15
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [BindDeviceResource](http://document.tencentcloudapi.woa.com/document/product/1492/74784)
+
+	* <font color="#dd0000">**修改入参**：</font>ResourceId
+
+
+修改数据结构：
+
+* [Resource](http://document.tencentcloudapi.woa.com/document/product/1492/74806#Resource)
+
+	* 新增成员：Trial
+
 
 ### 第 28 次发布
 
@@ -77346,7 +77242,7 @@
 
 新增接口：
 
-* [[SendOrgMemberAccountBindEmail](http://document.tencentcloudapi.woa.com/document/product/850/84751)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [SendOrgMemberAccountBindEmail](http://document.tencentcloudapi.woa.com/document/product/850/84751)
 
 ### 第 41 次发布
 
@@ -83194,6 +83090,38 @@
 
 
 ## 邮件推送(ses) 版本：2020-10-02
+
+### 第 23 次发布
+
+发布时间：2024-08-29 01:25:54
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateReceiverDetailWithData](http://document.tencentcloudapi.woa.com/document/product/1288/70776)
+
+	* 新增出参：TotalCount, ValidCount, TooLongCount, EmptyEmailCount, RepeatCount
+
+* [ListReceiverDetails](http://document.tencentcloudapi.woa.com/document/product/1288/81910)
+
+	* 新增入参：CreateTimeBegin, CreateTimeEnd, Status
+
+	* 新增出参：ValidCount, InvalidCount
+
+
+修改数据结构：
+
+* [ReceiverData](http://document.tencentcloudapi.woa.com/document/product/1288/51053#ReceiverData)
+
+	* 新增成员：InvalidCount
+
+* [ReceiverDetail](http://document.tencentcloudapi.woa.com/document/product/1288/51053#ReceiverDetail)
+
+	* 新增成员：Reason, Status, EmailId
+
 
 ### 第 22 次发布
 
@@ -90014,8 +89942,8 @@
 
 新增接口：
 
-* [[CreateAndExecuteSparkJob](http://document.tencentcloudapi.woa.com/document/product/1741/84752)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeInstancesV1](http://document.tencentcloudapi.woa.com/document/product/1741/84753)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [CreateAndExecuteSparkJob](http://document.tencentcloudapi.woa.com/document/product/1741/84752)
+* [DescribeInstancesV1](http://document.tencentcloudapi.woa.com/document/product/1741/84753)
 
 ### 第 2 次发布
 
@@ -117212,27 +117140,27 @@
 
 新增接口：
 
-* [[BatchCreateTaskVersionAsync](http://document.tencentcloudapi.woa.com/document/product/1607/83085)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribePendingSubmitTaskList](http://document.tencentcloudapi.woa.com/document/product/1607/84754)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeWorkflowSchedulerInfoDs](http://document.tencentcloudapi.woa.com/document/product/1607/83044)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[GetCosToken](http://document.tencentcloudapi.woa.com/document/product/1607/83095)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[JudgeResourceFile](http://document.tencentcloudapi.woa.com/document/product/1607/83208)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[RenewWorkflowSchedulerInfoDs](http://document.tencentcloudapi.woa.com/document/product/1607/83020)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [BatchCreateTaskVersionAsync](http://document.tencentcloudapi.woa.com/document/product/1607/83085)
+* [DescribePendingSubmitTaskList](http://document.tencentcloudapi.woa.com/document/product/1607/84754)
+* [DescribeWorkflowSchedulerInfoDs](http://document.tencentcloudapi.woa.com/document/product/1607/83044)
+* [GetCosToken](http://document.tencentcloudapi.woa.com/document/product/1607/83095)
+* [JudgeResourceFile](http://document.tencentcloudapi.woa.com/document/product/1607/83208)
+* [RenewWorkflowSchedulerInfoDs](http://document.tencentcloudapi.woa.com/document/product/1607/83020)
 
 新增数据结构：
 
-* [[AiOpsEventListenerDTO](http://document.tencentcloudapi.woa.com/document/product/1607/77747#AiOpsEventListenerDTO)](http://document.tencentcloudapi.woa.com/document/product/1607/77747#[AiOpsEventListenerDTO](http://document.tencentcloudapi.woa.com/document/product/1607/77747#AiOpsEventListenerDTO))
-* [[AiopsDLCResourceConfigDto](http://document.tencentcloudapi.woa.com/document/product/1607/77747#AiopsDLCResourceConfigDto)](http://document.tencentcloudapi.woa.com/document/product/1607/77747#[AiopsDLCResourceConfigDto](http://document.tencentcloudapi.woa.com/document/product/1607/77747#AiopsDLCResourceConfigDto))
-* [[AiopsScriptInfo](http://document.tencentcloudapi.woa.com/document/product/1607/77747#AiopsScriptInfo)](http://document.tencentcloudapi.woa.com/document/product/1607/77747#[AiopsScriptInfo](http://document.tencentcloudapi.woa.com/document/product/1607/77747#AiopsScriptInfo))
-* [[AiopsSimpleTaskDto](http://document.tencentcloudapi.woa.com/document/product/1607/77747#AiopsSimpleTaskDto)](http://document.tencentcloudapi.woa.com/document/product/1607/77747#[AiopsSimpleTaskDto](http://document.tencentcloudapi.woa.com/document/product/1607/77747#AiopsSimpleTaskDto))
-* [[BatchResultDs](http://document.tencentcloudapi.woa.com/document/product/1607/77747#BatchResultDs)](http://document.tencentcloudapi.woa.com/document/product/1607/77747#[BatchResultDs](http://document.tencentcloudapi.woa.com/document/product/1607/77747#BatchResultDs))
-* [[BatchTaskOperateNew](http://document.tencentcloudapi.woa.com/document/product/1607/77747#BatchTaskOperateNew)](http://document.tencentcloudapi.woa.com/document/product/1607/77747#[BatchTaskOperateNew](http://document.tencentcloudapi.woa.com/document/product/1607/77747#BatchTaskOperateNew))
-* [[CosTokenResponse](http://document.tencentcloudapi.woa.com/document/product/1607/77747#CosTokenResponse)](http://document.tencentcloudapi.woa.com/document/product/1607/77747#[CosTokenResponse](http://document.tencentcloudapi.woa.com/document/product/1607/77747#CosTokenResponse))
-* [[DescribePendingSubmitTaskInfo](http://document.tencentcloudapi.woa.com/document/product/1607/77747#DescribePendingSubmitTaskInfo)](http://document.tencentcloudapi.woa.com/document/product/1607/77747#[DescribePendingSubmitTaskInfo](http://document.tencentcloudapi.woa.com/document/product/1607/77747#DescribePendingSubmitTaskInfo))
-* [[ExtResourceFlagDto](http://document.tencentcloudapi.woa.com/document/product/1607/77747#ExtResourceFlagDto)](http://document.tencentcloudapi.woa.com/document/product/1607/77747#[ExtResourceFlagDto](http://document.tencentcloudapi.woa.com/document/product/1607/77747#ExtResourceFlagDto))
-* [[ParamInfoDs](http://document.tencentcloudapi.woa.com/document/product/1607/77747#ParamInfoDs)](http://document.tencentcloudapi.woa.com/document/product/1607/77747#[ParamInfoDs](http://document.tencentcloudapi.woa.com/document/product/1607/77747#ParamInfoDs))
-* [[TaskSubmitPreCheckDetailInfo](http://document.tencentcloudapi.woa.com/document/product/1607/77747#TaskSubmitPreCheckDetailInfo)](http://document.tencentcloudapi.woa.com/document/product/1607/77747#[TaskSubmitPreCheckDetailInfo](http://document.tencentcloudapi.woa.com/document/product/1607/77747#TaskSubmitPreCheckDetailInfo))
-* [[WorkflowScheduleDtoDs](http://document.tencentcloudapi.woa.com/document/product/1607/77747#WorkflowScheduleDtoDs)](http://document.tencentcloudapi.woa.com/document/product/1607/77747#[WorkflowScheduleDtoDs](http://document.tencentcloudapi.woa.com/document/product/1607/77747#WorkflowScheduleDtoDs))
+* [AiOpsEventListenerDTO](http://document.tencentcloudapi.woa.com/document/product/1607/77747#AiOpsEventListenerDTO)
+* [AiopsDLCResourceConfigDto](http://document.tencentcloudapi.woa.com/document/product/1607/77747#AiopsDLCResourceConfigDto)
+* [AiopsScriptInfo](http://document.tencentcloudapi.woa.com/document/product/1607/77747#AiopsScriptInfo)
+* [AiopsSimpleTaskDto](http://document.tencentcloudapi.woa.com/document/product/1607/77747#AiopsSimpleTaskDto)
+* [BatchResultDs](http://document.tencentcloudapi.woa.com/document/product/1607/77747#BatchResultDs)
+* [BatchTaskOperateNew](http://document.tencentcloudapi.woa.com/document/product/1607/77747#BatchTaskOperateNew)
+* [CosTokenResponse](http://document.tencentcloudapi.woa.com/document/product/1607/77747#CosTokenResponse)
+* [DescribePendingSubmitTaskInfo](http://document.tencentcloudapi.woa.com/document/product/1607/77747#DescribePendingSubmitTaskInfo)
+* [ExtResourceFlagDto](http://document.tencentcloudapi.woa.com/document/product/1607/77747#ExtResourceFlagDto)
+* [ParamInfoDs](http://document.tencentcloudapi.woa.com/document/product/1607/77747#ParamInfoDs)
+* [TaskSubmitPreCheckDetailInfo](http://document.tencentcloudapi.woa.com/document/product/1607/77747#TaskSubmitPreCheckDetailInfo)
+* [WorkflowScheduleDtoDs](http://document.tencentcloudapi.woa.com/document/product/1607/77747#WorkflowScheduleDtoDs)
 
 修改数据结构：
 

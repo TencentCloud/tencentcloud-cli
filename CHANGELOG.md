@@ -1,3 +1,114 @@
+# Release 3.0.1064.1
+
+## 云数据库 MySQL(cdb) 版本：2017-03-20
+
+### 第 109 次发布
+
+发布时间：2024-08-29 01:10:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeInstanceUpgradeCheckJob](http://document.tencentcloudapi.woa.com/document/product/236/84756)
+* [SubmitInstanceUpgradeCheckJob](http://document.tencentcloudapi.woa.com/document/product/236/84755)
+
+修改接口：
+
+* [UpgradeDBInstanceEngineVersion](http://document.tencentcloudapi.woa.com/document/product/236/15870)
+
+	* 新增入参：IgnoreErrKeyword
+
+
+
+
+## 负载均衡(clb) 版本：2023-04-17
+
+
+
+## 负载均衡(clb) 版本：2018-03-17
+
+### 第 70 次发布
+
+发布时间：2024-08-29 01:12:02
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [LoadBalancer](http://document.tencentcloudapi.woa.com/document/product/214/30694#LoadBalancer)
+
+	* 新增成员：Exclusive
+
+
+
+
+## 运维安全中心（堡垒机）(dasb) 版本：2019-10-18
+
+### 第 29 次发布
+
+发布时间：2024-08-29 01:15:15
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [BindDeviceResource](http://document.tencentcloudapi.woa.com/document/product/1492/74784)
+
+	* <font color="#dd0000">**修改入参**：</font>ResourceId
+
+
+修改数据结构：
+
+* [Resource](http://document.tencentcloudapi.woa.com/document/product/1492/74806#Resource)
+
+	* 新增成员：Trial
+
+
+
+
+## 邮件推送(ses) 版本：2020-10-02
+
+### 第 23 次发布
+
+发布时间：2024-08-29 01:25:54
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateReceiverDetailWithData](http://document.tencentcloudapi.woa.com/document/product/1288/70776)
+
+	* 新增出参：TotalCount, ValidCount, TooLongCount, EmptyEmailCount, RepeatCount
+
+* [ListReceiverDetails](http://document.tencentcloudapi.woa.com/document/product/1288/81910)
+
+	* 新增入参：CreateTimeBegin, CreateTimeEnd, Status
+
+	* 新增出参：ValidCount, InvalidCount
+
+
+修改数据结构：
+
+* [ReceiverData](http://document.tencentcloudapi.woa.com/document/product/1288/51053#ReceiverData)
+
+	* 新增成员：InvalidCount
+
+* [ReceiverDetail](http://document.tencentcloudapi.woa.com/document/product/1288/51053#ReceiverDetail)
+
+	* 新增成员：Reason, Status, EmailId
+
+
+
+
 # Release 3.0.1063.1
 
 ## 云数据库 MySQL(cdb) 版本：2017-03-20

@@ -913,7 +913,7 @@
     "OpenReadOnlyInstanceExclusiveAccess": {
       "document": "开通只读实例独有访问接入组",
       "input": "OpenReadOnlyInstanceExclusiveAccessRequest",
-      "name": "开通只读实例独有访问接入组",
+      "name": "开通只读实例独有访问接入组。",
       "output": "OpenReadOnlyInstanceExclusiveAccessResponse",
       "status": "online"
     },
@@ -16944,7 +16944,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "请使用 集群信息描述（https://cloud.tencent.com/document/api/1003/48086） 获取 clusterId。",
+          "document": "请使用 [集群信息描述](https://cloud.tencent.com/document/api/1003/48086) 获取 clusterId。",
           "example": "cynosdbmysql-12345678",
           "member": "string",
           "name": "ClusterId",
@@ -16953,7 +16953,7 @@
         },
         {
           "disabled": false,
-          "document": "请使用 集群信息描述（https://cloud.tencent.com/document/api/1003/48086） 获取 instanceId。",
+          "document": "请使用 [集群信息描述](https://cloud.tencent.com/document/api/1003/48086) 获取 instanceId。",
           "example": "cynosdbmysql-ins-12345678",
           "member": "string",
           "name": "InstanceId",
@@ -16962,7 +16962,7 @@
         },
         {
           "disabled": false,
-          "document": "指定的vpc ID，请使用 查询私有网络列表（https://cloud.tencent.com/document/api/215/15778） 获取 vpc ID。",
+          "document": "指定的 vpc ID，请使用 [查询私有网络列表](https://cloud.tencent.com/document/api/215/15778) 获取 vpc ID。",
           "example": "vpc-12345678",
           "member": "string",
           "name": "VpcId",
@@ -16971,7 +16971,7 @@
         },
         {
           "disabled": false,
-          "document": "指定的子网 ID，如果设置了 vpc ID，则 SubnetId 必填，请使用 查询子网列表（https://cloud.tencent.com/document/api/215/15784）获取 SubnetId。",
+          "document": "指定的子网 ID，如果设置了 vpc ID，则 SubnetId 必填，请使用 [查询子网列表](https://cloud.tencent.com/document/api/215/15784) 获取 SubnetId。",
           "example": "subnet-12345678",
           "member": "string",
           "name": "SubnetId",
@@ -16980,7 +16980,7 @@
         },
         {
           "disabled": false,
-          "document": "用户自定义的端口",
+          "document": "用户自定义的端口。",
           "example": "1234",
           "member": "int64",
           "name": "Port",
@@ -16989,7 +16989,7 @@
         },
         {
           "disabled": false,
-          "document": "安全组ID，请使用 查看安全组（https://cloud.tencent.com/document/api/215/15808）获取 SecurityGroupId。",
+          "document": "安全组 ID，请使用 [查看安全组](https://cloud.tencent.com/document/api/215/15808) 获取 SecurityGroupId。",
           "example": "[SecurityGroupIds1,SecurityGroupIds2]",
           "member": "string",
           "name": "SecurityGroupIds",

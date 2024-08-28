@@ -52,11 +52,6 @@ Output:
                 "Region": "na-siliconvalley",
                 "RegionName": "美国西部(硅谷)",
                 "RegionState": "AVAILABLE"
-            },
-            {
-                "Region": "na-toronto",
-                "RegionName": "北美地区(多伦多)",
-                "RegionState": "AVAILABLE"
             }
         ],
         "RequestId": "C563943B-3BEA-FE92-29FE-591EAEB7871F"

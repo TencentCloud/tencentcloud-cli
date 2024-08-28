@@ -770,6 +770,14 @@
         "title": "查询实例的可设置参数列表"
       }
     ],
+    "DescribeInstanceUpgradeCheckJob": [
+      {
+        "document": "无",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceUpgradeCheckJob\n<公共请求参数>\n\n{\n    \"InstanceId\": \"037c0b3b-1320-11ee-b0c3-6c92bf629868\",\n    \"DstMysqlVersion\": \"8.0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ExistUpgradeCheckJob\": true,\n        \"JobId\": 145,\n        \"RequestId\": \"60b5d6cd-aecc-4740-a681-353e645293b4\"\n    }\n}",
+        "title": "查询实例升级检查任务"
+      }
+    ],
     "DescribeInstanceUpgradeType": [
       {
         "document": "",
@@ -1390,6 +1398,14 @@
         "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopRollback\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-9303wd4x\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"AsyncRequestId\": \"256117ed-efa08b54-61784d44-91781bbd\"\n    }\n}",
         "title": "撤销回档任务"
+      }
+    ],
+    "SubmitInstanceUpgradeCheckJob": [
+      {
+        "document": "无",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitInstanceUpgradeCheckJob\n<公共请求参数>\n\n{\n    \"InstanceId\": \"037c0b3b-1320-11ee-b0c3-6c92bf629868\",\n    \"DstMysqlVersion\": \"8.0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"JobId\": 145,\n        \"RequestId\": \"a4b54232-d7af-4df3-8329-5110e3ece9c3\"\n    }\n}",
+        "title": "提交实例升级检查任务"
       }
     ],
     "SwitchCDBProxy": [
