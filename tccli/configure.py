@@ -433,7 +433,7 @@ class ConfigureCommand(BasicConfigure):
         self._init_configure(profile_file, config)
 
         for profile_name in os.listdir(self.cli_path):
-            if profile_name == "default.configure":
+            if profile_name == profile_file:
                 continue
             if profile_name.endswith(".configure"):
                 self._init_configure(profile_name, {})
