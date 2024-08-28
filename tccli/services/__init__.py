@@ -227,6 +227,9 @@ SERVICE_VERSIONS = {
     "config": [
         "2022-08-02"
     ],
+    "controlcenter": [
+        "2023-01-10"
+    ],
     "cpdp": [
         "2019-08-20"
     ],

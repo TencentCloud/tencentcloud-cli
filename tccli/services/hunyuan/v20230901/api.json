@@ -28,6 +28,13 @@
       "output": "GetTokenCountResponse",
       "status": "online"
     },
+    "QueryHunyuanImageChatJob": {
+      "document": "混元生图（多轮对话）接口基于混元大模型，将根据输入的文本描述生成图像，支持通过多轮对话的方式不断调整图像内容。分为提交任务和查询任务2个接口。\n提交任务：输入文本和前置对话 ID 等，提交一个混元生图多轮对话异步任务，获得任务 ID。\n查询任务：根据任务 ID 查询任务的处理状态、处理结果，任务处理完成后可获得在上一轮对话基础上继续生成的图像结果。\n混元生图（多轮对话）默认提供1个并发任务数，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后才能开始处理下一个任务。",
+      "input": "QueryHunyuanImageChatJobRequest",
+      "name": "查询混元生图（多轮对话）任务",
+      "output": "QueryHunyuanImageChatJobResponse",
+      "status": "online"
+    },
     "QueryHunyuanImageJob": {
       "document": "混元生图接口基于混元大模型，将根据输入的文本描述，智能生成与之相关的结果图。分为提交任务和查询任务2个接口。\n提交任务：输入文本等，提交一个混元生图异步任务，获得任务 ID。\n查询任务：根据任务 ID 查询任务的处理状态、处理结果，任务处理完成后可获得生成图像结果。\n并发任务数（并发）说明：并发任务数指能同时处理的任务数量。混元生图默认提供1个并发任务数，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后才能开始处理下一个任务。",
       "input": "QueryHunyuanImageJobRequest",
@@ -40,6 +47,13 @@
       "input": "SetPayModeRequest",
       "name": "设置付费模式",
       "output": "SetPayModeResponse",
+      "status": "online"
+    },
+    "SubmitHunyuanImageChatJob": {
+      "document": "混元生图（多轮对话）接口基于混元大模型，将根据输入的文本描述生成图像，支持通过多轮对话的方式不断调整图像内容。分为提交任务和查询任务2个接口。\n提交任务：输入文本和前置对话 ID 等，提交一个混元生图多轮对话异步任务，获得任务 ID。\n查询任务：根据任务 ID 查询任务的处理状态、处理结果，任务处理完成后可获得在上一轮对话基础上继续生成的图像结果。\n混元生图（多轮对话）默认提供1个并发任务数，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后才能开始处理下一个任务。",
+      "input": "SubmitHunyuanImageChatJobRequest",
+      "name": "提交混元生图（多轮对话）任务",
+      "output": "SubmitHunyuanImageChatJobResponse",
       "status": "online"
     },
     "SubmitHunyuanImageJob": {
@@ -609,6 +623,56 @@
       ],
       "type": "object"
     },
+    "History": {
+      "document": "混元生图多轮对话历史记录。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "对话的 ID，用于唯一标识一轮对话\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ChatId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "原始输入的 Prompt 文本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Prompt",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "扩写后的 Prompt 文本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RevisedPrompt",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "生成图的随机种子\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Seed",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "ImageUrl": {
       "document": "具体的图片内容",
       "members": [
@@ -761,6 +825,113 @@
         }
       ],
       "usage": "both"
+    },
+    "QueryHunyuanImageChatJobRequest": {
+      "document": "QueryHunyuanImageChatJob请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务 ID。",
+          "example": "无",
+          "member": "string",
+          "name": "JobId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryHunyuanImageChatJobResponse": {
+      "document": "QueryHunyuanImageChatJob返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "当前任务状态码：\n1：等待中、2：运行中、4：处理失败、5：处理完成。",
+          "example": "无",
+          "member": "string",
+          "name": "JobStatusCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前任务状态：排队中、处理中、处理失败或者处理完成。\n",
+          "example": "无",
+          "member": "string",
+          "name": "JobStatusMsg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务处理失败错误码。\n",
+          "example": "无",
+          "member": "string",
+          "name": "JobErrorCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务处理失败错误信息。\n",
+          "example": "无",
+          "member": "string",
+          "name": "JobErrorMsg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "本轮对话的 ChatId，ChatId 用于唯一标识一轮对话。\n一个对话组中，最多支持进行100轮对话。\n每轮对话数据有效期为7天，到期后 ChatId 失效，有效期内的历史对话数据可通过 History 查询，如有长期使用需求请及时保存输入输出数据。",
+          "example": "无",
+          "member": "string",
+          "name": "ChatId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "生成图 URL 列表，有效期7天，请及时保存。",
+          "example": "无",
+          "member": "string",
+          "name": "ResultImage",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "结果 detail 数组，Success 代表成功。\n",
+          "example": "无",
+          "member": "string",
+          "name": "ResultDetails",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "本轮对话前置的历史对话数据（不含生成图）。",
+          "example": "无",
+          "member": "History",
+          "name": "History",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "QueryHunyuanImageJobRequest": {
       "document": "QueryHunyuanImageJob请求参数结构体",
@@ -933,6 +1104,70 @@
     "SetPayModeResponse": {
       "document": "SetPayMode返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SubmitHunyuanImageChatJobRequest": {
+      "document": "SubmitHunyuanImageChatJob请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "本轮对话的文本描述。\n提交一个任务请求对应发起一轮生图对话，每轮对话中可输入一条 Prompt，生成一张图像，支持通过多轮输入 Prompt 来不断调整图像内容。\n推荐使用中文，最多可传1024个 utf-8 字符。\n输入示例：\n<li> 第一轮对话：一颗红色的苹果 </li>\n<li> 第二轮对话：将苹果改为绿色 </li>\n<li> 第三轮对话：苹果放在桌子上 </li>",
+          "example": "无",
+          "member": "string",
+          "name": "Prompt",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "上传上一轮对话的 ChatId，本轮对话将在指定的上一轮对话结果基础上继续生成图像。\n如果不传代表新建一个对话组，重新开启一轮新的对话。\n一个对话组中，最多支持进行100轮对话。",
+          "example": "无",
+          "member": "string",
+          "name": "ChatId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "为生成结果图添加显式水印标识的开关，默认为1。  \n1：添加。  \n0：不添加。  \n其他数值：默认按1处理。  \n建议您使用显著标识来提示结果图使用了 AI 绘画技术，是 AI 生成的图片。",
+          "example": "无",
+          "member": "int64",
+          "name": "LogoAdd",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "标识内容设置。\n默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。",
+          "example": "无",
+          "member": "LogoParam",
+          "name": "LogoParam",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "SubmitHunyuanImageChatJobResponse": {
+      "document": "SubmitHunyuanImageChatJob返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务 ID。",
+          "example": "无",
+          "member": "string",
+          "name": "JobId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

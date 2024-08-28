@@ -979,8 +979,8 @@
     "OpenClusterReadOnlyInstanceGroupAccess": [
       {
         "document": "任何场景",
-        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OpenClusterReadOnlyInstanceGroupAccess\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"qwertyuiop\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OpenClusterReadOnlyInstanceGroupAccess\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-abcd1234\",\n    \"Port\": \"3306\",\n    \"SecurityGroupIds\": [\n        \"SecurityGroupIds1\",\n        \"SecurityGroupIds2\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": \"12345\",\n        \"RequestId\": \"qwertyuiop\"\n    }\n}",
         "title": "ex:"
       }
     ],
@@ -988,7 +988,7 @@
       {
         "document": "任何场景",
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OpenReadOnlyInstanceExclusiveAccess\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-qwertyui\",\n    \"InstanceId\": \"cynosdbmysql-ins-asdfghjk\",\n    \"VpcId\": \"vpc-asdfghjk\",\n    \"SubnetId\": \"subnet-qwertyui\",\n    \"Port\": 3306,\n    \"SecurityGroupIds\": [\n        \"SecurityGroupIds1\",\n        \"SecurityGroupIds2\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"FlowId\": \"12345\",\n        \"RequestId\": \"123123123123123\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": 12345,\n        \"RequestId\": \"123123123123123\"\n    }\n}",
         "title": "ex:"
       }
     ],

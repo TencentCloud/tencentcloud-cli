@@ -80,6 +80,14 @@
         "title": "调用接口成功案例"
       }
     ],
+    "QueryHunyuanImageChatJob": [
+      {
+        "document": "成功查询",
+        "input": "POST / HTTP/1.1\nHost: hunyuan.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryHunyuanImageChatJob\n<公共请求参数>\n\n{\n    \"JobId\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ChatId\": \"1219898325508988928\",\n        \"History\": [\n            {\n                \"ChatId\": \"1219898325508988928\",\n                \"Prompt\": \"雪山\",\n                \"RevisedPrompt\": \"摄影风格，画面主要描述一座雄伟的山峰，山顶覆盖着白雪，阳光照耀下闪耀着光芒，背景是蔚蓝的天空，镜头是全景\",\n                \"Seed\": 1763557528\n            }\n        ],\n        \"JobErrorCode\": \"\",\n        \"JobErrorMsg\": \"\",\n        \"JobStatusCode\": \"5\",\n        \"JobStatusMsg\": \"处理完成\",\n        \"RequestId\": \"da0634c6-7b6b-4115-9081-bd2d20a860ca\",\n        \"ResultDetails\": [\n            \"Success\"\n        ],\n        \"ResultImage\": [\n            \"https:/result.jpg\"\n        ]\n    }\n}",
+        "title": "成功查询"
+      }
+    ],
     "QueryHunyuanImageJob": [
       {
         "document": "成功查询",
@@ -94,6 +102,14 @@
         "input": "POST / HTTP/1.1\nHost: hunyuan.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetPayMode\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "示例\t"
+      }
+    ],
+    "SubmitHunyuanImageChatJob": [
+      {
+        "document": "调用成功",
+        "input": "POST / HTTP/1.1\nHost: hunyuan.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitHunyuanImageChatJob\n<公共请求参数>\n\n{\n    \"Prompt\": \"雪山\"\n}",
+        "output": "{\n    \"Response\": {\n        \"JobId\": \"test\",\n        \"RequestId\": \"9723dd95-d217-46ff-a556-2cc760142737\"\n    }\n}",
+        "title": "调用成功"
       }
     ],
     "SubmitHunyuanImageJob": [

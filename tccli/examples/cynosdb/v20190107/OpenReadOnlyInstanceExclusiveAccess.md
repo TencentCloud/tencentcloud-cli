@@ -18,7 +18,7 @@ Output:
 ```
 {
     "Response": {
-        "FlowId": "12345",
+        "FlowId": 12345,
         "RequestId": "123123123123123"
     }
 }

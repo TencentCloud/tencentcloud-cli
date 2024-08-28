@@ -3974,7 +3974,7 @@
           "example": "无",
           "member": "string",
           "name": "CompatibleRuntimes",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -3984,7 +3984,7 @@
           "example": "无",
           "member": "string",
           "name": "AddTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3994,7 +3994,7 @@
           "example": "无",
           "member": "string",
           "name": "Description",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4004,7 +4004,7 @@
           "example": "无",
           "member": "string",
           "name": "LicenseInfo",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4014,7 +4014,7 @@
           "example": "无",
           "member": "int64",
           "name": "LayerVersion",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4024,7 +4024,7 @@
           "example": "无",
           "member": "string",
           "name": "LayerName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4034,7 +4034,7 @@
           "example": "无",
           "member": "string",
           "name": "Status",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4044,8 +4044,18 @@
           "example": "无",
           "member": "string",
           "name": "Stamp",
-          "required": false,
+          "output_required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "返回层绑定的标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],

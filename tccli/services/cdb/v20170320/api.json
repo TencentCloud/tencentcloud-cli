@@ -602,6 +602,13 @@
       "output": "DescribeInstanceParamsResponse",
       "status": "online"
     },
+    "DescribeInstanceUpgradeCheckJob": {
+      "document": "该接口（DescribeInstanceUpgradeCheckJob）查询实例版本升级校验任务。",
+      "input": "DescribeInstanceUpgradeCheckJobRequest",
+      "name": "查询实例版本升级校验任务",
+      "output": "DescribeInstanceUpgradeCheckJobResponse",
+      "status": "online"
+    },
     "DescribeInstanceUpgradeType": {
       "document": "本接口(DescribeInstanceUpgradeType)用于查询数据库实例升级类型。",
       "input": "DescribeInstanceUpgradeTypeRequest",
@@ -1118,6 +1125,13 @@
       "input": "StopRollbackRequest",
       "name": "撤销回档任务",
       "output": "StopRollbackResponse",
+      "status": "online"
+    },
+    "SubmitInstanceUpgradeCheckJob": {
+      "document": "该接口（SubmitInstanceUpgradeCheckJob）提交实例版本升级校验任务。",
+      "input": "SubmitInstanceUpgradeCheckJobRequest",
+      "name": "提交实例版本升级检查任务",
+      "output": "SubmitInstanceUpgradeCheckJobResponse",
       "status": "online"
     },
     "SwitchCDBProxy": {
@@ -4193,6 +4207,45 @@
         }
       ],
       "type": "object"
+    },
+    "ClusterInfo": {
+      "document": "集群版节点信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "节点id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"dbn-ipffzoum\"",
+          "member": "string",
+          "name": "NodeId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "节点类型：主节点，从节点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"master\"",
+          "member": "string",
+          "name": "Role",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"ap-guangzhou\"",
+          "member": "string",
+          "name": "Zone",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "ClusterNodeInfo": {
       "document": "集群版实例节点信息",
@@ -10072,6 +10125,15 @@
           "name": "EngineTypes",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否获取集群版实例节点信息，可填：true或false",
+          "example": "无",
+          "member": "bool",
+          "name": "QueryClusterInfo",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -11056,6 +11118,62 @@
           "name": "Items",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceUpgradeCheckJobRequest": {
+      "document": "DescribeInstanceUpgradeCheckJob请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "\"cdb-g3rbtabc\"",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "目标数据库版本",
+          "example": "\"8.0\"",
+          "member": "string",
+          "name": "DstMysqlVersion",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceUpgradeCheckJobResponse": {
+      "document": "DescribeInstanceUpgradeCheckJob返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "24小时内是否存在历史升级校验任务",
+          "example": "true",
+          "member": "bool",
+          "name": "ExistUpgradeCheckJob",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务id",
+          "example": "123",
+          "member": "int64",
+          "name": "JobId",
+          "output_required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -12570,6 +12688,7 @@
           "example": "5",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -12579,6 +12698,7 @@
           "example": "无",
           "member": "TaskDetail",
           "name": "Items",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -14124,6 +14244,16 @@
           "name": "ExpandCpu",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例集群版节点信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ClusterInfo",
+          "name": "ClusterInfo",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -19790,6 +19920,52 @@
       ],
       "type": "object"
     },
+    "SubmitInstanceUpgradeCheckJobRequest": {
+      "document": "SubmitInstanceUpgradeCheckJob请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例D",
+          "example": "\"cdb-g3rbtabc\"",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "目标数据库版本",
+          "example": "\"8.0\"",
+          "member": "string",
+          "name": "DstMysqlVersion",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SubmitInstanceUpgradeCheckJobResponse": {
+      "document": "SubmitInstanceUpgradeCheckJob返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "123",
+          "member": "int64",
+          "name": "JobId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "SwitchCDBProxyRequest": {
       "document": "SwitchCDBProxy请求参数结构体",
       "members": [
@@ -20379,6 +20555,15 @@
           "example": "1",
           "member": "int64",
           "name": "MaxDelayTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "5.7升级8.0是否忽略关键字错误，取值范围[0,1]，1表示忽略，0表示不忽略",
+          "example": "1",
+          "member": "int64",
+          "name": "IgnoreErrKeyword",
           "required": false,
           "type": "int"
         },

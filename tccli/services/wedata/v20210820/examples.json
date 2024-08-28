@@ -8,6 +8,20 @@
         "title": "BatchCreateIntegrationTaskAlarms"
       }
     ],
+    "BatchCreateTaskVersionAsync": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchCreateTaskVersionAsync\n<公共请求参数>\n\n{\n    \"Tasks\": [\n        {\n            \"TaskId\": \"abc\",\n            \"VersionRemark\": \"abc\"\n        }\n    ],\n    \"AutoRun\": true,\n    \"AlarmWays\": \"abc\",\n    \"AlarmRecipientTypes\": \"abc\",\n    \"ProjectId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"JobId\": 1\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "示例"
+      },
+      {
+        "document": "错误示例",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchCreateTaskVersionAsync\n<公共请求参数>\n\n{\n    \"Tasks\": [\n        {\n            \"TaskId\": \"20230425181533351\",\n            \"VersionRemark\": \"1111\"\n        }\n    ],\n    \"AutoRun\": true,\n    \"AlarmWays\": \"email\",\n    \"AlarmRecipientTypes\": \"2\",\n    \"ProjectId\": \"1470561602745229312\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"FailedOperation\",\n            \"Message\": \"操作失败\"\n        },\n        \"RequestId\": \"6218d665-282f-4e43-972a-262dc311618e\"\n    }\n}",
+        "title": "错误示例"
+      }
+    ],
     "BatchDeleteIntegrationTasks": [
       {
         "document": "",
@@ -974,6 +988,14 @@
         "title": "错误用例"
       }
     ],
+    "DescribePendingSubmitTaskList": [
+      {
+        "document": "获取待提交任务预提交校验信息",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePendingSubmitTaskList\n<公共请求参数>\n\n{\n    \"ProjectId\": \"abc\",\n    \"WorkflowId\": \"abc\",\n    \"TaskIdList\": [\n        \"abc\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"TaskId\": \"abc\",\n                \"TaskName\": \"abc\",\n                \"ModifyType\": \"abc\",\n                \"TaskStatus\": \"abc\",\n                \"SubmitPreCheck\": \"abc\",\n                \"SubmitPreCheckDetailList\": [\n                    {\n                        \"TaskId\": \"abc\",\n                        \"TaskName\": \"abc\",\n                        \"ProjectId\": \"abc\",\n                        \"ProjectName\": \"abc\",\n                        \"InChargeId\": \"abc\",\n                        \"InCharge\": \"abc\"\n                    }\n                ],\n                \"ExecutorGroupId\": \"abc\",\n                \"ExecutorGroupName\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "获取待提交任务预提交校验信息"
+      }
+    ],
     "DescribeProject": [
       {
         "document": "",
@@ -1446,6 +1468,14 @@
         "title": "根据项目id 获取项目下所有工作流列表示例"
       }
     ],
+    "DescribeWorkflowSchedulerInfoDs": [
+      {
+        "document": "demo",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWorkflowSchedulerInfoDs\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1460947878944567296\",\n    \"WorkflowId\": \"f5d1b42f-ed67-11ed-8909-bc97e105ba60\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"CreateTime\": null,\n            \"Creater\": null,\n            \"CrontabExpression\": null,\n            \"CycleStep\": 1,\n            \"CycleType\": \"DAY_CYCLE\",\n            \"DelayTime\": 0,\n            \"DependencyWorkflow\": \"no\",\n            \"EndTime\": \"2099-12-31 23:59:59\",\n            \"ExecutionEndTime\": null,\n            \"ExecutionStartTime\": null,\n            \"FirstSubmitTime\": null,\n            \"InstanceInitStrategy\": \"T_PLUS_0\",\n            \"LatestSubmitTime\": null,\n            \"ModifyTime\": null,\n            \"ProjectId\": \"1460947878944567296\",\n            \"SchedulerDesc\": \"每天00:00执行一次\",\n            \"SelfDepend\": \"serial\",\n            \"StartTime\": \"2023-05-12 12:04:17\",\n            \"StartupTime\": 0,\n            \"TaskAction\": \"\",\n            \"WorkflowId\": \"f5d1b42f-ed67-11ed-8909-bc97e105ba60\"\n        },\n        \"RequestId\": \"4d12dcf0-83ef-40b9-a254-98bd6e168991\"\n    }\n}",
+        "title": "示例1"
+      }
+    ],
     "DescribeWorkflowTaskCount": [
       {
         "document": "查询工作流任务数",
@@ -1514,6 +1544,14 @@
         "title": "GenHiveTableDDLSql"
       }
     ],
+    "GetCosToken": [
+      {
+        "document": "开发空间-获取cos token",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetCosToken\n<公共请求参数>\n\n{\n    \"ProjectId\": \"abc\",\n    \"OriginDomain\": \"abc\",\n    \"BucketName\": \"abc\",\n    \"RemotePath\": \"abc\",\n    \"CrossFlag\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"Region\": \"abc\",\n        \"Token\": {\n            \"Id\": \"abc\",\n            \"Token\": \"abc\",\n            \"SecretId\": \"abc\",\n            \"SecretKey\": \"abc\",\n            \"Response\": \"abc\",\n            \"OwnerUin\": \"abc\",\n            \"ExpiredTime\": 1,\n            \"CreateTime\": 1,\n            \"UpdateTime\": 1,\n            \"OperatorUin\": \"abc\"\n        },\n        \"Bucket\": \"abc\",\n        \"EndPoint\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "GetCosToken 示例"
+      }
+    ],
     "GetFileInfo": [
       {
         "document": "开发空间-获取数据开发脚本信息",
@@ -1544,6 +1582,14 @@
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetOfflineInstanceList\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1486446569620893696\",\n    \"SearchCondition\": {\n        \"Instance\": {\n            \"ExecutionSpace\": \"DRY_RUN\",\n            \"ProductName\": \"DATA_INTEGRATION\",\n            \"ResourceGroup\": \"20240403154937116000\"\n        },\n        \"SortCol\": \"CurRunDate\",\n        \"Sort\": \"desc\",\n        \"Keyword\": \"20220408130054538\"\n    },\n    \"PageIndex\": \"1\",\n    \"PageSize\": 10\n}",
         "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"AppId\": \"1315059999\",\n                \"CreateTime\": \"2022-04-10 19:38:23\",\n                \"CreateUin\": \"100028649999\",\n                \"CurRunDate\": \"2022-04-10T19:38:21+08:00\",\n                \"EndTime\": null,\n                \"InlongTaskId\": \"dev_20220408130054538_1712749111_1712749111\",\n                \"InstanceKey\": \"20220408130054538_2022-04-10T19:38:21+08:00\",\n                \"IssueId\": \"2022-04-10 19:38:21\",\n                \"OperatorUin\": \"100028649999\",\n                \"OwnerUin\": \"100028448993\",\n                \"ResourceGroup\": \"20220403154937113777\",\n                \"StartTime\": null,\n                \"State\": \"COMPLETED\",\n                \"TaskId\": \"20220408130054538\",\n                \"TaskRunType\": 1,\n                \"UpdateTime\": \"2022-04-10 19:38:37\",\n                \"WorkspaceId\": \"148644656962089399\"\n            }\n        ],\n        \"RequestId\": \"ea9ec716-a23c-4adc-b7e8-cd54f562b9d3\",\n        \"Total\": 4\n    }\n}",
         "title": "调试运行集成任务"
+      }
+    ],
+    "JudgeResourceFile": [
+      {
+        "document": "判断资源文件是否存在",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: JudgeResourceFile\n<公共请求参数>\n\n{\n    \"ProjectId\": \"abc\",\n    \"FilePath\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "资源管理-判断资源文件是否存在"
       }
     ],
     "KillOpsMakePlanInstances": [
@@ -1762,6 +1808,14 @@
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RemoveWorkflowDs\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1460947878944567296\",\n    \"WorkflowId\": \"a09dac50-ed66-11ed-8909-bc97e105ba60\"\n}",
         "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"FailedOperation\",\n            \"Message\": \"要删除的工作流不存在\"\n        },\n        \"RequestId\": \"9849acb3-fde9-4c6e-806c-9230fe4ccf01\"\n    }\n}",
         "title": "工作流不存在"
+      }
+    ],
+    "RenewWorkflowSchedulerInfoDs": [
+      {
+        "document": "demo",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RenewWorkflowSchedulerInfoDs\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1460947878944567296\",\n    \"WorkflowId\": \"e5b0945c-ed6d-11ed-8909-bc97e105ba60\",\n    \"DelayTime\": 0,\n    \"SelfDepend\": \"serial\",\n    \"StartTime\": \"2023-05-13 12:44:29\",\n    \"EndTime\": \"2023-05-12 23:59:59\",\n    \"TaskAction\": \"\",\n    \"CycleType\": \"DAY_CYCLE\",\n    \"CycleStep\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Failed\": 0,\n            \"Success\": 0,\n            \"Total\": 0\n        },\n        \"RequestId\": \"59a4462b-66f3-4cc2-80a2-46c416726c46\"\n    }\n}",
+        "title": "示例1"
       }
     ],
     "ResumeIntegrationTask": [

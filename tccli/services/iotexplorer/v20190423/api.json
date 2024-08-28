@@ -1213,8 +1213,8 @@
         },
         {
           "disabled": false,
-          "document": "License数",
-          "example": "100",
+          "document": "License数，只支持50,500,1000,5000,10000,20000,50000",
+          "example": "50",
           "member": "int64",
           "name": "DeductNum",
           "required": true,

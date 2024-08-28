@@ -1110,7 +1110,7 @@
           "example": "bh-saas-xxxxxxxx",
           "member": "string",
           "name": "ResourceId",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
@@ -6446,6 +6446,16 @@
           "example": "1",
           "member": "uint64",
           "name": "UsedDomainCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "0 非试用版，1 试用版\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Trial",
           "output_required": false,
           "type": "int",
           "value_allowed_null": true

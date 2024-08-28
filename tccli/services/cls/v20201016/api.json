@@ -2479,7 +2479,7 @@
         },
         {
           "disabled": false,
-          "document": "允许访问的资源列表",
+          "document": "允许访问的资源列表，目前仅支持一个Resource",
           "example": "当Type为1时:['qcs::cls::uin/100001127589:dashboard/dashboard-1223fa03--44f9-f118-69a8-21aa33ea5aa1']; 当Type为2时:['qcs::cls:ap-guangzhou:uin/10000000001:topic/c1306921-2180-3e45-9azb-31d12217871e6']",
           "member": "string",
           "name": "Resources",

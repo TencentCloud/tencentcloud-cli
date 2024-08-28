@@ -4265,6 +4265,24 @@
           "name": "Catalogs",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "数据库名",
+          "example": "无",
+          "member": "string",
+          "name": "DatabaseName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "表名",
+          "example": "无",
+          "member": "string",
+          "name": "TableName",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

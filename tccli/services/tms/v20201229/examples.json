@@ -1,13 +1,5 @@
 {
   "actions": {
-    "AnswerQuestion": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: tms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AnswerQuestion\n<公共请求参数>\n\n{\n    \"Question\": \"社会主义\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Answer\": \"社会主义是包括社会主义思想、社会主义运动和社会主义制度的总称。它主张通过推翻资产阶级统治、建立公有制经济和实现社会平等来改变资本主义生产方式带来的阶级对立。\",\n        \"RequestId\": \"a4963536-8eba-46a3-a5e3-127117ec07f9\"\n    }\n}",
-        "title": "AIGC代答示例"
-      }
-    ],
     "ModerateText": [
       {
         "document": "用于客户自有标签体系的内容审核，审核结果会以客户定义的标签体系输出结果",

@@ -6646,7 +6646,7 @@
           "value_allowed_null": false
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "LogstashInstanceInfo": {
       "document": "Logstash实例详细信息",

@@ -1,0 +1,13 @@
+{
+  "actions": {
+    "BatchApplyAccountBaselines": [
+      {
+        "document": "批量对存量账号应用基线",
+        "input": "POST / HTTP/1.1\nHost: controlcenter.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchApplyAccountBaselines\n<公共请求参数>\n\n{\n    \"MemberUinList\": [\n        13436673356\n    ],\n    \"BaselineConfigItems\": [\n        {\n            \"Identifier\": \"ACS-BP_ACCOUNT_FACTORY_ACCOUNT_CONTACT\",\n            \"Configuration\": \"{\\\"Contacts\\\":[{\\\"Name\\\":\\\"dest\\\",\\\"Email\\\":\\\"ia@22.com\\\",\\\"Mobile\\\":\\\"12345678910\\\",\\\"Position\\\":\\\"Technical Director\\\"}]}\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e2f35fb3-3c8c-431e-b318-b4746cfe076c\"\n    }\n}",
+        "title": "批量对存量账号应用基线"
+      }
+    ]
+  },
+  "version": "1.0"
+}

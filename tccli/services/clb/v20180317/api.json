@@ -7574,7 +7574,7 @@
         },
         {
           "disabled": false,
-          "document": "性能容量型规格。<ul><li> clb.c2.medium：标准型规格 </li><li> clb.c3.small：高阶型1规格 </li><li> clb.c3.medium：高阶型2规格 </li><li> clb.c4.small：超强型1规格 </li><li> clb.c4.medium：超强型2规格 </li><li> clb.c4.large：超强型3规格 </li><li> clb.c4.xlarge：超强型4规格 </li><li>null：共享型实例</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "性能容量型规格。<ul><li> clb.c1.small：简约型规格 </li><li> clb.c2.medium：标准型规格 </li><li> clb.c3.small：高阶型1规格 </li><li> clb.c3.medium：高阶型2规格 </li><li> clb.c4.small：超强型1规格 </li><li> clb.c4.medium：超强型2规格 </li><li> clb.c4.large：超强型3规格 </li><li> clb.c4.xlarge：超强型4规格 </li><li>\"\"：非性能容量型实例</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": " null",
           "member": "string",
           "name": "SlaType",
@@ -7724,6 +7724,17 @@
           "output_required": true,
           "required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例类型是否为独占型。1：独占型实例。0：非独占型实例。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Exclusive",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -9112,6 +9123,15 @@
           "name": "TrpcFunc",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "OAuth配置信息。",
+          "example": "无",
+          "member": "OAuth",
+          "name": "OAuth",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -9432,6 +9452,34 @@
         }
       ],
       "usage": "in"
+    },
+    "OAuth": {
+      "document": "OAuth配置信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "开启或关闭鉴权。\nTrue: 开启;\nFalse: 关闭\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "True",
+          "member": "bool",
+          "name": "OAuthEnable",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "IAP全部故障后，拒绝请求还是放行。BYPASS:通过,\nREJECT: 拒绝\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "BYPASS",
+          "member": "string",
+          "name": "OAuthFailureStatus",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "Price": {
       "document": "表示负载均衡的价格",
@@ -10456,6 +10504,16 @@
           "name": "TargetGroupList",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "OAuth配置状态信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OAuth",
+          "name": "OAuth",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": true
         }
       ],

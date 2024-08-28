@@ -843,7 +843,7 @@
     "OpenReadOnlyInstanceExclusiveAccess": {
       "document": "开通只读实例独有访问接入组",
       "input": "OpenReadOnlyInstanceExclusiveAccessRequest",
-      "name": "开通只读实例独有访问接入组",
+      "name": "开通只读实例独有访问接入组。",
       "output": "OpenReadOnlyInstanceExclusiveAccessResponse",
       "status": "online"
     },
@@ -4929,7 +4929,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例类型",
+          "document": "实例类型，目前固定传cynosdb-serverless",
           "example": "cynosdb-serverless",
           "member": "string",
           "name": "InstanceType",
@@ -4938,8 +4938,8 @@
         },
         {
           "disabled": false,
-          "document": "资源包使用地域\nchina-中国内地通用，overseas-港澳台及海外通用",
-          "example": "china",
+          "document": "资源包使用地域chineseMainland-中国内地通用，overseas-港澳台及海外通用",
+          "example": "chineseMainland",
           "member": "string",
           "name": "PackageRegion",
           "required": true,
@@ -15917,12 +15917,50 @@
     },
     "OpenClusterReadOnlyInstanceGroupAccessRequest": {
       "document": "OpenClusterReadOnlyInstanceGroupAccess请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cynosdbmysql-12345678",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "端口",
+          "example": "1234",
+          "member": "string",
+          "name": "Port",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "安全组ID ",
+          "example": "[Security1,Security2,Security3]",
+          "member": "string",
+          "name": "SecurityGroupIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
       "type": "object"
     },
     "OpenClusterReadOnlyInstanceGroupAccessResponse": {
       "document": "OpenClusterReadOnlyInstanceGroupAccess返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "开启流程ID",
+          "example": "12345",
+          "member": "string",
+          "name": "FlowId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -15937,7 +15975,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "请使用 [集群信息描述](https://cloud.tencent.com/document/api/1003/48086) 获取 clusterId。",
           "example": "cynosdbmysql-12345678",
           "member": "string",
           "name": "ClusterId",
@@ -15946,7 +15984,7 @@
         },
         {
           "disabled": false,
-          "document": "需要开通独有访问的只读实例ID",
+          "document": "请使用 [集群信息描述](https://cloud.tencent.com/document/api/1003/48086) 获取 instanceId。",
           "example": "cynosdbmysql-ins-12345678",
           "member": "string",
           "name": "InstanceId",
@@ -15955,7 +15993,7 @@
         },
         {
           "disabled": false,
-          "document": "指定的vpc ID",
+          "document": "指定的 vpc ID，请使用 [查询私有网络列表](https://cloud.tencent.com/document/api/215/15778) 获取 vpc ID。",
           "example": "vpc-12345678",
           "member": "string",
           "name": "VpcId",
@@ -15964,7 +16002,7 @@
         },
         {
           "disabled": false,
-          "document": "指定的子网ID",
+          "document": "指定的子网 ID，如果设置了 vpc ID，则 SubnetId 必填，请使用 [查询子网列表](https://cloud.tencent.com/document/api/215/15784) 获取 SubnetId。",
           "example": "subnet-12345678",
           "member": "string",
           "name": "SubnetId",
@@ -15973,7 +16011,7 @@
         },
         {
           "disabled": false,
-          "document": "端口",
+          "document": "用户自定义的端口。",
           "example": "1234",
           "member": "int64",
           "name": "Port",
@@ -15982,7 +16020,7 @@
         },
         {
           "disabled": false,
-          "document": "安全组",
+          "document": "安全组 ID，请使用 [查看安全组](https://cloud.tencent.com/document/api/215/15808) 获取 SecurityGroupId。",
           "example": "[SecurityGroupIds1,SecurityGroupIds2]",
           "member": "string",
           "name": "SecurityGroupIds",
@@ -16001,6 +16039,7 @@
           "example": "12345",
           "member": "int64",
           "name": "FlowId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },

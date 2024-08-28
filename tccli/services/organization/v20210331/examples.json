@@ -816,6 +816,14 @@
         "title": "从用户组中移除用户"
       }
     ],
+    "SendOrgMemberAccountBindEmail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SendOrgMemberAccountBindEmail\n<公共请求参数>\n\n{\n    \"MemberUin\": 111111111111,\n    \"BindId\": 12\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b46d2afe-6893-4529-bc96-2c82d9214957\"\n    }\n}",
+        "title": "重新发送成员绑定邮箱激活邮件"
+      }
+    ],
     "SetExternalSAMLIdentityProvider": [
       {
         "document": "配置SAML身份提供商信息",
