@@ -416,14 +416,22 @@ class ConfigureCommand(BasicConfigure):
 
     def init_configures(self):
         config = {}
-        if not self._profile_existed("default.configure")[0]:
+        import argparse
+        parser = argparse.ArgumentParser()
+        parser.add_argument("--profile", type=str)
+        args, _ = parser.parse_known_args()
+        profile = args.profile or "default"
+        profile_file = "%s.configure" % profile
+
+        if not self._profile_existed(profile_file)[0]:
             config = {
                 "region": "ap-guangzhou",
                 "output": "json",
                 "arrayCount": 10,
                 "warning": "off"
             }
-        self._init_configure("default.configure", config)
+        self._init_configure(profile_file, config)
+
         for profile_name in os.listdir(self.cli_path):
             if profile_name == "default.configure":
                 continue

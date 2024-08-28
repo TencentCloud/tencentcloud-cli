@@ -5,8 +5,6 @@ import time
 import requests
 import uuid
 
-from tccli.exceptions import ConfigurationError
-
 _API_ENDPOINT = "https://cli.cloud.tencent.com"
 _CRED_REFRESH_SAFE_DUR = 60 * 5
 _ACCESS_REFRESH_SAFE_DUR = 60 * 5

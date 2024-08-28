@@ -4,6 +4,7 @@ import json
 import random
 import string
 import sys
+import time
 from urllib import urlencode
 
 import texts
@@ -83,6 +84,10 @@ def _get_token(state, language):
 
     print(texts.get("login_prompt"))
     print(auth_url)
+
+    # use polling to avoid being unresponsive in python2
+    while result_queue.empty():
+        time.sleep(1)
 
     result = result_queue.get()
     if isinstance(result, Exception):
