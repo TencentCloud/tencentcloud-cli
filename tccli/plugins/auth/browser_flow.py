@@ -1,32 +1,34 @@
+import time
 import traceback
-import BaseHTTPServer
-import SocketServer
 import socket
 from threading import Thread
+from tccli import oauth
 
 try:
     from urlparse import urlparse, parse_qs
     from Queue import Queue
-    from BaseHTTPServer import HTTPServer
+    from BaseHTTPServer import HTTPServer, BaseHTTPRequestHandler
+    from SocketServer import ThreadingTCPServer, TCPServer
 except ImportError:
     from urllib.parse import urlparse, parse_qs
     from queue import Queue
-    from http.server import HTTPServer
+    from http.server import HTTPServer, BaseHTTPRequestHandler
+    from socketserver import ThreadingTCPServer, TCPServer
 
 
 # chrome keeps previous connection alive, so use threading to avoid blocking
-class ThreadingHTTPServer(SocketServer.ThreadingTCPServer):
+class ThreadingHTTPServer(ThreadingTCPServer):
     allow_reuse_address = 1
 
     def server_bind(self):
         """Override server_bind to store the server name."""
-        SocketServer.TCPServer.server_bind(self)
+        TCPServer.server_bind(self)
         host, port = self.socket.getsockname()[:2]
         self.server_name = socket.getfqdn(host)
         self.server_port = port
 
 
-class HTTPHandler(BaseHTTPServer.BaseHTTPRequestHandler):
+class HTTPHandler(BaseHTTPRequestHandler):
     result_queue = Queue(1)
 
     def do_GET(self):
@@ -40,13 +42,17 @@ class HTTPHandler(BaseHTTPServer.BaseHTTPRequestHandler):
             expires_at = int(query_vals.get("expires_at")[0])
             state = query_vals.get("state")[0]
             redirect_url = query_vals.get("redirect_url")[0]
-            self.result_queue.put({
+            site = query_vals.get("site")[0]
+            token = {
                 "openId": open_id,
                 "accessToken": access_token,
                 "refreshToken": refresh_token,
                 "expiresAt": expires_at,
                 "state": state,
-            })
+                "site": site,
+            }
+            cred = oauth.get_temp_cred(token["accessToken"], token["site"])
+            self.result_queue.put((token, cred))
             self.send_response(307)
             self.send_header("Location", redirect_url)
             self.end_headers()
@@ -55,8 +61,8 @@ class HTTPHandler(BaseHTTPServer.BaseHTTPRequestHandler):
             print(err)
             self.send_response(400)
             self.end_headers()
-            self.wfile.write("login failed due to the following error:\n\n")
-            self.wfile.write(err)
+            self.wfile.write("login failed due to the following error:\n\n".encode("utf-8"))
+            self.wfile.write(err.encode("utf-8"))
             self.wfile.flush()
 
     # suppress debug message

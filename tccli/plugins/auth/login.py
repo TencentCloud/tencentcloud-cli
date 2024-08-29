@@ -5,12 +5,11 @@ import random
 import string
 import sys
 import time
-from urllib import urlencode
-
-import texts
+from six.moves.urllib.parse import urlencode
 import webbrowser
 
 from tccli import oauth
+from tccli.plugins.auth import texts
 
 _APP_ID = 700001249938
 _AUTH_URL = "https://cloud.tencent.com/open/authorize"
@@ -19,6 +18,11 @@ _SITE = "cn"
 
 _START_SEARCH_PORT = 9000
 _END_SEARCH_PORT = _START_SEARCH_PORT + 100
+
+
+def print_message(msg):
+    print(msg)
+    sys.stdout.flush()
 
 
 def login_command_entrypoint(args, parsed_globals):
@@ -41,24 +45,21 @@ def login(use_browser, profile, language):
     state = ''.join(random.choice(characters) for _ in range(10))
 
     if use_browser:
-        token = _get_token(state, language)
+        token, cred = _get_token(state, language)
     else:
-        token = _get_token_no_browser(state, language)
+        token, cred = _get_token_no_browser(state, language)
 
     if token["state"] != state:
         raise ValueError("invalid state %s" % token["state"])
 
-    token["site"] = _SITE
-
-    cred = oauth.get_temp_cred(token["accessToken"], _SITE)
     oauth.save_credential(token, cred, profile)
 
-    print("")
-    print(texts.get("login_success") % oauth.cred_path_of_profile(profile))
+    print_message("")
+    print_message(texts.get("login_success") % oauth.cred_path_of_profile(profile))
 
 
 def _get_token(state, language):
-    import browser_flow
+    from tccli.plugins.auth import browser_flow
 
     port, result_queue = browser_flow.try_run(_START_SEARCH_PORT, _END_SEARCH_PORT)
 
@@ -79,11 +80,11 @@ def _get_token(state, language):
     auth_url = _AUTH_URL + "?" + url_query
 
     if not webbrowser.open(auth_url):
-        print(texts.get("login_failed_due_to_no_browser"))
+        print_message(texts.get("login_failed_due_to_no_browser"))
         sys.exit(1)
 
-    print(texts.get("login_prompt"))
-    print(auth_url)
+    print_message(texts.get("login_prompt"))
+    print_message(auth_url)
 
     # use polling to avoid being unresponsive in python2
     while result_queue.empty():
@@ -112,9 +113,9 @@ def _get_token_no_browser(state, language):
     url_query = urlencode(url_params)
     auth_url = _AUTH_URL + "?" + url_query
 
-    print(texts.get("login_prompt_no_browser"))
-    print("")
-    print(auth_url)
+    print_message(texts.get("login_prompt_no_browser"))
+    print_message("")
+    print_message(auth_url)
 
     try:
         input_func = raw_input
@@ -122,4 +123,6 @@ def _get_token_no_browser(state, language):
         input_func = input
 
     user_input = input_func(texts.get("login_prompt_code_no_browser"))
-    return json.loads(base64.b64decode(user_input))
+    token = json.loads(base64.b64decode(user_input))
+    cred = oauth.get_temp_cred(token["accessToken"], token["site"])
+    return token, cred

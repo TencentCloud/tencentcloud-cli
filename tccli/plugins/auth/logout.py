@@ -1,8 +1,8 @@
 # coding: utf-8
 import os
 
-import texts
 from tccli import oauth
+from tccli.plugins.auth import texts
 
 
 def logout_command_entrypoint(args, parsed_globals):

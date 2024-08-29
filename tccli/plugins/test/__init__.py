@@ -11,7 +11,7 @@
     则用户可以以如下方式调用 tccli
     tccli test add --number1=3 --number2=5
 """
-from add import add_command
+from tccli.plugins.test.add import add_command
 
 service_name = "test"
 service_version = "2024-08-07"
