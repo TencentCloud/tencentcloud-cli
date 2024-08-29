@@ -464,7 +464,7 @@
       {
         "document": "",
         "input": "https://tdmq.tencentcloudapi.com/?Action=DescribeCmqTopicDetail\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TopicDescribe\": {\n            \"MsgCount\": 1,\n            \"TopicId\": \"xx\",\n            \"MaxMsgSize\": 1,\n            \"Trace\": true,\n            \"Tags\": [\n                {\n                    \"TagKey\": \"xx\",\n                    \"TagValue\": \"xx\"\n                }\n            ],\n            \"CreateUin\": 1,\n            \"FilterType\": 1,\n            \"TenantId\": \"xx\",\n            \"LastModifyTime\": 1,\n            \"MsgRetentionSeconds\": 1,\n            \"NamespaceName\": \"xx\",\n            \"Qps\": 1,\n            \"CreateTime\": 1,\n            \"TopicName\": \"xx\"\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cbeef60c-6525-484a-83e8-6c590e81e749\",\n        \"TopicDescribe\": {\n            \"TopicId\": \"cmqt-w4nb4z27\",\n            \"TopicName\": \"rmqbroker-nj\",\n            \"MaxMsgSize\": 1048576,\n            \"FilterType\": 1,\n            \"MsgRetentionSeconds\": 86400,\n            \"Qps\": 5000,\n            \"CreateTime\": 1692691276000,\n            \"LastModifyTime\": 1692691276000,\n            \"MsgCount\": 0,\n            \"CreateUin\": null,\n            \"Trace\": null,\n            \"Tags\": null,\n            \"TenantId\": \"cmq-1317947242\",\n            \"NamespaceName\": \"CMQ_TOPIC-rmqbroker-nj\",\n            \"Status\": 1,\n            \"BrokerType\": 1,\n            \"SetType\": \"SHARED\",\n            \"InstanceId\": null,\n            \"SubscriptionCount\": 1\n        }\n    }\n}",
         "title": "cmq查询主题详情"
       }
     ],
@@ -818,7 +818,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRocketMQSubscriptions\n<公共请求参数>\n\n{\n    \"Limit\": \"10\",\n    \"ClusterId\": \"rocketmq-a5nzx52ab7jb\",\n    \"Namespace\": \"test\",\n    \"Group\": \"consume_group\",\n    \"Offset\": \"0\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cde7c1eb-c631-453a-999b-03c9ed38b892\",\n        \"TotalCount\": 2,\n        \"Subscriptions\": [\n            {\n                \"Topic\": \"test\",\n                \"Type\": \"Normal\",\n                \"PartitionNum\": 3,\n                \"ExpressionType\": \"TAG\",\n                \"SubString\": \"*\",\n                \"Status\": 0\n            },\n            {\n                \"Topic\": \"%RETRY%consume_group\",\n                \"Type\": \"Retry\",\n                \"PartitionNum\": 1,\n                \"ExpressionType\": \"TAG\",\n                \"SubString\": \"*\",\n                \"Status\": 0\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cde7c1eb-c631-453a-999b-03c9ed38b892\",\n        \"TotalCount\": 2,\n        \"Subscriptions\": [\n            {\n                \"Topic\": \"test\",\n                \"Type\": \"Normal\",\n                \"PartitionNum\": 3,\n                \"ExpressionType\": \"TAG\",\n                \"SubString\": \"*\",\n                \"Status\": 0,\n                \"ConsumerLag\": 0\n            }\n        ]\n    }\n}",
         "title": "获取rocketmq消费组订阅关系"
       }
     ],
@@ -1104,7 +1104,7 @@
       {
         "document": "",
         "input": "https://tdmq.tencentcloudapi.com/?Action=PublishCmqMsg\n&TopicName=test-queue\n&MsgContent=test\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"MsgId\": \"50169152:0:0:-1\",\n        \"RequestId\": \"3593f784-fcfb-4f23-b3dd-4751cba3aec7\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"MsgId\": \"1EAD5E05003A6767C1FC9160304F98\",\n        \"RequestId\": \"3593f784-fcfb-4f23-b3dd-4751cba3aec7\"\n    }\n}",
         "title": "发送cmq主题消息"
       }
     ],
@@ -1215,8 +1215,8 @@
     "VerifyRocketMQConsume": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: VerifyRocketMQConsume\n<公共请求参数>\n\n{\n    \"NamespaceId\": \"xx\",\n    \"MsgId\": \"xx\",\n    \"ClusterId\": \"xx\",\n    \"GroupId\": \"xx\",\n    \"TopicName\": \"xx\",\n    \"ClientId\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: VerifyRocketMQConsume\n<公共请求参数>\n\n{\n    \"NamespaceId\": \"test_ns\",\n    \"MsgId\": \"abc\",\n    \"ClusterId\": \"rocketmq-abc\",\n    \"GroupId\": \"test_group\",\n    \"TopicName\": \"test_topic\",\n    \"ClientId\": \"1.1.1.1@abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "示例"
       }
     ]

@@ -340,6 +340,8 @@ tccli/services/dlc/__init__.py
 tccli/services/dlc/dlc_client.py
 tccli/services/dlc/v20210125/api.json
 tccli/services/dlc/v20210125/examples.json
+tccli/services/dmc/__init__.py
+tccli/services/dmc/dmc_client.py
 tccli/services/dms/__init__.py
 tccli/services/dms/dms_client.py
 tccli/services/dnshg/__init__.py

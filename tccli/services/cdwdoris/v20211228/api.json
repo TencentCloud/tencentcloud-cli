@@ -4388,7 +4388,7 @@
         },
         {
           "disabled": false,
-          "document": "开始时间",
+          "document": "开始时间，不填默认七天前",
           "example": "无",
           "member": "string",
           "name": "StartTime",
@@ -4397,7 +4397,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间",
+          "document": "结束时间，不填默认当前时间",
           "example": "无",
           "member": "string",
           "name": "EndTime",
@@ -4419,6 +4419,15 @@
           "example": "无",
           "member": "string",
           "name": "PassWord",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "错误信息",
+          "example": "无",
+          "member": "string",
+          "name": "Message",
           "required": false,
           "type": "string"
         }
@@ -8988,6 +8997,24 @@
           "name": "PassWord",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "catalog名称,不填默认internal",
+          "example": "无",
+          "member": "string",
+          "name": "CatalogName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -9033,6 +9060,16 @@
           "name": "Rows",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "报错信息",
+          "example": "无",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {

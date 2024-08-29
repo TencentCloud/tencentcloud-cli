@@ -1,10 +1,142 @@
 # 本版本更新包含以下内容：
 
-## 云数据库 MySQL(cdb) 版本：2017-03-20
+## 活动防刷(aa) 版本：2020-02-24
 
-### 第 109 次发布
+### 第 3 次发布
 
-发布时间：2024-08-29 01:10:03
+发布时间：2024-08-30 01:06:49
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* QueryActivityAntiRush
+
+
+
+## 语音识别(asr) 版本：2019-06-14
+
+### 第 24 次发布
+
+发布时间：2024-08-30 01:07:48
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateRecTask](http://document.tencentcloudapi.woa.com/document/product/1093/37823)
+
+	* 新增入参：KeyWordLibIdList
+
+
+新增数据结构：
+
+* [KeyWordResult](http://document.tencentcloudapi.woa.com/document/product/1093/37824#KeyWordResult)
+
+修改数据结构：
+
+* [SentenceDetail](http://document.tencentcloudapi.woa.com/document/product/1093/37824#SentenceDetail)
+
+	* 新增成员：KeyWordResults
+
+
+
+
+## 商业智能分析 BI(bi) 版本：2022-01-05
+
+### 第 15 次发布
+
+发布时间：2024-08-30 01:08:04
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DatasourceInfo](http://document.tencentcloudapi.woa.com/document/product/1707/80324#DatasourceInfo)
+
+	* 新增成员：DbTypeName
+
+* [UserRoleListDataUserRoleInfo](http://document.tencentcloudapi.woa.com/document/product/1707/80324#UserRoleListDataUserRoleInfo)
+
+	* 新增成员：LoginSecurityStatus
+
+
+
+
+## 应用管理平台(camp) 版本：2022-09-20
+
+### 第 41 次发布
+
+发布时间：2024-08-30 01:09:09
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Pod](http://document.tencentcloudapi.woa.com/document/product/1609/78009#Pod)
+
+	* 新增成员：CurrentPodTemplateRevision, TargetPodTemplateRevision
+
+
+
+
+## 腾讯云数据仓库 TCHouse-D(cdwdoris) 版本：2021-12-28
+
+### 第 30 次发布
+
+发布时间：2024-08-30 01:10:31
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeInstanceOperationHistory](http://document.tencentcloudapi.woa.com/document/product/1706/84575)
+
+	* 新增入参：Message
+
+* [QueryTableData](http://document.tencentcloudapi.woa.com/document/product/1706/84570)
+
+	* 新增入参：CatalogName, InstanceId
+
+	* 新增出参：Message
+
+
+
+
+## 运维安全中心（堡垒机）(dasb) 版本：2019-10-18
+
+### 第 30 次发布
+
+发布时间：2024-08-30 01:14:26
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateResource](http://document.tencentcloudapi.woa.com/document/product/1492/82329)
+
+	* 新增入参：Trial
+
+
+
+
+## 弹性 MapReduce(emr) 版本：2019-01-03
+
+### 第 60 次发布
+
+发布时间：2024-08-30 01:16:53
 
 本次发布包含了以下内容：
 
@@ -12,27 +144,38 @@
 
 新增接口：
 
-* [DescribeInstanceUpgradeCheckJob](http://document.tencentcloudapi.woa.com/document/product/236/84756)
-* [SubmitInstanceUpgradeCheckJob](http://document.tencentcloudapi.woa.com/document/product/236/84755)
-
-修改接口：
-
-* [UpgradeDBInstanceEngineVersion](http://document.tencentcloudapi.woa.com/document/product/236/15870)
-
-	* 新增入参：IgnoreErrKeyword
+* [ModifyAutoRenewFlag](http://document.tencentcloudapi.woa.com/document/product/589/84772)
 
 
 
+## 消息队列 TDMQ(tdmq) 版本：2020-02-17
 
-## 负载均衡(clb) 版本：2023-04-17
+### 第 113 次发布
+
+发布时间：2024-08-30 01:27:01
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [ClientSubscriptionInfo](http://document.tencentcloudapi.woa.com/document/product/1179/46089#ClientSubscriptionInfo)
+
+修改数据结构：
+
+* [RocketMQSubscription](http://document.tencentcloudapi.woa.com/document/product/1179/46089#RocketMQSubscription)
+
+	* 新增成员：ClientSubscriptionInfos
 
 
 
-## 负载均衡(clb) 版本：2018-03-17
 
-### 第 70 次发布
+## 消息队列 RocketMQ 版(trocket) 版本：2023-03-08
 
-发布时间：2024-08-29 01:12:02
+### 第 20 次发布
+
+发布时间：2024-08-30 01:28:31
 
 本次发布包含了以下内容：
 
@@ -40,78 +183,48 @@
 
 修改数据结构：
 
-* [LoadBalancer](http://document.tencentcloudapi.woa.com/document/product/214/30694#LoadBalancer)
+* [ConsumeGroupItem](http://document.tencentcloudapi.woa.com/document/product/1739/81437#ConsumeGroupItem)
 
-	* 新增成员：Exclusive
-
-
-
-
-## 运维安全中心（堡垒机）(dasb) 版本：2019-10-18
-
-### 第 29 次发布
-
-发布时间：2024-08-29 01:15:15
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [BindDeviceResource](http://document.tencentcloudapi.woa.com/document/product/1492/74784)
-
-	* <font color="#dd0000">**修改入参**：</font>ResourceId
-
-
-修改数据结构：
-
-* [Resource](http://document.tencentcloudapi.woa.com/document/product/1492/74806#Resource)
-
-	* 新增成员：Trial
+	* 新增成员：ClusterIdV4, NamespaceV4, ConsumerGroupV4, FullNamespaceV4
 
 
 
 
-## 邮件推送(ses) 版本：2020-10-02
+## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
 
-### 第 23 次发布
+### 第 66 次发布
 
-发布时间：2024-08-29 01:25:54
+发布时间：2024-08-30 01:31:14
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改接口：
+新增接口：
 
-* [CreateReceiverDetailWithData](http://document.tencentcloudapi.woa.com/document/product/1288/70776)
+* [DescribeTablePartitions](http://document.tencentcloudapi.woa.com/document/product/1607/84773)
 
-	* 新增出参：TotalCount, ValidCount, TooLongCount, EmptyEmailCount, RepeatCount
+新增数据结构：
 
-* [ListReceiverDetails](http://document.tencentcloudapi.woa.com/document/product/1288/81910)
-
-	* 新增入参：CreateTimeBegin, CreateTimeEnd, Status
-
-	* 新增出参：ValidCount, InvalidCount
-
-
-修改数据结构：
-
-* [ReceiverData](http://document.tencentcloudapi.woa.com/document/product/1288/51053#ReceiverData)
-
-	* 新增成员：InvalidCount
-
-* [ReceiverDetail](http://document.tencentcloudapi.woa.com/document/product/1288/51053#ReceiverDetail)
-
-	* 新增成员：Reason, Status, EmailId
-
+* [TablePartition](http://document.tencentcloudapi.woa.com/document/product/1607/77747#TablePartition)
 
 
 
 # 历次版本更新如下：
 
 ## 活动防刷(aa) 版本：2020-02-24
+
+### 第 3 次发布
+
+发布时间：2024-08-30 01:06:49
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* QueryActivityAntiRush
 
 ### 第 2 次发布
 
@@ -5362,6 +5475,32 @@
 
 ## 语音识别(asr) 版本：2019-06-14
 
+### 第 24 次发布
+
+发布时间：2024-08-30 01:07:48
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateRecTask](http://document.tencentcloudapi.woa.com/document/product/1093/37823)
+
+	* 新增入参：KeyWordLibIdList
+
+
+新增数据结构：
+
+* [[KeyWordResult](http://document.tencentcloudapi.woa.com/document/product/1093/37824#KeyWordResult)](http://document.tencentcloudapi.woa.com/document/product/1093/37824#[KeyWordResult](http://document.tencentcloudapi.woa.com/document/product/1093/37824#KeyWordResult))
+
+修改数据结构：
+
+* [SentenceDetail](http://document.tencentcloudapi.woa.com/document/product/1093/37824#SentenceDetail)
+
+	* 新增成员：KeyWordResults
+
+
 ### 第 23 次发布
 
 发布时间：2024-06-27 01:09:01
@@ -6349,6 +6488,25 @@
 
 
 ## 商业智能分析 BI(bi) 版本：2022-01-05
+
+### 第 15 次发布
+
+发布时间：2024-08-30 01:08:04
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DatasourceInfo](http://document.tencentcloudapi.woa.com/document/product/1707/80324#DatasourceInfo)
+
+	* 新增成员：DbTypeName
+
+* [UserRoleListDataUserRoleInfo](http://document.tencentcloudapi.woa.com/document/product/1707/80324#UserRoleListDataUserRoleInfo)
+
+	* 新增成员：LoginSecurityStatus
+
 
 ### 第 14 次发布
 
@@ -9728,6 +9886,21 @@
 
 
 ## 应用管理平台(camp) 版本：2022-09-20
+
+### 第 41 次发布
+
+发布时间：2024-08-30 01:09:09
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Pod](http://document.tencentcloudapi.woa.com/document/product/1609/78009#Pod)
+
+	* 新增成员：CurrentPodTemplateRevision, TargetPodTemplateRevision
+
 
 ### 第 40 次发布
 
@@ -13472,8 +13645,8 @@
 
 新增接口：
 
-* [[DescribeInstanceUpgradeCheckJob](http://document.tencentcloudapi.woa.com/document/product/236/84756)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[SubmitInstanceUpgradeCheckJob](http://document.tencentcloudapi.woa.com/document/product/236/84755)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeInstanceUpgradeCheckJob](http://document.tencentcloudapi.woa.com/document/product/236/84756)
+* [SubmitInstanceUpgradeCheckJob](http://document.tencentcloudapi.woa.com/document/product/236/84755)
 
 修改接口：
 
@@ -17686,6 +17859,27 @@
 
 
 ## 腾讯云数据仓库 TCHouse-D(cdwdoris) 版本：2021-12-28
+
+### 第 30 次发布
+
+发布时间：2024-08-30 01:10:31
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeInstanceOperationHistory](http://document.tencentcloudapi.woa.com/document/product/1706/84575)
+
+	* 新增入参：Message
+
+* [QueryTableData](http://document.tencentcloudapi.woa.com/document/product/1706/84570)
+
+	* 新增入参：CatalogName, InstanceId
+
+	* 新增出参：Message
+
 
 ### 第 29 次发布
 
@@ -37215,6 +37409,21 @@
 
 ## 运维安全中心（堡垒机）(dasb) 版本：2019-10-18
 
+### 第 30 次发布
+
+发布时间：2024-08-30 01:14:26
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateResource](http://document.tencentcloudapi.woa.com/document/product/1492/82329)
+
+	* 新增入参：Trial
+
+
 ### 第 29 次发布
 
 发布时间：2024-08-29 01:15:15
@@ -42262,6 +42471,27 @@
 
 
 
+## 数据库管理(dmc) 版本：2023-09-01
+
+### 第 1 次发布
+
+发布时间：2024-08-29 11:36:59
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeJoinSpaces](http://document.tencentcloudapi.woa.com/document/product/1772/84759)
+
+新增数据结构：
+
+* [JoinSpace](http://document.tencentcloudapi.woa.com/document/product/1772/84760#JoinSpace)
+
+
+
+
 ## 邮件发送服务(dms) 版本：2020-08-19
 
 ### 第 2 次发布
@@ -46261,6 +46491,18 @@
 
 
 ## 弹性 MapReduce(emr) 版本：2019-01-03
+
+### 第 60 次发布
+
+发布时间：2024-08-30 01:16:53
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[ModifyAutoRenewFlag](http://document.tencentcloudapi.woa.com/document/product/589/84772)](http://document.tencentcloudapi.woa.com/document/product/#/#)
 
 ### 第 59 次发布
 
@@ -93013,6 +93255,25 @@
 
 ## 消息队列 TDMQ(tdmq) 版本：2020-02-17
 
+### 第 113 次发布
+
+发布时间：2024-08-30 01:27:01
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [[ClientSubscriptionInfo](http://document.tencentcloudapi.woa.com/document/product/1179/46089#ClientSubscriptionInfo)](http://document.tencentcloudapi.woa.com/document/product/1179/46089#[ClientSubscriptionInfo](http://document.tencentcloudapi.woa.com/document/product/1179/46089#ClientSubscriptionInfo))
+
+修改数据结构：
+
+* [RocketMQSubscription](http://document.tencentcloudapi.woa.com/document/product/1179/46089#RocketMQSubscription)
+
+	* 新增成员：ClientSubscriptionInfos
+
+
 ### 第 112 次发布
 
 发布时间：2024-08-28 01:35:09
@@ -102908,6 +103169,21 @@
 
 
 ## 消息队列 RocketMQ 版(trocket) 版本：2023-03-08
+
+### 第 20 次发布
+
+发布时间：2024-08-30 01:28:31
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ConsumeGroupItem](http://document.tencentcloudapi.woa.com/document/product/1739/81437#ConsumeGroupItem)
+
+	* 新增成员：ClusterIdV4, NamespaceV4, ConsumerGroupV4, FullNamespaceV4
+
 
 ### 第 19 次发布
 
@@ -117129,6 +117405,22 @@
 
 
 ## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
+
+### 第 66 次发布
+
+发布时间：2024-08-30 01:31:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeTablePartitions](http://document.tencentcloudapi.woa.com/document/product/1607/84773)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[TablePartition](http://document.tencentcloudapi.woa.com/document/product/1607/77747#TablePartition)](http://document.tencentcloudapi.woa.com/document/product/1607/77747#[TablePartition](http://document.tencentcloudapi.woa.com/document/product/1607/77747#TablePartition))
 
 ### 第 65 次发布
 

@@ -15,7 +15,7 @@
       "status": "online"
     },
     "DescribeArchSync": {
-      "document": "同步拉取架构详情(插件专用)，是否缓存由入参决定",
+      "document": "同步拉取架构详情(插件专用):\n* IsNeedResource：是否返回资源列表，false：只返回节点基本信息\n* Refresh：是否刷新缓存，true：刷新\n* IsNeedDetail: 是否返回资源详情，false: 只返回资源ID\nRefresh和IsNeedDetail参数只在IsNeedResource为true时才会生效，架构图最近一分钟未更新的情况下，缓存更新后5秒的请求都通过缓存获取",
       "input": "DescribeArchSyncRequest",
       "name": "同步获取架构图详情(插件专用)",
       "output": "DescribeArchSyncResponse",

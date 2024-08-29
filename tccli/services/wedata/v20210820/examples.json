@@ -1316,6 +1316,14 @@
         "title": "获取表元数据list"
       }
     ],
+    "DescribeTablePartitions": [
+      {
+        "document": "查询表的分区详情信息",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTablePartitions\n<公共请求参数>\n\n{\n    \"PageNumber\": 0,\n    \"TableId\": \"xx\",\n    \"PageSize\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"RequestId\": \"xx\",\n        \"TablePartitionSet\": [\n            {\n                \"ModifiedTime\": \"2020-09-22T00:00:00+00:00\",\n                \"RecordCount\": 0,\n                \"StorageSizeWithUnit\": \"xx\",\n                \"PartitionName\": \"xx\",\n                \"StorageSize\": \"xx\",\n                \"CreateTime\": \"2020-09-22T00:00:00+00:00\"\n            }\n        ]\n    }\n}",
+        "title": "查询表的分区详情信息"
+      }
+    ],
     "DescribeTableQualityDetails": [
       {
         "document": "分页查询表数据质量详情",

@@ -721,6 +721,15 @@
           "name": "HotwordList",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "关键词识别ID列表，默认空为不进行识别，最多10个\n",
+          "example": "无",
+          "member": "string",
+          "name": "KeyWordLibIdList",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1240,6 +1249,42 @@
       ],
       "usage": "both"
     },
+    "KeyWordResult": {
+      "document": "关键字识别结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "关键词库ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "abcdedfh",
+          "member": "string",
+          "name": "KeyWordLibID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "关键词库名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "测试词库",
+          "member": "string",
+          "name": "KeyWordLibName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "匹配到的关键词\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"冰淇淋\",\"月亮\",\"六便士\"]",
+          "member": "string",
+          "name": "KeyWords",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "Model": {
       "document": "[自学习模型信息](https://cloud.tencent.com/document/product/1093/90813#3.-.E8.BE.93.E5.87.BA.E5.8F.82.E6.95.B0)",
       "members": [
@@ -1546,6 +1591,16 @@
           "member": "string",
           "name": "EmotionType",
           "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "关键词识别结果列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[       {         \"KeyWordLibID\": \"abcdedfh\",         \"KeyWordLibName\": \"测试词库\",         \"KeyWords\": [\"冰淇淋\",\"月亮\",\"六便士\"]       }     ]",
+          "member": "KeyWordResult",
+          "name": "KeyWordResults",
+          "output_required": false,
           "type": "list",
           "value_allowed_null": true
         }

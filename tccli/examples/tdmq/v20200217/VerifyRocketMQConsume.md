@@ -6,19 +6,19 @@ Input:
 
 ```
 tccli tdmq VerifyRocketMQConsume --cli-unfold-argument  \
-    --NamespaceId xx \
-    --MsgId xx \
-    --ClusterId xx \
-    --GroupId xx \
-    --TopicName xx \
-    --ClientId xx
+    --NamespaceId test_ns \
+    --MsgId abc \
+    --ClusterId rocketmq-abc \
+    --GroupId test_group \
+    --TopicName test_topic \
+    --ClientId 1.1.1.1@abc
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

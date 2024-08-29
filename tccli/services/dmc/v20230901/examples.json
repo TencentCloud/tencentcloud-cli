@@ -1,0 +1,13 @@
+{
+  "actions": {
+    "DescribeJoinSpaces": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dmc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeJoinSpaces\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 100\n}",
+        "output": "{\n    \"Response\": {\n        \"JoinSpaceList\": [\n            {\n                \"Id\": 2,\n                \"AppId\": 1301792469,\n                \"Uin\": \"100013717858\",\n                \"SubAccountUin\": \"100034888414\",\n                \"SpaceId\": \"space-9z26466s\",\n                \"SpaceName\": \"默认\",\n                \"DefaultSpace\": true,\n                \"ResourceIds\": [\n                    \"dmc-rloi1wd2\",\n                    \"dmc-qpk4z8my\"\n                ],\n                \"CreatedAt\": \"2024-07-23 15:03:31\",\n                \"UpdatedAt\": \"2024-07-23 15:03:31\"\n            }\n        ],\n        \"RequestId\": \"3526f709-460a-4d9d-b632-53cabbf4df9f\"\n    }\n}",
+        "title": "查询跨库联查空间列表"
+      }
+    ]
+  },
+  "version": "1.0"
+}
