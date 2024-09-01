@@ -29,14 +29,14 @@
       "status": "online"
     },
     "DeleteDirectConnect": {
-      "document": "删除物理专线。\n只能删除处于已连接状态的物理专线。",
+      "document": "删除物理专线。只能删除处于已连接状态的物理专线。",
       "input": "DeleteDirectConnectRequest",
       "name": "删除物理专线",
       "output": "DeleteDirectConnectResponse",
       "status": "online"
     },
     "DeleteDirectConnectTunnel": {
-      "document": "删除专用通道",
+      "document": "删除专用通道。",
       "input": "DeleteDirectConnectTunnelRequest",
       "name": "删除专用通道",
       "output": "DeleteDirectConnectTunnelResponse",
@@ -120,7 +120,7 @@
       "status": "online"
     },
     "ModifyDirectConnectTunnelAttribute": {
-      "document": "修改专用通道属性",
+      "document": "修改专用通道属性。",
       "input": "ModifyDirectConnectTunnelAttributeRequest",
       "name": "修改专用通道属性",
       "output": "ModifyDirectConnectTunnelAttributeResponse",
@@ -614,6 +614,15 @@
           "name": "SignLaw",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "标签键值对",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -627,6 +636,7 @@
           "example": "[\"dc-abcdefgh\"]",
           "member": "string",
           "name": "DirectConnectIdSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -671,7 +681,7 @@
         },
         {
           "disabled": false,
-          "document": "网络类型，枚举：VPC、BMVPC、CCN；默认为VPC。VPC：私有网络；BMVPC：黑石网络；CCN：云联网）。",
+          "document": "网络类型，枚举：VPC、CCN、NAT；默认为VPC。VPC：私有网络；CCN：云联网；NAT：NAT网络）。",
           "example": "VPC",
           "member": "string",
           "name": "NetworkType",
@@ -689,7 +699,7 @@
         },
         {
           "disabled": false,
-          "document": "私有网络统一ID或黑石网络统一ID。",
+          "document": "私有网络统一ID，在NetworkType为VPC时必填，且与专线网关所属的VPCID一致；NetworkType为其它组网类型时可不填，内部会统一处理。",
           "example": "vpc-abcdefgh",
           "member": "string",
           "name": "VpcId",
@@ -821,6 +831,15 @@
           "name": "NqaInfo",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "标签键值对",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -853,7 +872,7 @@
         {
           "disabled": false,
           "document": "物理专线的ID。",
-          "example": "",
+          "example": "dc-xxxxxxxx",
           "member": "string",
           "name": "DirectConnectId",
           "required": true,
@@ -879,8 +898,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "专用通道ID",
-          "example": "",
+          "document": "专用通道ID。",
+          "example": "dcx-xxxxxxxx",
           "member": "string",
           "name": "DirectConnectTunnelId",
           "required": true,
@@ -1079,8 +1098,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "过滤条件:",
-          "example": "",
+          "document": "过滤条件。",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -1088,8 +1107,8 @@
         },
         {
           "disabled": false,
-          "document": "物理专线 ID数组",
-          "example": "",
+          "document": "物理专线 ID数组。",
+          "example": "无",
           "member": "string",
           "name": "DirectConnectIds",
           "required": false,
@@ -1097,8 +1116,8 @@
         },
         {
           "disabled": false,
-          "document": "偏移量，默认为0",
-          "example": "",
+          "document": "偏移量，默认为0。",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -1106,8 +1125,8 @@
         },
         {
           "disabled": false,
-          "document": "返回数量，默认为20，最大值为100",
-          "example": "",
+          "document": "返回数量，默认为20，最大值为100。",
+          "example": "100",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -1122,27 +1141,30 @@
         {
           "disabled": false,
           "document": "物理专线列表。",
-          "example": "",
+          "example": "无",
           "member": "DirectConnect",
           "name": "DirectConnectSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "符合物理专线列表数量。",
-          "example": "",
+          "example": "100",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "用户名下物理专线是否都签署了用户协议\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "用户名下物理专线是否都签署了用户协议。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
           "member": "bool",
           "name": "AllSignLaw",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -1403,7 +1425,7 @@
           "example": "dc-psjiehij",
           "member": "string",
           "name": "DirectConnectId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1413,7 +1435,7 @@
           "example": "test",
           "member": "string",
           "name": "DirectConnectName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1423,7 +1445,7 @@
           "example": "ap-beijing-c-jxq",
           "member": "string",
           "name": "AccessPointId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1433,7 +1455,7 @@
           "example": "PENDINGPAY",
           "member": "string",
           "name": "State",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1443,7 +1465,7 @@
           "example": "2020-12-08 16:57:43",
           "member": "datetime_iso",
           "name": "CreatedTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1453,7 +1475,7 @@
           "example": "2021-01-06 10:39:41",
           "member": "datetime_iso",
           "name": "EnabledTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1463,7 +1485,7 @@
           "example": "In-houseWiring",
           "member": "string",
           "name": "LineOperator",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1473,7 +1495,7 @@
           "example": "test",
           "member": "string",
           "name": "Location",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1483,7 +1505,7 @@
           "example": "1000",
           "member": "int64",
           "name": "Bandwidth",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1493,7 +1515,7 @@
           "example": "1000Base-LX",
           "member": "string",
           "name": "PortType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1503,7 +1525,7 @@
           "example": "1111",
           "member": "string",
           "name": "CircuitCode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1513,7 +1535,7 @@
           "example": "dc-1234",
           "member": "string",
           "name": "RedundantDirectConnectId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1523,7 +1545,7 @@
           "example": "100",
           "member": "int64",
           "name": "Vlan",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1533,7 +1555,7 @@
           "example": "192.168.1.2",
           "member": "string",
           "name": "TencentAddress",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1543,7 +1565,7 @@
           "example": "192.168.1.1",
           "member": "string",
           "name": "CustomerAddress",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1553,7 +1575,7 @@
           "example": "test",
           "member": "string",
           "name": "CustomerName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1563,7 +1585,7 @@
           "example": "274907341@qq.com",
           "member": "string",
           "name": "CustomerContactMail",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1573,7 +1595,7 @@
           "example": "15802738654",
           "member": "string",
           "name": "CustomerContactNumber",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1583,7 +1605,7 @@
           "example": "2040-01-06 10:39:41",
           "member": "datetime_iso",
           "name": "ExpiredTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1593,7 +1615,7 @@
           "example": "NON_RECURRING_CHARGE",
           "member": "string",
           "name": "ChargeType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1603,7 +1625,7 @@
           "example": "test",
           "member": "string",
           "name": "FaultReportContactPerson",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1613,7 +1635,7 @@
           "example": "15802738654",
           "member": "string",
           "name": "FaultReportContactNumber",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1623,7 +1645,7 @@
           "example": "\"\"",
           "member": "Tag",
           "name": "TagSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1633,7 +1655,7 @@
           "example": "VXLAN",
           "member": "string",
           "name": "AccessPointType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1643,7 +1665,7 @@
           "example": "成都",
           "member": "string",
           "name": "IdcCity",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1653,7 +1675,7 @@
           "example": "NORMAL",
           "member": "string",
           "name": "ChargeState",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1663,7 +1685,7 @@
           "example": "2020-12-08 16:57:43",
           "member": "string",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1673,7 +1695,7 @@
           "example": "true",
           "member": "bool",
           "name": "SignLaw",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -1683,7 +1705,7 @@
           "example": "false",
           "member": "bool",
           "name": "LocalZone",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -1693,7 +1715,7 @@
           "example": "0",
           "member": "uint64",
           "name": "VlanZeroDirectConnectTunnelCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1703,7 +1725,7 @@
           "example": "0",
           "member": "uint64",
           "name": "OtherVlanDirectConnectTunnelCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1713,8 +1735,28 @@
           "example": "1000",
           "member": "uint64",
           "name": "MinBandwidth",
-          "required": true,
+          "output_required": true,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "建设模式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Construct",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "物理专线的接入点名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "广州-A-开源路",
+          "member": "string",
+          "name": "AccessPointName",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -2745,7 +2787,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "物理专线的ID。",
+          "document": "物理专线ID。",
           "example": "dcx-abcdefgh",
           "member": "string",
           "name": "DirectConnectId",
@@ -2844,7 +2886,7 @@
         },
         {
           "disabled": false,
-          "document": "物理专线申请者补签用户使用协议",
+          "document": "物理专线申请者补签用户使用协议。",
           "example": "true",
           "member": "bool",
           "name": "SignLaw",
@@ -2853,7 +2895,7 @@
         },
         {
           "disabled": false,
-          "document": "物理专线带宽",
+          "document": "物理专线带宽。",
           "example": "1000",
           "member": "uint64",
           "name": "Bandwidth",
@@ -2880,8 +2922,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "专用通道ID",
-          "example": "",
+          "document": "专用通道ID。",
+          "example": "dcx-xxxxxxxx",
           "member": "string",
           "name": "DirectConnectTunnelId",
           "required": true,
@@ -2889,8 +2931,8 @@
         },
         {
           "disabled": false,
-          "document": "专用通道名称",
-          "example": "",
+          "document": "专用通道名称。",
+          "example": "通道名称",
           "member": "string",
           "name": "DirectConnectTunnelName",
           "required": false,
@@ -2898,8 +2940,8 @@
         },
         {
           "disabled": false,
-          "document": "用户侧BGP，包括Asn，AuthKey",
-          "example": "",
+          "document": "用户侧BGP，包括Asn，AuthKey。",
+          "example": "无",
           "member": "BgpPeer",
           "name": "BgpPeer",
           "required": false,
@@ -2907,8 +2949,8 @@
         },
         {
           "disabled": false,
-          "document": "用户侧网段地址",
-          "example": "",
+          "document": "用户侧网段地址。",
+          "example": "无",
           "member": "RouteFilterPrefix",
           "name": "RouteFilterPrefixes",
           "required": false,
@@ -2916,8 +2958,8 @@
         },
         {
           "disabled": false,
-          "document": "腾讯侧互联IP",
-          "example": "",
+          "document": "腾讯侧互联IP。",
+          "example": "无",
           "member": "string",
           "name": "TencentAddress",
           "required": false,
@@ -2925,8 +2967,8 @@
         },
         {
           "disabled": false,
-          "document": "用户侧互联IP",
-          "example": "",
+          "document": "用户侧互联IP。",
+          "example": "无",
           "member": "string",
           "name": "CustomerAddress",
           "required": false,
@@ -2935,7 +2977,7 @@
         {
           "disabled": false,
           "document": "专用通道带宽值，单位为M。",
-          "example": "",
+          "example": "100",
           "member": "int64",
           "name": "Bandwidth",
           "required": false,
@@ -2943,8 +2985,8 @@
         },
         {
           "disabled": false,
-          "document": "腾讯侧备用互联IP",
-          "example": "",
+          "document": "腾讯侧备用互联IP。",
+          "example": "无",
           "member": "string",
           "name": "TencentBackupAddress",
           "required": false,
@@ -3267,9 +3309,10 @@
         {
           "disabled": false,
           "document": "标签键\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Key",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -3277,15 +3320,16 @@
         {
           "disabled": false,
           "document": "标签值\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Value",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
         }
       ],
-      "usage": "out"
+      "usage": "both"
     }
   },
   "version": "1.0"

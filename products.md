@@ -18,7 +18,7 @@
 | apigateway | [API 网关](http://document.tencentcloudapi.woa.com/document/product/628) | 2024-08-28 01:07:55 |
 | apm | [应用性能监控](http://document.tencentcloudapi.woa.com/document/product/1463) | 2024-07-31 01:07:53 |
 | as | [弹性伸缩](http://document.tencentcloudapi.woa.com/document/product/377) | 2024-08-28 01:08:17 |
-| asr | [语音识别](http://document.tencentcloudapi.woa.com/document/product/1093) | 2024-08-30 01:07:48 |
+| asr | [语音识别](http://document.tencentcloudapi.woa.com/document/product/1093) | 2024-09-02 01:07:40 |
 | asw | [应用与服务编排工作流](http://document.tencentcloudapi.woa.com/document/product/1272) | 2024-03-20 01:07:56 |
 | ba | [ICP备案](http://document.tencentcloudapi.woa.com/document/product/243) | 2024-04-23 01:08:12 |
 | batch | [批量计算](http://document.tencentcloudapi.woa.com/document/product/599) | 2024-08-29 01:08:08 |
@@ -49,7 +49,7 @@
 | cdn | [内容分发网络 CDN](http://document.tencentcloudapi.woa.com/document/product/228) | 2024-07-26 01:10:07 |
 | cds | [T-Sec-数据安全审计（DSA）](http://document.tencentcloudapi.woa.com/document/product/856) | 2024-06-18 01:10:03 |
 | cdwch | [腾讯云数据仓库TCHouse-C](http://document.tencentcloudapi.woa.com/document/product/1299) | 2024-07-24 01:10:13 |
-| cdwdoris | [腾讯云数据仓库 TCHouse-D](http://document.tencentcloudapi.woa.com/document/product/1387) | 2024-08-30 01:10:31 |
+| cdwdoris | [腾讯云数据仓库 TCHouse-D](http://document.tencentcloudapi.woa.com/document/product/1387) | 2024-09-02 01:10:25 |
 | cdz | [专属可用区](http://document.tencentcloudapi.woa.com/document/product/1629) | 2024-08-28 01:11:53 |
 | cem | [商机生命周期管理平台](http://document.tencentcloudapi.woa.com/document/product/-1) | 2024-03-20 01:10:57 |
 | cetcd | [云原生 ETCD](http://document.tencentcloudapi.woa.com/document/product/) | 2022-08-30 11:15:23 |
@@ -59,7 +59,7 @@
 | chdfs | [云 HDFS](http://document.tencentcloudapi.woa.com/document/product/1105) | 2024-03-20 01:11:26 |
 | ciam | [账号风控平台](http://document.tencentcloudapi.woa.com/document/product/1441) | 2024-06-17 01:10:21 |
 | cii | [智能保险助手](http://document.tencentcloudapi.woa.com/document/product/1368) | 2024-03-20 01:11:32 |
-| ckafka | [消息队列 CKafka 版](http://document.tencentcloudapi.woa.com/document/product/597) | 2024-08-28 01:12:36 |
+| ckafka | [消息队列 CKafka 版](http://document.tencentcloudapi.woa.com/document/product/597) | 2024-09-02 01:11:14 |
 | clb | [负载均衡](http://document.tencentcloudapi.woa.com/document/product/214) | 2024-08-28 01:13:17 |
 | cloudapp | [云应用](http://document.tencentcloudapi.woa.com/document/product/1689) | 2024-07-19 01:11:11 |
 | cloudaudit | [操作审计](http://document.tencentcloudapi.woa.com/document/product/629) | 2024-05-09 01:11:29 |
@@ -87,7 +87,7 @@
 | dbbrain | [数据库智能管家 DBbrain](http://document.tencentcloudapi.woa.com/document/product/1130) | 2024-08-28 01:17:18 |
 | dbdc | [云数据库独享集群](http://document.tencentcloudapi.woa.com/document/product/1322) | 2024-07-08 01:14:13 |
 | dbs | [数据库备份服务](http://document.tencentcloudapi.woa.com/document/product/1513) | 2024-08-28 01:17:32 |
-| dc | [专线接入](http://document.tencentcloudapi.woa.com/document/product/216) | 2024-07-15 01:42:12 |
+| dc | [专线接入](http://document.tencentcloudapi.woa.com/document/product/216) | 2024-09-02 01:15:19 |
 | dcdb | [TDSQL MySQL 版](http://document.tencentcloudapi.woa.com/document/product/557) | 2024-08-28 01:17:38 |
 | dlc | [数据湖计算 DLC](http://document.tencentcloudapi.woa.com/document/product/1342) | 2024-08-28 01:17:51 |
 | dmc | [数据库管理](http://document.tencentcloudapi.woa.com/document/product/1222) | 2024-08-29 11:36:59 |
@@ -147,7 +147,7 @@
 | iottid | [物联网设备身份认证](http://document.tencentcloudapi.woa.com/document/product/1086) | 2023-07-11 11:18:22 |
 | iotvideo | [物联网智能视频服务](http://document.tencentcloudapi.woa.com/document/product/1131) | 2024-07-08 01:18:14 |
 | iotvideoindustry | [物联网智能视频服务（行业版）](http://document.tencentcloudapi.woa.com/document/product/1361) | 2024-03-20 01:19:25 |
-| iss | [智能视图计算平台](http://document.tencentcloudapi.woa.com/document/product/1344) | 2024-08-15 01:22:23 |
+| iss | [智能视图计算平台](http://document.tencentcloudapi.woa.com/document/product/1344) | 2024-09-02 01:20:35 |
 | ivld | [媒体智能标签](http://document.tencentcloudapi.woa.com/document/product/1509) | 2024-07-10 01:18:41 |
 | keewidb | [云数据库 KeeWiDB](http://document.tencentcloudapi.woa.com/document/product/1520) | 2024-03-20 01:19:49 |
 | kms | [密钥管理系统](http://document.tencentcloudapi.woa.com/document/product/573) | 2024-04-17 01:19:50 |
@@ -200,7 +200,7 @@
 | rp | [注册保护](http://document.tencentcloudapi.woa.com/document/product/1191) | 2022-03-08 08:03:09 |
 | rum | [前端性能监控](http://document.tencentcloudapi.woa.com/document/product/1464) | 2024-08-23 01:25:44 |
 | sag | [应用级智能网关](http://document.tencentcloudapi.woa.com/document/product/1075) | 2024-03-20 01:23:14 |
-| scf | [云函数](http://document.tencentcloudapi.woa.com/document/product/583) | 2024-08-29 01:25:06 |
+| scf | [云函数](http://document.tencentcloudapi.woa.com/document/product/583) | 2024-09-02 01:24:31 |
 | ses | [邮件推送](http://document.tencentcloudapi.woa.com/document/product/1288) | 2024-08-29 01:25:54 |
 | smh | [智能媒资托管](http://document.tencentcloudapi.woa.com/document/product/1339) | 2024-08-12 01:22:16 |
 | smop | [腾讯安心用户运营平台](http://document.tencentcloudapi.woa.com/document/product/1310) | 2024-04-11 16:03:02 |
@@ -240,7 +240,7 @@
 | tdapg | [TDSQL-A PostgreSQL 版](http://document.tencentcloudapi.woa.com/document/product/) | 2023-08-17 02:59:23 |
 | tdcpg | [TDSQL-C PostgreSQL 版](http://document.tencentcloudapi.woa.com/document/product/1556) | 2024-07-10 01:24:10 |
 | tdid | [分布式身份](http://document.tencentcloudapi.woa.com/document/product/1439) | 2023-07-24 01:44:15 |
-| tdmq | [消息队列 TDMQ](http://document.tencentcloudapi.woa.com/document/product/1179) | 2024-08-30 01:27:01 |
+| tdmq | [消息队列 TDMQ](http://document.tencentcloudapi.woa.com/document/product/1179) | 2024-09-02 01:27:45 |
 | tds | [设备安全](http://document.tencentcloudapi.woa.com/document/product/1628) | 2024-08-07 01:25:46 |
 | tem | [弹性微服务](http://document.tencentcloudapi.woa.com/document/product/1371) | 2024-07-24 01:24:31 |
 | teo | [边缘安全加速平台](http://document.tencentcloudapi.woa.com/document/product/1552) | 2024-08-23 01:29:52 |

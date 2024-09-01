@@ -8,6 +8,14 @@
         "title": "语音流异步识别任务关闭"
       }
     ],
+    "CreateAsrKeyWordLib": [
+      {
+        "document": "用户通过上传文件方式创建关键词表",
+        "input": "https://asr.tencentcloudapi.com/?Action=CreateAsrKeyWordLib\n&Name=词表名称& KeyWordFile=<文件base64>\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"KeyWordLibId\": \"aa6f402f263f12ea856fc81fbecfd0sd\"\n        },\n        \"RequestId\": \"b3808ad3-d8dd-4b65-96c9-7d6f1f81b6b6\"\n    }\n}",
+        "title": "创建关键词表"
+      }
+    ],
     "CreateAsrVocab": [
       {
         "document": "用户通过上传词权重数组方式创建热词表",
@@ -44,6 +52,14 @@
         "input": "POST / HTTP/1.1\nHost: asr.tencentcloudapi.com\nContent-Type: application/json; charset=utf-8\nX-TC-Version: 2019-06-14\nX-TC-Region: ap-shanghai\nX-TC-Action: CreateRecTask\nX-TC-Timestamp: 1599142560\nAuthorization: TC3-HMAC-SHA256 Credential=AKIDYu6A16GdCxUlnbTSVItxvhOr6B2xxxxx/2020-09-03/asr/tc3_request, SignedHeaders=content-type;host, Signature=524ed61a4a71de417f4fa41249dcb428a0c51013890f24f3492068ca7cd16953\n<公共请求参数>\n\n{\n    \"ChannelNum\": 1,\n    \"EngineModelType\": \"16k_zh\",\n    \"ResTextFormat\": 0,\n    \"Data\": \"eGNmYXNkZmFzZmFzZGZhc2RmCg==\",\n    \"SourceType\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\",\n        \"Data\": {\n            \"TaskId\": 1396665\n        }\n    }\n}",
         "title": "通过音频数据来调用接口"
+      }
+    ],
+    "DeleteAsrKeyWordLib": [
+      {
+        "document": "用户通过该API，传入词表ID，可以删除对应的关键词表",
+        "input": "https://asr.tencentcloudapi.com/?Action=DeleteAsrKeyWordLib\n&KeyWordLibId=aa6f402f263f12ea856fc81fbecfd0sd\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7eccebcb-2d60-4cee-8fa8-7f8001a71ab2\"\n    }\n}",
+        "title": "删除关键词表"
       }
     ],
     "DeleteAsrVocab": [
@@ -110,6 +126,14 @@
         "input": "https://asr.tencentcloudapi.com/?Action=DownloadCustomization\n&ModelId=bc4a37d9f18511ea9a1ec81fbecfd0bd\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"864d6a32-3b1c-462d-b019-ebdd65b3a644\",\n        \"DownloadUrl\": \"https://customization-download-temp-1256237915.cos.ap-guangzhou.myqcloud.com/bc4a37d9f18511ea9a1ec81fbecfd0bd_0.dict\"\n    }\n}",
         "title": "下载自学习模型"
+      }
+    ],
+    "GetAsrKeyWordLibList": [
+      {
+        "document": "用户通过该接口，可获得所有的关键词表及其信息。",
+        "input": "https://asr.tencentcloudapi.com/?Action=GetAsrKeyWordLibList\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"KeyWordLibList\": [\n                {\n                    \"KeyWordLibId\": \"aa6f402f263f12ea856fc81fbecfd0sd\",\n                    \"Name\": \"示例词表\",\n                    \"KeyWordList\": [\n                        \"避风港\"\n                    ],\n                    \"CreateTime\": \"2024-08-24T13:28:48+00:00\",\n                    \"UpdateTime\": \"2024-08-24T13:28:48+00:00\"\n                }\n            ],\n            \"TotalCount\": 1\n        },\n        \"RequestId\": \"b3808ad3-d8dd-4b65-96c9-7d6f1f81b6b6\"\n    }\n}",
+        "title": "列举关键词表"
       }
     ],
     "GetAsrVocab": [
@@ -180,6 +204,14 @@
         "input": "https://asr.tencentcloudapi.com/?Action=SetVocabState\n&VocabId=aa6f402f263f12ea856fc81fbecfd0sd\n&State=1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"VocabId\": \"aa6f402f263f12ea856fc81fbecfd0sd\",\n        \"RequestId\": \"9910af1f-d479-4cb5-a303-b0a4c1c03137\"\n    }\n}",
         "title": "设置热词表状态"
+      }
+    ],
+    "UpdateAsrKeyWordLib": [
+      {
+        "document": "用户通过该API传入已经创建的关键词表ID，可以更新其相应的内容",
+        "input": "https://asr.tencentcloudapi.com/?Action=UpdateAsrKeyWordLibId\n&KeyWordLibId=aa6f402f263f12ea856fc81fbecfd0sd\n&Name=新的词表名称\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"KeyWordLibId\": \"aa6f402f263f12ea856fc81fbecfd0sd\"\n        },\n        \"RequestId\": \"3290cfb2-91a7-4989-91de-d1d624a77c12\"\n    }\n}",
+        "title": "更新关键词表"
       }
     ],
     "UpdateAsrVocab": [

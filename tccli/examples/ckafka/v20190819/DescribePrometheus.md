@@ -15,10 +15,15 @@ Output:
     "Response": {
         "Result": [
             {
-                "Type": "xx"
+                "Type": "abc",
+                "SourceIp": "abc",
+                "SourcePort": 0,
+                "BrokerIp": "abc",
+                "VpcId": "abc",
+                "SubnetId": "abc"
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

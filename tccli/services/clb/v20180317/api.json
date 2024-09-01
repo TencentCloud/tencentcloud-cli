@@ -3284,6 +3284,15 @@
           "name": "SnatEnable",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "全端口段监听器的结束端口",
+          "example": "[600]",
+          "member": "int64",
+          "name": "FullEndPorts",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

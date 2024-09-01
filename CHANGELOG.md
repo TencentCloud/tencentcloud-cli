@@ -1,3 +1,162 @@
+# Release 3.0.1066.1
+
+## 语音识别(asr) 版本：2019-06-14
+
+### 第 25 次发布
+
+发布时间：2024-09-02 01:07:40
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateAsrKeyWordLib](http://document.tencentcloudapi.woa.com/document/product/1093/84778)
+* [DeleteAsrKeyWordLib](http://document.tencentcloudapi.woa.com/document/product/1093/84777)
+* [GetAsrKeyWordLibList](http://document.tencentcloudapi.woa.com/document/product/1093/84776)
+* [UpdateAsrKeyWordLib](http://document.tencentcloudapi.woa.com/document/product/1093/84775)
+
+新增数据结构：
+
+* [KeyWordLib](http://document.tencentcloudapi.woa.com/document/product/1093/37824#KeyWordLib)
+* [KeyWordLibIdData](http://document.tencentcloudapi.woa.com/document/product/1093/37824#KeyWordLibIdData)
+* [KeyWordLibListData](http://document.tencentcloudapi.woa.com/document/product/1093/37824#KeyWordLibListData)
+
+
+
+## 腾讯云数据仓库 TCHouse-D(cdwdoris) 版本：2021-12-28
+
+### 第 31 次发布
+
+发布时间：2024-09-02 01:10:25
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeSqlApis](http://document.tencentcloudapi.woa.com/document/product/1706/84359)
+
+	* 新增入参：InstanceId, ApiType, UserName
+
+	* 新增出参：ReturnData, ErrorMsg
+
+* [ExecuteParametrizedQuery](http://document.tencentcloudapi.woa.com/document/product/1706/84572)
+
+	* 新增入参：CatalogName, InstanceId
+
+	* 新增出参：Message
+
+* [ExecuteSelectQuery](http://document.tencentcloudapi.woa.com/document/product/1706/84571)
+
+	* 新增入参：CatalogName, InstanceId
+
+	* 新增出参：Message
+
+
+
+
+## 消息队列 CKafka 版(ckafka) 版本：2019-08-19
+
+### 第 88 次发布
+
+发布时间：2024-09-02 01:11:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateInstancePost](http://document.tencentcloudapi.woa.com/document/product/597/76750)
+
+	* 新增入参：Tags
+
+* [CreatePostPaidInstance](http://document.tencentcloudapi.woa.com/document/product/597/78116)
+
+	* 新增入参：Tags
+
+* [DeleteRouteTriggerTime](http://document.tencentcloudapi.woa.com/document/product/597/60878)
+
+	* 新增入参：InstanceId
+
+
+
+
+## 负载均衡(clb) 版本：2023-04-17
+
+
+
+## 负载均衡(clb) 版本：2018-03-17
+
+### 第 71 次发布
+
+发布时间：2024-09-02 01:11:49
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateListener](http://document.tencentcloudapi.woa.com/document/product/214/30693)
+
+	* 新增入参：FullEndPorts
+
+
+
+
+## 专线接入(dc) 版本：2018-04-10
+
+### 第 6 次发布
+
+发布时间：2024-09-02 01:15:19
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateDirectConnect](http://document.tencentcloudapi.woa.com/document/product/216/34829)
+
+	* 新增入参：Tags
+
+* [CreateDirectConnectTunnel](http://document.tencentcloudapi.woa.com/document/product/216/19821)
+
+	* 新增入参：Tags
+
+
+修改数据结构：
+
+* [DirectConnect](http://document.tencentcloudapi.woa.com/document/product/216/18418#DirectConnect)
+
+	* 新增成员：Construct, AccessPointName
+
+
+
+
+## 智能视图计算平台(iss) 版本：2023-05-17
+
+### 第 19 次发布
+
+发布时间：2024-09-02 01:20:35
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeVideoDownloadUrl](http://document.tencentcloudapi.woa.com/document/product/1740/81552)
+
+	* 新增入参：Expires, IsSupportG711
+
+
+
+
 # Release 3.0.1065.1
 
 ## 活动防刷(aa) 版本：2020-02-24

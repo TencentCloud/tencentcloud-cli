@@ -6559,7 +6559,7 @@
         {
           "disabled": false,
           "document": "根据QueueName进行过滤",
-          "example": "无",
+          "example": "testqueue",
           "member": "string",
           "name": "QueueName",
           "required": false,
@@ -6586,7 +6586,7 @@
         {
           "disabled": false,
           "document": "过滤器。目前支持按标签过滤，标签的Name需要加前缀“tag:”，例如：tag:负责人、tag:环境、tag:业务",
-          "example": "无",
+          "example": "[{\"Name\":\"tag:aa\",\"Values\":[\"bb\"]}]",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -6622,17 +6622,17 @@
           "example": "2",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "队列列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[{\"QueueId\":\"cmqq-bzgqn83n\",\"QueueName\":\"test0829\",\"Qps\":5000,\"Bps\":52428800,\"MaxDelaySeconds\":3600,\"MaxMsgHeapNum\":1000000,\"PollingWaitSeconds\":3,\"MsgRetentionSeconds\":7200,\"VisibilityTimeout\":30,\"MaxMsgSize\":1048576,\"RewindSeconds\":0,\"RetentionSizeInMB\":0,\"CreateTime\":1724918937000,\"LastModifyTime\":1724924966000,\"ActiveMsgNum\":0,\"InactiveMsgNum\":0,\"DelayMsgNum\":null,\"RewindMsgNum\":null,\"MinMsgTime\":null,\"MaxUnackedMsgNum\":100000,\"DeadLetterPolicy\":{\"DeadLetterQueue\":\"rmqbroker-nj\",\"Policy\":0,\"MaxTimeToLive\":0,\"MaxReceiveCount\":22},\"DeadLetterSource\":null,\"Transaction\":null,\"TransactionPolicy\":null,\"CreateUin\":null,\"Trace\":null,\"Tags\":null,\"TenantId\":\"cmq-131794\",\"NamespaceName\":\"CMQ_QUEUE-test0829\",\"Status\":1,\"MaxMsgBacklogSize\":10737418240,\"BrokerType\":1,\"SetType\":\"SHARED\",\"InstanceId\":null}]",
           "member": "CmqQueue",
           "name": "QueueList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -6798,7 +6798,7 @@
         {
           "disabled": false,
           "document": "根据TopicName进行模糊搜索",
-          "example": "无",
+          "example": "topic",
           "member": "string",
           "name": "TopicName",
           "required": false,
@@ -6825,7 +6825,7 @@
         {
           "disabled": false,
           "document": "过滤器。目前支持按标签过滤，标签的Name需要加前缀“tag:”，例如：tag:负责人、tag:环境、tag:业务",
-          "example": "无",
+          "example": "[{\"Name\":\"tag:aa\",\"Values\":[\"bb\"]}]",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -6858,10 +6858,10 @@
         {
           "disabled": false,
           "document": "主题列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[{\"TopicId\":\"cmqt-w4nb4z27w111\",\"TopicName\":\"rtopic\",\"MaxMsgSize\":1048576,\"FilterType\":1,\"MsgRetentionSeconds\":86400,\"Qps\":5000,\"CreateTime\":1692691276000,\"LastModifyTime\":1692691276000,\"MsgCount\":0,\"CreateUin\":null,\"Trace\":null,\"Tags\":null,\"TenantId\":\"cmq-1317947242\",\"NamespaceName\":\"CMQ_TOPIC-rtopic\",\"Status\":1,\"BrokerType\":1,\"SetType\":\"SHARED\",\"InstanceId\":null,\"SubscriptionCount\":1}]",
           "member": "CmqTopic",
           "name": "TopicList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -6871,7 +6871,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },

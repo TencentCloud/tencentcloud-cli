@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli ckafka SendMessageByTopic --cli-unfold-argument  \
-    --InstanceId xx \
-    --Message xx \
-    --Partition 0 \
-    --TopicName xx \
-    --Key xx
+    --InstanceId abc \
+    --TopicName abc \
+    --Message abc \
+    --Key abc \
+    --Partition 0
 ```
 
 Output: 
@@ -18,13 +18,16 @@ Output:
 {
     "Response": {
         "Result": {
-            "ReturnMessage": "xx",
-            "ReturnCode": "xx",
+            "ReturnCode": "abc",
+            "ReturnMessage": "abc",
             "Data": {
-                "FlowId": 0
+                "FlowId": 0,
+                "RouteDTO": {
+                    "RouteId": 0
+                }
             }
         },
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

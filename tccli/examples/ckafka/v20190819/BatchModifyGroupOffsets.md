@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli ckafka BatchModifyGroupOffsets --cli-unfold-argument  \
-    --InstanceId xx \
-    --GroupName xx \
-    --TopicName xx \
+    --GroupName abc \
+    --TopicName abc \
+    --InstanceId abc \
     --Partitions.0.Partition 0 \
     --Partitions.0.Offset 0
 ```
@@ -18,11 +18,16 @@ Output:
 {
     "Response": {
         "Result": {
-            "ReturnCode": "0",
-            "ReturnMessage": "ok",
-            "Data": "ok"
+            "ReturnCode": "abc",
+            "ReturnMessage": "abc",
+            "Data": {
+                "FlowId": 0,
+                "RouteDTO": {
+                    "RouteId": 0
+                }
+            }
         },
-        "RequestId": "ae362db8-81f6-4441-b0cc-1f6ffa31127e"
+        "RequestId": "abc"
     }
 }
 ```
