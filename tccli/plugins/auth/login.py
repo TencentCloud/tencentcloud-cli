@@ -15,6 +15,7 @@ _APP_ID = 700001249938
 _AUTH_URL = "https://cloud.tencent.com/open/authorize"
 _REDIRECT_URL = "https://cli.cloud.tencent.com/oauth"
 _SITE = "cn"
+_DEFAULT_LANG = "zh-CN"
 
 _START_SEARCH_PORT = 9000
 _END_SEARCH_PORT = _START_SEARCH_PORT + 100
@@ -28,7 +29,7 @@ def print_message(msg):
 def login_command_entrypoint(args, parsed_globals):
     language = parsed_globals.get("language")
     if not language:
-        language = "zh-CN"
+        language = _DEFAULT_LANG
     texts.set_lang(language)
 
     profile = parsed_globals.get("profile", "default")
