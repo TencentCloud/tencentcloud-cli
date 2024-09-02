@@ -41,7 +41,9 @@ Output:
         "LanguageResults": [],
         "SpeakerResults": [],
         "RecognitionResults": [],
-        "Duration": "15000"
+        "Duration": "15000",
+        "HitFlag": 0,
+        "Score": 0
     }
 }
 ```

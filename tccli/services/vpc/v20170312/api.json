@@ -13088,6 +13088,15 @@
           "name": "SslVpnClientNames",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "指定绑定的标签列表",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -13234,6 +13243,15 @@
           "name": "SamlData",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指定绑定的标签列表",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -16060,6 +16078,7 @@
           "example": "无",
           "member": "uint64",
           "name": "TaskId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -16096,6 +16115,7 @@
           "example": "123",
           "member": "uint64",
           "name": "TaskId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -28151,6 +28171,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -28160,6 +28181,7 @@
           "example": "无",
           "member": "SslVpnClient",
           "name": "SslVpnClientSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -32346,6 +32368,7 @@
           "example": "1234",
           "member": "uint64",
           "name": "TaskId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },

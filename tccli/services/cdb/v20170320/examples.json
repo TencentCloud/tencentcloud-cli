@@ -786,6 +786,14 @@
         "title": "查询数据库实例升级类型"
       }
     ],
+    "DescribeInstancesPhysicalTopology": [
+      {
+        "document": "输入主实例 ID ，查询实例的拓扑信息",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstancesPhysicalTopology\n<公共请求参数>\n\n{\n    \"InstanceIds\": [\n        \"test\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"InstanceId\": \"cdb-testa\",\n                \"MasterIp\": \"xxx.xxx.xxx.xxx\",\n                \"RoInfo\": [\n                    {\n                        \"Ip\": \"xxx.xxx.xxx.xxx\",\n                        \"RoInstanceId\": \"cdbro-testp\"\n                    },\n                    {\n                        \"Ip\": \"xxx.xxx.xxx.xxx\",\n                        \"RoInstanceId\": \"cdbro-testm\"\n                    }\n                ],\n                \"Slaves\": [\n                    {\n                        \"Ip\": \"xxx.xxx.xxx.xxx\",\n                        \"Status\": \"online\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"6c0e4bae-8297-41a5-9c37-5d9172134eff\"\n    }\n}",
+        "title": "查询实例的拓扑"
+      }
+    ],
     "DescribeLocalBinlogConfig": [
       {
         "document": "",

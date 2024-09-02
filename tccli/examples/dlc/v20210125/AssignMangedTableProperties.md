@@ -92,6 +92,12 @@ Output:
 ```
 {
     "Response": {
+        "Properties": [
+            {
+                "Key": "abc",
+                "Value": "abc"
+            }
+        ],
         "RequestId": "abc"
     }
 }

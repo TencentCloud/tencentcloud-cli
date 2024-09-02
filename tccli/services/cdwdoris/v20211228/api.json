@@ -4950,6 +4950,15 @@
           "name": "SortOrder",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "最小查询耗费时间，单位毫秒",
+          "example": "500",
+          "member": "uint64",
+          "name": "QueryTime",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -5005,6 +5014,16 @@
           "name": "TotalPages",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "报错信息",
+          "example": "无",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -7731,6 +7750,33 @@
           "name": "PassWord",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "catalog名称",
+          "example": "无",
+          "member": "string",
+          "name": "CatalogName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例id",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "机器组",
+          "example": "%",
+          "member": "string",
+          "name": "WhiteHost",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -8990,7 +9036,7 @@
         },
         {
           "disabled": false,
-          "document": "运行时长（s）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "运行时长（ms）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "120",
           "member": "uint64",
           "name": "Duration",
@@ -10719,6 +10765,15 @@
           "example": "无",
           "member": "string",
           "name": "PassWord",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例id",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceId",
           "required": false,
           "type": "string"
         }

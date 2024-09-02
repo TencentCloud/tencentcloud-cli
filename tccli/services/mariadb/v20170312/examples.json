@@ -128,6 +128,14 @@
         "title": "查询云数据库实例的备份时间窗口配置"
       }
     ],
+    "DescribeBinlogTime": [
+      {
+        "document": "",
+        "input": "https://mariadb.tencentcloudapi.com/?Action=DescribeBinlogTime\n&InstanceId=tdsql-arryr5nt\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"EndTime\": \"2019-04-06 14:31:56\",\n        \"RequestId\": \"8668c08c-e030-48a4-9e67-0c87608f6171\",\n        \"StartTime\": \"2019-04-06 00:31:10\"\n    }\n}",
+        "title": "查询可回档时间范围"
+      }
+    ],
     "DescribeDBEncryptAttributes": [
       {
         "document": "",

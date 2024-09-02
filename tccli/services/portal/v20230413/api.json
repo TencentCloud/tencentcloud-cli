@@ -591,6 +591,72 @@
       ],
       "type": "object"
     },
+    "DictI18nItem": {
+      "document": "产品国际化信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点类型:1:国内，2:国际",
+          "example": "1",
+          "member": "uint64",
+          "name": "Site",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "站点语言:zh/en/ko/jp",
+          "example": "zh",
+          "member": "string",
+          "name": "Lang",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "站点分类:1:产品;2分类",
+          "example": "1",
+          "member": "uint64",
+          "name": "Type",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "站点名称",
+          "example": "云服务器",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "站点简介",
+          "example": "安全稳定，高弹性的计算服务",
+          "member": "string",
+          "name": "Abstract",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "站点描述",
+          "example": "稳定、安全、弹性、高性能的云端计算服务，实时满足您的多样性业务需求",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "DictItem": {
       "document": "产品字典",
       "members": [
@@ -743,6 +809,56 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "产品层级",
+          "example": "L3",
+          "member": "string",
+          "name": "Grade",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "产品l4归属的l3的Id",
+          "example": "0",
+          "member": "int64",
+          "name": "BelongL3Id",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "产品生命周期状态，1:退市中;2:已退市, 3:接入中,4:运营中",
+          "example": "4",
+          "member": "uint64",
+          "name": "LifeCycleStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "产品英文名称",
+          "example": "cloud virtual machine",
+          "member": "string",
+          "name": "EnName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "产品国际化信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DictI18nItem",
+          "name": "DictI18nInfo",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
