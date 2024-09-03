@@ -7,11 +7,25 @@
       "output": "ApplyConcurrentResponse",
       "status": "online"
     },
+    "BindConcurrentPackagesToProject": {
+      "document": "并发包绑定项目",
+      "input": "BindConcurrentPackagesToProjectRequest",
+      "name": "并发包绑定项目",
+      "output": "BindConcurrentPackagesToProjectResponse",
+      "status": "online"
+    },
     "CreateApplication": {
       "document": "用于创建应用请求",
       "input": "CreateApplicationRequest",
       "name": "创建云应用",
       "output": "CreateApplicationResponse",
+      "status": "online"
+    },
+    "CreateApplicationProject": {
+      "document": "创建云应用项目",
+      "input": "CreateApplicationProjectRequest",
+      "name": "创建云应用项目",
+      "output": "CreateApplicationProjectResponse",
       "status": "online"
     },
     "CreateApplicationSnapshot": {
@@ -42,6 +56,13 @@
       "output": "DeleteApplicationResponse",
       "status": "online"
     },
+    "DeleteApplicationProjects": {
+      "document": "批量删除云应用项目",
+      "input": "DeleteApplicationProjectsRequest",
+      "name": "批量删除云应用项目",
+      "output": "DeleteApplicationProjectsResponse",
+      "status": "online"
+    },
     "DeleteApplicationVersion": {
       "document": "用于删除云应用版本请求",
       "input": "DeleteApplicationVersionRequest",
@@ -70,6 +91,20 @@
       "output": "DescribeApplicationPathListResponse",
       "status": "online"
     },
+    "DescribeApplicationProjectAdvancedConfig": {
+      "document": "用于获取云应用项目高级配置信息",
+      "input": "DescribeApplicationProjectAdvancedConfigRequest",
+      "name": "获取云应用项目配置数据",
+      "output": "DescribeApplicationProjectAdvancedConfigResponse",
+      "status": "online"
+    },
+    "DescribeApplicationProjects": {
+      "document": "获取云应用项目列表",
+      "input": "DescribeApplicationProjectsRequest",
+      "name": "获取云应用项目列表",
+      "output": "DescribeApplicationProjectsResponse",
+      "status": "online"
+    },
     "DescribeApplicationStatus": {
       "document": "用于查询云应用运行状态，更新状态信息",
       "input": "DescribeApplicationStatusRequest",
@@ -89,6 +124,20 @@
       "input": "DescribeConcurrentCountRequest",
       "name": "获取并发计数",
       "output": "DescribeConcurrentCountResponse",
+      "status": "online"
+    },
+    "DescribeConcurrentPackages": {
+      "document": "获取云应用并发包列表",
+      "input": "DescribeConcurrentPackagesRequest",
+      "name": "获取云应用并发包列表",
+      "output": "DescribeConcurrentPackagesResponse",
+      "status": "online"
+    },
+    "DescribeConcurrentSummary": {
+      "document": "查询并发概览",
+      "input": "DescribeConcurrentSummaryRequest",
+      "name": "查询并发概览",
+      "output": "DescribeConcurrentSummaryResponse",
       "status": "online"
     },
     "DescribeCosCredential": {
@@ -112,6 +161,13 @@
       "output": "ModifyApplicationBaseInfoResponse",
       "status": "online"
     },
+    "ModifyApplicationProject": {
+      "document": "修改云应用项目",
+      "input": "ModifyApplicationProjectRequest",
+      "name": "修改云应用项目",
+      "output": "ModifyApplicationProjectResponse",
+      "status": "online"
+    },
     "ModifyApplicationVersion": {
       "document": "用于修改云应用版本数据",
       "input": "ModifyApplicationVersionRequest",
@@ -119,11 +175,25 @@
       "output": "ModifyApplicationVersionResponse",
       "status": "online"
     },
+    "ModifyConcurrentPackage": {
+      "document": "修改云应用并发包",
+      "input": "ModifyConcurrentPackageRequest",
+      "name": "修改云应用并发包",
+      "output": "ModifyConcurrentPackageResponse",
+      "status": "online"
+    },
     "ModifyMobileApplicationInfo": {
       "document": "用于修改移动端应用数据",
       "input": "ModifyMobileApplicationInfoRequest",
       "name": "修改移动应用信息",
       "output": "ModifyMobileApplicationInfoResponse",
+      "status": "online"
+    },
+    "ResetConcurrentPackages": {
+      "document": "重置并发包，断开所有用户连接",
+      "input": "ResetConcurrentPackagesRequest",
+      "name": "重置并发包",
+      "output": "ResetConcurrentPackagesResponse",
       "status": "online"
     },
     "SetApplicationVersionOnline": {
@@ -152,6 +222,13 @@
       "input": "StopPublishStreamRequest",
       "name": "停止云端推流",
       "output": "StopPublishStreamResponse",
+      "status": "online"
+    },
+    "UnbindConcurrentPackagesFromProject": {
+      "document": "并发包解绑项目",
+      "input": "UnbindConcurrentPackagesFromProjectRequest",
+      "name": "并发包解绑项目",
+      "output": "UnbindConcurrentPackagesFromProjectResponse",
       "status": "online"
     }
   },
@@ -212,6 +289,215 @@
       ],
       "usage": "both"
     },
+    "ApplicationConcurrentPackage": {
+      "document": "云应用并发包",
+      "members": [],
+      "usage": "both"
+    },
+    "ApplicationProject": {
+      "document": "云应用项目类型",
+      "members": [
+        {
+          "disabled": false,
+          "document": "项目id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "ProjectId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "项目名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "项目描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Description",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "项目运行需要的并发类型。\nS1：小型应用云渲染并发\nM1：中型应用云渲染并发\nL1：大型应用云渲染并发\nL2：大型应用云渲染并发\nXL2：超大型应用云渲染并发\nMM1_HD：性能型云ARM并发-高清\nMM1_FHD：性能型云ARM并发-超清\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "L1",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "云应用ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "ApplicationId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "预启动\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "IsPreload",
+          "output_required": true,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "已配置并发数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Amount",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "使用中的并发数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Using",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "应用状态，NoConcurrent-未配置并发包，Online-已上线，其他状态为云应用的状态：applicationCreating-创建中，applicationCreateFail-创建失败，applicationDeleting-删除中，applicationNoConfigured-启动参数未配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "ApplicationStatus",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "应用启动参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "ApplicationParams",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "应用名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "ApplicationName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分辨率，格式为“宽x高”，例如1920x1080\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "“1920x1080”",
+          "member": "string",
+          "name": "Resolution",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "项目类型。\nSHARED：共享，所有应用共享\nEXCLUSIVE（默认值）：独享，一个应用独享\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "SHARED",
+          "member": "string",
+          "name": "ProjectType",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用途。\nEXPERIENCE：体验\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "EXPERIENCE",
+          "member": "string",
+          "name": "Purpose",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "应用分发区域（ 标准区： ap-chinese-mainland ： 中国大陆、 na-north-america : 北美、 eu-frankfurt ：法兰克福、 ap-mumbai ： 孟买、 ap-tokyo ： 东京、 ap-seoul ： 首尔、 ap-singapore ： 新加坡、 ap-bangkok ： 曼谷、 ap-hongkong ： 中国香港、 融合区: me-middle-east-fusion ：中东 、na-north-america-fusion ：北美 、sa-south-america-fusion ：南美 、ap-tokyo-fusion ： 东京 、ap-seoul-fusion ： 首尔、 eu-frankfurt-fusion ：法兰克福 、ap-singapore-fusion ： 新加坡 、ap-hongkong-fusion ： 中国香港 ）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-chinese-mainland",
+          "member": "string",
+          "name": "ApplicationRegions",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "并发区域（ 标准区： ap-chinese-mainland ： 中国大陆、 na-north-america : 北美、 eu-frankfurt ：法兰克福、 ap-mumbai ： 孟买、 ap-tokyo ： 东京、 ap-seoul ： 首尔、 ap-singapore ： 新加坡、 ap-bangkok ： 曼谷、 ap-hongkong ： 中国香港、 融合区: me-middle-east-fusion ：中东 、na-north-america-fusion ：北美 、sa-south-america-fusion ：南美 、ap-tokyo-fusion ： 东京 、ap-seoul-fusion ： 首尔 、eu-frankfurt-fusion ：法兰克福 、ap-singapore-fusion ： 新加坡 、ap-hongkong-fusion ： 中国香港 ）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-chinese-mainland",
+          "member": "string",
+          "name": "ConcurrentRegions",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "项目类别。\nDESKTOP: 桌面端，默认值\nMOBILE：移动端\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "MOBILE",
+          "member": "string",
+          "name": "ProjectCategory",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "ApplyConcurrentRequest": {
       "document": "ApplyConcurrent请求参数结构体",
       "members": [
@@ -266,6 +552,282 @@
     "ApplyConcurrentResponse": {
       "document": "ApplyConcurrent返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BackgroundImage": {
+      "document": "背景图信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "COS 文件 Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cf-abcd1234",
+          "member": "string",
+          "name": "COSFileId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "下载 url\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://abc",
+          "member": "string",
+          "name": "URL",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123.png",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-07-02T10:15:36Z",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "BindConcurrentPackagesToProjectRequest": {
+      "document": "BindConcurrentPackagesToProject请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "并发包ID列表",
+          "example": "[\"\"]",
+          "member": "string",
+          "name": "ConcurrentIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "云应用项目ID",
+          "example": "\"\"",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BindConcurrentPackagesToProjectResponse": {
+      "document": "BindConcurrentPackagesToProject返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateApplicationProjectRequest": {
+      "document": "CreateApplicationProject请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "项目名称，用户自定义",
+          "example": "南头古城",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "绑定的应用Id",
+          "example": "app-xacbxs",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "项目运行需要的并发类型。\nS1：小型应用云渲染并发\nM1：中型应用云渲染并发\nL1：大型应用云渲染并发\nL2：大型应用云渲染并发\nXL2：超大型应用云渲染并发\nMM1_HD：性能型云ARM并发-高清\nMM1_FHD：性能型云ARM并发-超清",
+          "example": "L1",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启预热，默认为false",
+          "example": "false",
+          "member": "bool",
+          "name": "IsPreload",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "应用启动参数",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationParams",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分辨率，格式为“宽x高”，例如1920x1080",
+          "example": "1920x1080",
+          "member": "string",
+          "name": "Resolution",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "项目类型。\nSHARED：共享，所有应用共享\nEXCLUSIVE（默认值）：独享，一个应用独享",
+          "example": "SHARED",
+          "member": "string",
+          "name": "ProjectType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "帧率",
+          "example": "30",
+          "member": "int64",
+          "name": "FPS",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "应用等待预期动时长",
+          "example": "30",
+          "member": "string",
+          "name": "PreloadDuration",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "等待重连时长",
+          "example": "10",
+          "member": "string",
+          "name": "ReconnectTimeout",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "最小码率（单位 Mbps）",
+          "example": "0",
+          "member": "int64",
+          "name": "MinBitrate",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "最大码率（单位 Mbps）",
+          "example": "10",
+          "member": "int64",
+          "name": "MaxBitrate",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "上行音频选项。\nDisableMixIntoStreamPush：推流不混入上行音频\n",
+          "example": "DisableMixIntoStreamPush",
+          "member": "string",
+          "name": "UpstreamAudioOption",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "视频编码配置",
+          "example": "无",
+          "member": "VideoEncodeConfig",
+          "name": "VideoEncodeConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "XR 应用分辨率上限。\n如果项目的并发类型为 L、L2，最大上限为 5000；如果项目的并发类型为 XL2，最大上限为 6000",
+          "example": "5000",
+          "member": "uint64",
+          "name": "XRMaxWidth",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "背景图 COS 文件 Id",
+          "example": "cf-abcd1234",
+          "member": "string",
+          "name": "BackgroundImageCOSFileId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "项目类别。\nDESKTOP: 桌面端，默认值\nMOBILE：移动端",
+          "example": "MOBILE",
+          "member": "string",
+          "name": "ProjectCategory",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "禁用编码列表",
+          "example": "[\"H265\"]",
+          "member": "string",
+          "name": "DisableVideoCodecs",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateApplicationProjectResponse": {
+      "document": "CreateApplicationProject返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "生成的项目ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "ProjectId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -503,6 +1065,33 @@
           "type": "string",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteApplicationProjectsRequest": {
+      "document": "DeleteApplicationProjects请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云应用项目id列表",
+          "example": "[\"cap-xxxx\"]",
+          "member": "string",
+          "name": "ProjectIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteApplicationProjectsResponse": {
+      "document": "DeleteApplicationProjects返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -751,6 +1340,227 @@
       ],
       "type": "object"
     },
+    "DescribeApplicationProjectAdvancedConfigRequest": {
+      "document": "DescribeApplicationProjectAdvancedConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用项目 Id",
+          "example": "\"cap-azwmtcoe\"",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApplicationProjectAdvancedConfigResponse": {
+      "document": "DescribeApplicationProjectAdvancedConfig返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用启动参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"xxx\"",
+          "member": "string",
+          "name": "ApplicationParams",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分辨率，格式为“宽x高”，例如1920x1080\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"1920*1680\"",
+          "member": "string",
+          "name": "Resolution",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "帧率，取值 0 | 30 | 60\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "FPS",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "最小码率（单位 Mbs）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "MinBitrate",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "最大码率（单位 Mbs）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "MaxBitrate",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "应用等待预启动时长\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "PreloadDuration",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "等待重连时长\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "ReconnectTimeout",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "上行音频选项。\nDisableMixIntoStreamPush：推流不混入上行音频\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "DisableMixIntoStreamPush",
+          "member": "string",
+          "name": "UpstreamAudioOption",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "视频编码配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VideoEncodeConfig",
+          "name": "VideoEncodeConfig",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "XR 应用分辨率上限。\n如果项目的并发类型为 L、L2，最大上限为 5000；如果项目的并发类型为 XL2，最大上限为 6000\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5000",
+          "member": "uint64",
+          "name": "XRMaxWidth",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "背景图信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BackgroundImage",
+          "name": "BackgroundImage",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "禁用编码列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"H265\"]",
+          "member": "string",
+          "name": "DisableVideoCodecs",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApplicationProjectsRequest": {
+      "document": "DescribeApplicationProjects请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "下标",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "单页数量",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤器",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "项目类别。\nDESKTOP: 桌面端，默认值\nMOBILE：移动端",
+          "example": "MOBILE",
+          "member": "string",
+          "name": "ProjectCategory",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApplicationProjectsResponse": {
+      "document": "DescribeApplicationProjects返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "项目列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ApplicationProject",
+          "name": "Projects",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeApplicationStatusRequest": {
       "document": "DescribeApplicationStatus请求参数结构体",
       "members": [
@@ -861,6 +1671,108 @@
           "name": "Running",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConcurrentPackagesRequest": {
+      "document": "DescribeConcurrentPackages请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "下标",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "单页数量",
+          "example": "0",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤器列表",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConcurrentPackagesResponse": {
+      "document": "DescribeConcurrentPackages返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "并发包列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ApplicationConcurrentPackage",
+          "name": "ConcurrentPackages",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConcurrentSummaryRequest": {
+      "document": "DescribeConcurrentSummary请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeConcurrentSummaryResponse": {
+      "document": "DescribeConcurrentSummary返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "预付费（包年包月）并发总量",
+          "example": "100",
+          "member": "uint64",
+          "name": "PrepaidConcurrentTotal",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "小时包剩余时长",
+          "example": "100h0m0s",
+          "member": "string",
+          "name": "HourlyRemainDuration",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -1120,6 +2032,177 @@
       ],
       "type": "object"
     },
+    "ModifyApplicationProjectRequest": {
+      "document": "ModifyApplicationProject请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云端返回的项目id",
+          "example": "\"car-vdscvd\"",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "项目名称",
+          "example": "\"南头古城\"",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "项目运行需要的并发类型",
+          "example": "\"L1\"",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启预热",
+          "example": "false",
+          "member": "bool",
+          "name": "IsPreload",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "应用启动参数",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationParams",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "云应用项目描述",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分辨率，格式为“宽x高”，例如1920x1080",
+          "example": "“1920x1080”",
+          "member": "string",
+          "name": "Resolution",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "帧率",
+          "example": "30",
+          "member": "int64",
+          "name": "FPS",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "应用等待预期动时长",
+          "example": "10",
+          "member": "string",
+          "name": "PreloadDuration",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "等待重连时长",
+          "example": "60",
+          "member": "string",
+          "name": "ReconnectTimeout",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "最小码率（单位 Mbps）",
+          "example": "0",
+          "member": "int64",
+          "name": "MinBitrate",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "最大码率（单位 Mbps）",
+          "example": "6",
+          "member": "int64",
+          "name": "MaxBitrate",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "上行音频选项。\nDisableMixIntoStreamPush：推流不混入上行音频\n",
+          "example": "DisableMixIntoStreamPush",
+          "member": "string",
+          "name": "UpstreamAudioOption",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "视频编码配置",
+          "example": "无",
+          "member": "VideoEncodeConfig",
+          "name": "VideoEncodeConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "XR 应用分辨率上限。\n如果项目的并发类型为 L、L2，最大上限为 5000；如果项目的并发类型为 XL2，最大上限为 6000",
+          "example": "5000",
+          "member": "uint64",
+          "name": "XRMaxWidth",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "背景图 COS 文件 Id",
+          "example": "cf-abcd1234",
+          "member": "string",
+          "name": "BackgroundImageCOSFileId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "禁用编码列表",
+          "example": "[\"H265\"]",
+          "member": "string",
+          "name": "DisableVideoCodecs",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyApplicationProjectResponse": {
+      "document": "ModifyApplicationProject返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyApplicationVersionRequest": {
       "document": "ModifyApplicationVersion请求参数结构体",
       "members": [
@@ -1165,6 +2248,42 @@
       ],
       "type": "object"
     },
+    "ModifyConcurrentPackageRequest": {
+      "document": "ModifyConcurrentPackage请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "并发包ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "ConcurrentId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "并发包名称",
+          "example": "xxx",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyConcurrentPackageResponse": {
+      "document": "ModifyConcurrentPackage返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyMobileApplicationInfoRequest": {
       "document": "ModifyMobileApplicationInfo请求参数结构体",
       "members": [
@@ -1191,6 +2310,33 @@
     },
     "ModifyMobileApplicationInfoResponse": {
       "document": "ModifyMobileApplicationInfo返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ResetConcurrentPackagesRequest": {
+      "document": "ResetConcurrentPackages请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "并发包ID数组",
+          "example": "cac-1234abcd",
+          "member": "string",
+          "name": "ConcurrentPackageIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ResetConcurrentPackagesResponse": {
+      "document": "ResetConcurrentPackages返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1336,6 +2482,42 @@
     },
     "StopPublishStreamResponse": {
       "document": "StopPublishStream返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UnbindConcurrentPackagesFromProjectRequest": {
+      "document": "UnbindConcurrentPackagesFromProject请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "并发包ID列表",
+          "example": "[\"\"]",
+          "member": "string",
+          "name": "ConcurrentIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "云应用项目ID",
+          "example": "\"\"",
+          "member": "string",
+          "name": "ProjectId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UnbindConcurrentPackagesFromProjectResponse": {
+      "document": "UnbindConcurrentPackagesFromProject返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1786,6 +2968,23 @@
         }
       ],
       "usage": "out"
+    },
+    "VideoEncodeConfig": {
+      "document": "视频编码配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "推流 GOP 长度，单位秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
+          "member": "uint64",
+          "name": "StreamPushGOPSeconds",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     }
   },
   "version": "1.0"

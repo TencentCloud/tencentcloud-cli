@@ -8,12 +8,28 @@
         "title": "ApplyConcurrent示例"
       }
     ],
+    "BindConcurrentPackagesToProject": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: car.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindConcurrentPackagesToProject\n<公共请求参数>\n\n{\n    \"ConcurrentIds\": [\n        \"abc\"\n    ],\n    \"ProjectId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "并发包绑定项目示例"
+      }
+    ],
     "CreateApplication": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: car.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateApplication\n<公共请求参数>\n\n{\n    \"ApplicationName\": \"xxx\",\n    \"ApplicationType\": \"Application3D\"\n}",
         "output": "{\n    \"Response\": {\n        \"ApplicationId\": \"app-xkfad8s7\",\n        \"RequestId\": \"4eb17e58-68da-4e9a-b298-0894723c9022\"\n    }\n}",
         "title": "添加创建应用请求"
+      }
+    ],
+    "CreateApplicationProject": [
+      {
+        "document": "用于创建云应用项目",
+        "input": "POST / HTTP/1.1\nHost: car.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateApplicationProject\n<公共请求参数>\n\n{\n    \"Name\": \"abc\",\n    \"ApplicationId\": \"abc\",\n    \"Type\": \"abc\",\n    \"IsPreload\": true,\n    \"ApplicationParams\": \"abc\",\n    \"Resolution\": \"abc\",\n    \"ProjectType\": \"abc\",\n    \"FPS\": 0,\n    \"PreloadDuration\": \"10s\",\n    \"ReconnectTimeout\": \"20s\",\n    \"MinBitrate\": 0,\n    \"MaxBitrate\": 10,\n    \"DisableVideoCodecs\": []\n}",
+        "output": "{\n    \"Response\": {\n        \"ProjectId\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "创建云应用项目示例"
       }
     ],
     "CreateApplicationSnapshot": [
@@ -48,6 +64,14 @@
         "title": "添加删除云应用请求"
       }
     ],
+    "DeleteApplicationProjects": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: car.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteApplicationProjects\n<公共请求参数>\n\n{\n    \"ProjectIds\": [\n        \"cap-xxxx\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "批量删除云应用项目"
+      }
+    ],
     "DeleteApplicationVersion": [
       {
         "document": "",
@@ -80,6 +104,22 @@
         "title": "添加查询应用启动路径列表请求"
       }
     ],
+    "DescribeApplicationProjectAdvancedConfig": [
+      {
+        "document": "用于获取云应用高级配置参数",
+        "input": "POST / HTTP/1.1\nHost: car.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeApplicationProjectAdvancedConfig\n<公共请求参数>\n\n{\n    \"ProjectId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ApplicationParams\": \"abc\",\n        \"Resolution\": \"abc\",\n        \"FPS\": 0,\n        \"MinBitrate\": 0,\n        \"MaxBitrate\": 0,\n        \"PreloadDuration\": \"10s\",\n        \"ReconnectTimeout\": \"10s\",\n        \"DisableVideoCodecs\": [\n            \"H265\"\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "获取云应用项目高级配置数据"
+      }
+    ],
+    "DescribeApplicationProjects": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: car.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeApplicationProjects\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\",\n        \"Projects\": [\n            {\n                \"IsPreload\": true,\n                \"Description\": \"app\",\n                \"ProjectId\": \"cap-a1b2c3\",\n                \"ApplicationStatus\": \"NoConcurrent\",\n                \"ApplicationName\": \"abc\",\n                \"Resolution\": \"1920x1080\",\n                \"ProjectType\": \"SHARED\",\n                \"Purpose\": \"EXPERIENCE\",\n                \"Amount\": 0,\n                \"CreateTime\": \"2020-09-22T00:00:00+00:00\",\n                \"Using\": 0,\n                \"ApplicationId\": \"app-a1b2c3\",\n                \"Type\": \"XL2\",\n                \"ApplicationParams\": \"\",\n                \"Name\": \"\",\n                \"ApplicationRegions\": [\n                    \"ap-chinese-mainland\",\n                    \"na-north-america-fusion\"\n                ],\n                \"ConcurrentRegions\": [\n                    \"ap-chinese-mainland\",\n                    \"na-north-america-fusion\"\n                ]\n            }\n        ],\n        \"Total\": 0\n    }\n}",
+        "title": "获取云应用项目列表"
+      }
+    ],
     "DescribeApplicationStatus": [
       {
         "document": "",
@@ -102,6 +142,22 @@
         "input": "POST / HTTP/1.1\nHost: car.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConcurrentCount\n<公共请求参数>\n\n{\n    \"ProjectId\": \"cap-abcdefgh\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"4eb17e58-68da-4e9a-b298-0894723c9022\",\n        \"Total\": 10,\n        \"Running\": 6\n    }\n}",
         "title": "DescribeConcurrentCount示例"
+      }
+    ],
+    "DescribeConcurrentPackages": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: car.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConcurrentPackages\n<公共请求参数>\n\n{\n    \"Limit\": 0,\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"xx\"\n            ],\n            \"Name\": \"xx\"\n        }\n    ],\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"Total\": 0,\n        \"ConcurrentPackages\": []\n    }\n}",
+        "title": "获取云应用并发包列表示例"
+      }
+    ],
+    "DescribeConcurrentSummary": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: car.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConcurrentSummary\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"PrepaidConcurrentTotal\": 100,\n        \"HourlyRemainDuration\": \"100h0m0s\",\n        \"RequestId\": \"4eb17e58-68da-4e9a-b298-0894723c9022\"\n    }\n}",
+        "title": "DescribeConcurrentSummary 示例"
       }
     ],
     "DescribeCosCredential": [
@@ -128,6 +184,14 @@
         "title": "添加修改云应用基础信息请求"
       }
     ],
+    "ModifyApplicationProject": [
+      {
+        "document": "用于修改云应用项目",
+        "input": "POST / HTTP/1.1\nHost: car.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyApplicationProject\n<公共请求参数>\n\n{\n    \"IsPreload\": true,\n    \"ProjectId\": \"abc\",\n    \"ApplicationParams\": \"abc\",\n    \"Name\": \"abc\",\n    \"Type\": \"L1\",\n    \"FPS\": 0,\n    \"PreloadDuration\": \"10s\",\n    \"ReconnectTimeout\": \"20s\",\n    \"MinBitrate\": 0,\n    \"MaxBitrate\": 10,\n    \"DisableVideoCodecs\": [\n        \"H265\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "修改云应用项目请求"
+      }
+    ],
     "ModifyApplicationVersion": [
       {
         "document": "",
@@ -136,12 +200,28 @@
         "title": "添加修改云应用版本请求"
       }
     ],
+    "ModifyConcurrentPackage": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: car.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyConcurrentPackage\n<公共请求参数>\n\n{\n    \"ConcurrentId\": \"abc\",\n    \"Name\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "修改云应用并发包"
+      }
+    ],
     "ModifyMobileApplicationInfo": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: car.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyMobileApplicationInfo\n<公共请求参数>\n\n{\n    \"ApplicationId\": \"app-a1b2c3\",\n    \"ApplicationName\": \"testname\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"4eb17e58-68da-4e9a-b298-0894723c9022\"\n    }\n}",
         "title": "添加修改移动端应用信息请求"
+      }
+    ],
+    "ResetConcurrentPackages": [
+      {
+        "document": "重置并发包，断开所有用户连接",
+        "input": "POST / HTTP/1.1\nHost: car.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResetConcurrentPackages\n<公共请求参数>\n\n{\n    \"ConcurrentPackageIds\": [\n        \"cac-1234abcd\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "ResetConcurrentPackages示例"
       }
     ],
     "SetApplicationVersionOnline": [
@@ -174,6 +254,14 @@
         "input": "POST / HTTP/1.1\nHost: car.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopPublishStream\n<公共请求参数>\n\n{\n    \"UserId\": \"abc123\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"4eb17e58-68da-4e9a-b298-0894723c9022\"\n    }\n}",
         "title": "停止云端推流"
+      }
+    ],
+    "UnbindConcurrentPackagesFromProject": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: car.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UnbindConcurrentPackagesFromProject\n<公共请求参数>\n\n{\n    \"ProjectId\": \"abc\",\n    \"ConcurrentIds\": [\n        \"abc\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "并发包解绑项目示例"
       }
     ]
   },

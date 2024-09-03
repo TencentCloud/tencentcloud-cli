@@ -1,3 +1,134 @@
+# Release 3.0.1068.1
+
+## 应用云渲染(car) 版本：2022-01-10
+
+### 第 11 次发布
+
+发布时间：2024-09-04 01:09:15
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [BindConcurrentPackagesToProject](http://document.tencentcloudapi.woa.com/document/product/1710/84799)
+* [CreateApplicationProject](http://document.tencentcloudapi.woa.com/document/product/1710/84792)
+* [DeleteApplicationProjects](http://document.tencentcloudapi.woa.com/document/product/1710/84791)
+* [DescribeApplicationProjectAdvancedConfig](http://document.tencentcloudapi.woa.com/document/product/1710/84790)
+* [DescribeApplicationProjects](http://document.tencentcloudapi.woa.com/document/product/1710/84789)
+* [DescribeConcurrentPackages](http://document.tencentcloudapi.woa.com/document/product/1710/84798)
+* [DescribeConcurrentSummary](http://document.tencentcloudapi.woa.com/document/product/1710/84797)
+* [ModifyApplicationProject](http://document.tencentcloudapi.woa.com/document/product/1710/84788)
+* [ModifyConcurrentPackage](http://document.tencentcloudapi.woa.com/document/product/1710/84796)
+* [ResetConcurrentPackages](http://document.tencentcloudapi.woa.com/document/product/1710/84795)
+* [UnbindConcurrentPackagesFromProject](http://document.tencentcloudapi.woa.com/document/product/1710/84794)
+
+新增数据结构：
+
+* [ApplicationConcurrentPackage](http://document.tencentcloudapi.woa.com/document/product/1710/81862#ApplicationConcurrentPackage)
+* [ApplicationProject](http://document.tencentcloudapi.woa.com/document/product/1710/81862#ApplicationProject)
+* [BackgroundImage](http://document.tencentcloudapi.woa.com/document/product/1710/81862#BackgroundImage)
+* [VideoEncodeConfig](http://document.tencentcloudapi.woa.com/document/product/1710/81862#VideoEncodeConfig)
+
+
+
+## 腾讯云数据仓库 TCHouse-D(cdwdoris) 版本：2021-12-28
+
+### 第 33 次发布
+
+发布时间：2024-09-04 01:10:31
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateBackUpSchedule](http://document.tencentcloudapi.woa.com/document/product/1706/84371)
+
+	* 新增入参：InstanceId, OperationType, ScheduleName, ScheduleInfo, UpdateStatus, CosBucket
+
+
+新增数据结构：
+
+* [ScheduleInfo](http://document.tencentcloudapi.woa.com/document/product/1706/80309#ScheduleInfo)
+
+
+
+## 流计算 Oceanus(oceanus) 版本：2019-04-22
+
+### 第 55 次发布
+
+发布时间：2024-09-04 01:22:36
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DeleteJobs](http://document.tencentcloudapi.woa.com/document/product/849/75138)
+
+	* 新增入参：JobNames
+
+
+
+
+## SSL 证书(ssl) 版本：2019-12-05
+
+### 第 67 次发布
+
+发布时间：2024-09-04 01:24:58
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CheckCertificateDomainVerification](http://document.tencentcloudapi.woa.com/document/product/400/84800)
+
+新增数据结构：
+
+* [DomainValidationResult](http://document.tencentcloudapi.woa.com/document/product/400/41679#DomainValidationResult)
+
+
+
+## 高性能计算平台(thpc) 版本：2023-03-21
+
+### 第 10 次发布
+
+发布时间：2024-09-04 01:28:53
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateWorkspaces](http://document.tencentcloudapi.woa.com/document/product/1701/84818)
+
+新增数据结构：
+
+* [SpaceChargePrepaid](http://document.tencentcloudapi.woa.com/document/product/1701/80209#SpaceChargePrepaid)
+* [SpaceDataDisk](http://document.tencentcloudapi.woa.com/document/product/1701/80209#SpaceDataDisk)
+* [SpaceInternetAccessible](http://document.tencentcloudapi.woa.com/document/product/1701/80209#SpaceInternetAccessible)
+* [SpacePlacement](http://document.tencentcloudapi.woa.com/document/product/1701/80209#SpacePlacement)
+* [SpaceSystemDisk](http://document.tencentcloudapi.woa.com/document/product/1701/80209#SpaceSystemDisk)
+* [SpaceVirtualPrivateCloud](http://document.tencentcloudapi.woa.com/document/product/1701/80209#SpaceVirtualPrivateCloud)
+* [TagSpecification](http://document.tencentcloudapi.woa.com/document/product/1701/80209#TagSpecification)
+
+
+
+## 高性能计算平台(thpc) 版本：2022-04-01
+
+
+
+## 高性能计算平台(thpc) 版本：2021-11-09
+
+
+
 # Release 3.0.1067.1
 
 ## 音频内容安全(ams) 版本：2020-12-29
