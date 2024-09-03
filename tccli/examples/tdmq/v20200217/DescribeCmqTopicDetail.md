@@ -11,28 +11,26 @@ Output:
 ```
 {
     "Response": {
+        "RequestId": "cbeef60c-6525-484a-83e8-6c590e81e749",
         "TopicDescribe": {
-            "MsgCount": 1,
-            "TopicId": "xx",
-            "MaxMsgSize": 1,
-            "Trace": true,
-            "Tags": [
-                {
-                    "TagKey": "xx",
-                    "TagValue": "xx"
-                }
-            ],
-            "CreateUin": 1,
+            "TopicId": "cmqt-w4nb4z27",
+            "TopicName": "rmqbroker-nj",
+            "MaxMsgSize": 1048576,
             "FilterType": 1,
-            "TenantId": "xx",
-            "LastModifyTime": 1,
-            "MsgRetentionSeconds": 1,
-            "NamespaceName": "xx",
-            "Qps": 1,
-            "CreateTime": 1,
-            "TopicName": "xx"
-        },
-        "RequestId": "xx"
+            "MsgRetentionSeconds": 86400,
+            "Qps": 5000,
+            "CreateTime": 1692691276000,
+            "LastModifyTime": 1692691276000,
+            "MsgCount": 0,
+            "CreateUin": null,
+            "Trace": null,
+            "Tags": null,
+            "TenantId": "cmq-1317947242",
+            "NamespaceName": "CMQ_TOPIC-rmqbroker-nj",
+            "Status": 1,
+            "BrokerType": 1,
+            "SubscriptionCount": 1
+        }
     }
 }
 ```

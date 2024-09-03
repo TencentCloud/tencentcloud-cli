@@ -154,6 +154,13 @@
       "output": "DescribeDBTmpInstancesResponse",
       "status": "online"
     },
+    "DescribeDCDBBinlogTime": {
+      "document": "获取实例回档时可选的时间范围",
+      "input": "DescribeDCDBBinlogTimeRequest",
+      "name": "获取实例回档时可选的时间范围",
+      "output": "DescribeDCDBBinlogTimeResponse",
+      "status": "online"
+    },
     "DescribeDCDBInstanceDetail": {
       "document": "本接口（DescribeDCDBInstanceDetail）用于获取TDSQL实例详情",
       "input": "DescribeDCDBInstanceDetailRequest",
@@ -4234,6 +4241,53 @@
           "name": "TmpInstances",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDCDBBinlogTimeRequest": {
+      "document": "DescribeDCDBBinlogTime请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要回档的实例ID",
+          "example": "tdsql-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDCDBBinlogTimeResponse": {
+      "document": "DescribeDCDBBinlogTime返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "2019-01-01 10:00:00",
+          "member": "datetime",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "2019-01-01 12:00:00",
+          "member": "datetime",
+          "name": "EndTime",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {

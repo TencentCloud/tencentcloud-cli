@@ -1845,6 +1845,15 @@
           "name": "ExpireEnd",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "相似问内容",
+          "example": "无",
+          "member": "string",
+          "name": "SimilarQuestions",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -3231,6 +3240,16 @@
           "name": "ExpireEnd",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "相似问列表信息",
+          "example": "无",
+          "member": "SimilarQuestion",
+          "name": "SimilarQuestions",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -6602,7 +6621,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "机器人ID",
+          "document": "应用ID",
           "example": "无",
           "member": "string",
           "name": "BotBizId",
@@ -6647,7 +6666,7 @@
         },
         {
           "disabled": false,
-          "document": "发布状态(2待发布 3发布中 4已发布 7审核中 8审核失败 9人工申述中 11人工申述失败)",
+          "document": "发布状态(2待发布 3发布中 4已发布 7审核中 8审核失败 9人工申述中 11人工申述失败 12已过期 13超量失效 14超量失效恢复)",
           "example": "无",
           "member": "int64",
           "name": "ReleaseStatus",
@@ -6926,6 +6945,56 @@
           "name": "QaCharSize",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "有效开始时间，unix时间戳",
+          "example": "无",
+          "member": "string",
+          "name": "ExpireStart",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "有效结束时间，unix时间戳，0代表永久有效",
+          "example": "无",
+          "member": "string",
+          "name": "ExpireEnd",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "属性标签适用范围 1：全部，2：按条件",
+          "example": "无",
+          "member": "int64",
+          "name": "AttrRange",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "属性标签",
+          "example": "无",
+          "member": "AttrLabel",
+          "name": "AttrLabels",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "相似问个数",
+          "example": "无",
+          "member": "uint64",
+          "name": "SimilarQuestionNum",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -8423,6 +8492,15 @@
           "name": "ExpireEnd",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "相似问修改信息(相似问没有修改则不传)",
+          "example": "无",
+          "member": "SimilarQuestionModify",
+          "name": "SimilarQuestionModify",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -10617,6 +10695,67 @@
         }
       ],
       "type": "object"
+    },
+    "SimilarQuestion": {
+      "document": "相似问信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "相似问ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10001",
+          "member": "string",
+          "name": "SimBizId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "相似问内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "您好",
+          "member": "string",
+          "name": "Question",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "SimilarQuestionModify": {
+      "document": "相似问修改(更新)信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要添加的相似问(内容)列表",
+          "example": "无",
+          "member": "string",
+          "name": "AddQuestions",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "需要更新的相似问列表",
+          "example": "无",
+          "member": "SimilarQuestion",
+          "name": "UpdateQuestions",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "需要删除的相似问列表",
+          "example": "无",
+          "member": "SimilarQuestion",
+          "name": "DeleteQuestions",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
     },
     "StopDocParseRequest": {
       "document": "StopDocParse请求参数结构体",

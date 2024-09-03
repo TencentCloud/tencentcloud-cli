@@ -16,16 +16,16 @@ Output:
         "TotalCount": 1,
         "DeployRecordList": [
             {
+                "Id": 1,
+                "CertId": "abc",
+                "ResourceType": "abc",
+                "Region": "abc",
                 "Status": 1,
-                "UpdateTime": "xx",
-                "CertId": "xx",
-                "ResourceType": "xx",
-                "Region": "xx",
-                "CreateTime": "xx",
-                "Id": 1
+                "CreateTime": "abc",
+                "UpdateTime": "abc"
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

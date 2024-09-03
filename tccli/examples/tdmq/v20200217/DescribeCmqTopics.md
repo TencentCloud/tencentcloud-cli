@@ -14,36 +14,29 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 360,
+        "RequestId": "3fe52209-a1e2-462c-a948-defb864d14e3",
+        "TotalCount": 1,
         "TopicList": [
             {
-                "Tags": [],
-                "TopicId": "topic-catv1v6h",
-                "TopicName": "QTA-6d1dfa44-5c70-11ea-8575-460d8830b47a",
-                "CreateUin": 100002742997,
-                "MsgRetentionSeconds": 86400,
-                "MaxMsgSize": 65536,
-                "Qps": 5000,
+                "TopicId": "cmqt-w4nb4zonn",
+                "TopicName": "rtopic",
+                "MaxMsgSize": 1048576,
                 "FilterType": 1,
-                "CreateTime": 1583144853,
-                "LastModifyTime": 1583144874,
-                "MsgCount": 0
-            },
-            {
-                "Tags": [],
-                "TopicId": "topic-caysfz7j",
-                "TopicName": "QTA-8f9162e2-5c6f-11ea-8dea-460d8830b47a",
-                "CreateUin": 100002742997,
                 "MsgRetentionSeconds": 86400,
-                "MaxMsgSize": 1025,
                 "Qps": 5000,
-                "FilterType": 1,
-                "CreateTime": 1583144481,
-                "LastModifyTime": 1583144484,
-                "MsgCount": 0
+                "CreateTime": 1692691276000,
+                "LastModifyTime": 1692691276000,
+                "MsgCount": 0,
+                "CreateUin": null,
+                "Trace": null,
+                "Tags": null,
+                "TenantId": "cmq-1317947242",
+                "NamespaceName": "CMQ_TOPIC-rtopic",
+                "Status": 1,
+                "BrokerType": 1,
+                "SubscriptionCount": 1
             }
-        ],
-        "RequestId": "104f0831-f81a-4d65-81e4-ff0c6217ae23"
+        ]
     }
 }
 ```

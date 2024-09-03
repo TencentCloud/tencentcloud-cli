@@ -357,9 +357,10 @@
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "无",
+          "example": "req-123456",
           "member": "string",
           "name": "InstanceId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -367,9 +368,10 @@
         {
           "disabled": false,
           "document": "消费组名称",
-          "example": "无",
+          "example": "group1",
           "member": "string",
           "name": "ConsumerGroup",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -377,9 +379,10 @@
         {
           "disabled": false,
           "document": "是否开启消费",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "ConsumeEnable",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": false
@@ -387,9 +390,10 @@
         {
           "disabled": false,
           "document": "顺序投递：true\n并发投递：false",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "ConsumeMessageOrderly",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": false
@@ -397,9 +401,10 @@
         {
           "disabled": false,
           "document": "最大重试次数",
-          "example": "无",
+          "example": "3",
           "member": "int64",
           "name": "MaxRetryTimes",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -407,12 +412,57 @@
         {
           "disabled": false,
           "document": "备注",
-          "example": "无",
+          "example": "remark1",
           "member": "string",
           "name": "Remark",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "4.x的集群ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cluster1",
+          "member": "string",
+          "name": "ClusterIdV4",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "4.x的命名空间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "namespace",
+          "member": "string",
+          "name": "NamespaceV4",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "4.x的消费组名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "group1",
+          "member": "string",
+          "name": "ConsumerGroupV4",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "4.x的完整命名空间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "namespace",
+          "member": "string",
+          "name": "FullNamespaceV4",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -6101,7 +6151,7 @@
         {
           "disabled": false,
           "document": "主题类型",
-          "example": "无",
+          "example": "NORMAL",
           "member": "string",
           "name": "TopicType",
           "output_required": true,
@@ -6123,7 +6173,7 @@
         {
           "disabled": false,
           "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "remark1",
           "member": "string",
           "name": "Remark",
           "output_required": true,
@@ -6134,7 +6184,7 @@
         {
           "disabled": false,
           "document": "4.x的集群id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "rocketmq-12345",
           "member": "string",
           "name": "ClusterIdV4",
           "output_required": false,
@@ -6145,7 +6195,7 @@
         {
           "disabled": false,
           "document": "4.x的命名空间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "namespace1",
           "member": "string",
           "name": "NamespaceV4",
           "output_required": false,
@@ -6156,7 +6206,7 @@
         {
           "disabled": false,
           "document": "4.x的主题名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "topic",
           "member": "string",
           "name": "TopicV4",
           "output_required": false,
@@ -6167,7 +6217,7 @@
         {
           "disabled": false,
           "document": "4.x的完整命名空间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "namespace1",
           "member": "string",
           "name": "FullNamespaceV4",
           "output_required": false,

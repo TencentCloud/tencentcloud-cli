@@ -1,13 +1,13 @@
 **Example 1: 扩展集群节点示例**
 
-
+扩展集群节点
 
 Input: 
 
 ```
 tccli tke CreateClusterInstances --cli-unfold-argument  \
-    --ClusterId cls-xxxxxxxx \
-    --RunInstancePara {"Placement":{"Zone":"ap-guangzhou-4"},"InstanceType":"S3.SMALL1"}
+    --RunInstancePara {"Placement":{"Zone":"ap-guangzhou-4"},"InstanceType":"S3.SMALL1"} \
+    --ClusterId cls-xxxxxxxx
 ```
 
 Output: 
@@ -33,33 +33,37 @@ Input:
 
 ```
 tccli tke CreateClusterInstances --cli-unfold-argument  \
-    --InstanceAdvancedSettings.DataDisks.0.AutoFormatAndMount True \
-    --InstanceAdvancedSettings.DataDisks.0.DiskSize 50 \
-    --InstanceAdvancedSettings.DataDisks.0.DiskType CLOUD_PREMIUM \
-    --InstanceAdvancedSettings.DataDisks.0.FileSystem ext4 \
-    --InstanceAdvancedSettings.DataDisks.0.MountTarget /data2 \
-    --InstanceAdvancedSettings.DataDisks.1.AutoFormatAndMount True \
-    --InstanceAdvancedSettings.DataDisks.1.DiskSize 120 \
-    --InstanceAdvancedSettings.DataDisks.1.DiskType CLOUD_PREMIUM \
-    --InstanceAdvancedSettings.DataDisks.1.FileSystem ext4 \
-    --InstanceAdvancedSettings.DataDisks.1.MountTarget /data4 \
-    --InstanceAdvancedSettings.DataDisks.2.AutoFormatAndMount True \
-    --InstanceAdvancedSettings.DataDisks.2.DiskSize 100 \
-    --InstanceAdvancedSettings.DataDisks.2.DiskType CLOUD_PREMIUM \
-    --InstanceAdvancedSettings.DataDisks.2.FileSystem ext4 \
-    --InstanceAdvancedSettings.DataDisks.2.MountTarget /data3 \
-    --InstanceAdvancedSettings.DataDisks.3.AutoFormatAndMount True \
-    --InstanceAdvancedSettings.DataDisks.3.DiskSize 50 \
-    --InstanceAdvancedSettings.DataDisks.3.DiskType CLOUD_PREMIUM \
-    --InstanceAdvancedSettings.DataDisks.3.FileSystem ext4 \
-    --InstanceAdvancedSettings.DataDisks.3.MountTarget /data5 \
-    --InstanceAdvancedSettings.DockerGraphPath /var/lib/docker \
-    --InstanceAdvancedSettings.MountTarget /var/lib/docker \
+    --ClusterId abc \
+    --InstanceAdvancedSettings.MountTarget abc \
+    --InstanceAdvancedSettings.DockerGraphPath abc \
+    --InstanceAdvancedSettings.UserScript abc \
     --InstanceAdvancedSettings.Unschedulable 0 \
-    --InstanceAdvancedSettings.UserScript  \
-    --SkipValidateOptions GlobalRouteCIDRCheck VpcCniCIDRCheck \
-    --RunInstancePara xx \
-    --ClusterId cls-xxxxx
+    --InstanceAdvancedSettings.Labels.0.Name abc \
+    --InstanceAdvancedSettings.Labels.0.Value abc \
+    --InstanceAdvancedSettings.DataDisks.0.DiskType abc \
+    --InstanceAdvancedSettings.DataDisks.0.FileSystem abc \
+    --InstanceAdvancedSettings.DataDisks.0.DiskSize 0 \
+    --InstanceAdvancedSettings.DataDisks.0.AutoFormatAndMount True \
+    --InstanceAdvancedSettings.DataDisks.0.MountTarget abc \
+    --InstanceAdvancedSettings.DataDisks.0.DiskPartition abc \
+    --InstanceAdvancedSettings.ExtraArgs.Kubelet abc \
+    --InstanceAdvancedSettings.DesiredPodNumber 0 \
+    --InstanceAdvancedSettings.GPUArgs.MIGEnable True \
+    --InstanceAdvancedSettings.GPUArgs.Driver.Version abc \
+    --InstanceAdvancedSettings.GPUArgs.Driver.Name abc \
+    --InstanceAdvancedSettings.GPUArgs.CUDA.Version abc \
+    --InstanceAdvancedSettings.GPUArgs.CUDA.Name abc \
+    --InstanceAdvancedSettings.GPUArgs.CUDNN.Version abc \
+    --InstanceAdvancedSettings.GPUArgs.CUDNN.Name abc \
+    --InstanceAdvancedSettings.GPUArgs.CUDNN.DocName abc \
+    --InstanceAdvancedSettings.GPUArgs.CUDNN.DevName abc \
+    --InstanceAdvancedSettings.GPUArgs.CustomDriver.Address abc \
+    --InstanceAdvancedSettings.PreStartUserScript abc \
+    --InstanceAdvancedSettings.Taints.0.Key abc \
+    --InstanceAdvancedSettings.Taints.0.Value abc \
+    --InstanceAdvancedSettings.Taints.0.Effect abc \
+    --RunInstancePara abc \
+    --SkipValidateOptions abc
 ```
 
 Output: 

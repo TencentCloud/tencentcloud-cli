@@ -7,6 +7,13 @@
       "output": "CloseAsyncRecognitionTaskResponse",
       "status": "online"
     },
+    "CreateAsrKeyWordLib": {
+      "document": "用户通过本接口进行关键字词表的创建。\n<br>•   默认每个用户最多可创建30个关键字词表。\n<br>•   每个关键词词表最多可添加100个词，每个词最多5个汉字或15个字符。\n<br>•   词表通过本地文件形式上传。\n<br>•   本地文件必须为UTF-8编码格式，每行仅添加一个词且不能包含标点和特殊字符。",
+      "input": "CreateAsrKeyWordLibRequest",
+      "name": "创建关键词表",
+      "output": "CreateAsrKeyWordLibResponse",
+      "status": "online"
+    },
     "CreateAsrVocab": {
       "document": "用户通过本接口进行热词表的创建。\n<br>•   默认最多可创建30个热词表。\n<br>•   每个热词表最多可添加1000个词，每个词最长10个汉字或30个英文字符，不能超出限制。\n<br>•   热词表可以通过数组或者本地文件形式上传。\n<br>•   本地文件必须为UTF-8编码格式，每行仅添加一个热词且不能包含标点和特殊字符。\n<br>•   热词权重取值范围为[1,11]之间的整数或者100，权重越大代表该词被识别出来的概率越大。\n<br>• 注意:  热词权重设置为11时，当前热词将升级为超级热词，建议仅将重要且必须生效的热词设置到11，设置过多权重为11的热词将影响整体字准率。",
       "input": "CreateAsrVocabRequest",
@@ -33,6 +40,13 @@
       "input": "CreateRecTaskRequest",
       "name": "录音文件识别请求",
       "output": "CreateRecTaskResponse",
+      "status": "online"
+    },
+    "DeleteAsrKeyWordLib": {
+      "document": "用户通过本接口进行关键词表的删除。",
+      "input": "DeleteAsrKeyWordLibRequest",
+      "name": "删除关键词表",
+      "output": "DeleteAsrKeyWordLibResponse",
       "status": "online"
     },
     "DeleteAsrVocab": {
@@ -75,6 +89,13 @@
       "input": "DownloadCustomizationRequest",
       "name": "下载自学习模型语料",
       "output": "DownloadCustomizationResponse",
+      "status": "online"
+    },
+    "GetAsrKeyWordLibList": {
+      "document": "用户通过该接口，可获得所有的关键词表及其信息。",
+      "input": "GetAsrKeyWordLibListRequest",
+      "name": "列举关键词表",
+      "output": "GetAsrKeyWordLibListResponse",
       "status": "online"
     },
     "GetAsrVocab": {
@@ -131,6 +152,13 @@
       "input": "SetVocabStateRequest",
       "name": "设置热词表状态",
       "output": "SetVocabStateResponse",
+      "status": "online"
+    },
+    "UpdateAsrKeyWordLib": {
+      "document": "用户通过本接口进行对应的关键词表信息更新。",
+      "input": "UpdateAsrKeyWordLibRequest",
+      "name": "更新关键词表",
+      "output": "UpdateAsrKeyWordLibResponse",
       "status": "online"
     },
     "UpdateAsrVocab": {
@@ -257,6 +285,52 @@
     "CloseAsyncRecognitionTaskResponse": {
       "document": "CloseAsyncRecognitionTask返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAsrKeyWordLibRequest": {
+      "document": "CreateAsrKeyWordLib请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "词表名称，长度在1-20之间\n仅限中英文数字-_",
+          "example": "测试词表",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "词文件（纯文本文件）的二进制base64编码，以行分隔\n格式要求：TXT\n每行只有一个词，不满足格式则报错无法上传\n每个词限制**5个汉字，15个字符**，单个词库最多不超过100个词\n注意不要有空行，尤其是最后一行",
+          "example": "避风港(进行bas64编码)",
+          "member": "string",
+          "name": "KeyWordFile",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAsrKeyWordLibResponse": {
+      "document": "CreateAsrKeyWordLib返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "词表ID数据",
+          "example": "空",
+          "member": "KeyWordLibIdData",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -721,6 +795,15 @@
           "name": "HotwordList",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "关键词识别ID列表，默认空为不进行识别，最多10个\n",
+          "example": "无",
+          "member": "string",
+          "name": "KeyWordLibIdList",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -738,6 +821,33 @@
           "type": "object",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAsrKeyWordLibRequest": {
+      "document": "DeleteAsrKeyWordLib请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "关键词表ID",
+          "example": "ed9d5b5a9fa14f4a86dc71360e6a3835",
+          "member": "string",
+          "name": "KeyWordLibId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAsrKeyWordLibResponse": {
+      "document": "DeleteAsrKeyWordLib返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -937,6 +1047,70 @@
           "name": "DownloadUrl",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetAsrKeyWordLibListRequest": {
+      "document": "GetAsrKeyWordLibList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分页Offset",
+          "example": "无",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页Limit",
+          "example": "无",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "词库名称或者UIN检索",
+          "example": "无",
+          "member": "string",
+          "name": "SpecifyNames",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "只看用户自己创建的",
+          "example": "无",
+          "member": "bool",
+          "name": "OnlySelf",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "GetAsrKeyWordLibListResponse": {
+      "document": "GetAsrKeyWordLibList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "关键词列表返回数据",
+          "example": "无",
+          "member": "KeyWordLibListData",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": false
         },
         {
@@ -1239,6 +1413,146 @@
         }
       ],
       "usage": "both"
+    },
+    "KeyWordLib": {
+      "document": "关键词表信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "关键词表ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "aa6f402f263f12ea856fc81fbecfd0sd",
+          "member": "string",
+          "name": "KeyWordLibId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "关键词表名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "测试词表",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "关键词列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"a\",\"b\"]",
+          "member": "string",
+          "name": "KeyWordList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "datetime_iso",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "datetime_iso",
+          "name": "UpdateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "KeyWordLibIdData": {
+      "document": "关键词ID",
+      "members": [
+        {
+          "disabled": false,
+          "document": "关键词ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "KeyWordLibId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "KeyWordLibListData": {
+      "document": "查询列表返回数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "关键词表列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyWordLib",
+          "name": "KeyWordLibList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "关键词列表总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "KeyWordResult": {
+      "document": "关键字识别结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "关键词库ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "abcdedfh",
+          "member": "string",
+          "name": "KeyWordLibID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "关键词库名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "测试词库",
+          "member": "string",
+          "name": "KeyWordLibName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "匹配到的关键词\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"冰淇淋\",\"月亮\",\"六便士\"]",
+          "member": "string",
+          "name": "KeyWords",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "Model": {
       "document": "[自学习模型信息](https://cloud.tencent.com/document/product/1093/90813#3.-.E8.BE.93.E5.87.BA.E5.8F.82.E6.95.B0)",
@@ -1546,6 +1860,16 @@
           "member": "string",
           "name": "EmotionType",
           "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "关键词识别结果列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[       {         \"KeyWordLibID\": \"abcdedfh\",         \"KeyWordLibName\": \"测试词库\",         \"KeyWords\": [\"冰淇淋\",\"月亮\",\"六便士\"]       }     ]",
+          "member": "KeyWordResult",
+          "name": "KeyWordResults",
+          "output_required": false,
           "type": "list",
           "value_allowed_null": true
         }
@@ -1990,6 +2314,61 @@
         }
       ],
       "usage": "out"
+    },
+    "UpdateAsrKeyWordLibRequest": {
+      "document": "UpdateAsrKeyWordLib请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "关键词表ID",
+          "example": "aa6f402f263f12ea856fc81fbecfd0sd",
+          "member": "string",
+          "name": "KeyWordLibId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "词表名称，长度在1-20之间\n仅限中英文数字-_",
+          "example": "新的词表名称",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "- 词文件（纯文本文件）以行分隔 ，进行二进制base64编码\n- 格式要求：TXT 每行只有一个词，不满足格式则报错无法上传 \n- 每个词最多5个汉字或15个字符，单个词库最多不超过100个词\n- 此参数为空则只更新词表名称",
+          "example": "无",
+          "member": "string",
+          "name": "KeyWordFile",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateAsrKeyWordLibResponse": {
+      "document": "UpdateAsrKeyWordLib返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "关键词表ID数据",
+          "example": "无",
+          "member": "KeyWordLibIdData",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "UpdateAsrVocabRequest": {
       "document": "UpdateAsrVocab请求参数结构体",

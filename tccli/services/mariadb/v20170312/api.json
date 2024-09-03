@@ -112,6 +112,13 @@
       "output": "DescribeBackupTimeResponse",
       "status": "online"
     },
+    "DescribeBinlogTime": {
+      "document": "本接口（DescribeBinlogTime）用于查询可回档时间范围。",
+      "input": "DescribeBinlogTimeRequest",
+      "name": "查询可回档时间范围",
+      "output": "DescribeBinlogTimeResponse",
+      "status": "online"
+    },
     "DescribeDBEncryptAttributes": {
       "document": "本接口(DescribeDBEncryptAttributes)用于查询实例数据加密状态。",
       "input": "DescribeDBEncryptAttributesRequest",
@@ -3446,6 +3453,53 @@
           "required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBinlogTimeRequest": {
+      "document": "DescribeBinlogTime请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例 ID，形如：tdsql-ow728lmc。",
+          "example": "tdsql-arryr5nt",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBinlogTimeResponse": {
+      "document": "DescribeBinlogTime返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "2019-04-06 00:31:10",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "2019-04-06 14:31:56",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

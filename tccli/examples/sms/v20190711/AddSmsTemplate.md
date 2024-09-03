@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli sms AddSmsTemplate --cli-unfold-argument  \
-    --SmsType 0 \
+    --SmsType 3 \
     --International 0 \
     --Remark test \
     --TemplateContent your code is {1} \

@@ -272,6 +272,14 @@
         "title": "ES集群实例续费询价"
       }
     ],
+    "InstallInstanceModel": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InstallInstanceModel\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"UsrCosModelUrlList\": [\n        \"abc\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d6c1d15f-5eab-11ef-9b1d-525400a23f29\",\n        \"FlowId\": \"17279\"\n    }\n}",
+        "title": "安装模型调用示例"
+      }
+    ],
     "ModifyEsVipSecurityGroup": [
       {
         "document": "修改集群VIP绑定的安全组信息",

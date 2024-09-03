@@ -1,6 +1,6 @@
 **Example 1: 修改路由模式是BGP的专用通道**
 
-
+修改路由模式是BGP的专用通道
 
 Input: 
 
@@ -26,7 +26,7 @@ Output:
 
 **Example 2: 修改路由模式是STATIC的专用通道**
 
-
+修改路由模式是STATIC的专用通道
 
 Input: 
 

@@ -4666,7 +4666,7 @@
         {
           "disabled": false,
           "document": "CVM创建透传参数，json化字符串格式，如需要保证扩展集群节点请求幂等性需要在此参数添加ClientToken字段，详见[CVM创建实例](https://cloud.tencent.com/document/product/213/15730)接口。",
-          "example": "{}",
+          "example": " {\"InstanceChargeType\":\"POSTPAID_BY_HOUR\",\"Placement\":{\"Zone\":\"ap-shanghai-1\",\"ProjectId\":0},\"InstanceType\":\"S2.LARGE4\",\"SystemDisk\":{\"DiskType\":\"CLOUD_BSSD\",\"DiskSize\":50},\"VirtualPrivateCloud\":{\"VpcId\":\"vpc-135qxjgs\",\"SubnetId\":\"subnet-rtp4p7q3\",\"AsVpcGateway\":false,\"Ipv6AddressCount\":0},\"InternetAccessible\":{\"InternetChargeType\":\"TRAFFIC_POSTPAID_BY_HOUR\",\"InternetMaxBandwidthOut\":1,\"PublicIpAssigned\":true},\"InstanceCount\":1,\"ImageId\":\"img-9qrfy1xt\",\"InstanceName\":\"tke_cls-qgbeoz23_worker\",\"LoginSettings\":{},\"SecurityGroupIds\":[\"sg-gt69n0lo\"],\"EnhancedService\":{\"SecurityService\":{\"Enabled\":true},\"MonitorService\":{\"Enabled\":true}}}",
           "member": "string",
           "name": "RunInstancePara",
           "required": true,
@@ -4702,6 +4702,7 @@
           "example": "[",
           "member": "string",
           "name": "InstanceIdSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -9210,6 +9211,7 @@
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9219,6 +9221,7 @@
           "example": "无",
           "member": "ClusterLevelChangeRecord",
           "name": "Items",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -16950,7 +16953,7 @@
         {
           "disabled": false,
           "document": "TKE集群ID",
-          "example": "cls-xxxxxx",
+          "example": "cls-12jsh8ds",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -16962,6 +16965,15 @@
           "example": "/var/lib/kubelet",
           "member": "string",
           "name": "KubeletRootDir",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "集群类型 tke/eks，默认tke",
+          "example": "tke",
+          "member": "string",
+          "name": "ClusterType",
           "required": false,
           "type": "string"
         }

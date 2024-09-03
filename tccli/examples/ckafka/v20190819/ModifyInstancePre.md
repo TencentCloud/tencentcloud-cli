@@ -16,18 +16,26 @@ Output:
 {
     "Response": {
         "Result": {
-            "DeleteRouteTimestamp": "xx",
-            "ReturnCode": "0",
-            "ReturnMessage": "ok",
+            "ReturnCode": "abc",
+            "ReturnMessage": "abc",
             "Data": {
                 "FlowId": 0,
-                "InstanceId": "ckafka-xxxx",
                 "DealNames": [
-                    "1111111111"
+                    "abc"
+                ],
+                "InstanceId": "abc",
+                "DealNameInstanceIdMapping": [
+                    {
+                        "DealName": "abc",
+                        "InstanceIdList": [
+                            "abc"
+                        ]
+                    }
                 ]
-            }
+            },
+            "DeleteRouteTimestamp": "abc"
         },
-        "RequestId": "1ba4ac83-1e9e-497b-b3e1-4c10872a4068"
+        "RequestId": "abc"
     }
 }
 ```

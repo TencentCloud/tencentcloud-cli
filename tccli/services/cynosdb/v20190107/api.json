@@ -525,6 +525,13 @@
       "output": "DescribeRollbackTimeValidityResponse",
       "status": "deprecated"
     },
+    "DescribeServerlessStrategy": {
+      "document": "查询serverless策略",
+      "input": "DescribeServerlessStrategyRequest",
+      "name": "查询serverless策略",
+      "output": "DescribeServerlessStrategyResponse",
+      "status": "online"
+    },
     "DescribeSupportProxyVersion": {
       "document": "查询支持的数据库代理版本",
       "input": "DescribeSupportProxyVersionRequest",
@@ -796,6 +803,13 @@
       "input": "ModifyResourcePackagesDeductionPriorityRequest",
       "name": "修改已绑定资源包抵扣优先级",
       "output": "ModifyResourcePackagesDeductionPriorityResponse",
+      "status": "online"
+    },
+    "ModifyServerlessStrategy": {
+      "document": "修改serverless策略",
+      "input": "ModifyServerlessStrategyRequest",
+      "name": "修改serverless策略",
+      "output": "ModifyServerlessStrategyResponse",
       "status": "online"
     },
     "ModifyVipVport": {
@@ -11487,6 +11501,93 @@
       ],
       "type": "object"
     },
+    "DescribeServerlessStrategyRequest": {
+      "document": "DescribeServerlessStrategy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "serverless集群id",
+          "example": "cynosdbmysql-xxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeServerlessStrategyResponse": {
+      "document": "DescribeServerlessStrategy返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "cpu负载为 0 时持续多久（秒）发起自动暂停",
+          "example": "300",
+          "member": "int64",
+          "name": "AutoPauseDelay",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "cpu负载超过当前规格核数时，持续多久（秒）发起自动扩容",
+          "example": "30",
+          "member": "int64",
+          "name": "AutoScaleUpDelay",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "cpu 负载低于低一级规格核数时，持续多久（秒）发起自动缩容",
+          "example": "60",
+          "member": "int64",
+          "name": "AutoScaleDownDelay",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否自动暂停，可能值：\nyes\nno",
+          "example": "yes",
+          "member": "string",
+          "name": "AutoPause",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群是否允许向上扩容，可选范围<li>yes</li><li>no</li>",
+          "example": "yes",
+          "member": "string",
+          "name": "AutoScaleUp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群是否允许向下缩容，可选范围<li>yes</li><li>no</li>",
+          "example": "yes",
+          "member": "string",
+          "name": "AutoScaleDown",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeSupportProxyVersionRequest": {
       "document": "DescribeSupportProxyVersion请求参数结构体",
       "members": [
@@ -15279,6 +15380,151 @@
     "ModifyResourcePackagesDeductionPriorityResponse": {
       "document": "ModifyResourcePackagesDeductionPriority返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyServerlessStrategyRequest": {
+      "document": "ModifyServerlessStrategy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "serverless集群id",
+          "example": "cynosdbmysql-8vcxoq75",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "集群是否自动暂停，可选范围\n<li>yes</li>\n<li>no</li>",
+          "example": "no",
+          "member": "string",
+          "name": "AutoPause",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "集群自动暂停的延迟，单位秒，可选范围[600,691200]，默认600",
+          "example": "100",
+          "member": "int64",
+          "name": "AutoPauseDelay",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "该参数暂时无效",
+          "example": "200",
+          "member": "int64",
+          "name": "AutoScaleUpDelay",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "该参数暂时无效",
+          "example": "300",
+          "member": "int64",
+          "name": "AutoScaleDownDelay",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "cpu最小值，可选范围参考DescribeServerlessInstanceSpecs接口返回",
+          "example": "0.25",
+          "member": "float",
+          "name": "MinCpu",
+          "required": false,
+          "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回",
+          "example": "2",
+          "member": "float",
+          "name": "MaxCpu",
+          "required": false,
+          "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "只读实例cpu最小值，可选范围参考DescribeServerlessInstanceSpecs接口返回",
+          "example": "0.25",
+          "member": "float",
+          "name": "MinRoCpu",
+          "required": false,
+          "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "只读cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回",
+          "example": "2",
+          "member": "float",
+          "name": "MaxRoCpu",
+          "required": false,
+          "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "只读节点最小个数",
+          "example": "3",
+          "member": "int64",
+          "name": "MinRoCount",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "只读节点最大个数",
+          "example": "3",
+          "member": "int64",
+          "name": "MaxRoCount",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "集群是否允许扩容，可选范围<li>yes</li><li>no</li>",
+          "example": "yes",
+          "member": "string",
+          "name": "AutoScaleUp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "集群是否允许缩容，可选范围<li>yes</li><li>no</li>",
+          "example": "yes",
+          "member": "string",
+          "name": "AutoScaleDown",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyServerlessStrategyResponse": {
+      "document": "ModifyServerlessStrategy返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "异步流程id",
+          "example": "1008300",
+          "member": "int64",
+          "name": "FlowId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

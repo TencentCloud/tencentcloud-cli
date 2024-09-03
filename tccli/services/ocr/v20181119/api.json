@@ -64,18 +64,18 @@
       "status": "online"
     },
     "ClassifyStoreName": {
-      "document": "本接口用于识别门头照分类标签信息",
+      "document": "本接口用于识别门头照分类标签信息\n默认接口请求频率限制：1次/秒",
       "input": "ClassifyStoreNameRequest",
       "name": "商户照片分类",
       "output": "ClassifyStoreNameResponse",
       "status": "online"
     },
     "CreateAIFormTask": {
-      "document": "本接口可创建智能表单录入任务，支持多个识别图片和PDF的URL上传，返回含有识别内容的操作页面URL。\n\n智能表单录入产品提供高准确率的表单识别技术和人工核对工具，支持自定义字段，将识别结果自动填入到自定义条目中，并提供人工操作工具，完成整个表单识别过程。适用性强，可对票据、合同、货单等文件的识别，适用于金融、货代、保险、档案等领域。本产品免费公测中，您可以点击demo（超链接：https://ocr.smartform.cloud.tencent.com/）试用，如需购买请与商务团队联系。",
+      "document": "智慧表单产品已下线，需要下线相关API\n\n本接口可创建智能表单录入任务，支持多个识别图片和PDF的URL上传，返回含有识别内容的操作页面URL。\n\n智能表单录入产品提供高准确率的表单识别技术和人工核对工具，支持自定义字段，将识别结果自动填入到自定义条目中，并提供人工操作工具，完成整个表单识别过程。适用性强，可对票据、合同、货单等文件的识别，适用于金融、货代、保险、档案等领域。本产品免费公测中，您可以点击demo（超链接：https://ocr.smartform.cloud.tencent.com/）试用，如需购买请与商务团队联系。",
       "input": "CreateAIFormTaskRequest",
       "name": "创建智慧表单文件识别任务",
       "output": "CreateAIFormTaskResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DriverLicenseOCR": {
       "document": "本接口支持驾驶证主页和副页所有字段的自动定位与识别，重点字段的识别准确度达到99%以上。\n\n驾驶证主页：包括证号、姓名、性别、国籍、住址、出生日期、初次领证日期、准驾车型、有效期限、发证单位\n\n驾驶证副页：包括证号、姓名、档案编号、记录。\n\n另外，本接口还支持复印件、翻拍告警功能。同时支持识别交管12123 APP发放的电子驾驶证正页。\n\n电子驾驶证正页：包括证号、姓名、性别、国籍、出生日期、初次领证日期、准驾车型、有效期开始时间、有效期截止时间、档案编号、状态、累积记分。\n\n默认接口请求频率限制：10次/秒。",
@@ -183,11 +183,11 @@
       "status": "online"
     },
     "GetTaskState": {
-      "document": "支持查询智能表单录入任务的状态。本产品免费公测中，您可以点击demo（超链接：https://ocr.smartform.cloud.tencent.com/）试用，如需购买请与商务团队联系。",
+      "document": "智慧表单产品已下线，需要下线相关API\n\n支持查询智能表单录入任务的状态。本产品免费公测中，您可以点击demo（超链接：https://ocr.smartform.cloud.tencent.com/）试用，如需购买请与商务团队联系。",
       "input": "GetTaskStateRequest",
       "name": "查询智慧表单任务状态",
       "output": "GetTaskStateResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "HKIDCardOCR": {
       "document": "本接口支持中国香港身份证人像面中关键字段的识别，包括中文姓名、英文姓名、姓名电码、出生日期、性别、证件符号、首次签发日期、最近领用日期、身份证号、是否是永久性居民身份证；具备人像照片裁剪等扩展功能。\n\n默认接口请求频率限制：5次/秒。",
@@ -421,7 +421,7 @@
       "status": "online"
     },
     "RecognizeStoreName": {
-      "document": "本接口用于识别门头照文字识别结果以及对应分类标签信息",
+      "document": "本接口用于识别门头照文字识别结果以及对应分类标签信息\n默认接口请求频率限制：1次/秒",
       "input": "RecognizeStoreNameRequest",
       "name": "商户门头照识别",
       "output": "RecognizeStoreNameResponse",
@@ -15308,7 +15308,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "识别出的字段名称(关键字)，支持以下字段：\n付款开户行、收款开户行、付款账号、收款账号、回单类型、回单编号、币种、流水号、凭证号码、交易机构、交易金额、手续费、日期等字段信息。",
+          "document": "识别出的字段名称(关键字)，如商店名称",
           "example": "商店名称",
           "member": "string",
           "name": "Name",

@@ -1354,6 +1354,62 @@
       ],
       "type": "object"
     },
+    "ClientSubscriptionInfo": {
+      "document": "客户端订阅详情，可用于辅助判断哪些客户端订阅关系不一致",
+      "members": [
+        {
+          "disabled": false,
+          "document": "客户端ID",
+          "example": "无",
+          "member": "string",
+          "name": "ClientId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "客户端IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ClientAddr",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "订阅主题\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Topic",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "订阅表达式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SubString",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "订阅方式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ExpressionType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "Cluster": {
       "document": "集群信息集合",
       "members": [
@@ -1728,20 +1784,20 @@
         {
           "disabled": false,
           "document": "消息队列ID。",
-          "example": "xxx",
+          "example": "cmqq-bzgqn8",
           "member": "string",
           "name": "QueueId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "消息队列名字。",
-          "example": "xxxx",
+          "example": "test-queue",
           "member": "string",
           "name": "QueueName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1751,7 +1807,7 @@
           "example": "0",
           "member": "uint64",
           "name": "Qps",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1761,7 +1817,7 @@
           "example": "0",
           "member": "uint64",
           "name": "Bps",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1771,7 +1827,7 @@
           "example": "0",
           "member": "uint64",
           "name": "MaxDelaySeconds",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1781,7 +1837,7 @@
           "example": "0",
           "member": "uint64",
           "name": "MaxMsgHeapNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1791,7 +1847,7 @@
           "example": "0",
           "member": "uint64",
           "name": "PollingWaitSeconds",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1801,7 +1857,7 @@
           "example": "0",
           "member": "uint64",
           "name": "MsgRetentionSeconds",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1811,7 +1867,7 @@
           "example": "0",
           "member": "uint64",
           "name": "VisibilityTimeout",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1821,7 +1877,7 @@
           "example": "0",
           "member": "uint64",
           "name": "MaxMsgSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1831,7 +1887,7 @@
           "example": "0",
           "member": "uint64",
           "name": "RewindSeconds",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1841,7 +1897,7 @@
           "example": "0",
           "member": "uint64",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1851,7 +1907,7 @@
           "example": "0",
           "member": "uint64",
           "name": "LastModifyTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1861,7 +1917,7 @@
           "example": "0",
           "member": "uint64",
           "name": "ActiveMsgNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1871,7 +1927,7 @@
           "example": "0",
           "member": "uint64",
           "name": "InactiveMsgNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1881,7 +1937,7 @@
           "example": "0",
           "member": "uint64",
           "name": "DelayMsgNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1891,7 +1947,7 @@
           "example": "0",
           "member": "uint64",
           "name": "RewindMsgNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1901,7 +1957,7 @@
           "example": "0",
           "member": "uint64",
           "name": "MinMsgTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1911,37 +1967,37 @@
           "example": "false",
           "member": "bool",
           "name": "Transaction",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "死信队列。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[{\"QueueId\":null,\"QueueName\":\"test0829\"}]",
           "member": "CmqDeadLetterSource",
           "name": "DeadLetterSource",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "死信队列策略。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\"DeadLetterQueue\":\"queue1\",\"Policy\":0,\"MaxTimeToLive\":0,\"MaxReceiveCount\":22}",
           "member": "CmqDeadLetterPolicy",
           "name": "DeadLetterPolicy",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "事务消息策略。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "null",
           "member": "CmqTransactionPolicy",
           "name": "TransactionPolicy",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -1951,17 +2007,17 @@
           "example": "0",
           "member": "uint64",
           "name": "CreateUin",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "关联的标签。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[{\"TagKey\":\"aa\",\"TagValue\":\"bb\"}]",
           "member": "Tag",
           "name": "Tags",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1971,27 +2027,27 @@
           "example": "false",
           "member": "bool",
           "name": "Trace",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "租户id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "cmq-131794",
           "member": "string",
           "name": "TenantId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "命名空间名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "CMQ_QUEUE-test-queue",
           "member": "string",
           "name": "NamespaceName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2001,7 +2057,7 @@
           "example": "0",
           "member": "int64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2011,7 +2067,7 @@
           "example": "100000",
           "member": "int64",
           "name": "MaxUnackedMsgNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2021,7 +2077,7 @@
           "example": "104857600",
           "member": "int64",
           "name": "MaxMsgBacklogSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2031,7 +2087,7 @@
           "example": "0",
           "member": "uint64",
           "name": "RetentionSizeInMB",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         }
@@ -2044,7 +2100,7 @@
         {
           "disabled": false,
           "document": "订阅名字，在单个地域同一帐号的同一主题下唯一。订阅名称是一个不超过64个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "sub",
           "member": "string",
           "name": "SubscriptionName",
           "output_required": true,
@@ -2054,7 +2110,7 @@
         {
           "disabled": false,
           "document": "订阅 ID。订阅 ID 在拉取监控数据时会用到。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "subsc-w4nojx4a",
           "member": "string",
           "name": "SubscriptionId",
           "output_required": true,
@@ -2104,7 +2160,7 @@
         {
           "disabled": false,
           "document": "表示订阅接收消息的过滤策略。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[]",
           "member": "string",
           "name": "BindingKey",
           "output_required": true,
@@ -2114,7 +2170,7 @@
         {
           "disabled": false,
           "document": "接收通知的 endpoint，根据协议 protocol 区分：对于 HTTP，endpoint 必须以http://开头，host 可以是域名或 IP；对于 queue，则填 queueName。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "queue",
           "member": "string",
           "name": "Endpoint",
           "output_required": true,
@@ -2124,7 +2180,7 @@
         {
           "disabled": false,
           "document": "描述用户创建订阅时选择的过滤策略：\nfilterType = 1表示用户使用 filterTag 标签过滤\nfilterType = 2表示用户使用 bindingKey 过滤。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[]",
           "member": "string",
           "name": "FilterTags",
           "output_required": true,
@@ -2134,7 +2190,7 @@
         {
           "disabled": false,
           "document": "订阅的协议，目前支持两种协议：HTTP、queue。使用 HTTP 协议，用户需自己搭建接受消息的 Web Server。使用 queue，消息会自动推送到 CMQ queue，用户可以并发地拉取消息。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "queue",
           "member": "string",
           "name": "Protocol",
           "output_required": true,
@@ -2144,7 +2200,7 @@
         {
           "disabled": false,
           "document": "向 endpoint 推送消息出现错误时，CMQ 推送服务器的重试策略。取值有：\n（1）BACKOFF_RETRY，退避重试。每隔一定时间重试一次，重试够一定次数后，就把该消息丢弃，继续推送下一条消息；\n（2）EXPONENTIAL_DECAY_RETRY，指数衰退重试。每次重试的间隔是指数递增的，例如开始 1s，后面是 2s，4s，8s...由于 Topic 消息的周期是一天，所以最多重试一天就把消息丢弃。默认值是 EXPONENTIAL_DECAY_RETRY。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "EXPONENTIAL_DECAY_RETRY",
           "member": "string",
           "name": "NotifyStrategy",
           "output_required": true,
@@ -2154,7 +2210,7 @@
         {
           "disabled": false,
           "document": "推送内容的格式。取值：（1）JSON；（2）SIMPLIFIED，即 raw 格式。如果 protocol 是 queue，则取值必须为 SIMPLIFIED。如果 protocol 是 HTTP，两个值均可以，默认值是 JSON。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "SIMPLIFIED",
           "member": "string",
           "name": "NotifyContentFormat",
           "output_required": true,
@@ -2164,7 +2220,7 @@
         {
           "disabled": false,
           "document": "订阅所属的主题名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "testTopic",
           "member": "string",
           "name": "TopicName",
           "output_required": false,
@@ -2180,7 +2236,7 @@
         {
           "disabled": false,
           "document": "主题的 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "cmqt-w4nb4z",
           "member": "string",
           "name": "TopicId",
           "output_required": true,
@@ -2191,7 +2247,7 @@
         {
           "disabled": false,
           "document": "主题名称。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "testTopic",
           "member": "string",
           "name": "TopicName",
           "output_required": true,
@@ -2290,7 +2346,7 @@
         {
           "disabled": false,
           "document": "关联的标签。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[{\"TagKey\":\"aa\",\"TagValue\":\"bb\"}]",
           "member": "Tag",
           "name": "Tags",
           "output_required": true,
@@ -2312,7 +2368,7 @@
         {
           "disabled": false,
           "document": "租户id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "cmq-13179",
           "member": "string",
           "name": "TenantId",
           "output_required": true,
@@ -2323,7 +2379,7 @@
         {
           "disabled": false,
           "document": "命名空间名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "CMQ_TOPIC-testTopic",
           "member": "string",
           "name": "NamespaceName",
           "output_required": true,
@@ -2334,7 +2390,7 @@
         {
           "disabled": false,
           "document": "集群状态，0:创建中，1:正常，2:销毁中，3:已删除，4: 隔离中，5:创建失败，6: 删除失败\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Status",
           "output_required": true,
@@ -2999,7 +3055,7 @@
         {
           "disabled": false,
           "document": "向Endpoint推送消息出现错误时，CMQ推送服务器的重试策略。取值有：1）BACKOFF_RETRY，退避重试。每隔一定时间重试一次，重试够一定次数后，就把该消息丢弃，继续推送下一条消息；2）EXPONENTIAL_DECAY_RETRY，指数衰退重试。每次重试的间隔是指数递增的，例如开始1s，后面是2s，4s，8s...由于Topic消息的周期是一天，所以最多重试一天就把消息丢弃。默认值是EXPONENTIAL_DECAY_RETRY。",
-          "example": "xxx",
+          "example": "EXPONENTIAL_DECAY_RETRY",
           "member": "string",
           "name": "NotifyStrategy",
           "required": false,
@@ -3008,7 +3064,7 @@
         {
           "disabled": false,
           "document": "消息正文。消息标签（用于消息过滤)。标签数量不能超过5个，每个标签不超过16个字符。与(Batch)PublishMessage的MsgTag参数配合使用，规则：1）如果FilterTag没有设置，则无论MsgTag是否有设置，订阅接收所有发布到Topic的消息；2）如果FilterTag数组有值，则只有数组中至少有一个值在MsgTag数组中也存在时（即FilterTag和MsgTag有交集），订阅才接收该发布到Topic的消息；3）如果FilterTag数组有值，但MsgTag没设置，则不接收任何发布到Topic的消息，可以认为是2）的一种特例，此时FilterTag和MsgTag没有交集。规则整体的设计思想是以订阅者的意愿为主。",
-          "example": "无",
+          "example": "[\"aa\"]",
           "member": "string",
           "name": "FilterTag",
           "required": false,
@@ -3017,7 +3073,7 @@
         {
           "disabled": false,
           "document": "BindingKey数量不超过5个， 每个BindingKey长度不超过64字节，该字段表示订阅接收消息的过滤策略，每个BindingKey最多含有15个“.”， 即最多16个词组。",
-          "example": "无",
+          "example": "[]",
           "member": "string",
           "name": "BindingKey",
           "required": false,
@@ -3026,7 +3082,7 @@
         {
           "disabled": false,
           "document": "推送内容的格式。取值：1）JSON；2）SIMPLIFIED，即raw格式。如果Protocol是queue，则取值必须为SIMPLIFIED。如果Protocol是http，两个值均可以，默认值是JSON。",
-          "example": "xxx",
+          "example": "SIMPLIFIED",
           "member": "string",
           "name": "NotifyContentFormat",
           "required": false,
@@ -5816,7 +5872,7 @@
           "example": "NULL",
           "member": "Cluster",
           "name": "ClusterSet",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -6046,7 +6102,7 @@
         {
           "disabled": false,
           "document": "根据QueueName进行过滤",
-          "example": "无",
+          "example": "testqueue",
           "member": "string",
           "name": "QueueName",
           "required": false,
@@ -6073,7 +6129,7 @@
         {
           "disabled": false,
           "document": "过滤器。目前支持按标签过滤，标签的Name需要加前缀“tag:”，例如：tag:负责人、tag:环境、tag:业务",
-          "example": "无",
+          "example": "[{\"Name\":\"tag:aa\",\"Values\":[\"bb\"]}]",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -6091,17 +6147,17 @@
           "example": "2",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "队列列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[{\"QueueId\":\"cmqq-bzgqn83n\",\"QueueName\":\"test0829\",\"Qps\":5000,\"Bps\":52428800,\"MaxDelaySeconds\":3600,\"MaxMsgHeapNum\":1000000,\"PollingWaitSeconds\":3,\"MsgRetentionSeconds\":7200,\"VisibilityTimeout\":30,\"MaxMsgSize\":1048576,\"RewindSeconds\":0,\"RetentionSizeInMB\":0,\"CreateTime\":1724918937000,\"LastModifyTime\":1724924966000,\"ActiveMsgNum\":0,\"InactiveMsgNum\":0,\"DelayMsgNum\":null,\"RewindMsgNum\":null,\"MinMsgTime\":null,\"MaxUnackedMsgNum\":100000,\"DeadLetterPolicy\":{\"DeadLetterQueue\":\"rmqbroker-nj\",\"Policy\":0,\"MaxTimeToLive\":0,\"MaxReceiveCount\":22},\"DeadLetterSource\":null,\"Transaction\":null,\"TransactionPolicy\":null,\"CreateUin\":null,\"Trace\":null,\"Tags\":null,\"TenantId\":\"cmq-131794\",\"NamespaceName\":\"CMQ_QUEUE-test0829\",\"Status\":1,\"MaxMsgBacklogSize\":10737418240,\"BrokerType\":1,\"SetType\":\"SHARED\",\"InstanceId\":null}]",
           "member": "CmqQueue",
           "name": "QueueList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -6147,7 +6203,7 @@
         {
           "disabled": false,
           "document": "根据SubscriptionName进行模糊搜索",
-          "example": "无",
+          "example": "sub",
           "member": "string",
           "name": "SubscriptionName",
           "required": false,
@@ -6156,7 +6212,7 @@
         {
           "disabled": false,
           "document": "队列名称，订阅绑定的endpoint",
-          "example": "无",
+          "example": "testqueue",
           "member": "string",
           "name": "QueueName",
           "required": false,
@@ -6190,7 +6246,7 @@
         {
           "disabled": false,
           "document": "Subscription属性集合\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[{\"SubscriptionName\":\"health-check-sub\",\"SubscriptionId\":\"subsc-w4nojx4aeqb2\",\"TopicOwner\":null,\"MsgCount\":0,\"LastModifyTime\":1692691277000,\"CreateTime\":1692691277000,\"BindingKey\":[],\"Endpoint\":\"rmqbroker-nj-cmq1-health-check-queue\",\"FilterTags\":[],\"Protocol\":\"queue\",\"NotifyStrategy\":\"EXPONENTIAL_DECAY_RETRY\",\"NotifyContentFormat\":\"SIMPLIFIED\",\"TopicName\":\"rmqbroker-nj-cmq1-health-check-topic\"}]",
           "member": "CmqSubscription",
           "name": "SubscriptionSet",
           "output_required": true,
@@ -6212,7 +6268,7 @@
         {
           "disabled": false,
           "document": "精确匹配TopicName。",
-          "example": "xxx",
+          "example": "topic-test",
           "member": "string",
           "name": "TopicName",
           "required": false,
@@ -6227,10 +6283,10 @@
         {
           "disabled": false,
           "document": "主题详情",
-          "example": "无",
+          "example": "{\"TopicId\":\"cmqt-w4nb4z27\",\"TopicName\":\"rmqbroker-nj\",\"MaxMsgSize\":1048576,\"FilterType\":1,\"MsgRetentionSeconds\":86400,\"Qps\":5000,\"CreateTime\":1692691276000,\"LastModifyTime\":1692691276000,\"MsgCount\":0,\"CreateUin\":null,\"Trace\":null,\"Tags\":null,\"TenantId\":\"cmq-13179472\",\"NamespaceName\":\"CMQ_TOPIC-rmqbroker-nj\",\"Status\":1,\"BrokerType\":1,\"SetType\":\"SHARED\",\"InstanceId\":null,\"SubscriptionCount\":1}",
           "member": "CmqTopic",
           "name": "TopicDescribe",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -6267,7 +6323,7 @@
         {
           "disabled": false,
           "document": "根据TopicName进行模糊搜索",
-          "example": "无",
+          "example": "topic",
           "member": "string",
           "name": "TopicName",
           "required": false,
@@ -6294,7 +6350,7 @@
         {
           "disabled": false,
           "document": "过滤器。目前支持按标签过滤，标签的Name需要加前缀“tag:”，例如：tag:负责人、tag:环境、tag:业务",
-          "example": "无",
+          "example": "[{\"Name\":\"tag:aa\",\"Values\":[\"bb\"]}]",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -6309,10 +6365,10 @@
         {
           "disabled": false,
           "document": "主题列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[{\"TopicId\":\"cmqt-w4nb4z27w111\",\"TopicName\":\"rtopic\",\"MaxMsgSize\":1048576,\"FilterType\":1,\"MsgRetentionSeconds\":86400,\"Qps\":5000,\"CreateTime\":1692691276000,\"LastModifyTime\":1692691276000,\"MsgCount\":0,\"CreateUin\":null,\"Trace\":null,\"Tags\":null,\"TenantId\":\"cmq-1317947242\",\"NamespaceName\":\"CMQ_TOPIC-rtopic\",\"Status\":1,\"BrokerType\":1,\"SetType\":\"SHARED\",\"InstanceId\":null,\"SubscriptionCount\":1}]",
           "member": "CmqTopic",
           "name": "TopicList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -6322,7 +6378,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -10351,7 +10407,7 @@
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -10361,7 +10417,7 @@
           "example": "无",
           "member": "RocketMQSubscription",
           "name": "Subscriptions",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -12462,7 +12518,7 @@
         {
           "disabled": false,
           "document": "向 Endpoint 推送消息出现错误时，CMQ 推送服务器的重试策略。取值如下：\n（1）BACKOFF_RETRY，退避重试。每隔一定时间重试一次，重试够一定次数后，就把该消息丢弃，继续推送下一条消息。\n（2）EXPONENTIAL_DECAY_RETRY，指数衰退重试。每次重试的间隔是指数递增的，例如开始1s，后面是2s，4s，8s···由于 Topic 消息的周期是一天，所以最多重试一天就把消息丢弃。默认值是 EXPONENTIAL_DECAY_RETRY。",
-          "example": "xxx",
+          "example": "EXPONENTIAL_DECAY_RETRY",
           "member": "string",
           "name": "NotifyStrategy",
           "required": false,
@@ -12471,7 +12527,7 @@
         {
           "disabled": false,
           "document": "推送内容的格式。取值：（1）JSON；（2）SIMPLIFIED，即 raw 格式。如果 Protocol 是 queue，则取值必须为 SIMPLIFIED。如果 Protocol 是 HTTP，两个值均可以，默认值是 JSON。",
-          "example": "xxx",
+          "example": "SIMPLIFIED",
           "member": "string",
           "name": "NotifyContentFormat",
           "required": false,
@@ -12480,7 +12536,7 @@
         {
           "disabled": false,
           "document": "消息正文。消息标签（用于消息过滤)。标签数量不能超过5个，每个标签不超过16个字符。与(Batch)PublishMessage的MsgTag参数配合使用，规则：1）如果FilterTag没有设置，则无论MsgTag是否有设置，订阅接收所有发布到Topic的消息；2）如果FilterTag数组有值，则只有数组中至少有一个值在MsgTag数组中也存在时（即FilterTag和MsgTag有交集），订阅才接收该发布到Topic的消息；3）如果FilterTag数组有值，但MsgTag没设置，则不接收任何发布到Topic的消息，可以认为是2）的一种特例，此时FilterTag和MsgTag没有交集。规则整体的设计思想是以订阅者的意愿为主。",
-          "example": "无",
+          "example": "[]",
           "member": "string",
           "name": "FilterTags",
           "required": false,
@@ -12489,7 +12545,7 @@
         {
           "disabled": false,
           "document": "BindingKey数量不超过5个， 每个BindingKey长度不超过64字节，该字段表示订阅接收消息的过滤策略，每个BindingKey最多含有15个“.”， 即最多16个词组。",
-          "example": "无",
+          "example": "[]",
           "member": "string",
           "name": "BindingKey",
           "required": false,
@@ -13296,6 +13352,7 @@
           "example": "20121212312322",
           "member": "string",
           "name": "OrderId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -14019,7 +14076,7 @@
         {
           "disabled": false,
           "document": "主题名",
-          "example": "xxx",
+          "example": "topic123",
           "member": "string",
           "name": "TopicName",
           "required": true,
@@ -14028,7 +14085,7 @@
         {
           "disabled": false,
           "document": "消息内容，消息总大小需不大于1024K",
-          "example": "xxx",
+          "example": "abc",
           "member": "string",
           "name": "MsgContent",
           "required": true,
@@ -14037,7 +14094,7 @@
         {
           "disabled": false,
           "document": "消息标签，支持传递多标签或单路由，单个标签、路由长度不能超过64个字符。",
-          "example": "无",
+          "example": "[\"a\"]",
           "member": "string",
           "name": "MsgTag",
           "required": false,
@@ -14055,17 +14112,17 @@
           "example": "true",
           "member": "bool",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "消息id",
-          "example": "xxx",
+          "example": "1EAD5E05003A6767C1FC9160304F98",
           "member": "string",
           "name": "MsgId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14375,7 +14432,7 @@
           "example": "标准型",
           "member": "string",
           "name": "SpecName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14385,7 +14442,7 @@
           "example": "5000",
           "member": "uint64",
           "name": "MaxTps",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -14395,7 +14452,7 @@
           "example": "50",
           "member": "uint64",
           "name": "MaxBandWidth",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -14405,7 +14462,7 @@
           "example": "50",
           "member": "uint64",
           "name": "MaxNamespaces",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -14415,7 +14472,7 @@
           "example": "4000",
           "member": "uint64",
           "name": "MaxTopics",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -14425,7 +14482,17 @@
           "example": "2000",
           "member": "uint64",
           "name": "ScalableTps",
-          "required": true,
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "32或者128\n当前集群topic的最大分区数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "32",
+          "member": "uint64",
+          "name": "MaxPartitions",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         }
@@ -17951,6 +18018,16 @@
           "name": "ClientProtocol",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "客户端订阅详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ClientSubscriptionInfo",
+          "name": "ClientSubscriptionInfos",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],

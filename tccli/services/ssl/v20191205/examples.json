@@ -128,7 +128,7 @@
       {
         "document": "云资源部署一键回滚",
         "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeployCertificateRecordRollback\n<公共请求参数>\n\n{\n    \"DeployRecordId\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"DeployRecordId\": 0,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"DeployRecordId\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "云资源部署一键回滚"
       }
     ],
@@ -262,7 +262,7 @@
       {
         "document": "查询证书云资源部署记录列表",
         "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeHostDeployRecord\n<公共请求参数>\n\n{\n    \"CertificateId\": \"vyRlKIeI\"\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"DeployRecordList\": [\n            {\n                \"Status\": 1,\n                \"UpdateTime\": \"xx\",\n                \"CertId\": \"xx\",\n                \"ResourceType\": \"xx\",\n                \"Region\": \"xx\",\n                \"CreateTime\": \"xx\",\n                \"Id\": 1\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"DeployRecordList\": [\n            {\n                \"Id\": 1,\n                \"CertId\": \"abc\",\n                \"ResourceType\": \"abc\",\n                \"Region\": \"abc\",\n                \"Status\": 1,\n                \"CreateTime\": \"abc\",\n                \"UpdateTime\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "查询证书云资源部署记录列表"
       }
     ],

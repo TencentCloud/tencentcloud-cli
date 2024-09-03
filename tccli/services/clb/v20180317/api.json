@@ -2757,6 +2757,15 @@
           "name": "SnatEnable",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "全端口段监听器的结束端口",
+          "example": "[600]",
+          "member": "int64",
+          "name": "FullEndPorts",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -7765,7 +7774,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡实例的网络类型：\nPublic：公网属性， Private：内网属性。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "负载均衡实例的网络类型：\nOPEN：公网属性，INTERNAL：内网属性。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "OPEN",
           "member": "string",
           "name": "LoadBalancerType",
@@ -8131,6 +8140,36 @@
           "name": "Egress",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "负载均衡的属性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "DeleteProtect",
+          "member": "string",
+          "name": "AttributeFlags",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "负载均衡实例的规格类型信息<ul><li> clb.c1.small：简约型规格 </li><li>clb.c2.medium：标准型规格 </li><li> clb.c3.small：高阶型1规格 </li><li> clb.c3.medium：高阶型2规格 </li><li> clb.c4.small：超强型1规格 </li><li> clb.c4.medium：超强型2规格 </li><li> clb.c4.large：超强型3规格 </li><li> clb.c4.xlarge：超强型4规格 </li><li>\"\"：非性能容量型实例</li></ul>\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "clb.c2.medium",
+          "member": "string",
+          "name": "SlaType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "0：表示非独占型实例，1：表示独占型态实例。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Exclusive",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],

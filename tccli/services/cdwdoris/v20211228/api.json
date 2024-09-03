@@ -3734,7 +3734,7 @@
         },
         {
           "disabled": false,
-          "document": "搜索标签列表",
+          "document": "搜索标签列表，没匹配到则不过滤集群列表",
           "example": "无",
           "member": "SearchTags",
           "name": "SearchTags",
@@ -4241,6 +4241,33 @@
       "members": [
         {
           "disabled": false,
+          "document": "实例id",
+          "example": "cdwch-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "GetUsers：获取用户列表；\nGetDatabases：获取数据库列表；\nGetTables：获取数据库表列表；\nGetUserPrivilegesV2：获取用户下的权限，粒度到表级别；\nDeleteUser：删除用户；\nGetCatalog：获取Catalog列表；",
+          "example": "GetClusters",
+          "member": "string",
+          "name": "ApiType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户名称",
+          "example": "user1",
+          "member": "string",
+          "name": "UserName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "用户链接来自的 IP",
           "example": "10.0.0.2",
           "member": "string",
@@ -4290,6 +4317,26 @@
     "DescribeSqlApisResponse": {
       "document": "DescribeSqlApis返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "返回的查询数据，大部分情况是list，也可能是bool\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "ReturnData",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "错误消息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "ErrorMsg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -7632,8 +7679,7 @@
           "member": "string",
           "name": "TagKey",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -7642,18 +7688,16 @@
           "member": "string",
           "name": "TagValue",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
-          "document": "1表示只输入标签的键，没有输入值；0表示输入键时且输入值",
+          "document": "1表示只输入标签的键，没有输入值；非1则表示输入键时且输入值",
           "example": "1",
           "member": "int64",
           "name": "AllValue",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         }
       ],
       "usage": "in"

@@ -270,6 +270,14 @@
         "title": "变配询价"
       }
     ],
+    "ModifyAutoRenewFlag": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAutoRenewFlag\n<公共请求参数>\n\n{\n    \"InstanceId\": \"emr-xxxxx\",\n    \"ResourceIds\": [\n        \"emr-vm-xxxx1\",\n        \"emr-vm-xxxx2\",\n        \"emr-vm-xxxx3\"\n    ],\n    \"RenewFlag\": \"NOTIFY_AND_MANUAL_RENEW\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4d701c1e-8507-47e1-8c69-a8f06a236f24\"\n    }\n}",
+        "title": "开启关闭自动续费接口"
+      }
+    ],
     "ModifyAutoScaleStrategy": [
       {
         "document": "修改扩缩容规则",

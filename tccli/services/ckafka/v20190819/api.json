@@ -211,7 +211,7 @@
       "status": "online"
     },
     "DeleteInstancePre": {
-      "document": "删除预付费实例",
+      "document": "删除预付费实例，该接口会对实例执行隔离并删除的动作，执行成功后实例会被直接删除销毁",
       "input": "DeleteInstancePreRequest",
       "name": "删除预付费实例",
       "output": "DeleteInstancePreResponse",
@@ -1202,7 +1202,7 @@
           "example": "无",
           "member": "JgwOperateResponse",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -1248,7 +1248,7 @@
           "example": "无",
           "member": "BatchModifyTopicResultDTO",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1540,7 +1540,7 @@
           "example": "0",
           "member": "int64",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3596,6 +3596,15 @@
           "name": "PublicNetworkMonthly",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "标签",
+          "example": "{tagKey:'kkk',tagValue:'vvv'}",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -4090,7 +4099,7 @@
         },
         {
           "disabled": false,
-          "document": "实例类型。\"standard\"：标准版，\"profession\"：专业版",
+          "document": "实例类型。\"standard\"：标准版，\"profession\"：专业版。  (标准版仅国际站支持，国内站目前支持专业版)",
           "example": "profession",
           "member": "string",
           "name": "SpecificationsType",
@@ -4186,6 +4195,15 @@
           "name": "PublicNetworkMonthly",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "标签",
+          "example": "{tagKey:'kkk',tagValue:'vvv'}",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -4428,7 +4446,7 @@
         {
           "disabled": false,
           "document": "实例Id",
-          "example": "",
+          "example": "ckafka-ehrg3i4w",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -4437,7 +4455,7 @@
         {
           "disabled": false,
           "document": "主题名称",
-          "example": "",
+          "example": "abc",
           "member": "string",
           "name": "TopicName",
           "required": true,
@@ -4446,7 +4464,7 @@
         {
           "disabled": false,
           "document": "ip白名单列表",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "IpWhiteList",
           "required": true,
@@ -4461,9 +4479,10 @@
         {
           "disabled": false,
           "document": "删除主题IP白名单结果",
-          "example": "",
+          "example": "无",
           "member": "JgwOperateResponse",
           "name": "Result",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -5753,7 +5772,7 @@
           "example": "data",
           "member": "CreateInstancePreResp",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -5835,6 +5854,15 @@
       "members": [
         {
           "disabled": false,
+          "document": "实例id",
+          "example": "ckafka-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "修改时间",
           "example": "2020-08-21 11:15:54",
           "member": "string",
@@ -5863,7 +5891,7 @@
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "",
+          "example": "ckafka-shf6q3hs",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -5872,7 +5900,7 @@
         {
           "disabled": false,
           "document": "主题名称",
-          "example": "",
+          "example": "test-topic",
           "member": "string",
           "name": "TopicName",
           "required": true,
@@ -5881,7 +5909,7 @@
         {
           "disabled": false,
           "document": "ip白名单列表",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "IpWhiteList",
           "required": true,
@@ -5896,9 +5924,10 @@
         {
           "disabled": false,
           "document": "删除主题IP白名单结果",
-          "example": "",
+          "example": "无",
           "member": "JgwOperateResponse",
           "name": "Result",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -8023,7 +8052,7 @@
           "example": "data",
           "member": "PrometheusDTO",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -13351,7 +13380,7 @@
           "example": "无",
           "member": "CreateInstancePreResp",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -15647,6 +15676,7 @@
           "example": "无",
           "member": "RenewCkafkaInstanceResp",
           "name": "Result",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },

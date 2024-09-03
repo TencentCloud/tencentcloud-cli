@@ -289,8 +289,8 @@
     "DescribeSqlApis": [
       {
         "document": "查询集群信息",
-        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSqlApis\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSqlApis\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"ApiType\": \"abc\",\n    \"UserName\": \"abc\",\n    \"WhiteHost\": \"abc\",\n    \"Catalog\": \"abc\",\n    \"Catalogs\": [\n        \"abc\"\n    ],\n    \"DatabaseName\": \"abc\",\n    \"TableName\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ReturnData\": \"abc\",\n        \"ErrorMsg\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "查询集群信息"
       }
     ],

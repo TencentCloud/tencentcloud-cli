@@ -3555,6 +3555,7 @@
           "example": "Primary, Standby",
           "member": "string",
           "name": "Role",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -3565,6 +3566,7 @@
           "example": "ap-guangzhou-1",
           "member": "string",
           "name": "Zone",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -7082,6 +7084,7 @@
           "example": "[\"postgres-6fego161\"]",
           "member": "string",
           "name": "DBInstanceIdSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

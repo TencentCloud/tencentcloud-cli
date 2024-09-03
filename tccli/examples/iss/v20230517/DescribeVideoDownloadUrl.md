@@ -1,6 +1,6 @@
 **Example 1: 获取云录像下载URL**
 
- 
+
 
 Input: 
 
@@ -9,7 +9,9 @@ tccli iss DescribeVideoDownloadUrl --cli-unfold-argument  \
     --ChannelId 4dfb778c-xxxxxx \
     --BeginTime 1668996000 \
     --EndTime 1668996600 \
-    --FileType mp4
+    --FileType mp4 \
+    --Expires 600 \
+    --IsSupportG711 True
 ```
 
 Output: 
@@ -17,7 +19,7 @@ Output:
 {
     "Response": {
         "Data": {
-            "Url": "https://userdomain/video.mp4?source=xxxxxx",
+            "Url": "https://userdomain/video.mp4?source=xxxxxx&expires=600&isSupportG711=1",
             "ActualBeginTime": "1668996000",
             "ActualEndTime": "1668996600"
         },

@@ -2351,6 +2351,15 @@
           "name": "DeployZone",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "0非试用版，1试用版",
+          "example": "0",
+          "member": "uint64",
+          "name": "Trial",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

@@ -624,6 +624,14 @@
         "title": "查询指定时间点是否看回档"
       }
     ],
+    "DescribeServerlessStrategy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeServerlessStrategy\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AutoPauseDelay\": 300,\n        \"AutoScaleDownDelay\": 60,\n        \"AutoPause\": \"yes\",\n        \"RequestId\": \"8727691c-3536-11eb-81e7-525400b7dd5a\",\n        \"AutoScaleUpDelay\": 30\n    }\n}",
+        "title": "查询serverless策略"
+      }
+    ],
     "DescribeSupportProxyVersion": [
       {
         "document": "查询支持的数据库代理版本",
@@ -934,6 +942,14 @@
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyResourcePackagesDeductionPriority\n<公共请求参数>\n\n{\n    \"PackageType\": \"CCU\",\n    \"ClusterId\": \"cynosdbmysql-abcd1234\",\n    \"DeductionPriorities\": [\n        {\n            \"PackageId\": \"package-abcd1234\",\n            \"DeductionPriority\": 1\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "ModifyResourcePackagesDeductionPriority"
+      }
+    ],
+    "ModifyServerlessStrategy": [
+      {
+        "document": "修改serverless策略",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyServerlessStrategy\n<公共请求参数>\n\n{\n    \"AutoPause\": \"no\",\n    \"AutoScaleUpDelay\": 200,\n    \"AutoPauseDelay\": 100,\n    \"MinCpu\": 0.25,\n    \"MaxCpu\": 2,\n    \"ClusterId\": \"cynosdbmysql-8vcxoq75\",\n    \"AutoScaleDownDelay\": 300\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": 1008300,\n        \"RequestId\": \"c3da7958-23e8-11eb-8e52-525400b7dd5a\"\n    }\n}",
+        "title": "修改serverless策略"
       }
     ],
     "ModifyVipVport": [

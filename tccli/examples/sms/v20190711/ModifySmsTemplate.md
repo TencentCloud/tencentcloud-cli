@@ -9,7 +9,7 @@ tccli sms ModifySmsTemplate --cli-unfold-argument  \
     --TemplateId 1110 \
     --TemplateName 腾讯云 \
     --TemplateContent "xxx" \
-    --SmsType 1 \
+    --SmsType 3 \
     --International 0 \
     --Remark “xxx”
 ```

@@ -14,25 +14,42 @@ Output:
 {
     "Response": {
         "ClusterSet": {
-            "ClusterId": "pulsar-xxxxxxxx",
-            "ClusterName": "sdfsdfsdf",
-            "Remark": "",
+            "ClusterId": "abc",
+            "ClusterName": "abc",
+            "Remark": "abc",
             "EndPointNum": 0,
-            "CreateTime": "2021-01-13 15:43:29",
-            "Healthy": 1,
-            "HealthyInfo": "",
-            "Status": 1,
-            "MaxNamespaceNum": 50,
-            "MaxTopicNum": 1000,
-            "MaxQps": 10000,
-            "MessageRetentionTime": 86400,
-            "VpcEndPoint": "xx",
+            "CreateTime": "abc",
+            "Healthy": 0,
+            "HealthyInfo": "abc",
+            "Status": 0,
+            "MaxNamespaceNum": 0,
+            "MaxTopicNum": 0,
+            "MaxQps": 0,
+            "MessageRetentionTime": 0,
+            "MaxStorageCapacity": 0,
+            "Version": "abc",
+            "PublicEndPoint": "abc",
+            "VpcEndPoint": "abc",
             "NamespaceNum": 0,
-            "Version": "xx",
-            "PublicEndPoint": "xx",
-            "MaxStorageCapacity": 100
+            "UsedStorageBudget": 0,
+            "MaxPublishRateInMessages": 0,
+            "MaxDispatchRateInMessages": 0,
+            "MaxPublishRateInBytes": 0,
+            "MaxDispatchRateInBytes": 0,
+            "TopicNum": 0,
+            "MaxMessageDelayInSeconds": 0,
+            "PublicAccessEnabled": true,
+            "Tags": [
+                {
+                    "TagKey": "abc",
+                    "TagValue": "abc"
+                }
+            ],
+            "PayMode": 0,
+            "ProjectId": 0,
+            "ProjectName": "abc"
         },
-        "RequestId": "020eb354-144e-4cf8-9607-c6771cd24421"
+        "RequestId": "abc"
     }
 }
 ```

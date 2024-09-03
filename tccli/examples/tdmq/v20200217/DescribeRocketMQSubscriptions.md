@@ -26,15 +26,8 @@ Output:
                 "PartitionNum": 3,
                 "ExpressionType": "TAG",
                 "SubString": "*",
-                "Status": 0
-            },
-            {
-                "Topic": "%RETRY%consume_group",
-                "Type": "Retry",
-                "PartitionNum": 1,
-                "ExpressionType": "TAG",
-                "SubString": "*",
-                "Status": 0
+                "Status": 0,
+                "ConsumerLag": 0
             }
         ]
     }
