@@ -11,7 +11,7 @@ import webbrowser
 from tccli import oauth
 from tccli.plugins.auth import texts
 
-_APP_ID = 700001249938
+_APP_ID = 100038427476
 _AUTH_URL = "https://cloud.tencent.com/open/authorize"
 _REDIRECT_URL = "https://cli.cloud.tencent.com/oauth"
 _SITE = "cn"
