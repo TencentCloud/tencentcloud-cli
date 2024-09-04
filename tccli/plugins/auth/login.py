@@ -102,6 +102,7 @@ def _get_token_no_browser(state, language):
     redirect_params = {
         "browser": "no",
         "lang": language,
+        "site": _SITE,
     }
     redirect_query = urlencode(redirect_params)
     redirect_url = _REDIRECT_URL + "?" + redirect_query
