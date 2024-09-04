@@ -15,13 +15,13 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "xx",
+        "RequestId": "12445-5556-11",
         "DomainInfoList": [
             {
-                "Status": "xx",
-                "CertId": "xx",
-                "RegistryId": "xx",
-                "DomainName": "xx"
+                "Status": "success",
+                "CertId": "14568-152",
+                "RegistryId": "tcr-12345",
+                "DomainName": "tcr.test"
             }
         ],
         "TotalCount": 10

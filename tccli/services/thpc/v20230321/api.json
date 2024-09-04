@@ -119,6 +119,13 @@
       "output": "DescribeQueuesResponse",
       "status": "online"
     },
+    "DescribeWorkspaces": {
+      "document": "本接口（DescribeWorkspaces）用于查询工作空间列表。",
+      "input": "DescribeWorkspacesRequest",
+      "name": "查询工作空间列表",
+      "output": "DescribeWorkspacesResponse",
+      "status": "online"
+    },
     "DetachNodes": {
       "document": "本接口 (DetachNodes) 用于将一个或者多个计算节点从集群中移除，但是不销毁指定计算资源。",
       "input": "DetachNodesRequest",
@@ -133,11 +140,25 @@
       "output": "ModifyInitNodeScriptsResponse",
       "status": "online"
     },
+    "ModifyWorkspacesAttribute": {
+      "document": "本接口 (ModifyWorkspacesAttribute) 用于修改工作空间的属性（目前只支持修改工作空间的名称）。",
+      "input": "ModifyWorkspacesAttributeRequest",
+      "name": "修改工作空间的属性",
+      "output": "ModifyWorkspacesAttributeResponse",
+      "status": "online"
+    },
     "SetAutoScalingConfiguration": {
       "document": "本接口(SetAutoScalingConfiguration)用于为集群设置集群弹性伸缩配置信息。",
       "input": "SetAutoScalingConfigurationRequest",
       "name": "设置弹性伸缩配置信息",
       "output": "SetAutoScalingConfigurationResponse",
+      "status": "online"
+    },
+    "TerminateWorkspaces": {
+      "document": "本接口 (TerminateWorkspaces) 用于主动退还工作空间。",
+      "input": "TerminateWorkspacesRequest",
+      "name": "销毁工作空间",
+      "output": "TerminateWorkspacesResponse",
       "status": "online"
     }
   },
@@ -1990,6 +2011,80 @@
       ],
       "type": "object"
     },
+    "DescribeWorkspacesRequest": {
+      "document": "DescribeWorkspaces请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID列表。通过该参数可以指定需要查询信息的集群列表。<br>如果您不指定该参数，则返回Limit数量以内的集群信息。",
+          "example": "无",
+          "member": "string",
+          "name": "SpaceIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤列表",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWorkspacesResponse": {
+      "document": "DescribeWorkspaces返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群概览信息列表",
+          "example": "无",
+          "member": "SpaceInfo",
+          "name": "SpaceSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群数量",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DetachNodesRequest": {
       "document": "DetachNodes请求参数结构体",
       "members": [
@@ -2676,6 +2771,42 @@
     },
     "ModifyInitNodeScriptsResponse": {
       "document": "ModifyInitNodeScripts返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyWorkspacesAttributeRequest": {
+      "document": "ModifyWorkspacesAttribute请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "工作空间列表",
+          "example": "[\"wks-rf6ogz49\"]",
+          "member": "string",
+          "name": "SpaceIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "修改后的工作空间名称。可任意命名，但不得超过60个字符。",
+          "example": "MySpaceName",
+          "member": "string",
+          "name": "SpaceName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyWorkspacesAttributeResponse": {
+      "document": "ModifyWorkspacesAttribute返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -3389,6 +3520,152 @@
       ],
       "usage": "both"
     },
+    "SpaceInfo": {
+      "document": "描述工作空间的信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "工作空间ID",
+          "example": "wks-3rr4w3t7",
+          "member": "string",
+          "name": "SpaceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工作空间类型",
+          "example": "无",
+          "member": "string",
+          "name": "SpaceFamily",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工作空间规格",
+          "example": "无",
+          "member": "string",
+          "name": "SpaceType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工作空间名称",
+          "example": "无",
+          "member": "string",
+          "name": "SpaceName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工作空间状态。取值范围：<br><li>PENDING：表示创建中<br></li><li>LAUNCH_FAILED：表示创建失败<br></li><li>ONLINE：表示运行中<br></li><li>ARREARS：表示隔离中<br></li><li>TERMINATING：表示销毁中。<br></li>",
+          "example": "无",
+          "member": "string",
+          "name": "SpaceState",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工作空间计费模式",
+          "example": "PREPAID",
+          "member": "string",
+          "name": "SpaceChargeType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工作空间对应资源ID",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自动续费标识",
+          "example": "无",
+          "member": "string",
+          "name": "RenewFlag",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工作空间关联的工作列表",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "无",
+          "member": "datetime_iso",
+          "name": "CreatedTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "到期时间",
+          "example": "无",
+          "member": "datetime_iso",
+          "name": "ExpiredTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工作空间所在位置",
+          "example": "无",
+          "member": "Placement",
+          "name": "Placement",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工作空间的最新操作\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LatestOperation",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "工作空间的最新操作状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LatestOperationState",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "SpaceInternetAccessible": {
       "document": "描述了工作空间的公网可访问性，声明了工作空间的公网使用计费模式，最大带宽等",
       "members": [
@@ -3709,6 +3986,42 @@
         }
       ],
       "usage": "both"
+    },
+    "TerminateWorkspacesRequest": {
+      "document": "TerminateWorkspaces请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "工作空间ID",
+          "example": "['wks-qk5u85i8']",
+          "member": "string",
+          "name": "SpaceIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "释放空间挂载的包年包月数据盘。true表示销毁空间同时释放包年包月数据盘，false表示只销毁空间。",
+          "example": "true",
+          "member": "bool",
+          "name": "ReleasePrepaidDataDisks",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "TerminateWorkspacesResponse": {
+      "document": "TerminateWorkspaces返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "VirtualPrivateCloud": {
       "document": "描述了VPC相关信息",

@@ -10,7 +10,7 @@ tccli waf CreateAccessExport --cli-unfold-argument  \
     --From 1625395948532 \
     --To 1626000748532 \
     --Count 6221 \
-    --Query * \
+    --Query  \
     --Order desc \
     --Format json
 ```

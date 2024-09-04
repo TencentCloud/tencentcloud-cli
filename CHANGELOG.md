@@ -1,3 +1,111 @@
+# Release 3.0.1069.1
+
+## 商业智能分析 BI(bi) 版本：2022-01-05
+
+### 第 16 次发布
+
+发布时间：2024-09-05 01:07:53
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ModifyUserRole](http://document.tencentcloudapi.woa.com/document/product/1707/82038)
+
+	* 新增入参：LoginSecurityStatus
+
+
+
+
+## 日志服务(cls) 版本：2020-10-16
+
+### 第 85 次发布
+
+发布时间：2024-09-05 01:11:51
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CheckConfigRegex](http://document.tencentcloudapi.woa.com/document/product/614/84819)
+* [GenBeginRegex](http://document.tencentcloudapi.woa.com/document/product/614/84821)
+* [GenKVRegex](http://document.tencentcloudapi.woa.com/document/product/614/84820)
+
+新增数据结构：
+
+* [RegexIndexInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#RegexIndexInfo)
+
+
+
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+
+### 第 97 次发布
+
+发布时间：2024-09-05 01:14:04
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeIsolatedInstances](http://document.tencentcloudapi.woa.com/document/product/1003/84822)
+
+
+
+## 数据湖计算 DLC(dlc) 版本：2021-01-25
+
+### 第 115 次发布
+
+发布时间：2024-09-05 01:15:24
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [UserDetailInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#UserDetailInfo)
+
+	* 新增成员：AccountType
+
+
+
+
+## 高性能计算平台(thpc) 版本：2023-03-21
+
+### 第 11 次发布
+
+发布时间：2024-09-05 01:28:42
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeWorkspaces](http://document.tencentcloudapi.woa.com/document/product/1701/84825)
+* [ModifyWorkspacesAttribute](http://document.tencentcloudapi.woa.com/document/product/1701/84824)
+* [TerminateWorkspaces](http://document.tencentcloudapi.woa.com/document/product/1701/84823)
+
+新增数据结构：
+
+* [SpaceInfo](http://document.tencentcloudapi.woa.com/document/product/1701/80209#SpaceInfo)
+
+
+
+## 高性能计算平台(thpc) 版本：2022-04-01
+
+
+
+## 高性能计算平台(thpc) 版本：2021-11-09
+
+
+
 # Release 3.0.1068.1
 
 ## 应用云渲染(car) 版本：2022-01-10

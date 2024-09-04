@@ -512,7 +512,7 @@
       {
         "document": "",
         "input": "https://tcr.tencentcloudapi.com/?Action=DescribeInstanceCustomizedDomain\n&RegistryId=tcr-12345\n&Limit=10\n&Offset=0\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"DomainInfoList\": [\n            {\n                \"Status\": \"xx\",\n                \"CertId\": \"xx\",\n                \"RegistryId\": \"xx\",\n                \"DomainName\": \"xx\"\n            }\n        ],\n        \"TotalCount\": 10\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"12445-5556-11\",\n        \"DomainInfoList\": [\n            {\n                \"Status\": \"success\",\n                \"CertId\": \"14568-152\",\n                \"RegistryId\": \"tcr-12345\",\n                \"DomainName\": \"tcr.test\"\n            }\n        ],\n        \"TotalCount\": 10\n    }\n}",
         "title": "查询实例自定义域名列表"
       }
     ],

@@ -16,6 +16,14 @@
         "title": "应用采集配置到指定机器组"
       }
     ],
+    "CheckConfigRegex": [
+      {
+        "document": "校验采集配置中的正则",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckConfigRegex\n<公共请求参数>\n\n{\n    \"Regex\": \"(.*)\",\n    \"Content\": \"hello\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": 0,\n        \"Message\": \"regex match successful\",\n        \"RequestId\": \"sadfasf-fasfasfa-fasfasdfads-zasdfas\"\n    }\n}",
+        "title": "校验采集配置中的正则"
+      }
+    ],
     "CheckFunction": [
       {
         "document": "校验数据加工函数的语法",
@@ -670,6 +678,22 @@
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTopics\n<公共请求参数>\n\n{\n    \"Filters\": [],\n    \"Offset\": 10,\n    \"Limit\": 30\n}",
         "output": "{\n    \"Response\": {\n        \"Topics\": [\n            {\n                \"LogsetId\": \"46c34030-f7fd-xxxx-91ee-053215c2bf9c\",\n                \"TopicId\": \"305f8be8-25a9-xxxx-8f05-361dafab39fe\",\n                \"TopicName\": \"test\",\n                \"PartitionCount\": 1,\n                \"Index\": true,\n                \"AssumerName\": \"\",\n                \"SubAssumerName\": \"\",\n                \"CreateTime\": \"2022-12-30 16:02:52\",\n                \"Status\": true,\n                \"Tags\": [],\n                \"AutoSplit\": true,\n                \"MaxSplitPartitions\": 50,\n                \"StorageType\": \"hot\",\n                \"Period\": 27,\n                \"Describes\": \"\",\n                \"HotPeriod\": 0,\n                \"BizType\": 0,\n                \"IsWebTracking\": false,\n                \"Extends\": {\n                    \"AnonymousAccess\": null\n                }\n            }\n        ],\n        \"RequestId\": \"cdb48d76-9be0-xxxx-8654-56290de7442e\",\n        \"TotalCount\": 1\n    }\n}",
         "title": "获取日志主题列表"
+      }
+    ],
+    "GenBeginRegex": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GenBeginRegex\n<公共请求参数>\n\n{\n    \"LogSample\": \"log sample\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Regex\": \"\\\\w+xxxx.\",\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
+        "title": "生成首行正则表达式"
+      }
+    ],
+    "GenKVRegex": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GenKVRegex\n<公共请求参数>\n\n{\n    \"LogSample\": \"log text\",\n    \"Indexes\": [\n        {\n            \"Start\": 0,\n            \"End\": 1\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Regex\": \"\\\\w+xxxx.\",\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
+        "title": "生成提取K-V格式日志的正则表达式"
       }
     ],
     "GetAlarmLog": [

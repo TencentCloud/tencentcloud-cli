@@ -3129,7 +3129,7 @@
         },
         {
           "disabled": false,
-          "document": "存储方式，0-常规存储，1-归档存储，默认为0",
+          "document": "存储方式，0-常规存储，1-归档存储，2-标准存储，默认为0",
           "example": "无",
           "member": "int64",
           "name": "CosStorageType",
@@ -3470,7 +3470,7 @@
         },
         {
           "disabled": false,
-          "document": "存储方式，0-常规存储，1-归档存储，默认为0",
+          "document": "存储方式，0-常规存储，1-归档存储，2-标准存储，默认为0",
           "example": "无",
           "member": "int64",
           "name": "CosStorageType",

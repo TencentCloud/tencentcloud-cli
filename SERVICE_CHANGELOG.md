@@ -1,43 +1,10 @@
 # 本版本更新包含以下内容：
 
-## 应用云渲染(car) 版本：2022-01-10
+## 商业智能分析 BI(bi) 版本：2022-01-05
 
-### 第 11 次发布
+### 第 16 次发布
 
-发布时间：2024-09-04 01:09:15
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [BindConcurrentPackagesToProject](http://document.tencentcloudapi.woa.com/document/product/1710/84799)
-* [CreateApplicationProject](http://document.tencentcloudapi.woa.com/document/product/1710/84792)
-* [DeleteApplicationProjects](http://document.tencentcloudapi.woa.com/document/product/1710/84791)
-* [DescribeApplicationProjectAdvancedConfig](http://document.tencentcloudapi.woa.com/document/product/1710/84790)
-* [DescribeApplicationProjects](http://document.tencentcloudapi.woa.com/document/product/1710/84789)
-* [DescribeConcurrentPackages](http://document.tencentcloudapi.woa.com/document/product/1710/84798)
-* [DescribeConcurrentSummary](http://document.tencentcloudapi.woa.com/document/product/1710/84797)
-* [ModifyApplicationProject](http://document.tencentcloudapi.woa.com/document/product/1710/84788)
-* [ModifyConcurrentPackage](http://document.tencentcloudapi.woa.com/document/product/1710/84796)
-* [ResetConcurrentPackages](http://document.tencentcloudapi.woa.com/document/product/1710/84795)
-* [UnbindConcurrentPackagesFromProject](http://document.tencentcloudapi.woa.com/document/product/1710/84794)
-
-新增数据结构：
-
-* [ApplicationConcurrentPackage](http://document.tencentcloudapi.woa.com/document/product/1710/81862#ApplicationConcurrentPackage)
-* [ApplicationProject](http://document.tencentcloudapi.woa.com/document/product/1710/81862#ApplicationProject)
-* [BackgroundImage](http://document.tencentcloudapi.woa.com/document/product/1710/81862#BackgroundImage)
-* [VideoEncodeConfig](http://document.tencentcloudapi.woa.com/document/product/1710/81862#VideoEncodeConfig)
-
-
-
-## 腾讯云数据仓库 TCHouse-D(cdwdoris) 版本：2021-12-28
-
-### 第 33 次发布
-
-发布时间：2024-09-04 01:10:31
+发布时间：2024-09-05 01:07:53
 
 本次发布包含了以下内容：
 
@@ -45,41 +12,18 @@
 
 修改接口：
 
-* [CreateBackUpSchedule](http://document.tencentcloudapi.woa.com/document/product/1706/84371)
+* [ModifyUserRole](http://document.tencentcloudapi.woa.com/document/product/1707/82038)
 
-	* 新增入参：InstanceId, OperationType, ScheduleName, ScheduleInfo, UpdateStatus, CosBucket
-
-
-新增数据结构：
-
-* [ScheduleInfo](http://document.tencentcloudapi.woa.com/document/product/1706/80309#ScheduleInfo)
-
-
-
-## 流计算 Oceanus(oceanus) 版本：2019-04-22
-
-### 第 55 次发布
-
-发布时间：2024-09-04 01:22:36
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [DeleteJobs](http://document.tencentcloudapi.woa.com/document/product/849/75138)
-
-	* 新增入参：JobNames
+	* 新增入参：LoginSecurityStatus
 
 
 
 
-## SSL 证书(ssl) 版本：2019-12-05
+## 日志服务(cls) 版本：2020-10-16
 
-### 第 67 次发布
+### 第 85 次发布
 
-发布时间：2024-09-04 01:24:58
+发布时间：2024-09-05 01:11:51
 
 本次发布包含了以下内容：
 
@@ -87,19 +31,56 @@
 
 新增接口：
 
-* [CheckCertificateDomainVerification](http://document.tencentcloudapi.woa.com/document/product/400/84800)
+* [CheckConfigRegex](http://document.tencentcloudapi.woa.com/document/product/614/84819)
+* [GenBeginRegex](http://document.tencentcloudapi.woa.com/document/product/614/84821)
+* [GenKVRegex](http://document.tencentcloudapi.woa.com/document/product/614/84820)
 
 新增数据结构：
 
-* [DomainValidationResult](http://document.tencentcloudapi.woa.com/document/product/400/41679#DomainValidationResult)
+* [RegexIndexInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#RegexIndexInfo)
+
+
+
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+
+### 第 97 次发布
+
+发布时间：2024-09-05 01:14:04
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeIsolatedInstances](http://document.tencentcloudapi.woa.com/document/product/1003/84822)
+
+
+
+## 数据湖计算 DLC(dlc) 版本：2021-01-25
+
+### 第 115 次发布
+
+发布时间：2024-09-05 01:15:24
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [UserDetailInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#UserDetailInfo)
+
+	* 新增成员：AccountType
+
 
 
 
 ## 高性能计算平台(thpc) 版本：2023-03-21
 
-### 第 10 次发布
+### 第 11 次发布
 
-发布时间：2024-09-04 01:28:53
+发布时间：2024-09-05 01:28:42
 
 本次发布包含了以下内容：
 
@@ -107,17 +88,13 @@
 
 新增接口：
 
-* [CreateWorkspaces](http://document.tencentcloudapi.woa.com/document/product/1701/84818)
+* [DescribeWorkspaces](http://document.tencentcloudapi.woa.com/document/product/1701/84825)
+* [ModifyWorkspacesAttribute](http://document.tencentcloudapi.woa.com/document/product/1701/84824)
+* [TerminateWorkspaces](http://document.tencentcloudapi.woa.com/document/product/1701/84823)
 
 新增数据结构：
 
-* [SpaceChargePrepaid](http://document.tencentcloudapi.woa.com/document/product/1701/80209#SpaceChargePrepaid)
-* [SpaceDataDisk](http://document.tencentcloudapi.woa.com/document/product/1701/80209#SpaceDataDisk)
-* [SpaceInternetAccessible](http://document.tencentcloudapi.woa.com/document/product/1701/80209#SpaceInternetAccessible)
-* [SpacePlacement](http://document.tencentcloudapi.woa.com/document/product/1701/80209#SpacePlacement)
-* [SpaceSystemDisk](http://document.tencentcloudapi.woa.com/document/product/1701/80209#SpaceSystemDisk)
-* [SpaceVirtualPrivateCloud](http://document.tencentcloudapi.woa.com/document/product/1701/80209#SpaceVirtualPrivateCloud)
-* [TagSpecification](http://document.tencentcloudapi.woa.com/document/product/1701/80209#TagSpecification)
+* [SpaceInfo](http://document.tencentcloudapi.woa.com/document/product/1701/80209#SpaceInfo)
 
 
 
@@ -6444,6 +6421,21 @@
 
 ## 商业智能分析 BI(bi) 版本：2022-01-05
 
+### 第 16 次发布
+
+发布时间：2024-09-05 01:07:53
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ModifyUserRole](http://document.tencentcloudapi.woa.com/document/product/1707/82038)
+
+	* 新增入参：LoginSecurityStatus
+
+
 ### 第 15 次发布
 
 发布时间：2024-08-30 01:08:04
@@ -11149,24 +11141,24 @@
 
 新增接口：
 
-* [[BindConcurrentPackagesToProject](http://document.tencentcloudapi.woa.com/document/product/1710/84799)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[CreateApplicationProject](http://document.tencentcloudapi.woa.com/document/product/1710/84792)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DeleteApplicationProjects](http://document.tencentcloudapi.woa.com/document/product/1710/84791)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeApplicationProjectAdvancedConfig](http://document.tencentcloudapi.woa.com/document/product/1710/84790)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeApplicationProjects](http://document.tencentcloudapi.woa.com/document/product/1710/84789)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeConcurrentPackages](http://document.tencentcloudapi.woa.com/document/product/1710/84798)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeConcurrentSummary](http://document.tencentcloudapi.woa.com/document/product/1710/84797)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ModifyApplicationProject](http://document.tencentcloudapi.woa.com/document/product/1710/84788)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ModifyConcurrentPackage](http://document.tencentcloudapi.woa.com/document/product/1710/84796)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ResetConcurrentPackages](http://document.tencentcloudapi.woa.com/document/product/1710/84795)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[UnbindConcurrentPackagesFromProject](http://document.tencentcloudapi.woa.com/document/product/1710/84794)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [BindConcurrentPackagesToProject](http://document.tencentcloudapi.woa.com/document/product/1710/84799)
+* [CreateApplicationProject](http://document.tencentcloudapi.woa.com/document/product/1710/84792)
+* [DeleteApplicationProjects](http://document.tencentcloudapi.woa.com/document/product/1710/84791)
+* [DescribeApplicationProjectAdvancedConfig](http://document.tencentcloudapi.woa.com/document/product/1710/84790)
+* [DescribeApplicationProjects](http://document.tencentcloudapi.woa.com/document/product/1710/84789)
+* [DescribeConcurrentPackages](http://document.tencentcloudapi.woa.com/document/product/1710/84798)
+* [DescribeConcurrentSummary](http://document.tencentcloudapi.woa.com/document/product/1710/84797)
+* [ModifyApplicationProject](http://document.tencentcloudapi.woa.com/document/product/1710/84788)
+* [ModifyConcurrentPackage](http://document.tencentcloudapi.woa.com/document/product/1710/84796)
+* [ResetConcurrentPackages](http://document.tencentcloudapi.woa.com/document/product/1710/84795)
+* [UnbindConcurrentPackagesFromProject](http://document.tencentcloudapi.woa.com/document/product/1710/84794)
 
 新增数据结构：
 
-* [[ApplicationConcurrentPackage](http://document.tencentcloudapi.woa.com/document/product/1710/81862#ApplicationConcurrentPackage)](http://document.tencentcloudapi.woa.com/document/product/1710/81862#[ApplicationConcurrentPackage](http://document.tencentcloudapi.woa.com/document/product/1710/81862#ApplicationConcurrentPackage))
-* [[ApplicationProject](http://document.tencentcloudapi.woa.com/document/product/1710/81862#ApplicationProject)](http://document.tencentcloudapi.woa.com/document/product/1710/81862#[ApplicationProject](http://document.tencentcloudapi.woa.com/document/product/1710/81862#ApplicationProject))
-* [[BackgroundImage](http://document.tencentcloudapi.woa.com/document/product/1710/81862#BackgroundImage)](http://document.tencentcloudapi.woa.com/document/product/1710/81862#[BackgroundImage](http://document.tencentcloudapi.woa.com/document/product/1710/81862#BackgroundImage))
-* [[VideoEncodeConfig](http://document.tencentcloudapi.woa.com/document/product/1710/81862#VideoEncodeConfig)](http://document.tencentcloudapi.woa.com/document/product/1710/81862#[VideoEncodeConfig](http://document.tencentcloudapi.woa.com/document/product/1710/81862#VideoEncodeConfig))
+* [ApplicationConcurrentPackage](http://document.tencentcloudapi.woa.com/document/product/1710/81862#ApplicationConcurrentPackage)
+* [ApplicationProject](http://document.tencentcloudapi.woa.com/document/product/1710/81862#ApplicationProject)
+* [BackgroundImage](http://document.tencentcloudapi.woa.com/document/product/1710/81862#BackgroundImage)
+* [VideoEncodeConfig](http://document.tencentcloudapi.woa.com/document/product/1710/81862#VideoEncodeConfig)
 
 ### 第 10 次发布
 
@@ -17879,7 +17871,7 @@
 
 新增数据结构：
 
-* [[ScheduleInfo](http://document.tencentcloudapi.woa.com/document/product/1706/80309#ScheduleInfo)](http://document.tencentcloudapi.woa.com/document/product/1706/80309#[ScheduleInfo](http://document.tencentcloudapi.woa.com/document/product/1706/80309#ScheduleInfo))
+* [ScheduleInfo](http://document.tencentcloudapi.woa.com/document/product/1706/80309#ScheduleInfo)
 
 ### 第 32 次发布
 
@@ -25276,6 +25268,24 @@
 
 
 ## 日志服务(cls) 版本：2020-10-16
+
+### 第 85 次发布
+
+发布时间：2024-09-05 01:11:51
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[CheckConfigRegex](http://document.tencentcloudapi.woa.com/document/product/614/84819)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[GenBeginRegex](http://document.tencentcloudapi.woa.com/document/product/614/84821)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[GenKVRegex](http://document.tencentcloudapi.woa.com/document/product/614/84820)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[RegexIndexInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#RegexIndexInfo)](http://document.tencentcloudapi.woa.com/document/product/614/56471#[RegexIndexInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#RegexIndexInfo))
 
 ### 第 84 次发布
 
@@ -35469,6 +35479,18 @@
 
 ## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
 
+### 第 97 次发布
+
+发布时间：2024-09-05 01:14:04
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeIsolatedInstances](http://document.tencentcloudapi.woa.com/document/product/1003/84822)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
 ### 第 96 次发布
 
 发布时间：2024-09-03 01:14:30
@@ -40279,6 +40301,21 @@
 
 
 ## 数据湖计算 DLC(dlc) 版本：2021-01-25
+
+### 第 115 次发布
+
+发布时间：2024-09-05 01:15:24
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [UserDetailInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#UserDetailInfo)
+
+	* 新增成员：AccountType
+
 
 ### 第 114 次发布
 
@@ -86254,11 +86291,11 @@
 
 新增接口：
 
-* [[CheckCertificateDomainVerification](http://document.tencentcloudapi.woa.com/document/product/400/84800)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [CheckCertificateDomainVerification](http://document.tencentcloudapi.woa.com/document/product/400/84800)
 
 新增数据结构：
 
-* [[DomainValidationResult](http://document.tencentcloudapi.woa.com/document/product/400/41679#DomainValidationResult)](http://document.tencentcloudapi.woa.com/document/product/400/41679#[DomainValidationResult](http://document.tencentcloudapi.woa.com/document/product/400/41679#DomainValidationResult))
+* [DomainValidationResult](http://document.tencentcloudapi.woa.com/document/product/400/41679#DomainValidationResult)
 
 ### 第 66 次发布
 
@@ -98130,6 +98167,24 @@
 
 ## 高性能计算平台(thpc) 版本：2023-03-21
 
+### 第 11 次发布
+
+发布时间：2024-09-05 01:28:42
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeWorkspaces](http://document.tencentcloudapi.woa.com/document/product/1701/84825)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[ModifyWorkspacesAttribute](http://document.tencentcloudapi.woa.com/document/product/1701/84824)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[TerminateWorkspaces](http://document.tencentcloudapi.woa.com/document/product/1701/84823)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[SpaceInfo](http://document.tencentcloudapi.woa.com/document/product/1701/80209#SpaceInfo)](http://document.tencentcloudapi.woa.com/document/product/1701/80209#[SpaceInfo](http://document.tencentcloudapi.woa.com/document/product/1701/80209#SpaceInfo))
+
 ### 第 10 次发布
 
 发布时间：2024-09-04 01:28:53
@@ -98140,17 +98195,17 @@
 
 新增接口：
 
-* [[CreateWorkspaces](http://document.tencentcloudapi.woa.com/document/product/1701/84818)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [CreateWorkspaces](http://document.tencentcloudapi.woa.com/document/product/1701/84818)
 
 新增数据结构：
 
-* [[SpaceChargePrepaid](http://document.tencentcloudapi.woa.com/document/product/1701/80209#SpaceChargePrepaid)](http://document.tencentcloudapi.woa.com/document/product/1701/80209#[SpaceChargePrepaid](http://document.tencentcloudapi.woa.com/document/product/1701/80209#SpaceChargePrepaid))
-* [[SpaceDataDisk](http://document.tencentcloudapi.woa.com/document/product/1701/80209#SpaceDataDisk)](http://document.tencentcloudapi.woa.com/document/product/1701/80209#[SpaceDataDisk](http://document.tencentcloudapi.woa.com/document/product/1701/80209#SpaceDataDisk))
-* [[SpaceInternetAccessible](http://document.tencentcloudapi.woa.com/document/product/1701/80209#SpaceInternetAccessible)](http://document.tencentcloudapi.woa.com/document/product/1701/80209#[SpaceInternetAccessible](http://document.tencentcloudapi.woa.com/document/product/1701/80209#SpaceInternetAccessible))
-* [[SpacePlacement](http://document.tencentcloudapi.woa.com/document/product/1701/80209#SpacePlacement)](http://document.tencentcloudapi.woa.com/document/product/1701/80209#[SpacePlacement](http://document.tencentcloudapi.woa.com/document/product/1701/80209#SpacePlacement))
-* [[SpaceSystemDisk](http://document.tencentcloudapi.woa.com/document/product/1701/80209#SpaceSystemDisk)](http://document.tencentcloudapi.woa.com/document/product/1701/80209#[SpaceSystemDisk](http://document.tencentcloudapi.woa.com/document/product/1701/80209#SpaceSystemDisk))
-* [[SpaceVirtualPrivateCloud](http://document.tencentcloudapi.woa.com/document/product/1701/80209#SpaceVirtualPrivateCloud)](http://document.tencentcloudapi.woa.com/document/product/1701/80209#[SpaceVirtualPrivateCloud](http://document.tencentcloudapi.woa.com/document/product/1701/80209#SpaceVirtualPrivateCloud))
-* [[TagSpecification](http://document.tencentcloudapi.woa.com/document/product/1701/80209#TagSpecification)](http://document.tencentcloudapi.woa.com/document/product/1701/80209#[TagSpecification](http://document.tencentcloudapi.woa.com/document/product/1701/80209#TagSpecification))
+* [SpaceChargePrepaid](http://document.tencentcloudapi.woa.com/document/product/1701/80209#SpaceChargePrepaid)
+* [SpaceDataDisk](http://document.tencentcloudapi.woa.com/document/product/1701/80209#SpaceDataDisk)
+* [SpaceInternetAccessible](http://document.tencentcloudapi.woa.com/document/product/1701/80209#SpaceInternetAccessible)
+* [SpacePlacement](http://document.tencentcloudapi.woa.com/document/product/1701/80209#SpacePlacement)
+* [SpaceSystemDisk](http://document.tencentcloudapi.woa.com/document/product/1701/80209#SpaceSystemDisk)
+* [SpaceVirtualPrivateCloud](http://document.tencentcloudapi.woa.com/document/product/1701/80209#SpaceVirtualPrivateCloud)
+* [TagSpecification](http://document.tencentcloudapi.woa.com/document/product/1701/80209#TagSpecification)
 
 ### 第 9 次发布
 
