@@ -14107,7 +14107,7 @@
         },
         {
           "disabled": false,
-          "document": "日志主题id所在的地域id。\n\nid,地域,简称信息如下：\n- 1,   广州,ap-guangzhou\n- 4,   上海,ap-shanghai\n- 5,   中国香港,ap-hongkong\n- 6,   多伦多,na-toronto\n- 7,   上海金融,ap-shanghai-fsi\n- 8,   北京,ap-beijing\n- 9,   新加坡,ap-singapore\n- 11,  深圳金融,ap-shenzhen-fsi\n- 15,  硅谷,na-siliconvalley\n- 16,  成都,ap-chengdu\n- 17,  法兰克福,eu-frankfurt\n- 18,  首尔,ap-seoul\n- 19,  重庆,ap-chongqing\n- 21,  孟买,ap-mumbai\n- 22,  弗吉尼亚,na-ashburn\n- 23,  曼谷,ap-bangkok\n- 25,  东京,ap-tokyo\n- 33,  南京,ap-nanjing\n- 46,  北京金融,ap-beijing-fsi\n- 72,  雅加达,ap-jakarta\n- 74,  圣保罗,sa-saopaulo",
+          "document": "日志主题id所在的地域id。\n\nid,地域,简称信息如下：\n- 1,   广州,ap-guangzhou\n- 4,   上海,ap-shanghai\n- 5,   中国香港,ap-hongkong\n- 7,   上海金融,ap-shanghai-fsi\n- 8,   北京,ap-beijing\n- 9,   新加坡,ap-singapore\n- 11,  深圳金融,ap-shenzhen-fsi\n- 15,  硅谷,na-siliconvalley\n- 16,  成都,ap-chengdu\n- 17,  法兰克福,eu-frankfurt\n- 18,  首尔,ap-seoul\n- 19,  重庆,ap-chongqing\n- 21,  孟买,ap-mumbai\n- 22,  弗吉尼亚,na-ashburn\n- 23,  曼谷,ap-bangkok\n- 25,  东京,ap-tokyo\n- 33,  南京,ap-nanjing\n- 46,  北京金融,ap-beijing-fsi\n- 72,  雅加达,ap-jakarta\n- 74,  圣保罗,sa-saopaulo",
           "example": "19",
           "member": "uint64",
           "name": "RegionId",

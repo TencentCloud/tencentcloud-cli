@@ -15,7 +15,7 @@
       "status": "online"
     },
     "ECC": {
-      "document": "接口请求域名： ecc.tencentcloudapi.com \n纯文本英语作文批改",
+      "document": "纯文本英语作文批改",
       "input": "ECCRequest",
       "name": "纯文本英语作文批改",
       "output": "ECCResponse",
@@ -416,7 +416,7 @@
         {
           "disabled": false,
           "document": "作文文本，必填",
-          "example": "",
+          "example": "空",
           "member": "string",
           "name": "Content",
           "required": true,
@@ -425,7 +425,7 @@
         {
           "disabled": false,
           "document": "作文题目，可选参数",
-          "example": "",
+          "example": "空",
           "member": "string",
           "name": "Title",
           "required": false,
@@ -434,7 +434,7 @@
         {
           "disabled": false,
           "document": "年级标准， 默认以cet4为标准，取值与意义如下：elementary 小学，grade7 grade8 grade9分别对应初一，初二，初三。 grade10 grade11 grade12 分别对应高一，高二，高三，以及cet4和cet6 分别表示 英语4级和6级。",
-          "example": "",
+          "example": "空",
           "member": "string",
           "name": "Grade",
           "required": false,
@@ -443,7 +443,7 @@
         {
           "disabled": false,
           "document": "作文提纲，可选参数，作文的写作要求。",
-          "example": "",
+          "example": "空",
           "member": "string",
           "name": "Requirement",
           "required": false,
@@ -452,7 +452,7 @@
         {
           "disabled": false,
           "document": "范文标题，可选参数，本接口可以依据提供的范文对作文进行评分。",
-          "example": "",
+          "example": "空",
           "member": "string",
           "name": "ModelTitle",
           "required": false,
@@ -461,7 +461,7 @@
         {
           "disabled": false,
           "document": "范文内容，可选参数，同上，范文的正文部分。",
-          "example": "",
+          "example": "空",
           "member": "string",
           "name": "ModelContent",
           "required": false,
@@ -470,7 +470,7 @@
         {
           "disabled": false,
           "document": "业务应用ID，与账号应用APPID无关，是用来方便客户管理服务的参数（暂时无需传入）。",
-          "example": "",
+          "example": "空",
           "member": "string",
           "name": "EccAppid",
           "required": false,
@@ -479,7 +479,7 @@
         {
           "disabled": false,
           "document": "异步模式标识，0：同步模式，1：异步模式，默认为同步模式",
-          "example": "",
+          "example": "空",
           "member": "int64",
           "name": "IsAsync",
           "required": false,
@@ -488,7 +488,7 @@
         {
           "disabled": false,
           "document": "图像识别唯一标识，一次识别一个 SessionId。当传入此前识别接口使用过的 SessionId，则本次批改按图像批改价格收费；如使用了识别接口且本次没有传入 SessionId，则需要加取文本批改的费用；如果直接使用文本批改接口，则只收取文本批改的费用",
-          "example": "",
+          "example": "空",
           "member": "string",
           "name": "SessionId",
           "required": false,
@@ -503,18 +503,20 @@
         {
           "disabled": false,
           "document": "整体的批改结果\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "空",
           "member": "CorrectData",
           "name": "Data",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "任务 id，用于查询接口\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "空",
           "member": "string",
           "name": "TaskId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },

@@ -814,7 +814,7 @@
         },
         {
           "disabled": false,
-          "document": "模型生成的工具调用，仅 hunyuan-functioncall 模型支持\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "模型生成的工具调用，仅 hunyuan-pro 或者 hunyuan-functioncall 模型支持\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ToolCall",
           "name": "ToolCalls",

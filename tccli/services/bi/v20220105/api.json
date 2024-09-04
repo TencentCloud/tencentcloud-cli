@@ -3788,6 +3788,15 @@
           "name": "AppUserId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启手机验证码登录（0 关闭，1 开启）",
+          "example": "无",
+          "member": "int64",
+          "name": "LoginSecurityStatus",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

@@ -891,7 +891,7 @@
           "example": "486489",
           "member": "int64",
           "name": "FlowId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -901,7 +901,7 @@
           "example": "\"外网开通中\"",
           "member": "string",
           "name": "WanStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6187,7 +6187,7 @@
           "example": "6977675",
           "member": "string",
           "name": "DealId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8710,6 +8710,7 @@
           "example": "1",
           "member": "int64",
           "name": "AutoBackupType",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8719,6 +8720,7 @@
           "example": "[\"Monday\",\"Tuesday\",\"Wednesday\",\"Thursday\",\"Friday\",\"Saturday\"]",
           "member": "string",
           "name": "WeekDays",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -8728,6 +8730,7 @@
           "example": "04:00-05:00",
           "member": "string",
           "name": "TimePeriod",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8737,6 +8740,7 @@
           "example": "7",
           "member": "int64",
           "name": "BackupStorageDays",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8854,7 +8858,7 @@
           "example": "95027",
           "member": "int64",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9169,11 +9173,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "说明修改参数配置是否成功。<br><li>true：指修改成功；<br><li>false：指修改失败。<br>",
+          "document": "说明修改参数配置是否成功。<br><li>true：指修改成功；</li><li>false：指修改失败。</li>",
           "example": "true",
           "member": "bool",
           "name": "Changed",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -9183,7 +9187,7 @@
           "example": "327",
           "member": "int64",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9374,7 +9378,7 @@
           "example": "success",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10715,7 +10719,7 @@
           "example": "486489",
           "member": "int64",
           "name": "FlowId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -10725,7 +10729,7 @@
           "example": "\"外网关闭中\"",
           "member": "string",
           "name": "WanStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10946,7 +10950,7 @@
           "example": "16657",
           "member": "int64",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11354,11 +11358,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务id",
+          "document": "该字段已废弃，请通过查询实例接口获取到的状态来判断实例是否已解隔离",
           "example": "1203",
           "member": "int64",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11936,6 +11940,7 @@
           "example": "6954227",
           "member": "string",
           "name": "DealId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

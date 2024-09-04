@@ -136,6 +136,14 @@
         "title": "查询集群队列概览信息列表"
       }
     ],
+    "DescribeWorkspaces": [
+      {
+        "document": "查看在广州二区的实例信息,限制返回结果最多为一项",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWorkspaces\n<公共请求参数>\n\n{\n    \"Limit\": \"1\",\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"ap-guangzhou-2\"\n            ],\n            \"Name\": \"zone\"\n        }\n    ],\n    \"Offset\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"SpaceSet\": [\n            {\n                \"SpaceId\": \"abc\",\n                \"SpaceFamily\": \"abc\",\n                \"SpaceType\": \"abc\",\n                \"SpaceName\": \"abc\",\n                \"SpaceState\": \"abc\",\n                \"SpaceChargeType\": \"abc\",\n                \"ResourceId\": \"abc\",\n                \"RenewFlag\": \"abc\",\n                \"Tags\": [\n                    {\n                        \"Key\": \"abc\",\n                        \"Value\": \"abc\"\n                    }\n                ],\n                \"CreatedTime\": \"2020-09-22T00:00:00+00:00\",\n                \"ExpiredTime\": \"2020-09-22T00:00:00+00:00\",\n                \"Placement\": {\n                    \"Zone\": \"abc\"\n                },\n                \"LatestOperation\": \"abc\",\n                \"LatestOperationState\": \"abc\"\n            }\n        ],\n        \"TotalCount\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询工作空间列表"
+      }
+    ],
     "DetachNodes": [
       {
         "document": "集群ID为hpc-2j8ntf9l的集群解绑计算节点node-8workmoi",
@@ -152,12 +160,28 @@
         "title": "修改节点初始化脚本"
       }
     ],
+    "ModifyWorkspacesAttribute": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyWorkspacesAttribute\n<公共请求参数>\n\n{\n    \"SpaceIds\": [\n        \"wks-gzut2d4n\"\n    ],\n    \"SpaceName\": \"Workspace\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dbfa8866-7644-4181-806f-2334ea2da591\"\n    }\n}",
+        "title": "修改工作空间的名称"
+      }
+    ],
     "SetAutoScalingConfiguration": [
       {
         "document": "集群配置弹性伸缩策略信息。",
         "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetAutoScalingConfiguration\n<公共请求参数>\n\n{\n    \"DryRun\": \"false\",\n    \"ShrinkIdleTime\": \"300\",\n    \"ExpansionBusyTime\": \"120\",\n    \"ClusterId\": \"hpc-5lyv94lq\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"d1d90874-f565-463d-ba1d-c707517eece1\"\n    }\n}",
         "title": "设置弹性伸缩配置"
+      }
+    ],
+    "TerminateWorkspaces": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TerminateWorkspaces\n<公共请求参数>\n\n{\n    \"SpaceIds\": [\n        \"wks-kj2pb4dt\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"952f8cb8-240a-45cb-aabf-7665be657072\"\n    }\n}",
+        "title": "主动退还工作空间"
       }
     ]
   },

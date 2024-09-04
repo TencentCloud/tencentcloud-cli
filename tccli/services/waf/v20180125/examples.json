@@ -91,7 +91,7 @@
     "CreateAccessExport": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAccessExport\n<公共请求参数>\n\n{\n    \"TopicId\": \"1ae37c76-df99-4e2b-998c-20f39eba6226\",\n    \"From\": 1625395948532,\n    \"To\": 1626000748532,\n    \"Count\": 6221,\n    \"Query\": \"*\",\n    \"Order\": \"desc\",\n    \"Format\": \"json\"\n}",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAccessExport\n<公共请求参数>\n\n{\n    \"TopicId\": \"1ae37c76-df99-4e2b-998c-20f39eba6226\",\n    \"From\": 1625395948532,\n    \"To\": 1626000748532,\n    \"Count\": 6221,\n    \"Query\": \"\",\n    \"Order\": \"desc\",\n    \"Format\": \"json\"\n}",
         "output": "{\n    \"Response\": {\n        \"ExportId\": \"export-61daca5c-f341-4796-aeb3-4f2f598a06c7\",\n        \"RequestId\": \"9b02bf9e-c89c-42c3-9ae1-685f968fa02d\"\n    }\n}",
         "title": "创建访问日志导出"
       }

@@ -1603,6 +1603,16 @@
       "document": "AssignMangedTableProperties返回参数结构体",
       "members": [
         {
+          "disabled": false,
+          "document": "分配的原生表表属性",
+          "example": "无",
+          "member": "Property",
+          "name": "Properties",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -11064,7 +11074,7 @@
         },
         {
           "disabled": false,
-          "document": "查询的信息类型，Group：工作组 DataAuth：数据权限 EngineAuth:引擎权限",
+          "document": "必传字段，查询的信息类型，Group：工作组 DataAuth：数据权限 EngineAuth:引擎权限 RowFilter：行级别权限",
           "example": "Group",
           "member": "string",
           "name": "Type",
@@ -11128,7 +11138,7 @@
           "example": "无",
           "member": "UserDetailInfo",
           "name": "UserInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -14632,6 +14642,7 @@
           "example": "test_database",
           "member": "string",
           "name": "Database",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -14642,6 +14653,7 @@
           "example": "DataLakeCatalog",
           "member": "string",
           "name": "Catalog",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -14652,6 +14664,7 @@
           "example": "test_table",
           "member": "string",
           "name": "Table",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -14662,6 +14675,7 @@
           "example": "ALL",
           "member": "string",
           "name": "Operation",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -14672,6 +14686,7 @@
           "example": "ADMIN",
           "member": "string",
           "name": "PolicyType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -14682,6 +14697,7 @@
           "example": "fun1",
           "member": "string",
           "name": "Function",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -14692,6 +14708,7 @@
           "example": "view1",
           "member": "string",
           "name": "View",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -14702,6 +14719,7 @@
           "example": "column1",
           "member": "string",
           "name": "Column",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -14712,6 +14730,7 @@
           "example": "dataEngine1",
           "member": "string",
           "name": "DataEngine",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -14722,6 +14741,7 @@
           "example": "false",
           "member": "bool",
           "name": "ReAuth",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": true
@@ -14732,6 +14752,7 @@
           "example": "USER",
           "member": "string",
           "name": "Source",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -14742,6 +14763,7 @@
           "example": "COMMON",
           "member": "string",
           "name": "Mode",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -14752,6 +14774,7 @@
           "example": "12345678",
           "member": "string",
           "name": "Operator",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -14762,6 +14785,7 @@
           "example": "2021-07-28 16:19:32",
           "member": "string",
           "name": "CreateTime",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -14772,6 +14796,7 @@
           "example": "1",
           "member": "int64",
           "name": "SourceId",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -14782,6 +14807,7 @@
           "example": "test_group",
           "member": "string",
           "name": "SourceName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -14792,6 +14818,7 @@
           "example": "1",
           "member": "int64",
           "name": "Id",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -18393,7 +18420,7 @@
           "example": "1208763821",
           "member": "string",
           "name": "UserId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -18403,7 +18430,7 @@
           "example": "Group",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -18413,7 +18440,7 @@
           "example": "ADMIN",
           "member": "string",
           "name": "UserType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -18423,7 +18450,7 @@
           "example": "testUser",
           "member": "string",
           "name": "UserDescription",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -18433,7 +18460,7 @@
           "example": "无",
           "member": "Policys",
           "name": "DataPolicyInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -18443,7 +18470,7 @@
           "example": "无",
           "member": "Policys",
           "name": "EnginePolicyInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -18453,7 +18480,7 @@
           "example": "无",
           "member": "WorkGroups",
           "name": "WorkGroupInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -18463,7 +18490,7 @@
           "example": "testname",
           "member": "string",
           "name": "UserAlias",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -18473,8 +18500,18 @@
           "example": "无",
           "member": "Policys",
           "name": "RowFilterInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "账号类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "UserAccount",
+          "member": "string",
+          "name": "AccountType",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
