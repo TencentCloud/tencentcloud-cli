@@ -21,7 +21,6 @@ tccli essbasic ChannelCreateUserAutoSignEnableUrl --cli-unfold-argument  \
     --AutoSignConfig.CertInfoCallback True \
     --AutoSignConfig.UserDefineSeal False \
     --AutoSignConfig.SealImgCallback False \
-    --AutoSignConfig.CallbackUrl  \
     --NotifyType SMS \
     --NotifyAddress 13200000000 \
     --ExpiredTime 1693290580 \
@@ -66,7 +65,6 @@ tccli essbasic ChannelCreateUserAutoSignEnableUrl --cli-unfold-argument  \
     --AutoSignConfig.CertInfoCallback True \
     --AutoSignConfig.UserDefineSeal False \
     --AutoSignConfig.SealImgCallback False \
-    --AutoSignConfig.CallbackUrl  \
     --NotifyType SMS \
     --NotifyAddress 13200000000 \
     --ExpiredTime 1693290580 \
@@ -111,7 +109,6 @@ tccli essbasic ChannelCreateUserAutoSignEnableUrl --cli-unfold-argument  \
     --AutoSignConfig.CertInfoCallback True \
     --AutoSignConfig.UserDefineSeal False \
     --AutoSignConfig.SealImgCallback False \
-    --AutoSignConfig.CallbackUrl  \
     --AutoSignConfig.VerifyChannels TELECOM \
     --NotifyType SMS \
     --NotifyAddress 13200000000 \
@@ -158,7 +155,6 @@ tccli essbasic ChannelCreateUserAutoSignEnableUrl --cli-unfold-argument  \
     --AutoSignConfig.CertInfoCallback True \
     --AutoSignConfig.UserDefineSeal False \
     --AutoSignConfig.SealImgCallback False \
-    --AutoSignConfig.CallbackUrl  \
     --AutoSignConfig.VerifyChannels TELECOM \
     --NotifyType SMS \
     --NotifyAddress 13200000000 \

@@ -45,7 +45,6 @@ tccli ess CreateFlowGroupByFiles --cli-unfold-argument  \
     --FlowGroupInfos.1.FlowName 子合同2-普通B2B \
     --FlowGroupInfos.1.FlowDescription 子合同2 \
     --FlowGroupInfos.1.FlowType 示例合同 \
-    --FlowGroupInfos.1.CallbackUrl  \
     --FlowGroupInfos.1.Approvers.0.ApproverType 0 \
     --FlowGroupInfos.1.Approvers.0.OrganizationName 典子谦示例企业 \
     --FlowGroupInfos.1.Approvers.0.ApproverName 典子谦 \
@@ -168,7 +167,6 @@ tccli ess CreateFlowGroupByFiles --cli-unfold-argument  \
     --FlowGroupInfos.1.FlowName 子合同2-普通B2B \
     --FlowGroupInfos.1.FlowDescription 子合同2 \
     --FlowGroupInfos.1.FlowType 示例合同 \
-    --FlowGroupInfos.1.CallbackUrl  \
     --FlowGroupInfos.1.Approvers.0.ApproverType 0 \
     --FlowGroupInfos.1.Approvers.0.OrganizationName 典子谦示例企业 \
     --FlowGroupInfos.1.Approvers.0.ApproverName 典子谦 \
@@ -384,7 +382,6 @@ tccli ess CreateFlowGroupByFiles --cli-unfold-argument  \
     --FlowGroupInfos.1.FlowName 子合同2-普通B2B \
     --FlowGroupInfos.1.FlowDescription 子合同2 \
     --FlowGroupInfos.1.FlowType 示例合同 \
-    --FlowGroupInfos.1.CallbackUrl  \
     --FlowGroupInfos.1.Approvers.0.ApproverType 0 \
     --FlowGroupInfos.1.Approvers.0.ApproverRoleName 甲方 \
     --FlowGroupInfos.1.Approvers.0.ApproverOption.FillType 1 \

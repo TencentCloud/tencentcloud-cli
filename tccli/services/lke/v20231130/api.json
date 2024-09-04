@@ -1491,7 +1491,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用类型；knowledge_qa-知识问答管理；summary-知识摘要；classifys-知识标签提取",
+          "document": "应用类型；knowledge_qa-知识问答管理",
           "example": "无",
           "member": "string",
           "name": "AppType",

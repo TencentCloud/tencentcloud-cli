@@ -89,7 +89,7 @@
     "DeleteJobs": [
       {
         "document": "删除作业",
-        "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteJobs\n<公共请求参数>\n\n{\n    \"JobIds\": [\n        \"cql-6ntmhryo\"\n    ],\n    \"WorkSpaceId\": \"space-53rqk422\"\n}",
+        "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteJobs\n<公共请求参数>\n\n{\n    \"JobIds\": [\n        \"cql-6ntmhryo\"\n    ],\n    \"JobNames\": [\n        \"name1\"\n    ],\n    \"WorkSpaceId\": \"space-53rqk422\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"12470b27-ef12-4c52-9b79-bddd64ae0a5b\"\n    }\n}",
         "title": "删除作业"
       }

@@ -183,7 +183,6 @@ tccli essbasic CreateFlowsByTemplates --cli-unfold-argument  \
     --FlowInfos.1.FlowName 测试签署流程二 \
     --FlowInfos.1.TemplateId yDRS4UUgygqdcj56UuO4zjExBQcOiB68 \
     --FlowInfos.1.FlowDescription 测试签署流程二的描述信息 \
-    --FlowInfos.1.CallbackUrl  \
     --FlowInfos.1.FormFields.0.ComponentName 姓名 \
     --FlowInfos.1.FormFields.0.ComponentValue 张三 \
     --FlowInfos.1.Deadline 1989688460 \
@@ -280,7 +279,6 @@ tccli essbasic CreateFlowsByTemplates --cli-unfold-argument  \
     --FlowInfos.0.FlowDescription 测试流程一的描述信息 \
     --FlowInfos.0.FlowType 合同 \
     --FlowInfos.0.Deadline 1604910797 \
-    --FlowInfos.0.CallbackUrl  \
     --FlowInfos.0.FormFields.0.ComponentName 姓名 \
     --FlowInfos.0.FormFields.0.ComponentValue 李四 \
     --FlowInfos.0.FlowApprovers.0.ApproverType ORGANIZATION \

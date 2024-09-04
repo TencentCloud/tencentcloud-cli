@@ -40,6 +40,14 @@
         "title": "创建集群"
       }
     ],
+    "CreateWorkspaces": [
+      {
+        "document": "创建工作空间",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateWorkspaces\n<公共请求参数>\n\n{\n\n\t\"SpaceChargeType\": \"PREPAID\",\n\t\"SpaceChargePrepaid\": {\n\t\t\"Period\": 1,\n\t\t\"RenewFlag\": \"NOTIFY_AND_AUTO_RENEW\"\n\t},\n\t\"Placement\": {\n\t\t\"Zone\": \"ap-guangzhou-2\",\n\t\t\"ProjectId\": 0\n\t},\n\t\"VirtualPrivateCloud\": {\n\t\t\"AsVpcGateway\": false,\n\t\t\"VpcId\": \"vpc-nrqwfyzv\",\n\t\t\"SubnetId\": \"subnet-0tmm4ywk\",\n\t\t\"Ipv6AddressCount\": 0\n\t},\n\t\"SpaceType\": \"96A.96XLARGE2304\",\n\t\"ImageId\": \"img-9qrfy1xt\",\n\t\"SystemDisk\": {\n\t\t\"DiskSize\": 50,\n\t\t\"DiskType\": \"CLOUD_PREMIUM\",\n\t\t\"DiskBackupQuota\": 1\n\t},\n\t\"DataDisks\": [{\n\t\t\"DiskSize\": 50,\n\t\t\"DiskType\": \"CLOUD_PREMIUM\",\n\t\t\"DiskBackupQuota\": 1\n\t}, {\n\t\t\"DiskSize\": 50,\n\t\t\"DiskType\": \"CLOUD_PREMIUM\",\n\t\t\"DiskBackupQuota\": 1\n\t}],\n\t\"InternetAccessible\": {\n\t\t\"PublicIpAssigned\": true,\n\t\t\"InternetMaxBandwidthOut\": 5\n\t},\n\t\"SecurityGroupIds\": [\"sg-fsx9rsr1\"],\n\t\"SpaceCount\": 1,\n\t\"EnhancedService\": {\n\t\t\"SecurityService\": {\n\t\t\t\"Enabled\": true\n\t\t},\n\t\t\"MonitorService\": {\n\t\t\t\"Enabled\": true\n\t\t},\n\t\t\"AutomationService\": {\n\t\t\t\"Enabled\": true\n\t\t}\n\t}\n}",
+        "output": "{\n    \"Response\": {\n        \"SpaceIdSet\": [\n            \"wks-avs9gqvt\"\n        ],\n        \"RequestId\": \"efbbe00e-0175-4ee7-92c5-debc5763142d\"\n    }\n}",
+        "title": "创建工作空间"
+      }
+    ],
     "DeleteCluster": [
       {
         "document": "删除指定集群。",

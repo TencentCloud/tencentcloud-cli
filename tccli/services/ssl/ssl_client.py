@@ -173,6 +173,58 @@ def doDescribeHostCdnInstanceList(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doCancelAuditCertificate(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION)             and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID)             and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE)             and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.SslClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CancelAuditCertificateRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.CancelAuditCertificate(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeHostTkeInstanceList(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -745,7 +797,7 @@ def doDescribeHostDdosInstanceList(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doVerifyManager(args, parsed_globals):
+def doCompleteCertificate(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -774,11 +826,11 @@ def doVerifyManager(args, parsed_globals):
     client = mod.SslClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.VerifyManagerRequest()
+    model = models.CompleteCertificateRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.VerifyManager(model)
+        rsp = client.CompleteCertificate(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -1057,7 +1109,7 @@ def doDeleteCertificate(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCompleteCertificate(args, parsed_globals):
+def doVerifyManager(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -1086,11 +1138,11 @@ def doCompleteCertificate(args, parsed_globals):
     client = mod.SslClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CompleteCertificateRequest()
+    model = models.VerifyManagerRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.CompleteCertificate(model)
+        rsp = client.VerifyManager(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -1837,7 +1889,7 @@ def doDescribeCertificateBindResourceTaskResult(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCancelAuditCertificate(args, parsed_globals):
+def doCheckCertificateDomainVerification(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -1866,11 +1918,11 @@ def doCancelAuditCertificate(args, parsed_globals):
     client = mod.SslClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CancelAuditCertificateRequest()
+    model = models.CheckCertificateDomainVerificationRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.CancelAuditCertificate(model)
+        rsp = client.CheckCertificateDomainVerification(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -3099,6 +3151,7 @@ ACTION_MAP = {
     "DescribeHostCosInstanceList": doDescribeHostCosInstanceList,
     "DescribeCertificates": doDescribeCertificates,
     "DescribeHostCdnInstanceList": doDescribeHostCdnInstanceList,
+    "CancelAuditCertificate": doCancelAuditCertificate,
     "DescribeHostTkeInstanceList": doDescribeHostTkeInstanceList,
     "UploadRevokeLetter": doUploadRevokeLetter,
     "DeleteManager": doDeleteManager,
@@ -3110,13 +3163,13 @@ ACTION_MAP = {
     "SubmitCertificateInformation": doSubmitCertificateInformation,
     "DeleteCertificates": doDeleteCertificates,
     "DescribeHostDdosInstanceList": doDescribeHostDdosInstanceList,
-    "VerifyManager": doVerifyManager,
+    "CompleteCertificate": doCompleteCertificate,
     "DescribeHostClbInstanceList": doDescribeHostClbInstanceList,
     "DescribeHostTeoInstanceList": doDescribeHostTeoInstanceList,
     "CancelCertificateOrder": doCancelCertificateOrder,
     "DownloadCertificate": doDownloadCertificate,
     "DeleteCertificate": doDeleteCertificate,
-    "CompleteCertificate": doCompleteCertificate,
+    "VerifyManager": doVerifyManager,
     "UpdateCertificateInstance": doUpdateCertificateInstance,
     "UploadCertificate": doUploadCertificate,
     "CheckCertificateChain": doCheckCertificateChain,
@@ -3131,7 +3184,7 @@ ACTION_MAP = {
     "DeployCertificateRecordRollback": doDeployCertificateRecordRollback,
     "DeployCertificateRecordRetry": doDeployCertificateRecordRetry,
     "DescribeCertificateBindResourceTaskResult": doDescribeCertificateBindResourceTaskResult,
-    "CancelAuditCertificate": doCancelAuditCertificate,
+    "CheckCertificateDomainVerification": doCheckCertificateDomainVerification,
     "DescribeHostDeployRecord": doDescribeHostDeployRecord,
     "UpdateCertificateRecordRetry": doUpdateCertificateRecordRetry,
     "DescribeDeleteCertificatesTaskResult": doDescribeDeleteCertificatesTaskResult,

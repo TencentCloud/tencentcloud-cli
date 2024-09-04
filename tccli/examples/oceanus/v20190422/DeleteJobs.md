@@ -7,6 +7,7 @@ Input:
 ```
 tccli oceanus DeleteJobs --cli-unfold-argument  \
     --JobIds cql-6ntmhryo \
+    --JobNames name1 \
     --WorkSpaceId space-53rqk422
 ```
 

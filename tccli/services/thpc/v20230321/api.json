@@ -35,6 +35,13 @@
       "output": "CreateClusterResponse",
       "status": "online"
     },
+    "CreateWorkspaces": {
+      "document": "本接口 (CreateWorkspaces) 用于创建工作空间。",
+      "input": "CreateWorkspacesRequest",
+      "name": "创建工作空间",
+      "output": "CreateWorkspacesResponse",
+      "status": "online"
+    },
     "DeleteCluster": {
       "document": "本接口（DeleteCluster）用于删除一个指定的集群。",
       "input": "DeleteClusterRequest",
@@ -1186,6 +1193,232 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateWorkspacesRequest": {
+      "document": "CreateWorkspaces请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。",
+          "example": "system-f3827db9-c58a-49cc-bf10-33fc1923a34a",
+          "member": "string",
+          "name": "ClientToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例所在的位置。通过该参数可以指定实例所属可用区，所属项目，所属宿主机（在专用宿主机上创建子机时指定）等属性。 <b>注：如果您不指定LaunchTemplate参数，则Placement为必选参数。若同时传递Placement和LaunchTemplate，则默认覆盖LaunchTemplate中对应的Placement的值。</b>",
+          "example": "无",
+          "member": "SpacePlacement",
+          "name": "Placement",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。",
+          "example": "无",
+          "member": "SpaceChargePrepaid",
+          "name": "SpaceChargePrepaid",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "工作空间计费类型",
+          "example": "PREPAID",
+          "member": "string",
+          "name": "SpaceChargeType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "工作空间规格",
+          "example": "无",
+          "member": "string",
+          "name": "SpaceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "镜像ID",
+          "example": "img-irmer45l",
+          "member": "string",
+          "name": "ImageId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "工作空间系统盘信息",
+          "example": "无",
+          "member": "SpaceSystemDisk",
+          "name": "SystemDisk",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "工作空间数据盘信息",
+          "example": "无",
+          "member": "SpaceDataDisk",
+          "name": "DataDisks",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "私有网络相关信息",
+          "example": "无",
+          "member": "SpaceVirtualPrivateCloud",
+          "name": "VirtualPrivateCloud",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "公网带宽相关信息设置",
+          "example": "无",
+          "member": "SpaceInternetAccessible",
+          "name": "InternetAccessible",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "购买工作空间数量",
+          "example": "1",
+          "member": "int64",
+          "name": "SpaceCount",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "工作空间显示名称",
+          "example": "无",
+          "member": "string",
+          "name": "SpaceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "工作空间登陆设置",
+          "example": "无",
+          "member": "LoginSettings",
+          "name": "LoginSettings",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "工作空间所属安全组",
+          "example": "[\"sg-ajhn9qtq\"]",
+          "member": "string",
+          "name": "SecurityGroupIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "增强服务",
+          "example": "无",
+          "member": "EnhancedService",
+          "name": "EnhancedService",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "是否只预检此次请求",
+          "example": "false",
+          "member": "bool",
+          "name": "DryRun",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "提供给工作空间使用的用户数据",
+          "example": "TXlVc2VyRGF0YQo=",
+          "member": "string",
+          "name": "UserData",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "置放群组id",
+          "example": "['ps-3p88qhfo']",
+          "member": "string",
+          "name": "DisasterRecoverGroupIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "标签描述列表",
+          "example": "无",
+          "member": "TagSpecification",
+          "name": "TagSpecification",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "高性能计算集群ID",
+          "example": "hpc-a5n666lo",
+          "member": "string",
+          "name": "HpcClusterId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "CAM角色名称",
+          "example": "testroleName001",
+          "member": "string",
+          "name": "CamRoleName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例主机名。<br><li>点号（.）和短横线（-）不能作为 HostName 的首尾字符，不能连续使用。</li><br><li>Windows 实例：主机名名字符长度为[2, 15]，允许字母（不限制大小写）、数字和短横线（-）组成，不支持点号（.），不能全是数字。</li><br><li>其他类型（Linux 等）实例：主机名字符长度为[2, 60]，允许支持多个点号，点之间为一段，每段允许字母（不限制大小写）、数字和短横线（-）组成。</li><br><li>购买多台实例，如果指定模式串`{R:x}`，表示生成数字`[x, x+n-1]`，其中`n`表示购买实例的数量，例如`server{R:3}`，购买1台时，实例主机名为`server3`；购买2台时，实例主机名分别为`server3`，`server4`。支持指定多个模式串`{R:x}`。</li><br><li>购买多台实例，如果不指定模式串，则在实例主机名添加后缀`1、2...n`，其中`n`表示购买实例的数量，例如`server`，购买2台时，实例主机名分别为`server1`，`server2`。</li>",
+          "example": "MyHostName",
+          "member": "string",
+          "name": "HostName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateWorkspacesResponse": {
+      "document": "CreateWorkspaces返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "工作空间ID",
+          "example": "['wks-rn99mzt1']",
+          "member": "string",
+          "name": "SpaceIdSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -3023,6 +3256,306 @@
       ],
       "type": "object"
     },
+    "SpaceChargePrepaid": {
+      "document": "描述了工作空间的计费模式",
+      "members": [
+        {
+          "disabled": false,
+          "document": "购买实例的时长，单位：月。取值范围：1, 2, 3, 12, 24, 36。默认取值为1。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Period",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自动续费标识。取值范围：\n\nNOTIFY_AND_AUTO_RENEW：通知过期且自动续费\n\nNOTIFY_AND_MANUAL_RENEW：通知过期不自动续费\n\nDISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费\n\n\n默认取值：NOTIFY_AND_MANUAL_RENEW。若该参数指定为NOTIFY_AND_AUTO_RENEW，在账户余额充足的情况下，实例到期后将按月自动续费。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RenewFlag",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "SpaceDataDisk": {
+      "document": "工作空间数据盘配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据盘类型。数据盘类型限制详见[存储概述](https://cloud.tencent.com/document/product/213/4952)。取值范围：<br />\n<li>\n  LOCAL_BASIC：本地硬盘<br />\n  <li>\n    LOCAL_SSD：本地SSD硬盘<br />\n    <li>\n      LOCAL_NVME：本地NVME硬盘，与InstanceType强相关，不支持指定<br />\n      <li>\n        LOCAL_PRO：本地HDD硬盘，与InstanceType强相关，不支持指定<br />\n        <li>\n          CLOUD_BASIC：普通云硬盘<br />\n          <li>\n            CLOUD_PREMIUM：高性能云硬盘<br />\n            <li>\n              CLOUD_SSD：SSD云硬盘<br />\n              <li>\n                CLOUD_HSSD：增强型SSD云硬盘<br />\n                <li>\n                  CLOUD_TSSD：极速型SSD云硬盘<br />\n                  <li>\n                    CLOUD_BSSD：通用型SSD云硬盘<br /><br />默认取值：LOCAL_BASIC。<br /><br />该参数对`ResizeInstanceDisk`接口无效。\n                  </li>\n                </li>\n              </li>\n            </li>\n          </li>\n        </li>\n      </li>\n    </li>\n  </li>\n</li>",
+          "example": "无",
+          "member": "string",
+          "name": "DiskType",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据盘\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DiskId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据盘大小，单位：GB。最小调整步长为10G，不同数据盘类型取值范围不同，具体限制详见：[存储概述](https://cloud.tencent.com/document/product/213/4952)。默认值为0，表示不购买数据盘。更多限制详见产品文档。",
+          "example": "无",
+          "member": "int64",
+          "name": "DiskSize",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据盘是否随子机销毁。取值范围：\n<li>TRUE：子机销毁时，销毁数据盘，只支持按小时后付费云盘</li>\n<li>\n  FALSE：子机销毁时，保留数据盘<br />\n  默认取值：TRUE<br />\n  该参数目前仅用于 `RunInstances` 接口。\n</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "DeleteWithInstance",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据盘快照ID。选择的数据盘快照大小需小于数据盘大小。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SnapshotId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据盘是加密。取值范围：\n<li>true：加密</li>\n<li>\n  false：不加密<br />\n  默认取值：false<br />\n  该参数目前仅用于 `RunInstances` 接口。\n</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "Encrypt",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自定义CMK对应的ID，取值为UUID或者类似kms-abcd1234。用于加密云盘。\n\n该参数目前仅用于 `CreateWorkspaces` 接口。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "KmsKeyId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "云硬盘性能，单位：MB/s\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "ThroughputPerformance",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "突发性能\n\n注：内测中。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "BurstPerformance",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "SpaceInternetAccessible": {
+      "document": "描述了工作空间的公网可访问性，声明了工作空间的公网使用计费模式，最大带宽等",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网络计费类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InternetChargeType",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "公网出带宽上限，默认为0\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "InternetMaxBandwidthOut",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否分配公网IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "PublicIpAssigned",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "带宽包ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "BandwidthPackageId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "SpacePlacement": {
+      "document": "描述了实例的抽象位置，包括其所在的可用区，所属的项目",
+      "members": [
+        {
+          "disabled": false,
+          "document": "可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Zone",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "项目，默认是0\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "ProjectId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "SpaceSystemDisk": {
+      "document": "工作空间系统盘配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "系统盘类型。系统盘类型限制详见[存储概述](https://cloud.tencent.com/document/product/213/4952)。取值范围：<ul><li>LOCAL_BASIC：本地硬盘</li><li>LOCAL_SSD：本地SSD硬盘</li><li>CLOUD_BASIC：普通云硬盘</li><li>CLOUD_SSD：SSD云硬盘</li><li>CLOUD_PREMIUM：高性能云硬盘</li><li>CLOUD_BSSD：通用性SSD云硬盘</li><li>CLOUD_HSSD：增强型SSD云硬盘</li><li>CLOUD_TSSD：极速型SSD云硬盘</li></ul>默认取值：当前有库存的硬盘类型。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DiskType",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "系统盘大小，单位：GB。默认值为 50\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "DiskSize",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "SpaceVirtualPrivateCloud": {
+      "document": "描述了工作空间VPC相关信息，包括子网，IP信息等",
+      "members": [
+        {
+          "disabled": false,
+          "document": "私有网络ID",
+          "example": "vpc-2ij",
+          "member": "string",
+          "name": "VpcId",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "私有网络子网ID",
+          "example": "subnet-2ks",
+          "member": "string",
+          "name": "SubnetId",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否用作公网网关",
+          "example": "false",
+          "member": "bool",
+          "name": "AsVpcGateway",
+          "output_required": true,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "私有网络子网 IP 数组",
+          "example": "[\"10.0.0.1\"]",
+          "member": "string",
+          "name": "PrivateIpAddresses",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "为弹性网卡指定随机生成",
+          "example": "1",
+          "member": "uint64",
+          "name": "Ipv6AddressCount",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "StorageOption": {
       "document": "描述集群文件系统选项",
       "members": [
@@ -3145,6 +3678,34 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "TagSpecification": {
+      "document": "创建资源工作空间时同时绑定的标签对说明",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签绑定的资源类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "workspace",
+          "member": "string",
+          "name": "ResourceType",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签对列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "output_required": true,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

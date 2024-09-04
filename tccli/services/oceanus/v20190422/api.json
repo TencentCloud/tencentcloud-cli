@@ -2350,6 +2350,15 @@
           "name": "WorkSpaceId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "作业名称列表",
+          "example": "[\"name1\",\"name2\"]",
+          "member": "string",
+          "name": "JobNames",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

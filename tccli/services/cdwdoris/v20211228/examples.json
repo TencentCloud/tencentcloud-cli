@@ -27,7 +27,7 @@
     "CreateBackUpSchedule": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBackUpSchedule\n<公共请求参数>\n\n{\n    \"ScheduleId\": 0,\n    \"WeekDays\": \"1\",\n    \"BackUpTables\": [\n        {\n            \"Table\": \"1\",\n            \"TotalBytes\": 0,\n            \"Database\": \"1\"\n        }\n    ],\n    \"ExecuteHour\": 0\n}",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBackUpSchedule\n<公共请求参数>\n\n{\n    \"ScheduleId\": 0,\n    \"InstanceId\": \"1\",\n    \"WeekDays\": \"1\",\n    \"BackUpTables\": [\n        {\n            \"Table\": \"1\",\n            \"TotalBytes\": 0,\n            \"Database\": \"1\"\n        }\n    ],\n    \"ExecuteHour\": 0,\n    \"OperationType\": \"1\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1\"\n    }\n}",
         "title": "示例"
       }

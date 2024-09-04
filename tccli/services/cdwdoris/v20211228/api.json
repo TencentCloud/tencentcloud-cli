@@ -1546,6 +1546,24 @@
       "members": [
         {
           "disabled": false,
+          "document": "集群id",
+          "example": "\"cdwch-xxx\"",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "操作类型 create(创建) update(编辑修改)",
+          "example": "\"create\"",
+          "member": "string",
+          "name": "OperationType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "编辑时需要传",
           "example": "12345",
           "member": "int64",
@@ -1633,6 +1651,42 @@
           "name": "CosSourceInfo",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "调度任务名",
+          "example": "表1备份",
+          "member": "string",
+          "name": "ScheduleName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "调度信息",
+          "example": "无",
+          "member": "ScheduleInfo",
+          "name": "ScheduleInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "更新任务状态：\n3-暂停,\n2-删除,\n1-启动",
+          "example": "1",
+          "member": "int64",
+          "name": "UpdateStatus",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "当前任务的cos桶信息",
+          "example": "carson-test-1301087413",
+          "member": "string",
+          "name": "CosBucket",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -7668,6 +7722,89 @@
         }
       ],
       "type": "object"
+    },
+    "ScheduleInfo": {
+      "document": "调度信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "生效时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-09-07 00:00:00~2023-09-21 00:00:00\t",
+          "member": "string",
+          "name": "EffectivePeriod",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "调度类型：\nDay-天\nWeek-周\nMonth-月\nOnce-单次\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Day",
+          "member": "string",
+          "name": "ScheduleType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "执行调度的日期。调度类型为周和月时以英文逗号分隔；\n调度类型为单次时，该值是个日期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3,4,5",
+          "member": "string",
+          "name": "ScheduleData",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "执行时间：时\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "11",
+          "member": "int64",
+          "name": "ScheduleHour",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "执行时间：分\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "30",
+          "member": "int64",
+          "name": "ScheduleMin",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "备份粒度：\nAll-全量\nDatabase-按库\nTable-按表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "All",
+          "member": "string",
+          "name": "BackupScope",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "备份库：如果是按库备份，则需要该字段，库之间用英文逗号分割\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "demo1,demo2",
+          "member": "string",
+          "name": "BackupDatabase",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "SearchTags": {
       "document": "列表页搜索的标记列表",

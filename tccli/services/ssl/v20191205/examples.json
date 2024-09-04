@@ -32,6 +32,14 @@
         "title": "对证书链进行检查"
       }
     ],
+    "CheckCertificateDomainVerification": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckCertificateDomainVerification\n<公共请求参数>\n\n{\n    \"CertificateId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"VerificationResults\": [\n            {\n                \"Domain\": \"xx\",\n                \"CheckValue\": [\n                    \"xx\"\n                ],\n                \"LocalCheckFailReason\": \"xx\",\n                \"LocalCheck\": 0,\n                \"CaCheck\": 0,\n                \"Frequently\": true,\n                \"VerifyType\": \"xx\",\n                \"Issued\": true\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "检查证书域名验证"
+      }
+    ],
     "CommitCertificateInformation": [
       {
         "document": "提交证书订单",
