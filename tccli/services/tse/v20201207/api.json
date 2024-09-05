@@ -4476,7 +4476,7 @@
         },
         {
           "disabled": false,
-          "document": "引擎所在地域。参考值说明：\n中国区 参考值：\n- ap-guangzhou：广州\n- ap-beijing：北京\n- ap-chengdu：成都\n- ap-chongqing：重庆\n- ap-nanjing：南京\n- ap-shanghai：上海\n- ap-hongkong：香港\n- ap-taipei：台北\n亚太区 参考值：\n- ap-jakarta：雅加达\n- ap-singapore：新加坡\n北美区 参考值\n- na-toronto：多伦多\n金融专区 参考值\n- ap-beijing-fsi：北京金融\n- ap-shanghai-fsi：上海金融\n- ap-shenzhen-fsi：深圳金融",
+          "document": "引擎所在地域。参考值说明：\n中国区 参考值：\n- ap-guangzhou：广州\n- ap-beijing：北京\n- ap-chengdu：成都\n- ap-chongqing：重庆\n- ap-nanjing：南京\n- ap-shanghai：上海\n- ap-hongkong：香港\n- ap-taipei：台北\n亚太区 参考值：\n- ap-jakarta：雅加达\n- ap-singapore：新加坡\n北美区 参考值\n- na-siliconvalley：硅谷\n- na-ashburn: 弗吉尼亚\n金融专区 参考值\n- ap-beijing-fsi：北京金融\n- ap-shanghai-fsi：上海金融\n- ap-shenzhen-fsi：深圳金融",
           "example": "ap-beijing",
           "member": "string",
           "name": "EngineRegion",

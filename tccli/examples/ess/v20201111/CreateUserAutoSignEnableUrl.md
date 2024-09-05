@@ -14,7 +14,6 @@ tccli ess CreateUserAutoSignEnableUrl --cli-unfold-argument  \
     --AutoSignConfig.CertInfoCallback True \
     --AutoSignConfig.UserDefineSeal True \
     --AutoSignConfig.SealImgCallback True \
-    --AutoSignConfig.CallbackUrl http://www.example.com \
     --SceneKey E_PRESCRIPTION_AUTO_SIGN \
     --UrlType H5SIGN
 ```
@@ -50,7 +49,6 @@ tccli ess CreateUserAutoSignEnableUrl --cli-unfold-argument  \
     --AutoSignConfig.CertInfoCallback True \
     --AutoSignConfig.UserDefineSeal True \
     --AutoSignConfig.SealImgCallback True \
-    --AutoSignConfig.CallbackUrl http://www.example.com \
     --SceneKey E_PRESCRIPTION_AUTO_SIGN \
     --UrlType 
 ```
@@ -86,7 +84,6 @@ tccli ess CreateUserAutoSignEnableUrl --cli-unfold-argument  \
     --AutoSignConfig.CertInfoCallback True \
     --AutoSignConfig.UserDefineSeal True \
     --AutoSignConfig.SealImgCallback True \
-    --AutoSignConfig.CallbackUrl http://www.example.com \
     --AutoSignConfig.VerifyChannels TELECOM \
     --NotifyType SMS \
     --NotifyAddress 13200000000 \
@@ -127,7 +124,6 @@ tccli ess CreateUserAutoSignEnableUrl --cli-unfold-argument  \
     --AutoSignConfig.CertInfoCallback True \
     --AutoSignConfig.UserDefineSeal True \
     --AutoSignConfig.SealImgCallback True \
-    --AutoSignConfig.CallbackUrl http://www.example.com \
     --NotifyType SMS \
     --NotifyAddress 13200000000 \
     --ExpiredTime 1693290580 \

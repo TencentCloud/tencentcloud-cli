@@ -338,7 +338,7 @@
         {
           "disabled": false,
           "document": "视频地址URL。",
-          "example": "无",
+          "example": "http://xxx/video.mp4",
           "member": "string",
           "name": "VideoUrl",
           "required": true,
@@ -347,7 +347,7 @@
         {
           "disabled": false,
           "document": "源语言：zh, en",
-          "example": "无",
+          "example": "zh",
           "member": "string",
           "name": "SrcLang",
           "required": true,
@@ -356,7 +356,7 @@
         {
           "disabled": false,
           "document": "目标语言：zh, en",
-          "example": "无",
+          "example": "en",
           "member": "string",
           "name": "DstLang",
           "required": true,
@@ -365,7 +365,7 @@
         {
           "disabled": false,
           "document": "当音频 URL 不为空时，默认以音频驱动视频任务口型",
-          "example": "无",
+          "example": "http://xxx/audio.mp3",
           "member": "string",
           "name": "AudioUrl",
           "required": false,
@@ -374,7 +374,7 @@
         {
           "disabled": false,
           "document": "是否需要确认翻译结果0：不需要，1：需要",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Confirm",
           "required": false,
@@ -383,11 +383,20 @@
         {
           "disabled": false,
           "document": "是否开启口型驱动，0：不开启，1：开启。默认开启。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "LipSync",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "音色 ID",
+          "example": "701001",
+          "member": "string",
+          "name": "VoiceType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

@@ -36,7 +36,7 @@
       "status": "online"
     },
     "GetTrainingText": {
-      "document": "本接口用于获取声音复刻训练文本信息。\n 请求方法为 HTTP POST , Content-Type为\"application/json; charset=utf-8\"\n• 签名方法参考 公共参数 中签名方法v3。",
+      "document": "本接口用于获取声音复刻训练文本信息。\n 请求方法为 HTTP POST , Content-Type为\"application/json; charset=utf-8\"\n• 签名方法参考 公共参数 中签名方法v3。\n• 当复刻类型为一句话声音复刻时，生成的TextId有效期为7天，且在成功创建一次复刻任务后失效。",
       "input": "GetTrainingTextRequest",
       "name": "获取声音复刻训练文本",
       "output": "GetTrainingTextResponse",
@@ -671,11 +671,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "文本ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文本ID\n当复刻类型为一句话声音复刻时，生成的TextId有效期为7天，且在成功创建一次复刻任务后失效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "00001",
           "member": "string",
           "name": "TextId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -685,7 +685,7 @@
           "example": "无",
           "member": "string",
           "name": "Text",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }

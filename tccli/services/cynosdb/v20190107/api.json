@@ -4987,7 +4987,7 @@
         {
           "disabled": false,
           "document": "资源包大小，计算资源单位：万个；存储资源：GB",
-          "example": "100",
+          "example": "2000",
           "member": "float",
           "name": "PackageSpec",
           "required": true,
