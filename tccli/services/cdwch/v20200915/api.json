@@ -494,8 +494,7 @@
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -504,18 +503,16 @@
           "member": "string",
           "name": "UserName",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
-          "document": "密码",
+          "document": "base64加密后的密码",
           "example": "password",
           "member": "string",
           "name": "PassWord",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -524,8 +521,7 @@
           "member": "string",
           "name": "Describe",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"

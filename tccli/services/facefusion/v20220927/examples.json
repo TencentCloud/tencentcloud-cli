@@ -37,6 +37,14 @@
         "output": "{\n    \"Response\": {\n        \"JobStatusCode\": 7,\n        \"JobStatus\": \"处理完成\",\n        \"VideoFaceFusionOutput\": {\n            \"VideoUrl\": \"http://bda-video-bodyseg-1254418846.cos.ap-guangzhou.myqcloud.com/video_fusion_test/1.0/251006455/20210119164402_83ecff39-2e4a-41d5-8562-1f8898326565_qc_300314_789050_75_1611045834157_result.mp4\",\n            \"VideoMD5\": \"3AA00F9A2914DF3F2268628C45C4E4CE\",\n            \"Width\": 720,\n            \"Height\": 1280,\n            \"FPS\": 25,\n            \"DurationInSec\": 15.079999923706,\n            \"Frame\": 375\n        },\n        \"JobErrorCode\": \"\",\n        \"JobErrorMsg\": \"\",\n        \"RequestId\": \"ef13456e-8174-4418-8e51-a724257c9a3a\"\n    }\n}",
         "title": "查询视频人脸融合任务"
       }
+    ],
+    "SubmitVideoFaceFusionJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: facefusion.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitVideoFaceFusionJob\n<公共请求参数>\n\n{\n    \"ProjectId\": \"100646\",\n    \"MergeInfos\": [\n        {\n            \"Url\": \"http://i2.sinaimg.cn/ty/nba/2015-07-05/U10236P6T12D7648505F44DT20150705114547.jpg\"\n        }\n    ],\n    \"ModelId\": \"qc_100646_154021_9\"\n}",
+        "output": "{\n    \"Response\": {\n        \"JobId\": \"C0a5EXaNR7JzGvlg\",\n        \"EstimatedProcessTime\": 30,\n        \"JobQueueLength\": 1,\n        \"ReviewResultSet\": [\n            {\n                \"Category\": \"Politics\",\n                \"Code\": \"0\",\n                \"CodeDescription\": \"OK\",\n                \"Suggestion\": \"PASS\",\n                \"Confidence\": 30,\n                \"DetailSet\": [\n                    {\n                        \"Field\": \"\",\n                        \"Label\": \"丁俊晖\",\n                        \"Confidence\": 30,\n                        \"Suggestion\": \"PASS\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"83ecff39-2e4a-41d5-8562-1f8898326565\"\n    }\n}",
+        "title": "视频人脸融合"
+      }
     ]
   },
   "version": "1.0"

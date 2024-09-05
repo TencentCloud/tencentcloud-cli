@@ -1,29 +1,10 @@
 # 本版本更新包含以下内容：
 
-## 商业智能分析 BI(bi) 版本：2022-01-05
+## 人脸融合(facefusion) 版本：2022-09-27
 
-### 第 16 次发布
+### 第 7 次发布
 
-发布时间：2024-09-05 01:07:53
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [ModifyUserRole](http://document.tencentcloudapi.woa.com/document/product/1707/82038)
-
-	* 新增入参：LoginSecurityStatus
-
-
-
-
-## 日志服务(cls) 版本：2020-10-16
-
-### 第 85 次发布
-
-发布时间：2024-09-05 01:11:51
+发布时间：2024-09-06 01:20:17
 
 本次发布包含了以下内容：
 
@@ -31,37 +12,24 @@
 
 新增接口：
 
-* [CheckConfigRegex](http://document.tencentcloudapi.woa.com/document/product/614/84819)
-* [GenBeginRegex](http://document.tencentcloudapi.woa.com/document/product/614/84821)
-* [GenKVRegex](http://document.tencentcloudapi.woa.com/document/product/614/84820)
+* [SubmitVideoFaceFusionJob](http://document.tencentcloudapi.woa.com/document/product/670/84826)
 
 新增数据结构：
 
-* [RegexIndexInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#RegexIndexInfo)
+* [FuseFaceReviewDetail](http://document.tencentcloudapi.woa.com/document/product/670/78443#FuseFaceReviewDetail)
+* [FuseFaceReviewResult](http://document.tencentcloudapi.woa.com/document/product/670/78443#FuseFaceReviewResult)
 
 
 
-## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
-
-### 第 97 次发布
-
-发布时间：2024-09-05 01:14:04
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [DescribeIsolatedInstances](http://document.tencentcloudapi.woa.com/document/product/1003/84822)
+## 人脸融合(facefusion) 版本：2018-12-01
 
 
 
-## 数据湖计算 DLC(dlc) 版本：2021-01-25
+## 声音复刻(vrs) 版本：2020-08-24
 
-### 第 115 次发布
+### 第 10 次发布
 
-发布时间：2024-09-05 01:15:24
+发布时间：2024-09-06 01:33:07
 
 本次发布包含了以下内容：
 
@@ -69,40 +37,29 @@
 
 修改数据结构：
 
-* [UserDetailInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#UserDetailInfo)
+* [TrainingText](http://document.tencentcloudapi.woa.com/document/product/1664/79152#TrainingText)
 
-	* 新增成员：AccountType
-
-
+	* <font color="#dd0000">**修改成员**：</font>TextId, Text
 
 
-## 高性能计算平台(thpc) 版本：2023-03-21
 
-### 第 11 次发布
 
-发布时间：2024-09-05 01:28:42
+## 视频转译(vtc) 版本：2024-02-23
+
+### 第 4 次发布
+
+发布时间：2024-09-06 01:33:10
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-新增接口：
+修改接口：
 
-* [DescribeWorkspaces](http://document.tencentcloudapi.woa.com/document/product/1701/84825)
-* [ModifyWorkspacesAttribute](http://document.tencentcloudapi.woa.com/document/product/1701/84824)
-* [TerminateWorkspaces](http://document.tencentcloudapi.woa.com/document/product/1701/84823)
+* [SubmitVideoTranslateJob](http://document.tencentcloudapi.woa.com/document/product/1761/83879)
 
-新增数据结构：
+	* 新增入参：VoiceType
 
-* [SpaceInfo](http://document.tencentcloudapi.woa.com/document/product/1701/80209#SpaceInfo)
-
-
-
-## 高性能计算平台(thpc) 版本：2022-04-01
-
-
-
-## 高性能计算平台(thpc) 版本：2021-11-09
 
 
 
@@ -25279,13 +25236,13 @@
 
 新增接口：
 
-* [[CheckConfigRegex](http://document.tencentcloudapi.woa.com/document/product/614/84819)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[GenBeginRegex](http://document.tencentcloudapi.woa.com/document/product/614/84821)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[GenKVRegex](http://document.tencentcloudapi.woa.com/document/product/614/84820)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [CheckConfigRegex](http://document.tencentcloudapi.woa.com/document/product/614/84819)
+* [GenBeginRegex](http://document.tencentcloudapi.woa.com/document/product/614/84821)
+* [GenKVRegex](http://document.tencentcloudapi.woa.com/document/product/614/84820)
 
 新增数据结构：
 
-* [[RegexIndexInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#RegexIndexInfo)](http://document.tencentcloudapi.woa.com/document/product/614/56471#[RegexIndexInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#RegexIndexInfo))
+* [RegexIndexInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#RegexIndexInfo)
 
 ### 第 84 次发布
 
@@ -35489,7 +35446,7 @@
 
 新增接口：
 
-* [[DescribeIsolatedInstances](http://document.tencentcloudapi.woa.com/document/product/1003/84822)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeIsolatedInstances](http://document.tencentcloudapi.woa.com/document/product/1003/84822)
 
 ### 第 96 次发布
 
@@ -54894,6 +54851,23 @@
 
 
 ## 人脸融合(facefusion) 版本：2022-09-27
+
+### 第 7 次发布
+
+发布时间：2024-09-06 01:20:17
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[SubmitVideoFaceFusionJob](http://document.tencentcloudapi.woa.com/document/product/670/84826)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[FuseFaceReviewDetail](http://document.tencentcloudapi.woa.com/document/product/670/78443#FuseFaceReviewDetail)](http://document.tencentcloudapi.woa.com/document/product/670/78443#[FuseFaceReviewDetail](http://document.tencentcloudapi.woa.com/document/product/670/78443#FuseFaceReviewDetail))
+* [[FuseFaceReviewResult](http://document.tencentcloudapi.woa.com/document/product/670/78443#FuseFaceReviewResult)](http://document.tencentcloudapi.woa.com/document/product/670/78443#[FuseFaceReviewResult](http://document.tencentcloudapi.woa.com/document/product/670/78443#FuseFaceReviewResult))
 
 ### 第 6 次发布
 
@@ -98177,13 +98151,13 @@
 
 新增接口：
 
-* [[DescribeWorkspaces](http://document.tencentcloudapi.woa.com/document/product/1701/84825)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ModifyWorkspacesAttribute](http://document.tencentcloudapi.woa.com/document/product/1701/84824)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[TerminateWorkspaces](http://document.tencentcloudapi.woa.com/document/product/1701/84823)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeWorkspaces](http://document.tencentcloudapi.woa.com/document/product/1701/84825)
+* [ModifyWorkspacesAttribute](http://document.tencentcloudapi.woa.com/document/product/1701/84824)
+* [TerminateWorkspaces](http://document.tencentcloudapi.woa.com/document/product/1701/84823)
 
 新增数据结构：
 
-* [[SpaceInfo](http://document.tencentcloudapi.woa.com/document/product/1701/80209#SpaceInfo)](http://document.tencentcloudapi.woa.com/document/product/1701/80209#[SpaceInfo](http://document.tencentcloudapi.woa.com/document/product/1701/80209#SpaceInfo))
+* [SpaceInfo](http://document.tencentcloudapi.woa.com/document/product/1701/80209#SpaceInfo)
 
 ### 第 10 次发布
 
@@ -115799,6 +115773,21 @@
 
 ## 声音复刻(vrs) 版本：2020-08-24
 
+### 第 10 次发布
+
+发布时间：2024-09-06 01:33:07
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [TrainingText](http://document.tencentcloudapi.woa.com/document/product/1664/79152#TrainingText)
+
+	* <font color="#dd0000">**修改成员**：</font>TextId, Text
+
+
 ### 第 9 次发布
 
 发布时间：2024-08-19 01:31:16
@@ -115990,6 +115979,21 @@
 
 
 ## 视频转译(vtc) 版本：2024-02-23
+
+### 第 4 次发布
+
+发布时间：2024-09-06 01:33:10
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [SubmitVideoTranslateJob](http://document.tencentcloudapi.woa.com/document/product/1761/83879)
+
+	* 新增入参：VoiceType
+
 
 ### 第 3 次发布
 

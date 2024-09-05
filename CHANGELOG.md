@@ -1,3 +1,68 @@
+# Release 3.0.1070.1
+
+## 人脸融合(facefusion) 版本：2022-09-27
+
+### 第 7 次发布
+
+发布时间：2024-09-06 01:20:17
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [SubmitVideoFaceFusionJob](http://document.tencentcloudapi.woa.com/document/product/670/84826)
+
+新增数据结构：
+
+* [FuseFaceReviewDetail](http://document.tencentcloudapi.woa.com/document/product/670/78443#FuseFaceReviewDetail)
+* [FuseFaceReviewResult](http://document.tencentcloudapi.woa.com/document/product/670/78443#FuseFaceReviewResult)
+
+
+
+## 人脸融合(facefusion) 版本：2018-12-01
+
+
+
+## 声音复刻(vrs) 版本：2020-08-24
+
+### 第 10 次发布
+
+发布时间：2024-09-06 01:33:07
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [TrainingText](http://document.tencentcloudapi.woa.com/document/product/1664/79152#TrainingText)
+
+	* <font color="#dd0000">**修改成员**：</font>TextId, Text
+
+
+
+
+## 视频转译(vtc) 版本：2024-02-23
+
+### 第 4 次发布
+
+发布时间：2024-09-06 01:33:10
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [SubmitVideoTranslateJob](http://document.tencentcloudapi.woa.com/document/product/1761/83879)
+
+	* 新增入参：VoiceType
+
+
+
+
 # Release 3.0.1069.1
 
 ## 商业智能分析 BI(bi) 版本：2022-01-05
