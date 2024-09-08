@@ -2575,6 +2575,15 @@
           "name": "Limit",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否包含新控制台集群",
+          "example": "0",
+          "member": "bool",
+          "name": "IncludeNew",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

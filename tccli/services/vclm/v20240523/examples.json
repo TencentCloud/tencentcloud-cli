@@ -102,16 +102,28 @@
     ],
     "SubmitVideoTranslateJob": [
       {
-        "document": "调用失败示例",
+        "document": "中英转译失败案例",
         "input": "POST / HTTP/1.1\nHost: vclm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitVideoTranslateJob\n<公共请求参数>\n\n\n\n{\n    \"VideoUrl\": \"https://xxx.com/url/xxx.mp4\",\n    \"SrcLang\": \"zh\",\n    \"DstLang\": \"zh\",\n    \"Confirm\": 0,\n    \"LipSync\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue.ParameterValueError\",\n            \"Message\": \"参数字段或者值有误。\"\n        },\n        \"RequestId\": \"3787745f-b446-4b39-9471-9032a4c306ee\"\n    }\n}",
-        "title": "调用失败示例"
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameter.InvalidParameter\",\n            \"Message\": \"源语种(SrcLang)和目标语种(DstLang)不允许相同，请检查后重新输入\"\n        },\n        \"RequestId\": \"3787745f-b446-4b39-9471-9032a4c306ee\"\n    }\n}",
+        "title": "提交中英视频转译失败案例"
       },
       {
-        "document": "提交视频翻译任务",
+        "document": "中英转译成功案例",
         "input": "POST / HTTP/1.1\nHost: vclm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitVideoTranslateJob\n<公共请求参数>\n\n\n\n{\n    \"VideoUrl\": \"https://xxx.com/url/xxx.mp4\",\n    \"SrcLang\": \"zh\",\n    \"DstLang\": \"en\",\n    \"Confirm\": 0,\n    \"LipSync\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"JobId\": \"GLo7lni4PubX9xUwzesuKUOLJokVZ0ll\",\n        \"RequestId\": \"950a5a45-7bf5-4db3-aef1-dfedda487575\"\n    }\n}",
-        "title": "调用成功示例"
+        "title": "提交中英视频转译成功案例"
+      },
+      {
+        "document": "小语种转译成功案例",
+        "input": "POST / HTTP/1.1\nHost: vclm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitVideoTranslateJob\n<公共请求参数>\n\n{\n    \"VideoUrl\": \"https://xxx.com/url/xxx.mp4\",\n    \"SrcLang\": \"zh\",\n    \"DstLang\": \"de-DE\",\n    \"Confirm\": 0,\n    \"LipSync\": 0,\n    \"VoiceType\": \"701001\"\n}",
+        "output": "{\n    \"Response\": {\n        \"JobId\": \"GLo7lni4PubX9xUwzesuKUOLJokVZ0ll\",\n        \"RequestId\": \"950a5a45-7bf5-4db3-aef1-dfedda487575\"\n    }\n}",
+        "title": "提交小语种视频转译成功案例"
+      },
+      {
+        "document": "小语种转译失败案例",
+        "input": "POST / HTTP/1.1\nHost: vclm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitVideoTranslateJob\n<公共请求参数>\n\n\n\n{\n    \"VideoUrl\": \"https://xxx.com/url/xxx.mp4\",\n    \"SrcLang\": \"zh\",\n    \"DstLang\": \"de-DE\",\n    \"Confirm\": 0,\n    \"LipSync\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameter.InvalidParameter\",\n            \"Message\": \"音色种别不能为空\"\n        },\n        \"RequestId\": \"3787745f-b446-4b39-9471-9032a4c306ee\"\n    }\n}",
+        "title": "提交小语种视频转译失败案例"
       }
     ]
   },

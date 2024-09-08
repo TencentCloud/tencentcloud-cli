@@ -15,10 +15,10 @@ Output:
 ```
 {
     "Response": {
-        "ErrorMsg": "xx",
-        "Data": "xx",
-        "RequestId": "xx",
-        "IsDraft": true
+        "IsDraft": true,
+        "ErrorMsg": "abc",
+        "Data": "abc",
+        "RequestId": "abc"
     }
 }
 ```

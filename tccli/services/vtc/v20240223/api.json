@@ -15,7 +15,7 @@
       "status": "online"
     },
     "SubmitVideoTranslateJob": {
-      "document": "提交视频转译任务",
+      "document": "###### 支持音色种别列表\n| 音色名称                 | 性别 | 目标语言         | 音色ID |\n| ------------------------ | ---- | ---------------- | ------ |\n| Florian Multilingual     | 男 | 德语(德国)       | 701001 |\n| Seraphina                | 女  | 德语(德国)       | 701002 |\n| Ada Multilingual         | 女 | 英语(英国)       | 701003 |\n| Ollie Multilingual       | 男  | 英语(英国)       | 701004 |\n| Ava Multilingual         | 女 | 英语(美国)       | 701005 |\n| Andrew Multilingual      | 男  | 英语(美国)       | 701006 |\n| Emma Multilingual        | 女  | 英语(美国)       | 701007 |\n| Brian Multilingual       | 男  | 英语(美国)       | 701008 |\n| Jenny Multilingual       | 女  | 英语(美国)       | 701009 |\n| Ryan Multilingual        | 男  | 英语(美国)       | 701010 |\n| Adam Multilingual        | 男  | 英语(美国)       | 701011 |\n| AlloyTurbo Multilingual  | 男  | 英语(美国)       | 701012 |\n| Amanda Multilingual      | 女  | 英语(美国)       | 701013 |\n| Brandon Multilingual     | 男  | 英语(美国)       | 701014 |\n| Christopher Multilingual | 男  | 英语(美国)       | 701015 |\n| Cora Multilingual        | 女  | 英语(美国)       | 701016 |\n| Davis Multilingual       | 男  | 英语(美国)       | 701017 |\n| Derek Multilingual       | 男  | 英语(美国)       | 701018 |\n| Dustin Multilingual      | 男  | 英语(美国)       | 701019 |\n| Evelyn Multilingual      | 女  | 英语(美国)       | 701020 |\n| Lewis Multilingual       | 男  | 英语(美国)       | 701021 |\n| Lola Multilingual        | 女  | 英语(美国)       | 701022 |\n| Nancy Multilingual       | 女  | 英语(美国)       | 701023 |\n| NovaTurbo Multilingual   | 女   | 英语(美国)       | 701024 |\n| Phoebe Multilingual      | 女  | 英语(美国)       | 701025 |\n| Samuel Multilingual      | 男  | 英语(美国)       | 701026 |\n| Serena Multilingual      | 女  | 英语(美国)       | 701027 |\n| Steffan Multilingual     | 男  | 英语(美国)       | 701028 |\n| Arabella Multilingual    | 女  | 西班牙语(西班牙) | 701029 |\n| Isidora Multilingual     | 女  | 西班牙语(西班牙) | 701030 |\n| Tristan Multilingual     | 男  | 西班牙语(西班牙) | 701031 |\n| Ximena Multilingual      | 女  | 西班牙语(西班牙) | 701032 |\n| Remy Multilingual        | 男  | 法语(法国)       | 701033 |\n| Vivienne Multilingual    | 女  | 法语(法国)       | 701034 |\n| Lucien Multilingual      | 男  | 法语(法国)       | 701035 |\n| Alessio Multilingual     | 男  | 意大利语(意大利) | 701036 |\n| Giuseppe Multilingual    | 男  | 意大利语(意大利) | 701037 |\n| Isabella Multilingual    | 女  | 意大利语(意大利) | 701038 |\n| Marcello Multilingual    | 男  | 意大利语(意大利) | 701039 |\n| Masaru Multilingual      | 男  | 日语(日本)       | 701040 |\n| Hyunsu Multilingual      | 男  | 韩语(韩国)       | 701041 |\n| Macerio Multilingual     | 男  | 葡萄牙语(巴西)   | 701042 |\n| Thalita Multilingual     | 女  | 葡萄牙语(巴西)   | 701043 |\n| 晓辰 多语言              | 女  | 中文(普通话)     | 701044 |\n| 晓晓 多语言              | 女  | 中文(普通话)     | 701045 |\n| 晓宇 多语言              | 女  | 中文(普通话)     | 701046 |\n| 云逸 多语言              | 男 | 中文(普通话)     | 701047 |\n| Yunfan Multilingual      | 男  | 中文(普通话)     | 701048 |\n| Yunxiao Multilingual     | 男  | 中文(普通话)     | 701049 |\n| 晓晓 方言                | 女  | 中文(普通话)     | 701050 |",
       "input": "SubmitVideoTranslateJobRequest",
       "name": "提交视频转译任务",
       "output": "SubmitVideoTranslateJobResponse",
@@ -337,7 +337,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "视频地址URL。",
+          "document": "视频地址URL。\n格式要求：支持 mp4、mov 。\n时长要求：【10-300】秒。\nfps 要求：【15-60】fps\n分辨率要求：单边像素要求在 【540~1920】 之间。",
           "example": "http://xxx/video.mp4",
           "member": "string",
           "name": "VideoUrl",
@@ -346,7 +346,7 @@
         },
         {
           "disabled": false,
-          "document": "源语言：zh, en",
+          "document": "源语言：zh(中文), en(英文)",
           "example": "zh",
           "member": "string",
           "name": "SrcLang",
@@ -355,7 +355,7 @@
         },
         {
           "disabled": false,
-          "document": "目标语言：zh, en",
+          "document": "目标语种：\nzh(简体中文)、en(英语)、ar(阿拉伯语)、de(德语)、es(西班牙语)、fr(法语)、id(印尼语)、it(意大利语)、ja(日语)、ko(韩语)、ms(马来语)、pt(葡萄牙语)、ru(俄语)、th(泰语)、tr(土耳其语)、vi(越南语)\n示例值：ar(阿拉伯语)",
           "example": "en",
           "member": "string",
           "name": "DstLang",
@@ -364,7 +364,7 @@
         },
         {
           "disabled": false,
-          "document": "当音频 URL 不为空时，默认以音频驱动视频任务口型",
+          "document": "当音频 URL 不为空时，默认以音频驱动视频任务口型。\n格式要求：支持 mp3、m4a、acc、wav 格式。\n时长要求：【10~300】秒\n大小要求：不超过 100M。\n示例值：http://xxx/audio.mp3",
           "example": "http://xxx/audio.mp3",
           "member": "string",
           "name": "AudioUrl",
@@ -391,7 +391,7 @@
         },
         {
           "disabled": false,
-          "document": "音色 ID",
+          "document": "音色种别：一种音色种别对应一种不同区域的音色\n1）目标语种为小语种(非zh,en)时，该项为必填\n2）目标语种为zh,en时，该项为非必填，若填入，则对应填入的音色\n\n具体音色包含请见“支持音色种别列表”",
           "example": "701001",
           "member": "string",
           "name": "VoiceType",

@@ -2706,50 +2706,50 @@
         {
           "disabled": false,
           "document": "违规场景，参照<a href=\"https://cloud.tencent.com/document/product/607/37622#Label_Value\">Label</a>定义",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Label",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "该场景下概率[0.00,100.00],分值越大违规概率越高",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Rate",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "违规关键字",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "KeyWord",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "关键字在音频的开始时间，从0开始的偏移量，单位为毫秒",
-          "example": "",
+          "document": "关键字在音频的开始时间，从0开始的偏移量，单位为毫秒，Label=moan时有效",
+          "example": "无",
           "member": "uint64",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "关键字在音频的结束时间，从0开始的偏移量,，单位为毫秒",
-          "example": "",
+          "document": "关键字在音频的结束时间，从0开始的偏移量,，单位为毫秒，Label=moan时有效",
+          "example": "无",
           "member": "uint64",
           "name": "EndTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }

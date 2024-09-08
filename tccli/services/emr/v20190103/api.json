@@ -42,6 +42,13 @@
       "output": "DeleteUserManagerUserListResponse",
       "status": "online"
     },
+    "DeployYarnConf": {
+      "document": "yarn资源调度-部署生效",
+      "input": "DeployYarnConfRequest",
+      "name": "yarn资源调度-部署生效",
+      "output": "DeployYarnConfResponse",
+      "status": "online"
+    },
     "DescribeAutoScaleGroupGlobalConf": {
       "document": "获取自动扩缩容全局配置",
       "input": "DescribeAutoScaleGroupGlobalConfRequest",
@@ -155,9 +162,9 @@
       "status": "online"
     },
     "DescribeResourceSchedule": {
-      "document": "查询YARN资源调度数据信息",
+      "document": "查询YARN资源调度数据信息。已废弃，请使用`DescribeYarnQueue`去查询队列信息。",
       "input": "DescribeResourceScheduleRequest",
-      "name": "查询YARN资源调度数据信息",
+      "name": "查询YARN资源调度数据信息（旧）",
       "output": "DescribeResourceScheduleResponse",
       "status": "online"
     },
@@ -189,10 +196,17 @@
       "output": "DescribeYarnApplicationsResponse",
       "status": "online"
     },
+    "DescribeYarnQueue": {
+      "document": "获取资源调度中的队列信息",
+      "input": "DescribeYarnQueueRequest",
+      "name": "获取资源调度中的队列信息",
+      "output": "DescribeYarnQueueResponse",
+      "status": "online"
+    },
     "DescribeYarnScheduleHistory": {
-      "document": "查看yarn资源调度的调度历史",
+      "document": "查看yarn资源调度的调度历史。废弃，请使用流程中心查看历史记录。",
       "input": "DescribeYarnScheduleHistoryRequest",
-      "name": "yarn资源调度-调度历史",
+      "name": "yarn资源调度-调度历史（旧）",
       "output": "DescribeYarnScheduleHistoryResponse",
       "status": "online"
     },
@@ -246,23 +260,23 @@
       "status": "online"
     },
     "ModifyResourcePools": {
-      "document": "刷新YARN的动态资源池",
+      "document": "刷新YARN的动态资源池。已废弃，请使用`DeployYarnConf`",
       "input": "ModifyResourcePoolsRequest",
-      "name": "刷新YARN的动态资源池",
+      "name": "刷新YARN的动态资源池（旧）",
       "output": "ModifyResourcePoolsResponse",
       "status": "online"
     },
     "ModifyResourceScheduleConfig": {
-      "document": "修改YARN资源调度的资源配置",
+      "document": "修改YARN资源调度的资源配置。已废弃，请使用`ModifyYarnQueueV2`来修改队列配置",
       "input": "ModifyResourceScheduleConfigRequest",
-      "name": "修改YARN资源调度的资源配置",
+      "name": "修改YARN资源调度的资源配置（旧）",
       "output": "ModifyResourceScheduleConfigResponse",
       "status": "online"
     },
     "ModifyResourceScheduler": {
-      "document": "修改了yarn的资源调度器，点击部署生效",
+      "document": "修改了yarn的资源调度器，点击部署生效。",
       "input": "ModifyResourceSchedulerRequest",
-      "name": "修改YARN的资源调度器",
+      "name": "修改YARN的资源调度器（旧）",
       "output": "ModifyResourceSchedulerResponse",
       "status": "online"
     },
@@ -281,10 +295,24 @@
       "status": "online"
     },
     "ModifyYarnDeploy": {
-      "document": "部署生效",
+      "document": "部署生效。已废弃，请使用`DeployYarnConf`接口进行部署生效",
       "input": "ModifyYarnDeployRequest",
-      "name": "部署生效",
+      "name": "部署生效（旧）",
       "output": "ModifyYarnDeployResponse",
+      "status": "online"
+    },
+    "ModifyYarnQueueV2": {
+      "document": "修改资源调度中队列信息",
+      "input": "ModifyYarnQueueV2Request",
+      "name": "修改yarn资源调度的队列信息",
+      "output": "ModifyYarnQueueV2Response",
+      "status": "online"
+    },
+    "ResetYarnConfig": {
+      "document": "修改YARN资源调度的资源配置",
+      "input": "ResetYarnConfigRequest",
+      "name": "yarn资源调度-重置",
+      "output": "ResetYarnConfigResponse",
       "status": "online"
     },
     "RunJobFlow": {
@@ -1917,6 +1945,128 @@
       ],
       "usage": "both"
     },
+    "ConfigModifyInfoV2": {
+      "document": "资源调度 - 队列修改信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "操作类型，可选值：\n\n- 0：新建队列\n- 1：编辑-全量覆盖\n- 2：新建子队列\n- 3：删除\n- 4：克隆，与新建子队列的行为一样，特别的对于`fair`，可以复制子队列到新建队列\n- 6：编辑-增量更新\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "OpType",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "队列名称，不支持修改。",
+          "example": "b",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "新建队列 传root的MyId；新建子队列 传 选中队列的 myId；克隆 要传 选中队列 parentId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "root.a",
+          "member": "string",
+          "name": "ParentId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "编辑、删除 传选中队列的 myId。克隆只有在调度器是`fair`时才需要传，用来复制子队列到新队列。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "root.a.b",
+          "member": "string",
+          "name": "MyId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "基础配置信息。key的取值与**DescribeYarnQueue**返回的字段一致。\n###### 公平调度器\nkey的取值信息如下：\n\n- type，父队列，取值为 **parent** 或 **null**\n- aclSubmitApps，提交访问控制，取值为**AclForYarnQueue类型的json串**或**null**\n- aclAdministerApps，管理访问控制，取值为**AclForYarnQueue类型的json串**或**null**\n- minSharePreemptionTimeout，最小共享优先权超时时间，取值为**数字字符串**或**null**\n- fairSharePreemptionTimeout，公平份额抢占超时时间，取值为**数字字符串**或**null**\n- fairSharePreemptionThreshold，公平份额抢占阈值，取值为**数字字符串**或**null**，其中数字的范围是（0，1]\n- allowPreemptionFrom，抢占模式，取值为**布尔字符串**或**null**\n- schedulingPolicy，调度策略，取值为**drf**、**fair**、**fifo**或**null**\n\n```\ntype AclForYarnQueue struct {\n\tUser  *string `json:\"user\"` //用户名\n\tGroup *string `json:\"group\"`//组名\n}\n```\n###### 容量调度器\nkey的取值信息如下：\n\n- state，队列状态，取值为**STOPPED**或**RUNNING**\n- default-node-label-expression，默认标签表达式，取值为**标签**或**null**\n- acl_submit_applications，提交访问控制，取值为**AclForYarnQueue类型的json串**或**null**\n- acl_administer_queue，管理访问控制，取值为**AclForYarnQueue类型的json串**或**null**\n- maximum-allocation-mb，分配Container最大内存数量，取值为**数字字符串**或**null**\n- maximum-allocation-vcores，Container最大vCore数量，取值为**数字字符串**或**null**\n```\ntype AclForYarnQueue struct {\n\tUser  *string `json:\"user\"` //用户名\n\tGroup *string `json:\"group\"`//组名\n}\n```\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ItemSeq",
+          "name": "BasicParams",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "配置集信息，取值见该复杂类型的参数说明。配置集是计划模式在队列中表现，表示的是不同时间段不同的配置值，所有队列的配置集名称都一样，对于单个队列，每个配置集中的标签与参数都一样，只是参数值不同。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ConfigSetInfo",
+          "name": "ConfigSetParams",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "容量调度专用，`OpType`为`6`时才生效，表示要删除这个队列中的哪些标签。优先级高于ConfigSetParams中的LabelParams。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DeleteLables",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ConfigSetInfo": {
+      "document": "资源调度-配置集信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "配置集名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "default",
+          "member": "string",
+          "name": "ConfigSet",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "容量调度器会使用，里面设置了标签相关的配置。key的取值与**DescribeYarnQueue**返回的字段一致。\nkey的取值信息如下：\n- labelName，标签名称，标签管理里的标签。\n- capacity，容量，取值为**数字字符串**\n- maximum-capacity，最大容量，取值为**数字字符串**\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ItemSeq",
+          "name": "LabelParams",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "设置配置集相关的参数。key的取值与**DescribeYarnQueue**返回的字段一致。\n###### 公平调度器\nkey的取值信息如下：\n- minResources，最大资源量，取值为**YarnResource类型的json串**或**null**\n- maxResources，最大资源量，取值为**YarnResource类型的json串**或**null**\n- maxChildResources，能够分配给为未声明子队列的最大资源量，取值为**数字字符串**或**null**\n- maxRunningApps，最高可同时处于运行的App数量，取值为**数字字符串**或**null**\n- weight，权重，取值为**数字字符串**或**null**\n- maxAMShare，App Master最大份额，取值为**数字字符串**或**null**，其中数字的范围是[0，1]或-1\n\n```\ntype YarnResource struct {\n\tVcores *int `json:\"vcores\"`\n\tMemory *int `json:\"memory\"`\n\tType *string `json:\"type\"` // 取值为`percent`或`null`当值为`percent`时，表示使用的百分比，否则就是使用的绝对数值。只有maxResources、maxChildResources才可以取值为`percent`\n}\n```\n\n###### 容量调度器\nkey的取值信息如下：\n- minimum-user-limit-percent，用户最小容量，取值为**YarnResource类型的json串**或**null**，其中数字的范围是[0，100]\n- user-limit-factor，用户资源因子，取值为**YarnResource类型的json串**或**null**\n- maximum-applications，最大应用数Max-Applications，取值为**数字字符串**或**null**，其中数字为正整数\n- maximum-am-resource-percent，最大AM比例，取值为**数字字符串**或**null**，其中数字的范围是[0，1]或-1\n- default-application-priority，资源池优先级，取值为**数字字符串**或**null**，其中数字为正整数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Item",
+          "name": "BasicParams",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "Configuration": {
       "document": "自定义配置参数",
       "members": [
@@ -2771,6 +2921,43 @@
         }
       ],
       "usage": "in"
+    },
+    "DeployYarnConfRequest": {
+      "document": "DeployYarnConf请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "emr集群的英文id",
+          "example": "emr-2xef56",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeployYarnConfResponse": {
+      "document": "DeployYarnConf返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "启动流程后的流程ID，可以使用[DescribeClusterFlowStatusDetail](https://cloud.tencent.com/document/product/589/107224)接口来获取流程状态",
+          "example": "无",
+          "member": "uint64",
+          "name": "FlowId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "DescribeAutoScaleGroupGlobalConfRequest": {
       "document": "DescribeAutoScaleGroupGlobalConf请求参数结构体",
@@ -4262,7 +4449,7 @@
           "example": "true",
           "member": "bool",
           "name": "OpenSwitch",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -4272,7 +4459,7 @@
           "example": "\"fair\"",
           "member": "string",
           "name": "Scheduler",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4282,7 +4469,7 @@
           "example": "null",
           "member": "string",
           "name": "FSInfo",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4292,7 +4479,7 @@
           "example": "null",
           "member": "string",
           "name": "CSInfo",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4709,6 +4896,62 @@
           "name": "Results",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeYarnQueueRequest": {
+      "document": "DescribeYarnQueue请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群Id",
+          "example": "emr-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "调度器，可选值：\n\n1. capacity\n2. fair",
+          "example": "capacity",
+          "member": "string",
+          "name": "Scheduler",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeYarnQueueResponse": {
+      "document": "DescribeYarnQueue返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "队列信息。是一个对象转成的json字符串，对应的golang结构体如下所示，比如`QueueWithConfigSetForFairScheduler`的第一个字段`Name`：\n\n```\nName                         string                               `json:\"name\"` //队列名称\n```\n- `Name`：字段名\n- `string`：字段类型\n- `json:\"name\"`：表示在序列化和反序列化`json`时，对应的`json key`，下面以`json key`来指代\n- `//`：后面的注释内容对应页面上看到的名称\n\n字段类型以`*`开头的表示取值可能为json规范下的null，不同的语言需要使用能表达null的类型来接收，比如java的包装类型；字段类型以`[]`开头的表示是数组类型；`json key`在调用`ModifyYarnQueueV2 `接口也会使用。\n\n- 公平调度器\n\n```\ntype QueueWithConfigSetForFairScheduler struct {\n\tName                         string                               `json:\"name\"` //队列名称\n\tMyId                         string                  `json:\"myId\"` // 队列id，用于编辑、删除、克隆时使用\n\tParentId                     string                  `json:\"parentId\"`  // 父队列Id\n\tType                         *string                              `json:\"type\"` // 队列归属。parent或空，当确定某个队列是父队列，且没有子队列时，才可以设置，通常用来支持放置策略nestedUserQueue\n\tAclSubmitApps                *AclForYarnQueue                     `json:\"aclSubmitApps\"` // 提交访问控制\n\tAclAdministerApps            *AclForYarnQueue                     `json:\"aclAdministerApps\"` // 管理访问控制\n\tMinSharePreemptionTimeout    *int                                 `json:\"minSharePreemptionTimeout\"` // 最小共享优先权超时时间\n\tFairSharePreemptionTimeout   *int                                 `json:\"fairSharePreemptionTimeout\"` // 公平份额抢占超时时间\n\tFairSharePreemptionThreshold *float32                             `json:\"fairSharePreemptionThreshold\"` // 公平份额抢占阈值。取值 （0，1]\n\tAllowPreemptionFrom          *bool                                `json:\"allowPreemptionFrom\"`                                        // 抢占模式\n\tSchedulingPolicy             *string                              `json:\"schedulingPolicy\"`  // 调度策略，取值有drf、fair、fifo\n\tIsDefault                    *bool                                `json:\"isDefault\"` // 是否是root.default队列\n\tIsRoot                       *bool                                `json:\"isRoot\"` // 是否是root队列\n\tConfigSets                   []ConfigSetForFairScheduler          `json:\"configSets\"` // 配置集设置\n\tChildren                     []QueueWithConfigSetForFairScheduler `json:\"queues\"` // 子队列信息。递归\n}\n\ntype AclForYarnQueue struct {\n\tUser  *string `json:\"user\"` //用户名\n\tGroup *string `json:\"group\"`//组名\n}\n\ntype ConfigSetForFairScheduler struct {\n\tName              string        `json:\"name\"` // 配置集名称\n\tMinResources      *YarnResource `json:\"minResources\"` // 最小资源量\n\tMaxResources      *YarnResource `json:\"maxResources\"` // 最大资源量\n\tMaxChildResources *YarnResource `json:\"maxChildResources\"` // 能够分配给为未声明子队列的最大资源量\n\tMaxRunningApps    *int          `json:\"maxRunningApps\"` // 最高可同时处于运行的App数量\n\tWeight            *float32      `json:\"weight\"`                   // 权重\n\tMaxAMShare        *float32      `json:\"maxAMShare\"` // App Master最大份额\n}\n\ntype YarnResource struct {\n\tVcores *int `json:\"vcores\"`\n\tMemory *int `json:\"memory\"`\n\tType *string `json:\"type\"` // 当值为`percent`时，表示使用的百分比，否则就是使用的绝对数值\n}\n```\n\n- 容量调度器\n\n```\ntype QueueForCapacitySchedulerV3 struct {\n\tName                       string                `json:\"name\"` // 队列名称\n\tMyId                       string                `json:\"myId\"` // 队列id，用于编辑、删除、克隆时使用\n\tParentId                   string                `json:\"parentId\"` // 父队列Id\n\tConfigs                    []ConfigForCapacityV3 `json:\"configs\"` //配置集设置\n\tState                      *string         `json:\"state\"` // 资源池状态\n\tDefaultNodeLabelExpression *string               `json:\"default-node-label-expression\"` // 默认标签表达式\n\tAclSubmitApps              *AclForYarnQueue      `json:\"acl_submit_applications\"` // 提交访问控制\n\tAclAdminQueue              *AclForYarnQueue      `json:\"acl_administer_queue\"` //管理访问控制\n\tMaxAllocationMB *int32 `json:\"maximum-allocation-mb\"` // 分配Container最大内存数量\n\tMaxAllocationVcores *int32                         `json:\"maximum-allocation-vcores\"` // Container最大vCore数量\n\tIsDefault           *bool                          `json:\"isDefault\"`// 是否是root.default队列\n\tIsRoot              *bool                          `json:\"isRoot\"` // 是否是root队列\n\tQueues              []*QueueForCapacitySchedulerV3 `json:\"queues\"`//子队列信息。递归\n}\ntype ConfigForCapacityV3 struct {\n\tName                string          `json:\"configName\"` // 配置集名称\n\tLabels              []CapacityLabel `json:\"labels\"` // 标签信息\n\tMinUserLimitPercent *int32          `json:\"minimum-user-limit-percent\"` // 用户最小容量\n\tUserLimitFactor     *float32        `json:\"user-limit-factor\" valid:\"rangeExcludeLeft(0|)\"`  // 用户资源因子\n\tMaxApps *int32 `json:\"maximum-applications\" valid:\"rangeExcludeLeft(0|)\"` // 最大应用数Max-Applications\n\tMaxAmPercent               *float32 `json:\"maximum-am-resource-percent\"` // 最大AM比例\n\tDefaultApplicationPriority *int32   `json:\"default-application-priority\"` // 资源池优先级\n}\ntype CapacityLabel struct {\n\tName        string   `json:\"labelName\"`\n\tCapacity    *float32 `json:\"capacity\"`  // 容量\n\tMaxCapacity *float32 `json:\"maximum-capacity\"` //最大容量\n}\n\ntype AclForYarnQueue struct {\n\tUser  *string `json:\"user\"` //用户名\n\tGroup *string `json:\"group\"`//组名\n}\n```",
+          "example": "无",
+          "member": "string",
+          "name": "Queue",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "版本",
+          "example": "v2",
+          "member": "string",
+          "name": "Version",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -7331,6 +7574,50 @@
       ],
       "usage": "both"
     },
+    "Item": {
+      "document": "代表一个kv结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "健值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "k",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "v",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ItemSeq": {
+      "document": "键值对组成的列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Item",
+          "name": "Items",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "JobFlowResource": {
       "document": "机器资源描述。",
       "members": [
@@ -8025,7 +8312,7 @@
           "example": "true",
           "member": "bool",
           "name": "IsDraft",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -8035,7 +8322,7 @@
           "example": "null",
           "member": "string",
           "name": "ErrorMsg",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8090,7 +8377,7 @@
           "example": "true",
           "member": "bool",
           "name": "IsDraft",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -8100,7 +8387,7 @@
           "example": "null",
           "member": "string",
           "name": "ErrorMsg",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8110,7 +8397,7 @@
           "example": "json串",
           "member": "string",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8423,6 +8710,51 @@
           "type": "string",
           "value_allowed_null": true
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyYarnQueueV2Request": {
+      "document": "ModifyYarnQueueV2请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群Id",
+          "example": "emr-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "调度器类型。可选值：\n\n1. capacity\n2. fair",
+          "example": "capacity",
+          "member": "string",
+          "name": "Scheduler",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源池数据",
+          "example": "无",
+          "member": "ConfigModifyInfoV2",
+          "name": "ConfigModifyInfoList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyYarnQueueV2Response": {
+      "document": "ModifyYarnQueueV2返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -10721,6 +11053,42 @@
         }
       ],
       "usage": "both"
+    },
+    "ResetYarnConfigRequest": {
+      "document": "ResetYarnConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "emr集群的英文id",
+          "example": "emr-2xef56",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "要重置的配置别名，可选值：\n\n- capacityLabel：重置标签管理的配置\n- fair：重置公平调度的配置\n- capacity：重置容量调度的配置",
+          "example": "test",
+          "member": "string",
+          "name": "Key",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ResetYarnConfigResponse": {
+      "document": "ResetYarnConfig返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "Resource": {
       "document": "资源详情",
