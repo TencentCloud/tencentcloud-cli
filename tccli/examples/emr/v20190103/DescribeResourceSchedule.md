@@ -6,18 +6,18 @@ Input:
 
 ```
 tccli emr DescribeResourceSchedule --cli-unfold-argument  \
-    --InstanceId xx
+    --InstanceId abc
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "FSInfo": "xx",
-        "CSInfo": "xx",
-        "Scheduler": "xx",
         "OpenSwitch": true,
-        "RequestId": "xx"
+        "Scheduler": "abc",
+        "FSInfo": "abc",
+        "CSInfo": "abc",
+        "RequestId": "abc"
     }
 }
 ```

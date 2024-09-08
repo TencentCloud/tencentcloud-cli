@@ -329,6 +329,13 @@
       "output": "DescribeMeasureDetailTotalResponse",
       "status": "online"
     },
+    "DescribeMeasureResourceAlarmThreshold": {
+      "document": "查询设置的余量预警配置",
+      "input": "DescribeMeasureResourceAlarmThresholdRequest",
+      "name": "余量预警查询",
+      "output": "DescribeMeasureResourceAlarmThresholdResponse",
+      "status": "online"
+    },
     "DescribeMeasureResourceDetails": {
       "document": "费用中心资源包详情接口",
       "input": "DescribeMeasureResourceDetailsRequest",
@@ -453,6 +460,13 @@
       "input": "SendResourceRequest",
       "name": "计费后付费推量接口",
       "output": "SendResourceResponse",
+      "status": "online"
+    },
+    "SetMeasureResourceAutoPurchaseConfig": {
+      "document": "计量设置总量递减型资源包自动新购",
+      "input": "SetMeasureResourceAutoPurchaseConfigRequest",
+      "name": "指定资源包设置自动新购",
+      "output": "SetMeasureResourceAutoPurchaseConfigResponse",
       "status": "online"
     },
     "SetRenewFlagInner": {
@@ -15675,6 +15689,70 @@
       ],
       "usage": "out"
     },
+    "DescribeMeasureResourceAlarmThresholdRequest": {
+      "document": "DescribeMeasureResourceAlarmThreshold请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品一层",
+          "example": "p_cdn",
+          "member": "string",
+          "name": "ProductCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "1:资源id级别 4:包分组级别 默认为1\t",
+          "example": "1",
+          "member": "uint64",
+          "name": "ThresholdType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "资源ID ThresholdType=1时 该入参有效",
+          "example": "\"2000013127\"",
+          "member": "string",
+          "name": "ResourceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分组名 ThresholdType=4时 该入参有效",
+          "example": "cdn_flux_aa",
+          "member": "string",
+          "name": "GroupId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMeasureResourceAlarmThresholdResponse": {
+      "document": "DescribeMeasureResourceAlarmThreshold返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回值",
+          "example": "无",
+          "member": "MeasureResourceAlarmThreshold",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeMeasureResourceDetailsRequest": {
       "document": "DescribeMeasureResourceDetails请求参数结构体",
       "members": [
@@ -19027,6 +19105,82 @@
       ],
       "usage": "out"
     },
+    "MeasureResourceAlarmThreshold": {
+      "document": "余量预警返回值",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品一层",
+          "example": "p_rav",
+          "member": "string",
+          "name": "ProductCode",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户uin",
+          "example": "10001",
+          "member": "string",
+          "name": "Uin",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "1:资源id级别 4:包分组级别",
+          "example": "1",
+          "member": "uint64",
+          "name": "ThresholdType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分组id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "GroupId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "0:百分比类型阈值 1:数值类型阈值 ",
+          "example": "无",
+          "member": "uint64",
+          "name": "ThresholdValueType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "阈值数值",
+          "example": "10",
+          "member": "int64",
+          "name": "Thresholds",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "MeasureResourceDetails": {
       "document": "计量用量账户返回参数",
       "members": [
@@ -20751,6 +20905,51 @@
     },
     "SendResourceResponse": {
       "document": "SendResource返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SetMeasureResourceAutoPurchaseConfigRequest": {
+      "document": "SetMeasureResourceAutoPurchaseConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品一层",
+          "example": "p_jifei",
+          "member": "string",
+          "name": "ProductCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源id",
+          "example": "2000013127",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "0:取消自动新购 1:用尽到期新购 2.用尽新购 3.到期新购",
+          "example": "0",
+          "member": "uint64",
+          "name": "AutoRePurchaseFlag",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "SetMeasureResourceAutoPurchaseConfigResponse": {
+      "document": "SetMeasureResourceAutoPurchaseConfig返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

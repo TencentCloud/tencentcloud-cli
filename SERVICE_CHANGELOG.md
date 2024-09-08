@@ -1,10 +1,10 @@
 # 本版本更新包含以下内容：
 
-## 人脸融合(facefusion) 版本：2022-09-27
+## 费用中心(billing) 版本：2018-07-09
 
-### 第 7 次发布
+### 第 64 次发布
 
-发布时间：2024-09-06 01:20:17
+发布时间：2024-09-09 01:08:01
 
 本次发布包含了以下内容：
 
@@ -12,43 +12,20 @@
 
 新增接口：
 
-* [SubmitVideoFaceFusionJob](http://document.tencentcloudapi.woa.com/document/product/670/84826)
+* [DescribeMeasureResourceAlarmThreshold](http://document.tencentcloudapi.woa.com/document/product/555/84828)
+* [SetMeasureResourceAutoPurchaseConfig](http://document.tencentcloudapi.woa.com/document/product/555/84827)
 
 新增数据结构：
 
-* [FuseFaceReviewDetail](http://document.tencentcloudapi.woa.com/document/product/670/78443#FuseFaceReviewDetail)
-* [FuseFaceReviewResult](http://document.tencentcloudapi.woa.com/document/product/670/78443#FuseFaceReviewResult)
+* [MeasureResourceAlarmThreshold](http://document.tencentcloudapi.woa.com/document/product/555/19183#MeasureResourceAlarmThreshold)
 
 
 
-## 人脸融合(facefusion) 版本：2018-12-01
+## 腾讯云数据仓库 TCHouse-D(cdwdoris) 版本：2021-12-28
 
+### 第 34 次发布
 
-
-## 声音复刻(vrs) 版本：2020-08-24
-
-### 第 10 次发布
-
-发布时间：2024-09-06 01:33:07
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [TrainingText](http://document.tencentcloudapi.woa.com/document/product/1664/79152#TrainingText)
-
-	* <font color="#dd0000">**修改成员**：</font>TextId, Text
-
-
-
-
-## 视频转译(vtc) 版本：2024-02-23
-
-### 第 4 次发布
-
-发布时间：2024-09-06 01:33:10
+发布时间：2024-09-09 01:10:29
 
 本次发布包含了以下内容：
 
@@ -56,9 +33,70 @@
 
 修改接口：
 
-* [SubmitVideoTranslateJob](http://document.tencentcloudapi.woa.com/document/product/1761/83879)
+* [UpdateTableSchema](http://document.tencentcloudapi.woa.com/document/product/1706/84569)
 
-	* 新增入参：VoiceType
+	* 新增出参：Success
+
+
+
+
+## 云防火墙(cfw) 版本：2019-09-04
+
+### 第 52 次发布
+
+发布时间：2024-09-09 01:10:51
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* DeleteVpcInstance
+
+
+
+## 弹性 MapReduce(emr) 版本：2019-01-03
+
+### 第 61 次发布
+
+发布时间：2024-09-09 01:16:54
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DeployYarnConf](http://document.tencentcloudapi.woa.com/document/product/589/84833)
+* [DescribeYarnQueue](http://document.tencentcloudapi.woa.com/document/product/589/84832)
+* [ModifyYarnQueueV2](http://document.tencentcloudapi.woa.com/document/product/589/84831)
+* [ResetYarnConfig](http://document.tencentcloudapi.woa.com/document/product/589/84830)
+
+新增数据结构：
+
+* [ConfigModifyInfoV2](http://document.tencentcloudapi.woa.com/document/product/589/33981#ConfigModifyInfoV2)
+* [ConfigSetInfo](http://document.tencentcloudapi.woa.com/document/product/589/33981#ConfigSetInfo)
+* [Item](http://document.tencentcloudapi.woa.com/document/product/589/33981#Item)
+* [ItemSeq](http://document.tencentcloudapi.woa.com/document/product/589/33981#ItemSeq)
+
+
+
+## 消息队列 RocketMQ 版(trocket) 版本：2023-03-08
+
+### 第 21 次发布
+
+发布时间：2024-09-09 01:28:36
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeMQTTInstanceList](http://document.tencentcloudapi.woa.com/document/product/1739/82978)
+
+	* 新增入参：IncludeNew
 
 
 
@@ -6808,6 +6846,23 @@
 
 
 ## 费用中心(billing) 版本：2018-07-09
+
+### 第 64 次发布
+
+发布时间：2024-09-09 01:08:01
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeMeasureResourceAlarmThreshold](http://document.tencentcloudapi.woa.com/document/product/555/84828)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[SetMeasureResourceAutoPurchaseConfig](http://document.tencentcloudapi.woa.com/document/product/555/84827)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[MeasureResourceAlarmThreshold](http://document.tencentcloudapi.woa.com/document/product/555/19183#MeasureResourceAlarmThreshold)](http://document.tencentcloudapi.woa.com/document/product/555/19183#[MeasureResourceAlarmThreshold](http://document.tencentcloudapi.woa.com/document/product/555/19183#MeasureResourceAlarmThreshold))
 
 ### 第 63 次发布
 
@@ -17811,6 +17866,21 @@
 
 ## 腾讯云数据仓库 TCHouse-D(cdwdoris) 版本：2021-12-28
 
+### 第 34 次发布
+
+发布时间：2024-09-09 01:10:29
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [UpdateTableSchema](http://document.tencentcloudapi.woa.com/document/product/1706/84569)
+
+	* 新增出参：Success
+
+
 ### 第 33 次发布
 
 发布时间：2024-09-04 01:10:31
@@ -19397,6 +19467,18 @@
 
 
 ## 云防火墙(cfw) 版本：2019-09-04
+
+### 第 52 次发布
+
+发布时间：2024-09-09 01:10:51
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* DeleteVpcInstance
 
 ### 第 51 次发布
 
@@ -46741,6 +46823,28 @@
 
 ## 弹性 MapReduce(emr) 版本：2019-01-03
 
+### 第 61 次发布
+
+发布时间：2024-09-09 01:16:54
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DeployYarnConf](http://document.tencentcloudapi.woa.com/document/product/589/84833)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeYarnQueue](http://document.tencentcloudapi.woa.com/document/product/589/84832)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[ModifyYarnQueueV2](http://document.tencentcloudapi.woa.com/document/product/589/84831)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[ResetYarnConfig](http://document.tencentcloudapi.woa.com/document/product/589/84830)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[ConfigModifyInfoV2](http://document.tencentcloudapi.woa.com/document/product/589/33981#ConfigModifyInfoV2)](http://document.tencentcloudapi.woa.com/document/product/589/33981#[ConfigModifyInfoV2](http://document.tencentcloudapi.woa.com/document/product/589/33981#ConfigModifyInfoV2))
+* [[ConfigSetInfo](http://document.tencentcloudapi.woa.com/document/product/589/33981#ConfigSetInfo)](http://document.tencentcloudapi.woa.com/document/product/589/33981#[ConfigSetInfo](http://document.tencentcloudapi.woa.com/document/product/589/33981#ConfigSetInfo))
+* [[Item](http://document.tencentcloudapi.woa.com/document/product/589/33981#Item)](http://document.tencentcloudapi.woa.com/document/product/589/33981#[Item](http://document.tencentcloudapi.woa.com/document/product/589/33981#Item))
+* [[ItemSeq](http://document.tencentcloudapi.woa.com/document/product/589/33981#ItemSeq)](http://document.tencentcloudapi.woa.com/document/product/589/33981#[ItemSeq](http://document.tencentcloudapi.woa.com/document/product/589/33981#ItemSeq))
+
 ### 第 60 次发布
 
 发布时间：2024-08-30 01:16:53
@@ -54862,12 +54966,12 @@
 
 新增接口：
 
-* [[SubmitVideoFaceFusionJob](http://document.tencentcloudapi.woa.com/document/product/670/84826)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [SubmitVideoFaceFusionJob](http://document.tencentcloudapi.woa.com/document/product/670/84826)
 
 新增数据结构：
 
-* [[FuseFaceReviewDetail](http://document.tencentcloudapi.woa.com/document/product/670/78443#FuseFaceReviewDetail)](http://document.tencentcloudapi.woa.com/document/product/670/78443#[FuseFaceReviewDetail](http://document.tencentcloudapi.woa.com/document/product/670/78443#FuseFaceReviewDetail))
-* [[FuseFaceReviewResult](http://document.tencentcloudapi.woa.com/document/product/670/78443#FuseFaceReviewResult)](http://document.tencentcloudapi.woa.com/document/product/670/78443#[FuseFaceReviewResult](http://document.tencentcloudapi.woa.com/document/product/670/78443#FuseFaceReviewResult))
+* [FuseFaceReviewDetail](http://document.tencentcloudapi.woa.com/document/product/670/78443#FuseFaceReviewDetail)
+* [FuseFaceReviewResult](http://document.tencentcloudapi.woa.com/document/product/670/78443#FuseFaceReviewResult)
 
 ### 第 6 次发布
 
@@ -103667,6 +103771,21 @@
 
 
 ## 消息队列 RocketMQ 版(trocket) 版本：2023-03-08
+
+### 第 21 次发布
+
+发布时间：2024-09-09 01:28:36
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeMQTTInstanceList](http://document.tencentcloudapi.woa.com/document/product/1739/82978)
+
+	* 新增入参：IncludeNew
+
 
 ### 第 20 次发布
 

@@ -1,3 +1,106 @@
+# Release 3.0.1071.1
+
+## 费用中心(billing) 版本：2018-07-09
+
+### 第 64 次发布
+
+发布时间：2024-09-09 01:08:01
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeMeasureResourceAlarmThreshold](http://document.tencentcloudapi.woa.com/document/product/555/84828)
+* [SetMeasureResourceAutoPurchaseConfig](http://document.tencentcloudapi.woa.com/document/product/555/84827)
+
+新增数据结构：
+
+* [MeasureResourceAlarmThreshold](http://document.tencentcloudapi.woa.com/document/product/555/19183#MeasureResourceAlarmThreshold)
+
+
+
+## 腾讯云数据仓库 TCHouse-D(cdwdoris) 版本：2021-12-28
+
+### 第 34 次发布
+
+发布时间：2024-09-09 01:10:29
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [UpdateTableSchema](http://document.tencentcloudapi.woa.com/document/product/1706/84569)
+
+	* 新增出参：Success
+
+
+
+
+## 云防火墙(cfw) 版本：2019-09-04
+
+### 第 52 次发布
+
+发布时间：2024-09-09 01:10:51
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* DeleteVpcInstance
+
+
+
+## 弹性 MapReduce(emr) 版本：2019-01-03
+
+### 第 61 次发布
+
+发布时间：2024-09-09 01:16:54
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DeployYarnConf](http://document.tencentcloudapi.woa.com/document/product/589/84833)
+* [DescribeYarnQueue](http://document.tencentcloudapi.woa.com/document/product/589/84832)
+* [ModifyYarnQueueV2](http://document.tencentcloudapi.woa.com/document/product/589/84831)
+* [ResetYarnConfig](http://document.tencentcloudapi.woa.com/document/product/589/84830)
+
+新增数据结构：
+
+* [ConfigModifyInfoV2](http://document.tencentcloudapi.woa.com/document/product/589/33981#ConfigModifyInfoV2)
+* [ConfigSetInfo](http://document.tencentcloudapi.woa.com/document/product/589/33981#ConfigSetInfo)
+* [Item](http://document.tencentcloudapi.woa.com/document/product/589/33981#Item)
+* [ItemSeq](http://document.tencentcloudapi.woa.com/document/product/589/33981#ItemSeq)
+
+
+
+## 消息队列 RocketMQ 版(trocket) 版本：2023-03-08
+
+### 第 21 次发布
+
+发布时间：2024-09-09 01:28:36
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeMQTTInstanceList](http://document.tencentcloudapi.woa.com/document/product/1739/82978)
+
+	* 新增入参：IncludeNew
+
+
+
+
 # Release 3.0.1070.1
 
 ## 人脸融合(facefusion) 版本：2022-09-27

@@ -6,16 +6,16 @@ Input:
 
 ```
 tccli emr ModifyResourceScheduler --cli-unfold-argument  \
-    --InstanceId xx \
-    --NewValue xx \
-    --OldValue xx
+    --InstanceId abc \
+    --OldValue abc \
+    --NewValue abc
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

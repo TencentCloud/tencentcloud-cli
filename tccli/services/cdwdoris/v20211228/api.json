@@ -11050,10 +11050,20 @@
       "members": [
         {
           "disabled": false,
-          "document": "错误信息",
+          "document": "错误/成功信息",
           "example": "无",
           "member": "string",
           "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否成功",
+          "example": "true",
+          "member": "string",
+          "name": "Success",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
