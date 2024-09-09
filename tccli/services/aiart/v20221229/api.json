@@ -390,6 +390,24 @@
           "name": "RspImgType",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "画质增强开关，默认关闭。\n1：开启\n0：关闭\n开启后将增强图像的画质清晰度，生成耗时有所增加。",
+          "example": "0",
+          "member": "int64",
+          "name": "EnhanceImage",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "细节优化的面部数量上限，支持0 ~ 6，默认为0。\n若上传大于0的值，将以此为上限对每张图片中面积占比较小的面部进行细节修复，生成耗时根据实际优化的面部个数有所增加。",
+          "example": "0",
+          "member": "int64",
+          "name": "RestoreFace",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

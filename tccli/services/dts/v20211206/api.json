@@ -2441,6 +2441,15 @@
           "name": "DTSVersion",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "创建类似任务",
+          "example": "dts-amm1jw5q",
+          "member": "string",
+          "name": "ExistedJobId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2454,6 +2463,7 @@
           "example": "[\"dts-amm1jw5q\"]",
           "member": "string",
           "name": "JobIds",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },

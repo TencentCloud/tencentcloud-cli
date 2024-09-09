@@ -1,7 +1,7 @@
 {
   "actions": {
     "AcceptDirectConnectTunnel": {
-      "document": "接受专用通道申请",
+      "document": "接受专用通道申请。",
       "input": "AcceptDirectConnectTunnelRequest",
       "name": "接受专用通道申请",
       "output": "AcceptDirectConnectTunnelResponse",
@@ -43,14 +43,14 @@
       "status": "online"
     },
     "DescribeAccessPoints": {
-      "document": "查询物理专线接入点\n",
+      "document": "查询物理专线接入点。",
       "input": "DescribeAccessPointsRequest",
       "name": "查询物理专线接入点",
       "output": "DescribeAccessPointsResponse",
       "status": "online"
     },
     "DescribeDirectConnectTunnelExtra": {
-      "document": "本接口（DescribeDirectConnectTunnelExtra）用于查询专用通道扩展信息",
+      "document": "查询专用通道扩展信息。",
       "input": "DescribeDirectConnectTunnelExtraRequest",
       "name": "查询专用通道扩展信息",
       "output": "DescribeDirectConnectTunnelExtraResponse",
@@ -134,7 +134,7 @@
       "status": "online"
     },
     "RejectDirectConnectTunnel": {
-      "document": "拒绝专用通道申请",
+      "document": "拒绝专用通道申请。",
       "input": "RejectDirectConnectTunnelRequest",
       "name": "拒绝专用通道申请",
       "output": "RejectDirectConnectTunnelResponse",
@@ -160,8 +160,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "物理专线拥有者接受共享专用通道申请",
-          "example": "",
+          "document": "专用通道ID。",
+          "example": "dcx-xxxxxxxx",
           "member": "string",
           "name": "DirectConnectTunnelId",
           "required": true,
@@ -925,8 +925,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "接入点所在的地域。使用DescribeRegions查询\n\n您可以通过调用 DescribeRegions接口获取地域ID。",
-          "example": "",
+          "document": "接入点所在的地域。使用DescribeRegions查询。\n您可以通过调用 DescribeRegions接口获取地域ID。",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "RegionId",
           "required": false,
@@ -935,7 +935,7 @@
         {
           "disabled": false,
           "document": "偏移量，默认为0。",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -944,7 +944,7 @@
         {
           "disabled": false,
           "document": "返回数量，默认为20，最大值为100。",
-          "example": "",
+          "example": "100",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -959,7 +959,7 @@
         {
           "disabled": false,
           "document": "接入点信息。",
-          "example": "",
+          "example": "[]",
           "member": "AccessPoint",
           "name": "AccessPointSet",
           "type": "list",
@@ -967,8 +967,8 @@
         },
         {
           "disabled": false,
-          "document": "符合接入点数量。",
-          "example": "",
+          "document": "接入点总数量。",
+          "example": "100",
           "member": "int64",
           "name": "TotalCount",
           "type": "int",
@@ -988,8 +988,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "专用通道ID",
-          "example": "",
+          "document": "专用通道ID。",
+          "example": "dcx-xxxxxxxx",
           "member": "string",
           "name": "DirectConnectTunnelId",
           "required": true,
@@ -1003,8 +1003,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "专用通道扩展信息",
-          "example": "",
+          "document": "专用通道扩展信息。",
+          "example": "{}",
           "member": "DirectConnectTunnelExtra",
           "name": "DirectConnectTunnelExtra",
           "type": "object",
@@ -3237,8 +3237,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "无",
-          "example": "",
+          "document": "专用通道ID。",
+          "example": "dcx-xxxxxxxx",
           "member": "string",
           "name": "DirectConnectTunnelId",
           "required": true,

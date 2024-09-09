@@ -1187,6 +1187,34 @@
       ],
       "type": "object"
     },
+    "CatalogPermission": {
+      "document": "catalog级别权限",
+      "members": [
+        {
+          "disabled": false,
+          "document": "catalog名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CatalogName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "catalog权限\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Permissions",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "ChargeProperties": {
       "document": "集群计费相关信息",
       "members": [
@@ -8933,6 +8961,17 @@
           "example": "无",
           "member": "TablePermissions",
           "name": "TablePermissions",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "键为catalog的完整名称，值为该catalog上用户的权限列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CatalogPermission",
+          "name": "CatalogPermissions",
           "output_required": false,
           "required": false,
           "type": "list",

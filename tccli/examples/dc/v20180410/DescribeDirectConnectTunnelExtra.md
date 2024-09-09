@@ -1,56 +1,77 @@
 **Example 1: 查询专用通道扩展信息**
 
-
+查询专用通道扩展信息
 
 Input: 
 
 ```
 tccli dc DescribeDirectConnectTunnelExtra --cli-unfold-argument  \
-    --DirectConnectTunnelId dcx-r3sml04o
+    --DirectConnectTunnelId dcx-047zz5e6
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "8ae32da8-db96-400f-908e-0de2c89e96ea",
         "DirectConnectTunnelExtra": {
-            "DirectConnectOwnerAccount": "2581192000",
-            "BfdEnable": 0,
-            "BgpPeer": {
-                "AuthKey": "tencentnew",
-                "Asn": 65719
-            },
-            "OwnerAccount": "2581192000",
-            "DirectConnectId": "dc-c3hbbsw9",
-            "NetDetectId": "",
+            "OwnerAccount": "100001332514",
+            "DirectConnectOwnerAccount": "100001332514",
+            "DirectConnectId": "dc-n6c9vvv3",
+            "SignLaw": true,
+            "DirectConnectTunnelId": "dcx-047zz5e6",
+            "DirectConnectTunnelName": "DCXCCNVxlanBgpEcmpTestautotestdcxtwo",
             "State": "AVAILABLE",
-            "TencentBackupAddress": "42.34.32.4/27",
-            "CreatedTime": "2020-08-20 15:10:03",
-            "DirectConnectTunnelId": "dcx-hp42dd1q",
-            "SignLaw": false,
-            "VpcId": "vpc-a1qkzv63",
+            "VpcId": "",
+            "NetworkRegion": "ap-chongqing",
+            "VpcRegion": "cq",
+            "DirectConnectGatewayId": "dcg-meljxc9n",
+            "Bandwidth": 100,
+            "Vlan": 2432,
+            "TencentAddress": "192.168.0.3/29",
+            "CustomerAddress": "192.168.0.1/29",
+            "CreatedTime": "2020-09-22T00:00:00+00:00",
+            "NetDetectId": "",
             "EnableBGPCommunity": false,
-            "NqaEnable": 0,
-            "Vlan": 89,
-            "RouteFilterPrefixes": [],
-            "VpcName": "new-vpc",
-            "DirectConnectTunnelName": "vxlan-vpc-",
-            "DirectConnectGatewayId": "dcg-0l80ynoj",
-            "TencentAddress": "42.34.32.3/27",
-            "NetworkRegion": "ap-guangzhou",
-            "CustomerAddress": "42.34.32.1/27",
             "NatType": 0,
+            "BfdEnable": 0,
             "AccessPointType": "VXLAN",
-            "BgpStatus": {
-                "TencentAddressBgpState": "CONNECT"
+            "DirectConnectGatewayName": "",
+            "VpcName": "",
+            "NqaEnable": 0,
+            "BfdInfo": {
+                "ProbeFailedTimes": -1,
+                "Interval": -1
             },
-            "Bandwidth": 2000,
-            "VpcRegion": "gz",
+            "NqaInfo": {
+                "ProbeFailedTimes": -1,
+                "Interval": -1,
+                "DestinationIp": "0.0.0.0"
+            },
+            "IPv6Enable": 0,
+            "PublicAddresses": [],
+            "JumboEnable": 0,
+            "HighPrecisionBFDEnable": 0,
+            "TencentBackupAddress": "192.168.0.2/29",
+            "NetworkType": "CCN",
             "RouteType": "BGP",
-            "NetworkType": "VPC",
-            "DirectConnectGatewayName": "8-2-"
-        }
+            "BgpPeer": {
+                "Asn": 65120,
+                "AuthKey": "tencent"
+            },
+            "RouteFilterPrefixes": [],
+            "BgpStatus": {
+                "TencentAddressBgpState": "Established",
+                "TencentBackupAddressBgpState": "Connect"
+            },
+            "TencentIPv6Address": "",
+            "TencentBackupIPv6Address": "",
+            "CustomerIPv6Address": "",
+            "BgpIPv6Status": {
+                "TencentAddressBgpState": "",
+                "TencentBackupAddressBgpState": ""
+            }
+        },
+        "RequestId": "8ae32da8-db96-400f-908e-0de2c89e96ea"
     }
 }
 ```
