@@ -2001,6 +2001,7 @@
           "example": "[\"dts-amm1jw5q\"]",
           "member": "string",
           "name": "JobIds",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },

@@ -322,6 +322,13 @@
       "output": "DeleteSparkAppResponse",
       "status": "online"
     },
+    "DeleteTable": {
+      "document": "删除表",
+      "input": "DeleteTableRequest",
+      "name": "删除表",
+      "output": "DeleteTableResponse",
+      "status": "online"
+    },
     "DeleteThirdPartyAccessUser": {
       "document": "本接口（RegisterThirdPartyAccessUser）用于移除第三方平台访问",
       "input": "DeleteThirdPartyAccessUserRequest",
@@ -859,6 +866,13 @@
       "input": "ModifyWorkGroupRequest",
       "name": "修改工作组信息",
       "output": "ModifyWorkGroupResponse",
+      "status": "online"
+    },
+    "QueryInternalTableWarehouse": {
+      "document": "本接口（QueryInternalTableWarehouse）用于获取原生表warehouse路径",
+      "input": "QueryInternalTableWarehouseRequest",
+      "name": "获取原生表warehouse路径",
+      "output": "QueryInternalTableWarehouseResponse",
       "status": "online"
     },
     "QueryResult": {
@@ -7210,6 +7224,33 @@
     },
     "DeleteSparkAppResponse": {
       "document": "DeleteSparkApp返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTableRequest": {
+      "document": "DeleteTable请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "表基本信息",
+          "example": "无",
+          "member": "TableBaseInfo",
+          "name": "TableBaseInfo",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTableResponse": {
+      "document": "DeleteTable返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -14969,6 +15010,52 @@
         }
       ],
       "usage": "out"
+    },
+    "QueryInternalTableWarehouseRequest": {
+      "document": "QueryInternalTableWarehouse请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "库名",
+          "example": "db_test",
+          "member": "string",
+          "name": "DatabaseName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "表名",
+          "example": "tb_test",
+          "member": "string",
+          "name": "TableName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryInternalTableWarehouseResponse": {
+      "document": "QueryInternalTableWarehouse返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "warehouse路径",
+          "example": "lakefs/xxx/xxx",
+          "member": "string",
+          "name": "WarehousePath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "QueryResultRequest": {
       "document": "QueryResult请求参数结构体",

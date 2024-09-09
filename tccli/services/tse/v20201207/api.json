@@ -4284,15 +4284,6 @@
         },
         {
           "disabled": false,
-          "document": "请求路径",
-          "example": "/",
-          "member": "string",
-          "name": "Path",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
           "document": "超时时间，单位ms",
           "example": "5000",
           "member": "int64",
@@ -4326,6 +4317,15 @@
           "name": "UpstreamInfo",
           "required": true,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "请求路径",
+          "example": "/",
+          "member": "string",
+          "name": "Path",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -13507,15 +13507,6 @@
         },
         {
           "disabled": false,
-          "document": "请求路径",
-          "example": "/",
-          "member": "string",
-          "name": "Path",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
           "document": "超时时间，单位ms",
           "example": "5000",
           "member": "int64",
@@ -13557,6 +13548,15 @@
           "member": "string",
           "name": "ID",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "请求路径",
+          "example": "/",
+          "member": "string",
+          "name": "Path",
+          "required": false,
           "type": "string"
         }
       ],

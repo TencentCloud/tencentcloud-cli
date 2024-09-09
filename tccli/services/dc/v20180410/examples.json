@@ -2,7 +2,7 @@
   "actions": {
     "AcceptDirectConnectTunnel": [
       {
-        "document": "",
+        "document": "接受专用通道申请",
         "input": "https://dc.tencentcloudapi.com/?Action=AcceptDirectConnectTunnel\n&DirectConnectTunnelId=dcx-abcdefgh\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "接受专用通道申请"
@@ -100,9 +100,9 @@
     ],
     "DescribeDirectConnectTunnelExtra": [
       {
-        "document": "",
-        "input": "https://dc.tencentcloudapi.com/?Action=DescribeDirectConnectTunnelExtra\n&DirectConnectTunnelId=dcx-r3sml04o\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8ae32da8-db96-400f-908e-0de2c89e96ea\",\n        \"DirectConnectTunnelExtra\": {\n            \"DirectConnectOwnerAccount\": \"2581192000\",\n            \"BfdEnable\": 0,\n            \"BgpPeer\": {\n                \"AuthKey\": \"tencentnew\",\n                \"Asn\": 65719\n            },\n            \"OwnerAccount\": \"2581192000\",\n            \"DirectConnectId\": \"dc-c3hbbsw9\",\n            \"NetDetectId\": \"\",\n            \"State\": \"AVAILABLE\",\n            \"TencentBackupAddress\": \"42.34.32.4/27\",\n            \"CreatedTime\": \"2020-08-20 15:10:03\",\n            \"DirectConnectTunnelId\": \"dcx-hp42dd1q\",\n            \"SignLaw\": false,\n            \"VpcId\": \"vpc-a1qkzv63\",\n            \"EnableBGPCommunity\": false,\n            \"NqaEnable\": 0,\n            \"Vlan\": 89,\n            \"RouteFilterPrefixes\": [],\n            \"VpcName\": \"new-vpc\",\n            \"DirectConnectTunnelName\": \"vxlan-vpc-\",\n            \"DirectConnectGatewayId\": \"dcg-0l80ynoj\",\n            \"TencentAddress\": \"42.34.32.3/27\",\n            \"NetworkRegion\": \"ap-guangzhou\",\n            \"CustomerAddress\": \"42.34.32.1/27\",\n            \"NatType\": 0,\n            \"AccessPointType\": \"VXLAN\",\n            \"BgpStatus\": {\n                \"TencentAddressBgpState\": \"CONNECT\"\n            },\n            \"Bandwidth\": 2000,\n            \"VpcRegion\": \"gz\",\n            \"RouteType\": \"BGP\",\n            \"NetworkType\": \"VPC\",\n            \"DirectConnectGatewayName\": \"8-2-\"\n        }\n    }\n}",
+        "document": "查询专用通道扩展信息",
+        "input": "https://dc.tencentcloudapi.com/?Action=DescribeDirectConnectTunnelExtra\n&DirectConnectTunnelId=dcx-047zz5e6\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"DirectConnectTunnelExtra\": {\n            \"OwnerAccount\": \"100001332514\",\n            \"DirectConnectOwnerAccount\": \"100001332514\",\n            \"DirectConnectId\": \"dc-n6c9vvv3\",\n            \"SignLaw\": true,\n            \"DirectConnectTunnelId\": \"dcx-047zz5e6\",\n            \"DirectConnectTunnelName\": \"DCXCCNVxlanBgpEcmpTestautotestdcxtwo\",\n            \"State\": \"AVAILABLE\",\n            \"VpcId\": \"\",\n            \"NetworkRegion\": \"ap-chongqing\",\n            \"VpcRegion\": \"cq\",\n            \"DirectConnectGatewayId\": \"dcg-meljxc9n\",\n            \"Bandwidth\": 100,\n            \"Vlan\": 2432,\n            \"TencentAddress\": \"192.168.0.3/29\",\n            \"CustomerAddress\": \"192.168.0.1/29\",\n            \"CreatedTime\": \"2020-09-22T00:00:00+00:00\",\n            \"NetDetectId\": \"\",\n            \"EnableBGPCommunity\": false,\n            \"NatType\": 0,\n            \"BfdEnable\": 0,\n            \"AccessPointType\": \"VXLAN\",\n            \"DirectConnectGatewayName\": \"\",\n            \"VpcName\": \"\",\n            \"NqaEnable\": 0,\n            \"BfdInfo\": {\n                \"ProbeFailedTimes\": -1,\n                \"Interval\": -1\n            },\n            \"NqaInfo\": {\n                \"ProbeFailedTimes\": -1,\n                \"Interval\": -1,\n                \"DestinationIp\": \"0.0.0.0\"\n            },\n            \"IPv6Enable\": 0,\n            \"PublicAddresses\": [],\n            \"JumboEnable\": 0,\n            \"HighPrecisionBFDEnable\": 0,\n            \"TencentBackupAddress\": \"192.168.0.2/29\",\n            \"NetworkType\": \"CCN\",\n            \"RouteType\": \"BGP\",\n            \"BgpPeer\": {\n                \"Asn\": 65120,\n                \"AuthKey\": \"tencent\"\n            },\n            \"RouteFilterPrefixes\": [],\n            \"BgpStatus\": {\n                \"TencentAddressBgpState\": \"Established\",\n                \"TencentBackupAddressBgpState\": \"Connect\"\n            },\n            \"TencentIPv6Address\": \"\",\n            \"TencentBackupIPv6Address\": \"\",\n            \"CustomerIPv6Address\": \"\",\n            \"BgpIPv6Status\": {\n                \"TencentAddressBgpState\": \"\",\n                \"TencentBackupAddressBgpState\": \"\"\n            }\n        },\n        \"RequestId\": \"8ae32da8-db96-400f-908e-0de2c89e96ea\"\n    }\n}",
         "title": "查询专用通道扩展信息"
       }
     ],
@@ -214,7 +214,7 @@
     ],
     "RejectDirectConnectTunnel": [
       {
-        "document": "",
+        "document": "拒绝专用通道申请。",
         "input": "https://dc.tencentcloudapi.com/?Action=RejectDirectConnectTunnel\n&DirectConnectTunnelId=dcx-abcdefgh\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "拒绝专用通道申请"

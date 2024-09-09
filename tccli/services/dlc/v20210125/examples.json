@@ -368,6 +368,14 @@
         "title": "删除spark作业"
       }
     ],
+    "DeleteTable": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteTable\n<公共请求参数>\n\n{\n    \"TableBaseInfo\": {\n        \"TableName\": \"abc\",\n        \"DatasourceConnectionName\": \"DataLakeCatalog\",\n        \"DatabaseName\": \"db\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b076c1df-26f0-45b7-84f1-fa4eeca7c83f\"\n    }\n}",
+        "title": "删除表"
+      }
+    ],
     "DeleteThirdPartyAccessUser": [
       {
         "document": "删除注册的用户",
@@ -994,6 +1002,14 @@
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyWorkGroup\n<公共请求参数>\n\n{\n    \"WorkGroupId\": 112,\n    \"WorkGroupDescription\": \"my-test-2\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6fd5c288-cfa1-4c7b-9229-7780d0a3e96f\"\n    }\n}",
         "title": "修改工作组信息"
+      }
+    ],
+    "QueryInternalTableWarehouse": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryInternalTableWarehouse\n<公共请求参数>\n\n{\n    \"TableName\": \"db_test\",\n    \"DatabaseName\": \"tb_test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"WarehousePath\": \"lakefs://xxx@xxx/xxx/warehouse/db_test/tb_test/\",\n        \"RequestId\": \"b8sd7dd7-ekd4-4e5e-993e-e5db64fa21c1\"\n    }\n}",
+        "title": "获取原生表warehouse路径"
       }
     ],
     "QueryResult": [

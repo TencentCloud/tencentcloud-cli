@@ -406,8 +406,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务ID。",
-          "example": "无",
+          "document": "视频转译任务的Job id",
+          "example": "vlSYvQkMM0KwPuoakawm0tPrREwc2p7c",
           "member": "string",
           "name": "JobId",
           "output_required": false,

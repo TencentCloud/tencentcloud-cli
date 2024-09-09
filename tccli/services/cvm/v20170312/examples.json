@@ -40,6 +40,14 @@
         "title": "配置CHC物理服务器的部署网络"
       }
     ],
+    "ConvertOperatingSystems": [
+      {
+        "document": "针对实例 ins-6pb6lrmy 执行操作系统转换",
+        "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ConvertOperatingSystem\n<公共请求参数>\n\n{\n    \"InstanceIds\": [\n        \"ins-6pb6lrmy\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"SupportTargetOSList\": [\n            {\n                \"TargetOSType\": \"TencentOS\",\n                \"TargetOSVersion\": \"2.4\"\n            }\n        ],\n        \"TaskId\": \"12345678\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "执行操作系统转换"
+      }
+    ],
     "CreateDisasterRecoverGroup": [
       {
         "document": "创建分散置放群组",

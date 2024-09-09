@@ -168,6 +168,13 @@
       "output": "DescribeResourceScheduleResponse",
       "status": "online"
     },
+    "DescribeResourceScheduleDiffDetail": {
+      "document": "YARN资源调度-变更详情",
+      "input": "DescribeResourceScheduleDiffDetailRequest",
+      "name": "YARN资源调度-变更详情",
+      "output": "DescribeResourceScheduleDiffDetailResponse",
+      "status": "online"
+    },
     "DescribeServiceNodeInfos": {
       "document": "查询服务进程信息",
       "input": "DescribeServiceNodeInfosRequest",
@@ -4425,6 +4432,52 @@
       ],
       "type": "object"
     },
+    "DescribeResourceScheduleDiffDetailRequest": {
+      "document": "DescribeResourceScheduleDiffDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "emr集群的英文id",
+          "example": "emr-2xef56",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询的变更明细对应的调度器，可选值为fair、capacity。如果不传或者传空会使用最新的调度器",
+          "example": "fair",
+          "member": "string",
+          "name": "Scheduler",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourceScheduleDiffDetailResponse": {
+      "document": "DescribeResourceScheduleDiffDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "变化项的明细\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DiffDetail",
+          "name": "Details",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeResourceScheduleRequest": {
       "document": "DescribeResourceSchedule请求参数结构体",
       "members": [
@@ -5083,6 +5136,214 @@
         }
       ],
       "type": "object"
+    },
+    "DiffDetail": {
+      "document": "动态生成的变更详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "tab页的头",
+          "example": "全局设置",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "变化项的个数",
+          "example": "无",
+          "member": "uint64",
+          "name": "Count",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "要渲染的明细数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DiffDetailItem",
+          "name": "Rows",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "要渲染的头部信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DiffHeader",
+          "name": "Header",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DiffDetailItem": {
+      "document": "动态生成的变更详情条目",
+      "members": [
+        {
+          "disabled": false,
+          "document": "属性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "属性",
+          "member": "string",
+          "name": "Attribute",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当前生效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "当前生效",
+          "member": "string",
+          "name": "InEffect",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "待生效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "待生效",
+          "member": "string",
+          "name": "PendingEffectiveness",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "操作\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "操作",
+          "member": "string",
+          "name": "Operation",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "队列\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "队列",
+          "member": "string",
+          "name": "Queue",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "配置集\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "配置集",
+          "member": "string",
+          "name": "ConfigSet",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "标签",
+          "member": "string",
+          "name": "LabelName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当前所在位置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InEffectIndex",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "待生效的位置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PendingEffectIndex",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "计划模式名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PlanName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "标签",
+          "member": "string",
+          "name": "Label",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "放置规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "规则",
+          "member": "string",
+          "name": "RuleName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "hadoop",
+          "member": "string",
+          "name": "UserName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DiffHeader": {
+      "document": "动态生成的变更详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "名称",
+          "example": "Attribute",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "ID，前端会使用",
+          "example": "Attribute",
+          "member": "string",
+          "name": "Id",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "DiskGroup": {
       "document": "磁盘组。",

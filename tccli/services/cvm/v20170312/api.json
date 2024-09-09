@@ -35,6 +35,13 @@
       "output": "ConfigureChcDeployVpcResponse",
       "status": "online"
     },
+    "ConvertOperatingSystems": {
+      "document": "本接口(ConvertOperatingSystem)用于转换实例的操作系统，仅支持源操作系统为 CentOS 7、CentOS 8 的实例。",
+      "input": "ConvertOperatingSystemsRequest",
+      "name": "转换操作系统",
+      "output": "ConvertOperatingSystemsResponse",
+      "status": "online"
+    },
     "CreateDisasterRecoverGroup": {
       "document": "本接口 (CreateDisasterRecoverGroup)用于创建[分散置放群组](https://cloud.tencent.com/document/product/213/15486)。创建好的置放群组，可在[创建实例](https://cloud.tencent.com/document/api/213/15730)时指定。",
       "input": "CreateDisasterRecoverGroupRequest",
@@ -1381,6 +1388,80 @@
     "ConfigureChcDeployVpcResponse": {
       "document": "ConfigureChcDeployVpc返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ConvertOperatingSystemsRequest": {
+      "document": "ConvertOperatingSystems请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "执行操作系统转换的实例 ID",
+          "example": "[\"ins-xxxxxxxx\"]",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否最小规模转换",
+          "example": "true",
+          "member": "bool",
+          "name": "MinimalConversion",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否只预检",
+          "example": "true",
+          "member": "bool",
+          "name": "DryRun",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "转换的目标操作系统类型。仅支持 TencentOS。",
+          "example": "TencentOS",
+          "member": "string",
+          "name": "TargetOSType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ConvertOperatingSystemsResponse": {
+      "document": "ConvertOperatingSystems返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "转换的目标操系统信息，仅在入参 DryRun 为 true 时返回。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TargetOS",
+          "name": "SupportTargetOSList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "操作系统转换的任务 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -11712,6 +11793,32 @@
         }
       ],
       "usage": "both"
+    },
+    "TargetOS": {
+      "document": "操作系统转换的目标操作系统信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "目标操作系统类型",
+          "example": "TencentOS",
+          "member": "string",
+          "name": "TargetOSType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目标操作系统版本",
+          "example": "2.4",
+          "member": "string",
+          "name": "TargetOSVersion",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "TerminateInstancesRequest": {
       "document": "TerminateInstances请求参数结构体",

@@ -490,6 +490,13 @@
       "output": "DescribeIntegrationRolesResponse",
       "status": "online"
     },
+    "DescribeOrganizationAuthStatus": {
+      "document": "查询企业认证状态",
+      "input": "DescribeOrganizationAuthStatusRequest",
+      "name": "查询企业认证状态",
+      "output": "DescribeOrganizationAuthStatusResponse",
+      "status": "online"
+    },
     "DescribeOrganizationGroupOrganizations": {
       "document": "此API接口用来查询加入集团的成员企业信息\n适用场景：子企业在加入集团后，主企业可能通过此接口获取到所有的子企业列表，方便进行展示和统计",
       "input": "DescribeOrganizationGroupOrganizationsRequest",
@@ -1147,6 +1154,52 @@
         }
       ],
       "usage": "both"
+    },
+    "AuthRecord": {
+      "document": "企业认证信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "经办人姓名。",
+          "example": "典*谦",
+          "member": "string",
+          "name": "OperatorName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "经办人手机号。",
+          "example": "132****0000",
+          "member": "string",
+          "name": "OperatorMobile",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "认证授权方式：\n<ul><li> **0**：未选择授权方式（默认值）</li>\n<li> **1**：上传授权书</li>\n<li> **2**：法人授权</li>\n<li> **3**：法人认证</li></ul>",
+          "example": "1",
+          "member": "int64",
+          "name": "AuthType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "企业认证授权书审核状态：\n<ul><li> **0**：未提交授权书（默认值）</li>\n<li> **1**：审核通过</li>\n<li> **2**：审核驳回</li>\n<li> **3**：审核中</li>\n<li> **4**：AI识别中</li>\n<li> **5**：客户确认AI信息</li></ul>",
+          "example": "1",
+          "member": "int64",
+          "name": "AuditStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "AuthorizedUser": {
       "document": "授权用户",
@@ -8771,6 +8824,100 @@
           "name": "IntegrateRoles",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOrganizationAuthStatusRequest": {
+      "document": "DescribeOrganizationAuthStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "执行本接口操作的员工信息。使用此接口时，必须填写userId。 支持填入集团子公司经办人 userId 代发合同。  注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "组织机构名称。 请确认该名称与企业营业执照中注册的名称一致。 如果名称中包含英文括号()，请使用中文括号（）代替。",
+          "example": "无",
+          "member": "string",
+          "name": "OrganizationName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "企业统一社会信用代码\n注意：OrganizationName和UniformSocialCreditCode不能同时为空",
+          "example": "无",
+          "member": "string",
+          "name": "UniformSocialCreditCode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "法人姓名",
+          "example": "无",
+          "member": "string",
+          "name": "LegalName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOrganizationAuthStatusResponse": {
+      "document": "DescribeOrganizationAuthStatus返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "企业是否已认证",
+          "example": "无",
+          "member": "bool",
+          "name": "IsVerified",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "企业认证状态 0-未认证 1-认证中 2-已认证",
+          "example": "无",
+          "member": "int64",
+          "name": "AuthStatus",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "企业认证信息",
+          "example": "无",
+          "member": "AuthRecord",
+          "name": "AuthRecords",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "企业在腾讯电子签平台的唯一身份标识，为32位字符串。\n可登录腾讯电子签控制台，在 \"更多\"->\"企业设置\"->\"企业中心\"- 中查看企业电子签账号。\np.s. 只有当前企业认证成功的时候返回",
+          "example": "无",
+          "member": "string",
+          "name": "OrganizationId",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
