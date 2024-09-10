@@ -112,6 +112,20 @@
         "title": "无"
       }
     ],
+    "DescribeBackupConfigs": [
+      {
+        "document": "获取超期备份策略",
+        "input": "POST / HTTP/1.1\nHost: dcdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBackupConfigs\n<公共请求参数>\n\n{\n    \"InstanceId\": \"tdsqlshard-6cmpk1rd\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Days\": 30,\n        \"StartBackupTime\": \"03:00\",\n        \"EndBackupTime\": \"05:00\",\n        \"WeekDays\": [\n            \"Monday\",\n            \"Sunday\"\n        ],\n        \"ArchiveDays\": 91,\n        \"BackupConfigSet\": [\n            {\n                \"BackupCount\": 1,\n                \"BeginDate\": \"2023-06-08\",\n                \"EnableBackupPolicy\": true,\n                \"Frequency\": \"monthly\",\n                \"MaxRetentionDays\": 365,\n                \"WeekDays\": []\n            }\n        ],\n        \"InstanceId\": \"tdsqlshard-6cmpk1rd\",\n        \"RequestId\": \"827d5b16-d464-4f43-af92-06c63d25375e\"\n    }\n}",
+        "title": "示例"
+      },
+      {
+        "document": "示例1",
+        "input": "POST / HTTP/1.1\nHost: dcdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBackupConfigs\n<公共请求参数>\n\n{\n    \"InstanceId\": \"tdsqlshard-2500dqmh\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Days\": 30,\n        \"StartBackupTime\": \"03:00\",\n        \"EndBackupTime\": \"05:00\",\n        \"WeekDays\": [\n            \"Monday\",\n            \"Sunday\"\n        ],\n        \"ArchiveDays\": 91,\n        \"BackupConfigSet\": [\n            {\n                \"BackupCount\": 0,\n                \"BeginDate\": \"2023-07-20\",\n                \"EnableBackupPolicy\": true,\n                \"Frequency\": \"weekly\",\n                \"MaxRetentionDays\": 100,\n                \"WeekDays\": [\n                    \"Monday\",\n                    \"Tuesday\"\n                ]\n            }\n        ],\n        \"InstanceId\": \"tdsqlshard-2500dqmh\",\n        \"RequestId\": \"c4712e5d-78f3-4899-b8f4-0b6af5a17b77\"\n    }\n}",
+        "title": "示例1"
+      }
+    ],
     "DescribeBackupFiles": [
       {
         "document": "",
@@ -446,6 +460,20 @@
         "input": "https://dcdb.tencentcloudapi.com/?Action=ModifyAccountPrivileges\n&InstanceId=tdsqlshard-f35wr6wj\n&Accounts.0.User=ajnnw\n&GlobalPrivileges.0=SELECT\n&Accounts.0.Host=127.0.0.1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"FlowId\": 145623\n    }\n}",
         "title": "修改云数据库实例账号的权限信息"
+      }
+    ],
+    "ModifyBackupConfigs": [
+      {
+        "document": "近一年每个月保留一个备份",
+        "input": "POST / HTTP/1.1\nHost: dcdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBackupConfigs\n<公共请求参数>\n\n{\n    \"InstanceId\": \"tdsqlshard-6cmpk1rd\",\n    \"BackupConfigSet\": [\n        {\n            \"EnableBackupPolicy\": true,\n            \"BeginDate\": \"2023-06-08\",\n            \"MaxRetentionDays\": 365,\n            \"Frequency\": \"monthly\",\n            \"BackupCount\": 1\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a0495e38-cd59-420c-8f09-893207d28955\"\n    }\n}",
+        "title": "示例"
+      },
+      {
+        "document": "按周保留备份",
+        "input": "POST / HTTP/1.1\nHost: dcdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBackupConfigs\n<公共请求参数>\n\n{\n    \"InstanceId\": \"tdsqlshard-2500dqmh\",\n    \"BackupConfigSet\": [\n        {\n            \"EnableBackupPolicy\": true,\n            \"BeginDate\": \"2023-07-20\",\n            \"MaxRetentionDays\": 100,\n            \"Frequency\": \"weekly\",\n            \"WeekDays\": [\n                \"Monday\",\n                \"Tuesday\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"45b034f3-1ace-45c7-b49e-1fca45f89d9e\"\n    }\n}",
+        "title": "示例1"
       }
     ],
     "ModifyDBEncryptAttributes": [

@@ -49,6 +49,13 @@
       "output": "ReplaceBackgroundResponse",
       "status": "online"
     },
+    "SketchToImage": {
+      "document": "线稿生图接口支持上传一张黑白线稿图，按照指定的主体对象以及样式、颜色、材质、风格等的文本描述prompt ，对线稿图进行色彩填充与细节描绘，得到一张完整绘制的图像。生成图分辨率默认为1024:1024。\n线稿生图默认提供1个并发任务数，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后才能开始处理下一个任务。",
+      "input": "SketchToImageRequest",
+      "name": "线稿生图",
+      "output": "SketchToImageResponse",
+      "status": "online"
+    },
     "SubmitDrawPortraitJob": {
       "document": "AI 写真提供 AI 写真形象照的训练与生成能力，分为上传训练图片、训练模型、生成图片3个环节，需要依次调用对应接口。\n每个写真模型自训练完成起1年内有效，有效期内可使用写真模型 ID 生成图片，期满后需要重新训练。\n生成图片分为提交任务和查询任务2个接口。\n- 提交生成写真图片任务：完成训练写真模型后，选择风格模板，提交一个生成写真图片异步任务，根据写真模型 ID 开始生成人物形象在指定风格上的写真图片，获得任务 ID。\n- 查询生成写真图片任务：根据任务 ID 查询生成图片任务的处理状态、处理结果。\n\n提交生成写真图片任务默认提供1个并发任务数。",
       "input": "SubmitDrawPortraitJobRequest",
@@ -390,6 +397,24 @@
           "name": "RspImgType",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "画质增强开关，默认关闭。\n1：开启\n0：关闭\n开启后将增强图像的画质清晰度，生成耗时有所增加。",
+          "example": "0",
+          "member": "int64",
+          "name": "EnhanceImage",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "细节优化的面部数量上限，支持0 ~ 6，默认为0。\n若上传大于0的值，将以此为上限对每张图片中面积占比较小的面部进行细节修复，生成耗时根据实际优化的面部个数有所增加。",
+          "example": "0",
+          "member": "int64",
+          "name": "RestoreFace",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -870,6 +895,88 @@
         }
       ],
       "usage": "in"
+    },
+    "SketchToImageRequest": {
+      "document": "SketchToImage请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用于线稿生图的文本描述。\n最多支持200个 utf-8 字符。\n建议格式：线稿中的主体对象+画面场景+配色/材质/元素/风格等",
+          "example": "鞋子，红白配色，皮革材质，真实画质，写实风格，精细，高清摄影，白色背景",
+          "member": "string",
+          "name": "Prompt",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "线稿图 Base64 数据。\nBase64 和 Url 必须提供一个，如果都提供以Url 为准。\n图片限制：黑白线稿图片，单边分辨率小于5000且大于512（分辨率过小会导致效果受损），转成 Base64 字符串后小于 6MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。",
+          "example": "无",
+          "member": "string",
+          "name": "InputImage",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "线稿图 Url。\nBase64 和 Url 必须提供一个，如果都提供以Url 为准。\n图片限制：黑白线稿图片，单边分辨率小于5000且大于512（分辨率过小会导致效果受损），转成 Base64 字符串后小于 6MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。",
+          "example": "无",
+          "member": "string",
+          "name": "InputUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "为生成结果图添加标识的开关，默认为1。\n1：添加标识。\n0：不添加标识。\n其他数值：默认按1处理。\n建议您使用显著标识来提示结果图使用了 AI 绘画技术，是 AI 生成的图片。",
+          "example": "无",
+          "member": "int64",
+          "name": "LogoAdd",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "标识内容设置。\n默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。",
+          "example": "无",
+          "member": "LogoParam",
+          "name": "LogoParam",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "返回图像方式（base64 或 url) ，二选一，默认为 base64。url 有效期为1小时。生成图分辨率较大时建议选择 url，使用 base64 可能因图片过大导致返回失败。",
+          "example": "base64",
+          "member": "string",
+          "name": "RspImgType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SketchToImageResponse": {
+      "document": "SketchToImage返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "根据入参 RspImgType 填入不同，返回不同的内容。\n如果传入 base64 则返回生成图 Base64 编码。\n如果传入 url 则返回的生成图 URL , 有效期1小时，请及时保存。",
+          "example": "无",
+          "member": "string",
+          "name": "ResultImage",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "SubmitDrawPortraitJobRequest": {
       "document": "SubmitDrawPortraitJob请求参数结构体",

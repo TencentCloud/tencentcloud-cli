@@ -13287,7 +13287,7 @@
           "type": "int"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "动态硬盘扩容策略配置",
           "example": "无",
           "member": "DynamicDiskConfig",
@@ -13480,8 +13480,8 @@
         },
         {
           "disabled": false,
-          "document": "自动化运维子类别",
-          "example": "INSTANCE_STORAGE_CAPACITY",
+          "document": "INSTANCE_STORAGE_CAPACITY(磁盘自动扩容)/MESSAGE_RETENTION_PERIOD(磁盘动态消息保留策略)",
+          "example": "INSTANCE_STORAGE_CAPACITY/MESSAGE_RETENTION_PERIOD",
           "member": "string",
           "name": "MaintenanceSubtype",
           "required": true,
@@ -14820,7 +14820,7 @@
           "example": "1",
           "member": "int64",
           "name": "FlowId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -14830,7 +14830,7 @@
           "example": "{}",
           "member": "RouteDTO",
           "name": "RouteDTO",
-          "required": false,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         }

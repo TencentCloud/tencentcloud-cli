@@ -276,6 +276,14 @@
         "title": "获取域名共享信息"
       }
     ],
+    "DescribeDomainShareUserList": [
+      {
+        "document": "获取指定域名的已共享列表",
+        "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDomainShareUserList\n<公共请求参数>\n\n{\n    \"Domain\": \"example.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1dbb40a1-8834-43e2-bae0-c5e2d0823944\",\n        \"DomainShareList\": [\n            {\n                \"DomainShareId\": 21253,\n                \"Mode\": \"rw\",\n                \"Nickname\": \"我的测试环境企业\",\n                \"QCloudUIN\": \"700000283316\",\n                \"Status\": \"enabled\",\n                \"SubDomain\": \"\"\n            }\n        ]\n    }\n}",
+        "title": "获取指定域名的已共享列表"
+      }
+    ],
     "DescribeDomainWhois": [
       {
         "document": "获取域名Whois信息",

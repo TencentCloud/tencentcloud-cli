@@ -1,10 +1,45 @@
 {
   "actions": {
+    "AssociateSecurityGroups": {
+      "document": "本接口 (AssociateSecurityGroups) 用于安全组批量绑定多个指定实例。",
+      "input": "AssociateSecurityGroupsRequest",
+      "name": "绑定安全组",
+      "output": "AssociateSecurityGroupsResponse",
+      "status": "online"
+    },
+    "DescribeDBSecurityGroups": {
+      "document": "本接口(DescribeDBSecurityGroups)用于查询实例的安全组详情。",
+      "input": "DescribeDBSecurityGroupsRequest",
+      "name": "查询实例安全组详情",
+      "output": "DescribeDBSecurityGroupsResponse",
+      "status": "online"
+    },
+    "DescribeInstanceNodes": {
+      "document": "实例节点列表",
+      "input": "DescribeInstanceNodesRequest",
+      "name": "实例pod列表（仅返回 pod 名称）",
+      "output": "DescribeInstanceNodesResponse",
+      "status": "online"
+    },
     "DescribeInstances": {
       "document": "查询实例列表",
       "input": "DescribeInstancesRequest",
       "name": "查询实例列表",
       "output": "DescribeInstancesResponse",
+      "status": "online"
+    },
+    "DisassociateSecurityGroups": {
+      "document": "本接口(DisassociateSecurityGroups)用于安全组批量解绑实例。",
+      "input": "DisassociateSecurityGroupsRequest",
+      "name": "安全组批量解绑云资源",
+      "output": "DisassociateSecurityGroupsResponse",
+      "status": "online"
+    },
+    "ModifyDBInstanceSecurityGroups": {
+      "document": "本接口(ModifyDBInstanceSecurityGroups)用于修改实例绑定的安全组。",
+      "input": "ModifyDBInstanceSecurityGroupsRequest",
+      "name": "修改云数据库安全组",
+      "output": "ModifyDBInstanceSecurityGroupsResponse",
       "status": "online"
     }
   },
@@ -15,6 +50,116 @@
     "serviceShortName": "vdb"
   },
   "objects": {
+    "AssociateSecurityGroupsRequest": {
+      "document": "AssociateSecurityGroups请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "要绑定的安全组 ID，类似sg-efil7***。",
+          "example": "[\"sg-ajr1jzgj\"]",
+          "member": "string",
+          "name": "SecurityGroupIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "实例 ID，格式如：vdb-c1nl9***，支持指定多个实例",
+          "example": "[\"vdb-eb2w7dto\"]",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "AssociateSecurityGroupsResponse": {
+      "document": "AssociateSecurityGroups返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBSecurityGroupsRequest": {
+      "document": "DescribeDBSecurityGroups请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID，格式如：vdb-c1nl9***。",
+          "example": "vdb-c1nl9rpv",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBSecurityGroupsResponse": {
+      "document": "DescribeDBSecurityGroups返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "安全组规则。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SecurityGroup",
+          "name": "Groups",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceNodesRequest": {
+      "document": "DescribeInstanceNodes请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeInstanceNodesResponse": {
+      "document": "DescribeInstanceNodes返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例pod列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"worker-0\", \"search-0\", \"master-0\"]",
+          "member": "NodeInfo",
+          "name": "Items",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "查询结果总数量。",
+          "example": "3",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeInstancesRequest": {
       "document": "DescribeInstances请求参数结构体",
       "members": [
@@ -169,6 +314,128 @@
         }
       ],
       "type": "object"
+    },
+    "DisassociateSecurityGroupsRequest": {
+      "document": "DisassociateSecurityGroups请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "要绑定的安全组 ID，类似sg-efil****。",
+          "example": "{\"sg-ajr1jzgj\"]",
+          "member": "string",
+          "name": "SecurityGroupIds",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例 ID，格式如：vdb-c1nl****，支持指定多个实例。",
+          "example": "[\"vdb-eb2w7dto\"]",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DisassociateSecurityGroupsResponse": {
+      "document": "DisassociateSecurityGroups返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Inbound": {
+      "document": "安全组入站规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "策略，ACCEPT或者DROP。",
+          "example": "无",
+          "member": "string",
+          "name": "Action",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "地址组id代表的地址集合。",
+          "example": "无",
+          "member": "string",
+          "name": "AddressModule",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "来源Ip或Ip段，例如192.168.0.0/16。",
+          "example": "无",
+          "member": "string",
+          "name": "CidrIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "描述。",
+          "example": "无",
+          "member": "string",
+          "name": "Desc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "网络协议，支持udp、tcp等。",
+          "example": "无",
+          "member": "string",
+          "name": "IpProtocol",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "端口。",
+          "example": "无",
+          "member": "string",
+          "name": "PortRange",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务组id代表的协议和端口集合。",
+          "example": "无",
+          "member": "string",
+          "name": "ServiceModule",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "安全组id代表的地址集合。",
+          "example": "无",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "InstanceInfo": {
       "document": "实例信息，用于实例列表",
@@ -446,6 +713,42 @@
       ],
       "usage": "out"
     },
+    "ModifyDBInstanceSecurityGroupsRequest": {
+      "document": "ModifyDBInstanceSecurityGroups请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "要修改的安全组ID列表，一个或者多个安全组 ID 组成的数组。",
+          "example": "[\"sg-ajr1jzgj\\n\"]",
+          "member": "string",
+          "name": "SecurityGroupIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "实例ID，格式如：vdb-c9s3****。",
+          "example": "[\"vdb-c9s3b1h4\"]",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDBInstanceSecurityGroupsResponse": {
+      "document": "ModifyDBInstanceSecurityGroups返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "Network": {
       "document": "网络信息",
       "members": [
@@ -488,6 +791,194 @@
           "output_required": true,
           "type": "int",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "NodeInfo": {
+      "document": "实例pod信息，仅包含 pod 名称",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Pod名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "Outbound": {
+      "document": "安全组出站规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "策略，ACCEPT或者DROP。",
+          "example": "无",
+          "member": "string",
+          "name": "Action",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "地址组id代表的地址集合。",
+          "example": "无",
+          "member": "string",
+          "name": "AddressModule",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "来源Ip或Ip段，例如192.168.0.0/16。",
+          "example": "无",
+          "member": "string",
+          "name": "CidrIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "描述。",
+          "example": "无",
+          "member": "string",
+          "name": "Desc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "网络协议，支持udp、tcp等。",
+          "example": "无",
+          "member": "string",
+          "name": "IpProtocol",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "端口。",
+          "example": "无",
+          "member": "string",
+          "name": "PortRange",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务组id代表的协议和端口集合。",
+          "example": "无",
+          "member": "string",
+          "name": "ServiceModule",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "安全组id代表的地址集合。",
+          "example": "无",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SecurityGroup": {
+      "document": "安全组规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "创建时间，时间格式：yyyy-mm-dd hh:mm:ss。",
+          "example": "无",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "项目ID。",
+          "example": "无",
+          "member": "string",
+          "name": "ProjectId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "安全组ID。",
+          "example": "无",
+          "member": "string",
+          "name": "SecurityGroupId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "安全组名称。",
+          "example": "无",
+          "member": "string",
+          "name": "SecurityGroupName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "安全组备注。",
+          "example": "无",
+          "member": "string",
+          "name": "SecurityGroupRemark",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "出站规则。",
+          "example": "无",
+          "member": "Outbound",
+          "name": "Outbound",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "入站规则。",
+          "example": "无",
+          "member": "Inbound",
+          "name": "Inbound",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "修改时间，时间格式：yyyy-mm-dd hh:mm:ss。",
+          "example": "无",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

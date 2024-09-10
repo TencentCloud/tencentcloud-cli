@@ -16,21 +16,121 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": "1",
-        "TotalUsedAmount": 18000000000,
+        "RequestId": "9168e8fe-ed79-4726-9ced-29033e5a7011",
+        "TotalCount": 5,
+        "TotalUsedAmount": 5000000,
         "UsageRecords": [
             {
-                "UsedAmount": 18000000000,
-                "UsedTime": "2021-01-01 00:00:00",
+                "PayMode": "prepay",
+                "PayScene": "",
+                "SeqId": "20240212840001259973831114",
                 "UsageDetails": [
                     {
-                        "ProductName": "轻量应用服务器",
-                        "SubProductName": "轻量应用服务器 (通用型-2核2G-50G-500G)"
+                        "Action": "purchase",
+                        "BillingItemCode": "",
+                        "CalcUnit": "",
+                        "ProductCode": "p_cvm",
+                        "ProductEnName": "Cloud Virtual Machine(CVM)",
+                        "ProductName": "云服务器CVM",
+                        "SubBillingItemCode": "",
+                        "SubProductCode": "sp_cvm_s2",
+                        "SubProductEnName": "CVM Standard S2",
+                        "SubProductName": "云服务器CVM-标准型S2"
                     }
-                ]
+                ],
+                "UsedAmount": 1000000,
+                "UsedTime": "2024-02-12 15:54:56",
+                "VoucherId": "WFRCNWBQBHNYJTZ3XLGE3T"
+            },
+            {
+                "PayMode": "postpay",
+                "PayScene": null,
+                "SeqId": "20240212799000283860282006",
+                "UsageDetails": [
+                    {
+                        "Action": "",
+                        "BillingItemCode": "",
+                        "CalcUnit": "1",
+                        "ProductCode": "p_ccn",
+                        "ProductEnName": "Cloud Connect Network",
+                        "ProductName": "云联网CCN",
+                        "SubBillingItemCode": "",
+                        "SubProductCode": "sp_ccn_connecting_instance",
+                        "SubProductEnName": "Cloud Connect Network-connecting-instance",
+                        "SubProductName": "云联网网络连接实例费"
+                    }
+                ],
+                "UsedAmount": 1000000,
+                "UsedTime": "2024-02-12 15:53:33",
+                "VoucherId": "WFRCNWBQBHNYJTZ3XLGE3T"
+            },
+            {
+                "PayMode": "postpay",
+                "PayScene": null,
+                "SeqId": "20240212799000283860282005",
+                "UsageDetails": [
+                    {
+                        "Action": "",
+                        "BillingItemCode": "",
+                        "CalcUnit": "1",
+                        "ProductCode": "p_ccn",
+                        "ProductEnName": "Cloud Connect Network",
+                        "ProductName": "云联网CCN",
+                        "SubBillingItemCode": "",
+                        "SubProductCode": "sp_ccn_connecting_instance",
+                        "SubProductEnName": "Cloud Connect Network-connecting-instance",
+                        "SubProductName": "云联网网络连接实例费"
+                    }
+                ],
+                "UsedAmount": 1000000,
+                "UsedTime": "2024-02-12 15:36:54",
+                "VoucherId": "WFRCNWBQBHNYJTZ3XLGE3T"
+            },
+            {
+                "PayMode": "prepay",
+                "PayScene": "",
+                "SeqId": "20240212840001259973831111",
+                "UsageDetails": [
+                    {
+                        "Action": "purchase",
+                        "BillingItemCode": "",
+                        "CalcUnit": "",
+                        "ProductCode": "p_cvm",
+                        "ProductEnName": "Cloud Virtual Machine(CVM)",
+                        "ProductName": "云服务器CVM",
+                        "SubBillingItemCode": "",
+                        "SubProductCode": "sp_cvm_s2",
+                        "SubProductEnName": "CVM Standard S2",
+                        "SubProductName": "云服务器CVM-标准型S2"
+                    }
+                ],
+                "UsedAmount": 1000000,
+                "UsedTime": "2024-02-12 15:15:49",
+                "VoucherId": "WFRCNWBQBHNYJTZ3XLGE3T"
+            },
+            {
+                "PayMode": "prepay",
+                "PayScene": "",
+                "SeqId": "20240212840001259973831109",
+                "UsageDetails": [
+                    {
+                        "Action": "purchase",
+                        "BillingItemCode": "",
+                        "CalcUnit": "",
+                        "ProductCode": "p_cvm",
+                        "ProductEnName": "Cloud Virtual Machine(CVM)",
+                        "ProductName": "云服务器CVM",
+                        "SubBillingItemCode": "",
+                        "SubProductCode": "sp_cvm_s2",
+                        "SubProductEnName": "CVM Standard S2",
+                        "SubProductName": "云服务器CVM-标准型S2"
+                    }
+                ],
+                "UsedAmount": 1000000,
+                "UsedTime": "2024-02-12 15:14:18",
+                "VoucherId": "WFRCNWBQBHNYJTZ3XLGE3T"
             }
-        ],
-        "RequestId": "76cf663e-f683-41b9-b44d-849123783bf4"
+        ]
     }
 }
 ```

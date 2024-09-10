@@ -726,7 +726,7 @@
         {
           "disabled": false,
           "document": "资源下线信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"ResourceId\": 4, \"ResourceDeleteTime\": \"2023-12-14\",\"ResourceDeleteMessage\": \"由于该动作不具备手动中止能力，已将该动作下线。现有新的故障动作替换，请参考<a href=\\\"https://cloud.tencent.com/document/product/1500/102833\\\" target=\\\"_blank\\\">探针管理</a>文档，在实例安装探针后重新创建新的演练执行。\"}",
+          "example": "{     \"ResourceId\": 4,     \"ResourceDeleteTime\": \"2023-12-14\",     \"ResourceDeleteMessage\": \"由于该动作不具备手动中止能力，已将该动作下线。现有新的故障动作替换，请参考<a href=https://cloud.tencent.com/document/product/1500/102833 target=\\\"_blank\\\">探针管理</a>文档，在实例安装探针后重新创建新的演练执行。\" }",
           "member": "ResourceOffline",
           "name": "ResourceOffline",
           "output_required": false,
@@ -793,7 +793,7 @@
         {
           "disabled": false,
           "document": "筛选项 -动作ID",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "ActionIds",
           "required": false,
@@ -1681,6 +1681,7 @@
           "example": "instanceId",
           "member": "string",
           "name": "Key",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1691,6 +1692,7 @@
           "example": "实例id",
           "member": "string",
           "name": "Header",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1698,9 +1700,10 @@
         {
           "disabled": false,
           "document": "字段值是否需要转译，当不需要转译时，此字段返回null\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\"true\": \"是\", \"false\": \"否\"}",
           "member": "string",
           "name": "Transfer",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1708,9 +1711,10 @@
         {
           "disabled": false,
           "document": "tke的pod字段信息解析\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "$.spec.nodeName",
           "member": "string",
           "name": "JsonParse",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -2274,6 +2278,17 @@
           "example": "无",
           "member": "string",
           "name": "TaskIssue",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "region信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TaskRegionName",
           "output_required": false,
           "required": false,
           "type": "string",

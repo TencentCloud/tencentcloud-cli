@@ -29341,7 +29341,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "目的网段，取值不能在私有网络网段内，例如：112.20.51.0/24。",
+          "document": "创建IPv4目的网段，取值不能在私有网络网段内，例如：112.20.51.0/24。",
           "example": "-",
           "member": "string",
           "name": "DestinationCidrBlock",
@@ -29352,7 +29352,7 @@
         },
         {
           "disabled": false,
-          "document": "下一跳类型，目前我们支持的类型有：\nCVM：公网网关类型的云服务器；\nVPN：VPN网关；\nDIRECTCONNECT：专线网关；\nPEERCONNECTION：对等连接；\nHAVIP：高可用虚拟IP；\nNAT：NAT网关; \nNORMAL_CVM：普通云服务器；\nEIP：云服务器的公网IP；\nLOCAL_GATEWAY：本地网关。",
+          "document": "下一跳类型，目前我们支持的类型有：\nCVM：公网网关类型的云服务器；\nVPN：VPN网关；\nDIRECTCONNECT：专线网关；\nPEERCONNECTION：对等连接；\nHAVIP：高可用虚拟IP；\nNAT：公网NAT网关; \nNORMAL_CVM：普通云服务器；\nEIP：云服务器的公网IP；\nLOCAL_GATEWAY：CDC本地网关；\nINTRANAT：私网NAT网关；\nUSER_CCN；云联网（自定义路由）。\n",
           "example": "-",
           "member": "string",
           "name": "GatewayType",
@@ -29429,7 +29429,7 @@
         },
         {
           "disabled": false,
-          "document": "目的IPv6网段，取值不能在私有网络网段内，例如：2402:4e00:1000:810b::/64。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建IPv6目的网段，取值不能在私有网络网段内，例如：2402:4e00:1000:810b::/64。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "-",
           "member": "string",
           "name": "DestinationIpv6CidrBlock",
@@ -29451,7 +29451,7 @@
         },
         {
           "disabled": false,
-          "document": "路由策略是否发布到云联网。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "路由策略是否发布到云联网。该字段仅做出参使用，作为入参字段时此参数不生效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "True",
           "member": "bool",
           "name": "PublishedToVbc",

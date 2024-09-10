@@ -28,6 +28,13 @@
       "output": "CreateInstanceResponse",
       "status": "online"
     },
+    "CreateSLInstance": {
+      "document": "本接口（CreateSLInstance）用于创建 Lite HBase 实例\n- 接口调用成功，会创建Lite HBase实例，创建实例请求成功会返回创建实例的 InstaceId 和请求的 RequestID。\n- 接口为异步接口，接口返回时操作并未立即完成，实例操作结果可以通过调用 DescribeInstancesList 查看当前实例的 StatusDesc 状态。",
+      "input": "CreateSLInstanceRequest",
+      "name": "Lite HBase 创建实例",
+      "output": "CreateSLInstanceResponse",
+      "status": "online"
+    },
     "DeleteAutoScaleStrategy": {
       "document": "删除自动扩缩容规则，后台销毁根据该规则扩缩容出来的节点",
       "input": "DeleteAutoScaleStrategyRequest",
@@ -175,6 +182,20 @@
       "output": "DescribeResourceScheduleDiffDetailResponse",
       "status": "online"
     },
+    "DescribeSLInstance": {
+      "document": "本接口（DescribeSLInstance）用于查询 Lite HBase 实例基本信息",
+      "input": "DescribeSLInstanceRequest",
+      "name": "Lite HBase 查询实例信息",
+      "output": "DescribeSLInstanceResponse",
+      "status": "online"
+    },
+    "DescribeSLInstanceList": {
+      "document": "本接口（DescribeSLInstanceList）用于查询 Lite HBase 实例列表详细信息",
+      "input": "DescribeSLInstanceListRequest",
+      "name": "Lite HBase 查询实例列表",
+      "output": "DescribeSLInstanceListResponse",
+      "status": "online"
+    },
     "DescribeServiceNodeInfos": {
       "document": "查询服务进程信息",
       "input": "DescribeServiceNodeInfosRequest",
@@ -294,6 +315,13 @@
       "output": "ModifyResourcesTagsResponse",
       "status": "online"
     },
+    "ModifySLInstance": {
+      "document": "本接口（ModifySLInstance）用于修改Lite HBase 实例节点数。\n- 接口调用成功，会创建Lite HBase实例，创建实例请求成功会返回请求的 RequestID。\n- 接口为异步接口，接口返回时操作并未立即完成，实例操作结果可以通过调用 DescribeInstancesList 查看当前实例的 StatusDesc 状态。",
+      "input": "ModifySLInstanceRequest",
+      "name": "Lite HBase 修改实例节点数",
+      "output": "ModifySLInstanceResponse",
+      "status": "online"
+    },
     "ModifyUserManagerPwd": {
       "document": "修改用户密码（用户管理）",
       "input": "ModifyUserManagerPwdRequest",
@@ -369,6 +397,13 @@
       "input": "TerminateInstanceRequest",
       "name": "销毁EMR实例",
       "output": "TerminateInstanceResponse",
+      "status": "online"
+    },
+    "TerminateSLInstance": {
+      "document": "本接口（TerminateSLInstance）用于销毁 Lite HBase 实例",
+      "input": "TerminateSLInstanceRequest",
+      "name": "Lite HBase 销毁实例",
+      "output": "TerminateSLInstanceResponse",
       "status": "online"
     },
     "TerminateTasks": {
@@ -2642,6 +2677,97 @@
       ],
       "type": "object"
     },
+    "CreateSLInstanceRequest": {
+      "document": "CreateSLInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例名称。",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例计费模式，0表示后付费，即按量计费。",
+          "example": "0",
+          "member": "int64",
+          "name": "PayMode",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "实例存储类型，填写CLOUD_HSSD，表示性能云存储。",
+          "example": "CLOUD_HSSD",
+          "member": "string",
+          "name": "DiskType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例单节点磁盘容量，单位GB，单节点磁盘容量需大于等于100，小于等于10000，容量调整步长为20。",
+          "example": "200",
+          "member": "int64",
+          "name": "DiskSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "实例节点规格，可填写4C16G、8C32G、16C64G、32C128G，不区分大小写。",
+          "example": "4C16G",
+          "member": "string",
+          "name": "NodeType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例可用区详细配置，当前支持多可用区，可用区数量只能为1或3，包含区域名称，VPC信息、节点数量，其中所有区域节点总数需大于等于3，小于等于50。",
+          "example": "无",
+          "member": "ZoneSetting",
+          "name": "ZoneSettings",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "实例要绑定的标签列表。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSLInstanceResponse": {
+      "document": "CreateSLInstance返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例唯一标识符（字符串表示）",
+          "example": "emr-xxxxxxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CustomMetaDBInfo": {
       "document": "用户Hive-MetaDB信息",
       "members": [
@@ -4535,6 +4661,195 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSLInstanceListRequest": {
+      "document": "DescribeSLInstanceList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例筛选策略。取值范围：<li>clusterList：表示查询除了已销毁实例之外的实例列表。</li><li>monitorManage：表示查询除了已销毁、创建中以及创建失败的实例之外的实例列表。</li>",
+          "example": "clusterList",
+          "member": "string",
+          "name": "DisplayStrategy",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "页编号，默认值为0，表示第一页。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页返回数量，默认值为10，最大值为100。\t",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段。取值范围：<li>clusterId：表示按照实例ID排序。</li><li>addTime：表示按照实例创建时间排序。</li><li>status：表示按照实例的状态码排序。</li>",
+          "example": "clusterid",
+          "member": "string",
+          "name": "OrderField",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "按照OrderField升序或者降序进行排序。取值范围：<li>0：表示降序。</li><li>1：表示升序。</li>默认值为0。",
+          "example": "1",
+          "member": "int64",
+          "name": "Asc",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "自定义查询过滤器。",
+          "example": "无",
+          "member": "Filters",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSLInstanceListResponse": {
+      "document": "DescribeSLInstanceList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "符合条件的实例总数。\t",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCnt",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例信息列表，如果进行了分页，只显示当前分页的示例信息列表。",
+          "example": "无",
+          "member": "SLInstanceInfo",
+          "name": "InstancesList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSLInstanceRequest": {
+      "document": "DescribeSLInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例唯一标识符（字符串表示）",
+          "example": "emr-xxxxxxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSLInstanceResponse": {
+      "document": "DescribeSLInstance返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例名称。",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例计费模式。0表示后付费，即按量计费，1表示预付费，即包年包月。",
+          "example": "无",
+          "member": "int64",
+          "name": "PayMode",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例存储类型。",
+          "example": "无",
+          "member": "string",
+          "name": "DiskType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例单节点磁盘容量，单位GB。",
+          "example": "无",
+          "member": "int64",
+          "name": "DiskSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例节点规格。",
+          "example": "无",
+          "member": "string",
+          "name": "NodeType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例可用区详细配置，包含可用区名称，VPC信息、节点数量。",
+          "example": "无",
+          "member": "ZoneSetting",
+          "name": "ZoneSettings",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例绑定的标签列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -8461,6 +8776,15 @@
           "name": "RenewFlag",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "计算资源id",
+          "example": "emr-cr-xxxxxxxx",
+          "member": "string",
+          "name": "ComputeResourceId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -8861,6 +9185,51 @@
           "type": "list",
           "value_allowed_null": true
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySLInstanceRequest": {
+      "document": "ModifySLInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例唯一标识符（字符串表示）。",
+          "example": "emr-xxxxxxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需要变更的区域名称。",
+          "example": "ap-guangzhou-1",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "该区域变配后的目标节点数量，所有区域节点总数应大于等于3，小于等于50。",
+          "example": "4",
+          "member": "int64",
+          "name": "NodeNum",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySLInstanceResponse": {
+      "document": "ModifySLInstance返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -11783,6 +12152,162 @@
       ],
       "type": "object"
     },
+    "SLInstanceInfo": {
+      "document": "EMR Lite HBase 实例信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群实例字符串ID",
+          "example": "emr-xxxxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群实例数字ID",
+          "example": "126358002",
+          "member": "uint64",
+          "name": "Id",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态描述",
+          "example": "状态描述",
+          "member": "string",
+          "name": "StatusDesc",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例名称",
+          "example": "xxxxxx",
+          "member": "string",
+          "name": "ClusterName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "地域ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "RegionId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主可用区ID",
+          "example": "100002",
+          "member": "int64",
+          "name": "ZoneId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主可用区",
+          "example": "ap-guangzhou-2",
+          "member": "string",
+          "name": "Zone",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户APPID",
+          "example": "663622",
+          "member": "uint64",
+          "name": "AppId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主可用区私有网络ID",
+          "example": "45666",
+          "member": "uint64",
+          "name": "VpcId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主可用区子网ID",
+          "example": "3422",
+          "member": "uint64",
+          "name": "SubnetId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态码",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "创建时间",
+          "member": "string",
+          "name": "AddTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群计费类型。0表示按量计费，1表示包年包月",
+          "example": "0",
+          "member": "int64",
+          "name": "PayMode",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "多可用区信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ZoneSetting",
+          "name": "ZoneSettings",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "ScaleOutClusterRequest": {
       "document": "ScaleOutCluster请求参数结构体",
       "members": [
@@ -13619,6 +14144,33 @@
       ],
       "type": "object"
     },
+    "TerminateSLInstanceRequest": {
+      "document": "TerminateSLInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例唯一标识符（字符串表示）",
+          "example": "emr-xxxxxxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "TerminateSLInstanceResponse": {
+      "document": "TerminateSLInstance返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "TerminateTasksRequest": {
       "document": "TerminateTasks请求参数结构体",
       "members": [
@@ -14992,6 +15544,45 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ZoneSetting": {
+      "document": "可用区配置描述。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "可用区名称",
+          "example": "ap-guangzhou-2",
+          "member": "string",
+          "name": "Zone",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可用区VPC和子网",
+          "example": "无",
+          "member": "VPCSettings",
+          "name": "VPCSettings",
+          "output_required": true,
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可用区节点数量",
+          "example": "3",
+          "member": "int64",
+          "name": "NodeNum",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

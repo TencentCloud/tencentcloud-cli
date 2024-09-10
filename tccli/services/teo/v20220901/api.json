@@ -5850,7 +5850,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件，Filters.Values 的上限为 20。该参数不填写时，返回当前 zone-id 下所有域名信息。详细的过滤条件如下：\n<li>domain-name：按照加速域名进行过滤；</li>\n<li>origin-type：按照源站类型进行过滤；</li>\n<li>origin：按照主源站地址进行过滤；</li>\n<li>backup-origin： 按照备用源站地址进行过滤；</li>\n<li>domain-cname：按照 CNAME 进行过滤；</li>\n<li>share-cname：按照共享 CNAME 进行过滤；</li>\n<li>vodeo-sub-app-id：按照【 vodeo 子应用 ID】进行过滤；</li>\n<li>vodeo-distribution-range：按照【 vodeo 分发范围】进行过滤；</li>\n<li>vodeo-bucket-id：按照【vodeo 存储桶 ID】进行过滤；</li>",
+          "document": "过滤条件，Filters.Values 的上限为 20。该参数不填写时，返回当前 zone-id 下所有域名信息。详细的过滤条件如下：\n<li>domain-name：按照加速域名进行过滤；</li>\n<li>origin-type：按照源站类型进行过滤；</li>\n<li>origin：按照主源站地址进行过滤；</li>\n<li>backup-origin： 按照备用源站地址进行过滤；</li>\n<li>domain-cname：按照 CNAME 进行过滤；</li>\n<li>share-cname：按照共享 CNAME 进行过滤；</li>",
           "example": "无",
           "member": "AdvancedFilter",
           "name": "Filters",
@@ -8126,7 +8126,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件，详细的过滤条件Key值如下：\n<li>ruleId<br>   按照【<strong>转发规则ID</strong>】进行过滤。</li>\n<li>proxyId<br>   按照【<strong>四层代理实例ID</strong>】进行过滤。</li>",
+          "document": "过滤条件，详细的过滤条件Key值如下：\n<li>ruleId：按照转发规则 ID 进行过滤。</li>\n<li>proxyId：按照四层代理实例 ID 进行过滤。</li>",
           "example": "无",
           "member": "QueryCondition",
           "name": "Filters",
@@ -12870,7 +12870,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "源站类型，取值有：\n<li>IP_DOMAIN：IPV4、IPV6 或域名类型源站；</li>\n<li>COS：腾讯云 COS 对象存储源站；</li>\n<li>AWS_S3：AWS S3 对象存储源站；</li>\n<li>ORIGIN_GROUP：源站组类型源站；</li>\n<li>VODEO：云点播-混合云版；</li>\n<li>VOD：云点播；</li>\n<li>SPACE：源站卸载，当前仅白名单开放；</li>\n<li>LB：负载均衡，当前仅白名单开放。</li>",
+          "document": "源站类型，取值有：\n<li>IP_DOMAIN：IPV4、IPV6 或域名类型源站；</li>\n<li>COS：腾讯云 COS 对象存储源站；</li>\n<li>AWS_S3：AWS S3 对象存储源站；</li>\n<li>ORIGIN_GROUP：源站组类型源站；</li>\n<li>VOD：云点播；</li>\n<li>SPACE：源站卸载，当前仅白名单开放；</li>\n<li>LB：负载均衡，当前仅白名单开放。</li>",
           "example": "ip_domain",
           "member": "string",
           "name": "OriginType",
@@ -12880,7 +12880,7 @@
         },
         {
           "disabled": false,
-          "document": "源站地址，根据 OriginType 的取值分为以下情况：\n<li>当 OriginType = IP_DOMAIN 时，该参数为 IPv4、IPv6 地址或域名；</li>\n<li>当 OriginType = COS 时，该参数为 COS 桶的访问域名；</li>\n<li>当 OriginType = AWS_S3，该参数为 S3 桶的访问域名；</li>\n<li>当 OriginType = ORIGIN_GROUP 时，该参数为源站组 ID；</li>\n<li>当 OriginType = VOD 时，该参数请填写云点播应用 ID ；</li>\n<li>当 OriginType = VODEO 时，如果 VodeoDistributionRange = ALL，则该参数为 \"all-buckets-in-vodeo-application\"；如果 VodeoDistributionRange = Bucket，则该参数为对应存储桶域名。</li>",
+          "document": "源站地址，根据 OriginType 的取值分为以下情况：\n<li>当 OriginType = IP_DOMAIN 时，该参数为 IPv4、IPv6 地址或域名；</li>\n<li>当 OriginType = COS 时，该参数为 COS 桶的访问域名；</li>\n<li>当 OriginType = AWS_S3，该参数为 S3 桶的访问域名；</li>\n<li>当 OriginType = ORIGIN_GROUP 时，该参数为源站组 ID；</li>\n<li>当 OriginType = VOD 时，该参数请填写云点播应用 ID ；</li>",
           "example": "qq.com",
           "member": "string",
           "name": "Origin",
@@ -12939,7 +12939,7 @@
           "value_allowed_null": true
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "MO 子应用 ID",
           "example": "无",
           "member": "int64",
@@ -12949,7 +12949,7 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "MO 分发范围，取值有： <li>All：全部</li> <li>Bucket：存储桶</li>",
           "example": "无",
           "member": "string",
@@ -12959,7 +12959,7 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "MO 存储桶 ID，分发范围(DistributionRange)为存储桶(Bucket)时必填",
           "example": "无",
           "member": "string",
@@ -13142,7 +13142,7 @@
           "type": "list"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "VODEO 子应用 ID。该参数当 OriginType = VODEO 时必填。",
           "example": "无",
           "member": "int64",
@@ -13151,7 +13151,7 @@
           "type": "int"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "VODEO 分发范围，该参数当 OriginType = VODEO 时必填。取值有： \n<li>All：当前应用下所有存储桶；</li> \n<li>Bucket：指定的某一个存储桶。</li>",
           "example": "无",
           "member": "string",
@@ -13160,7 +13160,7 @@
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "VODEO 存储桶 ID，该参数当 OriginType = VODEO 且 VodeoDistributionRange = Bucket 时必填。",
           "example": "无",
           "member": "string",
@@ -15931,11 +15931,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回数据对应时间点，采用unix秒级时间戳。",
+          "document": "返回数据对应时间点，采用 unix 秒级时间戳。",
           "example": "1652659200",
           "member": "int64",
           "name": "Timestamp",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -15945,7 +15945,7 @@
           "example": "100",
           "member": "int64",
           "name": "Value",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -16507,7 +16507,7 @@
         },
         {
           "disabled": false,
-          "document": "站点接入方式，取值有：\n<li> full：NS 接入；</li>\n<li> partial：CNAME 接入；</li>\n<li> noDomainAccess：无域名接入；</li>\n<li> vodeo：开启 VODEO 后默认接入。</li>",
+          "document": "站点接入方式，取值有：\n<li> full：NS 接入；</li>\n<li> partial：CNAME 接入；</li>\n<li> noDomainAccess：无域名接入；</li>",
           "example": "full",
           "member": "string",
           "name": "Type",

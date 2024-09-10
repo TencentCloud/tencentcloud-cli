@@ -224,6 +224,20 @@
         "title": "获取Serverless索引空间列表"
       }
     ],
+    "DescribeSpaceKibanaTools": [
+      {
+        "document": "索引获取token登录space维度的kibana",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeKibanaTools\n<公共请求参数>\n\n{\n    \"SpaceId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"KibanaToken\": \"abc\",\n        \"ExpireTime\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "索引获取token"
+      },
+      {
+        "document": "用于登录space维度的内嵌的kibana",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateServerlessInstanceUser\n<公共请求参数>\n\n{\n    \"SpaceId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"KibanaToken\": \"abc\",\n        \"ExpireTime\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "kibana内嵌登录token获取"
+      }
+    ],
     "DescribeUserCosSnapshotList": [
       {
         "document": "",

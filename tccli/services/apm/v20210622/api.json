@@ -127,6 +127,7 @@
           "example": "name",
           "member": "string",
           "name": "Key",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -137,12 +138,13 @@
           "example": "xxxx",
           "member": "string",
           "name": "Value",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "ApmAgentInfo": {
       "document": "apm Agent信息",

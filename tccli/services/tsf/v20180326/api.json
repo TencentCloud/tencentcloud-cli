@@ -2537,100 +2537,130 @@
         {
           "disabled": false,
           "document": "rule Id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "RuleId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "API ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "ApiId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "限流名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "RuleName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "最大限流qps\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "uint64",
           "name": "MaxQps",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "生效/禁用, enabled/disabled\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "UsableStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "规则内容\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "RuleContent",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "Tsf Rule ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "TsfRuleId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "CreatedTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "UpdatedTime",
-          "required": true,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分页参数limit\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Limit",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分页参数offset\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Offset",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "AppId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AppId",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         }
@@ -6403,7 +6433,7 @@
         {
           "disabled": false,
           "document": "API分组ID",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "GroupId",
           "required": true,
@@ -6412,10 +6442,19 @@
         {
           "disabled": false,
           "document": "微服务ID",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "MicroserviceId",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "命名空间ID",
+          "example": "无",
+          "member": "string",
+          "name": "NamespaceId",
+          "required": false,
           "type": "string"
         }
       ],
@@ -6427,9 +6466,10 @@
         {
           "disabled": false,
           "document": "是否成功",
-          "example": "",
+          "example": "无",
           "member": "bool",
           "name": "Result",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -18482,7 +18522,8 @@
           "example": "api-sadasf",
           "member": "string",
           "name": "ApiId",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -18492,7 +18533,8 @@
           "example": "/test/echo/xxx",
           "member": "string",
           "name": "Path",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -18502,7 +18544,8 @@
           "example": "ms1",
           "member": "string",
           "name": "MicroserviceName",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -18512,7 +18555,8 @@
           "example": "GET",
           "member": "string",
           "name": "Method",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -18522,12 +18566,13 @@
           "example": "ns-test",
           "member": "string",
           "name": "NamespaceName",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "GatewayGroupIds": {
       "document": "网关部署组ID和网关API分组ID元组",

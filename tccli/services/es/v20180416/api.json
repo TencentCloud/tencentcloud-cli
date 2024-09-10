@@ -196,6 +196,13 @@
       "output": "DescribeServerlessSpacesResponse",
       "status": "online"
     },
+    "DescribeSpaceKibanaTools": {
+      "document": "space维度的kibana获取登录token",
+      "input": "DescribeSpaceKibanaToolsRequest",
+      "name": "space维度的kibana获取登录token",
+      "output": "DescribeSpaceKibanaToolsResponse",
+      "status": "online"
+    },
     "DescribeUserCosSnapshotList": {
       "document": "查询快照信息接口",
       "input": "DescribeUserCosSnapshotListRequest",
@@ -3721,6 +3728,53 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSpaceKibanaToolsRequest": {
+      "document": "DescribeSpaceKibanaTools请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "space的ID",
+          "example": "space-xxx",
+          "member": "string",
+          "name": "SpaceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSpaceKibanaToolsResponse": {
+      "document": "DescribeSpaceKibanaTools返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "该token用于登录内嵌kibana",
+          "example": "无",
+          "member": "string",
+          "name": "KibanaToken",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "token的过期时间",
+          "example": "无",
+          "member": "int64",
+          "name": "ExpireTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

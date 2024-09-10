@@ -1,10 +1,56 @@
 {
   "actions": {
+    "AssociateSecurityGroups": [
+      {
+        "document": "绑定安全组",
+        "input": "POST / HTTP/1.1\nHost: vdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AssociateSecurityGroups\n<公共请求参数>\n\n{\n    \"SecurityGroupIds\": [\n        \"sg-r6saerpd\"\n    ],\n    \"InstanceIds\": [\n        \"vdb-77qt0r46\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c7699436-416b-4d3a-9142-9dee2e5b4e06\"\n    }\n}",
+        "title": "示例1"
+      }
+    ],
+    "DescribeDBSecurityGroups": [
+      {
+        "document": "查询实例安全组",
+        "input": "POST / HTTP/1.1\nHost: vdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBSecurityGroups\n<公共请求参数>\n\n{\n    \"InstanceId\": \"vdb-77qt0r46\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Groups\": [\n            {\n                \"CreateTime\": \"2023-07-03 11:41:46\",\n                \"Inbound\": [\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"AddressModule\": \"\",\n                        \"CidrIp\": \"::/0\",\n                        \"Desc\": \"放通Windows远程登录\",\n                        \"Id\": \"\",\n                        \"IpProtocol\": \"tcp\",\n                        \"PortRange\": \"3389\",\n                        \"ServiceModule\": \"\"\n                    },\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"AddressModule\": \"\",\n                        \"CidrIp\": \"::/0\",\n                        \"Desc\": \"放通Linux SSH登录\",\n                        \"Id\": \"\",\n                        \"IpProtocol\": \"tcp\",\n                        \"PortRange\": \"22\",\n                        \"ServiceModule\": \"\"\n                    }\n                ],\n                \"Outbound\": [\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"AddressModule\": \"\",\n                        \"CidrIp\": \"\",\n                        \"Desc\": \"\",\n                        \"Id\": \"\",\n                        \"IpProtocol\": \"ALL\",\n                        \"PortRange\": \"ALL\",\n                        \"ServiceModule\": \"\"\n                    }\n                ],\n                \"ProjectId\": \"0\",\n                \"SecurityGroupId\": \"sg-9hb3ijfx\",\n                \"SecurityGroupName\": \"安全组4\",\n                \"SecurityGroupRemark\": \"测试安全组\",\n                \"UpdateTime\": \"2023-07-03 11:41:49\"\n            }\n        ],\n        \"RequestId\": \"3bd8eb38-516f-44f3-b127-40e9f83f9793\"\n    }\n}",
+        "title": "示例1"
+      }
+    ],
+    "DescribeInstanceNodes": [
+      {
+        "document": "调用接口成功",
+        "input": "POST / HTTP/1.1\nHost: vdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceNodes\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"Name\": \"master-0\"\n            },\n            {\n                \"Name\": \"search-0\"\n            },\n            {\n                \"Name\": \"worker-0\"\n            }\n        ],\n        \"RequestId\": \"c0c57557-d604-4bfc-abed-5ae659961720\",\n        \"TotalCount\": 3\n    }\n}",
+        "title": "成功示例"
+      },
+      {
+        "document": "调用接口失败",
+        "input": "POST / HTTP/1.1\nHost: vdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceNodes\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"FailedOperation\",\n            \"Message\": \"instance \\\"vdb-ecbgiqwb1\\\" not found\"\n        },\n        \"RequestId\": \"e74de2e6-6f46-4cc3-b77a-15d799fedde9\"\n    }\n}",
+        "title": "调用失败"
+      }
+    ],
     "DescribeInstances": [
       {
         "document": "查询实例列表",
         "input": "POST / HTTP/1.1\nHost: vdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstances\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 50\n}",
         "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"AppId\": 251223614,\n                \"Cpu\": 1,\n                \"CreatedAt\": \"2023-07-07\",\n                \"Disk\": 20,\n                \"EngineName\": \"\",\n                \"EngineVersion\": \"\",\n                \"ExpiredAt\": \"2023-08-07\",\n                \"Extend\": \"{\\\"Port\\\": \\\"8100\\\", \\\"DiskType\\\": \\\"CLOUD_SSD\\\", \\\"NodeType\\\": \\\"Store\\\", \\\"Platform\\\": \\\"vdb-cd\\\", \\\"NodeSpecs\\\": \\\"{\\\\\\\"Cpu\\\\\\\":1,\\\\\\\"Memory\\\\\\\":8}\\\", \\\"NodeNumber\\\": \\\"3\\\", \\\"DiskCapacity\\\": \\\"20\\\", \\\"DiskTypeValue\\\": \\\"云硬盘\\\", \\\"EngineVersion\\\": \\\"v1.0.0\\\", \\\"NodeTypeValue\\\": \\\"存储型\\\", \\\"NodeSpecsValue\\\": \\\"S.2SMALL\\\", \\\"NodeNumberValue\\\": \\\"\\\", \\\"DiskCapacityValue\\\": \\\"\\\"}\",\n                \"HealthScore\": 0,\n                \"InstanceId\": \"vdb-77qt0r46\",\n                \"IsNoExpired\": false,\n                \"Memory\": 8,\n                \"Name\": \"benyqhuang_测试\",\n                \"Networks\": [\n                    {\n                        \"Port\": 8100,\n                        \"SubnetId\": \"subnet-02bwnv4i\",\n                        \"Vip\": \"10.0.7.132\",\n                        \"VpcId\": \"vpc-kddx224l\"\n                    }\n                ],\n                \"PayMode\": 1,\n                \"Product\": \"vdb\",\n                \"Project\": \"vdb\",\n                \"Region\": \"ap-guangzhou\",\n                \"ReplicaNum\": 3,\n                \"ResourceTags\": [],\n                \"ShardNum\": 1,\n                \"Status\": \"online\",\n                \"Warning\": 0,\n                \"Zone\": \"ap-guangzhou-3\"\n            },\n            {\n                \"AppId\": 251223614,\n                \"Cpu\": 1,\n                \"CreatedAt\": \"2023-07-06\",\n                \"Disk\": 20,\n                \"EngineName\": \"\",\n                \"EngineVersion\": \"\",\n                \"ExpiredAt\": \"2023-08-06\",\n                \"Extend\": \"{\\\"Port\\\": \\\"8100\\\", \\\"DiskType\\\": \\\"CLOUD_SSD\\\", \\\"NodeType\\\": \\\"Store\\\", \\\"Platform\\\": \\\"vdb-cd\\\", \\\"NodeSpecs\\\": \\\"{\\\\\\\"Cpu\\\\\\\":1,\\\\\\\"Memory\\\\\\\":8}\\\", \\\"NodeNumber\\\": \\\"3\\\", \\\"DiskCapacity\\\": \\\"20\\\", \\\"DiskTypeValue\\\": \\\"云硬盘\\\", \\\"EngineVersion\\\": \\\"v1.0.0\\\", \\\"NodeTypeValue\\\": \\\"存储型\\\", \\\"NodeSpecsValue\\\": \\\"S.2SMALL\\\", \\\"NodeNumberValue\\\": \\\"\\\", \\\"DiskCapacityValue\\\": \\\"\\\"}\",\n                \"HealthScore\": 0,\n                \"InstanceId\": \"vdb-o2ovx6ko\",\n                \"IsNoExpired\": false,\n                \"Memory\": 8,\n                \"Name\": \"ha-test\",\n                \"Networks\": [\n                    {\n                        \"Port\": 8100,\n                        \"SubnetId\": \"subnet-02bwnv4i\",\n                        \"Vip\": \"10.0.7.115\",\n                        \"VpcId\": \"vpc-kddx224l\"\n                    }\n                ],\n                \"PayMode\": 1,\n                \"Product\": \"vdb\",\n                \"Project\": \"vdb\",\n                \"Region\": \"ap-guangzhou\",\n                \"ReplicaNum\": 3,\n                \"ResourceTags\": [],\n                \"ShardNum\": 1,\n                \"Status\": \"online\",\n                \"Warning\": 0,\n                \"Zone\": \"ap-guangzhou-3\"\n            }\n        ],\n        \"RequestId\": \"2757e3ad-427f-45dc-9119-8c9cfb4ae614\",\n        \"TotalCount\": 2\n    }\n}",
+        "title": "示例1"
+      }
+    ],
+    "DisassociateSecurityGroups": [
+      {
+        "document": "用于安全组批量解绑实例。",
+        "input": "POST / HTTP/1.1\nHost: vdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DisassociateSecurityGroups\n<公共请求参数>\n\n{\n    \"SecurityGroupIds\": \"sg-dutt****\",\n    \"InstanceIds\": [\n        \"vdb-9clk****\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c7297527-0e7c-43ad-bdb1-b90fc222d43d\"\n    }\n}",
+        "title": "示例1"
+      }
+    ],
+    "ModifyDBInstanceSecurityGroups": [
+      {
+        "document": "修改实例绑定的安全组",
+        "input": "POST / HTTP/1.1\nHost: vdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDBInstanceSecurityGroups\n<公共请求参数>\n\n{\n    \"InstanceIds\": [\n        \"vdb-9clk****\"\n    ],\n    \"SecurityGroupIds\": [\n        \"sg-iqxw****\",\n        \"sg-dutt****\",\n        \"sg-eudo****\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b3a86195-eee7-4e17-8405-e1fc5810c55b\"\n    }\n}",
         "title": "示例1"
       }
     ]

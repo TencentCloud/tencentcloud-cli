@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ess DescribeOrganizationAuthStatus --cli-unfold-argument  \
-    --Operator.UserId xxxxxx \
+    --Operator.UserId yDRCLUUgygq2xun5UuO4zjEwg0vjoimj \
     --UniformSocialCreditCode  \
     --LegalName  \
     --OrganizationName 测试企业

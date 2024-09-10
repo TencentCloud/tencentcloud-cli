@@ -254,6 +254,14 @@
         "title": "查询实例事件"
       }
     ],
+    "DescribeInstanceLogDelivery": [
+      {
+        "document": "查询实例日志投递配置",
+        "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceLogDelivery\n<公共请求参数>\n\n{\n    \"InstanceId\": \"crs-ib4uuh7x\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"27d4627d-4cc7-4144-af33-ac9f52a36878\",\n        \"SlowLog\": {\n            \"Enabled\": true,\n            \"LogRegion\": \"ap-guangzhou\",\n            \"LogsetId\": \"5db981e1-473c-4f1b-a2ad-4f480c49698f\",\n            \"TopicId\": \"a78808d4-df0a-44d4-b71d-a111b1ad9170\"\n        }\n    }\n}",
+        "title": "示例1"
+      }
+    ],
     "DescribeInstanceMonitorBigKey": [
       {
         "document": "请求示例",
@@ -668,6 +676,14 @@
         "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInstanceEvent\n<公共请求参数>\n\n{\n    \"InstanceId\": \"crs-b6wst31p\",\n    \"EventId\": 10,\n    \"StartTime\": \"22:00\",\n    \"EndTime\": \"23:01\",\n    \"ExecutionDate\": \"2023-09-18\"\n}",
         "output": "{\n    \"Response\": {\n        \"EventId\": 10,\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "修改实例事件信息"
+      }
+    ],
+    "ModifyInstanceLogDelivery": [
+      {
+        "document": "开启实例日志投递，并使用新创建的日志集和日志主题",
+        "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInstanceLogDelivery\n<公共请求参数>\n\n{\n    \"InstanceId\": \"crs-ib4uuh7x\",\n    \"LogType\": \"slowlog\",\n    \"Enabled\": true,\n    \"LogsetName\": \"test-logset-name\",\n    \"TopicName\": \"test-topic-name\",\n    \"CreateIndex\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ac46037a-57a0-4fe2-a99d-93c10ef20883\"\n    }\n}",
+        "title": "示例1"
       }
     ],
     "ModifyInstanceParams": [

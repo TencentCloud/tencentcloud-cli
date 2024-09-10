@@ -5793,7 +5793,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "图片/PDF的 Base64 值。\n要求图片/PDF经Base64编码后不超过 7M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "document": "图片/PDF的 Base64 值。要求图片/PDF经Base64编码后不超过 10M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
           "example": "无",
           "member": "string",
           "name": "ImageBase64",
@@ -5802,7 +5802,7 @@
         },
         {
           "disabled": false,
-          "document": "图片/PDF的 Url 地址。\n要求图片/PDF经Base64编码后不超过 7M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "document": "图片/PDF的 Url 地址。要求图片/PDF经Base64编码后不超过 10M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
           "example": "https://xx/a.jpg",
           "member": "string",
           "name": "ImageUrl",
@@ -10447,6 +10447,16 @@
           "example": "无",
           "member": "string",
           "name": "PortraitImage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "返回类型",
+          "example": "往来港澳通行证",
+          "member": "string",
+          "name": "Type",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
