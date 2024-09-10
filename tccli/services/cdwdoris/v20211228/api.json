@@ -4471,7 +4471,7 @@
         {
           "disabled": false,
           "document": "开始时间，不填默认七天前",
-          "example": "无",
+          "example": "\"2024-07-28 00:00:00\"",
           "member": "string",
           "name": "StartTime",
           "required": false,
@@ -4480,7 +4480,7 @@
         {
           "disabled": false,
           "document": "结束时间，不填默认当前时间",
-          "example": "无",
+          "example": "\"2024-07-28 00:00:00\"",
           "member": "string",
           "name": "EndTime",
           "required": false,
@@ -4505,8 +4505,8 @@
           "type": "string"
         },
         {
-          "disabled": false,
-          "document": "错误信息",
+          "disabled": true,
+          "document": "信息，已废弃",
           "example": "无",
           "member": "string",
           "name": "Message",
@@ -4537,6 +4537,16 @@
           "name": "Operations",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息",
+          "example": "无",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {

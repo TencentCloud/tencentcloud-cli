@@ -9,8 +9,8 @@ tccli cdwdoris DescribeInstanceOperationHistory --cli-unfold-argument  \
     --InstanceId abc \
     --PageNum 1 \
     --PageSize 1 \
-    --StartTime abc \
-    --EndTime abc \
+    --StartTime 2024-07-28 00:00:00 \
+    --EndTime 2025-08-26 17:49:49 \
     --UserName abc \
     --PassWord abc
 ```

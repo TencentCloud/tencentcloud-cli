@@ -18,33 +18,29 @@ Output:
     "Response": {
         "AccountInfo": {
             "UserName": "abc",
-            "Host": "abc",
-            "UserDescription": "abc"
+            "Host": "%",
+            "UserDescription": ""
         },
         "Permissions": [
             {
-                "GlobalPermissions": [
-                    "abc"
-                ],
-                "DatabasePermissions": [
+                "GlobalPermissions": null,
+                "CatalogPermissions": [
                     {
-                        "DatabaseName": "abc",
+                        "CatalogName": "internal",
                         "Permissions": [
-                            "abc"
+                            "SELECT_PRIV",
+                            "LOAD_PRIV",
+                            "ALTER_PRIV",
+                            "CREATE_PRIV",
+                            "DROP_PRIV"
                         ]
                     }
                 ],
-                "TablePermissions": [
-                    {
-                        "TableName": "abc",
-                        "Permissions": [
-                            "abc"
-                        ]
-                    }
-                ]
+                "DatabasePermissions": null,
+                "TablePermissions": null
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "xxx-xx-xx-xx-xxxx"
     }
 }
 ```

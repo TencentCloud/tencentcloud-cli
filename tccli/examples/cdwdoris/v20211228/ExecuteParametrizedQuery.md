@@ -6,10 +6,11 @@ Input:
 
 ```
 tccli cdwdoris ExecuteParametrizedQuery --cli-unfold-argument  \
+    --InstanceId cdwdoris-xxx \
     --Database abc \
-    --Sql abc \
-    --QueryParameter.0.PropertyKey abc \
-    --QueryParameter.0.PropertyValue abc \
+    --Sql SELECT year, SUM(number) as num FROM xxx WHERE name = @name GROUP BY year ORDER BY year \
+    --QueryParameter.0.PropertyKey name \
+    --QueryParameter.0.PropertyValue William \
     --PageNum 1 \
     --PageSize 1 \
     --UserName abc \

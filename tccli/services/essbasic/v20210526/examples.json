@@ -844,6 +844,14 @@
         "title": "创建他方自动签授权链接-他方授权"
       }
     ],
+    "CreatePersonAuthCertificateImage": [
+      {
+        "document": "创建个人用户证明证书图片",
+        "input": "POST / HTTP / 1.1\nHost: essbasic.tencentcloudapi.com\nContent - Type: application / json\nX - TC - Action: CreatePersonAuthCertificateImage\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"ProxyOperator\": {\n            \"OpenId\": \"test_open_id\"\n        },\n        \"ProxyOrganizationOpenId\": \"test_org_open_id\",\n        \"AppId\": \"yDxbWUyKQ*******4zjEB8mxCcDjAyF\"\n    },\n    \"UserName\": \"典子谦\",\n    \"IdCardType\": \"ID_CARD\",\n    \"IdCardNumber\": \"620000198802020000\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AuthCertUrl\": \"https://file.test.ess.tencent.cn/bresource/resource/resource/0/0.JPG?hkey=522d****6cb5\",\n        \"RequestId\": \"69c19f7e7240\",\n        \"SerialNumber\": \"23090411***877319694\",\n        \"ValidFrom\": 1692788219,\n        \"ValidTo\": 1724324219\n    }\n}",
+        "title": "创建个人用户证明证书图片"
+      }
+    ],
     "CreateSealByImage": [
       {
         "document": "GenerateSource为SealGenerateSourceSystem表示系统生成印章",

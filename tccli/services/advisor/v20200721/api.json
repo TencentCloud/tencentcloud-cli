@@ -224,6 +224,16 @@
           "output_required": true,
           "type": "bool",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建来源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "console",
+          "member": "string",
+          "name": "CreateSource",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

@@ -1,3 +1,363 @@
+# Release 3.0.1073.1
+
+## 云顾问(advisor) 版本：2020-07-21
+
+### 第 17 次发布
+
+发布时间：2024-09-11 01:07:24
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ArchInfoData](http://document.tencentcloudapi.woa.com/document/product/1660/78752#ArchInfoData)
+
+	* 新增成员：CreateSource
+
+
+
+
+## 大模型图像创作引擎(aiart) 版本：2022-12-29
+
+### 第 13 次发布
+
+发布时间：2024-09-11 01:07:41
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [SketchToImage](http://document.tencentcloudapi.woa.com/document/product/1728/84840)
+
+
+
+## 腾讯云数据仓库 TCHouse-D(cdwdoris) 版本：2021-12-28
+
+### 第 36 次发布
+
+发布时间：2024-09-11 01:20:45
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeInstanceOperationHistory](http://document.tencentcloudapi.woa.com/document/product/1706/84575)
+
+	* 新增出参：Message
+
+
+
+
+## 混沌演练平台(cfg) 版本：2021-08-20
+
+### 第 13 次发布
+
+发布时间：2024-09-11 01:21:34
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Task](http://document.tencentcloudapi.woa.com/document/product/1694/79907#Task)
+
+	* 新增成员：TaskRegionName
+
+
+
+
+## 消息队列 CKafka 版(ckafka) 版本：2019-08-19
+
+### 第 89 次发布
+
+发布时间：2024-09-11 01:23:43
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ModifyInstanceAttributes](http://document.tencentcloudapi.woa.com/document/product/597/40832)
+
+
+修改数据结构：
+
+* [OperateResponseData](http://document.tencentcloudapi.woa.com/document/product/597/40861#OperateResponseData)
+
+	* <font color="#dd0000">**修改成员**：</font>RouteDTO
+
+
+
+
+## TDSQL MySQL 版(dcdb) 版本：2018-04-11
+
+### 第 48 次发布
+
+发布时间：2024-09-11 01:37:59
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeBackupConfigs](http://document.tencentcloudapi.woa.com/document/product/557/84842)
+* [ModifyBackupConfigs](http://document.tencentcloudapi.woa.com/document/product/557/84841)
+
+新增数据结构：
+
+* [BackupConfig](http://document.tencentcloudapi.woa.com/document/product/557/16142#BackupConfig)
+* [NewBackupConfig](http://document.tencentcloudapi.woa.com/document/product/557/16142#NewBackupConfig)
+
+
+
+## DNSPod(dnspod) 版本：2021-03-23
+
+### 第 39 次发布
+
+发布时间：2024-09-11 01:40:16
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeDomainShareUserList](http://document.tencentcloudapi.woa.com/document/product/1427/84843)
+
+新增数据结构：
+
+* [DomainShareUserInfo](http://document.tencentcloudapi.woa.com/document/product/1427/56185#DomainShareUserInfo)
+
+
+
+## 弹性 MapReduce(emr) 版本：2019-01-03
+
+### 第 63 次发布
+
+发布时间：2024-09-11 01:44:45
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateSLInstance](http://document.tencentcloudapi.woa.com/document/product/589/84849)
+* [DescribeSLInstance](http://document.tencentcloudapi.woa.com/document/product/589/84848)
+* [DescribeSLInstanceList](http://document.tencentcloudapi.woa.com/document/product/589/84847)
+* [ModifySLInstance](http://document.tencentcloudapi.woa.com/document/product/589/84846)
+* [TerminateSLInstance](http://document.tencentcloudapi.woa.com/document/product/589/84845)
+
+修改接口：
+
+* [ModifyAutoRenewFlag](http://document.tencentcloudapi.woa.com/document/product/589/84772)
+
+	* 新增入参：ComputeResourceId
+
+
+新增数据结构：
+
+* [SLInstanceInfo](http://document.tencentcloudapi.woa.com/document/product/589/33981#SLInstanceInfo)
+* [ZoneSetting](http://document.tencentcloudapi.woa.com/document/product/589/33981#ZoneSetting)
+
+
+
+## Elasticsearch Service(es) 版本：2018-04-16
+
+### 第 73 次发布
+
+发布时间：2024-09-11 01:45:53
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeSpaceKibanaTools](http://document.tencentcloudapi.woa.com/document/product/845/84850)
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 153 次发布
+
+发布时间：2024-09-11 01:47:39
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreatePersonAuthCertificateImage](http://document.tencentcloudapi.woa.com/document/product/1595/84851)
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 人脸核身(faceid) 版本：2018-03-01
+
+### 第 68 次发布
+
+发布时间：2024-09-11 01:48:42
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [JapanIDCard](http://document.tencentcloudapi.woa.com/document/product/1007/41958#JapanIDCard)
+* [TaiWanIDCard](http://document.tencentcloudapi.woa.com/document/product/1007/41958#TaiWanIDCard)
+
+修改数据结构：
+
+* [CardInfo](http://document.tencentcloudapi.woa.com/document/product/1007/41958#CardInfo)
+
+	* 新增成员：TaiWanIDCard, JapanIDCard
+
+* [NormalCardInfo](http://document.tencentcloudapi.woa.com/document/product/1007/41958#NormalCardInfo)
+
+	* 新增成员：JapanIDCard, TaiWanIDCard
+
+
+
+
+## 云数据库 MariaDB(mariadb) 版本：2017-03-12
+
+### 第 43 次发布
+
+发布时间：2024-09-11 02:01:40
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeBackupConfigs](http://document.tencentcloudapi.woa.com/document/product/237/84853)
+* [ModifyBackupConfigs](http://document.tencentcloudapi.woa.com/document/product/237/84852)
+
+新增数据结构：
+
+* [BackupConfig](http://document.tencentcloudapi.woa.com/document/product/237/16191#BackupConfig)
+* [NewBackupConfig](http://document.tencentcloudapi.woa.com/document/product/237/16191#NewBackupConfig)
+
+
+
+## 云数据库Redis(redis) 版本：2018-04-12
+
+### 第 47 次发布
+
+发布时间：2024-09-11 02:10:46
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeInstanceLogDelivery](http://document.tencentcloudapi.woa.com/document/product/239/84856)
+* [ModifyInstanceLogDelivery](http://document.tencentcloudapi.woa.com/document/product/239/84855)
+
+新增数据结构：
+
+* [LogDeliveryInfo](http://document.tencentcloudapi.woa.com/document/product/239/20022#LogDeliveryInfo)
+
+
+
+## 边缘安全加速平台(teo) 版本：2022-09-01
+
+### 第 39 次发布
+
+发布时间：2024-09-11 02:24:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [OriginDetail](http://document.tencentcloudapi.woa.com/document/product/1738/81211#OriginDetail)
+
+* [OriginInfo](http://document.tencentcloudapi.woa.com/document/product/1738/81211#OriginInfo)
+
+
+
+
+## 边缘安全加速平台(teo) 版本：2022-01-06
+
+
+
+## 微服务平台 TSF(tsf) 版本：2018-03-26
+
+### 第 51 次发布
+
+发布时间：2024-09-11 02:30:15
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateAllGatewayApiAsync](http://document.tencentcloudapi.woa.com/document/product/649/50642)
+
+	* 新增入参：NamespaceId
+
+
+修改数据结构：
+
+* [ApiRateLimitRule](http://document.tencentcloudapi.woa.com/document/product/649/36099#ApiRateLimitRule)
+
+	* 新增成员：Limit, Offset, AppId
+
+* [GatewayGroupApiVo](http://document.tencentcloudapi.woa.com/document/product/649/36099#GatewayGroupApiVo)
+
+	* <font color="#dd0000">**修改成员**：</font>ApiId, Path, MicroserviceName, Method, NamespaceName
+
+
+
+
+## 向量数据库(vdb) 版本：2023-06-16
+
+### 第 3 次发布
+
+发布时间：2024-09-11 02:32:19
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [AssociateSecurityGroups](http://document.tencentcloudapi.woa.com/document/product/1758/84862)
+* [DescribeDBSecurityGroups](http://document.tencentcloudapi.woa.com/document/product/1758/84861)
+* [DescribeInstanceNodes](http://document.tencentcloudapi.woa.com/document/product/1758/84857)
+* [DisassociateSecurityGroups](http://document.tencentcloudapi.woa.com/document/product/1758/84860)
+* [ModifyDBInstanceSecurityGroups](http://document.tencentcloudapi.woa.com/document/product/1758/84859)
+
+新增数据结构：
+
+* [Inbound](http://document.tencentcloudapi.woa.com/document/product/1758/83305#Inbound)
+* [NodeInfo](http://document.tencentcloudapi.woa.com/document/product/1758/83305#NodeInfo)
+* [Outbound](http://document.tencentcloudapi.woa.com/document/product/1758/83305#Outbound)
+* [SecurityGroup](http://document.tencentcloudapi.woa.com/document/product/1758/83305#SecurityGroup)
+
+
+
 # Release 3.0.1072.1
 
 ## 大模型图像创作引擎(aiart) 版本：2022-12-29

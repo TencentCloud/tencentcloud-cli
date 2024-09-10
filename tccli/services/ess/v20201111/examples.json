@@ -1439,7 +1439,7 @@
     "DescribeOrganizationAuthStatus": [
       {
         "document": "查询企业认证状态",
-        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOrganizationAuthStatus\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"xxxxxx\"\n    },\n    \"UniformSocialCreditCode\": \"\",\n    \"LegalName\": \"\",\n    \"OrganizationName\": \"测试企业\"\n}",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOrganizationAuthStatus\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDRCLUUgygq2xun5UuO4zjEwg0vjoimj\"\n    },\n    \"UniformSocialCreditCode\": \"\",\n    \"LegalName\": \"\",\n    \"OrganizationName\": \"测试企业\"\n}",
         "output": "{\n    \"Response\": {\n        \"AuthRecords\": [\n            {\n                \"AuditStatus\": 0,\n                \"AuthType\": 3,\n                \"OperatorMobile\": \"132****0000\",\n                \"OperatorName\": \"典*谦\"\n            }\n        ],\n        \"AuthStatus\": 2,\n        \"IsVerified\": true,\n        \"RequestId\": \"s1687254031099376002\"\n    }\n}",
         "title": "查询企业认证状态"
       }

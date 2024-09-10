@@ -1,7 +1,7 @@
 {
   "actions": {
     "ApplyCardVerification": {
-      "document": "海外证件识别接口\n\n支持的国家卡证类型以及是否需要卡证背面的说明如下列表：\n<table>\n          <thead>\n          <tr>\n              <td  style=\"width:200px\">国家Nationality</td>\n              <td style=\"width:200px\">卡证CardType</td>\n              <td style=\"width:200px\">是否需要背面</td>\n          </tr>\n      </thead>\n      <tbody>\n          <tr>\n              <td>印度尼西亚</td>\n              <td>身份证</td>\n              <td>否</td>\n          </tr>\n          <tr>\n              <td>印度尼西亚</td>\n              <td>驾照</td>\n              <td>否</td>\n          </tr>\n          <tr>\n              <td>香港</td>\n              <td>身份证</td>\n              <td>是</td>\n          </tr>\n          <tr>\n              <td>泰国</td>\n              <td>身份证</td>\n              <td>否</td>\n          </tr>\n          <tr>\n              <td>泰国</td>\n              <td>驾照</td>\n              <td>是</td>\n          </tr>\n          <tr>\n              <td>马来西亚</td>\n              <td>身份证</td>\n              <td>是</td>\n          </tr>\n          <tr>\n              <td>马来西亚</td>\n              <td>驾照</td>\n              <td>是</td>\n          </tr>\n          <tr>\n              <td>新加坡</td>\n              <td>身份证</td>\n              <td>是</td>\n          </tr>\n          <tr>\n              <td>新加坡</td>\n              <td>驾照</td>\n              <td>是</td>\n          </tr>\n          <tr>\n              <td>菲律宾</td>\n              <td>身份证</td>\n              <td>是</td>\n          </tr>\n          <tr>\n              <td>菲律宾</td>\n              <td>驾照</td>\n              <td>否</td>\n          </tr>\n          <tr>\n              <td>日本</td>\n              <td>身份证</td>\n              <td>是</td>\n          </tr>\n          <tr>\n              <td>日本</td>\n              <td>驾照</td>\n              <td>否</td>\n          </tr>\n    </tbody>\n    </table>",
+      "document": "海外证件识别接口\n\n支持的国家卡证类型以及是否需要卡证背面的说明如下列表：\n<table>\n          <thead>\n          <tr>\n              <td  style=\"width:200px\">国家Nationality</td>\n              <td style=\"width:200px\">卡证CardType</td>\n              <td style=\"width:200px\">是否需要背面</td>\n          </tr>\n      </thead>\n      <tbody>\n          <tr>\n              <td>印度尼西亚</td>\n              <td>身份证</td>\n              <td>否</td>\n          </tr>\n          <tr>\n              <td>印度尼西亚</td>\n              <td>驾照</td>\n              <td>否</td>\n          </tr>\n          <tr>\n              <td>香港</td>\n              <td>身份证</td>\n              <td>是</td>\n          </tr>\n          <tr>\n              <td>泰国</td>\n              <td>身份证</td>\n              <td>否</td>\n          </tr>\n          <tr>\n              <td>泰国</td>\n              <td>驾照</td>\n              <td>是</td>\n          </tr>\n          <tr>\n              <td>马来西亚</td>\n              <td>身份证</td>\n              <td>是</td>\n          </tr>\n          <tr>\n              <td>马来西亚</td>\n              <td>驾照</td>\n              <td>是</td>\n          </tr>\n          <tr>\n              <td>新加坡</td>\n              <td>身份证</td>\n              <td>是</td>\n          </tr>\n          <tr>\n              <td>新加坡</td>\n              <td>驾照</td>\n              <td>是</td>\n          </tr>\n          <tr>\n              <td>菲律宾</td>\n              <td>身份证</td>\n              <td>是</td>\n          </tr>\n          <tr>\n              <td>菲律宾</td>\n              <td>驾照</td>\n              <td>否</td>\n          </tr>\n          <tr>\n              <td>日本</td>\n              <td>身份证</td>\n              <td>是</td>\n          </tr>\n          <tr>\n              <td>日本</td>\n              <td>驾照</td>\n              <td>否</td>\n          </tr>\n          <tr>\n              <td>中国澳门</td>\n              <td>身份证</td>\n              <td>是</td>\n          </tr>\n          <tr>\n              <td>中国台湾</td>\n              <td>身份证</td>\n              <td>是</td>\n          </tr>\n    </tbody>\n    </table>",
       "input": "ApplyCardVerificationRequest",
       "name": "发起证件识别",
       "output": "ApplyCardVerificationResponse",
@@ -525,8 +525,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "证件国家\n\n",
-          "example": "IDN：Indonesia; HKG: Hong Kong;  THA: Thailand;  MYS: Malaysia;  SGP: Singapore; JPN: Japan; PHL: Philippines;   AUTO:  支持200+国家的卡证，若有需求请联系商务",
+          "document": "证件国家\nIDN：Indonesia;\nHKG: Hong Kong\nTHA: Thailand\nMYS: Malaysia\nSGP: Singapore\nJPN: Japan\nPHL: Philippines\nMAC: Macao\nCHN:ChinaPermit\nTWN:TaiWan\nAUTO:  支持200+国家的卡证，若有需求请联系商务",
+          "example": "IDN",
           "member": "string",
           "name": "Nationality",
           "required": true,
@@ -534,8 +534,8 @@
         },
         {
           "disabled": false,
-          "document": "证件类型\n",
-          "example": "ID_CARD; PASSPORT; DRIVING_LICENSE; AUTO 支持上述3类卡证的自动识别",
+          "document": "证件类型\nID_CARD; PASSPORT; DRIVING_LICENSE; AUTO 支持上述3类卡证的自动识别",
+          "example": "ID_CARD",
           "member": "string",
           "name": "CardType",
           "required": true,
@@ -692,7 +692,7 @@
         },
         {
           "disabled": false,
-          "document": "认证使用的卡证类型，当前支持:  \n\n1. HK (默认): 中国香港身份证\n2. ML: 马来西亚身份证\n3. IndonesiaIDCard: 印度尼西亚身份证\n4. PhilippinesVoteID: 菲律宾选民卡\n5. PhilippinesDrivingLicense: 菲律宾驾驶证\n6. PhilippinesTinID: 菲律宾TinID\n7. PhilippinesSSSID: 菲律宾SSSID\n8. PhilippinesUMID: 菲律宾UMID\n9. MLIDPassport: 港澳台地区以及境外护照\n10. MacaoIDCard: 澳门身份证\n11. ThailandIDCard: 泰国身份证\n12. MainlandIDCard: 大陆身份证\n13. SingaporeIDCard: 新加坡身份证\n14. JapanIDCard: 日本身份证\n15. MLDrivingLicense: 马来西亚驾驶证\n16. IndonesiaDrivingLicense: 印度尼西亚驾驶证\n17. ThailandDrivingLicense: 泰国驾驶证\n18. SingaporeDrivingLicense: 新加坡驾驶证\n19. JapanDrivingLicense: 日本驾驶证",
+          "document": "认证使用的卡证类型，当前支持:  \n\n1. HK (默认): 中国香港身份证\n2. ML: 马来西亚身份证\n3. IndonesiaIDCard: 印度尼西亚身份证\n4. PhilippinesVoteID: 菲律宾选民卡\n5. PhilippinesDrivingLicense: 菲律宾驾驶证\n6. PhilippinesTinID: 菲律宾TinID\n7. PhilippinesSSSID: 菲律宾SSSID\n8. PhilippinesUMID: 菲律宾UMID\n9. MLIDPassport: 港澳台地区以及境外护照\n10. MacaoIDCard: 澳门身份证\n11. ThailandIDCard: 泰国身份证\n12. MainlandIDCard: 大陆身份证\n13. SingaporeIDCard: 新加坡身份证\n14. JapanIDCard: 日本身份证\n15. MLDrivingLicense: 马来西亚驾驶证\n16. IndonesiaDrivingLicense: 印度尼西亚驾驶证\n17. ThailandDrivingLicense: 泰国驾驶证\n18. SingaporeDrivingLicense: 新加坡驾驶证\n19. JapanDrivingLicense: 日本驾驶证\n20. TaiWanIDCard：台湾身份证",
           "example": "HK",
           "member": "string",
           "name": "IdCardType",
@@ -1309,7 +1309,7 @@
         },
         {
           "disabled": false,
-          "document": "澳门身份证\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "中国澳门身份证\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MacaoIDCard",
           "name": "MacaoIDCard",
@@ -1323,6 +1323,26 @@
           "example": "无",
           "member": "MainlandIDCard",
           "name": "MainlandIDCard",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "中国台湾身份证\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TaiWanIDCard",
+          "name": "TaiWanIDCard",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "日本身份证\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "JapanIDCard",
+          "name": "JapanIDCard",
           "output_required": false,
           "type": "object",
           "value_allowed_null": true
@@ -6767,6 +6787,72 @@
       ],
       "usage": "out"
     },
+    "JapanIDCard": {
+      "document": "日本身份证",
+      "members": [
+        {
+          "disabled": false,
+          "document": "名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FullName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "身份证\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LicenseNumber",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "年龄\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Age",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "生日\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Birthday",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "到期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ExpirationDate",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FormattedAddress",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "LivenessCompareRequest": {
       "document": "LivenessCompare请求参数结构体",
       "members": [
@@ -7757,6 +7843,26 @@
           "example": "无",
           "member": "MainlandIDCard",
           "name": "MainlandIDCard",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "日本身份证\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "JapanIDCard",
+          "name": "JapanIDCard",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "台湾身份证\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TaiWanIDCard",
+          "name": "TaiWanIDCard",
           "output_required": false,
           "type": "object",
           "value_allowed_null": true
@@ -9512,6 +9618,62 @@
           "example": "无",
           "member": "string",
           "name": "DateOfIssue",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TaiWanIDCard": {
+      "document": "中国台湾身份证",
+      "members": [
+        {
+          "disabled": false,
+          "document": "名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FullName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "身份证\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LicenseNumber",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "性别\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Sex",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "发证城市\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "IssuedCountry",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "注册号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RegistrationNumber",
           "output_required": false,
           "type": "string",
           "value_allowed_null": true

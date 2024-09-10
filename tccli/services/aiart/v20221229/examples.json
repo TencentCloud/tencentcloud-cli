@@ -56,6 +56,14 @@
         "title": "成功调用并生成图片"
       }
     ],
+    "SketchToImage": [
+      {
+        "document": "成功调用并生成图片",
+        "input": "POST / HTTP/1.1\nHost: aiart.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SketchToImage\n<公共请求参数>\n\n{\n    \"InputUrl\": \"https://xxx.com/test.jpg\",\n    \"Prompt\": \"backpack,real picture quality, fabric texture, fine, cartoon\",\n    \"RspImgType\": \"url\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0d0728ed-f777-4861-aa4b-5a6167daa0b6\",\n        \"ResultImage\": \"https://result.jpg\"\n    }\n}",
+        "title": "成功调用并生成图片"
+      }
+    ],
     "SubmitDrawPortraitJob": [
       {
         "document": "调用成功",

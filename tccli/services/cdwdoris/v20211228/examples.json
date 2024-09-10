@@ -277,7 +277,7 @@
     "DescribeInstanceOperationHistory": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceOperationHistory\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"PageNum\": 1,\n    \"PageSize\": 1,\n    \"StartTime\": \"abc\",\n    \"EndTime\": \"abc\",\n    \"UserName\": \"abc\",\n    \"PassWord\": \"abc\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceOperationHistory\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"PageNum\": 1,\n    \"PageSize\": 1,\n    \"StartTime\": \"2024-07-28 00:00:00\",\n    \"EndTime\": \"2025-08-26 17:49:49\",\n    \"UserName\": \"abc\",\n    \"PassWord\": \"abc\"\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Operations\": [\n            {\n                \"Name\": \"abc\",\n                \"Result\": \"abc\",\n                \"Desc\": \"abc\",\n                \"Level\": \"abc\",\n                \"LevelDesc\": \"abc\",\n                \"StartTime\": \"abc\",\n                \"EndTime\": \"abc\",\n                \"ResultDesc\": \"abc\",\n                \"OperateUin\": \"abc\",\n                \"JobId\": 0,\n                \"OperationDetail\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "查询操作记录"
       }
@@ -398,7 +398,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserPolicy\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"UserName\": \"abc\",\n    \"PassWord\": \"abc\",\n    \"WhiteHost\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"AccountInfo\": {\n            \"UserName\": \"abc\",\n            \"Host\": \"abc\",\n            \"UserDescription\": \"abc\"\n        },\n        \"Permissions\": [\n            {\n                \"GlobalPermissions\": [\n                    \"abc\"\n                ],\n                \"DatabasePermissions\": [\n                    {\n                        \"DatabaseName\": \"abc\",\n                        \"Permissions\": [\n                            \"abc\"\n                        ]\n                    }\n                ],\n                \"TablePermissions\": [\n                    {\n                        \"TableName\": \"abc\",\n                        \"Permissions\": [\n                            \"abc\"\n                        ]\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"AccountInfo\": {\n            \"UserName\": \"abc\",\n            \"Host\": \"%\",\n            \"UserDescription\": \"\"\n        },\n        \"Permissions\": [\n            {\n                \"GlobalPermissions\": null,\n                \"CatalogPermissions\": [\n                    {\n                        \"CatalogName\": \"internal\",\n                        \"Permissions\": [\n                            \"SELECT_PRIV\",\n                            \"LOAD_PRIV\",\n                            \"ALTER_PRIV\",\n                            \"CREATE_PRIV\",\n                            \"DROP_PRIV\"\n                        ]\n                    }\n                ],\n                \"DatabasePermissions\": null,\n                \"TablePermissions\": null\n            }\n        ],\n        \"RequestId\": \"xxx-xx-xx-xx-xxxx\"\n    }\n}",
         "title": "查询"
       }
     ],
@@ -421,7 +421,7 @@
     "ExecuteParametrizedQuery": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExecuteParametrizedQuery\n<公共请求参数>\n\n{\n    \"Database\": \"abc\",\n    \"Sql\": \"abc\",\n    \"QueryParameter\": [\n        {\n            \"PropertyKey\": \"abc\",\n            \"PropertyValue\": \"abc\"\n        }\n    ],\n    \"PageNum\": 1,\n    \"PageSize\": 1,\n    \"UserName\": \"abc\",\n    \"PassWord\": \"abc\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExecuteParametrizedQuery\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdwdoris-xxx\",\n    \"Database\": \"abc\",\n    \"Sql\": \"SELECT year, SUM(number) as num FROM xxx WHERE name = @name GROUP BY year ORDER BY year\",\n    \"QueryParameter\": [\n        {\n            \"PropertyKey\": \"name\",\n            \"PropertyValue\": \"William\"\n        }\n    ],\n    \"PageNum\": 1,\n    \"PageSize\": 1,\n    \"UserName\": \"abc\",\n    \"PassWord\": \"abc\"\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Fields\": [\n            \"abc\"\n        ],\n        \"FieldTypes\": [\n            \"abc\"\n        ],\n        \"Rows\": [\n            {\n                \"DataRow\": [\n                    \"abc\"\n                ]\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "带参数查询"
       }
