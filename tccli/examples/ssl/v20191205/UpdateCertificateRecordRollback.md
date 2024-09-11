@@ -14,7 +14,7 @@ Output:
 {
     "Response": {
         "DeployRecordId": 0,
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

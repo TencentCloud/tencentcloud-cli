@@ -1,0 +1,121 @@
+{
+  "actions": {
+    "CreateStorageCredentials": {
+      "document": "用于按指定策略，生成专业版应用的临时访问凭证，比如生成用于客户端上传的临时凭证。",
+      "input": "CreateStorageCredentialsRequest",
+      "name": "创建应用存储临时访问凭证",
+      "output": "CreateStorageCredentialsResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2024-07-18",
+    "api_brief": "介绍如何使用API对云点播进行操作，如事件通知、视频处理、媒资管理等。",
+    "serviceNameCN": "云点播",
+    "serviceShortName": "vod"
+  },
+  "objects": {
+    "CreateStorageCredentialsRequest": {
+      "document": "CreateStorageCredentials请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<b>点播[应用](/document/product/266/14574) ID。</b>",
+          "example": "123456789012",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "按照下方语法组装好策略后，先序列化为字符串，再做 urlencode，结果作为 Policy 字段入参。服务端会对该字段做 urldecode，并按解析后的策略授予临时访问凭证权限，请按规范传入参数。\n注意： \n1.策略语法参照[访问管理策略](/document/product/598/10603)。\n2.策略中不能包含 principal 元素。\n3.策略的 action 元素仅支持：<li>name/vod:PutObject;</li><li>name/vod:ListParts;</li><li>name/vod:PostObject;</li><li>name/vod:InitiateMultipartUpload;</li><li>name/vod:UploadPart;</li><li>name/vod:CompleteMultipartUpload;</li><li>name/vod:AbortMultipartUpload;</li><li>name/vod:ListMultipartUploads;</li>4.策略的 resource 元素填写格式为：qcs::vod::uid/[账号AppID]:prefix//[子应用ID]/[存储桶ID]/[存储路径]，其中账号AppID、子应用ID、存储桶ID和存储路径要按需填写，其他内容不允许改动，例：qcs::vod::uid/1:prefix//1/1/path。\n",
+          "example": "%7B%22statement%22%3A%5B%7B%22action%22%3A%5B%22name%2Fvod%3APutObject%22%2C%22name%2Fvod%3AListParts%22%2C%22name%2Fvod%3APostObject%22%2C%22name%2Fvod%3AInitiateMultipartUpload%22%2C%22name%2Fvod%3AUploadPart%22%2C%22name%2Fvod%3ACompleteMultipartUpload%22%2C%22name%2Fvod%3AAbortMultipartUpload%22%2C%22name%2Fvod%3AListMultipartUploads%22%5D%2C%22effect%22%3A%22allow%22%2C%22resource%22%3A%5B%22qcs%3A%3Avod%3A%3Auid%2F1%3Aprefix%2F%2F1%2F1%2Fpath%22%5D%7D%5D%2C%22version%22%3A%222.0%22%7D",
+          "member": "string",
+          "name": "Policy",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指定临时证书的有效期，单位：秒。\n默认 1800 秒，最大 129600 秒。",
+          "example": "1800",
+          "member": "uint64",
+          "name": "DurationSeconds",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateStorageCredentialsResponse": {
+      "document": "CreateStorageCredentials返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "临时访问凭证。",
+          "example": "无",
+          "member": "Credentials",
+          "name": "Credentials",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Credentials": {
+      "document": "临时证书。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "秘钥 ID。",
+          "example": "AKID8GFED7s****QrFXkmb",
+          "member": "string",
+          "name": "AccessKeyId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "秘钥 Key。",
+          "example": "iDVjy****tNzX",
+          "member": "string",
+          "name": "SecretAccessKey",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "token。token长度和绑定的策略有关，最长不超过4096字节。",
+          "example": "DmDnufzndGdwbCgFOnOdknwD8_uqeFwN0LqvDpfgHA6kBp1uMsIVRAil87ENVCnKZwe5GXUlPr7KTgAzTFf_3duZMpscnGh6Iyg7cjo_Hr4tIcMiZaK6NI8DO_fX5gcLqsI8qKeTaw2cVekzXnynAW",
+          "member": "string",
+          "name": "SessionToken",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "凭据的过期时间。",
+          "example": "1800",
+          "member": "datetime_iso",
+          "name": "Expiration",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

@@ -116,6 +116,14 @@
         "title": "成功"
       }
     ],
+    "CallISAPI": [
+      {
+        "document": "调用成功",
+        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CallISAPI\n<公共请求参数>\n\n{\n    \"DeviceId\": \"73dfd1e2-3210-4dc4-b8b3-b5d548865e07\",\n    \"Url\": \"GET /ISAPI/ContentMgmt/InputProxy/channels/status\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"OutputData\": \"<?xml version=\\\"1.0\\\" encoding=\\\"UTF-8\\\"?>\\n<ResponseStatus version=\\\"2.0\\\" xmlns=\\\"http://www.hikvision.com/ver20/XMLSchema\\\">\\n<requestURL>/ISAPI/ContentMgmt/InputProxy/channels/status</requestURL>\\n<statusCode>4</statusCode>\\n<statusString>Invalid Operation</statusString>\\n<subStatusCode>notSupport</subStatusCode>\\n</ResponseStatus>\\n\"\n        },\n        \"RequestId\": \"8088ea32-0ee1-4ed4-bf9b-d539501c0aed\"\n    }\n}",
+        "title": "成功"
+      }
+    ],
     "CheckDomain": [
       {
         "document": " ",

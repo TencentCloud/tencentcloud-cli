@@ -1027,7 +1027,7 @@
           "example": "3edappId",
           "member": "string",
           "name": "MiniProgramAppId",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
@@ -9423,7 +9423,7 @@
           "example": "3edappId",
           "member": "string",
           "name": "MiniProgramAppId",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {

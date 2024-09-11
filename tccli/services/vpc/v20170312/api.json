@@ -8741,6 +8741,15 @@
           "name": "SecurityGroupPolicySet",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "指定绑定的标签列表，例如：[{\"Key\": \"city\", \"Value\": \"shanghai\"}]。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

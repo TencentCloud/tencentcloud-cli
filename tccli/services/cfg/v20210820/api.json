@@ -963,7 +963,7 @@
           "example": "“测试数据”",
           "member": "string",
           "name": "LogMessage",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

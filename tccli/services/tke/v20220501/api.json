@@ -1,10 +1,24 @@
 {
   "actions": {
+    "CreateHealthCheckPolicy": {
+      "document": "创建健康检测策略",
+      "input": "CreateHealthCheckPolicyRequest",
+      "name": "创建健康检测策略",
+      "output": "CreateHealthCheckPolicyResponse",
+      "status": "online"
+    },
     "CreateNodePool": {
       "document": "创建 TKE 节点池",
       "input": "CreateNodePoolRequest",
       "name": "创建 TKE 节点池",
       "output": "CreateNodePoolResponse",
+      "status": "online"
+    },
+    "DeleteHealthCheckPolicy": {
+      "document": "删除健康检测策略",
+      "input": "DeleteHealthCheckPolicyRequest",
+      "name": "删除健康检测策略",
+      "output": "DeleteHealthCheckPolicyResponse",
       "status": "online"
     },
     "DeleteNodePool": {
@@ -21,11 +35,39 @@
       "output": "DescribeClusterInstancesResponse",
       "status": "online"
     },
+    "DescribeHealthCheckPolicies": {
+      "document": "查询健康检测策略",
+      "input": "DescribeHealthCheckPoliciesRequest",
+      "name": "查询健康检测策略",
+      "output": "DescribeHealthCheckPoliciesResponse",
+      "status": "online"
+    },
+    "DescribeHealthCheckPolicyBindings": {
+      "document": "查询健康检测策略绑定关系",
+      "input": "DescribeHealthCheckPolicyBindingsRequest",
+      "name": "查询健康检测策略绑定关系",
+      "output": "DescribeHealthCheckPolicyBindingsResponse",
+      "status": "online"
+    },
+    "DescribeHealthCheckTemplate": {
+      "document": "查询健康检测策略模板",
+      "input": "DescribeHealthCheckTemplateRequest",
+      "name": "查询健康检测策略模板",
+      "output": "DescribeHealthCheckTemplateResponse",
+      "status": "online"
+    },
     "DescribeNodePools": {
       "document": "查询 TKE 节点池列表",
       "input": "DescribeNodePoolsRequest",
       "name": "查询 TKE 节点池列表",
       "output": "DescribeNodePoolsResponse",
+      "status": "online"
+    },
+    "ModifyHealthCheckPolicy": {
+      "document": "修改健康检测策略",
+      "input": "ModifyHealthCheckPolicyRequest",
+      "name": "修改健康检测策略",
+      "output": "ModifyHealthCheckPolicyResponse",
       "status": "online"
     },
     "ModifyNodePool": {
@@ -150,6 +192,52 @@
         }
       ],
       "usage": "out"
+    },
+    "CreateHealthCheckPolicyRequest": {
+      "document": "CreateHealthCheckPolicy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cls-xxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "健康检测策略",
+          "example": "无",
+          "member": "HealthCheckPolicy",
+          "name": "HealthCheckPolicy",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateHealthCheckPolicyResponse": {
+      "document": "CreateHealthCheckPolicy返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "健康检测策略名称",
+          "example": "HC1",
+          "member": "string",
+          "name": "HealthCheckPolicyName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CreateNativeNodePoolParam": {
       "document": "原生节点池创建参数",
@@ -571,6 +659,42 @@
       ],
       "usage": "both"
     },
+    "DeleteHealthCheckPolicyRequest": {
+      "document": "DeleteHealthCheckPolicy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群 ID",
+          "example": "cls-xxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "健康检测策略名称",
+          "example": "NP1",
+          "member": "string",
+          "name": "HealthCheckPolicyName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteHealthCheckPolicyResponse": {
+      "document": "DeleteHealthCheckPolicy返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteNodePoolRequest": {
       "document": "DeleteNodePool请求参数结构体",
       "members": [
@@ -690,6 +814,181 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeHealthCheckPoliciesRequest": {
+      "document": "DescribeHealthCheckPolicies请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群 ID",
+          "example": "cls-xxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "·  HealthCheckPolicyName\n    按照【健康检测策略名称】进行过滤。\n    类型：String\n    必选：否",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "最大输出条数，默认20，最大为100",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeHealthCheckPoliciesResponse": {
+      "document": "DescribeHealthCheckPolicies返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "健康检测策略数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "HC1",
+          "member": "HealthCheckPolicy",
+          "name": "HealthCheckPolicies",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数组总数目\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeHealthCheckPolicyBindingsRequest": {
+      "document": "DescribeHealthCheckPolicyBindings请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群 ID",
+          "example": "cls-xxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "·  HealthCheckPolicyName\n    按照【健康检测规则名称】进行过滤。\n    类型：String\n    必选：否",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filter",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "最大输出条数，默认20，最大为100",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认0",
+          "example": "2",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeHealthCheckPolicyBindingsResponse": {
+      "document": "DescribeHealthCheckPolicyBindings返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "健康检测规则数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "HC1",
+          "member": "HealthCheckPolicyBinding",
+          "name": "HealthCheckPolicyBindings",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "健康检测规则数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeHealthCheckTemplateRequest": {
+      "document": "DescribeHealthCheckTemplate请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeHealthCheckTemplateResponse": {
+      "document": "DescribeHealthCheckTemplate返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "健康检测策略模板",
+          "example": "无",
+          "member": "HealthCheckTemplate",
+          "name": "HealthCheckTemplate",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -927,6 +1226,196 @@
         }
       ],
       "usage": "in"
+    },
+    "HealthCheckPolicy": {
+      "document": "健康检测规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "健康检测策略名称",
+          "example": "Node-pool1",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "健康检测策略规则列表",
+          "example": "无",
+          "member": "HealthCheckPolicyRule",
+          "name": "Rules",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "HealthCheckPolicyBinding": {
+      "document": "健康检测策略和节点池的绑定关系",
+      "members": [
+        {
+          "disabled": false,
+          "document": "健康检测策略名称",
+          "example": "Node-pool1",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则创建时间",
+          "example": "2021-01-20",
+          "member": "string",
+          "name": "CreatedAt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "关联节点池数组",
+          "example": "无",
+          "member": "string",
+          "name": "NodePools",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "HealthCheckPolicyRule": {
+      "document": "健康检测规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "健康检测规则",
+          "example": "KubeletHealth",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否检测此项目",
+          "example": "true",
+          "member": "bool",
+          "name": "Enabled",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否启用修复",
+          "example": "true",
+          "member": "bool",
+          "name": "AutoRepairEnabled",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "HealthCheckTemplate": {
+      "document": "健康检测模板",
+      "members": [
+        {
+          "disabled": false,
+          "document": "健康检测项",
+          "example": "无",
+          "member": "HealthCheckTemplateRule",
+          "name": "Rules",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "HealthCheckTemplateRule": {
+      "document": "健康检测模板规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "健康检测项目名称",
+          "example": "KubeletHealth",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "健康检测规则描述",
+          "example": "Check kubelet health",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "修复动作",
+          "example": "Reboot",
+          "member": "string",
+          "name": "RepairAction",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "修复影响",
+          "example": "Reboot VM",
+          "member": "string",
+          "name": "RepairEffect",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否建议开启检测",
+          "example": "true",
+          "member": "bool",
+          "name": "ShouldEnable",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否建议修复",
+          "example": "true",
+          "member": "bool",
+          "name": "ShouldRepair",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "问题严重程度",
+          "example": "general",
+          "member": "string",
+          "name": "Severity",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "Instance": {
       "document": "集群的实例信息",
@@ -1457,6 +1946,42 @@
         }
       ],
       "usage": "out"
+    },
+    "ModifyHealthCheckPolicyRequest": {
+      "document": "ModifyHealthCheckPolicy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群 ID",
+          "example": "cls-xxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "健康检测策略",
+          "example": "无",
+          "member": "HealthCheckPolicy",
+          "name": "HealthCheckPolicy",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyHealthCheckPolicyResponse": {
+      "document": "ModifyHealthCheckPolicy返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ModifyNodePoolRequest": {
       "document": "ModifyNodePool请求参数结构体",

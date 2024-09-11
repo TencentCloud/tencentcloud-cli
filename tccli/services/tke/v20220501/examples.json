@@ -1,11 +1,27 @@
 {
   "actions": {
+    "CreateHealthCheckPolicy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateHealthCheckPolicy\n<公共请求参数>\n\n{\n    \"ClusterId\": \"xx\",\n    \"HealthCheckPolicy\": {\n        \"Name\": \"NP1\",\n        \"Rules\": []\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"HealthCheckPolicyName\": \"NP1\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "创建托管节点池健康检测策略"
+      }
+    ],
     "CreateNodePool": [
       {
         "document": "创建 TKE 节点池",
         "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateNodePool\n<公共请求参数>\n\n{\n    \"DeletionProtection\": true,\n    \"Name\": \"nodepool\",\n    \"Tags\": [\n        {\n            \"ResourceType\": \"machine\",\n            \"Tags\": [\n                {\n                    \"Value\": \"\",\n                    \"Key\": \"\"\n                }\n            ]\n        }\n    ],\n    \"Labels\": [\n        {\n            \"Name\": \"\",\n            \"Value\": \"\"\n        }\n    ],\n    \"ClusterId\": \"cls-3g5rc2ts\",\n    \"Taints\": [\n        {\n            \"Value\": \"\",\n            \"Key\": \"\",\n            \"Effect\": \"\"\n        }\n    ],\n    \"Unschedulable\": true,\n    \"Type\": \"\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"604fea70-fcc3-43b5-b17c-d2a5c8df4c16\",\n        \"NodePoolId\": \"np-7cxt3lom\"\n    }\n}",
         "title": "创建 TKE 节点池"
+      }
+    ],
+    "DeleteHealthCheckPolicy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteHealthCheckPolicy\n<公共请求参数>\n\n{\n    \"ClusterId\": \"xx\",\n    \"HealthCheckPolicyName\": \"NP1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "创建托管节点池健康检测策略"
       }
     ],
     "DeleteNodePool": [
@@ -24,12 +40,50 @@
         "title": "查询集群实例信息"
       }
     ],
+    "DescribeHealthCheckPolicies": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeHealthCheckPolicies\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"A\"\n            ],\n            \"Name\": \"HealthCheckPolicyName\"\n        }\n    ],\n    \"ClusterId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"HealthCheckPolicies\": [\n            {\n                \"Name\": \"NP1\",\n                \"Rules\": [\n                    {\n                        \"Name\": \"A\",\n                        \"Enabled\": true,\n                        \"AutoRepairEnabled\": false\n                    }\n                ]\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "创建托管节点池健康检测规则"
+      }
+    ],
+    "DescribeHealthCheckPolicyBindings": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeHealthCheckPolicyBindings\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-xxx\",\n    \"Limit\": \"1\",\n    \"Offset\": \"2\"\n}",
+        "output": "{\n    \"RequestId\": \"xx\",\n    \"Response\": {\n        \"HealthCheckPolicyBindings\": [\n            {\n                \"CreatedAt\": \"xx\",\n                \"NodePools\": [\n                    \"node-pool1\",\n                    \"node-pool2\"\n                ],\n                \"Name\": \"NP1\"\n            }\n        ],\n        \"RequestId\": \"372ba519-daa2-4abc-9da7-0857970c998c\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "1"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeHealthCheckPolicyBindings\n<公共请求参数>\n\n{\n    \"Limit\": 0,\n    \"ClusterId\": \"xx\",\n    \"Filter\": [\n        {\n            \"Values\": [\n                \"xx\"\n            ],\n            \"Name\": \"xx\"\n        }\n    ],\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"HealthCheckPolicyBindings\": [\n            {\n                \"NodePools\": [\n                    \"xx\"\n                ],\n                \"Name\": \"xx\",\n                \"CreatedAt\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询健康检测策略绑定关系"
+      }
+    ],
+    "DescribeHealthCheckTemplate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeHealthCheckTemplate\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"HealthCheckTemplate\": {\n            \"Rules\": [\n                {\n                    \"Name\": \"A\",\n                    \"Description\": \"\",\n                    \"RepairAction\": \"restart\",\n                    \"RepairEffect\": \"\",\n                    \"ShouldEnable\": true,\n                    \"ShouldRepair\": false,\n                    \"Severity\": \"123\"\n                }\n            ]\n        },\n        \"RequestId\": \"123\"\n    }\n}",
+        "title": "查询原生节点池健康检测策略模板"
+      }
+    ],
     "DescribeNodePools": [
       {
         "document": "查询 TKE 节点池列表",
         "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNodePools\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-h8atd7dj\",\n    \"Filters\": [\n        {\n            \"Name\": \"NodePoolsName\",\n            \"Values\": [\n                \"cputest\"\n            ]\n        }\n    ],\n    \"Offset\": 0,\n    \"Limit\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"NodePools\": [\n            {\n                \"Annotations\": [],\n                \"ClusterId\": \"cls-h8atd7dj\",\n                \"CreatedAt\": \"2023-01-15 17:55:38 +0000 UTC\",\n                \"DeletionProtection\": false,\n                \"External\": null,\n                \"Labels\": [],\n                \"LifeState\": \"normal\",\n                \"Name\": \"cputest\",\n                \"Native\": null,\n                \"NodePoolId\": \"np-rbl9quwv\",\n                \"Regular\": {\n                    \"AutoscalingGroupId\": \"asg-mv6aoc57\",\n                    \"AutoscalingGroupStatus\": \"disabled\",\n                    \"DesiredNodesNum\": 0,\n                    \"InstanceAdvancedSettings\": {\n                        \"DesiredPodNumber\": 32,\n                        \"ExtraArgs\": {\n                            \"Kubelet\": null\n                        },\n                        \"PreStartUserScript\": \"\",\n                        \"RuntimeConfig\": {\n                            \"RuntimeRootDir\": \"\",\n                            \"RuntimeType\": \"docker\",\n                            \"RuntimeVersion\": \"19.3\"\n                        },\n                        \"UserScript\": \"\"\n                    },\n                    \"LaunchConfigurationId\": \"asc-ay1hkbqh\",\n                    \"MaxNodesNum\": 1,\n                    \"MinNodesNum\": 0,\n                    \"NodeCountSummary\": {\n                        \"AutoscalingAdded\": {\n                            \"Initializing\": 0,\n                            \"Joining\": 0,\n                            \"Normal\": 0,\n                            \"Total\": 0\n                        },\n                        \"ManuallyAdded\": {\n                            \"Initializing\": 0,\n                            \"Joining\": 0,\n                            \"Normal\": 0,\n                            \"Total\": 0\n                        }\n                    },\n                    \"NodePoolOs\": \"ubuntu20.04x86_64\"\n                },\n                \"Super\": null,\n                \"Tags\": [],\n                \"Taints\": [],\n                \"Type\": \"Regular\",\n                \"Unschedulable\": false\n            },\n            {\n                \"Annotations\": [],\n                \"ClusterId\": \"cls-h8att7dj\",\n                \"CreatedAt\": \"2023-11-16 20:56:55 +0000 UTC\",\n                \"DeletionProtection\": true,\n                \"External\": {\n                    \"NodesNum\": 1,\n                    \"RuntimeConfig\": {\n                        \"RuntimeRootDir\": null,\n                        \"RuntimeType\": \"docker\",\n                        \"RuntimeVersion\": \"docker-19.3\"\n                    }\n                },\n                \"Labels\": [\n                    {\n                        \"Name\": \"node.kubernetes.io/instance-type\",\n                        \"Value\": \"external\"\n                    },\n                    {\n                        \"Name\": \"tke.cloud.tencent.com/cbs-mountable\",\n                        \"Value\": \"false\"\n                    },\n                    {\n                        \"Name\": \"externalnode.tke.cloud.tencent.com/version\",\n                        \"Value\": \"v2\"\n                    }\n                ],\n                \"LifeState\": \"Running\",\n                \"Name\": \"cpu\",\n                \"Native\": null,\n                \"NodePoolId\": \"np-llfflb19\",\n                \"Regular\": null,\n                \"Super\": null,\n                \"Tags\": [],\n                \"Taints\": [],\n                \"Type\": \"External\",\n                \"Unschedulable\": false\n            },\n            {\n                \"Annotations\": [],\n                \"ClusterId\": \"cls-h8att7dj\",\n                \"CreatedAt\": \"2023-11-16 20:56:54 +0000 UTC\",\n                \"DeletionProtection\": true,\n                \"External\": {\n                    \"NodesNum\": 4,\n                    \"RuntimeConfig\": {\n                        \"RuntimeRootDir\": null,\n                        \"RuntimeType\": \"docker\",\n                        \"RuntimeVersion\": \"docker-19.3\"\n                    }\n                },\n                \"Labels\": [\n                    {\n                        \"Name\": \"externalnode.tke.cloud.tencent.com/version\",\n                        \"Value\": \"v2\"\n                    },\n                    {\n                        \"Name\": \"node.kubernetes.io/instance-type\",\n                        \"Value\": \"external\"\n                    },\n                    {\n                        \"Name\": \"nvidia-device-enable\",\n                        \"Value\": \"enable\"\n                    },\n                    {\n                        \"Name\": \"tke.cloud.tencent.com/cbs-mountable\",\n                        \"Value\": \"false\"\n                    }\n                ],\n                \"LifeState\": \"Running\",\n                \"Name\": \"gpu\",\n                \"Native\": null,\n                \"NodePoolId\": \"np-iw0qds8t\",\n                \"Regular\": null,\n                \"Super\": null,\n                \"Tags\": [],\n                \"Taints\": [],\n                \"Type\": \"External\",\n                \"Unschedulable\": false\n            }\n        ],\n        \"RequestId\": \"354c45c4-0eb2-464d-82f8-3dd55ca88a80\",\n        \"TotalCount\": 3\n    }\n}",
         "title": "查询 TKE 节点池列表"
+      }
+    ],
+    "ModifyHealthCheckPolicy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyHealthCheckPolicy\n<公共请求参数>\n\n{\n    \"ClusterId\": \"xx\",\n    \"HealthCheckPolicy\": {\n        \"Name\": \"NP1\",\n        \"Rules\": []\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "修改托管节点池健康检测规则"
       }
     ],
     "ModifyNodePool": [

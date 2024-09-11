@@ -5097,6 +5097,15 @@
           "name": "ExtensionAddons",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "本地专用集群Id",
+          "example": "cluster-0jend45y",
+          "member": "string",
+          "name": "CdcId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

@@ -337,9 +337,9 @@
       "status": "online"
     },
     "CreateUserVerifyUrl": {
-      "document": "客户可以主动调用生成实名链接去做C端用户实名，会对实名的用户进行打标记为调用链接客户的用户\n使用场景：\n用户集成场景\n使用限制：\n此接口需要购买单独的实名套餐包方可调用，如有需求请联系对接人员评估",
+      "document": "生成个人用户实名认证链接，个人用户点击此链接进入实名流程（若用户已完成实名认证，则直接进入成功页面）。\n\n注： 调用此接口需要购买<font color=\"red\"><b>单独的实名套餐包</b></font>。使用前请联系对接的客户经理沟通。",
       "input": "CreateUserVerifyUrlRequest",
-      "name": "获取c端用户实名链接",
+      "name": "获取个人用户实名链接",
       "output": "CreateUserVerifyUrlResponse",
       "status": "online"
     },
@@ -526,7 +526,7 @@
       "status": "online"
     },
     "DescribeThirdPartyAuthCode": {
-      "document": "通过AuthCode查询个人用户是否实名\n\n\n注意: \n<ul>\n<li>此接口为合作引流场景使用，使用`有白名单限制`，使用前请联系对接的客户经理沟通。</li>\n<li>`AuthCode 只能使用一次`，查询一次再次查询会返回错误</li>\n</ul>",
+      "document": "通过AuthCode查询个人用户是否实名\n\n\n注意: \n<ul>\n<li>此接口为合作引流场景使用，使用<b>有白名单限制</b>，使用前请联系对接的客户经理沟通。</li>\n<li><b>AuthCode 只能使用一次</b>，查询一次再次查询会返回错误</li>\n</ul>",
       "input": "DescribeThirdPartyAuthCodeRequest",
       "name": "通过AuthCode查询个人用户是否实名",
       "output": "DescribeThirdPartyAuthCodeResponse",
@@ -7026,7 +7026,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "腾讯电子签小程序的实名认证链接。\n如果没有传递，默认值是 HTTP。 链接的有效期均是 7 天。\n\n- 如果EndPoint是APP，\n得到的链接类似于pages/guide/index?to=MOBILE_CHANGE_INTENTION&shortKey=yDCZHUyOcExAlcOvNod0, 用法可以参考描述中的\"跳转到小程序的实现\"\n\n- 如果EndPoint是HTTP，\n得到的链接类似于https://res.ess.tencent.cn/cdn/h5-activity/jump-mp.html?to=MOBILE_CHANGE_INTENTION&shortKey=yDCZHUyOcChrfpaswT0d，点击后会跳转到腾讯电子签小程序进行签署\n\n- 如果EndPoint是HTTP_SHORT_URL，\n得到的链接类似于https://essurl.cn/2n**42Nd，点击后会跳转到腾讯电子签小程序进行签署\n\n\n注： 生成的链路后面不能再增加参数\n示例值：https://essurl.cn/2n**42Nd",
+          "document": "腾讯电子签小程序的实名认证链接。 如果没有传递，默认值是 HTTP。 链接的有效期均是 7 天。\n\n<b>1.如果EndPoint是APP</b>，\n得到的链接类似于<a href=\"\">pages/guide/index?to=MOBILE_CHANGE_INTENTION&shortKey=yDCZHUyOcExAlcOvNod0</a>, 用法可以参考描述中的\"跳转到小程序的实现\"\n\n<b>2.如果EndPoint是HTTP</b>，\n得到的链接类似于<a href=\"\">https://res.ess.tencent.cn/cdn/h5-activity/jump-mp.html?to=MOBILE_CHANGE_INTENTION&shortKey=yDCZHUyOcChrfpaswT0d</a>，点击后会跳转到腾讯电子签小程序进行签署\n\n<b>3.如果EndPoint是HTTP_SHORT_URL</b>，\n得到的链接类似于<a href=\"\">https://essurl.cn/2n**42Nd</a>，点击后会跳转到腾讯电子签小程序进行签署\n\n注： <font color=\"red\">生成的链路后面不能再增加参数</font>\n",
           "example": "无",
           "member": "string",
           "name": "Url",
@@ -7036,7 +7036,7 @@
         },
         {
           "disabled": false,
-          "document": "链接失效期限如下：\n\n<ul>\n<li>如果指定更换绑定手机号的用户(指定用户ID或姓名等信息)，则设定的链接失效期限为7天后。</li>\n<li>如果没有指定更换绑定手机号的用户，则生成通用跳转到个人换手机号的界面，链接不会过期。</li>\n</ul>",
+          "document": "链接失效期限，为Unix时间戳（单位秒），有如下规则：\n\n<ul>\n<li>如果指定更换绑定手机号的用户(指定用户ID或姓名等信息)，则设定的链接失效期限为7天后。</li>\n<li>如果没有指定更换绑定手机号的用户，则生成通用跳转到个人换手机号的界面，链接不会过期。</li>\n</ul>",
           "example": "无",
           "member": "int64",
           "name": "ExpireTime",
@@ -7112,7 +7112,7 @@
         },
         {
           "disabled": false,
-          "document": "要跳转的链接类型\n\n- HTTP：\n跳转电子签小程序的http_url,短信通知或者H5跳转适合此类型 ，此时返回长链 (默认类型)\n\n- HTTP_SHORT_URL：\n跳转电子签小程序的http_url,短信通知或者H5跳转适合此类型，此时返回短链\n\n- APP：\n第三方APP或小程序跳转电子签小程序的path, APP或者小程序跳转适合此类型\n\n- H5：\n跳转电子签H5实名页面的长链\n\n- H5_SHORT_URL：\n跳转电子签H5实名页面的短链\n\n注：如果不传递，默认值是 <font color=\"red\"> APP </font>",
+          "document": "要跳转的链接类型\n\n<ul>\n<li><strong>HTTP</strong>：适用于短信通知或H5跳转的电子签小程序HTTP长链接</li>\n<li><strong>HTTP_SHORT_URL</strong>：适用于短信通知或H5跳转的电子签小程序HTTP短链接</li>\n<li><strong>APP</strong>：（默认类型）适用于第三方APP或小程序跳转的电子签小程序路径</li>\n<li><strong>H5</strong>：适用于跳转至电子签H5实名页面的长链接</li>\n<li><strong>H5_SHORT_URL</strong>：适用于跳转至电子签H5实名页面的短链接</li>\n</ul>\n\n注：如果不传递，默认值是 <font color=\"red\"> APP </font>",
           "example": "APP",
           "member": "string",
           "name": "Endpoint",
@@ -7145,7 +7145,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "腾讯电子签小程序的实名认证链接。\n如果没有传递，默认值是 HTTP。 链接的有效期均是 7 天。\n\n- 如果EndPoint是APP，\n得到的链接类似于pages/guide/index?to=MP_PERSONAL_VERIFY&shortKey=yDCZHUyOcExAlcOvNod0, 用法可以参考描述中的\"跳转到小程序的实现\"\n\n- 如果EndPoint是HTTP，\n得到的链接类似于https://res.ess.tencent.cn/cdn/h5-activity/jump-mp.html?to=TAG_VERIFY&shortKey=yDCZHUyOcChrfpaswT0d，点击后会跳转到腾讯电子签小程序进行签署\n\n- 如果EndPoint是HTTP_SHORT_URL，\n得到的链接类似于https://essurl.cn/2n**42Nd，点击后会跳转到腾讯电子签小程序进行签署\n\n- 如果EndPoint是H5，\n得到的链接类似于 https://quick.test.qian.tencent.cn/guide?Code=yDU****VJhsS5q&CodeType=xxx&shortKey=yD*****frcb，点击后会跳转到腾讯电子签H5页面进行签署\n\n- 如果EndPoint是H5_SHORT_URL，\n得到的链接类似于https://essurl.cn/2n**42Nd，点击后会跳转到腾讯电子签H5页面进行签署\n\n\n`注：` <font color=\"red\">生成的链路后面不能再增加参数</font>\n示例值：https://essurl.cn/2n**42Nd",
+          "document": "腾讯电子签小程序的实名认证链接。\n如果没有传递，默认值是 HTTP。 链接的有效期均是 7 天。\n\n<strong>1.如果EndPoint是APP</strong>：\n得到的链接类似于<a href=\"\">pages/guide/index?to=MP_PERSONAL_VERIFY&shortKey=yDCZHUyOcExAlcOvNod0</a>, 用法可以参考描述中的\"跳转到小程序的实现\"\n\n<strong>2.如果EndPoint是HTTP</strong>：\n得到的链接类似于 <a href=\"\">https://res.ess.tencent.cn/cdn/h5-activity/jump-mp.html?to=TAG_VERIFY&shortKey=yDCZHUyOcChrfpaswT0d</a>，点击后会跳转到腾讯电子签小程序进行签署\n\n<strong>3.如果EndPoint是HTTP_SHORT_URL</strong>：\n得到的链接类似于<a href=\"\">https://essurl.cn/2n**42Nd</a>，点击后会跳转到腾讯电子签小程序进行签署\n\n<strong>4.如果EndPoint是H5</strong>：\n得到的链接类似于 <a href=\"\">https://quick.test.qian.tencent.cn/guide?Code=yDU****VJhsS5q&CodeType=xxx&shortKey=yD*****frcb</a>，点击后会跳转到腾讯电子签H5页面进行签署\n\n<strong>5.如果EndPoint是H5_SHORT_URL</strong>：\n得到的链接类似于<a href=\"\">https://essurl.cn/2n**42Nd</a>，点击后会跳转到腾讯电子签H5页面进行签署\n\n\n`注：` <font color=\"red\">生成的链路后面不能再增加参数，防止出错重复参数覆盖原有的参数</font>\n示例值：https://essurl.cn/2n**42Nd",
           "example": "无",
           "member": "string",
           "name": "UserVerifyUrl",
@@ -7155,7 +7155,7 @@
         },
         {
           "disabled": false,
-          "document": "链接过期时间",
+          "document": "链接过期时间，为Unix时间戳（单位为秒）。",
           "example": "无",
           "member": "int64",
           "name": "ExpireTime",

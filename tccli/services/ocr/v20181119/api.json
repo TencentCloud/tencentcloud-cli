@@ -8504,6 +8504,16 @@
         },
         {
           "disabled": false,
+          "document": "国籍",
+          "example": "无",
+          "member": "string",
+          "name": "Nationality",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "背面字段信息",
           "example": "无",
           "member": "MainlandTravelPermitBackInfos",
