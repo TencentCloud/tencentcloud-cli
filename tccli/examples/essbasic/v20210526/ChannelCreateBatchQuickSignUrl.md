@@ -285,3 +285,40 @@ Output:
 }
 ```
 
+**Example 9: 发起合同后，获取C端签署人的H5批量领取链接**
+
+1. 创建批量签署链接的合同签署方，必须都是动态签署人且未补充。
+2. 批量签署的合同数量不少于1份，不超过100份
+3. 上述合同签署方类型必须一致，均为待C端签署人签署状态
+4. 企业已经购买了专业版或以上版本套餐
+5. 获取领取链接通过指定RecipientId定位签署方，可以从发起合同的返回结果中获取
+
+Input: 
+
+```
+tccli essbasic ChannelCreateBatchQuickSignUrl --cli-unfold-argument  \
+    --Agent.ProxyOrganizationOpenId org_dianziqian \
+    --Agent.AppId yDRSRUUgygj6rq7wUuO4zjECxndqQApl \
+    --ApproverSignTypes 1 3 \
+    --FlowApproverInfo.ApproverType PERSON \
+    --FlowIds yDwFkUUckpstin4sUuZjBEY5Ia2XB7sz yDwFkUUckpstzjhfUugNAWf1KibXqS26 \
+    --JumpUrl https://abc.com \
+    --SignatureTypes 0 1
+```
+
+Output: 
+```
+{
+    "Response": {
+        "FlowApproverUrlInfo": {
+            "ApproverType": "PERSON",
+            "LongUrl": "https://quick.qian.tencent.cn/guide?Code=yDwi0**BWW4MYlpI&CodeType=QUICK&shortKey=yDwi**KF45&token=C**E",
+            "Mobile": "",
+            "Name": "",
+            "SignUrl": "https://test.essurl.cn/C**E"
+        },
+        "RequestId": "s16986**08"
+    }
+}
+```
+

@@ -17,17 +17,20 @@ Output:
         "DeployRecordList": [
             {
                 "Id": 1,
-                "CertId": "zXkBVP88",
-                "OldCertId": "zYrIXwpu",
+                "CertId": "abc",
+                "OldCertId": "abc",
                 "ResourceTypes": [
-                    "cdn"
+                    "abc"
+                ],
+                "Regions": [
+                    "abc"
                 ],
                 "Status": 1,
-                "CreateTime": "2022-10-09 17:38:38",
-                "UpdateTime": "2022-10-09 19:21:35"
+                "CreateTime": "abc",
+                "UpdateTime": "abc"
             }
         ],
-        "RequestId": "1111111111111"
+        "RequestId": "abc"
     }
 }
 ```

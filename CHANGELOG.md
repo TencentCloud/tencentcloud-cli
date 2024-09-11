@@ -1,3 +1,230 @@
+# Release 3.0.1074.1
+
+## 云数据库 MySQL(cdb) 版本：2017-03-20
+
+### 第 111 次发布
+
+发布时间：2024-09-12 01:17:45
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CheckDrInstanceRecovery](http://document.tencentcloudapi.woa.com/document/product/236/84880)
+* [ModifyDBInstanceReadOnlyStatus](http://document.tencentcloudapi.woa.com/document/product/236/84881)
+* [SwitchDrMasterRole](http://document.tencentcloudapi.woa.com/document/product/236/84878)
+
+新增数据结构：
+
+* [SwitchDrMasterDstInfo](http://document.tencentcloudapi.woa.com/document/product/236/15878#SwitchDrMasterDstInfo)
+* [SwitchDrMasterSrcDbInfo](http://document.tencentcloudapi.woa.com/document/product/236/15878#SwitchDrMasterSrcDbInfo)
+* [SwitchDrMasterSrcInfo](http://document.tencentcloudapi.woa.com/document/product/236/15878#SwitchDrMasterSrcInfo)
+
+
+
+## 云防火墙(cfw) 版本：2019-09-04
+
+### 第 53 次发布
+
+发布时间：2024-09-12 01:22:13
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [BanAndAllowRule](http://document.tencentcloudapi.woa.com/document/product/1132/49071#BanAndAllowRule)
+
+	* 新增成员：FwType
+
+* [BlockIgnoreRule](http://document.tencentcloudapi.woa.com/document/product/1132/49071#BlockIgnoreRule)
+
+	* 新增成员：FwType
+
+* [CreateNatRuleItem](http://document.tencentcloudapi.woa.com/document/product/1132/49071#CreateNatRuleItem)
+
+	* 新增成员：Scope
+
+* [DescAcItem](http://document.tencentcloudapi.woa.com/document/product/1132/49071#DescAcItem)
+
+	* 新增成员：ScopeDesc
+
+* [EdgeIpInfo](http://document.tencentcloudapi.woa.com/document/product/1132/49071#EdgeIpInfo)
+
+	* 新增成员：OverUsedStatus
+
+* [NatSwitchListData](http://document.tencentcloudapi.woa.com/document/product/1132/49071#NatSwitchListData)
+
+	* 新增成员：ORTableId, ORTableName, Ohavips
+
+
+
+
+## 人脸核身(faceid) 版本：2018-03-01
+
+### 第 69 次发布
+
+发布时间：2024-09-12 01:47:59
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [OCRResult](http://document.tencentcloudapi.woa.com/document/product/1007/41958#OCRResult)
+
+	* 新增成员：NormalCardInfo
+
+
+
+
+## 物联网开发平台(iotexplorer) 版本：2019-04-23
+
+### 第 50 次发布
+
+发布时间：2024-09-12 01:53:33
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ActivateTWeCallLicense](http://document.tencentcloudapi.woa.com/document/product/1081/84004)
+
+	* <font color="#dd0000">**修改入参**：</font>MiniProgramAppId
+
+* [GetTWeCallActiveStatus](http://document.tencentcloudapi.woa.com/document/product/1081/84000)
+
+	* <font color="#dd0000">**修改入参**：</font>MiniProgramAppId
+
+
+
+
+## 智能视图计算平台(iss) 版本：2023-05-17
+
+### 第 20 次发布
+
+发布时间：2024-09-12 01:56:51
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CallISAPI](http://document.tencentcloudapi.woa.com/document/product/1740/84882)
+
+新增数据结构：
+
+* [ISAPIOutputData](http://document.tencentcloudapi.woa.com/document/product/1740/81572#ISAPIOutputData)
+
+
+
+## 媒体处理(mps) 版本：2019-06-12
+
+### 第 62 次发布
+
+发布时间：2024-09-12 02:08:02
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [AiAnalysisTaskHorizontalToVerticalInput](http://document.tencentcloudapi.woa.com/document/product/862/37615#AiAnalysisTaskHorizontalToVerticalInput)
+* [AiAnalysisTaskHorizontalToVerticalOutput](http://document.tencentcloudapi.woa.com/document/product/862/37615#AiAnalysisTaskHorizontalToVerticalOutput)
+* [AiAnalysisTaskHorizontalToVerticalResult](http://document.tencentcloudapi.woa.com/document/product/862/37615#AiAnalysisTaskHorizontalToVerticalResult)
+
+修改数据结构：
+
+* [AiAnalysisResult](http://document.tencentcloudapi.woa.com/document/product/862/37615#AiAnalysisResult)
+
+	* 新增成员：HorizontalToVerticalTask
+
+* [HighlightSegmentItem](http://document.tencentcloudapi.woa.com/document/product/862/37615#HighlightSegmentItem)
+
+	* 新增成员：SegmentTags
+
+
+
+
+## 容器服务(tke) 版本：2022-05-01
+
+### 第 5 次发布
+
+发布时间：2024-09-12 02:30:33
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateHealthCheckPolicy](http://document.tencentcloudapi.woa.com/document/product/457/84888)
+* [DeleteHealthCheckPolicy](http://document.tencentcloudapi.woa.com/document/product/457/84887)
+* [DescribeHealthCheckPolicies](http://document.tencentcloudapi.woa.com/document/product/457/84886)
+* [DescribeHealthCheckPolicyBindings](http://document.tencentcloudapi.woa.com/document/product/457/84885)
+* [DescribeHealthCheckTemplate](http://document.tencentcloudapi.woa.com/document/product/457/84884)
+* [ModifyHealthCheckPolicy](http://document.tencentcloudapi.woa.com/document/product/457/84883)
+
+新增数据结构：
+
+* [HealthCheckPolicy](http://document.tencentcloudapi.woa.com/document/product/457/74869#HealthCheckPolicy)
+* [HealthCheckPolicyBinding](http://document.tencentcloudapi.woa.com/document/product/457/74869#HealthCheckPolicyBinding)
+* [HealthCheckPolicyRule](http://document.tencentcloudapi.woa.com/document/product/457/74869#HealthCheckPolicyRule)
+* [HealthCheckTemplate](http://document.tencentcloudapi.woa.com/document/product/457/74869#HealthCheckTemplate)
+* [HealthCheckTemplateRule](http://document.tencentcloudapi.woa.com/document/product/457/74869#HealthCheckTemplateRule)
+
+
+
+## 容器服务(tke) 版本：2018-05-25
+
+
+
+## 实时音视频(trtc) 版本：2019-07-22
+
+### 第 69 次发布
+
+发布时间：2024-09-12 02:32:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [StartAIConversation](http://document.tencentcloudapi.woa.com/document/product/647/84215)
+
+	* 新增入参：TCCC
+
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 153 次发布
+
+发布时间：2024-09-12 02:35:59
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateSecurityGroupWithPolicies](http://document.tencentcloudapi.woa.com/document/product/215/43279)
+
+	* 新增入参：BpaasApplicationId, Tags
+
+
+
+
 # Release 3.0.1073.1
 
 ## 云顾问(advisor) 版本：2020-07-21

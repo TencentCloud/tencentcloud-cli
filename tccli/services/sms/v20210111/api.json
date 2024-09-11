@@ -1437,7 +1437,7 @@
           "example": "1620734188",
           "member": "uint64",
           "name": "UserReceiveTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1447,7 +1447,7 @@
           "example": "86",
           "member": "string",
           "name": "CountryCode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1457,7 +1457,7 @@
           "example": "13711112222",
           "member": "string",
           "name": "SubscriberNumber",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1467,7 +1467,7 @@
           "example": "+8613711112222",
           "member": "string",
           "name": "PhoneNumber",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1477,7 +1477,7 @@
           "example": "14:19325917feb3914eb78b50d6182d7e452e",
           "member": "string",
           "name": "SerialNo",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1487,7 +1487,7 @@
           "example": "SUCCESS",
           "member": "string",
           "name": "ReportStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1497,17 +1497,17 @@
           "example": "DELIVRD",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "用户的 session 内容。与请求中的 SessionContext 一致，默认为空，如需开通请联系 [腾讯云短信小助手](https://cloud.tencent.com/document/product/382/3773#.E6.8A.80.E6.9C.AF.E4.BA.A4.E6.B5.81)。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户的 session 内容。与请求中的 SessionContext 一致，默认为空，如需开通请联系 [腾讯云短信小助手](https://cloud.tencent.com/document/product/382/3773#.E6.8A.80.E6.9C.AF.E4.BA.A4.E6.B5.81) 评估。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
           "member": "string",
           "name": "SessionContext",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }

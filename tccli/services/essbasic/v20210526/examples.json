@@ -112,6 +112,12 @@
         "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelCreateBatchQuickSignUrl\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"ProxyOrganizationOpenId\": \"org_dianziqian\",\n        \"AppId\": \"yDRSRUUgygj6rq7wUuO4zjECxndqQApl\"\n    },\n    \"FlowApproverInfo\": {\n        \"ApproverType\": \"PERSON\",\n        \"Mobile\": \"13200000000\",\n        \"Name\": \"典子谦\",\n        \"IdCardNumber\": \"620000198802020000\",\n        \"IdCardType\": \"ID_CARD\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"FailedOperation\",\n            \"Message\": \"流程ID和合同组ID不能同时为空，请检查参数后再试\"\n        },\n        \"RequestId\": \"s1700727885657576147\"\n    }\n}",
         "title": "错误示例-为个人用户生成H5批量签署链接，没有指定合同流程ID信息，也没有指定合同组ID信息"
+      },
+      {
+        "document": "1. 创建批量签署链接的合同签署方，必须都是动态签署人且未补充。\n2. 批量签署的合同数量不少于1份，不超过100份\n3. 上述合同签署方类型必须一致，均为待C端签署人签署状态\n4. 企业已经购买了专业版或以上版本套餐\n5. 获取领取链接通过指定RecipientId定位签署方，可以从发起合同的返回结果中获取",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelCreateBatchQuickSignUrl\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"ProxyOrganizationOpenId\": \"org_dianziqian\",\n        \"AppId\": \"yDRSRUUgygj6rq7wUuO4zjECxndqQApl\"\n    },\n    \"ApproverSignTypes\": [\n        1,\n        3\n    ],\n    \"FlowApproverInfo\": {\n        \"ApproverType\": \"PERSON\"\n    },\n    \"FlowIds\": [\n        \"yDwFkUUckpstin4sUuZjBEY5Ia2XB7sz\",\n        \"yDwFkUUckpstzjhfUugNAWf1KibXqS26\"\n    ],\n    \"JumpUrl\": \"https://abc.com\",\n    \"SignatureTypes\": [\n        0,\n        1\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowApproverUrlInfo\": {\n            \"ApproverType\": \"PERSON\",\n            \"LongUrl\": \"https://quick.qian.tencent.cn/guide?Code=yDwi0**BWW4MYlpI&CodeType=QUICK&shortKey=yDwi**KF45&token=C**E\",\n            \"Mobile\": \"\",\n            \"Name\": \"\",\n            \"SignUrl\": \"https://test.essurl.cn/C**E\"\n        },\n        \"RequestId\": \"s16986**08\"\n    }\n}",
+        "title": "发起合同后，获取C端签署人的H5批量领取链接"
       }
     ],
     "ChannelCreateBatchSignUrl": [

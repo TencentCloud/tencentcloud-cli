@@ -6946,7 +6946,7 @@
           "example": "无",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -6956,7 +6956,7 @@
           "example": "无",
           "member": "UpdateRecordInfo",
           "name": "DeployRecordList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -10851,7 +10851,7 @@
           "example": "无",
           "member": "int64",
           "name": "DeployRecordId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },

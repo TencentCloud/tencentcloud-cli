@@ -7047,6 +7047,15 @@
           "name": "TTSConfig",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否是TCCC，0表示不是TCCC，1表示是TCCC，不填时默认为0",
+          "example": "0",
+          "member": "uint64",
+          "name": "TCCC",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

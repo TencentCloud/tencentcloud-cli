@@ -8378,11 +8378,21 @@
           "value_allowed_null": true
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "身份证件识别结果\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CardInfo",
           "name": "CardInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "身份证件识别结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "NormalCardInfo",
+          "name": "NormalCardInfo",
           "output_required": false,
           "type": "object",
           "value_allowed_null": true
@@ -10043,7 +10053,7 @@
         },
         {
           "disabled": false,
-          "document": "认证使用的卡证类型，当前支持:\n1.HKIDCard：中国香港身份证\n2.MLIDCard：马来西亚身份证\n3.IndonesiaIDCard：印度尼西亚身份证\n4.PhilippinesVoteID：菲律宾选民卡\n5.PhilippinesDrivingLicense：菲律宾驾驶证\n6.PhilippinesTinID：菲律宾TinID\n7.PhilippinesSSSID：菲律宾SSSID\n8.PhilippinesUMID：菲律宾UMID\n9.InternationalIDPassport：港澳台地区以及境外护照\n10.IndonesiaDrivingLicense：印度尼西亚驾驶证\n11.ThailandIDCard：泰国身份证\n12.ThailandDrivingLicense：泰国驾驶证\n13.MLDrivingLicense：马来西亚驾驶证\n14.SingaporeIDCard：新加坡身份证\n15.SingaporeDrivingLicense：新加坡驾驶证\n16.JapanIDCard：日本身份证\n17.JapanDrivingLicense：日本驾驶证\n18.PhilippinesIDCard：菲律宾身份证通用",
+          "document": "认证使用的卡证类型，当前支持:\n1.HKIDCard：中国香港身份证\n2.MLIDCard：马来西亚身份证\n3.IndonesiaIDCard：印度尼西亚身份证\n4.PhilippinesVoteID：菲律宾选民卡\n5.PhilippinesDrivingLicense：菲律宾驾驶证\n6.PhilippinesTinID：菲律宾TinID\n7.PhilippinesSSSID：菲律宾SSSID\n8.PhilippinesUMID：菲律宾UMID\n9.InternationalIDPassport：港澳台地区以及境外护照\n10.IndonesiaDrivingLicense：印度尼西亚驾驶证\n11.ThailandIDCard：泰国身份证\n12.ThailandDrivingLicense：泰国驾驶证\n13.MLDrivingLicense：马来西亚驾驶证\n14.SingaporeIDCard：新加坡身份证\n15.SingaporeDrivingLicense：新加坡驾驶证\n16.JapanIDCard：日本身份证\n17.JapanDrivingLicense：日本驾驶证\n18.PhilippinesIDCard：菲律宾身份证通用\n19.MainlandIDCard：大陆身份证 \n20.MacaoIDCard：澳门身份证",
           "example": "HKIDCard",
           "member": "string",
           "name": "IDCardType",

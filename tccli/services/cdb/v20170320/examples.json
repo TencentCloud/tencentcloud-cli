@@ -54,6 +54,14 @@
         "title": "均衡RO组内实例的负载"
       }
     ],
+    "CheckDrInstanceRecovery": [
+      {
+        "document": "校验灾备可否回切",
+        "input": "https://cdb.tencentcloudapi.com/?Action=CheckDrInstanceRecovery\r\n&SrcInstanceId=cdb-2t3lhacj\r\n&DstInstanceId=cdb-g3u3nf6v\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"CheckFlag\": \"success\"\n    }\n}",
+        "title": "校验灾备可否回切"
+      }
+    ],
     "CheckMigrateCluster": [
       {
         "document": "",
@@ -1154,6 +1162,14 @@
         "title": "修改云数据库实例的所属项目"
       }
     ],
+    "ModifyDBInstanceReadOnlyStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDBInstanceReadOnlyStatus\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-uns231ns\",\n    \"ReadOnly\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2cf0e063-0f70f622-2d5c3f7c-0e612ab0\"\n    }\n}",
+        "title": "设置MySQL云数据库实例为只读"
+      }
+    ],
     "ModifyDBInstanceSecurityGroups": [
       {
         "document": "",
@@ -1438,6 +1454,14 @@
         "input": "https://cdb.tencentcloudapi.com/?Action=SwitchDrInstanceToMaster\n&InstanceId=cdb-9kq0g26l\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"AsyncRequestId\": \"be9f64a6-fa652dc6-f5c878b6-a6a50746\"\n    }\n}",
         "title": "云数据库灾备实例切换为主实例"
+      }
+    ],
+    "SwitchDrMasterRole": [
+      {
+        "document": "无",
+        "input": "https://cdb.tencentcloudapi.com/?Action=SwitchDrMasterRole\r\n&SrcInfo.InstanceId=cdb-uns231ns\r\n&SrcInfo.IsOverrideRoot=0\r\n&SrcInfo.RegionId=1\r\n&SrcInfo.ZoneId=100004\r\n&DstInfo.InstanceId=cdb-5nv232n1\r\n&DstInfo.RegionId=1\r\n&DstInfo.ZoneId=100002\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"AsyncRequestId\": \"85b295bb-8f43-ce01-e35f-5a02e2beeeac\",\n        \"RequestId\": \"95b295bb-8f43-c101-e35f-5a02e2baeaad\"\n    }\n}",
+        "title": "灾备回切"
       }
     ],
     "SwitchForUpgrade": [

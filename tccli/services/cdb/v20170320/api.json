@@ -42,6 +42,13 @@
       "output": "BalanceRoGroupLoadResponse",
       "status": "online"
     },
+    "CheckDrInstanceRecovery": {
+      "document": "本接口（CheckDrInstanceRecovery）用于校验灾备可否回切。在提升灾备为主实例前，可以通过该接口校验灾备实例与主实例的延迟和 GTID，如果校验成功，那么灾备实例提升为主后可以发起灾备回切。",
+      "input": "CheckDrInstanceRecoveryRequest",
+      "name": "校验灾备可否回切",
+      "output": "CheckDrInstanceRecoveryResponse",
+      "status": "online"
+    },
     "CheckMigrateCluster": {
       "document": "高可用实例一键迁移到集群版校验",
       "input": "CheckMigrateClusterRequest",
@@ -973,6 +980,13 @@
       "output": "ModifyDBInstanceProjectResponse",
       "status": "online"
     },
+    "ModifyDBInstanceReadOnlyStatus": {
+      "document": "本接口（ModifyDBInstanceReadOnlyStatus）用户设置MySQL云数据库实例为只读",
+      "input": "ModifyDBInstanceReadOnlyStatusRequest",
+      "name": "设置MySQL云数据库实例为只读",
+      "output": "ModifyDBInstanceReadOnlyStatusResponse",
+      "status": "online"
+    },
     "ModifyDBInstanceSecurityGroups": {
       "document": "本接口(ModifyDBInstanceSecurityGroups)用于修改实例绑定的安全组。",
       "input": "ModifyDBInstanceSecurityGroupsRequest",
@@ -1216,6 +1230,13 @@
       "input": "SwitchDrInstanceToMasterRequest",
       "name": "云数据库灾备实例切换为主实例",
       "output": "SwitchDrInstanceToMasterResponse",
+      "status": "online"
+    },
+    "SwitchDrMasterRole": {
+      "document": "本接口（SwitchDrMasterRole）用于灾备回切。",
+      "input": "SwitchDrMasterRoleRequest",
+      "name": "灾备回切",
+      "output": "SwitchDrMasterRoleResponse",
       "status": "online"
     },
     "SwitchForUpgrade": {
@@ -4082,6 +4103,52 @@
         }
       ],
       "usage": "out"
+    },
+    "CheckDrInstanceRecoveryRequest": {
+      "document": "CheckDrInstanceRecovery请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "主实例 ID，格式为 cdb-qwer1234",
+          "example": "cdb-ql6mabc",
+          "member": "string",
+          "name": "SrcInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "灾备实例 ID，格式为 cdb-1234qwer",
+          "example": "cdb-ql6mijn",
+          "member": "string",
+          "name": "DstInstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckDrInstanceRecoveryResponse": {
+      "document": "CheckDrInstanceRecovery返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "校验结果。 值为\"success\"表示校验通过，值为\"failed\"表示校验失败。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "CheckFlag",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CheckMigrateClusterRequest": {
       "document": "CheckMigrateCluster请求参数结构体",
@@ -17135,6 +17202,42 @@
       ],
       "type": "object"
     },
+    "ModifyDBInstanceReadOnlyStatusRequest": {
+      "document": "ModifyDBInstanceReadOnlyStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同，可使用[查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口获取，其值为输出参数中字段 InstanceId 的值。",
+          "example": "cdb-uns231ns",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否设置为只读。其中：1表示设置实例为只读，0表示解除只读状态",
+          "example": "0",
+          "member": "int64",
+          "name": "ReadOnly",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDBInstanceReadOnlyStatusResponse": {
+      "document": "ModifyDBInstanceReadOnlyStatus返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyDBInstanceSecurityGroupsRequest": {
       "document": "ModifyDBInstanceSecurityGroups请求参数结构体",
       "members": [
@@ -21838,6 +21941,169 @@
         }
       ],
       "type": "object"
+    },
+    "SwitchDrMasterDstInfo": {
+      "document": "灾备回切目标实例信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同，可使用[查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口获取，其值为输出参数中字段 InstanceId 的值。",
+          "example": "",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目标实例所在地域对应的ID，比如广州为1",
+          "example": "",
+          "member": "string",
+          "name": "RegionId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目标实例所在可用区对应的ID，比如广州四区为100004",
+          "example": "",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "SwitchDrMasterRoleRequest": {
+      "document": "SwitchDrMasterRole请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "源实例信息",
+          "example": "无",
+          "member": "SwitchDrMasterSrcInfo",
+          "name": "SrcInfo",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "目标实例信息",
+          "example": "无",
+          "member": "SwitchDrMasterDstInfo",
+          "name": "DstInfo",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "SwitchDrMasterRoleResponse": {
+      "document": "SwitchDrMasterRole返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "异步任务的请求ID。",
+          "example": "\"64e276e6-9ce9-49e4-aa1f-cb1c1f48ed58\"",
+          "member": "string",
+          "name": "AsyncRequestId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SwitchDrMasterSrcDbInfo": {
+      "document": "灾备回切库表对象。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据库对象名称",
+          "example": "",
+          "member": "string",
+          "name": "Database",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据库表对象列表。不填写默认为database下的所有表。",
+          "example": "",
+          "member": "string",
+          "name": "Table",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "SwitchDrMasterSrcInfo": {
+      "document": "灾备回切源实例信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同，可使用[查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口获取，其值为输出参数中字段 InstanceId 的值。",
+          "example": "",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否覆盖Root账号",
+          "example": "",
+          "member": "int64",
+          "name": "IsOverrideRoot",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源实例所在region对应的Id，比如广州为1",
+          "example": "",
+          "member": "string",
+          "name": "RegionId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源实例所在可用区，比如100002对应广州二区",
+          "example": "",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "回切的库表对象，不填默认为整实例。",
+          "example": "",
+          "member": "SwitchDrMasterSrcDbInfo",
+          "name": "DbInfo",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "SwitchForUpgradeRequest": {
       "document": "SwitchForUpgrade请求参数结构体",
