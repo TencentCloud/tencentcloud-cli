@@ -6,20 +6,20 @@ Input:
 
 ```
 tccli dlc DescribeResultDownload --cli-unfold-argument  \
-    --DownloadId xx
+    --DownloadId abc
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Status": "xx",
-        "Token": "xx",
-        "SecretKey": "xx",
-        "Reason": "xx",
-        "SecretId": "xx",
-        "RequestId": "xx",
-        "Path": "xx"
+        "Status": "abc",
+        "Token": "abc",
+        "SecretKey": "abc",
+        "Reason": "abc",
+        "SecretId": "abc",
+        "RequestId": "abc",
+        "Path": "abc"
     }
 }
 ```

@@ -1598,7 +1598,6 @@
           "member": "int64",
           "name": "Definition",
           "output_required": true,
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1609,7 +1608,6 @@
           "member": "string",
           "name": "Package",
           "output_required": true,
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1620,7 +1618,6 @@
           "member": "string",
           "name": "DrmType",
           "output_required": true,
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1631,7 +1628,6 @@
           "member": "string",
           "name": "Url",
           "output_required": true,
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1642,7 +1638,6 @@
           "member": "int64",
           "name": "Size",
           "output_required": true,
-          "required": false,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1653,7 +1648,6 @@
           "member": "string",
           "name": "DigitalWatermarkType",
           "output_required": true,
-          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1664,7 +1658,6 @@
           "member": "MediaSubStreamInfoItem",
           "name": "SubStreamSet",
           "output_required": true,
-          "required": false,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1675,12 +1668,31 @@
           "member": "string",
           "name": "CopyRightWatermarkText",
           "output_required": true,
-          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "字幕信息列表。",
+          "example": "无",
+          "member": "MediaSubtitleItem",
+          "name": "SubtitleSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "默认字幕的唯一标识。",
+          "example": "subtitle1",
+          "member": "string",
+          "name": "DefaultSubtitleId",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         }
       ],
-      "usage": "both"
+      "usage": "out"
     },
     "AdaptiveDynamicStreamingTaskInput": {
       "document": "对视频转自适应码流的输入参数类型",
@@ -7188,6 +7200,15 @@
           "name": "SubtitleIds",
           "required": true,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "默认字幕的唯一标识。不填则不设置默认字幕。",
+          "example": "123",
+          "member": "string",
+          "name": "DefaultSubtitleId",
+          "required": false,
+          "type": "string"
         },
         {
           "disabled": false,

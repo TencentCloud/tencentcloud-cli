@@ -11,7 +11,7 @@
     "AttachMediaSubtitles": [
       {
         "document": "",
-        "input": "https://vod.tencentcloudapi.com/?Action=AttachMediaSubtitles\n&FileId=123\n&AdaptiveDynamicStreamingDefinition=10000\n&Operation=Attach\n&SubtitleIds.0=subtitle1\n&SubtitleIds.1=subtitle2\n&<公共请求参数>",
+        "input": "https://vod.tencentcloudapi.com/?Action=AttachMediaSubtitles\n&FileId=123\n&AdaptiveDynamicStreamingDefinition=10000\n&Operation=Attach\n&SubtitleIds.0=subtitle1\n&SubtitleIds.1=subtitle2\n&DefaultSubtitleId=subtitle2\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"requestId\"\n    }\n}",
         "title": "关联字幕"
       }

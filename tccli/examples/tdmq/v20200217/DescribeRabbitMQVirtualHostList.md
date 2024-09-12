@@ -1,4 +1,4 @@
-**Example 1: 获取虚拟机列表**
+**Example 1: 获取云服务器列表**
 
 
 
@@ -16,11 +16,11 @@ Output:
 {
     "Response": {
         "TotalCount": 1,
-        "RequestId": "xx",
+        "RequestId": "abc",
         "VirtualHostList": [
             {
-                "VirtualHostName": "xx",
-                "Description": "xx"
+                "VirtualHostName": "abc",
+                "Description": "abc"
             }
         ]
     }

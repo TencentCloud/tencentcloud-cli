@@ -160,6 +160,14 @@
         "title": "删除用户组"
       }
     ],
+    "DeleteMessageReceiver": [
+      {
+        "document": "删除消息接收人",
+        "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteMessageReceiver\n<公共请求参数>\n\n{\n    \"Name\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"af3a7188-5b3e-41a6-b489-8443e5816494\"\n    }\n}",
+        "title": "删除消息接收人"
+      }
+    ],
     "DeleteOIDCConfig": [
       {
         "document": "",
@@ -538,6 +546,14 @@
         "input": "https://cam.tencentcloudapi.com/?Action=ListPolicyVersions\r\n&PolicyId=17698703\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Versions\": [\n            {\n                \"VersionId\": 2,\n                \"CreateDate\": \"2019-08-09T10:31:47Z\",\n                \"IsDefaultVersion\": 1\n            },\n            {\n                \"VersionId\": 3,\n                \"CreateDate\": \"2019-08-09T10:31:47Z\",\n                \"IsDefaultVersion\": 0\n            }\n        ],\n        \"RequestId\": \"13567bf0-a52b-49af-a3ce-ea934ef33c57\"\n    }\n}",
         "title": "获取策略版本列表"
+      }
+    ],
+    "ListReceiver": [
+      {
+        "document": "",
+        "input": "https://cam.tencentcloudapi.com/?Action=ListReceiver\r\nOffset=0&Limit=10\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Receivers\": [\n            {\n                \"Uid\": 1001892,\n                \"Name\": \"nick\",\n                \"Remark\": \"\",\n                \"PhoneNumber\": \"+86 186****3509\",\n                \"PhoneFlag\": 1,\n                \"Email\": \"2054****@qq.com\",\n                \"EmailFlag\": 1,\n                \"IsReceiverOwner\": 1\n            }\n        ],\n        \"RequestId\": \"9a9d4601-5f14-4293-b314-2319ab9f5450\"\n    }\n}",
+        "title": "获取消息接收人列表"
       }
     ],
     "ListSAMLProviders": [

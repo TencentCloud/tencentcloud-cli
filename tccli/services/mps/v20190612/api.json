@@ -10644,6 +10644,15 @@
           "name": "Type",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "视频内容分析模板标识过滤条件，长度限制：64 个字符。",
+          "example": "“”",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -10716,6 +10725,15 @@
           "example": "“”",
           "member": "string",
           "name": "Type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "视频内容识别模板标识过滤条件，长度限制：64 个字符。",
+          "example": "“”",
+          "member": "string",
+          "name": "Name",
           "required": false,
           "type": "string"
         }
@@ -10801,6 +10819,15 @@
           "name": "PureAudio",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "自适应转码模板标识过滤条件，长度限制：64 个字符",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -10875,6 +10902,15 @@
           "name": "Type",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "转动图模板标识过滤条件，长度限制：64 个字符。",
+          "example": "“”",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -10947,6 +10983,15 @@
           "example": "“”",
           "member": "string",
           "name": "Type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "智能审核模板标识过滤条件，长度限制：64 个字符。",
+          "example": "“”",
+          "member": "string",
+          "name": "Name",
           "required": false,
           "type": "string"
         }
@@ -11215,6 +11260,15 @@
           "example": "“”",
           "member": "string",
           "name": "Type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "雪碧图模板标识过滤条件，长度限制：64 个字符。",
+          "example": "“”",
+          "member": "string",
+          "name": "Name",
           "required": false,
           "type": "string"
         }
@@ -12252,6 +12306,15 @@
           "name": "Type",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "媒体质检模板标识过滤条件，长度限制：64 个字符。",
+          "example": "“”",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -12366,6 +12429,15 @@
           "example": "“”",
           "member": "string",
           "name": "Type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "采样截图模板标识过滤条件，长度限制：64 个字符。",
+          "example": "“”",
+          "member": "string",
+          "name": "Name",
           "required": false,
           "type": "string"
         }
@@ -12523,6 +12595,15 @@
           "example": "“”",
           "member": "string",
           "name": "Type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指定时间点截图模板标识过滤条件，长度限制：64 个字符。",
+          "example": "“”",
+          "member": "string",
+          "name": "Name",
           "required": false,
           "type": "string"
         }
@@ -13662,7 +13743,7 @@
         {
           "disabled": false,
           "document": "转码模板唯一标识过滤条件，数组长度限制：100。",
-          "example": "[\"10\\n\"]",
+          "example": "[10]",
           "member": "int64",
           "name": "Definitions",
           "required": false,
@@ -13719,6 +13800,15 @@
           "example": "“”",
           "member": "string",
           "name": "TranscodeType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "转码模板标识过滤条件，长度限制：64 个字符。\t",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Name",
           "required": false,
           "type": "string"
         }
@@ -13795,6 +13885,15 @@
           "name": "Limit",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "水印模板标识过滤条件，长度限制：64 个字符。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -26746,7 +26845,7 @@
           "member": "string",
           "name": "LabelSet",
           "required": false,
-          "type": "string"
+          "type": "list"
         },
         {
           "disabled": false,
@@ -26916,7 +27015,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "视频流的编码格式，可选值：\n<li>h264：H.264 编码</li>\n<li>h265：H.265 编码</li>\n<li>h266：H.266 编码</li>\n<li>av1：AOMedia Video 1 编码</li>\n<li>vp8：VP8 编码</li>\n<li>vp9：VP9 编码</li>\n<li>mpeg2：MPEG2 编码</li>\n<li>dnxhd：DNxHD 编码</li>\n注意：目前 H.265 编码必须指定分辨率，并且需要在 640*480 以内。\n\n注意：av1 编码容器目前只支持 mp4 ，webm，mkv。\n注意：H.266 编码容器目前只支持 mp4 ，hls，ts，mov。\n注意：VP8、VP9编码容器目前只支持webm，mkv。\n注意：MPEG2、dnxhd 编码容器目前只支持mxf。",
+          "document": "视频流的编码格式，可选值：\n<li>h264：H.264 编码</li>\n<li>h265：H.265 编码</li>\n<li>h266：H.266 编码</li>\n<li>av1：AOMedia Video 1 编码</li>\n<li>vp8：VP8 编码</li>\n<li>vp9：VP9 编码</li>\n<li>mpeg2：MPEG2 编码</li>\n<li>dnxhd：DNxHD 编码</li>\n<li>mv-hevc：MV-HEVC 编码</li>\n注意：目前 H.265 编码必须指定分辨率，并且需要在 640*480 以内。\n\n注意：av1 编码容器目前只支持 mp4 ，webm，mkv。\n注意：H.266 编码容器目前只支持 mp4 ，hls，ts，mov。\n注意：VP8、VP9编码容器目前只支持webm，mkv。\n注意：MPEG2、dnxhd 编码容器目前只支持mxf。\n注意：MV-HEVC编码容器目前只支持mp4，hls，mov。其中hls格式只支持mp4分片格式。",
           "example": "h264",
           "member": "string",
           "name": "Codec",
@@ -26982,7 +27081,7 @@
         },
         {
           "disabled": false,
-          "document": "关键帧 I 帧之间的间隔，取值范围：0 和 [1, 100000]，单位：帧数。\n当填 0 或不填时，系统将自动设置 gop 长度。",
+          "document": "关键帧 I 帧之间的间隔，取值范围：0 和 [1, 100000]，单位：帧数。 当填 0 或不填时，系统将自动设置 gop 长度。",
           "example": "0",
           "member": "uint64",
           "name": "Gop",
@@ -27034,6 +27133,17 @@
           "required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "3D视频拼接方式，仅mv-hevc，3D视频生效，可选值：\n<li>side_by_side：左右视角</li>\n<li>top_bottom：上下视角</li>\n默认值:side_by_side\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Stereo3dType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -27043,7 +27153,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "视频流的编码格式，可选值：\n<li>h264：H.264 编码</li>\n<li>h265：H.265 编码</li>\n<li>h266：H.266 编码</li>\n<li>av1：AOMedia Video 1 编码</li>\n<li>vp8：VP8 编码</li>\n<li>vp9：VP9 编码</li>\n<li>mpeg2：MPEG2 编码</li>\n<li>dnxhd：DNxHD 编码</li>\n注意：目前 H.265 编码必须指定分辨率，并且需要在 640*480 以内。\n\n注意：av1 编码容器目前只支持 mp4 ，webm，mkv。\n注意：H.266 编码容器目前只支持 mp4 ，hls，ts，mov。\n注意：VP8、VP9编码容器目前只支持webm，mkv。\n注意：MPEG2、dnxhd 编码容器目前只支持mxf。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "视频流的编码格式，可选值：\n<li>h264：H.264 编码</li>\n<li>h265：H.265 编码</li>\n<li>h266：H.266 编码</li>\n<li>av1：AOMedia Video 1 编码</li>\n<li>vp8：VP8 编码</li>\n<li>vp9：VP9 编码</li>\n<li>mpeg2：MPEG2 编码</li>\n<li>dnxhd：DNxHD 编码</li>\n<li>mv-hevc：MV-HEVC 编码</li>\n注意：目前 H.265 编码必须指定分辨率，并且需要在 640*480 以内。\n\n注意：av1 编码容器目前只支持 mp4 ，webm，mkv。\n注意：H.266 编码容器目前只支持 mp4 ，hls，ts，mov。\n注意：VP8、VP9编码容器目前只支持webm，mkv。\n注意：MPEG2、dnxhd 编码容器目前只支持mxf。\n注意：MV-HEVC编码容器目前只支持mp4，hls，mov。其中hls格式只支持mp4分片格式。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "h264",
           "member": "string",
           "name": "Codec",
@@ -27171,6 +27281,17 @@
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "3D视频拼接方式，仅mv-hevc，3D视频生效，可选值：\n<li>side_by_side：左右视角</li>\n<li>top_bottom：上下视角</li>\n默认值:side_by_side\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Stereo3dType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

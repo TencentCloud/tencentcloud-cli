@@ -616,8 +616,8 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRabbitMQVirtualHostList\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-testtesttest\",\n    \"Limit\": 1,\n    \"Offset\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\",\n        \"VirtualHostList\": [\n            {\n                \"VirtualHostName\": \"xx\",\n                \"Description\": \"xx\"\n            }\n        ]\n    }\n}",
-        "title": "获取虚拟机列表"
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"abc\",\n        \"VirtualHostList\": [\n            {\n                \"VirtualHostName\": \"abc\",\n                \"Description\": \"abc\"\n            }\n        ]\n    }\n}",
+        "title": "获取云服务器列表"
       }
     ],
     "DescribeRocketMQCluster": [

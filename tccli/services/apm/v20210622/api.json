@@ -785,6 +785,16 @@
           "output_required": false,
           "type": "bool",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "响应时间满意阈值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "500",
+          "member": "int64",
+          "name": "ResponseDurationWarningThreshold",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -2015,6 +2025,15 @@
           "example": "1",
           "member": "int64",
           "name": "PayMode",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "响应时间满意阈值",
+          "example": "500",
+          "member": "int64",
+          "name": "ResponseDurationWarningThreshold",
           "required": false,
           "type": "int"
         }

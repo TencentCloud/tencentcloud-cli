@@ -292,6 +292,14 @@
         "title": "根据用户查询有访问权限的资产"
       }
     ],
+    "DescribeDomains": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDomains\n<公共请求参数>\n\n\n\n\n\n\n\n{\n\n  \"Offset\": 0,\n  \"Limit\": 10,\n  \"Filters\": [{\"Name\": \"Status\",\"Values\": [\"0\"]},{\"Name\": \"Ip\",\"Values\": [\"127.9.9.1\"]}]\n\n}",
+        "output": "{\n    \"Response\": {\n        \"DomainSet\": [\n            {\n                \"Id\": 7,\n                \"DomainId\": \"net-vvr396q5\",\n                \"DomainName\": \"test-name1-9990\",\n                \"Enabled\": 1,\n                \"Status\": 0,\n                \"ResourceId\": \"bh-saas-jtvukub4\",\n                \"CreateTime\": \"2024-04-19T11:11:55+08:00\",\n                \"Default\": 0,\n                \"WhiteIpSet\": [\n                    \"127.9.9.1\",\n                    \"171.0.0.1\"\n                ]\n            }\n        ],\n        \"RequestId\": \"sdfsadf-sdfasd-sdfsad-sdf2222\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "示例1"
+      }
+    ],
     "DescribeLoginEvent": [
       {
         "document": "",

@@ -442,9 +442,9 @@
       "status": "online"
     },
     "DescribeFlowComponents": {
-      "document": "查询流程填写控件内容，可以根据合同流程ID查询该合同流程相关联的填写控件信息和填写内容。",
+      "document": "可以根据合同流程ID查询该合同流程相关联的填写控件信息和填写内容，包括填写控件的归属方、填写控件是否已经填写以及填写的内容等信息。",
       "input": "DescribeFlowComponentsRequest",
-      "name": "查询流程填写控件内容",
+      "name": "查询合同的填写控件信息",
       "output": "DescribeFlowComponentsResponse",
       "status": "online"
     },
@@ -3517,6 +3517,15 @@
           "name": "NeedSignReview",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "在短信通知、填写、签署流程中，若标题、按钮、合同详情等地方存在“合同”字样时，可根据此配置指定文案，可选文案如下：  <ul><li> <b>0</b> :合同（默认值）</li> <li> <b>1</b> :文件</li> <li> <b>2</b> :协议</li></ul>效果如下:![FlowDisplayType](https://qcloudimg.tencent-cloud.cn/raw/e4a2c4d638717cc901d3dbd5137c9bbc.png)",
+          "example": "1",
+          "member": "int64",
+          "name": "FlowDisplayType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -4247,6 +4256,15 @@
           "name": "CallbackUrl",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "在短信通知、填写、签署流程中，若标题、按钮、合同详情等地方存在“合同”字样时，可根据此配置指定文案，可选文案如下： \n <ul><li> <b>0</b> :合同（默认值）</li> <li> <b>1</b> :文件</li> <li> <b>2</b> :协议</li></ul>\n\n效果如下:\n![FlowDisplayType](https://qcloudimg.tencent-cloud.cn/raw/e4a2c4d638717cc901d3dbd5137c9bbc.png)",
+          "example": "1",
+          "member": "int64",
+          "name": "FlowDisplayType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -4386,7 +4404,7 @@
         },
         {
           "disabled": false,
-          "document": "流程签署人列表，其中结构体的ApproverName，ApproverMobile和ApproverType必传，企业签署人则需传OrganizationName，其他可不传。\n\n注:\n`1. 签署人只能有手写签名、时间类型、印章类型的签署控件和内容填写控件，其他类型的签署控件暂时未支持。`\n`2. 生成发起方预览链接时，该字段（FlowApproverInfos）传空或者不传`",
+          "document": "流程签署人列表，其中结构体的ApproverName，ApproverMobile和ApproverType必传，企业签署人则需传OrganizationName，其他可不传。\n\n注:\n`1. 签署人只能有手写签名、时间类型、印章类型、签批类型的签署控件和内容填写控件，其他类型的签署控件暂时未支持。`\n`2. 生成发起方预览链接时，该字段（FlowApproverInfos）传空或者不传`",
           "example": "无",
           "member": "FlowCreateApprover",
           "name": "FlowApproverInfos",
@@ -8220,7 +8238,7 @@
         },
         {
           "disabled": false,
-          "document": "合同流程ID，为32位字符串。\n建议开发者妥善保存此流程ID，以便于顺利进行后续操作。\n可登录腾讯电子签控制台，在 \"合同\"->\"合同中心\" 中查看某个合同的FlowId(在页面中展示为合同ID)。",
+          "document": "合同流程ID，为32位字符串。\n\n[点击产看FlowId在控制台中的位置](https://qcloudimg.tencent-cloud.cn/raw/0a83015166cfe1cb043d14f9ec4bd75e.png)",
           "example": "无",
           "member": "string",
           "name": "FlowId",
@@ -8244,7 +8262,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "合同流程关联的填写控件信息，按照参与方进行分类返回。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "合同流程关联的填写控件信息，包括填写控件的归属方以及是否填写等内容。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "RecipientComponentInfo",
           "name": "RecipientComponentInfos",
@@ -11044,6 +11062,15 @@
           "name": "AutoSignScene",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "在短信通知、填写、签署流程中，若标题、按钮、合同详情等地方存在“合同”字样时，可根据此配置指定文案，可选文案如下：  <ul><li> <b>0</b> :合同（默认值）</li> <li> <b>1</b> :文件</li> <li> <b>2</b> :协议</li></ul>效果如下:![FlowDisplayType](https://qcloudimg.tencent-cloud.cn/raw/e4a2c4d638717cc901d3dbd5137c9bbc.png)",
+          "example": "1",
+          "member": "int64",
+          "name": "FlowDisplayType",
+          "required": false,
+          "type": "int"
         }
       ],
       "usage": "in"
@@ -12915,7 +12942,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "参与方Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "签署方经办人在合同流程中的参与方ID，与控件绑定，是控件的归属方\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "RecipientId",
@@ -12925,7 +12952,7 @@
         },
         {
           "disabled": false,
-          "document": "参与方填写状态\n<ul><li>0-未填写</li>\n<li>1-已填写</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "参与方填写状态\n<ul>\n<li>**空值** : 此参与方没有填写控件</li>\n<li>**0**:  未填写, 表示此参与方还没有填写合同的填写控件</li>\n<li>**1**:  已填写, 表示此参与方已经填写所有的填写控件</li></ul>\n\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "RecipientFillStatus",
@@ -12945,7 +12972,7 @@
         },
         {
           "disabled": false,
-          "document": "填写控件列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "改参与方填写控件信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "FilledComponent",
           "name": "Components",
@@ -12961,33 +12988,39 @@
       "members": [
         {
           "disabled": false,
-          "document": "法人姓名",
+          "document": "法人姓名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "LegalName",
+          "output_required": false,
           "required": true,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "disabled": true,
-          "document": "社会统一信用代码",
+          "document": "社会统一信用代码\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "Uscc",
+          "output_required": false,
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "社会统一信用代码",
+          "document": "社会统一信用代码\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "UnifiedSocialCreditCode",
+          "output_required": false,
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "RegistrationOrganizationInfo": {
       "document": "企业认证信息参数， 需要保证这些参数跟营业执照中的信息一致。",

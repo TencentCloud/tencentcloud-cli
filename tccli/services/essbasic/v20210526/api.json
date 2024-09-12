@@ -2324,6 +2324,15 @@
           "name": "Operator",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "在短信通知、填写、签署流程中，若标题、按钮、合同详情等地方存在“合同”字样时，可根据此配置指定文案，可选文案如下：  <ul><li> <b>0</b> :合同（默认值）</li> <li> <b>1</b> :文件</li> <li> <b>2</b> :协议</li></ul>效果如下:![FlowDisplayType](https://qcloudimg.tencent-cloud.cn/raw/e4a2c4d638717cc901d3dbd5137c9bbc.png)",
+          "example": "1",
+          "member": "int64",
+          "name": "FlowDisplayType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -2688,7 +2697,7 @@
         },
         {
           "disabled": false,
-          "document": "流程签署人列表，其中结构体的ApproverType必传。\n若为个人签署方或saas企业签署方，则Name，Mobile必传。OrganizationName 传对应企业名称。\n若为子客企业签署方则需传OpenId、OrganizationOpenId，其他可不传。\n\n注:\n`1. 签署人只能有手写签名、时间类型、印章类型的签署控件和内容填写控件，其他类型的签署控件暂时未支持。`\n`2. 生成发起方预览链接时，该字段（FlowApproverInfos）传空或者不传`",
+          "document": "流程签署人列表，其中结构体的ApproverType必传。\n若为个人签署方或saas企业签署方，则Name，Mobile必传。OrganizationName 传对应企业名称。\n若为子客企业签署方则需传OpenId、OrganizationOpenId，其他可不传。\n\n注:\n`1. 签署人只能有手写签名、时间类型、印章类型、签批类型的签署控件和内容填写控件，其他类型的签署控件暂时未支持。`\n`2. 生成发起方预览链接时，该字段（FlowApproverInfos）传空或者不传`",
           "example": "无",
           "member": "FlowApproverInfo",
           "name": "FlowApproverInfos",
@@ -9321,6 +9330,15 @@
           "name": "NeedSignReview",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "在短信通知、填写、签署流程中，若标题、按钮、合同详情等地方存在“合同”字样时，可根据此配置指定文案，可选文案如下：  <ul><li> <b>0</b> :合同（默认值）</li> <li> <b>1</b> :文件</li> <li> <b>2</b> :协议</li></ul>效果如下:![FlowDisplayType](https://qcloudimg.tencent-cloud.cn/raw/e4a2c4d638717cc901d3dbd5137c9bbc.png)",
+          "example": "1",
+          "member": "int64",
+          "name": "FlowDisplayType",
+          "required": false,
+          "type": "int"
         }
       ],
       "usage": "in"
@@ -9542,6 +9560,15 @@
           "name": "AutoSignScene",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "在短信通知、填写、签署流程中，若标题、按钮、合同详情等地方存在“合同”字样时，可根据此配置指定文案，可选文案如下：  <ul><li> <b>0</b> :合同（默认值）</li> <li> <b>1</b> :文件</li> <li> <b>2</b> :协议</li></ul>效果如下:![FlowDisplayType](https://qcloudimg.tencent-cloud.cn/raw/e4a2c4d638717cc901d3dbd5137c9bbc.png)",
+          "example": "1",
+          "member": "int64",
+          "name": "FlowDisplayType",
+          "required": false,
+          "type": "int"
         }
       ],
       "usage": "in"

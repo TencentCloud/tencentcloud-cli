@@ -12123,7 +12123,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID 。只读组 ID为空时必填。",
+          "document": "实例 ID。\n说明：实例 ID 和实例组 ID 两个参数选其一填写即可。若要查询双节点、三节点实例 SSL 开通情况，请填写实例 ID 参数进行查询。单节点（云盘）、集群版实例不支持开启 SSL，因此不支持查询。",
           "example": "cdb-test",
           "member": "string",
           "name": "InstanceId",
@@ -12132,7 +12132,7 @@
         },
         {
           "disabled": false,
-          "document": "只读组 ID。实例 ID为空时必填。",
+          "document": "只读组 ID。\n说明：实例 ID 和实例组 ID 两个参数选其一填写即可。若要查询只读实例或只读组 SSL 开通情况，请填写 RoGroupId 参数，并注意填写的都是只读组 ID。单节点（云盘）、集群版实例不支持开启 SSL，因此不支持查询。",
           "example": "cdbrg-test",
           "member": "string",
           "name": "RoGroupId",
@@ -12151,7 +12151,7 @@
           "example": "ON",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12161,7 +12161,7 @@
           "example": "http://testdownload.url",
           "member": "string",
           "name": "Url",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

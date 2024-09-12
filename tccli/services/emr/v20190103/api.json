@@ -4937,7 +4937,7 @@
         },
         {
           "disabled": false,
-          "document": "服务组件名称，都是大写比如YARN",
+          "document": "服务组件名称，都是大写例如YARN",
           "example": "无",
           "member": "string",
           "name": "ServiceName",

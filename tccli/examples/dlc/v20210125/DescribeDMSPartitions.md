@@ -6,94 +6,90 @@ Input:
 
 ```
 tccli dlc DescribeDMSPartitions --cli-unfold-argument  \
-    --Name xx \
-    --TableName xx \
-    --PartValues xx \
-    --Values xx \
-    --DatabaseName xx \
-    --PartitionNames xx \
-    --SchemaName xx
+    --Name abc \
+    --TableName abc \
+    --PartValues abc \
+    --Values abc \
+    --DatabaseName abc \
+    --PartitionNames abc \
+    --SchemaName abc
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx",
-        "Total": 100,
         "Partitions": [
             {
-                "Sds": {
-                    "OutputFormat": "xx",
-                    "SortCols": {
-                        "Col": "xx",
-                        "Order": 0
-                    },
-                    "InputFormat": "xx",
-                    "SerdeLib": "xx",
-                    "Cols": [
-                        {
-                            "Name": "xx",
-                            "BizParams": [
-                                {
-                                    "Value": "xx",
-                                    "Key": "xx"
-                                }
-                            ],
-                            "IsPartition": true,
-                            "Params": [
-                                {
-                                    "Value": "xx",
-                                    "Key": "xx"
-                                }
-                            ],
-                            "Position": 0,
-                            "Type": "xx",
-                            "Description": "xx"
-                        }
-                    ],
-                    "Compressed": true,
-                    "Params": [
-                        {
-                            "Value": "xx",
-                            "Key": "xx"
-                        }
-                    ],
-                    "Location": "xx",
-                    "NumBuckets": 0,
-                    "SerdeParams": [
-                        {
-                            "Value": "xx",
-                            "Key": "xx"
-                        }
-                    ],
-                    "SerdeName": "xx",
-                    "StoredAsSubDirectories": true,
-                    "BucketCols": [
-                        "xx"
-                    ]
-                },
-                "Name": "xx",
-                "ModifiedTime": "2020-09-22T00:00:00+00:00",
+                "DatabaseName": "abc",
+                "SchemaName": "abc",
+                "TableName": "abc",
                 "DataVersion": 0,
-                "RecordCount": 0,
-                "TableName": "xx",
-                "LastAccessTime": "2020-09-22T00:00:00+00:00",
+                "Name": "abc",
                 "Values": [
-                    "xx"
+                    "abc"
                 ],
-                "DatabaseName": "xx",
+                "StorageSize": 0,
+                "RecordCount": 0,
+                "CreateTime": "2020-09-22T00:00:00+00:00",
+                "ModifiedTime": "2020-09-22T00:00:00+00:00",
+                "LastAccessTime": "2020-09-22T00:00:00+00:00",
                 "Params": [
                     {
-                        "Value": "xx",
-                        "Key": "xx"
+                        "Key": "abc",
+                        "Value": "abc"
                     }
                 ],
-                "SchemaName": "xx",
-                "StorageSize": 0,
-                "CreateTime": "2020-09-22T00:00:00+00:00"
+                "Sds": {
+                    "Location": "abc",
+                    "InputFormat": "abc",
+                    "OutputFormat": "abc",
+                    "NumBuckets": 0,
+                    "Compressed": true,
+                    "StoredAsSubDirectories": true,
+                    "SerdeLib": "abc",
+                    "SerdeName": "abc",
+                    "BucketCols": [
+                        "abc"
+                    ],
+                    "SerdeParams": [
+                        {
+                            "Key": "abc",
+                            "Value": "abc"
+                        }
+                    ],
+                    "Params": [
+                        {
+                            "Key": "abc",
+                            "Value": "abc"
+                        }
+                    ],
+                    "SortCols": {
+                        "Col": "abc",
+                        "Order": 0
+                    },
+                    "Cols": [
+                        {
+                            "Name": "abc",
+                            "Description": "abc",
+                            "Type": "abc",
+                            "Position": 0,
+                            "IsPartition": true,
+                            "BizParams": [],
+                            "Params": []
+                        }
+                    ],
+                    "SortColumns": [
+                        {
+                            "Col": "abc",
+                            "Order": 0
+                        }
+                    ]
+                }
             }
-        ]
+        ],
+        "Total": 0,
+        "RequestId": "abc"
     }
 }
 ```

@@ -792,7 +792,7 @@
       "status": "online"
     },
     "DescribePendingSubmitTaskList": {
-      "document": "获取待提交任务预提交校验信息",
+      "document": "获取待提交任务预提交校验信息（注意：工作流编号或者任务编号列表，必须填一项）",
       "input": "DescribePendingSubmitTaskListRequest",
       "name": "获取待提交任务预提交校验信息",
       "output": "DescribePendingSubmitTaskListResponse",

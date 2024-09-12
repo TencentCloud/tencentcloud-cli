@@ -8000,7 +8000,7 @@
         {
           "disabled": false,
           "document": "资源方列表",
-          "example": "[\"FLEXDB\", \"COS\",\"SCF\", \"CDN\",\"EKS\", \"CODING\", \"HTTPSERVICE\", \"H",
+          "example": "[\"FLEXDB\", \"COS\",\"SCF\", \"CDN\",\"EKS\", \"CODING\", \"HTTPSERVICE\"]",
           "member": "string",
           "name": "ResourceTypes",
           "required": true,
@@ -8045,7 +8045,7 @@
           "example": "无",
           "member": "PostPaidEnvDeductInfo",
           "name": "PostPaidEnvDeductInfoList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
