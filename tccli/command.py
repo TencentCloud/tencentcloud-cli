@@ -6,6 +6,8 @@ import copy
 import tccli.services as Services
 import tccli.options_define as Options_define
 from collections import OrderedDict
+
+from tccli import oauth
 from tccli.utils import Utils
 from tccli.argument import CLIArgument, CustomArgument, ListArgument, BooleanArgument
 from tccli.exceptions import UnknownArgumentError
@@ -176,12 +178,15 @@ class ServiceCommand(BaseCommand):
         service_model = self._get_service_model()
         for action in service_model["actions"]:
             action_model = service_model["actions"][action]
+            action_caller = action_model.get("action_caller", None)
+            if not action_caller:
+                action_caller = Services.action_caller(self._service_name)()[action]
             command_map[action] = ActionCommand(
                 service_name=self._service_name,
                 version=self._version,
                 action_name=action,
                 action_model=action_model,
-                action_caller=Services.action_caller(self._service_name)()[action],
+                action_caller=action_caller,
             )
         return command_map
 
@@ -286,6 +291,7 @@ class ActionCommand(BaseCommand):
             action_parameters = self.cli_unfold_argument.build_action_parameters(parsed_args)
         else:
             action_parameters = self._build_action_parameters(parsed_args, self.argument_map)
+        oauth.maybe_refresh_credential(parsed_globals.profile if parsed_globals.profile else "default")
         return self._action_caller(action_parameters, vars(parsed_globals))
 
     def create_help_command(self):

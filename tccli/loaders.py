@@ -9,6 +9,7 @@ from tccli.utils import Utils
 from tccli import __version__
 from tccli.services import SERVICE_VERSIONS
 from collections import OrderedDict
+import tccli.plugin as plugin
 
 BASE_TYPE = ["int64", "uint64", "string", "float", "bool", "date", "datetime", "datetime_iso", "binary"]
 CLI_BASE_TYPE = ["Integer", "String", "Float", "Timestamp", "Boolean", "Binary"]
@@ -175,7 +176,15 @@ class Loader(object):
         return version[1:5] + "-" + version[5:7] + "-" + version[7:9]
 
     def get_available_services(self):
-        return SERVICE_VERSIONS
+        services = copy.deepcopy(SERVICE_VERSIONS)
+        for name, vers in plugin.import_plugins().items():
+            if name not in services:
+                services[name] = []
+            for ver, spec in vers.items():
+                api_ver = spec["metadata"]["apiVersion"]
+                if api_ver not in services[name]:
+                    services[name].append(api_ver)
+        return services
 
     def get_service_default_version(self, service):
         args = sys.argv[1:]
@@ -194,15 +203,41 @@ class Loader(object):
         services_path = self.get_services_path()
         version = "v" + version.replace('-', '')
         apis_path = os.path.join(services_path, service, version, "api.json")
-        if not os.path.exists(apis_path):
+        model = {
+            "metadata": {},
+            "actions": {},
+            "objects": {},
+        }
+        if os.path.exists(apis_path):
+            if six.PY2:
+                with open(apis_path, 'r') as f:
+                    model = json.load(f)
+            else:
+                with open(apis_path, 'r', encoding='utf-8') as f:
+                    model = json.load(f)
+
+        # merge plugins
+        for plugin_name, vers in plugin.import_plugins().items():
+
+            if plugin_name != service:
+                continue
+
+            for ver, spec in vers.items():
+
+                # 2017-03-12 -> v20170312
+                compact_ver = 'v' + ver.replace('-', '')
+
+                if compact_ver != version:
+                    continue
+
+                model["metadata"].update(spec["metadata"])
+                model["actions"].update(spec["actions"])
+                model["objects"].update(spec["objects"])
+
+        if not model:
             raise Exception("Not find service:%s version:%s model" % (service, version))
 
-        if six.PY2:
-            with open(apis_path, 'r') as f:
-                return json.load(f)
-        else:
-            with open(apis_path, 'r', encoding='utf-8') as f:
-                return json.load(f)
+        return model
 
     def get_service_description(self, service, version):
         service_model = self.get_service_model(service, version)
