@@ -15,7 +15,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "xx"
+        "RequestId": "1234567890"
     }
 }
 ```

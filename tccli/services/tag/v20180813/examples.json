@@ -270,6 +270,14 @@
         "title": "EB侧查询绑定了标签的资源列表"
       }
     ],
+    "GetResourcesForMonitor": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tag.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetResourcesForMonitor\n<公共请求参数>\n\n{\n    \"ResourceList\": [\n        \"qcs::cvm:ap-beijing:uin/100000558920:instance/ins-123\",\n        \"qcs::cvm:ap-shanghai:uin/100000558920:instance/ins-345\"\n    ],\n    \"TagFilters\": [\n        {\n            \"TagKey\": \"11\",\n            \"TagValue\": [\n                \"11\"\n            ]\n        },\n        {\n            \"TagKey\": \"22\",\n            \"TagValue\": [\n                \"22\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"PaginationToken\": \"\",\n        \"ResourceTagMappingList\": [\n            {\n                \"Resource\": \"qcs::cvm:ap-beijing:uin/100000558920:instance/ins-123\",\n                \"Tags\": [\n                    {\n                        \"TagKey\": \"22\",\n                        \"TagValue\": \"22\"\n                    },\n                    {\n                        \"TagKey\": \"11\",\n                        \"TagValue\": \"11\"\n                    }\n                ]\n            },\n            {\n                \"Resource\": \"qcs::cvm:ap-shanghai:uin/100000558920:instance/ins-345\",\n                \"Tags\": [\n                    {\n                        \"TagKey\": \"22\",\n                        \"TagValue\": \"22\"\n                    },\n                    {\n                        \"TagKey\": \"11\",\n                        \"TagValue\": \"11\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"07cfd251-4ed1-426c-8133-e04a583063c0\"\n    }\n}",
+        "title": "查询资源标签列表（云监控专用）"
+      }
+    ],
     "GetTagKeys": [
       {
         "document": "",

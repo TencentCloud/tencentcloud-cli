@@ -6,112 +6,112 @@ Input:
 
 ```
 tccli dlc AlterDMSTable --cli-unfold-argument  \
-    --PartitionKeys.0.Name xx \
-    --PartitionKeys.0.BizParams.0.Value xx \
-    --PartitionKeys.0.BizParams.0.Key xx \
+    --PartitionKeys.0.Name abc \
+    --PartitionKeys.0.BizParams.0.Value abc \
+    --PartitionKeys.0.BizParams.0.Key abc \
     --PartitionKeys.0.IsPartition True \
-    --PartitionKeys.0.Params.0.Value xx \
-    --PartitionKeys.0.Params.0.Key xx \
+    --PartitionKeys.0.Params.0.Value abc \
+    --PartitionKeys.0.Params.0.Key abc \
     --PartitionKeys.0.Position 0 \
-    --PartitionKeys.0.Type xx \
-    --PartitionKeys.0.Description xx \
+    --PartitionKeys.0.Type abc \
+    --PartitionKeys.0.Description abc \
     --RecordCount 0 \
-    --CurrentName xx \
-    --Sds.OutputFormat xx \
-    --Sds.SortCols.Col xx \
+    --CurrentName abc \
+    --Sds.OutputFormat abc \
+    --Sds.SortCols.Col col1 \
     --Sds.SortCols.Order 0 \
-    --Sds.InputFormat xx \
-    --Sds.SerdeLib xx \
-    --Sds.Cols.0.Name xx \
-    --Sds.Cols.0.BizParams.0.Value xx \
-    --Sds.Cols.0.BizParams.0.Key xx \
+    --Sds.InputFormat abc \
+    --Sds.SerdeLib abc \
+    --Sds.Cols.0.Name abc \
+    --Sds.Cols.0.BizParams.0.Value abc \
+    --Sds.Cols.0.BizParams.0.Key abc \
     --Sds.Cols.0.IsPartition True \
-    --Sds.Cols.0.Params.0.Value xx \
-    --Sds.Cols.0.Params.0.Key xx \
+    --Sds.Cols.0.Params.0.Value abc \
+    --Sds.Cols.0.Params.0.Key abc \
     --Sds.Cols.0.Position 0 \
-    --Sds.Cols.0.Type xx \
-    --Sds.Cols.0.Description xx \
+    --Sds.Cols.0.Type abc \
+    --Sds.Cols.0.Description abc \
     --Sds.Compressed True \
-    --Sds.Params.0.Value xx \
-    --Sds.Params.0.Key xx \
-    --Sds.Location xx \
+    --Sds.Params.0.Value abc \
+    --Sds.Params.0.Key abc \
+    --Sds.Location cosn://abc \
     --Sds.NumBuckets 0 \
-    --Sds.SerdeParams.0.Value xx \
-    --Sds.SerdeParams.0.Key xx \
-    --Sds.SerdeName xx \
+    --Sds.SerdeParams.0.Value abc \
+    --Sds.SerdeParams.0.Key abc \
+    --Sds.SerdeName abc \
     --Sds.StoredAsSubDirectories True \
-    --Sds.BucketCols xx \
+    --Sds.BucketCols abc \
     --StructUpdateTime 2020-09-22T00:00:00+00:00 \
     --DataUpdateTime 2020-09-22T00:00:00+00:00 \
     --LastAccessTime 2020-09-22T00:00:00+00:00 \
     --StorageSize 0 \
-    --CurrentDbName xx \
-    --ViewExpandedText xx \
-    --Asset.Description xx \
+    --CurrentDbName db \
+    --ViewExpandedText abc \
+    --Asset.Description abc \
     --Asset.ModifiedTime 2020-09-22T00:00:00+00:00 \
     --Asset.DataVersion 0 \
-    --Asset.BizParams.0.Value xx \
-    --Asset.BizParams.0.Key xx \
-    --Asset.OwnerAccount xx \
+    --Asset.BizParams.0.Value abc \
+    --Asset.BizParams.0.Key abc \
+    --Asset.OwnerAccount abc \
     --Asset.CreateTime 2020-09-22T00:00:00+00:00 \
-    --Asset.Catalog xx \
-    --Asset.Params.0.Value xx \
-    --Asset.Params.0.Key xx \
-    --Asset.PermValues.0.Value xx \
-    --Asset.PermValues.0.Key xx \
-    --Asset.Owner xx \
+    --Asset.Catalog abc \
+    --Asset.Params.0.Value abc \
+    --Asset.Params.0.Key abc \
+    --Asset.PermValues.0.Value abc \
+    --Asset.PermValues.0.Key abc \
+    --Asset.Owner abc \
     --Asset.DatasourceId 0 \
-    --Asset.Guid xx \
+    --Asset.Guid abc \
     --Asset.Id 0 \
-    --Asset.Name xx \
+    --Asset.Name abc \
     --LifeTime 0 \
-    --ViewOriginalText xx \
-    --Type xx \
-    --DbName xx \
-    --Columns.0.Name xx \
-    --Columns.0.BizParams.0.Value xx \
-    --Columns.0.BizParams.0.Key xx \
+    --ViewOriginalText abc \
+    --Type abc \
+    --DbName abc \
+    --Columns.0.Name abc \
+    --Columns.0.BizParams.0.Value abc \
+    --Columns.0.BizParams.0.Key abc \
     --Columns.0.IsPartition True \
-    --Columns.0.Params.0.Value xx \
-    --Columns.0.Params.0.Key xx \
+    --Columns.0.Params.0.Value abc \
+    --Columns.0.Params.0.Key abc \
     --Columns.0.Position 0 \
-    --Columns.0.Type xx \
-    --Columns.0.Description xx \
-    --Partitions.0.Sds.OutputFormat xx \
-    --Partitions.0.Sds.SortCols.Col xx \
+    --Columns.0.Type abc \
+    --Columns.0.Description abc \
+    --Partitions.0.Sds.OutputFormat abc \
+    --Partitions.0.Sds.SortCols.Col col1 \
     --Partitions.0.Sds.SortCols.Order 0 \
-    --Partitions.0.Sds.InputFormat xx \
-    --Partitions.0.Sds.SerdeLib xx \
-    --Partitions.0.Sds.Cols.0.Name xx \
-    --Partitions.0.Sds.Cols.0.BizParams.0.Value xx \
-    --Partitions.0.Sds.Cols.0.BizParams.0.Key xx \
+    --Partitions.0.Sds.InputFormat abc \
+    --Partitions.0.Sds.SerdeLib abc \
+    --Partitions.0.Sds.Cols.0.Name abc \
+    --Partitions.0.Sds.Cols.0.BizParams.0.Value abc \
+    --Partitions.0.Sds.Cols.0.BizParams.0.Key abc \
     --Partitions.0.Sds.Cols.0.IsPartition True \
-    --Partitions.0.Sds.Cols.0.Params.0.Value xx \
-    --Partitions.0.Sds.Cols.0.Params.0.Key xx \
+    --Partitions.0.Sds.Cols.0.Params.0.Value abc \
+    --Partitions.0.Sds.Cols.0.Params.0.Key abc \
     --Partitions.0.Sds.Cols.0.Position 0 \
-    --Partitions.0.Sds.Cols.0.Type xx \
-    --Partitions.0.Sds.Cols.0.Description xx \
+    --Partitions.0.Sds.Cols.0.Type abc \
+    --Partitions.0.Sds.Cols.0.Description abc \
     --Partitions.0.Sds.Compressed True \
-    --Partitions.0.Sds.Params.0.Value xx \
-    --Partitions.0.Sds.Params.0.Key xx \
-    --Partitions.0.Sds.Location xx \
+    --Partitions.0.Sds.Params.0.Value abc \
+    --Partitions.0.Sds.Params.0.Key abc \
+    --Partitions.0.Sds.Location abc \
     --Partitions.0.Sds.NumBuckets 0 \
-    --Partitions.0.Sds.SerdeParams.0.Value xx \
-    --Partitions.0.Sds.SerdeParams.0.Key xx \
-    --Partitions.0.Sds.SerdeName xx \
+    --Partitions.0.Sds.SerdeParams.0.Value abc \
+    --Partitions.0.Sds.SerdeParams.0.Key abc \
+    --Partitions.0.Sds.SerdeName abc \
     --Partitions.0.Sds.StoredAsSubDirectories True \
-    --Partitions.0.Sds.BucketCols xx \
-    --Partitions.0.Name xx \
+    --Partitions.0.Sds.BucketCols abc \
+    --Partitions.0.Name abc \
     --Partitions.0.ModifiedTime 2020-09-22T00:00:00+00:00 \
     --Partitions.0.DataVersion 0 \
     --Partitions.0.RecordCount 0 \
-    --Partitions.0.TableName xx \
+    --Partitions.0.TableName abc \
     --Partitions.0.LastAccessTime 2020-09-22T00:00:00+00:00 \
-    --Partitions.0.Values xx \
-    --Partitions.0.DatabaseName xx \
-    --Partitions.0.Params.0.Value xx \
-    --Partitions.0.Params.0.Key xx \
-    --Partitions.0.SchemaName xx \
+    --Partitions.0.Values abc \
+    --Partitions.0.DatabaseName abc \
+    --Partitions.0.Params.0.Value abc \
+    --Partitions.0.Params.0.Key abc \
+    --Partitions.0.SchemaName abc \
     --Partitions.0.StorageSize 0 \
     --Partitions.0.CreateTime 2020-09-22T00:00:00+00:00
 ```

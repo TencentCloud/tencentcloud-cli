@@ -7,16 +7,16 @@ Input:
 ```
 tccli dlc CreateResultDownload --cli-unfold-argument  \
     --Force True \
-    --TaskId xx \
-    --Format xx
+    --TaskId abc \
+    --Format abc
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "DownloadId": "xx",
-        "RequestId": "xx"
+        "DownloadId": "abc",
+        "RequestId": "abc"
     }
 }
 ```

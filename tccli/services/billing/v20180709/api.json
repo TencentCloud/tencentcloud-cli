@@ -7126,6 +7126,15 @@
           "name": "ResourceSet",
           "required": true,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "资源拥有者的主uin，此参数必填",
+          "example": "无",
+          "member": "string",
+          "name": "OwnerUin",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -7139,6 +7148,7 @@
           "example": "true",
           "member": "bool",
           "name": "CallbackSuccess",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },

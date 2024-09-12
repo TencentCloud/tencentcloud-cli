@@ -225,7 +225,7 @@ def doDeleteDeviceGroupMembers(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeLoginEvent(args, parsed_globals):
+def doDeleteUserGroupMembers(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -254,11 +254,11 @@ def doDescribeLoginEvent(args, parsed_globals):
     client = mod.DasbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeLoginEventRequest()
+    model = models.DeleteUserGroupMembersRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DescribeLoginEvent(model)
+        rsp = client.DeleteUserGroupMembers(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -641,6 +641,58 @@ def doDescribeUserGroups(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeDomains(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION)             and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID)             and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE)             and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DasbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeDomainsRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.DescribeDomains(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDeployResource(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -1005,7 +1057,7 @@ def doDescribeResources(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteUserGroupMembers(args, parsed_globals):
+def doDescribeLoginEvent(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -1034,11 +1086,11 @@ def doDeleteUserGroupMembers(args, parsed_globals):
     client = mod.DasbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteUserGroupMembersRequest()
+    model = models.DescribeLoginEventRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DeleteUserGroupMembers(model)
+        rsp = client.DescribeLoginEvent(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -3464,7 +3516,7 @@ ACTION_MAP = {
     "DescribeDeviceGroupMembers": doDescribeDeviceGroupMembers,
     "ModifyOAuthSetting": doModifyOAuthSetting,
     "DeleteDeviceGroupMembers": doDeleteDeviceGroupMembers,
-    "DescribeLoginEvent": doDescribeLoginEvent,
+    "DeleteUserGroupMembers": doDeleteUserGroupMembers,
     "CreateDeviceGroup": doCreateDeviceGroup,
     "DeleteDeviceAccounts": doDeleteDeviceAccounts,
     "ResetUser": doResetUser,
@@ -3472,6 +3524,7 @@ ACTION_MAP = {
     "AccessDevice": doAccessDevice,
     "CreateChangePwdTask": doCreateChangePwdTask,
     "DescribeUserGroups": doDescribeUserGroups,
+    "DescribeDomains": doDescribeDomains,
     "DeployResource": doDeployResource,
     "ModifyDevice": doModifyDevice,
     "BindDeviceResource": doBindDeviceResource,
@@ -3479,7 +3532,7 @@ ACTION_MAP = {
     "SearchSession": doSearchSession,
     "ImportExternalDevice": doImportExternalDevice,
     "DescribeResources": doDescribeResources,
-    "DeleteUserGroupMembers": doDeleteUserGroupMembers,
+    "DescribeLoginEvent": doDescribeLoginEvent,
     "ModifyChangePwdTask": doModifyChangePwdTask,
     "CreateAssetSyncJob": doCreateAssetSyncJob,
     "CreateDeviceAccount": doCreateDeviceAccount,

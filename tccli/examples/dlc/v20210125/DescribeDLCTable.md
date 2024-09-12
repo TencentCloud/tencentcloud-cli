@@ -204,7 +204,9 @@ Output:
                             "Description": "abc",
                             "Type": "abc",
                             "Position": 0,
-                            "IsPartition": true
+                            "IsPartition": true,
+                            "BizParams": [],
+                            "Params": []
                         }
                     ]
                 },
@@ -253,7 +255,9 @@ Output:
                                     "Description": "abc",
                                     "Type": "abc",
                                     "Position": 0,
-                                    "IsPartition": true
+                                    "IsPartition": true,
+                                    "BizParams": [],
+                                    "Params": []
                                 }
                             ]
                         }

@@ -187,15 +187,6 @@ Output:
                 "Region": "sa-saopaulo",
                 "RegionTypeMC": null,
                 "RegionName": "南美地区(圣保罗)"
-            },
-            {
-                "RegionIdMC": null,
-                "LocationMC": null,
-                "RegionState": "AVAILABLE",
-                "RegionNameMC": null,
-                "Region": "na-toronto",
-                "RegionTypeMC": null,
-                "RegionName": "北美地区(多伦多)"
             }
         ]
     }

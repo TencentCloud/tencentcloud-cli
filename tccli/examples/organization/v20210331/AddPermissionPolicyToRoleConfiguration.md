@@ -10,7 +10,7 @@ tccli organization AddPermissionPolicyToRoleConfiguration --cli-unfold-argument 
     --RoleConfigurationId rc-aiwmsiw \
     --RolePolicyType System \
     --RolePolicyNames TestPolicy \
-    --CustomPolicyDocument 
+    --CustomPolicyDocument {"statement":{"action":["name/cvm:*","name/vpc:*","name/cos:*","name/cmqtopic:*","name/cmqqueue:*"],"effect":"allow","resource":"*"},"version":"2.0"}
 ```
 
 Output: 

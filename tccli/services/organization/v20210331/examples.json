@@ -35,7 +35,7 @@
     "AddPermissionPolicyToRoleConfiguration": [
       {
         "document": "为权限配置添加策略",
-        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddPermissionPolicyToRoleConfiguration\n<公共请求参数>\n\n{\n    \"ZoneId\": \"z-29wm2iwn\",\n    \"RoleConfigurationId\": \"rc-aiwmsiw\",\n    \"RolePolicyType\": \"System\",\n    \"RolePolicyNames\": [\n        \"TestPolicy\"\n    ],\n    \"CustomPolicyDocument\": \"\"\n}",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddPermissionPolicyToRoleConfiguration\n<公共请求参数>\n\n{\n    \"ZoneId\": \"z-29wm2iwn\",\n    \"RoleConfigurationId\": \"rc-aiwmsiw\",\n    \"RolePolicyType\": \"System\",\n    \"RolePolicyNames\": [\n        \"TestPolicy\"\n    ],\n    \"CustomPolicyDocument\": \"{\\\"statement\\\":{\\\"action\\\":[\\\"name/cvm:*\\\",\\\"name/vpc:*\\\",\\\"name/cos:*\\\",\\\"name/cmqtopic:*\\\",\\\"name/cmqqueue:*\\\"],\\\"effect\\\":\\\"allow\\\",\\\"resource\\\":\\\"*\\\"},\\\"version\\\":\\\"2.0\\\"}\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"e297543a-80de-4039-83c8-9d324545\"\n    }\n}",
         "title": "为权限配置添加策略"
       }
@@ -638,6 +638,14 @@
         "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetZoneStatistics\n<公共请求参数>\n\n{\n    \"ZoneId\": \"z-siwns82n****\"\n}",
         "output": "{\n    \"Response\": {\n        \"ZoneStatistics\": {\n            \"UserQuota\": 1000,\n            \"GroupQuota\": 500,\n            \"RoleConfigurationQuota\": 1000,\n            \"SystemPolicyPerRoleConfigurationQuota\": 20,\n            \"UserCount\": 10,\n            \"GroupCount\": 2,\n            \"RoleConfigurationCount\": 3,\n            \"UserProvisioningCount\": 0,\n            \"RoleConfigurationSyncCount\": 0\n        },\n        \"RequestId\": \"e297543a-80de-4039-83c8-9d324545\"\n    }\n}",
         "title": "查询空间的统计信息"
+      }
+    ],
+    "InviteOrganizationMember": [
+      {
+        "document": "邀请成员",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InviteOrganizationMember\n<公共请求参数>\n\n{\n    \"Remark\": \"\",\n    \"MemberUin\": 111111111111,\n    \"Name\": \"member_name\",\n    \"NodeId\": 1001,\n    \"PermissionIds\": [\n        1,\n        2\n    ],\n    \"PolicyType\": \"Financial\",\n    \"PayUin\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9be34d82-b614-4010-8cd8-d907b4d303f2\"\n    }\n}",
+        "title": "邀请成员"
       }
     ],
     "ListExternalSAMLIdPCertificates": [

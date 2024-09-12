@@ -231,6 +231,13 @@
       "output": "GetResourcesForEBResponse",
       "status": "online"
     },
+    "GetResourcesForMonitor": {
+      "document": "查询绑定了标签的资源列表。",
+      "input": "GetResourcesForMonitorRequest",
+      "name": "云监控查询资源标签列表",
+      "output": "GetResourcesForMonitorResponse",
+      "status": "online"
+    },
     "GetTagKeys": {
       "document": "查询标签键列表。",
       "input": "GetTagKeysRequest",
@@ -2769,6 +2776,80 @@
           "example": "无",
           "member": "ResourceTagMapping",
           "name": "ResourceTagMappingList",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetResourcesForMonitorRequest": {
+      "document": "GetResourcesForMonitor请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源六段式列表。腾讯云使用资源六段式描述一个资源。\n例如：ResourceList.1 = qcs::${ServiceType}:${Region}:${Account}:${ResourcePreifx}/${ResourceId}。\n如果传入了此参数会返回所有匹配的资源列表，指定的MaxResults会失效。\nN取值范围：0~9",
+          "example": "qcs::cvm:ap-beijing:uin/1234567:instance/ins-123",
+          "member": "string",
+          "name": "ResourceList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "标签键和标签值。\n指定多个标签，会查询同时绑定了该多个标签的资源。\nN取值范围：0~5。\n每个TagFilters中的TagValue最多支持10个",
+          "example": "无",
+          "member": "TagFilter",
+          "name": "TagFilters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "从上一页的响应中获取的下一页的Token值。\n如果是第一次请求，设置为空。",
+          "example": "POzXXYGXh2fRDHxx7PGaJnLApcyIuAYBC5HX25gKI4Sz2R*********",
+          "member": "string",
+          "name": "PaginationToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "每一页返回的数据最大条数，最大200。\n缺省值：50。",
+          "example": "50",
+          "member": "uint64",
+          "name": "MaxResults",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetResourcesForMonitorResponse": {
+      "document": "GetResourcesForMonitor返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "获取的下一页的Token值",
+          "example": "POzXXYGXh2fRDHxx7PGaJnLApcyIuAYBC5HX25gKI4Sz2R*********",
+          "member": "string",
+          "name": "PaginationToken",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源及关联的标签(键和值)列表",
+          "example": "无",
+          "member": "ResourceTagMapping",
+          "name": "ResourceTagMappingList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

@@ -680,7 +680,7 @@
           "example": "TYPE_DATASET_TEXT",
           "member": "string",
           "name": "DatasetType",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
@@ -689,7 +689,7 @@
           "example": "无",
           "member": "CosPathInfo",
           "name": "StorageDataPath",
-          "required": true,
+          "required": false,
           "type": "object"
         },
         {
@@ -698,7 +698,7 @@
           "example": "无",
           "member": "CosPathInfo",
           "name": "StorageLabelPath",
-          "required": true,
+          "required": false,
           "type": "object"
         },
         {
@@ -721,7 +721,7 @@
         },
         {
           "disabled": false,
-          "document": "标注类型:\nANNOTATION_TYPE_CLASSIFICATION，图片分类\nANNOTATION_TYPE_DETECTION，目标检测\nANNOTATION_TYPE_SEGMENTATION，图片分割\nANNOTATION_TYPE_TRACKING，目标跟踪",
+          "document": "标注类型:\nANNOTATION_TYPE_CLASSIFICATION，图片分类\nANNOTATION_TYPE_DETECTION，目标检测\nANNOTATION_TYPE_SEGMENTATION，图片分割\nANNOTATION_TYPE_TRACKING，目标跟踪\nANNOTATION_TYPE_OCR，OCR\nANNOTATION_TYPE_TEXT_CLASSIFICATION，文本分类",
           "example": "ANNOTATION_TYPE_DETECTION",
           "member": "string",
           "name": "AnnotationType",
@@ -730,7 +730,7 @@
         },
         {
           "disabled": false,
-          "document": "标注格式:\nANNOTATION_FORMAT_TI，TI平台格式\nANNOTATION_FORMAT_PASCAL，Pascal Voc\nANNOTATION_FORMAT_COCO，COCO\nANNOTATION_FORMAT_FILE，文件目录结构",
+          "document": "标注格式:\nANNOTATION_FORMAT_TI，TI平台格式\nANNOTATION_FORMAT_PASCAL，Pascal Voc\nANNOTATION_FORMAT_COCO，COCO\nANNOTATION_FORMAT_FILE，文件目录结构\nANNOTATION_FORMAT_TEXT_TI，文本类型TI平台格式\nANNOTATION_FORMAT_TXT，文本类型TXT格式\nANNOTATION_FORMAT_CSV，文本类型CSV格式\nANNOTATION_FORMAT_JSON，文本类型JSON格式",
           "example": "VOC",
           "member": "string",
           "name": "AnnotationFormat",
@@ -757,12 +757,39 @@
         },
         {
           "disabled": false,
-          "document": "导入文件粒度，按行或者按文件",
+          "document": "导入文件粒度\nTYPE_TEXT_LINE，按行\nTYPE_TEXT_FILE，按文件",
           "example": "TYPE_TEXT_LINE",
           "member": "string",
           "name": "ContentType",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据集建模一级类别。LLM,CV,STRUCTURE,OTHER",
+          "example": "LLM",
+          "member": "string",
+          "name": "DatasetScene",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据集标签。",
+          "example": "无",
+          "member": "string",
+          "name": "SceneTags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "数据集CFS配置。仅支持LLM场景",
+          "example": "无",
+          "member": "CFSConfig",
+          "name": "CFSConfig",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -776,6 +803,7 @@
           "example": "rodftu04veo",
           "member": "string",
           "name": "DatasetId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1938,7 +1966,7 @@
           "example": "Voc2017",
           "member": "string",
           "name": "DatasetId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1948,7 +1976,7 @@
           "example": "test",
           "member": "string",
           "name": "DatasetName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1958,7 +1986,7 @@
           "example": "test",
           "member": "string",
           "name": "Creator",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1968,7 +1996,7 @@
           "example": "test",
           "member": "string",
           "name": "DatasetVersion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1978,7 +2006,7 @@
           "example": "test",
           "member": "string",
           "name": "DatasetType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1988,7 +2016,7 @@
           "example": "test",
           "member": "Tag",
           "name": "DatasetTags",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1998,7 +2026,7 @@
           "example": "test",
           "member": "string",
           "name": "DatasetAnnotationTaskName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2008,7 +2036,7 @@
           "example": "test",
           "member": "string",
           "name": "DatasetAnnotationTaskId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2018,7 +2046,7 @@
           "example": "test",
           "member": "uint64",
           "name": "Process",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2028,7 +2056,7 @@
           "example": "test",
           "member": "string",
           "name": "DatasetStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2038,7 +2066,7 @@
           "example": "test",
           "member": "string",
           "name": "ErrorMsg",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2048,7 +2076,7 @@
           "example": "test",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2058,7 +2086,7 @@
           "example": "test",
           "member": "string",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2068,7 +2096,7 @@
           "example": "test",
           "member": "string",
           "name": "ExternalTaskType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2078,7 +2106,7 @@
           "example": "test",
           "member": "string",
           "name": "DatasetSize",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2088,7 +2116,7 @@
           "example": "test",
           "member": "uint64",
           "name": "FileNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2098,7 +2126,7 @@
           "example": "test",
           "member": "CosPathInfo",
           "name": "StorageDataPath",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -2108,7 +2136,7 @@
           "example": "test",
           "member": "CosPathInfo",
           "name": "StorageLabelPath",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -2118,7 +2146,7 @@
           "example": "test",
           "member": "DatasetInfo",
           "name": "DatasetVersions",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -2128,7 +2156,7 @@
           "example": "test",
           "member": "string",
           "name": "AnnotationStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2138,7 +2166,7 @@
           "example": "test",
           "member": "string",
           "name": "AnnotationType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2148,7 +2176,7 @@
           "example": "test",
           "member": "string",
           "name": "AnnotationFormat",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2158,7 +2186,7 @@
           "example": "SCOPE_DATASET_PRIVATE",
           "member": "string",
           "name": "DatasetScope",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2168,7 +2196,7 @@
           "example": "IDENTITY",
           "member": "string",
           "name": "OcrScene",
-          "required": true,
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2178,7 +2206,7 @@
           "example": "STATUS_SUCCESS",
           "member": "string",
           "name": "AnnotationKeyStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2188,8 +2216,68 @@
           "example": "TYPE_TEXT_LINE",
           "member": "string",
           "name": "ContentType",
-          "required": false,
+          "output_required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据集建模类别。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DatasetScene",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "CFS配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CFSConfig",
+          "name": "CFSConfig",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据集标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SceneTags",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "已标注数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "NumAnnotated",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标注规范\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AnnotationSpecification",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标注Schema是否配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "AnnotationSchemaConfigured",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": true
         }
       ],
@@ -2204,7 +2292,7 @@
           "example": "rodftv7u3gg",
           "member": "string",
           "name": "DatasetId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2214,7 +2302,7 @@
           "example": "test_text_202111291118",
           "member": "string",
           "name": "DatasetName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2224,7 +2312,7 @@
           "example": "nemoren",
           "member": "string",
           "name": "Creator",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2234,7 +2322,7 @@
           "example": "v1",
           "member": "string",
           "name": "DatasetVersion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2244,7 +2332,7 @@
           "example": "TEXT",
           "member": "string",
           "name": "DatasetType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2254,7 +2342,7 @@
           "example": "tag",
           "member": "Tag",
           "name": "DatasetTags",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -2264,7 +2352,7 @@
           "example": "anno_test_text",
           "member": "string",
           "name": "DatasetAnnotationTaskName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2274,7 +2362,7 @@
           "example": "\"anno_id\"",
           "member": "string",
           "name": "DatasetAnnotationTaskId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2284,7 +2372,7 @@
           "example": "100",
           "member": "int64",
           "name": "Process",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2294,7 +2382,7 @@
           "example": "\"test\"",
           "member": "string",
           "name": "DatasetStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2304,7 +2392,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "ErrorMsg",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2314,7 +2402,7 @@
           "example": "2021-12-01 18:32:05",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2324,7 +2412,7 @@
           "example": "2021-12-01 18:32:05",
           "member": "string",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2334,7 +2422,7 @@
           "example": "test",
           "member": "string",
           "name": "ExternalTaskType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2344,7 +2432,7 @@
           "example": "1G",
           "member": "string",
           "name": "DatasetSize",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2354,7 +2442,7 @@
           "example": "20",
           "member": "uint64",
           "name": "FileNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2364,7 +2452,7 @@
           "example": "test",
           "member": "CosPathInfo",
           "name": "StorageDataPath",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -2374,7 +2462,7 @@
           "example": "test",
           "member": "CosPathInfo",
           "name": "StorageLabelPath",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -2384,7 +2472,7 @@
           "example": "test",
           "member": "string",
           "name": "AnnotationStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2394,7 +2482,7 @@
           "example": "test",
           "member": "string",
           "name": "AnnotationType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2404,7 +2492,7 @@
           "example": "test",
           "member": "string",
           "name": "AnnotationFormat",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2414,7 +2502,7 @@
           "example": "SCOPE_DATASET_PRIVATE",
           "member": "string",
           "name": "DatasetScope",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2424,7 +2512,7 @@
           "example": "IDENTITY",
           "member": "string",
           "name": "OcrScene",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2434,8 +2522,78 @@
           "example": "STATUS_SUCCESS",
           "member": "string",
           "name": "AnnotationKeyStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "内容类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ContentType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据集建模类别。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DatasetScene",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "CFS配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CFSConfig",
+          "name": "CFSConfig",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据集标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SceneTags",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "已标注数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "NumAnnotated",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标注规范\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AnnotationSpecification",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标注Schema是否配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "AnnotationSchemaConfigured",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": true
         }
       ],
@@ -3053,6 +3211,24 @@
           "name": "Limit",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否检查CFS。若开启，则在CFS挂载好之前，不会返回数据集列表。",
+          "example": "无",
+          "member": "bool",
+          "name": "CFSChecking",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否返回CFS详情。",
+          "example": "无",
+          "member": "bool",
+          "name": "CFSDetail",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -3066,7 +3242,7 @@
           "example": "23",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3076,7 +3252,7 @@
           "example": "无",
           "member": "DatasetGroup",
           "name": "DatasetGroups",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -3086,9 +3262,19 @@
           "example": "100",
           "member": "uint64",
           "name": "DatasetIdNums",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "若开启了CFSChecking，则检查CFS是否准备完毕。若CFS未准备完毕，则返回true，并且TotalCount为0，DatasetGroups为空。",
+          "example": "无",
+          "member": "bool",
+          "name": "CFSNotReady",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
