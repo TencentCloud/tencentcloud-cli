@@ -602,6 +602,14 @@
         "title": "根据offset查询消息"
       }
     ],
+    "FetchMessageListByTimestamp": [
+      {
+        "document": "",
+        "input": "https://ckafka.tencentcloudapi.com/?Action=FetchMessageListByTimestamp\n&InstanceId=xxx\n&Topic=xxx\n&Partition=1\n&StartTime=1577808000000\n&SinglePartitionRecordNumber=20\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": [\n            {\n                \"Topic\": \"abc\",\n                \"Partition\": 0,\n                \"Offset\": 0,\n                \"Key\": \"abc\",\n                \"Value\": \"abc\",\n                \"Timestamp\": 0,\n                \"Headers\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "消息查询"
+      }
+    ],
     "InquireCkafkaPrice": [
       {
         "document": " ",

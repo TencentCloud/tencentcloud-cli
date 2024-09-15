@@ -19,13 +19,13 @@
     "DescribeInstanceNodes": [
       {
         "document": "调用接口成功",
-        "input": "POST / HTTP/1.1\nHost: vdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceNodes\n<公共请求参数>\n\n{}",
+        "input": "POST / HTTP/1.1\nHost: vdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceNodes\n<公共请求参数>\n\n{\n    \"InstanceId\": \"vdb-ecbgiqwb\"\n}",
         "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"Name\": \"master-0\"\n            },\n            {\n                \"Name\": \"search-0\"\n            },\n            {\n                \"Name\": \"worker-0\"\n            }\n        ],\n        \"RequestId\": \"c0c57557-d604-4bfc-abed-5ae659961720\",\n        \"TotalCount\": 3\n    }\n}",
         "title": "成功示例"
       },
       {
         "document": "调用接口失败",
-        "input": "POST / HTTP/1.1\nHost: vdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceNodes\n<公共请求参数>\n\n{}",
+        "input": "POST / HTTP/1.1\nHost: vdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceNodes\n<公共请求参数>\n\n{\n    \"InstanceId\": \"vdb-ecbgiqwb1\"\n}",
         "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"FailedOperation\",\n            \"Message\": \"instance \\\"vdb-ecbgiqwb1\\\" not found\"\n        },\n        \"RequestId\": \"e74de2e6-6f46-4cc3-b77a-15d799fedde9\"\n    }\n}",
         "title": "调用失败"
       }

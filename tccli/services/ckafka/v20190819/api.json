@@ -490,6 +490,13 @@
       "output": "FetchMessageListByOffsetResponse",
       "status": "online"
     },
+    "FetchMessageListByTimestamp": {
+      "document": "根据时间戳查询消息列表",
+      "input": "FetchMessageListByTimestampRequest",
+      "name": "根据时间戳查询消息列表",
+      "output": "FetchMessageListByTimestampResponse",
+      "status": "online"
+    },
     "InquireCkafkaPrice": {
       "document": "Ckafka实例购买/续费询价",
       "input": "InquireCkafkaPriceRequest",
@@ -10104,6 +10111,79 @@
     },
     "FetchMessageListByOffsetResponse": {
       "document": "FetchMessageListByOffset返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回结果。注意，列表中不返回具体的消息内容（key、value），如果需要查询具体消息内容，请使用FetchMessageByOffset接口",
+          "example": "无",
+          "member": "ConsumerRecord",
+          "name": "Result",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "FetchMessageListByTimestampRequest": {
+      "document": "FetchMessageListByTimestamp请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例Id",
+          "example": "xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "主题名",
+          "example": "xxx",
+          "member": "string",
+          "name": "Topic",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分区id",
+          "example": "1",
+          "member": "int64",
+          "name": "Partition",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询开始时间，13位时间戳",
+          "example": "1577808000000",
+          "member": "int64",
+          "name": "StartTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "最大查询条数，默认20，最大20",
+          "example": "20",
+          "member": "int64",
+          "name": "SinglePartitionRecordNumber",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "FetchMessageListByTimestampResponse": {
+      "document": "FetchMessageListByTimestamp返回参数结构体",
       "members": [
         {
           "disabled": false,

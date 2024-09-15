@@ -24,6 +24,7 @@ Output:
         "Period": "1998年11月至长期",
         "Person": "艾米",
         "QRCode": true,
+        "Electronic": false,
         "RecognizeWarnCode": [],
         "RecognizeWarnMsg": [],
         "RegNum": "110000012345678",

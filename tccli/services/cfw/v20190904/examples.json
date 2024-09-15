@@ -354,6 +354,14 @@
         "title": "查询新企业安全组规则"
       }
     ],
+    "DescribeEnterpriseSecurityGroupRuleList": [
+      {
+        "document": "示例1",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEnterpriseSecurityGroupRuleList\n<公共请求参数>\n\n{\n    \"Limit\": 1,\n    \"Offset\": 0,\n    \"SearchFilters\": [\n        {\n            \"Name\": \"common\",\n            \"Values\": [\n                \"模板\"\n            ],\n            \"OperatorType\": 9\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"AllTotal\": 30,\n        \"Data\": [\n            {\n                \"AclTags\": \"云防火墙封禁IP自动下发，请勿删除或修改\",\n                \"BetaList\": [],\n                \"Cidr\": \"\",\n                \"Detail\": \"云防火墙封禁IP自动下发，请勿删除或修改\",\n                \"InstanceName\": \"\",\n                \"IsDelay\": 0,\n                \"IsNew\": 1,\n                \"OrderIndex\": 1,\n                \"ParameterName\": \"\",\n                \"Port\": \"-1/-1\",\n                \"PrivateIp\": \"\",\n                \"Protocol\": \"ANY\",\n                \"ProtocolPortName\": \"\",\n                \"PublicIp\": \"\",\n                \"Region\": \"AllRegion\",\n                \"RuleUuid\": 61257,\n                \"ServiceTemplateId\": \"\",\n                \"SouCidr\": \"\",\n                \"SouInstanceName\": \"\",\n                \"SouParameterName\": \"云防火墙拦截列表IP地址组IN，请勿删除\",\n                \"SouPrivateIp\": \"\",\n                \"SouPublicIp\": \"\",\n                \"SourceId\": \"ipmg-17hphuxg\",\n                \"SourceType\": 7,\n                \"Status\": 1,\n                \"Strategy\": 1,\n                \"TargetId\": \"cfwrg-b803523898534bcbd9b7d2c7d92c175e1712804418\",\n                \"TargetType\": 100,\n                \"Uuid\": \"cfw_newsg_1300448058_0.0.0.0/0_17228848067531\"\n            }\n        ],\n        \"Enable\": 2,\n        \"RequestId\": \"d835bbe0-99e8-4cb7-a29a-3dfe2eff7d14\",\n        \"Total\": 28\n    }\n}",
+        "title": "示例1"
+      }
+    ],
     "DescribeFwEdgeIps": [
       {
         "document": "串行防火墙开关列表",

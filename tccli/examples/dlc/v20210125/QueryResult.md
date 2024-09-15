@@ -6,28 +6,32 @@ Input:
 
 ```
 tccli dlc QueryResult --cli-unfold-argument  \
-    --NextToken xx \
-    --TaskId xx
+    --NextToken objectListMarker={marker}&lastReadFile={filename}&lastReadOffset \
+    --TaskId 20210521195919442157
 ```
 
 Output: 
 ```
 {
     "Response": {
+        "TaskId": "abc",
+        "ResultSet": "abc",
         "ResultSchema": [
             {
-                "Comment": "xx",
-                "Scale": 0,
-                "Name": "xx",
-                "Nullable": "xx",
+                "Name": "abc",
+                "Type": "abc",
+                "Comment": "abc",
                 "Precision": 0,
-                "Type": "xx"
+                "Scale": 0,
+                "Nullable": "abc",
+                "Position": 0,
+                "CreateTime": "abc",
+                "ModifiedTime": "abc",
+                "IsPartition": true
             }
         ],
-        "NextToken": "xx",
-        "ResultSet": "xx",
-        "RequestId": "xx",
-        "TaskId": "xx"
+        "NextToken": "abc",
+        "RequestId": "abc"
     }
 }
 ```

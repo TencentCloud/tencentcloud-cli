@@ -1514,3 +1514,172 @@ Output:
 }
 ```
 
+**Example 18: 文件发起B2C合同，签署方设置签批控件**
+
+1.通过PDF文件发起合同 
+2.指定B端签署方为企业【典子谦示例企业】，经办人为【典子谦】 
+3.指定C端签署方为个人【张三】 
+4.B 端签署人 有两个签署控件， 分别是签名控件和签批控件(SIGN_VIRTUAL_COMBINATION)，其中签批控件包含四个子控件, 在 Component 中的 "ComponentExtra": "{\"Children\":[\"ComponentId_29\",\"ComponentId_27\",\"ComponentId_28\",\"ComponentId_30\"]}" 体现 ， 包括 审批意见(SIGN_SELECTOR)，个人签名(SIGN_SIGNATURE)，签署日期(SIGN_DATE)，批注附言(SIGN_MULTI_LINE_TEXT) 
+5.C 端签署人 有一个签批控件(SIGN_VIRTUAL_COMBINATION)，其中签批控件包含三个子控件, 在 Component 中的 "ComponentExtra": "{\"Children\":[\"ComponentId_19\",\"ComponentId_17\",\"ComponentId_18\"]}" 体现 ， 包括 审批意见(SIGN_SELECTOR)，个人签名(SIGN_SIGNATURE)，签署日期(SIGN_DATE)
+
+Input: 
+
+```
+tccli ess CreateFlowByFiles --cli-unfold-argument  \
+    --Operator.UserId yDxbTUyKQWPt5NUuO4zjEuyFAyOX3v9C \
+    --FlowName 文件发起-签批 \
+    --Approvers.0.ApproverType 0 \
+    --Approvers.0.ApproverName 典子谦 \
+    --Approvers.0.ApproverMobile 13200000000 \
+    --Approvers.0.OrganizationName 典子谦示例企业 \
+    --Approvers.0.SignComponents.0.ComponentId ComponentId_1 \
+    --Approvers.0.SignComponents.0.ComponentPosY 260 \
+    --Approvers.0.SignComponents.0.ComponentWidth 100 \
+    --Approvers.0.SignComponents.0.FileIndex 0 \
+    --Approvers.0.SignComponents.0.ComponentType SIGN_SIGNATURE \
+    --Approvers.0.SignComponents.0.ComponentPage 1 \
+    --Approvers.0.SignComponents.0.ComponentPosX 160 \
+    --Approvers.0.SignComponents.0.ComponentHeight 100 \
+    --Approvers.0.SignComponents.1.ComponentId ComponentId_2 \
+    --Approvers.0.SignComponents.1.ComponentPosY 360 \
+    --Approvers.0.SignComponents.1.ComponentWidth 100 \
+    --Approvers.0.SignComponents.1.FileIndex 0 \
+    --Approvers.0.SignComponents.1.ComponentType SIGN_DATE \
+    --Approvers.0.SignComponents.1.ComponentPage 1 \
+    --Approvers.0.SignComponents.1.ComponentPosX 160 \
+    --Approvers.0.SignComponents.1.ComponentHeight 50 \
+    --Approvers.0.SignComponents.2.ComponentExtra {"Children":["ComponentId_29","ComponentId_27","ComponentId_28","ComponentId_30"]} \
+    --Approvers.0.SignComponents.2.ComponentHeight 211 \
+    --Approvers.0.SignComponents.2.ComponentId ComponentId_26 \
+    --Approvers.0.SignComponents.2.FileIndex 0 \
+    --Approvers.0.SignComponents.2.ComponentName 签批1 \
+    --Approvers.0.SignComponents.2.ComponentPage 1 \
+    --Approvers.0.SignComponents.2.ComponentPosX 180 \
+    --Approvers.0.SignComponents.2.ComponentPosY 478 \
+    --Approvers.0.SignComponents.2.ComponentType SIGN_VIRTUAL_COMBINATION \
+    --Approvers.0.SignComponents.2.ComponentWidth 210 \
+    --Approvers.0.SignComponents.2.ComponentRequired False \
+    --Approvers.0.SignComponents.3.ComponentExtra {"Values":["审批通过","审批不通过"],"FontSize":12,"FontAlign":"Left","Font":"黑体","MultiSelect":false} \
+    --Approvers.0.SignComponents.3.ComponentHeight 20 \
+    --Approvers.0.SignComponents.3.ComponentId ComponentId_29 \
+    --Approvers.0.SignComponents.3.FileIndex 0 \
+    --Approvers.0.SignComponents.3.ComponentName 审批意见 \
+    --Approvers.0.SignComponents.3.ComponentPage 1 \
+    --Approvers.0.SignComponents.3.ComponentPosX 180 \
+    --Approvers.0.SignComponents.3.ComponentPosY 567 \
+    --Approvers.0.SignComponents.3.ComponentRequired True \
+    --Approvers.0.SignComponents.3.ComponentType SIGN_SELECTOR \
+    --Approvers.0.SignComponents.3.ComponentWidth 210 \
+    --Approvers.0.SignComponents.4.ComponentExtra {"Date":true,"isAfterCut":true} \
+    --Approvers.0.SignComponents.4.ComponentHeight 43 \
+    --Approvers.0.SignComponents.4.ComponentId ComponentId_27 \
+    --Approvers.0.SignComponents.4.ComponentName 个人签名/印章 \
+    --Approvers.0.SignComponents.4.FileIndex 0 \
+    --Approvers.0.SignComponents.4.ComponentPage 1 \
+    --Approvers.0.SignComponents.4.ComponentPosX 185 \
+    --Approvers.0.SignComponents.4.ComponentPosY 478 \
+    --Approvers.0.SignComponents.4.ComponentRequired True \
+    --Approvers.0.SignComponents.4.ComponentType SIGN_SIGNATURE \
+    --Approvers.0.SignComponents.4.ComponentWidth 119 \
+    --Approvers.0.SignComponents.5.ComponentExtra {"Format":"yyyy年m月d日","Gaps":"2,2","FontSize":12,"FontAlign":"Center","Font":"黑体","isAfterCut":true} \
+    --Approvers.0.SignComponents.5.ComponentHeight 20 \
+    --Approvers.0.SignComponents.5.ComponentId ComponentId_28 \
+    --Approvers.0.SignComponents.5.ComponentName 签署日期 \
+    --Approvers.0.SignComponents.5.ComponentPage 1 \
+    --Approvers.0.SignComponents.5.ComponentPosX 185 \
+    --Approvers.0.SignComponents.5.FileIndex 0 \
+    --Approvers.0.SignComponents.5.ComponentPosY 541 \
+    --Approvers.0.SignComponents.5.ComponentRequired True \
+    --Approvers.0.SignComponents.5.ComponentType SIGN_DATE \
+    --Approvers.0.SignComponents.5.ComponentWidth 119 \
+    --Approvers.0.SignComponents.6.ComponentExtra {"FontSize":12,"FontAlign":"Left","VerticalAlign":"Top","Font":"黑体"} \
+    --Approvers.0.SignComponents.6.ComponentHeight 54 \
+    --Approvers.0.SignComponents.6.ComponentId ComponentId_30 \
+    --Approvers.0.SignComponents.6.FileIndex 0 \
+    --Approvers.0.SignComponents.6.ComponentName 批注附言 \
+    --Approvers.0.SignComponents.6.ComponentPage 1 \
+    --Approvers.0.SignComponents.6.ComponentPosX 180 \
+    --Approvers.0.SignComponents.6.ComponentPosY 635 \
+    --Approvers.0.SignComponents.6.ComponentRequired True \
+    --Approvers.0.SignComponents.6.ComponentType SIGN_MULTI_LINE_TEXT \
+    --Approvers.0.SignComponents.6.ComponentWidth 210 \
+    --Approvers.1.ApproverType 1 \
+    --Approvers.1.ApproverName 张三 \
+    --Approvers.1.ApproverMobile 18888888888 \
+    --Approvers.1.SignComponents.0.ComponentPosY 260 \
+    --Approvers.1.SignComponents.0.ComponentWidth 100 \
+    --Approvers.1.SignComponents.0.FileIndex 0 \
+    --Approvers.1.SignComponents.0.ComponentType SIGN_SIGNATURE \
+    --Approvers.1.SignComponents.0.ComponentPage 1 \
+    --Approvers.1.SignComponents.0.ComponentPosX 160 \
+    --Approvers.1.SignComponents.0.ComponentHeight 100 \
+    --Approvers.1.SignComponents.1.ComponentExtra {"Children":["ComponentId_19","ComponentId_17","ComponentId_18"]} \
+    --Approvers.1.SignComponents.1.ComponentHeight 211 \
+    --Approvers.1.SignComponents.1.ComponentId ComponentId_16 \
+    --Approvers.1.SignComponents.1.ComponentName 签批1 \
+    --Approvers.1.SignComponents.1.FileIndex 0 \
+    --Approvers.1.SignComponents.1.ComponentPage 1 \
+    --Approvers.1.SignComponents.1.ComponentPosX 280 \
+    --Approvers.1.SignComponents.1.ComponentPosY 478 \
+    --Approvers.1.SignComponents.1.ComponentType SIGN_VIRTUAL_COMBINATION \
+    --Approvers.1.SignComponents.1.ComponentWidth 210 \
+    --Approvers.1.SignComponents.2.ComponentExtra {"Values":["审批通过","审批不通过"],"FontSize":12,"FontAlign":"Left","Font":"黑体","MultiSelect":false} \
+    --Approvers.1.SignComponents.2.ComponentHeight 20 \
+    --Approvers.1.SignComponents.2.ComponentId ComponentId_19 \
+    --Approvers.1.SignComponents.2.ComponentName 审批意见 \
+    --Approvers.1.SignComponents.2.FileIndex 0 \
+    --Approvers.1.SignComponents.2.ComponentPage 1 \
+    --Approvers.1.SignComponents.2.ComponentPosX 280 \
+    --Approvers.1.SignComponents.2.ComponentPosY 567 \
+    --Approvers.1.SignComponents.2.ComponentRequired True \
+    --Approvers.1.SignComponents.2.ComponentType SIGN_SELECTOR \
+    --Approvers.1.SignComponents.2.ComponentWidth 210 \
+    --Approvers.1.SignComponents.3.ComponentExtra {"Format":"yyyy年m月d日","Gaps":"2,2","FontSize":12,"FontAlign":"Center","Font":"黑体","isAfterCut":true} \
+    --Approvers.1.SignComponents.3.ComponentHeight 20 \
+    --Approvers.1.SignComponents.3.ComponentId ComponentId_18 \
+    --Approvers.1.SignComponents.3.ComponentName 签署日期 \
+    --Approvers.1.SignComponents.3.FileIndex 0 \
+    --Approvers.1.SignComponents.3.ComponentPage 1 \
+    --Approvers.1.SignComponents.3.ComponentPosX 285 \
+    --Approvers.1.SignComponents.3.ComponentPosY 541 \
+    --Approvers.1.SignComponents.3.ComponentRequired True \
+    --Approvers.1.SignComponents.3.ComponentType SIGN_DATE \
+    --Approvers.1.SignComponents.3.ComponentWidth 119 \
+    --Approvers.1.SignComponents.4.ComponentExtra {"Date":true,"isAfterCut":true} \
+    --Approvers.1.SignComponents.4.ComponentHeight 43 \
+    --Approvers.1.SignComponents.4.ComponentId ComponentId_17 \
+    --Approvers.1.SignComponents.4.ComponentName 个人签名/印章 \
+    --Approvers.1.SignComponents.4.FileIndex 0 \
+    --Approvers.1.SignComponents.4.ComponentPage 1 \
+    --Approvers.1.SignComponents.4.ComponentPosX 285 \
+    --Approvers.1.SignComponents.4.ComponentPosY 478 \
+    --Approvers.1.SignComponents.4.ComponentRequired True \
+    --Approvers.1.SignComponents.4.ComponentType SIGN_SIGNATURE \
+    --Approvers.1.SignComponents.4.ComponentWidth 119 \
+    --FileIds yDCWqUUckpve5id3U4f5EL77tlNh6zTZ \
+    --Unordered True
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Approvers": [
+            {
+                "ApproverRoleName": "",
+                "RecipientId": "yDCm3UUckpuhiigxUyngyQvyHhcuKe8j",
+                "SignId": "yDCm3UUckpuhiig3UyngyQvuGnj2Dmlb"
+            },
+            {
+                "ApproverRoleName": "",
+                "RecipientId": "yDCm3UUckpuhiigbUyngyQv8CgR9QvQ5",
+                "SignId": "yDCm3UUckpuhiig1UyngyQvBDiyvQ5Qw"
+            }
+        ],
+        "FlowId": "yDCm3UUckpuhiigkUyngyQvus30o8lsI",
+        "PreviewUrl": "",
+        "RequestId": "s1726301013319902854"
+    }
+}
+```
+

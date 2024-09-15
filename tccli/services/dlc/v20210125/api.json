@@ -3226,7 +3226,7 @@
         {
           "disabled": false,
           "document": "虚拟引擎id",
-          "example": "xx",
+          "example": "DataEngine-xxx",
           "member": "string",
           "name": "DataEngineId",
           "output_required": true,
@@ -8935,27 +8935,30 @@
         {
           "disabled": false,
           "document": "集群总规格",
-          "example": "无",
+          "example": "128",
           "member": "int64",
           "name": "Total",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "已占用集群规格",
-          "example": "无",
+          "example": "100",
           "member": "int64",
           "name": "Used",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "剩余集群规格",
-          "example": "无",
+          "example": "28",
           "member": "int64",
           "name": "Available",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -15234,7 +15237,7 @@
           "example": "20210521195919442157",
           "member": "string",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -15244,7 +15247,7 @@
           "example": "[         [             \"allen\",             \"27\"         ],    ",
           "member": "string",
           "name": "ResultSet",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -15254,7 +15257,7 @@
           "example": "{\"query_id\":\"q202108191952hzb9d11f040173825\",\"columns\":[{\"c_cust",
           "member": "Column",
           "name": "ResultSchema",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -15264,7 +15267,7 @@
           "example": "objectListMarker={marker}&lastReadFile={filename}&lastReadOffset",
           "member": "string",
           "name": "NextToken",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },

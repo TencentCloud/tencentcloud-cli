@@ -12275,6 +12275,15 @@
           "name": "InstType",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "节点ID",
+          "example": "dbn-j57njp5s",
+          "member": "string",
+          "name": "OpResourceId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

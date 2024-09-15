@@ -505,7 +505,7 @@
       "status": "online"
     },
     "RateMsgRecord": {
-      "document": "是否意图转人工",
+      "document": "点赞点踩消息",
       "input": "RateMsgRecordRequest",
       "name": "评价消息",
       "output": "RateMsgRecordResponse",
@@ -1391,6 +1391,16 @@
           "name": "FileInfos",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "回复方式，15：澄清确认回复\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "ReplyMethod",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -4997,7 +5007,7 @@
         },
         {
           "disabled": false,
-          "document": "应用AppKey",
+          "document": "应用AppKey, 当Type=5[API访客]时, 该字段必填",
           "example": "无",
           "member": "string",
           "name": "BotAppKey",
@@ -8783,13 +8793,13 @@
         },
         {
           "disabled": false,
-          "document": "图片链接，可公有读",
+          "document": "图片链接，可公有读\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "ImageUrls",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -8837,6 +8847,16 @@
           "example": "无",
           "member": "FileInfo",
           "name": "FileInfos",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "参考来源引用位置信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "QuoteInfo",
+          "name": "QuoteInfos",
           "output_required": false,
           "type": "list",
           "value_allowed_null": true
@@ -9576,6 +9596,34 @@
       ],
       "type": "object"
     },
+    "QuoteInfo": {
+      "document": "搜索引擎参考来源索引",
+      "members": [
+        {
+          "disabled": false,
+          "document": "参考来源位置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "uint64",
+          "name": "Position",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "参考来源索引顺序\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "Index",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "RateMsgRecordRequest": {
       "document": "RateMsgRecord请求参数结构体",
       "members": [
@@ -9853,6 +9901,36 @@
           "example": "无",
           "member": "string",
           "name": "OrgData",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "页码信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "PageInfos",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "sheet信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SheetInfos",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文档ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DocBizId",
           "output_required": false,
           "type": "string",
           "value_allowed_null": true

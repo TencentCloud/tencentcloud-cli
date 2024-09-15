@@ -7694,7 +7694,7 @@
         },
         {
           "disabled": false,
-          "document": "查询的套餐类型 （选填 ）不传则查询所有套餐；\n目前支持:\n<ul>\n<li>**CloudEnterprise**: 企业版合同</li>\n<li>**SingleSignature**: 单方签章</li>\n<li>**CloudProve**: 签署报告</li>\n<li>**CloudOnlineSign**: 腾讯会议在线签约</li>\n<li>**ChannelWeCard**: 微工卡</li>\n<li>**SignFlow**: 合同套餐</li>\n<li>**SignFace**: 签署意愿（人脸识别）</li>\n<li>**SignPassword**: 签署意愿（密码）</li>\n<li>**SignSMS**: 签署意愿（短信）</li>\n<li>**PersonalEssAuth**: 签署人实名（腾讯电子签认证）</li>\n<li>**PersonalThirdAuth**: 签署人实名（信任第三方认证）</li>\n<li>**OrgEssAuth**: 签署企业实名</li>\n<li>**FlowNotify**: 短信通知</li>\n<li>**AuthService**: 企业工商信息查询</li>\n</ul>",
+          "document": "查询的套餐类型 （选填 ）不传则查询所有套餐；\n目前支持:\n<ul>\n<li>**CloudEnterprise**: 企业版合同</li>\n<li>**SingleSignature**: 单方签章</li>\n<li>**CloudProve**: 签署报告</li>\n<li>**CloudOnlineSign**: 腾讯会议在线签约</li>\n<li>**ChannelWeCard**: 微工卡</li>\n<li>**SignFlow**: 合同套餐</li>\n<li>**SignFace**: 签署意愿（人脸识别）</li>\n<li>**SignPassword**: 签署意愿（密码）</li>\n<li>**SignSMS**: 签署意愿（短信）</li>\n<li>**PersonalEssAuth**: 签署人实名（腾讯电子签认证）</li>\n<li>**PersonalThirdAuth**: 签署人实名（信任第三方认证）</li>\n<li>**OrgEssAuth**: 签署企业实名</li>\n<li>**FlowNotify**: 短信通知</li>\n<li>**AuthService**: 企业工商信息查询</li>\n<li>**NoAuthSign**: 形式签</li>\n</ul>",
           "example": "CloudEnterprise",
           "member": "string",
           "name": "QuotaType",
@@ -8238,7 +8238,7 @@
         },
         {
           "disabled": false,
-          "document": "合同流程ID，为32位字符串。\n\n[点击产看FlowId在控制台中的位置](https://qcloudimg.tencent-cloud.cn/raw/0a83015166cfe1cb043d14f9ec4bd75e.png)",
+          "document": "合同流程ID，为32位字符串。\n\n[点击查看FlowId在控制台中的位置](https://qcloudimg.tencent-cloud.cn/raw/0a83015166cfe1cb043d14f9ec4bd75e.png)",
           "example": "无",
           "member": "string",
           "name": "FlowId",
