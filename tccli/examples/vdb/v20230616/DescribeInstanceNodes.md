@@ -5,7 +5,9 @@
 Input: 
 
 ```
-tccli vdb DescribeInstanceNodes --cli-unfold-argument ```
+tccli vdb DescribeInstanceNodes --cli-unfold-argument  \
+    --InstanceId vdb-ecbgiqwb
+```
 
 Output: 
 ```
@@ -35,7 +37,9 @@ Output:
 Input: 
 
 ```
-tccli vdb DescribeInstanceNodes --cli-unfold-argument ```
+tccli vdb DescribeInstanceNodes --cli-unfold-argument  \
+    --InstanceId vdb-ecbgiqwb1
+```
 
 Output: 
 ```

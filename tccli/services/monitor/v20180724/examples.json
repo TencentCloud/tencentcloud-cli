@@ -1266,6 +1266,14 @@
         "title": "初始化实例"
       }
     ],
+    "SetDashboardStatus": [
+      {
+        "document": "",
+        "input": "https://monitor.tencentcloudapi.com/?Action=SetDashboardStatus\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Msg\": \"ok\",\n        \"RequestId\": \"7vfm00qk-u8w3-mnhf-m4x0-qqkob492gkli\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "SetDefaultAlarmPolicy": [
       {
         "document": "",

@@ -2109,7 +2109,7 @@
         },
         {
           "disabled": false,
-          "document": "应用等待预期动时长",
+          "document": "等待预启动时长",
           "example": "10",
           "member": "string",
           "name": "PreloadDuration",

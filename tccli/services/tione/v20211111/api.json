@@ -238,13 +238,6 @@
       "output": "PushTrainingMetricsResponse",
       "status": "online"
     },
-    "SendChatMessage": {
-      "document": "这是一个供您体验大模型聊天的接口。",
-      "input": "SendChatMessageRequest",
-      "name": "大模型聊天体验",
-      "output": "SendChatMessageResponse",
-      "status": "online"
-    },
     "StartNotebook": {
       "document": "启动Notebook",
       "input": "StartNotebookRequest",
@@ -1113,6 +1106,24 @@
           "example": "无",
           "member": "int64",
           "name": "ServicePort",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "服务的部署类型 [STANDARD 标准部署，DIST 分布式多机部署] 默认STANDARD",
+          "example": "STANDARD",
+          "member": "string",
+          "name": "DeployType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "单副本下的实例数，仅在部署类型为DIST时生效，默认1",
+          "example": "1",
+          "member": "int64",
+          "name": "InstancePerReplicas",
           "required": false,
           "type": "int"
         }
@@ -6264,6 +6275,15 @@
           "name": "ServicePort",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "单副本下的实例数，仅在部署类型为DIST时生效，默认1",
+          "example": "无",
+          "member": "int64",
+          "name": "InstancePerReplicas",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -7735,89 +7755,6 @@
       ],
       "usage": "in"
     },
-    "SendChatMessageRequest": {
-      "document": "SendChatMessage请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "会话id，标识一组对话的唯一id，id变更则重置会话",
-          "example": "6e85ab47-e2df-d139-3823-de3d3aa51cf2",
-          "member": "string",
-          "name": "SessionId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "问题描述",
-          "example": "你好，请介绍一下自己",
-          "member": "string",
-          "name": "Question",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "会话模型版本。\n金融大模型：填写sn-finllm-13b-chat-v1。\n默认为sn-finllm-13b-chat-v1，即金融大模型。",
-          "example": "demo_big_model_version_id",
-          "member": "string",
-          "name": "ModelVersion",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "使用模式。\n通用问答：填写General。\n搜索增强问答：填写WithSearchPlugin。\n默认为General，即通用问答。\n当前可体验模型仅支持General。",
-          "example": "General",
-          "member": "string",
-          "name": "Mode",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "搜索来源。仅当Mode为WithSearchPlugin时生效。\n预置文稿库：填写Preset。自定义：填写Custom。",
-          "example": "无",
-          "member": "string",
-          "name": "SearchSource",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "SendChatMessageResponse": {
-      "document": "SendChatMessage返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "答案",
-          "example": "无",
-          "member": "string",
-          "name": "Answer",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "会话id,返回请求的会话id",
-          "example": "6e85ab47-e2df-d139-3823-de3d3aa51cf2",
-          "member": "string",
-          "name": "SessionId",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "Service": {
       "document": "描述在线服务",
       "members": [
@@ -8127,6 +8064,26 @@
           "example": "Archived",
           "member": "string",
           "name": "ArchiveStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "服务的部署类型 [STANDARD 标准部署，DIST 分布式多机部署] 默认STANDARD\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "STANDARD",
+          "member": "string",
+          "name": "DeployType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "单副本下的实例数，仅在部署类型为DIST时生效，默认1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "InstancePerReplicas",
           "output_required": false,
           "type": "string",
           "value_allowed_null": true

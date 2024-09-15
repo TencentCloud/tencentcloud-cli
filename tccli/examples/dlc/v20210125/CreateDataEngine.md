@@ -29,10 +29,10 @@ tccli dlc CreateDataEngine --cli-unfold-argument  \
     --CrontabResumeSuspendStrategy.SuspendTime 10 \
     --CrontabResumeSuspendStrategy.SuspendStrategy 0 \
     --EngineExecType BATCH \
-    --MaxConcurrency 0 \
-    --TolerableQueueTime 0 \
-    --AutoSuspendTime 0 \
-    --ResourceType standard_cu \
+    --MaxConcurrency 10 \
+    --TolerableQueueTime 5 \
+    --AutoSuspendTime 5 \
+    --ResourceType spark_cu \
     --ImageVersionName SuperSQL-P 1.1
 ```
 

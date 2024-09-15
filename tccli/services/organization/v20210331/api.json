@@ -763,6 +763,13 @@
       "output": "SetExternalSAMLIdentityProviderResponse",
       "status": "online"
     },
+    "UpdateCustomPolicyForRoleConfiguration": {
+      "document": "为权限配置修改自定义策略",
+      "input": "UpdateCustomPolicyForRoleConfigurationRequest",
+      "name": "为权限配置修改自定义策略",
+      "output": "UpdateCustomPolicyForRoleConfigurationResponse",
+      "status": "online"
+    },
     "UpdateGroup": {
       "document": "修改用户组信息",
       "input": "UpdateGroupRequest",
@@ -11137,6 +11144,60 @@
         }
       ],
       "usage": "both"
+    },
+    "UpdateCustomPolicyForRoleConfigurationRequest": {
+      "document": "UpdateCustomPolicyForRoleConfiguration请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "空间 ID",
+          "example": "z-29n23ien",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "权限配置 ID",
+          "example": "rc-so2msow",
+          "member": "string",
+          "name": "RoleConfigurationId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "权限策略名称，长度最大为 32 个字符。",
+          "example": "TestPolicy",
+          "member": "string",
+          "name": "CustomPolicyName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义策略内容。长度：最大 4096 个字符。当RolePolicyType为Inline时，该参数必须配置。关于权限策略的语法和结构，请参见权限策略语法和结构。",
+          "example": "{\\\"statement\\\":{\\\"action\\\":[\\\"name/cvm:*\\\",\\\"name/vpc:*\\\",\\\"name/cos:*\\\",\\\"name/cmqtopic:*\\\",\\\"name/cmqqueue:*\\\"],\\\"effect\\\":\\\"allow\\\",\\\"resource\\\":\\\"*\\\"},\\\"version\\\":\\\"2.0\\\"}",
+          "member": "string",
+          "name": "NewCustomPolicyDocument",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateCustomPolicyForRoleConfigurationResponse": {
+      "document": "UpdateCustomPolicyForRoleConfiguration返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "UpdateGroupRequest": {
       "document": "UpdateGroup请求参数结构体",

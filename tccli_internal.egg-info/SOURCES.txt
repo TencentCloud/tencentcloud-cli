@@ -612,6 +612,8 @@ tccli/services/mps/__init__.py
 tccli/services/mps/mps_client.py
 tccli/services/mps/v20190612/api.json
 tccli/services/mps/v20190612/examples.json
+tccli/services/mqtt/__init__.py
+tccli/services/mqtt/mqtt_client.py
 tccli/services/mrs/__init__.py
 tccli/services/mrs/mrs_client.py
 tccli/services/mrs/v20200910/api.json

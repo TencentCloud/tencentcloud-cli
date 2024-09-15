@@ -128,6 +128,15 @@
       "members": [
         {
           "disabled": false,
+          "document": "实例ID。",
+          "example": "vdb-ay5nc8f9tq",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "limit",
           "example": "无",
           "member": "int64",

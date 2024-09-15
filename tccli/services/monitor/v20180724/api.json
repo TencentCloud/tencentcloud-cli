@@ -945,6 +945,13 @@
       "output": "RunPrometheusInstanceResponse",
       "status": "online"
     },
+    "SetDashboardStatus": {
+      "document": "设置dashboard状态",
+      "input": "SetDashboardStatusRequest",
+      "name": "设置dashboard状态",
+      "output": "SetDashboardStatusResponse",
+      "status": "online"
+    },
     "SetDefaultAlarmPolicy": {
       "document": "设置一个策略为该告警策略类型、该项目的默认告警策略。\n同一项目下相同的告警策略类型，就会被设置为非默认。",
       "input": "SetDefaultAlarmPolicyRequest",
@@ -20008,6 +20015,69 @@
         }
       ],
       "usage": "out"
+    },
+    "SetDashboardStatusRequest": {
+      "document": "SetDashboardStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否第一次获取dashboard详情",
+          "example": "",
+          "member": "string",
+          "name": "FirstDescribeDashboard",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否第一次添加精选",
+          "example": "",
+          "member": "string",
+          "name": "FirstAddFeaturedDashboard",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否第一次获取精选指标",
+          "example": "",
+          "member": "string",
+          "name": "FirstDescribeFeaturedDashboard",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否第一次查看图表详情",
+          "example": "",
+          "member": "string",
+          "name": "FirstDescribePanel",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SetDashboardStatusResponse": {
+      "document": "SetDashboardStatus返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "操作结果",
+          "example": "",
+          "member": "string",
+          "name": "Msg",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "SetDefaultAlarmPolicyRequest": {
       "document": "SetDefaultAlarmPolicy请求参数结构体",

@@ -872,6 +872,14 @@
         "title": "配置SAML身份提供商信息"
       }
     ],
+    "UpdateCustomPolicyForRoleConfiguration": [
+      {
+        "document": "为权限配置修改自定义策略",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateCustomPolicyForRoleConfiguration\n<公共请求参数>\n\n{\n    \"ZoneId\": \"z-fdk3o32kqw\",\n    \"RoleConfigurationId\": \"rc-sin23wj29s\",\n    \"CustomPolicyName\": \"test\",\n    \"NewCustomPolicyDocument\": \"{\\\"statement\\\":{\\\"action\\\":[\\\"name/cvm:*\\\",\\\"name/vpc:*\\\",\\\"name/cos:*\\\",\\\"name/cmqtopic:*\\\",\\\"name/cmqqueue:*\\\"],\\\"effect\\\":\\\"allow\\\",\\\"resource\\\":\\\"*\\\"},\\\"version\\\":\\\"2.0\\\"}\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e297543a-80de-4039-83c8-9d324545\"\n    }\n}",
+        "title": "为权限配置修改自定义策略"
+      }
+    ],
     "UpdateGroup": [
       {
         "document": "修改用户组信息",
