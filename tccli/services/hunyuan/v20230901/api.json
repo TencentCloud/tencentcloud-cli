@@ -173,7 +173,7 @@
         },
         {
           "disabled": false,
-          "document": "可调用的工具列表，仅对 hunyuan-functioncall 模型生效。",
+          "document": "可调用的工具列表，仅对 hunyuan-pro、hunyuan-turbo、hunyuan-functioncall 模型生效。",
           "example": "无",
           "member": "Tool",
           "name": "Tools",
@@ -182,7 +182,7 @@
         },
         {
           "disabled": false,
-          "document": "工具使用选项，可选值包括 none、auto、custom。\n说明：\n1. 仅对 hunyuan-functioncall 模型生效。\n2. none：不调用工具；auto：模型自行选择生成回复或调用工具；custom：强制模型调用指定的工具。\n3. 未设置时，默认值为auto",
+          "document": "工具使用选项，可选值包括 none、auto、custom。\n说明：\n1. 仅对 hunyuan-pro、hunyuan-turbo、hunyuan-functioncall 模型生效。\n2. none：不调用工具；auto：模型自行选择生成回复或调用工具；custom：强制模型调用指定的工具。\n3. 未设置时，默认值为auto",
           "example": "auto",
           "member": "string",
           "name": "ToolChoice",
@@ -222,6 +222,15 @@
           "example": "false",
           "member": "bool",
           "name": "EnableSpeedSearch",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "图文并茂开关。\n说明：\n1. 该参数仅在功能增强（如搜索）开关开启（EnableEnhancement=true）时生效。\n2. hunyuan-lite 无图文并茂能力，该参数对 hunyuan-lite 版本不生效。\n3. 未传值时默认关闭。\n4. 开启并搜索到对应的多媒体信息时，会输出对应的多媒体地址，可以定制个性化的图文消息。",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableMultimedia",
           "required": false,
           "type": "bool"
         }
@@ -309,6 +318,16 @@
           "name": "SearchInfo",
           "output_required": false,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "多媒体信息。\n说明：\n1. 可以用多媒体信息替换回复内容里的占位符，得到完整的图文信息。\n2. 可能会出现回复内容里存在占位符，但是因为审核等原因没有返回多媒体信息。",
+          "example": "无",
+          "member": "Replace",
+          "name": "Replaces",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -826,6 +845,42 @@
       ],
       "usage": "both"
     },
+    "Multimedia": {
+      "document": "图文并茂详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "多媒体类型，image：图片。",
+          "example": "image",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "多媒体预览地址。",
+          "example": "无",
+          "member": "string",
+          "name": "Url",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "多媒体详情地址。",
+          "example": "无",
+          "member": "string",
+          "name": "JumpUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "QueryHunyuanImageChatJobRequest": {
       "document": "QueryHunyuanImageChatJob请求参数结构体",
       "members": [
@@ -1029,6 +1084,32 @@
         }
       ],
       "type": "object"
+    },
+    "Replace": {
+      "document": "图文并茂占位符替换信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "占位符序号",
+          "example": "0",
+          "member": "string",
+          "name": "Id",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "多媒体详情",
+          "example": "无",
+          "member": "Multimedia",
+          "name": "Multimedia",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "SearchInfo": {
       "document": "搜索结果信息",
