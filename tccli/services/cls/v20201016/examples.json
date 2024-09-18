@@ -308,8 +308,8 @@
     ],
     "DeleteDashboard": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDashboard\n<公共请求参数>\n\n{\n    \"DashboardId\": \"xx\"\n}",
+        "document": "删除仪表盘",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDashboard\n<公共请求参数>\n\n{\n    \"DashboardId\": \"abcxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "删除仪表盘"
       }

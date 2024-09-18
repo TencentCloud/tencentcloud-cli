@@ -1,4 +1,4 @@
-**Example 1: RagSearch**
+**Example 1: RagSearch-NonStream**
 
 RagSearch
 

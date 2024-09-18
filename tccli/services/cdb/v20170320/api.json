@@ -17348,6 +17348,15 @@
           "name": "ReleaseDuration",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "变更集群版实例只读组时，InstanceId传实例id，需要额外指定该参数表示操作只读组。 如果操作读写节点则不需指定该参数。",
+          "example": "cdb-xxx|readonly",
+          "member": "string",
+          "name": "OpResourceId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

@@ -14887,6 +14887,15 @@
           "name": "SortBy",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "后付费抵扣产品一层，支持多项",
+          "example": "**",
+          "member": "string",
+          "name": "DeductionProductCodes",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

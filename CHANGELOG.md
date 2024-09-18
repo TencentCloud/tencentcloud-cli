@@ -1,3 +1,97 @@
+# Release 3.0.1077.1
+
+## 费用中心(billing) 版本：2018-07-09
+
+### 第 66 次发布
+
+发布时间：2024-09-19 01:12:16
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeMeasureDeductionDetails](http://document.tencentcloudapi.woa.com/document/product/555/82324)
+
+	* 新增入参：DeductionProductCodes
+
+
+
+
+## 云硬盘(cbs) 版本：2017-03-12
+
+### 第 36 次发布
+
+发布时间：2024-09-19 01:17:39
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateEncryptSnapshot](http://document.tencentcloudapi.woa.com/document/product/362/84915)
+
+
+
+## 云数据库 MySQL(cdb) 版本：2017-03-20
+
+### 第 112 次发布
+
+发布时间：2024-09-19 01:18:47
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ModifyDBInstanceVipVport](http://document.tencentcloudapi.woa.com/document/product/236/15867)
+
+	* 新增入参：OpResourceId
+
+
+
+
+## AI 搜索增强 RAG(ragsearch) 版本：2024-07-30
+
+### 第 2 次发布
+
+发布时间：2024-09-19 02:18:35
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [RagSearch](http://document.tencentcloudapi.woa.com/document/product/1771/84666)
+
+	* 新增入参：NoAnswerType
+
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 154 次发布
+
+发布时间：2024-09-19 02:42:13
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateVpcEndPoint](http://document.tencentcloudapi.woa.com/document/product/215/54685)
+
+	* 新增入参：EnableJumbo, Tags
+
+
+
+
 # Release 3.0.1076.1
 
 ## 腾讯云数据仓库 TCHouse-D(cdwdoris) 版本：2021-12-28

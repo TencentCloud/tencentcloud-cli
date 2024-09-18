@@ -56,6 +56,13 @@
       "output": "CreateDisksResponse",
       "status": "online"
     },
+    "CreateEncryptSnapshot": {
+      "document": "该接口为内部接口, 仅用于非加密快照转加密快照场景",
+      "input": "CreateEncryptSnapshotRequest",
+      "name": "非加密快照转加密快照",
+      "output": "CreateEncryptSnapshotResponse",
+      "status": "online"
+    },
     "CreateSnapshot": {
       "document": "本接口（CreateSnapshot）用于对指定云盘创建快照。\n\n* 只有具有快照能力的云硬盘才能创建快照。云硬盘是否具有快照能力可由[DescribeDisks](/document/product/362/16315)接口查询，见SnapshotAbility字段。\n* 可创建快照数量限制见[产品使用限制](https://cloud.tencent.com/doc/product/362/5145)。\n* 当前支持将备份点转化为普通快照，转化之后可能会收取快照使用费用，备份点不保留，其占用的备份点配额也将被释放。",
       "input": "CreateSnapshotRequest",
@@ -1282,6 +1289,98 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateEncryptSnapshotRequest": {
+      "document": "CreateEncryptSnapshot请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否仅执行检查逻辑",
+          "example": false,
+          "member": "bool",
+          "name": "DryRun",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "快照额外信息",
+          "example": "无",
+          "member": "SnapshotExtraDetail",
+          "name": "ExtraInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "镜像短ID",
+          "example": "img-12345678",
+          "member": "string",
+          "name": "ImageId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户自定义CMK ID",
+          "example": "无",
+          "member": "string",
+          "name": "KmsKeyId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "镜像长ID",
+          "example": "img2023082909976817",
+          "member": "string",
+          "name": "MatrixImageId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "原快照ID",
+          "example": "snap-12345678",
+          "member": "string",
+          "name": "SnapshotId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateEncryptSnapshotResponse": {
+      "document": "CreateEncryptSnapshot返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "加密快照类型",
+          "example": "encrypt_spdk",
+          "member": "string",
+          "name": "EncryptType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "加密后的快照ID",
+          "example": "snap-bh2d9l10",
+          "member": "string",
+          "name": "SnapshotId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -4665,30 +4764,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "仅跨地域复制场景使用，描述源地域信息。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "nj",
-          "member": "string",
-          "name": "SourceRegion",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "仅限于跨地域复制场景使用，描述源快照ID。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "snap-dhw134nd2",
-          "member": "string",
-          "name": "SourceSnapshotId",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
           "document": "仅限跨账号复制场景使用，描述源账户Uin。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1011111111",
           "member": "string",
           "name": "CopyFromAccountUin",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -4699,16 +4779,7 @@
           "example": "snap-dhw134nd2",
           "member": "string",
           "name": "CopyFromSnapshotId",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "仅限系统盘镜像快照场景使用，描述镜像快照对应的镜像ID。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "img113213102313123",
-          "member": "string",
-          "name": "ImageId",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -4719,16 +4790,18 @@
           "example": "100",
           "member": "uint64",
           "name": "DeviceImageId",
+          "output_required": false,
           "required": false,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "仅限系统盘镜像快照场景使用，描述镜像快照对应的操作系统。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "windows-xxx",
+          "document": "仅限系统盘镜像快照场景使用，描述镜像快照对应的镜像ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "img113213102313123",
           "member": "string",
-          "name": "OsName",
+          "name": "ImageId",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -4739,8 +4812,42 @@
           "example": "1",
           "member": "uint64",
           "name": "ItemId",
+          "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "仅限系统盘镜像快照场景使用，描述镜像快照对应的操作系统。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "windows-xxx",
+          "member": "string",
+          "name": "OsName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "仅跨地域复制场景使用，描述源地域信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "nj",
+          "member": "string",
+          "name": "SourceRegion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "仅限于跨地域复制场景使用，描述源快照ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "snap-dhw134nd2",
+          "member": "string",
+          "name": "SourceSnapshotId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

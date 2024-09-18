@@ -148,6 +148,15 @@
           "name": "Stream",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "当知识库召回空时是否用LLM回答知识库问题",
+          "example": "0",
+          "member": "uint64",
+          "name": "NoAnswerType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

@@ -10238,7 +10238,7 @@
           "example": "无",
           "member": "AutoBatchUpdate",
           "name": "AutoBatchUpdate",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -10249,7 +10249,7 @@
           "example": "无",
           "member": "NewAutoBatchUpdate",
           "name": "NewAutoBatchUpdate",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -10271,7 +10271,7 @@
           "example": "无",
           "member": "BatchUpdate",
           "name": "BatchUpdate",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "object",
           "value_allowed_null": true

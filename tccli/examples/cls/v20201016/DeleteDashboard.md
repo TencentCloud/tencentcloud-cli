@@ -1,12 +1,12 @@
 **Example 1: 删除仪表盘**
 
-
+删除仪表盘
 
 Input: 
 
 ```
 tccli cls DeleteDashboard --cli-unfold-argument  \
-    --DashboardId xx
+    --DashboardId abcxx
 ```
 
 Output: 
