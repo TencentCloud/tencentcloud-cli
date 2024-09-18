@@ -4182,6 +4182,15 @@
           "name": "InstanceId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "变更集群版实例只读组时，InstanceId传实例id，需要额外指定该参数表示操作只读组。 如果操作读写节点则不需指定该参数。",
+          "example": "cdb-xxx|readonly",
+          "member": "string",
+          "name": "OpResourceId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -15995,6 +16004,15 @@
           "name": "ForReadonlyInstance",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "变更集群版实例只读组时，InstanceId传实例id，需要额外指定该参数表示操作只读组。 如果操作读写节点则不需指定该参数。",
+          "example": "cdb-xxx|readonly",
+          "member": "string",
+          "name": "OpResourceId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -16067,6 +16085,15 @@
           "name": "ReleaseDuration",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "变更集群版实例只读组时，InstanceId传实例id，需要额外指定该参数表示操作只读组。 如果操作读写节点则不需指定该参数。",
+          "example": "cdb-xxx|readonly",
+          "member": "string",
+          "name": "OpResourceId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -16873,6 +16900,15 @@
           "member": "string",
           "name": "InstanceId",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "变更集群版实例只读组时，InstanceId传实例id，需要额外指定该参数表示操作只读组。 如果操作读写节点则不需指定该参数。",
+          "example": "cdb-xxx|readonly",
+          "member": "string",
+          "name": "OpResourceId",
+          "required": false,
           "type": "string"
         }
       ],
@@ -20049,6 +20085,15 @@
           "name": "WaitSwitch",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "集群版实例指定节点id发起主从切换。",
+          "example": "dbn-xxx",
+          "member": "string",
+          "name": "DstNodeId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

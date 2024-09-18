@@ -1004,6 +1004,14 @@
         "title": "查询开关列表接口示例"
       }
     ],
+    "DescribeOpenPolicyList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOpenPolicyList\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-gzzr1v5t\",\n    \"Category\": \"baseline\"\n}",
+        "output": "{\n    \"Response\": {\n        \"OpenPolicyInfoList\": [\n            {\n                \"EnforcementAction\": \"deny\",\n                \"EventNums\": 0,\n                \"Kind\": \"blockclusterdeletion\",\n                \"Name\": \"block-cluster-deletion-rule\",\n                \"PolicyCategory\": \"cluster\",\n                \"PolicyDesc\": \"集群中存在任意节点（普通节点、原生节点、注册节点），需先下线节点后方可删除\",\n                \"PolicyName\": \"存在节点的集群不允许删除\"\n            },\n            {\n                \"EnforcementAction\": \"dryrun\",\n                \"EventNums\": 0,\n                \"Kind\": \"blocknamespacedeletion\",\n                \"Name\": \"block-namespace-deletion-rule\",\n                \"PolicyCategory\": \"namespace\",\n                \"PolicyDesc\": \"命名空间内如果存在pod、service、ingress、pvc，需清空上述资源后方可删除\",\n                \"PolicyName\": \"存在workload、服务与路由、存储对象的命名空间不允许删除\"\n            },\n            {\n                \"EnforcementAction\": \"dryrun\",\n                \"EventNums\": 0,\n                \"Kind\": \"blockcrddeletion\",\n                \"Name\": \"block-crd-deletion-rule\",\n                \"PolicyCategory\": \"configuration\",\n                \"PolicyDesc\": \"crd定义的apiversion下如果有创建cr资源，则清空cr后方可删除crd\",\n                \"PolicyName\": \"存在cr的crd不允许删除\"\n            },\n            {\n                \"EnforcementAction\": \"dryrun\",\n                \"EventNums\": 0,\n                \"Kind\": \"blockpvdeletion\",\n                \"Name\": \"block-pv-deletion-rule\",\n                \"PolicyCategory\": \"storage\",\n                \"PolicyDesc\": \"pv如果处于bound状态，则不允许被删除\",\n                \"PolicyName\": \"绑定状态的pv不允许删除\"\n            },\n            {\n                \"EnforcementAction\": \"dryrun\",\n                \"EventNums\": 0,\n                \"Kind\": \"blockservicewithingressdeletion\",\n                \"Name\": \"block-service-with-ingress-deletion-rule\",\n                \"PolicyCategory\": \"network\",\n                \"PolicyDesc\": \"ingress-controller前端svc，如果存在ingress配置，则svc不允许删除\",\n                \"PolicyName\": \"应用了ingress规则的svc不允许删除\"\n            }\n        ],\n        \"RequestId\": \"224782f1-c990-4383-8f21-bb369c9ca396\"\n    }\n}",
+        "title": "查询策略列表"
+      }
+    ],
     "DescribePodChargeInfo": [
       {
         "document": " 需要同时指定 Namespace 和 Name",
@@ -1644,6 +1652,14 @@
         "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyNodePoolInstanceTypes\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-xxx\",\n    \"InstanceTypes\": [\n        \"ins-xxx\"\n    ],\n    \"NodePoolId\": \"np-xxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxxxxx\"\n    }\n}",
         "title": "修改节点池机型"
+      }
+    ],
+    "ModifyOpenPolicyList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyOpenPolicyList\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-gzzr1v5t\",\n    \"Category\": \"optional\",\n    \"OpenPolicyInfoList\": [\n        {\n            \"EnforcementAction\": \"dryrun\",\n            \"Name\": \"block-namespace-deletion-rule\",\n            \"Kind\": \"blocknamespacedeletion\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"807af656-9c9b-43b0-bf8a-d0218b624ec7\"\n    }\n}",
+        "title": "批量修改策略开关"
       }
     ],
     "ModifyPrometheusAgentExternalLabels": [

@@ -8634,7 +8634,7 @@
         },
         {
           "disabled": false,
-          "document": "服务模版id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "服务模板id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "tpm-xxxx",
           "member": "string",
           "name": "ServiceTemplateId",
@@ -8684,7 +8684,7 @@
         },
         {
           "disabled": false,
-          "document": "源模版名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "源模板名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
           "member": "string",
           "name": "SouParameterName",
@@ -8734,7 +8734,7 @@
         },
         {
           "disabled": false,
-          "document": "目的模版名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "目的模板名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
           "member": "string",
           "name": "ParameterName",
@@ -8744,7 +8744,7 @@
         },
         {
           "disabled": false,
-          "document": "端口模版名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "端口模板名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
           "member": "string",
           "name": "ProtocolPortName",

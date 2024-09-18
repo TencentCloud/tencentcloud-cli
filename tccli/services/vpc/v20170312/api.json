@@ -9160,6 +9160,15 @@
           "name": "SecurityGroupId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指定绑定的标签列表，例如：[{\"Key\": \"city\", \"Value\": \"shanghai\"}]。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -9173,6 +9182,7 @@
           "example": "无。",
           "member": "EndPoint",
           "name": "EndPoint",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },

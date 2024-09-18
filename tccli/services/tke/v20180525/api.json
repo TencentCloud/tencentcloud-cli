@@ -847,6 +847,13 @@
       "output": "DescribeLogSwitchesResponse",
       "status": "online"
     },
+    "DescribeOpenPolicyList": {
+      "document": "查询opa策略列表",
+      "input": "DescribeOpenPolicyListRequest",
+      "name": "查询opa策略列表",
+      "output": "DescribeOpenPolicyListResponse",
+      "status": "online"
+    },
     "DescribePodChargeInfo": {
       "document": "查询正在运行中Pod的计费信息。可以通过 Namespace 和 Name 来查询某个 Pod 的信息，也可以通过 Pod 的 Uid 批量查询。",
       "input": "DescribePodChargeInfoRequest",
@@ -1328,6 +1335,13 @@
       "input": "ModifyNodePoolInstanceTypesRequest",
       "name": "修改节点池的机型配置",
       "output": "ModifyNodePoolInstanceTypesResponse",
+      "status": "online"
+    },
+    "ModifyOpenPolicyList": {
+      "document": "批量修改opa策略",
+      "input": "ModifyOpenPolicyListRequest",
+      "name": "批量修改opa策略",
+      "output": "ModifyOpenPolicyListResponse",
       "status": "online"
     },
     "ModifyPrometheusAgentExternalLabels": {
@@ -2770,6 +2784,16 @@
           "output_required": true,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "本地专用集群Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cluster-0jend45y",
+          "member": "string",
+          "name": "CdcId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -3769,7 +3793,7 @@
           "example": "10.0.0.0/24",
           "member": "string",
           "name": "ClusterCIDR",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3779,7 +3803,7 @@
           "example": "false",
           "member": "bool",
           "name": "IgnoreClusterCIDRConflict",
-          "required": false,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -3789,7 +3813,7 @@
           "example": "256",
           "member": "uint64",
           "name": "MaxNodePodNum",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3799,7 +3823,7 @@
           "example": "256",
           "member": "uint64",
           "name": "MaxClusterServiceNum",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3809,7 +3833,7 @@
           "example": "false",
           "member": "bool",
           "name": "Ipvs",
-          "required": false,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -3819,7 +3843,7 @@
           "example": "vpc-aaa",
           "member": "string",
           "name": "VpcId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3829,7 +3853,7 @@
           "example": "false",
           "member": "bool",
           "name": "Cni",
-          "required": false,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -3839,7 +3863,7 @@
           "example": "ipvs-bpf",
           "member": "string",
           "name": "KubeProxyMode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3849,7 +3873,7 @@
           "example": "10.0.0.0/25",
           "member": "string",
           "name": "ServiceCIDR",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3859,7 +3883,7 @@
           "example": "[\"subnet-aa\",\"subnet-bb\"]",
           "member": "string",
           "name": "Subnets",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -3869,7 +3893,7 @@
           "example": "false",
           "member": "bool",
           "name": "IgnoreServiceCIDRConflict",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -3879,7 +3903,7 @@
           "example": "false",
           "member": "bool",
           "name": "IsDualStack",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -3889,7 +3913,7 @@
           "example": "10.0.0.0/24",
           "member": "string",
           "name": "Ipv6ServiceCIDR",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3899,7 +3923,7 @@
           "example": "\"clusterIP\"",
           "member": "string",
           "name": "CiliumMode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -11365,13 +11389,23 @@
         },
         {
           "disabled": false,
-          "document": "公网连接地址",
+          "document": "注册节点公网版公网连接地址",
           "example": "23.142.142.24:9000",
           "member": "string",
           "name": "PublicConnectUrl",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "注册节点公网版自定义域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test.com",
+          "member": "string",
+          "name": "PublicCustomDomain",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -11643,6 +11677,52 @@
           "member": "Switch",
           "name": "SwitchSet",
           "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOpenPolicyListRequest": {
+      "document": "DescribeOpenPolicyList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cls-abcd1234",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "策略分类 基线：baseline 优选：priority 可选：optional",
+          "example": "baseline",
+          "member": "string",
+          "name": "Category",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOpenPolicyListResponse": {
+      "document": "DescribeOpenPolicyList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "策略信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OpenPolicyInfo",
+          "name": "OpenPolicyInfoList",
+          "output_required": false,
           "type": "list",
           "value_allowed_null": true
         },
@@ -18936,6 +19016,51 @@
       ],
       "type": "object"
     },
+    "ModifyOpenPolicyListRequest": {
+      "document": "ModifyOpenPolicyList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cls-abcd1234",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "修改的策略列表，目前仅支持修改EnforcementAction字段",
+          "example": "[     {       \"EnforcementAction\": \"dryrun\",       \"Name\": \"block-namespace-deletion-rule\",       \"Kind\": \"blocknamespacedeletion\"     }   ]",
+          "member": "OpenPolicySwitch",
+          "name": "OpenPolicyInfoList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "策略分类 基线：baseline 优选：priority 可选：optional",
+          "example": "optional",
+          "member": "string",
+          "name": "Category",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyOpenPolicyListResponse": {
+      "document": "ModifyOpenPolicyList返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyPrometheusAgentExternalLabelsRequest": {
       "document": "ModifyPrometheusAgentExternalLabels请求参数结构体",
       "members": [
@@ -19798,6 +19923,202 @@
         }
       ],
       "usage": "both"
+    },
+    "OpenConstraintInfo": {
+      "document": "策略实例信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "策略实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "block-namespace-deletion-rule",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "策略实例关联事件数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
+          "member": "uint64",
+          "name": "EventNums",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例yaml详情base64编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "apiVersion: constraints.gatekeeper.sh/v1beta1 kind: BlockNamespaceDeletion metadata:   name: block-namespace-deletion-rule   annotations:     \"helm.sh/hook\": post-install,post-upgrade spec:   enforcementAction: dryrun   match:     kinds:       - apiGroups: [\"*\"]         kinds: [\"Namespace\"]",
+          "member": "string",
+          "name": "YamlDetail",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "OpenPolicyInfo": {
+      "document": "opa策略信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "策略分类：cluster集群策略、node节点策略、namespace命名空间策略、configuration配置相关策略、compute计算资源策略、storage存储资源策略、network网络资源策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cluster",
+          "member": "string",
+          "name": "PolicyCategory",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "策略中文名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "存在节点的集群不允许删除",
+          "member": "string",
+          "name": "PolicyName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "策略描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "集群中存在任意节点，需下线节点后方可删除",
+          "member": "string",
+          "name": "PolicyDesc",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "策略运行模式：dryrun空跑不生效，deny拦截生效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "dryrun",
+          "member": "string",
+          "name": "EnforcementAction",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "关联的事件数量(最近7d)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
+          "member": "uint64",
+          "name": "EventNums",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "策略英文名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "block-crd-deletion-rule",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "策略模版类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "BlockCrdDeletion",
+          "member": "string",
+          "name": "Kind",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "策略开关状态：open打开，close关闭\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "open",
+          "member": "string",
+          "name": "EnabledStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "策略的实例的yaml示例base64编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ConstraintYamlExample",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "策略关联的实例列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "OpenConstraintInfo",
+          "name": "OpenConstraintInfoList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "OpenPolicySwitch": {
+      "document": "opa策略开关",
+      "members": [
+        {
+          "disabled": false,
+          "document": "策略运行模式：dryrun空跑不生效，deny拦截生效",
+          "example": "dryrun",
+          "member": "string",
+          "name": "EnforcementAction",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "策略英文名称",
+          "example": "block-crd-deletion-rule",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "策略模版类型",
+          "example": "BlockCrdDeletion",
+          "member": "string",
+          "name": "Kind",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "策略开关状态：open打开，close关闭",
+          "example": "open",
+          "member": "string",
+          "name": "EnabledStatus",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "策略关联的实例列表",
+          "example": "[]",
+          "member": "OpenConstraintInfo",
+          "name": "OpenConstraintInfoList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
     },
     "OptionalRuntimes": {
       "document": "可选运行时",
