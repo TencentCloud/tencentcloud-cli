@@ -1,0 +1,612 @@
+{
+  "actions": {
+    "DescribeInstance": {
+      "document": "查询实例信息",
+      "input": "DescribeInstanceRequest",
+      "name": "查询MQTT实例详情信息",
+      "output": "DescribeInstanceResponse",
+      "status": "online"
+    },
+    "DescribeInstanceList": {
+      "document": "获取实例列表，Filters参数使用说明如下：\n1. InstanceName, 名称模糊查询\n2. InstanceId，实例ID查询\n3. InstanceType, 实例类型查询，支持多选\n3. InstanceStatus，实例状态查询，支持多选\n\n当使用TagFilters查询时，Filters参数失效。",
+      "input": "DescribeInstanceListRequest",
+      "name": "获取MQTT实例列表",
+      "output": "DescribeInstanceListResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2024-05-16",
+    "api_brief": "提供 TDMQ MQTT 版控制台的功能，如元数据的增删改查等",
+    "serviceNameCN": "消息队列 MQTT 版",
+    "serviceShortName": "mqtt"
+  },
+  "objects": {
+    "DescribeInstanceListRequest": {
+      "document": "DescribeInstanceList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询条件列表",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "查询起始位置",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询结果限制数量",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "标签过滤器",
+          "example": "无",
+          "member": "TagFilter",
+          "name": "TagFilters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceListResponse": {
+      "document": "DescribeInstanceList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例列表",
+          "example": "[ \t\t\t{ \t\t\t\t\"ClientNumLimit\": 1, \t\t\t\t\"CreateTime\": 1705565760, \t\t\t\t\"InstanceId\": \"mqtt-wjgxr8jg\", \t\t\t\t\"InstanceName\": \"su-0118-no-pub\", \t\t\t\t\"InstanceStatus\": \"CREATE_FAILURE\", \t\t\t\t\"InstanceType\": \"BASIC\", \t\t\t\t\"Remark\": \"\", \t\t\t\t\"SkuCode\": \"mqtt_1k\", \t\t\t\t\"SubscriptionNumLimit\": 1, \t\t\t\t\"TopicNum\": 0, \t\t\t\t\"TopicNumLimit\": 1, \t\t\t\t\"TpsLimit\": 1, \t\t\t\t\"Version\": \"1\" \t\t\t}, \t\t\t{ \t\t\t\t\"ClientNumLimit\": 1000, \t\t\t\t\"CreateTime\": 1705391046, \t\t\t\t\"InstanceId\": \"mqtt-47ka4rdr\", \t\t\t\t\"InstanceName\": \"sun-0116\", \t\t\t\t\"InstanceStatus\": \"RUNNING\", \t\t\t\t\"InstanceType\": \"BASIC\", \t\t\t\t\"Remark\": \"\", \t\t\t\t\"SkuCode\": \"basic_1k\", \t\t\t\t\"SubscriptionNumLimit\": 1000, \t\t\t\t\"TopicNum\": 25, \t\t\t\t\"TopicNumLimit\": 25, \t\t\t\t\"TpsLimit\": 1000, \t\t\t\t\"Version\": \"1\" \t\t\t} \t\t]",
+          "member": "MQTTInstanceItem",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceRequest": {
+      "document": "DescribeInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "rocketmq-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceResponse": {
+      "document": "DescribeInstance返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例类型，\nEXPERIMENT 体验版\nBASIC 基础版\nPRO  专业版\nPLATINUM 铂金版",
+          "example": "BASIC",
+          "member": "string",
+          "name": "InstanceType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "mqtt-mwmdg9dm",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例名称",
+          "example": "name",
+          "member": "string",
+          "name": "InstanceName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主题数量",
+          "example": "2",
+          "member": "int64",
+          "name": "TopicNum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例最大主题数量",
+          "example": "1000",
+          "member": "int64",
+          "name": "TopicNumLimit",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "TPS限流值",
+          "example": "1000",
+          "member": "int64",
+          "name": "TpsLimit",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间，秒为单位",
+          "example": "1711955420",
+          "member": "int64",
+          "name": "CreatedTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备注信息",
+          "example": "remark",
+          "member": "string",
+          "name": "Remark",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例状态",
+          "example": "RUNNING",
+          "member": "string",
+          "name": "InstanceStatus",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例规格",
+          "example": "basic_1k",
+          "member": "string",
+          "name": "SkuCode",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "单客户端最大订阅数",
+          "example": "30",
+          "member": "int64",
+          "name": "MaxSubscriptionPerClient",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "授权规则条数",
+          "example": "10",
+          "member": "int64",
+          "name": "AuthorizationPolicyLimit",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "客户端数量上限",
+          "example": "1000",
+          "member": "int64",
+          "name": "ClientNumLimit",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "客户端证书注册方式：JITP，API",
+          "example": "API",
+          "member": "string",
+          "name": "DeviceCertificateProvisionType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自动注册设备证书时是否自动激活",
+          "example": "false",
+          "member": "bool",
+          "name": "AutomaticActivation",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否自动续费",
+          "example": "1",
+          "member": "int64",
+          "name": "RenewFlag",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "计费模式， POSTPAID，按量计费 PREPAID，包年包月",
+          "example": "POSTPAID",
+          "member": "string",
+          "name": "PayMode",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "到期时间，秒为单位",
+          "example": "1713164969433",
+          "member": "int64",
+          "name": "ExpiryTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "预销毁时间",
+          "example": "1713164969433",
+          "member": "int64",
+          "name": "DestroyTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "    TLS,单向认证\n    mTLS,双向认证\n    BYOC;一机一证",
+          "example": "TLS",
+          "member": "string",
+          "name": "X509Mode",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最大Ca配额",
+          "example": "1",
+          "member": "int64",
+          "name": "MaxCaNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "证书注册码",
+          "example": "123-456",
+          "member": "string",
+          "name": "RegistrationCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群最大订阅数",
+          "example": "120000",
+          "member": "int64",
+          "name": "MaxSubscription",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Filter": {
+      "document": "查询过滤器",
+      "members": [
+        {
+          "disabled": false,
+          "document": "过滤条件名",
+          "example": "key",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件的值",
+          "example": "无",
+          "member": "string",
+          "name": "Values",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
+    "MQTTInstanceItem": {
+      "document": "MQTT 实例信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "rmq-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例名称",
+          "example": "test",
+          "member": "string",
+          "name": "InstanceName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例版本",
+          "example": "5.0",
+          "member": "string",
+          "name": "Version",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例类型，\nEXPERIMENT，体验版\nBASIC，基础版\nPRO，专业版\nPLATINUM，铂金版",
+          "example": "EXPERIMENT",
+          "member": "string",
+          "name": "InstanceType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例状态，\nRUNNING, 运行中\nMAINTAINING，维护中\nABNORMAL，异常\nOVERDUE，欠费\nDESTROYED，已删除\nCREATING，创建中\nMODIFYING，变配中\nCREATE_FAILURE，创建失败\nMODIFY_FAILURE，变配失败\nDELETING，删除中",
+          "example": "RUNNING",
+          "member": "string",
+          "name": "InstanceStatus",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例主题数上限",
+          "example": "100",
+          "member": "int64",
+          "name": "TopicNumLimit",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备注信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "Remark",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "主题数量",
+          "example": "2",
+          "member": "int64",
+          "name": "TopicNum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "商品规格",
+          "example": "basic_1k",
+          "member": "string",
+          "name": "SkuCode",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "弹性TPS限流值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "int64",
+          "name": "TpsLimit",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1713164969433",
+          "member": "int64",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "单客户端最大订阅数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "30",
+          "member": "int64",
+          "name": "MaxSubscriptionPerClient",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "客户端连接数上线\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "int64",
+          "name": "ClientNumLimit",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否自动续费\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "RenewFlag",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "计费模式， POSTPAID，按量计费 PREPAID，包年包月\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "POSTPAID",
+          "member": "string",
+          "name": "PayMode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "到期时间，秒为单位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100000",
+          "member": "int64",
+          "name": "ExpiryTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "预销毁时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1713164969433",
+          "member": "int64",
+          "name": "DestroyTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "授权规则条数限制\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "AuthorizationPolicyLimit",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "最大ca配额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "MaxCaNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "最大订阅数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12000",
+          "member": "int64",
+          "name": "MaxSubscription",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TagFilter": {
+      "document": "标签过滤器",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签键名称",
+          "example": "test",
+          "member": "string",
+          "name": "TagKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "标签键名称",
+          "example": "value1",
+          "member": "string",
+          "name": "TagValues",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    }
+  },
+  "version": "1.0"
+}
