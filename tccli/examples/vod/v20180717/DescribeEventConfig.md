@@ -15,6 +15,7 @@ Output:
         "NotificationUrl": "http://mydemo.com/receiveevent",
         "UploadMediaCompleteEventSwitch": "ON",
         "DeleteMediaCompleteEventSwitch": "OFF",
+        "PersistenceCompleteEventSwitch": "OFF",
         "RequestId": "27217d38-95c0-4335-8532-e5154ffb03aa"
     }
 }

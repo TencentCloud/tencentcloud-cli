@@ -168,6 +168,14 @@
         "title": "通过模型id获取模型信息"
       }
     ],
+    "GetUsageByDate": [
+      {
+        "document": "需要查询8月份录音识别和实时识别的用量",
+        "input": "POST / HTTP/1.1\nHost: asr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetUsageByDate\n<公共请求参数>\n\n{\n    \"BizNameList\": [\n        \"asr_rt\",\n        \"asr_rec\"\n    ],\n    \"StartDate\": \"2024-08-01\",\n    \"EndDate\": \"2024-08-31\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"UsageByDateInfoList\": [\n                {\n                    \"BizName\": \"asr_rt\",\n                    \"Count\": 0,\n                    \"Duration\": 0\n                },\n                {\n                    \"BizName\": \"asr_rec\",\n                    \"Count\": 47,\n                    \"Duration\": 351\n                }\n            ]\n        },\n        \"RequestId\": \"877e8723-792b-4b4e-a8c0-57bece96b7f0\"\n    }\n}",
+        "title": "用量查询输入示例"
+      }
+    ],
     "ModifyCustomization": [
       {
         "document": "修改",

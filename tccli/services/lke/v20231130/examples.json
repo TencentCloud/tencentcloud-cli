@@ -152,6 +152,30 @@
         "title": "查询知识标签"
       }
     ],
+    "DescribeCallStatsGraph": [
+      {
+        "document": "接口调用折线图",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCallStatsGraph\n<公共请求参数>\n\n{\n    \"ModelName\": \"cs-normal\",\n    \"StartTime\": \"1726070400\",\n    \"EndTime\": \"1726156799\"\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [],\n        \"RequestId\": \"85e7259e-7810-4301-8f44-cf2d94ec0a0f\"\n    }\n}",
+        "title": "接口调用折线图"
+      }
+    ],
+    "DescribeConcurrencyUsage": [
+      {
+        "document": "并发详情示例",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConcurrencyUsage\n<公共请求参数>\n\n{\n    \"AppBizIds\": [\n        \"1812732010083385344\"\n    ],\n    \"ModelName\": \"cs-normal-70b\",\n    \"StartTime\": \"1724688000\",\n    \"EndTime\": \"1724774400\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AvailableConcurrency\": 0,\n        \"ConcurrencyPeak\": 0,\n        \"ExceedUsageTime\": 1,\n        \"RequestId\": \"0683ec32-da98-450a-acc9-671a1abf1553\"\n    }\n}",
+        "title": "并发详情示例"
+      }
+    ],
+    "DescribeConcurrencyUsageGraph": [
+      {
+        "document": "并发折线图示例",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConcurrencyUsageGraph\n<公共请求参数>\n\n{\n    \"ModelName\": \"cs-normal-70b\",\n    \"StartTime\": \"1724688000\",\n    \"EndTime\": \"1724774400\",\n    \"AppBizIds\": [\n        \"1812732010083385344\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"AvailableY\": [\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0\n        ],\n        \"RequestId\": \"ad439868-ed56-44f5-a716-81cc7402e83e\",\n        \"SuccessCallY\": [\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0\n        ],\n        \"X\": [\n            \"2024082700\",\n            \"2024082701\",\n            \"2024082702\",\n            \"2024082703\",\n            \"2024082704\",\n            \"2024082705\",\n            \"2024082706\",\n            \"2024082707\",\n            \"2024082708\",\n            \"2024082709\",\n            \"2024082710\",\n            \"2024082711\",\n            \"2024082712\",\n            \"2024082713\",\n            \"2024082714\",\n            \"2024082715\",\n            \"2024082716\",\n            \"2024082717\",\n            \"2024082718\",\n            \"2024082719\",\n            \"2024082720\",\n            \"2024082721\",\n            \"2024082722\",\n            \"2024082723\",\n            \"2024082800\"\n        ]\n    }\n}",
+        "title": "并发折线图示例"
+      }
+    ],
     "DescribeCorp": [
       {
         "document": "获取企业信息",
@@ -166,6 +190,22 @@
         "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDoc\n<公共请求参数>\n\n{\n    \"BotBizId\": \"1727231073371148288\",\n    \"DocBizId\": \"1729099536210460672\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"17467eb0-3f01-4bc8-af86-3f3b6b01a40c\",\n        \"IsAllowDelete\": true,\n        \"IsCreatedQa\": false,\n        \"IsDeleted\": false,\n        \"SourceDesc\": \"网页导入\",\n        \"UpdateTime\": \"1701427403\",\n        \"DocBizId\": \"1729099536210460672\",\n        \"DocCharSize\": \"5\",\n        \"FileName\": \"jkadslfjalkdfjaklsdfla.docx\",\n        \"IsAllowEdit\": false,\n        \"IsDeletedQa\": false,\n        \"AttrLabels\": [],\n        \"AttrRange\": 1,\n        \"CosUrl\": \"/corp/137/doc/jkadslfjalkdfjaklsdfla.docx\",\n        \"IsAllowRefer\": false,\n        \"IsCreatingQa\": false,\n        \"Source\": 1,\n        \"QaNum\": 0,\n        \"Reason\": \"\",\n        \"Status\": 14,\n        \"StatusDesc\": \"学习失败\",\n        \"FileType\": \"docx\",\n        \"IsAllowRestart\": true,\n        \"IsRefer\": false\n    }\n}",
         "title": "文档详情"
+      }
+    ],
+    "DescribeKnowledgeUsage": [
+      {
+        "document": "查询知识库用量",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeKnowledgeUsage\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"AvailableCharSize\": \"10000000\",\n        \"ExceedCharSize\": \"0\",\n        \"RequestId\": \"23382ab7-233c-47df-bb57-0b1d29a8d6b8\"\n    }\n}",
+        "title": "查询知识库用量"
+      }
+    ],
+    "DescribeKnowledgeUsagePieGraph": [
+      {
+        "document": "查询知识库容量饼图",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeKnowledgeUsagePieGraph\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"AvailableCharSize\": \"10000000\",\n        \"List\": [\n            {\n                \"AppName\": \"未使用\",\n                \"Proportion\": 0.9953504,\n                \"UsedCharSize\": \"9953504\"\n            },\n            {\n                \"AppName\": \"企点智能客服02\",\n                \"Proportion\": 0.0016738,\n                \"UsedCharSize\": \"16738\"\n            },\n            {\n                \"AppName\": \"测试下\",\n                \"Proportion\": 0.0016717,\n                \"UsedCharSize\": \"16717\"\n            },\n            {\n                \"AppName\": \"无情三刀\",\n                \"Proportion\": 0.0013041,\n                \"UsedCharSize\": \"13041\"\n            }\n        ],\n        \"RequestId\": \"19cfafe1-489d-40e8-b79f-dc9919ce3ccd\"\n    }\n}",
+        "title": "查询知识库容量饼图"
       }
     ],
     "DescribeQA": [
@@ -208,6 +248,14 @@
         "title": "通过AppKey查询应用业务ID"
       }
     ],
+    "DescribeSearchStatsGraph": [
+      {
+        "document": "搜索服务折线图详情",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSearchStatsGraph\n<公共请求参数>\n\n{\n    \"ModelName\": \"cs-normal\",\n    \"StartTime\": \"1726070400\",\n    \"EndTime\": \"1726156799\"\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [],\n        \"RequestId\": \"b547fd5a-4d82-4fcc-adb8-899e63c166fc\"\n    }\n}",
+        "title": "搜索服务折线图详情"
+      }
+    ],
     "DescribeSegments": [
       {
         "document": "片段请求",
@@ -228,6 +276,22 @@
         "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStorageCredential\n<公共请求参数>\n\n{\n    \"BotBizId\": \"1779863007508561920\",\n    \"FileType\": \"md\",\n    \"TypeKey\": \"offline\"\n}",
         "output": "{\n    \"Response\": {\n        \"Bucket\": \"qidian-qbot-test-1251316161\",\n        \"CorpUin\": \"0\",\n        \"Credentials\": {\n            \"TmpSecretId\": \"AKIDlL2FKlsigkCspNQyh2s0-IzKd8cBvmEM-r2e3qOu8ilXs66FFH_-CKmHeAZhFeEV\",\n            \"TmpSecretKey\": \"Vlr4JmRzKR4Z1PJxzuSsMZ/O2VlxtmvJCEjPV7s5ruY=\",\n            \"Token\": \"fPEfNWwNoY196OMrLtTdt1zsp8dImhWa14cca3e696eb04ac4dfc6f5f1a3a8b19paI6e-FWHCNPijFmf62yF1pPIhtrLz05W2RsGymutFYnsBGI9RfvYtrKTVScVeX_q-PQ5LXND8L78tPNkb39rakw_58aPIgJfZqpmdqQN-bFeJY0OiOJQgexT2V9doqZvy7LusVERxTQalEsTCnaB9juEBd7h_8O9Jc2GGTAs8hZYRTsqwqxfkrZm4oN5ndH0m53RloH2iSWm1BlplB1VlzbUFLsdxLcklcw8pyD0mzYOtW0HiMLRMVlGlmu0HZpSXtvYWFpLrZ-vRPNfxfuFywpU5ZmqHGubte2b8_3iOFPVPgsnT4zLL8tawSfV2qKLdN_lgAfNzguX6ROC_yP-hP5j7jkkBzWsvIcDzTdJmGvkS2vOgA3-uGkVDJwljsm0oPz1rEfxt-mI05z5YYCT7VVeJ-KVWi8UlH6ww9u1NUa9bKarH1XfDddBnh9Womlxb92uOzfv75q2PqIfvaN9BZWrRmfzooPbdIqE74oFaJw6tyZnMu2zAs0VbYRTN0CdiVB-IggNVaWoQulSFWLL7NRSIGUzjyoUyt_K2XYjV64sYG4Cwpiqe3BteV61p6m_IPEM4hEgb23hhIiytg8JmFWwJZNLJ3Uu6SB8kidb7wjTNGucfFGvDXgzOnqVbcQnTeva0PZ3XkjBNdplYd6RdWl7N54zawxk6R4Ib8pZ1hDuogXTJ5sjwVuQmmMYGUroQY39omyLMGl2zxEXm5uig\"\n        },\n        \"ExpiredTime\": 1717063483,\n        \"FilePath\": \"\",\n        \"ImagePath\": \"\",\n        \"Region\": \"ap-guangzhou\",\n        \"RequestId\": \"11b8fa96-4700-4f11-8eb0-421de37ed48d\",\n        \"StartTime\": 1717062883,\n        \"Type\": \"cos\",\n        \"UploadPath\": \"/corp/1737374499879124992/1779863007508561920/doc/QUiGRdWFAFBkDKjhuxbd-1796118032488595456.md\"\n    }\n}",
         "title": "获取文档上传密钥"
+      }
+    ],
+    "DescribeTokenUsage": [
+      {
+        "document": "获取调用统计",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTokenUsage\n<公共请求参数>\n\n{\n    \"UinAccount\": [\n        \"700001187441\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ApiCallStats\": 0,\n        \"InputTokenUsage\": 0,\n        \"OutputTokenUsage\": 0,\n        \"RequestId\": \"716109cc-ee93-423a-85f0-a21fb7afcc4f\",\n        \"SearchUsage\": 0,\n        \"TotalTokenUsage\": 0\n    }\n}",
+        "title": "获取调用统计"
+      }
+    ],
+    "DescribeTokenUsageGraph": [
+      {
+        "document": "接口调用折线图详情",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTokenUsageGraph\n<公共请求参数>\n\n{\n    \"ModelName\": \"cs-normal\",\n    \"StartTime\": \"1726070400\",\n    \"EndTime\": \"1726156799\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Input\": [],\n        \"Output\": [],\n        \"RequestId\": \"ed825101-ab0f-4f3d-8803-ce43292be7cb\",\n        \"Total\": []\n    }\n}",
+        "title": "接口调用折线图详情"
       }
     ],
     "DescribeUnsatisfiedReplyContext": [

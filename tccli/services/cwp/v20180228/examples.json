@@ -35,7 +35,7 @@
     "CheckBashPolicyParams": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckBashPolicyParams\n<公共请求参数>\n\n{\n    \"Rule\": \"rm -rf /tmp/tmp\\\\.ERYbwgd8e9\",\n    \"Name\": \"mapleaa\",\n    \"EventId\": 1098230,\n    \"CheckField\": \"Name,Rule\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckBashPolicyParams\n<公共请求参数>\n\n{\n    \"Rules\": {\n        \"Process\": \"rm -rf /tmp/tmp\\\\.ERYbwgd8e9\"\n    },\n    \"Name\": \"mapleaa\",\n    \"EventId\": 1098230,\n    \"CheckField\": \"Name,Process\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"d92d723e-4aac-4f4a-bbf9-e5430e29d289\",\n        \"ErrCode\": 2,\n        \"ErrMsg\": \"正则表达式与命令内容不匹配\"\n    }\n}",
         "title": "示例"
       },
@@ -1364,14 +1364,8 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBashPolicies\n<公共请求参数>\n\n{\n    \"Limit\": \"10\",\n    \"Offset\": \"0\"\n}",
-        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"Name\": \"白名单1\",\n                \"Enable\": 1,\n                \"White\": 0,\n                \"BashAction\": 2,\n                \"Rule\": \"curl www.qq.com\",\n                \"Level\": 2,\n                \"Scope\": 2,\n                \"Id\": 10004,\n                \"Descript\": \"message \\\"白名单1\\\" not found in language \\\"zh-CN\\\"\",\n                \"EventId\": 0,\n                \"CreateTime\": \"2022-08-19 15:57:45\",\n                \"ModifyTime\": \"2022-08-30 23:54:43\",\n                \"Uuids\": [],\n                \"DealOldEvents\": 0,\n                \"Quuids\": [\n                    \"\"\n                ],\n                \"Category\": 1\n            },\n            {\n                \"Name\": \"拦截规则1\",\n                \"Enable\": 1,\n                \"White\": 0,\n                \"BashAction\": 2,\n                \"Rule\": \"curl www.test0527.com\",\n                \"Level\": 1,\n                \"Scope\": 2,\n                \"Id\": 10005,\n                \"Descript\": \"message \\\"拦截规则1\\\" not found in language \\\"zh-CN\\\"\",\n                \"EventId\": 0,\n                \"CreateTime\": \"2022-08-23 20:28:02\",\n                \"ModifyTime\": \"2022-08-23 20:28:02\",\n                \"Uuids\": [],\n                \"DealOldEvents\": 0,\n                \"Quuids\": [\n                    \"\"\n                ],\n                \"Category\": 1\n            }\n        ],\n        \"RequestId\": \"f3fe3ac0-099b-4afc-b383-fbf58e8c385a\",\n        \"TotalCount\": 2\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"Name\": \"白名单1\",\n                \"Enable\": 1,\n                \"White\": 0,\n                \"BashAction\": 2,\n                \"Rule\": \"curl www.qq.com\",\n                \"Level\": 2,\n                \"Scope\": 2,\n                \"Id\": 10004,\n                \"Descript\": \"message \\\"白名单1\\\" not found in language \\\"zh-CN\\\"\",\n                \"EventId\": 0,\n                \"CreateTime\": \"2022-08-19 15:57:45\",\n                \"ModifyTime\": \"2022-08-30 23:54:43\",\n                \"Uuids\": [],\n                \"DealOldEvents\": 0,\n                \"Quuids\": [\n                    \"\"\n                ],\n                \"Category\": 1,\n                \"Rules\": {\n                    \"Process\": {\n                        \"Exe\": \"/tmp/test\"\n                    },\n                    \"PProcess\": null,\n                    \"AProcess\": null\n                }\n            }\n        ],\n        \"RequestId\": \"f3fe3ac0-099b-4afc-b383-fbf58e8c385a\",\n        \"TotalCount\": 1\n    }\n}",
         "title": "策略列表"
-      },
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBashPolicies\n<公共请求参数>\n\n{\n    \"Limit\": \"10\",\n    \"Offset\": \"0\"\n}",
-        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"Name\": \"白名单1\",\n                \"Enable\": 1,\n                \"White\": 0,\n                \"BashAction\": 2,\n                \"Rule\": \"curl www.qq.com\",\n                \"Level\": 2,\n                \"Scope\": 2,\n                \"Id\": 10004,\n                \"Descript\": \"白名单1\",\n                \"EventId\": 0,\n                \"CreateTime\": \"2022-08-19 15:57:45\",\n                \"ModifyTime\": \"2022-08-30 23:54:43\",\n                \"Uuids\": [],\n                \"DealOldEvents\": 0,\n                \"Quuids\": [\n                    \"\"\n                ],\n                \"Category\": 1\n            },\n            {\n                \"Name\": \"拦截规则1\",\n                \"Enable\": 1,\n                \"White\": 0,\n                \"BashAction\": 2,\n                \"Rule\": \"curl www.test0527.com\",\n                \"Level\": 1,\n                \"Scope\": 2,\n                \"Id\": 10005,\n                \"Descript\": \"拦截规则1\",\n                \"EventId\": 0,\n                \"CreateTime\": \"2022-08-23 20:28:02\",\n                \"ModifyTime\": \"2022-08-23 20:28:02\",\n                \"Uuids\": [],\n                \"DealOldEvents\": 0,\n                \"Quuids\": [\n                    \"\"\n                ],\n                \"Category\": 1\n            }\n        ],\n        \"RequestId\": \"ab327fc0-3d09-4129-ae1b-7fb7d61a0c01\",\n        \"TotalCount\": 2\n    }\n}",
-        "title": "策略列表1"
       }
     ],
     "DescribeBashRules": [
@@ -1662,7 +1656,7 @@
     ],
     "DescribeJavaMemShellList": [
       {
-        "document": "",
+        "document": "查询java内存马事件列表",
         "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeJavaMemShellList\n<公共请求参数>\n\n{\n    \"Offset\": 1,\n    \"Limit\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"d92d723e-4aac-4f4a-bbf9-e5430e29d289\",\n        \"TotalCount\": 1,\n        \"List\": [\n            {\n                \"Id\": 12,\n                \"Quuid\": \"d92d723e-4aac-4f4a-bbf9-e5430e29d289\",\n                \"Alias\": \"v_llzlu-PC0\",\n                \"HostIp\": \"192.168.255.10\",\n                \"Type\": 1,\n                \"Description\": \"Java (2845)中加载的net...\",\n                \"CreateTime\": \"2021-01-20 16:17:11\",\n                \"RecentFoundTime\": \"2021-01-20 16:17:11\",\n                \"Status\": 0\n            }\n        ]\n    }\n}",
         "title": "查询java内存马事件列表"
@@ -3579,7 +3573,7 @@
     "ModifyBashPolicy": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBashPolicy\n<公共请求参数>\n\n{\n    \"Policy\": {\n        \"Enable\": \"1\",\n        \"Name\": \"testbash\",\n        \"BashAction\": \"1\",\n        \"Level\": \"0\",\n        \"Descript\": \"testbash\",\n        \"Rule\": \"dGVzdCo\",\n        \"Scope\": \"3\",\n        \"White\": \"1\",\n        \"DealOldEvents\": \"0\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBashPolicy\n<公共请求参数>\n\n{\n    \"Policy\": {\n        \"Enable\": \"1\",\n        \"Name\": \"testbash\",\n        \"BashAction\": \"1\",\n        \"Level\": \"0\",\n        \"Descript\": \"testbash\",\n        \"Rule\": \"dGVzdCo\",\n        \"Scope\": \"3\",\n        \"White\": \"1\",\n        \"DealOldEvents\": \"0\",\n        \"Rules\": {\n            \"Process\": {\n                \"Exe\": \"L3RtcC90ZXN0Cg==\"\n            }\n        }\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ecf21829-71f7-4de6-86c8-6c73e575efbe\"\n    }\n}",
         "title": "添加白名单"
       }

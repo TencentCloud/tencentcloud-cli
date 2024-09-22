@@ -133,6 +133,27 @@
       "output": "DescribeAttributeLabelResponse",
       "status": "online"
     },
+    "DescribeCallStatsGraph": {
+      "document": "接口调用折线图",
+      "input": "DescribeCallStatsGraphRequest",
+      "name": "接口调用折线图",
+      "output": "DescribeCallStatsGraphResponse",
+      "status": "online"
+    },
+    "DescribeConcurrencyUsage": {
+      "document": "并发调用响应",
+      "input": "DescribeConcurrencyUsageRequest",
+      "name": "并发调用",
+      "output": "DescribeConcurrencyUsageResponse",
+      "status": "online"
+    },
+    "DescribeConcurrencyUsageGraph": {
+      "document": "并发调用折线图",
+      "input": "DescribeConcurrencyUsageGraphRequest",
+      "name": "并发调用折线图",
+      "output": "DescribeConcurrencyUsageGraphResponse",
+      "status": "online"
+    },
     "DescribeCorp": {
       "document": "企业详情",
       "input": "DescribeCorpRequest",
@@ -145,6 +166,20 @@
       "input": "DescribeDocRequest",
       "name": "文档详情",
       "output": "DescribeDocResponse",
+      "status": "online"
+    },
+    "DescribeKnowledgeUsage": {
+      "document": "查询知识库用量",
+      "input": "DescribeKnowledgeUsageRequest",
+      "name": "查询知识库用量",
+      "output": "DescribeKnowledgeUsageResponse",
+      "status": "online"
+    },
+    "DescribeKnowledgeUsagePieGraph": {
+      "document": "查询企业知识库容量饼图",
+      "input": "DescribeKnowledgeUsagePieGraphRequest",
+      "name": "查询知识库容量饼图",
+      "output": "DescribeKnowledgeUsagePieGraphResponse",
       "status": "online"
     },
     "DescribeQA": {
@@ -182,6 +217,13 @@
       "output": "DescribeRobotBizIDByAppKeyResponse",
       "status": "online"
     },
+    "DescribeSearchStatsGraph": {
+      "document": "查询搜索服务调用折线图",
+      "input": "DescribeSearchStatsGraphRequest",
+      "name": "查询搜索服务调用折线图",
+      "output": "DescribeSearchStatsGraphResponse",
+      "status": "online"
+    },
     "DescribeSegments": {
       "document": "获取片段详情",
       "input": "DescribeSegmentsRequest",
@@ -194,6 +236,20 @@
       "input": "DescribeStorageCredentialRequest",
       "name": "获取文件上传临时密钥",
       "output": "DescribeStorageCredentialResponse",
+      "status": "online"
+    },
+    "DescribeTokenUsage": {
+      "document": "接口调用token详情",
+      "input": "DescribeTokenUsageRequest",
+      "name": "接口调用token详情",
+      "output": "DescribeTokenUsageResponse",
+      "status": "online"
+    },
+    "DescribeTokenUsageGraph": {
+      "document": "接口调用token折线图",
+      "input": "DescribeTokenUsageGraphRequest",
+      "name": "接口调用token折线图",
+      "output": "DescribeTokenUsageGraphResponse",
       "status": "online"
     },
     "DescribeUnsatisfiedReplyContext": {
@@ -2672,6 +2728,310 @@
       ],
       "type": "object"
     },
+    "DescribeCallStatsGraphRequest": {
+      "document": "DescribeCallStatsGraph请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "uin",
+          "example": "无",
+          "member": "string",
+          "name": "UinAccount",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "登录用户主账号(集成商模式必填)",
+          "example": "6000005624511",
+          "member": "string",
+          "name": "LoginUin",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "登录用户子账号(集成商模式必填)",
+          "example": "6000005624511",
+          "member": "string",
+          "name": "LoginSubAccountUin",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "子业务类型",
+          "example": "无",
+          "member": "string",
+          "name": "SubBizType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "模型标识",
+          "example": "无",
+          "member": "string",
+          "name": "ModelName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "无",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "无",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "应用id列表",
+          "example": "无",
+          "member": "string",
+          "name": "AppBizIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCallStatsGraphResponse": {
+      "document": "DescribeCallStatsGraph返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "统计信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Stat",
+          "name": "List",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConcurrencyUsageGraphRequest": {
+      "document": "DescribeConcurrencyUsageGraph请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "模型标识",
+          "example": "无",
+          "member": "string",
+          "name": "ModelName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "无",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "无",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "uin",
+          "example": "无",
+          "member": "string",
+          "name": "UinAccount",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "登录用户主账号(集成商模式必填)",
+          "example": "6000005624511",
+          "member": "string",
+          "name": "LoginUin",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "登录用户子账号(集成商模式必填)",
+          "example": "6000005624511",
+          "member": "string",
+          "name": "LoginSubAccountUin",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "子业务类型",
+          "example": "无",
+          "member": "string",
+          "name": "SubBizType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "应用id列表",
+          "example": "无",
+          "member": "string",
+          "name": "AppBizIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConcurrencyUsageGraphResponse": {
+      "document": "DescribeConcurrencyUsageGraph返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "统计信息",
+          "example": "无",
+          "member": "string",
+          "name": "X",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可用并发y轴坐标",
+          "example": "无",
+          "member": "int64",
+          "name": "AvailableY",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "成功调用并发y轴坐标",
+          "example": "无",
+          "member": "int64",
+          "name": "SuccessCallY",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConcurrencyUsageRequest": {
+      "document": "DescribeConcurrencyUsage请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "模型标识",
+          "example": "无",
+          "member": "string",
+          "name": "ModelName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "无",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "无",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "应用id列表",
+          "example": "无",
+          "member": "string",
+          "name": "AppBizIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConcurrencyUsageResponse": {
+      "document": "DescribeConcurrencyUsage返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "可用并发数",
+          "example": "无",
+          "member": "uint64",
+          "name": "AvailableConcurrency",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "并发峰值",
+          "example": "无",
+          "member": "uint64",
+          "name": "ConcurrencyPeak",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "调用超可用次数",
+          "example": "无",
+          "member": "uint64",
+          "name": "ExceedUsageTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeCorpRequest": {
       "document": "DescribeCorp请求参数结构体",
       "members": [],
@@ -2974,6 +3334,90 @@
           "name": "AttrLabels",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeKnowledgeUsagePieGraphRequest": {
+      "document": "DescribeKnowledgeUsagePieGraph请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用ID数组",
+          "example": "无",
+          "member": "string",
+          "name": "AppBizIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeKnowledgeUsagePieGraphResponse": {
+      "document": "DescribeKnowledgeUsagePieGraph返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "所有应用已用的字符总数",
+          "example": "无",
+          "member": "string",
+          "name": "AvailableCharSize",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用饼图详情列表",
+          "example": "无",
+          "member": "KnowledgeCapacityPieGraphDetail",
+          "name": "List",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeKnowledgeUsageRequest": {
+      "document": "DescribeKnowledgeUsage请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeKnowledgeUsageResponse": {
+      "document": "DescribeKnowledgeUsage返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "可用字符数",
+          "example": "无",
+          "member": "string",
+          "name": "AvailableCharSize",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "超量字符数",
+          "example": "无",
+          "member": "string",
+          "name": "ExceedCharSize",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -3515,6 +3959,106 @@
       ],
       "type": "object"
     },
+    "DescribeSearchStatsGraphRequest": {
+      "document": "DescribeSearchStatsGraph请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "登录用户主账号(集成商模式必填)",
+          "example": "6000005624511",
+          "member": "string",
+          "name": "LoginUin",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "登录用户子账号(集成商模式必填)",
+          "example": "6000005624511",
+          "member": "string",
+          "name": "LoginSubAccountUin",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "uin列表",
+          "example": "无",
+          "member": "string",
+          "name": "UinAccount",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "子业务类型",
+          "example": "无",
+          "member": "string",
+          "name": "SubBizType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "模型标识",
+          "example": "无",
+          "member": "string",
+          "name": "ModelName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "无",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "无",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "应用id列表",
+          "example": "无",
+          "member": "string",
+          "name": "AppBizIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSearchStatsGraphResponse": {
+      "document": "DescribeSearchStatsGraph返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "统计结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Stat",
+          "name": "List",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeSegmentsRequest": {
       "document": "DescribeSegments请求参数结构体",
       "members": [
@@ -3704,6 +4248,248 @@
           "name": "UploadPath",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTokenUsageGraphRequest": {
+      "document": "DescribeTokenUsageGraph请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "腾讯云主账号",
+          "example": "无",
+          "member": "string",
+          "name": "UinAccount",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "知识引擎子业务类型:  FileParse(文档解析)、Embedding、Rewrite(多轮改写)、 Concurrency(并发)、KnowledgeSummary(知识总结)   KnowledgeQA(知识问答)、KnowledgeCapacity(知识库容量)、SearchEngine(搜索引擎)",
+          "example": "无",
+          "member": "string",
+          "name": "SubBizType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "模型标识",
+          "example": "无",
+          "member": "string",
+          "name": "ModelName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "无",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "无",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "应用id列表",
+          "example": "无",
+          "member": "string",
+          "name": "AppBizIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTokenUsageGraphResponse": {
+      "document": "DescribeTokenUsageGraph返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总消耗",
+          "example": "无",
+          "member": "Stat",
+          "name": "Total",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "输入消耗",
+          "example": "无",
+          "member": "Stat",
+          "name": "Input",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "输出消耗",
+          "example": "无",
+          "member": "Stat",
+          "name": "Output",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTokenUsageRequest": {
+      "document": "DescribeTokenUsage请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "腾讯云主账号",
+          "example": "无",
+          "member": "string",
+          "name": "UinAccount",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "登录用户主账号(集成商模式必填)",
+          "example": "6000005624511",
+          "member": "string",
+          "name": "LoginUin",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "登录用户子账号(集成商模式必填)",
+          "example": "6000005624511",
+          "member": "string",
+          "name": "LoginSubAccountUin",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "知识引擎子业务类型:  FileParse(文档解析)、Embedding、Rewrite(多轮改写)、 Concurrency(并发)、KnowledgeSummary(知识总结)   KnowledgeQA(知识问答)、KnowledgeCapacity(知识库容量)、SearchEngine(搜索引擎)",
+          "example": "无",
+          "member": "string",
+          "name": "SubBizType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "模型标识",
+          "example": "无",
+          "member": "string",
+          "name": "ModelName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "无",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "无",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "应用id列表",
+          "example": "无",
+          "member": "string",
+          "name": "AppBizIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTokenUsageResponse": {
+      "document": "DescribeTokenUsage返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总token消耗量",
+          "example": "无",
+          "member": "float",
+          "name": "TotalTokenUsage",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "输入token消耗",
+          "example": "无",
+          "member": "float",
+          "name": "InputTokenUsage",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "输出token消耗",
+          "example": "无",
+          "member": "float",
+          "name": "OutputTokenUsage",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "接口调用次数",
+          "example": "无",
+          "member": "uint64",
+          "name": "ApiCallStats",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "搜索服务调用次数",
+          "example": "无",
+          "member": "float",
+          "name": "SearchUsage",
+          "output_required": false,
+          "type": "float",
           "value_allowed_null": false
         },
         {
@@ -5623,6 +6409,42 @@
         }
       ],
       "type": "object"
+    },
+    "KnowledgeCapacityPieGraphDetail": {
+      "document": "知识库容量饼图详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AppName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "应用使用的字符数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UsedCharSize",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "应用占比\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "Proportion",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "KnowledgeQaConfig": {
       "document": "知识问答配置",
@@ -10834,6 +11656,32 @@
         }
       ],
       "usage": "in"
+    },
+    "Stat": {
+      "document": "计费统计信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "x轴时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "X",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "y轴统计值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "Y",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "StopDocParseRequest": {
       "document": "StopDocParse请求参数结构体",

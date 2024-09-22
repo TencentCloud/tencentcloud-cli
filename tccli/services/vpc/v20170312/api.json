@@ -3004,6 +3004,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "传统弹性公网IPv6所属vpc唯一ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "vpc-xxxxxxxx",
+          "member": "string",
+          "name": "UnVpcId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -27825,33 +27835,43 @@
       "members": [
         {
           "disabled": false,
-          "document": "配额名称，取值范围：<br><li>`TOTAL_EIP_QUOTA`：用户当前地域下EIP的配额数；<br><li>`DAILY_EIP_APPLY`：用户当前地域下今日申购次数；<br><li>`DAILY_PUBLIC_IP_ASSIGN`：用户当前地域下，重新分配公网 IP次数。",
-          "example": "",
+          "document": "配额名称，取值范围：\n- `TOTAL_EIP_QUOTA`：用户当前地域下EIP的配额数；\n- `DAILY_EIP_APPLY`：用户当前地域下今日申购次数；\n- `DAILY_PUBLIC_IP_ASSIGN`：用户当前地域下，重新分配公网 IP次数；\n- `TOTAL_EIP6_QUOTA`：用户当前地域下，传统弹性公网IPv6的配额数；\n- `BGP_EIPv6_QUOTA`：用户当前地域下，可申请的 BGP 弹性公网IPv6 的配额数；\n- `SINGLEISP_EIPv6_QUOTA`：用户当前地域下，可申请的静态单线弹性公网IPv6 的配额数；",
+          "example": "无",
           "member": "string",
           "name": "QuotaId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "当前数量",
-          "example": "",
+          "example": "无",
           "member": "int64",
           "name": "QuotaCurrent",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "配额数量",
-          "example": "",
+          "example": "无",
           "member": "int64",
           "name": "QuotaLimit",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "配额所属的网络组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "QuotaGroup",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

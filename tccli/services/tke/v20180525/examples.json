@@ -472,6 +472,14 @@
         "title": "删除镜像缓存"
       }
     ],
+    "DeleteLogConfigs": [
+      {
+        "document": "删除采集规则时调用",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteLogConfigs\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-bz7ge4wl\",\n    \"LogConfigNames\": \"test6,test7\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "删除采集规则"
+      }
+    ],
     "DeletePrometheusAlertPolicy": [
       {
         "document": "",
@@ -994,6 +1002,14 @@
         "input": "https://tke.tencentcloudapi.com/?Action=DescribeImages\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"ImageInstanceSet\": [\n            {\n                \"Alias\": \"Tencent Linux 2.2 64bit (tkernel3)\",\n                \"OsCustomizeType\": \"GENERAL\",\n                \"OsName\": \"tlinux2.2(tkernel3)x86_64\",\n                \"ImageId\": \"img-2lr9q49h\"\n            }\n        ],\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459398\"\n    }\n}",
         "title": "获取镜像信息"
+      }
+    ],
+    "DescribeLogConfigs": [
+      {
+        "document": "查询采集规则",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLogConfigs\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-bz7ge4wl\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"583e6c4b-ff24-42f8-87f1-37e4c00d81b7\",\n        \"Total\": 1,\n        \"LogConfigs\": \"{\\\"ItemCount\\\":1,\\\"Items\\\":[{\\\"apiVersion\\\":\\\"cls.cloud.tencent.com/v1\\\",\\\"kind\\\":\\\"LogConfig\\\",\\\"metadata\\\":{\\\"name\\\":\\\"test1\\\"},\\\"spec\\\":{\\\"clsDetail\\\":{\\\"extractRule\\\":{\\\"backtracking\\\":\\\"0\\\",\\\"isGBK\\\":\\\"false\\\",\\\"jsonStandard\\\":\\\"false\\\",\\\"unMatchUpload\\\":\\\"false\\\"},\\\"indexs\\\":[{\\\"indexName\\\":\\\"namespace\\\"},{\\\"indexName\\\":\\\"pod_name\\\"},{\\\"indexName\\\":\\\"container_name\\\"}],\\\"logFormat\\\":\\\"default\\\",\\\"logType\\\":\\\"minimalist_log\\\",\\\"maxSplitPartitions\\\":0,\\\"period\\\":30,\\\"region\\\":\\\"ap-chengdu\\\",\\\"storageType\\\":\\\"\\\",\\\"topicId\\\":\\\"2912eb16-a56c-4b9b-adb0-9828db1ad342\\\"},\\\"inputDetail\\\":{\\\"containerStdout\\\":{\\\"containerOperator\\\":\\\"in\\\",\\\"includeLabels\\\":{\\\"app\\\":\\\"test1\\\"},\\\"metadataContainer\\\":[\\\"namespace\\\",\\\"pod_name\\\",\\\"pod_ip\\\",\\\"pod_uid\\\",\\\"container_id\\\",\\\"container_name\\\",\\\"image_name\\\",\\\"cluster_id\\\"],\\\"namespace\\\":\\\"default\\\",\\\"nsLabelSelector\\\":\\\"\\\"},\\\"type\\\":\\\"container_stdout\\\"},\\\"kafkaDetail\\\":{\\\"brokers\\\":\\\"\\\",\\\"instanceId\\\":\\\"\\\",\\\"kafkaType\\\":\\\"\\\",\\\"logType\\\":\\\"\\\",\\\"messageKey\\\":{\\\"value\\\":\\\"\\\",\\\"valueFrom\\\":{\\\"fieldRef\\\":{\\\"fieldPath\\\":\\\"\\\"}}},\\\"metadata\\\":{},\\\"timestampFormat\\\":\\\"\\\",\\\"timestampKey\\\":\\\"\\\",\\\"topic\\\":\\\"\\\"}},\\\"status\\\":{\\\"code\\\":\\\"success\\\",\\\"reason\\\":\\\"success\\\",\\\"status\\\":\\\"Synced\\\"}}]}\"\n    }\n}",
+        "title": "查询采集规则"
       }
     ],
     "DescribeLogSwitches": [

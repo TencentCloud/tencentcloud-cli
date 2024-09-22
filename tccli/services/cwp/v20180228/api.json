@@ -12258,7 +12258,7 @@
       "usage": "out"
     },
     "BashPolicy": {
-      "document": "高位命令策略",
+      "document": "高危命令策略",
       "members": [
         {
           "disabled": false,
@@ -12266,6 +12266,7 @@
           "example": "policy",
           "member": "string",
           "name": "Name",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -12276,6 +12277,7 @@
           "example": "0",
           "member": "int64",
           "name": "Enable",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -12286,6 +12288,7 @@
           "example": "1",
           "member": "int64",
           "name": "White",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -12296,16 +12299,18 @@
           "example": "1",
           "member": "int64",
           "name": "BashAction",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "正则表达式",
+          "document": "正则表达式 base64 加密,该字段废弃,如果写入则自动替换为Rules.Process.CmdLine",
           "example": "*",
           "member": "string",
           "name": "Rule",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -12316,6 +12321,7 @@
           "example": "1",
           "member": "int64",
           "name": "Level",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -12326,6 +12332,7 @@
           "example": "1",
           "member": "int64",
           "name": "Scope",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -12336,6 +12343,7 @@
           "example": "1",
           "member": "int64",
           "name": "Id",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -12346,6 +12354,7 @@
           "example": "test",
           "member": "string",
           "name": "Descript",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -12356,6 +12365,7 @@
           "example": "1",
           "member": "int64",
           "name": "EventId",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -12366,6 +12376,7 @@
           "example": "1",
           "member": "int64",
           "name": "DealOldEvents",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -12376,6 +12387,7 @@
           "example": "无",
           "member": "string",
           "name": "Quuids",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -12386,6 +12398,7 @@
           "example": "1",
           "member": "int64",
           "name": "Category",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -12396,6 +12409,7 @@
           "example": "2020-12-12 00:00:00",
           "member": "string",
           "name": "CreateTime",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -12406,6 +12420,7 @@
           "example": "2020-12-12 00:00:00",
           "member": "string",
           "name": "ModifyTime",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -12416,9 +12431,21 @@
           "example": "无",
           "member": "string",
           "name": "Uuids",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则表达式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PolicyRules",
+          "name": "Rules",
+          "output_required": true,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -13542,8 +13569,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "校验内容 Name或Rule ，两个都要校验时逗号分割",
-          "example": "Name,Rule",
+          "document": "校验内容字段,如果需要检测多个字段时,用逗号分割\n<li>Name 策略名称</li>\n<li>Process 进程</li>\n<li>Name PProcess 父进程</li>\n<li>Name AProcess 祖先进程</li>\n",
+          "example": "Name,Process",
           "member": "string",
           "name": "CheckField",
           "required": true,
@@ -13569,7 +13596,7 @@
         },
         {
           "disabled": false,
-          "document": "用户填入的正则表达式：\"正则表达式\" 需与 \"提交EventId对应的命令内容\" 相匹配",
+          "document": "该字段不在维护,如果填入该参数,自动替换到Rules.Process\n",
           "example": "rm -rf /tmp/tmp\\\\.ERYbwgd8e9",
           "member": "string",
           "name": "Rule",
@@ -13584,6 +13611,15 @@
           "name": "Id",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "规则表达式",
+          "example": "无",
+          "member": "PolicyRules",
+          "name": "Rules",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -13597,7 +13633,7 @@
           "example": "2",
           "member": "uint64",
           "name": "ErrCode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -13607,7 +13643,7 @@
           "example": "OK",
           "member": "string",
           "name": "ErrMsg",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13949,6 +13985,34 @@
         }
       ],
       "usage": "out"
+    },
+    "CommandLine": {
+      "document": "命令行内容",
+      "members": [
+        {
+          "disabled": false,
+          "document": "路径,需要base64加密\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/tmp/test",
+          "member": "string",
+          "name": "Exe",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "命令行,需要base64加密\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "sh xxx.sh",
+          "member": "string",
+          "name": "Cmdline",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "ComponentStatistics": {
       "document": "组件统计数据。",
@@ -23529,7 +23593,7 @@
           "example": "[]",
           "member": "BashPolicy",
           "name": "List",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -23539,7 +23603,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -25857,7 +25921,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "过滤条件：Keywords: ip或者主机名模糊查询, Type，Status精确匹配，CreateBeginTime，CreateEndTime时间段",
+          "document": "过滤条件：InstanceID、IP、\n\nMachineName主机名模糊查询, Type，Status精确匹配，CreateBeginTime，CreateEndTime时间段",
           "example": "[]",
           "member": "Filters",
           "name": "Filters",
@@ -25894,7 +25958,7 @@
           "example": "无",
           "member": "JavaMemShellInfo",
           "name": "List",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -25904,7 +25968,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -43478,7 +43542,7 @@
           "example": "12342",
           "member": "uint64",
           "name": "Id",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -43488,7 +43552,7 @@
           "example": "dev-centos8",
           "member": "string",
           "name": "Alias",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -43498,7 +43562,7 @@
           "example": "192.168.255.10",
           "member": "string",
           "name": "HostIp",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -43508,7 +43572,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Type",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -43518,7 +43582,7 @@
           "example": "测到java进程1128220/org.apache.catalina.startup.Bootstrap start中加载的o",
           "member": "string",
           "name": "Description",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -43528,7 +43592,7 @@
           "example": "2021-01-20 16:17:11",
           "member": "string",
           "name": "CreateTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -43538,7 +43602,7 @@
           "example": "2021-01-20 16:17:11",
           "member": "string",
           "name": "RecentFoundTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -43548,7 +43612,7 @@
           "example": "0",
           "member": "uint64",
           "name": "Status",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -43558,7 +43622,7 @@
           "example": "e1f081aa-7777-4fdf-a2f7-88f3faa3d302",
           "member": "string",
           "name": "Quuid",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -43568,7 +43632,7 @@
           "example": "无",
           "member": "MachineExtraInfo",
           "name": "MachineExtraInfo",
-          "required": false,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -43578,7 +43642,57 @@
           "example": "e1f081aa-7777-4fdf-a2f7-88f3faa3d302",
           "member": "string",
           "name": "Uuid",
-          "required": false,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "类名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "a",
+          "member": "string",
+          "name": "ClassName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "父类名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "a",
+          "member": "string",
+          "name": "SuperClassName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "继承的接口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "a",
+          "member": "string",
+          "name": "Interfaces",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "注释\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "a",
+          "member": "string",
+          "name": "Annotations",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "所属的类加载器\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "a",
+          "member": "string",
+          "name": "LoaderClassName",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         }
@@ -47103,21 +47217,30 @@
       "members": [
         {
           "disabled": false,
-          "document": "事件Id数组",
-          "example": "[1,3]",
-          "member": "uint64",
-          "name": "Ids",
-          "required": true,
-          "type": "list"
-        },
-        {
-          "disabled": false,
           "document": "目标处理状态： 0 - 待处理 1 - 已加白 2 - 已删除 3 - 已忽略 4 - 已手动处理",
           "example": "3",
           "member": "uint64",
           "name": "Status",
           "required": true,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "事件Id数组",
+          "example": "[1,3]",
+          "member": "uint64",
+          "name": "Ids",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否更新全部，只支持忽略、已处理、删除",
+          "example": "false",
+          "member": "bool",
+          "name": "UpdateAll",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -50285,6 +50408,45 @@
         }
       ],
       "usage": "in"
+    },
+    "PolicyRules": {
+      "document": "策略规则表达式",
+      "members": [
+        {
+          "disabled": false,
+          "document": "进程\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "*",
+          "member": "CommandLine",
+          "name": "Process",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "父进程\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "*",
+          "member": "CommandLine",
+          "name": "PProcess",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "祖先进程\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "*",
+          "member": "CommandLine",
+          "name": "AProcess",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "PrivilegeEscalationProcess": {
       "document": "本地提权数据",

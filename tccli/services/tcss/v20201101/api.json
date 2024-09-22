@@ -442,11 +442,11 @@
       "status": "online"
     },
     "DeleteCompliancePolicyItemFromWhitelist": {
-      "document": "从白名单中删除将指定的检测项。",
+      "document": "产品重构优化，这几个接口已经没有调用了\n\n从白名单中删除将指定的检测项。",
       "input": "DeleteCompliancePolicyItemFromWhitelistRequest",
       "name": "安全合规取消忽略检测项列表",
       "output": "DeleteCompliancePolicyItemFromWhitelistResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DeleteEscapeWhiteList": {
       "document": "删除逃逸白名单",

@@ -106,7 +106,7 @@
       "status": "online"
     },
     "CreateHeadTailTemplate": {
-      "document": "创建片头片尾模板。\n- 最大支持模版数量为 100 个。",
+      "document": "创建片头片尾模板。\n- 最大支持模板数量为 100 个。",
       "input": "CreateHeadTailTemplateRequest",
       "name": "创建片头片尾模板",
       "output": "CreateHeadTailTemplateResponse",
@@ -14040,6 +14040,16 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
+          "document": "是否接收剪辑固化完成事件通知，\"OFF\" 为忽略该事件通知，\"ON\" 为接收事件通知。",
+          "example": "ON",
+          "member": "string",
+          "name": "PersistenceCompleteEventSwitch",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -18018,7 +18028,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>支持事件类型：</b>\n<li>NewFileUpload：视频上传完成；</li>\n<li>ProcedureStateChanged：任务流状态变更；</li>\n<li>FileDeleted：视频删除完成；</li>\n<li>RestoreMediaComplete：视频取回完成；</li>\n<li>PullComplete：视频转拉完成；</li>\n<li>EditMediaComplete：视频编辑完成；</li>\n<li>SplitMediaComplete：视频拆分完成；</li>\n<li>ComposeMediaComplete：制作媒体文件完成；</li>\n<li>WechatMiniProgramPublishComplete：微信小程序发布完成。</li>\n<li>RemoveWatermark：智能去除水印完成。</li>\n<li>RebuildMediaComplete：音画质重生完成事件（不推荐使用）。</li>\n<li>ReviewAudioVideoComplete：音视频审核完成；</li>\n<li>ExtractTraceWatermarkComplete：提取溯源水印完成；</li>\n<li>ExtractCopyRightWatermarkComplete：提取版权水印完成；</li>\n<li>DescribeFileAttributesComplete：获取文件属性完成；</li>\n<li>QualityInspectComplete：音画质检测完成；</li>\n<li>QualityEnhanceComplete：音画质重生任务完成。</li>\n<b>兼容 2017 版的事件类型：</b>\n<li>TranscodeComplete：视频转码完成；</li>\n<li>ConcatComplete：视频拼接完成；</li>\n<li>ClipComplete：视频剪辑完成；</li>\n<li>CreateImageSpriteComplete：视频截取雪碧图完成；</li>\n<li>CreateSnapshotByTimeOffsetComplete：视频按时间点截图完成。</li>",
+          "document": "<b>支持事件类型：</b>\n<li>NewFileUpload：视频上传完成；</li>\n<li>ProcedureStateChanged：任务流状态变更；</li>\n<li>FileDeleted：视频删除完成；</li>\n<li>RestoreMediaComplete：视频取回完成；</li>\n<li>PullComplete：视频转拉完成；</li>\n<li>EditMediaComplete：视频编辑完成；</li>\n<li>SplitMediaComplete：视频拆分完成；</li>\n<li>ComposeMediaComplete：制作媒体文件完成；</li>\n<li>WechatMiniProgramPublishComplete：微信小程序发布完成。</li>\n<li>RemoveWatermark：智能去除水印完成。</li>\n<li>RebuildMediaComplete：音画质重生完成事件（不推荐使用）。</li>\n<li>ReviewAudioVideoComplete：音视频审核完成；</li>\n<li>ExtractTraceWatermarkComplete：提取溯源水印完成；</li>\n<li>ExtractCopyRightWatermarkComplete：提取版权水印完成；</li>\n<li>DescribeFileAttributesComplete：获取文件属性完成；</li>\n<li>QualityInspectComplete：音画质检测完成；</li>\n<li>QualityEnhanceComplete：音画质重生任务完成；</li>\n<li>PersistenceComplete：剪辑固化完成。</li>\n<b>兼容 2017 版的事件类型：</b>\n<li>TranscodeComplete：视频转码完成；</li>\n<li>ConcatComplete：视频拼接完成；</li>\n<li>ClipComplete：视频剪辑完成；</li>\n<li>CreateImageSpriteComplete：视频截取雪碧图完成；</li>\n<li>CreateSnapshotByTimeOffsetComplete：视频按时间点截图完成。</li>",
           "example": "null",
           "member": "string",
           "name": "EventType",
@@ -18273,6 +18283,16 @@
           "member": "MediaCastEvent",
           "name": "MediaCastStatusChangedEvent",
           "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "剪辑固化完成事件，当事件类型为 PersistenceComplete 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "PersistenceCompleteTask",
+          "name": "PersistenceCompleteEvent",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         }
@@ -24890,6 +24910,15 @@
         },
         {
           "disabled": false,
+          "document": "是否接收剪辑固化完成事件通知，  默认 \"OFF\" 为忽略该事件通知，\"ON\" 为接收事件通知。",
+          "example": "OFF",
+          "member": "string",
+          "name": "PersistenceCompleteEventSwitch",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "123",
           "member": "uint64",
@@ -27177,6 +27206,32 @@
         }
       ],
       "type": "object"
+    },
+    "PersistenceCompleteTask": {
+      "document": "剪辑固化任务信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "固化生成的媒体 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "4424135347900333234",
+          "member": "string",
+          "name": "FileId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "剪辑固化的来源，有以下三种。\n<li>SimpleHlsClip：来自简单 HLS 剪辑；</li>\n<li>FastEditMedia：来自快速媒体编辑；</li>\n<li>LiveRealTimeClip:来自直播即时剪辑。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "SimpleHlsClip",
+          "member": "string",
+          "name": "PersistenceSource",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "PlayStatFileInfo": {
       "document": "播放统计文件信息",

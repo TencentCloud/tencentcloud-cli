@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli cwp CheckBashPolicyParams --cli-unfold-argument  \
-    --Rule rm -rf /tmp/tmp\.ERYbwgd8e9 \
+    --Rules.Process rm -rf /tmp/tmp\.ERYbwgd8e9 \
     --Name mapleaa \
     --EventId 1098230 \
-    --CheckField Name,Rule
+    --CheckField Name,Process
 ```
 
 Output: 

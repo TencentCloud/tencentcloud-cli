@@ -12300,7 +12300,7 @@
         },
         {
           "disabled": false,
-          "document": "\"Preset\"：预设，Custom\":客户魔板",
+          "document": "\"Preset\"：预设，Custom\":自定义模板",
           "example": "Preset",
           "member": "string",
           "name": "Type",
@@ -20685,6 +20685,15 @@
           "name": "SecurityGroupIds",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "可用区",
+          "example": "无",
+          "member": "string",
+          "name": "Zones",
+          "required": false,
+          "type": "list"
         }
       ],
       "usage": "in"
@@ -22915,7 +22924,7 @@
         },
         {
           "disabled": false,
-          "document": "媒体处理输出文件的目标存储。不填则继承 InputInfo 中的存储位置。",
+          "document": "媒体处理输出文件的目标存储。不填则继承 InputInfo 中的存储位置。\n注意：当InputInfo.Type为URL时，该参数是必填项",
           "example": "无",
           "member": "TaskOutputStorage",
           "name": "OutputStorage",
@@ -27230,7 +27239,7 @@
         },
         {
           "disabled": false,
-          "document": "填充方式，当视频流配置宽高参数与原始视频的宽高比不一致时，对转码的处理方式，即为“填充”。可选填充方式：\n<li> stretch：拉伸，对每一帧进行拉伸，填满整个画面，可能导致转码后的视频被“压扁“或者“拉长“；</li>\n<li>black：留黑，保持视频宽高比不变，边缘剩余部分使用黑色填充。</li>\n<li>white：留白，保持视频宽高比不变，边缘剩余部分使用白色填充。</li>\n<li>gauss：高斯模糊，保持视频宽高比不变，边缘剩余部分使用高斯模糊填充。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "填充方式，当视频流配置宽高参数与原始视频的宽高比不一致时，对转码的处理方式，即为“填充”。可选填充方式：\n <li> stretch：拉伸，对每一帧进行拉伸，填满整个画面，可能导致转码后的视频被“压扁“或者“拉长“；</li>\n<li>black：留黑，保持视频宽高比不变，边缘剩余部分使用黑色填充。</li>\n<li>white：留白，保持视频宽高比不变，边缘剩余部分使用白色填充。</li>\n<li>gauss：高斯模糊，保持视频宽高比不变，边缘剩余部分使用高斯模糊填充。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "stretch",
           "member": "string",
           "name": "FillType",
@@ -27241,7 +27250,7 @@
         },
         {
           "disabled": false,
-          "document": "视频恒定码率控制因子。取值范围为[0, 51]，填0表示禁用该参数。\n如果没有特殊需求，不建议指定该参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "视频恒定码率控制因子。取值范围为[0, 51]，填0表示禁用该参数。 \n如果没有特殊需求，不建议指定该参数。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
           "name": "Vcrf",

@@ -4640,6 +4640,15 @@
           "name": "ResourceGroupName",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否使用multi- statement方式运行一批次任务，true: 是，false: 否",
+          "example": "false",
+          "member": "bool",
+          "name": "IsMultiStatement",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

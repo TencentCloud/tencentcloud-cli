@@ -615,7 +615,7 @@
         {
           "disabled": false,
           "document": "文本内容\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "\"\"",
           "member": "string",
           "name": "Text",
           "output_required": false,
@@ -631,7 +631,7 @@
         {
           "disabled": false,
           "document": "文本内容\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "50mg:国药准字H32025390\\t\\r\\n25mg:国药准字H32025391",
           "member": "string",
           "name": "Text",
           "output_required": false,
@@ -647,7 +647,7 @@
         {
           "disabled": false,
           "document": "文本内容\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "(1) 25mg(2)50mg",
           "member": "string",
           "name": "Text",
           "output_required": false,
@@ -663,7 +663,7 @@
         {
           "disabled": false,
           "document": "文本内容\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "心源性休克。病态窦房结综合征。II、III度房室传导阻滞。不稳定的、失代\\r\\n偿性心力衰竭患者(肺水肿、低灌注或低血压)，持续地或间歇地接受β受体激\\r\\n动剂正变力性治疗的患者。有症状的心动过缓或低血压。本品不可给予心率<45\\r\\n次/分、P-Q间期>0.24秒或收缩压<100mmHg的怀疑急性心肌梗死的患者。伴有坏\\r\\n疽危险的严重外周血管疾病患者。对本品中任何成份或其它B受体阻滞剂过敏者。",
           "member": "string",
           "name": "Text",
           "output_required": false,
@@ -695,7 +695,7 @@
         {
           "disabled": false,
           "document": "文本内容\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "\"\"",
           "member": "string",
           "name": "Text",
           "output_required": false,
@@ -727,7 +727,7 @@
         {
           "disabled": false,
           "document": "文本\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "\"\"",
           "member": "string",
           "name": "Text",
           "output_required": false,
@@ -743,7 +743,7 @@
         {
           "disabled": false,
           "document": "文本内容\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "\"\"",
           "member": "string",
           "name": "Text",
           "output_required": false,
@@ -831,7 +831,7 @@
         {
           "disabled": false,
           "document": "文本内容\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "肾功能损害\\r\\n      肾功能对本品清除率无明显影响，因此肾功能损害患者无需调整剂量。\\r\\n      肝功能损害\\r\\n\\r\\n      通常肝硬化患者所用美托洛尔的剂量与肝功能正常者相同。仅在肝功能非常\\r\\n严重损害(如旁路手术患者)时才需考虑减少剂量。\\r\\n      接受β受体阻滞剂治疗的患者不可静脉给予维拉帕米。\\r\\n      美托洛尔可能使外周血管循环障碍疾病的症状如间歇性跛行加重。对严重的\\r\\n肾功能损害、伴代谢性酸中毒的严重急症，及合用洋地黄时，必须慎重。\\r\\n      在没有伴随治疗的情况下,本品不可用于潜在的或有症状的心功能不全的患\\r\\n者。患变异型(Prinzmetal氏)心绞痛的患者，在使用β受体阻滞剂后可能会由于\\r\\n a受体介导的冠状血管收缩而导致心绞痛发作的频度和程度加重。因此，非选择\\r\\n性β受体阻滞剂不能用于此类患者。选择性β受体阻滞剂在使用时也必须慎重。\\r\\n      对支气管哮喘或其他慢性阻塞性肺病患者,应同时给予足够的扩支气管治疗，\\r\\n β受体激动剂的剂量可能需要增加。\\r\\n      美托洛尔的治疗对糖代谢的影响或掩盖低血糖的危险低于非选择性β受体\\r\\n阻滞剂。\\r\\n      在罕见的情况下,原有的中度房室传导异常可能加重(可能导致房室阻滞)。\\r\\n       β受体阻滞剂的治疗可能会妨碍对过敏反应的治疗,常规剂量的肾上腺素治\\r\\n疗并不总能得到预期的疗效。嗜铬细胞瘤患者若使用本品，应考虑合并使用α受\\r\\n体阻滞剂。\\r\\n      本品应尽可能逐步撤药，整个撤药过程至少用二周时间，剂量逐渐减低，直\\r\\n至最后减至25mg(50mg片的半片)。在此期间，特别是对于已知伴有缺血性心脏\\r\\n病的患者应进行密切监测。在撤除β受体阻滞剂期间，可能会使冠状动脉事件，\\r\\n包括心脏猝死的危险增加。\\r\\n      在手术前应告知麻醉医师患者正在服用本品。对接受手术的患者，不推荐停\\r\\n用β受体阻滞剂。\\r\\n      对驾驶汽车和操作机械的影响\\r\\n      在用本品治疗过程中可能会发生眩晕和疲劳，因此在需要集中注意力时，如\\r\\n驾驶和操作机械时应慎用。\\r\\n      运动员慎用",
           "member": "string",
           "name": "Text",
           "output_required": false,
@@ -847,7 +847,7 @@
         {
           "disabled": false,
           "document": "文本内容\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "\"\"",
           "member": "string",
           "name": "Text",
           "output_required": false,
@@ -863,7 +863,7 @@
         {
           "disabled": false,
           "document": "文本内容\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "\"\"",
           "member": "string",
           "name": "Text",
           "output_required": false,
@@ -1411,7 +1411,7 @@
         {
           "disabled": false,
           "document": "name\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "\"\"",
           "member": "string",
           "name": "Name",
           "output_required": false,
@@ -1421,7 +1421,7 @@
         {
           "disabled": false,
           "document": "src\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "\"\"",
           "member": "string",
           "name": "Src",
           "output_required": false,
@@ -1431,7 +1431,7 @@
         {
           "disabled": false,
           "document": "value\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "\"\"",
           "member": "string",
           "name": "Value",
           "output_required": false,
@@ -1983,7 +1983,7 @@
         {
           "disabled": false,
           "document": "文本内容\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "\"\"",
           "member": "string",
           "name": "Text",
           "output_required": false,
@@ -1993,7 +1993,7 @@
         {
           "disabled": false,
           "document": "活性成份的化学名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "\"\"",
           "member": "string",
           "name": "ChemicalName",
           "output_required": false,
@@ -2003,7 +2003,7 @@
         {
           "disabled": false,
           "document": "活性成份的化学结构式\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "\"\"",
           "member": "string",
           "name": "ChemicalFormula",
           "output_required": false,
@@ -2013,7 +2013,7 @@
         {
           "disabled": false,
           "document": "活性成份的分子式\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "\"\"",
           "member": "string",
           "name": "MolecularFormula",
           "output_required": false,
@@ -2023,7 +2023,7 @@
         {
           "disabled": false,
           "document": "活性成份的分子量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "\"\"",
           "member": "string",
           "name": "MolecularWeight",
           "output_required": false,
@@ -2055,7 +2055,7 @@
         {
           "disabled": false,
           "document": "文本\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "本品为白色片",
           "member": "string",
           "name": "Text",
           "output_required": false,
@@ -2103,7 +2103,7 @@
         {
           "disabled": false,
           "document": "文本\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "\"\"",
           "member": "string",
           "name": "Text",
           "output_required": false,
@@ -2135,7 +2135,7 @@
         {
           "disabled": false,
           "document": "文本\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "口服。剂量应个体化，以避免心动过缓的发生。应空腹服药，进餐时服药可\\r\\n使美托洛尔的生物利用度增加40%。\\r\\n      治疗高血压:每日100mg一200mg，分1至2次服用。\\r\\n      急性心肌梗死:主张在早期，即最初的几小时内使用，因为即刻使用在未能\\r\\n溶栓的患者中可减小梗死范围、降低短期(15天)死亡率(此作用在用药后24小时\\r\\n既出现)。\\r\\n              在已经溶栓的患者中可降低再梗死率与再缺血率，若在2小时内用药还\\r\\n可以降低死亡率。一般用法:可先静脉注射美托洛尔一次2.5~5mg(2分钟内)，\\r\\n每5分钟一次，共3次总剂量为10~15mg。之后15分钟开始口服25~50mg，每6~\\r\\n12小时1次，共24~48小时，然后口服一次50~100mg，一日2次。\\r\\n      不稳定性心绞痛:也主张早期使用，用法用量可参照急性心肌梗死。\\r\\n      急性心肌梗死发生心房颤动时若无禁忌可静脉使用美托洛尔，其方法同上。\\r\\n      心肌梗死后若无禁忌应长期使用,因为已经证明这样做可以降低心源性死亡\\r\\n率，包括猝死。一般一次50~100mg，一日2次。\\r\\n      在治疗高血压、心绞痛、心律失常、肥厚型心肌病、甲状腺功能亢\\r\\n                                                                                        进等症\\r\\n                                                                                                 时\\r\\n一般一次25~50mg，一 日2~3次，或一次100mg，一日2次。\\r\\n      心力衰竭:应在使用洋地黄和(或)利尿剂等抗心力衰竭的治疗基础上使用本\\r\\n药。起初一次6.25mg,一日2~3次，以后视临床情况每数日至一周一次增加6.25~\\r\\n12.5mg，一日2~3次，最大剂量可用至一次50~100mg，一日2次。\\r\\n      最大剂量一日不应超过300mg~400mg。",
           "member": "string",
           "name": "Text",
           "output_required": false,
@@ -2167,7 +2167,7 @@
         {
           "disabled": false,
           "document": "文本\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "\"\"",
           "member": "string",
           "name": "Text",
           "output_required": false,
@@ -2183,7 +2183,7 @@
         {
           "disabled": false,
           "document": "文本\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "用于治疗\\r\\n                 高血压、心绞痛、心肌梗死、肥厚型心肌病、主动脉夹层、心律失\\r\\n常、甲状腺功能亢进、心脏神经官能症等。近年来尚用于心力衰竭的治疗，此时\\r\\n应在有经验的医师指导下使用。",
           "member": "string",
           "name": "Text",
           "output_required": false,
@@ -2291,7 +2291,7 @@
         {
           "disabled": false,
           "document": "文本内容\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "\"\"",
           "member": "string",
           "name": "Text",
           "output_required": false,
@@ -2301,7 +2301,7 @@
         {
           "disabled": false,
           "document": "通用名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "\"\"",
           "member": "string",
           "name": "GenericName",
           "output_required": false,
@@ -2311,7 +2311,7 @@
         {
           "disabled": false,
           "document": "品牌名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "\"\"",
           "member": "string",
           "name": "BarndName",
           "output_required": false,
@@ -2321,7 +2321,7 @@
         {
           "disabled": false,
           "document": "英文名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "\"\"",
           "member": "string",
           "name": "EnName",
           "output_required": false,
@@ -2331,7 +2331,7 @@
         {
           "disabled": false,
           "document": "拼音\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "\"\"",
           "member": "string",
           "name": "Pinyin",
           "output_required": false,
@@ -2363,7 +2363,7 @@
         {
           "disabled": false,
           "document": "文本\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "铝塑泡包装;\\r\\n\\r\\n25mg:20片/板/盒，20片/板x2板/盒，20片/板x3板/盒;\\r\\n50mg:20片/板/盒,20片/板x2板/盒;",
           "member": "string",
           "name": "Text",
           "output_required": false,
@@ -2395,7 +2395,7 @@
         {
           "disabled": false,
           "document": "文本\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "本品的生物利用度为40-50%。在服药后1-2小时达到最大的β受体阻滞作用。\\r\\n每日一次口服100mg后，对心率的作用在12小时后仍显著。美托洛尔主要在肝脏\\r\\n由CYP2D6代谢，三个主要的代谢物已被确定，均无具有临床意义的β受体阻滞作\\r\\n用。血浆半衰期为3-5小时。约5%的美托洛尔以原形由肾排泄，其余的均被代谢。",
           "member": "string",
           "name": "Text",
           "output_required": false,
@@ -2443,7 +2443,7 @@
         {
           "disabled": false,
           "document": "文本\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "\"\"",
           "member": "string",
           "name": "Text",
           "output_required": false,
@@ -2459,7 +2459,7 @@
         {
           "disabled": false,
           "document": "文本\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "避光、密封保存。",
           "member": "string",
           "name": "Text",
           "output_required": false,
@@ -2475,7 +2475,7 @@
         {
           "disabled": false,
           "document": "文本\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "\"\"",
           "member": "string",
           "name": "Text",
           "output_required": false,
@@ -2813,7 +2813,7 @@
         {
           "disabled": false,
           "document": "数据在原PDF文件中的第几页\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Page",
           "output_required": false,
@@ -4106,7 +4106,7 @@
         {
           "disabled": false,
           "document": "数据在原PDF文件中的第几页\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Page",
           "output_required": false,
@@ -4152,7 +4152,7 @@
         {
           "disabled": false,
           "document": "数据在原PDF文件中的第几页\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Page",
           "output_required": false,
@@ -4398,7 +4398,7 @@
         {
           "disabled": false,
           "document": "数据在原PDF文件中的第几页\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Page",
           "output_required": false,
@@ -4934,7 +4934,7 @@
         {
           "disabled": false,
           "document": "数据在原PDF文件中的第几页\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Page",
           "output_required": false,
@@ -5702,7 +5702,7 @@
         {
           "disabled": false,
           "document": "类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "\"\"",
           "member": "string",
           "name": "Name",
           "output_required": false,
@@ -5712,7 +5712,7 @@
         {
           "disabled": false,
           "document": "项目原文\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "object",
           "member": "PhysicalBaseItem",
           "name": "Item",
           "output_required": false,
@@ -5722,7 +5722,7 @@
         {
           "disabled": false,
           "document": "方位\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "object",
           "member": "PhysicalBaseItem",
           "name": "Location",
           "output_required": false,
@@ -5732,7 +5732,7 @@
         {
           "disabled": false,
           "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "object",
           "member": "PhysicalBaseItem",
           "name": "Result",
           "output_required": false,
@@ -6042,7 +6042,7 @@
         {
           "disabled": false,
           "document": "数据在原PDF文件中的第几页\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Page",
           "output_required": false,
@@ -6249,7 +6249,7 @@
         {
           "disabled": false,
           "document": "异步任务ID",
-          "example": "无",
+          "example": "54fab3dd-decf-4ca6-96b0-1d73310dbcd3",
           "member": "string",
           "name": "TaskID",
           "required": true,
@@ -6264,7 +6264,7 @@
         {
           "disabled": false,
           "document": "脱敏后图片的base64编码",
-          "example": "无",
+          "example": "\"\"",
           "member": "string",
           "name": "MaskedImage",
           "output_required": false,
@@ -6622,7 +6622,7 @@
         {
           "disabled": false,
           "document": "检验报告块标题\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[object]",
           "member": "BlockTitle",
           "name": "BlockTitle",
           "output_required": false,
@@ -6632,7 +6632,7 @@
         {
           "disabled": false,
           "document": "数据在原PDF文件中的第几页\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Page",
           "output_required": false,
@@ -6930,7 +6930,7 @@
         {
           "disabled": false,
           "document": "数据在原PDF文件中的第几页\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Page",
           "output_required": false,
@@ -8136,7 +8136,7 @@
         {
           "disabled": false,
           "document": "数据在原PDF文件中的第几页\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Page",
           "output_required": false,
@@ -8334,7 +8334,7 @@
         {
           "disabled": false,
           "document": "数据在原PDF文件中的第几页\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Page",
           "output_required": false,
@@ -8430,7 +8430,7 @@
         {
           "disabled": false,
           "document": "数据在原PDF文件中的第几页\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Page",
           "output_required": false,
@@ -10169,7 +10169,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "Name",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -10179,7 +10179,7 @@
           "example": "[]",
           "member": "int64",
           "name": "Index",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -10189,7 +10189,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "Src",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -10199,7 +10199,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "Value",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -10209,7 +10209,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "PT",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -10219,17 +10219,17 @@
           "example": "\"\"",
           "member": "string",
           "name": "PN",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "pM\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "\"\"",
           "member": "string",
           "name": "PM",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -10239,7 +10239,7 @@
           "example": "[object]",
           "member": "Coord",
           "name": "Coords",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -11140,7 +11140,7 @@
         {
           "disabled": false,
           "document": "数据在原PDF文件中的第几页\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Page",
           "output_required": false,
@@ -11382,7 +11382,7 @@
         {
           "disabled": false,
           "document": "pdf文件url链接(暂不支持)",
-          "example": "无",
+          "example": "\"\"",
           "member": "string",
           "name": "Url",
           "required": false,
@@ -11391,7 +11391,7 @@
         {
           "disabled": false,
           "document": "pdf文件base64编码字符串",
-          "example": "无",
+          "example": "\"\"",
           "member": "string",
           "name": "Base64",
           "required": false,
@@ -11548,7 +11548,7 @@
         {
           "disabled": false,
           "document": "类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "\"\"",
           "member": "string",
           "name": "Name",
           "output_required": false,
@@ -11558,7 +11558,7 @@
         {
           "disabled": false,
           "document": "原始文本\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "\"\"",
           "member": "string",
           "name": "Src",
           "output_required": false,
@@ -11568,7 +11568,7 @@
         {
           "disabled": false,
           "document": "归一化后值\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "\"\"",
           "member": "string",
           "name": "Value",
           "output_required": false,
@@ -11578,7 +11578,7 @@
         {
           "disabled": false,
           "document": "四点坐标\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[object]",
           "member": "Coord",
           "name": "Coords",
           "output_required": false,
@@ -11680,7 +11680,7 @@
         {
           "disabled": false,
           "document": "体检报告信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "object",
           "member": "PhysicalExamination",
           "name": "PhysicalExaminationMulti",
           "output_required": false,
@@ -11690,7 +11690,7 @@
         {
           "disabled": false,
           "document": "版本\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "exam_pysical_v1",
           "member": "string",
           "name": "Version",
           "output_required": false,
@@ -12360,7 +12360,7 @@
         {
           "disabled": false,
           "document": "床号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "\"\"",
           "member": "string",
           "name": "BedNo",
           "output_required": false,
@@ -12422,7 +12422,7 @@
         {
           "disabled": false,
           "document": "数据在原PDF文件中的第几页\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Page",
           "output_required": false,
@@ -13873,7 +13873,7 @@
         {
           "disabled": false,
           "document": "报告结构化结果",
-          "example": "无",
+          "example": "[object]",
           "member": "Template",
           "name": "Template",
           "output_required": true,
@@ -15424,7 +15424,7 @@
         {
           "disabled": false,
           "document": "报告结构化结果",
-          "example": "无",
+          "example": "object",
           "member": "Template",
           "name": "Template",
           "output_required": false,
@@ -15434,7 +15434,7 @@
         {
           "disabled": false,
           "document": "多级分类结果",
-          "example": "无",
+          "example": "[object]",
           "member": "TextType",
           "name": "TextTypeList",
           "output_required": false,
@@ -15444,7 +15444,7 @@
         {
           "disabled": false,
           "document": "报告结构化结果(体检报告PDF结构化接口返回的 json 内容非常多，建议通过本地代码调用)",
-          "example": "无",
+          "example": "object",
           "member": "Block",
           "name": "Block",
           "output_required": false,
@@ -15454,7 +15454,7 @@
         {
           "disabled": false,
           "document": "是否使用Block字段",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "IsBlock",
           "output_required": false,
@@ -15546,7 +15546,7 @@
         {
           "disabled": false,
           "document": "报告结构化结果",
-          "example": "无",
+          "example": "object",
           "member": "Template",
           "name": "Template",
           "output_required": false,
@@ -15556,7 +15556,7 @@
         {
           "disabled": false,
           "document": "多级分类结果",
-          "example": "无",
+          "example": "[object]",
           "member": "TextType",
           "name": "TextTypeList",
           "output_required": false,
@@ -15566,7 +15566,7 @@
         {
           "disabled": false,
           "document": "报告结构化结果(体检报告PDF结构化接口返回的 json 内容非常多，建议通过本地代码调用)",
-          "example": "无",
+          "example": "object",
           "member": "Block",
           "name": "Block",
           "output_required": false,
@@ -15576,7 +15576,7 @@
         {
           "disabled": false,
           "document": "是否使用Block字段",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "IsBlock",
           "output_required": false,
@@ -15802,7 +15802,7 @@
         {
           "disabled": false,
           "document": "类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "\"\"",
           "member": "string",
           "name": "Name",
           "output_required": false,
@@ -15812,7 +15812,7 @@
         {
           "disabled": false,
           "document": "项目原文\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "object",
           "member": "PhysicalBaseItem",
           "name": "Item",
           "output_required": false,
@@ -15822,7 +15822,7 @@
         {
           "disabled": false,
           "document": "数值\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "object",
           "member": "PhysicalBaseItem",
           "name": "Result",
           "output_required": false,
@@ -15832,7 +15832,7 @@
         {
           "disabled": false,
           "document": "单位\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "object",
           "member": "PhysicalBaseItem",
           "name": "Unit",
           "output_required": false,
@@ -15842,7 +15842,7 @@
         {
           "disabled": false,
           "document": "数据在原PDF文件中的第几页\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Page",
           "output_required": false,

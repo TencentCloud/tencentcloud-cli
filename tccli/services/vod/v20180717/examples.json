@@ -790,7 +790,7 @@
       {
         "document": "",
         "input": "https://vod.tencentcloudapi.com/?Action=DescribeEventConfig\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Mode\": \"PUSH\",\n        \"NotificationUrl\": \"http://mydemo.com/receiveevent\",\n        \"UploadMediaCompleteEventSwitch\": \"ON\",\n        \"DeleteMediaCompleteEventSwitch\": \"OFF\",\n        \"RequestId\": \"27217d38-95c0-4335-8532-e5154ffb03aa\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Mode\": \"PUSH\",\n        \"NotificationUrl\": \"http://mydemo.com/receiveevent\",\n        \"UploadMediaCompleteEventSwitch\": \"ON\",\n        \"DeleteMediaCompleteEventSwitch\": \"OFF\",\n        \"PersistenceCompleteEventSwitch\": \"OFF\",\n        \"RequestId\": \"27217d38-95c0-4335-8532-e5154ffb03aa\"\n    }\n}",
         "title": "查询事件通知配置"
       }
     ],
