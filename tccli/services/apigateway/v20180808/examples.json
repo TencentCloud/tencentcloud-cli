@@ -342,6 +342,14 @@
         "title": "DescribeExclusiveInstanceDetail"
       }
     ],
+    "DescribeExclusiveInstanceRegions": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: apigateway.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeExclusiveInstanceRegions\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8e6e4a58-8059-4734-a2bf-c8fb3dfe0b19\"\n    }\n}",
+        "title": "获取地域列表"
+      }
+    ],
     "DescribeExclusiveInstances": [
       {
         "document": "查询独享实例列表",

@@ -112,6 +112,13 @@
       "output": "DescribeEmrOverviewMetricsResponse",
       "status": "online"
     },
+    "DescribeGlobalConfig": {
+      "document": "查询YARN资源调度的全局配置",
+      "input": "DescribeGlobalConfigRequest",
+      "name": "查询YARN资源调度的全局配置",
+      "output": "DescribeGlobalConfigResponse",
+      "status": "online"
+    },
     "DescribeHBaseTableOverview": {
       "document": "获取Hbase表级监控数据概览接口",
       "input": "DescribeHBaseTableOverviewRequest",
@@ -285,6 +292,13 @@
       "input": "ModifyAutoScaleStrategyRequest",
       "name": "修改自动扩缩容规则",
       "output": "ModifyAutoScaleStrategyResponse",
+      "status": "online"
+    },
+    "ModifyGlobalConfig": {
+      "document": "修改YARN资源调度的全局配置",
+      "input": "ModifyGlobalConfigRequest",
+      "name": "修改YARN资源调度的全局配置",
+      "output": "ModifyGlobalConfigResponse",
       "status": "online"
     },
     "ModifyResourcePools": {
@@ -1140,6 +1154,52 @@
         }
       ],
       "usage": "both"
+    },
+    "CapacityGlobalConfig": {
+      "document": "资源调度-容量调度器的全局设置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否开启了标签调度",
+          "example": "无",
+          "member": "bool",
+          "name": "EnableLabel",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "如果开启了标签调度，标签信息存放的路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LabelDir",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否覆盖用户指定队列，为true表示覆盖。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "QueueMappingOverride",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "高级设置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DefaultSetting",
+          "name": "DefaultSettings",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "CdbInfo": {
       "document": "出参",
@@ -2912,6 +2972,62 @@
       ],
       "usage": "both"
     },
+    "DefaultSetting": {
+      "document": "资源调度的默认设置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "名称，作为入参的key",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "描述",
+          "example": "无",
+          "member": "string",
+          "name": "Desc",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "提示",
+          "example": "无",
+          "member": "string",
+          "name": "Prompt",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "key，用于展示，该配置对应与配置文件中的配置项",
+          "example": "无",
+          "member": "string",
+          "name": "Key",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Name对应的值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "DeleteAutoScaleStrategyRequest": {
       "document": "DeleteAutoScaleStrategy请求参数结构体",
       "members": [
@@ -3835,6 +3951,83 @@
           "name": "Result",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGlobalConfigRequest": {
+      "document": "DescribeGlobalConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "emr集群的英文id",
+          "example": "emr-2xef56",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGlobalConfigResponse": {
+      "document": "DescribeGlobalConfig返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否开启了资源调度功能",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableResourceSchedule",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前生效的资源调度器",
+          "example": "\"fair\"",
+          "member": "string",
+          "name": "ActiveScheduler",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "公平调度器的信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CapacityGlobalConfig",
+          "name": "CapacityGlobalConfig",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "容量调度器的信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FairGlobalConfig",
+          "name": "FairGlobalConfig",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "最新的资源调度器",
+          "example": "无",
+          "member": "string",
+          "name": "Scheduler",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -5721,6 +5914,7 @@
           "example": "1",
           "member": "int64",
           "name": "Count",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": true
@@ -5731,6 +5925,7 @@
           "example": "CLOUD_SSD",
           "member": "string",
           "name": "DiskType",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -5741,7 +5936,19 @@
           "example": "无",
           "member": "int64",
           "name": "DiskSize",
+          "output_required": true,
           "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "额外性能\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "ExtraPerformance",
+          "output_required": false,
+          "required": false,
           "type": "int",
           "value_allowed_null": true
         }
@@ -6629,6 +6836,22 @@
         }
       ],
       "usage": "in"
+    },
+    "FairGlobalConfig": {
+      "document": "资源调度-公平调度器的全局配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "对应与页面的<p>程序上限</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "int64",
+          "name": "UserMaxAppsDefault",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "Filters": {
       "document": "Emr集群列表实例自定义查询过滤",
@@ -8864,6 +9087,42 @@
       ],
       "type": "object"
     },
+    "ModifyGlobalConfigRequest": {
+      "document": "ModifyGlobalConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "emr集群的英文id",
+          "example": "emr-2xef56",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "修改的配置列表。其中Key的取值与`DescribeGlobalConfig`接口的出参一一对应，不区分大小写（如果报错找不到Key，以出参为准），分别为：\n1. 开启或关闭资源调度：enableResourceSchedule；在关闭时会有一个同步的选项，Key为sync，取值为true或false。\n2. 调度器类型：scheduler。\n2. 开启或关闭标签：enableLabel，取值为true或false。\n2. 标签目录：labelDir。\n3. 是否覆盖用户指定队列：queueMappingOverride，取值为true、false。\n4. 程序上限：userMaxAppsDefault。\n5. 动态配置项：`DescribeGlobalConfig`接口返回的DefaultSettings中的Name字段。\nValue的取值都是字符串，对于**是否覆盖用户指定队列**、**程序上限**，json规范中的null表示清空该配置的值。支持修改单个配置项的值。对于**动态配置项**则需要全量传递以进行覆盖。",
+          "example": "无",
+          "member": "Item",
+          "name": "Items",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyGlobalConfigResponse": {
+      "document": "ModifyGlobalConfig返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyResourcePoolsRequest": {
       "document": "ModifyResourcePools请求参数结构体",
       "members": [
@@ -9465,9 +9724,10 @@
         {
           "disabled": false,
           "document": "该类型云盘个数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "int64",
           "name": "Count",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": true
@@ -9475,19 +9735,32 @@
         {
           "disabled": false,
           "document": "磁盘类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "int64",
           "name": "Type",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
+          "document": "磁盘大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100 GB",
+          "member": "string",
+          "name": "Size",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
           "document": "云盘大小\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "int64",
           "name": "Volume",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -10172,6 +10445,26 @@
           "example": "无",
           "member": "string",
           "name": "Remark",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "共享集群id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SharedClusterId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "共享集群id描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SharedClusterIdDesc",
           "output_required": false,
           "type": "string",
           "value_allowed_null": true

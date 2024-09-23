@@ -70,6 +70,20 @@
         "title": "创建PostgreSQL实例"
       }
     ],
+    "CreateDatabase": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDatabase\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-5cz25tr5\",\n    \"DatabaseName\": \"mydatabase\",\n    \"DatabaseOwner\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"28004847-7a50-4740-a536-19ee9db9ccc0\"\n    }\n}",
+        "title": "创建数据库"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDatabase\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-5cz25tr5\",\n    \"DatabaseName\": \"mydatabase\",\n    \"DatabaseOwner\": \"test\",\n    \"Encoding\": \"UTF8\",\n    \"Collate\": \"zh_CN.utf8\",\n    \"Ctype\": \"zh_CN.utf8\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"28004847-7a50-4740-a536-19ee9db9ccc0\"\n    }\n}",
+        "title": "创建指定字符编码、排序规则及字符分类的数据库"
+      }
+    ],
     "CreateInstances": [
       {
         "document": "创建12.4版本中最新内核版的PostgreSQL实例",
@@ -434,13 +448,13 @@
       {
         "document": "不做筛选，全量拉取实例的数据库列表。",
         "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDatabases\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-hf8jo5pr\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Items\": [\n            \"postgres\",\n            \"postgres_bak_1715086333\",\n            \"postgres_bak_1715140150\",\n            \"rds\",\n            \"postgres_bak_1715152994\"\n        ],\n        \"RequestId\": \"4045d7a9-5330-4c2c-b968-475570200a97\",\n        \"TotalCount\": 5\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            \"postgres\",\n            \"postgres_bak_1715086333\",\n            \"postgres_bak_1715140150\",\n            \"rds\",\n            \"postgres_bak_1715152994\"\n        ],\n        \"Databases\": [\n            {\n                \"DatabaseName\": \"postgres\",\n                \"DatabaseOwner\": \"postgres\",\n                \"Encoding\": \"UTF8\",\n                \"Collate\": \"C\",\n                \"Ctype\": \"C\",\n                \"AllowConn\": true,\n                \"ConnLimit\": -1,\n                \"Privileges\": \"=Tc/postgres,postgres=CTc/postgres,pg_tencentdb_superuser=C/postgres\"\n            },\n            {\n                \"DatabaseName\": \"postgres_bak_1715086333\",\n                \"DatabaseOwner\": \"postgres\",\n                \"Encoding\": \"UTF8\",\n                \"Collate\": \"C\",\n                \"Ctype\": \"C\",\n                \"AllowConn\": true,\n                \"ConnLimit\": -1,\n                \"Privileges\": \"\"\n            },\n            {\n                \"DatabaseName\": \"postgres_bak_1715140150\",\n                \"DatabaseOwner\": \"postgres\",\n                \"Encoding\": \"UTF8\",\n                \"Collate\": \"C\",\n                \"Ctype\": \"C\",\n                \"AllowConn\": true,\n                \"ConnLimit\": -1,\n                \"Privileges\": \"\"\n            },\n            {\n                \"DatabaseName\": \"rds\",\n                \"DatabaseOwner\": \"postgres\",\n                \"Encoding\": \"UTF8\",\n                \"Collate\": \"C\",\n                \"Ctype\": \"C\",\n                \"AllowConn\": true,\n                \"ConnLimit\": -1,\n                \"Privileges\": \"\"\n            },\n            {\n                \"DatabaseName\": \"postgres_bak_1715152994\",\n                \"DatabaseOwner\": \"postgres\",\n                \"Encoding\": \"UTF8\",\n                \"Collate\": \"C\",\n                \"Ctype\": \"C\",\n                \"AllowConn\": true,\n                \"ConnLimit\": -1,\n                \"Privileges\": \"\"\n            }\n        ],\n        \"RequestId\": \"4045d7a9-5330-4c2c-b968-475570200a97\",\n        \"TotalCount\": 5\n    }\n}",
         "title": "获取实例所有数据库"
       },
       {
         "document": "使用筛选条件，返回部分数据库列表。",
         "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDatabases\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-hf8jo5pr\",\n    \"Filters\": [\n        {\n            \"Name\": \"database-name\",\n            \"Values\": [\n                \"postgres\"\n            ]\n        }\n    ],\n    \"Offset\": 1,\n    \"Limit\": 2\n}",
-        "output": "{\n    \"Response\": {\n        \"Items\": [\n            \"postgres_bak_1715086333\",\n            \"postgres_bak_1715140150\"\n        ],\n        \"RequestId\": \"25cc2555-14a2-454f-af08-6bd691315335\",\n        \"TotalCount\": 5\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            \"postgres_bak_1715086333\",\n            \"postgres_bak_1715140150\"\n        ],\n        \"Databases\": [\n            {\n                \"DatabaseName\": \"postgres_bak_1715086333\",\n                \"DatabaseOwner\": \"postgres\",\n                \"Encoding\": \"UTF8\",\n                \"Collate\": \"C\",\n                \"Ctype\": \"C\",\n                \"AllowConn\": true,\n                \"ConnLimit\": -1,\n                \"Privileges\": \"\"\n            },\n            {\n                \"DatabaseName\": \"postgres_bak_1715140150\",\n                \"DatabaseOwner\": \"postgres\",\n                \"Encoding\": \"UTF8\",\n                \"Collate\": \"C\",\n                \"Ctype\": \"C\",\n                \"AllowConn\": true,\n                \"ConnLimit\": -1,\n                \"Privileges\": \"\"\n            }\n        ],\n        \"RequestId\": \"25cc2555-14a2-454f-af08-6bd691315335\",\n        \"TotalCount\": 5\n    }\n}",
         "title": "获取实例部分数据库"
       }
     ],
@@ -766,6 +780,14 @@
         "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDBInstancesProject\n<公共请求参数>\n\n{\n    \"ProjectId\": \"10467\",\n    \"DBInstanceIdSet\": [\n        \"postgres-lnp6j6172\",\n        \"postgres-6bwgamo3\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"08fdf411-5d39-44f2-8e1d-a58ee60b237d\",\n        \"Count\": 2\n    }\n}",
         "title": "批量修改实例项目"
+      }
+    ],
+    "ModifyDatabaseOwner": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDatabaseOwner\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-mnhbbw99\",\n    \"DatabaseName\": \"testdatabase\",\n    \"DatabaseOwner\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a11906eb-75b4-43c4-8d3e-aa6b2991c8f5\"\n    }\n}",
+        "title": "修改数据库所有者"
       }
     ],
     "ModifyParameterTemplate": [

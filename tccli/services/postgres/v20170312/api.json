@@ -56,6 +56,13 @@
       "output": "CreateDBInstancesResponse",
       "status": "online"
     },
+    "CreateDatabase": {
+      "document": "此接口用于创建数据库，需指定数据库名及所有者。",
+      "input": "CreateDatabaseRequest",
+      "name": "创建数据库",
+      "output": "CreateDatabaseResponse",
+      "status": "online"
+    },
     "CreateInstances": {
       "document": "本接口 (CreateInstances) 用于创建一个或者多个PostgreSQL实例，通过此接口创建的实例无需进行初始化，可直接使用。\n<li>实例创建成功后将自动开机启动，实例状态变为“运行中”。</li>\n<li>预付费实例的购买会预先扣除本次实例购买所需金额，按小时后付费实例购买会预先冻结本次实例购买一小时内所需金额，在调用本接口前请确保账户余额充足。</li>",
       "input": "CreateInstancesRequest",
@@ -565,6 +572,13 @@
       "input": "ModifyDBInstancesProjectRequest",
       "name": "修改实例所属项目",
       "output": "ModifyDBInstancesProjectResponse",
+      "status": "online"
+    },
+    "ModifyDatabaseOwner": {
+      "document": "修改数据库所有者",
+      "input": "ModifyDatabaseOwnerRequest",
+      "name": "修改数据库所有者",
+      "output": "ModifyDatabaseOwnerResponse",
       "status": "online"
     },
     "ModifyParameterTemplate": {
@@ -2018,6 +2032,78 @@
       ],
       "type": "object"
     },
+    "CreateDatabaseRequest": {
+      "document": "CreateDatabase请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID，形如postgres-6fego161",
+          "example": "postgres-6bwgamo3",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "创建的数据库名",
+          "example": "mydatabase",
+          "member": "string",
+          "name": "DatabaseName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据库的所有者",
+          "example": "test",
+          "member": "string",
+          "name": "DatabaseOwner",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据库的字符编码",
+          "example": "UTF8",
+          "member": "string",
+          "name": "Encoding",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据库的排序规则",
+          "example": "C",
+          "member": "string",
+          "name": "Collate",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据库的字符分类",
+          "example": "C",
+          "member": "string",
+          "name": "Ctype",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDatabaseResponse": {
+      "document": "CreateDatabase返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateInstancesRequest": {
       "document": "CreateInstances请求参数结构体",
       "members": [
@@ -2450,7 +2536,7 @@
         },
         {
           "disabled": false,
-          "document": "购买时长，单位：月。\n<li>预付费：支持1,2,3,4,5,6,7,8,9,10,11,12,24,36\n<li>后付费：只支持1",
+          "document": "购买时长，单位：月。\n<li>预付费：支持1,2,3,4,5,6,7,8,9,10,11,12,24,36</li>\n<li>后付费：只支持1</li>",
           "example": "1",
           "member": "uint64",
           "name": "Period",
@@ -2459,7 +2545,7 @@
         },
         {
           "disabled": false,
-          "document": "私有网络ID，形如vpc-xxxxxxxx。有效的VpcId可通过登录控制台查询；也可以调用接口 [DescribeVpcEx](https://cloud.tencent.com/document/api/215/1372) ，从接口返回中的unVpcId字段获取。",
+          "document": "私有网络ID，形如vpc-xxxxxxxx（该参数当前必传）。有效的VpcId可通过登录控制台查询；也可以调用接口 [DescribeVpcEx](https://cloud.tencent.com/document/api/215/1372) ，从接口返回中的unVpcId字段获取。",
           "example": "VpcId",
           "member": "string",
           "name": "VpcId",
@@ -2468,7 +2554,7 @@
         },
         {
           "disabled": false,
-          "document": "私有网络子网ID，形如subnet-xxxxxxxx。有效的私有网络子网ID可通过登录控制台查询；也可以调用接口 [DescribeSubnets ](https://cloud.tencent.com/document/api/215/15784)，从接口返回中的unSubnetId字段获取。",
+          "document": "私有网络子网ID，形如subnet-xxxxxxxx（该参数当前必传）。有效的私有网络子网ID可通过登录控制台查询；也可以调用接口 [DescribeSubnets ](https://cloud.tencent.com/document/api/215/15784)，从接口返回中的unSubnetId字段获取。",
           "example": "SubnetId",
           "member": "string",
           "name": "SubnetId",
@@ -2477,7 +2563,7 @@
         },
         {
           "disabled": false,
-          "document": "实例计费类型，目前支持：\n<li>PREPAID：预付费，即包年包月。\n<li>POSTPAID_BY_HOUR：后付费，即按量计费。\n默认值：PREPAID。如果主实例为后付费，只读实例必须也为后付费。",
+          "document": "实例计费类型，目前支持：\n<li>PREPAID：预付费，即包年包月。</li>\n<li>POSTPAID_BY_HOUR：后付费，即按量计费。</li>\n默认值：PREPAID。如果主实例为后付费，只读实例必须也为后付费。",
           "example": "InstanceChargeType",
           "member": "string",
           "name": "InstanceChargeType",
@@ -2486,7 +2572,7 @@
         },
         {
           "disabled": false,
-          "document": "是否自动使用代金券：\n<li>0：否\n<li>1：是\n默认值：0",
+          "document": "是否自动使用代金券：\n<li>0：否</li>\n<li>1：是</li>\n默认值：0",
           "example": "1",
           "member": "uint64",
           "name": "AutoVoucher",
@@ -2504,7 +2590,7 @@
         },
         {
           "disabled": false,
-          "document": "续费标记：\n<li>0：手动续费\n<li>1：自动续费\n默认值：0",
+          "document": "续费标记：\n<li>0：手动续费</li>\n<li>1：自动续费</li>\n默认值：0",
           "example": "1",
           "member": "int64",
           "name": "AutoRenewFlag",
@@ -2558,7 +2644,7 @@
         },
         {
           "disabled": false,
-          "document": "是否需要支持Ipv6：\n<li>0：否\n<li>1：是\n默认值：0",
+          "document": "是否需要支持Ipv6：\n<li>0：否</li>\n<li>1：是</li>\n默认值：0",
           "example": "1",
           "member": "uint64",
           "name": "NeedSupportIpv6",
@@ -3547,7 +3633,7 @@
       "usage": "out"
     },
     "DBNode": {
-      "document": "描述实例节点信息，包括节点类型、节点所在可用区。",
+      "document": "描述实例节点信息，包括节点类型、节点所在可用区、节点所在专属集群。",
       "members": [
         {
           "disabled": false,
@@ -3573,6 +3659,92 @@
         }
       ],
       "usage": "both"
+    },
+    "Database": {
+      "document": "描述数据库详细信息，包括所有者、字符编码等",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据库名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "postgres",
+          "member": "string",
+          "name": "DatabaseName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据库所有者\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "postgres",
+          "member": "string",
+          "name": "DatabaseOwner",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据库字符编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "UTF8",
+          "member": "string",
+          "name": "Encoding",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据库排序规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "C",
+          "member": "string",
+          "name": "Collate",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据库字符分类\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "C",
+          "member": "string",
+          "name": "Ctype",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据库是否允许连接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "AllowConn",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据库最大连接数，-1表示无限制\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-1",
+          "member": "int64",
+          "name": "ConnLimit",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据库权限列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "postgres=CTc/postgres",
+          "member": "string",
+          "name": "Privileges",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "DatabaseObject": {
       "document": "描述数据库中某个对象所属的类型、是在哪个数据库、模式、表中的对象。",
@@ -5186,7 +5358,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "按照一个或者多个过滤条件进行查询，目前支持的过滤条件有：\ndb-instance-id：按照实例ID过滤，类型为string\ndb-instance-name：按照实例名过滤，类型为string\ndb-project-id：按照项目ID过滤，类型为integer\ndb-pay-mode：按照实例付费模式过滤，类型为string\ndb-tag-key：按照标签键过滤，类型为string\ndb-private-ip： 按照实例私有网络IP过滤，类型为string\ndb-public-address： 按照实例外网地址过滤，类型为string",
+          "document": "按照一个或者多个过滤条件进行查询，目前支持的过滤条件有：\ndb-instance-id：按照实例ID过滤，类型为string\ndb-instance-name：按照实例名过滤，类型为string\ndb-project-id：按照项目ID过滤，类型为integer\ndb-pay-mode：按照实例付费模式过滤，类型为string\ndb-tag-key：按照标签键过滤，类型为string\ndb-private-ip： 按照实例私有网络IP过滤，类型为string\ndb-public-address： 按照实例外网地址过滤，类型为string\ndb-dedicated-cluster-id: 按照私有集群Id过滤，类型为string",
           "example": "[     {         \"Values\": [             \"postgres-xxxxxxxx\"         ],         \"Name\": \"db-instance-id\"     } ]",
           "member": "Filter",
           "name": "Filters",
@@ -5648,6 +5820,16 @@
           "name": "TotalCount",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据库详情列表",
+          "example": "[{\"Privileges\":\"=Tc/postgres,postgres=CTc/postgres,pg_tencentdb_superuser=C/postgres\",\"AllowConn\":true,\"Collate\":\"C\",\"ConnLimit\":-1,\"Ctype\":\"C\",\"Encoding\":\"UTF8\",\"Name\":\"postgres\",\"Owner\":\"postgres\"}, {\"Privileges\":\"\",\"AllowConn\":true,\"Collate\":\"C\",\"ConnLimit\":-1,\"Ctype\":\"C\",\"Encoding\":\"UTF8\",\"Name\":\"testdatabase\",\"Owner\":\"test\"}]",
+          "member": "Database",
+          "name": "Databases",
+          "output_required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -8365,6 +8547,51 @@
           "type": "int",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDatabaseOwnerRequest": {
+      "document": "ModifyDatabaseOwner请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "postgres-mnhbbw99",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据库名称",
+          "example": "testdatabase",
+          "member": "string",
+          "name": "DatabaseName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据库新所有者",
+          "example": "test",
+          "member": "string",
+          "name": "DatabaseOwner",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDatabaseOwnerResponse": {
+      "document": "ModifyDatabaseOwner返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

@@ -437,7 +437,7 @@
         {
           "disabled": false,
           "document": "开始时间，yyyymmddhh 需要拉取的起始时间，精确到小时。",
-          "example": "2016090800",
+          "example": "2024090800",
           "member": "uint64",
           "name": "StartDateTime",
           "required": true,
@@ -445,8 +445,8 @@
         },
         {
           "disabled": false,
-          "document": "结束时间，yyyymmddhh 需要拉取的截止时间，精确到小时。\n注：EndDataTime 必须大于 StartDateTime。",
-          "example": "2016090823",
+          "document": "结束时间，yyyymmddhh 需要拉取的截止时间，精确到小时。\n注：EndDataTime 必须大于等于 StartDateTime。",
+          "example": "2024090823",
           "member": "uint64",
           "name": "EndDataTime",
           "required": true,
@@ -1725,7 +1725,7 @@
         {
           "disabled": false,
           "document": "拉取起始时间，yyyymmddhh 需要拉取的起始时间，精确到小时。",
-          "example": "2016090800",
+          "example": "2024090800",
           "member": "uint64",
           "name": "StartDateTime",
           "required": true,
@@ -1733,8 +1733,8 @@
         },
         {
           "disabled": false,
-          "document": "结束时间，yyyymmddhh 需要拉取的截止时间，精确到小时\n注：EndDataTime 必须大于 StartDateTime。",
-          "example": "2016090823",
+          "document": "结束时间，yyyymmddhh 需要拉取的截止时间，精确到小时\n注：EndDataTime 必须大于等于 StartDateTime。",
+          "example": "2024090823",
           "member": "uint64",
           "name": "EndDataTime",
           "required": true,
@@ -1912,7 +1912,7 @@
         },
         {
           "disabled": false,
-          "document": "最大上限(需要拉取的套餐包个数)。",
+          "document": "最大上限(需要拉取的套餐包个数)。\n注：Limit默认最大值为500，可结合Offset实现分页查询。",
           "example": "2",
           "member": "uint64",
           "name": "Limit",
@@ -1921,7 +1921,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量。\n注：目前固定设置为0。",
+          "document": "偏移量。",
           "example": "0",
           "member": "uint64",
           "name": "Offset",

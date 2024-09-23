@@ -128,6 +128,14 @@
         "title": "查询监控概览页指标数据"
       }
     ],
+    "DescribeGlobalConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGlobalConfig\n<公共请求参数>\n\n{\n    \"InstanceId\": \"emr-xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"EnableResourceSchedule\": true,\n        \"ActiveScheduler\": \"abc\",\n        \"CapacityGlobalConfig\": {\n            \"EnableLabel\": true,\n            \"LabelDir\": \"abc\",\n            \"QueueMappingOverride\": true,\n            \"DefaultSettings\": [\n                {\n                    \"Name\": \"abc\",\n                    \"Desc\": \"abc\",\n                    \"Prompt\": \"abc\",\n                    \"Key\": \"abc\",\n                    \"Value\": \"abc\"\n                }\n            ]\n        },\n        \"FairGlobalConfig\": {\n            \"UserMaxAppsDefault\": 0\n        },\n        \"Scheduler\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询YARN资源调度的全局配置"
+      }
+    ],
     "DescribeHBaseTableOverview": [
       {
         "document": "",
@@ -338,6 +346,14 @@
         "input": "https://emr.tencentcloudapi.com/?Action=ModifyAutoScaleStrategy\n&InstanceId=emr-3ap64zl6\n&StrategyType=1\n&LoadAutoScaleStrategies.0.StrategyId=52\n&LoadAutoScaleStrategies.0.ScaleNum=4\n&LoadAutoScaleStrategies.0.ScaleAction=2\n&LoadAutoScaleStrategies.0.Priority=1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"23108dcf-506a-4246-b0bf-dca8ef2b0845\"\n    }\n}",
         "title": "修改扩缩容规则成功示例"
+      }
+    ],
+    "ModifyGlobalConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyGlobalConfig\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"Items\": [\n        {\n            \"Key\": \"abc\",\n            \"Value\": \"abc\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "修改YARN资源调度的全局配置"
       }
     ],
     "ModifyResourcePools": [

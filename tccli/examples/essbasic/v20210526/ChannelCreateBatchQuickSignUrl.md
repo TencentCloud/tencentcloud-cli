@@ -303,7 +303,11 @@ tccli essbasic ChannelCreateBatchQuickSignUrl --cli-unfold-argument  \
     --FlowApproverInfo.ApproverType PERSON \
     --FlowIds yDwFkUUckpstin4sUuZjBEY5Ia2XB7sz yDwFkUUckpstzjhfUugNAWf1KibXqS26 \
     --JumpUrl https://abc.com \
-    --SignatureTypes 0 1
+    --SignatureTypes 0 1 \
+    --FlowBatchUrlInfo.FlowBatchApproverInfos.0.FlowId yDwFkUUckpstin4sUuZjBEY5Ia2XB7sz \
+    --FlowBatchUrlInfo.FlowBatchApproverInfos.0.RecipientId yDCmvUUckpup6xhwUxKRs1rIRejg254i \
+    --FlowBatchUrlInfo.FlowBatchApproverInfos.1.FlowId yDwFkUUckpstzjhfUugNAWf1KibXqS26 \
+    --FlowBatchUrlInfo.FlowBatchApproverInfos.1.RecipientId yDCmvUUckpup6xh1UxKRs1rwHjT5QyHH
 ```
 
 Output: 

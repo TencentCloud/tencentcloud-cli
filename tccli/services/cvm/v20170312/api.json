@@ -9871,7 +9871,7 @@
           "example": "rep-xxxxxxxx",
           "member": "string",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9881,7 +9881,7 @@
           "example": "ins-xxxxxxxx",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9891,7 +9891,7 @@
           "example": "test",
           "member": "string",
           "name": "Alias",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -9901,7 +9901,7 @@
           "example": "101",
           "member": "uint64",
           "name": "TaskTypeId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9911,7 +9911,7 @@
           "example": "实例运行隐患",
           "member": "string",
           "name": "TaskTypeName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9921,7 +9921,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TaskStatus",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9931,7 +9931,7 @@
           "example": "1",
           "member": "uint64",
           "name": "DeviceStatus",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9941,7 +9941,7 @@
           "example": "1",
           "member": "uint64",
           "name": "OperateStatus",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9951,7 +9951,7 @@
           "example": "2017-01-01 12:00:00",
           "member": "datetime",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9961,7 +9961,7 @@
           "example": "2017-01-03 12:00:00",
           "member": "datetime",
           "name": "AuthTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -9971,7 +9971,7 @@
           "example": "2017-01-03 14:00:00",
           "member": "datetime",
           "name": "EndTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -9981,7 +9981,7 @@
           "example": "监控到您的云服务器存在隐患，可能导致云服务器高负载或宕机。为尽快修复隐患，需要您授权我们在线迁移。感谢您的支持与理解。",
           "member": "string",
           "name": "TaskDetail",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -9991,7 +9991,7 @@
           "example": "ap-guangzhou-7",
           "member": "string",
           "name": "Zone",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -10001,7 +10001,7 @@
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -10011,7 +10011,7 @@
           "example": "vpc-xxxxxxxx",
           "member": "string",
           "name": "VpcId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -10021,7 +10021,7 @@
           "example": "Default-VPC",
           "member": "string",
           "name": "VpcName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -10031,7 +10031,7 @@
           "example": "subnet-xxxxxxxx",
           "member": "string",
           "name": "SubnetId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -10041,7 +10041,7 @@
           "example": "Default-Subnet",
           "member": "string",
           "name": "SubnetName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -10051,7 +10051,7 @@
           "example": "11.22.33.44",
           "member": "string",
           "name": "WanIp",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -10061,7 +10061,7 @@
           "example": "10.10.1.9",
           "member": "string",
           "name": "LanIp",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -10071,7 +10071,7 @@
           "example": "CVM",
           "member": "string",
           "name": "Product",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -10081,7 +10081,7 @@
           "example": "NA",
           "member": "string",
           "name": "TaskSubType",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -10091,7 +10091,7 @@
           "example": "1",
           "member": "uint64",
           "name": "AuthType",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -10101,7 +10101,7 @@
           "example": "Customer_auth",
           "member": "string",
           "name": "AuthSource",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
