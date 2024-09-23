@@ -35,7 +35,7 @@
     "AddPermissionPolicyToRoleConfiguration": [
       {
         "document": "为权限配置添加策略",
-        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddPermissionPolicyToRoleConfiguration\n<公共请求参数>\n\n{\n    \"ZoneId\": \"z-29wm2iwn\",\n    \"RoleConfigurationId\": \"rc-aiwmsiw\",\n    \"RolePolicyType\": \"System\",\n    \"RolePolicyNames\": [\n        \"TestPolicy\"\n    ],\n    \"CustomPolicyDocument\": \"\"\n}",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddPermissionPolicyToRoleConfiguration\n<公共请求参数>\n\n{\n    \"ZoneId\": \"z-29wm2iwn\",\n    \"RoleConfigurationId\": \"rc-aiwmsiw\",\n    \"RolePolicyType\": \"System\",\n    \"RolePolicyNames\": [\n        \"TestPolicy\"\n    ],\n    \"CustomPolicyDocument\": \"{\\\"statement\\\":{\\\"action\\\":[\\\"name/cvm:*\\\",\\\"name/vpc:*\\\",\\\"name/cos:*\\\",\\\"name/cmqtopic:*\\\",\\\"name/cmqqueue:*\\\"],\\\"effect\\\":\\\"allow\\\",\\\"resource\\\":\\\"*\\\"},\\\"version\\\":\\\"2.0\\\"}\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"e297543a-80de-4039-83c8-9d324545\"\n    }\n}",
         "title": "为权限配置添加策略"
       }
@@ -608,6 +608,14 @@
         "title": "查询空间的统计信息"
       }
     ],
+    "InviteOrganizationMember": [
+      {
+        "document": "邀请成员",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InviteOrganizationMember\n<公共请求参数>\n\n{\n    \"Remark\": \"\",\n    \"MemberUin\": 111111111111,\n    \"Name\": \"member_name\",\n    \"NodeId\": 1001,\n    \"PermissionIds\": [\n        1,\n        2\n    ],\n    \"PolicyType\": \"Financial\",\n    \"PayUin\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9be34d82-b614-4010-8cd8-d907b4d303f2\"\n    }\n}",
+        "title": "邀请成员"
+      }
+    ],
     "ListExternalSAMLIdPCertificates": [
       {
         "document": "查询SAML签名证书列表",
@@ -830,6 +838,14 @@
         "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetExternalSAMLIdentityProvider\n<公共请求参数>\n\n{\n    \"ZoneId\": \"z-d3ideodm***\",\n    \"EncodedMetadataDocument\": \"JTNDJTNGeG1sJTIwdmVyc2lvbiUzRCUyMjEuMCUyMiUyMGVuY29kaW5******\",\n    \"SSOStatus\": \"Enabled\",\n    \"EntityId\": \"http://www.okta.com/xd83nd83nd****\",\n    \"LoginUrl\": \"https://dev-xxxxxx.okta.com/app/dev-xxxxxx_cloudssodemo_1/xd83nd83nd****/sso/saml\",\n    \"X509Certificate\": \"MIIC8DCCAdigAwIBAgIQP9eomUYGeoND****\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"2ccd7ed1-24b4-4882-8f4a-5580b430bce7\"\n    }\n}",
         "title": "配置SAML身份提供商信息"
+      }
+    ],
+    "UpdateCustomPolicyForRoleConfiguration": [
+      {
+        "document": "为权限配置修改自定义策略",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateCustomPolicyForRoleConfiguration\n<公共请求参数>\n\n{\n    \"ZoneId\": \"z-fdk3o32kqw\",\n    \"RoleConfigurationId\": \"rc-sin23wj29s\",\n    \"CustomPolicyName\": \"test\",\n    \"NewCustomPolicyDocument\": \"{\\\"statement\\\":{\\\"action\\\":[\\\"name/cvm:*\\\",\\\"name/vpc:*\\\",\\\"name/cos:*\\\",\\\"name/cmqtopic:*\\\",\\\"name/cmqqueue:*\\\"],\\\"effect\\\":\\\"allow\\\",\\\"resource\\\":\\\"*\\\"},\\\"version\\\":\\\"2.0\\\"}\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e297543a-80de-4039-83c8-9d324545\"\n    }\n}",
+        "title": "为权限配置修改自定义策略"
       }
     ],
     "UpdateGroup": [

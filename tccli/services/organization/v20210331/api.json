@@ -532,6 +532,13 @@
       "output": "GetZoneStatisticsResponse",
       "status": "online"
     },
+    "InviteOrganizationMember": {
+      "document": "邀请组织成员",
+      "input": "InviteOrganizationMemberRequest",
+      "name": "邀请组织成员",
+      "output": "InviteOrganizationMemberResponse",
+      "status": "online"
+    },
     "ListExternalSAMLIdPCertificates": {
       "document": "查询SAML签名证书列表",
       "input": "ListExternalSAMLIdPCertificatesRequest",
@@ -726,6 +733,13 @@
       "input": "SetExternalSAMLIdentityProviderRequest",
       "name": "配置SAML身份提供商信息",
       "output": "SetExternalSAMLIdentityProviderResponse",
+      "status": "online"
+    },
+    "UpdateCustomPolicyForRoleConfiguration": {
+      "document": "为权限配置修改自定义策略",
+      "input": "UpdateCustomPolicyForRoleConfigurationRequest",
+      "name": "为权限配置修改自定义策略",
+      "output": "UpdateCustomPolicyForRoleConfigurationResponse",
       "status": "online"
     },
     "UpdateGroup": {
@@ -986,6 +1000,15 @@
           "name": "Remark",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "部门标签列表。最大10个",
+          "example": "[]",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1035,7 +1058,7 @@
         },
         {
           "disabled": false,
-          "document": "权限策略类型。取值：  System：系统策略。复用 CAM 的系统策略。 Custom: 自定义策略。按照 CAM 权限策略语法和结构编写的自定义策略。 前期只支持系统策略，自定义策略后期在支持",
+          "document": "权限策略类型。取值：  System：系统策略。复用 CAM 的系统策略。 Custom: 自定义策略。按照 CAM 权限策略语法和结构编写的自定义策略。 ",
           "example": "System",
           "member": "string",
           "name": "RolePolicyType",
@@ -1044,7 +1067,7 @@
         },
         {
           "disabled": false,
-          "document": "权限策略名称，长度最大为 20策略，每个策略长度最大32个字符。",
+          "document": "权限策略名称，长度最大为 20策略，每个策略长度最大32个字符。如果要添加系统策略，建议使用RolePolicies参数。自定义策略时，数组长度最大为1。",
           "example": "[\"TestPolicy\",\"Admin\"]",
           "member": "string",
           "name": "RolePolicyNames",
@@ -1053,7 +1076,7 @@
         },
         {
           "disabled": false,
-          "document": "策略详情。",
+          "document": "添加的系统策略详情。",
           "example": "[{'PolicyId':426322, 'PolicyName':'QcloudAccessForOceanusRole'}]",
           "member": "PolicyDetail",
           "name": "RolePolicies",
@@ -1063,7 +1086,7 @@
         {
           "disabled": false,
           "document": "自定义策略内容。长度：最大 4096 个字符。当RolePolicyType为Inline时，该参数必须配置。关于权限策略的语法和结构，请参见权限策略语法和结构。",
-          "example": "{   \"Version\": \"1\",   \"Statement\": [     {       \"Effect\": \"Allow\",       \"Action\": \"*\",       \"Resource\": \"*\"     }   ] }",
+          "example": "{\\\"statement\\\":{\\\"action\\\":[\\\"name/cvm:*\\\",\\\"name/vpc:*\\\",\\\"name/cos:*\\\",\\\"name/cmqtopic:*\\\",\\\"name/cmqqueue:*\\\"],\\\"effect\\\":\\\"allow\\\",\\\"resource\\\":\\\"*\\\"},\\\"version\\\":\\\"2.0\\\"}",
           "member": "string",
           "name": "CustomPolicyDocument",
           "required": false,
@@ -1381,6 +1404,34 @@
         }
       ],
       "usage": "out"
+    },
+    "AuthRelationFile": {
+      "document": "野鹤实名互信申请证明文件",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文件路径。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "aaa/test.txt",
+          "member": "string",
+          "name": "Url",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "BindOrganizationMemberAuthAccountRequest": {
       "document": "BindOrganizationMemberAuthAccount请求参数结构体",
@@ -1911,6 +1962,15 @@
           "name": "AuthRelationId",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "成员标签列表。最大10个",
+          "example": "[]",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -3832,6 +3892,15 @@
           "name": "Product",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "成员标签搜索列表，最大10个",
+          "example": "[]",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -3888,6 +3957,15 @@
           "name": "Offset",
           "required": true,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "部门标签搜索列表，最大10个",
+          "example": "[]",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -5411,6 +5489,123 @@
         }
       ],
       "usage": "both"
+    },
+    "InviteOrganizationMemberRequest": {
+      "document": "InviteOrganizationMember请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "被邀请账号Uin。",
+          "example": "111111111111",
+          "member": "int64",
+          "name": "MemberUin",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "成员名称。最大长度为25个字符，支持英文字母、数字、汉字、符号+@、&._[]-:,",
+          "example": "member_name",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "关系策略。取值：Financial",
+          "example": "Finical",
+          "member": "string",
+          "name": "PolicyType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "成员财务权限ID列表。取值：1-查看账单、2-查看余额、3-资金划拨、4-合并出账、5-开票、6-优惠继承、7-代付费，1、2 默认必须",
+          "example": "[1,2]",
+          "member": "uint64",
+          "name": "PermissionIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "成员所属部门的节点ID。可以通过[DescribeOrganizationNodes](https://cloud.tencent.com/document/product/850/82926)获取",
+          "example": "1001",
+          "member": "int64",
+          "name": "NodeId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "备注。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否允许成员退出。允许：Allow，不允许：Denied。",
+          "example": "Allow",
+          "member": "string",
+          "name": "IsAllowQuit",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "代付者Uin。成员代付费时需要",
+          "example": "\"\"",
+          "member": "string",
+          "name": "PayUin",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "互信实名主体名称。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "RelationAuthName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "互信主体证明文件列表。",
+          "example": "[]",
+          "member": "AuthRelationFile",
+          "name": "AuthFile",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "成员标签列表。最大10个",
+          "example": "[]",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "InviteOrganizationMemberResponse": {
+      "document": "InviteOrganizationMember返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "JoinedGroups": {
       "document": "用户加入的用户组",
@@ -8040,7 +8235,7 @@
           "example": "1000001",
           "member": "int64",
           "name": "MemberUin",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -8050,7 +8245,7 @@
           "example": "tt",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8060,7 +8255,7 @@
           "example": "Invite",
           "member": "string",
           "name": "MemberType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8070,7 +8265,7 @@
           "example": "Finical",
           "member": "string",
           "name": "OrgPolicyType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8080,7 +8275,7 @@
           "example": "财务管理",
           "member": "string",
           "name": "OrgPolicyName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8090,7 +8285,7 @@
           "example": "无",
           "member": "OrgPermission",
           "name": "OrgPermission",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -8100,7 +8295,7 @@
           "example": "1002",
           "member": "int64",
           "name": "NodeId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -8110,7 +8305,7 @@
           "example": "Root",
           "member": "string",
           "name": "NodeName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8120,7 +8315,7 @@
           "example": "tt",
           "member": "string",
           "name": "Remark",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8130,7 +8325,7 @@
           "example": "2021-03-12 12:12:22",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8140,7 +8335,7 @@
           "example": "2021-03-12 12:12:22",
           "member": "string",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8150,7 +8345,7 @@
           "example": "Allow",
           "member": "string",
           "name": "IsAllowQuit",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8160,7 +8355,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "PayUin",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8170,7 +8365,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "PayName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8180,7 +8375,7 @@
           "example": "无",
           "member": "MemberIdentity",
           "name": "OrgIdentity",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -8190,7 +8385,7 @@
           "example": "Unbound",
           "member": "string",
           "name": "BindStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8200,8 +8395,18 @@
           "example": "Confirmed",
           "member": "string",
           "name": "PermissionStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "成员标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "Tag",
+          "name": "Tags",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -8550,7 +8755,7 @@
           "example": "1001",
           "member": "int64",
           "name": "NodeId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -8560,7 +8765,7 @@
           "example": "test",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8570,7 +8775,7 @@
           "example": "1000",
           "member": "int64",
           "name": "ParentNodeId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -8580,7 +8785,7 @@
           "example": "test",
           "member": "string",
           "name": "Remark",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8590,7 +8795,7 @@
           "example": "2021-03-12 12:12:11",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8600,8 +8805,18 @@
           "example": "2021-03-12 12:12:11",
           "member": "string",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "成员标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "Tag",
+          "name": "Tags",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -10308,6 +10523,34 @@
       ],
       "usage": "out"
     },
+    "Tag": {
+      "document": "标签键值对",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签键\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "key",
+          "member": "string",
+          "name": "TagKey",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "value",
+          "member": "string",
+          "name": "TagValue",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "TagComplianceDetails": {
       "document": "标签合规信息",
       "members": [
@@ -10535,6 +10778,60 @@
         }
       ],
       "usage": "both"
+    },
+    "UpdateCustomPolicyForRoleConfigurationRequest": {
+      "document": "UpdateCustomPolicyForRoleConfiguration请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "空间 ID",
+          "example": "z-29n23ien",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "权限配置 ID",
+          "example": "rc-so2msow",
+          "member": "string",
+          "name": "RoleConfigurationId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "权限策略名称，长度最大为 32 个字符。",
+          "example": "TestPolicy",
+          "member": "string",
+          "name": "CustomPolicyName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义策略内容。长度：最大 4096 个字符。当RolePolicyType为Inline时，该参数必须配置。关于权限策略的语法和结构，请参见权限策略语法和结构。",
+          "example": "{\\\"statement\\\":{\\\"action\\\":[\\\"name/cvm:*\\\",\\\"name/vpc:*\\\",\\\"name/cos:*\\\",\\\"name/cmqtopic:*\\\",\\\"name/cmqqueue:*\\\"],\\\"effect\\\":\\\"allow\\\",\\\"resource\\\":\\\"*\\\"},\\\"version\\\":\\\"2.0\\\"}",
+          "member": "string",
+          "name": "NewCustomPolicyDocument",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateCustomPolicyForRoleConfigurationResponse": {
+      "document": "UpdateCustomPolicyForRoleConfiguration返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "UpdateGroupRequest": {
       "document": "UpdateGroup请求参数结构体",
