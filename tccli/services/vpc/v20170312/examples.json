@@ -90,6 +90,12 @@
         "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AllocateAddresses\n<公共请求参数>\n\n{\n    \"AddressCount\": 1,\n    \"InternetServiceProvider\": \"CTCC\"\n}",
         "output": "{\n    \"Response\": {\n        \"AddressSet\": [\n            \"eip-m44ku5d2\"\n        ],\n        \"TaskId\": \"61531429\",\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
         "title": "创建静态单线IP"
+      },
+      {
+        "document": "幂等请求失败，更新幂等参数。",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AllocateAddresses\n<公共请求参数>\n\n{\n    \"ClientToken\": \"b8fcdf80-248a-4095-bfa3-7f59df1aec\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"UnsupportedOperation.DeliveryFailed\",\n            \"Message\": \"发货失败，请更新`ClientToken`并重试。\"\n        },\n        \"RequestId\": \"8e176c15-f087-4816-a270-306cf87229a6\"\n    }\n}",
+        "title": "申请EIP失败"
       }
     ],
     "AllocateIp6AddressesBandwidth": [

@@ -11,8 +11,11 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "b9cd345d-9d88-4e3b-86b6-e0e5c971731a",
-        "TaskID": ""
+        "TaskID": "abc",
+        "LastScanTime": "abc",
+        "Status": "abc",
+        "SubStatus": "abc",
+        "RequestId": "abc"
     }
 }
 ```

@@ -624,14 +624,6 @@
         "title": "查询回档时间范围"
       }
     ],
-    "DescribeRollbackTimeValidity": [
-      {
-        "document": "",
-        "input": "https://cynosdb.tencentcloudapi.com/?Action=DescribeRollbackTimeValidity\n&ClusterId=cynosdbpg-gn65y9nk\n&ExpectTime=2019-01-1302:12:05\n&ExpectTimeThresh=0\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"PoolId\": 1,\n        \"QueryId\": 1,\n        \"Status\": \"abc\",\n        \"SuggestTime\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
-        "title": "查询指定时间点是否看回档"
-      }
-    ],
     "DescribeServerlessStrategy": [
       {
         "document": "",

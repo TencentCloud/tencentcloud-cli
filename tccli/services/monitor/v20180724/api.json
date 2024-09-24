@@ -21,13 +21,6 @@
       "output": "BindingPolicyTagResponse",
       "status": "online"
     },
-    "CheckIsPrometheusNewUser": {
-      "document": "接口功能是检查是否为prometheus新用户，已有其他功能更加全面的接口替代\n\n判断用户是否为云原生监控新用户，即在任何地域下均未创建过监控实例的用户",
-      "input": "CheckIsPrometheusNewUserRequest",
-      "name": "判断用户是否为云原生监控新用户",
-      "output": "CheckIsPrometheusNewUserResponse",
-      "status": "deprecated"
-    },
     "CleanGrafanaInstance": {
       "document": "强制销毁 Grafana 实例",
       "input": "CleanGrafanaInstanceRequest",
@@ -657,13 +650,6 @@
       "name": "获取2.0实例列表",
       "output": "DescribePrometheusInstancesOverviewResponse",
       "status": "online"
-    },
-    "DescribePrometheusRecordRuleYaml": {
-      "document": "DescribePrometheusRecordRules 接口可完全代替该接口。近30天仅有3次调用，且都是报错请求\n\n拉取Prometheus聚合规则yaml列表",
-      "input": "DescribePrometheusRecordRuleYamlRequest",
-      "name": "拉取Prometheus聚合规则yaml列表",
-      "output": "DescribePrometheusRecordRuleYamlResponse",
-      "status": "deprecated"
     },
     "DescribePrometheusRecordRules": {
       "document": "获取聚合规则列表，包含关联集群内crd资源创建的record rule",
@@ -2837,23 +2823,6 @@
         }
       ],
       "usage": "both"
-    },
-    "CheckIsPrometheusNewUserRequest": {
-      "document": "CheckIsPrometheusNewUser请求参数结构体",
-      "members": [],
-      "type": "object"
-    },
-    "CheckIsPrometheusNewUserResponse": {
-      "document": "CheckIsPrometheusNewUser返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
     },
     "CleanGrafanaInstanceRequest": {
       "document": "CleanGrafanaInstance请求参数结构体",
@@ -12228,60 +12197,6 @@
           "type": "int",
           "value_allowed_null": false
         },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribePrometheusRecordRuleYamlRequest": {
-      "document": "DescribePrometheusRecordRuleYaml请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "实例id",
-          "example": "xxx",
-          "member": "string",
-          "name": "InstanceId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "分页",
-          "example": "1",
-          "member": "uint64",
-          "name": "Offset",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "分页",
-          "example": "10",
-          "member": "uint64",
-          "name": "Limit",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "过滤，当前支持\nName = Name\nValues = 目标名称列表",
-          "example": "xxx",
-          "member": "Filter",
-          "name": "Filters",
-          "required": false,
-          "type": "list"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribePrometheusRecordRuleYamlResponse": {
-      "document": "DescribePrometheusRecordRuleYaml返回参数结构体",
-      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

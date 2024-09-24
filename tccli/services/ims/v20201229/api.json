@@ -8,7 +8,7 @@
       "status": "online"
     },
     "ImageModeration": {
-      "document": "本接口（Image Moderation, IM）用于提交图片文件进行同步智能审核任务。使用前请您使用腾讯云主账号登录控制台 [开通图片内容安全服务](https://console.cloud.tencent.com/cms) 并调整好对应的业务配置。\n### 接口使用说明：\n- 前往“[内容安全控制台-图片内容安全](https://console.cloud.tencent.com/cms)”开启使用图片内容安全服务，首次开通服务的用户可免费领用试用套餐包，包含**3000张图片**识别额度，有效期为15天。\n- 该接口为收费接口，计费方式敬请参见 [腾讯云图片内容安全定价](https://cloud.tencent.com/product/ims/pricing)。\n\n### 接口功能说明：\n- 支持对图片文件或链接进行检测，通过深度学习技术，识别可能令人反感、不安全或不适宜的违规图片内容；\n- 支持对GIF图/长图进行截帧或拆分检测；\n- 支持识别多种违规场景，包括：低俗、违法违规、色情、广告等场景；\n- 支持多种物体检测（实体、广告台标、二维码等）及图片中文本的OCR文本识别；\n- 支持根据不同的业务场景配置自定义的审核策略；\n- 支持用户自定义选择图片风险库，打击自定义识别类型的违规图片（目前仅支持黑名单配置）；\n- 支持在审核图片内容时同时关联账号或设备信息，可识别违规风险账号或设备。\n\n### 接口调用说明：\n- 图片文件大小限制：**Base64编码内容应小于10MB**；**URL资源应小于30MB**\n- 图片默认尺寸支持：**长和宽 需>50分辨率且<10000分辨率，并且图片长宽比<90:1；**\n- 图片文件分辨率支持：建议**分辨率大于256x256**，否则可能会影响识别效果；\n- 图片文件支持格式：PNG、JPG、JPEG、BMP、GIF、WEBP格式；\n- 图片文件链接支持的传输协议：HTTP、HTTPS；\n- 若传入图片文件的访问链接，则需要注意**图片下载时间限制为3秒**，为保障被检测图片的稳定性和可靠性，建议您使用腾讯云COS存储或者CDN缓存等；\n\n\n<div class=\"rno-api-explorer\" style=\"margin-bottom:20px\">\n    <div class=\"rno-api-explorer-inner\">\n        <div class=\"rno-api-explorer-hd\">\n            <div class=\"rno-api-explorer-title\">\n                关于版本迭代的描述\n            </div>\n        </div>\n        <div class=\"rno-api-explorer-body\">\n            <div class=\"rno-api-explorer-cont\">\n                <p>当前页面版本为图片内容安全2020版本，2020.11.3日前接入的图片内容安全接口为2019版本，在此时间前接入的用户可直接访问以下链接进行维护操作：<a href=\"https://cloud.tencent.com/document/product/1125/38206\" target=\"_blank\">图片内容安全-2019版本</a></p>\n                <p>2020版本相对2019版本进行了升级，支持更灵活的多场景业务策略配置以及更丰富的识别回调信息，满足不同业务的识别需求，建议按照2020版本接入指引进行接口升级；同时，2019版本也会持续维护直至用户不再使用为止。</p>\n            </div>\n        </div>\n    </div>\n</div>",
+      "document": "本接口（Image Moderation, IM）用于提交图片文件进行同步智能审核任务。使用前请您使用腾讯云主账号登录控制台 [开通图片内容安全服务](https://console.cloud.tencent.com/cms) 并调整好对应的业务配置。\n### 接口使用说明：\n- 前往“[内容安全控制台-图片内容安全](https://console.cloud.tencent.com/cms)”开启使用图片内容安全服务，首次开通服务的用户可免费领用试用套餐包，包含**3000张图片**识别额度，有效期为15天。\n- 该接口为收费接口，计费方式敬请参见 [腾讯云图片内容安全定价](https://cloud.tencent.com/product/ims/pricing)。\n\n### 接口功能说明：\n- 支持对图片文件或链接进行检测，通过深度学习技术，识别可能令人反感、不安全或不适宜的违规图片内容；\n- 支持对GIF图/长图进行截帧或拆分检测；\n- 支持识别多种违规场景，包括：低俗、违法违规、色情、广告等场景；\n- 支持多种物体检测（实体、广告台标、二维码等）及图片中文本的OCR文本识别；\n- 支持根据不同的业务场景配置自定义的审核策略；\n- 支持用户自定义选择图片风险库，打击自定义识别类型的违规图片（目前仅支持黑名单配置）；\n- 支持在审核图片内容时同时关联账号或设备信息，可识别违规风险账号或设备。\n\n### 接口调用说明：\n- 图片文件大小限制：图片文件须大于256字节，Base64编码后的FileContent内容应小于10MB，FileURL的源图应小于30MB；\n- 图片默认尺寸支持：**长和宽 需>50分辨率且<10000分辨率，并且图片长宽比<90:1；**\n- 图片文件分辨率支持：建议**分辨率大于256x256**，否则可能会影响识别效果；\n- 图片文件支持格式（无备注默认只支持静态图）：BMP、ICO、JPEG、JNG、PNG、TIFF、RAW、SVG、GIF（静、动）、WEBP（静、动）、HEIC（静、动），动图在处理时，默认最多抽取5帧图像，并且每隔5帧进行一次采样；\n- 图片文件链接支持的传输协议：HTTP、HTTPS；\n- 图片审核仅支持单次传输一条URL进行审核，支持多并发请求。默认并发为100 QPS，超过此限制将返回`RequestLimitExceeded`错误；\n- 若传入图片文件的访问链接时，为保障被检测图片的稳定性和可靠性，建议您使用腾讯云COS存储或者CDN缓存等。\n\n### 图片下载说明：\n- 下载时间限制：图片首次下载限制为3秒。如超过此时间，将重试一次，重试时间为3秒。如果重试仍超时，将返回 `ImageDownloadError`（下载超时）；\n- 网络安全策略：由于网络安全策略，带有重定向的链接（如HTTP返回302状态码）可能导致下载失败。请尽量避免使用此类链接，以确保下载顺利进行，可能返回 `ResourceUnavailable.ImageDownloadError`；\n- 异步回源支持：目前不支持通过异步回源方式获取图片源。请确保使用直接链接，以避免下载失败。\n\n<div class=\"rno-api-explorer\" style=\"margin-bottom:20px\">\n    <div class=\"rno-api-explorer-inner\">\n        <div class=\"rno-api-explorer-hd\">\n            <div class=\"rno-api-explorer-title\">\n                关于版本迭代的描述\n            </div>\n        </div>\n        <div class=\"rno-api-explorer-body\">\n            <div class=\"rno-api-explorer-cont\">\n                <p>当前页面版本为图片内容安全2020版本，2020.11.3日前接入的图片内容安全接口为2019版本，在此时间前接入的用户可直接访问以下链接进行维护操作：<a href=\"https://cloud.tencent.com/document/product/1125/38206\" target=\"_blank\">图片内容安全-2019版本</a></p>\n                <p>2020版本相对2019版本进行了升级，支持更灵活的多场景业务策略配置以及更丰富的识别回调信息，满足不同业务的识别需求，建议按照2020版本接入指引进行接口升级；同时，2019版本也会持续维护直至用户不再使用为止。</p>\n            </div>\n        </div>\n    </div>\n</div>",
       "input": "ImageModerationRequest",
       "name": "图片同步检测",
       "output": "ImageModerationResponse",
@@ -223,7 +223,7 @@
         {
           "disabled": false,
           "document": "该字段表示策略的具体编号，用于接口调度，在内容安全控制台中可配置。若不传入Biztype参数（留空），则代表采用默认的识别策略；传入则会在审核时根据业务场景采取不同的审核策略。<br>备注：Biztype仅为数字、字母与下划线的组合，长度为3-32个字符；不同Biztype关联不同的业务场景与识别能力策略，调用前请确认正确的Biztype。",
-          "example": "test_1001",
+          "example": "182600012300002017",
           "member": "string",
           "name": "BizType",
           "required": false,
@@ -232,7 +232,7 @@
         {
           "disabled": false,
           "document": "该字段表示您为待检测对象分配的数据ID，传入后可方便您对文件进行标识和管理。<br>取值：由英文字母（大小写均可）、数字及四个特殊符号（_，-，@，#）组成，**长度不超过64个字符**。",
-          "example": "1213",
+          "example": "a61237dd-c2a0-43e7-a3da-d27022d39ba7",
           "member": "string",
           "name": "DataId",
           "required": false,
@@ -240,7 +240,7 @@
         },
         {
           "disabled": false,
-          "document": "该字段表示待检测图片文件内容的Base64编码，图片Base64编码内容大小不超过10MB，建议**分辨率不低于256x256**，否则可能会影响识别效果。<br>备注： **该字段与FileUrl必须选择输入其中一个**。",
+          "document": "该字段表示待检测图片文件内容的Base64编码，由于云API对请求包体有大小限制，图片的**Base64编码内容大小不得超过10MB**。<br/>备注：**该字段与FileUrl必须选择输入其中一个**。<br />",
           "example": "aHR0cDovL2lubmVycG9ybnNjcmVlbnNob3QtMTI1MjgxMzg1MC5jb3MuYXAtZ3Vh",
           "member": "string",
           "name": "FileContent",
@@ -249,8 +249,8 @@
         },
         {
           "disabled": false,
-          "document": "该字段表示待检测图片文件的访问链接。图片支持PNG、JPG、JPEG、BMP、GIF、WEBP格式，且**大小不得超过30MB**，建议**分辨率不低于256x256**。**图片下载时间限制为3秒，超时将进行一次重试，若再次失败，则会返回下载超时**。由于网络安全策略，**送审带重定向的链接**可能引起下载失败，请尽量避免使用返回302或其他非200状态码的HTTP链接，会导致接口返回 ResourceUnavailable.ImageDownloadError 错误。<br>备注：该字段与FileContent必须选择输入其中一个。",
-          "example": "https://xxx.jpg",
+          "document": "该字段表示待检测图片文件的访问链接，URL源图**大小不超过30MB**。<br />备注：该字段与FileContent必须选择输入其中一个。 <br />",
+          "example": "https://cmstest-123.cos.ap-guangzhou.myqcloud.com/image.jpg",
           "member": "string",
           "name": "FileUrl",
           "required": false,
@@ -259,7 +259,7 @@
         {
           "disabled": false,
           "document": "**GIF检测专用**，用于表示GIF截帧频率（每隔多少张图片抽取一帧进行检测）；默认值为0，此时只会检测GIF的第一帧或不进行切分处理。<br>备注：Interval与MaxFrames参数需要组合使用。例如，Interval=3, MaxFrames=400，则代表在检测GIF时，将每间隔2帧检测一次且最多检测400帧。",
-          "example": "1",
+          "example": "0",
           "member": "int64",
           "name": "Interval",
           "required": false,
@@ -268,7 +268,7 @@
         {
           "disabled": false,
           "document": "**GIF检测专用**，用于标识最大截帧数量；默认值为1，此时只会检测输入GIF的第一帧不进行切分处理（可能会造成处理超时）。<br>备注：Interval与MaxFrames参数需要组合使用。例如，Interval=3, MaxFrames=400，则代表在检测GIF时，将每间隔2帧检测一次且最多检测400帧。",
-          "example": "1",
+          "example": "5",
           "member": "int64",
           "name": "MaxFrames",
           "required": false,
@@ -391,7 +391,7 @@
         {
           "disabled": false,
           "document": "该字段用于返回检测对象对应请求参数中的BizType。",
-          "example": "test_1001",
+          "example": "182600012300002017",
           "member": "string",
           "name": "BizType",
           "output_required": true,

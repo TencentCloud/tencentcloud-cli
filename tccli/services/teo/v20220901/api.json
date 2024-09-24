@@ -10757,6 +10757,45 @@
       ],
       "usage": "both"
     },
+    "L4ProxyRemoteAuth": {
+      "document": "四层远程鉴权信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "四层远程鉴权开关，取值有：\n<li>on：表示开启;</li>\n<li>off：表示关闭。</li>",
+          "example": "on",
+          "member": "string",
+          "name": "Switch",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "远程鉴权服务地址，格式为: domain/ip:port。例：example.auth.com:8888\n",
+          "example": "无",
+          "member": "string",
+          "name": "Address",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "远程鉴权服务不可访问后，经过四层转发规则默认回源行为，取值有：\n<li>reject：表示进行拦截，拒绝访问;</li>\n<li>allow：表示允许通过。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "ServerFaultyBehavior",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "L4ProxyRule": {
       "document": "四层代理转发规则详情。",
       "members": [
@@ -10891,6 +10930,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "远程鉴权信息。\n注意：RemoteAuth 在 CreateL4ProxyRules 或 ModifyL4ProxyRules 不可作为入参使用，如有传此参数，会忽略。在 DescribeL4ProxyRules 返回为空时，表示没有开启远程鉴权。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "L4ProxyRemoteAuth",
+          "name": "RemoteAuth",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

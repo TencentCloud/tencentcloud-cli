@@ -932,7 +932,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetImageRegistryAssetStatus\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"33ec689a-e026-4700-8dc4-b559b97f0667\",\n        \"Status\": \"doing\",\n        \"Err\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": \"abc\",\n        \"Err\": \"abc\",\n        \"LatestSyncSuccessTime\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "查看镜像仓库资产更新进度状态"
       }
     ],
@@ -1022,7 +1022,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetImageRegistrySummary\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5247d905-bf3c-41b4-9d6f-f93a008d9efb\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"UnScannedImageCnt\": 1,\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "镜像仓库查询镜像统计信息"
       }
     ],
@@ -1094,7 +1094,7 @@
       {
         "document": "查询正在一键扫描的镜像扫描taskid",
         "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetImageScanTask\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b9cd345d-9d88-4e3b-86b6-e0e5c971731a\",\n        \"TaskID\": \"\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskID\": \"abc\",\n        \"LastScanTime\": \"abc\",\n        \"Status\": \"abc\",\n        \"SubStatus\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "查询正在一键扫描的镜像扫描taskid"
       }
     ],
@@ -1158,7 +1158,7 @@
       {
         "document": "查询账户容器、镜像等统计信息",
         "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetSummary\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"AppCnt\": 1,\n        \"ContainerCnt\": 1,\n        \"ContainerPause\": 1,\n        \"ContainerRunning\": 1,\n        \"ContainerStop\": 1,\n        \"CreateTime\": \"abc\",\n        \"DbCnt\": 1,\n        \"ImageCnt\": 1,\n        \"HostOnline\": 1,\n        \"HostCnt\": 1,\n        \"ImageHasRiskInfoCnt\": 1,\n        \"ImageHasVirusCnt\": 1,\n        \"ImageHasVulsCnt\": 1,\n        \"ImageUntrustCnt\": 1,\n        \"ListenPortCnt\": 1,\n        \"ProcessCnt\": 1,\n        \"WebServiceCnt\": 1,\n        \"LatestImageScanTime\": \"abc\",\n        \"ImageUnsafeCnt\": 1,\n        \"HostUnInstallCnt\": 1,\n        \"SuperNodeCnt\": 1,\n        \"SuperNodeRunningCnt\": 1,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"AppCnt\": 1,\n        \"ContainerCnt\": 1,\n        \"ContainerPause\": 1,\n        \"ContainerRunning\": 1,\n        \"ContainerStop\": 1,\n        \"CreateTime\": \"abc\",\n        \"DbCnt\": 1,\n        \"ImageCnt\": 1,\n        \"HostOnline\": 1,\n        \"HostCnt\": 1,\n        \"ImageHasRiskInfoCnt\": 1,\n        \"ImageHasVirusCnt\": 1,\n        \"ImageHasVulsCnt\": 1,\n        \"ImageUntrustCnt\": 1,\n        \"ListenPortCnt\": 1,\n        \"ProcessCnt\": 1,\n        \"WebServiceCnt\": 1,\n        \"LatestImageScanTime\": \"abc\",\n        \"ImageUnsafeCnt\": 1,\n        \"HostUnInstallCnt\": 1,\n        \"SuperNodeCnt\": 1,\n        \"SuperNodeRunningCnt\": 1,\n        \"TodayNewImageCnt\": 1,\n        \"TodayUnsafeImageCnt\": 1,\n        \"RecommendedFixImageCnt\": 1,\n        \"ScannedImageCnt\": 1,\n        \"UnScannedImageCnt\": 1,\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "查询账户容器、镜像等统计信息"
       }
     ],
@@ -1446,7 +1446,7 @@
       {
         "document": "",
         "input": "https://tcss.tencentcloudapi.com/?Action=DescribeImageAuthorizedInfo\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalAuthorizedCnt\": 1,\n        \"UsedAuthorizedCnt\": 1,\n        \"ScannedImageCnt\": 1,\n        \"NotScannedImageCnt\": 1,\n        \"NotScannedLocalImageCnt\": 1,\n        \"TrialAuthorizedCnt\": 1,\n        \"UsedTrialAuthorizedCnt\": 1,\n        \"PurchasedAuthorizedCnt\": 1,\n        \"UsedPurchasedAuthorizedCnt\": 1,\n        \"CanApplyFreeImageAuthorize\": true,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalAuthorizedCnt\": 1,\n        \"UsedAuthorizedCnt\": 1,\n        \"ScannedImageCnt\": 1,\n        \"NotScannedImageCnt\": 1,\n        \"NotScannedLocalImageCnt\": 1,\n        \"TrialAuthorizedCnt\": 1,\n        \"UsedTrialAuthorizedCnt\": 1,\n        \"PurchasedAuthorizedCnt\": 1,\n        \"UsedPurchasedAuthorizedCnt\": 1,\n        \"CanApplyFreeImageAuthorize\": true,\n        \"ImageScanInquireInfo\": {\n            \"InquireKey\": \"abc\",\n            \"Capcity\": 1,\n            \"Useage\": 1,\n            \"StartTime\": \"abc\",\n            \"EndTime\": \"abc\",\n            \"PurchaseStatus\": \"abc\",\n            \"ResourceID\": \"abc\"\n        },\n        \"RepeatImageIdCnt\": 1,\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "查询镜像授权信息"
       }
     ],

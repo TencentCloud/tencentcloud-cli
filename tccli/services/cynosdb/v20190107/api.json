@@ -525,13 +525,6 @@
       "output": "DescribeRollbackTimeRangeResponse",
       "status": "online"
     },
-    "DescribeRollbackTimeValidity": {
-      "document": "历史废弃接口，从云API下线\n\n指定时间和集群查询是否可回滚",
-      "input": "DescribeRollbackTimeValidityRequest",
-      "name": "查询指定时间是否可回滚",
-      "output": "DescribeRollbackTimeValidityResponse",
-      "status": "deprecated"
-    },
     "DescribeServerlessStrategy": {
       "document": "查询serverless策略",
       "input": "DescribeServerlessStrategyRequest",
@@ -11504,91 +11497,6 @@
           "name": "RollbackTimeRanges",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeRollbackTimeValidityRequest": {
-      "document": "DescribeRollbackTimeValidity请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "集群ID",
-          "example": "cynosdbmysql-gn65y9nk",
-          "member": "string",
-          "name": "ClusterId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "期望回滚的时间点",
-          "example": "2019-01-13 02:12:05",
-          "member": "string",
-          "name": "ExpectTime",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "回滚时间点的允许误差范围",
-          "example": "0",
-          "member": "uint64",
-          "name": "ExpectTimeThresh",
-          "required": true,
-          "type": "int"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeRollbackTimeValidityResponse": {
-      "document": "DescribeRollbackTimeValidity返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "存储poolID",
-          "example": "\t1050",
-          "member": "uint64",
-          "name": "PoolId",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "回滚任务ID，后续按该时间点回滚时，需要传入",
-          "example": "\t2008",
-          "member": "uint64",
-          "name": "QueryId",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "时间点是否有效：pass，检测通过；fail，检测失败",
-          "example": "pass",
-          "member": "string",
-          "name": "Status",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "建议时间点，在Status为fail时，该值才有效",
-          "example": "\"\"",
-          "member": "string",
-          "name": "SuggestTime",
-          "output_required": true,
-          "type": "string",
           "value_allowed_null": false
         },
         {

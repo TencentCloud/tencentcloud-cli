@@ -24,14 +24,6 @@
         "title": "策略绑定标签"
       }
     ],
-    "CheckIsPrometheusNewUser": [
-      {
-        "document": "判断用户是否为新用户",
-        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckIsPrometheusNewUser\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
-        "title": "判断用户是否为新用户"
-      }
-    ],
     "CleanGrafanaInstance": [
       {
         "document": "强制销毁 Grafana 实例",
@@ -912,14 +904,6 @@
         "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePrometheusInstancesOverview\n<公共请求参数>\n\n{\n    \"Limit\": 1,\n    \"Filters\": [\n        {\n            \"Name\": \"Name\",\n            \"Values\": [\n                \"alert-test\"\n            ]\n        }\n    ],\n    \"Offset\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"Instances\": [\n            {\n                \"InstanceStatus\": 3,\n                \"BoundNormal\": 1,\n                \"VpcId\": \"vpc-sjdfb\",\n                \"AutoRenewFlag\": 0,\n                \"InstanceId\": \"prom-ajsh\",\n                \"BoundTotal\": 1,\n                \"ExpireTime\": \"2024-07-16 16:28:54\",\n                \"SpecName\": \"spec-name\",\n                \"InstanceChargeType\": 2,\n                \"EnableGrafana\": 0,\n                \"DataRetentionTime\": 15,\n                \"GrafanaURL\": \"http://1.1.1.1:9000\",\n                \"SubnetId\": \"subnet-ljeb\",\n                \"InstanceName\": \"test-prom\",\n                \"ChargeStatus\": 1,\n                \"ResourcePackageStatus\": 1,\n                \"ResourcePackageSpecName\": \"pkg-name\"\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"sjehg-jdgrg\"\n    }\n}",
         "title": "获取实例列表"
-      }
-    ],
-    "DescribePrometheusRecordRuleYaml": [
-      {
-        "document": "拉取聚合规则列表",
-        "input": "https://monitor.tencentcloudapi.com/?Action=DescribePrometheusRecordRuleYaml\n&InstanceId=prom-xxx\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
-        "title": "拉取聚合规则列表"
       }
     ],
     "DescribePrometheusRecordRules": [

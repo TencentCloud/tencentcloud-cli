@@ -365,7 +365,7 @@
       "status": "online"
     },
     "RecognizeIndonesiaIDCardOCR": {
-      "document": "印尼身份证识别\n\n默认接口请求频率限制：20次/秒。",
+      "document": "印尼身份证识别\n\n默认接口请求频率限制：5次/秒。",
       "input": "RecognizeIndonesiaIDCardOCRRequest",
       "name": "印尼身份证识别",
       "output": "RecognizeIndonesiaIDCardOCRResponse",
@@ -2536,7 +2536,7 @@
         },
         {
           "disabled": false,
-          "document": "可以指定要识别的票证类型,指定后不出现在此列表的票证将不返回类型。不指定时默认返回所有支持类别票证的识别信息。\n\n以下是当前支持的类型：\nIDCardFront: 身份证正面识别\nIDCardBack: 身份证背面识别\nPassport: 护照\nBusinessCard: 名片识别\nBankCard: 银行卡识别\nVehicleLicenseFront: 行驶证主页识别\nVehicleLicenseBack: 行驶证副页识别\nDriverLicenseFront: 驾驶证主页识别\nDriverLicenseBack: 驾驶证副页识别\nPermitFront: 港澳台通行证正面\nResidenceBooklet: 户口本资料页\nMainlandPermitFront: 港澳台来往内地通行证正面\nHmtResidentPermitFront: 港澳台居住证正面\nHmtResidentPermitBack: 港澳台居住证背面\nEstateCert: 不动产证\nBizLicense: 营业执照",
+          "document": "可以指定要识别的票证类型,指定后不出现在此列表的票证将不返回类型。不指定时默认返回所有支持类别票证的识别信息。\n\n以下是当前支持的类型：\nIDCardFront: 身份证正面识别\nIDCardBack: 身份证背面识别\nPassport: 护照\nBusinessCard: 名片识别\nBankCard: 银行卡识别\nVehicleLicenseFront: 行驶证主页识别\nVehicleLicenseBack: 行驶证副页识别\nDriverLicenseFront: 驾驶证主页识别\nDriverLicenseBack: 驾驶证副页识别\nPermitFront: 港澳台通行证正面\nResidenceBooklet: 户口本资料页\nMainlandPermitFront: 港澳台来往内地通行证正面\nHmtResidentPermitFront: 港澳台居住证正面\nHmtResidentPermitBack: 港澳台居住证背面\nEstateCert: 不动产证\nBizLicense: 营业执照\nForeignPermanentResidentFront: 外国人永居证正面识别\nForeignPermanentResidentBack: 外国人永居证背面识别",
           "example": "\"\"",
           "member": "string",
           "name": "DiscernType",
@@ -2555,7 +2555,7 @@
           "example": "\"\"",
           "member": "ClassifyDetectInfo",
           "name": "ClassifyDetectInfos",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

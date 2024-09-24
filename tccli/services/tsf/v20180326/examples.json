@@ -594,14 +594,6 @@
         "title": "获取应用列表-其它字段【前端并发调用】"
       }
     ],
-    "DescribeApplicationBusinessLogConfig": [
-      {
-        "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=DescribeApplicationBusinessLogConfig\n&ApplicationId=xxx\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d996e5507e42d5970cd2e25ed5267a\"\n    }\n}",
-        "title": "查询应用关联日志配置项信息"
-      }
-    ],
     "DescribeApplications": [
       {
         "document": "",
