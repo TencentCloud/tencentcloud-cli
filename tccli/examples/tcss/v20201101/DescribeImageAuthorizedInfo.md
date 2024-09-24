@@ -21,6 +21,16 @@ Output:
         "PurchasedAuthorizedCnt": 1,
         "UsedPurchasedAuthorizedCnt": 1,
         "CanApplyFreeImageAuthorize": true,
+        "ImageScanInquireInfo": {
+            "InquireKey": "abc",
+            "Capcity": 1,
+            "Useage": 1,
+            "StartTime": "abc",
+            "EndTime": "abc",
+            "PurchaseStatus": "abc",
+            "ResourceID": "abc"
+        },
+        "RepeatImageIdCnt": 1,
         "RequestId": "abc"
     }
 }

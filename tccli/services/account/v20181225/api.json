@@ -56,6 +56,13 @@
       "output": "DescribeIpByUinResponse",
       "status": "online"
     },
+    "DescribeMatchingUserListByUinPhone": {
+      "document": "通过当前账号的UIN获取和这个账号安全手机相同的主账号用户列表",
+      "input": "DescribeMatchingUserListByUinPhoneRequest",
+      "name": "通过当前账号的UIN获取和这个账号安全手机相同的主账号用户列表",
+      "output": "DescribeMatchingUserListByUinPhoneResponse",
+      "status": "online"
+    },
     "DescribeNickname": {
       "document": "获取用户昵称",
       "input": "DescribeNicknameRequest",
@@ -152,6 +159,13 @@
       "input": "GetUinByAppIdRequest",
       "name": "根据appid获取uin",
       "output": "GetUinByAppIdResponse",
+      "status": "online"
+    },
+    "GetUpperLimit": {
+      "document": "获取各种操作上限值",
+      "input": "GetUpperLimitRequest",
+      "name": "获取操作上限",
+      "output": "GetUpperLimitResponse",
       "status": "online"
     },
     "LoginViaTCB": {
@@ -618,6 +632,33 @@
           "name": "Total",
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMatchingUserListByUinPhoneRequest": {
+      "document": "DescribeMatchingUserListByUinPhone请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeMatchingUserListByUinPhoneResponse": {
+      "document": "DescribeMatchingUserListByUinPhone返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户列表。",
+          "example": "无",
+          "member": "UserInfoList",
+          "name": "UserInfoList",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -1616,6 +1657,233 @@
           "name": "AddTimestamp",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetUpperLimitRequest": {
+      "document": "GetUpperLimit请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "协作者UIN",
+          "example": "100000559049",
+          "member": "uint64",
+          "name": "CollUin",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetUpperLimitResponse": {
+      "document": "GetUpperLimit返回参数结构体",
+      "members": [
+        {
+          "disabled": true,
+          "document": "创建用户组上限",
+          "example": "300",
+          "member": "uint64",
+          "name": "CreateGroupMaximun",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": true,
+          "document": "创建子账号上限",
+          "example": "1000",
+          "member": "uint64",
+          "name": "AddSubAccountMaximun",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": true,
+          "document": "加入用户组上限",
+          "example": "10",
+          "member": "uint64",
+          "name": "JoinGroupMaximun",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": true,
+          "document": "用户组成员上限",
+          "example": "100",
+          "member": "uint64",
+          "name": "GroupMemberMaximun",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": true,
+          "document": "创建自定义策略上限",
+          "example": "1500",
+          "member": "uint64",
+          "name": "PolicyMaximun",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": true,
+          "document": "关联策略上限",
+          "example": "200",
+          "member": "uint64",
+          "name": "AttachPolicyMaximun",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": true,
+          "document": "创建角色上限",
+          "example": "1000",
+          "member": "uint64",
+          "name": "CreateRoleMaximun",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": true,
+          "document": "协作账号上限",
+          "example": "3",
+          "member": "uint64",
+          "name": "CollOwnerMaximun",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": true,
+          "document": "登录IP限制条数上限",
+          "example": "10",
+          "member": "uint64",
+          "name": "LoginIpRuleMaximun",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "未实名账号24小时内子账号创建个数配额限制10个",
+          "example": "10",
+          "member": "uint64",
+          "name": "QuotaCreateSubAccountTimesLimit",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建用户组上限",
+          "example": "300",
+          "member": "uint64",
+          "name": "CreateGroupMaximum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建子账号上限",
+          "example": "1000",
+          "member": "uint64",
+          "name": "AddSubAccountMaximum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "加入用户组上限",
+          "example": "10",
+          "member": "uint64",
+          "name": "JoinGroupMaximum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户组成员上限",
+          "example": "100",
+          "member": "uint64",
+          "name": "GroupMemberMaximum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建自定义策略上限",
+          "example": "1500",
+          "member": "uint64",
+          "name": "PolicyMaximum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "关联策略上限",
+          "example": "200",
+          "member": "uint64",
+          "name": "AttachPolicyMaximum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建角色上限",
+          "example": "1000",
+          "member": "uint64",
+          "name": "CreateRoleMaximum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "协作账号上限",
+          "example": "3",
+          "member": "uint64",
+          "name": "CollOwnerMaximum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "登录IP限制条数上限",
+          "example": "10",
+          "member": "uint64",
+          "name": "LoginIpRuleMaximum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略大小上限",
+          "example": "1000",
+          "member": "uint64",
+          "name": "PolicyTextMaximum",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -2787,6 +3055,34 @@
         }
       ],
       "type": "object"
+    },
+    "UserInfoList": {
+      "document": "用户列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "主账号UIN。",
+          "example": "10000003434",
+          "member": "uint64",
+          "name": "Uin",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主账号的用户名。",
+          "example": "test",
+          "member": "string",
+          "name": "UserName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "WeChatData": {
       "document": "微信参数",

@@ -14,7 +14,8 @@ tccli cwp ModifyBashPolicy --cli-unfold-argument  \
     --Policy.Rule dGVzdCo \
     --Policy.Scope 3 \
     --Policy.White 1 \
-    --Policy.DealOldEvents 0
+    --Policy.DealOldEvents 0 \
+    --Policy.Rules.Process.Exe L3RtcC90ZXN0Cg==
 ```
 
 Output: 

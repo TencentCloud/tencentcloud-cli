@@ -70,6 +70,14 @@
         "title": "示例"
       }
     ],
+    "DescribeMatchingUserListByUinPhone": [
+      {
+        "document": "通过当前账号的UIN获取和这个账号安全手机相同的主账号用户列表",
+        "input": "POST / HTTP/1.1\nHost: account.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMatchingUserListByUinPhone\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"UserInfoList\": [\n            {\n                \"Uin\": 100002034,\n                \"UserName\": \"test\"\n            }\n        ],\n        \"RequestId\": \"e297543a-80de-4039-83c8-9d35d4545\"\n    }\n}",
+        "title": "通过当前账号的UIN获取和这个账号安全手机相同的主账号用户列表"
+      }
+    ],
     "DescribeNickname": [
       {
         "document": "",
@@ -164,6 +172,14 @@
         "input": "POST / HTTP/1.1\nHost: account.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetUinByAppId\n<公共请求参数>\n\n{\n    \"Appid\": 1255427217\n}",
         "output": "{\n    \"Response\": {\n        \"Uin\": 100000546547,\n        \"Appid\": 1255427217,\n        \"AddTimestamp\": \"2022-12-15 15:35:40\",\n        \"RequestId\": \"ffccca38-aef0-4487-9ead-c1f675f8d98d\"\n    }\n}",
         "title": "根据appid获取uin"
+      }
+    ],
+    "GetUpperLimit": [
+      {
+        "document": "queryUpperLimit respons",
+        "input": "POST / HTTP/1.1\nHost: account.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetUpperLimit\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"CreateGroupMaximun\": 300,\n        \"AddSubAccountMaximun\": 1000,\n        \"JoinGroupMaximun\": 10,\n        \"GroupMemberMaximun\": 100,\n        \"CollOwnerMaximun\": 10,\n        \"LoginIpRuleMaximun\": 10,\n        \"PolicyMaximun\": 0,\n        \"AttachPolicyMaximun\": 0,\n        \"CreateRoleMaximun\": 0,\n        \"QuotaCreateSubAccountTimesLimit\": 10,\n        \"CreateGroupMaximum\": 300,\n        \"AddSubAccountMaximum\": 1000,\n        \"JoinGroupMaximum\": 10,\n        \"GroupMemberMaximum\": 100,\n        \"CollOwnerMaximum\": 10,\n        \"LoginIpRuleMaximum\": 10,\n        \"PolicyMaximum\": 0,\n        \"AttachPolicyMaximum\": 0,\n        \"CreateRoleMaximum\": 0,\n        \"RequestId\": \"60e15686-c6b0-4ead-8cb0-a583524ab8d3\"\n    }\n}",
+        "title": "queryUpperLimit respons"
       }
     ],
     "LoginViaTCB": [

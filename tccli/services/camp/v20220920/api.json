@@ -10216,7 +10216,7 @@
           "example": "1",
           "member": "string",
           "name": "MaxSurge",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true

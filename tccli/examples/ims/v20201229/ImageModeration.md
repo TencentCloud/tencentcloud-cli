@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli ims ImageModeration --cli-unfold-argument  \
-    --BizType test_1001 \
-    --DataId 1213 \
-    --FileUrl https://xxx.jpg
+    --BizType 182600012300002017 \
+    --DataId a61237dd-c2a0-43e7-a3da-d27022d39ba7 \
+    --FileUrl https://cmstest-123.cos.ap-guangzhou.myqcloud.com/image.jpg
 ```
 
 Output: 
@@ -17,7 +17,7 @@ Output:
     "Response": {
         "RequestId": "a61237dd-c2a0-43e7-a3da-d27022d39ba7",
         "DataId": "a61237dd-c2a0-43e7-a3da-d27022d39ba7",
-        "BizType": "test_1001",
+        "BizType": "182600012300002017",
         "Suggestion": "Block",
         "FileMD5": "",
         "Label": "Porn",

@@ -1,5 +1,68 @@
 {
   "actions": {
+    "CreateAuthorizationPolicy": {
+      "document": "创建MQTT实例的性能测试任务",
+      "input": "CreateAuthorizationPolicyRequest",
+      "name": "创建授权策略",
+      "output": "CreateAuthorizationPolicyResponse",
+      "status": "online"
+    },
+    "CreateJWKSAuthenticator": {
+      "document": "创建一个jwks的认证",
+      "input": "CreateJWKSAuthenticatorRequest",
+      "name": "创建一个MQTTJWKS认证器",
+      "output": "CreateJWKSAuthenticatorResponse",
+      "status": "online"
+    },
+    "CreateJWTAuthenticator": {
+      "document": "创建一个jwks的认证",
+      "input": "CreateJWTAuthenticatorRequest",
+      "name": "创建一个MQTTJWT认证器",
+      "output": "CreateJWTAuthenticatorResponse",
+      "status": "online"
+    },
+    "CreateTopic": {
+      "document": "创建主题",
+      "input": "CreateTopicRequest",
+      "name": "创建MQTT主题",
+      "output": "CreateTopicResponse",
+      "status": "online"
+    },
+    "DeleteAuthenticator": {
+      "document": "根据认证器类型删除一个MQTT认证器",
+      "input": "DeleteAuthenticatorRequest",
+      "name": "删除一个MQTT认证器",
+      "output": "DeleteAuthenticatorResponse",
+      "status": "online"
+    },
+    "DeleteAuthorizationPolicy": {
+      "document": "删除策略规则",
+      "input": "DeleteAuthorizationPolicyRequest",
+      "name": "删除授权策略",
+      "output": "DeleteAuthorizationPolicyResponse",
+      "status": "online"
+    },
+    "DeleteTopic": {
+      "document": "删除MQTT主题",
+      "input": "DeleteTopicRequest",
+      "name": "删除MQTT主题",
+      "output": "DeleteTopicResponse",
+      "status": "online"
+    },
+    "DescribeAuthenticator": {
+      "document": "查询MQTT认证器",
+      "input": "DescribeAuthenticatorRequest",
+      "name": "查询MQTT认证器",
+      "output": "DescribeAuthenticatorResponse",
+      "status": "online"
+    },
+    "DescribeAuthorizationPolicies": {
+      "document": "查询授权规则",
+      "input": "DescribeAuthorizationPoliciesRequest",
+      "name": "查询授权策略",
+      "output": "DescribeAuthorizationPoliciesResponse",
+      "status": "online"
+    },
     "DescribeInstance": {
       "document": "查询实例信息",
       "input": "DescribeInstanceRequest",
@@ -13,6 +76,62 @@
       "name": "获取MQTT实例列表",
       "output": "DescribeInstanceListResponse",
       "status": "online"
+    },
+    "DescribeTopic": {
+      "document": "查询mqtt主题详情",
+      "input": "DescribeTopicRequest",
+      "name": "查询MQTT主题详情",
+      "output": "DescribeTopicResponse",
+      "status": "online"
+    },
+    "DescribeTopicList": {
+      "document": "获取主题列表，Filter参数使用说明如下：\n\n1. TopicName，主题名称模糊搜索\n2. TopicType，主题类型查询，支持多选，可选值：Normal,Order,Transaction,DelayScheduled",
+      "input": "DescribeTopicListRequest",
+      "name": "查询MQTT主题列表",
+      "output": "DescribeTopicListResponse",
+      "status": "online"
+    },
+    "ModifyAuthorizationPolicy": {
+      "document": "修改策略规则",
+      "input": "ModifyAuthorizationPolicyRequest",
+      "name": "修改授权策略",
+      "output": "ModifyAuthorizationPolicyResponse",
+      "status": "online"
+    },
+    "ModifyJWKSAuthenticator": {
+      "document": "修改MQTT JWKS 认证器",
+      "input": "ModifyJWKSAuthenticatorRequest",
+      "name": "修改MQTTJWKS认证器",
+      "output": "ModifyJWKSAuthenticatorResponse",
+      "status": "online"
+    },
+    "ModifyJWTAuthenticator": {
+      "document": "修改MQTT JWKS 认证器",
+      "input": "ModifyJWTAuthenticatorRequest",
+      "name": "修改MQTTJWT认证器",
+      "output": "ModifyJWTAuthenticatorResponse",
+      "status": "online"
+    },
+    "ModifyTopic": {
+      "document": "修改主题属性",
+      "input": "ModifyTopicRequest",
+      "name": "修改MQTT主题属性",
+      "output": "ModifyTopicResponse",
+      "status": "online"
+    },
+    "RegisterDeviceCertificate": {
+      "document": "注册设备证书",
+      "input": "RegisterDeviceCertificateRequest",
+      "name": "注册设备证书",
+      "output": "RegisterDeviceCertificateResponse",
+      "status": "online"
+    },
+    "UpdateAuthorizationPolicyPriority": {
+      "document": "修改策略规则优先级",
+      "input": "UpdateAuthorizationPolicyPriorityRequest",
+      "name": "更新授权策略优先级",
+      "output": "UpdateAuthorizationPolicyPriorityResponse",
+      "status": "online"
     }
   },
   "metadata": {
@@ -22,6 +141,753 @@
     "serviceShortName": "mqtt"
   },
   "objects": {
+    "AuthorizationPolicyItem": {
+      "document": "AuthorizationPolicyItem",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则id",
+          "example": "1",
+          "member": "int64",
+          "name": "Id",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群id",
+          "example": "mqtt-12345",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "规则1",
+          "member": "string",
+          "name": "PolicyName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规则语法版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Version",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "越小越优先\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Priority",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "allow/deny\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "allow",
+          "member": "string",
+          "name": "Effect",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "connect、pub、sub\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "connect",
+          "member": "string",
+          "name": "Actions",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "topic1",
+          "member": "string",
+          "name": "Resources",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "client\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "client1",
+          "member": "string",
+          "name": "ClientId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "user1",
+          "member": "string",
+          "name": "Username",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "ip地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "Ip",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "0，1，2\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "Qos",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "1、2、3\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Retain",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "文本",
+          "member": "string",
+          "name": "Remark",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "1713164969433",
+          "example": "创建时间",
+          "member": "int64",
+          "name": "CreatedTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "1713164969433",
+          "example": "更新时间",
+          "member": "int64",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AuthorizationPolicyPriority": {
+      "document": "策略规则优先级",
+      "members": [
+        {
+          "disabled": false,
+          "document": "策略id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Id",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "优先级\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Priority",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "CreateAuthorizationPolicyRequest": {
+      "document": "CreateAuthorizationPolicy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "mqtt-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "策略名称",
+          "example": "name",
+          "member": "string",
+          "name": "PolicyName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "策略版本",
+          "example": "1",
+          "member": "int64",
+          "name": "PolicyVersion",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "策略优先级，越小越优先",
+          "example": "1",
+          "member": "int64",
+          "name": "Priority",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "allow、deny",
+          "example": "allow",
+          "member": "string",
+          "name": "Effect",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "connect、pub、sub",
+          "example": "connect",
+          "member": "string",
+          "name": "Actions",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "1,匹配保留消息；2,匹配非保留消息，3.匹配所有消息",
+          "example": "1",
+          "member": "int64",
+          "name": "Retain",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "0、1、2",
+          "example": "1",
+          "member": "string",
+          "name": "Qos",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源",
+          "example": "topic1",
+          "member": "string",
+          "name": "Resources",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户名",
+          "example": "user1",
+          "member": "string",
+          "name": "Username",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "客户端",
+          "example": "client1",
+          "member": "string",
+          "name": "ClientId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "ip",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "Ip",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "备注信息",
+          "example": "remark",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAuthorizationPolicyResponse": {
+      "document": "CreateAuthorizationPolicy返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateJWKSAuthenticatorRequest": {
+      "document": "CreateJWKSAuthenticator请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "rocketmq-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "jwks端点",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "Endpoint",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "jwks刷新间隔,单位：秒",
+          "example": "100",
+          "member": "int64",
+          "name": "RefreshInterval",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "jwks文本",
+          "example": "text",
+          "member": "string",
+          "name": "Text",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "认证器是否开启：open-启用；close-关闭",
+          "example": "open",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "说明",
+          "example": "remark",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备连接时传递jwt的key；username-使用用户名字段传递；password-使用密码字段传递",
+          "example": "username",
+          "member": "string",
+          "name": "From",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateJWKSAuthenticatorResponse": {
+      "document": "CreateJWKSAuthenticator返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateJWTAuthenticatorRequest": {
+      "document": "CreateJWTAuthenticator请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "rocketmq-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "算法：hmac-based，public-key",
+          "example": "hmac-based",
+          "member": "string",
+          "name": "Algorithm",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备连接时传递jwt的key；username-使用用户名字段传递；password-使用密码字段传递",
+          "example": "username",
+          "member": "string",
+          "name": "From",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "密码",
+          "example": "123",
+          "member": "string",
+          "name": "Secret",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "公钥",
+          "example": "text",
+          "member": "string",
+          "name": "PublicKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "认证器是否开启：open-启用；close-关闭",
+          "example": "open",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "说明",
+          "example": "remark",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateJWTAuthenticatorResponse": {
+      "document": "CreateJWTAuthenticator返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTopicRequest": {
+      "document": "CreateTopic请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "rocketmq-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "主题",
+          "example": "test",
+          "member": "string",
+          "name": "Topic",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "备注",
+          "example": "remark",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTopicResponse": {
+      "document": "CreateTopic返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "mqtt-1234",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主题",
+          "example": "test",
+          "member": "string",
+          "name": "Topic",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAuthenticatorRequest": {
+      "document": "DeleteAuthenticator请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "rocketmq-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "认证器类型",
+          "example": "JWKS",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAuthenticatorResponse": {
+      "document": "DeleteAuthenticator返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAuthorizationPolicyRequest": {
+      "document": "DeleteAuthorizationPolicy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "mqtt-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "策略规则id",
+          "example": "1",
+          "member": "int64",
+          "name": "Id",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAuthorizationPolicyResponse": {
+      "document": "DeleteAuthorizationPolicy返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTopicRequest": {
+      "document": "DeleteTopic请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "mqtt-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "主题",
+          "example": "test",
+          "member": "string",
+          "name": "Topic",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTopicResponse": {
+      "document": "DeleteTopic返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAuthenticatorRequest": {
+      "document": "DescribeAuthenticator请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "rocketmq-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "认证器类型",
+          "example": "JWKS",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAuthenticatorResponse": {
+      "document": "DescribeAuthenticator返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群认证器列表",
+          "example": " [       {         \"Config\": \"{\\\"endpoint\\\":\\\"1.2.3.4\\\",\\\"refreshInterval\\\":10}\",         \"Status\": \"open\",         \"Type\": \"JWKS\"       }     ]",
+          "member": "MQTTAuthenticatorItem",
+          "name": "Authenticators",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAuthorizationPoliciesRequest": {
+      "document": "DescribeAuthorizationPolicies请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "mqtt-12345",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAuthorizationPoliciesResponse": {
+      "document": "DescribeAuthorizationPolicies返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则",
+          "example": "[]",
+          "member": "AuthorizationPolicyItem",
+          "name": "Data",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeInstanceListRequest": {
       "document": "DescribeInstanceList请求参数结构体",
       "members": [
@@ -353,6 +1219,156 @@
       ],
       "type": "object"
     },
+    "DescribeTopicListRequest": {
+      "document": "DescribeTopicList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "rocketmq-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询条件列表",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "查询起始位置",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询结果限制数量",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTopicListResponse": {
+      "document": "DescribeTopicList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "主题列表",
+          "example": "[                     {                         \"InstanceId\": \"mqtt-mwmdg9dm\",                         \"Topic\": \"2222\",                         \"Remark\": \"\"                     },                     {                         \"InstanceId\": \"mqtt-mwmdg9dm\",                         \"Topic\": \"home\",                         \"Remark\": \"\"                     }                 ]",
+          "member": "MQTTTopicItem",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTopicRequest": {
+      "document": "DescribeTopic请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "rocketmq-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "主题",
+          "example": "test",
+          "member": "string",
+          "name": "Topic",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTopicResponse": {
+      "document": "DescribeTopic返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "mqtt-mwmdg9dm",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主题名称",
+          "example": "topic1",
+          "member": "string",
+          "name": "Topic",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备注",
+          "example": "remark",
+          "member": "string",
+          "name": "Remark",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间，秒为单位",
+          "example": "1712049671",
+          "member": "int64",
+          "name": "CreatedTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "Filter": {
       "document": "查询过滤器",
       "members": [
@@ -376,6 +1392,62 @@
         }
       ],
       "usage": "in"
+    },
+    "MQTTAuthenticatorItem": {
+      "document": "MQTT认证器信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "认证器类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "JWKS",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "认证器配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Config",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "认证器状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "open",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1711700678",
+          "member": "int64",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "说明\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "说明",
+          "member": "string",
+          "name": "Remark",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "MQTTInstanceItem": {
       "document": "MQTT 实例信息",
@@ -583,6 +1655,465 @@
       ],
       "usage": "out"
     },
+    "MQTTTopicItem": {
+      "document": "MQTT 主题详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例 ID",
+          "example": "mqtt-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主题名称",
+          "example": "mytopic",
+          "member": "string",
+          "name": "Topic",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主题描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "remark1",
+          "member": "string",
+          "name": "Remark",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ModifyAuthorizationPolicyRequest": {
+      "document": "ModifyAuthorizationPolicy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "策略",
+          "example": "1",
+          "member": "int64",
+          "name": "Id",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "mqtt-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "策略名称",
+          "example": "name",
+          "member": "string",
+          "name": "PolicyName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "策略版本",
+          "example": "1",
+          "member": "int64",
+          "name": "PolicyVersion",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "策略优先级，越小越优先",
+          "example": "1",
+          "member": "int64",
+          "name": "Priority",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "allow、deny",
+          "example": "allow",
+          "member": "string",
+          "name": "Effect",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "connect、pub、sub",
+          "example": "connect",
+          "member": "string",
+          "name": "Actions",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源",
+          "example": "topic1",
+          "member": "string",
+          "name": "Resources",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户名",
+          "example": "user1",
+          "member": "string",
+          "name": "Username",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "1.匹配保留消息；2.匹配非保留消息；3.匹配所有消息",
+          "example": "1",
+          "member": "int64",
+          "name": "Retain",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "客户端",
+          "example": "client1",
+          "member": "string",
+          "name": "ClientId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "ip",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "Ip",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "0、1、2",
+          "example": "1",
+          "member": "string",
+          "name": "Qos",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "备注信息",
+          "example": "remark",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAuthorizationPolicyResponse": {
+      "document": "ModifyAuthorizationPolicy返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyJWKSAuthenticatorRequest": {
+      "document": "ModifyJWKSAuthenticator请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "rocketmq-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "端点",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "Endpoint",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "认证器状态：open-启用；close-关闭",
+          "example": "open",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "刷新时间",
+          "example": "10",
+          "member": "int64",
+          "name": "RefreshInterval",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "JSKS文本",
+          "example": "text",
+          "member": "string",
+          "name": "Text",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备连接时传递jwt的key；username-使用用户名字段传递；password-使用密码字段传递",
+          "example": "username",
+          "member": "string",
+          "name": "From",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "说明",
+          "example": "remark",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyJWKSAuthenticatorResponse": {
+      "document": "ModifyJWKSAuthenticator返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyJWTAuthenticatorRequest": {
+      "document": "ModifyJWTAuthenticator请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "rocketmq-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "算法：hmac-based，public-key",
+          "example": "hmac-based",
+          "member": "string",
+          "name": "Algorithm",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备连接时传递jwt的key；username-使用用户名字段传递；password-使用密码字段传递",
+          "example": "username",
+          "member": "string",
+          "name": "From",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "密码",
+          "example": "open",
+          "member": "string",
+          "name": "Secret",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "公钥",
+          "example": "test",
+          "member": "string",
+          "name": "PublicKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "JSKS文本",
+          "example": "text",
+          "member": "string",
+          "name": "Text",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "说明",
+          "example": "remark",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyJWTAuthenticatorResponse": {
+      "document": "ModifyJWTAuthenticator返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTopicRequest": {
+      "document": "ModifyTopic请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "rocketmq-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "主题",
+          "example": "test",
+          "member": "string",
+          "name": "Topic",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "备注信息",
+          "example": "test",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTopicResponse": {
+      "document": "ModifyTopic返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RegisterDeviceCertificateRequest": {
+      "document": "RegisterDeviceCertificate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群id",
+          "example": "mqtt-12345",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备证书",
+          "example": "无",
+          "member": "string",
+          "name": "DeviceCertificate",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "关联的CA证书SN",
+          "example": "12345",
+          "member": "string",
+          "name": "CaSn",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "客户端ID",
+          "example": "client1",
+          "member": "string",
+          "name": "ClientId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "证书格式",
+          "example": "pem",
+          "member": "string",
+          "name": "Format",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "    ACTIVE,//激活     INACTIVE,//未激活     REVOKED,//吊销     PENDING_ACTIVATION,//注册待激活",
+          "example": "ACTIVE",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RegisterDeviceCertificateResponse": {
+      "document": "RegisterDeviceCertificate返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "TagFilter": {
       "document": "标签过滤器",
       "members": [
@@ -606,6 +2137,42 @@
         }
       ],
       "usage": "in"
+    },
+    "UpdateAuthorizationPolicyPriorityRequest": {
+      "document": "UpdateAuthorizationPolicyPriority请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "mqtt-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "策略ID和优先级",
+          "example": "[]",
+          "member": "AuthorizationPolicyPriority",
+          "name": "Priorities",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateAuthorizationPolicyPriorityResponse": {
+      "document": "UpdateAuthorizationPolicyPriority返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     }
   },
   "version": "1.0"

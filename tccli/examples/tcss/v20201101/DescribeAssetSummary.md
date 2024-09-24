@@ -33,6 +33,11 @@ Output:
         "HostUnInstallCnt": 1,
         "SuperNodeCnt": 1,
         "SuperNodeRunningCnt": 1,
+        "TodayNewImageCnt": 1,
+        "TodayUnsafeImageCnt": 1,
+        "RecommendedFixImageCnt": 1,
+        "ScannedImageCnt": 1,
+        "UnScannedImageCnt": 1,
         "RequestId": "abc"
     }
 }

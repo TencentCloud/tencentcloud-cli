@@ -11,7 +11,8 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "5247d905-bf3c-41b4-9d6f-f93a008d9efb"
+        "UnScannedImageCnt": 1,
+        "RequestId": "abc"
     }
 }
 ```

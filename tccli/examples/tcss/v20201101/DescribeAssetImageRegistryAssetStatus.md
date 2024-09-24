@@ -11,9 +11,10 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "33ec689a-e026-4700-8dc4-b559b97f0667",
-        "Status": "doing",
-        "Err": "xx"
+        "Status": "abc",
+        "Err": "abc",
+        "LatestSyncSuccessTime": "abc",
+        "RequestId": "abc"
     }
 }
 ```

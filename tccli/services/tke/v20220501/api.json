@@ -155,7 +155,7 @@
       "usage": "both"
     },
     "AutoscalingAdded": {
-      "document": "自动扩所容的节点",
+      "document": "自动扩缩容的节点",
       "members": [
         {
           "disabled": false,
@@ -163,7 +163,7 @@
           "example": "无",
           "member": "int64",
           "name": "Joining",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -173,7 +173,7 @@
           "example": "无",
           "member": "int64",
           "name": "Initializing",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -183,7 +183,7 @@
           "example": "无",
           "member": "int64",
           "name": "Normal",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -193,7 +193,7 @@
           "example": "无",
           "member": "int64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }

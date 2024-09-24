@@ -1544,6 +1544,15 @@
           "name": "Issue",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "演练记录",
+          "example": "演练记录",
+          "member": "string",
+          "name": "Record",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

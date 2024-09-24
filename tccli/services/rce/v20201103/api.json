@@ -162,7 +162,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "客户主体名称。\n\n示例值：某某有限公司。",
+          "document": "数据委托方、需求方：客户主体名称。\n\n示例值：某某有限公司。",
           "example": "无",
           "member": "string",
           "name": "DataProviderName",
@@ -171,7 +171,7 @@
         },
         {
           "disabled": false,
-          "document": "接收方主体名称。\n\n固定填：腾讯云计算（北京）有限责任公司\n\n示例值：腾讯云计算（北京）有限责任公司",
+          "document": "数据受托方、提供方：腾讯云主体名称。\n\n固定填：腾讯云计算（北京）有限责任公司\n\n示例值：腾讯云计算（北京）有限责任公司",
           "example": "无",
           "member": "string",
           "name": "DataRecipientName",
@@ -180,7 +180,7 @@
         },
         {
           "disabled": false,
-          "document": "客户请求RCE所涉及的用户敏感数据类型，支持多选。实际以接口请求传参为准。\n\n1-手机号；\n\n2-微信开放账号；\n\n3-QQ开放账号；\n\n4-IP地址；\n\n5-设备指纹；\n\n999-其它；\n\n示例值：[1, 4]",
+          "document": "客户请求RCE所提供的用户数据类型，支持多选。实际以接口请求传参为准。\n\n1-手机号；\n\n2-微信开放账号；\n\n3-QQ开放账号；\n\n4-IP地址；\n\n999-其它；\n\n示例值：[1, 4]",
           "example": "无",
           "member": "uint64",
           "name": "UserDataType",
@@ -189,7 +189,7 @@
         },
         {
           "disabled": false,
-          "document": "客户是否已经获取用户授权。\n\n1-已授权；其它值为未授权。\n\n示例值：1",
+          "document": "客户是否已按[合规指南](https://rule.tencent.com/rule/202409130001)要求获取用户授权，同意客户委托腾讯云处理入参信息\n1-已授权；其它值为未授权。\n示例值：1",
           "example": "无",
           "member": "uint64",
           "name": "IsAuthorize",
@@ -198,11 +198,11 @@
         },
         {
           "disabled": false,
-          "document": "是否是用户个人敏感数据。\n\n固定填：1。\n\n示例值：1",
+          "document": "客户是否已按[合规指南](https://rule.tencent.com/rule/202409130001)要求获取用户授权，同意腾讯云结合客户提供的信息，对已合法收集的用户数据进行必要处理得出服务结果，并返回给客户。\n1-已授权；其它值为未授权。\n示例值：1",
           "example": "无",
           "member": "uint64",
-          "name": "IsPersonalData",
-          "required": true,
+          "name": "IsOrderHandling",
+          "required": false,
           "type": "int"
         },
         {
@@ -216,12 +216,21 @@
         },
         {
           "disabled": false,
-          "document": "客户获得用户授权所依赖的协议地址。\n\n示例值：https://www.*****.com/*****",
+          "document": "\t\n客户获得用户授权所依赖的协议地址。\n\n示例值：https://www.*****.com/*",
           "example": "无",
           "member": "string",
           "name": "PrivacyPolicyLink",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否是用户个人敏感数据。\n\n固定填：1。\n\n示例值：1",
+          "example": "无",
+          "member": "uint64",
+          "name": "IsPersonalData",
+          "required": false,
+          "type": "int"
         }
       ],
       "usage": "in"

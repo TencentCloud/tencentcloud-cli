@@ -59,11 +59,13 @@ Output:
                 "DBNodeSet": [
                     {
                         "Role": "Primary",
-                        "Zone": "ap-guangzhou-6"
+                        "Zone": "ap-guangzhou-6",
+                        "DedicatedClusterId": ""
                     },
                     {
                         "Role": "Standby",
-                        "Zone": "ap-guangzhou-6"
+                        "Zone": "ap-guangzhou-6",
+                        "DedicatedClusterId": ""
                     }
                 ],
                 "DBVersion": "13.3",
@@ -161,11 +163,13 @@ Output:
                 "DBNodeSet": [
                     {
                         "Role": "Primary",
-                        "Zone": "ap-guangzhou-6"
+                        "Zone": "ap-guangzhou-6",
+                        "DedicatedClusterId": ""
                     },
                     {
                         "Role": "Standby",
-                        "Zone": "ap-guangzhou-6"
+                        "Zone": "ap-guangzhou-6",
+                        "DedicatedClusterId": ""
                     }
                 ],
                 "DBVersion": "13.3",

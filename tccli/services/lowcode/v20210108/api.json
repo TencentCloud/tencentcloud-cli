@@ -2390,6 +2390,15 @@
           "name": "SourceList",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "授权标记来源，1代表来自应用",
+          "example": "无",
+          "member": "int64",
+          "name": "AuthTag",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -2403,7 +2412,7 @@
           "example": "无",
           "member": "DescribeTemplateItems",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },

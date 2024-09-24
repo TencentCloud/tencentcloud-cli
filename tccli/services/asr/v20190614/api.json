@@ -126,6 +126,13 @@
       "output": "GetModelInfoResponse",
       "status": "online"
     },
+    "GetUsageByDate": {
+      "document": "查询用户用量",
+      "input": "GetUsageByDateRequest",
+      "name": "通过日期查询用量",
+      "output": "GetUsageByDateResponse",
+      "status": "online"
+    },
     "ModifyCustomization": {
       "document": "用户通过该接口可以更新自学习模型，如模型名称、模型类型、模型语料。",
       "input": "ModifyCustomizationRequest",
@@ -1386,6 +1393,61 @@
       ],
       "type": "object"
     },
+    "GetUsageByDateRequest": {
+      "document": "GetUsageByDate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要查询的业务类型名字列表\n- asr_rt 实时识别\n- asr_rec 录音文件识别",
+          "example": "[\"asr_rec\"]",
+          "member": "string",
+          "name": "BizNameList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "查询开始时间\n开始时间包含当天，支持 YYYY-MM-DD 日期以国内时区为准\n开始时间到结束时间需要在3个月以内",
+          "example": "2024-09-01",
+          "member": "string",
+          "name": "StartDate",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询结束时间\n结束时间包含当天，，支持 YYYY-MM-DD 日期以国内时区为准\n开始时间到结束时间需要在3个月以内",
+          "example": "2024-09-06",
+          "member": "string",
+          "name": "EndDate",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetUsageByDateResponse": {
+      "document": "GetUsageByDate返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用量次数",
+          "example": "无",
+          "member": "UsageByDateInfoData",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "HotWord": {
       "document": "[热词的词和权重](https://cloud.tencent.com/document/product/1093/41111#2.-.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0)",
       "members": [
@@ -2442,6 +2504,62 @@
         }
       ],
       "type": "object"
+    },
+    "UsageByDateInfo": {
+      "document": "用户用量信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "业务类型名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "BizName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "识别次数\n单位：次\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Count",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "识别时长\n单位：秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Duration",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "UsageByDateInfoData": {
+      "document": "用户用量信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用量信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "UsageByDateInfo",
+          "name": "UsageByDateInfoList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "VerifyTop": {
       "document": "声纹组对比结果top数据",
