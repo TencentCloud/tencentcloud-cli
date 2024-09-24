@@ -1,3 +1,116 @@
+# Release 3.0.1079.1
+
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+
+### 第 98 次发布
+
+发布时间：2024-09-25 01:36:23
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* DescribeRollbackTimeValidity
+
+
+
+## 人脸核身(faceid) 版本：2018-03-01
+
+### 第 71 次发布
+
+发布时间：2024-09-25 01:50:32
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [GetEidTokenConfig](http://document.tencentcloudapi.woa.com/document/product/1007/41958#GetEidTokenConfig)
+
+	* 新增成员：Speed
+
+
+
+
+## 物联网边缘计算平台(iecp) 版本：2021-09-14
+
+### 第 3 次发布
+
+发布时间：2024-09-25 01:53:53
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* ApplyMarketComponent
+* CreateApplicationVisualization
+* CreateEdgeUnitApplicationVisualization
+* CreateEdgeUnitApplicationYaml
+* DeleteApplications
+* DeleteEdgeUnitApplications
+* DescribeApplicationVisualization
+* DescribeApplicationYaml
+* DescribeApplicationYamlError
+* DescribeApplications
+* DescribeEdgeUnitApplicationEvents
+* DescribeEdgeUnitApplicationLogs
+* DescribeEdgeUnitApplicationPodContainers
+* DescribeEdgeUnitApplicationPods
+* DescribeEdgeUnitApplicationVisualization
+* DescribeEdgeUnitApplicationYaml
+* DescribeEdgeUnitApplicationYamlError
+* DescribeEdgeUnitCloud
+* ModifyApplicationBasicInfo
+* ModifyApplicationVisualization
+
+<font color="#dd0000">**删除数据结构**：</font>
+
+* ApplicationTemplate
+* ContainerStatus
+* EdgeUnitStatisticItem
+* Event
+* PodStatus
+
+
+
+## 腾讯云可观测平台(monitor) 版本：2018-07-24
+
+### 第 88 次发布
+
+发布时间：2024-09-25 02:05:19
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* CheckIsPrometheusNewUser
+* DescribePrometheusRecordRuleYaml
+
+
+
+## 微服务平台 TSF(tsf) 版本：2018-03-26
+
+### 第 52 次发布
+
+发布时间：2024-09-25 02:32:40
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* DescribeApplicationBusinessLogConfig
+
+
+
 # Release 3.0.1078.1
 
 ## 账号中心(account) 版本：2018-12-25
