@@ -3014,6 +3014,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "CDC唯一ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cluster-gbo27yc4",
+          "member": "string",
+          "name": "DedicatedClusterId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -3445,6 +3455,15 @@
           "example": "test",
           "member": "string",
           "name": "AddressName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "CDC唯一ID",
+          "example": "cluster-gbo27yc4",
+          "member": "string",
+          "name": "DedicatedClusterId",
           "required": false,
           "type": "string"
         },

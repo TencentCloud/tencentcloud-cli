@@ -790,6 +790,16 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否允许记录键盘\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "AllowKeyboardLogger",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1421,7 +1431,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1431,7 +1441,7 @@
           "example": "\"我的命令模板\"",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1441,7 +1451,7 @@
           "example": "rm -rf",
           "member": "string",
           "name": "CmdList",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -1869,6 +1879,15 @@
           "name": "AllowAccessCredential",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否允许记录键盘",
+          "example": "false",
+          "member": "bool",
+          "name": "AllowKeyboardLogger",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -1882,6 +1901,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Id",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5418,6 +5438,15 @@
           "example": "true",
           "member": "bool",
           "name": "AllowAccessCredential",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否允许键盘记录",
+          "example": "false",
+          "member": "bool",
+          "name": "AllowKeyboardLogger",
           "required": false,
           "type": "bool"
         }

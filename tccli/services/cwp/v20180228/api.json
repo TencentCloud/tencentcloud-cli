@@ -1408,11 +1408,11 @@
       "status": "online"
     },
     "DescribeIndexList": {
-      "document": "获取索引列表",
+      "document": "接口已废弃\n\n获取索引列表",
       "input": "DescribeIndexListRequest",
       "name": "获取索引列表",
       "output": "DescribeIndexListResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeJavaMemShellInfo": {
       "document": "查询java内存马事件详细信息",

@@ -218,10 +218,6 @@ Output:
                 "RegionName": "港澳台地区（香港）"
             },
             {
-                "RegionId": 6,
-                "RegionName": "北美地区（多伦多）"
-            },
-            {
                 "RegionId": 7,
                 "RegionName": "华东地区（上海金融）"
             },
