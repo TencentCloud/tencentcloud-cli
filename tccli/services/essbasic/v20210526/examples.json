@@ -96,12 +96,6 @@
         "title": "错误示例-创建签署链接中指定的C端个人用户不在合同参与人列表中"
       },
       {
-        "document": "1. 合同已经创建完成，其中个人用户A需要补充一些合同信息\n2. 给个人用户A创建批量签署链接",
-        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelCreateBatchQuickSignUrl\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"ProxyOrganizationOpenId\": \"org_dianziqian\",\n        \"AppId\": \"yDRSRUUgygj6rq7wUuO4zjECxndqQApl\"\n    },\n    \"FlowApproverInfo\": {\n        \"ApproverType\": \"PERSON\",\n        \"Mobile\": \"13200000000\",\n        \"Name\": \"典子谦\",\n        \"IdCardNumber\": \"620000198802020000\",\n        \"IdCardType\": \"ID_CARD\"\n    },\n    \"SignatureTypes\": [\n        0,\n        1\n    ],\n    \"ApproverSignTypes\": [\n        1,\n        3\n    ],\n    \"FlowIds\": [\n        \"yDwFkUUckpstzjhfUugNAWf1KibXqS26\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"FailedOperation\",\n            \"Message\": \"个人H5批量签署，不支持还需签署方推拽签署控件的合同。不满足合同：[\\\"yDwFkUUckpstzjhfUugNAWf1KibXqS26\\\"]\"\n        },\n        \"RequestId\": \"s1698**1759\"\n    }\n}",
-        "title": "错误示例-创建批量签署链接中的合同，个人用户还有填写控件需要补充"
-      },
-      {
         "document": "1. 指定了合同流程ID信息\n2. 指定了合同组ID信息",
         "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelCreateBatchQuickSignUrl\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"ProxyOrganizationOpenId\": \"org_dianziqian\",\n        \"AppId\": \"yDRSRUUgygj6rq7wUuO4zjECxndqQApl\"\n    },\n    \"FlowApproverInfo\": {\n        \"ApproverType\": \"PERSON\",\n        \"Mobile\": \"13200000000\",\n        \"Name\": \"典子谦\",\n        \"IdCardNumber\": \"620000198802020000\",\n        \"IdCardType\": \"ID_CARD\"\n    },\n    \"FlowGroupId\": \"yDSL9UUckpo*****jwSsug2y3cW\",\n    \"FlowIds\": [\n        \"yDRSRUUgygj6******7wUuaaadqccc\",\n        \"yDRSRUUgygj6rq***Cpxxxsdfa\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"FailedOperation\",\n            \"Message\": \"请勿同时传入流程ID和合同组ID，请检查参数后再试\"\n        },\n        \"RequestId\": \"s17007305****493\"\n    }\n}",

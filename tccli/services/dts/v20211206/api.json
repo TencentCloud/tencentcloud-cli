@@ -1550,7 +1550,7 @@
         },
         {
           "disabled": false,
-          "document": "源端信息，单节点数据库使用，且SrcNodeType传single",
+          "document": "源端信息，单机版类型数据库配置使用，且SrcNodeType传single。例如mysql、percona、mariadb等。",
           "example": "无",
           "member": "Endpoint",
           "name": "SrcInfo",
@@ -1559,7 +1559,7 @@
         },
         {
           "disabled": false,
-          "document": "源端信息，多节点数据库使用，且SrcNodeType传cluster",
+          "document": "源端信息，分布式类型数据库配置使用，且SrcNodeType传cluster。例如分布式数据库tdsqlmysql等。",
           "example": "无",
           "member": "SyncDBEndpointInfos",
           "name": "SrcInfos",
@@ -1577,7 +1577,7 @@
         },
         {
           "disabled": false,
-          "document": "目标端信息，单节点数据库使用",
+          "document": "目标端信息，单机版类型数据库配置使用，且SrcNodeType传single。例如mysql、percona、mariadb等。",
           "example": "无",
           "member": "Endpoint",
           "name": "DstInfo",
@@ -1586,7 +1586,7 @@
         },
         {
           "disabled": false,
-          "document": "目标端信息，多节点数据库使用，且DstNodeType传cluster",
+          "document": "目标端信息，分布式类型数据库配置使用，且SrcNodeType传cluster。例如分布式数据库tdsqlmysql等。",
           "example": "无",
           "member": "SyncDBEndpointInfos",
           "name": "DstInfos",
@@ -11067,7 +11067,7 @@
           "example": "无",
           "member": "Column",
           "name": "Columns",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -11078,7 +11078,7 @@
           "example": "[\"_t1_old\",_t1_new\"]",
           "member": "string",
           "name": "TmpTables",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -11089,7 +11089,7 @@
           "example": "pt",
           "member": "string",
           "name": "TableEditMode",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true

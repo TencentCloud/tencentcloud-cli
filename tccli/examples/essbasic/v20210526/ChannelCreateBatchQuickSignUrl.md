@@ -187,41 +187,7 @@ Output:
 }
 ```
 
-**Example 6: 错误示例-创建批量签署链接中的合同，个人用户还有填写控件需要补充**
-
-1. 合同已经创建完成，其中个人用户A需要补充一些合同信息
-2. 给个人用户A创建批量签署链接
-
-Input: 
-
-```
-tccli essbasic ChannelCreateBatchQuickSignUrl --cli-unfold-argument  \
-    --Agent.ProxyOrganizationOpenId org_dianziqian \
-    --Agent.AppId yDRSRUUgygj6rq7wUuO4zjECxndqQApl \
-    --FlowApproverInfo.ApproverType PERSON \
-    --FlowApproverInfo.Mobile 13200000000 \
-    --FlowApproverInfo.Name 典子谦 \
-    --FlowApproverInfo.IdCardNumber 620000198802020000 \
-    --FlowApproverInfo.IdCardType ID_CARD \
-    --SignatureTypes 0 1 \
-    --ApproverSignTypes 1 3 \
-    --FlowIds yDwFkUUckpstzjhfUugNAWf1KibXqS26
-```
-
-Output: 
-```
-{
-    "Response": {
-        "Error": {
-            "Code": "FailedOperation",
-            "Message": "个人H5批量签署，不支持还需签署方推拽签署控件的合同。不满足合同：[\"yDwFkUUckpstzjhfUugNAWf1KibXqS26\"]"
-        },
-        "RequestId": "s1698**1759"
-    }
-}
-```
-
-**Example 7: 错误示例-为个人用户生成H5批量签署链接，既传入了合同流程ID信息，又传入了合同组ID信息**
+**Example 6: 错误示例-为个人用户生成H5批量签署链接，既传入了合同流程ID信息，又传入了合同组ID信息**
 
 1. 指定了合同流程ID信息
 2. 指定了合同组ID信息
@@ -254,7 +220,7 @@ Output:
 }
 ```
 
-**Example 8: 错误示例-为个人用户生成H5批量签署链接，没有指定合同流程ID信息，也没有指定合同组ID信息**
+**Example 7: 错误示例-为个人用户生成H5批量签署链接，没有指定合同流程ID信息，也没有指定合同组ID信息**
 
 1. 没有指定合同流程ID信息
 2. 没有指定合同组ID信息
@@ -285,7 +251,7 @@ Output:
 }
 ```
 
-**Example 9: 发起合同后，获取C端签署人的H5批量领取链接**
+**Example 8: 发起合同后，获取C端签署人的H5批量领取链接**
 
 1. 创建批量签署链接的合同签署方，必须都是动态签署人且未补充。
 2. 批量签署的合同数量不少于1份，不超过100份

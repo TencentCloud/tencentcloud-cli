@@ -1,113 +1,194 @@
 # 本版本更新包含以下内容：
 
-## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+## 主机安全(cwp) 版本：2018-02-28
 
-### 第 98 次发布
+### 第 99 次发布
 
-发布时间：2024-09-25 01:36:23
+发布时间：2024-09-26 01:35:45
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* DescribeIndexList
+
+
+
+## 运维安全中心（堡垒机）(dasb) 版本：2019-10-18
+
+### 第 32 次发布
+
+发布时间：2024-09-26 01:41:45
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-<font color="#dd0000">**删除接口**：</font>
+修改接口：
 
-* DescribeRollbackTimeValidity
+* [CreateAcl](http://document.tencentcloudapi.woa.com/document/product/1492/74801)
 
+	* 新增入参：AllowKeyboardLogger
 
+* [ModifyAcl](http://document.tencentcloudapi.woa.com/document/product/1492/74798)
 
-## 人脸核身(faceid) 版本：2018-03-01
+	* 新增入参：AllowKeyboardLogger
 
-### 第 71 次发布
-
-发布时间：2024-09-25 01:50:32
-
-本次发布包含了以下内容：
-
-改善已有的文档。
 
 修改数据结构：
 
-* [GetEidTokenConfig](http://document.tencentcloudapi.woa.com/document/product/1007/41958#GetEidTokenConfig)
+* [Acl](http://document.tencentcloudapi.woa.com/document/product/1492/74806#Acl)
 
-	* 新增成员：Speed
-
-
-
-
-## 物联网边缘计算平台(iecp) 版本：2021-09-14
-
-### 第 3 次发布
-
-发布时间：2024-09-25 01:53:53
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-<font color="#dd0000">**删除接口**：</font>
-
-* ApplyMarketComponent
-* CreateApplicationVisualization
-* CreateEdgeUnitApplicationVisualization
-* CreateEdgeUnitApplicationYaml
-* DeleteApplications
-* DeleteEdgeUnitApplications
-* DescribeApplicationVisualization
-* DescribeApplicationYaml
-* DescribeApplicationYamlError
-* DescribeApplications
-* DescribeEdgeUnitApplicationEvents
-* DescribeEdgeUnitApplicationLogs
-* DescribeEdgeUnitApplicationPodContainers
-* DescribeEdgeUnitApplicationPods
-* DescribeEdgeUnitApplicationVisualization
-* DescribeEdgeUnitApplicationYaml
-* DescribeEdgeUnitApplicationYamlError
-* DescribeEdgeUnitCloud
-* ModifyApplicationBasicInfo
-* ModifyApplicationVisualization
-
-<font color="#dd0000">**删除数据结构**：</font>
-
-* ApplicationTemplate
-* ContainerStatus
-* EdgeUnitStatisticItem
-* Event
-* PodStatus
+	* 新增成员：AllowKeyboardLogger
 
 
 
-## 腾讯云可观测平台(monitor) 版本：2018-07-24
 
-### 第 88 次发布
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
 
-发布时间：2024-09-25 02:05:19
+### 第 156 次发布
+
+发布时间：2024-09-26 01:55:17
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-<font color="#dd0000">**删除接口**：</font>
+修改接口：
 
-* CheckIsPrometheusNewUser
-* DescribePrometheusRecordRuleYaml
+* [CreateConsoleLoginUrl](http://document.tencentcloudapi.woa.com/document/product/1595/75251)
+
+	* 新增入参：AutoActive
 
 
 
-## 微服务平台 TSF(tsf) 版本：2018-03-26
 
-### 第 52 次发布
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
 
-发布时间：2024-09-25 02:32:40
+
+
+## 轻量应用服务器(lighthouse) 版本：2020-03-24
+
+### 第 58 次发布
+
+发布时间：2024-09-26 02:08:12
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-<font color="#dd0000">**删除接口**：</font>
+修改接口：
 
-* DescribeApplicationBusinessLogConfig
+* [InquirePriceRenewInstances](http://document.tencentcloudapi.woa.com/document/product/1207/55557)
+
+	* 新增入参：PurchaseType
+
+
+
+
+## 腾讯健康组学平台(omics) 版本：2022-11-28
+
+### 第 14 次发布
+
+发布时间：2024-09-26 02:17:56
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [VolumeInfo](http://document.tencentcloudapi.woa.com/document/product/1725/80781#VolumeInfo)
+
+修改数据结构：
+
+* [ApplicationVersion](http://document.tencentcloudapi.woa.com/document/product/1725/80781#ApplicationVersion)
+
+	* 新增成员：GitSource
+
+* [RunGroup](http://document.tencentcloudapi.woa.com/document/product/1725/80781#RunGroup)
+
+	* 新增成员：AccessMode, Type, WorkDir, InputType, InputCosUri, InputTemplateId, Volumes
+
+* [RunMetadata](http://document.tencentcloudapi.woa.com/document/product/1725/80781#RunMetadata)
+
+	* 新增成员：WorkDir
+
+* [RunOption](http://document.tencentcloudapi.woa.com/document/product/1725/80781#RunOption)
+
+	* 新增成员：AddRunInfoToOutputDir
+
+
+
+
+## 云函数(scf) 版本：2018-04-16
+
+### 第 51 次发布
+
+发布时间：2024-09-26 02:23:44
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ListFunctionVersions](http://document.tencentcloudapi.woa.com/document/product/583/84961)
+
+新增数据结构：
+
+* [FunctionVersions](http://document.tencentcloudapi.woa.com/document/product/583/17244#FunctionVersions)
+
+
+
+## SSL 证书(ssl) 版本：2019-12-05
+
+### 第 68 次发布
+
+发布时间：2024-09-26 02:27:11
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [HostingConfig](http://document.tencentcloudapi.woa.com/document/product/400/41679#HostingConfig)
+
+修改数据结构：
+
+* [Certificates](http://document.tencentcloudapi.woa.com/document/product/400/41679#Certificates)
+
+	* 新增成员：HostingResourceTypes, HostingConfig
+
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 156 次发布
+
+发布时间：2024-09-26 02:46:46
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [AllocateAddresses](http://document.tencentcloudapi.woa.com/document/product/215/16699)
+
+	* 新增入参：DedicatedClusterId
+
+
+修改数据结构：
+
+* [Address](http://document.tencentcloudapi.woa.com/document/product/215/15824#Address)
+
+	* 新增成员：DedicatedClusterId
+
 
 
 
@@ -32962,6 +33043,18 @@
 
 ## 主机安全(cwp) 版本：2018-02-28
 
+### 第 99 次发布
+
+发布时间：2024-09-26 01:35:45
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* DescribeIndexList
+
 ### 第 98 次发布
 
 发布时间：2024-09-24 14:37:32
@@ -38222,6 +38315,32 @@
 
 
 ## 运维安全中心（堡垒机）(dasb) 版本：2019-10-18
+
+### 第 32 次发布
+
+发布时间：2024-09-26 01:41:45
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateAcl](http://document.tencentcloudapi.woa.com/document/product/1492/74801)
+
+	* 新增入参：AllowKeyboardLogger
+
+* [ModifyAcl](http://document.tencentcloudapi.woa.com/document/product/1492/74798)
+
+	* 新增入参：AllowKeyboardLogger
+
+
+修改数据结构：
+
+* [Acl](http://document.tencentcloudapi.woa.com/document/product/1492/74806#Acl)
+
+	* 新增成员：AllowKeyboardLogger
+
 
 ### 第 31 次发布
 
@@ -52879,6 +52998,21 @@
 
 ## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
 
+### 第 156 次发布
+
+发布时间：2024-09-26 01:55:17
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateConsoleLoginUrl](http://document.tencentcloudapi.woa.com/document/product/1595/75251)
+
+	* 新增入参：AutoActive
+
+
 ### 第 155 次发布
 
 发布时间：2024-09-24 14:56:24
@@ -65453,6 +65587,21 @@
 
 
 ## 轻量应用服务器(lighthouse) 版本：2020-03-24
+
+### 第 58 次发布
+
+发布时间：2024-09-26 02:08:12
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [InquirePriceRenewInstances](http://document.tencentcloudapi.woa.com/document/product/1207/55557)
+
+	* 新增入参：PurchaseType
+
 
 ### 第 57 次发布
 
@@ -78821,6 +78970,37 @@
 
 ## 腾讯健康组学平台(omics) 版本：2022-11-28
 
+### 第 14 次发布
+
+发布时间：2024-09-26 02:17:56
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [[VolumeInfo](http://document.tencentcloudapi.woa.com/document/product/1725/80781#VolumeInfo)](http://document.tencentcloudapi.woa.com/document/product/1725/80781#[VolumeInfo](http://document.tencentcloudapi.woa.com/document/product/1725/80781#VolumeInfo))
+
+修改数据结构：
+
+* [ApplicationVersion](http://document.tencentcloudapi.woa.com/document/product/1725/80781#ApplicationVersion)
+
+	* 新增成员：GitSource
+
+* [RunGroup](http://document.tencentcloudapi.woa.com/document/product/1725/80781#RunGroup)
+
+	* 新增成员：AccessMode, Type, WorkDir, InputType, InputCosUri, InputTemplateId, Volumes
+
+* [RunMetadata](http://document.tencentcloudapi.woa.com/document/product/1725/80781#RunMetadata)
+
+	* 新增成员：WorkDir
+
+* [RunOption](http://document.tencentcloudapi.woa.com/document/product/1725/80781#RunOption)
+
+	* 新增成员：AddRunInfoToOutputDir
+
+
 ### 第 13 次发布
 
 发布时间：2024-09-16 02:26:06
@@ -84468,6 +84648,22 @@
 
 ## 云函数(scf) 版本：2018-04-16
 
+### 第 51 次发布
+
+发布时间：2024-09-26 02:23:44
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[ListFunctionVersions](http://document.tencentcloudapi.woa.com/document/product/583/84961)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[FunctionVersions](http://document.tencentcloudapi.woa.com/document/product/583/17244#FunctionVersions)](http://document.tencentcloudapi.woa.com/document/product/583/17244#[FunctionVersions](http://document.tencentcloudapi.woa.com/document/product/583/17244#FunctionVersions))
+
 ### 第 50 次发布
 
 发布时间：2024-08-28 01:29:58
@@ -87931,6 +88127,25 @@
 
 
 ## SSL 证书(ssl) 版本：2019-12-05
+
+### 第 68 次发布
+
+发布时间：2024-09-26 02:27:11
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [[HostingConfig](http://document.tencentcloudapi.woa.com/document/product/400/41679#HostingConfig)](http://document.tencentcloudapi.woa.com/document/product/400/41679#[HostingConfig](http://document.tencentcloudapi.woa.com/document/product/400/41679#HostingConfig))
+
+修改数据结构：
+
+* [Certificates](http://document.tencentcloudapi.woa.com/document/product/400/41679#Certificates)
+
+	* 新增成员：HostingResourceTypes, HostingConfig
+
 
 ### 第 67 次发布
 
@@ -113784,6 +113999,28 @@
 
 
 ## 私有网络(vpc) 版本：2017-03-12
+
+### 第 156 次发布
+
+发布时间：2024-09-26 02:46:46
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [AllocateAddresses](http://document.tencentcloudapi.woa.com/document/product/215/16699)
+
+	* 新增入参：DedicatedClusterId
+
+
+修改数据结构：
+
+* [Address](http://document.tencentcloudapi.woa.com/document/product/215/15824#Address)
+
+	* 新增成员：DedicatedClusterId
+
 
 ### 第 155 次发布
 

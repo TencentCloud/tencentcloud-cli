@@ -7822,6 +7822,15 @@
           "name": "AlignInstanceExpiredTime",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "购买方式。\n\n- ACTIVITY：活动优惠\n- NORMAL：正常购买\n\n默认值：ACTIVITY。",
+          "example": "ACTIVITY",
+          "member": "string",
+          "name": "PurchaseType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

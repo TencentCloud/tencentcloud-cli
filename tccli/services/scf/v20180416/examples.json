@@ -240,6 +240,14 @@
         "title": "拉取函数异步事件列表"
       }
     ],
+    "ListFunctionVersions": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: scf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListFunctionVersions\n<公共请求参数>\n\n{\n    \"Namespace\": \"zed-cluster\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 18,\n        \"FunctionVersions\": [\n            {\n                \"FunctionName\": \"helloworld-1727163429\",\n                \"Namespace\": \"zed-cluster\",\n                \"Qualifier\": \"$LATEST\"\n            },\n            {\n                \"FunctionName\": \"zed-accelerate-t21\",\n                \"Namespace\": \"zed-cluster\",\n                \"Qualifier\": \"$LATEST\"\n            },\n            {\n                \"FunctionName\": \"zed-accelerate-t14\",\n                \"Namespace\": \"zed-cluster\",\n                \"Qualifier\": \"$LATEST\"\n            }\n        ],\n        \"RequestId\": \"cdeb84e9-c1cf-4105-b2ad-0c78c1621c11\"\n    }\n}",
+        "title": "请求函数版本"
+      }
+    ],
     "ListFunctions": [
       {
         "document": "",
