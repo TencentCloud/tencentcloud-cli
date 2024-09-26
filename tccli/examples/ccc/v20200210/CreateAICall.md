@@ -8,7 +8,7 @@ Input:
 tccli ccc CreateAICall --cli-unfold-argument  \
     --Callee 008612300000000 \
     --SdkAppId 1400000000 \
-    --SystemPrompt 你是一只机器人 \
+    --SystemPrompt 您是一只机器人 \
     --LLMType openai \
     --Model gpt3 \
     --APIKey 114514 \

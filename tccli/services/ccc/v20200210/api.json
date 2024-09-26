@@ -1643,7 +1643,7 @@
         {
           "disabled": false,
           "document": "用于设定AI座席人设、说话规则、任务等的全局提示词。",
-          "example": "你是一只ai问答机器人",
+          "example": "您是一只AI问答机器人",
           "member": "string",
           "name": "SystemPrompt",
           "required": true,
@@ -5935,6 +5935,16 @@
           "output_required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户ID",
+          "example": "user123",
+          "member": "string",
+          "name": "ClientUserId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

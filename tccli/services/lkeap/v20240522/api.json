@@ -1032,7 +1032,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "文档类型，qa:问答对，doc:文档段",
+          "document": "文档类型，QA:问答对，DOC:文档段",
           "example": "qa",
           "member": "string",
           "name": "DocType",

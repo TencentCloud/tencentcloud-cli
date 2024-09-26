@@ -6937,6 +6937,15 @@
         },
         {
           "disabled": false,
+          "document": "描述了实例CPU拓扑结构的相关信息。若不指定该参数，则按系统资源情况决定。",
+          "example": "无",
+          "member": "CpuTopology",
+          "name": "CpuTopology",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
           "document": "实例启动模板。",
           "example": "无",
           "member": "LaunchTemplate",

@@ -3262,6 +3262,15 @@
           "name": "CMDBAdmins",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "用于JSON结构直接创建实例，",
+          "example": "无",
+          "member": "string",
+          "name": "JSON",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -8553,6 +8562,28 @@
           "required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "固定IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "StaticIpAcrossClusters",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "固定CBS\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "StaticCbsAcrossClusters",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -9294,7 +9325,7 @@
           "example": "无",
           "member": "string",
           "name": "Clusters",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -9316,7 +9347,7 @@
           "example": "无",
           "member": "int64",
           "name": "Partition",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "int",
           "value_allowed_null": false

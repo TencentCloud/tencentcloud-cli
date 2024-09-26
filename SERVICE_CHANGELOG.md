@@ -1,26 +1,10 @@
 # 本版本更新包含以下内容：
 
-## 主机安全(cwp) 版本：2018-02-28
+## 应用管理平台(camp) 版本：2022-09-20
 
-### 第 99 次发布
+### 第 42 次发布
 
-发布时间：2024-09-26 01:35:45
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-<font color="#dd0000">**预下线接口**：</font>
-
-* DescribeIndexList
-
-
-
-## 运维安全中心（堡垒机）(dasb) 版本：2019-10-18
-
-### 第 32 次发布
-
-发布时间：2024-09-26 01:41:45
+发布时间：2024-09-27 01:17:17
 
 本次发布包含了以下内容：
 
@@ -28,106 +12,128 @@
 
 修改接口：
 
-* [CreateAcl](http://document.tencentcloudapi.woa.com/document/product/1492/74801)
+* [CreateInstance](http://document.tencentcloudapi.woa.com/document/product/1609/78003)
 
-	* 新增入参：AllowKeyboardLogger
-
-* [ModifyAcl](http://document.tencentcloudapi.woa.com/document/product/1492/74798)
-
-	* 新增入参：AllowKeyboardLogger
+	* 新增入参：JSON
 
 
 修改数据结构：
 
-* [Acl](http://document.tencentcloudapi.woa.com/document/product/1492/74806#Acl)
+* [PlacementPolicy](http://document.tencentcloudapi.woa.com/document/product/1609/78009#PlacementPolicy)
 
-	* 新增成员：AllowKeyboardLogger
-
-
-
-
-## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
-
-### 第 156 次发布
-
-发布时间：2024-09-26 01:55:17
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [CreateConsoleLoginUrl](http://document.tencentcloudapi.woa.com/document/product/1595/75251)
-
-	* 新增入参：AutoActive
+	* 新增成员：StaticIpAcrossClusters, StaticCbsAcrossClusters
 
 
 
 
-## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+## 云联络中心(ccc) 版本：2020-02-10
 
+### 第 63 次发布
 
-
-## 轻量应用服务器(lighthouse) 版本：2020-03-24
-
-### 第 58 次发布
-
-发布时间：2024-09-26 02:08:12
+发布时间：2024-09-27 01:18:54
 
 本次发布包含了以下内容：
 
 改善已有的文档。
-
-修改接口：
-
-* [InquirePriceRenewInstances](http://document.tencentcloudapi.woa.com/document/product/1207/55557)
-
-	* 新增入参：PurchaseType
-
-
-
-
-## 腾讯健康组学平台(omics) 版本：2022-11-28
-
-### 第 14 次发布
-
-发布时间：2024-09-26 02:17:56
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增数据结构：
-
-* [VolumeInfo](http://document.tencentcloudapi.woa.com/document/product/1725/80781#VolumeInfo)
 
 修改数据结构：
 
-* [ApplicationVersion](http://document.tencentcloudapi.woa.com/document/product/1725/80781#ApplicationVersion)
+* [IMCdrInfo](http://document.tencentcloudapi.woa.com/document/product/679/47715#IMCdrInfo)
 
-	* 新增成员：GitSource
-
-* [RunGroup](http://document.tencentcloudapi.woa.com/document/product/1725/80781#RunGroup)
-
-	* 新增成员：AccessMode, Type, WorkDir, InputType, InputCosUri, InputTemplateId, Volumes
-
-* [RunMetadata](http://document.tencentcloudapi.woa.com/document/product/1725/80781#RunMetadata)
-
-	* 新增成员：WorkDir
-
-* [RunOption](http://document.tencentcloudapi.woa.com/document/product/1725/80781#RunOption)
-
-	* 新增成员：AddRunInfoToOutputDir
+	* 新增成员：ClientUserId
 
 
 
 
-## 云函数(scf) 版本：2018-04-16
+## 内容分发网络 CDN(cdn) 版本：2018-06-06
 
-### 第 51 次发布
+### 第 57 次发布
 
-发布时间：2024-09-26 02:23:44
+发布时间：2024-09-27 01:21:16
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [CacheConfigCache](http://document.tencentcloudapi.woa.com/document/product/228/30987#CacheConfigCache)
+
+	* 新增成员：OriginMtimeCheckType
+
+* [CacheConfigFollowOrigin](http://document.tencentcloudapi.woa.com/document/product/228/30987#CacheConfigFollowOrigin)
+
+	* 新增成员：OriginMtimeCheckType
+
+
+
+
+## 云服务器(cvm) 版本：2019-12-12
+
+
+
+## 云服务器(cvm) 版本：2017-03-12
+
+### 第 83 次发布
+
+发布时间：2024-09-27 01:30:45
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [InquiryPriceRunInstances](http://document.tencentcloudapi.woa.com/document/product/213/15726)
+
+	* 新增入参：CpuTopology
+
+
+
+
+## 弹性 MapReduce(emr) 版本：2019-01-03
+
+### 第 65 次发布
+
+发布时间：2024-09-27 01:45:53
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeInsightList](http://document.tencentcloudapi.woa.com/document/product/589/82972)
+
+	* 新增入参：Type
+
+
+
+
+## 邮件推送(ses) 版本：2020-10-02
+
+### 第 24 次发布
+
+发布时间：2024-09-27 02:13:41
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateCustomBlacklist](http://document.tencentcloudapi.woa.com/document/product/1288/84184)
+
+	* 新增出参：TotalCount, ValidCount, TooLongCount, RepeatCount, InvalidCount
+
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 157 次发布
+
+发布时间：2024-09-27 02:32:54
 
 本次发布包含了以下内容：
 
@@ -135,59 +141,48 @@
 
 新增接口：
 
-* [ListFunctionVersions](http://document.tencentcloudapi.woa.com/document/product/583/84961)
+* [CreateCdcLDCXList](http://document.tencentcloudapi.woa.com/document/product/215/85000)
+* [CreateCdcNetPlanes](http://document.tencentcloudapi.woa.com/document/product/215/84999)
+* [CreateHighPriorityRouteTable](http://document.tencentcloudapi.woa.com/document/product/215/84998)
+* [CreateHighPriorityRoutes](http://document.tencentcloudapi.woa.com/document/product/215/84997)
+* [DeleteCdcLDCXList](http://document.tencentcloudapi.woa.com/document/product/215/84996)
+* [DeleteCdcNetPlanes](http://document.tencentcloudapi.woa.com/document/product/215/84995)
+* [DeleteHighPriorityRouteTables](http://document.tencentcloudapi.woa.com/document/product/215/84994)
+* [DeleteHighPriorityRoutes](http://document.tencentcloudapi.woa.com/document/product/215/84993)
+* [DescribeCdcLDCXList](http://document.tencentcloudapi.woa.com/document/product/215/84992)
+* [DescribeCdcNetPlanes](http://document.tencentcloudapi.woa.com/document/product/215/84991)
+* [DescribeCdcUsedIdcVlan](http://document.tencentcloudapi.woa.com/document/product/215/84990)
+* [DescribeHighPriorityRouteTables](http://document.tencentcloudapi.woa.com/document/product/215/84989)
+* [DescribeHighPriorityRoutes](http://document.tencentcloudapi.woa.com/document/product/215/84988)
+* [DescribeRoutes](http://document.tencentcloudapi.woa.com/document/product/215/84979)
+* [ModifyCdcLDCXAttribute](http://document.tencentcloudapi.woa.com/document/product/215/84987)
+* [ModifyCdcNetPlaneAttribute](http://document.tencentcloudapi.woa.com/document/product/215/84986)
+* [ModifyHighPriorityRouteAttribute](http://document.tencentcloudapi.woa.com/document/product/215/84985)
+* [ModifyHighPriorityRouteECMPAlgorithm](http://document.tencentcloudapi.woa.com/document/product/215/84984)
+* [ModifyHighPriorityRouteTableAttribute](http://document.tencentcloudapi.woa.com/document/product/215/84983)
+* [ReplaceHighPriorityRouteTableAssociation](http://document.tencentcloudapi.woa.com/document/product/215/84982)
+* [ReplaceHighPriorityRoutes](http://document.tencentcloudapi.woa.com/document/product/215/84981)
+* [ResetHighPriorityRoutes](http://document.tencentcloudapi.woa.com/document/product/215/84980)
 
 新增数据结构：
 
-* [FunctionVersions](http://document.tencentcloudapi.woa.com/document/product/583/17244#FunctionVersions)
-
-
-
-## SSL 证书(ssl) 版本：2019-12-05
-
-### 第 68 次发布
-
-发布时间：2024-09-26 02:27:11
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增数据结构：
-
-* [HostingConfig](http://document.tencentcloudapi.woa.com/document/product/400/41679#HostingConfig)
+* [BgpInfo](http://document.tencentcloudapi.woa.com/document/product/215/15824#BgpInfo)
+* [CdcLDCX](http://document.tencentcloudapi.woa.com/document/product/215/15824#CdcLDCX)
+* [CdcNetPlane](http://document.tencentcloudapi.woa.com/document/product/215/15824#CdcNetPlane)
+* [ConnIPInfo](http://document.tencentcloudapi.woa.com/document/product/215/15824#ConnIPInfo)
+* [HighPriorityModifyItem](http://document.tencentcloudapi.woa.com/document/product/215/15824#HighPriorityModifyItem)
+* [HighPriorityRoute](http://document.tencentcloudapi.woa.com/document/product/215/15824#HighPriorityRoute)
+* [HighPriorityRouteTable](http://document.tencentcloudapi.woa.com/document/product/215/15824#HighPriorityRouteTable)
+* [ModeDetect](http://document.tencentcloudapi.woa.com/document/product/215/15824#ModeDetect)
+* [RouteECMPAlgorithm](http://document.tencentcloudapi.woa.com/document/product/215/15824#RouteECMPAlgorithm)
+* [UsedVlan](http://document.tencentcloudapi.woa.com/document/product/215/15824#UsedVlan)
+* [VRRP](http://document.tencentcloudapi.woa.com/document/product/215/15824#VRRP)
 
 修改数据结构：
 
-* [Certificates](http://document.tencentcloudapi.woa.com/document/product/400/41679#Certificates)
+* [EndPoint](http://document.tencentcloudapi.woa.com/document/product/215/15824#EndPoint)
 
-	* 新增成员：HostingResourceTypes, HostingConfig
-
-
-
-
-## 私有网络(vpc) 版本：2017-03-12
-
-### 第 156 次发布
-
-发布时间：2024-09-26 02:46:46
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [AllocateAddresses](http://document.tencentcloudapi.woa.com/document/product/215/16699)
-
-	* 新增入参：DedicatedClusterId
-
-
-修改数据结构：
-
-* [Address](http://document.tencentcloudapi.woa.com/document/product/215/15824#Address)
-
-	* 新增成员：DedicatedClusterId
+	* 新增成员：Option
 
 
 
@@ -9483,6 +9478,29 @@
 
 
 
+## 腾讯云CA(ca) 版本：2023-02-28
+
+### 第 1 次发布
+
+发布时间：2024-09-26 16:22:17
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateVerifyReport](http://document.tencentcloudapi.woa.com/document/product/1774/84966)
+* [DescribeVerifyReport](http://document.tencentcloudapi.woa.com/document/product/1774/84965)
+* [UploadFile](http://document.tencentcloudapi.woa.com/document/product/1774/84964)
+
+新增数据结构：
+
+* [FileInfo](http://document.tencentcloudapi.woa.com/document/product/1774/84967#FileInfo)
+
+
+
+
 ## 访问管理(cam) 版本：2019-01-16
 
 ### 第 32 次发布
@@ -10108,6 +10126,28 @@
 
 
 ## 应用管理平台(camp) 版本：2022-09-20
+
+### 第 42 次发布
+
+发布时间：2024-09-27 01:17:17
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateInstance](http://document.tencentcloudapi.woa.com/document/product/1609/78003)
+
+	* 新增入参：JSON
+
+
+修改数据结构：
+
+* [PlacementPolicy](http://document.tencentcloudapi.woa.com/document/product/1609/78009#PlacementPolicy)
+
+	* 新增成员：StaticIpAcrossClusters, StaticCbsAcrossClusters
+
 
 ### 第 41 次发布
 
@@ -12741,6 +12781,21 @@
 
 
 ## 云联络中心(ccc) 版本：2020-02-10
+
+### 第 63 次发布
+
+发布时间：2024-09-27 01:18:54
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [IMCdrInfo](http://document.tencentcloudapi.woa.com/document/product/679/47715#IMCdrInfo)
+
+	* 新增成员：ClientUserId
+
 
 ### 第 62 次发布
 
@@ -16477,6 +16532,25 @@
 
 
 ## 内容分发网络 CDN(cdn) 版本：2018-06-06
+
+### 第 57 次发布
+
+发布时间：2024-09-27 01:21:16
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [CacheConfigCache](http://document.tencentcloudapi.woa.com/document/product/228/30987#CacheConfigCache)
+
+	* 新增成员：OriginMtimeCheckType
+
+* [CacheConfigFollowOrigin](http://document.tencentcloudapi.woa.com/document/product/228/30987#CacheConfigFollowOrigin)
+
+	* 新增成员：OriginMtimeCheckType
+
 
 ### 第 56 次发布
 
@@ -31469,6 +31543,21 @@
 
 
 ## 云服务器(cvm) 版本：2017-03-12
+
+### 第 83 次发布
+
+发布时间：2024-09-27 01:30:45
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [InquiryPriceRunInstances](http://document.tencentcloudapi.woa.com/document/product/213/15726)
+
+	* 新增入参：CpuTopology
+
 
 ### 第 82 次发布
 
@@ -47682,6 +47771,21 @@
 
 
 ## 弹性 MapReduce(emr) 版本：2019-01-03
+
+### 第 65 次发布
+
+发布时间：2024-09-27 01:45:53
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeInsightList](http://document.tencentcloudapi.woa.com/document/product/589/82972)
+
+	* 新增入参：Type
+
 
 ### 第 64 次发布
 
@@ -78980,7 +79084,7 @@
 
 新增数据结构：
 
-* [[VolumeInfo](http://document.tencentcloudapi.woa.com/document/product/1725/80781#VolumeInfo)](http://document.tencentcloudapi.woa.com/document/product/1725/80781#[VolumeInfo](http://document.tencentcloudapi.woa.com/document/product/1725/80781#VolumeInfo))
+* [VolumeInfo](http://document.tencentcloudapi.woa.com/document/product/1725/80781#VolumeInfo)
 
 修改数据结构：
 
@@ -84658,11 +84762,11 @@
 
 新增接口：
 
-* [[ListFunctionVersions](http://document.tencentcloudapi.woa.com/document/product/583/84961)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [ListFunctionVersions](http://document.tencentcloudapi.woa.com/document/product/583/84961)
 
 新增数据结构：
 
-* [[FunctionVersions](http://document.tencentcloudapi.woa.com/document/product/583/17244#FunctionVersions)](http://document.tencentcloudapi.woa.com/document/product/583/17244#[FunctionVersions](http://document.tencentcloudapi.woa.com/document/product/583/17244#FunctionVersions))
+* [FunctionVersions](http://document.tencentcloudapi.woa.com/document/product/583/17244#FunctionVersions)
 
 ### 第 50 次发布
 
@@ -85621,6 +85725,21 @@
 
 
 ## 邮件推送(ses) 版本：2020-10-02
+
+### 第 24 次发布
+
+发布时间：2024-09-27 02:13:41
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateCustomBlacklist](http://document.tencentcloudapi.woa.com/document/product/1288/84184)
+
+	* 新增出参：TotalCount, ValidCount, TooLongCount, RepeatCount, InvalidCount
+
 
 ### 第 23 次发布
 
@@ -88138,7 +88257,7 @@
 
 新增数据结构：
 
-* [[HostingConfig](http://document.tencentcloudapi.woa.com/document/product/400/41679#HostingConfig)](http://document.tencentcloudapi.woa.com/document/product/400/41679#[HostingConfig](http://document.tencentcloudapi.woa.com/document/product/400/41679#HostingConfig))
+* [HostingConfig](http://document.tencentcloudapi.woa.com/document/product/400/41679#HostingConfig)
 
 修改数据结构：
 
@@ -113999,6 +114118,60 @@
 
 
 ## 私有网络(vpc) 版本：2017-03-12
+
+### 第 157 次发布
+
+发布时间：2024-09-27 02:32:54
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[CreateCdcLDCXList](http://document.tencentcloudapi.woa.com/document/product/215/85000)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[CreateCdcNetPlanes](http://document.tencentcloudapi.woa.com/document/product/215/84999)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[CreateHighPriorityRouteTable](http://document.tencentcloudapi.woa.com/document/product/215/84998)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[CreateHighPriorityRoutes](http://document.tencentcloudapi.woa.com/document/product/215/84997)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DeleteCdcLDCXList](http://document.tencentcloudapi.woa.com/document/product/215/84996)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DeleteCdcNetPlanes](http://document.tencentcloudapi.woa.com/document/product/215/84995)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DeleteHighPriorityRouteTables](http://document.tencentcloudapi.woa.com/document/product/215/84994)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DeleteHighPriorityRoutes](http://document.tencentcloudapi.woa.com/document/product/215/84993)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeCdcLDCXList](http://document.tencentcloudapi.woa.com/document/product/215/84992)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeCdcNetPlanes](http://document.tencentcloudapi.woa.com/document/product/215/84991)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeCdcUsedIdcVlan](http://document.tencentcloudapi.woa.com/document/product/215/84990)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeHighPriorityRouteTables](http://document.tencentcloudapi.woa.com/document/product/215/84989)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeHighPriorityRoutes](http://document.tencentcloudapi.woa.com/document/product/215/84988)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeRoutes](http://document.tencentcloudapi.woa.com/document/product/215/84979)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[ModifyCdcLDCXAttribute](http://document.tencentcloudapi.woa.com/document/product/215/84987)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[ModifyCdcNetPlaneAttribute](http://document.tencentcloudapi.woa.com/document/product/215/84986)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[ModifyHighPriorityRouteAttribute](http://document.tencentcloudapi.woa.com/document/product/215/84985)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[ModifyHighPriorityRouteECMPAlgorithm](http://document.tencentcloudapi.woa.com/document/product/215/84984)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[ModifyHighPriorityRouteTableAttribute](http://document.tencentcloudapi.woa.com/document/product/215/84983)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[ReplaceHighPriorityRouteTableAssociation](http://document.tencentcloudapi.woa.com/document/product/215/84982)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[ReplaceHighPriorityRoutes](http://document.tencentcloudapi.woa.com/document/product/215/84981)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[ResetHighPriorityRoutes](http://document.tencentcloudapi.woa.com/document/product/215/84980)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[BgpInfo](http://document.tencentcloudapi.woa.com/document/product/215/15824#BgpInfo)](http://document.tencentcloudapi.woa.com/document/product/215/15824#[BgpInfo](http://document.tencentcloudapi.woa.com/document/product/215/15824#BgpInfo))
+* [[CdcLDCX](http://document.tencentcloudapi.woa.com/document/product/215/15824#CdcLDCX)](http://document.tencentcloudapi.woa.com/document/product/215/15824#[CdcLDCX](http://document.tencentcloudapi.woa.com/document/product/215/15824#CdcLDCX))
+* [[CdcNetPlane](http://document.tencentcloudapi.woa.com/document/product/215/15824#CdcNetPlane)](http://document.tencentcloudapi.woa.com/document/product/215/15824#[CdcNetPlane](http://document.tencentcloudapi.woa.com/document/product/215/15824#CdcNetPlane))
+* [[ConnIPInfo](http://document.tencentcloudapi.woa.com/document/product/215/15824#ConnIPInfo)](http://document.tencentcloudapi.woa.com/document/product/215/15824#[ConnIPInfo](http://document.tencentcloudapi.woa.com/document/product/215/15824#ConnIPInfo))
+* [[HighPriorityModifyItem](http://document.tencentcloudapi.woa.com/document/product/215/15824#HighPriorityModifyItem)](http://document.tencentcloudapi.woa.com/document/product/215/15824#[HighPriorityModifyItem](http://document.tencentcloudapi.woa.com/document/product/215/15824#HighPriorityModifyItem))
+* [[HighPriorityRoute](http://document.tencentcloudapi.woa.com/document/product/215/15824#HighPriorityRoute)](http://document.tencentcloudapi.woa.com/document/product/215/15824#[HighPriorityRoute](http://document.tencentcloudapi.woa.com/document/product/215/15824#HighPriorityRoute))
+* [[HighPriorityRouteTable](http://document.tencentcloudapi.woa.com/document/product/215/15824#HighPriorityRouteTable)](http://document.tencentcloudapi.woa.com/document/product/215/15824#[HighPriorityRouteTable](http://document.tencentcloudapi.woa.com/document/product/215/15824#HighPriorityRouteTable))
+* [[ModeDetect](http://document.tencentcloudapi.woa.com/document/product/215/15824#ModeDetect)](http://document.tencentcloudapi.woa.com/document/product/215/15824#[ModeDetect](http://document.tencentcloudapi.woa.com/document/product/215/15824#ModeDetect))
+* [[RouteECMPAlgorithm](http://document.tencentcloudapi.woa.com/document/product/215/15824#RouteECMPAlgorithm)](http://document.tencentcloudapi.woa.com/document/product/215/15824#[RouteECMPAlgorithm](http://document.tencentcloudapi.woa.com/document/product/215/15824#RouteECMPAlgorithm))
+* [[UsedVlan](http://document.tencentcloudapi.woa.com/document/product/215/15824#UsedVlan)](http://document.tencentcloudapi.woa.com/document/product/215/15824#[UsedVlan](http://document.tencentcloudapi.woa.com/document/product/215/15824#UsedVlan))
+* [[VRRP](http://document.tencentcloudapi.woa.com/document/product/215/15824#VRRP)](http://document.tencentcloudapi.woa.com/document/product/215/15824#[VRRP](http://document.tencentcloudapi.woa.com/document/product/215/15824#VRRP))
+
+修改数据结构：
+
+* [EndPoint](http://document.tencentcloudapi.woa.com/document/product/215/15824#EndPoint)
+
+	* 新增成员：Option
+
 
 ### 第 156 次发布
 

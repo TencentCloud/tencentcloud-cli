@@ -162,6 +162,8 @@ tccli/services/btoe/v20210303/api.json
 tccli/services/btoe/v20210303/examples.json
 tccli/services/btoe/v20210514/api.json
 tccli/services/btoe/v20210514/examples.json
+tccli/services/ca/__init__.py
+tccli/services/ca/ca_client.py
 tccli/services/cam/__init__.py
 tccli/services/cam/cam_client.py
 tccli/services/cam/v20190116/api.json

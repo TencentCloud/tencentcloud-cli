@@ -486,7 +486,7 @@
     "DescribeMaintainPeriod": {
       "document": "查询实例维护时间窗",
       "input": "DescribeMaintainPeriodRequest",
-      "name": "查询实例维护时间窗",
+      "name": "本接口（DescribeMaintainPeriod）用于查询实例维护时间窗。",
       "output": "DescribeMaintainPeriodResponse",
       "status": "online"
     },
@@ -820,7 +820,7 @@
       "status": "online"
     },
     "ModifyInstanceUpgradeLimitDays": {
-      "document": "修改实例小版本升级限制时间",
+      "document": "本接口（ModifyInstanceUpgradeLimitDays）用于修改实例内核小版本的升级限制时间。",
       "input": "ModifyInstanceUpgradeLimitDaysRequest",
       "name": "修改实例小版本升级限制时间",
       "output": "ModifyInstanceUpgradeLimitDaysResponse",
@@ -829,7 +829,7 @@
     "ModifyMaintainPeriodConfig": {
       "document": "修改维护时间配置",
       "input": "ModifyMaintainPeriodConfigRequest",
-      "name": "修改维护时间配置",
+      "name": "本接口（ModifyMaintainPeriodConfig）用于修改维护时间配置。",
       "output": "ModifyMaintainPeriodConfigResponse",
       "status": "online"
     },
@@ -890,7 +890,7 @@
       "status": "online"
     },
     "OfflineCluster": {
-      "document": "销毁集群",
+      "document": "本接口（OfflineCluster）用于销毁集群。",
       "input": "OfflineClusterRequest",
       "name": "销毁集群",
       "output": "OfflineClusterResponse",
@@ -1039,7 +1039,7 @@
     "RollbackToNewCluster": {
       "document": "回档到新集群",
       "input": "RollbackToNewClusterRequest",
-      "name": "回档到新集群",
+      "name": "本接口（RollbackToNewCluster）用于回档到新集群。",
       "output": "RollbackToNewClusterResponse",
       "status": "online"
     },
@@ -1065,14 +1065,14 @@
       "status": "online"
     },
     "StartCLSDelivery": {
-      "document": "开启日志投递",
+      "document": "本接口（StartCLSDelivery）用于开启日志投递功能。",
       "input": "StartCLSDeliveryRequest",
       "name": "开启日志投递",
       "output": "StartCLSDeliveryResponse",
       "status": "online"
     },
     "StopCLSDelivery": {
-      "document": "停止日志投递",
+      "document": "本接口（StopCLSDelivery）用于停止日志投递功能。",
       "input": "StopCLSDeliveryRequest",
       "name": "停止日志投递",
       "output": "StopCLSDeliveryResponse",
@@ -1135,14 +1135,14 @@
       "status": "online"
     },
     "UpgradeClusterVersion": {
-      "document": "更新内核小版本",
+      "document": "本接口（UpgradeClusterVersion）用于更新内核小版本。",
       "input": "UpgradeClusterVersionRequest",
       "name": "更新内核小版本",
       "output": "UpgradeClusterVersionResponse",
       "status": "online"
     },
     "UpgradeInstance": {
-      "document": "实例变配",
+      "document": "本接口（UpgradeInstance）用于实例变配。",
       "input": "UpgradeInstanceRequest",
       "name": "实例变配",
       "output": "UpgradeInstanceResponse",
@@ -15512,8 +15512,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例组ID",
-          "example": "cynosdbmysql-ins-4senc2fm",
+          "document": "网络组id(cynosdbmysql-grp-前缀开头)或集群id",
+          "example": "cynosdbmysql-grp-4senc2fm",
           "member": "string",
           "name": "InstanceId",
           "required": true,

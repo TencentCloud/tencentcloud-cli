@@ -1,3 +1,192 @@
+# Release 3.0.1081.1
+
+## 应用管理平台(camp) 版本：2022-09-20
+
+### 第 42 次发布
+
+发布时间：2024-09-27 01:17:17
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateInstance](http://document.tencentcloudapi.woa.com/document/product/1609/78003)
+
+	* 新增入参：JSON
+
+
+修改数据结构：
+
+* [PlacementPolicy](http://document.tencentcloudapi.woa.com/document/product/1609/78009#PlacementPolicy)
+
+	* 新增成员：StaticIpAcrossClusters, StaticCbsAcrossClusters
+
+
+
+
+## 云联络中心(ccc) 版本：2020-02-10
+
+### 第 63 次发布
+
+发布时间：2024-09-27 01:18:54
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [IMCdrInfo](http://document.tencentcloudapi.woa.com/document/product/679/47715#IMCdrInfo)
+
+	* 新增成员：ClientUserId
+
+
+
+
+## 内容分发网络 CDN(cdn) 版本：2018-06-06
+
+### 第 57 次发布
+
+发布时间：2024-09-27 01:21:16
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [CacheConfigCache](http://document.tencentcloudapi.woa.com/document/product/228/30987#CacheConfigCache)
+
+	* 新增成员：OriginMtimeCheckType
+
+* [CacheConfigFollowOrigin](http://document.tencentcloudapi.woa.com/document/product/228/30987#CacheConfigFollowOrigin)
+
+	* 新增成员：OriginMtimeCheckType
+
+
+
+
+## 云服务器(cvm) 版本：2019-12-12
+
+
+
+## 云服务器(cvm) 版本：2017-03-12
+
+### 第 83 次发布
+
+发布时间：2024-09-27 01:30:45
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [InquiryPriceRunInstances](http://document.tencentcloudapi.woa.com/document/product/213/15726)
+
+	* 新增入参：CpuTopology
+
+
+
+
+## 弹性 MapReduce(emr) 版本：2019-01-03
+
+### 第 65 次发布
+
+发布时间：2024-09-27 01:45:53
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeInsightList](http://document.tencentcloudapi.woa.com/document/product/589/82972)
+
+	* 新增入参：Type
+
+
+
+
+## 邮件推送(ses) 版本：2020-10-02
+
+### 第 24 次发布
+
+发布时间：2024-09-27 02:13:41
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateCustomBlacklist](http://document.tencentcloudapi.woa.com/document/product/1288/84184)
+
+	* 新增出参：TotalCount, ValidCount, TooLongCount, RepeatCount, InvalidCount
+
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 157 次发布
+
+发布时间：2024-09-27 02:32:54
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateCdcLDCXList](http://document.tencentcloudapi.woa.com/document/product/215/85000)
+* [CreateCdcNetPlanes](http://document.tencentcloudapi.woa.com/document/product/215/84999)
+* [CreateHighPriorityRouteTable](http://document.tencentcloudapi.woa.com/document/product/215/84998)
+* [CreateHighPriorityRoutes](http://document.tencentcloudapi.woa.com/document/product/215/84997)
+* [DeleteCdcLDCXList](http://document.tencentcloudapi.woa.com/document/product/215/84996)
+* [DeleteCdcNetPlanes](http://document.tencentcloudapi.woa.com/document/product/215/84995)
+* [DeleteHighPriorityRouteTables](http://document.tencentcloudapi.woa.com/document/product/215/84994)
+* [DeleteHighPriorityRoutes](http://document.tencentcloudapi.woa.com/document/product/215/84993)
+* [DescribeCdcLDCXList](http://document.tencentcloudapi.woa.com/document/product/215/84992)
+* [DescribeCdcNetPlanes](http://document.tencentcloudapi.woa.com/document/product/215/84991)
+* [DescribeCdcUsedIdcVlan](http://document.tencentcloudapi.woa.com/document/product/215/84990)
+* [DescribeHighPriorityRouteTables](http://document.tencentcloudapi.woa.com/document/product/215/84989)
+* [DescribeHighPriorityRoutes](http://document.tencentcloudapi.woa.com/document/product/215/84988)
+* [DescribeRoutes](http://document.tencentcloudapi.woa.com/document/product/215/84979)
+* [ModifyCdcLDCXAttribute](http://document.tencentcloudapi.woa.com/document/product/215/84987)
+* [ModifyCdcNetPlaneAttribute](http://document.tencentcloudapi.woa.com/document/product/215/84986)
+* [ModifyHighPriorityRouteAttribute](http://document.tencentcloudapi.woa.com/document/product/215/84985)
+* [ModifyHighPriorityRouteECMPAlgorithm](http://document.tencentcloudapi.woa.com/document/product/215/84984)
+* [ModifyHighPriorityRouteTableAttribute](http://document.tencentcloudapi.woa.com/document/product/215/84983)
+* [ReplaceHighPriorityRouteTableAssociation](http://document.tencentcloudapi.woa.com/document/product/215/84982)
+* [ReplaceHighPriorityRoutes](http://document.tencentcloudapi.woa.com/document/product/215/84981)
+* [ResetHighPriorityRoutes](http://document.tencentcloudapi.woa.com/document/product/215/84980)
+
+新增数据结构：
+
+* [BgpInfo](http://document.tencentcloudapi.woa.com/document/product/215/15824#BgpInfo)
+* [CdcLDCX](http://document.tencentcloudapi.woa.com/document/product/215/15824#CdcLDCX)
+* [CdcNetPlane](http://document.tencentcloudapi.woa.com/document/product/215/15824#CdcNetPlane)
+* [ConnIPInfo](http://document.tencentcloudapi.woa.com/document/product/215/15824#ConnIPInfo)
+* [HighPriorityModifyItem](http://document.tencentcloudapi.woa.com/document/product/215/15824#HighPriorityModifyItem)
+* [HighPriorityRoute](http://document.tencentcloudapi.woa.com/document/product/215/15824#HighPriorityRoute)
+* [HighPriorityRouteTable](http://document.tencentcloudapi.woa.com/document/product/215/15824#HighPriorityRouteTable)
+* [ModeDetect](http://document.tencentcloudapi.woa.com/document/product/215/15824#ModeDetect)
+* [RouteECMPAlgorithm](http://document.tencentcloudapi.woa.com/document/product/215/15824#RouteECMPAlgorithm)
+* [UsedVlan](http://document.tencentcloudapi.woa.com/document/product/215/15824#UsedVlan)
+* [VRRP](http://document.tencentcloudapi.woa.com/document/product/215/15824#VRRP)
+
+修改数据结构：
+
+* [EndPoint](http://document.tencentcloudapi.woa.com/document/product/215/15824#EndPoint)
+
+	* 新增成员：Option
+
+
+
+
 # Release 3.0.1080.1
 
 ## 主机安全(cwp) 版本：2018-02-28
