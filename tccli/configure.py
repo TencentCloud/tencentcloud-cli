@@ -230,6 +230,56 @@ class ConfigureSetCommand(BasicConfigure):
             self._init_configure(profile_name + '.credential', cred)
 
 
+class ConfigureSetAllEndPointCommand(BasicConfigure):
+    NAME = 'setAllPoint'
+    DESCRIPTION = 'set all your endpoint values.'
+    USEAGE = 'tccli configure setAllPoint [endpoint-value] [--profile profile-name]'
+    AVAILABLECONFIG = "[cvm, cbs ...].endpoint: service [cvm cbs ...] access point domain name"
+    EXAMPLES = "$ tccli configure setAllPoint abcd --profile user"
+    # 批量设置
+    ARG_TABLE = [
+        {'name': 'varname',
+         'help_text': 'The name of the endpoint value to set.',
+         'action': 'store',
+         'nargs': '+',
+         'cli_type_name': 'string',
+         'positional_arg': True},
+    ]
+
+    def __init__(self):
+        super(ConfigureSetAllEndPointCommand, self).__init__()
+
+    def _run_main(self, args, parsed_globals):
+        var_value = args.varname
+        if len(var_value) != 1:
+            raise ParamError("Unexpected format\n"
+                             "Expected input format：\n\n"
+                             "   $tccli configure setAllPoint abc\n")
+        profile_name = self._get_profile_name(parsed_globals)
+        profile_name = profile_name + '.configure'
+
+        conf_data = {}
+        is_exist, config_path = self._profile_existed(profile_name)
+        if is_exist:
+            conf_data = Utils.load_json_msg(config_path)
+        if profile_name.endswith(".configure"):
+            for mod in self._cli_data.get_available_services().keys():
+                # we have to check autoscaling because we did it wrong in 3.0.30.1
+                # consider remove it in 3.1.x
+                if mod in conf_data and mod != 'autoscaling':
+                    continue
+                conf_data[mod] = {}
+                conf_data[mod]["endpoint"] = "%s.tencentcloudapi.com" % mod
+                # we have to do this because as is a keyword in python
+                # as has been changed to autoscaling only in python sdk & cli
+                if mod == 'autoscaling':
+                    conf_data[mod]["endpoint"] = "as.tencentcloudapi.com"
+                conf_data[mod]["version"] = self._cli_data.get_available_services()[mod][0]
+        for key in conf_data:
+            if key != '_sys_param':
+                conf_data[key]['endpoint'] = var_value[0]
+        Utils.dump_json_msg(config_path, conf_data)
+
 class ConfigureGetCommand(BasicConfigure):
     NAME = 'get'
     DESCRIPTION = "get your profile(eg:SecretId, SecretKey, Region)."
@@ -342,7 +392,8 @@ class ConfigureCommand(BasicConfigure):
         {'name': 'list', 'command_class': ConfigureListCommand},
         {'name': 'get', 'command_class': ConfigureGetCommand},
         {'name': 'set', 'command_class': ConfigureSetCommand},
-        {'name': 'remove', 'command_class': ConfigureRemoveCommand}
+        {'name': 'remove', 'command_class': ConfigureRemoveCommand},
+        {'name': 'setAllEndPoint', 'command_class': ConfigureSetAllEndPointCommand}
     ]
 
     VALUES_TO_PROMPT = [
