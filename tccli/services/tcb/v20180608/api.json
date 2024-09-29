@@ -2388,6 +2388,17 @@
           "required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "挂载配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Bidirectional",
+          "member": "string",
+          "name": "MountPropagation",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -4521,6 +4532,15 @@
           "name": "OperatorRemark",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "延迟删除版本时间",
+          "example": "0",
+          "member": "int64",
+          "name": "DelayedDeletionTime",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -4534,7 +4554,7 @@
           "example": "succ",
           "member": "string",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },

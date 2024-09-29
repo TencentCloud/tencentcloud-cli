@@ -232,13 +232,23 @@
           "value_allowed_null": true
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "Git信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "GitInfo",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Git信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "GitInfo",
+          "name": "GitSource",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": true
         }
       ],
@@ -723,7 +733,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤器，支持过滤字段：\n- Name：任务批次名称\n- RunGroupId：任务批次ID\n- Status：任务批次状态",
+          "document": "过滤器，支持过滤字段：\n- Name：任务批次名称\n- RunGroupId：任务批次ID\n- Status：任务批次状态\n- ApplicationId：应用ID\n- Type：类型（支持WDL，NEXTFLOW）",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -797,7 +807,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤器，支持过滤字段：\n- RunGroupId：任务批次ID\n- Status：任务状态\n- RunUuid：任务UUID\n- UserDefinedId：用户定义ID",
+          "document": "过滤器，支持过滤字段：\n- RunGroupId：任务批次ID\n- Status：任务状态\n- RunUuid：任务UUID\n- ApplicationId：应用ID\n- UserDefinedId：用户定义ID（批量运行表格第一列）",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -1504,51 +1514,61 @@
       "members": [
         {
           "disabled": false,
-          "document": "Git地址。",
+          "document": "Git地址。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "GitHttpPath",
+          "output_required": false,
           "required": true,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "Git用户名。",
+          "document": "Git用户名。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "GitUserName",
+          "output_required": false,
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "Git密码或者Token。",
+          "document": "Git密码或者Token。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "GitTokenOrPassword",
+          "output_required": false,
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "分支。",
+          "document": "分支。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "Branch",
+          "output_required": false,
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "标签。",
+          "document": "标签。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "Tag",
+          "output_required": false,
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "ImportTableFileRequest": {
       "document": "ImportTableFile请求参数结构体",
@@ -2369,6 +2389,26 @@
         },
         {
           "disabled": false,
+          "document": "应用版本。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ApplicationVersion",
+          "name": "ApplicationVersion",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "应用访问类型：\n- PRIVATE 私有应用\n- PUBLIC 公共应用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AccessMode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
           "document": "环境ID。",
           "example": "无",
           "member": "string",
@@ -2429,6 +2469,26 @@
         },
         {
           "disabled": false,
+          "document": "任务批次类型 ：\n- WDL\n- NEXTFLOW\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "工作目录。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "WorkDir",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
           "document": "任务输入。",
           "example": "无",
           "member": "string",
@@ -2436,6 +2496,36 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务输入类型：\n- JSON: 导入JSON\n- MANUAL: 手动输入\n- COS: COS文件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InputType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "输入COS地址。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InputCosUri",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "输入模版ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InputTemplateId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2455,6 +2545,16 @@
           "name": "NFOption",
           "output_required": false,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "使用的缓存卷。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VolumeInfo",
+          "name": "Volumes",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": true
         },
         {
@@ -2499,6 +2599,16 @@
         },
         {
           "disabled": false,
+          "document": "运行结果通知方式。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ResultNotify",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
           "document": "创建时间。",
           "example": "无",
           "member": "datetime_iso",
@@ -2535,26 +2645,6 @@
           "name": "CreatorId",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "运行结果通知方式。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "ResultNotify",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "应用版本。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "ApplicationVersion",
-          "name": "ApplicationVersion",
-          "output_required": false,
-          "type": "object",
           "value_allowed_null": true
         }
       ],
@@ -2745,6 +2835,16 @@
         },
         {
           "disabled": false,
+          "document": "工作目录。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "WorkDir",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
           "document": "标准输出。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -2830,6 +2930,17 @@
           "member": "bool",
           "name": "UseRelativeOutputPaths",
           "output_required": true,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否添加运行信息到输出目录中\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "AddRunInfoToOutputDir",
+          "output_required": false,
           "required": false,
           "type": "bool",
           "value_allowed_null": true
@@ -3384,6 +3495,42 @@
           "example": "AVAILABLE",
           "member": "string",
           "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "VolumeInfo": {
+      "document": "缓存卷信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "缓存卷ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "VolumeId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "挂载路径。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "MountPath",
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
