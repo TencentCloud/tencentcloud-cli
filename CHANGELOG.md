@@ -1,3 +1,215 @@
+# Release 3.0.1082.1
+
+## 弹性伸缩(as) 版本：2018-04-19
+
+### 第 37 次发布
+
+发布时间：2024-09-30 01:11:21
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateLaunchConfiguration](http://document.tencentcloudapi.woa.com/document/product/377/20447)
+
+	* 新增入参：ImageFamily
+
+	* <font color="#dd0000">**修改入参**：</font>ImageId
+
+* [ModifyLaunchConfigurationAttributes](http://document.tencentcloudapi.woa.com/document/product/377/31298)
+
+	* 新增入参：ImageFamily
+
+
+修改数据结构：
+
+* [LaunchConfiguration](http://document.tencentcloudapi.woa.com/document/product/377/20453#LaunchConfiguration)
+
+	* 新增成员：ImageFamily
+
+
+
+
+## 云联络中心(ccc) 版本：2020-02-10
+
+### 第 64 次发布
+
+发布时间：2024-09-30 01:18:08
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateOwnNumberApply](http://document.tencentcloudapi.woa.com/document/product/679/85016)
+* [ModifyOwnNumberApply](http://document.tencentcloudapi.woa.com/document/product/679/85015)
+
+新增数据结构：
+
+* [OwnNumberApplyDetailItem](http://document.tencentcloudapi.woa.com/document/product/679/47715#OwnNumberApplyDetailItem)
+
+
+
+## 云服务器(cvm) 版本：2019-12-12
+
+### 第 2 次发布
+
+发布时间：2024-09-30 01:30:30
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeImageFamilies](http://document.tencentcloudapi.woa.com/document/product/213/85019)
+
+
+
+## 云服务器(cvm) 版本：2017-03-12
+
+### 第 84 次发布
+
+发布时间：2024-09-30 01:29:23
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeImageFromFamily](http://document.tencentcloudapi.woa.com/document/product/213/85017)
+
+修改接口：
+
+* [CreateImage](http://document.tencentcloudapi.woa.com/document/product/213/16726)
+
+	* 新增入参：ImageFamily
+
+* [ModifyImageAttribute](http://document.tencentcloudapi.woa.com/document/product/213/15713)
+
+	* 新增入参：ImageFamily, ImageDeprecated
+
+
+修改数据结构：
+
+* [Image](http://document.tencentcloudapi.woa.com/document/product/213/15753#Image)
+
+	* 新增成员：ImageFamily, ImageDeprecated
+
+* [ReservedInstancePrice](http://document.tencentcloudapi.woa.com/document/product/213/15753#ReservedInstancePrice)
+
+	* 新增成员：FixedPriceDiscount, UsagePriceDiscount
+
+* [ReservedInstancePriceItem](http://document.tencentcloudapi.woa.com/document/product/213/15753#ReservedInstancePriceItem)
+
+	* 新增成员：DiscountUsagePrice, DiscountFixedPrice
+
+
+
+
+## 人脸核身(faceid) 版本：2018-03-01
+
+### 第 72 次发布
+
+发布时间：2024-09-30 01:48:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [HMTPermit](http://document.tencentcloudapi.woa.com/document/product/1007/41958#HMTPermit)
+
+修改数据结构：
+
+* [NormalCardInfo](http://document.tencentcloudapi.woa.com/document/product/1007/41958#NormalCardInfo)
+
+	* 新增成员：HMTPermitCard
+
+
+
+
+## API 安全测试模拟产品(secmocker) 版本：2024-07-18
+
+### 第 1 次发布
+
+发布时间：2024-09-30 00:02:17
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [MockNoAuthCommon](http://document.tencentcloudapi.woa.com/document/product/1775/85003)
+
+
+
+## 边缘安全加速平台(teo) 版本：2022-09-01
+
+### 第 41 次发布
+
+发布时间：2024-09-30 02:21:43
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateFunction](http://document.tencentcloudapi.woa.com/document/product/1738/85031)
+* [CreateFunctionRule](http://document.tencentcloudapi.woa.com/document/product/1738/85030)
+* [DeleteFunction](http://document.tencentcloudapi.woa.com/document/product/1738/85029)
+* [DeleteFunctionRules](http://document.tencentcloudapi.woa.com/document/product/1738/85028)
+* [DescribeFunctionRules](http://document.tencentcloudapi.woa.com/document/product/1738/85027)
+* [DescribeFunctionRuntimeEnvironment](http://document.tencentcloudapi.woa.com/document/product/1738/85026)
+* [DescribeFunctions](http://document.tencentcloudapi.woa.com/document/product/1738/85025)
+* [HandleFunctionRuntimeEnvironment](http://document.tencentcloudapi.woa.com/document/product/1738/85024)
+* [ModifyFunction](http://document.tencentcloudapi.woa.com/document/product/1738/85023)
+* [ModifyFunctionRule](http://document.tencentcloudapi.woa.com/document/product/1738/85022)
+* [ModifyFunctionRulePriority](http://document.tencentcloudapi.woa.com/document/product/1738/85021)
+
+新增数据结构：
+
+* [Function](http://document.tencentcloudapi.woa.com/document/product/1738/81211#Function)
+* [FunctionEnvironmentVariable](http://document.tencentcloudapi.woa.com/document/product/1738/81211#FunctionEnvironmentVariable)
+* [FunctionRule](http://document.tencentcloudapi.woa.com/document/product/1738/81211#FunctionRule)
+* [FunctionRuleCondition](http://document.tencentcloudapi.woa.com/document/product/1738/81211#FunctionRuleCondition)
+
+
+
+## 边缘安全加速平台(teo) 版本：2022-01-06
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 158 次发布
+
+发布时间：2024-09-30 02:29:33
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateVpcPeeringConnection](http://document.tencentcloudapi.woa.com/document/product/215/77813)
+
+	* 新增入参：Tags
+
+
+新增数据结构：
+
+* [Tags](http://document.tencentcloudapi.woa.com/document/product/215/15824#Tags)
+
+
+
 # Release 3.0.1081.1
 
 ## 应用管理平台(camp) 版本：2022-09-20

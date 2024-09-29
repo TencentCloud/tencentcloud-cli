@@ -1,0 +1,57 @@
+{
+  "actions": {
+    "MockNoAuthCommon": {
+      "document": "将提交的内容原封不动返回",
+      "input": "MockNoAuthCommonRequest",
+      "name": "模拟没有鉴权的接口",
+      "output": "MockNoAuthCommonResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2024-07-18",
+    "api_brief": "模拟风险环境接口",
+    "serviceNameCN": "API 安全测试模拟产品",
+    "serviceShortName": "secmocker"
+  },
+  "objects": {
+    "MockNoAuthCommonRequest": {
+      "document": "MockNoAuthCommon请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "期望返回的内容",
+          "example": "无",
+          "member": "string",
+          "name": "Content",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "MockNoAuthCommonResponse": {
+      "document": "MockNoAuthCommon返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "根据提交的内容返回",
+          "example": "无",
+          "member": "string",
+          "name": "Content",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

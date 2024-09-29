@@ -13181,7 +13181,7 @@
         {
           "disabled": false,
           "document": "本端VPC唯一ID。",
-          "example": " pcx-0npfx81k",
+          "example": "vpc-0npfx81k",
           "member": "string",
           "name": "SourceVpcId",
           "required": true,
@@ -13258,6 +13258,15 @@
           "name": "QosLevel",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "标签键值对",
+          "example": "无",
+          "member": "Tags",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -47314,6 +47323,32 @@
           "disabled": false,
           "document": "标签值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "tag-value",
+          "member": "string",
+          "name": "Value",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "Tags": {
+      "document": "标签描述信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签键\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "Key",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
           "member": "string",
           "name": "Value",
           "required": false,

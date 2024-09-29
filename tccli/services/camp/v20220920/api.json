@@ -10236,7 +10236,7 @@
           "example": "1",
           "member": "string",
           "name": "MaxUnavailable",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -10291,7 +10291,7 @@
           "example": "无",
           "member": "RollingUpdate",
           "name": "RollingUpdate",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "object",
           "value_allowed_null": true

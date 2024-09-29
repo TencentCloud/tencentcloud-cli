@@ -128,6 +128,14 @@
         "title": "创建关联 IVR 的会话示例"
       }
     ],
+    "CreateOwnNumberApply": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOwnNumberApply\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1,\n    \"Prefix\": \"123\",\n    \"SipTrunkId\": 12,\n    \"DetailList\": [\n        {\n            \"CallType\": 2,\n            \"PhoneNumber\": \"02012345678\",\n            \"MaxCallCount\": 1,\n            \"MaxCallPSec\": 1\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\",\n        \"ApplyId\": 1\n    }\n}",
+        "title": "创建客户自携号码接入审核实例"
+      }
+    ],
     "CreatePredictiveDialingCampaign": [
       {
         "document": "创建预测式外呼任务",
@@ -446,6 +454,14 @@
         "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyExtension\n<公共请求参数>\n\n{\n    \"SdkAppId\": 140000000,\n    \"ExtensionId\": \"1001\",\n    \"ExtensionName\": \"分机1\",\n    \"SkillGroupIds\": [\n        1000\n    ],\n    \"Relation\": \"xxx@xxxx.com\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"86a17f0e-bcb3-46bf-ac66-8f165fe52127\"\n    }\n}",
         "title": "修改话机账号"
+      }
+    ],
+    "ModifyOwnNumberApply": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOwnNumberApply\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1,\n    \"ApplyId\": 1,\n    \"Prefix\": \"123\",\n    \"DetailList\": [\n        {\n            \"CallType\": 2,\n            \"PhoneNumber\": \"02012345678\",\n            \"MaxCallCount\": 1,\n            \"MaxCallPSec\": 1\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "修改客户自携号码审批单示例"
       }
     ],
     "ModifySipTrunk": [

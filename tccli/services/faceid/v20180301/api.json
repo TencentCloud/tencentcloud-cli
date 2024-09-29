@@ -692,7 +692,7 @@
         },
         {
           "disabled": false,
-          "document": "认证使用的卡证类型，当前支持:  \n\n1. HK (默认): 中国香港身份证\n2. ML: 马来西亚身份证\n3. IndonesiaIDCard: 印度尼西亚身份证\n4. PhilippinesVoteID: 菲律宾选民卡\n5. PhilippinesDrivingLicense: 菲律宾驾驶证\n6. PhilippinesTinID: 菲律宾TinID\n7. PhilippinesSSSID: 菲律宾SSSID\n8. PhilippinesUMID: 菲律宾UMID\n9. MLIDPassport: 港澳台地区以及境外护照\n10. MacaoIDCard: 澳门身份证\n11. ThailandIDCard: 泰国身份证\n12. MainlandIDCard: 大陆身份证\n13. SingaporeIDCard: 新加坡身份证\n14. JapanIDCard: 日本身份证\n15. MLDrivingLicense: 马来西亚驾驶证\n16. IndonesiaDrivingLicense: 印度尼西亚驾驶证\n17. ThailandDrivingLicense: 泰国驾驶证\n18. SingaporeDrivingLicense: 新加坡驾驶证\n19. JapanDrivingLicense: 日本驾驶证\n20. TaiWanIDCard：台湾身份证",
+          "document": "认证使用的卡证类型，当前支持:  \n\n1. HK (默认): 中国香港身份证\n2. ML: 马来西亚身份证\n3. IndonesiaIDCard: 印度尼西亚身份证\n4. PhilippinesVoteID: 菲律宾选民卡\n5. PhilippinesDrivingLicense: 菲律宾驾驶证\n6. PhilippinesTinID: 菲律宾TinID\n7. PhilippinesSSSID: 菲律宾SSSID\n8. PhilippinesUMID: 菲律宾UMID\n9. MLIDPassport: 港澳台地区以及境外护照\n10. MacaoIDCard: 澳门身份证\n11. ThailandIDCard: 泰国身份证\n12. MainlandIDCard: 大陆身份证\n13. SingaporeIDCard: 新加坡身份证\n14. JapanIDCard: 日本身份证\n15. MLDrivingLicense: 马来西亚驾驶证\n16. IndonesiaDrivingLicense: 印度尼西亚驾驶证\n17. ThailandDrivingLicense: 泰国驾驶证\n18. SingaporeDrivingLicense: 新加坡驾驶证\n19. JapanDrivingLicense: 日本驾驶证\n20. TaiWanIDCard：台湾身份证\n21. HMTPermit：港澳台通行证",
           "example": "HK",
           "member": "string",
           "name": "IdCardType",
@@ -5771,6 +5771,92 @@
       ],
       "usage": "out"
     },
+    "HMTPermit": {
+      "document": "港澳台通行证",
+      "members": [
+        {
+          "disabled": false,
+          "document": "姓名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "李明",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "英文姓名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "LIMING",
+          "member": "string",
+          "name": "EnglishName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "证件号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "C00000000",
+          "member": "string",
+          "name": "Number",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "性别\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "男",
+          "member": "string",
+          "name": "Sex",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "有效期限\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2018.10.09-2028.10.08",
+          "member": "string",
+          "name": "ValidDate",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "签发机关\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "公安部出入境管理局",
+          "member": "string",
+          "name": "IssueAuthority",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "签发地点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "广东",
+          "member": "string",
+          "name": "IssueAddress",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "出生日期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1981.08.03",
+          "member": "string",
+          "name": "Birthday",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "IdCardOCRVerificationRequest": {
       "document": "IdCardOCRVerification请求参数结构体",
       "members": [
@@ -7872,6 +7958,16 @@
           "example": "无",
           "member": "TaiWanIDCard",
           "name": "TaiWanIDCard",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "港澳台通行证\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "HMTPermit",
+          "name": "HMTPermitCard",
           "output_required": false,
           "type": "object",
           "value_allowed_null": true

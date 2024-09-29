@@ -1,0 +1,13 @@
+{
+  "actions": {
+    "MockNoAuthCommon": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: secmocker.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: MockCommon\n<公共请求参数>\n\n{\n    \"Content\": \" https://sirius-test-1258344699.cos.ap-guangzhou.myqcloud.com/?q-sign-algorithm=sha1&q-ak=AK\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Content\": \"http://test-2222.\",\n        \"RequestId\": \"9bb1b9c4-f0ab-4ab9-b1ef-2832972c2194\"\n    }\n}",
+        "title": "cos 风险预签名"
+      }
+    ]
+  },
+  "version": "1.0"
+}

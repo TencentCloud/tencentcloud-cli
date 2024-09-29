@@ -1,5 +1,13 @@
 {
   "actions": {
+    "DescribeImageFamilies": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeImageFamilies\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"ImageFamilySet\": [\n            \"business-daily-update\"\n        ],\n        \"RequestId\": \"5908394c-5b3f-42e0-a537-8410553890a5\"\n    }\n}",
+        "title": "查看镜像族列表"
+      }
+    ],
     "DescribeTaskInfo": [
       {
         "document": "根据指定过滤条件查询云服务器维修任务列表及详细信息。",
