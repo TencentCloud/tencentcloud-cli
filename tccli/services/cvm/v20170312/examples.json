@@ -214,6 +214,14 @@
         "title": "查询高性能集群信息"
       }
     ],
+    "DescribeImageFromFamily": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeImageFromFamily\n<公共请求参数>\n\n{\n    \"ImageFamily\": \"business-daily-update\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Image\": {\n            \"ImageId\": \"abc\",\n            \"OsName\": \"abc\",\n            \"ImageType\": \"abc\",\n            \"CreatedTime\": \"2020-09-22T00:00:00+00:00\",\n            \"ImageName\": \"abc\",\n            \"ImageDescription\": \"abc\",\n            \"ImageSize\": 0,\n            \"Architecture\": \"abc\",\n            \"ImageState\": \"abc\",\n            \"Platform\": \"abc\",\n            \"ImageCreator\": \"abc\",\n            \"ImageSource\": \"abc\",\n            \"SyncPercent\": 0,\n            \"IsSupportCloudinit\": true,\n            \"SnapshotSet\": [\n                {\n                    \"SnapshotId\": \"abc\",\n                    \"DiskUsage\": \"abc\",\n                    \"DiskSize\": 0\n                }\n            ],\n            \"Tags\": [\n                {\n                    \"Key\": \"abc\",\n                    \"Value\": \"abc\"\n                }\n            ],\n            \"LicenseType\": \"abc\",\n            \"ImageFamily\": \"business-daily-update\",\n            \"ImageDeprecated\": false\n        },\n        \"RequestId\": \"5908394c-5b3f-42e0-a537-8410553890a5\"\n    }\n}",
+        "title": "查看镜像族列表"
+      }
+    ],
     "DescribeImageQuota": [
       {
         "document": "用户需要知道自己账户一共可以持有多少镜像。",
@@ -498,7 +506,7 @@
       {
         "document": "",
         "input": "https://cvm.tencentcloudapi.com/?Action=InquirePricePurchaseReservedInstancesOffering\n&InstanceCount=2\n&ReservedInstancesOfferingId=noew0342-324f-f3ab-9uut-wrlnth53dcee\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b333ddb8-4aed-4def-a0d9-617043c2614e\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Price\": {\n            \"OriginalFixedPrice\": 100.99,\n            \"DiscountFixedPrice\": 100.99,\n            \"OriginalUsagePrice\": 1.99,\n            \"DiscountUsagePrice\": 1.99,\n            \"FixedPriceDiscount\": 60,\n            \"UsagePriceDiscount\": 60\n        },\n        \"RequestId\": \"b333ddb8-4aed-4def-a0d9-617043c2614e\"\n    }\n}",
         "title": "创建预留实例询价"
       }
     ],

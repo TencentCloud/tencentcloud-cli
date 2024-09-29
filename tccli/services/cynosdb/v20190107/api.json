@@ -8,21 +8,21 @@
       "status": "online"
     },
     "AddClusterSlaveZone": {
-      "document": "开启多可用区部署",
+      "document": "本接口（AddClusterSlaveZone）用于对集群开启多可用区部署。",
       "input": "AddClusterSlaveZoneRequest",
       "name": "开启多可用区部署",
       "output": "AddClusterSlaveZoneResponse",
       "status": "online"
     },
     "AddInstances": {
-      "document": "本接口（AddInstances）用于集群添加实例",
+      "document": "本接口（AddInstances）用于集群添加实例。",
       "input": "AddInstancesRequest",
       "name": "集群添加实例",
       "output": "AddInstancesResponse",
       "status": "online"
     },
     "AssociateSecurityGroups": {
-      "document": "安全组批量绑定云资源",
+      "document": "本接口（AssociateSecurityGroups）用于安全组批量绑定云资源。",
       "input": "AssociateSecurityGroupsRequest",
       "name": "安全组批量绑定云资源",
       "output": "AssociateSecurityGroupsResponse",
@@ -43,28 +43,28 @@
       "status": "online"
     },
     "CloseClusterPasswordComplexity": {
-      "document": "本接口（CloseClusterPasswordComplexity）用于关闭集群密码复杂度",
+      "document": "本接口（CloseClusterPasswordComplexity）用于关闭集群密码复杂度。",
       "input": "CloseClusterPasswordComplexityRequest",
       "name": "关闭集群密码复杂度",
       "output": "CloseClusterPasswordComplexityResponse",
       "status": "online"
     },
     "CloseProxy": {
-      "document": "关闭数据库代理",
+      "document": "本接口（CloseProxy）用于关闭集群的数据库代理服务。",
       "input": "CloseProxyRequest",
       "name": "关闭数据库代理",
       "output": "CloseProxyResponse",
       "status": "online"
     },
     "CloseWan": {
-      "document": "本接口（CloseWan）用于关闭外网",
+      "document": "本接口（CloseWan）用于关闭外网。",
       "input": "CloseWanRequest",
       "name": "关闭外网",
       "output": "CloseWanResponse",
       "status": "online"
     },
     "CopyClusterPasswordComplexity": {
-      "document": "本接口（CopyClusterPasswordComplexity）用于复制集群密码复杂度",
+      "document": "本接口（CopyClusterPasswordComplexity）用于复制集群密码复杂度。",
       "input": "CopyClusterPasswordComplexityRequest",
       "name": "复制集群密码复杂度",
       "output": "CopyClusterPasswordComplexityResponse",
@@ -127,7 +127,7 @@
       "status": "online"
     },
     "CreateProxy": {
-      "document": "创建数据库代理",
+      "document": "本接口（CreateProxy）用于开启集群的数据库代理。",
       "input": "CreateProxyRequest",
       "name": "创建数据库代理",
       "output": "CreateProxyResponse",
@@ -141,7 +141,7 @@
       "status": "online"
     },
     "CreateResourcePackage": {
-      "document": "新购资源包",
+      "document": "本接口（CreateResourcePackage）用于新购资源包。",
       "input": "CreateResourcePackageRequest",
       "name": "新购资源包",
       "output": "CreateResourcePackageResponse",
@@ -169,7 +169,7 @@
       "status": "online"
     },
     "DeleteBackup": {
-      "document": "为集群删除手动备份，无法删除自动备份",
+      "document": "本接口（DeleteBackup）用于为集群删除手动备份，无法删除自动备份。",
       "input": "DeleteBackupRequest",
       "name": "删除手动备份",
       "output": "DeleteBackupResponse",
@@ -183,7 +183,7 @@
       "status": "online"
     },
     "DeleteClusterDatabase": {
-      "document": "删除数据库",
+      "document": "本接口（DeleteClusterDatabase）用于删除数据库。",
       "input": "DeleteClusterDatabaseRequest",
       "name": "删除数据库",
       "output": "DeleteClusterDatabaseResponse",
@@ -197,7 +197,7 @@
       "status": "online"
     },
     "DescribeAccountAllGrantPrivileges": {
-      "document": "查询账号所有可授予权限",
+      "document": "本接口（DescribeAccountAllGrantPrivileges）用于查询账号所有可授予的权限。",
       "input": "DescribeAccountAllGrantPrivilegesRequest",
       "name": "查询账号所有可授予权限",
       "output": "DescribeAccountAllGrantPrivilegesResponse",
@@ -211,7 +211,7 @@
       "status": "online"
     },
     "DescribeAccounts": {
-      "document": "本接口(DescribeAccounts)用于查询数据库账号列表",
+      "document": "本接口（DescribeAccounts）用于查询数据库账号列表。",
       "input": "DescribeAccountsRequest",
       "name": "查询数据库账号列表",
       "output": "DescribeAccountsResponse",
@@ -253,7 +253,7 @@
       "status": "online"
     },
     "DescribeBackupConfig": {
-      "document": "获取指定集群的备份配置信息，包括全量备份时间段，备份文件保留时间",
+      "document": "本接口（DescribeBackupConfig）用于获取指定集群的备份配置信息，包括全量备份时间段、备份文件保留时间。",
       "input": "DescribeBackupConfigRequest",
       "name": "查询备份配置信息",
       "output": "DescribeBackupConfigResponse",
@@ -267,7 +267,7 @@
       "status": "online"
     },
     "DescribeBackupList": {
-      "document": "查询备份文件列表",
+      "document": "本接口（DescribeBackupList）用于查询集群的备份文件列表。",
       "input": "DescribeBackupListRequest",
       "name": "查询备份文件列表",
       "output": "DescribeBackupListResponse",
@@ -302,7 +302,7 @@
       "status": "online"
     },
     "DescribeChangedParamsAfterUpgrade": {
-      "document": "本接口（DescribeChangedParamsAfterUpgrade）用于查询升降配运行参数对比",
+      "document": "本接口（DescribeChangedParamsAfterUpgrade）用于查询升降配运行参数对比。",
       "input": "DescribeChangedParamsAfterUpgradeRequest",
       "name": "升降配运行参数对比",
       "output": "DescribeChangedParamsAfterUpgradeResponse",
@@ -323,7 +323,7 @@
       "status": "online"
     },
     "DescribeClusterDetailDatabases": {
-      "document": "查询数据库列表",
+      "document": "本接口（DescribeClusterDetailDatabases）用于查询数据库列表。",
       "input": "DescribeClusterDetailDatabasesRequest",
       "name": "查询数据库列表",
       "output": "DescribeClusterDetailDatabasesResponse",
@@ -344,7 +344,7 @@
       "status": "online"
     },
     "DescribeClusterParamLogs": {
-      "document": "本接口（DescribeClusterParamLogs）查询参数修改记录",
+      "document": "本接口（DescribeClusterParamLogs）用于查询参数修改记录。",
       "input": "DescribeClusterParamLogsRequest",
       "name": "查询参数修改记录",
       "output": "DescribeClusterParamLogsResponse",
@@ -379,7 +379,7 @@
       "status": "online"
     },
     "DescribeFlow": {
-      "document": "本接口（DescribeFlow）用于查询任务流信息",
+      "document": "本接口（DescribeFlow）用于查询任务流信息。",
       "input": "DescribeFlowRequest",
       "name": "查询任务流信息",
       "output": "DescribeFlowResponse",
@@ -421,7 +421,7 @@
       "status": "online"
     },
     "DescribeInstanceSpecs": {
-      "document": "本接口（DescribeInstanceSpecs）用于查询购买页可购买的实例规格",
+      "document": "本接口（DescribeInstanceSpecs）用于查询购买页可购买的实例规格。",
       "input": "DescribeInstanceSpecsRequest",
       "name": "查询购买页可购买的实例规格",
       "output": "DescribeInstanceSpecsResponse",
@@ -442,7 +442,7 @@
       "status": "online"
     },
     "DescribeMaintainPeriod": {
-      "document": "查询实例维护时间窗",
+      "document": "本接口（DescribeMaintainPeriod）用于查询实例维护时间窗。",
       "input": "DescribeMaintainPeriodRequest",
       "name": "查询实例维护时间窗",
       "output": "DescribeMaintainPeriodResponse",
@@ -463,7 +463,7 @@
       "status": "online"
     },
     "DescribeProjectSecurityGroups": {
-      "document": "查询项目安全组信息",
+      "document": "本接口（DescribeProjectSecurityGroups）用于查询项目安全组信息。",
       "input": "DescribeProjectSecurityGroupsRequest",
       "name": "查询项目安全组信息",
       "output": "DescribeProjectSecurityGroupsResponse",
@@ -519,7 +519,7 @@
       "status": "online"
     },
     "DescribeRollbackTimeRange": {
-      "document": "查询回档时间范围",
+      "document": "本接口（DescribeRollbackTimeRange）用于查询回档时间范围。",
       "input": "DescribeRollbackTimeRangeRequest",
       "name": "查询回档时间范围",
       "output": "DescribeRollbackTimeRangeResponse",
@@ -554,7 +554,7 @@
       "status": "online"
     },
     "DisassociateSecurityGroups": {
-      "document": "安全组批量解绑云资源",
+      "document": "本接口（DisassociateSecurityGroups）用于安全组批量解绑云资源。",
       "input": "DisassociateSecurityGroupsRequest",
       "name": "安全组批量解绑云资源",
       "output": "DisassociateSecurityGroupsResponse",
@@ -589,7 +589,7 @@
       "status": "online"
     },
     "InquirePriceCreate": {
-      "document": "查询新购集群价格",
+      "document": "本接口（InquirePriceCreate）用于新购集群的价格查询。",
       "input": "InquirePriceCreateRequest",
       "name": "新购集群询价",
       "output": "InquirePriceCreateResponse",
@@ -659,7 +659,7 @@
       "status": "online"
     },
     "ModifyBackupConfig": {
-      "document": "修改指定集群的备份配置",
+      "document": "本接口（ModifyBackupConfig）用于修改指定集群的备份配置。",
       "input": "ModifyBackupConfigRequest",
       "name": "修改备份配置",
       "output": "ModifyBackupConfigResponse",
@@ -687,14 +687,14 @@
       "status": "online"
     },
     "ModifyClusterDatabase": {
-      "document": "修改数据库",
+      "document": "本接口（ModifyClusterDatabase）用于修改数据库的账号授权。",
       "input": "ModifyClusterDatabaseRequest",
       "name": "修改数据库",
       "output": "ModifyClusterDatabaseResponse",
       "status": "online"
     },
     "ModifyClusterName": {
-      "document": "修改集群名称",
+      "document": "本接口（ModifyClusterName）用于修改集群名称。",
       "input": "ModifyClusterNameRequest",
       "name": "修改集群名称",
       "output": "ModifyClusterNameResponse",
@@ -708,14 +708,14 @@
       "status": "online"
     },
     "ModifyClusterPasswordComplexity": {
-      "document": "本接口（ModifyClusterPasswordComplexity）用于修改/开启集群密码复杂度",
+      "document": "本接口（ModifyClusterPasswordComplexity）用于修改/开启集群密码复杂度。",
       "input": "ModifyClusterPasswordComplexityRequest",
       "name": "修改集群密码复杂度",
       "output": "ModifyClusterPasswordComplexityResponse",
       "status": "online"
     },
     "ModifyClusterSlaveZone": {
-      "document": "变更备可用区",
+      "document": "本接口（ModifyClusterSlaveZone）用于变更集群的备可用区。",
       "input": "ModifyClusterSlaveZoneRequest",
       "name": "变更备可用区",
       "output": "ModifyClusterSlaveZoneResponse",
@@ -750,14 +750,14 @@
       "status": "online"
     },
     "ModifyInstanceUpgradeLimitDays": {
-      "document": "修改实例小版本升级限制时间",
+      "document": "本接口（ModifyInstanceUpgradeLimitDays）用于修改实例内核小版本的升级限制时间。",
       "input": "ModifyInstanceUpgradeLimitDaysRequest",
       "name": "修改实例小版本升级限制时间",
       "output": "ModifyInstanceUpgradeLimitDaysResponse",
       "status": "online"
     },
     "ModifyMaintainPeriodConfig": {
-      "document": "修改维护时间配置",
+      "document": "本接口（ModifyMaintainPeriodConfig）用于修改维护时间配置。",
       "input": "ModifyMaintainPeriodConfigRequest",
       "name": "修改维护时间配置",
       "output": "ModifyMaintainPeriodConfigResponse",
@@ -820,7 +820,7 @@
       "status": "online"
     },
     "OfflineCluster": {
-      "document": "销毁集群",
+      "document": "本接口（OfflineCluster）用于销毁集群。",
       "input": "OfflineClusterRequest",
       "name": "销毁集群",
       "output": "OfflineClusterResponse",
@@ -841,35 +841,35 @@
       "status": "online"
     },
     "OpenClusterPasswordComplexity": {
-      "document": "本接口（OpenClusterPasswordComplexity）用于开启自定义密码复杂度功能",
+      "document": "本接口（OpenClusterPasswordComplexity）用于开启自定义密码复杂度功能。",
       "input": "OpenClusterPasswordComplexityRequest",
       "name": "开启自定义密码复杂度功能",
       "output": "OpenClusterPasswordComplexityResponse",
       "status": "online"
     },
     "OpenClusterReadOnlyInstanceGroupAccess": {
-      "document": "开启只读实例组接入",
+      "document": "本接口（OpenClusterReadOnlyInstanceGroupAccess）用于开启只读实例组接入。",
       "input": "OpenClusterReadOnlyInstanceGroupAccessRequest",
       "name": "开启只读实例组接入",
       "output": "OpenClusterReadOnlyInstanceGroupAccessResponse",
       "status": "online"
     },
     "OpenReadOnlyInstanceExclusiveAccess": {
-      "document": "开通只读实例独有访问接入组",
+      "document": "本接口（OpenReadOnlyInstanceExclusiveAccess）用于开通只读实例独有访问接入组。",
       "input": "OpenReadOnlyInstanceExclusiveAccessRequest",
-      "name": "开通只读实例独有访问接入组。",
+      "name": "开通只读实例独有访问接入组",
       "output": "OpenReadOnlyInstanceExclusiveAccessResponse",
       "status": "online"
     },
     "OpenWan": {
-      "document": "本接口（OpenWan）用于开通外网",
+      "document": "本接口（OpenWan）用于开通外网。",
       "input": "OpenWanRequest",
       "name": "开通外网",
       "output": "OpenWanResponse",
       "status": "online"
     },
     "PauseServerless": {
-      "document": "暂停serverless集群",
+      "document": "本接口（PauseServerless）用于暂停 serverless 集群。",
       "input": "PauseServerlessRequest",
       "name": "暂停serverless集群",
       "output": "PauseServerlessResponse",
@@ -890,7 +890,7 @@
       "status": "online"
     },
     "RemoveClusterSlaveZone": {
-      "document": "关闭多可用区部署",
+      "document": "本接口（RemoveClusterSlaveZone）用于关闭集群多可用区部署。",
       "input": "RemoveClusterSlaveZoneRequest",
       "name": "关闭多可用区部署",
       "output": "RemoveClusterSlaveZoneResponse",
@@ -918,14 +918,14 @@
       "status": "online"
     },
     "ResumeServerless": {
-      "document": "恢复serverless集群",
+      "document": "本接口（ResumeServerless）用于恢复 serverless 集群（启动暂停的集群）。",
       "input": "ResumeServerlessRequest",
       "name": "恢复serverless集群",
       "output": "ResumeServerlessResponse",
       "status": "online"
     },
     "RevokeAccountPrivileges": {
-      "document": "批量回收账号权限",
+      "document": "本接口（RevokeAccountPrivileges）用于批量回收账号权限。",
       "input": "RevokeAccountPrivilegesRequest",
       "name": "批量回收账号权限",
       "output": "RevokeAccountPrivilegesResponse",
@@ -939,14 +939,14 @@
       "status": "online"
     },
     "RollbackToNewCluster": {
-      "document": "回档到新集群",
+      "document": "本接口（RollbackToNewCluster）用于回档到新集群。",
       "input": "RollbackToNewClusterRequest",
       "name": "回档到新集群",
       "output": "RollbackToNewClusterResponse",
       "status": "online"
     },
     "SearchClusterDatabases": {
-      "document": "本接口(SearchClusterDatabases)搜索集群数据库列表",
+      "document": "本接口（SearchClusterDatabases）用于搜索集群数据库列表。",
       "input": "SearchClusterDatabasesRequest",
       "name": "搜索集群数据库列表",
       "output": "SearchClusterDatabasesResponse",
@@ -967,14 +967,14 @@
       "status": "online"
     },
     "StartCLSDelivery": {
-      "document": "开启日志投递",
+      "document": "本接口（StartCLSDelivery）用于开启日志投递功能。",
       "input": "StartCLSDeliveryRequest",
       "name": "开启日志投递",
       "output": "StartCLSDeliveryResponse",
       "status": "online"
     },
     "StopCLSDelivery": {
-      "document": "停止日志投递",
+      "document": "本接口（StopCLSDelivery）用于停止日志投递功能。",
       "input": "StopCLSDeliveryRequest",
       "name": "停止日志投递",
       "output": "StopCLSDeliveryResponse",
@@ -988,7 +988,7 @@
       "status": "online"
     },
     "SwitchClusterZone": {
-      "document": "主备可用区切换",
+      "document": "本接口（SwitchClusterZone）用于切换集群的主备可用区。",
       "input": "SwitchClusterZoneRequest",
       "name": "主备可用区切换",
       "output": "SwitchClusterZoneResponse",
@@ -1009,14 +1009,14 @@
       "status": "online"
     },
     "UpgradeClusterVersion": {
-      "document": "更新内核小版本",
+      "document": "本接口（UpgradeClusterVersion）用于更新内核小版本。",
       "input": "UpgradeClusterVersionRequest",
       "name": "更新内核小版本",
       "output": "UpgradeClusterVersionResponse",
       "status": "online"
     },
     "UpgradeInstance": {
-      "document": "实例变配",
+      "document": "本接口（UpgradeInstance）用于实例变配。",
       "input": "UpgradeInstanceRequest",
       "name": "实例变配",
       "output": "UpgradeInstanceResponse",
@@ -1571,8 +1571,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例组ID数组",
-          "example": "cynosdbmysql-ins-4senc2fm",
+          "document": "实例组 ID 数组，cynosdbmysql-grp-前缀开头或集群 ID。\n说明：要获取集群的实例组 ID，可通过 [查询集群实例组](https://cloud.tencent.com/document/product/1003/103934) 进行。",
+          "example": "cynosdbmysql-grp-beg2j3v0",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -11785,8 +11785,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例组ID数组",
-          "example": "cynosdbmysql-ins-4senc2fm",
+          "document": "实例组 ID 数组，cynosdbmysql-grp-前缀开头或集群 ID。\n说明：要获取集群的实例组 ID，可通过 [查询集群实例组](https://cloud.tencent.com/document/product/1003/103934) 进行。",
+          "example": "cynosdbmysql-grp-beg2j3v0",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -11803,7 +11803,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区",
+          "document": "可用区。\n说明：请正确输入集群所在的主可用区，若输入非集群所在的主可用区可能显示调用成功，但实际执行会失败。",
           "example": "ap-guangzhou-3",
           "member": "string",
           "name": "Zone",
@@ -14543,8 +14543,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例组ID",
-          "example": "cynosdbmysql-ins-4senc2fm",
+          "document": "网络组id(cynosdbmysql-grp-前缀开头)或集群id",
+          "example": "cynosdbmysql-grp-4senc2fm",
           "member": "string",
           "name": "InstanceId",
           "required": true,

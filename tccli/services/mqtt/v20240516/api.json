@@ -246,7 +246,7 @@
         },
         {
           "disabled": false,
-          "document": "ip地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "IP地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "127.0.0.1",
           "member": "string",
           "name": "Ip",

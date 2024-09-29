@@ -77,6 +77,20 @@
       "output": "CreateCustomizeErrorPageResponse",
       "status": "online"
     },
+    "CreateFunction": {
+      "document": "创建并部署边缘函数至 EdgeOne 的边缘节点。",
+      "input": "CreateFunctionRequest",
+      "name": "创建边缘函数",
+      "output": "CreateFunctionResponse",
+      "status": "online"
+    },
+    "CreateFunctionRule": {
+      "document": "创建边缘函数的触发规则。",
+      "input": "CreateFunctionRuleRequest",
+      "name": "创建边缘函数触发规则",
+      "output": "CreateFunctionRuleResponse",
+      "status": "online"
+    },
     "CreateL4Proxy": {
       "document": "用于创建四层代理实例。",
       "input": "CreateL4ProxyRequest",
@@ -194,6 +208,20 @@
       "input": "DeleteCustomErrorPageRequest",
       "name": "删除自定义响应页面",
       "output": "DeleteCustomErrorPageResponse",
+      "status": "online"
+    },
+    "DeleteFunction": {
+      "document": "删除边缘函数，删除后函数无法恢复，关联的触发规则会一并删除。",
+      "input": "DeleteFunctionRequest",
+      "name": "删除边缘函数",
+      "output": "DeleteFunctionResponse",
+      "status": "online"
+    },
+    "DeleteFunctionRules": {
+      "document": "删除边缘函数触发规则。",
+      "input": "DeleteFunctionRulesRequest",
+      "name": "删除边缘函数触发规则",
+      "output": "DeleteFunctionRulesResponse",
       "status": "online"
     },
     "DeleteL4Proxy": {
@@ -362,6 +390,27 @@
       "input": "DescribeEnvironmentsRequest",
       "name": "查询环境信息",
       "output": "DescribeEnvironmentsResponse",
+      "status": "online"
+    },
+    "DescribeFunctionRules": {
+      "document": "查询边缘函数触发规则列表，支持按照规则 ID、函数 ID、规则描述等条件进行过滤。",
+      "input": "DescribeFunctionRulesRequest",
+      "name": "查询边缘函数触发规则",
+      "output": "DescribeFunctionRulesResponse",
+      "status": "online"
+    },
+    "DescribeFunctionRuntimeEnvironment": {
+      "document": "查询边缘函数运行环境，包括环境变量。",
+      "input": "DescribeFunctionRuntimeEnvironmentRequest",
+      "name": "查询边缘函数运行环境",
+      "output": "DescribeFunctionRuntimeEnvironmentResponse",
+      "status": "online"
+    },
+    "DescribeFunctions": {
+      "document": "查询边缘函数列表，支持函数 ID、函数名称、描述等条件的过滤。",
+      "input": "DescribeFunctionsRequest",
+      "name": "查询边缘函数列表",
+      "output": "DescribeFunctionsResponse",
       "status": "online"
     },
     "DescribeHostsSetting": {
@@ -546,6 +595,13 @@
       "output": "DownloadL7LogsResponse",
       "status": "online"
     },
+    "HandleFunctionRuntimeEnvironment": {
+      "document": "操作边缘函数运行环境，支持环境变量的相关设置。\n设置环境变量后，可在函数代码中使用，具体参考 [边缘函数引入环境变量](https://cloud.tencent.com/document/product/1552/109151#0151fd9a-8b0e-407b-ae37-54553a60ded6)。",
+      "input": "HandleFunctionRuntimeEnvironmentRequest",
+      "name": "操作边缘函数运行环境",
+      "output": "HandleFunctionRuntimeEnvironmentResponse",
+      "status": "online"
+    },
     "IdentifyZone": {
       "document": "用于验证站点所有权。",
       "input": "IdentifyZoneRequest",
@@ -621,6 +677,27 @@
       "input": "ModifyCustomErrorPageRequest",
       "name": "修改自定义响应页面",
       "output": "ModifyCustomErrorPageResponse",
+      "status": "online"
+    },
+    "ModifyFunction": {
+      "document": "修改边缘函数，支持修改函数的内容及描述信息，修改且重新部署后，函数立刻生效。",
+      "input": "ModifyFunctionRequest",
+      "name": "修改边缘函数",
+      "output": "ModifyFunctionResponse",
+      "status": "online"
+    },
+    "ModifyFunctionRule": {
+      "document": "修改边缘函数触发规则，支持修改规则条件、执行函数以及描述信息。",
+      "input": "ModifyFunctionRuleRequest",
+      "name": "修改边缘函数触发规则",
+      "output": "ModifyFunctionRuleResponse",
+      "status": "online"
+    },
+    "ModifyFunctionRulePriority": {
+      "document": "修改边缘函数触发规则的优先级。",
+      "input": "ModifyFunctionRulePriorityRequest",
+      "name": "修改边缘函数触发规则优先级",
+      "output": "ModifyFunctionRulePriorityResponse",
       "status": "online"
     },
     "ModifyHostsCertificate": {
@@ -3741,6 +3818,134 @@
       ],
       "type": "object"
     },
+    "CreateFunctionRequest": {
+      "document": "CreateFunction请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "zone-z2fc1fkl",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "函数名称，只能包含小写字母、数字、连字符，以数字或字母开头，以数字或字母结尾，最大支持 30 个字符。",
+          "example": "test-function",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "函数内容，当前仅支持 JavaScript 代码，最大支持 5MB 大小。",
+          "example": "无",
+          "member": "string",
+          "name": "Content",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "函数描述，最大支持 60 个字符。",
+          "example": "鉴权函数",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateFunctionResponse": {
+      "document": "CreateFunction返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "函数 ID。",
+          "example": "ef-jjhvk7ec",
+          "member": "string",
+          "name": "FunctionId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateFunctionRuleRequest": {
+      "document": "CreateFunctionRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "zone-292mnbdkdzo6",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则条件列表，相同触发规则的不同条件匹配项之间为或关系。",
+          "example": "无",
+          "member": "FunctionRuleCondition",
+          "name": "FunctionRuleConditions",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "函数 ID，命中触发规则条件后执行的函数。",
+          "example": "ef-0agikbrr",
+          "member": "string",
+          "name": "FunctionId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则描述，最大支持 60 个字符。",
+          "example": "鉴权",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateFunctionRuleResponse": {
+      "document": "CreateFunctionRule返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则 ID。",
+          "example": "rule-02y3grbu",
+          "member": "string",
+          "name": "RuleId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateL4ProxyRequest": {
       "document": "CreateL4Proxy请求参数结构体",
       "members": [
@@ -5383,6 +5588,78 @@
       ],
       "type": "object"
     },
+    "DeleteFunctionRequest": {
+      "document": "DeleteFunction请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "zone-2gqxim9jstab",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "函数 ID。",
+          "example": "ef-0agikbrr",
+          "member": "string",
+          "name": "FunctionId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteFunctionResponse": {
+      "document": "DeleteFunction返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteFunctionRulesRequest": {
+      "document": "DeleteFunctionRules请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "zone-2gqxim9jstab",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则 ID 列表。",
+          "example": "[\"rule-02y3grbu\"]",
+          "member": "string",
+          "name": "RuleIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteFunctionRulesResponse": {
+      "document": "DeleteFunctionRules返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteL4ProxyRequest": {
       "document": "DeleteL4Proxy请求参数结构体",
       "members": [
@@ -6966,6 +7243,181 @@
           "example": "无",
           "member": "EnvInfo",
           "name": "EnvInfos",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFunctionRulesRequest": {
+      "document": "DescribeFunctionRules请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "zone-293e7s5jne1i",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件列表，多个条件为且关系，Filters.Values 的上限为 20。详细的过滤条件如下：\n<li>rule-id：按照【规则 ID】进行精确匹配。</li>\n<li>function-id：按照【函数 ID】进行精确匹配。</li>\n<li>remark：按照【规则描述】进行模糊匹配。</li>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFunctionRulesResponse": {
+      "document": "DescribeFunctionRules返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则详情列表。",
+          "example": "无",
+          "member": "FunctionRule",
+          "name": "FunctionRules",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFunctionRuntimeEnvironmentRequest": {
+      "document": "DescribeFunctionRuntimeEnvironment请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "zone-293e7s5jne1i",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "函数 ID。",
+          "example": "ef-jjhvk7ec",
+          "member": "string",
+          "name": "FunctionId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFunctionRuntimeEnvironmentResponse": {
+      "document": "DescribeFunctionRuntimeEnvironment返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "环境变量列表。",
+          "example": "无",
+          "member": "FunctionEnvironmentVariable",
+          "name": "EnvironmentVariables",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFunctionsRequest": {
+      "document": "DescribeFunctions请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "zone-293e7s5jne1i",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "按照函数 ID 列表过滤。",
+          "example": "[\"ef-jjhvk7ec\", \"ef-vwbhac60\"]",
+          "member": "string",
+          "name": "FunctionIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件列表，多个条件为且关系，Filters.Values 的上限为 20。详细的过滤条件如下：\n<li>name：按照【函数名称】进行模糊匹配。</li>\n<li>remark：按照【函数描述】进行模糊匹配。</li>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "分页查询偏移量。默认值：0。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页查询限制数目。默认值：20，最大值：200。",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFunctionsResponse": {
+      "document": "DescribeFunctions返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "符合查询条件的函数总数。",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "符合查询条件的所有函数信息。",
+          "example": "无",
+          "member": "Function",
+          "name": "Functions",
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
@@ -9879,6 +10331,234 @@
       ],
       "usage": "both"
     },
+    "Function": {
+      "document": "边缘函数详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "函数 ID。",
+          "example": "ef-jjhvk7ec",
+          "member": "string",
+          "name": "FunctionId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "zone-293e7s5jne1",
+          "member": "string",
+          "name": "ZoneId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "函数名字。",
+          "example": "example-function",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "函数描述。",
+          "example": "鉴权函数",
+          "member": "string",
+          "name": "Remark",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "函数内容。",
+          "example": "无",
+          "member": "string",
+          "name": "Content",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "函数默认域名。",
+          "example": "test1-zone-28v607hqabcd-1231525690.eo-edgefunctions.com",
+          "member": "string",
+          "name": "Domain",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间。时间为世界标准时间（UTC）， 遵循 ISO 8601 标准的日期和时间格式。",
+          "example": "2017-09-17T16:30:58.410670+00:00",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "修改时间。时间为世界标准时间（UTC）， 遵循 ISO 8601 标准的日期和时间格式。",
+          "example": "2017-09-17T16:30:58.410670+00:00",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "FunctionEnvironmentVariable": {
+      "document": "边缘函数环境变量",
+      "members": [
+        {
+          "disabled": false,
+          "document": "变量的名称，限制只能包含大小写字母、数字，特殊字符仅支持 @ . - _ ，最大 64 个字节，不支持重复。",
+          "example": "无",
+          "member": "string",
+          "name": "Key",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "变量的值，限制最大 5000 字节，默认值为空。",
+          "example": "无",
+          "member": "string",
+          "name": "Value",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "变量的类型，取值有：\n<li>string：字符串类型；</li>\n<li>json：json 对象类型。</li>默认值为：string。",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "FunctionRule": {
+      "document": "边缘函数触发规则。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则ID。",
+          "example": "rule-02y3grbu",
+          "member": "string",
+          "name": "RuleId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则条件列表，列表项之间为或关系。",
+          "example": "无",
+          "member": "FunctionRuleCondition",
+          "name": "FunctionRuleConditions",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "函数 ID，命中触发规则条件后执行的函数。",
+          "example": "ef-jjhvk7ec",
+          "member": "string",
+          "name": "FunctionId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则描述。",
+          "example": "鉴权",
+          "member": "string",
+          "name": "Remark",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "函数名称。",
+          "example": "TestFunction",
+          "member": "string",
+          "name": "FunctionName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "函数触发规则优先级，数值越大，优先级越高。",
+          "example": "1",
+          "member": "int64",
+          "name": "Priority",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间。时间为世界标准时间（UTC）， 遵循 ISO 8601 标准的日期和时间格式。",
+          "example": "2017-09-17T16:30:58.410670+00:00",
+          "member": "datetime_iso",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间。时间为世界标准时间（UTC）， 遵循 ISO 8601 标准的日期和时间格式。",
+          "example": "2017-09-17T16:30:58.410670+00:00",
+          "member": "datetime_iso",
+          "name": "UpdateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "FunctionRuleCondition": {
+      "document": "边缘函数触发规则条件。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "边缘函数触发规则条件，该列表内所有项全部满足即判断该条件满足。",
+          "example": "[]",
+          "member": "RuleCondition",
+          "name": "RuleConditions",
+          "output_required": true,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "Grpc": {
       "document": "Grpc配置项",
       "members": [
@@ -9894,6 +10574,60 @@
         }
       ],
       "usage": "both"
+    },
+    "HandleFunctionRuntimeEnvironmentRequest": {
+      "document": "HandleFunctionRuntimeEnvironment请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "zone-2gqxim9jstab",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "函数 ID。",
+          "example": "ef-jjhvk7ec",
+          "member": "string",
+          "name": "FunctionId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "操作类型，取值有：\n<li>setEnvironmentVariable：设置环境变量，当环境变量存在时为修改行为，否则为添加行为；</li>\n<li>deleteEnvironmentVariable：删除环境变量变量；</li>\n<li>clearEnvironmentVariable：清空环境变量变量；</li>\n<li>resetEnvironmentVariable：重置环境变量变量。</li>",
+          "example": "setEnvironmentVariable",
+          "member": "string",
+          "name": "Operation",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "环境变量列表，函数运行环境最多支持 64 个变量。当 Operation 取值为 setEnvironmentVariable、deleteEnvironmentVariable、resetEnvironmentVariable 时必填。",
+          "example": "无",
+          "member": "FunctionEnvironmentVariable",
+          "name": "EnvironmentVariables",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "HandleFunctionRuntimeEnvironmentResponse": {
+      "document": "HandleFunctionRuntimeEnvironment返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "Header": {
       "document": "刷新预热附带的头部信息",
@@ -11751,6 +12485,159 @@
     },
     "ModifyCustomErrorPageResponse": {
       "document": "ModifyCustomErrorPage返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyFunctionRequest": {
+      "document": "ModifyFunction请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "zone-2gqxim9jstab",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "函数 ID。",
+          "example": "ef-jjhvk7ec",
+          "member": "string",
+          "name": "FunctionId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "函数描述，最大支持 60 个字符，不填写保持原有配置。",
+          "example": "鉴权函数",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "函数内容，当前仅支持 JavaScript 代码，最大支持 5MB 大小，不填写保持原有配置。",
+          "example": "无",
+          "member": "string",
+          "name": "Content",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyFunctionResponse": {
+      "document": "ModifyFunction返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyFunctionRulePriorityRequest": {
+      "document": "ModifyFunctionRulePriority请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "zone-293e7s5jne1i",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则 ID 列表，必须填入调整优先级后的所有规则 ID，多条规则执行顺序依次从上往下，不填写保持原优先级顺序。",
+          "example": "[\"rule-02y3grbu\", \"rule-02sfmvlw\"]",
+          "member": "string",
+          "name": "RuleIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyFunctionRulePriorityResponse": {
+      "document": "ModifyFunctionRulePriority返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyFunctionRuleRequest": {
+      "document": "ModifyFunctionRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "zone-2gqxim9jstab",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则 ID。",
+          "example": "rule-02y3grbu",
+          "member": "string",
+          "name": "RuleId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则条件列表，相同触发规则的不同条件匹配项之间为或关系，不填写保持原有配置。",
+          "example": "无",
+          "member": "FunctionRuleCondition",
+          "name": "FunctionRuleConditions",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "函数 ID，命中触发规则条件后执行的函数，不填写保持原有配置。",
+          "example": "ef-jjhvk7ec",
+          "member": "string",
+          "name": "FunctionId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则描述，最大支持 60 个字符，不填写保持原有配置。",
+          "example": "鉴权规则",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyFunctionRuleResponse": {
+      "document": "ModifyFunctionRule返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

@@ -27,7 +27,7 @@
     "CreateAICall": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAICall\n<公共请求参数>\n\n{\n    \"Callee\": \"008612300000000\",\n    \"SdkAppId\": 1400000000,\n    \"SystemPrompt\": \"你是一只机器人\",\n    \"LLMType\": \"openai\",\n    \"Model\": \"gpt3\",\n    \"APIKey\": \"114514\",\n    \"APIUrl\": \"https://xxx/v1/chat/completions\",\n    \"VoiceType\": \"ZhiMei\"\n}",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAICall\n<公共请求参数>\n\n{\n    \"Callee\": \"008612300000000\",\n    \"SdkAppId\": 1400000000,\n    \"SystemPrompt\": \"您是一只机器人\",\n    \"LLMType\": \"openai\",\n    \"Model\": \"gpt3\",\n    \"APIKey\": \"114514\",\n    \"APIUrl\": \"https://xxx/v1/chat/completions\",\n    \"VoiceType\": \"ZhiMei\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6bb56a09-2787-40bc-80c5-dc6dab783eff\",\n        \"SessionId\": \"6bb56a09278740bc80c5dc6dab783eff\"\n    }\n}",
         "title": "创建ai 会话示例"
       }
@@ -94,6 +94,14 @@
         "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateIVRSession\n<公共请求参数>\n\n{\n    \"Callee\": \"008612300000000\",\n    \"SdkAppId\": 1400000000,\n    \"IVRId\": 4500\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6bb56a09-2787-40bc-80c5-dc6dab783eff\",\n        \"SessionId\": \"6bb56a09278740bc80c5dc6dab783eff\"\n    }\n}",
         "title": "创建关联 IVR 的会话示例"
+      }
+    ],
+    "CreateOwnNumberApply": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOwnNumberApply\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1,\n    \"Prefix\": \"123\",\n    \"SipTrunkId\": 12,\n    \"DetailList\": [\n        {\n            \"CallType\": 2,\n            \"PhoneNumber\": \"02012345678\",\n            \"MaxCallCount\": 1,\n            \"MaxCallPSec\": 1\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\",\n        \"ApplyId\": 1\n    }\n}",
+        "title": "创建客户自携号码接入审核实例"
       }
     ],
     "CreatePredictiveDialingCampaign": [
@@ -382,6 +390,14 @@
         "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyExtension\n<公共请求参数>\n\n{\n    \"SdkAppId\": 140000000,\n    \"ExtensionId\": \"1001\",\n    \"ExtensionName\": \"分机1\",\n    \"SkillGroupIds\": [\n        1000\n    ],\n    \"Relation\": \"xxx@xxxx.com\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"86a17f0e-bcb3-46bf-ac66-8f165fe52127\"\n    }\n}",
         "title": "修改话机账号"
+      }
+    ],
+    "ModifyOwnNumberApply": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOwnNumberApply\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1,\n    \"ApplyId\": 1,\n    \"Prefix\": \"123\",\n    \"DetailList\": [\n        {\n            \"CallType\": 2,\n            \"PhoneNumber\": \"02012345678\",\n            \"MaxCallCount\": 1,\n            \"MaxCallPSec\": 1\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "修改客户自携号码审批单示例"
       }
     ],
     "ModifyStaff": [

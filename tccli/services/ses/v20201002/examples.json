@@ -14,6 +14,12 @@
         "input": "POST / HTTP/1.1\nHost: ses.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCustomBlacklist\n<公共请求参数>\n\n{\n    \"ExpireDate\": \"2024-06-19\",\n    \"Emails\": [\n        \"b@gmail.com\",\n        \"a@gmail.com\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8979fc1e-9564-4fc9-bf7d-2958ce679b72\"\n    }\n}",
         "title": "添加邮箱地址到黑名单"
+      },
+      {
+        "document": "成功示例",
+        "input": "POST / HTTP/1.1\nHost: ses.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCustomBlacklist\n<公共请求参数>\n\n{\n    \"Emails\": [\n        \"resrse@sdasd.com\",\n        \"resrse@sdasd.com\",\n        \"asdasdasdasd\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"InvalidCount\": 1,\n        \"RepeatCount\": 1,\n        \"RequestId\": \"1e6f3195-f832-42a4-87ca-265a80435bc0\",\n        \"TooLongCount\": 0,\n        \"TotalCount\": 3,\n        \"ValidCount\": 1\n    }\n}",
+        "title": "成功示例"
       }
     ],
     "CreateEmailAddress": [

@@ -4709,6 +4709,7 @@
           "example": "127.0.0.1",
           "member": "string",
           "name": "Host",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -4719,6 +4720,7 @@
           "example": "9030",
           "member": "int64",
           "name": "Port",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -4729,16 +4731,18 @@
           "example": "root",
           "member": "string",
           "name": "User",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "doris集群的密码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "base64编码的doris集群对应用户的密码\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
           "name": "Password",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
