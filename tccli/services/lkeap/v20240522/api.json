@@ -287,6 +287,15 @@
         },
         {
           "disabled": false,
+          "document": "文件名，可选，当文件名无法从传入的FileUrl获取时需要通过该字段来明确",
+          "example": "yourfile.pdf",
+          "member": "string",
+          "name": "FileName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": true,
           "document": "文件的 Base64 值。支持的文件大小：所下载文件经Base64编码后不超过 8M。文件下载时间不超过 3 秒。支持的图片像素：单边介于20-10000px之间。文件的 FileUrl、FileBase64 必须提供一个，如果都提供，只使用 FileUrl。",
           "example": "无",
           "member": "string",

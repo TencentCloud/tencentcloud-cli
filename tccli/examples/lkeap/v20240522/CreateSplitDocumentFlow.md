@@ -12,7 +12,8 @@ tccli lkeap CreateSplitDocumentFlow --cli-unfold-argument  \
     --FileEndPageNumber 2 \
     --Config.TableResultType 1 \
     --Config.ResultType 1 \
-    --FileBase64 
+    --FileBase64  \
+    --FileName myfile.pdf
 ```
 
 Output: 

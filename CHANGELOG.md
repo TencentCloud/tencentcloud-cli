@@ -1,3 +1,24 @@
+# Release 3.0.1083.1
+
+## 知识引擎原子能力(lkeap) 版本：2024-05-22
+
+### 第 4 次发布
+
+发布时间：2024-10-01 01:23:08
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateSplitDocumentFlow](http://document.tencentcloudapi.woa.com/document/product/1764/84925)
+
+	* 新增入参：FileName
+
+
+
+
 # Release 3.0.1082.1
 
 ## 弹性伸缩(as) 版本：2018-04-19

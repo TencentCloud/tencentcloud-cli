@@ -157,7 +157,7 @@
 | lighthousedb | [轻量数据库服务LighthouseDB](http://document.tencentcloudapi.woa.com/document/product/-1) | 2024-07-31 01:19:26 |
 | live | [云直播CSS](http://document.tencentcloudapi.woa.com/document/product/267) | 2024-09-12 01:59:27 |
 | lke | [大模型知识引擎](http://document.tencentcloudapi.woa.com/document/product/1759) | 2024-06-21 01:19:32 |
-| lkeap | [知识引擎原子能力](http://document.tencentcloudapi.woa.com/document/product/) | 2024-09-27 02:01:50 |
+| lkeap | [知识引擎原子能力](http://document.tencentcloudapi.woa.com/document/product/) | 2024-10-01 01:23:08 |
 | lowcode | [云开发低码](http://document.tencentcloudapi.woa.com/document/product/1301) | 2024-09-24 15:11:42 |
 | lp | [登录保护](http://document.tencentcloudapi.woa.com/document/product/1190) | 2022-03-08 08:03:08 |
 | mall | [商场客留大数据](http://document.tencentcloudapi.woa.com/document/product/1707) | 2024-03-20 01:20:35 |
@@ -213,7 +213,7 @@
 | soe | [智聆口语评测](http://document.tencentcloudapi.woa.com/document/product/884) | 2024-04-11 16:03:10 |
 | sqlserver | [云数据库 SQL Server](http://document.tencentcloudapi.woa.com/document/product/238) | 2024-08-27 01:25:16 |
 | ssa | [安全运营中心](http://document.tencentcloudapi.woa.com/document/product/664) | 2024-03-20 01:23:54 |
-| ssl | [SSL 证书](http://document.tencentcloudapi.woa.com/document/product/400) | 2024-09-26 02:27:11 |
+| ssl | [SSL 证书](http://document.tencentcloudapi.woa.com/document/product/400) | 2024-10-01 01:27:18 |
 | sslpod | [证书监控 SSLPod](http://document.tencentcloudapi.woa.com/document/product/1084) | 2024-03-20 01:24:08 |
 | ssm | [凭据管理系统](http://document.tencentcloudapi.woa.com/document/product/1140) | 2024-05-21 01:24:59 |
 | sts | [安全凭证服务](http://document.tencentcloudapi.woa.com/document/product/1312) | 2024-08-28 01:31:17 |
