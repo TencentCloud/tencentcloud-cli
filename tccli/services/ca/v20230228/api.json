@@ -1,0 +1,264 @@
+{
+  "actions": {
+    "CreateVerifyReport": {
+      "document": "创建签名验证报告任务，此接口为异步盖章接口，盖章时效24小时。",
+      "input": "CreateVerifyReportRequest",
+      "name": "创建验证报告",
+      "output": "CreateVerifyReportResponse",
+      "status": "online"
+    },
+    "DescribeVerifyReport": {
+      "document": "下载验签报告url，url有效期默认12小时",
+      "input": "DescribeVerifyReportRequest",
+      "name": "查询验签报告",
+      "output": "DescribeVerifyReportResponse",
+      "status": "online"
+    },
+    "UploadFile": {
+      "document": "文件上传接口",
+      "input": "UploadFileRequest",
+      "name": "文件上传",
+      "output": "UploadFileResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2023-02-28",
+    "api_brief": "用户申请/管理证书的接口，包括申请、查询、更新、吊销等。",
+    "serviceNameCN": "腾讯云CA",
+    "serviceShortName": "ca"
+  },
+  "objects": {
+    "CreateVerifyReportRequest": {
+      "document": "CreateVerifyReport请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "申请者类型 1:个人，2:企业",
+          "example": "1",
+          "member": "string",
+          "name": "ApplyCustomerType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "申请企业 or 自然人名称",
+          "example": "李四",
+          "member": "string",
+          "name": "ApplyCustomerName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "验签申请经办人姓名",
+          "example": "张三",
+          "member": "string",
+          "name": "ApplyName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "验签申请经办人电话",
+          "example": "无",
+          "member": "string",
+          "name": "ApplyMobile",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "验签文件id",
+          "example": "无",
+          "member": "string",
+          "name": "FileId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "验签申请经办人邮箱",
+          "example": "无",
+          "member": "string",
+          "name": "ApplyEmail",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateVerifyReportResponse": {
+      "document": "CreateVerifyReport返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "签名id",
+          "example": "无",
+          "member": "string",
+          "name": "SignatureId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "code",
+          "example": "无",
+          "member": "string",
+          "name": "Code",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "message",
+          "example": "无",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVerifyReportRequest": {
+      "document": "DescribeVerifyReport请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "签名id",
+          "example": "无",
+          "member": "string",
+          "name": "SignatureId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVerifyReportResponse": {
+      "document": "DescribeVerifyReport返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "下载url",
+          "example": "无",
+          "member": "string",
+          "name": "ReportUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "code",
+          "example": "无",
+          "member": "string",
+          "name": "Code",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "message",
+          "example": "无",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "FileInfo": {
+      "document": "文件列表信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "BASE64编码后的文件内容",
+          "example": "无",
+          "member": "string",
+          "name": "FileBody",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "文件名及类型，最大长度不超过200字符",
+          "example": "test.pdf",
+          "member": "string",
+          "name": "FileName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "UploadFileRequest": {
+      "document": "UploadFile请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "验签源文件信息列表",
+          "example": "无",
+          "member": "FileInfo",
+          "name": "FileInfos",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "UploadFileResponse": {
+      "document": "UploadFile返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件id列表",
+          "example": "无",
+          "member": "string",
+          "name": "FileIds",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件id总数",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

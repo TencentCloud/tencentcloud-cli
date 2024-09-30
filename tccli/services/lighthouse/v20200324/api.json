@@ -930,7 +930,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "云联网实例ID。可通过[DescribeCcnAttachedInstances](https://cloud.tencent.com/document/product/1207/58797)接口返回值中的CcnId获取。",
+          "document": "云联网实例ID。可通过[DescribeCcns](https://cloud.tencent.com/document/product/215/19199)接口返回值中的CcnId获取。",
           "example": "ccn-f49l6u0z",
           "member": "string",
           "name": "CcnId",
@@ -8684,7 +8684,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "云联网实例ID。可通过[DescribeCcnAttachedInstances](https://cloud.tencent.com/document/product/1207/58797)接口返回值中的CcnId获取。",
+          "document": "云联网实例ID。可通过[DescribeCcns](https://cloud.tencent.com/document/product/215/19199)接口返回值中的CcnId获取。",
           "example": "ccn-f49l6u0z",
           "member": "string",
           "name": "CcnId",

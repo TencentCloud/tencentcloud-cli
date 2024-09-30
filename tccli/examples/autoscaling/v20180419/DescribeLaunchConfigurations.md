@@ -29,6 +29,14 @@ Output:
                 ],
                 "LastOperationInstanceTypesCheckPolicy": "ANY",
                 "ImageId": "img-eb30mz89",
+                "ImageFamily": "",
+                "Tags": [],
+                "IPv6InternetAccessible": {
+                    "InternetChargeType": "TRAFFIC_POSTPAID_BY_HOUR",
+                    "InternetMaxBandwidthOut": 0,
+                    "BandwidthPackageId": null
+                },
+                "DisasterRecoverGroupIds": [],
                 "InstanceChargeType": "POSTPAID_BY_HOUR",
                 "InstanceMarketOptions": null,
                 "DiskTypePolicy": "ORIGINAL",
@@ -43,6 +51,7 @@ Output:
                         "SnapshotId": null,
                         "DeleteWithInstance": false,
                         "Encrypt": false,
+                        "BurstPerformance": null,
                         "ThroughputPerformance": null
                     }
                 ],
@@ -60,6 +69,9 @@ Output:
                     "SecurityService": {
                         "Enabled": true
                     },
+                    "AutomationToolsService": {
+                        "Enabled": true
+                    },
                     "MonitorService": {
                         "Enabled": true
                     }
@@ -71,10 +83,12 @@ Output:
                 "CamRoleName": "",
                 "HostNameSettings": {
                     "HostName": null,
+                    "HostNameSuffix": null,
                     "HostNameStyle": null
                 },
                 "InstanceNameSettings": {
                     "InstanceName": "",
+                    "InstanceNameSuffix": null,
                     "InstanceNameStyle": ""
                 },
                 "InstanceChargePrepaid": {
@@ -130,6 +144,7 @@ Output:
                     {
                         "DiskType": "CLOUD_PREMIUM",
                         "DiskSize": 10,
+                        "BurstPerformance": null,
                         "SnapshotId": null,
                         "DeleteWithInstance": false,
                         "Encrypt": false,
@@ -150,28 +165,40 @@ Output:
                     "SecurityService": {
                         "Enabled": true
                     },
+                    "AutomationToolsService": {
+                        "Enabled": true
+                    },
                     "MonitorService": {
                         "Enabled": true
                     }
                 },
                 "UserData": null,
                 "InstanceTags": [],
+                "ImageFamily": "",
+                "Tags": [],
+                "IPv6InternetAccessible": {
+                    "InternetChargeType": "TRAFFIC_POSTPAID_BY_HOUR",
+                    "InternetMaxBandwidthOut": 0,
+                    "BandwidthPackageId": null
+                },
+                "DisasterRecoverGroupIds": [],
                 "CreatedTime": "2022-03-03T02:36:12Z",
                 "UpdatedTime": "2022-03-03T06:49:31Z",
                 "CamRoleName": "",
                 "HostNameSettings": {
                     "HostName": null,
+                    "HostNameSuffix": null,
                     "HostNameStyle": null
                 },
                 "InstanceNameSettings": {
                     "InstanceName": "",
+                    "InstanceNameSuffix": null,
                     "InstanceNameStyle": ""
                 },
                 "InstanceChargePrepaid": {
                     "Period": 0,
                     "RenewFlag": ""
                 },
-                "Tags": [],
                 "HpcClusterId": ""
             },
             {
@@ -201,6 +228,7 @@ Output:
                         "SnapshotId": null,
                         "DeleteWithInstance": null,
                         "Encrypt": null,
+                        "BurstPerformance": null,
                         "ThroughputPerformance": null
                     }
                 ],
@@ -218,28 +246,40 @@ Output:
                     "SecurityService": {
                         "Enabled": true
                     },
+                    "AutomationToolsService": {
+                        "Enabled": true
+                    },
                     "MonitorService": {
                         "Enabled": true
                     }
                 },
                 "UserData": null,
                 "InstanceTags": [],
+                "ImageFamily": "",
+                "Tags": [],
+                "IPv6InternetAccessible": {
+                    "InternetChargeType": "TRAFFIC_POSTPAID_BY_HOUR",
+                    "InternetMaxBandwidthOut": 0,
+                    "BandwidthPackageId": null
+                },
+                "DisasterRecoverGroupIds": [],
                 "CreatedTime": "2022-03-02T02:25:12Z",
                 "UpdatedTime": "2022-03-02T02:25:12Z",
                 "CamRoleName": "",
                 "HostNameSettings": {
                     "HostName": null,
+                    "HostNameSuffix": null,
                     "HostNameStyle": null
                 },
                 "InstanceNameSettings": {
                     "InstanceName": "",
+                    "InstanceNameSuffix": null,
                     "InstanceNameStyle": ""
                 },
                 "InstanceChargePrepaid": {
                     "Period": 0,
                     "RenewFlag": ""
                 },
-                "Tags": [],
                 "HpcClusterId": ""
             }
         ],
@@ -290,6 +330,7 @@ Output:
                     {
                         "DiskType": "CLOUD_PREMIUM",
                         "DiskSize": 40,
+                        "BurstPerformance": null,
                         "SnapshotId": null,
                         "DeleteWithInstance": null,
                         "Encrypt": null,
@@ -310,28 +351,34 @@ Output:
                     "SecurityService": {
                         "Enabled": true
                     },
+                    "AutomationToolsService": {
+                        "Enabled": true
+                    },
                     "MonitorService": {
                         "Enabled": true
                     }
                 },
                 "UserData": null,
-                "Tags": [
-                    {
-                        "ResourceType": "launch-configuration",
-                        "Key": "k1",
-                        "Value": "v2"
-                    }
-                ],
+                "Tags": [],
                 "InstanceTags": [],
+                "ImageFamily": "",
+                "IPv6InternetAccessible": {
+                    "InternetChargeType": "TRAFFIC_POSTPAID_BY_HOUR",
+                    "InternetMaxBandwidthOut": 0,
+                    "BandwidthPackageId": null
+                },
+                "DisasterRecoverGroupIds": [],
                 "CreatedTime": "2022-07-14T06:37:08Z",
                 "UpdatedTime": "2022-07-14T06:37:08Z",
                 "CamRoleName": "",
                 "HostNameSettings": {
                     "HostName": null,
+                    "HostNameSuffix": null,
                     "HostNameStyle": null
                 },
                 "InstanceNameSettings": {
                     "InstanceName": "",
+                    "InstanceNameSuffix": null,
                     "InstanceNameStyle": ""
                 },
                 "InstanceChargePrepaid": {

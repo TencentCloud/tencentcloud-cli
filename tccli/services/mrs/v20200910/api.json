@@ -2694,6 +2694,7 @@
           "example": "1",
           "member": "int64",
           "name": "X",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": true
@@ -2704,6 +2705,7 @@
           "example": "1",
           "member": "int64",
           "name": "Y",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": true
@@ -2714,6 +2716,7 @@
           "example": "20",
           "member": "int64",
           "name": "Width",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": true
@@ -2724,12 +2727,13 @@
           "example": "20",
           "member": "int64",
           "name": "Height",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": true
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "CovidItem": {
       "document": "核酸报告结论结构",
@@ -6534,6 +6538,15 @@
           "name": "ReportTypeVersion",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "可选。 图片OCR信息列表，每一个元素是一张图片的OCR结果。适用于不想将医疗报告图片传入腾讯云的客户，客户可对图片OCR信息中的敏感信息去除之后再传入。与 ImageInfoList 二选一，同时存在则使用OcrInfoList",
+          "example": "[object]",
+          "member": "OcrInfo",
+          "name": "OcrInfoList",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -9391,6 +9404,63 @@
         }
       ],
       "usage": "out"
+    },
+    "OcrInfo": {
+      "document": "图片完整的OCR信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "图片进行OCR之后得到的所有包含字块的OCR信息",
+          "example": "object",
+          "member": "OcrItem",
+          "name": "Items",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "图片进行OCR之后得到的所有字符",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Text",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "OcrItem": {
+      "document": "图片进行OCR之后,包含字符块的信息，包含字符与坐标，一个图片进行OCR之后可能分为多个这样的块",
+      "members": [
+        {
+          "disabled": false,
+          "document": "图片中文字的字符串",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Words",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Words 中每个文字的坐标数组，顺序与Words中的字符顺序一致",
+          "example": "[object]",
+          "member": "Coordinate",
+          "name": "Coords",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "整个字符块的坐标信息",
+          "example": "object",
+          "member": "Coordinate",
+          "name": "WordCoords",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "usage": "in"
     },
     "OphthalmologyBareEyeSight": {
       "document": "体检报告-眼科-裸眼视力",

@@ -354,6 +354,22 @@
         "title": "创建云联网路由表"
       }
     ],
+    "CreateCdcLDCXList": [
+      {
+        "document": "创建 IDC 通道",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCdcLDCXList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cf9c4a26-aaa5-4271-91e6-2351bfaddd17\"\n    }\n}",
+        "title": "创建 IDC 通道"
+      }
+    ],
+    "CreateCdcNetPlanes": [
+      {
+        "document": "支持 CDC下多租户",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCdcNetPlanes\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f087abd5-fcca-42d0-8077-b5cae0e5f9b3\"\n    }\n}",
+        "title": "创建虚拟连接"
+      }
+    ],
     "CreateCustomerGateway": [
       {
         "document": "创建对端网关",
@@ -434,6 +450,22 @@
         "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateHaVip\n<公共请求参数>\n\n{\n    \"SubnetId\": \"subnet-qq51iwr4\",\n    \"Vip\": \"10.4.6.15\",\n    \"VpcId\": \"vpc-6v2ht8q5\",\n    \"HaVipName\": \"test+name\"\n}",
         "output": "{\n    \"Response\": {\n        \"HaVip\": {\n            \"HaVipId\": \"havip-72alakye\",\n            \"HaVipName\": \"test name\",\n            \"Vip\": \"10.4.6.15\",\n            \"VpcId\": \"vpc-6v2ht8q5\",\n            \"SubnetId\": \"subnet-qq51iwr4\",\n            \"NetworkInterfaceId\": \"\",\n            \"InstanceId\": \"\",\n            \"AddressIp\": \"\",\n            \"State\": \"UNBIND\",\n            \"CreatedTime\": \"2018-10-10 17:03:09\",\n            \"Business\": \"SCF\"\n        },\n        \"RequestId\": \"fcb47621-838b-428e-8c33-6e210d93c451\"\n    }\n}",
         "title": "创建HAVIP"
+      }
+    ],
+    "CreateHighPriorityRouteTable": [
+      {
+        "document": "创建高优路由表",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateHighPriorityRouteTable\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-mcqaoy0f\",\n    \"Name\": \"ivan_hprtb\"\n}",
+        "output": "{\n    \"Response\": {\n        \"HighPriorityRouteTable\": {\n            \"CreatedTime\": \"0000-00-00 00:00:00\",\n            \"HighPriorityRouteSet\": [],\n            \"HighPriorityRouteTableId\": \"hprtb-f9qln342\",\n            \"Name\": \"ivan_hprtb\",\n            \"VpcId\": \"vpc-mcqaoy0f\"\n        },\n        \"RequestId\": \"74e75009-1752-4127-8475-dfd12dd58a56\"\n    }\n}",
+        "title": "创建高优路由表"
+      }
+    ],
+    "CreateHighPriorityRoutes": [
+      {
+        "document": "创建高优路由表条目",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateHighPriorityRoutes\n<公共请求参数>\n\n{\n    \"HighPriorityRouteTableId\": \"hprtb-hd4tl8cg\",\n    \"HighPriorityRoutes\": [\n        {\n            \"DestinationCidrBlock\": \"192.168.0.0/24\",\n            \"GatewayType\": \"NORMAL_CVM\",\n            \"GatewayId\": \"172.16.0.11\",\n            \"Description\": \"ivan_test\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"HighPriorityRouteSet\": [\n            {\n                \"CreatedTime\": \"0000-00-00 00:00:00\",\n                \"Description\": \"ivan_test\",\n                \"DestinationCidrBlock\": \"192.168.0.0/24\",\n                \"GatewayId\": \"172.16.0.11\",\n                \"GatewayType\": \"NORMAL_CVM\",\n                \"HighPriorityRouteId\": \"hprti-0sb1mbut\",\n                \"HighPriorityRouteTableId\": \"hprtb-hd4tl8cg\",\n                \"SubnetRouteAlgorithm\": \"ECMP_QUINTUPLE_HASH\"\n            }\n        ],\n        \"RequestId\": \"2af8e306-ffc0-4f18-a927-9f1ee04f0788\"\n    }\n}",
+        "title": "创建高优路由表条目"
       }
     ],
     "CreateIp6Translators": [
@@ -782,6 +814,22 @@
         "title": "删除指定云联网路由表"
       }
     ],
+    "DeleteCdcLDCXList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCdcLDCXList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f087abd5-fcca-42d0-8077-b5cae0e5f9b3\"\n    }\n}",
+        "title": "删除 IDC 通道"
+      }
+    ],
+    "DeleteCdcNetPlanes": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCdcNetPlanes\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "删除虚拟连接"
+      }
+    ],
     "DeleteCustomerGateway": [
       {
         "document": "本接口示例用于删除对端网关",
@@ -828,6 +876,22 @@
         "input": "https://vpc.tencentcloudapi.com/?Action=DeleteHaVip\n&HaVipId=havip-9o233uri\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"fcb47621-838b-428e-8c33-6e210d93c451\"\n    }\n}",
         "title": "删除HAVIP"
+      }
+    ],
+    "DeleteHighPriorityRouteTables": [
+      {
+        "document": "删除高优路由表",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteHighPriorityRouteTables\n<公共请求参数>\n\n{\n    \"HighPriorityRouteTableIds\": [\n        \"hprtb-f9qln342\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9e224c6d-772d-4f94-858e-7a7f94bb86fb\"\n    }\n}",
+        "title": "删除高优路由表"
+      }
+    ],
+    "DeleteHighPriorityRoutes": [
+      {
+        "document": "删除高优路由表条目",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteHighPriorityRoutes\n<公共请求参数>\n\n{\n    \"HighPriorityRouteTableId\": \"hprtb-hd4tl8cg\",\n    \"HighPriorityRouteIds\": [\n        \"hprti-hd4tl8cr\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"HighPriorityRouteSet\": [\n            {\n                \"CreatedTime\": \"2024-07-11 17:07:03\",\n                \"Description\": \"test\",\n                \"DestinationCidrBlock\": \"172.20.0.0/18\",\n                \"GatewayId\": \"172.16.0.11\",\n                \"GatewayType\": \"CVM\",\n                \"HighPriorityRouteId\": \"hprti-hd4tl8cr\",\n                \"HighPriorityRouteTableId\": \"hprtb-hd4tl8cg\"\n            }\n        ],\n        \"RequestId\": \"984c005d-e0d0-4d4a-98f5-b4b5c3af1e66\"\n    }\n}",
+        "title": "删除高优路由表条目"
       }
     ],
     "DeleteIp6Translators": [
@@ -1298,6 +1362,30 @@
         "title": "查询绑定了标签的CCN列表"
       }
     ],
+    "DescribeCdcLDCXList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCdcLDCXList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"091e2a8d-8ce0-4e98-994b-79ebb093316b\"\n    }\n}",
+        "title": "查询 IDC通道配置"
+      }
+    ],
+    "DescribeCdcNetPlanes": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCdcNetPlanes\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ae3f0435-4724-42df-a6c6-239391af0926\"\n    }\n}",
+        "title": "查询虚拟连接"
+      }
+    ],
+    "DescribeCdcUsedIdcVlan": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCdcUsedIdcVlan\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1b7bf7af-4a2e-4483-985c-a13c1bfac558\"\n    }\n}",
+        "title": "查询 IDC 的 VLAN 使用情况"
+      }
+    ],
     "DescribeClassicLinkInstances": [
       {
         "document": "查询基础网络互通列表",
@@ -1456,6 +1544,22 @@
         "input": "https://vpc.tencentcloudapi.com/?Action=DescribeHaVips\n&Filters.0.Name=havip-name\n&Filters.0.Values.0=test\n&Filters.1.Name=vpc-id\n&Filters.1.Values.0=vpc-6v2ht8q5\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"HaVipSet\": [\n            {\n                \"HaVipId\": \"havip-iyy1ykky\",\n                \"HaVipName\": \"test modify\",\n                \"Vip\": \"10.4.6.17\",\n                \"VpcId\": \"vpc-6v2ht8q5\",\n                \"SubnetId\": \"subnet-qq51iwr4\",\n                \"NetworkInterfaceId\": \"\",\n                \"InstanceId\": \"\",\n                \"AddressIp\": \"\",\n                \"Business\": \"\",\n                \"State\": \"UNBOUND\",\n                \"CreatedTime\": \"2018-10-09 18:08:16\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"659cd6a3-a75a-473c-8280-af27c33da8bd\"\n    }\n}",
         "title": "多条件过滤查询HAVIP列表"
+      }
+    ],
+    "DescribeHighPriorityRouteTables": [
+      {
+        "document": "查询高优路由表",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeHighPriorityRouteTables\n<公共请求参数>\n\n{\n    \"HighPriorityRouteTableIds\": [\n        \"hprtb-hd4tl8cg\"\n    ],\n    \"NeedRouterInfo\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"HighPriorityRouteTableSet\": [\n            {\n                \"CreatedTime\": \"2024-07-10 21:16:50\",\n                \"HighPriorityRouteSet\": [\n                    {\n                        \"CdcId\": \"\",\n                        \"CreatedTime\": \"2024-07-11 17:07:03\",\n                        \"Description\": \"test\",\n                        \"DestinationCidrBlock\": \"172.20.0.0/18\",\n                        \"GatewayId\": \"172.16.0.11\",\n                        \"GatewayType\": \"NORMAL_CVM\",\n                        \"HighPriorityRouteId\": \"hprti-hd4tl8cr\",\n                        \"IsCdc\": false,\n                        \"SubnetRouteAlgorithm\": \"ECMP_QUINTUPLE_HASH\"\n                    },\n                    {\n                        \"CdcId\": \"\",\n                        \"CreatedTime\": \"2024-07-11 17:14:14\",\n                        \"Description\": \"ivan_test\",\n                        \"DestinationCidrBlock\": \"192.168.0.0/20\",\n                        \"GatewayId\": \"172.16.0.11\",\n                        \"GatewayType\": \"NORMAL_CVM\",\n                        \"HighPriorityRouteId\": \"hprti-f9qln349\",\n                        \"IsCdc\": false,\n                        \"SubnetRouteAlgorithm\": \"ECMP_QUINTUPLE_HASH\"\n                    }\n                ],\n                \"HighPriorityRouteTableId\": \"hprtb-hd4tl8cg\",\n                \"Name\": \"ivan_hprtb\",\n                \"SubnetSet\": [\n                    \"subnet-a9pjzfq0\"\n                ],\n                \"VpcId\": \"vpc-mcqaoy0f\"\n            }\n        ],\n        \"RequestId\": \"98c77fa8-578c-4190-a613-43a4cd4ea7a0\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查询高优路由表"
+      }
+    ],
+    "DescribeHighPriorityRoutes": [
+      {
+        "document": "查询高优路由表条目",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeHighPriorityRoutes\n<公共请求参数>\n\n{\n    \"HighPriorityRouteTableId\": \"hprtb-hd4tl8cg\",\n    \"Filters\": [\n        {\n            \"Name\": \"gateway-id\",\n            \"Values\": [\n                \"172.16.0.11\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"HighPriorityRouteSet\": [\n            {\n                \"CdcId\": \"\",\n                \"CreatedTime\": \"2024-07-11 17:34:48\",\n                \"Description\": \"ivan_test\",\n                \"DestinationCidrBlock\": \"192.168.0.0/24\",\n                \"GatewayId\": \"172.16.0.11\",\n                \"GatewayType\": \"NORMAL_CVM\",\n                \"HighPriorityRouteId\": \"hprti-0sb1mbut\",\n                \"HighPriorityRouteTableId\": \"hprtb-hd4tl8cg\",\n                \"IsCdc\": false,\n                \"SubnetRouteAlgorithm\": \"ECMP_QUINTUPLE_HASH\"\n            }\n        ],\n        \"RequestId\": \"482a9736-73ed-4212-8b08-79403cd34cd3\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查询高优路由表条目"
       }
     ],
     "DescribeIp6Addresses": [
@@ -1740,6 +1844,14 @@
         "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRouteTables\n<公共请求参数>\n\n{\n    \"Limit\": \"1\",\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"shanghai\"\n            ],\n            \"Name\": \"tag:city\"\n        }\n    ],\n    \"Offset\": \"0\"\n}",
         "output": "{\n    \"Response\": {\n        \"RouteTableSet\": [\n            {\n                \"VpcId\": \"vpc-2at5y1pn\",\n                \"RouteTableId\": \"rtb-l2h8d7c2\",\n                \"RouteTableName\": \"TestRouteTable\",\n                \"AssociationSet\": [],\n                \"RouteSet\": [\n                    {\n                        \"RouteTableId\": \"rtb-l2h8d7c2\",\n                        \"RouteId\": 14915,\n                        \"RouteItemId\": \"rti-12345678\",\n                        \"DestinationCidrBlock\": \"169.254.64.0/23\",\n                        \"DestinationIpv6CidrBlock\": \"\",\n                        \"GatewayType\": \"NORMAL_CVM\",\n                        \"GatewayId\": \"172.16.0.25\",\n                        \"RouteDescription\": \"\",\n                        \"CreatedTime\": \"2017-06-30 19:52:03\",\n                        \"RouteType\": \"USER\",\n                        \"Enabled\": true,\n                        \"PublishedToVbc\": false\n                    }\n                ],\n                \"TagSet\": [\n                    {\n                        \"Key\": \"city\",\n                        \"Value\": \"shanghai\"\n                    }\n                ],\n                \"LocalCidrForCcn\": [\n                    {\n                        \"Cidr\": \"10.1.0.0/16\",\n                        \"PublishedToVbc\": true\n                    }\n                ],\n                \"Main\": false,\n                \"CreatedTime\": \"2017-06-30 19:52:03\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"74883e1b-5901-46de-ae1e-d6e2cf591c5b\"\n    }\n}",
         "title": "查询绑定了标签的路由表列表"
+      }
+    ],
+    "DescribeRoutes": [
+      {
+        "document": "查询路由列表",
+        "input": "https://vpc.tencentcloudapi.com/?Action=DescribeRoutes\n&Offset=0\n&Limit=10\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RouteSet\": [\n            {\n                \"RouteId\": 14915,\n                \"RouteType\": \"USER\",\n                \"DestinationCidrBlock\": \"172.16.0.0/28\",\n                \"GatewayType\": \"NORMAL_CVM\",\n                \"GatewayId\": \"172.16.0.25\",\n                \"Enabled\": true,\n                \"RouteDescription\": \"\",\n                \"CreatedTime\": \"2020-01-01 10:00:00\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"74883e1b-5901-46de-ae1e-d6e2cf591c5b\"\n    }\n}",
+        "title": "查询路由列表"
       }
     ],
     "DescribeSecurityGroupAssociationStatistics": [
@@ -2488,6 +2600,22 @@
         "title": "修改接口"
       }
     ],
+    "ModifyCdcLDCXAttribute": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCdcLDCXAttribute\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f087abd5-fcca-42d0-8077-b5cae0e5f9b3\"\n    }\n}",
+        "title": "更新IDC通道配置"
+      }
+    ],
+    "ModifyCdcNetPlaneAttribute": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCdcNetPlaneAttribute\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f087abd5-fcca-42d0-8077-b5cae0e5f9b3\"\n    }\n}",
+        "title": "修改虚拟连接"
+      }
+    ],
     "ModifyCustomerGatewayAttribute": [
       {
         "document": "修改对端网关",
@@ -2534,6 +2662,30 @@
         "input": "https://vpc.tencentcloudapi.com/?Action=ModifyHaVipAttribute\n&HaVipId=havip-9o233uri\n&HaVipName=new+name\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"fcb47621-838b-428e-8c33-6e210d93c451\"\n    }\n}",
         "title": "修改HAVIP名称"
+      }
+    ],
+    "ModifyHighPriorityRouteAttribute": [
+      {
+        "document": "修改高优路由表条目属性",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyHighPriorityRouteAttribute\n<公共请求参数>\n\n{\n    \"HighPriorityRouteTableId\": \"hprtb-hd4tl8cg\",\n    \"HighPriorityModifyItems\": [\n        {\n            \"HighPriorityRouteId\": \"hprti-896n82of\",\n            \"Description\": \"ivan_test\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a1802b6d-a956-4303-a3c7-515e4b5b2b19\"\n    }\n}",
+        "title": "修改高优路由表条目属性"
+      }
+    ],
+    "ModifyHighPriorityRouteECMPAlgorithm": [
+      {
+        "document": "修改高优路由表 ECMP算法",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyHighPriorityRouteECMPAlgorithm\n<公共请求参数>\n\n{\n    \"HighPriorityRouteTableId\": \"hprtb-hd4tl8cg\",\n    \"RouteECMPAlgorithms\": [\n        {\n            \"DestinationCidrBlock\": \"172.20.0.0/19\",\n            \"SubnetRouteAlgorithm\": \"ECMP_SOURCE_IP_HASH\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"89e403aa-b156-4d6d-9d41-3cd7cb995b65\"\n    }\n}",
+        "title": "修改高优路由表 ECMP算法"
+      }
+    ],
+    "ModifyHighPriorityRouteTableAttribute": [
+      {
+        "document": "修改高优路由表属性",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyHighPriorityRouteTableAttribute\n<公共请求参数>\n\n{\n    \"HighPriorityRouteTableId\": \"hprtb-896n82o4\",\n    \"Name\": \"1122\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"23319494-2909-4e6d-83b9-ca1a4bd21584\"\n    }\n}",
+        "title": "修改高优路由表属性"
       }
     ],
     "ModifyIp6AddressesBandwidth": [
@@ -3000,6 +3152,22 @@
         "title": "替换专线网关云联网路由"
       }
     ],
+    "ReplaceHighPriorityRouteTableAssociation": [
+      {
+        "document": "替换高优路由表和子网绑定关系",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReplaceHighPriorityRouteTableAssociation\n<公共请求参数>\n\n{\n    \"HighPriorityRouteTableId\": \"hprtb-hd4tl8cg\",\n    \"SubnetId\": \"subnet-a9pjzfq0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"14095a9f-1411-4a0e-966a-32da69f58db7\"\n    }\n}",
+        "title": "替换高优路由表和子网绑定关系"
+      }
+    ],
+    "ReplaceHighPriorityRoutes": [
+      {
+        "document": "替换高优路由表条目信息",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReplaceHighPriorityRoutes\n<公共请求参数>\n\n{\n    \"HighPriorityRouteTableId\": \"hprtb-hd4tl8cg\",\n    \"HighPriorityRoutes\": [\n        {\n            \"HighPriorityRouteId\": \"hprti-0sb1mbut\",\n            \"DestinationCidrBlock\": \"192.168.0.0/20\",\n            \"GatewayType\": \"NORMAL_CVM\",\n            \"GatewayId\": \"172.16.0.2\",\n            \"Description\": \"ivan_test\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"NewHighPriorityRouteSet\": [\n            {\n                \"CreatedTime\": \"2024-07-11 17:34:48\",\n                \"Description\": \"ivan_test\",\n                \"DestinationCidrBlock\": \"192.168.0.0/20\",\n                \"GatewayId\": \"172.16.0.2\",\n                \"GatewayType\": \"NORMAL_CVM\",\n                \"HighPriorityRouteId\": \"hprti-0sb1mbut\",\n                \"HighPriorityRouteTableId\": \"hprtb-hd4tl8cg\"\n            }\n        ],\n        \"OldHighPriorityRouteSet\": [\n            {\n                \"CreatedTime\": \"2024-07-11 17:34:48\",\n                \"Description\": \"ivan_test\",\n                \"DestinationCidrBlock\": \"192.168.0.0/24\",\n                \"GatewayId\": \"172.16.0.11\",\n                \"GatewayType\": \"NORMAL_CVM\",\n                \"HighPriorityRouteId\": \"hprti-0sb1mbut\",\n                \"HighPriorityRouteTableId\": \"hprtb-hd4tl8cg\"\n            }\n        ],\n        \"RequestId\": \"c631a02c-052f-44b1-8807-f533cfa32406\"\n    }\n}",
+        "title": "替换高优路由表条目信息"
+      }
+    ],
     "ReplaceRouteTableAssociation": [
       {
         "document": "替换路由表绑定关系",
@@ -3038,6 +3206,14 @@
         "input": "https://vpc.tencentcloudapi.com/?Action=ResetAttachCcnInstances\n&CcnId=ccn-gree226l\n&CcnUin=979137\n&Instances.0.InstanceType=VPC\n&Instances.0.InstanceId=vpc-3dr1zrr9\n&Instances.0.InstanceRegion=ap-guangzhou\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"627c2362-890f-4f9e-9158-5e457b80d48b\"\n    }\n}",
         "title": "重新申请关联实例"
+      }
+    ],
+    "ResetHighPriorityRoutes": [
+      {
+        "document": "重置高优路由表条目",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResetHighPriorityRoutes\n<公共请求参数>\n\n{\n    \"HighPriorityRouteTableId\": \"hprtb-hd4tl8cg\",\n    \"Name\": \"ivan_hprtb\",\n    \"HighPriorityRoutes\": [\n        {\n            \"DestinationCidrBlock\": \"172.20.0.0/18\",\n            \"GatewayType\": \"NORMAL_CVM\",\n            \"GatewayId\": \"172.16.0.11\",\n            \"Description\": \"test\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"461358ec-f329-4273-b5f0-e87730703e6d\"\n    }\n}",
+        "title": "重置高优路由表条目"
       }
     ],
     "ResetNatGatewayConnection": [

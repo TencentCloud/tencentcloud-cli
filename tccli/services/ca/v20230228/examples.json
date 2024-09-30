@@ -1,0 +1,41 @@
+{
+  "actions": {
+    "CreateVerifyReport": [
+      {
+        "document": "验证报告盖章成功",
+        "input": "POST / HTTP/1.1\nHost: ca.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateVerifyReport\n<公共请求参数>\n\n{\n    \"ApplyCustomerType\": \"1\",\n    \"ApplyCustomerName\": \"王五\",\n    \"ApplyName\": \"经办人姓名\",\n    \"ApplyMobile\": \"187****6446\",\n    \"FileId\": \"70c2a5eaf142****aa12e81e7b03b637\",\n    \"ApplyEmail\": \"969737738@qq.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Code\": \"0\",\n        \"Message\": \"2024-09-20 20:49:14 签章请求接收成功。\",\n        \"RequestId\": \"67af6833-fbb6-462f-a64f-90757d68669f\",\n        \"SignatureId\": \"695128****98250752\"\n    }\n}",
+        "title": "验证报告盖章成功"
+      },
+      {
+        "document": "创建验签报告",
+        "input": "POST / HTTP/1.1\nHost: ca.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateVerifyReport\n<公共请求参数>\n\n{\n    \"ApplyCustomerType\": \"1\",\n    \"ApplyCustomerName\": \"李四\",\n    \"ApplyName\": \"王五\",\n    \"ApplyMobile\": \"187****6446\",\n    \"FileId\": \"27a130c8336b****865a0d251ef129b4\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Code\": \"0\",\n        \"Message\": \"签章请求接收成功\",\n        \"RequestId\": \"b5d694f0-8a91-4bdc-a40d-2767b4ce8471\",\n        \"SignatureId\": \"692175****51854336\"\n    }\n}",
+        "title": "CreateVerifyReport"
+      }
+    ],
+    "DescribeVerifyReport": [
+      {
+        "document": "验签报告查询",
+        "input": "POST / HTTP/1.1\nHost: ca.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVerifyReport\n<公共请求参数>\n\n{\n    \"SignatureId\": \"6921757****1854336\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ReportUrl\": \"https://file.nmgsca.com/verified/*********\",\n        \"RequestId\": \"292ea5cb-4e80-417c-92fd-02d869545682\"\n    }\n}",
+        "title": "DescribeVerifyReport"
+      }
+    ],
+    "UploadFile": [
+      {
+        "document": "上传验签源文件响应",
+        "input": "POST / HTTP/1.1\nHost: ca.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UploadFile\n<公共请求参数>\n\n{\n    \"FileInfos\": [\n        {\n            \"FileName\": \"rsa2.pdf\",\n            \"FileBody\": \"data:application/pdf;base64,JVBERi0xLjcKJcKzx9gNCjEgMCBvYmoNPDwvTmFtZXMgPDwvRGVzd**********\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"FileIds\": [\n            \"5419c4b9f60*****a4f77bb517b092f5\"\n        ],\n        \"RequestId\": \"805c9ab7-9372-4bea-b355-e89548552398\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "uploadFileResponse"
+      },
+      {
+        "document": "资源文件上传",
+        "input": "POST / HTTP/1.1\nHost: ca.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UploadFile\n<公共请求参数>\n\n{\n    \"FileInfos\": [\n        {\n            \"FileName\": \"1.pdf\",\n            \"FileBody\": \"data:application/pdf;base64,JVBERi0xLjcKJcKzx9gNCjEgMCBvYmoNPDwvTmFtZXMgPDwvRGVzd***************\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"FileIds\": [\n            \"b9e785d8d13349****9e460b04600e16\"\n        ],\n        \"RequestId\": \"25b59067-3b6b-4c5f-885d-9c12f4084f27\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "uploadFile"
+      }
+    ]
+  },
+  "version": "1.0"
+}

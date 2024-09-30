@@ -435,7 +435,7 @@
       "status": "online"
     },
     "DescribeFlowBriefs": {
-      "document": "查询流程基础信息\n适用场景：可用于主动查询某个合同流程的签署状态信息。可以配合回调通知使用。\n\n注: `每个企业限制日调用量限制：100W，当日超过此限制后再调用接口返回错误`",
+      "document": "查询流程基础信息，主要用于<font color=\"red\">查询合同的状态</font>信息。可以配合回调通知使用。\n\n注: `每个企业限制日调用量限制：100W，当日超过此限制后再调用接口返回错误`",
       "input": "DescribeFlowBriefsRequest",
       "name": "查询流程基础信息",
       "output": "DescribeFlowBriefsResponse",
@@ -4386,7 +4386,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "合同流程ID，为32位字符串。\n建议开发者妥善保存此流程ID，以便于顺利进行后续操作。\n可登录腾讯电子签控制台，在 \"合同\"->\"合同中心\" 中查看某个合同的FlowId(在页面中展示为合同ID)。",
+          "document": "合同流程ID为32位字符串。\n\n您可以登录腾讯电子签控制台，在 \"合同\" -> \"合同中心\" 中查看某个合同的FlowId（在页面中展示为合同ID）。[点击查看FlowId在控制台中的位置](https://qcloudimg.tencent-cloud.cn/raw/0a83015166cfe1cb043d14f9ec4bd75e.png)。\n",
           "example": "yDwFmUUckpstqfvzUE1h3jo1f3cqjkGm",
           "member": "string",
           "name": "FlowId",
@@ -4413,7 +4413,7 @@
         },
         {
           "disabled": false,
-          "document": "流程签署人列表，其中结构体的ApproverName，ApproverMobile和ApproverType必传，企业签署人则需传OrganizationName，其他可不传。\n\n注:\n`1. 签署人只能有手写签名、时间类型、印章类型、签批类型的签署控件和内容填写控件，其他类型的签署控件暂时未支持。`\n`2. 生成发起方预览链接时，该字段（FlowApproverInfos）传空或者不传`",
+          "document": "流程签署人列表中，结构体的ApproverName、ApproverMobile和ApproverType为必传字段。如果是企业签署人，还需传递OrganizationName。\n\n注：\n1. 签署人<b>只能使用手写签名、时间类型、印章类型、签批类型的签署控件和内容填写控件</b>，其他类型的签署控件暂时不支持。\n2. 生成发起方预览链接时，该字段（FlowApproverInfos）可以传空或者不传。\n\n",
           "example": "无",
           "member": "FlowCreateApprover",
           "name": "FlowApproverInfos",
@@ -4440,7 +4440,7 @@
         },
         {
           "disabled": false,
-          "document": "链接类型，支持指定以下类型\n<ul><li>0 : 签署链接 (默认值)</li>\n<li>1 : 预览链接</li></ul>\n注:\n`1. 当指定链接类型为1时，链接为预览链接，打开链接无法签署仅支持预览以及查看当前合同状态。`\n`2. 如需生成发起方预览链接，则签署方信息传空，即FlowApproverInfos传空或者不传。`",
+          "document": "链接类型支持以下指定类型：\n\n<ul><li><b>0</b>: 签署链接（默认值），进入后可以填写或签署合同。</li><li><b>1 </b>: 预览链接，进入后可以预览合同当前的样子。</li></ul>\n\n注：\n\n1. 当指定链接类型为1时，链接为预览链接，打开链接后无法进行签署操作，仅支持预览和查看当前合同状态。\n2. 如需生成发起方预览链接，则签署方信息应传空，即FlowApproverInfos传空或者不传。",
           "example": "0",
           "member": "int64",
           "name": "UrlType",
@@ -8201,7 +8201,7 @@
         },
         {
           "disabled": false,
-          "document": "查询的合同流程ID列表最多支持100个流程ID。 \n如果某个合同流程ID不存在，系统会跳过此ID的查询，继续查询剩余存在的合同流程。\n\n可登录腾讯电子签控制台，在 \"合同\"->\"合同中心\" 中查看某个合同的FlowId(在页面中展示为合同ID)。\n\n[点击查看FlowId在控制台中的位置](https://qcloudimg.tencent-cloud.cn/raw/0a83015166cfe1cb043d14f9ec4bd75e.png)",
+          "document": "查询的合同流程ID列表最多支持100个流程ID。 \n\n如果某个合同流程ID不存在，系统会跳过此ID的查询，继续查询剩余存在的合同流程。\n\n可登录腾讯电子签控制台，在 \"合同\"->\"合同中心\" 中查看某个合同的FlowId(在页面中展示为合同ID)。[点击查看FlowId在控制台中的位置](https://qcloudimg.tencent-cloud.cn/raw/0a83015166cfe1cb043d14f9ec4bd75e.png)",
           "example": "[yDRCLUUgygq2xun5UuO4zjEwg0vjoimj]",
           "member": "string",
           "name": "FlowIds",
@@ -10795,7 +10795,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>只有在生成H5签署链接的情形下</b>（ 如调用<a href=\"https://qian.tencent.com/developers/companyApis/startFlows/CreateFlowSignUrl\" target=\"_blank\">获取H5签署链接</a>、<a href=\"https://qian.tencent.com/developers/companyApis/startFlows/CreateBatchQuickSignUrl\" target=\"_blank\">获取H5批量签署链接</a>等接口），该配置才会生效。\n\n您可以指定H5签署视频核身的意图配置，选择问答模式或点头模式的语音文本。\n\n注意：\n1. 视频认证为<b>白名单功能，使用前请联系对接的客户经理沟通</b>。\n2. 使用视频认证时，<b>合同发起的时候必须将签署认证方式指定为人脸</b>（即ApproverSignTypes设置成人脸签署）。\n3. 签署完成后，可以通过<a href=\"https://qian.tencent.com/developers/companyApis/queryFlows/DescribeSignFaceVideo\" target=\"_blank\">查询签署认证人脸视频</a>获取到当时的视频。",
+          "document": "<b>只有在生成H5签署链接的情形下</b>（ 如调用<a href=\"https://qian.tencent.com/developers/companyApis/startFlows/CreateFlowSignUrl\" target=\"_blank\">获取H5签署链接</a>、<a href=\"https://qian.tencent.com/developers/companyApis/startFlows/CreateBatchQuickSignUrl\" target=\"_blank\">获取H5批量签署链接</a>等接口），该配置才会生效。\n\n您可以指定H5签署视频核身的意图配置，选择问答模式或点头模式的语音文本。\n\n注意：\n1. 视频认证为<b>白名单功能，使用前请联系对接的客户经理沟通</b>。\n2. 使用视频认证时，<b>生成H5签署链接必须将签署认证方式指定为人脸</b>（即ApproverSignTypes设置成人脸签署）。\n3. 签署完成后，可以通过<a href=\"https://qian.tencent.com/developers/companyApis/queryFlows/DescribeSignFaceVideo\" target=\"_blank\">查询签署认证人脸视频</a>获取到当时的视频。",
           "example": "无",
           "member": "Intention",
           "name": "Intention",

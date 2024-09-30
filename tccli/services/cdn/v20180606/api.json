@@ -3158,6 +3158,7 @@
           "example": "on",
           "member": "string",
           "name": "Switch",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -3168,6 +3169,7 @@
           "example": "600",
           "member": "int64",
           "name": "CacheTime",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": true
@@ -3178,6 +3180,7 @@
           "example": "off",
           "member": "string",
           "name": "CompareMaxAge",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -3188,6 +3191,7 @@
           "example": "off",
           "member": "string",
           "name": "IgnoreCacheControl",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -3198,7 +3202,19 @@
           "example": "off",
           "member": "string",
           "name": "IgnoreSetCookie",
+          "output_required": true,
           "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当缓存过期后，是否开启源站 mtime 校验，配置值为equal、since、none 和 null。默认配置值为equal，会校验源站文件的mtime与长度。2024-09-12 18:00 之前创建的域名默认值 null，行为保持不变。\nequal：源站响应mtime必须和缓存mtime一致，若mtime值不一致，清除缓存。\nsince：若源站响应mtime大于缓存mtime，清除缓存。\nnone： 缓存过期回源重新获取文件mtime和长度后，不会校验源站响应mtime，若源站响应携带Content-Length头部，只有文件大小改变时才会更新缓存；若源站响应不携带Content-Length头部，会更新缓存。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "equal",
+          "member": "string",
+          "name": "OriginMtimeCheckType",
+          "output_required": false,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         }
@@ -3211,9 +3227,10 @@
         {
           "disabled": false,
           "document": "路径缓存遵循源站配置开关，取值有：\non：开启\noff：关闭",
-          "example": "无",
+          "example": "on",
           "member": "string",
           "name": "Switch",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -3224,8 +3241,20 @@
           "example": "无",
           "member": "HeuristicCache",
           "name": "HeuristicCache",
+          "output_required": true,
           "required": false,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当缓存过期后，是否开启源站 mtime 校验，配置值为equal、since、none 和 null。默认配置值为equal，会校验源站文件的mtime与长度。2024-09-12 18:00 之前创建的域名默认值 null，行为保持不变。\nequal：源站响应mtime必须和缓存mtime一致，若mtime值不一致，清除缓存。\nsince：若源站响应mtime大于缓存mtime，清除缓存。\nnone： 缓存过期回源重新获取文件mtime和长度后，不会校验源站响应mtime，若源站响应携带Content-Length头部，只有文件大小改变时才会更新缓存；若源站响应不携带Content-Length头部，会更新缓存。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "equal",
+          "member": "string",
+          "name": "OriginMtimeCheckType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
