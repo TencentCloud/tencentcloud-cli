@@ -182,6 +182,13 @@
       "output": "DescribeHpcClustersResponse",
       "status": "online"
     },
+    "DescribeImageFromFamily": {
+      "document": "本接口(DescribeImageFromFamily) 用于查看镜像族内可用镜像信息。",
+      "input": "DescribeImageFromFamilyRequest",
+      "name": "查询镜像族内可用镜像",
+      "output": "DescribeImageFromFamilyResponse",
+      "status": "online"
+    },
     "DescribeImageQuota": {
       "document": "本接口(DescribeImageQuota)用于查询用户账号的镜像配额。",
       "input": "DescribeImageQuotaRequest",
@@ -796,9 +803,10 @@
         {
           "disabled": false,
           "document": "定时器动作，目前仅支持销毁一个值：TerminateInstances。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"xx\"",
+          "example": "TerminateInstances",
           "member": "string",
           "name": "TimerAction",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -806,9 +814,10 @@
         {
           "disabled": false,
           "document": "执行时间，按照ISO8601标准表示，并且使用UTC时间。格式为 YYYY-MM-DDThh:mm:ssZ。例如 2018-05-29T11:26:40Z，执行时间必须大于当前时间5分钟。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"xx\"",
+          "example": "2024-05-29T11:26:40Z",
           "member": "string",
           "name": "ActionTime",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -816,9 +825,10 @@
         {
           "disabled": false,
           "document": "扩展数据\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"StorageBlockAttr\":{\"MinSize\":0,\"MaxSize\":0,\"Type\":\"xx\"}}",
+          "example": "{\"ReleaseAddress\":\"true\"}",
           "member": "Externals",
           "name": "Externals",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -1705,7 +1715,7 @@
         },
         {
           "disabled": false,
-          "document": "是否执行强制关机以制作镜像。\n取值范围：<br><li>true：表示关机之后制作镜像<br><li>false：表示开机状态制作镜像<br><br>默认取值：false。<br><br>开机状态制作镜像，可能导致部分数据未备份，影响数据安全。",
+          "document": "是否执行强制关机以制作镜像。\n取值范围：<br><li>true：表示关机之后制作镜像</li><br><li>false：表示开机状态制作镜像</li><br><br>默认取值：false。<br><br>开机状态制作镜像，可能导致部分数据未备份，影响数据安全。",
           "example": "true",
           "member": "string",
           "name": "ForcePoweroff",
@@ -1756,6 +1766,15 @@
           "name": "TagSpecification",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "镜像族",
+          "example": "business-daily-update",
+          "member": "string",
+          "name": "ImageFamily",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3166,6 +3185,43 @@
           "output_required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeImageFromFamilyRequest": {
+      "document": "DescribeImageFromFamily请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "镜像族",
+          "example": "business-daily-update",
+          "member": "string",
+          "name": "ImageFamily",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeImageFromFamilyResponse": {
+      "document": "DescribeImageFromFamily返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "镜像信息，没有可用镜像是返回为空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Image",
+          "name": "Image",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -5626,6 +5682,26 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "镜像族\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "business-daily-update",
+          "member": "string",
+          "name": "ImageFamily",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "镜像是否废弃",
+          "example": "false",
+          "member": "bool",
+          "name": "ImageDeprecated",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -5915,7 +5991,7 @@
         {
           "disabled": false,
           "document": "购买预留实例计费数量",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "InstanceCount",
           "required": true,
@@ -5924,7 +6000,7 @@
         {
           "disabled": false,
           "document": "预留实例计费配置ID",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "ReservedInstancesOfferingId",
           "required": true,
@@ -5933,7 +6009,7 @@
         {
           "disabled": false,
           "document": "试运行",
-          "example": "",
+          "example": "false",
           "member": "bool",
           "name": "DryRun",
           "required": false,
@@ -5942,7 +6018,7 @@
         {
           "disabled": false,
           "document": "用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。<br>更多详细信息请参阅：如何保证幂等性",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "ClientToken",
           "required": false,
@@ -5951,7 +6027,7 @@
         {
           "disabled": false,
           "document": "预留实例显示名称。<br><li>不指定实例显示名称则默认显示‘未命名’。</li><li>最多支持60个字符（包含模式串）。</li>",
-          "example": "",
+          "example": "myReservedInstance",
           "member": "string",
           "name": "ReservedInstanceName",
           "required": false,
@@ -5966,9 +6042,10 @@
         {
           "disabled": false,
           "document": "该参数表示对应配置预留实例的价格。",
-          "example": "",
+          "example": "无",
           "member": "ReservedInstancePrice",
           "name": "Price",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -6068,7 +6145,7 @@
         },
         {
           "disabled": false,
-          "document": "试运行，测试使用，不执行具体逻辑。取值范围：<br><li>TRUE：跳过执行逻辑<br><li>FALSE：执行逻辑<br><br>默认取值：FALSE。",
+          "document": "是否只预检此次请求。true：发送检查请求，不会创建实例。检查项包括是否填写了必需参数，请求格式，业务限制和云服务器库存。如果检查不通过，则返回对应错误码；如果检查通过，则返回RequestId.false（默认）：发送正常请求，通过检查后直接创建实例",
           "example": "无",
           "member": "bool",
           "name": "DryRun",
@@ -6087,6 +6164,7 @@
           "example": "无",
           "member": "HostPriceInfo",
           "name": "Price",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -6574,6 +6652,15 @@
           "name": "HpcClusterId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "描述了实例CPU拓扑结构的相关信息。若不指定该参数，则按系统资源情况决定。",
+          "example": "无",
+          "member": "CpuTopology",
+          "name": "CpuTopology",
+          "required": false,
+          "type": "object"
         },
         {
           "disabled": false,
@@ -8449,10 +8536,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例登录密码。不同操作系统类型密码复杂度限制不一样，具体如下：<br><li>Linux实例密码必须8到30位，至少包括两项[a-z]，[A-Z]、[0-9] 和 [( ) \\` ~ ! @ # $ % ^ & *  - + = | { } [ ] : ; ' , . ? / ]中的特殊符号。<br><li>Windows实例密码必须12到30位，至少包括三项[a-z]，[A-Z]，[0-9] 和 [( ) \\` ~ ! @ # $ % ^ & * - + = | { } [ ] : ; ' , . ? /]中的特殊符号。<br><br>若不指定该参数，则由系统随机生成密码，并通过站内信方式通知到用户。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "abc",
+          "document": "实例登录密码。不同操作系统类型密码复杂度限制不一样，具体如下：<li>Linux实例密码必须8到30位，至少包括两项[a-z]，[A-Z]、[0-9] 和 [( ) \\` ~ ! @ # $ % ^ & *  - + = | { } [ ] : ; ' , . ? / ]中的特殊符号。</li><li>Windows实例密码必须12到30位，至少包括三项[a-z]，[A-Z]，[0-9] 和 [( ) \\` ~ ! @ # $ % ^ & * - + = | { } [ ] : ; ' , . ? /]中的特殊符号。</li>若不指定该参数，则由系统随机生成密码，并通过站内信方式通知到用户。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Password",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -8460,19 +8548,21 @@
         {
           "disabled": false,
           "document": "密钥ID列表。关联密钥后，就可以通过对应的私钥来访问实例；KeyId可通过接口[DescribeKeyPairs](https://cloud.tencent.com/document/api/213/15699)获取，密钥与密码不能同时指定，同时Windows操作系统不支持指定密钥。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "['abc']",
+          "example": "[\"skey-3glfot13\"]",
           "member": "string",
           "name": "KeyIds",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "保持镜像的原始设置。该参数与Password或KeyIds.N不能同时指定。只有使用自定义镜像、共享镜像或外部导入镜像创建实例时才能指定该参数为TRUE。取值范围：<br><li>TRUE：表示保持镜像的登录设置<br><li>FALSE：表示不保持镜像的登录设置<br><br>默认取值：FALSE。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "保持镜像的原始设置。该参数与Password或KeyIds.N不能同时指定。只有使用自定义镜像、共享镜像或外部导入镜像创建实例时才能指定该参数为true。取值范围：<li>true：表示保持镜像的登录设置</li><li>false：表示不保持镜像的登录设置</li>默认取值：false。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "abc",
           "member": "string",
           "name": "KeepImageLogin",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -8716,6 +8806,24 @@
           "name": "ImageDescription",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设置镜像族；",
+          "example": "business-daily-update",
+          "member": "string",
+          "name": "ImageFamily",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设置镜像是否废弃；",
+          "example": "false",
+          "member": "bool",
+          "name": "ImageDeprecated",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -9292,7 +9400,7 @@
         {
           "disabled": false,
           "document": "实例所属的专用宿主机ID列表，仅用于入参。如果您有购买专用宿主机并且指定了该参数，则您购买的实例就会随机的部署在这些专用宿主机上。",
-          "example": "无",
+          "example": "host-o5i742go",
           "member": "string",
           "name": "HostIds",
           "output_required": true,
@@ -9303,7 +9411,7 @@
         {
           "disabled": false,
           "document": "实例所属的专用宿主机ID，仅用于出参。",
-          "example": "无",
+          "example": "[\"host-o5i742go\"]",
           "member": "string",
           "name": "HostId",
           "output_required": true,
@@ -10196,42 +10304,62 @@
         {
           "disabled": false,
           "document": "预支合计费用的原价，单位：元。",
-          "example": "",
+          "example": "无",
           "member": "float",
           "name": "OriginalFixedPrice",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "预支合计费用的折扣价，单位：元。",
-          "example": "",
+          "example": "无",
           "member": "float",
           "name": "DiscountFixedPrice",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "后续合计费用的原价，单位：元/小时",
-          "example": "",
+          "example": "无",
           "member": "float",
           "name": "OriginalUsagePrice",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "后续合计费用的折扣价，单位：元/小时",
-          "example": "",
+          "example": "无",
           "member": "float",
           "name": "DiscountUsagePrice",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "预支费用的折扣，如20.0代表2折。 注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "FixedPriceDiscount",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "后续费用的折扣，如20.0代表2折。 注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "UsagePriceDiscount",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -10307,6 +10435,26 @@
           "name": "ProductDescription",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "预支合计费用，单位：元。",
+          "example": "无",
+          "member": "float",
+          "name": "DiscountUsagePrice",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "后续合计费用的折扣价，单位：元/小时",
+          "example": "无",
+          "member": "float",
+          "name": "DiscountFixedPrice",
+          "output_required": false,
+          "type": "float",
           "value_allowed_null": false
         }
       ],

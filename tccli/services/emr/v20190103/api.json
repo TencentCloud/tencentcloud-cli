@@ -4408,6 +4408,15 @@
           "name": "Page",
           "required": true,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询类型,支持HIVE,SPARK,MAPREDUCE,TRINO等类型,默认查询全部",
+          "example": "HIVE",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
