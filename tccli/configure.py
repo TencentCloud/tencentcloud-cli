@@ -231,12 +231,11 @@ class ConfigureSetCommand(BasicConfigure):
 
 
 class ConfigureSetAllEndPointCommand(BasicConfigure):
-    NAME = 'setAllPoint'
+    NAME = 'setAllEndPoint'
     DESCRIPTION = 'set all your endpoint values.'
     USEAGE = 'tccli configure setAllPoint [endpoint-value] [--profile profile-name]'
     AVAILABLECONFIG = "[cvm, cbs ...].endpoint: service [cvm cbs ...] access point domain name"
     EXAMPLES = "$ tccli configure setAllPoint abcd --profile user"
-    # 批量设置
     ARG_TABLE = [
         {'name': 'varname',
          'help_text': 'The name of the endpoint value to set.',
@@ -279,6 +278,7 @@ class ConfigureSetAllEndPointCommand(BasicConfigure):
             if key != '_sys_param':
                 conf_data[key]['endpoint'] = var_value[0]
         Utils.dump_json_msg(config_path, conf_data)
+
 
 class ConfigureGetCommand(BasicConfigure):
     NAME = 'get'
@@ -459,7 +459,7 @@ class ConfigureCommand(BasicConfigure):
                     conf_data[OptionsDefine.SysParam][index] = response if response else config[index]
             else:
                 response = self._compat_input(
-                    "%s[%s]: " % (prompt_text, "*"+cred[index][-4:] if cred[index] != "None" else cred[index]))
+                    "%s[%s]: " % (prompt_text, "*" + cred[index][-4:] if cred[index] != "None" else cred[index]))
                 cred_data[index] = response if response else cred[index]
 
         self._init_configure(profile_name + ".configure", conf_data)
