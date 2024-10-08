@@ -459,7 +459,7 @@ class ConfigureCommand(BasicConfigure):
                     conf_data[OptionsDefine.SysParam][index] = response if response else config[index]
             else:
                 response = self._compat_input(
-                    "%s[%s]: " % (prompt_text, "*" + cred[index][-4:] if cred[index] != "None" else cred[index]))
+                    "%s[%s]: " % (prompt_text, "*"+cred[index][-4:] if cred[index] != "None" else cred[index]))
                 cred_data[index] = response if response else cred[index]
 
         self._init_configure(profile_name + ".configure", conf_data)
