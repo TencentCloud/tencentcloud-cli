@@ -42,7 +42,7 @@
 | captcha | [验证码](http://document.tencentcloudapi.woa.com/document/product/1110) | 2024-07-26 01:09:15 |
 | car | [应用云渲染](http://document.tencentcloudapi.woa.com/document/product/1547) | 2024-09-16 01:18:49 |
 | cat | [云拨测](http://document.tencentcloudapi.woa.com/document/product/280) | 2024-07-26 01:09:20 |
-| cbs | [云硬盘](http://document.tencentcloudapi.woa.com/document/product/362) | 2024-09-19 01:17:39 |
+| cbs | [云硬盘](http://document.tencentcloudapi.woa.com/document/product/362) | 2024-10-09 01:09:55 |
 | ccc | [云联络中心](http://document.tencentcloudapi.woa.com/document/product/679) | 2024-09-30 01:18:08 |
 | cdata | [企业罗盘](http://document.tencentcloudapi.woa.com/document/product/) | 2024-03-20 01:10:07 |
 | cdb | [云数据库 MySQL](http://document.tencentcloudapi.woa.com/document/product/236) | 2024-09-19 01:18:47 |
@@ -50,7 +50,7 @@
 | cdn | [内容分发网络 CDN](http://document.tencentcloudapi.woa.com/document/product/228) | 2024-09-27 01:21:16 |
 | cds | [T-Sec-数据安全审计（DSA）](http://document.tencentcloudapi.woa.com/document/product/856) | 2024-06-18 01:10:03 |
 | cdwch | [腾讯云数据仓库TCHouse-C](http://document.tencentcloudapi.woa.com/document/product/1299) | 2024-09-06 01:10:21 |
-| cdwdoris | [腾讯云数据仓库 TCHouse-D](http://document.tencentcloudapi.woa.com/document/product/1387) | 2024-09-30 01:21:35 |
+| cdwdoris | [腾讯云数据仓库 TCHouse-D](http://document.tencentcloudapi.woa.com/document/product/1387) | 2024-10-09 01:11:06 |
 | cdz | [专属可用区](http://document.tencentcloudapi.woa.com/document/product/1629) | 2024-08-28 01:11:53 |
 | cem | [商机生命周期管理平台](http://document.tencentcloudapi.woa.com/document/product/-1) | 2024-03-20 01:10:57 |
 | cetcd | [云原生 ETCD](http://document.tencentcloudapi.woa.com/document/product/) | 2022-08-30 11:15:23 |
@@ -111,7 +111,7 @@
 | eportrait | [企业画像服务](http://document.tencentcloudapi.woa.com/document/product/) | 2024-03-20 01:16:44 |
 | es | [Elasticsearch Service](http://document.tencentcloudapi.woa.com/document/product/845) | 2024-09-11 01:45:53 |
 | ess | [腾讯电子签企业版](http://document.tencentcloudapi.woa.com/document/product/1323) | 2024-09-27 01:47:37 |
-| essbasic | [腾讯电子签（基础版）](http://document.tencentcloudapi.woa.com/document/product/1420) | 2024-09-27 01:48:34 |
+| essbasic | [腾讯电子签（基础版）](http://document.tencentcloudapi.woa.com/document/product/1420) | 2024-10-09 01:18:48 |
 | facefusion | [人脸融合](http://document.tencentcloudapi.woa.com/document/product/670) | 2024-09-24 14:57:23 |
 | faceid | [人脸核身](http://document.tencentcloudapi.woa.com/document/product/1007) | 2024-09-30 01:48:28 |
 | fele | [联邦学习](http://document.tencentcloudapi.woa.com/document/product/1192) | 2024-03-20 01:17:39 |

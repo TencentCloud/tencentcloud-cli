@@ -1,10 +1,10 @@
 # 本版本更新包含以下内容：
 
-## 知识引擎原子能力(lkeap) 版本：2024-05-22
+## 腾讯云数据仓库 TCHouse-D(cdwdoris) 版本：2021-12-28
 
-### 第 4 次发布
+### 第 38 次发布
 
-发布时间：2024-10-01 01:23:08
+发布时间：2024-10-09 01:11:06
 
 本次发布包含了以下内容：
 
@@ -12,9 +12,32 @@
 
 修改接口：
 
-* [CreateSplitDocumentFlow](http://document.tencentcloudapi.woa.com/document/product/1764/84925)
+* [DescribeClusterConfigs](http://document.tencentcloudapi.woa.com/document/product/1706/82867)
 
-	* 新增入参：FileName
+	* 新增出参：ErrorMsg
+
+* [DescribeDatabaseAuditRecords](http://document.tencentcloudapi.woa.com/document/product/1706/82865)
+
+	* 新增出参：ErrorMsg
+
+
+修改数据结构：
+
+* [NodeInfo](http://document.tencentcloudapi.woa.com/document/product/1706/80309#NodeInfo)
+
+	* 新增成员：Id
+
+* [NodeInfos](http://document.tencentcloudapi.woa.com/document/product/1706/80309#NodeInfos)
+
+	* 新增成员：Id, Zone
+
+* [SlowQueryRecord](http://document.tencentcloudapi.woa.com/document/product/1706/80309#SlowQueryRecord)
+
+	* 新增成员：State, CatalogName
+
+* [ZoneInfo](http://document.tencentcloudapi.woa.com/document/product/1706/80309#ZoneInfo)
+
+	* 新增成员：Main
 
 
 
@@ -18138,6 +18161,44 @@
 
 
 ## 腾讯云数据仓库 TCHouse-D(cdwdoris) 版本：2021-12-28
+
+### 第 38 次发布
+
+发布时间：2024-10-09 01:11:06
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeClusterConfigs](http://document.tencentcloudapi.woa.com/document/product/1706/82867)
+
+	* 新增出参：ErrorMsg
+
+* [DescribeDatabaseAuditRecords](http://document.tencentcloudapi.woa.com/document/product/1706/82865)
+
+	* 新增出参：ErrorMsg
+
+
+修改数据结构：
+
+* [NodeInfo](http://document.tencentcloudapi.woa.com/document/product/1706/80309#NodeInfo)
+
+	* 新增成员：Id
+
+* [NodeInfos](http://document.tencentcloudapi.woa.com/document/product/1706/80309#NodeInfos)
+
+	* 新增成员：Id, Zone
+
+* [SlowQueryRecord](http://document.tencentcloudapi.woa.com/document/product/1706/80309#SlowQueryRecord)
+
+	* 新增成员：State, CatalogName
+
+* [ZoneInfo](http://document.tencentcloudapi.woa.com/document/product/1706/80309#ZoneInfo)
+
+	* 新增成员：Main
+
 
 ### 第 37 次发布
 
