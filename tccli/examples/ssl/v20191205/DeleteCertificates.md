@@ -5,7 +5,9 @@
 Input: 
 
 ```
-tccli ssl DeleteCertificates --cli-unfold-argument ```
+tccli ssl DeleteCertificates --cli-unfold-argument  \
+    --CertificateIds abc
+```
 
 Output: 
 ```
