@@ -8081,6 +8081,15 @@
           "name": "Limit",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "控制Filters相关字段是否为精确匹配。  0: 默认值，shipperName模糊匹配 1: shipperName 精确匹配",
+          "example": "无",
+          "member": "uint64",
+          "name": "PreciseSearch",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

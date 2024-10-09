@@ -208,6 +208,14 @@
         "title": "查询慢查询日志列表"
       }
     ],
+    "DescribeDBSyncMode": [
+      {
+        "document": "",
+        "input": "https://mariadb.tencentcloudapi.com/?Action=DescribeDBSyncMode\n&InstanceId=tdsql-avw0207d\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"901bd41c-08a2-4001-8364-5a63f32056ae\",\n        \"SyncMode\": 0,\n        \"CurrentSyncMode\": 0,\n        \"IsModifying\": 0\n    }\n}",
+        "title": "查询云数据库同步模式"
+      }
+    ],
     "DescribeDBTmpInstances": [
       {
         "document": "",

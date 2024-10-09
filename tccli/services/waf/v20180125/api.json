@@ -2368,7 +2368,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启XFF重置。\n0：关闭\n1：开启",
+          "document": "是否开启XFF重置。0：关闭 1：开启",
           "example": "0",
           "member": "int64",
           "name": "XFFReset",
@@ -2395,7 +2395,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启缓存 0-关闭 1-开启",
+          "document": "是否开启缓存。 0：关闭 1：开启",
           "example": "0",
           "member": "int64",
           "name": "ProxyBuffer",
@@ -2404,12 +2404,75 @@
         },
         {
           "disabled": false,
-          "document": "0: 禁用拨测, 1: 启用拨测。默认启用拨测",
+          "document": "是否开启拨测。 0: 禁用拨测  1: 启用拨测。默认启用拨测",
           "example": "1",
           "member": "int64",
           "name": "ProbeStatus",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "国密选项。0：不开启国密 1：在原有TLS选项的基础上追加支持国密 2：开启国密并仅支持国密客户端访问",
+          "example": "0",
+          "member": "int64",
+          "name": "GmType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "国密证书类型。0：无国密证书 1：证书来源为自有国密证书 2：证书来源为托管国密证书",
+          "example": "0",
+          "member": "int64",
+          "name": "GmCertType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "GmCertType为1时，需要填充此参数，表示自有国密证书的证书链",
+          "example": "-----BEGIN CERTIFICATE----- xxx -----END CERTIFICATE-----",
+          "member": "string",
+          "name": "GmCert",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "GmCertType为1时，需要填充此参数，表示自有国密证书的私钥",
+          "example": "-----BEGIN PRIVATE KEY----- xxx -----END PRIVATE KEY-----",
+          "member": "string",
+          "name": "GmPrivateKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "GmCertType为1时，需要填充此参数，表示自有国密证书的加密证书",
+          "example": "-----BEGIN CERTIFICATE----- xxx -----END CERTIFICATE-----",
+          "member": "string",
+          "name": "GmEncCert",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "GmCertType为1时，需要填充此参数，表示自有国密证书的加密证书的私钥",
+          "example": "-----BEGIN PRIVATE KEY----- xxx -----END PRIVATE KEY-----",
+          "member": "string",
+          "name": "GmEncPrivateKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "GmCertType为2时，需要填充此参数，表示腾讯云SSL平台托管的证书id",
+          "example": "aKnKQLJ",
+          "member": "string",
+          "name": "GmSSLId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3871,6 +3934,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "域名标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"label1\",\"label2\"]",
+          "member": "string",
+          "name": "Labels",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -4094,6 +4167,16 @@
           "example": "0",
           "member": "int64",
           "name": "ObjectFlowMode",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数值形式的私有网络 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "416562",
+          "member": "int64",
+          "name": "NumericalVpcId",
           "output_required": false,
           "type": "int",
           "value_allowed_null": true
@@ -5304,16 +5387,16 @@
         },
         {
           "disabled": false,
-          "document": "规则ID列表，支持批量删除",
+          "document": "规则ID列表，支持批量删除，在DeleteAll参数为true的时候可以不传",
           "example": "[552091011,552091010]",
           "member": "uint64",
           "name": "RuleIds",
-          "required": true,
+          "required": false,
           "type": "list"
         },
         {
           "disabled": false,
-          "document": "是否删除对应的域名下的所有黑/白IP名单，true表示全部删除，false表示只删除指定ip名单",
+          "document": "是否删除对应的域名下的所有黑/白IP名单，true表示全部删除，false表示只删除指定IP名单，批量防护不支持",
           "example": "false",
           "member": "bool",
           "name": "DeleteAll",
@@ -5331,7 +5414,7 @@
         },
         {
           "disabled": false,
-          "document": "IP黑白名单类型，40为IP白名单，42为IP黑名单",
+          "document": "IP黑白名单类型，40为IP白名单，42为IP黑名单，在DeleteAll为true的时候必传此参数",
           "example": "42",
           "member": "uint64",
           "name": "ActionType",
@@ -7146,11 +7229,11 @@
         },
         {
           "disabled": false,
-          "document": "证书类型。 0：仅配置HTTP监听端口，没有证书 1：证书来源为自有证书 2：证书来源为托管证书",
+          "document": "证书类型。 0：不检测国际标准证书 1：证书来源为自有证书 2：证书来源为托管证书",
           "example": "1",
           "member": "int64",
           "name": "CertType",
-          "required": true,
+          "required": false,
           "type": "int"
         },
         {
@@ -7177,6 +7260,60 @@
           "example": "-----BEGIN RSA PRIVATE KEY----- xxx -----END RSA PRIVATE KEY-----",
           "member": "string",
           "name": "PrivateKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "国密证书类型。0：不检测国密证书 1：证书来源为自有国密证书 2：证书来源为托管国密证书",
+          "example": "0",
+          "member": "int64",
+          "name": "GmCertType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "GmCertType为1时，需要填充此参数，表示自有国密证书的证书链",
+          "example": "-----BEGIN CERTIFICATE----- xxx -----END CERTIFICATE-----",
+          "member": "string",
+          "name": "GmCert",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "GmCertType为1时，需要填充此参数，表示自有国密证书的私钥",
+          "example": "-----BEGIN PRIVATE KEY----- xxx -----END PRIVATE KEY-----",
+          "member": "string",
+          "name": "GmPrivateKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "GmCertType为1时，需要填充此参数，表示自有国密证书的加密证书",
+          "example": "-----BEGIN CERTIFICATE----- xxx -----END CERTIFICATE-----",
+          "member": "string",
+          "name": "GmEncCert",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "GmCertType为1时，需要填充此参数，表示自有国密证书的加密证书的私钥",
+          "example": "-----BEGIN PRIVATE KEY----- xxx -----END PRIVATE KEY-----",
+          "member": "string",
+          "name": "GmEncPrivateKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "GmCertType为2时，需要填充此参数，表示腾讯云SSL平台托管的证书id",
+          "example": "aKnKQLJ",
+          "member": "string",
+          "name": "GmSSLId",
           "required": false,
           "type": "string"
         }
@@ -8042,7 +8179,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤数组",
+          "document": "过滤数组，过滤字段包括：Edition：实例版本，sparta-waf或clb-waf Domain：域名 DomainId：域名ID InstanceName：实例名称 InstanceId：实例ID FlowMode：流量接入模式，仅支持CLBWAF FlowCheckMode：流量体检模式，仅支持CLBWAF ClsStatus：日志开关 Status：WAF开关BotStatus：BOT开关 ApiStatus：API安全开关 Engine：引擎模式 UpstreamIP：源站IP，仅支持SAAS型WAF UpstreamDomain：源站域名，仅支持SAAS型WAF DomainState：域名状态，仅支持SAAS型WAF SgState：安全组状态，仅支持SAAS型WAF Label：分组标签，同时仅支持一种标签过滤",
           "example": "无",
           "member": "FiltersItemNew",
           "name": "Filters",
@@ -9928,7 +10065,17 @@
     },
     "DescribeUserClbWafRegionsRequest": {
       "document": "DescribeUserClbWafRegions请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "流量来源，不填默认clb。clb：负载均衡器，tsegw：云原生API网关，scf：云函数，apisix：腾讯云上其他网关",
+          "example": "\"clb\"",
+          "member": "string",
+          "name": "AlbType",
+          "required": false,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "DescribeUserClbWafRegionsResponse": {
@@ -10736,6 +10883,17 @@
           "required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "域名标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"label1\",\"label2\"]",
+          "member": "string",
+          "name": "Labels",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -11289,6 +11447,86 @@
           "name": "ProxyBuffer",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "国密选项。0：不开启国密 1：在原有TLS选项的基础上追加支持国密 2：开启国密并仅支持国密客户端访问\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "GmType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "国密证书类型。0：无国密证书 1：证书来源为自有国密证书 2：证书来源为托管国密证书\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "GmCertType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "GmCertType为1时，需要填充此参数，表示自有国密证书的证书链\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-----BEGIN CERTIFICATE----- xxx -----END CERTIFICATE-----",
+          "member": "string",
+          "name": "GmCert",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "GmCertType为1时，需要填充此参数，表示自有国密证书的私钥\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-----BEGIN PRIVATE KEY----- xxx -----END PRIVATE KEY-----",
+          "member": "string",
+          "name": "GmPrivateKey",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "GmCertType为1时，需要填充此参数，表示自有国密证书的加密证书\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-----BEGIN CERTIFICATE----- xxx -----END CERTIFICATE-----",
+          "member": "string",
+          "name": "GmEncCert",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "GmCertType为1时，需要填充此参数，表示自有国密证书的加密证书的私钥\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-----BEGIN PRIVATE KEY----- xxx -----END PRIVATE KEY-----",
+          "member": "string",
+          "name": "GmEncPrivateKey",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "GmCertType为2时，需要填充此参数，表示腾讯云SSL平台托管的证书id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "aKnKQLJ",
+          "member": "string",
+          "name": "GmSSLId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "域名标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"label1\",\"label2\"]",
+          "member": "string",
+          "name": "Labels",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -12501,6 +12739,17 @@
           "example": "waf_2kxtlvk40hsvdnw7",
           "member": "string",
           "name": "ResourceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "模式clb-waf或者saas-waf\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "clb-waf",
+          "member": "string",
+          "name": "MicroVersion",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -16863,7 +17112,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启缓存 0-关闭 1-开启",
+          "document": "是否开启缓存。 0：关闭 1：开启",
           "example": "0",
           "member": "int64",
           "name": "ProxyBuffer",
@@ -16872,12 +17121,75 @@
         },
         {
           "disabled": false,
-          "document": "0: 禁用拨测, 1: 启用拨测。默认启用拨测",
+          "document": "是否开启拨测。 0: 禁用拨测 1: 启用拨测。默认启用拨测",
           "example": "1",
           "member": "int64",
           "name": "ProbeStatus",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "国密选项。0：不开启国密 1：在原有TLS选项的基础上追加支持国密 2：开启国密并仅支持国密客户端访问",
+          "example": "0",
+          "member": "int64",
+          "name": "GmType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "国密证书类型。0：无国密证书 1：证书来源为自有国密证书 2：证书来源为托管国密证书",
+          "example": "0",
+          "member": "int64",
+          "name": "GmCertType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "GmCertType为1时，需要填充此参数，表示自有国密证书的证书链",
+          "example": "-----BEGIN CERTIFICATE----- xxx -----END CERTIFICATE-----",
+          "member": "string",
+          "name": "GmCert",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "GmCertType为1时，需要填充此参数，表示自有国密证书的私钥",
+          "example": "-----BEGIN PRIVATE KEY----- xxx -----END PRIVATE KEY-----",
+          "member": "string",
+          "name": "GmPrivateKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "GmCertType为1时，需要填充此参数，表示自有国密证书的加密证书",
+          "example": "-----BEGIN CERTIFICATE----- xxx -----END CERTIFICATE-----",
+          "member": "string",
+          "name": "GmEncCert",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "GmCertType为1时，需要填充此参数，表示自有国密证书的加密证书的私钥",
+          "example": "-----BEGIN PRIVATE KEY----- xxx -----END PRIVATE KEY-----",
+          "member": "string",
+          "name": "GmEncPrivateKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "GmCertType为2时，需要填充此参数，表示腾讯云SSL平台托管的证书id",
+          "example": "aKnKQLJ",
+          "member": "string",
+          "name": "GmSSLId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -18580,6 +18892,17 @@
           "output_required": true,
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "0：大小写敏感\n1：大小写不敏感\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "CaseNotSensitive",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],

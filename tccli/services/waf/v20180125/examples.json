@@ -677,7 +677,7 @@
     "DescribeUserClbWafRegions": [
       {
         "document": "",
-        "input": "https://waf.tencentcloudapi.com/?Action=DescribeUserClbWafRegions\n&<公共请求参数>",
+        "input": "https://waf.tencentcloudapi.com/?Action=DescribeUserClbWafRegions\n&<公共请求参数>\n\n{\"AlbType\": \"scf\"}",
         "output": "{\n    \"Response\": {\n        \"Data\": [\n            \"ap-guangzhou\",\n            \"ap-shanghai\"\n        ],\n        \"RequestId\": \"4c8827fc-839c-4ecc-8ac5-d39456d163b9\"\n    }\n}",
         "title": "获取对客户已经开放的负载均衡型WAF的地域"
       }

@@ -41553,6 +41553,15 @@
           "name": "ConnDetectConfig",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "仓库唯一id",
+          "example": "无",
+          "member": "int64",
+          "name": "RegistryId",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

@@ -217,8 +217,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID\t",
-          "example": "1o8yMC47u\t",
+          "document": "业务系统ID\t",
+          "example": "apm-059oXBfTL",
           "member": "string",
           "name": "InstanceKey",
           "output_required": true,
@@ -228,7 +228,7 @@
         },
         {
           "disabled": false,
-          "document": "服务名\t",
+          "document": "应用名\t",
           "example": "java-order-service\t",
           "member": "string",
           "name": "ServiceName",
@@ -250,7 +250,7 @@
         },
         {
           "disabled": false,
-          "document": "异常过滤",
+          "document": "错误类型过滤",
           "example": "io.grpc.StatusRuntimeException,java.sql.(.*?)\t",
           "member": "string",
           "name": "ExceptionFilter",
@@ -261,7 +261,7 @@
         },
         {
           "disabled": false,
-          "document": "错误码过滤\t",
+          "document": "HTTP状态码过滤",
           "example": "400,500\t",
           "member": "string",
           "name": "ErrorCodeFilter",
@@ -272,7 +272,7 @@
         },
         {
           "disabled": false,
-          "document": "应用诊断开关\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用诊断开关（已废弃）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
           "name": "EventEnable",
@@ -338,7 +338,7 @@
         },
         {
           "disabled": false,
-          "document": "日志来源\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "日志源\t\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "CLS",
           "member": "string",
           "name": "LogSource",
@@ -349,7 +349,7 @@
         },
         {
           "disabled": false,
-          "document": "CLS日志集 ",
+          "document": "日志集 ",
           "example": "postgres",
           "member": "string",
           "name": "LogSet",
@@ -360,7 +360,7 @@
         },
         {
           "disabled": false,
-          "document": "日志主题ID",
+          "document": "日志主题",
           "example": "032f3078-10b6-46a0-978f-1696e8e79696",
           "member": "string",
           "name": "LogTopicID",
@@ -371,7 +371,7 @@
         },
         {
           "disabled": false,
-          "document": "线程剖析开关",
+          "document": "方法栈快照开关 true 开启 false 关闭",
           "example": "false",
           "member": "bool",
           "name": "SnapshotEnable",
@@ -382,7 +382,7 @@
         },
         {
           "disabled": false,
-          "document": "线程剖析超时阈值\t",
+          "document": "慢调用监听触发阈值",
           "example": "2000",
           "member": "int64",
           "name": "SnapshotTimeout",
@@ -393,7 +393,7 @@
         },
         {
           "disabled": false,
-          "document": "探针开启开关",
+          "document": "探针总开关",
           "example": "true",
           "member": "bool",
           "name": "AgentEnable",
@@ -404,7 +404,7 @@
         },
         {
           "disabled": false,
-          "document": "组件列表开关\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "组件列表开关（已废弃）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[{\"Name\":\"dubbo\",\"Enable\":true},{\"Name\":\"googlehttpclient\",\"Enable\":true},{\"Name\":\"grpc\",\"Enable\":true},{\"Name\":\"httpclient3\",\"Enable\":true},{\"Name\":\"httpclient4\",\"Enable\":true},{\"Name\":\"hystrix\",\"Enable\":true},{\"Name\":\"lettuce\",\"Enable\":true},{\"Name\":\"mongodb\",\"Enable\":true},{\"Name\":\"mybatis\",\"Enable\":true},{\"Name\":\"mysql\",\"Enable\":true},{\"Name\":\"okhttp\",\"Enable\":true},{\"Name\":\"redis\",\"Enable\":true},{\"Name\":\"rxjava\",\"Enable\":true},{\"Name\":\"spring-webmvc\",\"Enable\":true},{\"Name\":\"tomcat\",\"Enable\":true}]",
           "member": "Instrument",
           "name": "InstrumentList",
@@ -415,7 +415,7 @@
         },
         {
           "disabled": false,
-          "document": "链路压缩开关",
+          "document": "链路压缩开关（已废弃）",
           "example": "true",
           "member": "bool",
           "name": "TraceSquash",
@@ -2057,7 +2057,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例Id",
+          "document": "业务系统Id",
           "example": "apm-059oXBfTL",
           "member": "string",
           "name": "InstanceId",
@@ -2066,7 +2066,7 @@
         },
         {
           "disabled": false,
-          "document": "需要修改的字段key value分别指定字段名、字段值",
+          "document": "需要修改的字段key value分别指定字段名、字段值\n[具体字段请见](https://cloud.tencent.com/document/product/248/111241)",
           "example": "\"Tags\":[{\"Key\":\"UrlConvergence\",\"Value\":\"RPCServer/market.MarketServiceleetcode9(.*?)\"},{\"Key\":\"UrlConvergenceThreshold\",\"Value\":\"600\"},{\"Key\":\"UrlConvergenceSwitch\",\"Value\":\"1\"},{\"Key\":\"AgentEnable\",\"Value\":\"true\"}]\t",
           "member": "ApmTag",
           "name": "Tags",
@@ -2075,7 +2075,7 @@
         },
         {
           "disabled": false,
-          "document": "需要修改配置的服务列表名称\t",
+          "document": "需要修改配置的应用列表名称\t",
           "example": "\"ServiceNames\":[\"stock-service\",\"profile-service28\",\"profile-service08\"],\t",
           "member": "string",
           "name": "ServiceNames",

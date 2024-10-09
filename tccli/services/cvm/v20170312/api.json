@@ -4506,6 +4506,7 @@
           "example": "2",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4515,6 +4516,7 @@
           "example": "NA",
           "member": "RepairTaskInfo",
           "name": "RepairTaskInfoSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -9958,6 +9960,7 @@
           "example": "rep-xxxxxxxx",
           "member": "string",
           "name": "TaskId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
