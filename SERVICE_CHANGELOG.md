@@ -1,10 +1,10 @@
 # 本版本更新包含以下内容：
 
-## 腾讯云数据仓库 TCHouse-D(cdwdoris) 版本：2021-12-28
+## 日志服务(cls) 版本：2020-10-16
 
-### 第 38 次发布
+### 第 86 次发布
 
-发布时间：2024-10-09 01:11:06
+发布时间：2024-10-10 01:12:46
 
 本次发布包含了以下内容：
 
@@ -12,32 +12,152 @@
 
 修改接口：
 
-* [DescribeClusterConfigs](http://document.tencentcloudapi.woa.com/document/product/1706/82867)
+* [DescribeShippers](http://document.tencentcloudapi.woa.com/document/product/614/58744)
 
-	* 新增出参：ErrorMsg
+	* 新增入参：PreciseSearch
 
-* [DescribeDatabaseAuditRecords](http://document.tencentcloudapi.woa.com/document/product/1706/82865)
 
-	* 新增出参：ErrorMsg
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 157 次发布
+
+发布时间：2024-10-10 01:18:56
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateChannelSubOrganizationActive](http://document.tencentcloudapi.woa.com/document/product/1595/85032)
+
+修改数据结构：
+
+* [ChannelOrganizationInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#ChannelOrganizationInfo)
+
+	* 新增成员：ActiveStatus, LicenseExpireTime
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 云数据库 MariaDB(mariadb) 版本：2017-03-12
+
+### 第 44 次发布
+
+发布时间：2024-10-10 01:23:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeDBSyncMode](http://document.tencentcloudapi.woa.com/document/product/237/85033)
+
+
+
+## 容器安全服务(tcss) 版本：2020-11-01
+
+### 第 23 次发布
+
+发布时间：2024-10-10 01:28:40
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [UpdateAssetImageRegistryRegistryDetail](http://document.tencentcloudapi.woa.com/document/product/1662/78812)
+
+	* 新增入参：RegistryId
+
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 159 次发布
+
+发布时间：2024-10-10 01:32:27
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [CCN](http://document.tencentcloudapi.woa.com/document/product/215/15824#CCN)
+
+
+
+
+## Web 应用防火墙(waf) 版本：2018-01-25
+
+### 第 64 次发布
+
+发布时间：2024-10-10 01:33:54
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [AddSpartaProtection](http://document.tencentcloudapi.woa.com/document/product/627/72689)
+
+	* 新增入参：GmType, GmCertType, GmCert, GmPrivateKey, GmEncCert, GmEncPrivateKey, GmSSLId
+
+* [DeleteIpAccessControlV2](http://document.tencentcloudapi.woa.com/document/product/627/83831)
+
+	* <font color="#dd0000">**修改入参**：</font>RuleIds
+
+* [DescribeCertificateVerifyResult](http://document.tencentcloudapi.woa.com/document/product/627/83527)
+
+	* 新增入参：GmCertType, GmCert, GmPrivateKey, GmEncCert, GmEncPrivateKey, GmSSLId
+
+	* <font color="#dd0000">**修改入参**：</font>CertType
+
+* [DescribeUserClbWafRegions](http://document.tencentcloudapi.woa.com/document/product/627/53600)
+
+	* 新增入参：AlbType
+
+* [ModifySpartaProtection](http://document.tencentcloudapi.woa.com/document/product/627/78124)
+
+	* 新增入参：GmType, GmCertType, GmCert, GmPrivateKey, GmEncCert, GmEncPrivateKey, GmSSLId
 
 
 修改数据结构：
 
-* [NodeInfo](http://document.tencentcloudapi.woa.com/document/product/1706/80309#NodeInfo)
+* [ClbDomainsInfo](http://document.tencentcloudapi.woa.com/document/product/627/53609#ClbDomainsInfo)
 
-	* 新增成员：Id
+	* 新增成员：Labels
 
-* [NodeInfos](http://document.tencentcloudapi.woa.com/document/product/1706/80309#NodeInfos)
+* [ClbObject](http://document.tencentcloudapi.woa.com/document/product/627/53609#ClbObject)
 
-	* 新增成员：Id, Zone
+	* 新增成员：NumericalVpcId
 
-* [SlowQueryRecord](http://document.tencentcloudapi.woa.com/document/product/1706/80309#SlowQueryRecord)
+* [DomainInfo](http://document.tencentcloudapi.woa.com/document/product/627/53609#DomainInfo)
 
-	* 新增成员：State, CatalogName
+	* 新增成员：Labels
 
-* [ZoneInfo](http://document.tencentcloudapi.woa.com/document/product/1706/80309#ZoneInfo)
+* [DomainsPartInfo](http://document.tencentcloudapi.woa.com/document/product/627/53609#DomainsPartInfo)
 
-	* 新增成员：Main
+	* 新增成员：GmType, GmCertType, GmCert, GmPrivateKey, GmEncCert, GmEncPrivateKey, GmSSLId, Labels
+
+* [GoodsDetailNew](http://document.tencentcloudapi.woa.com/document/product/627/53609#GoodsDetailNew)
+
+	* 新增成员：MicroVersion
+
+* [Strategy](http://document.tencentcloudapi.woa.com/document/product/627/53609#Strategy)
+
+	* 新增成员：CaseNotSensitive
 
 
 
@@ -25869,6 +25989,21 @@
 
 
 ## 日志服务(cls) 版本：2020-10-16
+
+### 第 86 次发布
+
+发布时间：2024-10-10 01:12:46
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeShippers](http://document.tencentcloudapi.woa.com/document/product/614/58744)
+
+	* 新增入参：PreciseSearch
+
 
 ### 第 85 次发布
 
@@ -53090,6 +53225,25 @@
 
 ## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
 
+### 第 157 次发布
+
+发布时间：2024-10-10 01:18:56
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[CreateChannelSubOrganizationActive](http://document.tencentcloudapi.woa.com/document/product/1595/85032)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+修改数据结构：
+
+* [ChannelOrganizationInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#ChannelOrganizationInfo)
+
+	* 新增成员：ActiveStatus, LicenseExpireTime
+
+
 ### 第 156 次发布
 
 发布时间：2024-09-26 01:55:17
@@ -69156,6 +69310,18 @@
 
 
 ## 云数据库 MariaDB(mariadb) 版本：2017-03-12
+
+### 第 44 次发布
+
+发布时间：2024-10-10 01:23:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeDBSyncMode](http://document.tencentcloudapi.woa.com/document/product/237/85033)](http://document.tencentcloudapi.woa.com/document/product/#/#)
 
 ### 第 43 次发布
 
@@ -94281,6 +94447,21 @@
 
 ## 容器安全服务(tcss) 版本：2020-11-01
 
+### 第 23 次发布
+
+发布时间：2024-10-10 01:28:40
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [UpdateAssetImageRegistryRegistryDetail](http://document.tencentcloudapi.woa.com/document/product/1662/78812)
+
+	* 新增入参：RegistryId
+
+
 ### 第 22 次发布
 
 发布时间：2024-09-24 18:57:43
@@ -114187,6 +114368,19 @@
 
 ## 私有网络(vpc) 版本：2017-03-12
 
+### 第 159 次发布
+
+发布时间：2024-10-10 01:32:27
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [CCN](http://document.tencentcloudapi.woa.com/document/product/215/15824#CCN)
+
+
 ### 第 158 次发布
 
 发布时间：2024-09-30 02:29:33
@@ -118673,6 +118867,66 @@
 
 
 ## Web 应用防火墙(waf) 版本：2018-01-25
+
+### 第 64 次发布
+
+发布时间：2024-10-10 01:33:54
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [AddSpartaProtection](http://document.tencentcloudapi.woa.com/document/product/627/72689)
+
+	* 新增入参：GmType, GmCertType, GmCert, GmPrivateKey, GmEncCert, GmEncPrivateKey, GmSSLId
+
+* [DeleteIpAccessControlV2](http://document.tencentcloudapi.woa.com/document/product/627/83831)
+
+	* <font color="#dd0000">**修改入参**：</font>RuleIds
+
+* [DescribeCertificateVerifyResult](http://document.tencentcloudapi.woa.com/document/product/627/83527)
+
+	* 新增入参：GmCertType, GmCert, GmPrivateKey, GmEncCert, GmEncPrivateKey, GmSSLId
+
+	* <font color="#dd0000">**修改入参**：</font>CertType
+
+* [DescribeUserClbWafRegions](http://document.tencentcloudapi.woa.com/document/product/627/53600)
+
+	* 新增入参：AlbType
+
+* [ModifySpartaProtection](http://document.tencentcloudapi.woa.com/document/product/627/78124)
+
+	* 新增入参：GmType, GmCertType, GmCert, GmPrivateKey, GmEncCert, GmEncPrivateKey, GmSSLId
+
+
+修改数据结构：
+
+* [ClbDomainsInfo](http://document.tencentcloudapi.woa.com/document/product/627/53609#ClbDomainsInfo)
+
+	* 新增成员：Labels
+
+* [ClbObject](http://document.tencentcloudapi.woa.com/document/product/627/53609#ClbObject)
+
+	* 新增成员：NumericalVpcId
+
+* [DomainInfo](http://document.tencentcloudapi.woa.com/document/product/627/53609#DomainInfo)
+
+	* 新增成员：Labels
+
+* [DomainsPartInfo](http://document.tencentcloudapi.woa.com/document/product/627/53609#DomainsPartInfo)
+
+	* 新增成员：GmType, GmCertType, GmCert, GmPrivateKey, GmEncCert, GmEncPrivateKey, GmSSLId, Labels
+
+* [GoodsDetailNew](http://document.tencentcloudapi.woa.com/document/product/627/53609#GoodsDetailNew)
+
+	* 新增成员：MicroVersion
+
+* [Strategy](http://document.tencentcloudapi.woa.com/document/product/627/53609#Strategy)
+
+	* 新增成员：CaseNotSensitive
+
 
 ### 第 63 次发布
 

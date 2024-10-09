@@ -782,6 +782,20 @@
         "title": "创建超管变更链接（小程序链接）"
       }
     ],
+    "CreateChannelSubOrganizationActive": [
+      {
+        "document": "org_zhangsan和org_lisi两个企业已经是激活态，现在花费两个许可证给两个子客企业分别再续期1年",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateChannelSubOrganizationActive\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"yDwhxUUckp3gl8j5UuFX33LSNozpRsbi\",\n        \"ProxyOrganizationOpenId\": \"org_dianziqian\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"n9527\"\n        }\n    },\n    \"SubOrganizationOpenIds\": [\n        \"org_zhangsan\",\n        \"org_lisi\"\n    ],\n    \"Renew\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"00f08f1c-3823-44c3-8cd1-4e66a0587ab4\"\n    }\n}",
+        "title": "子客续期"
+      },
+      {
+        "document": "org_zhangsan和org_lisi两个企业现在是非激活态（可能是过期，也可能是没有激活过），现在花费两个许可证激活这两个子客企业",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateChannelSubOrganizationActive\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"yDwhxUUckp3gl8j5UuFX33LSNozpRsbi\",\n        \"ProxyOrganizationOpenId\": \"org_dianziqian\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"n9527\"\n        }\n    },\n    \"SubOrganizationOpenIds\": [\n        \"org_zhangsan\",\n        \"org_lisi\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"00f08f1c-3823-44c3-8cd1-4e66a0587ab4\"\n    }\n}",
+        "title": "子客激活"
+      }
+    ],
     "CreateConsoleLoginUrl": [
       {
         "document": "如果<b>典子谦示例企业的员工张三已经完成了认证和加入企业</b>，  此时给典子谦示例企业的员工张三生成登录的PC控制台的链接\n\n典子谦示例企业的定义标识为：org_dianziqian\n员工张三定义员工标识为：n9527\n",
