@@ -32,6 +32,14 @@
         "title": "审核通过某客户"
       }
     ],
+    "BatchQuerySaasClient": [
+      {
+        "document": "成功",
+        "input": "POST / HTTP/1.1\nHost: partners.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchQuerySaasClient\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d0b5908b-35d0-4351-8eff-a0aae3519a85\"\n    }\n}",
+        "title": "成功"
+      }
+    ],
     "CreatePayRelationForClient": [
       {
         "document": "创建合作伙伴和客户的强代付关系",

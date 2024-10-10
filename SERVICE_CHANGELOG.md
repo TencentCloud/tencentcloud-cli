@@ -1,72 +1,14 @@
 # 本版本更新包含以下内容：
 
-## 日志服务(cls) 版本：2020-10-16
-
-### 第 86 次发布
-
-发布时间：2024-10-10 01:12:46
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [DescribeShippers](http://document.tencentcloudapi.woa.com/document/product/614/58744)
-
-	* 新增入参：PreciseSearch
+## 云服务器(cvm) 版本：2019-12-12
 
 
 
+## 云服务器(cvm) 版本：2017-03-12
 
-## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+### 第 85 次发布
 
-### 第 157 次发布
-
-发布时间：2024-10-10 01:18:56
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [CreateChannelSubOrganizationActive](http://document.tencentcloudapi.woa.com/document/product/1595/85032)
-
-修改数据结构：
-
-* [ChannelOrganizationInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#ChannelOrganizationInfo)
-
-	* 新增成员：ActiveStatus, LicenseExpireTime
-
-
-
-
-## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
-
-
-
-## 云数据库 MariaDB(mariadb) 版本：2017-03-12
-
-### 第 44 次发布
-
-发布时间：2024-10-10 01:23:03
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [DescribeDBSyncMode](http://document.tencentcloudapi.woa.com/document/product/237/85033)
-
-
-
-## 容器安全服务(tcss) 版本：2020-11-01
-
-### 第 23 次发布
-
-发布时间：2024-10-10 01:28:40
+发布时间：2024-10-11 01:13:46
 
 本次发布包含了以下内容：
 
@@ -74,18 +16,79 @@
 
 修改接口：
 
-* [UpdateAssetImageRegistryRegistryDetail](http://document.tencentcloudapi.woa.com/document/product/1662/78812)
+* [ImportImage](http://document.tencentcloudapi.woa.com/document/product/213/15717)
 
-	* 新增入参：RegistryId
+	* 新增入参：ImageFamily
 
+
+
+
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+
+### 第 99 次发布
+
+发布时间：2024-10-11 01:15:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [InquirePriceModify](http://document.tencentcloudapi.woa.com/document/product/1003/85034)
+
+
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 105 次发布
+
+发布时间：2024-10-11 01:18:52
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ArchiveDynamicFlow](http://document.tencentcloudapi.woa.com/document/product/1668/85036)
+* [CreateDynamicFlowApprover](http://document.tencentcloudapi.woa.com/document/product/1668/85035)
+
+修改接口：
+
+* [CreateFlowByFiles](http://document.tencentcloudapi.woa.com/document/product/1668/79349)
+
+	* 新增入参：OpenDynamicSignFlow
+
+
+新增数据结构：
+
+* [ArchiveDynamicApproverData](http://document.tencentcloudapi.woa.com/document/product/1668/79360#ArchiveDynamicApproverData)
+* [DynamicFlowApproverResult](http://document.tencentcloudapi.woa.com/document/product/1668/79360#DynamicFlowApproverResult)
+
+
+
+## 渠道合作伙伴(partners) 版本：2018-03-21
+
+### 第 13 次发布
+
+发布时间：2024-10-11 01:25:18
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [BatchQuerySaasClient](http://document.tencentcloudapi.woa.com/document/product/563/85037)
 
 
 
 ## 私有网络(vpc) 版本：2017-03-12
 
-### 第 159 次发布
+### 第 160 次发布
 
-发布时间：2024-10-10 01:32:27
+发布时间：2024-10-11 01:32:21
 
 本次发布包含了以下内容：
 
@@ -95,69 +98,7 @@
 
 * [CCN](http://document.tencentcloudapi.woa.com/document/product/215/15824#CCN)
 
-
-
-
-## Web 应用防火墙(waf) 版本：2018-01-25
-
-### 第 64 次发布
-
-发布时间：2024-10-10 01:33:54
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [AddSpartaProtection](http://document.tencentcloudapi.woa.com/document/product/627/72689)
-
-	* 新增入参：GmType, GmCertType, GmCert, GmPrivateKey, GmEncCert, GmEncPrivateKey, GmSSLId
-
-* [DeleteIpAccessControlV2](http://document.tencentcloudapi.woa.com/document/product/627/83831)
-
-	* <font color="#dd0000">**修改入参**：</font>RuleIds
-
-* [DescribeCertificateVerifyResult](http://document.tencentcloudapi.woa.com/document/product/627/83527)
-
-	* 新增入参：GmCertType, GmCert, GmPrivateKey, GmEncCert, GmEncPrivateKey, GmSSLId
-
-	* <font color="#dd0000">**修改入参**：</font>CertType
-
-* [DescribeUserClbWafRegions](http://document.tencentcloudapi.woa.com/document/product/627/53600)
-
-	* 新增入参：AlbType
-
-* [ModifySpartaProtection](http://document.tencentcloudapi.woa.com/document/product/627/78124)
-
-	* 新增入参：GmType, GmCertType, GmCert, GmPrivateKey, GmEncCert, GmEncPrivateKey, GmSSLId
-
-
-修改数据结构：
-
-* [ClbDomainsInfo](http://document.tencentcloudapi.woa.com/document/product/627/53609#ClbDomainsInfo)
-
-	* 新增成员：Labels
-
-* [ClbObject](http://document.tencentcloudapi.woa.com/document/product/627/53609#ClbObject)
-
-	* 新增成员：NumericalVpcId
-
-* [DomainInfo](http://document.tencentcloudapi.woa.com/document/product/627/53609#DomainInfo)
-
-	* 新增成员：Labels
-
-* [DomainsPartInfo](http://document.tencentcloudapi.woa.com/document/product/627/53609#DomainsPartInfo)
-
-	* 新增成员：GmType, GmCertType, GmCert, GmPrivateKey, GmEncCert, GmEncPrivateKey, GmSSLId, Labels
-
-* [GoodsDetailNew](http://document.tencentcloudapi.woa.com/document/product/627/53609#GoodsDetailNew)
-
-	* 新增成员：MicroVersion
-
-* [Strategy](http://document.tencentcloudapi.woa.com/document/product/627/53609#Strategy)
-
-	* 新增成员：CaseNotSensitive
+	* <font color="#dd0000">**修改成员**：</font>Ipv6Flag
 
 
 
@@ -31617,6 +31558,21 @@
 
 ## 云服务器(cvm) 版本：2017-03-12
 
+### 第 85 次发布
+
+发布时间：2024-10-11 01:13:46
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ImportImage](http://document.tencentcloudapi.woa.com/document/product/213/15717)
+
+	* 新增入参：ImageFamily
+
+
 ### 第 84 次发布
 
 发布时间：2024-09-30 01:29:23
@@ -36376,6 +36332,18 @@
 
 
 ## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+
+### 第 99 次发布
+
+发布时间：2024-10-11 01:15:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[InquirePriceModify](http://document.tencentcloudapi.woa.com/document/product/1003/85034)](http://document.tencentcloudapi.woa.com/document/product/#/#)
 
 ### 第 98 次发布
 
@@ -50985,6 +50953,31 @@
 
 ## 腾讯电子签企业版(ess) 版本：2020-11-11
 
+### 第 105 次发布
+
+发布时间：2024-10-11 01:18:52
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[ArchiveDynamicFlow](http://document.tencentcloudapi.woa.com/document/product/1668/85036)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[CreateDynamicFlowApprover](http://document.tencentcloudapi.woa.com/document/product/1668/85035)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+修改接口：
+
+* [CreateFlowByFiles](http://document.tencentcloudapi.woa.com/document/product/1668/79349)
+
+	* 新增入参：OpenDynamicSignFlow
+
+
+新增数据结构：
+
+* [[ArchiveDynamicApproverData](http://document.tencentcloudapi.woa.com/document/product/1668/79360#ArchiveDynamicApproverData)](http://document.tencentcloudapi.woa.com/document/product/1668/79360#[ArchiveDynamicApproverData](http://document.tencentcloudapi.woa.com/document/product/1668/79360#ArchiveDynamicApproverData))
+* [[DynamicFlowApproverResult](http://document.tencentcloudapi.woa.com/document/product/1668/79360#DynamicFlowApproverResult)](http://document.tencentcloudapi.woa.com/document/product/1668/79360#[DynamicFlowApproverResult](http://document.tencentcloudapi.woa.com/document/product/1668/79360#DynamicFlowApproverResult))
+
 ### 第 104 次发布
 
 发布时间：2024-09-24 14:55:20
@@ -53235,7 +53228,7 @@
 
 新增接口：
 
-* [[CreateChannelSubOrganizationActive](http://document.tencentcloudapi.woa.com/document/product/1595/85032)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [CreateChannelSubOrganizationActive](http://document.tencentcloudapi.woa.com/document/product/1595/85032)
 
 修改数据结构：
 
@@ -69321,7 +69314,7 @@
 
 新增接口：
 
-* [[DescribeDBSyncMode](http://document.tencentcloudapi.woa.com/document/product/237/85033)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeDBSyncMode](http://document.tencentcloudapi.woa.com/document/product/237/85033)
 
 ### 第 43 次发布
 
@@ -80716,6 +80709,18 @@
 
 
 ## 渠道合作伙伴(partners) 版本：2018-03-21
+
+### 第 13 次发布
+
+发布时间：2024-10-11 01:25:18
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[BatchQuerySaasClient](http://document.tencentcloudapi.woa.com/document/product/563/85037)](http://document.tencentcloudapi.woa.com/document/product/#/#)
 
 ### 第 12 次发布
 
@@ -114367,6 +114372,21 @@
 
 
 ## 私有网络(vpc) 版本：2017-03-12
+
+### 第 160 次发布
+
+发布时间：2024-10-11 01:32:21
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [CCN](http://document.tencentcloudapi.woa.com/document/product/215/15824#CCN)
+
+	* <font color="#dd0000">**修改成员**：</font>Ipv6Flag
+
 
 ### 第 159 次发布
 

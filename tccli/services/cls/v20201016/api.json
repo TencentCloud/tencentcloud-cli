@@ -8470,6 +8470,7 @@
           "example": "10",
           "member": "int64",
           "name": "Interval",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8479,6 +8480,7 @@
           "example": "12",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8488,6 +8490,7 @@
           "example": "无",
           "member": "HistogramInfo",
           "name": "HistogramInfos",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -8497,6 +8500,7 @@
           "example": "无",
           "member": "SearchLogTopics",
           "name": "Topics",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },

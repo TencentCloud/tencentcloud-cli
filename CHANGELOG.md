@@ -1,3 +1,108 @@
+# Release 3.0.1086.1
+
+## 云服务器(cvm) 版本：2019-12-12
+
+
+
+## 云服务器(cvm) 版本：2017-03-12
+
+### 第 85 次发布
+
+发布时间：2024-10-11 01:13:46
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ImportImage](http://document.tencentcloudapi.woa.com/document/product/213/15717)
+
+	* 新增入参：ImageFamily
+
+
+
+
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+
+### 第 99 次发布
+
+发布时间：2024-10-11 01:15:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [InquirePriceModify](http://document.tencentcloudapi.woa.com/document/product/1003/85034)
+
+
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 105 次发布
+
+发布时间：2024-10-11 01:18:52
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ArchiveDynamicFlow](http://document.tencentcloudapi.woa.com/document/product/1668/85036)
+* [CreateDynamicFlowApprover](http://document.tencentcloudapi.woa.com/document/product/1668/85035)
+
+修改接口：
+
+* [CreateFlowByFiles](http://document.tencentcloudapi.woa.com/document/product/1668/79349)
+
+	* 新增入参：OpenDynamicSignFlow
+
+
+新增数据结构：
+
+* [ArchiveDynamicApproverData](http://document.tencentcloudapi.woa.com/document/product/1668/79360#ArchiveDynamicApproverData)
+* [DynamicFlowApproverResult](http://document.tencentcloudapi.woa.com/document/product/1668/79360#DynamicFlowApproverResult)
+
+
+
+## 渠道合作伙伴(partners) 版本：2018-03-21
+
+### 第 13 次发布
+
+发布时间：2024-10-11 01:25:18
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [BatchQuerySaasClient](http://document.tencentcloudapi.woa.com/document/product/563/85037)
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 160 次发布
+
+发布时间：2024-10-11 01:32:21
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [CCN](http://document.tencentcloudapi.woa.com/document/product/215/15824#CCN)
+
+	* <font color="#dd0000">**修改成员**：</font>Ipv6Flag
+
+
+
+
 # Release 3.0.1085.1
 
 ## 日志服务(cls) 版本：2020-10-16
