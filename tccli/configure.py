@@ -391,7 +391,7 @@ class ConfigureCommand(BasicConfigure):
         {'name': 'get', 'command_class': ConfigureGetCommand},
         {'name': 'set', 'command_class': ConfigureSetCommand},
         {'name': 'remove', 'command_class': ConfigureRemoveCommand},
-        {'name': 'set-root-domain', 'command_class': ConfigureSetRootDomainCommand}
+        {'name': 'set-root-domain', 'command_class': ConfigureSetRootDomainCommand},
     ]
 
     VALUES_TO_PROMPT = [
