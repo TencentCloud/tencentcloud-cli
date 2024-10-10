@@ -71,6 +71,9 @@ output： 可选参数，请求回包输出格式，支持[json table text]三�
 tccli configure set secretId AKIDwLw1234MMfPRle2g9nR2OTI787aBCDP
 tccli configure set region ap-guangzhou  output json language zh-CN
 
+# set-root-domain命令可以将配置文件中的endpoint的根域名全部设置为同一值。
+tccli configure set-root-domain internal.tencentcloudapi.com
+
 # get子命令用于获取配置信息。
 tccli configure get secretKey
 secretKey = OxXj7khcV1234dQSSYNABcdCc1LiArFd
@@ -104,6 +107,7 @@ tccli configure set region ap-guangzhou  output json language zh-CN --profile te
 tccli configure get secretKey      --profile test
 tccli configure list      --profile test
 tccli configure remove      --profile test
+tccli configure set-root-domain internal.tencentcloudapi.com --profile test
 
 
 在调用接口时指定账户(以cvm DescribeZones接口为例)。
