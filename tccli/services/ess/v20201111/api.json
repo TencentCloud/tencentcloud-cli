@@ -1,5 +1,12 @@
 {
   "actions": {
+    "ArchiveDynamicFlow": {
+      "document": "该接口用于结束动态签署流程，若当前合同还存在签署方未签署，无法结束。",
+      "input": "ArchiveDynamicFlowRequest",
+      "name": "结束动态签署合同",
+      "output": "ArchiveDynamicFlowResponse",
+      "status": "online"
+    },
     "BindEmployeeUserIdWithClientOpenId": {
       "document": "此接口（BindEmployeeUserIdWithClientOpenId）用于将电子签系统员工UserId与客户系统员工OpenId进行绑定。\n\n此OpenId只在 [更新企业员工信息 ](https://qian.tencent.com/developers/companyApis/staffs/UpdateIntegrationEmployees)、[移除企业员工](https://qian.tencent.com/developers/companyApis/staffs/DeleteIntegrationEmployees) 等场景下可以使用",
       "input": "BindEmployeeUserIdWithClientOpenIdRequest",
@@ -82,6 +89,13 @@
       "input": "CreateDocumentRequest",
       "name": "模板发起合同-创建电子文档",
       "output": "CreateDocumentResponse",
+      "status": "online"
+    },
+    "CreateDynamicFlowApprover": {
+      "document": "此接口（CreateDynamicFlowApprover）用来补充动态合同的签署人信息。<br/>\n适用场景：使用CreateFlowByFiles指定：OpenDynamicSignFlow=true发起的合同，可以使用该接口补充后续签署人。<br/>",
+      "input": "CreateDynamicFlowApproverRequest",
+      "name": "补充动态签署合同的签署人信息",
+      "output": "CreateDynamicFlowApproverResponse",
       "status": "online"
     },
     "CreateEmbedWebUrl": {
@@ -787,7 +801,7 @@
         },
         {
           "disabled": false,
-          "document": "签署方经办人的证件类型，支持以下类型，样式可以参考<a href=\"https://qian.tencent.com/developers/partner/id_card_support/\" target=\"_blank\">常见个人证件类型介绍</a>\n<ul><li>ID_CARD 中国大陆居民身份证  (默认值)</li>\n<li>HONGKONG_AND_MACAO 港澳居民来往内地通行证</li>\n<li>HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)</li>\n<li>OTHER_CARD_TYPE 其他证件</li></ul>\n\n\n\n\n注: `其他证件类型为白名单功能，使用前请联系对接的客户经理沟通。`",
+          "document": "签署方经办人的证件类型，支持以下类型，样式可以参考<a href=\"https://qian.tencent.com/developers/partner/id_card_support/\" target=\"_blank\">常见个人证件类型介绍</a>\n<ul><li>ID_CARD 中国大陆居民身份证  (默认值)</li>\n<li>HONGKONG_AND_MACAO 港澳居民来往内地通行证</li>\n<li>HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)</li>\n<li>OTHER_CARD_TYPE 其他证件</li></ul>\n\n\n\n\n注: \n1. <b>其他证件类型为白名单功能</b>，使用前请联系对接的客户经理沟通。\n2. 港澳居民来往内地通行证 和  港澳台居民居住证 类型的签署人<b>至少要过一次大陆的海关</b>才能使用。",
           "example": "ID_CARD",
           "member": "string",
           "name": "ApproverIdCardType",
@@ -1082,6 +1096,99 @@
         }
       ],
       "usage": "in"
+    },
+    "ArchiveDynamicApproverData": {
+      "document": "动态签署2.0合同参与人信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "签署参与人在本流程中的编号ID(每个流程不同)，可用此ID来定位签署参与人在本流程的签署节点，也可用于后续创建签署链接等操作。 注意：不指定该字段时默认为发起方\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "06f2bc0f1772d8deac2f92b5df61a5ac",
+          "member": "string",
+          "name": "SignId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "签署方经办人在模板中配置的参与方ID，与控件绑定，是控件的归属方，ID为32位字符串。 模板发起合同时，该参数为必填项。 文件发起合同是，该参数无需传值。 如果开发者后序用合同模板发起合同，建议保存此值，在用合同模板发起合同中需此值绑定对应的签署经办人 。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "yDwhSUUckp3lqxlpUu6Ni3SvjJPoxxxx",
+          "member": "string",
+          "name": "RecipientId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ArchiveDynamicFlowRequest": {
+      "document": "ArchiveDynamicFlow请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "执行本接口操作的员工信息。\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "合同流程ID, 为32位字符串。\n\n可登录腾讯电子签控制台，[点击查看FlowId在控制台中的位置](https://qcloudimg.tencent-cloud.cn/raw/0a83015166cfe1cb043d14f9ec4bd75e.png)",
+          "example": "yDwFmUUckpstqfvzUE1h3jo1f3cqjkGm",
+          "member": "string",
+          "name": "FlowId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "代理企业和员工的信息。\n在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ArchiveDynamicFlowResponse": {
+      "document": "ArchiveDynamicFlow返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "合同流程ID",
+          "example": "yDwFmUUckpstqfvzUE1h3jo1f3cqjkGm",
+          "member": "string",
+          "name": "FlowId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "动态签署人的参与人信息",
+          "example": "无",
+          "member": "ArchiveDynamicApproverData",
+          "name": "Approvers",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "AuthInfoDetail": {
       "document": "企业扩展服务授权列表详情",
@@ -2960,6 +3067,89 @@
       ],
       "type": "object"
     },
+    "CreateDynamicFlowApproverRequest": {
+      "document": "CreateDynamicFlowApprover请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "执行本接口操作的员工信息。使用此接口时，必须填写userId。支持填入集团子公司经办人 userId 代发合同。注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "合同流程ID，为32位字符串",
+          "example": "无",
+          "member": "string",
+          "name": "FlowId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "合同流程的参与方列表，最多可支持50个参与方，可在列表中指定企业B端签署方和个人C端签署方的联系和认证方式等信息，具体定义可以参考开发者中心的ApproverInfo结构体。如果合同流程是有序签署，Approvers列表中参与人的顺序就是默认的签署顺序，请确保列表中参与人的顺序符合实际签署顺序。",
+          "example": "无",
+          "member": "ApproverInfo",
+          "name": "Approvers",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "代理企业和员工的信息。在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "个人自动签名的使用场景包括以下, 个人自动签署(即ApproverType设置成个人自动签署时)业务此值必传：<ul><li> **E_PRESCRIPTION_AUTO_SIGN**：电子处方单（医疗自动签）  </li><li> **OTHER** :  通用场景</li></ul>注: `个人自动签名场景是白名单功能，使用前请与对接的客户经理联系沟通。`",
+          "example": "E_PRESCRIPTION_AUTO_SIGN",
+          "member": "string",
+          "name": "AutoSignScene",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDynamicFlowApproverResponse": {
+      "document": "CreateDynamicFlowApprover返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "合同流程ID，为32位字符串",
+          "example": "无",
+          "member": "string",
+          "name": "FlowId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "补充动态合同签署人的结果数组",
+          "example": "无",
+          "member": "DynamicFlowApproverResult",
+          "name": "DynamicFlowApproverList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateEmbedWebUrlRequest": {
       "document": "CreateEmbedWebUrl请求参数结构体",
       "members": [
@@ -3535,6 +3725,15 @@
           "name": "FlowDisplayType",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启动态签署合同：\n<ul><li> **true**：开启动态签署合同，可在签署过程中追加签署人（必须满足：1，发起方企业开启了模块化计费能力；2，发起方企业在企业应用管理中开启了动态签署人2.0能力）    。</li>\n<li> **false**：不开启动态签署合同。</li></ul>",
+          "example": "true",
+          "member": "bool",
+          "name": "OpenDynamicSignFlow",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -9656,6 +9855,45 @@
         }
       ],
       "type": "object"
+    },
+    "DynamicFlowApproverResult": {
+      "document": "动态添加签署人的结果信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "签署方角色编号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RecipientId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "签署方唯一编号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SignId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "签署方当前状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "ApproverStatus",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "EmbedUrlOption": {
       "document": "个性化参数",

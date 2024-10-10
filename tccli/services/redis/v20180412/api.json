@@ -11274,7 +11274,7 @@
           "example": "6954227",
           "member": "int64",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },

@@ -704,6 +704,14 @@
         "title": "新购集群询价"
       }
     ],
+    "InquirePriceModify": [
+      {
+        "document": "使用该接口进行变配预付费资源询价，后付费资源变配询价需直接使用InquirePriceCreate接口",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquirePriceModify\n<公共请求参数>\n\n{\n    \"Cpu\": 0,\n    \"Memory\": 0,\n    \"StorageLimit\": 0,\n    \"ClusterId\": \"abc\",\n    \"InstanceId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"InstancePrice\": {\n            \"TotalPrice\": 0,\n            \"Discount\": 0,\n            \"TotalPriceDiscount\": 0,\n            \"UnitPrice\": 0,\n            \"UnitPriceDiscount\": 0,\n            \"ChargeUnit\": \"abc\"\n        },\n        \"StoragePrice\": {\n            \"TotalPrice\": 0,\n            \"Discount\": 0,\n            \"TotalPriceDiscount\": 0,\n            \"UnitPrice\": 0,\n            \"UnitPriceDiscount\": 0,\n            \"ChargeUnit\": \"abc\"\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "变配预付费资源询价"
+      }
+    ],
     "InquirePriceRenew": [
       {
         "document": "",

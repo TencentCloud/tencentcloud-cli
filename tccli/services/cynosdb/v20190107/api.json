@@ -595,6 +595,13 @@
       "output": "InquirePriceCreateResponse",
       "status": "online"
     },
+    "InquirePriceModify": {
+      "document": "变配预付费集群询价",
+      "input": "InquirePriceModifyRequest",
+      "name": "变配预付费集群询价",
+      "output": "InquirePriceModifyResponse",
+      "status": "online"
+    },
     "InquirePriceRenew": {
       "document": "查询续费集群价格",
       "input": "InquirePriceRenewRequest",
@@ -12473,6 +12480,107 @@
           "output_required": true,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "InquirePriceModifyRequest": {
+      "document": "InquirePriceModify请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "CPU核数",
+          "example": "1",
+          "member": "int64",
+          "name": "Cpu",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "内存大小",
+          "example": "1",
+          "member": "int64",
+          "name": "Memory",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "存储大小，存储资源变配：ClusterId,StorageLimit",
+          "example": "10",
+          "member": "int64",
+          "name": "StorageLimit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "实例ID，计算资源变配必传: ClusterId,InstanceId,Cpu,Memory ",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例设备类型",
+          "example": "无",
+          "member": "string",
+          "name": "DeviceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "serverless实例ccu大小",
+          "example": "无",
+          "member": "float",
+          "name": "Ccu",
+          "required": false,
+          "type": "float"
+        }
+      ],
+      "type": "object"
+    },
+    "InquirePriceModifyResponse": {
+      "document": "InquirePriceModify返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例价格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TradePrice",
+          "name": "InstancePrice",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "存储价格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TradePrice",
+          "name": "StoragePrice",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

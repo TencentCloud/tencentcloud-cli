@@ -5087,13 +5087,13 @@
           "value_allowed_null": true
         },
         {
-          "disabled": true,
+          "disabled": false,
           "document": "是否支持ipv6路由表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "True",
-          "member": "string",
+          "member": "bool",
           "name": "Ipv6Flag",
           "output_required": false,
-          "type": "string",
+          "type": "bool",
           "value_allowed_null": true
         },
         {
