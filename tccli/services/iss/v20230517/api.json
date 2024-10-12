@@ -5200,6 +5200,15 @@
           "name": "EndTime",
           "required": true,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否携带每个时间段的播放url",
+          "example": "false",
+          "member": "bool",
+          "name": "WithUrl",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -8741,6 +8750,16 @@
           "output_required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对应时间片段的播放url\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://domain/playback/00037e5f-*****-f30b13a86b02/hls.m3u8?starttime=1727164597&endtime=1727164770&token=********",
+          "member": "string",
+          "name": "HlsUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
