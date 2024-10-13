@@ -176,6 +176,14 @@
         "title": "创建手动指定psk的设备"
       }
     ],
+    "CreateExternalSourceAIServiceTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateExternalSourceAIServiceTask\n<公共请求参数>\n\n{\n    \"ProductId\": \"TQBDY6RPI9\",\n    \"ServiceType\": \"Highlight\",\n    \"VideoURLs\": [\n        \"https://example.com/video.mp4\"\n    ],\n    \"Config\": \"{}\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c497cdcb-8eaf-46b0-8850-311cfb278798\",\n        \"TaskId\": \"fb066d7a-baac-4706-acda-058f56f82759\"\n    }\n}",
+        "title": "创建外部视频 AI 分析任务"
+      }
+    ],
     "CreateFenceBind": [
       {
         "document": "创建围栏绑定信息",
@@ -932,6 +940,20 @@
         "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InheritCloudStorageUser\n<公共请求参数>\n\n{\n    \"DeviceName\": \"sdfds\",\n    \"ToUserId\": \"sdfds\",\n    \"UserId\": \"ddd\",\n    \"ProductId\": \"sdfds\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"dd\"\n    }\n}",
         "title": "继承云存用户"
+      }
+    ],
+    "InvokeExternalSourceAIServiceTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InvokeExternalSourceAIServiceTask\n<公共请求参数>\n\n{\n    \"ProductId\": \"TQBDY6RPI9\",\n    \"ServiceType\": \"Highlight\",\n    \"VideoURLs\": [\n        \"https://example.com/video.mp4\"\n    ],\n    \"Config\": \"{}\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8b490930-d119-4ee2-963c-c58973a1ebe6\",\n        \"Completed\": true,\n        \"TaskId\": \"c31aa4f2-08c9-4088-9603-186d7311fdd8\",\n        \"TaskInfo\": {\n            \"ChannelId\": 0,\n            \"CreateTime\": 1714240802,\n            \"DeviceName\": \"dev001\",\n            \"EndTime\": 1714233600,\n            \"Files\": [\n                \"output.mp4\"\n            ],\n            \"ProductId\": \"TSLFHRWDSD\",\n            \"Result\": \"\",\n            \"ServiceType\": \"Highlight\",\n            \"StartTime\": 1714147200,\n            \"Status\": 3,\n            \"TaskId\": \"c31aa4f2-08c9-4088-9603-186d7311fdd8\",\n            \"UpdateTime\": 1714240802\n        }\n    }\n}",
+        "title": "创建外部视频 AI 分析任务（执行成功）"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InvokeExternalSourceAIServiceTask\n<公共请求参数>\n\n{\n    \"ProductId\": \"TQBDY6RPI9\",\n    \"ServiceType\": \"Highlight\",\n    \"VideoURLs\": [\n        \"https://example.com/video.mp4\"\n    ],\n    \"Config\": \"{}\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8b490930-d119-4ee2-963c-c58973a1ebe6\",\n        \"Completed\": false,\n        \"TaskId\": \"c31aa4f2-08c9-4088-9603-186d7311fdd8\",\n        \"TaskInfo\": {\n            \"ChannelId\": 0,\n            \"CreateTime\": 1714240802,\n            \"DeviceName\": \"dev001\",\n            \"EndTime\": 1714233600,\n            \"Files\": [],\n            \"ProductId\": \"TSLFHRWDSD\",\n            \"Result\": \"\",\n            \"ServiceType\": \"Highlight\",\n            \"StartTime\": 1714147200,\n            \"Status\": 4,\n            \"TaskId\": \"c31aa4f2-08c9-4088-9603-186d7311fdd8\",\n            \"UpdateTime\": 1714240802\n        }\n    }\n}",
+        "title": "创建外部视频 AI 分析任务（超时未完成，转异步）"
       }
     ],
     "ListEventHistory": [

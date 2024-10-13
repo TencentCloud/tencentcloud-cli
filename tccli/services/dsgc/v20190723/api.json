@@ -2098,6 +2098,24 @@
           "name": "ResourcesAccount",
           "required": true,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "创建默认主模板扫描任务",
+          "example": "false",
+          "member": "bool",
+          "name": "CreateDefaultTask",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "授权范围（all:授权整个数据源 manual:手动指定数据库）",
+          "example": "all",
+          "member": "string",
+          "name": "AuthRange",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -4265,24 +4283,6 @@
         },
         {
           "disabled": false,
-          "document": "可用于访问自建云资源的IP。",
-          "example": "127.31.41.42",
-          "member": "string",
-          "name": "ResourceVip",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "可用于访问自建云资源的端口。",
-          "example": "2203",
-          "member": "uint64",
-          "name": "ResourceVPort",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
           "document": "自建云资源的VPC ID。",
           "example": "127.31.41.43",
           "member": "string",
@@ -4310,7 +4310,25 @@
         },
         {
           "disabled": false,
-          "document": "账户名。",
+          "document": "可用于访问自建云资源的IP。\nemr的连接不需要使用该字段",
+          "example": "127.31.41.42",
+          "member": "string",
+          "name": "ResourceVip",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "可用于访问自建云资源的端口。\nemr的连接不需要使用该字段",
+          "example": "2203",
+          "member": "uint64",
+          "name": "ResourceVPort",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "账户名。如果emr_hive的连接方式为“LDAP”，则复用该字段",
           "example": "admin",
           "member": "string",
           "name": "UserName",
@@ -4319,7 +4337,7 @@
         },
         {
           "disabled": false,
-          "document": "账户密码。",
+          "document": "账户密码。如果emr_hive的连接方式为“LDAP”，则复用该字段",
           "example": "password",
           "member": "string",
           "name": "Password",
@@ -4350,6 +4368,15 @@
           "example": "database",
           "member": "string",
           "name": "InstanceValue",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "授权范围（all:授权整个数据源 manual:手动指定数据库）",
+          "example": "all",
+          "member": "string",
+          "name": "AuthRange",
           "required": false,
           "type": "string"
         }
@@ -4657,6 +4684,16 @@
           "name": "Storage",
           "output_required": true,
           "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "治理授权状态，0:关闭 1：开启",
+          "example": "0",
+          "member": "int64",
+          "name": "GovernAuthStatus",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -13195,6 +13232,26 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "已授权的实例数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "InsAuthCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "已购买的实例数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "InsTotalQuota",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -13861,6 +13918,28 @@
           "example": "value",
           "member": "string",
           "name": "InstanceValue",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "//治理授权状态（0：关闭 1：开启）",
+          "example": "0",
+          "member": "int64",
+          "name": "GovernAuthStatus",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "授权范围：all - 授权整个数据源 manual:手动指定数据源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "all",
+          "member": "string",
+          "name": "AuthRange",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -14846,6 +14925,36 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
+          "document": "用户购买的实例配额。",
+          "example": "1",
+          "member": "int64",
+          "name": "InsTotalQuota",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户可用的实例配额。",
+          "example": "1",
+          "member": "int64",
+          "name": "InsRemainQuota",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户购买的版本",
+          "example": "basic",
+          "member": "string",
+          "name": "Version",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -15213,7 +15322,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤项。\n可过滤值包括：\nResoureRegion - 资源所处地域，需要填写完整地域名称，不支持模糊匹配。\n\nAuthStatus - authorized（已授权）、unauthorized（未授权）、deleted（资源已被删除），不支持模糊匹配，需要填写完整。\n\nBuildType - cloud（云原生资源）、build（用户自建资源），不支持模糊匹配，需要填写完整。\n\nMetaType - cdb（云数据Mysql）、dcdb（TDSQL MySQL版）、mariadb（云数据库 MariaDB）、postgres（云数据库 PostgreSQL）、cynosdbmysql（TDSQL-C MySQL版）、cos（对象存储）、mysql_like_proto（自建型Mysql协议类关系型数据库）、postgre_like_proto（自建型Postgre协议类关系型数据库）。\n\nResourceId - 资源ID，支持模糊搜索。",
+          "document": "过滤项。\n可过滤值包括：\nResoureRegion - 资源所处地域，需要填写完整地域名称，不支持模糊匹配。\n\nAuthStatus - authorized（已授权）、unauthorized（未授权）、deleted（资源已被删除），不支持模糊匹配，需要填写完整。\n\nBuildType - cloud（云原生资源）、build（用户自建资源），不支持模糊匹配，需要填写完整。\n\nMetaType - cdb（云数据Mysql）、dcdb（TDSQL MySQL版）、mariadb（云数据库 MariaDB）、postgres（云数据库 PostgreSQL）、cynosdbmysql（TDSQL-C MySQL版）、cos（对象存储）、mysql_like_proto（自建型Mysql协议类关系型数据库）、postgre_like_proto（自建型Postgre协议类关系型数据库）。\n\nResourceId - 资源ID，支持模糊搜索。\n\nCvmID - 自建资源对应CvmId，如：ins-xxxxxxxx。该字段用于casb调用dsgc接口时，根据cvmId和vport确定具体的自建实例",
           "example": "[filter]",
           "member": "DspaDataSourceMngFilter",
           "name": "Filters",
@@ -17286,7 +17395,7 @@
         {
           "disabled": false,
           "document": "识别模板名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "个人身份信息模版",
+          "example": "个人身份信息模板",
           "member": "string",
           "name": "ComplianceName",
           "output_required": false,
@@ -17301,6 +17410,16 @@
           "name": "ProgressPercent",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "报告模版名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "数据资产报告",
+          "member": "string",
+          "name": "ReportTemplateName",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -18539,6 +18658,15 @@
           "member": "string",
           "name": "Password",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "授权范围：all 授权全部  manual：手动指定",
+          "example": "all",
+          "member": "string",
+          "name": "AuthRange",
+          "required": false,
           "type": "string"
         }
       ],

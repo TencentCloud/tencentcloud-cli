@@ -727,7 +727,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "腾讯云对象存储COS以及第三方云存储账号信息\n0：腾讯云对象存储 COS\n1：AWS\n【注意】目前第三方云存储仅支持AWS，更多第三方云存储陆续支持中\n示例值：0",
+          "document": "腾讯云对象存储COS以及第三方云存储账号信息\n0：腾讯云对象存储 COS\n1：AWS\n【注意】目前第三方云存储仅支持AWS，更多第三方云存储陆续支持中",
           "example": "0",
           "member": "uint64",
           "name": "Vendor",
@@ -736,7 +736,7 @@
         },
         {
           "disabled": false,
-          "document": "腾讯云对象存储的[地域信息]（https://cloud.tencent.com/document/product/436/6224#.E5.9C.B0.E5.9F.9F）。\n示例值：cn-shanghai-1\n\nAWS S3[地域信息]（https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-regions）\n示例值：ap-southeast-3\t",
+          "document": "腾讯云对象存储的[地域信息]（https://cloud.tencent.com/document/product/436/6224#.E5.9C.B0.E5.9F.9F）。\n示例值：cn-shanghai-1\n\nAWS S3[地域信息]（https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-regions）",
           "example": "cn-shanghai-1",
           "member": "string",
           "name": "Region",
@@ -754,7 +754,7 @@
         },
         {
           "disabled": false,
-          "document": "云存储的access_key账号信息。\n若存储至腾讯云对象存储COS，请前往https://console.cloud.tencent.com/cam/capi 查看或创建，对应链接中密钥字段的SecretId值。\n示例值：test-accesskey",
+          "document": "云存储的access_key账号信息。\n若存储至腾讯云对象存储COS，请前往https://console.cloud.tencent.com/cam/capi 查看或创建，对应链接中密钥字段的SecretId值。",
           "example": "test-accesskey",
           "member": "string",
           "name": "AccessKey",
@@ -763,7 +763,7 @@
         },
         {
           "disabled": false,
-          "document": "云存储的secret_key账号信息。\n若存储至腾讯云对象存储COS，请前往https://console.cloud.tencent.com/cam/capi 查看或创建，对应链接中密钥字段的SecretKey值。\n示例值：test-secretkey",
+          "document": "云存储的secret_key账号信息。\n若存储至腾讯云对象存储COS，请前往https://console.cloud.tencent.com/cam/capi 查看或创建，对应链接中密钥字段的SecretKey值。",
           "example": "test-secretkey",
           "member": "string",
           "name": "SecretKey",
@@ -772,7 +772,7 @@
         },
         {
           "disabled": false,
-          "document": "云存储bucket 的指定位置，由字符串数组组成。合法的字符串范围az,AZ,0~9,'_'和'-'，举个例子，录制文件xxx.m3u8在 [\"prefix1\", \"prefix2\"]作用下，会变成prefix1/prefix2/TaskId/xxx.m3u8。\n示例值：[\"prefix1\", \"prefix2\"]",
+          "document": "云存储bucket 的指定位置，由字符串数组组成。合法的字符串范围az,AZ,0~9,'_'和'-'，举个例子，录制文件xxx.m3u8在 [\"prefix1\", \"prefix2\"]作用下，会变成prefix1/prefix2/TaskId/xxx.m3u8。",
           "example": "[\"prefix1\", \"prefix2\"]",
           "member": "string",
           "name": "FileNamePrefix",
@@ -6342,6 +6342,15 @@
           "name": "PublishCdnParams",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "录制页面资源加载的超时时间，单位：秒。默认值为 0 秒，该值需大于等于 0秒，且小于等于 60秒。录制页面未启用页面加载超时检测时，请勿设置此参数。",
+          "example": "30",
+          "member": "uint64",
+          "name": "ReadyTimeout",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -6986,6 +6995,15 @@
           "name": "TargetUserId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "机器人订阅的用户列表",
+          "example": "无",
+          "member": "string",
+          "name": "TargetUserIdList",
+          "required": false,
+          "type": "list"
         }
       ],
       "usage": "in"

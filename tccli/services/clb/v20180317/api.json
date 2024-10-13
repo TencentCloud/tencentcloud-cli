@@ -10683,7 +10683,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "操作类型：'ADD', 'DELETE', 'UPDATE', 'BIND', 'UNBIND'",
+          "document": "操作类型。\n- ADD：添加\n- DELETE：删除\n- UPDATE：修改\n- BIND：绑定\n- UNBIND：解绑",
           "example": "ADD",
           "member": "string",
           "name": "OperationType",
@@ -10692,7 +10692,7 @@
         },
         {
           "disabled": false,
-          "document": "除了创建个性化配置外，必传此字段，如：pz-1234abcd",
+          "document": "个性化配置ID。除了创建个性化配置外，必传此字段，如：pz-1234abcd",
           "example": "pz-n651fsue",
           "member": "string",
           "name": "UconfigId",
@@ -10701,7 +10701,7 @@
         },
         {
           "disabled": false,
-          "document": "创建个性化配置或修改个性化配置的内容时，必传此字段",
+          "document": "个性化配置内容。创建个性化配置或修改个性化配置的内容时，必传此字段",
           "example": "client_max_body_size 222M;",
           "member": "string",
           "name": "ConfigContent",
@@ -10710,7 +10710,7 @@
         },
         {
           "disabled": false,
-          "document": "创建个性化配置或修改个性化配置的名字时，必传此字段",
+          "document": "个性化配置名称。创建个性化配置或修改个性化配置的名字时，必传此字段",
           "example": "config_test",
           "member": "string",
           "name": "ConfigName",
@@ -10719,7 +10719,7 @@
         },
         {
           "disabled": false,
-          "document": "绑定解绑时，必传此字段",
+          "document": "负载均衡实例ID。绑定解绑时，必传此字段",
           "example": "[lb-55rh44i6]",
           "member": "string",
           "name": "LoadBalancerIds",
@@ -10738,7 +10738,7 @@
           "example": "pz-1234abcd",
           "member": "string",
           "name": "ConfigId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

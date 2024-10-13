@@ -15,9 +15,15 @@ Output:
 {
     "Response": {
         "SupportProxyVersions": [
-            "abc"
+            "3.1.4"
         ],
-        "CurrentProxyVersion": "abc",
+        "CurrentProxyVersion": "3.1.1",
+        "SupportProxyVersionDetail": [
+            {
+                "ProxyVersion": "3.1.5",
+                "ProxyVersionType": "BATE"
+            }
+        ],
         "RequestId": "abc"
     }
 }

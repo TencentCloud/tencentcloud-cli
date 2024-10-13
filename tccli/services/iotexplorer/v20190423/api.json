@@ -91,6 +91,13 @@
       "output": "CreateDeviceResponse",
       "status": "online"
     },
+    "CreateExternalSourceAIServiceTask": {
+      "document": "创建外部视频 AI 分析任务",
+      "input": "CreateExternalSourceAIServiceTaskRequest",
+      "name": "创建外部视频AI分析任务",
+      "output": "CreateExternalSourceAIServiceTaskResponse",
+      "status": "online"
+    },
     "CreateFenceBind": {
       "document": "创建围栏绑定信息",
       "input": "CreateFenceBindRequest",
@@ -747,6 +754,13 @@
       "input": "InheritCloudStorageUserRequest",
       "name": "继承云存用户",
       "output": "InheritCloudStorageUserResponse",
+      "status": "online"
+    },
+    "InvokeExternalSourceAIServiceTask": {
+      "document": "创建外部视频 AI 分析任务",
+      "input": "InvokeExternalSourceAIServiceTaskRequest",
+      "name": "同步执行外部视频AI分析任务",
+      "output": "InvokeExternalSourceAIServiceTaskResponse",
       "status": "online"
     },
     "ListEventHistory": {
@@ -2534,6 +2548,88 @@
           "name": "Data",
           "required": true,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateExternalSourceAIServiceTaskRequest": {
+      "document": "CreateExternalSourceAIServiceTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品 ID",
+          "example": "TQBDY6RPI9",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "云存 AI 服务类型。可选值：\n- `RealtimeObjectDetect`：目标检测\n- `Highlight`：视频浓缩\n- `VideoToText`：视频语义理解",
+          "example": "Highlight",
+          "member": "string",
+          "name": "ServiceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分析外部传入的视频 URL 列表，支持 HLS 点播（m3u8）及常见视频格式（mp4 等）",
+          "example": "[\"https://example.com/timeshift.m3u8\"]",
+          "member": "string",
+          "name": "VideoURLs",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "自定义任务 ID",
+          "example": "event-123",
+          "member": "string",
+          "name": "CustomId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "视频分析配置参数",
+          "example": "{\"param1\":\"value1\"}",
+          "member": "string",
+          "name": "Config",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "视频分析识别区域",
+          "example": "{}",
+          "member": "string",
+          "name": "ROI",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateExternalSourceAIServiceTaskResponse": {
+      "document": "CreateExternalSourceAIServiceTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务 ID",
+          "example": "fb066d7a-baac-4706-acda-058f56f82759",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -9971,6 +10067,108 @@
         }
       ],
       "usage": "out"
+    },
+    "InvokeExternalSourceAIServiceTaskRequest": {
+      "document": "InvokeExternalSourceAIServiceTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品 ID",
+          "example": "TQBDY6RPI9",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "云存 AI 服务类型。可选值：\n- `RealtimeObjectDetect`：目标检测\n- `Highlight`：视频浓缩\n- `VideoToText`：视频语义理解",
+          "example": "Highlight",
+          "member": "string",
+          "name": "ServiceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分析外部传入的视频 URL 列表，支持 HLS 点播（m3u8）及常见视频格式（mp4 等）",
+          "example": "[\"https://example.com/timeshift.m3u8\"]",
+          "member": "string",
+          "name": "VideoURLs",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "自定义任务 ID",
+          "example": "event-123",
+          "member": "string",
+          "name": "CustomId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "视频分析配置参数",
+          "example": "{\"param1\":\"value1\"}",
+          "member": "string",
+          "name": "Config",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "视频分析识别区域",
+          "example": "{}",
+          "member": "string",
+          "name": "ROI",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "InvokeExternalSourceAIServiceTaskResponse": {
+      "document": "InvokeExternalSourceAIServiceTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务是否执行完成",
+          "example": "true",
+          "member": "bool",
+          "name": "Completed",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务 ID",
+          "example": "fb066d7a-baac-4706-acda-058f56f82759",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CloudStorageAIServiceTask",
+          "name": "TaskInfo",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ListEventHistoryRequest": {
       "document": "ListEventHistory请求参数结构体",

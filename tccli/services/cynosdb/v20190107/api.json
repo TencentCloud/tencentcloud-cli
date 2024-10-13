@@ -540,7 +540,7 @@
       "status": "online"
     },
     "DescribeTasks": {
-      "document": "查询任务列表",
+      "document": "本接口（DescribeTasks）用于查询任务列表。",
       "input": "DescribeTasksRequest",
       "name": "查询任务列表",
       "output": "DescribeTasksResponse",
@@ -2824,7 +2824,7 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "修改参数任务信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ModifyParamsData",
@@ -5054,6 +5054,42 @@
         }
       ],
       "type": "object"
+    },
+    "CrossRegionBackupItem": {
+      "document": "跨地域备份各地域备份信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "备份的目标地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "CrossRegion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "目标地域的备份任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1234",
+          "member": "string",
+          "name": "BackupId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "目标地域的备份状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "processing",
+          "member": "string",
+          "name": "BackupStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "CynosdbCluster": {
       "document": "集群信息",
@@ -11650,6 +11686,16 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
+          "document": "代理版本详情",
+          "example": "无",
+          "member": "ProxyVersionInfo",
+          "name": "SupportProxyVersionDetail",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -13675,6 +13721,16 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "跨地域备份项详细信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CrossRegionBackupItem",
+          "name": "CrossRegionBackupInfos",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -17940,6 +17996,32 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ProxyVersionInfo": {
+      "document": "TDSQL-C MySQL支持的proxy版本信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "proxy版本号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.2.3",
+          "member": "string",
+          "name": "ProxyVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "版本描述：GA:稳定版  BETA:尝鲜版，DEPRECATED:过旧，\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "GA",
+          "member": "string",
+          "name": "ProxyVersionType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

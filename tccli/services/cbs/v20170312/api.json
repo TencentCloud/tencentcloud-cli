@@ -3018,12 +3018,12 @@
       "usage": "out"
     },
     "Filter": {
-      "document": "描述键值对过滤器，用于条件过滤查询。",
+      "document": "过滤条件",
       "members": [
         {
           "disabled": false,
-          "document": "过滤键的名称。",
-          "example": "disk-usage",
+          "document": "过滤键的名称",
+          "example": "无",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -3031,8 +3031,8 @@
         },
         {
           "disabled": false,
-          "document": "一个或者多个过滤值。",
-          "example": "[\"SYSTEM_DISK\"]",
+          "document": "一个或者多个过滤值",
+          "example": "无",
           "member": "string",
           "name": "Values",
           "required": true,

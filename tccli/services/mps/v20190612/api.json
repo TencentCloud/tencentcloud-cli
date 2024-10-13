@@ -133,6 +133,20 @@
       "output": "CreateTranscodeTemplateResponse",
       "status": "online"
     },
+    "CreateVideoDatabaseEntryTask": {
+      "document": "对URL链接或COS中的视频发起入库任务。\n可选在任务完成后向回调方发送任务完成状态信息。",
+      "input": "CreateVideoDatabaseEntryTaskRequest",
+      "name": "创建视频检索的入库任务",
+      "output": "CreateVideoDatabaseEntryTaskResponse",
+      "status": "online"
+    },
+    "CreateVideoSearchTask": {
+      "document": "使用检索值检索库中最接近检索值的若干视频。",
+      "input": "CreateVideoSearchTaskRequest",
+      "name": "创建视频检索任务",
+      "output": "CreateVideoSearchTaskResponse",
+      "status": "online"
+    },
     "CreateWatermarkTemplate": {
       "document": "创建用户自定义水印模板，数量上限：1000。",
       "input": "CreateWatermarkTemplateRequest",
@@ -467,6 +481,20 @@
       "input": "DescribeTranscodeTemplatesRequest",
       "name": "获取转码模板列表",
       "output": "DescribeTranscodeTemplatesResponse",
+      "status": "online"
+    },
+    "DescribeVideoDatabaseEntryTaskDetail": {
+      "document": "根据任务ID查询视频入库任务的状态。",
+      "input": "DescribeVideoDatabaseEntryTaskDetailRequest",
+      "name": "查询视频入库任务详情",
+      "output": "DescribeVideoDatabaseEntryTaskDetailResponse",
+      "status": "online"
+    },
+    "DescribeVideoSearchTaskDetail": {
+      "document": "根据任务ID查询视频检索任务的状态。",
+      "input": "DescribeVideoSearchTaskDetailRequest",
+      "name": "查询视频检索任务详情",
+      "output": "DescribeVideoSearchTaskDetailResponse",
       "status": "online"
     },
     "DescribeWatermarkTemplates": {
@@ -9838,6 +9866,107 @@
       ],
       "type": "object"
     },
+    "CreateVideoDatabaseEntryTaskRequest": {
+      "document": "CreateVideoDatabaseEntryTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "待入库视频信息",
+          "example": "无",
+          "member": "MediaInputInfo",
+          "name": "InputInfo",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "可选，入库任务完成后向指定的回调地址传递任务结果，目前仅支持URL",
+          "example": "无",
+          "member": "TaskNotifyConfig",
+          "name": "TaskNotifyConfig",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateVideoDatabaseEntryTaskResponse": {
+      "document": "CreateVideoDatabaseEntryTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "251xxx279-VideoDBEntryTask-327a6a4b840e40eab7819d394b583144",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateVideoSearchTaskRequest": {
+      "document": "CreateVideoSearchTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用于检索任务的输入",
+          "example": "无",
+          "member": "SearchValueInput",
+          "name": "SearchValueInput",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "返回视频的最大数量，取值范围[1,20]，将返回最相近的前Limit条视频,默认为5",
+          "example": "无",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "可选，用于检索任务完成后向回调方发送检索结果，目前仅支持URL方式",
+          "example": "无",
+          "member": "TaskNotifyConfig",
+          "name": "TaskNotifyConfig",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateVideoSearchTaskResponse": {
+      "document": "CreateVideoSearchTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "检索任务的Id，用于后续查询任务状态和返回任务结果时标识任务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateWatermarkTemplateRequest": {
       "document": "CreateWatermarkTemplate请求参数结构体",
       "members": [
@@ -13837,6 +13966,120 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVideoDatabaseEntryTaskDetailRequest": {
+      "document": "DescribeVideoDatabaseEntryTaskDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "待查询的任务Id",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVideoDatabaseEntryTaskDetailResponse": {
+      "document": "DescribeVideoDatabaseEntryTaskDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询的任务Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "查询的任务的状态，可能为WAITING、PROCESSING、FAIL、SUCCESS。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "查询的任务的结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VideoDBEntryTaskResult",
+          "name": "VideoDBEntryTaskResults",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVideoSearchTaskDetailRequest": {
+      "document": "DescribeVideoSearchTaskDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "待查询的任务Id",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVideoSearchTaskDetailResponse": {
+      "document": "DescribeVideoSearchTaskDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询的任务Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "查询的任务的状态，可能为WAITING、PROCESSING、FAIL、SUCCESS。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "查询的任务的结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SearchTaskResult",
+          "name": "SearchTaskResults",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -24956,6 +25199,60 @@
       ],
       "usage": "both"
     },
+    "SearchTaskResult": {
+      "document": "视频检索的检索结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "视频在本次检索中的得分，得分越高和检索值越相似，取值范围[0,1]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "Score",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "检索获得的视频ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "VideoId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SearchValueInput": {
+      "document": "视频检索的检索输入",
+      "members": [
+        {
+          "disabled": false,
+          "document": "检索输入的类型，目前支持：\nText：文本检索",
+          "example": "Text",
+          "member": "string",
+          "name": "SearchValueType",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当SearchValueType为Text时有效且必填，用于检索视频的文本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TextInput",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "SegmentRecognitionItem": {
       "document": "智能拆条片段。",
       "members": [
@@ -25021,6 +25318,45 @@
         }
       ],
       "usage": "out"
+    },
+    "SegmentSpecificInfo": {
+      "document": "切片特殊配置信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "启动分片时长开关，可选值：\non：打开\noff：关闭\n默认off\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "off",
+          "member": "string",
+          "name": "Switch",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "启动时分片时长，单位：秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "FragmentTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "生效分片数，表示前FragmentEndNum个分片以FragmentTime时长切片，取值>=1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "FragmentEndNum",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "SharpEnhanceConfig": {
       "document": "细节增强配置",
@@ -26877,6 +27213,22 @@
       ],
       "usage": "in"
     },
+    "VideoDBEntryTaskResult": {
+      "document": "视频检索入库任务的结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "入库的视频ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "VideoId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "VideoDenoiseConfig": {
       "document": "视频降噪配置",
       "members": [
@@ -27024,7 +27376,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "视频流的编码格式，可选值：\n<li>h264：H.264 编码</li>\n<li>h265：H.265 编码</li>\n<li>h266：H.266 编码</li>\n<li>av1：AOMedia Video 1 编码</li>\n<li>vp8：VP8 编码</li>\n<li>vp9：VP9 编码</li>\n<li>mpeg2：MPEG2 编码</li>\n<li>dnxhd：DNxHD 编码</li>\n<li>mv-hevc：MV-HEVC 编码</li>\n注意：目前 H.265 编码必须指定分辨率，并且需要在 640*480 以内。\n\n注意：av1 编码容器目前只支持 mp4 ，webm，mkv。\n注意：H.266 编码容器目前只支持 mp4 ，hls，ts，mov。\n注意：VP8、VP9编码容器目前只支持webm，mkv。\n注意：MPEG2、dnxhd 编码容器目前只支持mxf。\n注意：MV-HEVC编码容器目前只支持mp4，hls，mov。其中hls格式只支持mp4分片格式。",
+          "document": "视频流的编码格式，可选值：\n<li>h264：H.264 编码</li>\n<li>h265：H.265 编码</li>\n<li>h266：H.266 编码</li>\n<li>av1：AOMedia Video 1 编码</li>\n<li>vp8：VP8 编码</li>\n<li>vp9：VP9 编码</li>\n<li>mpeg2：MPEG2 编码</li>\n<li>dnxhd：DNxHD 编码</li>\n<li>mv-hevc：MV-HEVC 编码</li>\n\n注意：av1 编码容器目前只支持 mp4 ，webm，mkv。\n注意：H.266 编码容器目前只支持 mp4 ，hls，ts，mov。\n注意：VP8、VP9编码容器目前只支持webm，mkv。\n注意：MPEG2、dnxhd 编码容器目前只支持mxf。\n注意：MV-HEVC编码容器目前只支持mp4，hls，mov。其中hls格式只支持mp4分片格式。",
           "example": "h264",
           "member": "string",
           "name": "Codec",
@@ -27090,7 +27442,7 @@
         },
         {
           "disabled": false,
-          "document": "关键帧 I 帧之间的间隔，取值范围：0 和 [1, 100000]，单位：帧数。 当填 0 或不填时，系统将自动设置 gop 长度。",
+          "document": "关键帧 I 帧之间的间隔，允许按帧或秒自定义GOP长度，取值范围：0 和 [1, 100000]，\n当填 0 或不填时，系统将自动设置 gop 长度。",
           "example": "0",
           "member": "uint64",
           "name": "Gop",
@@ -27101,7 +27453,18 @@
         },
         {
           "disabled": false,
-          "document": "填充方式，当视频流配置宽高参数与原始视频的宽高比不一致时，对转码的处理方式，即为“填充”。可选填充方式：\n<li> stretch：拉伸，对每一帧进行拉伸，填满整个画面，可能导致转码后的视频被“压扁“或者“拉长“；</li>\n<li>black：留黑，保持视频宽高比不变，边缘剩余部分使用黑色填充。</li>\n<li>white：留白，保持视频宽高比不变，边缘剩余部分使用白色填充。</li>\n<li>gauss：高斯模糊，保持视频宽高比不变，边缘剩余部分使用高斯模糊填充。</li>\n默认值：black 。\n注意：自适应码流只支持 stretch、black。",
+          "document": "Gop数值单位，可选值：\nframe：表示帧\nsecond：表示秒\n默认值：frame\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "frame",
+          "member": "string",
+          "name": "GopUnit",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "填充方式，当视频流配置宽高参数与原始视频的宽高比不一致时，对转码的处理方式，即为“填充”。可选填充方式：\n<li> stretch：拉伸，对每一帧进行拉伸，填满整个画面，可能导致转码后的视频被“压扁“或者“拉长“；</li>\n<li>black：留黑，保持视频宽高比不变，边缘剩余部分使用黑色填充。</li>\n<li>white：留白，保持视频宽高比不变，边缘剩余部分使用白色填充。</li>\n<li>gauss：高斯模糊，保持视频宽高比不变，边缘剩余部分使用高斯模糊填充。</li>\n<li>smarttailor：智能剪裁：智能选取视频画面，来保证画面比例裁剪。</li>\n默认值：black 。\n注意：自适应码流只支持 stretch、black。",
           "example": "black",
           "member": "string",
           "name": "FillType",
@@ -27112,14 +27475,25 @@
         },
         {
           "disabled": false,
-          "document": "视频恒定码率控制因子，取值范围为[1, 51]。\n如果指定该参数，将使用 CRF 的码率控制方式做转码（视频码率将不再生效）。\n如果没有特殊需求，不建议指定该参数。",
+          "document": "视频恒定码率控制因子，取值范围为[0, 51]。\n如果指定该参数，将使用 CRF 的码率控制方式做转码（视频码率将不再生效）。\n如果没有特殊需求，不建议指定该参数。\n注意：\n若Mode选择ABR，无需配置Vcrf值\n若Mode选择CBR，无需配置Vcrf值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
           "name": "Vcrf",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分片平均时长，范围：（0-10]，单位：秒\n默认值：10\n注意：只能在封装格式hls的情况下使用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "uint64",
+          "name": "HlsTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -27153,6 +27527,116 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Profile，适用于不同场景。\nbaseline: 只支持I/P帧，并只支持无交错的场景，适用于视频通话、手机视频等场景。\nmain: 主流Profile，提供I帧、P帧、B帧，并支持无交错模式和交错模式。主要用在主流的音视频消费产品如视频播放器、流媒体传输设备上。\nhigh: 最高编码等级，在Main Profile上添加了8X8的预测，并支持自定义量化。广泛应用在蓝光存储、高清电视等场景。\ndefault：随原视频自动填充。    \n\n仅编码标准选择h264时出现该配置， 支持 baseline/main/high，默认为：default\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "default",
+          "member": "string",
+          "name": "VideoProfile",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "编码器级别，默认为自动（\"\"）\n若编码标准选择H264: 支持以下选项：\"\"，1 , 1.1 , 1.2 , 1.3 , 2 , 2.1 , 2.2 , 3 , 3.1 , 3.2 , 4 , 4.1 , 4.2 , 5 , 5.1\n若编码标准选择H265: 支持以下选项：\"\"，1 , 2 , 2.1 , 3 , 3.1 , 4 , 4.1 , 5 , 5.1 , 5.2 , 6 , 6.1 , 6.2 , 8.5\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "VideoLevel",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "参考帧之间的B帧数，默认选自动，支持 0 - 16\n注意：不填表示使用自动\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Bframes",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "码率控制模式：可选值：\nVBR（Variable Bit Rate）：动态比特率，根据视频画面的复杂度动态调整输出的码率，使得画面质量更高，适用于存储场景和对画面质量要求较高的应用。\nABR（Average Bit Rate）：平均比特率，尽量保持输出视频的平均码率稳定，但允许短期内的码率波动，适用于需要在保持一定画质的情况下尽量减少整体码率的场景。\nCBR（Constant Bit Rate）：恒定比特率，指视频编码时输出的码率保持恒定不变，不考虑画面复杂度的变化，适用于对网络带宽要求较为严格的场景，如直播等。\nVCRF（Constant Rate Factor）：恒定质量因子，通过设定一个质量因子来控制视频质量，实现视频的恒定质量编码，码率会根据内容的复杂度自动调整，适用于希望保持一定画质的场景。\n默认选择 VBR\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "VBR",
+          "member": "string",
+          "name": "Mode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "显示高宽比，可选值：[1:1，2:1，default]\n默认值：default\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "default",
+          "member": "string",
+          "name": "Sar",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自适应I帧决策，开启后，媒体处理将自动识别视频中不同场景之间的过渡点（通常是视觉上显著不同的帧，比如从一个镜头切换到另一个镜头），在这些点自适应插入关键帧（I帧），从而提高视频的随机访问性和编码效率。可选值：\n0：关闭自适应I帧决策 \n1：使用自适应I帧决策\n默认值：0\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "NoScenecut",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "比特位：支持8/10，默认为8\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "8",
+          "member": "int64",
+          "name": "BitDepth",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "保持原始时间戳：可选值：\n0：表示关闭\n1：表示打开\n默认是关闭\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "RawPts",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "按比例压缩码率，开启后，将根据比例来调整输出视频的码率。填写压缩率后，系统会根据视频源码率自动计算目标输出码率。压缩率范围0-100\n不填此值表示不开启，默认不开启\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Compress",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "切片特殊配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SegmentSpecificInfo",
+          "name": "SegmentSpecificInfo",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -27162,7 +27646,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "视频流的编码格式，可选值：\n<li>h264：H.264 编码</li>\n<li>h265：H.265 编码</li>\n<li>h266：H.266 编码</li>\n<li>av1：AOMedia Video 1 编码</li>\n<li>vp8：VP8 编码</li>\n<li>vp9：VP9 编码</li>\n<li>mpeg2：MPEG2 编码</li>\n<li>dnxhd：DNxHD 编码</li>\n<li>mv-hevc：MV-HEVC 编码</li>\n注意：目前 H.265 编码必须指定分辨率，并且需要在 640*480 以内。\n\n注意：av1 编码容器目前只支持 mp4 ，webm，mkv。\n注意：H.266 编码容器目前只支持 mp4 ，hls，ts，mov。\n注意：VP8、VP9编码容器目前只支持webm，mkv。\n注意：MPEG2、dnxhd 编码容器目前只支持mxf。\n注意：MV-HEVC编码容器目前只支持mp4，hls，mov。其中hls格式只支持mp4分片格式。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "视频流的编码格式，可选值：\n<li>h264：H.264 编码</li>\n<li>h265：H.265 编码</li>\n<li>h266：H.266 编码</li>\n<li>av1：AOMedia Video 1 编码</li>\n<li>vp8：VP8 编码</li>\n<li>vp9：VP9 编码</li>\n<li>mpeg2：MPEG2 编码</li>\n<li>dnxhd：DNxHD 编码</li>\n<li>mv-hevc：MV-HEVC 编码</li>\n\n注意：av1 编码容器目前只支持 mp4 ，webm，mkv。\n注意：H.266 编码容器目前只支持 mp4 ，hls，ts，mov。\n注意：VP8、VP9编码容器目前只支持webm，mkv。\n注意：MPEG2、dnxhd 编码容器目前只支持mxf。\n注意：MV-HEVC编码容器目前只支持mp4，hls，mov。其中hls格式只支持mp4分片格式。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "h264",
           "member": "string",
           "name": "Codec",
@@ -27228,7 +27712,7 @@
         },
         {
           "disabled": false,
-          "document": "关键帧 I 帧之间的间隔，取值范围：0 和 [1, 100000]，单位：帧数。当填 0 时，系统将自动设置 gop 长度。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "关键帧 I 帧之间的间隔，允许按帧或秒自定义GOP长度，取值范围：0 和 [1, 100000]。\n当填 0 时，系统将自动设置 gop 长度。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
           "name": "Gop",
@@ -27239,8 +27723,19 @@
         },
         {
           "disabled": false,
-          "document": "填充方式，当视频流配置宽高参数与原始视频的宽高比不一致时，对转码的处理方式，即为“填充”。可选填充方式：\n <li> stretch：拉伸，对每一帧进行拉伸，填满整个画面，可能导致转码后的视频被“压扁“或者“拉长“；</li>\n<li>black：留黑，保持视频宽高比不变，边缘剩余部分使用黑色填充。</li>\n<li>white：留白，保持视频宽高比不变，边缘剩余部分使用白色填充。</li>\n<li>gauss：高斯模糊，保持视频宽高比不变，边缘剩余部分使用高斯模糊填充。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "stretch",
+          "document": "Gop数值单位，可选值： \nframe：表示帧 \nsecond：表示秒\n默认值：frame\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "frame",
+          "member": "string",
+          "name": "GopUnit",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "填充方式，当视频流配置宽高参数与原始视频的宽高比不一致时，对转码的处理方式，即为“填充”。可选填充方式：\n <li> stretch：拉伸，对每一帧进行拉伸，填满整个画面，可能导致转码后的视频被“压扁“或者“拉长“；</li>\n<li>black：留黑，保持视频宽高比不变，边缘剩余部分使用黑色填充。</li>\n<li>white：留白，保持视频宽高比不变，边缘剩余部分使用白色填充。</li>\n<li>gauss：高斯模糊，保持视频宽高比不变，边缘剩余部分使用高斯模糊填充。</li>\n<li>smarttailor：智能剪裁：智能选取视频画面，来保证画面比例裁剪。</li>\n默认值：black 。\n注意：自适应码流只支持 stretch、black。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "black",
           "member": "string",
           "name": "FillType",
           "output_required": false,
@@ -27250,7 +27745,7 @@
         },
         {
           "disabled": false,
-          "document": "视频恒定码率控制因子。取值范围为[0, 51]，填0表示禁用该参数。 \n如果没有特殊需求，不建议指定该参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "视频恒定码率控制因子。取值范围为[0, 51]和100。\n如果没有特殊需求，不建议指定该参数。\n注意：\n需要修改为自动时，填100\n若Mode选择ABR，无需配置Vcrf值\n若Mode选择CBR，无需配置Vcrf值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
           "name": "Vcrf",
@@ -27265,6 +27760,17 @@
           "example": "0",
           "member": "uint64",
           "name": "ContentAdaptStream",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分片平均时长，取值范围：（0-10]，单位：秒\n默认值：10\n注意：只在封装格式HLS时使用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "uint64",
+          "name": "HlsTime",
           "output_required": false,
           "required": false,
           "type": "int",
@@ -27301,6 +27807,116 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Profile，适用于不同场景。 \nbaseline: 只支持I/P帧，并只支持无交错的场景，适用于视频通话、手机视频等场景。 \nmain: 主流Profile，提供I帧、P帧、B帧，并支持无交错模式和交错模式。主要用在主流的音视频消费产品如视频播放器、流媒体传输设备上。 \nhigh: 最高编码等级，在Main Profile上添加了8X8的预测，并支持自定义量化。广泛应用在蓝光存储、高清电视等场景。\ndefault：随原视频自动填充\n\n仅编码标准选择h264时出现该配置，默认为：default\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "default",
+          "member": "string",
+          "name": "VideoProfile",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "编码器级别，默认为自动（\"\"）\n若编码标准选择H264: 支持以下选项：\"\"，1 , 1.1 , 1.2 , 1.3 , 2 , 2.1 , 2.2 , 3 , 3.1 , 3.2 , 4 , 4.1 , 4.2 , 5 , 5.1 \n若编码标准选择H265: 支持以下选项：\"\"，1 , 2 , 2.1 , 3 , 3.1 , 4 , 4.1 , 5 , 5.1 , 5.2 , 6 , 6.1 , 6.2 , 8.5\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "VideoLevel",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "最大连续B帧数，默认选自动，支持 0 - 16和-1\n注意：\n-1表示修改为自动值\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Bframes",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "码率控制模式：可选值： \nVBR（Variable Bit Rate）：动态比特率，根据视频画面的复杂度动态调整输出的码率，使得画面质量更高，适用于存储场景和对画面质量要求较高的应用。 \nABR（Average Bit Rate）：平均比特率，尽量保持输出视频的平均码率稳定，但允许短期内的码率波动，适用于需要在保持一定画质的情况下尽量减少整体码率的场景。 \nCBR（Constant Bit Rate）：恒定比特率，指视频编码时输出的码率保持恒定不变，不考虑画面复杂度的变化，适用于对网络带宽要求较为严格的场景，如直播等。 \nVCRF（Constant Rate Factor）：恒定质量因子，通过设定一个质量因子来控制视频质量，实现视频的恒定质量编码，码率会根据内容的复杂度自动调整，适用于希望保持一定画质的场景。 \n默认选择 VBR\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "VBR",
+          "member": "string",
+          "name": "Mode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "显示高宽比，可选值：[1:1，2:1，default]\n默认值：default\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "default",
+          "member": "string",
+          "name": "Sar",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自适应I帧决策，开启后，媒体处理将自动识别视频中不同场景之间的过渡点（通常是视觉上显著不同的帧，比如从一个镜头切换到另一个镜头），在这些点自适应插入关键帧（I帧），从而提高视频的随机访问性和编码效率。可选值： \n0：关闭自适应I帧决策 \n1：使用自适应I帧决策 \n默认值：0\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "NoScenecut",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "比特位：支持8/10，默认为8\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "8",
+          "member": "int64",
+          "name": "BitDepth",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "保持原始时间戳：可选值： \n0：表示关闭 \n1：表示打开 \n默认是关闭\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "RawPts",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "按比例压缩码率，开启后，将根据比例来调整输出视频的码率。填写压缩率后，系统会根据视频源码率自动计算目标输出码率。压缩率范围0-100，可选值：[0-100]和-1 \n注意：-1表示修改为自动\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Compress",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "切片特殊配置\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SegmentSpecificInfo",
+          "name": "SegmentSpecificInfo",
+          "output_required": false,
+          "required": false,
+          "type": "object",
           "value_allowed_null": true
         }
       ],

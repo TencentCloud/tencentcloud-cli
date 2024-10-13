@@ -582,7 +582,7 @@
       "status": "online"
     },
     "ModifyExtendedService": {
-      "document": "管理企业扩展服务 ，企业经办人需要是企业超管或者法人。\n\n跳转小程序的几种方式：主要是设置不同的EndPoint\n1. 通过链接Url直接跳转到小程序，不需要返回\n设置EndPoint为WEIXINAPP，得到链接打开即可。\n\n2. 客户App直接跳转到小程序-->腾讯电子签小程序操作完成-->返回App\n跳转到小程序的实现，参考官方文档<a href=\"https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/launchApp.html\">打开 App</a>\n设置EndPoint为APP，得到path。\n\n3. 客户小程序直接跳到电子签小程序-->腾讯电子签小程序操作完成--->回到客户小程序\n跳转到小程序的实现，参考官方文档（分为<a href=\"https://developers.weixin.qq.com/miniprogram/dev/api/navigate/wx.navigateToMiniProgram.html\">全屏</a>、<a href=\"https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/openEmbeddedMiniProgram.html\">半屏</a>两种方式），如何配置也可以请参考: <a href=\"https://qian.tencent.com/developers/company/openwxminiprogram\">跳转电子签小程序配置</a>\n设置EndPoint为APP，得到path。\n\n4.其中小程序的原始Id如下，或者查看小程序信息自助获取。\n\n| 小程序 | AppID | 原始ID |\n| ------------ | ------------ | ------------ |\n| 腾讯电子签（正式版） | wxa023b292fd19d41d | gh_da88f6188665 |\n| 腾讯电子签Demo | wx371151823f6f3edf | gh_39a5d3de69fa |",
+      "document": "管理企业扩展服务\n\n- **直接开通的情形：** 若在操作过程中接口没有返回跳转链接，这表明无需进行任何跳转操作。此时，相应的企业拓展服务将会直接被开通或关闭。\n\n- **需要法人或者超管签署开通协议的情形：** 当需要开通以下企业拓展服务时， 系统将返回一个操作链接。贵方需要主动联系并通知企业的超级管理员（超管）或法人。由他们点击该链接，完成服务的开通操作。\n  - **OPEN_SERVER_SIGN（企业自动签）**\n  - **OVERSEA_SIGN（企业与港澳台居民签署合同）**\n\n注意： `在调用此接口以管理企业扩展服务时，操作者（入参中的Operator）必须是企业的超级管理员（超管）或法人`\n\n\n对应的扩展服务能力可以在控制台的【扩展服务】中找到\n![image](https://qcloudimg.tencent-cloud.cn/raw/7eb35d2473d6c29784f3b35617bca9a9.png)",
       "input": "ModifyExtendedServiceRequest",
       "name": "管理企业扩展服务",
       "output": "ModifyExtendedServiceResponse",
@@ -5210,6 +5210,15 @@
           "name": "ApproverComponentLimitTypes",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "禁止个人用户重复签署，默认不禁止，即同一用户可多次扫码签署多份合同。若要求同一用户仅能扫码签署一份合同，请传入true。",
+          "example": "true",
+          "member": "bool",
+          "name": "ForbidPersonalMultipleSign",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -6512,7 +6521,7 @@
         },
         {
           "disabled": false,
-          "document": "要跳转到的页面类型 \n\n<ul><li> **0** : 腾讯电子签小程序个人首页 (默认) <a href=\"https://qcloudimg.tencent-cloud.cn/raw/a2667ea84ec993cc060321afe3191d65.jpg\" target=\"_blank\" >点击查看示例页面</a></li>\n<li> **1** : 腾讯电子签小程序流程合同的详情页 (即合同签署页面)<a href=\"https://qcloudimg.tencent-cloud.cn/raw/446a679f09b1b7f40eb84e67face8acc.jpg\" target=\"_blank\" >点击查看示例页面</a></li>\n<li> **2** : 腾讯电子签小程序合同列表页 <a href=\"https://qcloudimg.tencent-cloud.cn/raw/c7b80e44c1d68ae3270a6fc4939c7214.jpg\" target=\"_blank\" >点击查看示例页面</a> </li>\n<li> **3** : 腾讯电子签小程序合同封面页  （注：`生成动态签署人补充链接时，必须指定为封面页`）<a href=\"https://qcloudimg.tencent-cloud.cn/raw/0d22cc587be4bf084877c151350c3bf7.jpg\" target=\"_blank\" >点击查看示例页面</a></li></ul>",
+          "document": "要跳转到的页面类型 <ul><li> **0** : 腾讯电子签小程序个人首页 (默认) <a href=\"https://qcloudimg.tencent-cloud.cn/raw/a2667ea84ec993cc060321afe3191d65.jpg\" target=\"_blank\" >点击查看示例页面</a></li><li> **1** : 腾讯电子签小程序流程合同的详情页,即合同签署页面(注:`仅生成短链或者小程序Path时支持跳转合同详情页,即EndPoint传HTTP_SHORT_URL或者APP`)<a href=\"https://qcloudimg.tencent-cloud.cn/raw/446a679f09b1b7f40eb84e67face8acc.jpg\" target=\"_blank\" >点击查看示例页面</a></li><li> **2** : 腾讯电子签小程序合同列表页 <a href=\"https://qcloudimg.tencent-cloud.cn/raw/c7b80e44c1d68ae3270a6fc4939c7214.jpg\" target=\"_blank\" >点击查看示例页面</a> </li><li> **3** : 腾讯电子签小程序合同封面页  （注：`生成动态签署人补充链接时，必须指定为封面页`）<a href=\"https://qcloudimg.tencent-cloud.cn/raw/0d22cc587be4bf084877c151350c3bf7.jpg\" target=\"_blank\" >点击查看示例页面</a></li></ul>",
           "example": "1",
           "member": "uint64",
           "name": "PathType",
@@ -9323,7 +9332,7 @@
           "example": "10",
           "member": "int64",
           "name": "Limit",
-          "required": true,
+          "required": false,
           "type": "int"
         },
         {
@@ -9986,6 +9995,45 @@
           "output_required": true,
           "required": false,
           "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ExtendScene": {
+      "document": "印章扩展信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "印章来源类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "GenerateType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "印章来源类型描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "GenerateTypeDesc",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "印章来源logo\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "GenerateTypeLogo",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -12132,7 +12180,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "操作跳转链接，有效期24小时\n若操作时没有返回跳转链接，表示无需跳转操作，此时会直接开通/关闭服务。\n\n当操作类型是 OPEN 且 扩展服务类型是  OPEN_SERVER_SIGN 或者 OVERSEA_SIGN 时返回操作链接，\n返回的链接当前操作人（超管或法人）点击链接完成服务开通操作。",
+          "document": "操作跳转链接\n<ul>\n<li><strong>有效期：</strong> 跳转链接的有效期为24小时。</li>\n<li><strong>无跳转链接返回的情况：</strong> 如果在操作过程中没有返回跳转链接，这意味着无需进行跳转操作。在这种情况下，服务将会直接被开通或关闭。\n<li><strong>有跳转链接返回的情况：</strong> 当操作类型为“OPEN”（开通服务），并且扩展服务类型为以下之一时，  系统将返回一个操作链接。当前操作人（超级管理员或法人）需要点击此链接，以完成服务的开通操作。\n\n<ul>\n<li><strong>OPEN_SERVER_SIGN</strong>（开放服务器签名）</li>\n<li><strong>OVERSEA_SIGN</strong>（海外签名）</li>\n</ul></li></li>\n</ul>",
           "example": "https://res.ess.tencent.cn/cdn/h5-activity-dev/jump-mp.html?to=OPEN_SERVER_SIGN&request_token=xxxxx&organizationId=xxxxx&channelType=xxxxx&expired_time=1673428532&login=1&verify=1",
           "member": "string",
           "name": "OperateUrl",
@@ -12453,7 +12501,7 @@
           "example": "无",
           "member": "string",
           "name": "SealId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12463,7 +12511,7 @@
           "example": "无",
           "member": "string",
           "name": "SealName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12473,7 +12521,7 @@
           "example": "无",
           "member": "int64",
           "name": "CreateOn",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -12483,7 +12531,7 @@
           "example": "无",
           "member": "string",
           "name": "Creator",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12493,7 +12541,7 @@
           "example": "无",
           "member": "string",
           "name": "SealPolicyId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12503,7 +12551,7 @@
           "example": "无",
           "member": "string",
           "name": "SealStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12513,7 +12561,7 @@
           "example": "无",
           "member": "string",
           "name": "FailReason",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12523,7 +12571,7 @@
           "example": "无",
           "member": "string",
           "name": "Url",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12533,7 +12581,7 @@
           "example": "无",
           "member": "string",
           "name": "SealType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12543,7 +12591,7 @@
           "example": "无",
           "member": "bool",
           "name": "IsAllTime",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -12553,8 +12601,18 @@
           "example": "无",
           "member": "AuthorizedUser",
           "name": "AuthorizedUsers",
-          "required": true,
+          "output_required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "印章扩展数据信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ExtendScene",
+          "name": "ExtendScene",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": true
         }
       ],

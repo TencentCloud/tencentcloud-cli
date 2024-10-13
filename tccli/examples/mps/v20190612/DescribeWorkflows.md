@@ -77,6 +77,7 @@ Output:
                                     "Gop": 1,
                                     "FillType": "abc",
                                     "Vcrf": 1,
+                                    "HlsTime": 1,
                                     "SegmentType": 0
                                 },
                                 "AudioTemplate": {
@@ -105,6 +106,7 @@ Output:
                                     "FillType": "abc",
                                     "Vcrf": 1,
                                     "ContentAdaptStream": 1,
+                                    "HlsTime": 1,
                                     "SegmentType": 0
                                 },
                                 "AudioTemplate": {

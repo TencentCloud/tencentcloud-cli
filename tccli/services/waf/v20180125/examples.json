@@ -302,6 +302,28 @@
         "title": "获取信息防泄漏规则列表"
       }
     ],
+    "DescribeApiDetail": [
+      {
+        "document": "TEST1",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeApiDetail\n<公共请求参数>\n\n{\n    \"Domain\": \"hzh.qcloud.com\",\n    \"Method\": \"POST\",\n    \"ApiName\": \"/test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6088f081-3e69-421e-9bbe-b91510af0414\",\n        \"Log\": \"{\\\"other\\\":{}}\",\n        \"ParameterList\": [],\n        \"Scene\": \"\",\n        \"SensitiveFields\": [],\n        \"IsActive\": false,\n        \"IpCount\": 0,\n        \"RegionCount\": 0,\n        \"EventCount\": 0,\n        \"SensitiveCount\": 0,\n        \"RspLog\": \"{}\",\n        \"Level\": 0\n    }\n}",
+        "title": "TEST1"
+      }
+    ],
+    "DescribeApiListVersionTwo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeApiListVersionTwo\n<公共请求参数>\n\n{\n    \"PageIndex\": \"0\",\n    \"Domain\": \"hzh.qcloud.com\",\n    \"PageSize\": \"10\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"05f0b0dc-cc07-4ed2-b60f-225169a3d76d\",\n        \"Data\": [],\n        \"Total\": 0\n    }\n}",
+        "title": "test3"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeApiListVersionTwo\n<公共请求参数>\n\n{\n    \"Domain\": \"abc\",\n    \"Filters\": [\n        {\n            \"Entity\": \"abc\",\n            \"Operator\": \"abc\",\n            \"Value\": \"abc\"\n        }\n    ],\n    \"PageIndex\": 0,\n    \"PageSize\": 0,\n    \"Sort\": [\n        \"abc\"\n    ],\n    \"NeedTotalCount\": true,\n    \"StartTs\": 0,\n    \"EndTs\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Domain\": \"abc\",\n                \"Method\": \"abc\",\n                \"ApiName\": \"abc\",\n                \"Scene\": \"abc\",\n                \"Label\": [\n                    \"abc\"\n                ],\n                \"Active\": true,\n                \"Timestamp\": 1,\n                \"InsertTime\": 1,\n                \"Mode\": \"abc\",\n                \"Level\": \"abc\",\n                \"Count\": 1,\n                \"Remark\": \"abc\",\n                \"IsAuth\": 0,\n                \"ApiRequestRuleId\": 0,\n                \"ApiLimitRuleId\": 0\n            }\n        ],\n        \"Total\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "API资产列表"
+      }
+    ],
     "DescribeAreaBanAreas": [
       {
         "document": "",

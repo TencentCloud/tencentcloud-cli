@@ -694,6 +694,14 @@
         "title": "修改实例参数"
       }
     ],
+    "ModifyInstancePassword": [
+      {
+        "document": "重置实例的访问密码",
+        "input": "https://redis.tencentcloudapi.com/?Action=ModifiyInstancePassword\n&InstanceId=crs-5a4p****\n&OldPassword=zy45****\n&Password=4569****\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cca16225-a169-4f11-b1cf-13398200f604\",\n        \"TaskId\": 16661\n    }\n}",
+        "title": "变更密码"
+      }
+    ],
     "ModifyInstanceReadOnly": [
       {
         "document": "",

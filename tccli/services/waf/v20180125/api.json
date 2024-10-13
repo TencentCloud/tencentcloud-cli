@@ -245,6 +245,20 @@
       "output": "DescribeAntiInfoLeakageRulesResponse",
       "status": "online"
     },
+    "DescribeApiDetail": {
+      "document": "获取Api请求详情信息",
+      "input": "DescribeApiDetailRequest",
+      "name": "获取Api请求详情信息",
+      "output": "DescribeApiDetailResponse",
+      "status": "online"
+    },
+    "DescribeApiListVersionTwo": {
+      "document": "api资产列表",
+      "input": "DescribeApiListVersionTwoRequest",
+      "name": "api资产列表",
+      "output": "DescribeApiListVersionTwoResponse",
+      "status": "online"
+    },
     "DescribeAreaBanAreas": {
       "document": "获取地域封禁配置包括地域封禁开关，设置封禁的地区信息",
       "input": "DescribeAreaBanAreasRequest",
@@ -2488,6 +2502,343 @@
         }
       ],
       "type": "object"
+    },
+    "ApiAsset": {
+      "document": "api列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "qcloudwaf.com",
+          "member": "string",
+          "name": "Domain",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "请求方法",
+          "example": "GET",
+          "member": "string",
+          "name": "Method",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "api名称",
+          "example": "/user/login",
+          "member": "string",
+          "name": "ApiName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "场景\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "login",
+          "member": "string",
+          "name": "Scene",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"date\",\"phone_num\"]",
+          "member": "string",
+          "name": "Label",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "过去7天是否活跃\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true,false",
+          "member": "bool",
+          "name": "Active",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "最近更新时间",
+          "example": "121312312",
+          "member": "uint64",
+          "name": "Timestamp",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "api发现时间",
+          "example": "121312312",
+          "member": "uint64",
+          "name": "InsertTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资产状态，1:新发现，2，确认中，3，已确认，4，已下线，5，已忽略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "Mode",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "风险等级，100,200,300对应低中高\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "string",
+          "name": "Level",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "近30天调用量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Count",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Remark",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否鉴权，1标识是，0表示否\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "IsAuth",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "如果添加了api入参检测规则，则此id返回值不为0\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "ApiRequestRuleId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "如果添加了api限流规则，则此id返回值不为0\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "ApiLimitRuleId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "对象接入和泛域名接入时，展示host列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"aaa.test.com\"]",
+          "member": "string",
+          "name": "HostList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ApiDataFilter": {
+      "document": "api资产列表过滤器",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据标签，是否活跃，功能场景",
+          "example": "label,active, scene",
+          "member": "string",
+          "name": "Entity",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "等于",
+          "example": "=",
+          "member": "string",
+          "name": "Operator",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日期，手机号，邮箱等",
+          "example": "date,phone_num,emain",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "ApiDetailSampleHistory": {
+      "document": "api历史样例返回结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "样例名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SampleNme",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "请求样例\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RepLog",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "响应样例\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RspLog",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ApiParameterType": {
+      "document": "api请求参数类型",
+      "members": [
+        {
+          "disabled": false,
+          "document": "参数名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "user_id",
+          "member": "string",
+          "name": "ParameterName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "参数类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "int",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "参数位置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Header",
+          "member": "string",
+          "name": "Location",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据标签(敏感字段)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "phone_num",
+          "member": "string",
+          "name": "Label",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3242324",
+          "member": "uint64",
+          "name": "Timestamp",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "备注信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "备注信息",
+          "member": "string",
+          "name": "Remark",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "来源是请求或者响应\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "request or response",
+          "member": "string",
+          "name": "Source",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否需要泛化 ，0表示不需要，1表示需要\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "IsPan",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否鉴权，1表示是，0表示否\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "IsAuth",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "ApiPkg": {
       "document": "API安全资源信息",
@@ -6330,6 +6681,309 @@
         }
       ],
       "usage": "out"
+    },
+    "DescribeApiDetailRequest": {
+      "document": "DescribeApiDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "无",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Api名称",
+          "example": "无",
+          "member": "string",
+          "name": "ApiName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "请求方法",
+          "example": "无",
+          "member": "string",
+          "name": "Method",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否仅查询敏感的，1表示查询，0表示不查询",
+          "example": "0",
+          "member": "int64",
+          "name": "IsSensitive",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否仅查询泛化的，1表示查询，0表示不查询",
+          "example": "1",
+          "member": "int64",
+          "name": "IsPan",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApiDetailResponse": {
+      "document": "DescribeApiDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "请求样例，json字符串格式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Log",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "请求参数样例列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ApiParameterType",
+          "name": "ParameterList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当前场景标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Scene",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "敏感字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SensitiveFields",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "7天内是否活跃\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true false",
+          "member": "bool",
+          "name": "IsActive",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "访问ip数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "int64",
+          "name": "IpCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "访问地域数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20",
+          "member": "int64",
+          "name": "RegionCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "关联事件数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "EventCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "涉敏数据条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "uint64",
+          "name": "SensitiveCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "风险等级\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "uint64",
+          "name": "Level",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "响应体\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "string",
+          "name": "RspLog",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "昨日访问峰值QPS\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "200",
+          "member": "uint64",
+          "name": "MaxQPS",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "历史样例",
+          "example": "无",
+          "member": "ApiDetailSampleHistory",
+          "name": "ApiDetailSampleHistory",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApiListVersionTwoRequest": {
+      "document": "DescribeApiListVersionTwo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "qcloudwaf.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "页面索引，第几页",
+          "example": "无",
+          "member": "int64",
+          "name": "PageIndex",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "页面大小",
+          "example": "无",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件",
+          "example": "无",
+          "member": "ApiDataFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "排序方法，1 升序，-1 降序",
+          "example": "[\"update_time\":\"1\"]",
+          "member": "string",
+          "name": "Sort",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否进行总数查询",
+          "example": "无",
+          "member": "bool",
+          "name": "NeedTotalCount",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "查询开始时间",
+          "example": "123412",
+          "member": "int64",
+          "name": "StartTs",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询结束时间",
+          "example": "14312",
+          "member": "int64",
+          "name": "EndTs",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApiListVersionTwoResponse": {
+      "document": "DescribeApiListVersionTwo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "api资产列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ApiAsset",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "DescribeAreaBanAreasRequest": {
       "document": "DescribeAreaBanAreas请求参数结构体",

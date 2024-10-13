@@ -19,6 +19,11 @@ Output:
         "DbRemainQuota": 0,
         "CosRemainQuota": 0,
         "CosQuotaUnit": "abc",
+        "DBUnbindNum": 0,
+        "COSUnbindNum": 0,
+        "InsTotalQuota": 0,
+        "InsRemainQuota": 0,
+        "Version": "abc",
         "RequestId": "abc"
     }
 }

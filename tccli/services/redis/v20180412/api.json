@@ -554,7 +554,7 @@
       "status": "online"
     },
     "ModifyDBInstanceSecurityGroups": {
-      "document": "本接口(ModifyDBInstanceSecurityGroups)用于修改实例绑定的安全组。",
+      "document": "本接口（ModifyDBInstanceSecurityGroups）用于对实例原有的安全组列表进行修改。",
       "input": "ModifyDBInstanceSecurityGroupsRequest",
       "name": "修改云数据库安全组",
       "output": "ModifyDBInstanceSecurityGroupsResponse",
@@ -600,6 +600,13 @@
       "input": "ModifyInstanceParamsRequest",
       "name": "修改实例参数",
       "output": "ModifyInstanceParamsResponse",
+      "status": "online"
+    },
+    "ModifyInstancePassword": {
+      "document": "本接口（ModifyInstancePassword）用于修改实例访问密码。",
+      "input": "ModifyInstancePasswordRequest",
+      "name": "修改Redis密码",
+      "output": "ModifyInstancePasswordResponse",
       "status": "online"
     },
     "ModifyInstanceReadOnly": {
@@ -6154,7 +6161,7 @@
           "example": "106980",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6164,7 +6171,7 @@
           "example": "无",
           "member": "TendisSlowLogDetail",
           "name": "TendisSlowLogDetail",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6201,7 +6208,7 @@
           "example": "6954227",
           "member": "int64",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8986,7 +8993,7 @@
         },
         {
           "disabled": false,
-          "document": "要修改的安全组 ID 列表，一个或者多个安全组 ID 组成的数组。",
+          "document": "更换为新的安全组 ID 列表，即一个或者多个安全组 ID 组成的数组。若实例第一次配置安全组，请使用接口[AssociateSecurityGroups](https://cloud.tencent.com/document/product/239/41260)先绑定安全组。",
           "example": "[\"sg-ajr1jzgj\\n\"]",
           "member": "string",
           "name": "SecurityGroupIds",
@@ -9409,6 +9416,61 @@
       ],
       "type": "object"
     },
+    "ModifyInstancePasswordRequest": {
+      "document": "ModifyInstancePassword请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "指定实例 ID。例如：crs-xjhsdj****。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。",
+          "example": "crs-5a4py64p",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例旧密码。",
+          "example": "zy456987",
+          "member": "string",
+          "name": "OldPassword",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例新密码。密码复杂度要求如下：\n- 长度8 - 30位, 推荐使用12位以上的密码。\n- 不能以\"/\"开头。\n- 至少包含小写字母a - z、大写字母A - Z、数字0 - 9、特殊字符 ()~!@#$%^&*-+=_|{}[]:;<>,.?/中的两项。",
+          "example": "456987zy",
+          "member": "string",
+          "name": "Password",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyInstancePasswordResponse": {
+      "document": "ModifyInstancePassword返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务 ID。",
+          "example": "16661",
+          "member": "int64",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyInstanceReadOnlyRequest": {
       "document": "ModifyInstanceReadOnly请求参数结构体",
       "members": [
@@ -9678,6 +9740,7 @@
           "example": "true",
           "member": "bool",
           "name": "Status",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -9687,6 +9750,7 @@
           "example": "subnet-6mt7lir6",
           "member": "string",
           "name": "SubnetId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9696,6 +9760,7 @@
           "example": "vpc-hu6khgap",
           "member": "string",
           "name": "VpcId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9705,6 +9770,7 @@
           "example": "10.2.3.8",
           "member": "string",
           "name": "Vip",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9714,6 +9780,7 @@
           "example": "1",
           "member": "int64",
           "name": "TaskId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -12213,7 +12280,7 @@
           "example": "486489",
           "member": "int64",
           "name": "FlowId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -12277,7 +12344,7 @@
           "example": "486489",
           "member": "int64",
           "name": "FlowId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -12323,7 +12390,7 @@
           "example": "140171780",
           "member": "int64",
           "name": "FlowId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
