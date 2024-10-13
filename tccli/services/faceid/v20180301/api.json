@@ -8531,6 +8531,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "告警码如下：\n-9101：证件边框不完整告警 \n-9102：证件复印件告警 \n-9103：证件翻拍告警 \n-9107：证件反光告警 \n-9108：证件模糊告警 \n-9109：告警能力未开通\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "WarnCardInfos",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

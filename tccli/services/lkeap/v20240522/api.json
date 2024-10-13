@@ -3,7 +3,7 @@
     "ChatCompletions": {
       "document": "对话",
       "input": "ChatCompletionsRequest",
-      "name": "ChatCompletions",
+      "name": "ChatCompletions（已废弃）",
       "output": "ChatCompletionsResponse",
       "status": "online"
     },
@@ -170,6 +170,69 @@
           "name": "Stream",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "控制模型生成过程中考虑的词汇（token）范围，只从概率最高的k个候选词中选择。",
+          "example": "50",
+          "member": "int64",
+          "name": "TopK",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "控制模型生成过程中考虑的词汇范围，使用累计概率选择候选词，直到累计概率超过给定的阈值。",
+          "example": "0.8",
+          "member": "float",
+          "name": "TopP",
+          "required": false,
+          "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "控制生成的随机性，较高的值会产生更多样化的输出。",
+          "example": "0.7",
+          "member": "float",
+          "name": "Temperature",
+          "required": false,
+          "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "重复惩罚用于减少在文本生成过程中出现重复片段的概率。",
+          "example": "1.0",
+          "member": "float",
+          "name": "RepetitionPenalty",
+          "required": false,
+          "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "随机种子",
+          "example": "42",
+          "member": "int64",
+          "name": "Seed",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "最大生成的token数量",
+          "example": "100",
+          "member": "int64",
+          "name": "MaxTokens",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "debug级别",
+          "example": "9",
+          "member": "int64",
+          "name": "DebugLevel",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -260,6 +323,15 @@
           "name": "ResultType",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启mllm",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableMllm",
+          "required": false,
+          "type": "bool"
         }
       ],
       "usage": "in"

@@ -126,6 +126,13 @@
       "output": "DescribeInstancesNewResponse",
       "status": "online"
     },
+    "DescribeInstancesV2": {
+      "document": "获取实例列表v2",
+      "input": "DescribeInstancesV2Request",
+      "name": "获取实例列表，供cvm侧使用",
+      "output": "DescribeInstancesV2Response",
+      "status": "online"
+    },
     "DescribeSpec": {
       "document": "购买页拉取集群的数据节点和zookeeper节点的规格列表",
       "input": "DescribeSpecRequest",
@@ -1924,6 +1931,71 @@
       ],
       "type": "object"
     },
+    "DescribeInstancesV2Request": {
+      "document": "DescribeInstancesV2请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分页参数，第一页为0，第二页为10",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页参数，分页步长，默认为10",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "地区",
+          "example": "广州二区",
+          "member": "string",
+          "name": "Zone",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstancesV2Response": {
+      "document": "DescribeInstancesV2返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "18",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "集群信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InstanceInfoV2",
+          "name": "InstancesList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeSpecRequest": {
       "document": "DescribeSpec请求参数结构体",
       "members": [
@@ -2817,6 +2889,72 @@
           "name": "Details",
           "output_required": false,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "安全组白名单\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsWhiteSGs",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "绑定的安全组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "BindSGs",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "InstanceInfoV2": {
+      "document": "集群信息实体v2",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群实例信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "InstanceInfo",
+          "member": "InstanceInfo",
+          "name": "InstanceInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1321",
+          "member": "string",
+          "name": "Uin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "appid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1231",
+          "member": "int64",
+          "name": "AppId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "cvm数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TotalCvms",
+          "name": "TotalCvms",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -4107,6 +4245,212 @@
         }
       ],
       "usage": "both"
+    },
+    "TotalCvms": {
+      "document": "1",
+      "members": [
+        {
+          "disabled": false,
+          "document": "主键id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "18055",
+          "member": "uint64",
+          "name": "Id",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户appid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1305504398",
+          "member": "int64",
+          "name": "Appid",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-seoul",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "cvm的insId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ins-jme2yvdr",
+          "member": "string",
+          "name": "CvmInstanceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "cvm机型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "S5.LARGE16",
+          "member": "string",
+          "name": "InstanceType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "ip地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "9.0.16.12",
+          "member": "string",
+          "name": "Ip",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Cpu核数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "4",
+          "member": "int64",
+          "name": "Cpu",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "内存大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "16",
+          "member": "int64",
+          "name": "Memory",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "集群名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "vm-cdwch-5qh67lye",
+          "member": "string",
+          "name": "InstanceName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "付费类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "PREPAID",
+          "member": "string",
+          "name": "ChargeType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "镜像id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "img-dodn7d0r",
+          "member": "string",
+          "name": "ImageId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否续费\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NOTIFY_AND_AUTO_RENEW",
+          "member": "string",
+          "name": "RenewFlag",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ExpireTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "镜像名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "TencentOS Server 3.2 (Final)",
+          "member": "string",
+          "name": "OsName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "集群状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "RUNNING",
+          "member": "string",
+          "name": "InstanceState",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "uuid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ff63011f-f42a-4275-aea3-8b45133ed68c",
+          "member": "string",
+          "name": "Uuid",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "vpc网络id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "vpc-jwfmpw5q",
+          "member": "string",
+          "name": "VpcId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "网卡id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "subnet-mrwpi5dd",
+          "member": "string",
+          "name": "SubnetId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "集群id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cdwch-5qh67lye",
+          "member": "string",
+          "name": "CdwInstanceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     }
   },
   "version": "1.0"

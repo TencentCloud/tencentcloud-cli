@@ -56,16 +56,65 @@ Output:
                     "PackageCode": "TRTC_code_002_2dlMNkas9L",
                     "CycleCapacityRemain": 10000,
                     "CycleCapacitySize": 10000,
+                    "CycleCapacityRemainPrecise": "10000",
+                    "CycleCapacitySizePrecise": "10000",
+                    "CapacitySizePrecise": "10000",
+                    "CapacityRemainPrecise": "10000",
                     "CreateTime": 1672502400000,
                     "OriginUnit": "min",
                     "TotalCycles": 2,
                     "RemainCycles": 1,
                     "CycleStartTime": "2023-01-01 00:00:00",
                     "CycleEndTime": "2023-01-31 23:59:59",
-                    "Region": "ap-guangzhou",
-                    "Zone": "ap-guangzhou-2",
+                    "Region": "abc",
+                    "RegionId": 0,
+                    "Zone": "abc",
+                    "ZoneId": 0,
                     "SupportAutoRenew": 0,
-                    "AutoRenewFlag": 1
+                    "AutoRenewFlag": 1,
+                    "AutoRenewTimeUnit": "abc",
+                    "AutoRenewTimeSpan": 1,
+                    "Capacity": [
+                        {
+                            "CapacityKey": "abc",
+                            "CapacityName": "abc",
+                            "CapacityUnit": "abc",
+                            "OriginUnit": "abc",
+                            "CapacitySpec": 1,
+                            "CapacitySize": "abc",
+                            "CapacityRemain": "abc",
+                            "CycleCapacitySize": "abc",
+                            "CycleCapacityRemain": "abc"
+                        }
+                    ],
+                    "ExpiredTime": "abc",
+                    "DeductionProperties": [
+                        {
+                            "Key": "abc",
+                            "Value": "abc"
+                        }
+                    ],
+                    "AutoPurchaseFlag": 0,
+                    "AccountAttributes": [
+                        {
+                            "Key": "abc",
+                            "Value": "abc",
+                            "Type": 1
+                        }
+                    ],
+                    "BindRecords": [
+                        {
+                            "BindObjectId": "abc",
+                            "Properties": [
+                                {
+                                    "PropertyKey": "abc",
+                                    "PropertyValue": "abc"
+                                }
+                            ],
+                            "StartTime": "abc",
+                            "EndTime": "abc"
+                        }
+                    ]
                 }
             ],
             "TotalDosage": 20000

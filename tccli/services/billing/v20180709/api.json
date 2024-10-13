@@ -15900,6 +15900,15 @@
           "name": "SortBy",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否展示隐藏包：true/false",
+          "example": "true",
+          "member": "bool",
+          "name": "IsDisplayHiddenPackage",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -15913,6 +15922,7 @@
           "example": "无",
           "member": "DescribeResourceDetailsData",
           "name": "Data",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -16071,6 +16081,15 @@
           "name": "PackageCodes",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否展示隐藏包：true/false",
+          "example": "true",
+          "member": "bool",
+          "name": "IsDisplayHiddenPackage",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

@@ -20,7 +20,7 @@ Output:
                 "DiscountPrice": 56.31
             }
         },
-        "RequestId": "abc"
+        "RequestId": "3ed7375a-fc2d-488f-88a0-29962f22c929"
     }
 }
 ```
