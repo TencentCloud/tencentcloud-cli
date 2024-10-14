@@ -2402,7 +2402,7 @@
       "status": "online"
     },
     "ReplaceCcnRouteTableBroadcastPolicys": {
-      "document": "本接口(ReplaceCcnRouteTableBroadcastPolicys)用于替换云联网路由表路由传播策略。\n> 特别注意：是全量覆盖，非增量添加\n\n**路由条件支持以下四种：**\n\n- 实例类型: `instance-type`，可选值：私有网络 `VPC`、专线网关 `DIRECTCONNECT`、专线网关 `VPNGW`\n- 实例ID: `instance-id`，例如：`dcg-8zljkrft`、`vpc-jdevjrup`，暂不支持 `Edge` 实例\n- 实例地域: `instance-region`，例如：`ap-guangzhou`<br />产品支持的所有地域列表可通过接口 [DescribeRegions](https://cloud.tencent.com/document/product/1596/77930) 查询，其中参数 `Product` 设置为 `ccn`\n- 路由前缀: `cidr-block`，例如：`10.1.0.0/16`\n\n\n**传播条件支持以下三种：**\n\n- 实例类型: `instance-type`，格式同路由条件\n- 实例ID: `instance-id`，格式同路由条件\n- 实例地域: `instance-region`，格式同路由条件\n\n\n**使用限制：**\n- 一条策略内的单个条件类型，最大支持设置 `25` 个条件值\n- 一张路由表，最大支持 `100` 条路由传播策略\n- 路由条件类型中，只有 `cidr-block` 类型支持模糊匹配和精确匹配两种，其它类型只支持精确匹配一种模式",
+      "document": "本接口(ReplaceCcnRouteTableBroadcastPolicys)用于替换云联网路由表路由传播策略。\n> 特别注意：是全量覆盖，非增量添加\n\n**路由条件支持以下四种：**\n\n- 实例类型: `instance-type`，可选值：私有网络 `VPC`、专线网关 `DIRECTCONNECT`、VPN网关 `VPNGW`\n- 实例ID: `instance-id`，例如：`dcg-8zljkrft`、`vpc-jdevjrup`，暂不支持 `Edge` 实例\n- 实例地域: `instance-region`，例如：`ap-guangzhou`<br />产品支持的所有地域列表可通过接口 [DescribeRegions](https://cloud.tencent.com/document/product/1596/77930) 查询，其中参数 `Product` 设置为 `ccn`\n- 路由前缀: `cidr-block`，例如：`10.1.0.0/16`\n\n\n**传播条件支持以下三种：**\n\n- 实例类型: `instance-type`，格式同路由条件\n- 实例ID: `instance-id`，格式同路由条件\n- 实例地域: `instance-region`，格式同路由条件\n\n\n**使用限制：**\n- 一条策略内的单个条件类型，最大支持设置 `25` 个条件值\n- 一张路由表，最大支持 `100` 条路由传播策略\n- 路由条件类型中，只有 `cidr-block` 类型支持模糊匹配和精确匹配两种，其它类型只支持精确匹配一种模式",
       "input": "ReplaceCcnRouteTableBroadcastPolicysRequest",
       "name": "替换云联网路由传播策略",
       "output": "ReplaceCcnRouteTableBroadcastPolicysResponse",
@@ -4079,6 +4079,15 @@
           "name": "EipDirectConnection",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "要绑定的实例所在的地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "InstanceRegion",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -5486,6 +5495,7 @@
           "example": "ccn-245ecr35",
           "member": "string",
           "name": "CcnId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -5496,6 +5506,7 @@
           "example": "test",
           "member": "string",
           "name": "Name",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -5506,7 +5517,8 @@
           "example": "deerers",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         }
@@ -6045,7 +6057,7 @@
           "member": "string",
           "name": "Description",
           "output_required": true,
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6521,7 +6533,7 @@
         {
           "disabled": false,
           "document": "云联网ID。",
-          "example": "ccnrtb-1234edfr",
+          "example": "ccn-1234edfr",
           "member": "string",
           "name": "CcnId",
           "required": true,
@@ -20219,7 +20231,7 @@
         },
         {
           "disabled": false,
-          "document": "CCN路由策略唯一ID。形如：ccnr-f49l6u0z。",
+          "document": "CCN路由策略唯一ID。形如：ccnr-f49l6u0z。可通过DescribeCcnRoutes获取。",
           "example": "[\"ccnr-bvipc87w\\r\\n\"]",
           "member": "string",
           "name": "RouteIds",
@@ -20837,7 +20849,7 @@
         },
         {
           "disabled": false,
-          "document": "CCN路由策略唯一ID。形如：ccnr-f49l6u0z。",
+          "document": "CCN路由策略唯一ID。形如：ccnr-f49l6u0z。可通过DescribeCcnRoutes接口获取。",
           "example": "[\"ccnr-bvipc87w\\r\\n\"]",
           "member": "string",
           "name": "RouteIds",
@@ -25776,28 +25788,25 @@
           "member": "string",
           "name": "RouteTableId",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
-          "document": "云联网路由表名称。",
+          "document": "云联网路由表名称。Name和Description 两者必传一个。",
           "example": "test",
           "member": "string",
           "name": "Name",
           "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
-          "document": "云联网路由表描述。",
+          "document": "云联网路由表描述。Name和Description 两者必传一个。",
           "example": "deerers",
           "member": "string",
           "name": "Description",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"

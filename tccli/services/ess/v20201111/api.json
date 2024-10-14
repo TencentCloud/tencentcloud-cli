@@ -1,9 +1,9 @@
 {
   "actions": {
     "ArchiveDynamicFlow": {
-      "document": "该接口用于结束动态签署流程，若当前合同还存在签署方未签署，无法结束。",
+      "document": "该接口用于结束动态签署方2.0的合同流程。\n\n\n**功能开通**\n- 动态签署方2.0功能的使用需要先<font color=\"red\">联系产品经理开通模块化计费功能</font>，然后到控制台中打开此功能。详细的使用说明请参考<a href=\"https://qian.tencent.com/developers/company/dynamic_signer_v2\" target=\"_blank\">动态签署方2.0</a>文档。\n\n**使用条件**\n- 此接口只能在<font color=\"red\">合同处于非终态且<b>所有的签署方都已经完成签署</b></font>。一旦合同进入终态（例如：过期、拒签、撤销或者调用过此接口成功过），将无法通过此接口结束合同流程。\n\n**整体流程**\n![image](https://qcloudimg.tencent-cloud.cn/raw/75d323c66e44b05bbc8e949c18664455.png)",
       "input": "ArchiveDynamicFlowRequest",
-      "name": "结束动态签署合同",
+      "name": "结束动态签署流程",
       "output": "ArchiveDynamicFlowResponse",
       "status": "online"
     },
@@ -92,9 +92,9 @@
       "status": "online"
     },
     "CreateDynamicFlowApprover": {
-      "document": "此接口（CreateDynamicFlowApprover）用来补充动态合同的签署人信息。<br/>\n适用场景：使用CreateFlowByFiles指定：OpenDynamicSignFlow=true发起的合同，可以使用该接口补充后续签署人。<br/>",
+      "document": "此接口（CreateDynamicFlowApprover）接口主要用于补充动态签署方2.0合同的签署方信息，包括但不限于名字、手机号和签署区域等信息。\n\n\n**功能开通**\n动态签署方2.0功能的使用需要先<font color=\"red\">联系产品经理开通模块化计费功能</font>，然后到控制台中打开此功能。详细的使用说明请参考<a href=\"https://qian.tencent.com/developers/company/dynamic_signer_v2\" target=\"_blank\">动态签署方2.0</a>文档。\n\n**使用条件**\n- 在发起合同时，必须将OpenDynamicSignFlow参数设置为true，以确保合同以动态签署方2.0的方式处理，否则默认处理为普通合同。\n- 此接口只能在合同处于非终态时调用。一旦合同进入终态（例如：过期、拒签或撤销），将无法通过此接口添加新的签署方。\n\n\n动态签署方2.0合同<font color=\"red\">不会自动结束（整个合同变为签署完成）</font>，需要通过调用<a href=\"https://qian.tencent.com/developers/companyApis/operateFlows/ArchiveDynamicFlow/\" target=\"_blank\">结束动态签署合同</a>来手动结束签署流程。整体的流程如下图\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/75d323c66e44b05bbc8e949c18664455.png)",
       "input": "CreateDynamicFlowApproverRequest",
-      "name": "补充动态签署合同的签署人信息",
+      "name": "补充动态签署合同的签署方",
       "output": "CreateDynamicFlowApproverResponse",
       "status": "online"
     },
@@ -127,7 +127,7 @@
       "status": "online"
     },
     "CreateFlowApprovers": {
-      "document": "**适用场景 ：**\n\n当通过模板或文件发起合同时， 签署人不制定， 等合同发起后再指定 可以用下面2种方案\n\n<b><font color=\"red\">1. 或签合同</font>: 若未指定企业签署人信息（只指定企业的名字），合同变成或签合同（个人签署方不支持或签合同）</b>。需调用此接口补充或添加签署人。或签签署人在控制台上的展示样式如下（会带有<b>或签</b>标识）：\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/b2715f0236faee807cfc0521f93cf01b.png)\n\n<b><font color=\"red\">2. 动态签署人合同</font>: 若未指定具体签署人的信息，则合同变成动态签署人合同</b>。需调用此接口补充或添加签署人。可以参考文档    [动态签署人合同](https://qian.tencent.com/developers/company/dynamic_signer/)    。动态签署人在控制台上的展示样式如下：\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/2729477978e020c3bbb4d2e767bb78eb.png)\n\n实际签署人需要通过[获取跳转至腾讯电子签小程序的签署链接](https://qian.tencent.com/developers/companyApis/startFlows/CreateSchemeUrl/)生成的链接进入小程序，领取合同并签署。同一签署环节可补充多个员工作为或签署人，最终实际签署人取决于谁先领取合同完成签署。\n\n\n**限制条件**：\n\n1.本企业（发起方企业）企业微信签署人仅支持通过企业微信UserId或姓名+手机号进行补充。\n\n2.本企业（发起方企业）非企业微信签署人仅支持通过姓名+手机号进行补充。\n\n3.他方企业仅支持通过姓名+手机号进行补充。\n\n4.个人签署人支持通过姓名+手机号进行补充（若<b>个人用户已完成实名</b>，动态签署人合同也可以可通过姓名+证件号码进行补充）\n\n\n**整体流程如下图：**\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/29a0fba0ceebf9227849459947384862.png)",
+      "document": "**适用场景 ：**\n\n当通过模板或文件发起合同时， 签署人不制定， 等合同发起后再指定 可以用下面2种方案\n\n<b><font color=\"red\">1. 或签合同</font>: 若未指定企业签署人信息（只指定企业的名字），合同变成或签合同（个人签署方不支持或签合同）</b>。需调用此接口补充或添加签署人。或签签署人在控制台上的展示样式如下（会带有<b>或签</b>标识）：\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/b2715f0236faee807cfc0521f93cf01b.png)\n\n<b><font color=\"red\">2. 动态签署人合同</font>: 若未指定具体签署人的信息，则合同变成动态签署人合同</b>。需调用此接口补充或添加签署人。可以参考文档    <a href=\"https://qian.tencent.com/developers/company/dynamic_signer/\" target=\"_blank\">动态签署人合同</a>   。动态签署人在控制台上的展示样式如下：\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/2729477978e020c3bbb4d2e767bb78eb.png)\n\n实际签署人需要通过[获取跳转至腾讯电子签小程序的签署链接](https://qian.tencent.com/developers/companyApis/startFlows/CreateSchemeUrl/)生成的链接进入小程序，领取合同并签署。同一签署环节可补充多个员工作为或签署人，最终实际签署人取决于谁先领取合同完成签署。\n\n\n**限制条件**：\n\n1.本企业（发起方企业）企业微信签署人仅支持通过企业微信UserId或姓名+手机号进行补充。\n\n2.本企业（发起方企业）非企业微信签署人仅支持通过姓名+手机号进行补充。\n\n3.他方企业仅支持通过姓名+手机号进行补充。\n\n4.个人签署人支持通过姓名+手机号进行补充（若<b>个人用户已完成实名</b>，动态签署人合同也可以可通过姓名+证件号码进行补充）\n\n\n**整体流程如下图：**\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/29a0fba0ceebf9227849459947384862.png)",
       "input": "CreateFlowApproversRequest",
       "name": "补充签署流程签署人信息",
       "output": "CreateFlowApproversResponse",
@@ -554,7 +554,7 @@
       "status": "online"
     },
     "DescribeUserVerifyStatus": {
-      "document": "用于客户企业在调用生成[C端用户实名链接（CreateUserVerifyUrl）](https://qian.tencent.com/developers/companyApis/users/CreateUserVerifyUrl)接口之前判断C端用户是否实名，如果已经实名，就不需要再次调用生成C端链接接口去实名\n注意：此接口仅会返回当前员工是否通过[C端用户实名链接（CreateUserVerifyUrl）](https://qian.tencent.com/developers/companyApis/users/CreateUserVerifyUrl)所实名的员工是否实名，并不会返回个人用户自己在电子签进行实名的状况",
+      "document": "检测个人用户是否已经实名。\n\n在调用生成C端用户实名链接（[CreateUserVerifyUrl](https://qian.tencent.com/developers/companyApis/users/CreateUserVerifyUrl)）接口之前，客户企业应首先调用本接口判断C端用户是否已经完成实名认证。如果用户已经实名，那么无需再次调用（[CreateUserVerifyUrl](https://qian.tencent.com/developers/companyApis/users/CreateUserVerifyUrl)）生成链接并走实名认证流程。\n\n注意： \n\n- 此接口<font color=\"red\">仅用于确认通过本公司生成[C端用户实名链接（CreateUserVerifyUrl）](https://qian.tencent.com/developers/companyApis/users/CreateUserVerifyUrl)接口注册认证的用户，不包括其他途径（如主动注册认证、在签署合同中注册认证等）在电子签平台上进行的实名认证</font>。\n\n- 调用此接口需要购买单独的实名套餐包。<font color=\"red\">使用前请联系对接的客户经理沟通</font>。",
       "input": "DescribeUserVerifyStatusRequest",
       "name": "查询用户实名状态",
       "output": "DescribeUserVerifyStatusResponse",
@@ -1102,7 +1102,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "签署参与人在本流程中的编号ID(每个流程不同)，可用此ID来定位签署参与人在本流程的签署节点，也可用于后续创建签署链接等操作。 注意：不指定该字段时默认为发起方\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "签署方唯一编号，一个全局唯一的标识符，不同的流程不会出现冲突。\n\n可以使用签署方的唯一编号来生成签署链接（也可以通过RecipientId来生成签署链接）。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "06f2bc0f1772d8deac2f92b5df61a5ac",
           "member": "string",
           "name": "SignId",
@@ -1113,7 +1113,7 @@
         },
         {
           "disabled": false,
-          "document": "签署方经办人在模板中配置的参与方ID，与控件绑定，是控件的归属方，ID为32位字符串。 模板发起合同时，该参数为必填项。 文件发起合同是，该参数无需传值。 如果开发者后序用合同模板发起合同，建议保存此值，在用合同模板发起合同中需此值绑定对应的签署经办人 。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "签署方角色编号，签署方角色编号是用于区分同一个流程中不同签署方的唯一标识。不同的流程会出现同样的签署方角色编号。\n\n填写控件和签署控件都与特定的角色编号关联。\n\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "yDwhSUUckp3lqxlpUu6Ni3SvjJPoxxxx",
           "member": "string",
           "name": "RecipientId",
@@ -9870,7 +9870,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "签署方角色编号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "签署方角色编号，签署方角色编号是用于区分同一个流程中不同签署方的唯一标识。不同的流程会出现同样的签署方角色编号。\n\n填写控件和签署控件都与特定的角色编号关联。\n\n在进行新增签署方操作时，建议记录下该签署方的角色编号。后续可以拉取流程信息，用来判断该签署方的当前状态。\n\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "RecipientId",
@@ -9881,7 +9881,7 @@
         },
         {
           "disabled": false,
-          "document": "签署方唯一编号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "签署方唯一编号，一个全局唯一的标识符，不同的流程不会出现冲突。\n\n可以使用签署方的唯一编号来生成签署链接（也可以通过RecipientId来生成签署链接）。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "SignId",
@@ -9892,7 +9892,7 @@
         },
         {
           "disabled": false,
-          "document": "签署方当前状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "签署方当前状态，会出现下面的状态\n\n2：待签署\n3：已签署\n4：已拒绝\n5：已过期\n6：已撤销\n8：待填写\n9：因为各种原因（签署人改名等）而终止\n10：填写完成\n15：已解除\n19：转他人处理\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
           "name": "ApproverStatus",

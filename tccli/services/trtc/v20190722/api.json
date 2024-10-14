@@ -737,7 +737,7 @@
         {
           "disabled": false,
           "document": "腾讯云对象存储的[地域信息]（https://cloud.tencent.com/document/product/436/6224#.E5.9C.B0.E5.9F.9F）。\n示例值：cn-shanghai-1\n\nAWS S3[地域信息]（https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-regions）",
-          "example": "cn-shanghai-1",
+          "example": "ap-shanghai(cos, 具体参考云存储厂商支持的地域)",
           "member": "string",
           "name": "Region",
           "required": true,

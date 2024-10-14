@@ -964,14 +964,6 @@
         "title": "查询已经存在的节点"
       }
     ],
-    "DescribeExternalClusterSpec": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeExternalClusterSpec\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-xxx\",\n    \"IsExtranet\": false,\n    \"IsRefreshExpirationTime\": false\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Spec\": \"xxxx\",\n        \"Expiration\": \"2021-09-08T07:04:51Z\"\n    }\n}",
-        "title": "获取导入第三方集群YAML定义"
-      }
-    ],
     "DescribeExternalNodeSupportConfig": [
       {
         "document": "",

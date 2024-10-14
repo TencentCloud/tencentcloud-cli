@@ -812,13 +812,6 @@
       "output": "DescribeExistedInstancesResponse",
       "status": "online"
     },
-    "DescribeExternalClusterSpec": {
-      "document": "tdcc接口已迁移至tdcc产品下，tke下的接口下线\n\n获取导入第三方集群YAML定义",
-      "input": "DescribeExternalClusterSpecRequest",
-      "name": "获取导入第三方集群YAML定义",
-      "output": "DescribeExternalClusterSpecResponse",
-      "status": "deprecated"
-    },
     "DescribeExternalNodeSupportConfig": {
       "document": "查看开启第三方节点池配置信息",
       "input": "DescribeExternalNodeSupportConfigRequest",
@@ -11242,71 +11235,6 @@
           "name": "TotalCount",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeExternalClusterSpecRequest": {
-      "document": "DescribeExternalClusterSpec请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "注册集群ID",
-          "example": "cls-65r1c5nu",
-          "member": "string",
-          "name": "ClusterId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "默认false 获取内网，是否获取外网版注册命令",
-          "example": "false",
-          "member": "bool",
-          "name": "IsExtranet",
-          "required": false,
-          "type": "bool"
-        },
-        {
-          "disabled": false,
-          "document": "默认false 不刷新有效时间 ，true刷新有效时间",
-          "example": "false",
-          "member": "bool",
-          "name": "IsRefreshExpirationTime",
-          "required": false,
-          "type": "bool"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeExternalClusterSpecResponse": {
-      "document": "DescribeExternalClusterSpec返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "导入第三方集群YAML定义",
-          "example": "xxx",
-          "member": "string",
-          "name": "Spec",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "agent.yaml文件过期时间字符串，时区UTC",
-          "example": "2021-09-08T07:04:51Z",
-          "member": "string",
-          "name": "Expiration",
-          "required": true,
-          "type": "string",
           "value_allowed_null": false
         },
         {

@@ -272,7 +272,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "疑似的攻击痕迹类型\nSuspectedSpoofingAttack：翻拍攻击\nSuspectedSynthesisImage：疑似合成图片\nSuspectedSynthesisVideo：疑似合成视频\nSuspectedeAnomalyAttack：人脸特征疑似非真人\nSuspectedAdversarialAttack：疑似对抗样本攻击\nSuspectedBlackIndustry：疑似黑产攻击\nSuspectedWatermark：疑似存在水印\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "疑似的攻击痕迹类型\nSuspectedSpoofingAttack：翻拍攻击\nSuspectedSynthesisImage：疑似合成图片\nSuspectedSynthesisVideo：疑似合成视频\nSuspectedeAnomalyAttack：人脸特征疑似非真人\nSuspectedAdversarialAttack：疑似对抗样本攻击\nSuspectedBlackIndustry：疑似黑产批量模版攻击\nSuspectedWatermark：疑似存在水印\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "SuspectedWatermark",
           "member": "string",
           "name": "Type",

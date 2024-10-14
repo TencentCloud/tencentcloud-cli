@@ -881,7 +881,7 @@
           "example": "无",
           "member": "GetAccountGroupData",
           "name": "Data",
-          "required": false,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -1438,6 +1438,7 @@
           "example": "-",
           "member": "string",
           "name": "NamePath",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1448,6 +1449,7 @@
           "example": "-",
           "member": "int64",
           "name": "IdPathArr",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -1458,6 +1460,7 @@
           "example": "-",
           "member": "string",
           "name": "ExtraInfo",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1468,6 +1471,7 @@
           "example": "-",
           "member": "string",
           "name": "Utime",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1478,6 +1482,7 @@
           "example": "-",
           "member": "uint64",
           "name": "ParentId",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -1488,6 +1493,7 @@
           "example": "-",
           "member": "string",
           "name": "OrgId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1498,6 +1504,7 @@
           "example": "-",
           "member": "string",
           "name": "Name",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1508,6 +1515,7 @@
           "example": "-",
           "member": "uint64",
           "name": "Id",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -1518,6 +1526,7 @@
           "example": "-",
           "member": "string",
           "name": "Description",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1528,6 +1537,7 @@
           "example": "-",
           "member": "uint64",
           "name": "Source",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -1538,6 +1548,7 @@
           "example": "-",
           "member": "string",
           "name": "IdPath",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1548,6 +1559,7 @@
           "example": "-",
           "member": "string",
           "name": "Itime",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1558,6 +1570,7 @@
           "example": "-",
           "member": "string",
           "name": "ParentOrgId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1568,6 +1581,7 @@
           "example": "-",
           "member": "string",
           "name": "Import",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1578,6 +1592,7 @@
           "example": "-",
           "member": "bool",
           "name": "ImportEnable",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": true
@@ -1588,6 +1603,7 @@
           "example": "-",
           "member": "string",
           "name": "ImportType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1598,6 +1614,7 @@
           "example": "-",
           "member": "string",
           "name": "MiniIamId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
