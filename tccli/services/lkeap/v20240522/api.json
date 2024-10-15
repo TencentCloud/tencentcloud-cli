@@ -874,7 +874,7 @@
         },
         {
           "disabled": false,
-          "document": "当传入文件是PDF类型时，用来指定pdf识别的起始页码，识别的页码包含当前值",
+          "document": "用来指定文件识别的起始页码，识别的页码包含当前值，支持的文件类型：PDF、DOC、DOCX、PPT、PPTX。",
           "example": "1",
           "member": "int64",
           "name": "FileStartPageNumber",
@@ -883,7 +883,7 @@
         },
         {
           "disabled": false,
-          "document": "当传入文件是PDF类型时，用来指定pdf识别的结束页码，识别的页码包含当前值。",
+          "document": "用来指定文件识别的结束页码，识别的页码包含当前值，支持的文件类型：PDF、DOC、DOCX、PPT、PPTX。",
           "example": "100",
           "member": "int64",
           "name": "FileEndPageNumber",

@@ -1,19 +1,5 @@
 {
   "actions": {
-    "DescribeComponentAlertObject": {
-      "document": "tsw产品已经处于下线状态，但API还没有完成下线流程。DescribeComponentAlertObject,DescribeServiceAlertObject 因为鉴权不规范触发了CAM侧的风险告警，因此先将这2个接口做下线处理，后续再对tws的其他接口走整体下线流程。\n\n获取告警对象-组件告警",
-      "input": "DescribeComponentAlertObjectRequest",
-      "name": "获取告警对象-组件告警",
-      "output": "DescribeComponentAlertObjectResponse",
-      "status": "deprecated"
-    },
-    "DescribeServiceAlertObject": {
-      "document": "tsw产品已经处于下线状态，但API还没有完成下线流程。DescribeComponentAlertObject,DescribeServiceAlertObject 因为鉴权不规范触发了CAM侧的风险告警，因此先将这2个接口做下线处理，后续再对tws的其他接口走整体下线流程。\n\n获取告警对象-服务告警表",
-      "input": "DescribeServiceAlertObjectRequest",
-      "name": "获取告警对象-服务告警表",
-      "output": "DescribeServiceAlertObjectResponse",
-      "status": "deprecated"
-    },
     "DescribeToken": {
       "document": "查询token",
       "input": "DescribeTokenRequest",
@@ -29,40 +15,6 @@
     "serviceShortName": "tsw"
   },
   "objects": {
-    "DescribeComponentAlertObjectRequest": {
-      "document": "DescribeComponentAlertObject请求参数结构体",
-      "members": [],
-      "type": "object"
-    },
-    "DescribeComponentAlertObjectResponse": {
-      "document": "DescribeComponentAlertObject返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeServiceAlertObjectRequest": {
-      "document": "DescribeServiceAlertObject请求参数结构体",
-      "members": [],
-      "type": "object"
-    },
-    "DescribeServiceAlertObjectResponse": {
-      "document": "DescribeServiceAlertObject返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "DescribeTokenRequest": {
       "document": "DescribeToken请求参数结构体",
       "members": [

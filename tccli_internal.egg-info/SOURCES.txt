@@ -462,6 +462,8 @@ tccli/services/gse/__init__.py
 tccli/services/gse/gse_client.py
 tccli/services/gse/v20191112/api.json
 tccli/services/gse/v20191112/examples.json
+tccli/services/gwlb/__init__.py
+tccli/services/gwlb/gwlb_client.py
 tccli/services/hai/__init__.py
 tccli/services/hai/hai_client.py
 tccli/services/hasim/__init__.py

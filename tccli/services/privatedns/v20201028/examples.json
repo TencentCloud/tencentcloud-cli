@@ -8,6 +8,14 @@
         "title": "追加与私有域关联的vpc"
       }
     ],
+    "CreateEndPoint": [
+      {
+        "document": "输入终端节点名称，客户自己的终端节点服务ID，以及终端节点服务对应的地域来创建一个终端节点",
+        "input": "POST / HTTP/1.1\nHost: privatedns.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateEndPoint\n<公共请求参数>\n\n{\n    \"EndPointName\": \"终端节点名\",\n    \"EndPointServiceId\": \"vpcsvc-gtd4gxa1\",\n    \"EndPointRegion\": \"ap-guangzhou\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5cd964e2-b5e6-8a35-9ce5a1085860c845\",\n        \"EndPointId\": \"eid-scls023kfns\",\n        \"EndPointName\": \"终端节点名\",\n        \"EndPointServiceId\": \"vpcsvc-gtd4gxa1\",\n        \"EndPointVipSet\": [\n            \"10.0.0.13\"\n        ]\n    }\n}",
+        "title": "创建终端节点"
+      }
+    ],
     "CreatePrivateDNSAccount": [
       {
         "document": "",

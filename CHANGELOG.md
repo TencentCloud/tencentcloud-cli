@@ -1,3 +1,158 @@
+# Release 3.0.1088.1
+
+## 负载均衡(clb) 版本：2023-04-17
+
+### 第 3 次发布
+
+发布时间：2024-10-16 01:12:45
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateLoadBalancer](http://document.tencentcloudapi.woa.com/document/product/214/83856)
+
+	* 新增入参：LBChargePrepaid
+
+
+
+
+## 负载均衡(clb) 版本：2018-03-17
+
+
+
+## 日志服务(cls) 版本：2020-10-16
+
+### 第 88 次发布
+
+发布时间：2024-10-16 01:13:05
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateNoticeContent](http://document.tencentcloudapi.woa.com/document/product/614/85090)
+* [DeleteNoticeContent](http://document.tencentcloudapi.woa.com/document/product/614/85089)
+* [DescribeNoticeContents](http://document.tencentcloudapi.woa.com/document/product/614/85088)
+* [ModifyNoticeContent](http://document.tencentcloudapi.woa.com/document/product/614/85087)
+
+新增数据结构：
+
+* [NoticeContent](http://document.tencentcloudapi.woa.com/document/product/614/56471#NoticeContent)
+* [NoticeContentInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#NoticeContentInfo)
+* [NoticeContentTemplate](http://document.tencentcloudapi.woa.com/document/product/614/56471#NoticeContentTemplate)
+
+修改数据结构：
+
+* [MonitorTime](http://document.tencentcloudapi.woa.com/document/product/614/56471#MonitorTime)
+
+	* 新增成员：CronExpression
+
+* [NoticeReceiver](http://document.tencentcloudapi.woa.com/document/product/614/56471#NoticeReceiver)
+
+	* 新增成员：NoticeContentId
+
+
+
+
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+
+### 第 101 次发布
+
+发布时间：2024-10-16 01:15:29
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Ability](http://document.tencentcloudapi.woa.com/document/product/1003/48097#Ability)
+
+	* 新增成员：IsSupportManualLogic
+
+
+
+
+## 专线接入(dc) 版本：2018-04-10
+
+### 第 7 次发布
+
+发布时间：2024-10-16 01:16:37
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateCloudAttachService](http://document.tencentcloudapi.woa.com/document/product/216/85091)
+
+新增数据结构：
+
+* [CloudAttachInfo](http://document.tencentcloudapi.woa.com/document/product/216/18418#CloudAttachInfo)
+* [CreateCasInput](http://document.tencentcloudapi.woa.com/document/product/216/18418#CreateCasInput)
+
+
+
+## 人脸核身(faceid) 版本：2018-03-01
+
+### 第 74 次发布
+
+发布时间：2024-10-16 01:19:51
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DetectInfoText](http://document.tencentcloudapi.woa.com/document/product/1007/41958#DetectInfoText)
+
+	* 新增成员：LivenessInfoTag
+
+
+
+
+## 私有域解析 Private DNS(privatedns) 版本：2020-10-28
+
+### 第 18 次发布
+
+发布时间：2024-10-16 01:26:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateEndPoint](http://document.tencentcloudapi.woa.com/document/product/1338/85092)
+
+
+
+## 视频转译(vtc) 版本：2024-02-23
+
+### 第 5 次发布
+
+发布时间：2024-10-16 01:34:07
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [SubmitVideoTranslateJob](http://document.tencentcloudapi.woa.com/document/product/1761/83879)
+
+	* 新增入参：RemoveVocal
+
+
+
+
 # Release 3.0.1087.1
 
 ## 费用中心(billing) 版本：2018-07-09

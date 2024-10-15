@@ -75,6 +75,7 @@ Output:
                 "ExcludePaths": null,
                 "ExtractRule": {
                     "Address": "",
+                    "AdvanceFilterRules": null,
                     "Backtracking": 0,
                     "BeginRegex": "",
                     "Delimiter": "",

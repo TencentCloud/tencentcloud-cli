@@ -51,7 +51,7 @@
     "DeleteBPWhiteList": [
       {
         "document": "删除白名单",
-        "input": "{\n  \"WhiteListId\": 123\n}",
+        "input": "POST / HTTP/1.1\nHost: bma.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteBPWhiteList\n<公共请求参数>\n\n{\n    \"WhiteListId\": 123\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx\"\n    }\n}",
         "title": "删除白名单"
       }

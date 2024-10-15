@@ -5,7 +5,9 @@
 Input: 
 
 ```
-tccli bma DeleteBPWhiteList --cli-unfold-argument ```
+tccli bma DeleteBPWhiteList --cli-unfold-argument  \
+    --WhiteListId 123
+```
 
 Output: 
 ```

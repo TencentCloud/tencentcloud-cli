@@ -1,33 +1,6 @@
-**Example 1: 查询失败样例**
+**Example 1: 查询全部套餐消耗**
 
-
-
-Input: 
-
-```
-tccli ess DescribeBillUsageDetail --cli-unfold-argument  \
-    --StartTime 20230902 \
-    --EndTime 20230930 \
-    --Offset 0 \
-    --Limit 1000
-```
-
-Output: 
-```
-{
-    "Response": {
-        "Error": {
-            "Code": "InvalidParameter.Limit",
-            "Message": "分页参数不合法"
-        },
-        "RequestId": "s169935778xxxxxxx"
-    }
-}
-```
-
-**Example 2: 查询全部套餐消耗**
-
-
+查询全部套餐消耗
 
 Input: 
 
@@ -64,9 +37,36 @@ Output:
 }
 ```
 
+**Example 2: 查询失败样例**
+
+调用参数错误，导致查询失败样例
+
+Input: 
+
+```
+tccli ess DescribeBillUsageDetail --cli-unfold-argument  \
+    --StartTime 20230902 \
+    --EndTime 20230930 \
+    --Offset 0 \
+    --Limit 1000
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Error": {
+            "Code": "InvalidParameter.Limit",
+            "Message": "分页参数不合法"
+        },
+        "RequestId": "s169935778xxxxxxx"
+    }
+}
+```
+
 **Example 3: 查询子企业客户消耗**
 
-
+查询子企业客户消耗
 
 Input: 
 

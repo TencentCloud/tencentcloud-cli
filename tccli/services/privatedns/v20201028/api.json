@@ -7,6 +7,13 @@
       "output": "AddSpecifyPrivateZoneVpcResponse",
       "status": "online"
     },
+    "CreateEndPoint": {
+      "document": "创建终端节点",
+      "input": "CreateEndPointRequest",
+      "name": "创建终端节点",
+      "output": "CreateEndPointResponse",
+      "status": "online"
+    },
     "CreatePrivateDNSAccount": {
       "document": "创建私有域解析账号",
       "input": "CreatePrivateDNSAccountRequest",
@@ -486,6 +493,100 @@
         }
       ],
       "usage": "out"
+    },
+    "CreateEndPointRequest": {
+      "document": "CreateEndPoint请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "终端节点名称",
+          "example": "终端节点名",
+          "member": "string",
+          "name": "EndPointName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "终端节点服务ID（vpc终端节点服务ID）",
+          "example": "vpcsvc-gtd4gxa1",
+          "member": "string",
+          "name": "EndPointServiceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "终端节点地域，必须要和终端节点服务所属地域一致",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "EndPointRegion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "终端节点ip数量",
+          "example": "2",
+          "member": "int64",
+          "name": "IpNum",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateEndPointResponse": {
+      "document": "CreateEndPoint返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "终端节点id",
+          "example": "eid-ax8skcs0dg",
+          "member": "string",
+          "name": "EndPointId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "终端节点名称",
+          "example": "终端节点名",
+          "member": "string",
+          "name": "EndPointName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "终端节点服务ID",
+          "example": "终端节点服务ID",
+          "member": "string",
+          "name": "EndPointServiceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "终端节点的IP列表",
+          "example": "[\"10.0.0.13\",\"10.0.0.14\"]",
+          "member": "string",
+          "name": "EndPointVipSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CreatePrivateDNSAccountRequest": {
       "document": "CreatePrivateDNSAccount请求参数结构体",
