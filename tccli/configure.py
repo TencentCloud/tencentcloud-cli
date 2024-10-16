@@ -230,6 +230,50 @@ class ConfigureSetCommand(BasicConfigure):
             self._init_configure(profile_name + '.credential', cred)
 
 
+class ConfigureSetRootDomainCommand(BasicConfigure):
+    NAME = 'set-root-domain'
+    DESCRIPTION = 'Set the root domain name for all endpoints.'
+    USEAGE = 'tccli configure set-root-domain [root-domain-value] [--profile profile-name]'
+    AVAILABLECONFIG = "[cvm, cbs ...].endpoint: service [cvm cbs ...] access point root domain name"
+    EXAMPLES = "$ tccli configure set-root-domain internal.tencentcloudapi.com --profile test"
+    ARG_TABLE = [
+        {'name': 'varname',
+         'help_text': 'The name of the root domain value to set.',
+         'action': 'store',
+         'nargs': '+',
+         'cli_type_name': 'string',
+         'positional_arg': True},
+    ]
+
+    def __init__(self):
+        super(ConfigureSetRootDomainCommand, self).__init__()
+
+    def _run_main(self, args, parsed_globals):
+        var_value = args.varname
+        if len(var_value) != 1:
+            raise ParamError("Unexpected format\n"
+                             "Expected input format：\n\n"
+                             "   $tccli configure set-root-domain internal.tencentcloudapi.com\n")
+        profile_name = self._get_profile_name(parsed_globals)
+        profile_name = profile_name + '.configure'
+
+        conf_data = {}
+        is_exist, config_path = self._profile_existed(profile_name)
+        if is_exist:
+            conf_data = Utils.load_json_msg(config_path)
+        if profile_name.endswith(".configure"):
+            for mod in self._cli_data.get_available_services().keys():
+                if mod not in conf_data:
+                    conf_data[mod] = {}
+                    conf_data[mod]["endpoint"] = "%s.tencentcloudapi.com" % mod
+                if mod != 'autoscaling':
+                    conf_data[mod]["endpoint"] = "%s.%s" % (mod, var_value[0])
+                else:
+                    conf_data[mod]["endpoint"] = "as.%s" % var_value[0]
+                conf_data[mod]["version"] = self._cli_data.get_available_services()[mod][0]
+        Utils.dump_json_msg(config_path, conf_data)
+
+
 class ConfigureGetCommand(BasicConfigure):
     NAME = 'get'
     DESCRIPTION = "get your profile(eg:SecretId, SecretKey, Region)."
@@ -342,7 +386,8 @@ class ConfigureCommand(BasicConfigure):
         {'name': 'list', 'command_class': ConfigureListCommand},
         {'name': 'get', 'command_class': ConfigureGetCommand},
         {'name': 'set', 'command_class': ConfigureSetCommand},
-        {'name': 'remove', 'command_class': ConfigureRemoveCommand}
+        {'name': 'remove', 'command_class': ConfigureRemoveCommand},
+        {'name': 'set-root-domain', 'command_class': ConfigureSetRootDomainCommand},
     ]
 
     VALUES_TO_PROMPT = [
