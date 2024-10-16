@@ -263,16 +263,12 @@ class ConfigureSetRootDomainCommand(BasicConfigure):
             conf_data = Utils.load_json_msg(config_path)
         if profile_name.endswith(".configure"):
             for mod in self._cli_data.get_available_services().keys():
-                # we have to check autoscaling because we did it wrong in 3.0.30.1
-                # consider remove it in 3.1.x
-                if mod in conf_data and mod != 'autoscaling':
+                if mod not in conf_data:
+                    conf_data[mod] = {}
+                    conf_data[mod]["endpoint"] = "%s.tencentcloudapi.com" % mod
+                if mod != 'autoscaling':
                     conf_data[mod]["endpoint"] = "%s.%s" % (mod, var_value[0])
-                    continue
-                conf_data[mod] = {}
-                conf_data[mod]["endpoint"] = "%s.tencentcloudapi.com" % mod
-                # we have to do this because as is a keyword in python
-                # as has been changed to autoscaling only in python sdk & cli
-                if mod == 'autoscaling':
+                else:
                     conf_data[mod]["endpoint"] = "as.%s" % var_value[0]
                 conf_data[mod]["version"] = self._cli_data.get_available_services()[mod][0]
         Utils.dump_json_msg(config_path, conf_data)
