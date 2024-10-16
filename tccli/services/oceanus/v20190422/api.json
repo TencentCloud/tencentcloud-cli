@@ -377,7 +377,7 @@
           "example": "svp-6w8eab6f",
           "member": "string",
           "name": "SerialId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -387,7 +387,7 @@
           "example": "1",
           "member": "int64",
           "name": "SavepointStatus",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3699,7 +3699,7 @@
           "example": "[]",
           "member": "SystemResourceItem",
           "name": "ResourceSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3709,7 +3709,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },

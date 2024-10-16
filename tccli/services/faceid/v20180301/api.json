@@ -1801,6 +1801,16 @@
         },
         {
           "disabled": false,
+          "document": "描述当前请求活体阶段被拒绝的详细原因，详情如下：\n01-用户全程闭眼\n02-用户未完成指定动作\n03-疑似翻拍攻击\n04-疑似合成攻击\n05-疑似黑产模版\n06-疑似存在水印\n07-反光校验未通过\n08-疑似中途换人\n09-人脸质量过差\n10-距离校验不通过\n11-疑似对抗样本攻击\n12-嘴巴区域疑似存在攻击痕迹\n13-眼睛区域疑似存在攻击痕迹\n14-眼睛或嘴巴被遮挡\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "string",
+          "name": "LivenessInfoTag",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
           "document": "手机号码。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",

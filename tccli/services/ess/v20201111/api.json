@@ -1383,7 +1383,7 @@
         },
         {
           "disabled": false,
-          "document": "设置用户开通自动签时是否绑定个人自动签账号许可。\n\n<ul><li>**0**: (默认) 使用个人自动签账号许可进行开通，个人自动签账号许可有效期1年，注: `不可解绑释放更换他人`</li>\n<li>**1**: 不绑定自动签账号许可开通，后续使用合同份额进行合同发起</li></ul>",
+          "document": "设置用户自动签合同的扣费方式。\n\n<ul><li><b>1</b>: (默认)使用合同份额进行扣减</li></ul>",
           "example": "无",
           "member": "int64",
           "name": "LicenseType",
@@ -12180,7 +12180,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "操作跳转链接\n<ul>\n<li><strong>有效期：</strong> 跳转链接的有效期为24小时。</li>\n<li><strong>无跳转链接返回的情况：</strong> 如果在操作过程中没有返回跳转链接，这意味着无需进行跳转操作。在这种情况下，服务将会直接被开通或关闭。\n<li><strong>有跳转链接返回的情况：</strong> 当操作类型为“OPEN”（开通服务），并且扩展服务类型为以下之一时，  系统将返回一个操作链接。当前操作人（超级管理员或法人）需要点击此链接，以完成服务的开通操作。\n\n<ul>\n<li><strong>OPEN_SERVER_SIGN</strong>（开放服务器签名）</li>\n<li><strong>OVERSEA_SIGN</strong>（海外签名）</li>\n</ul></li></li>\n</ul>",
+          "document": "操作跳转链接\n<ul>\n<li><strong>有效期：</strong> 跳转链接的有效期为24小时。</li>\n<li><strong>无跳转链接返回的情况：</strong> 如果在操作过程中没有返回跳转链接，这意味着无需进行跳转操作。在这种情况下，服务将会直接被开通或关闭。\n<li><strong>有跳转链接返回的情况：</strong> 当操作类型为“OPEN”（开通服务），并且扩展服务类型为以下之一时，  系统将返回一个操作链接。当前操作人（超级管理员或法人）需要点击此链接，以完成服务的开通操作。\n\n<ul>\n<li><strong>OPEN_SERVER_SIGN</strong>（企业自动签署）</li>\n<li><strong>OVERSEA_SIGN</strong>（企业与港澳台居民签署合同）</li>\n</ul></li></li>\n</ul>",
           "example": "https://res.ess.tencent.cn/cdn/h5-activity-dev/jump-mp.html?to=OPEN_SERVER_SIGN&request_token=xxxxx&organizationId=xxxxx&channelType=xxxxx&expired_time=1673428532&login=1&verify=1",
           "member": "string",
           "name": "OperateUrl",

@@ -1516,7 +1516,7 @@
           "example": "ZhiMei",
           "member": "string",
           "name": "VoiceType",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
@@ -1597,6 +1597,33 @@
           "example": "无",
           "member": "string",
           "name": "EndFunctionDesc",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户多久没说话提示时长,最小10秒,默认10秒",
+          "example": "10000",
+          "member": "int64",
+          "name": "NotifyDuration",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "用户NotifyDuration没说话，ai提示的语句，默认是\"抱歉，我没听清。您可以重复下吗？\"",
+          "example": "抱歉，我没听清。您可以重复下吗？",
+          "member": "string",
+          "name": "NotifyMessage",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "和voiceType字段需要选填一个，这里是使用自己自定义的TTS，voiceType是系统内置的一些音色\n\ntencent TTS:\n{ \n       \"TTSType\": \"tencent\", // String TTS类型, 目前支持\"tencent\" 和 “minixmax”， 其他的厂商支持中\n       \"AppId\": \"您的应用ID\", // String 必填\n       \"SecretId\": \"您的密钥ID\", // String 必填\n       \"SecretKey\":  \"您的密钥Key\", // String 必填\n       \"VoiceType\": 101001, // Integer  必填，音色 ID，包括标准音色与精品音色，精品音色拟真度更高，价格不同于标准音色，请参见语音合成计费概述。完整的音色 ID 列表请参见语音合成音色列表。\n       \"Speed\": 1.25, // Integer 非必填，语速，范围：[-2，6]，分别对应不同语速： -2: 代表0.6倍 -1: 代表0.8倍 0: 代表1.0倍（默认） 1: 代表1.2倍 2: 代表1.5倍  6: 代表2.5倍  如果需要更细化的语速，可以保留小数点后 2 位，例如0.5/1.25/2.81等。 参数值与实际语速转换，可参考 语速转换\n       \"Volume\": 5, // Integer 非必填，音量大小，范围：[0，10]，分别对应11个等级的音量，默认值为0，代表正常音量。\n       \"PrimaryLanguage\": 1, // Integer 可选 主要语言 1-中文（默认） 2-英文 3-日文\n       \"FastVoiceType\": \"xxxx\"   //  可选参数， 快速声音复刻的参数 \n  }\n\n参考：https://cloud.tencent.com/document/product/1073/92668#55924b56-1a73-4663-a7a1-a8dd82d6e823 \n\nminimax TTS\n{\n        \"TTSType\": \"minimax\",  // String TTS类型, \n        \"Model\": \"speech-01-turbo\",\n        \"APIUrl\": \"https://api.minimax.chat/v1/t2a_v2\",\n        \"APIKey\": \"eyxxxx\",\n        \"GroupId\": \"181000000000000\",\n        \"VoiceType\":\"female-tianmei-jingpin\",\n        \"Speed\": 1.2\n}\n\n参考：https://platform.minimaxi.com/document/T2A%20V2?key=66719005a427f0c8a5701643 \n限频参考：https://platform.minimaxi.com/document/Rate%20limits?key=66b19417290299a26b234572   可能会导致回答卡顿\n\n\n\nvolcengine TTS\n{\n    \"TTSType\": \"volcengine\",  // 必填：String TTS类型\n    \"AppId\" : \"xxxxxxxx\",   // 必填：String 火山引擎分配的Appid\n    \"Token\" : \"TY9d4sQXHxxxxxxx\", // 必填： String类型 火山引擎的访问token\n    \"Speed\" : 1.0,            // 可选参数 语速，默认为1.0\n    \"Volume\": 1.0,            // 可选参数， 音量大小， 默认为1.0\n    \"Cluster\" : \"volcano_tts\", // 可选参数，业务集群, 默认是 volcano_tts\n    \"VoiceType\" : \"zh_male_aojiaobazong_moon_bigtts\"   // 音色类型， 默认为大模型语音合成的音色。 如果使用普通语音合成，则需要填写对应的音色类型。 音色类型填写错误会导致没有声音。\n}\n\n\n\n火山引擎音色类型参考：\nhttps://www.volcengine.com/docs/6561/162929 \n语音合成音色列表--语音技术-火山引擎\n大模型语音合成音色列表--语音技术-火山引擎\n\n\nAzure TTS\n{\n    \"TTSType\": \"azure\", // 必填：String TTS类型\n    \"SubscriptionKey\": \"xxxxxxxx\", // 必填：String 订阅的Key\n    \"Region\": \"chinanorth3\",  // 必填：String 订阅的地区\n    \"VoiceName\": \"zh-CN-XiaoxiaoNeural\", // 必填：String 音色名必填\n    \"Language\": \"zh-CN\", // 必填：String 合成的语言  \n    \"Rate\": 1 // 选填：float 语速  0.5～2 默认为 1\n}\n\n参考：\nhttps://docs.azure.cn/zh-cn/ai-services/speech-service/speech-synthesis-markup-voice \n\n\n自定义 TTS \n{\n  \"TTSType\": \"custom\", // String 必填\n  \"APIKey\": \"ApiKey\", // String 必填 用来鉴权\n  \"APIUrl\": \"http://0.0.0.0:8080/stream-audio\" // String，必填，TTS API URL\n  \"AudioFormat\": \"wav\", // String, 非必填，期望输出的音频格式，如mp3， ogg_opus，pcm，wav，默认为 wav，目前只支持pcm和wav，\n  \"SampleRate\": 16000,  // Integer，非必填，音频采样率，默认为16000(16k)，推荐值为16000\n  \"AudioChannel\": 1,    // Integer，非必填，音频通道数，取值：1 或 2  默认为1  \n}\n\n\n具体协议规范： \nhttps://doc.weixin.qq.com/doc/w3_ANQAiAbdAFwHILbJBmtSqSbV1WZ3L?scode=AJEAIQdfAAo5a1xajYANQAiAbdAFw \n\n\n",
+          "example": "{ \t\"TTSType\": \"azure\", \t\"SubscriptionKey\": \"xxxxxxxx\", \t\"Region\": \"chinanorth3\", \t\"VoiceName\": \"zh-CN-XiaoxiaoNeural\", \t\"Language\": \"zh-CN\", \t\"Rate\": 1 }",
+          "member": "string",
+          "name": "CustomTTSConfig",
           "required": false,
           "type": "string"
         }

@@ -1260,19 +1260,19 @@
     ],
     "DescribeBillUsageDetail": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBillUsageDetail\n<公共请求参数>\n\n{\n    \"StartTime\": \"20230902\",\n    \"EndTime\": \"20230930\",\n    \"Offset\": 0,\n    \"Limit\": 1000\n}",
-        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameter.Limit\",\n            \"Message\": \"分页参数不合法\"\n        },\n        \"RequestId\": \"s169935778xxxxxxx\"\n    }\n}",
-        "title": "查询失败样例"
-      },
-      {
-        "document": "",
+        "document": "查询全部套餐消耗",
         "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBillUsageDetail\n<公共请求参数>\n\n{\n    \"StartTime\": \"20230902\",\n    \"EndTime\": \"20230930\",\n    \"Offset\": 0,\n    \"Limit\": 50\n}",
         "output": "{\n    \"Response\": {\n        \"Details\": [\n            {\n                \"CostTime\": 1695037514,\n                \"CostType\": 1,\n                \"CreateOrganizationName\": \"典子谦示例企业\",\n                \"FlowId\": \"yDwFdUUckps******uzcbXwoXbRF6ja3\",\n                \"FlowName\": \"典子谦示例合同\",\n                \"OperatorName\": \"典子谦;张三\",\n                \"QuotaName\": \"企业版运营礼包\",\n                \"QuotaType\": \"CloudEnterprise\",\n                \"Remark\": \"\",\n                \"Status\": 4,\n                \"UseCount\": 1\n            }\n        ],\n        \"RequestId\": \"s16992572741898xxxx\",\n        \"Total\": 1\n    }\n}",
         "title": "查询全部套餐消耗"
       },
       {
-        "document": "",
+        "document": "调用参数错误，导致查询失败样例",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBillUsageDetail\n<公共请求参数>\n\n{\n    \"StartTime\": \"20230902\",\n    \"EndTime\": \"20230930\",\n    \"Offset\": 0,\n    \"Limit\": 1000\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameter.Limit\",\n            \"Message\": \"分页参数不合法\"\n        },\n        \"RequestId\": \"s169935778xxxxxxx\"\n    }\n}",
+        "title": "查询失败样例"
+      },
+      {
+        "document": "查询子企业客户消耗",
         "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBillUsageDetail\n<公共请求参数>\n\n{\n    \"StartTime\": \"20230902\",\n    \"EndTime\": \"20230930\",\n    \"Offset\": 0,\n    \"Limit\": 50,\n    \"Agent\": {\n        \"ProxyOrganizationId\": \"yDxbNUyKQDx3oAUuO4zjEBQGidlGe4hP\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"Details\": [\n            {\n                \"CostTime\": 1695037514,\n                \"CostType\": 1,\n                \"CreateOrganizationName\": \"张三示例企业\",\n                \"FlowId\": \"yDwFdUUckps******xAhL7zuaIwkMth4\",\n                \"FlowName\": \"张三示业合同\",\n                \"OperatorName\": \"典子谦;张三\",\n                \"QuotaName\": \"企业版运营礼包\",\n                \"QuotaType\": \"CloudEnterprise\",\n                \"Remark\": \"\",\n                \"Status\": 4,\n                \"UseCount\": 1\n            }\n        ],\n        \"RequestId\": \"s16992572741898xxxx\",\n        \"Total\": 1\n    }\n}",
         "title": "查询子企业客户消耗"

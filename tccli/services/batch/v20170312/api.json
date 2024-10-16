@@ -5391,6 +5391,7 @@
           "example": "无",
           "member": "Application",
           "name": "Application",
+          "output_required": true,
           "required": true,
           "type": "object",
           "value_allowed_null": false
@@ -5401,16 +5402,18 @@
           "example": "test-task",
           "member": "string",
           "name": "TaskName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "任务实例运行个数",
+          "document": "任务实例运行个数，默认为1",
           "example": "1",
           "member": "uint64",
           "name": "TaskInstanceNum",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -5421,6 +5424,7 @@
           "example": "无",
           "member": "AnonymousComputeEnv",
           "name": "ComputeEnv",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": false
@@ -5431,6 +5435,7 @@
           "example": "env_238swek2",
           "member": "string",
           "name": "EnvId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -5441,6 +5446,7 @@
           "example": "无",
           "member": "RedirectInfo",
           "name": "RedirectInfo",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": false
@@ -5451,6 +5457,7 @@
           "example": "无",
           "member": "RedirectLocalInfo",
           "name": "RedirectLocalInfo",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": false
@@ -5461,6 +5468,7 @@
           "example": "无",
           "member": "InputMapping",
           "name": "InputMappings",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -5471,6 +5479,7 @@
           "example": "无",
           "member": "OutputMapping",
           "name": "OutputMappings",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -5481,6 +5490,7 @@
           "example": "无",
           "member": "OutputMappingConfig",
           "name": "OutputMappingConfigs",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -5491,6 +5501,7 @@
           "example": "无",
           "member": "EnvVar",
           "name": "EnvVars",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -5501,6 +5512,7 @@
           "example": "无",
           "member": "Authentication",
           "name": "Authentications",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -5511,6 +5523,7 @@
           "example": "TERMINATE",
           "member": "string",
           "name": "FailedAction",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -5521,6 +5534,7 @@
           "example": "0",
           "member": "uint64",
           "name": "MaxRetryCount",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -5531,6 +5545,7 @@
           "example": "86400",
           "member": "uint64",
           "name": "Timeout",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -5541,6 +5556,7 @@
           "example": "100",
           "member": "uint64",
           "name": "MaxConcurrentNum",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -5551,16 +5567,18 @@
           "example": "false",
           "member": "bool",
           "name": "RestartComputeNode",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "启动任务过程中，创建计算资源如CVM失败后的最大重试次数，默认为0。最大值100。",
+          "document": "启动任务过程中，创建计算资源如CVM失败后的最大重试次数，默认为0。最大值100。\n计算资源创建重试的等待时间间隔策略设置如下：\n[1, 3]: 等待600 s发起重试；\n[4, 10]: 等待900 s发起重试；\n[11, 50]: 等待1800 s发起重试；\n[51, 100]: 等待3600 s发起重试；\n[a, b]表示重试次数区间，每次重试的等待时间随着重试次数的增加而递增。\n例如，计算资源创建重试8次的耗时为：3*600 + 5*900 = 6300 s",
           "example": "1",
           "member": "uint64",
           "name": "ResourceMaxRetryCount",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false

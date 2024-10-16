@@ -186,6 +186,14 @@
         "title": "创建机器组"
       }
     ],
+    "CreateNoticeContent": [
+      {
+        "document": "创建通知内容信息",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateNoticeContent\n<公共请求参数>\n\n{\n    \"Name\": \"testEmail\",\n    \"Type\": 0,\n    \"NoticeContents\": [\n        {\n            \"Type\": \"Email\",\n            \"TriggerContent\": {\n                \"Title\": \"title\",\n                \"Content\": \"this is content\",\n                \"Headers\": [\n                    \"Content-Type:application/json\"\n                ]\n            },\n            \"RecoveryContent\": {\n                \"Title\": \"title\",\n                \"Content\": \"this is content\",\n                \"Headers\": [\n                    \"Content-Type:application/json\"\n                ]\n            }\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"NoticeContentId\": \"noticetemplate-d20a21f7-f6ac-4a7b-ba1b-1aa49be5fed1\",\n        \"RequestId\": \"d20a21f7-f6ac-4a7b-ba1b-1aa49be5fed1\"\n    }\n}",
+        "title": "创建通知内容信息"
+      }
+    ],
     "CreateScheduledSql": [
       {
         "document": "创建ScheduledSQL任务",
@@ -336,6 +344,14 @@
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteMachineGroupInfo\n<公共请求参数>\n\n{\n    \"MachineGroupType\": {\n        \"Values\": [\n            \"10.0.60.184\"\n        ],\n        \"Type\": \"ip\"\n    },\n    \"GroupId\": \"57f5808c-4a55-11eb-b378-0242ac130002\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "删除机器组ip或者label"
+      }
+    ],
+    "DeleteNoticeContent": [
+      {
+        "document": "删除通知内容配置",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteNoticeContent\n<公共请求参数>\n\n{\n    \"NoticeContentId\": \"noticetemplate-d20a21f7-f6ac-4a7b-ba1b-1aa49be5fed1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d20a21f7-f6ac-4a7b-ba1b-1aa49be5fed1\"\n    }\n}",
+        "title": "删除通知内容配置"
       }
     ],
     "DeleteScheduledSql": [
@@ -552,6 +568,14 @@
         "title": "获取机器状态"
       }
     ],
+    "DescribeNoticeContents": [
+      {
+        "document": "获取通知内容配置列表。",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNoticeContents\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Key\": \"name\",\n            \"Values\": [\n                \"test\"\n            ]\n        }\n    ],\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"NoticeContents\": [\n            {\n                \"NoticeContentId\": \"noticetemplate-d20a21f7-f6ac-4a7b-ba1b-1aa49be5fed1\",\n                \"Name\": \"test\",\n                \"Type\": 0,\n                \"NoticeContents\": [\n                    {\n                        \"Type\": \"Sms\",\n                        \"TriggerContent\": {\n                            \"Title\": \"title\",\n                            \"Content\": \"this is content\",\n                            \"Headers\": []\n                        },\n                        \"RecoveryContent\": {\n                            \"Title\": \"title\",\n                            \"Content\": \"this is content\",\n                            \"Headers\": [\n                                \"Content-Type:application/json\"\n                            ]\n                        }\n                    }\n                ],\n                \"Flag\": 0,\n                \"Uin\": 100001,\n                \"SubUin\": 100001,\n                \"CreateTime\": 1693213128,\n                \"UpdateTime\": 1693213128\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"d20a21f7-f6ac-4a7b-ba1b-1aa49be5fed1\"\n    }\n}",
+        "title": "获取通知内容配置列表。"
+      }
+    ],
     "DescribePartitions": [
       {
         "document": "",
@@ -732,6 +756,14 @@
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyMachineGroup\n<公共请求参数>\n\n{\n    \"GroupId\": \"57f5808c-4a55-11eb-b378-0242ac130002\",\n    \"GroupName\": \"testgroup\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "修改机器组"
+      }
+    ],
+    "ModifyNoticeContent": [
+      {
+        "document": "修改通知内容配置",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyNoticeContent\n<公共请求参数>\n\n{\n    \"NoticeContentId\": \"noticetemplate-d20a21f7-f6ac-4a7b-ba1b-1aa49be5fed1\",\n    \"Name\": \"this is name\",\n    \"Type\": 1,\n    \"NoticeContents\": [\n        {\n            \"Type\": \"Http\",\n            \"TriggerContent\": {\n                \"Title\": \"this is title\",\n                \"Content\": \"this is content\",\n                \"Headers\": [\n                    \"Content-Type:application/json\"\n                ]\n            },\n            \"RecoveryContent\": {\n                \"Title\": \"this is title\",\n                \"Content\": \"this is content\",\n                \"Headers\": [\n                    \"Content-Type:application/json\"\n                ]\n            }\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d20a21f7-f6ac-4a7b-ba1b-1aa49be5fed1\"\n    }\n}",
+        "title": "修改通知内容配置"
       }
     ],
     "ModifyScheduledSql": [

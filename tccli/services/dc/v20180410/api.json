@@ -14,6 +14,13 @@
       "output": "ApplyInternetAddressResponse",
       "status": "online"
     },
+    "CreateCloudAttachService": {
+      "document": "创建敏捷上云服务",
+      "input": "CreateCloudAttachServiceRequest",
+      "name": "创建敏捷上云服务",
+      "output": "CreateCloudAttachServiceResponse",
+      "status": "online"
+    },
     "CreateDirectConnect": {
       "document": "申请物理专线接入。\n调用该接口时，请注意：\n账号要进行实名认证，否则不允许申请物理专线；\n若账户下存在欠费状态的物理专线，则不能申请更多的物理专线。",
       "input": "CreateDirectConnectRequest",
@@ -433,6 +440,202 @@
       ],
       "usage": "both"
     },
+    "CloudAttachInfo": {
+      "document": "敏捷上云服务信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "敏捷上云实例id",
+          "example": "cas-xxxxxxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "敏捷上云名称",
+          "example": "名称",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "合作伙伴的AppId",
+          "example": "1234353",
+          "member": "string",
+          "name": "IapId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "需要接入敏捷上云的IDC的地址",
+          "example": "中国",
+          "member": "string",
+          "name": "IdcAddress",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "需要接入敏捷上云的IDC的互联网服务提供商类型",
+          "example": "CMCC",
+          "member": "string",
+          "name": "IdcType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "敏捷上云的带宽，单位为MB",
+          "example": "1000",
+          "member": "uint64",
+          "name": "Bandwidth",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "联系电话",
+          "example": "18600530023",
+          "member": "string",
+          "name": "Telephone",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "敏捷上云的状态\navailable：就绪状态\napplying：申请，待审核状态\npendingpay：代付款状态\nbuilding：建设中状态\nconfirming：待确认状态\nisolate: 隔离状态\nstoped：终止状态",
+          "example": "pendingpay",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "敏捷上云申请的时间",
+          "example": "2020-01-12 12:12:23",
+          "member": "datetime",
+          "name": "ApplyTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "敏捷上云建设完成的时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2020-01-12 12:12:23",
+          "member": "datetime",
+          "name": "ReadyTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "敏捷上云过期时间",
+          "example": "2020-01-12 12:12:23",
+          "member": "datetime",
+          "name": "ExpireTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备注信息",
+          "example": "备注",
+          "member": "string",
+          "name": "Remarks",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "敏捷上云的地域状态。\nsame-region：同地域\ncross-region：跨地域",
+          "example": "cross-region",
+          "member": "string",
+          "name": "RegionStatus",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户的AppId",
+          "example": "1235464",
+          "member": "string",
+          "name": "AppId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户的Uin",
+          "example": "1234544",
+          "member": "string",
+          "name": "Uin",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户注册名称",
+          "example": "用户注册名称",
+          "member": "string",
+          "name": "CustomerAuthName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "物理专线实例ID",
+          "example": "dc-xxxxxxxx",
+          "member": "string",
+          "name": "DirectConnectId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "敏捷上云是否支持创建高速上云专线网关",
+          "example": "true",
+          "member": "bool",
+          "name": "CloudAttachServiceGatewaysSupport",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "敏捷上云服务是否处于升降配中",
+          "example": "true",
+          "member": "bool",
+          "name": "BUpdateBandwidth",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "Coordinate": {
       "document": "坐标，经维度描述",
       "members": [
@@ -458,6 +661,103 @@
         }
       ],
       "usage": "out"
+    },
+    "CreateCasInput": {
+      "document": "创建敏捷上云入参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "敏捷上云名称",
+          "example": "测试线路名",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需要接入敏捷上云的IDC的地址",
+          "example": "湖北省武汉市高薪大道xx机房xxx地址",
+          "member": "string",
+          "name": "IdcAddress",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需要接入敏捷上云的IDC的互联网服务提供商类型",
+          "example": "CUCC",
+          "member": "string",
+          "name": "IdcType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "敏捷上云的带宽，单位为MB",
+          "example": "100",
+          "member": "uint64",
+          "name": "Bandwidth",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "联系电话",
+          "example": "13888888888",
+          "member": "string",
+          "name": "Telephone",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "备注信息",
+          "example": "购买时长6个月",
+          "member": "string",
+          "name": "Remarks",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "CreateCloudAttachServiceRequest": {
+      "document": "CreateCloudAttachService请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "创建敏捷上云入参",
+          "example": "无",
+          "member": "CreateCasInput",
+          "name": "Data",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCloudAttachServiceResponse": {
+      "document": "CreateCloudAttachService返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "敏捷上云服务详情",
+          "example": "无",
+          "member": "CloudAttachInfo",
+          "name": "CloudAttach",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CreateDirectConnectRequest": {
       "document": "CreateDirectConnect请求参数结构体",
