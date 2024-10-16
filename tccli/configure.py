@@ -253,7 +253,7 @@ class ConfigureSetRootDomainCommand(BasicConfigure):
         if len(var_value) != 1:
             raise ParamError("Unexpected format\n"
                              "Expected input format：\n\n"
-                             "   $tccli configure setAllPoint abc\n")
+                             "   $tccli configure set-root-domain internal.tencentcloudapi.com\n")
         profile_name = self._get_profile_name(parsed_globals)
         profile_name = profile_name + '.configure'
 
