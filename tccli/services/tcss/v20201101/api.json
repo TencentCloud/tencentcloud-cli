@@ -20142,6 +20142,15 @@
           "name": "Query",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "日志类型列表",
+          "example": "无",
+          "member": "string",
+          "name": "LogTypes",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -20155,7 +20164,7 @@
           "example": "xxx",
           "member": "string",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -20197,6 +20206,15 @@
           "name": "Limit",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "日志类型列表",
+          "example": "无",
+          "member": "string",
+          "name": "LogTypes",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -20210,7 +20228,7 @@
           "example": "xxx",
           "member": "string",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -25639,6 +25657,15 @@
           "name": "Query",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "日志类型列表",
+          "example": "无",
+          "member": "string",
+          "name": "LogTypes",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -25652,7 +25679,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "JobId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -26145,6 +26172,7 @@
           "example": "10",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -26154,7 +26182,38 @@
           "example": "无",
           "member": "SecLogJoinObjectInfo",
           "name": "List",
+          "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志节点范围类型,0自选 1全部",
+          "example": "0",
+          "member": "int64",
+          "name": "RangeType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "新增资产是否自动加入，节点范围为全部时生效",
+          "example": "true",
+          "member": "bool",
+          "name": "AutoJoin",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "剔除节点数",
+          "example": "0",
+          "member": "uint64",
+          "name": "ExcludedCount",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -36064,7 +36123,7 @@
         },
         {
           "disabled": false,
-          "document": "绑定主机quuid列表",
+          "document": "绑定列表",
           "example": "[]",
           "member": "string",
           "name": "BindList",
@@ -36073,7 +36132,7 @@
         },
         {
           "disabled": false,
-          "document": "待解绑主机quuid列表",
+          "document": "待解绑列表，节点范围为全部时，含义为需剔除资产列表",
           "example": "[]",
           "member": "string",
           "name": "UnBindList",
@@ -36088,6 +36147,24 @@
           "name": "NodeType",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "日志节点范围类型,0自选 1全部",
+          "example": "0",
+          "member": "int64",
+          "name": "RangeType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "新增资产是否自动加入，节点范围为全部时生效",
+          "example": "true",
+          "member": "bool",
+          "name": "AutoJoin",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -40378,7 +40455,7 @@
           "example": "10",
           "member": "uint64",
           "name": "Count",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -40388,7 +40465,7 @@
           "example": "10",
           "member": "uint64",
           "name": "SuperNodeCount",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -40398,7 +40475,7 @@
           "example": "true",
           "member": "bool",
           "name": "IsJoined",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -40408,8 +40485,18 @@
           "example": "xxx",
           "member": "string",
           "name": "LogType",
-          "required": true,
+          "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "已接入集群数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "ClusterCount",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -40424,7 +40511,7 @@
           "example": "xxx",
           "member": "string",
           "name": "HostID",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -40434,7 +40521,7 @@
           "example": "xxx",
           "member": "string",
           "name": "HostName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -40444,7 +40531,7 @@
           "example": "xxx",
           "member": "string",
           "name": "HostIP",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -40454,7 +40541,7 @@
           "example": "xxx",
           "member": "string",
           "name": "HostStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -40464,7 +40551,7 @@
           "example": "xxx",
           "member": "string",
           "name": "ClusterID",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -40474,7 +40561,7 @@
           "example": "xxx",
           "member": "string",
           "name": "ClusterName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -40484,7 +40571,7 @@
           "example": "xxx",
           "member": "string",
           "name": "PublicIP",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -40494,7 +40581,7 @@
           "example": "true",
           "member": "bool",
           "name": "JoinState",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -40504,7 +40591,7 @@
           "example": "xxx",
           "member": "string",
           "name": "ClusterVersion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -40514,9 +40601,39 @@
           "example": "xxx",
           "member": "string",
           "name": "ClusterMainAddress",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "容器数",
+          "example": "0",
+          "member": "uint64",
+          "name": "ContainerCnt",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群类型",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

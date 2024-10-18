@@ -49,6 +49,13 @@
       "output": "DescribeDocResponse",
       "status": "online"
     },
+    "ExtractQA": {
+      "document": "提取问答对",
+      "input": "ExtractQARequest",
+      "name": "提取问答对",
+      "output": "ExtractQAResponse",
+      "status": "online"
+    },
     "GetSplitDocumentResult": {
       "document": "查询文档拆分任务结果",
       "input": "GetSplitDocumentResultRequest",
@@ -559,6 +566,61 @@
       ],
       "usage": "both"
     },
+    "ExtractQARequest": {
+      "document": "ExtractQA请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要提取问答对的文本",
+          "example": "我能吞下玻璃而不伤身体",
+          "member": "string",
+          "name": "Content",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "模型名称",
+          "example": "cs-normal",
+          "member": "string",
+          "name": "Model",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否在线, 后台异步任务使用离线, 实时任务使用在线, 默认值: false",
+          "example": "false",
+          "member": "bool",
+          "name": "Online",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "ExtractQAResponse": {
+      "document": "ExtractQA返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "问答对",
+          "example": "无",
+          "member": "QAObject",
+          "name": "QaList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "GetSplitDocumentResultRequest": {
       "document": "GetSplitDocumentResult请求参数结构体",
       "members": [
@@ -738,6 +800,32 @@
         }
       ],
       "usage": "both"
+    },
+    "QAObject": {
+      "document": "问答对",
+      "members": [
+        {
+          "disabled": false,
+          "document": "问题\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "吞下玻璃会伤身体吗",
+          "member": "string",
+          "name": "Q",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "答案\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "不会",
+          "member": "string",
+          "name": "A",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "QaItem": {
       "document": "问答对信息",

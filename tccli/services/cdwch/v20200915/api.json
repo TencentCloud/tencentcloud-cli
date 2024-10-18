@@ -133,6 +133,13 @@
       "output": "DescribeInstancesV2Response",
       "status": "online"
     },
+    "DescribeSlowQueryRecords": {
+      "document": "慢查询",
+      "input": "DescribeSlowQueryRecordsRequest",
+      "name": "慢查询",
+      "output": "DescribeSlowQueryRecordsResponse",
+      "status": "online"
+    },
     "DescribeSpec": {
       "document": "购买页拉取集群的数据节点和zookeeper节点的规格列表",
       "input": "DescribeSpecRequest",
@@ -1986,6 +1993,134 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSlowQueryRecordsRequest": {
+      "document": "DescribeSlowQueryRecords请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "xx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "慢查询时间",
+          "example": "xx",
+          "member": "int64",
+          "name": "QueryDurationMs",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "xx",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "xx",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页",
+          "example": "xx",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页",
+          "example": "xx",
+          "member": "int64",
+          "name": "PageNum",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否按照执行时间倒序",
+          "example": "ASC",
+          "member": "string",
+          "name": "DurationMs",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "虚拟集群",
+          "example": "default-cluster",
+          "member": "string",
+          "name": "VirtualCluster",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序列",
+          "example": "xx",
+          "member": "string",
+          "name": "SortColumn",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序顺序",
+          "example": "ASC",
+          "member": "string",
+          "name": "SortOrder",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSlowQueryRecordsResponse": {
+      "document": "DescribeSlowQueryRecords返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "123",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "记录列表",
+          "example": "xx",
+          "member": "SlowQueryRecord",
+          "name": "SlowQueryRecords",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -4188,6 +4323,132 @@
           "member": "string",
           "name": "Version",
           "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SlowQueryRecord": {
+      "document": "慢查询记录",
+      "members": [
+        {
+          "disabled": false,
+          "document": "节点IP",
+          "example": "xx",
+          "member": "string",
+          "name": "NodeIp",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "查询用户",
+          "example": "xx",
+          "member": "string",
+          "name": "OsUser",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "查询ID",
+          "example": "xx",
+          "member": "string",
+          "name": "InitialQueryId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "SQL语句",
+          "example": "xx",
+          "member": "string",
+          "name": "Sql",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "xx",
+          "member": "string",
+          "name": "QueryStartTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "执行耗时",
+          "example": "xx",
+          "member": "int64",
+          "name": "DurationMs",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "读取行数",
+          "example": "xx",
+          "member": "int64",
+          "name": "ReadRows",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "读取字节数",
+          "example": "xx",
+          "member": "int64",
+          "name": "ReadBytes",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "结果字节数",
+          "example": "xx",
+          "member": "uint64",
+          "name": "ResultBytes",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内存",
+          "example": "xx",
+          "member": "int64",
+          "name": "MemoryUsage",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "初始查询IP",
+          "example": "xx",
+          "member": "string",
+          "name": "InitialAddress",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据库名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
+          "member": "string",
+          "name": "CurrentDatabase",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }

@@ -37,6 +37,7 @@ Output:
                 "PlanName": "name1",
                 "TemplateId": "9ee325e9984b**********805c19b4e1",
                 "Describe": "",
+                "RepairMode": 0,
                 "StreamType": "main",
                 "LifeCycle": {
                     "Transition": 10,
@@ -50,6 +51,7 @@ Output:
                 "PlanName": "name2",
                 "TemplateId": "48676e89a8c1**********aa36220fa4",
                 "Describe": "",
+                "RepairMode": 0,
                 "StreamType": "main",
                 "LifeCycle": {
                     "Transition": 10,

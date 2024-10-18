@@ -9,6 +9,7 @@ tccli iss AddRecordPlan --cli-unfold-argument  \
     --PlanName name \
     --TemplateId 48676e89a8c**********baa36220fa4 \
     --Describe abc \
+    --RepairMode 1 \
     --StreamType main \
     --Channels.0.DeviceId 48676e89a8c**********baa36220fa4 \
     --Channels.0.ChannelId 9ee325e9984**********a805c19b4e1 \
@@ -26,6 +27,7 @@ Output:
             "PlanName": "name",
             "TemplateId": "48676e89a8c**********baa36220fa4",
             "Describe": "abc",
+            "RepairMode": 1,
             "StreamType": "main",
             "LifeCycle": {
                 "Transition": 1,

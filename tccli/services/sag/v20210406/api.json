@@ -1,130 +1,130 @@
 {
   "actions": {
     "AddAttrGroup": {
-      "document": "增加属性组",
+      "document": "控制台已经发起下线申请\n\n增加属性组",
       "input": "AddAttrGroupRequest",
       "name": "增加属性组",
       "output": "AddAttrGroupResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DeleteAttrGroup": {
-      "document": "删除用户属性组",
+      "document": "控制台已经发起下线申请\n\n删除用户属性组",
       "input": "DeleteAttrGroupRequest",
       "name": "删除用户属性组",
       "output": "DeleteAttrGroupResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeAttrOptionList": {
-      "document": "获取属性选项列表",
+      "document": "控制台已经发起下线申请\n\n获取属性选项列表",
       "input": "DescribeAttrOptionListRequest",
       "name": "获取属性选项列表",
       "output": "DescribeAttrOptionListResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeAttrUserList": {
-      "document": "获取用户属性列表",
+      "document": "控制台已经发起下线申请\n\n获取用户属性列表",
       "input": "DescribeAttrUserListRequest",
       "name": "获取用户属性列表",
       "output": "DescribeAttrUserListResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeCompliance": {
-      "document": "获取合规配置",
+      "document": "控制台已经发起下线申请\n\n获取合规配置",
       "input": "DescribeComplianceRequest",
       "name": "获取合规配置",
       "output": "DescribeComplianceResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeComplianceKbList": {
-      "document": "获取合规补丁列表",
+      "document": "控制台已经发起下线申请\n\n获取合规补丁列表",
       "input": "DescribeComplianceKbListRequest",
       "name": "获取合规补丁列表",
       "output": "DescribeComplianceKbListResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeComplianceOptionList": {
-      "document": "展示合规选项卡",
+      "document": "控制台已经发起下线申请\n\n展示合规选项卡",
       "input": "DescribeComplianceOptionListRequest",
       "name": "展示合规选项卡",
       "output": "DescribeComplianceOptionListResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeComplianceOriginIoaList": {
-      "document": "获取合规IOA源配置",
+      "document": "控制台已经发起下线申请\n\n获取合规IOA源配置",
       "input": "DescribeComplianceOriginIoaListRequest",
       "name": "获取合规IOA源配置",
       "output": "DescribeComplianceOriginIoaListResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeComplianceOriginKbList": {
-      "document": "获取合规源补丁列表",
+      "document": "控制台已经发起下线申请\n\n获取合规源补丁列表",
       "input": "DescribeComplianceOriginKbListRequest",
       "name": "获取合规源补丁列表",
       "output": "DescribeComplianceOriginKbListResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeComplianceOs": {
-      "document": "获取合规系统版本信息",
+      "document": "控制台已经发起下线申请\n\n获取合规系统版本信息",
       "input": "DescribeComplianceOsRequest",
       "name": "获取合规系统版本信息",
       "output": "DescribeComplianceOsResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeDepartmentDirectUsers": {
-      "document": "获取部门直属用户",
+      "document": "控制台已经发起下线申请\n\n获取部门直属用户",
       "input": "DescribeDepartmentDirectUsersRequest",
       "name": "获取部门直属用户",
       "output": "DescribeDepartmentDirectUsersResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeOrderInfo": {
-      "document": "获取订单信息",
+      "document": "控制台已经发起下线申请\n\n获取订单信息",
       "input": "DescribeOrderInfoRequest",
       "name": "获取订单信息",
       "output": "DescribeOrderInfoResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ModifyAttrGroup": {
-      "document": "更改属性组",
+      "document": "控制台已经发起下线申请\n\n更改属性组",
       "input": "ModifyAttrGroupRequest",
       "name": "更改属性组",
       "output": "ModifyAttrGroupResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ModifyCompliance": {
-      "document": "更改合规配置",
+      "document": "控制台已经发起下线申请\n\n更改合规配置",
       "input": "ModifyComplianceRequest",
       "name": "更改合规配置",
       "output": "ModifyComplianceResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ModifyComplianceAv": {
-      "document": "更改合规杀软配置",
+      "document": "控制台已经发起下线申请\n\n更改合规杀软配置",
       "input": "ModifyComplianceAvRequest",
       "name": "更改合规杀软配置",
       "output": "ModifyComplianceAvResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ModifyComplianceKb": {
-      "document": "更改合规补丁配置",
+      "document": "控制台已经发起下线申请\n\n更改合规补丁配置",
       "input": "ModifyComplianceKbRequest",
       "name": "更改合规补丁配置",
       "output": "ModifyComplianceKbResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ModifyComplianceOption": {
-      "document": "修改合规选项卡配置",
+      "document": "控制台已经发起下线申请\n\n修改合规选项卡配置",
       "input": "ModifyComplianceOptionRequest",
       "name": "修改合规选项卡配置",
       "output": "ModifyComplianceOptionResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "OpenOrderTrial": {
-      "document": "开通试用订单",
+      "document": "控制台已经发起下线申请\n\n开通试用订单",
       "input": "OpenOrderTrialRequest",
       "name": "开通试用订单",
       "output": "OpenOrderTrialResponse",
-      "status": "online"
+      "status": "deprecated"
     }
   },
   "metadata": {

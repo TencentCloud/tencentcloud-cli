@@ -470,6 +470,16 @@
           "output_required": false,
           "type": "bool",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "对象类型ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "6",
+          "member": "int64",
+          "name": "ObjectTypeId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -3292,7 +3302,7 @@
         {
           "disabled": false,
           "document": "0--未开始，1--正在归档，2--归档成功，3--归档失败",
-          "example": "无",
+          "example": "2",
           "member": "int64",
           "name": "ArchiveStage",
           "output_required": false,
@@ -3308,6 +3318,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "归档ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cfg-uixxx",
+          "member": "string",
+          "name": "ArchiveUuid",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

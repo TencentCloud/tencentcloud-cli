@@ -62,6 +62,14 @@
         "title": "查询文档详情"
       }
     ],
+    "ExtractQA": [
+      {
+        "document": "提取问答对",
+        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExtractQA\n<公共请求参数>\n\n{\n    \"Content\": \"Go是Google开发的一种静态强类型、编译型、并发型，并具有垃圾回收功能的编程语言。 罗伯特·格瑞史莫、罗勃·派克及肯·汤普逊于2007年9月开始设计Go，稍后伊恩·兰斯·泰勒、拉斯·考克斯加入项目。Go是基于Inferno操作系统所开发的。\"\n}",
+        "output": "{\n    \"Response\": {\n        \"QaList\": [\n            {\n                \"A\": \"罗伯特·格瑞史莫、罗勃·派克及肯·汤普逊。\",\n                \"Q\": \"谁设计了Go？\"\n            },\n            {\n                \"A\": \"它是静态强类型、编译型、并发型的编程语言，并且具备垃圾回收功能。\",\n                \"Q\": \"Go是什么类型的编程语言？\"\n            },\n            {\n                \"A\": \"它基于Inferno操作系统进行开发。\",\n                \"Q\": \"Go是在什么操作系统上开发的？\"\n            }\n        ],\n        \"RequestId\": \"4de60215-13cd-4f90-afc4-9fe4ef63e245\"\n    }\n}",
+        "title": "提取问答对"
+      }
+    ],
     "GetSplitDocumentResult": [
       {
         "document": "查询拆分结果",

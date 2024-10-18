@@ -1,3 +1,246 @@
+# Release 3.0.1089.1
+
+## 腾讯云数据仓库TCHouse-C(cdwch) 版本：2020-09-15
+
+### 第 14 次发布
+
+发布时间：2024-10-18 01:20:31
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeSlowQueryRecords](http://document.tencentcloudapi.woa.com/document/product/1667/85093)
+
+新增数据结构：
+
+* [SlowQueryRecord](http://document.tencentcloudapi.woa.com/document/product/1667/79282#SlowQueryRecord)
+
+
+
+## 腾讯云数据仓库 TCHouse-D(cdwdoris) 版本：2021-12-28
+
+### 第 39 次发布
+
+发布时间：2024-10-18 01:20:49
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeBackUpJob](http://document.tencentcloudapi.woa.com/document/product/1706/84386)
+
+	* 新增入参：ApplicationType
+
+* [DescribeBackUpSchedules](http://document.tencentcloudapi.woa.com/document/product/1706/84384)
+
+	* 新增入参：ApplicationType
+
+
+
+
+## 混沌演练平台(cfg) 版本：2021-08-20
+
+### 第 15 次发布
+
+发布时间：2024-10-18 01:21:32
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ActionLibraryListResult](http://document.tencentcloudapi.woa.com/document/product/1694/79907#ActionLibraryListResult)
+
+	* 新增成员：ObjectTypeId
+
+* [TaskReportInfo](http://document.tencentcloudapi.woa.com/document/product/1694/79907#TaskReportInfo)
+
+	* 新增成员：ArchiveUuid
+
+
+
+
+## 日志服务(cls) 版本：2020-10-16
+
+### 第 90 次发布
+
+发布时间：2024-10-18 01:25:54
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ModifyTopic](http://document.tencentcloudapi.woa.com/document/product/614/56453)
+
+	* 新增入参：CancelTopicAsyncTaskID
+
+
+修改数据结构：
+
+* [TopicInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#TopicInfo)
+
+	* 新增成员：TopicAsyncTaskID, MigrationStatus, EffectiveDate
+
+
+
+
+## 运维安全中心（堡垒机）(dasb) 版本：2019-10-18
+
+### 第 33 次发布
+
+发布时间：2024-10-18 01:34:10
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeDeviceGroupMembers](http://document.tencentcloudapi.woa.com/document/product/1492/74773)
+
+	* 新增入参：IdSet
+
+	* <font color="#dd0000">**修改入参**：</font>Id
+
+
+
+
+## 弹性 MapReduce(emr) 版本：2019-01-03
+
+### 第 66 次发布
+
+发布时间：2024-10-18 01:42:16
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeHDFSStorageInfo](http://document.tencentcloudapi.woa.com/document/product/589/85097)
+* [DescribeKyuubiQueryInfo](http://document.tencentcloudapi.woa.com/document/product/589/85096)
+* [DescribeSparkQueries](http://document.tencentcloudapi.woa.com/document/product/589/85095)
+* [DescribeStarRocksQueryInfo](http://document.tencentcloudapi.woa.com/document/product/589/85094)
+
+新增数据结构：
+
+* [Dps](http://document.tencentcloudapi.woa.com/document/product/589/33981#Dps)
+* [KyuubiQueryInfo](http://document.tencentcloudapi.woa.com/document/product/589/33981#KyuubiQueryInfo)
+* [SparkQuery](http://document.tencentcloudapi.woa.com/document/product/589/33981#SparkQuery)
+* [StarRocksQueryInfo](http://document.tencentcloudapi.woa.com/document/product/589/33981#StarRocksQueryInfo)
+* [StorageSummaryDistribution](http://document.tencentcloudapi.woa.com/document/product/589/33981#StorageSummaryDistribution)
+
+
+
+## 知识引擎原子能力(lkeap) 版本：2024-05-22
+
+### 第 6 次发布
+
+发布时间：2024-10-18 01:57:06
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ExtractQA](http://document.tencentcloudapi.woa.com/document/product/1764/85098)
+
+新增数据结构：
+
+* [QAObject](http://document.tencentcloudapi.woa.com/document/product/1764/84021#QAObject)
+
+
+
+## 应用级智能网关(sag) 版本：2021-04-06
+
+### 第 2 次发布
+
+发布时间：2024-10-18 02:07:22
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* AddAttrGroup
+* DeleteAttrGroup
+* DescribeAttrOptionList
+* DescribeAttrUserList
+* DescribeCompliance
+* DescribeComplianceKbList
+* DescribeComplianceOptionList
+* DescribeComplianceOriginIoaList
+* DescribeComplianceOriginKbList
+* DescribeComplianceOs
+* DescribeDepartmentDirectUsers
+* DescribeOrderInfo
+* ModifyAttrGroup
+* ModifyCompliance
+* ModifyComplianceAv
+* ModifyComplianceKb
+* ModifyComplianceOption
+* OpenOrderTrial
+
+
+
+## 容器安全服务(tcss) 版本：2020-11-01
+
+### 第 25 次发布
+
+发布时间：2024-10-18 02:14:11
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeESAggregations](http://document.tencentcloudapi.woa.com/document/product/1662/79090)
+
+	* 新增入参：LogTypes
+
+* [DescribeESHits](http://document.tencentcloudapi.woa.com/document/product/1662/79089)
+
+	* 新增入参：LogTypes
+
+* [DescribeSearchExportList](http://document.tencentcloudapi.woa.com/document/product/1662/79085)
+
+	* 新增入参：LogTypes
+
+* [DescribeSecLogJoinObjectList](http://document.tencentcloudapi.woa.com/document/product/1662/79076)
+
+	* 新增出参：RangeType, AutoJoin, ExcludedCount
+
+* [ModifySecLogJoinObjects](http://document.tencentcloudapi.woa.com/document/product/1662/79069)
+
+	* 新增入参：RangeType, AutoJoin
+
+
+修改数据结构：
+
+* [SecLogJoinInfo](http://document.tencentcloudapi.woa.com/document/product/1662/79121#SecLogJoinInfo)
+
+	* 新增成员：ClusterCount
+
+	* <font color="#dd0000">**修改成员**：</font>SuperNodeCount
+
+* [SecLogJoinObjectInfo](http://document.tencentcloudapi.woa.com/document/product/1662/79121#SecLogJoinObjectInfo)
+
+	* 新增成员：ContainerCnt, ClusterType, ClusterStatus
+
+
+
+
 # Release 3.0.1088.1
 
 ## 负载均衡(clb) 版本：2023-04-17

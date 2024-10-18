@@ -19,6 +19,7 @@ Output:
             "PlanName": "newname",
             "TemplateId": "48676e89a8c**********baa36220fa4",
             "Describe": "",
+            "RepairMode": 0,
             "StreamType": "main",
             "LifeCycle": {
                 "Transition": 1,
@@ -51,6 +52,7 @@ Output:
             "PlanName": "name",
             "TemplateId": "48676e89a8c**********baa36a87832",
             "Describe": "",
+            "RepairMode": 0,
             "StreamType": "main",
             "LifeCycle": {
                 "Transition": 1,
@@ -83,6 +85,7 @@ Output:
             "PlanName": "name",
             "TemplateId": "48676e89a8c**********baa36220fa4",
             "Describe": "",
+            "RepairMode": 0,
             "StreamType": "main",
             "LifeCycle": {
                 "Transition": 1,
@@ -116,6 +119,7 @@ Output:
             "PlanName": "name",
             "TemplateId": "48676e89a8c**********baa36220fa4",
             "Describe": "",
+            "RepairMode": 0,
             "StreamType": "main",
             "LifeCycle": {
                 "Transition": 1,
@@ -149,6 +153,40 @@ Output:
             "PlanName": "name",
             "TemplateId": "48676e89a8c**********baa36220fa4",
             "Describe": "",
+            "RepairMode": 0,
+            "StreamType": "main",
+            "LifeCycle": {
+                "Transition": 7,
+                "Expiration": 80
+            }
+        },
+        "RequestId": "fba7981b-d6a4-4177-b11d-e53a6110e4cd"
+    }
+}
+```
+
+**Example 6: 修改录像补录模式**
+
+
+
+Input: 
+
+```
+tccli iss UpdateRecordPlan --cli-unfold-argument  \
+    --PlanId 88ac5ea6c1f**********24671d0f94f \
+    --Mod.RepairMode 1
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Data": {
+            "PlanId": "88ac5ea6c1f**********24671d0f94f",
+            "PlanName": "name",
+            "TemplateId": "48676e89a8c**********baa36220fa4",
+            "Describe": "",
+            "RepairMode": 1,
             "StreamType": "main",
             "LifeCycle": {
                 "Transition": 7,

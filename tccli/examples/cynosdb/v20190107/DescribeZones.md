@@ -32,7 +32,8 @@ Output:
                         "IsSupportNormal": 0,
                         "ZoneZh": "广州二区",
                         "HasPermission": true,
-                        "IsWholeRdmaZone": "abc"
+                        "IsWholeRdmaZone": "abc",
+                        "IsSupportCreateCluster": 1
                     },
                     {
                         "PhysicalZone": "ao-guangzhou-5",
@@ -42,7 +43,8 @@ Output:
                         "IsSupportNormal": 0,
                         "ZoneZh": "广州五区",
                         "HasPermission": true,
-                        "IsWholeRdmaZone": "abc"
+                        "IsWholeRdmaZone": "abc",
+                        "IsSupportCreateCluster": 0
                     }
                 ]
             },
@@ -66,7 +68,8 @@ Output:
                         "IsSupportNormal": 0,
                         "ZoneZh": "北京五区",
                         "HasPermission": true,
-                        "IsWholeRdmaZone": "abc"
+                        "IsWholeRdmaZone": "abc",
+                        "IsSupportCreateCluster": 1
                     }
                 ]
             }

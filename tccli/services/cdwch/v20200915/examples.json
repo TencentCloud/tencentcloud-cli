@@ -152,6 +152,14 @@
         "title": "获取实例列表v2"
       }
     ],
+    "DescribeSlowQueryRecords": [
+      {
+        "document": "慢查询列表",
+        "input": "POST / HTTP/1.1\nHost: cdwch.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSlowQueryRecords\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"QueryDurationMs\": 0,\n    \"StartTime\": \"abc\",\n    \"EndTime\": \"abc\",\n    \"PageSize\": 0,\n    \"PageNum\": 0,\n    \"DurationMs\": \"abc\",\n    \"VirtualCluster\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"afde5f25-76b8-4734-b99f-d6f0b01059d6\",\n        \"TotalCount\": 0,\n        \"SlowQueryRecords\": []\n    }\n}",
+        "title": "慢查询列表"
+      }
+    ],
     "DescribeSpec": [
       {
         "document": "购买页拉取集群的数据节点和zookeeper节点的规格列表",
