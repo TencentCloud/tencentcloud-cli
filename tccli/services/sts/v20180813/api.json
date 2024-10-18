@@ -56,30 +56,30 @@
         {
           "disabled": false,
           "document": "密钥ID",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "SecretId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "创建时间(时间戳)",
-          "example": "",
+          "example": "无",
           "member": "uint64",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "状态(2:有效, 3:禁用, 4:已删除)",
-          "example": "",
+          "example": "无",
           "member": "uint64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -555,8 +555,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "待查询的账号(不填默认查当前账号)",
-          "example": "",
+          "document": "待查询的账号uin(不填默认查当前账号uin)",
+          "example": "100020328651",
           "member": "uint64",
           "name": "TargetUin",
           "required": false,
@@ -570,10 +570,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "密钥ID列表",
-          "example": "",
+          "document": "密钥ID列表。",
+          "example": "[\"AKIDyqWzF***\",\"AKID5CnA***\"]",
           "member": "ApiKey",
           "name": "IdKeys",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

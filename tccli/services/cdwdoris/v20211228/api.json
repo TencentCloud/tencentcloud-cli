@@ -2373,6 +2373,15 @@
         },
         {
           "disabled": false,
+          "document": "任务类型：\n0-不限制，或使用TypeFilters过滤；\n1-备份恢复（包括周期备份和一次性备份）；\n2-数据迁移（包括跨集群迁移和cos迁移）\t",
+          "example": "1",
+          "member": "int64",
+          "name": "ApplicationType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
           "document": "分页大小",
           "example": "12",
           "member": "int64",
@@ -2443,7 +2452,17 @@
     },
     "DescribeBackUpSchedulesRequest": {
       "document": "DescribeBackUpSchedules请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务类型\n0-不限制，或使用TypeFilters过滤；\n1-备份恢复（包括周期备份和一次性备份）；\n2-数据迁移（包括跨集群迁移和cos迁移）",
+          "example": "1",
+          "member": "int64",
+          "name": "ApplicationType",
+          "required": false,
+          "type": "int"
+        }
+      ],
       "type": "object"
     },
     "DescribeBackUpSchedulesResponse": {

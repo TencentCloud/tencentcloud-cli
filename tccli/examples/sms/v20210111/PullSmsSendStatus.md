@@ -22,7 +22,8 @@ Output:
                 "ReportStatus": "SUCCESS",
                 "PhoneNumber": "+8615291990000",
                 "SerialNo": "14:19325917feb3914eb78b50d6182d7e452e",
-                "UserReceiveTime": 1620734188
+                "UserReceiveTime": 1620734188,
+                "SessionContext": ""
             },
             {
                 "Description": "DELIVRD",
@@ -31,7 +32,8 @@ Output:
                 "ReportStatus": "SUCCESS",
                 "PhoneNumber": "+8615291990001",
                 "SerialNo": "14:19325917feb3914eb78b50d6182d7e462f",
-                "UserReceiveTime": 1620734188
+                "UserReceiveTime": 1620734188,
+                "SessionContext": ""
             }
         ],
         "RequestId": "8979fc1e-9564-4fc9-bf7d-2958ce679b72"

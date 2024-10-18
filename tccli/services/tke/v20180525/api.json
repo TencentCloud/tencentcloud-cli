@@ -511,6 +511,13 @@
       "output": "DescribeBackupStorageLocationsResponse",
       "status": "online"
     },
+    "DescribeBatchModifyTagsStatus": {
+      "document": "查询批量修改标签状态",
+      "input": "DescribeBatchModifyTagsStatusRequest",
+      "name": "查询批量修改标签状态",
+      "output": "DescribeBatchModifyTagsStatusResponse",
+      "status": "online"
+    },
     "DescribeClusterAsGroupOption": {
       "document": "集群弹性伸缩配置",
       "input": "DescribeClusterAsGroupOptionRequest",
@@ -1321,6 +1328,13 @@
       "input": "ModifyClusterRuntimeConfigRequest",
       "name": "修改集群运行时配置",
       "output": "ModifyClusterRuntimeConfigResponse",
+      "status": "online"
+    },
+    "ModifyClusterTags": {
+      "document": "修改集群标签",
+      "input": "ModifyClusterTagsRequest",
+      "name": "修改集群标签",
+      "output": "ModifyClusterTagsResponse",
       "status": "online"
     },
     "ModifyClusterVirtualNodePool": {
@@ -8479,6 +8493,63 @@
           "name": "BackupStorageLocationSet",
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBatchModifyTagsStatusRequest": {
+      "document": "DescribeBatchModifyTagsStatus请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeBatchModifyTagsStatusResponse": {
+      "document": "DescribeBatchModifyTagsStatus返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "失败资源列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "FailedResource",
+          "name": "FailedResources",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务状态：\n- running 运行中\n- failed 失败\n- done 成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "running",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否同步集群内子资源标签",
+          "example": "false",
+          "member": "bool",
+          "name": "SyncSubresource",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群标签",
+          "example": "[]",
+          "member": "Tag",
+          "name": "Tags",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -16191,6 +16262,32 @@
       ],
       "usage": "in"
     },
+    "FailedResource": {
+      "document": "修改标签失败的资源",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源六段式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "qcs::tke:${region}:uin/${uin}:cluster/${ClusterId}",
+          "member": "string",
+          "name": "Resource",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "执行失败的原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Error",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "Filter": {
       "document": "过滤器",
       "members": [
@@ -18929,6 +19026,61 @@
     "ModifyClusterRuntimeConfigResponse": {
       "document": "ModifyClusterRuntimeConfig返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyClusterTagsRequest": {
+      "document": "ModifyClusterTags请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cls-0gudq56e",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "集群标签",
+          "example": "[]",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否同步集群内子资源标签",
+          "example": "false",
+          "member": "bool",
+          "name": "SyncSubresource",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyClusterTagsResponse": {
+      "document": "ModifyClusterTags返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "Tag",
+          "name": "Tags",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

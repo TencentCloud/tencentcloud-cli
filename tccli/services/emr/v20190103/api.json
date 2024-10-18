@@ -126,6 +126,13 @@
       "output": "DescribeHBaseTableOverviewResponse",
       "status": "online"
     },
+    "DescribeHDFSStorageInfo": {
+      "document": "查询HDFS存储文件信息",
+      "input": "DescribeHDFSStorageInfoRequest",
+      "name": "查询HDFS存储文件数量",
+      "output": "DescribeHDFSStorageInfoResponse",
+      "status": "online"
+    },
     "DescribeHiveQueries": {
       "document": "获取hive查询信息",
       "input": "DescribeHiveQueriesRequest",
@@ -175,6 +182,13 @@
       "output": "DescribeJobFlowResponse",
       "status": "online"
     },
+    "DescribeKyuubiQueryInfo": {
+      "document": "查询Kyuubi查询信息",
+      "input": "DescribeKyuubiQueryInfoRequest",
+      "name": "查询Kyuubi查询信息",
+      "output": "DescribeKyuubiQueryInfoResponse",
+      "status": "online"
+    },
     "DescribeResourceSchedule": {
       "document": "查询YARN资源调度数据信息。已废弃，请使用`DescribeYarnQueue`去查询队列信息。",
       "input": "DescribeResourceScheduleRequest",
@@ -208,6 +222,20 @@
       "input": "DescribeServiceNodeInfosRequest",
       "name": "查询服务进程信息",
       "output": "DescribeServiceNodeInfosResponse",
+      "status": "online"
+    },
+    "DescribeSparkQueries": {
+      "document": "查询Spark查询信息列表",
+      "input": "DescribeSparkQueriesRequest",
+      "name": "查询Spark查询列表",
+      "output": "DescribeSparkQueriesResponse",
+      "status": "online"
+    },
+    "DescribeStarRocksQueryInfo": {
+      "document": "查询StarRocks查询信息",
+      "input": "DescribeStarRocksQueryInfoRequest",
+      "name": "查询StarRocsk查询信息",
+      "output": "DescribeStarRocksQueryInfoResponse",
       "status": "online"
     },
     "DescribeTrinoQueryInfo": {
@@ -4141,6 +4169,71 @@
       ],
       "type": "object"
     },
+    "DescribeHDFSStorageInfoRequest": {
+      "document": "DescribeHDFSStorageInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群id",
+          "example": "emr-xfaf11ab",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "获取查询信息开始时间 (s)",
+          "example": "161222341",
+          "member": "int64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "获取查询信息结束时间 (s)",
+          "example": "161222341",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeHDFSStorageInfoResponse": {
+      "document": "DescribeHDFSStorageInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "采样时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1721122480",
+          "member": "int64",
+          "name": "SampleTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "hdfs存储详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "aaa",
+          "member": "StorageSummaryDistribution",
+          "name": "StorageSummaryDistribution",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeHiveQueriesRequest": {
       "document": "DescribeHiveQueries请求参数结构体",
       "members": [
@@ -4760,6 +4853,89 @@
       ],
       "type": "object"
     },
+    "DescribeKyuubiQueryInfoRequest": {
+      "document": "DescribeKyuubiQueryInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "emr-xfaf11ab",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "获取查询信息开始时间 (s)",
+          "example": "161222341",
+          "member": "int64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "获取查询信息结束时间 (s)",
+          "example": "171213123",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页查询时的分页大小，最小1，最大100",
+          "example": "100",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页查询时的页号，从1开始",
+          "example": "1",
+          "member": "int64",
+          "name": "Page",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeKyuubiQueryInfoResponse": {
+      "document": "DescribeKyuubiQueryInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数，分页查询时使用",
+          "example": "1234",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Kyuubi查询信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KyuubiQueryInfo",
+          "name": "KyuubiQueryInfoList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeResourceScheduleDiffDetailRequest": {
       "document": "DescribeResourceScheduleDiffDetail请求参数结构体",
       "members": [
@@ -5216,6 +5392,181 @@
           "member": "string",
           "name": "SupportNodeFlagFilterList",
           "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSparkQueriesRequest": {
+      "document": "DescribeSparkQueries请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "emr-a9871cxr",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "1712505600",
+          "member": "int64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "1712591999",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页起始偏移，从0开始",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页大小，合法范围[1,100]",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "执行状态:RUNNING,COMPLETED,FAILED",
+          "example": "[\"RUNNING\",\"COMPLETED\"]",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSparkQueriesResponse": {
+      "document": "DescribeSparkQueries返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "10",
+          "member": "int64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "结果列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SparkQuery",
+          "name": "Results",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStarRocksQueryInfoRequest": {
+      "document": "DescribeStarRocksQueryInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "emr-xfaf11ab",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "获取查询信息开始时间 (s)",
+          "example": "161222341",
+          "member": "int64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "获取查询信息结束时间 (s)",
+          "example": "171213123",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页查询时的分页大小，最小1，最大100",
+          "example": "100",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页查询时的页号，从1开始",
+          "example": "1",
+          "member": "int64",
+          "name": "Page",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStarRocksQueryInfoResponse": {
+      "document": "DescribeStarRocksQueryInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数，分页查询时使用",
+          "example": "1234",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Starrocks 查询信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "StarRocksQueryInfo",
+          "name": "StarRocksQueryInfoList",
+          "output_required": false,
           "type": "list",
           "value_allowed_null": true
         },
@@ -5959,6 +6310,34 @@
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "Dps": {
+      "document": "采样序列",
+      "members": [
+        {
+          "disabled": false,
+          "document": "时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "string",
+          "name": "Timestamp",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "采样值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -8629,6 +9008,132 @@
         }
       ],
       "usage": "both"
+    },
+    "KyuubiQueryInfo": {
+      "document": "Kyuubi查询信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "提交IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "192.168.1.1",
+          "member": "string",
+          "name": "ClientIP",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "执行时长\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "int64",
+          "name": "Duration",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1633024800",
+          "member": "int64",
+          "name": "EndTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Engine Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "engine-12345",
+          "member": "string",
+          "name": "EngineID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "计算引擎\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "SPARK_SQL",
+          "member": "string",
+          "name": "EngineType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "d4cfc064-b7d9-43ec-a766-60013c592dd4",
+          "member": "string",
+          "name": "Id",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Session Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1c3cdb57-e0b3-489a-804e-662600a24f1d",
+          "member": "string",
+          "name": "SessionID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1633024800",
+          "member": "int64",
+          "name": "BeginTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "执行状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "FINISHED",
+          "member": "string",
+          "name": "ExecutionState",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "执行语句\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "select * from kyuubi_test.kyuubi_new_user_tb order by id ASC",
+          "member": "string",
+          "name": "ExecutionStatement",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Statement Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "d4cfc064-b7d9-43ec-a766-60013c592dd4",
+          "member": "string",
+          "name": "StatementID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "提交用户\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "new_kyuubi_user",
+          "member": "string",
+          "name": "User",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "LoadAutoScaleStrategy": {
       "document": "自动扩缩容基于负载指标的规则",
@@ -13815,6 +14320,162 @@
       ],
       "usage": "out"
     },
+    "SparkQuery": {
+      "document": "spark查询详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "执行语句",
+          "example": "SELECT * FROM tb",
+          "member": "string",
+          "name": "Statement",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "执行时长（单位毫秒）",
+          "example": "163",
+          "member": "int64",
+          "name": "Duration",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "执行状态",
+          "example": "RUNNING",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "查询ID",
+          "example": "1",
+          "member": "string",
+          "name": "Id",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "扫描分区数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5",
+          "member": "int64",
+          "name": "ScanPartitionNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "扫描总行数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "ScanRowNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "扫描总文件数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12",
+          "member": "int64",
+          "name": "ScanFileNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "查询扫描总数据量(单位B)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "65535",
+          "member": "int64",
+          "name": "ScanTotalData",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "应用ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"application_1711099949065_0343\"]",
+          "member": "string",
+          "name": "ApplicationId",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "输出总行数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "16",
+          "member": "int64",
+          "name": "OutputRowNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "输出总文件数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12",
+          "member": "int64",
+          "name": "OutputFileNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "输出分区数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "13",
+          "member": "int64",
+          "name": "OutputPartitionNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "输出总数据量（单位B）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "65532",
+          "member": "int64",
+          "name": "OutputTotalData",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1712124411",
+          "member": "int64",
+          "name": "BeginTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1712124416",
+          "member": "int64",
+          "name": "EndTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "StageInfoDetail": {
       "document": "任务步骤详情",
       "members": [
@@ -13971,6 +14632,202 @@
       ],
       "usage": "out"
     },
+    "StarRocksQueryInfo": {
+      "document": "StarRocks 查询信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "提交IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "192.168.1.1",
+          "member": "string",
+          "name": "ClientIP",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "CPU总时间(ns)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000000000",
+          "member": "int64",
+          "name": "CPUCost",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "默认DB\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test_db",
+          "member": "string",
+          "name": "DefaultDB",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1634352000",
+          "member": "int64",
+          "name": "EndTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "执行IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "172.0.0.1",
+          "member": "string",
+          "name": "ExecutionIP",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "查询ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "query_12345",
+          "member": "string",
+          "name": "QueryID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "查询类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "SELECT",
+          "member": "string",
+          "name": "QueryType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "消耗总内存(bytes)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1073741824",
+          "member": "int64",
+          "name": "MemCost",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "plan阶段CPU占用(ns)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "500000000",
+          "member": "int64",
+          "name": "PlanCpuCosts",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "plan阶段内存占用(bytes)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "536870912",
+          "member": "int64",
+          "name": "PlanMemCosts",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "执行时长\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2000000",
+          "member": "int64",
+          "name": "QueryTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "group_1",
+          "member": "string",
+          "name": "ResourceGroup",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "获取行数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "int64",
+          "name": "ReturnRows",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "扫描数据量(bytes)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2147483648",
+          "member": "int64",
+          "name": "ScanBytes",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "扫描行数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "500",
+          "member": "int64",
+          "name": "ScanRows",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1634351000",
+          "member": "int64",
+          "name": "BeginTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "执行状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "FINISHED",
+          "member": "string",
+          "name": "ExecutionState",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "执行语句\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "SELECT * FROM test_table",
+          "member": "string",
+          "name": "ExecutionStatement",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "user_1",
+          "member": "string",
+          "name": "User",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "StartStopServiceOrMonitorRequest": {
       "document": "StartStopServiceOrMonitor请求参数结构体",
       "members": [
@@ -14112,6 +14969,45 @@
         }
       ],
       "usage": "in"
+    },
+    "StorageSummaryDistribution": {
+      "document": "HDFS文件存储详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据项\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "big_file",
+          "member": "string",
+          "name": "MetricItem",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据项描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "大文件",
+          "member": "string",
+          "name": "MetricName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "采样值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{}",
+          "member": "Dps",
+          "name": "Dps",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "StrategyConfig": {
       "document": "重启/停止/启动服务/监控的配置",

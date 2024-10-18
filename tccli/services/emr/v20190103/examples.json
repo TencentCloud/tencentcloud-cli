@@ -144,6 +144,14 @@
         "title": "查询Hbase表监控概览信息"
       }
     ],
+    "DescribeHDFSStorageInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeHDFSStorageInfo\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"StartTime\": 0,\n    \"EndTime\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"SampleTime\": 0,\n        \"StorageSummaryDistribution\": [\n            {\n                \"MetricItem\": \"abc\",\n                \"MetricName\": \"abc\",\n                \"Dps\": [\n                    {\n                        \"Timestamp\": \"abc\",\n                        \"Value\": \"abc\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "DescribeHDFSStorageInfo"
+      }
+    ],
     "DescribeHiveQueries": [
       {
         "document": "获取Hive查询语句",
@@ -200,6 +208,14 @@
         "title": "查询任务流程"
       }
     ],
+    "DescribeKyuubiQueryInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeKyuubiQueryInfo\n<公共请求参数>\n\n{\n    \"InstanceId\": \"emr-1qop4l3e\",\n    \"PageSize\": 10,\n    \"Page\": 1,\n    \"StartTime\": 1722327682,\n    \"EndTime\": 1722328091\n}",
+        "output": "{\n    \"Response\": {\n        \"KyuubiQueryInfoList\": [\n            {\n                \"ClientIP\": \"10.0.2.42\",\n                \"Duration\": 5895,\n                \"EndTime\": 1722328097,\n                \"EngineID\": \"null\",\n                \"EngineType\": \"SPARK_SQL\",\n                \"Id\": \"d4cfc064-b7d9-43ec-a766-60013c592dd4\",\n                \"SessionID\": \"1c3cdb57-e0b3-489a-804e-662600a24f1d\",\n                \"BeginTime\": 1722328091,\n                \"ExecutionState\": \"FINISHED\",\n                \"ExecutionStatement\": \"select * from kyuubi_test.kyuubi_new_user_tb order by id ASC\",\n                \"StatementID\": \"d4cfc064-b7d9-43ec-a766-60013c592dd4\",\n                \"User\": \"new_kyuubi_user\"\n            }\n        ],\n        \"RequestId\": \"cfbbbe0f-5d30-4bf7-b87b-428b14ac3ws41\",\n        \"TotalCount\": 10\n    }\n}",
+        "title": "DescribeKyuubiQueryInfo"
+      }
+    ],
     "DescribeResourceSchedule": [
       {
         "document": "",
@@ -238,6 +254,22 @@
         "input": "https://emr.tencentcloudapi.com/?Action=DescribeServiceNodeInfos\n&InstanceId=emr-3qg9lptu\n&ServiceGroupType=1\n&ServiceNodeType=1\n&Offset=0\n&Limit=10\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TotalCnt\": 0,\n        \"ServiceNodeList\": [\n            {\n                \"Ip\": \"abc\",\n                \"NodeType\": 0,\n                \"NodeName\": \"abc\",\n                \"ServiceStatus\": 0,\n                \"MonitorStatus\": 0,\n                \"Status\": 0,\n                \"PortsInfo\": \"abc\",\n                \"LastRestartTime\": \"abc\",\n                \"Flag\": 0,\n                \"ConfGroupId\": 0,\n                \"ConfGroupName\": \"abc\",\n                \"ConfStatus\": 0,\n                \"ServiceDetectionInfo\": [\n                    {\n                        \"DetectAlert\": \"abc\",\n                        \"DetetcFunctionKey\": \"abc\",\n                        \"DetetcFunctionValue\": \"abc\",\n                        \"DetetcTime\": \"abc\",\n                        \"DetectFunctionKey\": \"abc\",\n                        \"DetectFunctionValue\": \"abc\",\n                        \"DetectTime\": \"abc\"\n                    }\n                ],\n                \"NodeFlagFilter\": \"abc\",\n                \"HealthStatus\": {\n                    \"Code\": 0,\n                    \"Text\": \"abc\",\n                    \"Desc\": \"abc\"\n                },\n                \"IsSupportRoleMonitor\": true,\n                \"StopPolicies\": [\n                    {\n                        \"Name\": \"abc\",\n                        \"DisplayName\": \"abc\",\n                        \"Describe\": \"abc\",\n                        \"BatchSizeRange\": [\n                            0\n                        ],\n                        \"IsDefault\": \"abc\"\n                    }\n                ],\n                \"HAState\": \"abc\",\n                \"NameService\": \"abc\",\n                \"IsFederation\": true\n            }\n        ],\n        \"AliasInfo\": \"abc\",\n        \"SupportNodeFlagFilterList\": [\n            \"abc\"\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "查询服务进程信息"
+      }
+    ],
+    "DescribeSparkQueries": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSparkQueries\n<公共请求参数>\n\n{\n    \"InstanceId\": \"emr-njry92zr\",\n    \"StartTime\": 1711078120,\n    \"EndTime\": 1711088221,\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"690f07d6-ac3d-4211-896d-043824aaa0f0\",\n        \"Total\": 1,\n        \"Results\": [\n            {\n                \"Id\": \"2\",\n                \"Status\": \"COMPLETED\",\n                \"BeginTime\": 1711078220,\n                \"ScanTotalData\": 0,\n                \"ApplicationId\": [\n                    \"application_1710488265927_0018\"\n                ],\n                \"ScanRowNum\": 1,\n                \"ScanFileNum\": 1,\n                \"EndTime\": 1711078223,\n                \"ScanPartitionNum\": 1,\n                \"Statement\": \"select * from hive_table_p2 where dt='20240321.3'\",\n                \"Duration\": 2924\n            }\n        ]\n    }\n}",
+        "title": "查询spark查询信息"
+      }
+    ],
+    "DescribeStarRocksQueryInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStarrocksQueryInfo\n<公共请求参数>\n\n{\n    \"InstanceId\": \"emr-1qop4l3e\",\n    \"PageSize\": 10,\n    \"Page\": 1,\n    \"StartTime\": 1722327682,\n    \"EndTime\": 1722328091\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"StarRocksQueryInfoList\": [\n            {\n                \"ClientIP\": \"192.0.0.1\",\n                \"CPUCost\": 0,\n                \"DefaultDB\": \"test\",\n                \"EndTime\": 1721962352,\n                \"ExecutionIP\": \"192.0.0.1\",\n                \"QueryID\": \"1ac25f6c-4afa-11ef-b7cc-525400c756d2\",\n                \"QueryType\": \"OTHERS\",\n                \"MemCost\": 324,\n                \"PlanCpuCosts\": 435620,\n                \"PlanMemCosts\": 254354,\n                \"QueryTime\": 345535,\n                \"ResourceGroup\": \"SR\",\n                \"ReturnRows\": 2452,\n                \"ScanBytes\": 1235124,\n                \"ScanRows\": 123512,\n                \"BeginTime\": 1721962352,\n                \"ExecutionState\": \"FINISHED\",\n                \"ExecutionStatement\": \"show compute nodes\",\n                \"User\": \"test_aa\"\n            }\n        ],\n        \"RequestId\": \"1ac25f6c-4afa-11ef-b7cc-525400454wfaa1\"\n    }\n}",
+        "title": "DescribeStarRocksQueryInfo"
       }
     ],
     "DescribeTrinoQueryInfo": [

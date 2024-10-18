@@ -78,7 +78,7 @@
       "status": "online"
     },
     "AssignPrivateIpAddresses": {
-      "document": "本接口（AssignPrivateIpAddresses）用于弹性网卡申请内网 IP。\n* 一个弹性网卡支持绑定的IP地址是有限制的，更多资源限制信息详见<a href=\"/document/product/576/18527\">弹性网卡使用限制</a>。\n* 可以指定内网IP地址申请，内网IP地址类型不能为主IP，主IP已存在，不能修改，内网IP必须要弹性网卡所在子网内，而且不能被占用。\n* 在弹性网卡上申请一个到多个辅助内网IP，接口会在弹性网卡所在子网网段内返回指定数量的辅助内网IP。\n>?本接口为异步接口，可调用 [DescribeVpcTaskResult](https://cloud.tencent.com/document/api/215/59037) 接口查询任务执行结果，待任务执行成功后再进行其他操作。\n>",
+      "document": "本接口（AssignPrivateIpAddresses）用于弹性网卡申请内网 IP。\n* 一个弹性网卡支持绑定的IP地址是有限制的，更多资源限制信息详见<a href=\"/document/product/576/18527\">弹性网卡使用限制</a>。\n* 可以指定内网IP地址申请，内网IP地址类型不能为主IP，主IP已存在，不能修改，内网IP必须要在弹性网卡所在子网内，而且不能被占用。\n* 在弹性网卡上申请一个到多个辅助内网IP，接口会在弹性网卡所在子网网段内返回指定数量的辅助内网IP。\n>?本接口为异步接口，可调用 [DescribeVpcTaskResult](https://cloud.tencent.com/document/api/215/59037) 接口查询任务执行结果，待任务执行成功后再进行其他操作。\n>",
       "input": "AssignPrivateIpAddressesRequest",
       "name": "弹性网卡申请内网 IP",
       "output": "AssignPrivateIpAddressesResponse",
@@ -2563,7 +2563,7 @@
       "status": "online"
     },
     "UnassignPrivateIpAddresses": {
-      "document": "本接口（UnassignPrivateIpAddresses）用于弹性网卡退还内网 IP。\n* 退还弹性网卡上的辅助内网IP，接口自动解关联弹性公网 IP。不能退还弹性网卡的主内网IP。\n\n本接口是异步完成，如需查询异步任务执行结果，请使用本接口返回的`RequestId`轮询`DescribeVpcTaskResult`接口。",
+      "document": "本接口（UnassignPrivateIpAddresses）用于弹性网卡退还内网 IP。\n* 退还弹性网卡上的辅助内网IP，接口自动解除关联弹性公网 IP。不能退还弹性网卡的主内网IP。\n\n本接口是异步完成，如需查询异步任务执行结果，请使用本接口返回的`RequestId`轮询`DescribeVpcTaskResult`接口。",
       "input": "UnassignPrivateIpAddressesRequest",
       "name": "弹性网卡退还内网 IP",
       "output": "UnassignPrivateIpAddressesResponse",
@@ -8049,7 +8049,7 @@
         },
         {
           "disabled": false,
-          "document": "NAT网关最大外网出带宽(单位:Mbps)，支持的参数值：`20, 50, 100, 200, 500, 1000, 2000, 5000`，默认: `100Mbps`。",
+          "document": "NAT网关最大外网出带宽(单位：Mbps)，支持的参数值：20, 50, 100, 200, 500, 1000, 2000, 5000，默认: 100Mbps。  当以下NatProductVersion参数值为2即标准型时，此参数无需填写，默认为5000Mbps。",
           "example": "10",
           "member": "uint64",
           "name": "InternetMaxBandwidthOut",
@@ -8058,7 +8058,7 @@
         },
         {
           "disabled": false,
-          "document": "NAT网关并发连接上限，支持参数值：`1000000、3000000、10000000`，默认值为`100000`。",
+          "document": "NAT网关并发连接数上限，支持参数值：1000000、3000000、10000000，默认值为100000。  当以下NatProductVersion参数值为2即标准型时，此参数无需填写，默认为2000000。",
           "example": "1000000",
           "member": "uint64",
           "name": "MaxConcurrentConnection",
@@ -8067,7 +8067,7 @@
         },
         {
           "disabled": false,
-          "document": "需要申请的弹性IP个数，系统会按您的要求生产N个弹性IP，其中AddressCount和PublicAddresses至少传递一个。",
+          "document": "新建弹性公网IP个数，系统会按您的要求创建对应数量的弹性公网IP，其中AddressCount和PublicAddresses两个参数至少填写一个。",
           "example": "1",
           "member": "uint64",
           "name": "AddressCount",
@@ -8076,8 +8076,8 @@
         },
         {
           "disabled": false,
-          "document": "绑定NAT网关的弹性IP数组，其中AddressCount和PublicAddresses至少传递一个。",
-          "example": "[\"139.199.232.119\\n\"]",
+          "document": "绑定NAT网关的已有弹性公网IP数组，其中AddressCount和PublicAddresses两个参数至少填写一个。 示例值：[\"139.199.232.119\"]",
+          "example": "[\"139.199.232.119\"]",
           "member": "string",
           "name": "PublicIpAddresses",
           "required": false,
@@ -8102,9 +8102,9 @@
           "type": "list"
         },
         {
-          "disabled": false,
-          "document": "NAT网关所属子网",
-          "example": "1215354",
+          "disabled": true,
+          "document": "NAT网关所属子网，已废弃",
+          "example": "subnet-xxxxxxxx",
           "member": "string",
           "name": "SubnetId",
           "required": false,
@@ -8112,7 +8112,7 @@
         },
         {
           "disabled": false,
-          "document": "绑定NAT网关的弹性IP带宽大小（单位Mbps），默认为当前用户类型所能使用的最大值。",
+          "document": "绑定NAT网关的弹性公网IP带宽值（单位：Mbps）。不填写此参数时：则该参数默认为弹性公网IP的带宽值，部分用户默认为该用户类型的弹性公网IP的带宽上限。",
           "example": "77",
           "member": "uint64",
           "name": "StockPublicIpAddressesBandwidthOut",
@@ -8139,7 +8139,7 @@
         },
         {
           "disabled": false,
-          "document": "NAT网关大版本号，1是传统型，2是标准型，默认是1",
+          "document": "NAT网关类型，1表示传统型NAT网关，2表示标准型NAT网关，默认值是1。",
           "example": "1",
           "member": "uint64",
           "name": "NatProductVersion",
@@ -16102,7 +16102,7 @@
         {
           "disabled": false,
           "document": "要查询的CVM实例ID或弹性网卡ID。",
-          "example": "-",
+          "example": "ins-4lsnc7dz",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -16120,6 +16120,7 @@
           "example": "32",
           "member": "int64",
           "name": "EniQuantity",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -16129,6 +16130,7 @@
           "example": "20",
           "member": "int64",
           "name": "EniPrivateIpAddressQuantity",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -16138,6 +16140,7 @@
           "example": "400",
           "member": "int64",
           "name": "ExtendEniQuantity",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -16147,6 +16150,7 @@
           "example": "20",
           "member": "int64",
           "name": "ExtendEniPrivateIpAddressQuantity",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -16156,6 +16160,7 @@
           "example": "20",
           "member": "int64",
           "name": "SubEniQuantity",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -16165,6 +16170,7 @@
           "example": "10",
           "member": "int64",
           "name": "SubEniPrivateIpAddressQuantity",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -19474,9 +19480,10 @@
         {
           "disabled": false,
           "document": "网络协议，可选值：`TCP`、`UDP`。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "IpProtocol",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -19484,9 +19491,10 @@
         {
           "disabled": false,
           "document": "弹性IP。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "PublicIpAddress",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -19494,9 +19502,10 @@
         {
           "disabled": false,
           "document": "公网端口。",
-          "example": "",
+          "example": "无",
           "member": "uint64",
           "name": "PublicPort",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -19504,9 +19513,10 @@
         {
           "disabled": false,
           "document": "内网地址。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "PrivateIpAddress",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -19514,9 +19524,10 @@
         {
           "disabled": false,
           "document": "内网端口。",
-          "example": "",
+          "example": "无",
           "member": "uint64",
           "name": "PrivatePort",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -19524,15 +19535,16 @@
         {
           "disabled": false,
           "document": "NAT网关转发规则描述。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "DestinationIpPortTranslationNatRuleDiff": {
       "document": "本端目的IP端口转换复杂结构",
@@ -19737,7 +19749,7 @@
         {
           "disabled": false,
           "document": "CVM实例ID。形如：ins-r8hr2upy。",
-          "example": "ins-ins-r8hr2upy",
+          "example": "ins-r8hr2upy",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -23796,7 +23808,7 @@
         {
           "disabled": false,
           "document": "弹性网卡实例ID，例如：eni-m6dyj72l。",
-          "example": "--",
+          "example": "eni-m6dyj72l",
           "member": "string",
           "name": "NetworkInterfaceId",
           "required": true,
@@ -23805,7 +23817,7 @@
         {
           "disabled": false,
           "document": "弹性网卡当前绑定的CVM实例ID。形如：ins-r8hr2upy。",
-          "example": "--",
+          "example": "ins-r8hr2upy",
           "member": "string",
           "name": "SourceInstanceId",
           "required": true,
@@ -23814,7 +23826,7 @@
         {
           "disabled": false,
           "document": "待迁移的目的CVM实例ID。",
-          "example": "--",
+          "example": "ins-7qs3ou6z",
           "member": "string",
           "name": "DestinationInstanceId",
           "required": true,
@@ -27144,7 +27156,7 @@
         },
         {
           "disabled": false,
-          "document": "NAT网关大版本号，传统型=1，标准型=2\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "NAT网关类型，1表示传统型NAT网关，2表示标准型NAT网关\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
           "name": "NatProductVersion",
@@ -28141,46 +28153,50 @@
       "members": [
         {
           "disabled": false,
-          "document": "云主机实例ID。",
-          "example": "",
-          "member": "string",
-          "name": "InstanceId",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
           "document": "网卡在云主机实例内的序号。",
-          "example": "",
+          "example": "无",
           "member": "uint64",
           "name": "DeviceIndex",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "云主机所有者账户信息。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "InstanceAccountId",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "绑定时间。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "AttachTime",
-          "required": true,
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云主机实例ID。",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "NotifyRoutesRequest": {
       "document": "NotifyRoutes请求参数结构体",

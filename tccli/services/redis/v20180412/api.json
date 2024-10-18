@@ -526,9 +526,9 @@
       "status": "online"
     },
     "ModfiyInstancePassword": {
-      "document": "本接口（ModfiyInstancePassword）用于修改实例访问密码。",
+      "document": "本接口（ModfiyInstancePassword）用于修改实例访问密码。鉴于该接口名存在拼写错误，现已更正为（[ModifyInstancePassword](https://cloud.tencent.com/document/product/239/111555)）接口，推荐使用更正后的接口。",
       "input": "ModfiyInstancePasswordRequest",
-      "name": "修改Redis密码（请使用最新的ModifyInstancePassword接口）",
+      "name": "修改实例访问密码",
       "output": "ModfiyInstancePasswordResponse",
       "status": "online"
     },

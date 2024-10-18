@@ -8,9 +8,6 @@ Input:
 
 ```
 tccli ess DescribeFlowTemplates --cli-unfold-argument  \
-    --Operator.Channel YUFU \
-    --Operator.ClientIp 8.8.8.8 \
-    --Operator.OpenId  \
     --Operator.UserId yDxVwUyKQWho8CUuO4zjEyQOAgwvr4Zy \
     --Offset 0 \
     --Limit 20 \
@@ -255,9 +252,6 @@ Input:
 
 ```
 tccli ess DescribeFlowTemplates --cli-unfold-argument  \
-    --Operator.Channel YUFU \
-    --Operator.ClientIp 8.8.8.8 \
-    --Operator.OpenId  \
     --Operator.UserId yDxVwUyKQWho8CUuO4zjEyQOAgwvr4Zy \
     --Offset 0 \
     --Limit 20 \

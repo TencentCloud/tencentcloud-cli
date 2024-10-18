@@ -6225,7 +6225,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开通自动签，该功能需联系运营工作人员开通后使用",
+          "document": "此字段已废弃，请勿继续使用。",
           "example": "无",
           "member": "bool",
           "name": "EnableAutoSign",
@@ -12165,7 +12165,7 @@
         },
         {
           "disabled": false,
-          "document": "链接跳转类型，支持以下类型\n<ul>\n<li>WEIXINAPP : 短链直接跳转到电子签小程序  (默认值)</li>\n<li>APP : 第三方APP或小程序跳转电子签小程序</li>\n</ul>",
+          "document": "链接跳转类型，支持以下类型\n<ul>\n<li>WEIXINAPP : 短链直接跳转到电子签小程序  (默认值)</li>\n<li>APP : 第三方APP或小程序跳转电子签小程序</li>\n<li>WEIXIN_QRCODE_URL：直接跳转至电子签小程序的二维码链接，无需通过中转页。<font color=\"red\">您需要自行将其转换为二维码，使用微信扫码后可直接进入。请注意，直接点击链接是无效的。</font></li>\n</ul>",
           "example": "APP",
           "member": "string",
           "name": "Endpoint",

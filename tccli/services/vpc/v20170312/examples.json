@@ -194,7 +194,7 @@
     ],
     "AssociateNetworkInterfaceSecurityGroups": [
       {
-        "document": "弹性网关关联安全组",
+        "document": "将指定网卡和指定安全组进行关联",
         "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AssociateNetworkInterfaceSecurityGroups\n<公共请求参数>\n\n{\n    \"NetworkInterfaceIds\": [\n        \"eni-1a2b3c4d\"\n    ],\n    \"SecurityGroupIds\": [\n        \"sg-1a2b3c4d\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"f23d1450-ed00-4442-98d4-be409e625e6c\"\n    }\n}",
         "title": "弹性网关关联安全组"

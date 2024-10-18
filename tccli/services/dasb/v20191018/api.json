@@ -3559,21 +3559,30 @@
       "members": [
         {
           "disabled": false,
-          "document": "资产组ID",
-          "example": "1",
-          "member": "uint64",
-          "name": "Id",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
           "document": "true - 查询已在该资产组的资产，false - 查询未在该资产组的资产",
           "example": "true",
           "member": "bool",
           "name": "Bound",
           "required": true,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "资产组ID，Id和IdSet二选一",
+          "example": "1",
+          "member": "uint64",
+          "name": "Id",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "资产组ID集合，传Id，IdSet不生效。",
+          "example": "[1,2,3]",
+          "member": "uint64",
+          "name": "IdSet",
+          "required": false,
+          "type": "list"
         },
         {
           "disabled": false,
@@ -3641,7 +3650,7 @@
           "example": "10",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3651,7 +3660,7 @@
           "example": "[]",
           "member": "Device",
           "name": "DeviceSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

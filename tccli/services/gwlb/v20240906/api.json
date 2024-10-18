@@ -38,7 +38,7 @@
     "DeregisterTargetGroupInstances": {
       "document": "从目标组中解绑服务器。\n本接口为异步接口，本接口返回成功后需以返回的 RequestID 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。",
       "input": "DeregisterTargetGroupInstancesRequest",
-      "name": "解绑目标组服务器",
+      "name": "解绑目标组中的实例",
       "output": "DeregisterTargetGroupInstancesResponse",
       "status": "online"
     },
@@ -59,7 +59,7 @@
     "DescribeTargetGroupInstances": {
       "document": "获取目标组绑定的服务器信息。",
       "input": "DescribeTargetGroupInstancesRequest",
-      "name": "获取目标组绑定的服务器",
+      "name": "获取目标组绑定的实例列表",
       "output": "DescribeTargetGroupInstancesResponse",
       "status": "online"
     },
@@ -122,7 +122,7 @@
     "RegisterTargetGroupInstances": {
       "document": "注册服务器到目标组。\n本接口为异步接口，本接口返回成功后需以返回的 RequestID 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。",
       "input": "RegisterTargetGroupInstancesRequest",
-      "name": "注册服务器到目标组",
+      "name": "目标组中添加实例",
       "output": "RegisterTargetGroupInstancesResponse",
       "status": "online"
     }
@@ -166,7 +166,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "关联到的负载均衡ID",
+          "document": "关联到的网关负载均衡实例ID",
           "example": "无",
           "member": "string",
           "name": "LoadBalancerId",
@@ -176,7 +176,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡名称",
+          "document": "网关负载均衡实例名称",
           "example": "无",
           "member": "string",
           "name": "LoadBalancerName",
@@ -210,7 +210,7 @@
         },
         {
           "disabled": false,
-          "document": "网关负载均衡实例名称。可支持输入1-60个字符，允许英文字母、数字、中文字符、“-”、“_”、“.”。不填写时默认自动生成。",
+          "document": "网关负载均衡实例名称。可支持输入1-60个字符。不填写时默认自动生成。",
           "example": "gwlb-xxx",
           "member": "string",
           "name": "LoadBalancerName",
@@ -284,7 +284,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "目标组名称，限定50个字符",
+          "document": "目标组名称，限定60个字符。",
           "example": "test-name",
           "member": "string",
           "name": "TargetGroupName",
@@ -302,7 +302,7 @@
         },
         {
           "disabled": false,
-          "document": "目标组的默认端口， 后续添加服务器时可使用该默认端口。Port和TargetGroupInstances.N中的port二者必填其一。\n",
+          "document": "目标组的默认端口， 后续添加服务器时可使用该默认端口。Port和TargetGroupInstances.N中的port二者必填其一。",
           "example": "80",
           "member": "uint64",
           "name": "Port",
@@ -320,7 +320,7 @@
         },
         {
           "disabled": false,
-          "document": "网关负载均衡目标组协议。\n- AWS_GENEVE：GENEVE 兼容协议 \n- TENCENT_GENEVE ：GENEVE 标准协议",
+          "document": "网关负载均衡目标组协议。\n- TENCENT_GENEVE ：GENEVE 标准协议\n- AWS_GENEVE：GENEVE 兼容协议（需要提交工单申请开白）",
           "example": "GENEVE",
           "member": "string",
           "name": "Protocol",
@@ -329,8 +329,8 @@
         },
         {
           "disabled": false,
-          "document": "健康检查。",
-          "example": "true",
+          "document": "健康检查设置。",
+          "example": "无",
           "member": "TargetGroupHealthCheck",
           "name": "HealthCheck",
           "required": false,
@@ -338,7 +338,7 @@
         },
         {
           "disabled": false,
-          "document": "RS调度算法。\n- IP_HASH_3_ELASTIC：弹性哈希",
+          "document": "均衡算法。\n- IP_HASH_3_ELASTIC：弹性哈希",
           "example": "IP_HASH_3_ELASTIC",
           "member": "string",
           "name": "ScheduleAlgorithm",
@@ -411,8 +411,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "目标组列表。",
-          "example": "[\"lbtg-f1phe5j6\\r\\n\"]",
+          "document": "目标组ID列表。",
+          "example": "[\"lbtg-f1phe5j6\"]",
           "member": "string",
           "name": "TargetGroupIds",
           "required": true,
@@ -1025,7 +1025,7 @@
         {
           "disabled": false,
           "document": "创建时间。",
-          "example": "2022-12-14 20:30:48",
+          "example": "2024-10-15 20:30:48",
           "member": "string",
           "name": "CreateTime",
           "output_required": true,
@@ -1182,7 +1182,7 @@
         },
         {
           "disabled": false,
-          "document": "网关负载均衡名称。",
+          "document": "网关负载均衡实例名称。可支持输入1-60个字符。",
           "example": "newname",
           "member": "string",
           "name": "LoadBalancerName",
@@ -1272,7 +1272,7 @@
         },
         {
           "disabled": false,
-          "document": "待修改权重的服务器数组。",
+          "document": "实例绑定配置数组。",
           "example": "无",
           "member": "TargetGroupInstance",
           "name": "TargetGroupInstances",
@@ -1309,7 +1309,7 @@
         },
         {
           "disabled": false,
-          "document": "描述了实例价格。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "描述了GLCU的价格。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ItemPrice",
           "name": "LcuPrice",
@@ -1389,7 +1389,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "负载均衡ID。",
+          "document": "网关负载均衡实例ID。",
           "example": "gwlb-20dhh498",
           "member": "string",
           "name": "LoadBalancerId",
@@ -1540,7 +1540,7 @@
         },
         {
           "disabled": false,
-          "document": "健康检查使用的协议。支持icmp和tcp，默认为icmp。",
+          "document": "健康检查使用的协议。支持ping和tcp，默认为ping。\n\n- PING: icmp\n- TCP: tcp",
           "example": "icmp",
           "member": "string",
           "name": "Protocol",
@@ -1653,7 +1653,7 @@
         {
           "disabled": false,
           "document": "目标组的创建时间",
-          "example": "2022-03-23T10:37:16+08:00",
+          "example": "2024-10-15T10:37:16+08:00",
           "member": "datetime_iso",
           "name": "CreatedTime",
           "output_required": true,
@@ -1663,7 +1663,7 @@
         {
           "disabled": false,
           "document": "目标组的修改时间",
-          "example": "2022-03-23T10:37:16+08:00",
+          "example": "2024-10-15T10:37:16+08:00",
           "member": "datetime_iso",
           "name": "UpdatedTime",
           "output_required": true,
@@ -1692,7 +1692,7 @@
         },
         {
           "disabled": false,
-          "document": "调度算法。\nip_hash_3：3元组对称弹性Hash\nip_hash_3_consistent：3元组对称一致性Hash\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "调度算法。\nip_hash_3：弹性哈希\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ip_hash_3",
           "member": "string",
           "name": "ScheduleAlgorithm",

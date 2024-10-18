@@ -1656,8 +1656,8 @@
         },
         {
           "disabled": false,
-          "document": "发送短信返回的流水号。",
-          "example": "5000:1045710669157053657849499619",
+          "document": "发送短信返回的流水号。对应SendSms接口返回的SendStatusSet参数中的SerialNo字段。 ",
+          "example": "a12gb4e2-sd11-5dx6-aav9-8f3d97xa2xu7",
           "member": "string",
           "name": "SerialNo",
           "required": true,
@@ -1681,7 +1681,7 @@
         {
           "disabled": false,
           "document": "转化率上报响应包体。",
-          "example": "{\"Code\":\"ok\", \"Message\":\"report success\"}",
+          "example": "{\"Code\":\"OK\", \"Message\":\"success\"}",
           "member": "ReportConversionStatus",
           "name": "ReportConversionStatus",
           "output_required": true,
