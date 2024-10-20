@@ -4602,7 +4602,7 @@
         },
         {
           "disabled": false,
-          "document": "默认是10条",
+          "document": "默认10条，最大上限为100条",
           "example": "10",
           "member": "uint64",
           "name": "Limit",
@@ -6093,7 +6093,7 @@
           "type": "list"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "rtc人数。",
           "example": "1",
           "member": "uint64",
@@ -6333,7 +6333,7 @@
         },
         {
           "disabled": false,
-          "document": "最大允许连麦人数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最大允许连麦人数。已废弃，使用字段 MaxMicNumber\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "16",
           "member": "uint64",
           "name": "MaxRTCMember",
@@ -6363,7 +6363,7 @@
         },
         {
           "disabled": false,
-          "document": "最高房间内人数（不包括老师），0表示不限制，默认为0\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "课堂同时最大可与老师进行连麦互动的人数，该参数支持正式上课/开播前调用修改房间修改。小班课取值范围[0,16]，大班课取值范围[0,1]，当取值为0时表示当前课堂/直播，不支持连麦互动。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "16",
           "member": "uint64",
           "name": "MaxMicNumber",

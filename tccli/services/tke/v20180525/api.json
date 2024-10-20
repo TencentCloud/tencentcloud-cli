@@ -8505,7 +8505,17 @@
     },
     "DescribeBatchModifyTagsStatusRequest": {
       "document": "DescribeBatchModifyTagsStatus请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群id",
+          "example": "cls-3dwe3twqe",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "DescribeBatchModifyTagsStatusResponse": {

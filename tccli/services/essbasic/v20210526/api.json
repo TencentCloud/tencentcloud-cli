@@ -7506,7 +7506,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "签署参与者签署H5链接信息数组",
+          "document": "生成的签署参与者的签署链接信息数组。",
           "example": "无",
           "member": "SignUrlInfo",
           "name": "SignUrlInfos",

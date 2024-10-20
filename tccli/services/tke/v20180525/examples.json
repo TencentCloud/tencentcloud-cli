@@ -623,7 +623,7 @@
     "DescribeBatchModifyTagsStatus": [
       {
         "document": "查询批量修改标签状态",
-        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBatchModifyTagsStatus\n<公共请求参数>\n\n{}",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBatchModifyTagsStatus\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-j3w5ehty\"\n}",
         "output": "{\n    \"Response\": {\n        \"FailedResources\": [\n            {\n                \"Resource\": \"qcs::ccs:ap-guangzhou:uin/3356535506:cluster/cls-q505raey\",\n                \"Error\": \"err\"\n            }\n        ],\n        \"Status\": \"failed\",\n        \"SyncSubresource\": true,\n        \"Tags\": [\n            {\n                \"Key\": \"abc\",\n                \"Value\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"33483fde-efec-4d3c-8ff6-340d9dbc2d01\"\n    }\n}",
         "title": "查询批量修改标签状态"
       }

@@ -1030,7 +1030,7 @@
       "status": "online"
     },
     "UpgradeProxy": {
-      "document": "升级数据库代理配置",
+      "document": "本接口（UpgradeProxy）用于升级数据库代理配置。",
       "input": "UpgradeProxyRequest",
       "name": "升级数据库代理配置",
       "output": "UpgradeProxyResponse",

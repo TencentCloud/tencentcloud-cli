@@ -1476,7 +1476,7 @@
         },
         {
           "disabled": false,
-          "document": "LLM类型",
+          "document": "LLM类型\n目前有两种\nopenai(兼容openai协议的模型)\nazure",
           "example": "openai",
           "member": "string",
           "name": "LLMType",
@@ -1503,7 +1503,7 @@
         },
         {
           "disabled": false,
-          "document": "API URL，仅支持兼容openai协议的模型，填写url时后缀不要带/chat/completions",
+          "document": "API URL，仅支持兼容openai协议的模型，填写url时后缀不要带/chat/completions；\nllmType为azure时,URL填写格式需为：https://{your-resource-name}.openai.azure.com?api-version={api-version},填写url时后缀不要带/openai/deployments/{deployment-id}/chat/completions，系统会自动帮你填充后缀",
           "example": "http://xxx.com/openapi/v1",
           "member": "string",
           "name": "APIUrl",

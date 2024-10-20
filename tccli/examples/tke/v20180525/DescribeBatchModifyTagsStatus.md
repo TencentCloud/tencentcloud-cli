@@ -5,7 +5,9 @@
 Input: 
 
 ```
-tccli tke DescribeBatchModifyTagsStatus --cli-unfold-argument ```
+tccli tke DescribeBatchModifyTagsStatus --cli-unfold-argument  \
+    --ClusterId cls-j3w5ehty
+```
 
 Output: 
 ```
