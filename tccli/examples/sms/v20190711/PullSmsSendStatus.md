@@ -19,9 +19,9 @@ Output:
                 "UserReceiveTime": "2019-10-08 17:18:37",
                 "UserReceiveUnixTime": 1570526317,
                 "NationCode": "86",
-                "PurePhoneNumber": "+8615291996666",
-                "PhoneNumber": "15291996666",
-                "SerialNo": "14:19325917feb3914eb78b50d6182d7e452e",
+                "PurePhoneNumber": "+8618501234444",
+                "PhoneNumber": "18501234444",
+                "SerialNo": "5000:1045710669157053657849499619",
                 "ReportStatus": "SUCCESS",
                 "Description": "DELIVRD"
             },
@@ -29,9 +29,9 @@ Output:
                 "UserReceiveTime": "2019-10-08 17:18:37",
                 "UserReceiveUnixTime": 1570526317,
                 "NationCode": "86",
-                "PurePhoneNumber": "+8615291997777",
-                "PhoneNumber": "15291997777",
-                "SerialNo": "14:19325917feb3914eb78b50d6182d7e552f",
+                "PurePhoneNumber": "+8618501234445",
+                "PhoneNumber": "18501234445",
+                "SerialNo": "5000:1045710669157053657849499718",
                 "ReportStatus": "SUCCESS",
                 "Description": "DELIVRD"
             }

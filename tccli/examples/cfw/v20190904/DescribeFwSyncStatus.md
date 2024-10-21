@@ -1,20 +1,20 @@
-**Example 1: 获取防火墙同步状态**
+**Example 1: 获取防火墙路由同步状态**
 
-获取防火墙同步状态，一般在执行同步操作后查询
+获取防火墙路由同步状态
 
 Input: 
 
 ```
 tccli cfw DescribeFwSyncStatus --cli-unfold-argument  \
-    --SyncType abc
+    --SyncType Route
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "SyncStatus": 0,
-        "RequestId": "abc"
+        "RequestId": "00075104-8d9e-4b29-a0b1-b0609a4ce726",
+        "SyncStatus": 0
     }
 }
 ```

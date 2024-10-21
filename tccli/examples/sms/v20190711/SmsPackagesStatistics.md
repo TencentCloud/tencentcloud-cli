@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli sms SmsPackagesStatistics --cli-unfold-argument  \
-    --SmsSdkAppid 1400006879 \
+    --SmsSdkAppid 1400006666 \
     --Limit 2 \
     --Offset 0
 ```

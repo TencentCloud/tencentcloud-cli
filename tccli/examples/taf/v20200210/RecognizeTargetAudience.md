@@ -9,7 +9,11 @@ tccli taf RecognizeTargetAudience --cli-unfold-argument  \
     --BspData.Uid XXXXXXXXXXXXXXX \
     --BspData.AccountType 256 \
     --BspData.ModelIdList 5260 \
-    --BspData.IsAuthorized 1
+    --BspData.IsAuthorized 1 \
+    --BusinessEncryptData.EncryptMethod 0 \
+    --BusinessEncryptData.EncryptData xxxxxxxxx \
+    --BusinessEncryptData.EncryptMode 0 \
+    --BusinessEncryptData.PaddingType 1
 ```
 
 Output: 

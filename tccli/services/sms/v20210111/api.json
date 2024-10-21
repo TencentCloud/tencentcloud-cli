@@ -36,7 +36,7 @@
       "status": "online"
     },
     "DescribePhoneNumberInfo": {
-      "document": "本接口 (DescribePhoneNumberInfo) 用于提供电话号码的信息查询，包括国家（或地区）码、规范的 E.164 格式号码等。\n- 例如：查询号码 +86018845720123，可以得到国家码 86、规范的 E.164 号码 +8618845720123 等信息。",
+      "document": "本接口 (DescribePhoneNumberInfo) 用于提供电话号码的信息查询，包括国家（或地区）码、规范的 E.164 格式号码等。\n- 例如：查询号码 +86018501234444，可以得到国家码 86、规范的 E.164 号码 +8618501234444 等信息。",
       "input": "DescribePhoneNumberInfoRequest",
       "name": "号码信息查询",
       "output": "DescribePhoneNumberInfoResponse",
@@ -459,7 +459,7 @@
         {
           "disabled": false,
           "document": "短信 SdkAppId 在 [短信控制台](https://console.cloud.tencent.com/smsv2/app-manage)  添加应用后生成的实际 SdkAppId，示例如1400006666。",
-          "example": "1400006874",
+          "example": "1400006666",
           "member": "string",
           "name": "SmsSdkAppId",
           "required": true,
@@ -513,25 +513,25 @@
       "members": [
         {
           "disabled": false,
-          "document": "删除状态信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "删除状态信息。",
           "example": "return successfully!",
           "member": "string",
           "name": "DeleteStatus",
           "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "删除时间，UNIX 时间戳（单位：秒）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "删除时间，UNIX 时间戳（单位：秒）。",
           "example": "1578988506",
           "member": "uint64",
           "name": "DeleteTime",
           "output_required": false,
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -641,8 +641,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "查询手机号码，采用 E.164 标准，格式为+[国家或地区码][手机号]，单次请求最多支持200个手机号。\n例如：+8613711112222， 其中前面有一个+号 ，86为国家码，13711112222为手机号。",
-          "example": "[\"+8618843210001\"]",
+          "document": "查询手机号码，采用 E.164 标准，格式为+[国家或地区码][手机号]，单次请求最多支持200个手机号。\n例如：+8618501234444， 其中前面有一个+号 ，86为国家码，18501234444为手机号。",
+          "example": "[\"+8618501234444\"]",
           "member": "string",
           "name": "PhoneNumberSet",
           "required": true,
@@ -657,7 +657,7 @@
         {
           "disabled": false,
           "document": "获取号码信息。",
-          "example": "[{\"SubscriberNumber\":\"18511122266\", \"Message\":\"Describe success\", \"Code\":\"Ok\", \"PhoneNumber\":\"+8618511122266\", \"IsoCode\":\"CN\", \"IsoName\":\"China\", \"NationCode\":\"86\"}]",
+          "example": "[{\"SubscriberNumber\":\"18501234444\", \"Message\":\"Describe success\", \"Code\":\"Ok\", \"PhoneNumber\":\"+8618501234444\", \"IsoCode\":\"CN\", \"IsoName\":\"China\", \"NationCode\":\"86\"}]",
           "member": "PhoneNumberInfo",
           "name": "PhoneNumberInfoSet",
           "output_required": true,
@@ -1157,7 +1157,7 @@
           "example": "Ok",
           "member": "string",
           "name": "Code",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1167,7 +1167,7 @@
           "example": "Describe success",
           "member": "string",
           "name": "Message",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1177,27 +1177,27 @@
           "example": "86",
           "member": "string",
           "name": "NationCode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "用户号码，去除国家或地区码前缀的普通格式，示例如：13711112222。",
-          "example": "13711112222",
+          "document": "用户号码，去除国家或地区码前缀的普通格式，示例如：18501234444。",
+          "example": "18501234444",
           "member": "string",
           "name": "SubscriberNumber",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "解析后的规范的 E.164 号码，与下发短信的号码解析结果一致。解析失败时会原样返回。",
-          "example": "+8613711112222",
+          "example": "+8618501234444",
           "member": "string",
           "name": "PhoneNumber",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1207,7 +1207,7 @@
           "example": "CN",
           "member": "string",
           "name": "IsoCode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1217,7 +1217,7 @@
           "example": "China",
           "member": "string",
           "name": "IsoName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -1233,7 +1233,7 @@
           "example": "11",
           "member": "string",
           "name": "ExtendCode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1243,17 +1243,17 @@
           "example": "86",
           "member": "string",
           "name": "CountryCode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "手机号码，E.164标准，+[国家或地区码][手机号] ，示例如：+8613711112222， 其中前面有一个+号 ，86为国家码，13711112222为手机号。",
-          "example": "+8613711112222",
+          "document": "手机号码，E.164标准，+[国家或地区码][手机号] ，示例如：+8618501234444， 其中前面有一个+号 ，86为国家码，18501234444为手机号。",
+          "example": "+8618501234444",
           "member": "string",
           "name": "PhoneNumber",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1263,17 +1263,17 @@
           "example": "腾讯云",
           "member": "string",
           "name": "SignName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "用户回复的内容。",
-          "example": "test",
+          "example": "2",
           "member": "string",
           "name": "ReplyContent",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1283,17 +1283,17 @@
           "example": "1620734188",
           "member": "uint64",
           "name": "ReplyTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "用户号码，普通格式，示例如：13711112222。",
-          "example": "13711112222",
+          "document": "用户号码，普通格式，示例如：18501234444。",
+          "example": "18501234444",
           "member": "string",
           "name": "SubscriberNumber",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -1332,8 +1332,8 @@
         },
         {
           "disabled": false,
-          "document": "下发目的手机号码，依据 E.164 标准为：+[国家（或地区）码][手机号] ，示例如：+8613711112222， 其中前面有一个+号 ，86为国家码，13711112222为手机号。",
-          "example": "+8615291996666",
+          "document": "下发目的手机号码，依据 E.164 标准为：+[国家（或地区）码][手机号] ，示例如：+8618501234444， 其中前面有一个+号 ，86为国家码，18501234444为手机号。",
+          "example": "+8618501234444",
           "member": "string",
           "name": "PhoneNumber",
           "required": true,
@@ -1342,7 +1342,7 @@
         {
           "disabled": false,
           "document": "短信 SdkAppId 在 [短信控制台](https://console.cloud.tencent.com/smsv2/app-manage)  添加应用后生成的实际 SdkAppId，示例如1400006666。",
-          "example": "1400006874",
+          "example": "1400006666",
           "member": "string",
           "name": "SmsSdkAppId",
           "required": true,
@@ -1366,7 +1366,7 @@
         {
           "disabled": false,
           "document": "回复状态响应集合。",
-          "example": "[{\"CountryCode\":\"86\",\"ReplyContent\":\"1\",\"SubscriberNumber\":\"15291996666\",\"ExtendCode\":\"11\",\"ReplyTime\":1620734188,\"PhoneNumber\":\"+8615291996666\",\"SignName\":\"腾讯云\"}]",
+          "example": "[{\"CountryCode\":\"86\",\"ReplyContent\":\"1\",\"SubscriberNumber\":\"18501234444\",\"ExtendCode\":\"11\",\"ReplyTime\":1620734188,\"PhoneNumber\":\"+8618501234444\",\"SignName\":\"腾讯云\"}]",
           "member": "PullSmsReplyStatus",
           "name": "PullSmsReplyStatusSet",
           "output_required": true,
@@ -1397,7 +1397,7 @@
         {
           "disabled": false,
           "document": "短信 SdkAppId 在 [短信控制台](https://console.cloud.tencent.com/smsv2/app-manage) 添加应用后生成的实际 SdkAppId，例如1400006666。",
-          "example": "1400006874",
+          "example": "1400006666",
           "member": "string",
           "name": "SmsSdkAppId",
           "required": true,
@@ -1412,7 +1412,7 @@
         {
           "disabled": false,
           "document": "回复状态响应集合。",
-          "example": "[{\"CountryCode\":\"86\",\"ReplyContent\":\"1\",\"SubscriberNumber\":\"15291990000\",\"ExtendCode\":\"11\",\"ReplyTime\":1620734188,\"PhoneNumber\":\"+8615291990000\",\"SignName\":\"腾讯云\"}]",
+          "example": "[{\"CountryCode\":\"86\",\"ReplyContent\":\"1\",\"SubscriberNumber\":\"18501234444\",\"ExtendCode\":\"11\",\"ReplyTime\":1620734188,\"PhoneNumber\":\"+8618501234444\",\"SignName\":\"腾讯云\"}]",
           "member": "PullSmsReplyStatus",
           "name": "PullSmsReplyStatusSet",
           "output_required": true,
@@ -1453,8 +1453,8 @@
         },
         {
           "disabled": false,
-          "document": "用户号码，普通格式，示例如：13711112222。",
-          "example": "13711112222",
+          "document": "用户号码，普通格式，示例如：18501234444。",
+          "example": "18501234444",
           "member": "string",
           "name": "SubscriberNumber",
           "output_required": true,
@@ -1463,8 +1463,8 @@
         },
         {
           "disabled": false,
-          "document": "手机号码，E.164标准，+[国家或地区码][手机号] ，示例如：+8613711112222， 其中前面有一个+号 ，86为国家码，13711112222为手机号。",
-          "example": "+8613711112222",
+          "document": "手机号码，E.164标准，+[国家或地区码][手机号] ，示例如：+8618501234444， 其中前面有一个+号 ，86为国家码，18501234444为手机号。",
+          "example": "+8618501234444",
           "member": "string",
           "name": "PhoneNumber",
           "output_required": true,
@@ -1474,7 +1474,7 @@
         {
           "disabled": false,
           "document": "本次发送标识 ID。",
-          "example": "14:19325917feb3914eb78b50d6182d7e452e",
+          "example": "5000:1045710669157053657849499619",
           "member": "string",
           "name": "SerialNo",
           "output_required": true,
@@ -1503,13 +1503,13 @@
         },
         {
           "disabled": false,
-          "document": "用户的 session 内容。与请求中的 SessionContext 一致，默认为空，如需开通请联系 [腾讯云短信小助手](https://cloud.tencent.com/document/product/382/3773#.E6.8A.80.E6.9C.AF.E4.BA.A4.E6.B5.81) 评估。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "document": "用户的 session 内容。与请求中的 SessionContext 一致，默认为空，如需开通请联系 [腾讯云短信小助手](https://cloud.tencent.com/document/product/382/3773#.E6.8A.80.E6.9C.AF.E4.BA.A4.E6.B5.81) 评估。",
+          "example": "outsid_1729495320_1011",
           "member": "string",
           "name": "SessionContext",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1546,8 +1546,8 @@
         },
         {
           "disabled": false,
-          "document": "下发目的手机号码，依据 E.164 标准为：+[国家（或地区）码][手机号] ，示例如：+8613711112222， 其中前面有一个+号 ，86为国家码，13711112222为手机号。",
-          "example": "+8615291996666",
+          "document": "下发目的手机号码，依据 E.164 标准为：+[国家（或地区）码][手机号] ，示例如：+8618501234444， 其中前面有一个+号 ，86为国家码，18501234444为手机号。",
+          "example": "+8618501234444",
           "member": "string",
           "name": "PhoneNumber",
           "required": true,
@@ -1556,7 +1556,7 @@
         {
           "disabled": false,
           "document": "短信 SdkAppId 在 [短信控制台](https://console.cloud.tencent.com/smsv2/app-manage)  添加应用后生成的实际 SdkAppId，示例如1400006666。",
-          "example": "1400006874",
+          "example": "1400006666",
           "member": "string",
           "name": "SmsSdkAppId",
           "required": true,
@@ -1580,7 +1580,7 @@
         {
           "disabled": false,
           "document": "下发状态响应集合。",
-          "example": "[{\"Description\":\"DELIVRD\",\"CountryCode\":\"86\",\"SubscriberNumber\":\"15291996666\",\"ReportStatus\":\"SUCCESS\",\"PhoneNumber\":\"+8615291996666\",\"SerialNo\":\"14:19325917feb3914eb78b50d6182d7e452e\",\"UserReceiveTime\":1620734188}]",
+          "example": "[{\"Description\":\"DELIVRD\",\"CountryCode\":\"86\",\"SubscriberNumber\":\"18501234444\",\"ReportStatus\":\"SUCCESS\",\"PhoneNumber\":\"+8618501234444\",\"SerialNo\":\"5000:1045710669157053657849499619\",\"UserReceiveTime\":1620734188}]",
           "member": "PullSmsSendStatus",
           "name": "PullSmsSendStatusSet",
           "output_required": true,
@@ -1611,7 +1611,7 @@
         {
           "disabled": false,
           "document": "短信 SdkAppId 在 [短信控制台](https://console.cloud.tencent.com/smsv2/app-manage) 添加应用后生成的实际 SdkAppId，例如1400006666。",
-          "example": "1400006874",
+          "example": "1400006666",
           "member": "string",
           "name": "SmsSdkAppId",
           "required": true,
@@ -1626,7 +1626,7 @@
         {
           "disabled": false,
           "document": "下发状态响应集合。",
-          "example": "[{\"Description\":\"DELIVRD\",\"CountryCode\":\"86\",\"SubscriberNumber\":\"15291990000\",\"ReportStatus\":\"SUCCESS\",\"PhoneNumber\":\"+8615291990000\",\"SerialNo\":\"14:19325917feb3914eb78b50d6182d7e452e\",\"UserReceiveTime\":1620734188}]",
+          "example": "[{\"Description\":\"DELIVRD\",\"CountryCode\":\"86\",\"SubscriberNumber\":\"18501234444\",\"ReportStatus\":\"SUCCESS\",\"PhoneNumber\":\"+8618501234444\",\"SerialNo\":\"5000:1045710669157053657849499619\",\"UserReceiveTime\":1620734188}]",
           "member": "PullSmsSendStatus",
           "name": "PullSmsSendStatusSet",
           "output_required": true,
@@ -1728,8 +1728,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "下发手机号码，采用 E.164 标准，格式为+[国家或地区码][手机号]，单次请求最多支持200个手机号且要求全为境内手机号或全为境外手机号。\n例如：+8613711112222， 其中前面有一个+号 ，86为国家码，13711112222为手机号。\n注：发送国内短信格式还支持0086、86或无任何国家或地区码的11位手机号码，前缀默认为+86。",
-          "example": "[\"+8618511122233\"]",
+          "document": "下发手机号码，采用 E.164 标准，格式为+[国家或地区码][手机号]，单次请求最多支持200个手机号且要求全为境内手机号或全为境外手机号。\n例如：+8618501234444， 其中前面有一个+号 ，86为国家码，18501234444为手机号。\n注：发送国内短信格式还支持0086、86或无任何国家或地区码的11位手机号码，前缀默认为+86。",
+          "example": "[\"+8618501234444\"]",
           "member": "string",
           "name": "PhoneNumberSet",
           "required": true,
@@ -1738,7 +1738,7 @@
         {
           "disabled": false,
           "document": "短信 SdkAppId，在 [短信控制台](https://console.cloud.tencent.com/smsv2/app-manage)  添加应用后生成的实际 SdkAppId，示例如1400006666。",
-          "example": "\"1400006666\"",
+          "example": "1400006666",
           "member": "string",
           "name": "SmsSdkAppId",
           "required": true,
@@ -1747,7 +1747,7 @@
         {
           "disabled": false,
           "document": "模板 ID，必须填写已审核通过的模板 ID。模板 ID 可前往 [国内短信](https://console.cloud.tencent.com/smsv2/csms-template) 或 [国际/港澳台短信](https://console.cloud.tencent.com/smsv2/isms-template) 的正文模板管理查看，若向境外手机号发送短信，仅支持使用国际/港澳台短信模板。",
-          "example": "\"1110\"",
+          "example": "1110",
           "member": "string",
           "name": "TemplateId",
           "required": true,
@@ -1756,7 +1756,7 @@
         {
           "disabled": false,
           "document": "短信签名内容，使用 UTF-8 编码，必须填写已审核通过的签名，例如：腾讯云，签名信息可前往 [国内短信](https://console.cloud.tencent.com/smsv2/csms-sign) 或 [国际/港澳台短信](https://console.cloud.tencent.com/smsv2/isms-sign) 的签名管理查看。\n<dx-alert infotype=\"notice\" title=\"注意\"><ul><li>发送国内短信该参数必填，且需填写签名内容而非签名ID。\n</li><li>发送国际/港澳台短信该参数非必填。</li></ul></dx-alert>",
-          "example": "\"腾讯云\"",
+          "example": "腾讯云",
           "member": "string",
           "name": "SignName",
           "required": false,
@@ -1765,7 +1765,7 @@
         {
           "disabled": false,
           "document": "模板参数，若无模板参数，则设置为空。\n<dx-alert infotype=\"notice\" title=\"注意\">模板参数的个数需要与 TemplateId 对应模板的变量个数保持一致。</dx-alert>",
-          "example": "[\"1234\"]",
+          "example": "[\"4370\"]",
           "member": "string",
           "name": "TemplateParamSet",
           "required": false,
@@ -1774,7 +1774,7 @@
         {
           "disabled": false,
           "document": "短信码号扩展号，默认未开通，如需开通请联系 [腾讯云短信小助手](https://cloud.tencent.com/document/product/382/3773#.E6.8A.80.E6.9C.AF.E4.BA.A4.E6.B5.81)。",
-          "example": "\"12\"",
+          "example": "10",
           "member": "string",
           "name": "ExtendCode",
           "required": false,
@@ -1783,7 +1783,7 @@
         {
           "disabled": false,
           "document": "用户的 session 内容，可以携带用户侧 ID 等上下文信息，server 会原样返回。注意长度需小于512字节。",
-          "example": "\"test\"",
+          "example": "outsid_1729495320_1011",
           "member": "string",
           "name": "SessionContext",
           "required": false,
@@ -1792,7 +1792,7 @@
         {
           "disabled": false,
           "document": "国内短信无需填写该项；国际/港澳台短信已申请独立 SenderId 需要填写该字段，默认使用公共 SenderId，无需填写该字段。\n注：月度使用量达到指定量级可申请独立 SenderId 使用，详情请联系 [腾讯云短信小助手](https://cloud.tencent.com/document/product/382/3773#.E6.8A.80.E6.9C.AF.E4.BA.A4.E6.B5.81)。",
-          "example": "\"Qsms\"",
+          "example": "Qsms",
           "member": "string",
           "name": "SenderId",
           "required": false,
@@ -1807,7 +1807,7 @@
         {
           "disabled": false,
           "document": "短信发送状态。",
-          "example": "[{\"SerialNo\":\"5000:1045710669157053657849499619\",\"PhoneNumber\":\"+8618511122233\",\"Fee\":1,\"SessionContext\":\"test\",\"Code\":\"Ok\",\"Message\":\"send success\",\"IsoCode\":\"CN\"}]",
+          "example": "[{\"SerialNo\":\"5000:1045710669157053657849499619\",\"PhoneNumber\":\"+8618501234444\",\"Fee\":1,\"SessionContext\":\"outsid_1729495320_1011\",\"Code\":\"Ok\",\"Message\":\"send success\",\"IsoCode\":\"CN\"}]",
           "member": "SendStatus",
           "name": "SendStatusSet",
           "output_required": true,
@@ -1832,17 +1832,17 @@
           "example": "5000:1045710669157053657849499619",
           "member": "string",
           "name": "SerialNo",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "手机号码，E.164标准，+[国家或地区码][手机号] ，示例如：+8613711112222， 其中前面有一个+号 ，86为国家码，13711112222为手机号。",
-          "example": "+8618511122233",
+          "document": "手机号码，E.164标准，+[国家或地区码][手机号] ，示例如：+8618501234444， 其中前面有一个+号 ，86为国家码，18501234444为手机号。",
+          "example": "+8618501234444",
           "member": "string",
           "name": "PhoneNumber",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1852,17 +1852,17 @@
           "example": "1",
           "member": "uint64",
           "name": "Fee",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "用户 session 内容。",
-          "example": "test",
+          "example": "outsid_1729495320_1011",
           "member": "string",
           "name": "SessionContext",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1872,7 +1872,7 @@
           "example": "Ok",
           "member": "string",
           "name": "Code",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1882,7 +1882,7 @@
           "example": "send success",
           "member": "string",
           "name": "Message",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1892,7 +1892,7 @@
           "example": "CN",
           "member": "string",
           "name": "IsoCode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -1959,7 +1959,7 @@
         {
           "disabled": false,
           "document": "短信 SdkAppId 在 [短信控制台](https://console.cloud.tencent.com/smsv2/app-manage)  添加应用后生成的实际 SdkAppId，示例如1400006666。",
-          "example": "1400006874",
+          "example": "1400006666",
           "member": "string",
           "name": "SmsSdkAppId",
           "required": true,
@@ -2090,7 +2090,7 @@
         {
           "disabled": false,
           "document": "短信 SdkAppId 在 [短信控制台](https://console.cloud.tencent.com/smsv2/app-manage)  添加应用后生成的实际 SdkAppId，示例如1400006666。",
-          "example": "1400006879",
+          "example": "1400006666",
           "member": "string",
           "name": "SmsSdkAppId",
           "required": true,

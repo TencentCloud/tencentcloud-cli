@@ -15,18 +15,6 @@ Output:
     "Response": {
         "MQTTProductSkuList": [
             {
-                "ClientNumLimit": 1,
-                "InstanceType": "BASIC",
-                "OnSale": true,
-                "ProxySpecCore": 2,
-                "ProxySpecCount": 1,
-                "ProxySpecMemory": 4,
-                "SkuCode": "mqtt_1k",
-                "SubscriptionNumLimit": 1,
-                "TopicNumLimit": 1,
-                "TpsLimit": 1
-            },
-            {
                 "ClientNumLimit": 1000,
                 "InstanceType": "BASIC",
                 "OnSale": true,

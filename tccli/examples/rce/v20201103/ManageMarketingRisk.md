@@ -10,7 +10,15 @@ tccli rce ManageMarketingRisk --cli-unfold-argument  \
     --BusinessSecurityData.Account.OtherAccount.AccountId 3ac9aa********************526ed9 \
     --BusinessSecurityData.SceneCode e_activity_antirush \
     --BusinessSecurityData.UserIp 113.***.***.150 \
-    --BusinessSecurityData.PostTime 1712841851
+    --BusinessSecurityData.PostTime 1712841851 \
+    --BusinessSecurityData.DataAuthorization.DataProviderName 某某有限公司 \
+    --BusinessSecurityData.DataAuthorization.DataRecipientName 腾讯云计算（北京）有限责任公司 \
+    --BusinessSecurityData.DataAuthorization.UserDataType 1 4 \
+    --BusinessSecurityData.DataAuthorization.IsAuthorize 1 \
+    --BusinessSecurityData.DataAuthorization.IsOrderHandling 1 \
+    --BusinessSecurityData.DataAuthorization.AuthorizationTerm 1728714893 \
+    --BusinessSecurityData.DataAuthorization.PrivacyPolicyLink https://www.*****.com/ \
+    --BusinessSecurityData.DataAuthorization.IsPersonalData 1
 ```
 
 Output: 

@@ -813,7 +813,7 @@
         {
           "disabled": false,
           "document": "防火墙模板ID。可通过[DescribeFirewallTemplates](https://cloud.tencent.com/document/product/1207/96874)接口返回值字段TemplateSet获取。",
-          "example": "lhft-xxxxxxxx",
+          "example": "lhft-s2dxd7iy",
           "member": "string",
           "name": "TemplateId",
           "required": true,
@@ -837,7 +837,7 @@
         {
           "disabled": false,
           "document": "任务ID。",
-          "example": "lgtk-xxxxxxxx",
+          "example": "lgtk-6brh0ciy",
           "member": "string",
           "name": "TaskId",
           "output_required": true,
@@ -3726,7 +3726,7 @@
         {
           "disabled": false,
           "document": "防火墙模板ID。可通过[DescribeFirewallTemplates](https://cloud.tencent.com/document/product/1207/96874)接口返回值字段TemplateSet获取。",
-          "example": "lhft-abcd1234",
+          "example": "lhft-a5fh1i90",
           "member": "string",
           "name": "TemplateId",
           "required": true,
@@ -3735,7 +3735,7 @@
         {
           "disabled": false,
           "document": "应用防火墙模板任务ID列表。可通过[ApplyFirewallTemplate](https://cloud.tencent.com/document/product/1207/96883)接口返回值TaskId字段获取。",
-          "example": "lgtk-abcd1234",
+          "example": "lgtk-xalnmlko",
           "member": "string",
           "name": "TaskIds",
           "required": false,
@@ -3809,7 +3809,7 @@
         {
           "disabled": false,
           "document": "防火墙模板ID。可通过[DescribeFirewallTemplates](https://cloud.tencent.com/document/product/1207/96874)接口返回值字段TemplateSet获取。",
-          "example": "lhft-xxxxxxxx",
+          "example": "lhft-ow2dn19x",
           "member": "string",
           "name": "TemplateId",
           "required": true,
@@ -3856,7 +3856,7 @@
         {
           "disabled": false,
           "document": "防火墙模板ID。",
-          "example": "lhft-abcd1234",
+          "example": "lhft-ow2dn19x",
           "member": "string",
           "name": "TemplateId",
           "required": true,

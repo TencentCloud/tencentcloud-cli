@@ -7,7 +7,7 @@ Input:
 ```
 tccli trocket DeleteConsumerGroup --cli-unfold-argument  \
     --InstanceId rmq-72mo3a9o \
-    --ConsumerGroup group
+    --ConsumerGroup test_group
 ```
 
 Output: 

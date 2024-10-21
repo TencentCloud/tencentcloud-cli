@@ -7,7 +7,7 @@ Input:
 ```
 tccli trocket DescribeTopic --cli-unfold-argument  \
     --InstanceId rmq-72mo3a9o \
-    --Topic test \
+    --Topic test_topic \
     --Offset 0 \
     --Limit 10
 ```
@@ -21,11 +21,11 @@ Output:
         "CreatedTime": 1683601674000,
         "InstanceId": "rmq-72mo3a9o",
         "LastUpdateTime": 0,
-        "Remark": "remoark",
+        "Remark": "测试主题",
         "RequestId": "f7f7ba8a-4335-4adb-9186-680b91502c42",
         "SubscriptionCount": 0,
         "SubscriptionData": [],
-        "Topic": "test",
+        "Topic": "test_topic",
         "TopicType": "NORMAL"
     }
 }

@@ -10345,21 +10345,21 @@
         },
         {
           "disabled": false,
-          "document": "云端地址（CIDR）列表。",
-          "example": "['10.0.0.0/16']",
-          "member": "string",
-          "name": "LocalAddress",
-          "required": true,
-          "type": "list"
-        },
-        {
-          "disabled": false,
           "document": "客户端地址网段。",
           "example": "172.16.0.0/16",
           "member": "string",
           "name": "RemoteAddress",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "云端地址（CIDR）列表。",
+          "example": "['10.0.0.0/16']",
+          "member": "string",
+          "name": "LocalAddress",
+          "required": false,
+          "type": "list"
         },
         {
           "disabled": false,

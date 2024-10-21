@@ -834,7 +834,7 @@
         {
           "disabled": false,
           "document": "用户外网ip（传入用户非外网ip会影响判断结果）。",
-          "example": "123.124.125.253",
+          "example": "123.***.***.253",
           "member": "string",
           "name": "UserIp",
           "required": true,
@@ -870,7 +870,7 @@
         {
           "disabled": false,
           "document": "设备指纹 BusinessId。",
-          "example": "124277865452425",
+          "example": "DE****123",
           "member": "int64",
           "name": "DeviceBusinessId",
           "required": false,
@@ -879,7 +879,7 @@
         {
           "disabled": false,
           "document": "业务ID。网站或应用在多个业务中使用此服务，通过此ID区分统计数据。",
-          "example": "12",
+          "example": "1001",
           "member": "uint64",
           "name": "BusinessId",
           "required": false,
@@ -888,7 +888,7 @@
         {
           "disabled": false,
           "document": "昵称，UTF-8 编码。",
-          "example": "sadsad",
+          "example": "zhangsan",
           "member": "string",
           "name": "Nickname",
           "required": false,
@@ -942,7 +942,7 @@
         {
           "disabled": false,
           "document": "用户HTTP请求的X-Forwarded-For值。",
-          "example": "qewqeqwe",
+          "example": "192.***.***.1",
           "member": "string",
           "name": "XForwardedFor",
           "required": false,
@@ -978,7 +978,7 @@
         {
           "disabled": false,
           "document": "扩展字段。",
-          "example": "Details.1.FieldName='os_system'",
+          "example": "Details[0].FieldName='system_version' Details[0].FieldValue='V1.5'",
           "member": "InputDetails",
           "name": "Details",
           "required": false,
@@ -2043,7 +2043,7 @@
         {
           "disabled": false,
           "document": "账号ID：对应输入参数。\n当AccountType为1时，对应QQ的OpenId；\n当AccountType为2时，对应微信的OpenId/UnionId；\n当AccountType为10004时，对应手机号的MD5值；\n当AccountType为10005时，对应手机号的SHA256值。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "3ac9aa8a9a0074918763bfd6ed526ed9",
+          "example": "3ac9aa8a9a0**********fd6ed526ed9",
           "member": "string",
           "name": "UserId",
           "output_required": true,
@@ -2073,7 +2073,7 @@
         {
           "disabled": false,
           "document": "操作来源的外网IP（对应输入参数）。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123.124.125.253",
+          "example": "123.***.***.253",
           "member": "string",
           "name": "UserIp",
           "output_required": true,
@@ -2103,7 +2103,7 @@
         {
           "disabled": false,
           "document": "设备指纹ID，如果集成了设备指纹，并传入了正确的DeviceToken和Platform，该字段正常输出；如果DeviceToken异常（校验不通过），则会在RiskType中返回\"-1\"标签，ConstId字段为空；如果没有集成设备指纹ConstId字段默认为空。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "7BCF1420708B26034880B789",
+          "example": "7BCF***************789",
           "member": "string",
           "name": "ConstId",
           "output_required": true,
@@ -2113,7 +2113,7 @@
         {
           "disabled": false,
           "document": "风险扩展数据。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"Model\":[{\"FieldName\":\"05103001\",\"FieldValue\":\"2\"}]}",
+          "example": "{\"Model\":[{\"FieldName\":\"051***01\",\"FieldValue\":\"2\"}]}",
           "member": "string",
           "name": "RiskInformation",
           "output_required": false,

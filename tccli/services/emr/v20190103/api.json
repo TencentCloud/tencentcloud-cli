@@ -239,9 +239,9 @@
       "status": "online"
     },
     "DescribeTrinoQueryInfo": {
-      "document": "获取trino查询结果",
+      "document": "查询Trino(PrestoSQL)查询信息",
       "input": "DescribeTrinoQueryInfoRequest",
-      "name": "获取trino查询信息",
+      "name": "查询Trino(PrestoSQL)查询信息",
       "output": "DescribeTrinoQueryInfoResponse",
       "status": "online"
     },

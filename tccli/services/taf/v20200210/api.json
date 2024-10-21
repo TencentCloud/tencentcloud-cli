@@ -64,7 +64,44 @@
     },
     "InputBusinessEncryptData": {
       "document": "业务入参",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "加密方式；0：AES;1:DES",
+          "example": "1",
+          "member": "uint64",
+          "name": "EncryptMethod",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "业务数据加密字符串",
+          "example": "7ecfc5536b47f4fa7d176b6450b67564caab7e6845531f02fd28feb8122f7afa",
+          "member": "string",
+          "name": "EncryptData",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "加密模式；0：ECB,1:CBC;2:CTR;3:CFB;4:OFB",
+          "example": "1",
+          "member": "uint64",
+          "name": "EncryptMode",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "填充模式;0:ZERO ;1:PKCS5;3:PKCS7",
+          "example": "1",
+          "member": "uint64",
+          "name": "PaddingType",
+          "required": true,
+          "type": "int"
+        }
+      ],
       "usage": "in"
     },
     "InputRecognizeTargetAudience": {

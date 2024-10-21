@@ -7,8 +7,8 @@ Input:
 ```
 tccli trocket CreateRole --cli-unfold-argument  \
     --InstanceId rmq-72mo3a9o \
-    --Role testRole \
-    --Remark testRemark \
+    --Role test_role_name \
+    --Remark 测试角色 \
     --PermWrite True \
     --PermRead True
 ```
@@ -20,7 +20,7 @@ Output:
     "RequestId": null,
     "Response": {
         "RequestId": "0bb79e96-2531-4088-8d90-e1372c15518a",
-        "Role": "testRole"
+        "Role": "test_role_name"
     }
 }
 ```

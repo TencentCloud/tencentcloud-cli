@@ -48,7 +48,8 @@ Output:
                 "Strategy": 1,
                 "TargetId": "cfwrg-b803523898534bcbd9b7d2c7d92c175e1712804418",
                 "TargetType": 100,
-                "Uuid": "cfw_newsg_1300448058_0.0.0.0/0_17228848067531"
+                "Uuid": "cfw_newsg_1300448058_0.0.0.0/0_17228848067531",
+                "Id": 61257
             }
         ],
         "Enable": 2,

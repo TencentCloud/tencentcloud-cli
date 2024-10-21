@@ -11,11 +11,11 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "xx",
+        "RequestId": "xxxxxxxx-1234-5678-9101-yyyyyyyyyy",
         "Types": [
             {
                 "Id": 1,
-                "Name": "xx"
+                "Name": "name"
             }
         ]
     }

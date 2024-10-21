@@ -6,15 +6,15 @@ Input:
 
 ```
 tccli cwp RansomDefenseRollback --cli-unfold-argument  \
-    --Quuid xx \
-    --BackupTime xx
+    --Quuid 1c26308c-5493-4eaf-a817-112ec25f499e \
+    --BackupTime 2019-12-25 11:57:15
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx"
+        "RequestId": "xxxx-xxxx-xxxx-xxxx-xxxx"
     }
 }
 ```

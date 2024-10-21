@@ -1638,7 +1638,7 @@
           "type": "list"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "rtc人数。",
           "example": "0",
           "member": "uint64",

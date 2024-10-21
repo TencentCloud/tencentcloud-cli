@@ -92,6 +92,14 @@
         "title": "创建专业集群"
       }
     ],
+    "CreateRabbitMQBinding": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRabbitMQBinding\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-44w9928j\",\n    \"VirtualHost\": \"test\",\n    \"Source\": \"amq.direct\",\n    \"DestinationType\": \"queue\",\n    \"Destination\": \"test\",\n    \"RoutingKey\": \"hehe1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dsfadsa\",\n        \"InstanceId\": \"amqp-44w9928j\",\n        \"VirtualHost\": \"test\",\n        \"BindingId\": 127441\n    }\n}",
+        "title": "创建RabbitMQ路由关系"
+      }
+    ],
     "CreateRabbitMQUser": [
       {
         "document": "-",
@@ -143,7 +151,7 @@
     "CreateRocketMQNamespace": [
       {
         "document": "创建命名空间",
-        "input": "https://tdmq.tencentcloudapi.com/?\nAction=CreateRocketMQNamespace\n&ClusterId=rocketmq-2p9vx3ax9jxg\n&NamespaceId=example\n&Ttl=60000\n&RetentionTime=600000\n&Remark=example\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRocketMQNamespace\n<公共请求参数>\n\n{\n    \"ClusterId\": \"rocketmq-2p9vx3ax9jxg\",\n    \"NamespaceId\": \"test_namespace\",\n    \"Ttl\": 259200000,\n    \"RetentionTime\": 259200000,\n    \"Remark\": \"测试命名空间\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"bf71e2ae-8b56-4231-87cf-0cbb6f421caa\"\n    }\n}",
         "title": "创建命名空间"
       }
@@ -167,8 +175,8 @@
     "CreateRocketMQVipInstance": [
       {
         "document": "购买RocketMQ专享实例",
-        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRocketMQVipInstance\n<公共请求参数>\n\n{\n    \"Name\": \"abc\",\n    \"Spec\": \"rocket-vip-basic-1\",\n    \"NodeCount\": 1,\n    \"StorageSize\": 0,\n    \"ZoneIds\": [\n        \"100001\"\n    ],\n    \"VpcInfo\": {\n        \"VpcId\": \"abc\",\n        \"SubnetId\": \"abc\"\n    },\n    \"TimeSpan\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"ClusterId\": \"rocketmq-xxxx\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRocketMQVipInstance\n<公共请求参数>\n\n{\n    \"Name\": \"test_instance\",\n    \"Spec\": \"rocket-vip-basic-1\",\n    \"NodeCount\": 2,\n    \"StorageSize\": 200,\n    \"ZoneIds\": [\n        \"100001\",\n        \"100002\"\n    ],\n    \"VpcInfo\": {\n        \"VpcId\": \"vpc-9dlrd5h1\",\n        \"SubnetId\": \"subnet-jadmas\"\n    },\n    \"TimeSpan\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"ClusterId\": \"rocketmq-7drjznvjqzee\",\n        \"RequestId\": \"23ca1a58-0388-4d2d-8465-653a53addda7\"\n    }\n}",
         "title": "购买RocketMQ专享实例"
       }
     ],
@@ -710,7 +718,7 @@
       {
         "document": "",
         "input": "https://tdmq.tencentcloudapi.com/?Action=DescribeRocketMQNamespaces\n&ClusterId=rocketmq-rd3545bkkj49\n&Offset=0\n&Limit=10\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\",\n        \"Namespaces\": [\n            {\n                \"Remark\": \"xx\",\n                \"PublicEndpoint\": \"xx\",\n                \"RetentionTime\": 1,\n                \"VpcEndpoint\": \"xx\",\n                \"Ttl\": 1,\n                \"NamespaceId\": \"xx\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"23ca1a58-0388-4d2d-8465-653a53addda7\",\n        \"Namespaces\": [\n            {\n                \"Remark\": \"info-remark\",\n                \"PublicEndpoint\": \"http://public.test.com\",\n                \"RetentionTime\": 1,\n                \"VpcEndpoint\": \"http://vpc.test.com\",\n                \"Ttl\": 1,\n                \"NamespaceId\": \"ordernamespace\",\n                \"InternalEndpoint\": \"http://internal.test.com\"\n            }\n        ]\n    }\n}",
         "title": "获取用户命名空间列表"
       }
     ],
@@ -826,15 +834,15 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRocketMQVipInstanceDetail\n<公共请求参数>\n\n{\n    \"ClusterId\": \"rocketmq-rd3545bkkj49\"\n}",
-        "output": "{\n    \"Response\": {\n        \"ClusterInfo\": {\n            \"ClusterId\": \"abc\",\n            \"ClusterName\": \"abc\",\n            \"Region\": \"abc\",\n            \"CreateTime\": 1,\n            \"Remark\": \"abc\",\n            \"PublicEndPoint\": \"abc\",\n            \"VpcEndPoint\": \"abc\",\n            \"SupportNamespaceEndpoint\": true,\n            \"Vpcs\": [\n                {\n                    \"VpcId\": \"abc\",\n                    \"SubnetId\": \"abc\"\n                }\n            ],\n            \"IsVip\": true,\n            \"RocketMQFlag\": true,\n            \"Status\": 0,\n            \"IsolateTime\": 0,\n            \"HttpPublicEndpoint\": \"abc\",\n            \"HttpVpcEndpoint\": \"abc\",\n            \"InternalEndpoint\": \"abc\",\n            \"HttpInternalEndpoint\": \"abc\",\n            \"AclEnabled\": true,\n            \"PublicClbId\": \"abc\",\n            \"Vip\": \"abc\",\n            \"VpcId\": \"abc\",\n            \"SupportMigration\": true,\n            \"InstanceStatus\": 0,\n            \"ZoneId\": 0,\n            \"ZoneIds\": [\n                0\n            ]\n        },\n        \"InstanceConfig\": {\n            \"MaxTpsPerNamespace\": 1,\n            \"MaxNamespaceNum\": 1,\n            \"UsedNamespaceNum\": 1,\n            \"MaxTopicNum\": 1,\n            \"UsedTopicNum\": 1,\n            \"MaxGroupNum\": 1,\n            \"UsedGroupNum\": 1,\n            \"ConfigDisplay\": \"abc\",\n            \"NodeCount\": 1,\n            \"NodeDistribution\": [\n                {\n                    \"ZoneName\": \"abc\",\n                    \"ZoneId\": \"abc\",\n                    \"NodeCount\": 1\n                }\n            ],\n            \"TopicDistribution\": [\n                {\n                    \"TopicType\": \"abc\",\n                    \"Count\": 1\n                }\n            ],\n            \"MaxQueuesPerTopic\": 1,\n            \"MaxRetention\": 0,\n            \"MinRetention\": 0,\n            \"Retention\": 0,\n            \"TopicNumLowerLimit\": 0,\n            \"TopicNumUpperLimit\": 0\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
-        "title": "huo"
+        "output": "{\n    \"Response\": {\n        \"ClusterInfo\": {\n            \"ClusterId\": \"rocketmq-rd3545bkkj49\",\n            \"ClusterName\": \"rocket-order-cluster\",\n            \"Region\": \"华南地区\",\n            \"CreateTime\": 1729478721,\n            \"Remark\": \"info- remark\",\n            \"PublicEndPoint\": \"rocketmq.access.public.com:9867\",\n            \"VpcEndPoint\": \"rocketmq.resource.vpc.com:5010\",\n            \"SupportNamespaceEndpoint\": true,\n            \"Vpcs\": [\n                {\n                    \"VpcId\": \"vpc-9dlrd5h1\",\n                    \"SubnetId\": \"subnet-jadmas\"\n                }\n            ],\n            \"IsVip\": true,\n            \"RocketMQFlag\": true,\n            \"Status\": 1,\n            \"IsolateTime\": 1729478721,\n            \"HttpPublicEndpoint\": \"http://rocketmq.access.public.com:9867\",\n            \"HttpVpcEndpoint\": \"http://rocketmq.resource.vpc.com:5010\",\n            \"InternalEndpoint\": \"rocketmq.tencent.internal.com:8080\",\n            \"HttpInternalEndpoint\": \"http://rocketmq.tencent.internal.com:8080\",\n            \"AclEnabled\": true,\n            \"PublicClbId\": \"abc\",\n            \"Vip\": \"abc\",\n            \"VpcId\": \"abc\",\n            \"SupportMigration\": true,\n            \"InstanceStatus\": 1,\n            \"ZoneId\": 100001,\n            \"ZoneIds\": [\n                100001\n            ]\n        },\n        \"InstanceConfig\": {\n            \"MaxTpsPerNamespace\": 1,\n            \"MaxNamespaceNum\": 1,\n            \"UsedNamespaceNum\": 1,\n            \"MaxTopicNum\": 1,\n            \"UsedTopicNum\": 1,\n            \"MaxGroupNum\": 1,\n            \"UsedGroupNum\": 1,\n            \"ConfigDisplay\": \"abc\",\n            \"NodeCount\": 1,\n            \"NodeDistribution\": [\n                {\n                    \"ZoneName\": \"广东一区\",\n                    \"ZoneId\": \"100001\",\n                    \"NodeCount\": 1\n                }\n            ],\n            \"TopicDistribution\": [\n                {\n                    \"TopicType\": \"normal\",\n                    \"Count\": 1\n                }\n            ],\n            \"MaxQueuesPerTopic\": 1,\n            \"MaxRetention\": 0,\n            \"MinRetention\": 0,\n            \"Retention\": 0,\n            \"TopicNumLowerLimit\": 0,\n            \"TopicNumUpperLimit\": 0\n        },\n        \"RequestId\": \"23ca1a58-0388-4d2d-8465-653a53addda7\"\n    }\n}",
+        "title": "获取单个RocketMQ专享集群信息"
       }
     ],
     "DescribeRocketMQVipInstances": [
       {
         "document": "获取实例列表",
-        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRocketMQVipInstances\n<公共请求参数>\n\n{\n    \"Limit\": 1,\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"rocketmq-1233\"\n            ],\n            \"Name\": \"InstanceIds\"\n        }\n    ],\n    \"Offset\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"abcdef\",\n        \"Instances\": [\n            {\n                \"Status\": 1,\n                \"PayMode\": 1,\n                \"Remark\": \"test\",\n                \"AutoRenewFlag\": 1,\n                \"InstanceId\": \"rocketmq-1233\",\n                \"NodeCount\": 1,\n                \"ExpireTime\": 1,\n                \"InstanceVersion\": \"4.9.3\",\n                \"MaxStorage\": 1,\n                \"MaxBandWidth\": 1,\n                \"SpecName\": \"rocket-vip-basic-1\",\n                \"ConfigDisplay\": \"基础型\",\n                \"InstanceName\": \"abc\",\n                \"MaxTps\": 1\n            }\n        ]\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRocketMQVipInstances\n<公共请求参数>\n\n{\n    \"Limit\": 1,\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"rocketmq-1q23swe3\"\n            ],\n            \"Name\": \"order-instance\"\n        }\n    ],\n    \"Offset\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"23ca1a58-0388-4d2d-8465-653a53addda7\",\n        \"Instances\": [\n            {\n                \"Status\": 1,\n                \"PayMode\": 1,\n                \"Remark\": \"remark-info\",\n                \"AutoRenewFlag\": 1,\n                \"InstanceId\": \"rocketmq-1233\",\n                \"NodeCount\": 1,\n                \"ExpireTime\": 1,\n                \"InstanceVersion\": \"4.9.3\",\n                \"MaxStorage\": 1,\n                \"MaxBandWidth\": 1,\n                \"SpecName\": \"rocket-vip-basic-1\",\n                \"ConfigDisplay\": \"基础型\",\n                \"InstanceName\": \"order-instance\",\n                \"MaxTps\": 1,\n                \"AclEnabled\": true,\n                \"Retention\": 0,\n                \"MinRetention\": 0,\n                \"MaxRetention\": 0\n            }\n        ]\n    }\n}",
         "title": "获取实例列表"
       }
     ],
@@ -1015,16 +1023,16 @@
     "ModifyRocketMQInstance": [
       {
         "document": "修改RocketMQ专享实例",
-        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRocketMQInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"Name\": \"abc\",\n    \"Remark\": \"abc\",\n    \"MessageRetention\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRocketMQInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rocketmq-4k4orqgq\",\n    \"Name\": \"order-service-instance\",\n    \"Remark\": \"info-mark\",\n    \"MessageRetention\": 24\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"23ca1a58-0388-4d2d-8465-653a53addda7\"\n    }\n}",
         "title": "修改RocketMQ专享实例"
       }
     ],
     "ModifyRocketMQInstanceSpec": [
       {
         "document": "对实例进行升降配",
-        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRocketMQInstanceSpec\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"Specification\": \"abc\",\n    \"NodeCount\": 1,\n    \"StorageSize\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"OrderId\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRocketMQInstanceSpec\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rocketmq-4k4orqgq\",\n    \"Specification\": \"rocket-vip-basic-1\",\n    \"NodeCount\": 2,\n    \"StorageSize\": 1000\n}",
+        "output": "{\n    \"Response\": {\n        \"OrderId\": \"TDMQ20121212312322\",\n        \"RequestId\": \"23ca1a58-0388-4d2d-8465-653a53addda7\"\n    }\n}",
         "title": "修改RocketMQ专享实例规格"
       }
     ],

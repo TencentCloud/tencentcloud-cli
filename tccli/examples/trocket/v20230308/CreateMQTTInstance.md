@@ -7,7 +7,7 @@ Input:
 ```
 tccli trocket CreateMQTTInstance --cli-unfold-argument  \
     --InstanceType BASIC \
-    --Name sunjianxiong-1 \
+    --Name instance-1 \
     --SkuCode basic_1k \
     --Remark this is remark \
     --VpcList.0.VpcId vpc-9a5wnirv \

@@ -296,3 +296,45 @@ Output:
 }
 ```
 
+**Example 9: 为个人用户，创建合同组批量签署链接,并且指定视频问答模式的认证方式**
+
+1. 为个人用户生成合同组H5批量签署链接
+2. 使用默认的签名类型
+3. 使用默认的签署方式
+4. 默认跳转到合同列表页
+5.指定视频问答模式的认证方式
+
+Input: 
+
+```
+tccli ess CreateBatchQuickSignUrl --cli-unfold-argument  \
+    --Operator.ClientIp 1.2.3.4 \
+    --Operator.UserId yDxVwUyKQWho8CUuO4zjEyQOAgwvr4Zy \
+    --FlowApproverInfo.ApproverType 1 \
+    --FlowApproverInfo.ApproverMobile 13200000000 \
+    --FlowApproverInfo.ApproverName 典子谦 \
+    --FlowApproverInfo.ApproverIdCardNumber 620000198802020000 \
+    --FlowApproverInfo.ApproverIdCardType ID_CARD \
+    --FlowGroupId yDSLcUUck****ysv1OQYIe9H \
+    --ApproverSignTypes 1 \
+    --Intention.IntentionType 1 \
+    --Intention.IntentionQuestions.0.Question 请问，您是否同意签署本协议？可语音回复“同意”或“不同意”。 \
+    --Intention.IntentionQuestions.0.Answers 同意 我同意
+```
+
+Output: 
+```
+{
+    "Response": {
+        "FlowApproverUrlInfo": {
+            "ApproverMobile": "13200000000",
+            "ApproverName": "典子谦",
+            "ApproverType": 1,
+            "LongUrl": "https://quick.qian.tencent.cn/guide?Code=yDwi0U**xoK&CodeType=QUICK&shortKey=yDw**S2ATh95&token=Y9b**O",
+            "SignUrl": "https://essurl.cn/Y9b**O"
+        },
+        "RequestId": "s169**68"
+    }
+}
+```
+

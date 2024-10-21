@@ -18,7 +18,7 @@ Output:
         "ClientNumLimit": 1000,
         "CreatedTime": 1705562417,
         "InstanceId": "mqtt-7pnqmkrx",
-        "InstanceName": "sunjianxiong-1",
+        "InstanceName": "instance-1",
         "InstanceStatus": "RUNNING",
         "InstanceType": "BASIC",
         "Remark": "this is remark",

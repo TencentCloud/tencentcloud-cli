@@ -1,6 +1,6 @@
-**Example 1: DescribePublicProxyInstallCommand**
+**Example 1: 示例**
 
-
+ 
 
 Input: 
 
@@ -13,9 +13,9 @@ Output:
 ```
 {
     "Response": {
-        "KeepAliveCommand": "abc",
-        "NginxCommand": "abc",
-        "RequestId": "abc"
+        "KeepAliveCommand": "",
+        "NginxCommand": "wget --no-check-certificate https://up.yd.qcloud.com/ydeyes/download/install_proxy.sh -O install_proxy.sh && sudo bash install_proxy.sh",
+        "RequestId": "5921b751-84f3-4332-a89f-fca2a139bd10"
     }
 }
 ```
