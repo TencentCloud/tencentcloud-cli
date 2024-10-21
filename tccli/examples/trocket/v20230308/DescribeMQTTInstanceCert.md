@@ -15,10 +15,10 @@ Output:
     "Error": null,
     "RequestId": null,
     "Response": {
-        "InstanceId": null,
+        "InstanceId": "instance-1",
         "RequestId": "a07a950a-43ea-4c13-a812-7ba4337d186a",
-        "SSLCaCertId": null,
-        "SSLServerCertId": null
+        "SSLCaCertId": "ca-id",
+        "SSLServerCertId": "server-cert-id"
     }
 }
 ```

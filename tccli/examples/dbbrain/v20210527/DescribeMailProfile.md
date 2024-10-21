@@ -33,7 +33,7 @@ Output:
                             "HIGH_RISK"
                         ],
                         "Region": [
-                            "eu-moscow"
+                            "ap-guangzhou"
                         ],
                         "ContactGroup": [],
                         "SendMail": 0,

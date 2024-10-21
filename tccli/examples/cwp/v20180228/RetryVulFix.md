@@ -7,7 +7,7 @@ Input:
 ```
 tccli cwp RetryVulFix --cli-unfold-argument  \
     --VulId 1 \
-    --Quuid xxxxx \
+    --Quuid 1c26308c-5493-4eaf-a817-112ec25f499e \
     --FixId 1
 ```
 

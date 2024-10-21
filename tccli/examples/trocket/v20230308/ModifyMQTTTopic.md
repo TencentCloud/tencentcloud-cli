@@ -7,8 +7,8 @@ Input:
 ```
 tccli trocket ModifyMQTTTopic --cli-unfold-argument  \
     --InstanceId mqtt-rvb5xxrn \
-    --Topic 222 \
-    --Remark 444
+    --Topic topic1 \
+    --Remark ramark1
 ```
 
 Output: 

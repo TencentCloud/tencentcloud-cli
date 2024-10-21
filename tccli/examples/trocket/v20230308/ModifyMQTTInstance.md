@@ -7,8 +7,8 @@ Input:
 ```
 tccli trocket ModifyMQTTInstance --cli-unfold-argument  \
     --InstanceId mqtt-47ka4rdr \
-    --Name sjx0119 \
-    --Remark 555
+    --Name instance-2 \
+    --Remark ramark
 ```
 
 Output: 

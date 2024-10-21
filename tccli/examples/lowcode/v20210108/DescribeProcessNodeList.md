@@ -6,9 +6,10 @@ Input:
 
 ```
 tccli lowcode DescribeProcessNodeList --cli-unfold-argument  \
+    --ProcessKey abc \
     --ProcessVersion 0 \
-    --EnvId env-001 \
-    --ProcessKey xx
+    --EnvType abc \
+    --EnvId abc
 ```
 
 Output: 
@@ -17,11 +18,11 @@ Output:
     "Response": {
         "Data": [
             {
-                "NodeId": "xx",
-                "NodeName": "xx"
+                "NodeId": "abc",
+                "NodeName": "abc"
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

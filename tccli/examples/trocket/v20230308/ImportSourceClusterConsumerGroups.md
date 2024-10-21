@@ -6,17 +6,17 @@ Input:
 
 ```
 tccli trocket ImportSourceClusterConsumerGroups --cli-unfold-argument  \
-    --TaskId abc \
-    --GroupList.0.GroupName Test \
-    --GroupList.0.Remark abc \
-    --GroupList.0.Namespace 
+    --TaskId n4zk7nv4-d596886f \
+    --GroupList.0.GroupName test_group \
+    --GroupList.0.Remark 测试 \
+    --GroupList.0.Namespace test_namespace
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "c5d126b6-aeeb-40ad-81c0-a94abd43f157"
     }
 }
 ```

@@ -17,8 +17,8 @@ Output:
         "VirtualPatchSwitch": 0,
         "HistoryOpen": 0,
         "ReturnCode": 0,
-        "ReturnMsg": "abc",
-        "RequestId": "abc"
+        "ReturnMsg": "sccess",
+        "RequestId": "RequestId"
     }
 }
 ```

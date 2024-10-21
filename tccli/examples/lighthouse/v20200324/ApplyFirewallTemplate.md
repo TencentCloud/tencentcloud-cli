@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli lighthouse ApplyFirewallTemplate --cli-unfold-argument  \
-    --TemplateId lhft-6brh0ciy \
-    --ApplyInstances.0.InstanceId lhins-abcd1234 \
+    --TemplateId lhft-s2dxd7iy \
+    --ApplyInstances.0.InstanceId lhins-wld7xie9 \
     --ApplyInstances.0.Region ap-guangzhou
 ```
 

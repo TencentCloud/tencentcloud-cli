@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cwp DescribeUsersConfig --cli-unfold-argument  \
-    --ConfigName abc
+    --ConfigName license_monitor
 ```
 
 Output: 

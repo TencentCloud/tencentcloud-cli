@@ -10,7 +10,7 @@ tccli trocket ModifyMQTTInsPublicEndpoint --cli-unfold-argument  \
     --Bandwidth 2 \
     --Rules.0.IpRule 2.2.2.2 \
     --Rules.0.Allow True \
-    --Rules.0.Remark 555
+    --Rules.0.Remark remark1
 ```
 
 Output: 

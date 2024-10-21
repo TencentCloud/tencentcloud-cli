@@ -1,4 +1,4 @@
-**Example 1: huo**
+**Example 1: 获取单个RocketMQ专享集群信息**
 
 
 
@@ -14,37 +14,37 @@ Output:
 {
     "Response": {
         "ClusterInfo": {
-            "ClusterId": "abc",
-            "ClusterName": "abc",
-            "Region": "abc",
-            "CreateTime": 1,
-            "Remark": "abc",
-            "PublicEndPoint": "abc",
-            "VpcEndPoint": "abc",
+            "ClusterId": "rocketmq-rd3545bkkj49",
+            "ClusterName": "rocket-order-cluster",
+            "Region": "华南地区",
+            "CreateTime": 1729478721,
+            "Remark": "info- remark",
+            "PublicEndPoint": "rocketmq.access.public.com:9867",
+            "VpcEndPoint": "rocketmq.resource.vpc.com:5010",
             "SupportNamespaceEndpoint": true,
             "Vpcs": [
                 {
-                    "VpcId": "abc",
-                    "SubnetId": "abc"
+                    "VpcId": "vpc-9dlrd5h1",
+                    "SubnetId": "subnet-jadmas"
                 }
             ],
             "IsVip": true,
             "RocketMQFlag": true,
-            "Status": 0,
-            "IsolateTime": 0,
-            "HttpPublicEndpoint": "abc",
-            "HttpVpcEndpoint": "abc",
-            "InternalEndpoint": "abc",
-            "HttpInternalEndpoint": "abc",
+            "Status": 1,
+            "IsolateTime": 1729478721,
+            "HttpPublicEndpoint": "http://rocketmq.access.public.com:9867",
+            "HttpVpcEndpoint": "http://rocketmq.resource.vpc.com:5010",
+            "InternalEndpoint": "rocketmq.tencent.internal.com:8080",
+            "HttpInternalEndpoint": "http://rocketmq.tencent.internal.com:8080",
             "AclEnabled": true,
             "PublicClbId": "abc",
             "Vip": "abc",
             "VpcId": "abc",
             "SupportMigration": true,
-            "InstanceStatus": 0,
-            "ZoneId": 0,
+            "InstanceStatus": 1,
+            "ZoneId": 100001,
             "ZoneIds": [
-                0
+                100001
             ]
         },
         "InstanceConfig": {
@@ -59,14 +59,14 @@ Output:
             "NodeCount": 1,
             "NodeDistribution": [
                 {
-                    "ZoneName": "abc",
-                    "ZoneId": "abc",
+                    "ZoneName": "广东一区",
+                    "ZoneId": "100001",
                     "NodeCount": 1
                 }
             ],
             "TopicDistribution": [
                 {
-                    "TopicType": "abc",
+                    "TopicType": "normal",
                     "Count": 1
                 }
             ],
@@ -77,7 +77,7 @@ Output:
             "TopicNumLowerLimit": 0,
             "TopicNumUpperLimit": 0
         },
-        "RequestId": "abc"
+        "RequestId": "23ca1a58-0388-4d2d-8465-653a53addda7"
     }
 }
 ```

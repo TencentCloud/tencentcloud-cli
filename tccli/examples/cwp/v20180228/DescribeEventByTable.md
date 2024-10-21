@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cwp DescribeEventByTable --cli-unfold-argument  \
-    --TableName abc \
+    --TableName events_bash \
     --Ids 0
 ```
 
@@ -14,9 +14,9 @@ Output:
 ```
 {
     "Response": {
-        "Type": "abc",
-        "Value": "abc",
-        "RequestId": "abc"
+        "Type": "bash",
+        "Value": "value",
+        "RequestId": "xxxxxxxx-1234-5678-9101-yyyyyyyyyy"
     }
 }
 ```

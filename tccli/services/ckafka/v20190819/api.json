@@ -1313,7 +1313,7 @@
         },
         {
           "disabled": false,
-          "document": "主题属性列表",
+          "document": "主题属性列表 (同一个批次最多支持10个)",
           "example": "无",
           "member": "BatchModifyTopicInfo",
           "name": "Topic",
@@ -1355,8 +1355,7 @@
           "member": "string",
           "name": "TopicName",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1365,8 +1364,7 @@
           "member": "int64",
           "name": "PartitionNum",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -1375,8 +1373,7 @@
           "member": "string",
           "name": "Note",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1385,8 +1382,7 @@
           "member": "int64",
           "name": "ReplicaNum",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -1395,8 +1391,7 @@
           "member": "string",
           "name": "CleanUpPolicy",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1405,8 +1400,7 @@
           "member": "int64",
           "name": "MinInsyncReplicas",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -1415,8 +1409,7 @@
           "member": "bool",
           "name": "UncleanLeaderElectionEnable",
           "required": false,
-          "type": "bool",
-          "value_allowed_null": false
+          "type": "bool"
         },
         {
           "disabled": false,
@@ -1425,8 +1418,7 @@
           "member": "int64",
           "name": "RetentionMs",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -1435,8 +1427,7 @@
           "member": "int64",
           "name": "RetentionBytes",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -1445,8 +1436,7 @@
           "member": "int64",
           "name": "SegmentMs",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -1455,8 +1445,7 @@
           "member": "int64",
           "name": "MaxMessageBytes",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         }
       ],
       "usage": "in"

@@ -16,15 +16,16 @@ Output:
 {
     "Response": {
         "TotalCount": 1,
-        "RequestId": "xx",
+        "RequestId": "23ca1a58-0388-4d2d-8465-653a53addda7",
         "Namespaces": [
             {
-                "Remark": "xx",
-                "PublicEndpoint": "xx",
+                "Remark": "info-remark",
+                "PublicEndpoint": "http://public.test.com",
                 "RetentionTime": 1,
-                "VpcEndpoint": "xx",
+                "VpcEndpoint": "http://vpc.test.com",
                 "Ttl": 1,
-                "NamespaceId": "xx"
+                "NamespaceId": "ordernamespace",
+                "InternalEndpoint": "http://internal.test.com"
             }
         ]
     }

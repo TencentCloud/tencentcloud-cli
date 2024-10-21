@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli cwp DescribeVertexDetail --cli-unfold-argument  \
-    --VertexIds abc \
-    --IncidentId abc \
-    --TableName abc
+    --VertexIds dd8c40c6737f75a0c24244d6f4fa6173 \
+    --IncidentId 468314cc-4004-492d-a974-7bf5666cb11b \
+    --TableName incidents_xxx
 ```
 
 Output: 
@@ -18,32 +18,32 @@ Output:
         "VertexDetails": [
             {
                 "Type": 0,
-                "Time": "abc",
+                "Time": " 2019-12-25 11:57:15",
                 "AlarmInfo": [
                     {
-                        "AlarmId": "abc",
+                        "AlarmId": "dd8c40c6",
                         "Status": 0
                     }
                 ],
-                "ProcName": "abc",
-                "CmdLine": "abc",
-                "Pid": "abc",
-                "FileMd5": "abc",
-                "FileContent": "abc",
-                "FilePath": "abc",
-                "FileCreateTime": "abc",
-                "Address": "abc",
-                "DstPort": 1,
-                "SrcIP": "abc",
-                "User": "abc",
-                "VulName": "abc",
-                "VulTime": "abc",
-                "HttpContent": "abc",
-                "VulSrcIP": "abc",
-                "VertexId": "abc"
+                "ProcName": "curl",
+                "CmdLine": "curl",
+                "Pid": "2534",
+                "FileMd5": "",
+                "FileContent": "",
+                "FilePath": "",
+                "FileCreateTime": "",
+                "Address": "",
+                "DstPort": 18888,
+                "SrcIP": "",
+                "User": "",
+                "VulName": "",
+                "VulTime": "",
+                "HttpContent": "",
+                "VulSrcIP": "",
+                "VertexId": "dd8c40c6737f75a0c24244d6f4fa6173"
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "xxxxxxxx-1234-5678-9101-yyyyyyyyyy"
     }
 }
 ```

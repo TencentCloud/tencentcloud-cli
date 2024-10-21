@@ -6,18 +6,18 @@ Input:
 
 ```
 tccli tdmq ModifyRocketMQInstanceSpec --cli-unfold-argument  \
-    --InstanceId abc \
-    --Specification abc \
-    --NodeCount 1 \
-    --StorageSize 1
+    --InstanceId rocketmq-4k4orqgq \
+    --Specification rocket-vip-basic-1 \
+    --NodeCount 2 \
+    --StorageSize 1000
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "OrderId": "abc",
-        "RequestId": "abc"
+        "OrderId": "TDMQ20121212312322",
+        "RequestId": "23ca1a58-0388-4d2d-8465-653a53addda7"
     }
 }
 ```

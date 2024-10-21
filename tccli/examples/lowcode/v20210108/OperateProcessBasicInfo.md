@@ -6,19 +6,22 @@ Input:
 
 ```
 tccli lowcode OperateProcessBasicInfo --cli-unfold-argument  \
-    --ProcessName xx \
-    --EnvId env-001 \
-    --ProcessDesc xx \
+    --OperateAction abc \
+    --ProcessName abc \
+    --ProcessKey abc \
+    --ProcessDesc abc \
     --ProcessVersion 0 \
-    --ProcessKey xx \
-    --OperateAction xx
+    --EnvType abc \
+    --EnvId abc \
+    --AppCode abc \
+    --ReleaseVersion abc
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

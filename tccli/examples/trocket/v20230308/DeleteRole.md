@@ -7,7 +7,7 @@ Input:
 ```
 tccli trocket DeleteRole --cli-unfold-argument  \
     --InstanceId rmq-72mo3a9o \
-    --Role testRole
+    --Role test_role_name
 ```
 
 Output: 

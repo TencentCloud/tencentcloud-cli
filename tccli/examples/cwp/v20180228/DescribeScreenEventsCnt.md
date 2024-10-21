@@ -15,15 +15,19 @@ Output:
             {
                 "Category": [
                     {
-                        "Name": "xx",
-                        "Value": 1
+                        "Name": "入侵检测",
+                        "Value": 41343
+                    },
+                    {
+                        "Name": "网络攻击",
+                        "Value": 5795
                     }
                 ],
-                "Total": "xx",
-                "Title": "xx"
+                "Title": "待处理风险总数",
+                "Total": 47138
             }
         ],
-        "RequestId": "0e078e5e-32bf-41ba-853c-88c697888d99"
+        "RequestId": "42f1c2a0-088c-43bb-909f-b9d54809b1d1"
     }
 }
 ```

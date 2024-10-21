@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli sms PullSmsReplyStatus --cli-unfold-argument  \
-    --SmsSdkAppId 1400006874 \
+    --SmsSdkAppId 1400006666 \
     --Limit 100
 ```
 
@@ -19,19 +19,19 @@ Output:
             {
                 "CountryCode": "86",
                 "ReplyContent": "1",
-                "SubscriberNumber": "15291990000",
+                "SubscriberNumber": "18501234444",
                 "ExtendCode": "11",
                 "ReplyTime": 1620734188,
-                "PhoneNumber": "+8615291990000",
+                "PhoneNumber": "+8618501234444",
                 "SignName": "腾讯云"
             },
             {
                 "CountryCode": "86",
                 "ReplyContent": "2",
-                "SubscriberNumber": "15291990001",
+                "SubscriberNumber": "18501234444",
                 "ExtendCode": "11",
                 "ReplyTime": 1620734189,
-                "PhoneNumber": "+8615291990001",
+                "PhoneNumber": "+8618501234444",
                 "SignName": "腾讯云"
             }
         ]

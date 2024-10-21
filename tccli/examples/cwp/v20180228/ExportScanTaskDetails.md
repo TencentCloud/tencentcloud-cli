@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cwp ExportScanTaskDetails --cli-unfold-argument  \
-    --ModuleType abc \
+    --ModuleType Vul \
     --TaskId 1
 ```
 

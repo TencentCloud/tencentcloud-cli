@@ -11,8 +11,8 @@
     "CopyProcessDetail": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: lowcode.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CopyProcessDetail\n<公共请求参数>\n\n{\n    \"CopiedProcessKey\": \"xx\",\n    \"ProcessName\": \"xx\",\n    \"EnvId\": \"env-001\",\n    \"ProcessDesc\": \"xx\",\n    \"NewProcessKey\": \"xx\",\n    \"CopiedVersion\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: lowcode.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CopyProcessDetail\n<公共请求参数>\n\n{\n    \"CopiedProcessKey\": \"abc\",\n    \"CopiedVersion\": 0,\n    \"NewProcessKey\": \"abc\",\n    \"ProcessDesc\": \"abc\",\n    \"ProcessName\": \"abc\",\n    \"EnvType\": \"abc\",\n    \"EnvId\": \"abc\",\n    \"AppCode\": \"abc\",\n    \"CopiedReleaseVersion\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "流程详情复制"
       }
     ],
@@ -43,8 +43,8 @@
     "DescribeFoldProcessBasicInfos": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: lowcode.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFoldProcessBasicInfos\n<公共请求参数>\n\n{\n    \"Status\": 0,\n    \"ProcessName\": \"xx\",\n    \"Limit\": 0,\n    \"ProcessKey\": \"xx\",\n    \"EnvId\": \"env-001\",\n    \"Offset\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"Data\": {\n            \"TotalCount\": 31,\n            \"ResponseList\": [\n                {\n                    \"Uin\": \"11\",\n                    \"AppId\": \"11\",\n                    \"SubUin\": \"11\",\n                    \"NickName\": \"\",\n                    \"ProcessKey\": \"p11\",\n                    \"ProcessName\": \"p name\",\n                    \"ProcessDesc\": \"desc xx\",\n                    \"Version\": 1,\n                    \"Status\": 4,\n                    \"ModifyTime\": \"2021-07-29T20:32:21.000+0800\",\n                    \"CreateTime\": \"2021-07-27T22:19:53.000+0800\",\n                    \"PublishTime\": \"2021-07-29T20:32:22.000+0800\",\n                    \"SubProcessBasicInfoList\": [\n                        {\n                            \"Uin\": \"11\",\n                            \"AppId\": \"11\",\n                            \"SubUin\": \"11\",\n                            \"NickName\": \"\",\n                            \"ProcessKey\": \"p11\",\n                            \"ProcessName\": \"p name\",\n                            \"ProcessDesc\": \"desc xx\",\n                            \"Version\": 2,\n                            \"Status\": 3,\n                            \"ModifyTime\": \"2021-07-29T20:32:15.000+0800\",\n                            \"CreateTime\": \"2021-07-27T22:19:53.000+0800\"\n                        }\n                    ]\n                }\n            ]\n        }\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: lowcode.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFoldProcessBasicInfos\n<公共请求参数>\n\n{\n    \"ProcessKey\": \"abc\",\n    \"ProcessName\": \"abc\",\n    \"Status\": 0,\n    \"Limit\": 0,\n    \"Offset\": 0,\n    \"EnvType\": \"abc\",\n    \"EnvId\": \"abc\",\n    \"AppCodeList\": [\n        \"abc\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ResponseList\": [\n                {\n                    \"Uin\": \"abc\",\n                    \"SubUin\": \"abc\",\n                    \"AppId\": 0,\n                    \"ProcessKey\": \"abc\",\n                    \"ProcessName\": \"abc\",\n                    \"ProcessDesc\": \"abc\",\n                    \"Version\": 0,\n                    \"Status\": 0,\n                    \"ModifyTime\": \"abc\",\n                    \"CreateTime\": \"abc\",\n                    \"InvokedCount\": 0,\n                    \"PublishTime\": \"abc\",\n                    \"NickName\": \"abc\",\n                    \"SubProcessBasicInfoList\": [\n                        {\n                            \"Uin\": \"abc\",\n                            \"SubUin\": \"abc\",\n                            \"AppId\": 0,\n                            \"ProcessKey\": \"abc\",\n                            \"ProcessName\": \"abc\",\n                            \"ProcessDesc\": \"abc\",\n                            \"Version\": 0,\n                            \"Status\": 0,\n                            \"ModifyTime\": \"abc\",\n                            \"CreateTime\": \"abc\",\n                            \"InvokedCount\": 0,\n                            \"PublishTime\": \"abc\",\n                            \"NickName\": \"abc\",\n                            \"Init\": true\n                        }\n                    ],\n                    \"Init\": true,\n                    \"ReleaseVersion\": \"abc\"\n                }\n            ],\n            \"TotalCount\": 0\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "批量查询流程折叠基础信息列表"
       }
     ],
@@ -67,8 +67,8 @@
     "DescribeMessageTemplates": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: lowcode.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMessageTemplates\n<公共请求参数>\n\n{\n    \"SearchTitleName\": \"xx\",\n    \"EnvId\": \"env-001\",\n    \"PageNo\": 0,\n    \"EnvType\": \"xx\",\n    \"PageSize\": 10\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"TotalCount\": 0,\n            \"ResponseList\": [\n                {\n                    \"AppCode\": \"string\",\n                    \"CreateBy\": \"string\",\n                    \"Datasource\": \"string\",\n                    \"MessageTypeList\": [\n                        0\n                    ],\n                    \"TemplateDesc\": \"string\",\n                    \"TemplateId\": 0,\n                    \"TemplateTitle\": \"string\",\n                    \"CreateTime\": \"xx\"\n                }\n            ]\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: lowcode.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMessageTemplates\n<公共请求参数>\n\n{\n    \"SearchTitleName\": \"abc\",\n    \"PageNo\": 0,\n    \"PageSize\": 0,\n    \"EnvType\": \"abc\",\n    \"TemplateId\": 1,\n    \"EnvId\": \"abc\",\n    \"TemplateType\": 0,\n    \"AppCodeList\": [\n        \"abc\"\n    ],\n    \"DatasourceNameList\": [\n        \"abc\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"TotalCount\": 0,\n            \"ResponseList\": [\n                {\n                    \"MessageTypeList\": [\n                        0\n                    ],\n                    \"TemplateTitle\": \"abc\",\n                    \"TemplateDesc\": \"abc\",\n                    \"AppCode\": \"abc\",\n                    \"Datasource\": \"abc\",\n                    \"CreateBy\": \"abc\",\n                    \"CreateTime\": \"2020-09-22 00:00:00\",\n                    \"UpdateTime\": \"2020-09-22 00:00:00\",\n                    \"TemplateId\": 1,\n                    \"TemplateType\": 0,\n                    \"DatasourceName\": \"abc\",\n                    \"ViewId\": \"abc\"\n                }\n            ]\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "批量查询消息模板基本信息列表"
       }
     ],
@@ -91,16 +91,16 @@
     "DescribeProcessBasicInfos": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: lowcode.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProcessBasicInfos\n<公共请求参数>\n\n{\n    \"Status\": 0,\n    \"ProcessName\": \"xx\",\n    \"Limit\": 0,\n    \"ProcessKey\": \"xx\",\n    \"EnvId\": \"env-001\",\n    \"Offset\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ResponseList\": [\n                {\n                    \"Status\": 0,\n                    \"Version\": 0,\n                    \"InvokedCount\": 0,\n                    \"ModifyTime\": \"xx\",\n                    \"Uin\": \"xx\",\n                    \"ProcessName\": \"xx\",\n                    \"ProcessDesc\": \"xx\",\n                    \"ProcessKey\": \"xx\",\n                    \"AppId\": 0,\n                    \"SubUin\": \"xx\",\n                    \"CreateTime\": \"xx\"\n                }\n            ],\n            \"TotalCount\": 0\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: lowcode.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProcessBasicInfos\n<公共请求参数>\n\n{\n    \"ProcessKey\": \"abc\",\n    \"ProcessName\": \"abc\",\n    \"Status\": 0,\n    \"Limit\": 0,\n    \"Offset\": 0,\n    \"EnvType\": \"abc\",\n    \"EnvId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ResponseList\": [\n                {\n                    \"Uin\": \"abc\",\n                    \"SubUin\": \"abc\",\n                    \"AppId\": 0,\n                    \"ProcessKey\": \"abc\",\n                    \"ProcessName\": \"abc\",\n                    \"ProcessDesc\": \"abc\",\n                    \"Version\": 0,\n                    \"Status\": 0,\n                    \"ModifyTime\": \"abc\",\n                    \"CreateTime\": \"abc\",\n                    \"InvokedCount\": 0,\n                    \"PublishTime\": \"abc\",\n                    \"NickName\": \"abc\",\n                    \"Init\": true\n                }\n            ],\n            \"TotalCount\": 0\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "批量查询流程基础信息列表"
       }
     ],
     "DescribeProcessNodeList": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: lowcode.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProcessNodeList\n<公共请求参数>\n\n{\n    \"ProcessVersion\": 0,\n    \"EnvId\": \"env-001\",\n    \"ProcessKey\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"NodeId\": \"xx\",\n                \"NodeName\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: lowcode.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProcessNodeList\n<公共请求参数>\n\n{\n    \"ProcessKey\": \"abc\",\n    \"ProcessVersion\": 0,\n    \"EnvType\": \"abc\",\n    \"EnvId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"NodeId\": \"abc\",\n                \"NodeName\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "查询流程节点信息"
       }
     ],
@@ -138,7 +138,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: lowcode.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: FlushEnvPreToProd\n<公共请求参数>\n\n{\n    \"EnvType\": \"pre\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "刷新用户的预览环境到生产环境"
       }
     ],
@@ -161,8 +161,8 @@
     "OperateProcessBasicInfo": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: lowcode.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OperateProcessBasicInfo\n<公共请求参数>\n\n{\n    \"ProcessName\": \"xx\",\n    \"EnvId\": \"env-001\",\n    \"ProcessDesc\": \"xx\",\n    \"ProcessVersion\": 0,\n    \"ProcessKey\": \"xx\",\n    \"OperateAction\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: lowcode.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OperateProcessBasicInfo\n<公共请求参数>\n\n{\n    \"OperateAction\": \"abc\",\n    \"ProcessName\": \"abc\",\n    \"ProcessKey\": \"abc\",\n    \"ProcessDesc\": \"abc\",\n    \"ProcessVersion\": 0,\n    \"EnvType\": \"abc\",\n    \"EnvId\": \"abc\",\n    \"AppCode\": \"abc\",\n    \"ReleaseVersion\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "操作流程基础信息"
       }
     ],
@@ -170,7 +170,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: lowcode.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UnbindProcessComponent\n<公共请求参数>\n\n{\n    \"EnvId\": \"env-001\",\n    \"AppCode\": \"appCode-001\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "解绑流程和组件的关系"
       }
     ],

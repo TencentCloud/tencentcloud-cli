@@ -6,19 +6,22 @@ Input:
 
 ```
 tccli lowcode CopyProcessDetail --cli-unfold-argument  \
-    --CopiedProcessKey xx \
-    --ProcessName xx \
-    --EnvId env-001 \
-    --ProcessDesc xx \
-    --NewProcessKey xx \
-    --CopiedVersion 0
+    --CopiedProcessKey abc \
+    --CopiedVersion 0 \
+    --NewProcessKey abc \
+    --ProcessDesc abc \
+    --ProcessName abc \
+    --EnvType abc \
+    --EnvId abc \
+    --AppCode abc \
+    --CopiedReleaseVersion abc
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

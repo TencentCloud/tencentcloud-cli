@@ -1,6 +1,6 @@
 **Example 1: 示例**
 
-
+示例
 
 Input: 
 
@@ -13,14 +13,49 @@ Output:
     "Response": {
         "List": [
             {
-                "RegionCode": "xx",
-                "Region": "xx",
+                "Region": "ap-guangzhou",
+                "RegionCode": "gz",
                 "RegionId": 1,
-                "RegionNameEn": "xx",
-                "RegionName": "xx"
+                "RegionName": "华南地区（广州）",
+                "RegionNameEn": "South China (Guangzhou)"
+            },
+            {
+                "Region": "ap-nanjing",
+                "RegionCode": "nj",
+                "RegionId": 33,
+                "RegionName": "华东地区（南京）",
+                "RegionNameEn": "East Chinaxa0(Nanjing)"
+            },
+            {
+                "Region": "ap-others",
+                "RegionCode": "others",
+                "RegionId": 47,
+                "RegionName": "其他地域（其他）",
+                "RegionNameEn": "Others (Other)"
+            },
+            {
+                "Region": "ap-beijing",
+                "RegionCode": "bj",
+                "RegionId": 8,
+                "RegionName": "华北地区（北京）",
+                "RegionNameEn": "North China (Beijing)"
+            },
+            {
+                "Region": "ap-chengdu",
+                "RegionCode": "cd",
+                "RegionId": 16,
+                "RegionName": "西南地区（成都）",
+                "RegionNameEn": "Southwestxa0China (Chengdu)"
+            },
+            {
+                "Region": "ap-shanghai",
+                "RegionCode": "sh",
+                "RegionId": 4,
+                "RegionName": "华东地区（上海）",
+                "RegionNameEn": "East Chinaxa0(Shanghai)"
             }
         ],
-        "RequestId": "0e078e5e-32bf-41ba-853c-88c697888d99"
+        "RequestId": "01b46ad0-11ab-46fe-9f54-d998385913ee"
     }
 }
 ```

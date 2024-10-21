@@ -6,11 +6,15 @@ Input:
 
 ```
 tccli lowcode DescribeMessageTemplates --cli-unfold-argument  \
-    --SearchTitleName xx \
-    --EnvId env-001 \
+    --SearchTitleName abc \
     --PageNo 0 \
-    --EnvType xx \
-    --PageSize 10
+    --PageSize 0 \
+    --EnvType abc \
+    --TemplateId 1 \
+    --EnvId abc \
+    --TemplateType 0 \
+    --AppCodeList abc \
+    --DatasourceNameList abc
 ```
 
 Output: 
@@ -21,20 +25,24 @@ Output:
             "TotalCount": 0,
             "ResponseList": [
                 {
-                    "AppCode": "string",
-                    "CreateBy": "string",
-                    "Datasource": "string",
                     "MessageTypeList": [
                         0
                     ],
-                    "TemplateDesc": "string",
-                    "TemplateId": 0,
-                    "TemplateTitle": "string",
-                    "CreateTime": "xx"
+                    "TemplateTitle": "abc",
+                    "TemplateDesc": "abc",
+                    "AppCode": "abc",
+                    "Datasource": "abc",
+                    "CreateBy": "abc",
+                    "CreateTime": "2020-09-22 00:00:00",
+                    "UpdateTime": "2020-09-22 00:00:00",
+                    "TemplateId": 1,
+                    "TemplateType": 0,
+                    "DatasourceName": "abc",
+                    "ViewId": "abc"
                 }
             ]
         },
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

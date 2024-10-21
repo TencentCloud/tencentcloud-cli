@@ -17083,6 +17083,7 @@
           "example": "无",
           "member": "IncidentVertexInfo",
           "name": "IncidentNodes",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -17137,6 +17138,7 @@
           "example": "无",
           "member": "string",
           "name": "AlarmVertexIds",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -19290,7 +19292,7 @@
           "example": "wfwfw",
           "member": "AssetType",
           "name": "Types",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -21227,10 +21229,10 @@
         {
           "disabled": false,
           "document": "最后检测时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "2019-12-25 11:57:15",
           "member": "string",
           "name": "LatestScanTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -21240,7 +21242,7 @@
           "example": "1",
           "member": "uint64",
           "name": "IsGlobal",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -21250,7 +21252,7 @@
           "example": "1",
           "member": "uint64",
           "name": "ScanHostCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -21260,7 +21262,7 @@
           "example": "1",
           "member": "uint64",
           "name": "ScanRuleCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -21270,7 +21272,7 @@
           "example": "1",
           "member": "uint64",
           "name": "IfFirstScan",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -23021,37 +23023,37 @@
           "example": "1",
           "member": "uint64",
           "name": "PassRate",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "策略名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "等保一级策略",
           "member": "string",
           "name": "StrategyName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "策略扫描周期(天)\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "1",
           "member": "string",
           "name": "ScanCycle",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "定期检测时间, 该时间下发扫描\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "00:00:00",
           "member": "string",
           "name": "ScanAt",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -23061,7 +23063,7 @@
           "example": "1",
           "member": "uint64",
           "name": "IsGlobal",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -23071,17 +23073,17 @@
           "example": "CVM",
           "member": "string",
           "name": "MachineType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "主机地域\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "ap-bj",
           "member": "string",
           "name": "Region",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -23091,7 +23093,7 @@
           "example": "[]",
           "member": "string",
           "name": "Quuids",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -23101,7 +23103,7 @@
           "example": "[]",
           "member": "string",
           "name": "CategoryIds",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -23111,7 +23113,7 @@
           "example": "1",
           "member": "uint64",
           "name": "IfScanned",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -23902,7 +23904,7 @@
           "example": "无",
           "member": "CanNotSeparateInfo",
           "name": "List",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -24337,7 +24339,7 @@
         {
           "disabled": false,
           "document": "返回数量，最大值为100。",
-          "example": "无",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -24346,7 +24348,7 @@
         {
           "disabled": false,
           "document": "偏移量，默认为0。",
-          "example": "无",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -24355,7 +24357,7 @@
         {
           "disabled": false,
           "document": "过滤条件。\n<li>Status - String - 是否必填：是 - 漏洞状态筛选，0//未检测 1有风险 ，2无风险 ，3 检查中展示progress</li>\n<li>Level - String - 是否必填：否 - 漏洞等级筛选 1:低 2:中 3:高 4:提示</li>\n<li>VulName- String - 是否必填：否 - 漏洞名称搜索</li>\n<li>Uuids- String - 是否必填：否 - 主机uuid</li>\n<li>IsSupportDefense - int- 是否必填：否 - 是否支持防御 0:不支持 1:支持</li>",
-          "example": "无",
+          "example": "[]",
           "member": "Filters",
           "name": "Filters",
           "required": false,
@@ -24364,7 +24366,7 @@
         {
           "disabled": false,
           "document": "排序方式 desc , asc",
-          "example": "无",
+          "example": "desc",
           "member": "string",
           "name": "Order",
           "required": false,
@@ -24373,7 +24375,7 @@
         {
           "disabled": false,
           "document": "排序字段 PublishDate  LastScanTime HostCount",
-          "example": "无",
+          "example": "PublishDate",
           "member": "string",
           "name": "By",
           "required": false,
@@ -24400,6 +24402,7 @@
           "example": "无",
           "member": "EmergencyVul",
           "name": "List",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -24409,6 +24412,7 @@
           "example": "无",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -24418,6 +24422,7 @@
           "example": "true",
           "member": "bool",
           "name": "ExistsRisk",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -24436,7 +24441,7 @@
         {
           "disabled": false,
           "document": "事件表名",
-          "example": "event_risk_dns",
+          "example": "table",
           "member": "string",
           "name": "TableName",
           "required": true,
@@ -24463,6 +24468,7 @@
           "example": "malware",
           "member": "string",
           "name": "Type",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -24472,6 +24478,7 @@
           "example": "xxx",
           "member": "string",
           "name": "Value",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -30039,6 +30046,7 @@
           "example": "1",
           "member": "uint64",
           "name": "ReturnCode",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -30048,6 +30056,7 @@
           "example": "Success",
           "member": "string",
           "name": "ReturnMsg",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -30057,6 +30066,7 @@
           "example": "xxx",
           "member": "ProductStatusInfo",
           "name": "Data",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -32065,7 +32075,7 @@
           "example": "[]",
           "member": "ScanTaskDetails",
           "name": "ScanTaskDetailList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -32075,7 +32085,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -32085,7 +32095,7 @@
           "example": "1",
           "member": "uint64",
           "name": "ScanMachineCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -32095,7 +32105,7 @@
           "example": "1",
           "member": "uint64",
           "name": "RiskMachineCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -32105,7 +32115,7 @@
           "example": "xxx",
           "member": "string",
           "name": "ScanBeginTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -32115,7 +32125,7 @@
           "example": "xxx",
           "member": "string",
           "name": "ScanEndTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -32125,7 +32135,7 @@
           "example": "xxx",
           "member": "uint64",
           "name": "ScanTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -32135,7 +32145,7 @@
           "example": "10",
           "member": "uint64",
           "name": "ScanProgress",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -32145,7 +32155,7 @@
           "example": "xxx",
           "member": "uint64",
           "name": "ScanLeftTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -32155,7 +32165,7 @@
           "example": "xxx",
           "member": "string",
           "name": "ScanContent",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -32165,7 +32175,7 @@
           "example": "[]",
           "member": "VulDetailInfo",
           "name": "VulInfo",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -32175,7 +32185,7 @@
           "example": "1",
           "member": "uint64",
           "name": "RiskEventCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -32185,7 +32195,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -32195,7 +32205,7 @@
           "example": "true",
           "member": "bool",
           "name": "StoppingAll",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -32205,7 +32215,7 @@
           "example": "0",
           "member": "uint64",
           "name": "VulCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -32286,7 +32296,7 @@
         {
           "disabled": false,
           "document": "定期检测间隔时间（天）",
-          "example": "xxx",
+          "example": "1",
           "member": "uint64",
           "name": "TimerInterval",
           "output_required": true,
@@ -32296,7 +32306,7 @@
         {
           "disabled": false,
           "document": "定期检测时间，如：00:00",
-          "example": "xxx",
+          "example": "00:00",
           "member": "string",
           "name": "TimerTime",
           "output_required": true,
@@ -32336,7 +32346,7 @@
         {
           "disabled": false,
           "document": "结束时间",
-          "example": "00:00",
+          "example": "05:00",
           "member": "string",
           "name": "EndTime",
           "output_required": true,
@@ -32356,7 +32366,7 @@
         {
           "disabled": false,
           "document": "为空默认扫描全部专业版、旗舰版、普惠版主机，不为空只扫描选中主机",
-          "example": "['']",
+          "example": "[]",
           "member": "string",
           "name": "Uuids",
           "output_required": true,
@@ -32396,7 +32406,7 @@
           "example": "无",
           "member": "ScreenAttackHotspot",
           "name": "List",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -32423,7 +32433,7 @@
           "example": "无",
           "member": "ScreenBroadcasts",
           "name": "List",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -32469,7 +32479,7 @@
           "example": "无",
           "member": "ScreenTrendsChart",
           "name": "TrendsChart",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -32496,7 +32506,7 @@
           "example": "无",
           "member": "ScreenEmergentMsg",
           "name": "MessageInfo",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -32533,7 +32543,7 @@
           "example": "无",
           "member": "ScreenEventsCnt",
           "name": "Info",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -32607,7 +32617,7 @@
           "example": "无",
           "member": "ScreenDefendAttackLog",
           "name": "DefendAttackLog",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -32617,7 +32627,7 @@
           "example": "无",
           "member": "ScreenInvasion",
           "name": "InvasionEvents",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -32627,7 +32637,7 @@
           "example": "无",
           "member": "ScreenVulInfo",
           "name": "Vul",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -32637,7 +32647,7 @@
           "example": "无",
           "member": "ScreenBaselineInfo",
           "name": "Baseline",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -32664,7 +32674,7 @@
           "example": "无",
           "member": "ScreenRegionInfo",
           "name": "List",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -32719,7 +32729,7 @@
           "example": "无",
           "member": "ScreenRegionMachines",
           "name": "List",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -32746,7 +32756,7 @@
           "example": "无",
           "member": "ScreenProtectionCnt",
           "name": "List",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -32773,7 +32783,7 @@
           "example": "无",
           "member": "ScreenProtection",
           "name": "Info",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -32810,7 +32820,7 @@
           "example": "无",
           "member": "ScreenNameValue",
           "name": "Chart",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -34427,6 +34437,7 @@
           "example": "无",
           "member": "VertexDetail",
           "name": "VertexDetails",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -34841,7 +34852,7 @@
         {
           "disabled": false,
           "document": "过滤条件。\n<li>Keywords - String - 是否必填：否 - 主机ip或别名筛选</li>\n<li>Exception - String - 是否必填：否 - 插件状态 0:正常,1:异常,2:无java进程注入</li>",
-          "example": "无",
+          "example": "[]",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -34895,15 +34906,17 @@
           "example": "123",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "各主机漏洞防御插件信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[]",
           "member": "VulDefencePluginStatus",
           "name": "List",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -35808,7 +35821,7 @@
         {
           "disabled": false,
           "document": "可选排序字段 Level，LastTime，HostCount",
-          "example": "无",
+          "example": "Level",
           "member": "string",
           "name": "By",
           "required": false,
@@ -35817,7 +35830,7 @@
         {
           "disabled": false,
           "document": "排序顺序：desc  默认asc",
-          "example": "无",
+          "example": "desc",
           "member": "string",
           "name": "Order",
           "required": false,
@@ -35835,6 +35848,7 @@
           "example": "[]",
           "member": "VulInfoList",
           "name": "VulInfoList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -35844,6 +35858,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -35853,6 +35868,7 @@
           "example": "23",
           "member": "uint64",
           "name": "FollowVulCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -35996,6 +36012,7 @@
           "example": "无",
           "member": "VulStoreListInfo",
           "name": "List",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -36005,6 +36022,7 @@
           "example": "无",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -36014,6 +36032,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Remaining",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -36023,6 +36042,7 @@
           "example": "1",
           "member": "uint64",
           "name": "FreeSearchTimes",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -40856,6 +40876,7 @@
           "example": "1615549629",
           "member": "string",
           "name": "TaskId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -42375,6 +42396,7 @@
           "example": "test_val",
           "member": "string",
           "name": "Value",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -53251,7 +53273,7 @@
         {
           "disabled": false,
           "document": "主机quuid",
-          "example": "xxxxxx",
+          "example": "1c26308c-5493-4eaf-a817-112ec25f499e ",
           "member": "string",
           "name": "Quuid",
           "required": true,
@@ -53296,7 +53318,7 @@
         {
           "disabled": false,
           "document": "主机Quuid",
-          "example": "xxxxxxxxx",
+          "example": "1c26308c-5493-4eaf-a817-112ec25f499e",
           "member": "string",
           "name": "Quuid",
           "required": true,
@@ -55102,7 +55124,7 @@
         },
         {
           "disabled": false,
-          "document": "失败详情",
+          "document": "失败类型  3离线、4超时、5失败、8agent版本过低",
           "example": "4",
           "member": "uint64",
           "name": "FailType",
@@ -55442,7 +55464,7 @@
           "example": "国际标准xxxx",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -55452,7 +55474,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Level",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -55462,7 +55484,7 @@
           "example": "12",
           "member": "uint64",
           "name": "CategoryId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -55472,7 +55494,7 @@
           "example": "2021-03-30 19:17:28",
           "member": "string",
           "name": "LastScanTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -55482,17 +55504,17 @@
           "example": "23",
           "member": "uint64",
           "name": "BaselineFailCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "主机uuid\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxxxxxx,xxxxx",
+          "example": "1c26308c-5493-4eaf-a817-112ec25f499e",
           "member": "string",
           "name": "Uuid",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -60023,7 +60045,7 @@
           "example": "1",
           "member": "string",
           "name": "Ids",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -60033,7 +60055,7 @@
           "example": "git注入",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -60043,7 +60065,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -60053,7 +60075,7 @@
           "example": "1",
           "member": "uint64",
           "name": "VulId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -60063,7 +60085,7 @@
           "example": "2021-03-16 16:21:51",
           "member": "string",
           "name": "PublishTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -60073,7 +60095,7 @@
           "example": "2021-03-16 16:21:51",
           "member": "string",
           "name": "LastTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -60083,7 +60105,7 @@
           "example": "2",
           "member": "uint64",
           "name": "HostCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -60093,7 +60115,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Level",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -60103,7 +60125,7 @@
           "example": "0",
           "member": "uint64",
           "name": "From",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -60113,7 +60135,7 @@
           "example": "漏洞描述",
           "member": "string",
           "name": "Descript",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -60123,7 +60145,7 @@
           "example": "废弃字段",
           "member": "string",
           "name": "PublishTimeWisteria",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -60133,7 +60155,7 @@
           "example": "废弃字段",
           "member": "string",
           "name": "NameWisteria",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -60143,7 +60165,7 @@
           "example": "废弃字段",
           "member": "string",
           "name": "DescriptWisteria",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -60153,7 +60175,7 @@
           "example": "1,2",
           "member": "string",
           "name": "StatusStr",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -60163,7 +60185,7 @@
           "example": "CVE-2021-3156",
           "member": "string",
           "name": "CveId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -60173,7 +60195,7 @@
           "example": "9",
           "member": "float",
           "name": "CvssScore",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },
@@ -60183,7 +60205,7 @@
           "example": "标签1,标签2",
           "member": "string",
           "name": "Labels",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -60193,7 +60215,7 @@
           "example": "1",
           "member": "uint64",
           "name": "FixSwitch",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -60203,7 +60225,7 @@
           "example": "12",
           "member": "uint64",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -60213,7 +60235,7 @@
           "example": "1",
           "member": "uint64",
           "name": "IsSupportDefense",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -60223,7 +60245,7 @@
           "example": "12",
           "member": "uint64",
           "name": "DefenseAttackCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -60233,7 +60255,7 @@
           "example": "2021-03-30 19:17:28",
           "member": "string",
           "name": "FirstAppearTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -60243,7 +60265,7 @@
           "example": "1",
           "member": "uint64",
           "name": "VulCategory",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -60253,7 +60275,7 @@
           "example": "1",
           "member": "uint64",
           "name": "AttackLevel",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -60263,7 +60285,7 @@
           "example": "true",
           "member": "bool",
           "name": "FixNoNeedRestart",
-          "required": false,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -60273,7 +60295,17 @@
           "example": "1",
           "member": "uint64",
           "name": "Method",
-          "required": false,
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "漏洞是否支持修复 0不支持，1支持\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "VulFixSwitch",
+          "output_required": false,
           "type": "int",
           "value_allowed_null": true
         }
@@ -60367,7 +60399,7 @@
           "example": "1",
           "member": "uint64",
           "name": "VulId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -60377,7 +60409,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Level",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -60387,7 +60419,7 @@
           "example": "漏洞",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -60397,7 +60429,7 @@
           "example": "123",
           "member": "string",
           "name": "CveId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -60407,7 +60439,7 @@
           "example": "1",
           "member": "uint64",
           "name": "VulCategory",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -60417,7 +60449,7 @@
           "example": "11",
           "member": "string",
           "name": "PublishDate",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -60427,7 +60459,7 @@
           "example": "0",
           "member": "uint64",
           "name": "Method",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -60437,17 +60469,17 @@
           "example": "1",
           "member": "uint64",
           "name": "AttackLevel",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "漏洞是否支持自动修复\n0-windows/linux均关闭; 1-windows/linux均打开; 2-仅linux; 3-仅windows",
+          "document": "漏洞是否支持自动修复\n0-Windows/Linux均关闭; 1-Windows/Linux均打开; 2-仅Linux; 3-仅Windows",
           "example": "1",
           "member": "uint64",
           "name": "FixSwitch",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -60457,7 +60489,7 @@
           "example": "1",
           "member": "uint64",
           "name": "SupportDefense",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }

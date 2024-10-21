@@ -8,13 +8,13 @@ Input:
 
 ```
 tccli cwp DescribeVulStoreList --cli-unfold-argument  \
-    --Filters.0.Name abc \
-    --Filters.0.Values abc \
+    --Filters.0.Name VulName \
+    --Filters.0.Values CVE-2023-46604 \
     --Filters.0.ExactMatch True \
-    --Limit 0 \
+    --Limit 10 \
     --Offset 0 \
-    --Order abc \
-    --By abc
+    --Order DESC \
+    --By PublishDate
 ```
 
 Output: 
@@ -23,15 +23,15 @@ Output:
     "Response": {
         "List": [
             {
-                "VulId": 1,
-                "Level": 1,
-                "Name": "abc",
-                "CveId": "abc",
-                "VulCategory": 1,
-                "PublishDate": "abc",
-                "Method": 1,
-                "AttackLevel": 1,
-                "FixSwitch": 1,
+                "VulId": 105006,
+                "Level": 4,
+                "Name": "Apache ActiveMQ远程代码执行漏洞(CVE-2023-46604)",
+                "CveId": "CVE-2023-46604",
+                "VulCategory": 2,
+                "PublishDate": "2023-10-24 00:00:00",
+                "Method": 0,
+                "AttackLevel": 3,
+                "FixSwitch": 0,
                 "SupportDefense": 1
             }
         ],

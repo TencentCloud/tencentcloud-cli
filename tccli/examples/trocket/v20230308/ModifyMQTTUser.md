@@ -7,8 +7,8 @@ Input:
 ```
 tccli trocket ModifyMQTTUser --cli-unfold-argument  \
     --InstanceId mqtt-7pnqmkrx \
-    --Username 222 \
-    --Remark 3333 \
+    --Username user2 \
+    --Remark remark2 \
     --PermRead True \
     --PermWrite True
 ```

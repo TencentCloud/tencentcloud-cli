@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cwp DescribeAlarmVertexId --cli-unfold-argument  \
-    --Uuid abc \
+    --Uuid 1c26308c-5493-4eaf-a817-112ec25f499e \
     --StartTime 0 \
     --EndTime 0
 ```
@@ -16,9 +16,9 @@ Output:
 {
     "Response": {
         "AlarmVertexIds": [
-            "abc"
+            "23eeeb4347bdd26bfc6b7ee9a3b755dd"
         ],
-        "RequestId": "abc"
+        "RequestId": "xxxxxxxx-1234-5678-9101-yyyyyyyyyy"
     }
 }
 ```

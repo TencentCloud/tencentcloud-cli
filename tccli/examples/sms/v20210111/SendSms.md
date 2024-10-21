@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli sms SendSms --cli-unfold-argument  \
-    --PhoneNumberSet +8618511122233 +8618511122266 \
+    --PhoneNumberSet +8618501234444 +8618501234445 \
     --SmsSdkAppId 1400006666 \
     --SignName 腾讯云 \
     --TemplateId 1110 \
-    --TemplateParamSet 1234 \
-    --SessionContext test
+    --TemplateParamSet 4370 \
+    --SessionContext outsid_1729495320_1011
 ```
 
 Output: 
@@ -21,18 +21,18 @@ Output:
         "SendStatusSet": [
             {
                 "SerialNo": "5000:1045710669157053657849499619",
-                "PhoneNumber": "+8618511122233",
+                "PhoneNumber": "+8618501234444",
                 "Fee": 1,
-                "SessionContext": "test",
+                "SessionContext": "outsid_1729495320_1011",
                 "Code": "Ok",
                 "Message": "send success",
                 "IsoCode": "CN"
             },
             {
                 "SerialNo": "5000:1045710669157053657849499718",
-                "PhoneNumber": "+8618511122266",
+                "PhoneNumber": "+8618501234445",
                 "Fee": 1,
-                "SessionContext": "test",
+                "SessionContext": "outsid_1729495320_1011",
                 "Code": "Ok",
                 "Message": "send success",
                 "IsoCode": "CN"

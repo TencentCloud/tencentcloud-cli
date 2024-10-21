@@ -1673,7 +1673,7 @@
           "example": "{\"Status\": 0,\"ProcessName\": \"xx\",\"Limit\": 0,\"Offset\": 0}",
           "member": "ProcessFoldBasicInfoSets",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -1949,7 +1949,7 @@
           "example": "无",
           "member": "MessageTemplatePage",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -2222,7 +2222,7 @@
           "example": "{\"Status\": 0,\"ProcessName\": \"xx\",\"Limit\": 0,\"Offset\": 0}",
           "member": "ProcessBasicInfoSets",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -2286,7 +2286,7 @@
           "example": "无",
           "member": "ProcessNodeInfo",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3455,6 +3455,16 @@
           "name": "Init",
           "required": false,
           "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "流程完整版本号，主版本.次版本。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ReleaseVersion",
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

@@ -1591,10 +1591,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "认证结果码，收费情况如下。\n收费结果码：\n0: 查询成功\n-1: 未查到信息\n不收费结果码：\n-2：验证中心服务繁忙\n-3：银行卡不存在",
+          "document": "认证结果码，收费情况如下。\n收费结果码：\n0: 查询成功\n-1: 未查到信息\n不收费结果码：\n-2：验证中心服务繁忙\n-3：银行卡不存在\n-4：认证次数超过当日限制，请次日重试\n",
           "example": "0",
           "member": "string",
           "name": "Result",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1604,6 +1605,7 @@
           "example": "查询成功",
           "member": "string",
           "name": "Description",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1613,6 +1615,7 @@
           "example": "中国工商银行",
           "member": "string",
           "name": "AccountBank",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1622,6 +1625,7 @@
           "example": "1",
           "member": "int64",
           "name": "AccountType",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7696,11 +7700,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "认证结果码，收费情况如下。\n收费结果码：\n0: 成功\n-2: 手机号不存在\n-3: 手机号存在，但无法查询到在网时长\n不收费结果码：\n-1: 手机号格式不正确\n-4: 验证中心服务繁忙",
+          "document": "认证结果码，收费情况如下。\n收费结果码：\n0: 成功\n-2: 手机号不存在\n-3: 手机号存在，但无法查询到在网时长\n不收费结果码：\n-1: 手机号格式不正确\n-4: 验证中心服务繁忙\n-5：认证次数超过当日限制，请次日重试",
           "example": "0",
           "member": "string",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7710,7 +7714,7 @@
           "example": "成功",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7720,7 +7724,7 @@
           "example": "(23,+]",
           "member": "string",
           "name": "Range",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7762,11 +7766,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "认证结果码，收费情况如下。\n收费结果码：\n0：成功\n不收费结果码：\n-1：未查询到结果\n-2：手机号格式不正确\n-3：验证中心服务繁忙",
+          "document": "认证结果码，收费情况如下。\n收费结果码：\n0：成功\n不收费结果码：\n-1：未查询到结果\n-2：手机号格式不正确\n-3：验证中心服务繁忙\n-4：认证次数超过当日限制，请次日重试",
           "example": "0",
           "member": "string",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7776,7 +7780,7 @@
           "example": "成功",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7786,7 +7790,7 @@
           "example": "1",
           "member": "int64",
           "name": "StatusCode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },

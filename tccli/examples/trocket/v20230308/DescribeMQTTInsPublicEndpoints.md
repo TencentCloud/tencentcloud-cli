@@ -18,27 +18,27 @@ Output:
         "Bandwidth": 2,
         "Endpoints": [
             {
-                "Host": "mqtt-gn8qoq3z-cd.mqtt.public.tencenttdmq.com",
-                "Port": 22,
+                "Host": "mqttproxy-gn8qoq3z-gz-public.mqtt.tencenttdmq.com",
+                "Port": 8888,
                 "SubnetId": null,
                 "Type": "mqtt-ws",
-                "Url": null,
+                "Url": "mqttproxy-gn8qoq3z-gz-public.mqtt.tencenttdmq.com:8888",
                 "VpcId": null
             },
             {
-                "Host": "mqtt-gn8qoq3z-cd.mqtt.public.tencenttdmq.com",
-                "Port": 11,
+                "Host": "mqttproxy-gn8qoq3z-gz-public.mqtt.tencenttdmq.com",
+                "Port": 1883,
                 "SubnetId": null,
                 "Type": "mqtt-tcp",
-                "Url": null,
+                "Url": "mqttproxy-gn8qoq3z-gz-public.mqtt.tencenttdmq.com:1883",
                 "VpcId": null
             },
             {
-                "Host": "mqtt-gn8qoq3z-cd.mqtt.public.tencenttdmq.com",
-                "Port": 33,
+                "Host": "mqttproxy-gn8qoq3z-gz-public.mqtt.tencenttdmq.com",
+                "Port": 8883,
                 "SubnetId": null,
                 "Type": "mqtt-tls",
-                "Url": null,
+                "Url": "mqttproxy-gn8qoq3z-gz-public.mqtt.tencenttdmq.com:8883",
                 "VpcId": null
             }
         ],

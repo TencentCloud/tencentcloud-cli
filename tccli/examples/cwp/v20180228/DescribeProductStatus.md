@@ -12,14 +12,14 @@ Output:
 {
     "Response": {
         "ReturnCode": 1,
-        "ReturnMsg": "xx",
+        "ReturnMsg": "msg",
         "Data": {
             "FWUserStatus": 1,
             "CanApplyTrial": true,
-            "CanNotApplyReason": "xx",
-            "LastTrialTime": "xx"
+            "CanNotApplyReason": "reason",
+            "LastTrialTime": " 2019-12-25 11:57:15"
         },
-        "RequestId": "xx"
+        "RequestId": "xxxxxxxx-1234-5678-9101-yyyyyyyyyy"
     }
 }
 ```

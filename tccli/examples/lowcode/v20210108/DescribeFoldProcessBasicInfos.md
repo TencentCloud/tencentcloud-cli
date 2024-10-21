@@ -6,53 +6,61 @@ Input:
 
 ```
 tccli lowcode DescribeFoldProcessBasicInfos --cli-unfold-argument  \
+    --ProcessKey abc \
+    --ProcessName abc \
     --Status 0 \
-    --ProcessName xx \
     --Limit 0 \
-    --ProcessKey xx \
-    --EnvId env-001 \
-    --Offset 0
+    --Offset 0 \
+    --EnvType abc \
+    --EnvId abc \
+    --AppCodeList abc
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx",
         "Data": {
-            "TotalCount": 31,
             "ResponseList": [
                 {
-                    "Uin": "11",
-                    "AppId": "11",
-                    "SubUin": "11",
-                    "NickName": "",
-                    "ProcessKey": "p11",
-                    "ProcessName": "p name",
-                    "ProcessDesc": "desc xx",
-                    "Version": 1,
-                    "Status": 4,
-                    "ModifyTime": "2021-07-29T20:32:21.000+0800",
-                    "CreateTime": "2021-07-27T22:19:53.000+0800",
-                    "PublishTime": "2021-07-29T20:32:22.000+0800",
+                    "Uin": "abc",
+                    "SubUin": "abc",
+                    "AppId": 0,
+                    "ProcessKey": "abc",
+                    "ProcessName": "abc",
+                    "ProcessDesc": "abc",
+                    "Version": 0,
+                    "Status": 0,
+                    "ModifyTime": "abc",
+                    "CreateTime": "abc",
+                    "InvokedCount": 0,
+                    "PublishTime": "abc",
+                    "NickName": "abc",
                     "SubProcessBasicInfoList": [
                         {
-                            "Uin": "11",
-                            "AppId": "11",
-                            "SubUin": "11",
-                            "NickName": "",
-                            "ProcessKey": "p11",
-                            "ProcessName": "p name",
-                            "ProcessDesc": "desc xx",
-                            "Version": 2,
-                            "Status": 3,
-                            "ModifyTime": "2021-07-29T20:32:15.000+0800",
-                            "CreateTime": "2021-07-27T22:19:53.000+0800"
+                            "Uin": "abc",
+                            "SubUin": "abc",
+                            "AppId": 0,
+                            "ProcessKey": "abc",
+                            "ProcessName": "abc",
+                            "ProcessDesc": "abc",
+                            "Version": 0,
+                            "Status": 0,
+                            "ModifyTime": "abc",
+                            "CreateTime": "abc",
+                            "InvokedCount": 0,
+                            "PublishTime": "abc",
+                            "NickName": "abc",
+                            "Init": true
                         }
-                    ]
+                    ],
+                    "Init": true,
+                    "ReleaseVersion": "abc"
                 }
-            ]
-        }
+            ],
+            "TotalCount": 0
+        },
+        "RequestId": "abc"
     }
 }
 ```

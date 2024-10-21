@@ -21,51 +21,56 @@ Output:
     "Response": {
         "Data": [
             {
-                "RuleType": 0,
-                "Ioc": "abc",
-                "IocInfo": "abc",
-                "Domain": "abc",
-                "IP": "abc",
-                "Level": "abc",
-                "EventName": "abc",
-                "Direction": 0,
-                "DirectionList": "0,1",
-                "Protocol": "abc",
-                "Address": "abc",
-                "Action": 0,
-                "StartTime": "abc",
-                "EndTime": "abc",
-                "IgnoreReason": "abc",
-                "Source": "abc",
-                "UniqueId": "abc",
-                "MatchTimes": 0,
-                "Country": "abc",
-                "Comment": "abc",
-                "LastHitTime": "abc",
+                "Action": 1,
+                "Address": "土耳其伊斯坦布尔省伊斯坦布尔",
+                "Comment": "",
+                "Country": "土耳其",
                 "CustomRule": {
-                    "SrcIP": "abc",
-                    "DstIP": "abc",
-                    "IdsRuleName": "abc",
-                    "IdsRuleId": "abc"
-                }
+                    "DstIP": "",
+                    "IdsRuleId": "",
+                    "IdsRuleName": "",
+                    "SrcIP": ""
+                },
+                "Direction": 1,
+                "DirectionList": "1",
+                "Domain": "",
+                "EndTime": "2024-10-23 09:50:59",
+                "EventName": "泛微OA蜜罐探测事件",
+                "FwType": 15,
+                "IP": "1.1.1.1",
+                "IgnoreReason": "0",
+                "Ioc": "1.1.1.1",
+                "IocInfo": "",
+                "IocName": "",
+                "LastHitTime": "2024-10-21 16:59:09",
+                "Level": "高危",
+                "MatchTimes": 563038,
+                "Protocol": "HTTP",
+                "RuleType": 1,
+                "Source": "网络蜜罐（严格模式）",
+                "StartTime": "2024-09-27 09:50:59",
+                "UniqueId": "appid-1.1.1.1-1-1"
             }
         ],
-        "Total": 0,
+        "RequestId": "d4b7cab1-5594-41fb-88c6-67822af94807",
         "ReturnCode": 0,
-        "ReturnMsg": "abc",
-        "SourceList": [
-            "abc"
-        ],
+        "ReturnMsg": "success",
         "RuleTypeDataList": [
             0,
-            122,
-            30,
-            55,
-            12,
-            232,
+            5,
+            1,
+            0,
+            0,
+            1,
             0
         ],
-        "RequestId": "abc"
+        "SourceList": [
+            "基础防御",
+            "手动添加",
+            "网络蜜罐（严格模式）",
+            "虚拟补丁"
+        ],
+        "Total": 30
     }
 }
 ```

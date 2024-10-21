@@ -6,17 +6,17 @@ Input:
 
 ```
 tccli tdmq ModifyRocketMQInstance --cli-unfold-argument  \
-    --InstanceId abc \
-    --Name abc \
-    --Remark abc \
-    --MessageRetention 0
+    --InstanceId rocketmq-4k4orqgq \
+    --Name order-service-instance \
+    --Remark info-mark \
+    --MessageRetention 24
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "23ca1a58-0388-4d2d-8465-653a53addda7"
     }
 }
 ```

@@ -17,7 +17,7 @@ Output:
     "Error": null,
     "RequestId": null,
     "Response": {
-        "Body": "Hello MQTT111111",
+        "Body": "Hello MQTT",
         "MessageId": "0B8D67F0002D6ACBCFC0557BCEBA0001",
         "ProduceTime": "2024-01-17 14:22:57",
         "ProducerAddr": "11.176.16.153:51134",
@@ -76,7 +76,7 @@ Output:
             }
         ],
         "RequestId": "e658afc8-e2c0-463e-bf90-3103d881d59f",
-        "ShowTopicName": "topic24"
+        "ShowTopicName": "topic-home"
     }
 }
 ```

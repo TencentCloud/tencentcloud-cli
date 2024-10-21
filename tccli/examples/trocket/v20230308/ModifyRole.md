@@ -1,16 +1,16 @@
 **Example 1: 修改角色**
 
-修改角色
+修改角色成功
 
 Input: 
 
 ```
 tccli trocket ModifyRole --cli-unfold-argument  \
     --InstanceId rmq-72mo3a9o \
-    --Role testRole \
-    --Remark test \
-    --PermRead True \
-    --PermWrite True
+    --Role test_role_name \
+    --Remark 测试修改 \
+    --PermRead False \
+    --PermWrite False
 ```
 
 Output: 

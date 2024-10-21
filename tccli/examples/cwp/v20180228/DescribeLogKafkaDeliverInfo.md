@@ -11,34 +11,37 @@ Output:
 ```
 {
     "Response": {
-        "KafkaEnvName": "abc",
-        "KafkaId": "abc",
-        "Zone": "abc",
-        "Az": "abc",
-        "VpcId": "abc",
-        "SubnetId": "abc",
+        "KafkaEnvName": "name",
+        "KafkaId": "ckafka-xxx",
+        "Zone": "10006",
+        "Az": "az",
+        "VpcId": "vpc-xxx",
+        "SubnetId": "subnet-xxx",
         "AccessType": 1,
-        "AccessAddr": "abc",
+        "AccessAddr": "addr",
         "DeliverStatus": 1,
-        "InsVersion": "abc",
+        "InsVersion": "1.0.1",
         "BandWidth": 0,
         "DiskSize": 0,
-        "Username": "abc",
+        "Username": "username",
         "DeliverTypeDetails": [
             {
                 "SecurityType": 1,
                 "LogType": [
                     0
                 ],
-                "TopicId": "abc",
-                "TopicName": "abc",
+                "TopicId": "topic-xxx",
+                "TopicName": "topic-name",
                 "Switch": 1,
                 "Status": 1,
-                "ErrInfo": "abc",
-                "StatusTime": 0
+                "ErrInfo": "err",
+                "StatusTime": 0,
+                "LogName": "log-name",
+                "LogSetId": "cls-xxx",
+                "Region": "ap-guangzhou"
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "xxxxxxxx-1234-5678-9101-yyyyyyyyyy"
     }
 }
 ```

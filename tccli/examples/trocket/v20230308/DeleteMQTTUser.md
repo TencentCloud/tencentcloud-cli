@@ -7,7 +7,7 @@ Input:
 ```
 tccli trocket DeleteMQTTUser --cli-unfold-argument  \
     --InstanceId mqtt-7pnqmkrx \
-    --Username 123
+    --Username user1
 ```
 
 Output: 

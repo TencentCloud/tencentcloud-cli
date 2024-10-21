@@ -16,20 +16,23 @@ Output:
     "Response": {
         "List": [
             {
-                "VulId": 1,
-                "Level": 1,
-                "VulName": "abc",
-                "PublishDate": "abc",
-                "Category": 1,
-                "Status": 1,
-                "LastScanTime": "abc",
-                "Progress": 1,
-                "CveId": "abc",
-                "CvssScore": 0,
-                "Labels": "abc",
-                "HostCount": 1,
-                "IsSupportDefense": 1,
-                "DefenseAttackCount": 1
+                "VulId": 105374,
+                "Level": 4,
+                "VulName": "Apache OFBiz SSRF到远程代码执行漏洞（CVE-2024-45507）",
+                "PublishDate": "2024-09-04 00:00:00",
+                "Category": 2,
+                "Status": 2,
+                "LastScanTime": "2024-10-21 14:27:07",
+                "Progress": 0,
+                "CveId": "CVE-2024-45507",
+                "CvssScore": 9.8,
+                "Labels": "远程利用",
+                "HostCount": 0,
+                "IsSupportDefense": 0,
+                "DefenseAttackCount": 0,
+                "Method": 1,
+                "AttackLevel": 0,
+                "DefenseState": false
             }
         ],
         "TotalCount": 1,

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli sms SendStatusStatistics --cli-unfold-argument  \
-    --SmsSdkAppId 1400006874 \
+    --SmsSdkAppId 1400006666 \
     --EndTime 2021050123 \
     --Limit 0 \
     --BeginTime 2021050113 \

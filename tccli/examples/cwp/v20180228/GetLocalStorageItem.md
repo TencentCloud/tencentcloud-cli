@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cwp GetLocalStorageItem --cli-unfold-argument  \
-    --Key xxx
+    --Key key
 ```
 
 Output: 
@@ -14,7 +14,7 @@ Output:
 {
     "Response": {
         "RequestId": "bf93077b-51f5-4428-b9de-7e33a0b9cc4a",
-        "Value": "xxx"
+        "Value": "value"
     }
 }
 ```

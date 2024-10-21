@@ -1,4 +1,4 @@
-**Example 1: 获取trino查询结果**
+**Example 1: 查询Trino(PrestoSQL)查询信息**
 
 
 

@@ -8,7 +8,7 @@ Input:
 tccli trocket DescribeTopicList --cli-unfold-argument  \
     --InstanceId rmq-72mo3a9o \
     --Offset 0 \
-    --Limit 1
+    --Limit 20
 ```
 
 Output: 
@@ -21,13 +21,13 @@ Output:
             {
                 "InstanceId": "rmq-72mo3a9o",
                 "QueueNum": 16,
-                "Remark": "remoark",
-                "Topic": "test",
+                "Remark": "测试主题",
+                "Topic": "test_topic",
                 "TopicType": "NORMAL"
             }
         ],
         "RequestId": "927cbd2c-be83-410e-a83f-24dcea1d88d9",
-        "TotalCount": 7
+        "TotalCount": 1
     }
 }
 ```

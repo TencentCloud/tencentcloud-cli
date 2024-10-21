@@ -7,7 +7,7 @@ Input:
 ```
 tccli trocket CreateInstance --cli-unfold-argument  \
     --InstanceType BASIC \
-    --Name testbuy3 \
+    --Name test_instance \
     --SkuCode basic_2k
 ```
 
@@ -17,7 +17,7 @@ Output:
     "Error": null,
     "RequestId": null,
     "Response": {
-        "InstanceId": "rmq-odrvrqwr",
+        "InstanceId": "rmq-72mo3a9or",
         "RequestId": "32759095-0372-4ec0-ae3a-e5a2759fd0ff"
     }
 }

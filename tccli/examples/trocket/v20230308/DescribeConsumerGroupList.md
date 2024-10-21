@@ -21,14 +21,14 @@ Output:
             {
                 "ConsumeEnable": true,
                 "ConsumeMessageOrderly": true,
-                "ConsumerGroup": "group",
+                "ConsumerGroup": "test_group",
                 "InstanceId": "rmq-72mo3a9o",
                 "MaxRetryTimes": 16,
-                "Remark": "test"
+                "Remark": "测试消费组"
             }
         ],
         "RequestId": "318142bf-0dd1-4b81-9444-a40f988619a1",
-        "TotalCount": 7
+        "TotalCount": 1
     }
 }
 ```

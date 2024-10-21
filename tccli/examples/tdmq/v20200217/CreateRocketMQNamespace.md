@@ -7,10 +7,10 @@ Input:
 ```
 tccli tdmq CreateRocketMQNamespace --cli-unfold-argument  \
     --ClusterId rocketmq-2p9vx3ax9jxg \
-    --NamespaceId example \
-    --Ttl 60000 \
-    --RetentionTime 600000 \
-    --Remark example
+    --NamespaceId test_namespace \
+    --Ttl 259200000 \
+    --RetentionTime 259200000 \
+    --Remark 测试命名空间
 ```
 
 Output: 
