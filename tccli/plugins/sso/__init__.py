@@ -1,0 +1,51 @@
+# encoding: utf-8
+from tccli.plugins.sso.login import login_command_entrypoint
+from tccli.plugins.sso.logout import logout_command_entrypoint
+
+service_name = "sso"
+service_version = "2024-10-14"
+
+_spec = {
+    "metadata": {
+        "serviceShortName": service_name,
+        "apiVersion": service_version,
+        "description": "sso related commands",
+    },
+    "actions": {
+        "login": {
+            "name": "登陆",
+            "document": "login through sso",
+            "input": "loginRequest",
+            "output": "loginResponse",
+            "action_caller": login_command_entrypoint,
+        },
+        "logout": {
+            "name": "登出",
+            "document": "remove local credential file",
+            "input": "logoutRequest",
+            "output": "logoutResponse",
+            "action_caller": logout_command_entrypoint,
+        },
+    },
+    "objects": {
+        "loginRequest": {
+            "members": [],
+        },
+        "loginResponse": {
+            "members": [],
+        },
+        "logoutRequest": {
+            "members": [],
+        },
+        "logoutResponse": {
+            "members": [],
+        },
+    },
+    "version": "1.0",
+}
+
+
+def register_service(specs):
+    specs[service_name] = {
+        service_version: _spec,
+    }
