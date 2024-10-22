@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli captcha GetTicketStatistics --cli-unfold-argument  \
-    --CaptchaAppId 字符串 \
-    --EndTimeStr 字符串 \
-    --StartTimeStr 字符串 \
-    --Dimension 字符串
+    --CaptchaAppId 199999164 \
+    --EndTimeStr 2022-05-14 01:00 \
+    --StartTimeStr 2022-06-15 20:00 \
+    --Dimension 3
 ```
 
 Output: 

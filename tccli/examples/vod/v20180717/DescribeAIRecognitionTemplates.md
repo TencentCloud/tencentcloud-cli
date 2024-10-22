@@ -19,6 +19,7 @@ Output:
             {
                 "Definition": 30,
                 "Name": "模板1",
+                "Type": "Preset",
                 "Comment": "智能识别模板",
                 "HeadTailConfigure": {
                     "Switch": "ON"
@@ -45,6 +46,13 @@ Output:
                     "SrcLanguage": "",
                     "SubtitleFormat": "",
                     "SubtitleFormats": []
+                },
+                "AsrTranslateConfigure": {
+                    "Switch": "OFF",
+                    "SrcLanguage": "",
+                    "DstLanguage": "",
+                    "SubtitleFormats": [],
+                    "SubtitleName": ""
                 },
                 "AsrWordsConfigure": {
                     "Switch": "OFF",
@@ -61,6 +69,7 @@ Output:
             {
                 "Definition": 31,
                 "Name": "模板2",
+                "Type": "Preset",
                 "Comment": "智能识别模板",
                 "HeadTailConfigure": {
                     "Switch": "ON"
@@ -87,6 +96,13 @@ Output:
                     "SrcLanguage": "",
                     "SubtitleFormat": "",
                     "SubtitleFormats": []
+                },
+                "AsrTranslateConfigure": {
+                    "Switch": "OFF",
+                    "SrcLanguage": "",
+                    "DstLanguage": "",
+                    "SubtitleFormats": [],
+                    "SubtitleName": ""
                 },
                 "AsrWordsConfigure": {
                     "Switch": "OFF",
@@ -126,6 +142,7 @@ Output:
             {
                 "Definition": 30,
                 "Name": "模板1",
+                "Type": "Preset",
                 "Comment": "智能识别模板",
                 "HeadTailConfigure": {
                     "Switch": "ON"
@@ -152,6 +169,13 @@ Output:
                     "SrcLanguage": "",
                     "SubtitleFormat": "",
                     "SubtitleFormats": []
+                },
+                "AsrTranslateConfigure": {
+                    "Switch": "OFF",
+                    "SrcLanguage": "",
+                    "DstLanguage": "",
+                    "SubtitleFormats": [],
+                    "SubtitleName": ""
                 },
                 "AsrWordsConfigure": {
                     "Switch": "OFF",

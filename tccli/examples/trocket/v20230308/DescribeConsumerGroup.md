@@ -17,15 +17,15 @@ Output:
     "RequestId": null,
     "Response": {
         "ConsumeEnable": true,
-        "ConsumeMessageOrderly": true,
-        "ConsumeType": "",
-        "ConsumerLag": 0,
-        "ConsumerNum": 0,
+        "ConsumeMessageOrderly": false,
+        "ConsumeType": "PUSH",
+        "ConsumerLag": 1580,
+        "ConsumerNum": 2,
         "CreatedTime": 1683613488000,
         "MaxRetryTimes": 16,
-        "Remark": "test",
+        "Remark": "测试消费组",
         "RequestId": "bc4ffab1-65cc-4ef6-9114-0de06c333b84",
-        "Tps": 0
+        "Tps": 60
     }
 }
 ```

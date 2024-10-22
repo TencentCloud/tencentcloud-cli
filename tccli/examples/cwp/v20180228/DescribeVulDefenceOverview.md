@@ -13,21 +13,19 @@ Output:
     "Response": {
         "Overview": {
             "Enable": 0,
-            "DefendCounts": 0,
-            "DefendHostCount": [
+            "DefendHostCount": 0,
+            "ExceptionCount": 0,
+            "AttackCounts": [
                 0
             ],
-            "ExceptionCount": [
+            "DefendCounts": [
                 0
             ],
             "Date": [
-                "xx"
-            ],
-            "AttackCounts": [
-                0
+                "2020-10-01"
             ]
         },
-        "RequestId": "xx"
+        "RequestId": "8564b09e-0e04-4516-bb59-db09742503c2"
     }
 }
 ```

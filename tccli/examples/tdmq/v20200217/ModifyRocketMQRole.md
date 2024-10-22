@@ -1,24 +1,23 @@
-**Example 1: RocketMQ角色修改**
+**Example 1: 修改角色**
 
-RocketMQ角色修改
 
 
 Input: 
 
 ```
 tccli tdmq ModifyRocketMQRole --cli-unfold-argument  \
-    --RoleName abc \
-    --Remark abc \
-    --ClusterId abc
+    --RoleName test_role_name \
+    --Remark 修改角色 \
+    --ClusterId rocketmq-2p9vx3ax9jxg
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RoleName": "abc",
-        "Remark": "abc",
-        "RequestId": "abc"
+        "RoleName": "test_role_name",
+        "Remark": "修改角色",
+        "RequestId": "23ca1a58-0388-4d2d-8465-653a53addda7"
     }
 }
 ```

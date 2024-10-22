@@ -400,11 +400,11 @@
       "status": "online"
     },
     "DescribeNatSwitchList": {
-      "document": "查询NAT边界防火墙开关列表",
+      "document": "旧接口，不再维护\n\n查询NAT边界防火墙开关列表",
       "input": "DescribeNatSwitchListRequest",
       "name": "查询NAT边界防火墙开关列表",
       "output": "DescribeNatSwitchListResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeResourceGroup": {
       "document": "DescribeResourceGroup资产中心资产树信息",
@@ -3359,6 +3359,7 @@
           "example": "cfwg-xxxxxxxx",
           "member": "string",
           "name": "FwGroupId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5104,7 +5105,7 @@
           "example": "2",
           "member": "uint64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -5114,7 +5115,7 @@
           "example": "无",
           "member": "AssociatedInstanceInfo",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -5826,7 +5827,7 @@
         },
         {
           "disabled": false,
-          "document": "端口协议类型参数模板id；协议端口模板id；与Protocol,Port互斥",
+          "document": "端口协议类型参数模板id；协议端口模板id",
           "example": "ppmg-jz17vpis",
           "member": "string",
           "name": "ServiceTemplateId",
@@ -5854,6 +5855,7 @@
           "example": "1",
           "member": "string",
           "name": "PageNo",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5863,6 +5865,7 @@
           "example": "10",
           "member": "string",
           "name": "PageSize",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5872,6 +5875,7 @@
           "example": "无",
           "member": "SecurityGroupRule",
           "name": "Rules",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5881,6 +5885,7 @@
           "example": "100",
           "member": "string",
           "name": "TotalCount",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6918,7 +6923,7 @@
           "example": "无",
           "member": "VpcDnsInfo",
           "name": "VpcDnsSwitchLst",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -6928,7 +6933,7 @@
           "example": "无",
           "member": "string",
           "name": "ReturnMsg",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6938,7 +6943,7 @@
           "example": "3",
           "member": "int64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -8167,8 +8172,8 @@
         },
         {
           "disabled": false,
-          "document": "公网 IP 类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "公网 IP 类型 1 公网,2 弹性,3 弹性ipv6,4 anycastIP, 6 HighQualityEIP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
           "member": "int64",
           "name": "PublicIpType",
           "output_required": false,
@@ -8178,7 +8183,7 @@
         {
           "disabled": false,
           "document": "实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "ins-abcdabdc",
           "member": "string",
           "name": "InstanceId",
           "output_required": false,
@@ -8188,7 +8193,7 @@
         {
           "disabled": false,
           "document": "实例名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "生产",
           "member": "string",
           "name": "InstanceName",
           "output_required": false,
@@ -8198,7 +8203,7 @@
         {
           "disabled": false,
           "document": "内网IP\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "192.168.1.1",
           "member": "string",
           "name": "IntranetIp",
           "output_required": false,
@@ -8208,7 +8213,7 @@
         {
           "disabled": false,
           "document": "资产类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "CVM",
           "member": "string",
           "name": "AssetType",
           "output_required": false,
@@ -8218,7 +8223,7 @@
         {
           "disabled": false,
           "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
           "output_required": false,
@@ -8228,7 +8233,7 @@
         {
           "disabled": false,
           "document": "风险端口数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "PortRiskCount",
           "output_required": false,
@@ -8238,7 +8243,7 @@
         {
           "disabled": false,
           "document": "最近扫描时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2024-10-22 10:00:00",
           "member": "string",
           "name": "LastScanTime",
           "output_required": false,
@@ -8248,7 +8253,7 @@
         {
           "disabled": false,
           "document": "是否为region eip\n0 不为region eip，不能选择串行\n1 为region eip 可以选择串行\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "IsRegionEip",
           "output_required": false,
@@ -8258,7 +8263,7 @@
         {
           "disabled": false,
           "document": "EIP 所关联的VPC\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "vpc-abcdabcd",
           "member": "string",
           "name": "VpcId",
           "output_required": false,
@@ -8268,7 +8273,7 @@
         {
           "disabled": false,
           "document": "0: 该地域暂未支持串行\n1: 该用户未在该地域配置串行带宽\n2: 该用户已在该地域配置串行带宽，可以开启串行开关\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "IsSerialRegion",
           "output_required": false,
@@ -8278,7 +8283,7 @@
         {
           "disabled": false,
           "document": "0: 不是公网CLB 可以开启串行开关\n1: 是公网CLB 不可以开启串行开关\n\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "IsPublicClb",
           "output_required": false,
@@ -10531,7 +10536,7 @@
           "example": "0",
           "member": "uint64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -10541,7 +10546,7 @@
           "example": "35641",
           "member": "uint64",
           "name": "NewRuleUuid",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },

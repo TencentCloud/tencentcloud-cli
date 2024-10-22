@@ -148,9 +148,9 @@
       "status": "online"
     },
     "DescribeInstanceList": {
-      "document": "获取集群列表，仅支持 5.x 集群，Filters参数使用说明如下：\n1. InstanceName, 名称模糊查询\n2. InstanceId，集群ID查询\n3. InstanceType, 集群类型查询，支持多选\n3. InstanceStatus，集群状态查询，支持多选\n\n当使用TagFilters查询时，Filters参数失效。",
+      "document": "查询集群列表，仅支持 5.x 集群。Filters参数使用说明如下：\n1. InstanceName, 名称模糊查询\n2. InstanceId，集群ID查询\n3. InstanceType, 集群类型查询，支持多选\n3. InstanceStatus，集群状态查询，支持多选\n\n当使用TagFilters查询时，Filters参数失效。",
       "input": "DescribeInstanceListRequest",
-      "name": "查询实例列表",
+      "name": "查询 5.X 集群列表",
       "output": "DescribeInstanceListResponse",
       "status": "online"
     },
@@ -288,9 +288,9 @@
       "status": "online"
     },
     "ModifyInstance": {
-      "document": "修改实例属性",
+      "document": "修改 RocketMQ 5.x 集群属性。",
       "input": "ModifyInstanceRequest",
-      "name": "修改实例属性",
+      "name": "修改集群属性",
       "output": "ModifyInstanceResponse",
       "status": "online"
     },
@@ -4971,8 +4971,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID",
-          "example": "rocketmq-xxxx",
+          "document": "集群ID",
+          "example": "rmq-72mo3a9o",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -4981,7 +4981,7 @@
         {
           "disabled": false,
           "document": "实例名称",
-          "example": "无",
+          "example": "instance1",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -4990,7 +4990,7 @@
         {
           "disabled": false,
           "document": "备注信息",
-          "example": "无",
+          "example": "测试修改",
           "member": "string",
           "name": "Remark",
           "required": false,
@@ -4999,7 +4999,7 @@
         {
           "disabled": false,
           "document": "消息发送和接收的比例",
-          "example": "无",
+          "example": "1.0",
           "member": "float",
           "name": "SendReceiveRatio",
           "required": false,
@@ -5008,7 +5008,7 @@
         {
           "disabled": false,
           "document": "调整实例规格的商品代号",
-          "example": "无",
+          "example": "basic_1k",
           "member": "string",
           "name": "SkuCode",
           "required": false,
@@ -5017,7 +5017,7 @@
         {
           "disabled": false,
           "document": "消息保留时长，小时为单位",
-          "example": "无",
+          "example": "72",
           "member": "int64",
           "name": "MessageRetention",
           "required": false,
@@ -5034,12 +5034,30 @@
         },
         {
           "disabled": false,
+          "document": "是否开启ACL",
+          "example": "false",
+          "member": "bool",
+          "name": "AclEnabled",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
           "document": "最大可创建主题数",
           "example": "100",
           "member": "int64",
           "name": "MaxTopicNum",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "免费额度之外的主题个数",
+          "example": "50",
+          "member": "string",
+          "name": "ExtraTopicNum",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

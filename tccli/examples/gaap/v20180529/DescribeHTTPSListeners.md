@@ -15,50 +15,37 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 11,
+        "TotalCount": 1,
         "ListenerSet": [
             {
-                "ForwardProtocol": "HTTPS",
-                "ClientCertificateId": "123",
-                "CertificateId": "Sv8lFuYh",
-                "Protocol": "HTTPS",
-                "CertificateAlias": "lagameft01_test勿删除",
+                "ListenerId": "abc",
+                "ListenerName": "abc",
+                "Port": 1,
+                "Protocol": "abc",
+                "ListenerStatus": 1,
+                "CertificateId": "abc",
+                "ForwardProtocol": "abc",
+                "CreateTime": 1,
+                "CertificateAlias": "abc",
+                "ClientCertificateId": "abc",
                 "AuthType": 0,
-                "ListenerId": "listener-eqq49dct",
-                "ListenerStatus": 0,
-                "ListenerName": "连通性测试httpstohttps443",
-                "ClientCertificateAlias": "sdvadf",
-                "CreateTime": 1563340571,
-                "Port": 443,
+                "ClientCertificateAlias": "abc",
                 "PolyClientCertificateAliasInfo": [
                     {
-                        "CertificateId": "123",
-                        "CertificateAlias": "alis"
+                        "CertificateId": "abc",
+                        "CertificateAlias": "abc"
                     }
-                ]
-            },
-            {
-                "ForwardProtocol": "HTTPS",
-                "ClientCertificateId": "",
-                "CertificateId": "cert-r79xf99t",
-                "Protocol": "HTTPS",
-                "CertificateAlias": "boris服务器证书user001",
-                "AuthType": 0,
-                "ListenerId": "listener-85646933",
-                "ListenerStatus": 0,
-                "ListenerName": "testcert001",
-                "ClientCertificateAlias": null,
-                "CreateTime": 1564201158,
-                "Port": 1443,
-                "PolyClientCertificateAliasInfo": [
-                    {
-                        "CertificateId": "123",
-                        "CertificateAlias": "alis"
-                    }
-                ]
+                ],
+                "Http3Supported": 0,
+                "ProxyId": "abc",
+                "GroupId": "abc",
+                "TLSSupportVersion": [
+                    "abc"
+                ],
+                "TLSCiphers": "abc"
             }
         ],
-        "RequestId": "db5cebe8-b79a-401c-8704-388776fae938"
+        "RequestId": "abc"
     }
 }
 ```

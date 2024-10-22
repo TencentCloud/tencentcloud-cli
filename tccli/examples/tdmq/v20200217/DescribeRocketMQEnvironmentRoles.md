@@ -1,39 +1,36 @@
 **Example 1: 获取RocketMQ命名空间角色列表**
 
-获取RocketMQ命名空间角色列表
 
 
 Input: 
 
 ```
 tccli tdmq DescribeRocketMQEnvironmentRoles --cli-unfold-argument  \
-    --EnvironmentId abc \
+    --EnvironmentId test_namespace \
     --Offset 0 \
-    --Limit 0 \
-    --ClusterId abc \
-    --RoleName abc \
-    --Filters.0.Name abc \
-    --Filters.0.Values abc
+    --Limit 20 \
+    --ClusterId rocketmq-2p9vx3ax9jxg \
+    --RoleName test_role_name
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "TotalCount": 0,
+        "TotalCount": 1,
         "EnvironmentRoleSets": [
             {
-                "EnvironmentId": "abc",
-                "RoleName": "abc",
+                "EnvironmentId": "test_namespace",
+                "RoleName": "test_role_name",
                 "Permissions": [
-                    "abc"
+                    "produce"
                 ],
-                "RoleDescribe": "abc",
+                "RoleDescribe": "测试角色",
                 "CreateTime": "2020-09-22 00:00:00",
                 "UpdateTime": "2020-09-22 00:00:00"
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "23ca1a58-0388-4d2d-8465-653a53addda7"
     }
 }
 ```

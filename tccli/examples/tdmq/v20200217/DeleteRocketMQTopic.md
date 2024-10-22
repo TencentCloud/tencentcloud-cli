@@ -7,8 +7,8 @@ Input:
 ```
 tccli tdmq DeleteRocketMQTopic --cli-unfold-argument  \
     --ClusterId rocketmq-2p9vx3ax9jxg \
-    --NamespaceId example \
-    --Topic example
+    --NamespaceId test_namespace \
+    --Topic test_topic
 ```
 
 Output: 

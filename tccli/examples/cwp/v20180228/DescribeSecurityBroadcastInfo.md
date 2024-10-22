@@ -1,6 +1,6 @@
-**Example 1: 查询基线详情**
+**Example 1: 查询安全播报文章信息**
 
-根据基线id查询基线详情
+根据id查询安全播报文章信息
 
 Input: 
 
@@ -14,11 +14,11 @@ Output:
 {
     "Response": {
         "BroadcastInfo": {
-            "Subtitle": "xxx",
-            "Title": "xx",
-            "CreateTime": "xx",
-            "Content": "xx",
-            "Id": 1
+            "Subtitle": "安全播报",
+            "Title": "安全播报",
+            "CreateTime": "2019-12-25 11:57:15",
+            "Content": "安全播报",
+            "Id": 5
         },
         "RequestId": "5b49dea4-0d0e-400f-8d11-2fdf1707c51a"
     }

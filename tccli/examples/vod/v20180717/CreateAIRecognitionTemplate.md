@@ -21,7 +21,32 @@ Output:
 }
 ```
 
-**Example 2: 创建支持多项音视频内容识别任务的模板**
+**Example 2: 创建仅支持语音翻译的任务模板**
+
+创建一个自定义音视频内容识别模板，仅开启语音翻译任务。
+
+Input: 
+
+```
+tccli vod CreateAIRecognitionTemplate --cli-unfold-argument  \
+    --AsrTranslateConfigure.Switch ON \
+    --AsrTranslateConfigure.SrcLanguage zh \
+    --AsrTranslateConfigure.DstLanguage en \
+    --AsrTranslateConfigure.SubtitleFormats vtt \
+    --Name 语音翻译模板_中译英
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Definition": 31,
+        "RequestId": "0de23d47-ff58-41d7-80c4-c4fa7dbc6c21"
+    }
+}
+```
+
+**Example 3: 创建支持多项音视频内容识别任务的模板**
 
 创建一个自定义音视频内容识别模板，开启拆条任务，同时开启人脸识别任务，人脸库使用默认库，人脸识别过滤分数为 90 分。
 
@@ -47,7 +72,7 @@ Output:
 }
 ```
 
-**Example 3: 创建支持多项识别任务的模板，同时指定截帧间隔**
+**Example 4: 创建支持多项识别任务的模板，同时指定截帧间隔**
 
 创建一个自定义音视频内容识别模板，开启拆条任务，同时开启人脸识别任务，人脸库使用默认库及用户自定义库，人脸识别过滤分数为 90 分，指定截帧间隔为 1.0  秒。
 

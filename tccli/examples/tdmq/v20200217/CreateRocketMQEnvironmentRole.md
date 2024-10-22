@@ -1,22 +1,22 @@
 **Example 1: 创建RocketMQ环境角色授权**
 
-创建RocketMQ环境角色授权
+
 
 Input: 
 
 ```
 tccli tdmq CreateRocketMQEnvironmentRole --cli-unfold-argument  \
-    --EnvironmentId abc \
-    --RoleName abc \
-    --Permissions abc \
-    --ClusterId abc
+    --EnvironmentId test_namespace \
+    --RoleName test_role_name \
+    --Permissions produce \
+    --ClusterId rocketmq-2p9vx3ax9jxg
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "23ca1a58-0388-4d2d-8465-653a53addda7"
     }
 }
 ```

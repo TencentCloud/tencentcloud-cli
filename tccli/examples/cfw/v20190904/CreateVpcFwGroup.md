@@ -16,12 +16,12 @@ tccli cfw CreateVpcFwGroup --cli-unfold-argument  \
     --VpcFwInstances.0.FwDeploy.CrossAZone 1 \
     --VpcFwInstances.0.FwDeploy.Zone ap-guangzhou-1 \
     --VpcFwInstances.0.FwDeploy.ZoneBak ap-guangzhou-2 \
-    --VpcFwInstances.0.FwDeploy.CdcId abc \
+    --VpcFwInstances.0.FwDeploy.CdcId cluster-xxxxxxxx \
     --SwitchMode 1 \
     --FwVpcCidr auto \
     --CcnId  \
     --FwCidrInfo.FwCidrType  \
-    --FwCidrInfo.ComFwCidr abc
+    --FwCidrInfo.ComFwCidr 10.0.0.0/24
 ```
 
 Output: 

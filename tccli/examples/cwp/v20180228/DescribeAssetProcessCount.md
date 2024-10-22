@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cwp DescribeAssetProcessCount --cli-unfold-argument  \
-    --Name xx
+    --Name host1
 ```
 
 Output: 
@@ -14,9 +14,14 @@ Output:
 {
     "Response": {
         "Process": [
-            {}
+            {
+                "Key": "key1",
+                "Value": 10,
+                "Desc": "desc of key1",
+                "NewCount": 0
+            }
         ],
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

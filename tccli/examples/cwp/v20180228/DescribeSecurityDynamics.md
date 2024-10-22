@@ -21,7 +21,7 @@ Output:
                 "EventTime": "2018-10-08 12:12:22",
                 "EventType": "MALWARE",
                 "Message": "发现主机10.10.10.12存在恶意文件5个",
-                "SecurityLevel": "xx"
+                "SecurityLevel": "HIGH"
             }
         ],
         "TotalCount": 100

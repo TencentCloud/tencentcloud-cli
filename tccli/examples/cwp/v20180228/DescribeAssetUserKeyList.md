@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli cwp DescribeAssetUserKeyList --cli-unfold-argument  \
-    --Name xx \
-    --Offset 1 \
-    --Limit 1 \
-    --Uuid xx \
-    --Quuid xx
+    --Name name1 \
+    --Offset 0 \
+    --Limit 10 \
+    --Uuid 6cf3c132-aaa-bbbb-b08d-98be9421372a \
+    --Quuid 6cf3c132-aaa-bbbb-b08d-98be9421372a
 ```
 
 Output: 
@@ -18,10 +18,14 @@ Output:
 {
     "Response": {
         "Keys": [
-            {}
+            {
+                "Value": "value1",
+                "Comment": "desc of value1",
+                "EncryptType": ""
+            }
         ],
         "Total": 1,
-        "RequestId": "xx"
+        "RequestId": "8564b09e-0e04-4516-bb59-db09742503c2"
     }
 }
 ```

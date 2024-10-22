@@ -5150,6 +5150,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "付费类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1 预付费，２后付费，３免费调试任务",
+          "member": "int64",
+          "name": "PayMode",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

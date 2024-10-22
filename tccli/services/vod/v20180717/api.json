@@ -1380,140 +1380,160 @@
         {
           "disabled": false,
           "document": "视频内容识别模板唯一标识。",
-          "example": "",
+          "example": "无",
           "member": "int64",
           "name": "Definition",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "视频内容识别模板名称。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "视频内容识别模板描述信息。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Comment",
-          "required": true,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "模板类型，取值：\n<li>Preset：系统预置模板；</li>\n<li>Custom：用户自定义模板。</li>",
+          "example": "Preset",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "头尾识别控制参数。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "HeadTailConfigureInfo",
           "name": "HeadTailConfigure",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "拆条识别控制参数。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "SegmentConfigureInfo",
           "name": "SegmentConfigure",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "人脸识别控制参数。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "FaceConfigureInfo",
           "name": "FaceConfigure",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "文本全文识别控制参数。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "OcrFullTextConfigureInfo",
           "name": "OcrFullTextConfigure",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "文本关键词识别控制参数。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "OcrWordsConfigureInfo",
           "name": "OcrWordsConfigure",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "语音全文识别控制参数。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "AsrFullTextConfigureInfo",
           "name": "AsrFullTextConfigure",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "语音关键词识别控制参数。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "AsrWordsConfigureInfo",
           "name": "AsrWordsConfigure",
-          "required": true,
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "语音翻译控制参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AsrTranslateConfigureInfo",
+          "name": "AsrTranslateConfigure",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "物体识别控制参数。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "ObjectConfigureInfo",
           "name": "ObjectConfigure",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "截图时间间隔，单位：秒。",
-          "example": "",
+          "example": "无",
           "member": "float",
           "name": "ScreenshotInterval",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "模板最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -2907,91 +2927,101 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务的类型，取值范围：\n<li>FaceRecognition：人脸识别，</li>\n<li>AsrWordsRecognition：语音关键词识别，</li>\n<li>OcrWordsRecognition：文本关键词识别，</li>\n<li>AsrFullTextRecognition：语音全文识别，</li>\n<li>OcrFullTextRecognition：文本全文识别，</li>\n<li>HeadTailRecognition：视频片头片尾识别，</li>\n<li>ObjectRecognition：物体识别。</li>",
-          "example": "",
+          "document": "任务的类型，取值范围：\n<li>FaceRecognition：人脸识别，</li>\n<li>AsrWordsRecognition：语音关键词识别，</li>\n<li>OcrWordsRecognition：文本关键词识别，</li>\n<li>AsrFullTextRecognition：语音全文识别，</li>\n<li>AsrTranslateRecognition：语音翻译识别，</li>\n<li>OcrFullTextRecognition：文本全文识别，</li>\n<li>HeadTailRecognition：视频片头片尾识别，</li>\n<li>ObjectRecognition：物体识别。</li>",
+          "example": "无",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "视频片头片尾识别结果，当 Type 为\n HeadTailRecognition 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "AiRecognitionTaskHeadTailResult",
           "name": "HeadTailTask",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "视频拆条识别结果，当 Type 为\n SegmentRecognition 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "AiRecognitionTaskSegmentResult",
           "name": "SegmentTask",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "人脸识别结果，当 Type 为 \n FaceRecognition 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "AiRecognitionTaskFaceResult",
           "name": "FaceTask",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "语音关键词识别结果，当 Type 为\n AsrWordsRecognition 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "AiRecognitionTaskAsrWordsResult",
           "name": "AsrWordsTask",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "语音全文识别结果，当 Type 为\n AsrFullTextRecognition 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "AiRecognitionTaskAsrFullTextResult",
           "name": "AsrFullTextTask",
-          "required": true,
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "语音翻译结果，当 Type 为 AsrTranslateRecognition 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AiRecognitionTaskAsrTranslateResult",
+          "name": "AsrTranslateTask",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "文本关键词识别结果，当 Type 为\n OcrWordsRecognition 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "AiRecognitionTaskOcrWordsResult",
           "name": "OcrWordsTask",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "文本全文识别结果，当 Type 为\n OcrFullTextRecognition 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "AiRecognitionTaskOcrFullTextResult",
           "name": "OcrFullTextTask",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "物体识别结果，当 Type 为\n ObjectRecognition 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "AiRecognitionTaskObjectResult",
           "name": "ObjectTask",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         }
@@ -3119,7 +3149,7 @@
           "example": "null",
           "member": "AiRecognitionTaskAsrFullTextSegmentItem",
           "name": "SegmentSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3129,7 +3159,7 @@
           "example": "http://123xxx",
           "member": "string",
           "name": "SegmentSetFileUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3139,7 +3169,7 @@
           "example": "2018-10-01T10:00:00Z",
           "member": "string",
           "name": "SegmentSetFileUrlExpireTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3149,7 +3179,7 @@
           "example": "无",
           "member": "AiRecognitionTaskAsrFullTextResultOutputSubtitleItem",
           "name": "SubtitleSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3159,7 +3189,7 @@
           "example": "http://123xxx",
           "member": "string",
           "name": "SubtitleUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -3169,6 +3199,36 @@
     "AiRecognitionTaskAsrFullTextResultOutputSubtitleItem": {
       "document": "字幕信息。",
       "members": [
+        {
+          "disabled": false,
+          "document": "媒资字幕 ID，用于媒资字幕管理，仅当 Format 为 vtt 时有效。\n<font color=red>注意：</font>2024-11-01T10:00:00Z 之前的任务返回此字段无效。",
+          "example": "无",
+          "member": "string",
+          "name": "Id",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "媒资字幕名字，用于播放器展示，仅当 Format 为 vtt 时有效。\n<font color=red>注意：</font>2024-11-01T10:00:00Z 之前的任务返回此字段无效。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "字幕语言。",
+          "example": "无",
+          "member": "string",
+          "name": "Language",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "disabled": false,
           "document": "字幕文件格式，取值范围：\n<li>vtt：WebVTT 字幕文件；</li>\n<li>srt：SRT 字幕文件。</li>",
@@ -3232,6 +3292,220 @@
           "member": "string",
           "name": "Text",
           "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AiRecognitionTaskAsrTranslateResult": {
+      "document": "语音翻译结果。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
+          "example": "PROCESSING",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [视频处理类错误码](https://cloud.tencent.com/document/product/266/50368#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "ErrCodeExt",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误码，0 表示成功，其他值表示失败（该字段已不推荐使用，建议使用新的错误码字段 ErrCodeExt）。",
+          "example": "0",
+          "member": "int64",
+          "name": "ErrCode",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息。",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "Message",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "语音翻译任务输入信息。",
+          "example": "null",
+          "member": "AiRecognitionTaskAsrTranslateResultInput",
+          "name": "Input",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "语音翻译任务输出信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "AiRecognitionTaskAsrTranslateResultOutput",
+          "name": "Output",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "语音翻译任务进度，取值范围 [0-100] 。",
+          "example": "0",
+          "member": "int64",
+          "name": "Progress",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "语音翻译任务开始执行的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "2018-10-01T18:00:00+08:00",
+          "member": "string",
+          "name": "BeginProcessTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "语音翻译任务执行完毕的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "2018-10-01T18:00:00+08:00",
+          "member": "string",
+          "name": "FinishTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AiRecognitionTaskAsrTranslateResultInput": {
+      "document": "语音翻译的输入。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "语音翻译模板 ID。",
+          "example": "无",
+          "member": "int64",
+          "name": "Definition",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AiRecognitionTaskAsrTranslateResultOutput": {
+      "document": "语音翻译结果。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "语音翻译片段列表。\n<font color=red>注意</font> ：该列表最多仅展示前 100 个元素。如希望获得完整结果，请从 SegmentSetFileUrl 对应的文件中获取。",
+          "example": "null",
+          "member": "AiRecognitionTaskAsrTranslateSegmentItem",
+          "name": "SegmentSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "语音翻译片段列表文件 URL。文件的内容为 JSON，数据结构与 SegmentSet 字段一致。 （文件不会永久存储，到达SegmentSetFileUrlExpireTime 时间点后文件将被删除）。",
+          "example": "http://123xxx",
+          "member": "string",
+          "name": "SegmentSetFileUrl",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "语音翻译片段列表文件 URL 失效时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "2018-10-01T10:00:00Z",
+          "member": "string",
+          "name": "SegmentSetFileUrlExpireTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "生成的字幕列表。",
+          "example": "无",
+          "member": "AiRecognitionTaskAsrFullTextResultOutputSubtitleItem",
+          "name": "SubtitleSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AiRecognitionTaskAsrTranslateSegmentItem": {
+      "document": "语音翻译片段。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "语音翻译片段置信度。取值：0~100。",
+          "example": "无",
+          "member": "float",
+          "name": "Confidence",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "语音翻译片段起始的偏移时间，单位：秒。",
+          "example": "无",
+          "member": "float",
+          "name": "StartTimeOffset",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "语音翻译片段终止的偏移时间，单位：秒。",
+          "example": "无",
+          "member": "float",
+          "name": "EndTimeOffset",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "识别文本。",
+          "example": "无",
+          "member": "string",
+          "name": "Text",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "翻译文本。",
+          "example": "无",
+          "member": "string",
+          "name": "Translation",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -7034,7 +7308,7 @@
         },
         {
           "disabled": false,
-          "document": "生成的字幕文件格式列表，不填或者填空数组表示不生成字幕文件，可选值：\n<li>vtt：生成 WebVTT 字幕文件；</li>\n<li>srt：生成 SRT 字幕文件。</li>",
+          "document": "生成的字幕文件格式列表，不填或者填空数组表示不生成字幕文件，可选值：\n<li>vtt：生成 WebVTT 字幕文件；</li>\n<li>srt：生成 SRT 字幕文件。</li><font color=red>注意：</font>云点播媒资信息仅支持添加 vtt 字幕，因此当且仅当 SubtitleFormats 包含 vtt 时，云点播将生成的字幕添加到媒资。",
           "example": "vtt",
           "member": "string",
           "name": "SubtitleFormats",
@@ -7061,6 +7335,17 @@
           "member": "string",
           "name": "SrcLanguage",
           "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "指定字幕名称，长度限制：64 个字符。该值将用于播放器展示，若不填则云点播自动生成。\n<font color=red>注意：</font>仅当 SubtitleFormats 包含 vtt 时，该字段有效。",
+          "example": "test",
+          "member": "string",
+          "name": "SubtitleName",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -7104,6 +7389,127 @@
           "example": "zh",
           "member": "string",
           "name": "SrcLanguage",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指定字幕名称，长度限制：64 个字符。该值将用于播放器展示。",
+          "example": "test2",
+          "member": "string",
+          "name": "SubtitleName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "AsrTranslateConfigureInfo": {
+      "document": "语音翻译任务控制参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "语音翻译任务开关，可选值：\n<li>ON：开启；</li>\n<li>OFF：关闭。</li><font color=red>注意：</font>语音翻译任务本身会返回 ASR 全文识别结果，为避免重复收费，因此禁止同时开启语音翻译和 ASR 全文识别功能项。\n",
+          "example": "ON",
+          "member": "string",
+          "name": "Switch",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "媒体源语言，当 Switch 为 ON 时，此参数必填。取值范围：\n<li>zh：中文；</li>\n<li>en：英文；</li>\n<li>ja：日文；</li>\n<li>ko：韩文；</li>\n<li>vi：越南语；</li>\n<li>ms：马来语；</li>\n<li>th：泰语；</li>\n<li>pt：葡萄牙语；</li>\n<li>tr：土耳其语；</li>\n<li>ar：阿拉伯语；</li>\n<li>es：西班牙语；</li>\n<li>hi：印地语；</li>\n<li>fr：法语。</li>",
+          "example": "zh",
+          "member": "string",
+          "name": "SrcLanguage",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "翻译目标语言，当 Switch 为 ON 时，此参数必填。\n当 SrcLanguage 为 zh（中文）时，取值范围：\n<li>en：英文；</li>\n<li>ja：日文；</li>\n<li>ko：韩文；</li>\n<li>fr：法语；</li>\n<li>es：西班牙语；</li>\n<li>it：意大利语；</li>\n<li>de：德语；</li>\n<li>tr：土耳其语；</li>\n<li>ru：俄语；</li>\n<li>pt：葡萄牙语；</li>\n<li>vi：越南语；</li>\n<li>id：印尼语；</li>\n<li>th：泰语；</li>\n<li>ms：马来语。</li>\n当 SrcLanguage 为 en（英文）时，取值范围：\n<li>zh：中文；</li>\n<li>ja：日文；</li>\n<li>ko：韩文；</li>\n<li>fr：法语；</li>\n<li>es：西班牙语；</li>\n<li>it：意大利语；</li>\n<li>de：德语；</li>\n<li>tr：土耳其语；</li>\n<li>ru：俄语；</li>\n<li>pt：葡萄牙语；</li>\n<li>vi：越南语；</li>\n<li>id：印尼语；</li>\n<li>th：泰语；</li>\n<li>ms：马来语；</li>\n<li>ar：阿拉伯语；</li>\n<li>hi：印地语。</li>\n当 SrcLanguage 为 ja（日文）时，取值范围：\n<li>zh：中文；</li>\n<li>en：英文；</li>\n<li>ko：韩文。</li>\n当 SrcLanguage 为 ko（韩文）时，取值范围：\n<li>zh：中文；</li>\n<li>en：英文；</li>\n<li>ja：日文。</li>\n当 SrcLanguage 为 vi（越南语）或 ms（马来语）或 th（泰语）时，取值范围：\n<li>zh：中文；</li>\n<li>en：英文。</li>\n当 SrcLanguage 为 pt（葡萄牙语）时，取值范围：\n<li>zh：中文；</li>\n<li>en：英文；</li>\n<li>fr：法语；</li>\n<li>es：西班牙语；</li>\n<li>it：意大利语；</li>\n<li>de：德语；</li>\n<li>tr：土耳其语；</li>\n<li>ru：俄语。</li>\n当 SrcLanguage 为 tr（土耳其语）时，取值范围：\n<li>zh：中文；</li>\n<li>en：英文；</li>\n<li>fr：法语；</li>\n<li>es：西班牙语；</li>\n<li>it：意大利语；</li>\n<li>de：德语；</li>\n<li>ru：俄语；</li>\n<li>pt：葡萄牙语。</li>\n当 SrcLanguage 为 es（西班牙语）时，取值范围：\n<li>zh：中文；</li>\n<li>en：英文；</li>\n<li>fr：法语；</li>\n<li>it：意大利语；</li>\n<li>de：德语；</li>\n<li>tr：土耳其语；</li>\n<li>ru：俄语；</li>\n<li>pt：葡萄牙语。</li>\n当 SrcLanguage 为 ar（阿拉伯语）或 hi（印地语）时，取值范围：\n<li>en：英文。</li>\n当 SrcLanguage 为 fr（法语）时，取值范围：\n<li>zh：中文；</li>\n<li>en：英文；</li>\n<li>es：西班牙语；</li>\n<li>it：意大利语；</li>\n<li>de：德语；</li>\n<li>tr：土耳其语；</li>\n<li>ru：俄语；</li>\n<li>pt：葡萄牙语。</li>",
+          "example": "en",
+          "member": "string",
+          "name": "DstLanguage",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "生成的字幕文件格式列表，不填或者填空数组表示不生成字幕文件，可选值：\n<li>vtt：生成 WebVTT 字幕文件；</li>\n<li>srt：生成 SRT 字幕文件。</li><font color=red>注意：</font> 云点播媒资信息仅支持添加 vtt 字幕，因此当且仅当 SubtitleFormats 包含 vtt 时，云点播将生成的字幕添加到媒资。",
+          "example": "[\"vtt\"]",
+          "member": "string",
+          "name": "SubtitleFormats",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "指定字幕名称，长度限制：64 个字符。该值将用于播放器展示，若不填则云点播自动生成。\n<font color=red>注意：</font>仅当 SubtitleFormats 包含 vtt 时，该字段有效。\n",
+          "example": "test",
+          "member": "string",
+          "name": "SubtitleName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AsrTranslateConfigureInfoForUpdate": {
+      "document": "语音翻译控制参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "语音翻译任务开关，可选值：\n<li>ON：开启；</li>\n<li>OFF：关闭。</li>",
+          "example": "ON",
+          "member": "string",
+          "name": "Switch",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "媒体源语言，取值范围：\n<li>zh：中文；</li>\n<li>en：英文；</li>\n<li>ja：日文；</li>\n<li>ko：韩文；</li>\n<li>vi：越南语；</li>\n<li>ms：马来语；</li>\n<li>th：泰语；</li>\n<li>pt：葡萄牙语；</li>\n<li>tr：土耳其语；</li>\n<li>ar：阿拉伯语；</li>\n<li>es：西班牙语；</li>\n<li>hi：印地语；</li>\n<li>fr：法语。</li>",
+          "example": "zh",
+          "member": "string",
+          "name": "SrcLanguage",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "翻译目标语言。\n当 SrcLanguage 为 zh（中文）时，取值范围：\n<li>en：英文；</li>\n<li>ja：日文；</li>\n<li>ko：韩文；</li>\n<li>fr：法语；</li>\n<li>es：西班牙语；</li>\n<li>it：意大利语；</li>\n<li>de：德语；</li>\n<li>tr：土耳其语；</li>\n<li>ru：俄语；</li>\n<li>pt：葡萄牙语；</li>\n<li>vi：越南语；</li>\n<li>id：印尼语；</li>\n<li>th：泰语；</li>\n<li>ms：马来语。</li>\n当 SrcLanguage 为 en（英文）时，取值范围：\n<li>zh：中文；</li>\n<li>ja：日文；</li>\n<li>ko：韩文；</li>\n<li>fr：法语；</li>\n<li>es：西班牙语；</li>\n<li>it：意大利语；</li>\n<li>de：德语；</li>\n<li>tr：土耳其语；</li>\n<li>ru：俄语；</li>\n<li>pt：葡萄牙语；</li>\n<li>vi：越南语；</li>\n<li>id：印尼语；</li>\n<li>th：泰语；</li>\n<li>ms：马来语；</li>\n<li>ar：阿拉伯语；</li>\n<li>hi：印地语。</li>\n当 SrcLanguage 为 ja（日文）时，取值范围：\n<li>zh：中文；</li>\n<li>en：英文；</li>\n<li>ko：韩文。</li>\n当 SrcLanguage 为 ko（韩文）时，取值范围：\n<li>zh：中文；</li>\n<li>en：英文；</li>\n<li>ja：日文。</li>\n当 SrcLanguage 为 vi（越南语）或 ms（马来语）或 th（泰语）时，取值范围：\n<li>zh：中文；</li>\n<li>en：英文。</li>\n当 SrcLanguage 为 pt（葡萄牙语）时，取值范围：\n<li>zh：中文；</li>\n<li>en：英文；</li>\n<li>fr：法语；</li>\n<li>es：西班牙语；</li>\n<li>it：意大利语；</li>\n<li>de：德语；</li>\n<li>tr：土耳其语；</li>\n<li>ru：俄语。</li>\n当 SrcLanguage 为 tr（土耳其语）时，取值范围：\n<li>zh：中文；</li>\n<li>en：英文；</li>\n<li>fr：法语；</li>\n<li>es：西班牙语；</li>\n<li>it：意大利语；</li>\n<li>de：德语；</li>\n<li>ru：俄语；</li>\n<li>pt：葡萄牙语。</li>\n当 SrcLanguage 为 es（西班牙语）时，取值范围：\n<li>zh：中文；</li>\n<li>en：英文；</li>\n<li>fr：法语；</li>\n<li>it：意大利语；</li>\n<li>de：德语；</li>\n<li>tr：土耳其语；</li>\n<li>ru：俄语；</li>\n<li>pt：葡萄牙语。</li>\n当 SrcLanguage 为 ar（阿拉伯语）或 hi（印地语）时，取值范围：\n<li>en：英文。</li>\n当 SrcLanguage 为 fr（法语）时，取值范围：\n<li>zh：中文；</li>\n<li>en：英文；</li>\n<li>es：西班牙语；</li>\n<li>it：意大利语；</li>\n<li>de：德语；</li>\n<li>tr：土耳其语；</li>\n<li>ru：俄语；</li>\n<li>pt：葡萄牙语。</li>",
+          "example": "en",
+          "member": "string",
+          "name": "DstLanguage",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "字幕格式列表操作信息。",
+          "example": "无",
+          "member": "SubtitleFormatsOperation",
+          "name": "SubtitleFormatsOperation",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "指定字幕名称，长度限制：64 个字符。该值将用于播放器展示。",
+          "example": "test2",
+          "member": "string",
+          "name": "SubtitleName",
           "required": false,
           "type": "string"
         }
@@ -8999,6 +9405,15 @@
           "example": "无",
           "member": "AsrWordsConfigureInfo",
           "name": "AsrWordsConfigure",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "语音翻译控制参数。",
+          "example": "无",
+          "member": "AsrTranslateConfigureInfo",
+          "name": "AsrTranslateConfigure",
           "required": false,
           "type": "object"
         },
@@ -12626,6 +13041,15 @@
           "name": "Definitions",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "模板类型过滤条件，可选值：<li>Preset：系统预置模板；</li><li>Custom：用户自定义模板。</li>不填默认为空，即不对模板类型过滤。",
+          "example": "Custom",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
         },
         {
           "disabled": false,
@@ -23607,8 +24031,8 @@
         },
         {
           "disabled": false,
-          "document": "字幕语言。常见的取值如下：\n<li>cn：中文</li>\n<li>ja：日文</li>\n<li>en-US：英文</li>\n其他取值参考 [RFC5646](https://tools.ietf.org/html/rfc5646)",
-          "example": "cn",
+          "document": "字幕语言。常见的取值如下：\n<li>zh：中文；</li>\n<li>en：英文；</li>\n<li>ja：日文；</li>\n<li>ko：韩文；</li>\n<li>vi：越南语；</li>\n<li>ms：马来语；</li>\n<li>th：泰语；</li>\n<li>pt：葡萄牙语；</li>\n<li>tr：土耳其语；</li>\n<li>ar：阿拉伯语；</li>\n<li>es：西班牙语；</li>\n<li>hi：印地语；</li>\n<li>fr：法语。</li>\n其他取值参考 [RFC5646](https://tools.ietf.org/html/rfc5646)",
+          "example": "zh",
           "member": "string",
           "name": "Language",
           "required": true,
@@ -23669,8 +24093,8 @@
         },
         {
           "disabled": false,
-          "document": "字幕语言。常见的取值如下：\n<li>cn：中文</li>\n<li>ja：日文</li>\n<li>en-US：英文</li>\n其他取值参考 [RFC5646](https://tools.ietf.org/html/rfc5646)",
-          "example": "cn",
+          "document": "字幕语言。常见的取值如下：\n<li>zh：中文；</li>\n<li>en：英文；</li>\n<li>ja：日文；</li>\n<li>ko：韩文；</li>\n<li>vi：越南语；</li>\n<li>ms：马来语；</li>\n<li>th：泰语；</li>\n<li>pt：葡萄牙语；</li>\n<li>tr：土耳其语；</li>\n<li>ar：阿拉伯语；</li>\n<li>es：西班牙语；</li>\n<li>hi：印地语；</li>\n<li>fr：法语。</li>\n其他取值参考 [RFC5646](https://tools.ietf.org/html/rfc5646)",
+          "example": "zh",
           "member": "string",
           "name": "Language",
           "output_required": true,
@@ -23693,6 +24117,16 @@
           "example": "http://xxx.vod2.myqcloud.com/xxx/xxx/subtitles/MySubtitleId.vtt",
           "member": "string",
           "name": "Url",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "字幕来源，取值范围：\n<li>UserUploaded：用户上传；</li>\n<li>AIRecognition：AI 识别，通过语音识别或语音翻译生成。</li>",
+          "example": "UserUploaded",
+          "member": "string",
+          "name": "Source",
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
@@ -24257,6 +24691,15 @@
           "example": "无",
           "member": "AsrWordsConfigureInfoForUpdate",
           "name": "AsrWordsConfigure",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "语音翻译控制参数。",
+          "example": "无",
+          "member": "AsrTranslateConfigureInfoForUpdate",
+          "name": "AsrTranslateConfigure",
           "required": false,
           "type": "object"
         },

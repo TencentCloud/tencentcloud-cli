@@ -6,11 +6,12 @@ Input:
 
 ```
 tccli tdmq ModifyRocketMQNamespace --cli-unfold-argument  \
-    --ClusterId rocketmq-2p9vx3ax9jxg \
-    --NamespaceId example \
-    --Ttl 65000 \
-    --RetentionTime 650000 \
-    --Remark example
+    --ClusterId rocketmq-xj8kr5apevj7 \
+    --NamespaceId test_namespace \
+    --Ttl 259200000 \
+    --RetentionTime 259200000 \
+    --Remark 测试修改 \
+    --PublicAccessEnabled True
 ```
 
 Output: 

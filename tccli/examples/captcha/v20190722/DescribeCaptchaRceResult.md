@@ -6,17 +6,13 @@ Input:
 
 ```
 tccli captcha DescribeCaptchaRceResult --cli-unfold-argument  \
-    --CaptchaType 1 \
-    --Ticket abc \
-    --UserIp abc \
-    --BusinessId 1 \
-    --SceneId 1 \
-    --MacAddress abc \
-    --Imei abc \
-    --Randstr abc \
-    --CaptchaAppId 1 \
-    --AppSecretKey abc \
-    --NeedGetCaptchaTime 0
+    --CaptchaAppId 199999164 \
+    --CaptchaType 9 \
+    --NeedGetCaptchaTime 1 \
+    --Randstr @Vki \
+    --UserIp 127.0.0.1 \
+    --Ticket tr03XaCUZPAlPdIMqv17yvcfdXCzkqvLE09AbCA4ghlWfD8hkySfbU2TZVCyoOCjNI84pAYEMopKv7Uh8XwQDSE9DC0xJpXVC7kmlPENlbFINs_N937qkoEmU6Pl8e-9EkFQzvrrwsZOTKQ* \
+    --AppSecretKey E4kwK9AcXQMHkktiItyMEyQPn
 ```
 
 Output: 
@@ -24,24 +20,24 @@ Output:
 {
     "Response": {
         "CaptchaCode": 0,
-        "CaptchaMsg": "abc",
+        "CaptchaMsg": "success",
         "EvilLevel": 0,
-        "GetCaptchaTime": 0,
+        "GetCaptchaTime": 1729583235,
         "EvilBitmap": 0,
-        "SubmitCaptchaTime": 0,
+        "SubmitCaptchaTime": 1729583239,
         "RceResult": {
-            "UserId": "abc",
+            "UserId": "700000888643",
             "PostTime": 0,
-            "AssociateAccount": "abc",
-            "UserIp": "abc",
-            "RiskLevel": "abc",
+            "AssociateAccount": "",
+            "UserIp": "127.0.0.1",
+            "RiskLevel": "1",
             "RiskType": [
                 0
             ],
-            "ConstId": "abc",
-            "RiskInformation": "abc"
+            "ConstId": "1",
+            "RiskInformation": ""
         },
-        "RequestId": "abc"
+        "RequestId": "75eabc9e-2aab-46fb-b4fc-44fc6abda074"
     }
 }
 ```

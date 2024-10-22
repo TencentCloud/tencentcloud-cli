@@ -7,10 +7,10 @@ Input:
 ```
 tccli tdmq DescribeRocketMQTopicsByGroup --cli-unfold-argument  \
     --ClusterId rocketmq-2p9vx3ax9jxg \
-    --NamespaceId example \
-    --GroupId group-example \
+    --NamespaceId test_namespace \
+    --GroupId test_group \
     --Offset 0 \
-    --Limit 10
+    --Limit 20
 ```
 
 Output: 
@@ -20,7 +20,7 @@ Output:
         "RequestId": "4668f537-44f3-4aca-bd78-fc26fb8d86ff",
         "TotalCount": 1,
         "Topics": [
-            "topic-example"
+            "test_topic"
         ]
     }
 }

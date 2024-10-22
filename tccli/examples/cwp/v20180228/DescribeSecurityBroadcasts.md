@@ -1,4 +1,4 @@
-**Example 1: 示例**
+**Example 1: 安全播报列表页**
 
 
 
@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cwp DescribeSecurityBroadcasts --cli-unfold-argument  \
-    --EndDate xx \
-    --BeginDate xx \
+    --EndDate 2019-11-25 \
+    --BeginDate 2019-12-25 \
     --Limit 1 \
     --Offset 1
 ```
@@ -19,10 +19,10 @@ Output:
         "TotalCount": 1,
         "List": [
             {
-                "Subtitle": "xx",
+                "Subtitle": "安全播报",
                 "Level": 1,
-                "Title": "xx",
-                "CreateTime": "xx",
+                "Title": "安全播报",
+                "CreateTime": "2019-12-25 11:57:15",
                 "Type": 1,
                 "Id": 1
             }

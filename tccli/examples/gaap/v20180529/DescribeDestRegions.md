@@ -1,4 +1,4 @@
-**Example 1: 查询源站区域**
+**Example 1: 查询源站 区域**
 
 
 
@@ -14,132 +14,21 @@ Output:
         "TotalCount": 1,
         "DestRegionSet": [
             {
-                "RegionId": "xx",
-                "RegionAreaName": "xx",
-                "IDCType": "xx",
+                "RegionId": "NorthChina",
+                "RegionAreaName": "中国大陆-华北",
+                "IDCType": "dc",
                 "FeatureBitmap": 1,
-                "RegionArea": "xx",
-                "RegionName": "xx"
-            },
-            {
-                "RegionId": "xx",
-                "RegionAreaName": "xx",
-                "IDCType": "xx",
-                "FeatureBitmap": 1,
-                "RegionArea": "xx",
-                "RegionName": "xx"
-            },
-            {
-                "RegionId": "xx",
-                "RegionAreaName": "xx",
-                "IDCType": "xx",
-                "FeatureBitmap": 1,
-                "RegionArea": "xx",
-                "RegionName": "xx"
-            },
-            {
-                "RegionId": "xx",
-                "RegionAreaName": "xx",
-                "IDCType": "xx",
-                "FeatureBitmap": 1,
-                "RegionArea": "xx",
-                "RegionName": "xx"
-            },
-            {
-                "RegionId": "xx",
-                "RegionAreaName": "xx",
-                "IDCType": "xx",
-                "FeatureBitmap": 1,
-                "RegionArea": "xx",
-                "RegionName": "xx"
-            },
-            {
-                "RegionId": "xx",
-                "RegionAreaName": "xx",
-                "IDCType": "xx",
-                "FeatureBitmap": 1,
-                "RegionArea": "xx",
-                "RegionName": "xx"
-            },
-            {
-                "RegionId": "xx",
-                "RegionAreaName": "xx",
-                "IDCType": "xx",
-                "FeatureBitmap": 1,
-                "RegionArea": "xx",
-                "RegionName": "xx"
-            },
-            {
-                "RegionId": "xx",
-                "RegionAreaName": "xx",
-                "IDCType": "xx",
-                "FeatureBitmap": 1,
-                "RegionArea": "xx",
-                "RegionName": "xx"
-            },
-            {
-                "RegionId": "xx",
-                "RegionAreaName": "xx",
-                "IDCType": "xx",
-                "FeatureBitmap": 1,
-                "RegionArea": "xx",
-                "RegionName": "xx"
-            },
-            {
-                "RegionId": "xx",
-                "RegionAreaName": "xx",
-                "IDCType": "xx",
-                "FeatureBitmap": 1,
-                "RegionArea": "xx",
-                "RegionName": "xx"
-            },
-            {
-                "RegionId": "xx",
-                "RegionAreaName": "xx",
-                "IDCType": "xx",
-                "FeatureBitmap": 1,
-                "RegionArea": "xx",
-                "RegionName": "xx"
-            },
-            {
-                "RegionId": "xx",
-                "RegionAreaName": "xx",
-                "IDCType": "xx",
-                "FeatureBitmap": 1,
-                "RegionArea": "xx",
-                "RegionName": "xx"
+                "RegionArea": "NorthChina",
+                "RegionName": "中国大陆-华北",
+                "SupportFeature": {
+                    "NetworkType": [
+                        "normal",
+                        "cn2"
+                    ]
+                }
             }
         ],
-        "RequestId": "xx"
-    }
-}
-```
-
-**Example 2: 查询源站 区域**
-
-
-
-Input: 
-
-```
-tccli gaap DescribeDestRegions --cli-unfold-argument ```
-
-Output: 
-```
-{
-    "Response": {
-        "TotalCount": 1,
-        "DestRegionSet": [
-            {
-                "RegionId": "xx",
-                "RegionAreaName": "xx",
-                "IDCType": "xx",
-                "FeatureBitmap": 1,
-                "RegionArea": "xx",
-                "RegionName": "xx"
-            }
-        ],
-        "RequestId": "xx"
+        "RequestId": "dad2a717-3c7d-444d-8f98-0cca9c897ff3"
     }
 }
 ```

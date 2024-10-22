@@ -652,7 +652,7 @@
       "status": "online"
     },
     "ModifyProxyGroupAttribute": {
-      "document": "本接口（ModifyProxyGroupAttribute）用于修改通道组属性，目前仅支持修改通道组名称。",
+      "document": "本接口（ModifyProxyGroupAttribute）用于修改通道组属性，目前仅支持修改通道组名称与项目ID。",
       "input": "ModifyProxyGroupAttributeRequest",
       "name": "修改通道组属性",
       "output": "ModifyProxyGroupAttributeResponse",
@@ -1702,7 +1702,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "通道ID",
+          "document": "通道ID。操作通道组时无需填此参数。",
           "example": "link-xxxx",
           "member": "string",
           "name": "ProxyId",
@@ -1711,7 +1711,7 @@
         },
         {
           "disabled": false,
-          "document": "安全组策略ID",
+          "document": "安全组策略ID。操作通道组时须填此参数。",
           "example": "xx",
           "member": "string",
           "name": "PolicyId",
@@ -1730,7 +1730,7 @@
           "example": "1234.2",
           "member": "string",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2180,7 +2180,7 @@
         {
           "disabled": false,
           "document": "域名ID",
-          "example": "test.com",
+          "example": "dm-00ye8ek7",
           "member": "string",
           "name": "DomainId",
           "required": true,
@@ -2524,7 +2524,7 @@
         },
         {
           "disabled": false,
-          "document": "源站地域，参考接口DescribeDestRegions 返回参数RegionDetail中的RegionId",
+          "document": "源站地域，参考接口 [https://cloud.tencent.com/document/api/608/36964] 返回参数RegionDetail中的RegionId",
           "example": "EastChina",
           "member": "string",
           "name": "RealServerRegion",
@@ -2588,7 +2588,7 @@
           "example": "lg-xxx",
           "member": "string",
           "name": "GroupId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3548,8 +3548,8 @@
         },
         {
           "disabled": false,
-          "document": "通道组ID，该参数和GroupId必须设置一个，但不能同时设置。",
-          "example": "xx",
+          "document": "通道组ID，该参数和ProxyId必须设置一个，但不能同时设置。",
+          "example": "lg-04tnkmt9",
           "member": "string",
           "name": "GroupId",
           "required": false,
@@ -3576,7 +3576,7 @@
           "example": "[]",
           "member": "string",
           "name": "OperationFailedListenerSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3586,7 +3586,7 @@
           "example": "[\"listener-o0f3at99\"]",
           "member": "string",
           "name": "OperationSucceedListenerSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3596,7 +3596,7 @@
           "example": "[]",
           "member": "string",
           "name": "InvalidStatusListenerSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4094,7 +4094,17 @@
     },
     "DescribeDestRegionsRequest": {
       "document": "DescribeDestRegions请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "通道质量:0表示金牌，1表示银牌。默认不传该参数，表示金牌。本参数确定查询指定通道质量的源站区域",
+          "example": "1",
+          "member": "uint64",
+          "name": "QualityType",
+          "required": false,
+          "type": "int"
+        }
+      ],
       "type": "object"
     },
     "DescribeDestRegionsResponse": {
@@ -4106,7 +4116,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4116,7 +4126,7 @@
           "example": "无",
           "member": "RegionDetail",
           "name": "DestRegionSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4386,7 +4396,7 @@
           "example": "无",
           "member": "Domain",
           "name": "Domains",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4396,7 +4406,7 @@
           "example": "4",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4528,7 +4538,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "通道ID",
+          "document": "通道ID。ListenerId、ProxyId、GroupId须至少填写一个，且ProxyId与GroupId至多只能填写其中一个。",
           "example": "link-n9ha8jzl",
           "member": "string",
           "name": "ProxyId",
@@ -4537,8 +4547,17 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件，按照监听器ID进行精确查询",
-          "example": "xx",
+          "document": "通道组ID。ListenerId、ProxyId、GroupId须至少填写一个，且ProxyId与GroupId至多只能填写其中一个。",
+          "example": "lg-sadadd",
+          "member": "string",
+          "name": "GroupId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件，按照监听器ID进行精确查询。ListenerId、ProxyId、GroupId须至少填写一个，且ProxyId与GroupId至多只能填写其中一个。",
+          "example": "listerner-sfafdaf",
           "member": "string",
           "name": "ListenerId",
           "required": false,
@@ -4547,7 +4566,7 @@
         {
           "disabled": false,
           "document": "过滤条件，按照监听器名称进行精确查询",
-          "example": "xx",
+          "example": "test",
           "member": "string",
           "name": "ListenerName",
           "required": false,
@@ -4583,18 +4602,9 @@
         {
           "disabled": false,
           "document": "过滤条件，支持按照端口或监听器名称进行模糊查询，该参数不能与ListenerName和Port同时使用",
-          "example": "xx",
+          "example": "80",
           "member": "string",
           "name": "SearchValue",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "通道组ID",
-          "example": "xx",
-          "member": "string",
-          "name": "GroupId",
           "required": false,
           "type": "string"
         }
@@ -4610,7 +4620,7 @@
           "example": "4",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4620,7 +4630,7 @@
           "example": "无",
           "member": "HTTPListener",
           "name": "ListenerSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4638,7 +4648,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "过滤条件，通道ID",
+          "document": "通道ID。ListenerId、ProxyId、GroupId须至少填写一个，且ProxyId与GroupId至多只能填写其中一个。",
           "example": "link-n9ha8jzl",
           "member": "string",
           "name": "ProxyId",
@@ -4647,7 +4657,16 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件，根据监听器ID进行精确查询。",
+          "document": "通道组ID。ListenerId、ProxyId、GroupId须至少填写一个，且ProxyId与GroupId至多只能填写其中一个。",
+          "example": "xx",
+          "member": "string",
+          "name": "GroupId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件，根据监听器ID进行精确查询。ListenerId、ProxyId、GroupId须至少填写一个，且ProxyId与GroupId至多只能填写其中一个。",
           "example": "xx",
           "member": "string",
           "name": "ListenerId",
@@ -4701,15 +4720,6 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件，通道组ID",
-          "example": "xx",
-          "member": "string",
-          "name": "GroupId",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
           "document": "支持Http3的开关，其中：\n0，表示不需要支持Http3接入；\n1，表示需要支持Http3接入。\n注意：如果支持了Http3的功能，那么该监听器会占用对应的UDP接入端口，不可再创建相同端口的UDP监听器。\n该功能的启停无法在监听器创建完毕后再修改。",
           "example": "0",
           "member": "int64",
@@ -4729,7 +4739,7 @@
           "example": "11",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4739,7 +4749,7 @@
           "example": "无",
           "member": "HTTPSListener",
           "name": "ListenerSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4776,7 +4786,7 @@
           "example": "2",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4786,7 +4796,7 @@
           "example": "无",
           "member": "RealServer",
           "name": "RealServerSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4796,7 +4806,7 @@
           "example": "1",
           "member": "uint64",
           "name": "BindRealServerTotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4806,7 +4816,7 @@
           "example": "无",
           "member": "BindRealServer",
           "name": "BindRealServerSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4988,7 +4998,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4998,7 +5008,7 @@
           "example": "无",
           "member": "ProxyInfo",
           "name": "InstanceSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5008,7 +5018,7 @@
           "example": "无",
           "member": "ProxyInfo",
           "name": "ProxySet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6197,7 +6207,7 @@
           "example": "2",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6207,7 +6217,7 @@
           "example": "无",
           "member": "TCPListener",
           "name": "ListenerSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6291,7 +6301,7 @@
         {
           "disabled": false,
           "document": "过滤条件，根据监听器名称精确查询",
-          "example": "xx",
+          "example": "test_listener",
           "member": "string",
           "name": "ListenerName",
           "required": false,
@@ -6327,7 +6337,7 @@
         {
           "disabled": false,
           "document": "过滤条件，根据通道组ID进行拉取，ProxyId/GroupId/ListenerId必须设置一个，但ProxyId和GroupId不能同时设置。",
-          "example": "xx",
+          "example": "lg-sdfafadf",
           "member": "string",
           "name": "GroupId",
           "required": false,
@@ -6336,7 +6346,7 @@
         {
           "disabled": false,
           "document": "过滤条件，支持按照端口或监听器名称进行模糊查询，该参数不能与ListenerName和Port同时使用",
-          "example": "xx",
+          "example": "80",
           "member": "string",
           "name": "SearchValue",
           "required": false,
@@ -6354,7 +6364,7 @@
           "example": "2",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6364,7 +6374,7 @@
           "example": "无",
           "member": "UDPListener",
           "name": "ListenerSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6529,7 +6539,7 @@
         {
           "disabled": false,
           "document": "域名ID",
-          "example": "test.com",
+          "example": "dm-00ye8ek7",
           "member": "string",
           "name": "DomainId",
           "required": true,
@@ -7585,7 +7595,7 @@
         },
         {
           "disabled": false,
-          "document": "（旧参数，请切换到Concurrent）通道并发量上限，表示同时在线的连接数，单位：万。",
+          "document": "（此参数为旧参数，请填写新参数Concurrent，二者必须填写一个）通道并发量上限，表示同时在线的连接数，单位：万。",
           "example": "2",
           "member": "int64",
           "name": "Concurrency",
@@ -8008,7 +8018,7 @@
         {
           "disabled": false,
           "document": "域名ID",
-          "example": "test.com",
+          "example": "dm-00ye8ek7",
           "member": "string",
           "name": "DomainId",
           "required": true,
@@ -8071,7 +8081,7 @@
         {
           "disabled": false,
           "document": "域名ID",
-          "example": "xxxx",
+          "example": "\"dm-00ye8ek7\"",
           "member": "string",
           "name": "DomainId",
           "required": true,
@@ -8080,7 +8090,7 @@
         {
           "disabled": false,
           "document": "国家ID列表",
-          "example": "[\"123\\n\"]",
+          "example": "[\"100000\"]",
           "member": "string",
           "name": "NationCountryInnerCodes",
           "required": true,
@@ -8089,7 +8099,7 @@
         {
           "disabled": false,
           "document": "通道ID列表",
-          "example": "[\"1213\\n\"]",
+          "example": "[\"link-wefarwqx\"]",
           "member": "string",
           "name": "ProxyIdList",
           "required": true,
@@ -8295,7 +8305,7 @@
         },
         {
           "disabled": false,
-          "document": "通道名称。可任意命名，但不得超过30个字符。",
+          "document": "通道名称。可任意命名，但不得超过32个字符。",
           "example": "test",
           "member": "string",
           "name": "ProxyName",
@@ -8475,7 +8485,7 @@
         },
         {
           "disabled": false,
-          "document": "修改后的通道组名称：不超过30个字符，超过部分会被截断。",
+          "document": "修改后的通道组名称：不超过30个字符，否则修改失败。",
           "example": "newName",
           "member": "string",
           "name": "GroupName",
@@ -8781,7 +8791,7 @@
         },
         {
           "disabled": false,
-          "document": "监听器源站访问策略，其中：rr表示轮询；wrr表示加权轮询；lc表示最小连接数；lrtt表示最小时延。",
+          "document": "监听器源站访问策略，其中：rr表示轮询；wrr表示加权轮询；lc表示最小连接数；lrtt表示最小时延。注意：lrtt需要开通白名单；RealServerType 为 DOMAIN 不支持wrr 和 lrtt。",
           "example": "rr",
           "member": "string",
           "name": "Scheduler",
@@ -9500,7 +9510,7 @@
         },
         {
           "disabled": false,
-          "document": "是否支持设置TSL设置\n0表示不支持；\n1表示支持。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否支持设置TLS设置\n0表示不支持；\n1表示支持。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
           "name": "IsSupportTLSChoice",
@@ -9520,7 +9530,7 @@
           "example": "lg-xx",
           "member": "string",
           "name": "GroupId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9530,7 +9540,7 @@
           "example": "lg-xx.com",
           "member": "string",
           "name": "Domain",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -9540,7 +9550,7 @@
           "example": "\"test\"",
           "member": "string",
           "name": "GroupName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -9550,7 +9560,7 @@
           "example": "10000",
           "member": "int64",
           "name": "ProjectId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9560,17 +9570,17 @@
           "example": "无",
           "member": "RegionDetail",
           "name": "RealServerRegionInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "通道组状态。\n其中，\nRUNNING表示运行中；\nCREATING表示创建中；\nDESTROYING表示销毁中；\nMOVING表示通道迁移中；\nCHANGING表示部分部署中。",
+          "document": "通道组状态。\n其中，\nRUNNING表示运行中；\nCREATING表示创建中；\nDESTROYING表示销毁中；\nMOVING表示通道迁移中；\nCLOSED表示已关闭；\nCHANGING表示部分部署中。",
           "example": "0",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9580,7 +9590,7 @@
           "example": "无",
           "member": "TagPair",
           "name": "TagSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -9590,7 +9600,7 @@
           "example": "1.0",
           "member": "string",
           "name": "Version",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -9600,7 +9610,7 @@
           "example": "12345",
           "member": "uint64",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -9610,7 +9620,7 @@
           "example": "1",
           "member": "uint64",
           "name": "ProxyType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -9620,7 +9630,7 @@
           "example": "0",
           "member": "int64",
           "name": "Http3Supported",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -9630,7 +9640,7 @@
           "example": "0",
           "member": "int64",
           "name": "FeatureBitmap",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         }
@@ -10858,7 +10868,7 @@
         },
         {
           "disabled": false,
-          "document": "TLS版本",
+          "document": "TLS版本,可选TLSv1.0、TLSv1.1、TLSv1.2、TLSv1.3",
           "example": "[\"TLSv1.2\", \"TLSv1.3\"]",
           "member": "string",
           "name": "TLSSupportVersion",
@@ -10867,7 +10877,7 @@
         },
         {
           "disabled": false,
-          "document": "密码套件包",
+          "document": "密码套件包,可选 GAAP_TLS_CIPHERS_STRICT，GAAP_TLS_CIPHERS_GENERAL，GAAP_TLS_CIPHERS_WIDE(默认)",
           "example": "GAAP_TLS_CIPHERS_GENERAL",
           "member": "string",
           "name": "TLSCiphers",

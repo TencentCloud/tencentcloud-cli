@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cwp DescribeAssetAppCount --cli-unfold-argument  \
-    --Name xx
+    --Name host1
 ```
 
 Output: 
@@ -15,12 +15,13 @@ Output:
     "Response": {
         "Apps": [
             {
-                "Value": 0,
-                "Key": "xx",
-                "Desc": "xx"
+                "Key": "key1",
+                "Value": 10,
+                "Desc": "desc of key1",
+                "NewCount": 0
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "07a92740-5e54-4ea6-9320-c6fc3f3a1121"
     }
 }
 ```

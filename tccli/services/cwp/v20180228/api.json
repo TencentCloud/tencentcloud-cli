@@ -855,18 +855,18 @@
       "status": "online"
     },
     "DescribeAttackSource": {
-      "document": "查询攻击溯源",
+      "document": "已废弃\n\n查询攻击溯源",
       "input": "DescribeAttackSourceRequest",
       "name": "查询攻击溯源",
       "output": "DescribeAttackSourceResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeAttackSourceEvents": {
-      "document": "查询攻击溯源事件",
+      "document": "已废弃\n\n查询攻击溯源事件",
       "input": "DescribeAttackSourceEventsRequest",
       "name": "查询攻击溯源事件",
       "output": "DescribeAttackSourceEventsResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeAttackStatistics": {
       "document": "网络攻击数据统计",
@@ -5645,7 +5645,7 @@
         {
           "disabled": false,
           "document": "服务器Quuid",
-          "example": "x x",
+          "example": "24c9be55-c743-4a75-a5c7-2a2912341234",
           "member": "string",
           "name": "Quuid",
           "output_required": true,
@@ -5655,7 +5655,7 @@
         {
           "disabled": false,
           "document": "服务器uuid",
-          "example": "xx",
+          "example": "24c9be55-c743-4a75-a5c7-2a2912341234",
           "member": "string",
           "name": "Uuid",
           "output_required": true,
@@ -5665,7 +5665,7 @@
         {
           "disabled": false,
           "document": "服务器内网IP",
-          "example": "xx",
+          "example": "10.0.0.11",
           "member": "string",
           "name": "MachineIp",
           "output_required": true,
@@ -5675,7 +5675,7 @@
         {
           "disabled": false,
           "document": "服务器名称",
-          "example": "xx",
+          "example": "test-machine",
           "member": "string",
           "name": "MachineName",
           "output_required": true,
@@ -5685,7 +5685,7 @@
         {
           "disabled": false,
           "document": "操作系统名称",
-          "example": "xx",
+          "example": "windows",
           "member": "string",
           "name": "OsInfo",
           "output_required": true,
@@ -5695,7 +5695,7 @@
         {
           "disabled": false,
           "document": "CPU信息",
-          "example": "xx",
+          "example": "Intel(R) Xeon(R) Gold 6148 CPU @ 2.40GHz",
           "member": "string",
           "name": "Cpu",
           "output_required": true,
@@ -5705,7 +5705,7 @@
         {
           "disabled": false,
           "document": "内存容量：单位G",
-          "example": "1",
+          "example": "1024",
           "member": "uint64",
           "name": "MemSize",
           "output_required": true,
@@ -5715,7 +5715,7 @@
         {
           "disabled": false,
           "document": "内存使用率百分比",
-          "example": "xx",
+          "example": "22.5",
           "member": "string",
           "name": "MemLoad",
           "output_required": true,
@@ -5725,7 +5725,7 @@
         {
           "disabled": false,
           "document": "硬盘容量：单位G",
-          "example": "1",
+          "example": "100",
           "member": "uint64",
           "name": "DiskSize",
           "output_required": true,
@@ -5735,7 +5735,7 @@
         {
           "disabled": false,
           "document": "硬盘使用率百分比",
-          "example": "xx",
+          "example": "22.4",
           "member": "string",
           "name": "DiskLoad",
           "output_required": true,
@@ -5755,7 +5755,7 @@
         {
           "disabled": false,
           "document": "主机外网IP",
-          "example": "xx",
+          "example": "111.22.123.11",
           "member": "string",
           "name": "MachineWanIp",
           "output_required": true,
@@ -5785,7 +5785,7 @@
         {
           "disabled": false,
           "document": "Cpu使用率百分比",
-          "example": "xx",
+          "example": "54.2",
           "member": "string",
           "name": "CpuLoad",
           "output_required": true,
@@ -7213,80 +7213,80 @@
         {
           "disabled": false,
           "document": "主机内网IP",
-          "example": "1",
+          "example": "10.0.0.11",
           "member": "string",
           "name": "MachineIp",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "主机外网IP",
-          "example": "1",
+          "example": "112.65.22.19",
           "member": "string",
           "name": "MachineWanIp",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "主机名称",
-          "example": "1",
+          "example": "test-ins",
           "member": "string",
           "name": "MachineName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "操作系统信息",
-          "example": "1",
+          "example": "Centos 64bit",
           "member": "string",
           "name": "OsInfo",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "主机Uuid",
-          "example": "1",
+          "example": "24c9be55-c743-4a75-a5c7-2a2912341234",
           "member": "string",
           "name": "Uuid",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "主机Quuid",
-          "example": "1",
+          "example": "24c9be55-c743-4a75-a5c7-2a2912341234",
           "member": "string",
           "name": "Quuid",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "账号UID",
-          "example": "1",
+          "example": "1010192",
           "member": "string",
           "name": "Uid",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "账号GID",
-          "example": "1",
+          "example": "24c9be55-c743-4a75-a5c7-2a2912341234",
           "member": "string",
           "name": "Gid",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7296,7 +7296,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Status",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7306,7 +7306,7 @@
           "example": "1",
           "member": "uint64",
           "name": "IsRoot",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7316,7 +7316,7 @@
           "example": "1",
           "member": "uint64",
           "name": "LoginType",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7326,17 +7326,17 @@
           "example": "1",
           "member": "string",
           "name": "LastLoginTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "账号名称",
-          "example": "1",
+          "example": "admin",
           "member": "string",
           "name": "Name",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7346,27 +7346,27 @@
           "example": "1",
           "member": "uint64",
           "name": "ProjectId",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "账号类型：0访客用户，1标准用户，2管理员用户 ,999为空,仅windows",
+          "document": "账号类型：0访客用户，1标准用户，2管理员用户 ,999为空,仅Windows",
           "example": "1",
           "member": "uint64",
           "name": "UserType",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否域账号：0否， 1是，2否, 999为空  仅windows",
+          "document": "是否域账号：0否， 1是，2否, 999为空  仅Windows",
           "example": "1",
           "member": "uint64",
           "name": "IsDomain",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7376,7 +7376,7 @@
           "example": "1",
           "member": "uint64",
           "name": "IsSudo",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7386,7 +7386,7 @@
           "example": "1",
           "member": "uint64",
           "name": "IsSshLogin",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7396,7 +7396,7 @@
           "example": "1",
           "member": "string",
           "name": "HomePath",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7406,7 +7406,7 @@
           "example": "1",
           "member": "string",
           "name": "Shell",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7416,27 +7416,27 @@
           "example": "1",
           "member": "uint64",
           "name": "ShellLoginStatus",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "密码修改时间",
-          "example": "1",
+          "example": "2024-10-22 19:40:38",
           "member": "string",
           "name": "PasswordChangeTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "密码过期时间  仅linux",
-          "example": "1",
+          "example": "2024-10-22 19:40:38",
           "member": "string",
           "name": "PasswordDueTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7446,7 +7446,7 @@
           "example": "1",
           "member": "int64",
           "name": "PasswordLockDays",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7456,7 +7456,7 @@
           "example": "1",
           "member": "int64",
           "name": "PasswordStatus",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7466,7 +7466,7 @@
           "example": "2011-11-11 12:12:12",
           "member": "string",
           "name": "UpdateTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7476,7 +7476,7 @@
           "example": "2011-11-11 12:12:12",
           "member": "string",
           "name": "FirstTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7486,7 +7486,7 @@
           "example": "1",
           "member": "int64",
           "name": "IsNew",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7496,7 +7496,7 @@
           "example": "无",
           "member": "MachineExtraInfo",
           "name": "MachineExtraInfo",
-          "required": false,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         }
@@ -7509,60 +7509,60 @@
         {
           "disabled": false,
           "document": "主机内网IP",
-          "example": "1",
+          "example": "10.0.0.11",
           "member": "string",
           "name": "MachineIp",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "主机名称",
-          "example": "1",
+          "example": "test-ins",
           "member": "string",
           "name": "MachineName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "主机Uuid",
-          "example": "1",
+          "example": "24c9be55-c743-4a75-a5c7-2a2912341234",
           "member": "string",
           "name": "Uuid",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "主机Quuid",
-          "example": "1",
+          "example": "24c9be55-c743-4a75-a5c7-2a2912341234",
           "member": "string",
           "name": "Quuid",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "账号UID",
-          "example": "1",
+          "example": "134393481",
           "member": "string",
           "name": "Uid",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "账号GID",
-          "example": "1",
+          "example": "1001",
           "member": "string",
           "name": "Gid",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7572,7 +7572,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7582,47 +7582,47 @@
           "example": "1",
           "member": "uint64",
           "name": "IsRoot",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "上次登录时间",
-          "example": "1",
+          "example": "2024-10-22 19:44:19",
           "member": "string",
           "name": "LastLoginTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "账号名称",
-          "example": "1",
+          "example": "test_user",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "账号类型：0访客用户，1标准用户，2管理员用户 ,999为空,仅windows",
+          "document": "账号类型：0访客用户，1标准用户，2管理员用户 ,999为空,仅Windows",
           "example": "1",
           "member": "uint64",
           "name": "UserType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否域账号：0否， 1是, 999为空  仅windows",
+          "document": "是否域账号：0否， 1是, 999为空  仅Windows",
           "example": "1",
           "member": "uint64",
           "name": "IsDomain",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7632,7 +7632,7 @@
           "example": "1",
           "member": "uint64",
           "name": "IsSshLogin",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7642,17 +7642,17 @@
           "example": "1",
           "member": "string",
           "name": "HomePath",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "Shell路径  仅linux",
-          "example": "1",
+          "example": "/root",
           "member": "string",
           "name": "Shell",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7662,27 +7662,27 @@
           "example": "1",
           "member": "uint64",
           "name": "ShellLoginStatus",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "密码修改时间",
-          "example": "1",
+          "example": "2024-10-22 19:44:42",
           "member": "string",
           "name": "PasswordChangeTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "密码过期时间  仅linux",
-          "example": "1",
+          "example": "2024-10-22 19:44:42",
           "member": "string",
           "name": "PasswordDueTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7692,37 +7692,37 @@
           "example": "1",
           "member": "int64",
           "name": "PasswordLockDays",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "备注",
-          "example": "1",
+          "example": "no login",
           "member": "string",
           "name": "Remark",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "用户组名",
-          "example": "1",
+          "example": "staffs",
           "member": "string",
           "name": "GroupName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "账号到期时间",
-          "example": "1",
+          "example": "2024-10-22 19:44:42",
           "member": "string",
           "name": "DisableTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7732,37 +7732,37 @@
           "example": "1",
           "member": "string",
           "name": "LastLoginTerminal",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "最近登录位置",
-          "example": "1",
+          "example": "usa",
           "member": "string",
           "name": "LastLoginLoc",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "最近登录IP",
-          "example": "1",
+          "example": "11.22.11.1",
           "member": "string",
           "name": "LastLoginIp",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "密码过期提醒：单位天",
-          "example": "1",
+          "example": "10",
           "member": "uint64",
           "name": "PasswordWarnDays",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7772,7 +7772,7 @@
           "example": "1",
           "member": "uint64",
           "name": "PasswordChangeType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7782,7 +7782,7 @@
           "example": "1",
           "member": "AssetUserKeyInfo",
           "name": "Keys",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -7792,7 +7792,7 @@
           "example": "2011-11-11 12:12:12",
           "member": "string",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -14822,7 +14822,7 @@
         {
           "disabled": false,
           "document": "防护目录地址",
-          "example": "xxx",
+          "example": "/var/www",
           "member": "string",
           "name": "ProtectDir",
           "required": true,
@@ -14831,7 +14831,7 @@
         {
           "disabled": false,
           "document": "防护机器 信息",
-          "example": "xxx",
+          "example": "[]",
           "member": "ProtectHostConfig",
           "name": "ProtectHostConfig",
           "required": true,
@@ -17168,7 +17168,7 @@
           "example": "[]",
           "member": "AssetKeyVal",
           "name": "Apps",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -17536,7 +17536,7 @@
           "example": "无",
           "member": "AssetKeyVal",
           "name": "Databases",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -17747,7 +17747,7 @@
           "example": "无",
           "member": "AssetDiskPartitionInfo",
           "name": "Disks",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -17757,7 +17757,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -17776,7 +17776,7 @@
         {
           "disabled": false,
           "document": "服务器Uuid",
-          "example": "xx",
+          "example": "1c26308c-5493-4eaf-a817-112ec25f499e",
           "member": "string",
           "name": "Uuid",
           "required": false,
@@ -17785,7 +17785,7 @@
         {
           "disabled": false,
           "document": "服务器Quuid",
-          "example": "xx",
+          "example": "1c26308c-5493-4eaf-a817-112ec25f499e",
           "member": "string",
           "name": "Quuid",
           "required": false,
@@ -17857,7 +17857,7 @@
           "example": "[]",
           "member": "AssetEnvBaseInfo",
           "name": "Envs",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -17867,7 +17867,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -17913,7 +17913,7 @@
           "example": "无",
           "member": "AssetKeyVal",
           "name": "Types",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -18857,7 +18857,7 @@
           "example": "[]",
           "member": "AssetKeyVal",
           "name": "Process",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -19341,7 +19341,7 @@
         {
           "disabled": false,
           "document": "云服务器UUID",
-          "example": "xx",
+          "example": "24c9be55-c743-4a75-a5c7-2a2912341234",
           "member": "string",
           "name": "Quuid",
           "required": true,
@@ -19350,7 +19350,7 @@
         {
           "disabled": false,
           "document": "主机安全UUID",
-          "example": "xx",
+          "example": "24c9be55-c743-4a75-a5c7-2a2912341234",
           "member": "string",
           "name": "Uuid",
           "required": true,
@@ -19359,7 +19359,7 @@
         {
           "disabled": false,
           "document": "账户名",
-          "example": "xx",
+          "example": "test_user",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -19377,7 +19377,7 @@
           "example": "无",
           "member": "AssetUserDetail",
           "name": "User",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -19450,7 +19450,7 @@
           "example": "无",
           "member": "AssetUserKeyInfo",
           "name": "Keys",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -19460,7 +19460,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -19589,7 +19589,7 @@
           "example": "无",
           "member": "AssetKeyVal",
           "name": "WebApps",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -19801,7 +19801,7 @@
           "example": "无",
           "member": "AssetKeyVal",
           "name": "WebFrames",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -19930,7 +19930,7 @@
           "example": "无",
           "member": "AssetKeyVal",
           "name": "WebLocations",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -20150,7 +20150,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -20160,7 +20160,7 @@
           "example": "[]",
           "member": "AssetWebLocationPath",
           "name": "Paths",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -20197,7 +20197,7 @@
           "example": "无",
           "member": "AssetKeyVal",
           "name": "WebServices",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -24212,7 +24212,7 @@
         {
           "disabled": false,
           "document": "ES聚合条件JSON",
-          "example": "xxx",
+          "example": "{}",
           "member": "string",
           "name": "Query",
           "required": true,
@@ -24230,7 +24230,7 @@
           "example": "xxx",
           "member": "string",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -24875,7 +24875,7 @@
         {
           "disabled": false,
           "document": "排序方式 ASC,DESC",
-          "example": "xx",
+          "example": "ASC",
           "member": "string",
           "name": "Order",
           "required": false,
@@ -24884,7 +24884,7 @@
         {
           "disabled": false,
           "document": "排序字段 CreateTime、ModifyTime",
-          "example": "xx",
+          "example": "CreateTime",
           "member": "string",
           "name": "By",
           "required": false,
@@ -24902,6 +24902,7 @@
           "example": "无",
           "member": "FileTamperEvent",
           "name": "List",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -24911,6 +24912,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -24947,7 +24949,7 @@
           "example": "无",
           "member": "FileTamperRuleCount",
           "name": "List",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -25002,7 +25004,7 @@
           "example": "无",
           "member": "FileTamperRuleDetail",
           "name": "FileTamperRuleDetail",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -25362,7 +25364,7 @@
           "example": "1",
           "member": "uint64",
           "name": "BuyStatus",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -25372,17 +25374,17 @@
           "example": "1",
           "member": "uint64",
           "name": "InquireNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "到期时间",
-          "example": "xxx",
+          "example": "2020-10-29 00:00:00",
           "member": "string",
           "name": "EndTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -25392,7 +25394,7 @@
           "example": "1",
           "member": "uint64",
           "name": "IsAutoOpenRenew",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -25402,7 +25404,7 @@
           "example": "1",
           "member": "string",
           "name": "ResourceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -25412,17 +25414,17 @@
           "example": "1",
           "member": "uint64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "开始时间",
-          "example": "xxx",
+          "example": "2020-09-29 00:00:00",
           "member": "string",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -27053,6 +27055,7 @@
           "example": "[\\\"malware\\\",\\\"risk_process\\\",\\\"hostlogin\\\",\\\"bruteattack\\\",\\\"risk_dns\\\",\\\"bash\\\",\\\"privilege_escalation\\\",\\\"reverse_shell\\\",\\\"emergency_vul\\\",\\\"Web-CMS_vul\\\",\\\"application_vul\\\",\\\"linux_app_vul\\\",\\\"windows_sys_vul\\\",\\\"baseline\\\",\\\"java_shell\\\",\\\"file_tamper\\\",\\\"attack_logs\\\",\\\"tamper_protect_exceptions\\\",\\\"tamper_protect_logs\\\",\\\"agent_offline\\\",\\\"agent_uninstall\\\"]",
           "member": "string",
           "name": "Type",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -27062,6 +27065,7 @@
           "example": "3640",
           "member": "int64",
           "name": "Period",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -27071,6 +27075,7 @@
           "example": "2",
           "member": "int64",
           "name": "PeriodModifyCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -27097,6 +27102,7 @@
           "example": "无",
           "member": "LogStorageRecord",
           "name": "Records",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -28829,7 +28835,7 @@
           "example": "www.qq.com/1.txt",
           "member": "string",
           "name": "FileUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -28866,7 +28872,7 @@
           "example": "xxx",
           "member": "MalwareInfo",
           "name": "MalwareInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -28920,7 +28926,7 @@
           "example": "true",
           "member": "bool",
           "name": "IsCheckRisk",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -28930,7 +28936,7 @@
           "example": "[]",
           "member": "MalwareRisk",
           "name": "List",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -28940,7 +28946,7 @@
           "example": "true",
           "member": "bool",
           "name": "IsPop",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -28950,7 +28956,7 @@
           "example": "无",
           "member": "MalwareRisk",
           "name": "ProcessList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -29229,7 +29235,7 @@
           "example": "4",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -29239,7 +29245,7 @@
           "example": "[]",
           "member": "MalwareWhiteListAffectEvent",
           "name": "AffectList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -29293,7 +29299,7 @@
         },
         {
           "disabled": false,
-          "document": "可选排序列: [EventsCount]",
+          "document": "可选排序列: [EventsCount|CreateTime|ModifyTime]",
           "example": "xxx",
           "member": "string",
           "name": "By",
@@ -29312,7 +29318,7 @@
           "example": "4",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -29322,7 +29328,7 @@
           "example": "[]",
           "member": "MalwareWhiteListInfo",
           "name": "WhiteList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -29528,6 +29534,7 @@
           "example": "4",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -29537,6 +29544,7 @@
           "example": "[]",
           "member": "NetAttackWhiteRule",
           "name": "WhiteList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -30454,7 +30462,7 @@
           "example": "[]",
           "member": "RansomDefenseBackup",
           "name": "List",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -30464,7 +30472,7 @@
           "example": "10",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -30537,7 +30545,7 @@
           "example": "[]",
           "member": "RansomDefenseEvent",
           "name": "List",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -30547,7 +30555,7 @@
           "example": "10",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -30620,7 +30628,7 @@
           "example": "[]",
           "member": "RansomDefenseStrategyMachineBackupInfo",
           "name": "List",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -30630,7 +30638,7 @@
           "example": "10",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -30740,7 +30748,7 @@
           "example": "[]",
           "member": "RansomDefenseRollbackTask",
           "name": "List",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -30750,7 +30758,7 @@
           "example": "10",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -30904,7 +30912,7 @@
           "example": "无",
           "member": "RansomDefenseStrategyDetail",
           "name": "Strategy",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -30977,6 +30985,7 @@
           "example": "[]",
           "member": "RansomDefenseStrategy",
           "name": "List",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -30986,6 +30995,7 @@
           "example": "10",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -31067,7 +31077,7 @@
           "example": "[]",
           "member": "RansomDefenseStrategyMachineDetail",
           "name": "List",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -31077,7 +31087,7 @@
           "example": "10",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -31345,7 +31355,7 @@
         {
           "disabled": false,
           "document": "操作事件类型，文件查杀：MALWARE，异常登录：HOST_LOGIN，密码破解：BRUTE_ATTACK，恶意请求：MALICIOUS_REQUEST，高危命令：BASH_EVENT，本地提权：PRIVILEGE_EVENT，反弹shell：REVERSE_SHELL",
-          "example": "xx",
+          "example": "MALWARE",
           "member": "string",
           "name": "RiskType",
           "required": true,
@@ -31360,10 +31370,10 @@
         {
           "disabled": false,
           "document": "Handling:正在执行删除操作，\nPending：没有任务执行",
-          "example": "xxx",
+          "example": "Handling",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -32563,7 +32573,7 @@
           "example": "无",
           "member": "ScreenNameValue",
           "name": "Machines",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -32573,7 +32583,7 @@
           "example": "无",
           "member": "ScreenNameValue",
           "name": "Protection",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -32933,7 +32943,7 @@
           "example": "xxx",
           "member": "BroadcastInfo",
           "name": "BroadcastInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -32987,7 +32997,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤安全播报类型：0-紧急通知，1-功能更新，2-行业荣誉，3-版本发布",
+          "document": "过滤安全播报类型：0-紧急通知，1-功能更新，2-行业荣誉，3-版本发布，4-最佳实践",
           "example": "0",
           "member": "string",
           "name": "BroadcastType",
@@ -33006,7 +33016,7 @@
           "example": "无",
           "member": "Broadcasts",
           "name": "List",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -33016,7 +33026,7 @@
           "example": "20",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -33062,7 +33072,7 @@
           "example": "[]",
           "member": "SecurityDynamic",
           "name": "SecurityDynamics",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -33072,7 +33082,7 @@
           "example": "100",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -33106,220 +33116,220 @@
         {
           "disabled": false,
           "document": "木马事件统计",
-          "example": "xxx",
+          "example": "{\"EventsNum\":1,\"MachineAffectNum\":1}",
           "member": "EventStat",
           "name": "MalwareStat",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "异地事件统计",
-          "example": "xxx",
+          "example": "{\"EventsNum\":1,\"MachineAffectNum\":1}",
           "member": "EventStat",
           "name": "HostLoginStat",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "爆破事件统计",
-          "example": "xxx",
+          "example": "{\"EventsNum\":1,\"MachineAffectNum\":1}",
           "member": "EventStat",
           "name": "BruteAttackStat",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "恶意请求事件统计",
-          "example": "xxx",
+          "example": "{\"EventsNum\":1,\"MachineAffectNum\":1}",
           "member": "EventStat",
           "name": "MaliciousRequestStat",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "本地提权事件统计",
-          "example": "xxx",
+          "example": "{\"EventsNum\":1,\"MachineAffectNum\":1}",
           "member": "EventStat",
           "name": "PrivilegeStat",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "反弹Shell事件统计",
-          "example": "xxx",
+          "example": "{\"EventsNum\":1,\"MachineAffectNum\":1}",
           "member": "EventStat",
           "name": "ReverseShellStat",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "高危命令事件统计",
-          "example": "xxx",
+          "example": "{\"EventsNum\":1,\"MachineAffectNum\":1}",
           "member": "EventStat",
           "name": "HighRiskBashStat",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "网络攻击事件统计",
-          "example": "xxx",
+          "example": "{\"EventsNum\":1,\"MachineAffectNum\":1}",
           "member": "EventStat",
           "name": "AttackLogsStat",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "高危漏洞事件统计",
-          "example": "xxx",
+          "example": "{\"EventsNum\":1,\"MachineAffectNum\":1}",
           "member": "EventStat",
           "name": "VulHighStat",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "中危漏洞事件统计",
-          "example": "xxx",
+          "example": "{\"EventsNum\":1,\"MachineAffectNum\":1}",
           "member": "EventStat",
           "name": "VulNormalStat",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "低危漏洞事件统计",
-          "example": "xxx",
+          "example": "{\"EventsNum\":1,\"MachineAffectNum\":1}",
           "member": "EventStat",
           "name": "VulLowStat",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "高危基线漏洞事件统计",
-          "example": "xxx",
+          "example": "{\"EventsNum\":1,\"MachineAffectNum\":1}",
           "member": "EventStat",
           "name": "BaselineHighStat",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "中危基线漏事件统计",
-          "example": "xxx",
+          "example": "{\"EventsNum\":1,\"MachineAffectNum\":1}",
           "member": "EventStat",
           "name": "BaselineNormalStat",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "低危基线漏事件统计",
-          "example": "xxx",
+          "example": "{\"EventsNum\":1,\"MachineAffectNum\":1}",
           "member": "EventStat",
           "name": "BaselineLowStat",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "有未处理安全事件的机器总数",
-          "example": "xxx",
+          "example": "1",
           "member": "uint64",
           "name": "MachineTotalAffectNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "有未处理入侵安全事件的机器总数",
-          "example": "xxx",
+          "example": "1",
           "member": "uint64",
           "name": "InvasionTotalAffectNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "有未处理漏洞安全事件的机器总数",
-          "example": "xxx",
+          "example": "1",
           "member": "uint64",
           "name": "VulTotalAffectNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "有未处理基线安全事件的机器总数",
-          "example": "xxx",
+          "example": "1",
           "member": "uint64",
           "name": "BaseLineTotalAffectNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "有未处理网络攻击安全事件的机器总数",
-          "example": "xxx",
+          "example": "1",
           "member": "uint64",
           "name": "CyberAttackTotalAffectNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "严重漏洞事件统计",
-          "example": "xxx",
+          "example": "{\"EventsNum\":1,\"MachineAffectNum\":1}",
           "member": "EventStat",
           "name": "VulRiskStat",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "严重基线漏洞事件统计",
-          "example": "xxx",
+          "example": "{\"EventsNum\":1,\"MachineAffectNum\":1}",
           "member": "EventStat",
           "name": "BaselineRiskStat",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "漏洞数统计",
-          "example": "xxx",
+          "example": "{\"EventsNum\":1,\"MachineAffectNum\":1}",
           "member": "EventStat",
           "name": "VulStat",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -33329,7 +33339,7 @@
           "example": "20",
           "member": "uint64",
           "name": "Score",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -33853,20 +33863,20 @@
         {
           "disabled": false,
           "document": "服务器名称",
-          "example": "xxx",
+          "example": "销售许可测试机器",
           "member": "string",
           "name": "HostName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "服务器IP",
-          "example": "xxx",
+          "example": "xx.xx.xx.xx",
           "member": "string",
           "name": "HostIp",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -33876,7 +33886,7 @@
           "example": "1",
           "member": "uint64",
           "name": "ProtectDirNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -33886,7 +33896,7 @@
           "example": "1",
           "member": "uint64",
           "name": "ProtectFileNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -33896,7 +33906,7 @@
           "example": "1",
           "member": "uint64",
           "name": "ProtectTamperNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -33906,7 +33916,7 @@
           "example": "1",
           "member": "uint64",
           "name": "ProtectLinkNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -33933,7 +33943,7 @@
           "example": "1",
           "member": "uint64",
           "name": "RiskFileCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -33943,7 +33953,7 @@
           "example": "1",
           "member": "uint64",
           "name": "AddRiskFileCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -33953,7 +33963,7 @@
           "example": "1",
           "member": "uint64",
           "name": "ServersCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -33963,7 +33973,7 @@
           "example": "true",
           "member": "bool",
           "name": "IsFirstCheck",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -33973,7 +33983,7 @@
           "example": "xxx",
           "member": "string",
           "name": "ScanTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -34725,7 +34735,7 @@
           "example": "无",
           "member": "VulDefenceOverview",
           "name": "Overview",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -36651,7 +36661,7 @@
         {
           "disabled": false,
           "document": "排序方式：CreateTime 或 RestoreTime，默认为CreateTime",
-          "example": "xxx",
+          "example": "CreateTime",
           "member": "string",
           "name": "By",
           "required": false,
@@ -36678,7 +36688,7 @@
           "example": "10",
           "member": "ProtectEventLists",
           "name": "List",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -36688,7 +36698,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -36839,7 +36849,7 @@
           "example": "true",
           "member": "bool",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -36849,7 +36859,7 @@
           "example": "1",
           "member": "uint64",
           "name": "UsedNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -36859,7 +36869,7 @@
           "example": "1",
           "member": "uint64",
           "name": "ResidueNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -36869,7 +36879,7 @@
           "example": "1",
           "member": "uint64",
           "name": "BuyNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -36879,7 +36889,7 @@
           "example": "1",
           "member": "uint64",
           "name": "ExpireNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -36889,7 +36899,7 @@
           "example": "xxx",
           "member": "ProtectMachineInfo",
           "name": "AllAuthorizedMachines",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -36899,7 +36909,7 @@
           "example": "xxx",
           "member": "ProtectMachine",
           "name": "ExpireAuthorizedMachines",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -36909,7 +36919,7 @@
           "example": "1",
           "member": "uint64",
           "name": "ExpiredNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -36919,7 +36929,7 @@
           "example": "1",
           "member": "uint64",
           "name": "ProtectDirNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -37812,7 +37822,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件。\n<li>AppName- string - 是否必填：否 - 应用名搜索</li>\n<li>IP - String - 是否必填：否 - 主机ip</li>\n<li>MachineName - String - 是否必填：否 - 主机名称</li>\n<li>InstanceID - string - 是否必填：否 - 实例ID</li>\n<li>Type - int - 是否必填：否 - 类型\t: 仅linux\n0: 全部\n1: 运维\n2 : 数据库\n3 : 安全\n4 : 可疑应用\n5 : 系统架构\n6 : 系统应用\n7 : WEB服务\n99:其他</li>\n<li>OsType - uint64 - 是否必填：否 - windows/linux</li>",
+          "document": "过滤条件。<li>AppName- string - 是否必填：否 - 应用名搜索</li><li>IP - String - 是否必填：否 - 主机ip</li><li>MachineName - String - 是否必填：否 - 主机名称</li><li>InstanceID - string - 是否必填：否 - 实例ID</li><li>Type - int - 是否必填：否 - 类型\t: 仅linux0: 全部1: 运维2 : 数据库3 : 安全4 : 可疑应用5 : 系统架构6 : 系统应用7 : WEB服务99:其他</li><li>OsType - uint64 - 是否必填：否 - Windows/Linux</li>",
           "example": "1",
           "member": "AssetFilters",
           "name": "Filters",
@@ -37986,7 +37996,7 @@
           "example": "[]",
           "member": "string",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -38059,7 +38069,7 @@
           "example": "1",
           "member": "string",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -38132,7 +38142,7 @@
           "example": "1",
           "member": "string",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -38205,7 +38215,7 @@
           "example": "1",
           "member": "string",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -38379,7 +38389,7 @@
           "example": "1",
           "member": "string",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -38443,7 +38453,7 @@
           "example": "1",
           "member": "string",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -38507,7 +38517,7 @@
           "example": "1",
           "member": "string",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -38754,7 +38764,7 @@
           "example": "1",
           "member": "string",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -38882,7 +38892,7 @@
           "example": "1",
           "member": "string",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -38946,7 +38956,7 @@
           "example": "[]",
           "member": "string",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -40291,7 +40301,7 @@
         {
           "disabled": false,
           "document": "排序字段",
-          "example": "xxx",
+          "example": "ProtectServerNum",
           "member": "string",
           "name": "By",
           "required": false,
@@ -40309,6 +40319,7 @@
           "example": "1",
           "member": "string",
           "name": "TaskId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -40372,6 +40383,7 @@
           "example": "10",
           "member": "string",
           "name": "TaskId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -46173,6 +46185,16 @@
           "required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "参考链接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "References",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -46344,7 +46366,7 @@
           "example": "xx",
           "member": "uint64",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -46354,7 +46376,7 @@
           "example": "xx",
           "member": "string",
           "name": "QuuidList",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -46364,7 +46386,7 @@
           "example": "xxx",
           "member": "string",
           "name": "Md5List",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -46374,7 +46396,7 @@
           "example": "1",
           "member": "uint64",
           "name": "IsGlobal",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -46384,7 +46406,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Mode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -46394,7 +46416,7 @@
           "example": "1",
           "member": "uint64",
           "name": "MatchType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -46404,7 +46426,7 @@
           "example": "xxx",
           "member": "string",
           "name": "FileName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -46414,7 +46436,7 @@
           "example": "xxx",
           "member": "string",
           "name": "FileDirectory",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -46424,7 +46446,7 @@
           "example": "xxxx",
           "member": "string",
           "name": "FileExtension",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -46434,7 +46456,7 @@
           "example": "xxx",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -46444,8 +46466,18 @@
           "example": "1",
           "member": "uint64",
           "name": "EventsCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则修改时间",
+          "example": "xxx",
+          "member": "string",
+          "name": "ModifyTime",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -49477,7 +49509,7 @@
         {
           "disabled": false,
           "document": "网站防护目录地址",
-          "example": "xxx",
+          "example": "/var/www",
           "member": "string",
           "name": "ProtectDirAddr",
           "required": true,
@@ -49486,7 +49518,7 @@
         {
           "disabled": false,
           "document": "网站防护目录名称",
-          "example": "xxx",
+          "example": "www防护",
           "member": "string",
           "name": "ProtectDirName",
           "required": true,
@@ -49495,7 +49527,7 @@
         {
           "disabled": false,
           "document": "防护文件类型,分号分割 ;",
-          "example": "xxx",
+          "example": ".html;.php",
           "member": "string",
           "name": "ProtectFileType",
           "required": true,
@@ -49540,7 +49572,7 @@
         {
           "disabled": false,
           "document": "提交值",
-          "example": "xxx",
+          "example": "网站名称1",
           "member": "string",
           "name": "Value",
           "required": true,
@@ -49549,7 +49581,7 @@
         {
           "disabled": false,
           "document": "配置对应的protect_path",
-          "example": "xxx",
+          "example": "var",
           "member": "string",
           "name": "Id",
           "required": true,
@@ -52197,6 +52229,16 @@
           "required": true,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主机示例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cwp-1234",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -52723,6 +52765,16 @@
           "member": "uint64",
           "name": "BackupSuccessCount",
           "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "版本信息：0-基础版 1-专业版 2-旗舰版 3-普惠版\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "HostVersion",
+          "required": false,
           "type": "int",
           "value_allowed_null": true
         }
@@ -54796,7 +54848,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -56777,21 +56829,21 @@
       "members": [
         {
           "disabled": false,
-          "document": "隔离成功的id数组，若无则返回空数组",
+          "document": "隔离成功的ID数组，若无则返回空数组",
           "example": "[]",
           "member": "uint64",
           "name": "SuccessIds",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "隔离失败的id数组，若无则返回空数组",
+          "document": "隔离失败的ID数组，若无则返回空数组",
           "example": "[]",
           "member": "uint64",
           "name": "FailedIds",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

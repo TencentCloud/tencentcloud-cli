@@ -17,88 +17,27 @@ Output:
     "Response": {
         "Domains": [
             {
-                "Status": 1,
-                "FullDomain": "xx",
-                "UpdateTime": 1,
-                "DomainId": "xx",
-                "BanStatus": "xx",
+                "DomainId": "dm-00ye8ek7",
+                "FullDomain": "gd-qbsrvjtf.gaapqcloud.com.cn",
+                "Alias": "abc",
+                "Type": "IP",
+                "Status": 0,
                 "ProjectId": 0,
-                "DefaultValue": "xx",
-                "Alias": "xx",
+                "DefaultValue": "192.168.1.2",
+                "ProxyCount": 1,
+                "CreateTime": 1662216195,
+                "UpdateTime": 1662216195,
                 "TagSet": [
                     {
-                        "TagKey": "xx",
-                        "TagValue": "xx"
-                    },
-                    {
-                        "TagKey": "xx",
-                        "TagValue": "xx"
+                        "TagKey": "project",
+                        "TagValue": "abc"
                     }
                 ],
-                "Type": "xx",
-                "CreateTime": 1,
-                "ProxyCount": 1
-            },
-            {
-                "Status": 1,
-                "FullDomain": "xx",
-                "UpdateTime": 1,
-                "DomainId": "xx",
-                "BanStatus": "xx",
-                "ProjectId": 0,
-                "DefaultValue": "xx",
-                "Alias": "xx",
-                "TagSet": [
-                    {
-                        "TagKey": "xx",
-                        "TagValue": "xx"
-                    }
-                ],
-                "Type": "xx",
-                "CreateTime": 1,
-                "ProxyCount": 1
-            },
-            {
-                "Status": 1,
-                "FullDomain": "xx",
-                "UpdateTime": 1,
-                "DomainId": "xx",
-                "BanStatus": "xx",
-                "ProjectId": 0,
-                "DefaultValue": "xx",
-                "Alias": "xx",
-                "TagSet": [
-                    {
-                        "TagKey": "xx",
-                        "TagValue": "xx"
-                    }
-                ],
-                "Type": "xx",
-                "CreateTime": 1,
-                "ProxyCount": 1
-            },
-            {
-                "Status": 1,
-                "FullDomain": "xx",
-                "UpdateTime": 1,
-                "DomainId": "xx",
-                "BanStatus": "xx",
-                "ProjectId": 0,
-                "DefaultValue": "xx",
-                "Alias": "xx",
-                "TagSet": [
-                    {
-                        "TagKey": "xx",
-                        "TagValue": "xx"
-                    }
-                ],
-                "Type": "xx",
-                "CreateTime": 1,
-                "ProxyCount": 1
+                "BanStatus": "RECOVER"
             }
         ],
         "TotalCount": 1,
-        "RequestId": "xx"
+        "RequestId": "90955c1c-ef70-40b4-bf3f-74409cf24d60"
     }
 }
 ```
