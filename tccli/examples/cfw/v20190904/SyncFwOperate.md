@@ -6,15 +6,15 @@ Input:
 
 ```
 tccli cfw SyncFwOperate --cli-unfold-argument  \
-    --SyncType abc \
-    --FwType abc
+    --SyncType Route \
+    --FwType ew
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "985187d2-9a80-4ee7-b519-ad48e75f6588"
     }
 }
 ```

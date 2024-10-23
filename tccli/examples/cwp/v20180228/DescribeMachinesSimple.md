@@ -18,41 +18,53 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 1,
-        "RequestId": "xx",
         "Machines": [
             {
-                "KernelVersion": "xx",
-                "IsProVersion": false,
-                "MachineOs": "xx",
-                "Uuid": "xx",
-                "MachineName": "xx",
-                "MachineIp": "xx",
-                "PayMode": "xx",
-                "RegionInfo": {
-                    "RegionCode": "xx",
-                    "Region": "xx",
-                    "RegionId": 1,
-                    "RegionNameEn": "xx",
-                    "RegionName": "xx"
-                },
+                "MachineName": "test-name",
+                "MachineOs": "abc",
+                "Uuid": "24c9be55-c743-4a75-a5c7-2a2912341234",
+                "Quuid": "24c9be55-c743-4a75-a5c7-2a2912341234",
+                "MachineIp": "10.0.0.11",
+                "IsProVersion": true,
+                "MachineWanIp": "110.84.0.11",
+                "PayMode": "abc",
                 "Tag": [
                     {
-                        "TagId": 1,
                         "Rid": 0,
-                        "Name": "xx"
+                        "Name": "test-name",
+                        "TagId": 1
                     }
                 ],
-                "Quuid": "xx",
-                "ProtectType": "xx",
-                "ProjectId": 1,
-                "MachineWanIp": "xx",
-                "InstanceState": "xx",
-                "MachineType": "xx",
-                "LicenseOrder": null,
-                "CloudTags": []
+                "RegionInfo": {
+                    "Region": "abc",
+                    "RegionName": "test-name",
+                    "RegionId": 1,
+                    "RegionCode": "abc",
+                    "RegionNameEn": "test-name"
+                },
+                "InstanceState": "abc",
+                "ProjectId": 0,
+                "MachineType": "abc",
+                "KernelVersion": "0.1.1",
+                "ProtectType": "abc",
+                "LicenseOrder": {
+                    "LicenseId": 1,
+                    "LicenseType": 1,
+                    "Status": 1,
+                    "SourceType": 1,
+                    "ResourceId": "abc"
+                },
+                "CloudTags": [
+                    {
+                        "TagKey": "abc",
+                        "TagValue": "abc"
+                    }
+                ],
+                "InstanceId": "abc"
             }
-        ]
+        ],
+        "TotalCount": 1,
+        "RequestId": "37b6df34-68f1-4ab8-a3d8-7b89de604c82"
     }
 }
 ```

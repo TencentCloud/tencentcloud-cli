@@ -17,20 +17,30 @@ Output:
         "Total": 1,
         "Packages": [
             {
-                "Name": "abc",
-                "Desc": "abc",
-                "Version": "abc",
-                "InstallTime": "abc",
-                "Type": "abc",
-                "MachineName": "abc",
-                "MachineIp": "abc",
-                "OsInfo": "abc",
-                "UpdateTime": "abc",
-                "FirstTime": "abc",
-                "IsNew": 0
+                "Name": "test-name",
+                "Desc": "",
+                "Version": "0.1.1",
+                "InstallTime": "2024-10-11 12:23:34",
+                "Type": "Web",
+                "MachineName": "test-name",
+                "MachineIp": "10.0.0.11",
+                "OsInfo": "CentOs Bit64",
+                "UpdateTime": "2024-10-11 12:23:34",
+                "FirstTime": "2024-10-11 12:23:34",
+                "IsNew": 0,
+                "MachineExtraInfo": {
+                    "WanIP": "110.84.0.11",
+                    "PrivateIP": "10.0.0.11",
+                    "NetworkType": 0,
+                    "NetworkName": "vpc-12341234",
+                    "InstanceID": "ins-aj28fjz",
+                    "HostName": "test-name"
+                },
+                "Quuid": "24c9be55-c743-4a75-a5c7-2a2912341234",
+                "Uuid": "24c9be55-c743-4a75-a5c7-2a2912341234"
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "37b6df34-68f1-4ab8-a3d8-7b89de604c82"
     }
 }
 ```

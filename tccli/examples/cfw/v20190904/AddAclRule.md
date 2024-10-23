@@ -6,21 +6,20 @@ Input:
 
 ```
 tccli cfw AddAclRule --cli-unfold-argument  \
-    --Rules.0.SourceContent abc \
-    --Rules.0.SourceType abc \
-    --Rules.0.TargetContent abc \
-    --Rules.0.TargetType abc \
-    --Rules.0.Protocol abc \
-    --Rules.0.RuleAction abc \
-    --Rules.0.Port abc \
-    --Rules.0.Direction 1 \
-    --Rules.0.OrderIndex 0 \
-    --Rules.0.Uuid 0 \
-    --Rules.0.Enable abc \
-    --Rules.0.Description abc \
-    --Rules.0.Scope abc \
+    --Rules.0.SourceContent 0.0.0.0/0 \
+    --Rules.0.SourceType net \
+    --Rules.0.Description test \
+    --Rules.0.TargetContent www.qq.com \
+    --Rules.0.TargetType domain \
+    --Rules.0.Protocol HTTP \
+    --Rules.0.RuleAction accept \
+    --Rules.0.Port -1/-1 \
+    --Rules.0.Direction 0 \
+    --Rules.0.OrderIndex 1 \
+    --Rules.0.Scope serial \
     --Rules.0.RuleSource 0 \
-    --From abc
+    --Rules.0.ParamTemplateId  \
+    --From 
 ```
 
 Output: 
@@ -30,7 +29,7 @@ Output:
         "RuleUuid": [
             0
         ],
-        "RequestId": "abc"
+        "RequestId": "3f60a76f-0f44-4b58-bf98-615cbbc59ede"
     }
 }
 ```

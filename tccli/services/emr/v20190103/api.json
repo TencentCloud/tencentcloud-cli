@@ -3157,6 +3157,15 @@
           "name": "UserGroupList",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否删除家目录，只针对cvm集群",
+          "example": "无",
+          "member": "bool",
+          "name": "DeleteHomeDir",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

@@ -11,33 +11,46 @@ Output:
 ```
 {
     "Response": {
-        "Total": 1,
         "WebServices": [
             {
-                "OsInfo": "xx",
-                "Version": "xx",
-                "Quuid": "xx",
-                "MachineWanIp": "xx",
-                "Uuid": "xx",
-                "InstallPath": "xx",
+                "MachineIp": "10.0.0.11",
+                "MachineWanIp": "110.84.0.11",
+                "Quuid": "24c9be55-c743-4a75-a5c7-2a2912341234",
+                "Uuid": "24c9be55-c743-4a75-a5c7-2a2912341234",
+                "OsInfo": "CentOs Bit64",
                 "ProjectId": 1,
-                "ConfigPath": "xx",
-                "Id": "xx",
-                "BinPath": "xx",
                 "Tag": [
                     {
-                        "TagId": 1,
                         "Rid": 0,
-                        "Name": "xx"
+                        "Name": "test-name",
+                        "TagId": 1
                     }
                 ],
-                "User": "xx",
+                "Name": "test-name",
+                "Version": "0.1.1",
+                "BinPath": "/root",
+                "User": "root",
+                "InstallPath": "/root",
+                "ConfigPath": "/root",
                 "ProcessCount": 1,
-                "MachineIp": "xx",
-                "Name": "xx"
+                "Id": "abc",
+                "MachineName": "test-name",
+                "Desc": "abc",
+                "UpdateTime": "2024-10-11 12:23:34",
+                "FirstTime": "2024-10-11 12:23:34",
+                "IsNew": 0,
+                "MachineExtraInfo": {
+                    "WanIP": "110.84.0.11",
+                    "PrivateIP": "10.0.0.11",
+                    "NetworkType": 0,
+                    "NetworkName": "vpc-12341234",
+                    "InstanceID": "ins-aj28fjz",
+                    "HostName": "test-name"
+                }
             }
         ],
-        "RequestId": "xx"
+        "Total": 1,
+        "RequestId": "37b6df34-68f1-4ab8-a3d8-7b89de604c82"
     }
 }
 ```

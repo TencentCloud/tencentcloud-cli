@@ -94,6 +94,14 @@
         "title": "获取某代理商代付订单"
       }
     ],
+    "DescribeAgentRelateBigDealIds": [
+      {
+        "document": "有两笔关联订单的返回。若没有关联订单则返回空数组",
+        "input": "POST / HTTP/1.1\nHost: partners.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAgentRelateBigDealIds\n<公共请求参数>\n\n{\n    \"BigDealId\": \"20241021203002223764041\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BigDealIdList\": [\n            \"20241021203002223736651\",\n            \"20241021203002223761601\"\n        ],\n        \"RequestId\": \"00c9d9d3-432f-44bb-8d76-e24476fc7ed5\"\n    }\n}",
+        "title": "查询到关联订单示例"
+      }
+    ],
     "DescribeAgentSelfPayDealsV2": [
       {
         "document": "",

@@ -1850,7 +1850,7 @@
       {
         "document": "查询路由列表",
         "input": "https://vpc.tencentcloudapi.com/?Action=DescribeRoutes\n&Offset=0\n&Limit=10\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RouteSet\": [\n            {\n                \"RouteId\": 14915,\n                \"RouteType\": \"USER\",\n                \"DestinationCidrBlock\": \"172.16.0.0/28\",\n                \"GatewayType\": \"NORMAL_CVM\",\n                \"GatewayId\": \"172.16.0.25\",\n                \"Enabled\": true,\n                \"RouteDescription\": \"\",\n                \"CreatedTime\": \"2020-01-01 10:00:00\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"74883e1b-5901-46de-ae1e-d6e2cf591c5b\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RouteSet\": [\n            {\n                \"RouteId\": 14915,\n                \"RouteType\": \"USER\",\n                \"DestinationCidrBlock\": \"172.16.0.0/28\",\n                \"GatewayType\": \"NORMAL_CVM\",\n                \"GatewayId\": \"172.16.0.25\",\n                \"Enabled\": true,\n                \"PublishedToVbc\": true,\n                \"RouteTableId\": \"rtb-123456\",\n                \"RouteItemId\": \"abc\",\n                \"RouteDescription\": \"\",\n                \"CreatedTime\": \"2020-01-01 10:00:00\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"74883e1b-5901-46de-ae1e-d6e2cf591c5b\"\n    }\n}",
         "title": "查询路由列表"
       }
     ],

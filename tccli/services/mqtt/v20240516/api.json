@@ -439,7 +439,7 @@
         },
         {
           "disabled": false,
-          "document": "ip",
+          "document": "IP地址",
           "example": "127.0.0.1",
           "member": "string",
           "name": "Ip",
@@ -1795,7 +1795,7 @@
         },
         {
           "disabled": false,
-          "document": "ip",
+          "document": "IP",
           "example": "127.0.0.1",
           "member": "string",
           "name": "Ip",

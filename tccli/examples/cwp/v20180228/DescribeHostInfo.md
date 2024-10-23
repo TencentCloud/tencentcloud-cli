@@ -6,32 +6,37 @@ Input:
 
 ```
 tccli cwp DescribeHostInfo --cli-unfold-argument  \
-    --QuuidList "1"
+    --QuuidList 24c9be55-c743-4a75-a5c7-2a2912341234
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "3ca51296-46f5-4ad9-80b2-58f02783bb18 ",
         "HostInfoList": [
             {
-                "HostIp": "xx",
-                "AliasName": "xx",
-                "Quuid": "xx",
+                "Quuid": "24c9be55-c743-4a75-a5c7-2a2912341234",
                 "TagList": [
-                    "xx"
-                ]
-            },
-            {
-                "TagList": [
-                    "xx"
+                    "abc"
                 ],
-                "AliasName": "xx",
-                "Quuid": "xx",
-                "HostIp": "xx"
+                "HostIp": "10.0.0.11",
+                "AliasName": "test-name",
+                "MachineWanIp": "110.84.0.11",
+                "Uuid": "24c9be55-c743-4a75-a5c7-2a2912341234",
+                "KernelVersion": "0.1.1",
+                "MachineStatus": "abc",
+                "ProtectType": "abc",
+                "VulNum": 0,
+                "CloudTags": [
+                    {
+                        "TagKey": "abc",
+                        "TagValue": "abc"
+                    }
+                ],
+                "InstanceID": "ins-aj28fjz"
             }
-        ]
+        ],
+        "RequestId": "37b6df34-68f1-4ab8-a3d8-7b89de604c82"
     }
 }
 ```

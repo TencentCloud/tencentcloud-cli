@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cwp DescribeAssetUserCount --cli-unfold-argument  \
-    --Name xx
+    --Name staff
 ```
 
 Output: 
@@ -15,12 +15,13 @@ Output:
     "Response": {
         "Users": [
             {
-                "Value": 0,
-                "Key": "xx",
-                "Desc": "xx"
+                "Key": "staff",
+                "Value": 10,
+                "Desc": "",
+                "NewCount": 20
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "24c9be55-c743-4a75-a5c7-2a2912341234"
     }
 }
 ```

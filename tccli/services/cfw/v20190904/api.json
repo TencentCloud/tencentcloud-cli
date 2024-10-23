@@ -2777,7 +2777,7 @@
           "example": "cfwnat-xxx",
           "member": "string",
           "name": "CfwInsId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3099,7 +3099,7 @@
         },
         {
           "disabled": false,
-          "document": "协议，可选的值： TCP UDP ICMP ANY HTTP HTTPS HTTP/HTTPS SMTP SMTPS SMTP/SMTPS FTP DNS",
+          "document": "协议，可选的值： TCP UDP ICMP ANY HTTP HTTPS HTTP/HTTPS SMTP SMTPS SMTP/SMTPS FTP DNS\n1. 入方向  旁路防火墙/全局规则 仅支持TCP\n\n2.出方向  旁路防火墙/全局规则 仅支持TCP HTTP/HTTPS TLS/SSL\n\n3.domain  请选择七层协议 如HTTP/HTTPS\n",
           "example": "TCP",
           "member": "string",
           "name": "Protocol",
@@ -8441,7 +8441,7 @@
         {
           "disabled": false,
           "document": "任务id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "9001",
           "member": "int64",
           "name": "TaskId",
           "output_required": false,
@@ -8452,7 +8452,7 @@
         {
           "disabled": false,
           "document": "任务名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "autotest",
           "member": "string",
           "name": "TaskName",
           "output_required": false,
@@ -12390,7 +12390,7 @@
           "example": "[8888,8889]",
           "member": "int64",
           "name": "RuleUuids",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

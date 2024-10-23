@@ -16,31 +16,35 @@ Output:
     "Response": {
         "RiskList": [
             {
-                "Value": 0,
-                "Key": "xx",
-                "Desc": "xx"
+                "Value": 10,
+                "Key": "App",
+                "Desc": "softwares",
+                "NewCount": 0
             }
         ],
         "LiveList": [
             {
-                "Value": 0,
-                "Key": "xx",
-                "Desc": "xx"
+                "Value": 20,
+                "Key": "frame",
+                "Desc": "",
+                "NewCount": 0
             }
         ],
         "TotalList": [
             {
-                "Value": 0,
-                "Key": "xx",
-                "Desc": "xx"
+                "Value": 30,
+                "Key": "Web",
+                "Desc": "web app",
+                "NewCount": 0
             }
         ],
         "RequestId": "a8658ae6-0cd1-47f0-99b0-f144f01e9066",
         "OfflineList": [
             {
-                "Value": 0,
-                "Key": "xx",
-                "Desc": "xx"
+                "Value": 40,
+                "Key": "total",
+                "Desc": "total",
+                "NewCount": 0
             }
         ]
     }

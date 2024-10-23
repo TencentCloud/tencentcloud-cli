@@ -21,34 +21,34 @@ Output:
     "Response": {
         "Jars": [
             {
-                "Name": "abc",
+                "Name": "test-name",
                 "Type": 0,
                 "Status": 1,
-                "Version": "abc",
-                "Path": "abc",
-                "MachineIp": "abc",
-                "MachineName": "abc",
-                "OsInfo": "abc",
-                "Id": "abc",
-                "Md5": "abc",
-                "Quuid": "abc",
-                "Uuid": "abc",
-                "UpdateTime": "abc",
-                "FirstTime": "abc",
+                "Version": "0.1.1",
+                "Path": "/root",
+                "MachineIp": "10.0.0.11",
+                "MachineName": "test-name",
+                "OsInfo": "CentOs Bit64",
+                "Id": "1024",
+                "Md5": "abcabcabcabcabcabc",
+                "Quuid": "24c9be55-c743-4a75-a5c7-2a2912341234",
+                "Uuid": "24c9be55-c743-4a75-a5c7-2a2912341234",
+                "UpdateTime": "2024-10-11 12:23:34",
+                "FirstTime": "2024-10-11 12:23:34",
                 "IsNew": 0,
-                "MachineWanIp": "abc",
+                "MachineWanIp": "110.84.0.11",
                 "MachineExtraInfo": {
-                    "WanIP": "abc",
-                    "PrivateIP": "abc",
+                    "WanIP": "110.84.0.11",
+                    "PrivateIP": "10.0.0.11",
                     "NetworkType": 0,
-                    "NetworkName": "abc",
-                    "InstanceID": "abc",
-                    "HostName": "abc"
+                    "NetworkName": "vpc-12341234",
+                    "InstanceID": "ins-aj28fjz",
+                    "HostName": "test-name"
                 }
             }
         ],
         "Total": 1,
-        "RequestId": "abc"
+        "RequestId": "37b6df34-68f1-4ab8-a3d8-7b89de604c82"
     }
 }
 ```

@@ -2897,7 +2897,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "证书 ID。",
+          "document": "证书 ID。来源于 SSL 侧，您可以前往 [SSL 证书列表](https://console.cloud.tencent.com/ssl) 查看 CertId。",
           "example": "EO-dsfdsf",
           "member": "string",
           "name": "CertId",
@@ -12680,7 +12680,7 @@
         },
         {
           "disabled": false,
-          "document": "SSL 证书配置，本参数仅在 mode 为 sslcert 时生效，传入对应证书的 CertId 即可。您可以前往 [SSL 证书列表](https://console.cloud.tencent.com/certoverview) 查看 CertId。",
+          "document": "SSL 证书配置，本参数仅在 mode 为 sslcert 时生效，传入对应证书的 CertId 即可。您可以前往 [SSL 证书列表](https://console.cloud.tencent.com/ssl) 查看 CertId。",
           "example": "teo-xxxxx",
           "member": "ServerCertInfo",
           "name": "ServerCertInfo",
@@ -12698,7 +12698,7 @@
         },
         {
           "disabled": false,
-          "document": "边缘双向认证配置。\n不填写表示边缘双向认证保持原有配置。",
+          "document": "在边缘双向认证场景下，该字段为客户端的 CA 证书，部署在 EO 的入口侧，用于客户端对 EO 节点进行认证。不填写表示保持原有配置。",
           "example": "无",
           "member": "MutualTLS",
           "name": "ClientCertInfo",
@@ -13664,7 +13664,7 @@
         },
         {
           "disabled": false,
-          "document": "双向认证证书列表。\n注意：MutualTLS 在 ModifyHostsCertificate 作为入参使用时，该参数传入对应证书的 CertId 即可。您可以前往 [SSL 证书列表](https://console.cloud.tencent.com/certoverview) 查看 CertId。",
+          "document": "双向认证证书列表。\n注意：MutualTLS 在 ModifyHostsCertificate 作为入参使用时，该参数传入对应证书的 CertId 即可。您可以前往 [SSL 证书列表](https://console.cloud.tencent.com/ssl) 查看 CertId。",
           "example": "无",
           "member": "CertificateInfo",
           "name": "CertInfos",
@@ -16292,7 +16292,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "服务器证书 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "服务器证书 ID。来源于 SSL 侧，您可以前往 [SSL 证书列表](https://console.cloud.tencent.com/ssl) 查看 CertId。\n\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "EO-dsfdsf",
           "member": "string",
           "name": "CertId",

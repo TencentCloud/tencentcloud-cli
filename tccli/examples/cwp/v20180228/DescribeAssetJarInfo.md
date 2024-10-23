@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli cwp DescribeAssetJarInfo --cli-unfold-argument  \
-    --Quuid xx \
-    --Uuid xx \
-    --Id xx
+    --Quuid 24c9be55-c743-4a75-a5c7-2a2912341234 \
+    --Uuid 24c9be55-c743-4a75-a5c7-2a2912341234 \
+    --Id 1024
 ```
 
 Output: 
@@ -17,27 +17,27 @@ Output:
     "Response": {
         "Jar": {
             "Status": 1,
-            "OsInfo": "xx",
-            "UpdateTime": "xx",
-            "Name": "xx",
+            "OsInfo": "CentOs Bit64",
+            "UpdateTime": "2024-10-11 12:23:34",
+            "Name": "test-name",
             "Process": [
                 {
-                    "Status": "xx",
-                    "Name": "xx",
-                    "Version": "xx",
-                    "User": "xx",
-                    "StartTime": "xx",
-                    "Path": "xx"
+                    "Status": "S",
+                    "Name": "test-name",
+                    "Version": "0.1.1",
+                    "User": "root",
+                    "StartTime": "2024-10-11 12:23:34",
+                    "Path": "/root"
                 }
             ],
-            "MachineName": "xx",
-            "Version": "xx",
-            "Path": "xx",
+            "MachineName": "test-name",
+            "Version": "0.1.1",
+            "Path": "/root",
             "Type": 1,
-            "MachineIp": "xx",
-            "Md5": "xx"
+            "MachineIp": "10.0.0.11",
+            "Md5": "abc"
         },
-        "RequestId": "xx"
+        "RequestId": "37b6df34-68f1-4ab8-a3d8-7b89de604c82"
     }
 }
 ```

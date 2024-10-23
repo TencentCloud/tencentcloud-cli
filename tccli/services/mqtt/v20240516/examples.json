@@ -113,7 +113,7 @@
     "ModifyAuthorizationPolicy": [
       {
         "document": "示例",
-        "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAuthorizationPolicy\n<公共请求参数>\n\n{\n    \"Id\": 18,\n    \"InstanceId\": \"mqtt-jeredv33\",\n    \"PolicyName\": \"namea11\"\n}",
+        "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAuthorizationPolicy\n<公共请求参数>\n\n{\n    \"Id\": 18,\n    \"InstanceId\": \"mqtt-jeredv33\",\n    \"PolicyName\": \"policy-1\"\n}",
         "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"657a771d-a70e-4c0d-a70a-eb7f82471000\"\n    }\n}",
         "title": "示例"
       }

@@ -5941,6 +5941,15 @@
           "name": "MaxCallPSec",
           "required": true,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "呼出被叫格式，使用 {+E.164} 或 {E.164}, ",
+          "example": "{+E.164}",
+          "member": "string",
+          "name": "OutboundCalleeFormat",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"

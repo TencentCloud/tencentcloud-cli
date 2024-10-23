@@ -22,6 +22,9 @@ Output:
                 "GatewayType": "NORMAL_CVM",
                 "GatewayId": "172.16.0.25",
                 "Enabled": true,
+                "PublishedToVbc": true,
+                "RouteTableId": "rtb-123456",
+                "RouteItemId": "abc",
                 "RouteDescription": "",
                 "CreatedTime": "2020-01-01 10:00:00"
             }

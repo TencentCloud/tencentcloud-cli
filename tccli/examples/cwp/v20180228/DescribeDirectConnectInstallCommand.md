@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cwp DescribeDirectConnectInstallCommand --cli-unfold-argument  \
-    --RegionCode xx \
-    --VpcId 1 \
+    --RegionCode sz \
+    --VpcId vpc-12341234 \
     --ExpireDate 2020-09-22
 ```
 
@@ -15,9 +15,9 @@ Output:
 ```
 {
     "Response": {
-        "Ip": "xx",
-        "Token": "xx",
-        "RequestId": "xx"
+        "Ip": "10.0.0.11",
+        "Token": "abcasdfasdfasdf",
+        "RequestId": "37b6df34-68f1-4ab8-a3d8-7b89de604c82"
     }
 }
 ```

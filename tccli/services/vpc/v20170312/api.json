@@ -16990,7 +16990,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "过滤条件，参数不支持同时指定RouteTableIds和Filters。\n<li>vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。</li>\n<li>gateway-id - String - （过滤条件）网关ID。</li>\n<li>description - String - （过滤条件）路由描述。</li>\n<li>route-table-id - String - （过滤条件）路由表实例ID。</li>\n<li>dest-cidr - String - （过滤条件）目的端地址，支持模糊左匹配。</li>",
+          "document": "<li>vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。</li>\n<li>gateway-id - String - （过滤条件）网关ID。</li>\n<li>description - String - （过滤条件）路由描述。</li>\n<li>route-table-id - String - （过滤条件）路由表实例ID。</li>\n<li>dest-cidr - String - （过滤条件）目的端地址，支持模糊左匹配。</li>",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -17027,6 +17027,7 @@
           "example": "无",
           "member": "Route",
           "name": "RouteSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -17036,6 +17037,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -25502,7 +25504,7 @@
           "example": "无",
           "member": "string",
           "name": "QosLevel",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
@@ -31348,7 +31350,7 @@
         },
         {
           "disabled": false,
-          "document": "网段或IP(互斥)，特殊说明：0.0.0.0/n 都会映射为0.0.0.0/0。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "网段或IP(互斥)，特殊说明：0.0.0.0/n 都会映射为0.0.0.0/0。作为入参时，可使用字符串`MY_PUBLIC_IP`指代发起请求的公网IP地址。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0.0.0.0/16",
           "member": "string",
           "name": "CidrBlock",
@@ -31359,7 +31361,7 @@
         },
         {
           "disabled": false,
-          "document": "网段或IPv6(互斥)。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "网段或IPv6(互斥)。作为入参时，可使用字符串`MY_PUBLIC_IP`指代发起请求的公网IPv6地址。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "::/0",
           "member": "string",
           "name": "Ipv6CidrBlock",

@@ -11,8 +11,8 @@
     "AddAclRule": [
       {
         "document": "添加互联网边界访问控制规则",
-        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddAclRule\n<公共请求参数>\n\n{\n    \"Rules\": [\n        {\n            \"SourceContent\": \"abc\",\n            \"SourceType\": \"abc\",\n            \"TargetContent\": \"abc\",\n            \"TargetType\": \"abc\",\n            \"Protocol\": \"abc\",\n            \"RuleAction\": \"abc\",\n            \"Port\": \"abc\",\n            \"Direction\": 1,\n            \"OrderIndex\": 0,\n            \"Uuid\": 0,\n            \"Enable\": \"abc\",\n            \"Description\": \"abc\",\n            \"Scope\": \"abc\",\n            \"RuleSource\": 0\n        }\n    ],\n    \"From\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RuleUuid\": [\n            0\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddAclRule\n<公共请求参数>\n\n{\n    \"Rules\": [\n        {\n            \"SourceContent\": \"0.0.0.0/0\",\n            \"SourceType\": \"net\",\n            \"Description\": \"test\",\n            \"TargetContent\": \"www.qq.com\",\n            \"TargetType\": \"domain\",\n            \"Protocol\": \"HTTP\",\n            \"RuleAction\": \"accept\",\n            \"Port\": \"-1/-1\",\n            \"Direction\": 0,\n            \"OrderIndex\": 1,\n            \"Scope\": \"serial\",\n            \"RuleSource\": 0,\n            \"ParamTemplateId\": \"\"\n        }\n    ],\n    \"From\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RuleUuid\": [\n            0\n        ],\n        \"RequestId\": \"3f60a76f-0f44-4b58-bf98-615cbbc59ede\"\n    }\n}",
         "title": "添加互联网边界访问控制规则"
       }
     ],
@@ -268,10 +268,10 @@
     ],
     "DescribeAclRule": [
       {
-        "document": "查询互联网边界访问控制列表",
-        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAclRule\n<公共请求参数>\n\n{\n    \"Index\": \"abc\",\n    \"Filters\": [\n        {\n            \"Name\": \"abc\",\n            \"Values\": [\n                \"abc\"\n            ],\n            \"OperatorType\": 0\n        }\n    ],\n    \"Limit\": 1,\n    \"Offset\": 1,\n    \"StartTime\": \"abc\",\n    \"EndTime\": \"abc\",\n    \"Order\": \"abc\",\n    \"By\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"Data\": [\n            {\n                \"SourceContent\": \"abc\",\n                \"TargetContent\": \"abc\",\n                \"Protocol\": \"abc\",\n                \"Port\": \"abc\",\n                \"RuleAction\": \"abc\",\n                \"Description\": \"abc\",\n                \"Count\": 1,\n                \"OrderIndex\": 1,\n                \"SourceType\": \"abc\",\n                \"TargetType\": \"abc\",\n                \"Uuid\": 1,\n                \"Invalid\": 1,\n                \"IsRegion\": 1,\n                \"CountryCode\": 1,\n                \"CityCode\": 1,\n                \"CountryName\": \"abc\",\n                \"CityName\": \"abc\",\n                \"CloudCode\": \"abc\",\n                \"IsCloud\": 1,\n                \"Enable\": \"abc\",\n                \"Direction\": 1,\n                \"InstanceName\": \"abc\",\n                \"InternalUuid\": 0,\n                \"Status\": 1,\n                \"BetaList\": [\n                    {\n                        \"TaskId\": 0,\n                        \"TaskName\": \"abc\",\n                        \"LastTime\": \"abc\"\n                    }\n                ],\n                \"Scope\": \"abc\",\n                \"InternetBorderUuid\": \"abc\"\n            }\n        ],\n        \"AllTotal\": 1,\n        \"RequestId\": \"abc\"\n    }\n}",
-        "title": "查询互联网边界访问控制列表"
+        "document": "查询互联网边界出向访问控制列表，其中Filters中Direction 为0表示查询出向访问控制规则列表，为1时表示查询入向访问控制列表",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAclRule\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"Direction\",\n            \"Values\": [\n                \"0\"\n            ],\n            \"OperatorType\": 1\n        }\n    ],\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"AllTotal\": 6,\n        \"Data\": [\n            {\n                \"BetaList\": [\n                    {\n                        \"LastTime\": \"\",\n                        \"TaskId\": 9070,\n                        \"TaskName\": \"aa\"\n                    }\n                ],\n                \"CityCode\": 0,\n                \"CityName\": \"\",\n                \"CloudCode\": \"\",\n                \"Count\": 0,\n                \"CountryCode\": 0,\n                \"CountryName\": \"\",\n                \"Description\": \"测试命中\",\n                \"Direction\": 0,\n                \"Enable\": \"false\",\n                \"InstanceName\": \"\",\n                \"InternalUuid\": 0,\n                \"InternetBorderUuid\": \"1300448058_0.0.0.0/0_1729685657863970\",\n                \"Invalid\": 0,\n                \"IsCloud\": 0,\n                \"IsRegion\": 0,\n                \"LastHitTime\": \"\",\n                \"OrderIndex\": 2,\n                \"ParamTemplateId\": \"\",\n                \"ParamTemplateName\": \"\",\n                \"Port\": \"-1/-1\",\n                \"Protocol\": \"HTTPS\",\n                \"RuleAction\": \"log\",\n                \"Scope\": \"serial\",\n                \"SourceContent\": \"0.0.0.0/0\",\n                \"SourceName\": \"\",\n                \"SourceType\": \"net\",\n                \"Status\": 0,\n                \"TargetContent\": \"www.qq.com\",\n                \"TargetName\": \"\",\n                \"TargetType\": \"domain\",\n                \"Uuid\": 148183\n            }\n        ],\n        \"RequestId\": \"985187d2-9a80-4ee7-b519-ad48e75f6588\",\n        \"Total\": 6\n    }\n}",
+        "title": "查询互联网边界访问控制列表示例"
       }
     ],
     "DescribeAddressTemplateList": [
@@ -420,10 +420,10 @@
     ],
     "DescribeNatAcRule": [
       {
-        "document": "查询NAT访问控制列表",
-        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNatAcRule\n<公共请求参数>\n\n{\n    \"Index\": \"abc\",\n    \"Filters\": [\n        {\n            \"Name\": \"abc\",\n            \"Values\": [\n                \"abc\"\n            ],\n            \"OperatorType\": 0\n        }\n    ],\n    \"Limit\": 1,\n    \"Offset\": 1,\n    \"StartTime\": \"abc\",\n    \"EndTime\": \"abc\",\n    \"Order\": \"abc\",\n    \"By\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"Data\": [\n            {\n                \"SourceContent\": \"abc\",\n                \"TargetContent\": \"abc\",\n                \"Protocol\": \"abc\",\n                \"Port\": \"abc\",\n                \"RuleAction\": \"abc\",\n                \"Description\": \"abc\",\n                \"Count\": 1,\n                \"OrderIndex\": 1,\n                \"SourceType\": \"abc\",\n                \"TargetType\": \"abc\",\n                \"Uuid\": 1,\n                \"Invalid\": 1,\n                \"IsRegion\": 1,\n                \"CountryCode\": 1,\n                \"CityCode\": 1,\n                \"CountryName\": \"abc\",\n                \"CityName\": \"abc\",\n                \"CloudCode\": \"abc\",\n                \"IsCloud\": 1,\n                \"Enable\": \"abc\",\n                \"Direction\": 1,\n                \"InstanceName\": \"abc\",\n                \"InternalUuid\": 0,\n                \"Status\": 1,\n                \"BetaList\": [\n                    {\n                        \"TaskId\": 0,\n                        \"TaskName\": \"abc\",\n                        \"LastTime\": \"abc\"\n                    }\n                ],\n                \"Scope\": \"abc\",\n                \"InternetBorderUuid\": \"abc\"\n            }\n        ],\n        \"AllTotal\": 1,\n        \"RequestId\": \"abc\"\n    }\n}",
-        "title": "查询NAT访问控制列表"
+        "document": "查询NAT访问控制出向规则列表，其中Filters中 Direction 为0时表示查询出向规则列表，为1时表示查询入向规则列表",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNatAcRule\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"Direction\",\n            \"Values\": [\n                \"0\"\n            ],\n            \"OperatorType\": 1\n        }\n    ],\n    \"Limit\": 20,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"Data\": [\n            {\n                \"Uuid\": 238778,\n                \"InternalUuid\": 1726341068438565,\n                \"OrderIndex\": 19,\n                \"SourceContent\": \"ins-gt3h3i8f\",\n                \"SourceType\": \"instance\",\n                \"TargetContent\": \"mb_1300448058_1702866694255\",\n                \"TargetType\": \"template\",\n                \"Port\": \"-1/-1\",\n                \"Protocol\": \"ANY\",\n                \"Scope\": \"ap-guangzhou\",\n                \"ScopeDesc\": \"广州地域\",\n                \"Direction\": 0,\n                \"RuleAction\": \"log\",\n                \"Description\": \"autotest_nat_add\",\n                \"Count\": 0,\n                \"LastHitTime\": \"\",\n                \"Enable\": \"true\",\n                \"Invalid\": 0,\n                \"CountryCode\": 0,\n                \"CityCode\": 0,\n                \"CountryName\": \"\",\n                \"CityName\": \"\",\n                \"IsRegion\": 0,\n                \"CloudCode\": \"\",\n                \"IsCloud\": 0,\n                \"InstanceName\": \"\",\n                \"Status\": 0,\n                \"BetaList\": [],\n                \"ParamTemplateId\": \"pp-336ad325\",\n                \"ParamTemplateName\": \"test\",\n                \"TargetName\": \"\",\n                \"SourceName\": \"testsrc\"\n            }\n        ],\n        \"AllTotal\": 1,\n        \"RequestId\": \"efa6461b-9410-4cd8-9168-73f37d6ed532\"\n    }\n}",
+        "title": "查询NAT访问控制列表实例1"
       }
     ],
     "DescribeNatFwDnatRule": [
@@ -584,6 +584,12 @@
         "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExpandCfwVertical\n<公共请求参数>\n\n{\n    \"FwType\": \"nat\",\n    \"Width\": 200,\n    \"CfwInstance\": \"cfwnat-d2afc817\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "防火墙垂直扩容"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExpandCfwVertical\n<公共请求参数>\n\n{\n    \"FwType\": \"nat\",\n    \"Width\": 200,\n    \"CfwInstance\": \"cfwnat-d2afc817\",\n    \"ElasticSwitch\": 1,\n    \"ElasticBandwidth\": 220\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "防火墙规格调整开启弹性计费"
       }
     ],
     "ModifyAcRule": [
@@ -597,8 +603,8 @@
     "ModifyAclRule": [
       {
         "document": "修改互联网边界访问控制规则",
-        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAclRule\n<公共请求参数>\n\n{\n    \"Rules\": [\n        {\n            \"SourceContent\": \"abc\",\n            \"SourceType\": \"abc\",\n            \"TargetContent\": \"abc\",\n            \"TargetType\": \"abc\",\n            \"Protocol\": \"abc\",\n            \"RuleAction\": \"abc\",\n            \"Port\": \"abc\",\n            \"Direction\": 1,\n            \"OrderIndex\": 0,\n            \"Uuid\": 0,\n            \"Enable\": \"abc\",\n            \"Description\": \"abc\",\n            \"Scope\": \"abc\",\n            \"RuleSource\": 0\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RuleUuid\": [\n            0\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAclRule\n<公共请求参数>\n\n{\n    \"Rules\": [\n        {\n            \"SourceContent\": \"0.0.0.0/0\",\n            \"SourceType\": \"net\",\n            \"Description\": \"test\",\n            \"TargetContent\": \"www.qq.com\",\n            \"TargetType\": \"domain\",\n            \"Protocol\": \"HTTPS\",\n            \"RuleAction\": \"accept\",\n            \"Port\": \"-1/-1\",\n            \"Direction\": 0,\n            \"OrderIndex\": 1,\n            \"Scope\": \"serial\",\n            \"RuleSource\": 0,\n            \"ParamTemplateId\": \"\",\n            \"Uuid\": 148195,\n            \"Enable\": \"true\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RuleUuid\": [\n            148195\n        ],\n        \"RequestId\": \"3cfe92c5-da49-411e-9254-559a295471e9\"\n    }\n}",
         "title": "修改互联网边界访问控制规则"
       }
     ],
@@ -889,8 +895,8 @@
     "RemoveAclRule": [
       {
         "document": "删除互联网边界访问控制规则",
-        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RemoveAclRule\n<公共请求参数>\n\n{\n    \"RuleUuid\": [\n        0\n    ],\n    \"Direction\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"RuleUuid\": [\n            0\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RemoveAclRule\n<公共请求参数>\n\n{\n    \"RuleUuid\": [\n        100\n    ],\n    \"Direction\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RuleUuid\": [\n            100\n        ],\n        \"RequestId\": \"3cfe92c5-da49-411e-9254-559a295471e9\"\n    }\n}",
         "title": "删除互联网边界访问控制规则"
       }
     ],
@@ -951,8 +957,8 @@
     "SyncFwOperate": [
       {
         "document": "同步防火墙操作，包括同步防火墙路由（若vpc，专线网关等增加了Cidr，需要手动同步一下路由使之在防火墙上生效）等",
-        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SyncFwOperate\n<公共请求参数>\n\n{\n    \"SyncType\": \"abc\",\n    \"FwType\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SyncFwOperate\n<公共请求参数>\n\n{\n    \"SyncType\": \"Route\",\n    \"FwType\": \"ew\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"985187d2-9a80-4ee7-b519-ad48e75f6588\"\n    }\n}",
         "title": "同步防火墙操作"
       }
     ]

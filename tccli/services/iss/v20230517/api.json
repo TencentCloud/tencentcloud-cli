@@ -4013,6 +4013,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否开启静音帧（0：关闭；1 开启）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "SilentFrameSwitch",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -10697,6 +10707,15 @@
           "example": "1",
           "member": "int64",
           "name": "SubscribeSwitch",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启静音帧（0：关闭；1 开启）",
+          "example": "1",
+          "member": "int64",
+          "name": "SilentFrameSwitch",
           "required": false,
           "type": "int"
         }

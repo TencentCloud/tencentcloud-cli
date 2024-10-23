@@ -3191,7 +3191,7 @@
         },
         {
           "disabled": false,
-          "document": "WEB嵌入的业务资源ID\n<ul><li>PREVIEW_SEAL_DETAIL，必填，取值为印章id</li>\n<li>MODIFY_TEMPLATE，PREVIEW_TEMPLATE，必填，取值为模板id</li>\n<li>PREVIEW_FLOW，PREVIEW_FLOW_DETAIL，必填，取值为合同id</li>\n</ul>",
+          "document": "WEB嵌入的业务资源ID\n\n当EmbedType取值\n<ul>\n<li>为PREVIEW_SEAL_DETAIL，必填，取值为印章id。</li>\n<li>为CREATE_TEMPLATE，非必填，取值为资源id。*资源Id获取可使用接口[上传文件](https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles)*</li>\n<li>为MODIFY_TEMPLATE，PREVIEW_TEMPLATE，必填，取值为模板id。</li>\n<li>为PREVIEW_FLOW，PREVIEW_FLOW_DETAIL，必填，取值为合同id。</li>\n</ul>\n\n注意：\n 1. CREATE_TEMPLATE中的BusinessId仅支持PDF文件类型， 如果您的文件不是PDF， 请使用接口[创建文件转换任务\n](https://qian.tencent.com/developers/companyApis/templatesAndFiles/CreateConvertTaskApi) 和[查询转换任务状态](https://qian.tencent.com/developers/companyApis/templatesAndFiles/GetTaskResultApi) 来进行转换成PDF资源。",
           "example": "无",
           "member": "string",
           "name": "BusinessId",
@@ -9940,6 +9940,15 @@
           "example": "true",
           "member": "bool",
           "name": "ShowTemplateComponent",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "跳过上传文件，默认为false(展示上传文件页）![image](https://qcloudimg.tencent-cloud.cn/raw/8ca33745cf772e79831dbe5a70e82400.png)\n- false: 展示上传文件页\n- true: 不展示上传文件页\n \n\n注意: 此参数仅针对**EmbedType=CREATE_TEMPLATE(创建模板)有效**，",
+          "example": "true",
+          "member": "bool",
+          "name": "SkipUploadFile",
           "required": false,
           "type": "bool"
         }

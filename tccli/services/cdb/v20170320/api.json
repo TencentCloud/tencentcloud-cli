@@ -17939,6 +17939,15 @@
           "name": "Zone",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "升级集群版实例时，如果要调整只读节点可用区，需要指定节点id。",
+          "example": "无",
+          "member": "string",
+          "name": "NodeId",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"
