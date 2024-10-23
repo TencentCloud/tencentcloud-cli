@@ -1,6 +1,7 @@
 # encoding: utf-8
 from tccli.plugins.sso.login import login_command_entrypoint
 from tccli.plugins.sso.logout import logout_command_entrypoint
+from tccli.plugins.sso.configure import configure_command_entrypoint
 
 service_name = "sso"
 service_version = "2024-10-14"
@@ -12,6 +13,13 @@ _spec = {
         "description": "sso related commands",
     },
     "actions": {
+        "configure": {
+            "name": "配置",
+            "document": "configure login url",
+            "input": "configureRequest",
+            "output": "configureResponse",
+            "action_caller": configure_command_entrypoint,
+        },
         "login": {
             "name": "登陆",
             "document": "login through sso",
@@ -28,18 +36,20 @@ _spec = {
         },
     },
     "objects": {
-        "loginRequest": {
-            "members": [],
-        },
-        "loginResponse": {
-            "members": [],
-        },
-        "logoutRequest": {
-            "members": [],
-        },
-        "logoutResponse": {
-            "members": [],
-        },
+        "loginRequest": {"members": []},
+        "loginResponse": {"members": []},
+        "logoutRequest": {"members": []},
+        "logoutResponse": {"members": []},
+        "configureRequest": {"members": [
+            {
+                "name": "url",
+                "member": "string",
+                "type": "string",
+                "required": True,
+                "document": "url for sso authentication",
+            },
+        ]},
+        "configureResponse": {"members": []},
     },
     "version": "1.0",
 }

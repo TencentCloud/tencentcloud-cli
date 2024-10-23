@@ -170,9 +170,9 @@ def save_credential(cred, sso_info, profile):
 
     cred = {
         "type": "sso",
-        "secretId": cred["TmpSecretId"],
-        "secretKey": cred["TmpSecretKey"],
-        "token": cred["Token"],
+        "secretId": cred["Credentials"]["TmpSecretId"],
+        "secretKey": cred["Credentials"]["TmpSecretKey"],
+        "token": cred["Credentials"]["Token"],
         "expiresAt": cred["ExpiredTime"],
         "sso": {
             "token": sso_info["token"],
@@ -181,8 +181,8 @@ def save_credential(cred, sso_info, profile):
             "roleConfigurationName": sso_info["roleConfigurationName"],
             "zoneId": sso_info["zoneId"],
             "site": sso_info["site"],
-            "loginUrl": sso_info["loginUrl"],
-            "expiresAt": cred["expiresAt"],
+            "authUrl": sso_info["authUrl"],
+            "expiresAt": sso_info["expiresAt"],
         },
     }
     with open(cred_path, "w") as cred_file:

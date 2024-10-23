@@ -1,7 +1,9 @@
 # coding: utf-8
+import curses
+import json
+import os.path
 import random
 import string
-import sys
 import time
 import uuid
 import webbrowser
@@ -9,20 +11,12 @@ import webbrowser
 from six.moves.urllib.parse import urlencode
 
 from tccli import sso
-from tccli.plugins.sso import texts
+from tccli.plugins.sso import texts, terminal
+from tccli.plugins.sso.texts import get as _
 
-_AUTH_URL = "https://tencentcloudsso.com/pursue/login"
 _CLI_URL = "https://cli.cloud.tencent.com/sso"
 _SITE = "cn"
 _DEFAULT_LANG = "zh-CN"
-
-_START_SEARCH_PORT = 9000
-_END_SEARCH_PORT = _START_SEARCH_PORT + 100
-
-
-def print_message(msg):
-    print(msg)
-    sys.stdout.flush()
 
 
 def login_command_entrypoint(args, parsed_globals):
@@ -39,50 +33,63 @@ def login_command_entrypoint(args, parsed_globals):
 
 
 def login(profile, language):
-    characters = string.ascii_letters + string.digits
-    state = ''.join(random.choice(characters) for _ in range(32))
+    cred_path = sso.cred_path_of_profile(profile)
+    auth_url = ""
+    if os.path.exists(cred_path):
+        with open(cred_path, "r") as cred_file:
+            cred_data = json.load(cred_file)
+            auth_url = cred_data.get("sso", {}).get("authUrl", "")
 
-    token = _get_token(state, language)
+    if not auth_url:
+        print(_("auth_url_not_configured"))
+        return
+
+    characters = string.ascii_letters + string.digits
+    state = ''.join(random.choice(characters) for x in range(32))
+
+    token = _get_token(auth_url, state, language)
 
     if token["State"] != state:
         raise ValueError("invalid state %s" % token["state"])
 
-    login_token = token["token"]
-    site = token["site"]
+    login_token = token["Token"]
+    site = token["Site"]
     accounts = sso.list_accounts_for_access_assignment(login_token, site)
-    print(accounts)
-    # todo
-    acc = accounts[0]
-    roles = sso.list_role_configurations_for_account(acc["Uin"], login_token, site)
-    print(roles)
+    idx = terminal.select_from_items(
+        _("account_select_prompt"), ["%s:%s" % (x["Name"], x["Uin"]) for x in accounts], 10)
+    account = accounts[idx]
 
-    role = roles[0]
+    roles = sso.list_role_configurations_for_account(account["Uin"], login_token, site)
+    idx = terminal.select_from_items(
+        _("role_select_prompt"), [x["RoleConfigurationName"] for x in roles], 10)
+    role = roles[idx]
+
     saml_resp = sso.gen_saml_response(
-        login_token, "RoleSAML", acc["Uin"], "", role["RoleConfigurationId"], site)
-    print(saml_resp)
+        login_token, "RoleSAML", account["Uin"], "", role["RoleConfigurationId"], site)
 
     token_info = sso.verify_login_skey(login_token, site)
 
-    role_arn = "qcs::cam::uin/%s:roleName/TencentCloudSSO-%s" % (acc["Uin"], role["RoleConfigurationName"])
-    principal_arn = "qcs::cam::uin/%s:saml-provider/TencentReservedSSO-%s" % (acc["Uin"], token_info["ZoneId"])
+    role_arn = "qcs::cam::uin/%s:roleName/TencentCloudSSO-%s" % (account["Uin"], role["RoleConfigurationName"])
+    principal_arn = "qcs::cam::uin/%s:saml-provider/TencentReservedSSO-%s" % (account["Uin"], token_info["ZoneId"])
     cred = sso.assume_role_with_saml(
         saml_resp["SAMLResponse"], principal_arn, role_arn, "ses-%s" % uuid.uuid4(), 7200, site)
-    print(cred)
 
     sso_info = {
         "token": login_token,
-        "uin": acc["Uin"],
+        "uin": account["Uin"],
         "roleConfigurationId": role["RoleConfigurationId"],
         "roleConfigurationName": role["RoleConfigurationName"],
         "zoneId": token_info["ZoneId"],
         "site": site,
+        "authUrl": auth_url,
+        "expiresAt": int(time.time()) + 3600 * 12,
     }
     sso.save_credential(cred, sso_info, profile)
 
-    print_message("")
+    print(_("login_success") % sso.cred_path_of_profile(profile))
 
 
-def _get_token(state, language):
+def _get_token(auth_url, state, language):
     cli_params = {
         "lang": language,
         "site": _SITE,
@@ -97,11 +104,11 @@ def _get_token(state, language):
         "state": state,
     }
     url_query = urlencode(url_params)
-    auth_url = _AUTH_URL + "?" + url_query
+    auth_url = auth_url + "?" + url_query
 
-    print_message(texts.get("try_login_with_url"))
-    print_message("")
-    print_message(auth_url)
+    print(_("try_login_with_url"))
+    print("")
+    print(auth_url)
 
     webbrowser.open(auth_url)
 
@@ -112,10 +119,10 @@ def _get_token(state, language):
         if "Error" in login_state:
             raise ValueError(login_state["Error"])
 
-        if login_state["State"] == "NotFound":
+        if login_state["Status"] == "NotFound":
             continue
 
-        if login_state["State"] == "Finished":
+        if login_state["Status"] == "Finished":
             return login_state["Token"]
 
         raise ValueError("invalid resp: %s" % login_state)
