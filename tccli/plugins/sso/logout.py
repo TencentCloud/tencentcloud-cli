@@ -2,13 +2,13 @@
 import os
 
 from tccli import sso
-from tccli.plugins.sso import texts
+from tccli.plugins.sso import texts, configs
 
 
 def logout_command_entrypoint(args, parsed_globals):
     language = parsed_globals.get("language")
     if not language:
-        language = "zh-CN"
+        language = configs.DEFAULT_LANG
     texts.set_lang(language)
 
     profile = parsed_globals.get("profile", "default")

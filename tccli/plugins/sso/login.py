@@ -10,18 +10,14 @@ import webbrowser
 from six.moves.urllib.parse import urlencode
 
 from tccli import sso
-from tccli.plugins.sso import texts, terminal
+from tccli.plugins.sso import texts, terminal, configs
 from tccli.plugins.sso.texts import get as _
-
-_CLI_URL = "https://cli.cloud.tencent.com/sso"
-_SITE = "cn"
-_DEFAULT_LANG = "zh-CN"
 
 
 def login_command_entrypoint(args, parsed_globals):
     language = parsed_globals.get("language")
     if not language:
-        language = _DEFAULT_LANG
+        language = configs.DEFAULT_LANG
     texts.set_lang(language)
 
     profile = parsed_globals.get("profile", "default")
@@ -96,12 +92,12 @@ def login(profile, language):
 def _get_token(auth_url, state, language):
     cli_params = {
         "lang": language,
-        "site": _SITE,
+        "site": configs.SITE,
         "state": state,
         "browser": "no",
     }
     cli_query = urlencode(cli_params)
-    cli_url = _CLI_URL + "?" + cli_query
+    cli_url = configs.CLI_URL + "?" + cli_query
     url_params = {
         "loginType": "tccli",
         "callback": cli_url,

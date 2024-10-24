@@ -1,3 +1,4 @@
+# encoding: utf-8
 import math
 import sys
 from string import ascii_letters, digits, punctuation
