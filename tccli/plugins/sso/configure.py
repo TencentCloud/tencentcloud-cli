@@ -1,6 +1,9 @@
 # coding: utf-8
 import json
-from urlparse import urlparse
+try:
+    from urlparse import urlparse
+except ImportError:
+    from urllib.parse import urlparse
 
 from tccli import sso
 from tccli.plugins.sso import texts, configs

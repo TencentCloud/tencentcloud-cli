@@ -58,11 +58,14 @@ def login(profile, language):
     idx = terminal.select_from_items(
         _("account_select_prompt"), ["%s:%s" % (x["Name"], x["Uin"]) for x in accounts], 10)
     account = accounts[idx]
+    print("uin:", account["Uin"])
+    print("username:", account["Name"])
 
     roles = sso.list_role_configurations_for_account(account["Uin"], login_token, site)
     idx = terminal.select_from_items(
         _("role_select_prompt"), [x["RoleConfigurationName"] for x in roles], 10)
     role = roles[idx]
+    print("role:", role["RoleConfigurationName"])
 
     saml_resp = sso.gen_saml_response(
         login_token, "RoleSAML", account["Uin"], "", role["RoleConfigurationId"], site)

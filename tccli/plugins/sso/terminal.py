@@ -13,6 +13,8 @@ _ENTER = "\r"
 _BACKSPACE = "\x7f"
 _EL = "\033[K"
 _CPL = "\033[F"
+_LIGHTBLUE = "\033[94m"
+_LIGHTBLUE_END = "\033[0m"
 
 _win = os.name == "nt"
 
@@ -25,6 +27,7 @@ class Printer(object):
         self.clear()
         lines = [line + '\n' for line in lines]
         sys.stdout.writelines(lines)
+        sys.stdout.flush()
         self._n = len(lines)
 
     def clear(self):
@@ -51,14 +54,14 @@ def _select_from_items_unix(prompt, items, page_size):
         filtered_items = [item for item in items if search in item] if search else items
 
         page_total = math.ceil(len(filtered_items) / float(page_size))
-        page_num = (selection / page_size) + 1
+        page_num = selection // page_size + 1
         page_start = page_size * (page_num - 1)
         page_items = list(filtered_items[page_start: page_start + page_size])
 
         for i in range(len(page_items)):
             selection_i = selection % page_size
             selection_prompt = "*  " if i == selection_i else "   "
-            page_items[i] = selection_prompt + page_items[i]
+            page_items[i] = selection_prompt + _LIGHTBLUE + page_items[i] + _LIGHTBLUE_END
 
         page_lines = ["%s%s" % (prompt, search), ""] + page_items + ["", "page: %d/%d" % (page_num, page_total)]
         p.print_lines(page_lines)
@@ -102,6 +105,7 @@ def _select_from_items_win(prompt, items, page_size):
         print("%d. %s" % (i, items[i]))
 
     print("")
+    sys.stdout.flush()
     sys.stdout.write(prompt)
 
     try:
