@@ -21,7 +21,7 @@ _spec = {
             "action_caller": configure_command_entrypoint,
         },
         "login": {
-            "name": "登陆",
+            "name": "登录",
             "document": "login through sso",
             "input": "loginRequest",
             "output": "loginResponse",
