@@ -1,4 +1,6 @@
+import math
 import sys
+from string import ascii_letters, digits, punctuation
 
 _LEFT_ARROW = "LEFT_ARROW"
 _RIGHT_ARROW = "RIGHT_ARROW"
@@ -42,9 +44,9 @@ def select_from_items(prompt, items, page_size):
     while True:
         filtered_items = [item for item in items if search in item] if search else items
 
-        page_total = len(filtered_items) / page_size
-        page_num = selection / page_size
-        page_start = page_size * page_num
+        page_total = math.ceil(len(filtered_items) / float(page_size))
+        page_num = (selection / page_size) + 1
+        page_start = page_size * (page_num - 1)
         page_items = list(filtered_items[page_start: page_start + page_size])
 
         for i in range(len(page_items)):
@@ -68,8 +70,7 @@ def select_from_items(prompt, items, page_size):
             if selection - page_size >= 0:
                 selection -= page_size
         elif ch == _RIGHT_ARROW:
-            if selection + page_size < len(filtered_items):
-                selection += page_size
+            selection = min(len(filtered_items) - 1, selection + page_size)
         elif ch == _BACKSPACE:
             search = search[:len(search) - 1] if search else ""
             selection = 0
@@ -85,7 +86,7 @@ def select_from_items(prompt, items, page_size):
                     return idx
                 idx += 1
 
-        else:
+        elif ch in (ascii_letters + digits + punctuation):
             search += ch
             selection = 0
 

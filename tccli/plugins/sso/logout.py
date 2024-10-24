@@ -1,8 +1,8 @@
 # coding: utf-8
 import os
 
-from tccli import oauth
-from tccli.plugins.auth import texts
+from tccli import sso
+from tccli.plugins.sso import texts
 
 
 def logout_command_entrypoint(args, parsed_globals):
@@ -15,7 +15,7 @@ def logout_command_entrypoint(args, parsed_globals):
     if not profile:
         profile = "default"
 
-    cred_path = oauth.cred_path_of_profile(profile)
+    cred_path = sso.cred_path_of_profile(profile)
     if os.path.exists(cred_path):
         os.remove(cred_path)
-    print(texts.get("logout") % cred_path)
+    print(texts.get("logout_success") % cred_path)

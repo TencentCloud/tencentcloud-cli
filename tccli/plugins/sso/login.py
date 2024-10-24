@@ -1,5 +1,4 @@
 # coding: utf-8
-import curses
 import json
 import os.path
 import random
@@ -41,7 +40,10 @@ def login(profile, language):
             auth_url = cred_data.get("sso", {}).get("authUrl", "")
 
     if not auth_url:
-        print(_("auth_url_not_configured"))
+        profile_opt = ""
+        if profile != "default":
+            profile_opt = "--profile %s " % profile
+        print(_("auth_url_not_configured") % profile_opt)
         return
 
     characters = string.ascii_letters + string.digits
@@ -51,6 +53,8 @@ def login(profile, language):
 
     if token["State"] != state:
         raise ValueError("invalid state %s" % token["state"])
+
+    print("")
 
     login_token = token["Token"]
     site = token["Site"]

@@ -7,7 +7,7 @@ import requests
 
 _API_ENDPOINT = "https://cli.cloud.tencent.com"
 _CRED_REFRESH_SAFE_DUR = 60 * 5
-_SKEY_REFRESH_SAFE_DUR = 60 * 5
+_SKEY_REFRESH_SAFE_DUR = 3600 * 12 - 300
 
 
 def maybe_refresh_credential(profile):
