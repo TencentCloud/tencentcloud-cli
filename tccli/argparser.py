@@ -58,7 +58,7 @@ class BaseArgParser(argparse.ArgumentParser):
     def parse_known_args(self, args=None, namespace=None):
         parsed, remaining = super(BaseArgParser, self).parse_known_args(args, namespace)
         terminal_encoding = getattr(sys.stdin, 'encoding', 'utf-8')
-        if terminal_encoding is None:
+        if terminal_encoding is None or terminal_encoding == 'cp65001':
             terminal_encoding = 'utf-8'
         for arg, value in vars(parsed).items():
             if isinstance(value, six.binary_type):
