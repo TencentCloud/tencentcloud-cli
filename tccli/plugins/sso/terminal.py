@@ -63,7 +63,7 @@ def _select_from_items_unix(prompt, items, page_size):
             selection_prompt = "*  " if i == selection_i else "   "
             page_items[i] = selection_prompt + _LIGHTBLUE + page_items[i] + _LIGHTBLUE_END
 
-        page_lines = ["%s%s" % (prompt, search), ""] + page_items + ["", "page: %d/%d" % (page_num, page_total)]
+        page_lines = ["", "%s%s" % (prompt, search), ""] + page_items + ["", "page: %d/%d" % (page_num, page_total)]
         p.print_lines(page_lines)
 
         ch = _getch_wrap()
@@ -101,20 +101,27 @@ def _select_from_items_unix(prompt, items, page_size):
 
 
 def _select_from_items_win(prompt, items, page_size):
+    print("")
+    print("--------------------------------")
     for i in range(len(items)):
         print("%d. %s" % (i, items[i]))
 
-    print("")
+    print("--------------------------------")
     sys.stdout.flush()
-    sys.stdout.write(prompt)
 
     try:
         input_func = raw_input
     except NameError:
         input_func = input
 
-    user_input = input_func()
-    return int(user_input)
+    while True:
+        try:
+            sys.stdout.write(prompt)
+            idx = int(input_func())
+            if 0 <= idx < len(items):
+                return idx
+        except ValueError:
+            pass
 
 
 select_from_items = _select_from_items_win if _win else _select_from_items_unix
