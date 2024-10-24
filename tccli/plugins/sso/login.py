@@ -94,7 +94,6 @@ def _get_token(auth_url, state, language):
         "lang": language,
         "site": configs.SITE,
         "state": state,
-        "browser": "no",
     }
     cli_query = urlencode(cli_params)
     cli_url = configs.CLI_URL + "?" + cli_query
