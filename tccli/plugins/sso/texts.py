@@ -13,6 +13,8 @@ texts = {
         "role_select_prompt": "请选择您的角色: ",
         "login_success": "登录成功, 密钥凭证已被写入: %s",
         "logout_success": "登出成功, 密钥凭证已被删除: %s",
+        "no_account": "未找到成员账号, 请确认是否同步过 CAM 角色",
+        "no_role": "当前成员账号不存在授权角色",
     },
     "en-US": {
         "invalid_auth_url": "The entered url is invalid: %s",
@@ -23,6 +25,8 @@ texts = {
         "role_select_prompt": "choose your role: ",
         "login_success": "Login succeed, credential has been written to %s",
         "logout_success": "Logout succeed, credential has been removed: %s",
+        "no_account": "no account found, please confirm the account is synchronized",
+        "no_role": "no role found in current account",
     }
 }
 

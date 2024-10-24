@@ -55,6 +55,10 @@ def login(profile, language):
     login_token = token["Token"]
     site = token["Site"]
     accounts = sso.list_accounts_for_access_assignment(login_token, site)
+    if not accounts:
+        print(_("no_account"))
+        return
+
     idx = terminal.select_from_items(
         _("account_select_prompt"), ["%s:%s" % (x["Name"], x["Uin"]) for x in accounts], 10)
     account = accounts[idx]
@@ -62,6 +66,10 @@ def login(profile, language):
     print("username: %s" % account["Name"])
 
     roles = sso.list_role_configurations_for_account(account["Uin"], login_token, site)
+    if not roles:
+        print(_("no_role"))
+        return
+
     idx = terminal.select_from_items(
         _("role_select_prompt"), [x["RoleConfigurationName"] for x in roles], 10)
     role = roles[idx]

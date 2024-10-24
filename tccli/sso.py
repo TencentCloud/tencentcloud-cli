@@ -63,10 +63,14 @@ def verify_login_skey(token, site):
         "LoginSkey": token,
     }
     http_response = requests.post(api_endpoint, json=body)
-    resp = http_response.json()
-    if "Error" in resp:
-        raise ValueError(http_response.content)
-    return resp
+    try:
+        resp = http_response.json()
+        if "Error" in resp:
+            raise ValueError(http_response.content)
+        return resp
+    except Exception:
+        print(http_response.content)
+        raise
 
 
 def list_accounts_for_access_assignment(token, site):
@@ -88,11 +92,15 @@ def list_accounts_for_access_assignment(token, site):
         if "Error" in resp:
             raise ValueError(http_response.content)
 
-        accounts.extend(resp["Accounts"])
-        if resp["TotalCounts"] <= len(accounts):
-            break
+        try:
+            accounts.extend(resp.get("Accounts", []))
+            if resp["TotalCounts"] <= len(accounts):
+                break
 
-        page_num += 1
+            page_num += 1
+        except Exception:
+            print(http_response.content)
+            raise
 
     return accounts
 
@@ -113,15 +121,20 @@ def list_role_configurations_for_account(uin, token, site):
             "NextToken": next_token,
         }
         http_response = requests.post(api_endpoint, json=body)
-        resp = http_response.json()
-        if "Error" in resp:
-            raise ValueError(http_response.content)
+        try:
+            resp = http_response.json()
 
-        configs.extend(resp["RoleConfigurationsForAccount"])
-        if not resp["IsTruncated"]:
-            break
+            if "Error" in resp:
+                raise ValueError(http_response.content)
 
-        next_token = resp["NextToken"]
+            configs.extend(resp.get("RoleConfigurationsForAccount", []))
+            if not resp["IsTruncated"]:
+                break
+
+            next_token = resp["NextToken"]
+        except Exception:
+            print(http_response.content)
+            raise
 
     return configs
 
@@ -139,11 +152,15 @@ def gen_saml_response(token, login_type, uin, user_id, conf_id, site):
         "RoleConfigurationId": conf_id,
     }
     http_response = requests.post(api_endpoint, json=body)
-    resp = http_response.json()
-    if "Error" in resp:
-        raise ValueError(http_response.content)
+    try:
+        resp = http_response.json()
+        if "Error" in resp:
+            raise ValueError(http_response.content)
 
-    return resp
+        return resp
+    except Exception:
+        print(http_response.content)
+        raise
 
 
 def assume_role_with_saml(saml_assertion, principal_arn, role_arn, role_ses_name, dur, site):
@@ -159,10 +176,14 @@ def assume_role_with_saml(saml_assertion, principal_arn, role_arn, role_ses_name
         "DurationSeconds": dur,
     }
     http_response = requests.post(api_endpoint, json=body)
-    resp = http_response.json()
-    if "Error" in resp:
-        raise ValueError(http_response.content)
-    return resp
+    try:
+        resp = http_response.json()
+        if "Error" in resp:
+            raise ValueError(http_response.content)
+        return resp
+    except Exception:
+        print(http_response.content)
+        raise
 
 
 def save_credential(cred, sso_info, profile):
@@ -200,4 +221,9 @@ def check_login_state(state):
         "TraceId": str(uuid.uuid4()),
         "State": state,
     }
-    return requests.post(api_endpoint, json=body).json()
+    http_response = requests.post(api_endpoint, json=body)
+    try:
+        return http_response.json()
+    except Exception:
+        print(http_response.content)
+        raise
