@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli gaap CreateGlobalDomainDns --cli-unfold-argument  \
-    --ProxyIdList 111 \
-    --NationCountryInnerCodes 221 \
-    --DomainId test.com
+    --ProxyIdList link-wefcrwqp \
+    --NationCountryInnerCodes 1000000 \
+    --DomainId dm-00ye8ek7
 ```
 
 Output: 

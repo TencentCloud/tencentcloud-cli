@@ -26,7 +26,14 @@ Output:
                 "LicenseInfo": "abc",
                 "LayerVersion": 0,
                 "LayerName": "abc",
-                "Status": "abc"
+                "Status": "abc",
+                "Stamp": "abc",
+                "Tags": [
+                    {
+                        "Key": "abc",
+                        "Value": "abc"
+                    }
+                ]
             }
         ],
         "TotalCount": 0,

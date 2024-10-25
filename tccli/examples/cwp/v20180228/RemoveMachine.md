@@ -6,15 +6,15 @@ Input:
 
 ```
 tccli cwp RemoveMachine --cli-unfold-argument  \
-    --Uuid xx \
-    --Quuid xx
+    --Uuid 24c9be55-c743-4a75-a5c7-2a2912341234 \
+    --Quuid 24c9be55-c743-4a75-a5c7-2a2912341234
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx"
+        "RequestId": "24c9be55-c743-4a75-a5c7-2a2912341234"
     }
 }
 ```

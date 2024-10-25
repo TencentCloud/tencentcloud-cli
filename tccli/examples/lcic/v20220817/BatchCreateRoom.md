@@ -19,7 +19,6 @@ tccli lcic BatchCreateRoom --cli-unfold-argument  \
     --RoomInfos.0.SubType abc \
     --RoomInfos.0.DisableRecord 1 \
     --RoomInfos.0.Assistants abc \
-    --RoomInfos.0.RTCAudienceNumber 1 \
     --RoomInfos.0.AudienceType 1 \
     --RoomInfos.0.RecordLayout 1 \
     --RoomInfos.0.GroupId abc \

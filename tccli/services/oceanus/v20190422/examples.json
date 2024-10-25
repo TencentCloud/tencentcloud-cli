@@ -158,6 +158,14 @@
         "title": "查询作业事件"
       }
     ],
+    "DescribeJobRuntimeInfo": [
+      {
+        "document": "查询作业的taskmanger和subtask",
+        "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeJobRuntimeInfo\n<公共请求参数>\n\n{\n    \"JobId\": \"cql-xxx\",\n    \"WorkSpaceId\": \"space-xxx\",\n    \"IncludeInfo\": [\n        \"TaskManagers\",\n        \"SubTasks\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"JobRuntimeInfo\": [\n            {\n                \"Key\": \"TaskManagers\",\n                \"Value\": \"WyJjcWwtbDkzZzJ3eGotNDI0MS10YXNrbWFuYWdlci0xLTEiXQ==\"\n            },\n            {\n                \"Key\": \"SubTasks\",\n                \"Value\": \"W3siVGFza0lkIjoiY2JjMzU3Y2NiNzYzZGYyODUyZmVlOGM0ZmM3ZDU1ZjIiLCJUYXNrRGVzY3JpcHRpb24iOiJTb3VyY2U6IFRhYmxlU291cmNlU2Nhbih0YWJsZT1bW2RlZmF1bHRfY2F0YWxvZywgZGVmYXVsdF9kYXRhYmFzZSwgZGF0YWdlbl9zb3VyY2VfdGFibGVdXSwgZmllbGRzPVtpZCwgbmFtZV0pIC1cdTAwMjZndDsgU2luazogU2luayh0YWJsZT1bZGVmYXVsdF9jYXRhbG9nLmRlZmF1bHRfZGF0YWJhc2UubG9nZ2VyX3NpbmtfdGFibGVdLCBmaWVsZHM9W2lkLCBuYW1lXSlfMCIsIlN1YlRhc2tJbmRleCI6MH1d\"\n            }\n        ],\n        \"RequestId\": \"51964833-6e61-4909-b93b-3d4996c9360d\"\n    }\n}",
+        "title": "查询作业的taskmanger和subtask"
+      }
+    ],
     "DescribeJobSavepoint": [
       {
         "document": "",

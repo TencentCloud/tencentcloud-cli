@@ -27,7 +27,8 @@ Output:
                 "ResourceId": "abc",
                 "ResourceRegion": "abc",
                 "BindStatus": "abc",
-                "Storage": 1
+                "Storage": 0,
+                "GovernAuthStatus": 0
             }
         ],
         "DspaId": "abc",

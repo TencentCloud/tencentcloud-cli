@@ -133,6 +133,13 @@
       "output": "DescribeJobEventsResponse",
       "status": "online"
     },
+    "DescribeJobRuntimeInfo": {
+      "document": "获取作业运行时的信息",
+      "input": "DescribeJobRuntimeInfoRequest",
+      "name": "获取作业运行时的信息",
+      "output": "DescribeJobRuntimeInfoResponse",
+      "status": "online"
+    },
     "DescribeJobSavepoint": {
       "document": "查找Savepoint列表",
       "input": "DescribeJobSavepointRequest",
@@ -370,7 +377,7 @@
           "example": "svp-6w8eab6f",
           "member": "string",
           "name": "SerialId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -380,7 +387,7 @@
           "example": "1",
           "member": "int64",
           "name": "SavepointStatus",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2947,6 +2954,61 @@
       ],
       "type": "object"
     },
+    "DescribeJobRuntimeInfoRequest": {
+      "document": "DescribeJobRuntimeInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "作业ID",
+          "example": "cql-xxx",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "工作空间ID",
+          "example": "space-xxx",
+          "member": "string",
+          "name": "WorkSpaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "作业运行信息 key",
+          "example": "[\"TaskManagers\",\"SubTasks\"]",
+          "member": "string",
+          "name": "IncludeInfo",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeJobRuntimeInfoResponse": {
+      "document": "DescribeJobRuntimeInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "作业运行时信息",
+          "example": "无",
+          "member": "JobRuntimeInfo",
+          "name": "JobRuntimeInfo",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeJobSavepointRequest": {
       "document": "DescribeJobSavepoint请求参数结构体",
       "members": [
@@ -3637,7 +3699,7 @@
           "example": "[]",
           "member": "SystemResourceItem",
           "name": "ResourceSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3647,7 +3709,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4954,6 +5016,32 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "JobRuntimeInfo": {
+      "document": "作业运行时信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "运行信息的key，目前支持：TaskManagers：taskmanager pod 列表； StreamGraph：作业对应的 StreamGraph；SubTasks：作业的 subtask 列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "TaskManagers",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "运行信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

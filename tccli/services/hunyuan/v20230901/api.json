@@ -110,7 +110,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "模型名称，可选值包括 hunyuan-lite、hunyuan-standard、hunyuan-standard-256K、hunyuan-pro、 hunyuan-code、 hunyuan-role、 hunyuan-functioncall、 hunyuan-vision、 hunyuan-turbo。\n各模型介绍请阅读 [产品概述](https://cloud.tencent.com/document/product/1729/104753) 中的说明。\n\n注意：\n不同的模型计费不同，请根据 [购买指南](https://cloud.tencent.com/document/product/1729/97731) 按需调用。",
+          "document": "模型名称，可选值包括 hunyuan-lite、hunyuan-standard、hunyuan-standard-256K、hunyuan-pro、 hunyuan-code、 hunyuan-role、 hunyuan-functioncall、 hunyuan-vision、 hunyuan-turbo、 hunyuan-turbo-latest。\n各模型介绍请阅读 [产品概述](https://cloud.tencent.com/document/product/1729/104753) 中的说明。\n\n注意：\n不同的模型计费不同，请根据 [购买指南](https://cloud.tencent.com/document/product/1729/97731) 按需调用。",
           "example": "hunyuan-pro",
           "member": "string",
           "name": "Model",
@@ -119,7 +119,7 @@
         },
         {
           "disabled": false,
-          "document": "聊天上下文信息。\n说明：\n1. 长度最多为 40，按对话时间从旧到新在数组中排列。\n2. Message.Role 可选值：system、user、assistant、 tool。\n其中，system 角色可选，如存在则必须位于列表的最开始。user（tool） 和 assistant 需交替出现（一问一答），以 user 提问开始，user（tool）提问结束，且 Content 不能为空。Role 的顺序示例：[system（可选） user assistant user assistant user ...]。\n3. Messages 中 Content 总长度不能超过模型输入长度上限（可参考 [产品概述](https://cloud.tencent.com/document/product/1729/104753) 文档），超过则会截断最前面的内容，只保留尾部内容。",
+          "document": "聊天上下文信息。\n说明：\n1. 长度最多为 40，按对话时间从旧到新在数组中排列。\n2. Message.Role 可选值：system、user、assistant、 tool（functioncall场景）。\n其中，system 角色可选，如存在则必须位于列表的最开始。user（tool） 和 assistant 需交替出现（一问一答），以 user 提问开始，user（tool）提问结束，其中tool可以连续出现多次，且 Content 不能为空。Role 的顺序示例：[system（可选） user assistant user（tool tool ...） assistant user（tool tool ...） ...]。\n3. Messages 中 Content 总长度不能超过模型输入长度上限（可参考 [产品概述](https://cloud.tencent.com/document/product/1729/104753) 文档），超过则会截断最前面的内容，只保留尾部内容。",
           "example": "无",
           "member": "Message",
           "name": "Messages",
@@ -227,7 +227,7 @@
         },
         {
           "disabled": false,
-          "document": "图文并茂开关。\n详细介绍请阅读 [图文并茂](https://cloud.tencent.com/document/product/1729/111178) 中的说明。\n说明：\n1. 该参数仅在功能增强（如搜索）开关开启（EnableEnhancement=true）时生效。\n2. hunyuan-lite 无图文并茂能力，该参数对 hunyuan-lite 版本不生效。\n3. 未传值时默认关闭。\n4. 开启并搜索到对应的多媒体信息时，会输出对应的多媒体地址，可以定制个性化的图文消息。",
+          "document": "多媒体开关。\n详细介绍请阅读 [多媒体介绍](https://cloud.tencent.com/document/product/1729/111178) 中的说明。\n说明：\n1. 该参数目前仅对白名单内用户生效，如您想体验该功能请 [联系我们](https://cloud.tencent.com/act/event/Online_service)。\n2. 该参数仅在功能增强（如搜索）开关开启（EnableEnhancement=true）并且极速版搜索开关关闭（EnableSpeedSearch=false）时生效。\n3. hunyuan-lite 无多媒体能力，该参数对 hunyuan-lite 版本不生效。\n4. 未传值时默认关闭。\n5. 开启并搜索到对应的多媒体信息时，会输出对应的多媒体地址，可以定制个性化的图文消息。",
           "example": "false",
           "member": "bool",
           "name": "EnableMultimedia",
@@ -322,7 +322,7 @@
         },
         {
           "disabled": false,
-          "document": "多媒体信息。\n说明：\n1. 可以用多媒体信息替换回复内容里的占位符，得到完整的图文信息。\n2. 可能会出现回复内容里存在占位符，但是因为审核等原因没有返回多媒体信息。",
+          "document": "多媒体信息。\n说明：\n1. 可以用多媒体信息替换回复内容里的占位符，得到完整的消息。\n2. 可能会出现回复内容里存在占位符，但是因为审核等原因没有返回多媒体信息。",
           "example": "无",
           "member": "Replace",
           "name": "Replaces",
@@ -846,11 +846,11 @@
       "usage": "both"
     },
     "Multimedia": {
-      "document": "图文并茂详情",
+      "document": "多媒体详情",
       "members": [
         {
           "disabled": false,
-          "document": "多媒体类型，image：图片。",
+          "document": "多媒体类型，可选值包括 image、music、album、playlist。\n说明：\n1. image：图片；music：单曲，类型为单曲时，会返回详细歌手和歌曲信息；album：专辑；playlist：歌单。\n2. 当 type 为 music、album、playlist 时，需要配合 [QQ音乐SDK](https://developer.y.qq.com/) 使用。",
           "example": "image",
           "member": "string",
           "name": "Type",
@@ -860,7 +860,7 @@
         },
         {
           "disabled": false,
-          "document": "多媒体预览地址。",
+          "document": "多媒体地址。\n说明：\n1. type 为 image 时，地址为图片的预览地址；其他类型时，地址为封面图地址。",
           "example": "无",
           "member": "string",
           "name": "Url",
@@ -870,13 +870,53 @@
         },
         {
           "disabled": false,
-          "document": "多媒体详情地址。",
+          "document": "多媒体详情地址。\n说明：\n1. 仅 type 为 image 时，该字段有值。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "JumpUrl",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "名称。\n说明：\n1. type 为 image 时，该字段为空。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Title",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "描述。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Desc",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "歌手名称。\n说明：\n1. 仅 type 为 music 时，该字段有值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Singer",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "歌曲详情。\n说明：\n1. 仅 type 为 music 时，该字段有值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SongExt",
+          "name": "Ext",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1086,7 +1126,7 @@
       "type": "object"
     },
     "Replace": {
-      "document": "图文并茂占位符替换信息",
+      "document": "多媒体占位符替换信息",
       "members": [
         {
           "disabled": false,
@@ -1193,6 +1233,42 @@
         }
       ],
       "type": "object"
+    },
+    "SongExt": {
+      "document": "歌曲详情。具体含义参考  [QQ音乐SDK](https://developer.y.qq.com/)",
+      "members": [
+        {
+          "disabled": false,
+          "document": "歌曲id",
+          "example": "97773",
+          "member": "int64",
+          "name": "SongId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "歌曲mid",
+          "example": "0039MnYb0qxYhV",
+          "member": "string",
+          "name": "SongMid",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "歌曲是否为vip。1：vip歌曲； 0：普通歌曲。",
+          "example": "1",
+          "member": "int64",
+          "name": "Vip",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "SubmitHunyuanImageChatJobRequest": {
       "document": "SubmitHunyuanImageChatJob请求参数结构体",

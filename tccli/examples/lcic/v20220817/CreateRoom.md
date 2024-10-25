@@ -19,7 +19,6 @@ tccli lcic CreateRoom --cli-unfold-argument  \
     --SubType abc \
     --DisableRecord 1 \
     --Assistants abc \
-    --RTCAudienceNumber 1 \
     --AudienceType 1 \
     --RecordLayout 1 \
     --GroupId abc \

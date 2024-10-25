@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli gaap DisableGlobalDomain --cli-unfold-argument  \
-    --DomainId test.com
+    --DomainId dm-00ye8ek7
 ```
 
 Output: 

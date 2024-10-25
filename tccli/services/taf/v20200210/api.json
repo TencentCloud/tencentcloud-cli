@@ -64,7 +64,44 @@
     },
     "InputBusinessEncryptData": {
       "document": "业务入参",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "加密方式；0：AES;1:DES",
+          "example": "1",
+          "member": "uint64",
+          "name": "EncryptMethod",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "业务数据加密字符串",
+          "example": "7ecfc5536b47f4fa7d176b6450b67564caab7e6845531f02fd28feb8122f7afa",
+          "member": "string",
+          "name": "EncryptData",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "加密模式；0：ECB,1:CBC;2:CTR;3:CFB;4:OFB",
+          "example": "1",
+          "member": "uint64",
+          "name": "EncryptMode",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "填充模式;0:ZERO ;1:PKCS5;3:PKCS7",
+          "example": "1",
+          "member": "uint64",
+          "name": "PaddingType",
+          "required": true,
+          "type": "int"
+        }
+      ],
       "usage": "in"
     },
     "InputRecognizeTargetAudience": {
@@ -73,22 +110,20 @@
         {
           "disabled": false,
           "document": "模型ID列表",
-          "example": "[1,2]",
+          "example": "[5427,5428]",
           "member": "int64",
           "name": "ModelIdList",
           "required": true,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         },
         {
           "disabled": false,
           "document": "设备ID，AccountType指定的类型",
-          "example": "\"86********\"",
+          "example": "\"892022376********ec97a65130bce53\"",
           "member": "string",
           "name": "Uid",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -97,18 +132,16 @@
           "member": "int64",
           "name": "AccountType",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "用户IP",
-          "example": "127.0.0.1",
+          "example": "157.***.***.3",
           "member": "string",
           "name": "Ip",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -117,8 +150,7 @@
           "member": "string",
           "name": "Os",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -127,8 +159,7 @@
           "member": "string",
           "name": "Osv",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -137,8 +168,7 @@
           "member": "string",
           "name": "Lat",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -147,8 +177,7 @@
           "member": "string",
           "name": "Lon",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -157,8 +186,7 @@
           "member": "string",
           "name": "DeviceModel",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -167,8 +195,7 @@
           "member": "int64",
           "name": "BidFloor",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -177,8 +204,7 @@
           "member": "int64",
           "name": "Age",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -187,18 +213,16 @@
           "member": "int64",
           "name": "Gender",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "用户地址",
-          "example": "“XXX省XXX市XXX街道XXX路”",
+          "example": "“某某省某某市某某街道某某路”",
           "member": "string",
           "name": "Location",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -207,8 +231,7 @@
           "member": "int64",
           "name": "DeliveryMode",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -217,68 +240,61 @@
           "member": "int64",
           "name": "AdvertisingType",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "mac地址，建议提供",
-          "example": "ADSASDAS-DASDASDASD-DASDASAS",
+          "example": "00:1A:2B:3C:4D:5E",
           "member": "string",
           "name": "Mac",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "电话号码",
-          "example": "131",
+          "example": "131****9986",
           "member": "string",
           "name": "Phone",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "浏览器类型",
-          "example": "\"xxxl浏览器\"",
+          "example": "\"某某浏览器\"",
           "member": "string",
           "name": "Ua",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "客户端应用",
-          "example": "“XXXapp”",
+          "example": "“某某app”",
           "member": "string",
           "name": "App",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "应用包名",
-          "example": "\"xxxpackage\"",
+          "example": "\"某某package\"",
           "member": "string",
           "name": "Package",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "设备制造商",
-          "example": "\"xxx品牌\"",
+          "example": "\"某某品牌\"",
           "member": "string",
           "name": "Maker",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -287,8 +303,7 @@
           "member": "string",
           "name": "DeviceType",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -297,8 +312,7 @@
           "member": "string",
           "name": "AccessMode",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -307,8 +321,7 @@
           "member": "int64",
           "name": "Sp",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -317,8 +330,7 @@
           "member": "int64",
           "name": "DeviceW",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -327,8 +339,7 @@
           "member": "int64",
           "name": "DeviceH",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -337,8 +348,7 @@
           "member": "int64",
           "name": "FullScreen",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -347,8 +357,7 @@
           "member": "int64",
           "name": "ImpBannerW",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -357,18 +366,16 @@
           "member": "int64",
           "name": "ImpBannerH",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "网址",
-          "example": "\"http:XXXX\"",
+          "example": "\"http://www.***.com\"",
           "member": "string",
           "name": "Url",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -377,8 +384,7 @@
           "member": "string",
           "name": "Context",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -387,28 +393,25 @@
           "member": "string",
           "name": "Channel",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "请求ID",
-          "example": "“13123123”",
+          "example": "“c98f2f4f-****-****-****-669fb2679589”",
           "member": "string",
           "name": "ReqId",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "请求ID的md5值",
-          "example": "“adskasdkajsdhjkasdhjkash”",
+          "example": "“d41d8cd98f00b2****800998ecf8427e”",
           "member": "string",
           "name": "ReqMd5",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -417,8 +420,7 @@
           "member": "int64",
           "name": "AdType",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -427,8 +429,7 @@
           "member": "string",
           "name": "AppName",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -437,8 +438,7 @@
           "member": "string",
           "name": "AppVer",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -447,8 +447,7 @@
           "member": "int64",
           "name": "ReqType",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -457,8 +456,7 @@
           "member": "uint64",
           "name": "IsAuthorized",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -467,8 +465,7 @@
           "member": "Device",
           "name": "DeviceList",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         }
       ],
       "usage": "in"
@@ -802,7 +799,7 @@
           "example": "无",
           "member": "OutputRecognizeTargetAudience",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },

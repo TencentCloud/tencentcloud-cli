@@ -51,7 +51,7 @@
     "DescribeCaptchaMiniResult": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: captcha.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCaptchaMiniResult\n<公共请求参数>\n\n{\n    \"UserIp\": \"127.0.0.1\",\n    \"CaptchaAppId\": \"201111111\",\n    \"Ticket\": \"xxxx\",\n    \"AppSecretKey\": \"xxxxxx\",\n    \"CaptchaType\": \"9\"\n}",
+        "input": "POST / HTTP/1.1\nHost: captcha.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCaptchaMiniResult\n<公共请求参数>\n\n{\n    \"UserIp\": \"127.0.0.1\",\n    \"CaptchaAppId\": \"199999164\",\n    \"Ticket\": \"tr03z8JQftDQ5ZMteDlvkg6GbucZQTiG8dq53boJY8xJoq6PanrsicK9NOQcK6G2aXSjReWIxVvXt1Y6TXnaWvBy3k2hp_gRSwpi_ZEu3j8BUY2vuuyg-c1tZc3c8GfLdVlqJbOQ5JdAFos*\",\n    \"AppSecretKey\": \"E4kwK9AcXQMHkktiItyMEyQPn\",\n    \"CaptchaType\": \"9\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"a0b3a098-b8f6-4001-764b-47f3843249db\",\n        \"CaptchaCode\": 8,\n        \"CaptchaMsg\": \"ticket expired\"\n    }\n}",
         "title": "请求和返回示例"
       }
@@ -59,8 +59,8 @@
     "DescribeCaptchaMiniRiskResult": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: captcha.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCaptchaMiniRiskResult\n<公共请求参数>\n\n{\n    \"CaptchaAppId\": \"201111111\",\n    \"CaptchaType\": \"9\",\n    \"WeChatOpenId\": \"xxxxxx\",\n    \"SceneCode\": \"1\",\n    \"UserIp\": \"127.0.0.1\",\n    \"Ticket\": \"xxxx\",\n    \"AppSecretKey\": \"xxxxxx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c02af4b4-f858-4fe0-6f88-ebac4b49d13d\",\n        \"CaptchaCode\": 1,\n        \"CaptchaMsg\": \"ticket verification succeeded\",\n        \"ManageMarketingRiskValue\": {\n            \"UserId\": \"xxxxxxxxxxxxxxxxxxxxxxxx\",\n            \"PostTime\": 1606977595,\n            \"AssociateAccount\": \"\",\n            \"UserIp\": \"127.0.0.1\",\n            \"RiskLevel\": \"pass\",\n            \"RiskType\": []\n        }\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: captcha.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCaptchaMiniRiskResult\n<公共请求参数>\n\n{\n    \"CaptchaAppId\": \"199999164\",\n    \"CaptchaType\": \"9\",\n    \"WeChatOpenId\": \"\",\n    \"SceneCode\": \"1\",\n    \"UserIp\": \"127.0.0.1\",\n    \"Ticket\": \"tr03z8JQftDQ5ZMteDlvkg6GbucZQTiG8dq53boJY8xJoq6PanrsicK9NOQcK6G2aXSjReWIxVvXt1Y6TXnaWvBy3k2hp_gRSwpi_ZEu3j8BUY2vuuyg-c1tZc3c8GfLdVlqJbOQ5JdAFos*\",\n    \"AppSecretKey\": \"E4kwK9AcXQMHkktiItyMEyQPn\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c02af4b4-f858-4fe0-6f88-ebac4b49d13d\",\n        \"CaptchaCode\": 1,\n        \"CaptchaMsg\": \"ticket verification succeeded\",\n        \"ManageMarketingRiskValue\": {\n            \"UserId\": \"\",\n            \"PostTime\": 1606977595,\n            \"AssociateAccount\": \"\",\n            \"UserIp\": \"127.0.0.1\",\n            \"RiskLevel\": \"pass\",\n            \"RiskType\": []\n        }\n    }\n}",
         "title": "请求和返回示例"
       }
     ],
@@ -68,31 +68,31 @@
       {
         "document": "",
         "input": "https://captcha.tencentcloudapi.com/?Action=DescribeCaptchaOperData\n&CaptchaAppId=201111111\n&Start=20191129\n&End=20191129\n&Type=1\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0dab64b7-d526-4a5f-bed6-4c59b53b6d11\",\n        \"CaptchaCode\": 0,\n        \"CaptchaMsg\": \"\",\n        \"Data\": {\n            \"OperDataLoadTimeUnitArray\": [\n                {\n                    \"DateKey\": \"20191202\",\n                    \"MarketLoadTime\": 0,\n                    \"AppIdLoadTime\": 0.9\n                },\n                {\n                    \"DateKey\": \"20191204\",\n                    \"MarketLoadTime\": 0,\n                    \"AppIdLoadTime\": 1\n                },\n                {\n                    \"DateKey\": \"20191210\",\n                    \"MarketLoadTime\": 0,\n                    \"AppIdLoadTime\": 1.2\n                },\n                {\n                    \"DateKey\": \"20191219\",\n                    \"MarketLoadTime\": 0,\n                    \"AppIdLoadTime\": 1.3\n                }\n            ],\n            \"OperDataInterceptUnitArray\": null,\n            \"OperDataTryTimesUnitArray\": null,\n            \"OperDataTryTimesDistributeUnitArray\": null\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0dab64b7-d526-4a5f-bed6-4c59b53b6d11\",\n        \"CaptchaCode\": 0,\n        \"CaptchaMsg\": \"success\",\n        \"Data\": {\n            \"OperDataLoadTimeUnitArray\": [\n                {\n                    \"DateKey\": \"20191202\",\n                    \"MarketLoadTime\": 0,\n                    \"AppIdLoadTime\": 0.9\n                },\n                {\n                    \"DateKey\": \"20191204\",\n                    \"MarketLoadTime\": 0,\n                    \"AppIdLoadTime\": 1\n                },\n                {\n                    \"DateKey\": \"20191210\",\n                    \"MarketLoadTime\": 0,\n                    \"AppIdLoadTime\": 1.2\n                },\n                {\n                    \"DateKey\": \"20191219\",\n                    \"MarketLoadTime\": 0,\n                    \"AppIdLoadTime\": 1.3\n                }\n            ],\n            \"OperDataInterceptUnitArray\": null,\n            \"OperDataTryTimesUnitArray\": null,\n            \"OperDataTryTimesDistributeUnitArray\": null\n        }\n    }\n}",
         "title": "请求和返回示例"
       }
     ],
     "DescribeCaptchaRceResult": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: captcha.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCaptchaRceResult\n<公共请求参数>\n\n{\n    \"CaptchaType\": 1,\n    \"Ticket\": \"abc\",\n    \"UserIp\": \"abc\",\n    \"BusinessId\": 1,\n    \"SceneId\": 1,\n    \"MacAddress\": \"abc\",\n    \"Imei\": \"abc\",\n    \"Randstr\": \"abc\",\n    \"CaptchaAppId\": 1,\n    \"AppSecretKey\": \"abc\",\n    \"NeedGetCaptchaTime\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"CaptchaCode\": 0,\n        \"CaptchaMsg\": \"abc\",\n        \"EvilLevel\": 0,\n        \"GetCaptchaTime\": 0,\n        \"EvilBitmap\": 0,\n        \"SubmitCaptchaTime\": 0,\n        \"RceResult\": {\n            \"UserId\": \"abc\",\n            \"PostTime\": 0,\n            \"AssociateAccount\": \"abc\",\n            \"UserIp\": \"abc\",\n            \"RiskLevel\": \"abc\",\n            \"RiskType\": [\n                0\n            ],\n            \"ConstId\": \"abc\",\n            \"RiskInformation\": \"abc\"\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: captcha.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCaptchaRceResult\n<公共请求参数>\n\n{\n    \"CaptchaAppId\": 199999164,\n    \"CaptchaType\": 9,\n    \"NeedGetCaptchaTime\": 1,\n    \"Randstr\": \"@Vki\",\n    \"UserIp\": \"127.0.0.1\",\n    \"Ticket\": \"tr03XaCUZPAlPdIMqv17yvcfdXCzkqvLE09AbCA4ghlWfD8hkySfbU2TZVCyoOCjNI84pAYEMopKv7Uh8XwQDSE9DC0xJpXVC7kmlPENlbFINs_N937qkoEmU6Pl8e-9EkFQzvrrwsZOTKQ*\",\n    \"AppSecretKey\": \"E4kwK9AcXQMHkktiItyMEyQPn\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CaptchaCode\": 0,\n        \"CaptchaMsg\": \"success\",\n        \"EvilLevel\": 0,\n        \"GetCaptchaTime\": 1729583235,\n        \"EvilBitmap\": 0,\n        \"SubmitCaptchaTime\": 1729583239,\n        \"RceResult\": {\n            \"UserId\": \"700000888643\",\n            \"PostTime\": 0,\n            \"AssociateAccount\": \"\",\n            \"UserIp\": \"127.0.0.1\",\n            \"RiskLevel\": \"1\",\n            \"RiskType\": [\n                0\n            ],\n            \"ConstId\": \"1\",\n            \"RiskInformation\": \"\"\n        },\n        \"RequestId\": \"75eabc9e-2aab-46fb-b4fc-44fc6abda074\"\n    }\n}",
         "title": "成功结果示例"
       }
     ],
     "DescribeCaptchaResult": [
       {
         "document": "票据校验",
-        "input": "POST / HTTP/1.1\nHost: captcha.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCaptchaResult\n<公共请求参数>\n\n{\n    \"CaptchaAppId\": 201111111,\n    \"CaptchaType\": 9,\n    \"NeedGetCaptchaTime\": 1,\n    \"Randstr\": \"123\",\n    \"UserIp\": \"127.0.0.1\",\n    \"Ticket\": \"123\",\n    \"AppSecretKey\": \"123\"\n}",
-        "output": "{\n    \"Response\": {\n        \"CaptchaCode\": 0,\n        \"CaptchaMsg\": \"not valid\",\n        \"EvilLevel\": 0,\n        \"GetCaptchaTime\": 0,\n        \"SubmitCaptchaTime\": 0,\n        \"EvilBitmap\": 0,\n        \"RequestId\": \"123\"\n    },\n    \"retcode\": 0,\n    \"retmsg\": \"success\"\n}",
+        "input": "POST / HTTP/1.1\nHost: captcha.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCaptchaResult\n<公共请求参数>\n\n{\n    \"CaptchaAppId\": 199999164,\n    \"CaptchaType\": 9,\n    \"NeedGetCaptchaTime\": 1,\n    \"Randstr\": \"@Vki\",\n    \"UserIp\": \"127.0.0.1\",\n    \"Ticket\": \"tr03XaCUZPAlPdIMqv17yvcfdXCzkqvLE09AbCA4ghlWfD8hkySfbU2TZVCyoOCjNI84pAYEMopKv7Uh8XwQDSE9DC0xJpXVC7kmlPENlbFINs_N937qkoEmU6Pl8e-9EkFQzvrrwsZOTKQ*\",\n    \"AppSecretKey\": \"E4kwK9AcXQMHkktiItyMEyQPn\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CaptchaCode\": 0,\n        \"CaptchaMsg\": \"not valid\",\n        \"EvilLevel\": 0,\n        \"GetCaptchaTime\": 1729583235,\n        \"SubmitCaptchaTime\": 1729583239,\n        \"EvilBitmap\": 0,\n        \"RequestId\": \"7c370964-7deb-4008-8b29-47e87e60c1e0\"\n    },\n    \"retcode\": 0,\n    \"retmsg\": \"success\"\n}",
         "title": "请求和返回示例"
       }
     ],
     "DescribeCaptchaTicketData": [
       {
         "document": "",
-        "input": "https://captcha.tencentcloudapi.com/?Action=DescribeCaptchaTicketData\n&CaptchaAppId=201111111\n&Start=20200909\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0dab64b7-d526-4a5f-bed6-4c59b53b6d11\",\n        \"CaptchaCode\": 0,\n        \"CaptchaMsg\": \"\",\n        \"Data\": {\n            \"TicketAmountArray\": [\n                {\n                    \"DateKey\": \"20200909\",\n                    \"Amount\": 94\n                },\n                {\n                    \"DateKey\": \"20200910\",\n                    \"Amount\": 7\n                }\n            ],\n            \"TicketThroughArray\": [\n                {\n                    \"DateKey\": \"20200909\",\n                    \"Through\": 94\n                },\n                {\n                    \"DateKey\": \"20200910\",\n                    \"Through\": 7\n                }\n            ],\n            \"TicketInterceptArray\": [\n                {\n                    \"DateKey\": \"20200909\",\n                    \"Intercept\": 0\n                },\n                {\n                    \"DateKey\": \"20200910\",\n                    \"Intercept\": 0\n                }\n            ]\n        }\n    }\n}",
+        "input": "https://captcha.tencentcloudapi.com/?Action=DescribeCaptchaTicketData\n&CaptchaAppId=199999164\n&Start=20200909\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0dab64b7-d526-4a5f-bed6-4c59b53b6d11\",\n        \"CaptchaCode\": 0,\n        \"CaptchaMsg\": \"success\",\n        \"Data\": {\n            \"TicketAmountArray\": [\n                {\n                    \"DateKey\": \"20200909\",\n                    \"Amount\": 94\n                },\n                {\n                    \"DateKey\": \"20200910\",\n                    \"Amount\": 7\n                }\n            ],\n            \"TicketThroughArray\": [\n                {\n                    \"DateKey\": \"20200909\",\n                    \"Through\": 94\n                },\n                {\n                    \"DateKey\": \"20200910\",\n                    \"Through\": 7\n                }\n            ],\n            \"TicketInterceptArray\": [\n                {\n                    \"DateKey\": \"20200909\",\n                    \"Intercept\": 0\n                },\n                {\n                    \"DateKey\": \"20200910\",\n                    \"Intercept\": 0\n                }\n            ]\n        }\n    }\n}",
         "title": "请求和返回示例"
       }
     ],
@@ -115,7 +115,7 @@
     "GetTicketStatistics": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: captcha.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetTicketStatistics\n<公共请求参数>\n\n{\n    \"CaptchaAppId\": \"字符串\",\n    \"EndTimeStr\": \"字符串\",\n    \"StartTimeStr\": \"字符串\",\n    \"Dimension\": \"字符串\"\n}",
+        "input": "POST / HTTP/1.1\nHost: captcha.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetTicketStatistics\n<公共请求参数>\n\n{\n    \"CaptchaAppId\": \"199999164\",\n    \"EndTimeStr\": \"2022-05-14 01:00\",\n    \"StartTimeStr\": \"2022-06-15 20:00\",\n    \"Dimension\": \"3\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"458e90ab-4bcb-45ee-b8fd-f5e79e85ffff\",\n        \"Data\": null,\n        \"CaptchaCode\": 11000,\n        \"CaptchaMsg\": \"\"\n    }\n}",
         "title": "请求和返回示例"
       }

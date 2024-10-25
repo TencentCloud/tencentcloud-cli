@@ -14,33 +14,33 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 1,
-        "RequestId": "xx",
         "Aliases": [
             {
-                "ModTime": "2020-09-22 00:00:00",
-                "Name": "xx",
-                "AddTime": "2020-09-22 00:00:00",
-                "FunctionVersion": "xx",
+                "FunctionVersion": "abc",
+                "Name": "abc",
                 "RoutingConfig": {
                     "AdditionalVersionWeights": [
                         {
-                            "Version": "xx",
-                            "Weight": 0.0
+                            "Version": "abc",
+                            "Weight": 0
                         }
                     ],
                     "AddtionVersionMatchs": [
                         {
-                            "Version": "xx",
-                            "Expression": "xx",
-                            "Method": "xx",
-                            "Key": "xx"
+                            "Version": "abc",
+                            "Key": "abc",
+                            "Method": "abc",
+                            "Expression": "abc"
                         }
                     ]
                 },
-                "Description": "xx"
+                "Description": "abc",
+                "AddTime": "2020-09-22 00:00:00",
+                "ModTime": "2020-09-22 00:00:00"
             }
-        ]
+        ],
+        "TotalCount": 1,
+        "RequestId": "abc"
     }
 }
 ```

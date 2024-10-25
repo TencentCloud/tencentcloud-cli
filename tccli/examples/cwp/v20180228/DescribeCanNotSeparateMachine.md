@@ -17,15 +17,15 @@ Output:
     "Response": {
         "List": [
             {
-                "Uuid": "xx",
-                "PrivateIp": "xx",
-                "PublicIp": "xx",
-                "Alias": "xx",
+                "Uuid": "1c26308c-5493-4eaf-a817-112ec25f499e",
+                "PrivateIp": "xx.xx.xx.xx",
+                "PublicIp": "xx.xx.xx.xx",
+                "Alias": "a",
                 "Reason": 1,
-                "Quuid": "xx"
+                "Quuid": "1c26308c-5493-4eaf-a817-112ec25f499e"
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "xxxxxxxx-1234-5678-9101-yyyyyyyyyy"
     }
 }
 ```

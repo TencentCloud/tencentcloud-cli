@@ -1,6 +1,6 @@
-**Example 1: 示例**
+**Example 1: 获取日志存储配置**
 
-示例
+获取日志存储配置
 
 Input: 
 
@@ -12,11 +12,11 @@ Output:
 {
     "Response": {
         "Type": [
-            "abc"
+            "malware"
         ],
         "Period": 0,
         "PeriodModifyCount": 0,
-        "RequestId": "abc"
+        "RequestId": "1c26308c-5493-4eaf-a817-112ec25f499e"
     }
 }
 ```

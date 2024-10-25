@@ -147,6 +147,13 @@
       "output": "CreateMachineGroupResponse",
       "status": "online"
     },
+    "CreateNoticeContent": {
+      "document": "该接口用于创建通知内容。",
+      "input": "CreateNoticeContentRequest",
+      "name": "创建通知内容模版",
+      "output": "CreateNoticeContentResponse",
+      "status": "online"
+    },
     "CreateScheduledSql": {
       "document": "本接口用于创建定时SQL分析任务",
       "input": "CreateScheduledSqlRequest",
@@ -278,6 +285,13 @@
       "input": "DeleteMachineGroupInfoRequest",
       "name": "删除机器组信息",
       "output": "DeleteMachineGroupInfoResponse",
+      "status": "online"
+    },
+    "DeleteNoticeContent": {
+      "document": "该接口用于删除通知内容配置",
+      "input": "DeleteNoticeContentRequest",
+      "name": "删除通知内容模版",
+      "output": "DeleteNoticeContentResponse",
       "status": "online"
     },
     "DeleteScheduledSql": {
@@ -462,6 +476,13 @@
       "output": "DescribeMachinesResponse",
       "status": "online"
     },
+    "DescribeNoticeContents": {
+      "document": "获取通知内容列表",
+      "input": "DescribeNoticeContentsRequest",
+      "name": "获取通知内容模版",
+      "output": "DescribeNoticeContentsResponse",
+      "status": "online"
+    },
     "DescribePartitions": {
       "document": "该接口已废弃，如需获取分区数量，请使用DescribeTopics接口。",
       "input": "DescribePartitionsRequest",
@@ -616,6 +637,13 @@
       "output": "ModifyMachineGroupResponse",
       "status": "online"
     },
+    "ModifyNoticeContent": {
+      "document": "该接口用于修改通知内容配置",
+      "input": "ModifyNoticeContentRequest",
+      "name": "修改通知内容模版",
+      "output": "ModifyNoticeContentResponse",
+      "status": "online"
+    },
     "ModifyScheduledSql": {
       "document": "本接口用于修改定时SQL分析任务",
       "input": "ModifyScheduledSqlRequest",
@@ -652,7 +680,7 @@
       "status": "online"
     },
     "QueryMetric": {
-      "document": "查询指定时刻指标的最新值",
+      "document": "查询指定时刻指标的最新值。\n如果该时刻向前推5分钟内均无指标数据，则无相应的查询结果。",
       "input": "QueryMetricRequest",
       "name": "指标查询（最新值查询）",
       "output": "QueryMetricResponse",
@@ -750,6 +778,45 @@
         }
       ],
       "type": "object"
+    },
+    "AdvanceFilterRuleInfo": {
+      "document": "高级过滤规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "过滤字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "过滤规则，0:等于，1:字段存在，2:字段不存在\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Rule",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "过滤值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "AlarmAnalysisConfig": {
       "document": "告警多维分析一些配置信息",
@@ -4744,6 +4811,61 @@
       ],
       "type": "object"
     },
+    "CreateNoticeContentRequest": {
+      "document": "CreateNoticeContent请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "模版名称。",
+          "example": "告警内容模版",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "模版内容语言。0：中文1：英文",
+          "example": "0",
+          "member": "uint64",
+          "name": "Type",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "模版详细配置。",
+          "example": "无",
+          "member": "NoticeContent",
+          "name": "NoticeContents",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateNoticeContentResponse": {
+      "document": "CreateNoticeContent返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "通知内容配置ID",
+          "example": "noticetemplate-xxxx-xx-xx-xx-xxxxxxxx",
+          "member": "string",
+          "name": "NoticeContentId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateScheduledSqlRequest": {
       "document": "CreateScheduledSql请求参数结构体",
       "members": [
@@ -6178,6 +6300,33 @@
       ],
       "type": "object"
     },
+    "DeleteNoticeContentRequest": {
+      "document": "DeleteNoticeContent请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "通知内容模版ID",
+          "example": "noticetemplate-d7286784-46d9-4be3-b7ba-2c464e6a5ad1",
+          "member": "string",
+          "name": "NoticeContentId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteNoticeContentResponse": {
+      "document": "DeleteNoticeContent返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteScheduledSqlRequest": {
       "document": "DeleteScheduledSql请求参数结构体",
       "members": [
@@ -7560,6 +7709,7 @@
           "example": "10",
           "member": "int64",
           "name": "Interval",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7569,6 +7719,7 @@
           "example": "12",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7578,6 +7729,7 @@
           "example": "无",
           "member": "HistogramInfo",
           "name": "HistogramInfos",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7877,6 +8029,71 @@
       ],
       "type": "object"
     },
+    "DescribeNoticeContentsRequest": {
+      "document": "DescribeNoticeContents请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<li> name\n按照【通知内容模版名称】进行过滤。\n类型：String\n必选：否\n</li>\n<li> noticeContentId\n按照【通知内容模版ID】进行过滤。\n类型：String\n必选：否\n</li>\n每次请求的Filters的上限为10，Filter.Values的上限为100。",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "分页的偏移量，默认值为0。",
+          "example": "1",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页单页限制数目，默认值为20，最大值100。",
+          "example": "1",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNoticeContentsResponse": {
+      "document": "DescribeNoticeContents返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "通知内容模版列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "NoticeContentTemplate",
+          "name": "NoticeContents",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "符合条件的通知内容模版总数。",
+          "example": "0",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribePartitionsRequest": {
       "document": "DescribePartitions请求参数结构体",
       "members": [
@@ -8079,6 +8296,15 @@
           "example": "10",
           "member": "uint64",
           "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "控制Filters相关字段是否为精确匹配。  0: 默认值，shipperName模糊匹配 1: shipperName 精确匹配",
+          "example": "无",
+          "member": "uint64",
+          "name": "PreciseSearch",
           "required": false,
           "type": "int"
         }
@@ -8660,6 +8886,17 @@
           "required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志过滤规则列表（新版）。\n注意：\n- 2.9.3以下版本LogListener不支持， 请使用FilterKeyRegex配置日志过滤规则。\n- 自建k8s采集配置（CreateConfigExtra、ModifyConfigExtra）不支持此字段。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AdvanceFilterRuleInfo",
+          "name": "AdvanceFilterRules",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -9843,7 +10080,7 @@
           "example": "4463e7b0-3ec8-41a1-ae48-5d24b22167c2",
           "member": "string",
           "name": "LogsetId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9853,7 +10090,7 @@
           "example": "test",
           "member": "string",
           "name": "LogsetName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9863,7 +10100,7 @@
           "example": "2021-04-01 08:00:00",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9873,7 +10110,7 @@
           "example": "TCB",
           "member": "string",
           "name": "AssumerName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -9883,7 +10120,7 @@
           "example": "无",
           "member": "Tag",
           "name": "Tags",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -9893,7 +10130,7 @@
           "example": "10",
           "member": "int64",
           "name": "TopicCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9903,7 +10140,7 @@
           "example": "TCB_QcsRole",
           "member": "string",
           "name": "RoleName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -11655,6 +11892,60 @@
       ],
       "type": "object"
     },
+    "ModifyNoticeContentRequest": {
+      "document": "ModifyNoticeContent请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "通知内容模版ID。",
+          "example": "noticetemplate-5b2ea996-4dae-47cc-bbad-5b12888b4c89",
+          "member": "string",
+          "name": "NoticeContentId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "通知内容模版名称。",
+          "example": "test",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "通知内容语言。\n\n0：中文 1：英文",
+          "example": "0",
+          "member": "uint64",
+          "name": "Type",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "通知内容模版详细信息。",
+          "example": "无",
+          "member": "NoticeContent",
+          "name": "NoticeContents",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyNoticeContentResponse": {
+      "document": "ModifyNoticeContent返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyScheduledSqlRequest": {
       "document": "ModifyScheduledSql请求参数结构体",
       "members": [
@@ -12017,6 +12308,15 @@
           "name": "PartitionCount",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "取消切换存储任务的id",
+          "example": "无",
+          "member": "string",
+          "name": "CancelTopicAsyncTaskID",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -12057,6 +12357,17 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "执行的周期cron表达式。示例：`\"*/1 * * * *\"` 从左到右每个field的含义 Minutes field, Hours field,Day of month field,Month field,Day of week field， 不支持秒级别。\n当type为`Cron`时，CronExpression字段生效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CronExpression",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -12114,6 +12425,180 @@
         }
       ],
       "usage": "in"
+    },
+    "NoticeContent": {
+      "document": "通知内容模版详细配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "渠道类型\n\nEmail:邮件;Sms:短信;WeChat:微信;Phone:电话;WeCom:企业微信;DingTalk:钉钉;Lark:飞书;Http:自定义回调;",
+          "example": "\"Email\"",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "告警触发通知内容模版。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "NoticeContentInfo",
+          "name": "TriggerContent",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "告警恢复通知内容模版。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "NoticeContentInfo",
+          "name": "RecoveryContent",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "NoticeContentInfo": {
+      "document": "通知模板内容",
+      "members": [
+        {
+          "disabled": false,
+          "document": "通知内容模板标题信息。\n部分通知渠道类型不支持“标题”，请参照腾讯云控制台页面。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "这是标题。",
+          "member": "string",
+          "name": "Title",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "通知内容模板正文信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "这是正文。",
+          "member": "string",
+          "name": "Content",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "请求头（Request Headers）：在HTTP请求中，请求头包含了客户端向服务器发送的附加信息，如用户代理、授权凭证、期望的响应格式等。\n仅“自定义回调”支持该配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"Content-Type:application/json\"]",
+          "member": "string",
+          "name": "Headers",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "NoticeContentTemplate": {
+      "document": "通知内容模板信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "通知内容模板ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "noticetempalte-qwer-asdf-zxcv",
+          "member": "string",
+          "name": "NoticeContentId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "通知内容模板名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "这个是名称",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "语言类型。\n\n0： 中文\n1： 英文\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Type",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "通知内容模板信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "NoticeContent",
+          "name": "NoticeContents",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "通知内容模板标记。\n\n0： 用户自定义\n1： 系统内置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Flag",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建者主账号。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Uin",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建/修改者子账号。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "SubUin",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间 秒级时间戳。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "更新时间 秒级时间戳。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "UpdateTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "NoticeReceiver": {
       "document": "告警通知接收者信息",
@@ -12183,6 +12668,17 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "通知内容模板ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"noticetemplate-1eba4ed8-9584-40e3-a948-c8cff121eed1\"",
+          "member": "string",
+          "name": "NoticeContentId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -12622,7 +13118,7 @@
         },
         {
           "disabled": false,
-          "document": "查询时间，秒级Unix时间戳\t",
+          "document": "查询时间，秒级Unix时间戳。为空时代表当前时间戳。\n",
           "example": "1695197431",
           "member": "uint64",
           "name": "Time",
@@ -14309,6 +14805,36 @@
           "output_required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "异步迁移任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TopicAsyncTaskID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "异步迁移状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "MigrationStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "异步迁移完成后，预计生效日期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "EffectiveDate",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -14442,7 +14968,7 @@
         },
         {
           "disabled": false,
-          "document": "请求头。\n注意：该参数已废弃，请在<a href=\"https://cloud.tencent.com/document/product/614/56466\">创建告警策略</a>接口CallBack参数中指定请求头。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "请求头。\n注意：该参数已废弃，请使用NoticeContentId。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "Headers",
@@ -14453,7 +14979,7 @@
         },
         {
           "disabled": false,
-          "document": "请求内容。\n注意：该参数已废弃，请在<a href=\"https://cloud.tencent.com/document/product/614/56466\">创建告警策略</a>接口CallBack参数中指定请求内容。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "请求内容。\n注意：该参数已废弃，请使用NoticeContentId。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "Body",
@@ -14472,6 +14998,28 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "通知内容模板ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"noticetemplate-1eba4ed8-9584-40e3-a948-c8cff121eed1\"",
+          "member": "string",
+          "name": "NoticeContentId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "集成配置ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"webcallback-aaa-bbb-ccc-ddd\"",
+          "member": "string",
+          "name": "WebCallbackId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

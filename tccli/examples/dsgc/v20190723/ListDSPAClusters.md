@@ -29,7 +29,9 @@ Output:
                 "CosTotalQuota": 0,
                 "CosQuotaUnit": "abc",
                 "RenewFlag": 1,
-                "Channel": "abc"
+                "Channel": "abc",
+                "InsAuthCount": 0,
+                "InsTotalQuota": 0
             }
         ],
         "DenyAll": true,

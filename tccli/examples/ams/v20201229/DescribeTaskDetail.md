@@ -13,100 +13,91 @@ Output:
 ```
 {
     "Response": {
-        "TaskId": "abc",
-        "DataId": "abc",
-        "BizType": "abc",
-        "Name": "abc",
-        "Status": "abc",
-        "Type": "abc",
-        "Suggestion": "abc",
+        "TaskId": "w-audio-ZxisIxxxxiui72wo",
+        "DataId": "55xxx32_30496167",
+        "BizType": "audio_test_xmly",
+        "Name": "55xxx32_30496167.flv",
+        "Status": "FINISH",
+        "Type": "AUDIO",
+        "Suggestion": "Block",
         "Labels": [
             {
-                "Label": "abc",
-                "Suggestion": "abc",
-                "Score": 0,
-                "SubLabel": "abc"
+                "Label": "Porn",
+                "Suggestion": "Block",
+                "Score": 99,
+                "SubLabel": "SexualBehavior"
             }
         ],
         "InputInfo": {
-            "Type": "abc",
-            "Url": "abc",
+            "Type": "URL",
+            "Url": "https://cms.myqcloud.com/audio/test.flv",
             "BucketInfo": {
-                "Bucket": "abc",
-                "Region": "abc",
-                "Object": "abc"
+                "Bucket": "null",
+                "Region": "null",
+                "Object": "null"
             }
         },
-        "AudioText": "abc",
+        "AudioText": "测试音频文本",
         "AudioSegments": [
             {
-                "OffsetTime": "abc",
+                "OffsetTime": "30",
                 "Result": {
-                    "HitFlag": 0,
-                    "Label": "abc",
-                    "Suggestion": "abc",
-                    "Score": 0,
-                    "Text": "abc",
-                    "Url": "abc",
-                    "Duration": "abc",
-                    "Extra": "abc",
+                    "HitFlag": 1,
+                    "Label": "Porn",
+                    "Suggestion": "Block",
+                    "Score": 95,
+                    "Text": "测试音频文本",
+                    "Url": "https://cms.myqcloud.com/audio/test.flv",
+                    "Duration": "29000",
+                    "Extra": "",
                     "TextResults": [
                         {
-                            "Label": "abc",
+                            "Label": "Porn",
                             "Keywords": [
-                                "abc"
+                                ""
                             ],
-                            "LibId": "abc",
-                            "LibName": "abc",
+                            "LibId": "",
+                            "LibName": "0",
                             "Score": 0,
-                            "Suggestion": "abc",
+                            "Suggestion": "Block",
                             "LibType": 0,
-                            "SubLabel": "abc"
+                            "SubLabel": "SexualBehavior"
                         }
                     ],
                     "MoanResults": [
                         {
-                            "Label": "abc",
+                            "Label": "Moan",
                             "Score": 0,
                             "StartTime": 0,
-                            "EndTime": 0,
-                            "SubLabelCode": "abc",
-                            "SubLabel": "abc",
-                            "Suggestion": "abc"
+                            "EndTime": 29,
+                            "SubLabelCode": "",
+                            "SubLabel": "",
+                            "Suggestion": "Pass"
                         }
                     ],
                     "LanguageResults": [
                         {
-                            "Label": "abc",
-                            "Score": 0,
+                            "Label": "cmn",
+                            "Score": 99,
                             "StartTime": 0,
-                            "EndTime": 0,
-                            "SubLabelCode": "abc"
+                            "EndTime": 29,
+                            "SubLabelCode": ""
                         }
                     ],
-                    "SubLabel": "abc",
-                    "RecognitionResults": [
-                        {
-                            "Label": "abc",
-                            "Tags": [
-                                {
-                                    "Name": "abc",
-                                    "Score": 0,
-                                    "StartTime": 0,
-                                    "EndTime": 0
-                                }
-                            ]
-                        }
-                    ]
+                    "SpeakerResults": [],
+                    "LabelResults": [],
+                    "TravelResults": [],
+                    "SubLabel": "SexualBehavior",
+                    "RecognitionResults": []
                 }
             }
         ],
-        "ErrorType": "abc",
-        "ErrorDescription": "abc",
-        "CreatedAt": "abc",
-        "UpdatedAt": "abc",
-        "Label": "abc",
-        "RequestId": "abc"
+        "ErrorType": "",
+        "ErrorDescription": "",
+        "CreatedAt": "2024-10-23T07:56:17.008Z",
+        "UpdatedAt": "2024-10-23T07:58:01.441Z",
+        "Label": "Porn",
+        "RequestId": "26cada43-6e79-4xxx-b77d-636347cd5637"
     }
 }
 ```

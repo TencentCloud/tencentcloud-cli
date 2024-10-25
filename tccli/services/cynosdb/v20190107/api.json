@@ -71,7 +71,7 @@
       "status": "online"
     },
     "CreateAccounts": {
-      "document": "创建用户账号",
+      "document": "本接口（CreateAccounts）用于创建用户账号。",
       "input": "CreateAccountsRequest",
       "name": "创建用户账号",
       "output": "CreateAccountsResponse",
@@ -92,7 +92,7 @@
       "status": "online"
     },
     "CreateBackup": {
-      "document": "为集群创建手动备份",
+      "document": "本接口（CreateBackup）用于为集群创建手动备份。",
       "input": "CreateBackupRequest",
       "name": "创建手动备份",
       "output": "CreateBackupResponse",
@@ -106,7 +106,7 @@
       "status": "online"
     },
     "CreateClusterDatabase": {
-      "document": "创建数据库",
+      "document": "本接口（CreateClusterDatabase）用于创建数据库。",
       "input": "CreateClusterDatabaseRequest",
       "name": "创建数据库",
       "output": "CreateClusterDatabaseResponse",
@@ -120,7 +120,7 @@
       "status": "online"
     },
     "CreateParamTemplate": {
-      "document": "本接口（CreateParamTemplate）用于创建参数模板",
+      "document": "本接口（CreateParamTemplate）用于创建参数模板。",
       "input": "CreateParamTemplateRequest",
       "name": "创建参数模板",
       "output": "CreateParamTemplateResponse",
@@ -134,7 +134,7 @@
       "status": "online"
     },
     "CreateProxyEndPoint": {
-      "document": "创建数据库代理连接点",
+      "document": "本接口（CreateProxyEndPoint）用于创建数据库代理连接点。",
       "input": "CreateProxyEndPointRequest",
       "name": "创建数据库代理连接点",
       "output": "CreateProxyEndPointResponse",
@@ -148,7 +148,7 @@
       "status": "online"
     },
     "DeleteAccounts": {
-      "document": "删除用户账号",
+      "document": "本接口（DeleteAccounts）用于删除用户账号。",
       "input": "DeleteAccountsRequest",
       "name": "删除用户账号",
       "output": "DeleteAccountsResponse",
@@ -162,7 +162,7 @@
       "status": "online"
     },
     "DeleteAuditRuleTemplates": {
-      "document": "删除审计规则模板",
+      "document": "本接口（DeleteAuditRuleTemplates）用于删除审计规则模板。",
       "input": "DeleteAuditRuleTemplatesRequest",
       "name": "删除审计规则模板",
       "output": "DeleteAuditRuleTemplatesResponse",
@@ -204,7 +204,7 @@
       "status": "online"
     },
     "DescribeAccountPrivileges": {
-      "document": "查询账号已有权限",
+      "document": "本接口（DescribeAccountPrivileges）用于查询账号已有权限。",
       "input": "DescribeAccountPrivilegesRequest",
       "name": "查询账号已有权限",
       "output": "DescribeAccountPrivilegesResponse",
@@ -239,7 +239,7 @@
       "status": "online"
     },
     "DescribeAuditRuleTemplates": {
-      "document": "查询审计规则模板信息",
+      "document": "本接口（DescribeAuditRuleTemplates）用于查询审计规则模板信息。",
       "input": "DescribeAuditRuleTemplatesRequest",
       "name": "查询审计规则模板",
       "output": "DescribeAuditRuleTemplatesResponse",
@@ -351,14 +351,14 @@
       "status": "online"
     },
     "DescribeClusterParams": {
-      "document": "本接口（DescribeClusterParams）用于查询集群参数",
+      "document": "本接口（DescribeClusterParams）用于查询集群参数。",
       "input": "DescribeClusterParamsRequest",
       "name": "查询集群参数",
       "output": "DescribeClusterParamsResponse",
       "status": "online"
     },
     "DescribeClusterPasswordComplexity": {
-      "document": "本接口（DescribeClusterPasswordComplexity）用于查看集群密码复杂度详情",
+      "document": "本接口（DescribeClusterPasswordComplexity）用于查看集群密码复杂度详情。",
       "input": "DescribeClusterPasswordComplexityRequest",
       "name": "查看集群密码复杂度详情",
       "output": "DescribeClusterPasswordComplexityResponse",
@@ -372,7 +372,7 @@
       "status": "online"
     },
     "DescribeDBSecurityGroups": {
-      "document": "查询实例安全组信息",
+      "document": "本接口（DescribeDBSecurityGroups）用于查询实例安全组信息。",
       "input": "DescribeDBSecurityGroupsRequest",
       "name": "查询实例安全组信息",
       "output": "DescribeDBSecurityGroupsResponse",
@@ -400,14 +400,14 @@
       "status": "online"
     },
     "DescribeInstanceErrorLogs": {
-      "document": "查询实例错误日志列表",
+      "document": "本接口（DescribeInstanceErrorLogs）用于查询实例错误日志列表。",
       "input": "DescribeInstanceErrorLogsRequest",
       "name": "查询错误日志列表",
       "output": "DescribeInstanceErrorLogsResponse",
       "status": "online"
     },
     "DescribeInstanceParams": {
-      "document": "该接口(DescribeInstanceParams)查询实例参数列表",
+      "document": "本接口（DescribeInstanceParams）用于查询实例参数列表。",
       "input": "DescribeInstanceParamsRequest",
       "name": "查询实例参数列表",
       "output": "DescribeInstanceParamsResponse",
@@ -449,14 +449,14 @@
       "status": "online"
     },
     "DescribeParamTemplateDetail": {
-      "document": "本接口（DescribeParamTemplateDetail）用于查询用户参数模板详情",
+      "document": "本接口（DescribeParamTemplateDetail）用于查询用户参数模板详情。",
       "input": "DescribeParamTemplateDetailRequest",
       "name": "查询参数模板详情",
       "output": "DescribeParamTemplateDetailResponse",
       "status": "online"
     },
     "DescribeParamTemplates": {
-      "document": "查询用户指定产品下的所有参数模板信息",
+      "document": "本接口（DescribeParamTemplates）用于查询用户指定产品下的所有参数模板信息。",
       "input": "DescribeParamTemplatesRequest",
       "name": "查询参数模板信息",
       "output": "DescribeParamTemplatesResponse",
@@ -470,7 +470,7 @@
       "status": "online"
     },
     "DescribeProxies": {
-      "document": "查询数据库代理列表",
+      "document": "本接口（DescribeProxies）用于查询数据库代理列表。",
       "input": "DescribeProxiesRequest",
       "name": "查询数据库代理列表",
       "output": "DescribeProxiesResponse",
@@ -512,7 +512,7 @@
       "status": "online"
     },
     "DescribeResourcesByDealName": {
-      "document": "查询订单关联实例",
+      "document": "本接口（DescribeResourcesByDealName）用于查询订单关联实例。",
       "input": "DescribeResourcesByDealNameRequest",
       "name": "查询订单关联实例",
       "output": "DescribeResourcesByDealNameResponse",
@@ -533,14 +533,14 @@
       "status": "online"
     },
     "DescribeSupportProxyVersion": {
-      "document": "查询支持的数据库代理版本",
+      "document": "本接口（DescribeSupportProxyVersion）用于查询支持的数据库代理版本。",
       "input": "DescribeSupportProxyVersionRequest",
       "name": "查询支持的数据库代理版本",
       "output": "DescribeSupportProxyVersionResponse",
       "status": "online"
     },
     "DescribeTasks": {
-      "document": "查询任务列表",
+      "document": "本接口（DescribeTasks）用于查询任务列表。",
       "input": "DescribeTasksRequest",
       "name": "查询任务列表",
       "output": "DescribeTasksResponse",
@@ -582,7 +582,7 @@
       "status": "online"
     },
     "GrantAccountPrivileges": {
-      "document": "批量授权账号权限",
+      "document": "本接口（GrantAccountPrivileges）用于批量授权账号权限。",
       "input": "GrantAccountPrivilegesRequest",
       "name": "批量授权账号权限",
       "output": "GrantAccountPrivilegesResponse",
@@ -595,8 +595,15 @@
       "output": "InquirePriceCreateResponse",
       "status": "online"
     },
+    "InquirePriceModify": {
+      "document": "变配预付费集群询价",
+      "input": "InquirePriceModifyRequest",
+      "name": "变配预付费集群询价",
+      "output": "InquirePriceModifyResponse",
+      "status": "online"
+    },
     "InquirePriceRenew": {
-      "document": "查询续费集群价格",
+      "document": "本接口（InquirePriceRenew）用于查询续费集群价格。",
       "input": "InquirePriceRenewRequest",
       "name": "续费集群询价",
       "output": "InquirePriceRenewResponse",
@@ -624,21 +631,21 @@
       "status": "online"
     },
     "ModifyAccountHost": {
-      "document": "修改账号主机",
+      "document": "本接口（ModifyAccountHost）用于修改账号主机。",
       "input": "ModifyAccountHostRequest",
       "name": "修改账号主机",
       "output": "ModifyAccountHostResponse",
       "status": "online"
     },
     "ModifyAccountParams": {
-      "document": "修改账号配置",
+      "document": "本接口（ModifyAccountParams）用于修改账号配置。",
       "input": "ModifyAccountParamsRequest",
       "name": "修改账号配置",
       "output": "ModifyAccountParamsResponse",
       "status": "online"
     },
     "ModifyAccountPrivileges": {
-      "document": "修改账号库表权限",
+      "document": "本接口（ModifyAccountPrivileges）用于修改账号库表权限。",
       "input": "ModifyAccountPrivilegesRequest",
       "name": "修改账号库表权限",
       "output": "ModifyAccountPrivilegesResponse",
@@ -701,7 +708,7 @@
       "status": "online"
     },
     "ModifyClusterParam": {
-      "document": "修改集群参数",
+      "document": "本接口（ModifyClusterParam）用于修改集群参数。",
       "input": "ModifyClusterParamRequest",
       "name": "修改集群参数",
       "output": "ModifyClusterParamResponse",
@@ -722,14 +729,14 @@
       "status": "online"
     },
     "ModifyClusterStorage": {
-      "document": "调整包年包月存储容量",
+      "document": "本接口（ModifyClusterStorage）用于调整包年包月存储容量。",
       "input": "ModifyClusterStorageRequest",
       "name": "调整包年包月存储容量",
       "output": "ModifyClusterStorageResponse",
       "status": "online"
     },
     "ModifyDBInstanceSecurityGroups": {
-      "document": "本接口(ModifyDBInstanceSecurityGroups)用于修改实例绑定的安全组。",
+      "document": "本接口（ModifyDBInstanceSecurityGroups）用于修改实例绑定的安全组。",
       "input": "ModifyDBInstanceSecurityGroupsRequest",
       "name": "修改实例绑定安全组",
       "output": "ModifyDBInstanceSecurityGroupsResponse",
@@ -771,14 +778,14 @@
       "status": "online"
     },
     "ModifyProxyDesc": {
-      "document": "修改数据库代理描述",
+      "document": "本接口（ModifyProxyDesc）用于修改数据库代理描述。",
       "input": "ModifyProxyDescRequest",
       "name": "修改数据库代理描述",
       "output": "ModifyProxyDescResponse",
       "status": "online"
     },
     "ModifyProxyRwSplit": {
-      "document": "配置数据库代理读写分离",
+      "document": "本接口（ModifyProxyRwSplit）用于配置数据库代理读写分离。",
       "input": "ModifyProxyRwSplitRequest",
       "name": "配置数据库代理读写分离",
       "output": "ModifyProxyRwSplitResponse",
@@ -813,7 +820,7 @@
       "status": "online"
     },
     "ModifyVipVport": {
-      "document": "修改实例组ip，端口",
+      "document": "本接口（ModifyVipVport）用于修改实例组ip，端口。",
       "input": "ModifyVipVportRequest",
       "name": "修改实例组ip，端口",
       "output": "ModifyVipVportResponse",
@@ -827,7 +834,7 @@
       "status": "online"
     },
     "OfflineInstance": {
-      "document": "销毁实例",
+      "document": "本接口（OfflineInstance）用于销毁实例。",
       "input": "OfflineInstanceRequest",
       "name": "销毁实例",
       "output": "OfflineInstanceResponse",
@@ -883,7 +890,7 @@
       "status": "online"
     },
     "ReloadBalanceProxyNode": {
-      "document": "负载均衡数据库代理",
+      "document": "本接口（ReloadBalanceProxyNode）用于负载均衡数据库代理。",
       "input": "ReloadBalanceProxyNodeRequest",
       "name": "负载均衡数据库代理",
       "output": "ReloadBalanceProxyNodeResponse",
@@ -904,14 +911,14 @@
       "status": "online"
     },
     "ResetAccountPassword": {
-      "document": "本接口(ResetAccountPassword)用于修改数据库账号密码",
+      "document": "本接口（ResetAccountPassword）用于修改数据库账号密码。",
       "input": "ResetAccountPasswordRequest",
       "name": "修改数据库账号密码",
       "output": "ResetAccountPasswordResponse",
       "status": "online"
     },
     "RestartInstance": {
-      "document": "重启实例",
+      "document": "本接口（RestartInstance）用于重启实例。",
       "input": "RestartInstanceRequest",
       "name": "重启实例",
       "output": "RestartInstanceResponse",
@@ -932,7 +939,7 @@
       "status": "online"
     },
     "RollBackCluster": {
-      "document": "本接口（RollBackCluster）用于集群回档",
+      "document": "本接口（RollBackCluster）用于集群回档。",
       "input": "RollBackClusterRequest",
       "name": "集群回档",
       "output": "RollBackClusterResponse",
@@ -953,14 +960,14 @@
       "status": "online"
     },
     "SearchClusterTables": {
-      "document": "本接口(SearchClusterTables)搜索集群数据表列表",
+      "document": "本接口（SearchClusterTables）用于搜索集群数据表列表。",
       "input": "SearchClusterTablesRequest",
       "name": "搜索集群数据表列表",
       "output": "SearchClusterTablesResponse",
       "status": "online"
     },
     "SetRenewFlag": {
-      "document": "SetRenewFlag设置实例的自动续费功能",
+      "document": "本接口（SetRenewFlag）用于设置实例的自动续费功能。",
       "input": "SetRenewFlagRequest",
       "name": "设置自动续费",
       "output": "SetRenewFlagResponse",
@@ -981,7 +988,7 @@
       "status": "online"
     },
     "SwitchClusterVpc": {
-      "document": "更换集群vpc",
+      "document": "本接口（SwitchClusterVpc）用于更换集群vpc。",
       "input": "SwitchClusterVpcRequest",
       "name": "更换集群vpc",
       "output": "SwitchClusterVpcResponse",
@@ -995,7 +1002,7 @@
       "status": "online"
     },
     "SwitchProxyVpc": {
-      "document": "本接口(SwitchProxyVpc)更换数据库代理vpc",
+      "document": "本接口（SwitchProxyVpc）用于更换数据库代理vpc。",
       "input": "SwitchProxyVpcRequest",
       "name": "更换数据库代理vpc",
       "output": "SwitchProxyVpcResponse",
@@ -1023,14 +1030,14 @@
       "status": "online"
     },
     "UpgradeProxy": {
-      "document": "升级数据库代理配置",
+      "document": "本接口（UpgradeProxy）用于升级数据库代理配置。",
       "input": "UpgradeProxyRequest",
       "name": "升级数据库代理配置",
       "output": "UpgradeProxyResponse",
       "status": "online"
     },
     "UpgradeProxyVersion": {
-      "document": "升级数据库代理版本",
+      "document": "本接口（UpgradeProxyVersion）用于升级数据库代理版本。",
       "input": "UpgradeProxyVersionRequest",
       "name": "升级数据库代理版本",
       "output": "UpgradeProxyVersionResponse",
@@ -1119,6 +1126,17 @@
           "example": "无",
           "member": "string",
           "name": "NoSupportTransparentDataEncryptionReason",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否支持手动发起逻辑备份\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "IsSupportManualLogic",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -2817,7 +2835,7 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "修改参数任务信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ModifyParamsData",
@@ -5047,6 +5065,42 @@
         }
       ],
       "type": "object"
+    },
+    "CrossRegionBackupItem": {
+      "document": "跨地域备份各地域备份信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "备份的目标地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "CrossRegion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "目标地域的备份任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1234",
+          "member": "string",
+          "name": "BackupId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "目标地域的备份状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "processing",
+          "member": "string",
+          "name": "BackupStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "CynosdbCluster": {
       "document": "集群信息",
@@ -11080,7 +11134,17 @@
     },
     "DescribeProxySpecsRequest": {
       "document": "DescribeProxySpecs请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群id",
+          "example": "cynosdbmysql-12xx4321",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "DescribeProxySpecsResponse": {
@@ -11092,6 +11156,7 @@
           "example": "无",
           "member": "ProxySpec",
           "name": "ProxySpecs",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -11641,6 +11706,16 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "代理版本详情",
+          "example": "无",
+          "member": "ProxyVersionInfo",
+          "name": "SupportProxyVersionDetail",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -12473,6 +12548,107 @@
           "output_required": true,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "InquirePriceModifyRequest": {
+      "document": "InquirePriceModify请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "CPU核数",
+          "example": "1",
+          "member": "int64",
+          "name": "Cpu",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "内存大小",
+          "example": "1",
+          "member": "int64",
+          "name": "Memory",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "存储大小，存储资源变配：ClusterId,StorageLimit",
+          "example": "10",
+          "member": "int64",
+          "name": "StorageLimit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "实例ID，计算资源变配必传: ClusterId,InstanceId,Cpu,Memory ",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例设备类型",
+          "example": "无",
+          "member": "string",
+          "name": "DeviceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "serverless实例ccu大小",
+          "example": "无",
+          "member": "float",
+          "name": "Ccu",
+          "required": false,
+          "type": "float"
+        }
+      ],
+      "type": "object"
+    },
+    "InquirePriceModifyResponse": {
+      "document": "InquirePriceModify返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例价格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TradePrice",
+          "name": "InstancePrice",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "存储价格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TradePrice",
+          "name": "StoragePrice",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -13567,6 +13743,16 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "跨地域备份项详细信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CrossRegionBackupItem",
+          "name": "CrossRegionBackupInfos",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -17836,6 +18022,32 @@
       ],
       "usage": "out"
     },
+    "ProxyVersionInfo": {
+      "document": "TDSQL-C MySQL支持的proxy版本信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "proxy版本号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.2.3",
+          "member": "string",
+          "name": "ProxyVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "版本描述：GA:稳定版  BETA:尝鲜版，DEPRECATED:过旧，\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "GA",
+          "member": "string",
+          "name": "ProxyVersionType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "ProxyZone": {
       "document": "proxy节点可用区内个数",
       "members": [
@@ -19573,7 +19785,7 @@
           "example": "ap-shanghai-4",
           "member": "string",
           "name": "Zone",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -19583,7 +19795,7 @@
           "example": "200004",
           "member": "int64",
           "name": "ZoneId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -19593,7 +19805,7 @@
           "example": "上海四区",
           "member": "string",
           "name": "ZoneZh",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -19603,7 +19815,7 @@
           "example": "1",
           "member": "int64",
           "name": "IsSupportServerless",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -19613,7 +19825,7 @@
           "example": "1",
           "member": "int64",
           "name": "IsSupportNormal",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -19623,7 +19835,7 @@
           "example": "ap-guangzhou-2",
           "member": "string",
           "name": "PhysicalZone",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -19633,7 +19845,7 @@
           "example": "false",
           "member": "bool",
           "name": "HasPermission",
-          "required": false,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -19643,8 +19855,18 @@
           "example": "无",
           "member": "string",
           "name": "IsWholeRdmaZone",
-          "required": false,
+          "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前可用区是否允许新购集群，1:允许，0:不允许",
+          "example": "1",
+          "member": "int64",
+          "name": "IsSupportCreateCluster",
+          "output_required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

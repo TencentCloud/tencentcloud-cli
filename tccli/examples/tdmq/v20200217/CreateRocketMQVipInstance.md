@@ -6,13 +6,13 @@ Input:
 
 ```
 tccli tdmq CreateRocketMQVipInstance --cli-unfold-argument  \
-    --Name abc \
+    --Name test_instance \
     --Spec rocket-vip-basic-1 \
-    --NodeCount 1 \
-    --StorageSize 0 \
-    --ZoneIds 100001 \
-    --VpcInfo.VpcId abc \
-    --VpcInfo.SubnetId abc \
+    --NodeCount 2 \
+    --StorageSize 200 \
+    --ZoneIds 100001 100002 \
+    --VpcInfo.VpcId vpc-9dlrd5h1 \
+    --VpcInfo.SubnetId subnet-jadmas \
     --TimeSpan 1
 ```
 
@@ -20,8 +20,8 @@ Output:
 ```
 {
     "Response": {
-        "ClusterId": "rocketmq-xxxx",
-        "RequestId": "abc"
+        "ClusterId": "rocketmq-7drjznvjqzee",
+        "RequestId": "23ca1a58-0388-4d2d-8465-653a53addda7"
     }
 }
 ```

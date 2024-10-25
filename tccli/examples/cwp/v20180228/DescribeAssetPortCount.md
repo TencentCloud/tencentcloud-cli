@@ -15,12 +15,13 @@ Output:
     "Response": {
         "Ports": [
             {
-                "Value": 0,
-                "Key": "xx",
-                "Desc": "xx"
+                "Value": 101,
+                "Key": "value1",
+                "Desc": "",
+                "NewCount": 0
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "24c9be55-c743-4a75-a5c7-2a2912341234"
     }
 }
 ```

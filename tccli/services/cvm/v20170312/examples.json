@@ -554,7 +554,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquiryPriceResetInstancesType\n<公共请求参数>\n\n{\n    \"InstanceType\": \"S5.16XLARGE256\",\n    \"InstanceIds\": [\n        \"ins-xmf2ac34\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"Price\": {\n            \"InstancePrice\": {\n                \"OriginalPrice\": 100.45,\n                \"DiscountPrice\": 56.31\n            }\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Price\": {\n            \"InstancePrice\": {\n                \"OriginalPrice\": 100.45,\n                \"DiscountPrice\": 56.31\n            }\n        },\n        \"RequestId\": \"3ed7375a-fc2d-488f-88a0-29962f22c929\"\n    }\n}",
         "title": "包年包月实例调整配置询价"
       }
     ],

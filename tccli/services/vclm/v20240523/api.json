@@ -255,6 +255,16 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
+          "document": "掩码视频链接",
+          "example": "https://aiar.com/xxx/mask.mp4",
+          "member": "string",
+          "name": "MaskVideoUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -307,6 +317,26 @@
           "example": "[\"处理中\",\"处理失败\",\"处理中止\",\"处理完成\"]",
           "member": "string",
           "name": "StatusMsg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误码",
+          "example": "FailedOperation.ModerationFailed",
+          "member": "string",
+          "name": "ErrorCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息",
+          "example": "审核未通过",
+          "member": "string",
+          "name": "ErrorMessage",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -601,6 +631,15 @@
           "name": "EnableBodyJoins",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "最终视频是否保留原图的背景（该模式对于tuziwu、huajiangwu不生效）\n",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableSegment",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -632,7 +671,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "传入音频URL地址。音频要求：\n—音频时长：不超过60秒\n—音频格式：mp3、wav、m4a",
+          "document": "传入音频URL地址，音频要求：\n- 音频时长：2秒 - 60秒\n- 音频格式：mp3、wav、m4a",
           "example": "https://***/audio.mp3",
           "member": "string",
           "name": "AudioUrl",
@@ -641,7 +680,7 @@
         },
         {
           "disabled": false,
-          "document": "传入图片URL地址，图片要求：\n—图片格式：jpg、jpeg、png\n—图片分辨率：长边不超过2560\n—图片大小：不超过6M\n—图片宽高比：图片【宽：高】在1:2到2:1范围内",
+          "document": "传入图片URL地址，图片要求：\n- 图片格式：jpg、jpeg、png、bmp、webp\n- 图片分辨率：192～4096\n- 图片大小：不超过10M\n- 图片宽高比：图片【宽：高】在1:2到2:1范围内\n- 图片内容：避免上传无人脸/宠物脸或脸部过小、不完整、不清晰、偏转角度过大的图片。",
           "example": "https://***/image.jpg",
           "member": "string",
           "name": "ImageUrl",
@@ -650,10 +689,19 @@
         },
         {
           "disabled": false,
-          "document": "传入图片Base64编码。\n—图片Base64编码与URL地址必传其一",
+          "document": "传入图片Base64编码，编码后请求体大小不超过10M。\n图片Base64编码与URL地址必传其一，如果都传以ImageBase64为准。",
           "example": "MIIHNjCCBh6gAwIBAgIQCVe4E0h49mzI0NcSqMy1+jANBgkqhkiG9w0BAQsFADB1 MQswCQYDVQQGEwJVUzEVMBMG",
           "member": "string",
           "name": "ImageBase64",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "唱演模式，默认使用人像模式。\nPerson：人像模式，仅支持上传人像图片，人像生成效果更好，如果图中未检测到有效人脸将被拦截，生成时会将视频短边分辨率放缩至512。\nPet：宠物模式，支持宠物等非人像图片，固定生成512:512分辨率视频。",
+          "example": "Person",
+          "member": "string",
+          "name": "Mode",
           "required": false,
           "type": "string"
         }
@@ -775,6 +823,15 @@
           "name": "AudioUrl",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否需要去除VideoUrl或AudioUrl中背景音，取值范围：0-不需要，1-需要，默认0 。",
+          "example": "0",
+          "member": "int64",
+          "name": "RemoveVocal",
+          "required": false,
+          "type": "int"
         },
         {
           "disabled": false,

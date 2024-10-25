@@ -2377,7 +2377,7 @@
         },
         {
           "disabled": false,
-          "document": "购买实例的宿主机类型，CLOUD_PREMIUM-虚拟机高性能云盘，CLOUD_SSD-虚拟机SSD云盘,CLOUD_HSSD-虚拟机加强型SSD云盘，CLOUD_TSSD-虚拟机极速型SSD云盘，CLOUD_BSSD-虚拟机通用型SSD云盘",
+          "document": "购买实例的宿主机类型，CLOUD_PREMIUM-虚拟机高性能云硬盘，CLOUD_SSD-虚拟机SSD云硬盘,CLOUD_HSSD-虚拟机增强型SSD云硬盘，CLOUD_BSSD-虚拟机通用型SSD云盘",
           "example": "CLOUD_PREMIUM",
           "member": "string",
           "name": "MachineType",
@@ -10701,6 +10701,15 @@
           "name": "OrderByType",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "回档异步任务ID",
+          "example": "0",
+          "member": "int64",
+          "name": "FlowId",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -10714,6 +10723,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -10723,6 +10733,7 @@
           "example": "无",
           "member": "RestoreTask",
           "name": "Tasks",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -16279,7 +16290,7 @@
           "example": "mssql-8932uijww",
           "member": "string",
           "name": "TargetInstanceId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -16289,7 +16300,7 @@
           "example": "mssql-890oiioew",
           "member": "string",
           "name": "TargetInstanceName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -16299,7 +16310,7 @@
           "example": "2",
           "member": "int64",
           "name": "TargetInstanceStatus",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -16309,7 +16320,7 @@
           "example": "ap-shanghai",
           "member": "string",
           "name": "TargetRegion",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -16319,7 +16330,7 @@
           "example": "2090292",
           "member": "int64",
           "name": "RestoreId",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -16329,7 +16340,7 @@
           "example": "1",
           "member": "int64",
           "name": "TargetType",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -16339,7 +16350,7 @@
           "example": "1",
           "member": "int64",
           "name": "RestoreType",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -16349,7 +16360,7 @@
           "example": "2023-01-01 12:00:00",
           "member": "string",
           "name": "RestoreTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -16359,7 +16370,7 @@
           "example": "2023-01-01 12:00:00",
           "member": "string",
           "name": "StartTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -16369,7 +16380,7 @@
           "example": "2023-01-02 12:00:00",
           "member": "string",
           "name": "EndTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -16379,7 +16390,17 @@
           "example": "2",
           "member": "int64",
           "name": "Status",
-          "required": false,
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "回档异步任务ID",
+          "example": "0",
+          "member": "int64",
+          "name": "FlowId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }

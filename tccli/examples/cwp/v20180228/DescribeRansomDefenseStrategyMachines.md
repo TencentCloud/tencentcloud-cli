@@ -8,12 +8,7 @@ Input:
 tccli cwp DescribeRansomDefenseStrategyMachines --cli-unfold-argument  \
     --Id 1 \
     --Limit 1 \
-    --Filters.0.Values xx \
-    --Filters.0.Name xx \
-    --Filters.0.ExactMatch True \
-    --Offset 1 \
-    --Order xx \
-    --By xx
+    --Offset 1
 ```
 
 Output: 
@@ -22,9 +17,36 @@ Output:
     "Response": {
         "TotalCount": 1,
         "List": [
-            {}
+            {
+                "Uuid": "1c26308c-5493-4eaf-a817-112ec25f499e",
+                "Quuid": "1c26308c-5493-4eaf-a817-112ec25f499e",
+                "MachineName": "销售许可测试机器",
+                "InstanceId": "ins-ddad",
+                "MachineIp": "10.0.0.2",
+                "MachineWanIp": "xx.xx.xx.xx",
+                "CloudTags": [],
+                "RegionInfo": {
+                    "Region": "ap-guangzhou",
+                    "RegionCode": "gz",
+                    "RegionId": 1,
+                    "RegionName": "华南地区（广州）",
+                    "RegionNameEn": "South China (Guangzhou)"
+                },
+                "Tag": [
+                    {
+                        "Rid": 16069,
+                        "Name": "apitest",
+                        "TagId": 16069
+                    }
+                ],
+                "Status": 1,
+                "StrategyId": 5570,
+                "StrategyName": "tt1",
+                "DiskInfo": "",
+                "HostVersion": 2
+            }
         ],
-        "RequestId": "xx"
+        "RequestId": "544961cc-1ee0-4a5f-9752-7489afa407ef"
     }
 }
 ```

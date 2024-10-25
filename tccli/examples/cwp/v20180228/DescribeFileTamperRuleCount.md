@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cwp DescribeFileTamperRuleCount --cli-unfold-argument  \
-    --Uuids xx
+    --Uuids 1c26308c-5493-4eaf-a817-112ec25f499e
 ```
 
 Output: 
@@ -16,8 +16,8 @@ Output:
         "List": [
             {
                 "Count": 1,
-                "Uuid": "xx",
-                "Name": "xx"
+                "Uuid": "1c26308c-5493-4eaf-a817-112ec25f499e",
+                "Name": "销售许可测试机器"
             }
         ],
         "RequestId": "c741a4fd-776f-499b-85a2-7bc70fd5b92s"

@@ -112,6 +112,12 @@
         "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelCreateBatchQuickSignUrl\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"ProxyOrganizationOpenId\": \"org_dianziqian\",\n        \"AppId\": \"yDRSRUUgygj6rq7wUuO4zjECxndqQApl\"\n    },\n    \"ApproverSignTypes\": [\n        1,\n        3\n    ],\n    \"FlowApproverInfo\": {\n        \"ApproverType\": \"PERSON\"\n    },\n    \"FlowIds\": [\n        \"yDwFkUUckpstin4sUuZjBEY5Ia2XB7sz\",\n        \"yDwFkUUckpstzjhfUugNAWf1KibXqS26\"\n    ],\n    \"JumpUrl\": \"https://abc.com\",\n    \"SignatureTypes\": [\n        0,\n        1\n    ],\n    \"FlowBatchUrlInfo\": {\n        \"FlowBatchApproverInfos\": [\n            {\n                \"FlowId\": \"yDwFkUUckpstin4sUuZjBEY5Ia2XB7sz\",\n                \"RecipientId\": \"yDCmvUUckpup6xhwUxKRs1rIRejg254i\"\n            },\n            {\n                \"FlowId\": \"yDwFkUUckpstzjhfUugNAWf1KibXqS26\",\n                \"RecipientId\": \"yDCmvUUckpup6xh1UxKRs1rwHjT5QyHH\"\n            }\n        ]\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"FlowApproverUrlInfo\": {\n            \"ApproverType\": \"PERSON\",\n            \"LongUrl\": \"https://quick.qian.tencent.cn/guide?Code=yDwi0**BWW4MYlpI&CodeType=QUICK&shortKey=yDwi**KF45&token=C**E\",\n            \"Mobile\": \"\",\n            \"Name\": \"\",\n            \"SignUrl\": \"https://test.essurl.cn/C**E\"\n        },\n        \"RequestId\": \"s16986**08\"\n    }\n}",
         "title": "发起合同后，获取C端签署人的H5批量领取链接"
+      },
+      {
+        "document": "为个人用户生成合同组H5批量签署链接, 并且指定视频问答模式的认证方式",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelCreateBatchQuickSignUrl\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"ProxyOrganizationOpenId\": \"org_dianziqian\",\n        \"AppId\": \"yDRSRUUgygj6rq7wUuO4zjECxndqQApl\"\n    },\n    \"FlowApproverInfo\": {\n        \"ApproverType\": \"PERSON\",\n        \"Mobile\": \"13200000000\",\n        \"Name\": \"典子谦\",\n        \"IdCardNumber\": \"620000198802020000\",\n        \"IdCardType\": \"ID_CARD\"\n    },\n    \"ApproverSignTypes\": [\n        1\n    ],\n    \"Intention\": {\n        \"IntentionType\": 1,\n        \"IntentionQuestions\": [\n            {\n                \"Question\": \"请问，您是否同意签署本协议？可语音回复“同意”或“不同意”。\",\n                \"Answers\": [\n                    \"同意\",\n                    \"我同意\"\n                ]\n            }\n        ]\n    },\n    \"FlowGroupId\": \"yDSL9UUckpo*****jwSsug2y3cW\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowApproverUrlInfo\": {\n            \"ApproverType\": \"PERSON\",\n            \"LongUrl\": \"https://quick.qian.tencent.cn/guide?Code=yDwi0**BWW4MYlpI&CodeType=QUICK&shortKey=yDwi**KF45&token=C**E\",\n            \"Mobile\": \"13200000000\",\n            \"Name\": \"典子谦\",\n            \"SignUrl\": \"https://test.essurl.cn/C**E\"\n        },\n        \"RequestId\": \"s16986**08\"\n    }\n}",
+        "title": "为个人用户生成合同组H5批量签署链接, 并且指定视频问答模式的认证方式"
       }
     ],
     "ChannelCreateBatchSignUrl": [
@@ -574,6 +580,14 @@
         "title": "删除单个用户的印章授权"
       }
     ],
+    "ChannelDescribeAccountBillDetail": [
+      {
+        "document": "查询平台子客（对应的OrganizationOpenId为org_dianziqian）计费详情",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelDescribeAccountBillDetail\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"ProxyOperator\": {\n            \"OpenId\": \"n9527\"\n        },\n        \"ProxyOrganizationOpenId\": \"org_dianziqian\",\n        \"AppId\": \"yDCWpUUckpvv76rqUxjIE8qvXHjCqG4t\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"BoundAccountsNumber\": 1,\n        \"InvalidAccountsNumber\": 0,\n        \"RemainAvailableAccountsNumber\": 9,\n        \"RequestId\": \"d8e66faf-6a5e-4592-9a8e-180b00577571\",\n        \"TotalBuyAccountsNumber\": 0,\n        \"TotalGiftAccountsNumber\": 9\n    }\n}",
+        "title": "查询该第三方平台子客账号计费详情"
+      }
+    ],
     "ChannelDescribeBillUsageDetail": [
       {
         "document": "",
@@ -780,6 +794,20 @@
         "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateChannelOrganizationInfoChangeUrl\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"yDwFoUUckpsomwx1UyhWGhIR2RkhOj2\",\n        \"ProxyOrganizationOpenId\": \"ess_open_organization_1\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"openid1\"\n        }\n    },\n    \"ChangeType\": 1,\n    \"Endpoint\": \"APP\"\n}",
         "output": "{\n    \"Response\": {\n        \"ExpiredTime\": 1695798287,\n        \"RequestId\": \"3bff7e92-76f8-4e09-85df-e7cb982cb454\",\n        \"Url\": \"/pages/guide/index?to=CHANGE_SUPER_ADMIN&organizationId=yDxbWUyKQDxgXVUuO4zjEB8mxCcDjAyF&channelType=test&adminName=张*&legalName=李*&expireTime=1695798287\"\n    }\n}",
         "title": "创建超管变更链接（小程序链接）"
+      }
+    ],
+    "CreateChannelSubOrganizationActive": [
+      {
+        "document": "org_zhangsan和org_lisi两个企业已经是激活态，现在花费两个许可证给两个子客企业分别再续期1年",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateChannelSubOrganizationActive\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"yDwhxUUckp3gl8j5UuFX33LSNozpRsbi\",\n        \"ProxyOrganizationOpenId\": \"org_dianziqian\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"n9527\"\n        }\n    },\n    \"SubOrganizationOpenIds\": [\n        \"org_zhangsan\",\n        \"org_lisi\"\n    ],\n    \"Renew\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"00f08f1c-3823-44c3-8cd1-4e66a0587ab4\"\n    }\n}",
+        "title": "子客续期"
+      },
+      {
+        "document": "org_zhangsan和org_lisi两个企业现在是非激活态（可能是过期，也可能是没有激活过），现在花费两个许可证激活这两个子客企业",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateChannelSubOrganizationActive\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"yDwhxUUckp3gl8j5UuFX33LSNozpRsbi\",\n        \"ProxyOrganizationOpenId\": \"org_dianziqian\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"n9527\"\n        }\n    },\n    \"SubOrganizationOpenIds\": [\n        \"org_zhangsan\",\n        \"org_lisi\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"00f08f1c-3823-44c3-8cd1-4e66a0587ab4\"\n    }\n}",
+        "title": "子客激活"
       }
     ],
     "CreateConsoleLoginUrl": [

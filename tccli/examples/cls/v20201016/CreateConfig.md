@@ -90,6 +90,9 @@ tccli cls CreateConfig --cli-unfold-argument  \
     --ExtractRule.MetaTags.1.Key wd \
     --ExtractRule.MetaTags.1.Value shop \
     --ExtractRule.PathRegex  \
+    --ExtractRule.AdvanceFilterRules.0.Key __CONTENT__ \
+    --ExtractRule.AdvanceFilterRules.0.Rule 0 \
+    --ExtractRule.AdvanceFilterRules.0.Value 400|500 \
     --AdvancedConfig {"ClsAgentMaxDepth":10} \
     --Output 6bf3355c-3c88-4566-89c8-76c3ca37bae9
 ```

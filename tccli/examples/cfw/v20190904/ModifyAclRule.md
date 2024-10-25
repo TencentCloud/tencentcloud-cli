@@ -6,20 +6,21 @@ Input:
 
 ```
 tccli cfw ModifyAclRule --cli-unfold-argument  \
-    --Rules.0.SourceContent abc \
-    --Rules.0.SourceType abc \
-    --Rules.0.TargetContent abc \
-    --Rules.0.TargetType abc \
-    --Rules.0.Protocol abc \
-    --Rules.0.RuleAction abc \
-    --Rules.0.Port abc \
-    --Rules.0.Direction 1 \
-    --Rules.0.OrderIndex 0 \
-    --Rules.0.Uuid 0 \
-    --Rules.0.Enable abc \
-    --Rules.0.Description abc \
-    --Rules.0.Scope abc \
-    --Rules.0.RuleSource 0
+    --Rules.0.SourceContent 0.0.0.0/0 \
+    --Rules.0.SourceType net \
+    --Rules.0.Description test \
+    --Rules.0.TargetContent www.qq.com \
+    --Rules.0.TargetType domain \
+    --Rules.0.Protocol HTTPS \
+    --Rules.0.RuleAction accept \
+    --Rules.0.Port -1/-1 \
+    --Rules.0.Direction 0 \
+    --Rules.0.OrderIndex 1 \
+    --Rules.0.Scope serial \
+    --Rules.0.RuleSource 0 \
+    --Rules.0.ParamTemplateId  \
+    --Rules.0.Uuid 148195 \
+    --Rules.0.Enable true
 ```
 
 Output: 
@@ -27,9 +28,9 @@ Output:
 {
     "Response": {
         "RuleUuid": [
-            0
+            148195
         ],
-        "RequestId": "abc"
+        "RequestId": "3cfe92c5-da49-411e-9254-559a295471e9"
     }
 }
 ```

@@ -11,20 +11,18 @@ Output:
 ```
 {
     "Response": {
-        "VulCategories": "abc",
-        "VulLevels": "abc",
+        "ClickTimeout": 0,
+        "EnableScan": 0,
+        "EndTime": "23:50",
+        "RequestId": "54111d3a-373d-4175-80dd-8d855b595647",
+        "ScanMethod": 0,
+        "StartTime": "00:40",
         "TimerInterval": 1,
-        "TimerTime": "abc",
+        "TimerTime": "00:40",
+        "Uuids": [],
+        "VulCategories": "4;5;1;2",
         "VulEmergency": 1,
-        "StartTime": "abc",
-        "EnableScan": 1,
-        "EndTime": "abc",
-        "ClickTimeout": 1,
-        "Uuids": [
-            "abc"
-        ],
-        "ScanMethod": 1,
-        "RequestId": "abc"
+        "VulLevels": "1;2;3;4"
     }
 }
 ```

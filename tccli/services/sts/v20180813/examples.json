@@ -55,8 +55,8 @@
     "QueryApiKey": [
       {
         "document": "",
-        "input": "https://sts.tencentcloudapi.com/?Action=QueryApiKey\r\n&TargetUin=123456\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"\"\n    }\n}",
+        "input": "https://sts.tencentcloudapi.com/?Action=QueryApiKey\n&TargetUin=100020328651\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"IdKeys\": [\n            {\n                \"SecretId\": \"AKID5Cn***\",\n                \"CreateTime\": 1575517111,\n                \"Status\": 2\n            }\n        ],\n        \"RequestId\": \"5cf9d558-a46a-4ce7-bbc2-500cad68b0da\"\n    }\n}",
         "title": "拉取API密钥列表"
       }
     ]

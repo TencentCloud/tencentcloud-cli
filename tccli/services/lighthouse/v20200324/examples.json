@@ -11,7 +11,7 @@
     "ApplyFirewallTemplate": [
       {
         "document": "应用防火墙模板",
-        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ApplyFirewallTemplate\n<公共请求参数>\n\n{\n    \"TemplateId\": \"lhft-6brh0ciy\",\n    \"ApplyInstances\": [\n        {\n            \"InstanceId\": \"lhins-abcd1234\",\n            \"Region\": \"ap-guangzhou\"\n        }\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ApplyFirewallTemplate\n<公共请求参数>\n\n{\n    \"TemplateId\": \"lhft-s2dxd7iy\",\n    \"ApplyInstances\": [\n        {\n            \"InstanceId\": \"lhins-wld7xie9\",\n            \"Region\": \"ap-guangzhou\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"a880f7ad-a9a0-40a6-b67e-f3ad4f7d9abd\",\n        \"TaskId\": \"lgtk-6brh0ciy\"\n    }\n}",
         "title": "应用防火墙模板"
       }

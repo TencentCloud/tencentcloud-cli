@@ -6,11 +6,12 @@ Input:
 
 ```
 tccli tdmq ResetRocketMQConsumerOffSet --cli-unfold-argument  \
-    --ClusterId ocketmq-2p9vx3ax9jxg \
-    --NamespaceId example \
-    --GroupId group-example \
-    --Topic example-topic \
-    --Type 0
+    --ClusterId rocketmq-2p9vx3ax9jxg \
+    --NamespaceId test_namespace \
+    --GroupId test_group \
+    --Topic test_topic \
+    --Type 1 \
+    --ResetTimestamp 1697945990000
 ```
 
 Output: 

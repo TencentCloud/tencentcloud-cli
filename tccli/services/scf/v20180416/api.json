@@ -1536,7 +1536,7 @@
         {
           "disabled": false,
           "document": "函数所属命名空间",
-          "example": "\"\"",
+          "example": "default",
           "member": "string",
           "name": "Namespace",
           "required": false,
@@ -1545,7 +1545,7 @@
         {
           "disabled": false,
           "document": "填写需要删除的版本号，不填默认删除函数下全部版本。",
-          "example": "\"\"",
+          "example": "$LATEST",
           "member": "string",
           "name": "Qualifier",
           "required": false,
@@ -3476,7 +3476,7 @@
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3486,7 +3486,7 @@
           "example": "无",
           "member": "RequestStatus",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -4173,7 +4173,7 @@
           "example": "无",
           "member": "Alias",
           "name": "Aliases",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4183,7 +4183,7 @@
           "example": "无",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4548,6 +4548,7 @@
           "example": "无",
           "member": "LayerVersionInfo",
           "name": "Layers",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4557,6 +4558,7 @@
           "example": "0",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5427,7 +5429,7 @@
         {
           "disabled": false,
           "document": "函数的命名空间",
-          "example": "\"\"",
+          "example": "default",
           "member": "string",
           "name": "Namespace",
           "required": false,
@@ -5445,6 +5447,7 @@
           "example": "4",
           "member": "string",
           "name": "FunctionVersion",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5454,6 +5457,7 @@
           "example": "45686",
           "member": "int64",
           "name": "CodeSize",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5463,6 +5467,7 @@
           "example": "256",
           "member": "int64",
           "name": "MemorySize",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5472,6 +5477,7 @@
           "example": "dummytut",
           "member": "string",
           "name": "Description",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5481,6 +5487,7 @@
           "example": "scfredis.main_handler",
           "member": "string",
           "name": "Handler",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5490,6 +5497,7 @@
           "example": "3",
           "member": "int64",
           "name": "Timeout",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5499,6 +5507,7 @@
           "example": "Python2.7",
           "member": "string",
           "name": "Runtime",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5508,6 +5517,7 @@
           "example": "default",
           "member": "string",
           "name": "Namespace",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

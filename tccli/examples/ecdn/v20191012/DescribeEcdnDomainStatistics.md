@@ -20,7 +20,7 @@ Output:
         "RequestId": "13d41d37-546f-42ed-a3b9-ff82a51ecd0a",
         "Data": [
             {
-                "Resource": "stsdk.vivo.com.cn",
+                "Resource": "www.test.com",
                 "DetailData": [
                     {
                         "Name": "request",

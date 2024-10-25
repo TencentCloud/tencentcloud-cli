@@ -8,7 +8,7 @@ Input:
 tccli gaap ModifyGlobalDomainAttribute --cli-unfold-argument  \
     --ProjectId 0 \
     --DefaultValue 1.1.1.1 \
-    --DomainId test.com \
+    --DomainId dm-00ye8ek7 \
     --Alias test
 ```
 

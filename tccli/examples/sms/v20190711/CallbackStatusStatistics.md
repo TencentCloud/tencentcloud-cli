@@ -8,7 +8,7 @@ Input:
 tccli sms CallbackStatusStatistics --cli-unfold-argument  \
     --StartDateTime 2016090800 \
     --EndDataTime 2016090823 \
-    --SmsSdkAppid 1400006874 \
+    --SmsSdkAppid ' 1400006666' \
     --Limit 0 \
     --Offset 0
 ```

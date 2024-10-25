@@ -38,7 +38,9 @@ Output:
                 "ResourceAuthType": "abc",
                 "ResourceAuthAccount": "abc",
                 "InstanceType": "abc",
-                "InstanceValue": "abc"
+                "InstanceValue": "abc",
+                "GovernAuthStatus": 0,
+                "AuthRange": "abc"
             }
         ],
         "TotalCount": 1,

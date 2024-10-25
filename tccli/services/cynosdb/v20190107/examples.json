@@ -636,7 +636,7 @@
       {
         "document": "查询支持的数据库代理版本",
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSupportProxyVersion\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-abc\",\n    \"ProxyGroupId\": \"cynosdbmysql-proxy-abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"SupportProxyVersions\": [\n            \"abc\"\n        ],\n        \"CurrentProxyVersion\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"SupportProxyVersions\": [\n            \"3.1.4\"\n        ],\n        \"CurrentProxyVersion\": \"3.1.1\",\n        \"SupportProxyVersionDetail\": [\n            {\n                \"ProxyVersion\": \"3.1.5\",\n                \"ProxyVersionType\": \"BATE\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "查询支持的数据库代理版本"
       }
     ],
@@ -652,7 +652,7 @@
       {
         "document": "仅查看用户有权限的可用区",
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeZones\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RegionSet\": [\n            {\n                \"DbType\": \"MYSQL\",\n                \"Region\": \"ap-guangzhou\",\n                \"RegionId\": 100001,\n                \"Modules\": [\n                    {\n                        \"ModuleName\": \"is.disable.wan\",\n                        \"IsDisable\": \"yes\"\n                    }\n                ],\n                \"RegionZh\": \"广州\",\n                \"ZoneSet\": [\n                    {\n                        \"PhysicalZone\": \"ap-guangzhou-2\",\n                        \"Zone\": \"ap-guangzhou-2\",\n                        \"IsSupportServerless\": 0,\n                        \"ZoneId\": 100003,\n                        \"IsSupportNormal\": 0,\n                        \"ZoneZh\": \"广州二区\",\n                        \"HasPermission\": true,\n                        \"IsWholeRdmaZone\": \"abc\"\n                    },\n                    {\n                        \"PhysicalZone\": \"ao-guangzhou-5\",\n                        \"Zone\": \"ap-guangzhou-5\",\n                        \"IsSupportServerless\": 0,\n                        \"ZoneId\": 100004,\n                        \"IsSupportNormal\": 0,\n                        \"ZoneZh\": \"广州五区\",\n                        \"HasPermission\": true,\n                        \"IsWholeRdmaZone\": \"abc\"\n                    }\n                ]\n            },\n            {\n                \"DbType\": \"MYSQL\",\n                \"Region\": \"ap-beijing\",\n                \"RegionId\": 8,\n                \"Modules\": [\n                    {\n                        \"ModuleName\": \"is.disable.wan\",\n                        \"IsDisable\": \"no\"\n                    }\n                ],\n                \"RegionZh\": \"北京\",\n                \"ZoneSet\": [\n                    {\n                        \"PhysicalZone\": \"ap-beijing-5\",\n                        \"Zone\": \"ap-beijing-5\",\n                        \"IsSupportServerless\": 0,\n                        \"ZoneId\": 800001,\n                        \"IsSupportNormal\": 0,\n                        \"ZoneZh\": \"北京五区\",\n                        \"HasPermission\": true,\n                        \"IsWholeRdmaZone\": \"abc\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"1qwert-123-asbc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RegionSet\": [\n            {\n                \"DbType\": \"MYSQL\",\n                \"Region\": \"ap-guangzhou\",\n                \"RegionId\": 100001,\n                \"Modules\": [\n                    {\n                        \"ModuleName\": \"is.disable.wan\",\n                        \"IsDisable\": \"yes\"\n                    }\n                ],\n                \"RegionZh\": \"广州\",\n                \"ZoneSet\": [\n                    {\n                        \"PhysicalZone\": \"ap-guangzhou-2\",\n                        \"Zone\": \"ap-guangzhou-2\",\n                        \"IsSupportServerless\": 0,\n                        \"ZoneId\": 100003,\n                        \"IsSupportNormal\": 0,\n                        \"ZoneZh\": \"广州二区\",\n                        \"HasPermission\": true,\n                        \"IsWholeRdmaZone\": \"abc\",\n                        \"IsSupportCreateCluster\": 1\n                    },\n                    {\n                        \"PhysicalZone\": \"ao-guangzhou-5\",\n                        \"Zone\": \"ap-guangzhou-5\",\n                        \"IsSupportServerless\": 0,\n                        \"ZoneId\": 100004,\n                        \"IsSupportNormal\": 0,\n                        \"ZoneZh\": \"广州五区\",\n                        \"HasPermission\": true,\n                        \"IsWholeRdmaZone\": \"abc\",\n                        \"IsSupportCreateCluster\": 0\n                    }\n                ]\n            },\n            {\n                \"DbType\": \"MYSQL\",\n                \"Region\": \"ap-beijing\",\n                \"RegionId\": 8,\n                \"Modules\": [\n                    {\n                        \"ModuleName\": \"is.disable.wan\",\n                        \"IsDisable\": \"no\"\n                    }\n                ],\n                \"RegionZh\": \"北京\",\n                \"ZoneSet\": [\n                    {\n                        \"PhysicalZone\": \"ap-beijing-5\",\n                        \"Zone\": \"ap-beijing-5\",\n                        \"IsSupportServerless\": 0,\n                        \"ZoneId\": 800001,\n                        \"IsSupportNormal\": 0,\n                        \"ZoneZh\": \"北京五区\",\n                        \"HasPermission\": true,\n                        \"IsWholeRdmaZone\": \"abc\",\n                        \"IsSupportCreateCluster\": 1\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"1qwert-123-asbc\"\n    }\n}",
         "title": "查询可售卖地域可用区信息"
       }
     ],
@@ -704,6 +704,14 @@
         "title": "新购集群询价"
       }
     ],
+    "InquirePriceModify": [
+      {
+        "document": "使用该接口进行变配预付费资源询价，后付费资源变配询价需直接使用InquirePriceCreate接口",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquirePriceModify\n<公共请求参数>\n\n{\n    \"Cpu\": 0,\n    \"Memory\": 0,\n    \"StorageLimit\": 0,\n    \"ClusterId\": \"abc\",\n    \"InstanceId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"InstancePrice\": {\n            \"TotalPrice\": 0,\n            \"Discount\": 0,\n            \"TotalPriceDiscount\": 0,\n            \"UnitPrice\": 0,\n            \"UnitPriceDiscount\": 0,\n            \"ChargeUnit\": \"abc\"\n        },\n        \"StoragePrice\": {\n            \"TotalPrice\": 0,\n            \"Discount\": 0,\n            \"TotalPriceDiscount\": 0,\n            \"UnitPrice\": 0,\n            \"UnitPriceDiscount\": 0,\n            \"ChargeUnit\": \"abc\"\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "变配预付费资源询价"
+      }
+    ],
     "InquirePriceRenew": [
       {
         "document": "",
@@ -739,8 +747,8 @@
     "ModifyAccountHost": [
       {
         "document": "修改账号主机",
-        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAccountHost\n<公共请求参数>\n\n{\n    \"ClusterId\": \"abc\",\n    \"NewHost\": \"abc\",\n    \"Account\": {\n        \"AccountName\": \"abc\",\n        \"Host\": \"abc\"\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"128046\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAccountHost\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-on5xw0ni\",\n    \"NewHost\": \"192.168.12.15\",\n    \"Account\": {\n        \"AccountName\": \"tomo1\",\n        \"Host\": \"%\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3558f586-4f83-4f3b-aabc-49d20126f657\"\n    }\n}",
         "title": "修改账号主机"
       }
     ],
@@ -859,7 +867,7 @@
     "ModifyDBInstanceSecurityGroups": [
       {
         "document": "修改实例绑定安全组",
-        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDBInstanceSecurityGroups\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cynosdbmysql-ins-lkj\",\n    \"SecurityGroupIds\": [\n        \"sg-mnbv\"\n    ],\n    \"Zone\": \"ap-guangzhou-3\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDBInstanceSecurityGroups\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cynosdbmysql-j8ynfcpgj\",\n    \"SecurityGroupIds\": [\n        \"sg-mnbv\"\n    ],\n    \"Zone\": \"ap-guangzhou-3\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "修改实例绑定安全组"
       }

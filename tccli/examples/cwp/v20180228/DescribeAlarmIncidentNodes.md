@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cwp DescribeAlarmIncidentNodes --cli-unfold-argument  \
-    --Uuid abc \
-    --AlarmVid abc \
+    --Uuid 1c26308c-5493-4eaf-a817-112ec25f499e \
+    --AlarmVid 23eeeb4347bdd26bfc6b7ee9a3b755dd \
     --AlarmTime 0
 ```
 
@@ -17,30 +17,30 @@ Output:
     "Response": {
         "IncidentNodes": [
             {
-                "IncidentId": "abc",
-                "TableName": "abc",
+                "IncidentId": "xxxx-xx-xx-xxxx",
+                "TableName": "events_bash",
                 "Vertex": [
                     {
                         "Type": 0,
-                        "Vid": "abc",
-                        "ParentVid": "abc",
+                        "Vid": "23eeeb4347bdd26bfc6b7ee9a3b755dd",
+                        "ParentVid": "23eeeb4347bdd26bfc6b7ee9a3b755dd",
                         "IsLeaf": true,
-                        "ProcNamePrefix": "abc",
-                        "ProcNameMd5": "abc",
-                        "CmdLinePrefix": "abc",
-                        "CmdLineMd5": "abc",
-                        "FilePathPrefix": "abc",
-                        "AddressPrefix": "abc",
+                        "ProcNamePrefix": "python",
+                        "ProcNameMd5": "23eeeb4347bdd26bfc6b7ee9a3b755dd",
+                        "CmdLinePrefix": "python",
+                        "CmdLineMd5": "23eeeb4347bdd26bfc6b7ee9a3b755dd",
+                        "FilePathPrefix": "/root",
+                        "AddressPrefix": "/root",
                         "IsWeDetect": true,
                         "IsAlarm": true,
-                        "FilePathMd5": "abc",
-                        "AddressMd5": "abc"
+                        "FilePathMd5": "887904812217cca9bc2b9adb875daf42",
+                        "AddressMd5": "887904812217cca9bc2b9adb875daf42"
                     }
                 ],
                 "VertexCount": 0
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "xxxxxxxx-1234-5678-9101-yyyyyyyyyy"
     }
 }
 ```

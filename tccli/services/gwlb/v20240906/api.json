@@ -1,0 +1,1807 @@
+{
+  "actions": {
+    "AssociateTargetGroups": {
+      "document": "本接口(AssociateTargetGroups)用来将目标组绑定到负载均衡。\n本接口为异步接口，本接口返回成功后需以返回的 RequestID 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。",
+      "input": "AssociateTargetGroupsRequest",
+      "name": "负载均衡关联目标组",
+      "output": "AssociateTargetGroupsResponse",
+      "status": "online"
+    },
+    "CreateGatewayLoadBalancer": {
+      "document": "本接口(CreateGatewayLoadBalancer)用来创建网关负载均衡实例。为了使用网关负载均衡服务，您必须购买一个或多个网关负载均衡实例。成功调用该接口后，会返回网关负载均衡实例的唯一 ID。\n注意：单个账号在每个地域的默认购买配额为：10个。\n本接口为异步接口，接口成功返回后，可使用 DescribeGatewayLoadBalancers 接口查询负载均衡实例的状态（如创建中、正常），以确定是否创建成功。",
+      "input": "CreateGatewayLoadBalancerRequest",
+      "name": "购买网关负载均衡实例",
+      "output": "CreateGatewayLoadBalancerResponse",
+      "status": "online"
+    },
+    "CreateTargetGroup": {
+      "document": "创建目标组。该功能正在内测中，如需使用，请通过[工单申请](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=163&source=0&data_title=%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%20LB&step=1)。",
+      "input": "CreateTargetGroupRequest",
+      "name": "创建目标组",
+      "output": "CreateTargetGroupResponse",
+      "status": "online"
+    },
+    "DeleteGatewayLoadBalancer": {
+      "document": "DeleteGatewayLoadBalancer 接口用以删除指定的一个或多个网关负载均衡实例。成功删除后，会把网关负载均衡实例与后端服务解绑。\n本接口为异步接口，接口返回成功后，需以返回的 RequestId 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。",
+      "input": "DeleteGatewayLoadBalancerRequest",
+      "name": "删除网关负载均衡实例",
+      "output": "DeleteGatewayLoadBalancerResponse",
+      "status": "online"
+    },
+    "DeleteTargetGroups": {
+      "document": "删除目标组",
+      "input": "DeleteTargetGroupsRequest",
+      "name": "删除目标组",
+      "output": "DeleteTargetGroupsResponse",
+      "status": "online"
+    },
+    "DeregisterTargetGroupInstances": {
+      "document": "从目标组中解绑服务器。\n本接口为异步接口，本接口返回成功后需以返回的 RequestID 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。",
+      "input": "DeregisterTargetGroupInstancesRequest",
+      "name": "解绑目标组中的实例",
+      "output": "DeregisterTargetGroupInstancesResponse",
+      "status": "online"
+    },
+    "DescribeGatewayLoadBalancers": {
+      "document": "查询一个地域的网关负载均衡实例列表。",
+      "input": "DescribeGatewayLoadBalancersRequest",
+      "name": "查询网关负载均衡实例列表",
+      "output": "DescribeGatewayLoadBalancersResponse",
+      "status": "online"
+    },
+    "DescribeTargetGroupInstanceStatus": {
+      "document": "查询目标组后端服务状态。目前仅支持网关负载均衡类型的目标组支持查询后端服务状态。",
+      "input": "DescribeTargetGroupInstanceStatusRequest",
+      "name": "查询目标组后端服务状态",
+      "output": "DescribeTargetGroupInstanceStatusResponse",
+      "status": "online"
+    },
+    "DescribeTargetGroupInstances": {
+      "document": "获取目标组绑定的服务器信息。",
+      "input": "DescribeTargetGroupInstancesRequest",
+      "name": "获取目标组绑定的实例列表",
+      "output": "DescribeTargetGroupInstancesResponse",
+      "status": "online"
+    },
+    "DescribeTargetGroupList": {
+      "document": "获取目标组列表",
+      "input": "DescribeTargetGroupListRequest",
+      "name": "获取目标组列表",
+      "output": "DescribeTargetGroupListResponse",
+      "status": "online"
+    },
+    "DescribeTargetGroups": {
+      "document": "查询目标组信息",
+      "input": "DescribeTargetGroupsRequest",
+      "name": "查询目标组信息",
+      "output": "DescribeTargetGroupsResponse",
+      "status": "online"
+    },
+    "DescribeTaskStatus": {
+      "document": "本接口用于查询异步任务的执行状态，对于非查询类的接口（创建/删除负载均衡实例等），在接口调用成功后，都需要使用本接口查询任务最终是否执行成功。",
+      "input": "DescribeTaskStatusRequest",
+      "name": "查询异步任务状态",
+      "output": "DescribeTaskStatusResponse",
+      "status": "online"
+    },
+    "DisassociateTargetGroups": {
+      "document": "解除负载均衡和目标组的关联关系。\n本接口为异步接口，本接口返回成功后需以返回的 RequestID 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。",
+      "input": "DisassociateTargetGroupsRequest",
+      "name": "解除负载均衡和目标组的关联关系",
+      "output": "DisassociateTargetGroupsResponse",
+      "status": "online"
+    },
+    "InquirePriceCreateGatewayLoadBalancer": {
+      "document": "InquirePriceCreateGatewayLoadBalancer接口查询创建网关负载均衡的价格。",
+      "input": "InquirePriceCreateGatewayLoadBalancerRequest",
+      "name": "购买网关负载均衡询价",
+      "output": "InquirePriceCreateGatewayLoadBalancerResponse",
+      "status": "online"
+    },
+    "ModifyGatewayLoadBalancerAttribute": {
+      "document": "ModifyGatewayLoadBalancerAttribute 接口用于修改负载均衡实例的属性。支持修改负载均衡实例的名称、带宽上限。",
+      "input": "ModifyGatewayLoadBalancerAttributeRequest",
+      "name": "修改网关负载均衡实例的属性",
+      "output": "ModifyGatewayLoadBalancerAttributeResponse",
+      "status": "online"
+    },
+    "ModifyTargetGroupAttribute": {
+      "document": "修改目标组的名称、健康探测等属性。",
+      "input": "ModifyTargetGroupAttributeRequest",
+      "name": "修改目标组属性",
+      "output": "ModifyTargetGroupAttributeResponse",
+      "status": "online"
+    },
+    "ModifyTargetGroupInstancesWeight": {
+      "document": "修改目标组的服务器权重。\n本接口为异步接口，本接口返回成功后需以返回的 RequestID 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。",
+      "input": "ModifyTargetGroupInstancesWeightRequest",
+      "name": "修改目标组的服务器权重",
+      "output": "ModifyTargetGroupInstancesWeightResponse",
+      "status": "online"
+    },
+    "RegisterTargetGroupInstances": {
+      "document": "注册服务器到目标组。\n本接口为异步接口，本接口返回成功后需以返回的 RequestID 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。",
+      "input": "RegisterTargetGroupInstancesRequest",
+      "name": "目标组中添加实例",
+      "output": "RegisterTargetGroupInstancesResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2024-09-06",
+    "api_brief": "介绍如何使用API的方式使用网关负载均衡服务，包含实例的创建、配置和查询等内容。",
+    "serviceNameCN": "网关负载均衡",
+    "serviceShortName": "gwlb"
+  },
+  "objects": {
+    "AssociateTargetGroupsRequest": {
+      "document": "AssociateTargetGroups请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "绑定的关系数组。一次请求最多支持20个。",
+          "example": "无",
+          "member": "TargetGroupAssociation",
+          "name": "Associations",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "AssociateTargetGroupsResponse": {
+      "document": "AssociateTargetGroups返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AssociationItem": {
+      "document": "目标组关联到的规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "关联到的网关负载均衡实例ID",
+          "example": "无",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "网关负载均衡实例名称",
+          "example": "无",
+          "member": "string",
+          "name": "LoadBalancerName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CreateGatewayLoadBalancerRequest": {
+      "document": "CreateGatewayLoadBalancer请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关负载均衡后端目标设备所属的私有网络 ID，如vpc-12345678，可以通过 DescribeVpcEx 接口获取。 不填此参数则默认为DefaultVPC。创建内网负载均衡实例时，此参数必填。",
+          "example": "vpc-30xq****",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "网关负载均衡后端目标设备所属的私有网络的子网ID。",
+          "example": "subnet-xxx",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "网关负载均衡实例名称。可支持输入1-60个字符。不填写时默认自动生成。",
+          "example": "gwlb-xxx",
+          "member": "string",
+          "name": "LoadBalancerName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "创建网关负载均衡的个数，默认值为 1。批量创建数量最大支持10个。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Number",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "购买网关负载均衡的同时，给负载均衡打上标签，最大支持20个标签键值对。",
+          "example": "无",
+          "member": "TagInfo",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "网关负载均衡实例计费类型，当前只支持传POSTPAID_BY_HOUR，默认是POSTPAID_BY_HOUR。",
+          "example": "POSTPAID_BY_HOUR",
+          "member": "string",
+          "name": "LBChargeType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateGatewayLoadBalancerResponse": {
+      "document": "CreateGatewayLoadBalancer返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "由网关负载均衡实例唯一 ID 组成的数组。\n存在某些场景，如创建出现延迟时，此字段可能返回为空；此时可以根据接口返回的RequestId或DealName参数，通过DescribeTaskStatus接口查询创建的资源ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"gwlb-6efswuxa\"]",
+          "member": "string",
+          "name": "LoadBalancerIds",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "订单号。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022XXXX",
+          "member": "string",
+          "name": "DealName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTargetGroupRequest": {
+      "document": "CreateTargetGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "目标组名称，限定60个字符。",
+          "example": "test-name",
+          "member": "string",
+          "name": "TargetGroupName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "目标组的vpcid属性，不填则使用默认vpc",
+          "example": "vpc-i1******",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "目标组的默认端口， 后续添加服务器时可使用该默认端口。Port和TargetGroupInstances.N中的port二者必填其一。",
+          "example": "80",
+          "member": "uint64",
+          "name": "Port",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "目标组绑定的后端服务器",
+          "example": "无",
+          "member": "TargetGroupInstance",
+          "name": "TargetGroupInstances",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "网关负载均衡目标组协议。\n- TENCENT_GENEVE ：GENEVE 标准协议\n- AWS_GENEVE：GENEVE 兼容协议（需要提交工单申请开白）",
+          "example": "GENEVE",
+          "member": "string",
+          "name": "Protocol",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "健康检查设置。",
+          "example": "无",
+          "member": "TargetGroupHealthCheck",
+          "name": "HealthCheck",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "均衡算法。\n- IP_HASH_3_ELASTIC：弹性哈希",
+          "example": "IP_HASH_3_ELASTIC",
+          "member": "string",
+          "name": "ScheduleAlgorithm",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否支持全死全活。默认支持。",
+          "example": "true",
+          "member": "bool",
+          "name": "AllDeadToAlive",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTargetGroupResponse": {
+      "document": "CreateTargetGroup返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "创建目标组后生成的id",
+          "example": "lbtg-81******",
+          "member": "string",
+          "name": "TargetGroupId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteGatewayLoadBalancerRequest": {
+      "document": "DeleteGatewayLoadBalancer请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "要删除的网关负载均衡实例 ID数组，数组大小最大支持20。",
+          "example": "[\"gwlb-hs******\\r\\n\"]",
+          "member": "string",
+          "name": "LoadBalancerIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteGatewayLoadBalancerResponse": {
+      "document": "DeleteGatewayLoadBalancer返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTargetGroupsRequest": {
+      "document": "DeleteTargetGroups请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "目标组ID列表。",
+          "example": "[\"lbtg-f1phe5j6\"]",
+          "member": "string",
+          "name": "TargetGroupIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTargetGroupsResponse": {
+      "document": "DeleteTargetGroups返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeregisterTargetGroupInstancesRequest": {
+      "document": "DeregisterTargetGroupInstances请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "目标组ID。",
+          "example": "lbtg-815iz538",
+          "member": "string",
+          "name": "TargetGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "待解绑的服务器信息。",
+          "example": "无",
+          "member": "TargetGroupInstance",
+          "name": "TargetGroupInstances",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeregisterTargetGroupInstancesResponse": {
+      "document": "DeregisterTargetGroupInstances返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGatewayLoadBalancersRequest": {
+      "document": "DescribeGatewayLoadBalancers请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关负载均衡实例ID。支持批量筛选的实例ID数量上限为20个。",
+          "example": "gwlb-pnzsdc1a",
+          "member": "string",
+          "name": "LoadBalancerIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "一次批量返回网关负载均衡实例的数量，默认为20，最大值为100。",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "返回网关负载均衡实例列表的起始偏移量，默认0。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询负载均衡详细信息列表的过滤条件，每次请求的Filters的上限为10，Filter.Values的上限为100。\nFilter.Name和Filter.Values皆为必填项。详细的过滤条件如下：\n- name - String - 是否必填：否 - （过滤条件）按照网关负载均衡实例名称过滤，如“gwlb-xxxx”。\n- VpcId - String - 是否必填：否 - （过滤条件）按照网关负载均衡实例所属的私有网络过滤，如“vpc-bhqk****”。\n",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "搜索字段，模糊匹配名称、VIP。",
+          "example": "test-name",
+          "member": "string",
+          "name": "SearchKey",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGatewayLoadBalancersResponse": {
+      "document": "DescribeGatewayLoadBalancers返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "满足过滤条件的负载均衡实例总数。此数值与入参中的Limit无关。",
+          "example": "无",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "返回的网关负载均衡实例数组。",
+          "example": "无",
+          "member": "GatewayLoadBalancer",
+          "name": "LoadBalancerSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTargetGroupInstanceStatusRequest": {
+      "document": "DescribeTargetGroupInstanceStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "目标组唯一id",
+          "example": "lbtg-xxx",
+          "member": "string",
+          "name": "TargetGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "目标组绑定的后端服务ip列表",
+          "example": "[\"10.0.0.1\"]",
+          "member": "string",
+          "name": "TargetGroupInstanceIps",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTargetGroupInstanceStatusResponse": {
+      "document": "DescribeTargetGroupInstanceStatus返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "健康检查后端rs状态列表",
+          "example": "null",
+          "member": "TargetGroupInstanceStatus",
+          "name": "TargetGroupInstanceSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTargetGroupInstancesRequest": {
+      "document": "DescribeTargetGroupInstances请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "过滤条件，当前仅支持TargetGroupId，BindIP，InstanceId过滤。",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "显示数量限制，默认20。",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "显示的偏移量，默认为0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTargetGroupInstancesResponse": {
+      "document": "DescribeTargetGroupInstances返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "本次查询的结果数量。",
+          "example": "2",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "绑定的服务器信息。",
+          "example": "无",
+          "member": "TargetGroupBackend",
+          "name": "TargetGroupInstanceSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实际统计数量，不受Limit、Offset、CAM的影响。",
+          "example": "2",
+          "member": "uint64",
+          "name": "RealCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTargetGroupListRequest": {
+      "document": "DescribeTargetGroupList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "目标组ID数组。",
+          "example": "[\"lbtg-5xu****\"]",
+          "member": "string",
+          "name": "TargetGroupIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件数组，支持TargetGroupVpcId和TargetGroupName。",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "显示的偏移起始量。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "显示条数限制，默认为20。",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTargetGroupListResponse": {
+      "document": "DescribeTargetGroupList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "显示的结果数量。",
+          "example": "2",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "显示的目标组信息集合。",
+          "example": "无",
+          "member": "TargetGroupInfo",
+          "name": "TargetGroupSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTargetGroupsRequest": {
+      "document": "DescribeTargetGroups请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "目标组ID，与Filters互斥。",
+          "example": "[\"lbtg-5xunivs0\\r\\n\"]",
+          "member": "string",
+          "name": "TargetGroupIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "显示条数限制，默认为20。",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "显示的偏移起始量。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件数组，支持TargetGroupVpcId和TargetGroupName。",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTargetGroupsResponse": {
+      "document": "DescribeTargetGroups返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "显示的结果数量。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "显示的目标组信息集合。",
+          "example": "无",
+          "member": "TargetGroupInfo",
+          "name": "TargetGroupSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTaskStatusRequest": {
+      "document": "DescribeTaskStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "请求ID，即接口返回的 RequestId 参数。",
+          "example": "55c85074-3e7f-4c6d-864f-673660d4f8de",
+          "member": "string",
+          "name": "TaskId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTaskStatusResponse": {
+      "document": "DescribeTaskStatus返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务的当前状态。 0：成功，1：失败，2：进行中。",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "由负载均衡实例唯一 ID 组成的数组。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"gwlb-6efswuxa\"]",
+          "member": "string",
+          "name": "LoadBalancerIds",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "辅助描述信息，如失败原因等。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DisassociateTargetGroupsRequest": {
+      "document": "DisassociateTargetGroups请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "待解绑的目标组列表。",
+          "example": "无",
+          "member": "TargetGroupAssociation",
+          "name": "Associations",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DisassociateTargetGroupsResponse": {
+      "document": "DisassociateTargetGroups返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Filter": {
+      "document": "过滤器条件",
+      "members": [
+        {
+          "disabled": false,
+          "document": "过滤器的名称",
+          "example": "",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤器的值数组",
+          "example": "",
+          "member": "string",
+          "name": "Values",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
+    "GatewayLoadBalancer": {
+      "document": "网关负载均衡实例的信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关负载均衡实例 ID。",
+          "example": "gwlb-xxx",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "网关负载均衡实例的名称。",
+          "example": "Name",
+          "member": "string",
+          "name": "LoadBalancerName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "网关负载均衡所属私有网络。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "vpc-mj65xxxx",
+          "member": "string",
+          "name": "VpcId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "网关负载均衡所属子网。",
+          "example": "subnet-lzj3xxxx",
+          "member": "string",
+          "name": "SubnetId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "网关负载均衡提供服务的虚拟IP。",
+          "example": "x.x.x.x",
+          "member": "string",
+          "name": "Vips",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "网关负载均衡实例状态。\n0：创建中，1：正常运行，3：删除中。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "关联的目标组唯一ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "lbtg-xxx",
+          "member": "string",
+          "name": "TargetGroupId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否开启删除保护功能。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "DeleteProtect",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "负载均衡实例的标签信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TagInfo",
+          "name": "Tags",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间。",
+          "example": "2024-10-15 20:30:48",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "网关负载均衡实例的计费类型，POSTPAID_BY_HOUR：按量计费\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "POSTPAID_BY_HOUR",
+          "member": "string",
+          "name": "ChargeType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "0：表示未被隔离，1：表示被隔离。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Isolation",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "负载均衡实例被隔离的时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-02-12 12:15:08",
+          "member": "string",
+          "name": "IsolatedTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "InquirePriceCreateGatewayLoadBalancerRequest": {
+      "document": "InquirePriceCreateGatewayLoadBalancer请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "询价的网关负载均衡实例个数，默认为1",
+          "example": "1",
+          "member": "uint64",
+          "name": "GoodsNum",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "InquirePriceCreateGatewayLoadBalancerResponse": {
+      "document": "InquirePriceCreateGatewayLoadBalancer返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "该参数表示对应的价格。",
+          "example": "无",
+          "member": "Price",
+          "name": "Price",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ItemPrice": {
+      "document": "描述了单项的价格信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "后付费单价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "float",
+          "name": "UnitPrice",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "后付费计价单元，可取值范围： HOUR：表示计价单元是按每小时来计算。当前涉及该计价单元的场景有：实例按小时后付费（POSTPAID_BY_HOUR）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "HOUR",
+          "member": "string",
+          "name": "ChargeUnit",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "预支费用的原价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "50",
+          "member": "float",
+          "name": "OriginalPrice",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "预支费用的折扣价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "50",
+          "member": "float",
+          "name": "DiscountPrice",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "后付费的折扣单价，单位:元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "float",
+          "name": "UnitPriceDiscount",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "折扣，如20.0代表2折。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "float",
+          "name": "Discount",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ModifyGatewayLoadBalancerAttributeRequest": {
+      "document": "ModifyGatewayLoadBalancerAttribute请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关负载均衡的唯一ID。",
+          "example": "gwlb-xxx",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "网关负载均衡实例名称。可支持输入1-60个字符。",
+          "example": "newname",
+          "member": "string",
+          "name": "LoadBalancerName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyGatewayLoadBalancerAttributeResponse": {
+      "document": "ModifyGatewayLoadBalancerAttribute返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTargetGroupAttributeRequest": {
+      "document": "ModifyTargetGroupAttribute请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "目标组的ID。",
+          "example": "lbtg-815iz538",
+          "member": "string",
+          "name": "TargetGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "目标组的新名称。",
+          "example": "xxxxholic",
+          "member": "string",
+          "name": "TargetGroupName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "健康检查详情。",
+          "example": "null",
+          "member": "TargetGroupHealthCheck",
+          "name": "HealthCheck",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "是否支持全死全活。",
+          "example": "true",
+          "member": "bool",
+          "name": "AllDeadToAlive",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTargetGroupAttributeResponse": {
+      "document": "ModifyTargetGroupAttribute返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTargetGroupInstancesWeightRequest": {
+      "document": "ModifyTargetGroupInstancesWeight请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "目标组ID。",
+          "example": "lbtg-815iz538",
+          "member": "string",
+          "name": "TargetGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例绑定配置数组。",
+          "example": "无",
+          "member": "TargetGroupInstance",
+          "name": "TargetGroupInstances",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTargetGroupInstancesWeightResponse": {
+      "document": "ModifyTargetGroupInstancesWeight返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Price": {
+      "document": "表示网关负载均衡的价格",
+      "members": [
+        {
+          "disabled": false,
+          "document": "描述了实例价格。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ItemPrice",
+          "name": "InstancePrice",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "描述了GLCU的价格。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ItemPrice",
+          "name": "LcuPrice",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "RegisterTargetGroupInstancesRequest": {
+      "document": "RegisterTargetGroupInstances请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "目标组ID",
+          "example": "lbtg-815iz538",
+          "member": "string",
+          "name": "TargetGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务器实例数组",
+          "example": "无",
+          "member": "TargetGroupInstance",
+          "name": "TargetGroupInstances",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "RegisterTargetGroupInstancesResponse": {
+      "document": "RegisterTargetGroupInstances返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "TagInfo": {
+      "document": "网关负载均衡的标签信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签的键",
+          "example": "key-xxx",
+          "member": "string",
+          "name": "TagKey",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签的值",
+          "example": "value-xxx",
+          "member": "string",
+          "name": "TagValue",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "TargetGroupAssociation": {
+      "document": "规则与目标组的关联关系。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关负载均衡实例ID。",
+          "example": "gwlb-20dhh498",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "目标组ID。",
+          "example": "lbtg-0nzo3czo",
+          "member": "string",
+          "name": "TargetGroupId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "TargetGroupBackend": {
+      "document": "目标组绑定的后端服务器",
+      "members": [
+        {
+          "disabled": false,
+          "document": "目标组ID",
+          "example": "lbtg-5f37****",
+          "member": "string",
+          "name": "TargetGroupId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "后端服务的类型，可取：CVM、ENI（即将支持）",
+          "example": "CVM",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "后端服务的唯一 ID",
+          "example": "ins-2bei****",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "后端服务的监听端口",
+          "example": "80",
+          "member": "uint64",
+          "name": "Port",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "后端服务的转发权重，取值范围：[0, 100]，默认为 10。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Weight",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "后端服务的外网 IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[1.1.1.1]",
+          "member": "string",
+          "name": "PublicIpAddresses",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "后端服务的内网 IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[2.2.2.2]",
+          "member": "string",
+          "name": "PrivateIpAddresses",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "后端服务的实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "testName",
+          "member": "string",
+          "name": "InstanceName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "后端服务被绑定的时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-03-16T00:00:00+08:00",
+          "member": "datetime_iso",
+          "name": "RegisteredTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "弹性网卡唯一ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "eni-jf7u****",
+          "member": "string",
+          "name": "EniId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "后端服务的可用区ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "400001",
+          "member": "uint64",
+          "name": "ZoneId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TargetGroupHealthCheck": {
+      "document": "目标组健康检查详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否开启健康检查。",
+          "example": "true",
+          "member": "bool",
+          "name": "HealthSwitch",
+          "output_required": true,
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "健康检查使用的协议。支持ping和tcp，默认为ping。\n\n- PING: icmp\n- TCP: tcp",
+          "example": "icmp",
+          "member": "string",
+          "name": "Protocol",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "健康检查端口，探测协议未tcp时，该参数必填。\n",
+          "example": "80",
+          "member": "int64",
+          "name": "Port",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "健康检查超时时间。 默认为2秒。 可配置范围：2 - 30秒。",
+          "example": "2",
+          "member": "int64",
+          "name": "Timeout",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "检测间隔时间。 默认为5秒。 可配置范围：2 - 300秒。",
+          "example": "5",
+          "member": "int64",
+          "name": "IntervalTime",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "检测健康阈值。 默认为3秒。 可配置范围：2 - 10次。",
+          "example": "3",
+          "member": "int64",
+          "name": "HealthNum",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "检测不健康阈值。 默认为3秒。 可配置范围：2 - 10次。",
+          "example": "3",
+          "member": "int64",
+          "name": "UnHealthNum",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "TargetGroupInfo": {
+      "document": "目标组信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "目标组ID",
+          "example": "lbtg-xxxxxxxx",
+          "member": "string",
+          "name": "TargetGroupId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目标组的vpcid",
+          "example": "vpc-xxxxxxxx",
+          "member": "string",
+          "name": "VpcId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目标组的名字",
+          "example": "Name",
+          "member": "string",
+          "name": "TargetGroupName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目标组的默认端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "60",
+          "member": "uint64",
+          "name": "Port",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "目标组的创建时间",
+          "example": "2024-10-15T10:37:16+08:00",
+          "member": "datetime_iso",
+          "name": "CreatedTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目标组的修改时间",
+          "example": "2024-10-15T10:37:16+08:00",
+          "member": "datetime_iso",
+          "name": "UpdatedTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "关联到的规则数组。在DescribeTargetGroupList接口调用时无法获取到该参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AssociationItem",
+          "name": "AssociatedRule",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "后端协议类型。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "geneve",
+          "member": "string",
+          "name": "Protocol",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "调度算法。\nip_hash_3：弹性哈希\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ip_hash_3",
+          "member": "string",
+          "name": "ScheduleAlgorithm",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "健康检查详情。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "TargetGroupHealthCheck",
+          "name": "HealthCheck",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否支持全死全活。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "AllDeadToAlive",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "目标组已关联的规则数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "60",
+          "member": "int64",
+          "name": "AssociatedRuleCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "目标组内的实例数量。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "RegisteredInstancesCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TargetGroupInstance": {
+      "document": "目标组实例",
+      "members": [
+        {
+          "disabled": false,
+          "document": "目标组实例的内网IP。",
+          "example": "x.x.x.x",
+          "member": "string",
+          "name": "BindIP",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "目标组实例的端口，只支持6081。",
+          "example": "6081",
+          "member": "uint64",
+          "name": "Port",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "目标组实例的权重，只支持0或16，非0统一按16处理。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Weight",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "usage": "in"
+    },
+    "TargetGroupInstanceStatus": {
+      "document": "用于目标组后端rs健康检查状态。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "后端rs的IP",
+          "example": "10.0.0.1",
+          "member": "string",
+          "name": "InstanceIp",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "健康检查状态，参数值及含义如下：\n● on：表示探测中。\n● off：表示健康检查关闭。\n● health：表示健康。\n● unhealth：表示异常。",
+          "example": "health",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

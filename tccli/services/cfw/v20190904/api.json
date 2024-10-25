@@ -400,11 +400,11 @@
       "status": "online"
     },
     "DescribeNatSwitchList": {
-      "document": "查询NAT边界防火墙开关列表",
+      "document": "旧接口，不再维护\n\n查询NAT边界防火墙开关列表",
       "input": "DescribeNatSwitchListRequest",
       "name": "查询NAT边界防火墙开关列表",
       "output": "DescribeNatSwitchListResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeResourceGroup": {
       "document": "DescribeResourceGroup资产中心资产树信息",
@@ -442,11 +442,11 @@
       "status": "online"
     },
     "DescribeSwitchLists": {
-      "document": "防火墙开关列表，已废弃，请使用DescribeFwEdgeIps",
+      "document": "历史接口，已经废弃，产品有新的替代接口\n\n防火墙开关列表，已废弃，请使用DescribeFwEdgeIps",
       "input": "DescribeSwitchListsRequest",
       "name": "防火墙开关列表，已废弃，请使用DescribeFwEdgeIps",
       "output": "DescribeSwitchListsResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeTLogInfo": {
       "document": "DescribeTLogInfo告警中心概况\n",
@@ -1591,7 +1591,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "1 封禁 2外部IP 3域名 4情报 5assets 6udf  7入侵防御规则id （2-7属于白名单类型）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "规则类型，取值：1 封禁，2外部IP，3域名，4情报，5assets，6自定义策略，7入侵防御规则id （2-7属于白名单类型）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "RuleType",
@@ -1632,7 +1632,7 @@
         {
           "disabled": false,
           "document": "域名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "www.test.com",
           "member": "string",
           "name": "Domain",
           "output_required": true,
@@ -1642,7 +1642,7 @@
         {
           "disabled": false,
           "document": "IP\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1.1.1.1",
           "member": "string",
           "name": "IP",
           "output_required": false,
@@ -1652,7 +1652,7 @@
         {
           "disabled": false,
           "document": "危险等级\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "未知",
+          "example": "高危",
           "member": "string",
           "name": "Level",
           "output_required": true,
@@ -2777,7 +2777,7 @@
           "example": "cfwnat-xxx",
           "member": "string",
           "name": "CfwInsId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3099,7 +3099,7 @@
         },
         {
           "disabled": false,
-          "document": "协议，可选的值： TCP UDP ICMP ANY HTTP HTTPS HTTP/HTTPS SMTP SMTPS SMTP/SMTPS FTP DNS",
+          "document": "协议，可选的值： TCP UDP ICMP ANY HTTP HTTPS HTTP/HTTPS SMTP SMTPS SMTP/SMTPS FTP DNS\n1. 入方向  旁路防火墙/全局规则 仅支持TCP\n\n2.出方向  旁路防火墙/全局规则 仅支持TCP HTTP/HTTPS TLS/SSL\n\n3.domain  请选择七层协议 如HTTP/HTTPS\n",
           "example": "TCP",
           "member": "string",
           "name": "Protocol",
@@ -3359,6 +3359,7 @@
           "example": "cfwg-xxxxxxxx",
           "member": "string",
           "name": "FwGroupId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4823,7 +4824,7 @@
         },
         {
           "disabled": false,
-          "document": "排序字段，取值 'UpdateTime' | 'RulesNum'",
+          "document": "排序字段，取值：UpdateTime最近更新时间，RulesNum关联规则数",
           "example": "id",
           "member": "string",
           "name": "By",
@@ -4832,7 +4833,7 @@
         },
         {
           "disabled": false,
-          "document": "排序，取值 'asc'|'desc'",
+          "document": "排序，取值 ：asc正序，desc逆序",
           "example": "desc",
           "member": "string",
           "name": "Order",
@@ -4859,7 +4860,7 @@
         },
         {
           "disabled": false,
-          "document": "1：ip模板，5：域名模板，6：协议端口模板",
+          "document": "模板类型，取值：1：ip模板，5：域名模板，6：协议端口模板",
           "example": "1",
           "member": "string",
           "name": "TemplateType",
@@ -4914,7 +4915,7 @@
         {
           "disabled": false,
           "document": "Ip地址模板数量",
-          "example": "1",
+          "example": "20",
           "member": "int64",
           "name": "IpTemplateCount",
           "output_required": false,
@@ -4924,7 +4925,7 @@
         {
           "disabled": false,
           "document": "域名地址模板数量",
-          "example": "1",
+          "example": "30",
           "member": "int64",
           "name": "DomainTemplateCount",
           "output_required": false,
@@ -4934,7 +4935,7 @@
         {
           "disabled": false,
           "document": "协议端口模板数量",
-          "example": "1",
+          "example": "50",
           "member": "int64",
           "name": "PortTemplateCount",
           "output_required": false,
@@ -4944,7 +4945,7 @@
         {
           "disabled": false,
           "document": "已使用的地址模板数",
-          "example": "0",
+          "example": "10",
           "member": "int64",
           "name": "UsedTemplateCount",
           "output_required": false,
@@ -4954,7 +4955,7 @@
         {
           "disabled": false,
           "document": "地址模板配额数量",
-          "example": "10",
+          "example": "100",
           "member": "int64",
           "name": "TemplateQuotaCount",
           "output_required": false,
@@ -5104,7 +5105,7 @@
           "example": "2",
           "member": "uint64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -5114,7 +5115,7 @@
           "example": "无",
           "member": "AssociatedInstanceInfo",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -5723,7 +5724,7 @@
         },
         {
           "disabled": false,
-          "document": "规则整体启用状态",
+          "document": "规则列表整体启用状态 \n取值范围 0/1/2\n0.表示没有启用的(可以批量启用)  \n1.表示没有禁用的(可以批量禁用)    \n2 表示混合情况（不可批量操作）",
           "example": "1",
           "member": "int64",
           "name": "Enable",
@@ -5826,7 +5827,7 @@
         },
         {
           "disabled": false,
-          "document": "端口协议类型参数模板id；协议端口模板id；与Protocol,Port互斥",
+          "document": "端口协议类型参数模板id；协议端口模板id",
           "example": "ppmg-jz17vpis",
           "member": "string",
           "name": "ServiceTemplateId",
@@ -5854,6 +5855,7 @@
           "example": "1",
           "member": "string",
           "name": "PageNo",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5863,6 +5865,7 @@
           "example": "10",
           "member": "string",
           "name": "PageSize",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5872,6 +5875,7 @@
           "example": "无",
           "member": "SecurityGroupRule",
           "name": "Rules",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5881,6 +5885,7 @@
           "example": "100",
           "member": "string",
           "name": "TotalCount",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6918,7 +6923,7 @@
           "example": "无",
           "member": "VpcDnsInfo",
           "name": "VpcDnsSwitchLst",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -6928,7 +6933,7 @@
           "example": "无",
           "member": "string",
           "name": "ReturnMsg",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6938,7 +6943,7 @@
           "example": "3",
           "member": "int64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -8167,8 +8172,8 @@
         },
         {
           "disabled": false,
-          "document": "公网 IP 类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "公网 IP 类型 1 公网,2 弹性,3 弹性ipv6,4 anycastIP, 6 HighQualityEIP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
           "member": "int64",
           "name": "PublicIpType",
           "output_required": false,
@@ -8178,7 +8183,7 @@
         {
           "disabled": false,
           "document": "实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "ins-abcdabdc",
           "member": "string",
           "name": "InstanceId",
           "output_required": false,
@@ -8188,7 +8193,7 @@
         {
           "disabled": false,
           "document": "实例名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "生产",
           "member": "string",
           "name": "InstanceName",
           "output_required": false,
@@ -8198,7 +8203,7 @@
         {
           "disabled": false,
           "document": "内网IP\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "192.168.1.1",
           "member": "string",
           "name": "IntranetIp",
           "output_required": false,
@@ -8208,7 +8213,7 @@
         {
           "disabled": false,
           "document": "资产类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "CVM",
           "member": "string",
           "name": "AssetType",
           "output_required": false,
@@ -8218,7 +8223,7 @@
         {
           "disabled": false,
           "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
           "output_required": false,
@@ -8228,7 +8233,7 @@
         {
           "disabled": false,
           "document": "风险端口数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "PortRiskCount",
           "output_required": false,
@@ -8238,7 +8243,7 @@
         {
           "disabled": false,
           "document": "最近扫描时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2024-10-22 10:00:00",
           "member": "string",
           "name": "LastScanTime",
           "output_required": false,
@@ -8248,7 +8253,7 @@
         {
           "disabled": false,
           "document": "是否为region eip\n0 不为region eip，不能选择串行\n1 为region eip 可以选择串行\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "IsRegionEip",
           "output_required": false,
@@ -8258,7 +8263,7 @@
         {
           "disabled": false,
           "document": "EIP 所关联的VPC\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "vpc-abcdabcd",
           "member": "string",
           "name": "VpcId",
           "output_required": false,
@@ -8268,7 +8273,7 @@
         {
           "disabled": false,
           "document": "0: 该地域暂未支持串行\n1: 该用户未在该地域配置串行带宽\n2: 该用户已在该地域配置串行带宽，可以开启串行开关\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "IsSerialRegion",
           "output_required": false,
@@ -8278,7 +8283,7 @@
         {
           "disabled": false,
           "document": "0: 不是公网CLB 可以开启串行开关\n1: 是公网CLB 不可以开启串行开关\n\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "IsPublicClb",
           "output_required": false,
@@ -8436,7 +8441,7 @@
         {
           "disabled": false,
           "document": "任务id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "9001",
           "member": "int64",
           "name": "TaskId",
           "output_required": false,
@@ -8447,7 +8452,7 @@
         {
           "disabled": false,
           "document": "任务名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "autotest",
           "member": "string",
           "name": "TaskName",
           "output_required": false,
@@ -8514,7 +8519,7 @@
         },
         {
           "disabled": false,
-          "document": "源规则类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "源规则类型 \n取值范围 0/1/2/3/4/5/6/7/8/9/100\n0表示ip(net),\n1表示VPC实例(intance)\n2表示子网实例(intance)\n3表示CVM实例(intance)\n4表示CLB实例(intance)\n5表示ENI实例(intance)\n6表示数据库实例(intance)\n7表示模版(template)\n8表示标签(tag)\n9表示地域(region)\n100表示资产分组(resourcegroup)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "SourceType",
@@ -8534,7 +8539,7 @@
         },
         {
           "disabled": false,
-          "document": "目的规则类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "目的规则类型 \n取值范围 0/1/2/3/4/5/6/7/8/9/100\n0表示ip(net),\n1表示VPC实例(intance)\n2表示子网实例(intance)\n3表示CVM实例(intance)\n4表示CLB实例(intance)\n5表示ENI实例(intance)\n6表示数据库实例(intance)\n7表示模版(template)\n8表示标签(tag)\n9表示地域(region)\n100表示资产分组(resourcegroup)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "TargetType",
@@ -8544,7 +8549,7 @@
         },
         {
           "disabled": false,
-          "document": "协议名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "协议名称\n取值范围:TCP/ANY/ICMP/UDP\nANY:表示所有\n\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "TCP",
           "member": "string",
           "name": "Protocol",
@@ -8564,7 +8569,7 @@
         },
         {
           "disabled": false,
-          "document": "策略，1阻断，2放行\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "规则策略\n取值范围:1/2\n1:阻断\n2:放行\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "Strategy",
@@ -8574,7 +8579,7 @@
         },
         {
           "disabled": false,
-          "document": "启用状态 ，0未开启，1开启\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "规则启用状态 \n取值范围： 0/1\n0:未开启\n1:开启\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "Status",
@@ -8604,7 +8609,7 @@
         },
         {
           "disabled": false,
-          "document": "是否最新一次改动的规则,0否，1是\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "规则最新一次是否有改动\n取值范围：0/1\n0:否\n1:是\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "IsNew",
@@ -8624,7 +8629,7 @@
         },
         {
           "disabled": false,
-          "document": "是否延迟下发\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否延迟下发规则 \n取值范围：0/1\n0:立即下发 1:延迟下发\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "IsDelay",
@@ -8754,8 +8759,8 @@
         },
         {
           "disabled": false,
-          "document": "自动化任务任务信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[{}]",
+          "document": "自动化任务信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "EnterpriseSecurityGroupRuleBetaInfo",
           "name": "BetaList",
           "output_required": false,
@@ -8764,8 +8769,8 @@
         },
         {
           "disabled": false,
-          "document": "规则id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "规则id  等同RuleUuid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "int64",
           "name": "Id",
           "output_required": false,
@@ -9494,8 +9499,7 @@
           "member": "int64",
           "name": "Direction",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -9504,8 +9508,7 @@
           "member": "string",
           "name": "EndTime",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -9514,8 +9517,7 @@
           "member": "string",
           "name": "IP",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -9524,18 +9526,7 @@
           "member": "string",
           "name": "Domain",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "备注信息，长度不能超过50",
-          "example": "放通ip",
-          "member": "string",
-          "name": "Comment",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -9544,8 +9535,16 @@
           "member": "string",
           "name": "StartTime",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "备注信息，长度不能超过50",
+          "example": "放通ip",
+          "member": "string",
+          "name": "Comment",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -9732,7 +9731,7 @@
         {
           "disabled": false,
           "document": "地址模板唯一Id",
-          "example": "无",
+          "example": "mb_appid_1708504391199",
           "member": "string",
           "name": "Uuid",
           "required": true,
@@ -9741,7 +9740,7 @@
         {
           "disabled": false,
           "document": "模板名称",
-          "example": "模板名称",
+          "example": "出向放通白名单",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -9750,7 +9749,7 @@
         {
           "disabled": false,
           "document": "模板描述",
-          "example": "模板描述",
+          "example": "出向放通白名单",
           "member": "string",
           "name": "Detail",
           "required": true,
@@ -9759,7 +9758,7 @@
         {
           "disabled": false,
           "document": "Type为1，ip模板eg：1.1.1.1,2.2.2.2；\nType为5，域名模板eg：www.qq.com,www.tencent.com",
-          "example": "模板地址",
+          "example": "1",
           "member": "string",
           "name": "IpString",
           "required": true,
@@ -9768,7 +9767,7 @@
         {
           "disabled": false,
           "document": "1 ip模板\n5 域名模板",
-          "example": "模板类型",
+          "example": "1",
           "member": "int64",
           "name": "Type",
           "required": true,
@@ -9802,7 +9801,7 @@
         {
           "disabled": false,
           "document": "唯一Id",
-          "example": "无",
+          "example": "mb_appid_1708504391199",
           "member": "string",
           "name": "Uuid",
           "output_required": false,
@@ -10245,7 +10244,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "规则",
+          "document": "规则列表",
           "example": "无",
           "member": "IntrusionDefenseRule",
           "name": "Rule",
@@ -10537,7 +10536,7 @@
           "example": "0",
           "member": "uint64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -10547,7 +10546,7 @@
           "example": "35641",
           "member": "uint64",
           "name": "NewRuleUuid",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -12391,7 +12390,7 @@
           "example": "[8888,8889]",
           "member": "int64",
           "name": "RuleUuids",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -13127,7 +13126,7 @@
         {
           "disabled": false,
           "document": "公网IP，多个以英文逗号分隔\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "PublicIp",
+          "example": "1.1.1.1",
           "member": "string",
           "name": "PublicIp",
           "output_required": true,
@@ -13138,7 +13137,7 @@
         {
           "disabled": false,
           "document": "内网IP，多个以英文逗号分隔\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "PrivateIp",
+          "example": "9.0.0.1",
           "member": "string",
           "name": "PrivateIp",
           "output_required": true,
@@ -13149,7 +13148,7 @@
         {
           "disabled": false,
           "document": "掩码地址，多个以英文逗号分隔\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "Cidr",
+          "example": "9.0.0.1/32",
           "member": "string",
           "name": "Cidr",
           "output_required": true,
@@ -13171,7 +13170,7 @@
         {
           "disabled": false,
           "document": "生成双向下发规则\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "BothWayInfo",
+          "example": "无",
           "member": "SecurityGroupBothWayInfo",
           "name": "BothWayInfo",
           "output_required": true,
@@ -13204,7 +13203,7 @@
         {
           "disabled": false,
           "document": "Uuid\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "cfw_sg_appid_0.0.0.0/0_17295140975391",
           "member": "string",
           "name": "Uuid",
           "output_required": true,
@@ -13215,7 +13214,7 @@
         {
           "disabled": false,
           "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
           "output_required": true,
@@ -13226,7 +13225,7 @@
         {
           "disabled": false,
           "document": "资产分组名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "/全部资产/",
           "member": "string",
           "name": "AssetGroupNameIn",
           "output_required": true,
@@ -13237,7 +13236,7 @@
         {
           "disabled": false,
           "document": "资产分组名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "/全部资产/",
           "member": "string",
           "name": "AssetGroupNameOut",
           "output_required": true,
@@ -13248,7 +13247,7 @@
         {
           "disabled": false,
           "document": "模板名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "自动化勿删IP组模板",
           "member": "string",
           "name": "ParameterName",
           "output_required": true,
@@ -13259,7 +13258,7 @@
         {
           "disabled": false,
           "document": "端口协议类型参数模板名称",
-          "example": "无",
+          "example": "端口协议类型参数模板名称",
           "member": "string",
           "name": "ProtocolPortName",
           "output_required": false,
@@ -14045,7 +14044,7 @@
         {
           "disabled": false,
           "document": "模板名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "abc",
+          "example": "出向白名单",
           "member": "string",
           "name": "Name",
           "output_required": true,
@@ -14055,7 +14054,7 @@
         {
           "disabled": false,
           "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "whitelist",
+          "example": "放通出方向目的ip",
           "member": "string",
           "name": "Detail",
           "output_required": true,
@@ -14135,9 +14134,19 @@
         {
           "disabled": false,
           "document": "模板包含地址数量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "IPNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "IP版本,0,IPv4;1,IPv6\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "IpVersion",
           "output_required": false,
           "type": "int",
           "value_allowed_null": true

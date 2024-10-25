@@ -620,6 +620,14 @@
         "title": "查询备份仓库"
       }
     ],
+    "DescribeBatchModifyTagsStatus": [
+      {
+        "document": "查询批量修改标签状态",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBatchModifyTagsStatus\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-j3w5ehty\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FailedResources\": [\n            {\n                \"Resource\": \"qcs::ccs:ap-guangzhou:uin/3356535506:cluster/cls-q505raey\",\n                \"Error\": \"err\"\n            }\n        ],\n        \"Status\": \"failed\",\n        \"SyncSubresource\": true,\n        \"Tags\": [\n            {\n                \"Key\": \"abc\",\n                \"Value\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"33483fde-efec-4d3c-8ff6-340d9dbc2d01\"\n    }\n}",
+        "title": "查询批量修改标签状态"
+      }
+    ],
     "DescribeClusterAsGroupOption": [
       {
         "document": "集群弹性伸缩配置",
@@ -962,14 +970,6 @@
         "input": "https://tke.tencentcloudapi.com/?Action=DescribeExistedInstances\n&ClusterId=cls-xxxxxxxx\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"ExistedInstanceSet\": [\n            {\n                \"Usable\": true,\n                \"UnusableReason\": \"\",\n                \"AlreadyInCluster\": \"\",\n                \"InstanceId\": \"ins-xxxxxxxx\",\n                \"InstanceName\": \"未命名\",\n                \"PrivateIpAddresses\": [\n                    \"192.168.x.x\"\n                ],\n                \"PublicIpAddresses\": [\n                    \"118.24.x.x\"\n                ],\n                \"CreatedTime\": \"2019-05-13T03:37:24Z\",\n                \"CPU\": 2,\n                \"Memory\": 4,\n                \"OsName\": \"Ubuntu xxxxxxxxx\",\n                \"InstanceType\": \"Sxxxxxx\",\n                \"AutoscalingGroupId\": \"\",\n                \"InstanceChargeType\": \"\",\n                \"IPv6Addresses\": [\n                    \"\"\n                ]\n            }\n        ],\n        \"RequestId\": \"f12a6e20-f950-4af9-8f8b-b6329a4961c2\"\n    }\n}",
         "title": "查询已经存在的节点"
-      }
-    ],
-    "DescribeExternalClusterSpec": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeExternalClusterSpec\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-xxx\",\n    \"IsExtranet\": false,\n    \"IsRefreshExpirationTime\": false\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Spec\": \"xxxx\",\n        \"Expiration\": \"2021-09-08T07:04:51Z\"\n    }\n}",
-        "title": "获取导入第三方集群YAML定义"
       }
     ],
     "DescribeExternalNodeSupportConfig": [
@@ -1644,6 +1644,14 @@
         "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyClusterRuntimeConfig\n<公共请求参数>\n\n{\n    \"ClusterId\": \"clx-o8hjuza0\",\n    \"DstK8SVersion\": \"1.24.4\",\n    \"ClusterRuntimeConfig\": {\n        \"RuntimeType\": \"containerd\",\n        \"RuntimeVersion\": \"1.6.9\"\n    },\n    \"NodePoolRuntimeConfig\": [\n        {\n            \"NodePoolId\": \"np-3z37njiu\",\n            \"RuntimeType\": \"containerd\",\n            \"RuntimeVersion\": \"1.6.9\",\n            \"NodePoolName\": \"np-test\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"fb370cb6-df57-4077-hjxk-758225788b9b\"\n    }\n}",
         "title": "修改集群运行时配置"
+      }
+    ],
+    "ModifyClusterTags": [
+      {
+        "document": "修改集群标签",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyClusterTags\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-0gudq56e\",\n    \"Tags\": [\n        {\n            \"Key\": \"abc\",\n            \"Value\": \"abc\"\n        }\n    ],\n    \"SyncSubresource\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"Tags\": [\n            {\n                \"Key\": \"abc\",\n                \"Value\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"33483fde-efec-4d3c-8ff6-340d9dbc2d01\"\n    }\n}",
+        "title": "修改集群标签"
       }
     ],
     "ModifyClusterVirtualNodePool": [

@@ -224,6 +224,13 @@
       "output": "ChannelDeleteSealPoliciesResponse",
       "status": "online"
     },
+    "ChannelDescribeAccountBillDetail": {
+      "document": "通过此接口（ChannelDescribeAccountBillDetail）查询该第三方平台子客账号计费详情。\n<ul>\n<li>对于渠道客户企业的查询，通过指定渠道企业的唯一标识(Agent.ProxyOrganizationId)来查询子客账号消耗详情</li>\n</ul>",
+      "input": "ChannelDescribeAccountBillDetailRequest",
+      "name": "查询渠道子客账号计费详情",
+      "output": "ChannelDescribeAccountBillDetailResponse",
+      "status": "online"
+    },
     "ChannelDescribeBillUsageDetail": {
       "document": "通过此接口（ChannelDescribeBillUsageDetail）查询该第三方平台子客企业的套餐消耗详情。可以支持单个子客和整个应用下所有子客的查询。\n<ul>\n<li>对于单个子客企业的查询，通过指定子客的唯一标识(Agent.ProxyOrganizationOpenId)来查询该子客消耗详情</li>\n<li>对于整个应用下所有企业的查询，不需要指定子客的唯一标识，只需要传入渠道应用标识(Agent.AppId)直接查询整个应用下所有子客企业消耗详情</li>\n</ul>",
       "input": "ChannelDescribeBillUsageDetailRequest",
@@ -341,6 +348,13 @@
       "input": "CreateChannelOrganizationInfoChangeUrlRequest",
       "name": "获取变更企业信息电子签小程序链接",
       "output": "CreateChannelOrganizationInfoChangeUrlResponse",
+      "status": "online"
+    },
+    "CreateChannelSubOrganizationActive": {
+      "document": "激活或续期子客企业， 在激活状态下，企业可以正常发起合同；在非激活状态下，企业仅能查看和签署合同。\n\n**1. 激活**：使用一个许可证将子客企业从未激活状态转变为激活状态。**激活状态的有效期为一年，一年后将自动回到未激活状态**。\n\n**2. 续期**：使用一个许可证将已激活的子客企业的有效期延长一年。只有处于激活状态的子企业才能进行续期操作（**若处于非激活状态，则需先激活**）。您可以使用多个许可证对同一子客企业进行多次续费。\n\n\n该接口的效果同：**【企业应用管理】 -> 【子客企业管理】 -> 【激活】或者【续期】**\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/cd63761ca6e814c64b4ecf131555b74e.png)\n\n\n如果不想调用此接口或者页面点击进行激活或续期，可以在【应用扩展服务】中打开自动激活或续期，在许可证充足的情况下会自动激活或续期子客企业\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/2ccb37ef6bde463c15c39fdda789216f.png)",
+      "input": "CreateChannelSubOrganizationActiveRequest",
+      "name": "激活或者续期子企业",
+      "output": "CreateChannelSubOrganizationActiveResponse",
       "status": "online"
     },
     "CreateConsoleLoginUrl": {
@@ -498,7 +512,7 @@
       "status": "online"
     },
     "ModifyExtendedService": {
-      "document": "管理企业扩展服务 ，企业经办人需要是企业超管或者法人。\n\n跳转小程序的几种方式：主要是设置不同的EndPoint\n1. 通过链接Url直接跳转到小程序，不需要返回\n设置EndPoint为WEIXINAPP，得到链接打开即可。\n\n2. 客户App直接跳转到小程序-->腾讯电子签小程序操作完成-->返回App\n跳转到小程序的实现，参考官方文档<a href=\"https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/launchApp.html\">打开 App</a>\n设置EndPoint为APP，得到path。\n\n3. 客户小程序直接跳到电子签小程序-->腾讯电子签小程序操作完成--->回到客户小程序\n跳转到小程序的实现，参考官方文档（分为<a href=\"https://developers.weixin.qq.com/miniprogram/dev/api/navigate/wx.navigateToMiniProgram.html\">全屏</a>、<a href=\"https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/openEmbeddedMiniProgram.html\">半屏</a>两种方式），如何配置也可以请参考: <a href=\"https://qian.tencent.com/developers/company/openwxminiprogram\">跳转电子签小程序配置</a>\n设置EndPoint为APP，得到path。\n\n4.其中小程序的原始Id如下，或者查看小程序信息自助获取。\n\n| 小程序 | AppID | 原始ID |\n| ------------ | ------------ | ------------ |\n| 腾讯电子签（正式版） | wxa023b292fd19d41d | gh_da88f6188665 |\n| 腾讯电子签Demo | wx371151823f6f3edf | gh_39a5d3de69fa |",
+      "document": "管理企业扩展服务\n\n- **直接开通的情形：** 若在操作过程中接口没有返回跳转链接，这表明无需进行任何跳转操作。此时，相应的企业拓展服务将会直接被开通或关闭。\n\n- **需要法人或者超管签署开通协议的情形：** 当需要开通以下企业拓展服务时， 系统将返回一个操作链接。贵方需要主动联系并通知企业的超级管理员（超管）或法人。由他们点击该链接，完成服务的开通操作。\n  - **AUTO_SIGN（企业自动签）**\n  - **DOWNLOAD_FLOW（授权渠道下载合同）**\n  - **OVERSEA_SIGN（企业与港澳台居民签署合同）**\n\n注意： `在调用此接口以管理企业扩展服务时，操作者（ Agent.ProxyOperator.OpenId）必须是企业的超级管理员（超管）或法人`\n\n\n对应的扩展服务能力可以在控制台的【扩展服务】中找到\n![image](https://qcloudimg.tencent-cloud.cn/raw/99eebd37883ec55ed1f1df3a57aee60a.png)",
       "input": "ModifyExtendedServiceRequest",
       "name": "管理企业扩展服务",
       "output": "ModifyExtendedServiceResponse",
@@ -935,7 +949,7 @@
         },
         {
           "disabled": false,
-          "document": "设置用户开通自动签时是否绑定个人自动签账号许可。\n\n<ul><li>**0**: (默认) 使用个人自动签账号许可进行开通，个人自动签账号许可有效期1年，注: `不可解绑释放更换他人`</li>\n<li>**1**: 不绑定自动签账号许可开通，后续使用合同份额进行合同发起</li></ul>",
+          "document": "设置用户开通自动签时是否绑定个人自动签账号许可。\n\n<ul><li><b>1</b>: (默认)不绑定自动签账号许可开通，开通后一直有效,   后续使用合同份额进行合同发起</li></ul>",
           "example": "无",
           "member": "int64",
           "name": "LicenseType",
@@ -1678,6 +1692,24 @@
           "name": "FlowBatchUrlInfo",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<b>只有在生成H5签署链接的情形下</b>（ 如调用<a href=\"https://qian.tencent.com/developers/partnerApis/operateFlows/ChannelCreateFlowSignUrl\" target=\"_blank\">获取H5签署链接</a>、<a href=\"https://qian.tencent.com/developers/partnerApis/operateFlows/ChannelCreateBatchQuickSignUrl\" target=\"_blank\">获取H5批量签署链接</a>等接口），该配置才会生效。  您可以指定H5签署视频核身的意图配置，选择问答模式或点头模式的语音文本。  注意： 1. 视频认证为<b>白名单功能，使用前请联系对接的客户经理沟通</b>。 2. 使用视频认证时，<b>生成H5签署链接的时候必须将签署认证方式指定为人脸</b>（即ApproverSignTypes设置成人脸签署）。 3. 签署完成后，可以通过<a href=\"https://qian.tencent.com/developers/partnerApis/flows/ChannelDescribeSignFaceVideo\" target=\"_blank\">查询签署认证人脸视频</a>获取到当时的视频。",
+          "example": "无",
+          "member": "Intention",
+          "name": "Intention",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启缓存签署人信息",
+          "example": "无",
+          "member": "bool",
+          "name": "CacheApproverInfo",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -2019,7 +2051,7 @@
         },
         {
           "disabled": false,
-          "document": "WEB嵌入的业务资源ID\n\n<ul>\n<li>当EmbedType取值MODIFY_TEMPLATE，PREVIEW_TEMPLATE时需要填写模板id作为BusinessId</li>\n<li>当EmbedType取值PREVIEW_FLOW，PREVIEW_FLOW_DETAIL时需要填写合同id作为BusinessId</li>\n<li>当EmbedType取值PREVIEW_SEAL_DETAIL需要填写印章id作为BusinessId</li>\n</ul>",
+          "document": "WEB嵌入的业务资源ID\n\n当EmbedType取值\n<ul>\n<li>为MODIFY_TEMPLATE，PREVIEW_TEMPLATE必填，取值为模板id</li>\n<li>为CREATE_TEMPLATE，非必填，取值为资源id。*资源Id获取可使用接口[上传文件](https://qian.tencent.com/developers/partnerApis/files/UploadFiles)*</li>\n<li>为PREVIEW_FLOW，PREVIEW_FLOW_DETAIL必填，取值为合同id</li>\n<li>为PREVIEW_SEAL_DETAIL必填，取值为印章id</li>\n</ul>\n\n\n注意：\n 1. CREATE_TEMPLATE中的BusinessId仅支持PDF文件类型， 如果您的文件不是PDF， 请使用接口[创建文件转换任务](https://qian.tencent.com/developers/partnerApis/files/ChannelCreateConvertTaskApi) 和[查询转换任务状态](https://qian.tencent.com/developers/partnerApis/files/ChannelGetTaskResultApi) 来进行转换成PDF资源。",
           "example": "yDRS4UUgygqdcj2tUuO4zjEEFuP35Swc",
           "member": "string",
           "name": "BusinessId",
@@ -2884,6 +2916,15 @@
           "name": "Operator",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "禁止个人用户重复签署，默认不禁止，即同一用户可多次扫码签署多份合同。若要求同一用户仅能扫码签署一份合同，请传入true。",
+          "example": "无",
+          "member": "bool",
+          "name": "ForbidPersonalMultipleSign",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -3274,7 +3315,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开通自动签，该功能需联系运营工作人员开通后使用",
+          "document": "此字段已废弃，请勿继续使用。",
           "example": "无",
           "member": "bool",
           "name": "EnableAutoSign",
@@ -4123,6 +4164,83 @@
     "ChannelDeleteSealPoliciesResponse": {
       "document": "ChannelDeleteSealPolicies返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ChannelDescribeAccountBillDetailRequest": {
+      "document": "ChannelDescribeAccountBillDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。\n\n此接口下面信息必填。\n<ul>\n<li>渠道应用标识:  Agent.AppId</li>\n</ul>\n第三方平台子客企业必须已经经过实名认证",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ChannelDescribeAccountBillDetailResponse": {
+      "document": "ChannelDescribeAccountBillDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "当前绑定中账号数量",
+          "example": "100",
+          "member": "int64",
+          "name": "BoundAccountsNumber",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "剩余可绑定账号数量",
+          "example": "15",
+          "member": "int64",
+          "name": "RemainAvailableAccountsNumber",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "已失效账号数量",
+          "example": "25",
+          "member": "int64",
+          "name": "InvalidAccountsNumber",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "购买数量",
+          "example": "25",
+          "member": "int64",
+          "name": "TotalBuyAccountsNumber",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "赠送数量",
+          "example": "25",
+          "member": "int64",
+          "name": "TotalGiftAccountsNumber",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -5110,6 +5228,28 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子企业激活状态。值如下：\n<ul>\n  <li>**0**： 未激活</li>\n  <li>**1**： 已激活</li>\n</ul>",
+          "example": "0",
+          "member": "int64",
+          "name": "ActiveStatus",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "账号过期时间，时间戳",
+          "example": "无",
+          "member": "int64",
+          "name": "LicenseExpireTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -5982,7 +6122,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。\n\n此接口下面信息必填。\n<ul>\n<li>渠道应用标识:  Agent.AppId</li>\n<li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId</li>\n<li>第三方平台子客企业中的员工标识: Agent. ProxyOperator.OpenId</li>\n</ul>\n第三方平台子客企业和员工必须已经经过实名认证",
+          "document": "关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。\n\n此接口下面信息必填。\n<ul>\n<li>渠道应用标识:  Agent.AppId</li>\n</ul>\n",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -6191,6 +6331,51 @@
       ],
       "type": "object"
     },
+    "CreateChannelSubOrganizationActiveRequest": {
+      "document": "CreateChannelSubOrganizationActive请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。\n\n此接口下面信息必填。\n<ul>\n<li>渠道应用标识:  Agent.AppId</li>\n<li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId</li>\n<li>第三方平台子客企业中的员工标识: Agent. ProxyOperator.OpenId</li>\n</ul>\n第三方平台子客企业和员工必须已经经过实名认证",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "要进行激活或者续期的子客企业OrganizationOpenId列表，请确保所有列出的子客企业均已完成认证。",
+          "example": "无",
+          "member": "string",
+          "name": "SubOrganizationOpenIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "操作类型，可以选择如下：\n\n**false**：（默认）激活子客企业\n**true**：续期子客企业\n",
+          "example": "无",
+          "member": "bool",
+          "name": "Renew",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateChannelSubOrganizationActiveResponse": {
+      "document": "CreateChannelSubOrganizationActive返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateConsoleLoginUrlRequest": {
       "document": "CreateConsoleLoginUrl请求参数结构体",
       "members": [
@@ -6268,7 +6453,7 @@
         },
         {
           "disabled": false,
-          "document": "生成链接的类型：\n<ul><li>**PC**：(默认)<font color=\"red\">web控制台</font>链接, 需要在PC浏览器中打开</li>\n<li>**CHANNEL**：H5跳转到电子签小程序链接, 一般用于发送短信中带的链接, 打开后进入腾讯电子签小程序</li>\n<li>**SHORT_URL**：<font color=\"red\">H5</font>跳转到电子签小程序链接的短链形式, 一般用于发送短信中带的链接, 打开后进入腾讯电子签小程序</li>\n<li>**APP**：<font color=\"red\">APP或小程序</font>跳转电子签小程序链接, 一般用于贵方小程序或者APP跳转过来,  打开后进入腾讯电子签小程序</li>\n<li>**H5**：<font color=\"red\">H5长链接</font>跳转H5链接, 一般用于贵方H5跳转过来,  打开后进入腾讯电子签H5页面</li>\n<li>**SHORT_H5**：<font color=\"red\">H5短链</font>跳转H5的短链形式, 一般用于发送短信中带的链接, 打开后进入腾讯电子签H5页面</li></ul>",
+          "document": "生成链接的类型：\n<ul><li>**PC**：(默认)<font color=\"red\">web控制台</font>链接, 需要在PC浏览器中打开</li>\n<li>**CHANNEL**：H5跳转到电子签小程序链接, 一般用于发送短信中带的链接, 打开后进入腾讯电子签小程序</li>\n<li>**SHORT_URL**：<font color=\"red\">H5</font>跳转到电子签小程序链接的短链形式, 一般用于发送短信中带的链接, 打开后进入腾讯电子签小程序</li>\n<li>**WEIXIN_QRCODE_URL**：直接跳转至电子签小程序的二维码链接，无需通过中转页。<font color=\"red\">您需要自行将其转换为二维码，使用微信扫码后可直接进入。请注意，直接点击链接是无效的。</font></li>\n<li>**APP**：<font color=\"red\">APP或小程序</font>跳转电子签小程序链接, 一般用于贵方小程序或者APP跳转过来,  打开后进入腾讯电子签小程序</li>\n<li>**H5**：<font color=\"red\">H5长链接</font>跳转H5链接, 一般用于贵方H5跳转过来,  打开后进入腾讯电子签H5页面</li>\n<li>**SHORT_H5**：<font color=\"red\">H5短链</font>跳转H5的短链形式, 一般用于发送短信中带的链接, 打开后进入腾讯电子签H5页面</li></ul>",
           "example": "PC",
           "member": "string",
           "name": "Endpoint",
@@ -6313,7 +6498,7 @@
         },
         {
           "disabled": false,
-          "document": "认证完成跳转链接。\n注意：`目前仅支持 H5 和 PC`。",
+          "document": "认证完成跳转链接。\n注意：`此功能仅在Endpoint参数设置成 H5 或 PC时才有效`。",
           "example": "https://qian.tencent.com/",
           "member": "string",
           "name": "AutoJumpUrl",
@@ -6322,7 +6507,7 @@
         },
         {
           "disabled": false,
-          "document": "是否展示头顶导航栏  <ul><li> **ENABLE** : (默认)进入web控制台展示头顶导航栏</li> <li> **DISABLE** : 进入web控制台不展示头顶导航栏</li></ul> 注：该参数**仅在企业和员工激活完成，登录控制台场景才生效**。",
+          "document": "是否展示头顶导航栏  <ul><li> **ENABLE** : (默认)进入web控制台展示头顶导航栏</li> <li> **DISABLE** : 进入web控制台不展示头顶导航栏</li></ul> 注：该参数**仅在企业和员工激活完成，登录控制台场景才生效**。\n\n<a href=\"https://qcloudimg.tencent-cloud.cn/raw/dd54f333140c711cf6a88e3801bcd178.png\" target=\"_blank\">点击查看头顶导航栏位置</a>",
           "example": "ENABLE",
           "member": "string",
           "name": "TopNavigationStatus",
@@ -6346,7 +6531,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "跳转链接, 链接的有效期根据企业,员工状态和终端等有区别, 可以参考下表\n<table> <thead> <tr> <th>子客企业状态</th> <th>子客企业员工状态</th> <th>Endpoint</th> <th>链接有效期限</th> </tr> </thead>  <tbody> <tr> <td>企业未激活</td> <td>员工未认证</td> <td>PC/PC_SHORT_URL</td> <td>5分钟</td>  </tr>  <tr> <td>企业未激活</td> <td>员工未认证</td> <td>CHANNEL/APP/H5/SHORT_H5</td> <td>30天</td>  </tr>  <tr> <td>企业已激活</td> <td>员工未认证</td> <td>PC/PC_SHORT_URL</td> <td>5分钟</td>  </tr> <tr> <td>企业已激活</td> <td>员工未认证</td> <td>CHANNEL/APP/H5/SHORT_H5</td> <td>30天</td>  </tr>  <tr> <td>企业已激活</td> <td>员工已认证</td> <td>PC</td> <td>5分钟</td>  </tr>  <tr> <td>企业已激活</td> <td>员工已认证</td> <td>CHANNEL/APP/H5/SHORT_H5</td> <td>30天</td>  </tr> </tbody> </table>\n\n注： \n1. <font color=\"red\">链接仅单次有效</font>，每次登录需要需要重新创建新的链接\n2. 创建的链接应避免被转义，如：&被转义为\\u0026；如使用Postman请求后，请选择响应类型为 JSON，否则链接将被转义\n3. <font color=\"red\">生成的链路后面不能再增加参数</font>（会出现覆盖链接中已有参数导致错误）\n",
+          "document": "跳转链接, 链接的有效期根据企业,员工状态和终端等有区别, 可以参考下表\n<table> <thead> <tr> <th>子客企业状态</th> <th>子客企业员工状态</th> <th>Endpoint</th> <th>链接有效期限</th> </tr> </thead>  <tbody> <tr> <td>企业未激活</td> <td>员工未认证</td> <td>PC/PC_SHORT_URL</td> <td>5分钟</td>  </tr>  <tr> <td>企业未激活</td> <td>员工未认证</td> <td>CHANNEL/APP/H5/SHORT_H5/WEIXIN_QRCODE_URL</td> <td>30天</td>  </tr>  <tr> <td>企业已激活</td> <td>员工未认证</td> <td>PC/PC_SHORT_URL</td> <td>5分钟</td>  </tr> <tr> <td>企业已激活</td> <td>员工未认证</td> <td>CHANNEL/APP/H5/SHORT_H5/WEIXIN_QRCODE_URL</td> <td>30天</td>  </tr>  <tr> <td>企业已激活</td> <td>员工已认证</td> <td>PC</td> <td>5分钟</td>  </tr>  <tr> <td>企业已激活</td> <td>员工已认证</td> <td>CHANNEL/APP/H5/SHORT_H5/WEIXIN_QRCODE_URL</td> <td>30天</td>  </tr> </tbody> </table>\n\n注： \n1. <font color=\"red\">链接仅单次有效</font>，每次登录需要需要重新创建新的链接\n2. 创建的链接应避免被转义，如：&被转义为\\u0026；如使用Postman请求后，请选择响应类型为 JSON，否则链接将被转义\n3. <font color=\"red\">生成的链路后面不能再增加参数</font>（会出现覆盖链接中已有参数导致错误）\n",
           "example": "无",
           "member": "string",
           "name": "ConsoleUrl",
@@ -7339,7 +7524,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "签署参与者签署H5链接信息数组",
+          "document": "生成的签署参与者的签署链接信息数组。",
           "example": "无",
           "member": "SignUrlInfo",
           "name": "SignUrlInfos",
@@ -7397,7 +7582,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。\n\n此接口下面信息必填。\n<ul>\n<li>渠道应用标识:  Agent.AppId</li>\n<li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId</li>\n<li>第三方平台子客企业中的员工标识: Agent. ProxyOperator.OpenId</li>\n</ul>\n第三方平台子客企业和员工必须已经经过实名认证",
+          "document": "关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。\n\n此接口下面信息必填。\n<ul>\n<li>渠道应用标识:  Agent.AppId</li>\n</ul>",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -8345,6 +8530,15 @@
           "name": "ShowTemplateComponent",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "跳过上传文件，默认为false(展示上传文件页）![image](https://qcloudimg.tencent-cloud.cn/raw/8ca33745cf772e79831dbe5a70e82400.png)\n- false: 展示上传文件页\n- true: 不展示上传文件页\n \n\n注意: 此参数仅针对**EmbedType=CREATE_TEMPLATE(创建模板)有效**，",
+          "example": "true",
+          "member": "string",
+          "name": "SkipUploadFile",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -9981,7 +10175,7 @@
         },
         {
           "disabled": false,
-          "document": "链接跳转类型，支持以下类型\n<ul>\n<li>WEIXINAPP : 短链直接跳转到电子签小程序  (默认值)</li>\n<li>APP : 第三方APP或小程序跳转电子签小程序</li>\n</ul>",
+          "document": "链接跳转类型，支持以下类型\n<ul>\n<li>WEIXINAPP : 短链直接跳转到电子签小程序  (默认值)</li>\n<li>APP : 第三方APP或小程序跳转电子签小程序</li>\n<li>WEIXIN_QRCODE_URL：直接跳转至电子签小程序的二维码链接，无需通过中转页。<font color=\"red\">您需要自行将其转换为二维码，使用微信扫码后可直接进入。请注意，直接点击链接是无效的。</font></li>\n</ul>",
           "example": "APP",
           "member": "string",
           "name": "Endpoint",
@@ -9996,7 +10190,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "操作跳转链接，有效期24小时\n若操作时没有返回跳转链接，表示无需跳转操作，此时会直接开通/关闭服务。\n\n当操作类型是 OPEN 且 扩展服务类型是 AUTO_SIGN 或 DOWNLOAD_FLOW 或者 OVERSEA_SIGN 时返回操作链接，\n返回的链接需要平台方自行触达超管或法人，超管或法人点击链接完成服务开通操作",
+          "document": "操作跳转链接\n<ul><li><strong>链接有效期：</strong> 跳转链接的有效期为24小时。</li>\n<li><strong>没有返回链接的情形：</strong> 如果在操作时没有返回跳转链接，说明此次操作无需进行跳转，服务将会直接被开通或关闭。</li>\n<li><strong>返回链接的情形：</strong> 当操作类型为<b>OPEN（开通服务）</b>，并且扩展服务类型为<b>AUTO_SIGN（ 企业自动签署）</b>、<b>DOWNLOAD_FLOW（授权渠道下载合同）</b>或<b>OVERSEA_SIGN（企业与港澳台居民签署合同）</b>时，系统将返回一个操作链接。收到操作链接后，贵方需主动联系超级管理员（超管）或法人。<font color=\"red\"><b>由超管或法人点击链接</b></font>，以完成服务的开通操作。</li>\n</ul>\n\n",
           "example": "https://res.ess.tencent.cn/cdn/h5-activity-dev/jump-mp.html?to=OPEN_SERVER_SIGN&request_token=xxxxx&organizationId=xxxxx&channelType=xxxxx&expired_time=1673428532&login=1&verify=1",
           "member": "string",
           "name": "OperateUrl",
@@ -11216,6 +11410,15 @@
           "name": "PowerOfAttorneys",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "认证完之后的H5页面的跳转链接，最大长度1000个字符。链接类型请参考 [跳转电子签H5](https://qian.tencent.com/developers/company/openqianh5/)",
+          "example": "无",
+          "member": "string",
+          "name": "AutoJumpUrl",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"

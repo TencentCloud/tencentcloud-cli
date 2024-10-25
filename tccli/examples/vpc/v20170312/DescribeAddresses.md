@@ -37,6 +37,7 @@ Output:
                 "InternetChargeType": "TRAFFIC_POSTPAID_BY_HOUR",
                 "Bandwidth": 1,
                 "DeadlineDate": null,
+                "Egress": "center_egress1",
                 "InternetServiceProvider": "BGP"
             },
             {
@@ -52,6 +53,7 @@ Output:
                 "IsArrears": false,
                 "IsBlocked": false,
                 "IsEipDirectConnection": false,
+                "Egress": "center_egress1",
                 "EipAlgType": {
                     "Ftp": true,
                     "Sip": true

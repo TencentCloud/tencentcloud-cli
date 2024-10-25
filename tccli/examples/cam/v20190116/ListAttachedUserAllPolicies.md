@@ -9,27 +9,32 @@ tccli cam ListAttachedUserAllPolicies --cli-unfold-argument  \
     --Rp 1 \
     --Page 10 \
     --AttachType 1 \
-    --TargetUin 1234565
+    --TargetUin 100020328651
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "TotalNum": 11,
+        "TotalNum": 1,
         "PolicyList": [
             {
-                "PolicyId": "522474",
-                "PolicyName": "policygen-20191204195412",
-                "Description": "",
-                "AddTime": "2019-12-04 19:56:35",
-                "StrategyType": "1",
-                "CreateMode": "3",
+                "AddTime": "2020-01-16 15:09:27",
+                "CreateMode": "2",
                 "Deactived": 1,
-                "Groups": [],
                 "DeactivedDetail": [
-                    "xx"
-                ]
+                    "consolesms"
+                ],
+                "Description": "短信（SMS）全读写访问权限",
+                "Groups": [
+                    {
+                        "GroupId": 93878,
+                        "GroupName": "系统运维"
+                    }
+                ],
+                "PolicyId": "219064",
+                "PolicyName": "QcloudSMSFullAccess",
+                "StrategyType": "2"
             }
         ],
         "RequestId": "d369dabb-ebc9-4598-baae-e1177e9e3868"

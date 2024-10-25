@@ -983,8 +983,8 @@
     "DescribeAssetImageRegistryRegistryList": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetImageRegistryRegistryList\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e59f97b7-87d4-4909-8289-61bd28423d2f\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetImageRegistryRegistryList\n<公共请求参数>\n\n{\n    \"Limit\": 100,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e59f97b7-87d4-4909-8289-61bd28423d2f\",\n        \"TotalCount\": 15525,\n        \"List\": [\n            {\n                \"ConnDetectDetail\": [\n                    {\n                        \"ConnDetectMessage\": \"\",\n                        \"ConnDetectStatus\": \"status_connected\",\n                        \"FailReason\": \"\",\n                        \"Quuid\": \"backend\",\n                        \"Solution\": \"\",\n                        \"Uuid\": \"backend\"\n                    }\n                ],\n                \"ConnDetectHostCount\": 1,\n                \"ConnDetectType\": \"backend\",\n                \"ConnectMsg\": \"\",\n                \"InstanceID\": \"\",\n                \"LatestSyncTime\": \"2024-10-23 03:12:50\",\n                \"Name\": \"aws_public\",\n                \"NetType\": \"public\",\n                \"RegistryId\": 10000,\n                \"RegistryRegion\": \"default\",\n                \"RegistryType\": \"aws\",\n                \"RegistryVersion\": \"V1\",\n                \"SyncFailReason\": \"\",\n                \"SyncMessage\": \"\",\n                \"SyncSolution\": \"\",\n                \"SyncStatus\": \"success\",\n                \"Url\": \"https://public.xxx.aws/xxxxxxxx\"\n            }\n        ]\n    }\n}",
         "title": "镜像仓库查询镜像仓库列表"
       }
     ],

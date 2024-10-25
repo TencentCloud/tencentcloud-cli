@@ -1,12 +1,12 @@
-**Example 1: 查询实例**
+**Example 1: 查询集群信息成功**
 
-查询实例
+查询集群信息成功
 
 Input: 
 
 ```
 tccli trocket DescribeInstance --cli-unfold-argument  \
-    --InstanceId abc
+    --InstanceId rmq-72mo3a9o
 ```
 
 Output: 
@@ -14,52 +14,46 @@ Output:
 {
     "Response": {
         "ScaledTpsEnabled": false,
-        "InstanceType": "abc",
-        "InstanceId": "abc",
-        "InstanceName": "abc",
-        "TopicNum": 0,
-        "TopicNumLimit": 0,
-        "GroupNum": 0,
-        "GroupNumLimit": 0,
-        "MessageRetention": 0,
-        "RetentionUpperLimit": 0,
-        "RetentionLowerLimit": 0,
-        "TpsLimit": 0,
+        "InstanceType": "EXPERIMENT",
+        "InstanceId": "rmq-72mo3a9o",
+        "InstanceName": "test_instance",
+        "TopicNum": 2,
+        "TopicNumLimit": 50,
+        "GroupNum": 10,
+        "GroupNumLimit": 500,
+        "MessageRetention": 72,
+        "RetentionUpperLimit": 168,
+        "RetentionLowerLimit": 1,
+        "TpsLimit": 500,
         "ScaledTpsLimit": 0,
-        "MaxMessageDelay": 0,
-        "CreatedTime": 0,
-        "SendReceiveRatio": 0,
+        "MaxMessageDelay": 168,
+        "CreatedTime": 1731920303801,
+        "SendReceiveRatio": 0.5,
         "TagList": [
             {
-                "TagKey": "abc",
-                "TagValue": "abc"
+                "TagKey": "test_tag_key",
+                "TagValue": "test_tag_value"
             }
         ],
         "EndpointList": [
             {
-                "Type": "abc",
-                "Status": "abc",
-                "PayMode": "abc",
-                "EndpointUrl": "abc",
-                "VpcId": "abc",
-                "SubnetId": "abc",
+                "Type": "VPC",
+                "Status": "OPEN",
+                "PayMode": "PREPAID",
+                "EndpointUrl": "rmq-72mo3a9o.rocketmq.xx.qcloud.tencenttdmq.com:8080",
+                "VpcId": "vpc-be1tvrab",
+                "SubnetId": "subnet-i6fjswac",
                 "Bandwidth": 0,
-                "IpRules": [
-                    {
-                        "Ip": "abc",
-                        "Allow": true,
-                        "Remark": "abc"
-                    }
-                ]
+                "IpRules": []
             }
         ],
-        "TopicQueueNumUpperLimit": 0,
-        "TopicQueueNumLowerLimit": 0,
-        "Remark": "abc",
-        "InstanceStatus": "abc",
-        "SkuCode": "abc",
-        "PayMode": "abc",
-        "RequestId": "abc"
+        "TopicQueueNumUpperLimit": 32,
+        "TopicQueueNumLowerLimit": 1,
+        "Remark": "测试集群",
+        "InstanceStatus": "RUNNING",
+        "SkuCode": "experiment_500",
+        "PayMode": "PREPAID",
+        "RequestId": "32759095-0372-4ec0-ae3a-e5a2759fd0ff"
     }
 }
 ```

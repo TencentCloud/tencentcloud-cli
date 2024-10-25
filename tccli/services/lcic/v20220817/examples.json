@@ -27,7 +27,7 @@
     "BatchCreateRoom": [
       {
         "document": "批量创建课堂",
-        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchCreateRoom\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1,\n    \"RoomInfos\": [\n        {\n            \"Name\": \"abc\",\n            \"StartTime\": 1,\n            \"EndTime\": 1,\n            \"TeacherId\": \"abc\",\n            \"Resolution\": 1,\n            \"MaxMicNumber\": 1,\n            \"AutoMic\": 1,\n            \"TurnOffMic\": 1,\n            \"AudioQuality\": 1,\n            \"SubType\": \"abc\",\n            \"DisableRecord\": 1,\n            \"Assistants\": [\n                \"abc\"\n            ],\n            \"RTCAudienceNumber\": 1,\n            \"AudienceType\": 1,\n            \"RecordLayout\": 1,\n            \"GroupId\": \"abc\",\n            \"EnableDirectControl\": 1\n        }\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchCreateRoom\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1,\n    \"RoomInfos\": [\n        {\n            \"Name\": \"abc\",\n            \"StartTime\": 1,\n            \"EndTime\": 1,\n            \"TeacherId\": \"abc\",\n            \"Resolution\": 1,\n            \"MaxMicNumber\": 1,\n            \"AutoMic\": 1,\n            \"TurnOffMic\": 1,\n            \"AudioQuality\": 1,\n            \"SubType\": \"abc\",\n            \"DisableRecord\": 1,\n            \"Assistants\": [\n                \"abc\"\n            ],\n            \"AudienceType\": 1,\n            \"RecordLayout\": 1,\n            \"GroupId\": \"abc\",\n            \"EnableDirectControl\": 1\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RoomIds\": [\n            301234567\n        ],\n        \"RequestId\": \"213das\"\n    }\n}",
         "title": "批量创建课堂"
       }
@@ -99,7 +99,7 @@
     "CreateRoom": [
       {
         "document": "示例",
-        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRoom\n<公共请求参数>\n\n{\n    \"Name\": \"abc\",\n    \"StartTime\": 1,\n    \"EndTime\": 1,\n    \"TeacherId\": \"abc\",\n    \"SdkAppId\": 1,\n    \"Resolution\": 1,\n    \"MaxMicNumber\": 1,\n    \"AutoMic\": 1,\n    \"TurnOffMic\": 1,\n    \"AudioQuality\": 1,\n    \"SubType\": \"abc\",\n    \"DisableRecord\": 1,\n    \"Assistants\": [\n        \"abc\"\n    ],\n    \"RTCAudienceNumber\": 1,\n    \"AudienceType\": 1,\n    \"RecordLayout\": 1,\n    \"GroupId\": \"abc\",\n    \"InteractionMode\": 1,\n    \"VideoOrientation\": 1,\n    \"IsGradingRequiredPostClass\": 1,\n    \"RoomType\": 1,\n    \"EnableDirectControl\": 0\n}",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRoom\n<公共请求参数>\n\n{\n    \"Name\": \"abc\",\n    \"StartTime\": 1,\n    \"EndTime\": 1,\n    \"TeacherId\": \"abc\",\n    \"SdkAppId\": 1,\n    \"Resolution\": 1,\n    \"MaxMicNumber\": 1,\n    \"AutoMic\": 1,\n    \"TurnOffMic\": 1,\n    \"AudioQuality\": 1,\n    \"SubType\": \"abc\",\n    \"DisableRecord\": 1,\n    \"Assistants\": [\n        \"abc\"\n    ],\n    \"AudienceType\": 1,\n    \"RecordLayout\": 1,\n    \"GroupId\": \"abc\",\n    \"InteractionMode\": 1,\n    \"VideoOrientation\": 1,\n    \"IsGradingRequiredPostClass\": 1,\n    \"RoomType\": 1,\n    \"EnableDirectControl\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"RoomId\": 1,\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "创建房间"
       }

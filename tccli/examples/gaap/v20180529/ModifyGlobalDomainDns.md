@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli gaap ModifyGlobalDomainDns --cli-unfold-argument  \
-    --ProxyIdList 1213 \
-    --NationCountryInnerCodes 123 \
+    --ProxyIdList link-wefarwqx \
+    --NationCountryInnerCodes 100000 \
     --DnsRecordId 3223 \
-    --DomainId xxxx
+    --DomainId dm-00ye8ek7
 ```
 
 Output: 

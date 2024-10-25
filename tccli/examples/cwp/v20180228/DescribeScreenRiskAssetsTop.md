@@ -2,11 +2,12 @@
 
 大屏获取安全事件数统计数据
 
+
 Input: 
 
 ```
 tccli cwp DescribeScreenRiskAssetsTop --cli-unfold-argument  \
-    --BusinessType 1
+    --BusinessType 2
 ```
 
 Output: 
@@ -15,11 +16,11 @@ Output:
     "Response": {
         "Chart": [
             {
-                "Name": "xx",
-                "Value": 1
+                "Name": "172.17.0.0 广州",
+                "Value": 21
             }
         ],
-        "RequestId": "0e078e5e-32bf-41ba-853c-88c697888d99"
+        "RequestId": "f1d8e260-c75c-454d-bc84-34ce0ed8d9bf"
     }
 }
 ```

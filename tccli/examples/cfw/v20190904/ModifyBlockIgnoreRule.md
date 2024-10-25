@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli cfw ModifyBlockIgnoreRule --cli-unfold-argument  \
-    --Rule.IP abc \
-    --Rule.Domain abc \
+    --Rule.IP 1.1.1.1 \
+    --Rule.Domain  \
     --Rule.Direction 0 \
-    --Rule.EndTime abc \
-    --Rule.Comment abc \
-    --Rule.StartTime abc \
+    --Rule.EndTime 2025-01-01 00:00:00 \
+    --Rule.Comment 阻断访问 \
+    --Rule.StartTime 2024-01-01 00:00:00 \
     --RuleType 0
 ```
 

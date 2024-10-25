@@ -7,11 +7,11 @@ Input:
 ```
 tccli trocket CreateMQTTUser --cli-unfold-argument  \
     --InstanceId mqtt-7pnqmkrx \
-    --Remark 33333 \
+    --Remark remark \
     --PermWrite True \
     --PermRead True \
-    --Username 123 \
-    --Password 456
+    --Username username \
+    --Password pwd
 ```
 
 Output: 

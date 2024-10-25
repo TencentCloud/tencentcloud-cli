@@ -7,7 +7,7 @@ Input:
 ```
 tccli trocket DescribeConsumerLag --cli-unfold-argument  \
     --InstanceId rmq-24kzek2b \
-    --ConsumerGroup test
+    --ConsumerGroup test_group
 ```
 
 Output: 
@@ -16,7 +16,7 @@ Output:
     "Error": null,
     "RequestId": null,
     "Response": {
-        "ConsumerLag": 0,
+        "ConsumerLag": 260,
         "RequestId": "2b9eef15-a8bc-47a3-9445-9edcafccb459"
     }
 }

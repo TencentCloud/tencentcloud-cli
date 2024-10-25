@@ -6,11 +6,12 @@ Input:
 
 ```
 tccli tdmq CreateRocketMQTopic --cli-unfold-argument  \
-    --Topic example-topic \
+    --Topic test_topic \
+    --Namespaces test_namespace \
     --Type Normal \
-    --Remark example \
-    --ClusterId rocketmq-2p9vx3ax9jxg \
-    --Namespaces example
+    --ClusterId rocketmq-xj8kr5apevj7 \
+    --Remark 测试主题 \
+    --PartitionNum 3
 ```
 
 Output: 

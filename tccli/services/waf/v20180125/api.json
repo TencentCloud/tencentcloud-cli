@@ -245,6 +245,20 @@
       "output": "DescribeAntiInfoLeakageRulesResponse",
       "status": "online"
     },
+    "DescribeApiDetail": {
+      "document": "获取Api请求详情信息",
+      "input": "DescribeApiDetailRequest",
+      "name": "获取Api请求详情信息",
+      "output": "DescribeApiDetailResponse",
+      "status": "online"
+    },
+    "DescribeApiListVersionTwo": {
+      "document": "api资产列表",
+      "input": "DescribeApiListVersionTwoRequest",
+      "name": "api资产列表",
+      "output": "DescribeApiListVersionTwoResponse",
+      "status": "online"
+    },
     "DescribeAreaBanAreas": {
       "document": "获取地域封禁配置包括地域封禁开关，设置封禁的地区信息",
       "input": "DescribeAreaBanAreasRequest",
@@ -495,6 +509,13 @@
       "input": "DescribePortsRequest",
       "name": "获取Saas型WAF防护端口列表",
       "output": "DescribePortsResponse",
+      "status": "online"
+    },
+    "DescribeProtectionModes": {
+      "document": "查询Tiga引擎大类规则及其防护模式",
+      "input": "DescribeProtectionModesRequest",
+      "name": "查询tiga引擎下大类规则的防护模式",
+      "output": "DescribeProtectionModesResponse",
       "status": "online"
     },
     "DescribeRuleLimit": {
@@ -2368,7 +2389,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启XFF重置。\n0：关闭\n1：开启",
+          "document": "是否开启XFF重置。0：关闭 1：开启",
           "example": "0",
           "member": "int64",
           "name": "XFFReset",
@@ -2395,7 +2416,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启缓存 0-关闭 1-开启",
+          "document": "是否开启缓存。 0：关闭 1：开启",
           "example": "0",
           "member": "int64",
           "name": "ProxyBuffer",
@@ -2404,12 +2425,75 @@
         },
         {
           "disabled": false,
-          "document": "0: 禁用拨测, 1: 启用拨测。默认启用拨测",
+          "document": "是否开启拨测。 0: 禁用拨测  1: 启用拨测。默认启用拨测",
           "example": "1",
           "member": "int64",
           "name": "ProbeStatus",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "国密选项。0：不开启国密 1：在原有TLS选项的基础上追加支持国密 2：开启国密并仅支持国密客户端访问",
+          "example": "0",
+          "member": "int64",
+          "name": "GmType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "国密证书类型。0：无国密证书 1：证书来源为自有国密证书 2：证书来源为托管国密证书",
+          "example": "0",
+          "member": "int64",
+          "name": "GmCertType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "GmCertType为1时，需要填充此参数，表示自有国密证书的证书链",
+          "example": "-----BEGIN CERTIFICATE----- xxx -----END CERTIFICATE-----",
+          "member": "string",
+          "name": "GmCert",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "GmCertType为1时，需要填充此参数，表示自有国密证书的私钥",
+          "example": "-----BEGIN PRIVATE KEY----- xxx -----END PRIVATE KEY-----",
+          "member": "string",
+          "name": "GmPrivateKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "GmCertType为1时，需要填充此参数，表示自有国密证书的加密证书",
+          "example": "-----BEGIN CERTIFICATE----- xxx -----END CERTIFICATE-----",
+          "member": "string",
+          "name": "GmEncCert",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "GmCertType为1时，需要填充此参数，表示自有国密证书的加密证书的私钥",
+          "example": "-----BEGIN PRIVATE KEY----- xxx -----END PRIVATE KEY-----",
+          "member": "string",
+          "name": "GmEncPrivateKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "GmCertType为2时，需要填充此参数，表示腾讯云SSL平台托管的证书id",
+          "example": "aKnKQLJ",
+          "member": "string",
+          "name": "GmSSLId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2425,6 +2509,343 @@
         }
       ],
       "type": "object"
+    },
+    "ApiAsset": {
+      "document": "api列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "qcloudwaf.com",
+          "member": "string",
+          "name": "Domain",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "请求方法",
+          "example": "GET",
+          "member": "string",
+          "name": "Method",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "api名称",
+          "example": "/user/login",
+          "member": "string",
+          "name": "ApiName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "场景\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "login",
+          "member": "string",
+          "name": "Scene",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"date\",\"phone_num\"]",
+          "member": "string",
+          "name": "Label",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "过去7天是否活跃\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true,false",
+          "member": "bool",
+          "name": "Active",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "最近更新时间",
+          "example": "121312312",
+          "member": "uint64",
+          "name": "Timestamp",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "api发现时间",
+          "example": "121312312",
+          "member": "uint64",
+          "name": "InsertTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资产状态，1:新发现，2，确认中，3，已确认，4，已下线，5，已忽略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "Mode",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "风险等级，100,200,300对应低中高\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "string",
+          "name": "Level",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "近30天调用量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Count",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Remark",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否鉴权，1标识是，0表示否\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "IsAuth",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "如果添加了api入参检测规则，则此id返回值不为0\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "ApiRequestRuleId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "如果添加了api限流规则，则此id返回值不为0\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "ApiLimitRuleId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "对象接入和泛域名接入时，展示host列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"aaa.test.com\"]",
+          "member": "string",
+          "name": "HostList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ApiDataFilter": {
+      "document": "api资产列表过滤器",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据标签，是否活跃，功能场景",
+          "example": "label,active, scene",
+          "member": "string",
+          "name": "Entity",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "等于",
+          "example": "=",
+          "member": "string",
+          "name": "Operator",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日期，手机号，邮箱等",
+          "example": "date,phone_num,emain",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "ApiDetailSampleHistory": {
+      "document": "api历史样例返回结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "样例名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SampleNme",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "请求样例\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RepLog",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "响应样例\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RspLog",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ApiParameterType": {
+      "document": "api请求参数类型",
+      "members": [
+        {
+          "disabled": false,
+          "document": "参数名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "user_id",
+          "member": "string",
+          "name": "ParameterName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "参数类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "int",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "参数位置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Header",
+          "member": "string",
+          "name": "Location",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据标签(敏感字段)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "phone_num",
+          "member": "string",
+          "name": "Label",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3242324",
+          "member": "uint64",
+          "name": "Timestamp",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "备注信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "备注信息",
+          "member": "string",
+          "name": "Remark",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "来源是请求或者响应\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "request or response",
+          "member": "string",
+          "name": "Source",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否需要泛化 ，0表示不需要，1表示需要\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "IsPan",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否鉴权，1表示是，0表示否\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "IsAuth",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "ApiPkg": {
       "document": "API安全资源信息",
@@ -3871,6 +4292,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "域名标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"label1\",\"label2\"]",
+          "member": "string",
+          "name": "Labels",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -4094,6 +4525,16 @@
           "example": "0",
           "member": "int64",
           "name": "ObjectFlowMode",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数值形式的私有网络 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "416562",
+          "member": "int64",
+          "name": "NumericalVpcId",
           "output_required": false,
           "type": "int",
           "value_allowed_null": true
@@ -5304,16 +5745,16 @@
         },
         {
           "disabled": false,
-          "document": "规则ID列表，支持批量删除",
+          "document": "规则ID列表，支持批量删除，在DeleteAll参数为true的时候可以不传",
           "example": "[552091011,552091010]",
           "member": "uint64",
           "name": "RuleIds",
-          "required": true,
+          "required": false,
           "type": "list"
         },
         {
           "disabled": false,
-          "document": "是否删除对应的域名下的所有黑/白IP名单，true表示全部删除，false表示只删除指定ip名单",
+          "document": "是否删除对应的域名下的所有黑/白IP名单，true表示全部删除，false表示只删除指定IP名单，批量防护不支持",
           "example": "false",
           "member": "bool",
           "name": "DeleteAll",
@@ -5331,7 +5772,7 @@
         },
         {
           "disabled": false,
-          "document": "IP黑白名单类型，40为IP白名单，42为IP黑名单",
+          "document": "IP黑白名单类型，40为IP白名单，42为IP黑名单，在DeleteAll为true的时候必传此参数",
           "example": "42",
           "member": "uint64",
           "name": "ActionType",
@@ -6248,6 +6689,309 @@
       ],
       "usage": "out"
     },
+    "DescribeApiDetailRequest": {
+      "document": "DescribeApiDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "无",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Api名称",
+          "example": "无",
+          "member": "string",
+          "name": "ApiName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "请求方法",
+          "example": "无",
+          "member": "string",
+          "name": "Method",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否仅查询敏感的，1表示查询，0表示不查询",
+          "example": "0",
+          "member": "int64",
+          "name": "IsSensitive",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否仅查询泛化的，1表示查询，0表示不查询",
+          "example": "1",
+          "member": "int64",
+          "name": "IsPan",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApiDetailResponse": {
+      "document": "DescribeApiDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "请求样例，json字符串格式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Log",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "请求参数样例列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ApiParameterType",
+          "name": "ParameterList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当前场景标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Scene",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "敏感字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SensitiveFields",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "7天内是否活跃\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true false",
+          "member": "bool",
+          "name": "IsActive",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "访问ip数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "int64",
+          "name": "IpCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "访问地域数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20",
+          "member": "int64",
+          "name": "RegionCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "关联事件数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "EventCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "涉敏数据条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "uint64",
+          "name": "SensitiveCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "风险等级\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "uint64",
+          "name": "Level",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "响应体\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "string",
+          "name": "RspLog",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "昨日访问峰值QPS\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "200",
+          "member": "uint64",
+          "name": "MaxQPS",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "历史样例",
+          "example": "无",
+          "member": "ApiDetailSampleHistory",
+          "name": "ApiDetailSampleHistory",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApiListVersionTwoRequest": {
+      "document": "DescribeApiListVersionTwo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "qcloudwaf.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "页面索引，第几页",
+          "example": "无",
+          "member": "int64",
+          "name": "PageIndex",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "页面大小",
+          "example": "无",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件",
+          "example": "无",
+          "member": "ApiDataFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "排序方法，1 升序，-1 降序",
+          "example": "[\"update_time\":\"1\"]",
+          "member": "string",
+          "name": "Sort",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否进行总数查询",
+          "example": "无",
+          "member": "bool",
+          "name": "NeedTotalCount",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "查询开始时间",
+          "example": "123412",
+          "member": "int64",
+          "name": "StartTs",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询结束时间",
+          "example": "14312",
+          "member": "int64",
+          "name": "EndTs",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApiListVersionTwoResponse": {
+      "document": "DescribeApiListVersionTwo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "api资产列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ApiAsset",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeAreaBanAreasRequest": {
       "document": "DescribeAreaBanAreas请求参数结构体",
       "members": [
@@ -6361,9 +7105,10 @@
         {
           "disabled": false,
           "document": "地域封禁的地域列表，要解析成json后使用",
-          "example": "",
+          "example": "\"{\\\"areas\\\":[{\\\"en_abbr\\\":\\\"US\\\",\\\"en\\\":\\\"United States\\\",\\\"zh\\\":\\\"美国\\\"},{\\\"en_abbr\\\":\\\"CN\\\",\\\"en\\\":\\\"China\\\",\\\"zh\\\":\\\"中国\\\"},{\\\"en_abbr\\\":\\\"JP\\\",\\\"en\\\":\\\"Japan\\\",\\\"zh\\\":\\\"日本\\\"}]}\"",
           "member": "string",
           "name": "Data",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7146,11 +7891,11 @@
         },
         {
           "disabled": false,
-          "document": "证书类型。 0：仅配置HTTP监听端口，没有证书 1：证书来源为自有证书 2：证书来源为托管证书",
+          "document": "证书类型。 0：不检测国际标准证书 1：证书来源为自有证书 2：证书来源为托管证书",
           "example": "1",
           "member": "int64",
           "name": "CertType",
-          "required": true,
+          "required": false,
           "type": "int"
         },
         {
@@ -7177,6 +7922,60 @@
           "example": "-----BEGIN RSA PRIVATE KEY----- xxx -----END RSA PRIVATE KEY-----",
           "member": "string",
           "name": "PrivateKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "国密证书类型。0：不检测国密证书 1：证书来源为自有国密证书 2：证书来源为托管国密证书",
+          "example": "0",
+          "member": "int64",
+          "name": "GmCertType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "GmCertType为1时，需要填充此参数，表示自有国密证书的证书链",
+          "example": "-----BEGIN CERTIFICATE----- xxx -----END CERTIFICATE-----",
+          "member": "string",
+          "name": "GmCert",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "GmCertType为1时，需要填充此参数，表示自有国密证书的私钥",
+          "example": "-----BEGIN PRIVATE KEY----- xxx -----END PRIVATE KEY-----",
+          "member": "string",
+          "name": "GmPrivateKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "GmCertType为1时，需要填充此参数，表示自有国密证书的加密证书",
+          "example": "-----BEGIN CERTIFICATE----- xxx -----END CERTIFICATE-----",
+          "member": "string",
+          "name": "GmEncCert",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "GmCertType为1时，需要填充此参数，表示自有国密证书的加密证书的私钥",
+          "example": "-----BEGIN PRIVATE KEY----- xxx -----END PRIVATE KEY-----",
+          "member": "string",
+          "name": "GmEncPrivateKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "GmCertType为2时，需要填充此参数，表示腾讯云SSL平台托管的证书id",
+          "example": "aKnKQLJ",
+          "member": "string",
+          "name": "GmSSLId",
           "required": false,
           "type": "string"
         }
@@ -8042,7 +8841,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤数组",
+          "document": "过滤数组，过滤字段包括：Edition：实例版本，sparta-waf或clb-waf Domain：域名 DomainId：域名ID InstanceName：实例名称 InstanceId：实例ID FlowMode：流量接入模式，仅支持CLBWAF FlowCheckMode：流量体检模式，仅支持CLBWAF ClsStatus：日志开关 Status：WAF开关BotStatus：BOT开关 ApiStatus：API安全开关 Engine：引擎模式 UpstreamIP：源站IP，仅支持SAAS型WAF UpstreamDomain：源站域名，仅支持SAAS型WAF DomainState：域名状态，仅支持SAAS型WAF SgState：安全组状态，仅支持SAAS型WAF Label：分组标签，同时仅支持一种标签过滤",
           "example": "无",
           "member": "FiltersItemNew",
           "name": "Filters",
@@ -9393,6 +10192,52 @@
       ],
       "type": "object"
     },
+    "DescribeProtectionModesRequest": {
+      "document": "DescribeProtectionModes请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "sparta-waf或clb",
+          "example": "sparta-waf",
+          "member": "string",
+          "name": "Edition",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "www.abc123.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProtectionModesResponse": {
+      "document": "DescribeProtectionModes返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则大类ID及防护模式",
+          "example": "无",
+          "member": "TigaMainClassMode",
+          "name": "Modes",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeRuleLimitRequest": {
       "document": "DescribeRuleLimit请求参数结构体",
       "members": [
@@ -9928,7 +10773,17 @@
     },
     "DescribeUserClbWafRegionsRequest": {
       "document": "DescribeUserClbWafRegions请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "流量来源，不填默认clb。clb：负载均衡器，tsegw：云原生API网关，scf：云函数，apisix：腾讯云上其他网关",
+          "example": "\"clb\"",
+          "member": "string",
+          "name": "AlbType",
+          "required": false,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "DescribeUserClbWafRegionsResponse": {
@@ -10736,6 +11591,17 @@
           "required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "域名标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"label1\",\"label2\"]",
+          "member": "string",
+          "name": "Labels",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -11289,6 +12155,86 @@
           "name": "ProxyBuffer",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "国密选项。0：不开启国密 1：在原有TLS选项的基础上追加支持国密 2：开启国密并仅支持国密客户端访问\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "GmType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "国密证书类型。0：无国密证书 1：证书来源为自有国密证书 2：证书来源为托管国密证书\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "GmCertType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "GmCertType为1时，需要填充此参数，表示自有国密证书的证书链\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-----BEGIN CERTIFICATE----- xxx -----END CERTIFICATE-----",
+          "member": "string",
+          "name": "GmCert",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "GmCertType为1时，需要填充此参数，表示自有国密证书的私钥\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-----BEGIN PRIVATE KEY----- xxx -----END PRIVATE KEY-----",
+          "member": "string",
+          "name": "GmPrivateKey",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "GmCertType为1时，需要填充此参数，表示自有国密证书的加密证书\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-----BEGIN CERTIFICATE----- xxx -----END CERTIFICATE-----",
+          "member": "string",
+          "name": "GmEncCert",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "GmCertType为1时，需要填充此参数，表示自有国密证书的加密证书的私钥\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-----BEGIN PRIVATE KEY----- xxx -----END PRIVATE KEY-----",
+          "member": "string",
+          "name": "GmEncPrivateKey",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "GmCertType为2时，需要填充此参数，表示腾讯云SSL平台托管的证书id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "aKnKQLJ",
+          "member": "string",
+          "name": "GmSSLId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "域名标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"label1\",\"label2\"]",
+          "member": "string",
+          "name": "Labels",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -12501,6 +13447,17 @@
           "example": "waf_2kxtlvk40hsvdnw7",
           "member": "string",
           "name": "ResourceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "模式clb-waf或者saas-waf\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "clb-waf",
+          "member": "string",
+          "name": "MicroVersion",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -16863,7 +17820,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启缓存 0-关闭 1-开启",
+          "document": "是否开启缓存。 0：关闭 1：开启",
           "example": "0",
           "member": "int64",
           "name": "ProxyBuffer",
@@ -16872,12 +17829,75 @@
         },
         {
           "disabled": false,
-          "document": "0: 禁用拨测, 1: 启用拨测。默认启用拨测",
+          "document": "是否开启拨测。 0: 禁用拨测 1: 启用拨测。默认启用拨测",
           "example": "1",
           "member": "int64",
           "name": "ProbeStatus",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "国密选项。0：不开启国密 1：在原有TLS选项的基础上追加支持国密 2：开启国密并仅支持国密客户端访问",
+          "example": "0",
+          "member": "int64",
+          "name": "GmType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "国密证书类型。0：无国密证书 1：证书来源为自有国密证书 2：证书来源为托管国密证书",
+          "example": "0",
+          "member": "int64",
+          "name": "GmCertType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "GmCertType为1时，需要填充此参数，表示自有国密证书的证书链",
+          "example": "-----BEGIN CERTIFICATE----- xxx -----END CERTIFICATE-----",
+          "member": "string",
+          "name": "GmCert",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "GmCertType为1时，需要填充此参数，表示自有国密证书的私钥",
+          "example": "-----BEGIN PRIVATE KEY----- xxx -----END PRIVATE KEY-----",
+          "member": "string",
+          "name": "GmPrivateKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "GmCertType为1时，需要填充此参数，表示自有国密证书的加密证书",
+          "example": "-----BEGIN CERTIFICATE----- xxx -----END CERTIFICATE-----",
+          "member": "string",
+          "name": "GmEncCert",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "GmCertType为1时，需要填充此参数，表示自有国密证书的加密证书的私钥",
+          "example": "-----BEGIN PRIVATE KEY----- xxx -----END PRIVATE KEY-----",
+          "member": "string",
+          "name": "GmEncPrivateKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "GmCertType为2时，需要填充此参数，表示腾讯云SSL平台托管的证书id",
+          "example": "aKnKQLJ",
+          "member": "string",
+          "name": "GmSSLId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -18581,6 +19601,17 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "0：大小写敏感\n1：大小写不敏感\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "CaseNotSensitive",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -18802,6 +19833,34 @@
         }
       ],
       "usage": "in"
+    },
+    "TigaMainClassMode": {
+      "document": "Tiga引擎中Mainclass的TypeID和防护模式",
+      "members": [
+        {
+          "disabled": false,
+          "document": "MainclassID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "010000000",
+          "member": "string",
+          "name": "TypeID",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "防护模式，0表示观察，1表示拦截\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Mode",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "TimedJob": {
       "document": "规则定时任务数据结构",

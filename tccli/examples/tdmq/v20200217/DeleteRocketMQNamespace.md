@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tdmq DeleteRocketMQNamespace --cli-unfold-argument  \
-    --ClusterId rocketmq-rd3545bkkj49 \
-    --NamespaceId test
+    --ClusterId rocketmq-rd3545bkkj43 \
+    --NamespaceId test_namespace
 ```
 
 Output: 

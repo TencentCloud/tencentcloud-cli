@@ -47,7 +47,7 @@ Output:
         ],
         "Total": 10,
         "RegionLst": [
-            "abc"
+            "ap-beijing"
         ],
         "InstanceTypeLst": [
             "nat",

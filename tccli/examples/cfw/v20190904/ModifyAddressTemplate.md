@@ -6,11 +6,12 @@ Input:
 
 ```
 tccli cfw ModifyAddressTemplate --cli-unfold-argument  \
-    --Uuid abc \
-    --Name abc \
-    --Detail abc \
-    --IpString abc \
-    --Type 0
+    --Name dora \
+    --Detail  \
+    --IpString 1.1.1.1 \
+    --Type 1 \
+    --ProtocolType  \
+    --Uuid mb_appid_1708504391199
 ```
 
 Output: 
@@ -18,8 +19,8 @@ Output:
 {
     "Response": {
         "Status": 0,
-        "Uuid": "abc",
-        "RequestId": "abc"
+        "Uuid": "mb_appid_1708504391199",
+        "RequestId": "RequestId"
     }
 }
 ```

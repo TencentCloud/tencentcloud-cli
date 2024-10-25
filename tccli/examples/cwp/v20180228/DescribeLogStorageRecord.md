@@ -1,6 +1,6 @@
-**Example 1: 示例**
+**Example 1: 获取日志存储量记录**
 
-示例
+获取日志存储量记录
 
 Input: 
 
@@ -13,9 +13,9 @@ Output:
     "Response": {
         "Records": [
             {
-                "Month": "abc",
-                "UsedSize": 1,
-                "InquireSize": 1
+                "Month": "202410",
+                "UsedSize": 53715597787,
+                "InquireSize": 53687091200
             }
         ],
         "RequestId": "abc"

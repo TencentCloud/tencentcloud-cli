@@ -6,14 +6,21 @@ Input:
 
 ```
 tccli sts QueryApiKey --cli-unfold-argument  \
-    --TargetUin 123456
+    --TargetUin 100020328651
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": ""
+        "IdKeys": [
+            {
+                "SecretId": "AKID5Cn***",
+                "CreateTime": 1575517111,
+                "Status": 2
+            }
+        ],
+        "RequestId": "5cf9d558-a46a-4ce7-bbc2-500cad68b0da"
     }
 }
 ```

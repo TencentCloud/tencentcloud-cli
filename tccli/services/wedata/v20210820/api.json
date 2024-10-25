@@ -805,6 +805,13 @@
       "output": "DescribeProjectResponse",
       "status": "online"
     },
+    "DescribeProjectUsers": {
+      "document": "获取项目下的用户，分页返回",
+      "input": "DescribeProjectUsersRequest",
+      "name": "获取项目下的用户列表",
+      "output": "DescribeProjectUsersResponse",
+      "status": "online"
+    },
     "DescribeQualityScore": {
       "document": "质量报告-质量评分",
       "input": "DescribeQualityScoreRequest",
@@ -16201,6 +16208,78 @@
           "member": "Project",
           "name": "Data",
           "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProjectUsersRequest": {
+      "document": "DescribeProjectUsers请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分页号",
+          "example": "0",
+          "member": "uint64",
+          "name": "PageNumber",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页大小",
+          "example": "10",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "【过滤参数】自定义条件查询",
+          "example": "[]",
+          "member": "FilterOptional",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "【排序参数】排序字段",
+          "example": "[]",
+          "member": "OrderFieldOptional",
+          "name": "OrderFields",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否项目管理员",
+          "example": "无",
+          "member": "bool",
+          "name": "IsProjectAdmin",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProjectUsersResponse": {
+      "document": "DescribeProjectUsers返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "项目列表",
+          "example": "无",
+          "member": "ProjectUsersPage",
+          "name": "Data",
           "type": "object",
           "value_allowed_null": false
         },
@@ -31629,6 +31708,138 @@
       ],
       "usage": "in"
     },
+    "ProjectUserRole": {
+      "document": "项目的用户对象",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户角色对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "SystemRole",
+          "name": "Roles",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "mc\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "名称",
+          "member": "string",
+          "name": "UserName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否创建者\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "Creator",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "显示名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DisplayName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否项目管理员\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "IsProjectAdmin",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ProjectUsersPage": {
+      "document": "项目下的用户集合",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "ProjectUserRole",
+          "name": "Rows",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分页大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分页页码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "PageNumber",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总分页页码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalPageNumber",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "Property": {
       "document": "dlc建表属性",
       "members": [
@@ -32628,6 +32839,89 @@
         }
       ],
       "usage": "out"
+    },
+    "RolePrivilege": {
+      "document": "角色权限对象",
+      "members": [
+        {
+          "disabled": false,
+          "document": "id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "PrivilegeId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "名称",
+          "member": "string",
+          "name": "PrivilegeName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "路径",
+          "member": "string",
+          "name": "RestPath",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "方法\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "方法",
+          "member": "string",
+          "name": "RestMethod",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "描述",
+          "member": "string",
+          "name": "Description",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "模块id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "模块id",
+          "member": "string",
+          "name": "ModuleId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "权限类型 N、R、RW、RWD\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "RWD",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "Rule": {
       "document": "数据质量规则",
@@ -38158,6 +38452,102 @@
         }
       ],
       "type": "object"
+    },
+    "SystemRole": {
+      "document": "角色对象",
+      "members": [
+        {
+          "disabled": false,
+          "document": "角色id",
+          "example": "1",
+          "member": "string",
+          "name": "RoleId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "角色名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Name",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "角色昵称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Name",
+          "member": "string",
+          "name": "NameCn",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "描述",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "角色权限\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "RolePrivilege",
+          "name": "Privileges",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "方法路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "string",
+          "name": "MethodPaths",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "角色类型, 分为System,Tenant,Project,Commercial\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RoleType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否系统默认\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "SystemInit",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自定义参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Params",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "Table": {
       "document": "Table",

@@ -21,6 +21,7 @@ Output:
                 "ExcludePaths": null,
                 "ExtractRule": {
                     "Address": "",
+                    "AdvanceFilterRules": [],
                     "Backtracking": -1,
                     "BeginRegex": "",
                     "Delimiter": "",

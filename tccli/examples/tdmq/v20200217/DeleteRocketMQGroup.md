@@ -1,14 +1,19 @@
 **Example 1: 删除订阅组**
 
-
+https://tdmq.tencentcloudapi.com/?
+Action=DeleteRocketMQGroup
+&ClusterId=
+&NamespaceId=example
+&GroupId=group-example
+&<公共请求参数>
 
 Input: 
 
 ```
 tccli tdmq DeleteRocketMQGroup --cli-unfold-argument  \
     --ClusterId rocketmq-2p9vx3ax9jxg \
-    --NamespaceId example \
-    --GroupId group-example
+    --NamespaceId test_namespace \
+    --GroupId test_group
 ```
 
 Output: 

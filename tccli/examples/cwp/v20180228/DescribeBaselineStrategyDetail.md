@@ -16,7 +16,7 @@ Output:
         "RequestId": "req-566234234",
         "PassRate": 50,
         "StrategyName": "等保一级策略",
-        "ScanCycle": 1,
+        "ScanCycle": "1",
         "ScanAt": "00:00:00",
         "IsGlobal": 1,
         "IfScanned": 1,
@@ -28,9 +28,7 @@ Output:
             "2003"
         ],
         "CategoryIds": [
-            1,
-            2,
-            3
+            "1"
         ]
     }
 }

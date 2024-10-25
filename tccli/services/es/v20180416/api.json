@@ -1437,6 +1437,24 @@
           "name": "ReadWriteMode",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "置放群组是否开启异步任务",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableScheduleRecoverGroup",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "置放群组开启异步任务的可维护时间段",
+          "example": "无",
+          "member": "EnableScheduleOperationDuration",
+          "name": "EnableScheduleOperationDuration",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -4720,6 +4738,56 @@
       ],
       "usage": "out"
     },
+    "EnableScheduleOperationDuration": {
+      "document": "置放群组异步任务维护的时间段",
+      "members": [
+        {
+          "disabled": false,
+          "document": "支持开启异步任务的日期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[2024.09.24, 2024.09.26]",
+          "member": "string",
+          "name": "Periods",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "支持开启异步的开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "06:00",
+          "member": "string",
+          "name": "TimeStart",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "支持开启异步的结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "08:00",
+          "member": "string",
+          "name": "TimeEnd",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "支持开启异步的时区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "UTC+8",
+          "member": "string",
+          "name": "TimeZone",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "EsAcl": {
       "document": "ES集群配置项",
       "members": [
@@ -5393,8 +5461,8 @@
         },
         {
           "disabled": false,
-          "document": "客户上传到自己cos的地址列表",
-          "example": "[\"cos1\", \"cos2\"]",
+          "document": "客户上传到cos的模型地址，单次请求限制一个。cos文件为压缩文件，格式包括：zip、tgz和tar.gz",
+          "example": "[\"https://*******.myqcloud.com/******.zip\"]",
           "member": "string",
           "name": "UsrCosModelUrlList",
           "required": false,
@@ -7872,6 +7940,26 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "cvm绑定的置放群组的id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CVMDisasterRecoverGroupId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "cvm绑定置放群组的状态。2: 已绑定；1: 绑定中；0: 未开启\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "CVMDisasterRecoverGroupStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -8451,6 +8539,24 @@
           "name": "ShardAllocationBytes",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启置放群组异步任务",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableScheduleRecoverGroup",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "置放群组异步任务时间段",
+          "example": "无",
+          "member": "EnableScheduleOperationDuration",
+          "name": "EnableScheduleOperationDuration",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -10004,6 +10110,24 @@
           "name": "ReadWriteMode",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启置放群组异步任务",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableScheduleRecoverGroup",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "置放群组异步任务可维护时间段",
+          "example": "无",
+          "member": "EnableScheduleOperationDuration",
+          "name": "EnableScheduleOperationDuration",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -10572,6 +10696,24 @@
           "name": "ShardAllocationBytes",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启置放群组异步任务",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableScheduleRecoverGroup",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "置放群组异步任务时间段",
+          "example": "无",
+          "member": "EnableScheduleOperationDuration",
+          "name": "EnableScheduleOperationDuration",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"

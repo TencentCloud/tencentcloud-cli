@@ -1,6 +1,6 @@
 **Example 1: 查询角色列表**
 
-查询角色列表
+查询角色列表成功
 
 Input: 
 
@@ -8,7 +8,7 @@ Input:
 tccli trocket DescribeRoleList --cli-unfold-argument  \
     --InstanceId rmq-72mo3a9o \
     --Offset 0 \
-    --Limit 1
+    --Limit 20
 ```
 
 Output: 
@@ -17,20 +17,20 @@ Output:
     "Error": null,
     "RequestId": null,
     "Response": {
+        "RequestId": "c5d126b6-aeeb-40ad-81c0-a94abd43f157",
+        "TotalCount": 1,
         "Data": [
             {
-                "AccessKey": "eyJrZXlJZCI6InJtcS03Mm1vM2E5byIsImFsZyI6IkhTMjU2In0.eyJzdWIiOiJybXEtNzJtbzNhOW9fdGVzdFJvbGUifQ.vrdHDzzfeDsX1c5rhaFcLpJBd_dGIWQIlAPLOuOEDfM",
-                "CreatedTime": 1683615280000,
-                "ModifiedTime": 1683615280000,
+                "RoleName": "test_role_name",
+                "AccessKey": "ak4ae3zkj2zea6741a2a709",
+                "SecretKey": "skd68607c7dc2be6a4",
                 "PermRead": true,
                 "PermWrite": true,
-                "Remark": "testRemark",
-                "RoleName": "testRole",
-                "SecretKey": "/tuS7zTKFNmsApaUvq4l5kTnV/GSWJ2m4bGhR62kVYY="
+                "Remark": "",
+                "CreatedTime": 1729153015000,
+                "ModifiedTime": 1729153015000
             }
-        ],
-        "RequestId": "346f63a2-dd66-439e-9abc-338a56f6523c",
-        "TotalCount": 2
+        ]
     }
 }
 ```
