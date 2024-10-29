@@ -1,18 +1,16 @@
 **Example 1: 查询内网间访问控制列表**
 
-查询内网间访问控制列表
+查询内网间访问控制列表，其中Filters中 IpVersion为0表示查询ipv4的规则列表
 
 Input: 
 
 ```
 tccli cfw DescribeVpcAcRule --cli-unfold-argument  \
-    --Filters.0.Name Protocol \
-    --Filters.0.Values ANY TCP ICMP \
-    --Filters.0.OperatorType 9 \
+    --Filters.0.Name IpVersion \
+    --Filters.0.Values 0 \
+    --Filters.0.OperatorType 1 \
     --Limit 10 \
-    --Offset 0 \
-    --Order desc \
-    --By sequence
+    --Offset 0
 ```
 
 Output: 
@@ -22,34 +20,89 @@ Output:
         "Total": 1,
         "Data": [
             {
-                "SourceContent": "abc",
-                "SourceType": "abc",
-                "DestContent": "abc",
-                "DestType": "abc",
-                "Protocol": "abc",
-                "RuleAction": "abc",
-                "Port": "abc",
-                "Description": "abc",
-                "OrderIndex": 0,
-                "Uuid": 0,
-                "Enable": "abc",
-                "EdgeId": "abc",
-                "DetectedTimes": 0,
-                "EdgeName": "abc",
-                "InternalUuid": 0,
+                "Uuid": 221579,
+                "InternalUuid": 1729666998976364,
+                "OrderIndex": 1,
+                "SourceContent": "mb_1256532032_1666263807415",
+                "SourceType": "template",
+                "DestContent": "192.168.1.2",
+                "DestType": "net",
+                "Port": "-1/-1",
+                "Protocol": "TCP",
+                "RuleAction": "accept",
+                "Description": "test",
+                "Enable": "true",
                 "Deleted": 0,
-                "FwGroupId": "abc",
-                "FwGroupName": "abc",
-                "BetaList": [
-                    {
-                        "TaskId": 0,
-                        "TaskName": "abc",
-                        "LastTime": "abc"
-                    }
-                ]
+                "EdgeId": "ALL",
+                "EdgeName": "",
+                "DetectedTimes": 0,
+                "FwGroupId": "ALL",
+                "FwGroupName": "",
+                "BetaList": [],
+                "ParamTemplateId": "",
+                "ParamTemplateName": "",
+                "TargetName": "",
+                "SourceName": "",
+                "IpVersion": 0
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "9afc19d7-0036-4f3d-af1a-80088236f4ed"
+    }
+}
+```
+
+**Example 2: 查询内网间访问控制列表示例2**
+
+查询内网间访问控制列表，其中Filters中 IpVersion为0表示查询ipv4的规则列表，且基于源ip过滤
+
+Input: 
+
+```
+tccli cfw DescribeVpcAcRule --cli-unfold-argument  \
+    --Filters.0.Name SrcIP \
+    --Filters.0.Values 192.168.1.10 \
+    --Filters.0.OperatorType 9 \
+    --Filters.1.Name IpVersion \
+    --Filters.1.Values 0 \
+    --Filters.1.OperatorType 1 \
+    --Limit 10 \
+    --Offset 0
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Total": 1,
+        "Data": [
+            {
+                "Uuid": 221579,
+                "InternalUuid": 1729666998976364,
+                "OrderIndex": 1,
+                "SourceContent": "mb_1256532032_1666263807415",
+                "SourceType": "template",
+                "DestContent": "192.168.1.2",
+                "DestType": "net",
+                "Port": "-1/-1",
+                "Protocol": "TCP",
+                "RuleAction": "accept",
+                "Description": "test",
+                "Enable": "true",
+                "Deleted": 0,
+                "EdgeId": "ALL",
+                "EdgeName": "",
+                "DetectedTimes": 0,
+                "FwGroupId": "ALL",
+                "FwGroupName": "",
+                "BetaList": [],
+                "ParamTemplateId": "",
+                "ParamTemplateName": "",
+                "TargetName": "",
+                "SourceName": "",
+                "IpVersion": 0
+            }
+        ],
+        "RequestId": "9afc19d7-0036-4f3d-af1a-80088236f4ed"
     }
 }
 ```

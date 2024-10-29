@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli cwp CreateVulFix --cli-unfold-argument  \
-    --CreateVulFixTaskQuuids.0.Quuids xx \
+    --CreateVulFixTaskQuuids.0.Quuids 05f0bcab-726c-4ea4-8109-bcd03d5598f7 \
     --CreateVulFixTaskQuuids.0.VulId 1 \
-    --SnapshotName xx \
+    --SnapshotName 快照名称 \
     --SaveDays 1
 ```
 

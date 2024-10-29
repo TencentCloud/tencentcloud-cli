@@ -91,6 +91,13 @@
       "output": "DescribeAllocationTrendByMonthResponse",
       "status": "online"
     },
+    "DescribeBillAdjustInfo": {
+      "document": "可以通过API获取当前UIN是否有调账，客户可以更快地主动地获取调账情况。",
+      "input": "DescribeBillAdjustInfoRequest",
+      "name": "获取账单异常调整信息",
+      "output": "DescribeBillAdjustInfoResponse",
+      "status": "online"
+    },
     "DescribeBillDetail": {
       "document": "获取账单明细数据。\n注意事项：\n1.在请求接口时，由于网络不稳定或其它异常，可能会导致请求失败。如果您遇到这种情况，我们建议您在接口请求失败时，手动发起重试操作，这样可以更好地确保您的接口请求能够成功执行。\n2.对于账单明细数据量级很大（例如每月账单明细量级超过20w）的客户，通过 API 调用账单数据效率较低，建议您开通账单数据存储功能，通过存储桶中获取账单文件进行分析。[账单存储至COS桶](https://cloud.tencent.com/document/product/555/61275)",
       "input": "DescribeBillDetailRequest",
@@ -428,6 +435,78 @@
         }
       ],
       "usage": "out"
+    },
+    "AdjustInfoDetail": {
+      "document": "UIN异常调整明细",
+      "members": [
+        {
+          "disabled": false,
+          "document": "支付者UIN：支付者的账号 ID，账号 ID 是用户在腾讯云的唯一账号标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "909619400",
+          "member": "string",
+          "name": "PayerUin",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "账单月份，格式：yyyy-MM\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2024-10",
+          "member": "string",
+          "name": "Month",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "调整类型\n调账：manualAdjustment\n补结算：supplementarySettlement\n重结算：reSettlement\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "manualAdjustment",
+          "member": "string",
+          "name": "AdjustType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "调整单号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2220726096135",
+          "member": "string",
+          "name": "AdjustNum",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "异常调整完成时间，格式：yyyy-MM-dd HH:mm:ss\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-12-02 12:39:04",
+          "member": "string",
+          "name": "AdjustCompletionTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "调整金额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "333.00000000",
+          "member": "float",
+          "name": "AdjustAmount",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "AllocationAverageData": {
       "document": "分账账单趋势图平均值",
@@ -1162,6 +1241,66 @@
           "name": "AllocationType",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当前消费项的优惠对象，例如：官网折扣、用户折扣、活动折扣。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "common",
+          "member": "string",
+          "name": "DiscountObject",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当前消费项的优惠类型，例如：折扣、合同价。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "DiscountType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "对优惠类型的补充描述，例如：商务折扣8折，则优惠类型为“折扣”，优惠内容为“0.8”。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "DiscountContent",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "SPDeduction\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "SPDeduction",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "SPDeduction\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "SPDeductionRate",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "账单月\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2024-10",
+          "member": "string",
+          "name": "BillMonth",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -2663,6 +2802,76 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "SPDeduction\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.00000000",
+          "member": "string",
+          "name": "SPDeduction",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "节省计划抵扣率：节省计划可用余额额度范围内，节省计划对于此组件打的折扣率\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.00000000",
+          "member": "string",
+          "name": "SPDeductionRate",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "AssociatedOrder\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AssociatedOrder",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当前消费项的优惠对象，例如：官网折扣、用户折扣、活动折扣。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "common",
+          "member": "string",
+          "name": "DiscountObject",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当前消费项的优惠类型，例如：折扣、合同价。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "DiscountType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "对优惠类型的补充描述，例如：商务折扣8折，则优惠类型为“折扣”，优惠内容为“0.8”。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "DiscountContent",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "账单月\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2024-10",
+          "member": "string",
+          "name": "BillMonth",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -3087,6 +3296,26 @@
           "member": "string",
           "name": "ComponentConfig",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "SPDeduction\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SPDeduction",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "账单月\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "BillMonth",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         }
@@ -8497,6 +8726,16 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
+          "document": "分账标签键\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"游戏项目组\",\"部门\",\"机房\",\"云应用\",\"运营状态\"]",
+          "member": "string",
+          "name": "TagKey",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -9595,6 +9834,71 @@
           "output_required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBillAdjustInfoRequest": {
+      "document": "DescribeBillAdjustInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "格式：yyyy-MM\n账单月份，month和timeFrom&timeTo必传一个，如果有传timeFrom&timeTo则month字段无效",
+          "example": "2024-10",
+          "member": "string",
+          "name": "Month",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "格式：yyyy-MM-dd\n开始时间，month和timeFrom&timeTo必传一个，如果有该字段则month字段无效。timeFrom和timeTo必须一起传，且为相同月份，不支持跨月查询，查询结果是整月数据",
+          "example": "2024-10-01",
+          "member": "string",
+          "name": "TimeFrom",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "格式：yyyy-MM-dd\n截止时间，month和timeFrom&timeTo必传一个，如果有该字段则month字段无效。timeFrom和timeTo必须一起传，且为相同月份，不支持跨月查询，查询结果是整月数据",
+          "example": "2024-10-02",
+          "member": "string",
+          "name": "TimeTo",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBillAdjustInfoResponse": {
+      "document": "DescribeBillAdjustInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据总量",
+          "example": "10",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "明细数据",
+          "example": "[]",
+          "member": "AdjustInfoDetail",
+          "name": "Data",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

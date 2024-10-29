@@ -810,6 +810,14 @@
         "title": "子客激活"
       }
     ],
+    "CreateCloseOrganizationUrl": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloseOrganizationUrl\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"ProxyOperator\": {\n            \"OpenId\": \"n9527\"\n        },\n        \"ProxyOrganizationOpenId\": \"org_dianziqian\",\n        \"AppId\": \"yDRSRUUgygj6qnwfUuO4zjEwc193c2hH\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ExpiredOn\": 1730257357,\n        \"LongUrl\": \"https://res.ess.tencent.cn/cdn/h5-activity-dev/jump-mp.html?to=ENTERPRISE_LOGOUT_LANDING&shortKey=yDCkuUW35EQA3r0aqr88\",\n        \"MiniAppPath\": \"pages/guide/index?to=ENTERPRISE_LOGOUT_LANDING&shortKey=yDCkuUW35EQA3r0aqr88\",\n        \"QrcodeUrl\": \"https://dyn.ess.tencent.cn/imgs/qrcode_urls/enterprise_logout_landing/yDCkxUUckp495fo9Ua9wie1hisAGTzhI.png\",\n        \"RequestId\": \"s1729652557401395967\",\n        \"ShortUrl\": \"https://essurl.cn/ppiKUBJLt0\",\n        \"WeixinQrcodeUrl\": \"https://res.ess.tencent.cn/mp-gate/develop/ENTERPRISE_LOGOUT_LANDING?shortKey=yDCkuUW35EQA3r0aqr88\"\n    }\n}",
+        "title": "创建企业注销链接"
+      }
+    ],
     "CreateConsoleLoginUrl": [
       {
         "document": "如果<b>典子谦示例企业的员工张三已经完成了认证和加入企业</b>，  此时给典子谦示例企业的员工张三生成登录的PC控制台的链接\n\n典子谦示例企业的定义标识为：org_dianziqian\n员工张三定义员工标识为：n9527\n",
@@ -984,6 +992,20 @@
         "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSignUrls\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"yDwhxUUckp3gl8j5UuFX33LSNozpRsbi\",\n        \"ProxyOrganizationOpenId\": \"org_dianziqian\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"n9527\"\n        },\n        \"ProxyAppId\": \"\"\n    },\n    \"FlowIds\": [\n        \"yDwiBUUckpo27hh3UuLiduR83BEL3kSb\"\n    ],\n    \"Endpoint\": \"WEIXINAPP\",\n    \"GenerateType\": \"PERSON\",\n    \"Name\": \"张三\",\n    \"Mobile\": \"18888888888\",\n    \"IdCardType\": \"ID_CARD\",\n    \"IdCardNumber\": \"620000198802020000\"\n}",
         "output": "{\n    \"Response\": {\n        \"SignUrlInfos\": [\n            {\n                \"SignUrl\": \"https://essurl.cn/9oJ**P\",\n                \"Deadline\": 0,\n                \"SignOrder\": 0,\n                \"SignId\": \"\",\n                \"CustomUserId\": \"\",\n                \"Name\": \"\",\n                \"Mobile\": \"\",\n                \"OrganizationName\": \"\",\n                \"ApproverType\": \"\",\n                \"IdCardNumber\": \"\",\n                \"FlowId\": \"yDwiBUUckpo27hh3UuLiduR83BEL3kSb\",\n                \"OpenId\": \"\",\n                \"FlowGroupId\": \"\",\n                \"SignQrcodeUrl\": \"\"\n            }\n        ],\n        \"ErrorMessages\": [],\n        \"RequestId\": \"0ec76ecb**bde91\"\n    }\n}",
         "title": "指定证件信息，为个人/自然人生成签署链接"
+      },
+      {
+        "document": "获取动态签署人补充链接，创建合同时未指定具体签署人，可获取链接后推送给指定的人进行补充，预设了企业名称后进入领取链接只能以该企业身份去领取并签署合同\n注： \n`1.参数GenerateType需传值为RECIPIENT` \n`2.需指定对应的签署方角色编号（即RecipientId）` ",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSignUrls\n<公共请求参数>\n\n{\n    \"FlowIds\": [\n        \"yDwhGUUfe5g******CX8ZwTiSg8gISocy\"\n    ],\n    \"RecipientIds\": [\n        \"yDwJDUUckpkv98zbUEF1GNmv6ln4ga9W\"\n    ],\n    \"OrganizationName\": \"典子谦有限公司\",\n    \"GenerateType\": \"RECIPIENT\",\n    \"Agent\": {\n        \"ProxyOrganizationOpenId\": \"1000***8062\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"yDR3L****eTdCt5TVx\"\n        },\n        \"AppId\": \"125***319\"\n    },\n    \"Endpoint\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorMessages\": [],\n        \"RequestId\": \"s1696937862717144539\",\n        \"SignUrlInfos\": [\n            {\n                \"ApproverType\": \"\",\n                \"CustomUserId\": \"\",\n                \"Deadline\": 0,\n                \"FlowGroupId\": \"\",\n                \"FlowId\": \"yDwhGUUfe5g******CX8ZwTiSg8gISocy\",\n                \"IdCardNumber\": \"\",\n                \"Mobile\": \"\",\n                \"Name\": \"\",\n                \"OpenId\": \"\",\n                \"OrganizationName\": \"\",\n                \"SignId\": \"\",\n                \"SignOrder\": 0,\n                \"SignQrcodeUrl\": \"https://file.test.ess.tencent.cn/bresource/resource/resource/0/0.JPG?hkey=5d92f0db15e6bbba6aea641f64c5c06dcbe2797f**************69ee4e24cd976dd8376dbd41c6ff227c803c4c561c\",\n                \"SignUrl\": \"https://test.essurl.cn/gGI***nZC\"\n            }\n        ]\n    }\n}",
+        "title": "获取动态签署人补充链接, 并且预设企业名称"
+      }
+    ],
+    "DeleteOrganizationAuthorizations": [
+      {
+        "document": "1. 企业典子谦示例企业 通过生成批量认证接口生成了 两个认证企业 （张三示例企业一， 张三示例企业二）\n2. 此时操作人典子谦示例企业 的业务员典子谦 发现超管应该是李四，信息填写错误，希望批量清除之前写错的信息，进行重新认证。\n3. 此时传递超管的姓名和手机号， 来进行清理。\n4. 全部清理成功，status 返回为 1",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteOrganizationAuthorizations\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"yDwhxUUckp3gl8j5UuFX33LSNozpRsbi\",\n        \"ProxyOrganizationOpenId\": \"org_dianziqian\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"n9527\"\n        }\n    },\n    \"AdminName\": \"张三\",\n    \"AdminMobile\": \"18888888888\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DeleteOrganizationAuthorizationInfos\": [\n            {\n                \"AuthorizationId\": \"yDCkRUUckp4mdtwzUuvjSCCEzIZPsM4A\",\n                \"OrganizationName\": \"张三示例企业一\",\n                \"OrganizationOpenId\": \"org_zhangsan_1\"\n            },\n            {\n                \"AuthorizationId\": \"yDCkRUUckp4mdw8eUuYnzJiiRO2w2jQI\",\n                \"OrganizationName\": \"张三示例企业一\",\n                \"OrganizationOpenId\": \"org_zhangsan_2\"\n            }\n        ],\n        \"RequestId\": \"37e81c99bc4e\",\n        \"Status\": 1\n    }\n}",
+        "title": "批量清理张三的所有认证中的认证流"
       }
     ],
     "DescribeBatchOrganizationRegistrationUrls": [

@@ -104,6 +104,14 @@
         "title": "查询分账报表费用趋势"
       }
     ],
+    "DescribeBillAdjustInfo": [
+      {
+        "document": "根据月份获取账单异常调整信息",
+        "input": "POST / HTTP/1.1\nHost: billing.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBillAdjustInfo\n<公共请求参数>\n\n{\n    \"Month\": \"2023-09\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"AdjustAmount\": 2346.28,\n                \"AdjustCompletionTime\": \"2024-10-21 17:50:46\",\n                \"AdjustNum\": \"20230906159081\",\n                \"AdjustType\": \"manualAdjustment\",\n                \"Month\": \"2023-09\",\n                \"PayerUin\": \"909619400\"\n            },\n            {\n                \"AdjustAmount\": 5318.81,\n                \"AdjustCompletionTime\": \"2024-10-21 17:44:14\",\n                \"AdjustNum\": \"20230909111993\",\n                \"AdjustType\": \"manualAdjustment\",\n                \"Month\": \"2023-09\",\n                \"PayerUin\": \"909619400\"\n            }\n        ],\n        \"RequestId\": \"7fd119c4-8f8b-4355-b365-6df62b7d6660\",\n        \"Total\": 2\n    }\n}",
+        "title": "获取账单异常调整信息"
+      }
+    ],
     "DescribeBillDetail": [
       {
         "document": "获取账单明细",

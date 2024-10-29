@@ -17,20 +17,13 @@ Output:
             {
                 "RouteId": "ccnr-bvipc87w",
                 "DestinationCidrBlock": "10.33.0.0/24",
-                "UpdateTime": "xx",
-                "Description": "xx",
+                "UpdateTime": "2024-01-01 10:18:12",
+                "Description": "描述内容",
                 "ASPath": [
                     "1000",
                     "2000",
                     "3000"
                 ]
-            },
-            {
-                "RouteId": "ccnr-oc61so0o",
-                "DestinationCidrBlock": "192.168.0.0/24",
-                "UpdateTime": "xx",
-                "Description": "xx",
-                "ASPath": []
             }
         ],
         "TotalCount": 2,

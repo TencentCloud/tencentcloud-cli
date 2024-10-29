@@ -200,6 +200,14 @@
         "title": "创建权限配置"
       }
     ],
+    "CreateSCIMCredential": [
+      {
+        "document": "创建SCIM密钥",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSCIMCredential\n<公共请求参数>\n\n{\n    \"ZoneId\": \"z-vft38p2hq8tq\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CreateTime\": \"2024-05-31 15:04:53\",\n        \"CredentialId\": \"scimcred-un1tgbnt0s9j\",\n        \"CredentialSecret\": \"YlBKbEhkYXI2cy9xOEFjSyj9sngcXTyzqPMSkQl_qJ7IVNQGJoQJ9tUerclttS7PAWiabsIxkbCx3f3gR0qOWEqKmIF5N1RGrMqHxl0KhBq-BLowGXx8fpOipLmzYKYtjiO7CCUdkJ5_7de2nTCGEeC2yIu9dmJ5gtKwYBmjPW4F22cnReLf-2VeI5PDvqjKkZTu_WJ5vvUBoGlZsprEKapgVKEDdmYL04rvc-3u1__zTRbjC8PtncjqLvCx-9JsSilTZsVwldFCUDWAlOfmpcbdT1DaV9W8Ule-yOrqS-NJUUnJ4HsUzW3cL2nYiNQ2s5xD_DS7n691G6nhwK6xzu0po8Wy12oHx9RIhZ48d9kI9SwCwlrHZ0yNx7G__dtWdurhce2owPGLdETPPJlcOtCKFiNoHOc5EZox3ZKEVqo2CUA=\",\n        \"CredentialStatus\": \"Enabled\",\n        \"CredentialType\": \"BearerToken\",\n        \"ExpireTime\": \"2025-05-31 15:04:53\",\n        \"RequestId\": \"b835edd6-8ac0-4e79-9b78-917d3faff9ed\",\n        \"ZoneId\": \"z-vft38p2hq8tq\"\n    }\n}",
+        "title": "创建SCIM密钥"
+      }
+    ],
     "CreateUser": [
       {
         "document": "创建用户",
@@ -310,6 +318,14 @@
         "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRoleConfiguration\n<公共请求参数>\n\n{\n    \"ZoneId\": \"z-2jsoi3ms\",\n    \"RoleConfigurationId\": \"rc-ais2ismwo2\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"e297543a-80de-4039-83c8-9d324545\"\n    }\n}",
         "title": "删除权限配置信息"
+      }
+    ],
+    "DeleteSCIMCredential": [
+      {
+        "document": "删除SCIM密钥",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSCIMCredential\n<公共请求参数>\n\n{\n    \"ZoneId\": \"z-vft38p2hq8tq\",\n    \"CredentialId\": \"scimcred-un1tgbnt0s9j\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b9a87af3-a121-471b-bb61-16a2985b4619\"\n    }\n}",
+        "title": "删除SCIM密钥"
       }
     ],
     "DeleteShareUnit": [
@@ -568,6 +584,14 @@
         "title": "查询权限配置信息"
       }
     ],
+    "GetSCIMSynchronizationStatus": [
+      {
+        "document": "获取SCIM同步状态",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetSCIMSynchronizationStatus\n<公共请求参数>\n\n{\n    \"ZoneId\": \"z-vft38p2hq8tq\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a9c83496-1656-4e86-88ba-4cbc26bef4ba\",\n        \"SCIMSynchronizationStatus\": \"Disabled\"\n    }\n}",
+        "title": "获取SCIM同步状态"
+      }
+    ],
     "GetTaskStatus": [
       {
         "document": "查询异步任务的状态",
@@ -726,6 +750,14 @@
         "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListRoleConfiguration\n<公共请求参数>\n\n{\n    \"ZoneId\": \"z-s9h39sdn2\",\n    \"NextToken\": \"sisndpmfisdnlk\",\n    \"MaxResults\": 10,\n    \"Filter\": \"RoleConfigurationName eqTestRoleConfiguration\"\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCounts\": 20,\n        \"MaxResults\": 10,\n        \"IsTruncated\": true,\n        \"NextToken\": \"3si2ns92ns82bos\",\n        \"RoleConfigurations\": [\n            {\n                \"RoleConfigurationId\": \"rc-s2ns92ns***\",\n                \"RoleConfigurationName\": \"test\",\n                \"Description\": \"this is role configuration\",\n                \"SessionDuration\": 900,\n                \"RelayState\": \"https://console.cloud.tencent.com\",\n                \"CreateTime\": \"2019-01-01 12:12:12\",\n                \"UpdateTime\": \"2019-01-01 12:12:12\"\n            }\n        ],\n        \"RequestId\": \"e297543a-80de-4039-83c8-9d324545\"\n    }\n}",
         "title": "查询权限配置列表"
+      }
+    ],
+    "ListSCIMCredentials": [
+      {
+        "document": "查询SCIM密钥列表",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListSCIMCredentials\n<公共请求参数>\n\n{\n    \"ZoneId\": \"z-vft38p2hq8tq\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"60ebab32-73ff-4d3d-abdf-af9b1e866add\",\n        \"SCIMCredentials\": [],\n        \"TotalCounts\": 0\n    }\n}",
+        "title": "查询SCIM密钥列表"
       }
     ],
     "ListTargetsForPolicy": [
@@ -902,6 +934,22 @@
         "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateRoleConfiguration\n<公共请求参数>\n\n{\n    \"ZoneId\": \"z-22m23mo2\",\n    \"RoleConfigurationId\": \"rc-ai3n9si2m\",\n    \"NewDescription\": \"this is role configuration\",\n    \"NewSessionDuration\": 900,\n    \"NewRelayState\": \"https://console.cloud.tencent.com\"\n}",
         "output": "{\n    \"Response\": {\n        \"RoleConfigurationInfo\": {\n            \"RoleConfigurationId\": \"rc-s2ns92ns***\",\n            \"RoleConfigurationName\": \"test\",\n            \"Description\": \"this is role configuration\",\n            \"SessionDuration\": 900,\n            \"RelayState\": \"https://console.cloud.tencent.com\",\n            \"CreateTime\": \"2019-01-01 12:12:12\",\n            \"UpdateTime\": \"2019-01-01 12:12:12\"\n        },\n        \"RequestId\": \"e297543a-80de-4039-83c8-9d324545\"\n    }\n}",
         "title": "修改权限配置信息"
+      }
+    ],
+    "UpdateSCIMCredentialStatus": [
+      {
+        "document": "修改SCIM密钥状态",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateSCIMCredentialStatus\n<公共请求参数>\n\n{\n    \"ZoneId\": \"z-vft38p2hq8tq\",\n    \"CredentialId\": \"scimcred-un1tgbnt0s9j\",\n    \"NewStatus\": \"Disabled\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d0b5fffc-c7b9-4513-a080-8dfcf72c6e56\"\n    }\n}",
+        "title": "修改SCIM密钥状态"
+      }
+    ],
+    "UpdateSCIMSynchronizationStatus": [
+      {
+        "document": "更新SCIM同步状态",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateSCIMSynchronizationStatus\n<公共请求参数>\n\n{\n    \"ZoneId\": \"z-vft38p2hq8tq\",\n    \"SCIMSynchronizationStatus\": \"Enabled\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"520e1475-6042-4353-b85a-7c67e5e98e58\"\n    }\n}",
+        "title": "更新SCIM同步状态"
       }
     ],
     "UpdateShareUnit": [

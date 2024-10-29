@@ -17054,7 +17054,7 @@
           "example": "无",
           "member": "string",
           "name": "DomainGroup",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -17064,7 +17064,7 @@
           "example": "无",
           "member": "string",
           "name": "Domain",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -17074,7 +17074,7 @@
           "example": "无",
           "member": "string",
           "name": "AppName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -17084,7 +17084,7 @@
           "example": "无",
           "member": "string",
           "name": "StreamName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -17094,7 +17094,7 @@
           "example": "无",
           "member": "int64",
           "name": "StartTime",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -17104,7 +17104,7 @@
           "example": "无",
           "member": "int64",
           "name": "EndTime",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -17114,7 +17114,7 @@
           "example": "无",
           "member": "uint64",
           "name": "TransCodeId",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -17124,7 +17124,7 @@
           "example": "无",
           "member": "int64",
           "name": "StreamType",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -17134,9 +17134,35 @@
           "example": "无",
           "member": "uint64",
           "name": "Duration",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "时移自适应码率子流列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TimeShiftSubStream",
+          "name": "TimeShiftSubStreams",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TimeShiftSubStream": {
+      "document": "时移自适应码率子流信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "时移自适应码率子流转码模板ID。",
+          "example": "无",
+          "member": "uint64",
+          "name": "TransCodeId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

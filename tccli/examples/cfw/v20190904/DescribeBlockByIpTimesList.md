@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli cfw DescribeBlockByIpTimesList --cli-unfold-argument  \
-    --Ip xx \
-    --EndTime xx \
-    --StartTime xx
+    --Ip 114.25.114.2 \
+    --EndTime 2024-10-24 10:11:11 \
+    --StartTime 2024-10-17 10:11:11
 ```
 
 Output: 
@@ -17,11 +17,11 @@ Output:
     "Response": {
         "Data": [
             {
-                "StatTime": "xx",
-                "Num": 0
+                "StatTime": "2024-10-17",
+                "Num": 20
             }
         ],
-        "RequestId": "xx"
+        "RequestId": ""
     }
 }
 ```

@@ -367,6 +367,7 @@
           "example": "1",
           "member": "int64",
           "name": "MinReplicas",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -377,26 +378,29 @@
           "example": "1",
           "member": "int64",
           "name": "MaxReplicas",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "指标弹性伸缩策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "指标弹性伸缩策略(指标策略和定时策略必须填写一个)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "HorizontalAutoscaler",
           "name": "HorizontalAutoscaler",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "定时弹性伸缩策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "定时弹性伸缩策略(指标策略和定时策略必须填写一个)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "CronHorizontalAutoscaler",
           "name": "CronHorizontalAutoscaler",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -407,6 +411,7 @@
           "example": "1",
           "member": "string",
           "name": "AutoscalerId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -417,6 +422,7 @@
           "example": "1",
           "member": "string",
           "name": "AutoscalerName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -427,6 +433,7 @@
           "example": "1",
           "member": "string",
           "name": "Description",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -437,6 +444,7 @@
           "example": "1",
           "member": "string",
           "name": "CreateDate",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -447,6 +455,7 @@
           "example": "1",
           "member": "string",
           "name": "ModifyDate",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -457,6 +466,7 @@
           "example": "1",
           "member": "string",
           "name": "EnableDate",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -467,6 +477,7 @@
           "example": "1",
           "member": "bool",
           "name": "Enabled",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": true
@@ -904,7 +915,7 @@
         {
           "disabled": false,
           "document": "环境 ID",
-          "example": "env-xxx",
+          "example": "en-xxxxxx",
           "member": "string",
           "name": "EnvironmentId",
           "required": true,
@@ -913,7 +924,7 @@
         {
           "disabled": false,
           "document": "配置名",
-          "example": "xxxx",
+          "example": "abc-xxxx",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -949,7 +960,7 @@
           "example": "true",
           "member": "bool",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -1194,7 +1205,7 @@
         {
           "disabled": false,
           "document": "环境 ID",
-          "example": "environment-xxx",
+          "example": "en-xxxxxx",
           "member": "string",
           "name": "EnvironmentId",
           "required": true,
@@ -1203,7 +1214,7 @@
         {
           "disabled": false,
           "document": "配置名",
-          "example": "xxx",
+          "example": "abc-xxx",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -1221,7 +1232,7 @@
         {
           "disabled": false,
           "document": "应用 ID",
-          "example": "application-xxxx",
+          "example": "app-xxxxxx",
           "member": "string",
           "name": "ApplicationId",
           "required": false,
@@ -1230,7 +1241,7 @@
         {
           "disabled": false,
           "document": "日志集 ID",
-          "example": "xxxx",
+          "example": "abc-xxxxxx",
           "member": "string",
           "name": "LogsetId",
           "required": false,
@@ -1239,7 +1250,7 @@
         {
           "disabled": false,
           "document": "日志主题 ID",
-          "example": "xxxx",
+          "example": "abc-xxxxxx",
           "member": "string",
           "name": "TopicId",
           "required": false,
@@ -1257,7 +1268,7 @@
         {
           "disabled": false,
           "document": "首行正则表达式，当LogType=multiline_log 时生效",
-          "example": "/xx/",
+          "example": "/abc/",
           "member": "string",
           "name": "BeginningRegex",
           "required": false,
@@ -1266,7 +1277,7 @@
         {
           "disabled": false,
           "document": "收集文件目录，当 InputType=container_file 时生效",
-          "example": "/xxx",
+          "example": "/abc",
           "member": "string",
           "name": "LogPath",
           "required": false,
@@ -1302,7 +1313,7 @@
           "example": "true",
           "member": "bool",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -1321,7 +1332,7 @@
         {
           "disabled": false,
           "document": "环境 Id",
-          "example": "env-xxx",
+          "example": "en-xxxxxx",
           "member": "string",
           "name": "EnvironmentId",
           "required": true,
@@ -1329,8 +1340,8 @@
         },
         {
           "disabled": false,
-          "document": "资源类型，目前支持文件系统：CFS；日志服务：CLS；注册中心：TSE_SRE",
-          "example": "CLS",
+          "document": "资源类型，目前支持文件系统：CFS；注册中心：TSE_SRE",
+          "example": "CFS",
           "member": "string",
           "name": "ResourceType",
           "required": true,
@@ -1384,6 +1395,7 @@
           "example": "true",
           "member": "bool",
           "name": "Result",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -1676,7 +1688,7 @@
         {
           "disabled": false,
           "document": "环境ID",
-          "example": "env-xxx",
+          "example": "env-xxxxxx",
           "member": "string",
           "name": "EnvironmentId",
           "required": true,
@@ -1694,7 +1706,7 @@
         {
           "disabled": false,
           "document": "ingress 规则名",
-          "example": "xxxxx",
+          "example": "ingress-name",
           "member": "string",
           "name": "IngressName",
           "required": true,
@@ -1721,7 +1733,7 @@
           "example": "true",
           "member": "bool",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -1740,7 +1752,7 @@
         {
           "disabled": false,
           "document": "应用ID",
-          "example": "1",
+          "example": "app-xxxxxx",
           "member": "string",
           "name": "ApplicationId",
           "required": true,
@@ -1757,7 +1769,7 @@
         },
         {
           "disabled": false,
-          "document": "cpu规格",
+          "document": "cpu规格 单位：核",
           "example": "1",
           "member": "float",
           "name": "CpuSpec",
@@ -1766,8 +1778,8 @@
         },
         {
           "disabled": false,
-          "document": "内存规格",
-          "example": "1",
+          "document": "内存规格 单位：G",
+          "example": "2",
           "member": "float",
           "name": "MemorySpec",
           "required": true,
@@ -1776,7 +1788,7 @@
         {
           "disabled": false,
           "document": "环境ID",
-          "example": "1",
+          "example": "en-xxxxxx",
           "member": "string",
           "name": "EnvironmentId",
           "required": true,
@@ -1857,7 +1869,7 @@
         {
           "disabled": false,
           "document": "部署类型。\n- JAR：通过 jar 包部署\n- WAR：通过 war 包部署\n- IMAGE：通过镜像部署",
-          "example": "1",
+          "example": "JAR",
           "member": "string",
           "name": "DeployMode",
           "required": false,
@@ -1866,7 +1878,7 @@
         {
           "disabled": false,
           "document": "部署类型为 IMAGE 时，该参数表示镜像 tag。\n部署类型为 JAR/WAR 时，该参数表示包版本号。",
-          "example": "1",
+          "example": "v1",
           "member": "string",
           "name": "DeployVersion",
           "required": false,
@@ -1884,7 +1896,7 @@
         {
           "disabled": false,
           "document": "JDK 版本。\n- KONA:8：使用 kona jdk 8。\n- OPEN:8：使用 open jdk 8。\n- KONA:11：使用 kona jdk 11。\n- OPEN:11：使用 open jdk 11。",
-          "example": "1",
+          "example": "KONA:8",
           "member": "string",
           "name": "JdkVersion",
           "required": false,
@@ -2419,7 +2431,7 @@
         {
           "disabled": false,
           "document": "服务id",
-          "example": "service-adfi142f",
+          "example": "app-xxxxxx",
           "member": "string",
           "name": "ApplicationId",
           "required": true,
@@ -2428,7 +2440,7 @@
         {
           "disabled": false,
           "document": "环境ID",
-          "example": "1",
+          "example": "en-xxxxxx",
           "member": "string",
           "name": "EnvironmentId",
           "required": true,
@@ -2455,7 +2467,7 @@
           "example": "1",
           "member": "Autoscaler",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -2620,7 +2632,7 @@
         {
           "disabled": false,
           "document": "namespace id",
-          "example": "env-xxx",
+          "example": "en-xxxxxx",
           "member": "string",
           "name": "EnvironmentId",
           "required": true,
@@ -2629,7 +2641,7 @@
         {
           "disabled": false,
           "document": "服务ID",
-          "example": "1",
+          "example": "app-xxxxxx",
           "member": "string",
           "name": "ApplicationId",
           "required": true,
@@ -2637,7 +2649,7 @@
         },
         {
           "disabled": false,
-          "document": "xx",
+          "document": "来源渠道",
           "example": "0",
           "member": "int64",
           "name": "SourceChannel",
@@ -2656,7 +2668,7 @@
           "example": "ss",
           "member": "EksService",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -2784,7 +2796,7 @@
         {
           "disabled": false,
           "document": "环境ID",
-          "example": "1",
+          "example": "en-xxxxxx",
           "member": "string",
           "name": "EnvironmentId",
           "required": false,
@@ -2802,7 +2814,7 @@
           "example": "1",
           "member": "ServiceVersionBrief",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2857,7 +2869,7 @@
         {
           "disabled": false,
           "document": "环境 ID",
-          "example": "env-xxx",
+          "example": "en-xxxxxx",
           "member": "string",
           "name": "EnvironmentId",
           "required": true,
@@ -2875,7 +2887,7 @@
         {
           "disabled": false,
           "document": "查询游标",
-          "example": "xxx",
+          "example": "token-xxxxxx",
           "member": "string",
           "name": "ContinueToken",
           "required": false,
@@ -2902,7 +2914,7 @@
           "example": "[]",
           "member": "DescribeConfigDataListPage",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -2921,7 +2933,7 @@
         {
           "disabled": false,
           "document": "环境 ID",
-          "example": "env-xxx",
+          "example": "en-xxxxxx",
           "member": "string",
           "name": "EnvironmentId",
           "required": true,
@@ -2930,7 +2942,7 @@
         {
           "disabled": false,
           "document": "配置名",
-          "example": "xxxx",
+          "example": "abc-xxxx",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -2957,7 +2969,7 @@
           "example": "[]",
           "member": "ConfigData",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -3333,7 +3345,7 @@
         {
           "disabled": false,
           "document": "环境 ID",
-          "example": "env-xxx",
+          "example": "en-xxxxxx",
           "member": "string",
           "name": "EnvironmentId",
           "required": true,
@@ -3342,7 +3354,7 @@
         {
           "disabled": false,
           "document": "配置名",
-          "example": "xxxx",
+          "example": "abc-xxx",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -3369,7 +3381,7 @@
           "example": "[]",
           "member": "LogConfig",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -3590,7 +3602,7 @@
         {
           "disabled": false,
           "document": "环境 ID",
-          "example": "env-xxx",
+          "example": "en-xxxxxx",
           "member": "string",
           "name": "EnvironmentId",
           "required": true,
@@ -3599,7 +3611,7 @@
         {
           "disabled": false,
           "document": "配置名",
-          "example": "xxx",
+          "example": "abc-xxx",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -3623,10 +3635,10 @@
         {
           "disabled": false,
           "document": "返回结果",
-          "example": "1",
+          "example": "true",
           "member": "bool",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -4132,7 +4144,7 @@
         {
           "disabled": false,
           "document": "应用ID",
-          "example": "1",
+          "example": "app-xxxxxx",
           "member": "string",
           "name": "ApplicationId",
           "required": true,
@@ -4141,7 +4153,7 @@
         {
           "disabled": false,
           "document": "包名",
-          "example": "1",
+          "example": "test.jar",
           "member": "string",
           "name": "PkgName",
           "required": true,
@@ -4150,7 +4162,7 @@
         {
           "disabled": false,
           "document": "需要下载的包版本",
-          "example": "asss",
+          "example": "v1",
           "member": "string",
           "name": "DeployVersion",
           "required": true,
@@ -4177,7 +4189,7 @@
           "example": "http://download.demo",
           "member": "string",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4624,70 +4636,77 @@
         {
           "disabled": false,
           "document": "名称",
-          "example": "xxx",
+          "example": "ab-xxx",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "收集类型，container_stdout 为标准输出；container_file 为文件；",
-          "example": "xxx",
+          "example": "container_stdout",
           "member": "string",
           "name": "InputType",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "日志集 ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "4d43fac5-fc0a-42bf-92a9-ef5b5b245e6a",
           "member": "string",
           "name": "LogsetId",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "日志主题 ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "dbebda3e-0a9a-4888-9d5c-642bf2ffa183",
           "member": "string",
           "name": "TopicId",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "日志提取模式，minimalist_log 为单行全文；multiline_log 为多行全文；  fullregex_log 为单行正则； multiline_fullregex_log 为多行正则； json_log 为 json；",
-          "example": "xxx",
+          "example": "json_log",
           "member": "string",
           "name": "LogType",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "首行正则表达式，当 LogType 为多行全文、多行正则时生效\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "abc",
           "member": "string",
           "name": "BeginningRegex",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "收集文件目录，当 InputType=container_file 时生效\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "/abc",
           "member": "string",
           "name": "LogPath",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4697,7 +4716,8 @@
           "example": "app_*.log",
           "member": "string",
           "name": "FilePattern",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4707,7 +4727,8 @@
           "example": "2022-05-20T14:42:16Z",
           "member": "string",
           "name": "CreateDate",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4717,7 +4738,8 @@
           "example": "2022-05-20T14:42:16Z",
           "member": "string",
           "name": "ModifyDate",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4727,32 +4749,35 @@
           "example": "app-xxx",
           "member": "string",
           "name": "ApplicationId",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "应用名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "abc-xxx",
           "member": "string",
           "name": "ApplicationName",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "导出规则\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{}",
+          "example": "{       \"FilterKeys\": [],       \"FilterRegex\": [],       \"UnMatchUpload\": \"true\",       \"UnMatchedKey\": \"LogParseFailure\"     }",
           "member": "LogConfigExtractRule",
           "name": "ExtractRule",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "object",
           "value_allowed_null": true
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "LogConfigExtractRule": {
       "document": "日志采集的导出规则配置",
@@ -5159,7 +5184,7 @@
         {
           "disabled": false,
           "document": "服务id",
-          "example": "1",
+          "example": "app-xxxxxx",
           "member": "string",
           "name": "ApplicationId",
           "required": true,
@@ -5168,7 +5193,7 @@
         {
           "disabled": false,
           "document": "环境ID",
-          "example": "1",
+          "example": "en-xxxxxx",
           "member": "string",
           "name": "EnvironmentId",
           "required": true,
@@ -5186,7 +5211,7 @@
         {
           "disabled": false,
           "document": "全量访问方式设置",
-          "example": "1",
+          "example": "{}",
           "member": "EksService",
           "name": "Service",
           "required": false,
@@ -5213,7 +5238,7 @@
           "example": "true",
           "member": "bool",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -5232,7 +5257,7 @@
         {
           "disabled": false,
           "document": "环境 ID",
-          "example": "env-xxx",
+          "example": "en-xxxxxx",
           "member": "string",
           "name": "EnvironmentId",
           "required": true,
@@ -5241,7 +5266,7 @@
         {
           "disabled": false,
           "document": "配置名",
-          "example": "xxxx",
+          "example": "abc-xxxx",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -5277,7 +5302,7 @@
           "example": "true",
           "member": "bool",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -5442,7 +5467,7 @@
         {
           "disabled": false,
           "document": "配置名",
-          "example": "xxxx",
+          "example": "abc-xxxx",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -5460,7 +5485,7 @@
         {
           "disabled": false,
           "document": "应用 ID",
-          "example": "xxx",
+          "example": "app-xxxxxx",
           "member": "string",
           "name": "ApplicationId",
           "required": false,
@@ -5478,7 +5503,7 @@
           "example": "true",
           "member": "bool",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -5496,46 +5521,50 @@
       "members": [
         {
           "disabled": false,
-          "document": "配置名称",
+          "document": "配置名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
           "name": "ConfigDataName",
+          "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "挂载路径",
+          "document": "挂载路径\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
           "name": "MountedPath",
+          "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "配置内容",
+          "document": "配置内容\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
           "member": "Pair",
           "name": "Data",
+          "output_required": false,
           "required": false,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "加密配置名称",
+          "document": "加密配置名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
           "name": "SecretDataName",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "NamespaceInfo": {
       "document": "Namespace 基础信息",
@@ -6121,7 +6150,7 @@
         {
           "disabled": false,
           "document": "需要开始下一批次的服务id",
-          "example": "service-123",
+          "example": "app-xxxxxx",
           "member": "string",
           "name": "ApplicationId",
           "required": false,
@@ -6130,7 +6159,7 @@
         {
           "disabled": false,
           "document": "环境id",
-          "example": "env-123",
+          "example": "en-xxxxxx",
           "member": "string",
           "name": "EnvironmentId",
           "required": false,
@@ -6148,7 +6177,7 @@
           "example": "true",
           "member": "bool",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -6213,7 +6242,7 @@
         {
           "disabled": false,
           "document": "应用ID",
-          "example": "1",
+          "example": "app-xxxxxx",
           "member": "string",
           "name": "ApplicationId",
           "required": true,
@@ -6222,7 +6251,7 @@
         {
           "disabled": false,
           "document": "环境ID",
-          "example": "1",
+          "example": "en-xxxxxx",
           "member": "string",
           "name": "EnvironmentId",
           "required": true,
@@ -6240,7 +6269,7 @@
         {
           "disabled": false,
           "document": "JAR/WAR 包名，仅 JAR/WAR 部署时必填",
-          "example": "xxx",
+          "example": "package-name-xxx.jar",
           "member": "string",
           "name": "PackageName",
           "required": false,
@@ -6318,9 +6347,10 @@
         {
           "disabled": false,
           "document": "版本ID",
-          "example": "1",
+          "example": "revision-xxx",
           "member": "string",
           "name": "Result",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6560,10 +6590,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "服务类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "服务类型：如：EXTERNAL，VPC，CLUSTER\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ClusterIP",
           "member": "string",
           "name": "Type",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -6574,6 +6605,7 @@
           "example": "consumer",
           "member": "string",
           "name": "ServiceName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -6584,6 +6616,7 @@
           "example": "10.0.0.2",
           "member": "string",
           "name": "ClusterIp",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -6594,6 +6627,7 @@
           "example": "202.0.0.2",
           "member": "string",
           "name": "ExternalIp",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -6604,6 +6638,7 @@
           "example": "subnet-123",
           "member": "string",
           "name": "SubnetId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -6614,6 +6649,7 @@
           "example": "vpc-123",
           "member": "string",
           "name": "VpcId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -6624,6 +6660,7 @@
           "example": "clb-123",
           "member": "string",
           "name": "LoadBalanceId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -6634,6 +6671,7 @@
           "example": "yaml",
           "member": "string",
           "name": "Yaml",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -6644,6 +6682,7 @@
           "example": "[100,2000,3000]",
           "member": "int64",
           "name": "Ports",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -6654,6 +6693,7 @@
           "example": "[]",
           "member": "ServicePortMappingItem",
           "name": "PortMappingItemList",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -6664,6 +6704,7 @@
           "example": "lb-xxxx.com",
           "member": "string",
           "name": "ExternalDomain",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true

@@ -6,12 +6,7 @@ Input:
 
 ```
 tccli cwp ExportRansomDefenseBackupList --cli-unfold-argument  \
-    --Filters.0.Name abc \
-    --Filters.0.Values abc \
-    --Filters.0.ExactMatch True \
-    --Order abc \
-    --By abc \
-    --Quuid abc
+    --Quuid 05f0bcab-726c-4ea4-8109-bcd03d5598f7
 ```
 
 Output: 

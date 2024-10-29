@@ -13,33 +13,34 @@ Output:
 ```
 {
     "Response": {
+        "RequestId": "5d14133e-4727-4937-b076-6ff1b9a59f14",
         "RiskDnsInfo": {
-            "Url": "xx",
-            "AccessCount": 1,
-            "ProcessName": "xx",
-            "ProcessMd5": "xx",
-            "GlobalRuleId": 1,
-            "UserRuleId": 1,
-            "Status": 1,
-            "CreateTime": "xx",
-            "MergeTime": "xx",
-            "Quuid": "xx",
-            "HostIp": "xx",
-            "Alias": "xx",
-            "Description": "xx",
-            "Id": 1,
-            "Reference": "xx",
-            "CmdLine": "xx",
-            "Pid": 1,
-            "Uuid": "xx",
-            "SuggestScheme": "xx",
+            "Url": "www.xxxx.com",
+            "AccessCount": 7,
+            "ProcessName": "",
+            "ProcessMd5": "",
+            "GlobalRuleId": 0,
+            "UserRuleId": 0,
+            "Status": 0,
+            "CreateTime": "2024-10-24 09:10:13",
+            "MergeTime": "2024-10-24 09:10:27",
+            "Quuid": "05f0bcab-726c-4ea4-8109-bcd03d5598f7",
+            "Uuid": "05f0bcab-726c-4ea4-8109-bcd03d5598f7",
+            "HostIp": "1.1.1.1",
+            "Alias": "别名",
+            "Description": "未知的APT组织",
+            "Id": 10001,
+            "Pid": 0,
+            "CmdLine": "",
+            "Reference": "",
+            "SuggestScheme": "1、检查恶意进程及非法端口，删除可疑的启动项和定时任务；\n2、隔离或者删除相关的木马文件；\n3、对系统进行风险排查，并进行安全加固，详情可参考如下链接： \n【Linux】https://cloud.tencent.com/document/product/296/9604 \n【Windows】https://cloud.tencent.com/document/product/296/9605",
             "Tags": [
-                "xx"
+                "apt",
+                "apt"
             ],
-            "MachineWanIp": "xx",
-            "MachineStatus": "xx"
-        },
-        "RequestId": "xx"
+            "MachineWanIp": "1.1.1.1",
+            "MachineStatus": "ONLINE"
+        }
     }
 }
 ```

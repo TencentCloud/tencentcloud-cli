@@ -6,17 +6,17 @@ Input:
 
 ```
 tccli ciam UpdateUserGroup --cli-unfold-argument  \
-    --UserStoreId xxx \
-    --UserGroupId xxx \
-    --DisplayName xxx \
-    --Description xxx
+    --UserGroupId 6cd22e51****************f6f7cb81 \
+    --DisplayName 用户组1 \
+    --Description 包含了一组用户 \
+    --UserStoreId 2c3aca3b****************a7efe88e
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xxx"
+        "RequestId": "e2e9e8aa********************9ab34c6e"
     }
 }
 ```

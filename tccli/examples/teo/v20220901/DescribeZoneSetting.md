@@ -133,6 +133,9 @@ Output:
                 "Switch": "off",
                 "Timeout": 30
             },
+            "JITVideoProcess": {
+                "Switch": "off"
+            },
             "ZoneName": "wxlagame.com"
         }
     }

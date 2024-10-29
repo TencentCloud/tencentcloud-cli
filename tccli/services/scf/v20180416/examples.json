@@ -16,6 +16,20 @@
         "title": "创建一个别名"
       }
     ],
+    "CreateCustomDomain": [
+      {
+        "document": "创建一个自定义域名，关闭了waf防护，路由配置开启重写策略，该策略是通配符匹配替换。",
+        "input": "POST / HTTP/1.1\nHost: scf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCustomDomain\n<公共请求参数>\n\n{\n    \"Domain\": \"www.ccc.com\",\n    \"Protocol\": \"HTTP&HTTPS\",\n    \"CertConfig\": {\n        \"CertificateId\": \"BxxJ3DK7\"\n    },\n    \"EndpointsConfig\": [\n        {\n            \"PathMatch\": \"/aa/*\",\n            \"Namespace\": \"default\",\n            \"FunctionName\": \"test1\",\n            \"Qualifier\": \"$LATEST\",\n            \"PathRewrite\": [\n                {\n                    \"Path\": \"/aa/bb/*\",\n                    \"Type\": \"WildcardRules\",\n                    \"Rewrite\": \"/$\"\n                }\n            ]\n        }\n    ],\n    \"WafConfig\": {\n        \"WafOpen\": \"CLOSE\",\n        \"WafInstanceId\": \"\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "示例1"
+      },
+      {
+        "document": "创建一个自定义域名，开启了waf 防护，路由配置开启重写策略，该策略是精确路径匹配替换。",
+        "input": "POST / HTTP/1.1\nHost: scf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCustomDomain\n<公共请求参数>\n\n{\n    \"Domain\": \"www.ccc.com\",\n    \"Protocol\": \"HTTP&HTTPS\",\n    \"CertConfig\": {\n        \"CertificateId\": \"BxxJ3DK7\"\n    },\n    \"EndpointsConfig\": [\n        {\n            \"PathMatch\": \"/aa/\",\n            \"Namespace\": \"default\",\n            \"FunctionName\": \"test1\",\n            \"Qualifier\": \"1\",\n            \"PathRewrite\": [\n                {\n                    \"Path\": \"/aa/\",\n                    \"Type\": \"WildcardRules\",\n                    \"Rewrite\": \"/\"\n                }\n            ]\n        }\n    ],\n    \"WafConfig\": {\n        \"WafOpen\": \"OPEN\",\n        \"WafInstanceId\": \"waf-xxxxx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "示例2"
+      }
+    ],
     "CreateFunction": [
       {
         "document": "创建函数",
@@ -46,6 +60,14 @@
         "input": "https://scf.tencentcloudapi.com/?Action=DeleteAlias\n&Namespace=<Namespace>\n&FunctionName=<FunctionName>\n&Name=<AliasName>\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"d1b93f9c-ac3a-412a-a4f3-6f0697099f72\"\n    }\n}",
         "title": "删除别名"
+      }
+    ],
+    "DeleteCustomDomain": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: scf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCustomDomain\n<公共请求参数>\n\n{\n    \"Domain\": \"www.xxx.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "示例1"
       }
     ],
     "DeleteFunction": [
@@ -118,6 +140,14 @@
         "input": "https://scf.tencentcloudapi.com/?Action=GetAsyncEventStatus\n&InvokeRequestId=b379787f-8487-4bac-bd8c-17a20a9ce40e\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"Status\": \"abc\",\n            \"StatusCode\": 0,\n            \"InvokeRequestId\": \"abc\"\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "查询函数异步事件状态"
+      }
+    ],
+    "GetCustomDomain": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: scf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetCustomDomain\n<公共请求参数>\n\n{\n    \"Domain\": \"www.xxx.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CertConfig\": {\n            \"CertificateId\": \"BfHJsadd7\"\n        },\n        \"Domain\": \"www.xxx.com\",\n        \"EndpointsConfig\": [\n            {\n                \"FunctionName\": \"test1\",\n                \"Namespace\": \"default\",\n                \"PathMatch\": \"/cc/\",\n                \"PathRewrite\": [\n                    {\n                        \"Path\": \"/cc/\",\n                        \"Rewrite\": \"/\",\n                        \"Type\": \"ExactRules\"\n                    }\n                ],\n                \"Qualifier\": \"$LATEST\"\n            }\n        ],\n        \"Protocol\": \"HTTP&HTTPS\",\n        \"RequestId\": \"6941ssdd162b-925f-4c3a-b90f-3558c0aebf97\",\n        \"WafConfig\": {\n            \"WafInstanceId\": \"\",\n            \"WafOpen\": \"CLOSE\"\n        }\n    }\n}",
+        "title": "示例1"
       }
     ],
     "GetFunction": [
@@ -214,6 +244,14 @@
         "input": "https://scf.tencentcloudapi.com/?Action=ListAsyncEvents\n&FunctionName=helloworld\n&Qualifier=1\n&Offset=0\n&Limit=20\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"EventList\": [\n            {\n                \"InvokeRequestId\": \"xxxxxxxxxxxxxx\",\n                \"Qualifier\": \"1\",\n                \"Status\": \"FINISHED\",\n                \"InvokeType\": \"COS\",\n                \"StartTime\": \"2020-12-01 08:35:00.000\",\n                \"EndTime\": \"2020-12-01 08:35:30.000\"\n            },\n            {\n                \"InvokeRequestId\": \"xxxxxxxxxxxxxx\",\n                \"Qualifier\": \"1\",\n                \"Status\": \"RUNNING\",\n                \"InvokeType\": \"COS\",\n                \"StartTime\": \"2020-12-01 08:35:00.000\",\n                \"EndTime\": \"\"\n            }\n        ],\n        \"RequestId\": \"26c5f1a9-ebd4-407e-83d7-ae8001cca644\"\n    }\n}",
         "title": "拉取函数异步事件列表"
+      }
+    ],
+    "ListCustomDomains": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: scf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListCustomDomains\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Domains\": [\n            {\n                \"CertConfig\": {\n                    \"CertificateId\": \"ccccaas\"\n                },\n                \"Domain\": \"www.xxx.com\",\n                \"EndpointsConfig\": [\n                    {\n                        \"FunctionName\": \"test1\",\n                        \"Namespace\": \"default\",\n                        \"PathMatch\": \"/cc/\",\n                        \"PathRewrite\": [\n                            {\n                                \"Path\": \"/cc/\",\n                                \"Rewrite\": \"/\",\n                                \"Type\": \"ExactRules\"\n                            }\n                        ],\n                        \"Qualifier\": \"$LATEST\"\n                    }\n                ],\n                \"Protocol\": \"HTTP&HTTPS\",\n                \"WafConfig\": {\n                    \"WafInstanceId\": \"\",\n                    \"WafOpen\": \"CLOSE\"\n                }\n            }\n        ],\n        \"RequestId\": \"6941ssdd162b-925f-4c3a-b90f-3558c0aebf97\",\n        \"Total\": 1\n    }\n}",
+        "title": "示例1"
       }
     ],
     "ListFunctions": [
@@ -324,6 +362,14 @@
         "input": "https://scf.tencentcloudapi.com/?Action=UpdateAlias\n&Name=abcAlias\n&Namespace=default\n&FunctionName=abc\n&FunctionVersion=1\n&RoutingConfig.AdditionalVersionWeights.0.Version=2\n&RoutingConfig.AdditionalVersionWeights.0.Weight=0.5\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "更新别名的配置"
+      }
+    ],
+    "UpdateCustomDomain": [
+      {
+        "document": "更新自定义域名的证书Id,并关闭waf",
+        "input": "POST / HTTP/1.1\nHost: scf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateCustomDomain\n<公共请求参数>\n\n{\n    \"Domain\": \"www.ccc.com\",\n    \"Protocol\": \"HTTP&HTTPS\",\n    \"CertConfig\": {\n        \"CertificateId\": \"cvvxxJ3DK7\"\n    },\n    \"WafConfig\": {\n        \"WafOpen\": \"CLOSE\",\n        \"WafInstanceId\": \"\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "示例1"
       }
     ],
     "UpdateFunctionCode": [

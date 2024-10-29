@@ -8,6 +8,14 @@
         "title": "检查cos迁移索引元数据"
       }
     ],
+    "CreateClusterSnapshot": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateClusterSnapshot\n<公共请求参数>\n\n{\n    \"InstanceId\": \"es-xxx\",\n    \"SnapshotName\": \"es-xxx-test_20240912\",\n    \"Indices\": \"kibana_sample_data_flights\"\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceId\": \"es-xxx\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
     "CreateCosMigrateToServerlessInstance": [
       {
         "document": "",
@@ -56,6 +64,14 @@
         "title": "示例"
       }
     ],
+    "DeleteClusterSnapshot": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteClusterSnapshot\n<公共请求参数>\n\n{\n    \"InstanceId\": \"es-al4radfu\",\n    \"RepositoryName\": \"ES_AUTO_BACKUP\",\n    \"SnapshotName\": \"es-al4radfu_20231120\"\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceId\": \"es-al4radfu\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "DeleteClusterSnapshot 删除集群快照数据"
+      }
+    ],
     "DeleteIndex": [
       {
         "document": "删除自治索引",
@@ -102,6 +118,14 @@
         "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteServerlessSpaceUser\n<公共请求参数>\n\n{\n    \"SpaceId\": \"abc\",\n    \"Username\": \"abc\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "示例"
+      }
+    ],
+    "DescribeClusterSnapshot": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterSnapshot\n<公共请求参数>\n\n{\n    \"InstanceId\": \"es-f1m2enyd\",\n    \"RepositoryName\": \"ES_AUTO_BACKUP\",\n    \"SnapshotName\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"50df75f7-ec95-4c32-b7b0-a8e98ae74fef11\",\n        \"RepositoryName\": \"ES_AUTO_BACKUP\",\n        \"InstanceId\": \"es-f1m2enyd\",\n        \"Snapshots\": [\n            {\n                \"SnapshotName\": \"快照名称1\",\n                \"Uuid\": \"OPoARqBBSKuEIdLPdp7_dA\",\n                \"Version\": \"7.14.2\",\n                \"Indices\": [\n                    \"honorboardcloud-sit-logs\",\n                    \"pushtoken_meta_info_v1_auto\",\n                    \".ds-logs-generic-default-2023.10.11-000002\"\n                ],\n                \"State\": \"SUCCESS\",\n                \"StartTime\": \"2023-10-30T18:00:45.746Z\",\n                \"EndTime\": \"2023-10-30T18:14:46.707Z\",\n                \"DurationInMillis\": 840961,\n                \"TotalShards\": 316,\n                \"FailedShards\": 0,\n                \"SuccessfulShards\": 316,\n                \"Failures\": [\n                    {\n                        \"Index\": \"快照备份失败的索引名称\",\n                        \"ShardId\": 0,\n                        \"Reason\": \"快照失败的原因\"\n                    },\n                    {\n                        \"Index\": \"快照备份失败的索引名称\",\n                        \"ShardId\": 0,\n                        \"Reason\": \"快照失败的原因\"\n                    }\n                ]\n            },\n            {\n                \"SnapshotName\": \"快照名称1\",\n                \"Uuid\": \"OPoARqBBSKuEIdLPdp7_dA\",\n                \"Version\": \"7.14.2\",\n                \"Indices\": [\n                    \"honorboardcloud-sit-logs\",\n                    \"pushtoken_meta_info_v1_auto\",\n                    \".ds-logs-generic-default-2023.10.11-000002\"\n                ],\n                \"State\": \"SUCCESS\",\n                \"StartTime\": \"2023-10-30T18:00:45.746Z\",\n                \"EndTime\": \"2023-10-30T18:14:46.707Z\",\n                \"DurationInMillis\": 840961,\n                \"TotalShards\": 316,\n                \"FailedShards\": 0,\n                \"SuccessfulShards\": 316,\n                \"Failures\": [\n                    {\n                        \"Index\": \"快照备份失败的索引名称\",\n                        \"ShardId\": 0,\n                        \"Reason\": \"快照失败的原因\"\n                    },\n                    {\n                        \"Index\": \"快照备份失败的索引名称\",\n                        \"ShardId\": 0,\n                        \"Reason\": \"快照失败的原因\"\n                    }\n                ]\n            }\n        ]\n    }\n}",
+        "title": "DescribeClusterSnapshot 查询快照列表"
       }
     ],
     "DescribeDiagnose": [
@@ -332,6 +356,14 @@
         "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RestartNodes\n<公共请求参数>\n\n{\n    \"InstanceId\": \"es-xxxxxxxx\",\n    \"NodeNames\": [\n        \"159229897700074xxxx\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"c96a110c-7493-452d-a99b-683d07xxxxxx\"\n    }\n}",
         "title": "重启集群节点"
+      }
+    ],
+    "RestoreClusterSnapshot": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RestoreClusterSnapshot\n<公共请求参数>\n\n{\n    \"InstanceId\": \"es-qpzizjym\",\n    \"Password\": \"abc\",\n    \"RepositoryName\": \"ES_AUTO_BACKUP\",\n    \"SnapshotName\": \"test1\",\n    \"Indices\": \"abc\",\n    \"Partial\": \"true\",\n    \"TargetInstanceId\": \"es-qpzizjym\"\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceId\": \"es-qpzizjym\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "RestoreClusterSnapshot 恢复快照数据到集群"
       }
     ],
     "SaveAndDeployLogstashPipeline": [

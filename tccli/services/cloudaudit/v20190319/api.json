@@ -1,12 +1,5 @@
 {
   "actions": {
-    "CreateAudit": {
-      "document": "参数要求：\n1、如果IsCreateNewBucket的值存在的话，cosRegion和cosBucketName都是必填参数。\n2、如果IsEnableCmqNotify的值是1的话，IsCreateNewQueue、CmqRegion和CmqQueueName都是必填参数。\n3、如果IsEnableCmqNotify的值是0的话，IsCreateNewQueue、CmqRegion和CmqQueueName都不能传。\n4、如果IsEnableKmsEncry的值是1的话，KmsRegion和KeyId属于必填项",
-      "input": "CreateAuditRequest",
-      "name": "创建跟踪集",
-      "output": "CreateAuditResponse",
-      "status": "online"
-    },
     "CreateAuditTrack": {
       "document": "创建操作审计跟踪集",
       "input": "CreateAuditTrackRequest",
@@ -14,11 +7,11 @@
       "output": "CreateAuditTrackResponse",
       "status": "online"
     },
-    "DeleteAudit": {
-      "document": "删除跟踪集",
-      "input": "DeleteAuditRequest",
-      "name": "删除跟踪集",
-      "output": "DeleteAuditResponse",
+    "CreateEventsAuditTrack": {
+      "document": "创建操作审计跟踪集",
+      "input": "CreateEventsAuditTrackRequest",
+      "name": "创建操作审计跟踪集（多事件）",
+      "output": "CreateEventsAuditTrackResponse",
       "status": "online"
     },
     "DeleteAuditTrack": {
@@ -110,6 +103,13 @@
       "input": "ModifyAuditTrackRequest",
       "name": "修改操作审计跟踪集",
       "output": "ModifyAuditTrackResponse",
+      "status": "online"
+    },
+    "ModifyEventsAuditTrack": {
+      "document": "修改操作审计跟踪集",
+      "input": "ModifyEventsAuditTrackRequest",
+      "name": "修改操作审计跟踪集（多事件）",
+      "output": "ModifyEventsAuditTrackResponse",
       "status": "online"
     },
     "StartLogging": {
@@ -295,151 +295,6 @@
       ],
       "usage": "in"
     },
-    "CreateAuditRequest": {
-      "document": "CreateAudit请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "是否开启cmq消息通知。1：是，0：否。目前仅支持cmq的队列服务。如果开启cmq消息通知服务，云审计会将您的日志内容实时投递到您指定地域的指定队列中。",
-          "example": "1",
-          "member": "int64",
-          "name": "IsEnableCmqNotify",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "管理事件的读写属性。1：只读，2：只写，3：全部。",
-          "example": "1",
-          "member": "int64",
-          "name": "ReadWriteAttribute",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "跟踪集名称。3-128字符，只能包含 ASCII 编码字母 a-z，A-Z，数字 0-9，下划线 _。",
-          "example": "xx",
-          "member": "string",
-          "name": "AuditName",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "cos地域。目前支持的地域可以使用ListCosEnableRegion来获取。",
-          "example": "xx",
-          "member": "string",
-          "name": "CosRegion",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "是否创建新的cos存储桶。1：是，0：否。",
-          "example": "1",
-          "member": "int64",
-          "name": "IsCreateNewBucket",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "cos的存储桶名称。仅支持小写英文字母和数字即[a-z，0-9]、中划线“-”及其组合。用户自定义的字符串支持1 - 40个字符。存储桶命名不能以“-”开头或结尾。如果不是新创建的存储桶，云审计不会去校验该存储桶是否真的存在，请谨慎填写，避免日志投递不成功，导致您的数据丢失。",
-          "example": "xx",
-          "member": "string",
-          "name": "CosBucketName",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "CMK的全局唯一标识符，如果不是新创建的kms，该值是必填值。可以通过ListKeyAliasByRegion来获取。云审计不会校验KeyId的合法性，请您谨慎填写，避免给您的数据造成损失。",
-          "example": "xx",
-          "member": "string",
-          "name": "KeyId",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "队列名称。队列名称是一个不超过64个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)。如果IsEnableCmqNotify值是1的话，此值属于必填字段。如果不是新创建的队列，云审计不会去校验该队列是否真的存在，请谨慎填写，避免日志通知不成功，导致您的数据丢失。",
-          "example": "xx",
-          "member": "string",
-          "name": "CmqQueueName",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "kms地域。目前支持的地域可以使用ListKmsEnableRegion来获取。必须要和cos的地域保持一致。",
-          "example": "1",
-          "member": "string",
-          "name": "KmsRegion",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "是否开启kms加密。1：是，0：否。如果开启KMS加密，数据在投递到cos时，会将数据加密。",
-          "example": "1",
-          "member": "int64",
-          "name": "IsEnableKmsEncry",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "队列所在的地域。可以通过ListCmqEnableRegion获取支持的cmq地域。如果IsEnableCmqNotify值是1的话，此值属于必填字段。",
-          "example": "xx",
-          "member": "string",
-          "name": "CmqRegion",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "日志文件前缀。3-40个字符，只能包含 ASCII 编码字母 a-z，A-Z，数字 0-9。可以不填，默认以账号ID作为日志前缀。",
-          "example": "xx",
-          "member": "string",
-          "name": "LogFilePrefix",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "是否创建新的队列。1：是，0：否。如果IsEnableCmqNotify值是1的话，此值属于必填字段。",
-          "example": "1",
-          "member": "int64",
-          "name": "IsCreateNewQueue",
-          "required": false,
-          "type": "int"
-        }
-      ],
-      "type": "object"
-    },
-    "CreateAuditResponse": {
-      "document": "CreateAudit返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "是否创建成功。",
-          "example": "1",
-          "member": "int64",
-          "name": "IsSuccess",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "CreateAuditTrackRequest": {
       "document": "CreateAuditTrack请求参数结构体",
       "members": [
@@ -523,7 +378,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -531,36 +386,72 @@
       ],
       "type": "object"
     },
-    "DeleteAuditRequest": {
-      "document": "DeleteAudit请求参数结构体",
+    "CreateEventsAuditTrackRequest": {
+      "document": "CreateEventsAuditTrack请求参数结构体",
       "members": [
         {
           "disabled": false,
-          "document": "跟踪集名称",
-          "example": "xx",
+          "document": "跟踪集名称，仅支持大小写字母、数字、-以及_的组合，3-48个字符",
+          "example": "云审计",
           "member": "string",
-          "name": "AuditName",
+          "name": "Name",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "跟踪集状态（未开启：0；开启：1）",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "数据投递存储（目前支持 cos、cls）",
+          "example": "cos",
+          "member": "Storage",
+          "name": "Storage",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "数据过滤条件",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启将集团成员操作日志投递到集团管理账号或者可信服务管理账号(0：未开启，1：开启，只能集团管理账号或者可信服务管理账号开启此项功能) ",
+          "example": "1",
+          "member": "uint64",
+          "name": "TrackForAllMembers",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
     },
-    "DeleteAuditResponse": {
-      "document": "DeleteAudit返回参数结构体",
+    "CreateEventsAuditTrackResponse": {
+      "document": "CreateEventsAuditTrack返回参数结构体",
       "members": [
         {
           "disabled": false,
-          "document": "是否删除成功",
+          "document": "跟踪集 ID",
           "example": "1",
-          "member": "int64",
-          "name": "IsSuccess",
-          "required": true,
+          "member": "uint64",
+          "name": "TrackId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -587,7 +478,7 @@
       "document": "DeleteAuditTrack返回参数结构体",
       "members": [
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -744,7 +635,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -851,7 +742,17 @@
           "value_allowed_null": true
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "disabled": false,
+          "document": "数据投递过滤条件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -907,7 +808,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -1019,7 +920,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -1203,6 +1104,23 @@
       ],
       "usage": "both"
     },
+    "Filter": {
+      "document": "跟踪集数据投递筛选条件",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源筛选条件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ResourceField",
+          "name": "ResourceFields",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "GetAttributeKeyRequest": {
       "document": "GetAttributeKey请求参数结构体",
       "members": [
@@ -1232,7 +1150,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -1259,7 +1177,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -1312,7 +1230,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -1349,7 +1267,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -1386,7 +1304,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -1451,7 +1369,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -1553,7 +1471,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -1669,7 +1587,79 @@
       "document": "ModifyAuditTrack返回参数结构体",
       "members": [
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyEventsAuditTrackRequest": {
+      "document": "ModifyEventsAuditTrack请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "跟踪集 ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "TrackId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "跟踪集名称，仅支持大小写字母、数字、-以及_的组合，3-48个字符",
+          "example": "云审计",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "跟踪集状态（未开启：0；开启：1）",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "数据投递存储（目前支持 cos、cls）",
+          "example": "cos",
+          "member": "Storage",
+          "name": "Storage",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启将集团成员操作日志投递到集团管理账号或者可信服务管理账号(0：未开启，1：开启，只能集团管理账号或者可信服务管理账号开启此项功能)",
+          "example": "1",
+          "member": "uint64",
+          "name": "TrackForAllMembers",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "多产品筛选过滤条件",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyEventsAuditTrackResponse": {
+      "document": "ModifyEventsAuditTrack返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -1705,6 +1695,45 @@
       ],
       "usage": "both"
     },
+    "ResourceField": {
+      "document": "资源筛选条件",
+      "members": [
+        {
+          "disabled": false,
+          "document": "跟踪事件所属产品（支持全部产品或单个产品，如：cam，全部：*）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceType",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "跟踪事件类型（读：Read；写：Write；全部：*）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ActionType",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "跟踪事件接口名列表（ResourceType为 * 时，EventNames必须为全部：[\"\"]；指定ResourceType时，支持全部接口：[\"\"]；支持部分接口：[\"cos\", \"cls\"]，接口列表上限10个）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "EventNames",
+          "output_required": false,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "StartLoggingRequest": {
       "document": "StartLogging请求参数结构体",
       "members": [
@@ -1734,7 +1763,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -1771,7 +1800,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -2074,7 +2103,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"

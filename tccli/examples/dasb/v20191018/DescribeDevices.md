@@ -81,7 +81,8 @@ Output:
                     "ExtendPoints": 1,
                     "PackageBandwidth": 1,
                     "PackageNode": 1,
-                    "LogDeliveryArgs": "abc"
+                    "LogDeliveryArgs": "abc",
+                    "LogDelivery": "abc"
                 },
                 "Department": {
                     "Id": "abc",
@@ -192,7 +193,8 @@ Output:
                     "ExtendPoints": 1,
                     "PackageBandwidth": 1,
                     "PackageNode": 1,
-                    "LogDeliveryArgs": "abc"
+                    "LogDeliveryArgs": "abc",
+                    "LogDelivery": "abc"
                 },
                 "Department": {
                     "Id": "abc",

@@ -176,7 +176,7 @@
         },
         {
           "disabled": false,
-          "document": "分享页面id，嵌出看板时此为空值0",
+          "document": "分享页面id，嵌出看板时此为空值0，ChatBI嵌出时不传\n",
           "example": "1",
           "member": "uint64",
           "name": "PageId",
@@ -203,7 +203,16 @@
         },
         {
           "disabled": false,
-          "document": "panel,看板；page，页面",
+          "document": "embed：页面/看板嵌出\nchatBIEmbed：ChatBI嵌出",
+          "example": "embed",
+          "member": "string",
+          "name": "Intention",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "panel, 看板；page，页面\nproject，ChatBI嵌出时",
           "example": "page",
           "member": "string",
           "name": "Scope",
@@ -923,7 +932,7 @@
         },
         {
           "disabled": false,
-          "document": "分享页面id，嵌出看板时此为空值0",
+          "document": "分享页面id，嵌出看板时此为空值0，ChatBI嵌出时不传",
           "example": "1",
           "member": "uint64",
           "name": "PageId",
@@ -932,7 +941,16 @@
         },
         {
           "disabled": false,
-          "document": "page表示嵌出页面，panel表示嵌出整个看板",
+          "document": "embed表示页面看板嵌出，chatBIEmbed表示ChatBI嵌出",
+          "example": "无",
+          "member": "string",
+          "name": "Intention",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "page表示嵌出页面，panel表示嵌出整个看板，ChatBI嵌出时使用project",
           "example": "1",
           "member": "string",
           "name": "Scope",
@@ -2844,6 +2862,16 @@
           "example": "无",
           "member": "string",
           "name": "GlobalParam",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "embed表示页面看板嵌出，chatBIEmbed表示ChatBI嵌出\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Intention",
           "output_required": false,
           "type": "string",
           "value_allowed_null": true

@@ -6,56 +6,33 @@ Input:
 
 ```
 tccli gaap DescribeRuleRealServers --cli-unfold-argument  \
-    --RuleId rule-hh5xg2yd
+    --RuleId rule-gsy1amjd
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "TotalCount": 1,
+        "RequestId": "dc73988c-7888-4b9a-b9a4-a0f36a495f3c",
+        "TotalCount": 2,
         "RealServerSet": [
             {
-                "ProjectId": 1,
-                "RealServerId": "xx",
-                "InBanBlacklist": 0,
-                "RealServerName": "xx",
-                "RealServerIP": "xx"
+                "RealServerIP": "2.5.73.1",
+                "RealServerId": "rs-5y1674pn",
+                "RealServerName": "pocnetwork_gaap_test_rs_ip",
+                "ProjectId": 1321988,
+                "InBanBlacklist": 0
             },
             {
-                "ProjectId": 1,
-                "RealServerId": "xx",
-                "InBanBlacklist": 0,
-                "RealServerName": "xx",
-                "RealServerIP": "xx"
+                "RealServerIP": "43.132.182.170",
+                "RealServerId": "rs-cz4ipit1",
+                "RealServerName": "pocnetwork_gaap_test_rs_ip",
+                "ProjectId": 1321988,
+                "InBanBlacklist": 0
             }
         ],
-        "BindRealServerTotalCount": 1,
-        "RequestId": "xx",
-        "BindRealServerSet": [
-            {
-                "RealServerStatus": 1,
-                "RealServerPort": 234,
-                "RealServerId": "xx",
-                "RealServerFailoverRole": "xx",
-                "DownIPList": [
-                    "xx"
-                ],
-                "RealServerWeight": 1,
-                "RealServerIP": "xx"
-            },
-            {
-                "RealServerStatus": 1,
-                "RealServerPort": 424,
-                "RealServerId": "xx",
-                "RealServerWeight": 1,
-                "RealServerFailoverRole": "xx",
-                "DownIPList": [
-                    "xx"
-                ],
-                "RealServerIP": "xx"
-            }
-        ]
+        "BindRealServerSet": [],
+        "BindRealServerTotalCount": 0
     }
 }
 ```

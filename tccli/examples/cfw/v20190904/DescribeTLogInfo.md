@@ -1,4 +1,4 @@
-**Example 1: DescribeTLogInfo**
+**Example 1: DescribeTLogInfo告警中心概况查询**
 
 
 
@@ -17,14 +17,14 @@ Output:
 {
     "Response": {
         "Data": {
-            "NetworkNum": 0,
-            "HandleNum": 0,
+            "OutNum": 1,
+            "HandleNum": 112,
+            "NetworkNum": 6,
+            "VulNum": 629,
             "BanNum": 0,
-            "VulNum": 0,
-            "OutNum": 0,
             "BruteForceNum": 0
         },
-        "RequestId": "xx"
+        "RequestId": "706bdce3-bdc4-4cfe-8672-ed08cb451ef1"
     }
 }
 ```

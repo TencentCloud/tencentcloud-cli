@@ -8,11 +8,11 @@ Input:
 tccli cfw DescribeBlockIgnoreList --cli-unfold-argument  \
     --Limit 0 \
     --Offset 0 \
-    --SearchValue abc \
-    --Direction abc \
+    --SearchValue  \
+    --Direction 1 \
     --RuleType 1 \
-    --Order abc \
-    --By abc
+    --Order desc \
+    --By EndTime
 ```
 
 Output: 

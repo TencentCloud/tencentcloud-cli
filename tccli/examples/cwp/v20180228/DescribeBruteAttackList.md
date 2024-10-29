@@ -7,9 +7,6 @@ Input:
 ```
 tccli cwp DescribeBruteAttackList --cli-unfold-argument  \
     --Limit 1 \
-    --Filters.0.Values abc \
-    --Filters.0.Name abc \
-    --Filters.0.ExactMatch True \
     --Offset 1
 ```
 
@@ -17,27 +14,46 @@ Output:
 ```
 {
     "Response": {
+        "TotalCount": 1,
         "BruteAttackList": [
             {
-                "Id": 202008000000971,
-                "Uuid": "c2972dd6-165e-11ea-95eb-40f2e9f5667a",
-                "MachineIp": "10.104.135.28",
-                "MachineName": "poc测试-debian9",
+                "Id": 202443000000,
+                "Uuid": "05f0bcab-726c-4ea4-8109-bcd03d5598f7",
+                "MachineIp": "172.16.0.40",
+                "MachineName": "机器名称",
                 "UserName": "root",
-                "SrcIp": "117.146.173.98",
-                "Status": "FAILED",
-                "EventType": 200,
+                "SrcIp": "1.1.1.1",
+                "Status": "SUCCESS",
+                "EventType": 300,
                 "Country": 1,
-                "City": 334,
-                "Province": 31,
-                "CreateTime": "2020-02-21 16:35:49",
-                "BanStatus": 82,
-                "Count": 1098,
-                "InstanceId": "ins-xxx"
+                "City": 343,
+                "Province": 32,
+                "CreateTime": "2024-10-22 19:50:12",
+                "ModifyTime": "2024-10-22 20:06:34",
+                "BanStatus": 1,
+                "Count": 436,
+                "Quuid": "05f0bcab-726c-4ea4-8109-bcd03d5598f7",
+                "IsProVersion": true,
+                "Protocol": "ssh",
+                "Port": 22,
+                "InstanceId": "ins-12332112",
+                "Location": "中国香港::",
+                "DataStatus": 0,
+                "RiskLevel": 2,
+                "MachineExtraInfo": {
+                    "WanIP": "1.1.1.1",
+                    "PrivateIP": "",
+                    "NetworkType": 0,
+                    "NetworkName": "",
+                    "InstanceID": "ins-12332112",
+                    "HostName": ""
+                },
+                "DataFrom": 0,
+                "AttackStatusDesc": "破解成功",
+                "BanExpiredTime": ""
             }
         ],
-        "RequestId": "4234234",
-        "TotalCount": 25328
+        "RequestId": "be6f6eec-0825-4e67-ab9a-c8568bbf736c"
     }
 }
 ```

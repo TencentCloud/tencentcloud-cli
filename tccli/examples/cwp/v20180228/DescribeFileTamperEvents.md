@@ -29,7 +29,7 @@ Output:
                 "EventCount": 1,
                 "RuleId": 1,
                 "RuleName": "系统策略-篡改计划任务",
-                "Pstree": "[{\"pid\":980959,\"exe\":\"/usr/bin/crontab\",\"account\":\"root:root\",\"cmdline\":\"crontab /root/cron.tmp\",\"start_time\":1729557954,\"type\":1},{\"pid\":2288,\"exe\":\"/root/chaos-executor\",\"account\":\"root:root\",\"cmdline\":\"./chaos-executor d -p 29785a94e8324cda92d0715188765ece -f id_rsa.pub -n Production -s polaris://trpc.tchaos.ServerPush;polaris://trpc.tchaos.proxy.ServerPush -c Production\",\"start_time\":1729471587,\"type\":2}]",
+                "Pstree": "[{\"pid\":980959,\"exe\":\"/usr/bin/crontab\",\"account\":\"root:root\",\"cmdline\":\"crontab /root/cron.tmp\",\"start_time\":1729557954,\"type\":1},{\"pid\":2288,\"exe\":\"/root/chaos-executor\",\"account\":\"root:root\",\"cmdline\":\"./chaos-executor d -p 29785a94e8324 -f id_rsa.pub -n Production -s  Production\",\"start_time\":1729471587,\"type\":2}]",
                 "CreateTime": "2024-10-22 08:45:58",
                 "ModifyTime": "2024-10-22 08:45:58",
                 "Level": 1,

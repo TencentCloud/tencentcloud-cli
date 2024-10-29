@@ -105,6 +105,13 @@
       "output": "CreateL4ProxyRulesResponse",
       "status": "online"
     },
+    "CreateLoadBalancer": {
+      "document": "创建负载均衡实例。详情请参考 [快速创建负载均衡实例](https://cloud.tencent.com/document/product/1552/104223)。负载均衡功能内测中，如您需要使用请 [联系我们](https://cloud.tencent.com/online-service)。",
+      "input": "CreateLoadBalancerRequest",
+      "name": "创建负载均衡实例",
+      "output": "CreateLoadBalancerResponse",
+      "status": "online"
+    },
     "CreateOriginGroup": {
       "document": "创建源站组，以源站组的方式管理业务源站。此处配置的源站组可于**添加加速域名**和**四层代理**等功能中引用。",
       "input": "CreateOriginGroupRequest",
@@ -236,6 +243,13 @@
       "input": "DeleteL4ProxyRulesRequest",
       "name": "删除四层代理转发规则",
       "output": "DeleteL4ProxyRulesResponse",
+      "status": "online"
+    },
+    "DeleteLoadBalancer": {
+      "document": "删除负载均衡实例，若负载均衡示例被其他服务（例如：四层代理等）引用的时候，示例无法被删除，需要先解除引用关系。负载均衡功能内测中，如您需要使用请 [联系我们](https://cloud.tencent.com/online-service)。",
+      "input": "DeleteLoadBalancerRequest",
+      "name": "删除负载均衡实例",
+      "output": "DeleteLoadBalancerResponse",
       "status": "online"
     },
     "DeleteOriginGroup": {
@@ -448,11 +462,25 @@
       "output": "DescribeL4ProxyRulesResponse",
       "status": "online"
     },
+    "DescribeLoadBalancerList": {
+      "document": "查询负载均衡实例列表。负载均衡功能内测中，如您需要使用请 [联系我们](https://cloud.tencent.com/online-service)。",
+      "input": "DescribeLoadBalancerListRequest",
+      "name": "查询负载均衡实例列表",
+      "output": "DescribeLoadBalancerListResponse",
+      "status": "online"
+    },
     "DescribeOriginGroup": {
       "document": "获取源站组列表",
       "input": "DescribeOriginGroupRequest",
       "name": "获取源站组列表",
       "output": "DescribeOriginGroupResponse",
+      "status": "online"
+    },
+    "DescribeOriginGroupHealthStatus": {
+      "document": "查询负载均衡实例下源站组健康状态。负载均衡功能内测中，如您需要使用请 [联系我们](https://cloud.tencent.com/online-service)。",
+      "input": "DescribeOriginGroupHealthStatusRequest",
+      "name": "查询负载均衡实例下源站组健康状态",
+      "output": "DescribeOriginGroupHealthStatusResponse",
       "status": "online"
     },
     "DescribeOriginProtection": {
@@ -733,6 +761,13 @@
       "input": "ModifyL4ProxyStatusRequest",
       "name": "修改四层代理实例状态",
       "output": "ModifyL4ProxyStatusResponse",
+      "status": "online"
+    },
+    "ModifyLoadBalancer": {
+      "document": "修改负载均衡实例配置。负载均衡功能内测中，如您需要使用请 [联系我们](https://cloud.tencent.com/online-service)。",
+      "input": "ModifyLoadBalancerRequest",
+      "name": "修改负载均衡实例",
+      "output": "ModifyLoadBalancerResponse",
       "status": "online"
     },
     "ModifyOriginGroup": {
@@ -3021,6 +3056,42 @@
       ],
       "type": "object"
     },
+    "CheckRegionHealthStatus": {
+      "document": "各个健康检查区域下源站的健康状态。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "健康检查区域，ISO-3166-1 两位字母代码。",
+          "example": "CN",
+          "member": "string",
+          "name": "Region",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "单健康检查区域下探测源站的健康状态，取值有：\n<li>Healthy：健康；</li>\n<li>Unhealthy：不健康；</li>\n<li> Undetected：未探测到数据。</li>说明：单健康检查区域下所有源站为健康，则状态为健康，否则为不健康。",
+          "example": "Healthy",
+          "member": "string",
+          "name": "Healthy",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源站健康状态。",
+          "example": "无",
+          "member": "OriginHealthStatus",
+          "name": "OriginHealthStatus",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ClientIpCountry": {
       "document": "回源时携带客户端IP所属地域信息，值的格式为ISO-3166-1两位字母代码。",
       "members": [
@@ -3056,16 +3127,18 @@
           "example": "on/off",
           "member": "string",
           "name": "Switch",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "回源时，存放客户端 IP 的请求头名称。\n为空则使用默认值：X-Forwarded-IP。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "回源时，存放客户端 IP 的请求头名称。当 Switch 为 on 时，该参数必填。该参数不允许填写 X-Forwarded-For。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "X-ClientIp",
           "member": "string",
           "name": "HeaderName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -4092,6 +4165,97 @@
       ],
       "type": "object"
     },
+    "CreateLoadBalancerRequest": {
+      "document": "CreateLoadBalancer请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "zone-27q0p0bali16\t",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例名称，可输入 1-200 个字符，允许字符为 a-z，A-Z，0-9，_，-。",
+          "example": "test",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例类型，取值有：\n<li>HTTP：HTTP 专用型，支持添加 HTTP 专用型和通用型源站组，仅支持被站点加速相关服务引用（如域名服务和规则引擎）；</li>\n<li>GENERAL：通用型，仅支持添加通用型源站组，能被站点加速服务（如域名服务和规则引擎）和四层代理引用。</li>",
+          "example": "HTTP",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "源站组列表及其对应的容灾调度优先级。详情请参考 [快速创建负载均衡实例](https://cloud.tencent.com/document/product/1552/104223) 中的示例场景。",
+          "example": "[{\"Priority\": \"proiority_1\", \"OriginGroupId\": \"origin-1\"}, {\"Priority\": \"proiority_2\", \"OriginGroupId\": \"origin-2\"}]",
+          "member": "OriginGroupInLoadBalancer",
+          "name": "OriginGroups",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "健康检查策略。详情请参考 [健康检查策略介绍](https://cloud.tencent.com/document/product/1552/104228)。不填写时，默认为不启用健康检查。",
+          "example": "无",
+          "member": "HealthChecker",
+          "name": "HealthChecker",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "源站组间的流量调度策略，取值有：\n<li>Pritory：按优先级顺序进行故障转移。</li>默认值为 Pritory。",
+          "example": "Pritory",
+          "member": "string",
+          "name": "SteeringPolicy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实际访问某源站失败时的请求重试策略，详情请参考 [请求重试策略介绍](https://cloud.tencent.com/document/product/1552/104227)，取值有：\n<li>OtherOriginGroup：单次请求失败后，请求优先重试下一优先级源站组；</li>\n<li>OtherRecordInOriginGroup：单次请求失败后，请求优先重试同源站组内的其他源站。</li>默认值为 OtherRecordInOriginGroup。",
+          "example": "OtherRecordInOriginGroup",
+          "member": "string",
+          "name": "FailoverPolicy",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateLoadBalancerResponse": {
+      "document": "CreateLoadBalancer返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "负载均衡实例 ID。",
+          "example": "lb-asdfasdff",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateOriginGroupRequest": {
       "document": "CreateOriginGroup请求参数结构体",
       "members": [
@@ -5077,6 +5241,34 @@
       ],
       "usage": "both"
     },
+    "CustomizedHeader": {
+      "document": "负载均衡实例 HTTP/HTTPS 健康检查策略下可配置的自定义头部。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自定义头部 Key。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "host",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自定义头部 Value。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "www.example.com",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "DDoS": {
       "document": "DDoS配置",
       "members": [
@@ -5731,6 +5923,42 @@
     },
     "DeleteL4ProxyRulesResponse": {
       "document": "DeleteL4ProxyRules返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteLoadBalancerRequest": {
+      "document": "DeleteLoadBalancer请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "zone-27q0p0bali16\t",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "负载均衡实例 ID。",
+          "example": "lb-jolaksjdfa",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteLoadBalancerResponse": {
+      "document": "DeleteLoadBalancer返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -7752,6 +7980,135 @@
           "member": "L4ProxyRule",
           "name": "L4ProxyRules",
           "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLoadBalancerListRequest": {
+      "document": "DescribeLoadBalancerList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "zone-vawer2vadg\t",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页查询偏移量，默认为 0。\t",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页查询限制数目，默认值：20，最大值：100。\t",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件，Filters.Values 的上限为 20。该参数不填写时，返回当前 zone-id 下所有负载均衡实例信息。详细的过滤条件如下：\n<li>InstanceName：按照负载均衡实例名称进行过滤；</li>\n<li>InstanceId：按照负载均衡实例 ID 进行过滤。</li>  \n",
+          "example": "[{\"Name\": \"InstanceId\", [\"lb-xfqlh4qjee\"]}]",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLoadBalancerListResponse": {
+      "document": "DescribeLoadBalancerList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "负载均衡实例总数。",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "负载均衡实例列表。",
+          "example": "无",
+          "member": "LoadBalancer",
+          "name": "LoadBalancerList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOriginGroupHealthStatusRequest": {
+      "document": "DescribeOriginGroupHealthStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "zone-jhlaslkdjf",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "负载均衡实例 ID。",
+          "example": "lb-asdf22442",
+          "member": "string",
+          "name": "LBInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "源站组 ID。不填写时默认获取负载均衡下所有源站组的健康状态。",
+          "example": "orgin-2ccgtb24-7dc5-46s2-9r3e-95825d53dwe3a\t",
+          "member": "string",
+          "name": "OriginGroupIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOriginGroupHealthStatusResponse": {
+      "document": "DescribeOriginGroupHealthStatus返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "源站组下源站的健康状态。",
+          "example": "无",
+          "member": "OriginGroupHealthStatusDetail",
+          "name": "OriginGroupHealthStatusList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -10260,53 +10617,57 @@
       "usage": "both"
     },
     "FollowOrigin": {
-      "document": "缓存遵循源站配置",
+      "document": "缓存遵循源站配置。",
       "members": [
         {
           "disabled": false,
           "document": "遵循源站配置开关，取值有：\n<li>on：开启；</li>\n<li>off：关闭。</li>",
-          "example": "on/off",
+          "example": "on",
           "member": "string",
           "name": "Switch",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "源站未返回 Cache-Control 头时, 设置默认的缓存时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "源站未返回 Cache-Control 头时，缓存/不缓存开关。当 Switch 为 on 时，此字段必填，否则此字段不生效。取值有：\n<li>on：缓存；</li>\n<li>off：不缓存。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "on",
+          "member": "string",
+          "name": "DefaultCache",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "源站未返回 Cache-Control 头时，使用/不使用默认缓存策略开关。当 DefaultCache 为 on 时，此字段必填，否则此字段不生效；当 DefaultCacheTime 不为 0 时，此字段必须为 off。取值有：\n<li>on：使用默认缓存策略；</li>\n<li>off：不使用默认缓存策略。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "on",
+          "member": "string",
+          "name": "DefaultCacheStrategy",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "源站未返回 Cache-Control 头时，表示默认的缓存时间，单位为秒，取值：0～315360000。当 DefaultCache 为 on 时，此字段必填，否则此字段不生效；当 DefaultCacheStrategy 为 on 时， 此字段必须为 0。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "DefaultCacheTime",
+          "output_required": true,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "源站未返回 Cache-Control 头时, 设置缓存/不缓存\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "on/off",
-          "member": "string",
-          "name": "DefaultCache",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "源站未返回 Cache-Control 头时, 使用/不使用默认缓存策略\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "on/off",
-          "member": "string",
-          "name": "DefaultCacheStrategy",
-          "required": false,
-          "type": "string",
           "value_allowed_null": true
         }
       ],
       "usage": "both"
     },
     "ForceRedirect": {
-      "document": "访问协议强制https跳转配置",
+      "document": "访问协议强制 HTTPS 跳转配置。",
       "members": [
         {
           "disabled": false,
@@ -10314,6 +10675,7 @@
           "example": "on/off",
           "member": "string",
           "name": "Switch",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -10324,6 +10686,7 @@
           "example": "302",
           "member": "int64",
           "name": "RedirectStatusCode",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -10649,6 +11012,155 @@
           "member": "string",
           "name": "Value",
           "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "HealthChecker": {
+      "document": "负载均衡实例健康检查策略。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "健康检查策略，取值有：\n<li>HTTP；</li>\n<li>HTTPS；</li>\n<li>TCP；</li>\n<li>UDP；</li>\n<li>ICMP Ping；</li>\n<li>NoCheck。</li>\n注意：NoCheck 表示不启用健康检查策略。",
+          "example": "HTTP",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "检查端口。当 Type=HTTP 或 Type=HTTPS 或 Type=TCP 或 Type=UDP 时为必填。",
+          "example": "80",
+          "member": "uint64",
+          "name": "Port",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "检查频率，表示多久发起一次健康检查任务，单位为秒。可取值有：30，60，180，300 或 600。",
+          "example": "30",
+          "member": "uint64",
+          "name": "Interval",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "每一次健康检查的超时时间，若健康检查消耗时间大于此值，则检查结果判定为”不健康“， 单位为秒，默认值为 5s，取值必须小于 Interval。",
+          "example": "5",
+          "member": "uint64",
+          "name": "Timeout",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "健康阈值，表示连续几次健康检查结果为\"健康\"，则判断源站为\"健康\"，单位为次，默认 3 次，最小取值 1 次。",
+          "example": "3",
+          "member": "uint64",
+          "name": "HealthThreshold",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "不健康阈值，表示连续几次健康检查结果为\"不健康\"，则判断源站为\"不健康\"，单位为次，默认 2 次。",
+          "example": "5",
+          "member": "uint64",
+          "name": "CriticalThreshold",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "该参数仅当 Type=HTTP 或 Type=HTTPS 时有效，表示探测路径，需要填写完整的 host/path，不包含协议部分，例如：www.example.com/test。\n",
+          "example": "www.example.com/test",
+          "member": "string",
+          "name": "Path",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "该参数仅当 Type=HTTP 或 Type=HTTPS 时有效，表示请求方法，取值有：\n<li>GET；</li>\n<li>HEAD。</li>",
+          "example": "HEAD",
+          "member": "string",
+          "name": "Method",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "该参数仅当 Type=HTTP 或 Type=HTTPS 时有效，表示探测节点向源站发起健康检查时，响应哪些状态码可用于认定探测结果为健康。",
+          "example": "[\"200\", \"500\"]",
+          "member": "string",
+          "name": "ExpectedCodes",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "该参数仅当 Type=HTTP 或 Type=HTTPS 时有效，表示探测请求携带的自定义  HTTP 请求头，至多可配置 10 个。",
+          "example": "[{   \"Key\": \"host\",   \"Value\": \"www.example.com\" }]",
+          "member": "CustomizedHeader",
+          "name": "Headers",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "该参数仅当 Type=HTTP 或 Type=HTTPS 时有效，表示是否启用遵循 301/302 重定向。启用后，301/302 默认为\"健康\"的状态码，默认跳转 3 次。",
+          "example": "true",
+          "member": "string",
+          "name": "FollowRedirect",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "该参数仅当 Type=UDP 时有效，表示健康检查发送的内容。只允许 ASCII 可见字符，最大长度限制 500 个字符。",
+          "example": "send_payload",
+          "member": "string",
+          "name": "SendContext",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "该参数仅当 Type=UDP 时有效，表示健康检查期望源站返回结果。只允许 ASCII 可见字符，最大长度限制 500 个字符。",
+          "example": "recv_context",
+          "member": "string",
+          "name": "RecvContext",
+          "output_required": false,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         }
@@ -11256,6 +11768,23 @@
       ],
       "usage": "both"
     },
+    "JITVideoProcess": {
+      "document": "视频即时处理配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "视频即时处理配置开关，取值有：\n<li>on：开启；</li>\n<li>off：关闭。</li>",
+          "example": "on",
+          "member": "string",
+          "name": "Switch",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "L4OfflineLog": {
       "document": "离线日志详细信息",
       "members": [
@@ -11760,6 +12289,112 @@
           "name": "Size",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "LoadBalancer": {
+      "document": "负载均衡实例信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例 ID。",
+          "example": "lb-2dafsdff",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例名称，可输入 1-200 个字符，允许字符为 a-z，A-Z，0-9，_，-。\t",
+          "example": "lb-test",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例类型，取值有：\n<li>HTTP：HTTP 专用型，支持添加 HTTP 专用型和通用型源站组，仅支持被站点加速相关服务引用（如域名服务和规则引擎）；</li>\n<li>GENERAL：通用型，仅支持添加通用型源站组，能被站点加速服务（如域名服务和规则引擎）和四层代理引用。</li>",
+          "example": "HTTP",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "健康检查策略。详情请参考 [健康检查策略介绍](https://cloud.tencent.com/document/product/1552/104228)。",
+          "example": "无",
+          "member": "HealthChecker",
+          "name": "HealthChecker",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源站组间的流量调度策略，取值有：\n<li>Pritory：按优先级顺序进行故障转移 。</li>",
+          "example": "Pritory",
+          "member": "string",
+          "name": "SteeringPolicy",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实际访问某源站失败时的请求重试策略，详情请参考 [请求重试策略介绍](https://cloud.tencent.com/document/product/1552/104227)，取值有：\n<li>OtherOriginGroup：单次请求失败后，请求优先重试下一优先级源站组；</li>\n<li>OtherRecordInOriginGroup：单次请求失败后，请求优先重试同源站组内的其他源站。</li>",
+          "example": "OtherRecordInOriginGroup",
+          "member": "string",
+          "name": "FailoverPolicy",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源站组健康状态。",
+          "example": "无",
+          "member": "OriginGroupHealthStatus",
+          "name": "OriginGroupHealthStatus",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "负载均衡状态，取值有：\n<li>Pending：部署中；</li>\n<li>Deleting：删除中；</li>\n<li>Running：已生效。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "该负载均衡实例绑的定四层层代理实例的列表。",
+          "example": "[\"sid-asdfsd1asdf\", \"sid-8asdfjasdfl\"]",
+          "member": "string",
+          "name": "L4UsedList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "该负载均衡实例绑定的七层域名列表。",
+          "example": "[\"www.qq.com\", \"www.qq2.com\"]",
+          "member": "string",
+          "name": "L7UsedList",
+          "output_required": true,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -12918,6 +13553,87 @@
       ],
       "type": "object"
     },
+    "ModifyLoadBalancerRequest": {
+      "document": "ModifyLoadBalancer请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "zone-27q0p0bali16\t",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "负载均衡实例 ID。",
+          "example": "lb-jolaksjdfa",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例名称，可输入 1-200 个字符，允许字符为 a-z，A-Z，0-9，_，-。不填写表示维持原有配置。",
+          "example": "test",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "源站组列表及其对应的容灾调度优先级。详情请参考 [快速创建负载均衡实例](https://cloud.tencent.com/document/product/1552/104223) 中的示例场景。不填写表示维持原有配置。",
+          "example": "[{\"Priority\": \"proiority_1\", \"OriginGroupId\": \"origin-1\"}, {\"Priority\": \"proiority_2\", \"OriginGroupId\": \"origin-2\"}]",
+          "member": "OriginGroupInLoadBalancer",
+          "name": "OriginGroups",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "健康检查策略。详情请参考 [健康检查策略介绍](https://cloud.tencent.com/document/product/1552/104228)。不填写表示维持原有配置。",
+          "example": "无",
+          "member": "HealthChecker",
+          "name": "HealthChecker",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "源站组间的流量调度策略，取值有：\n<li>Pritory：按优先级顺序进行故障转移 。</li>不填写表示维持原有配置。",
+          "example": "Pritory",
+          "member": "string",
+          "name": "SteeringPolicy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实际访问某源站失败时的请求重试策略，详情请参考 [请求重试策略介绍](https://cloud.tencent.com/document/product/1552/104227)，取值有：\n<li>OtherOriginGroup：单次请求失败后，请求优先重试下一优先级源站组；</li>\n<li>OtherRecordInOriginGroup：单次请求失败后，请求优先重试同源站组内的其他源站。</li>不填写表示维持原有配置。",
+          "example": "OtherRecordInOriginGroup",
+          "member": "string",
+          "name": "FailoverPolicy",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLoadBalancerResponse": {
+      "document": "ModifyLoadBalancer返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyOriginGroupRequest": {
       "document": "ModifyOriginGroup请求参数结构体",
       "members": [
@@ -13596,6 +14312,15 @@
           "name": "StandardDebug",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "视频即时处理配置。不填写表示保持原有配置。",
+          "example": "无",
+          "member": "JITVideoProcess",
+          "name": "JITVideoProcess",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -13994,6 +14719,122 @@
       ],
       "usage": "out"
     },
+    "OriginGroupHealthStatus": {
+      "document": "源站组健康状态。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "源站组 ID。",
+          "example": "orgin-2ccgtb24-7dc5-46s2-9r3e-95825d53dwe3a\t",
+          "member": "string",
+          "name": "OriginGroupID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源站组名。",
+          "example": "origin_test",
+          "member": "string",
+          "name": "OriginGroupName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源站组类型，取值有：\n<li>HTTP：HTTP 专用型；</li>\n<li>GENERAL：通用型。</li>",
+          "example": "HTTP",
+          "member": "string",
+          "name": "OriginType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "优先级。",
+          "example": "priority_1",
+          "member": "string",
+          "name": "Priority",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源站组里各源站的健康状态。",
+          "example": "无",
+          "member": "OriginHealthStatus",
+          "name": "OriginHealthStatus",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "OriginGroupHealthStatusDetail": {
+      "document": "源站组健康状态详情。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "源站组 ID。",
+          "example": "orgin-2ccgtb24-7dc5-46s2-9r3e-95825d53dwe3a\t",
+          "member": "string",
+          "name": "OriginGroupId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "根据所有探测区域的结果综合决策出来的源站组下各个源站的健康状态。超过一半的地域判定该源站不健康，则对应状态为不健康，否则为健康。",
+          "example": "无",
+          "member": "OriginHealthStatus",
+          "name": "OriginHealthStatus",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "各个健康检查区域下源站的健康状态。",
+          "example": "无",
+          "member": "CheckRegionHealthStatus",
+          "name": "CheckRegionHealthStatus",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "OriginGroupInLoadBalancer": {
+      "document": "负载均衡实例中需要绑定的源站组和优先级关系。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "优先级，填写格式为 \"priority_\" + \"数字\"，最高优先级为 \"priority_1\"。参考取值有：\n<li>priority_1：第一优先级；</li>\n<li>priority_2：第二优先级；</li>\n<li>priority_3：第三优先级。</li>其他优先级可以将数字递增，最多可以递增至 \"priority_10\"。",
+          "example": "priority_1",
+          "member": "string",
+          "name": "Priority",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "源站组 ID。",
+          "example": "orgin-2ccgtb24-7dc5-46s2-9r3e-95825d53dwe3a\t",
+          "member": "string",
+          "name": "OriginGroupId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
     "OriginGroupReference": {
       "document": "源站组引用服务。",
       "members": [
@@ -14023,6 +14864,32 @@
           "example": "1.1.1.1",
           "member": "string",
           "name": "InstanceName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "OriginHealthStatus": {
+      "document": "源站组里的源站健康状态。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "源站。",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "Origin",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源站健康状态，取值有：\n<li>Healthy：健康；</li>\n<li>Unhealthy：不健康；</li>\n<li>Undetected：未探测到数据。</li>\n",
+          "example": "Healthy",
+          "member": "string",
+          "name": "Healthy",
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
@@ -17834,6 +18701,16 @@
           "example": "无",
           "member": "StandardDebug",
           "name": "StandardDebug",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "视频即时处理配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "JITVideoProcess",
+          "name": "JITVideoProcess",
           "output_required": true,
           "type": "object",
           "value_allowed_null": true

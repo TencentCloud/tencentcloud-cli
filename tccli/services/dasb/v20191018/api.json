@@ -4800,6 +4800,26 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否启用SSL，仅支持Redis资产。0：禁用 1：启用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "EnableSSL",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "已上传的SSL证书名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "bh-redis-test.crt",
+          "member": "string",
+          "name": "SSLCertName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -5012,6 +5032,33 @@
           "name": "IpPortSet",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否启用SSL,1:启用 0：禁用，仅支持Redis资产",
+          "example": "1",
+          "member": "int64",
+          "name": "EnableSSL",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "SSL证书，EnableSSL时必填",
+          "example": "无",
+          "member": "string",
+          "name": "SSLCert",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "SSL证书名称，EnableSSL时必填",
+          "example": "bh-redis-test.crt",
+          "member": "string",
+          "name": "SSLCertName",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -6671,6 +6718,36 @@
           "example": "0",
           "member": "uint64",
           "name": "Trial",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "cdc集群id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cdc-xxx",
+          "member": "string",
+          "name": "CdcClusterId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "日志投递规格信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "sc_cds_dasb_saas_xxx",
+          "member": "string",
+          "name": "LogDelivery",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "部署模式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "DeployModel",
           "output_required": false,
           "type": "int",
           "value_allowed_null": true

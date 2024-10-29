@@ -6,16 +6,16 @@ Input:
 
 ```
 tccli cynosdb ModifyResourcePackageClusters --cli-unfold-argument  \
-    --PackageId package-abcd1234 \
-    --BindClusterIds cynosdbmysql-1234abcd \
-    --UnbindClusterIds cynosdbmysql-1122aabb
+    --PackageId package-3crr5ldh \
+    --BindClusterIds cynosdbmysql-mwg7121t \
+    --UnbindClusterIds cynosdbmysql-kueh122w
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "a5706353-296a-4992-ad07-ac4a48eeba43"
     }
 }
 ```

@@ -917,6 +917,13 @@
       "output": "ModifyUserSignatureRuleResponse",
       "status": "online"
     },
+    "ModifyUserSignatureRuleV2": {
+      "document": "修改用户防护规则，开启关闭具体的某条规则",
+      "input": "ModifyUserSignatureRuleV2Request",
+      "name": "修改用户防护规则V2",
+      "output": "ModifyUserSignatureRuleV2Response",
+      "status": "online"
+    },
     "ModifyWafAutoDenyRules": {
       "document": "修改ip惩罚规则",
       "input": "ModifyWafAutoDenyRulesRequest",
@@ -17994,6 +18001,60 @@
     },
     "ModifyUserSignatureRuleResponse": {
       "document": "ModifyUserSignatureRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyUserSignatureRuleV2Request": {
+      "document": "ModifyUserSignatureRuleV2请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "xx.qcloudwaf.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "主类id",
+          "example": "010000000",
+          "member": "string",
+          "name": "MainClassID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "主类开关0=关闭，1=开启，2=只告警",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "下发修改的规则列表",
+          "example": "无",
+          "member": "ReqUserRule",
+          "name": "RuleID",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyUserSignatureRuleV2Response": {
+      "document": "ModifyUserSignatureRuleV2返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

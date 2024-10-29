@@ -11228,7 +11228,7 @@
         {
           "disabled": false,
           "document": "任务Id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "rmis-xxxx",
+          "example": "rmis-****",
           "member": "string",
           "name": "TaskId",
           "output_required": true,
@@ -11278,7 +11278,7 @@
         {
           "disabled": false,
           "document": "报告ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "rpt-xxx",
+          "example": "rpt-****",
           "member": "string",
           "name": "ReportId",
           "output_required": true,
@@ -11318,7 +11318,7 @@
         {
           "disabled": false,
           "document": "APP ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1234",
+          "example": "1302****",
           "member": "string",
           "name": "AppId",
           "output_required": true,
@@ -11328,7 +11328,7 @@
         {
           "disabled": false,
           "document": "用户主账户ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1234",
+          "example": "10001****",
           "member": "string",
           "name": "UIN",
           "output_required": true,
