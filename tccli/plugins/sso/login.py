@@ -3,6 +3,7 @@ import json
 import os.path
 import random
 import string
+import sys
 import time
 import uuid
 import webbrowser
@@ -12,6 +13,11 @@ from six.moves.urllib.parse import urlencode
 from tccli import sso
 from tccli.plugins.sso import texts, terminal, configs
 from tccli.plugins.sso.texts import get as _
+
+
+def print_message(msg):
+    print(msg)
+    sys.stdout.flush()
 
 
 def login_command_entrypoint(args, parsed_globals):
@@ -39,7 +45,7 @@ def login(profile, language):
         profile_opt = ""
         if profile != "default":
             profile_opt = "--profile %s " % profile
-        print(_("auth_url_not_configured") % profile_opt)
+        print_message(_("auth_url_not_configured") % profile_opt)
         return
 
     characters = string.ascii_letters + string.digits
@@ -50,30 +56,30 @@ def login(profile, language):
     if token["State"] != state:
         raise ValueError("invalid state %s" % token["state"])
 
-    print("")
+    print_message("")
 
     login_token = token["Token"]
     site = token["Site"]
     accounts = sso.list_accounts_for_access_assignment(login_token, site)
     if not accounts:
-        print(_("no_account"))
+        print_message(_("no_account"))
         return
 
     idx = terminal.select_from_items(
         _("account_select_prompt"), ["%s:%s" % (x["Name"], x["Uin"]) for x in accounts], 10)
     account = accounts[idx]
-    print("uin: %s" % account["Uin"])
-    print("username: %s" % account["Name"])
+    print_message("uin: %s" % account["Uin"])
+    print_message("username: %s" % account["Name"])
 
     roles = sso.list_role_configurations_for_account(account["Uin"], login_token, site)
     if not roles:
-        print(_("no_role"))
+        print_message(_("no_role"))
         return
 
     idx = terminal.select_from_items(
         _("role_select_prompt"), [x["RoleConfigurationName"] for x in roles], 10)
     role = roles[idx]
-    print("role: %s" % role["RoleConfigurationName"])
+    print_message("role: %s" % role["RoleConfigurationName"])
 
     saml_resp = sso.gen_saml_response(
         login_token, "RoleSAML", account["Uin"], "", role["RoleConfigurationId"], site)
@@ -97,7 +103,7 @@ def login(profile, language):
     }
     sso.save_credential(cred, sso_info, profile)
 
-    print(_("login_success") % sso.cred_path_of_profile(profile))
+    print_message(_("login_success") % sso.cred_path_of_profile(profile))
 
 
 def _get_token(auth_url, state, language):
@@ -116,9 +122,9 @@ def _get_token(auth_url, state, language):
     url_query = urlencode(url_params)
     auth_url = auth_url + "?" + url_query
 
-    print(_("try_login_with_url"))
-    print("")
-    print(auth_url)
+    print_message(_("try_login_with_url"))
+    print_message("")
+    print_message(auth_url)
 
     webbrowser.open(auth_url)
 
