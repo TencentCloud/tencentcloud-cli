@@ -27,7 +27,7 @@ class Utils(object):
             start = 0
             size = len(s)
             while start < size:
-                dst += (pre + s[start:start + step] + "\n")
+                dst += (pre + s[start:start+step] + "\n")
                 start += step
             dst += "\n"
         dst += "\n"
