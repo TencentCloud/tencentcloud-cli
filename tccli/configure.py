@@ -28,7 +28,7 @@ class BasicConfigure(BasicCommand):
             OptionsDefine.Language
         ]
         self.cred_list = [OptionsDefine.SecretId, OptionsDefine.SecretKey, OptionsDefine.Token,
-                          OptionsDefine.RoleArn, OptionsDefine.RoleSessionName]
+                          OptionsDefine.RoleArn, OptionsDefine.RoleSessionName, OptionsDefine.UseCVMRole]
         self.conf_service_list = [OptionsDefine.Version, OptionsDefine.Endpoint]
         self.cli_path = os.path.join(os.path.expanduser("~"), ".tccli")
         self._cli_data = Loader()

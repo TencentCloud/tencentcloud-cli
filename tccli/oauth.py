@@ -4,17 +4,23 @@ import time
 
 import requests
 import uuid
+import tccli.options_define as OptionsDefine
 
 _API_ENDPOINT = "https://cli.cloud.tencent.com"
 _CRED_REFRESH_SAFE_DUR = 60 * 5
 _ACCESS_REFRESH_SAFE_DUR = 60 * 5
 
 
-def maybe_refresh_credential(profile):
+def maybe_refresh_credential(parsed_globals):
+    profile = parsed_globals.profile if parsed_globals.profile else "default"
     cred_path = cred_path_of_profile(profile)
     try:
         with open(cred_path, "r") as cred_file:
             cred = json.load(cred_file)
+            if OptionsDefine.UseCVMRole in cred:
+                identifier, bool_value = is_bool(cred[OptionsDefine.UseCVMRole])
+                if identifier:
+                    parsed_globals.use_cvm_role = bool_value
     except IOError:
         # file not found, don't check
         return
@@ -113,3 +119,12 @@ def save_credential(token, new_cred, profile):
     }
     with open(cred_path, "w") as cred_file:
         json.dump(cred, cred_file, indent=4)
+
+
+def is_bool(s):
+    if s.lower() == 'true':
+        return True, True
+    elif s.lower() == 'false':
+        return True, False
+    else:
+        return False, None
