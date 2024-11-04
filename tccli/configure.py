@@ -215,7 +215,7 @@ class ConfigureSetCommand(BasicConfigure):
                 if varname == 'use-cvm-role':
                     identifier, bool_value = Utils.is_bool(value)
                     if identifier:
-                        cred[varname] = value
+                        cred[varname] = bool_value
                     else:
                         raise ParamError("use-cvm-role must be true or false")
             elif varname in self.config_list:

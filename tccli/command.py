@@ -339,8 +339,7 @@ class ActionCommand(BaseCommand):
             # file not found, don't check
             return
         if Options_define.UseCVMRole in cred:
-            identifier, bool_value = Utils.is_bool(cred[Options_define.UseCVMRole])
-            if identifier:
-                parsed_globals.use_cvm_role = bool_value
+            if isinstance(cred[Options_define.UseCVMRole], bool):
+                parsed_globals.use_cvm_role = cred[Options_define.UseCVMRole]
             else:
                 raise ValueError("UseCVMRole in credential file(%s) is not a bool value" % cred_path)
