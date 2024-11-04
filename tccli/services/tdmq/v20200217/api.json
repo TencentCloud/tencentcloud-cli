@@ -1733,40 +1733,40 @@
         {
           "disabled": false,
           "document": "死信队列。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "test-queue",
           "member": "string",
           "name": "DeadLetterQueue",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "死信队列策略。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "死信队列策略。0:最大接收次数;1:最大未消费时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
           "name": "Policy",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "最大未消费过期时间。Policy为1时必选。范围300-43200，单位秒，需要小于消息最大保留时间MsgRetentionSeconds。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0",
+          "example": "300",
           "member": "uint64",
           "name": "MaxTimeToLive",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "最大接收次数。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0",
+          "document": "最大接收次数。Policy为0时必选，范围在1到1000。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
           "member": "uint64",
           "name": "MaxReceiveCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         }
@@ -1779,20 +1779,20 @@
         {
           "disabled": false,
           "document": "消息队列ID。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "cmq-112233",
           "member": "string",
           "name": "QueueId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "消息队列名字。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "test1",
           "member": "string",
           "name": "QueueName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -1825,7 +1825,7 @@
         {
           "disabled": false,
           "document": "每秒钟生产消息条数的限制，消费消息的大小是该值的1.1倍。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0",
+          "example": "5000",
           "member": "uint64",
           "name": "Qps",
           "output_required": true,
@@ -1835,7 +1835,7 @@
         {
           "disabled": false,
           "document": "带宽限制。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0",
+          "example": "52428800",
           "member": "uint64",
           "name": "Bps",
           "output_required": true,
@@ -1844,8 +1844,8 @@
         },
         {
           "disabled": false,
-          "document": "飞行消息最大保留时间。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0",
+          "document": "飞行消息最大保留时间，需要小于消息保留周期。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3600",
           "member": "uint64",
           "name": "MaxDelaySeconds",
           "output_required": true,
@@ -1855,7 +1855,7 @@
         {
           "disabled": false,
           "document": "最大堆积消息数。取值范围在公测期间为 1,000,000 - 10,000,000，正式上线后范围可达到 1000,000-1000,000,000。默认取值在公测期间为 10,000,000，正式上线后为 100,000,000。",
-          "example": "0",
+          "example": "1000000",
           "member": "uint64",
           "name": "MaxMsgHeapNum",
           "output_required": true,
@@ -1865,7 +1865,7 @@
         {
           "disabled": false,
           "document": "消息接收长轮询等待时间。取值范围0 - 30秒，默认值0。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0",
+          "example": "3",
           "member": "uint64",
           "name": "PollingWaitSeconds",
           "output_required": true,
@@ -1875,7 +1875,7 @@
         {
           "disabled": false,
           "document": "消息保留周期。取值范围60-1296000秒（1min-15天），默认值345600秒（4 天）。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0",
+          "example": "7200",
           "member": "uint64",
           "name": "MsgRetentionSeconds",
           "output_required": true,
@@ -1885,7 +1885,7 @@
         {
           "disabled": false,
           "document": "消息可见性超时。取值范围1 - 43200秒（即12小时内），默认值30。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0",
+          "example": "30",
           "member": "uint64",
           "name": "VisibilityTimeout",
           "output_required": true,
@@ -1895,7 +1895,7 @@
         {
           "disabled": false,
           "document": "消息最大长度。取值范围1024 - 1048576 Byte（即1K - 1024K），默认值65536。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0",
+          "example": "1048576",
           "member": "uint64",
           "name": "MaxMsgSize",
           "output_required": true,
@@ -1915,7 +1915,7 @@
         {
           "disabled": false,
           "document": "队列的创建时间。返回 Unix 时间戳，精确到毫秒。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0",
+          "example": "1726730748000",
           "member": "uint64",
           "name": "CreateTime",
           "output_required": true,
@@ -1925,7 +1925,7 @@
         {
           "disabled": false,
           "document": "最后一次修改队列属性的时间。返回 Unix 时间戳，精确到毫秒。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0",
+          "example": "1729740386000",
           "member": "uint64",
           "name": "LastModifyTime",
           "output_required": true,
@@ -2075,7 +2075,7 @@
         {
           "disabled": false,
           "document": "集群状态，0:创建中，1:正常，2:销毁中，3:已删除，4: 隔离中，5:创建失败，6: 删除失败\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0",
+          "example": "1",
           "member": "int64",
           "name": "Status",
           "output_required": true,
@@ -2141,7 +2141,7 @@
         {
           "disabled": false,
           "document": "订阅拥有者的 APPID。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0",
+          "example": "1234567",
           "member": "uint64",
           "name": "TopicOwner",
           "output_required": true,
@@ -2161,7 +2161,7 @@
         {
           "disabled": false,
           "document": "最后一次修改订阅属性的时间。返回 Unix 时间戳，精确到毫秒。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0",
+          "example": "1692691279000",
           "member": "uint64",
           "name": "LastModifyTime",
           "output_required": true,
@@ -2171,7 +2171,7 @@
         {
           "disabled": false,
           "document": "订阅的创建时间。返回 Unix 时间戳，精确到毫秒。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0",
+          "example": "1692691279000",
           "member": "uint64",
           "name": "CreateTime",
           "output_required": true,
@@ -2181,7 +2181,7 @@
         {
           "disabled": false,
           "document": "表示订阅接收消息的过滤策略。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "[\"news\"]",
           "member": "string",
           "name": "BindingKey",
           "output_required": true,
@@ -2201,7 +2201,7 @@
         {
           "disabled": false,
           "document": "描述用户创建订阅时选择的过滤策略：\nfilterType = 1表示用户使用 filterTag 标签过滤\nfilterType = 2表示用户使用 bindingKey 过滤。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "[\"tag1\"]",
           "member": "string",
           "name": "FilterTags",
           "output_required": true,
@@ -2279,7 +2279,7 @@
         {
           "disabled": false,
           "document": "消息在主题中最长存活时间，从发送到该主题开始经过此参数指定的时间后，不论消息是否被成功推送给用户都将被删除，单位为秒。固定为一天（86400秒），该属性不能修改。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0",
+          "example": "86400",
           "member": "uint64",
           "name": "MsgRetentionSeconds",
           "output_required": true,
@@ -2289,8 +2289,8 @@
         },
         {
           "disabled": false,
-          "document": "消息最大长度。取值范围1024 - 1048576Byte（即1 - 1024K），默认值为65536。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0",
+          "document": "消息最大长度。取值范围1024 - 1048576Byte（即1 - 1024K），默认值为1048576。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1048576",
           "member": "uint64",
           "name": "MaxMsgSize",
           "output_required": true,
@@ -2301,7 +2301,7 @@
         {
           "disabled": false,
           "document": "每秒钟发布消息的条数。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0",
+          "example": "5000",
           "member": "uint64",
           "name": "Qps",
           "output_required": true,
@@ -2312,7 +2312,7 @@
         {
           "disabled": false,
           "document": "描述用户创建订阅时选择的过滤策略：\nFilterType = 1表示用户使用 FilterTag 标签过滤;\nFilterType = 2表示用户使用 BindingKey 过滤。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0",
+          "example": "1",
           "member": "uint64",
           "name": "FilterType",
           "output_required": true,
@@ -2323,7 +2323,7 @@
         {
           "disabled": false,
           "document": "主题的创建时间。返回 Unix 时间戳，精确到毫秒。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0",
+          "example": "1692691278000",
           "member": "uint64",
           "name": "CreateTime",
           "output_required": true,
@@ -2334,7 +2334,7 @@
         {
           "disabled": false,
           "document": "最后一次修改主题属性的时间。返回 Unix 时间戳，精确到毫秒。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0",
+          "example": "1692691278000",
           "member": "uint64",
           "name": "LastModifyTime",
           "output_required": true,
@@ -2356,7 +2356,7 @@
         {
           "disabled": false,
           "document": "创建者 Uin，CAM 鉴权 resource 由该字段组合而成。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0",
+          "example": "1234567",
           "member": "uint64",
           "name": "CreateUin",
           "output_required": true,
@@ -2433,7 +2433,7 @@
         {
           "disabled": false,
           "document": "订阅数量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0",
+          "example": "1",
           "member": "int64",
           "name": "SubscriptionCount",
           "output_required": true,
@@ -2868,7 +2868,7 @@
         {
           "disabled": false,
           "document": "最大堆积消息数。取值范围在公测期间为 1,000,000 - 10,000,000，正式上线后范围可达到 1000,000-1000,000,000。默认取值在公测期间为 10,000,000，正式上线后为 100,000,000。",
-          "example": "0",
+          "example": "1000000",
           "member": "uint64",
           "name": "MaxMsgHeapNum",
           "required": false,
@@ -2877,7 +2877,7 @@
         {
           "disabled": false,
           "document": "消息接收长轮询等待时间。取值范围 0-30 秒，默认值 0。",
-          "example": "0",
+          "example": "3",
           "member": "uint64",
           "name": "PollingWaitSeconds",
           "required": false,
@@ -2886,7 +2886,7 @@
         {
           "disabled": false,
           "document": "消息可见性超时。取值范围 1-43200 秒（即12小时内），默认值 30。",
-          "example": "0",
+          "example": "30",
           "member": "uint64",
           "name": "VisibilityTimeout",
           "required": false,
@@ -2895,7 +2895,7 @@
         {
           "disabled": false,
           "document": "消息最大长度。取值范围 1024-1048576 Byte（即1-1024K），默认值 1048576。",
-          "example": "0",
+          "example": "1048576",
           "member": "uint64",
           "name": "MaxMsgSize",
           "required": false,
@@ -2904,7 +2904,7 @@
         {
           "disabled": false,
           "document": "消息最长未确认时间。取值范围 30-43200 秒（30秒~12小时），默认值 3600 (1 小时)。",
-          "example": "0",
+          "example": "3600",
           "member": "uint64",
           "name": "MsgRetentionSeconds",
           "required": false,
@@ -2949,7 +2949,7 @@
         {
           "disabled": false,
           "document": "死信队列名称",
-          "example": "xxx",
+          "example": "test1",
           "member": "string",
           "name": "DeadLetterQueueName",
           "required": false,
@@ -2967,7 +2967,7 @@
         {
           "disabled": false,
           "document": "最大接收次数 1-1000",
-          "example": "0",
+          "example": "1",
           "member": "uint64",
           "name": "MaxReceiveCount",
           "required": false,
@@ -2976,7 +2976,7 @@
         {
           "disabled": false,
           "document": "policy为1时必选。最大未消费过期时间。范围300-43200，单位秒，需要小于消息最大保留时间msgRetentionSeconds",
-          "example": "0",
+          "example": "300",
           "member": "uint64",
           "name": "MaxTimeToLive",
           "required": false,
@@ -2994,7 +2994,7 @@
         {
           "disabled": false,
           "document": "标签数组",
-          "example": "无",
+          "example": "[{\"TagKey\":\"aa\",\"TagValue\":\"bb\"}]",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -3018,7 +3018,7 @@
         {
           "disabled": false,
           "document": "创建成功的queueId",
-          "example": "queue-xxx",
+          "example": "cmqq-o9p8j9vp",
           "member": "string",
           "name": "QueueId",
           "output_required": true,
@@ -3140,7 +3140,7 @@
         {
           "disabled": false,
           "document": "主题名字，在单个地域同一账号下唯一。主题名称是一个不超过64个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线（-）。",
-          "example": "xxx",
+          "example": "test-topic",
           "member": "string",
           "name": "TopicName",
           "required": true,
@@ -3149,7 +3149,7 @@
         {
           "disabled": false,
           "document": "消息最大长度。取值范围 1024-65536 Byte（即1-64K），默认值 65536。",
-          "example": "0",
+          "example": "65536",
           "member": "uint64",
           "name": "MaxMsgSize",
           "required": false,
@@ -3158,7 +3158,7 @@
         {
           "disabled": false,
           "document": "用于指定主题的消息匹配策略。1：表示标签匹配策略；2：表示路由匹配策略，默认值为标签匹配策略。",
-          "example": "0",
+          "example": "1",
           "member": "uint64",
           "name": "FilterType",
           "required": false,
@@ -3167,7 +3167,7 @@
         {
           "disabled": false,
           "document": "消息保存时间。取值范围60 - 86400 s（即1分钟 - 1天），默认值86400。",
-          "example": "0",
+          "example": "86400",
           "member": "uint64",
           "name": "MsgRetentionSeconds",
           "required": false,
@@ -3185,7 +3185,7 @@
         {
           "disabled": false,
           "document": "标签数组",
-          "example": "无",
+          "example": "[{\"TagKey\":\"aa\",\"TagValue\":\"bb\"}]",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -6246,7 +6246,7 @@
         {
           "disabled": false,
           "document": "精确匹配QueueName",
-          "example": "xxx",
+          "example": "test-queue",
           "member": "string",
           "name": "QueueName",
           "required": true,
@@ -6264,6 +6264,7 @@
           "example": "无",
           "member": "CmqQueue",
           "name": "QueueDescribe",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -12657,7 +12658,7 @@
         {
           "disabled": false,
           "document": "最大堆积消息数。取值范围在公测期间为 1,000,000 - 10,000,000，正式上线后范围可达到 1000,000-1000,000,000。默认取值在公测期间为 10,000,000，正式上线后为 100,000,000。",
-          "example": "0",
+          "example": "1000000",
           "member": "uint64",
           "name": "MaxMsgHeapNum",
           "required": false,
@@ -12666,7 +12667,7 @@
         {
           "disabled": false,
           "document": "消息接收长轮询等待时间。取值范围 0-30 秒，默认值 0。",
-          "example": "0",
+          "example": "3",
           "member": "uint64",
           "name": "PollingWaitSeconds",
           "required": false,
@@ -12675,7 +12676,7 @@
         {
           "disabled": false,
           "document": "消息可见性超时。取值范围 1-43200 秒（即12小时内），默认值 30。",
-          "example": "0",
+          "example": "30",
           "member": "uint64",
           "name": "VisibilityTimeout",
           "required": false,
@@ -12693,7 +12694,7 @@
         {
           "disabled": false,
           "document": "消息最长未确认时间。取值范围 30-43200 秒（30秒~12小时），默认值 3600 (1 小时)。",
-          "example": "0",
+          "example": "7200",
           "member": "uint64",
           "name": "MsgRetentionSeconds",
           "required": false,
@@ -12729,7 +12730,7 @@
         {
           "disabled": false,
           "document": "死信队列名称",
-          "example": "xxx",
+          "example": "dead-queue",
           "member": "string",
           "name": "DeadLetterQueueName",
           "required": false,
@@ -12737,8 +12738,8 @@
         },
         {
           "disabled": false,
-          "document": "MaxTimeToLivepolicy为1时必选。最大未消费过期时间。范围300-43200，单位秒，需要小于消息最大保留时间MsgRetentionSeconds",
-          "example": "0",
+          "document": "policy为1时必选。最大未消费过期时间。范围300-43200，单位秒，需要小于消息最大保留时间MsgRetentionSeconds",
+          "example": "300",
           "member": "uint64",
           "name": "MaxTimeToLive",
           "required": false,
@@ -12747,7 +12748,7 @@
         {
           "disabled": false,
           "document": "最大接收次数",
-          "example": "0",
+          "example": "1",
           "member": "uint64",
           "name": "MaxReceiveCount",
           "required": false,

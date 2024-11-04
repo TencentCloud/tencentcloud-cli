@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli tat DeleteRegisterInstance --cli-unfold-argument  \
-    --InstanceId abc
+    --InstanceId rinst-xdfaxfgax
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "f86ccb49-520a-41bd-ba00-140a9dbed79f"
     }
 }
 ```

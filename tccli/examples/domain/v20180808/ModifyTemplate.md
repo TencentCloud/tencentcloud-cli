@@ -34,6 +34,7 @@ Output:
     "Response": {
         "RequestId": "c9308288-2016-4197-bba1-baf0a9ea0a6f",
         "Template": {
+            "IsBlack": false,
             "AuditReason": "",
             "IsValidTemplate": 1,
             "UpdatedOn": "2020-07-30 16:44:04",
@@ -42,28 +43,32 @@ Output:
             "InvalidReason": "",
             "CertificateInfo": {
                 "CertificateType": "YYZZ",
-                "CertificateCode": "441900000553075",
-                "ImgUrl": "https://wss-10039692.cos.ap-shanghai.myqcloudXj"
+                "CertificateCode": "44190****075",
+                "ImgUrl": "https://xyz.cos.ap-shanghai.myqcloud/mkdiwe.jpeg",
+                "OriginImgUrl": "https://xyz.cos.ap-shanghai.myqcloud/mkdiwe.jpeg",
+                "RegistrantCertificateType": "",
+                "RegistrantCertificateCode": "",
+                "RegistrantImgUrl": ""
             },
             "TemplateId": "tmpl-3mm9fxug",
             "UserUin": "1213059621",
             "ContactInfo": {
                 "Province": "shen zhen shi",
                 "RegistrantType": "E",
-                "OrganizationName": "niubihonghong",
-                "OrganizationNameCN": "牛逼哄哄",
+                "OrganizationName": "qiyeming",
+                "OrganizationNameCN": "企业名",
                 "Country": "CN",
-                "RegistrantName": "niubihonghong",
+                "RegistrantName": "qiyeming",
                 "ZipCode": "100011",
-                "Email": "1213059621@qq.com",
+                "Email": "121****@qq.com",
                 "City": "nan shan qu",
-                "RegistrantNameCN": "牛逼哄哄",
+                "RegistrantNameCN": "企业名",
                 "StreetCN": "万利达大厦",
                 "Street": "wanlidadasha",
                 "ProvinceCN": "深圳市",
                 "CountryCN": "中国",
                 "CityCN": "南山区",
-                "Telephone": "13600147752"
+                "Telephone": "13****52"
             },
             "IsDefault": "no"
         }

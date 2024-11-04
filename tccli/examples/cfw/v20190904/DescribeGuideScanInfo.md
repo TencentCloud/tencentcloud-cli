@@ -22,9 +22,9 @@ Output:
             },
             "ScanStatus": 0,
             "ScanPercent": 0,
-            "ScanTime": "abc"
+            "ScanTime": "2023-11-22 11:22:15"
         },
-        "RequestId": "abc"
+        "RequestId": ""
     }
 }
 ```

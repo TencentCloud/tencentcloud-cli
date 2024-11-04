@@ -175,6 +175,13 @@
       "output": "CreateRoleConfigurationResponse",
       "status": "online"
     },
+    "CreateSCIMCredential": {
+      "document": "创建SCIM密钥",
+      "input": "CreateSCIMCredentialRequest",
+      "name": "创建SCIM密钥",
+      "output": "CreateSCIMCredentialResponse",
+      "status": "online"
+    },
     "CreateUser": {
       "document": "创建用户",
       "input": "CreateUserRequest",
@@ -271,6 +278,13 @@
       "input": "DeleteRoleConfigurationRequest",
       "name": "删除权限配置信息",
       "output": "DeleteRoleConfigurationResponse",
+      "status": "online"
+    },
+    "DeleteSCIMCredential": {
+      "document": "删除SCIM密钥",
+      "input": "DeleteSCIMCredentialRequest",
+      "name": "删除SCIM密钥",
+      "output": "DeleteSCIMCredentialResponse",
       "status": "online"
     },
     "DeleteShareUnit": {
@@ -497,6 +511,13 @@
       "output": "GetRoleConfigurationResponse",
       "status": "online"
     },
+    "GetSCIMSynchronizationStatus": {
+      "document": "获取SCIM同步状态",
+      "input": "GetSCIMSynchronizationStatusRequest",
+      "name": "查询SCIM同步的状态",
+      "output": "GetSCIMSynchronizationStatusResponse",
+      "status": "online"
+    },
     "GetTaskStatus": {
       "document": "查询异步任务的状态",
       "input": "GetTaskStatusRequest",
@@ -635,6 +656,13 @@
       "input": "ListRoleConfigurationsRequest",
       "name": "查询权限配置列表",
       "output": "ListRoleConfigurationsResponse",
+      "status": "online"
+    },
+    "ListSCIMCredentials": {
+      "document": "查询用户SCIM密钥列表",
+      "input": "ListSCIMCredentialsRequest",
+      "name": "查询SCIM密钥列表",
+      "output": "ListSCIMCredentialsResponse",
       "status": "online"
     },
     "ListTargetsForPolicy": {
@@ -789,6 +817,20 @@
       "input": "UpdateRoleConfigurationRequest",
       "name": "修改权限配置信息",
       "output": "UpdateRoleConfigurationResponse",
+      "status": "online"
+    },
+    "UpdateSCIMCredentialStatus": {
+      "document": "启用/禁用SCIM密钥",
+      "input": "UpdateSCIMCredentialStatusRequest",
+      "name": "启用或禁用SCIM密钥",
+      "output": "UpdateSCIMCredentialStatusResponse",
+      "status": "online"
+    },
+    "UpdateSCIMSynchronizationStatus": {
+      "document": "启用/禁用用户SCIM同步",
+      "input": "UpdateSCIMSynchronizationStatusRequest",
+      "name": "启用或禁用SCIM同步",
+      "output": "UpdateSCIMSynchronizationStatusResponse",
       "status": "online"
     },
     "UpdateShareUnit": {
@@ -1626,6 +1668,15 @@
           "name": "Description",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户组类型  Manual：手动创建，Synchronized：外部导入",
+          "example": "Manual",
+          "member": "string",
+          "name": "GroupType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2281,6 +2332,103 @@
       ],
       "type": "object"
     },
+    "CreateSCIMCredentialRequest": {
+      "document": "CreateSCIMCredential请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "空间ID。z-前缀开头，后面是12位随机数字/小写字母",
+          "example": "z-00fdsg****",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSCIMCredentialResponse": {
+      "document": "CreateSCIMCredential返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "空间ID。z-前缀开头，后面是12位随机数字/小写字母。",
+          "example": "z-00fdsg****",
+          "member": "string",
+          "name": "ZoneId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "SCIM密钥ID。scimcred-前缀开头，后面是12位随机数字/小写字母。",
+          "example": "scimcred-lkj****",
+          "member": "string",
+          "name": "CredentialId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "SCIM密钥类型。",
+          "example": "BearerToken",
+          "member": "string",
+          "name": "CredentialType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "SCIM 密钥的创建时间。",
+          "example": "2024-04-29 15:04:05",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "SCIM 密钥的过期时间。",
+          "example": "2025-04-29 15:04:05",
+          "member": "string",
+          "name": "ExpireTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "SCIM密钥状态，Enabled已开启，Disabled已关闭。",
+          "example": "Enabled",
+          "member": "string",
+          "name": "CredentialStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "SCIM密钥。",
+          "example": "sJf[mc5kPJ8saXeYDgyw****",
+          "member": "string",
+          "name": "CredentialSecret",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateUserRequest": {
       "document": "CreateUser请求参数结构体",
       "members": [
@@ -2353,6 +2501,15 @@
           "example": "Enabled",
           "member": "string",
           "name": "UserStatus",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户类型  Manual：手动创建，Synchronized：外部导入",
+          "example": "Manual",
+          "member": "string",
+          "name": "UserType",
           "required": false,
           "type": "string"
         }
@@ -2840,6 +2997,42 @@
     },
     "DeleteRoleConfigurationResponse": {
       "document": "DeleteRoleConfiguration返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSCIMCredentialRequest": {
+      "document": "DeleteSCIMCredential请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "空间ID。z-前缀开头，后面是12位随机数字/小写字母",
+          "example": "z-00fdsg****",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "SCIM密钥ID。scimcred-前缀开头，后面是12位随机数字/小写字母。",
+          "example": "scimcred-lkj****",
+          "member": "string",
+          "name": "CredentialId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSCIMCredentialResponse": {
+      "document": "DeleteSCIMCredential返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -5040,6 +5233,43 @@
       ],
       "type": "object"
     },
+    "GetSCIMSynchronizationStatusRequest": {
+      "document": "GetSCIMSynchronizationStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "空间ID。z-前缀开头，后面是12位随机数字/小写字母",
+          "example": "z-00fdsg****",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetSCIMSynchronizationStatusResponse": {
+      "document": "GetSCIMSynchronizationStatus返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "SCIM 同步状态。Enabled：启用。 Disabled：禁用。",
+          "example": "Enabled",
+          "member": "string",
+          "name": "SCIMSynchronizationStatus",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "GetTaskStatusRequest": {
       "document": "GetTaskStatus请求参数结构体",
       "members": [
@@ -5902,6 +6132,15 @@
           "name": "SortType",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "翻页offset. 不要与NextToken同时使用，优先使用NextToken",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -7178,6 +7417,62 @@
       ],
       "type": "object"
     },
+    "ListSCIMCredentialsRequest": {
+      "document": "ListSCIMCredentials请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "空间ID。z-前缀开头，后面是12位随机数字/小写字母",
+          "example": "z-00fdsg****",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "SCIM密钥ID",
+          "example": "scimcred-lkj****",
+          "member": "string",
+          "name": "CredentialId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListSCIMCredentialsResponse": {
+      "document": "ListSCIMCredentials返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "SCIM密钥数量。",
+          "example": "0",
+          "member": "int64",
+          "name": "TotalCounts",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "SCIM 密钥信息。",
+          "example": "[]",
+          "member": "SCIMCredential",
+          "name": "SCIMCredentials",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ListTargetsForPolicyNode": {
       "document": "查询某个指定SCP策略关联的目标列表",
       "members": [
@@ -7695,6 +7990,15 @@
           "name": "SortType",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "翻页offset. 不要与NextToken同时使用，优先使用NextToken",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -10234,6 +10538,72 @@
       ],
       "usage": "both"
     },
+    "SCIMCredential": {
+      "document": "SCIM密钥",
+      "members": [
+        {
+          "disabled": false,
+          "document": "空间ID。z-前缀开头，后面是12位随机数字/小写字母",
+          "example": "z-00fdsg****",
+          "member": "string",
+          "name": "ZoneId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "SCIM密钥状态，Enabled已开启，Disabled已关闭。",
+          "example": "Enabled",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "SCIM密钥ID。scimcred-前缀开头，后面是12位随机数字/小写字母。",
+          "example": "scimcred-lkj****",
+          "member": "string",
+          "name": "CredentialId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "SCIM密钥类型。",
+          "example": "BearerToken",
+          "member": "string",
+          "name": "CredentialType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "SCIM 密钥的创建时间。",
+          "example": "2024-04-29 15:04:05",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "SCIM 密钥的过期时间。",
+          "example": "2025-04-29 15:04:05",
+          "member": "string",
+          "name": "ExpireTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "SendOrgMemberAccountBindEmailRequest": {
       "document": "SendOrgMemberAccountBindEmail请求参数结构体",
       "members": [
@@ -11258,6 +11628,87 @@
           "type": "object",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateSCIMCredentialStatusRequest": {
+      "document": "UpdateSCIMCredentialStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "空间ID。z-前缀开头，后面是12位随机数字/小写字母",
+          "example": "z-00fdsg****",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "SCIM密钥ID。scimcred-前缀开头，后面是12位随机数字/小写字母。",
+          "example": "scimcred-lkj****",
+          "member": "string",
+          "name": "CredentialId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "SCIM密钥状态。Enabled：启用。 Disabled：禁用。",
+          "example": "Enabled",
+          "member": "string",
+          "name": "NewStatus",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateSCIMCredentialStatusResponse": {
+      "document": "UpdateSCIMCredentialStatus返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateSCIMSynchronizationStatusRequest": {
+      "document": "UpdateSCIMSynchronizationStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "空间ID。z-前缀开头，后面是12位随机数字/小写字母",
+          "example": "z-00fdsg****",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "SCIM 同步状态。Enabled：启用。Disabled：禁用。",
+          "example": "Enabled",
+          "member": "string",
+          "name": "SCIMSynchronizationStatus",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateSCIMSynchronizationStatusResponse": {
+      "document": "UpdateSCIMSynchronizationStatus返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

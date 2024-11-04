@@ -15,11 +15,11 @@ Output:
 {
     "Response": {
         "TotalCount": 1,
-        "RequestId": "xx",
+        "RequestId": "be6f6eec-0825-4e67-ab9a-c8568bbf736c",
         "LoginWhiteLists": [
             {
-                "UserName": "xx",
-                "Uuid": "xx",
+                "UserName": "root",
+                "Uuid": "05f0bcab-726c-4ea4-8109-bcd03d5598f7",
                 "Places": [
                     {
                         "CityId": 1,
@@ -32,35 +32,15 @@ Output:
                         "ProvinceId": 1
                     }
                 ],
-                "MachineName": "xx",
-                "HostIp": "xx",
+                "MachineName": "机器名称",
+                "HostIp": "1.1.1.1",
                 "IsGlobal": true,
                 "CreateTime": "2020-09-22 00:00:00",
-                "StartTime": "xx",
+                "StartTime": "2020-09-22 00:00:00",
                 "ModifyTime": "2020-09-22 00:00:00",
-                "SrcIp": "xx",
-                "EndTime": "xx",
+                "SrcIp": "1.1.1.1",
+                "EndTime": "2020-09-22 00:00:00",
                 "Id": 1
-            },
-            {
-                "UserName": "xx",
-                "Uuid": "xx",
-                "Places": [
-                    {
-                        "CityId": 1,
-                        "CountryId": 1,
-                        "ProvinceId": 1
-                    }
-                ],
-                "MachineName": "xx",
-                "ModifyTime": "2020-09-22 00:00:00",
-                "IsGlobal": true,
-                "Id": 1,
-                "StartTime": "xx",
-                "HostIp": "xx",
-                "SrcIp": "xx",
-                "EndTime": "xx",
-                "CreateTime": "2020-09-22 00:00:00"
             }
         ]
     }

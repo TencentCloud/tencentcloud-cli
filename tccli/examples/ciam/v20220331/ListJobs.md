@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli ciam ListJobs --cli-unfold-argument  \
-    --UserStoreId xx \
-    --JobIds xx
+    --UserStoreId 2c3aca3b****************a7efe88e \
+    --JobIds c29f2c0f****************405ec698
 ```
 
 Output: 
@@ -16,20 +16,27 @@ Output:
     "Response": {
         "JobSet": [
             {
-                "Status": "xx",
-                "Format": "xx",
-                "FailedUsers": [
+                "Id": "c29f2c0f****************405ec698",
+                "Status": "PENDING",
+                "Type": "IMPORT_USER",
+                "CreatedDate": 1715156770024,
+                "Format": "NDJSON",
+                "Location": "http://aa.com/bb.csv",
+                "ErrorDetails": [
                     {
-                        "FailedUserIdentification": "xx",
-                        "FailedReason": "xx"
+                        "UserId": "53e25c3****************e4eb5bd1",
+                        "Error": "error message"
                     }
                 ],
-                "Location": "xx",
-                "Type": "xx",
-                "Id": "xx"
+                "FailedUsers": [
+                    {
+                        "FailedUserIdentification": "53e25c3****************e4eb5bd1",
+                        "FailedReason": "error reason"
+                    }
+                ]
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "e2e9e8aa********************9ab34c6e"
     }
 }
 ```

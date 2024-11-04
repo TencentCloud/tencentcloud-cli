@@ -1630,6 +1630,14 @@
         "title": "修改托管集群外网端口的安全策略"
       }
     ],
+    "ModifyClusterImage": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=ModifyClusterImage\r\n&ClusterId=cls-xxxxxxxx\r\n&ImageId=img-xxxxxxxx\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0b45d041-0f53-428f-ac89-51375d018e95\"\n    }\n}",
+        "title": "修改集群镜像"
+      }
+    ],
     "ModifyClusterNodePool": [
       {
         "document": "",

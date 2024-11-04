@@ -7,7 +7,7 @@ Input:
 ```
 tccli tem DescribeApplicationsStatus --cli-unfold-argument  \
     --SourceChannel 0 \
-    --EnvironmentId xx
+    --EnvironmentId en-xxxxxx
 ```
 
 Output: 
@@ -16,86 +16,87 @@ Output:
     "Response": {
         "Result": [
             {
-                "Status": "xx",
-                "CurrentInstances": 0,
-                "LogOutputConf": {
-                    "ClsLogTopicId": "xx",
-                    "ClsLogsetName": "xx",
-                    "ClsLogsetId": "xx",
-                    "ClsLogTopicName": "xx",
-                    "OutputType": "xx"
-                },
+                "VersionName": "abc",
+                "Status": "abc",
                 "EnableEs": 0,
-                "PodList": {
-                    "TotalCount": 0,
-                    "Limit": 0,
-                    "RequestId": "xx",
-                    "PodList": [
-                        {
-                            "Webshell": "xx",
-                            "Status": "xx",
-                            "RestartCount": 0,
-                            "StartTime": "xx",
-                            "Zone": "xx",
-                            "PodId": "xx",
-                            "NodeInfo": {
-                                "SubnetId": "xx",
-                                "Cidr": "xx",
-                                "AvailableIpCount": "xx",
-                                "Name": "xx",
-                                "Zone": "xx"
-                            },
-                            "VersionId": "xx",
-                            "UnhealthyWarningMsg": "xx",
-                            "DeployVersion": "xx",
-                            "PodIp": "xx",
-                            "ContainerState": "xx",
-                            "Ready": true,
-                            "ApplicationName": "xx",
-                            "CreateTime": "xx",
-                            "Unhealthy": true
-                        }
-                    ],
-                    "Offset": 0
+                "CurrentInstances": 0,
+                "VersionId": "abc",
+                "LogOutputConf": {
+                    "OutputType": "abc",
+                    "ClsLogsetName": "abc",
+                    "ClsLogTopicId": "abc",
+                    "ClsLogsetId": "abc",
+                    "ClsLogTopicName": "abc"
                 },
-                "EnvironmentId": "xx",
-                "CreateDate": "xx",
-                "BuildTaskId": "xx",
-                "DeployMode": "xx",
-                "WorkloadInfo": {
-                    "ApplicationName": "xx",
-                    "UpdateRevision": "xx",
-                    "UpdatedReadyReplicas": 0,
-                    "Replicas": 0,
-                    "ClusterId": "xx",
-                    "UpdatedReplicas": 0,
-                    "VersionName": "xx",
-                    "CurrentRevision": "xx",
-                    "ReadyReplicas": 0
-                },
-                "Zones": [
-                    "xx"
-                ],
-                "VersionId": "xx",
-                "UnderDeploying": true,
-                "BatchDeployStatus": "xx",
-                "VersionName": "xx",
                 "ExpectedInstances": 0,
+                "DeployMode": "abc",
+                "BuildTaskId": "abc",
+                "EnvironmentId": "abc",
+                "EnvironmentName": "abc",
+                "ApplicationId": "abc",
+                "ApplicationName": "abc",
+                "UnderDeploying": true,
+                "BatchDeployStatus": "abc",
+                "Zones": [
+                    "abc"
+                ],
                 "NodeInfos": [
                     {
-                        "SubnetId": "xx",
-                        "Cidr": "xx",
-                        "AvailableIpCount": "xx",
-                        "Name": "xx",
-                        "Zone": "xx"
+                        "Name": "abc",
+                        "Zone": "abc",
+                        "SubnetId": "abc",
+                        "AvailableIpCount": "abc",
+                        "Cidr": "abc"
                     }
                 ],
-                "ApplicationId": "xx",
-                "EnvironmentName": "xx",
-                "ApplicationName": "xx"
+                "PodList": {
+                    "Offset": 0,
+                    "Limit": 0,
+                    "TotalCount": 0,
+                    "RequestId": "abc",
+                    "PodList": [
+                        {
+                            "Webshell": "abc",
+                            "PodId": "abc",
+                            "Status": "abc",
+                            "CreateTime": "abc",
+                            "PodIp": "abc",
+                            "Zone": "abc",
+                            "DeployVersion": "abc",
+                            "RestartCount": 0,
+                            "Ready": true,
+                            "ContainerState": "abc",
+                            "NodeInfo": {
+                                "Name": "abc",
+                                "Zone": "abc",
+                                "SubnetId": "abc",
+                                "AvailableIpCount": "abc",
+                                "Cidr": "abc"
+                            },
+                            "StartTime": "abc",
+                            "Unhealthy": true,
+                            "UnhealthyWarningMsg": "abc",
+                            "VersionId": "abc",
+                            "ApplicationName": "abc"
+                        }
+                    ]
+                },
+                "WorkloadInfo": {
+                    "ClusterId": "abc",
+                    "ApplicationName": "abc",
+                    "VersionName": "abc",
+                    "ReadyReplicas": 0,
+                    "Replicas": 0,
+                    "UpdatedReplicas": 0,
+                    "UpdatedReadyReplicas": 0,
+                    "UpdateRevision": "abc",
+                    "CurrentRevision": "abc"
+                },
+                "CreateDate": "abc",
+                "RegionId": "abc"
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

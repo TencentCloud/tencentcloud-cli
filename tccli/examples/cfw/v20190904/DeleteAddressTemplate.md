@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cfw DeleteAddressTemplate --cli-unfold-argument  \
-    --Uuid abc
+    --Uuid mb_***_***
 ```
 
 Output: 
@@ -14,7 +14,7 @@ Output:
 {
     "Response": {
         "Status": 0,
-        "RequestId": "abc"
+        "RequestId": ""
     }
 }
 ```

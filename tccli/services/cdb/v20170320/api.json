@@ -15,7 +15,7 @@
       "status": "online"
     },
     "AdjustCdbProxyAddress": {
-      "document": "调整数据库代理地址配置",
+      "document": "本接口（AdjustCdbProxyAddress）用于调整数据库代理地址配置。",
       "input": "AdjustCdbProxyAddressRequest",
       "name": "调整数据库代理地址",
       "output": "AdjustCdbProxyAddressResponse",
@@ -1483,7 +1483,7 @@
         {
           "disabled": false,
           "document": "代理组ID",
-          "example": "proxy-test",
+          "example": "proxy-il2nlsdn",
           "member": "string",
           "name": "ProxyGroupId",
           "required": true,
@@ -1555,7 +1555,7 @@
         {
           "disabled": false,
           "document": "代理组地址ID",
-          "example": "proxy-test",
+          "example": "proxy-il2nlsdn",
           "member": "string",
           "name": "ProxyAddressId",
           "required": true,
@@ -7003,7 +7003,7 @@
         },
         {
           "disabled": false,
-          "document": "备份任务 ID。该任务 ID 为 [创建云数据库备份](https://cloud.tencent.com/document/api/236/15844) 接口返回的任务 ID。",
+          "document": "备份任务 ID。您可通过 [查询数据备份文件列表](https://cloud.tencent.com/document/api/236/15842)  来获取目标备份任务 ID。",
           "example": "173381",
           "member": "int64",
           "name": "BackupId",
@@ -7152,6 +7152,15 @@
           "member": "string",
           "name": "Password",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "传入不为空则对密码进行了加密处理",
+          "example": "无",
+          "member": "string",
+          "name": "EncryptMethod",
+          "required": false,
           "type": "string"
         }
       ],

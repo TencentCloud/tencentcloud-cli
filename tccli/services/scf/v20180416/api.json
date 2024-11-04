@@ -14,6 +14,13 @@
       "output": "CreateAliasResponse",
       "status": "online"
     },
+    "CreateCustomDomain": {
+      "document": "创建自定义域名",
+      "input": "CreateCustomDomainRequest",
+      "name": "创建云函数自定义域名",
+      "output": "CreateCustomDomainResponse",
+      "status": "online"
+    },
     "CreateFunction": {
       "document": "该接口根据传入参数创建新的函数。",
       "input": "CreateFunctionRequest",
@@ -40,6 +47,13 @@
       "input": "DeleteAliasRequest",
       "name": "删除别名",
       "output": "DeleteAliasResponse",
+      "status": "online"
+    },
+    "DeleteCustomDomain": {
+      "document": "删除自定义域名",
+      "input": "DeleteCustomDomainRequest",
+      "name": "删除云函数自定义域名",
+      "output": "DeleteCustomDomainResponse",
       "status": "online"
     },
     "DeleteFunction": {
@@ -103,6 +117,13 @@
       "input": "GetAsyncEventStatusRequest",
       "name": "获取函数异步事件状态",
       "output": "GetAsyncEventStatusResponse",
+      "status": "online"
+    },
+    "GetCustomDomain": {
+      "document": "查看云函数自定义域名详情",
+      "input": "GetCustomDomainRequest",
+      "name": "查看云函数自定义域名详情",
+      "output": "GetCustomDomainResponse",
       "status": "online"
     },
     "GetFunction": {
@@ -187,6 +208,13 @@
       "input": "ListAsyncEventsRequest",
       "name": "拉取函数异步事件列表",
       "output": "ListAsyncEventsResponse",
+      "status": "online"
+    },
+    "ListCustomDomains": {
+      "document": "遍历域名列表信息",
+      "input": "ListCustomDomainsRequest",
+      "name": "获取云函数自定义域名列表",
+      "output": "ListCustomDomainsResponse",
       "status": "online"
     },
     "ListFunctions": {
@@ -278,6 +306,13 @@
       "input": "UpdateAliasRequest",
       "name": "更新别名的配置",
       "output": "UpdateAliasResponse",
+      "status": "online"
+    },
+    "UpdateCustomDomain": {
+      "document": "更新自定义域名相关配置",
+      "input": "UpdateCustomDomainRequest",
+      "name": "更新云函数自定义域名",
+      "output": "UpdateCustomDomainResponse",
       "status": "online"
     },
     "UpdateFunctionCode": {
@@ -546,6 +581,23 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CertConf": {
+      "document": "证书配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "ssl证书ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CertificateId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -979,6 +1031,69 @@
     },
     "CreateAliasResponse": {
       "document": "CreateAlias返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCustomDomainRequest": {
+      "document": "CreateCustomDomain请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名，不支持泛域名",
+          "example": "www.xxx.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "协议，取值范围：HTTP, HTTPS, HTTP&HTTPS",
+          "example": "无",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "路由配置",
+          "example": "无",
+          "member": "EndpointsConf",
+          "name": "EndpointsConfig",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "证书配置信息，HTTPS协议必穿",
+          "example": "无",
+          "member": "CertConf",
+          "name": "CertConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "web 应用防火墙配置",
+          "example": "无",
+          "member": "WafConf",
+          "name": "WafConfig",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCustomDomainResponse": {
+      "document": "CreateCustomDomain返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1521,6 +1636,33 @@
       ],
       "type": "object"
     },
+    "DeleteCustomDomainRequest": {
+      "document": "DeleteCustomDomain请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "无",
+          "member": "string",
+          "name": "Domain",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCustomDomainResponse": {
+      "document": "DeleteCustomDomain返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteFunctionRequest": {
       "document": "DeleteFunction请求参数结构体",
       "members": [
@@ -1782,6 +1924,67 @@
       ],
       "type": "object"
     },
+    "DomainInfo": {
+      "document": "云函数自定义域名详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名，不支持泛域名",
+          "example": "无",
+          "member": "string",
+          "name": "Domain",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "协议，取值范围：HTTP, HTTPS, HTTP&HTTPS",
+          "example": "无",
+          "member": "string",
+          "name": "Protocol",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "路由配置信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "EndpointsConf",
+          "name": "EndpointsConfig",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "证书配置信息，HTTPS协议必传路由配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CertConf",
+          "name": "CertConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "web 应用防火墙配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "WafConf",
+          "name": "WafConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "EipConfigIn": {
       "document": "公网访问固定ip配置",
       "members": [
@@ -1849,6 +2052,67 @@
         }
       ],
       "usage": "out"
+    },
+    "EndpointsConf": {
+      "document": "后端路由配置信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "函数命名空间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Namespace",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "函数名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FunctionName",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "函数别名或版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Qualifier",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "路径,取值规范：/，/*，/xxx，/xxx/a，/xxx/*\"\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PathMatch",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "路径重写策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PathRewriteRule",
+          "name": "PathRewrite",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "Environment": {
       "document": "函数的环境变量参数",
@@ -2416,6 +2680,83 @@
           "example": "{             \"Status\": \"RUNNING\",             \"StatusCode\": 0  ",
           "member": "AsyncEventStatus",
           "name": "Result",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetCustomDomainRequest": {
+      "document": "GetCustomDomain请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "无",
+          "member": "string",
+          "name": "Domain",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetCustomDomainResponse": {
+      "document": "GetCustomDomain返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "无",
+          "member": "string",
+          "name": "Domain",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "协议",
+          "example": "无",
+          "member": "string",
+          "name": "Protocol",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "路由配置",
+          "example": "无",
+          "member": "EndpointsConf",
+          "name": "EndpointsConfig",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "证书配置信息",
+          "example": "无",
+          "member": "CertConf",
+          "name": "CertConfig",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "web 应用防火墙配置",
+          "example": "无",
+          "member": "WafConf",
+          "name": "WafConfig",
+          "output_required": false,
           "type": "object",
           "value_allowed_null": false
         },
@@ -4342,6 +4683,89 @@
       ],
       "type": "object"
     },
+    "ListCustomDomainsRequest": {
+      "document": "ListCustomDomains请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "偏移量，默认0",
+          "example": "无",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "容量，默认20",
+          "example": "无",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "取值范围：AddTime，ModTime， 默认AddTime",
+          "example": "无",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "取值范围：DESC, ASC 默认DESC",
+          "example": "无",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ListCustomDomainsResponse": {
+      "document": "ListCustomDomains返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "域名列表信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DomainInfo",
+          "name": "Domains",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ListFunctionsRequest": {
       "document": "ListFunctions请求参数结构体",
       "members": [
@@ -5254,6 +5678,45 @@
         }
       ],
       "usage": "out"
+    },
+    "PathRewriteRule": {
+      "document": "路径路由重写规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要重路由的路径，取值规范：/，/*，/xxx，/xxx/a，/xxx/*\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/aa/",
+          "member": "string",
+          "name": "Path",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "匹配规，取值范围： WildcardRules 通配符匹配， ExactRules 精确匹配\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ExactRules",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "替换值：比如/, /$\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/",
+          "member": "string",
+          "name": "Rewrite",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "ProtocolParams": {
       "document": "HTTP函数支持其他访问协议的参数",
@@ -6600,6 +7063,69 @@
       ],
       "type": "object"
     },
+    "UpdateCustomDomainRequest": {
+      "document": "UpdateCustomDomain请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自定义域名",
+          "example": "无",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "协议，取值范围：HTTP, HTTPS, HTTP&HTTPS",
+          "example": "无",
+          "member": "string",
+          "name": "Protocol",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "证书配置信息，HTTPS协议必穿",
+          "example": "无",
+          "member": "CertConf",
+          "name": "CertConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "web 应用防火墙配置",
+          "example": "无",
+          "member": "WafConf",
+          "name": "WafConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "\t路由配置",
+          "example": "无",
+          "member": "EndpointsConf",
+          "name": "EndpointsConfig",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateCustomDomainResponse": {
+      "document": "UpdateCustomDomain返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "UpdateFunctionCodeRequest": {
       "document": "UpdateFunctionCode请求参数结构体",
       "members": [
@@ -7480,6 +8006,34 @@
           "name": "IdleTimeOut",
           "required": false,
           "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "WafConf": {
+      "document": "web应用防火墙配置信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "web应用防火墙是否打开， 取值范围:OPEN, CLOSE\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "WafOpen",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "web应用防火墙实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "WafInstanceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

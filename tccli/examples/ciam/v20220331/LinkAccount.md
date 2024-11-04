@@ -6,17 +6,17 @@ Input:
 
 ```
 tccli ciam LinkAccount --cli-unfold-argument  \
-    --UserStoreId xx \
-    --PrimaryUserId xx \
-    --UserLinkedOnAttribute xx \
-    --SecondaryUserId xx
+    --UserStoreId 2c3aca3b****************a7efe88e \
+    --PrimaryUserId 53e25c3****************e4eb5bd1 \
+    --SecondaryUserId 081820ad****************5c58d1ad \
+    --UserLinkedOnAttribute PHONENUMBER
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx"
+        "RequestId": "e2e9e8aa********************9ab34c6e"
     }
 }
 ```

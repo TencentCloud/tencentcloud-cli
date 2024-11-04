@@ -29,14 +29,14 @@
       "status": "online"
     },
     "BindClusterResourcePackages": {
-      "document": "为集群绑定资源包",
+      "document": "本接口（BindClusterResourcePackages）用于为集群绑定资源包。",
       "input": "BindClusterResourcePackagesRequest",
       "name": "为集群绑定资源包",
       "output": "BindClusterResourcePackagesResponse",
       "status": "online"
     },
     "CloseAuditService": {
-      "document": "TDSQL-C for MySQL实例关闭审计服务",
+      "document": "本接口（CloseAuditService）用于关闭 TDSQL-C MySQL 实例的数据库审计服务。",
       "input": "CloseAuditServiceRequest",
       "name": "实例关闭审计服务",
       "output": "CloseAuditServiceResponse",
@@ -85,7 +85,7 @@
       "status": "online"
     },
     "CreateAuditRuleTemplate": {
-      "document": "创建审计规则模板",
+      "document": "本接口（CreateAuditRuleTemplate）用于创建审计规则模板。",
       "input": "CreateAuditRuleTemplateRequest",
       "name": "创建审计规则模板",
       "output": "CreateAuditRuleTemplateResponse",
@@ -99,7 +99,7 @@
       "status": "online"
     },
     "CreateCLSDelivery": {
-      "document": "创建日志投递",
+      "document": "本接口（CreateCLSDelivery）用于创建日志投递。",
       "input": "CreateCLSDeliveryRequest",
       "name": "创建日志投递",
       "output": "CreateCLSDeliveryResponse",
@@ -113,7 +113,7 @@
       "status": "online"
     },
     "CreateClusters": {
-      "document": "购买新集群",
+      "document": "本接口（CreateClusters）用于新购集群。",
       "input": "CreateClustersRequest",
       "name": "购买新集群",
       "output": "CreateClustersResponse",
@@ -176,7 +176,7 @@
       "status": "online"
     },
     "DeleteCLSDelivery": {
-      "document": "删除日志投递",
+      "document": "本接口（DeleteCLSDelivery）用于删除日志投递。",
       "input": "DeleteCLSDeliveryRequest",
       "name": "删除日志投递",
       "output": "DeleteCLSDeliveryResponse",
@@ -218,7 +218,7 @@
       "status": "online"
     },
     "DescribeAuditInstanceList": {
-      "document": "获取审计实例列表",
+      "document": "本接口（DescribeAuditInstanceList）用于获取数据库审计的实例列表。",
       "input": "DescribeAuditInstanceListRequest",
       "name": "获取审计实例列表",
       "output": "DescribeAuditInstanceListResponse",
@@ -309,14 +309,14 @@
       "status": "online"
     },
     "DescribeClusterDatabases": {
-      "document": "获取集群数据库列表",
+      "document": "本接口（DescribeClusterDatabases）用于获取集群数据库列表。",
       "input": "DescribeClusterDatabasesRequest",
       "name": "获取集群数据库列表",
       "output": "DescribeClusterDatabasesResponse",
       "status": "online"
     },
     "DescribeClusterDetail": {
-      "document": "该接口（DescribeClusterDetail）显示集群详情",
+      "document": "该接口（DescribeClusterDetail）用于显示集群详情。",
       "input": "DescribeClusterDetailRequest",
       "name": "集群信息描述",
       "output": "DescribeClusterDetailResponse",
@@ -386,7 +386,7 @@
       "status": "online"
     },
     "DescribeInstanceCLSLogDelivery": {
-      "document": "查询实例日志投递信息",
+      "document": "本接口（DescribeInstanceCLSLogDelivery）用于查询实例日志投递信息。",
       "input": "DescribeInstanceCLSLogDeliveryRequest",
       "name": "查询实例日志投递信息",
       "output": "DescribeInstanceCLSLogDeliveryResponse",
@@ -484,28 +484,28 @@
       "status": "online"
     },
     "DescribeProxySpecs": {
-      "document": "查询数据库代理规格",
+      "document": "本接口（DescribeProxySpecs）用于查询数据库代理规格。",
       "input": "DescribeProxySpecsRequest",
       "name": "查询数据库代理规格",
       "output": "DescribeProxySpecsResponse",
       "status": "online"
     },
     "DescribeResourcePackageDetail": {
-      "document": "查询资源包使用详情",
+      "document": "本接口（DescribeResourcePackageDetail）用于查询资源包使用详情。",
       "input": "DescribeResourcePackageDetailRequest",
       "name": "查询资源包使用详情",
       "output": "DescribeResourcePackageDetailResponse",
       "status": "online"
     },
     "DescribeResourcePackageList": {
-      "document": "查询资源包列表",
+      "document": "本接口（DescribeResourcePackageList）用于查询资源包列表。",
       "input": "DescribeResourcePackageListRequest",
       "name": "查询资源包列表",
       "output": "DescribeResourcePackageListResponse",
       "status": "online"
     },
     "DescribeResourcePackageSaleSpec": {
-      "document": "查询资源包规格",
+      "document": "本接口（DescribeResourcePackageSaleSpec）用于查询资源包规格。",
       "input": "DescribeResourcePackageSaleSpecRequest",
       "name": "查询资源包规格",
       "output": "DescribeResourcePackageSaleSpecResponse",
@@ -610,7 +610,7 @@
       "status": "online"
     },
     "IsolateCluster": {
-      "document": "隔离集群",
+      "document": "本接口（IsolateCluster）用于隔离集群。",
       "input": "IsolateClusterRequest",
       "name": "隔离集群",
       "output": "IsolateClusterResponse",
@@ -652,7 +652,7 @@
       "status": "online"
     },
     "ModifyAuditRuleTemplates": {
-      "document": "修改审计规则模板",
+      "document": "本接口（ModifyAuditRuleTemplates）用于修改审计规则模板。",
       "input": "ModifyAuditRuleTemplatesRequest",
       "name": "修改审计规则模板",
       "output": "ModifyAuditRuleTemplatesResponse",
@@ -792,14 +792,14 @@
       "status": "online"
     },
     "ModifyResourcePackageClusters": {
-      "document": "给资源包绑定集群",
+      "document": "本接口（ModifyResourcePackageClusters）用于修改资源包与集群之间的绑定关系。",
       "input": "ModifyResourcePackageClustersRequest",
       "name": "修改集群与资源包之间的绑定关系",
       "output": "ModifyResourcePackageClustersResponse",
       "status": "online"
     },
     "ModifyResourcePackageName": {
-      "document": "修改资源包名称",
+      "document": "本接口（ModifyResourcePackageName）用于修改资源包名称。",
       "input": "ModifyResourcePackageNameRequest",
       "name": "修改资源包名称",
       "output": "ModifyResourcePackageNameResponse",
@@ -841,7 +841,7 @@
       "status": "online"
     },
     "OpenAuditService": {
-      "document": "TDSQL-C for MySQL实例开通审计服务",
+      "document": "本接口（OpenAuditService）用于为实例开通数据库审计服务。",
       "input": "OpenAuditServiceRequest",
       "name": "实例开通审计服务",
       "output": "OpenAuditServiceResponse",
@@ -883,7 +883,7 @@
       "status": "online"
     },
     "RefundResourcePackage": {
-      "document": "退款资源包",
+      "document": "本接口（RefundResourcePackage）用于资源包退款。",
       "input": "RefundResourcePackageRequest",
       "name": "退款资源包",
       "output": "RefundResourcePackageResponse",
@@ -1009,7 +1009,7 @@
       "status": "online"
     },
     "UnbindClusterResourcePackages": {
-      "document": "cynos解绑资源包",
+      "document": "本接口（UnbindClusterResourcePackages）用于解除资源包与集群之间的绑定关系。",
       "input": "UnbindClusterResourcePackagesRequest",
       "name": "cynos解绑资源包",
       "output": "UnbindClusterResourcePackagesResponse",
@@ -7944,6 +7944,32 @@
       ],
       "type": "object"
     },
+    "DeliverSummary": {
+      "document": "日志投递信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "投递类型，store（存储类），mq（消息通道）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "store",
+          "member": "string",
+          "name": "DeliverType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "投递子类型：cls，ckafka。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cls",
+          "member": "string",
+          "name": "DeliverSubType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "DescribeAccountAllGrantPrivilegesRequest": {
       "document": "DescribeAccountAllGrantPrivileges请求参数结构体",
       "members": [
@@ -11449,6 +11475,7 @@
           "example": "10",
           "member": "int64",
           "name": "Total",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11458,6 +11485,7 @@
           "example": "无",
           "member": "SalePackageSpec",
           "name": "Detail",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -12998,6 +13026,26 @@
           "example": "无",
           "member": "string",
           "name": "RuleTemplateIds",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否开启日志投递：ON，OFF\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ON",
+          "member": "string",
+          "name": "Deliver",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "日志投递类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DeliverSummary",
+          "name": "DeliverSummary",
           "output_required": false,
           "type": "list",
           "value_allowed_null": true
@@ -16691,7 +16739,7 @@
           "example": "123456789",
           "member": "int64",
           "name": "AppId",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -16701,7 +16749,7 @@
           "example": "扩展信息",
           "member": "string",
           "name": "PackageId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -16711,7 +16759,7 @@
           "example": "cynosdb-ins-test",
           "member": "string",
           "name": "InstanceId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -16721,7 +16769,7 @@
           "example": "50",
           "member": "float",
           "name": "SuccessDeductSpec",
-          "required": false,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },
@@ -16731,7 +16779,7 @@
           "example": "30",
           "member": "float",
           "name": "PackageTotalUsedSpec",
-          "required": false,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },
@@ -16741,7 +16789,7 @@
           "example": "2022-07-01 00:00:00",
           "member": "string",
           "name": "StartTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -16751,7 +16799,7 @@
           "example": "2022-07-02 00:00:00",
           "member": "string",
           "name": "EndTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -16761,7 +16809,7 @@
           "example": "无",
           "member": "string",
           "name": "ExtendInfo",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }

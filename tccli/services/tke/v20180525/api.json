@@ -1316,6 +1316,13 @@
       "output": "ModifyClusterEndpointSPResponse",
       "status": "online"
     },
+    "ModifyClusterImage": {
+      "document": "修改集群镜像",
+      "input": "ModifyClusterImageRequest",
+      "name": "修改集群镜像",
+      "output": "ModifyClusterImageResponse",
+      "status": "online"
+    },
     "ModifyClusterNodePool": {
       "document": "编辑节点池",
       "input": "ModifyClusterNodePoolRequest",
@@ -18783,6 +18790,42 @@
     },
     "ModifyClusterEndpointSPResponse": {
       "document": "ModifyClusterEndpointSP返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyClusterImageRequest": {
+      "document": "ModifyClusterImage请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cls-1oxlc88c",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指定有效的镜像ID，格式形如img-xxxx。可通过登录控制台查询，也可调用接口 [DescribeImages](https://cloud.tencent.com/document/api/213/15715)，取返回信息中的ImageId字段。",
+          "example": "img-9qabwvbn",
+          "member": "string",
+          "name": "ImageId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyClusterImageResponse": {
+      "document": "ModifyClusterImage返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

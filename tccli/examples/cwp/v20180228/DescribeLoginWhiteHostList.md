@@ -8,9 +8,6 @@ Input:
 tccli cwp DescribeLoginWhiteHostList --cli-unfold-argument  \
     --Limit 1 \
     --Id 1 \
-    --Filters.0.Values xx \
-    --Filters.0.Name xx \
-    --Filters.0.ExactMatch True \
     --Offset 1
 ```
 
@@ -21,15 +18,15 @@ Output:
         "TotalCount": 1,
         "Hosts": [
             {
-                "MachineName": "xx",
-                "Quuid": "xx",
-                "MachineWanIp": "xx",
-                "Uuid": "xx",
-                "MachineIp": "xx",
+                "MachineName": "机器名称",
+                "Quuid": "05f0bcab-726c-4ea4-8109-bcd03d5598f7",
+                "MachineWanIp": "1.1.1.1",
+                "Uuid": "05f0bcab-726c-4ea4-8109-bcd03d5598f7",
+                "MachineIp": "1.1.1.1",
                 "Tags": []
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "be6f6eec-0825-4e67-ab9a-c8568bbf736c"
     }
 }
 ```

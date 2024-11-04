@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tem DescribeApplicationServiceList --cli-unfold-argument  \
-    --EnvironmentId xx \
-    --ApplicationId xx \
+    --EnvironmentId en-xxxxxx \
+    --ApplicationId app-xxxxxx \
     --SourceChannel 0
 ```
 
@@ -16,56 +16,58 @@ Output:
 {
     "Response": {
         "Result": {
-            "ApplicationName": "xx",
-            "ExternalIp": "xx",
-            "Name": "xx",
-            "ApplicationId": "xx",
-            "AllIpDone": true,
-            "PortMappings": [
-                {
-                    "Protocol": "xx",
-                    "ServiceName": "xx",
-                    "TargetPort": 0,
-                    "Port": 0
-                }
-            ],
-            "Yaml": "xx",
-            "LoadBalanceId": "xx",
-            "ServicePortMappingList": [
-                {
-                    "ExternalIp": "xx",
-                    "VpcId": "xx",
-                    "PortMappingItemList": [
-                        {
-                            "Protocol": "xx",
-                            "TargetPort": 0,
-                            "Port": 0
-                        }
-                    ],
-                    "Yaml": "xx",
-                    "LoadBalanceId": "xx",
-                    "ServiceName": "xx",
-                    "ClusterIp": "xx",
-                    "SubnetId": "xx",
-                    "Type": "xx",
-                    "Ports": [
-                        0
-                    ]
-                }
-            ],
-            "VersionName": "xx",
-            "ClusterIp": [
-                "xx"
-            ],
-            "SubnetId": "xx",
-            "Type": "xx",
+            "Name": "abc",
             "Ports": [
                 0
             ],
+            "Yaml": "abc",
+            "ApplicationName": "abc",
+            "VersionName": "abc",
+            "ClusterIp": [
+                "abc"
+            ],
+            "ExternalIp": "xx-xx-xx-xx",
+            "Type": "abc",
+            "SubnetId": "abc",
+            "LoadBalanceId": "VPC",
+            "PortMappings": [
+                {
+                    "Port": 0,
+                    "TargetPort": 0,
+                    "Protocol": "abc",
+                    "ServiceName": "abc"
+                }
+            ],
+            "ServicePortMappingList": [
+                {
+                    "Type": "abc",
+                    "ServiceName": "abc",
+                    "ClusterIp": "abc",
+                    "ExternalIp": "abc",
+                    "SubnetId": "abc",
+                    "VpcId": "abc",
+                    "LoadBalanceId": "abc",
+                    "Yaml": "abc",
+                    "Ports": [
+                        0
+                    ],
+                    "PortMappingItemList": [
+                        {
+                            "Port": 0,
+                            "TargetPort": 0,
+                            "Protocol": "abc"
+                        }
+                    ],
+                    "ExternalDomain": "abc"
+                }
+            ],
+            "FlushAll": true,
             "EnableRegistryNextDeploy": 0,
-            "FlushAll": true
+            "ApplicationId": "abc",
+            "AllIpDone": true,
+            "ExternalDomain": "abc"
         },
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

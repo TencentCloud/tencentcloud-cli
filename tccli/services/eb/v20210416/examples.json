@@ -249,7 +249,7 @@
     "UpdateTarget": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: eb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateTarget\n<公共请求参数>\n\n{\n    \"EnableBatchDelivery\": \"true\",\n    \"RuleId\": \"rule-51wvf3is\",\n    \"BatchEventCount\": \"32\",\n    \"TargetId\": \"target-ceh92ss4\",\n    \"EventBusId\": \"eb-ohb9x6rg\",\n    \"BatchTimeout\": \"43\"\n}",
+        "input": "POST / HTTP/1.1\nHost: eb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateTarget\n<公共请求参数>\n\n{\n    \"EnableBatchDelivery\": true,\n    \"RuleId\": \"rule-51wvf3is\",\n    \"BatchEventCount\": 32,\n    \"TargetId\": \"target-ceh92ss4\",\n    \"EventBusId\": \"eb-ohb9x6rg\",\n    \"BatchTimeout\": 43\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"72b987c9-8842-47ac-9ad6-fa2bde3e936d\"\n    }\n}",
         "title": "更新目标"
       }

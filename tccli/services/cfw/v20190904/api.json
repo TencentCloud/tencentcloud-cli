@@ -22,9 +22,9 @@
       "status": "online"
     },
     "AddNatAcRule": {
-      "document": "添加nat访问控制规则(地域必填)",
+      "document": "添加nat访问控制规则",
       "input": "AddNatAcRuleRequest",
-      "name": "添加nat访问控制规则(地域必填)",
+      "name": "添加nat访问控制规则",
       "output": "AddNatAcRuleResponse",
       "status": "online"
     },
@@ -246,7 +246,7 @@
       "status": "online"
     },
     "DescribeBlockByIpTimesList": {
-      "document": "DescribeBlockByIpTimesList 告警中心阻断IP折线图\n",
+      "document": "DescribeBlockByIpTimesList 告警中心阻断IP折线图",
       "input": "DescribeBlockByIpTimesListRequest",
       "name": "告警中心阻断IP折线图",
       "output": "DescribeBlockByIpTimesListResponse",
@@ -260,7 +260,7 @@
       "status": "online"
     },
     "DescribeBlockStaticList": {
-      "document": "DescribeBlockStaticList 告警中心柱形图\n",
+      "document": "DescribeBlockStaticList 告警中心柱形图",
       "input": "DescribeBlockStaticListRequest",
       "name": "告警中心柱形图",
       "output": "DescribeBlockStaticListResponse",
@@ -414,7 +414,7 @@
       "status": "online"
     },
     "DescribeResourceGroupNew": {
-      "document": "DescribeResourceGroupNew资产中心资产树信息",
+      "document": "资产中心资产组数数据信息查询",
       "input": "DescribeResourceGroupNewRequest",
       "name": "资产中心资产树信息查询new",
       "output": "DescribeResourceGroupNewResponse",
@@ -449,16 +449,16 @@
       "status": "deprecated"
     },
     "DescribeTLogInfo": {
-      "document": "DescribeTLogInfo告警中心概况\n",
+      "document": "DescribeTLogInfo告警中心概况查询",
       "input": "DescribeTLogInfoRequest",
-      "name": "告警中心概况",
+      "name": "DescribeTLogInfo告警中心概况查询",
       "output": "DescribeTLogInfoResponse",
       "status": "online"
     },
     "DescribeTLogIpList": {
-      "document": "DescribeTLogIpList告警中心IP柱形图\n",
+      "document": "DescribeTLogIpList告警中心IP柱形图",
       "input": "DescribeTLogIpListRequest",
-      "name": "告警中心IP柱形图",
+      "name": "告警中心IP柱形图查询",
       "output": "DescribeTLogIpListResponse",
       "status": "online"
     },
@@ -533,11 +533,11 @@
       "status": "online"
     },
     "ModifyAllVPCSwitchStatus": {
-      "document": "VPC防火墙一键开关",
+      "document": "该接口已不再使用\n\nVPC防火墙一键开关",
       "input": "ModifyAllVPCSwitchStatusRequest",
       "name": "VPC防火墙一键开关",
       "output": "ModifyAllVPCSwitchStatusResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ModifyAssetScan": {
       "document": "资产扫描",
@@ -659,7 +659,7 @@
       "status": "online"
     },
     "ModifyResourceGroup": {
-      "document": "ModifyResourceGroup-资产中心资产组信息修改\n\n",
+      "document": "ModifyResourceGroup-资产中心资产组信息修改",
       "input": "ModifyResourceGroupRequest",
       "name": "资产中心资产组信息修改",
       "output": "ModifyResourceGroupResponse",
@@ -1246,6 +1246,7 @@
           "example": "[8888, 8889]",
           "member": "int64",
           "name": "RuleUuid",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1842,8 +1843,7 @@
           "member": "string",
           "name": "IpProtocol",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1852,8 +1852,7 @@
           "member": "string",
           "name": "PublicIpAddress",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1862,8 +1861,7 @@
           "member": "int64",
           "name": "PublicPort",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -1872,8 +1870,7 @@
           "member": "string",
           "name": "PrivateIpAddress",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1882,8 +1879,7 @@
           "member": "int64",
           "name": "PrivatePort",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -1892,8 +1888,7 @@
           "member": "string",
           "name": "Description",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -2091,6 +2086,15 @@
           "name": "ProtocolType",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "IP版本,0 IPV4;1 IPV6",
+          "example": "无",
+          "member": "int64",
+          "name": "IpVersion",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -3007,7 +3011,7 @@
           "example": "true",
           "member": "string",
           "name": "Enable",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
@@ -5215,7 +5219,7 @@
           "example": "无",
           "member": "IpStatic",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5438,8 +5442,18 @@
           "example": "无",
           "member": "StaticInfo",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "异步查询状态，1查询执行中，0查询已结束",
+          "example": "无",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -7697,7 +7711,7 @@
           "example": "无",
           "member": "TLogInfo",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -7770,7 +7784,7 @@
           "example": "无",
           "member": "StaticInfo",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -10281,7 +10295,7 @@
         {
           "disabled": false,
           "document": "记录id",
-          "example": "xxxx",
+          "example": "5d723366818a39290f560f5f20d91203",
           "member": "string",
           "name": "UniqueId",
           "required": true,
@@ -10628,6 +10642,7 @@
           "example": "[8888, 8889]",
           "member": "int64",
           "name": "RuleUuid",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -10900,7 +10915,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "组id",
+          "document": "资产组id",
           "example": "test-id",
           "member": "string",
           "name": "GroupId",
@@ -10918,7 +10933,7 @@
         },
         {
           "disabled": false,
-          "document": "上级组id",
+          "document": "上级组资产组id",
           "example": "test-p-id",
           "member": "string",
           "name": "ParentId",
@@ -12354,6 +12369,7 @@
           "example": "[8888,8889]",
           "member": "int64",
           "name": "RuleUuid",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -12413,8 +12429,7 @@
           "member": "int64",
           "name": "OrderIndex",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -12423,8 +12438,16 @@
           "member": "int64",
           "name": "NewOrderIndex",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "Ip版本，0：IPv4，1：IPv6，默认为IPv4",
+          "example": "0",
+          "member": "int64",
+          "name": "IpVersion",
+          "required": false,
+          "type": "int"
         }
       ],
       "usage": "in"
@@ -15143,17 +15166,6 @@
         },
         {
           "disabled": false,
-          "document": "规则对应的唯一id",
-          "example": "8888",
-          "member": "int64",
-          "name": "Uuid",
-          "output_required": true,
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
           "document": "规则状态，true表示启用，false表示禁用",
           "example": "true",
           "member": "string",
@@ -15172,6 +15184,17 @@
           "output_required": true,
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则对应的唯一id，添加规则时忽略该字段，修改该规则时需要填写Uuid;查询返回时会返回该参数",
+          "example": "8888",
+          "member": "int64",
+          "name": "Uuid",
+          "output_required": true,
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -15293,6 +15316,17 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Ip版本，0：IPv4，1：IPv6，默认为IPv4\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "IpVersion",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],

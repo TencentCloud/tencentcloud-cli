@@ -476,6 +476,20 @@
       "output": "DescribeDataCheckStatResponse",
       "status": "online"
     },
+    "DescribeDataServicePublishedApiDetail": {
+      "document": "查询数据服务API的发布态信息",
+      "input": "DescribeDataServicePublishedApiDetailRequest",
+      "name": "查询数据服务API的发布态信息详情",
+      "output": "DescribeDataServicePublishedApiDetailResponse",
+      "status": "online"
+    },
+    "DescribeDataServicePublishedApiList": {
+      "document": "获取数据服务API的发布态信息列表",
+      "input": "DescribeDataServicePublishedApiListRequest",
+      "name": "获取数据服务API的发布态信息列表",
+      "output": "DescribeDataServicePublishedApiListResponse",
+      "status": "online"
+    },
     "DescribeDataSourceInfoList": {
       "document": "获取数据源信息-数据源分页列表",
       "input": "DescribeDataSourceInfoListRequest",
@@ -9033,6 +9047,247 @@
       ],
       "usage": "out"
     },
+    "DataServicePublishedApiListFilter": {
+      "document": "获取数据服务API的发布态信息列表过滤条件",
+      "members": [
+        {
+          "disabled": false,
+          "document": "请求路径关键词筛选",
+          "example": "test",
+          "member": "string",
+          "name": "PathUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Api名称关键词筛选",
+          "example": "test",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Api认证方式筛选 0:免认证 1:应用认证",
+          "example": "[0]",
+          "member": "uint64",
+          "name": "AuthTypes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "服务Api状态 1:已上线  3:已下线",
+          "example": "[1]",
+          "member": "uint64",
+          "name": "ApiStatus",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "API配置方式 0:向导、1、脚本、2、注册Api",
+          "example": "[1]",
+          "member": "uint64",
+          "name": "ConfigTypes",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
+    "DataServiceRequestListOrder": {
+      "document": "数据服务通用排序参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "排序参数名称\n取值： \n  CreateTime 表示按照创建时间排序\n  ModifyTime 表示按照更新时间排序",
+          "example": "CreateTime, ModifyTime",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序参数顺序",
+          "example": "ASC",
+          "member": "string",
+          "name": "Direction",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "DataServiceRequestParam": {
+      "document": "数据服务入参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "参数名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "ParamName",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "绑定字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123-abc",
+          "member": "string",
+          "name": "BindField",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "参数类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123-abc",
+          "member": "string",
+          "name": "ParamType",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "参数位置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "path",
+          "member": "string",
+          "name": "ParamPosition",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "操作符\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "=",
+          "member": "string",
+          "name": "Operator",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否为空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "NonEmpty",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "默认值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "DefaultValue",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "示例值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123-abc",
+          "member": "string",
+          "name": "ExampleValue",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "参数描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123-abc",
+          "member": "string",
+          "name": "Description",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "DataServiceResponseParam": {
+      "document": "数据服务入参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "参数名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "ParamName",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "绑定字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123-abc",
+          "member": "string",
+          "name": "BindField",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "参数类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123-abc",
+          "member": "string",
+          "name": "ParamType",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "示例值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123-abc",
+          "member": "string",
+          "name": "ExampleValue",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "参数描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123-abc",
+          "member": "string",
+          "name": "Description",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "DataSourceInfo": {
       "document": "数据源对象",
       "members": [
@@ -12272,6 +12527,437 @@
           "name": "Data",
           "output_required": true,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDataServicePublishedApiDetailRequest": {
+      "document": "DescribeDataServicePublishedApiDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务Id",
+          "example": "1847084985566855169",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "项目ID",
+          "example": "无",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDataServicePublishedApiDetailResp": {
+      "document": "查询数据服务API的发布态信息详情出参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务Api名称",
+          "example": "1",
+          "member": "string",
+          "name": "ApiName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务请求Path",
+          "example": "/",
+          "member": "string",
+          "name": "PathUrl",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务责任人名称",
+          "example": "1",
+          "member": "string",
+          "name": "OwnerName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务请求方式",
+          "example": "POST",
+          "member": "string",
+          "name": "RequestType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务标签名称集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "abcd",
+          "member": "string",
+          "name": "ApiTagNames",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "服务描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "string",
+          "name": "ApiDescription",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "服务请求返回示例\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "RequestExample",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "服务请求成功返回示例\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "RequestSuccess",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "服务请求失败返回示例\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "RequestError",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "服务请求参数列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "DataServiceRequestParam",
+          "name": "RequestParam",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "服务响应参数列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "DataServiceResponseParam",
+          "name": "ResponseParam",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "最大qps",
+          "example": "100",
+          "member": "int64",
+          "name": "MaxAllowQps",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最大记录数",
+          "example": "2000",
+          "member": "int64",
+          "name": "MaxAllowPageSize",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "超时时间，单位ms",
+          "example": "5000",
+          "member": "uint64",
+          "name": "TimeoutPeriod",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "ApiId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20321213123",
+          "member": "string",
+          "name": "ApiId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "0:免认证 1:应用认证",
+          "example": "0",
+          "member": "uint64",
+          "name": "AuthType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "请求地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http://127.0.0.1/test_0725_01",
+          "member": "string",
+          "name": "GatewayApiUrl",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "服务Api状态 1:已上线  3:已下线\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "ApiStatus",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeDataServicePublishedApiDetailResponse": {
+      "document": "DescribeDataServicePublishedApiDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务详情",
+          "example": "无",
+          "member": "DescribeDataServicePublishedApiDetailResp",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDataServicePublishedApiListRequest": {
+      "document": "DescribeDataServicePublishedApiList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "页码",
+          "example": "1",
+          "member": "uint64",
+          "name": "PageNumber",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页大小",
+          "example": "10",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "项目ID",
+          "example": "无",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询参数",
+          "example": "无",
+          "member": "DataServicePublishedApiListFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "排序配置",
+          "example": "无",
+          "member": "DataServiceRequestListOrder",
+          "name": "OrderFields",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDataServicePublishedApiListResp": {
+      "document": "获取数据服务API的发布态信息列表响应内容",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务id",
+          "example": "1",
+          "member": "string",
+          "name": "Id",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务Api名称",
+          "example": "apiName_test",
+          "member": "string",
+          "name": "ApiName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "所属目录名称",
+          "example": "abcd",
+          "member": "string",
+          "name": "ApiFolderName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务Api标签名称集合",
+          "example": "测试",
+          "member": "string",
+          "name": "ApiTagNames",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务负责人",
+          "example": "104593123",
+          "member": "string",
+          "name": "OwnerName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务创建时间",
+          "example": "2022-05-09 12:00:00",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Api的id",
+          "example": "\"1121\"",
+          "member": "string",
+          "name": "ApiId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务Api认证方式 0:免认证 1:应用认证",
+          "example": "1",
+          "member": "int64",
+          "name": "AuthType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务Api状态 0:创建 1:已上线 2:已删除 3:已下线",
+          "example": "1",
+          "member": "int64",
+          "name": "ApiStatus",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "配置方式 0:向导、1、脚本、2、注册Api\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "ConfigType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-05-09 12:00:00",
+          "member": "string",
+          "name": "ModifyTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeDataServicePublishedApiListResponse": {
+      "document": "DescribeDataServicePublishedApiList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总条数",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务列表",
+          "example": "无",
+          "member": "DescribeDataServicePublishedApiListResp",
+          "name": "DataSet",
+          "output_required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {

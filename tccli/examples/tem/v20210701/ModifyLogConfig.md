@@ -6,21 +6,32 @@ Input:
 
 ```
 tccli tem ModifyLogConfig --cli-unfold-argument  \
-    --EnvironmentId xx \
-    --ApplicationId xx \
-    --Name xx \
-    --Data.ApplicationName xx \
-    --Data.TopicId xx \
-    --Data.BeginningRegex xx \
-    --Data.Name xx \
-    --Data.CreateDate xx \
-    --Data.LogPath xx \
-    --Data.InputType xx \
-    --Data.LogType xx \
-    --Data.FilePattern xx \
-    --Data.ModifyDate xx \
-    --Data.ApplicationId xx \
-    --Data.LogsetId xx
+    --EnvironmentId en-xxxxxx \
+    --Name abc \
+    --Data.Name abc \
+    --Data.InputType abc \
+    --Data.LogsetId abc \
+    --Data.TopicId abc \
+    --Data.LogType abc \
+    --Data.BeginningRegex abc \
+    --Data.LogPath abc \
+    --Data.FilePattern abc \
+    --Data.CreateDate abc \
+    --Data.ModifyDate abc \
+    --Data.ApplicationId abc \
+    --Data.ApplicationName abc \
+    --Data.ExtractRule.BeginningRegex abc \
+    --Data.ExtractRule.Keys abc \
+    --Data.ExtractRule.FilterKeys abc \
+    --Data.ExtractRule.FilterRegex abc \
+    --Data.ExtractRule.LogRegex abc \
+    --Data.ExtractRule.TimeKey abc \
+    --Data.ExtractRule.TimeFormat abc \
+    --Data.ExtractRule.UnMatchUpload abc \
+    --Data.ExtractRule.UnMatchedKey abc \
+    --Data.ExtractRule.Backtracking abc \
+    --Data.ExtractRule.Delimiter abc \
+    --ApplicationId app-xxxxxx
 ```
 
 Output: 

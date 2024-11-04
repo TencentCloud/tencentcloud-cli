@@ -6,16 +6,16 @@ Input:
 
 ```
 tccli cfw ModifyResourceGroup --cli-unfold-argument  \
-    --GroupName xx \
-    --GroupId xx \
-    --ParentId xx
+    --ParentId cfwrg-1300448058masternode \
+    --GroupName auotest勿删11 \
+    --GroupId cfwrg-8c87782c2214d033403cab64d6fbf2581717569270
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx"
+        "RequestId": "8be5cf7c-c43b-4025-9f0a-e4b5936c99ea"
     }
 }
 ```

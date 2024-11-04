@@ -3266,9 +3266,10 @@
         {
           "disabled": false,
           "document": "路径缓存不缓存配置配置开关，取值有：\non：开启\noff：关闭\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "off",
           "member": "string",
           "name": "Switch",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -3276,9 +3277,10 @@
         {
           "disabled": false,
           "document": "总是回源站校验\non：开启\noff：关闭\n默认为关闭状态\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "/",
           "member": "string",
           "name": "Revalidate",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -9727,7 +9729,7 @@
         },
         {
           "disabled": false,
-          "document": "强制跳转时返回状态码 \n支持 301、302\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "强制跳转时返回状态码 \n支持 301、302、307、308\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "302",
           "member": "int64",
           "name": "RedirectStatusCode",

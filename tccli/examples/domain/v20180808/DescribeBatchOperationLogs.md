@@ -17,16 +17,16 @@ Output:
         "TotalCount": 0,
         "DomainBatchLogSet": [
             {
-                "LogId": 0,
-                "Number": 0,
-                "Status": "abc",
-                "CreatedOn": "abc",
+                "LogId": 10001,
+                "Number": 1,
+                "Status": "doing",
+                "CreatedOn": "2023-01-01 20:30:00",
                 "Success": 0,
                 "Doing": 0,
                 "Failed": 0
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "xxxx-xxx-xxx-xxxx"
     }
 }
 ```

@@ -7,11 +7,11 @@ Input:
 
 ```
 tccli cynosdb DescribeResourcePackageSaleSpec --cli-unfold-argument  \
-    --InstanceType abc \
-    --PackageRegion abc \
-    --PackageType abc \
+    --InstanceType cynosdb-serverless \
+    --PackageRegion china \
+    --PackageType CCU \
     --Offset 0 \
-    --Limit 0
+    --Limit 1
 ```
 
 Output: 
@@ -21,15 +21,15 @@ Output:
         "Total": 0,
         "Detail": [
             {
-                "PackageRegion": "abc",
-                "PackageType": "abc",
-                "PackageVersion": "abc",
-                "MinPackageSpec": 0,
-                "MaxPackageSpec": 0,
-                "ExpireDay": 0
+                "PackageRegion": "china",
+                "PackageType": "CCU",
+                "PackageVersion": "common",
+                "MinPackageSpec": 50,
+                "MaxPackageSpec": 100,
+                "ExpireDay": 180
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "93c96481-e37c-49f7-aeb5-907ee97a198c"
     }
 }
 ```

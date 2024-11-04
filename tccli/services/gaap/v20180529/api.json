@@ -1870,7 +1870,7 @@
           "example": "cert-xxx",
           "member": "string",
           "name": "CertificateId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2625,7 +2625,7 @@
         {
           "disabled": false,
           "document": "接入地域。",
-          "example": "SouthChina",
+          "example": "GuangZhou",
           "member": "string",
           "name": "AccessRegion",
           "required": true,
@@ -2652,7 +2652,7 @@
         {
           "disabled": false,
           "document": "源站地域。当GroupId存在时，源站地域为通道组的源站地域,此时可不填该字段。当GroupId不存在时，需要填写该字段",
-          "example": "无",
+          "example": "Hongkong",
           "member": "string",
           "name": "RealServerRegion",
           "required": false,
@@ -2670,7 +2670,7 @@
         {
           "disabled": false,
           "document": "通道所在的通道组ID，当在通道组中创建通道时必带，否则忽略该字段。",
-          "example": "lg-xxxx",
+          "example": "lg-2sczm0nv",
           "member": "string",
           "name": "GroupId",
           "required": false,
@@ -2688,7 +2688,7 @@
         {
           "disabled": false,
           "document": "被复制的通道ID。只有处于运行中状态的通道可以被复制。\n当设置该参数时，表示复制该通道。",
-          "example": "\"\"",
+          "example": "link-nphqtout",
           "member": "string",
           "name": "ClonedProxyId",
           "required": false,
@@ -2751,7 +2751,7 @@
           "example": "link-11112222",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3978,7 +3978,7 @@
           "example": "无",
           "member": "Certificate",
           "name": "CertificateSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3988,7 +3988,7 @@
           "example": "19",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4889,7 +4889,7 @@
           "example": "无",
           "member": "MetricStatisticsInfo",
           "name": "StatisticsData",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5386,7 +5386,7 @@
         },
         {
           "disabled": false,
-          "document": "统计指标名称列表，支持: 入带宽:InBandwidth, 出带宽:OutBandwidth, 并发:Concurrent, 入包量:InPackets, 出包量:OutPackets, 丢包率:PacketLoss, 延迟:Latency，http请求量：HttpQPS, Https请求量：HttpsQPS",
+          "document": "统计指标名称列表，支持: \n入带宽:InBandwidth, \n出带宽:OutBandwidth, \n并发:Concurrent, \n入包量:InPackets, \n出包量:OutPackets, \n丢包率:PacketLoss, \n延迟:Latency，\nHTTP请求量：HttpQPS, \nHTTP请求量利用率：HttpQPSPercent,\nHTTPS请求量：HttpsQPS,\nHTTPS请求量利用率：HttpsQPSPercent",
           "example": "[\"Concurrent\\n\"]",
           "member": "string",
           "name": "MetricNames",
@@ -5423,7 +5423,7 @@
           "example": "无",
           "member": "MetricStatisticsInfo",
           "name": "StatisticsData",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5859,7 +5859,7 @@
           "example": "2",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5869,7 +5869,7 @@
           "example": "无",
           "member": "RealServer",
           "name": "RealServerSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5879,7 +5879,7 @@
           "example": "2",
           "member": "uint64",
           "name": "BindRealServerTotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5889,7 +5889,7 @@
           "example": "无",
           "member": "BindRealServer",
           "name": "BindRealServerSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5926,7 +5926,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5936,7 +5936,7 @@
           "example": "无",
           "member": "RuleInfo",
           "name": "RuleSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6235,7 +6235,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务ID，值为异步接口返回的RequestId",
+          "document": "任务ID，值为异步接口返回的RequestId，此参数不能传空值。",
           "example": "无",
           "member": "string",
           "name": "TaskId",
@@ -6418,7 +6418,7 @@
         {
           "disabled": false,
           "document": "（旧参数，请切换到ProxyIds）通道实例ID列表。",
-          "example": "xx",
+          "example": "[\"link-34524rerf\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": false,
@@ -6427,7 +6427,7 @@
         {
           "disabled": false,
           "document": "用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。\n更多详细信息请参阅：如何保证幂等性。",
-          "example": "xx",
+          "example": "aeew3eq34r324f",
           "member": "string",
           "name": "ClientToken",
           "required": false,
@@ -6454,7 +6454,7 @@
           "example": "[\"link-11112222\"]",
           "member": "string",
           "name": "InvalidStatusInstanceSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6464,7 +6464,7 @@
           "example": "[]",
           "member": "string",
           "name": "OperationFailedInstanceSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7838,7 +7838,7 @@
         {
           "disabled": false,
           "document": "证书ID。",
-          "example": "xxx",
+          "example": "cert-kj5pa5lj",
           "member": "string",
           "name": "CertificateId",
           "required": true,
@@ -7847,7 +7847,7 @@
         {
           "disabled": false,
           "document": "证书名字。长度不超过50个字符。",
-          "example": "xxx",
+          "example": "test",
           "member": "string",
           "name": "CertificateAlias",
           "required": false,
@@ -8369,7 +8369,7 @@
         {
           "disabled": false,
           "document": "用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。\n更多详细信息请参阅：如何保证幂等性。",
-          "example": "xx",
+          "example": "wrqddadsda234134",
           "member": "string",
           "name": "ClientToken",
           "required": false,
@@ -10838,6 +10838,24 @@
           "name": "PolyRealServerCertificateIds",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "TLS支持的版本\n支持TLSv1，TLSv1.1,TLSv1.2,TLSv1.3",
+          "example": "['TLSv1', 'TLSv1.1']",
+          "member": "string",
+          "name": "TLSSupportVersion",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "支持的TLS密码套件，可选值为：\n[GAAP_TLS_CIPHERS_WIDE,GAAPTLS_CIPHERS_GENERAL,GAAPTLS_CIPHERS_STRICT]",
+          "example": "GAAP_TLS_CIPHERS_WIDE",
+          "member": "string",
+          "name": "TLSCiphers",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -10868,7 +10886,7 @@
         },
         {
           "disabled": false,
-          "document": "TLS版本,可选TLSv1.0、TLSv1.1、TLSv1.2、TLSv1.3",
+          "document": "TLS版本,可选TLSv1、TLSv1.1、TLSv1.2、TLSv1.3",
           "example": "[\"TLSv1.2\", \"TLSv1.3\"]",
           "member": "string",
           "name": "TLSSupportVersion",

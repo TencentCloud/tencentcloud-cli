@@ -127,7 +127,7 @@
       "status": "online"
     },
     "CreateFlowApprovers": {
-      "document": "**适用场景 ：**\n\n当通过模板或文件发起合同时， 签署人不制定， 等合同发起后再指定 可以用下面2种方案\n\n<b><font color=\"red\">1. 或签合同</font>: 若未指定企业签署人信息（只指定企业的名字），合同变成或签合同（个人签署方不支持或签合同）</b>。需调用此接口补充或添加签署人。或签签署人在控制台上的展示样式如下（会带有<b>或签</b>标识）：\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/b2715f0236faee807cfc0521f93cf01b.png)\n\n<b><font color=\"red\">2. 动态签署人合同</font>: 若未指定具体签署人的信息，则合同变成动态签署人合同</b>。需调用此接口补充或添加签署人。可以参考文档    <a href=\"https://qian.tencent.com/developers/company/dynamic_signer/\" target=\"_blank\">动态签署人合同</a>   。动态签署人在控制台上的展示样式如下：\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/2729477978e020c3bbb4d2e767bb78eb.png)\n\n实际签署人需要通过[获取跳转至腾讯电子签小程序的签署链接](https://qian.tencent.com/developers/companyApis/startFlows/CreateSchemeUrl/)生成的链接进入小程序，领取合同并签署。同一签署环节可补充多个员工作为或签署人，最终实际签署人取决于谁先领取合同完成签署。\n\n\n**限制条件**：\n\n1.本企业（发起方企业）企业微信签署人仅支持通过企业微信UserId或姓名+手机号进行补充。\n\n2.本企业（发起方企业）非企业微信签署人仅支持通过姓名+手机号进行补充。\n\n3.他方企业仅支持通过姓名+手机号进行补充。\n\n4.个人签署人支持通过姓名+手机号进行补充（若<b>个人用户已完成实名</b>，动态签署人合同也可以可通过姓名+证件号码进行补充）\n\n\n**整体流程如下图：**\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/29a0fba0ceebf9227849459947384862.png)",
+      "document": "**适用场景 ：**\n\n当通过模板或文件发起合同时， 签署人不制定， 等合同发起后再指定 可以用下面2种方案\n\n<b><font color=\"red\">1. 或签合同</font>: 若未指定企业签署人信息（只指定企业的名字），合同变成或签合同（个人签署方不支持或签合同）</b>。需调用此接口补充或添加签署人。或签签署人在控制台上的展示样式如下（会带有<b>或签</b>标识）：\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/b2715f0236faee807cfc0521f93cf01b.png)\n\n<b><font color=\"red\">2. 动态签署人合同</font>: 若未指定具体签署人的信息，则合同变成动态签署人合同</b>。需调用此接口补充或添加签署人。可以参考文档    <a href=\"https://qian.tencent.com/developers/company/dynamic_signer/\" target=\"_blank\">动态签署人合同</a>   。动态签署人在控制台上的展示样式如下：\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/2729477978e020c3bbb4d2e767bb78eb.png)\n\n实际签署人需要通过[获取跳转至腾讯电子签小程序的签署链接](https://qian.tencent.com/developers/companyApis/startFlows/CreateSchemeUrl/)生成的链接进入小程序，领取合同并签署。同一签署环节可补充多个员工作为或签署人，最终实际签署人取决于谁先领取合同完成签署。\n\n**接口使用说明**：\n\n1.本接口现已支持批量补充签署人\n\n2.当<a href=\"https://qian.tencent.com/developers/companyApis/dataTypes/#fillapproverinfo/\" target=\"_blank\">补充签署人结构体</a>中指定需要补充的FlowId时，可以对指定合同补充签署人；可以指定多个相同发起方的不同合同在完成批量补充\n\n3.当<a href=\"https://qian.tencent.com/developers/companyApis/operateFlows/CreateFlowApprovers/\" target=\"_blank\">补充签署人接口入参</a>中指定需要补充的FlowId时，是对指定的合同补充多个指定的签署人\n\n4.如果同时指定了<a href=\"https://qian.tencent.com/developers/companyApis/dataTypes/#fillapproverinfo/\" target=\"_blank\">补充签署人结构体</a>中的FlowId和<a href=\"https://qian.tencent.com/developers/companyApis/operateFlows/CreateFlowApprovers/\" target=\"_blank\">补充签署人接口入参</a>中的FlowId，仅使用<a href=\"https://qian.tencent.com/developers/companyApis/dataTypes/#fillapproverinfo/\" target=\"_blank\">补充签署人结构体</a>中的FlowId作为补充的合同\n\n5.如果部分指定了<a href=\"https://qian.tencent.com/developers/companyApis/dataTypes/#fillapproverinfo/\" target=\"_blank\">补充签署人结构体</a>中的FlowId，又指定了<a href=\"https://qian.tencent.com/developers/companyApis/operateFlows/CreateFlowApprovers/\" target=\"_blank\">补充签署人接口入参</a>中的FlowId；那么<a href=\"https://qian.tencent.com/developers/companyApis/dataTypes/#fillapproverinfo/\" target=\"_blank\">补充签署人结构体</a>存在指定的FlowId，则使用<a href=\"https://qian.tencent.com/developers/companyApis/dataTypes/#fillapproverinfo/\" target=\"_blank\">补充签署人结构体</a>中的FlowId，不存在则使用<a href=\"https://qian.tencent.com/developers/companyApis/operateFlows/CreateFlowApprovers/\" target=\"_blank\">补充签署人接口入参</a>中的FlowId作为补充的合同\n\n\n6.如果同时未指定了<a href=\"https://qian.tencent.com/developers/companyApis/dataTypes/#fillapproverinfo/\" target=\"_blank\">补充签署人结构体</a>中的FlowId和<a href=\"https://qian.tencent.com/developers/companyApis/operateFlows/CreateFlowApprovers/\" target=\"_blank\">补充签署人接口入参</a>中的FlowId，则传参错误。\n\n7. 新加入的签署方<font color=\"red\">平台不会发送短信</font>进行签署。请您生成相应的链接，并将其发送给该签署方以便完成签署过程。\n\n**限制条件**：\n\n1.本企业（发起方企业）企业微信签署人仅支持通过企业微信UserId或姓名+手机号进行补充。\n\n2.本企业（发起方企业）非企业微信签署人仅支持通过姓名+手机号进行补充。\n\n3.他方企业仅支持通过姓名+手机号进行补充。\n\n4.个人签署人支持通过姓名+手机号进行补充（若<b>个人用户已完成实名</b>，动态签署人合同也可以可通过姓名+证件号码进行补充）\n\n\n**整体流程如下图：**\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/29a0fba0ceebf9227849459947384862.png)",
       "input": "CreateFlowApproversRequest",
       "name": "补充签署流程签署人信息",
       "output": "CreateFlowApproversResponse",
@@ -302,7 +302,7 @@
       "status": "online"
     },
     "CreateReleaseFlow": {
-      "document": "发起解除协议的主要应用场景为：基于一份已经签署的合同（签署流程），进行解除操作。\n解除协议的模板是官方提供 ，经过提供法务审核，暂不支持自定义。\n\n注意：\n<ul>\n<li><strong>完成原合同签署后方可发起解除协议：</strong>只有在原合同所有签署人完成签署后，才可以启动解除协议的流程。</li>\n<li><strong>原合同状态更新：</strong>解除协议一旦签署完毕，原合同及解除协议状态将更新为“已解除”。</li>\n<li><strong>解除协议的个人参与要求：</strong>原合同中的个人参与者必须直接参与解除协议，禁止替换为其他第三方个人。</li>\n<li><strong>企业参与人的代理权：</strong>若原合同的企业参与人无法亲自参与解除协议，可指派具有等同权限的企业员工代行。</li>\n<li><strong>解除协议的费用问题：</strong>发起解除协议将产生费用，其扣费标准与其他企业合同相同。</li>\n<li><strong>解除协议的发起资格：</strong>仅限原合同中的企业类型参与者发起解除协议，个人参与者无此权限。</li>\n<li><strong>非原合同企业参与者的权限：</strong>非原合同的企业参与者发起解除协议时，必须具备相应的解除权限。</li>\n<li><strong>自动签署：</strong>支持本企业的自动签署，不支持其他企业的自动签署（不能不动神色的把别人参与的合同作废了）</li>\n</ul>\n![image](https://qcloudimg.tencent-cloud.cn/raw/3427941ecb091bf0c55009bad192dd1c.png)",
+      "document": "发起解除协议的主要应用场景为：基于一份已经签署的合同（签署流程），进行解除操作。\n解除协议的模板是官方提供 ，经过提供法务审核，暂不支持自定义。具体用法可以参考文档[合同解除](https://qian.tencent.com/developers/company/flow_release)。\n\n注意：\n<ul>\n<li><strong>完成原合同签署后方可发起解除协议：</strong>只有在原合同所有签署人完成签署后，才可以启动解除协议的流程。</li>\n<li><strong>原合同状态更新：</strong>解除协议一旦签署完毕，原合同及解除协议状态将更新为“已解除”。</li>\n<li><strong>解除协议的个人参与要求：</strong>原合同中的个人参与者必须直接参与解除协议，禁止替换为其他第三方个人。</li>\n<li><strong>企业参与人的代理权：</strong>若原合同的企业参与人无法亲自参与解除协议，可指派具有等同权限的企业员工代行。</li>\n<li><strong>解除协议的费用问题：</strong>发起解除协议将产生费用，其扣费标准与其他企业合同相同。</li>\n<li><strong>解除协议的发起资格：</strong>仅限原合同中的企业类型参与者发起解除协议，个人参与者无此权限。</li>\n<li><strong>非原合同企业参与者的权限：</strong>非原合同的企业参与者发起解除协议时，必须具备相应的解除权限。</li>\n<li><strong>自动签署：</strong>支持本企业的自动签署，不支持其他企业的自动签署（不能不动神色的把别人参与的合同作废了）</li>\n</ul>\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/3427941ecb091bf0c55009bad192dd1c.png)",
       "input": "CreateReleaseFlowRequest",
       "name": "发起解除协议",
       "output": "CreateReleaseFlowResponse",
@@ -392,6 +392,13 @@
       "output": "DeleteIntegrationRoleUsersResponse",
       "status": "online"
     },
+    "DeleteOrganizationAuthorizations": {
+      "document": "批量清理未认证的企业认证流程。\n\n此接口用来清除企业方认证信息填写错误，批量清理认证中的认证流信息。\n为接口[创建企业批量认证链接](https://qian.tencent.com/developers/companyApis/organizations/CreateBatchOrganizationRegistrationTasks) 和[查询企业批量认证链接](https://qian.tencent.com/developers/companyApis/organizations/DescribeBatchOrganizationRegistrationUrls) 接口的扩展接口。即在批量认证过程中，当发起认证企业发现超管信息错误的时候，可以将当前超管下的所有认证流企业清除。\n\n注意：\n**这个接口的操作人必须跟生成批量认证链接接口的操作人一致，才可以调用，否则会返回当前操作人没有认证中的企业认证流**",
+      "input": "DeleteOrganizationAuthorizationsRequest",
+      "name": "批量清除未认证的企业认证流",
+      "output": "DeleteOrganizationAuthorizationsResponse",
+      "status": "online"
+    },
     "DeleteSealPolicies": {
       "document": "本接口（DeleteSealPolicies）用于撤销企业员工持有的印章权限",
       "input": "DeleteSealPoliciesRequest",
@@ -442,7 +449,7 @@
       "status": "online"
     },
     "DescribeFileUrls": {
-      "document": "本接口（DescribeFileUrls）用于查询文件的下载URL。\n适用场景：通过传参合同流程编号，下载对应的合同PDF文件流到本地。",
+      "document": "本接口（DescribeFileUrls）用于查询文件的下载URL。\n适用场景：通过传参合同流程编号，下载对应的合同PDF文件流到本地。\n\n\n**注**：用户创建合同或者提交签署动作后，后台需要1~3秒的时间就进行合同PDF合成或者签名，为了确保您下载的是签署完成的完整合同文件，我们建议采取下面两种方式的一种来<font color=\"red\"><b>确保PDF已经合成完成，然后在调用本接口</b></font>。\n\n**第一种**：请确保您的系统配置了[接收合同完成通知的回调](https://qian.tencent.com/developers/company/callback_types_contracts_sign)功能。一旦所有参与方签署完毕，我们的系统将自动向您提供的回调地址发送完成通知。\n**第二种**：通过调用我们的[获取合同信息](https://qian.tencent.com/developers/companyApis/queryFlows/DescribeFlowBriefs)接口来主动检查合同的签署状态。请仅在确认合同状态为“签署完成”后，进行文件的下载操作。",
       "input": "DescribeFileUrlsRequest",
       "name": "查询文件下载URL",
       "output": "DescribeFileUrlsResponse",
@@ -568,7 +575,7 @@
       "status": "online"
     },
     "GetTaskResultApi": {
-      "document": "此接口（GetTaskResultApi）用来查询转换任务的状态。如需发起转换任务，请使用<a href=\"https://qian.tencent.com/developers/companyApis/templatesAndFiles/CreateConvertTaskApi\" target=\"_blank\">创建文件转换任务接口</a>进行资源文件的转换操作<br />\n前提条件：已调用 <a href=\"https://qian.tencent.com/developers/companyApis/templatesAndFiles/CreateConvertTaskApi\" target=\"_blank\">创建文件转换任务接口</a>进行文件转换，并得到了返回的转换任务Id。<br />\n\n适用场景：已创建一个文件转换任务，想查询该文件转换任务的状态，或获取转换后的文件资源Id。<br />\n注：\n1. `大文件转换所需的时间可能会比较长`",
+      "document": "此接口（GetTaskResultApi）用来查询转换任务的状态。如需发起转换任务，请使用<a href=\"https://qian.tencent.com/developers/companyApis/templatesAndFiles/CreateConvertTaskApi\" target=\"_blank\">创建文件转换任务接口</a>进行资源文件的转换操作<br />\n前提条件：已调用 <a href=\"https://qian.tencent.com/developers/companyApis/templatesAndFiles/CreateConvertTaskApi\" target=\"_blank\">创建文件转换任务接口</a>进行文件转换，并得到了返回的转换任务Id。<br />\n\n适用场景：已创建一个文件转换任务，想查询该文件转换任务的状态，或获取转换后的文件资源Id。<br />\n注：\n1. `大文件转换所需的时间可能会比较长`\n2.  `本接口返回的文件资源ID就是PDF资源ID，可以直接用于【用PDF文件创建签署流程】接口发起合同。`",
       "input": "GetTaskResultApiRequest",
       "name": "查询转换任务状态",
       "output": "GetTaskResultApiResponse",
@@ -1032,7 +1039,7 @@
         },
         {
           "disabled": false,
-          "document": "签署人信息补充类型，默认无需补充。\n\n<ul><li> **1** : ( 动态签署人（可发起合同后再补充签署人信息）注：`企业自动签不支持动态补充`</li></ul>\n\n注：\n`使用动态签署人能力前，需登陆腾讯电子签控制台打开服务开关`",
+          "document": "签署人信息补充类型，默认无需补充。\n\n<ul><li> **1** :  动态签署人（可发起合同后再补充签署人信息）注：`企业自动签不支持动态补充`</li></ul>\n\n注：\n`使用动态签署人能力前，需登陆腾讯电子签控制台打开服务开关`",
           "example": "无",
           "member": "int64",
           "name": "FillType",
@@ -3391,7 +3398,7 @@
         },
         {
           "disabled": false,
-          "document": "合同流程ID，为32位字符串。\n建议开发者妥善保存此流程ID，以便于顺利进行后续操作。\n可登录腾讯电子签控制台，在 \"合同\"->\"合同中心\" 中查看某个合同的FlowId(在页面中展示为合同ID)。",
+          "document": "合同流程ID，为32位字符串。\n- 建议开发者妥善保存此流程ID，以便于顺利进行后续操作。\n- 可登录腾讯电子签控制台，在 \"合同\"->\"合同中心\" 中查看某个合同的FlowId(在页面中展示为合同ID)。\n- <font color=\"red\">不建议继续使用</font>，请使用<a href=\"https://qian.tencent.com/developers/companyApis/dataTypes/#fillapproverinfo/\" target=\"_blank\">补充签署人结构体</a>中的FlowId来指定需要补充的合同id",
           "example": "无",
           "member": "string",
           "name": "FlowId",
@@ -6467,7 +6474,7 @@
         },
         {
           "disabled": false,
-          "document": "合同流程签署方的组织机构名称。\n如果名称中包含英文括号()，请使用中文括号（）代替。",
+          "document": "合同流程签署方的组织机构名称。如果名称中包含英文括号()，请使用中文括号（）代替。注: `获取B端动态签署人领取链接时,可指定此字段来预先设定签署人的企业,预设后只能以该企业身份去领取合同并完成签署`",
           "example": "典子谦示例企业",
           "member": "string",
           "name": "OrganizationName",
@@ -7714,6 +7721,125 @@
           "name": "RoleId",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteOrganizationAuthorizationInfo": {
+      "document": "清理的企业认证流信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "认证流 Id 是指在企业认证过程中，当前操作人的认证流程的唯一标识。每个企业在认证过程中只能有一条认证流认证成功。这意味着在同一认证过程内，一个企业只能有一个认证流程处于成功状态，以确保认证的唯一性和有效性。",
+          "example": "yDCHHUUckpbdaiqbUxJVsHWy99WG6kTY",
+          "member": "string",
+          "name": "AuthorizationId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "认证的企业名称",
+          "example": "典子谦示例企业",
+          "member": "string",
+          "name": "OrganizationName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "清除认证流产生的错误信息",
+          "example": "无",
+          "member": "string",
+          "name": "Errormessage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DeleteOrganizationAuthorizationsRequest": {
+      "document": "DeleteOrganizationAuthorizations请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "执行本接口操作的员工信息, userId 必填。\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "认证流Ids数组\n认证流 Id 是指在企业认证过程中，当前操作人的认证流程的唯一标识。每个企业在认证过程中只能有一条认证流认证成功。这意味着在同一认证过程内，一个企业只能有一个认证流程处于成功状态，以确保认证的唯一性和有效性。\n\n\n认证流 Id可以通过回调 [授权书认证审核结果回调](https://qian.tencent.com/developers/company/callback_types_staffs/#%E5%8D%81%E5%9B%9B-%E6%8E%88%E6%9D%83%E4%B9%A6%E8%AE%A4%E8%AF%81%E5%AE%A1%E6%A0%B8%E7%BB%93%E6%9E%9C%E5%9B%9E%E8%B0%83) 获取\n\n注意：\n如果传递了认证流Id，则下面的参数 超管二要素不会生效",
+          "example": "yDCHHUUckpbdaiqbUxJVsHWy99WG6kTY",
+          "member": "string",
+          "name": "AuthorizationIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "认证人姓名，组织机构超管姓名。 \n在注册流程中，必须是超管本人进行操作。 ",
+          "example": "张三",
+          "member": "string",
+          "name": "AdminName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "认证人手机号，组织机构超管手机号。 在注册流程中，必须是超管本人进行操作。 ",
+          "example": "18888888888",
+          "member": "string",
+          "name": "AdminMobile",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "代理企业和员工的信息。在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteOrganizationAuthorizationsResponse": {
+      "document": "DeleteOrganizationAuthorizations返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "清理的认证流的详细信息，其中包括企业名称，认证流唯一 Id 以及清理过程中产生的错误信息",
+          "example": "无",
+          "member": "DeleteOrganizationAuthorizationInfo",
+          "name": "DeleteOrganizationAuthorizationInfos",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "批量清理认证流返回的状态值\n其中包括\n- 1 全部成功\n- 2 部分成功\n- 3 全部失败",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -10385,7 +10511,7 @@
         },
         {
           "disabled": false,
-          "document": "合同流程ID，补充合同组子合同动态签署人时必传。",
+          "document": "合同流程ID\n- 补充合同组子合同动态签署人时必传。\n- 补充普通合同时，请阅读：<a href=\"https://qian.tencent.com/developers/companyApis/operateFlows/CreateFlowApprovers/\" target=\"_blank\">补充签署人接口</a>的接口使用说明",
           "example": "yDwFmUUckpstqfvzUE1h3jo1f3cqjkGm",
           "member": "string",
           "name": "FlowId",
@@ -10414,6 +10540,16 @@
           "example": "无",
           "member": "string",
           "name": "ErrMessage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "合同流程ID，为32位字符串。\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FlowId",
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
@@ -13518,7 +13654,7 @@
         },
         {
           "disabled": false,
-          "document": "参与方在合同中的角色是按照创建合同的时候来排序的，解除协议默认会将第一个参与人叫`甲方`,第二个叫`乙方`,  第三个叫`丙方`，以此类推。\n\n如果需改动此参与人的角色名字，可用此字段指定，由汉字,英文字符,数字组成，最大20个字。\n",
+          "document": "参与方在合同中的角色是按照创建合同的时候来排序的，解除协议默认会将第一个参与人叫`甲方`,第二个叫`乙方`,  第三个叫`丙方`，以此类推。\n\n如果需改动此参与人的角色名字，可用此字段指定，由汉字,英文字符,数字组成，最大20个字。\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/973a820ab66d1ce57082c160c2b2d44a.png)\n",
           "example": "供应商",
           "member": "string",
           "name": "ApproverSignRole",

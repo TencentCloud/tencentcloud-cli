@@ -6,17 +6,24 @@ Input:
 
 ```
 tccli gaap ModifyRuleAttribute --cli-unfold-argument  \
-    --RuleId rule-5g8dh58 \
-    --HealthCheck 0 \
-    --ListenerId listener-8fueuc9 \
-    --CheckParams.Domain string \
-    --CheckParams.ConnectTimeout 12 \
-    --CheckParams.Path str \
-    --CheckParams.Method string \
-    --CheckParams.DelayLoop 1 \
-    --CheckParams.StatusCode 1 \
+    --ListenerId listener-0s9kb7qt \
+    --RuleId rule-o8aq26zj \
+    --Path / \
+    --ForwardHost www.baidu.com \
+    --ForcedRedirect  \
     --Scheduler rr \
-    --Path /
+    --HealthCheck 1 \
+    --CheckParams.ConnectTimeout 2 \
+    --CheckParams.DelayLoop 30 \
+    --CheckParams.FailedThreshold 5 \
+    --CheckParams.BlockInter 600 \
+    --CheckParams.Path / \
+    --CheckParams.Method HEAD \
+    --CheckParams.StatusCode 100 200 300 400 500 \
+    --CheckParams.FailedCountInter 60 \
+    --CheckParams.Domain www.baidu.com \
+    --ServerNameIndicationSwitch ON \
+    --ServerNameIndication www.baidu.com
 ```
 
 Output: 

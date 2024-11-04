@@ -1160,6 +1160,14 @@
         "title": "查询示例"
       }
     ],
+    "ModifyUserSignatureRuleV2": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyUserSignatureRuleV2\n<公共请求参数>\n\n{\n    \"Domain\": \"abc.test.com\",\n    \"RuleID\": [\n        {\n            \"Id\": \"10000266\",\n            \"Status\": 0\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"40bbd265-74de-4e3b-b4f8-6219222ab961\"\n    }\n}",
+        "title": "修改用户防护规则，关闭具体的某条规则"
+      }
+    ],
     "ModifyWafAutoDenyRules": [
       {
         "document": "修改ip惩罚配置",

@@ -5760,6 +5760,21 @@
       ],
       "usage": "out"
     },
+    "ImportImageDataDisk": {
+      "document": "导入镜像的数据盘信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据盘镜像 COS 链接",
+          "example": "https://import-img.cos.ap-guangzhou.myqcloud.com/import-img.vpc",
+          "member": "string",
+          "name": "ImageUrl",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
     "ImportImageRequest": {
       "document": "ImportImage请求参数结构体",
       "members": [
@@ -5870,6 +5885,15 @@
           "name": "ImageFamily",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "导入的数据盘列表",
+          "example": "[]",
+          "member": "ImportImageDataDisk",
+          "name": "ImportImageDataDiskList",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -11826,6 +11850,24 @@
           "name": "ImageSetRequired",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否复制为加密自定义镜像。\n默认值为 false。\n复制加密自定义镜像仅支持同地域。",
+          "example": "false",
+          "member": "bool",
+          "name": "Encrypt",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "加密自定义镜像使用的 KMS 密钥 ID。\n仅当复制加密镜像时，即 Encrypt 为 true 时，此参数有效；\n不指定 KmsKeyId，默认使用 CBS 云产品 KMS 密钥。",
+          "example": "2bb53791-c2e9-4c42-8772-ecf135a1d92x",
+          "member": "string",
+          "name": "KmsKeyId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

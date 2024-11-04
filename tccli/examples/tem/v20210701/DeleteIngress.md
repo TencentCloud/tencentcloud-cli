@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli tem DeleteIngress --cli-unfold-argument  \
-    --EnvironmentId xx \
-    --ClusterNamespace xx \
+    --EnvironmentId en-xxxxxx \
+    --ClusterNamespace default \
     --SourceChannel 0 \
-    --IngressName xx
+    --IngressName ingress-name
 ```
 
 Output: 

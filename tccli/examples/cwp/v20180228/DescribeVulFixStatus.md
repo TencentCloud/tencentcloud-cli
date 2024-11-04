@@ -13,24 +13,24 @@ Output:
 ```
 {
     "Response": {
-        "FixEndTime": "xx",
+        "FixEndTime": "2019-12-25 11:57:15",
         "SnapshotFailCnt": 1,
         "SnapshotList": [
             {
                 "Status": 1,
-                "SnapshotName": "xx",
-                "HostName": "xx",
-                "FailReason": "xx",
-                "Quuid": "xx",
-                "ModifyTime": "xx",
-                "SnapshotId": "xx",
-                "HostIp": "xx",
+                "SnapshotName": "快照名称",
+                "HostName": "机器名称",
+                "FailReason": "",
+                "Quuid": "05f0bcab-726c-4ea4-8109-bcd03d5598f7",
+                "ModifyTime": "2019-12-25 11:57:15",
+                "SnapshotId": "快照ID",
+                "HostIp": "1.1.1.1",
                 "Id": 1
             }
         ],
         "FixSuccessCnt": 1,
         "FixProgress": 1,
-        "FixStartTime": "xx",
+        "FixStartTime": "2019-12-25 11:57:15",
         "IsRetrySnapshot": 1,
         "RemainingTime": 1,
         "IsAllowRetry": 1,
@@ -40,16 +40,16 @@ Output:
         "FixFailCnt": 1,
         "VulFixList": [
             {
-                "VulName": "xx",
+                "VulName": "漏洞名称",
                 "FixSuccessCnt": 1,
                 "HostList": [
                     {
                         "Status": 1,
-                        "ModifyTime": "xx",
-                        "HostName": "xx",
-                        "FailReason": "xx",
-                        "Quuid": "xx",
-                        "HostIp": "xx"
+                        "ModifyTime": "2019-12-25 11:57:15",
+                        "HostName": "机器名称",
+                        "FailReason": "",
+                        "Quuid": "05f0bcab-726c-4ea4-8109-bcd03d5598f7",
+                        "HostIp": "1.1.1.1"
                     }
                 ],
                 "FailCnt": 1,

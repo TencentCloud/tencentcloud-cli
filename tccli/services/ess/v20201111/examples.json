@@ -1060,6 +1060,12 @@
         "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSchemeUrl\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDRCLUUgygq2xun5UuO4zjEwg0vjoimj\"\n    },\n    \"FlowId\": \"yDwq7UU*Uu1vFD6uHSIyKQPf\",\n    \"EndPoint\": \"APP\",\n    \"Name\": \"典子谦\",\n    \"Mobile\": \"13200000000\"\n}",
         "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"OperationDenied.NoSupportJumpPage\",\n            \"Message\": \"APP类型不支持跳转到电子签主页或合同列表页\"\n        },\n        \"RequestId\": \"s1693830251815551087\"\n    }\n}",
         "title": "错误的示例- 获取某个流程合同的小程序跳转签署链接，PathType值没有传对（应该传1- 小程序合同详情）"
+      },
+      {
+        "document": "获取动态签署人补充链接，创建合同时未指定具体签署人，可获取链接后推送给指定的人进行补充，预设了企业名称后进入领取链接只能以该企业身份去领取并签署合同\n注：`获取动态签署人补充链接需指定PathType值为1或3，即跳转到合同封面页，并且指定对应签署节点的签署角色编号即RecipientId`",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSchemeUrl\n<公共请求参数>\n\n{\n    \"FlowId\": \"yDwq7UU*Uu1vFD6uHSIyKQPf\",\n    \"RecipientId\": \"yDw7aUUckpkxxmljUE0xkKk1DlvwRdfK\",\n    \"OrganizationName\": \"典子谦有限公司\",\n    \"PathType\": 3,\n    \"EndPoint\": \"HTTP_SHORT_URL\",\n    \"Operator\": {\n        \"UserId\": \"yDRCLUUgygq2xun5UuO4zjEwg0vjoimj\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"s1693829642597082849\",\n        \"SchemeQrcodeUrl\": \"https://file.test.ess.tencent.cn/bresource/resource/resource/0/0.JPG?hkey=5d92f0db15e6bbba6aea641f64c5c06d01********************************f313b0728621415f3f14724c1d784e7737421333bf96a\",\n        \"SchemeUrl\": \"https://essurl.cn/i3am**5Y9W\"\n    }\n}",
+        "title": "获取动态签署人补充链接（短链）并预设企业名"
       }
     ],
     "CreateSeal": [
@@ -1238,6 +1244,14 @@
         "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteIntegrationRoleUsers\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDwgKUUc*********QZDRuD\"\n    },\n    \"RoleId\": \"yDwgKUUc**********QZxjcvkf\",\n    \"Users\": [\n        {\n            \"UserId\": \"yDwgKUUc********QZD2cds\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RoleId\": \"yDwgKUUc********QZxjcvkf\",\n        \"RequestId\": \"s89su8dfjkdj****kdjfdfdfd\"\n    }\n}",
         "title": "解绑用户角色"
+      }
+    ],
+    "DeleteOrganizationAuthorizations": [
+      {
+        "document": "1. 企业典子谦示例企业 通过生成批量认证接口生成了 两个认证企业 （张三示例企业一， 张三示例企业二）\n2. 此时操作人典子谦示例企业 的业务员典子谦 发现超管应该是李四，信息填写错误，希望批量清除之前写错的信息，进行重新认证。\n3. 此时传递超管的姓名和手机号， 来进行清理。\n4. 全部清理成功，status 返回为 1",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteOrganizationAuthorizations\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDRCLUUgygq2xun5UuO4zjEwg0vjoimj\",\n        \"ClientIp\": \"8.8.8.8\"\n    },\n    \"AdminName\": \"张三\",\n    \"AdminMobile\": \"18888888888\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DeleteOrganizationAuthorizationInfos\": [\n            {\n                \"AuthorizationId\": \"yDCkRUUckp4mrr1mUuZT4VduiD2OfBVC\",\n                \"Errormessage\": \"\",\n                \"OrganizationName\": \"张三示例企业一\"\n            },\n            {\n                \"AuthorizationId\": \"yDCkRUUckp4mrro0UuZT4VdvxIeRvyX0\",\n                \"Errormessage\": \"\",\n                \"OrganizationName\": \"张三示例企业一\"\n            }\n        ],\n        \"RequestId\": \"s1729853630232230428\",\n        \"Status\": 1\n    }\n}",
+        "title": "批量清理张三的所有认证中的认证流"
       }
     ],
     "DeleteSealPolicies": [
@@ -1601,7 +1615,7 @@
         "document": "通过转换任务Id查询任务状态",
         "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetTaskResultApi\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDxoQxxxxxxxxxxxxxxxxxx1h2hnnR\"\n    },\n    \"TaskId\": \"2022xxxxxxxxxx992850\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"2255xxxxx76-6192fc301053\",\n        \"ResourceId\": \"yDRtsUxxxxxjEyx4jZM3A7\",\n        \"TaskId\": \"2022072xxxx992850\",\n        \"TaskMessage\": \"任务处理完成\",\n        \"TaskStatus\": 8\n    }\n}",
-        "title": "test示例"
+        "title": "通过转换任务Id查询任务状态"
       }
     ],
     "ModifyApplicationCallbackInfo": [

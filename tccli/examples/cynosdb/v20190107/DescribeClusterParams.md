@@ -13,31 +13,32 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 0,
+        "TotalCount": 226,
         "Items": [
             {
-                "CurrentValue": "abc",
-                "Default": "abc",
+                "CurrentValue": "1000",
+                "Default": "60000",
                 "EnumValue": [
-                    "abc"
+                    "OFF",
+                    "ON"
                 ],
-                "Max": "abc",
-                "Min": "abc",
-                "ParamName": "abc",
+                "Max": "65535",
+                "Min": "1",
+                "ParamName": "auto_increment_increment",
                 "NeedReboot": 0,
-                "ParamType": "abc",
-                "MatchType": "abc",
-                "MatchValue": "abc",
-                "Description": "abc",
-                "IsGlobal": 0,
+                "ParamType": "integer",
+                "MatchType": "",
+                "MatchValue": "",
+                "Description": "Determines the starting point for the AUTO_INCREMENT column value.",
+                "IsGlobal": 1,
                 "ModifiableInfo": {
-                    "IsModifiable": 0
+                    "IsModifiable": 1
                 },
                 "IsFunc": true,
-                "Func": "abc"
+                "Func": "{MIN(DBInitMemory/%d*%d,%d)},4000,32768,2097152"
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "806fe1c8-5567-4aa8-a521-ea2414c793b4"
     }
 }
 ```

@@ -15,29 +15,24 @@ Output:
 {
     "Response": {
         "TotalCount": 1,
-        "RequestId": "xx",
+        "RequestId": "be6f6eec-0825-4e67-ab9a-c8568bbf736c",
         "LoginWhiteCombinedInfos": [
             {
-                "UserName": "xx",
-                "Remark": "xx",
-                "Name": "xx",
-                "Places": [
-                    {
-                        "CityId": 1,
-                        "CountryId": 1,
-                        "ProvinceId": 1
-                    }
-                ],
-                "Locale": "xx",
-                "IsGlobal": 1,
-                "CreateTime": "xx",
-                "Uuid": "xx",
-                "StartTime": "xx",
-                "ModifyTime": "xx",
-                "SrcIp": "xx",
-                "EndTime": "xx",
-                "Id": 1,
-                "Desc": "xx"
+                "Id": 357790160,
+                "Places": null,
+                "UserName": "root",
+                "SrcIp": "1.1.1.1",
+                "IsGlobal": 0,
+                "CreateTime": "2019-12-25 11:57:15",
+                "ModifyTime": "2019-12-25 11:57:15",
+                "Locale": "",
+                "Locations": "",
+                "Remark": "",
+                "StartTime": "",
+                "EndTime": "",
+                "Name": "cwp",
+                "Desc": "1.1.1.1",
+                "Uuid": "be6f6eec-0825-4e67-ab9a-c8568bbf736c"
             }
         ]
     }

@@ -3827,23 +3827,21 @@
       "members": [
         {
           "disabled": false,
-          "document": "购买实例的时长，单位：月。取值范围：1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 24, 36。默认为1。\n（InquirePriceRenewDBInstances，RenewDBInstances调用时必填）",
-          "example": "",
+          "document": "购买实例的时长，单位：月。取值范围：1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 24, 36。默认为1。",
+          "example": "无",
           "member": "int64",
           "name": "Period",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
-          "document": "自动续费标识。取值范围：\nNOTIFY_AND_AUTO_RENEW：通知过期且自动续费\nNOTIFY_AND_MANUAL_RENEW：通知过期不自动续费\nDISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费\n\n默认取值：NOTIFY_AND_MANUAL_RENEW。若该参数指定为NOTIFY_AND_AUTO_RENEW，在账户余额充足的情况下，实例到期后将按月自动续费。\n（InquirePriceRenewDBInstances，RenewDBInstances调用时必填）",
-          "example": "",
+          "document": "自动续费标识。取值范围：\n- NOTIFY_AND_AUTO_RENEW：通知过期且自动续费。在账户余额充足的情况下，实例到期后将按月自动续费。\n- NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费。默认为NOTIFY_AND_MANUAL_RENEW。\n- DISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费。",
+          "example": "无",
           "member": "string",
           "name": "RenewFlag",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"

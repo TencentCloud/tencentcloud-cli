@@ -308,6 +308,13 @@
       "output": "DescribeTelCdrResponse",
       "status": "online"
     },
+    "DescribeTelRecordAsr": {
+      "document": "拉取会话录音转文本信息",
+      "input": "DescribeTelRecordAsrRequest",
+      "name": "拉取会话录音转文本信息",
+      "output": "DescribeTelRecordAsrResponse",
+      "status": "online"
+    },
     "DescribeTelSession": {
       "document": "获取 PSTN 会话信息",
       "input": "DescribeTelSessionRequest",
@@ -513,6 +520,62 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AsrData": {
+      "document": "语音转文本信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户方",
+          "example": "xxx@xxx.com",
+          "member": "string",
+          "name": "User",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消息内容",
+          "example": "hello world",
+          "member": "string",
+          "name": "Message",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": true,
+          "document": "时间戳",
+          "example": "1644488608",
+          "member": "int64",
+          "name": "Timestamp",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "句子开始时间，Unix 毫秒时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1729697242236",
+          "member": "int64",
+          "name": "Start",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "句子结束时间，Unix 毫秒时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1729697245426",
+          "member": "int64",
+          "name": "End",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1503,7 +1566,7 @@
         },
         {
           "disabled": false,
-          "document": "API URL，仅支持兼容openai协议的模型，填写url时后缀不要带/chat/completions；\nllmType为azure时,URL填写格式需为：https://{your-resource-name}.openai.azure.com?api-version={api-version},填写url时后缀不要带/openai/deployments/{deployment-id}/chat/completions，系统会自动帮你填充后缀",
+          "document": "API URL，仅支持兼容openai协议的模型，填写url时后缀不要带/chat/completions；\nllmType为azure时,URL填写格式需为：https://{your-resource-name}.openai.azure.com?api-version={api-version},填写url时后缀不要带/openai/deployments/{deployment-id}/chat/completions，系统会自动帮您填充后缀",
           "example": "http://xxx.com/openapi/v1",
           "member": "string",
           "name": "APIUrl",
@@ -1531,7 +1594,7 @@
         {
           "disabled": false,
           "document": "用于设定AI座席欢迎语。",
-          "example": "你好",
+          "example": "您好",
           "member": "string",
           "name": "WelcomeMessage",
           "required": false,
@@ -1839,7 +1902,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用 ID（必填）",
+          "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
           "example": "1400000000",
           "member": "int64",
           "name": "SdkAppId",
@@ -2003,7 +2066,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "SdkAppId",
+          "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
           "example": "140000000",
           "member": "uint64",
           "name": "SdkAppId",
@@ -2734,7 +2797,7 @@
         {
           "disabled": false,
           "document": "待删除客服邮箱列表，一次最大支持200个。",
-          "example": "[\"a\",\"b\",\"c\"]",
+          "example": "[\"staff1@xxx.com\",\"staff2@xxx.com\"]",
           "member": "string",
           "name": "StaffList",
           "required": true,
@@ -2749,7 +2812,7 @@
         {
           "disabled": false,
           "document": "无法删除的状态为在线的客服列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[\"foo\",\"bar\",\"hhh\"]",
+          "example": "[\"staff1@xxx.com\",\"staff2@xxx.com\"]",
           "member": "string",
           "name": "OnlineStaffList",
           "output_required": true,
@@ -2770,7 +2833,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例Id",
+          "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
           "example": "1400000000",
           "member": "uint64",
           "name": "SdkAppId",
@@ -2823,7 +2886,7 @@
         {
           "disabled": false,
           "document": "生效列表",
-          "example": "[]",
+          "example": "[{\"SdkAppId\":1,\"Caller\":\"008601012345678\",\"Callee\":\"008601012345679\",\"CreateTime\":1729905740}]",
           "member": "ActiveCarrierPrivilegeNumber",
           "name": "ActiveCarrierPrivilegeNumbers",
           "output_required": true,
@@ -2833,7 +2896,7 @@
         {
           "disabled": false,
           "document": "待审核单号",
-          "example": "[]",
+          "example": "[1,2]",
           "member": "uint64",
           "name": "PendingApplicantIds",
           "output_required": true,
@@ -3186,7 +3249,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例Id",
+          "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
           "example": "1400000000",
           "member": "uint64",
           "name": "SdkAppId",
@@ -5025,6 +5088,52 @@
       ],
       "type": "object"
     },
+    "DescribeTelRecordAsrRequest": {
+      "document": "DescribeTelRecordAsr请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
+          "example": "1400000000",
+          "member": "int64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "会话 ID",
+          "example": "6bb56a09-2787-40bc-80c5-dc6dab783eff",
+          "member": "string",
+          "name": "SessionId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTelRecordAsrResponse": {
+      "document": "DescribeTelRecordAsr返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "录音转文本信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AsrData",
+          "name": "AsrDataList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeTelSessionRequest": {
       "document": "DescribeTelSession请求参数结构体",
       "members": [
@@ -5487,11 +5596,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "按键\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "命中的关键字或者按键\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
           "name": "Key",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5501,7 +5610,47 @@
           "example": "非常满意",
           "member": "string",
           "name": "Label",
-          "required": true,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Unix 毫秒时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1729697241440",
+          "member": "int64",
+          "name": "Timestamp",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "节点标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "分支节点",
+          "member": "string",
+          "name": "NodeLabel",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户原始输入\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "OriginalContent",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "TTS 提示音内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TTSPrompt",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         }
@@ -5773,7 +5922,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用ID",
+          "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
           "example": "1400000",
           "member": "uint64",
           "name": "SdkAppId",
@@ -5792,7 +5941,7 @@
         {
           "disabled": false,
           "document": "座席名称",
-          "example": "XXX",
+          "example": "小王",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -5810,7 +5959,7 @@
         {
           "disabled": false,
           "document": "座席昵称",
-          "example": "XXX",
+          "example": "小管家",
           "member": "string",
           "name": "Nick",
           "required": false,
@@ -7839,7 +7988,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用 ID（必填）",
+          "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
           "example": "1400000000",
           "member": "uint64",
           "name": "SdkAppId",
@@ -7858,7 +8007,7 @@
         {
           "disabled": false,
           "document": "修改后的技能组名字",
-          "example": "foobar",
+          "example": "客户一组",
           "member": "string",
           "name": "SkillGroupName",
           "required": false,

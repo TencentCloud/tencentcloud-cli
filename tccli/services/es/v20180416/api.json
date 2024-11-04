@@ -7,6 +7,13 @@
       "output": "CheckMigrateIndexMetaDataResponse",
       "status": "online"
     },
+    "CreateClusterSnapshot": {
+      "document": "集群快照手动创建",
+      "input": "CreateClusterSnapshotRequest",
+      "name": "创建集群快照",
+      "output": "CreateClusterSnapshotResponse",
+      "status": "online"
+    },
     "CreateCosMigrateToServerlessInstance": {
       "document": "cos迁移流程",
       "input": "CreateCosMigrateToServerlessInstanceRequest",
@@ -49,6 +56,13 @@
       "output": "CreateServerlessSpaceV2Response",
       "status": "online"
     },
+    "DeleteClusterSnapshot": {
+      "document": "删除快照仓库里备份的快照",
+      "input": "DeleteClusterSnapshotRequest",
+      "name": "删除快照仓库里备份的快照",
+      "output": "DeleteClusterSnapshotResponse",
+      "status": "online"
+    },
     "DeleteIndex": {
       "document": "删除索引",
       "input": "DeleteIndexRequest",
@@ -89,6 +103,13 @@
       "input": "DeleteServerlessSpaceUserRequest",
       "name": "删除Serverless空间子用户",
       "output": "DeleteServerlessSpaceUserResponse",
+      "status": "online"
+    },
+    "DescribeClusterSnapshot": {
+      "document": "获取快照备份列表",
+      "input": "DescribeClusterSnapshotRequest",
+      "name": "获取快照备份列表",
+      "output": "DescribeClusterSnapshotResponse",
       "status": "online"
     },
     "DescribeDiagnose": {
@@ -285,6 +306,13 @@
       "input": "RestartNodesRequest",
       "name": "重启集群节点",
       "output": "RestartNodesResponse",
+      "status": "online"
+    },
+    "RestoreClusterSnapshot": {
+      "document": "快照备份恢复，从仓库中恢复快照到集群中",
+      "input": "RestoreClusterSnapshotRequest",
+      "name": "快照备份恢复",
+      "output": "RestoreClusterSnapshotResponse",
       "status": "online"
     },
     "SaveAndDeployLogstashPipeline": {
@@ -929,6 +957,61 @@
         }
       ],
       "usage": "out"
+    },
+    "CreateClusterSnapshotRequest": {
+      "document": "CreateClusterSnapshot请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例名称",
+          "example": "es-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "快照名称",
+          "example": "test-snapshot_20220202",
+          "member": "string",
+          "name": "SnapshotName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "索引名称",
+          "example": "index1,index2",
+          "member": "string",
+          "name": "Indices",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateClusterSnapshotResponse": {
+      "document": "CreateClusterSnapshot返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "es-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CreateCosMigrateToServerlessInstanceRequest": {
       "document": "CreateCosMigrateToServerlessInstance请求参数结构体",
@@ -1937,6 +2020,61 @@
       ],
       "usage": "both"
     },
+    "DeleteClusterSnapshotRequest": {
+      "document": "DeleteClusterSnapshot请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群实例Id，格式：es-xxxx",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "快照仓库名称",
+          "example": "无",
+          "member": "string",
+          "name": "RepositoryName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "集群快照名称",
+          "example": "无",
+          "member": "string",
+          "name": "SnapshotName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteClusterSnapshotResponse": {
+      "document": "DeleteClusterSnapshot返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群id",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteIndexRequest": {
       "document": "DeleteIndex请求参数结构体",
       "members": [
@@ -2153,6 +2291,81 @@
     "DeleteServerlessSpaceUserResponse": {
       "document": "DeleteServerlessSpaceUser返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterSnapshotRequest": {
+      "document": "DescribeClusterSnapshot请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群实例Id，格式：es-xxxx",
+          "example": "es-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "快照仓库名称",
+          "example": "无",
+          "member": "string",
+          "name": "RepositoryName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "集群快照名称",
+          "example": "无",
+          "member": "string",
+          "name": "SnapshotName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterSnapshotResponse": {
+      "document": "DescribeClusterSnapshot返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群实例Id，格式：es-xxxx",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "快照备份详情列表",
+          "example": "无",
+          "member": "Snapshots",
+          "name": "Snapshots",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "快照仓库名称",
+          "example": "无",
+          "member": "string",
+          "name": "RepositoryName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -4921,6 +5134,56 @@
         }
       ],
       "usage": "in"
+    },
+    "Failures": {
+      "document": "索引备份失败的数据结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "备份失败的索引名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Index",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "快照失败的分片号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "ShardId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "快照失败的原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Reason",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "快照失败的状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "GetDiagnoseSettingsRequest": {
       "document": "GetDiagnoseSettings请求参数结构体",
@@ -8573,6 +8836,115 @@
       ],
       "type": "object"
     },
+    "RestoreClusterSnapshotRequest": {
+      "document": "RestoreClusterSnapshot请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群实例Id，格式：es-xxxx",
+          "example": "es-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "仓库名称",
+          "example": "无",
+          "member": "string",
+          "name": "RepositoryName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "集群快照名称",
+          "example": "无",
+          "member": "string",
+          "name": "SnapshotName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "目标集群实例Id，格式：es-xxxx，如果是恢复到本地，则和InstanceId一致",
+          "example": "无",
+          "member": "string",
+          "name": "TargetInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "elastic用户名对应的密码信息",
+          "example": "无",
+          "member": "string",
+          "name": "Password",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "要在所有恢复的索引中添加或更改的设置的逗号分隔列表。使用此参数可以在恢复快照时覆盖索引设置。",
+          "example": "无",
+          "member": "string",
+          "name": "IndexSettings",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "不应从快照还原的以逗号分隔的索引设置列表。",
+          "example": "无",
+          "member": "string",
+          "name": "IncludeGlobalState",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "需要恢复的索引名称，非必填，为空则表示恢复所有\n\n支持传多个索引名称",
+          "example": "无",
+          "member": "string",
+          "name": "Indices",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "如果为 false，则如果快照中包含的一个或多个索引没有所有主分片可用，则整个恢复操作将失败。默认为 false,\n\n如果为 true，则允许恢复具有不可用分片的索引的部分快照。只有成功包含在快照中的分片才会被恢复。所有丢失的碎片将被重新创建为空",
+          "example": "无",
+          "member": "string",
+          "name": "Partial",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RestoreClusterSnapshotResponse": {
+      "document": "RestoreClusterSnapshot返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群实例id",
+          "example": "es-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "SaveAndDeployLogstashPipelineRequest": {
       "document": "SaveAndDeployLogstashPipeline请求参数结构体",
       "members": [
@@ -9281,6 +9653,155 @@
         }
       ],
       "usage": "out"
+    },
+    "Snapshots": {
+      "document": "集群快照数据结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "快照名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SnapshotName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "快照Uuid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Uuid",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "该快照所属集群的版本号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Version",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "备份的索引列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Indices",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "备份的datastream列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DataStreams",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "备份的状态\n\nFAILED            备份失败\n\nIN_PROGRESS 备份执行中\n\nPARTIAL          备份部分成功，部分失败，备份失败的索引和原因会在Failures字段中展示\n\nSUCCESS     备份成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "State",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "快照备份的开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "快照备份的结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "快照备份的耗时时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "DurationInMillis",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "备份的总分片数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalShards",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "备份失败的分片数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "FailedShards",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "备份成功的分片数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "SuccessfulShards",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "备份失败的索引分片和失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Failures",
+          "name": "Failures",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "StartLogstashPipelinesRequest": {
       "document": "StartLogstashPipelines请求参数结构体",

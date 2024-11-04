@@ -790,7 +790,7 @@
         {
           "disabled": false,
           "document": "周期执行器设置，当创建周期执行器时，必须指定此参数。",
-          "example": "无",
+          "example": "{          \"Policy\":\"ONCE\",     \"InvokeTime\":\"2021-09-01T00:00:00+08:00\" }",
           "member": "ScheduleSettings",
           "name": "ScheduleSettings",
           "required": false,
@@ -808,7 +808,7 @@
           "example": "ivk-b7s3qa5l",
           "member": "string",
           "name": "InvokerId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1092,8 +1092,8 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件。<br> <li> agent-status - String - 是否必填：否 -（过滤条件）按照agent状态过滤，取值：Online 在线，Offline 离线。<br> <li> environment - String - 是否必填：否 -（过滤条件）按照agent运行环境查询，取值：Linux, Windows。<br> <li> instance-id - String - 是否必填：否 -（过滤条件）按照实例ID过滤。 <br>每次请求的 `Filters` 的上限为10， `Filter.Values` 的上限为5。参数不支持同时指定 `InstanceIds` 和 `Filters` 。",
-          "example": "无",
+          "document": "<li>agent-status - String - 是否必填：否 -（过滤条件）按照agent状态过滤，取值：Online 在线，Offline 离线。</li><br><li>environment - String - 是否必填：否 -（过滤条件）按照agent运行环境查询，取值：Linux, Windows。</li><br><li>instance-id - String - 是否必填：否 -（过滤条件）按照实例ID过滤。</li>",
+          "example": "[ { \"Name\": \"instance-id\", \"Values\": [\"ins-zcewfho0\"] }]",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -1126,7 +1126,7 @@
         {
           "disabled": false,
           "document": "Agent 信息列表。",
-          "example": "无",
+          "example": "[       {         \"AgentStatus\": \"Offline\",         \"Environment\": \"Windows\",         \"InstanceId\": \"rins-lpuf78i4\",         \"LastHeartbeatTime\": \"2024-10-25T03:21:08Z\",         \"SupportFeatures\": [           \"SESSION_MANAGER\"         ],         \"Version\": \"1.0.17\"       }]",
           "member": "AutomationAgentInfo",
           "name": "AutomationAgentSet",
           "output_required": true,
@@ -1324,7 +1324,7 @@
         {
           "disabled": false,
           "document": "过滤条件。<br>\n\n<li> invocation-id - String - 是否必填：否 -（过滤条件）按照执行活动ID过滤。</li>\n <li> command-id - String - 是否必填：否 -（过滤条件）按照命令ID过滤。</li> \n<li> command-created-by - String - 是否必填：否 -（过滤条件）按照执行的命令类型过滤，取值为 TAT 或 USER，TAT 代表公共命令，USER 代表由用户创建的命令。</li>\n <li> instance-kind - String - 是否必填：否 -（过滤条件）按照运行实例类型过滤，取值为 CVM 或 LIGHTHOUSE，CVM 代表实例为云服务器， LIGHTHOUSE 代表实例为轻量应用服务器。</li>\n <br>每次请求的 `Filters` 的上限为10， `Filter.Values` 的上限为5。参数不支持同时指定 `InvocationIds` 和 `Filters` 。",
-          "example": "无",
+          "example": "[ { \"Name\": \"instance-id\", \"Values\": [\"ins-zcewfho0\"] } ]",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -1367,7 +1367,7 @@
         {
           "disabled": false,
           "document": "执行活动列表。",
-          "example": "无",
+          "example": "[{         \"CommandContent\": \"cHdk\",         \"CommandId\": \"cmd-kpfoo6py\",         \"CommandType\": \"SHELL\",         \"CreatedTime\": \"2024-10-25T03:18:37Z\",         \"DefaultParameters\": \"\",         \"Description\": \"\",         \"EndTime\": \"2024-10-25T03:18:38Z\",         \"InstanceKind\": \"REGISTERINST\",         \"InvocationId\": \"inv-hc91n6ga8c\",         \"InvocationSource\": \"USER\",         \"InvocationStatus\": \"SUCCESS\",         \"InvocationTaskBasicInfoSet\": [           {             \"InstanceId\": \"rins-0c54k0xs\",             \"InvocationTaskId\": \"invt-hc91n6ga8d\",             \"TaskStatus\": \"SUCCESS\"           }         ],         \"OutputCOSBucketUrl\": \"\",         \"OutputCOSKeyPrefix\": \"\",         \"Parameters\": \"\",         \"StartTime\": \"2024-10-25T03:18:37Z\",         \"Timeout\": 60,         \"UpdatedTime\": \"2024-10-25T03:18:38Z\",         \"Username\": \"root\",         \"WorkingDirectory\": \"/root\"       }]",
           "member": "Invocation",
           "name": "InvocationSet",
           "output_required": true,
@@ -1425,17 +1425,17 @@
           "example": "10",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "执行器执行历史记录。",
-          "example": "无",
+          "example": "[       {         \"InvocationId\": \"inv-sca38601ud\",         \"InvokeTime\": \"2024-10-25T22:24:13Z\",         \"InvokerId\": \"ivk-ngqk4bda\",         \"Reason\": \"start an invocation at scheduled time.\",         \"Result\": \"SUCCESS\"       }]",
           "member": "InvokerRecord",
           "name": "InvokerRecordSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1573,15 +1573,17 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "地域信息列表",
-          "example": "无",
+          "example": "[       {         \"Region\": \"ap-guangzhou\",         \"RegionName\": \"广州\",         \"RegionState\": \"AVAILABLE\"       }]",
           "member": "RegionInfo",
           "name": "RegionSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1791,7 +1793,7 @@
         {
           "disabled": false,
           "document": "场景详情列表。",
-          "example": "无",
+          "example": "[{         \"CreatedBy\": \"TAT\",         \"CreatedTime\": \"2024-09-23T07:52:26Z\",         \"SceneId\": \"sc-r8ct2mkc\",         \"SceneName\": \"Windows\",         \"UpdatedTime\": \"2024-09-23T08:12:27Z\"       }]",
           "member": "Scene",
           "name": "SceneSet",
           "output_required": true,
@@ -2796,7 +2798,7 @@
         {
           "disabled": false,
           "document": "待修改的周期执行器设置。",
-          "example": "无",
+          "example": "{          \"Policy\":\"ONCE\",     \"InvokeTime\":\"2021-09-01T00:00:00+08:00\" }",
           "member": "ScheduleSettings",
           "name": "ScheduleSettings",
           "required": false,
@@ -3353,58 +3355,58 @@
       "members": [
         {
           "disabled": false,
-          "document": "场景 ID 。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "场景 ID 。",
           "example": "sc-12345678",
           "member": "string",
           "name": "SceneId",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "场景名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "场景名称。",
           "example": "运维场景",
           "member": "string",
           "name": "SceneName",
-          "output_required": false,
+          "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "场景创建者。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "场景创建者。",
           "example": "USER",
           "member": "string",
           "name": "CreatedBy",
-          "output_required": false,
+          "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建时间。",
           "example": "2021-05-12T02:49:04Z",
           "member": "string",
           "name": "CreatedTime",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "更新时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "更新时间。",
           "example": "2021-05-12T02:49:04Z",
           "member": "string",
           "name": "UpdatedTime",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

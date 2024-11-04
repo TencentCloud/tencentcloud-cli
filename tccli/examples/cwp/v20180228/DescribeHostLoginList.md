@@ -7,9 +7,6 @@ Input:
 ```
 tccli cwp DescribeHostLoginList --cli-unfold-argument  \
     --Limit 1 \
-    --Filters.0.Values abc \
-    --Filters.0.Name abc \
-    --Filters.0.ExactMatch True \
     --Offset 1
 ```
 
@@ -37,21 +34,21 @@ Output:
                 "Desc": "",
                 "IsRiskSrcIp": 1,
                 "IsRiskArea": 1,
-                "Quuid": "xxxx-xxxx-xxxxxx-xxxxxx-xxxx",
+                "Quuid": "05f0bcab-726c-4ea4-8109-bcd03d5598f7",
                 "RiskLevel": 0,
                 "IsRiskTime": 1,
                 "MachineExtraInfo": {
-                    "WanIP": "111.111.111.111",
+                    "WanIP": "1.1.1.1",
                     "InstanceID": "ins-12341234",
                     "NetworkName": "",
                     "PrivateIP": "1.1.1.1",
                     "NetworkType": 1,
-                    "HostName": "abc"
+                    "HostName": "机器名称"
                 }
             }
         ],
-        "RequestId": "4234234",
-        "TotalCount": 446
+        "RequestId": "be6f6eec-0825-4e67-ab9a-c8568bbf736c",
+        "TotalCount": 1
     }
 }
 ```
