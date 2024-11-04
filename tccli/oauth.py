@@ -113,4 +113,3 @@ def save_credential(token, new_cred, profile):
     }
     with open(cred_path, "w") as cred_file:
         json.dump(cred, cred_file, indent=4)
-
