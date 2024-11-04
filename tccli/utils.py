@@ -27,7 +27,7 @@ class Utils(object):
             start = 0
             size = len(s)
             while start < size:
-                dst += (pre + s[start:start+step] + "\n")
+                dst += (pre + s[start:start + step] + "\n")
                 start += step
             dst += "\n"
         dst += "\n"
@@ -109,3 +109,11 @@ class Utils(object):
                 return mode
         return None
 
+    @staticmethod
+    def is_bool(s):
+        if s.lower() == 'true':
+            return True, True
+        elif s.lower() == 'false':
+            return True, False
+        else:
+            return False, None

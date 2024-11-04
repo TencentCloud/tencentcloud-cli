@@ -212,6 +212,12 @@ class ConfigureSetCommand(BasicConfigure):
         for varname, value in zip(varnames, values):
             if varname in self.cred_list:
                 cred[varname] = value
+                if varname == 'use-cvm-role':
+                    identifier, bool_value = Utils.is_bool(value)
+                    if identifier:
+                        cred[varname] = value
+                    else:
+                        raise ParamError("use-cvm-role must be true or false")
             elif varname in self.config_list:
                 if varname == OptionsDefine.Output and value not in ['json', 'text', 'table']:
                     print('Output format must be json, text or table. Set as default: json')

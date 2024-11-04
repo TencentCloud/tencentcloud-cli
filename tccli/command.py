@@ -1,5 +1,5 @@
 # -*- coding:utf-8 -*-
-
+import json
 import os
 import sys
 import copy
@@ -8,6 +8,7 @@ import tccli.options_define as Options_define
 from collections import OrderedDict
 
 from tccli import oauth
+from tccli.oauth import cred_path_of_profile
 from tccli.utils import Utils
 from tccli.argument import CLIArgument, CustomArgument, ListArgument, BooleanArgument
 from tccli.exceptions import UnknownArgumentError
@@ -291,7 +292,8 @@ class ActionCommand(BaseCommand):
             action_parameters = self.cli_unfold_argument.build_action_parameters(parsed_args)
         else:
             action_parameters = self._build_action_parameters(parsed_args, self.argument_map)
-        oauth.maybe_refresh_credential(parsed_globals)
+        oauth.maybe_refresh_credential(parsed_globals.profile if parsed_globals.profile else "default")
+        self.refresh_use_cvm_role(parsed_globals)
         return self._action_caller(action_parameters, vars(parsed_globals))
 
     def create_help_command(self):
@@ -327,3 +329,18 @@ class ActionCommand(BaseCommand):
         parser = ArgMapArgParser(argument_map)
         return parser
 
+    def refresh_use_cvm_role(self, parsed_globals):
+        profile = parsed_globals.profile if parsed_globals.profile else "default"
+        cred_path = cred_path_of_profile(profile)
+        try:
+            with open(cred_path, "r") as cred_file:
+                cred = json.load(cred_file)
+        except IOError:
+            # file not found, don't check
+            return
+        if Options_define.UseCVMRole in cred:
+            identifier, bool_value = Utils.is_bool(cred[Options_define.UseCVMRole])
+            if identifier:
+                parsed_globals.use_cvm_role = bool_value
+            else:
+                raise ValueError("UseCVMRole in credential file(%s) is not a bool value" % cred_path)
