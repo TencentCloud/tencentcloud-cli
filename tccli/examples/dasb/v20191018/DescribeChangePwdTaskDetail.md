@@ -56,6 +56,7 @@ Output:
                         "PackageBandwidth": 0,
                         "PackageNode": 0,
                         "LogDeliveryArgs": "",
+                        "LogDelivery": "",
                         "ProductCode": "p_cds_dasb",
                         "SubProductCode": "sp_cds_dasb_bh_saas_pro",
                         "VpcId": "vpc-test",
@@ -79,6 +80,8 @@ Output:
                         "Deployed": true,
                         "Status": 1,
                         "ExtendPoints": 0,
+                        "DeployModel": 0,
+                        "CdcClusterId": "",
                         "ModuleSet": []
                     },
                     "Department": {

@@ -13,8 +13,8 @@ tccli cwp ModifyLogKafkaState --cli-unfold-argument  \
     --Username 12 \
     --Zone 广州 \
     --Az 广州三区 \
-    --VpcId - \
-    --SubnetId - \
+    --VpcId vpc-ad* \
+    --SubnetId subnet-* \
     --DeliverStatus 1 \
     --InsVersion 0.10.2.1 \
     --BandWidth 1200 \
@@ -25,7 +25,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "absc"
+        "RequestId": "29b37d86-f63d-43d1-b21a-640e82965198"
     }
 }
 ```

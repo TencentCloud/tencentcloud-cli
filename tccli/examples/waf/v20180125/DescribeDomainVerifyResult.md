@@ -6,17 +6,17 @@ Input:
 
 ```
 tccli waf DescribeDomainVerifyResult --cli-unfold-argument  \
-    --Domain test1.qcloud.com \
-    --InstanceID aaaaa
+    --Domain randy.qcloudwaf.com \
+    --InstanceID waf_in839ad238adsa
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Msg": "xx",
+        "Msg": "success",
         "VerifyCode": 1,
-        "RequestId": "xx"
+        "RequestId": "304cb36f-772a-4fdb-9b25-212d8fe5a553"
     }
 }
 ```

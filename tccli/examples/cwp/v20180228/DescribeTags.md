@@ -15,7 +15,7 @@ Output:
             {
                 "Id": 2,
                 "Name": "标签名",
-                "Count": 123
+                "Count": "0"
             }
         ],
         "RequestId": "b12a5e5a-9393-453f-a4d9-b42de0b2bcec"

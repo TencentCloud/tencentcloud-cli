@@ -1,29 +1,4 @@
-**Example 1: 开通骑缝章**
-
-开通骑缝章扩展服务
-
-Input: 
-
-```
-tccli essbasic ModifyExtendedService --cli-unfold-argument  \
-    --Agent.ProxyOperator.OpenId admin-open-id \
-    --Agent.ProxyOrganizationOpenId org-open-id \
-    --Agent.AppId APPID122344555 \
-    --ServiceType PAGING_SEAL \
-    --Operate OPEN
-```
-
-Output: 
-```
-{
-    "Response": {
-        "OperateUrl": "",
-        "RequestId": "s1673342239896659883"
-    }
-}
-```
-
-**Example 2: 关闭自动签署**
+**Example 1: 关闭自动签署**
 
 关闭企业静默签署扩展服务
 
@@ -48,7 +23,7 @@ Output:
 }
 ```
 
-**Example 3: 开通企业自动签署**
+**Example 2: 开通企业自动签署**
 
 开通企业自动签署扩展服务
 
@@ -73,7 +48,7 @@ Output:
 }
 ```
 
-**Example 4: 修改不支持的特定扩展服务**
+**Example 3: 修改不支持的特定扩展服务**
 
 传入了不支持的特定扩展服务，返回错误
 

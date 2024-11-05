@@ -6,19 +6,19 @@ Input:
 
 ```
 tccli ms UpdateLocalTaskResult --cli-unfold-argument  \
-    --Sid abc \
+    --Sid Sid-xxxxx \
     --ResultCode 0 \
     --SubCode 0 \
-    --ErrMsg abc \
-    --Result abc
+    --ErrMsg success \
+    --Result result_info
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "ResultCode": "abc",
-        "RequestId": "abc"
+        "ResultCode": "1",
+        "RequestId": "RequestId-xxxxx"
     }
 }
 ```

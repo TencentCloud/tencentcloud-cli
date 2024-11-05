@@ -8,7 +8,7 @@ Input:
 tccli cwp DescribeLicenseBindList --cli-unfold-argument  \
     --LicenseId 1 \
     --LicenseType 0 \
-    --ResourceId xxx
+    --ResourceId cdbae897e7e0
 ```
 
 Output: 
@@ -19,17 +19,25 @@ Output:
         "TotalCount": 1,
         "List": [
             {
-                "MachineName": "云服务器",
-                "MachineWanIp": "1.1.1.1",
-                "MachineIp": "1.1.1.1",
-                "Quuid": "xxxx-xxxx-xxx-xxxx",
-                "Uuid": "xxxx-xxxx-xxx-xxxx",
+                "MachineName": "测试机器",
+                "MachineWanIp": "10.0.0.0",
+                "MachineIp": "10.0.0.0",
+                "Quuid": "f6481aac-78f7-403e-867d-553c4af8b025",
+                "Uuid": "f6481aac-78f7-403e-867d-553c4af8b025",
                 "Tags": [
-                    "标签"
+                    "dev"
                 ],
-                "AgentStatus": "OFFLINE",
-                "IsUnBind": true,
-                "IsSwitchBind": true
+                "AgentStatus": "ONLINE",
+                "IsUnBind": false,
+                "IsSwitchBind": false,
+                "MachineExtraInfo": {
+                    "WanIP": "10.0.0.0",
+                    "PrivateIP": "10.0.0.0",
+                    "NetworkType": 0,
+                    "NetworkName": "dev",
+                    "InstanceID": "ins-onxyg5w",
+                    "HostName": "dev-one"
+                }
             }
         ]
     }

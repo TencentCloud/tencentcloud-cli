@@ -6,17 +6,17 @@ Input:
 
 ```
 tccli lowcode DescribeWxAccessToken --cli-unfold-argument  \
-    --WxAppId xx \
-    --ComponentAppId xx
+    --WxAppId abc \
+    --ComponentAppId abc
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Token": "xx",
-        "RequestId": "xx",
-        "ExpireAt": 1
+        "Token": "abc",
+        "ExpireAt": 1,
+        "RequestId": "abc"
     }
 }
 ```

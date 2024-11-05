@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli waf DescribeTopAttackDomain --cli-unfold-argument  \
-    --FromTime '2020-02-20 00:00:00' \
-    --ToTime '2020-02-21 00:00:00'
+    --FromTime 2024-11-03 00:00:00 \
+    --ToTime 2024-11-03 15:17:00
 ```
 
 Output: 

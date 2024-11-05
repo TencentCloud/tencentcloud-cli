@@ -6,15 +6,15 @@ Input:
 
 ```
 tccli acp CreateAppScanTask --cli-unfold-argument  \
-    --Remark 备注信息啦 \
+    --Remark Remark备注信息 \
     --Platform 0 \
-    --TelNumber 10086 \
+    --TelNumber 138XXXXXXXX \
     --Source 2 \
     --SalesPerson 张三 \
-    --ContactName 老王 \
+    --ContactName 张三 \
     --TaskType 2 \
-    --CorpName 测试有限公司 \
-    --Email test@test.com \
+    --CorpName ****科技有限公司 \
+    --Email user****@tencent.com \
     --IsAgreePrivacy 1
 ```
 
@@ -90,16 +90,16 @@ tccli acp CreateAppScanTask --cli-unfold-argument  \
     --PrivacyTextName 腾讯iOA隐私保护指引.txt \
     --AppDownloadUrl https://bm****OYpo8YKRrbnTofaB.apk \
     --Platform 0 \
-    --TelNumber 10086 \
+    --TelNumber 138XXXXXXXX \
     --AppName ioa \
     --PrivacyTextUrl https://bm****jc7yrar9xIKPYyvpEgVA.txt \
     --AppPackage com.***.i**oa \
     --Source 2 \
     --SalesPerson 张三 \
-    --ContactName 老王 \
+    --ContactName 张三 \
     --TaskType 1 \
-    --CorpName 测试有限企业 \
-    --Email test@test.com \
+    --CorpName ****科技有限公司 \
+    --Email user****@tencent.com \
     --IsAgreePrivacy 1
 ```
 

@@ -1,4 +1,4 @@
-**Example 1: 设置域名防护状态**
+**Example 1: newEx**
 
 
 
@@ -6,7 +6,31 @@ Input:
 
 ```
 tccli waf ModifySpartaProtectionMode --cli-unfold-argument  \
-    --Domain xx \
+    --InstanceID waf_0000000002 \
+    --Edition 字符串 \
+    --Domain why.qcloudwaf1234.com \
+    --Type 1 \
+    --Mode 10
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "7b393885-aaf2-463d-a70c-4500999d7c3f"
+    }
+}
+```
+
+**Example 2: 设置域名防护状态**
+
+
+
+Input: 
+
+```
+tccli waf ModifySpartaProtectionMode --cli-unfold-argument  \
+    --Domain test.domain.com \
     --Mode 21 \
     --Edition sparta-waf
 ```
@@ -20,7 +44,7 @@ Output:
 }
 ```
 
-**Example 2: 设置域名防护状态失败的情况**
+**Example 3: 设置域名防护状态失败的情况**
 
 
 
@@ -28,7 +52,7 @@ Input:
 
 ```
 tccli waf ModifySpartaProtectionMode --cli-unfold-argument  \
-    --Domain xx \
+    --Domain test.domain.com \
     --Mode 21 \
     --Edition sparta-waf
 ```

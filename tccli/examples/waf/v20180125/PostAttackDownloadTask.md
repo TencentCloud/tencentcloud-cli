@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli waf PostAttackDownloadTask --cli-unfold-argument  \
-    --Domain abc \
+    --Domain waf.com \
     --StartTime 2020-09-22T00:00:00+00:00 \
     --EndTime 2020-09-22T00:00:00+00:00 \
-    --QueryString abc \
-    --TaskName abc \
-    --Sort abc \
+    --QueryString bot:1 \
+    --TaskName task-name \
+    --Sort desc \
     --Count 0
 ```
 

@@ -93,7 +93,10 @@ Output:
                     ],
                     "DomainCount": 0,
                     "UsedDomainCount": 1,
-                    "Trial": 1
+                    "Trial": 1,
+                    "LogDelivery": "abc",
+                    "CdcClusterId": "abc",
+                    "DeployModel": 0
                 },
                 "Department": {
                     "Id": "abc",
@@ -112,7 +115,9 @@ Output:
                     "abc"
                 ],
                 "DomainId": "abc",
-                "DomainName": "abc"
+                "DomainName": "abc",
+                "EnableSSL": 0,
+                "SSLCertName": "abc"
             }
         ],
         "RequestId": "abc"

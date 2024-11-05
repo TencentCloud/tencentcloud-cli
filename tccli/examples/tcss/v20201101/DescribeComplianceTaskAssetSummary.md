@@ -13,33 +13,39 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "xxxxx",
         "Status": "USER_NORMAL",
         "AssetSummaryList": [
             {
                 "AssetType": "ASSET_CONTAINER",
                 "IsCustomerFirstCheck": true,
                 "CheckStatus": "CHECK_FINISHED",
-                "LastCheckTime": "2021-04-02 16:42:00",
-                "CheckCostTime": 300,
-                "CheckProgress": 100,
-                "PeriodRule": {
-                    "ExecutionTime": "xx",
-                    "Frequency": 1
-                },
-                "PassedPolicyItemCount": 100,
-                "FailedPolicyItemCount": 10,
+                "CheckProgress": 0,
+                "PassedPolicyItemCount": 1,
+                "FailedPolicyItemCount": 1,
                 "FailedCriticalPolicyItemCount": 1,
-                "FailedHighRiskPolicyItemCount": 2,
+                "FailedHighRiskPolicyItemCount": 1,
                 "FailedMediumRiskPolicyItemCount": 1,
                 "FailedLowRiskPolicyItemCount": 1,
                 "NoticePolicyItemCount": 1,
-                "PassedAssetCount": 1000,
-                "FailedAssetCount": 100,
-                "AssetPassedRate": 91,
-                "ScanFailedAssetCount": 1
+                "PassedAssetCount": 1,
+                "FailedAssetCount": 1,
+                "AssetPassedRate": 0,
+                "ScanFailedAssetCount": 1,
+                "CheckCostTime": 0,
+                "LastCheckTime": "2020-09-22 00:00:00",
+                "PeriodRule": {
+                    "Frequency": 1,
+                    "ExecutionTime": "21:00",
+                    "Enable": true
+                },
+                "OpenPolicyItemCount": 1,
+                "IgnoredPolicyItemCount": 1,
+                "TotalPolicyItemCount": 1,
+                "DetectHostCount": 1,
+                "LeftTime": 1
             }
-        ]
+        ],
+        "RequestId": "8a64a4f9-864c-49c6-adcb-21b483de477a"
     }
 }
 ```

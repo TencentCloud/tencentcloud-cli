@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ssa DescribeVulList --cli-unfold-argument  \
-    --Params xxx
+    --Params { "FilterObj": { "VulId": [ "101741" ] }, "Limit": 10, "Page": 1, "By": "event_time", "Order": "desc" }
 ```
 
 Output: 
@@ -16,49 +16,50 @@ Output:
         "Data": {
             "List": [
                 {
-                    "Id": "abc",
-                    "VulName": "abc",
+                    "Id": "100023",
+                    "VulName": "vul name",
                     "Type": 0,
                     "Level": 0,
                     "Status": 0,
-                    "Time": "abc",
+                    "Time": "2020-10-10 12:12:12",
                     "ImpactAssetNum": 0,
-                    "ImpactAsset": "abc",
-                    "ImpactAssetName": "abc",
-                    "VulDetail": "abc",
-                    "VulRefLink": "abc",
-                    "OldIdMd5": "abc",
-                    "UniqId": "abc",
-                    "OperateTime": "abc",
-                    "IsAssetDeleted": "abc",
-                    "DiscoverTime": "abc",
+                    "ImpactAsset": "asset",
+                    "ImpactAssetName": "name",
+                    "VulDetail": "vul detail info",
+                    "VulRefLink": "http://excample.com",
+                    "OldIdMd5": "md5****",
+                    "UniqId": "456d***",
+                    "OperateTime": "2020-10-10 12:12:12",
+                    "IsAssetDeleted": "0",
+                    "DiscoverTime": "2020-10-10 12:12:12",
                     "OriginId": 1,
-                    "Region": "abc",
-                    "Vpcid": "abc",
-                    "AssetType": "abc",
-                    "AssetSubType": "abc",
+                    "Region": "ap-guangzhou",
+                    "Vpcid": "vpc-***",
+                    "AssetType": "cvm",
+                    "AssetSubType": "1",
                     "AssetIpAll": [
-                        "abc"
+                        "10.0.1.1",
+                        "10.0.1.2"
                     ],
                     "PublicIpAddresses": [
-                        "abc"
+                        "132.*.*.*"
                     ],
                     "PrivateIpAddresses": [
-                        "abc"
+                        "10.0.0.1"
                     ],
-                    "VulSource": "abc",
-                    "AffectedUrl": "abc",
+                    "VulSource": "nvd",
+                    "AffectedUrl": "http://excample.com",
                     "SsaAssetCategory": 0,
-                    "VulUrl": "abc",
+                    "VulUrl": "http://excample.com",
                     "IsOpen": true,
                     "YzHostId": 1,
-                    "VulRepairPlan": "abc",
-                    "VulPath": "abc"
+                    "VulRepairPlan": "repari plan info",
+                    "VulPath": "/use/bin/nginx"
                 }
             ],
-            "Total": 0
+            "Total": 1
         },
-        "RequestId": "abc"
+        "RequestId": "f9184c15-9721-456d-8ca0-4263967b5ead"
     }
 }
 ```

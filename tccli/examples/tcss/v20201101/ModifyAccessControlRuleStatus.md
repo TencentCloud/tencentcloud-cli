@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tcss ModifyAccessControlRuleStatus --cli-unfold-argument  \
-    --IsEnable true \
-    --RuleIdSet xxxx
+    --RuleIdSet 1002 \
+    --IsEnable True
 ```
 
 Output: 

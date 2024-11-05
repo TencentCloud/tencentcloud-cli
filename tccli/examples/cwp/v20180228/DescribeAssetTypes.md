@@ -11,7 +11,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "xxxxxxxx-1234-5678-9101-yyyyyyyyyy",
+        "RequestId": "1ce68339-8828-457f-b358-d5b1b34e4fe9",
         "Types": [
             {
                 "Id": 1,

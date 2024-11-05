@@ -6,14 +6,9 @@ Input:
 
 ```
 tccli cfw DescribeAssociatedInstanceList --cli-unfold-argument  \
-    --Area xx \
-    --SecurityGroupId xx \
-    --SearchValue xx \
-    --By xx \
-    --Limit 1 \
-    --Offset 1 \
-    --Type xx \
-    --Order xx
+    --Area ap-guangzhou \
+    --Limit 10 \
+    --Offset 0
 ```
 
 Output: 
@@ -27,8 +22,10 @@ Output:
                 "Type": 5,
                 "VpcId": "vpc-406waega",
                 "VpcName": "vpc---",
-                "PublicIp": "",
+                "PublicIp": "1.1.1.1",
                 "Ip": "192.168.0.13,192.168.0.3",
+                "CdbId": "cdb-0cc13ab",
+                "SecurityGroupRuleCount": 1,
                 "SecurityGroupCount": 1
             },
             {
@@ -37,8 +34,10 @@ Output:
                 "Type": 5,
                 "VpcId": "vpc-dvc0qmmm",
                 "VpcName": "Dno",
-                "PublicIp": "",
+                "PublicIp": "1.1.1.1",
                 "Ip": "172.21.0.12",
+                "CdbId": "cdb-0cc13ab",
+                "SecurityGroupRuleCount": 1,
                 "SecurityGroupCount": 0
             }
         ],

@@ -17,9 +17,9 @@ Output:
         "BaselineDetail": {
             "Description": "基线详情描述",
             "Level": 1,
-            "PackageName": "xx",
+            "PackageName": "tename",
             "ParentId": 1,
-            "Name": "xx"
+            "Name": "tename"
         }
     }
 }

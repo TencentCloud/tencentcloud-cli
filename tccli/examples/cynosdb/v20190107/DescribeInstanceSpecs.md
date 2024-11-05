@@ -20,12 +20,12 @@ Output:
                 "MaxStorageSize": 1,
                 "MinStorageSize": 1,
                 "HasStock": true,
-                "MachineType": "abc",
+                "MachineType": "exclusive",
                 "MaxIops": 0,
                 "MaxIoBandWidth": 0,
                 "ZoneStockInfos": [
                     {
-                        "Zone": "abc",
+                        "Zone": "ap-beijing-3",
                         "HasStock": true,
                         "StockCount": 0
                     }
@@ -33,7 +33,7 @@ Output:
                 "StockCount": 0
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "1c7f08d0-e143-4305-9554-ea236d1a2981"
     }
 }
 ```

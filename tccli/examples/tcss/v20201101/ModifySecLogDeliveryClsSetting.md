@@ -6,11 +6,13 @@ Input:
 
 ```
 tccli tcss ModifySecLogDeliveryClsSetting --cli-unfold-argument  \
-    --List.0.LogType xx \
+    --List.0.LogSet 01992e90-8d72-4a4e-b88f-1fd988bfc215 \
+    --List.0.LogSetName audit_k8s \
+    --List.0.LogType container_launch \
+    --List.0.Region ap-beijing \
     --List.0.State True \
-    --List.0.LogSet xx \
-    --List.0.Region xx \
-    --List.0.TopicID xx
+    --List.0.TopicID aabb7847-261a-4717-becb-ce37c1689a0a \
+    --List.0.TopicName audit_container
 ```
 
 Output: 

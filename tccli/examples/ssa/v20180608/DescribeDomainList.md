@@ -1,11 +1,15 @@
-**Example 1: 域名列表**
+**Example 1: 获取域名列表**
 
-域名列表
+获取域名列表
 
 Input: 
 
 ```
-tccli ssa DescribeDomainList --cli-unfold-argument ```
+tccli ssa DescribeDomainList --cli-unfold-argument  \
+    --Limit 10 \
+    --Order desc \
+    --By Domain
+```
 
 Output: 
 ```
@@ -14,45 +18,45 @@ Output:
         "Total": 1,
         "DomainInfoCollection": [
             {
-                "Domain": "abc",
+                "Domain": "excample.com",
                 "ResolveAddr": [
-                    "abc"
+                    "10.0.0.1"
                 ],
                 "Region": [
-                    "abc"
+                    "ap-guangzhou"
                 ],
                 "AssetType": [
-                    "abc"
+                    "cvm"
                 ],
                 "RiskVulCount": 1,
                 "SensitiveCount": 1,
                 "HorseLinkCount": 1,
                 "WebModifyCount": 1,
-                "ScanTime": "abc",
-                "DiscoverTime": "abc",
+                "ScanTime": "2020-10-10 12:12:12",
+                "DiscoverTime": "2020-10-10 12:12:12",
                 "ScanTaskCount": 1,
                 "PortRisk": 1,
                 "WeekPwdCount": 1,
-                "AssetLocation": "abc",
+                "AssetLocation": "guangzhou",
                 "NetworkRisk": 1,
                 "NetworkAttack": 1,
                 "BotVisit": 1,
                 "NetworkAccess": 1,
-                "CreateTime": "abc",
+                "CreateTime": "2020-10-10 12:12:12",
                 "WafStatus": 1,
-                "LastScanTime": "abc",
+                "LastScanTime": "2020-10-10 12:12:12",
                 "AssetId": [
-                    "abc"
+                    "1"
                 ],
                 "AssetName": [
-                    "abc"
+                    "name"
                 ],
-                "SourceType": "abc",
+                "SourceType": "1",
                 "IsNotCore": 1,
                 "IsCloud": 1
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "f9184c15-9721-456d-8ca0-4263967b5ead"
     }
 }
 ```

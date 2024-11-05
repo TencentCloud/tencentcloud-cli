@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli tem RollingUpdateApplicationByVersion --cli-unfold-argument  \
-    --ApplicationId abc \
-    --EnvironmentId abc \
-    --DeployVersion abc \
-    --PackageName abc \
-    --From abc \
-    --DeployStrategyType abc \
+    --ApplicationId app-xxxxxx \
+    --EnvironmentId en-xxxxxx \
+    --DeployVersion v1 \
+    --PackageName test.jar \
+    --From test \
+    --DeployStrategyType 0 \
     --TotalBatchCount 0 \
     --BatchInterval 0 \
     --BetaBatchNum 0 \
@@ -24,7 +24,7 @@ Output:
 {
     "Response": {
         "RequestId": "81f74023-563c-437d-abf7-8139449ef178",
-        "Result": "version-xxx"
+        "Result": "revision-xxx"
     }
 }
 ```

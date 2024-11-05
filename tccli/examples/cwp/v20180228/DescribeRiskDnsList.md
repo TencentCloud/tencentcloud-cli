@@ -29,12 +29,19 @@ Output:
                 "Quuid": "e761c2dc-bc72-40cd-b9ed-d233c86b1a8b",
                 "HostIp": "2402:4e00:1010:5401:0:8f51:5190:3bfa",
                 "Alias": "ipv6_windows_test",
-                "Description": "",
+                "Description": "desc",
                 "Uuid": "e761c2dc-bc72-40cd-b9ed-d233c86b1a8",
                 "Pid": 1,
                 "Id": 1,
-                "CmdLine": "xx",
-                "Reference": "xx"
+                "Tags": [
+                    "vueir",
+                    "mle"
+                ],
+                "MachineWanIp": "1.1.1.1",
+                "MachineStatus": "OFFLINE",
+                "SuggestScheme": "reboot",
+                "CmdLine": "ps -ef",
+                "Reference": "/tmp/acsess"
             }
         ],
         "TotalCount": 20

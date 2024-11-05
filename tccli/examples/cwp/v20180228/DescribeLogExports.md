@@ -17,7 +17,7 @@ Output:
         "Exports": [
             {
                 "ExportId": "export-4b905654-7af5-43c1-a111-04c89e029c2a",
-                "Query": "*",
+                "Query": "a=b",
                 "FileName": "log_100004506473_c5ad674a-e6cc-4d7d-82e0-e7d7edaae26b_20220629_export-4b905654-7af5-43c1-a111-04c89e029c2a_1656466508.tar.gz",
                 "FileSize": 97805,
                 "Order": "desc",
@@ -31,7 +31,7 @@ Output:
             },
             {
                 "ExportId": "export-9a5f89fc-986b-4b5e-a511-168646949685",
-                "Query": "*",
+                "Query": "a=b",
                 "FileName": "log_100004506473_c5ad674a-e6cc-4d7d-82e0-e7d7edaae26b_20220628_export-9a5f89fc-986b-4b5e-a511-168646949685_1656415208.tar.gz",
                 "FileSize": 9815,
                 "Order": "desc",

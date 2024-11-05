@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli tcss UpdateAndPublishNetworkFirewallPolicyYamlDetail --cli-unfold-argument  \
-    --Description xx \
-    --ClusterId xx \
+    --Description desc \
+    --ClusterId cls-dff** \
     --Id 1 \
-    --Yaml xxx
+    --Yaml YXNkZmFzZGZhZHNmYXNkZmFzZGY=
 ```
 
 Output: 

@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli tdmq CreateSubscription --cli-unfold-argument  \
-    --EnvironmentId abc \
-    --TopicName abc \
-    --SubscriptionName abc \
-    --Remark abc \
+    --EnvironmentId devNs \
+    --TopicName devTopic \
+    --SubscriptionName devSub \
+    --Remark devTest \
     --IsIdempotent True \
-    --ClusterId abc \
+    --ClusterId pulsar-5r59xd4vnx \
     --AutoCreatePolicyTopic True \
-    --PostFixPattern abc
+    --PostFixPattern LEGACY
 ```
 
 Output: 

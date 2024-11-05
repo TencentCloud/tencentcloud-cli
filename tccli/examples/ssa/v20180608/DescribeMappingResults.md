@@ -24,40 +24,43 @@ Output:
         "Data": {
             "Statistics": [
                 {
-                    "AssetType": "abc",
+                    "AssetType": "cvm",
                     "AssetCount": 1
                 }
             ],
             "Result": [
                 {
-                    "AssetName": "abc",
-                    "AssetIp": "abc",
-                    "PrivateIp": "abc",
-                    "AssetId": "abc",
-                    "Protocol": "abc",
-                    "Port": "abc",
-                    "Service": "abc",
-                    "Component": "abc",
-                    "Process": "abc",
-                    "OS": "abc",
-                    "LastMappingTime": "abc",
-                    "DisposalRecommendations": "abc",
-                    "DisposalRecommendationDetails": "abc",
-                    "AssetType": "abc",
-                    "Domain": "abc",
+                    "AssetName": "name",
+                    "AssetIp": "132.*.*.*",
+                    "PrivateIp": "10.0.0.1",
+                    "AssetId": "1",
+                    "Protocol": "http",
+                    "Port": "443",
+                    "Service": "nginx",
+                    "Component": "nginx",
+                    "Process": "nginx",
+                    "OS": "centos7",
+                    "LastMappingTime": "2020-10-10 12:12:12",
+                    "DisposalRecommendations": "need to dispose",
+                    "DisposalRecommendationDetails": "need to dispose",
+                    "AssetType": "cvm",
+                    "Domain": "excample.com",
                     "MappingStatus": 1,
-                    "Region": "abc",
+                    "Region": "ap-guangzhou",
                     "SecurityStatus": [
-                        {}
+                        {
+                            "Type": "1",
+                            "Status": 1
+                        }
                     ],
                     "DisposalRecommendation": 0,
-                    "MappingType": "abc"
+                    "MappingType": "1"
                 }
             ],
             "TaskCount": 1,
             "TaskMaxCount": 1
         },
-        "RequestId": "abc"
+        "RequestId": "f9184c15-9721-456d-8ca0-4263967b5ead"
     }
 }
 ```

@@ -7,7 +7,7 @@ Input:
 ```
 tccli cfw ModifyAllPublicIPSwitchStatus --cli-unfold-argument  \
     --Status 0 \
-    --FireWallPublicIPs xx
+    --FireWallPublicIPs 121.132.0.1
 ```
 
 Output: 

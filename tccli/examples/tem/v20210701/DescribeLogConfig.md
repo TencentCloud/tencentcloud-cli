@@ -6,8 +6,9 @@ Input:
 
 ```
 tccli tem DescribeLogConfig --cli-unfold-argument  \
-    --EnvironmentId xx \
-    --Name xx
+    --EnvironmentId en-xxxxxx \
+    --Name abc \
+    --ApplicationId app-xxxxxx
 ```
 
 Output: 
@@ -15,20 +16,39 @@ Output:
 {
     "Response": {
         "Result": {
-            "ApplicationName": "xx",
-            "TopicId": "xx",
-            "BeginningRegex": "xx",
-            "Name": "xx",
-            "CreateDate": "xx",
-            "LogPath": "xx",
-            "InputType": "xx",
-            "LogType": "xx",
-            "FilePattern": "xx",
-            "ModifyDate": "xx",
-            "ApplicationId": "xx",
-            "LogsetId": "xx"
+            "Name": "abc",
+            "InputType": "abc",
+            "LogsetId": "abc",
+            "TopicId": "abc",
+            "LogType": "abc",
+            "BeginningRegex": "abc",
+            "LogPath": "abc",
+            "FilePattern": "abc",
+            "CreateDate": "abc",
+            "ModifyDate": "abc",
+            "ApplicationId": "abc",
+            "ApplicationName": "abc",
+            "ExtractRule": {
+                "BeginningRegex": "abc",
+                "Keys": [
+                    "abc"
+                ],
+                "FilterKeys": [
+                    "abc"
+                ],
+                "FilterRegex": [
+                    "abc"
+                ],
+                "LogRegex": "abc",
+                "TimeKey": "abc",
+                "TimeFormat": "abc",
+                "UnMatchUpload": "abc",
+                "UnMatchedKey": "abc",
+                "Backtracking": "abc",
+                "Delimiter": "abc"
+            }
         },
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

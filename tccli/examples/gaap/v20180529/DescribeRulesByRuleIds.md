@@ -6,62 +6,57 @@ Input:
 
 ```
 tccli gaap DescribeRulesByRuleIds --cli-unfold-argument  \
-    --RuleIds rule-3bsuu01r
+    --RuleIds rule-gsy1amjd
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "TotalCount": 1,
+        "RequestId": "6f02eb84-5d95-4a1c-b79d-beedfae5fb5e",
         "RuleSet": [
             {
                 "BindStatus": 1,
-                "Domain": "xx",
-                "RealServerType": "xx",
-                "ForwardHost": "xx",
-                "RuleId": "xx",
-                "HealthCheck": 1,
-                "ServerNameIndication": "xx",
-                "ListenerId": "xx",
                 "CheckParams": {
-                    "Domain": "xx",
-                    "ConnectTimeout": 1,
-                    "BlockInter": 1,
-                    "FailedThreshold": 1,
-                    "Path": "xx",
-                    "FailedCountInter": 1,
-                    "Method": "xx",
-                    "DelayLoop": 1,
+                    "ConnectTimeout": 2,
+                    "DelayLoop": 30,
+                    "Domain": "baidu.com",
+                    "Method": "HEAD",
+                    "Path": "/",
                     "StatusCode": [
-                        1,
-                        1,
-                        1,
-                        1,
-                        1
+                        100,
+                        200,
+                        300,
+                        400,
+                        500
                     ]
                 },
-                "ForcedRedirect": "xx",
-                "Scheduler": "xx",
-                "Path": "xx",
-                "RuleStatus": 1,
-                "ServerNameIndicationSwitch": "xx",
+                "Domain": "baidu.com",
+                "ForcedRedirect": null,
+                "ForwardHost": "baidu.com",
+                "HealthCheck": 0,
+                "ListenerId": "listener-qjm2tftd",
+                "Path": "/",
                 "RealServerSet": [
                     {
+                        "DownIPList": [],
+                        "RealServerFailoverRole": "",
+                        "RealServerIP": "2.5.73.1",
+                        "RealServerId": "rs-5y1674pn",
+                        "RealServerPort": 6363,
                         "RealServerStatus": 0,
-                        "RealServerPort": 0,
-                        "RealServerId": "xx",
-                        "RealServerFailoverRole": "xx",
-                        "DownIPList": [
-                            "xx"
-                        ],
-                        "RealServerWeight": 0,
-                        "RealServerIP": "xx"
+                        "RealServerWeight": 1
                     }
-                ]
+                ],
+                "RealServerType": "IP",
+                "RuleId": "rule-gsy1amjd",
+                "RuleStatus": 0,
+                "Scheduler": "rr",
+                "ServerNameIndication": "",
+                "ServerNameIndicationSwitch": "OFF"
             }
         ],
-        "RequestId": "xx"
+        "TotalCount": 1
     }
 }
 ```

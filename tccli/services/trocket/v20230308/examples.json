@@ -132,7 +132,7 @@
       {
         "document": "查询消费者详情",
         "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConsumerGroup\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rmq-72mo3a9o\",\n    \"ConsumerGroup\": \"group\"\n}",
-        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"ConsumeEnable\": true,\n        \"ConsumeMessageOrderly\": true,\n        \"ConsumeType\": \"\",\n        \"ConsumerLag\": 0,\n        \"ConsumerNum\": 0,\n        \"CreatedTime\": 1683613488000,\n        \"MaxRetryTimes\": 16,\n        \"Remark\": \"test\",\n        \"RequestId\": \"bc4ffab1-65cc-4ef6-9114-0de06c333b84\",\n        \"Tps\": 0\n    }\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"ConsumeEnable\": true,\n        \"ConsumeMessageOrderly\": false,\n        \"ConsumeType\": \"PUSH\",\n        \"ConsumerLag\": 1580,\n        \"ConsumerNum\": 2,\n        \"CreatedTime\": 1683613488000,\n        \"MaxRetryTimes\": 16,\n        \"Remark\": \"测试消费组\",\n        \"RequestId\": \"bc4ffab1-65cc-4ef6-9114-0de06c333b84\",\n        \"Tps\": 60\n    }\n}",
         "title": "查询消费组详情"
       }
     ],
@@ -172,7 +172,7 @@
       {
         "document": "查询RocketMQ 5.X 集群列表",
         "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceList\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 20\n}",
-        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"Data\": [\n            {\n                \"ExpiryTime\": 0,\n                \"GroupNum\": 10,\n                \"GroupNumLimit\": 500,\n                \"InstanceId\": \"rmq-72mo3a9o\",\n                \"InstanceName\": \"test_instance5x\",\n                \"InstanceStatus\": \"RUNNING\",\n                \"InstanceType\": \"EXPERIMENT\",\n                \"MaxMessageDelay\": 48,\n                \"MessageRetention\": 72,\n                \"PayMode\": \"POSTPAID\",\n                \"Remark\": \"5.X版本测试集群\",\n                \"ScaledTpsLimit\": 0,\n                \"SkuCode\": \"experiment_500\",\n                \"TagList\": [\n                    {\n                        \"TagKey\": \"test_tag_key\",\n                        \"TagValue\": \"test_tag_value\"\n                    }\n                ],\n                \"TopicNum\": 10,\n                \"TopicNumLimit\": 50,\n                \"TpsLimit\": 500,\n                \"Version\": \"5.0\"\n            }\n        ],\n        \"RequestId\": \"561a34ff-965b-4a2d-852e-973c0b2a6f01\",\n        \"TotalCount\": 1\n    }\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"Data\": [\n            {\n                \"ExpiryTime\": 1683601674000,\n                \"GroupNum\": 10,\n                \"GroupNumLimit\": 500,\n                \"InstanceId\": \"rmq-72mo3a9o\",\n                \"InstanceName\": \"test_instance5x\",\n                \"InstanceStatus\": \"RUNNING\",\n                \"InstanceType\": \"EXPERIMENT\",\n                \"MaxMessageDelay\": 48,\n                \"MessageRetention\": 72,\n                \"PayMode\": \"POSTPAID\",\n                \"Remark\": \"5.X版本测试集群\",\n                \"ScaledTpsLimit\": 0,\n                \"SkuCode\": \"experiment_500\",\n                \"TagList\": [\n                    {\n                        \"TagKey\": \"test_tag_key\",\n                        \"TagValue\": \"test_tag_value\"\n                    }\n                ],\n                \"TopicNum\": 10,\n                \"TopicNumLimit\": 50,\n                \"TpsLimit\": 500,\n                \"Version\": \"5.0\"\n            }\n        ],\n        \"RequestId\": \"561a34ff-965b-4a2d-852e-973c0b2a6f01\",\n        \"TotalCount\": 1\n    }\n}",
         "title": "查询集群列表"
       }
     ],
@@ -292,7 +292,7 @@
       {
         "document": "查询主题详情",
         "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTopic\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rmq-72mo3a9o\",\n    \"Topic\": \"test_topic\",\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
-        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"CreatedTime\": 1683601674000,\n        \"InstanceId\": \"rmq-72mo3a9o\",\n        \"LastUpdateTime\": 0,\n        \"Remark\": \"测试主题\",\n        \"RequestId\": \"f7f7ba8a-4335-4adb-9186-680b91502c42\",\n        \"SubscriptionCount\": 0,\n        \"SubscriptionData\": [],\n        \"Topic\": \"test_topic\",\n        \"TopicType\": \"NORMAL\"\n    }\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"CreatedTime\": 1683601674000,\n        \"InstanceId\": \"rmq-72mo3a9o\",\n        \"LastUpdateTime\": 1683601674000,\n        \"Remark\": \"测试主题\",\n        \"RequestId\": \"f7f7ba8a-4335-4adb-9186-680b91502c42\",\n        \"SubscriptionCount\": 0,\n        \"SubscriptionData\": [],\n        \"Topic\": \"test_topic\",\n        \"TopicType\": \"NORMAL\"\n    }\n}",
         "title": "查询主题详情"
       }
     ],
@@ -331,7 +331,7 @@
     "ModifyInstance": [
       {
         "document": "修改实例配置",
-        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rmq-72mo3a9o\",\n    \"Remark\": \"tests\",\n    \"MessageRetention\": 25\n}",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rmq-72mo3a9o\",\n    \"Remark\": \"测试修改消息保留时长\",\n    \"MessageRetention\": 25\n}",
         "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"becc23c2-b5e1-4df4-9df1-22ba8e5b20c3\"\n    }\n}",
         "title": "修改实例配置"
       }

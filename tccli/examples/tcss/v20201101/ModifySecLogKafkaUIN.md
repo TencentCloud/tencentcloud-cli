@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tcss ModifySecLogKafkaUIN --cli-unfold-argument  \
-    --DstUIN xxxx
+    --DstUIN 2684754534
 ```
 
 Output: 

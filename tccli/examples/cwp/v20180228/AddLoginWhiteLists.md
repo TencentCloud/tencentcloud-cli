@@ -8,8 +8,8 @@ Input:
 tccli cwp AddLoginWhiteLists --cli-unfold-argument  \
     --EventId 11234 \
     --ProcessType Id \
-    --HostLoginWhiteObj.UserName xx \
-    --HostLoginWhiteObj.Remark xx \
+    --HostLoginWhiteObj.UserName root \
+    --HostLoginWhiteObj.Remark 备注 \
     --HostLoginWhiteObj.Places.0.CityId 0 \
     --HostLoginWhiteObj.Places.0.CountryId 0 \
     --HostLoginWhiteObj.Places.0.ProvinceId 135 \
@@ -25,7 +25,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "4234234",
+        "RequestId": "be6f6eec-0825-4e67-ab9a-c8568bbf736c",
         "Error": {
             "Code": "InvalidParameter.RuleHostipErr",
             "Message": "无对应主机信息"

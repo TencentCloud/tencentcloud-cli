@@ -12,13 +12,13 @@ Output:
 {
     "Response": {
         "DealNames": [
-            "订单号xxxx"
+            "订单号no"
         ],
         "RequestId": "1bb6cbfb-572d-4f29-b6e0-017acd8659f0",
         "ResourceIds": [
             "资源ID"
         ],
-        "BigDealId": "大订单号xxx"
+        "BigDealId": "大订单号no"
     }
 }
 ```

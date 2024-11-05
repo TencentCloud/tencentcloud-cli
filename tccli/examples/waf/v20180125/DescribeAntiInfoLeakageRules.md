@@ -30,7 +30,7 @@ Output:
                 "Action": "0",
                 "Strategies": [
                     {
-                        "Content": "",
+                        "Content": "180080",
                         "Field": "information",
                         "CompareFunc": "contains"
                     }

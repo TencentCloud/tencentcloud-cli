@@ -20,36 +20,39 @@ Output:
                 "HealthyThreshold": 1,
                 "BindStatus": 1,
                 "SessionPersist": 1,
-                "RealServerType": "xx",
-                "Protocol": "xx",
+                "RealServerType": "IP",
+                "Protocol": "TCP",
                 "ConnectTimeout": 1,
                 "RealServerPort": 1,
                 "HealthCheck": 1,
-                "ListenerId": "xx",
+                "ListenerId": "listener-gkzl9e7t",
                 "UnhealthyThreshold": 1,
                 "ListenerStatus": 1,
-                "ListenerName": "xx",
-                "Scheduler": "xx",
+                "ListenerName": "test",
+                "Scheduler": "rr",
                 "ClientIPMethod": 1,
                 "FailoverSwitch": 1,
                 "RealServerSet": [
                     {
-                        "RealServerStatus": 0,
-                        "RealServerPort": 111,
-                        "RealServerId": "xx",
+                        "RealServerStatus": 1,
+                        "RealServerPort": 4800,
+                        "RealServerId": "rs-l694mxlf",
                         "DownIPList": [
-                            "11.11.11.11:111"
+                            "192.168.1.2:4800"
                         ],
+                        "RealServerFailoverRole": "",
                         "RealServerWeight": 1,
-                        "RealServerIP": "xx"
+                        "RealServerIP": "192.168.1.2"
                     }
                 ],
                 "CreateTime": 1,
                 "Port": 1,
-                "DelayLoop": 1
+                "DelayLoop": 1,
+                "ProxyId": "link-hwera8lq",
+                "GroupId": ""
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "dad2a717-3c7d-444d-8f98-0cca9c897ff3"
     }
 }
 ```

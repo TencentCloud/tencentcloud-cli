@@ -17,9 +17,9 @@ Output:
     "Response": {
         "NatFwEipList": [
             {
-                "Eip": "xxx",
-                "NatGatewayId": "nat-xxx",
-                "NatGatewayName": "xxx"
+                "Eip": "1.2.4.8",
+                "NatGatewayId": "nat-xufsn2da",
+                "NatGatewayName": "pro"
             }
         ],
         "RequestId": "3c140219-cfe9-470e-b241-907877d6fb03"

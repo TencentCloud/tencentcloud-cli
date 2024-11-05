@@ -101,9 +101,70 @@
           "output_required": true,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "base64编码的wav/mp3音频数据",
+          "example": "UklGRlR/AABXQVZFZm10IBAAAAABAAEAgD4AAAB9AAACABAAZGF0YSx9AAD+",
+          "member": "string",
+          "name": "Audio",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
+    },
+    "TTS": {
+      "document": "同传TTS请求参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回音频格式，可取值：wav，mp3，pcm",
+          "example": "wav",
+          "member": "string",
+          "name": "Codec",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "音色 ID，只包括标准音色（注，日文只有一个固定音色）。\n完整的音色 ID 列表请参见[音色列表](https://cloud.tencent.com/document/product/1073/92668)。",
+          "example": "0",
+          "member": "uint64",
+          "name": "VoiceType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "音量大小，范围[-10，10]，对应音量大小。默认为0，代表正常音量，值越大音量越高。",
+          "example": "1",
+          "member": "float",
+          "name": "Volume",
+          "required": false,
+          "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "语速，范围：[-2，6]，分别对应不同语速：\n\n- -2代表0.6倍\n- -1代表0.8倍\n- 0代表1.0倍（默认）\n- 1代表1.2倍\n- 2代表1.5倍\n- 6代表2.5倍\n\n如果需要更细化的语速，可以保留小数点后 2 位，例如0.5/1.25/2.81等。\n参数值与实际语速转换，可参考[代码示例](https://sdk-1300466766.cos.ap-shanghai.myqcloud.com/sample/speed_sample.tar.gz)",
+          "example": "1",
+          "member": "float",
+          "name": "Speed",
+          "required": false,
+          "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "音频采样率：\n\n- 16000：16k（默认）\n- 8000：8k",
+          "example": "16000",
+          "member": "uint64",
+          "name": "SampleRate",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "usage": "in"
     },
     "TongChuanDisplayRequest": {
       "document": "TongChuanDisplay请求参数结构体",
@@ -243,6 +304,15 @@
           "name": "Data",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "TTS播报控制参数\t",
+          "example": "无",
+          "member": "TTS",
+          "name": "TTS",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -342,6 +412,15 @@
           "name": "Data",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "TTS播报控制参数",
+          "example": "无",
+          "member": "TTS",
+          "name": "TTS",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"

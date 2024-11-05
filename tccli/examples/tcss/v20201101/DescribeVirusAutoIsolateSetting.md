@@ -1,6 +1,6 @@
 **Example 1: 查询木马自动隔离设置**
 
-
+查询木马自动隔离设置
 
 Input: 
 
@@ -13,7 +13,8 @@ Output:
     "Response": {
         "AutoIsolateSwitch": true,
         "IsKillProgress": true,
-        "RequestId": "29b37d86-f63d-43d1-b21a-640e82965198"
+        "UserAutoIsolateKillSwitch": true,
+        "RequestId": "F00A8503-6233-452E-913E-DAFE9******"
     }
 }
 ```

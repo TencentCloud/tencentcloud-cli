@@ -7,8 +7,8 @@ Input:
 ```
 tccli cwp SetLocalStorageItem --cli-unfold-argument  \
     --Expire 5 \
-    --Value xx \
-    --Key xx
+    --Value value \
+    --Key key
 ```
 
 Output: 

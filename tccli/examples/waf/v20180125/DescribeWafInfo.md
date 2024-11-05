@@ -6,8 +6,9 @@ Input:
 
 ```
 tccli waf DescribeWafInfo --cli-unfold-argument  \
-    --Params.0.AppId 251006578 \
-    --Params.0.LoadBalancerId lb-A8VF445
+    --Params.0.LoadBalancerId lb-14g9fdgm \
+    --Params.0.ListenerId lbl-01cby4ig \
+    --Params.0.DomainId waf-MyBQKIZe
 ```
 
 Output: 
@@ -17,15 +18,18 @@ Output:
         "HostList": [
             {
                 "LoadBalancer": {
-                    "LoadBalancerId": "A8VF445",
-                    "LoadBalancerName": "waftt_test",
-                    "ListenerId": "8rI9f73",
-                    "ListenerName": "test_listener44_name",
-                    "Vip": "203.195.240.4",
-                    "Vport": 80,
+                    "ListenerId": "lbl-01cby4ig",
+                    "ListenerName": "test-waf",
+                    "LoadBalancerId": "lb-14g9fdgm",
+                    "LoadBalancerName": "clbwaftesttest",
+                    "Protocol": "HTTP",
                     "Region": "gz",
-                    "Zone": "广州4区",
-                    "Protocol": "http"
+                    "Vip": "134.171.12.56",
+                    "Vport": 80,
+                    "Zone": "ap-guangzhou-4",
+                    "NumericalVpcId": 546282,
+                    "LoadBalancerType": "OPEN",
+                    "LoadBalancerDomain": ""
                 },
                 "Domain": "lsd.qcloudwaf.com",
                 "DomainId": "waf-MyBQKIZe",
@@ -33,7 +37,8 @@ Output:
                 "FlowMode": 0
             }
         ],
-        "RequestId": "4bcd4d73-f743-466f-a905-205bdd509bec"
+        "RequestId": "4bcd4d73-f743-466f-a905-205bdd509bec",
+        "Total": 1
     }
 }
 ```

@@ -7,7 +7,7 @@ Input:
 ```
 tccli waf DeleteAntiFakeUrl --cli-unfold-argument  \
     --Domain www.test.com \
-    --Id 123
+    --Id 1110112
 ```
 
 Output: 

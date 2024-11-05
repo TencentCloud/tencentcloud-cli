@@ -7,14 +7,14 @@ Input:
 ```
 tccli mmps CreateFlySecMiniAppScanTask --cli-unfold-argument  \
     --MiniAppTestPwd TestPwd \
-    --Mobile 13800138000 \
+    --Mobile 138XXXXXXXX \
     --Industry 电商 \
     --SurveyContent {"wx66e50f1e*******6f":{"1":["B"],"n":["A","B","D"]}} \
     --MiniAppID wx66e50f1e*******6f \
     --Mode 1 \
     --SalesPerson 王某 \
     --ScanVersion 0 \
-    --Email wechat@tencent.com \
+    --Email user****@tencent.com \
     --MiniAppTestAccount Test
 ```
 

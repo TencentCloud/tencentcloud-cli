@@ -1,4 +1,4 @@
-**Example 1: demo**
+**Example 1: 获取告警详细信息**
 
 
 
@@ -6,15 +6,17 @@ Input:
 
 ```
 tccli ssa DescribeSocAlertDetails --cli-unfold-argument  \
-    --AlertTimestamp xx \
-    --AlertId xx
+    --AlertTimestamp 1530287122 \
+    --AlertId 1
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Data": {},
+        "Data": {
+            "Detail": "1"
+        },
         "RequestId": "asd-asdf-asdf-asdf-asdsfdsdsdsdsd"
     }
 }

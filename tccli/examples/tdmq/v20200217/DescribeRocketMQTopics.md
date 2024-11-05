@@ -6,10 +6,11 @@ Input:
 
 ```
 tccli tdmq DescribeRocketMQTopics --cli-unfold-argument  \
-    --Offset 0 \
-    --Limit 10 \
+    --Offset 1 \
+    --Limit 1 \
     --ClusterId rocketmq-2p9vx3ax9jxg \
-    --NamespaceId example
+    --NamespaceId test_namespace \
+    --FilterGroup test_group
 ```
 
 Output: 
@@ -20,10 +21,10 @@ Output:
         "TotalCount": 1,
         "Topics": [
             {
-                "Name": "example-topic",
+                "Name": "test_topic",
                 "Type": "Normal",
-                "GroupNum": 0,
-                "Remark": "modified",
+                "GroupNum": 1,
+                "Remark": "测试主题",
                 "PartitionNum": 3,
                 "CreateTime": 1621308465000,
                 "UpdateTime": 1621308657000

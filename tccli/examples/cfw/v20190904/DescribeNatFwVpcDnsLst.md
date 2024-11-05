@@ -19,11 +19,14 @@ Output:
             {
                 "SwitchStatus": 0,
                 "NatInsId": "cfwnat-f3250045",
+                "NatInsName": "hello",
                 "DNSEip": "121.5.27.250",
                 "VpcIpv4Cidr": "10.115.0.0/16",
                 "FwMode": 1,
-                "VpcName": "wy",
-                "VpcId": "vpc-ilbrv877"
+                "VpcName": "hello",
+                "VpcId": "vpc-ilbrv877",
+                "ProtectedStatus": 1,
+                "SupportDNSFW": 1
             }
         ],
         "Total": 1,

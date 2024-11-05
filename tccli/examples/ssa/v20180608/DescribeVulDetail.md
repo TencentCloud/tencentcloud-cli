@@ -13,29 +13,29 @@ Output:
 ```
 {
     "Response": {
-        "Source": "xx",
-        "Cnnvd": "xx",
-        "ImpactAsset": "xx",
+        "Source": "source",
+        "Cnnvd": "NVD-2003-**",
+        "ImpactAsset": "1",
         "IsAssetDeleted": false,
-        "Cvss": "xx",
+        "Cvss": "6.8",
         "Status": 1,
-        "UpdateTime": "xx",
-        "Cnvd": "xx",
+        "UpdateTime": "2020-10-10 12:12:12",
+        "Cnvd": "CNVD-2003-**",
         "SsaAssetCategory": 0,
-        "Desc": "xx",
-        "CvssScore": "xx",
-        "Name": "xx",
+        "Desc": "description info",
+        "CvssScore": "6.8",
+        "Name": "vul name",
         "VulType": 0,
         "Level": 2,
-        "ImpactAssetName": "xx",
-        "VulUrl": "xx",
-        "VulPath": "xx",
-        "RequestId": "xx",
-        "Cve": "xx",
-        "ReleaseTime": "xx",
-        "Repair": "xx",
-        "Reference": "xx",
-        "SubVulType": "xx"
+        "ImpactAssetName": "asset name",
+        "VulUrl": "http://excample.com",
+        "VulPath": "/usr/bin",
+        "RequestId": "f9184c15-9721-456d-8ca0-4263967b5ead",
+        "Cve": "CVE-2003",
+        "ReleaseTime": "2020-10-10 12:12:12",
+        "Repair": "repair info",
+        "Reference": "reference info",
+        "SubVulType": "1"
     }
 }
 ```

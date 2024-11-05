@@ -7,8 +7,8 @@ Input:
 ```
 tccli waf ModifyInstanceName --cli-unfold-argument  \
     --InstanceName test1.qcloud.com \
-    --InstanceID aaaaa \
-    --Edition aaaaa
+    --InstanceID waf_ihd3amfdi3ad3q2 \
+    --Edition clb-waf
 ```
 
 Output: 
@@ -16,7 +16,7 @@ Output:
 {
     "Response": {
         "ModifyCode": 0,
-        "RequestId": "abc"
+        "RequestId": "304cb36f-772a-4fdb-9b25-212d8fe5a553"
     }
 }
 ```

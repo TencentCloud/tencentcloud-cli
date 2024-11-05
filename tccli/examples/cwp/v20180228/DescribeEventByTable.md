@@ -16,7 +16,7 @@ Output:
     "Response": {
         "Type": "bash",
         "Value": "value",
-        "RequestId": "xxxxxxxx-1234-5678-9101-yyyyyyyyyy"
+        "RequestId": "acdd5474-6360-4fd4-bfc7-843162cb8116"
     }
 }
 ```

@@ -7,9 +7,9 @@ Input:
 ```
 tccli waf ModifyAntiFakeUrl --cli-unfold-argument  \
     --Domain www.test.com \
-    --Name test \
+    --Name rulename \
     --Uri http://zanyang.qcloudwaf.com/index.html \
-    --Id 123
+    --Id 11011
 ```
 
 Output: 

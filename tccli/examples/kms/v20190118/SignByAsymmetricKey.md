@@ -7,17 +7,17 @@ Input:
 ```
 tccli kms SignByAsymmetricKey --cli-unfold-argument  \
     --Algorithm SM2DSA \
-    --Message Zsfw9GLu7dnR8tRr3BDk4kFnxIdc8veiKX2gK49LqOA%3D \
-    --KeyId 6cdf26d1-44ff-11eb-841c-5254006d0810 \
-    --MessageType DIGEST
+    --Message dGVzdAo= \
+    --KeyId d79e97e5-69d1-11ef-bc87-02ac442a5a1f \
+    --MessageType RAW
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "e86d6131-2830-4e1c-9d03-d421affd646c",
-        "Signature": "MEUCICr/JCV52BqGvI0iYxdZ1eL8zzJjx39mWNv2ZWdLOMvRAiEApO6os3Wj0Tg302fbTBr02IxHO1aCr0Zr41t4hi6yTG8="
+        "RequestId": "f60b4087-ab02-4c5b-bf50-956e591ccbc4",
+        "Signature": "MEYCIQDFunV6ujrE9k4IMOEeH4J0uwENYSf1JH2DI01qlFWKkwIhAMiv6S2s3VsLtMF/+4rDEiF3IyE3zfRGq5B+k7hHfGoQ"
     }
 }
 ```

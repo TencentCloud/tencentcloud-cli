@@ -8,7 +8,7 @@ Input:
 tccli waf DescribeTsResource --cli-unfold-argument  \
     --Limit 1 \
     --Filters.0.Values 010000000 \
-    --Filters.0.Name xx \
+    --Filters.0.Name v1 \
     --Filters.0.ExactMatch False \
     --Offset 1
 ```
@@ -21,17 +21,17 @@ Output:
         "List": [
             {
                 "Status": 1,
-                "Ip": "xx",
-                "Auth": "xx",
+                "Ip": "1.1.1.1",
+                "Auth": "skey-auth",
                 "Id": 1,
-                "SubRegion": "xx",
+                "SubRegion": "gz-sub-1",
                 "ModifyTime": "2020-09-22T00:00:00+00:00",
                 "Port": 1,
-                "Type": "xx",
+                "Type": "pub",
                 "CreateTime": "2020-09-22T00:00:00+00:00"
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "uuid-wwe-qqji-38iw"
     }
 }
 ```

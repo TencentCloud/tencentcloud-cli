@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli cfw CreateNatFwInstance --cli-unfold-argument  \
-    --Name test \
+    --Name NAT防火墙 \
     --Width 20 \
     --Mode 1 \
     --CrossAZone 1 \
-    --NewModeItems.VpcList vpc-xxx \
-    --NewModeItems.Eips xx.xx.xx.xx \
+    --NewModeItems.VpcList vpc-a1gfaf13 \
+    --NewModeItems.Eips 1.1.1.1 \
     --NewModeItems.AddCount 1 \
     --Zone ap-shanghai-4 \
     --ZoneBak ap-shanghai-3
@@ -21,7 +21,7 @@ Output:
 ```
 {
     "Response": {
-        "CfwInsId": "xxx",
+        "CfwInsId": "cfwnat-3c140219",
         "RequestId": "3c140219-cfe9-470e-b241-907877d6fb03"
     }
 }
@@ -35,11 +35,11 @@ Input:
 
 ```
 tccli cfw CreateNatFwInstance --cli-unfold-argument  \
-    --Name test \
+    --Name NAT防火墙 \
     --Width 20 \
     --Mode 0 \
     --CrossAZone 1 \
-    --NatGwList nat-xxx nat-xxx \
+    --NatGwList nat-da1dalx nat-1dam1sd \
     --Zone ap-shanghai-4 \
     --ZoneBak ap-shanghai-3
 ```
@@ -48,7 +48,7 @@ Output:
 ```
 {
     "Response": {
-        "CfwInsId": "xxx",
+        "CfwInsId": "cfwnat-12dad1ds",
         "RequestId": "3c140219-cfe9-470e-b241-907877d6fb03"
     }
 }

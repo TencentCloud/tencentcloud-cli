@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli waf DescribeUserSignatureRule --cli-unfold-argument  \
-    --Domain  \
+    --Domain qcloudwaf.com \
     --Offset 1 \
     --Limit 20 \
     --Order asc \
@@ -23,21 +23,21 @@ Output:
         "Total": 1,
         "Rules": [
             {
-                "ID": "abc",
+                "ID": "0100000",
                 "Status": 0,
-                "MainClassID": "abc",
-                "SubClassID": "abc",
-                "CveID": "abc",
+                "MainClassID": "02000000",
+                "SubClassID": "03000000",
+                "CveID": "cve-11111",
                 "CreateTime": "2020-09-22T00:00:00+00:00",
                 "ModifyTime": "2020-09-22T00:00:00+00:00",
-                "MainClassName": "abc",
-                "SubClassName": "abc",
-                "Description": "abc",
+                "MainClassName": "xss",
+                "SubClassName": "xss-1",
+                "Description": "xss",
                 "Reason": 0,
                 "RiskLevel": 0
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "xxx-iiiiii"
     }
 }
 ```

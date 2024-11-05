@@ -24,12 +24,12 @@ Output:
                 "ImageDigest": "sha256:1319b1eaa0b7bcebae63af321fa67559b9517e8494060403d083bb3508fe52c8",
                 "RegistryType": "ccr",
                 "ImageRepoAddress": "ccr.ccs.tencentyun.com/yunding/luping:v1",
-                "InstanceId": "",
-                "InstanceName": "",
-                "Namespace": "",
+                "InstanceId": "ins-apqv42***",
+                "InstanceName": "InstanceName",
+                "Namespace": "tcss",
                 "ImageName": "yunding/luping",
                 "ImageTag": "v1",
-                "Force": ""
+                "Force": "Force"
             }
         ],
         "Id": [

@@ -18,7 +18,7 @@ Output:
                 "Id": 1,
                 "Type": "XSS",
                 "Level": "宽松",
-                "Description": "test",
+                "Description": "description",
                 "CVE": "CVE-2020-14568",
                 "Status": 0,
                 "ModifyTime": "2020-07-28 00:00:00",

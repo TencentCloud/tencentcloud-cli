@@ -6,17 +6,16 @@ Input:
 
 ```
 tccli tcss ModifyVirusScanSetting --cli-unfold-argument  \
-    --BeginScanAt xx \
-    --EnableScan True \
-    --ScanPathType 1 \
-    --ScanRangeType 1 \
-    --ScanPathAll True \
-    --Timeout 1 \
-    --ScanIds xx \
-    --ScanPath xx \
-    --ScanRangeAll True \
+    --Timeout 5 \
+    --BeginScanAt 10:59:00 \
     --Cycle 1 \
-    --ScanPathMode SCAN_PATH_ALL
+    --ScanPath /tmp \
+    --ScanPathAll False \
+    --ScanRangeAll False \
+    --EnableScan True \
+    --ScanIds ad297b24a4f818d9da49c9bec10d54c179b6751fc362802b077f710b3638e0f0 \
+    --ScanPathType 0 \
+    --ScanRangeType 0
 ```
 
 Output: 

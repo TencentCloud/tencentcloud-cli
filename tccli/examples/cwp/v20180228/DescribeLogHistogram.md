@@ -8,7 +8,7 @@ Input:
 tccli cwp DescribeLogHistogram --cli-unfold-argument  \
     --EndTime 1660533600000 \
     --Interval 500000 \
-    --QueryString  \
+    --QueryString item_id :ins-0jsx**** \
     --StartTime 1660532400000
 ```
 

@@ -188,6 +188,13 @@
       "name": "查询代金券额度池",
       "output": "QueryVoucherPoolResponse",
       "status": "online"
+    },
+    "SendVerifyCode": {
+      "document": "发送注册账号验证码",
+      "input": "SendVerifyCodeRequest",
+      "name": "发送账号注册验证码",
+      "output": "SendVerifyCodeResponse",
+      "status": "online"
     }
   },
   "metadata": {
@@ -900,7 +907,7 @@
         },
         {
           "disabled": false,
-          "document": "客户手机号码。需要调用方保证手机号码的有效性和正确性。\n长度限制：[1,32]。支持全球手机号。如18888888888",
+          "document": "客户手机号码。需要调用方保证手机号码的有效性和正确性。长度限制：[1,32]。支持全球手机号。2024年10月25日开始系统将对您填写的手机号进行绑定上限验证，每个手机号最多能绑定5个账户。",
           "example": "18888888888",
           "member": "string",
           "name": "PhoneNum",
@@ -931,6 +938,15 @@
           "example": "**********",
           "member": "string",
           "name": "Extended",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "验证码。2024年10月25日 新增参数，用于验证您提供的手机号码的有效性。 首次请求接口时可以传入空值，接口将通过短信的方式发送一个6位数字的验证码至您传入的手机号码，您收到后需和其他参数一起再次传入。",
+          "example": "123456",
+          "member": "string",
+          "name": "VerifyCode",
           "required": false,
           "type": "string"
         }
@@ -3096,6 +3112,42 @@
         }
       ],
       "usage": "out"
+    },
+    "SendVerifyCodeRequest": {
+      "document": "SendVerifyCode请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "国家编码",
+          "example": "852",
+          "member": "string",
+          "name": "CountryCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "手机号",
+          "example": "18888888888",
+          "member": "string",
+          "name": "PhoneNum",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SendVerifyCodeResponse": {
+      "document": "SendVerifyCode返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "SummaryDetails": {
       "document": "账单维度详细汇总",

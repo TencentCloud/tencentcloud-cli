@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tcss ModifyK8sApiAbnormalRuleStatus --cli-unfold-argument  \
-    --RuleID xxx \
+    --RuleID dsfsdfee2f4f \
     --Status True
 ```
 

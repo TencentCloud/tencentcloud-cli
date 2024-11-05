@@ -6,29 +6,30 @@ Input:
 
 ```
 tccli waf ModifyHost --cli-unfold-argument  \
-    --InstanceID aabbcc \
-    --Host.Status 1 \
-    --Host.Engine 1 \
-    --Host.Domain 1 \
-    --Host.DomainId 1 \
-    --Host.LoadBalancerSet.0.Protocol 1 \
-    --Host.LoadBalancerSet.0.Zone 1 \
-    --Host.LoadBalancerSet.0.Region gz \
-    --Host.LoadBalancerSet.0.LoadBalancerId 1 \
-    --Host.LoadBalancerSet.0.ListenerId 1 \
-    --Host.LoadBalancerSet.0.Vip 1 \
-    --Host.LoadBalancerSet.0.ListenerName 1 \
-    --Host.LoadBalancerSet.0.LoadBalancerName 1 \
-    --Host.LoadBalancerSet.0.Vport 1 \
-    --Host.Level 1 \
-    --Host.MainDomain snv.vom \
-    --Host.Region cd \
-    --Host.FlowMode 1 \
-    --Host.State 1 \
-    --Host.ClsStatus 1 \
-    --Host.IsCdn 1 \
+    --Host.AlbType clb \
+    --Host.DomainId waf-Lt6LGSlM \
+    --Host.Domain txwafstar.qcloudwaf.com \
+    --Host.MainDomain qlcloudwaf.com \
     --Host.Mode 1 \
-    --Host.Edition clb-waf
+    --Host.Status 1 \
+    --Host.State 1 \
+    --Host.Engine 1 \
+    --Host.IsCdn 1 \
+    --Host.ClsStatus 1 \
+    --Host.Edition clb-waf \
+    --Host.FlowMode 1 \
+    --Host.LoadBalancerSet.0.LoadBalancerId waf-Lt6LGSlM \
+    --Host.LoadBalancerSet.0.Protocol HTTP \
+    --Host.LoadBalancerSet.0.NumericalVpcId 1140321 \
+    --Host.LoadBalancerSet.0.LoadBalancerType OPEN \
+    --Host.LoadBalancerSet.0.Zone ap-chengdu-2 \
+    --Host.LoadBalancerSet.0.LoadBalancerName clbtest \
+    --Host.LoadBalancerSet.0.ListenerId lbl-2k0gmnv1 \
+    --Host.LoadBalancerSet.0.ListenerName http-443 \
+    --Host.LoadBalancerSet.0.Vip 127.0.0.1 \
+    --Host.LoadBalancerSet.0.Vport 443 \
+    --Host.LoadBalancerSet.0.Region cd \
+    --Host.Region cd
 ```
 
 Output: 

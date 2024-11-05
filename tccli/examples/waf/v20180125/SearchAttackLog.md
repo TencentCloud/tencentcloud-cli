@@ -6,12 +6,14 @@ Input:
 
 ```
 tccli waf SearchAttackLog --cli-unfold-argument  \
-    --StartTime '2020-09-22 00:00:00' \
-    --EndTime '2020-09-22 00:00:00' \
     --Domain all \
-    --Context  \
-    --QueryString method:GET \
-    --Sort desc
+    --StartTime 2024-10-28 20:56:07 \
+    --EndTime 2024-10-29 20:56:07 \
+    --QueryString bot:1 \
+    --Context cont \
+    --Sort desc \
+    --Count 10 \
+    --Page 0
 ```
 
 Output: 
@@ -19,18 +21,18 @@ Output:
 {
     "Response": {
         "Count": 1,
-        "Context": "abc",
+        "Context": "cont",
+        "ListOver": false,
+        "SqlFlag": false,
         "Data": [
             {
-                "Content": "abc",
-                "FileName": "abc",
-                "Source": "abc",
+                "Content": "{\"action\":1,\"args_name\":\"HTTP Header\"}",
+                "FileName": "name",
+                "Source": "sre",
                 "TimeStamp": "2020-09-22 00:00:00"
             }
         ],
-        "ListOver": true,
-        "SqlFlag": true,
-        "RequestId": "abc"
+        "RequestId": "ead32d5d-a9ac-496f-b8e3-d3a92f1fb1ce"
     }
 }
 ```

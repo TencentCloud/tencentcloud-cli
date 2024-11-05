@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli waf DescribeAntiFakeRules --cli-unfold-argument  \
-    --Domain abc \
+    --Domain www.testwaf.com \
     --Offset 1 \
     --Limit 1 \
-    --Filters.0.Name abc \
-    --Filters.0.Values abc \
+    --Filters.0.Name RuleID \
+    --Filters.0.Values 1102111 \
     --Filters.0.ExactMatch True \
-    --Order abc \
-    --By abc
+    --Order desc \
+    --By ts
 ```
 
 Output: 

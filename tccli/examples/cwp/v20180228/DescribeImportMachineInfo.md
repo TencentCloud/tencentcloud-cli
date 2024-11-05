@@ -17,22 +17,41 @@ Output:
     "Response": {
         "EffectiveMachineInfoList": [
             {
-                "MachineName": "机器名称",
-                "MachinePublicIp": "0.0.0.0",
-                "MachinePrivateIp": "0.0.0.0",
-                "MachineTag": null,
-                "CloudTags": null,
-                "Quuid": "310eb617-ed1f-4dbb-a3df-xxxxxxx",
-                "Uuid": "310eb617-ed1f-4dbb-a3df-xxxxxxx",
-                "KernelVersion": "4.18.0-80.el8.x86_64",
+                "MachineName": "tke-np-ol06goby-worker",
+                "MachinePublicIp": "10.0.1.92",
+                "MachinePrivateIp": "172.17.2.23",
+                "MachineTag": [
+                    {
+                        "Rid": 10,
+                        "Name": "dev",
+                        "TagId": 10021
+                    }
+                ],
+                "CloudTags": [
+                    {
+                        "TagKey": "cwp",
+                        "TagValue": "dev"
+                    }
+                ],
+                "Quuid": "a9fe0359-04d9-417f-ab6d-4941891d6c4b",
+                "Uuid": "a9fe0359-04d9-417f-ab6d-4941891d6c4b",
+                "KernelVersion": "5.4.241-19-0017.1_plus",
                 "MachineStatus": "OFFLINE",
-                "LicenseOrder": null,
-                "VulNum": 508,
-                "InstanceID": "ins-xxxxxxxx"
+                "LicenseOrder": {
+                    "LicenseId": 136621,
+                    "LicenseType": 2,
+                    "SourceType": 1,
+                    "ResourceId": "white_883011a2fb7a2ce8f032025ec0437f52",
+                    "Status": 1
+                },
+                "VulNum": 0,
+                "InstanceID": "eks-h847trlg"
             }
         ],
-        "InvalidMachineList": [],
-        "RequestId": "fa0c6429-2e91-498b-8dce-fc1487b7829e"
+        "InvalidMachineList": [
+            "a9fe0359-04d9-417f-ab6d-****"
+        ],
+        "RequestId": "633204c8-383a-4dbb-940b-2e92d0674529"
     }
 }
 ```

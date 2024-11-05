@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cwp DescribeAssetWebAppCount --cli-unfold-argument  \
-    --Name xx
+    --Name host1
 ```
 
 Output: 
@@ -15,12 +15,13 @@ Output:
     "Response": {
         "WebApps": [
             {
-                "Value": 0,
-                "Key": "xx",
-                "Desc": "xx"
+                "Key": "php",
+                "Value": 1,
+                "Desc": "php v1",
+                "NewCount": 0
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "07a92740-5e54-4ea6-9320-c6fc3f3a1121"
     }
 }
 ```

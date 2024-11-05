@@ -8,8 +8,8 @@ Input:
 tccli waf DescribeOpAttackWhiteRuleNew --cli-unfold-argument  \
     --Offset 1 \
     --Limit 1 \
-    --Order xx \
-    --By xx
+    --Order desc \
+    --By CreateTime
 ```
 
 Output: 
@@ -20,30 +20,18 @@ Output:
         "List": [
             {
                 "Status": 0,
-                "OpDomain": "xx",
-                "MatchField": "xx",
-                "MatchMethod": "xx",
-                "MatchContent": "xx",
-                "OpAppId": "xx",
-                "SignatureId": "xx",
-                "ModifyTime": "2020-09-22T00:00:00+00:00",
-                "WhiteRuleId": 1,
-                "CreateTime": "2020-09-22T00:00:00+00:00"
-            },
-            {
-                "Status": 1,
-                "OpDomain": "xx",
-                "MatchField": "xx",
-                "MatchMethod": "xx",
-                "MatchContent": "xx",
-                "OpAppId": "xx",
-                "SignatureId": "xx",
+                "OpDomain": "www.test.com",
+                "MatchField": "URL",
+                "MatchMethod": "EXACT",
+                "MatchContent": "",
+                "OpAppId": "400000123",
+                "SignatureId": "10000001",
                 "ModifyTime": "2020-09-22T00:00:00+00:00",
                 "WhiteRuleId": 1,
                 "CreateTime": "2020-09-22T00:00:00+00:00"
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "48636a66-6b11-49c6-6603-b8f0c1428516"
     }
 }
 ```

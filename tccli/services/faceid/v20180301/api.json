@@ -743,6 +743,15 @@
           "name": "Extra",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "此接口用于控制动作序列，动作类型如下：\n“blink”\n“mouth”\n“nod”\n“shake”\n可以选择四个中的1-2个动作。\n单动作示例：“blink”\n多动作示例：“blink,mouth”.\n默认值为blink\n仅当SecurityLevel为2或4时传入此参数不同动作类型生效；否则接口报错。",
+          "example": "blink",
+          "member": "string",
+          "name": "ActionList",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -5049,6 +5058,15 @@
           "name": "Extra",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "此接口用于控制动作序列，动作类型如下：\n“blink”\n“mouth”\n“nod”\n“shake”\n可以选择四个中的1-2个动作。\n单动作示例：“blink”\n多动作示例：“blink,mouth”.\n默认值为blink\n仅当SecureLevel为2或4时传入此参数不同动作类型生效；否则接口报错。",
+          "example": "blink",
+          "member": "string",
+          "name": "ActionList",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -5062,6 +5080,7 @@
           "example": "0749c982-499e-4d1d-9e6a-103390933016",
           "member": "string",
           "name": "SdkToken",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10260,6 +10279,15 @@
           "name": "AutoDowngrade",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "此接口用于控制动作序列，动作类型如下\n“blink”\n“mouth”\n“nod”\n“shake”\n可以选择四个中的1-2个动作。\n单动作示例：“blink”\n多动作示例：“blink,mouth”.\n默认值为blink\n仅当SecurityLevel为2、4、5时传入此参数不同动作类型生效；否则接口报错。",
+          "example": "blink",
+          "member": "string",
+          "name": "ActionList",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"

@@ -11,10 +11,10 @@ Output:
 ```
 {
     "Response": {
-        "AssetSyncLastTime": "abc",
-        "TaskStatus": "abc",
-        "TaskProcess": 0,
-        "RequestId": "abc"
+        "AssetSyncLastTime": "2024-10-30 11:48:49",
+        "TaskStatus": "PROCESSED",
+        "TaskProcess": 10,
+        "RequestId": "c826b9fa-68b5-4603-bf25-a5eb918846666"
     }
 }
 ```

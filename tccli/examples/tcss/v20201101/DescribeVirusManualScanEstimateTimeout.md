@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tcss DescribeVirusManualScanEstimateTimeout --cli-unfold-argument  \
-    --ScanIds xx \
+    --ScanIds image-id \
     --ScanRangeAll True \
     --ScanRangeType 1
 ```

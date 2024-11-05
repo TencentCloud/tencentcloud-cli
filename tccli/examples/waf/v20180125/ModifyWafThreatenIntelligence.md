@@ -7,7 +7,7 @@ Input:
 ```
 tccli waf ModifyWafThreatenIntelligence --cli-unfold-argument  \
     --WafThreatenIntelligenceDetails.DefenseStatus 0 \
-    --WafThreatenIntelligenceDetails.Tags abc
+    --WafThreatenIntelligenceDetails.Tags high-risk
 ```
 
 Output: 
@@ -18,10 +18,10 @@ Output:
             "DefenseStatus": 0,
             "LastUpdateTime": "2020-09-22T00:00:00+00:00",
             "Tags": [
-                "abc"
+                "high-risk"
             ]
         },
-        "RequestId": "cdf"
+        "RequestId": "req-id-2133"
     }
 }
 ```

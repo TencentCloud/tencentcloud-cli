@@ -15,23 +15,27 @@ Output:
     "Response": {
         "RegionSet": [
             {
+                "RegionName": "华南地区（广州）",
                 "ZoneSet": [
                     {
-                        "ZoneName": "xx"
-                    }
-                ],
-                "RegionName": "xx"
-            },
-            {
-                "ZoneSet": [
+                        "ZoneName": "广州二区"
+                    },
                     {
-                        "ZoneName": "xx"
+                        "ZoneName": "广州三区"
+                    },
+                    {
+                        "ZoneName": "广州四区"
+                    },
+                    {
+                        "ZoneName": "广州六区"
+                    },
+                    {
+                        "ZoneName": "广州七区"
                     }
-                ],
-                "RegionName": "xx"
+                ]
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "dd2d8482-b462-4260-a9df-2f9e92abd72b"
     }
 }
 ```

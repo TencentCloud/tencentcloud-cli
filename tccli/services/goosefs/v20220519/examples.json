@@ -32,6 +32,14 @@
         "title": "批量删除客户端节点"
       }
     ],
+    "BuildCvmResource": [
+      {
+        "document": "创建预留资源",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BuildCvmResource\n<公共请求参数>\n\n{\n    \"OwnerUin\": 3472213910,\n    \"CvmType\": \"S5.2XLARGE16\",\n    \"CvmCount\": 3,\n    \"BuildZone\": \"ap-nanjing-1\",\n    \"NodeType\": 2\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"85b8b7a3-5ca5-40e6-b051-dcd5a836a1ed\"\n    }\n}",
+        "title": "创建预留资源"
+      }
+    ],
     "CreateDataRepositoryTask": [
       {
         "document": "创建上传文件系统数据到存储桶任务",
@@ -96,6 +104,14 @@
         "title": "查询集群角色列表"
       }
     ],
+    "DescribeCvmResource": [
+      {
+        "document": "查询预留列表",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCvmResource\n<公共请求参数>\n\n{\n    \"OwnerUin\": 3472213910\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fce51a31-20af-4c47-a388-daf868a4a0f0\",\n        \"ResourceInstanceList\": [\n            {\n                \"BuildTime\": \"2024-09-12T20:05:49+08:00\",\n                \"InstanceId\": \"ins-8dfjsthe\",\n                \"InstanceType\": \"S5.2XLARGE16\",\n                \"NodeType\": \"owner_cluster_nsd_node\",\n                \"OwnerUin\": 3472213910,\n                \"Region\": \"ap-nanjing\",\n                \"Zone\": \"ap-nanjing-1\"\n            },\n            {\n                \"BuildTime\": \"2024-09-12T20:05:59+08:00\",\n                \"InstanceId\": \"ins-cuase21u\",\n                \"InstanceType\": \"S5.2XLARGE16\",\n                \"NodeType\": \"owner_cluster_nsd_node\",\n                \"OwnerUin\": 3472213910,\n                \"Region\": \"ap-nanjing\",\n                \"Zone\": \"ap-nanjing-1\"\n            },\n            {\n                \"BuildTime\": \"2024-09-12T20:05:49+08:00\",\n                \"InstanceId\": \"ins-gzy36j64\",\n                \"InstanceType\": \"S5.2XLARGE16\",\n                \"NodeType\": \"owner_cluster_nsd_node\",\n                \"OwnerUin\": 3472213910,\n                \"Region\": \"ap-nanjing\",\n                \"Zone\": \"ap-nanjing-1\"\n            }\n        ],\n        \"TotalCount\": 3\n    }\n}",
+        "title": "查询预留列表"
+      }
+    ],
     "DescribeDataRepositoryTaskStatus": [
       {
         "document": "创建数据流通任务后, 获取任务的状态",
@@ -136,6 +152,14 @@
         "title": "扩展文件系统容量"
       }
     ],
+    "MarkCvmResource": [
+      {
+        "document": "更换备份资源所属uin",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: MarkCvmResource\n<公共请求参数>\n\n{\n    \"InstanceIds\": [\n        \"ins-90vfhebq\",\n        \"ins-gwya5yg0\",\n        \"ins-1zsltx2e\"\n    ],\n    \"OwnerUin\": 100026787145\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6dbd7fbf-e0e2-48b9-b5f8-6d013d861f6d\"\n    }\n}",
+        "title": "更换备份资源所属uin"
+      }
+    ],
     "ModifyDataRepositoryBandwidth": [
       {
         "document": "修改数据流动带宽",
@@ -158,6 +182,14 @@
         "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryDataRepositoryBandwidth\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"x_c60_123456\"\n}",
         "output": "{\n    \"Response\": {\n        \"Bandwidth\": 600,\n        \"MinBandwidth\": 0,\n        \"BandwidthStatus\": 1,\n        \"RequestId\": \"b3caa32f-5e39-4360-91e4-5724369b78a6\"\n    }\n}",
         "title": "查询数据流动带宽"
+      }
+    ],
+    "TerminateCvmResource": [
+      {
+        "document": "退还备份资源",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TerminateCvmResource\n<公共请求参数>\n\n{\n    \"InstanceIds\": [\n        \"ins-90vfhebq\",\n        \"ins-gwya5yg0\",\n        \"ins-1zsltx2e\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c579ea0b-d04f-4cc0-a6e2-fc6bad036017\"\n    }\n}",
+        "title": "退还备份资源"
       }
     ]
   },

@@ -6,25 +6,19 @@ Input:
 
 ```
 tccli ccc CreateSipTrunk --cli-unfold-argument  \
-    --SipTrunk.Id 0 \
-    --SipTrunk.Uin xx \
-    --SipTrunk.AppId xx \
-    --SipTrunk.Mode xx \
-    --SipTrunk.CheckHealth True \
-    --SipTrunk.ProviderId 0 \
-    --SipTrunk.RegisterUserName xx \
-    --SipTrunk.RegisterPassword xx \
-    --SipTrunk.RegisterServer xx \
-    --SipTrunk.RegisterServerPort 0 \
-    --SipTrunk.RegisterOutboundProxy xx \
+    --SipTrunk.InboundCalleeField TO \
+    --SipTrunk.InboundCalleeFormat NUMBER \
+    --SipTrunk.Mode REGISTER \
+    --SipTrunk.Name 11 \
+    --SipTrunk.OutboundCallerFormat NUMBER \
+    --SipTrunk.RegisterExpires 3600 \
+    --SipTrunk.RegisterOutboundProxy  \
     --SipTrunk.RegisterOutboundProxyPort 0 \
-    --SipTrunk.RegisterProto xx \
-    --SipTrunk.RegisterFullName xx \
-    --SipTrunk.RegisterExpires 0 \
-    --SipTrunk.InboundCalleeFormat xx \
-    --SipTrunk.InboundCalleeField xx \
-    --SipTrunk.OutboundCallerFormat xx \
-    --SipTrunk.State 0
+    --SipTrunk.RegisterPassword  \
+    --SipTrunk.RegisterProto UDP \
+    --SipTrunk.RegisterServer  \
+    --SipTrunk.RegisterServerPort 5060 \
+    --SipTrunk.RegisterUserName 
 ```
 
 Output: 

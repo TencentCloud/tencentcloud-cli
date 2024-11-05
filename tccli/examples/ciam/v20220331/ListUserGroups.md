@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli ciam ListUserGroups --cli-unfold-argument  \
-    --UserStoreId xx \
-    --Pageable.PageNumber 0 \
-    --Pageable.PageSize 0 \
-    --Filters.0.Values xx \
-    --Filters.0.Key xx \
+    --UserStoreId 6cd22e51****************f6f7cb81 \
+    --Pageable.PageSize 10 \
+    --Pageable.PageNumber 5 \
+    --Filters.0.Key condition \
+    --Filters.0.Values 1 \
     --Filters.0.Logic True
 ```
 
@@ -20,19 +20,21 @@ Output:
     "Response": {
         "Content": [
             {
-                "UserStoreId": "xx",
-                "DisplayName": "xx",
-                "Description": "xx",
-                "UserGroupId": "xx",
-                "TenantId": "xx"
+                "UserGroupId": "6cd22e51****************f6f7cb81",
+                "DisplayName": "用户组1",
+                "Description": "包含了一组用户",
+                "UserStoreId": "2c3aca3b****************a7efe88e",
+                "TenantId": "tenantId",
+                "CreatedDate": 1651073285427,
+                "LastModifyDate": 1651073285306
             }
         ],
-        "Total": 0,
+        "Total": 100,
         "Pageable": {
-            "PageNumber": 0,
-            "PageSize": 0
+            "PageSize": 10,
+            "PageNumber": 5
         },
-        "RequestId": "xx"
+        "RequestId": "e2e9e8aa********************9ab34c6e"
     }
 }
 ```

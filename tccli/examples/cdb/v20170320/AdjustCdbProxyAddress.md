@@ -28,7 +28,7 @@ Output:
 {
     "Response": {
         "RequestId": "111-1314-333-2321212",
-        "AsyncRequestId": "test"
+        "AsyncRequestId": "1312"
     }
 }
 ```

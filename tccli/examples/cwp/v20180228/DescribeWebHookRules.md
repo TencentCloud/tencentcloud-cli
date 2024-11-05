@@ -8,8 +8,8 @@ Input:
 tccli cwp DescribeWebHookRules --cli-unfold-argument  \
     --Offset 0 \
     --Limit 1 \
-    --Order  \
-    --By 
+    --Order HostCount \
+    --By asc
 ```
 
 Output: 

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli captcha DescribeCaptchaTicketData --cli-unfold-argument  \
-    --CaptchaAppId 201111111 \
+    --CaptchaAppId 199999164 \
     --Start 20200909
 ```
 
@@ -16,7 +16,7 @@ Output:
     "Response": {
         "RequestId": "0dab64b7-d526-4a5f-bed6-4c59b53b6d11",
         "CaptchaCode": 0,
-        "CaptchaMsg": "",
+        "CaptchaMsg": "success",
         "Data": {
             "TicketAmountArray": [
                 {

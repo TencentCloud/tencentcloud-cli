@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cfw DeleteAllAccessControlRule --cli-unfold-argument  \
-    --Area  \
-    --EdgeId  \
+    --Area edge-e4geb \
+    --EdgeId ap-beijing \
     --Direction 0
 ```
 

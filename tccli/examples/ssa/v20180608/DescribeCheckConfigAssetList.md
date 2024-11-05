@@ -29,7 +29,8 @@ Output:
                 "Updatetime": "2020-08-07 00:16:59",
                 "AssetInfo": "{\"AssetCreateTime\":\"2018-02-26 16:48:51\",\"AssetIpAll\":[],\"CreationDate\":\"2018-02-26T08:48:51Z\",\"AssetEventNum\":0,\"AssetIpv6\":[],\"AssetRegion\":\"ap-chengdu\",\"AssetStatus\":\"\",\"SsaUid\":\"1445149556\",\"AssetUniqid\":\"didi-1251001047\",\"AssetStatusName\":\"\",\"AssetVpcName\":\"\",\"Name\":\"didi-1251001047\",\"AssetVpcid\":\"\",\"AssetRiskTotalNum\":4,\"AssetProjectName\":\"\",\"SsaAssetDiscoverTime\":\"2020-04-15 15:09:28\",\"AssetRegionName\":\"西南地区(成都)\",\"AssetSubType\":\"cos\",\"AssetCspmRiskNum\":4,\"AssetVersion\":11637,\"SsaLogTime\":1596727246000,\"AssetName\":\"didi-1251001047\",\"AssetType\":\"cos\",\"AssetVulNum\":0,\"AssetInnerType\":\"\",\"AssetSubnetId\":\"\",\"AssetVip\":\"\",\"Region\":\"ap-chengdu\",\"AssetShow\":\"1\",\"AssetSubnetName\":\"\",\"AssetUid\":\"1445149556\",\"Domain\":\"didi-1251001047.cos.ap-chengdu.myqcloud.com\",\"AssetUpdateTime\":\"2020-08-06 23:20:46\"}",
                 "Detail": "开放了公有读权限",
-                "Tag": "[]"
+                "Tag": "[tag1]",
+                "Remarks": "1"
             }
         ],
         "RequestId": "d4d1e94d-430e-4bc7-9c10-a84f0685e366"

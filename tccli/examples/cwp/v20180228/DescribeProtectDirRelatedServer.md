@@ -17,6 +17,14 @@ Output:
     "Response": {
         "List": [
             {
+                "MachineExtraInfo": {
+                    "HostName": "demo-instance",
+                    "InstanceID": "ins-1002",
+                    "NetworkName": "vpc-1002",
+                    "NetworkType": 1,
+                    "PrivateIP": "1.1.1.1",
+                    "WanIP": "1.1.1.1"
+                },
                 "Id": "/temp",
                 "AutoRestoreSwitchStatus": 1,
                 "HostName": "目录名称1",

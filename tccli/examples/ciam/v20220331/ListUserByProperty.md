@@ -6,9 +6,10 @@ Input:
 
 ```
 tccli ciam ListUserByProperty --cli-unfold-argument  \
-    --UserStoreId xx \
-    --PropertyCode xx \
-    --PropertyValue xx
+    --UserStoreId 2c3aca3b****************a7efe88e \
+    --PropertyCode phoneNumber \
+    --PropertyValue 130****0000 \
+    --Original True
 ```
 
 Output: 
@@ -17,53 +18,59 @@ Output:
     "Response": {
         "Users": [
             {
-                "UserName": "xx",
-                "Zone": "xx",
-                "UserId": "xx",
-                "ResidentIdentityCard": "xx",
-                "TenantId": "xx",
+                "UserId": "53e25c3****************e4eb5bd1",
+                "UserName": "zhangsan",
+                "PhoneNumber": "132****0000",
+                "Email": "132****@qq.com",
+                "LastSignOn": 1711002933442,
+                "CreatedDate": 1718332940956,
+                "Status": "NORMAL",
+                "UserDataSourceEnum": "管理员添加",
+                "Nickname": "昵称1",
+                "Address": "北京市海淀区",
+                "Birthdate": 1706682491339,
+                "UserGroups": [
+                    "6cd22e51****************f6f7cb81"
+                ],
+                "LastModifiedDate": 1722420973329,
                 "CustomAttributes": [
                     {
-                        "Type": "xx",
-                        "Name": "xx",
-                        "Value": "xx"
+                        "Name": "k",
+                        "Value": "v",
+                        "Type": "STRING"
                     }
                 ],
-                "Version": 0,
-                "WechatOpenId": "xx",
-                "Email": "xx",
-                "Status": "xx",
-                "Description": "xx",
-                "LastModifiedDate": 0,
-                "AlreadyFirstLogin": true,
-                "Job": "xx",
-                "Address": "xx",
-                "Nationality": "xx",
-                "Nickname": "xx",
-                "UserStoreId": "xx",
-                "QqOpenId": "xx",
-                "Name": "xx",
-                "UserDataSourceEnum": "xx",
-                "Gender": "xx",
-                "IdentityVerificationMethod": "xx",
-                "AlipayUserId": "xx",
-                "LastSignOn": 0,
-                "PhoneNumber": "xx",
-                "Birthdate": 0,
-                "QqUnionId": "xx",
-                "UserGroups": [
-                    "xx"
-                ],
-                "Locale": "xx",
-                "Primary": true,
+                "ResidentIdentityCard": "123456789012345678",
+                "QqOpenId": "qqopenid",
+                "QqUnionId": "qqunionid",
+                "WechatOpenId": "wechatopenid",
+                "WechatUnionId": "wechatunionid",
+                "AlipayUserId": "alipayuserid",
+                "WeComUserId": "wecomuserid",
+                "Description": "用户1",
+                "Name": "姓名",
+                "Locale": "地理位置",
+                "Gender": "男",
+                "IdentityVerificationMethod": "-",
                 "IdentityVerified": true,
-                "CreatedDate": 0,
+                "Job": "员工",
+                "Nationality": "汉族",
+                "Primary": true,
+                "Zone": "时区",
+                "AlreadyFirstLogin": true,
+                "TenantId": "tenantId",
+                "UserStoreId": "2c3aca3b****************a7efe88e",
+                "Version": 0,
+                "LockType": "-",
                 "LockTime": 0,
-                "LockType": "xx",
-                "WechatUnionId": "xx"
+                "IndexedAttribute1": "value1",
+                "IndexedAttribute2": "value2",
+                "IndexedAttribute3": "value3",
+                "IndexedAttribute4": "value4",
+                "IndexedAttribute5": "value5"
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "e2e9e8aa********************9ab34c6e"
     }
 }
 ```

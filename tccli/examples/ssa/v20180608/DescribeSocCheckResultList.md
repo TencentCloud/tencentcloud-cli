@@ -35,7 +35,7 @@ Output:
                     "PloyId": 1022732,
                     "Type": "数据安全",
                     "CheckId": "00fe63c2-94c7-11ea-89eb-6c92bf621820",
-                    "DealUrl": "",
+                    "DealUrl": "/hello/url",
                     "AssetType": "mariadb"
                 },
                 {
@@ -47,7 +47,7 @@ Output:
                     "PloyId": 1022732,
                     "Type": "网络访问控制",
                     "CheckId": "12a8e83e-ddbd-4bb4-8d87-88da71facedf",
-                    "DealUrl": "",
+                    "DealUrl": "/hello/url/foo",
                     "AssetType": "clb"
                 },
                 {
@@ -59,7 +59,7 @@ Output:
                     "PloyId": 1022732,
                     "Type": "数据安全",
                     "CheckId": "3c6d8565-94c4-11ea-89eb-6c92bf621820",
-                    "DealUrl": "",
+                    "DealUrl": "/hello/url/bar",
                     "AssetType": "redis"
                 }
             ]

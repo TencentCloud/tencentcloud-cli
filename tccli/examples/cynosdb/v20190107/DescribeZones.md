@@ -32,7 +32,7 @@ Output:
                         "IsSupportNormal": 0,
                         "ZoneZh": "广州二区",
                         "HasPermission": true,
-                        "IsWholeRdmaZone": "abc",
+                        "IsWholeRdmaZone": "tcp",
                         "IsSupportCreateCluster": 1
                     },
                     {
@@ -43,7 +43,7 @@ Output:
                         "IsSupportNormal": 0,
                         "ZoneZh": "广州五区",
                         "HasPermission": true,
-                        "IsWholeRdmaZone": "abc",
+                        "IsWholeRdmaZone": "whole_rdma",
                         "IsSupportCreateCluster": 0
                     }
                 ]
@@ -68,13 +68,13 @@ Output:
                         "IsSupportNormal": 0,
                         "ZoneZh": "北京五区",
                         "HasPermission": true,
-                        "IsWholeRdmaZone": "abc",
+                        "IsWholeRdmaZone": "whole_rdma",
                         "IsSupportCreateCluster": 1
                     }
                 ]
             }
         ],
-        "RequestId": "1qwert-123-asbc"
+        "RequestId": "8fa5cf5-77db-4e32-90ef-22c71ed95f51"
     }
 }
 ```

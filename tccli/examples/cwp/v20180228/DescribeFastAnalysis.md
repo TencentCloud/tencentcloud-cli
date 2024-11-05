@@ -9,7 +9,7 @@ tccli cwp DescribeFastAnalysis --cli-unfold-argument  \
     --To 1657511824000 \
     --FieldName cls_event_type \
     --From 1657468800000 \
-    --Query 
+    --Query a=b
 ```
 
 Output: 

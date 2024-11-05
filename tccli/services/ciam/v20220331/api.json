@@ -175,30 +175,30 @@
         {
           "disabled": false,
           "document": "用户组id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "6cd22e51****************f6f7cb81",
           "member": "string",
           "name": "UserGroupId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "应用id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "17c29b8c****************c0228c48",
           "member": "string",
           "name": "ApplicationId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "应用名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "WEB应用",
           "member": "string",
           "name": "ApplicationName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -211,7 +211,7 @@
         {
           "disabled": false,
           "document": "用户目录ID",
-          "example": "xxx",
+          "example": "2c3aca3b****************a7efe88e",
           "member": "string",
           "name": "UserStoreId",
           "required": true,
@@ -220,7 +220,7 @@
         {
           "disabled": false,
           "document": "导入的用户数据",
-          "example": "xxx",
+          "example": "无",
           "member": "ImportUser",
           "name": "DataFlowUserCreateList",
           "required": true,
@@ -238,7 +238,7 @@
           "example": "无",
           "member": "Job",
           "name": "Job",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -257,7 +257,7 @@
         {
           "disabled": false,
           "document": "用户目录ID",
-          "example": "xxx",
+          "example": "2c3aca3b****************a7efe88e",
           "member": "string",
           "name": "UserStoreId",
           "required": true,
@@ -266,7 +266,7 @@
         {
           "disabled": false,
           "document": "导出的数据类型\n\n<li> **NDJSON** </li>  New-line Delimited JSON\n<li> **CSV** </li>  Comma-Separated Values",
-          "example": "xxx",
+          "example": "NDJSON",
           "member": "string",
           "name": "Format",
           "required": false,
@@ -275,7 +275,7 @@
         {
           "disabled": false,
           "document": "Key可选值为condition、userGroupId\n\n<li> **condition** </li>\tValues = 查询条件，用户ID，用户名称，手机或邮箱\n<li> **userGroupId** </li>\tValues = 用户组ID",
-          "example": "xxx",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -284,7 +284,7 @@
         {
           "disabled": false,
           "document": "导出用户包含的属性和映射名称，为空时包含所有的属性",
-          "example": "xxx",
+          "example": "无",
           "member": "ExportPropertyMap",
           "name": "ExportPropertyMaps",
           "required": false,
@@ -302,7 +302,7 @@
           "example": "无",
           "member": "Job",
           "name": "Job",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -321,7 +321,7 @@
         {
           "disabled": false,
           "document": "用户组名称",
-          "example": "xxx",
+          "example": "用户组1",
           "member": "string",
           "name": "DisplayName",
           "required": true,
@@ -330,7 +330,7 @@
         {
           "disabled": false,
           "document": "用户目录ID",
-          "example": "xxx",
+          "example": "2c3aca3b****************a7efe88e",
           "member": "string",
           "name": "UserStoreId",
           "required": true,
@@ -339,7 +339,7 @@
         {
           "disabled": false,
           "document": "用户组描述",
-          "example": "xxx",
+          "example": "包含了一组用户",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -354,7 +354,7 @@
         {
           "disabled": false,
           "document": "用户组ID",
-          "example": "xxx",
+          "example": "6cd22e51****************f6f7cb81",
           "member": "string",
           "name": "UserGroupId",
           "output_required": false,
@@ -376,7 +376,7 @@
         {
           "disabled": false,
           "document": "用户目录ID",
-          "example": "xxx",
+          "example": "2c3aca3b****************a7efe88e",
           "member": "string",
           "name": "UserStoreId",
           "required": true,
@@ -385,7 +385,7 @@
         {
           "disabled": false,
           "document": "手机号码",
-          "example": "xxx",
+          "example": "132****0000",
           "member": "string",
           "name": "PhoneNumber",
           "required": true,
@@ -394,7 +394,7 @@
         {
           "disabled": false,
           "document": "邮箱",
-          "example": "xxx",
+          "example": "132****@qq.com",
           "member": "string",
           "name": "Email",
           "required": true,
@@ -403,7 +403,7 @@
         {
           "disabled": false,
           "document": "密码",
-          "example": "xxx",
+          "example": "password",
           "member": "string",
           "name": "Password",
           "required": true,
@@ -412,7 +412,7 @@
         {
           "disabled": false,
           "document": "用户名",
-          "example": "xxx",
+          "example": "zhangsan",
           "member": "string",
           "name": "UserName",
           "required": true,
@@ -421,7 +421,7 @@
         {
           "disabled": false,
           "document": "昵称",
-          "example": "xxx",
+          "example": "昵称1",
           "member": "string",
           "name": "Nickname",
           "required": false,
@@ -430,7 +430,7 @@
         {
           "disabled": false,
           "document": "地址",
-          "example": "xxx",
+          "example": "北京市海淀区",
           "member": "string",
           "name": "Address",
           "required": false,
@@ -439,7 +439,7 @@
         {
           "disabled": false,
           "document": "用户组ID",
-          "example": "[\"xxx\"]",
+          "example": "[6cd22e51****************f6f7cb81]",
           "member": "string",
           "name": "UserGroup",
           "required": false,
@@ -448,7 +448,7 @@
         {
           "disabled": false,
           "document": "生日",
-          "example": "0",
+          "example": "1706682491339",
           "member": "int64",
           "name": "Birthdate",
           "required": false,
@@ -466,7 +466,7 @@
         {
           "disabled": false,
           "document": "索引字段1",
-          "example": "xxx",
+          "example": "value1",
           "member": "string",
           "name": "IndexedAttribute1",
           "required": false,
@@ -475,7 +475,7 @@
         {
           "disabled": false,
           "document": "索引字段2",
-          "example": "xxx",
+          "example": "value2",
           "member": "string",
           "name": "IndexedAttribute2",
           "required": false,
@@ -484,7 +484,7 @@
         {
           "disabled": false,
           "document": "索引字段3",
-          "example": "xxx",
+          "example": "value3",
           "member": "string",
           "name": "IndexedAttribute3",
           "required": false,
@@ -493,7 +493,7 @@
         {
           "disabled": false,
           "document": "索引字段4",
-          "example": "xxx",
+          "example": "value4",
           "member": "string",
           "name": "IndexedAttribute4",
           "required": false,
@@ -502,7 +502,7 @@
         {
           "disabled": false,
           "document": "索引字段5",
-          "example": "xxx",
+          "example": "value5",
           "member": "string",
           "name": "IndexedAttribute5",
           "required": false,
@@ -520,7 +520,7 @@
           "example": "无",
           "member": "User",
           "name": "User",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -539,7 +539,7 @@
         {
           "disabled": false,
           "document": "用户池名字",
-          "example": "xxx",
+          "example": "目录1",
           "member": "string",
           "name": "UserPoolName",
           "required": true,
@@ -548,7 +548,7 @@
         {
           "disabled": false,
           "document": "用户池描述",
-          "example": "xxx",
+          "example": "管理应用和用户",
           "member": "string",
           "name": "UserPoolDesc",
           "required": false,
@@ -557,7 +557,7 @@
         {
           "disabled": false,
           "document": "用户池logo",
-          "example": "xxx",
+          "example": "https://aa.com/bb.png",
           "member": "string",
           "name": "UserPoolLogo",
           "required": false,
@@ -594,7 +594,7 @@
         {
           "disabled": false,
           "document": "用户组ID数组",
-          "example": "[xxx]",
+          "example": "[6cd22e51****************f6f7cb81]",
           "member": "string",
           "name": "UserGroupIds",
           "required": true,
@@ -603,7 +603,7 @@
         {
           "disabled": false,
           "document": "用户目录ID",
-          "example": "xxx",
+          "example": "2c3aca3b****************a7efe88e",
           "member": "string",
           "name": "UserStoreId",
           "required": true,
@@ -621,7 +621,7 @@
           "example": "[]",
           "member": "UserGroupDeleteResp",
           "name": "UserGroupDeletedInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -640,7 +640,7 @@
         {
           "disabled": false,
           "document": "用户池ID",
-          "example": "xxx",
+          "example": "2c3aca3b****************a7efe88e",
           "member": "string",
           "name": "UserPoolId",
           "required": true,
@@ -667,7 +667,7 @@
         {
           "disabled": false,
           "document": "用户目录ID",
-          "example": "xxx",
+          "example": "2c3aca3b****************a7efe88e",
           "member": "string",
           "name": "UserStoreId",
           "required": true,
@@ -676,7 +676,7 @@
         {
           "disabled": false,
           "document": "用户ID数组",
-          "example": "[xxx]",
+          "example": "[53e25c3****************e4eb5bd1]",
           "member": "string",
           "name": "UserIds",
           "required": true,
@@ -703,7 +703,7 @@
         {
           "disabled": false,
           "document": "用户目录ID",
-          "example": "xxx",
+          "example": "2c3aca3b****************a7efe88e",
           "member": "string",
           "name": "UserStoreId",
           "required": true,
@@ -712,7 +712,7 @@
         {
           "disabled": false,
           "document": "用户ID",
-          "example": "xxx",
+          "example": "53e25c3****************e4eb5bd1",
           "member": "string",
           "name": "UserId",
           "required": true,
@@ -739,7 +739,7 @@
           "example": "无",
           "member": "User",
           "name": "User",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -758,7 +758,7 @@
         {
           "disabled": false,
           "document": "用户目录ID",
-          "example": "xxx",
+          "example": "2c3aca3b****************a7efe88e",
           "member": "string",
           "name": "UserStoreId",
           "required": true,
@@ -794,7 +794,7 @@
         {
           "disabled": false,
           "document": "排序设置",
-          "example": "无",
+          "example": "createTime",
           "member": "Sort",
           "name": "Sort",
           "required": false,
@@ -812,7 +812,7 @@
           "example": "10",
           "member": "int64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -822,7 +822,7 @@
           "example": "无",
           "member": "Pageable",
           "name": "Pageable",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -832,7 +832,7 @@
           "example": "无",
           "member": "User",
           "name": "Content",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -851,20 +851,20 @@
         {
           "disabled": false,
           "document": "用户信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "53e25c3****************e4eb5bd1",
           "member": "string",
           "name": "UserId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "失败原因",
-          "example": "xxx",
+          "example": "error message",
           "member": "string",
           "name": "Error",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -877,9 +877,10 @@
         {
           "disabled": false,
           "document": "用户属性code",
-          "example": "xxx",
+          "example": "nickname",
           "member": "string",
           "name": "UserPropertyCode",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -887,9 +888,10 @@
         {
           "disabled": false,
           "document": "用户属性映射名称",
-          "example": "xxx",
+          "example": "昵称",
           "member": "string",
           "name": "ColumnName",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -903,20 +905,20 @@
         {
           "disabled": false,
           "document": "失败用户标识\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "53e25c3****************e4eb5bd1",
           "member": "string",
           "name": "FailedUserIdentification",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "导入的用户失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "error reason",
           "member": "string",
           "name": "FailedReason",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -929,22 +931,20 @@
         {
           "disabled": false,
           "document": "key值",
-          "example": "xxx",
+          "example": "key",
           "member": "string",
           "name": "Key",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "value值",
-          "example": "[xxx]",
+          "example": "[value1, value2]",
           "member": "string",
           "name": "Values",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         },
         {
           "disabled": false,
@@ -953,8 +953,7 @@
           "member": "bool",
           "name": "Logic",
           "required": false,
-          "type": "bool",
-          "value_allowed_null": false
+          "type": "bool"
         }
       ],
       "usage": "in"
@@ -965,7 +964,7 @@
         {
           "disabled": false,
           "document": "用户名",
-          "example": "xxx",
+          "example": "zhangsan",
           "member": "string",
           "name": "UserName",
           "required": false,
@@ -974,7 +973,7 @@
         {
           "disabled": false,
           "document": "手机号",
-          "example": "xxx",
+          "example": "132****0000",
           "member": "string",
           "name": "PhoneNumber",
           "required": false,
@@ -983,7 +982,7 @@
         {
           "disabled": false,
           "document": "邮箱",
-          "example": "xxx",
+          "example": "132****@qq.com",
           "member": "string",
           "name": "Email",
           "required": false,
@@ -992,7 +991,7 @@
         {
           "disabled": false,
           "document": "身份证号",
-          "example": "xxx",
+          "example": "123456789012345678",
           "member": "string",
           "name": "ResidentIdentityCard",
           "required": false,
@@ -1001,7 +1000,7 @@
         {
           "disabled": false,
           "document": "昵称",
-          "example": "xxx",
+          "example": "昵称1",
           "member": "string",
           "name": "Nickname",
           "required": false,
@@ -1010,7 +1009,7 @@
         {
           "disabled": false,
           "document": "地址",
-          "example": "xxx",
+          "example": "北京市海淀区",
           "member": "string",
           "name": "Address",
           "required": false,
@@ -1019,7 +1018,7 @@
         {
           "disabled": false,
           "document": "用户组ID",
-          "example": "[xxx]",
+          "example": "[6cd22e51****************f6f7cb81]",
           "member": "string",
           "name": "UserGroup",
           "required": false,
@@ -1028,7 +1027,7 @@
         {
           "disabled": false,
           "document": "QQ qqOpenId",
-          "example": "xxx",
+          "example": "qqopenid",
           "member": "string",
           "name": "QqOpenId",
           "required": false,
@@ -1037,7 +1036,7 @@
         {
           "disabled": false,
           "document": "QQ qqUnionId",
-          "example": "xxx",
+          "example": "qqunionid",
           "member": "string",
           "name": "QqUnionId",
           "required": false,
@@ -1046,7 +1045,7 @@
         {
           "disabled": false,
           "document": "微信wechatOpenId",
-          "example": "xxx",
+          "example": "wechatopenid",
           "member": "string",
           "name": "WechatOpenId",
           "required": false,
@@ -1055,7 +1054,7 @@
         {
           "disabled": false,
           "document": "微信wechatUnionId",
-          "example": "xxx",
+          "example": "wechatunionid",
           "member": "string",
           "name": "WechatUnionId",
           "required": false,
@@ -1064,7 +1063,7 @@
         {
           "disabled": false,
           "document": "支付宝alipayUserId",
-          "example": "xxx",
+          "example": "alipayuserid",
           "member": "string",
           "name": "AlipayUserId",
           "required": false,
@@ -1073,7 +1072,7 @@
         {
           "disabled": false,
           "document": "企业微信weComUserId",
-          "example": "xxx",
+          "example": "wecomuserid",
           "member": "string",
           "name": "WeComUserId",
           "required": false,
@@ -1082,7 +1081,7 @@
         {
           "disabled": false,
           "document": "描述",
-          "example": "xxx",
+          "example": "用户1",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -1091,7 +1090,7 @@
         {
           "disabled": false,
           "document": "生日",
-          "example": "xxx",
+          "example": "1722420973329",
           "member": "date",
           "name": "Birthdate",
           "required": false,
@@ -1100,7 +1099,7 @@
         {
           "disabled": false,
           "document": "姓名",
-          "example": "xxx",
+          "example": "姓名",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -1109,7 +1108,7 @@
         {
           "disabled": false,
           "document": "坐标",
-          "example": "xxx",
+          "example": "地理位置",
           "member": "string",
           "name": "Locale",
           "required": false,
@@ -1118,7 +1117,7 @@
         {
           "disabled": false,
           "document": "性别（MALE;FEMALE;UNKNOWN）",
-          "example": "xxx",
+          "example": "男",
           "member": "string",
           "name": "Gender",
           "required": false,
@@ -1127,7 +1126,7 @@
         {
           "disabled": false,
           "document": "实名核验方式",
-          "example": "xxx",
+          "example": "无",
           "member": "string",
           "name": "IdentityVerificationMethod",
           "required": false,
@@ -1136,7 +1135,7 @@
         {
           "disabled": false,
           "document": "是否已实名核验",
-          "example": "xxx",
+          "example": "true",
           "member": "bool",
           "name": "IdentityVerified",
           "required": false,
@@ -1145,7 +1144,7 @@
         {
           "disabled": false,
           "document": "工作",
-          "example": "xxx",
+          "example": "员工",
           "member": "string",
           "name": "Job",
           "required": false,
@@ -1154,7 +1153,7 @@
         {
           "disabled": false,
           "document": "国家",
-          "example": "xxx",
+          "example": "汉族",
           "member": "string",
           "name": "Nationality",
           "required": false,
@@ -1163,7 +1162,7 @@
         {
           "disabled": false,
           "document": "时区",
-          "example": "xxx",
+          "example": "时区",
           "member": "string",
           "name": "Zone",
           "required": false,
@@ -1172,7 +1171,7 @@
         {
           "disabled": false,
           "document": "密码密文",
-          "example": "xxx",
+          "example": "password",
           "member": "string",
           "name": "Password",
           "required": false,
@@ -1199,7 +1198,7 @@
         {
           "disabled": false,
           "document": "密码加密方式（SHA1;BCRYPT）",
-          "example": "xxx",
+          "example": "SHA1",
           "member": "string",
           "name": "PasswordEncryptTypeEnum",
           "required": false,
@@ -1208,7 +1207,7 @@
         {
           "disabled": false,
           "document": "索引字段1",
-          "example": "xxx",
+          "example": "value1",
           "member": "string",
           "name": "IndexedAttribute1",
           "required": false,
@@ -1217,7 +1216,7 @@
         {
           "disabled": false,
           "document": "索引字段2",
-          "example": "xxx",
+          "example": "value2",
           "member": "string",
           "name": "IndexedAttribute2",
           "required": false,
@@ -1226,7 +1225,7 @@
         {
           "disabled": false,
           "document": "索引字段3",
-          "example": "xxx",
+          "example": "value3",
           "member": "string",
           "name": "IndexedAttribute3",
           "required": false,
@@ -1235,7 +1234,7 @@
         {
           "disabled": false,
           "document": "索引字段4",
-          "example": "xxx",
+          "example": "value4",
           "member": "string",
           "name": "IndexedAttribute4",
           "required": false,
@@ -1244,7 +1243,7 @@
         {
           "disabled": false,
           "document": "索引字段5",
-          "example": "xxx",
+          "example": "value5",
           "member": "string",
           "name": "IndexedAttribute5",
           "required": false,
@@ -1259,80 +1258,80 @@
         {
           "disabled": false,
           "document": "任务ID",
-          "example": "xxx",
+          "example": "c29f2c0f****************405ec698",
           "member": "string",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "任务状态\n\n<li> **PENDING** </li>  待执行\n<li> **PROCESSING** </li>  执行中\n<li> **COMPLETED** </li>  完成\n<li> **FAILED** </li>  失败",
-          "example": "xxx",
+          "example": "PENDING",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "任务类型\n\n<li> **IMPORT_USER** </li>  用户导入\n<li> **EXPORT_USER** </li>  用户导出",
-          "example": "xxx",
+          "example": "IMPORT_USER",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "任务创建时间",
-          "example": "10",
+          "example": "1715156770024",
           "member": "int64",
           "name": "CreatedDate",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "任务的数据类型\n\n<li> **NDJSON** </li>  New-line Delimited JSON\n<li> **CSV** </li>  Comma-Separated Values\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "NDJSON",
           "member": "string",
           "name": "Format",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "任务结果下载地址\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "http://aa.com/bb.csv",
           "member": "string",
           "name": "Location",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "失败详情\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "无",
           "member": "ErrorDetails",
           "name": "ErrorDetails",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "失败的用户\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "无",
           "member": "FailedUsers",
           "name": "FailedUsers",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -1345,7 +1344,7 @@
         {
           "disabled": false,
           "document": "用户目录ID",
-          "example": "xxx",
+          "example": "2c3aca3b****************a7efe88e",
           "member": "string",
           "name": "UserStoreId",
           "required": true,
@@ -1354,7 +1353,7 @@
         {
           "disabled": false,
           "document": "主用户ID",
-          "example": "xxx",
+          "example": "53e25c3****************e4eb5bd1",
           "member": "string",
           "name": "PrimaryUserId",
           "required": true,
@@ -1363,7 +1362,7 @@
         {
           "disabled": false,
           "document": "从用户ID",
-          "example": "xxx",
+          "example": "081820ad****************5c58d1ad",
           "member": "string",
           "name": "SecondaryUserId",
           "required": true,
@@ -1372,7 +1371,7 @@
         {
           "disabled": false,
           "document": "融合属性\n\n<li> **PHONENUMBER** </li>\t  手机号码\n<li> **EMAIL** </li>  邮箱",
-          "example": "xxx",
+          "example": "PHONENUMBER",
           "member": "string",
           "name": "UserLinkedOnAttribute",
           "required": true,
@@ -1399,7 +1398,7 @@
         {
           "disabled": false,
           "document": "用户目录ID",
-          "example": "xxx",
+          "example": "2c3aca3b****************a7efe88e",
           "member": "string",
           "name": "UserStoreId",
           "required": true,
@@ -1408,7 +1407,7 @@
         {
           "disabled": false,
           "document": "任务ID列表，为空时返回全部任务",
-          "example": "[xxx]",
+          "example": "[c29f2c0f****************405ec698]",
           "member": "string",
           "name": "JobIds",
           "required": false,
@@ -1426,7 +1425,7 @@
           "example": "无",
           "member": "Job",
           "name": "JobSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1445,7 +1444,7 @@
         {
           "disabled": false,
           "document": "用户池ID",
-          "example": "xxx",
+          "example": "2c3aca3b****************a7efe88e",
           "member": "string",
           "name": "UserStoreId",
           "required": true,
@@ -1463,7 +1462,7 @@
         {
           "disabled": false,
           "document": "开始时间，时间戳精确到毫秒",
-          "example": "10",
+          "example": "1703385600000",
           "member": "int64",
           "name": "StartTime",
           "required": true,
@@ -1490,7 +1489,7 @@
           "example": "10",
           "member": "int64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1500,7 +1499,7 @@
           "example": "无",
           "member": "Pageable",
           "name": "Pageable",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -1510,7 +1509,7 @@
           "example": "无",
           "member": "LogMessage",
           "name": "Content",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1529,7 +1528,7 @@
         {
           "disabled": false,
           "document": "用户目录ID",
-          "example": "xxx",
+          "example": "2c3aca3b****************a7efe88e",
           "member": "string",
           "name": "UserStoreId",
           "required": true,
@@ -1538,7 +1537,7 @@
         {
           "disabled": false,
           "document": "查询的属性\n\n<li> **phoneNumber** </li>\t  手机号码\n<li> **email** </li>  邮箱",
-          "example": "xxx",
+          "example": "phoneNumber",
           "member": "string",
           "name": "PropertyCode",
           "required": true,
@@ -1547,7 +1546,7 @@
         {
           "disabled": false,
           "document": "属性值",
-          "example": "xxx",
+          "example": "130****0000",
           "member": "string",
           "name": "PropertyValue",
           "required": true,
@@ -1574,7 +1573,7 @@
           "example": "无",
           "member": "User",
           "name": "Users",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1593,7 +1592,7 @@
         {
           "disabled": false,
           "document": "用户目录ID",
-          "example": "xxx",
+          "example": "2c3aca3b****************a7efe88e",
           "member": "string",
           "name": "UserStoreId",
           "required": true,
@@ -1629,7 +1628,7 @@
           "example": "无",
           "member": "UserGroup",
           "name": "Content",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1639,7 +1638,7 @@
           "example": "10",
           "member": "int64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1649,7 +1648,7 @@
           "example": "无",
           "member": "Pageable",
           "name": "Pageable",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -1668,7 +1667,7 @@
         {
           "disabled": false,
           "document": "用户目录ID",
-          "example": "xxx",
+          "example": "2c3aca3b****************a7efe88e",
           "member": "string",
           "name": "UserStoreId",
           "required": true,
@@ -1713,7 +1712,7 @@
           "example": "10",
           "member": "int64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1723,7 +1722,7 @@
           "example": "无",
           "member": "Pageable",
           "name": "Pageable",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -1733,7 +1732,7 @@
           "example": "无",
           "member": "User",
           "name": "Content",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1760,7 +1759,7 @@
           "example": "无",
           "member": "UserStore",
           "name": "UserStoreSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1779,170 +1778,180 @@
         {
           "disabled": false,
           "document": "日志标识",
-          "example": "xxx",
+          "example": "a23039fd****************44a78adc",
           "member": "string",
           "name": "LogId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "租户ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "tenantId",
           "member": "string",
           "name": "TenantId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "用户池ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "2c3aca3b****************a7efe88e",
           "member": "string",
           "name": "UserStoreId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "事件编码\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "FORGET_USERNAME",
           "member": "string",
           "name": "EventCode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "事件发生时间戳，单位：毫秒\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "10",
+          "example": "1703385600000",
           "member": "int64",
           "name": "EventDate",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "忘记用户名日志",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "事件参与者\n\n<li> **TENANT** </li>  租户\n<li> **USER** </li>  用户\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "TENANT",
           "member": "string",
           "name": "Participant",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "应用clientId\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "YmFiZTk5********3ZGZiZmY",
           "member": "string",
           "name": "ApplicationClientId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "应用名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "应用1",
           "member": "string",
           "name": "ApplicationName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "认证源ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "5c7df28a********2a3dbbae",
           "member": "string",
           "name": "AuthSourceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "认证源名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "账号密码认证源1",
           "member": "string",
           "name": "AuthSourceName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "认证源类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "USERNAME_PASSWORD",
           "member": "string",
           "name": "AuthSourceType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "认证源类别\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "UNIVERSAL",
           "member": "string",
           "name": "AuthSourceCategory",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "IP地址\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "127.*.*.1",
           "member": "string",
           "name": "Ip",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "用户代理\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "agent1",
           "member": "string",
           "name": "UserAgent",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "用户ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "53e25c3****************e4eb5bd1",
           "member": "string",
           "name": "UserId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "详情\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "error detail",
           "member": "string",
           "name": "Detail",
-          "required": true,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "日志结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "FAIL",
+          "member": "string",
+          "name": "ActionResult",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -1955,9 +1964,10 @@
         {
           "disabled": false,
           "document": "健",
-          "example": "xxx",
+          "example": "name",
           "member": "string",
           "name": "Name",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1965,9 +1975,10 @@
         {
           "disabled": false,
           "document": "值",
-          "example": "xxx",
+          "example": "value",
           "member": "string",
           "name": "Value",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1975,9 +1986,10 @@
         {
           "disabled": false,
           "document": "类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "STRING",
           "member": "string",
           "name": "Type",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -2017,22 +2029,20 @@
         {
           "disabled": false,
           "document": "属性key",
-          "example": "xxx",
+          "example": "username",
           "member": "string",
           "name": "PropertyKey",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "属性value",
-          "example": "xxx",
+          "example": "zhangsan",
           "member": "string",
           "name": "PropertyValue",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2041,18 +2051,16 @@
           "member": "bool",
           "name": "Logic",
           "required": false,
-          "type": "bool",
-          "value_allowed_null": false
+          "type": "bool"
         },
         {
           "disabled": false,
           "document": "操作逻辑符（支持> < = >= <=  != between）",
-          "example": "xxx",
+          "example": "!=",
           "member": "string",
           "name": "OperateLogic",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -2063,7 +2071,7 @@
         {
           "disabled": false,
           "document": "用户ID",
-          "example": "xxx",
+          "example": "53e25c3****************e4eb5bd1",
           "member": "string",
           "name": "UserId",
           "required": true,
@@ -2072,7 +2080,7 @@
         {
           "disabled": false,
           "document": "用户目录ID",
-          "example": "xxx",
+          "example": "2c3aca3b****************a7efe88e",
           "member": "string",
           "name": "UserStoreId",
           "required": true,
@@ -2087,10 +2095,10 @@
         {
           "disabled": false,
           "document": "重置后的用户密码",
-          "example": "xxx",
+          "example": "password",
           "member": "string",
           "name": "Password",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2109,12 +2117,11 @@
         {
           "disabled": false,
           "document": "盐值",
-          "example": "xxx",
+          "example": "salt****",
           "member": "string",
           "name": "SaltValue",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2123,8 +2130,7 @@
           "member": "SaltLocation",
           "name": "SaltLocation",
           "required": false,
-          "type": "object",
-          "value_allowed_null": false
+          "type": "object"
         }
       ],
       "usage": "in"
@@ -2135,22 +2141,20 @@
         {
           "disabled": false,
           "document": "密码加盐的类型（HEAD，TAIL，OTHER）",
-          "example": "xxx",
+          "example": "HEAD",
           "member": "string",
           "name": "SaltLocationTypeEnum",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "加盐规则",
-          "example": "xxx",
+          "example": "无",
           "member": "SaltLocationRule",
           "name": "SaltLocationRule",
           "required": false,
-          "type": "object",
-          "value_allowed_null": false
+          "type": "object"
         }
       ],
       "usage": "in"
@@ -2161,12 +2165,11 @@
         {
           "disabled": false,
           "document": "表达式",
-          "example": "xxx",
+          "example": "passwordabc123",
           "member": "string",
           "name": "Regex",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -2177,7 +2180,7 @@
         {
           "disabled": false,
           "document": "用户目录ID",
-          "example": "xxx",
+          "example": "2c3aca3b****************a7efe88e",
           "member": "string",
           "name": "UserStoreId",
           "required": true,
@@ -2186,7 +2189,7 @@
         {
           "disabled": false,
           "document": "用户ID",
-          "example": "xxx",
+          "example": "53e25c3****************e4eb5bd1",
           "member": "string",
           "name": "UserId",
           "required": true,
@@ -2195,7 +2198,7 @@
         {
           "disabled": false,
           "document": "密码",
-          "example": "xxx",
+          "example": "password",
           "member": "string",
           "name": "Password",
           "required": true,
@@ -2222,22 +2225,20 @@
         {
           "disabled": false,
           "document": "排序字段的key，参考自定义属性",
-          "example": "xxx",
+          "example": "name",
           "member": "string",
           "name": "PropertyKey",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "升序或者降序，ASC/DESC",
-          "example": "xxx",
+          "example": "DESC",
           "member": "string",
           "name": "Order",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -2248,7 +2249,7 @@
         {
           "disabled": false,
           "document": "用户组ID",
-          "example": "xxx",
+          "example": "6cd22e51****************f6f7cb81",
           "member": "string",
           "name": "UserGroupId",
           "required": true,
@@ -2257,7 +2258,7 @@
         {
           "disabled": false,
           "document": "用户组名称",
-          "example": "xxx",
+          "example": "用户组1",
           "member": "string",
           "name": "DisplayName",
           "required": true,
@@ -2266,7 +2267,7 @@
         {
           "disabled": false,
           "document": "用户目录ID",
-          "example": "xxx",
+          "example": "2c3aca3b****************a7efe88e",
           "member": "string",
           "name": "UserStoreId",
           "required": true,
@@ -2275,7 +2276,7 @@
         {
           "disabled": false,
           "document": "用户组描述",
-          "example": "xxx",
+          "example": "包含了一组用户",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -2302,7 +2303,7 @@
         {
           "disabled": false,
           "document": "用户ID",
-          "example": "xxx",
+          "example": "53e25c3****************e4eb5bd1",
           "member": "string",
           "name": "UserId",
           "required": true,
@@ -2311,7 +2312,7 @@
         {
           "disabled": false,
           "document": "用户目录ID",
-          "example": "xxx",
+          "example": "2c3aca3b****************a7efe88e",
           "member": "string",
           "name": "UserStoreId",
           "required": true,
@@ -2320,7 +2321,7 @@
         {
           "disabled": false,
           "document": "用户名称",
-          "example": "xxx",
+          "example": "zhangsan",
           "member": "string",
           "name": "UserName",
           "required": false,
@@ -2329,7 +2330,7 @@
         {
           "disabled": false,
           "document": "手机号码",
-          "example": "xxx",
+          "example": "132****0000",
           "member": "string",
           "name": "PhoneNumber",
           "required": false,
@@ -2338,7 +2339,7 @@
         {
           "disabled": false,
           "document": "邮箱",
-          "example": "xxx",
+          "example": "132****@qq.com",
           "member": "string",
           "name": "Email",
           "required": false,
@@ -2347,7 +2348,7 @@
         {
           "disabled": false,
           "document": "昵称",
-          "example": "xxx",
+          "example": "昵称1",
           "member": "string",
           "name": "Nickname",
           "required": false,
@@ -2356,7 +2357,7 @@
         {
           "disabled": false,
           "document": "地址",
-          "example": "xxx",
+          "example": "北京市海淀区",
           "member": "string",
           "name": "Address",
           "required": false,
@@ -2365,7 +2366,7 @@
         {
           "disabled": false,
           "document": "用户组",
-          "example": "[\"xxx\"]",
+          "example": "[\"6cd22e51****************f6f7cb81\"]",
           "member": "string",
           "name": "UserGroup",
           "required": false,
@@ -2374,7 +2375,7 @@
         {
           "disabled": false,
           "document": "生日",
-          "example": "0",
+          "example": "1706682491339",
           "member": "int64",
           "name": "Birthdate",
           "required": false,
@@ -2392,7 +2393,7 @@
         {
           "disabled": false,
           "document": "索引字段1",
-          "example": "xxx",
+          "example": "value1",
           "member": "string",
           "name": "IndexedAttribute1",
           "required": false,
@@ -2401,7 +2402,7 @@
         {
           "disabled": false,
           "document": "索引字段2",
-          "example": "xxx",
+          "example": "value2",
           "member": "string",
           "name": "IndexedAttribute2",
           "required": false,
@@ -2410,7 +2411,7 @@
         {
           "disabled": false,
           "document": "索引字段3",
-          "example": "xxx",
+          "example": "value3",
           "member": "string",
           "name": "IndexedAttribute3",
           "required": false,
@@ -2419,7 +2420,7 @@
         {
           "disabled": false,
           "document": "索引字段4",
-          "example": "xxx",
+          "example": "value4",
           "member": "string",
           "name": "IndexedAttribute4",
           "required": false,
@@ -2428,7 +2429,7 @@
         {
           "disabled": false,
           "document": "索引字段5",
-          "example": "xxx",
+          "example": "value5",
           "member": "string",
           "name": "IndexedAttribute5",
           "required": false,
@@ -2443,10 +2444,10 @@
         {
           "disabled": false,
           "document": "更新之后的用户信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "null",
+          "example": "无",
           "member": "User",
           "name": "User",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -2465,7 +2466,7 @@
         {
           "disabled": false,
           "document": "用户目录ID",
-          "example": "xxx",
+          "example": "2c3aca3b****************a7efe88e",
           "member": "string",
           "name": "UserStoreId",
           "required": true,
@@ -2474,7 +2475,7 @@
         {
           "disabled": false,
           "document": "用户ID",
-          "example": "xxx",
+          "example": "53e25c3****************e4eb5bd1",
           "member": "string",
           "name": "UserId",
           "required": true,
@@ -2483,7 +2484,7 @@
         {
           "disabled": false,
           "document": "用户状态\n\n<li> **NORMAL** </li>\t  正常\n<li> **LOCK** </li>  锁定\n<li> **FREEZE** </li>\t  冻结",
-          "example": "xxx",
+          "example": "NORMAL",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -2510,7 +2511,7 @@
         {
           "disabled": false,
           "document": "用户池ID",
-          "example": "xxx",
+          "example": "2c3aca3b****************a7efe88e",
           "member": "string",
           "name": "UserPoolId",
           "required": true,
@@ -2519,7 +2520,7 @@
         {
           "disabled": false,
           "document": "用户池名字",
-          "example": "xxx",
+          "example": "目录1",
           "member": "string",
           "name": "UserPoolName",
           "required": false,
@@ -2528,7 +2529,7 @@
         {
           "disabled": false,
           "document": "用户池描述",
-          "example": "xxx",
+          "example": "管理应用和用户",
           "member": "string",
           "name": "UserPoolDesc",
           "required": false,
@@ -2537,7 +2538,7 @@
         {
           "disabled": false,
           "document": "用户池logo",
-          "example": "xxx",
+          "example": "https://**.com/***b.png",
           "member": "string",
           "name": "UserPoolLogo",
           "required": false,
@@ -2564,7 +2565,7 @@
         {
           "disabled": false,
           "document": "用户ID",
-          "example": "xxx",
+          "example": "53e25c3****************e4eb5bd1",
           "member": "string",
           "name": "UserId",
           "output_required": true,
@@ -2574,7 +2575,7 @@
         {
           "disabled": false,
           "document": "用户名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "zhangsan",
           "member": "string",
           "name": "UserName",
           "output_required": true,
@@ -2584,7 +2585,7 @@
         {
           "disabled": false,
           "document": "手机号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "132****0000",
           "member": "string",
           "name": "PhoneNumber",
           "output_required": true,
@@ -2594,7 +2595,7 @@
         {
           "disabled": false,
           "document": "邮箱\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "132****@qq.com",
           "member": "string",
           "name": "Email",
           "output_required": true,
@@ -2604,7 +2605,7 @@
         {
           "disabled": false,
           "document": "上次登录时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "1711002933442",
           "member": "int64",
           "name": "LastSignOn",
           "output_required": true,
@@ -2614,7 +2615,7 @@
         {
           "disabled": false,
           "document": "创建时间",
-          "example": "xxx",
+          "example": "1718332940956",
           "member": "int64",
           "name": "CreatedDate",
           "output_required": true,
@@ -2624,7 +2625,7 @@
         {
           "disabled": false,
           "document": "状态",
-          "example": "xxx",
+          "example": "NORMAL",
           "member": "string",
           "name": "Status",
           "output_required": true,
@@ -2634,7 +2635,7 @@
         {
           "disabled": false,
           "document": "用户来源",
-          "example": "xxx",
+          "example": "管理员添加",
           "member": "string",
           "name": "UserDataSourceEnum",
           "output_required": true,
@@ -2644,7 +2645,7 @@
         {
           "disabled": false,
           "document": "昵称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "昵称1",
           "member": "string",
           "name": "Nickname",
           "output_required": true,
@@ -2654,7 +2655,7 @@
         {
           "disabled": false,
           "document": "地址\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "北京市海淀区",
           "member": "string",
           "name": "Address",
           "output_required": true,
@@ -2664,7 +2665,7 @@
         {
           "disabled": false,
           "document": "生日\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0",
+          "example": "1706682491339",
           "member": "int64",
           "name": "Birthdate",
           "output_required": true,
@@ -2674,7 +2675,7 @@
         {
           "disabled": false,
           "document": "用户组ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[xxx]",
+          "example": "[6cd22e51****************f6f7cb81]",
           "member": "string",
           "name": "UserGroups",
           "output_required": true,
@@ -2684,7 +2685,7 @@
         {
           "disabled": false,
           "document": "上次修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0",
+          "example": "1722420973329",
           "member": "int64",
           "name": "LastModifiedDate",
           "output_required": true,
@@ -2704,7 +2705,7 @@
         {
           "disabled": false,
           "document": "身份证号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "123456789012345678",
           "member": "string",
           "name": "ResidentIdentityCard",
           "output_required": true,
@@ -2714,7 +2715,7 @@
         {
           "disabled": false,
           "document": "QQ的OpenId\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "qqopenid",
           "member": "string",
           "name": "QqOpenId",
           "output_required": true,
@@ -2724,7 +2725,7 @@
         {
           "disabled": false,
           "document": "QQ的UnionId\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "qqunionid",
           "member": "string",
           "name": "QqUnionId",
           "output_required": true,
@@ -2734,7 +2735,7 @@
         {
           "disabled": false,
           "document": "微信的WechatOpenId\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "wechatopenid",
           "member": "string",
           "name": "WechatOpenId",
           "output_required": true,
@@ -2744,7 +2745,7 @@
         {
           "disabled": false,
           "document": "微信的WechatUnionId\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "wechatunionid",
           "member": "string",
           "name": "WechatUnionId",
           "output_required": true,
@@ -2754,7 +2755,7 @@
         {
           "disabled": false,
           "document": "支付宝的AlipayUserId\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "alipayuserid",
           "member": "string",
           "name": "AlipayUserId",
           "output_required": true,
@@ -2764,7 +2765,7 @@
         {
           "disabled": false,
           "document": "企业微信的WeComUserId\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "wecomuserid",
           "member": "string",
           "name": "WeComUserId",
           "output_required": true,
@@ -2774,7 +2775,7 @@
         {
           "disabled": false,
           "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "用户1",
           "member": "string",
           "name": "Description",
           "output_required": true,
@@ -2784,7 +2785,7 @@
         {
           "disabled": false,
           "document": "姓名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "姓名",
           "member": "string",
           "name": "Name",
           "output_required": true,
@@ -2794,7 +2795,7 @@
         {
           "disabled": false,
           "document": "坐标\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "地理位置",
           "member": "string",
           "name": "Locale",
           "output_required": true,
@@ -2804,7 +2805,7 @@
         {
           "disabled": false,
           "document": "性别\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "男",
           "member": "string",
           "name": "Gender",
           "output_required": true,
@@ -2814,7 +2815,7 @@
         {
           "disabled": false,
           "document": "实名核验方式\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "无",
           "member": "string",
           "name": "IdentityVerificationMethod",
           "output_required": true,
@@ -2834,7 +2835,7 @@
         {
           "disabled": false,
           "document": "工作\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "员工",
           "member": "string",
           "name": "Job",
           "output_required": true,
@@ -2844,7 +2845,7 @@
         {
           "disabled": false,
           "document": "国家\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "汉族",
           "member": "string",
           "name": "Nationality",
           "output_required": true,
@@ -2864,7 +2865,7 @@
         {
           "disabled": false,
           "document": "时区\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "时区",
           "member": "string",
           "name": "Zone",
           "output_required": true,
@@ -2884,7 +2885,7 @@
         {
           "disabled": false,
           "document": "租户id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "tenantId",
           "member": "string",
           "name": "TenantId",
           "output_required": true,
@@ -2894,7 +2895,7 @@
         {
           "disabled": false,
           "document": "用户目录id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "2c3aca3b****************a7efe88e",
           "member": "string",
           "name": "UserStoreId",
           "output_required": true,
@@ -2914,7 +2915,7 @@
         {
           "disabled": false,
           "document": "锁定类型（分为管理员锁定，和登录策略锁定）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "无",
           "member": "string",
           "name": "LockType",
           "output_required": true,
@@ -2934,7 +2935,7 @@
         {
           "disabled": false,
           "document": "索引字段1\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "value1",
           "member": "string",
           "name": "IndexedAttribute1",
           "output_required": true,
@@ -2944,7 +2945,7 @@
         {
           "disabled": false,
           "document": "索引字段2\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "value2",
           "member": "string",
           "name": "IndexedAttribute2",
           "output_required": true,
@@ -2954,7 +2955,7 @@
         {
           "disabled": false,
           "document": "索引字段3\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "value3",
           "member": "string",
           "name": "IndexedAttribute3",
           "output_required": true,
@@ -2964,7 +2965,7 @@
         {
           "disabled": false,
           "document": "索引字段4\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "value4",
           "member": "string",
           "name": "IndexedAttribute4",
           "output_required": true,
@@ -2974,7 +2975,7 @@
         {
           "disabled": false,
           "document": "索引字段5\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "value5",
           "member": "string",
           "name": "IndexedAttribute5",
           "output_required": true,
@@ -2990,70 +2991,70 @@
         {
           "disabled": false,
           "document": "用户组ID",
-          "example": "xxx",
+          "example": "6cd22e51****************f6f7cb81",
           "member": "string",
           "name": "UserGroupId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "用户组名称",
-          "example": "xxx",
+          "example": "用户组1",
           "member": "string",
           "name": "DisplayName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "用户组描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "XXX",
+          "example": "包含了一组用户",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "用户目录ID",
-          "example": "xxx",
+          "example": "2c3aca3b****************a7efe88e",
           "member": "string",
           "name": "UserStoreId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "租户ID",
-          "example": "xxx",
+          "example": "tenantId",
           "member": "string",
           "name": "TenantId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "创建时间",
-          "example": "10",
+          "example": "1651073285427",
           "member": "int64",
           "name": "CreatedDate",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "最近更新时间",
-          "example": "10",
+          "example": "1651073285306",
           "member": "int64",
           "name": "LastModifyDate",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -3066,20 +3067,20 @@
         {
           "disabled": false,
           "document": "错误详情\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "error message",
           "member": "string",
           "name": "ErrorMessage",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "用户组关联的应用信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "[6cd22e51****************f6f7cb81]",
           "member": "AppAssociatedUserGroupIds",
           "name": "AppAssociatedUserGroupIds",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -3092,40 +3093,40 @@
         {
           "disabled": false,
           "document": "租户ID",
-          "example": "xxx",
+          "example": "tenantId",
           "member": "string",
           "name": "TenantId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "用户池logo\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "https://aa.com/bb.png",
           "member": "string",
           "name": "UserStoreLogo",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "用户池描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "管理应用和用户",
           "member": "string",
           "name": "UserStoreDesc",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "用户池名称",
-          "example": "xxx",
+          "example": "目录1",
           "member": "string",
           "name": "UserStoreName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3135,17 +3136,17 @@
           "example": "10",
           "member": "int64",
           "name": "UserNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "用户池ID",
-          "example": "xxx",
+          "example": "2c3aca3b****************a7efe88e",
           "member": "string",
           "name": "UserStoreId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3155,7 +3156,7 @@
           "example": "10",
           "member": "int64",
           "name": "AppNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3165,7 +3166,7 @@
           "example": "true",
           "member": "bool",
           "name": "LastStatus",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -3175,37 +3176,37 @@
           "example": "true",
           "member": "bool",
           "name": "DefaultStatus",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "10",
+          "example": "1706682491339",
           "member": "int64",
           "name": "CreateDate",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "上次切换时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "10",
+          "example": "1713168583556",
           "member": "int64",
           "name": "LastStatusTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "用户目录域名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "leecpn",
           "member": "string",
           "name": "UserStoreProtocolHost",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }

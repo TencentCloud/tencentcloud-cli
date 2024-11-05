@@ -26,8 +26,10 @@ Output:
                 "LastScanTime": "2019-12-25 11:57:15",
                 "Status": 0,
                 "Quuid": "1c26308c-5493-4eaf-a817-112ec25f499e",
-                "HostIp": "xx.xx.xx.xx",
-                "AliasName": "销售许可测试机器"
+                "HostIp": "127.0.0.1",
+                "AliasName": "销售许可测试机器",
+                "Uuid": "1c26308c-5493-4eaf-a817-112ec25f499e",
+                "MaxStatus": 2
             }
         ]
     }

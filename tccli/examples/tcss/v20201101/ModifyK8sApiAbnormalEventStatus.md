@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tcss ModifyK8sApiAbnormalEventStatus --cli-unfold-argument  \
-    --Status xx \
-    --Remark xx \
+    --Status EVENT_DEALED \
+    --Remark Remark \
     --EventIDSet 1
 ```
 

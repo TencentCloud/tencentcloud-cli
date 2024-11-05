@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli cfw CreateBlockIgnoreRuleNew --cli-unfold-argument  \
-    --Rules.0.Ioc 1.2.3.4 \
+    --Rules.0.Ioc 11.21.31.41 \
     --Rules.0.DirectionList 0 \
     --Rules.0.EndTime 3000-01-01 00:00:00 \
-    --Rules.0.Comment test \
+    --Rules.0.Comment 生产IP放通 \
     --RuleType 2 \
     --CoverDuplicate 0
 ```

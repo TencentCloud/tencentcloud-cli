@@ -18,41 +18,48 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 1,
-        "RequestId": "xx",
         "Machines": [
             {
-                "KernelVersion": "xx",
-                "IsProVersion": false,
-                "MachineOs": "xx",
-                "Uuid": "xx",
-                "MachineName": "xx",
-                "MachineIp": "xx",
-                "PayMode": "xx",
-                "RegionInfo": {
-                    "RegionCode": "xx",
-                    "Region": "xx",
-                    "RegionId": 1,
-                    "RegionNameEn": "xx",
-                    "RegionName": "xx"
-                },
+                "MachineName": "test-name",
+                "MachineOs": "Windows Server 2022 数据中心版 64位 中文版",
+                "Uuid": "24c9be55-c743-4a75-a5c7-2a2912341234",
+                "Quuid": "24c9be55-c743-4a75-a5c7-2a2912341234",
+                "MachineIp": "10.0.0.11",
+                "IsProVersion": true,
+                "MachineWanIp": "110.84.0.11",
+                "PayMode": "PREPAY",
                 "Tag": [
                     {
-                        "TagId": 1,
                         "Rid": 0,
-                        "Name": "xx"
+                        "Name": "test-name",
+                        "TagId": 1
                     }
                 ],
-                "Quuid": "xx",
-                "ProtectType": "xx",
-                "ProjectId": 1,
-                "MachineWanIp": "xx",
-                "InstanceState": "xx",
-                "MachineType": "xx",
-                "LicenseOrder": null,
-                "CloudTags": []
+                "RegionInfo": {
+                    "Region": "ap-guangzhou",
+                    "RegionName": "test-name",
+                    "RegionId": 1,
+                    "RegionCode": "gz",
+                    "RegionNameEn": "test-name"
+                },
+                "InstanceState": "EXPIRED",
+                "ProjectId": 0,
+                "MachineType": "CVM",
+                "KernelVersion": "0.1.1",
+                "ProtectType": "BASIC_VERSION",
+                "LicenseOrder": {
+                    "LicenseId": 1,
+                    "LicenseType": 1,
+                    "Status": 1,
+                    "SourceType": 1,
+                    "ResourceId": "uf6iskfrpy4g3xg2k1jm"
+                },
+                "CloudTags": [],
+                "InstanceId": "i-uf6iskfrpy4g3xg2k1jm"
             }
-        ]
+        ],
+        "TotalCount": 1,
+        "RequestId": "37b6df34-68f1-4ab8-a3d8-7b89de604c82"
     }
 }
 ```

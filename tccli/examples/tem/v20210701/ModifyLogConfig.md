@@ -6,21 +6,15 @@ Input:
 
 ```
 tccli tem ModifyLogConfig --cli-unfold-argument  \
-    --EnvironmentId xx \
-    --ApplicationId xx \
-    --Name xx \
-    --Data.ApplicationName xx \
-    --Data.TopicId xx \
-    --Data.BeginningRegex xx \
-    --Data.Name xx \
-    --Data.CreateDate xx \
-    --Data.LogPath xx \
-    --Data.InputType xx \
-    --Data.LogType xx \
-    --Data.FilePattern xx \
-    --Data.ModifyDate xx \
-    --Data.ApplicationId xx \
-    --Data.LogsetId xx
+    --EnvironmentId en-xxxxxx \
+    --Name abc \
+    --Data.LogsetId 7a126551-62d1-4e12-b426-84bd5b2fdbca \
+    --Data.TopicId 6c69fdb7-5e4c-4e52-8437-32c2c729b85a \
+    --Data.InputType container_stdout \
+    --Data.LogType json_log \
+    --Data.ExtractRule.UnMatchUpload true \
+    --Data.ExtractRule.UnMatchedKey LogParseFailure \
+    --ApplicationId app-xxxxxx
 ```
 
 Output: 

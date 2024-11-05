@@ -17,17 +17,17 @@ Output:
         "TotalCount": 1,
         "List": [
             {
-                "LastAuthorizedTime": "xx",
+                "LastAuthorizedTime": "2020-09-22",
                 "AuthorizedDate": "2020-09-22",
-                "LatestFailCode": "xx",
+                "LatestFailCode": "REACH_LIMIT",
                 "SuccessCount": 0,
                 "FailCount": 0,
-                "Source": "xx",
+                "Source": "LOCAL",
                 "TaskId": 1,
-                "Type": "xx"
+                "Type": "AUTO"
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "8bc803fd-d85d-47b8-9e2b-9644674be677"
     }
 }
 ```

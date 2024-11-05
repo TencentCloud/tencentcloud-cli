@@ -6,19 +6,19 @@ Input:
 
 ```
 tccli lowcode DescribeMaterialUploadUrl --cli-unfold-argument  \
-    --ExpireDay 1 \
-    --EnvId xx \
-    --Name xx
+    --EnvId abc \
+    --Name abc \
+    --ExpireDay 1
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "DownloadUrl": "xx",
-        "Id": "xx",
-        "RequestId": "xx",
-        "UploadUrl": "xx"
+        "UploadUrl": "abc",
+        "DownloadUrl": "abc",
+        "Id": "abc",
+        "RequestId": "abc"
     }
 }
 ```

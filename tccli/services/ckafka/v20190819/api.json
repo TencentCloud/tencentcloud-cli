@@ -4840,7 +4840,7 @@
         },
         {
           "disabled": false,
-          "document": "主题消息最大值，单位为 Byte，最小值1024Byte(即1KB)，最大值为8388608Byte（即8MB）。",
+          "document": "主题消息最大值，单位为 Byte，最小值1024Byte(即1KB)，最大值为12582912Byte（即12MB）",
           "example": "1024",
           "member": "int64",
           "name": "MaxMessageBytes",
@@ -8434,8 +8434,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "（过滤条件）按照实例ID过滤",
-          "example": "instance-will-s",
+          "document": "（查询条件）按照ckafka集群实例Id过滤",
+          "example": "ckafka-test",
           "member": "string",
           "name": "InstanceId",
           "required": false,
@@ -8443,8 +8443,8 @@
         },
         {
           "disabled": false,
-          "document": "（过滤条件）按照实例名称过滤，支持模糊查询",
-          "example": "tre",
+          "document": "搜索词   ex:（查询条件）按照实例名称过滤，支持模糊查询",
+          "example": "search-test",
           "member": "string",
           "name": "SearchWord",
           "required": false,
@@ -8452,8 +8452,8 @@
         },
         {
           "disabled": false,
-          "document": "（过滤条件）实例的状态。0：创建中，1：运行中，2：删除中，不填默认返回全部",
-          "example": "[\"0\\r\\n\",\"1\\r\\n\",\"2\\r\\n\"]",
+          "document": "（查询条件）实例的状态  0：创建中，1：运行中，2：删除中，5: 隔离中,  7:升级中 不填默认返回全部",
+          "example": "[1,7]",
           "member": "int64",
           "name": "Status",
           "required": false,
@@ -8480,7 +8480,7 @@
         {
           "disabled": false,
           "document": "已废弃。匹配标签key值。",
-          "example": "1",
+          "example": "tagkey-test",
           "member": "string",
           "name": "TagKey",
           "required": false,
@@ -8488,8 +8488,8 @@
         },
         {
           "disabled": false,
-          "document": "私有网络Id",
-          "example": "vpc-xxx",
+          "document": "（查询条件）私有网络Id",
+          "example": "vpc-test",
           "member": "string",
           "name": "VpcId",
           "required": false,
@@ -8504,7 +8504,7 @@
         {
           "disabled": false,
           "document": "返回的结果",
-          "example": "无",
+          "example": "{\"InstanceList\":[{\"IfCommunity\":true,\"InstanceId\":\"ckafka-test\",\"InstanceName\":\"ckafka测试\",\"Status\":1}],\"TotalCount\":1}",
           "member": "InstanceResponse",
           "name": "Result",
           "output_required": true,

@@ -16,19 +16,19 @@ Output:
         "TotalCount": 1,
         "List": [
             {
-                "Status": "xx",
-                "PublicIp": "xx",
-                "HostID": "xx",
-                "MachineType": "xx",
-                "DockerVersion": "xx",
-                "InstanceID": "xx",
-                "HostName": "xx",
+                "ContainerCnt": 2,
+                "DockerVersion": "19.03.9",
+                "HostID": "8bc803fd-d85d-47b8-9e2b-9644674be677",
+                "HostIP": "1.1.1.1",
+                "HostName": "机器名称",
                 "ImageCnt": 1,
-                "HostIP": "xx",
-                "ContainerCnt": 1
+                "InstanceID": "ins-8bc803fd",
+                "MachineType": "CVM",
+                "PublicIp": "1.1.1.1",
+                "Status": "ONLINE"
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "8bc803fd-d85d-47b8-9e2b-9644674be677"
     }
 }
 ```

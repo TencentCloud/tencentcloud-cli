@@ -7,7 +7,7 @@ Input:
 ```
 tccli trocket ModifyInstance --cli-unfold-argument  \
     --InstanceId rmq-72mo3a9o \
-    --Remark tests \
+    --Remark 测试修改消息保留时长 \
     --MessageRetention 25
 ```
 

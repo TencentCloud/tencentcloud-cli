@@ -14,7 +14,7 @@ Output:
 {
     "Response": {
         "Status": "FINISHED",
-        "DownloadUrl": "http://yunjing-dev-1256299843.cos.ap-guangzhou.myqcloud.com/1256299843/bruteattack-20200804-824874.csv",
+        "DownloadUrl": "http:DownloadUrl",
         "RequestId": "f8bcfd50-3a9d-ac4c-ba95-6ed70252453e"
     }
 }

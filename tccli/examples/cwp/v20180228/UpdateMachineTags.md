@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cwp UpdateMachineTags --cli-unfold-argument  \
-    --Quuid xxxx \
+    --Quuid 24c9be55-c743-4a75-a5c7-2a2912341234 \
     --TagIds 1
 ```
 

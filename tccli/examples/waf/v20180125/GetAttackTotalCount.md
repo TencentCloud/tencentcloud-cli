@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli waf GetAttackTotalCount --cli-unfold-argument  \
-    --StartTime 2021-02-01T00:00:00+08:00 \
-    --EndTime 2021-02-25T23:59:59+08:00 \
-    --Domain xxx \
-    --QueryString yyy
+    --StartTime 2020-09-22T00:00:00+00:00 \
+    --EndTime 2020-09-22T00:00:00+00:00 \
+    --Domain waf.com \
+    --QueryString bot:1
 ```
 
 Output: 

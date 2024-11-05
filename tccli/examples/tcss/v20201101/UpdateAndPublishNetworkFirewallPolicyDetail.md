@@ -7,15 +7,19 @@ Input:
 ```
 tccli tcss UpdateAndPublishNetworkFirewallPolicyDetail --cli-unfold-argument  \
     --Id 22 \
-    --CustomPolicy.0.Peer xx \
-    --CustomPolicy.0.Direction xx \
-    --CustomPolicy.0.Ports xx \
-    --Description xx \
-    --ClusterId xx \
+    --CustomPolicy.0.Direction FROM \
+    --CustomPolicy.0.Ports.0.Protocol TCP \
+    --CustomPolicy.0.Ports.0.Port 80 \
+    --CustomPolicy.0.Peer.0.NamespaceSelector default \
+    --CustomPolicy.0.Peer.0.PeerType NamespaceSelector  \
+    --CustomPolicy.0.Peer.0.PodSelector default  \
+    --CustomPolicy.0.Peer.0.IPBlock 0.0.0.0/24 \
+    --Description Description \
+    --ClusterId cls-cluster-id \
     --FromPolicyRule 0 \
-    --Namespace xx \
+    --Namespace default \
     --ToPolicyRule 0 \
-    --PodSelector xx
+    --PodSelector a=b
 ```
 
 Output: 

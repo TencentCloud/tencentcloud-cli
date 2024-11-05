@@ -6,18 +6,18 @@ Input:
 
 ```
 tccli waf AccessSpartaProtection --cli-unfold-argument  \
-    --Domains abc \
-    --InstanceID abc \
-    --AppIdInner 0 \
-    --UinInner abc
+    --Domains txwaf.qcloudwaf.com \
+    --InstanceID waf_2kuil2fm02vqm7z2 \
+    --AppIdInner 1256704381 \
+    --UinInner 100036087831
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "FailedMsg": "abc",
-        "RequestId": "abc"
+        "FailedMsg": "Success",
+        "RequestId": "dec1ec15-eb62-485f-9f94-985a7f27c3b4"
     }
 }
 ```

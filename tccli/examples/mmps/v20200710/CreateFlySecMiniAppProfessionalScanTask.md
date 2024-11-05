@@ -7,12 +7,12 @@ Input:
 ```
 tccli mmps CreateFlySecMiniAppProfessionalScanTask --cli-unfold-argument  \
     --MiniAppName 测试小程序 \
-    --Remark thanks \
-    --Mobile 13800138000 \
+    --Remark Remark备注信息 \
+    --Mobile 138XXXXXXXX \
     --MiniAppID wx66e50f1e*******6f \
     --Mode 2 \
-    --CorpName 微信小程序有限公司 \
-    --Email wechat@tencent.com
+    --CorpName ****科技有限公司 \
+    --Email user****@tencent.com
 ```
 
 Output: 

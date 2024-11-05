@@ -4085,6 +4085,7 @@
           "example": "ap-shanghai-2",
           "member": "string",
           "name": "Zone",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -4095,16 +4096,18 @@
           "example": "cage-xxxxxxxx",
           "member": "string",
           "name": "CageId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "实例所属项目ID。该参数可以通过调用 [DescribeProject](/document/api/378/4400) 的返回值中的 projectId 字段来获取。不填为默认项目。",
+          "document": "实例所属项目ID。不填为默认项目。",
           "example": "0",
           "member": "uint64",
           "name": "ProjectId",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -4115,6 +4118,7 @@
           "example": "Default Project",
           "member": "string",
           "name": "ProjectName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -4125,6 +4129,7 @@
           "example": "CdcName",
           "member": "string",
           "name": "CdcName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -4135,6 +4140,7 @@
           "example": "cdc-xxxxxxxx",
           "member": "string",
           "name": "CdcId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -4145,6 +4151,7 @@
           "example": "cluster-xxxxxxxx",
           "member": "string",
           "name": "DedicatedClusterId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false

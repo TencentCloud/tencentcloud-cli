@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cwp DescribeJavaMemShellInfo --cli-unfold-argument  \
-    --Id 1
+    --Id 184113
 ```
 
 Output: 
@@ -24,19 +24,28 @@ Output:
             "CreateTime": "2021-01-20 16:17:11",
             "RecentFoundTime": "2021-01-20 16:17:11",
             "Status": 0,
+            "MachineState": "OFFLINE",
             "ClassLoaderName": "org.apache.jasper.servlet.JasperLoader",
             "SuperClassName": "java.lang.Object",
             "Md5": "37e54fce63f1ca6c82927caf7aa1c412",
             "Interfaces": "java.IO.Writer,java.IO.Reader",
             "Annotations": "注释",
-            "Pid": 123,
+            "Pid": 1,
             "Exe": "/usr/lib/jvm/java-6-openjdk-amd64/jre/bin/java",
             "Args": "org.apache.catalina.startup.Bootstrap start",
             "ClassName": "main.class",
             "ClassContent": "avewsa==...",
             "ClassContentPretty": "package com.company;public class Main public static void main(String[] args) ...",
             "EventDescription": "腾讯御见...",
-            "SecurityAdvice": "安全建议.."
+            "SecurityAdvice": "安全建议..",
+            "MachineExtraInfo": {
+                "WanIP": "43.18.142.28",
+                "PrivateIP": "10.0.1.233",
+                "NetworkType": 0,
+                "NetworkName": "vpc-d7f***",
+                "InstanceID": "ins-j7vufb6",
+                "HostName": "hn***"
+            }
         }
     }
 }

@@ -7446,7 +7446,7 @@
         {
           "disabled": false,
           "document": "模板ID",
-          "example": "字符串",
+          "example": "temp-xxxxdowf",
           "member": "string",
           "name": "TemplateId",
           "required": true,
@@ -7464,7 +7464,7 @@
           "example": "无",
           "member": "TemplateInfo",
           "name": "Template",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -9341,7 +9341,7 @@
         {
           "disabled": false,
           "document": "资质照片，照片的base64编码。",
-          "example": "照片的base64编码",
+          "example": "54Wn54mH55qEYmFzZTY057yW56CB",
           "member": "string",
           "name": "ImageFile",
           "required": true,

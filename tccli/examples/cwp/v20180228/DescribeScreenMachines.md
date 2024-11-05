@@ -27,24 +27,24 @@ Output:
                         "DiskSize": 50,
                         "InvasionNum": 38479,
                         "MachineExtraInfo": {
-                            "HostName": "",
-                            "InstanceID": "ins-xxx",
-                            "NetworkName": "",
+                            "HostName": "hn",
+                            "InstanceID": "ins-id",
+                            "NetworkName": "vpc-id",
                             "NetworkType": 0,
-                            "PrivateIP": "xx.xx.xx.xx",
-                            "WanIP": "xx.xx.xx.xx"
+                            "PrivateIP": "1.1.1.1",
+                            "WanIP": "1.1.1.1"
                         },
-                        "MachineIp": "xx.xx.xx.xx",
+                        "MachineIp": "1.2.3.*",
                         "MachineName": "ha2",
                         "MachineOs": "CentOS 7.9 64位",
                         "MachineStatus": 9,
                         "MachineType": "CVM",
-                        "MachineWanIp": "xx.xx.xx.xx",
+                        "MachineWanIp": "1.2.3.*",
                         "MemLoad": "36.52",
                         "MemSize": 4,
-                        "Quuid": "1c26308c-5493-4eaf-a817-112ec25f499e",
+                        "Quuid": "1c26308c-5493-4eaf-***-112ec25f499e",
                         "SecurityStatus": "RISK",
-                        "Uuid": "1c26308c-5493-4eaf-a817-112ec25f499e",
+                        "Uuid": "1c26308c-5493-4eaf-****-112ec25f499e",
                         "VulNum": 18
                     }
                 ],
@@ -56,7 +56,7 @@ Output:
                 "UnAgentOfflineCnt": 1
             }
         ],
-        "RequestId": "xxxxxxxx-1234-5678-9101-yyyyyyyyyy"
+        "RequestId": "1c26308c-1234-5678-9101-112ec25f499e"
     }
 }
 ```

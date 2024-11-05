@@ -31,12 +31,13 @@ Output:
                 "Uuids": [],
                 "DealOldEvents": 0,
                 "Quuids": [
-                    ""
+                    "d4cc302e-09e5-436f-b99b-5ab9c9070323"
                 ],
                 "Category": 1,
                 "Rules": {
                     "Process": {
-                        "Exe": "/tmp/test"
+                        "Exe": "/tmp/test",
+                        "Cmdline": "/tmp/test"
                     },
                     "PProcess": null,
                     "AProcess": null

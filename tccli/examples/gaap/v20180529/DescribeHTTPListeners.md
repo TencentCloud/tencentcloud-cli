@@ -1,12 +1,12 @@
 **Example 1: 查询HTTP监听器信息**
 
-查询HTTP监听器信息
+
 
 Input: 
 
 ```
 tccli gaap DescribeHTTPListeners --cli-unfold-argument  \
-    --ProxyId link-n9ha8jzl \
+    --ProxyId link-pl5ee4db \
     --Limit 20 \
     --Offset 0
 ```
@@ -15,42 +15,20 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 4,
+        "RequestId": "3c48a850-4559-4132-8113-d075a235da2d",
+        "TotalCount": 1,
         "ListenerSet": [
             {
-                "Protocol": "HTTP",
-                "ListenerId": "listener-4e99n24b",
+                "ListenerId": "listener-kuwra6qh",
+                "ListenerName": "test",
                 "Port": 80,
-                "ListenerStatus": 0,
-                "ListenerName": "http80",
-                "CreateTime": 1563335063
-            },
-            {
+                "CreateTime": 1729568991,
                 "Protocol": "HTTP",
-                "ListenerId": "listener-jmi21mrf",
-                "Port": 8080,
-                "ListenerStatus": 0,
-                "ListenerName": "http8080",
-                "CreateTime": 1564590945
-            },
-            {
-                "Protocol": "HTTP",
-                "ListenerId": "listener-1grazsz5",
-                "Port": 18080,
-                "ListenerStatus": 0,
-                "ListenerName": "http18080",
-                "CreateTime": 1564590963
-            },
-            {
-                "Protocol": "HTTP",
-                "ListenerId": "listener-l6z66uqb",
-                "Port": 28080,
-                "ListenerStatus": 0,
-                "ListenerName": "http28080",
-                "CreateTime": 1564640821
+                "ListenerStatus": 1,
+                "ProxyId": "link-pl5ee4db",
+                "GroupId": null
             }
-        ],
-        "RequestId": "4c43a7f7-3527-4e2a-9998-bbd363e4b095"
+        ]
     }
 }
 ```

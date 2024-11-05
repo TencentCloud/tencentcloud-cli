@@ -9,7 +9,7 @@ tccli waf DescribeAccessHistogram --cli-unfold-argument  \
     --TopicId 1ae37c76-df99-4e2b-998c-20f39eba6226 \
     --From 1625395948532 \
     --To 1626000748532 \
-    --Query 
+    --Query bot_ai:0
 ```
 
 Output: 

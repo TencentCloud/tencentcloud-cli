@@ -6,16 +6,16 @@ Input:
 
 ```
 tccli tdmq ModifyEnvironmentAttributes --cli-unfold-argument  \
-    --EnvironmentId test \
+    --EnvironmentId devNs \
     --MsgTTL 100 \
-    --ClusterId pulsar-xxxxxxxx
+    --ClusterId pulsar-5r59xd4vnx
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "EnvironmentId": "test",
+        "EnvironmentId": "devNs",
         "NamespaceId": "namespace-5r59xen74x",
         "MsgTTL": 100,
         "Remark": "",

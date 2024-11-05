@@ -390,7 +390,7 @@
       {
         "document": "创建弹性网卡并绑定云服务器",
         "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAndAttachNetworkInterface\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-0akbol5v\",\n    \"Tags\": [\n        {\n            \"Value\": \"shanghai\",\n            \"Key\": \"city\"\n        }\n    ],\n    \"InstanceId\": \"ins-12345678\",\n    \"PrivateIpAddresses\": [\n        {\n            \"Primary\": \"true\",\n            \"PrivateIpAddress\": \"172.16.64.13\"\n        }\n    ],\n    \"SecurityGroupIds\": [\n        \"sg-05bb4upy\"\n    ],\n    \"NetworkInterfaceDescription\": \"TestDesc\",\n    \"SecondaryPrivateIpAddressCount\": \"1\",\n    \"SubnetId\": \"subnet-76r802pg\",\n    \"NetworkInterfaceName\": \"TestNIC\"\n}",
-        "output": "{\n    \"Response\": {\n        \"NetworkInterface\": {\n            \"NetworkInterfaceId\": \"eni-irk5qhhl\",\n            \"VpcId\": \"vpc-0akbol5v\",\n            \"SubnetId\": \"subnet-76r802pg\",\n            \"NetworkInterfaceName\": \"TestNIC\",\n            \"NetworkInterfaceDescription\": \"TestDesc\",\n            \"MacAddress\": \"20:90:6F:62:33:E2\",\n            \"Business\": \"TKE\",\n            \"CdcId\": \"\",\n            \"EniType\": 1,\n            \"AttachType\": 1,\n            \"QosLevel\": \"DEFAULT\",\n            \"ResourceId\": \"\",\n            \"SubNetworkInterfaces\": [],\n            \"PrivateIpAddressSet\": [\n                {\n                    \"PrivateIpAddress\": \"172.16.64.13\",\n                    \"Primary\": true,\n                    \"AddressId\": \"\",\n                    \"PublicIpAddress\": \"\",\n                    \"Description\": \"\",\n                    \"IsWanIpBlocked\": false,\n                    \"State\": \"PENDING\",\n                    \"QosLevel\": \"DEFAULT\"\n                }\n            ],\n            \"Attachment\": {\n                \"InstanceId\": \"ins-12345678\"\n            },\n            \"GroupSet\": [],\n            \"Primary\": false,\n            \"State\": \"PENDING\",\n            \"Zone\": \"\",\n            \"CreatedTime\": \"\",\n            \"Ipv6AddressSet\": [],\n            \"TagSet\": [\n                {\n                    \"Key\": \"city\",\n                    \"Value\": \"shanghai\"\n                }\n            ]\n        },\n        \"RequestId\": \"5cf1a813-d4f8-4e0c-8f90-c155a84a3ea1\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"NetworkInterface\": {\n            \"NetworkInterfaceId\": \"eni-irk5qhhl\",\n            \"VpcId\": \"vpc-0akbol5v\",\n            \"SubnetId\": \"subnet-76r802pg\",\n            \"NetworkInterfaceName\": \"TestNIC\",\n            \"NetworkInterfaceDescription\": \"TestDesc\",\n            \"MacAddress\": \"20:90:6F:62:33:E2\",\n            \"Business\": \"TKE\",\n            \"CdcId\": \"\",\n            \"EniType\": 1,\n            \"AttachType\": 1,\n            \"QosLevel\": \"DEFAULT\",\n            \"ResourceId\": \"\",\n            \"SubNetworkInterfaces\": [],\n            \"PrivateIpAddressSet\": [\n                {\n                    \"PrivateIpAddress\": \"172.16.64.13\",\n                    \"Primary\": true,\n                    \"AddressId\": \"\",\n                    \"PublicIpAddress\": \"\",\n                    \"Description\": \"\",\n                    \"IsWanIpBlocked\": false,\n                    \"State\": \"PENDING\",\n                    \"QosLevel\": \"DEFAULT\"\n                }\n            ],\n            \"Attachment\": {\n                \"InstanceId\": \"ins-12345678\",\n                \"DeviceIndex\": 1,\n                \"InstanceAccountId\": \"251007979\",\n                \"AttachTime\": \"2021-06-17 11:24:24\"\n            },\n            \"GroupSet\": [],\n            \"Primary\": false,\n            \"State\": \"PENDING\",\n            \"Zone\": \"\",\n            \"CreatedTime\": \"\",\n            \"Ipv6AddressSet\": [],\n            \"TagSet\": [\n                {\n                    \"Key\": \"city\",\n                    \"Value\": \"shanghai\"\n                }\n            ]\n        },\n        \"RequestId\": \"5cf1a813-d4f8-4e0c-8f90-c155a84a3ea1\"\n    }\n}",
         "title": "创建弹性网卡并绑定云服务器"
       }
     ],
@@ -1956,7 +1956,7 @@
       {
         "document": "",
         "input": "https://vpc.tencentcloudapi.com/?Action=DescribeDirectConnectGatewayCcnRoutes\n&DirectConnectGatewayId=dcg-prpqlmg1\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RouteSet\": [\n            {\n                \"RouteId\": \"ccnr-bvipc87w\",\n                \"DestinationCidrBlock\": \"10.33.0.0/24\",\n                \"UpdateTime\": \"xx\",\n                \"Description\": \"xx\",\n                \"ASPath\": [\n                    \"1000\",\n                    \"2000\",\n                    \"3000\"\n                ]\n            },\n            {\n                \"RouteId\": \"ccnr-oc61so0o\",\n                \"DestinationCidrBlock\": \"192.168.0.0/24\",\n                \"UpdateTime\": \"xx\",\n                \"Description\": \"xx\",\n                \"ASPath\": []\n            }\n        ],\n        \"TotalCount\": 2,\n        \"RequestId\": \"6e446c86-d8c9-4981-9b33-d10956585058\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RouteSet\": [\n            {\n                \"RouteId\": \"ccnr-bvipc87w\",\n                \"DestinationCidrBlock\": \"10.33.0.0/24\",\n                \"UpdateTime\": \"2024-01-01 10:18:12\",\n                \"Description\": \"描述内容\",\n                \"ASPath\": [\n                    \"1000\",\n                    \"2000\",\n                    \"3000\"\n                ]\n            }\n        ],\n        \"TotalCount\": 2,\n        \"RequestId\": \"6e446c86-d8c9-4981-9b33-d10956585058\"\n    }\n}",
         "title": "查询专线网关云联网路由"
       }
     ],
@@ -2004,6 +2004,14 @@
         "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDryRunUSGQuotaInternal\n<公共请求参数>\n\n{\n    \"UserAppId\": \"251197522\",\n    \"UsgId\": \"sg-5q4brrmt\",\n    \"Count\": \"100\",\n    \"OperateAction\": \"addVM\"\n}",
         "output": "{\n    \"Response\": {\n        \"ReturnCode\": 0,\n        \"RequestId\": \"eaca0d4d-832f-4f05-a16f-95b322f88cc1\"\n    }\n}",
         "title": "demo"
+      }
+    ],
+    "DescribeEipInfos": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEipInfos\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e637f946-f2e7-4a4c-a2f3-0b9eb2c28902\"\n    }\n}",
+        "title": "查询EIP信息"
       }
     ],
     "DescribeEndPointInternal": [
@@ -2566,7 +2574,7 @@
       {
         "document": "查询路由列表",
         "input": "https://vpc.tencentcloudapi.com/?Action=DescribeRoutes\n&Offset=0\n&Limit=10\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RouteSet\": [\n            {\n                \"RouteId\": 14915,\n                \"RouteType\": \"USER\",\n                \"DestinationCidrBlock\": \"172.16.0.0/28\",\n                \"GatewayType\": \"NORMAL_CVM\",\n                \"GatewayId\": \"172.16.0.25\",\n                \"Enabled\": true,\n                \"RouteDescription\": \"\",\n                \"CreatedTime\": \"2020-01-01 10:00:00\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"74883e1b-5901-46de-ae1e-d6e2cf591c5b\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RouteSet\": [\n            {\n                \"RouteId\": 14915,\n                \"RouteType\": \"USER\",\n                \"DestinationCidrBlock\": \"172.16.0.0/28\",\n                \"GatewayType\": \"NORMAL_CVM\",\n                \"GatewayId\": \"172.16.0.25\",\n                \"Enabled\": true,\n                \"PublishedToVbc\": true,\n                \"RouteTableId\": \"rtb-123456\",\n                \"RouteItemId\": \"abc\",\n                \"RouteDescription\": \"\",\n                \"CreatedTime\": \"2020-01-01 10:00:00\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"74883e1b-5901-46de-ae1e-d6e2cf591c5b\"\n    }\n}",
         "title": "查询路由列表"
       }
     ],
@@ -3124,6 +3132,14 @@
         "title": "查询外网服务"
       }
     ],
+    "DescribeWhiteServiceAllInternal": [
+      {
+        "document": "用于获取全量的公共服务白名单路由信息。",
+        "input": "https://vpc.tencentcloudapi.com/?Action=DescribeWhiteServiceAllInternal\n&WhiteServiceId=123\n&Protocol=tcp\n&Vip=1.1.1.1\n&VirtualPort=80\n&Limit=100\n&Offset=0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1b2534de-3f38-4913-921a-af5ff1a9cb73\"\n    }\n}",
+        "title": "用于获取全量的公共服务白名单路由信息"
+      }
+    ],
     "DescribeWhiteServiceInternal": [
       {
         "document": "",
@@ -3522,6 +3538,14 @@
         "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAddressesBandwidth\n<公共请求参数>\n\n{\n    \"InternetMaxBandwidthOut\": 2,\n    \"AddressIds\": [\n        \"eip-alfxy9c8\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"TaskId\": \"11531422\",\n        \"RequestId\": \"24cfceab-3492-482c-b86f-27f598b1b044\"\n    }\n}",
         "title": "调整后付费带宽"
+      }
+    ],
+    "ModifyAddressesRenewFlag": [
+      {
+        "document": "",
+        "input": "https://vpc.tencentcloudapi.com/?Action=ModifyAddressesRenewFlag\n&AddressIds.0=eip-cpfph9t4\n&RenewFlag=NOTIFY_AND_MANUAL_RENEW\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c89a8c84-6943-45ad-9342-36f599d77754\"\n    }\n}",
+        "title": "调整EIP续费标识"
       }
     ],
     "ModifyAssistantCidr": [
@@ -4147,7 +4171,7 @@
     "ReplaceDirectConnectGatewayCcnRoutes": [
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=ReplaceDirectConnectGatewayCcnRoutes\r\n&<公共请求参数>\r\n&DirectConnectGatewayId=dcg-prpqlmg1\r\n&Routes.0.RouteId=ccnr-bvipc87w\r\n&Routes.0.DestinationCidrBlock=10.2.2.0/24\r\n&Routes.1.RouteId=ccnr-oc61so0o\r\n&Routes.1.DestinationCidrBlock=10.2.3.0/24",
+        "input": "https://vpc.tencentcloudapi.com/?Action=ReplaceDirectConnectGatewayCcnRoutes\n&DirectConnectGatewayId=dcg-prpqlmg1\n&Routes.0.RouteId=dcr-bvipc87w\n&Routes.0.DestinationCidrBlock=10.2.2.0/24\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6e446c86-d8c9-4981-9b33-d10956585058\"\n    }\n}",
         "title": "替换专线网关云联网路由"
       }

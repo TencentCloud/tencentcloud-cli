@@ -7,13 +7,6 @@
       "output": "BindProcessComponentResponse",
       "status": "online"
     },
-    "CopyProcessDetail": {
-      "document": "复制流程详情",
-      "input": "CopyProcessDetailRequest",
-      "name": "复制流程详情",
-      "output": "CopyProcessDetailResponse",
-      "status": "online"
-    },
     "CreateDataSourceDetail": {
       "document": "创建数据源详情信息",
       "input": "CreateDataSourceDetailRequest",
@@ -56,13 +49,6 @@
       "output": "DescribeMaterialUploadUrlResponse",
       "status": "online"
     },
-    "DescribeMessageTemplates": {
-      "document": "本接口（DescribeMessageTemplates）用于查询消息模板列表",
-      "input": "DescribeMessageTemplatesRequest",
-      "name": "查询消息模板列表",
-      "output": "DescribeMessageTemplatesResponse",
-      "status": "online"
-    },
     "DescribePermissionForAppPage": {
       "document": "查询应用页面权限列表",
       "input": "DescribePermissionForAppPageRequest",
@@ -75,20 +61,6 @@
       "input": "DescribePermissionsRequest",
       "name": "查询资源权限信息",
       "output": "DescribePermissionsResponse",
-      "status": "online"
-    },
-    "DescribeProcessBasicInfos": {
-      "document": "查询流程基础信息列表",
-      "input": "DescribeProcessBasicInfosRequest",
-      "name": "查询流程基础信息列表",
-      "output": "DescribeProcessBasicInfosResponse",
-      "status": "online"
-    },
-    "DescribeProcessNodeList": {
-      "document": "查询流程节点信息",
-      "input": "DescribeProcessNodeListRequest",
-      "name": "查询流程节点信息",
-      "output": "DescribeProcessNodeListResponse",
       "status": "online"
     },
     "DescribeTemplateList": {
@@ -112,13 +84,6 @@
       "output": "DescribeWxAppInfoResponse",
       "status": "online"
     },
-    "FlushEnvPreToProd": {
-      "document": "刷新用户的预览环境到生产环境。",
-      "input": "FlushEnvPreToProdRequest",
-      "name": "刷新用户的预览环境到生产环境",
-      "output": "FlushEnvPreToProdResponse",
-      "status": "online"
-    },
     "GetDataSourceToken": {
       "document": "GetDataSourceTokenRequestVO",
       "input": "GetDataSourceTokenRequest",
@@ -131,20 +96,6 @@
       "input": "ModifyDataSourceRequest",
       "name": "修改数据源信息",
       "output": "ModifyDataSourceResponse",
-      "status": "online"
-    },
-    "OperateProcessBasicInfo": {
-      "document": "操作流程基础信息",
-      "input": "OperateProcessBasicInfoRequest",
-      "name": "操作流程基础信息",
-      "output": "OperateProcessBasicInfoResponse",
-      "status": "online"
-    },
-    "UnbindProcessComponent": {
-      "document": "解绑流程节点和组件的关系。",
-      "input": "UnbindProcessComponentRequest",
-      "name": "解绑流程组件的关系",
-      "output": "UnbindProcessComponentResponse",
       "status": "online"
     },
     "UpdateMaterialInfo": {
@@ -271,105 +222,6 @@
     },
     "BindProcessComponentResponse": {
       "document": "BindProcessComponent返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "CopyProcessDetailRequest": {
-      "document": "CopyProcessDetail请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "被复制的流程标识，同一主账号下必须唯一。",
-          "example": "无",
-          "member": "string",
-          "name": "CopiedProcessKey",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "新流程标识，同一主账号下必须唯一。",
-          "example": "无",
-          "member": "string",
-          "name": "NewProcessKey",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "新流程名称。",
-          "example": "无",
-          "member": "string",
-          "name": "ProcessName",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "环境ID",
-          "example": "无",
-          "member": "string",
-          "name": "EnvId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "被复制的流程版本。",
-          "example": "无",
-          "member": "int64",
-          "name": "CopiedVersion",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "新流程描述。",
-          "example": "无",
-          "member": "string",
-          "name": "ProcessDesc",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "环境信息， pre: 预览环境，pro: 正式环境，默认为预览环境。",
-          "example": "无",
-          "member": "string",
-          "name": "EnvType",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "应用Id",
-          "example": "无",
-          "member": "string",
-          "name": "AppCode",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "被复制的流程完整版本号，规则：主版本.次版本。",
-          "example": "无",
-          "member": "string",
-          "name": "CopiedReleaseVersion",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "CopyProcessDetailResponse": {
-      "document": "CopyProcessDetail返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -975,6 +827,16 @@
           "example": "无",
           "member": "string",
           "name": "PublishedTableName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "DB来源类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DbSourceType",
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1755,7 +1617,7 @@
           "example": "无",
           "member": "MaterialInfo",
           "name": "List",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -1765,7 +1627,7 @@
           "example": "100",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1820,7 +1682,7 @@
           "example": "https://example.com",
           "member": "string",
           "name": "UploadUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1830,7 +1692,7 @@
           "example": "https://example.com",
           "member": "string",
           "name": "DownloadUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1840,118 +1702,9 @@
           "example": "tzzz-ok21",
           "member": "string",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeMessageTemplatesRequest": {
-      "document": "DescribeMessageTemplates请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "分页",
-          "example": "10",
-          "member": "int64",
-          "name": "PageNo",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "分页大小",
-          "example": "10",
-          "member": "int64",
-          "name": "PageSize",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "环境信息， pre: 预览环境，pro: 正式环境，默认为预览环境。",
-          "example": "pre",
-          "member": "string",
-          "name": "EnvType",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "环境ID",
-          "example": "无",
-          "member": "string",
-          "name": "EnvId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "消息模板标题搜索关键字",
-          "example": "无",
-          "member": "string",
-          "name": "SearchTitleName",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "消息模板编码",
-          "example": "0",
-          "member": "uint64",
-          "name": "TemplateId",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "消息模版类型，0 或者不传:所有类型，1:用户自定义，2:待办默认，3:加签通知",
-          "example": "1",
-          "member": "int64",
-          "name": "TemplateType",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "应用Id列表",
-          "example": "无",
-          "member": "string",
-          "name": "AppCodeList",
-          "required": false,
-          "type": "list"
-        },
-        {
-          "disabled": false,
-          "document": "数据源名称列表",
-          "example": "无",
-          "member": "string",
-          "name": "DatasourceNameList",
-          "required": false,
-          "type": "list"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeMessageTemplatesResponse": {
-      "document": "DescribeMessageTemplates返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "消息模板基本信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "MessageTemplatePage",
-          "name": "Data",
-          "output_required": true,
-          "type": "object",
-          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -2022,7 +1775,7 @@
           "example": "无",
           "member": "AppPageDetail",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -2131,164 +1884,9 @@
           "example": "无",
           "member": "PermissionResourceInfo",
           "name": "Data",
-          "required": true,
-          "type": "object",
-          "value_allowed_null": true
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeProcessBasicInfosRequest": {
-      "document": "DescribeProcessBasicInfos请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "环境ID",
-          "example": "env-001",
-          "member": "string",
-          "name": "EnvId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "流程标识，同一主账号下必须唯一。",
-          "example": "flow_abc",
-          "member": "string",
-          "name": "ProcessKey",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "流程名称。",
-          "example": "process_name",
-          "member": "string",
-          "name": "ProcessName",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "流程状态：0-草稿，1-启用，2-禁用。",
-          "example": "1",
-          "member": "int64",
-          "name": "Status",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "页面限制。",
-          "example": "10",
-          "member": "int64",
-          "name": "Limit",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "偏移量。",
-          "example": "0",
-          "member": "int64",
-          "name": "Offset",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "环境信息， pre: 预览环境，pro: 正式环境，默认为预览环境。",
-          "example": "pre",
-          "member": "string",
-          "name": "EnvType",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeProcessBasicInfosResponse": {
-      "document": "DescribeProcessBasicInfos返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "流程基础信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"Status\": 0,\"ProcessName\": \"xx\",\"Limit\": 0,\"Offset\": 0}",
-          "member": "ProcessBasicInfoSets",
-          "name": "Data",
           "output_required": true,
           "type": "object",
           "value_allowed_null": true
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeProcessNodeListRequest": {
-      "document": "DescribeProcessNodeList请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "流程唯一标识，同一主账号下必须唯一。",
-          "example": "无",
-          "member": "string",
-          "name": "ProcessKey",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "环境ID",
-          "example": "无",
-          "member": "string",
-          "name": "EnvId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "流程版本。",
-          "example": "无",
-          "member": "int64",
-          "name": "ProcessVersion",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "环境信息， pre: 预览环境，pro: 正式环境，默认为预览环境。",
-          "example": "无",
-          "member": "string",
-          "name": "EnvType",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeProcessNodeListResponse": {
-      "document": "DescribeProcessNodeList返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "流程节点信息列表",
-          "example": "无",
-          "member": "ProcessNodeInfo",
-          "name": "Data",
-          "output_required": true,
-          "type": "list",
-          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -2527,33 +2125,6 @@
       ],
       "type": "object"
     },
-    "FlushEnvPreToProdRequest": {
-      "document": "FlushEnvPreToProd请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "环境信息， pre: 预览环境，pro: 正式环境，默认为预览环境。",
-          "example": "pre",
-          "member": "string",
-          "name": "EnvType",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "FlushEnvPreToProdResponse": {
-      "document": "FlushEnvPreToProd返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "GetDataSourceTokenRequest": {
       "document": "GetDataSourceToken请求参数结构体",
       "members": [
@@ -2753,158 +2324,6 @@
       ],
       "usage": "both"
     },
-    "MessageTemplate": {
-      "document": "消息模板基本信息",
-      "members": [
-        {
-          "disabled": false,
-          "document": "发送方式-消息类型列表，取值来自MessagePostType\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "int64",
-          "name": "MessageTypeList",
-          "required": false,
-          "type": "list",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "消息模板标题\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "TemplateTitle",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "消息模板描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "TemplateDesc",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "消息模板所属应用编码\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "AppCode",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "消息模板管理数据源\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "Datasource",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "消息模板创建人\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "CreateBy",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "datetime",
-          "name": "CreateTime",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "datetime",
-          "name": "UpdateTime",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "模板ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "uint64",
-          "name": "TemplateId",
-          "required": false,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "模版类型（1-用户自定义，2-待办默认，3-加签通知）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "int64",
-          "name": "TemplateType",
-          "required": false,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "数据源名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "DatasourceName",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "数据源视图ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "ViewId",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
-        }
-      ],
-      "usage": "both"
-    },
-    "MessageTemplatePage": {
-      "document": "消息模板列表",
-      "members": [
-        {
-          "disabled": false,
-          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0",
-          "member": "int64",
-          "name": "TotalCount",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "消息模板列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "MessageTemplate",
-          "name": "ResponseList",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": true
-        }
-      ],
-      "usage": "out"
-    },
     "ModifyDataSourceRequest": {
       "document": "ModifyDataSource请求参数结构体",
       "members": [
@@ -3003,105 +2422,6 @@
     },
     "ModifyDataSourceResponse": {
       "document": "ModifyDataSource返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "OperateProcessBasicInfoRequest": {
-      "document": "OperateProcessBasicInfo请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "流程操作动作，支持的操作有创建（ACTION_CREATE）、删除（ACTION_DELETE）、启用（ACTION_ENABLE）和禁用（ACTION_DISABLE）。",
-          "example": "ACTION_CREATE",
-          "member": "string",
-          "name": "OperateAction",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "流程标识，同一主账号下必须唯一。",
-          "example": "flow_abc",
-          "member": "string",
-          "name": "ProcessKey",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "环境ID",
-          "example": "无",
-          "member": "string",
-          "name": "EnvId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "流程名称。",
-          "example": "process name",
-          "member": "string",
-          "name": "ProcessName",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "流程描述。",
-          "example": "process desc",
-          "member": "string",
-          "name": "ProcessDesc",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "流程版本。",
-          "example": "1",
-          "member": "int64",
-          "name": "ProcessVersion",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "环境信息， pre: 预览环境，pro: 正式环境，默认为预览环境。",
-          "example": "pre",
-          "member": "string",
-          "name": "EnvType",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "应用Id",
-          "example": "app-1aps7o6t",
-          "member": "string",
-          "name": "AppCode",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "流程完整版本号，规则：主版本.次版本。",
-          "example": "无",
-          "member": "string",
-          "name": "ReleaseVersion",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "OperateProcessBasicInfoResponse": {
-      "document": "OperateProcessBasicInfo返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -3470,32 +2790,6 @@
       ],
       "usage": "both"
     },
-    "ProcessBasicInfoSets": {
-      "document": "流程详情列表",
-      "members": [
-        {
-          "disabled": false,
-          "document": "返回基础信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "ProcessBasicInfo",
-          "name": "ResponseList",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "int64",
-          "name": "TotalCount",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": true
-        }
-      ],
-      "usage": "out"
-    },
     "ProcessFoldBasicInfoSets": {
       "document": "流程折叠基本信息",
       "members": [
@@ -3521,32 +2815,6 @@
         }
       ],
       "usage": "both"
-    },
-    "ProcessNodeInfo": {
-      "document": "流程节点信息",
-      "members": [
-        {
-          "disabled": false,
-          "document": "流程节点标识，同一流程下必须唯一。",
-          "example": "无",
-          "member": "string",
-          "name": "NodeId",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "流程节点名称。",
-          "example": "无",
-          "member": "string",
-          "name": "NodeName",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
     },
     "QueryWhere": {
       "document": "用于自定义查询条件",
@@ -3751,51 +3019,6 @@
         }
       ],
       "usage": "both"
-    },
-    "UnbindProcessComponentRequest": {
-      "document": "UnbindProcessComponent请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "前端组件唯一标识。",
-          "example": "无",
-          "member": "string",
-          "name": "AppCode",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "环境ID",
-          "example": "无",
-          "member": "string",
-          "name": "EnvId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "环境信息， pre: 预览环境，pro: 正式环境，默认为预览环境。",
-          "example": "无",
-          "member": "string",
-          "name": "EnvType",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "UnbindProcessComponentResponse": {
-      "document": "UnbindProcessComponent返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
     },
     "UpdateMaterialInfoRequest": {
       "document": "UpdateMaterialInfo请求参数结构体",

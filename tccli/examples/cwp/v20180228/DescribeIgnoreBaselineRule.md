@@ -8,7 +8,7 @@ Input:
 tccli cwp DescribeIgnoreBaselineRule --cli-unfold-argument  \
     --Limit 10 \
     --Offset 0 \
-    --RuleName test
+    --RuleName irule
 ```
 
 Output: 

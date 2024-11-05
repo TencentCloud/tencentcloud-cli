@@ -14,15 +14,14 @@ Output:
 {
     "Response": {
         "CosAppid": 1,
-        "CosBucket": "abc",
-        "CosRegion": "abc",
+        "CosBucket": "ms-shield",
+        "CosRegion": "ap-guangzhou",
         "ExpireTime": 1,
-        "CosId": "abc",
-        "CosKey": "abc",
-        "CosTocken": "abc",
-        "CosPrefix": "abc",
-        "CosToken": "abc",
-        "RequestId": "abc"
+        "CosId": "XXXXzgG3O5Cm9ii31sTgph1XhFISnvKPw0Zi",
+        "CosKey": "XXXXV4HKvuYom4tYkn6FdXpVoM7hz",
+        "CosPrefix": "pctool/123456789/1542613158",
+        "CosToken": "13606435fd46b2765dd01aa4eaf356dfxxxxxx",
+        "RequestId": "RequestId-xxxxxxx"
     }
 }
 ```

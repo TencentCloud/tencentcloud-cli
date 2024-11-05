@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli cfw DeleteVpcFwGroup --cli-unfold-argument  \
-    --FwGroupId cfwg-xxxxaaaaa \
+    --FwGroupId cfwg-0752de63 \
     --DeleteFwGroup 0 \
-    --VpcFwInsList cfwew-aaaabbbb
+    --VpcFwInsList cfwew-0752de63
 ```
 
 Output: 

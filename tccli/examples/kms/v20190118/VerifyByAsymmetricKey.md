@@ -6,18 +6,18 @@ Input:
 
 ```
 tccli kms VerifyByAsymmetricKey --cli-unfold-argument  \
-    --Algorithm SM2DSA \
-    --Message Zsfw9GLu7dnR8tRr3BDk4kFnxIdc8veiKX2gK49LqOA%3D \
-    --KeyId 6cdf26d1-44ff-11eb-841c-5254006d0810 \
-    --MessageType DIGEST \
-    --SignatureValue MEUCIQDeO1wB%2F5dEfprulvh9Zw06UJylDt9R8MQY5qRMjzhXJgIgPKO2kKicFKemwOft8SgniUA692ORrqVEabS3kcbPL8U%3D
+    --KeyId d79e97e5-69d1-11ef-bc87-02ac442a5a1f \
+    --SignatureValue MEUCIQDunw5PZuSVI6IPX2xxdce6ohrm9Rt8KBqpMr6yogDbdgIgVyqCOiOs9OVb/frwglpg+43QXMMRnFKmBd5VNpS4A/o= \
+    --Message dGVzdAo= \
+    --MessageType RAW \
+    --Algorithm SM2DSA
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "3e634985-c311-4790-953a-44990f7bec6b",
+        "RequestId": "020b75ba-22f8-4f53-ab16-46ae5120711a",
         "SignatureValid": true
     }
 }

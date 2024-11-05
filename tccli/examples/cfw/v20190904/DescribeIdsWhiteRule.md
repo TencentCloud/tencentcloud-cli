@@ -6,6 +6,9 @@ Input:
 
 ```
 tccli cfw DescribeIdsWhiteRule --cli-unfold-argument  \
+    --Filters.0.Name SrcIp \
+    --Filters.0.Values 10.23.33.1 \
+    --Filters.0.OperatorType 9 \
     --Limit 10 \
     --Offset 0
 ```

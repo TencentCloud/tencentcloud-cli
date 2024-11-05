@@ -592,6 +592,22 @@
         "title": "数据检测情况"
       }
     ],
+    "DescribeDataServicePublishedApiDetail": [
+      {
+        "document": "查询数据服务API的发布态信息响应示例",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDataServicePublishedApiDetail\n<公共请求参数>\n\n{\n    \"Id\": \"1848956796467621890\",\n    \"ProjectId\": \"1470547050521227264\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ApiDescription\": \"\",\n            \"ApiId\": \"1792441377707995137\",\n            \"ApiName\": \"test_0520\",\n            \"ApiStatus\": 1,\n            \"ApiTagNames\": \"\",\n            \"AuthType\": 1,\n            \"GatewayApiUrl\": \"http://service-xxxxxxx.bj.tencentapigw.cn;https://service-xxxxxxx.bj.tencentapigw.cn\",\n            \"MaxAllowPageSize\": 2000,\n            \"MaxAllowQps\": 1,\n            \"OwnerName\": \"jaredlin\",\n            \"PathUrl\": \"/test_0520\",\n            \"RequestError\": \"{\\\"code\\\":\\\"FailedOperation\\\",\\\"message\\\":\\\"服务内部发生异常!\\\",\\\"requestId\\\":\\\"37f66f3c-d9e5-48be-a745-c15eb4b9f41d\\\"}\",\n            \"RequestExample\": \"http://service-xxxxxxx.bj.tencentapigw.cn/test_0520?id=1\",\n            \"RequestParam\": [\n                {\n                    \"BindField\": \"id\",\n                    \"DefaultValue\": \"1\",\n                    \"Description\": \"记录Id\",\n                    \"ExampleValue\": \"1\",\n                    \"NonEmpty\": 0,\n                    \"Operator\": \"=\",\n                    \"ParamName\": \"id\",\n                    \"ParamPosition\": \"Query\",\n                    \"ParamType\": \"Integer\"\n                }\n            ],\n            \"RequestSuccess\": \"{\\\"code\\\":\\\"SUCCESS\\\",\\\"message\\\":\\\"查询成功\\\",\\\"data\\\":{\\\"totalCount\\\":1,\\\"dataSet\\\":[{\\\"name123\\\":\\\"李四\\\",\\\"id\\\":1}]},\\\"requestId\\\":\\\"94881ebe-01a8-4c45-b2bf-f2175ea2e093\\\"}\",\n            \"RequestType\": \"GET\",\n            \"ResponseParam\": [\n                {\n                    \"BindField\": \"name123\",\n                    \"Description\": \"姓名\",\n                    \"ExampleValue\": \"李四\",\n                    \"ParamName\": \"name123\",\n                    \"ParamType\": \"String\"\n                },\n                {\n                    \"BindField\": \"id\",\n                    \"Description\": \"Id\",\n                    \"ExampleValue\": \"1\",\n                    \"ParamName\": \"id\",\n                    \"ParamType\": \"Integer\"\n                }\n            ],\n            \"TimeoutPeriod\": 5\n        },\n        \"RequestId\": \"13684205-8efc-479e-9bdd-772c96df6fff\"\n    }\n}",
+        "title": "查询数据服务API的发布态信息响应"
+      }
+    ],
+    "DescribeDataServicePublishedApiList": [
+      {
+        "document": "获取数据服务API的发布态信息列表示例",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDataServicePublishedApiList\n<公共请求参数>\n\n{\n    \"PageNumber\": 1,\n    \"PageSize\": 2,\n    \"ProjectId\": \"1470547050521227264\",\n    \"Filters\": {\n        \"Keyword\": \"\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"DataSet\": [\n            {\n                \"ApiFolderName\": \"test\",\n                \"ApiId\": \"1753335714101014529\",\n                \"ApiName\": \"test_gss_0202\",\n                \"ApiStatus\": 1,\n                \"ApiTagNames\": \"test_001\",\n                \"AuthType\": 1,\n                \"ConfigType\": 1,\n                \"CreateTime\": \"2024-04-25 10:14:29\",\n                \"Id\": \"1783318630750957569\",\n                \"OwnerName\": \"v_vgssgan\"\n            },\n            {\n                \"ApiFolderName\": \"test\",\n                \"ApiId\": \"1746830093602308097\",\n                \"ApiName\": \"test_gss_0116\",\n                \"ApiStatus\": 1,\n                \"ApiTagNames\": \"\",\n                \"AuthType\": 0,\n                \"ConfigType\": 0,\n                \"CreateTime\": \"2024-01-15 18:41:28\",\n                \"Id\": \"1746845044760952833\",\n                \"OwnerName\": \"v_vgssgan\"\n            }\n        ],\n        \"RequestId\": \"39313658-20fe-4f38-ae42-17fca1853cf1\",\n        \"TotalCount\": 39\n    }\n}",
+        "title": "获取数据服务API的发布态信息列表"
+      }
+    ],
     "DescribeDataSourceInfoList": [
       {
         "document": "获取数据源列表",

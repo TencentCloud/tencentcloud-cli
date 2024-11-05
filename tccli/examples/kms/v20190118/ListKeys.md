@@ -7,23 +7,25 @@ Input:
 ```
 tccli kms ListKeys --cli-unfold-argument  \
     --Offset 0 \
-    --Limit 2
+    --Limit 2 \
+    --Role 0 \
+    --HsmClusterId cls-hsm-3dflmo9g
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "1b580852-1e38-11e9-b129-5cb9019b4b00",
         "Keys": [
             {
-                "KeyId": "23e80852-1e38-11e9-b129-5cb9019b4b01"
+                "KeyId": "515d337d-70b4-11ef-bc87-02ac442a5a1f"
             },
             {
-                "KeyId": "23e80852-1e38-11e9-b129-5cb9019b4b02"
+                "KeyId": "0ed49d3e-69d3-11ef-9841-52540089bc41"
             }
         ],
-        "TotalCount": 100
+        "RequestId": "28c0e45c-c034-4d8b-b006-f018aa88597d",
+        "TotalCount": 14
     }
 }
 ```

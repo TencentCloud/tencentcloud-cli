@@ -1,6 +1,6 @@
-**Example 1: 示例**
+**Example 1: 查询漏洞防御列表**
 
-
+查询漏洞防御列表
 
 Input: 
 
@@ -26,11 +26,13 @@ Output:
                 "Level": 4,
                 "CvssScore": 9.8,
                 "CveId": "CVE-2022-22963",
+                "Status": 0,
+                "VulId": 1,
                 "PublishTime": "2022-03-25 00:00:00"
             }
         ],
         "RequestId": "5eb93566-d6c9-4a07-baba-dc8788f41f19",
-        "TotalCount": 3
+        "TotalCount": 1
     }
 }
 ```

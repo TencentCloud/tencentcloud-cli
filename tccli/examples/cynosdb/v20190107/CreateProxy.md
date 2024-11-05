@@ -6,28 +6,28 @@ Input:
 
 ```
 tccli cynosdb CreateProxy --cli-unfold-argument  \
-    --ClusterId abc \
-    --UniqueVpcId abc \
-    --UniqueSubnetId abc \
-    --ProxyCount 0 \
-    --Cpu 0 \
-    --Mem 0 \
-    --ConnectionPoolType abc \
-    --OpenConnectionPool abc \
+    --ClusterId cynosdbmysql-mwg7212w \
+    --UniqueVpcId vpc-4pbgo2lk \
+    --UniqueSubnetId subnet-a2emqn1t \
+    --ProxyCount 2 \
+    --Cpu 2 \
+    --Mem 4000 \
+    --ConnectionPoolType SessionConnectionPool \
+    --OpenConnectionPool yes \
     --ConnectionPoolTimeOut 0 \
-    --SecurityGroupIds abc \
-    --Description abc \
-    --ProxyZones.0.ProxyNodeZone abc \
-    --ProxyZones.0.ProxyNodeCount 0
+    --SecurityGroupIds sg-qwaszx \
+    --Description Fill in the description \
+    --ProxyZones.0.ProxyNodeZone ap-beijing-6 \
+    --ProxyZones.0.ProxyNodeCount 2
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "FlowId": 0,
-        "TaskId": 0,
-        "RequestId": "abc"
+        "FlowId": 358874,
+        "TaskId": 1063084,
+        "RequestId": "a88257ed-174e-499c-b390-dc535e664b94"
     }
 }
 ```

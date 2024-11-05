@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cynosdb DescribeSupportProxyVersion --cli-unfold-argument  \
-    --ClusterId cynosdbmysql-abc \
-    --ProxyGroupId cynosdbmysql-proxy-abc
+    --ClusterId cynosdbmysql-dnofdr2c \
+    --ProxyGroupId cynosdbmysql-proxy-4378e0kd
 ```
 
 Output: 
@@ -24,7 +24,7 @@ Output:
                 "ProxyVersionType": "BATE"
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "a5706353-296a-4992-ad07-ac4a48eeba43"
     }
 }
 ```

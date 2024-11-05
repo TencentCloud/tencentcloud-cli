@@ -14,25 +14,28 @@ Output:
 {
     "Response": {
         "FileTamperRuleDetail": {
-            "Status": 1,
-            "Name": "xx",
-            "Level": 1,
-            "IsGlobal": 1,
+            "Id": 10001,
+            "Uuids": [
+                "1ce68339-8828-457f-b358-d5b1b34e4fe9"
+            ],
+            "Name": "机器名称",
             "Rule": [
                 {
-                    "Action": "xx",
-                    "ProcessPath": "xx",
-                    "Target": "xx"
+                    "ProcessPath": "*/vi",
+                    "Target": "/root/*",
+                    "Action": "alert",
+                    "FileAction": "write"
                 }
             ],
-            "Id": 1,
-            "Uuids": [
-                "xx"
-            ],
-            "ModifyTime": "xx",
-            "CreateTime": "xx"
+            "IsGlobal": 0,
+            "Status": 1,
+            "CreateTime": "2024-08-23T14:37:10+08:00",
+            "ModifyTime": "2024-10-10T20:38:26+08:00",
+            "Level": 1,
+            "UuidTotalCount": 1,
+            "AddWhiteType": "all"
         },
-        "RequestId": "sdfiajei2x7878fa7vjs"
+        "RequestId": "2725aee8-adc4-4501-90cd-ccd77bfd35d5"
     }
 }
 ```

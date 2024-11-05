@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli dasb BindDeviceAccountPassword --cli-unfold-argument  \
-    --Password xx \
+    --Password 4457wewe \
     --Id 1
 ```
 
@@ -14,7 +14,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "xx"
+        "RequestId": "b894457a60-cee7-4640-a993-2dd733f413fc"
     }
 }
 ```

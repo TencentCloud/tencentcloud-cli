@@ -102,6 +102,14 @@
         "title": "创建快照"
       }
     ],
+    "CreateTXTRecord": [
+      {
+        "document": "添加TXT记录",
+        "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTXTRecord\n<公共请求参数>\n\n{\n    \"Domain\": \"1777.cn\",\n    \"RecordLine\": \"默认\",\n    \"Value\": \"43045375\",\n    \"TTL\": 600,\n    \"Status\": \"ENABLE\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RecordId\": 16412959,\n        \"RequestId\": \"5fc6eba2-3a28-41da-b3c6-70b8e55c447e\"\n    }\n}",
+        "title": "添加TXT记录"
+      }
+    ],
     "DeleteDomain": [
       {
         "document": " ",
@@ -652,6 +660,20 @@
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySubdomainStatus\n<公共请求参数>\n\n{\n    \"Domain\": \"dnspod.site\",\n    \"SubDomain\": \"test\",\n    \"RecordType\": \"A,TXT,CNAME\",\n    \"Status\": \"disable\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ab4f1426-ea15-42ea-8183-dc1b44151166\"\n    }\n}",
         "title": "暂停www子域名A/TXT/CNAME类型的解析记录"
+      }
+    ],
+    "ModifyTXTRecord": [
+      {
+        "document": "成功修改TXT记录",
+        "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTXTRecord\n<公共请求参数>\n\n{\n    \"Domain\": \"1777.cn\",\n    \"RecordLine\": \"默认\",\n    \"Value\": \"test for txt record\",\n    \"RecordId\": 16412960,\n    \"SubDomain\": \"www\",\n    \"TTL\": 600,\n    \"Status\": \"ENABLE\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RecordId\": 16412960,\n        \"RequestId\": \"2e55974f-37b6-431e-891a-038de497f839\"\n    }\n}",
+        "title": "修改TXT记录"
+      },
+      {
+        "document": "修改其他类型的记录时报错",
+        "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTXTRecord\n<公共请求参数>\n\n{\n    \"Domain\": \"1777.cn\",\n    \"RecordLine\": \"电信\",\n    \"Value\": \"3495743\",\n    \"RecordId\": 16412961,\n    \"SubDomain\": \"yyy\",\n    \"TTL\": 600,\n    \"Status\": \"ENABLE\",\n    \"Remark\": \"这是备注\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameter.RecordIdInvalid\",\n            \"Message\": \"记录编号错误。\"\n        },\n        \"RequestId\": \"afdeaa85-02b3-41e2-88c0-66fc001aea71\"\n    }\n}",
+        "title": "修改非TXT记录"
       }
     ],
     "ModifyVasAutoRenewStatus": [

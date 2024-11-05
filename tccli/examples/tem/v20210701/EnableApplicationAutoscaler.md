@@ -1,14 +1,15 @@
-**Example 1: 修改版本规格**
+**Example 1: 启用应用弹性策略组合**
 
-修改版本规格
+启用应用弹性策略组合
 
 Input: 
 
 ```
 tccli tem EnableApplicationAutoscaler --cli-unfold-argument  \
+    --ApplicationId app-xxxxxx \
     --SourceChannel 0 \
-    --ApplicationId xx \
-    --EnvironmentId xx
+    --EnvironmentId en-xxx \
+    --AutoscalerId scaler-xxxxxx
 ```
 
 Output: 
@@ -16,7 +17,7 @@ Output:
 {
     "Response": {
         "Result": true,
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

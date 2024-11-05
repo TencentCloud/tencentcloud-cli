@@ -13,20 +13,21 @@ Output:
     "Response": {
         "UserStoreSet": [
             {
-                "UserStoreName": "xx",
-                "UserStoreId": "xx",
-                "UserStoreDesc": "xx",
-                "UserNum": 0,
-                "TenantId": "xx",
+                "TenantId": "tenantId",
+                "UserStoreLogo": "https://aa.com/bb.png",
+                "UserStoreDesc": "管理应用和用户",
+                "UserStoreName": "目录1",
+                "UserNum": 10,
+                "UserStoreId": "2c3aca3b****************a7efe88e",
                 "AppNum": 0,
-                "UserStoreLogo": "xx",
-                "LastStatus": false,
-                "DefaultStatus": false,
-                "CreateDate": 1630328714604,
-                "LastStatusTime": 1630328714604
+                "LastStatus": true,
+                "DefaultStatus": true,
+                "CreateDate": 1706682491339,
+                "LastStatusTime": 1713168583556,
+                "UserStoreProtocolHost": "leecpn"
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "e2e9e8aa********************9ab34c6e"
     }
 }
 ```

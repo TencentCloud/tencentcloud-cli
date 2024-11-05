@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli cwp EditTags --cli-unfold-argument  \
+    --Name tag-name \
     --Id 1 \
-    --Name 标签名 \
-    --Quuids xxx
+    --Quuids dd90a245-ca7a-4268-9051-1fce4291****
 ```
 
 Output: 

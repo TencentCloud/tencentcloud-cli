@@ -6,8 +6,10 @@ Input:
 
 ```
 tccli cfw ModifyVpcFwSequenceRules --cli-unfold-argument  \
-    --RuleChangeItems.0.OrderIndex 100 \
-    --RuleChangeItems.0.NewOrderIndex 100
+    --RuleChangeItems.0.OrderIndex 2 \
+    --RuleChangeItems.0.NewOrderIndex 1 \
+    --RuleChangeItems.1.OrderIndex 1 \
+    --RuleChangeItems.1.NewOrderIndex 2
 ```
 
 Output: 

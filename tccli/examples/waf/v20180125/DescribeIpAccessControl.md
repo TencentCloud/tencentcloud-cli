@@ -23,7 +23,7 @@ Output:
                 {
                     "ActionType": 42,
                     "Ip": "1.1.1.1",
-                    "Note": "",
+                    "Note": "note",
                     "Source": "custom",
                     "TsVersion": 1579074751421,
                     "ValidTs": 1579017599

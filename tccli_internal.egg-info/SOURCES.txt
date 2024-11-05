@@ -428,6 +428,8 @@ tccli/services/faceid/v20180301/api.json
 tccli/services/faceid/v20180301/examples.json
 tccli/services/fele/__init__.py
 tccli/services/fele/fele_client.py
+tccli/services/fibona/__init__.py
+tccli/services/fibona/fibona_client.py
 tccli/services/fmu/__init__.py
 tccli/services/fmu/fmu_client.py
 tccli/services/fmu/v20191213/api.json

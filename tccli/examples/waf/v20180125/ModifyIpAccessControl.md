@@ -14,14 +14,14 @@ tccli waf ModifyIpAccessControl --cli-unfold-argument  \
     --RuleId 5512222 \
     --ActionType 42 \
     --ValidTS 0 \
-    --Note abc
+    --Note note
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "5d207f4f-0d41-4f5d-bce2-0320090c98d8"
     }
 }
 ```

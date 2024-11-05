@@ -22,10 +22,10 @@ Output:
                         "CurTime": "2020-09-22"
                     }
                 ],
-                "ImageRiskType": "xx"
+                "ImageRiskType": "IRT_VULNERABILITY"
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "dc56fda9-58c8-4c4f-9e8c-b7296836c1fe"
     }
 }
 ```

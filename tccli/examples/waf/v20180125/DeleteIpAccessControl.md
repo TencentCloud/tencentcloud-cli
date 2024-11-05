@@ -16,7 +16,7 @@ Output:
 {
     "Response": {
         "FailedCount": 0,
-        "FailedItems": "",
+        "FailedItems": "192.16.8.1.1",
         "RequestId": "9fbb7be2-214b-44df-a5b9-6a69ca456409"
     }
 }

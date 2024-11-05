@@ -14,25 +14,28 @@ Output:
 {
     "Response": {
         "FileTamperRuleDetail": {
-            "Status": 1,
-            "Name": "xx",
-            "Level": 1,
-            "IsGlobal": 1,
+            "Id": 11855,
+            "Uuids": [
+                "7168bc08-c1b8-11ea-9053-48fd8e5f474c"
+            ],
+            "Name": "vim",
             "Rule": [
                 {
-                    "Action": "xx",
-                    "ProcessPath": "xx",
-                    "Target": "xx"
+                    "ProcessPath": "*/vim",
+                    "Target": "/home/test/*",
+                    "Action": "alert",
+                    "FileAction": "read;write"
                 }
             ],
-            "Id": 1,
-            "Uuids": [
-                "xx"
-            ],
-            "ModifyTime": "xx",
-            "CreateTime": "xx"
+            "IsGlobal": 0,
+            "Status": 0,
+            "Level": 1,
+            "CreateTime": "2024-05-29T09:49:10+08:00",
+            "ModifyTime": "2024-06-03T20:14:59+08:00",
+            "UuidTotalCount": 1,
+            "AddWhiteType": "all"
         },
-        "RequestId": "sdfiajei2x7878fa7vjs"
+        "RequestId": "f4716f03-cca5-4087-afe8-26f361193661"
     }
 }
 ```

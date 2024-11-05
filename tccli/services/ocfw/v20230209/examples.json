@@ -11,8 +11,8 @@
     "DescribeAllZoneList": [
       {
         "document": "可用区信息",
-        "input": "POST / HTTP/1.1\nHost: ocfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAllZoneList\n<公共请求参数>\n\n{\n    \"CurrentAppId\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Zone\": \"abc\",\n                \"ZoneName\": \"abc\"\n            }\n        ],\n        \"ReturnCode\": 0,\n        \"ReturnMsg\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: ocfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAllZoneList\n<公共请求参数>\n\n{\n    \"CurrentAppId\": 1300448058\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Zone\": \"ap-guangzhou\",\n                \"ZoneName\": \"广州\"\n            }\n        ],\n        \"ReturnCode\": 0,\n        \"ReturnMsg\": \"success\",\n        \"RequestId\": \"2ddc9939-2bdc-475c-a932-ef77c7209f60\"\n    }\n}",
         "title": "可用区信息"
       }
     ],

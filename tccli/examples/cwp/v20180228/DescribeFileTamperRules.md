@@ -28,8 +28,8 @@ Output:
                 "WriteRuleCount": 1,
                 "ReadRuleCount": 1,
                 "ReadWriteRuleCount": 1,
-                "FileAction": "",
-                "AddWhiteType": ""
+                "FileAction": "read",
+                "AddWhiteType": "all"
             }
         ],
         "TotalCount": 1,

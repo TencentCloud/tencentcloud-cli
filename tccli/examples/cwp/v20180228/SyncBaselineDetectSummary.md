@@ -14,7 +14,7 @@ Output:
         "DetectingTaskIds": [
             2379
         ],
-        "EndTime": "",
+        "EndTime": "2020-11-21 15:16:00",
         "HostCount": 1,
         "LeftMins": 3,
         "NotPassPolicyCount": 19,

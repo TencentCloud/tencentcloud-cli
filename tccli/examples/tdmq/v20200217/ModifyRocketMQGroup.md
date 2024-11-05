@@ -6,13 +6,13 @@ Input:
 
 ```
 tccli tdmq ModifyRocketMQGroup --cli-unfold-argument  \
-    --Remark modified \
+    --Remark 测试修改消费组 \
     --BroadcastEnable false \
     --ClusterId rocketmq-2p9vx3ax9jxg \
-    --GroupId group-example \
+    --GroupId test_group \
     --RetryMaxTimes 16 \
     --ReadEnable true \
-    --NamespaceId example
+    --NamespaceId test_namespace
 ```
 
 Output: 

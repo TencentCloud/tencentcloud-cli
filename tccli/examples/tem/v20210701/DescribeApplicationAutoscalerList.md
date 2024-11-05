@@ -7,8 +7,8 @@ Input:
 ```
 tccli tem DescribeApplicationAutoscalerList --cli-unfold-argument  \
     --SourceChannel 0 \
-    --ApplicationId xx \
-    --EnvironmentId xx
+    --ApplicationId app-xxxxxx \
+    --EnvironmentId en-xxxxxx
 ```
 
 Output: 
@@ -18,32 +18,41 @@ Output:
         "Result": [
             {
                 "MinReplicas": 0,
+                "MaxReplicas": 0,
                 "HorizontalAutoscaler": [
                     {
                         "MinReplicas": 0,
-                        "Metrics": "xx",
+                        "MaxReplicas": 0,
+                        "Metrics": "abc",
                         "Threshold": 0,
-                        "MaxReplicas": 0
+                        "Enabled": true,
+                        "DoubleThreshold": 0
                     }
                 ],
-                "MaxReplicas": 0,
                 "CronHorizontalAutoscaler": [
                     {
-                        "Priority": 0,
+                        "Name": "abc",
+                        "Period": "abc",
                         "Schedules": [
                             {
-                                "StartAt": "xx",
+                                "StartAt": "abc",
                                 "TargetReplicas": 0
                             }
                         ],
                         "Enabled": true,
-                        "Period": "xx",
-                        "Name": "xx"
+                        "Priority": 0
                     }
-                ]
+                ],
+                "AutoscalerId": "abc",
+                "AutoscalerName": "abc",
+                "Description": "abc",
+                "CreateDate": "abc",
+                "ModifyDate": "abc",
+                "EnableDate": "abc",
+                "Enabled": true
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

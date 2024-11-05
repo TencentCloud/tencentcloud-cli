@@ -20,8 +20,8 @@ Output:
             {
                 "CrossBackupAddr": [
                     {
-                        "CrossExternalAddr": "https://sqlserver-bucket-sg-1258415541.cos.ap-singapore.myqcloud.com/1251966477%2fsqlserver%2fmssql-mz23h8n7%2fbackup%2fmanual_specific_58002_db2_2021_09_14144312.bak?sign=q-sign-algorithm%3dsha1%26q-ak%3dAKIDrRloa5Zdk580Xo9dCWaNE3kU3MQElsiV%26q-sign-time%3d1631605556%3b1631606456%26q-key-time%3d1631605556%3b1631606456%26q-header-list%3d%26q-url-param-list%3d%26q-signature%3df977b8f1afee59225e41a9e766b035953ef9527c",
-                        "CrossInternalAddr": "https://sqlserver-bucket-sg-1258415541.cos.ap-singapore.myqcloud.com/1251966477%2fsqlserver%2fmssql-mz23h8n7%2fbackup%2fmanual_specific_58002_db2_2021_09_14144312.bak?sign=q-sign-algorithm%3dsha1%26q-ak%3dAKIDrRloa5Zdk580Xo9dCWaNE3kU3MQElsiV%26q-sign-time%3d1631605556%3b1631606456%26q-key-time%3d1631605556%3b1631606456%26q-header-list%3d%26q-url-param-list%3d%26q-signature%3df977b8f1afee59225e41a9e766b035953ef9527c",
+                        "CrossExternalAddr": "https://sqlserver-bucket-sg-1258415541.cos.ap-singapore.myqcloud.com/1251966477%2fsqlserver%2fmssql-mz23h8n7%2fbackup%2fmanual_specific_58002_db2_2021_09_14144312.bak?sign=q-sign-algorithm%3dsha1%26q-ak%3d*************************%26q-sign-time%3d1631605556%3b1631606456%26q-key-time%3d1631605556%3b1631606456%26q-header-list%3d%26q-url-param-list%3d%26q-signature%3df977b8f1afee59225e41a9e766b035953ef9527c",
+                        "CrossInternalAddr": "https://sqlserver-bucket-sg-1258415541.cos.ap-singapore.myqcloud.com/1251966477%2fsqlserver%2fmssql-mz23h8n7%2fbackup%2fmanual_specific_58002_db2_2021_09_14144312.bak?sign=q-sign-algorithm%3dsha1%26q-ak%3d*************************%26q-sign-time%3d1631605556%3b1631606456%26q-key-time%3d1631605556%3b1631606456%26q-header-list%3d%26q-url-param-list%3d%26q-signature%3df977b8f1afee59225e41a9e766b035953ef9527c",
                         "CrossRegion": "ap-singapore"
                     }
                 ],
@@ -29,7 +29,7 @@ Output:
                 "DBs": [
                     "db1"
                 ],
-                "DownloadLink": "https://sqlserver-bucket-sg-1258415541.cos.ap-singapore.myqcloud.com/1251966477%2fsqlserver%2fmssql-mz23h8n7%2fbackup%2fmanual_specific_58002_db1_2021_09_14144312.bak?sign=q-sign-algorithm%3dsha1%26q-ak%3dAKIDrRloa5Zdk580Xo9dCWaNE3kU3MQElsiV%26q-sign-time%3d1631605556%3b1631606456%26q-key-time%3d1631605556%3b1631606456%26q-header-list%3d%26q-url-param-list%3d%26q-signature%3de5e61bfbccf44f6c3dd8a710296108dc95ba16db",
+                "DownloadLink": "https://sqlserver-bucket-sg-1258415541.cos.ap-singapore.myqcloud.com/1251966477%2fsqlserver%2fmssql-mz23h8n7%2fbackup%2fmanual_specific_58002_db1_2021_09_14144312.bak?sign=q-sign-algorithm%3dsha1%26q-ak%3d*************************%26q-sign-time%3d1631605556%3b1631606456%26q-key-time%3d1631605556%3b1631606456%26q-header-list%3d%26q-url-param-list%3d%26q-signature%3de5e61bfbccf44f6c3dd8a710296108dc95ba16db",
                 "FileName": "manual_specific_58002_db1_2021_09_14144312.bak",
                 "Id": 36074,
                 "Size": 184

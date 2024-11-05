@@ -7,9 +7,10 @@ Input:
 ```
 tccli tdmq ModifyRocketMQTopic --cli-unfold-argument  \
     --ClusterId rocketmq-2p9vx3ax9jxg \
-    --NamespaceId example \
-    --Topic example-topic \
-    --Remark modified
+    --NamespaceId test_namespace \
+    --Topic test_topic \
+    --Remark 测试修改 \
+    --PartitionNum 3
 ```
 
 Output: 

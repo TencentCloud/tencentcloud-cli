@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli waf DescribeAttackWhiteRule --cli-unfold-argument  \
-    --Domain  \
-    --Offset 1 \
-    --Limit 1 \
-    --Order  \
-    --By 
+    --Domain test.domain.com \
+    --Offset 0 \
+    --Limit 10 \
+    --Order dsc \
+    --By modify_time
 ```
 
 Output: 
@@ -20,36 +20,34 @@ Output:
         "Total": 1,
         "List": [
             {
-                "WhiteRuleId": 1,
-                "SignatureId": "abc",
-                "Status": 0,
-                "MatchField": "abc",
-                "MatchParams": "abc",
-                "MatchMethod": "abc",
-                "MatchContent": "abc",
-                "CreateTime": "2020-09-22T00:00:00+00:00",
-                "ModifyTime": "2020-09-22T00:00:00+00:00",
+                "WhiteRuleId": 14931,
+                "Name": "whiteRuleName",
+                "SignatureId": "30000163",
                 "SignatureIds": [
-                    "abc"
+                    "30000163"
                 ],
+                "TypeId": "01000000",
                 "TypeIds": [
-                    "abc"
+                    "10000001"
                 ],
-                "TypeId": "abc",
                 "Mode": 0,
-                "Name": "abc",
+                "Status": 1,
+                "MatchField": "URL",
+                "MatchMethod": "eq",
+                "MatchContent": "/asdfad",
                 "MatchInfo": [
                     {
-                        "MatchField": "abc",
-                        "MatchMethod": "abc",
-                        "MatchContent": "abc",
-                        "MatchParams": "abc"
+                        "MatchField": "URL",
+                        "MatchMethod": "eq",
+                        "MatchContent": "/asdfad"
                     }
                 ],
-                "MatchInfoStr": "abc"
+                "MatchInfoStr": "[{\"MatchField\":\"URL\",\"MatchParams\":\"\",\"MatchMethod\":\"eq\",\"MatchContent\":\"/asdfad\"}]",
+                "CreateTime": "2024-10-29T21:19:12+08:00",
+                "ModifyTime": "2024-10-29T21:19:12+08:00"
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "d3f9fc57-dbfd-4503-ad95-eab902c6257c"
     }
 }
 ```

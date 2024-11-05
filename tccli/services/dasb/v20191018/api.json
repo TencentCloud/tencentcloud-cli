@@ -1102,10 +1102,10 @@
         {
           "disabled": false,
           "document": "上一次同步完成的时间",
-          "example": "xxx",
+          "example": "2024-03-14T10:00:05+08:00",
           "member": "string",
           "name": "LastTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1115,7 +1115,7 @@
           "example": "1",
           "member": "uint64",
           "name": "LastStatus",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1125,7 +1125,7 @@
           "example": "false",
           "member": "bool",
           "name": "InProcess",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         }
@@ -1138,40 +1138,40 @@
         {
           "disabled": false,
           "document": "被审计会话的Sid",
-          "example": "xxx",
+          "example": "dfac9070-8b23-499e-83b2-a50e3ca",
           "member": "string",
           "name": "Sid",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "审计者的编号",
-          "example": "xxx",
+          "example": "100245200143",
           "member": "string",
           "name": "Uin",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "审计动作发生的时间",
-          "example": "xxx",
+          "example": "2023-10-30T10:02:31+08:00",
           "member": "string",
           "name": "Time",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "审计者的Ip",
-          "example": "xxx",
+          "example": "10.12.10.11",
           "member": "string",
           "name": "ClientIp",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1181,67 +1181,67 @@
           "example": "1",
           "member": "int64",
           "name": "Operation",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "被审计主机的Id",
-          "example": "xxx",
+          "example": "ins-eadwssddf",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "被审计主机的主机名",
-          "example": "xxx",
+          "example": "linux",
           "member": "string",
           "name": "DeviceName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "被审计会话所属的类型，如字符会话",
-          "example": "xxx",
+          "example": "SSH",
           "member": "string",
           "name": "Protocol",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "被审计主机的内部Ip",
-          "example": "xxx",
+          "example": "172.10.12.15",
           "member": "string",
           "name": "PrivateIp",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "被审计主机的外部Ip",
-          "example": "xxx",
+          "example": "192.168.45.125",
           "member": "string",
           "name": "PublicIp",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "审计者的子账号",
-          "example": "xxx",
+          "example": "1002452741033",
           "member": "string",
           "name": "SubAccountUin",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -1279,7 +1279,7 @@
         {
           "disabled": false,
           "document": "主机账号密码",
-          "example": "xxxxxx",
+          "example": "test-pwd",
           "member": "string",
           "name": "Password",
           "required": true,
@@ -1315,7 +1315,7 @@
         {
           "disabled": false,
           "document": "主机账号私钥，最新长度128字节，最大长度8192字节",
-          "example": "xxxxxx",
+          "example": "bh-test-key",
           "member": "string",
           "name": "PrivateKey",
           "required": true,
@@ -1324,7 +1324,7 @@
         {
           "disabled": false,
           "document": "主机账号私钥口令，最大长度256字节",
-          "example": "xxxxxx",
+          "example": "bh-test-key-pwd",
           "member": "string",
           "name": "PrivateKeyPassword",
           "required": false,
@@ -1360,7 +1360,7 @@
         {
           "disabled": false,
           "document": "堡垒机服务ID",
-          "example": "bh-saas-xxxxxxxx",
+          "example": "bh-saas-resouce",
           "member": "string",
           "name": "ResourceId",
           "required": false,
@@ -1369,7 +1369,7 @@
         {
           "disabled": false,
           "document": "网络域ID",
-          "example": "net-xxxxxxxx",
+          "example": "net-default",
           "member": "string",
           "name": "DomainId",
           "required": false,
@@ -1690,6 +1690,16 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "命令模板类型 1-内置 2-自定义\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Type",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1876,7 +1886,7 @@
         {
           "disabled": false,
           "document": "权限名称，最大32字符，不能包含空白字符",
-          "example": "acl1",
+          "example": "主机访问权限",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -2183,7 +2193,7 @@
         {
           "disabled": false,
           "document": "任务名",
-          "example": "无",
+          "example": "改密任务",
           "member": "string",
           "name": "TaskName",
           "required": true,
@@ -2237,7 +2247,7 @@
         {
           "disabled": false,
           "document": "手动指定密码时必传",
-          "example": "无",
+          "example": "pwd",
           "member": "string",
           "name": "Password",
           "required": false,
@@ -2309,7 +2319,7 @@
         {
           "disabled": false,
           "document": "加密压缩文件密码",
-          "example": "123456",
+          "example": "12**56",
           "member": "string",
           "name": "FilePassword",
           "required": false,
@@ -2318,7 +2328,7 @@
         {
           "disabled": false,
           "document": "所属部门id。“1.2.3”",
-          "example": "无",
+          "example": "1.2",
           "member": "string",
           "name": "DepartmentId",
           "required": false,
@@ -2345,7 +2355,7 @@
         {
           "disabled": false,
           "document": "周期任务首次执行时间",
-          "example": "无",
+          "example": "2020-12-20T19:51:23+08:00",
           "member": "string",
           "name": "FirstTime",
           "required": false,
@@ -2360,7 +2370,7 @@
         {
           "disabled": false,
           "document": "任务id",
-          "example": "ops-xxx",
+          "example": "ops-1a2b3c",
           "member": "string",
           "name": "OperationId",
           "output_required": true,
@@ -2382,7 +2392,7 @@
         {
           "disabled": false,
           "document": "模板名，最大长度32字符，不能包含空白字符",
-          "example": "xx",
+          "example": "高危命令模板",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -2418,6 +2428,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Id",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2463,7 +2474,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2509,7 +2520,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2682,7 +2693,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2701,7 +2712,7 @@
         {
           "disabled": false,
           "document": "用户名, 3-20个字符, 必须以英文字母开头，且不能包含字母、数字、.、_、-以外的字符",
-          "example": "user001",
+          "example": "zhangsan",
           "member": "string",
           "name": "UserName",
           "required": true,
@@ -2728,7 +2739,7 @@
         {
           "disabled": false,
           "document": "电子邮件",
-          "example": "aa@a.com",
+          "example": "133**@qq.com",
           "member": "string",
           "name": "Email",
           "required": false,
@@ -2782,7 +2793,7 @@
         {
           "disabled": false,
           "document": "所属部门ID，如：“1.2.3”",
-          "example": "\"1.2.3\"",
+          "example": "1.2",
           "member": "string",
           "name": "DepartmentId",
           "required": false,
@@ -3080,7 +3091,7 @@
         {
           "disabled": false,
           "document": "待删除的用户ID集合",
-          "example": "无",
+          "example": "[12,23]",
           "member": "uint64",
           "name": "IdSet",
           "required": true,
@@ -3183,7 +3194,7 @@
         {
           "disabled": false,
           "document": "需要开通服务的资源ID",
-          "example": "bh-saas-xxxxxxxx",
+          "example": "bh-saas-resource",
           "member": "string",
           "name": "ResourceId",
           "required": true,
@@ -3210,7 +3221,7 @@
         {
           "disabled": false,
           "document": "需要开通服务的VPC",
-          "example": "vpc-xxxxxx",
+          "example": "vpc-1a2b3c",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -3219,7 +3230,7 @@
         {
           "disabled": false,
           "document": "需要开通服务的子网ID",
-          "example": "subnet-xxxxxx",
+          "example": "subnet-1a2b3c",
           "member": "string",
           "name": "SubnetId",
           "required": true,
@@ -3264,7 +3275,7 @@
         {
           "disabled": false,
           "document": "需要开通实例所属的CDC集群ID",
-          "example": "cdc-xxxxxxxx",
+          "example": "cdc-1a2b3c",
           "member": "string",
           "name": "CdcClusterId",
           "required": false,
@@ -3363,7 +3374,7 @@
           "example": "2",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3373,7 +3384,7 @@
           "example": "[]",
           "member": "AccessWhiteListRule",
           "name": "AccessWhiteListRuleSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3383,7 +3394,7 @@
           "example": "true",
           "member": "bool",
           "name": "AllowAny",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -3393,7 +3404,7 @@
           "example": "true",
           "member": "bool",
           "name": "AllowAuto",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -3421,7 +3432,7 @@
         {
           "disabled": false,
           "document": "访问权限名称，模糊查询，最长64字符",
-          "example": "xx",
+          "example": "测试",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -3457,7 +3468,7 @@
         {
           "disabled": false,
           "document": "有访问权限的用户ID集合",
-          "example": "无",
+          "example": "[10,23]",
           "member": "uint64",
           "name": "AuthorizedUserIdSet",
           "required": false,
@@ -3466,7 +3477,7 @@
         {
           "disabled": false,
           "document": "有访问权限的资产ID集合",
-          "example": "无",
+          "example": "[11,14]",
           "member": "uint64",
           "name": "AuthorizedDeviceIdSet",
           "required": false,
@@ -3489,6 +3500,15 @@
           "name": "DepartmentId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤数组",
+          "example": "[{\"Name\":\"InstanceId\":\"Values\":[\"ins-adex-eadd-eaad\"]}]",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -3502,17 +3522,17 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "访问权限列表",
-          "example": "[]",
+          "example": "[{\"Id\":12}, {\"Id\":15}]",
           "member": "Acl",
           "name": "AclSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3546,10 +3566,10 @@
         {
           "disabled": false,
           "document": "资产同步结果",
-          "example": "xxx",
+          "example": "{             \"LastStatus\":1,             \"LastTime\":\"2021-09-22T15:04:05Z07:00\",             \"InProcess\":true         }",
           "member": "AssetSyncStatus",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -3734,11 +3754,20 @@
         {
           "disabled": false,
           "document": "命令模板名，模糊查询，最大长度64字符",
-          "example": "xx",
+          "example": "测试模板",
           "member": "string",
           "name": "Name",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "命令模板类型 1-内置模板  2-自定义模板",
+          "example": "1",
+          "member": "uint64",
+          "name": "Type",
+          "required": false,
+          "type": "int"
         },
         {
           "disabled": false,
@@ -3767,10 +3796,10 @@
         {
           "disabled": false,
           "document": "命令模板列表",
-          "example": "[]",
+          "example": "[{\"Id\":1, \"Name\":\"测试模板\", \"CmdList\":\"rm -rf\", \"Type\":2}]",
           "member": "CmdTemplate",
           "name": "CmdTemplateSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3780,7 +3809,7 @@
           "example": "10",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3804,18 +3833,20 @@
         {
           "disabled": false,
           "document": "基础镜像ID",
-          "example": "",
+          "example": "cD0eF3gH5i",
           "member": "string",
           "name": "BaseImageId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "AI镜像ID",
-          "example": "",
+          "example": "jK7lM9nO1p",
           "member": "string",
           "name": "AiImageId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4348,7 +4379,7 @@
         {
           "disabled": false,
           "document": "用户名，如果不包含其他条件时对user_name or real_name两个字段模糊查询",
-          "example": "xxx",
+          "example": "Mason",
           "member": "string",
           "name": "UserName",
           "required": false,
@@ -4357,7 +4388,7 @@
         {
           "disabled": false,
           "document": "姓名，模糊查询",
-          "example": "xx",
+          "example": "Henry",
           "member": "string",
           "name": "RealName",
           "required": false,
@@ -4435,10 +4466,10 @@
         {
           "disabled": false,
           "document": "登录日志列表",
-          "example": "无",
+          "example": "[{}]",
           "member": "LoginEvent",
           "name": "LoginEventSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4448,7 +4479,7 @@
           "example": "10",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4467,7 +4498,7 @@
         {
           "disabled": false,
           "document": "用户名，如果不包含其他条件时对user_name or real_name两个字段模糊查询",
-          "example": "xxx",
+          "example": "Thomas",
           "member": "string",
           "name": "UserName",
           "required": false,
@@ -4476,7 +4507,7 @@
         {
           "disabled": false,
           "document": "姓名，模糊查询",
-          "example": "xx",
+          "example": "Liam",
           "member": "string",
           "name": "RealName",
           "required": false,
@@ -4554,10 +4585,10 @@
         {
           "disabled": false,
           "document": "操作日志列表",
-          "example": "无",
+          "example": "[{}]",
           "member": "OperationEvent",
           "name": "OperationEventSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4567,7 +4598,7 @@
           "example": "10",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5184,6 +5215,26 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否启用SSL，仅支持Redis资产。0：禁用 1：启用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "EnableSSL",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "已上传的SSL证书名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "bh-redis-test.crt",
+          "member": "string",
+          "name": "SSLCertName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -5373,7 +5424,7 @@
         {
           "disabled": false,
           "document": "主机名，可为空",
-          "example": "xx",
+          "example": "运维主机",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -5391,11 +5442,38 @@
         {
           "disabled": false,
           "document": "资产多节点：字段ip和端口",
-          "example": "127.0.0.1:2001",
+          "example": "[\"127.0.0.1:2001\"]",
           "member": "string",
           "name": "IpPortSet",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否启用SSL,1:启用 0：禁用，仅支持Redis资产",
+          "example": "1",
+          "member": "int64",
+          "name": "EnableSSL",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "SSL证书，EnableSSL时必填",
+          "example": "bh-test-cert",
+          "member": "string",
+          "name": "SSLCert",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "SSL证书名称，EnableSSL时必填",
+          "example": "bh-redis-test.crt",
+          "member": "string",
+          "name": "SSLCertName",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -5406,22 +5484,20 @@
         {
           "disabled": false,
           "document": "需要过滤的字段。",
-          "example": "无",
+          "example": "UserName",
           "member": "string",
           "name": "Name",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "字段的过滤值。\n若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。\n若同一个Filter存在多个Values，同一Filter下Values间的关系为逻辑或（OR）关系。",
-          "example": "无",
+          "example": "[\"Nathan\",\"Luke\"]",
           "member": "string",
           "name": "Values",
           "required": true,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         }
       ],
       "usage": "in"
@@ -5725,30 +5801,30 @@
         {
           "disabled": false,
           "document": "用户名",
-          "example": "xx",
+          "example": "Evan",
           "member": "string",
           "name": "UserName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "姓名",
-          "example": "xx",
+          "example": "Tyler",
           "member": "string",
           "name": "RealName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "操作时间",
-          "example": "2020-12-31T17:34:17+0800",
+          "example": "2020-12-31T17:34:17+08:00",
           "member": "datetime_iso",
           "name": "Time",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5758,7 +5834,7 @@
           "example": "1.0.0.1",
           "member": "string",
           "name": "SourceIp",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5768,7 +5844,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Entry",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5778,7 +5854,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -5827,7 +5903,7 @@
         {
           "disabled": false,
           "document": "访问权限名称，最大32字符，不能包含空白字符",
-          "example": "xx",
+          "example": "运维权限",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -5989,7 +6065,7 @@
         {
           "disabled": false,
           "document": "关联高危DB模板ID",
-          "example": "[\"abc\"]",
+          "example": "[\"arcl-9knq1\"]",
           "member": "string",
           "name": "ACTemplateIdSet",
           "required": false,
@@ -6061,7 +6137,7 @@
         {
           "disabled": false,
           "document": "权限所属部门的ID，如：1.2.3",
-          "example": "1.2.3",
+          "example": "1.2",
           "member": "string",
           "name": "DepartmentId",
           "required": false,
@@ -6106,7 +6182,7 @@
         {
           "disabled": false,
           "document": "改密任务id",
-          "example": "ops-xxx",
+          "example": "ops-1a2b3c",
           "member": "string",
           "name": "OperationId",
           "required": true,
@@ -6160,7 +6236,7 @@
         {
           "disabled": false,
           "document": "任务名称",
-          "example": "无",
+          "example": "改密任务",
           "member": "string",
           "name": "TaskName",
           "required": false,
@@ -6169,7 +6245,7 @@
         {
           "disabled": false,
           "document": "所属部门ID，\"1,2,3\"",
-          "example": "无",
+          "example": "1.2",
           "member": "string",
           "name": "DepartmentId",
           "required": false,
@@ -6187,7 +6263,7 @@
         {
           "disabled": false,
           "document": "密码，手动指定密码时必传。",
-          "example": "无",
+          "example": "pwd",
           "member": "string",
           "name": "Password",
           "required": false,
@@ -6196,7 +6272,7 @@
         {
           "disabled": false,
           "document": "密码限制长度，自动生成密码必传。\t",
-          "example": "无",
+          "example": "12",
           "member": "int64",
           "name": "PasswordLength",
           "required": false,
@@ -6205,7 +6281,7 @@
         {
           "disabled": false,
           "document": "密码包含小写字母，0：否，1：是。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "SmallLetter",
           "required": false,
@@ -6214,7 +6290,7 @@
         {
           "disabled": false,
           "document": "密码包含大写字母，0：否，1：是。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "BigLetter",
           "required": false,
@@ -6223,7 +6299,7 @@
         {
           "disabled": false,
           "document": "密码包含数字，0：否，1：是。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Digit",
           "required": false,
@@ -6259,7 +6335,7 @@
         {
           "disabled": false,
           "document": "加密压缩文件密码",
-          "example": "无",
+          "example": "pwd",
           "member": "string",
           "name": "FilePassword",
           "required": false,
@@ -6268,7 +6344,7 @@
         {
           "disabled": false,
           "document": "任务类型， 4：手工执行  5：周期自动执行",
-          "example": "无",
+          "example": "4",
           "member": "uint64",
           "name": "Type",
           "required": false,
@@ -6277,7 +6353,7 @@
         {
           "disabled": false,
           "document": "周期任务周期，单位天（大于等于 1，小于等于 365）",
-          "example": "无",
+          "example": "7",
           "member": "uint64",
           "name": "Period",
           "required": false,
@@ -6286,7 +6362,7 @@
         {
           "disabled": false,
           "document": "周期任务首次执行时间",
-          "example": "无",
+          "example": "2023-12-20T19:51:23+08:00",
           "member": "datetime_iso",
           "name": "FirstTime",
           "required": false,
@@ -6313,7 +6389,7 @@
         {
           "disabled": false,
           "document": "模板名，最长32字符，不能包含空白字符",
-          "example": "xx",
+          "example": "高危命令模板",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -6345,6 +6421,15 @@
           "name": "Encoding",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "命令模板类型 1-内置模板 2-自定义模板",
+          "example": "1",
+          "member": "uint64",
+          "name": "Type",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -6367,7 +6452,7 @@
         {
           "disabled": false,
           "document": "资产组名，最大长度32字符，不能为空",
-          "example": "xxx",
+          "example": "windows集群",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -6448,7 +6533,7 @@
         {
           "disabled": false,
           "document": "网络域Id",
-          "example": "net-xxxxxxxx",
+          "example": "net-default",
           "member": "string",
           "name": "DomainId",
           "required": false,
@@ -6475,7 +6560,7 @@
         {
           "disabled": false,
           "document": "是否开启OAuth认证，false-不开启，true-开启。",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "Enable",
           "required": true,
@@ -6493,7 +6578,7 @@
         {
           "disabled": false,
           "document": "OAuth认证客户端Id",
-          "example": "无",
+          "example": "client-id",
           "member": "string",
           "name": "ClientId",
           "required": false,
@@ -6502,7 +6587,7 @@
         {
           "disabled": false,
           "document": "OAuth认证客户端密钥",
-          "example": "无",
+          "example": "client-secret",
           "member": "string",
           "name": "ClientSecret",
           "required": false,
@@ -6511,7 +6596,7 @@
         {
           "disabled": false,
           "document": "获取OAuth认证授权码URL",
-          "example": "无",
+          "example": "https://some-url/oauth2/v1/authorize",
           "member": "string",
           "name": "CodeUrl",
           "required": false,
@@ -6520,7 +6605,7 @@
         {
           "disabled": false,
           "document": "获取OAuth令牌URL",
-          "example": "无",
+          "example": "https://some-url/oauth2/v1/token",
           "member": "string",
           "name": "TokenUrl",
           "required": false,
@@ -6529,7 +6614,7 @@
         {
           "disabled": false,
           "document": "获取OAuth用户信息URL",
-          "example": "无",
+          "example": "https://some-url/oauth2/v1/userinfo",
           "member": "string",
           "name": "UserInfoUrl",
           "required": false,
@@ -6538,7 +6623,7 @@
         {
           "disabled": false,
           "document": "使用Okta认证时指定范围。为空时默认使用 openid、profile、email。",
-          "example": "无",
+          "example": "[]",
           "member": "string",
           "name": "Scopes",
           "required": false,
@@ -6565,7 +6650,7 @@
         {
           "disabled": false,
           "document": "需要开通服务的资源ID",
-          "example": "bh-saas-xxxxxxxx",
+          "example": "bh-saas-resource",
           "member": "string",
           "name": "ResourceId",
           "required": true,
@@ -6574,7 +6659,7 @@
         {
           "disabled": false,
           "document": "已废弃",
-          "example": "无",
+          "example": "1",
           "member": "string",
           "name": "Status",
           "required": false,
@@ -6583,7 +6668,7 @@
         {
           "disabled": false,
           "document": "已废弃",
-          "example": "无",
+          "example": "[]",
           "member": "string",
           "name": "ModuleSet",
           "required": false,
@@ -6673,7 +6758,7 @@
         {
           "disabled": false,
           "document": "用户组名",
-          "example": "xx",
+          "example": "运维用户组",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -6727,7 +6812,7 @@
         {
           "disabled": false,
           "document": "按照\"国家地区代码|手机号\"的格式输入。如: \"+86|xxxxxxxx\"",
-          "example": "+86|13311111111",
+          "example": "+86|133***98",
           "member": "string",
           "name": "Phone",
           "required": false,
@@ -6736,7 +6821,7 @@
         {
           "disabled": false,
           "document": "电子邮件",
-          "example": "xx@xx.com",
+          "example": "198***@qq.com",
           "member": "string",
           "name": "Email",
           "required": false,
@@ -6790,7 +6875,7 @@
         {
           "disabled": false,
           "document": "用户所属部门的ID，如1.2.3",
-          "example": "1.2.3",
+          "example": "1.2",
           "member": "string",
           "name": "DepartmentId",
           "required": false,
@@ -6893,30 +6978,30 @@
         {
           "disabled": false,
           "document": "用户名",
-          "example": "xx",
+          "example": "Nathan",
           "member": "string",
           "name": "UserName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "姓名",
-          "example": "xx",
+          "example": "Dylan",
           "member": "string",
           "name": "RealName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "操作时间",
-          "example": "2020-12-31T17:34:17+0800",
+          "example": "2020-12-31T17:34:17+08:00",
           "member": "datetime_iso",
           "name": "Time",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6926,7 +7011,7 @@
           "example": "1.0.0.1",
           "member": "string",
           "name": "SourceIp",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6936,7 +7021,7 @@
           "example": "100",
           "member": "uint64",
           "name": "Kind",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6946,7 +7031,7 @@
           "example": "新建主机",
           "member": "string",
           "name": "Operation",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6956,7 +7041,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -7015,7 +7100,7 @@
         {
           "disabled": false,
           "document": "ID集合",
-          "example": "无",
+          "example": "[13,15]",
           "member": "uint64",
           "name": "IdSet",
           "required": true,
@@ -7042,7 +7127,7 @@
         {
           "disabled": false,
           "document": "ID集合",
-          "example": "无",
+          "example": "[13]",
           "member": "uint64",
           "name": "IdSet",
           "required": true,
@@ -7126,7 +7211,7 @@
         {
           "disabled": false,
           "document": "VPC ID",
-          "example": "vpc-xxxxxx",
+          "example": "vpc-sdfsc-esd",
           "member": "string",
           "name": "VpcId",
           "output_required": true,
@@ -7276,7 +7361,7 @@
         {
           "disabled": false,
           "document": "开通服务的子网ID",
-          "example": "subnet-xxxxxx",
+          "example": "subnet-dfedas-feasd",
           "member": "string",
           "name": "SubnetId",
           "output_required": true,
@@ -7306,7 +7391,7 @@
         {
           "disabled": false,
           "document": "外部IP",
-          "example": "无",
+          "example": "[\"127.0.0.1\"]",
           "member": "string",
           "name": "PublicIpSet",
           "output_required": true,
@@ -7316,7 +7401,7 @@
         {
           "disabled": false,
           "document": "内部IP",
-          "example": "无",
+          "example": "[\"127.0.0.1\"]",
           "member": "string",
           "name": "PrivateIpSet",
           "output_required": true,
@@ -7326,7 +7411,7 @@
         {
           "disabled": false,
           "document": "服务开通的高级功能列表，如:[DB]",
-          "example": "无",
+          "example": "[\"DB\"]",
           "member": "string",
           "name": "ModuleSet",
           "output_required": true,
@@ -7386,7 +7471,7 @@
         {
           "disabled": false,
           "document": "堡垒机资源LB\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[{\"ClbIp\":\"192.168.11.20\"}]",
           "member": "Clb",
           "name": "ClbSet",
           "output_required": false,
@@ -7422,6 +7507,36 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "cdc集群id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cdc-dfsed-eda",
+          "member": "string",
+          "name": "CdcClusterId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "日志投递规格信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "sc_cds_dasb_saas_xxx",
+          "member": "string",
+          "name": "LogDelivery",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "部署模式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "DeployModel",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -7432,7 +7547,7 @@
         {
           "disabled": false,
           "document": "资产id",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "DeviceId",
           "required": true,
@@ -7441,7 +7556,7 @@
         {
           "disabled": false,
           "document": "资产账号",
-          "example": "无",
+          "example": "root",
           "member": "string",
           "name": "Account",
           "required": true,
@@ -7456,7 +7571,7 @@
         {
           "disabled": false,
           "document": "任务Id",
-          "example": "无",
+          "example": "ops-1a2b3c",
           "member": "string",
           "name": "OperationId",
           "required": true,
@@ -7465,7 +7580,7 @@
         {
           "disabled": false,
           "document": "部门id",
-          "example": "无",
+          "example": "1.2",
           "member": "string",
           "name": "DepartmentId",
           "required": false,
@@ -7501,7 +7616,7 @@
         {
           "disabled": false,
           "document": "开始时间，不得早于当前时间的180天前",
-          "example": "2020-01-01T01:01:01Z",
+          "example": "2020-01-01T01:01:01+08:00",
           "member": "datetime_iso",
           "name": "StartTime",
           "required": true,
@@ -7510,7 +7625,7 @@
         {
           "disabled": false,
           "document": "结束时间",
-          "example": "2020-01-01T01:01:01Z",
+          "example": "2020-01-07T01:01:01+08:00",
           "member": "datetime_iso",
           "name": "EndTime",
           "required": false,
@@ -7543,10 +7658,10 @@
         {
           "disabled": false,
           "document": "审计日志",
-          "example": "[]",
+          "example": "[{}]",
           "member": "AuditLogResult",
           "name": "AuditLogSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7556,7 +7671,7 @@
           "example": "20",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },

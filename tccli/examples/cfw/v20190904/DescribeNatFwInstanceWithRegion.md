@@ -14,8 +14,11 @@ Output:
         "NatinsLst": [
             {
                 "NatinsId": "cfwnat-fc7ae792",
-                "NatinsName": "wy yw 测试",
-                "Region": "ap-guangzhou"
+                "NatinsName": "运维测试",
+                "Region": "ap-guangzhou",
+                "FwMode": 1,
+                "Status": 0,
+                "NatIp": "1.1.1.1,2.2.2.2"
             }
         ],
         "RequestId": "52fa6827-985f-49c7-a853-d86efbd547c3"

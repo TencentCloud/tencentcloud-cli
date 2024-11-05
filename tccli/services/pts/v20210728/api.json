@@ -3053,6 +3053,15 @@
           "name": "Status",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否查询收藏job, true： 是，false：否",
+          "example": "true",
+          "member": "bool",
+          "name": "IsCollection",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -5550,6 +5559,28 @@
           "required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "付费类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1 预付费，２后付费，３免费调试任务",
+          "member": "int64",
+          "name": "PayMode",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否收藏，0：默认，1：取消，2：收藏\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Collection",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -7854,6 +7885,15 @@
           "name": "Note",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "收藏和取消收藏， 收藏：2， 取消：1",
+          "example": "2",
+          "member": "int64",
+          "name": "Collection",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

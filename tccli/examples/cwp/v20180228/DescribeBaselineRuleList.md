@@ -7,7 +7,7 @@ Input:
 ```
 tccli cwp DescribeBaselineRuleList --cli-unfold-argument  \
     --Limit 10 \
-    --Filters.0.Values test \
+    --Filters.0.Values auto_**** \
     --Filters.0.Name RuleName \
     --Offset 0
 ```
@@ -18,11 +18,19 @@ Output:
     "Response": {
         "List": [
             {
-                "RuleName": "test111",
+                "HostIds": [
+                    "d99a1b46-cc2d-4633-a11f-4a7663d25***"
+                ],
+                "HostIps": [
+                    "176.1.1.**"
+                ],
+                "AssetType": "1",
+                "RuleName": "ruleName01",
                 "CategoryId": -1,
-                "RuleDesc": "test111",
+                "RuleDesc": "rule desc",
                 "Items": [
                     {
+                        "ItemName": "name***",
                         "ItemId": 1000
                     }
                 ],

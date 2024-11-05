@@ -14,13 +14,14 @@ Output:
         "NatinsLst": [
             {
                 "NatinsId": "cfwnat-9243de20",
-                "NatinsName": "ywold",
+                "NatinsName": "公网NAT出口",
                 "Region": "ap-shanghai",
                 "FwMode": 0,
-                "Status": 0
+                "Status": 0,
+                "NatIp": "1.1.1.1,2.2.2.2"
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "9a86c4e3-b926-4244-919b-aba9a7e82686"
     }
 }
 ```

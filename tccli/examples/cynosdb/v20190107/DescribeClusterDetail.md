@@ -14,113 +14,114 @@ Output:
 {
     "Response": {
         "Detail": {
-            "ClusterId": "abc",
-            "ClusterName": "abc",
-            "Region": "abc",
-            "Zone": "abc",
-            "PhysicalZone": "abc",
-            "Status": "abc",
-            "StatusDesc": "abc",
-            "ServerlessStatus": "abc",
-            "StorageId": "abc",
-            "Storage": 0,
-            "MaxStorageSize": 0,
-            "MinStorageSize": 0,
+            "ClusterId": "cynosdbmysql-sgvwu2is",
+            "ClusterName": "cynodbmysql-自定义用户名",
+            "Region": "ap-guangzhou",
+            "Zone": "ap-guangzhou-1",
+            "PhysicalZone": "ap-guangzhou-1",
+            "Status": "running",
+            "StatusDesc": "运行中",
+            "ServerlessStatus": "运行中",
+            "StorageId": "cynosdbmysql-sgvwu2is",
+            "Storage": 20,
+            "MaxStorageSize": 1000,
+            "MinStorageSize": 10,
             "StoragePayMode": 0,
-            "VpcName": "abc",
-            "VpcId": "abc",
-            "SubnetName": "abc",
-            "SubnetId": "abc",
-            "Charset": "abc",
-            "CreateTime": "abc",
-            "DbType": "abc",
-            "DbMode": "abc",
-            "DbVersion": "abc",
-            "StorageLimit": 0,
-            "UsedStorage": 0,
-            "Vip": "abc",
-            "Vport": 0,
+            "VpcName": "vpc-osjw7wbx",
+            "VpcId": "vpc-osjw7wbx",
+            "SubnetName": "subnet-stbcji8s",
+            "SubnetId": "subnet-stbcji8s",
+            "Charset": "utf8mb4",
+            "CreateTime": "2020-02-20 20:20:20",
+            "DbType": "MYSQL",
+            "DbMode": "normal",
+            "DbVersion": "5.7",
+            "StorageLimit": 20,
+            "UsedStorage": 14,
+            "Vip": "1.2.3.4",
+            "Vport": 3306,
             "RoAddr": [
                 {
-                    "IP": "abc",
-                    "Port": 0
+                    "IP": "1.2.3.5",
+                    "Port": 3306
                 }
             ],
             "Ability": {
-                "IsSupportSlaveZone": "abc",
-                "NonsupportSlaveZoneReason": "abc",
-                "IsSupportRo": "abc",
-                "NonsupportRoReason": "abc",
+                "IsSupportSlaveZone": "yes",
+                "NonsupportSlaveZoneReason": "aaabbbccc",
+                "IsSupportRo": "yes",
+                "NonsupportRoReason": "aaabbbccc",
                 "IsSupportManualSnapshot": "yes"
             },
-            "CynosVersion": "abc",
-            "BusinessType": "abc",
-            "HasSlaveZone": "abc",
-            "IsFreeze": "abc",
+            "CynosVersion": "3.1.10",
+            "BusinessType": "",
+            "HasSlaveZone": "",
+            "IsFreeze": "no",
             "Tasks": [
                 {
-                    "TaskId": 0,
-                    "TaskType": "abc",
-                    "TaskStatus": "abc",
-                    "ObjectId": "abc",
-                    "ObjectType": "abc"
+                    "TaskId": 10,
+                    "TaskType": "taskAutoBackup",
+                    "TaskStatus": "processing",
+                    "ObjectId": "cynosdbmysql-sgvwu2is",
+                    "ObjectType": "taskObjTypeCluster"
                 }
             ],
-            "MasterZone": "abc",
+            "MasterZone": "ap-guangzhou-5",
             "SlaveZones": [
-                "abc"
+                "ap-guangzhou-3"
             ],
             "InstanceSet": [
                 {
-                    "InstanceId": "abc",
-                    "InstanceName": "abc",
-                    "InstanceType": "abc",
-                    "InstanceStatus": "abc",
-                    "InstanceStatusDesc": "abc",
-                    "InstanceCpu": 0,
-                    "InstanceMemory": 0,
+                    "InstanceId": "cynosdbmysql-ins-xvs9osn2",
+                    "InstanceName": "cynosdbmysql-用户自定义名称",
+                    "InstanceType": "rw",
+                    "InstanceStatus": "running",
+                    "InstanceStatusDesc": "运行中",
+                    "InstanceCpu": 1,
+                    "InstanceMemory": 2,
                     "InstanceStorage": 0,
-                    "InstanceRole": "abc",
+                    "InstanceRole": "master",
                     "MaintainStartTime": 0,
                     "MaintainDuration": 0,
                     "MaintainWeekDays": [
-                        "abc"
+                        "Mon"
                     ],
-                    "ServerlessStatus": "abc"
+                    "ServerlessStatus": "pause"
                 }
             ],
             "PayMode": 0,
-            "PeriodEndTime": "abc",
+            "PeriodEndTime": "2030-01-01 10:01:01",
             "ProjectID": 0,
             "ResourceTags": [
                 {
-                    "TagKey": "abc",
-                    "TagValue": "abc"
+                    "TagKey": "tagKey-1",
+                    "TagValue": "tagValue-1"
                 }
             ],
-            "ProxyStatus": "abc",
-            "LogBin": "abc",
-            "IsSkipTrade": "abc",
-            "PitrType": "abc",
-            "IsOpenPasswordComplexity": "abc",
-            "NetworkStatus": "abc",
+            "ProxyStatus": "running",
+            "LogBin": "ON",
+            "IsSkipTrade": "no",
+            "PitrType": "redo_pitr",
+            "IsOpenPasswordComplexity": "yes",
+            "NetworkStatus": "whole_rdma",
             "ResourcePackages": [
                 {
-                    "PackageId": "abc",
-                    "PackageType": "abc",
-                    "PackageAppId": 0
+                    "PackageId": "package-xbhsw7wk",
+                    "PackageType": "CCU",
+                    "PackageAppId": 123456789,
+                    "DeductionPriority": 1
                 }
             ],
             "RenewFlag": 0,
-            "NetworkType": "abc",
+            "NetworkType": "whole_rdma",
             "SlaveZoneAttr": [
                 {
-                    "Zone": "ap-guangzhou-5",
+                    "Zone": "ap-guangzhou-3",
                     "BinlogSyncWay": "async"
                 }
             ]
         },
-        "RequestId": "abc"
+        "RequestId": "6febb6f0-b0fc-11ee-93cb-73a07daf38c5"
     }
 }
 ```

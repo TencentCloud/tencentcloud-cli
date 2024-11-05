@@ -6,20 +6,20 @@ Input:
 
 ```
 tccli ms UpdateClientState --cli-unfold-argument  \
-    --ClientId abc \
-    --Ip abc \
+    --ClientId ClientId \
+    --Ip 1.1.1.1 \
     --Internal 0 \
-    --ServerVersion abc \
-    --Hostname abc \
-    --Os abc
+    --ServerVersion ServerVersion \
+    --Hostname Hostname \
+    --Os windows
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "ResultCode": "abc",
-        "RequestId": "abc"
+        "ResultCode": "0",
+        "RequestId": "RequestId-xxxxx"
     }
 }
 ```

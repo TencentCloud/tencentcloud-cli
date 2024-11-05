@@ -7,7 +7,7 @@ Input:
 ```
 tccli ccc DescribeIvrAudioList --cli-unfold-argument  \
     --SdkAppId 160000000 \
-    --CustomFileName abc \
+    --CustomFileName 测试文件名 \
     --PageSize 1 \
     --PageNumber 0
 ```
@@ -20,7 +20,7 @@ Output:
         "FileInfo": [
             {
                 "FileId": 1,
-                "CustomFileName": "abc",
+                "CustomFileName": "测试文件名",
                 "AudioFileName": "a.mp3",
                 "Status": 0
             }

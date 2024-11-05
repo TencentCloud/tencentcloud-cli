@@ -8,9 +8,9 @@ Input:
 tccli cwp CheckLogKafkaConnectionState --cli-unfold-argument  \
     --AccessType 1 \
     --AccessAddr 192.168.1.1:80 \
-    --Username xx \
+    --Username uname \
     --HasPwd 1 \
-    --Pwd xxxx \
+    --Pwd pwdpwd \
     --KafkaId ckafka-ce80kte5 \
     --InsVersion 0.10.2.1
 ```

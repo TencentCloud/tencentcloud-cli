@@ -21,14 +21,12 @@ Output:
 ```
 {
     "Response": {
-        "TranId": "abc",
-        "BigDealIds": [
-            "abc"
-        ],
+        "BigDealIds": [],
         "DealNames": [
-            "abc"
+            "20241025054071351304161"
         ],
-        "RequestId": "abc"
+        "RequestId": "588fbc90-61a4-4125-bc70-65a3f8d1327e",
+        "TranId": "20241025054071351304171"
     }
 }
 ```

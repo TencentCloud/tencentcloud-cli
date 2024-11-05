@@ -11,14 +11,14 @@ Output:
 ```
 {
     "Response": {
-        "EndTime": "2021-05-01 00:00:00",
-        "CoresCnt": 1,
-        "MaxPostPayCoresCnt": 1,
-        "StartTime": "2021-05-31 00:00:00",
-        "ResourceId": "xx",
         "BuyStatus": "Normal",
+        "CoresCnt": 0,
+        "EndTime": "2024-11-19 17:06:40",
         "IsPurchased": false,
-        "RequestId": "xx"
+        "MaxPostPayCoresCnt": 5000,
+        "RequestId": "393d941b-835e-44ac-998e-49c07465132a",
+        "ResourceId": "144d0c4a5b622359fd8a382ca914ddd4",
+        "StartTime": "2024-05-19 17:06:40"
     }
 }
 ```

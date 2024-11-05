@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tem DestroyConfigData --cli-unfold-argument  \
-    --EnvironmentId xx \
-    --Name xx \
+    --EnvironmentId en-xxxxxx \
+    --Name abc-xx \
     --SourceChannel 0
 ```
 

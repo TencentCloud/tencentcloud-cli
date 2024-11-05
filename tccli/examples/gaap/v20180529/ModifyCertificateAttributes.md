@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli gaap ModifyCertificateAttributes --cli-unfold-argument  \
-    --CertificateId xxx \
-    --CertificateAlias xxx
+    --CertificateId cert-kj5pa5lj \
+    --CertificateAlias test
 ```
 
 Output: 

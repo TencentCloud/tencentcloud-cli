@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tcss ModifyAbnormalProcessRuleStatus --cli-unfold-argument  \
-    --IsEnable true \
-    --RuleIdSet xxxx
+    --RuleIdSet 5202566 \
+    --IsEnable True
 ```
 
 Output: 

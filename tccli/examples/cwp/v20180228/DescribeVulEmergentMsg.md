@@ -16,7 +16,8 @@ Output:
             {
                 "VulId": 100488,
                 "PublishTime": "2020-03-13 00:00:00",
-                "Name": "Windows SMB远程代码执行漏洞"
+                "Name": "Windows SMB远程代码执行漏洞",
+                "NameEn": "Windows SMB remote exec"
             }
         ]
     }

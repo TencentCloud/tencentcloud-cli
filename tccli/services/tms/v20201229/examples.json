@@ -1,13 +1,5 @@
 {
   "actions": {
-    "ModerateText": [
-      {
-        "document": "用于客户自有标签体系的内容审核，审核结果会以客户定义的标签体系输出结果",
-        "input": "POST / HTTP/1.1\nHost: tms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModerateText\n<公共请求参数>\n\n{\n    \"Content\": \"5Yqg5oiR5aW95Y+LIOe7meS9oOS8mOaDoOWIuA==\",\n    \"BizType\": \"test\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"123\",\n        \"DataId\": \"123\",\n        \"BizType\": \"test\",\n        \"Label\": {\n            \"Code\": \"20003001001\",\n            \"Grade1\": \"广告\",\n            \"Grade2\": \"电商广告\",\n            \"Grade3\": \"拍拍网\"\n        },\n        \"TcLabelCodes\": [\n            \"20001001001\",\n            \"20001001002\",\n            \"20001001003\"\n        ],\n        \"Suggestion\": \"Block\",\n        \"Keywords\": [\n            \"优惠券\"\n        ],\n        \"ModerationDetails\": [\n            {\n                \"Label\": {\n                    \"Code\": \"20003001001\",\n                    \"Grade1\": \"广告\",\n                    \"Grade2\": \"电商广告\",\n                    \"Grade3\": \"拍拍网\"\n                },\n                \"TcLabelCodes\": [\n                    \"20001001001\",\n                    \"20001001002\",\n                    \"20001001003\"\n                ],\n                \"LibResults\": [\n                    {\n                        \"Keyword\": \"123\",\n                        \"Positions\": [\n                            {\n                                \"Start\": 1,\n                                \"End\": 3\n                            }\n                        ],\n                        \"LibId\": \"\",\n                        \"LibName\": \"\",\n                        \"LibType\": 0\n                    }\n                ],\n                \"ModelResults\": [\n                    {\n                        \"Content\": \"123\",\n                        \"Positions\": [\n                            {\n                                \"Start\": 1,\n                                \"End\": 3\n                            }\n                        ]\n                    }\n                ],\n                \"Suggestion\": \"Block\",\n                \"Score\": 80\n            }\n        ]\n    }\n}",
-        "title": "客制标签文本内容审核"
-      }
-    ],
     "TextModeration": [
       {
         "document": "",

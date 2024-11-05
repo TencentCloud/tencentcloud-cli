@@ -6,28 +6,28 @@ Input:
 
 ```
 tccli kms DescribeWhiteBoxKey --cli-unfold-argument  \
-    --KeyId 244dab8c-6dad-11ea-80c6-5254006d0810
+    --KeyId 5551ef2e-6742-11ef-8133-525400b2f623
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "395989ef-4e4a-4f16-856d-3bb5a86ba99c",
         "KeyInfo": {
-            "KeyId": "244dab8c-6dad-11ea-80c6-5254006d0810",
-            "Alias": "xx",
-            "CreateTime": 1585040099,
-            "Description": "xx",
-            "CreatorUin": 0,
-            "OwnerUin": 0,
-            "Status": "Disabled",
             "Algorithm": "SM4",
-            "EncryptKey": "AAAAACL4R9T1M3r3/S9XpMbUbwHJUKbq/tll0Bop7LG90lHpj+DKmOiEE0Rs5rRrMNaCYIWzWJyU0SNQoX1WNn06QB2qrhDCXEPdwMwgJHx+YfJHUh/eSF5/LUEv27ltidqJyUk3HF5CZgjkN901hFEPf9ZCJcEo5XrORpopW7Ur6svPAjDtIPN3kUDCTqgTPC+FBX0cO/zEZFeMMAU2BPwe6f5O1x5BTrCBEf4qJDpZqT/WxXvSid8pFQ8uSxMqaf0ot57NzfuWG92oAe9HQ7bDCcfuBN7nXX+QipQIBxD/LVWk7zrHtLD/TJfAAoTuE7QKc/lSTOpI1xkTxJq/AFLd5K9EaBN7kpAkAsponZc20Tpk+KlyWE3NHdQrION9fsxtUBl5tz/l6T1j49SR5J2axZ2nnkA3o7L1WIGiv7r3tkd+",
-            "DecryptKey": "AAAAACL4R9T1M3r3/S9XpMbUbwHJUKbq/tll0Bop7LG90lHpj+DKmOiEE0Rs5rRrMNaCYIWzWJyU0SNQoX1WNn06QB2qrhDCXEPdwMwgJHx+YfJHUh/eSF5/LUEv27ltidqJyUk3HF5CZgjkN901hFEPf9ZCJcEo5XrORpopW7Ur6svPAjDtIPN3kUDCTqgTPC+FBX0cO/zEZFeMMAU2BPwe6f5O1x5BTrCBEf4qJDpZqT/WxXvSid8pFQ8uSxMqaf0ot57NzfuWG92oAe9HQ7bDCcfuBN7nXX+QipQIBxD/LVWk7zrHtLD/TJfAAoTuE7QKc/lSTOpI1xkTxJq/AFLd5K9EaBN7kpAkAsponZc20Tpk+KlyWE3NHdQrION9fsxtUBl5tz/l6T1j49SR5J2axZ2nnkA3o7L1WIGiv7r3tkd+",
-            "DeviceFingerprintBind": true,
-            "ResourceId": "xx"
-        }
+            "Alias": "lzc2",
+            "CreateTime": 1725072007,
+            "CreatorUin": 700001224419,
+            "DecryptKey": "AACAAAAACMD5WLv****+rt0t6Qgamj/FwS6qYFZWwp/M0wM00KwxUSp8P",
+            "Description": "2",
+            "DeviceFingerprintBind": false,
+            "EncryptKey": "AACAAAAACMD5WLvPb4qY***rt0t6Qgamj/FwS6qYFZWwp/M0wM00KwxUSp8P",
+            "KeyId": "5551ef2e-6742-11ef-8133-525400b2f623",
+            "OwnerUin": 100000007998,
+            "ResourceId": "creatorUin/700001224419/5551ef2e-6742-11ef-8133-525400b2f623",
+            "Status": "Enabled"
+        },
+        "RequestId": "13b3e0ed-7d5e-4c6c-99ba-b334f02d7573"
     }
 }
 ```

@@ -7,7 +7,7 @@ Input:
 ```
 tccli cwp ModifyRiskDnsPolicy --cli-unfold-argument  \
     --Data.PolicyId 5000001 \
-    --Data.PolicyName test \
+    --Data.PolicyName auto_**** \
     --Data.PolicyType 1 \
     --Data.PolicyDesc desc \
     --Data.PolicyAction 1 \

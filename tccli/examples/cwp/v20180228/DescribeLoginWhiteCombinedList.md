@@ -15,29 +15,31 @@ Output:
 {
     "Response": {
         "TotalCount": 1,
-        "RequestId": "xx",
+        "RequestId": "be6f6eec-0825-4e67-ab9a-c8568bbf736c",
         "LoginWhiteCombinedInfos": [
             {
-                "UserName": "xx",
-                "Remark": "xx",
-                "Name": "xx",
+                "Id": 357790160,
                 "Places": [
                     {
-                        "CityId": 1,
-                        "CountryId": 1,
-                        "ProvinceId": 1
+                        "CityId": 0,
+                        "ProvinceId": 0,
+                        "CountryId": 52,
+                        "Location": "阿尔及利亚"
                     }
                 ],
-                "Locale": "xx",
-                "IsGlobal": 1,
-                "CreateTime": "xx",
-                "Uuid": "xx",
-                "StartTime": "xx",
-                "ModifyTime": "xx",
-                "SrcIp": "xx",
-                "EndTime": "xx",
-                "Id": 1,
-                "Desc": "xx"
+                "UserName": "root",
+                "SrcIp": "1.1.1.1",
+                "IsGlobal": 0,
+                "CreateTime": "2019-12-25 11:57:15",
+                "ModifyTime": "2019-12-25 11:57:15",
+                "Locale": "52:0:0,103:0:0,141:0:0,165:0:0,210:0:0,177:0:0",
+                "Locations": "阿尔及利亚,阿尔巴尼亚,奥地利,海地,奥兰群岛,安提瓜和巴布达",
+                "Remark": "myremark***",
+                "StartTime": "2020-11-21 15:16:00",
+                "EndTime": "2020-11-21 15:16:00",
+                "Name": "cwp",
+                "Desc": "1.1.1.1",
+                "Uuid": "be6f6eec-0825-4e67-ab9a-c8568bbf736c"
             }
         ]
     }

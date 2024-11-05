@@ -7,8 +7,8 @@ Input:
 ```
 tccli tem StopApplication --cli-unfold-argument  \
     --SourceChannel 0 \
-    --ApplicationId abc \
-    --EnvironmentId abc
+    --ApplicationId app-xxxxxx \
+    --EnvironmentId en-xxxxxx
 ```
 
 Output: 
@@ -16,7 +16,7 @@ Output:
 {
     "Response": {
         "Result": true,
-        "RequestId": "abc"
+        "RequestId": "abc-xxxx-xxxx"
     }
 }
 ```

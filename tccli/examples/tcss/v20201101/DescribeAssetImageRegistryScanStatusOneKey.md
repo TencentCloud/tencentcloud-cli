@@ -35,37 +35,22 @@ Input:
 ```
 tccli tcss DescribeAssetImageRegistryScanStatusOneKey --cli-unfold-argument  \
     --All True \
-    --TaskID 1
+    --TaskID 2257
 ```
 
 Output: 
 ```
 {
     "Response": {
+        "ImageScanCnt": 0,
+        "ImageStatus": [],
         "ImageTotal": 1,
-        "ImageScanCnt": 1,
-        "ImageStatus": [
-            {
-                "ImageId": "abc",
-                "RegistryType": "abc",
-                "ImageRepoAddress": "abc",
-                "InstanceId": "abc",
-                "InstanceName": "abc",
-                "Namespace": "abc",
-                "ImageName": "abc",
-                "ImageTag": "abc",
-                "ScanStatus": "abc",
-                "CveProgress": 1,
-                "RiskProgress": 1,
-                "VirusProgress": 1
-            }
-        ],
-        "SuccessCount": 1,
+        "RequestId": "2d6532f3-28b8-4a99-863b-e178b3c5c416",
         "RiskCount": 1,
-        "Schedule": 1,
-        "Status": "abc",
-        "ScanRemainTime": 1,
-        "RequestId": "abc"
+        "ScanRemainTime": 0,
+        "Schedule": 100,
+        "Status": "SCAN_TIMEOUT",
+        "SuccessCount": 0
     }
 }
 ```

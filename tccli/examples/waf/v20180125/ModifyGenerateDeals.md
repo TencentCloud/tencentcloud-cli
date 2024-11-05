@@ -22,7 +22,7 @@ tccli waf ModifyGenerateDeals --cli-unfold-argument  \
     --Goods.0.GoodsDetail.AutoRenewFlag 1 \
     --Goods.0.GoodsDetail.FlexBill 0 \
     --Goods.0.GoodsDetail.TimeUnit m \
-    --Goods.0.GoodsDetail.InstanceName test \
+    --Goods.0.GoodsDetail.InstanceName guangzhoucase \
     --Goods.0.GoodsDetail.LabelTypes sv_wsm_waf_package_ultimate_clb \
     --Goods.0.RegionId 1 \
     --Goods.0.PayMode 1 \

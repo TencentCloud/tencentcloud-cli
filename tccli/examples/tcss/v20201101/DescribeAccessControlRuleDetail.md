@@ -1,4 +1,4 @@
-**Example 1: 根据规则ID查询规则详情（用户策略）**
+**Example 1: 根据事件的镜像ID，查询当前镜像的规则详情（用户策略）**
 
 
 
@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tcss DescribeAccessControlRuleDetail --cli-unfold-argument  \
-    --RuleId xxx \
+    --ImageId "sha256:300e315adb2f96afe5f0b2780b87f28ae95231fe3bdd1e16b9ba606307728f55" \
     --Limit 10 \
     --Offset 0
 ```
@@ -35,7 +35,7 @@ Output:
                     "TargetFilePath": "/tmp/test2.txt"
                 },
                 {
-                    "RuleId": "6033081234b9a9000c0897b0",
+                    "RuleId": "6033081114b9a9000c0897b0",
                     "RuleMode": "RULE_MODE_HOLDUP",
                     "ProcessPath": "/usr/bin/coreutils",
                     "TargetFilePath": "/tmp/test.txt"
@@ -76,7 +76,7 @@ Output:
 }
 ```
 
-**Example 2: 根据规则ID查询规则详情（系统策略）**
+**Example 2: 根据事件的镜像ID，查询当前镜像的规则详情（系统策略）**
 
 
 
@@ -84,7 +84,7 @@ Input:
 
 ```
 tccli tcss DescribeAccessControlRuleDetail --cli-unfold-argument  \
-    --RuleId xxx \
+    --RuleId 60484042d620f3f9012c521e \
     --Limit 10 \
     --Offset 0
 ```
@@ -130,7 +130,7 @@ Output:
 }
 ```
 
-**Example 3: 根据事件的镜像ID，查询当前镜像的规则详情（用户策略）**
+**Example 3: 根据规则ID查询规则详情（用户策略）**
 
 
 
@@ -138,7 +138,7 @@ Input:
 
 ```
 tccli tcss DescribeAccessControlRuleDetail --cli-unfold-argument  \
-    --ImageId xxx \
+    --RuleId 60484042d620f3f9012c521e \
     --Limit 10 \
     --Offset 0
 ```
@@ -167,7 +167,7 @@ Output:
                     "TargetFilePath": "/tmp/test2.txt"
                 },
                 {
-                    "RuleId": "6033081234b9a9000c0897b0",
+                    "RuleId": "6033081114b9a9000c0897b0",
                     "RuleMode": "RULE_MODE_HOLDUP",
                     "ProcessPath": "/usr/bin/coreutils",
                     "TargetFilePath": "/tmp/test.txt"
@@ -208,7 +208,7 @@ Output:
 }
 ```
 
-**Example 4: 根据事件的镜像ID，查询当前镜像的规则详情（系统策略）**
+**Example 4: 根据规则ID查询规则详情（系统策略）**
 
 
 
@@ -216,7 +216,7 @@ Input:
 
 ```
 tccli tcss DescribeAccessControlRuleDetail --cli-unfold-argument  \
-    --RuleId xxx \
+    --RuleId 60484042d620f3f9012c521e \
     --Limit 10 \
     --Offset 0
 ```

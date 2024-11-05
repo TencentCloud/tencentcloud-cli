@@ -1,6 +1,6 @@
-**Example 1: 示例**
+**Example 1: 查询网页防篡改防护目录列表**
 
-示例
+
 
 Input: 
 
@@ -14,21 +14,25 @@ Output:
 ```
 {
     "Response": {
+        "TotalCount": 1,
         "List": [
             {
-                "Id": "/root",
-                "DirName": "网站名称1",
-                "DirPath": "网站防护目录地址1",
-                "NoProtectServerNum": 0,
-                "ProtectServerNum": 0,
-                "RelatedServerNum": 0,
-                "ProtectException": 0,
-                "ProtectStatus": 2,
-                "AutoRestoreSwitchStatus": 1
+                "DirName": "sdfdsf",
+                "DirPath": "/home/te****",
+                "RelatedServerNum": 1,
+                "ProtectServerNum": 1,
+                "NoProtectServerNum": 1,
+                "Id": "/home/te****",
+                "ProtectStatus": 1,
+                "ProtectException": 1,
+                "AutoRestoreSwitchStatus": 1,
+                "FirstProtectTime": "2020-11-21 15:16:00",
+                "LatestProtectTime": "2020-11-21 15:16:00",
+                "ProtectFileType": ".php;.js",
+                "ProtectFilesCount": 0
             }
         ],
-        "RequestId": "",
-        "TotalCount": 1
+        "RequestId": "2eedad67-5a4c-4746-82d2-52a8e5d91c6a"
     }
 }
 ```

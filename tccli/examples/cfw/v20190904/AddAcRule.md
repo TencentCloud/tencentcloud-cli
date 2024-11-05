@@ -16,8 +16,7 @@ tccli cfw AddAcRule --cli-unfold-argument  \
     --Direction in \
     --RuleAction accept \
     --Port -1/-1 \
-    --Protocol tcp \
-    --ApplicationName 
+    --Protocol tcp
 ```
 
 Output: 

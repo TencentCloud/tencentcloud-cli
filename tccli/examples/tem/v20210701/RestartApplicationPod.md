@@ -6,13 +6,13 @@ Input:
 
 ```
 tccli tem RestartApplicationPod --cli-unfold-argument  \
-    --Status xx \
-    --EnvironmentId xx \
+    --Status Running \
+    --EnvironmentId en-xxxxxx \
     --Offset 0 \
     --SourceChannel 0 \
     --Limit 0 \
-    --PodName xx \
-    --ApplicationId xx
+    --PodName pod-name-xxx \
+    --ApplicationId app-xxxxxx
 ```
 
 Output: 

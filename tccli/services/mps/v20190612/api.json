@@ -14628,7 +14628,7 @@
         },
         {
           "disabled": false,
-          "document": "剪辑模式，可选值 normal、fast。默认是精确剪辑 normal\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "剪辑模式，可选值：\nnormal（默认）：精准编辑\nfast：快速编辑，处理速度更快但精准度一定程度降低\n注意：fast只支持单文件，normal默认输出转码格式是h264\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "fast",
           "member": "string",
           "name": "Type",
@@ -25546,6 +25546,26 @@
           "example": "无",
           "member": "string",
           "name": "Summary",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "直播切片对应直播起始时间点，采用 ISO 日期格式。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2024-10-21T17:18:34+08:00",
+          "member": "string",
+          "name": "BeginTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "直播切片对应直播结束时间点，采用 ISO 日期格式。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2024-10-21T17:26:19+08:00",
+          "member": "string",
+          "name": "EndTime",
           "output_required": false,
           "type": "string",
           "value_allowed_null": true

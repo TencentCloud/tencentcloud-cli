@@ -1,16 +1,16 @@
-**Example 1: DescribeBlockStaticList**
+**Example 1: DescribeBlockStaticList 告警中心柱形图**
 
-
+DescribeBlockStaticList 告警中心柱形图
 
 Input: 
 
 ```
 tccli cfw DescribeBlockStaticList --cli-unfold-argument  \
-    --Top 10 \
-    --EndTime xx \
-    --SearchValue xx \
-    --QueryType xx \
-    --StartTime xx
+    --EndTime 2024-11-01 14:23:11 \
+    --QueryType ip \
+    --SearchValue {"instance_id":"ins-id","source":"cvm"} \
+    --StartTime 2024-10-25 14:23:11 \
+    --Top 5
 ```
 
 Output: 
@@ -19,15 +19,16 @@ Output:
     "Response": {
         "Data": [
             {
-                "InsID": "xx",
-                "Ip": "xx",
-                "InsName": "xx",
-                "Num": 0,
-                "Address": "xx",
-                "Port": "xx"
+                "Address": "beijing",
+                "InsID": "ins-cvmid",
+                "InsName": "cvmname",
+                "Ip": "141.98.11.67",
+                "Num": 39,
+                "Port": "22"
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "7138a2b1-f1fb-4b72-b49d-b8fcaec2afcb",
+        "Status": 0
     }
 }
 ```

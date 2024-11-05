@@ -1,4 +1,4 @@
-**Example 1: demo**
+**Example 1: 获取告警列表**
 
 
 
@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli ssa DescribeSocAlertList --cli-unfold-argument  \
-    --Filter.0.FilterKey abc \
+    --Filter.0.FilterKey FileMd5 \
     --Filter.0.FilterOperatorType 0 \
-    --Filter.0.FilterValue abc \
-    --Sorter.0.SortKey abc \
+    --Filter.0.FilterValue md5ac876*** \
+    --Sorter.0.SortKey Level \
     --Sorter.0.SortType 0 \
     --PageSize 0 \
     --PageIndex 0 \
@@ -25,98 +25,96 @@ Output:
             "Total": 0,
             "AlertList": [
                 {
-                    "AlertTime": "abc",
-                    "AlertId": "abc",
-                    "AssetId": "abc",
+                    "AlertTime": "2020-10-01 12:12:12",
+                    "AlertId": "1",
+                    "AssetId": "2",
                     "AssetPrivateIp": [
-                        "abc"
+                        "10.10.10.1"
                     ],
-                    "AlertName": "abc",
+                    "AlertName": "name",
                     "Level": 0,
-                    "Type": "abc",
-                    "Source": "abc",
-                    "AttackChain": "abc",
-                    "AttackId": "abc",
+                    "Type": "cvm",
+                    "Source": "cvm",
+                    "AttackChain": "/bin/ps",
+                    "AttackId": "1",
                     "Concerns": [
                         {
                             "ConcernType": 0,
                             "EntityType": 0,
-                            "Concern": "abc",
+                            "Concern": "1",
                             "StatisticsCount": 0,
-                            "IpCountry": "abc",
-                            "IpProvince": "abc",
-                            "Result": "abc",
+                            "IpCountry": "深圳市",
+                            "IpProvince": "广东省",
+                            "Result": "1",
                             "Confidence": 0,
-                            "IpIsp": "abc",
-                            "IpInfrastructure": "abc",
-                            "ThreatType": [
-                                "abc"
-                            ],
+                            "IpIsp": "1",
+                            "IpInfrastructure": "1",
+                            "ThreatType": [],
                             "Groups": [
-                                "abc"
+                                "group1"
                             ],
-                            "Status": "abc",
+                            "Status": "1",
                             "Tags": [
-                                "abc"
+                                "tag1"
                             ],
-                            "VictimAssetType": "abc",
-                            "VictimAssetName": "abc",
-                            "DomainRegistrant": "abc",
-                            "DomainRegisteredInstitution": "abc",
-                            "DomainRegistrationTime": "abc",
-                            "FileName": "abc",
-                            "FileMd5": "abc",
-                            "VirusName": "abc",
-                            "FilePath": "abc",
-                            "FileSize": "abc",
-                            "ProcName": "abc",
-                            "Pid": "abc",
-                            "ProcPath": "abc",
-                            "ProcUser": "abc",
+                            "VictimAssetType": "cvm",
+                            "VictimAssetName": "name",
+                            "DomainRegistrant": "1",
+                            "DomainRegisteredInstitution": "1",
+                            "DomainRegistrationTime": "1",
+                            "FileName": "file-name",
+                            "FileMd5": "md5***",
+                            "VirusName": "virusname",
+                            "FilePath": "/bin/ps",
+                            "FileSize": "1560",
+                            "ProcName": "ps",
+                            "Pid": "5445",
+                            "ProcPath": "/bin/ps",
+                            "ProcUser": "root",
                             "DefendedCount": 1,
                             "DetectedCount": 1,
-                            "SearchData": "abc",
-                            "IpCountryIso": "abc",
-                            "IpProvinceIso": "abc",
-                            "IpCity": "abc",
-                            "EventSubType": "abc"
+                            "SearchData": "search-key",
+                            "IpCountryIso": "1",
+                            "IpProvinceIso": "1",
+                            "IpCity": "深圳市",
+                            "EventSubType": "0"
                         }
                     ],
                     "Action": 0,
                     "AttackResult": 0,
                     "EventStatus": 0,
-                    "EventId": "abc",
+                    "EventId": "1",
                     "Status": 0,
-                    "AssetName": "abc",
+                    "AssetName": "name",
                     "ConcernMaliciousCount": 0,
                     "ConcernVictimCount": 0,
-                    "VictimAssetType": "abc",
-                    "SubType": "abc",
-                    "AttackName": "abc",
+                    "VictimAssetType": "1",
+                    "SubType": "1",
+                    "AttackName": "attack name",
                     "AssetPublicIp": [
-                        "abc"
+                        "132.x.x.x"
                     ],
-                    "AttackTactic": "abc",
-                    "VictimAssetSub": "abc",
-                    "VictimAssetVpc": "abc",
-                    "Timestamp": "abc",
+                    "AttackTactic": "attack tactic",
+                    "VictimAssetSub": "1",
+                    "VictimAssetVpc": "vpc",
+                    "Timestamp": "1604054472",
                     "AssetGroupName": [
-                        "abc"
+                        "group1"
                     ],
-                    "AssetProjectName": "abc",
+                    "AssetProjectName": "project name",
                     "VictimAssetContent": [
-                        "abc"
+                        "content1"
                     ],
                     "WrongReportStatus": 0,
                     "WrongReportConditionId": 0
                 }
             ],
             "Aggregations": {
-                "Name": "abc",
-                "Value": "abc"
+                "Name": "aggregation name",
+                "Value": "value1"
             }
         },
-        "RequestId": "abc"
+        "RequestId": "f9184c15-9721-456d-8ca0-4263967b5ead"
     }
 }
 ```

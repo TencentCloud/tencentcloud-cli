@@ -6,54 +6,52 @@ Input:
 
 ```
 tccli ccc DescribeSipTrunkList --cli-unfold-argument  \
-    --PageNumber 1 \
-    --PageSize 1 \
-    --Filters.0.Name xx \
-    --Filters.0.Values xx
+    --Filters.0.Name FuzzingKeyWord \
+    --Filters.0.Values  \
+    --PageNumber 0 \
+    --PageSize 10
 ```
 
 Output: 
 ```
 {
     "Response": {
+        "RequestId": "a7c5df8c-a960-47f3-afe5-5284bcb5591d",
         "TotalCount": 1,
         "SipTrunkList": [
             {
-                "Id": 0,
-                "Uin": "abc",
-                "AppId": 1,
-                "Mode": "abc",
-                "CheckHealth": true,
-                "ProviderId": 0,
-                "RegisterUserName": "abc",
-                "RegisterPassword": "abc",
-                "RegisterServer": "abc",
-                "RegisterServerPort": 0,
-                "RegisterOutboundProxy": "abc",
+                "Id": 2158,
+                "Name": "11",
+                "Uin": "10003910000",
+                "AppId": 133050000,
+                "Mode": "REGISTER",
+                "CheckHealth": false,
+                "ProviderId": 200,
+                "AllowIpList": [],
+                "WhiteIpList": [],
+                "RegisterUserName": "gateway10003910000",
+                "RegisterPassword": "xxxxxxxx",
+                "RegisterServer": "sip.tccc.qcloud.com",
+                "RegisterServerPort": 35090,
+                "RegisterServerTCPPort": 35090,
+                "RegisterServerTLSPort": 5061,
+                "RegisterOutboundProxy": "sip.tccc.qcloud.com",
+                "RegisterOutboundProxyBak": "sip2.tccc.qcloud.com",
                 "RegisterOutboundProxyPort": 0,
-                "RegisterProto": "abc",
-                "RegisterFullName": "abc",
-                "RegisterExpires": 0,
-                "InboundCalleeFormat": "abc",
-                "InboundCalleeField": "abc",
-                "OutboundCallerFormat": "abc",
-                "State": 0,
-                "AllowIpList": [
-                    {
-                        "Host": "abc",
-                        "Port": 0
-                    }
-                ],
-                "RegisterStatus": "abc",
-                "HealthStatus": "abc",
-                "Name": "abc",
-                "RegisterServerTCPPort": 0,
-                "RegisterServerTLSPort": 0,
-                "RegisterOutboundProxyTCPPort": 0,
-                "RegisterOutboundProxyTLSPort": 0
+                "RegisterOutboundProxyTCPPort": 35090,
+                "RegisterOutboundProxyTLSPort": 5061,
+                "RegisterProto": "UDP",
+                "RegisterFullName": "gatewayxxxxxxxx@sip.tccc.qcloud.com",
+                "RegisterExpires": 3600,
+                "InboundCalleeFormat": "NUMBER",
+                "InboundCalleeField": "TO",
+                "OutboundCallerFormat": "NUMBER",
+                "OutboundCalleeFormat": "",
+                "State": 1,
+                "RegisterStatus": "NOT_REGISTERED_STATE",
+                "HealthStatus": ""
             }
-        ],
-        "RequestId": "abc"
+        ]
     }
 }
 ```

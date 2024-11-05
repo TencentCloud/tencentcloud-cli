@@ -6,18 +6,18 @@ Input:
 
 ```
 tccli kms AsymmetricRsaDecrypt --cli-unfold-argument  \
-    --KeyId 554ef4b3-3071-11ea-a86a-5254006d0810 \
-    --Ciphertext Fb0UICocErQgNEkYKJagtoKNed7DLeo5UkZzPJMyI94CfWh6yKHGgb/0PBHrCve2Avo4gJI5pJMWP3Aq5ggX0aunLv87UX+sgO1/3HXW+q4ARaiwZ9Q73RQuPg6qJ2Eg33uZ2Xjey3l+5yHiOdZYmCVePtKAsuhxzKw/sALTbGTYYnbJXnGKr3Yu7Hs0hCC1bOz0sNqd1IXdUyMtQtbDOV8NWg2ecdZPIOdbnrCKIQ4rpMUghjSFv3rSHo5VbpuOGPXqEZT4goou42psIXb03li3TXxFZMTAdxVMzpqEuTfRxiMPEqyPEHe6xG92vJX0FZfWU8Y5SxlfXp+mvBbAmw \
-    --Algorithm RSAES_OAEP_SHA_1
+    --KeyId edf72a11-69d0-11ef-9841-52540089bc41 \
+    --Ciphertext vlnJ/RrQE0mXiHGoya/xpKQJHkd5ImvdXug306BreYL60Kb8ucqQ0eurf5mX/mKZDSTGr8FDVK8b4HOopj7xuDQIzegObtvK2VGbXSaihI/fNDkmoWcgBF/V91scYJtrkwoISnvqsxcl9NeAp+H2A6E3vTiDpQK5oVb3OTG39FoYEvfbRNfef+iukiRiqOL7VGSPmx1nThi6Cd4XGBFzB0tvtmP2SnZhZuzryj+jnHVAz2bIuYP8M4OJYkk5muuACWxLGLQj5sh2FqIpbzT4nti4fOD4ieHnf/qCw/9yyiWUED67oelFKaBJEWGq3PT7bGtH4Sxx8SKx2BCBsR95sA== \
+    --Algorithm RSAES_OAEP_SHA_256
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "7c076c83-1402-41d8-8ce6-73a350a9eaf6",
-        "KeyId": "554ef4b3-3071-11ea-a86a-5254006d0810",
-        "Plaintext": "dGVzdA=="
+        "KeyId": "edf72a11-69d0-11ef-9841-52540089bc41",
+        "Plaintext": "dGVzdAo=",
+        "RequestId": "8e7c44ba-917c-4e85-a626-a07806e9b7c9"
     }
 }
 ```

@@ -18,7 +18,7 @@ Output:
         "StrategyCount": 1,
         "StrategyTotal": 1,
         "MachineTotal": 1,
-        "RequestId": "xx",
+        "RequestId": "935e27b1-d675-4509-80bf-96fbf0764237",
         "BalanceStatus": 1,
         "BackupMachineCount": 1,
         "ProgressingRollBackTaskCount": 1

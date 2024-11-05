@@ -7,19 +7,20 @@ Input:
 ```
 tccli cwp ModifyRiskEventsStatus --cli-unfold-argument  \
     --UpdateAll True \
-    --RiskType xx \
-    --Ip xx \
+    --RiskType MALWARE \
+    --Ip 0.0.0.0 \
     --Ids 1 \
     --KillProcess True \
     --ExcludeId 1 \
-    --Operate 1
+    --Operate 1 \
+    --DoClean False
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx",
+        "RequestId": "a066ece3-12ca-4611-b98e-1c296a14a491",
         "IsSync": 1
     }
 }

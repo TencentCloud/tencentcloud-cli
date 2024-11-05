@@ -1,74 +1,90 @@
-**Example 1: 空示例**
+**Example 1: 获取网卡列表**
 
-空示例
+获取网卡列表
 
 Input: 
 
 ```
-tccli csip DescribeNICAssets --cli-unfold-argument ```
+tccli csip DescribeNICAssets --cli-unfold-argument  \
+    --MemberId mem-688033 mem-tencent-52d96a4d \
+    --Filter.Limit 1
+```
 
 Output: 
 ```
 {
     "Response": {
-        "Data": [
+        "AppIdList": [
             {
-                "AppId": "xx",
-                "Uin": "xx",
-                "AssetId": "xx",
-                "AssetName": "xx",
-                "AssetType": "xx",
-                "PrivateIp": "xx",
-                "PublicIp": "xx",
-                "Region": "xx",
-                "VpcId": "xx",
-                "VpcName": "xx",
-                "Tag": [
-                    {
-                        "Name": "xx",
-                        "Value": "xx"
-                    }
-                ],
-                "OutboundPeakBandwidth": "xx",
-                "InboundPeakBandwidth": "xx",
-                "OutboundCumulativeFlow": "xx",
-                "InboundCumulativeFlow": "xx",
-                "NetworkAttack": 0,
-                "ExposedPort": 0,
-                "ExposedVUL": 0,
-                "ConfigureRisk": 0,
-                "CreateTime": "xx",
-                "ScanTask": 0,
-                "LastScanTime": "xx",
-                "Nick": "xx"
-            }
-        ],
-        "TotalCount": 0,
-        "RegionList": [
+                "Text": "2421",
+                "Value": "2421"
+            },
             {
-                "Value": "xx",
-                "Text": "xx"
+                "Text": "1894",
+                "Value": "1894"
             }
         ],
         "AssetTypeList": [
             {
-                "Value": "xx",
-                "Text": "xx"
+                "Text": "ENI",
+                "Value": "ENI"
             }
         ],
-        "AppIdList": [
+        "Data": [
             {
-                "Value": "xx",
-                "Text": "xx"
+                "AppId": "15651",
+                "AssetId": "eni-45xmwr0j",
+                "AssetName": "未命名",
+                "AssetType": "ENI",
+                "ConfigureRisk": 0,
+                "CreateTime": "2023-11-23 19:58:39",
+                "ExposedPort": 0,
+                "ExposedVUL": 0,
+                "InboundCumulativeFlow": "0B",
+                "InboundPeakBandwidth": "0bps",
+                "IsCore": 1,
+                "IsNewAsset": 0,
+                "LastScanTime": "2024-10-12 16:33:37",
+                "NetworkAttack": 0,
+                "Nick": "焦糖小蛋糕",
+                "OutboundCumulativeFlow": "0B",
+                "OutboundPeakBandwidth": "0bps",
+                "PrivateIp": "172.16.0.6",
+                "PublicIp": "1.1.1.1",
+                "Region": "ap-guangzhou",
+                "ScanTask": 8,
+                "Tag": null,
+                "Uin": "10446",
+                "VpcId": "vpc-hbe549z5",
+                "VpcName": "league-vpc-2"
             }
         ],
+        "RegionList": [
+            {
+                "Text": "广州",
+                "Value": "ap-guangzhou"
+            },
+            {
+                "Text": "南京",
+                "Value": "ap-nanjing"
+            },
+            {
+                "Text": "上海",
+                "Value": "ap-shanghai"
+            }
+        ],
+        "RequestId": "00369b23-b4da-446f-8d07-7ee691d237a4",
+        "TotalCount": 7,
         "VpcList": [
             {
-                "Value": "xx",
-                "Text": "xx"
+                "Text": "league-vpc-2",
+                "Value": "vpc-hdbed9z5"
+            },
+            {
+                "Text": "vpc-gz-0",
+                "Value": "vpc-63z25m89"
             }
-        ],
-        "RequestId": "xx"
+        ]
     }
 }
 ```

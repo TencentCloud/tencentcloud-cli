@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ocfw DescribeAllZoneList --cli-unfold-argument  \
-    --CurrentAppId 1
+    --CurrentAppId 1300448058
 ```
 
 Output: 
@@ -15,13 +15,13 @@ Output:
     "Response": {
         "Data": [
             {
-                "Zone": "abc",
-                "ZoneName": "abc"
+                "Zone": "ap-guangzhou",
+                "ZoneName": "广州"
             }
         ],
         "ReturnCode": 0,
-        "ReturnMsg": "abc",
-        "RequestId": "abc"
+        "ReturnMsg": "success",
+        "RequestId": "2ddc9939-2bdc-475c-a932-ef77c7209f60"
     }
 }
 ```

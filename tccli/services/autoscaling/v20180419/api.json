@@ -15,7 +15,7 @@
       "status": "online"
     },
     "CancelInstanceRefresh": {
-      "document": "取消伸缩组的实例刷新活动。\n* 已刷新/正在刷新的批次不受影响，待刷新批次被取消\n* 刷新失败的实例保持备用中状态，需用户手动处理后尝试退出备用中状态或销毁\n* 取消后不允许回滚操作，也不支持恢复操作",
+      "document": "取消伸缩组的实例刷新活动。\n* 已刷新/正在刷新的批次不受影响，待刷新批次被取消\n* 刷新失败的实例保持备用中状态，需用户手动处理后尝试退出备用中状态或销毁\n* 取消后不允许回滚操作，也不支持恢复操作\n* 因 maxSurge 参数而临时扩容的实例在取消后会自动销毁\n* 进行缩容时，所有实例都已经更新完成，此时无法取消",
       "input": "CancelInstanceRefreshRequest",
       "name": "取消实例刷新",
       "output": "CancelInstanceRefreshResponse",
@@ -323,14 +323,14 @@
       "status": "online"
     },
     "ResumeInstanceRefresh": {
-      "document": "恢复暂停状态的实例刷新活动，使其重试当前批次刷新失败实例或继续刷新后续批次，非暂停状态下调用该接口无效。",
+      "document": "恢复暂停状态的实例刷新活动，使其重试当前批次刷新失败实例或继续刷新后续批次，非暂停状态下调用该接口无效。\n\n- 使用 MaxSurge 参数时活动可能会处于扩容或缩容失败导致的暂停状态，也可以使用该接口重试扩缩容。",
       "input": "ResumeInstanceRefreshRequest",
       "name": "恢复实例刷新",
       "output": "ResumeInstanceRefreshResponse",
       "status": "online"
     },
     "RollbackInstanceRefresh": {
-      "document": "回滚操作会生成一个新的实例刷新活动，该活动也支持分批次刷新以及暂停、恢复、取消操作，接口返回回滚活动的 RefreshActivityId。\n* 原活动中待刷新实例变更为已取消，忽略不存在实例，其他状态实例进入回滚流程\n* 原活动中正在刷新的实例不会立刻终止，刷新结束后再执行回滚活动\n* 暂停状态或最近一次成功的刷新活动支持回滚，其他状态不支持回滚\n* 原活动刷新方式为重装实例时，对于 ImageId参数，会自动恢复到回滚前镜像 ID；对于 UserData、EnhancedService、LoginSettings、 HostName 参数，依然会从启动配置中读取，需用户在回滚前自行修改启动配置",
+      "document": "回滚操作会生成一个新的实例刷新活动，该活动也支持分批次刷新以及暂停、恢复、取消操作，接口返回回滚活动的 RefreshActivityId。\n* 原活动中待刷新实例变更为已取消，忽略不存在实例，其他状态实例进入回滚流程\n* 原活动中正在刷新的实例不会立刻终止，刷新结束后再执行回滚活动\n* 暂停状态或最近一次成功的刷新活动支持回滚，其他状态不支持回滚\n* 原活动刷新方式为重装实例时，对于 ImageId参数，会自动恢复到回滚前镜像 ID；对于 UserData、EnhancedService、LoginSettings、 HostName 参数，依然会从启动配置中读取，需用户在回滚前自行修改启动配置\n* 回滚活动暂不支持 MaxSurge 参数",
       "input": "RollbackInstanceRefreshRequest",
       "name": "回滚实例刷新",
       "output": "RollbackInstanceRefreshResponse",
@@ -379,7 +379,7 @@
       "status": "online"
     },
     "StopInstanceRefresh": {
-      "document": "暂停正在执行的实例刷新活动。\n* 暂停状态下，伸缩组也会处于停用中状态\n* 当前正在更新的实例不会暂停，待更新的实例会暂停更新",
+      "document": "暂停正在执行的实例刷新活动。\n* 暂停状态下，伸缩组也会处于停用中状态\n* 当前正在更新或扩容的实例不会暂停，待更新的实例会暂停更新\n* 进行缩容时，所有实例都已经更新完成，此时无法暂停",
       "input": "StopInstanceRefreshRequest",
       "name": "暂停实例刷新",
       "output": "StopInstanceRefreshResponse",
@@ -6532,7 +6532,7 @@
         },
         {
           "disabled": false,
-          "document": "当前批次刷新失败实例的恢复方式，如不存在失败实例，该参数无效。默认值为RETRY，取值范围如下：<br><li>RETRY: 重试当前批次刷新失败实例</li><li>CONTINUE: 跳过当前批次刷新失败实例",
+          "document": "当前批次刷新失败实例的恢复方式，如不存在失败实例，该参数无效。默认值为RETRY，取值范围如下：<li>RETRY: 重试当前批次刷新失败实例</li><li>CONTINUE: 跳过当前批次刷新失败实例</li>",
           "example": "RETRY",
           "member": "string",
           "name": "ResumeMode",
@@ -6634,13 +6634,24 @@
         },
         {
           "disabled": false,
-          "document": "批次间暂停策略。默认值为 Automatic，取值范围如下：<br><li>FIRST_BATCH_PAUSE：第一批次更新完成后暂停</li><li>BATCH_INTERVAL_PAUSE：批次间暂停</li><li>AUTOMATIC：不暂停",
+          "document": "批次间暂停策略。默认值为 Automatic，取值范围如下：\n<li>FIRST_BATCH_PAUSE：第一批次更新完成后暂停</li>\n<li>BATCH_INTERVAL_PAUSE：批次间暂停</li>\n<li>AUTOMATIC：不暂停</li>",
           "example": "Automatic",
           "member": "string",
           "name": "BatchPause",
           "output_required": true,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最大额外数量。设置该参数后，在滚动更新开始前根据启动配置创建一批按量计费的额外实例，滚动更新完成后销毁额外实例。\n该参数用于保证滚动更新过程中可用实例的数量，最大额外数量不能超过滚动更新单个批次的刷新实例数。回滚流程暂不支持该参数。",
+          "example": "1",
+          "member": "int64",
+          "name": "MaxSurge",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

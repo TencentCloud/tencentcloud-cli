@@ -27,7 +27,7 @@ Output:
                 "Name": "efslsaext.dll",
                 "Type": 7,
                 "Status": 1,
-                "User": "",
+                "User": "root",
                 "Path": "C:\\Windows\\System32\\efslsaext.dll",
                 "MachineIp": "172.16.0.1",
                 "MachineWanIp": "43.138.242.17",
@@ -41,9 +41,9 @@ Output:
                     "WanIP": "43.138.242.17",
                     "PrivateIP": "172.16.0.1",
                     "NetworkType": 0,
-                    "NetworkName": "",
+                    "NetworkName": "vpc-d7f***",
                     "InstanceID": "ins-4b90g85x",
-                    "HostName": ""
+                    "HostName": "hn***"
                 }
             }
         ],

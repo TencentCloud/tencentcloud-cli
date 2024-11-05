@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli cwp CreateBanWhiteList --cli-unfold-argument  \
-    --Rules.Remark xx \
-    --Rules.Uuid xx \
+    --Rules.Remark 备注 \
+    --Rules.Uuid 05f0bcab-726c-4ea4-8109-bcd03d5598f7 \
     --Rules.IsGlobal True \
-    --Rules.Id xx \
+    --Rules.Id 1 \
     --Rules.ModifyTime 2020-09-22 00:00:00 \
-    --Rules.SrcIp xx \
+    --Rules.SrcIp 1.1.1.1 \
     --Rules.CreateTime 2020-09-22 00:00:00 \
-    --Rules.Quuids xx
+    --Rules.Quuids 05f0bcab-726c-4ea4-8109-bcd03d5598f7
 ```
 
 Output: 
@@ -24,27 +24,12 @@ Output:
         "IsGlobal": false,
         "DuplicateHosts": [
             {
-                "Quuid": "xx",
-                "Uuid": "xx",
+                "Quuid": "05f0bcab-726c-4ea4-8109-bcd03d5598f7",
+                "Uuid": "05f0bcab-726c-4ea4-8109-bcd03d5598f7",
                 "Id": 1
-            },
-            {
-                "Id": 1,
-                "Quuid": "xx",
-                "Uuid": "xx"
-            },
-            {
-                "Id": 1,
-                "Quuid": "xx",
-                "Uuid": "xx"
-            },
-            {
-                "Id": 1,
-                "Quuid": "xx",
-                "Uuid": "xx"
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "be6f6eec-0825-4e67-ab9a-c8568bbf736c"
     }
 }
 ```

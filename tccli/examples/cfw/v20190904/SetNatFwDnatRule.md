@@ -14,7 +14,7 @@ tccli cfw SetNatFwDnatRule --cli-unfold-argument  \
     --AddOrDelDnatRules.0.PublicPort 80 \
     --AddOrDelDnatRules.0.PrivateIpAddress 10.206.22.4 \
     --AddOrDelDnatRules.0.PrivatePort 80 \
-    --AddOrDelDnatRules.0.Description 
+    --AddOrDelDnatRules.0.Description 自定义描述
 ```
 
 Output: 

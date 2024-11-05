@@ -8,8 +8,8 @@ Input:
 tccli cwp ModifyBaselineRule --cli-unfold-argument  \
     --Data.Items.0.ItemId 1000 \
     --Data.Items.0.ItemName Redis 基线合规检测 \
-    --Data.RuleDesc test111 \
-    --Data.RuleName test111
+    --Data.RuleDesc rule desc \
+    --Data.RuleName rule name1
 ```
 
 Output: 

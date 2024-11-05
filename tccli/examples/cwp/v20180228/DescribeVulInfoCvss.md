@@ -18,7 +18,7 @@ Output:
         "Description": "ad",
         "Reference": "fs",
         "VulName": "漏洞1",
-        "CveInfo": "",
+        "CveInfo": "AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
         "CvssScoreFloat": 9.9,
         "VulType": 1,
         "VulLevel": 2,

@@ -25,8 +25,7 @@ Output:
 {
     "Response": {
         "RuleUuids": [
-            8888,
-            8889
+            8888
         ],
         "RequestId": "9a86c4e3-b926-4244-919b-aba9a7e82686"
     }

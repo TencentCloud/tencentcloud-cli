@@ -821,6 +821,17 @@
           "required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否使用的自定义桶\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsUserDefineBucket",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -7543,6 +7554,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou-5",
+          "member": "string",
+          "name": "Zone",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -10559,7 +10580,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "生效时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "生效周期\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2023-09-07 00:00:00~2023-09-21 00:00:00\t",
           "member": "string",
           "name": "EffectivePeriod",
@@ -10570,7 +10591,7 @@
         },
         {
           "disabled": false,
-          "document": "调度类型：\nDay-天\nWeek-周\nMonth-月\nOnce-单次\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "调度类型，不传该参数时为立即执行：\nDay-天\nWeek-周\nMonth-月\nOnce-单次\n\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Day",
           "member": "string",
           "name": "ScheduleType",

@@ -6,13 +6,16 @@ Input:
 
 ```
 tccli ms CreateShieldPlanInstance --cli-unfold-argument  \
-    --PlanName xx \
-    --ResourceId xx \
+    --PlanName 默认加固策略 \
+    --ResourceId 127500-shi \
+    --PlanInfo.AntiRoot 0 \
+    --PlanInfo.FileSign 0 \
+    --PlanInfo.SetFile 0 \
     --PlanInfo.Dex 1 \
-    --PlanInfo.SoType xx \
+    --PlanInfo.SoType 1 \
     --PlanInfo.AntiLogLeak 0 \
     --PlanInfo.ApkSizeOpt 1 \
-    --PlanInfo.SoInfo.SoFileNames xx \
+    --PlanInfo.SoInfo.SoFileNames a.so \
     --PlanInfo.AntiQemuRoot 0 \
     --PlanInfo.AntiVMP 0 \
     --PlanInfo.Db 0 \

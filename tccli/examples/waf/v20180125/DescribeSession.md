@@ -13,38 +13,25 @@ tccli waf DescribeSession --cli-unfold-argument  \
 Output: 
 ```
 {
-    "Res": [
-        {
-            "Category": "match",
-            "EndMat": "&",
-            "EndOffset": "-1",
-            "KeyOrStartMat": "hashId",
-            "Source": "get",
-            "StartOffset": "-1",
-            "TsVersion": "1578366436093"
-        }
-    ]
-}
-```
-
-**Example 2: 没有设置Seesion的场景**
-
-
-
-Input: 
-
-```
-tccli waf DescribeSession --cli-unfold-argument  \
-    --Domain test.com \
-    --Edition clb-waf
-```
-
-Output: 
-```
-{
     "Response": {
-        "Data": null,
-        "RequestId": "e08991ed-f8f8-4a6e-b8be-74f1a34eab5f"
+        "Data": {
+            "Res": [
+                {
+                    "SessionId": 2000003356,
+                    "SessionName": "test-session",
+                    "Category": "match",
+                    "KeyOrStartMat": "PHPSESSID=",
+                    "EndMat": ";",
+                    "StartOffset": "-1",
+                    "EndOffset": "-1",
+                    "Source": "cookie",
+                    "TsVersion": "1727147589924",
+                    "SessionInUsed": false,
+                    "RelatedRuleID": []
+                }
+            ]
+        },
+        "RequestId": "88d80896-a330-4a7f-a72f-f5175a20ebcc"
     }
 }
 ```

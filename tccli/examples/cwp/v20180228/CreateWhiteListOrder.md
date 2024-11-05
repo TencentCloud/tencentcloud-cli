@@ -17,10 +17,10 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "xxx",
+        "RequestId": "d1245804-b922-4c3b-8499-f95dce26b33c",
         "Resource": {
             "Id": 1,
-            "ResourceId": "white_xxxx",
+            "ResourceId": "white_2415**",
             "BeginTime": "2022-05-31 00:00:00",
             "EndTime": "2022-06-10 00:00:00",
             "LicenseType": 1

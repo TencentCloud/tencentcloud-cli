@@ -17,12 +17,14 @@ Output:
     "Response": {
         "Data": [
             {
-                "PageName": "xx",
+                "PageId": "abc",
+                "PageName": "abc",
                 "AccessAble": true,
-                "PageId": "xx"
+                "PageKey": "abc",
+                "IsGlobalConfig": true
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

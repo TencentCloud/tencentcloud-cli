@@ -6,16 +6,16 @@ Input:
 
 ```
 tccli tcss DescribeRiskSyscallEventsExport --cli-unfold-argument  \
-    --ExportField xxx
+    --ExportField filed_name
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx",
-        "DownloadUrl": "xx",
-        "JobId": "xx"
+        "RequestId": "8bc803fd-d85d-47b8-9e2b-9644674be677",
+        "DownloadUrl": "https://cwp-1258344***.cos.ap-guangzhou.myqcloud.com/file.txt",
+        "JobId": "10001"
     }
 }
 ```

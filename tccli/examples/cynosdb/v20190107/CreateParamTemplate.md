@@ -32,7 +32,7 @@ Input:
 tccli cynosdb CreateParamTemplate --cli-unfold-argument  \
     --TemplateDescription API测试 \
     --EngineVersion 5.7 \
-    --TemplateId 0 \
+    --TemplateId 100 \
     --DbMode NORMAL \
     --TemplateName API测试
 ```

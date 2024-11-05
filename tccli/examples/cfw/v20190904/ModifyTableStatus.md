@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cfw ModifyTableStatus --cli-unfold-argument  \
-    --EdgeId  \
-    --Area  \
+    --EdgeId edge-ppt3pi01 \
+    --Area ap-guangzhou \
     --Status 2 \
     --Direction 1
 ```

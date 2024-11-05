@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli lowcode UpdateMaterialInfo --cli-unfold-argument  \
+    --EnvId abc \
+    --Name abc \
+    --Tags abc \
+    --MediaType abc \
     --ExpireDay 1 \
-    --EnvId xx \
-    --Name xx \
-    --Tags xx \
-    --MediaType xx \
     --Id 1
 ```
 
@@ -18,7 +18,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

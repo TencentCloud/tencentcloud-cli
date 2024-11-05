@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cwp ModifyLoginWhiteInfo --cli-unfold-argument  \
-    --HostLoginWhiteObj.Places.0.CityId 111 \
+    --HostLoginWhiteObj.Places.0.CityId 764 \
     --HostLoginWhiteObj.Places.0.ProvinceId 11 \
     --HostLoginWhiteObj.Places.0.CountryId 1 \
     --HostLoginWhiteObj.SrcIp 1.2.3.4 \
@@ -19,7 +19,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "4234234"
+        "RequestId": "be6f6eec-0825-4e67-ab9a-c8568bbf736c"
     }
 }
 ```

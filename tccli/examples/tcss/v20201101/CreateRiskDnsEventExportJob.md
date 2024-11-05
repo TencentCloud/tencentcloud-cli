@@ -5,22 +5,14 @@
 Input: 
 
 ```
-tccli tcss CreateRiskDnsEventExportJob --cli-unfold-argument  \
-    --Order xx \
-    --Limit 10000 \
-    --By xx \
-    --Filters.0.Values xx \
-    --Filters.0.Name xx \
-    --Filters.0.ExactMatch True \
-    --Offset 0
-```
+tccli tcss CreateRiskDnsEventExportJob --cli-unfold-argument ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx",
-        "JobId": "xx"
+        "RequestId": "8bc803fd-d85d-47b8-9e2b-9644674be677",
+        "JobId": "10001"
     }
 }
 ```

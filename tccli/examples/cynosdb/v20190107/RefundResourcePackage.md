@@ -7,7 +7,7 @@ Input:
 
 ```
 tccli cynosdb RefundResourcePackage --cli-unfold-argument  \
-    --PackageId package-abcd1234
+    --PackageId package-jxdncifn
 ```
 
 Output: 
@@ -15,9 +15,9 @@ Output:
 {
     "Response": {
         "DealNames": [
-            "abc"
+            "3164723785123674"
         ],
-        "RequestId": "abc"
+        "RequestId": "a5706353-296a-4992-ad07-ac4a48eeba43"
     }
 }
 ```

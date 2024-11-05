@@ -6,36 +6,40 @@ Input:
 
 ```
 tccli tcss DescribeSecLogJoinObjectList --cli-unfold-argument  \
-    --LogType abc \
-    --Limit 1 \
-    --Offset 1 \
-    --Filters.0.Name abc \
-    --Filters.0.Values abc \
-    --Filters.0.ExactMatch True \
-    --By abc \
-    --Order abc
+    --LogType container_bash \
+    --Offset 0 \
+    --Limit 10 \
+    --Filters.0.Name Status \
+    --Filters.0.Values ONLINE OFFLINE UNINSTALL \
+    --Filters.0.ExactMatch True
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "TotalCount": 1,
+        "AutoJoin": false,
+        "ExcludedCount": 0,
         "List": [
             {
-                "HostID": "abc",
-                "HostName": "abc",
-                "HostIP": "abc",
-                "HostStatus": "abc",
-                "ClusterID": "abc",
-                "ClusterName": "abc",
-                "PublicIP": "abc",
+                "ClusterID": "cls-q0bc0ed2",
+                "ClusterMainAddress": "10.0.0.1",
+                "ClusterName": "tke2",
+                "ClusterStatus": "3",
+                "ClusterType": "2",
+                "ClusterVersion": "v1.26.1-tke.5",
+                "ContainerCnt": 23,
+                "HostID": "3b6b1bbc-1c7a-47e2-9ca8-e9c27ec9d068",
+                "HostIP": "172.17.1.6",
+                "HostName": "tke_cls-q0bc0ed2_worker",
+                "HostStatus": "ONLINE",
                 "JoinState": true,
-                "ClusterVersion": "abc",
-                "ClusterMainAddress": "abc"
+                "PublicIP": "159.75.90.217"
             }
         ],
-        "RequestId": "abc"
+        "RangeType": 1,
+        "RequestId": "a38b89a7-fbdf-4133-9981-1c09a5a94895",
+        "TotalCount": 55
     }
 }
 ```

@@ -14,11 +14,20 @@ Output:
         "TotalCount": 22,
         "List": [
             {
+                "Pid": 1,
+                "MachineExtraInfo": {
+                    "HostName": "demo-instance",
+                    "InstanceID": "ins-1002",
+                    "NetworkName": "vpc-1002",
+                    "NetworkType": 1,
+                    "PrivateIP": "1.1.1.1",
+                    "WanIP": "1.1.1.1"
+                },
                 "Id": 22,
                 "Uuid": "cf59e3c0-b1cc-11e9-baac-525400ca96ee",
                 "Quuid": "b9821ff5-75f0-4939-b21f-13c8d36a725c",
                 "Hostip": "10.0.0.125",
-                "ProcessName": "a",
+                "ProcessName": "nginx",
                 "FullPath": "/home/ubuntu/a",
                 "CmdLine": "./a ",
                 "UserName": "root",

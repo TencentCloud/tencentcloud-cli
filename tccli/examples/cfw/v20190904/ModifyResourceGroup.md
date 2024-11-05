@@ -6,16 +6,16 @@ Input:
 
 ```
 tccli cfw ModifyResourceGroup --cli-unfold-argument  \
-    --GroupName xx \
-    --GroupId xx \
-    --ParentId xx
+    --ParentId cfwrg-masternode \
+    --GroupName 资产分组 \
+    --GroupId cfwrg-8c8********569270
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx"
+        "RequestId": "8be5cf7c-c43b-4025-9f0a-e4b5936c99ea"
     }
 }
 ```

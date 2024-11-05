@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli tdmq DescribeRocketMQSubscriptions --cli-unfold-argument  \
-    --Limit 10 \
     --ClusterId rocketmq-a5nzx52ab7jb \
-    --Namespace test \
-    --Group consume_group \
-    --Offset 0
+    --Namespace test_namespace \
+    --Group test_group \
+    --Offset 0 \
+    --Limit 20
 ```
 
 Output: 
@@ -18,16 +18,16 @@ Output:
 {
     "Response": {
         "RequestId": "cde7c1eb-c631-453a-999b-03c9ed38b892",
-        "TotalCount": 2,
+        "TotalCount": 1,
         "Subscriptions": [
             {
-                "Topic": "test",
+                "Topic": "test_topic",
                 "Type": "Normal",
                 "PartitionNum": 3,
                 "ExpressionType": "TAG",
                 "SubString": "*",
                 "Status": 0,
-                "ConsumerLag": 0
+                "ConsumerLag": 120
             }
         ]
     }

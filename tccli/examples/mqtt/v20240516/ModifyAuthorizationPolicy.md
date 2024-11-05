@@ -8,7 +8,7 @@ Input:
 tccli mqtt ModifyAuthorizationPolicy --cli-unfold-argument  \
     --Id 18 \
     --InstanceId mqtt-jeredv33 \
-    --PolicyName namea11
+    --PolicyName policy-1
 ```
 
 Output: 

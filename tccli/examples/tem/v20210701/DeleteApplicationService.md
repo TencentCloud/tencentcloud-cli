@@ -5,14 +5,19 @@
 Input: 
 
 ```
-tccli tem DeleteApplicationService --cli-unfold-argument ```
+tccli tem DeleteApplicationService --cli-unfold-argument  \
+    --ApplicationId app-xxxxxx \
+    --SourceChannel 0 \
+    --EnvironmentId en-xxxxxx \
+    --ServiceName abc-xxx
+```
 
 Output: 
 ```
 {
     "Response": {
         "Result": true,
-        "RequestId": "xx"
+        "RequestId": "xx-xxx-xxxx"
     }
 }
 ```

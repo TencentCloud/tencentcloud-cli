@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tcss DeleteCompliancePolicyAssetSetFromWhitelist --cli-unfold-argument  \
-    --PolicyAssetSetList.0.CustomerPolicyItemId 1 \
-    --PolicyAssetSetList.0.CustomerAssetItemIdSet 1
+    --PolicyAssetSetList.0.CustomerPolicyItemId 12 \
+    --PolicyAssetSetList.0.CustomerAssetItemIdSet 15
 ```
 
 Output: 

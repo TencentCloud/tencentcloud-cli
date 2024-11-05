@@ -1,6 +1,6 @@
 **Example 1: 修改规则执行顺序**
 
-
+修改规则执行顺序
 
 Input: 
 
@@ -12,9 +12,9 @@ tccli cfw ModifySequenceRules --cli-unfold-argument  \
     --Data.1.Id 36068 \
     --Data.1.OrderIndex 7 \
     --Data.1.NewOrderIndex 8 \
-    --EdgeId  \
+    --EdgeId edge-ppt3pi01 \
     --Direction 1 \
-    --Area 
+    --Area ap-guangzhou
 ```
 
 Output: 

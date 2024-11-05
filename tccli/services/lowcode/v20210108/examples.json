@@ -8,14 +8,6 @@
         "title": "流程组件绑定"
       }
     ],
-    "CopyProcessDetail": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: lowcode.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CopyProcessDetail\n<公共请求参数>\n\n{\n    \"CopiedProcessKey\": \"abc\",\n    \"CopiedVersion\": 0,\n    \"NewProcessKey\": \"abc\",\n    \"ProcessDesc\": \"abc\",\n    \"ProcessName\": \"abc\",\n    \"EnvType\": \"abc\",\n    \"EnvId\": \"abc\",\n    \"AppCode\": \"abc\",\n    \"CopiedReleaseVersion\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
-        "title": "流程详情复制"
-      }
-    ],
     "CreateDataSourceDetail": [
       {
         "document": "",
@@ -27,8 +19,8 @@
     "DeleteMaterialInfo": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: lowcode.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteMaterialInfo\n<公共请求参数>\n\n{\n    \"EnvId\": \"xx\",\n    \"Id\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: lowcode.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteMaterialInfo\n<公共请求参数>\n\n{\n    \"EnvId\": \"abc\",\n    \"Id\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "删除素材"
       }
     ],
@@ -36,7 +28,7 @@
       {
         "document": "查询数据源列表",
         "input": "POST / HTTP/1.1\nHost: lowcode.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDataSourceList\n<公共请求参数>\n\n{\n    \"PageIndex\": \"1\",\n    \"EnvId\": \"字符串\",\n    \"QueryOption\": {\n        \"LikeTitle\": \"字符串\",\n        \"LikeName\": \"字符串\"\n    },\n    \"PageSize\": \"1\",\n    \"DataSourceType\": \"字符串\",\n    \"NotQuerySubTypeList\": [\n        \"字符串\"\n    ],\n    \"DataSourceNames\": [\n        \"字符串\"\n    ],\n    \"ViewIds\": [\n        \"字符串\"\n    ],\n    \"QueryBindToApp\": \"1\",\n    \"QueryConnector\": \"1\",\n    \"DataSourceIds\": [\n        \"字符串\"\n    ],\n    \"Appids\": [\n        \"字符串\"\n    ],\n    \"ChannelList\": [\n        \"字符串\"\n    ],\n    \"AppLinkStatus\": \"1\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Rows\": [\n                {\n                    \"Id\": \"abc\",\n                    \"Title\": \"abc\",\n                    \"Name\": \"abc\",\n                    \"Type\": \"abc\",\n                    \"Description\": \"abc\",\n                    \"Schema\": \"abc\",\n                    \"CmsProject\": \"abc\",\n                    \"PkgId\": \"abc\",\n                    \"SchemaVersion\": \"abc\",\n                    \"CreatorId\": \"abc\",\n                    \"CreatedAt\": \"abc\",\n                    \"UpdatedAt\": \"abc\",\n                    \"EnvId\": \"abc\",\n                    \"DataSourceVersion\": \"abc\",\n                    \"AppUsageList\": [\n                        {\n                            \"Id\": \"abc\",\n                            \"Title\": \"abc\",\n                            \"EditStatusUse\": 0,\n                            \"PreviewStatusUse\": 0,\n                            \"OnlineStatusUse\": 0\n                        }\n                    ],\n                    \"PublishedAt\": \"abc\",\n                    \"ChildDataSourceIds\": [\n                        \"abc\"\n                    ],\n                    \"Fun\": \"abc\",\n                    \"ScfStatus\": 1,\n                    \"Methods\": \"abc\",\n                    \"ChildDataSourceNames\": [\n                        \"abc\"\n                    ],\n                    \"IsNewDataSource\": 0,\n                    \"ViewId\": \"abc\",\n                    \"Configuration\": \"abc\",\n                    \"TemplateCode\": \"abc\",\n                    \"Source\": 0,\n                    \"PublishVersion\": \"abc\",\n                    \"PublishViewId\": \"abc\",\n                    \"SubType\": \"abc\",\n                    \"AuthStatus\": 0,\n                    \"AuthInfo\": {\n                        \"AuthUser\": \"abc\"\n                    },\n                    \"PublishStatus\": 0,\n                    \"UpdateVersion\": 0,\n                    \"RelationFieldList\": [\n                        {\n                            \"Field\": \"abc\",\n                            \"Format\": \"abc\",\n                            \"RelateDataSourceName\": \"abc\"\n                        }\n                    ]\n                }\n            ],\n            \"Count\": 0\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Rows\": [\n                {\n                    \"Id\": \"abc\",\n                    \"Title\": \"abc\",\n                    \"Name\": \"abc\",\n                    \"Type\": \"abc\",\n                    \"Description\": \"abc\",\n                    \"Schema\": \"abc\",\n                    \"CmsProject\": \"abc\",\n                    \"PkgId\": \"abc\",\n                    \"DbSourceType\": \"abc\",\n                    \"SchemaVersion\": \"abc\",\n                    \"CreatorId\": \"abc\",\n                    \"CreatedAt\": \"abc\",\n                    \"UpdatedAt\": \"abc\",\n                    \"EnvId\": \"abc\",\n                    \"DataSourceVersion\": \"abc\",\n                    \"AppUsageList\": [\n                        {\n                            \"Id\": \"abc\",\n                            \"Title\": \"abc\",\n                            \"EditStatusUse\": 0,\n                            \"PreviewStatusUse\": 0,\n                            \"OnlineStatusUse\": 0\n                        }\n                    ],\n                    \"PublishedAt\": \"abc\",\n                    \"ChildDataSourceIds\": [\n                        \"abc\"\n                    ],\n                    \"Fun\": \"abc\",\n                    \"ScfStatus\": 1,\n                    \"Methods\": \"abc\",\n                    \"ChildDataSourceNames\": [\n                        \"abc\"\n                    ],\n                    \"IsNewDataSource\": 0,\n                    \"ViewId\": \"abc\",\n                    \"Configuration\": \"abc\",\n                    \"TemplateCode\": \"abc\",\n                    \"Source\": 0,\n                    \"PublishVersion\": \"abc\",\n                    \"PublishViewId\": \"abc\",\n                    \"SubType\": \"abc\",\n                    \"AuthStatus\": 0,\n                    \"AuthInfo\": {\n                        \"AuthUser\": \"abc\"\n                    },\n                    \"PublishStatus\": 0,\n                    \"UpdateVersion\": 0,\n                    \"RelationFieldList\": [\n                        {\n                            \"Field\": \"abc\",\n                            \"Format\": \"abc\",\n                            \"RelateDataSourceName\": \"abc\"\n                        }\n                    ]\n                }\n            ],\n            \"Count\": 0\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "example"
       }
     ],
@@ -51,32 +43,24 @@
     "DescribeMaterialInfoList": [
       {
         "document": "获取素材列表",
-        "input": "POST / HTTP/1.1\nHost: lowcode.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMaterialInfoList\n<公共请求参数>\n\n{\n    \"EnvId\": \"xx\",\n    \"PageNum\": 1,\n    \"Name\": \"xx\",\n    \"PageSize\": 1,\n    \"Tags\": [\n        \"xx\"\n    ],\n    \"MediaType\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"List\": {\n            \"ExpireTime\": \"2020-09-22 00:00:00\",\n            \"UpdateTime\": \"2020-09-22 00:00:00\",\n            \"Name\": \"xx\",\n            \"Tags\": \"xx\",\n            \"IsPublic\": true,\n            \"MediaType\": \"xx\",\n            \"CreateTime\": \"2020-09-22 00:00:00\",\n            \"DownloadUrl\": \"xx\",\n            \"Owner\": \"xx\",\n            \"Id\": 1,\n            \"Size\": \"xx\"\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: lowcode.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMaterialInfoList\n<公共请求参数>\n\n{\n    \"Name\": \"abc\",\n    \"Tags\": [\n        \"abc\"\n    ],\n    \"EnvId\": \"abc\",\n    \"MediaType\": \"abc\",\n    \"PageSize\": 1,\n    \"PageNum\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": {\n            \"Name\": \"abc\",\n            \"DownloadUrl\": \"abc\",\n            \"IsPublic\": true,\n            \"UpdateTime\": \"2020-09-22 00:00:00\",\n            \"Tags\": \"abc\",\n            \"MediaType\": \"abc\",\n            \"Size\": \"abc\",\n            \"ExpireTime\": \"2020-09-22 00:00:00\",\n            \"Id\": 1,\n            \"CreateTime\": \"2020-09-22 00:00:00\",\n            \"Owner\": \"abc\"\n        },\n        \"TotalCount\": 1,\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "获取素材列表"
       }
     ],
     "DescribeMaterialUploadUrl": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: lowcode.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMaterialUploadUrl\n<公共请求参数>\n\n{\n    \"ExpireDay\": 1,\n    \"EnvId\": \"xx\",\n    \"Name\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"DownloadUrl\": \"xx\",\n        \"Id\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"UploadUrl\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: lowcode.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMaterialUploadUrl\n<公共请求参数>\n\n{\n    \"EnvId\": \"abc\",\n    \"Name\": \"abc\",\n    \"ExpireDay\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"UploadUrl\": \"abc\",\n        \"DownloadUrl\": \"abc\",\n        \"Id\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "获取素材上传链接"
-      }
-    ],
-    "DescribeMessageTemplates": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: lowcode.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMessageTemplates\n<公共请求参数>\n\n{\n    \"SearchTitleName\": \"abc\",\n    \"PageNo\": 0,\n    \"PageSize\": 0,\n    \"EnvType\": \"abc\",\n    \"TemplateId\": 1,\n    \"EnvId\": \"abc\",\n    \"TemplateType\": 0,\n    \"AppCodeList\": [\n        \"abc\"\n    ],\n    \"DatasourceNameList\": [\n        \"abc\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"TotalCount\": 0,\n            \"ResponseList\": [\n                {\n                    \"MessageTypeList\": [\n                        0\n                    ],\n                    \"TemplateTitle\": \"abc\",\n                    \"TemplateDesc\": \"abc\",\n                    \"AppCode\": \"abc\",\n                    \"Datasource\": \"abc\",\n                    \"CreateBy\": \"abc\",\n                    \"CreateTime\": \"2020-09-22 00:00:00\",\n                    \"UpdateTime\": \"2020-09-22 00:00:00\",\n                    \"TemplateId\": 1,\n                    \"TemplateType\": 0,\n                    \"DatasourceName\": \"abc\",\n                    \"ViewId\": \"abc\"\n                }\n            ]\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
-        "title": "批量查询消息模板基本信息列表"
       }
     ],
     "DescribePermissionForAppPage": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: lowcode.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePermissionForAppPage\n<公共请求参数>\n\n{\n    \"Role\": 1,\n    \"EnvId\": \"env-001\",\n    \"WeAppId\": \"app-TJiOL2X9\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"PageName\": \"xx\",\n                \"AccessAble\": true,\n                \"PageId\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"PageId\": \"abc\",\n                \"PageName\": \"abc\",\n                \"AccessAble\": true,\n                \"PageKey\": \"abc\",\n                \"IsGlobalConfig\": true\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "应用页面权限列表"
       }
     ],
@@ -84,24 +68,8 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: lowcode.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePermissions\n<公共请求参数>\n\n{\n    \"Limit\": 0,\n    \"EnvId\": \"env-001\",\n    \"PermissionType\": 0,\n    \"Role\": 0,\n    \"Offset\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ResourceList\": [\n                {\n                    \"AccessAble\": false,\n                    \"ResourceId\": \"xx\",\n                    \"ModifyTime\": \"xx\",\n                    \"ResourceName\": \"xx\"\n                },\n                {\n                    \"AccessAble\": false,\n                    \"ResourceId\": \"xx\",\n                    \"ModifyTime\": \"xx\",\n                    \"ResourceName\": \"xx\"\n                },\n                {\n                    \"AccessAble\": false,\n                    \"ResourceId\": \"xx\",\n                    \"ModifyTime\": \"xx\",\n                    \"ResourceName\": \"xx\"\n                },\n                {\n                    \"AccessAble\": false,\n                    \"ResourceId\": \"xx\",\n                    \"ModifyTime\": \"xx\",\n                    \"ResourceName\": \"xx\"\n                },\n                {\n                    \"AccessAble\": false,\n                    \"ResourceId\": \"xx\",\n                    \"ModifyTime\": \"xx\",\n                    \"ResourceName\": \"xx\"\n                },\n                {\n                    \"AccessAble\": false,\n                    \"ResourceId\": \"xx\",\n                    \"ModifyTime\": \"xx\",\n                    \"ResourceName\": \"xx\"\n                }\n            ],\n            \"TotalCount\": 6,\n            \"PermissionType\": 1,\n            \"Role\": 0\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"PermissionType\": 0,\n            \"Role\": 0,\n            \"TotalCount\": 0,\n            \"ResourceList\": [\n                {\n                    \"ResourceId\": \"abc\",\n                    \"ResourceName\": \"abc\",\n                    \"ModifyTime\": \"abc\",\n                    \"AccessAble\": true,\n                    \"ResourceKey\": \"abc\",\n                    \"UserSelfPermission\": {\n                        \"Readable\": true,\n                        \"Writable\": true,\n                        \"WritableCondition\": [\n                            {\n                                \"Key\": \"abc\",\n                                \"Rel\": \"abc\",\n                                \"Val\": \"abc\",\n                                \"ValueType\": \"abc\"\n                            }\n                        ],\n                        \"ReadableCondition\": [\n                            {\n                                \"Key\": \"abc\",\n                                \"Rel\": \"abc\",\n                                \"Val\": \"abc\",\n                                \"ValueType\": \"abc\"\n                            }\n                        ]\n                    },\n                    \"AllPermission\": {\n                        \"Readable\": true,\n                        \"Writable\": true,\n                        \"WritableCondition\": [\n                            {\n                                \"Key\": \"abc\",\n                                \"Rel\": \"abc\",\n                                \"Val\": \"abc\",\n                                \"ValueType\": \"abc\"\n                            }\n                        ]\n                    }\n                }\n            ]\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "查询资源权限"
-      }
-    ],
-    "DescribeProcessBasicInfos": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: lowcode.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProcessBasicInfos\n<公共请求参数>\n\n{\n    \"ProcessKey\": \"abc\",\n    \"ProcessName\": \"abc\",\n    \"Status\": 0,\n    \"Limit\": 0,\n    \"Offset\": 0,\n    \"EnvType\": \"abc\",\n    \"EnvId\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ResponseList\": [\n                {\n                    \"Uin\": \"abc\",\n                    \"SubUin\": \"abc\",\n                    \"AppId\": 0,\n                    \"ProcessKey\": \"abc\",\n                    \"ProcessName\": \"abc\",\n                    \"ProcessDesc\": \"abc\",\n                    \"Version\": 0,\n                    \"Status\": 0,\n                    \"ModifyTime\": \"abc\",\n                    \"CreateTime\": \"abc\",\n                    \"InvokedCount\": 0,\n                    \"PublishTime\": \"abc\",\n                    \"NickName\": \"abc\",\n                    \"Init\": true\n                }\n            ],\n            \"TotalCount\": 0\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
-        "title": "批量查询流程基础信息列表"
-      }
-    ],
-    "DescribeProcessNodeList": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: lowcode.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProcessNodeList\n<公共请求参数>\n\n{\n    \"ProcessKey\": \"abc\",\n    \"ProcessVersion\": 0,\n    \"EnvType\": \"abc\",\n    \"EnvId\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"NodeId\": \"abc\",\n                \"NodeName\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
-        "title": "查询流程节点信息"
       }
     ],
     "DescribeTemplateList": [
@@ -121,25 +89,17 @@
     "DescribeWxAccessToken": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: lowcode.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWxAccessToken\n<公共请求参数>\n\n{\n    \"WxAppId\": \"xx\",\n    \"ComponentAppId\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Token\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"ExpireAt\": 1\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: lowcode.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWxAccessToken\n<公共请求参数>\n\n{\n    \"WxAppId\": \"abc\",\n    \"ComponentAppId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Token\": \"abc\",\n        \"ExpireAt\": 1,\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "生成token"
       }
     ],
     "DescribeWxAppInfo": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: lowcode.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWxAppInfo\n<公共请求参数>\n\n{\n    \"ComponentAppId\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"WxAppInfos\": [\n            {\n                \"ExpireTime\": \"xx\",\n                \"WxAppId\": \"xx\",\n                \"ComponentAppId\": \"xx\",\n                \"NickName\": \"xx\",\n                \"AccessToken\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: lowcode.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWxAppInfo\n<公共请求参数>\n\n{\n    \"ComponentAppId\": \"abc\",\n    \"WxAppId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"WxAppInfos\": [\n            {\n                \"ComponentAppId\": \"abc\",\n                \"WxAppId\": \"abc\",\n                \"AccessToken\": \"abc\",\n                \"NickName\": \"abc\",\n                \"ExpireTime\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "查询微信小程序信息"
-      }
-    ],
-    "FlushEnvPreToProd": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: lowcode.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: FlushEnvPreToProd\n<公共请求参数>\n\n{\n    \"EnvType\": \"pre\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
-        "title": "刷新用户的预览环境到生产环境"
       }
     ],
     "GetDataSourceToken": [
@@ -158,27 +118,11 @@
         "title": "数据源修改"
       }
     ],
-    "OperateProcessBasicInfo": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: lowcode.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OperateProcessBasicInfo\n<公共请求参数>\n\n{\n    \"OperateAction\": \"abc\",\n    \"ProcessName\": \"abc\",\n    \"ProcessKey\": \"abc\",\n    \"ProcessDesc\": \"abc\",\n    \"ProcessVersion\": 0,\n    \"EnvType\": \"abc\",\n    \"EnvId\": \"abc\",\n    \"AppCode\": \"abc\",\n    \"ReleaseVersion\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
-        "title": "操作流程基础信息"
-      }
-    ],
-    "UnbindProcessComponent": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: lowcode.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UnbindProcessComponent\n<公共请求参数>\n\n{\n    \"EnvId\": \"env-001\",\n    \"AppCode\": \"appCode-001\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
-        "title": "解绑流程和组件的关系"
-      }
-    ],
     "UpdateMaterialInfo": [
       {
         "document": "获取上传文件url",
-        "input": "POST / HTTP/1.1\nHost: lowcode.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateMaterialInfo\n<公共请求参数>\n\n{\n    \"ExpireDay\": 1,\n    \"EnvId\": \"xx\",\n    \"Name\": \"xx\",\n    \"Tags\": [\n        \"xx\"\n    ],\n    \"MediaType\": \"xx\",\n    \"Id\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: lowcode.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateMaterialInfo\n<公共请求参数>\n\n{\n    \"EnvId\": \"abc\",\n    \"Name\": \"abc\",\n    \"Tags\": [\n        \"abc\"\n    ],\n    \"MediaType\": \"abc\",\n    \"ExpireDay\": 1,\n    \"Id\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "获取上传文件url"
       }
     ]

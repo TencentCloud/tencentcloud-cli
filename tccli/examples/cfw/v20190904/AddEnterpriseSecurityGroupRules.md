@@ -24,15 +24,15 @@ Output:
         "Status": 1,
         "Rules": [
             {
-                "SourceContent": "abc",
-                "DestContent": "abc",
-                "Protocol": "abc",
-                "Description": "abc",
-                "RuleUuid": 0,
-                "Sequence": 0
+                "SourceContent": "192.168.0.1",
+                "DestContent": "192.168.0.2",
+                "Protocol": "TCP",
+                "Description": "规则详情",
+                "RuleUuid": 1,
+                "Sequence": 1
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "d4b7cab1-5594-41fb-88c6-67822af94807"
     }
 }
 ```

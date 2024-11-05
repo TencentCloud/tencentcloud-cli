@@ -1517,7 +1517,7 @@
           "example": "1",
           "member": "bool",
           "name": "ServiceEnabled",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -1527,7 +1527,7 @@
           "example": "1",
           "member": "int64",
           "name": "InvalidType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1537,8 +1537,78 @@
           "example": "true",
           "member": "bool",
           "name": "AccessKeyEscrowEnabled",
-          "required": true,
+          "output_required": true,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "过期时间",
+          "example": "2024-09-10 10:19:21",
+          "member": "string",
+          "name": "ExpireTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "计算性能限制",
+          "example": "500",
+          "member": "int64",
+          "name": "QPSLimit",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "凭据个数限制",
+          "example": "1000",
+          "member": "int64",
+          "name": "SecretLimit",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "付费模式",
+          "example": "Postpaid_SSM",
+          "member": "string",
+          "name": "PayModel",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自动续费标识，0:手动续费 1:自动续费 2:到期不续",
+          "example": "1",
+          "member": "int64",
+          "name": "RenewFlag",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源id",
+          "example": "SSM-Prepaid-co3j6qlg",
+          "member": "string",
+          "name": "ResourceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "已托管凭据个数",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {

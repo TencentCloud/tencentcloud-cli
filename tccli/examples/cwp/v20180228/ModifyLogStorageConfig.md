@@ -1,12 +1,12 @@
-**Example 1: 示例**
+**Example 1: 修改日志存储配置**
 
-示例
+修改日志存储配置
 
 Input: 
 
 ```
 tccli cwp ModifyLogStorageConfig --cli-unfold-argument  \
-    --Type abc \
+    --Type malware \
     --Period 0 \
     --IsModifyPeriod True
 ```
@@ -15,7 +15,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "e5b4724c-49af-46ab-bd84-cdbae897e7e0"
     }
 }
 ```

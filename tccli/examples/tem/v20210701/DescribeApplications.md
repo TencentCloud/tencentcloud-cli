@@ -12,119 +12,58 @@ Output:
 {
     "Response": {
         "Result": {
-            "Current": 0,
             "Records": [
                 {
-                    "ApplicationName": "xx",
-                    "EnvironmentId": "xx",
-                    "HasAuthority": true,
-                    "ModifyDate": "2020-09-22 00:00:00",
-                    "Description": "xx",
-                    "Creator": "xx",
-                    "InstanceId": "xx",
-                    "CreateDate": "2020-09-22 00:00:00",
+                    "ApplicationId": "app-5vaz8d85",
+                    "ApplicationName": "pk-test-internet",
+                    "Description": "",
+                    "EnvironmentId": "",
+                    "CreateDate": "2024-10-16 14:17:08",
+                    "ModifyDate": "2024-10-23 20:17:34",
+                    "Modifier": "100019051593",
+                    "Creator": "100019051593",
+                    "RepoType": 3,
+                    "InstanceId": "",
+                    "RepoName": "",
+                    "EnvironmentName": "",
+                    "CodingLanguage": "JAVA",
+                    "DeployMode": "",
                     "ActiveVersions": [
                         {
-                            "Status": "xx",
+                            "VersionName": "20241023161452",
+                            "VersionId": "revision-5n3oveqj",
+                            "Status": "",
+                            "BatchDeployStatus": "",
+                            "EnableEs": -1,
+                            "LogOutputConf": null,
+                            "ExpectedInstances": null,
                             "CurrentInstances": 0,
-                            "LogOutputConf": {
-                                "ClsLogTopicId": "xx",
-                                "ClsLogsetName": "xx",
-                                "ClsLogsetId": "xx",
-                                "ClsLogTopicName": "xx",
-                                "OutputType": "xx"
-                            },
-                            "EnableEs": 0,
-                            "PodList": {
-                                "TotalCount": 0,
-                                "Limit": 0,
-                                "RequestId": "xx",
-                                "PodList": [
-                                    {
-                                        "Webshell": "xx",
-                                        "Status": "xx",
-                                        "RestartCount": 0,
-                                        "StartTime": "xx",
-                                        "Zone": "xx",
-                                        "PodId": "xx",
-                                        "NodeInfo": {
-                                            "SubnetId": "xx",
-                                            "Cidr": "xx",
-                                            "AvailableIpCount": "xx",
-                                            "Name": "xx",
-                                            "Zone": "xx"
-                                        },
-                                        "VersionId": "xx",
-                                        "UnhealthyWarningMsg": "xx",
-                                        "DeployVersion": "xx",
-                                        "PodIp": "xx",
-                                        "ContainerState": "xx",
-                                        "Ready": true,
-                                        "ApplicationName": "xx",
-                                        "CreateTime": "xx",
-                                        "Unhealthy": true
-                                    }
-                                ],
-                                "Offset": 0
-                            },
-                            "EnvironmentId": "xx",
-                            "CreateDate": "xx",
-                            "BuildTaskId": "xx",
-                            "DeployMode": "xx",
-                            "WorkloadInfo": {
-                                "ApplicationName": "xx",
-                                "UpdateRevision": "xx",
-                                "UpdatedReadyReplicas": 0,
-                                "Replicas": 0,
-                                "ClusterId": "xx",
-                                "UpdatedReplicas": 0,
-                                "VersionName": "xx",
-                                "CurrentRevision": "xx",
-                                "ReadyReplicas": 0
-                            },
-                            "Zones": [
-                                "xx"
-                            ],
-                            "VersionId": "xx",
-                            "UnderDeploying": true,
-                            "BatchDeployStatus": "xx",
-                            "VersionName": "xx",
-                            "ExpectedInstances": 0,
-                            "NodeInfos": [
-                                {
-                                    "SubnetId": "xx",
-                                    "Cidr": "xx",
-                                    "AvailableIpCount": "xx",
-                                    "Name": "xx",
-                                    "Zone": "xx"
-                                }
-                            ],
-                            "ApplicationId": "xx",
-                            "EnvironmentName": "xx",
-                            "ApplicationName": "xx"
+                            "DeployMode": "JAR",
+                            "BuildTaskId": "",
+                            "EnvironmentId": "en-259d2b6j",
+                            "EnvironmentName": "pk-test-12",
+                            "ApplicationId": "app-5vaz8d85",
+                            "ApplicationName": "pk-test-internet",
+                            "Zones": [],
+                            "NodeInfos": [],
+                            "PodList": null,
+                            "WorkloadInfo": null,
+                            "CreateDate": "2024-10-23 20:17:34",
+                            "UnderDeploying": null,
+                            "RegionId": "1"
                         }
                     ],
-                    "DeployMode": "xx",
-                    "RepoType": 0,
-                    "RepoName": "xx",
-                    "EnableTracing": 1,
-                    "Tags": [
-                        {
-                            "TagKey": "xx",
-                            "TagValue": "xx"
-                        }
-                    ],
-                    "Modifier": "xx",
-                    "ApplicationId": "xx",
-                    "CodingLanguage": "xx",
-                    "EnvironmentName": "xx"
+                    "EnableTracing": 0,
+                    "Tags": [],
+                    "HasAuthority": true
                 }
             ],
             "Total": 0,
+            "Size": 0,
             "Pages": 0,
-            "Size": 0
+            "Current": 0
         },
-        "RequestId": "xx"
+        "RequestId": "67796ca7-0b76-4281-a280-c9811cd8ce62"
     }
 }
 ```

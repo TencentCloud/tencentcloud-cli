@@ -8,7 +8,7 @@ Input:
 tccli cfw ModifyBlockIgnoreList --cli-unfold-argument  \
     --IOC.0.IP 192.168.1.1 \
     --IOC.0.Direction 1 \
-    --IOC.0.Domain  \
+    --IOC.0.Domain www.domain.com \
     --RuleType 1 \
     --IocAction add \
     --StartTime 2021-04-16 18:01:09 \

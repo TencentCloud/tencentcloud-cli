@@ -16,63 +16,65 @@ Output:
         "Data": {
             "Region": "华南地区(广州)",
             "VpcId": "基础网络",
-            "ProductType": null,
+            "ProductType": 1,
             "AssetStatus": "运行中",
             "AssetType": "cvm",
             "Id": "1445149556-cvm-ins-3o0cn0bo",
             "Tag": [
                 {
-                    "Fname": "test1",
+                    "Fname": "tag1",
                     "Fid": 255
                 },
                 {
-                    "Fname": "test2",
+                    "Fname": "tag2",
                     "Fid": 256
-                },
-                {
-                    "Fname": "dasd",
-                    "Fid": 257
-                },
-                {
-                    "Fname": "222",
-                    "Fid": 258
                 }
             ],
-            "Name": "云鼎-张云飞-LINUX测试",
+            "Name": "云鼎-LINUX",
             "AssetUniqid": "ins-3o0cn0bo",
             "InstanceType": "I2.MEDIUM4",
             "InstanceState": "RUNNING",
             "PublicIpAddresses": [
-                "118.89.39.26"
+                "118.**.39.**"
             ],
             "PrivateIpAddresses": [
-                "10.104.119.159"
+                "10.**.**.159"
             ],
-            "EngineVersion": "",
-            "Vip": "10.104.119.159",
-            "Status": null,
-            "LoadBalancerVips": null,
-            "Uin": null,
-            "CreationDate": null,
-            "Domain": null,
+            "EngineVersion": "1.2.3",
+            "Vip": "10.**.***.159",
+            "Status": 1,
+            "LoadBalancerVips": [
+                "ip1"
+            ],
+            "Uin": 221426789,
+            "CreationDate": "2020-03-31 21:34:55",
+            "Domain": "domain",
             "InstanceId": "ins-3o0cn0bo",
-            "DiskType": null,
-            "DiskSize": null,
-            "CertType": null,
-            "ProjectName": "",
-            "CertEndTime": null,
-            "ValidityPeriod": null,
+            "DiskType": "ssd",
+            "DiskSize": 1024,
+            "CertType": "https",
+            "ProjectName": "project",
+            "CertEndTime": "2020-03-31 21:34:55",
+            "ValidityPeriod": "day",
             "SsaAssetDiscoverTime": "2020-03-31 21:34:55",
-            "AssetSubnetId": "",
-            "AssetSubnetName": "",
-            "AssetVpcName": "",
+            "AssetSubnetId": "subnet-9527",
+            "AssetSubnetName": "sub-andy",
+            "AssetVpcName": "vpc-andy",
             "ClusterType": 0,
-            "NameSpace": "",
-            "AssetCreateTime": "",
-            "LoadBalancerType": null,
-            "AssetIpv6": [],
+            "NameSpace": "default",
+            "AssetCreateTime": "2020-03-31 21:34:55",
+            "LoadBalancerType": "clb",
+            "AssetIpv6": [
+                "ipv6"
+            ],
             "AssetVulNum": 0,
-            "GroupName": "",
+            "GroupName": "group1",
+            "AssetEventNum": 10,
+            "AssetRegionName": "ap-guangzhou",
+            "AssetVpcid": "vpc-9527",
+            "SsaAssetDeleteTime": "2020-04-31 21:34:55",
+            "AssetCspmRiskNum": 10,
+            "ChargeType": "type",
             "Port": [
                 "http(8080)",
                 "http(80)"
@@ -82,10 +84,10 @@ Output:
                 "主机安全防护状态",
                 "密钥对登陆"
             ],
-            "Event": "[{\"key\":\"11\",\"doc_count\":1334}]",
-            "Vul": "[]",
-            "SSHRisk": "",
-            "RDPRisk": "",
+            "Event": "[{\"key\":\"9527\",\"doc_count\":1334}]",
+            "Vul": "vul",
+            "SSHRisk": "risk ssh",
+            "RDPRisk": "risk rdb",
             "EventRisk": "资产失陷"
         },
         "RequestId": "f86588f7-fb1f-4fdd-9c8b-c882f044eeb0"

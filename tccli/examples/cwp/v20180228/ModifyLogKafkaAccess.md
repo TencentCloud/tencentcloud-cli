@@ -6,16 +6,16 @@ Input:
 
 ```
 tccli cwp ModifyLogKafkaAccess --cli-unfold-argument  \
-    --Username a \
+    --Username username \
     --VpcId 1.1.1.1 \
     --Zone 广州 \
-    --KafkaId aa \
+    --KafkaId kafkaid \
     --InsVersion 1.1.1 \
     --AccessType 1 \
     --KafkaEnvName 主机安全测试环境 \
     --BandWidth 300 \
     --AccessAddr 1.1.1.1 \
-    --Pwd b \
+    --Pwd password \
     --DiskSize 400 \
     --SubnetId 1.1.1.1 \
     --DeliverTypeDetails.0.Status 0 \

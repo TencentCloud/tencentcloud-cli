@@ -1,32 +1,32 @@
 {
   "actions": {
     "CreateMNP": {
-      "document": "创建小程序",
+      "document": "国内站服务下线\n\n创建小程序",
       "input": "CreateMNPRequest",
       "name": "创建小程序",
       "output": "CreateMNPResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeGlobalDomainList": {
-      "document": "全局域名列表",
+      "document": "国内站服务下线\n\n全局域名列表",
       "input": "DescribeGlobalDomainListRequest",
       "name": "全局域名列表",
       "output": "DescribeGlobalDomainListResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeMNPDetail": {
-      "document": "小程序详情",
+      "document": "国内站服务下线\n\n小程序详情",
       "input": "DescribeMNPDetailRequest",
       "name": "小程序详情",
       "output": "DescribeMNPDetailResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ModifySensitiveAPIAuditStatus": {
-      "document": "敏感API审核",
+      "document": "国内站服务下线\n\n敏感API审核",
       "input": "ModifySensitiveAPIAuditStatusRequest",
       "name": "敏感API审核",
       "output": "ModifySensitiveAPIAuditStatusResponse",
-      "status": "online"
+      "status": "deprecated"
     }
   },
   "metadata": {

@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli cfw ModifyAddressTemplate --cli-unfold-argument  \
-    --Name dora \
-    --Detail  \
+    --Name 放通ip \
+    --Detail 放通ip \
     --IpString 1.1.1.1 \
     --Type 1 \
-    --ProtocolType  \
+    --ProtocolType 4 \
     --Uuid mb_appid_1708504391199
 ```
 

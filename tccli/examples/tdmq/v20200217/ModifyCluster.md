@@ -1,12 +1,12 @@
 **Example 1: 更新集群信息**
 
-
+更新集群信息
 
 Input: 
 
 ```
 tccli tdmq ModifyCluster --cli-unfold-argument  \
-    --ClusterId pulsar-xxxxxxxx \
+    --ClusterId pulsar-5r59xd4vnx \
     --Remark test
 ```
 

@@ -6,33 +6,33 @@ Input:
 
 ```
 tccli lowcode DescribeMaterialInfoList --cli-unfold-argument  \
-    --EnvId xx \
-    --PageNum 1 \
-    --Name xx \
+    --Name abc \
+    --Tags abc \
+    --EnvId abc \
+    --MediaType abc \
     --PageSize 1 \
-    --Tags xx \
-    --MediaType xx
+    --PageNum 1
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "TotalCount": 1,
         "List": {
-            "ExpireTime": "2020-09-22 00:00:00",
-            "UpdateTime": "2020-09-22 00:00:00",
-            "Name": "xx",
-            "Tags": "xx",
+            "Name": "abc",
+            "DownloadUrl": "abc",
             "IsPublic": true,
-            "MediaType": "xx",
-            "CreateTime": "2020-09-22 00:00:00",
-            "DownloadUrl": "xx",
-            "Owner": "xx",
+            "UpdateTime": "2020-09-22 00:00:00",
+            "Tags": "abc",
+            "MediaType": "abc",
+            "Size": "abc",
+            "ExpireTime": "2020-09-22 00:00:00",
             "Id": 1,
-            "Size": "xx"
+            "CreateTime": "2020-09-22 00:00:00",
+            "Owner": "abc"
         },
-        "RequestId": "xx"
+        "TotalCount": 1,
+        "RequestId": "abc"
     }
 }
 ```

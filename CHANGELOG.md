@@ -1,3 +1,547 @@
+# Release 3.0.1091.1
+
+## 腾讯云CA(ca) 版本：2023-02-28
+
+### 第 2 次发布
+
+发布时间：2024-11-05 01:15:11
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateVerifyReport](http://document.tencentcloudapi.woa.com/document/product/1774/84966)
+
+	* 新增入参：CertificateIdentityUsers
+
+
+新增数据结构：
+
+* [CertificateIdentityUser](http://document.tencentcloudapi.woa.com/document/product/1774/84967#CertificateIdentityUser)
+
+
+
+## 云数据库 MySQL(cdb) 版本：2017-03-20
+
+### 第 115 次发布
+
+发布时间：2024-11-05 01:17:30
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* InitDBInstances
+
+
+
+## 云安全一体化平台(csip) 版本：2022-11-21
+
+### 第 44 次发布
+
+发布时间：2024-11-05 01:27:32
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ServerRiskSuggestion](http://document.tencentcloudapi.woa.com/document/product/1726/80814#ServerRiskSuggestion)
+
+	* <font color="#dd0000">**修改成员**：</font>Title, Body
+
+* [TagCount](http://document.tencentcloudapi.woa.com/document/product/1726/80814#TagCount)
+
+	* <font color="#dd0000">**修改成员**：</font>Name, Count
+
+
+
+
+## 主机安全(cwp) 版本：2018-02-28
+
+### 第 106 次发布
+
+发布时间：2024-11-05 01:29:11
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DeleteBashEvents](http://document.tencentcloudapi.woa.com/document/product/296/39601)
+
+	* 新增入参：All
+
+	* <font color="#dd0000">**修改入参**：</font>Ids
+
+* [DeleteBruteAttacks](http://document.tencentcloudapi.woa.com/document/product/296/19845)
+
+	* 新增入参：All
+
+	* <font color="#dd0000">**修改入参**：</font>Ids
+
+* [DeleteMaliciousRequests](http://document.tencentcloudapi.woa.com/document/product/296/31289)
+
+	* 新增入参：All
+
+	* <font color="#dd0000">**修改入参**：</font>Ids
+
+* [DeleteReverseShellEvents](http://document.tencentcloudapi.woa.com/document/product/296/39596)
+
+	* 新增入参：All
+
+	* <font color="#dd0000">**修改入参**：</font>Ids
+
+* [DescribeLogStorageConfig](http://document.tencentcloudapi.woa.com/document/product/296/77784)
+
+	* 新增出参：Granularity
+
+* [DescribeMachineGeneral](http://document.tencentcloudapi.woa.com/document/product/296/82130)
+
+	* 新增出参：CloudFrom
+
+
+新增数据结构：
+
+* [CloudFromCnt](http://document.tencentcloudapi.woa.com/document/product/296/19867#CloudFromCnt)
+
+修改数据结构：
+
+* [BaselineFix](http://document.tencentcloudapi.woa.com/document/product/296/19867#BaselineFix)
+
+	* <font color="#dd0000">**修改成员**：</font>ItemName, HostIp, CreateTime, ModifyTime, FixTime, Id, MachineExtraInfo
+
+* [BaselineHost](http://document.tencentcloudapi.woa.com/document/product/296/19867#BaselineHost)
+
+	* <font color="#dd0000">**修改成员**：</font>HostId, HostName, HostTag, HostIp, WanIp, MachineExtraInfo
+
+* [BaselineHostDetect](http://document.tencentcloudapi.woa.com/document/product/296/19867#BaselineHostDetect)
+
+	* <font color="#dd0000">**修改成员**：</font>HostId, HostIp, HostName, WanIp, DetectStatus, PassedItemCount, ItemCount, NotPassedItemCount, FirstTime, LastTime, Uuid, MachineExtraInfo
+
+* [BaselineItem](http://document.tencentcloudapi.woa.com/document/product/296/19867#BaselineItem)
+
+	* <font color="#dd0000">**修改成员**：</font>ItemId, ItemName, CategoryId, ItemDesc, FixMethod, RuleName, DetectResultDesc, Level, DetectStatus, HostId, HostName, HostIp, WanIp, FirstTime, LastTime, CanBeFixed, Uuid, MachineExtraInfo
+
+* [BashEventNew](http://document.tencentcloudapi.woa.com/document/product/296/19867#BashEventNew)
+
+	* <font color="#dd0000">**修改成员**：</font>Id, Uuid, Quuid, HostIp, User, Platform, BashCmd, RuleId, RuleName, RuleLevel, Status, CreateTime, MachineName, DetectBy, Pid, Exe, ModifyTime, RuleCategory, RegexBashCmd, MachineType, MachineExtraInfo
+
+* [DefendAttackLog](http://document.tencentcloudapi.woa.com/document/product/296/19867#DefendAttackLog)
+
+	* <font color="#dd0000">**修改成员**：</font>Id, Uuid, SrcIp, SrcPort, HttpMethod, HttpCgi, HttpParam, VulType, CreatedAt, MachineIp, MachineName, DstIp, DstPort, HttpContent, MachineExtraInfo
+
+* [EmergencyVul](http://document.tencentcloudapi.woa.com/document/product/296/19867#EmergencyVul)
+
+	* <font color="#dd0000">**修改成员**：</font>Method, AttackLevel, DefenseState
+
+* [FileTamperRuleInfo](http://document.tencentcloudapi.woa.com/document/product/296/19867#FileTamperRuleInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>WriteRuleCount, ReadRuleCount, ReadWriteRuleCount, FileAction, AddWhiteType
+
+* [IncidentVertexInfo](http://document.tencentcloudapi.woa.com/document/product/296/19867#IncidentVertexInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>IncidentId, TableName, Vertex, VertexCount
+
+* [JavaMemShellPluginSetting](http://document.tencentcloudapi.woa.com/document/product/296/19867#JavaMemShellPluginSetting)
+
+	* <font color="#dd0000">**修改成员**：</font>Uuid, MachineExtraInfo
+
+* [LicenseBindTaskDetail](http://document.tencentcloudapi.woa.com/document/product/296/19867#LicenseBindTaskDetail)
+
+	* <font color="#dd0000">**修改成员**：</font>FixMessage, MachineExtraInfo
+
+* [LogStorageRecord](http://document.tencentcloudapi.woa.com/document/product/296/19867#LogStorageRecord)
+
+	* <font color="#dd0000">**修改成员**：</font>Month, UsedSize, InquireSize
+
+* [LoginWhiteCombinedInfo](http://document.tencentcloudapi.woa.com/document/product/296/19867#LoginWhiteCombinedInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>Places, UserName, SrcIp, Locale, Remark, StartTime, EndTime, IsGlobal, Name, Desc, Id, CreateTime, ModifyTime, Uuid
+
+* [NetAttackEvent](http://document.tencentcloudapi.woa.com/document/product/296/19867#NetAttackEvent)
+
+	* <font color="#dd0000">**修改成员**：</font>Id, Uuid, DstPort, SrcIP, Location, VulId, VulName, MergeTime, MachineExtraInfo, Type, Status, VulSupportDefense, VulDefenceStatus, PayVersion, Quuid, Count, New
+
+* [NetAttackTopInfo](http://document.tencentcloudapi.woa.com/document/product/296/19867#NetAttackTopInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>Agent, SrcIp, DstPort, Vul
+
+* [NetAttackTrend](http://document.tencentcloudapi.woa.com/document/product/296/19867#NetAttackTrend)
+
+	* <font color="#dd0000">**修改成员**：</font>DateTime, AttackCount, TryAttackCount, SuccAttackCount
+
+* [NetAttackWhiteRule](http://document.tencentcloudapi.woa.com/document/product/296/19867#NetAttackWhiteRule)
+
+	* <font color="#dd0000">**修改成员**：</font>Id, Description, Scope, DealOldEvents, Quuids, SrcIP, CreateTime, ModifyTime
+
+* [PrivilegeRule](http://document.tencentcloudapi.woa.com/document/product/296/19867#PrivilegeRule)
+
+	* <font color="#dd0000">**修改成员**：</font>Id, Uuid, ProcessName, SMode, Operator, IsGlobal, Status, CreateTime, ModifyTime, Hostip
+
+* [ProtectDirInfo](http://document.tencentcloudapi.woa.com/document/product/296/19867#ProtectDirInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>FirstProtectTime, LatestProtectTime, ProtectFileType, ProtectFilesCount
+
+* [ProtectDirRelatedServer](http://document.tencentcloudapi.woa.com/document/product/296/19867#ProtectDirRelatedServer)
+
+	* <font color="#dd0000">**修改成员**：</font>Id, HostName, HostIp, MachineOs, RelateDirNum, ProtectStatus, ProtectSwitch, AutoRestoreSwitchStatus, Quuid, Authorization, Exception, Progress, ExceptionMessage, MachineExtraInfo
+
+* [VertexDetail](http://document.tencentcloudapi.woa.com/document/product/296/19867#VertexDetail)
+
+	* <font color="#dd0000">**修改成员**：</font>Type, Time, AlarmInfo, ProcName, CmdLine, Pid, FileMd5, FileContent, FilePath, FileCreateTime, Address, DstPort, SrcIP, User, VulName, VulTime, HttpContent, VulSrcIP, VertexId
+
+* [VulEffectHostList](http://document.tencentcloudapi.woa.com/document/product/296/19867#VulEffectHostList)
+
+	* <font color="#dd0000">**修改成员**：</font>EventId, Status, LastTime, Level, Quuid, Uuid, HostIp, AliasName, Tags, Description, HostVersion, IsSupportAutoFix, FixStatusMsg, FirstDiscoveryTime, InstanceState, PublicIpAddresses, CloudTags, MachineExtraInfo
+
+* [VulEmergentMsgInfo](http://document.tencentcloudapi.woa.com/document/product/296/19867#VulEmergentMsgInfo)
+
+	* 新增成员：NameEn
+
+* [VulTopInfo](http://document.tencentcloudapi.woa.com/document/product/296/19867#VulTopInfo)
+
+	* 新增成员：VulCategory
+
+* [WarningInfoObj](http://document.tencentcloudapi.woa.com/document/product/296/19867#WarningInfoObj)
+
+	* <font color="#dd0000">**修改成员**：</font>HostRange
+
+* [WebHookPolicy](http://document.tencentcloudapi.woa.com/document/product/296/19867#WebHookPolicy)
+
+	* 新增成员：ExcludedQuuids
+
+* [WebHookRuleSummary](http://document.tencentcloudapi.woa.com/document/product/296/19867#WebHookRuleSummary)
+
+	* <font color="#dd0000">**修改成员**：</font>RuleId, RuleName, HookAddr, RuleRemark, RuleItems, HostLabels, IsDisabled, CreateTime, UpdateTime, HostCount
+
+
+
+
+## 数据湖计算 DLC(dlc) 版本：2021-01-25
+
+### 第 122 次发布
+
+发布时间：2024-11-05 02:03:10
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [AnalysisTaskResults](http://document.tencentcloudapi.woa.com/document/product/1342/53778#AnalysisTaskResults)
+
+	* 新增成员：OutputFilesNum, OutputSmallFilesNum
+
+
+
+
+## DNSPod(dnspod) 版本：2021-03-23
+
+### 第 40 次发布
+
+发布时间：2024-11-05 02:04:34
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateTXTRecord](http://document.tencentcloudapi.woa.com/document/product/1427/85177)
+* [ModifyTXTRecord](http://document.tencentcloudapi.woa.com/document/product/1427/85176)
+
+
+
+## Elasticsearch Service(es) 版本：2018-04-16
+
+### 第 76 次发布
+
+发布时间：2024-11-05 02:09:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ServerlessIndexOptionsField](http://document.tencentcloudapi.woa.com/document/product/845/30634#ServerlessIndexOptionsField)
+
+	* 新增成员：StandardStorageAge
+
+
+
+
+## 知识引擎原子能力(lkeap) 版本：2024-05-22
+
+### 第 8 次发布
+
+发布时间：2024-11-05 02:24:01
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ChatCompletions](http://document.tencentcloudapi.woa.com/document/product/1764/83973)
+
+	* 新增入参：UseIncrOutput
+
+
+
+
+## 媒体处理(mps) 版本：2019-06-12
+
+### 第 66 次发布
+
+发布时间：2024-11-05 02:27:22
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [SegmentRecognitionItem](http://document.tencentcloudapi.woa.com/document/product/862/37615#SegmentRecognitionItem)
+
+	* 新增成员：BeginTime, EndTime
+
+
+
+
+## 流计算 Oceanus(oceanus) 版本：2019-04-22
+
+### 第 57 次发布
+
+发布时间：2024-11-05 02:29:21
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [SessionClusterRefItem](http://document.tencentcloudapi.woa.com/document/product/849/52010#SessionClusterRefItem)
+
+修改数据结构：
+
+* [ClusterSession](http://document.tencentcloudapi.woa.com/document/product/849/52010#ClusterSession)
+
+	* 新增成员：ResourceRefs, JobManagerCpu, JobManagerMem, TaskManagerCpu, TaskManagerMem
+
+* [JobV1](http://document.tencentcloudapi.woa.com/document/product/849/52010#JobV1)
+
+	* 新增成员：ScalingType, RunningCpu, RunningMem
+
+
+
+
+## 云压测(pts) 版本：2021-07-28
+
+### 第 23 次发布
+
+发布时间：2024-11-05 02:32:32
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeJobs](http://document.tencentcloudapi.woa.com/document/product/1597/75207)
+
+	* 新增入参：IsCollection
+
+* [UpdateJob](http://document.tencentcloudapi.woa.com/document/product/1597/75186)
+
+	* 新增入参：Collection
+
+
+修改数据结构：
+
+* [Job](http://document.tencentcloudapi.woa.com/document/product/1597/75228#Job)
+
+	* 新增成员：Collection
+
+
+
+
+## 腾讯云小程序平台(tcmpp) 版本：2024-08-01
+
+
+
+## 腾讯云小程序平台(tcmpp) 版本：2023-04-03
+
+### 第 5 次发布
+
+发布时间：2024-11-05 02:40:20
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* CreateMNP
+* DescribeGlobalDomainList
+* DescribeMNPDetail
+* ModifySensitiveAPIAuditStatus
+
+
+
+## 容器安全服务(tcss) 版本：2020-11-01
+
+### 第 28 次发布
+
+发布时间：2024-11-05 02:41:18
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateAssetImageScanTask](http://document.tencentcloudapi.woa.com/document/product/1662/78907)
+
+	* 新增入参：IsOneClickScanningTask
+
+* [DescribeVirusAutoIsolateSetting](http://document.tencentcloudapi.woa.com/document/product/1662/78989)
+
+	* 新增出参：UserAutoIsolateKillSwitch
+
+* [ModifyVirusAutoIsolateSetting](http://document.tencentcloudapi.woa.com/document/product/1662/78975)
+
+	* 新增入参：UserAutoIsolateKillSwitch
+
+
+修改数据结构：
+
+* [ComplianceHostDetailInfo](http://document.tencentcloudapi.woa.com/document/product/1662/79121#ComplianceHostDetailInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>ContainerdVersion
+
+* [ComponentsInfo](http://document.tencentcloudapi.woa.com/document/product/1662/79121#ComponentsInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>Component, FixedVersion, Path, Type, Name
+
+* [ImageProgress](http://document.tencentcloudapi.woa.com/document/product/1662/79121#ImageProgress)
+
+	* <font color="#dd0000">**修改成员**：</font>ImageId, RegistryType, ImageRepoAddress, InstanceId, InstanceName, Namespace, ImageName, ImageTag, ScanStatus, CveProgress
+
+* [NetworkAuditRecord](http://document.tencentcloudapi.woa.com/document/product/1662/79121#NetworkAuditRecord)
+
+	* <font color="#dd0000">**修改成员**：</font>PolicyId
+
+* [NetworkClusterInfoItem](http://document.tencentcloudapi.woa.com/document/product/1662/79121#NetworkClusterInfoItem)
+
+	* <font color="#dd0000">**修改成员**：</font>ClusterNetworkSettings
+
+* [PortInfo](http://document.tencentcloudapi.woa.com/document/product/1662/79121#PortInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>NodeID, PodIP, PodName, NodeType, NodeUniqueID
+
+* [ProcessInfo](http://document.tencentcloudapi.woa.com/document/product/1662/79121#ProcessInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>NodeID, PodIP, PodName, NodeType, NodeUniqueID
+
+* [RiskDnsEventInfo](http://document.tencentcloudapi.woa.com/document/product/1662/79121#RiskDnsEventInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>NodeType, NodeName, PodIP, PodName, ClusterID, NodeID, NodeUniqueID, ClusterName
+
+* [ServiceInfo](http://document.tencentcloudapi.woa.com/document/product/1662/79121#ServiceInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>NodeID, PodIP, PodName, NodeType, NodeUniqueID
+
+* [VulDefenceEvent](http://document.tencentcloudapi.woa.com/document/product/1662/79121#VulDefenceEvent)
+
+	* <font color="#dd0000">**修改成员**：</font>NodeType, PublicIP, NodeUniqueID, NodeID, ClusterID, ClusterName, PodName, PodIP
+
+* [VulDefenceHost](http://document.tencentcloudapi.woa.com/document/product/1662/79121#VulDefenceHost)
+
+	* <font color="#dd0000">**修改成员**：</font>NodeType, NodeSubNetName, NodeSubNetCIDR, NodeSubNetID, NodeUniqueID, NodeID, PodIP, PodName
+
+
+
+
+## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+
+### 第 117 次发布
+
+发布时间：2024-11-05 02:45:53
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [IsolatePulsarClusterZone](http://document.tencentcloudapi.woa.com/document/product/1179/85179)
+* [QueryIsolatePulsarTask](http://document.tencentcloudapi.woa.com/document/product/1179/85178)
+
+
+
+## 实时音视频(trtc) 版本：2019-07-22
+
+### 第 72 次发布
+
+发布时间：2024-11-05 02:51:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* SummarizeTranscription
+
+
+
+## Web 应用防火墙(waf) 版本：2018-01-25
+
+### 第 71 次发布
+
+发布时间：2024-11-05 02:58:34
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeScanIp](http://document.tencentcloudapi.woa.com/document/product/627/85180)
+
+<font color="#dd0000">**删除接口**：</font>
+
+* DescribeAntiFakeUrl
+* DescribeAntiInfoLeakRules
+
+新增数据结构：
+
+* [ScanIpInfo](http://document.tencentcloudapi.woa.com/document/product/627/53609#ScanIpInfo)
+
+<font color="#dd0000">**删除数据结构**：</font>
+
+* CacheUrlItem
+* DescribeAntiInfoLeakRulesRuleItem
+* PageInfo
+
+修改数据结构：
+
+* [RuleUpdateLog](http://document.tencentcloudapi.woa.com/document/product/627/53609#RuleUpdateLog)
+
+	* <font color="#dd0000">**修改成员**：</font>Status
+
+
+
+
 # Release 3.0.1090.1
 
 ## 验证码(captcha) 版本：2019-07-22

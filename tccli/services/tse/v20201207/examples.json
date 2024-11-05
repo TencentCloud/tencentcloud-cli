@@ -886,6 +886,14 @@
         "title": "重启网关实例节点"
       }
     ],
+    "RestartSREInstance": [
+      {
+        "document": "RestartSREInstance",
+        "input": "https://tse.tencentcloudapi.com/?Action=RestartSREInstance\n&InstanceId=sre-12345678\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d996e05507e42d5970cd2e25ed5267a\",\n        \"TaskId\": \"task-123456\"\n    }\n}",
+        "title": "RestartSREInstance"
+      }
+    ],
     "RollbackConfigFileReleases": [
       {
         "document": "回滚配置",

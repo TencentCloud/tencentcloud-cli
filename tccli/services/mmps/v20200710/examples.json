@@ -19,7 +19,7 @@
     "CreateFlySecMiniAppProfessionalScanTask": [
       {
         "document": "对小程序全面的进行诊断，包括后台服务安全，UGC合规等",
-        "input": "POST / HTTP/1.1\nHost: mmps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFlySecMiniAppProfessionalScanTask\n<公共请求参数>\n\n{\n    \"MiniAppName\": \"测试小程序\",\n    \"Remark\": \"thanks\",\n    \"Mobile\": \"13800138000\",\n    \"MiniAppID\": \"wx66e50f1e*******6f\",\n    \"Mode\": \"2\",\n    \"CorpName\": \"微信小程序有限公司\",\n    \"Email\": \"wechat@tencent.com\"\n}",
+        "input": "POST / HTTP/1.1\nHost: mmps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFlySecMiniAppProfessionalScanTask\n<公共请求参数>\n\n{\n    \"MiniAppName\": \"测试小程序\",\n    \"Remark\": \"Remark备注信息\",\n    \"Mobile\": \"138XXXXXXXX\",\n    \"MiniAppID\": \"wx66e50f1e*******6f\",\n    \"Mode\": \"2\",\n    \"CorpName\": \"****科技有限公司\",\n    \"Email\": \"user****@tencent.com\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e93a212-ca01-0fdc-eedd-5a1fce5e83e6\",\n        \"Ret\": 0\n    }\n}",
         "title": "创建小程序安全的深度诊断任务"
       }
@@ -27,7 +27,7 @@
     "CreateFlySecMiniAppScanTask": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: mmps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFlySecMiniAppScanTask\n<公共请求参数>\n\n{\n    \"MiniAppTestPwd\": \"TestPwd\",\n    \"Mobile\": \"13800138000\",\n    \"Industry\": \"电商\",\n    \"SurveyContent\": \"{\\\"wx66e50f1e*******6f\\\":{\\\"1\\\":[\\\"B\\\"],\\\"n\\\":[\\\"A\\\",\\\"B\\\",\\\"D\\\"]}}\",\n    \"MiniAppID\": \"wx66e50f1e*******6f\",\n    \"Mode\": \"1\",\n    \"SalesPerson\": \"王某\",\n    \"ScanVersion\": \"0\",\n    \"Email\": \"wechat@tencent.com\",\n    \"MiniAppTestAccount\": \"Test\"\n}",
+        "input": "POST / HTTP/1.1\nHost: mmps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFlySecMiniAppScanTask\n<公共请求参数>\n\n{\n    \"MiniAppTestPwd\": \"TestPwd\",\n    \"Mobile\": \"138XXXXXXXX\",\n    \"Industry\": \"电商\",\n    \"SurveyContent\": \"{\\\"wx66e50f1e*******6f\\\":{\\\"1\\\":[\\\"B\\\"],\\\"n\\\":[\\\"A\\\",\\\"B\\\",\\\"D\\\"]}}\",\n    \"MiniAppID\": \"wx66e50f1e*******6f\",\n    \"Mode\": \"1\",\n    \"SalesPerson\": \"王某\",\n    \"ScanVersion\": \"0\",\n    \"Email\": \"user****@tencent.com\",\n    \"MiniAppTestAccount\": \"Test\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxxx\",\n        \"Ret\": 0,\n        \"TaskID\": \"170143813*******360\"\n    }\n}",
         "title": "创建小程序翼扬安全基础诊断任务"
       }
@@ -100,7 +100,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: mmps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeScanTaskList\n<公共请求参数>\n\n{\n    \"TaskStatuses\": \"\\\"0,1,2\\\"\",\n    \"PageNo\": \"0\",\n    \"PageSize\": \"10\",\n    \"TaskTypes\": \"\\\"0,1\\\"\",\n    \"Source\": \"-1\",\n    \"Platform\": \"2\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e93a212-ca01-0fdc-eedd-5a1fce5e83e6\",\n        \"Result\": 0,\n        \"Data\": [\n            {\n                \"TaskID\": \"235414610411261952\",\n                \"TaskType\": 0,\n                \"TaskStatus\": 0,\n                \"TaskErrMsg\": \"\",\n                \"Source\": 0,\n                \"AppInfo\": {\n                    \"AppPackage\": \"wx66e50f1e*******6f\",\n                    \"AppName\": \"测试app1\",\n                    \"AppVersion\": \"v1.0\",\n                    \"Platform\": 2,\n                    \"ReportUrl\": \"\",\n                    \"ReportTitle\": \"\",\n                    \"BehaviorUrl\": \"\",\n                    \"BehaviorTitle\": \"\"\n                },\n                \"StartTime\": \"2021-10-11 14:53:36\",\n                \"EndTime\": \"2021-10-11 14:53:36\"\n            }\n        ],\n        \"Total\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e93a212-ca01-0fdc-eedd-5a1fce5e83e6\",\n        \"Result\": 0,\n        \"Data\": [\n            {\n                \"TaskID\": \"235414610411261952\",\n                \"TaskType\": 0,\n                \"TaskStatus\": 0,\n                \"TaskErrMsg\": \"\",\n                \"Source\": 0,\n                \"AppInfo\": {\n                    \"AppPackage\": \"wx66e50f1e*******6f\",\n                    \"AppName\": \"测试app1\",\n                    \"AppVersion\": \"v1.0\",\n                    \"Platform\": 2,\n                    \"ReportUrl\": \"诊断报告下载链接\",\n                    \"ReportTitle\": \"诊断报告名称\",\n                    \"BehaviorUrl\": \"诊断堆栈报告下载链接\",\n                    \"BehaviorTitle\": \"诊断堆栈报告名称\",\n                    \"HighRiskCount\": 5,\n                    \"PrivacyTextName\": \"隐私申明文本.txt\",\n                    \"SoftwareMD5\": \"c7991677cc********3f\",\n                    \"PrivacyTextMD5\": \"3bc1efe919********23\"\n                },\n                \"StartTime\": \"2021-10-11 14:53:36\",\n                \"EndTime\": \"2021-10-11 14:53:36\",\n                \"ContactName\": \"张三\"\n            }\n        ],\n        \"Total\": 1\n    }\n}",
         "title": "获取隐私合规诊断任务列表"
       }
     ],

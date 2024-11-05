@@ -14,7 +14,15 @@ Output:
 {
     "Response": {
         "NetAttackEventInfo": {
-            "AbnormalAction": "",
+            "MachineExtraInfo": {
+                "HostName": "demo-instance",
+                "InstanceID": "ins-111",
+                "NetworkName": "vpc-111",
+                "NetworkType": 1,
+                "PrivateIP": "1.1.1.1",
+                "WanIP": "1.1.1.1"
+            },
+            "AbnormalAction": "login",
             "AttackLevel": 3,
             "CVEId": "CVE-2021-44228",
             "Count": 5,
@@ -23,7 +31,7 @@ Output:
             "Id": 1,
             "Location": "局域网",
             "MergeTime": "2023-05-27 14:37:51",
-            "NetPayload": "",
+            "NetPayload": "GET /",
             "PayVersion": 0,
             "Quuid": "05f0bcab-726c-4ea4-8109-bcd03d5598f7",
             "SrcIP": "10.0.0.5",

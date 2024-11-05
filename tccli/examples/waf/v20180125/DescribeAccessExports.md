@@ -16,7 +16,7 @@ Output:
         "Exports": [
             {
                 "ExportId": "export-61daca5c-f341-4796-aeb3-4f2f598a06c7",
-                "Query": "*",
+                "Query": "bot:1",
                 "FileName": "log_100005604621_1ae37c76-df99-4e2b-998c-20f39eba6226_20210713_export-61daca5c-f341-4796-aeb3-4f2f598a06c7_1626174454.tar.gz",
                 "FileSize": 279519,
                 "Order": "desc",

@@ -13,9 +13,9 @@ Output:
 ```
 {
     "Response": {
-        "DownloadUrl": "",
-        "RequestId": "123456789",
-        "TaskId": "123"
+        "DownloadUrl": "https://cwp-1258344***.cos.ap-guangzhou.myqcloud.com/file.txt",
+        "RequestId": "935e27b1-d675-4509-80bf-96fbf0764237",
+        "TaskId": "1"
     }
 }
 ```

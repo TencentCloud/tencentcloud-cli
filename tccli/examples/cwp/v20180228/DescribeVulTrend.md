@@ -17,7 +17,7 @@ Output:
         "IncreaseVulEventCount": 1,
         "HotVulCount": 1,
         "IncreaseHotVulCount": 1,
-        "RequestId": "abc"
+        "RequestId": "d73d4495-1895-43a8-95be-f447b02e253d"
     }
 }
 ```

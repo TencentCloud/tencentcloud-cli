@@ -8,7 +8,7 @@ Input:
 tccli ccc UpdateCCCSkillGroup --cli-unfold-argument  \
     --SdkAppId 1400000 \
     --SkillGroupID 1234 \
-    --SkillGroupName abc \
+    --SkillGroupName 客户一组 \
     --MaxConcurrency 1 \
     --RingAll True
 ```

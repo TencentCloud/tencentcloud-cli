@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli lowcode DeleteMaterialInfo --cli-unfold-argument  \
-    --EnvId xx \
+    --EnvId abc \
     --Id 1
 ```
 
@@ -14,7 +14,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

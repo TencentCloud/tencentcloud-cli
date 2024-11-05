@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli tcss DeleteAbnormalProcessRules --cli-unfold-argument  \
-    --RuleIdSet xxx
+    --RuleIdSet 1114
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx"
+        "RequestId": "bcf438a3-8035-4a31-bc34-6afc9b0901ff"
     }
 }
 ```

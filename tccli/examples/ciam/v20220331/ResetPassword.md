@@ -6,16 +6,16 @@ Input:
 
 ```
 tccli ciam ResetPassword --cli-unfold-argument  \
-    --UserStoreId xx \
-    --UserId xx
+    --UserId 53e25c3****************e4eb5bd1 \
+    --UserStoreId 2c3aca3b****************a7efe88e
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Password": "xx",
-        "RequestId": "xx"
+        "Password": "password",
+        "RequestId": "e2e9e8aa********************9ab34c6e"
     }
 }
 ```

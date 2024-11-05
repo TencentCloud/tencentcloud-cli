@@ -27,8 +27,8 @@
     "RecognizeTargetAudience": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: taf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RecognizeTargetAudience\n<公共请求参数>\n\n{\n    \"BspData\": {\n        \"Uid\": \"XXXXXXXXXXXXXXX\",\n        \"AccountType\": 256,\n        \"ModelIdList\": [\n            5260\n        ],\n        \"IsAuthorized\": 1\n    },\n    \"BusinessEncryptData\": {\n        \"EncryptMethod\": 0,\n        \"EncryptData\": \"xxxxxxxxx\",\n        \"EncryptMode\": 0,\n        \"PaddingType\": 1\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Message\": \"xx\",\n            \"Code\": 0,\n            \"Value\": [\n                {\n                    \"IsFound\": 0,\n                    \"Score\": 0.0,\n                    \"ModelId\": 1\n                }\n            ]\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: taf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RecognizeTargetAudience\n<公共请求参数>\n\n{\n  \"BspData\": {\n    \"Uid\": \"892022376********ec97a65130bce53\",\n    \"AccountType\": 256,\n    \"ModelIdList\": [\n      5427\n    ],\n    \"IsAuthorized\": 1\n  },\n  \"BusinessEncryptData\": {\n    \"EncryptMethod\": 1,\n    \"EncryptData\": \"7ecfc5536b47f4fa7d********b67564caab7e6845531f02fd28feb8122f7afa\",\n    \"EncryptMode\": 1,\n    \"PaddingType\": 1\n  }\n}\n\n",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Message\": \"OK\",\n            \"Code\": 0,\n            \"Value\": [\n                {\n                    \"Uid\": \"892022376********ec97a65130bce53\",\n                    \"IsFound\": 0,\n                    \"Score\": 0,\n                    \"ModelId\": 5427,\n                    \"ModelType\": 1\n                }\n            ]\n        },\n        \"RequestId\": \"c98f2f4f-****-****-****-669fb2679589\"\n    }\n}",
         "title": "RecognizeTargetAudience"
       }
     ]

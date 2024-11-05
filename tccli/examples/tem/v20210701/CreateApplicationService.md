@@ -6,21 +6,22 @@ Input:
 
 ```
 tccli tem CreateApplicationService --cli-unfold-argument  \
+    --ApplicationId app-xxxxxx \
     --SourceChannel 0 \
-    --ApplicationId xx \
-    --Service.ExternalIp xx \
-    --Service.VpcId xx \
-    --Service.PortMappingItemList.0.Protocol xx \
-    --Service.PortMappingItemList.0.TargetPort 0 \
-    --Service.PortMappingItemList.0.Port 0 \
-    --Service.Yaml xx \
-    --Service.LoadBalanceId xx \
-    --Service.ServiceName xx \
-    --Service.ClusterIp xx \
-    --Service.SubnetId xx \
-    --Service.Type xx \
+    --EnvironmentId en-xxxxxx \
+    --Service.Type VPC \
+    --Service.ServiceName abc \
+    --Service.ClusterIp abc \
+    --Service.ExternalIp abc \
+    --Service.SubnetId abc \
+    --Service.VpcId abc \
+    --Service.LoadBalanceId abc \
+    --Service.Yaml abc \
     --Service.Ports 0 \
-    --EnvironmentId xx
+    --Service.PortMappingItemList.0.Port 0 \
+    --Service.PortMappingItemList.0.TargetPort 0 \
+    --Service.PortMappingItemList.0.Protocol abc \
+    --Service.ExternalDomain abc
 ```
 
 Output: 
@@ -28,7 +29,7 @@ Output:
 {
     "Response": {
         "Result": true,
-        "RequestId": "xx"
+        "RequestId": "xx-xxx-xxx"
     }
 }
 ```

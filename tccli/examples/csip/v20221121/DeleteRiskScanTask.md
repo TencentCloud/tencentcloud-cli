@@ -6,15 +6,15 @@ Input:
 
 ```
 tccli csip DeleteRiskScanTask --cli-unfold-argument  \
-    --MemberId mem-abcd \
-    --TaskIdList.0.TaskId abcd
+    --MemberId mem-******** \
+    --TaskIdList.0.TaskId rmis-****
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "abcd"
+        "RequestId": "7429061e-dabd-e1ee-e135-43364c7bb15d"
     }
 }
 ```

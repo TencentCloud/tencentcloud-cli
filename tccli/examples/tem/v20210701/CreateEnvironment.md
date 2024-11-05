@@ -6,13 +6,13 @@ Input:
 
 ```
 tccli tem CreateEnvironment --cli-unfold-argument  \
-    --EnvironmentName xx \
-    --Description xx \
-    --K8sVersion xx \
-    --SubnetIds xx \
+    --EnvironmentName name-xxx \
+    --Description 描述 \
+    --K8sVersion 1.69.1 \
+    --SubnetIds subnet-xxx \
     --EnableTswTraceService True \
     --SourceChannel 0 \
-    --Vpc xx
+    --Vpc vpc-xxx
 ```
 
 Output: 

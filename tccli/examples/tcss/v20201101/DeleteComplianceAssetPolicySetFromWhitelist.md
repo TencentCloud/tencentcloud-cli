@@ -1,25 +1,4 @@
-**Example 1: 忽略检测项+资产列表**
-
-
-
-Input: 
-
-```
-tccli tcss DeleteComplianceAssetPolicySetFromWhitelist --cli-unfold-argument  \
-    --AssetItemId 10001 \
-    --CustomerPolicyItemIdSet 10001 10002
-```
-
-Output: 
-```
-{
-    "Response": {
-        "RequestId": "eac6b301-a322-493a-8e36-83b295459397"
-    }
-}
-```
-
-**Example 2: 取消资产忽略项**
+**Example 1: 取消资产忽略项**
 
 取消资产忽略项
 
@@ -37,6 +16,27 @@ Output:
 {
     "Response": {
         "RequestId": "925e6419-1fb8-4169-a96c-020e3ae9171e"
+    }
+}
+```
+
+**Example 2: 忽略检测项+资产列表**
+
+
+
+Input: 
+
+```
+tccli tcss DeleteComplianceAssetPolicySetFromWhitelist --cli-unfold-argument  \
+    --AssetItemId 10001 \
+    --CustomerPolicyItemIdSet 10001 10002
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "eac6b301-a322-493a-8e36-83b295459397"
     }
 }
 ```

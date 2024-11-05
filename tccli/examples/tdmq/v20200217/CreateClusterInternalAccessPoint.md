@@ -6,15 +6,15 @@ Input:
 
 ```
 tccli tdmq CreateClusterInternalAccessPoint --cli-unfold-argument  \
-    --InstanceId abc \
-    --RequestToken abc
+    --InstanceId pulsar-b843bz38z5mz \
+    --RequestToken 0799dd77140b11f6c97
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "0799dd77-707b-40d7-a4b5-4140b11f6c97"
     }
 }
 ```

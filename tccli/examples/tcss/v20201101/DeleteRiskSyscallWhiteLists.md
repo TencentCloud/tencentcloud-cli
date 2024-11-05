@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli tcss DeleteRiskSyscallWhiteLists --cli-unfold-argument  \
-    --WhiteListIdSet xxx
+    --WhiteListIdSet 10001
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx"
+        "RequestId": "8bc803fd-d85d-47b8-9e2b-9644674be677"
     }
 }
 ```

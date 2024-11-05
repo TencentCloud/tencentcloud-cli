@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli waf UpsertCCAutoStatus --cli-unfold-argument  \
-    --Domain test.com \
+    --Domain www.test.com \
     --Value 1
 ```
 
@@ -14,7 +14,7 @@ Output:
 ```
 {
     "Response": {
-        "Data": null,
+        "Data": "success",
         "RequestId": "a0b4e55b-5307-4378-856d-efc22475c77d"
     }
 }

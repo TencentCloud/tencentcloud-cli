@@ -6,7 +6,8 @@ Input:
 
 ```
 tccli tem ResumeDeployApplication --cli-unfold-argument  \
-    --ApplicationId xx
+    --ApplicationId app-xxxxxx \
+    --EnvironmentId en-xxxxxx
 ```
 
 Output: 
@@ -14,7 +15,7 @@ Output:
 {
     "Response": {
         "Result": true,
-        "RequestId": "xx"
+        "RequestId": "xx-xxx-xxx"
     }
 }
 ```

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tcss DescribeNetworkFirewallPolicyDiscover --cli-unfold-argument  \
-    --TaskId 34702
+    --TaskId 1002
 ```
 
 Output: 

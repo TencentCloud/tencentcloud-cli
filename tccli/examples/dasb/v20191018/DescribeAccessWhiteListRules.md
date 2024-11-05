@@ -13,7 +13,7 @@ Output:
     "Response": {
         "TotalCount": 0,
         "AccessWhiteListRuleSet": [],
-        "RequestId": "xx",
+        "RequestId": "dfac9070-8b23-499e-83b2-a50e3ca059af",
         "AllowAny": true,
         "AllowAuto": false
     }
@@ -36,13 +36,13 @@ Output:
         "TotalCount": 1,
         "AccessWhiteListRuleSet": [
             {
-                "Source": "xx",
-                "Remark": "xx",
+                "Source": "1.1.1.1",
+                "Remark": "bh-test",
                 "Id": 1,
                 "ModifyTime": "2020-09-22T00:00:00+00:00"
             }
         ],
-        "RequestId": "xx",
+        "RequestId": "dfac9070-8b23-499e-83b2-a50e3ca059af",
         "AllowAny": false,
         "AllowAuto": true
     }

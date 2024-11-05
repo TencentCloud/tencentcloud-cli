@@ -6,21 +6,45 @@ Input:
 
 ```
 tccli tdmq DescribeRocketMQConsumerConnections --cli-unfold-argument  \
-    --Limit 10 \
+    --Limit 20 \
     --Offset 0 \
     --ClusterId rocketmq-2p9vx3ax9jxg \
-    --NamespaceId example \
-    --GroupId group-example
+    --NamespaceId test_namespace \
+    --GroupId test_group
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "11da7a88-c7d0-41e9-96eb-9130257ac16a",
-        "TotalCount": 0,
-        "Connections": [],
-        "GroupDetail": null
+        "TotalCount": 1,
+        "Connections": [
+            {
+                "ClientId": "9.43.174.90@18834#7187709773375173",
+                "ClientAddr": "9.43.174.90",
+                "Language": "JAVA",
+                "Accumulative": 300,
+                "Version": "V4.9.7"
+            }
+        ],
+        "GroupDetail": {
+            "Name": "test_group",
+            "ConsumerNum": 1,
+            "TotalAccumulative": 300,
+            "ConsumptionMode": -1,
+            "BroadcastEnabled": false,
+            "ReadEnabled": true,
+            "RetryPartitionNum": 1,
+            "CreateTime": 1727075298000,
+            "UpdateTime": 1727075298000,
+            "ClientProtocol": "TCP",
+            "Remark": "测试消费组",
+            "ConsumerType": "PUSH",
+            "GroupType": "TCP",
+            "RetryMaxTimes": 16,
+            "TPS": 10
+        },
+        "RequestId": "abc"
     }
 }
 ```

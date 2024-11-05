@@ -6,15 +6,15 @@ Input:
 
 ```
 tccli waf AddCustomWhiteRule --cli-unfold-argument  \
-    --Name test \
+    --Name name \
     --SortId 100 \
-    --ExpireTime  \
+    --ExpireTime 0 \
     --Domain waf.tencentcloudapi.com \
-    --Bypass  \
+    --Bypass cc,bot \
     --Strategies.0.Field COOKIE \
     --Strategies.0.CompareFunc eq \
-    --Strategies.0.Content abc \
-    --Strategies.0.Arg 
+    --Strategies.0.Content cookie_value \
+    --Strategies.0.Arg cookie_key
 ```
 
 Output: 

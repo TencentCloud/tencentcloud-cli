@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cwp DescribeAssetDatabaseCount --cli-unfold-argument  \
-    --Name xx
+    --Name host1
 ```
 
 Output: 
@@ -15,12 +15,13 @@ Output:
     "Response": {
         "Databases": [
             {
-                "Value": 0,
-                "Key": "xx",
-                "Desc": "xx"
+                "Key": "mysql",
+                "Value": 1,
+                "Desc": "mysql 5.7",
+                "NewCount": 0
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "07a92740-5e54-4ea6-9320-c6fc3f3a1121"
     }
 }
 ```

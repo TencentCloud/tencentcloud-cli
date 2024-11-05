@@ -8,16 +8,16 @@ Input:
 tccli cwp ModifyReverseShellRulesAggregation --cli-unfold-argument  \
     --IsGlobal 1 \
     --WhiteType 1 \
-    --RuleRegexp xxx \
+    --RuleRegexp sh cmdline \
     --HandleHistory 1 \
-    --GroupID 
+    --GroupID 12
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "1"
+        "RequestId": "be6f6eec-0825-4e67-ab9a-c8568bbf736c"
     }
 }
 ```

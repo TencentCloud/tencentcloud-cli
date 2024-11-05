@@ -15,7 +15,7 @@
       "status": "online"
     },
     "AdjustCdbProxyAddress": {
-      "document": "调整数据库代理地址配置",
+      "document": "本接口（AdjustCdbProxyAddress）用于调整数据库代理地址配置。",
       "input": "AdjustCdbProxyAddressRequest",
       "name": "调整数据库代理地址",
       "output": "AdjustCdbProxyAddressResponse",
@@ -826,13 +826,6 @@
       "output": "DisassociateSecurityGroupsResponse",
       "status": "online"
     },
-    "InitDBInstances": {
-      "document": "该接口不再维护，参考CreateDBInstance+API文档，在发货时即可完成初始化。\n\n本接口(InitDBInstances)用于初始化云数据库实例，包括初始化密码、默认字符集、实例端口号等。该接口已经废弃，在发货接口CreateDBInstance、CreateDBInstanceHour可以直接使用参数Password设置密码，使用参数ParamList设置字符集，使用参数Port设置端口号。",
-      "input": "InitDBInstancesRequest",
-      "name": "初始化新实例（该接口已经不再维护，不建议使用）",
-      "output": "InitDBInstancesResponse",
-      "status": "deprecated"
-    },
     "InquiryPriceUpgradeInstances": {
       "document": "本接口(InquiryPriceUpgradeInstances)用于查询云数据库实例升级的价格，支持查询按量计费或者包年包月实例的升级价格，实例类型支持主实例、灾备实例和只读实例。",
       "input": "InquiryPriceUpgradeInstancesRequest",
@@ -1587,7 +1580,7 @@
         {
           "disabled": false,
           "document": "代理组ID",
-          "example": "proxy-test",
+          "example": "proxy-il2nlsdn",
           "member": "string",
           "name": "ProxyGroupId",
           "required": true,
@@ -1659,7 +1652,7 @@
         {
           "disabled": false,
           "document": "代理组地址ID",
-          "example": "proxy-test",
+          "example": "proxy-il2nlsdn",
           "member": "string",
           "name": "ProxyAddressId",
           "required": true,
@@ -7341,7 +7334,7 @@
         },
         {
           "disabled": false,
-          "document": "备份任务 ID。该任务 ID 为 [创建云数据库备份](https://cloud.tencent.com/document/api/236/15844) 接口返回的任务 ID。",
+          "document": "备份任务 ID。您可通过 [查询数据备份文件列表](https://cloud.tencent.com/document/api/236/15842)  来获取目标备份任务 ID。",
           "example": "173381",
           "member": "int64",
           "name": "BackupId",
@@ -7490,6 +7483,15 @@
           "member": "string",
           "name": "Password",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "传入不为空则对密码进行了加密处理",
+          "example": "无",
+          "member": "string",
+          "name": "EncryptMethod",
+          "required": false,
           "type": "string"
         }
       ],
@@ -14463,70 +14465,6 @@
       ],
       "usage": "out"
     },
-    "InitDBInstancesRequest": {
-      "document": "InitDBInstances请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同，可使用[查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口获取，其值为输出参数中字段 InstanceId 的值。",
-          "example": "[\"cdb-f35wr6wj\\r\\n\"]",
-          "member": "string",
-          "name": "InstanceIds",
-          "required": true,
-          "type": "list"
-        },
-        {
-          "disabled": false,
-          "document": "实例新的密码，密码规则：8-64个字符，至少包含字母、数字、字符（支持的字符：!@#$%^*()）中的两种。",
-          "example": "Gx18ux23F^X",
-          "member": "string",
-          "name": "NewPassword",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "实例的参数列表，目前支持设置“character_set_server”、“lower_case_table_names”参数。其中，“character_set_server”参数可选值为[\"utf8\",\"latin1\",\"gbk\",\"utf8mb4\"]；“lower_case_table_names”可选值为[“0”,“1”]。",
-          "example": "无",
-          "member": "ParamInfo",
-          "name": "Parameters",
-          "required": true,
-          "type": "list"
-        },
-        {
-          "disabled": false,
-          "document": "实例的端口，取值范围为[1024, 65535]",
-          "example": "无",
-          "member": "int64",
-          "name": "Vport",
-          "required": false,
-          "type": "int"
-        }
-      ],
-      "type": "object"
-    },
-    "InitDBInstancesResponse": {
-      "document": "InitDBInstances返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "异步任务的请求ID数组，可使用此ID查询异步任务的执行结果",
-          "example": "[\"8cd119d4-61ba-11e7-aeff-018cfa1f5560\"]",
-          "member": "string",
-          "name": "AsyncRequestIds",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "InquiryPriceUpgradeInstancesRequest": {
       "document": "InquiryPriceUpgradeInstances请求参数结构体",
       "members": [
@@ -16190,7 +16128,7 @@
         {
           "disabled": false,
           "document": "全局权限。其中，GlobalPrivileges 中权限的可选值为：\"SELECT\",\"INSERT\",\"UPDATE\",\"DELETE\",\"CREATE\", \"PROCESS\", \"DROP\",\"REFERENCES\",\"INDEX\",\"ALTER\",\"SHOW DATABASES\",\"CREATE TEMPORARY TABLES\",\"LOCK TABLES\",\"EXECUTE\",\"CREATE VIEW\",\"SHOW VIEW\",\"CREATE ROUTINE\",\"ALTER ROUTINE\",\"EVENT\",\"TRIGGER\",\"CREATE USER\",\"RELOAD\",\"REPLICATION CLIENT\",\"REPLICATION SLAVE\"。\n注意，ModifyAction为空时，不传该参数表示清除该权限。",
-          "example": "[\"SELECT\\n\"]",
+          "example": "[\"SELECT\"]",
           "member": "string",
           "name": "GlobalPrivileges",
           "required": false,
@@ -16244,7 +16182,7 @@
           "example": "256117ed-efa08b54-61784d44-91781bbd",
           "member": "string",
           "name": "AsyncRequestId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

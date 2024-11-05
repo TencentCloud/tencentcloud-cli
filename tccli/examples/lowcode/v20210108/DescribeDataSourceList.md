@@ -38,6 +38,7 @@ Output:
                     "Schema": "abc",
                     "CmsProject": "abc",
                     "PkgId": "abc",
+                    "DbSourceType": "abc",
                     "SchemaVersion": "abc",
                     "CreatorId": "abc",
                     "CreatedAt": "abc",

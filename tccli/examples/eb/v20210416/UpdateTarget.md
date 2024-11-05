@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli eb UpdateTarget --cli-unfold-argument  \
-    --EnableBatchDelivery true \
+    --EnableBatchDelivery True \
     --RuleId rule-51wvf3is \
     --BatchEventCount 32 \
     --TargetId target-ceh92ss4 \

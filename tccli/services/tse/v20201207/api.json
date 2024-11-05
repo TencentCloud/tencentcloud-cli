@@ -770,6 +770,13 @@
       "output": "RestartNativeGatewayInstanceNodeResponse",
       "status": "online"
     },
+    "RestartSREInstance": {
+      "document": "重启微服务引擎实例",
+      "input": "RestartSREInstanceRequest",
+      "name": "重启微服务引擎实例",
+      "output": "RestartSREInstanceResponse",
+      "status": "online"
+    },
     "RollbackConfigFileReleases": {
       "document": "回滚配置发布",
       "input": "RollbackConfigFileReleasesRequest",
@@ -15258,6 +15265,60 @@
           "output_required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RestartSREInstanceRequest": {
+      "document": "RestartSREInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "微服务引擎实例Id",
+          "example": "sre-12345678",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "重启的环境类型（PROD，DEV，UAT等）",
+          "example": "[\"PROD\",\"DEV\"]",
+          "member": "string",
+          "name": "EnvTypes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "指定需要重启的实例节点（当前仅支持zk单节点重启）",
+          "example": "zookeeper-0",
+          "member": "string",
+          "name": "NodeName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RestartSREInstanceResponse": {
+      "document": "RestartSREInstance返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "task-123456",
+          "member": "string",
+          "name": "TaskId",
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

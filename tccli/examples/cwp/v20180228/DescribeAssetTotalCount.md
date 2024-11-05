@@ -14,97 +14,97 @@ Output:
         "RequestId": "058e4d84-10de-4943-8b30-2a50f204f7c7",
         "Types": [
             {
-                "Desc": "",
+                "Desc": "none",
                 "Key": "system",
                 "NewCount": 0,
                 "Value": 531
             },
             {
-                "Desc": "",
+                "Desc": "none",
                 "Key": "account",
                 "NewCount": 0,
                 "Value": 6526360
             },
             {
-                "Desc": "",
+                "Desc": "none",
                 "Key": "port",
                 "NewCount": 0,
                 "Value": 2355
             },
             {
-                "Desc": "",
+                "Desc": "none",
                 "Key": "app",
                 "NewCount": 8,
                 "Value": 3193
             },
             {
-                "Desc": "",
+                "Desc": "none",
                 "Key": "process",
                 "NewCount": 21,
                 "Value": 21749346
             },
             {
-                "Desc": "",
+                "Desc": "none",
                 "Key": "database",
                 "NewCount": 1,
                 "Value": 18
             },
             {
-                "Desc": "",
+                "Desc": "none",
                 "Key": "webapp",
                 "NewCount": 0,
                 "Value": 4
             },
             {
-                "Desc": "",
+                "Desc": "none",
                 "Key": "webservice",
                 "NewCount": 0,
                 "Value": 17
             },
             {
-                "Desc": "",
+                "Desc": "none",
                 "Key": "webframe",
                 "NewCount": 0,
                 "Value": 5
             },
             {
-                "Desc": "",
+                "Desc": "none",
                 "Key": "weblocation",
                 "NewCount": 0,
                 "Value": 11
             },
             {
-                "Desc": "",
+                "Desc": "none",
                 "Key": "jar",
                 "NewCount": 0,
                 "Value": 1086
             },
             {
-                "Desc": "",
+                "Desc": "none",
                 "Key": "initservice",
                 "NewCount": 0,
                 "Value": 1922
             },
             {
-                "Desc": "",
+                "Desc": "none",
                 "Key": "plantask",
                 "NewCount": 0,
                 "Value": 2950
             },
             {
-                "Desc": "",
+                "Desc": "none",
                 "Key": "env",
                 "NewCount": 0,
                 "Value": 5914763
             },
             {
-                "Desc": "",
+                "Desc": "none",
                 "Key": "coremodule",
                 "NewCount": 0,
                 "Value": 22143622
             },
             {
-                "Desc": "",
+                "Desc": "none",
                 "Key": "package",
                 "NewCount": 0,
                 "Value": 310039

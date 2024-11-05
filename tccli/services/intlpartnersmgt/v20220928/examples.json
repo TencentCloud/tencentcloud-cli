@@ -227,6 +227,14 @@
         "output": "{\n    \"Response\": {\n        \"TotalQuota\": 0.0,\n        \"IssuedNum\": 0,\n        \"RemainingQuota\": 0.0,\n        \"RequestId\": \"xx\",\n        \"AccountType\": 0,\n        \"AgentName\": \"xx\"\n    }\n}",
         "title": "查询代金券额度池"
       }
+    ],
+    "SendVerifyCode": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: intlpartnersmgt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SendVerifyCode\n<公共请求参数>\n\n{\n    \"CountryCode\": \"852\",\n    \"PhoneNum\": \"18888888888\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "发送主账号验证码"
+      }
     ]
   },
   "version": "1.0"

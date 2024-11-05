@@ -6,25 +6,15 @@ Input:
 
 ```
 tccli ccc ModifySipTrunk --cli-unfold-argument  \
-    --SipTrunk.Id 0 \
-    --SipTrunk.Uin xx \
-    --SipTrunk.AppId xx \
-    --SipTrunk.Mode xx \
-    --SipTrunk.CheckHealth True \
-    --SipTrunk.ProviderId 0 \
-    --SipTrunk.RegisterUserName xx \
-    --SipTrunk.RegisterPassword xx \
-    --SipTrunk.RegisterServer xx \
-    --SipTrunk.RegisterServerPort 0 \
-    --SipTrunk.RegisterOutboundProxy xx \
-    --SipTrunk.RegisterOutboundProxyPort 0 \
-    --SipTrunk.RegisterProto xx \
-    --SipTrunk.RegisterFullName xx \
-    --SipTrunk.RegisterExpires 0 \
-    --SipTrunk.InboundCalleeFormat xx \
-    --SipTrunk.InboundCalleeField xx \
-    --SipTrunk.OutboundCallerFormat xx \
-    --SipTrunk.State 0
+    --SipTrunk.AllowIpList.0.Host 11.11.xx.xx \
+    --SipTrunk.AllowIpList.0.Port 6001 \
+    --SipTrunk.CheckHealth False \
+    --SipTrunk.Id 1 \
+    --SipTrunk.InboundCalleeField TO \
+    --SipTrunk.InboundCalleeFormat NUMBER \
+    --SipTrunk.Mode IP-ALLOW-LIST \
+    --SipTrunk.Name xxxxxxx \
+    --SipTrunk.OutboundCallerFormat NUMBER
 ```
 
 Output: 

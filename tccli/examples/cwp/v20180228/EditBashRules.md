@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli cwp EditBashRules --cli-unfold-argument  \
-    --Name test \
+    --Name yaxte**** \
     --Level 1 \
     --Rule .* \
     --IsGlobal 0 \
-    --Uuids uuids1 uuids2
+    --Uuids 05f0bcab-726c-4ea4-8109-bcd03d5598f7
 ```
 
 Output: 

@@ -6,20 +6,20 @@ Input:
 
 ```
 tccli waf CreateHost --cli-unfold-argument  \
-    --InstanceID aabbcc \
+    --InstanceID waf_2kzgm331pk3213 \
     --Host.Status 1 \
     --Host.Engine 1 \
-    --Host.Domain 1 \
-    --Host.DomainId 1 \
-    --Host.LoadBalancerSet.0.Protocol 1 \
+    --Host.Domain lucainfo.qcloudwaf.com \
+    --Host.DomainId waf-d4foqwZy \
+    --Host.LoadBalancerSet.0.Protocol HTTP \
     --Host.LoadBalancerSet.0.Zone 1 \
     --Host.LoadBalancerSet.0.Region gz \
-    --Host.LoadBalancerSet.0.LoadBalancerName 1 \
-    --Host.LoadBalancerSet.0.ListenerId 1 \
-    --Host.LoadBalancerSet.0.Vip 1 \
-    --Host.LoadBalancerSet.0.ListenerName 1 \
-    --Host.LoadBalancerSet.0.LoadBalancerId 1 \
-    --Host.LoadBalancerSet.0.Vport 1 \
+    --Host.LoadBalancerSet.0.LoadBalancerName 门户 \
+    --Host.LoadBalancerSet.0.ListenerId lbl-87vxk72 \
+    --Host.LoadBalancerSet.0.Vip 127.0.0.1 \
+    --Host.LoadBalancerSet.0.ListenerName 监听器测试 \
+    --Host.LoadBalancerSet.0.LoadBalancerId lb-2s7f791x \
+    --Host.LoadBalancerSet.0.Vport 80 \
     --Host.Level 1 \
     --Host.MainDomain snv.vom \
     --Host.Region cd \

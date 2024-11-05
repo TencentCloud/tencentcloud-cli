@@ -8,7 +8,7 @@ Input:
 tccli cwp DeleteLicenseRecord --cli-unfold-argument  \
     --LicenseId 1 \
     --LicenseType 0 \
-    --ResourceId xxx
+    --ResourceId 553c4af8b025
 ```
 
 Output: 

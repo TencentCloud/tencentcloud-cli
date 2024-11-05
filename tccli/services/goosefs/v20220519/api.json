@@ -28,6 +28,13 @@
       "output": "BatchDeleteClientNodesResponse",
       "status": "online"
     },
+    "BuildCvmResource": {
+      "document": "购买预留cvm资源",
+      "input": "BuildCvmResourceRequest",
+      "name": "创建cvm资源内部接口",
+      "output": "BuildCvmResourceResponse",
+      "status": "online"
+    },
     "CreateDataRepositoryTask": {
       "document": "创建数据流通任务,包括从将文件系统的数据上传到存储桶下, 以及从存储桶下载到文件系统里。",
       "input": "CreateDataRepositoryTaskRequest",
@@ -84,6 +91,13 @@
       "output": "DescribeClusterRolesResponse",
       "status": "online"
     },
+    "DescribeCvmResource": {
+      "document": "查询预留cvm资源",
+      "input": "DescribeCvmResourceRequest",
+      "name": "查询备份cvm资源内部接口",
+      "output": "DescribeCvmResourceResponse",
+      "status": "online"
+    },
     "DescribeDataRepositoryTaskStatus": {
       "document": "获取数据流通任务实时状态，用作客户端控制",
       "input": "DescribeDataRepositoryTaskStatusRequest",
@@ -119,6 +133,13 @@
       "output": "ExpandCapacityResponse",
       "status": "online"
     },
+    "MarkCvmResource": {
+      "document": "购买预留cvm资源",
+      "input": "MarkCvmResourceRequest",
+      "name": "标记cvm资源内部运维接口",
+      "output": "MarkCvmResourceResponse",
+      "status": "online"
+    },
     "ModifyDataRepositoryBandwidth": {
       "document": "修改数据流动带宽",
       "input": "ModifyDataRepositoryBandwidthRequest",
@@ -138,6 +159,13 @@
       "input": "QueryDataRepositoryBandwidthRequest",
       "name": "查询数据流动带宽",
       "output": "QueryDataRepositoryBandwidthResponse",
+      "status": "online"
+    },
+    "TerminateCvmResource": {
+      "document": "购买预留cvm资源",
+      "input": "TerminateCvmResourceRequest",
+      "name": "退还cvm资源内部运维接口",
+      "output": "TerminateCvmResourceResponse",
       "status": "online"
     }
   },
@@ -300,6 +328,69 @@
     },
     "BatchDeleteClientNodesResponse": {
       "document": "BatchDeleteClientNodes返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BuildCvmResourceRequest": {
+      "document": "BuildCvmResource请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "cvm所属的uin",
+          "example": "3472213910",
+          "member": "uint64",
+          "name": "OwnerUin",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "cvm 的机型",
+          "example": "S6.2XLARGE128",
+          "member": "string",
+          "name": "CvmType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "购买数量",
+          "example": "10",
+          "member": "uint64",
+          "name": "CvmCount",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "购买的可用区",
+          "example": "ap-beijing-7",
+          "member": "string",
+          "name": "BuildZone",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "cvm用于的机型；2:nsd机型 3:gw机型；4:kafka机型",
+          "example": "2",
+          "member": "uint64",
+          "name": "NodeType",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "BuildCvmResourceResponse": {
+      "document": "BuildCvmResource返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -983,6 +1074,53 @@
       ],
       "type": "object"
     },
+    "DescribeCvmResourceRequest": {
+      "document": "DescribeCvmResource请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标记的uin",
+          "example": "3472213910",
+          "member": "uint64",
+          "name": "OwnerUin",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCvmResourceResponse": {
+      "document": "DescribeCvmResource返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备份资源数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "GooseFsxCvmResourceAttributes",
+          "name": "ResourceInstanceList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeDataRepositoryTaskStatusRequest": {
       "document": "DescribeDataRepositoryTaskStatus请求参数结构体",
       "members": [
@@ -1447,6 +1585,89 @@
       ],
       "usage": "in"
     },
+    "GooseFsxCvmResourceAttributes": {
+      "document": "备份cvm资源信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "cvm id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ins-1bwj4s98",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "cvm 机型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceType",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "goosefsx 节点类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "NodeType",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Zone",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "所属uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "OwnerUin",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "datetime_iso",
+          "name": "BuildTime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "园区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "LinuxNodeAttribute": {
       "document": "添加删除客户端节点列表",
       "members": [
@@ -1602,6 +1823,42 @@
         }
       ],
       "usage": "both"
+    },
+    "MarkCvmResourceRequest": {
+      "document": "MarkCvmResource请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要退还的cvmid",
+          "example": "[\"ins-1h41pvam\"]",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "标记的uin",
+          "example": "3472213910",
+          "member": "uint64",
+          "name": "OwnerUin",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "MarkCvmResourceResponse": {
+      "document": "MarkCvmResource返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ModifyDataRepositoryBandwidthRequest": {
       "document": "ModifyDataRepositoryBandwidth请求参数结构体",
@@ -1806,6 +2063,33 @@
         }
       ],
       "usage": "both"
+    },
+    "TerminateCvmResourceRequest": {
+      "document": "TerminateCvmResource请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要退还的cvmid",
+          "example": "[\"ins-1h41pvam\"]",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "TerminateCvmResourceResponse": {
+      "document": "TerminateCvmResource返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     }
   },
   "version": "1.0"

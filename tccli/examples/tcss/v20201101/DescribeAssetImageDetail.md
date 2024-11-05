@@ -6,43 +6,43 @@ Input:
 
 ```
 tccli tcss DescribeAssetImageDetail --cli-unfold-argument  \
-    --ImageID dskaldjskld
+    --ImageID sha256:707540fd8a54ab3ebc086ecc96d2d6143fd92c1cac4d0b23353e1b7078b5937b
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "ImageID": "abc",
-        "ImageName": "abc",
-        "CreateTime": "abc",
-        "Size": 1,
-        "HostCnt": 1,
-        "ContainerCnt": 1,
-        "ScanTime": "abc",
-        "VulCnt": 1,
-        "RiskCnt": 1,
-        "SensitiveInfoCnt": 1,
+        "AgentError": "timeout",
+        "Architecture": "Metadata",
+        "Author": "symon",
+        "BuildHistory": "# create_time:2021-09-15 18:20:05 tags:docker.io/centos:latest,yancyw:1,yancyw:2,yancyw:3, ADD file:1114113413411342942e068863ce2a8491bb71522c652f31fb466 in / ",
+        "ContainerCnt": 51,
+        "CreateTime": "2021-09-16 02:20:05",
+        "HostCnt": 24,
+        "ImageDigest": "sha256:707540fd8a54ab3ebc086ecc96d2d6143fd92c1cac4d0b23353e1b7078b5937b",
+        "ImageID": "sha256:707540fd8a54ab3ebc086ecc96d2d6143fd92c1cac4d0b23353e1b7078b5937b",
+        "ImageName": "docker.io/centos:latest",
+        "IsAuthorized": 1,
         "IsTrustImage": true,
-        "OsName": "abc",
-        "AgentError": "abc",
-        "ScanError": "abc",
-        "Architecture": "abc",
-        "Author": "abc",
-        "BuildHistory": "abc",
-        "ScanVirusProgress": 1,
-        "ScanVulProgress": 1,
-        "ScanRiskProgress": 1,
-        "ScanVirusError": "abc",
-        "ScanVulError": "abc",
-        "ScanRiskError": "abc",
-        "ScanStatus": "abc",
-        "VirusCnt": 1,
-        "Status": 1,
-        "RemainScanTime": 1,
-        "IsAuthorized": 0,
-        "ImageDigest": "abc",
-        "RequestId": "abc"
+        "OsName": "centos:8.4.2105",
+        "RemainScanTime": 0,
+        "RequestId": "a11d268f-1601-4f63-9131-0382537b9e55",
+        "RiskCnt": 211,
+        "ScanError": "timeout",
+        "ScanRiskError": "timeout",
+        "ScanRiskProgress": 0,
+        "ScanStatus": "SCANNED",
+        "ScanTime": "2024-10-25 16:13:39",
+        "ScanVirusError": "timeout",
+        "ScanVirusProgress": 0,
+        "ScanVulError": "timeout",
+        "ScanVulProgress": 0,
+        "SensitiveInfoCnt": 0,
+        "Size": 231268856,
+        "Status": 5,
+        "VirusCnt": 0,
+        "VulCnt": 230
     }
 }
 ```

@@ -5,7 +5,9 @@
 Input: 
 
 ```
-tccli cwp DeleteAllJavaMemShells --cli-unfold-argument ```
+tccli cwp DeleteAllJavaMemShells --cli-unfold-argument  \
+    --Quuid 5a540076-d38a-4078-aa98-e7c86371d322
+```
 
 Output: 
 ```

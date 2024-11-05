@@ -1,11 +1,25 @@
-**Example 1: success1**
+**Example 1: 获取资产视角的漏洞风险列表**
 
-success1
+获取资产视角的漏洞风险列表
 
 Input: 
 
 ```
-tccli csip DescribeAssetViewVulRiskList --cli-unfold-argument ```
+tccli csip DescribeAssetViewVulRiskList --cli-unfold-argument  \
+    --Filter.Filters.0.Name RecentTime \
+    --Filter.Filters.0.Values '2024-10-26 19:37:21' \
+    --Filter.Filters.0.OperatorType 4 \
+    --Filter.Filters.1.Name RecentTime \
+    --Filter.Filters.1.Values '2024-11-01 19:37:21' \
+    --Filter.Filters.1.OperatorType 5 \
+    --Filter.Filters.2.Name Status \
+    --Filter.Filters.2.Values 0 \
+    --Filter.Filters.2.OperatorType 7 \
+    --Filter.Limit 10 \
+    --Filter.Offset 0 \
+    --Filter.Order desc \
+    --Filter.By RecentTime
+```
 
 Output: 
 ```
@@ -16,7 +30,7 @@ Output:
                 "AffectAsset": "182.254.145.158",
                 "AppId": "1300448058",
                 "AppName": "OpenSSH",
-                "AppVersion": "-",
+                "AppVersion": "v1.0.1",
                 "CVE": "CVE-2020-15778",
                 "CVSS": 0,
                 "CWPVersion": 4,
@@ -24,26 +38,26 @@ Output:
                 "EMGCVulType": 0,
                 "FirstTime": "2023-09-26 16:34:50",
                 "From": "云安全中心",
-                "HandleTaskId": "",
-                "Index": "360bfa2cxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
-                "InstanceId": "ins-xxx",
-                "InstanceName": "[autotest][勿删]自动化测试NAT1",
+                "HandleTaskId": "id-cnojiv",
+                "Index": "360bfa2c*****",
+                "InstanceId": "ins-***",
+                "InstanceName": "ins-NAT1",
                 "InstanceType": "CVM",
-                "InstanceUUID": "7bb60327-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+                "InstanceUUID": "7bb60327-***-****-***",
                 "Level": "high",
-                "Nick": "",
-                "PCMGRId": "",
-                "POCId": "c808d8ebxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                "Nick": "声声乌龙",
+                "PCMGRId": "pcmgr-n21ln34l",
+                "POCId": "c808d8eb****",
                 "Payload": "OpenSSH/7.4",
                 "Port": "22",
                 "RecentTime": "2023-09-27 11:49:10",
-                "RiskId": "1498f23axxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                "RiskId": "1498f23a***",
                 "Status": 0,
-                "TaskId": "",
-                "Uin": "",
+                "TaskId": "task-2k1b3",
+                "Uin": "2190941624916",
                 "VULName": "OpenSSH 命令注入漏洞(CVE-2020-15778)",
                 "VULType": "命令注入",
-                "VULURL": ""
+                "VULURL": "/vul/detail?id=360bfa2c*****"
             }
         ],
         "FromLists": [

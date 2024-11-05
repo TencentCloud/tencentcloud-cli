@@ -18,14 +18,14 @@ Output:
         "List": [
             {
                 "Uuid": "1c26308c-5493-4eaf-a817-112ec25f499e",
-                "PrivateIp": "xx.xx.xx.xx",
-                "PublicIp": "xx.xx.xx.xx",
-                "Alias": "a",
+                "PrivateIp": "1.1.1.1",
+                "PublicIp": "1.1.1.1",
+                "Alias": "dsger***",
                 "Reason": 1,
                 "Quuid": "1c26308c-5493-4eaf-a817-112ec25f499e"
             }
         ],
-        "RequestId": "xxxxxxxx-1234-5678-9101-yyyyyyyyyy"
+        "RequestId": "1ce68339-8828-457f-b358-d5b1b34e4fe9"
     }
 }
 ```

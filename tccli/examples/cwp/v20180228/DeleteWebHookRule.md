@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cwp DeleteWebHookRule --cli-unfold-argument  \
-    --Ids 0
+    --Ids 10001
 ```
 
 Output: 

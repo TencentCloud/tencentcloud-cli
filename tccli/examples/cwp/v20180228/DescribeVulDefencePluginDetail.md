@@ -6,24 +6,29 @@ Input:
 
 ```
 tccli cwp DescribeVulDefencePluginDetail --cli-unfold-argument  \
-    --Quuid d92d723e-4aac-4f4a-bbf9-e5430e29d289
+    --Offset 0 \
+    --Limit 10 \
+    --Quuid f3076bef-0fdf-44f4-bb63-b5232e13e167 \
+    --Filters.0.Name Status \
+    --Filters.0.Values 1 \
+    --Filters.0.ExactMatch True
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "TotalCount": 1,
         "List": [
             {
-                "Status": 0,
-                "MainClass": "xx",
-                "ErrorLog": "xx",
-                "Pid": 0,
-                "InjectLog": "xx"
+                "Pid": 28942,
+                "MainClass": "org.apache.catalina.startup.Bootstrap",
+                "Status": 1,
+                "ErrorLog": "error",
+                "InjectLog": "failed"
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "de9c0927-3177-48f5-9212-2c3354a4c011",
+        "TotalCount": 1
     }
 }
 ```

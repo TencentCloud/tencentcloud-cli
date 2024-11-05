@@ -18,20 +18,20 @@ Output:
         "TotalCount": 1,
         "List": [
             {
-                "Name": "abc",
+                "Name": "rule1",
                 "RuleCategory": 1,
                 "Rule": [
                     {
-                        "ProcessPath": "abc",
-                        "Target": "abc",
-                        "Action": "abc",
-                        "FileAction": "abc"
+                        "ProcessPath": "/data/process1",
+                        "Target": "/a/b.txt",
+                        "Action": "skip",
+                        "FileAction": "write"
                     }
                 ],
                 "Id": 1
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "8564b09e-0e04-4516-bb59-db09742503c2"
     }
 }
 ```

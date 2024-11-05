@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cwp DescribeWebHookRule --cli-unfold-argument  \
-    --Id 0
+    --Id 1
 ```
 
 Output: 
@@ -14,10 +14,10 @@ Output:
 {
     "Response": {
         "Data": {
-            "RuleId": 0,
-            "RuleName": "test",
-            "HookAddr": "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=cbe03861-a8c6-48df-e34c-443c34be0db5",
-            "RuleRemark": "",
+            "RuleId": 1,
+            "RuleName": "alram",
+            "HookAddr": "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=cbe03861-a8c6-48df-e34c-******",
+            "RuleRemark": "remark",
             "RuleItems": [
                 {
                     "Type": 11,

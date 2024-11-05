@@ -15,25 +15,25 @@ Output:
     "Response": {
         "ConnDetectDetail": [
             {
-                "ConnDetectMessage": "",
+                "ConnDetectMessage": "ConnDetectMessage",
                 "ConnDetectStatus": "status_connected",
-                "FailReason": "",
+                "FailReason": "FailReason",
                 "Quuid": "backend",
-                "Solution": "",
+                "Solution": "Solution",
                 "Uuid": "backend"
             }
         ],
         "Insecure": 1,
-        "Name": "test",
+        "Name": "jfrog****",
         "NetType": "public",
-        "Password": "",
+        "Password": "Aa8888****",
         "RegistryRegion": "ap-beijing",
         "RegistryType": "harbor",
         "RegistryVersion": "v1",
         "RequestId": "ff82bfdb-f923-4b66-8c70-cba784e8be67",
         "SpeedLimit": 1000,
         "Url": "http://good.com.cn",
-        "Username": "aaa"
+        "Username": "test-user-name"
     }
 }
 ```
@@ -54,9 +54,9 @@ Output:
 {
     "Response": {
         "RequestId": "5187d432-1753-4376-81b6-12e1f7e6ecf5",
-        "Name": "test",
-        "Username": "xxx",
-        "Password": "xxx",
+        "Name": "jfrog****",
+        "Username": "test-user",
+        "Password": "test-passwd",
         "Url": "https://127.0.0.1:8080",
         "RegistryType": "harbor",
         "RegistryVersion": "v2",

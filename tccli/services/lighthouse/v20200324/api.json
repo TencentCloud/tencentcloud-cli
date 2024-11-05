@@ -3420,7 +3420,17 @@
     },
     "DescribeAllInstancesOverviewRequest": {
       "document": "DescribeAllInstancesOverview请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "过滤器列表。取值范围:\ndisplay-area\n按照【展示区域】进行过滤, 取值: \"NORMAL\"(普通), \"GAME_PORTAL\"(游戏专区)。类型：String 必选：否\n每次请求的 Filters 的上限为 10，Filter.Values 的上限为 100。",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
       "type": "object"
     },
     "DescribeAllInstancesOverviewResponse": {

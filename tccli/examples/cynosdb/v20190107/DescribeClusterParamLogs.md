@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cynosdb DescribeClusterParamLogs --cli-unfold-argument  \
-    --ClusterId cynosdbmysql-xxxxxxxx \
-    --InstanceIds cynosdbmysql-ins-xxxxxxxx \
+    --ClusterId cynosdbmysql-mwg712eh \
+    --InstanceIds cynosdbmysql-ins-m6f0hkdb \
     --OrderBy CreateTime \
     --OrderByType DESC \
     --Limit 12 \
@@ -26,8 +26,8 @@ Output:
                 "UpdateValue": "1025",
                 "ParamName": "back_log",
                 "CreateTime": "2020-09-22T00:00:00+00:00",
-                "ClusterId": "abc",
-                "InstanceId": "abc"
+                "ClusterId": "cynosdbmysql-mwg712eh",
+                "InstanceId": "cynosdbmysql-ins-m6f0hkdb"
             }
         ],
         "TotalCount": 1,

@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli cynosdb ModifyProxyRwSplit --cli-unfold-argument  \
-    --ClusterId cynosdbmysql-asd \
-    --ProxyGroupId cynosdbmysql-proxy-qwe \
+    --ClusterId cynosdbmysql-dnofdr2d \
+    --ProxyGroupId cynosdbmysql-proxy-4378e0kd \
     --ConsistencyType eventual \
     --ConsistencyTimeOut 10 \
     --WeightMode system \
-    --InstanceWeights.0.InstanceId cynosdbmysql-ins-qwe \
+    --InstanceWeights.0.InstanceId cynosdbmysql-ins-c2twj0qf \
     --InstanceWeights.0.Weight 0 \
     --FailOver  \
     --AutoAddRo yes \
@@ -28,9 +28,9 @@ Output:
 ```
 {
     "Response": {
-        "FlowId": 0,
-        "TaskId": 0,
-        "RequestId": "abc"
+        "FlowId": 134762,
+        "TaskId": 146783,
+        "RequestId": "a5706353-296a-4992-ad07-ac4a48eeba43"
     }
 }
 ```

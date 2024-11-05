@@ -6,19 +6,20 @@ Input:
 
 ```
 tccli kms ReEncrypt --cli-unfold-argument  \
-    --DestinationKeyId 23e80852-1e38-11e9-b129-5cb9019b4b01 \
-    --CiphertextBlob Ade234dasdeEWdGVzdCUyMHBsYWlJJlIHL
+    --CiphertextBlob M1UPpYhWviWGrfn78MLVBG1n5G2H6+pGK5u7xOmoWoCcWpxVKC1OAQujzQSLHWBE54p3Kd8Qji+7FOPN3nkQeA==-k-fKVP3WIlGpg8m9LMW4jEkQ==-k-8VyKJSv97jE/+mKGeevmUUvCXLYzWs6Zxn3PZoeBW4aPCjYX \
+    --DestinationKeyId 87ff856e-973c-11ef-947b-525400d834e5 \
+    --DestinationEncryptionContext {"key1":"value1"}
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "CiphertextBlob": "g2F8eQk44QrTbfj09TL17AZyFPgs8BTtZe2j27Wuw1YzTBCxnd0T/gwFQSasmtzxZi6mmvD7DCjCE+LxJmdhXQ==-k-zJshb0kBH7C2J5I3XXbbEg==-k-o1O+7H9HFAzWbCkftO2ZtPKewS3diSB4zGKOJhMn7LcKRhYr",
-        "KeyId": "23e80852-1e38-11e9-b129-5cb9019b4b01",
-        "SourceKeyId": "23e80852-1e38-11e9-b129-5cb9019b0000",
+        "CiphertextBlob": "M1UPpYhWviWGrfn78MLVBG1n5G2H6+pGK5u7xOmoWoCcWpxVKC1OAQujzQSLHWBE54p3Kd8Qji+7FOPN3nkQeA==-k-XqqalxTyNKIC1rITRePFGQ==-k-8VyKJSv97jE/+mKGeevmUUvCXLYzWs6Zxn3PZoeBW4aPCjYX",
+        "KeyId": "87ff856e-973c-11ef-947b-525400d834e5",
         "ReEncrypted": true,
-        "RequestId": "1b580852-1e38-11e9-b129-5cb9019b4b00"
+        "RequestId": "6c3281fb-5286-49d5-8aeb-4a4424bc4271",
+        "SourceKeyId": "87ff856e-973c-11ef-947b-525400d834e5"
     }
 }
 ```

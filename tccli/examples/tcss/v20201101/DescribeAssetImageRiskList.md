@@ -19,7 +19,7 @@ Output:
                 "Level": 3,
                 "Type": 2,
                 "Desc": "Dockerfile中存在账号密码、认证凭据等敏感信息",
-                "InstructionContent": "/bin/sh -c #(nop)  ENV PWD=postgresql://1.1.1.1:xxx@yyy"
+                "InstructionContent": "/bin/sh -c #(nop)  ENV PWD=postgresql"
             },
             {
                 "Behavior": 3,

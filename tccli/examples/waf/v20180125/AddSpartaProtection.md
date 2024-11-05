@@ -1,153 +1,42 @@
-**Example 1: 添加域名**
+**Example 1: 添加SaaS型WAF防护域名**
 
-添加域名
+添加SaaS型WAF防护域名
 
 Input: 
 
 ```
 tccli waf AddSpartaProtection --cli-unfold-argument  \
-    --UpstreamScheme http \
-    --IsGray 1 \
-    --Domain lucas0621.qcloudwaf.com \
-    --LoadBalance 1 \
-    --HttpsUpstreamPort 80 \
-    --InstanceID lucas \
-    --UpstreamType 1 \
-    --UpstreamDomain lucas0622.qcloudwaf.com \
-    --IsWebsocket 1 \
-    --IsHttp2 1 \
-    --Edition sass \
-    --CertType 0 \
-    --Weights 1 \
-    --IsKeepAlive 1 \
-    --ActiveCheck 1 \
-    --IsCdn 1 \
-    --TLSVersion 1 \
-    --Anycast 1 \
     --Ports.0.NginxServerId 0 \
-    --Ports.0.Protocol http \
     --Ports.0.Port 80 \
+    --Ports.0.Protocol http \
     --Ports.0.UpstreamPort 80 \
     --Ports.0.UpstreamProtocol http \
-    --HttpsRewrite 1
-```
-
-Output: 
-```
-{
-    "Response": {
-        "RequestId": "87c8499e-3748-4bb0-9740-b2683a003975"
-    }
-}
-```
-
-**Example 2: 添加域名-1**
-
-添加域名-1
-
-Input: 
-
-```
-tccli waf AddSpartaProtection --cli-unfold-argument  \
-    --UpstreamScheme http \
-    --IsGray 1 \
-    --Domain lucas0919.qcloudwaf.com \
-    --LoadBalance 1 \
-    --HttpsUpstreamPort 80 \
-    --InstanceID lucas \
-    --UpstreamType 1 \
-    --UpstreamDomain lucas0622.qcloudwaf.com \
-    --IsWebsocket 1 \
-    --IsHttp2 1 \
-    --Edition saas \
+    --Domain randy.qcloudwaf.com \
+    --SrcList 125.36.35.4 \
+    --UpstreamType 0 \
+    --HttpsRewrite 0 \
     --CertType 0 \
-    --Weights 1 \
-    --IsKeepAlive 1 \
-    --ActiveCheck 1 \
-    --IsCdn 1 \
+    --IsCdn 3 \
+    --IsGray 0 \
+    --IsHttp2 0 \
+    --IsWebsocket 0 \
+    --ProxyBuffer 1 \
+    --ActiveCheck 0 \
+    --CipherTemplate 1 \
     --TLSVersion 3 \
-    --Ports.0.NginxServerId 0 \
-    --Ports.0.Protocol http \
-    --Ports.0.Port 80 \
-    --Ports.0.UpstreamPort 80 \
-    --Ports.0.UpstreamProtocol http \
-    --HttpsRewrite 1
-```
-
-Output: 
-```
-{
-    "Response": {
-        "RequestId": "a5e5757a-2b04-4d56-a049-54eb8f053e75"
-    }
-}
-```
-
-**Example 3: 重复添加的场景**
-
-重复添加的场景
-
-Input: 
-
-```
-tccli waf AddSpartaProtection --cli-unfold-argument  \
-    --Domain test.qcloud.com \
-    --LoadBalance 0 \
-    --Edition clb-waf \
-    --UpstreamType 0 \
-    --CertType 0 \
-    --InstanceID waf-9dasfds6gsd \
     --IsKeepAlive 1 \
-    --Ports.0.NginxServerId 0 \
-    --Ports.0.Protocol http \
-    --Ports.0.Port 80 \
-    --Ports.0.UpstreamPort 80 \
-    --Ports.0.UpstreamProtocol http \
-    --SrcList 1.1.1.1 \
-    --IsCdn 0 \
-    --IsWebsocket 0 \
-    --IsGray 0 \
-    --IsHttp2 0
-```
-
-Output: 
-```
-{
-    "Response": {
-        "Error": {
-            "Code": "InternalError",
-            "Message": "域名已经存在，请勿重复添加"
-        },
-        "RequestId": "4f284280-a493-4932-95f4-3d87e7320b3e"
-    }
-}
-```
-
-**Example 4: 添加SAAS-WAF防护域名**
-
-添加SAAS-WAF防护域名
-
-Input: 
-
-```
-tccli waf AddSpartaProtection --cli-unfold-argument  \
-    --Domain test1.qcloud.com \
     --LoadBalance 0 \
-    --Edition clb-waf \
-    --UpstreamType 0 \
-    --CertType 0 \
-    --InstanceID waf-7dasgds2nfsafg \
-    --IsKeepAlive 1 \
-    --Ports.0.NginxServerId 0 \
-    --Ports.0.Protocol http \
-    --Ports.0.Port 80 \
-    --Ports.0.UpstreamPort 80 \
-    --Ports.0.UpstreamProtocol http \
-    --SrcList 1.1.1.1 \
-    --IsCdn 0 \
-    --IsWebsocket 0 \
-    --IsGray 0 \
-    --IsHttp2 0
+    --InstanceID waf_2kw60zgy0908e8j3 \
+    --Anycast 0 \
+    --ProxyReadTimeout 300 \
+    --ProxySendTimeout 300 \
+    --SniHost randy.sni.com \
+    --SniType 0 \
+    --IpHeaders x-real-ip \
+    --XFFReset 0 \
+    --UpstreamHost randy.upstream.com \
+    --Note randy test domain \
+    --ProbeStatus 1
 ```
 
 Output: 

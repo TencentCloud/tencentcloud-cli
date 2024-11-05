@@ -24,7 +24,7 @@ Output:
                 "LastTime": "2022-07-21 21:25:01",
                 "DetectStatus": 3,
                 "Level": 2,
-                "DetectResult": "",
+                "DetectResult": "result***",
                 "PassedHostCount": 1,
                 "NotPassedHostCount": 0
             },
@@ -40,7 +40,7 @@ Output:
                 "LastTime": "2022-07-21 21:25:01",
                 "DetectStatus": 3,
                 "Level": 2,
-                "DetectResult": "",
+                "DetectResult": "result***",
                 "PassedHostCount": 1,
                 "NotPassedHostCount": 0
             },
@@ -56,7 +56,7 @@ Output:
                 "LastTime": "2022-07-21 21:25:01",
                 "DetectStatus": 3,
                 "Level": 2,
-                "DetectResult": "",
+                "DetectResult": "result***",
                 "PassedHostCount": 1,
                 "NotPassedHostCount": 0
             },
@@ -72,7 +72,7 @@ Output:
                 "LastTime": "2022-07-21 21:25:01",
                 "DetectStatus": 3,
                 "Level": 2,
-                "DetectResult": "",
+                "DetectResult": "result***",
                 "PassedHostCount": 1,
                 "NotPassedHostCount": 0
             },
@@ -88,7 +88,7 @@ Output:
                 "LastTime": "2022-07-21 21:25:01",
                 "DetectStatus": 3,
                 "Level": 2,
-                "DetectResult": "",
+                "DetectResult": "result***",
                 "PassedHostCount": 1,
                 "NotPassedHostCount": 0
             },
@@ -104,7 +104,7 @@ Output:
                 "LastTime": "2022-07-21 21:25:01",
                 "DetectStatus": 3,
                 "Level": 2,
-                "DetectResult": "",
+                "DetectResult": "result***",
                 "PassedHostCount": 1,
                 "NotPassedHostCount": 0
             },
@@ -120,7 +120,7 @@ Output:
                 "LastTime": "2022-07-21 21:25:01",
                 "DetectStatus": 3,
                 "Level": 2,
-                "DetectResult": "",
+                "DetectResult": "result***",
                 "PassedHostCount": 1,
                 "NotPassedHostCount": 0
             },
@@ -136,7 +136,7 @@ Output:
                 "LastTime": "2022-07-21 21:25:01",
                 "DetectStatus": 3,
                 "Level": 2,
-                "DetectResult": "",
+                "DetectResult": "result***",
                 "PassedHostCount": 1,
                 "NotPassedHostCount": 0
             },
@@ -152,7 +152,7 @@ Output:
                 "LastTime": "2022-07-21 21:25:01",
                 "DetectStatus": 3,
                 "Level": 2,
-                "DetectResult": "",
+                "DetectResult": "result***",
                 "PassedHostCount": 1,
                 "NotPassedHostCount": 0
             },
@@ -168,7 +168,7 @@ Output:
                 "LastTime": "2022-07-21 21:25:01",
                 "DetectStatus": 3,
                 "Level": 2,
-                "DetectResult": "",
+                "DetectResult": "result***",
                 "PassedHostCount": 1,
                 "NotPassedHostCount": 0
             }

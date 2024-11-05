@@ -15,8 +15,8 @@ Output:
 {
     "Response": {
         "DownloadUrl": "http://xx/xxx",
-        "TaskId": "23445",
-        "RequestId": "abcs12434"
+        "TaskId": "1",
+        "RequestId": "acdd5474-6360-4fd4-bfc7-843162cb8116"
     }
 }
 ```

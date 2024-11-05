@@ -18,49 +18,52 @@ Output:
 {
     "Response": {
         "Data": {
+            "PermissionType": 0,
+            "Role": 0,
+            "TotalCount": 0,
             "ResourceList": [
                 {
-                    "AccessAble": false,
-                    "ResourceId": "xx",
-                    "ModifyTime": "xx",
-                    "ResourceName": "xx"
-                },
-                {
-                    "AccessAble": false,
-                    "ResourceId": "xx",
-                    "ModifyTime": "xx",
-                    "ResourceName": "xx"
-                },
-                {
-                    "AccessAble": false,
-                    "ResourceId": "xx",
-                    "ModifyTime": "xx",
-                    "ResourceName": "xx"
-                },
-                {
-                    "AccessAble": false,
-                    "ResourceId": "xx",
-                    "ModifyTime": "xx",
-                    "ResourceName": "xx"
-                },
-                {
-                    "AccessAble": false,
-                    "ResourceId": "xx",
-                    "ModifyTime": "xx",
-                    "ResourceName": "xx"
-                },
-                {
-                    "AccessAble": false,
-                    "ResourceId": "xx",
-                    "ModifyTime": "xx",
-                    "ResourceName": "xx"
+                    "ResourceId": "abc",
+                    "ResourceName": "abc",
+                    "ModifyTime": "abc",
+                    "AccessAble": true,
+                    "ResourceKey": "abc",
+                    "UserSelfPermission": {
+                        "Readable": true,
+                        "Writable": true,
+                        "WritableCondition": [
+                            {
+                                "Key": "abc",
+                                "Rel": "abc",
+                                "Val": "abc",
+                                "ValueType": "abc"
+                            }
+                        ],
+                        "ReadableCondition": [
+                            {
+                                "Key": "abc",
+                                "Rel": "abc",
+                                "Val": "abc",
+                                "ValueType": "abc"
+                            }
+                        ]
+                    },
+                    "AllPermission": {
+                        "Readable": true,
+                        "Writable": true,
+                        "WritableCondition": [
+                            {
+                                "Key": "abc",
+                                "Rel": "abc",
+                                "Val": "abc",
+                                "ValueType": "abc"
+                            }
+                        ]
+                    }
                 }
-            ],
-            "TotalCount": 6,
-            "PermissionType": 1,
-            "Role": 0
+            ]
         },
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

@@ -22,7 +22,7 @@ Output:
                 "ItemDesc": "域名系统（DNS）是一种分层命名系统，它将名称映射到IP地址，以连接到网络的计算机，服务和其他资源。\n",
                 "FixMethod": "运行以下命令以禁用named：\n# systemctl disable bind9",
                 "RuleName": "国际标准-Ubuntu 16安全基线检查Level1",
-                "DetectResultDesc": "",
+                "DetectResultDesc": "idesc",
                 "Level": 2,
                 "CanBeFixed": 0,
                 "DetectStatus": 3,
@@ -32,6 +32,14 @@ Output:
                 "WanIp": "10.104.9.1",
                 "LastTime": "2022-08-22 09:48:42",
                 "FirstTime": "2022-08-06 09:43:07",
+                "MachineExtraInfo": {
+                    "WanIP": "146.56.21****",
+                    "PrivateIP": "10.206****",
+                    "NetworkType": 0,
+                    "NetworkName": "vpc-3gov****",
+                    "InstanceID": "ins-bask****",
+                    "HostName": "demo_****"
+                },
                 "Uuid": "044889f8-d6a2-4fc3-a8a8-c114b6f5266b"
             }
         ],

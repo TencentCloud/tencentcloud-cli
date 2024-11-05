@@ -1,0 +1,971 @@
+{
+  "actions": {
+    "ApplyQuotaRecord": {
+      "document": "申请更多配额",
+      "input": "ApplyQuotaRecordRequest",
+      "name": "申请更多配额",
+      "output": "ApplyQuotaRecordResponse",
+      "status": "online"
+    },
+    "CreateComponentSession": {
+      "document": "此接口为创建新的组件会话接口",
+      "input": "CreateComponentSessionRequest",
+      "name": "创建组件会话",
+      "output": "CreateComponentSessionResponse",
+      "status": "online"
+    },
+    "FeedBackComponentSession": {
+      "document": "组件会话反馈",
+      "input": "FeedBackComponentSessionRequest",
+      "name": "组件会话反馈",
+      "output": "FeedBackComponentSessionResponse",
+      "status": "online"
+    },
+    "QueryComponentSessionMessage": {
+      "document": "查询历史组件会话记录",
+      "input": "QueryComponentSessionMessageRequest",
+      "name": "查询会话记录",
+      "output": "QueryComponentSessionMessageResponse",
+      "status": "online"
+    },
+    "QueryQuotaUsable": {
+      "document": "查询配额",
+      "input": "QueryQuotaUsableRequest",
+      "name": "查询使用配额",
+      "output": "QueryQuotaUsableResponse",
+      "status": "online"
+    },
+    "SendComponentSession": {
+      "document": "此接口为进行组件会话的接口",
+      "input": "SendComponentSessionRequest",
+      "name": "发送组件会话",
+      "output": "SendComponentSessionResponse",
+      "status": "online"
+    },
+    "VerifySDK": {
+      "document": "作为SDK校验的接口",
+      "input": "VerifySDKRequest",
+      "name": "SDK校验",
+      "output": "VerifySDKResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2024-09-12",
+    "api_brief": "支持用户管理Fibona下多种资源以及进行多种操作（如会话管理，进行会话等）",
+    "serviceNameCN": "fibona",
+    "serviceShortName": "fibona"
+  },
+  "objects": {
+    "ApplyQuotaRecordRequest": {
+      "document": "ApplyQuotaRecord请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "唯一id",
+          "example": "无",
+          "member": "string",
+          "name": "UserGroupUniqueID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "昵称",
+          "example": "无",
+          "member": "string",
+          "name": "NickName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ApplyQuotaRecordResponse": {
+      "document": "ApplyQuotaRecord返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "响应代码",
+          "example": "0",
+          "member": "int64",
+          "name": "Code",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "响应消息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "success",
+          "member": "string",
+          "name": "Msg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Json序列化路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "JSONStrPaths",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "data\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Data",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ComponentSessionExtraConfig": {
+      "document": "发送会话额外的参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "脱敏开关",
+          "example": "无",
+          "member": "string",
+          "name": "DesensitizationSwitch",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Rag策略",
+          "example": "无",
+          "member": "string",
+          "name": "RagStrategy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "使用Rerank",
+          "example": "无",
+          "member": "string",
+          "name": "UseRerank",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "CreateCompoentSessionResp": {
+      "document": "创建组件会话响应接口",
+      "members": [
+        {
+          "disabled": false,
+          "document": "组件会话ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "SessionID",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标题",
+          "example": "session_9869b0ae-d59a-49c9-9b15-0ddf7e8e5388",
+          "member": "string",
+          "name": "SessionTitle",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CreateComponentSessionRequest": {
+      "document": "CreateComponentSession请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "唯一id",
+          "example": "无",
+          "member": "string",
+          "name": "UserGroupUniqueID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "B端团队的应用ID",
+          "example": "e945370e2b3ee2ec",
+          "member": "string",
+          "name": "FAPPID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "触发器ID",
+          "example": "12",
+          "member": "uint64",
+          "name": "TriggerID",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "RTX名字",
+          "example": "无",
+          "member": "string",
+          "name": "RTX",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义识别符",
+          "example": "无",
+          "member": "string",
+          "name": "CustomIdentify",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateComponentSessionResponse": {
+      "document": "CreateComponentSession返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Json序列化路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "JSONStrPaths",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "响应代码",
+          "example": "0",
+          "member": "int64",
+          "name": "Code",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "响应消息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "success",
+          "member": "string",
+          "name": "Msg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建好的session信息",
+          "example": "无",
+          "member": "CreateCompoentSessionResp",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Dialog": {
+      "document": "会话信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "编号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "ID",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CreatedAt",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标题\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Title",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "消息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DialogMessage",
+          "name": "Messages",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "DialogFeedback": {
+      "document": "返回数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Score",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "建议\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Suggestion",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "DialogInfo": {
+      "document": "会话信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "会话信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Dialog",
+          "name": "Dialog",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "DialogMessage": {
+      "document": "会话消息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "编号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "ID",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CreatedAt",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "角色\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Role",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "提示词名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PromptName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "提示词ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "PromptID",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "traceid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TraceID",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "模型类型编号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "LLMTypeID",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "模型名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ModelName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否终端\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "Abort",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Error",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "反馈信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DialogFeedback",
+          "name": "Feedback",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "原始消息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Origin",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "工作流信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "WorkflowInfo",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "FeedBackComponentSessionRequest": {
+      "document": "FeedBackComponentSession请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "唯一id",
+          "example": "无",
+          "member": "string",
+          "name": "UserGroupUniqueID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "组件会话ID",
+          "example": "无",
+          "member": "uint64",
+          "name": "SessionID",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "消息ID",
+          "example": "无",
+          "member": "uint64",
+          "name": "MessageID",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分数（0为不喜欢，1为喜欢）",
+          "example": "无",
+          "member": "uint64",
+          "name": "Score",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "建议",
+          "example": "无",
+          "member": "string",
+          "name": "Suggestion",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "FeedBackComponentSessionResponse": {
+      "document": "FeedBackComponentSession返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Json序列化路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "JSONStrPaths",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "响应代码",
+          "example": "0",
+          "member": "int64",
+          "name": "Code",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "响应消息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "success",
+          "member": "string",
+          "name": "Msg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据（成功为NULL）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Data",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryComponentSessionMessageRequest": {
+      "document": "QueryComponentSessionMessage请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "唯一id",
+          "example": "无",
+          "member": "string",
+          "name": "UserGroupUniqueID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "APPID",
+          "example": "无",
+          "member": "string",
+          "name": "FAPPID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "触发器ID",
+          "example": "无",
+          "member": "uint64",
+          "name": "TriggerID",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "自定义识别符",
+          "example": "无",
+          "member": "string",
+          "name": "CustomIdentify",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryComponentSessionMessageResponse": {
+      "document": "QueryComponentSessionMessage返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Json序列化路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "JSONStrPaths",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "响应代码",
+          "example": "0",
+          "member": "int64",
+          "name": "Code",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "响应消息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "success",
+          "member": "string",
+          "name": "Msg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "会话信息",
+          "example": "无",
+          "member": "DialogInfo",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryQuotaUsableRequest": {
+      "document": "QueryQuotaUsable请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "唯一id",
+          "example": "无",
+          "member": "string",
+          "name": "UserGroupUniqueID",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryQuotaUsableResponse": {
+      "document": "QueryQuotaUsable返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Json序列化路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "JSONStrPaths",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "响应代码",
+          "example": "0",
+          "member": "int64",
+          "name": "Code",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "响应消息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "success",
+          "member": "string",
+          "name": "Msg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "配额数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "QuotaDatas",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QuotaData": {
+      "document": "配额数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "可用额度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "AmountAvailable",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "类型名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TypeName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "QuotaDatas": {
+      "document": "配额数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "配额可用额度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "QuotaData",
+          "name": "Usables",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SendComponentSessionRequest": {
+      "document": "SendComponentSession请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "唯一id",
+          "example": "无",
+          "member": "string",
+          "name": "UserGroupUniqueID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "新建好的sessionid",
+          "example": "无",
+          "member": "uint64",
+          "name": "SessionID",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "线索",
+          "example": "无",
+          "member": "string",
+          "name": "Clues",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "额外配置",
+          "example": "无",
+          "member": "ComponentSessionExtraConfig",
+          "name": "ExtraConfig",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "SendComponentSessionResponse": {
+      "document": "SendComponentSession返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。本接口为流式响应接口，当请求成功时，RequestId 会被放在 HTTP 响应的 Header \"X-TC-RequestId\" 中。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "VerifySDKRequest": {
+      "document": "VerifySDK请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Fibona B端应用ID",
+          "example": "无",
+          "member": "string",
+          "name": "FAPPID",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "VerifySDKResponse": {
+      "document": "VerifySDK返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "响应代码",
+          "example": "0",
+          "member": "int64",
+          "name": "Code",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "响应消息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "success",
+          "member": "string",
+          "name": "Msg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Json序列化路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "JSONStrPaths",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "返回响应\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Data",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

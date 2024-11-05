@@ -20,54 +20,65 @@ Output:
     "Response": {
         "Machines": [
             {
-                "MachineName": "test",
-                "MachineOs": "CentOS 7.6 64位",
-                "Uuid": "3377add2-ee61-4c9a-99a3-81d259dfc11a",
-                "Quuid": "3377add2-ee61-4c9a-99a3-81d259dfc11a",
-                "MachineIp": "1.1.1.1",
-                "MachineWanIp": "1.1.1.1",
-                "InstanceState": "NORMAL",
-                "InstanceId": "ins-111",
-                "ProjectId": 0,
-                "VpcId": "",
-                "IsProVersion": false,
-                "MachineStatus": "ONLINE",
-                "PayMode": "",
-                "Tag": [],
-                "CloudTags": null,
-                "MalwareNum": 0,
-                "VulNum": 0,
                 "BaselineNum": 0,
+                "CloudTags": [
+                    {
+                        "TagKey": "Department",
+                        "TagValue": "dev"
+                    }
+                ],
                 "CyberAttackNum": 0,
+                "HasAssetScan": 0,
+                "InstanceId": "ins-111",
+                "InstanceState": "NORMAL",
                 "InvasionNum": 3,
-                "SecurityStatus": "RISK",
+                "IpList": "1.1.1.1",
+                "IsAddedOnTheFifteen": 1,
+                "IsProVersion": false,
+                "KernelVersion": "3.10.0-1160.88.1.el7.x86_64",
+                "LicenseStatus": 0,
+                "MachineExtraInfo": {
+                    "HostName": "demo-instance",
+                    "InstanceID": "ins-111",
+                    "NetworkName": "vpc-111",
+                    "NetworkType": 1,
+                    "PrivateIP": "1.1.1.1",
+                    "WanIP": "1.1.1.1"
+                },
+                "MachineIp": "1.1.1.1",
+                "MachineName": "name01",
+                "MachineOs": "CentOS 7.6 64位",
+                "MachineStatus": "ONLINE",
+                "MachineType": "CVM",
+                "MachineWanIp": "1.1.1.1",
+                "MalwareNum": 0,
+                "PayMode": "POSTPAY",
+                "ProjectId": 0,
+                "ProtectType": "BASIC_VERSION",
+                "Quuid": "3377add2-ee61-4c9a-99a3-************",
                 "RegionInfo": {
                     "Region": "ap-nanjing",
-                    "RegionName": "华东地区（南京）",
-                    "RegionId": 33,
                     "RegionCode": "nj",
+                    "RegionId": 33,
+                    "RegionName": "华东地区（南京）",
                     "RegionNameEn": "East China (Nanjing)"
                 },
-                "MachineType": "CVM",
-                "LicenseStatus": 0,
-                "HasAssetScan": 0,
-                "KernelVersion": "3.10.0-1160.88.1.el7.x86_64",
-                "ProtectType": "BASIC_VERSION",
-                "IsAddedOnTheFifteen": 1,
-                "IpList": "1.1.1.1",
-                "Remark": "",
-                "MachineExtraInfo": {
-                    "WanIP": "1.1.1.1",
-                    "PrivateIP": "1.1.1.1",
-                    "NetworkType": 1,
-                    "NetworkName": "vpc-111",
-                    "InstanceID": "ins-111",
-                    "HostName": ""
-                }
+                "Remark": "do not remove",
+                "SecurityStatus": "RISK",
+                "Tag": [
+                    {
+                        "Rid": 1001,
+                        "Name": "cwp",
+                        "TagId": 1022
+                    }
+                ],
+                "Uuid": "3377add2-ee61-4c9a-99a3-************",
+                "VpcId": "vpc-1dj4***",
+                "VulNum": 0
             }
         ],
-        "RequestId": "621b6063-12b2-43fa-809e-5481c8374c0a",
-        "TotalCount": 1
+        "RequestId": "621b6063-12b2-43fa-809e-************",
+        "TotalCount": 192
     }
 }
 ```

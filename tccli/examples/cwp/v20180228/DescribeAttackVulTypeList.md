@@ -1,4 +1,4 @@
-**Example 1: 示例**
+**Example 1: 获取网络攻击威胁类型列表**
 
 
 
@@ -11,7 +11,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "xxx",
+        "RequestId": "F00A8503-6233-452E-913E-DAFEE9******",
         "List": [
             "命令注入",
             "fastjson命令执行",

@@ -30,7 +30,7 @@ Output:
                 "NotReadyDuration": 0,
                 "RestDuration": 0,
                 "AfterCallWorkDuration": 0,
-                "Reason": "abc",
+                "Reason": "会议",
                 "ReserveRest": true,
                 "ReserveNotReady": true,
                 "UseMobileAccept": 0,

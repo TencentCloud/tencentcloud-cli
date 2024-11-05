@@ -6,10 +6,11 @@ Input:
 
 ```
 tccli tcss ModifySecLogJoinObjects --cli-unfold-argument  \
-    --NodeType Normal \
     --LogType container_bash \
-    --BindList xxxxx xxxxx \
-    --UnBindList xxxxx xxxxx
+    --BindList 3b6b1bbc-1c7a-47e2-9ca8-e9c27ec9d068 \
+    --NodeType NORMAL \
+    --RangeType 0 \
+    --AutoJoin False
 ```
 
 Output: 

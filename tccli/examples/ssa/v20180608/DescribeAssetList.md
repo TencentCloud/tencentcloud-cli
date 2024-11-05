@@ -17,48 +17,50 @@ Output:
             "Total": 1,
             "List": [
                 {
-                    "AssetType": "repository",
-                    "Id": "1445149556-repository-tstsec/test",
+                    "AssetType": "Instance",
+                    "Name": "andy",
+                    "AssetRegionName": "guangzhou",
+                    "AssetVpcid": "vpc-ssr158",
+                    "InstanceType": "CVM",
+                    "InstanceState": "running",
+                    "EngineVersion": "1.0.15",
+                    "Id": "id-ssr",
                     "Tag": [
                         {
-                            "Fname": "test2",
-                            "Fid": 256
+                            "Fid": 0,
+                            "Fname": "fandy"
                         }
                     ],
-                    "Name": "test",
-                    "AssetRegionName": "东南亚地区(新加坡)",
-                    "AssetVpcid": "",
-                    "InstanceType": "",
-                    "InstanceState": "",
-                    "PublicIpAddresses": [],
-                    "PrivateIpAddresses": [],
-                    "EngineVersion": "",
-                    "AssetUniqid": "tstsec/test",
-                    "ChargeType": "",
-                    "AssetCspmRiskNum": 1,
-                    "AssetVulNum": 0,
+                    "AssetCspmRiskNum": 0,
+                    "PublicIpAddresses": [
+                        "10.13.***.1"
+                    ],
+                    "AssetUniqid": "3cbf2d8f-c40a-452a-92ec-140f9b2d29a2",
+                    "ChargeType": "forward",
                     "AssetEventNum": 0,
-                    "SsaAssetDiscoverTime": "2020-05-12 20:07:06",
-                    "SsaAssetDeleteTime": "",
-                    "GroupName": "",
-                    "AssetSubnetId": "",
-                    "AssetSubnetName": "",
-                    "AssetVpcName": "",
+                    "AssetVulNum": 0,
+                    "PrivateIpAddresses": [
+                        "172.**.11.1"
+                    ],
+                    "GroupName": "group-andy",
+                    "SsaAssetDiscoverTime": "2016-10-31 19:46:48",
+                    "SsaAssetDeleteTime": "2016-10-31 19:46:48",
+                    "IsNew": true,
+                    "AssetSubnetId": "subnet-112ssr",
+                    "AssetSubnetName": "subnet-andy",
+                    "AssetVpcName": "vpc-andy",
                     "ClusterType": 0,
-                    "NameSpace": "tstsec",
-                    "IsNew": false,
-                    "LoadBalancerType": "xx",
+                    "NameSpace": "default",
+                    "LoadBalancerType": "clb",
                     "LoadBalancerVips": [
-                        "xx",
-                        "xx"
+                        "172.*.12.**"
                     ],
                     "AssetIpv6": [
-                        "xx",
-                        "xx"
+                        "6bb56a09278740bc80c5dc6dab783eff"
                     ],
-                    "SSHRisk": "xx",
-                    "RDPRisk": "xx",
-                    "EventRisk": "xx"
+                    "SSHRisk": "risk ssh",
+                    "RDPRisk": "risk rdb",
+                    "EventRisk": "risk event"
                 }
             ]
         },
@@ -67,90 +69,16 @@ Output:
                 "Type": "AssetRegionName",
                 "Bucket": [
                     {
-                        "Key": "华南地区(广州)",
-                        "Count": 305
-                    },
-                    {
-                        "Key": "华东地区(上海)",
-                        "Count": 43
-                    },
-                    {
-                        "Key": "东南亚地区(香港)",
-                        "Count": 30
-                    },
-                    {
-                        "Key": "华北地区(北京)",
-                        "Count": 26
-                    },
-                    {
-                        "Key": "西南地区(成都)",
-                        "Count": 21
-                    },
-                    {
-                        "Key": "",
-                        "Count": 20
-                    },
-                    {
-                        "Key": "东南亚地区(新加坡)",
-                        "Count": 9
-                    },
-                    {
-                        "Key": "美国西部(硅谷)",
-                        "Count": 9
-                    },
-                    {
-                        "Key": "欧洲地区(法兰克福)",
-                        "Count": 8
-                    },
-                    {
-                        "Key": "亚太地区(首尔)",
-                        "Count": 7
-                    },
-                    {
-                        "Key": "华南地区(深圳金融)",
-                        "Count": 5
-                    },
-                    {
-                        "Key": "亚太地区(东京)",
-                        "Count": 4
-                    },
-                    {
-                        "Key": "美国东部(弗吉尼亚)",
-                        "Count": 4
-                    },
-                    {
-                        "Key": "亚太地区(曼谷)",
-                        "Count": 3
-                    },
-                    {
-                        "Key": "亚太地区(孟买)",
-                        "Count": 2
-                    },
-                    {
-                        "Key": "北美地区(多伦多)",
-                        "Count": 2
-                    },
-                    {
-                        "Key": "欧洲地区(莫斯科)",
-                        "Count": 2
-                    },
-                    {
-                        "Key": "华南地区(广州Open)",
-                        "Count": 1
-                    },
-                    {
-                        "Key": "西南地区(重庆)",
-                        "Count": 1
+                        "Key": "guangzhou",
+                        "Count": 10
                     }
                 ]
             }
         ],
         "NamespaceData": [
-            "test12",
-            "testsoc",
-            "tstsec"
+            "sec"
         ],
-        "RequestId": "e1fea906-cdcc-44fa-aa26-3d9397a98a5c"
+        "RequestId": "3cbf2d8f-c40a-452a-92ec-140f9b2d29a2"
     }
 }
 ```

@@ -14,11 +14,11 @@ Output:
 ```
 {
     "Response": {
-        "Cert": "test",
+        "Cert": "certInfo",
         "CertType": "1",
-        "Cname": "",
+        "Cname": "test.cname",
         "Domain": "www.test1.com",
-        "DomainId": "",
+        "DomainId": "mjhkiuy10ma",
         "Engine": "1",
         "GrayAreas": [
             "n"
@@ -32,14 +32,14 @@ Output:
         "LoadBalance": "0",
         "Mode": "1",
         "Ports": [],
-        "PrivateKey": "xxxx",
+        "PrivateKey": "privatekeyvalue",
         "RequestId": "1548ac10-3e48-4cee-b71b-fc1071421761",
         "SrcList": [
             "1.1.1."
         ],
-        "Sslid": "",
+        "Sslid": "sslid",
         "Status": "2",
-        "UpstreamDomain": "",
+        "UpstreamDomain": "upstreamDomain",
         "UpstreamScheme": "http",
         "UpstreamType": "0",
         "Level": "200",

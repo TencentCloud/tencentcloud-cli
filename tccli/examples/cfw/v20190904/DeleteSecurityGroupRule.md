@@ -1,6 +1,6 @@
 **Example 1: 删除安全组规则**
 
-
+删除安全组规则
 
 Input: 
 
@@ -17,7 +17,7 @@ Output:
 {
     "Response": {
         "Status": 0,
-        "Info": "",
+        "Info": "success",
         "RequestId": "3c140219-cfe9-470e-b241-907877d6fb03"
     }
 }

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cwp CreateIncidentBacktracking --cli-unfold-argument  \
-    --Quuid quuid-xxxx-xxx-xxxx
+    --Quuid acdd5474-6360-4fd4-bfc7-843162cb8116
 ```
 
 Output: 

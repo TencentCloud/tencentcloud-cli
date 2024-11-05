@@ -5,7 +5,9 @@
 Input: 
 
 ```
-tccli cwp DeleteRiskDnsEvent --cli-unfold-argument ```
+tccli cwp DeleteRiskDnsEvent --cli-unfold-argument  \
+    --Ids 1002
+```
 
 Output: 
 ```

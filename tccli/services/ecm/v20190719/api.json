@@ -2832,7 +2832,7 @@
         },
         {
           "disabled": false,
-          "document": "在购买IPV6负载均衡实例的情况下，必须指定子网 ID, 此参数必填。",
+          "document": "在购买IPV6负载均衡实例的情况下，必须指定子网 ID, 此参数必填；IPv4实例不支持该参数。",
           "example": "subnet-dva8****",
           "member": "string",
           "name": "SubnetId",
@@ -2851,7 +2851,7 @@
           "example": "[\"lb-mov2697v\"]",
           "member": "string",
           "name": "LoadBalancerIds",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },

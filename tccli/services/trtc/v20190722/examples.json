@@ -554,14 +554,6 @@
         "title": "停止页面录制任务"
       }
     ],
-    "SummarizeTranscription": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SummarizeTranscription\n<公共请求参数>\n\n{\n    \"TaskId\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
-        "title": "样例"
-      }
-    ],
     "UpdateAIConversation": [
       {
         "document": "在对话过程中，想要动态更新tts的音色",

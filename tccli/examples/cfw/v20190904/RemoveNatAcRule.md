@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cfw RemoveNatAcRule --cli-unfold-argument  \
-    --RuleUuid 0 \
+    --RuleUuid 241996 \
     --Direction 1
 ```
 
@@ -15,9 +15,9 @@ Output:
 {
     "Response": {
         "RuleUuid": [
-            0
+            241996
         ],
-        "RequestId": "xx"
+        "RequestId": "896b6a81-26f9-47d6-97c5-9fa14a7cc883"
     }
 }
 ```

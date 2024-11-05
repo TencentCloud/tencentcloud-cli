@@ -36,7 +36,7 @@
       "status": "online"
     },
     "AssociateSecurityGroups": {
-      "document": "本接口 (AssociateSecurityGroups) 用于安全组批量绑定多个指定实例。",
+      "document": "本接口 (AssociateSecurityGroups) 用于将一个安全组绑定于一个或多个数据库实例。创建实例时，未配置安全组，建议通过该接口，绑定安全组。",
       "input": "AssociateSecurityGroupsRequest",
       "name": "绑定安全组",
       "output": "AssociateSecurityGroupsResponse",
@@ -498,7 +498,7 @@
       "status": "online"
     },
     "DescribeTaskList": {
-      "document": "本接口（DescribeTaskList）用于查询指定实例的任务列表信息。",
+      "document": "本接口（DescribeTaskList）用于查询指定实例的任务列表信息。\n\n- 可查询近30天内任务列表数据。",
       "input": "DescribeTaskListRequest",
       "name": "查询任务列表信息",
       "output": "DescribeTaskListResponse",
@@ -2244,7 +2244,7 @@
         },
         {
           "disabled": false,
-          "document": "安全组 ID 数组。请通过[DescribeInstanceSecurityGroup](https://cloud.tencent.com/document/product/239/34447)接口获取实例的安全组 ID。",
+          "document": "安全组 ID 数组。\n- 安全组是一种虚拟防火墙，对云数据库实例的网络访问进行控制。创建实例时，建议绑定相应的安全组。\n- 请通过 [DescribeInstanceSecurityGroup](https://cloud.tencent.com/document/product/239/34447) 接口获取实例的安全组 ID。",
           "example": "[\"sg-bmadczm1\"]",
           "member": "string",
           "name": "SecurityGroupIdList",
@@ -3580,7 +3580,7 @@
         },
         {
           "disabled": false,
-          "document": "开始时间，格式如：2017-02-08 16:46:34。查询实例在 [beginTime, endTime] 时间段内开始备份的备份列表。",
+          "document": "开始时间，格式如：2017-02-08 16:46:34。查询实例在 [beginTime, endTime] 时间段内开始备份的备份列表，查询时间最大跨度30天。",
           "example": "2017-02-08 16:46:34",
           "member": "string",
           "name": "BeginTime",
@@ -3589,7 +3589,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间，格式如：2017-02-08 19:09:26。查询实例在 [beginTime, endTime] 时间段内开始备份的备份列表。",
+          "document": "结束时间，格式如：2017-02-08 19:09:26。查询实例在 [beginTime, endTime] 时间段内开始备份的备份列表，查询时间最大跨度30天。",
           "example": "2017-02-08 19:09:26",
           "member": "string",
           "name": "EndTime",
@@ -3884,7 +3884,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "配置查询事件执行计划的起始日期。",
+          "document": "配置查询事件执行计划的起始日期，查询日期最大跨度30天。",
           "example": "2018-09-10",
           "member": "string",
           "name": "ExecutionStartDate",
@@ -3893,7 +3893,7 @@
         },
         {
           "disabled": false,
-          "document": "配置查询事件执行计划的结束日期。",
+          "document": "配置查询事件执行计划的结束日期，查询日期最大跨度30天。",
           "example": "2018-09-10",
           "member": "string",
           "name": "ExecutionEndDate",
@@ -3911,7 +3911,7 @@
         },
         {
           "disabled": false,
-          "document": "输出每页显示事件的数量，默认：10。",
+          "document": "输出每页显示事件的数量，默认：10，最大100。",
           "example": "10",
           "member": "int64",
           "name": "PageSize",
@@ -5585,7 +5585,7 @@
         },
         {
           "disabled": false,
-          "document": "慢查询的开始时间。",
+          "document": "慢查询的开始时间，查询时间最大跨度30天。",
           "example": "2021-02-23 11:06:01",
           "member": "string",
           "name": "BeginTime",
@@ -5594,7 +5594,7 @@
         },
         {
           "disabled": false,
-          "document": "慢查询的结束时间。",
+          "document": "慢查询的结束时间，查询时间最大跨度30天。",
           "example": "2021-02-23 11:08:01",
           "member": "string",
           "name": "EndTime",
@@ -5612,7 +5612,7 @@
         },
         {
           "disabled": false,
-          "document": "分页大小。默认为 20，取值范围[20,1000]。",
+          "document": "每页输出的任务列表大小，默认为 20，最多输出100条。",
           "example": "10",
           "member": "int64",
           "name": "Limit",
@@ -5621,7 +5621,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量，取Limit整数倍。",
+          "document": "分页偏移量，取Limit整数倍，计算公式：offset=limit*(页码-1)。",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -6071,7 +6071,7 @@
         },
         {
           "disabled": false,
-          "document": "预查询慢日志的起始时间。",
+          "document": "预查询慢日志的起始时间，查询时间最大跨度30天。",
           "example": "2019-09-08 12:12:41",
           "member": "string",
           "name": "BeginTime",
@@ -6080,7 +6080,7 @@
         },
         {
           "disabled": false,
-          "document": "预查询慢日志的结束时间。",
+          "document": "预查询慢日志的结束时间，查询时间最大跨度30天",
           "example": "2019-09-09 12:12:41",
           "member": "string",
           "name": "EndTime",
@@ -6098,7 +6098,7 @@
         },
         {
           "disabled": false,
-          "document": "每个页面展示的慢查询条数，默认值为20。取值范围：[20,1000]。",
+          "document": "每个页面展示的慢查询条数，默认值为20，最大100。",
           "example": "20",
           "member": "int64",
           "name": "Limit",
@@ -6299,7 +6299,7 @@
         },
         {
           "disabled": false,
-          "document": "任务执行的起始时间。格式如：2021-12-30 00:00:00。",
+          "document": "任务执行的起始时间，格式如：2021-12-30 00:00:00，支持查询近30天内数据。",
           "example": "2021-12-30 00:00:00",
           "member": "string",
           "name": "BeginTime",
@@ -6308,7 +6308,7 @@
         },
         {
           "disabled": false,
-          "document": "任务运行的终止时间。格式如：2021-12-30 20:59:35",
+          "document": "任务运行的终止时间。格式如：2021-12-30 20:59:35，支持查询近30天内数据。",
           "example": "2021-12-30 20:59:35",
           "member": "string",
           "name": "EndTime",
@@ -6400,7 +6400,7 @@
         },
         {
           "disabled": false,
-          "document": "开始时间：2019-09-08 12:12:41",
+          "document": "开始时间：2019-09-08 12:12:41，查询时间最大跨度30天。",
           "example": "2019-09-08 12:12:41",
           "member": "string",
           "name": "BeginTime",
@@ -6409,7 +6409,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间：2019-09-09 12:12:41",
+          "document": "结束时间：2019-09-09 12:12:41，查询时间最大跨度30天。",
           "example": "2019-09-09 12:12:41",
           "member": "string",
           "name": "EndTime",
@@ -6427,7 +6427,7 @@
         },
         {
           "disabled": false,
-          "document": "页面大小：默认20",
+          "document": "页面大小：默认20，最大100。",
           "example": "20",
           "member": "int64",
           "name": "Limit",
@@ -6436,7 +6436,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量，取Limit整数倍",
+          "document": "分页偏移量，取Limit整数倍。计算公式：offset=limit*(页码-1)。",
           "example": "0",
           "member": "int64",
           "name": "Offset",

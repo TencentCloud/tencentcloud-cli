@@ -6120,6 +6120,21 @@
       ],
       "usage": "out"
     },
+    "ImportImageDataDisk": {
+      "document": "导入镜像的数据盘信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据盘镜像 COS 链接",
+          "example": "https://import-img.cos.ap-guangzhou.myqcloud.com/import-img.vpc",
+          "member": "string",
+          "name": "ImageUrl",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
     "ImportImageRequest": {
       "document": "ImportImage请求参数结构体",
       "members": [
@@ -6230,6 +6245,15 @@
           "name": "ImageFamily",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "导入的数据盘列表",
+          "example": "[]",
+          "member": "ImportImageDataDisk",
+          "name": "ImportImageDataDiskList",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -8222,7 +8246,7 @@
         {
           "disabled": false,
           "document": "后续计价单元，后付费模式使用，可取值范围： <br><li>HOUR：表示计价单元是按每小时来计算。当前涉及该计价单元的场景有：实例按小时后付费（POSTPAID_BY_HOUR）、带宽按小时后付费（BANDWIDTH_POSTPAID_BY_HOUR）：</li><li>GB：表示计价单元是按每GB来计算。当前涉及该计价单元的场景有：流量按小时后付费（TRAFFIC_POSTPAID_BY_HOUR）。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "35.5",
+          "example": "HOUR",
           "member": "string",
           "name": "ChargeUnit",
           "output_required": false,
@@ -9856,7 +9880,7 @@
         {
           "disabled": false,
           "document": "实例所属的专用宿主机ID列表，仅用于入参。如果您有购买专用宿主机并且指定了该参数，则您购买的实例就会随机的部署在这些专用宿主机上。",
-          "example": "host-o5i742go",
+          "example": "[\"host-o5i742go\"]",
           "member": "string",
           "name": "HostIds",
           "output_required": true,
@@ -9878,7 +9902,7 @@
         {
           "disabled": false,
           "document": "实例所属的专用宿主机ID，仅用于出参。",
-          "example": "[\"host-o5i742go\"]",
+          "example": "host-o5i742go",
           "member": "string",
           "name": "HostId",
           "output_required": true,
@@ -12309,6 +12333,24 @@
           "name": "ImageSetRequired",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否复制为加密自定义镜像。\n默认值为 false。\n复制加密自定义镜像仅支持同地域。",
+          "example": "false",
+          "member": "bool",
+          "name": "Encrypt",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "加密自定义镜像使用的 KMS 密钥 ID。\n仅当复制加密镜像时，即 Encrypt 为 true 时，此参数有效；\n不指定 KmsKeyId，默认使用 CBS 云产品 KMS 密钥。",
+          "example": "2bb53791-c2e9-4c42-8772-ecf135a1d92x",
+          "member": "string",
+          "name": "KmsKeyId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

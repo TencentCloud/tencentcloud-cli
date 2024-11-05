@@ -17,16 +17,16 @@ Output:
         "TotalCount": 0,
         "List": [
             {
-                "IsIgnoreAll": 0,
-                "CVEID": "xx",
+                "CVEID": "CVE-2012-6329",
+                "IsIgnoreAll": 1,
+                "LocalImageCount": 0,
+                "PocID": "pcmgr-171244",
                 "RegistryImageCount": 0,
-                "VulName": "xx",
-                "UpdateTime": "xx",
-                "PocID": "xx",
-                "LocalImageCount": 0
+                "UpdateTime": "2024-05-21 16:56:04",
+                "VulName": "Perl 任意代码执行漏洞（CVE-2012-6329）"
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "8bc803fd-d85d-47b8-9e2b-9644674be677"
     }
 }
 ```

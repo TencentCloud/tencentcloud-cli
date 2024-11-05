@@ -13,10 +13,10 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "xxxxxxxxx",
+        "RequestId": "79b7b771-368d-44b7-b954-f0cceda748e2",
         "Status": {
             "LastStatus": 1,
-            "LastTime": "2021-09-22T15:04:05Z07:00",
+            "LastTime": "2021-09-22T15:04:05+08:00",
             "InProcess": true
         }
     }

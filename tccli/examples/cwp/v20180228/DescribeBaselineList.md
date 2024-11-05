@@ -22,14 +22,11 @@ Output:
                 "Level": 1,
                 "RuleCount": 11,
                 "HostCount": 12,
-                "Status": 0
-            },
-            {
-                "Name": "基线名2",
-                "Level": 1,
-                "RuleCount": 11,
-                "HostCount": 12,
-                "Status": 0
+                "Status": 0,
+                "CategoryId": 2,
+                "LastScanTime": "2024-11-04 03:43:26",
+                "MaxStatus": 2,
+                "BaselineFailCount": 29
             }
         ]
     }

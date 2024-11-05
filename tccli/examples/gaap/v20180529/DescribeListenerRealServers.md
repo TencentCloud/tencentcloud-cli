@@ -6,43 +6,41 @@ Input:
 
 ```
 tccli gaap DescribeListenerRealServers --cli-unfold-argument  \
-    --ListenerId listener-pbsgn7ej
+    --ListenerId listener-kmm7yf03
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "TotalCount": 1,
+        "TotalCount": 2,
         "RealServerSet": [
             {
                 "ProjectId": 1,
-                "RealServerId": "xx",
+                "RealServerId": "rs-lexkssm5",
                 "InBanBlacklist": 0,
-                "RealServerName": "xx",
-                "RealServerIP": "xx"
+                "RealServerName": "test1",
+                "RealServerIP": "192.168.1.3"
             },
             {
                 "ProjectId": 1,
-                "RealServerId": "xx",
+                "RealServerId": "rs-f0t1tigr",
                 "InBanBlacklist": 0,
-                "RealServerName": "xx",
-                "RealServerIP": "xx"
+                "RealServerName": "test2",
+                "RealServerIP": "192.168.1.2"
             }
         ],
         "BindRealServerTotalCount": 1,
-        "RequestId": "xx",
+        "RequestId": "dad2a717-3c7d-444d-8f98-0cca9c897ff3",
         "BindRealServerSet": [
             {
                 "RealServerStatus": 1,
                 "RealServerPort": 80,
-                "RealServerId": "xx",
-                "RealServerFailoverRole": "xx",
-                "DownIPList": [
-                    "1.1.1.1"
-                ],
-                "RealServerWeight": 0,
-                "RealServerIP": "xx"
+                "RealServerId": "rs-lexkssm5",
+                "RealServerFailoverRole": "",
+                "DownIPList": [],
+                "RealServerWeight": 1,
+                "RealServerIP": "192.168.1.3"
             }
         ]
     }

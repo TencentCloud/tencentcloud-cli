@@ -274,7 +274,7 @@
         {
           "disabled": false,
           "document": "用户AppId",
-          "example": "无",
+          "example": "1300448058",
           "member": "uint64",
           "name": "CurrentAppId",
           "required": true,
@@ -1983,25 +1983,25 @@
       "members": [
         {
           "disabled": false,
-          "document": "可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "可用区",
           "example": "chongqing1",
           "member": "string",
           "name": "Zone",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "可用区中文\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "可用区中文",
           "example": "重庆1区",
           "member": "string",
           "name": "ZoneName",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

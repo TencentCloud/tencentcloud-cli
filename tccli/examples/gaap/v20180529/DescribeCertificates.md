@@ -15,7 +15,7 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 19,
+        "TotalCount": 1,
         "RequestId": "35d85baa-eeb8-4eb5-96a9-b6d27f4ff92c",
         "CertificateSet": [
             {

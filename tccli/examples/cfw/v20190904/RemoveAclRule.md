@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cfw RemoveAclRule --cli-unfold-argument  \
-    --RuleUuid 0 \
+    --RuleUuid 100 \
     --Direction 1
 ```
 
@@ -15,9 +15,9 @@ Output:
 {
     "Response": {
         "RuleUuid": [
-            0
+            100
         ],
-        "RequestId": "abc"
+        "RequestId": "3cfe92c5-da49-411e-9254-559a295471e9"
     }
 }
 ```

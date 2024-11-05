@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cwp SetLocalStorageExpire --cli-unfold-argument  \
-    --Key xxx \
+    --Key key1 \
     --Expire 5
 ```
 

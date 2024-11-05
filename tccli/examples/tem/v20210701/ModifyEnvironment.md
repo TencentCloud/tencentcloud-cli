@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli tem ModifyEnvironment --cli-unfold-argument  \
-    --EnvironmentName xx \
-    --Description xx \
-    --EnvironmentId xx \
-    --SubnetIds xx \
+    --EnvironmentName name-xxx \
+    --Description 描述 \
+    --EnvironmentId en-xxxxxx \
+    --SubnetIds subnet-xxxxxx \
     --SourceChannel 0 \
-    --Vpc xx
+    --Vpc vpc-xxxxxx
 ```
 
 Output: 
@@ -19,7 +19,7 @@ Output:
 {
     "Response": {
         "Result": true,
-        "RequestId": "xx"
+        "RequestId": "xxx-xxx-xxx"
     }
 }
 ```

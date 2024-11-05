@@ -12,9 +12,9 @@ Output:
 {
     "Response": {
         "Data": [
-            "test",
-            "106.55.40.250",
-            "106.55.35.160"
+            "\"exec_start: bash -ec mysqladmin p****",
+            "test2",
+            "test3"
         ],
         "RequestId": "498e4cab-e95d-430b-bc4c-f5821bb278d4"
     }

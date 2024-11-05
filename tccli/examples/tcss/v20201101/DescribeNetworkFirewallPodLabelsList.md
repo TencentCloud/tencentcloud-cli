@@ -1,6 +1,6 @@
-**Example 1: 查询结果**
+**Example 1: 查询集群网络pod标签**
 
-
+查询集群网络pod标签
 
 Input: 
 
@@ -21,7 +21,8 @@ Output:
             {
                 "PodName": "hello",
                 "Namespace": "default",
-                "Labels": "new=test"
+                "Labels": "newlabel",
+                "WorkloadKind": "deployment"
             }
         ]
     }

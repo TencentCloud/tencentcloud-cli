@@ -6,16 +6,16 @@ Input:
 
 ```
 tccli cwp ExportAssetMachineDetail --cli-unfold-argument  \
-    --Quuid xx \
-    --Uuid xx
+    --Quuid 24c9be55-c743-4a75-a5c7-2a2912341234 \
+    --Uuid 24c9be55-c743-4a75-a5c7-2a2912341234
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "DownloadUrl": "xx",
-        "RequestId": "xx"
+        "DownloadUrl": "qq.com",
+        "RequestId": "24c9be55-c743-4a75-a5c7-2a2912341234"
     }
 }
 ```

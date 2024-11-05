@@ -31,7 +31,7 @@ Output:
         },
         "NumberMetrics": [
             {
-                "Number": "abc",
+                "Number": "0218888888",
                 "Metrics": {
                     "IvrCount": 0,
                     "QueueCount": 0,
@@ -61,7 +61,7 @@ Output:
                             "MaxAcceptDuration": 0,
                             "AvgAcceptDuration": 0
                         },
-                        "Name": "abc"
+                        "Name": "客服一组"
                     }
                 ]
             }

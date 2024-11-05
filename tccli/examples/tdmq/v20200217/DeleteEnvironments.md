@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tdmq DeleteEnvironments --cli-unfold-argument  \
-    --EnvironmentIds abc \
-    --ClusterId abc
+    --EnvironmentIds devNs \
+    --ClusterId pulsar-5r59xd4vnx
 ```
 
 Output: 

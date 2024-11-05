@@ -6,11 +6,14 @@ Input:
 
 ```
 tccli tem ModifyConfigData --cli-unfold-argument  \
-    --EnvironmentId xx \
-    --Data.0.Value xx \
-    --Data.0.Key xx \
-    --Name xx \
-    --SourceChannel 0
+    --EnvironmentId en-xxxxxx \
+    --Name abc \
+    --SourceChannel 0 \
+    --Data.0.Key abc \
+    --Data.0.Value abc \
+    --Data.0.Type abc \
+    --Data.0.Config abc \
+    --Data.0.Secret abc
 ```
 
 Output: 

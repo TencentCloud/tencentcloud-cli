@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cynosdb DisassociateSecurityGroups --cli-unfold-argument  \
-    --Zone ap-xxx \
-    --InstanceIds cynosdbmysql-xxxxxxxx \
+    --Zone ap-guangzhou-3 \
+    --InstanceIds cynosdbmysql-gsyw6snx \
     --SecurityGroupIds sg-ajr1jzgj
 ```
 

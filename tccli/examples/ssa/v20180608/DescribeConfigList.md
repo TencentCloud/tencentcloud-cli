@@ -5,9 +5,7 @@
 Input: 
 
 ```
-tccli ssa DescribeConfigList --cli-unfold-argument  \
-    --Filter test
-```
+tccli ssa DescribeConfigList --cli-unfold-argument ```
 
 Output: 
 ```
@@ -15,7 +13,7 @@ Output:
     "Response": {
         "Data": [
             {
-                "Id": "x",
+                "Id": "1",
                 "Name": "name",
                 "Type": "type",
                 "LastCheckTime": "2020-12-12 12:12:00",
@@ -24,7 +22,7 @@ Output:
                 "RiskCount": 100,
                 "IsChecked": 1,
                 "AssetTotal": 200,
-                "Remarks": "xx"
+                "Remarks": "remark info"
             }
         ],
         "RequestId": "cf8c69d7-0718-4a3e-a47e-450161359d50"

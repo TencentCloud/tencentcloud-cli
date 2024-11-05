@@ -7,8 +7,8 @@ Input:
 ```
 tccli cwp ModifyBaselineRuleIgnore --cli-unfold-argument  \
     --AssetType 0 \
-    --ItemIds 11 \
-    --RuleName test
+    --ItemIds 1002 \
+    --RuleName auto_173042751****
 ```
 
 Output: 

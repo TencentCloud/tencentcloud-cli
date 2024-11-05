@@ -13,41 +13,41 @@ Output:
     "Response": {
         "List": [
             {
-                "HostID": "abc",
-                "HostIP": "abc",
-                "HostName": "abc",
-                "Group": "abc",
-                "DockerVersion": "abc",
-                "DockerFileSystemDriver": "abc",
+                "HostID": "223e6323-1db6-42cf-8094-200916841684",
+                "HostIP": "10.0.0.11",
+                "HostName": "ins-1684ad1f2",
+                "Group": "staffs",
+                "DockerVersion": "1.0.0",
+                "DockerFileSystemDriver": "ZFS",
                 "ImageCnt": 1,
                 "ContainerCnt": 1,
-                "Status": "abc",
+                "Status": "ONLINE",
                 "IsContainerd": true,
-                "MachineType": "abc",
-                "PublicIp": "abc",
-                "Uuid": "abc",
-                "InstanceID": "abc",
-                "RegionID": 0,
+                "MachineType": "CVM",
+                "PublicIp": "112.46.12.11",
+                "Uuid": "223e6323-1db6-42cf-8094-200916841684",
+                "InstanceID": "ins-1684ad1f2",
+                "RegionID": 1,
                 "Project": {
-                    "ProjectName": "abc",
+                    "ProjectName": "ap-beijing",
                     "ProjectID": 0
                 },
                 "Tags": [
                     {
-                        "TagKey": "abc",
-                        "TagValue": "abc"
+                        "TagKey": "adone",
+                        "TagValue": "mark"
                     }
                 ],
-                "ClusterID": "abc",
-                "ClusterName": "abc",
-                "ClusterAccessedStatus": "abc",
+                "ClusterID": "csbd-cawfdfafd",
+                "ClusterName": "cls-test1",
+                "ClusterAccessedStatus": "1",
                 "ChargeCoresCnt": 1,
-                "DefendStatus": "abc",
+                "DefendStatus": "running",
                 "CoresCnt": 1
             }
         ],
         "TotalCount": 1,
-        "RequestId": "abc"
+        "RequestId": "dc56fda9-58c8-4c4f-9e8c-b7296836c1fe"
     }
 }
 ```

@@ -12,9 +12,9 @@ Output:
 {
     "Response": {
         "TaskId": 1,
-        "TaskStatus": "abc",
-        "NewTaskID": "abc",
-        "RequestId": "abc"
+        "TaskStatus": "AssetCheckFinished",
+        "NewTaskID": "1700157600010579384",
+        "RequestId": "f249013b-c9ca-444c-8430-2f97a422859a"
     }
 }
 ```

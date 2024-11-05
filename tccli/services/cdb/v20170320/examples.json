@@ -20,7 +20,7 @@
       {
         "document": "调整数据库代理地址",
         "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AdjustCdbProxyAddress\n<公共请求参数>\n\n{\n    \"ProxyGroupId\": \"proxy-il2nlsdn\",\n    \"ProxyAddressId\": \"proxy-il2nlsdn\",\n    \"IsKickOut\": true,\n    \"MinCount\": 1,\n    \"MaxDelay\": 10,\n    \"WeightMode\": \"custom\",\n    \"FailOver\": true,\n    \"AutoAddRo\": true,\n    \"ReadOnly\": false,\n    \"TransSplit\": false,\n    \"ConnectionPool\": true,\n    \"ProxyAllocation\": [\n        {\n            \"Region\": \"ap-guangzhou\",\n            \"Zone\": \"ap-guangzhou-2\",\n            \"ProxyInstance\": [\n                {\n                    \"InstanceId\": \"cdb-aykuksx3\",\n                    \"Weight\": 100\n                }\n            ]\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"111-1314-333-2321212\",\n        \"AsyncRequestId\": \"test\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"111-1314-333-2321212\",\n        \"AsyncRequestId\": \"1312\"\n    }\n}",
         "title": "调整数据库代理地址"
       }
     ],
@@ -984,14 +984,6 @@
         "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DisassociateSecurityGroups\n<公共请求参数>\n\n{\n    \"SecurityGroupId\": \"sg-ajr1jzgj\",\n    \"InstanceIds\": [\n        \"cdb-eb2w7dto\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1a42feb9-82087f71-6a0031ac-699a92a8\"\n    }\n}",
         "title": "安全组批量解绑云资源"
-      }
-    ],
-    "InitDBInstances": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InitDBInstances\n<公共请求参数>\n\n{\n    \"NewPassword\": \"xx\",\n    \"Vport\": 0,\n    \"Parameters\": [\n        {\n            \"Name\": \"lower_case_table_names\",\n            \"Value\": \"1\"\n        },\n        {\n            \"Name\": \"character_set_server\",\n            \"Value\": \"utf8\"\n        }\n    ],\n    \"InstanceIds\": [\n        \"cdb-f35wr6wj\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"AsyncRequestIds\": [\n            \"8cd119d4-61ba-11e7-aeff-018cfa1f5560\"\n        ]\n    }\n}",
-        "title": "初始化新实例"
       }
     ],
     "InquiryPriceUpgradeInstances": [

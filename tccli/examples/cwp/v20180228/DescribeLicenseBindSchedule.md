@@ -20,7 +20,16 @@ Output:
             {
                 "Quuid": "xxx-xxxx-xxxx-xxx",
                 "Status": 1,
-                "ErrMsg": ""
+                "ErrMsg": "succ",
+                "FixMessage": "no need",
+                "MachineExtraInfo": {
+                    "WanIP": "110.84.0.11",
+                    "PrivateIP": "10.0.0.11",
+                    "NetworkType": 0,
+                    "NetworkName": "vpc-12341234",
+                    "InstanceID": "ins-aj28fjz",
+                    "HostName": "test-name"
+                }
             }
         ]
     }
