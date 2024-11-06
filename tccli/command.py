@@ -1,5 +1,4 @@
 # -*- coding:utf-8 -*-
-import json
 import os
 import sys
 import copy
@@ -8,7 +7,6 @@ import tccli.options_define as Options_define
 from collections import OrderedDict
 
 from tccli import oauth
-from tccli.oauth import cred_path_of_profile
 from tccli.utils import Utils
 from tccli.argument import CLIArgument, CustomArgument, ListArgument, BooleanArgument
 from tccli.exceptions import UnknownArgumentError
