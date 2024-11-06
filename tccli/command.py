@@ -293,7 +293,6 @@ class ActionCommand(BaseCommand):
         else:
             action_parameters = self._build_action_parameters(parsed_args, self.argument_map)
         oauth.maybe_refresh_credential(parsed_globals.profile if parsed_globals.profile else "default")
-        self.refresh_use_cvm_role(parsed_globals)
         return self._action_caller(action_parameters, vars(parsed_globals))
 
     def create_help_command(self):
@@ -328,18 +327,3 @@ class ActionCommand(BaseCommand):
     def _create_action_parser(self, argument_map):
         parser = ArgMapArgParser(argument_map)
         return parser
-
-    def refresh_use_cvm_role(self, parsed_globals):
-        profile = parsed_globals.profile if parsed_globals.profile else "default"
-        cred_path = cred_path_of_profile(profile)
-        try:
-            with open(cred_path, "r") as cred_file:
-                cred = json.load(cred_file)
-        except IOError:
-            # file not found, don't check
-            return
-        if Options_define.UseCVMRole in cred:
-            if isinstance(cred[Options_define.UseCVMRole], bool):
-                parsed_globals.use_cvm_role = cred[Options_define.UseCVMRole]
-            else:
-                raise ValueError("UseCVMRole in credential file(%s) is not a bool value" % cred_path)
