@@ -5404,7 +5404,7 @@ def parse_global_arg(parsed_globals):
             if parsed_globals[param] is not None:
                 cvm_role_flag = False
                 break
-        if param in OptionsDefine.UseCVMRole.replace('-', '_'):
+        if param == OptionsDefine.UseCVMRole.replace('-', '_'):
             if parsed_globals[param] is True:
                 cvm_role_flag = False
                 break
