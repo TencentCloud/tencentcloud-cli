@@ -735,7 +735,7 @@
         {
           "disabled": false,
           "document": "为正数表示实例距离过期时间剩余秒数，为负数表示实例已经过期多少秒",
-          "example": "123",
+          "example": "20",
           "member": "int64",
           "name": "RemainSeconds",
           "output_required": true,
@@ -886,13 +886,13 @@
         },
         {
           "disabled": false,
-          "document": "资源信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源信息",
           "example": "[       {         \"AlarmStatus\": 0,         \"CreateUin\": \"100000007998\",         \"ExpireTime\": 1722255890,         \"Expired\": true,         \"Manufacturer\": \"TASS\",         \"Model\": \"SJJ1528\",         \"RegionId\": 1,         \"RegionName\": \"广州\",         \"RemainSeconds\": -8197142,         \"RenewFlag\": 1,         \"ResourceId\": \"hsm-r19rq1b0\",         \"ResourceName\": \"default-hsmName\",         \"SgList\": [           {             \"CreateTime\": \"2024-02-02 16:53:18\",             \"SgId\": \"sg-6tjv5yxb\",             \"SgName\": \"default\",             \"SgRemark\": \"System created security group\"           }         ]",
           "member": "ResourceInfo",
           "name": "VsmList",
-          "output_required": true,
+          "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1448,13 +1448,13 @@
         },
         {
           "disabled": false,
-          "document": "实例的安全组列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例的安全组列表",
           "example": "[           {             \"CreateTime\": \"2023-06-05 10:59:39\",             \"SgId\": \"sg-f51mj0kl\",             \"SgName\": \"casb-proxy-2023060510592885829\",             \"SgRemark\": \"自定义\"           }         ]",
           "member": "SgUnit",
           "name": "SgList",
-          "output_required": true,
+          "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1518,13 +1518,13 @@
         },
         {
           "disabled": false,
-          "document": "标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标签列表",
           "example": "[           {             \"TagKey\": \"运营部门\",             \"TagValue\": \"测试\"           }         ]",
           "member": "Tag",
           "name": "Tags",
-          "output_required": true,
+          "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1759,7 +1759,7 @@
         {
           "disabled": false,
           "document": "安全组id代表的地址集合",
-          "example": "\"\"",
+          "example": "\"sg-id\"",
           "member": "string",
           "name": "Id",
           "output_required": false,
@@ -1769,7 +1769,7 @@
         {
           "disabled": false,
           "document": "地址组id代表的地址集合",
-          "example": "\"\"",
+          "example": "\"addr-id\"",
           "member": "string",
           "name": "AddressModule",
           "output_required": false,
@@ -1799,7 +1799,7 @@
         {
           "disabled": false,
           "document": "服务组id代表的协议和端口集合",
-          "example": "\"\"",
+          "example": "\"svc-id\"",
           "member": "string",
           "name": "ServiceModule",
           "output_required": false,

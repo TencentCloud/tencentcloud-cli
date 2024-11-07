@@ -6,17 +6,17 @@ Input:
 
 ```
 tccli tdmq CreateEnvironmentRole --cli-unfold-argument  \
-    --EnvironmentId abc \
-    --RoleName abc \
-    --Permissions abc \
-    --ClusterId abc
+    --EnvironmentId devDemo \
+    --RoleName role1 \
+    --Permissions produce \
+    --ClusterId pulsar-xk3ne8k2qkp8
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "gggxxxx"
+        "RequestId": "1004f1de-6fb8-41d5-965e-3aae8c87183a"
     }
 }
 ```

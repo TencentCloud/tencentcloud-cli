@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli dasb SearchCommandBySid --cli-unfold-argument  \
-    --Sid 123
+    --Sid dfac9070-8b23-499e-83b2-a50e3ca0
 ```
 
 Output: 
@@ -14,15 +14,8 @@ Output:
 {
     "Response": {
         "TotalCount": 1,
-        "RequestId": "abc123",
-        "CommandSet": [
-            {
-                "TimeOffset": 1,
-                "Action": 0,
-                "Cmd": "rm",
-                "Time": "2023-04-23T14:24:39+0800"
-            }
-        ]
+        "RequestId": "dfac9070-8b23-499e-83b2-a50e3ca059af",
+        "CommandSet": []
     }
 }
 ```

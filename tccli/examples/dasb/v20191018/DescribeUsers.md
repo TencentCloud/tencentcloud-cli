@@ -14,13 +14,13 @@ Output:
         "TotalCount": 1,
         "UserSet": [
             {
-                "UserName": "jassls",
+                "UserName": "zhangsan",
                 "AuthType": 1,
                 "ValidateTo": "2020-09-22T00:00:00+00:00",
-                "RealName": "张宏宇",
+                "RealName": "张三",
                 "ValidateTime": "2020-09-23T00:00:00+00:00",
-                "Email": "xxx@tencent.com",
-                "Phone": "+86|13500000001",
+                "Email": "xxx@qq.com",
+                "Phone": "+86|135**11",
                 "GroupSet": [
                     {
                         "Department": {
@@ -43,7 +43,8 @@ Output:
                     "Name": "研发部"
                 },
                 "ValidateFrom": "2020-09-22T00:00:00+00:00",
-                "Id": 1
+                "Id": 1,
+                "DepartmentId": "1.2"
             }
         ],
         "RequestId": "cf839eee-b651-4ff3-9b49-173f9f55733f"
@@ -60,7 +61,7 @@ Input:
 ```
 tccli dasb DescribeUsers --cli-unfold-argument  \
     --AuthorizedDeviceIdSet 63 64 82 100 \
-    --Name zhanghongyu
+    --Name zhangsan
 ```
 
 Output: 
@@ -70,13 +71,13 @@ Output:
         "TotalCount": 1,
         "UserSet": [
             {
-                "UserName": "jassls",
+                "UserName": "zhangsan",
                 "AuthType": 1,
                 "ValidateTo": "2020-09-22T00:00:00+00:00",
-                "RealName": "张宏宇",
+                "RealName": "张三",
                 "ValidateTime": "2020-09-23T00:00:00+00:00",
                 "Email": "xxx@tencent.com",
-                "Phone": "+86|13500000001",
+                "Phone": "+86|135**11",
                 "GroupSet": [
                     {
                         "Department": {
@@ -99,7 +100,8 @@ Output:
                     "Name": "研发部"
                 },
                 "ValidateFrom": "2020-09-22T00:00:00+00:00",
-                "Id": 1
+                "Id": 1,
+                "DepartmentId": "1.2"
             }
         ],
         "RequestId": "cf839eee-b651-4ff3-9b49-173f9f55733f"

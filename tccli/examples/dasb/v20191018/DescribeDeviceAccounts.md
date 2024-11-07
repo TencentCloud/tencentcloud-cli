@@ -7,7 +7,7 @@ Input:
 ```
 tccli dasb DescribeDeviceAccounts --cli-unfold-argument  \
     --DeviceId 1 \
-    --Account xx
+    --Account root
 ```
 
 Output: 
@@ -15,11 +15,11 @@ Output:
 {
     "Response": {
         "TotalCount": 1,
-        "RequestId": "xx",
+        "RequestId": "79b7b771-368d-44b7-b954-f0cceda748e2",
         "DeviceAccountSet": [
             {
                 "BoundPrivateKey": true,
-                "Account": "xx",
+                "Account": "root",
                 "Id": 1,
                 "BoundPassword": true,
                 "DeviceId": 1

@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli dasb AccessDevice --cli-unfold-argument  \
-    --ResourceId bh-saas-xxxxxxxx \
-    --InstanceId ins-xxxxxxxx \
+    --ResourceId bh-saas-1a2b3d \
+    --InstanceId ins-1a2b3d \
     --Account root \
-    --Password  \
-    --PrivateKey  \
-    --PrivateKeyPassword  \
+    --Password pwd \
+    --PrivateKey test-key \
+    --PrivateKeyPassword test-key-pwd \
     --Protocol SSH
 ```
 

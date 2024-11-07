@@ -6,27 +6,27 @@ Input:
 
 ```
 tccli tdmq CreateRole --cli-unfold-argument  \
-    --RoleName abc \
-    --Remark abc \
-    --ClusterId abc
+    --RoleName devName \
+    --Remark devRemark \
+    --ClusterId pulsar-xk3ne8k2qkp8
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RoleName": "abc",
-        "Token": "abc",
-        "Remark": "abc",
+        "RoleName": "devName",
+        "Token": "ajdsaiuasdnmasllamm",
+        "Remark": "devRemark",
         "EnvironmentRoleSets": [
             {
-                "EnvironmentId": "abc",
+                "EnvironmentId": "devNs",
                 "Permissions": [
-                    "abc"
+                    "produce"
                 ]
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "1004f1de-6fb8-41d5-965e-3aae8c87183a"
     }
 }
 ```

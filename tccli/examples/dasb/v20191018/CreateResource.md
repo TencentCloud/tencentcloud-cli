@@ -8,8 +8,8 @@ Input:
 tccli dasb CreateResource --cli-unfold-argument  \
     --DeployRegion ap-guanghzou \
     --DeployZone ap-guangzhou-1 \
-    --VpcId vpc-xxxxxxxx \
-    --SubnetId subnet-xxxxxxxx \
+    --VpcId vpc-1n3n4m \
+    --SubnetId subnet-9jy1b \
     --ResourceEdition free \
     --ResourceNode 2 \
     --TimeUnit m \
@@ -22,7 +22,7 @@ Output:
 ```
 {
     "Response": {
-        "ResourceId": "bh-saas-xxxxxxxx",
+        "ResourceId": "bh-saas-resource",
         "RequestId": "ffb59145-70f9-45e6-99be-fc0a8db82f45"
     }
 }

@@ -34,8 +34,8 @@ Output:
                 "Username": "root",
                 "AccountID": 100004293724,
                 "Location": "中国 广东省 深圳市 中国电信",
-                "ResourceTypeCn": "云审计",
-                "EventNameCn": "创建云审计跟踪集",
+                "ResourceTypeCn": "操作审计",
+                "EventNameCn": "创建操作审计跟踪集",
                 "ResourceRegion": ""
             }
         ],

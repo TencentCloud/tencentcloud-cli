@@ -1,3 +1,409 @@
+# Release 3.0.1093.1
+
+## 商业智能分析 BI(bi) 版本：2022-01-05
+
+### 第 19 次发布
+
+发布时间：2024-11-08 01:12:46
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateEmbedToken](http://document.tencentcloudapi.woa.com/document/product/1707/80322)
+
+	* 新增入参：TokenType, TokenNum
+
+
+修改数据结构：
+
+* [EmbedTokenInfo](http://document.tencentcloudapi.woa.com/document/product/1707/80324#EmbedTokenInfo)
+
+	* 新增成员：TokenType, TokenNum, SingleUserMultiToken
+
+
+
+
+## 费用中心(billing) 版本：2018-07-09
+
+### 第 70 次发布
+
+发布时间：2024-11-08 01:13:06
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeAllocationMonthOverview](http://document.tencentcloudapi.woa.com/document/product/555/83408)
+
+	* 新增入参：BillType
+
+
+
+
+## 混沌演练平台(cfg) 版本：2021-08-20
+
+### 第 16 次发布
+
+发布时间：2024-11-08 01:21:16
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [TaskGroupAction](http://document.tencentcloudapi.woa.com/document/product/1694/79907#TaskGroupAction)
+
+	* 新增成员：TaskGroupActionStartTime
+
+
+
+
+## 操作审计(cloudaudit) 版本：2019-03-19
+
+### 第 10 次发布
+
+发布时间：2024-11-08 01:24:59
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [LookUpEvents](http://document.tencentcloudapi.woa.com/document/product/629/35344)
+
+	* 新增出参：TotalCount
+
+
+
+
+## 日志服务(cls) 版本：2020-10-16
+
+### 第 93 次发布
+
+发布时间：2024-11-08 01:25:46
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DataTransformTaskInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#DataTransformTaskInfo)
+
+	* 新增成员：KeepFailureLog, FailureLogKey
+
+
+
+
+## 运维安全中心（堡垒机）(dasb) 版本：2019-10-18
+
+### 第 36 次发布
+
+发布时间：2024-11-08 01:34:11
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ChangePwdTaskDetail](http://document.tencentcloudapi.woa.com/document/product/1492/74806#ChangePwdTaskDetail)
+
+	* <font color="#dd0000">**修改成员**：</font>Device, Account, LastChangeStatus
+
+* [ChangePwdTaskInfo](http://document.tencentcloudapi.woa.com/document/product/1492/74806#ChangePwdTaskInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>Id, OperationId, TaskName, Department, ChangeMethod, RunAccount, AuthGenerationStrategy, PasswordLength, SmallLetter, BigLetter, Digit, Symbol, CompleteNotify, NotifyEmails, FilePassword, AccountSet, DeviceSet, Type, Period, FirstTime, NextTime
+
+
+
+
+## TDSQL MySQL 版(dcdb) 版本：2018-04-11
+
+### 第 49 次发布
+
+发布时间：2024-11-08 01:36:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateOnlineDDLJob](http://document.tencentcloudapi.woa.com/document/product/557/85188)
+
+
+
+## 智能视图计算平台(iss) 版本：2023-05-17
+
+### 第 24 次发布
+
+发布时间：2024-11-08 01:54:35
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeRecordPlaybackUrl](http://document.tencentcloudapi.woa.com/document/product/1740/81553)
+
+	* 新增入参：CorrectTimestamp
+
+
+
+
+## 集团账号管理(organization) 版本：2021-03-31
+
+### 第 46 次发布
+
+发布时间：2024-11-08 02:04:08
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [AddPermissionPolicyToRoleConfiguration](http://document.tencentcloudapi.woa.com/document/product/850/84613)
+
+	* 新增入参：CustomPolicyDocuments
+
+
+
+
+## 集团账号管理(organization) 版本：2018-12-25
+
+
+
+## 私有域解析 Private DNS(privatedns) 版本：2020-10-28
+
+### 第 20 次发布
+
+发布时间：2024-11-08 02:06:13
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DeleteForwardRule](http://document.tencentcloudapi.woa.com/document/product/1338/85192)
+* [DescribeEndPointRegion](http://document.tencentcloudapi.woa.com/document/product/1338/85191)
+* [DescribeForwardRule](http://document.tencentcloudapi.woa.com/document/product/1338/85190)
+* [ModifyForwardRule](http://document.tencentcloudapi.woa.com/document/product/1338/85189)
+
+新增数据结构：
+
+* [RegionInfo](http://document.tencentcloudapi.woa.com/document/product/1338/55947#RegionInfo)
+
+
+
+## 腾讯觅影开放实验平台(taop) 版本：2020-11-09
+
+### 第 5 次发布
+
+发布时间：2024-11-08 02:12:50
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ReceiveAIMarkNotice](http://document.tencentcloudapi.woa.com/document/product/1673/79439)
+
+	* 新增入参：Source, TaskList, StartTime, EndTime, ReqId
+
+
+新增数据结构：
+
+* [TaskMark](http://document.tencentcloudapi.woa.com/document/product/1673/82875#TaskMark)
+
+修改数据结构：
+
+* [ProjectInfo](http://document.tencentcloudapi.woa.com/document/product/1673/82875#ProjectInfo)
+
+	* 新增成员：BeSharedUserId, CopySourceProjectId, RefSourceProjectId
+
+
+
+
+## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+
+### 第 118 次发布
+
+发布时间：2024-11-08 02:17:55
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [SecurityPolicy](http://document.tencentcloudapi.woa.com/document/product/1179/46089#SecurityPolicy)
+
+修改数据结构：
+
+* [InstanceNodeDistribution](http://document.tencentcloudapi.woa.com/document/product/1179/46089#InstanceNodeDistribution)
+
+	* 新增成员：NodePermWipeFlag
+
+* [PulsarNetworkAccessPointInfo](http://document.tencentcloudapi.woa.com/document/product/1179/46089#PulsarNetworkAccessPointInfo)
+
+	* 新增成员：Bandwidth, SecurityPolicy, StandardAccessPoint, ZoneName
+
+* [PulsarProClusterInfo](http://document.tencentcloudapi.woa.com/document/product/1179/46089#PulsarProClusterInfo)
+
+	* 新增成员：AutoCreateTopicStatus, DefaultPartitionNumber
+
+
+
+
+## 容器服务(tke) 版本：2022-05-01
+
+### 第 6 次发布
+
+发布时间：2024-11-08 02:22:44
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [CreateNativeNodePoolParam](http://document.tencentcloudapi.woa.com/document/product/457/74869#CreateNativeNodePoolParam)
+
+	* 新增成员：MachineType
+
+* [NativeNodePoolInfo](http://document.tencentcloudapi.woa.com/document/product/457/74869#NativeNodePoolInfo)
+
+	* 新增成员：MachineType
+
+
+
+
+## 容器服务(tke) 版本：2018-05-25
+
+
+
+## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
+
+### 第 70 次发布
+
+发布时间：2024-11-08 02:32:26
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeInstanceLogDetail](http://document.tencentcloudapi.woa.com/document/product/1607/81341)
+
+	* 新增入参：LogLevelType, ExecutionFileType, ExecutionJobId, ExtInfo, RequestFromSource
+
+	* <font color="#dd0000">**修改入参**：</font>BrokerIp, OriginFileName
+
+* [DescribeInstanceLogFile](http://document.tencentcloudapi.woa.com/document/product/1607/81314)
+
+	* 新增入参：RequestFromSource, ExecutionJobId, LogLevelType, ExecutionFileType
+
+	* <font color="#dd0000">**修改入参**：</font>BrokerIp, OriginFileName
+
+* [DescribeOrganizationalFunctions](http://document.tencentcloudapi.woa.com/document/product/1607/77701)
+
+	* <font color="#dd0000">**修改入参**：</font>Filters, OrderFields
+
+* [DescribeScheduleInstances](http://document.tencentcloudapi.woa.com/document/product/1607/81305)
+
+	* 新增入参：RequestFromSource, ProjectIds
+
+	* 新增出参：RequestFromSource
+
+* [GetCosToken](http://document.tencentcloudapi.woa.com/document/product/1607/83095)
+
+	* 新增入参：RemoteRegion
+
+* [RenewWorkflowSchedulerInfoDs](http://document.tencentcloudapi.woa.com/document/product/1607/83020)
+
+	* 新增入参：ModifyCycleValue, CalendarOpen, CalendarName, CalendarId
+
+
+新增数据结构：
+
+* [GovDatasourceInfo](http://document.tencentcloudapi.woa.com/document/product/1607/77747#GovDatasourceInfo)
+
+修改数据结构：
+
+* [DatabaseMeta](http://document.tencentcloudapi.woa.com/document/product/1607/77747#DatabaseMeta)
+
+	* 新增成员：TableCount, DatasourceList, CollectJobId, CollectJobName, ClusterId, ClusterName
+
+* [InstanceApiOpsRequest](http://document.tencentcloudapi.woa.com/document/product/1607/77747#InstanceApiOpsRequest)
+
+	* 新增成员：OnlyRerun
+
+* [InstanceLifeCycleOpsDto](http://document.tencentcloudapi.woa.com/document/product/1607/77747#InstanceLifeCycleOpsDto)
+
+	* 新增成员：ScheduleRunType, ExecutionJobId, InstanceRunType
+
+* [InstanceLogInfo](http://document.tencentcloudapi.woa.com/document/product/1607/77747#InstanceLogInfo)
+
+	* 新增成员：ExecutionJobId
+
+* [InstanceLogInfoOpsDto](http://document.tencentcloudapi.woa.com/document/product/1607/77747#InstanceLogInfoOpsDto)
+
+	* 新增成员：ExtInfo, IsEnd, FileSize
+
+* [InstanceOpsDto](http://document.tencentcloudapi.woa.com/document/product/1607/77747#InstanceOpsDto)
+
+	* 新增成员：ConcurrentStrategy, ScheduleRunType
+
+* [OrganizationalFunction](http://document.tencentcloudapi.woa.com/document/product/1607/77747#OrganizationalFunction)
+
+	* 新增成员：FunctionResourceFileType
+
+* [ProjectUserRole](http://document.tencentcloudapi.woa.com/document/product/1607/77747#ProjectUserRole)
+
+	* 新增成员：PhoneNum, Email, OwnerUin, AppId
+
+	* <font color="#dd0000">**修改成员**：</font>DisplayName, IsProjectAdmin
+
+* [Rule](http://document.tencentcloudapi.woa.com/document/product/1607/77747#Rule)
+
+	* 新增成员：ProjectId, ProjectName
+
+* [RuleExecResult](http://document.tencentcloudapi.woa.com/document/product/1607/77747#RuleExecResult)
+
+	* 新增成员：TriggerCondition
+
+* [RuleGroupExecResult](http://document.tencentcloudapi.woa.com/document/product/1607/77747#RuleGroupExecResult)
+
+	* 新增成员：ProjectId, ProjectName, InstanceStatus, StartTime, FinishTime
+
+* [SystemRole](http://document.tencentcloudapi.woa.com/document/product/1607/77747#SystemRole)
+
+	* <font color="#dd0000">**修改成员**：</font>RoleType, SystemInit, Params
+
+* [TableMeta](http://document.tencentcloudapi.woa.com/document/product/1607/77747#TableMeta)
+
+	* 新增成员：CollectDatasourceList, CollectJobId, CollectJobName, Urn, HasBizPermission
+
+* [WorkflowScheduleDtoDs](http://document.tencentcloudapi.woa.com/document/product/1607/77747#WorkflowScheduleDtoDs)
+
+	* 新增成员：CalendarOpen, CalendarName, CalendarId
+
+
+
+
 # Release 3.0.1092.1
 
 ## 费用中心(billing) 版本：2018-07-09

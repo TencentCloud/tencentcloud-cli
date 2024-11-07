@@ -6,16 +6,16 @@ Input:
 
 ```
 tccli tdmq DescribeSubscriptions --cli-unfold-argument  \
-    --EnvironmentId abc \
-    --TopicName abc \
-    --Offset 1 \
+    --EnvironmentId devNamespace \
+    --TopicName devTopic \
+    --Offset 0 \
     --Limit 1 \
-    --SubscriptionName abc \
+    --SubscriptionName devSub \
     --Filters.0.ConsumerHasCount True \
     --Filters.0.ConsumerHasBacklog True \
     --Filters.0.ConsumerHasExpired True \
-    --Filters.0.SubscriptionNames abc \
-    --ClusterId abc
+    --Filters.0.SubscriptionNames devSub \
+    --ClusterId pulsar-b843bz38z5mz
 ```
 
 Output: 
@@ -25,8 +25,8 @@ Output:
         "TotalCount": 1,
         "SubscriptionSets": [
             {
-                "EnvironmentId": "test1",
-                "TopicName": "test",
+                "EnvironmentId": "devNamespace",
+                "TopicName": "devTopic",
                 "ConnectedSince": "",
                 "ConsumerAddr": "",
                 "ConsumerCount": "6",
@@ -34,7 +34,7 @@ Output:
                 "MsgBacklog": "1087",
                 "MsgRateExpired": "0.0",
                 "MsgRateOut": "0.0",
-                "SubType": "abc",
+                "SubType": null,
                 "MsgThroughputOut": "0.0",
                 "SubscriptionName": "test",
                 "BlockedSubscriptionOnUnackedMsgs": true,
@@ -48,36 +48,42 @@ Output:
                         "ConnectedSince": "2021-01-13T15:19:21.03+08:00",
                         "ConsumerAddr": "/9.219.234.200:9056",
                         "ConsumerName": "axjoy",
+                        "Partition": 4,
                         "ClientVersion": ""
                     },
                     {
                         "ConnectedSince": "2021-01-13T15:22:20.197+08:00",
                         "ConsumerAddr": "/9.219.234.202:6374",
                         "ConsumerName": "dkhtb",
+                        "Partition": 4,
                         "ClientVersion": ""
                     },
                     {
                         "ConnectedSince": "2021-01-13T15:22:50.282+08:00",
                         "ConsumerAddr": "/9.219.237.139:57322",
                         "ConsumerName": "ejbij",
+                        "Partition": 4,
                         "ClientVersion": ""
                     },
                     {
                         "ConnectedSince": "2021-01-13T15:18:50.927+08:00",
                         "ConsumerAddr": "/9.219.233.137:62564",
                         "ConsumerName": "hijsf",
+                        "Partition": 4,
                         "ClientVersion": ""
                     },
                     {
                         "ConnectedSince": "2021-01-13T15:21:50.227+08:00",
                         "ConsumerAddr": "/9.219.234.202:11554",
                         "ConsumerName": "nbcra",
+                        "Partition": 4,
                         "ClientVersion": ""
                     },
                     {
                         "ConnectedSince": "2021-01-13T15:19:51.032+08:00",
                         "ConsumerAddr": "/9.219.232.202:19345",
                         "ConsumerName": "vjmts",
+                        "Partition": 4,
                         "ClientVersion": ""
                     }
                 ],

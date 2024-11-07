@@ -42,7 +42,7 @@ Output:
                 "Department": {
                     "Id": "1.3.14",
                     "Name": "云鼎实验室",
-                    "Managers": null
+                    "Managers": []
                 }
             }
         ],
@@ -99,7 +99,7 @@ Output:
                 "Department": {
                     "Id": "1.3.14",
                     "Name": "云鼎实验室",
-                    "Managers": null
+                    "Managers": []
                 }
             }
         ],

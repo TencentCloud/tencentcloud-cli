@@ -49,162 +49,162 @@
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "",
+          "example": "cds-21qwsd",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "用户AppId",
-          "example": "",
+          "example": "128494984",
           "member": "string",
           "name": "AppId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "用户Uin",
-          "example": "",
+          "example": "1000432456",
           "member": "string",
           "name": "Uin",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "项目ID",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "ProjectId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "续费标识",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "RenewFlag",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "所属地域",
-          "example": "",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "付费模式（数据安全审计只支持预付费：1）",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "PayMode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "实例状态： 0，未生效；1：正常运行； 2：被隔离； 3，已过期",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "实例被隔离时间，格式：yyyy-mm-dd HH:ii:ss",
-          "example": "",
+          "example": "2023-12-12 12:12:12",
           "member": "string",
           "name": "IsolatedTimestamp",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "实例创建时间，格式： yyyy-mm-dd HH:ii:ss",
-          "example": "",
+          "example": "2020-12-12 12:12:12",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "实例过期时间，格式：yyyy-mm-dd HH:ii:ss",
-          "example": "",
+          "example": "2023-12-12 12:12:12",
           "member": "string",
           "name": "ExpireTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "实例名称",
+          "example": "测试数审",
           "member": "string",
           "name": "InstanceName",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例公网IP\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "实例公网IP",
+          "example": "127.0.0.1",
           "member": "string",
           "name": "PublicIp",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例私网IP\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "实例私网IP",
+          "example": "127.0.0.1",
           "member": "string",
           "name": "PrivateIp",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "实例类型（版本）",
-          "example": "",
+          "example": "cds",
           "member": "string",
           "name": "InstanceType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例域名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "实例域名",
+          "example": "www.pdomain.com",
           "member": "string",
           "name": "Pdomain",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -215,70 +215,70 @@
         {
           "disabled": false,
           "document": "规格描述",
-          "example": "",
+          "example": "吞吐量：3000条SQL/秒，支持审计组：3个，入库速率：1千万/小时，在线存储量：300亿SQL语句",
           "member": "string",
           "name": "InstanceVersionName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "规格名称",
-          "example": "",
+          "example": "合规版",
           "member": "string",
           "name": "InstanceVersionKey",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "最大吞吐量",
-          "example": "",
+          "example": "3000",
           "member": "uint64",
           "name": "Qps",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "最大实例数",
-          "example": "",
+          "example": "3",
           "member": "uint64",
           "name": "MaxInstances",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "入库速率（每小时）",
-          "example": "",
+          "example": "10000000",
           "member": "uint64",
           "name": "InsertSpeed",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "最大在线存储量，单位：条",
-          "example": "",
+          "example": "30000000000",
           "member": "uint64",
           "name": "OnlineStorageCapacity",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "最大归档存储量，单位：条",
-          "example": "",
+          "example": "30000000000",
           "member": "uint64",
           "name": "ArchivingStorageCapacity",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -296,9 +296,10 @@
         {
           "disabled": false,
           "document": "数据安全审计产品规格信息列表",
-          "example": "",
+          "example": "[{     \"InstanceVersionName\": \"V509\",     \"InstanceVersionKey\": \"VKey\",     \"Qps\": 0,     \"MaxInstances\": 0,     \"InsertSpeed\": 0,     \"OnlineStorageCapacity\": 0,     \"ArchivingStorageCapacity\": 0 }]",
           "member": "DbauditTypesInfo",
           "name": "DbauditTypesSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -317,7 +318,7 @@
         {
           "disabled": false,
           "document": "查询条件地域",
-          "example": "",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "SearchRegion",
           "required": false,
@@ -326,7 +327,7 @@
         {
           "disabled": false,
           "document": "限制数目，默认10， 最大50",
-          "example": "",
+          "example": "100",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -335,7 +336,7 @@
         {
           "disabled": false,
           "document": "偏移量，默认1",
-          "example": "",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -350,18 +351,20 @@
         {
           "disabled": false,
           "document": "总实例数",
-          "example": "",
+          "example": "10",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "数据安全审计实例信息列表",
-          "example": "",
+          "example": "[{   \"InstanceId\": \"ins-f784fkre\",   \"AppId\": \"13676727\",   \"Uin\": \"100006767342\",   \"ProjectId\": 0,   \"RenewFlag\": 0,   \"Region\": \"ap-guangzhou\",   \"PayMode\": 0,   \"Status\": 0,   \"IsolatedTimestamp\": \"1730451618\",   \"CreateTime\": \"1730451618\",   \"ExpireTime\": \"1730451618\",   \"InstanceName\": \"测试实例\",   \"PublicIp\": \"127.0.0.1\",   \"PrivateIp\": \"127.0.0.1\",   \"InstanceType\": \"5.0.9\",   \"Pdomain\": \"www.Pdomain.com\" }]",
           "member": "CdsAuditInstance",
           "name": "CdsAuditInstanceSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -385,9 +388,10 @@
         {
           "disabled": false,
           "document": "可售卖地域信息列表",
-          "example": "",
+          "example": "[{     \"RegionId\": 0,     \"Region\": \"ap-guangzhou\",     \"RegionName\": \"广州\",     \"RegionState\": 0 }]",
           "member": "RegionInfo",
           "name": "RegionSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -406,7 +410,7 @@
         {
           "disabled": false,
           "document": "实例规格，取值范围： cdsaudit，cdsaudit_adv， cdsaudit_ent 分别为合规版，高级版，企业版",
-          "example": "",
+          "example": "高级版",
           "member": "string",
           "name": "InstanceVersion",
           "required": true,
@@ -415,7 +419,7 @@
         {
           "disabled": false,
           "document": "询价类型： renew，续费；newbuy，新购",
-          "example": "",
+          "example": "renew",
           "member": "string",
           "name": "InquiryType",
           "required": true,
@@ -424,7 +428,7 @@
         {
           "disabled": false,
           "document": "购买实例的时长。取值范围：1（y/m），2（y/m）,，3（y/m），4（m）， 5（m），6（m）， 7（m），8（m），9（m）， 10（m）",
-          "example": "",
+          "example": "1730454743",
           "member": "uint64",
           "name": "TimeSpan",
           "required": true,
@@ -433,7 +437,7 @@
         {
           "disabled": false,
           "document": "购买时长单位，y：年；m：月",
-          "example": "",
+          "example": "1",
           "member": "string",
           "name": "TimeUnit",
           "required": true,
@@ -442,7 +446,7 @@
         {
           "disabled": false,
           "document": "实例所在地域",
-          "example": "",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "ServiceRegion",
           "required": true,
@@ -457,18 +461,20 @@
         {
           "disabled": false,
           "document": "总价，单位：元",
-          "example": "",
+          "example": "100.12",
           "member": "float",
           "name": "TotalPrice",
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "真实价钱，预支费用的折扣价，单位：元",
-          "example": "",
+          "example": "200.12",
           "member": "float",
           "name": "RealTotalCost",
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -523,40 +529,40 @@
         {
           "disabled": false,
           "document": "地域ID",
-          "example": "",
+          "example": "1",
           "member": "int64",
           "name": "RegionId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "地域名称",
-          "example": "",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "地域描述",
-          "example": "",
+          "example": "普通区",
           "member": "string",
           "name": "RegionName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "地域可用状态",
-          "example": "",
+          "example": "3",
           "member": "int64",
           "name": "RegionState",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }

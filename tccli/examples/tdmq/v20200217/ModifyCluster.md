@@ -7,7 +7,7 @@ Input:
 ```
 tccli tdmq ModifyCluster --cli-unfold-argument  \
     --ClusterId pulsar-5r59xd4vnx \
-    --Remark test
+    --Remark devRemark
 ```
 
 Output: 

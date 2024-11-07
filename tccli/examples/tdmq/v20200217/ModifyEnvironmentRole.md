@@ -8,8 +8,8 @@ Input:
 tccli tdmq ModifyEnvironmentRole --cli-unfold-argument  \
     --EnvironmentId default \
     --RoleName test_role \
-    --Permissions abc \
-    --ClusterId pulsar-xxxx
+    --Permissions produce \
+    --ClusterId pulsar-xk3ne8k2qkp8
 ```
 
 Output: 

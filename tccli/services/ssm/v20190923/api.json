@@ -1052,13 +1052,13 @@
         },
         {
           "disabled": false,
-          "document": "当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对所关联的CVM实例ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对所关联的CVM实例ID。",
           "example": "[\"cvm-test\"]",
           "member": "string",
           "name": "AssociatedInstanceIDs",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2130,13 +2130,13 @@
         },
         {
           "disabled": false,
-          "document": "当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对所关联的CVM实例ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对所关联的CVM实例ID。",
           "example": "[\"cmv-test\"]",
           "member": "string",
           "name": "AssociatedInstanceIDs",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,

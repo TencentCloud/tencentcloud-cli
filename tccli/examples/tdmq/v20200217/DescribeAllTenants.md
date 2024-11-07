@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli tdmq DescribeAllTenants --cli-unfold-argument  \
-    --ClusterName xx \
-    --TenantName xx \
+    --ClusterName gz_cluster_1 \
+    --TenantName devName \
     --Limit 0 \
-    --SortBy xx \
+    --SortBy createTime \
     --Offset 0 \
-    --TenantId xx \
-    --Types xx \
-    --SortOrder xx
+    --TenantId pulsar-xk3ne8k2qkp8 \
+    --Types http \
+    --SortOrder desc
 ```
 
 Output: 
@@ -28,25 +28,26 @@ Output:
                 "UpdateTime": 1,
                 "MaxTopics": 0,
                 "MaxRetentionSizeInMB": 1,
-                "ClusterName": "xx",
+                "ClusterName": "cluster001",
                 "MaxMsgBacklogSize": 1,
                 "UsedTopics": 0,
-                "CustomerUin": "xx",
+                "CustomerUin": "712340148907",
                 "UsedNamespaces": 0,
                 "MaxPublishRateInBytes": 1,
                 "CreateTime": 1,
                 "MaxNamespaces": 0,
                 "UsedPartitions": 0,
-                "CustomerAppId": "xx",
-                "TenantName": "xx",
+                "CustomerAppId": "25122936212a",
+                "TenantName": "devTest",
                 "MaxPartitions": 0,
-                "TenantId": "xx",
-                "Type": "xx",
+                "TenantId": "pulsar-xk3ne8k2qkp8",
+                "Type": "TDMQ",
                 "MaxDispatchRateInBytes": 1,
-                "MaxPublishTps": 1
+                "MaxPublishTps": 1,
+                "PublicAccessEnabled": true
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "d4a162ca-0c45-4244-bc14-4463b72d5e13"
     }
 }
 ```

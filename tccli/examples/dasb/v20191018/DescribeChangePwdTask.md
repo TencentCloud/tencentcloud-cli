@@ -20,8 +20,8 @@ Output:
         "Tasks": [
             {
                 "Id": 1,
-                "TaskName": "test-xxx",
-                "OperationId": "ops-xxx",
+                "TaskName": "test-asdwasd",
+                "OperationId": "ops-wesggdsfhfds",
                 "ChangeMethod": 1,
                 "RunAccount": "root",
                 "AuthGenerationStrategy": 1,
@@ -29,28 +29,30 @@ Output:
                 "SmallLetter": 1,
                 "BigLetter": 1,
                 "Digit": 1,
-                "Symbol": "",
+                "Symbol": "&$#@",
                 "CompleteNotify": 1,
                 "NotifyEmails": [
                     "11323@qq.com"
                 ],
-                "FilePassword": "xxx",
+                "FilePassword": "dfgdeagdffaersde",
                 "Type": 4,
                 "Period": 0,
-                "FirstTime": null,
-                "NextTime": null,
+                "FirstTime": "2020-09-22T00:00:00+08:00",
+                "NextTime": "2020-09-22T00:00:00+08:00",
                 "DeviceSet": [
                     {
                         "Id": 1,
                         "InstanceId": "ins-a3dvgvte",
                         "Name": "可用-预发标准版-linux",
-                        "PublicIp": "",
+                        "PublicIp": "192.168.47.56",
                         "PrivateIp": "172.20.0.17",
                         "ApCode": "ap-shanghai-fsi",
                         "OsName": "TencentOS Server 3.1 (TK4)",
                         "Kind": 1,
                         "Port": 22,
-                        "IpPortSet": null,
+                        "IpPortSet": [
+                            "8047"
+                        ],
                         "VpcId": "vpc-test",
                         "SubnetId": "subnet-test",
                         "AccountCount": 0,
@@ -61,11 +63,11 @@ Output:
                             "ApCode": "ap-shanghai-fsi",
                             "Zone": "ap-shanghai-fsi-1",
                             "Pid": 10,
-                            "SvArgs": "sv_cds_dasb_saas_ex_pro_xxx",
+                            "SvArgs": "sv_cds_dasb_saas_ex_pro_dfsa",
                             "PackageBandwidth": 0,
                             "PackageNode": 0,
-                            "LogDeliveryArgs": "",
-                            "LogDelivery": "",
+                            "LogDeliveryArgs": "sv_cds_dasb_saas_sfwwe",
+                            "LogDelivery": "sc_cds_dasb_saas_xwad",
                             "ProductCode": "p_cds_dasb",
                             "SubProductCode": "sp_cds_dasb_bh_saas_pro",
                             "VpcId": "vpc-test",
@@ -90,14 +92,14 @@ Output:
                             "Status": 1,
                             "ExtendPoints": 0,
                             "DeployModel": 0,
-                            "CdcClusterId": "",
+                            "CdcClusterId": "cdc-dfsed-eda",
                             "ModuleSet": []
                         },
                         "Department": {
                             "Id": "1",
                             "Name": "总部",
-                            "Managers": null,
-                            "ManagerUsers": null
+                            "Managers": [],
+                            "ManagerUsers": []
                         }
                     }
                 ],
@@ -110,8 +112,8 @@ Output:
                 "Department": {
                     "Id": "1",
                     "Name": "总部",
-                    "Managers": null,
-                    "ManagerUsers": null
+                    "Managers": [],
+                    "ManagerUsers": []
                 }
             }
         ],

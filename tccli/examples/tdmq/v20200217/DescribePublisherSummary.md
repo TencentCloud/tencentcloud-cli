@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli tdmq DescribePublisherSummary --cli-unfold-argument  \
-    --ClusterId abc \
-    --Namespace abc \
-    --Topic abc
+    --ClusterId pulsar-xk3ne8k2qkp8 \
+    --Namespace devNs \
+    --Topic devTopic
 ```
 
 Output: 
@@ -19,7 +19,7 @@ Output:
         "MsgThroughputIn": 0,
         "PublisherCount": 0,
         "StorageSize": 0,
-        "RequestId": "abc"
+        "RequestId": "1004f1de-6fb8-41d5-965e-3aae8c87183a"
     }
 }
 ```

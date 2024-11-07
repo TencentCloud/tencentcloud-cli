@@ -522,9 +522,9 @@
     ],
     "DescribeConsumer": [
       {
-        "document": "",
+        "document": "获取投递配置",
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConsumer\n<公共请求参数>\n\n{\n    \"TopicId\": \"xxx-xxx-xxx-xxx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60xxx-0xxx-4xxx-bxxx-270359fb5xxx\",\n        \"Effective\": true,\n        \"Ckafka\": {\n            \"Vip\": \"10.123.123.123\",\n            \"Vport\": \"8888\",\n            \"InstanceId\": \"xxxxx\",\n            \"InstanceName\": \"myname\",\n            \"TopicId\": \"xxxxx\",\n            \"TopicName\": \"xxxxx\"\n        },\n        \"Content\": {\n            \"EnableTag\": true,\n            \"MetaFields\": [\n                \"__SOURCE__\"\n            ]\n        },\n        \"NeedContent\": true,\n        \"Compression\": 0\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60xxx-0xxx-4xxx-bxxx-270359fb5xxx\",\n        \"Effective\": true,\n        \"Ckafka\": {\n            \"Vip\": \"10.123.123.123\",\n            \"Vport\": \"8088\",\n            \"InstanceId\": \"xx-xx\",\n            \"InstanceName\": \"myname\",\n            \"TopicId\": \"xxxxx-xxx-xxx\",\n            \"TopicName\": \"name\"\n        },\n        \"Content\": {\n            \"EnableTag\": true,\n            \"MetaFields\": [\n                \"__SOURCE__\"\n            ],\n            \"TagJsonNotTiled\": true,\n            \"TimestampAccuracy\": 0,\n            \"JsonType\": 0\n        },\n        \"NeedContent\": true,\n        \"Compression\": 0\n    }\n}",
         "title": "获取投递配置"
       }
     ],

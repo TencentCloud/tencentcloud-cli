@@ -25,23 +25,23 @@ Output:
             },
             "LDAP": {
                 "Enable": true,
-                "AdminAccount": "xx",
-                "AttributeEmail": "xx",
+                "AdminAccount": "admin",
+                "AttributeEmail": "attr-email",
                 "AutoSync": true,
-                "Ip": "xx",
-                "BaseDN": "xx",
+                "Ip": "1.1.1.1",
+                "BaseDN": "bh-test-dn",
                 "SyncPeriod": 1,
                 "SyncAll": true,
                 "EnableSSL": true,
-                "AttributeRealName": "xx",
+                "AttributeRealName": "attr-name",
                 "SyncUnitSet": [
-                    "xx"
+                    "uint"
                 ],
-                "IpBackup": "xx",
-                "AttributeUser": "xx",
-                "AttributeUserName": "xx",
-                "AttributePhone": "xx",
-                "AttributeUnit": "xx",
+                "IpBackup": "",
+                "AttributeUser": "attr-user",
+                "AttributeUserName": "attr-user-name",
+                "AttributePhone": "attr-phone",
+                "AttributeUnit": "attr-uint",
                 "Port": 1,
                 "Overwrite": true
             },
@@ -49,7 +49,7 @@ Output:
                 "AuthMode": 1
             }
         },
-        "RequestId": "xx"
+        "RequestId": "dfac9070-8b23-499e-83b2-a50e3ca059af"
     }
 }
 ```

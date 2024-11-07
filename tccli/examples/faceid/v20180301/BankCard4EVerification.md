@@ -1,15 +1,15 @@
 **Example 1: 认证通过示例**
 
-
+输入银行卡号、姓名、开户证件号、开户手机号，校验信息的真实性和一致性。
 
 Input: 
 
 ```
 tccli faceid BankCard4EVerification --cli-unfold-argument  \
-    --Name 张三 \
-    --BankCard 6222222222222222222 \
-    --Phone 6222222222222222222 \
-    --IdCard 6222222222222222222
+    --Name 韦小宝 \
+    --BankCard 6225768888888888 \
+    --Phone 16137688175 \
+    --IdCard 11204416541220243X
 ```
 
 Output: 
@@ -25,16 +25,16 @@ Output:
 
 **Example 2: 认证不通过示例**
 
-
+传入的有误的姓名信息，校验信息的真实性和一致性
 
 Input: 
 
 ```
 tccli faceid BankCard4EVerification --cli-unfold-argument  \
-    --Name 张三 \
-    --BankCard 6222222222222222222 \
-    --Phone 6222222222222222222 \
-    --IdCard 6222222222222222222
+    --Name 韦小宝 \
+    --BankCard 6226090210146748 \
+    --Phone 16137688175 \
+    --IdCard ' 11204416541220243X'
 ```
 
 Output: 

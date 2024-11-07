@@ -18,7 +18,7 @@ Output:
                 "Event": "MEM",
                 "Limit": 0,
                 "Status": 1,
-                "Uin": "123456789"
+                "Uin": "22234567"
             },
             {
                 "BeginTime": "01:00:00",
@@ -26,7 +26,7 @@ Output:
                 "Event": "CPU",
                 "Limit": 1,
                 "Status": 1,
-                "Uin": "123456789"
+                "Uin": "22234567"
             },
             {
                 "BeginTime": "01:00:00",
@@ -34,7 +34,7 @@ Output:
                 "Event": "TCP",
                 "Limit": 99,
                 "Status": 1,
-                "Uin": "123456789"
+                "Uin": "22234567"
             }
         ],
         "RequestId": "2045f89b-7673-4cd7-9580-77f0a048fb26"

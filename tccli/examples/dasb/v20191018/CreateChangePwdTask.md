@@ -8,7 +8,7 @@ Input:
 tccli dasb CreateChangePwdTask --cli-unfold-argument  \
     --TaskName 改密任务 \
     --DeviceIdSet 213 \
-    --AccountSet 111 \
+    --AccountSet admin root \
     --ChangeMethod 1 \
     --RunAccount root \
     --AuthGenerationStrategy 3 \

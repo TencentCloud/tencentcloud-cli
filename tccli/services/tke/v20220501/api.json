@@ -534,6 +534,15 @@
           "name": "KeyIds",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "节点池类型",
+          "example": "NativeCVM或者Native",
+          "member": "string",
+          "name": "MachineType",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -2741,6 +2750,16 @@
           "name": "DataDisks",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "原生节点机型 Native, NativeCVM\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Native",
+          "member": "string",
+          "name": "MachineType",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

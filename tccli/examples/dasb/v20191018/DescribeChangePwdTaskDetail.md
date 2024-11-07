@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli dasb DescribeChangePwdTaskDetail --cli-unfold-argument  \
-    --OperationId ops-xxx \
+    --OperationId ops-addsfa \
     --Filters.0.Name InstanceId \
-    --Filters.0.Values ins-xxx \
+    --Filters.0.Values ins-asdfasdffas \
     --Offset 0 \
     --Limit 20
 ```
@@ -21,29 +21,31 @@ Output:
             {
                 "Device": {
                     "Id": 1,
-                    "InstanceId": "ins-test",
+                    "InstanceId": "ins-bhtest",
                     "Name": "linux",
-                    "PublicIp": "",
+                    "PublicIp": "100.10.1.1",
                     "PrivateIp": "172.20.0.1",
                     "ApCode": "ap-shanghai-fsi",
                     "OsName": "TencentOS Server 3.1 (TK4)",
                     "Kind": 1,
                     "Port": 22,
-                    "IpPortSet": null,
-                    "VpcId": "vpc-test",
-                    "SubnetId": "subnet-test",
+                    "IpPortSet": [
+                        "127.0.0.1:80"
+                    ],
+                    "VpcId": "vpc-bhtest",
+                    "SubnetId": "subnet-bhtest",
                     "AccountCount": 0,
                     "GroupSet": [
                         {
                             "Id": 1,
-                            "Name": "测试",
+                            "Name": "测试组",
                             "Department": {
-                                "Id": "",
-                                "Name": "",
-                                "Managers": null,
-                                "ManagerUsers": null
+                                "Id": "1.2",
+                                "Name": "运维部",
+                                "Managers": [],
+                                "ManagerUsers": []
                             },
-                            "Count": 0
+                            "Count": 1
                         }
                     ],
                     "Resource": {
@@ -52,11 +54,11 @@ Output:
                         "ApCode": "ap-shanghai-fsi",
                         "Zone": "ap-shanghai-fsi-1",
                         "Pid": 10,
-                        "SvArgs": "sv_cds_dasb_saas_ex_pro_xxx",
+                        "SvArgs": "sv_cds_dasb_saas_ex_pro_sdfsa",
                         "PackageBandwidth": 0,
                         "PackageNode": 0,
-                        "LogDeliveryArgs": "",
-                        "LogDelivery": "",
+                        "LogDeliveryArgs": "sv_cds_dasb_saas_sadsas",
+                        "LogDelivery": "sc_cds_dasb_saas_asawda",
                         "ProductCode": "p_cds_dasb",
                         "SubProductCode": "sp_cds_dasb_bh_saas_pro",
                         "VpcId": "vpc-test",
@@ -81,21 +83,21 @@ Output:
                         "Status": 1,
                         "ExtendPoints": 0,
                         "DeployModel": 0,
-                        "CdcClusterId": "",
+                        "CdcClusterId": "cdc-dfsed-eda",
                         "ModuleSet": []
                     },
                     "Department": {
                         "Id": "1",
                         "Name": "总部",
-                        "Managers": null,
-                        "ManagerUsers": null
+                        "Managers": [],
+                        "ManagerUsers": []
                     }
                 },
                 "Account": "worktest",
                 "LastChangeStatus": 1
             }
         ],
-        "RequestId": "rid-test",
+        "RequestId": "dfac9070-8b23-499e-83b2-a50e3ca059af",
         "TotalCount": 1
     }
 }

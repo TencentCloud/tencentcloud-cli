@@ -346,7 +346,7 @@
     "DescribeAllTenants": {
       "document": "获取某个租户的虚拟集群列表",
       "input": "DescribeAllTenantsRequest",
-      "name": "获取某个租户的虚拟集群列表",
+      "name": "获取某租户的虚拟集群列表",
       "output": "DescribeAllTenantsResponse",
       "status": "online"
     },
@@ -1336,7 +1336,7 @@
         {
           "disabled": false,
           "document": "如果为\"\"，则说明没有错误返回，否则返回具体的错误信息。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "\"ack error\"",
           "member": "string",
           "name": "ErrorMsg",
           "output_required": true,
@@ -1358,10 +1358,10 @@
         {
           "disabled": false,
           "document": "物理集群的名称",
-          "example": "",
+          "example": "devClusterName",
           "member": "string",
           "name": "ClusterName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -1513,7 +1513,7 @@
         {
           "disabled": false,
           "document": "说明信息。",
-          "example": "test",
+          "example": "devInfo",
           "member": "string",
           "name": "Remark",
           "output_required": true,
@@ -1553,7 +1553,7 @@
         {
           "disabled": false,
           "document": "集群健康信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "healthy",
           "member": "string",
           "name": "HealthyInfo",
           "output_required": true,
@@ -2634,7 +2634,7 @@
         {
           "disabled": false,
           "document": "消费者开始连接的时间。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "2024-04-11T23:03:47.328+08:00",
           "member": "string",
           "name": "ConnectedSince",
           "output_required": true,
@@ -2644,7 +2644,7 @@
         {
           "disabled": false,
           "document": "消费者地址。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "30.11.19.46:40940",
           "member": "string",
           "name": "ConsumerAddr",
           "output_required": true,
@@ -2654,7 +2654,7 @@
         {
           "disabled": false,
           "document": "消费者名称。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "devName1",
           "member": "string",
           "name": "ConsumerName",
           "output_required": true,
@@ -2664,7 +2664,7 @@
         {
           "disabled": false,
           "document": "消费者版本。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "2.7.1",
           "member": "string",
           "name": "ClientVersion",
           "output_required": true,
@@ -2766,20 +2766,20 @@
         {
           "disabled": false,
           "document": "记录数。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "消费日志。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "ConsumerLog",
           "name": "ConsumerLogSets",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -3223,7 +3223,7 @@
         {
           "disabled": false,
           "document": "用户专享物理集群ID，如果不传，则默认在公共集群上创建用户集群资源。",
-          "example": "无",
+          "example": "sh_cluster_1",
           "member": "uint64",
           "name": "BindClusterId",
           "required": false,
@@ -3780,7 +3780,7 @@
         {
           "disabled": false,
           "document": "环境（命名空间）名称。",
-          "example": "default",
+          "example": "devDemo",
           "member": "string",
           "name": "EnvironmentId",
           "required": true,
@@ -3798,7 +3798,7 @@
         {
           "disabled": false,
           "document": "授权项，最多只能包含produce、consume两项的非空字符串数组。",
-          "example": "无",
+          "example": "[\"produce\"]",
           "member": "string",
           "name": "Permissions",
           "required": true,
@@ -3807,7 +3807,7 @@
         {
           "disabled": false,
           "document": "必填字段，集群的ID",
-          "example": "xxx",
+          "example": "pulsar-xk3ne8k2qkp8",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -5021,7 +5021,7 @@
         {
           "disabled": false,
           "document": "备注说明，长度必须大等于0且小等于128。",
-          "example": "创建角色",
+          "example": "devDemo",
           "member": "string",
           "name": "Remark",
           "required": true,
@@ -5030,7 +5030,7 @@
         {
           "disabled": false,
           "document": "必填字段，集群Id",
-          "example": "pulsar-xxxx",
+          "example": "pulsar-xk3ne8k2qkp8",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -5065,7 +5065,7 @@
         {
           "disabled": false,
           "document": "备注说明\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "创建角色",
+          "example": "devDemo",
           "member": "string",
           "name": "Remark",
           "output_required": true,
@@ -5464,7 +5464,7 @@
         {
           "disabled": false,
           "document": "环境（命名空间）名称。",
-          "example": "default",
+          "example": "devNs",
           "member": "string",
           "name": "EnvironmentId",
           "required": true,
@@ -5473,7 +5473,7 @@
         {
           "disabled": false,
           "document": "角色名称数组。",
-          "example": "[\"test_role\\n\"]",
+          "example": "[\"test_role\"]",
           "member": "string",
           "name": "RoleNames",
           "required": true,
@@ -5482,7 +5482,7 @@
         {
           "disabled": false,
           "document": "必填字段，集群的ID",
-          "example": "rocketmq-xxxxx",
+          "example": "pulsar-xk3ne8k2qkp8",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -6066,7 +6066,7 @@
         {
           "disabled": false,
           "document": "角色名称数组。",
-          "example": "[\"test_role_1\\n\",\"test_role_2\\n\"]",
+          "example": "[\"test_role_1\",\"test_role_2\"]",
           "member": "string",
           "name": "RoleNames",
           "required": true,
@@ -6075,7 +6075,7 @@
         {
           "disabled": false,
           "document": "必填字段，集群Id",
-          "example": "pulsar-xxxx",
+          "example": "pulsar-xk3ne8k2qkp8",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -6121,7 +6121,7 @@
         {
           "disabled": false,
           "document": "pulsar集群Id。",
-          "example": "test",
+          "example": "pulsar-xk3ne8k2qkp8",
           "member": "string",
           "name": "ClusterId",
           "required": false,
@@ -6130,7 +6130,7 @@
         {
           "disabled": false,
           "document": "环境（命名空间）名称。",
-          "example": "test",
+          "example": "devNs",
           "member": "string",
           "name": "EnvironmentId",
           "required": false,
@@ -6157,7 +6157,7 @@
           "example": "无",
           "member": "SubscriptionTopic",
           "name": "SubscriptionTopicSets",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6185,7 +6185,7 @@
         {
           "disabled": false,
           "document": "pulsar集群Id。",
-          "example": "test",
+          "example": "pulsar-xk3ne8k2qkp8",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -6194,7 +6194,7 @@
         {
           "disabled": false,
           "document": "环境（命名空间）名称。",
-          "example": "test",
+          "example": "devNs",
           "member": "string",
           "name": "EnvironmentId",
           "required": false,
@@ -6359,7 +6359,7 @@
         {
           "disabled": false,
           "document": "物理集群名称",
-          "example": "test",
+          "example": "gz_cluster_1",
           "member": "string",
           "name": "ClusterName",
           "required": false,
@@ -6368,7 +6368,7 @@
         {
           "disabled": false,
           "document": "虚拟集群ID",
-          "example": "rocketmq-xxxxx",
+          "example": "pulsar-xk3ne8k2qkp8",
           "member": "string",
           "name": "TenantId",
           "required": false,
@@ -6377,7 +6377,7 @@
         {
           "disabled": false,
           "document": "虚拟集群名称",
-          "example": "test",
+          "example": "devName",
           "member": "string",
           "name": "TenantName",
           "required": false,
@@ -6422,7 +6422,7 @@
           "example": "100",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6432,7 +6432,7 @@
           "example": "无",
           "member": "InternalTenant",
           "name": "Tenants",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6459,17 +6459,17 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "专享集群的列表",
-          "example": "[]",
+          "example": "无",
           "member": "BindCluster",
           "name": "ClusterSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6506,7 +6506,7 @@
         {
           "disabled": false,
           "document": "Pulsar 集群的ID",
-          "example": "aaa",
+          "example": "pulsar-xk3ne8k2qkp8",
           "member": "string",
           "name": "ClusterId",
           "required": false,
@@ -6608,7 +6608,7 @@
         {
           "disabled": false,
           "document": "返回数量，不填则默认为10，最大值为20。",
-          "example": "0",
+          "example": "1",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -6617,7 +6617,7 @@
         {
           "disabled": false,
           "document": "集群ID列表过滤",
-          "example": "无",
+          "example": "[\"cluster001\"]",
           "member": "string",
           "name": "ClusterIdList",
           "required": false,
@@ -6653,7 +6653,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6663,7 +6663,7 @@
           "example": "无",
           "member": "Cluster",
           "name": "ClusterSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7321,17 +7321,17 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "命名空间角色集合。",
-          "example": "[]",
+          "example": "无",
           "member": "EnvironmentRole",
           "name": "EnvironmentRoleSets",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7411,7 +7411,7 @@
         {
           "disabled": false,
           "document": "命名空间集合数组。",
-          "example": "[]",
+          "example": "无",
           "member": "Environment",
           "name": "EnvironmentSet",
           "output_required": true,
@@ -7442,7 +7442,7 @@
         {
           "disabled": false,
           "document": "消息id",
-          "example": "xxx",
+          "example": "29292216:15:2",
           "member": "string",
           "name": "MsgId",
           "required": true,
@@ -7451,7 +7451,7 @@
         {
           "disabled": false,
           "document": "集群id，cmq为空",
-          "example": "pulsar-xxx",
+          "example": "pulsar-pnvjp9mbd947",
           "member": "string",
           "name": "ClusterId",
           "required": false,
@@ -7460,7 +7460,7 @@
         {
           "disabled": false,
           "document": "命名空间，cmq为空",
-          "example": "xxx",
+          "example": "devNs",
           "member": "string",
           "name": "EnvironmentId",
           "required": false,
@@ -7469,7 +7469,7 @@
         {
           "disabled": false,
           "document": "主题，cmq为空，rocketmq查询死信时值为groupId",
-          "example": "xxx",
+          "example": "devTopic",
           "member": "string",
           "name": "TopicName",
           "required": false,
@@ -7478,7 +7478,7 @@
         {
           "disabled": false,
           "document": "cmq必填，其他协议填空",
-          "example": "xxx",
+          "example": "devCmq",
           "member": "string",
           "name": "QueueName",
           "required": false,
@@ -7487,7 +7487,7 @@
         {
           "disabled": false,
           "document": "消费组、订阅",
-          "example": "xxx",
+          "example": "devName",
           "member": "string",
           "name": "GroupName",
           "required": false,
@@ -7510,10 +7510,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "[\n    {\n        \"Stage\": \"produce\",\n        \"Data\": {\n            \"ProducerName\": \"生产者名\",\n            \"ProduceTime\": \"消息生产时间\",\n            \"ProducerAddr\": \"客户端地址\",\n            \"Duration\": \"耗时ms\",\n            \"Status\": \"状态（0：成功，1：失败）\"\n        }\n    },\n    {\n        \"Stage\": \"persist\",\n        \"Data\": {\n            \"PersistTime\": \"存储时间\",\n            \"Duration\": \"耗时ms\",\n            \"Status\": \"状态（0：成功，1：失败）\"\n        }\n    },\n    {\n        \"Stage\": \"consume\",\n        \"Data\": {\n            \"TotalCount\": 2,\n            \"RocketMqConsumeLogs\": [\n                {\n                    \"ConsumerGroup\": \"消费组\",\n                    \"ConsumeModel\": \"消费模式\",\n                    \"ConsumerAddr\": \"消费者地址\",\n                    \"ConsumeTime\": \"推送时间\",\n                    \"Status\": \"状态（0:已推送未确认, 2:已确认, 3:转入重试, 4:已重试未确认, 5:已转入死信队列）\"\n                },\n                {\n                    \"ConsumerGroup\": \"消费组\",\n                    \"ConsumeModel\": \"消费模式\",\n                    \"ConsumerAddr\": \"消费者地址\",\n                    \"ConsumeTime\": \"推送时间\",\n                    \"Status\": \"状态（0:已推送未确认, 2:已确认, 3:转入重试, 4:已重试未确认, 5:已转入死信队列）\"\n                }\n            ]    \n        }\n    }\n]",
-          "example": "xxx",
+          "document": "消息内容",
+          "example": "[    {        \"Stage\": \"produce\",        \"Data\": {            \"ProducerName\": \"生产者名\",            \"ProduceTime\": \"消息生产时间\",            \"ProducerAddr\": \"客户端地址\",            \"Duration\": \"耗时ms\",            \"Status\": \"状态（0：成功，1：失败）\"        }    },    {        \"Stage\": \"persist\",        \"Data\": {            \"PersistTime\": \"存储时间\",            \"Duration\": \"耗时ms\",            \"Status\": \"状态（0：成功，1：失败）\"        }    },    {        \"Stage\": \"consume\",        \"Data\": {            \"TotalCount\": 2,            \"RocketMqConsumeLogs\": [                {                    \"ConsumerGroup\": \"消费组\",                    \"ConsumeModel\": \"消费模式\",                    \"ConsumerAddr\": \"消费者地址\",                    \"ConsumeTime\": \"推送时间\",                    \"Status\": \"状态（0:已推送未确认, 2:已确认, 3:转入重试, 4:已重试未确认, 5:已转入死信队列）\"                },                {                    \"ConsumerGroup\": \"消费组\",                    \"ConsumeModel\": \"消费模式\",                    \"ConsumerAddr\": \"消费者地址\",                    \"ConsumeTime\": \"推送时间\",                    \"Status\": \"状态（0:已推送未确认, 2:已确认, 3:转入重试, 4:已重试未确认, 5:已转入死信队列）\"                }            ]            }    }]",
           "member": "TraceResult",
           "name": "Result",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7523,6 +7524,7 @@
           "example": "topic",
           "member": "string",
           "name": "ShowTopicName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7583,7 +7585,7 @@
         {
           "disabled": false,
           "document": "消息属性。",
-          "example": "test",
+          "example": "\"{\\\"X-Pulsar-num-batch-message\\\":\\\"1\\\",\\\"publish-time\\\":\\\"2024-10-08T08:02:20.362+08:00\\\"}\"",
           "member": "string",
           "name": "Properties",
           "output_required": true,
@@ -7913,7 +7915,7 @@
         {
           "disabled": false,
           "document": "集群ID",
-          "example": "pulsar-xxxx",
+          "example": "pulsar-xk3ne8k2qkp8",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -7922,7 +7924,7 @@
         {
           "disabled": false,
           "document": "命名空间名称",
-          "example": "test",
+          "example": "devNs",
           "member": "string",
           "name": "Namespace",
           "required": true,
@@ -7931,7 +7933,7 @@
         {
           "disabled": false,
           "document": "主题名称",
-          "example": "test",
+          "example": "devTopic",
           "member": "string",
           "name": "Topic",
           "required": true,
@@ -7976,7 +7978,7 @@
         {
           "disabled": false,
           "document": "消息存储大小，以字节为单位\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123",
+          "example": "100",
           "member": "int64",
           "name": "StorageSize",
           "output_required": true,
@@ -7998,7 +8000,7 @@
         {
           "disabled": false,
           "document": "集群ID",
-          "example": "pulsar-xxxxx",
+          "example": "pulsar-xk3ne8k2qkp8",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -8007,7 +8009,7 @@
         {
           "disabled": false,
           "document": "命名空间名称",
-          "example": "test",
+          "example": "devNs",
           "member": "string",
           "name": "Namespace",
           "required": true,
@@ -8016,7 +8018,7 @@
         {
           "disabled": false,
           "document": "主题名称",
-          "example": "test",
+          "example": "devTopic",
           "member": "string",
           "name": "Topic",
           "required": true,
@@ -11865,7 +11867,7 @@
         {
           "disabled": false,
           "document": "必填字段，集群Id",
-          "example": "test",
+          "example": "pulsar-xk3ne8k2qkp8",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -11874,7 +11876,7 @@
         {
           "disabled": false,
           "document": "角色名称，模糊查询",
-          "example": "test",
+          "example": "devRole1",
           "member": "string",
           "name": "RoleName",
           "required": false,
@@ -11948,7 +11950,7 @@
         {
           "disabled": false,
           "document": "环境（命名空间）名称。",
-          "example": "test1",
+          "example": "devNs",
           "member": "string",
           "name": "EnvironmentId",
           "required": true,
@@ -11957,7 +11959,7 @@
         {
           "disabled": false,
           "document": "主题名称。",
-          "example": "test",
+          "example": "devtopic",
           "member": "string",
           "name": "TopicName",
           "required": true,
@@ -11966,7 +11968,7 @@
         {
           "disabled": false,
           "document": "Pulsar 集群的ID",
-          "example": "pulsar-xxxx",
+          "example": "pulsar-b843bz38z5mz",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -11993,7 +11995,7 @@
         {
           "disabled": false,
           "document": "订阅者名称，模糊匹配。",
-          "example": "test",
+          "example": "devSub",
           "member": "string",
           "name": "SubscriptionName",
           "required": false,
@@ -12267,7 +12269,7 @@
         {
           "disabled": false,
           "document": "命名空间名称",
-          "example": "test",
+          "example": "devNs",
           "member": "string",
           "name": "EnvironmentId",
           "output_required": true,
@@ -12277,7 +12279,7 @@
         {
           "disabled": false,
           "document": "说明",
-          "example": "test",
+          "example": "devRemark",
           "member": "string",
           "name": "Remark",
           "output_required": true,
@@ -12317,7 +12319,7 @@
         {
           "disabled": false,
           "document": "命名空间ID",
-          "example": "test",
+          "example": "devName1",
           "member": "string",
           "name": "NamespaceId",
           "output_required": true,
@@ -12327,7 +12329,7 @@
         {
           "disabled": false,
           "document": "命名空间名称",
-          "example": "test",
+          "example": "devName1",
           "member": "string",
           "name": "NamespaceName",
           "output_required": true,
@@ -12439,9 +12441,10 @@
         {
           "disabled": false,
           "document": "需要绑定的命名空间Id，不重复且存在资源\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "devNs",
           "member": "string",
           "name": "EnvironmentId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -12452,6 +12455,7 @@
           "example": "[\"produce\"]",
           "member": "string",
           "name": "Permissions",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": true
@@ -12818,7 +12822,7 @@
           "example": "ap-guangzhou-1",
           "member": "string",
           "name": "ZoneName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12828,7 +12832,7 @@
           "example": "100001",
           "member": "string",
           "name": "ZoneId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12838,8 +12842,18 @@
           "example": "2",
           "member": "uint64",
           "name": "NodeCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "有调度任务且没有切回的可用区，此标识为true",
+          "example": "false",
+          "member": "bool",
+          "name": "NodePermWipeFlag",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],
@@ -12851,20 +12865,20 @@
         {
           "disabled": false,
           "document": "虚拟集群ID",
-          "example": "rocketmq-xxxxx",
+          "example": "pulsar-mw4qmgaq298g",
           "member": "string",
           "name": "TenantId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "虚拟集群名称",
-          "example": "test",
+          "example": "devName1",
           "member": "string",
           "name": "TenantName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12874,7 +12888,7 @@
           "example": "1000000",
           "member": "string",
           "name": "CustomerUin",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12884,17 +12898,17 @@
           "example": "123456546",
           "member": "string",
           "name": "CustomerAppId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "物理集群名称",
-          "example": "test",
+          "example": "devName2",
           "member": "string",
           "name": "ClusterName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12904,7 +12918,7 @@
           "example": "TDMQ",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12914,7 +12928,7 @@
           "example": "100",
           "member": "int64",
           "name": "MaxNamespaces",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -12924,7 +12938,7 @@
           "example": "0",
           "member": "int64",
           "name": "UsedNamespaces",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -12934,7 +12948,7 @@
           "example": "100",
           "member": "int64",
           "name": "MaxTopics",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -12944,7 +12958,7 @@
           "example": "0",
           "member": "int64",
           "name": "UsedTopics",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -12954,7 +12968,7 @@
           "example": "100",
           "member": "int64",
           "name": "MaxPartitions",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -12964,7 +12978,7 @@
           "example": "0",
           "member": "int64",
           "name": "UsedPartitions",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -12974,7 +12988,7 @@
           "example": "100",
           "member": "uint64",
           "name": "MaxMsgBacklogSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -12984,7 +12998,7 @@
           "example": "100",
           "member": "uint64",
           "name": "MaxPublishTps",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -12994,7 +13008,7 @@
           "example": "100",
           "member": "uint64",
           "name": "MaxRetention",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -13004,7 +13018,7 @@
           "example": "0",
           "member": "uint64",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -13014,7 +13028,7 @@
           "example": "0",
           "member": "uint64",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -13024,7 +13038,7 @@
           "example": "1000",
           "member": "uint64",
           "name": "MaxDispatchTps",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -13034,7 +13048,7 @@
           "example": "1",
           "member": "uint64",
           "name": "MaxDispatchRateInBytes",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -13044,7 +13058,7 @@
           "example": "1",
           "member": "uint64",
           "name": "MaxPublishRateInBytes",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -13054,7 +13068,7 @@
           "example": "1",
           "member": "uint64",
           "name": "MaxRetentionSizeInMB",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -13064,7 +13078,7 @@
           "example": "true",
           "member": "bool",
           "name": "PublicAccessEnabled",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         }
@@ -13242,7 +13256,7 @@
         {
           "disabled": false,
           "document": "更新后的集群名称。",
-          "example": "test",
+          "example": "devName",
           "member": "string",
           "name": "ClusterName",
           "required": false,
@@ -13715,7 +13729,7 @@
         {
           "disabled": false,
           "document": "授权项，最多只能包含produce、consume两项的非空字符串数组。",
-          "example": "无",
+          "example": "[\"produce\"]",
           "member": "string",
           "name": "Permissions",
           "required": true,
@@ -13724,7 +13738,7 @@
         {
           "disabled": false,
           "document": "必填字段，集群的ID",
-          "example": "pulsar-xxxx",
+          "example": "pulsar-xk3ne8k2qkp8",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -14539,7 +14553,7 @@
         {
           "disabled": false,
           "document": "必填字段，集群Id",
-          "example": "pulsar-xxxx",
+          "example": "pulsar-xk3ne8k2qkp8",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -14566,7 +14580,7 @@
         {
           "disabled": false,
           "document": "全部解绑名字空间，设置为 true",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "UnbindAllEnvironment",
           "required": false,
@@ -14705,40 +14719,40 @@
         {
           "disabled": false,
           "document": "消息ID。",
-          "example": "",
+          "example": "931087:81:0",
           "member": "string",
           "name": "MsgId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "生产者名称。",
-          "example": "",
+          "example": "devProducerName",
           "member": "string",
           "name": "ProducerName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "生产时间。",
-          "example": "",
+          "example": "2024-10-08 08:04:13,809",
           "member": "string",
           "name": "ProduceTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "生产客户端地址。",
-          "example": "",
+          "example": "10.0.0.120:38168",
           "member": "string",
           "name": "ProducerAddr",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -14751,130 +14765,130 @@
         {
           "disabled": false,
           "document": "最后一次间隔内发布消息的平均byte大小。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "10",
           "member": "string",
           "name": "AverageMsgSize",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "消费者数量。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "10",
           "member": "string",
           "name": "ConsumerCount",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "被记录下来的消息总数。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "10",
           "member": "string",
           "name": "LastConfirmedEntry",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "最后一个ledger创建的时间。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "2024-10-08 08:04:13,809",
           "member": "string",
           "name": "LastLedgerCreatedTimestamp",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "本地和复制的发布者每秒发布消息的速率。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "10",
           "member": "string",
           "name": "MsgRateIn",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "本地和复制的消费者每秒分发消息的数量之和。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "10",
           "member": "string",
           "name": "MsgRateOut",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "本地和复制的发布者每秒发布消息的byte。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "10",
           "member": "string",
           "name": "MsgThroughputIn",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "本地和复制的消费者每秒分发消息的byte。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "10",
           "member": "string",
           "name": "MsgThroughputOut",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "被记录下来的消息总数。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "10",
           "member": "string",
           "name": "NumberOfEntries",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "子分区id。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "2",
           "member": "int64",
           "name": "Partitions",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "生产者数量。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "2",
           "member": "string",
           "name": "ProducerCount",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "以byte计算的所有消息存储总量。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "2",
           "member": "string",
           "name": "TotalSize",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "topic类型描述。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "0",
           "member": "uint64",
           "name": "TopicType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         }
@@ -14887,40 +14901,40 @@
         {
           "disabled": false,
           "document": "消息ID。",
-          "example": "test",
+          "example": "6054156:22067:16",
           "member": "string",
           "name": "MsgId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "生产者名称。",
-          "example": "test",
+          "example": "pulsar-7dqvnqwjgzm-2156-9",
           "member": "string",
           "name": "ProducerName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "消息生产时间。",
-          "example": "test",
+          "example": "2024-10-08 14:45:52,636",
           "member": "string",
           "name": "ProduceTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "生产者客户端。",
-          "example": "test",
+          "example": "10.0.0.120:38168",
           "member": "string",
           "name": "ProducerAddr",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14930,17 +14944,17 @@
           "example": "2",
           "member": "uint64",
           "name": "ProduceUseTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "状态。",
-          "example": "test",
+          "example": "success",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -15106,17 +15120,17 @@
           "example": "1",
           "member": "int64",
           "name": "ProducerId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "生产者名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "pulsar-7dqvndn5jgzm-2156-9",
           "member": "string",
           "name": "ProducerName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -15126,7 +15140,7 @@
           "example": "10.0.0.1:1234",
           "member": "string",
           "name": "Address",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -15136,7 +15150,7 @@
           "example": "2.7.2",
           "member": "string",
           "name": "ClientVersion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -15146,7 +15160,7 @@
           "example": "21.233",
           "member": "float",
           "name": "MsgRateIn",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },
@@ -15156,7 +15170,7 @@
           "example": "21.3655",
           "member": "float",
           "name": "MsgThroughputIn",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },
@@ -15166,17 +15180,17 @@
           "example": "1233",
           "member": "float",
           "name": "AverageMsgSize",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "连接时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "June",
           "member": "string",
           "name": "ConnectedSince",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -15186,7 +15200,7 @@
           "example": "0",
           "member": "int64",
           "name": "Partition",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         }
@@ -15199,7 +15213,7 @@
         {
           "disabled": false,
           "document": "vpc的id，支撑网和公网接入点，该字段为空\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "vpc-xxxx",
+          "example": "vpc-8jjiuayds",
           "member": "string",
           "name": "VpcId",
           "output_required": true,
@@ -15209,7 +15223,7 @@
         {
           "disabled": false,
           "document": "子网id，支撑网和公网接入点，该字段为空\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "subnet-xxx",
+          "example": "subnet-1i12ofyz",
           "member": "string",
           "name": "SubnetId",
           "output_required": true,
@@ -15229,7 +15243,7 @@
         {
           "disabled": false,
           "document": "实例id",
-          "example": "pulsar-xxxx",
+          "example": "pulsar-mw4qmgaq298g",
           "member": "string",
           "name": "InstanceId",
           "output_required": true,
@@ -15259,12 +15273,52 @@
         {
           "disabled": false,
           "document": "接入点类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "vpc",
           "member": "string",
           "name": "AccessPointsType",
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "带宽，目前只有公网会有这个值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
+          "member": "int64",
+          "name": "Bandwidth",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "类\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SecurityPolicy",
+          "name": "SecurityPolicy",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否是标准的接入点 true是标准的 false不是标准的\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "StandardAccessPoint",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "可用区信息",
+          "example": "ap-beijing-4",
+          "member": "string",
+          "name": "ZoneName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -15285,7 +15339,7 @@
         {
           "disabled": false,
           "document": "集群名称。",
-          "example": "pulsar-xxxx",
+          "example": "pulsar-mw4qmgaq298g",
           "member": "string",
           "name": "ClusterName",
           "output_required": true,
@@ -15295,7 +15349,7 @@
         {
           "disabled": false,
           "document": "说明信息。",
-          "example": "test",
+          "example": "devRemark",
           "member": "string",
           "name": "Remark",
           "output_required": true,
@@ -15389,6 +15443,26 @@
           "member": "int64",
           "name": "ExpireTime",
           "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否开启自动创建主题\ntrue就是开启了，false是关闭\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "AutoCreateTopicStatus",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自动创建主题的默认分区数，如果没开启就是0\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "DefaultPartitionNumber",
+          "output_required": false,
           "type": "int",
           "value_allowed_null": true
         }
@@ -19686,6 +19760,45 @@
       ],
       "usage": "out"
     },
+    "SecurityPolicy": {
+      "document": "安全策略",
+      "members": [
+        {
+          "disabled": false,
+          "document": "ip或者网段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "Route",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "策略 true就是允许，白名单或者 false 拒绝 黑名单\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "Policy",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "Remark",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "SendBatchMessagesRequest": {
       "document": "SendBatchMessages请求参数结构体",
       "members": [
@@ -19789,7 +19902,7 @@
         {
           "disabled": false,
           "document": "错误消息，返回为 \"\"，代表没有错误\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "\"error\"",
           "member": "string",
           "name": "ErrorMsg",
           "output_required": true,
@@ -19946,7 +20059,7 @@
         {
           "disabled": false,
           "document": "返回的错误消息，如果返回为 “”，说明没有错误\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "\"error\"",
           "member": "string",
           "name": "ErrorMsg",
           "output_required": true,
@@ -20114,20 +20227,20 @@
         {
           "disabled": false,
           "document": "存储时间。",
-          "example": "",
+          "example": "2024-10-08 11:38:48,068",
           "member": "string",
           "name": "SaveTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "状态。",
-          "example": "",
+          "example": "success",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -20229,12 +20342,11 @@
         {
           "disabled": false,
           "document": "排序字段",
-          "example": "test",
+          "example": "msgRateIn",
           "member": "string",
           "name": "Name",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -20243,8 +20355,7 @@
           "member": "string",
           "name": "Order",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -20255,7 +20366,7 @@
         {
           "disabled": false,
           "document": "主题名称。",
-          "example": "test",
+          "example": "devTopic",
           "member": "string",
           "name": "TopicName",
           "output_required": true,
@@ -20265,7 +20376,7 @@
         {
           "disabled": false,
           "document": "环境（命名空间）名称。",
-          "example": "test",
+          "example": "devNs",
           "member": "string",
           "name": "EnvironmentId",
           "output_required": true,
@@ -20275,7 +20386,7 @@
         {
           "disabled": false,
           "document": "消费者开始连接的时间。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "2024-09-12T16:01:59.677+08:00",
           "member": "string",
           "name": "ConnectedSince",
           "output_required": true,
@@ -20285,7 +20396,7 @@
         {
           "disabled": false,
           "document": "消费者地址。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "127.0.0.1",
           "member": "string",
           "name": "ConsumerAddr",
           "output_required": true,
@@ -20305,7 +20416,7 @@
         {
           "disabled": false,
           "document": "消费者名称。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "devConsumerName",
           "member": "string",
           "name": "ConsumerName",
           "output_required": true,
@@ -20355,7 +20466,7 @@
         {
           "disabled": false,
           "document": "订阅名称。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "devSubscriptionName",
           "member": "string",
           "name": "SubscriptionName",
           "output_required": true,
@@ -20395,7 +20506,7 @@
         {
           "disabled": false,
           "document": "备注。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "devRemark",
           "member": "string",
           "name": "Remark",
           "output_required": true,
@@ -20461,9 +20572,10 @@
         {
           "disabled": false,
           "document": "环境（命名空间）名称。",
-          "example": "",
+          "example": "devNs",
           "member": "string",
           "name": "EnvironmentId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -20471,9 +20583,10 @@
         {
           "disabled": false,
           "document": "主题名称。",
-          "example": "",
+          "example": "devTopic",
           "member": "string",
           "name": "TopicName",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -20481,9 +20594,10 @@
         {
           "disabled": false,
           "document": "订阅名称。",
-          "example": "",
+          "example": "devSub",
           "member": "string",
           "name": "SubscriptionName",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -20525,7 +20639,7 @@
         {
           "disabled": false,
           "document": "最后一次间隔内发布消息的平均byte大小。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "10",
           "member": "string",
           "name": "AverageMsgSize",
           "output_required": true,
@@ -20535,7 +20649,7 @@
         {
           "disabled": false,
           "document": "消费者数量。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "120",
           "member": "string",
           "name": "ConsumerCount",
           "output_required": true,
@@ -20545,7 +20659,7 @@
         {
           "disabled": false,
           "document": "被记录下来的消息总数。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "100",
           "member": "string",
           "name": "LastConfirmedEntry",
           "output_required": true,
@@ -20555,7 +20669,7 @@
         {
           "disabled": false,
           "document": "最后一个ledger创建的时间。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "2024-06-19 14:15:54",
           "member": "string",
           "name": "LastLedgerCreatedTimestamp",
           "output_required": true,
@@ -20565,7 +20679,7 @@
         {
           "disabled": false,
           "document": "本地和复制的发布者每秒发布消息的速率。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "130",
           "member": "string",
           "name": "MsgRateIn",
           "output_required": true,
@@ -20575,7 +20689,7 @@
         {
           "disabled": false,
           "document": "本地和复制的消费者每秒分发消息的数量之和。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "140",
           "member": "string",
           "name": "MsgRateOut",
           "output_required": true,
@@ -20585,7 +20699,7 @@
         {
           "disabled": false,
           "document": "本地和复制的发布者每秒发布消息的byte。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "160",
           "member": "string",
           "name": "MsgThroughputIn",
           "output_required": true,
@@ -20595,7 +20709,7 @@
         {
           "disabled": false,
           "document": "本地和复制的消费者每秒分发消息的byte。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "120",
           "member": "string",
           "name": "MsgThroughputOut",
           "output_required": true,
@@ -20605,7 +20719,7 @@
         {
           "disabled": false,
           "document": "被记录下来的消息总数。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "100",
           "member": "string",
           "name": "NumberOfEntries",
           "output_required": true,
@@ -20615,7 +20729,7 @@
         {
           "disabled": false,
           "document": "分区数<=0：topic下无子分区。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "2",
           "member": "int64",
           "name": "Partitions",
           "output_required": true,
@@ -20625,7 +20739,7 @@
         {
           "disabled": false,
           "document": "生产者数量。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "2",
           "member": "string",
           "name": "ProducerCount",
           "output_required": true,
@@ -20635,7 +20749,7 @@
         {
           "disabled": false,
           "document": "以byte计算的所有消息存储总量。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "2",
           "member": "string",
           "name": "TotalSize",
           "output_required": true,
@@ -20645,7 +20759,7 @@
         {
           "disabled": false,
           "document": "分区topic里面的子分区。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "2",
           "member": "PartitionsTopic",
           "name": "SubTopicSets",
           "output_required": true,
@@ -20655,7 +20769,7 @@
         {
           "disabled": false,
           "document": "topic类型描述：\n0：普通消息；\n1：全局顺序消息；\n2：局部顺序消息；\n3：重试队列；\n4：死信队列；\n5：事务消息。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "0",
           "member": "uint64",
           "name": "TopicType",
           "output_required": true,
@@ -20665,7 +20779,7 @@
         {
           "disabled": false,
           "document": "环境（命名空间）名称。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "devNs",
           "member": "string",
           "name": "EnvironmentId",
           "output_required": true,
@@ -20675,7 +20789,7 @@
         {
           "disabled": false,
           "document": "主题名称。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "devTopic",
           "member": "string",
           "name": "TopicName",
           "output_required": true,
@@ -20685,7 +20799,7 @@
         {
           "disabled": false,
           "document": "说明，128个字符以内。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "devRemark",
           "member": "string",
           "name": "Remark",
           "output_required": true,
@@ -20695,7 +20809,7 @@
         {
           "disabled": false,
           "document": "创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "2024-06-19 14:15:54",
           "member": "datetime",
           "name": "CreateTime",
           "output_required": true,
@@ -20705,7 +20819,7 @@
         {
           "disabled": false,
           "document": "最近修改时间。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "2024-06-19 14:15:54",
           "member": "datetime",
           "name": "UpdateTime",
           "output_required": true,
@@ -20761,9 +20875,10 @@
         {
           "disabled": false,
           "document": "环境（命名空间）名称。",
-          "example": "",
+          "example": "devNs",
           "member": "string",
           "name": "EnvironmentId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -20771,9 +20886,10 @@
         {
           "disabled": false,
           "document": "主题名称。",
-          "example": "",
+          "example": "devTopic",
           "member": "string",
           "name": "TopicName",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -21004,60 +21120,60 @@
         {
           "disabled": false,
           "document": "租户Vpc Id",
-          "example": "",
+          "example": "vpc-8jjiuayds",
           "member": "string",
           "name": "UniqueVpcId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "租户Vpc子网Id",
-          "example": "",
+          "example": "subnet-1i12ofyz",
           "member": "string",
           "name": "UniqueSubnetId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "路由Id",
-          "example": "",
+          "example": "124323",
           "member": "string",
           "name": "RouterId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "Vpc的Id",
-          "example": "",
+          "example": "10.0.0.120",
           "member": "string",
           "name": "Ip",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "Vpc的Port",
-          "example": "",
+          "example": "8080",
           "member": "uint64",
           "name": "Port",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "说明，128个字符以内\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "devRemark",
           "member": "string",
           "name": "Remark",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }

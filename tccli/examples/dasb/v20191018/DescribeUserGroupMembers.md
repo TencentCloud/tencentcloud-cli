@@ -8,7 +8,10 @@ Input:
 tccli dasb DescribeUserGroupMembers --cli-unfold-argument  \
     --Id 1 \
     --Name 张三 \
-    --Bound True
+    --Bound True \
+    --Offset 1 \
+    --Limit 1 \
+    --DepartmentId 1.4
 ```
 
 Output: 
@@ -18,39 +21,40 @@ Output:
         "TotalCount": 1,
         "UserSet": [
             {
-                "UserName": "xx",
+                "UserName": "Aiden",
                 "AuthType": 1,
-                "ValidateTo": "2020-09-22T00:00:00+00:00",
-                "RealName": "xx",
-                "ValidateTime": "xx",
-                "Email": "xx",
-                "Phone": "xx",
+                "ValidateTo": "2020-09-22T00:00:00+08:00",
+                "RealName": "Henry",
+                "ValidateTime": "2020-09-22T00:00:00+08:00",
+                "Email": "245***106@163.com",
+                "Phone": "177****4532",
                 "GroupSet": [
                     {
                         "Department": {
                             "Managers": [
-                                "xx"
+                                "457824365"
                             ],
-                            "Id": "xx",
-                            "Name": "xx"
+                            "Id": "10",
+                            "Name": "测试组"
                         },
                         "Id": 1,
-                        "Name": "xx"
+                        "Name": "开发组",
+                        "Count": 1
                     }
                 ],
-                "DepartmentId": "xx",
+                "DepartmentId": "1.5",
                 "Department": {
                     "Managers": [
-                        "xx"
+                        "15478952664"
                     ],
-                    "Id": "xx",
-                    "Name": "xx"
+                    "Id": "231",
+                    "Name": "测试组"
                 },
                 "ValidateFrom": "2020-09-22T00:00:00+00:00",
                 "Id": 1
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "557246f9-3ee4-406d-8c36-6885e2ae52d9"
     }
 }
 ```
