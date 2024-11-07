@@ -17,7 +17,7 @@ Output:
         "BindInfo": {
             "AppPkgName": "com.tencent.demo",
             "AppIconUrl": "https://appicon.url.com/AppIconUrl",
-            "AppName": "demo"
+            "AppName": "AppName"
         },
         "ResourceServiceInfo": {
             "ExpireTime": 1,

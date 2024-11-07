@@ -6,16 +6,16 @@ Input:
 
 ```
 tccli cloudhsm DescribeHSMBySubnetId --cli-unfold-argument  \
-    --SubnetId subnet-xxxxxxxx
+    --SubnetId subnet-4vxnrlco
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "TotalCount": 1,
-        "SubnetId": "subnet-xxxxxxxx",
-        "RequestId": "6010cd3d-a85a-4e00-b37b-22606d017420"
+        "RequestId": "67175452-3e94-479a-b28f-c70854d6a34b",
+        "SubnetId": "subnet-4vxnrlco",
+        "TotalCount": 2
     }
 }
 ```

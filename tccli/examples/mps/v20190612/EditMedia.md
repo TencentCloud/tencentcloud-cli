@@ -314,11 +314,11 @@ Input:
 tccli mps EditMedia --cli-unfold-argument  \
     --FileInfos.0.Id vod \
     --FileInfos.0.InputInfo.Type URL \
-    --FileInfos.0.InputInfo.UrlInputInfo.Url https://ie-mps-1258344699.cos.ap-nanjing.tencentcos.cn/evanxia/video_proc/video_editing/demo/mps-demo/02_video_start_end_logo_txt/video.mp4 \
+    --FileInfos.0.InputInfo.UrlInputInfo.Url https://.../video.mp4 \
     --OutputStorage.Type COS \
-    --OutputStorage.CosOutputStorage.Bucket ie-mps-1258344699 \
-    --OutputStorage.CosOutputStorage.Region ap-nanjing \
-    --OutputObjectPath /evanxia/video_proc/video_editing/demo/mps-demo/04_video_speed/ \
+    --OutputStorage.CosOutputStorage.Bucket your_bucket \
+    --OutputStorage.CosOutputStorage.Region your_bucket_region \
+    --OutputObjectPath /your/output/dir/ \
     --ComposeConfig.Tracks.0.Type Video \
     --ComposeConfig.Tracks.0.Items.0.Type Video \
     --ComposeConfig.Tracks.0.Items.0.Video.SourceMedia.FileId vod \

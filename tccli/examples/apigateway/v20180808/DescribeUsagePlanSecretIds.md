@@ -17,8 +17,8 @@ Output:
             "TotalCount": 1,
             "AccessKeyList": [
                 {
-                    "SecretName": "xx",
-                    "AccessKeyId": "AKIDmyE2z0gvi2p6i9lWr3bbetpTaquaxQ8s8iob",
+                    "SecretName": "test",
+                    "AccessKeyId": "AKID***********************************************",
                     "Status": 1
                 }
             ]

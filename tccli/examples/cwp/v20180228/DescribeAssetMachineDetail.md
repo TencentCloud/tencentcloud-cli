@@ -30,7 +30,7 @@ Output:
             "MachineWanIp": "139.199.156.164",
             "CpuSize": 4,
             "CpuLoad": "低",
-            "CpuLoadVul": "",
+            "CpuLoadVul": "低",
             "ProtectLevel": 2,
             "RiskStatus": "未知",
             "ProtectDays": 393,
@@ -51,13 +51,22 @@ Output:
                     "Name": "eth0",
                     "Mac": "52:54:00:b2:54:c0",
                     "Ip": "172.16.0.13",
-                    "Ipv6": "",
+                    "Ipv6": "2001:db8:85a3::8a2e:370:**",
                     "GateWay": "172.16.0.1",
                     "DnsServer": "183.60.82.98,183.60.83.19"
                 }
             ],
-            "Disks": [],
-            "OfflineTime": "",
+            "Disks": [
+                {
+                    "Name": "/dev/vda1",
+                    "Size": 100,
+                    "Percent": 60,
+                    "Type": "ext4",
+                    "Path": "/data",
+                    "Used": 19
+                }
+            ],
+            "OfflineTime": "2020-10-01 00:00:00",
             "InstanceId": "ins-dusahs86",
             "UpdateTime": "2024-11-03 04:07:17",
             "FirstTime": "2024-01-25 13:12:10",

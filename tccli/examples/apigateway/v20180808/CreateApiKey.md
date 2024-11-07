@@ -14,8 +14,8 @@ Output:
 {
     "Response": {
         "Result": {
-            "AccessKeyId": "AKID8my5MRr9i6VM98F3dZG9zV0KuBq5ID7pMG83",
-            "AccessKeySecret": "9i3BQU8lMUl2dAvrF8RvL5EM6RKEG47P770du61B",
+            "AccessKeyId": "AKID***********************************************",
+            "AccessKeySecret": "qYSyjR************************************",
             "AccessKeyType": "auto",
             "SecretName": "test",
             "Status": 1,

@@ -27,7 +27,7 @@
     "AddInstances": [
       {
         "document": "新增只读实例",
-        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddInstances\n<公共请求参数>\n\n{\n    \"ReadOnlyCount\": \"1\",\n    \"VpcId\": \"vpc-1ptuei0b\",\n    \"ClusterId\": \"cynosdbmysql-6gtlgm5l\",\n    \"Memory\": 4,\n    \"SubnetId\": \"subnet-1tmw9t4o\",\n    \"Cpu\": 2,\n    \"UpgradeProxy\": {\n        \"Cpu\": 4,\n        \"Mem\": 8000,\n        \"ReloadBalance\": \"auto\",\n        \"ProxyZones\": [\n            {\n                \"ProxyNodeZone\": \"ap-guangzhou-3\",\n                \"ProxyNodeCount\": 1\n            }\n        ]\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddInstances\n<公共请求参数>\n\n{\n    \"ReadOnlyCount\": 1,\n    \"VpcId\": \"vpc-1ptuei0b\",\n    \"ClusterId\": \"cynosdbmysql-6gtlgm5l\",\n    \"Memory\": 4,\n    \"SubnetId\": \"subnet-1tmw9t4o\",\n    \"Cpu\": 2,\n    \"UpgradeProxy\": {\n        \"Cpu\": 4,\n        \"Mem\": 8000,\n        \"ReloadBalance\": \"auto\",\n        \"ProxyZones\": [\n            {\n                \"ProxyNodeZone\": \"ap-guangzhou-3\",\n                \"ProxyNodeCount\": 1\n            }\n        ]\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"TranId\": \"myTranId\",\n        \"DealNames\": [\n            \"182711111\"\n        ],\n        \"ResourceIds\": [\n            \"cynosdbmysql-mwg712mm\"\n        ],\n        \"BigDealIds\": [\n            \"1111\"\n        ],\n        \"RequestId\": \"48fa5cf5-77db-4e32-90ef-22c71ed95f51\"\n    }\n}",
         "title": "新增实例"
       }
@@ -290,7 +290,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAuditLogFiles\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cynosdbmysql-ins-qwerasdf\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"TotalCount\": 1,\n        \"Items\": [\n            {\n                \"Status\": \"creating\",\n                \"FileName\": \"audit_log_file\",\n                \"DownloadUrl\": \"https://gz-audit-1256375829.cos.ap-guangzhou.myqcloud.com/183367353_cdb-j0skeo3t_1694001004_7113542.csv?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKID3rhYBaa9HVeKkvpd072tVt2x2khNYopc%26q-sign-time%3D1694001006%3B1694087406%26q-key-time%3D1694001006%3B1694087406%26q-header-list%3D%26q-url-param-list%3D%26q-signature%3Dbb41113d6e580050730d492886b59d730a474764\",\n                \"FileSize\": 123,\n                \"CreateTime\": \"2019-03-20 17:09:13\",\n                \"ErrMsg\": \"\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"TotalCount\": 1,\n        \"Items\": [\n            {\n                \"Status\": \"creating\",\n                \"FileName\": \"audit_log_file\",\n                \"DownloadUrl\": \"https://gz-audit-32723462.cos.ap-guangzhou.myqcloud.com/183367353_cdb-sdjw3sjc_1694001004_7113542.csv?sign=q-sign-algorithm%3Dsha1%26q-ak%*********************************%26q-sign-time%3D1694001006%3B1694087406%26q-key-time%3D1694001006%3B1694087406%26q-header-list%3D%26q-url-param-list%3D%26q-signature%*******************************************************\",\n                \"FileSize\": 123,\n                \"CreateTime\": \"2019-03-20 17:09:13\",\n                \"ErrMsg\": \"\"\n            }\n        ]\n    }\n}",
         "title": "创建审计日志文件"
       }
     ],
@@ -342,7 +342,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBackupDownloadUrl\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-dnofdr2d\",\n    \"BackupId\": 1879681\n}",
-        "output": "{\n    \"Response\": {\n        \"DownloadUrl\": \"https://ncdb-bj-pitr-1258***699.cos.ap-beijing.myqcloud.com/cynosdb/data/mysqldump/****9fd2-691a-11ef-b99a-b02628437590/2024-10-28/1879681/data_backup_1879681_20241028022147.xb?q-sign-algorithm=sha1&q-ak=AKIDDF4f3C7nESTHrCJCqlW3MTM1SedOvsrd&q-sign-time=1730079993%3B1730123193&q-key-time=1730079993%3B1730123193&q-header-list=host&q-url-param-list=&q-signature=***52c84953d8372a8b04b599ba96a039ad1472c\",\n        \"RequestId\": \"9e56617c-c7cc-44e1-a967-6beb418ad5e7\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"DownloadUrl\": \"https://ncdb-bj-pitr-1258***699.cos.ap-beijing.myqcloud.com/cynosdb/data/mysqldump/****9fd2-691a-11ef-b99a-b02628437590/2024-10-28/1879681/data_backup_1879681_20241028022147.xb?q-sign-algorithm=sha1&q-ak=************&q-sign-time=1730079993%3B1730123193&q-key-time=1730079993%3B1730123193&q-header-list=host&q-url-param-list=&q-signature=*****************\",\n        \"RequestId\": \"9e56617c-c7cc-44e1-a967-6beb418ad5e7\"\n    }\n}",
         "title": "查询集群备份文件下载地址"
       }
     ],
@@ -366,7 +366,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBinlogDownloadUrl\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-ck8fmktd\",\n    \"BinlogId\": 3364561\n}",
-        "output": "{\n    \"Response\": {\n        \"DownloadUrl\": \"https://ncdb-cdc-bj-1258***699.cos.ap-beijing.myqcloud.com/cynosdb/cdc/BinlogCapture/71***d45-8cfd-11ef-b99a-b02628437590/29.18.12.168_20650_1/mysql-bin.001002/file?q-sign-algorithm=sha1&q-ak=AKIDDF4f3C7nESTHrCJCqlW3MTM1SedOvsrd&q-sign-time=17300***57%3B1730123657&q-key-time=17300***57%3B1730123657&q-header-list=host&q-url-param-list=&q-signature=fa17ffef67f04***5eb54e377db53443d7c2d102\",\n        \"RequestId\": \"e3159885-b774-40c5-bacb-5d99f2ad1c2c\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"DownloadUrl\": \"https://ncdb-cdc-bj-1258***699.cos.ap-beijing.myqcloud.com/cynosdb/cdc/BinlogCapture/71***d45-8cfd-11ef-b99a-b02628437590/29.18.12.168_20650_1/mysql-bin.001002/file?q-sign-algorithm=sha1&q-ak=**************&q-sign-time=17300***57%3B1730123657&q-key-time=17300***57%3B1730123657&q-header-list=host&q-url-param-list=&q-signature=**************\",\n        \"RequestId\": \"e3159885-b774-40c5-bacb-5d99f2ad1c2c\"\n    }\n}",
         "title": "查询 Binlog 的下载地址"
       }
     ],

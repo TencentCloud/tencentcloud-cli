@@ -8,7 +8,7 @@ Input:
 tccli cloudhsm DescribeVsms --cli-unfold-argument  \
     --Offset 0 \
     --Limit 10 \
-    --SearchWord xxxxxxx
+    --SearchWord default-hsmName
 ```
 
 Output: 

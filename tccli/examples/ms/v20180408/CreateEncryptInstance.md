@@ -68,7 +68,7 @@ tccli ms CreateEncryptInstance --cli-unfold-argument  \
     --AndroidAppInfo.AppMd5 881ac0a49b3ae9967022217730cc0da8 \
     --AndroidAppInfo.AppSize 4743475 \
     --AndroidAppInfo.AppUrl https://x.app.url \
-    --AndroidAppInfo.AppName demo \
+    --AndroidAppInfo.AppName AppName \
     --AndroidAppInfo.AppPkgName com.tencnent.demo \
     --AndroidAppInfo.AppFileName demo.apk \
     --AndroidAppInfo.AppVersion 7.8.1 \

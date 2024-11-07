@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli apigateway UpdateApiKey --cli-unfold-argument  \
-    --AccessKeyId AKID8my5MRr9i6VM98F3dZG9zV0KuBq5ID7pMG83
+    --AccessKeyId AKID***********************************************
 ```
 
 Output: 
@@ -14,8 +14,8 @@ Output:
 {
     "Response": {
         "Result": {
-            "AccessKeyId": "AKID8my5MRr9i6VM98F3dZG9zV0KuBq5ID7pMG83",
-            "AccessKeySecret": "hvhuan76de5im5Fa0bqh8aaBcOO9cy6c7yg2ywlf",
+            "AccessKeyId": "AKID***********************************************",
+            "AccessKeySecret": "qYSyjR************************************",
             "AccessKeyType": "auto",
             "SecretName": "dd",
             "Status": 1,

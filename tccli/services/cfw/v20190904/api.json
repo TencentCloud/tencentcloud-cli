@@ -1,11 +1,11 @@
 {
   "actions": {
     "AddAcRule": {
-      "document": "添加互联网边界规则",
+      "document": "接口不再使用，已有新接口AddAclRule\n\n添加互联网边界规则",
       "input": "AddAcRuleRequest",
-      "name": "添加互联网边界规则",
+      "name": "添加互联网边界规则（不再使用，已迁移到新接口AddAclRule）",
       "output": "AddAcRuleResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "AddAclRule": {
       "document": "添加互联网边界访问控制规则",

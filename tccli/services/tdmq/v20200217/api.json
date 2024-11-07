@@ -4032,8 +4032,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "队列名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "queue1",
+          "document": "实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "amqp-test",
           "member": "string",
           "name": "InstanceId",
           "output_required": true,
@@ -4053,7 +4053,7 @@
         {
           "disabled": false,
           "document": "路由关系Id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123",
+          "example": "123321",
           "member": "int64",
           "name": "BindingId",
           "output_required": true,
@@ -4338,7 +4338,7 @@
         {
           "disabled": false,
           "document": "资源标签列表",
-          "example": "[{\"tagKey\":\"pulsar_create_clu_tag_50632\",\"tagValue\":\"num77083\"}]",
+          "example": "[{\"tagKey\":\"业务\",\"tagValue\":\"num77083\"}]",
           "member": "Tag",
           "name": "ResourceTags",
           "required": false,
@@ -8484,7 +8484,7 @@
         {
           "disabled": false,
           "document": "策略结果总数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "11",
           "member": "int64",
           "name": "TotalCount",
           "output_required": true,
@@ -8639,8 +8639,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "队列名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "queue1",
+          "document": "实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "amqp-test",
           "member": "string",
           "name": "InstanceId",
           "output_required": true,
@@ -9040,7 +9040,7 @@
         {
           "disabled": false,
           "document": "数量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "11",
           "member": "int64",
           "name": "TotalCount",
           "output_required": true,
@@ -15961,8 +15961,8 @@
         },
         {
           "disabled": false,
-          "document": "http://amqp-k3eb47gm.dashboard.rabbitmq.cq.public.tencenttdmq.com:15672/\n公网域名接入点\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "http://amqp-k3eb47gm.dashboard.rabbitmq.cq.public.tencenttdmq.com:15672/",
+          "document": "公网域名接入点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http://amqp-test.dashboard.rabbitmq.cq.public.tencenttdmq.com:15672/",
           "member": "string",
           "name": "WebConsoleDomainEndpoint",
           "output_required": true,
@@ -16008,7 +16008,7 @@
         {
           "disabled": false,
           "document": "创建时间，毫秒为单位",
-          "example": "100000000",
+          "example": "1666257531142",
           "member": "uint64",
           "name": "CreateTime",
           "output_required": true,
@@ -16902,7 +16902,7 @@
         {
           "disabled": false,
           "document": "实例名称",
-          "example": "abc",
+          "example": "test",
           "member": "string",
           "name": "InstanceName",
           "output_required": true,
@@ -16912,7 +16912,7 @@
         {
           "disabled": false,
           "document": "实例版本\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "4.9.3",
+          "example": "3.11.8",
           "member": "string",
           "name": "InstanceVersion",
           "output_required": true,

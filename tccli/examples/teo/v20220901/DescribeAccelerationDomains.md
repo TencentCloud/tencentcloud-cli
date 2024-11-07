@@ -34,6 +34,32 @@ Output:
                     "OriginGroupName": "",
                     "BackOriginGroupName": ""
                 },
+                "Certificate": {
+                    "Mode": "sslcert",
+                    "List": [
+                        {
+                            "CertId": "J2JqATrsx"
+                        }
+                    ],
+                    "ClientCertInfo": {
+                        "Switch": "on",
+                        "CertInfos": [
+                            {
+                                "CertId": "J2JqATrsx"
+                            }
+                        ]
+                    },
+                    "UpstreamCertInfo": {
+                        "UpstreamMutualTLS": {
+                            "Switch": "on",
+                            "CertInfos": [
+                                {
+                                    "CertId": "J2JqATrsx"
+                                }
+                            ]
+                        }
+                    }
+                },
                 "IdentificationStatus": "finished",
                 "Cname": "www.qq.com.eo.dnse3.com",
                 "CreatedOn": "2020-09-22T00:00:00+00:00",

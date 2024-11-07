@@ -15,8 +15,8 @@ Output:
             "TotalCount": 1,
             "ApiKeySet": [
                 {
-                    "AccessKeyId": "AKID1IGx7Tu5mk150ds6fhbdi1RqD8KlI6dW32MD",
-                    "AccessKeySecret": "qYSyjJAn6BNAmoRpFs93HhtchFCGy4K3zrC2WjR",
+                    "AccessKeyId": "AKID***********************************************",
+                    "AccessKeySecret": "qYSyjR************************************",
                     "AccessKeyType": "auto",
                     "SecretName": "dd",
                     "Status": 1,

@@ -6,17 +6,17 @@ Input:
 
 ```
 tccli tdmq DescribeRabbitMQVirtualHost --cli-unfold-argument  \
-    --InstanceId amqp-44w9928j
+    --InstanceId amqp-test
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+        "RequestId": "a8f28d5e-a7e2-4b0b-afa0-2fba09c077a0",
         "VirtualHostList": [
             {
-                "InstanceId": "amqp-xxxxxxxx",
+                "InstanceId": "amqp-test",
                 "VirtualHost": "vhost",
                 "Description": "",
                 "Tags": [],
@@ -35,7 +35,7 @@ Output:
                 "MessageRateOut": 0
             },
             {
-                "InstanceId": "amqp-xxxxxxxx",
+                "InstanceId": "amqp-test",
                 "VirtualHost": "test2",
                 "Description": "",
                 "Tags": [],

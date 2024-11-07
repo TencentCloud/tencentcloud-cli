@@ -1,578 +1,578 @@
 {
   "actions": {
     "BuildMessageRoute": {
-      "document": "建立消息路由",
+      "document": "产品下线\n\n建立消息路由",
       "input": "BuildMessageRouteRequest",
       "name": "建立消息路由",
       "output": "BuildMessageRouteResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateConfigMap": {
-      "document": "创建ConfigMap",
+      "document": "产品下线\n\n创建ConfigMap",
       "input": "CreateConfigMapRequest",
       "name": "创建ConfigMap",
       "output": "CreateConfigMapResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateEdgeNode": {
-      "document": "创建边缘节点",
+      "document": "产品下线\n\n创建边缘节点",
       "input": "CreateEdgeNodeRequest",
       "name": "创建边缘节点",
       "output": "CreateEdgeNodeResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateEdgeNodeBatch": {
-      "document": "批量预注册节点",
+      "document": "产品下线\n\n批量预注册节点",
       "input": "CreateEdgeNodeBatchRequest",
       "name": "批量预注册节点",
       "output": "CreateEdgeNodeBatchResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateEdgeNodeGroup": {
-      "document": "创建边缘单元NodeGroup",
+      "document": "产品下线\n\n创建边缘单元NodeGroup",
       "input": "CreateEdgeNodeGroupRequest",
       "name": "创建边缘单元NodeGroup",
       "output": "CreateEdgeNodeGroupResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateEdgeNodeUnitTemplate": {
-      "document": "创建边缘单元NodeUnit模板",
+      "document": "产品下线\n\n创建边缘单元NodeUnit模板",
       "input": "CreateEdgeNodeUnitTemplateRequest",
       "name": "创建边缘单元NodeUnit模板",
       "output": "CreateEdgeNodeUnitTemplateResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateEdgeUnitCloud": {
-      "document": "创建边缘单元",
+      "document": "产品下线\n\n创建边缘单元",
       "input": "CreateEdgeUnitCloudRequest",
       "name": "创建边缘单元",
       "output": "CreateEdgeUnitCloudResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateEdgeUnitDevices": {
-      "document": "批量绑定设备到单元",
+      "document": "产品下线\n\n批量绑定设备到单元",
       "input": "CreateEdgeUnitDevicesRequest",
       "name": "批量绑定设备到单元",
       "output": "CreateEdgeUnitDevicesResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateIotDevice": {
-      "document": "创建子设备",
+      "document": "产品下线\n\n创建子设备",
       "input": "CreateIotDeviceRequest",
       "name": "创建子设备",
       "output": "CreateIotDeviceResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateMessageRoute": {
-      "document": "创建消息路由",
+      "document": "产品下线\n\n创建消息路由",
       "input": "CreateMessageRouteRequest",
       "name": "创建消息路由",
       "output": "CreateMessageRouteResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateNamespace": {
-      "document": "创建命名空间",
+      "document": "产品下线\n\n创建命名空间",
       "input": "CreateNamespaceRequest",
       "name": "创建命名空间",
       "output": "CreateNamespaceResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateSecret": {
-      "document": "创建Secret",
+      "document": "产品下线\n\n创建Secret",
       "input": "CreateSecretRequest",
       "name": "创建Secret",
       "output": "CreateSecretResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateUpdateNodeUnit": {
-      "document": "创建或更新边缘单元NodeUnit",
+      "document": "产品下线\n\n创建或更新边缘单元NodeUnit",
       "input": "CreateUpdateNodeUnitRequest",
       "name": "创建或更新边缘单元NodeUnit",
       "output": "CreateUpdateNodeUnitResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateUserToken": {
-      "document": "创建token",
+      "document": "产品下线\n\n创建token",
       "input": "CreateUserTokenRequest",
       "name": "创建token",
       "output": "CreateUserTokenResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DeleteConfigMap": {
-      "document": "删除ConfigMap",
+      "document": "产品下线\n\n删除ConfigMap",
       "input": "DeleteConfigMapRequest",
       "name": "删除ConfigMap",
       "output": "DeleteConfigMapResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DeleteEdgeNodeGroup": {
-      "document": "删除边缘单元NodeGroup",
+      "document": "产品下线\n\n删除边缘单元NodeGroup",
       "input": "DeleteEdgeNodeGroupRequest",
       "name": "删除边缘单元NodeGroup",
       "output": "DeleteEdgeNodeGroupResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DeleteEdgeNodeUnitTemplates": {
-      "document": "删除边缘单元NodeUnit模板",
+      "document": "产品下线\n\n删除边缘单元NodeUnit模板",
       "input": "DeleteEdgeNodeUnitTemplatesRequest",
       "name": "删除边缘单元NodeUnit模板",
       "output": "DeleteEdgeNodeUnitTemplatesResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DeleteEdgeNodes": {
-      "document": "批量删除边缘节点",
+      "document": "产品下线\n\n批量删除边缘节点",
       "input": "DeleteEdgeNodesRequest",
       "name": "批量删除边缘节点",
       "output": "DeleteEdgeNodesResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DeleteEdgeUnitCloud": {
-      "document": "删除边缘单元",
+      "document": "产品下线\n\n删除边缘单元",
       "input": "DeleteEdgeUnitCloudRequest",
       "name": "删除边缘单元",
       "output": "DeleteEdgeUnitCloudResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DeleteEdgeUnitDeployGridItem": {
-      "document": "重新部署边缘单元指定Grid下应用",
+      "document": "产品下线\n\n重新部署边缘单元指定Grid下应用",
       "input": "DeleteEdgeUnitDeployGridItemRequest",
       "name": "重新部署边缘单元指定Grid下应用",
       "output": "DeleteEdgeUnitDeployGridItemResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DeleteEdgeUnitDevices": {
-      "document": "批量解绑单元设备",
+      "document": "产品下线\n\n批量解绑单元设备",
       "input": "DeleteEdgeUnitDevicesRequest",
       "name": "批量解绑单元设备",
       "output": "DeleteEdgeUnitDevicesResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DeleteEdgeUnitPod": {
-      "document": "删除指定pod",
+      "document": "产品下线\n\n删除指定pod",
       "input": "DeleteEdgeUnitPodRequest",
       "name": "删除指定pod",
       "output": "DeleteEdgeUnitPodResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DeleteIotDevice": {
-      "document": "删除设备",
+      "document": "产品下线\n\n删除设备",
       "input": "DeleteIotDeviceRequest",
       "name": "删除设备",
       "output": "DeleteIotDeviceResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DeleteIotDeviceBatch": {
-      "document": "批量删除设备",
+      "document": "产品下线\n\n批量删除设备",
       "input": "DeleteIotDeviceBatchRequest",
       "name": "批量删除设备",
       "output": "DeleteIotDeviceBatchResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DeleteMessageRoute": {
-      "document": "删除消息路由",
+      "document": "产品下线\n\n删除消息路由",
       "input": "DeleteMessageRouteRequest",
       "name": "删除消息路由",
       "output": "DeleteMessageRouteResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DeleteNamespace": {
-      "document": "删除命名空间",
+      "document": "产品下线\n\n删除命名空间",
       "input": "DeleteNamespaceRequest",
       "name": "删除命名空间",
       "output": "DeleteNamespaceResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DeleteNodeUnit": {
-      "document": "删除边缘单元NodeUnit",
+      "document": "产品下线\n\n删除边缘单元NodeUnit",
       "input": "DeleteNodeUnitRequest",
       "name": "删除边缘单元NodeUnit",
       "output": "DeleteNodeUnitResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DeleteSecret": {
-      "document": "删除Secret",
+      "document": "产品下线\n\n删除Secret",
       "input": "DeleteSecretRequest",
       "name": "删除Secret",
       "output": "DeleteSecretResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeConfigMap": {
-      "document": "获取ConfigMap详情",
+      "document": "产品下线\n\n获取ConfigMap详情",
       "input": "DescribeConfigMapRequest",
       "name": "获取ConfigMap详情",
       "output": "DescribeConfigMapResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeConfigMapYamlError": {
-      "document": "校验ConfigMap的Yaml语法",
+      "document": "产品下线\n\n校验ConfigMap的Yaml语法",
       "input": "DescribeConfigMapYamlErrorRequest",
       "name": "校验ConfigMap的Yaml语法",
       "output": "DescribeConfigMapYamlErrorResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeConfigMaps": {
-      "document": "获取ConfigMap列表",
+      "document": "产品下线\n\n获取ConfigMap列表",
       "input": "DescribeConfigMapsRequest",
       "name": "获取ConfigMap列表",
       "output": "DescribeConfigMapsResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeDracoEdgeNodeInstaller": {
-      "document": "自动获取Draco设备的安装包",
+      "document": "产品下线\n\n自动获取Draco设备的安装包",
       "input": "DescribeDracoEdgeNodeInstallerRequest",
       "name": "自动获取Draco设备的安装包",
       "output": "DescribeDracoEdgeNodeInstallerResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeEdgeAgentNodeInstaller": {
-      "document": "获取节点安装信息",
+      "document": "产品下线\n\n获取节点安装信息",
       "input": "DescribeEdgeAgentNodeInstallerRequest",
       "name": "获取节点安装信息",
       "output": "DescribeEdgeAgentNodeInstallerResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeEdgeDefaultVpc": {
-      "document": "获取边缘集群默认VPC信息",
+      "document": "产品下线\n\n获取边缘集群默认VPC信息",
       "input": "DescribeEdgeDefaultVpcRequest",
       "name": "获取边缘集群默认VPC信息",
       "output": "DescribeEdgeDefaultVpcResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeEdgeNode": {
-      "document": "获取边缘节点信息",
+      "document": "产品下线\n\n获取边缘节点信息",
       "input": "DescribeEdgeNodeRequest",
       "name": "获取边缘节点信息",
       "output": "DescribeEdgeNodeResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeEdgeNodePodContainers": {
-      "document": "查询节点Pod内的容器列表",
+      "document": "产品下线\n\n查询节点Pod内的容器列表",
       "input": "DescribeEdgeNodePodContainersRequest",
       "name": "查询节点Pod内的容器列表",
       "output": "DescribeEdgeNodePodContainersResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeEdgeNodePods": {
-      "document": "查询节点Pod列表",
+      "document": "产品下线\n\n查询节点Pod列表",
       "input": "DescribeEdgeNodePodsRequest",
       "name": "查询节点Pod列表",
       "output": "DescribeEdgeNodePodsResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeEdgeNodeRemarkList": {
-      "document": "获取节点备注信息列表",
+      "document": "产品下线\n\n获取节点备注信息列表",
       "input": "DescribeEdgeNodeRemarkListRequest",
       "name": "获取节点备注信息列表",
       "output": "DescribeEdgeNodeRemarkListResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeEdgeNodes": {
-      "document": "查询边缘节点列表",
+      "document": "产品下线\n\n查询边缘节点列表",
       "input": "DescribeEdgeNodesRequest",
       "name": "查询边缘节点列表",
       "output": "DescribeEdgeNodesResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeEdgeOperationLogs": {
-      "document": "查询边缘操作日志",
+      "document": "产品下线\n\n查询边缘操作日志",
       "input": "DescribeEdgeOperationLogsRequest",
       "name": "查询边缘操作日志",
       "output": "DescribeEdgeOperationLogsResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeEdgePod": {
-      "document": "查询边缘单元Pod",
+      "document": "产品下线\n\n查询边缘单元Pod",
       "input": "DescribeEdgePodRequest",
       "name": "查询边缘单元Pod",
       "output": "DescribeEdgePodResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeEdgeSnNodes": {
-      "document": "查询预注册节点列表",
+      "document": "产品下线\n\n查询预注册节点列表",
       "input": "DescribeEdgeSnNodesRequest",
       "name": "查询预注册节点列表",
       "output": "DescribeEdgeSnNodesResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeEdgeUnitApplications": {
-      "document": "获取单元下应用列表",
+      "document": "产品下线\n\n获取单元下应用列表",
       "input": "DescribeEdgeUnitApplicationsRequest",
       "name": "获取单元下应用列表",
       "output": "DescribeEdgeUnitApplicationsResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeEdgeUnitDeployGrid": {
-      "document": "查询边缘单元Grid列表",
+      "document": "产品下线\n\n查询边缘单元Grid列表",
       "input": "DescribeEdgeUnitDeployGridRequest",
       "name": "查询边缘单元Grid列表",
       "output": "DescribeEdgeUnitDeployGridResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeEdgeUnitDeployGridItem": {
-      "document": "查询边缘单元指定Grid下的部署应用列表",
+      "document": "产品下线\n\n查询边缘单元指定Grid下的部署应用列表",
       "input": "DescribeEdgeUnitDeployGridItemRequest",
       "name": "查询边缘单元指定Grid下的部署应用列表",
       "output": "DescribeEdgeUnitDeployGridItemResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeEdgeUnitDeployGridItemYaml": {
-      "document": "查询指定Grid下应用的Yaml",
+      "document": "产品下线\n\n查询指定Grid下应用的Yaml",
       "input": "DescribeEdgeUnitDeployGridItemYamlRequest",
       "name": "查询指定Grid下应用的Yaml",
       "output": "DescribeEdgeUnitDeployGridItemYamlResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeEdgeUnitExtra": {
-      "document": "查询边缘单元额外信息",
+      "document": "产品下线\n\n查询边缘单元额外信息",
       "input": "DescribeEdgeUnitExtraRequest",
       "name": "查询边缘单元额外信息",
       "output": "DescribeEdgeUnitExtraResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeEdgeUnitGridEvents": {
-      "document": "查询边缘单元Grid事件列表",
+      "document": "产品下线\n\n查询边缘单元Grid事件列表",
       "input": "DescribeEdgeUnitGridEventsRequest",
       "name": "查询边缘单元Grid事件列表",
       "output": "DescribeEdgeUnitGridEventsResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeEdgeUnitGridPods": {
-      "document": "查询边缘单元Grid的Pod列表",
+      "document": "产品下线\n\n查询边缘单元Grid的Pod列表",
       "input": "DescribeEdgeUnitGridPodsRequest",
       "name": "查询边缘单元Grid的Pod列表",
       "output": "DescribeEdgeUnitGridPodsResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeEdgeUnitMonitorStatus": {
-      "document": "查询边缘集群监控状态",
+      "document": "产品下线\n\n查询边缘集群监控状态",
       "input": "DescribeEdgeUnitMonitorStatusRequest",
       "name": "查询边缘集群监控状态",
       "output": "DescribeEdgeUnitMonitorStatusResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeEdgeUnitNodeGroup": {
-      "document": "查询边缘集群NodeGroup",
+      "document": "产品下线\n\n查询边缘集群NodeGroup",
       "input": "DescribeEdgeUnitNodeGroupRequest",
       "name": "查询边缘单元NodeGroup列表",
       "output": "DescribeEdgeUnitNodeGroupResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeEdgeUnitNodeUnitTemplates": {
-      "document": "查询边缘单元EdgeUnit模板列表",
+      "document": "产品下线\n\n查询边缘单元EdgeUnit模板列表",
       "input": "DescribeEdgeUnitNodeUnitTemplatesRequest",
       "name": "查询边缘单元EdgeUnit模板列表",
       "output": "DescribeEdgeUnitNodeUnitTemplatesResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeEdgeUnitsCloud": {
-      "document": "查询边缘单元列表",
+      "document": "产品下线\n\n查询边缘单元列表",
       "input": "DescribeEdgeUnitsCloudRequest",
       "name": "查询边缘单元列表",
       "output": "DescribeEdgeUnitsCloudResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeIotDevice": {
-      "document": "获取设备信息",
+      "document": "产品下线\n\n获取设备信息",
       "input": "DescribeIotDeviceRequest",
       "name": "获取设备信息",
       "output": "DescribeIotDeviceResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeIotDevices": {
-      "document": "获取设备列表信息",
+      "document": "产品下线\n\n获取设备列表信息",
       "input": "DescribeIotDevicesRequest",
       "name": "获取设备列表信息",
       "output": "DescribeIotDevicesResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeMessageRouteList": {
-      "document": "获取消息路由列表",
+      "document": "产品下线\n\n获取消息路由列表",
       "input": "DescribeMessageRouteListRequest",
       "name": "获取消息路由列表",
       "output": "DescribeMessageRouteListResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeMonitorMetrics": {
-      "document": "查询边缘单元监控数据",
+      "document": "产品下线\n\n查询边缘单元监控数据",
       "input": "DescribeMonitorMetricsRequest",
       "name": "查询边缘单元监控数据",
       "output": "DescribeMonitorMetricsResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeNamespace": {
-      "document": "获取命名空间",
+      "document": "产品下线\n\n获取命名空间",
       "input": "DescribeNamespaceRequest",
       "name": "获取命名空间",
       "output": "DescribeNamespaceResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeNamespaceResources": {
-      "document": "获取命名空间下的资源信息",
+      "document": "产品下线\n\n获取命名空间下的资源信息",
       "input": "DescribeNamespaceResourcesRequest",
       "name": "获取命名空间下的资源信息",
       "output": "DescribeNamespaceResourcesResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeNamespaces": {
-      "document": "获取命名空间列表信息",
+      "document": "产品下线\n\n获取命名空间列表信息",
       "input": "DescribeNamespacesRequest",
       "name": "获取命名空间列表信息",
       "output": "DescribeNamespacesResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeNodeUnit": {
-      "document": "查询边缘单元NodeUnit列表",
+      "document": "产品下线\n\n查询边缘单元NodeUnit列表",
       "input": "DescribeNodeUnitRequest",
       "name": "查询边缘单元NodeUnit列表",
       "output": "DescribeNodeUnitResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeNodeUnitTemplateOnNodeGroup": {
-      "document": "查询指定NodeGroup下NodeUnit模板列表",
+      "document": "产品下线\n\n查询指定NodeGroup下NodeUnit模板列表",
       "input": "DescribeNodeUnitTemplateOnNodeGroupRequest",
       "name": "查询指定NodeGroup下NodeUnit模板列表",
       "output": "DescribeNodeUnitTemplateOnNodeGroupResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeSecret": {
-      "document": "获取Secret详情",
+      "document": "产品下线\n\n获取Secret详情",
       "input": "DescribeSecretRequest",
       "name": "获取Secret详情",
       "output": "DescribeSecretResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeSecretYamlError": {
-      "document": "校验Secret的Yaml语法",
+      "document": "产品下线\n\n校验Secret的Yaml语法",
       "input": "DescribeSecretYamlErrorRequest",
       "name": "校验Secret的Yaml语法",
       "output": "DescribeSecretYamlErrorResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeSecrets": {
-      "document": "获取Secrets列表",
+      "document": "产品下线\n\n获取Secrets列表",
       "input": "DescribeSecretsRequest",
       "name": "获取Secrets列表",
       "output": "DescribeSecretsResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeYeheResourceLimit": {
-      "document": "查询用户的资源限制",
+      "document": "产品下线\n\n查询用户的资源限制",
       "input": "DescribeYeheResourceLimitRequest",
       "name": "查询用户的资源限制",
       "output": "DescribeYeheResourceLimitResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "GetMarketComponent": {
-      "document": "获取组件市场的组件信息",
+      "document": "产品下线\n\n获取组件市场的组件信息",
       "input": "GetMarketComponentRequest",
       "name": "获取组件市场的组件信息",
       "output": "GetMarketComponentResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "GetMarketComponentList": {
-      "document": "获取组件市场组件列表",
+      "document": "产品下线\n\n获取组件市场组件列表",
       "input": "GetMarketComponentListRequest",
       "name": "获取组件市场组件列表",
       "output": "GetMarketComponentListResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ModifyConfigMap": {
-      "document": "修改ConfigMap",
+      "document": "产品下线\n\n修改ConfigMap",
       "input": "ModifyConfigMapRequest",
       "name": "修改ConfigMap",
       "output": "ModifyConfigMapResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ModifyEdgeDracoNode": {
-      "document": "编辑draco设备信息",
+      "document": "产品下线\n\n编辑draco设备信息",
       "input": "ModifyEdgeDracoNodeRequest",
       "name": "编辑draco设备信息",
       "output": "ModifyEdgeDracoNodeResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ModifyEdgeNodeLabels": {
-      "document": "编辑边缘节点标签",
+      "document": "产品下线\n\n编辑边缘节点标签",
       "input": "ModifyEdgeNodeLabelsRequest",
       "name": "编辑边缘节点标签",
       "output": "ModifyEdgeNodeLabelsResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ModifyEdgeUnit": {
-      "document": "修改边缘集群",
+      "document": "产品下线\n\n修改边缘集群",
       "input": "ModifyEdgeUnitRequest",
       "name": "修改边缘集群",
       "output": "ModifyEdgeUnitResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ModifyEdgeUnitApplicationBasicInfo": {
-      "document": "修改单元应用基本信息",
+      "document": "产品下线\n\n修改单元应用基本信息",
       "input": "ModifyEdgeUnitApplicationBasicInfoRequest",
       "name": "修改单元应用基本信息",
       "output": "ModifyEdgeUnitApplicationBasicInfoResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ModifyEdgeUnitApplicationVisualization": {
-      "document": "可视化修改应用配置",
+      "document": "产品下线\n\n可视化修改应用配置",
       "input": "ModifyEdgeUnitApplicationVisualizationRequest",
       "name": "可视化修改应用配置",
       "output": "ModifyEdgeUnitApplicationVisualizationResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ModifyEdgeUnitApplicationYaml": {
-      "document": "Yaml方式修改应用配置",
+      "document": "产品下线\n\nYaml方式修改应用配置",
       "input": "ModifyEdgeUnitApplicationYamlRequest",
       "name": "Yaml方式修改应用配置",
       "output": "ModifyEdgeUnitApplicationYamlResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ModifyEdgeUnitCloudApi": {
-      "document": "更新边缘单元信息",
+      "document": "产品下线\n\n更新边缘单元信息",
       "input": "ModifyEdgeUnitCloudApiRequest",
       "name": "更新边缘单元信息",
       "output": "ModifyEdgeUnitCloudApiResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ModifyEdgeUnitDeployGridItem": {
-      "document": "修改边缘单元Grid部署应用副本数",
+      "document": "产品下线\n\n修改边缘单元Grid部署应用副本数",
       "input": "ModifyEdgeUnitDeployGridItemRequest",
       "name": "修改边缘单元Grid部署应用副本数",
       "output": "ModifyEdgeUnitDeployGridItemResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ModifyIotDevice": {
-      "document": "修改设备信息",
+      "document": "产品下线\n\n修改设备信息",
       "input": "ModifyIotDeviceRequest",
       "name": "修改设备信息",
       "output": "ModifyIotDeviceResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ModifyNodeUnitTemplate": {
-      "document": "修改边缘单元NodeUnit模板",
+      "document": "产品下线\n\n修改边缘单元NodeUnit模板",
       "input": "ModifyNodeUnitTemplateRequest",
       "name": "修改边缘单元NodeUnit模板",
       "output": "ModifyNodeUnitTemplateResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ModifySecret": {
-      "document": "修改Secret",
+      "document": "产品下线\n\n修改Secret",
       "input": "ModifySecretRequest",
       "name": "修改Secret",
       "output": "ModifySecretResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "RedeployEdgeUnitApplication": {
-      "document": "单元应用重部署",
+      "document": "产品下线\n\n单元应用重部署",
       "input": "RedeployEdgeUnitApplicationRequest",
       "name": "单元应用重部署",
       "output": "RedeployEdgeUnitApplicationResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "SetRouteOnOff": {
-      "document": "开关消息路由",
+      "document": "产品下线\n\n开关消息路由",
       "input": "SetRouteOnOffRequest",
       "name": "开关消息路由",
       "output": "SetRouteOnOffResponse",
-      "status": "online"
+      "status": "deprecated"
     }
   },
   "metadata": {

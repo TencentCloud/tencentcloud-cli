@@ -11081,7 +11081,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "ip列表,当入参Ip为all时，返回该值",
+          "document": "ip列表,当入参Ip为all时，返回所有已知ip列表",
           "example": "[1.1.1.1]",
           "member": "ScanIpInfo",
           "name": "IpList",
@@ -16994,7 +16994,7 @@
         {
           "disabled": false,
           "document": "批量操作的api列表",
-          "example": "[]",
+          "example": "[{\"ApiName\":\"/waf\"}]",
           "member": "ApiSecKey",
           "name": "ApiNameList",
           "required": false,

@@ -665,6 +665,14 @@
         "output": "{\n    \"Response\": {\n        \"ReferenceId\": \"23452xxc\",\n        \"RequestId\": \"84ea5f3b-059d-499c-8f20-249dbdc8c264\",\n        \"ResourceSet\": [\n            {\n                \"Message\": \"http connect timeout\",\n                \"OperateResult\": 400102,\n                \"ResourceId\": \"hello-3gajm6xs52311be0\"\n            }\n        ]\n    }\n}",
         "title": "请求示例"
       }
+    ],
+    "SetResourceRenewStrategyInner": [
+      {
+        "document": "正确的示例",
+        "input": "POST / HTTP/1.1\nHost: billing.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetResourceRenewStrategyInner\n<公共请求参数>\n\n{\n    \"OwnerUin\": \"302000020582\",\n    \"Operator\": \"302000020582\",\n    \"ProductCode\": \"p_tencentmeeting_saas\",\n    \"SubProductCode\": \"sp_tencentmeeting_saas_prov2\",\n    \"ReferenceId\": \"4a2de158ccef369cb5de5f8bd\",\n    \"ResourceIds\": [\n        \"302000020582_2024110418004318007093_100\"\n    ],\n    \"RegionApCode\": \"ap-guangzhou\",\n    \"ResourceRenewStrategy\": \"strategy_vip_no_auto\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ReferenceId\": \"4a2de158ccef369cb5de5f8bd\",\n        \"RequestId\": \"53f187ec-13f4-4d32-8306-d8acc19578fd\",\n        \"ResourceSet\": []\n    }\n}",
+        "title": "参考示例"
+      }
     ]
   },
   "version": "1.0"

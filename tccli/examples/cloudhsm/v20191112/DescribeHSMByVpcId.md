@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cloudhsm DescribeHSMByVpcId --cli-unfold-argument  \
-    --VpcId vpc-xxxxxxxx
+    --VpcId vpc-rhx6fnd7
 ```
 
 Output: 
@@ -14,7 +14,7 @@ Output:
 {
     "Response": {
         "TotalCount": 1,
-        "VpcId": "vpc-xxxxxxxx",
+        "VpcId": "vpc-rhx6fnd7",
         "RequestId": "6010cd3d-a85a-4e00-b37b-22606d017420"
     }
 }

@@ -6,7 +6,18 @@ Input:
 
 ```
 tccli cwp ExportBaselineList --cli-unfold-argument  \
-    --IfDetail 1
+    --IfDetail '1
+ 
+{
+    "Filter": [
+        {
+            "Name": "TaskId",
+            "Value": [
+                "10001"
+            ]
+        }
+    ]
+}'
 ```
 
 Output: 

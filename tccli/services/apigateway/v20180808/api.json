@@ -4690,7 +4690,7 @@
         {
           "disabled": false,
           "document": "待删除的密钥 ID。",
-          "example": "AKID8my5MRr9i6VM98F3dZG9zV0KuBq5ID7pMG83",
+          "example": "AKID***********************************************",
           "member": "string",
           "name": "AccessKeyId",
           "required": true,
@@ -4708,7 +4708,7 @@
           "example": "1",
           "member": "bool",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -5795,7 +5795,7 @@
         {
           "disabled": false,
           "document": "API 密钥 ID。",
-          "example": "AKID1IGx7Tu5mk150ds6fhbdi1RqD8KlI6dW32MD",
+          "example": "AKID***********************************************",
           "member": "string",
           "name": "AccessKeyId",
           "required": true,
@@ -5813,7 +5813,7 @@
           "example": "无",
           "member": "ApiKey",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -8471,7 +8471,7 @@
           "example": "无",
           "member": "UsagePlanBindSecretStatus",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -8646,7 +8646,7 @@
         {
           "disabled": false,
           "document": "待禁用的密钥 ID。",
-          "example": "AKID8my5MRr9i6VM98F3dZG9zV0KuBq5ID7pMG83",
+          "example": "AKID***********************************************",
           "member": "string",
           "name": "AccessKeyId",
           "required": true,
@@ -8664,7 +8664,7 @@
           "example": "1",
           "member": "bool",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -8795,7 +8795,7 @@
         {
           "disabled": false,
           "document": "待启用的密钥 ID。",
-          "example": "AKID8my5MRr9i6VM98F3dZG9zV0KuBq5ID7pMG83",
+          "example": "AKID***********************************************",
           "member": "string",
           "name": "AccessKeyId",
           "required": true,
@@ -8813,7 +8813,7 @@
           "example": "1",
           "member": "bool",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -13180,7 +13180,7 @@
         {
           "disabled": false,
           "document": "待解绑的密钥 ID 数组。",
-          "example": "[\"AKIDmyE2z0gvi2p6i9lWr3bbetpTaquaxQ8s8iob\\n\"]",
+          "example": "[\"AKID***********************************************\\n\"]",
           "member": "string",
           "name": "AccessKeyIds",
           "required": true,
@@ -13198,7 +13198,7 @@
           "example": "1",
           "member": "bool",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -13437,7 +13437,7 @@
         {
           "disabled": false,
           "document": "待更换的密钥 ID。",
-          "example": "AKID8my5MRr9i6VM98F3dZG9zV0KuBq5ID7pMG83",
+          "example": "AKID***********************************************",
           "member": "string",
           "name": "AccessKeyId",
           "required": true,
@@ -13464,7 +13464,7 @@
           "example": "无",
           "member": "ApiKey",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },

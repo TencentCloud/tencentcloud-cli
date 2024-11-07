@@ -8376,7 +8376,7 @@
           "example": "long_query_time",
           "member": "string",
           "name": "Param",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8386,7 +8386,7 @@
           "example": "1",
           "member": "string",
           "name": "Value",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8396,7 +8396,7 @@
           "example": "2",
           "member": "string",
           "name": "SetValue",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8406,7 +8406,7 @@
           "example": "1",
           "member": "string",
           "name": "Default",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8416,7 +8416,7 @@
           "example": "无",
           "member": "ParamConstraint",
           "name": "Constraint",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -8426,7 +8426,7 @@
           "example": "true",
           "member": "bool",
           "name": "HaveSetValue",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -8436,7 +8436,7 @@
           "example": "false",
           "member": "bool",
           "name": "NeedRestart",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         }

@@ -6605,7 +6605,7 @@
         },
         {
           "disabled": false,
-          "document": "每页数量，默认为20。",
+          "document": "每页数量，默认为20，单页最大10000条",
           "example": "20",
           "member": "uint64",
           "name": "PageSize",

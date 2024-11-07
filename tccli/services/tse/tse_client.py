@@ -173,6 +173,58 @@ def doDescribeCloudNativeAPIGatewayServiceRateLimit(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doModifyCloudNativeAPIGatewayCertificate(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION)             and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID)             and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE)             and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TseClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyCloudNativeAPIGatewayCertificateRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.ModifyCloudNativeAPIGatewayCertificate(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeCloudNativeAPIGatewayLatestTaskPhases(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -1317,58 +1369,6 @@ def doUpdateCloudNativeAPIGatewayCertificateInfo(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doUpdateCloudNativeAPIGatewaySpec(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
-        cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
-        cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
-            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
-        )
-    elif os.getenv(OptionsDefine.ENV_TKE_REGION)             and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID)             and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE)             and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
-        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
-    else:
-        cred = credential.Credential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
-        )
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint],
-        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    if g_param[OptionsDefine.Language]:
-        profile.language = g_param[OptionsDefine.Language]
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TseClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.UpdateCloudNativeAPIGatewaySpecRequest()
-    model.from_json_string(json.dumps(args))
-    start_time = time.time()
-    while True:
-        rsp = client.UpdateCloudNativeAPIGatewaySpec(model)
-        result = rsp.to_json_string()
-        try:
-            json_obj = json.loads(result)
-        except TypeError as e:
-            json_obj = json.loads(result.decode('utf-8'))  # python3.3
-        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
-            break
-        cur_time = time.time()
-        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
-            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
-            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
-            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
-        else:
-            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
-        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
-    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
 def doDescribeAllConfigFileTemplates(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -1681,7 +1681,7 @@ def doModifyAutoScalerResourceStrategy(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyCloudNativeAPIGatewayCertificate(args, parsed_globals):
+def doDescribeInstanceTagInfos(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -1710,11 +1710,11 @@ def doModifyCloudNativeAPIGatewayCertificate(args, parsed_globals):
     client = mod.TseClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyCloudNativeAPIGatewayCertificateRequest()
+    model = models.DescribeInstanceTagInfosRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.ModifyCloudNativeAPIGatewayCertificate(model)
+        rsp = client.DescribeInstanceTagInfos(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -2409,7 +2409,7 @@ def doCreateGovernanceInstances(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateOrUpdateConfigFileAndRelease(args, parsed_globals):
+def doDeleteCloudNativeAPIGatewayRouteRateLimit(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -2438,11 +2438,11 @@ def doCreateOrUpdateConfigFileAndRelease(args, parsed_globals):
     client = mod.TseClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateOrUpdateConfigFileAndReleaseRequest()
+    model = models.DeleteCloudNativeAPIGatewayRouteRateLimitRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.CreateOrUpdateConfigFileAndRelease(model)
+        rsp = client.DeleteCloudNativeAPIGatewayRouteRateLimit(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -2565,7 +2565,7 @@ def doDeleteAutoScalerResourceStrategy(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteCloudNativeAPIGatewayRouteRateLimit(args, parsed_globals):
+def doModifyCloudNativeAPIGatewayRoute(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -2594,11 +2594,11 @@ def doDeleteCloudNativeAPIGatewayRouteRateLimit(args, parsed_globals):
     client = mod.TseClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteCloudNativeAPIGatewayRouteRateLimitRequest()
+    model = models.ModifyCloudNativeAPIGatewayRouteRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DeleteCloudNativeAPIGatewayRouteRateLimit(model)
+        rsp = client.ModifyCloudNativeAPIGatewayRoute(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -3535,6 +3535,58 @@ def doDescribeConfigFileReleaseVersions(args, parsed_globals):
     start_time = time.time()
     while True:
         rsp = client.DescribeConfigFileReleaseVersions(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateOrUpdateConfigFileAndRelease(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION)             and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID)             and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE)             and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TseClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateOrUpdateConfigFileAndReleaseRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.CreateOrUpdateConfigFileAndRelease(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -5425,7 +5477,7 @@ def doModifyConfigFiles(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyCloudNativeAPIGatewayRoute(args, parsed_globals):
+def doUpdateCloudNativeAPIGatewaySpec(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -5454,11 +5506,11 @@ def doModifyCloudNativeAPIGatewayRoute(args, parsed_globals):
     client = mod.TseClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyCloudNativeAPIGatewayRouteRequest()
+    model = models.UpdateCloudNativeAPIGatewaySpecRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.ModifyCloudNativeAPIGatewayRoute(model)
+        rsp = client.UpdateCloudNativeAPIGatewaySpec(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -6167,6 +6219,7 @@ ACTION_MAP = {
     "DescribeOneCloudNativeAPIGatewayService": doDescribeOneCloudNativeAPIGatewayService,
     "UpdateEngineInternetAccess": doUpdateEngineInternetAccess,
     "DescribeCloudNativeAPIGatewayServiceRateLimit": doDescribeCloudNativeAPIGatewayServiceRateLimit,
+    "ModifyCloudNativeAPIGatewayCertificate": doModifyCloudNativeAPIGatewayCertificate,
     "DescribeCloudNativeAPIGatewayLatestTaskPhases": doDescribeCloudNativeAPIGatewayLatestTaskPhases,
     "DeleteCloudNativeAPIGatewayPublicNetwork": doDeleteCloudNativeAPIGatewayPublicNetwork,
     "DescribeGovernanceAliases": doDescribeGovernanceAliases,
@@ -6189,14 +6242,13 @@ ACTION_MAP = {
     "DeleteCloudNativeAPIGatewayCertificate": doDeleteCloudNativeAPIGatewayCertificate,
     "DescribeGovernanceServiceContracts": doDescribeGovernanceServiceContracts,
     "UpdateCloudNativeAPIGatewayCertificateInfo": doUpdateCloudNativeAPIGatewayCertificateInfo,
-    "UpdateCloudNativeAPIGatewaySpec": doUpdateCloudNativeAPIGatewaySpec,
     "DescribeAllConfigFileTemplates": doDescribeAllConfigFileTemplates,
     "CreateNativeGatewayServerGroup": doCreateNativeGatewayServerGroup,
     "DescribeConfigFilesByGroup": doDescribeConfigFilesByGroup,
     "DescribeZookeeperServerInterfaces": doDescribeZookeeperServerInterfaces,
     "DeleteConfigFiles": doDeleteConfigFiles,
     "ModifyAutoScalerResourceStrategy": doModifyAutoScalerResourceStrategy,
-    "ModifyCloudNativeAPIGatewayCertificate": doModifyCloudNativeAPIGatewayCertificate,
+    "DescribeInstanceTagInfos": doDescribeInstanceTagInfos,
     "PublishConfigFiles": doPublishConfigFiles,
     "DescribeConfigFile": doDescribeConfigFile,
     "DescribeConfigFileReleases": doDescribeConfigFileReleases,
@@ -6210,10 +6262,10 @@ ACTION_MAP = {
     "UpdateUpstreamTargets": doUpdateUpstreamTargets,
     "CreateCloudNativeAPIGatewayRoute": doCreateCloudNativeAPIGatewayRoute,
     "CreateGovernanceInstances": doCreateGovernanceInstances,
-    "CreateOrUpdateConfigFileAndRelease": doCreateOrUpdateConfigFileAndRelease,
+    "DeleteCloudNativeAPIGatewayRouteRateLimit": doDeleteCloudNativeAPIGatewayRouteRateLimit,
     "DeleteConfigFileReleases": doDeleteConfigFileReleases,
     "DeleteAutoScalerResourceStrategy": doDeleteAutoScalerResourceStrategy,
-    "DeleteCloudNativeAPIGatewayRouteRateLimit": doDeleteCloudNativeAPIGatewayRouteRateLimit,
+    "ModifyCloudNativeAPIGatewayRoute": doModifyCloudNativeAPIGatewayRoute,
     "DeleteNativeGatewayServerGroup": doDeleteNativeGatewayServerGroup,
     "DescribeCloudNativeAPIGatewayPorts": doDescribeCloudNativeAPIGatewayPorts,
     "DescribeCloudNativeAPIGatewayCanaryRules": doDescribeCloudNativeAPIGatewayCanaryRules,
@@ -6232,6 +6284,7 @@ ACTION_MAP = {
     "DescribeGovernanceServices": doDescribeGovernanceServices,
     "DeleteCloudNativeAPIGatewayCanaryRule": doDeleteCloudNativeAPIGatewayCanaryRule,
     "DescribeConfigFileReleaseVersions": doDescribeConfigFileReleaseVersions,
+    "CreateOrUpdateConfigFileAndRelease": doCreateOrUpdateConfigFileAndRelease,
     "DescribeSREInstances": doDescribeSREInstances,
     "DeleteCloudNativeAPIGatewayServiceRateLimit": doDeleteCloudNativeAPIGatewayServiceRateLimit,
     "DescribeWafProtection": doDescribeWafProtection,
@@ -6268,7 +6321,7 @@ ACTION_MAP = {
     "CreateCloudNativeAPIGatewayPublicNetwork": doCreateCloudNativeAPIGatewayPublicNetwork,
     "DescribeNacosServerInterfaces": doDescribeNacosServerInterfaces,
     "ModifyConfigFiles": doModifyConfigFiles,
-    "ModifyCloudNativeAPIGatewayRoute": doModifyCloudNativeAPIGatewayRoute,
+    "UpdateCloudNativeAPIGatewaySpec": doUpdateCloudNativeAPIGatewaySpec,
     "CreateGovernanceServices": doCreateGovernanceServices,
     "DeleteGovernanceNamespaces": doDeleteGovernanceNamespaces,
     "DescribeEngineClbAccessAddress": doDescribeEngineClbAccessAddress,

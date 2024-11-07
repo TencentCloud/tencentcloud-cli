@@ -40,7 +40,7 @@ Output:
                 "ProcTree": "a(root),bash(ubuntu),sshd(ubuntu),sshd(root),sshd(root),init(root)",
                 "Status": 0,
                 "CreateTime": "2019-08-15 15:27:52",
-                "MachineName": "云鼎_云镜测试机_Linux_4_weikunlin"
+                "MachineName": "测试机_Linux_4_weikunlin"
             }
         ],
         "RequestId": "bd9aa8c8-36b6-4991-8e42-d08e80313616"

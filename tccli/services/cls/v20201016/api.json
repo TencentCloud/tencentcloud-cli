@@ -171,7 +171,7 @@
     "CreateNoticeContent": {
       "document": "该接口用于创建通知内容。",
       "input": "CreateNoticeContentRequest",
-      "name": "创建通知内容模版",
+      "name": "创建通知内容模板",
       "output": "CreateNoticeContentResponse",
       "status": "online"
     },
@@ -332,7 +332,7 @@
     "DeleteNoticeContent": {
       "document": "该接口用于删除通知内容配置",
       "input": "DeleteNoticeContentRequest",
-      "name": "删除通知内容模版",
+      "name": "删除通知内容模板",
       "output": "DeleteNoticeContentResponse",
       "status": "online"
     },
@@ -556,7 +556,7 @@
     "DescribeNoticeContents": {
       "document": "获取通知内容列表",
       "input": "DescribeNoticeContentsRequest",
-      "name": "获取通知内容模版",
+      "name": "获取通知内容模板",
       "output": "DescribeNoticeContentsResponse",
       "status": "online"
     },
@@ -766,7 +766,7 @@
     "ModifyNoticeContent": {
       "document": "该接口用于修改通知内容配置",
       "input": "ModifyNoticeContentRequest",
-      "name": "修改通知内容模版",
+      "name": "修改通知内容模板",
       "output": "ModifyNoticeContentResponse",
       "status": "online"
     },
@@ -5415,8 +5415,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "模版名称。",
-          "example": "告警内容模版",
+          "document": "模板名称。",
+          "example": "告警内容模板",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -5424,7 +5424,7 @@
         },
         {
           "disabled": false,
-          "document": "模版内容语言。0：中文1：英文",
+          "document": "模板内容语言。0：中文1：英文",
           "example": "0",
           "member": "uint64",
           "name": "Type",
@@ -5433,7 +5433,7 @@
         },
         {
           "disabled": false,
-          "document": "模版详细配置。",
+          "document": "模板详细配置。",
           "example": "无",
           "member": "NoticeContent",
           "name": "NoticeContents",
@@ -7168,7 +7168,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "通知内容模版ID",
+          "document": "通知内容模板ID",
           "example": "noticetemplate-d7286784-46d9-4be3-b7ba-2c464e6a5ad1",
           "member": "string",
           "name": "NoticeContentId",
@@ -9273,7 +9273,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<li> name\n按照【通知内容模版名称】进行过滤。\n类型：String\n必选：否\n</li>\n<li> noticeContentId\n按照【通知内容模版ID】进行过滤。\n类型：String\n必选：否\n</li>\n每次请求的Filters的上限为10，Filter.Values的上限为100。",
+          "document": "<li> name\n按照【通知内容模板名称】进行过滤。\n类型：String\n必选：否\n</li>\n<li> noticeContentId\n按照【通知内容模板ID】进行过滤。\n类型：String\n必选：否\n</li>\n每次请求的Filters的上限为10，Filter.Values的上限为100。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -9306,7 +9306,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "通知内容模版列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "通知内容模板列表。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "NoticeContentTemplate",
           "name": "NoticeContents",
@@ -9316,7 +9316,7 @@
         },
         {
           "disabled": false,
-          "document": "符合条件的通知内容模版总数。",
+          "document": "符合条件的通知内容模板总数。",
           "example": "0",
           "member": "int64",
           "name": "TotalCount",
@@ -13882,7 +13882,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "通知内容模版ID。",
+          "document": "通知内容模板ID。",
           "example": "noticetemplate-5b2ea996-4dae-47cc-bbad-5b12888b4c89",
           "member": "string",
           "name": "NoticeContentId",
@@ -13891,7 +13891,7 @@
         },
         {
           "disabled": false,
-          "document": "通知内容模版名称。",
+          "document": "通知内容模板名称。",
           "example": "test",
           "member": "string",
           "name": "Name",
@@ -13909,7 +13909,7 @@
         },
         {
           "disabled": false,
-          "document": "通知内容模版详细信息。",
+          "document": "通知内容模板详细信息。",
           "example": "无",
           "member": "NoticeContent",
           "name": "NoticeContents",
@@ -14412,7 +14412,7 @@
       "usage": "in"
     },
     "NoticeContent": {
-      "document": "通知内容模版详细配置",
+      "document": "通知内容模板详细配置",
       "members": [
         {
           "disabled": false,
@@ -14427,7 +14427,7 @@
         },
         {
           "disabled": false,
-          "document": "告警触发通知内容模版。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "告警触发通知内容模板。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "NoticeContentInfo",
           "name": "TriggerContent",
@@ -14438,7 +14438,7 @@
         },
         {
           "disabled": false,
-          "document": "告警恢复通知内容模版。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "告警恢复通知内容模板。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "NoticeContentInfo",
           "name": "RecoveryContent",

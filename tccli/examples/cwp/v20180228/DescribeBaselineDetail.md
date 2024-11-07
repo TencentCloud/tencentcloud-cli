@@ -6,7 +6,10 @@ Input:
 
 ```
 tccli cwp DescribeBaselineDetail --cli-unfold-argument  \
-    --BaselineId 5
+    --BaselineId '5
+ 
+
+{"BaselineId":5747}'
 ```
 
 Output: 

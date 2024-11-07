@@ -1,3 +1,167 @@
+# Release 3.0.1092.1
+
+## 费用中心(billing) 版本：2018-07-09
+
+### 第 69 次发布
+
+发布时间：2024-11-07 01:13:13
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [SetResourceRenewStrategyInner](http://document.tencentcloudapi.woa.com/document/product/555/85186)
+
+
+
+## 腾讯云数据仓库 TCHouse-D(cdwdoris) 版本：2021-12-28
+
+### 第 43 次发布
+
+发布时间：2024-11-07 01:20:34
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateBackUpSchedule](http://document.tencentcloudapi.woa.com/document/product/1706/84371)
+
+	* 新增出参：ErrorMsg
+
+
+
+
+## 云加密机(cloudhsm) 版本：2019-11-12
+
+### 第 5 次发布
+
+发布时间：2024-11-07 01:25:22
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [AlarmPolicy](http://document.tencentcloudapi.woa.com/document/product/639/41450#AlarmPolicy)
+
+	* <font color="#dd0000">**修改成员**：</font>Uin, Event, Limit, Status, BeginTime, EndTime
+
+* [HsmInfo](http://document.tencentcloudapi.woa.com/document/product/639/41450#HsmInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>HsmType
+
+
+
+
+## 物联网开发平台(iotexplorer) 版本：2019-04-23
+
+### 第 53 次发布
+
+发布时间：2024-11-07 01:53:19
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeBatchProduction](http://document.tencentcloudapi.woa.com/document/product/1081/63808)
+
+	* 新增出参：SuccessCount, LastFailedReason
+
+
+
+
+## 轻量应用服务器(lighthouse) 版本：2020-03-24
+
+### 第 60 次发布
+
+发布时间：2024-11-07 01:57:52
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [InstanceViolationDetail](http://document.tencentcloudapi.woa.com/document/product/1207/47576#InstanceViolationDetail)
+
+修改数据结构：
+
+* [Instance](http://document.tencentcloudapi.woa.com/document/product/1207/47576#Instance)
+
+	* 新增成员：InstanceViolationDetail
+
+
+
+
+## 云压测(pts) 版本：2021-07-28
+
+### 第 24 次发布
+
+发布时间：2024-11-07 02:08:11
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Job](http://document.tencentcloudapi.woa.com/document/product/1597/75228#Job)
+
+	* 新增成员：Usage
+
+
+
+
+## TI-ONE 训练平台(tione) 版本：2021-11-11
+
+### 第 68 次发布
+
+发布时间：2024-11-07 02:23:22
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeBillingSpecs](http://document.tencentcloudapi.woa.com/document/product/851/75918)
+* [DescribeBillingSpecsPrice](http://document.tencentcloudapi.woa.com/document/product/851/74828)
+
+新增数据结构：
+
+* [Spec](http://document.tencentcloudapi.woa.com/document/product/851/74915#Spec)
+* [SpecPrice](http://document.tencentcloudapi.woa.com/document/product/851/74915#SpecPrice)
+* [SpecUnit](http://document.tencentcloudapi.woa.com/document/product/851/74915#SpecUnit)
+
+
+
+## TI-ONE 训练平台(tione) 版本：2019-10-22
+
+
+
+## 微服务引擎(tse) 版本：2020-12-07
+
+### 第 73 次发布
+
+发布时间：2024-11-07 02:25:58
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeInstanceTagInfos](http://document.tencentcloudapi.woa.com/document/product/1364/85187)
+
+
+
 # Release 3.0.1091.1
 
 ## 腾讯云CA(ca) 版本：2023-02-28

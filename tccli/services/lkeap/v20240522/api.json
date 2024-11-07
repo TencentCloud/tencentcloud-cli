@@ -241,6 +241,15 @@
         },
         {
           "disabled": false,
+          "document": "是否返回输出 tokens 的对数概率，默认false",
+          "example": "false",
+          "member": "bool",
+          "name": "Logprobs",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": true,
           "document": "debug级别",
           "example": "9",
           "member": "int64",
@@ -249,7 +258,7 @@
           "type": "int"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "增量输出，默认false",
           "example": "true",
           "member": "bool",

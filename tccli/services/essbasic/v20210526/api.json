@@ -414,7 +414,7 @@
       "status": "online"
     },
     "CreatePersonAuthCertificateImage": {
-      "document": "获取个人用户认证证书图片下载URL\n\n个人用户认证证书图片样式如下图\n\n![image](https://dyn.ess.tencent.cn/guide/capi/CreatePersonAuthCertificateImage.png)\n\n注:  \n<ul>\n<li>只能获取个人用户证明图片, 企业员工的暂不支持</li>\n<li>处方单等特殊场景专用，此接口为白名单功能，使用前请联系对接的客户经理沟通。  </li>\n</ul>",
+      "document": "获取个人用户认证证书图片下载URL\n\n个人用户认证证书图片样式如下图\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/d568bc0f101bef582f7af2cb5ab7a715.png)\n\n注:  \n<ul>\n<li>只能获取个人用户证明图片, 企业员工的暂不支持</li>\n<li>处方单等特殊场景专用，此接口为白名单功能，使用前请联系对接的客户经理沟通。  </li>\n</ul>",
       "input": "CreatePersonAuthCertificateImageRequest",
       "name": "获取个人用户认证证书图片",
       "output": "CreatePersonAuthCertificateImageResponse",
@@ -1068,7 +1068,7 @@
         },
         {
           "disabled": false,
-          "document": "合同流程的抄送人列表，最多可支持50个抄送人，抄送人可查看合同内容及签署进度，但无需参与合同签署。\n",
+          "document": "合同流程的抄送人列表，最多可支持50个抄送人，抄送人可查看合同内容及签署进度，但无需参与合同签署。\n\n注\n1. 抄送人名单中可以包括自然人以及本企业的员工（本企业员工必须已经完成认证并加入企业）。\n2. 请确保抄送人列表中的成员不与任何签署人重复。",
           "example": "无",
           "member": "CcInfo",
           "name": "CcInfos",
@@ -1136,43 +1136,39 @@
       "members": [
         {
           "disabled": false,
-          "document": "被抄送人手机号，大陆11位手机号",
-          "example": "xxx",
+          "document": "被抄送方手机号码， 支持国内手机号11位数字(无需加+86前缀或其他字符)。\n请确认手机号所有方为此业务通知方。",
+          "example": "13200000000",
           "member": "string",
           "name": "Mobile",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
-          "document": "被抄送人姓名",
-          "example": "无",
+          "document": "被抄送方姓名。\n抄送方的姓名将用于身份认证，请确保填写的姓名为抄送方的真实姓名，而非昵称等代名。",
+          "example": "典子谦",
           "member": "string",
           "name": "Name",
           "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
-          "document": "被抄送人类型\n0--个人. 1--员工",
-          "example": "无",
+          "document": "被抄送方类型, 可设置以下类型:\n<ul><li> **0** :个人抄送方</li>\n<li> **1** :企业员工抄送方</li></ul>",
+          "example": "1",
           "member": "int64",
           "name": "CcType",
           "required": false,
-          "type": "int",
-          "value_allowed_null": true
+          "type": "int"
         },
         {
           "disabled": false,
-          "document": "被抄送人权限\n0--可查看\n1--可查看也可下载",
-          "example": "无",
+          "document": "被抄送方权限, 可设置如下权限:\n<ul><li> **0** :可查看合同内容</li>\n<li> **1** :可查看合同内容也可下载原文</li></ul>",
+          "example": "1",
           "member": "int64",
           "name": "CcPermission",
           "required": false,
-          "type": "int",
-          "value_allowed_null": true
+          "type": "int"
         }
       ],
       "usage": "in"
@@ -7297,7 +7293,7 @@
         },
         {
           "disabled": false,
-          "document": "CA供应商下发给用户的证书编号，在证书到期后自动续期后此证书编号会发生变动，且不会合成到个人用户证书证明图片中。注意：`腾讯电子签接入多家CA供应商以提供容灾能力，不同CA下发的证书编号区别较大，但基本都是由数字和字母组成，长度在200以下。`\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "在数字证书申请过程中，系统会自动生成一个独一无二的序列号。请注意，当证书到期并自动续期时，该序列号将会发生变化。值得注意的是，此序列号不会被合成至个人用户证书的证明图片中。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2206EB**4597742",
           "member": "string",
           "name": "SerialNumber",
@@ -10967,7 +10963,7 @@
         },
         {
           "disabled": false,
-          "document": "CA供应商下发给用户的证书编号\n\n注意：`腾讯电子签接入多家CA供应商以提供容灾能力，不同CA下发的证书编号区别较大，但基本都是由数字和字母组成，长度在200以下`。",
+          "document": "在数字证书申请过程中，系统会自动生成一个独一无二的序列号。",
           "example": "6c8e2911fadf70ea",
           "member": "string",
           "name": "CertSn",

@@ -111,40 +111,40 @@
     "CreateRabbitMQBinding": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRabbitMQBinding\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-44w9928j\",\n    \"VirtualHost\": \"test\",\n    \"Source\": \"amq.direct\",\n    \"DestinationType\": \"queue\",\n    \"Destination\": \"test\",\n    \"RoutingKey\": \"hehe1\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dsfadsa\",\n        \"InstanceId\": \"amqp-44w9928j\",\n        \"VirtualHost\": \"test\",\n        \"BindingId\": 127441\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRabbitMQBinding\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-test\",\n    \"VirtualHost\": \"test\",\n    \"Source\": \"amq.direct\",\n    \"DestinationType\": \"queue\",\n    \"Destination\": \"test\",\n    \"RoutingKey\": \"hehe1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a8f28d5e-a7e2-4b0b-afa0-2fba09c077a0\",\n        \"InstanceId\": \"amqp-test\",\n        \"VirtualHost\": \"test\",\n        \"BindingId\": 127441\n    }\n}",
         "title": "创建RabbitMQ路由关系"
       }
     ],
     "CreateRabbitMQChaosTask": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: xxx.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRabbitMQChaosTask\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-44w9928j\",\n    \"ZoneId\": \"800001\",\n    \"Type\": \"crash\"\n}",
-        "output": "{\n    \"Response\": {\n        \"TaskId\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: xxx.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRabbitMQChaosTask\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-test\",\n    \"ZoneId\": \"800001\",\n    \"Type\": \"crash\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"e43797fb-1837-4ea2-b0cd-1105468bd122\",\n        \"RequestId\": \"a8f28d5e-a7e2-4b0b-afa0-2fba09c077a0\"\n    }\n}",
         "title": "创建 RabbitMQ 混沌测试任务"
       }
     ],
     "CreateRabbitMQUser": [
       {
         "document": "-",
-        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRabbitMQUser\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-44w9928j\",\n    \"User\": \"test_user\",\n    \"Password\": \"abc123\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dsfsdfs\",\n        \"User\": \"test_user\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRabbitMQUser\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-test\",\n    \"User\": \"test_user\",\n    \"Password\": \"abc123\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a8f28d5e-a7e2-4b0b-afa0-2fba09c077a0\",\n        \"User\": \"test_user\"\n    }\n}",
         "title": "创建RabbitMQ用户"
       }
     ],
     "CreateRabbitMQVipInstance": [
       {
         "document": "创建RabbitMQ专享版实例",
-        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRabbitMQVipInstance\n<公共请求参数>\n\n{\n    \"ZoneIds\": [\n        190001\n    ],\n    \"NodeSpec\": \"rabbit-vip-basic-2\",\n    \"NodeNum\": 1,\n    \"StorageSize\": 100,\n    \"VpcId\": \"vpc-xxx\",\n    \"SubnetId\": \"subnet-xxx\",\n    \"ClusterName\": \"ApiCreate\",\n    \"EnableCreateDefaultHaMirrorQueue\": false\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"sadasfdsfs\",\n        \"TranId\": \"20230110002025620411234\",\n        \"InstanceId\": \"amqp-aegnagjg\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRabbitMQVipInstance\n<公共请求参数>\n\n{\n    \"ZoneIds\": [\n        190001\n    ],\n    \"NodeSpec\": \"rabbit-vip-basic-2\",\n    \"NodeNum\": 1,\n    \"StorageSize\": 100,\n    \"VpcId\": \"vpc-test\",\n    \"SubnetId\": \"subnet-test\",\n    \"ClusterName\": \"ApiCreate\",\n    \"EnableCreateDefaultHaMirrorQueue\": false\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a8f28d5e-a7e2-4b0b-afa0-2fba09c077a0\",\n        \"TranId\": \"20230110002025620411234\",\n        \"InstanceId\": \"amqp-test\"\n    }\n}",
         "title": "创建RabbitMQ专享版实例"
       }
     ],
     "CreateRabbitMQVirtualHost": [
       {
         "document": "-",
-        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRabbitMQVirtualHost\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-44w9928j\",\n    \"VirtualHost\": \"testVhost\",\n    \"Description\": \"hello\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dsfsdfs\",\n        \"VirtualHost\": \"testVhost\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRabbitMQVirtualHost\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-test\",\n    \"VirtualHost\": \"testVhost\",\n    \"Description\": \"hello\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a8f28d5e-a7e2-4b0b-afa0-2fba09c077a0\",\n        \"VirtualHost\": \"testVhost\"\n    }\n}",
         "title": "创建RabbitMQ的vhost"
       }
     ],
@@ -279,40 +279,40 @@
     "DeleteProCluster": [
       {
         "document": "删除专业集群",
-        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteProCluster\n<公共请求参数>\n\n{\n    \"ClusterId\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"DealName\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteProCluster\n<公共请求参数>\n\n{\n    \"ClusterId\": \"pulsar-pnvjp9mbd947\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DealName\": \"20231020394041338776131\",\n        \"RequestId\": \"722558eb-36dc-4643-854f-aa7436b83125\"\n    }\n}",
         "title": "删除专业集群"
       }
     ],
     "DeleteRabbitMQBinding": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRabbitMQBinding\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-44w9928j\",\n    \"VirtualHost\": \"test\",\n    \"BindingId\": 127441\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cxvxcvcxfsdfds\",\n        \"InstanceId\": \"amqp-44w9928j\",\n        \"VirtualHost\": \"test\",\n        \"BindingId\": 127441\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRabbitMQBinding\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-test\",\n    \"VirtualHost\": \"test\",\n    \"BindingId\": 127441\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a8f28d5e-a7e2-4b0b-afa0-2fba09c077a0\",\n        \"InstanceId\": \"amqp-test\",\n        \"VirtualHost\": \"test\",\n        \"BindingId\": 127441\n    }\n}",
         "title": "解绑RabbitMQ路由关系"
       }
     ],
     "DeleteRabbitMQUser": [
       {
         "document": "-",
-        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRabbitMQUser\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-xxx\",\n    \"User\": \"test_user\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dsfsdfs\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRabbitMQUser\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-test\",\n    \"User\": \"test-user\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a8f28d5e-a7e2-4b0b-afa0-2fba09c077a0\"\n    }\n}",
         "title": "删除RabbitMQ用户"
       }
     ],
     "DeleteRabbitMQVipInstance": [
       {
         "document": "删除RabbitMQ实例",
-        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRabbitMQVipInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-xxxxxxxx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"TranId\": \"abc\",\n        \"InstanceId\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRabbitMQVipInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TranId\": \"20230110002025620411234\",\n        \"InstanceId\": \"amqp-test\",\n        \"RequestId\": \"a8f28d5e-a7e2-4b0b-afa0-2fba09c077a0\"\n    }\n}",
         "title": "删除RabbitMQ实例"
       }
     ],
     "DeleteRabbitMQVirtualHost": [
       {
         "document": "-",
-        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRabbitMQVirtualHost\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-44w9928j\",\n    \"VirtualHost\": \"testVhost\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dsfsdfs\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRabbitMQVirtualHost\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-test\",\n    \"VirtualHost\": \"testVhost\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a8f28d5e-a7e2-4b0b-afa0-2fba09c077a0\"\n    }\n}",
         "title": "删除RabbitMQ的vhost"
       }
     ],
@@ -592,22 +592,22 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRabbitMQBindings\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-44w9928j\",\n    \"VirtualHost\": \"test\"\n}",
-        "output": "{\n    \"Response\": {\n        \"BindingInfoList\": [\n            {\n                \"BindingId\": 0,\n                \"VirtualHost\": \"abc\",\n                \"Source\": \"abc\",\n                \"DestinationType\": \"abc\",\n                \"Destination\": \"abc\",\n                \"RoutingKey\": \"abc\",\n                \"SourceExchangeType\": \"abc\",\n                \"CreateTime\": \"abc\",\n                \"ModifyTime\": \"abc\"\n            }\n        ],\n        \"TotalCount\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"BindingInfoList\": [\n            {\n                \"BindingId\": 123,\n                \"VirtualHost\": \"test\",\n                \"Source\": \"test-exchange\",\n                \"DestinationType\": \"queue\",\n                \"Destination\": \"test-queue\",\n                \"RoutingKey\": \"test-rk\",\n                \"SourceExchangeType\": \"direct\",\n                \"CreateTime\": \"2022-12-16 11:19:56\",\n                \"ModifyTime\": \"2022-12-16 11:19:56\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"a8f28d5e-a7e2-4b0b-afa0-2fba09c077a0\"\n    }\n}",
         "title": "查询RabbitMQ路由关系列表"
       }
     ],
     "DescribeRabbitMQChaosTask": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: xxx.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstances\n<公共请求参数>\n\n{\n    \"TaskId\": \"xxx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Status\": \"abc\",\n        \"Msg\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: xxx.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstances\n<公共请求参数>\n\n{\n    \"TaskId\": \"e43797fb-1837-4ea2-b0cd-1105468bd122\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": \"succeed\",\n        \"Msg\": \"succeed\",\n        \"RequestId\": \"a8f28d5e-a7e2-4b0b-afa0-2fba09c077a0\"\n    }\n}",
         "title": "获取 RabbitMQ 混沌测试任务的状态"
       }
     ],
     "DescribeRabbitMQExchanges": [
       {
         "document": "查询RabbitMQ exchange 列表",
-        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRabbitMQExchanges\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-44w9928j\",\n    \"VirtualHost\": \"vhost1\"\n}",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRabbitMQExchanges\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-test\",\n    \"VirtualHost\": \"vhost1\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"request1\",\n        \"ExchangeInfoList\": [\n            {\n                \"ExchangeName\": \"test1\",\n                \"ExchangeType\": \"fanout\",\n                \"Remark\": \"test1\",\n                \"VirtualHost\": \"vhost1\",\n                \"ExchangeCreator\": \"user\",\n                \"CreateTimeStamp\": \"2022-12-04 01:08:43\",\n                \"ModTimeStamp\": \"2022-12-04 01:08:43\"\n            },\n            {\n                \"ExchangeName\": \"test2\",\n                \"ExchangeType\": \"direct\",\n                \"Remark\": \"test2\",\n                \"VirtualHost\": \"vhost1\",\n                \"ExchangeCreator\": \"user\",\n                \"CreateTimeStamp\": \"2022-12-04 01:08:43\",\n                \"ModTimeStamp\": \"2022-12-04 01:08:43\"\n            }\n        ],\n        \"TotalCount\": 2\n    }\n}",
         "title": "查询RabbitMQ exchange 列表"
       }
@@ -615,40 +615,40 @@
     "DescribeRabbitMQNodeList": [
       {
         "document": "RabbitMQ专享版查询节点列表 在查询节点的时候使用。",
-        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRabbitMQNodeList\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-testtesttest\",\n    \"Limit\": 1,\n    \"Offset\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"NodeList\": [\n            {\n                \"NodeName\": \"abc\",\n                \"NodeStatus\": \"abc\",\n                \"CPUUsage\": \"abc\",\n                \"Memory\": 1,\n                \"DiskUsage\": \"abc\",\n                \"ProcessNumber\": 1\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRabbitMQNodeList\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-test\",\n    \"Offset\": 0,\n    \"Limit\": 3,\n    \"NodeName\": \"rabbit@rabbitmq-broker-1.rabbitmq-broker-internal.amqp-test.svc.cluster.local\",\n    \"Filters\": [\n        {\n            \"Name\": \"nodeStatus\",\n            \"Values\": [\n                \"running\"\n            ]\n        }\n    ],\n    \"SortElement\": \"cpuUsage\",\n    \"SortOrder\": \"descend\"\n}",
+        "output": "{\n    \"Response\": {\n        \"NodeList\": [\n            {\n                \"CPUUsage\": \"0.000%\",\n                \"DiskUsage\": \"3.000%\",\n                \"Memory\": 171,\n                \"NodeName\": \"rabbit@rabbitmq-broker-1.rabbitmq-broker-internal.amqp-test.svc.cluster.local\",\n                \"NodeStatus\": \"running\",\n                \"ProcessNumber\": 459\n            }\n        ],\n        \"RequestId\": \"a95bfcfd-8388-4f86-8511-ca3be8ed000c\",\n        \"TotalCount\": 1\n    }\n}",
         "title": "RabbitMQ专享版查询节点列表"
       }
     ],
     "DescribeRabbitMQQueueDetail": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRabbitMQQueueDetail\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"VirtualHost\": \"abc\",\n    \"QueueName\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"InstanceId\": \"abc\",\n        \"VirtualHost\": \"abc\",\n        \"QueueName\": \"abc\",\n        \"QueueType\": \"abc\",\n        \"Consumers\": 0,\n        \"Durable\": true,\n        \"AutoDelete\": true,\n        \"Remark\": \"abc\",\n        \"MessageTTL\": 0,\n        \"AutoExpire\": 0,\n        \"MaxLength\": 0,\n        \"MaxLengthBytes\": 0,\n        \"DeliveryLimit\": 0,\n        \"OverflowBehaviour\": \"abc\",\n        \"DeadLetterExchange\": \"abc\",\n        \"DeadLetterRoutingKey\": \"abc\",\n        \"SingleActiveConsumer\": true,\n        \"MaximumPriority\": 0,\n        \"LazyMode\": true,\n        \"MasterLocator\": \"abc\",\n        \"MaxInMemoryLength\": 0,\n        \"MaxInMemoryBytes\": 0,\n        \"CreateTime\": 0,\n        \"Node\": \"abc\",\n        \"DeadLetterStrategy\": \"abc\",\n        \"QueueLeaderLocator\": \"abc\",\n        \"QuorumInitialGroupSize\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRabbitMQQueueDetail\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-test\",\n    \"VirtualHost\": \"/\",\n    \"QueueName\": \"tdmq_event_handle\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Arguments\": \"{}\",\n        \"AutoDelete\": false,\n        \"AutoExpire\": 1000,\n        \"Consumers\": 1,\n        \"CreateTime\": 1728982735,\n        \"DeadLetterExchange\": \"dl-exchange\",\n        \"DeadLetterRoutingKey\": \"test-dl\",\n        \"DeadLetterStrategy\": \"at-most-once\",\n        \"DeliveryLimit\": null,\n        \"Durable\": true,\n        \"Exclusive\": false,\n        \"InstanceId\": \"amqp-test\",\n        \"LazyMode\": false,\n        \"MasterLocator\": \"client-local\",\n        \"MaxInMemoryBytes\": null,\n        \"MaxInMemoryLength\": null,\n        \"MaxLength\": 10000,\n        \"MaxLengthBytes\": 1000,\n        \"MaximumPriority\": 0,\n        \"MessageTTL\": 1000,\n        \"Node\": \"rabbit@rabbitmq-broker-0.rabbitmq-broker-internal.amqp-test.svc.cluster.local\",\n        \"OverflowBehaviour\": \"drop-head\",\n        \"Policy\": \"test-policy\",\n        \"QueueLeaderLocator\": null,\n        \"QueueName\": \"tdmq_event_handle\",\n        \"QueueType\": \"classic\",\n        \"QuorumInitialGroupSize\": null,\n        \"Remark\": \"[系统自动批量同步]\",\n        \"RequestId\": \"bf6ea82d-213b-4d44-be1f-74cd31f9a22b\",\n        \"SingleActiveConsumer\": false,\n        \"VirtualHost\": \"/\"\n    }\n}",
         "title": "查询RabbitMQ队列详情"
       }
     ],
     "DescribeRabbitMQQueues": [
       {
         "document": "查询当前 vhost 下所有 queue",
-        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRabbitMQQueues\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-44w9928j\",\n    \"VirtualHost\": \"test\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx\",\n        \"QueueInfoList\": [\n            {\n                \"QueueName\": \"queue.name\",\n                \"Remark\": null,\n                \"QueueType\": \"classic\",\n                \"ConsumerDetail\": {\n                    \"ConsumersNumber\": 1\n                },\n                \"MessageHeapCount\": 0,\n                \"MessageRateIn\": 0,\n                \"MessageRateOut\": 0\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRabbitMQQueues\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-test\",\n    \"VirtualHost\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a8f28d5e-a7e2-4b0b-afa0-2fba09c077a0\",\n        \"QueueInfoList\": [\n            {\n                \"QueueName\": \"queue.name\",\n                \"Remark\": null,\n                \"QueueType\": \"classic\",\n                \"ConsumerDetail\": {\n                    \"ConsumersNumber\": 1\n                },\n                \"MessageHeapCount\": 0,\n                \"MessageRateIn\": 0,\n                \"MessageRateOut\": 0\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
         "title": "查询RabbitMQ队列列表"
       }
     ],
     "DescribeRabbitMQUser": [
       {
         "document": "-",
-        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRabbitMQUser\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-44w9928j\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dsfsdfs\",\n        \"RabbitMQUserList\": [\n            {\n                \"ModifyTime\": \"1\",\n                \"CreateTime\": \"1\",\n                \"MaxChannels\": 1,\n                \"MaxConnections\": 1,\n                \"Type\": \"1\",\n                \"InstanceId\": \"amqp-xxx\",\n                \"User\": \"testVhost\",\n                \"Password\": \"123\",\n                \"Description\": \"hello\",\n                \"Tags\": [\n                    \"shop\"\n                ]\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRabbitMQUser\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a8f28d5e-a7e2-4b0b-afa0-2fba09c077a0\",\n        \"RabbitMQUserList\": [\n            {\n                \"ModifyTime\": \"1\",\n                \"CreateTime\": \"1\",\n                \"MaxChannels\": 1,\n                \"MaxConnections\": 1,\n                \"Type\": \"1\",\n                \"InstanceId\": \"amqp-test\",\n                \"User\": \"testVhost\",\n                \"Password\": \"123\",\n                \"Description\": \"hello\",\n                \"Tags\": [\n                    \"shop\"\n                ]\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
         "title": "查询RabbitMQ 用户列表"
       }
     ],
     "DescribeRabbitMQVipInstance": [
       {
         "document": "-",
-        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRabbitMQVipInstance\n<公共请求参数>\n\n{\n    \"ClusterId\": \"amqp-dsadasd\"\n}",
-        "output": "{\n    \"Response\": {\n        \"ClusterInfo\": {\n            \"ClusterId\": \"amqp-dsadasd\",\n            \"ClusterName\": \"abc\",\n            \"Region\": \"ap-guangzhou\",\n            \"CreateTime\": 1,\n            \"Remark\": \"abc\",\n            \"Vpcs\": [\n                {\n                    \"VpcId\": \"abc\",\n                    \"SubnetId\": \"abc\",\n                    \"VpcEndpoint\": \"abc\",\n                    \"VpcDataStreamEndpointStatus\": \"1\"\n                }\n            ],\n            \"ZoneIds\": [\n                100001\n            ],\n            \"VirtualHostNumber\": 10,\n            \"QueueNumber\": 10,\n            \"MessagePublishRate\": 10.1,\n            \"MessageStackNumber\": 10,\n            \"ExpireTime\": 20,\n            \"ChannelNumber\": 10,\n            \"ConnectionNumber\": 10,\n            \"ConsumerNumber\": 10,\n            \"ExchangeNumber\": 10,\n            \"ExceptionInformation\": \"abc\",\n            \"ClusterStatus\": 1,\n            \"AutoRenewFlag\": 1,\n            \"MirrorQueuePolicyFlag\": 1\n        },\n        \"ClusterSpecInfo\": {\n            \"SpecName\": \"标准版\",\n            \"NodeCount\": 1,\n            \"MaxTps\": 1,\n            \"MaxBandWidth\": 3,\n            \"MaxStorage\": 200,\n            \"PublicNetworkTps\": 1\n        },\n        \"ClusterNetInfo\": {\n            \"WebConsoleDomainEndpoint\": \"1\",\n            \"PublicAccessEndpoint\": \"1.1.1.1\",\n            \"WebConsoleEndpoint\": \"1.1.1.1\",\n            \"WebConsoleUsername\": \"abc\",\n            \"WebConsolePassword\": \"abc\",\n            \"PublicAccessEndpointStatus\": true,\n            \"PublicControlConsoleSwitchStatus\": true,\n            \"VpcControlConsoleSwitchStatus\": true,\n            \"VpcWebConsoleEndpoint\": \"1.1.1.1\",\n            \"PublicWebConsoleSwitchStatus\": \"ON\",\n            \"VpcWebConsoleSwitchStatus\": \"ON\",\n            \"PublicDataStreamStatus\": \"ON\",\n            \"PrometheusEndpointInfo\": {\n                \"PrometheusEndpointStatus\": \"ON\",\n                \"VpcPrometheusEndpoint\": [\n                    \"abc\"\n                ],\n                \"NodePrometheusAddress\": [\n                    \"abc\"\n                ],\n                \"VpcEndpointInfo\": {\n                    \"VpcId\": \"abc\",\n                    \"SubnetId\": \"abc\",\n                    \"VpcEndpoint\": \"abc\",\n                    \"VpcDataStreamEndpointStatus\": \"abc\"\n                }\n            }\n        },\n        \"ClusterWhiteListInfo\": {\n            \"WhiteList\": \"1.1.1.1\",\n            \"PublicControlConsoleWhiteList\": \"1.1.1.1\",\n            \"PublicDataStreamWhiteList\": \"1.1.1.1\",\n            \"PublicControlConsoleWhiteListStatus\": \"ON\",\n            \"PublicDataStreamWhiteListStatus\": \"ON\"\n        },\n        \"VirtualHostQuota\": {\n            \"MaxVirtualHost\": 10,\n            \"UsedVirtualHost\": 10\n        },\n        \"ExchangeQuota\": {\n            \"MaxExchange\": 10,\n            \"UsedExchange\": 10\n        },\n        \"QueueQuota\": {\n            \"MaxQueue\": 10,\n            \"UsedQueue\": 10\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRabbitMQVipInstance\n<公共请求参数>\n\n{\n    \"ClusterId\": \"amqp-test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ClusterInfo\": {\n            \"AutoRenewFlag\": 1,\n            \"ChannelNumber\": 1,\n            \"ClusterId\": \"amqp-test\",\n            \"ClusterName\": \"test\",\n            \"ClusterStatus\": 1,\n            \"ClusterVersion\": \"3.8.30\",\n            \"ConnectionNumber\": 1,\n            \"ConsumerNumber\": 1,\n            \"CreateTime\": 1728982428000,\n            \"ExceptionInformation\": null,\n            \"ExchangeNumber\": 10,\n            \"ExpireTime\": 1731660828257,\n            \"MessageConsumeRate\": 0,\n            \"MessagePublishRate\": 0,\n            \"MessageStackNumber\": 3021165,\n            \"MirrorQueuePolicyFlag\": 1,\n            \"PayMode\": 1,\n            \"QueueNumber\": 1112,\n            \"Region\": \"ap-qingyuan\",\n            \"Remark\": \"\",\n            \"VirtualHostNumber\": 1,\n            \"Vpcs\": [\n                {\n                    \"SubnetId\": \"subnet-test1\",\n                    \"VpcDataStreamEndpointStatus\": \"ON\",\n                    \"VpcEndpoint\": \"amqp://10.0.0.4:5672\",\n                    \"VpcId\": \"vpc-test1\"\n                },\n                {\n                    \"SubnetId\": \"subnet-test2\",\n                    \"VpcDataStreamEndpointStatus\": \"ON\",\n                    \"VpcEndpoint\": \"amqp://10.0.0.10:5672\",\n                    \"VpcId\": \"vpc-test2\"\n                }\n            ],\n            \"ZoneIds\": [\n                540001\n            ]\n        },\n        \"ClusterNetInfo\": {\n            \"PrometheusEndpointInfo\": {\n                \"NodePrometheusAddress\": [],\n                \"PrometheusEndpointStatus\": \"OFF\",\n                \"VpcEndpointInfo\": null,\n                \"VpcPrometheusEndpoint\": []\n            },\n            \"PublicAccessEndpoint\": \"amqp://106.55.176.111:5672\",\n            \"PublicAccessEndpointStatus\": true,\n            \"PublicControlConsoleSwitchStatus\": true,\n            \"PublicDataStreamStatus\": \"ON\",\n            \"PublicWebConsoleSwitchStatus\": \"ON\",\n            \"VpcControlConsoleSwitchStatus\": false,\n            \"VpcWebConsoleEndpoint\": \"http://127.0.0.1:15672\",\n            \"VpcWebConsoleSwitchStatus\": \"OFF\",\n            \"WebConsoleDomainEndpoint\": \"http://amqp-test.dashboard.rabbitmq.xx.public.tencenttdmq.com:15672\",\n            \"WebConsoleEndpoint\": \"http://106.55.176.11:15672\",\n            \"WebConsolePassword\": \"Fs98DBo9C1IuN4L0\",\n            \"WebConsoleUsername\": \"admin\"\n        },\n        \"ClusterSpecInfo\": {\n            \"MaxBandWidth\": 15,\n            \"MaxStorage\": 200,\n            \"MaxTps\": 800,\n            \"NodeCount\": 1,\n            \"PublicNetworkTps\": 5,\n            \"SpecName\": \"体验型\"\n        },\n        \"ClusterWhiteListInfo\": {\n            \"PublicControlConsoleWhiteList\": \"127.0.0.1,171.216.138.56\",\n            \"PublicControlConsoleWhiteListStatus\": \"ON\",\n            \"PublicDataStreamWhiteList\": \"127.0.0.1,125.69.38.199\",\n            \"PublicDataStreamWhiteListStatus\": \"ON\",\n            \"WhiteList\": \"127.0.0.1,171.216.138.56\"\n        },\n        \"ExchangeQuota\": {\n            \"MaxExchange\": 1000,\n            \"UsedExchange\": 10\n        },\n        \"QueueQuota\": {\n            \"MaxQueue\": 1000,\n            \"UsedQueue\": 1112\n        },\n        \"RequestId\": \"2a48bbf4-4675-4984-93d9-8ed0f4dfa598\",\n        \"VirtualHostQuota\": {\n            \"MaxVirtualHost\": 20,\n            \"UsedVirtualHost\": 1\n        }\n    }\n}",
         "title": "获取单个Amqp集群信息"
       }
     ],
@@ -663,8 +663,8 @@
     "DescribeRabbitMQVirtualHost": [
       {
         "document": "-",
-        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRabbitMQVhost\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-44w9928j\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx\",\n        \"VirtualHostList\": [\n            {\n                \"InstanceId\": \"amqp-xxxxxxxx\",\n                \"VirtualHost\": \"vhost\",\n                \"Description\": \"\",\n                \"Tags\": [],\n                \"CreateTime\": \"2023-07-18 12:55:00.778\",\n                \"ModifyTime\": \"2023-07-18 12:55:00.778\",\n                \"VirtualHostStatistics\": {\n                    \"CurrentQueues\": 1,\n                    \"CurrentExchanges\": 6,\n                    \"CurrentConnections\": 1,\n                    \"CurrentChannels\": 1,\n                    \"CurrentUsers\": 1\n                },\n                \"TraceFlag\": true,\n                \"MessageHeapCount\": 0,\n                \"MessageRateIn\": 0,\n                \"MessageRateOut\": 0\n            },\n            {\n                \"InstanceId\": \"amqp-xxxxxxxx\",\n                \"VirtualHost\": \"test2\",\n                \"Description\": \"\",\n                \"Tags\": [],\n                \"CreateTime\": \"2023-07-18 12:55:16.230\",\n                \"ModifyTime\": \"2023-07-18 12:55:19.856\",\n                \"VirtualHostStatistics\": {\n                    \"CurrentQueues\": 0,\n                    \"CurrentExchanges\": 0,\n                    \"CurrentConnections\": 0,\n                    \"CurrentChannels\": 0,\n                    \"CurrentUsers\": 0\n                },\n                \"TraceFlag\": true,\n                \"MessageHeapCount\": 0,\n                \"MessageRateIn\": 0,\n                \"MessageRateOut\": 0\n            }\n        ],\n        \"TotalCount\": 2\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRabbitMQVhost\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a8f28d5e-a7e2-4b0b-afa0-2fba09c077a0\",\n        \"VirtualHostList\": [\n            {\n                \"InstanceId\": \"amqp-test\",\n                \"VirtualHost\": \"vhost\",\n                \"Description\": \"\",\n                \"Tags\": [],\n                \"CreateTime\": \"2023-07-18 12:55:00.778\",\n                \"ModifyTime\": \"2023-07-18 12:55:00.778\",\n                \"VirtualHostStatistics\": {\n                    \"CurrentQueues\": 1,\n                    \"CurrentExchanges\": 6,\n                    \"CurrentConnections\": 1,\n                    \"CurrentChannels\": 1,\n                    \"CurrentUsers\": 1\n                },\n                \"TraceFlag\": true,\n                \"MessageHeapCount\": 0,\n                \"MessageRateIn\": 0,\n                \"MessageRateOut\": 0\n            },\n            {\n                \"InstanceId\": \"amqp-test\",\n                \"VirtualHost\": \"test2\",\n                \"Description\": \"\",\n                \"Tags\": [],\n                \"CreateTime\": \"2023-07-18 12:55:16.230\",\n                \"ModifyTime\": \"2023-07-18 12:55:19.856\",\n                \"VirtualHostStatistics\": {\n                    \"CurrentQueues\": 0,\n                    \"CurrentExchanges\": 0,\n                    \"CurrentConnections\": 0,\n                    \"CurrentChannels\": 0,\n                    \"CurrentUsers\": 0\n                },\n                \"TraceFlag\": true,\n                \"MessageHeapCount\": 0,\n                \"MessageRateIn\": 0,\n                \"MessageRateOut\": 0\n            }\n        ],\n        \"TotalCount\": 2\n    }\n}",
         "title": "查询RabbitMQ vhost列表"
       }
     ],
@@ -672,7 +672,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRabbitMQVirtualHostList\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-testtesttest\",\n    \"Limit\": 1,\n    \"Offset\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"abc\",\n        \"VirtualHostList\": [\n            {\n                \"VirtualHostName\": \"abc\",\n                \"Description\": \"abc\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"abc\",\n        \"VirtualHostList\": [\n            {\n                \"VirtualHostName\": \"test-vhost\",\n                \"Description\": \"The virtual host is for test\"\n            }\n        ]\n    }\n}",
         "title": "获取云服务器列表"
       }
     ],
@@ -1023,24 +1023,24 @@
     "ModifyPublicNetworkAccessPoint": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPublicNetworkAccessPoint\n<公共请求参数>\n\n{\n    \"ClusterId\": \"amqp-testtesttest\",\n    \"PublicNetworkAccessPointStatus\": true,\n    \"SwitchOwner\": \"Public\",\n    \"VpcId\": \"vpc\",\n    \"SubnetId\": \"subnetID\",\n    \"SelectIp\": \"10.1.0.1\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abcd\",\n        \"ModifyResult\": \"修改成功\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPublicNetworkAccessPoint\n<公共请求参数>\n\n{\n    \"ClusterId\": \"amqp-test\",\n    \"PublicNetworkAccessPointStatus\": true,\n    \"SwitchOwner\": \"Public\",\n    \"VpcId\": \"vpc-d\",\n    \"SubnetId\": \"subnet-test\",\n    \"SelectIp\": \"10.1.0.1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a8f28d5e-a7e2-4b0b-afa0-2fba09c077a0\",\n        \"ModifyResult\": \"修改成功\"\n    }\n}",
         "title": "RabbitMQ专享版修改公网管控台，数据流开关"
       }
     ],
     "ModifyRabbitMQUser": [
       {
         "document": "-",
-        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRabbitMQUser\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-44w9928j\",\n    \"User\": \"test_user\",\n    \"Password\": \"123\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dsfsdfs\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRabbitMQUser\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-test\",\n    \"User\": \"test_user\",\n    \"Password\": \"123Tencent\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a8f28d5e-a7e2-4b0b-afa0-2fba09c077a0\"\n    }\n}",
         "title": "修改RabbitMQ用户"
       }
     ],
     "ModifyRabbitMQVipInstance": [
       {
         "document": "修改RabbitMQ专享版实例",
-        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRabbitMQVipInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-44w9928j\",\n    \"Remark\": \"test\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dgdsfgdsfdghngesfds\",\n        \"InstanceId\": \"amqp-44w9928j\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRabbitMQVipInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-test\",\n    \"Remark\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a8f28d5e-a7e2-4b0b-afa0-2fba09c077a0\",\n        \"InstanceId\": \"amqp-test\"\n    }\n}",
         "title": "修改RabbitMQ专享版实例"
       }
     ],
@@ -1048,7 +1048,7 @@
       {
         "document": "-",
         "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRabbitMQVirtualHost\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-44w9928j\",\n    \"VirtualHost\": \"testVhost\",\n    \"Description\": \"hello\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dsfsdfs\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a8f28d5e-a7e2-4b0b-afa0-2fba09c077a0\"\n    }\n}",
         "title": "修改RabbitMQ的vhost"
       }
     ],
@@ -1175,8 +1175,8 @@
     "RestoreRabbitMQCluster": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: xxx.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstances\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-xxx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"TaskId\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: xxx.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstances\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"e43797fb-1837-4ea2-b0cd-1105468bd122\",\n        \"RequestId\": \"a8f28d5e-a7e2-4b0b-afa0-2fba09c077a0\"\n    }\n}",
         "title": "恢复 RabbitMQ 集群状态"
       }
     ],

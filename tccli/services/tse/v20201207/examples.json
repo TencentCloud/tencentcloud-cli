@@ -598,6 +598,14 @@
         "title": "查询治理中心服务列表"
       }
     ],
+    "DescribeInstanceTagInfos": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceTagInfos\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceId\": \"abc\",\n        \"TagInfos\": [\n            {\n                \"TagKey\": \"abc\",\n                \"TagValue\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查看实例标签信息"
+      }
+    ],
     "DescribeNacosReplicas": [
       {
         "document": "查询Nacos类型引擎实例副本信息",

@@ -11,7 +11,8 @@ tccli cwp DescribeExportMachines --cli-unfold-argument  \
     --Filters.0.Name Keywords \
     --Filters.0.Values 10.0.1.1 \
     --Limit 10 \
-    --Offset 0
+    --Offset '0
+ {}'
 ```
 
 Output: 

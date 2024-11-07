@@ -1387,9 +1387,9 @@
     "StopCpuExpand": [
       {
         "document": "用于关闭当前实例的弹性扩容配置。",
-        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopCpuExpand\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"AsyncRequestId\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
-        "title": "停止弹性扩容"
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopCpuExpand\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-himitj11\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AsyncRequestId\": \"02e874af-e4876fb4-4c672e64-86f17866\",\n        \"RequestId\": \"d5b053f3-d58e-4048-aef9-b8cc9f044951\"\n    }\n}",
+        "title": "关闭弹性扩容"
       }
     ],
     "StopDBImportJob": [

@@ -27,7 +27,7 @@ Output:
                 "BindInfo": {
                     "AppPkgName": "com.tencent.demo",
                     "AppIconUrl": "https://appicon,url.com/appicon",
-                    "AppName": "demo"
+                    "AppName": "AppName"
                 },
                 "CreateTime": 1
             }

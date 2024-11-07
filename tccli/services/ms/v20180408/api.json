@@ -1319,7 +1319,7 @@
         {
           "disabled": false,
           "document": "密钥有效时间，默认为1小时。",
-          "example": "1111",
+          "example": "1200",
           "member": "uint64",
           "name": "Duration",
           "required": false,
@@ -1514,7 +1514,7 @@
         {
           "disabled": false,
           "document": "加固任务Id",
-          "example": "无",
+          "example": "ResultId-xxxxxx",
           "member": "string",
           "name": "ResultId",
           "output_required": true,

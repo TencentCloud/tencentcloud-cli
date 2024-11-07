@@ -22816,7 +22816,7 @@
           "example": "12",
           "member": "int64",
           "name": "WorkGroupId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -22826,7 +22826,7 @@
           "example": "testGroup",
           "member": "string",
           "name": "WorkGroupName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -22836,7 +22836,7 @@
           "example": "User",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -22846,7 +22846,7 @@
           "example": "无",
           "member": "Users",
           "name": "UserInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -22856,7 +22856,7 @@
           "example": "无",
           "member": "Policys",
           "name": "DataPolicyInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -22866,7 +22866,7 @@
           "example": "无",
           "member": "Policys",
           "name": "EnginePolicyInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -22876,7 +22876,7 @@
           "example": "group for admin",
           "member": "string",
           "name": "WorkGroupDescription",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -22886,7 +22886,17 @@
           "example": "无",
           "member": "Policys",
           "name": "RowFilterInfo",
-          "required": true,
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据目录权限集\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Policy",
+          "name": "CatalogPolicyInfo",
+          "output_required": false,
           "type": "object",
           "value_allowed_null": true
         }

@@ -36,8 +36,7 @@ Output:
                     "Protocol": "http",
                     "Zone": "ap-guangzhou",
                     "NumericalVpcId": 3243,
-                    "LoadBalancerType": "open",
-                    "LoadBalancerDomain": ""
+                    "LoadBalancerType": "open"
                 }
             ],
             "Region": "gz",

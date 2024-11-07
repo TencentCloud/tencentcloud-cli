@@ -6,18 +6,18 @@ Input:
 
 ```
 tccli ssm DescribeRotationDetail --cli-unfold-argument  \
-    --SecretName test
+    --SecretName test3-db-secret
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "2609a8fd-4584-4f89-98be-8c7ae1b81ef4",
         "EnableRotation": true,
-        "Frequency": 35,
-        "LatestRotateTime": "2021-01-02 15:04:05",
-        "NextRotateBeginTime": "2021-02-02 15:04:05"
+        "Frequency": 30,
+        "LatestRotateTime": "2024-10-30 16:24:48",
+        "NextRotateBeginTime": "2024-10-31 11:11:00",
+        "RequestId": "d44e1c39-1e87-4ebe-ac8f-e06d0885971d"
     }
 }
 ```

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tdmq DescribeRabbitMQExchanges --cli-unfold-argument  \
-    --InstanceId amqp-44w9928j \
+    --InstanceId amqp-test \
     --VirtualHost vhost1
 ```
 

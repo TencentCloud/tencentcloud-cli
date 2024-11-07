@@ -6,16 +6,16 @@ Input:
 
 ```
 tccli ssm DescribeAsyncRequestInfo --cli-unfold-argument  \
-    --FlowID 123
+    --FlowID 43414
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Description": "task is processing",
-        "RequestId": "2609a8fd-4584-4f89-98be-8c7ae1b81ef4",
-        "TaskStatus": 0
+        "Description": "success",
+        "RequestId": "a624794f-4fd3-4e92-b00e-ee46eeb51a0c",
+        "TaskStatus": 1
     }
 }
 ```

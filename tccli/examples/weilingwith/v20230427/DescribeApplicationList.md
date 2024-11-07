@@ -24,7 +24,7 @@ Output:
                     "ApplicationId": "10041",
                     "ApplicationLogo": {
                         "FileId": "359cc1b5-88c1-4dd6-8ff4-21d0b36ac7e2",
-                        "Url": "https://wetwin-manager-1258344699.cos.ap-guangzhou.myqcloud.com/%2F100055/0/20230717/359cc1b5-88c1-4dd6-8ff4-21d0b36ac7e2/%E8%B5%84%E4%BA%A7%E7%AE%A1%E7%90%86-%E9%BB%91.png?q-sign-algorithm=sha1&q-ak=AKIDiFWWFo67rLZXFgrlNinb8NL2SaR2M0OU&q-sign-time=1693452005%3B1693453205&q-key-time=1693452005%3B1693453205&q-header-list=host&q-url-param-list=&q-signature=6bf531d1b08d6f75eb7e153c24746a61d7be37d0"
+                        "Url": "https://wetwin-manager-1258344699.cos.ap-guangzhou.myqcloud.com/%2F100055/0/20230717/359cc1b5-88c1-4dd6-8ff4-21d0b36ac7e2/%E8%B5%84%E4%BA%A7%E7%AE%A1%E7%90%86-%E9%BB%91.png?q-sign-algorithm=sha1&q-ak=******&q-sign-time=1693452005%3B1693453205&q-key-time=1693452005%3B1693453205&q-header-list=host&q-url-param-list=&q-signature=6bf531d1b08d6f75eb7e153c24746a61d7be37d0"
                     },
                     "Description": "12345611111",
                     "EnglishName": "zctest1111",

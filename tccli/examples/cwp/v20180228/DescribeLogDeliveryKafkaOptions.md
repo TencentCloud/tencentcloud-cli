@@ -16,7 +16,7 @@ Output:
         "InstanceList": [
             {
                 "InstanceID": "ckafka-ce80k",
-                "InstanceName": "云镜测试环境",
+                "InstanceName": "云环境",
                 "KafkaVersion": "0.10.2.1",
                 "DiskSize": 300,
                 "VpcId": "vpc-sdfd***",

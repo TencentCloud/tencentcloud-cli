@@ -18,7 +18,7 @@ Output:
         "SecretName": "test_secret",
         "VersionId": "v1.0",
         "SecretBinary": "",
-        "SecretString": "test",
+        "SecretString": "lzctest",
         "NextRotateBeginTime": 654321
     }
 }

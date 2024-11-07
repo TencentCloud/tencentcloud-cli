@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli tdmq ModifyPublicNetworkAccessPoint --cli-unfold-argument  \
-    --ClusterId amqp-testtesttest \
+    --ClusterId amqp-test \
     --PublicNetworkAccessPointStatus True \
     --SwitchOwner Public \
-    --VpcId vpc \
-    --SubnetId subnetID \
+    --VpcId vpc-d \
+    --SubnetId subnet-test \
     --SelectIp 10.1.0.1
 ```
 
@@ -18,7 +18,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "abcd",
+        "RequestId": "a8f28d5e-a7e2-4b0b-afa0-2fba09c077a0",
         "ModifyResult": "修改成功"
     }
 }

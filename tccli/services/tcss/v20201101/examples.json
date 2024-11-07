@@ -11,7 +11,7 @@
     "AddAndPublishNetworkFirewallPolicyYamlDetail": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddAndPublishNetworkFirewallPolicyYamlDetail\n<公共请求参数>\n\n{\n    \"PolicyName\": \"fshduis\",\n    \"Description\": \"描述\",\n    \"ClusterId\": \"cls-hjsdfh\",\n    \"Yaml\": \"YXNkZmFzZGZhZHNmYXNkZmFzZGY=\"\n}",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddAndPublishNetworkFirewallPolicyYamlDetail\n<公共请求参数>\n\n{\n    \"PolicyName\": \"fshduis\",\n    \"Description\": \"desc of network firewall policy\",\n    \"ClusterId\": \"cls-hjsdfh\",\n    \"Yaml\": \"YXNkZmFzZGZhZHNmYXNkZmFzZGY=\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"345da107-dfdf-48f0-9796-e6723bdc102e\",\n        \"TaskId\": 32501,\n        \"Result\": \"Succ\"\n    }\n}",
         "title": "容器网络创建yaml网络策略添加任务示例"
       }
@@ -785,7 +785,7 @@
     "DescribeAffectedWorkloadList": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAffectedWorkloadList\n<公共请求参数>\n\n{\n    \"CheckItemId\": 10071,\n    \"Filters\": [],\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAffectedWorkloadList\n<公共请求参数>\n\n{\n    \"CheckItemId\": 10071,\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"AffectedWorkloadList\": [\n            {\n                \"ClusterId\": \"test-clusterid\",\n                \"ClusterName\": \"benben-tcss\",\n                \"Region\": \"ap-guangzhou\",\n                \"VerifyInfo\": \"yunjing-agent set image tag \\\"latest\\\"\",\n                \"WorkloadName\": \"tcss/yunjing-agent\",\n                \"WorkloadType\": \"DaemonSet\"\n            }\n        ],\n        \"RequestId\": \"299deeb1-48aa-449d-980c-1f46e2375cec\",\n        \"TotalCount\": \"0\"\n    }\n}",
         "title": "查询workload类型的影响范围示例"
       }

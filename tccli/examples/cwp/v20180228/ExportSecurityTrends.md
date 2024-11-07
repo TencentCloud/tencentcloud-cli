@@ -7,7 +7,10 @@ Input:
 ```
 tccli cwp ExportSecurityTrends --cli-unfold-argument  \
     --BeginDate 2020-06-01 \
-    --EndDate 2020-06-10
+    --EndDate '2020-06-10
+ 
+
+{"BeginDate":"2020-06-01", "EndDate":"2020-06-02"}'
 ```
 
 Output: 

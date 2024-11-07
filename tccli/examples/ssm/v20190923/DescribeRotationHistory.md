@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ssm DescribeRotationHistory --cli-unfold-argument  \
-    --SecretName test
+    --SecretName testlzc
 ```
 
 Output: 

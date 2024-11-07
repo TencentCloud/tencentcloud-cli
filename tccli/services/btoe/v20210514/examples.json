@@ -74,7 +74,7 @@
       {
         "document": "用户通过存证编码向BTOE查询存证电子凭证信息。",
         "input": "POST / HTTP/1.1\nHost: btoe.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetDepositCert\n<公共请求参数>\n\n{\n    \"EvidenceId\": \"testt222e32278733387121ststtest\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"testtest33111113333111\",\n        \"EvidenceId\": \"testt222e32278733387121ststtest\",\n        \"EvidenceCert\": \"http://test-1251451924.cos.ap-nanjing.myqcloud.com/btoe%2620210326%26testt222e32278733387121ststtest.png?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDkIyS6YfpfH3bcTuzz05uWr1vwkMjrra6%26q-sign-time%3D1617003400%3B1617007000%26q-key-time%3D1617003400%3B1617007000%26q-header-list%3Dhost%26q-url-param-list%3D%26q-signature%3D2c2c544622742db817848beff9580c51804ec7f0\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"testtest33111113333111\",\n        \"EvidenceId\": \"testt222e32278733387121ststtest\",\n        \"EvidenceCert\": \"http://xxxxx.cos.xxxxx.myqcloud.com/btoe%2620210326%26testt222e32278733387121ststtest.png?sign=q-sign-algorithm%3Dsha1%26q-ak%3Dasdfjalsdjlkfasndlncajsdfasd%26q-sign-time%3D1617003400%3B1617007000%26q-key-time%3D1617003400%3B1617007000%26q-header-list%3Dhost%26q-url-param-list%3D%26q-signature%3D2c2c544622742db817848beff9580c51804ec7f0\"\n    }\n}",
         "title": "BTOE存证电子凭证查询"
       }
     ],
@@ -82,7 +82,7 @@
       {
         "document": "用户通过存证编码向BTOE获取存证文件的下载URL。",
         "input": "POST / HTTP/1.1\nHost: btoe.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetDepositFile\n<公共请求参数>\n\n{\n    \"EvidenceId\": \"存证编码\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"testtest33111113333111\",\n        \"EvidenceId\": \"testt222e32278733387121ststtest\",\n        \"EvidenceFile\": \"http://test-1251451924.cos.ap-nanjing.myqcloud.com/btoe%2620210326%26testt222e32278733387121ststtest.png?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDkIyS6YfpfH3bcTuzz05uWr1vwkMjrra6%26q-sign-time%3D1617003400%3B1617007000%26q-key-time%3D1617003400%3B1617007000%26q-header-list%3Dhost%26q-url-param-list%3D%26q-signature%3D2c2c544622742db817848beff9580c51804ec7f0\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"testtest33111113333111\",\n        \"EvidenceId\": \"testt222e32278733387121ststtest\",\n        \"EvidenceFile\": \"http://xxxx.cos.xxxx.myqcloud.com/btoe%2620210326%26testt222e32278733387121ststtest.png?sign=q-sign-algorithm%3Dsha1%26q-ak%3Dsdfgsdfgsdvsevrsdfgsdfg%26q-sign-time%3D1617003400%3B1617007000%26q-key-time%3D1617003400%3B1617007000%26q-header-list%3Dhost%26q-url-param-list%3D%26q-signature%3D2c2c544622742db817848beff9580c51804ec7f0\"\n    }\n}",
         "title": "存证文件查询"
       }
     ],

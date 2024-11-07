@@ -21566,7 +21566,7 @@
         {
           "disabled": false,
           "document": "实例 ID 。",
-          "example": "cdb-test",
+          "example": "cdb-himitj11",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -21581,9 +21581,10 @@
         {
           "disabled": false,
           "document": "异步任务 ID 。可以调用DescribeAsyncRequest 传入该 ID ，进行任务执行进度的查询",
-          "example": "xxxxxxx-xxxxxxxx",
+          "example": "02e874af-e4876fb4-4c672e64-86f17866",
           "member": "string",
           "name": "AsyncRequestId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

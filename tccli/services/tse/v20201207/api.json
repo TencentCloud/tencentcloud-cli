@@ -518,6 +518,13 @@
       "output": "DescribeGovernanceServicesResponse",
       "status": "online"
     },
+    "DescribeInstanceTagInfos": {
+      "document": "查看实例的标签信息",
+      "input": "DescribeInstanceTagInfosRequest",
+      "name": "查看实例的标签信息",
+      "output": "DescribeInstanceTagInfosResponse",
+      "status": "online"
+    },
     "DescribeNacosReplicas": {
       "document": "查询Nacos类型引擎实例副本信息",
       "input": "DescribeNacosReplicasRequest",
@@ -9045,6 +9052,53 @@
         }
       ],
       "usage": "out"
+    },
+    "DescribeInstanceTagInfosRequest": {
+      "document": "DescribeInstanceTagInfos请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "ins-xxxxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceTagInfosResponse": {
+      "document": "DescribeInstanceTagInfos返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "ins-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例标签集合",
+          "example": "无",
+          "member": "InstanceTagInfo",
+          "name": "TagInfos",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "DescribeNacosReplicasRequest": {
       "document": "DescribeNacosReplicas请求参数结构体",

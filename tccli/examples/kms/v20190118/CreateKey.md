@@ -21,13 +21,13 @@ Output:
         "Alias": "test8-lzc",
         "CreateTime": 1730347170,
         "Description": "test描述",
-        "HsmClusterId": "",
+        "HsmClusterId": "cls-hsm-3dflmo9g",
         "KeyId": "87ff856e-973c-11ef-947b-525400d834e5",
         "KeyState": "Enabled",
         "KeyUsage": "ENCRYPT_DECRYPT",
         "RequestId": "c44aba41-015a-45aa-9e55-1a08ac9d1d78",
         "TagCode": 0,
-        "TagMsg": ""
+        "TagMsg": "ok"
     }
 }
 ```

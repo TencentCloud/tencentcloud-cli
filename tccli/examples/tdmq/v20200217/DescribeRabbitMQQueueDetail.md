@@ -6,43 +6,46 @@ Input:
 
 ```
 tccli tdmq DescribeRabbitMQQueueDetail --cli-unfold-argument  \
-    --InstanceId abc \
-    --VirtualHost abc \
-    --QueueName abc
+    --InstanceId amqp-test \
+    --VirtualHost / \
+    --QueueName tdmq_event_handle
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "InstanceId": "abc",
-        "VirtualHost": "abc",
-        "QueueName": "abc",
-        "QueueType": "abc",
-        "Consumers": 0,
+        "Arguments": "{}",
+        "AutoDelete": false,
+        "AutoExpire": 1000,
+        "Consumers": 1,
+        "CreateTime": 1728982735,
+        "DeadLetterExchange": "dl-exchange",
+        "DeadLetterRoutingKey": "test-dl",
+        "DeadLetterStrategy": "at-most-once",
+        "DeliveryLimit": null,
         "Durable": true,
-        "AutoDelete": true,
-        "Remark": "abc",
-        "MessageTTL": 0,
-        "AutoExpire": 0,
-        "MaxLength": 0,
-        "MaxLengthBytes": 0,
-        "DeliveryLimit": 0,
-        "OverflowBehaviour": "abc",
-        "DeadLetterExchange": "abc",
-        "DeadLetterRoutingKey": "abc",
-        "SingleActiveConsumer": true,
+        "Exclusive": false,
+        "InstanceId": "amqp-test",
+        "LazyMode": false,
+        "MasterLocator": "client-local",
+        "MaxInMemoryBytes": null,
+        "MaxInMemoryLength": null,
+        "MaxLength": 10000,
+        "MaxLengthBytes": 1000,
         "MaximumPriority": 0,
-        "LazyMode": true,
-        "MasterLocator": "abc",
-        "MaxInMemoryLength": 0,
-        "MaxInMemoryBytes": 0,
-        "CreateTime": 0,
-        "Node": "abc",
-        "DeadLetterStrategy": "abc",
-        "QueueLeaderLocator": "abc",
-        "QuorumInitialGroupSize": 0,
-        "RequestId": "abc"
+        "MessageTTL": 1000,
+        "Node": "rabbit@rabbitmq-broker-0.rabbitmq-broker-internal.amqp-test.svc.cluster.local",
+        "OverflowBehaviour": "drop-head",
+        "Policy": "test-policy",
+        "QueueLeaderLocator": null,
+        "QueueName": "tdmq_event_handle",
+        "QueueType": "classic",
+        "QuorumInitialGroupSize": null,
+        "Remark": "[系统自动批量同步]",
+        "RequestId": "bf6ea82d-213b-4d44-be1f-74cd31f9a22b",
+        "SingleActiveConsumer": false,
+        "VirtualHost": "/"
     }
 }
 ```

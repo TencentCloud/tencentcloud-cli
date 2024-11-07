@@ -2155,6 +2155,24 @@
           "name": "ResponseDurationWarningThreshold",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否关联dashboard： 0 关 1 开",
+          "example": "0",
+          "member": "int64",
+          "name": "IsRelatedDashboard",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "dashboard ID",
+          "example": "xxxxx",
+          "member": "string",
+          "name": "DashboardTopicID",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

@@ -34,7 +34,7 @@ Output:
                     "NetworkType": 0,
                     "NetworkName": "name",
                     "InstanceID": "ins-ac13d",
-                    "HostName": ""
+                    "HostName": "dataHub"
                 }
             }
         ],

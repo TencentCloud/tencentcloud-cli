@@ -6,48 +6,42 @@ Input:
 
 ```
 tccli cloudhsm DescribeUsgRule --cli-unfold-argument  \
-    --SgIds xxxxxxxxxxxx
+    --SgIds sg-6tjv5yxb
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "TotalCount": 1,
+        "RequestId": "22ce6f31-8937-4945-862b-98f453aa091b",
         "SgRules": [
             {
-                "Version": 0,
-                "SgId": "UsgIdxxxxx",
-                "SgName": "UsgNamexxxxxx",
-                "SgRemark": "xxxxxxxx",
-                "CreateTime": "2006-01-02 15:04:05",
+                "CreateTime": "2024-02-02 16:53:18",
                 "InBound": [
                     {
-                        "Ip": "xxxxx",
-                        "Id": "xxxxxxx",
-                        "AddressModule": "xxxxxx",
-                        "Proto": "tcp",
-                        "Port": "80",
-                        "ServiceModule": "xxxxxx",
-                        "Desc": "xxxxxx",
-                        "Action": "DROP"
+                        "Action": "ACCEPT",
+                        "Desc": "Default rule",
+                        "Ip": "0.0.0.0/0",
+                        "Port": "ALL",
+                        "Proto": "ALL"
                     }
                 ],
                 "OutBound": [
                     {
-                        "Ip": "xxxxx",
-                        "Id": "xxxxxxx",
-                        "AddressModule": "xxxxxx",
-                        "Proto": "tcp",
-                        "Port": "80",
-                        "ServiceModule": "xxxxxx",
-                        "Desc": "xxxxxx",
-                        "Action": "DROP"
+                        "Action": "ACCEPT",
+                        "Desc": "Default rule",
+                        "Ip": "0.0.0.0/0",
+                        "Port": "ALL",
+                        "Proto": "ALL"
                     }
-                ]
+                ],
+                "SgId": "sg-6tjv5yxb",
+                "SgName": "default",
+                "SgRemark": "System created security group",
+                "Version": 1
             }
         ],
-        "RequestId": "6010cd3d-a85a-4e00-b37b-22606d017420"
+        "TotalCount": 1
     }
 }
 ```

@@ -2021,7 +2021,7 @@
         {
           "disabled": false,
           "document": "关联的账号",
-          "example": "[]",
+          "example": "[“root”]",
           "member": "string",
           "name": "AccountSet",
           "required": false,
@@ -2039,7 +2039,7 @@
         {
           "disabled": false,
           "document": "关联高危DB模板ID",
-          "example": "[]",
+          "example": "[\"temp-adasaew\"]",
           "member": "string",
           "name": "ACTemplateIdSet",
           "required": false,
@@ -2766,7 +2766,7 @@
         {
           "disabled": false,
           "document": "所属用户组ID集合",
-          "example": "[]",
+          "example": "[12,13]",
           "member": "uint64",
           "name": "GroupIdSet",
           "required": false,
@@ -6623,7 +6623,7 @@
         {
           "disabled": false,
           "document": "使用Okta认证时指定范围。为空时默认使用 openid、profile、email。",
-          "example": "[]",
+          "example": "[\"profile\"]",
           "member": "string",
           "name": "Scopes",
           "required": false,
@@ -6668,7 +6668,7 @@
         {
           "disabled": false,
           "document": "已废弃",
-          "example": "[]",
+          "example": "[\"vssdewas\"]",
           "member": "string",
           "name": "ModuleSet",
           "required": false,
@@ -6803,7 +6803,7 @@
         {
           "disabled": false,
           "document": "用户姓名，最大长度20个字符，不能包含空格",
-          "example": "xx",
+          "example": "nick",
           "member": "string",
           "name": "RealName",
           "required": true,

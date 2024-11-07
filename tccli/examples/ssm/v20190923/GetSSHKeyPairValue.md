@@ -6,20 +6,20 @@ Input:
 
 ```
 tccli ssm GetSSHKeyPairValue --cli-unfold-argument  \
-    --SecretName xx
+    --SecretName test2-sshkey-secret
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "SSHKeyID": "xx",
+        "PrivateKey": "-----BEGIN RSA PRIVATE KEY-----\nMIIEowIBAAKC***********NEuTGXFT8sLJ\n-----END RSA PRIVATE KEY-----",
         "ProjectID": 0,
-        "PrivateKey": "xx",
-        "PublicKey": "xx",
-        "RequestId": "xx",
-        "SSHKeyName": "xx",
-        "SSHKeyDescription": "xx"
+        "PublicKey": "ssh-rsa AAAA********H5TD4ab skey-e0vbh2ts",
+        "RequestId": "9f436a38-ced1-45f0-9b51-946958b90244",
+        "SSHKeyDescription": "created by ssm",
+        "SSHKeyID": "skey-e0vbh2ts",
+        "SSHKeyName": "test2_key"
     }
 }
 ```

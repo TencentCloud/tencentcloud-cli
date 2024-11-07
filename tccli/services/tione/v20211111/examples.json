@@ -120,6 +120,22 @@
         "title": "查询资源组节点运行中的任务"
       }
     ],
+    "DescribeBillingSpecs": [
+      {
+        "document": "查询计费项列表",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBillingSpecs\n<公共请求参数>\n\n{\n    \"ChargeType\": \"PREPAID\",\n    \"TaskType\": \"TRAIN\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9f91ba5c-03bb-4c02-b9cc-d2740821112f\",\n        \"Specs\": [\n            {\n                \"SpecName\": \"TI.GN10.2XLARGE40.POST\",\n                \"SpecAlias\": \"8核40GB V100*1\",\n                \"SpecId\": \"sv_tio_platform_cloud_post_gpu_8c40g_1v100\",\n                \"Available\": false,\n                \"AvailableRegion\": [\n                    \"ap-guangzhou\",\n                    \"ap-beijing\"\n                ]\n            }\n        ]\n    }\n}",
+        "title": "查询计费项列表 示例"
+      }
+    ],
+    "DescribeBillingSpecsPrice": [
+      {
+        "document": "查询计费项价格",
+        "input": "https://tione.tencentcloudapi.com/?Action=DescribeBillingSpecsPrice\n&SpecsParam.0.SpecName=TI.S.MEDIUM.POST\n&SpecsParam.0.SpecCount=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"SpecsPrice\": [\n            {\n                \"SpecName\": \"TI.S.MEDIUM.POST\",\n                \"SpecCount\": 1,\n                \"TotalCost\": 70,\n                \"RealTotalCost\": 70\n            }\n        ],\n        \"RequestId\": \"b7d048fe-e335-8b6e-a8d2-d68esk\"\n    }\n}",
+        "title": "查询计费项价格 示例"
+      }
+    ],
     "DescribeBuildInImages": [
       {
         "document": "",

@@ -19,8 +19,8 @@ Output:
         "RequestId": "abc",
         "VirtualHostList": [
             {
-                "VirtualHostName": "abc",
-                "Description": "abc"
+                "VirtualHostName": "test-vhost",
+                "Description": "The virtual host is for test"
             }
         ]
     }

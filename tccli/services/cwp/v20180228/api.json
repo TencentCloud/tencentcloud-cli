@@ -3654,7 +3654,7 @@
       "usage": "out"
     },
     "AccountStatistics": {
-      "document": "帐号统计数据。",
+      "document": "账号统计数据。",
       "members": [
         {
           "disabled": false,
@@ -4858,7 +4858,7 @@
         {
           "disabled": false,
           "document": "挂载目录",
-          "example": "/",
+          "example": "/data",
           "member": "string",
           "name": "Path",
           "output_required": true,
@@ -11765,7 +11765,7 @@
         },
         {
           "disabled": false,
-          "document": "云镜ID",
+          "document": "主机uuid",
           "example": "acdd5474-6360-4fd4-bfc7-843162cb8116",
           "member": "string",
           "name": "Uuid",
@@ -11936,7 +11936,7 @@
         {
           "disabled": false,
           "document": "描述",
-          "example": "描述",
+          "example": "desc of event",
           "member": "string",
           "name": "HarmDescribe",
           "output_required": true,
@@ -12202,7 +12202,7 @@
         {
           "disabled": false,
           "document": "描述",
-          "example": "描述",
+          "example": "desc of event",
           "member": "string",
           "name": "HarmDescribe",
           "output_required": true,
@@ -12342,7 +12342,7 @@
         {
           "disabled": false,
           "document": "正则表达式 base64 加密,该字段废弃,如果写入则自动替换为Rules.Process.CmdLine",
-          "example": "*",
+          "example": "rule-reg-*",
           "member": "string",
           "name": "Rule",
           "output_required": true,
@@ -12641,7 +12641,7 @@
         {
           "disabled": false,
           "document": "规则描述",
-          "example": "描述",
+          "example": "desc of rule",
           "member": "string",
           "name": "Description",
           "output_required": false,
@@ -12918,7 +12918,7 @@
         },
         {
           "disabled": false,
-          "document": "事件类型：200-暴力破解事件，300-暴力破解成功事件（页面展示），400-暴力破解不存在的帐号事件",
+          "document": "事件类型：200-暴力破解事件，300-暴力破解成功事件（页面展示），400-暴力破解不存在的账号事件",
           "example": "1",
           "member": "uint64",
           "name": "EventType",
@@ -14454,7 +14454,7 @@
         {
           "disabled": false,
           "document": "标签数组, 空则表示不需要绑定标签",
-          "example": "[]",
+          "example": "[{\"TagKey\":\"cwp\", \"TagValue\":\"dev\"}]",
           "member": "Tags",
           "name": "Tags",
           "required": false,
@@ -14517,7 +14517,7 @@
         {
           "disabled": false,
           "document": "该字段作废",
-          "example": "''",
+          "example": "\"no config\"",
           "member": "string",
           "name": "AutoProtectOpenConfig",
           "required": false,
@@ -14526,7 +14526,7 @@
         {
           "disabled": false,
           "document": "变配参数",
-          "example": "{}",
+          "example": "{\"ResourceId\":\"f1fm4-vm4igjxvk_****\", \"NewSubProductCode\":\"PRO_VERSION\", \"InquireNum\":331}",
           "member": "OrderModifyObject",
           "name": "ModifyConfig",
           "required": false,
@@ -14541,7 +14541,7 @@
         {
           "disabled": false,
           "document": "订单号列表",
-          "example": "[]",
+          "example": "[\"cwp-313df***\", \"cwp-vi4d8***\"]",
           "member": "string",
           "name": "DealNames",
           "output_required": true,
@@ -14551,7 +14551,7 @@
         {
           "disabled": false,
           "document": "资源ID列表,预付费订单该字段空值",
-          "example": "[]",
+          "example": "[\"cwp-313df***\", \"cwp-vi4d8***\"]",
           "member": "string",
           "name": "ResourceIds",
           "output_required": true,
@@ -14561,7 +14561,7 @@
         {
           "disabled": false,
           "document": "大订单号 , 后付费该字段空值",
-          "example": "  ",
+          "example": "order-vmqkfm****  ",
           "member": "string",
           "name": "BigDealId",
           "output_required": true,
@@ -15187,7 +15187,7 @@
         {
           "disabled": false,
           "document": "失败原因",
-          "example": "{\n\t\"Name\":\"template1\",\n\t\"LogType\":\"malware\",\n\t\"Condition\":\"src_ip匹配字符:10.0.0.1\",\n\t\"TimeRange\":\"2020-06-1300:00:00至2020-07-1323:59:59\",\n\t\"Query\":\"{\\\"index\\\":[\\\"malware\\\"],\\\"body\\\":{\\\"query\\\":{\\\"bool\\\":{\\\"filter\\\":{\\\"bool\\\":{\\\"filter\\\":{\\\"range\\\":{\\\"timestamp\\\":{\\\"gte\\\":1591977600000,\\\"lte\\\":1594655999999}}},\\\"must\\\":[{\\\"term\\\":{\\\"src_ip\\\":\\\"10.0.0.1\\\"}}],\\\"must_not\\\":[],\\\"should\\\":[]}}}},\\\"aggs\\\":{\\\"count_stats\\\":{\\\"date_histogram\\\":{\\\"field\\\":\\\"timestamp\\\",\\\"interval\\\":\\\"12h\\\",\\\"time_zone\\\":\\\"Asia/Shanghai\\\",\\\"min_doc_count\\\":1}}},\\\"highlight\\\":{\\\"fields\\\":{\\\"*\\\":{}}}},\\\"sort\\\":[{\\\"timestamp\\\":\\\"desc\\\"}]}\",\n\t\"Flag\":\"simple\",\n\t\"DisplayData\":\"[{\\\"id\\\":449375484687,\\\"patternsField\\\":\\\"src_ip\\\",\\\"selectedtype\\\":\\\"is\\\",\\\"selectedOptionsMap\\\":{\\\"is\\\":\\\"匹配字符\\\",\\\"like\\\":\\\"模糊匹配字符\\\",\\\"not\\\":\\\"不包含字符\\\",\\\"is_one_of\\\":\\\"匹配以下任意字符\\\",\\\"not_one_of\\\":\\\"不包含以下任意字符\\\"},\\\"selectedTypeList\\\":[\\\"is\\\",\\\"like\\\",\\\"not\\\",\\\"is_one_of\\\",\\\"not_one_of\\\"],\\\"third_cat\\\":\\\"input\\\",\\\"value\\\":\\\"10.0.0.1\\\"}]\"\n\n}\n",
+          "example": "{   \"Name\": \"template1\",   \"LogType\": \"malware\",   \"Condition\": \"src_ip匹配字符:10.0.0.1\",   \"TimeRange\": \"2020-06-1300:00:00至2020-07-1323:59:59\",   \"Query\": {     \"index\": [\"malware\"],     \"body\": {       \"query\": {         \"bool\": {           \"filter\": {             \"bool\": {               \"filter\": {                 \"range\": {                   \"timestamp\": {                     \"gte\": 1591977600000,                     \"lte\": 1594655999999                   }                 }               },               \"must\": [                 {                   \"term\": {                     \"src_ip\": \"10.0.0.1\"                   }                 }               ],               \"must_not\": [],               \"should\": []             }           }         }       },       \"aggs\": {         \"count_stats\": {           \"date_histogram\": {             \"field\": \"timestamp\",             \"interval\": \"12h\",             \"time_zone\": \"Asia/Shanghai\",             \"min_doc_count\": 1           }         }       },       \"highlight\": {         \"fields\": {           \"*\": {}         }       }     },     \"sort\": [       {         \"timestamp\": \"desc\"       }     ]   },   \"Flag\": \"simple\",   \"DisplayData\": [     {       \"id\": 449375484687,       \"patternsField\": \"src_ip\",       \"selectedtype\": \"is\",       \"selectedOptionsMap\": {         \"is\": \"匹配字符\",         \"like\": \"模糊匹配字符\",         \"not\": \"不包含字符\",         \"is_one_of\": \"匹配以下任意字符\",         \"not_one_of\": \"不包含以下任意字符\"       },       \"selectedTypeList\": [\"is\", \"like\", \"not\", \"is_one_of\", \"not_one_of\"],       \"third_cat\": \"input\",       \"value\": \"10.0.0.1\"     }   ] }",
           "member": "string",
           "name": "Message",
           "output_required": false,
@@ -18610,7 +18610,7 @@
         {
           "disabled": false,
           "document": "主机详情",
-          "example": "{\"Quuid\":\"24ab84ea-99d9-4ec0-b8fc-f68553191066\",\"Uuid\":\"24ab84ea-99d9-4ec0-b8fc-f68553191066\",\"MachineIp\":\"172.16.0.13\",\"MachineName\":\"activity-cvm-2023-10-08\",\"ProjectId\":0,\"OsInfo\":\"CentOS 7.9 64位\",\"Cpu\":\"Intel(R) Xeon(R) Platinum 8361HC CPU @ 2.60GHz\",\"MemSize\":8,\"MemLoad\":\"23.87\",\"DiskSize\":148,\"DiskLoad\":\"38.67\",\"PartitionCount\":1,\"MachineWanIp\":\"139.199.156.164\",\"CpuSize\":4,\"CpuLoad\":\"低\",\"CpuLoadVul\":\"\",\"ProtectLevel\":2,\"RiskStatus\":\"未知\",\"ProtectDays\":393,\"BuyTime\":\"2024-01-23 22:29:15\",\"EndTime\":\"2025-02-23 22:27:32\",\"CoreVersion\":\"3.10.0-1160.99.1.el7.x86_64\",\"OsType\":\"linux\",\"AgentVersion\":\"5.2.1.72\",\"InstallTime\":\"2023-10-08 11:25:11\",\"BootTime\":\"2024-01-23 09:23:04\",\"LastLiveTime\":\"2024-09-19 21:23:13\",\"Producer\":\"Tencent Cloud\",\"SerialNumber\":\"24ab84ea-99d9-4ec0-b8fc-f68553191066\",\"DeviceVersion\":\"CVM\",\"Status\":0,\"NetCards\":[{\"Name\":\"eth0\",\"Mac\":\"52:54:00:b2:54:c0\",\"Ip\":\"172.16.0.13\",\"Ipv6\":\"\",\"GateWay\":\"172.16.0.1\",\"DnsServer\":\"183.60.82.98,183.60.83.19\"}],\"Disks\":[],\"OfflineTime\":\"\",\"InstanceId\":\"ins-dusahs86\",\"UpdateTime\":\"2024-11-03 04:07:17\",\"FirstTime\":\"2024-01-25 13:12:10\",\"MachineExtraInfo\":{\"WanIP\":\"139.199.156.164\",\"PrivateIP\":\"172.16.0.13\",\"NetworkType\":1,\"NetworkName\":\"vpc-8fs960h1\",\"InstanceID\":\"ins-dusahs86\",\"HostName\":\"activity-cvm-2023-10-08\"}",
+          "example": "{\"Quuid\":\"24ab84ea-99d9-4ec0-b8fc-f68553191066\",\"Uuid\":\"24ab84ea-99d9-4ec0-b8fc-f68553191066\",\"MachineIp\":\"172.16.0.13\",\"MachineName\":\"activity-cvm-2023-10-08\",\"ProjectId\":0,\"OsInfo\":\"CentOS 7.9 64位\",\"Cpu\":\"Intel(R) Xeon(R) Platinum 8361HC CPU @ 2.60GHz\",\"MemSize\":8,\"MemLoad\":\"23.87\",\"DiskSize\":148,\"DiskLoad\":\"38.67\",\"PartitionCount\":1,\"MachineWanIp\":\"139.199.156.164\",\"CpuSize\":4,\"CpuLoad\":\"低\",\"CpuLoadVul\":\"\",\"ProtectLevel\":2,\"RiskStatus\":\"未知\",\"ProtectDays\":393,\"BuyTime\":\"2024-01-23 22:29:15\",\"EndTime\":\"2025-02-23 22:27:32\",\"CoreVersion\":\"3.10.0-1160.99.1.el7.x86_64\",\"OsType\":\"linux\",\"AgentVersion\":\"5.2.1.72\",\"InstallTime\":\"2023-10-08 11:25:11\",\"BootTime\":\"2024-01-23 09:23:04\",\"LastLiveTime\":\"2024-09-19 21:23:13\",\"Producer\":\"Tencent Cloud\",\"SerialNumber\":\"24ab84ea-99d9-4ec0-b8fc-f68553191066\",\"DeviceVersion\":\"CVM\",\"Status\":0,\"NetCards\":[{\"Name\":\"eth0\",\"Mac\":\"52:54:00:b2:54:c0\",\"Ip\":\"172.16.0.13\",\"Ipv6\":\"\",\"GateWay\":\"172.16.0.1\",\"DnsServer\":\"183.60.82.98,183.60.83.19\"}],\"Disks\":[],\"OfflineTime\":\"\",\"InstanceId\":\"ins-dusahs86\",\"UpdateTime\":\"2024-11-03 04:07:17\",\"FirstTime\":\"2024-01-25 13:12:10\",\"MachineExtraInfo\":{\"WanIP\":\"139.199.156.164\",\"PrivateIP\":\"172.16.0.13\",\"NetworkType\":1,\"NetworkName\":\"vpc-8fs960h1\",\"InstanceID\":\"ins-dusahs86\",\"HostName\":\"activity-cvm-2023-10-08\"}}",
           "member": "AssetMachineDetail",
           "name": "MachineDetail",
           "output_required": true,
@@ -22255,7 +22255,7 @@
         {
           "disabled": false,
           "document": "无",
-          "example": "[ {\n                \"ItemId\": 2162,\n                \"ItemName\": \"确保配置/etc/shadow的权限\",\n                \"ItemDesc\": \"/etc/shadow文件用于存储有关用户帐户的信息，这些信息对于这些帐户的安全性至关重要，例如哈希密码和其他安全信息。\",\n                \"FixMethod\": \"运行以下命令以设置/etc/shadow的权限：\\n# chown root:root /etc/shadow# chmod 000 /etc/shadow\\n\",\n                \"RuleId\": 13,\n                \"RuleName\": \"国际标准-CentOS 7安全基线检查Level1\",\n                \"HostCount\": 1,\n                \"FirstTime\": \"2022-07-18 13:33:12\",\n                \"LastTime\": \"2022-07-21 21:25:01\",\n                \"DetectStatus\": 3,\n                \"Level\": 2,\n                \"DetectResult\": \"success\",\n                \"PassedHostCount\": 1,\n                \"NotPassedHostCount\": 0\n            }]",
+          "example": "[ {                \"ItemId\": 2162,                \"ItemName\": \"确保配置/etc/shadow的权限\",                \"ItemDesc\": \"/etc/shadow文件用于存储有关用户账户的信息，这些信息对于这些账户的安全性至关重要，例如哈希密码和其他安全信息。\",                \"FixMethod\": \"运行以下命令以设置/etc/shadow的权限：\\n# chown root:root /etc/shadow# chmod 000 /etc/shadow\\n\",                \"RuleId\": 13,                \"RuleName\": \"国际标准-CentOS 7安全基线检查Level1\",                \"HostCount\": 1,                \"FirstTime\": \"2022-07-18 13:33:12\",                \"LastTime\": \"2022-07-21 21:25:01\",                \"DetectStatus\": 3,                \"Level\": 2,                \"DetectResult\": \"success\",                \"PassedHostCount\": 1,                \"NotPassedHostCount\": 0            }]",
           "member": "BaselineItemDetect",
           "name": "List",
           "output_required": true,
@@ -22369,7 +22369,7 @@
         {
           "disabled": false,
           "document": "<li>ItemId - int64 - 是否必填：否 - 项Id</li>\n<li>Level - int - 是否必填：否 - 风险等级</li>\n<li>ItemName - string - 是否必填：否 - 检测项名字</li>\n<li>RuleId - int - 是否必填：否 - 规则Id</li>",
-          "example": "[{\"Name\": \"ItemName\", \"Values\": [\"\\u786e\\u4fdd\\u9ed8\\u8ba4\\u7528\\u6237shell\\u8d85\\u65f6\\u4e3a900****\"]}]",
+          "example": "[{\"Name\":\"RuleId\",\"Values\":[50,51]}]",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -23872,7 +23872,7 @@
         {
           "disabled": false,
           "document": "过滤条件。\n<li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>\n<li>Uuid - String - 是否必填：否 - 主机安全唯一Uuid</li>\n<li>Quuid - String - 是否必填：否 - 云服务器uuid</li>\n<li>Status - String - 是否必填：否 - 状态筛选：失败：FAILED 成功：SUCCESS</li>\n<li>UserName - String - 是否必填：否 - UserName筛选</li>\n<li>SrcIp - String - 是否必填：否 - 来源ip筛选</li>\n<li>CreateBeginTime - String - 是否必填：否 - 首次攻击时间筛选，开始时间</li>\n<li>CreateEndTime - String - 是否必填：否 - 首次攻击时间筛选，结束时间</li>\n<li>ModifyBeginTime - String - 是否必填：否 - 最近攻击时间筛选，开始时间</li>\n<li>ModifyEndTime - String - 是否必填：否 - 最近攻击时间筛选，结束时间</li>\n<li>Banned - String - 是否必填：否 - 阻断状态筛选，多个用\",\"分割：0-未阻断（全局ZK开关关闭），82-未阻断(非专业版)，83-未阻断(已加白名单)，1-阻断成功(已完成)，2-未阻断-程序异常，3-未阻断-内网攻击暂不支持阻断，4-未阻断-安平暂不支持阻断，10-阻断成功(生效中)</li>\n<li>DataFrom - Int - 命中规则：0-登录规则，1-情报规则</li>\n<li>EventType - String - 是否必填：否 - 破解状态筛选：200-破解失败(密码错误),300-破解成功,400-破解失败(账号不存在)</li>",
-          "example": "[{\"[{\"MachineName\":\"Name\",\"Values\":[\"dev\"]}]\":\"Name\",\"Values\":[\"dev\"]}]",
+          "example": "[{\"Name\":\"MachineName\",\"Values\":[\"dev\"]}]",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -26655,7 +26655,7 @@
         },
         {
           "disabled": false,
-          "document": "是否自动续费开关,true 开启,false 关闭",
+          "document": "自动加购是否自动续费开关,true 开启,false 关闭",
           "example": "false",
           "member": "bool",
           "name": "RepurchaseRenewSwitch",
@@ -26678,7 +26678,7 @@
         {
           "disabled": false,
           "document": "多个条件筛选时取交集\n<li> LicenseStatus 授权状态信息,0 未使用,1 部分使用, 2 已用完, 3 不可用  4 可使用</li>\n<li> BuyTime 购买时间</li>\n<li> LicenseType  授权类型, 0 专业版-按量计费, 1专业版-包年包月 , 2 旗舰版-包年包月</li>\n<li>DeadlineStatus 到期状态 NotExpired 未过期, Expire 已过期(包含已销毁) NearExpiry 即将到期</li>\n<li>ResourceId 资源ID</li>\n<li>Keywords IP筛选</li>\n<li>PayMode 付费模式 0 按量计费 , 1 包年包月</li>\n<li>OrderStatus 订单状态 1 正常 2 隔离 3 销毁</li>\n<li>DealNames 子订单号,最大长度10个,超出会失败</li>",
-          "example": "[]",
+          "example": "[{\"Name\":\"Keywords\",\"Values\":[\"dev\"]}]",
           "member": "Filters",
           "name": "Filters",
           "required": false,
@@ -26705,11 +26705,29 @@
         {
           "disabled": false,
           "document": "标签筛选,平台标签能力,这里传入 标签键,标签值作为一个对象",
-          "example": "[]",
+          "example": "[{\"TagKey\":\"cwp\", \"TagValue\":\"dev\"}]",
           "member": "Tags",
           "name": "Tags",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "ASC 正序,  DESC 倒序",
+          "example": "ASC",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "LicenseCnt 授权数量",
+          "example": "LicenseCnt",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -26720,7 +26738,7 @@
         {
           "disabled": false,
           "document": "总条数",
-          "example": "1",
+          "example": "12",
           "member": "uint64",
           "name": "TotalCount",
           "output_required": true,
@@ -26730,7 +26748,7 @@
         {
           "disabled": false,
           "document": "授权数列表信息",
-          "example": "[]",
+          "example": "[             {                 \"LicenseId\":1,                 \"LicenseType\":0,                 \"LicenseStatus\":0,                 \"LicenseCnt\":0,                 \"UsedLicenseCnt\":0,                 \"OrderStatus\":1,                 \"BuyTime\":\"2018-02-28 00:00:00\",                 \"Deadline\":\"2018-02-28 00:00:00\",                 \"ResourceId\":\"1c007adc2f0bb9f7c052860e2d3703fa\",                 \"AutoRenewFlag\":0,                 \"ProjectId\":1,                 \"TaskId\":1,                 \"SourceType\":0,                 \"Alias\":\"资源别名\",                 \"Tags\":[                     {                         \"TagKey\":\"标签键\",                         \"TagValue\":\"标签值\"                     }                 ]             }         ]",
           "member": "LicenseDetail",
           "name": "List",
           "output_required": true,
@@ -26851,7 +26869,7 @@
         {
           "disabled": false,
           "document": "实例列表",
-          "example": "[\n            {\n                \"InstanceID\": \"ckafka-ce80kte5\",\n                \"InstanceName\": \"云镜测试环境\",\n                \"KafkaVersion\": \"0.10.2.1\",\n                \"DiskSize\": 300,\n                \"VpcId\": \"vpc-jdi****\",\n                \"SubnetId\": \"subnet-1df***\",\n                \"Healthy\": 1,\n                \"Zone\": \"广州三区\",\n                \"Az\": \"广州\",\n                \"Bandwidth\": 320,\n                \"TopicList\": [\n                    {\n                        \"TopicID\": \"topic-epj9w5yw\",\n                        \"TopicName\": \"bruteforce_attack\"\n                    }\n                ],\n                \"RouteList\": [\n                    {\n                        \"RouteID\": 5427,\n                        \"Domain\": \"www.demo.com\",\n                        \"DomainPort\": 0,\n                        \"Vip\": \"172.16.100.6:9092\",\n                        \"VipType\": 3,\n                        \"AccessType\": 0\n                    }\n                ]\n            }\n        ]",
+          "example": "[            {                \"InstanceID\": \"ckafka-ce80kte5\",                \"InstanceName\": \"云环境\",                \"KafkaVersion\": \"0.10.2.1\",                \"DiskSize\": 300,                \"VpcId\": \"vpc-jdi****\",                \"SubnetId\": \"subnet-1df***\",                \"Healthy\": 1,                \"Zone\": \"广州三区\",                \"Az\": \"广州\",                \"Bandwidth\": 320,                \"TopicList\": [                    {                        \"TopicID\": \"topic-epj9w5yw\",                        \"TopicName\": \"bruteforce_attack\"                    }                ],                \"RouteList\": [                    {                        \"RouteID\": 5427,                        \"Domain\": \"www.demo.com\",                        \"DomainPort\": 0,                        \"Vip\": \"172.16.100.6:9092\",                        \"VipType\": 3,                        \"AccessType\": 0                    }                ]            }        ]",
           "member": "CKafkaInstanceInfo",
           "name": "InstanceList",
           "output_required": true,
@@ -27457,7 +27475,7 @@
         {
           "disabled": false,
           "document": "过滤条件 <li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>",
-          "example": "[]",
+          "example": "[     {         \"Name\": \"IpOrAlias\",         \"Values\": [             \"1.1.2.3\"         ],         \"ExactMatch\": true     } ]",
           "member": "AssetFilters",
           "name": "Filters",
           "required": false,
@@ -27482,7 +27500,7 @@
         {
           "disabled": false,
           "document": "服务器列表",
-          "example": "[]",
+          "example": "[             {                 \"MachineName\": \"机器名称\",                 \"Quuid\": \"05f0bcab-726c-4ea4-8109-bcd03d5598f7\",                 \"MachineWanIp\": \"1.1.1.1\",                 \"Uuid\": \"05f0bcab-726c-4ea4-8109-bcd03d5598f7\",                 \"MachineIp\": \"1.1.1.1\",                 \"Tags\": [                     {                         \"Name\": \"cwp\",                         \"TagId\": 1,                         \"Rid\": 1                     }                 ]             }         ]",
           "member": "HostDesc",
           "name": "Hosts",
           "output_required": true,
@@ -29061,7 +29079,7 @@
         {
           "disabled": false,
           "document": "恶意文件详情信息",
-          "example": "{\"Id\": 1023290, \"VirusName\": \"Win32.Exploit.Ava.****\", \"FileSize\": 21816, \"MD5\": \"db5a13bbd026279d0b96b72de0ed****\", \"FilePath\": \"/proc/6109/root/tmp/ex****\", \"FileCreateTime\": \"2023-11-03 19:5****\", \"FileModifierTime\": \"2020-11-11 10:1****\", \"HostIp\": \"10.0.****\", \"CreateTime\": \"2023-11-03 19:5****\", \"LatestScanTime\": \"2023-11-03 19:5****\", \"Uuid\": \"311a4594-3b2d-47d7-94dd-8549e7d5****\", \"PsTree\": \"[{\\\"pid\\\":6109,\\\"exe\\\":\\\"/bin/busybox\\\",\\\"cmdline\\\":\\\"rm -rf /tmp/exp.so\\\",\\\"account\\\":\\\"polkitd:lighthouse\\\",\\\"start_time\\\":1699012235,\\\"exe_perm\\\":\\\"-rwxr-xr-x\\\",\\\"exe_mtime\\\":1576692277,\\\"sessionid\\\":306****\", \"Status\": 8, \"FileName\": \"exp.so\", \"HarmDescribe\": \"\\u53d1\\u73b0\\u4e3b\\u673a\\u4e0a\\u5b58\\u5728\\u6076\\u610f\\u6728\\u9a6c\\uff0c\\u60a8\\u7684\\u4e3b\\u673a\\u53ef\\u80fd\\u5df2\\u7ecf\\u5931\\u9677\\u3002\\\\n\\u6076\\u610f\\u6728\\u9a6c\\u901a\\u5e38\\u4f1a\\u6267\\u884c\\u6316\\u77ff\\u3001\\u6587\\u4ef6\\u5220\\u9664\\u3001\\u4fe1\\u606f\\u7a83\\u53d6\\u548c\\u7f51\\u7edc\\u653b\\u51fb\\u7b49\\u6076****\", \"SuggestScheme\": \"1\\u3001\\u68c0\\u67e5\\u6076\\u610f\\u8fdb\\u7a0b\\u53ca\\u975e\\u6cd5\\u7aef\\u53e3\\uff0c\\u5220\\u9664\\u53ef\\u7591\\u7684\\u542f\\u52a8\\u9879\\u548c\\u5b9a\\u65f6\\u4efb\\u52a1\\uff1b\\\\n2\\u3001\\u9694\\u79bb\\u6216\\u8005\\u5220\\u9664\\u76f8\\u5173\\u7684\\u6728\\u9a6c\\u6587\\u4ef6\\uff1b\\\\n3\\u3001\\u5bf9\\u7cfb\\u7edf\\u8fdb\\u884c\\u98ce\\u9669\\u6392\\u67e5\\uff0c\\u5e76\\u8fdb\\u884c\\u5b89\\u5168\\u52a0\\u56fa\\uff0c\\u8be6\\u60c5\\u53ef\\u53c2\\u8003\\u5982\\u4e0b\\u94fe\\u63a5\\uff1a \\\\n\\u3010Linux\\u3011https://cloud.tencent.com/document/product/296/9604 \\\\n\\u3010Windows\\u3011https://cloud.tencent.com/document/product/296/****\", \"ServersName\": \"CentOS-****\", \"ProcessName\": \"\", \"ProcessID\": \"\", \"Tags\": [], \"Breadth\": \"\", \"Heat\": \"\", \"Reference\": \"\", \"References\": [], \"MachineWanIp\": \"62.234.4****\", \"MachineStatus\": \"ONLINE\", \"Level\": 4, \"CheckPlatform\": \"1\", \"StrFileAccessTime\": \"2023-11-03 19:5****\", \"ModifyTime\": \"2023-11-03 19:5****\", \"MachineExtraInfo\": {\"WanIP\": \"10.0.1****\", \"PrivateIP\": \"10.0.1****\", \"NetworkType\": 0, \"NetworkName\": \"vpc-3gov****\", \"InstanceID\": \"lhins-n4sz****\", \"HostName\": \"demo_****\"}}",
+          "example": "{             \"VirusName\": \"name1\",             \"FileSize\": 10,             \"MD5\": \"87f70257f93a96273664ea5ef842c2c3\",             \"FilePath\": \"/data/path1\",             \"FileCreateTime\": \"2020-10-01 01:02:03\",             \"FileModifierTime\": \"2020-10-01 02:02:03\",             \"HarmDescribe\": \"desc1\",             \"SuggestScheme\": \"suggest1\",             \"ServersName\": \"srv1\",             \"HostIp\": \"172.16.**.**\",             \"ProcessName\": \"prcess1\",             \"ProcessID\": \"12345\",             \"Tags\": [                 \"tag1\"             ],             \"Breadth\": \"10\",             \"Heat\": \"80\",             \"Id\": 1,             \"FileName\": \"/data/file1\",             \"CreateTime\": \"2020-10-01 00:02:03\",             \"LatestScanTime\": \"2020-10-02 00:02:03\",             \"Reference\": \"ref1\",             \"MachineWanIp\": \"14.13.**.**\",             \"PsTree\": \"[{\\\"pid\\\":6109,\\\"exe\\\":\\\"/bin/busybox\\\",\\\"cmdline\\\":\\\"rm -rf /tmp/exp.so\\\",\\\"account\\\":\\\"polkitd:lighthouse\\\",\\\"start_time\\\":1699012235,\\\"exe_perm\\\":\\\"-rwxr-xr-x\\\",\\\"exe_mtime\\\":1576692277,\\\"sessionid\\\":306****\",             \"MachineStatus\": \"ONLINE\",             \"Status\": 1,             \"Level\": 1,             \"CheckPlatform\": \"platform1\",             \"Uuid\": \"6cf3c132-aaa-bbbb-b08d-98be9421372a\",             \"ModifyTime\": \"2020-10-01 00:02:03\",             \"StrFileAccessTime\": \"2020-10-01 00:02:03\",             \"MachineExtraInfo\": {                 \"WanIP\": \"14.13.12.1\",                 \"PrivateIP\": \"172.16.20.1\",                 \"NetworkType\": 0,                 \"NetworkName\": \"vpc\",                 \"InstanceID\": \"ins-iv1k**\",                 \"HostName\": \"host1\"             },             \"References\": [                 \"ref1\"             ]         }",
           "member": "MalwareInfo",
           "name": "MalwareInfo",
           "output_required": true,
@@ -29922,7 +29940,7 @@
         {
           "disabled": false,
           "document": "本地提权详情",
-          "example": "{\"Uuid\": \"f7e84caf-c40a-463c-9491-95dc7e37****\", \"UserName\": \"root\", \"UserGroup\": \"1002\", \"ProcessName\": \"a.out\", \"CmdLine\": \"/tmp/a****\", \"ParentProcName\": \"bash\", \"ParentProcUser\": \"1002\", \"CreateTime\": \"2024-05-14 11:0****\", \"Status\": 3, \"FullPath\": \"/tmp/a****\", \"ParentProcGroup\": \"1002\", \"ParentProcPath\": \"/usr/bin/****\", \"PsTree\": \"[{\\\"pid\\\":32528,\\\"exe\\\":\\\"/tmp/a.out\\\",\\\"account\\\":\\\"root:1002\\\",\\\"cmdline\\\":\\\"/tmp/a.out\\\",\\\"ssh_service\\\":\\\"172.16.49.104:22\\\",\\\"ssh_source\\\":\\\"113.108.77.53:12753\\\",\\\"start_time\\\":1715655696},{\\\"pid\\\":32516,\\\"exe\\\":\\\"/usr/bin/bash\\\",\\\"account\\\":\\\"1002:1002\\\",\\\"cmdline\\\":\\\"bash -c /tmp/a.out  1\\\\\\\\u003e\\\\\\\\u00262\\\",\\\"ssh_service\\\":\\\"172.16.49.104:22\\\",\\\"ssh_source\\\":\\\"113.108.77.53:12753\\\",\\\"start_time\\\":1715655696},{\\\"pid\\\":32510,\\\"exe\\\":\\\"/usr/sbin/sshd\\\",\\\"account\\\":\\\"1002:1002\\\",\\\"cmdline\\\":\\\"sshd: privilege_test@notty\\\",\\\"start_time\\\":17156556****\", \"NewCaps\": \"SYS_RAWIO|DAC_OVERRIDE|DAC_READ_SEARCH|FOWNER|FSETID|KILL|SETGID|SETUID|SETPCAP|LINUX_IMMUTABLE|NET_BIND_SERVICE|NET_BROADCAST|NET_ADMIN|NET_RAW|IPC_LOCK|IPC_OWNER|SYS_MODULE|CHOWN|BLOCK_SUSPEND|WAKE_ALARM|SYSLOG|MAC_ADMIN|MAC_OVERRIDE|SETFCAP|AUDIT_CONTROL|AUDIT_WRITE|LEASE|MKNOD|SYS_TTY_CONFIG|SYS_TIME|SYS_RESOURCE|SYS_NICE|SYS_BOOT|SYS_ADMIN|SYS_PACCT|SYS_PTRACE|SYS_CH****\", \"ModifyTime\": \"2024-05-15 15:1****\", \"MachineName\": \"\\u4e91\\u955c\\u6f0f\\u6d1e\\u6d4b\\u8bd5\\u673a-****\", \"ProcFilePrivilege\": \"-rwsr-****\", \"HostIp\": \"172.16.49****\", \"Quuid\": \"f7e84caf-c40a-463c-9491-95dc7e37****\", \"Id\": 4156658, \"MachineWanIp\": \"175.178.249****\", \"SuggestScheme\": \"1\\u3001\\u68c0\\u67e5\\u7cfb\\u7edf\\u662f\\u5426\\u88ab\\u6dfb\\u52a0\\u65b0\\u7528\\u6237\\uff0c\\u6216\\u8005\\u5b58\\u5728\\u5f02\\u5e38\\u6743\\u9650\\u7528\\u6237\\uff1b\\\\n2\\u3001\\u68c0\\u67e5\\u6076\\u610f\\u8fdb\\u7a0b\\u53ca\\u975e\\u6cd5\\u7aef\\u53e3\\uff0c\\u5220\\u9664\\u53ef\\u7591\\u7684\\u542f\\u52a8\\u9879\\u548c\\u5b9a\\u65f6\\u4efb\\u52a1\\uff1b\\\\n3.\\u9694\\u79bb\\u6216\\u8005\\u5220\\u9664\\u76f8\\u5173\\u7684\\u6728\\u9a6c\\u6587\\u4ef6\\uff1b\\\\n4.\\u5bf9\\u7cfb\\u7edf\\u8fdb\\u884c\\u98ce\\u9669\\u6392\\u67e5\\uff0c\\u5e76\\u8fdb\\u884c\\u5b89\\u5168\\u52a0\\u56fa\\uff0c\\u8be6\\u60c5\\u53ef\\u53c2\\u8003\\u5982\\u4e0b\\u94fe\\u63a5\\uff1a\\u00a0\\\\n\\u3010Linux\\u3011https://cloud.tencent.com/document/product/296/9604\\u00a0\\\\n\\u3010Windows\\u3011https://cloud.tencent.com/document/product/296/****\", \"HarmDescribe\": \"\\u9ed1\\u5ba2\\u5728\\u5165\\u4fb5\\u670d\\u52a1\\u5668\\u540e\\uff0c\\u4e3a\\u4e86\\u8fdb\\u884c\\u4e0b\\u4e00\\u6b65\\u7684\\u6076\\u610f\\u64cd\\u4f5c\\uff0c\\u4f1a\\u901a\\u8fc7\\u7279\\u5b9a\\u6f0f\\u6d1e\\u63d0\\u5347\\u7528\\u6237\\u6743\\u9650\\uff0c\\u6216\\u8005\\u76f4\\u63a5\\u83b7\\u53d6root\\u7528****\", \"Tags\": [], \"References\": [], \"MachineStatus\": \"ONLINE\"}",
+          "example": "{             \"Uuid\": \"05f0bcab-726c-4ea4-8109-bcd03d5598f7\",             \"UserName\": \"root\",             \"UserGroup\": \"1000\",             \"ProcessName\": \"privilege\",             \"CmdLine\": \"./privilege\",             \"ParentProcName\": \"bash\",             \"ParentProcUser\": \"1000\",             \"CreateTime\": \"2024-09-06 14:17:45\",             \"Status\": 0,             \"FullPath\": \"/tmp/privilege\",             \"ParentProcGroup\": \"1000\",             \"ParentProcPath\": \"/usr/bin/bash\",             \"PsTree\": \"[{\\\"pid\\\":32528,\\\"exe\\\":\\\"/tmp/a.out\\\",\\\"account\\\":\\\"root:1002\\\",\\\"cmdline\\\":\\\"/tmp/a.out\\\",\\\"ssh_service\\\":\\\"172.16.49.104:22\\\",\\\"ssh_source\\\":\\\"113.108.77.53:12753\\\",\\\"start_time\\\":1715655696}]\",             \"NewCaps\": \"SYS_RAWIO|DAC_OVERRIDE|DAC_READ_SEARCH|FOWNER|FSETID|KILL|SETGID|SETUID|SETPCAP|LINUX_IMMUTABLE|NET_BIND_SERVICE|NET_BROADCAST|NET_ADMIN|NET_RAW|IPC_LOCK|IPC_OWNER|SYS_MODULE|CHOWN|BLOCK_SUSPEND|WAKE_ALARM|SYSLOG|MAC_ADMIN|MAC_OVERRIDE|SETFCAP|AUDIT_CONTROL|AUDIT_WRITE|LEASE|MKNOD|SYS_TTY_CONFIG|SYS_TIME|SYS_RESOURCE|SYS_NICE|SYS_BOOT|SYS_ADMIN|SYS_PACCT|SYS_PTRACE|SYS_CHROOT\",             \"ModifyTime\": \"2024-09-06 14:17:45\",             \"MachineName\": \"机器名称\",             \"ProcFilePrivilege\": \"-rwsr-xr-x\",             \"HostIp\": \"1.1.1.1\",             \"Quuid\": \"05f0bcab-726c-4ea4-8109-bcd03d5598f7\",             \"Id\": 10001,             \"MachineWanIp\": \"1.1.1.1\",             \"SuggestScheme\": \"1、检查系统是否被添加新用户，或者存在异常权限用户；\\n2、检查恶意进程及非法端口，删除可疑的启动项和定时任务；\\n3.隔离或者删除相关的木马文件；\\n4.对系统进行风险排查，并进行安全加固，详情可参考如下链接：xa0\\n【Linux】https://cloud.tencent.com/document/product/296/9604xa0\\n【Windows】https://cloud.tencent.com/document/product/296/9605\",             \"HarmDescribe\": \"黑客在入侵服务器后，为了进行下一步的恶意操作，会通过特定漏洞提升用户权限，或者直接获取root用户权限。\",             \"Tags\": [],             \"References\": [],             \"MachineStatus\": \"ONLINE\"         }",
           "member": "PrivilegeEventInfo",
           "name": "PrivilegeEventInfo",
           "output_required": true,
@@ -33015,7 +33033,7 @@
         {
           "disabled": false,
           "document": "统计详情图标数据 Name：展示主机ip 和地域， value：事件数量",
-          "example": "[]",
+          "example": "[             {                 \"Name\": \"1.1.1.1广州\",                 \"Value\": 21             }         ]",
           "member": "ScreenNameValue",
           "name": "Chart",
           "output_required": true,
@@ -36303,7 +36321,7 @@
         {
           "disabled": false,
           "document": "漏洞top列表",
-          "example": "[{\"VulName\":\"Apache HTTP/2 协议拒绝服务漏洞(CVE-2023-44****\",\"VulLevel\":3,\"VulCount\":10,\"VulId\":1024,\"VulCategory\":0}]",
+          "example": "[{\"VulName\":\"Apache HTTP/2 协议拒绝服务漏洞CVE-2023-44\",\"VulLevel\":3,\"VulCount\":10,\"VulId\":1024,\"VulCategory\":0}]",
           "member": "VulTopInfo",
           "name": "VulTopList",
           "output_required": true,
@@ -37651,7 +37669,7 @@
         },
         {
           "disabled": false,
-          "document": "云镜Uuid",
+          "document": "主机Uuid",
           "example": "e5b4724c-49af-46ab-bd84-cdbae897e7e0",
           "member": "string",
           "name": "Uuid",
@@ -40073,7 +40091,7 @@
         {
           "disabled": false,
           "document": "日志导出查询语句",
-          "example": "*",
+          "example": "dev",
           "member": "string",
           "name": "Query",
           "output_required": true,
@@ -40355,7 +40373,7 @@
         {
           "disabled": false,
           "document": "过滤参数",
-          "example": "{\"Filters\": [\"Name\": \"Quuid\",\"Values\": [\"d4cc302e-09e5-436f-b99b-5ab9c9070323\"]}",
+          "example": "[{\"Name\": \"Quuid\",\"Values\": [\"d4cc302e-09e5-436f-b99b-5ab9c9070323\"]}]",
           "member": "Filters",
           "name": "Filters",
           "required": false,
@@ -40485,7 +40503,7 @@
         {
           "disabled": false,
           "document": "<li>Status - int - 是否必填：否 - 状态筛选1:正常登录；2：异地登录</li>",
-          "example": "{\"Filters\": [\"Name\": \"Status\",\"Values\": [\"1\"]}",
+          "example": " [{\"Name\": \"Status\",\"Values\": [\"1\"]}]",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -40927,7 +40945,7 @@
         {
           "disabled": false,
           "document": "过滤参数",
-          "example": "{\"Filters\": [\"Name\": \"Quuid\",\"Values\": [\"d4cc302e-09e5-436f-b99b-5ab9c9070323\"]}",
+          "example": "[{\"Name\": \"Quuid\",\"Values\": [\"d4cc302e-09e5-436f-b99b-5ab9c9070323\"]}]",
           "member": "Filters",
           "name": "Filters",
           "required": false,
@@ -42753,7 +42771,7 @@
         },
         {
           "disabled": false,
-          "document": "帐号名。",
+          "document": "账号名。",
           "example": "user1",
           "member": "string",
           "name": "Username",
@@ -42763,7 +42781,7 @@
         },
         {
           "disabled": false,
-          "document": "帐号变更类型。\n<li>CREATE：表示新增帐号</li>\n<li>MODIFY：表示修改帐号</li>\n<li>DELETE：表示删除帐号</li>",
+          "document": "账号变更类型。\n<li>CREATE：表示新增账号</li>\n<li>MODIFY：表示修改账号</li>\n<li>DELETE：表示删除账号</li>",
           "example": "CREATE",
           "member": "string",
           "name": "ModifyType",
@@ -42789,7 +42807,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "云镜客户端ID",
+          "document": "机器uuid",
           "example": "380add75-bb06-4cc4-84c5-cf806d102fba",
           "member": "string",
           "name": "Quuid",
@@ -42799,7 +42817,7 @@
         },
         {
           "disabled": false,
-          "document": "主机ID",
+          "document": "主机安全uuid",
           "example": "380add75-bb06-4cc4-84c5-cf806d102fba",
           "member": "string",
           "name": "Uuid",
@@ -44264,7 +44282,7 @@
         {
           "disabled": false,
           "document": "机器别名",
-          "example": "云镜",
+          "example": "主机安全",
           "member": "string",
           "name": "MachineName",
           "output_required": true,
@@ -44947,7 +44965,7 @@
         },
         {
           "disabled": false,
-          "document": "云镜客户端ID",
+          "document": "主机安全uuid",
           "example": "8c09e1b1-5611-45b3-9c02-737996011b81",
           "member": "string",
           "name": "Uuid",
@@ -45093,7 +45111,7 @@
         },
         {
           "disabled": false,
-          "document": "云镜客户端唯一Uuid，若客户端长时间不在线将返回空字符。",
+          "document": "主机安全Uuid，若客户端长时间不在线将返回空字符。",
           "example": "8c09e1b1-5611-45b3-9c02-737996011b81",
           "member": "string",
           "name": "Uuid",
@@ -45674,7 +45692,7 @@
         {
           "disabled": false,
           "document": "主机名称。",
-          "example": "test",
+          "example": "host1",
           "member": "string",
           "name": "MachineName",
           "output_required": true,
@@ -45693,7 +45711,7 @@
         },
         {
           "disabled": false,
-          "document": "云镜客户端唯一Uuid，若客户端长时间不在线将返回空字符。",
+          "document": "主机安全uuid，若客户端长时间不在线将返回空字符。",
           "example": "acdd5474-6360-4fd4-bfc7-843162cb8116",
           "member": "string",
           "name": "Uuid",
@@ -50612,7 +50630,7 @@
         {
           "disabled": false,
           "document": "规则描述",
-          "example": "描述",
+          "example": "desc of rule",
           "member": "string",
           "name": "Description",
           "output_required": true,
@@ -50958,7 +50976,7 @@
         {
           "disabled": false,
           "document": "进程名",
-          "example": "a",
+          "example": "/etc/sshd",
           "member": "string",
           "name": "ProcessName",
           "output_required": true,
@@ -51133,7 +51151,7 @@
         },
         {
           "disabled": false,
-          "document": "云镜ID",
+          "document": "主机安全uuid",
           "example": "e5b4724c-49af-46ab-bd84-cdbae897e7e0",
           "member": "string",
           "name": "Uuid",
@@ -51143,7 +51161,7 @@
         },
         {
           "disabled": false,
-          "document": "主机ID",
+          "document": "主机uuid",
           "example": "e5b4724c-49af-46ab-bd84-cdbae897e7e0",
           "member": "string",
           "name": "Quuid",
@@ -52838,7 +52856,7 @@
         {
           "disabled": false,
           "document": "策略名称",
-          "example": "test",
+          "example": "policy-1",
           "member": "string",
           "name": "Name",
           "output_required": true,
@@ -54003,8 +54021,8 @@
         },
         {
           "disabled": false,
-          "document": "云镜UUID",
-          "example": "dsdsds",
+          "document": "主机安全uuid",
+          "example": "e8fc6e04-5b3d-405d-ab61-da7cc8be2583",
           "member": "string",
           "name": "Uuid",
           "output_required": true,
@@ -54013,8 +54031,8 @@
         },
         {
           "disabled": false,
-          "document": "主机ID",
-          "example": "dsdsds",
+          "document": "主机uuid",
+          "example": "e8fc6e04-5b3d-405d-ab61-da7cc8be2583",
           "member": "string",
           "name": "Quuid",
           "output_required": true,
@@ -54204,7 +54222,7 @@
         {
           "disabled": false,
           "document": "描述",
-          "example": "描述",
+          "example": "desc of event",
           "member": "string",
           "name": "HarmDescribe",
           "output_required": true,
@@ -54772,7 +54790,7 @@
         {
           "disabled": false,
           "document": "描述",
-          "example": "描述",
+          "example": "desc of this risk",
           "member": "string",
           "name": "Description",
           "output_required": true,
@@ -56272,7 +56290,7 @@
         },
         {
           "disabled": false,
-          "document": "云镜客户端唯一Uuid，若客户端长时间不在线将返回空字符。",
+          "document": "主机安全Uuid，若客户端长时间不在线将返回空字符。",
           "example": "d99a1b46-cc2d-4633-a11f-4a7663d2523e",
           "member": "string",
           "name": "Uuid",
@@ -59731,7 +59749,7 @@
         {
           "disabled": false,
           "document": "漏洞描述",
-          "example": "描述",
+          "example": "desc of this vul",
           "member": "string",
           "name": "Descript",
           "output_required": true,
