@@ -44,7 +44,7 @@ Output:
                 "UsedStorageBudget": 0,
                 "MessageRetentionTime": 86400,
                 "MaxNamespaceNum": 10,
-                "CreateTime": "",
+                "CreateTime": "2024-10-08 11:38:48,068",
                 "MaxDispatchRateInMessages": 0
             }
         ],

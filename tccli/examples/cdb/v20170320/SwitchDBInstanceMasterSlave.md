@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cdb SwitchDBInstanceMasterSlave --cli-unfold-argument  \
-    --InstanceId cdb-xxxxxxxx \
+    --InstanceId cdb-rqd2jndd \
     --DstSlave second
 ```
 

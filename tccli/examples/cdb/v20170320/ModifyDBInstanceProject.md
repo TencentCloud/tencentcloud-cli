@@ -7,7 +7,7 @@ Input:
 ```
 tccli cdb ModifyDBInstanceProject --cli-unfold-argument  \
     --InstanceIds cdb-f35wr6wj \
-    --NewProjectId 12
+    --NewProjectId 11954
 ```
 
 Output: 

@@ -6,16 +6,17 @@ Input:
 
 ```
 tccli emr DeleteAutoScaleStrategy --cli-unfold-argument  \
-    --InstanceId emr-3ap64zl6 \
-    --StrategyType 1 \
-    --StrategyId 42
+    --GroupId 6 \
+    --InstanceId emr-5urm \
+    --StrategyId 413 \
+    --StrategyType 2
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "0bef5627-4e40-4245-ba9c-2a83517b6880"
+        "RequestId": "586a9cb9-adcb-4f74-9e6f-01482ac4cffe"
     }
 }
 ```

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cdb DescribeInstanceUpgradeType --cli-unfold-argument  \
-    --InstanceId cdb-xxxxx \
+    --InstanceId cdb-2wpip1dd \
     --DstCpu 1 \
     --DstMemory 1000 \
     --DstDisk 200 \
@@ -23,7 +23,7 @@ Output:
 {
     "Response": {
         "RequestId": "6EF60BEC-0242-43AF-BB20-270359FB54A7",
-        "InstanceId": "cdb-xxx",
+        "InstanceId": "cdb-2wpip1dd",
         "UpgradeType": "Trsf"
     }
 }

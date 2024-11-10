@@ -18,7 +18,7 @@ Output:
             {
                 "Id": "391825450327883776",
                 "Name": "100000558876",
-                "PlatName": "",
+                "PlatName": "宝安医院账号",
                 "SubAccountUin": "100000558876",
                 "Position": "医生",
                 "Department": "外科",

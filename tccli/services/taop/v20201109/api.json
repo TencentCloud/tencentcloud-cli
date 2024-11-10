@@ -575,7 +575,7 @@
         {
           "disabled": false,
           "document": "Tip数组",
-          "example": "[]",
+          "example": "[\"上传任务失败\"]",
           "member": "string",
           "name": "Tips",
           "output_required": true,
@@ -686,7 +686,7 @@
         {
           "disabled": false,
           "document": "用户信息列表",
-          "example": "[                     {                         \"CreateTime\": \"2021-05-25T19:57:17+08:00\",                         \"Department\": \"\",                         \"Id\": \"370238238289611600\",                         \"Mobile\": \"\",                         \"Name\": \"100019363841\",                         \"PlatName\": \"\",                         \"Position\": \"\",                         \"Role\": 2,                         \"SubAccountUin\": \"100019363841\"                     }]",
+          "example": "[                     {                         \"CreateTime\": \"2021-05-25T19:57:17+08:00\",                         \"Department\": \"\",                         \"Id\": \"370238238289611600\",                         \"Mobile\": \"\",                         \"Name\": \"100019363841\",                         \"PlatName\": \"宝安医院账号\",                         \"Position\": \"\",                         \"Role\": 2,                         \"SubAccountUin\": \"100019363841\"                     }]",
           "member": "User",
           "name": "Data",
           "output_required": true,
@@ -771,7 +771,7 @@
         {
           "disabled": false,
           "document": "标注结果",
-          "example": "无",
+          "example": "[{     \"StudyInstanceUID\": \"CT20140104150342\",     \"SeriesInstanceUID\": \"1.2.826.0.1.3680043.6.2572.9810.20140104150302.564.5988\",     \"LabelInfo\": \"{ \\\"Filled\\\": 0, \\\"GroupFlag\\\": \\\"742203327\\\", \\\"GroupId\\\": 742203327, \\\"GroupName\\\": \\\"序列标签\\\", \\\"Id\\\": \\\"804513977401463467\\\", \\\"ModuleId\\\": \\\"8\\\", \\\"Name\\\": \\\"眼底图像质量\\\", \\\"NameId\\\": \\\"0\\\", \\\"Selected\\\": 0, \\\"Value\\\": [ { \\\"Name\\\": \\\"合格\\\", \\\"Src\\\": 2, \\\"Value\\\": \\\"01\\\" }, { \\\"Name\\\": \\\"不合格\\\", \\\"Src\\\": 2, \\\"Value\\\": \\\"02\\\" } ] }\",     \"TaskId\": \"804513977401463467\",     \"StartTime\": \"2024-10-15 00:00:00\",     \"EndTime\": \"2024-10-16 00:00:00\",     \"Code\": 0,     \"Msg\": \"success\" }]",
           "member": "TaskMark",
           "name": "TaskList",
           "required": false,
@@ -780,7 +780,7 @@
         {
           "disabled": false,
           "document": "开始时间",
-          "example": "无",
+          "example": "2024-10-15 00:00:00",
           "member": "string",
           "name": "StartTime",
           "required": false,
@@ -789,7 +789,7 @@
         {
           "disabled": false,
           "document": "结束时间",
-          "example": "无",
+          "example": "2024-10-16 00:00:00",
           "member": "string",
           "name": "EndTime",
           "required": false,
@@ -798,7 +798,7 @@
         {
           "disabled": false,
           "document": "请求id",
-          "example": "无",
+          "example": "d53962022c10089402051c8afe151503",
           "member": "string",
           "name": "ReqId",
           "required": false,
@@ -1063,7 +1063,7 @@
         {
           "disabled": false,
           "document": "指定用户id数组",
-          "example": "[]",
+          "example": "[\"100019363841\"]",
           "member": "string",
           "name": "UserIds",
           "output_required": true,
@@ -1259,62 +1259,56 @@
         {
           "disabled": false,
           "document": "检查Id",
-          "example": "111",
+          "example": "CT20140104150342",
           "member": "string",
           "name": "StudyInstanceUID",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "序列Id",
-          "example": "123",
+          "example": "1.2.826.0.1.3680043.6.2572.9810.20140104150302.564.5988",
           "member": "string",
           "name": "SeriesInstanceUID",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "标注信息",
-          "example": "无",
+          "example": "{                                 \"Filled\": 0,                                 \"GroupFlag\": \"742203327\",                                 \"GroupId\": 742203327,                                 \"GroupName\": \"序列标签\",                                 \"Id\": \"804513977401463467\",                                 \"ModuleId\": \"8\",                                 \"Name\": \"眼底图像质量\",                                 \"NameId\": \"0\",                                 \"Selected\": 0,                                 \"Value\": [                                     {                                         \"Name\": \"合格\",                                         \"Src\": 2,                                         \"Value\": \"01\"                                     },                                     {                                         \"Name\": \"不合格\",                                         \"Src\": 2,                                         \"Value\": \"02\"                                     }                                 ]                             }",
           "member": "string",
           "name": "LabelInfo",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "任务Id",
-          "example": "123456",
+          "example": "804513977401463467",
           "member": "string",
           "name": "TaskId",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "任务开始时间",
-          "example": "无",
+          "example": "2024-10-15 00:00:00",
           "member": "string",
           "name": "StartTime",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "任务结束时间",
-          "example": "无",
+          "example": "2024-10-15 10:00:00",
           "member": "string",
           "name": "EndTime",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1323,18 +1317,16 @@
           "member": "int64",
           "name": "Code",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "错误提示信息",
-          "example": "无",
+          "example": "成功",
           "member": "string",
           "name": "Msg",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"

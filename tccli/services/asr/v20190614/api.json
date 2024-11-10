@@ -1808,7 +1808,7 @@
         {
           "disabled": false,
           "document": "单句最终识别结果\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "你好，测试",
+          "example": "你好，今天很开心",
           "member": "string",
           "name": "FinalSentence",
           "output_required": true,
@@ -1818,7 +1818,7 @@
         {
           "disabled": false,
           "document": "单句中间识别结果，使用空格拆分为多个词\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "你好 测试",
+          "example": "你好 今天 很 开心",
           "member": "string",
           "name": "SliceSentence",
           "output_required": true,
@@ -1828,7 +1828,7 @@
         {
           "disabled": false,
           "document": "口语转书面语结果，开启改功能才有值\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "你好，今天很开心。",
           "member": "string",
           "name": "WrittenText",
           "output_required": false,
@@ -1898,7 +1898,7 @@
         {
           "disabled": false,
           "document": "情绪能量值，取值为音量分贝值/10。取值范围：[1,10]。值越高情绪越强烈。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0",
+          "example": "1",
           "member": "float",
           "name": "EmotionalEnergy",
           "output_required": true,
@@ -1928,7 +1928,7 @@
         {
           "disabled": false,
           "document": "关键词识别结果列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[       {         \"KeyWordLibID\": \"abcdedfh\",         \"KeyWordLibName\": \"测试词库\",         \"KeyWords\": [\"冰淇淋\",\"月亮\",\"六便士\"]       }     ]",
+          "example": "[       {         \"KeyWordLibID\": \"ec9g31d\",         \"KeyWordLibName\": \"测试词库\",         \"KeyWords\": [\"冰淇淋\",\"月亮\",\"六便士\"]       }     ]",
           "member": "KeyWordResult",
           "name": "KeyWordResults",
           "output_required": false,
@@ -2209,30 +2209,30 @@
         {
           "disabled": false,
           "document": "词文本\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "晴天",
           "member": "string",
           "name": "Word",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "在句子中的开始时间偏移量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "200",
           "member": "int64",
           "name": "OffsetStartMs",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "在句子中的结束时间偏移量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "400",
           "member": "int64",
           "name": "OffsetEndMs",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         }
@@ -2307,7 +2307,7 @@
         {
           "disabled": false,
           "document": "任务标识。注意：TaskId数据类型为uint64。",
-          "example": "123",
+          "example": "1002301",
           "member": "uint64",
           "name": "TaskId",
           "output_required": true,
@@ -2337,7 +2337,7 @@
         {
           "disabled": false,
           "document": "识别结果。",
-          "example": "无",
+          "example": "今天天气真好",
           "member": "string",
           "name": "Result",
           "output_required": true,
@@ -2347,7 +2347,7 @@
         {
           "disabled": false,
           "document": "失败原因说明。",
-          "example": "无",
+          "example": "Failed to download audio file!",
           "member": "string",
           "name": "ErrorMsg",
           "output_required": true,

@@ -1,3 +1,188 @@
+# Release 3.0.1094.1
+
+## 云数据库 MySQL(cdb) 版本：2017-03-20
+
+### 第 116 次发布
+
+发布时间：2024-11-11 01:10:50
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeInstanceAlarmEvents](http://document.tencentcloudapi.woa.com/document/product/236/83245)
+
+	* 新增入参：NodeId
+
+
+修改数据结构：
+
+* [InstEventInfo](http://document.tencentcloudapi.woa.com/document/product/236/15878#InstEventInfo)
+
+	* 新增成员：InstanceId, NodeId
+
+
+
+
+## 日志服务(cls) 版本：2020-10-16
+
+### 第 94 次发布
+
+发布时间：2024-11-11 01:14:18
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ModifyAlarmNotice](http://document.tencentcloudapi.woa.com/document/product/614/56458)
+
+	* 新增入参：Tags, JumpDomain, DeliverStatus, DeliverConfig, AlarmShieldStatus
+
+
+
+
+## 弹性 MapReduce(emr) 版本：2019-01-03
+
+### 第 68 次发布
+
+发布时间：2024-11-11 01:21:34
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ClusterInstancesInfo](http://document.tencentcloudapi.woa.com/document/product/589/33981#ClusterInstancesInfo)
+
+	* 新增成员：CosBucket
+
+* [RenewInstancesInfo](http://document.tencentcloudapi.woa.com/document/product/589/33981#RenewInstancesInfo)
+
+	* 新增成员：RootSize, RootStorageType, MCMultiDisk
+
+
+
+
+## 高性能应用服务(hai) 版本：2023-08-12
+
+### 第 8 次发布
+
+发布时间：2024-11-11 01:24:12
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [InquirePriceRunInstances](http://document.tencentcloudapi.woa.com/document/product/1750/82599)
+
+	* 新增入参：InstanceChargeType, InstanceChargePrepaid
+
+
+新增数据结构：
+
+* [InstanceChargePrepaid](http://document.tencentcloudapi.woa.com/document/product/1750/82570#InstanceChargePrepaid)
+* [ItemPriceDetail](http://document.tencentcloudapi.woa.com/document/product/1750/82570#ItemPriceDetail)
+
+修改数据结构：
+
+* [Price](http://document.tencentcloudapi.woa.com/document/product/1750/82570#Price)
+
+	* 新增成员：PriceDetailSet
+
+
+
+
+## 轻量应用服务器(lighthouse) 版本：2020-03-24
+
+### 第 61 次发布
+
+发布时间：2024-11-11 01:27:07
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Instance](http://document.tencentcloudapi.woa.com/document/product/1207/47576#Instance)
+
+	* 新增成员：ActivityLabels
+
+
+
+
+## 小程序安全(mmps) 版本：2020-07-10
+
+### 第 3 次发布
+
+发布时间：2024-11-11 01:28:15
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [AppInfoItem](http://document.tencentcloudapi.woa.com/document/product/1658/78730#AppInfoItem)
+
+	* <font color="#dd0000">**修改成员**：</font>PrivacyTextName, SoftwareMD5, PrivacyTextMD5
+
+
+
+
+## SSL 证书(ssl) 版本：2019-12-05
+
+### 第 70 次发布
+
+发布时间：2024-11-11 01:32:41
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeCertificateDetail](http://document.tencentcloudapi.woa.com/document/product/400/41673)
+
+	* 新增出参：CertChainInfo
+
+
+新增数据结构：
+
+* [CertBasicInfo](http://document.tencentcloudapi.woa.com/document/product/400/41679#CertBasicInfo)
+
+修改数据结构：
+
+* [HostingConfig](http://document.tencentcloudapi.woa.com/document/product/400/41679#HostingConfig)
+
+	* 新增成员：ReplaceStartTime, ReplaceEndTime
+
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 168 次发布
+
+发布时间：2024-11-11 01:39:10
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ModifyBandwidthPackageBandwidth](http://document.tencentcloudapi.woa.com/document/product/215/85195)
+
+
+
 # Release 3.0.1093.1
 
 ## 商业智能分析 BI(bi) 版本：2022-01-05

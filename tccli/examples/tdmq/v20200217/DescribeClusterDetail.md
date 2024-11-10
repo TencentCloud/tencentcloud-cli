@@ -15,12 +15,12 @@ Output:
     "Response": {
         "ClusterSet": {
             "ClusterId": "pulsar-47emajuekabz",
-            "ClusterName": "test",
-            "Remark": "test",
+            "ClusterName": "devName",
+            "Remark": "devRemark",
             "EndPointNum": 0,
+            "HealthyInfo": "healthy",
             "CreateTime": "2023-07-20 10:35:17",
             "Healthy": 1,
-            "HealthyInfo": "",
             "Status": 0,
             "MaxNamespaceNum": 0,
             "MaxTopicNum": 0,

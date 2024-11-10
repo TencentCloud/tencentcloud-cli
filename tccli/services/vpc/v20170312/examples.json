@@ -3576,6 +3576,14 @@
         "title": "修改带宽包计费模式"
       }
     ],
+    "ModifyBandwidthPackageBandwidth": [
+      {
+        "document": "调整共享带宽包带宽。",
+        "input": "https://vpc.tencentcloudapi.com/?Action=ModifyBandwidthPackageBandwidth\n&InternetMaxBandwidth=100\n&BandwidthPackageIds.0=bwp-alfxy9c8\n&BandwidthPackageId=bwp-mwoqajk2\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"24cfceab-3492-482c-b86f-27f598b1b044\"\n    }\n}",
+        "title": "调整共享带宽包带宽"
+      }
+    ],
     "ModifyCcnAttachedInstancesAttribute": [
       {
         "document": "",

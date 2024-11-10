@@ -20,7 +20,7 @@ Output:
         "Instances": [
             {
                 "InstanceId": "pulsar-aer8pde2z2we",
-                "InstanceName": "test",
+                "InstanceName": "DevName",
                 "InstanceVersion": "2.9.1",
                 "Status": 1,
                 "ConfigDisplay": "基础型",
@@ -29,7 +29,7 @@ Output:
                 "ExpireTime": 1,
                 "AutoRenewFlag": 1,
                 "PayMode": 1,
-                "Remark": "test",
+                "Remark": "devRemark",
                 "SpecName": "vip-basic-1",
                 "ScalableTps": 1,
                 "VpcId": "vpc-xxxx",
@@ -37,8 +37,8 @@ Output:
                 "MaxBandWidth": 1,
                 "Tags": [
                     {
-                        "TagKey": "test",
-                        "TagValue": "test"
+                        "TagKey": "devKey",
+                        "TagValue": "devValue"
                     }
                 ],
                 "CreateTime": "2023-12-08 10:25:51",

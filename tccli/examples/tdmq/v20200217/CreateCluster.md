@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tdmq CreateCluster --cli-unfold-argument  \
-    --ClusterName test
+    --ClusterName devName
 ```
 
 Output: 

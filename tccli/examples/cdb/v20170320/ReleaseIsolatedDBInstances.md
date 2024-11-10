@@ -18,7 +18,7 @@ Output:
             {
                 "InstanceId": "cdb-f35wr6wj",
                 "Code": 0,
-                "Message": "ok"
+                "Message": ""
             }
         ]
     }

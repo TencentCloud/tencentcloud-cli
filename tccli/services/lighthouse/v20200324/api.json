@@ -8229,6 +8229,16 @@
           "output_required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例可参与的活动标识列表。\n可选值：\nUPGRADE_INSTANCE_PERFORMANCE - 实例性能升级",
+          "example": "[\"UPGRADE_INSTANCE_PERFORMANCE\"]",
+          "member": "string",
+          "name": "ActivityLabels",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

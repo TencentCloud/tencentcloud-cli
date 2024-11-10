@@ -12290,6 +12290,15 @@
         },
         {
           "disabled": false,
+          "document": "标签描述列表，通过指定该参数可以同时绑定标签到相应的通知渠道组。最大支持10个标签键值对，并且不能有重复的键值对。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "通知渠道组名称。",
           "example": "test",
           "member": "string",
@@ -12317,7 +12326,7 @@
         },
         {
           "disabled": false,
-          "document": "接口回调信息（包括企业微信）。",
+          "document": "接口回调信息（包括企业微信等）。",
           "example": "无",
           "member": "WebCallback",
           "name": "WebCallbacks",
@@ -12332,6 +12341,42 @@
           "name": "NoticeRules",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "调用链接域名。http:// 或者 https:// 开头，不能/结尾",
+          "example": "https://console.cloud.tencent.com",
+          "member": "string",
+          "name": "JumpDomain",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "投递日志开关。\n\n参数值：\n1：关闭；\n\n2：开启 \n",
+          "example": "2",
+          "member": "uint64",
+          "name": "DeliverStatus",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "投递日志配置。",
+          "example": "无",
+          "member": "DeliverConfig",
+          "name": "DeliverConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "免登录操作告警开关。\n\n参数值： \n        1：关闭\n        2：开启（默认开启）",
+          "example": "无",
+          "member": "uint64",
+          "name": "AlarmShieldStatus",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

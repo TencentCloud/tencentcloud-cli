@@ -18,7 +18,7 @@ Output:
         "EnvironmentId": "devNs",
         "NamespaceId": "namespace-5r59xen74x",
         "MsgTTL": 100,
-        "Remark": "",
+        "Remark": "devRemark",
         "RequestId": "7db00a30-933c-4f6f-bba9-79cdf6be7d8c"
     }
 }

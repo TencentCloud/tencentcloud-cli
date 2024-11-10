@@ -1,13 +1,13 @@
 **Example 1: 人脸验证接口**
 
-
+判断图片中的人和 PersonId 对应的人是否为同一人。
 
 Input: 
 
 ```
 tccli iai VerifyFace --cli-unfold-argument  \
     --Url http://test.image.myqcloud.com/testA.jpg \
-    --PersonId 11111111
+    --PersonId 1001
 ```
 
 Output: 

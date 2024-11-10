@@ -13,46 +13,44 @@ Output:
 ```
 {
     "Response": {
-        "TotalCnt": 3,
+        "MetaInfo": [],
         "NodeList": [
             {
-                "ExpireTime": "xx",
-                "EmrResourceId": "xx",
-                "MemDesc": "xx",
-                "StorageType": 5,
-                "Ip": "xx",
                 "CpuNum": 8,
+                "DiskSize": "100.00 GB",
+                "EmrResourceId": "emr-123",
+                "ExpireTime": "2024-10-23 21:00:26",
                 "Flag": 1,
-                "DiskSize": "xx",
-                "Spec": "xx"
+                "Ip": "0.0.0.0",
+                "MemDesc": "16GB",
+                "Spec": "CVM.S5",
+                "StorageType": 5
             },
             {
-                "CpuNum": 8,
-                "EmrResourceId": "xx",
-                "MemDesc": "xx",
-                "StorageType": 5,
-                "Ip": "xx",
-                "ExpireTime": "xx",
+                "CpuNum": 4,
+                "DiskSize": "100.00 GB",
+                "EmrResourceId": "emr-123",
+                "ExpireTime": "2024-10-23 21:00:16",
                 "Flag": 2,
-                "DiskSize": "xx",
-                "Spec": "xx"
+                "Ip": "0.0.0.0",
+                "MemDesc": "8GB",
+                "Spec": "CVM.S5",
+                "StorageType": 5
             },
             {
-                "CpuNum": 8,
-                "EmrResourceId": "xx",
-                "MemDesc": "xx",
-                "StorageType": 5,
-                "Ip": "xx",
-                "ExpireTime": "xx",
+                "CpuNum": 4,
+                "DiskSize": "100.00 GB",
+                "EmrResourceId": "emr-123",
+                "ExpireTime": "2024-10-23 21:00:21",
                 "Flag": 2,
-                "DiskSize": "xx",
-                "Spec": "xx"
+                "Ip": "0.0.0.0",
+                "MemDesc": "8GB",
+                "Spec": "CVM.S5",
+                "StorageType": 5
             }
         ],
-        "RequestId": "xx",
-        "MetaInfo": [
-            "xx"
-        ]
+        "RequestId": "369660ea-8cdd-4079-b473-8eb14b059b53",
+        "TotalCnt": 3
     }
 }
 ```

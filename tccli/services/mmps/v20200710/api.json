@@ -122,7 +122,7 @@
           "example": "wx66e50f1e*******6f",
           "member": "string",
           "name": "AppPackage",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -132,7 +132,7 @@
           "example": "测试小程序",
           "member": "string",
           "name": "AppName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -142,7 +142,7 @@
           "example": "小程序版本",
           "member": "string",
           "name": "AppVersion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -152,7 +152,7 @@
           "example": "2",
           "member": "int64",
           "name": "Platform",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -162,7 +162,7 @@
           "example": "诊断报告下载链接",
           "member": "string",
           "name": "ReportUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -172,7 +172,7 @@
           "example": "诊断报告名称",
           "member": "string",
           "name": "ReportTitle",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -182,7 +182,7 @@
           "example": "诊断堆栈报告下载链接",
           "member": "string",
           "name": "BehaviorUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -192,7 +192,7 @@
           "example": "诊断堆栈报告名称",
           "member": "string",
           "name": "BehaviorTitle",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -202,7 +202,7 @@
           "example": "5",
           "member": "int64",
           "name": "HighRiskCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -212,27 +212,27 @@
           "example": "隐私申明文本.txt",
           "member": "string",
           "name": "PrivacyTextName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "软件MD5\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "c7991677cc57d3b9d4974316db0ac4f9f430593f",
+          "example": "c799****************************593f",
           "member": "string",
           "name": "SoftwareMD5",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "隐私文本MD5\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "3bc1efe919a5245f711071373a2b4523",
+          "example": "3bc1****************************4523",
           "member": "string",
           "name": "PrivacyTextMD5",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }

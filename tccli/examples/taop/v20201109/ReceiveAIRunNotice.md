@@ -13,7 +13,7 @@ tccli taop ReceiveAIRunNotice --cli-unfold-argument  \
     --BucketName taop-251199828-251010749 \
     --TaskId uoio-dkjfksa-dkfna-nddj \
     --Msg success \
-    --Path  \
+    --Path /data/test.csv \
     --EndTime 2021-07-12 10:48:00 \
     --GpuType TI.8XLARGE64.32core64g \
     --BeginTime 2021-07-12 10:45:00

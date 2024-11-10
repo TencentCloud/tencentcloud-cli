@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli emr DescribeAutoScaleStrategies --cli-unfold-argument  \
-    --InstanceId abc \
+    --InstanceId emr-123 \
     --GroupId 0
 ```
 
@@ -16,100 +16,136 @@ Output:
     "Response": {
         "LoadAutoScaleStrategies": [
             {
-                "StrategyId": 0,
-                "StrategyName": "abc",
-                "CalmDownTime": 0,
-                "ScaleAction": 0,
-                "ScaleNum": 0,
-                "ProcessMethod": 0,
-                "Priority": 0,
-                "StrategyStatus": 0,
-                "YarnNodeLabel": "abc",
-                "PeriodValid": "abc",
-                "GraceDownFlag": true,
+                "CalmDownTime": 60,
+                "ConfigGroupAssigned": "",
+                "GraceDownFlag": false,
                 "GraceDownTime": 0,
-                "Tags": [
-                    {
-                        "TagKey": "abc",
-                        "TagValue": "abc"
-                    }
-                ],
-                "ConfigGroupAssigned": "abc",
-                "MeasureMethod": "abc",
                 "LoadMetricsConditions": {
                     "LoadMetrics": [
                         {
-                            "StatisticPeriod": 0,
-                            "TriggerThreshold": 0,
-                            "LoadMetrics": "abc",
-                            "MetricId": 0,
                             "Conditions": [
                                 {
-                                    "CompareMethod": 0,
-                                    "Threshold": 0
+                                    "CompareMethod": 1,
+                                    "Threshold": 16
                                 }
-                            ]
+                            ],
+                            "LoadMetrics": "AvailableVCores#root.default",
+                            "MetricId": 1,
+                            "StatisticPeriod": 60,
+                            "TriggerThreshold": 1
                         }
                     ]
-                }
+                },
+                "MeasureMethod": "INSTANCE",
+                "PeriodValid": "",
+                "Priority": 3,
+                "ProcessMethod": 3,
+                "ScaleAction": 2,
+                "ScaleNum": 2,
+                "StrategyId": 1521,
+                "StrategyName": "负载缩容",
+                "StrategyStatus": 3,
+                "Tags": [],
+                "YarnNodeLabel": ""
             }
         ],
+        "RequestId": "272c1c07-2840-44c8-8753-a761617f71fd",
         "TimeBasedAutoScaleStrategies": [
             {
-                "StrategyId": 1,
-                "StrategyName": "abc",
-                "IntervalTime": 1,
-                "ScaleAction": 1,
-                "ScaleNum": 1,
-                "StrategyStatus": 1,
+                "CompensateFlag": 1,
+                "ConfigGroupAssigned": "{\"HDFS-3.2.2\":-1,\"IMPALA-4.1.0\":-1,\"KYUUBI-1.6.0\":-1,\"TRINO-389\":-1,\"YARN-3.2.2\":-1}",
+                "GraceDownFlag": false,
+                "GraceDownTime": 0,
+                "GroupId": 0,
+                "IntervalTime": 300,
+                "MaxUse": 0,
+                "MeasureMethod": "INSTANCE",
                 "Priority": 1,
-                "RetryValidTime": 1,
                 "RepeatStrategy": {
-                    "RepeatType": "abc",
                     "DayRepeat": {
-                        "ExecuteAtTimeOfDay": "abc",
+                        "ExecuteAtTimeOfDay": "08:30:00",
                         "Step": 1
                     },
-                    "WeekRepeat": {
-                        "ExecuteAtTimeOfDay": "abc",
-                        "DaysOfWeek": [
-                            1
-                        ]
-                    },
+                    "Expire": "2024-09-11 23:59:59",
                     "MonthRepeat": {
-                        "ExecuteAtTimeOfDay": "abc",
-                        "DaysOfMonthRange": [
-                            1
-                        ]
+                        "DaysOfMonthRange": null,
+                        "ExecuteAtTimeOfDay": ""
                     },
                     "NotRepeat": {
-                        "ExecuteAt": "abc"
+                        "ExecuteAt": ""
                     },
-                    "Expire": "abc"
+                    "RepeatType": "DAY",
+                    "WeekRepeat": {
+                        "DaysOfWeek": null,
+                        "ExecuteAtTimeOfDay": ""
+                    }
                 },
-                "GraceDownFlag": true,
-                "GraceDownTime": 0,
+                "RetryValidTime": 300,
+                "ScaleAction": 1,
+                "ScaleNum": 1,
+                "ServiceNodeInfo": [
+                    7
+                ],
+                "SoftDeployInfo": [
+                    1,
+                    2
+                ],
+                "StrategyId": 1274,
+                "StrategyName": "时间伸缩扩容周期性",
+                "StrategyStatus": 3,
                 "Tags": [
                     {
-                        "TagKey": "abc",
-                        "TagValue": "abc"
+                        "TagKey": "key09993",
+                        "TagValue": "value1"
+                    },
+                    {
+                        "TagKey": "key09991",
+                        "TagValue": "value1"
                     }
                 ],
-                "ConfigGroupAssigned": "abc",
-                "MeasureMethod": "abc",
-                "TerminatePolicy": "abc",
-                "MaxUse": 0,
-                "SoftDeployInfo": [
-                    0
-                ],
-                "ServiceNodeInfo": [
-                    0
-                ],
+                "TerminatePolicy": "DEFAULT"
+            },
+            {
                 "CompensateFlag": 0,
-                "GroupId": 0
+                "ConfigGroupAssigned": "",
+                "GraceDownFlag": true,
+                "GraceDownTime": 180,
+                "GroupId": 0,
+                "IntervalTime": 60,
+                "MaxUse": 0,
+                "MeasureMethod": "INSTANCE",
+                "Priority": 2,
+                "RepeatStrategy": {
+                    "DayRepeat": {
+                        "ExecuteAtTimeOfDay": "09:30:00",
+                        "Step": 1
+                    },
+                    "Expire": "2024-09-11 23:59:59",
+                    "MonthRepeat": {
+                        "DaysOfMonthRange": null,
+                        "ExecuteAtTimeOfDay": ""
+                    },
+                    "NotRepeat": {
+                        "ExecuteAt": ""
+                    },
+                    "RepeatType": "DAY",
+                    "WeekRepeat": {
+                        "DaysOfWeek": null,
+                        "ExecuteAtTimeOfDay": ""
+                    }
+                },
+                "RetryValidTime": 60,
+                "ScaleAction": 2,
+                "ScaleNum": 1,
+                "ServiceNodeInfo": null,
+                "SoftDeployInfo": null,
+                "StrategyId": 1275,
+                "StrategyName": "时间伸缩缩容周期性-开启优雅缩容",
+                "StrategyStatus": 3,
+                "Tags": [],
+                "TerminatePolicy": "DEFAULT"
             }
-        ],
-        "RequestId": "abc"
+        ]
     }
 }
 ```

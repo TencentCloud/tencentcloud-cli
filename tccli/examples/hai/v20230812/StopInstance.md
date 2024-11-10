@@ -1,6 +1,6 @@
-**Example 1: hai实例关机**
+**Example 1: 实例关机**
 
-hai实例关机不收费场景。
+实例关机不收费场景。
 
 Input: 
 

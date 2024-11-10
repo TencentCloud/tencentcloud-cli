@@ -21,21 +21,21 @@ Output:
             {
                 "RoleName": "test_role_3",
                 "Token": "eyJzdddaWIiOiJ0ZXN0X3JvbGVfMyJ9.dbHR8m6gc4L4vZUrodhW_O9bDulZQ6lraNswNLtcUcY",
-                "Remark": "",
+                "Remark": "devRemark",
                 "CreateTime": "2020-08-04 11:59:06",
                 "UpdateTime": "2020-08-04 11:59:06"
             },
             {
                 "RoleName": "test_role_2",
                 "Token": "eyJzdWIiOiJ0asZsXN0X3JasdvbGVfMiJ9.KTbLPg1ax2HDa51vfWmoDK5AQRmEs-_3da8yU0O61D0",
-                "Remark": "",
+                "Remark": "devRemark",
                 "CreateTime": "2020-08-03 20:23:52",
                 "UpdateTime": "2020-08-03 20:23:52"
             },
             {
                 "RoleName": "test_role_1",
                 "Token": "eyJzddassWIiOiJ0ZXN0X3JvbGVfMSJ9.aatGv_WEZK5jqmXNX3dxQA7vWB0igKr_7eQitbweBoo",
-                "Remark": "",
+                "Remark": "devRemark",
                 "CreateTime": "2020-08-03 19:48:36",
                 "UpdateTime": "2020-08-03 20:22:21"
             },

@@ -19,7 +19,7 @@ Output:
         "EnvironmentId": "devNamespace",
         "NamespaceId": "namespace-8893gp3428",
         "MsgTTL": 100,
-        "Remark": "",
+        "Remark": "devRemark",
         "RequestId": "0843ea4f-d6ba-463b-952c-75708a7e8901"
     }
 }

@@ -6,34 +6,72 @@ Input:
 
 ```
 tccli emr DescribeEmrOverviewMetrics --cli-unfold-argument  \
-    --Start 1572447652 \
-    --End 1572448652 \
-    --Downsample 1m-max \
-    --Metric HDFS.NN.FILES.TOTAL \
-    --InstanceId emr-bemcdx96 \
-    --Tags "{\"type\":\"FilesTotal\"}"
+    --End 1730753724 \
+    --Metric NODE.CPU \
+    --InstanceId emr-hvijzo6n \
+    --Downsample 30s-min
 ```
 
 Output: 
 ```
 {
     "Response": {
+        "RequestId": "a16d3814-3b85-498a-97a7-15e7b0f0f0bd",
         "Result": [
             {
-                "Metric": "abc",
-                "First": 0,
-                "Last": 0,
-                "Interval": 0,
-                "DataPoints": [
-                    "abc"
-                ],
+                "Metric": "EMR.19003289.NODE.CPU",
                 "Tags": {
-                    "Unit": "abc",
-                    "Type": "abc"
-                }
+                    "Type": "CPUUsedPercent"
+                },
+                "First": 1730148930,
+                "Last": 1730753700,
+                "Interval": 30,
+                "DataPoints": [
+                    "2.3",
+                    "2.4",
+                    "2.6",
+                    "3.8",
+                    "2.8",
+                    "3.1",
+                    "3.4",
+                    "3.3",
+                    "3.6",
+                    "4.3",
+                    "3",
+                    "3.1",
+                    "2.3",
+                    "2.9",
+                    "2.5",
+                    "2.4",
+                    "2.2",
+                    "4.1",
+                    "3.3",
+                    "2.5",
+                    "4.5",
+                    "4.7",
+                    "2.5",
+                    "3.6",
+                    "2.2",
+                    "2.3",
+                    "2.5",
+                    "2.9",
+                    "2.2"
+                ]
+            },
+            {
+                "Metric": "EMR.19003289.NODE.CPU",
+                "Tags": {
+                    "Type": "CPUCoresTotal",
+                    "Unit": "核"
+                },
+                "First": 1730148930,
+                "Last": 1730753700,
+                "Interval": 30,
+                "DataPoints": [
+                    "118"
+                ]
             }
-        ],
-        "RequestId": "abc"
+        ]
     }
 }
 ```

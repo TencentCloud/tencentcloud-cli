@@ -2046,6 +2046,16 @@
           "output_required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "COS桶路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cosn://xxxxxxx",
+          "member": "string",
+          "name": "CosBucket",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -4191,7 +4201,7 @@
         },
         {
           "disabled": false,
-          "document": "指标名",
+          "document": "指标名，NODE.CPU：节点平均CPU利用率和总核数；NODE.CPU.SLHBASE：Serverless实例平均CPU利用率和总核数；HDFS.NN.CAPACITY：存储使用率和总量",
           "example": "NODE.CPU",
           "member": "string",
           "name": "Metric",
@@ -4848,7 +4858,7 @@
           "example": "3",
           "member": "int64",
           "name": "TotalCnt",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4858,7 +4868,7 @@
           "example": "无",
           "member": "RenewInstancesInfo",
           "name": "NodeList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -4868,7 +4878,7 @@
           "example": "[\"\\u6d4b\\u8bd5\\u4e00\\u4e0b\",\"alex_test\",\"beckwuxingjia\",\"ghghghg\",\"tag_auth_test\",\"test\",\"beckwu\",\"emr\",\"lg\",\"bk\"]",
           "member": "string",
           "name": "MetaInfo",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -13062,6 +13072,36 @@
           "output_required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "系统盘大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "50",
+          "member": "int64",
+          "name": "RootSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "系统盘类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5高效云盘",
+          "member": "int64",
+          "name": "RootStorageType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据盘信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "MultiDiskMC",
+          "name": "MCMultiDisk",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -13593,7 +13633,7 @@
           "example": "42",
           "member": "int64",
           "name": "JobFlowId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },

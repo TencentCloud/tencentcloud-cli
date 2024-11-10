@@ -13,16 +13,16 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "6EF60BEC-0242-43AF-BB20-270359FB54A7",
-        "IsSupportAudit": true,
         "AuditNeedUpgrade": false,
-        "IsSupportEncryption": true,
+        "CurrentSubVersion": "20230701",
         "EncryptionNeedUpgrade": false,
         "IsRemoteRo": false,
-        "MasterRegion": "",
+        "IsSupportAudit": true,
+        "IsSupportEncryption": true,
         "IsSupportUpdateSubVersion": true,
-        "CurrentSubVersion": "20190203",
-        "TargetSubVersion": "20190930"
+        "MasterRegion": "",
+        "RequestId": "68782c1e-d613-4451-b993-adef1cc7a3a6",
+        "TargetSubVersion": "20230702"
     }
 }
 ```

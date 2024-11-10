@@ -21,70 +21,48 @@ Output:
 ```
 {
     "Response": {
-        "OriginalCost": "abc",
-        "DiscountCost": "abc",
-        "Unit": "abc",
-        "PriceSpec": {
-            "Spec": "abc",
-            "StorageType": 1,
-            "DiskType": "abc",
-            "RootSize": 0,
-            "MemSize": 0,
-            "Cpu": 0,
-            "DiskSize": 0,
-            "MultiDisks": [
-                {
-                    "DiskType": "abc",
-                    "Volume": 0,
-                    "Count": 0
-                }
-            ],
-            "DiskCnt": 0,
-            "InstanceType": "abc",
-            "Tags": [
-                {
-                    "TagKey": "abc",
-                    "TagValue": "abc"
-                }
-            ],
-            "DiskNum": 0,
-            "LocalDiskNum": 0
-        },
+        "DiscountCost": "0.65",
         "MultipleEmrPrice": [
             {
-                "OriginalCost": "abc",
-                "DiscountCost": "abc",
-                "Unit": "abc",
+                "DiscountCost": "0.65",
+                "OriginalCost": "1.21",
                 "PriceSpec": {
-                    "Spec": "abc",
-                    "StorageType": 1,
-                    "DiskType": "abc",
-                    "RootSize": 0,
-                    "MemSize": 0,
-                    "Cpu": 0,
-                    "DiskSize": 0,
-                    "MultiDisks": [
-                        {
-                            "DiskType": "abc",
-                            "Volume": 0,
-                            "Count": 0
-                        }
-                    ],
+                    "Cpu": 4,
                     "DiskCnt": 0,
-                    "InstanceType": "abc",
-                    "Tags": [
-                        {
-                            "TagKey": "abc",
-                            "TagValue": "abc"
-                        }
-                    ],
                     "DiskNum": 0,
-                    "LocalDiskNum": 0
+                    "DiskSize": 200,
+                    "DiskType": "CLOUD_HSSD",
+                    "InstanceType": "S6.LARGE8",
+                    "LocalDiskNum": 0,
+                    "MemSize": 8192,
+                    "MultiDisks": [],
+                    "RootSize": 70,
+                    "Spec": "CVM.S6",
+                    "StorageType": 6,
+                    "Tags": null
                 },
-                "SupportSpotPaid": true
+                "SupportSpotPaid": true,
+                "Unit": "s"
             }
         ],
-        "RequestId": "abc"
+        "OriginalCost": "1.21",
+        "PriceSpec": {
+            "Cpu": 4,
+            "DiskCnt": 0,
+            "DiskNum": 0,
+            "DiskSize": 200,
+            "DiskType": "CLOUD_HSSD",
+            "InstanceType": "S6.LARGE8",
+            "LocalDiskNum": 0,
+            "MemSize": 8192,
+            "MultiDisks": [],
+            "RootSize": 70,
+            "Spec": "CVM.S6",
+            "StorageType": 6,
+            "Tags": null
+        },
+        "RequestId": "e0acae32-c70d-4d32-80bd-b2e528a33026",
+        "Unit": "s"
     }
 }
 ```

@@ -75,7 +75,7 @@ Output:
                         "192.168.0.1"
                     ],
                     "ModuleSet": [
-                        ""
+                        "module1"
                     ],
                     "UsedNodes": 1,
                     "ExtendPoints": 1,
@@ -98,7 +98,7 @@ Output:
                     ]
                 },
                 "IpPortSet": [
-                    ""
+                    "127.0.0.1:80"
                 ]
             }
         ],
@@ -187,7 +187,7 @@ Output:
                         "192.168.0.1"
                     ],
                     "ModuleSet": [
-                        ""
+                        "module2"
                     ],
                     "UsedNodes": 1,
                     "ExtendPoints": 1,
@@ -210,7 +210,7 @@ Output:
                     ]
                 },
                 "IpPortSet": [
-                    ""
+                    "172.0.45.65:20"
                 ]
             }
         ],

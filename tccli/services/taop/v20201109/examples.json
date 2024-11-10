@@ -32,7 +32,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: taop.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryUser\n<公共请求参数>\n\n{\n    \"Req\": {\n        \"Page\": {\n            \"CurPage\": \"1\",\n            \"PageSize\": \"100\"\n        }\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Id\": \"391825450327883776\",\n                \"Name\": \"100000558876\",\n                \"PlatName\": \"\",\n                \"SubAccountUin\": \"100000558876\",\n                \"Position\": \"医生\",\n                \"Department\": \"外科\",\n                \"Mobile\": \"13838373776\",\n                \"Role\": 2,\n                \"CreateTime\": \"2021-06-24T14:48:30Z\"\n            }\n        ],\n        \"RequestId\": \"2a253a69-c941-483f-be7e-6e476d324e3b\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Id\": \"391825450327883776\",\n                \"Name\": \"100000558876\",\n                \"PlatName\": \"宝安医院账号\",\n                \"SubAccountUin\": \"100000558876\",\n                \"Position\": \"医生\",\n                \"Department\": \"外科\",\n                \"Mobile\": \"13838373776\",\n                \"Role\": 2,\n                \"CreateTime\": \"2021-06-24T14:48:30Z\"\n            }\n        ],\n        \"RequestId\": \"2a253a69-c941-483f-be7e-6e476d324e3b\"\n    }\n}",
         "title": "QueryUser"
       }
     ],
@@ -55,7 +55,7 @@
     "ReceiveAIRunNotice": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: taop.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReceiveAIRunNotice\n<公共请求参数>\n\n{\n    \"Src\": \"1\",\n    \"Code\": \"0\",\n    \"Mem\": \"0\",\n    \"GpuNum\": \"0\",\n    \"BucketName\": \"taop-251199828-251010749\",\n    \"TaskId\": \"uoio-dkjfksa-dkfna-nddj\",\n    \"Msg\": \"success\",\n    \"Path\": \"\",\n    \"EndTime\": \"2021-07-12 10:48:00\",\n    \"GpuType\": \"TI.8XLARGE64.32core64g\",\n    \"BeginTime\": \"2021-07-12 10:45:00\"\n}",
+        "input": "POST / HTTP/1.1\nHost: taop.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReceiveAIRunNotice\n<公共请求参数>\n\n{\n    \"Src\": \"1\",\n    \"Code\": \"0\",\n    \"Mem\": \"0\",\n    \"GpuNum\": \"0\",\n    \"BucketName\": \"taop-251199828-251010749\",\n    \"TaskId\": \"uoio-dkjfksa-dkfna-nddj\",\n    \"Msg\": \"success\",\n    \"Path\": \"/data/test.csv\",\n    \"EndTime\": \"2021-07-12 10:48:00\",\n    \"GpuType\": \"TI.8XLARGE64.32core64g\",\n    \"BeginTime\": \"2021-07-12 10:45:00\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"4a1cb6bb-92d3-48fa-8d5d-b4dcd636868f\",\n        \"Result\": \"success\"\n    }\n}",
         "title": "ReceiveAiNotice"
       }

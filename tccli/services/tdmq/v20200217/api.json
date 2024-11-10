@@ -8101,7 +8101,7 @@
         {
           "disabled": false,
           "document": "集群ID",
-          "example": "pulsar-xxxxx",
+          "example": "pulsar-x4r939zkwmm2",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -9253,7 +9253,7 @@
         {
           "disabled": false,
           "document": "查询条件过滤器",
-          "example": "无",
+          "example": "{ \"Name\": \"instanceName\", \"Values\": [ \"test\" ] }",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -9289,17 +9289,17 @@
           "example": "10",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "实例信息列表",
-          "example": "无",
+          "example": "{\"AutoRenewFlag\":1,\"ClusterStatus\":1,\"ConfigDisplay\":\"体验型\",\"Container\":true,\"CreateTime\":1730294244007,\"ExceptionInformation\":null,\"ExpireTime\":1732972644007,\"InstanceId\":\"amqp-test\",\"InstanceName\":\"test1030\",\"InstanceVersion\":\"3.11.8\",\"MaxBandWidth\":45,\"MaxStorage\":600,\"MaxTps\":2400,\"NodeCount\":3,\"PayMode\":1,\"PublicAccessEndpoint\":\"amqp://106.55.176.111:5672\",\"Remark\":\"\",\"SpecName\":\"rabbit-vip-basic-5\",\"Status\":1,\"Vpcs\":[{\"SubnetId\":\"subnet-test\",\"VpcDataStreamEndpointStatus\":\"ON\",\"VpcEndpoint\":\"amqp://10.0.4.10:5672\",\"VpcId\":\"vpc-test\"}],\"ZoneIds\":[540001]}",
           "member": "RabbitMQVipInstance",
           "name": "Instances",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -12161,7 +12161,7 @@
         {
           "disabled": false,
           "document": "环境（命名空间）名称。",
-          "example": "test1",
+          "example": "devNs",
           "member": "string",
           "name": "EnvironmentId",
           "required": true,
@@ -12242,6 +12242,7 @@
           "example": "无",
           "member": "Topic",
           "name": "TopicSets",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -12251,6 +12252,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },

@@ -1572,7 +1572,7 @@
         {
           "disabled": false,
           "document": "加密附件密码",
-          "example": "123456",
+          "example": "bh-test-file-pwd",
           "member": "string",
           "name": "FilePassword",
           "output_required": false,
@@ -1809,13 +1809,13 @@
         },
         {
           "disabled": true,
-          "document": "该命令所属会话的会话开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该命令所属会话的会话开始时间",
           "example": "2020-01-01T01:01:01Z",
           "member": "string",
           "name": "SessTime",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5322,13 +5322,13 @@
         },
         {
           "disabled": false,
-          "document": "网络域名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "网络域名称",
           "example": "腾讯云网络",
           "member": "string",
           "name": "DomainName",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -7532,13 +7532,13 @@
         },
         {
           "disabled": false,
-          "document": "部署模式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "部署模式",
           "example": "1",
           "member": "int64",
           "name": "DeployModel",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -8078,13 +8078,13 @@
         },
         {
           "disabled": true,
-          "document": "该命令所属会话的会话开始时间（废弃，使用SessionTime）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该命令所属会话的会话开始时间（废弃，使用SessionTime）",
           "example": "2023-04-24T18:47:18.118138659+08:00",
           "member": "string",
           "name": "SessTime",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -8191,7 +8191,7 @@
         {
           "disabled": false,
           "document": "分页用偏移量",
-          "example": "123",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
