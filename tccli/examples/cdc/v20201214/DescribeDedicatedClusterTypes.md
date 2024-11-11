@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cdc DescribeDedicatedClusterTypes --cli-unfold-argument  \
-    --Name abc \
-    --DedicatedClusterTypeIds abc \
+    --Name yuan dedicated \
+    --DedicatedClusterTypeIds dctype-lkm17jbu dctype-1yo16f1a dctype-b38d7sl6 dctype-z387eu8j \
     --Offset 0 \
     --Limit 10 \
     --IsCompute True

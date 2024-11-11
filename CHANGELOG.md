@@ -1,3 +1,74 @@
+# Release 3.0.1095.1
+
+## 本地专用集群(cdc) 版本：2020-12-14
+
+### 第 6 次发布
+
+发布时间：2024-11-12 01:11:16
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [HostInfo](http://document.tencentcloudapi.woa.com/document/product/1676/79502#HostInfo)
+
+	* 新增成员：CpuOrigin, ServiceTag
+
+
+
+
+## 主机安全(cwp) 版本：2018-02-28
+
+### 第 108 次发布
+
+发布时间：2024-11-12 01:14:53
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* CreateCloudProtectServiceOrderRecord
+
+
+
+## 智能视图计算平台(iss) 版本：2023-05-17
+
+### 第 25 次发布
+
+发布时间：2024-11-12 01:24:05
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* CheckDomain
+
+
+
+## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
+
+### 第 71 次发布
+
+发布时间：2024-11-12 01:37:37
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateDataModel](http://document.tencentcloudapi.woa.com/document/product/1607/85214)
+* [DeleteDataModel](http://document.tencentcloudapi.woa.com/document/product/1607/85213)
+* [UpdateDataModelRegistryInfo](http://document.tencentcloudapi.woa.com/document/product/1607/85212)
+
+
+
 # Release 3.0.1094.1
 
 ## 云数据库 MySQL(cdb) 版本：2017-03-20

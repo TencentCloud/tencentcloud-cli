@@ -498,6 +498,8 @@ tccli/services/ie/v20200304/api.json
 tccli/services/ie/v20200304/examples.json
 tccli/services/iecp/__init__.py
 tccli/services/iecp/iecp_client.py
+tccli/services/ig/__init__.py
+tccli/services/ig/ig_client.py
 tccli/services/igtm/__init__.py
 tccli/services/igtm/igtm_client.py
 tccli/services/iir/__init__.py

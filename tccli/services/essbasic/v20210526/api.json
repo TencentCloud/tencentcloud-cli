@@ -3407,7 +3407,7 @@
         },
         {
           "disabled": false,
-          "document": "指定解除协议的签署人，如不指定，则默认使用原流程的签署人。 <br/>\n如需更换原合同中的企业端签署人，可通过指定该签署人在原合同列表中的ApproverNumber编号来更换此企业端签署人。(可通过接口<a href=\"https://qian.tencent.com/developers/partnerApis/flows/DescribeFlowDetailInfo/\">DescribeFlowDetailInfo</a>查询签署人的ApproverNumber编号，默认从0开始，顺序递增)<br/>\n\n注意：\n<ul>\n<li>只能更换自己企业的签署人，不支持更换个人类型或者其他企业的签署人</li>\n<li>可以不指定替换签署人，使用原流程的签署人</li>\n</ul>",
+          "document": "指定解除协议的签署人，如不指定，则默认使用原流程的签署人。 <br/>\n如需更换原合同中的企业端签署人，可通过指定该签署人在原合同列表中的ApproverNumber编号来更换此企业端签署人。(可通过接口<a href=\"https://qian.tencent.com/developers/partnerApis/flows/DescribeFlowDetailInfo/\">DescribeFlowDetailInfo</a>查询签署人的ApproverNumber编号，默认从0开始，顺序递增)<br/>\n\n注意：\n<ul>\n<li>只能更换自己企业的签署人，不支持更换个人类型签署人</li>\n<li>可以不指定替换签署人，使用原流程的签署人</li>\n</ul>",
           "example": "无",
           "member": "ReleasedApprover",
           "name": "ReleasedApprovers",

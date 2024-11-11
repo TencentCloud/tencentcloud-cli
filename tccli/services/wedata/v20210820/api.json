@@ -175,6 +175,13 @@
       "output": "CreateCustomFunctionResponse",
       "status": "online"
     },
+    "CreateDataModel": {
+      "document": "创建数据建模，提供给云应用使用，实现“Wedata数据建模”的下单发货",
+      "input": "CreateDataModelRequest",
+      "name": "（仅公有云）创建数据建模，提供给云应用使用，实现\"Wedata数据建模\"的下单发货",
+      "output": "CreateDataModelResponse",
+      "status": "online"
+    },
     "CreateDataSource": {
       "document": "创建数据源",
       "input": "CreateDataSourceRequest",
@@ -292,6 +299,13 @@
       "input": "DeleteCustomFunctionRequest",
       "name": "删除用户自定义函数",
       "output": "DeleteCustomFunctionResponse",
+      "status": "online"
+    },
+    "DeleteDataModel": {
+      "document": "销毁数据建模，提供给云应用使用，实现“Wedata数据建模”的销毁",
+      "input": "DeleteDataModelRequest",
+      "name": "（仅公有云）销毁数据建模，提供给云应用使用，实现Wedata数据建模的销毁",
+      "output": "DeleteDataModelResponse",
       "status": "online"
     },
     "DeleteDataSources": {
@@ -1629,6 +1643,13 @@
       "input": "UnlockIntegrationTaskRequest",
       "name": "解锁集成任务",
       "output": "UnlockIntegrationTaskResponse",
+      "status": "online"
+    },
+    "UpdateDataModelRegistryInfo": {
+      "document": "数语向wedata注册，提供自身cam角色信息，跳转域名、ip、端口信息等",
+      "input": "UpdateDataModelRegistryInfoRequest",
+      "name": "（仅公有云）数语向Wedata注册，更新相关信息",
+      "output": "UpdateDataModelRegistryInfoResponse",
       "status": "online"
     },
     "UpdateWorkflowOwner": {
@@ -7206,6 +7227,88 @@
       ],
       "type": "object"
     },
+    "CreateDataModelRequest": {
+      "document": "CreateDataModel请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云应用的实例id",
+          "example": "cloudapp-x3hadra3",
+          "member": "string",
+          "name": "CloudappId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户的子账号id",
+          "example": "1234567",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Wedata数据建模购买参数，包年包月类型单位，年：y，月：m，默认m",
+          "example": "m",
+          "member": "string",
+          "name": "TimeUnit",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Wedata数据建模购买参数，购买时长，默认1",
+          "example": "1",
+          "member": "int64",
+          "name": "TimeSpan",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "Wedata数据建模购买参数，是否自动续费，是：1，否：0，默认0",
+          "example": "0",
+          "member": "uint64",
+          "name": "AutoRenewFlag",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "Wedata数据建模购买参数，标准版：DATA_MODEL_STANDARD，企业版：DATA_MODEL_PRO，默认DATA_MODEL_STANDARD",
+          "example": "DATA_MODEL_STANDARD",
+          "member": "string",
+          "name": "DataModelVersion",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDataModelResponse": {
+      "document": "CreateDataModel返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "“Wedata数据建模”的实例id",
+          "example": "0b2c0452-b8cc-447b-9c7c-d115ce28e8ea",
+          "member": "string",
+          "name": "Data",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateDataSourceRequest": {
       "document": "CreateDataSource请求参数结构体",
       "members": [
@@ -10435,6 +10538,61 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDataModelRequest": {
+      "document": "DeleteDataModel请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云应用的实例id",
+          "example": "cloudapp-x3hadra3",
+          "member": "string",
+          "name": "CloudappId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据建模的实例id",
+          "example": "f4d52408-5cec-4075-b4f4-5b7154e0a4c7",
+          "member": "string",
+          "name": "DataModelId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户的子账号id",
+          "example": "12341",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDataModelResponse": {
+      "document": "DeleteDataModel返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否销毁成功",
+          "example": "true",
+          "member": "bool",
+          "name": "Data",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -45132,6 +45290,106 @@
           "member": "bool",
           "name": "Data",
           "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateDataModelRegistryInfoRequest": {
+      "document": "UpdateDataModelRegistryInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云应用的实例id",
+          "example": "cloudapp-x3hadra3",
+          "member": "string",
+          "name": "CloudappId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数语的CAM角色",
+          "example": "Cloudapp_x3HADRA3_Role",
+          "member": "string",
+          "name": "AppCamRole",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数语的ip",
+          "example": "140.xx.xx.xx",
+          "member": "string",
+          "name": "Vip",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数语的端口",
+          "example": "18091",
+          "member": "uint64",
+          "name": "Vport",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "数语的CAM角色id",
+          "example": "4000000001321",
+          "member": "string",
+          "name": "AppCamRoleId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务提供方",
+          "example": "shuyu",
+          "member": "string",
+          "name": "Provider",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "租户id",
+          "example": "1234456",
+          "member": "string",
+          "name": "TenantId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "主账号id",
+          "example": "1234456",
+          "member": "string",
+          "name": "OwnId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateDataModelRegistryInfoResponse": {
+      "document": "UpdateDataModelRegistryInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数语向wedata注册成功",
+          "example": "true",
+          "member": "bool",
+          "name": "Data",
+          "output_required": false,
           "type": "bool",
           "value_allowed_null": false
         },

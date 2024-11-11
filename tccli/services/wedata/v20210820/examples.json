@@ -218,6 +218,14 @@
         "title": "创建用户自定义函数"
       }
     ],
+    "CreateDataModel": [
+      {
+        "document": "创建数据建模示例，实现数据建模的下单支付及发货",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDataModel\n<公共请求参数>\n\n{\n    \"CloudappId\": \"cloudapp-x3hadra3jjj\",\n    \"TimeUnit\": \"m\",\n    \"TimeSpan\": 1,\n    \"AutoRenewFlag\": 0,\n    \"DataModelVersion\": \"DATA_MODEL_STANDARD\",\n    \"UserId\": \"10002855\"\n}",
+        "output": "{\n    \"RequestId\": \"a4f6d342-5bc5-47f0-a378-3b6aa993a576\",\n    \"Response\": {\n        \"Data\": \"fd91ff2e-ea72-414a-8772-6edaa61a07f6\",\n        \"RequestId\": \"a4f6d342-5bc5-47f0-a378-3b6aa993a576\"\n    }\n}",
+        "title": "创建数据建模示例"
+      }
+    ],
     "CreateDataSource": [
       {
         "document": "",
@@ -364,6 +372,14 @@
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCustomFunction\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1470575647377821696\",\n    \"ClusterIdentifier\": \"emr-demo\",\n    \"FunctionId\": \"217377ce-bcc0-446e-afd9-64ef4b707777\",\n    \"FunctionType\": \"HIVE\"\n}",
         "output": "{\n    \"Response\": {\n        \"ErrorMessage\": null,\n        \"FunctionId\": \"217377ce-bcc0-446e-afd9-64ef4b707391\",\n        \"RequestId\": \"3dfeffd0-74b1-4d5d-bcbd-247de85c9815\"\n    }\n}",
         "title": "删除自定义函数"
+      }
+    ],
+    "DeleteDataModel": [
+      {
+        "document": "销毁数据建模",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDataModel\n<公共请求参数>\n\n{\n    \"CloudappId\": \"cloudapp-x3hadra3\",\n    \"DataModelId\": \"cc2db8c1-4485-4ae2-85ef-57c6396c9836\",\n    \"UserId\": \"123456\"\n}",
+        "output": "{\n    \"RequestId\": \"1f21a21b-c15c-4e80-9535-9130b473459d\",\n    \"Response\": {\n        \"Data\": true,\n        \"RequestId\": \"1f21a21b-c15c-4e80-9535-9130b473459d\"\n    }\n}",
+        "title": "销毁数据建模示例"
       }
     ],
     "DeleteDataSources": [
@@ -2012,6 +2028,14 @@
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UnlockIntegrationTask\n<公共请求参数>\n\n{\n    \"TaskId\": \"a64893b7dff394c3f89ae305796ba2\",\n    \"ProjectId\": \"1102250839970304\"\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": true,\n        \"RequestId\": \"bhy893-bc394c3-f89av79-6obah\"\n    }\n}",
         "title": "解锁集成任务"
+      }
+    ],
+    "UpdateDataModelRegistryInfo": [
+      {
+        "document": "更新数语信息，入参传入可以直接访问的公网ip和端口",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateDataModelRegistryInfo\n<公共请求参数>\n\n{\n    \"CloudappId\": \"cloudapp-x3hadra3\",\n    \"AppCamRole\": \"4000000001321\",\n    \"AppCamRoleId\": \"4000000001321\",\n    \"Vip\": \"10.2.3.4\",\n    \"Vport\": 18091\n}",
+        "output": "{\n    \"RequestId\": \"176da6c4-d9a5-450a-a11b-b64acd4faa60\",\n    \"Response\": {\n        \"Data\": true,\n        \"RequestId\": \"176da6c4-d9a5-450a-a11b-b64acd4faa60\"\n    }\n}",
+        "title": "更新数语信息，入参传入可以直接访问的公网ip和端口"
       }
     ],
     "UpdateWorkflowOwner": [

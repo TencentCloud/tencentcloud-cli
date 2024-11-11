@@ -1,55 +1,10 @@
 # 本版本更新包含以下内容：
 
-## 云数据库 MySQL(cdb) 版本：2017-03-20
+## 本地专用集群(cdc) 版本：2020-12-14
 
-### 第 116 次发布
+### 第 6 次发布
 
-发布时间：2024-11-11 01:10:50
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [DescribeInstanceAlarmEvents](http://document.tencentcloudapi.woa.com/document/product/236/83245)
-
-	* 新增入参：NodeId
-
-
-修改数据结构：
-
-* [InstEventInfo](http://document.tencentcloudapi.woa.com/document/product/236/15878#InstEventInfo)
-
-	* 新增成员：InstanceId, NodeId
-
-
-
-
-## 日志服务(cls) 版本：2020-10-16
-
-### 第 94 次发布
-
-发布时间：2024-11-11 01:14:18
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [ModifyAlarmNotice](http://document.tencentcloudapi.woa.com/document/product/614/56458)
-
-	* 新增入参：Tags, JumpDomain, DeliverStatus, DeliverConfig, AlarmShieldStatus
-
-
-
-
-## 弹性 MapReduce(emr) 版本：2019-01-03
-
-### 第 68 次发布
-
-发布时间：2024-11-11 01:21:34
+发布时间：2024-11-12 01:11:16
 
 本次发布包含了以下内容：
 
@@ -57,121 +12,50 @@
 
 修改数据结构：
 
-* [ClusterInstancesInfo](http://document.tencentcloudapi.woa.com/document/product/589/33981#ClusterInstancesInfo)
+* [HostInfo](http://document.tencentcloudapi.woa.com/document/product/1676/79502#HostInfo)
 
-	* 新增成员：CosBucket
-
-* [RenewInstancesInfo](http://document.tencentcloudapi.woa.com/document/product/589/33981#RenewInstancesInfo)
-
-	* 新增成员：RootSize, RootStorageType, MCMultiDisk
+	* 新增成员：CpuOrigin, ServiceTag
 
 
 
 
-## 高性能应用服务(hai) 版本：2023-08-12
+## 主机安全(cwp) 版本：2018-02-28
 
-### 第 8 次发布
+### 第 108 次发布
 
-发布时间：2024-11-11 01:24:12
+发布时间：2024-11-12 01:14:53
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改接口：
+<font color="#dd0000">**删除接口**：</font>
 
-* [InquirePriceRunInstances](http://document.tencentcloudapi.woa.com/document/product/1750/82599)
-
-	* 新增入参：InstanceChargeType, InstanceChargePrepaid
-
-
-新增数据结构：
-
-* [InstanceChargePrepaid](http://document.tencentcloudapi.woa.com/document/product/1750/82570#InstanceChargePrepaid)
-* [ItemPriceDetail](http://document.tencentcloudapi.woa.com/document/product/1750/82570#ItemPriceDetail)
-
-修改数据结构：
-
-* [Price](http://document.tencentcloudapi.woa.com/document/product/1750/82570#Price)
-
-	* 新增成员：PriceDetailSet
+* CreateCloudProtectServiceOrderRecord
 
 
 
+## 智能视图计算平台(iss) 版本：2023-05-17
 
-## 轻量应用服务器(lighthouse) 版本：2020-03-24
+### 第 25 次发布
 
-### 第 61 次发布
-
-发布时间：2024-11-11 01:27:07
+发布时间：2024-11-12 01:24:05
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改数据结构：
+<font color="#dd0000">**删除接口**：</font>
 
-* [Instance](http://document.tencentcloudapi.woa.com/document/product/1207/47576#Instance)
-
-	* 新增成员：ActivityLabels
+* CheckDomain
 
 
 
+## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
 
-## 小程序安全(mmps) 版本：2020-07-10
+### 第 71 次发布
 
-### 第 3 次发布
-
-发布时间：2024-11-11 01:28:15
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [AppInfoItem](http://document.tencentcloudapi.woa.com/document/product/1658/78730#AppInfoItem)
-
-	* <font color="#dd0000">**修改成员**：</font>PrivacyTextName, SoftwareMD5, PrivacyTextMD5
-
-
-
-
-## SSL 证书(ssl) 版本：2019-12-05
-
-### 第 70 次发布
-
-发布时间：2024-11-11 01:32:41
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [DescribeCertificateDetail](http://document.tencentcloudapi.woa.com/document/product/400/41673)
-
-	* 新增出参：CertChainInfo
-
-
-新增数据结构：
-
-* [CertBasicInfo](http://document.tencentcloudapi.woa.com/document/product/400/41679#CertBasicInfo)
-
-修改数据结构：
-
-* [HostingConfig](http://document.tencentcloudapi.woa.com/document/product/400/41679#HostingConfig)
-
-	* 新增成员：ReplaceStartTime, ReplaceEndTime
-
-
-
-
-## 私有网络(vpc) 版本：2017-03-12
-
-### 第 168 次发布
-
-发布时间：2024-11-11 01:39:10
+发布时间：2024-11-12 01:37:37
 
 本次发布包含了以下内容：
 
@@ -179,7 +63,9 @@
 
 新增接口：
 
-* [ModifyBandwidthPackageBandwidth](http://document.tencentcloudapi.woa.com/document/product/215/85195)
+* [CreateDataModel](http://document.tencentcloudapi.woa.com/document/product/1607/85214)
+* [DeleteDataModel](http://document.tencentcloudapi.woa.com/document/product/1607/85213)
+* [UpdateDataModelRegistryInfo](http://document.tencentcloudapi.woa.com/document/product/1607/85212)
 
 
 
@@ -16823,6 +16709,21 @@
 
 
 ## 本地专用集群(cdc) 版本：2020-12-14
+
+### 第 6 次发布
+
+发布时间：2024-11-12 01:11:16
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [HostInfo](http://document.tencentcloudapi.woa.com/document/product/1676/79502#HostInfo)
+
+	* 新增成员：CpuOrigin, ServiceTag
+
 
 ### 第 5 次发布
 
@@ -34421,6 +34322,18 @@
 
 
 ## 主机安全(cwp) 版本：2018-02-28
+
+### 第 108 次发布
+
+发布时间：2024-11-12 01:14:53
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* CreateCloudProtectServiceOrderRecord
 
 ### 第 107 次发布
 
@@ -62235,8 +62148,8 @@
 
 新增数据结构：
 
-* [[InstanceChargePrepaid](http://document.tencentcloudapi.woa.com/document/product/1750/82570#InstanceChargePrepaid)](http://document.tencentcloudapi.woa.com/document/product/1750/82570#[InstanceChargePrepaid](http://document.tencentcloudapi.woa.com/document/product/1750/82570#InstanceChargePrepaid))
-* [[ItemPriceDetail](http://document.tencentcloudapi.woa.com/document/product/1750/82570#ItemPriceDetail)](http://document.tencentcloudapi.woa.com/document/product/1750/82570#[ItemPriceDetail](http://document.tencentcloudapi.woa.com/document/product/1750/82570#ItemPriceDetail))
+* [InstanceChargePrepaid](http://document.tencentcloudapi.woa.com/document/product/1750/82570#InstanceChargePrepaid)
+* [ItemPriceDetail](http://document.tencentcloudapi.woa.com/document/product/1750/82570#ItemPriceDetail)
 
 修改数据结构：
 
@@ -63426,6 +63339,23 @@
 * [VolumeHostPath](http://document.tencentcloudapi.woa.com/document/product/1697/80080#VolumeHostPath)
 * [VolumeMount](http://document.tencentcloudapi.woa.com/document/product/1697/80080#VolumeMount)
 * [VolumeNFS](http://document.tencentcloudapi.woa.com/document/product/1697/80080#VolumeNFS)
+
+
+
+
+## 智能导诊(ig) 版本：2021-05-18
+
+### 第 1 次发布
+
+发布时间：2024-11-11 19:27:02
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeIgOrderList](http://document.tencentcloudapi.woa.com/document/product/1779/85199)
 
 
 
@@ -67095,6 +67025,18 @@
 
 
 ## 智能视图计算平台(iss) 版本：2023-05-17
+
+### 第 25 次发布
+
+发布时间：2024-11-12 01:24:05
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* CheckDomain
 
 ### 第 24 次发布
 
@@ -92114,7 +92056,7 @@
 
 新增数据结构：
 
-* [[CertBasicInfo](http://document.tencentcloudapi.woa.com/document/product/400/41679#CertBasicInfo)](http://document.tencentcloudapi.woa.com/document/product/400/41679#[CertBasicInfo](http://document.tencentcloudapi.woa.com/document/product/400/41679#CertBasicInfo))
+* [CertBasicInfo](http://document.tencentcloudapi.woa.com/document/product/400/41679#CertBasicInfo)
 
 修改数据结构：
 
@@ -118924,7 +118866,7 @@
 
 新增接口：
 
-* [[ModifyBandwidthPackageBandwidth](http://document.tencentcloudapi.woa.com/document/product/215/85195)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [ModifyBandwidthPackageBandwidth](http://document.tencentcloudapi.woa.com/document/product/215/85195)
 
 ### 第 167 次发布
 
@@ -125748,6 +125690,20 @@
 
 
 ## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
+
+### 第 71 次发布
+
+发布时间：2024-11-12 01:37:37
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[CreateDataModel](http://document.tencentcloudapi.woa.com/document/product/1607/85214)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DeleteDataModel](http://document.tencentcloudapi.woa.com/document/product/1607/85213)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[UpdateDataModelRegistryInfo](http://document.tencentcloudapi.woa.com/document/product/1607/85212)](http://document.tencentcloudapi.woa.com/document/product/#/#)
 
 ### 第 70 次发布
 

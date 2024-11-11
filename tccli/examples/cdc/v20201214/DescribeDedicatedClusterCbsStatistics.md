@@ -6,49 +6,49 @@ Input:
 
 ```
 tccli cdc DescribeDedicatedClusterCbsStatistics --cli-unfold-argument  \
-    --DedicatedClusterId cluster-gbo27yc4
+    --DedicatedClusterId cluster-262n63e8
 ```
 
 Output: 
 ```
 {
     "Response": {
+        "RequestId": "68dd812b-30ea-4d05-af65-be2bd13bd51e",
         "SetList": [
             {
-                "SetId": "set-xxxxxxxxx",
-                "SetName": "set1",
-                "SetType": "ssd",
-                "SetSize": 40,
-                "SetStatus": "RUNNING",
-                "CreateTime": "2023-01-01 12:00:00",
+                "Await": {
+                    "Timestamps": [],
+                    "Values": []
+                },
+                "CreateTime": "2022-12-09 15:20:09",
+                "ReadIO": {
+                    "Timestamps": [],
+                    "Values": []
+                },
                 "ReadTraffic": {
-                    "Timestamps": [
-                        0
-                    ],
-                    "Values": [
-                        0
-                    ]
+                    "Timestamps": [],
+                    "Values": []
+                },
+                "SetId": "set-mm4hzptu",
+                "SetName": "HCBS_GZCDC_Z133_CDCCBS_Y0SH1125G_D0003",
+                "SetSize": 33.4,
+                "SetStatus": "RUNNING",
+                "SetType": "ssd",
+                "Util": {
+                    "Timestamps": [],
+                    "Values": []
+                },
+                "WriteIO": {
+                    "Timestamps": [],
+                    "Values": []
                 },
                 "WriteTraffic": {
-                    "Timestamps": [
-                        0
-                    ],
-                    "Values": [
-                        0
-                    ]
-                },
-                "ReadIO": {
-                    "Timestamps": [
-                        0
-                    ],
-                    "Values": [
-                        0
-                    ]
+                    "Timestamps": [],
+                    "Values": []
                 }
             }
         ],
-        "TotalCount": 1,
-        "RequestId": "abc"
+        "TotalCount": 1
     }
 }
 ```
