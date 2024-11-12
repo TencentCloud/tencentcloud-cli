@@ -84,7 +84,7 @@ Output:
                         "BatchPause": "AUTOMATIC"
                     }
                 },
-                "OriginRefreshActivityId": "",
+                "OriginRefreshActivityId": "asr-jy6t4e3w",
                 "CurrentRefreshBatchNum": 3,
                 "RefreshActivityId": "asr-cs0fxpcu",
                 "StartTime": "2023-09-07T16:27:49Z",

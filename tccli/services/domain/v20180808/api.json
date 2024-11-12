@@ -84,6 +84,13 @@
       "output": "CreateDomainRedemptionResponse",
       "status": "online"
     },
+    "CreateInternalComplaint": {
+      "document": "创建投诉信息 内部api",
+      "input": "CreateInternalComplaintRequest",
+      "name": "创建投诉",
+      "output": "CreateInternalComplaintResponse",
+      "status": "online"
+    },
     "CreateIntlDomainBatch": {
       "document": "本接口 ( CreateIntlDomainBatch) 用于批量域名注册 。",
       "input": "CreateIntlDomainBatchRequest",
@@ -2502,6 +2509,114 @@
     },
     "CreateDomainRedemptionResponse": {
       "document": "CreateDomainRedemption返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateInternalComplaintRequest": {
+      "document": "CreateInternalComplaint请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "domain-test.xyz",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "内容分类",
+          "example": "Malware / Botnets / Phishing / Pharming / Spam / Others",
+          "member": "string",
+          "name": "Category",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "描述",
+          "example": "Describe content",
+          "member": "string",
+          "name": "Describe",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "附件链接",
+          "example": "http://image.url",
+          "member": "string",
+          "name": "Attachment",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户名称",
+          "example": "user name",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户联系邮箱",
+          "example": "user-contact@test.com",
+          "member": "string",
+          "name": "Email",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "地区名称",
+          "example": "CN",
+          "member": "string",
+          "name": "CountryName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "地址信息",
+          "example": "Address info",
+          "member": "string",
+          "name": "Address",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "公司名称",
+          "example": "Company name ",
+          "member": "string",
+          "name": "Company",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "提交时间",
+          "example": "2024-11-04 12:00:00",
+          "member": "string",
+          "name": "Ctime",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateInternalComplaintResponse": {
+      "document": "CreateInternalComplaint返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

@@ -249,7 +249,7 @@
         {
           "disabled": false,
           "document": "专用集群id",
-          "example": "\"cluster-gbo27yc4\"",
+          "example": "cluster-gbo27yc4",
           "member": "string",
           "name": "DedicatedClusterId",
           "required": true,
@@ -258,7 +258,7 @@
         {
           "disabled": false,
           "document": "order关联的专用集群类型数组",
-          "example": "无",
+          "example": "[{     \"Id\": \"cluster-gbo27yc4\",     \"Count\": 1 }]",
           "member": "DedicatedClusterTypeInfo",
           "name": "DedicatedClusterTypes",
           "required": false,
@@ -267,7 +267,7 @@
         {
           "disabled": false,
           "document": "order关联的cos存储信息",
-          "example": "无",
+          "example": "{     \"Size\": 1,     \"Type\": C05 }",
           "member": "CosInfo",
           "name": "CosInfo",
           "required": false,
@@ -276,7 +276,7 @@
         {
           "disabled": false,
           "document": "order关联的cbs存储信息",
-          "example": "无",
+          "example": "{     \"Size\": 1,     \"Type\": SSD }",
           "member": "CbsInfo",
           "name": "CbsInfo",
           "required": false,
@@ -293,7 +293,7 @@
         },
         {
           "disabled": false,
-          "document": "当调用API接口提交订单时，需要提交DedicatedClusterOrderId",
+          "document": "当调用API接口提交订单时，需要提交DedicatedClusterOrderId，此处DedicatedClusterOrderId是之前创建的订单，可通过DescribeDedicatedClusterOrders接口查询，这里传入DedicatedClusterOrderId用于调整订单和支付。",
           "example": "ord-aijx4ets",
           "member": "string",
           "name": "DedicatedClusterOrderId",
@@ -309,9 +309,10 @@
         {
           "disabled": false,
           "document": "专用集群订单id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"ord-j3f3kdj4\"",
+          "example": "ord-j3f3kdj4",
           "member": "string",
           "name": "DedicatedClusterOrderId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -330,7 +331,7 @@
         {
           "disabled": false,
           "document": "专用集群所属的SiteId",
-          "example": "\"site-98dj3kd\"",
+          "example": "site-98dj3kd",
           "member": "string",
           "name": "SiteId",
           "required": true,
@@ -339,7 +340,7 @@
         {
           "disabled": false,
           "document": "专用集群的名称",
-          "example": "\"my-site\"",
+          "example": "my-site",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -348,7 +349,7 @@
         {
           "disabled": false,
           "document": "专用集群所属的可用区",
-          "example": "\"ap-guangzhou\"",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "Zone",
           "required": true,
@@ -357,7 +358,7 @@
         {
           "disabled": false,
           "document": "专用集群的描述",
-          "example": "\"my dedicated cluster\"",
+          "example": "my dedicated cluster",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -372,9 +373,10 @@
         {
           "disabled": false,
           "document": "创建的专用集群id",
-          "example": "\"cluster-gbo27yc4\"",
+          "example": "cluster-gbo27yc4",
           "member": "string",
           "name": "DedicatedClusterId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -393,7 +395,7 @@
         {
           "disabled": false,
           "document": "站点名称",
-          "example": "\"my-site\"",
+          "example": "my-site",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -429,7 +431,7 @@
         {
           "disabled": false,
           "document": "站点所在地区的详细地址信息",
-          "example": "\"Shennan Road 10000\"",
+          "example": "Shennan Road 10000",
           "member": "string",
           "name": "AddressLine",
           "required": true,
@@ -438,7 +440,7 @@
         {
           "disabled": false,
           "document": "站点描述",
-          "example": "\"this site is good\"",
+          "example": "this site is good",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -447,7 +449,7 @@
         {
           "disabled": false,
           "document": "注意事项",
-          "example": "\"the floor is not very good\"",
+          "example": "the floor is not very good",
           "member": "string",
           "name": "Note",
           "required": false,
@@ -455,8 +457,8 @@
         },
         {
           "disabled": false,
-          "document": "您将使用光纤类型将CDC设备连接到网络。有单模和多模两种选项。",
-          "example": "无",
+          "document": "您将使用光纤类型将CDC设备连接到网络。有单模和多模两种选项。取值范围：\"MM\",\"SM\"",
+          "example": "MM",
           "member": "string",
           "name": "FiberType",
           "required": false,
@@ -465,7 +467,7 @@
         {
           "disabled": false,
           "document": "您将CDC连接到网络时采用的光学标准。此字段取决于上行链路速度、光纤类型和到上游设备的距离。",
-          "example": "无",
+          "example": "1000Base-SX",
           "member": "string",
           "name": "OpticalStandard",
           "required": false,
@@ -474,7 +476,7 @@
         {
           "disabled": false,
           "document": "电源连接器类型",
-          "example": "无",
+          "example": "380VAC3P",
           "member": "string",
           "name": "PowerConnectors",
           "required": false,
@@ -482,8 +484,8 @@
         },
         {
           "disabled": false,
-          "document": "从机架上方还是下方供电。",
-          "example": "无",
+          "document": "从机架上方还是下方供电。取值范围：[\"UP\",\"DOWN\"]",
+          "example": "UP",
           "member": "string",
           "name": "PowerFeedDrop",
           "required": false,
@@ -509,7 +511,7 @@
         },
         {
           "disabled": false,
-          "document": "网络到腾讯云Region区域的上行链路速度",
+          "document": "网络到腾讯云Region区域的上行链路速度(Gbps)",
           "example": "10",
           "member": "int64",
           "name": "UplinkSpeedGbps",
@@ -564,7 +566,7 @@
         {
           "disabled": false,
           "document": "站点所在地区的详细地址信息（补充）",
-          "example": "无",
+          "example": "tengda",
           "member": "string",
           "name": "OptionalAddressLine",
           "required": false,
@@ -606,9 +608,10 @@
         {
           "disabled": false,
           "document": "创建Site生成的id",
-          "example": "\"site-98dj3kd\"",
+          "example": "site-98dj3kd",
           "member": "string",
           "name": "SiteId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1628,7 +1631,7 @@
         {
           "disabled": false,
           "document": "查询的专用集群id",
-          "example": "\"cluster-gbo27yc4\"",
+          "example": "cluster-gbo27yc4",
           "member": "string",
           "name": "DedicatedClusterId",
           "required": true,
@@ -1643,9 +1646,10 @@
         {
           "disabled": false,
           "document": "本集群内cos容量信息，单位：‘GB’",
-          "example": "无",
+          "example": "{       \"TotalCapacity\": 0,       \"TotalFreeCapacity\": 0,       \"TotalUsedCapacity\": 0     }",
           "member": "CosCapacity",
           "name": "CosCapacity",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -1664,7 +1668,7 @@
         {
           "disabled": false,
           "document": "查询的专用集群id",
-          "example": "\"cluster-gbo27yc4\"",
+          "example": "cluster-gbo27yc4",
           "member": "string",
           "name": "DedicatedClusterId",
           "required": true,
@@ -1673,7 +1677,7 @@
         {
           "disabled": false,
           "document": "宿主机id",
-          "example": "host-xxxxxxxx",
+          "example": "host-ro7czflb",
           "member": "string",
           "name": "HostId",
           "required": false,
@@ -1691,7 +1695,7 @@
         {
           "disabled": false,
           "document": "结束时间",
-          "example": "无2023-01-01 12:00:00",
+          "example": "2023-01-02 12:00:00",
           "member": "string",
           "name": "EndTime",
           "required": false,
@@ -1699,7 +1703,7 @@
         },
         {
           "disabled": false,
-          "document": "时间范围精度，1分钟/5分钟",
+          "document": "时间范围精度，1分钟(ONE_MINUTE)/5分钟(FIVE_MINUTE)",
           "example": "ONE_MINUTE",
           "member": "string",
           "name": "Period",
@@ -1715,7 +1719,7 @@
         {
           "disabled": false,
           "document": "该集群内宿主机的统计信息列表",
-          "example": "无",
+          "example": "[     {         \"HostType\": \"S5.21XLARGE320\",         \"HostFamily\": \"S5\",         \"Cpu\": 84,         \"Memory\": 320,         \"Count\": 240,         \"CpuAverage\": 50,         \"MemAverage\": 50,         \"NetAverage\": 100,         \"CpuDetailData\": {             \"Timestamps\": [                 1693274400             ],             \"Values\": [                 0             ]         },         \"MemDetailData\": {             \"Timestamps\": [                 1693274400             ],             \"Values\": [                 0             ]         },         \"NetRateDetailData\": {             \"Timestamps\": [                 1693274400             ],             \"Values\": [                 0             ]         },         \"NetPacketDetailData\": {             \"Timestamps\": [                 1693274400             ],             \"Values\": [                 0             ]         }     } ]",
           "member": "HostStatistic",
           "name": "HostStatisticSet",
           "output_required": true,
@@ -1802,7 +1806,7 @@
         {
           "disabled": false,
           "document": "查询的专用集群id",
-          "example": "\"cluster-gbo27yc4\"",
+          "example": "cluster-gbo27yc4",
           "member": "string",
           "name": "DedicatedClusterId",
           "required": true,
@@ -1817,9 +1821,10 @@
         {
           "disabled": false,
           "document": "支持的实例规格列表",
-          "example": "无",
+          "example": "[{ \t\t\t\"Zone\": \"ap-guangzhou-2\", \t\t\t\"InstanceType\": \"S1.SMALL1\", \t\t\t\"NetworkCard\": 0, \t\t\t\"Cpu\": 1, \t\t\t\"Memory\": 1, \t\t\t\"InstanceFamily\": \"S1\", \t\t\t\"TypeName\": \"Standard S1\", \t\t\t\"StorageBlockAmount\": 0, \t\t\t\"InstanceBandwidth\": 0, \t\t\t\"InstancePps\": 0, \t\t\t\"CpuType\": \"\", \t\t\t\"Gpu\": 0, \t\t\t\"Fpga\": 0, \t\t\t\"Remark\": \"\", \t\t\t\"Status\": \"SOLD_OUT\" \t\t}, { \t\t\t\"Zone\": \"ap-guangzhou-2\", \t\t\t\"InstanceType\": \"S3.SMALL1\", \t\t\t\"NetworkCard\": 0, \t\t\t\"Cpu\": 1, \t\t\t\"Memory\": 1, \t\t\t\"InstanceFamily\": \"S3\", \t\t\t\"TypeName\": \"Standard S3\", \t\t\t\"StorageBlockAmount\": 0, \t\t\t\"InstanceBandwidth\": 0, \t\t\t\"InstancePps\": 0, \t\t\t\"CpuType\": \"\", \t\t\t\"Gpu\": 0, \t\t\t\"Fpga\": 0, \t\t\t\"Remark\": \"\", \t\t\t\"Status\": \"SOLD_OUT\" \t\t}]",
           "member": "DedicatedClusterInstanceType",
           "name": "DedicatedClusterInstanceTypeSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1892,7 +1897,7 @@
         {
           "disabled": false,
           "document": "订单类型列表",
-          "example": "无",
+          "example": "[\"PUSH\"]",
           "member": "string",
           "name": "OrderTypes",
           "required": false,
@@ -1907,7 +1912,7 @@
         {
           "disabled": false,
           "document": "专用集群订单列表",
-          "example": "无",
+          "example": "[       {         \"Action\": \"CREATE\",         \"CheckExpectTime\": \"0000-00-00 00:00:00\",         \"CheckFinishTime\": \"0000-00-00 00:00:00\",         \"CheckStatus\": \"DELIVERING\",         \"Cpu\": 0,         \"CreateTime\": \"2024-10-30T09:14:13Z\",         \"DedicatedClusterId\": \"cluster-262n63e8\",         \"DedicatedClusterOrderId\": \"ord-rd0ty398\",         \"DedicatedClusterOrderItems\": [           {             \"ComputeFormat\": \"\",             \"Count\": 1,             \"CreateTime\": \"2024-10-30 17:14:13\",             \"DedicatedClusterTypeId\": \"dctype-00100001\",             \"Description\": \"基础底座\",             \"Name\": \"基础底座\",             \"PowerDraw\": 0,             \"SubOrderId\": \"sord-e3t9jkm2\",             \"SubOrderPayStatus\": 0,             \"SubOrderStatus\": \"PENDING\",             \"SupportedInstanceFamily\": [],             \"SupportedStorageType\": [],             \"SupportedUplinkSpeed\": [               10,               25,               40,               100             ],             \"TotalCpu\": 0,             \"TotalGpu\": 0,             \"TotalMem\": 0,             \"TypeFamily\": \"CUSTOM\",             \"TypeName\": \"BASE_EQUIPMENT.BASE_FOUNDATION\",             \"Weight\": 0           }         ],         \"DedicatedClusterTypeId\": \"None\",         \"DeliverExpectTime\": \"0000-00-00 00:00:00\",         \"DeliverFinishTime\": \"0000-00-00 00:00:00\",         \"Gpu\": 0,         \"Mem\": 0,         \"OrderPayPlan\": null,         \"OrderSLA\": null,         \"OrderStatus\": \"PENDING\",         \"OrderType\": \"PUSH\",         \"PayStatus\": 0,         \"PayType\": \"ONEOFF\",         \"PowerDraw\": 0,         \"SupportedInstanceFamily\": [           \"None\"         ],         \"SupportedStorageType\": [           \"None\"         ],         \"SupportedUplinkSpeed\": [           -1         ],         \"TimeSpan\": 3,         \"TimeUnit\": \"YEAR\",         \"Weight\": 0       }     ]",
           "member": "DedicatedClusterOrder",
           "name": "DedicatedClusterOrderSet",
           "output_required": true,
@@ -2208,9 +2213,10 @@
         {
           "disabled": false,
           "document": "符合查询条件的专用集群列表",
-          "example": "无",
+          "example": "[{ \t\t\t\"DedicatedClusterId\": \"cluster-e88qh1ue\", \t\t\t\"Zone\": \"ap-guangzhou-2\", \t\t\t\"Description\": \"test\", \t\t\t\"Name\": \"wechen-first-dc\", \t\t\t\"LifecycleStatus\": \"PENDING\", \t\t\t\"CreateTime\": \"2020-12-10T06:15:43Z\", \t\t\t\"SiteId\": \"site-38d9ck\" \t\t}, { \t\t\t\"DedicatedClusterId\": \"cluster-1hza0fbu\", \t\t\t\"Zone\": \"ap-guangzhou-2\", \t\t\t\"Description\": \"test\", \t\t\t\"Name\": \"wechen-first-dc\", \t\t\t\"LifecycleStatus\": \"PENDING\", \t\t\t\"CreateTime\": \"2020-12-10T06:15:50Z\", \t\t\t\"SiteId\": \"site-38d9ck\" \t\t}, { \t\t\t\"DedicatedClusterId\": \"cluster-ptrfvhyw\", \t\t\t\"Zone\": \"ap-guangzhou-2\", \t\t\t\"Description\": \"test\", \t\t\t\"Name\": \"wechen-first-dc\", \t\t\t\"LifecycleStatus\": \"PENDING\", \t\t\t\"CreateTime\": \"2020-12-10T06:17:26Z\", \t\t\t\"SiteId\": \"site-38d9ck\" \t\t}]",
           "member": "DedicatedCluster",
           "name": "DedicatedClusterSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2220,6 +2226,7 @@
           "example": "20 ",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2238,7 +2245,7 @@
         {
           "disabled": false,
           "document": "传入region列表",
-          "example": "无",
+          "example": "[4]",
           "member": "int64",
           "name": "Regions",
           "required": false,
@@ -2253,10 +2260,10 @@
         {
           "disabled": false,
           "document": "支持的可用区列表",
-          "example": "无",
+          "example": "[           {             \"Zone\": \"ap-shanghai-1\",             \"ZoneId\": 200001,             \"ZoneName\": \"上海一区\",             \"ZoneState\": \"AVAILABLE\"           },           {             \"Zone\": \"ap-shanghai-2\",             \"ZoneId\": 200002,             \"ZoneName\": \"上海二区\",             \"ZoneState\": \"AVAILABLE\"           },           {             \"Zone\": \"ap-shanghai-3\",             \"ZoneId\": 200003,             \"ZoneName\": \"上海三区\",             \"ZoneState\": \"AVAILABLE\"           },           {             \"Zone\": \"ap-shanghai-4\",             \"ZoneId\": 200004,             \"ZoneName\": \"上海四区\",             \"ZoneState\": \"AVAILABLE\"           },           {             \"Zone\": \"ap-shanghai-5\",             \"ZoneId\": 200005,             \"ZoneName\": \"上海五区\",             \"ZoneState\": \"AVAILABLE\"           },           {             \"Zone\": \"ap-shanghai-6\",             \"ZoneId\": 200006,             \"ZoneName\": \"上海六区\",             \"ZoneState\": \"AVAILABLE\"           },           {             \"Zone\": \"ap-shanghai-7\",             \"ZoneId\": 200007,             \"ZoneName\": \"上海七区\",             \"ZoneState\": \"AVAILABLE\"           }         ]",
           "member": "RegionZoneInfo",
           "name": "ZoneSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2302,7 +2309,7 @@
         {
           "disabled": false,
           "document": "按照站定名称模糊匹配",
-          "example": "\"my-site\"",
+          "example": "my-site",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -2317,9 +2324,10 @@
         {
           "disabled": false,
           "document": "站点详情",
-          "example": "无",
+          "example": "[{ \t\t\t\"SiteId\": \"site-98dj3kd\", \t\t\t\"Name\": \"\", \t\t\t\"Description\": \"\", \t\t\t\"CreateTime\": \"2020-12-25T08:39:57Z\", \t\t\t\"FiberType\": \"MM\", \t\t\t\"UplinkSpeedGbps\": 0, \t\t\t\"UplinkCount\": 0, \t\t\t\"OpticalStandard\": \"MM\", \t\t\t\"RedundantNetworking\": false, \t\t\t\"PowerConnectors\": \"1000Base-SX\", \t\t\t\"PowerFeedDrop\": \"above\", \t\t\t\"PowerDrawKva\": 0.0, \t\t\t\"ConditionRequirement\": false, \t\t\t\"DimensionRequirement\": false, \t\t\t\"NeedHelp\": false, \t\t\t\"BreakerRequirement\": false, \t\t\t\"RedundantPower\": false, \t\t\t\"MaxWeight\": 0, \t\t\t\"AddressLine\": \"Nanshan Road\", \t\t\t\"OptionalAddressLine\": \"\", \t\t\t\"Country\": \"China\", \t\t\t\"Province\": \"guangdong\", \t\t\t\"City\": \"shenzhen\", \t\t\t\"PostalCode\": 518000 \t\t}]",
           "member": "SiteDetail",
           "name": "SiteDetailSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2329,6 +2337,7 @@
           "example": "20",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2356,7 +2365,7 @@
         {
           "disabled": false,
           "document": "模糊匹配站点名称",
-          "example": "\"first-site\"",
+          "example": "first-site",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -2389,9 +2398,10 @@
         {
           "disabled": false,
           "document": "符合查询条件的站点列表",
-          "example": "无",
+          "example": "[{ \t\t\t\"SiteId\": \"site-98dj3kd\", \t\t\t\"Name\": \"my-site\", \t\t\t\"Description\": \"my first site\", \t\t\t\"CreateTime\": \"2020-12-25T08:39:57Z\" \t\t}]",
           "member": "Site",
           "name": "SiteSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2401,6 +2411,7 @@
           "example": "20",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2906,7 +2917,7 @@
         },
         {
           "disabled": false,
-          "document": "大订单ID",
+          "document": "大订单ID，可以在本地专用集群的基础信息页获取大订单ID",
           "example": "ord-aijx4ets",
           "member": "string",
           "name": "DedicatedClusterOrderId",
@@ -2915,7 +2926,7 @@
         },
         {
           "disabled": false,
-          "document": "小订单ID",
+          "document": "小订单ID，进入大订单的详情页，可以看到小订单ID",
           "example": "[\"sord-aijxdfasdf\"]",
           "member": "string",
           "name": "SubOrderIds",
@@ -2978,7 +2989,7 @@
         },
         {
           "disabled": false,
-          "document": "从机架上方还是下方供电。",
+          "document": "从机架上方还是下方供电。取值范围：[\"UP\",\"DOWN\"]",
           "example": "UP",
           "member": "string",
           "name": "PowerFeedDrop",

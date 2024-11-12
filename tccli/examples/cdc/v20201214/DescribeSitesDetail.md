@@ -5,7 +5,9 @@
 Input: 
 
 ```
-tccli cdc DescribeSitesDetail --cli-unfold-argument ```
+tccli cdc DescribeSitesDetail --cli-unfold-argument  \
+    --SiteIds site-98dj3kd
+```
 
 Output: 
 ```

@@ -2313,7 +2313,7 @@
         },
         {
           "disabled": false,
-          "document": "实例标识",
+          "document": "实例ID",
           "example": "ins-r8hr2upy",
           "member": "string",
           "name": "InstanceId",
@@ -2353,8 +2353,8 @@
         },
         {
           "disabled": false,
-          "document": "日志类型，与CLS运营平台登记的LogType保持一致\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "TKE-EVENT",
+          "document": "日志类型，支持枚举：CDS-AUDIT、CDS-RISK、CDB-AUDIT、TDSQL-C-AUDIT、MongoDB-AUDIT、MongoDB-SlowLog、MongoDB-ErrorLog、TDMYSQL-SLOW、DCDB-AUDIT、DCDB-SLOW、DCDB-ERROR、MariaDB-AUDIT、MariaDB-SLOW、MariaDB-ERROR、PostgreSQL-SLOW、PostgreSQL-ERROR、PostgreSQL-AUDIT、BH-FILELOG、BH-COMMANDLOG、APIS-ACCESS\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CDB-AUDIT",
           "member": "string",
           "name": "LogType",
           "output_required": false,
@@ -3952,7 +3952,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例标识，通常为实例ID，若实例需由多个属性唯一定位，由下划线分隔多个属性。如: {实例ID}_{实例类型}",
+          "document": "实例ID",
           "example": "ins-r8hr2upy",
           "member": "string",
           "name": "InstanceId",
@@ -3961,8 +3961,8 @@
         },
         {
           "disabled": false,
-          "document": "云产品标识, 与CLS运营平台登记的AssumerName保持一致",
-          "example": "TKE",
+          "document": "云产品标识，支持枚举：CDS、CWP、CDB、TDSQL-C、MongoDB、TDStore、DCDB、MariaDB、PostgreSQL、BH、APIS",
+          "example": "CDB",
           "member": "string",
           "name": "AssumerName",
           "required": true,
@@ -3970,8 +3970,8 @@
         },
         {
           "disabled": false,
-          "document": "日志类型，与CLS运营平台登记的LogType保持一致",
-          "example": "TKE-EVENT",
+          "document": "日志类型，支持枚举：CDS-AUDIT、CDS-RISK、CDB-AUDIT、TDSQL-C-AUDIT、MongoDB-AUDIT、MongoDB-SlowLog、MongoDB-ErrorLog、TDMYSQL-SLOW、DCDB-AUDIT、DCDB-SLOW、DCDB-ERROR、MariaDB-AUDIT、MariaDB-SLOW、MariaDB-ERROR、PostgreSQL-SLOW、PostgreSQL-ERROR、PostgreSQL-AUDIT、BH-FILELOG、BH-COMMANDLOG、APIS-ACCESS",
+          "example": "CDB-AUDIT",
           "member": "string",
           "name": "LogType",
           "required": true,
@@ -3979,7 +3979,7 @@
         },
         {
           "disabled": false,
-          "document": "业务侧地域，若无地域区分填all",
+          "document": "云产品地域。 不同日志类型(LogType)地域入參格式存在差异， 请参考如下示例：\n- CDS所有日志类型：ap-guangzhou\n- CDB-AUDIT: gz\n- TDSQL-C-AUDIT:  gz\n- MongoDB-AUDIT:  gz\n- MongoDB-SlowLog：ap-guangzhou\n- MongoDB-ErrorLog：ap-guangzhou\n- TDMYSQL-SLOW：gz\n- DCDB所有日志类型：gz\n- MariaDB所有日志类型：gz\n- PostgreSQL所有日志类型：gz\n- BH所有日志类型：overseas-polaris(国内站海外)/fsi-polaris(国内站金融)/general-polaris(国内站普通)/intl-sg-prod(国际站)\n- APIS所有日志类型：gz",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "CloudProductRegion",
@@ -3997,7 +3997,7 @@
         },
         {
           "disabled": false,
-          "document": "日志集名称，未填LogsetId时必填",
+          "document": "日志集名称，未填LogsetId时必填。若日志集不存在, 将自动创建",
           "example": "logset",
           "member": "string",
           "name": "LogsetName",
@@ -4015,7 +4015,7 @@
         },
         {
           "disabled": false,
-          "document": "日志主题名称，在未填TopicId时必填",
+          "document": "日志主题名称，在未填TopicId时必填。 若日志主题不存在，将自动创建",
           "example": "topic",
           "member": "string",
           "name": "TopicName",
@@ -6693,7 +6693,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例标识，通常为实例ID，若实例需由多个属性唯一定位，由下划线分隔多个属性。如: {实例ID}_{实例类型}",
+          "document": "实例ID",
           "example": "ins-r8hr2upy",
           "member": "string",
           "name": "InstanceId",
@@ -6702,8 +6702,8 @@
         },
         {
           "disabled": false,
-          "document": "云产品标识, 与CLS运营平台登记的AssumerName保持一致",
-          "example": "TKE",
+          "document": "云产品标识，支持枚举：CDS、CWP、CDB、TDSQL-C、MongoDB、TDStore、DCDB、MariaDB、PostgreSQL、BH、APIS",
+          "example": "CDB",
           "member": "string",
           "name": "AssumerName",
           "required": true,
@@ -6711,8 +6711,8 @@
         },
         {
           "disabled": false,
-          "document": "日志类型，与CLS运营平台登记的LogType保持一致",
-          "example": "TKE-EVENT",
+          "document": "日志类型，支持枚举：CDS-AUDIT、CDS-RISK、CDB-AUDIT、TDSQL-C-AUDIT、MongoDB-AUDIT、MongoDB-SlowLog、MongoDB-ErrorLog、TDMYSQL-SLOW、DCDB-AUDIT、DCDB-SLOW、DCDB-ERROR、MariaDB-AUDIT、MariaDB-SLOW、MariaDB-ERROR、PostgreSQL-SLOW、PostgreSQL-ERROR、PostgreSQL-AUDIT、BH-FILELOG、BH-COMMANDLOG、APIS-ACCESS",
+          "example": "CDB-AUDIT",
           "member": "string",
           "name": "LogType",
           "required": true,
@@ -6720,7 +6720,7 @@
         },
         {
           "disabled": false,
-          "document": "业务侧地域，若无地域区分填all",
+          "document": "云产品地域。 不同日志类型(LogType)地域入參格式存在差异， 请参考如下示例：\n- CDS所有日志类型：ap-guangzhou\n- CDB-AUDIT: gz\n- TDSQL-C-AUDIT: gz\n- MongoDB-AUDIT: gz\n- MongoDB-SlowLog：ap-guangzhou\n- MongoDB-ErrorLog：ap-guangzhou\n- TDMYSQL-SLOW：gz\n- DCDB所有日志类型：gz\n- MariaDB所有日志类型：gz\n- PostgreSQL所有日志类型：gz\n- BH所有日志类型：overseas-polaris(国内站海外)/fsi-polaris(国内站金融)/general-polaris(国内站普通)/intl-sg-prod(国际站)\n- APIS所有日志类型：gz",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "CloudProductRegion",
@@ -7701,7 +7701,7 @@
         },
         {
           "disabled": false,
-          "document": "<li> assumerName\n按照【云产品标识】进行过滤。\n类型：String\n必选：否\n</li>\n<li> logType\n按照【日志类型】进行过滤。\n类型：String\n必选：否\n</li>\n<li> instanceId\n按照【实例ID】进行过滤。\n类型：String\n必选：否\n</li>",
+          "document": "- assumerName\n  - 按照【云产品标识】进行过滤。\n  - 类型：String\n  - 必选：否\n  - 枚举：CDS、CWP、CDB、TDSQL-C、MongoDB、TDStore、DCDB、MariaDB、PostgreSQL、BH、APIS\n- logType\n  - 按照【日志类型】进行过滤。\n  - 类型：String\n  - 必选：否\n  - 枚举：CDS-AUDIT、CDS-RISK、CDB-AUDIT、TDSQL-C-AUDIT、MongoDB-AUDIT、MongoDB-SlowLog、MongoDB-ErrorLog、TDMYSQL-SLOW、DCDB-AUDIT、DCDB-SLOW、DCDB-ERROR、MariaDB-AUDIT、MariaDB-SLOW、MariaDB-ERROR、PostgreSQL-SLOW、PostgreSQL-ERROR、PostgreSQL-AUDIT、BH-FILELOG、BH-COMMANDLOG、APIS-ACCESS\n- instanceId\n  - 按照【实例ID】进行过滤。\n  - 类型：String\n  - 必选：否",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -12686,7 +12686,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例标识，通常为实例ID，若实例需由多个属性唯一定位，由下划线分隔多个属性。如: {实例ID}_{实例类型}",
+          "document": "实例ID",
           "example": "ins-r8hr2upy",
           "member": "string",
           "name": "InstanceId",
@@ -12695,8 +12695,8 @@
         },
         {
           "disabled": false,
-          "document": "云产品标识, 与CLS运营平台登记的AssumerName保持一致",
-          "example": "TKE",
+          "document": "云产品标识，支持枚举：CDS、CWP、CDB、TDSQL-C、MongoDB、TDStore、DCDB、MariaDB、PostgreSQL、BH、APIS",
+          "example": "CDB",
           "member": "string",
           "name": "AssumerName",
           "required": true,
@@ -12704,8 +12704,8 @@
         },
         {
           "disabled": false,
-          "document": "日志类型，与CLS运营平台登记的LogType保持一致",
-          "example": "TKE-EVENT",
+          "document": "日志类型，支持枚举：CDS-AUDIT、CDS-RISK、CDB-AUDIT、TDSQL-C-AUDIT、MongoDB-AUDIT、MongoDB-SlowLog、MongoDB-ErrorLog、TDMYSQL-SLOW、DCDB-AUDIT、DCDB-SLOW、DCDB-ERROR、MariaDB-AUDIT、MariaDB-SLOW、MariaDB-ERROR、PostgreSQL-SLOW、PostgreSQL-ERROR、PostgreSQL-AUDIT、BH-FILELOG、BH-COMMANDLOG、APIS-ACCESS",
+          "example": "CDB-AUDIT",
           "member": "string",
           "name": "LogType",
           "required": true,
@@ -12713,7 +12713,7 @@
         },
         {
           "disabled": false,
-          "document": "业务侧地域，若无地域区分填all",
+          "document": "云产品地域。 不同日志类型(LogType)地域入參格式存在差异， 请参考如下示例：\n- CDS所有日志类型：ap-guangzhou\n- CDB-AUDIT: gz\n- TDSQL-C-AUDIT: gz\n- MongoDB-AUDIT: gz\n- MongoDB-SlowLog：ap-guangzhou\n- MongoDB-ErrorLog：ap-guangzhou\n- TDMYSQL-SLOW：gz\n- DCDB所有日志类型：gz\n- MariaDB所有日志类型：gz\n- PostgreSQL所有日志类型：gz\n- BH所有日志类型：overseas-polaris(国内站海外)/fsi-polaris(国内站金融)/general-polaris(国内站普通)/intl-sg-prod(国际站)\n- APIS所有日志类型：gz",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "CloudProductRegion",

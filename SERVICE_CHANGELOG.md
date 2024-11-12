@@ -1,10 +1,10 @@
 # 本版本更新包含以下内容：
 
-## 本地专用集群(cdc) 版本：2020-12-14
+## 弹性伸缩(as) 版本：2018-04-19
 
-### 第 6 次发布
+### 第 39 次发布
 
-发布时间：2024-11-12 01:11:16
+发布时间：2024-11-13 01:08:45
 
 本次发布包含了以下内容：
 
@@ -12,50 +12,22 @@
 
 修改数据结构：
 
-* [HostInfo](http://document.tencentcloudapi.woa.com/document/product/1676/79502#HostInfo)
+* [Advice](http://document.tencentcloudapi.woa.com/document/product/377/20453#Advice)
 
-	* 新增成员：CpuOrigin, ServiceTag
+	* <font color="#dd0000">**修改成员**：</font>Level
+
+* [ScalingPolicy](http://document.tencentcloudapi.woa.com/document/product/377/20453#ScalingPolicy)
+
+	* <font color="#dd0000">**修改成员**：</font>ScalingPolicyType
 
 
 
 
 ## 主机安全(cwp) 版本：2018-02-28
 
-### 第 108 次发布
+### 第 109 次发布
 
-发布时间：2024-11-12 01:14:53
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-<font color="#dd0000">**删除接口**：</font>
-
-* CreateCloudProtectServiceOrderRecord
-
-
-
-## 智能视图计算平台(iss) 版本：2023-05-17
-
-### 第 25 次发布
-
-发布时间：2024-11-12 01:24:05
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-<font color="#dd0000">**删除接口**：</font>
-
-* CheckDomain
-
-
-
-## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
-
-### 第 71 次发布
-
-发布时间：2024-11-12 01:37:37
+发布时间：2024-11-13 01:15:34
 
 本次发布包含了以下内容：
 
@@ -63,9 +35,23 @@
 
 新增接口：
 
-* [CreateDataModel](http://document.tencentcloudapi.woa.com/document/product/1607/85214)
-* [DeleteDataModel](http://document.tencentcloudapi.woa.com/document/product/1607/85213)
-* [UpdateDataModelRegistryInfo](http://document.tencentcloudapi.woa.com/document/product/1607/85212)
+* [ModifyMachineLoginType](http://document.tencentcloudapi.woa.com/document/product/296/85215)
+
+
+
+## 域名注册(domain) 版本：2018-08-08
+
+### 第 35 次发布
+
+发布时间：2024-11-13 01:19:15
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateInternalComplaint](http://document.tencentcloudapi.woa.com/document/product/242/85217)
 
 
 
@@ -4679,6 +4665,25 @@
 
 
 ## 弹性伸缩(as) 版本：2018-04-19
+
+### 第 39 次发布
+
+发布时间：2024-11-13 01:08:45
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Advice](http://document.tencentcloudapi.woa.com/document/product/377/20453#Advice)
+
+	* <font color="#dd0000">**修改成员**：</font>Level
+
+* [ScalingPolicy](http://document.tencentcloudapi.woa.com/document/product/377/20453#ScalingPolicy)
+
+	* <font color="#dd0000">**修改成员**：</font>ScalingPolicyType
+
 
 ### 第 38 次发布
 
@@ -34323,6 +34328,18 @@
 
 ## 主机安全(cwp) 版本：2018-02-28
 
+### 第 109 次发布
+
+发布时间：2024-11-13 01:15:34
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[ModifyMachineLoginType](http://document.tencentcloudapi.woa.com/document/product/296/85215)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
 ### 第 108 次发布
 
 发布时间：2024-11-12 01:14:53
@@ -46567,6 +46584,18 @@
 
 
 ## 域名注册(domain) 版本：2018-08-08
+
+### 第 35 次发布
+
+发布时间：2024-11-13 01:19:15
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[CreateInternalComplaint](http://document.tencentcloudapi.woa.com/document/product/242/85217)](http://document.tencentcloudapi.woa.com/document/product/#/#)
 
 ### 第 34 次发布
 
@@ -125701,9 +125730,9 @@
 
 新增接口：
 
-* [[CreateDataModel](http://document.tencentcloudapi.woa.com/document/product/1607/85214)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DeleteDataModel](http://document.tencentcloudapi.woa.com/document/product/1607/85213)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[UpdateDataModelRegistryInfo](http://document.tencentcloudapi.woa.com/document/product/1607/85212)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [CreateDataModel](http://document.tencentcloudapi.woa.com/document/product/1607/85214)
+* [DeleteDataModel](http://document.tencentcloudapi.woa.com/document/product/1607/85213)
+* [UpdateDataModelRegistryInfo](http://document.tencentcloudapi.woa.com/document/product/1607/85212)
 
 ### 第 70 次发布
 

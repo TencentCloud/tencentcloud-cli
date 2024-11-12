@@ -449,23 +449,23 @@
         },
         {
           "disabled": false,
-          "document": "自定义参数的默认取值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "自定义参数的默认取值。",
           "example": "[         {             \"name\": \"test01\",             \"value\": \"12345\",             \"description\": \"for test01\"         },         {             \"name\": \"test02\",             \"value\": \"12345\",             \"description\": \"for test02\"         }     ]",
           "member": "DefaultParameterConf",
           "name": "DefaultParameterConfs",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "命令关联的场景\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "命令关联的场景",
           "example": "[\"sc-12345678\"]",
           "member": "string",
           "name": "Scenes",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -930,36 +930,36 @@
       "members": [
         {
           "disabled": false,
-          "document": "参数名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "参数名。",
           "example": "name",
           "member": "string",
           "name": "ParameterName",
-          "output_required": true,
+          "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "参数默认值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "参数默认值。",
           "example": "value",
           "member": "string",
           "name": "ParameterValue",
-          "output_required": true,
+          "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "参数描述。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "参数描述。",
           "example": "This is a parameter.",
           "member": "string",
           "name": "ParameterDescription",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -1235,7 +1235,7 @@
         {
           "disabled": false,
           "document": "过滤条件。\n<li> command-id - String - 是否必填：否 -（过滤条件）按照命令ID过滤。</li>\n<li> command-name - String - 是否必填：否 -（过滤条件）按照命令名称过滤。</li>\n<li> command-type - String - 是否必填：否 -（过滤条件）按照命令类型过滤，取值为 SHELL 或 POWERSHELL。</li>\n<li> scene-id - String - 是否必填：否 -（过滤条件）按照场景ID过滤。</li>\n<li> created-by - String - 是否必填：否 -（过滤条件）按照命令创建者过滤，取值为 TAT 或 USER，TAT 代表公共命令，USER 代表由用户创建的命令。</li>\n<li> tag-key - String - 是否必填：否 -（过滤条件）按照标签键进行过滤。</li>\n<li> tag-value - String - 是否必填：否 -（过滤条件）按照标签值进行过滤。</li>\n<li> tag:tag-key - String - 是否必填：否 -（过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。使用请参考示例4</li>\n\n每次请求的 `Filters` 的上限为10， `Filter.Values` 的上限为5。参数不支持同时指定 `CommandIds` 和 `Filters` 。",
-          "example": "无",
+          "example": "[ { \"Name\": \"command-id\", \"Values\": [\"cmd-nrncl292\"] } ]",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -1278,7 +1278,7 @@
         {
           "disabled": false,
           "document": "命令详情列表。",
-          "example": "无",
+          "example": "[{   \"CommandId\": \"cmd-fqk6gaqy\",   \"CommandName\": \"anchorpeng-test002\",   \"CommandType\": \"SHELL\",   \"Content\": \"ZWNobyB7e3Rlc3R9fQ==\",   \"CreatedBy\": \"USER\",   \"CreatedTime\": \"2023-08-28T08:13:51Z\",   \"DefaultParameterConfs\": [     {       \"ParameterDescription\": \"for test\",       \"ParameterName\": \"test\",       \"ParameterValue\": \"666\"     }   ],   \"DefaultParameters\": \"\",   \"Description\": \"\",   \"EnableParameter\": true,   \"FormattedDescription\": \"\",   \"OutputCOSBucketUrl\": \"\",   \"OutputCOSKeyPrefix\": \"\",   \"Scenes\": [],   \"Tags\": [],   \"Timeout\": 60,   \"UpdatedTime\": \"2023-08-28T08:13:51Z\",   \"Username\": \"root\",   \"WorkingDirectory\": \"/root\" }]",
           "member": "Command",
           "name": "CommandSet",
           "output_required": true,
@@ -1309,7 +1309,7 @@
         {
           "disabled": false,
           "document": "过滤条件。<br>\n\n<li> invocation-id - String - 是否必填：否 -（过滤条件）按照执行活动ID过滤。</li> <li> invocation-task-id - String - 是否必填：否 -（过滤条件）按照执行任务ID过滤。</li> <li> instance-id - String - 是否必填：否 -（过滤条件）按照实例ID过滤。</li> <li> command-id - String - 是否必填：否 -（过滤条件）按照命令ID过滤。</li> <br>每次请求的 `Filters` 的上限为10， `Filter.Values` 的上限为5。参数不支持同时指定 `InvocationTaskIds` 和 `Filters` 。",
-          "example": "无",
+          "example": "[ { \"Name\": \"instance-id\", \"Values\": [\"ins-zcewfho0\"] } ]",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -1361,7 +1361,7 @@
         {
           "disabled": false,
           "document": "执行任务列表。",
-          "example": "无",
+          "example": "[{         \"CommandDocument\": {           \"CommandType\": \"POWERSHELL\",           \"Content\": \"cHdk\",           \"OutputCOSBucketUrl\": \"\",           \"OutputCOSKeyPrefix\": \"\",           \"Timeout\": 60,           \"Username\": \"System\",           \"WorkingDirectory\": \"C:\\\\Program Files\\\\qcloud\\\\tat_agent\\\\workdir\"         },         \"CommandId\": \"cmd-f3epw86m\",         \"CreatedTime\": \"2024-10-25T03:18:37Z\",         \"EndTime\": \"2024-10-25T03:18:39Z\",         \"ErrorInfo\": \"\",         \"InstanceId\": \"rins-lpuf78i4\",         \"InvocationId\": \"inv-fc91n6g7k1\",         \"InvocationSource\": \"USER\",         \"InvocationTaskId\": \"invt-fc91n6g7k2\",         \"StartTime\": \"2024-10-25T03:18:38Z\",         \"TaskResult\": {           \"Dropped\": 0,           \"ExecEndTime\": \"2024-10-25T03:18:39Z\",           \"ExecStartTime\": \"2024-10-25T03:18:38Z\",           \"ExitCode\": 0,           \"Output\": \"\",           \"OutputUploadCOSErrorInfo\": \"\",           \"OutputUrl\": \"\"         },         \"TaskStatus\": \"SUCCESS\",         \"UpdatedTime\": \"2024-10-25T03:18:39Z\"       }]",
           "member": "InvocationTask",
           "name": "InvocationTaskSet",
           "output_required": true,
@@ -1530,8 +1530,8 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件：\n\n<li> invoker-id - String - 是否必填：否 - （过滤条件）按执行器ID过滤。\n<li> command-id - String - 是否必填：否 - （过滤条件）按命令ID过滤。\n<li> type - String - 是否必填：否 - （过滤条件）按执行器类型过滤。",
-          "example": "无",
+          "document": "过滤条件：<li> invoker-id - String - 是否必填：否 - （过滤条件）按执行器ID过滤。</li> <li> command-id - String - 是否必填：否 - （过滤条件）按命令ID过滤。</li> <li> type - String - 是否必填：否 - （过滤条件）按执行器类型过滤。</li>",
+          "example": "[ { \"Name\": \"command-id\", \"Values\": [\"cmd-nrncl292\"] } ]",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -1567,17 +1567,17 @@
           "example": "10",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "执行器信息。",
-          "example": "无",
+          "example": "[       {         \"CommandId\": \"cmd-lvj80ae8\",         \"CreatedTime\": \"2024-10-25T03:26:04Z\",         \"Enable\": true,         \"InstanceIds\": [           \"ins-6t770knh\"         ],         \"InvokerId\": \"ivk-ngqk4bda\",         \"Name\": \"test\",         \"Parameters\": \"\",         \"ScheduleSettings\": {           \"InvokeTime\": \"\",           \"Policy\": \"ONCE\",           \"Recurrence\": \"\"         },         \"Type\": \"SCHEDULE\",         \"UpdatedTime\": \"2024-10-25T22:24:13Z\",         \"Username\": \"\"       }]",
           "member": "Invoker",
           "name": "InvokerSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1611,7 +1611,7 @@
         {
           "disabled": false,
           "document": "资源额度列表",
-          "example": "无",
+          "example": "[       {         \"ResourceName\": \"COMMAND\",         \"ResourceQuotaTotal\": 500,         \"ResourceQuotaUsed\": 27       }     ]",
           "member": "GeneralResourceQuotaSet",
           "name": "GeneralResourceQuotaSet",
           "output_required": false,
@@ -1713,7 +1713,7 @@
         {
           "disabled": false,
           "document": "注册码信息列表。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[       {         \"CreatedTime\": \"2024-10-25T03:32:50Z\",         \"Description\": \"\",         \"Enabled\": false,         \"ExpiredTime\": \"2024-10-25T07:32:50Z\",         \"InstanceNamePrefix\": \"xxx\",         \"IpAddressRange\": \"\",         \"RegisterCodeId\": \"67c6df82-fa3e-48fb-9c17-07e3e1e9c2c3\",         \"RegisterLimit\": 10,         \"RegisteredCount\": 0,         \"UpdatedTime\": \"2024-10-25T03:32:50Z\"       }]",
           "member": "RegisterCodeInfo",
           "name": "RegisterCodeSet",
           "output_required": true,
@@ -1744,7 +1744,7 @@
         {
           "disabled": false,
           "document": "过滤器列表。\n\n- instance-name\n\n按照【实例名称】进行过滤。\n类型：String\n必选：否\n\n- instance-id\n\n按照【实例ID】进行过滤。\n类型：String\n必选：否\n\n- register-code-id\n\n按照【注册码ID】进行过滤。\n类型：String\n必选：否\n\n- sys-name\n\n按照【操作系统类型】进行过滤，取值：Linux | Windows。\n类型：String\n必选：否\n\n",
-          "example": "无",
+          "example": "[     {         \"name\": \"instance-id\",         \"value\": \"67c6df82-fa3e-48fb-9c17-07e3e1e9c2c3\"     } ]",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -1787,7 +1787,7 @@
         {
           "disabled": false,
           "document": "被托管的实例信息的列表。",
-          "example": "无",
+          "example": "[       {         \"CreatedTime\": \"2024-08-13T08:05:01Z\",         \"HostName\": \"10_2_1_37\",         \"InstanceId\": \"rins-5q722wzy\",         \"InstanceName\": \"qta-rins-8263-002\",         \"LocalIp\": \"10.2.1.37\",         \"MachineId\": \"64ec1c6c-904d-42af-a843-9fd32275447f\",         \"PublicKey\": \"-----BEGIN RSA PUBLIC KEY-----\\nMIIBCgKCAQEAyAiEY6k4xA2BZ8lSqtFEG5LsVzk7MoS0huipVKxhwZjePnKoiG1K\\n3DSrIk+RlU5RHOHEOSH2kM4fea+GI6YJ70KAK6aNSlUnNOX1kO/wjZCo+crr28ij\\nuMRO9zMCzHW04lknvQsWfL3O59+WwA35H8lBixocTyi1c9hPSXjDPiKqOyTVTPJm\\nfNbHaa7U8D0FFFi0NXexYfZVDExtZfJmYYkGBot8aVOv/sFFmqHMSrgVxdGrWbQ4\\nTJpPvA16eEUi29Ql68DZ2elO31gb1Avlr7FoC+UKIKfYZ8mnThsO5ot/+zMqVFRV\\nodxraUobPkEwfLEv9iRrGcriPn8Vj66fwQIDAQAB\\n-----END RSA PUBLIC KEY-----\\n\",         \"RegisterCodeId\": \"b6eff1ff-6f43-4e89-aff1-9b5604fa4620\",         \"Status\": \"Offline\",         \"SystemName\": \"Windows\",         \"UpdatedTime\": \"2024-08-13T08:05:03Z\"       }]",
           "member": "RegisterInstanceInfo",
           "name": "RegisterInstanceSet",
           "output_required": true,

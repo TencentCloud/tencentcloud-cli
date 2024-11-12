@@ -3704,6 +3704,14 @@
         "title": "示例"
       }
     ],
+    "ModifyMachineLoginType": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyMachineLoginType\n<公共请求参数>\n\n{\n    \"LoginType\": 1,\n    \"InstanceId\": \"ins-gcrxifhk\",\n    \"Quuid\": \"d2f4a77b-d9c9-4161-999f-xxxxxxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5c859fa9-c79f-4c3b-8bef-ec59a996bc9f\",\n        \"ResultCode\": 0,\n        \"ResultMessage\": \"\"\n    }\n}",
+        "title": "succ"
+      }
+    ],
     "ModifyMachineRemark": [
       {
         "document": "修改主机备注信息",

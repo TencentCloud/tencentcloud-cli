@@ -1,3 +1,60 @@
+# Release 3.0.1096.1
+
+## 弹性伸缩(as) 版本：2018-04-19
+
+### 第 39 次发布
+
+发布时间：2024-11-13 01:08:45
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Advice](http://document.tencentcloudapi.woa.com/document/product/377/20453#Advice)
+
+	* <font color="#dd0000">**修改成员**：</font>Level
+
+* [ScalingPolicy](http://document.tencentcloudapi.woa.com/document/product/377/20453#ScalingPolicy)
+
+	* <font color="#dd0000">**修改成员**：</font>ScalingPolicyType
+
+
+
+
+## 主机安全(cwp) 版本：2018-02-28
+
+### 第 109 次发布
+
+发布时间：2024-11-13 01:15:34
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ModifyMachineLoginType](http://document.tencentcloudapi.woa.com/document/product/296/85215)
+
+
+
+## 域名注册(domain) 版本：2018-08-08
+
+### 第 35 次发布
+
+发布时间：2024-11-13 01:19:15
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateInternalComplaint](http://document.tencentcloudapi.woa.com/document/product/242/85217)
+
+
+
 # Release 3.0.1095.1
 
 ## 本地专用集群(cdc) 版本：2020-12-14

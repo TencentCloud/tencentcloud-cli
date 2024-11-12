@@ -18,7 +18,7 @@ Output:
         "ScheduledActionSet": [
             {
                 "ScheduledActionId": "asst-jf898dps",
-                "ScheduledActionName": "test",
+                "ScheduledActionName": "product-a0-sche0",
                 "AutoScalingGroupId": "asg-keqt9eg1",
                 "StartTime": "2022-02-22T16:00:00+08:00",
                 "Recurrence": "0 0 * * *",

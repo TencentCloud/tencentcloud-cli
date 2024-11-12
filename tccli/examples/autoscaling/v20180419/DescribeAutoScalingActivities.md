@@ -19,7 +19,7 @@ Output:
             {
                 "Description": "Activity was launched in response to a difference between desired capacity and actual capacity, scale out 1 instance(s).",
                 "AutoScalingGroupId": "asg-2umy3jbd",
-                "ActivityRelatedInstanceSet": [
+                "RelatedInstanceSet": [
                     {
                         "InstanceId": "ins-q3ss14yo",
                         "InstanceStatus": "SUCCESSFUL"
@@ -64,7 +64,7 @@ Output:
             {
                 "Description": "Activity was launched in response to a difference between desired capacity and actual capacity, scale out 1 instance(s).",
                 "AutoScalingGroupId": "asg-2umy3jbd",
-                "ActivityRelatedInstanceSet": [
+                "RelatedInstanceSet": [
                     {
                         "InstanceId": "ins-q3ss14yo",
                         "InstanceStatus": "SUCCESSFUL"

@@ -8,9 +8,9 @@ Input:
 tccli cdc ModifyDedicatedClusterInfo --cli-unfold-argument  \
     --DedicatedClusterId cluster-dfaf323 \
     --Description 专用集群 \
-    --Zone site3 \
+    --Zone ap-guangzhou-2 \
     --Name 专用集群 \
-    --SiteId 1000001
+    --SiteId site-pp2cbp9k
 ```
 
 Output: 

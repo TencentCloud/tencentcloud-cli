@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cdc DeleteDedicatedClusters --cli-unfold-argument  \
-    --DedicatedClusterIds cluster-gbo27yc4
+    --DedicatedClusterIds cluster-dfaf323
 ```
 
 Output: 

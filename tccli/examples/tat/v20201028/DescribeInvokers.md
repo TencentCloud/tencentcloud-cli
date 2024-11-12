@@ -31,7 +31,7 @@ Output:
                 "ScheduleSettings": {
                     "Policy": "ONCE",
                     "Recurrence": "",
-                    "InvokeTime": ""
+                    "InvokeTime": "2021-08-30T06:42:02Z"
                 },
                 "CreatedTime": "2021-08-30T06:42:02Z",
                 "UpdatedTime": "2021-09-09T12:07:00Z"

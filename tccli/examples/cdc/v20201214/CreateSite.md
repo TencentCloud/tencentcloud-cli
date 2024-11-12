@@ -11,8 +11,8 @@ tccli cdc CreateSite --cli-unfold-argument  \
     --Note newsite \
     --FiberType MM \
     --OpticalStandard 1000Base-SX \
-    --PowerConnectors 2 \
-    --PowerFeedDrop above \
+    --PowerConnectors 380VAC3P \
+    --PowerFeedDrop UP \
     --MaxWeight 500 \
     --PowerDrawKva 3000 \
     --UplinkSpeedGbps 10 \
