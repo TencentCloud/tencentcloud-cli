@@ -29,7 +29,7 @@ Output:
                 "DedicatedClusterOrderId": "ord-rd0ty398",
                 "DedicatedClusterOrderItems": [
                     {
-                        "ComputeFormat": "",
+                        "ComputeFormat": "1 SA5t.60XLARGE1076",
                         "Count": 1,
                         "CreateTime": "2024-09-22T00:00:00+00:00",
                         "DedicatedClusterTypeId": "dctype-00100001",

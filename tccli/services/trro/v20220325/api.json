@@ -198,13 +198,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "删除失败的设备ID列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "删除失败的设备ID列表",
           "example": "[\"dev1\"]",
           "member": "string",
           "name": "FailedDeviceIds",
-          "required": true,
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -420,7 +420,7 @@
           "example": "f3glr49rc96pralw",
           "member": "string",
           "name": "ProjectId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1387,7 +1387,7 @@
         {
           "disabled": false,
           "document": "已经绑定licenseId列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"341c4a1d-3852-4eeb-bbdd-7e216f5c7345\"]",
           "member": "string",
           "name": "LicenseIds",
           "output_required": true,
@@ -1516,6 +1516,7 @@
           "example": "12",
           "member": "int64",
           "name": "AvailableCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1757,63 +1758,63 @@
       "members": [
         {
           "disabled": false,
-          "document": "该类型的license个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该类型的license个数",
           "example": "3",
           "member": "int64",
           "name": "Count",
-          "required": false,
+          "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "license状态：0:未绑定；1:已绑定；2:已停服；3:已退费\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "license状态：0:未绑定；1:已绑定；2:已停服；3:已退费",
           "example": "1",
           "member": "int64",
           "name": "Status",
-          "required": false,
+          "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "到期时间戳：s\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "到期时间戳：s",
           "example": "1678503945",
           "member": "string",
           "name": "ExpireTime",
-          "required": false,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "服务时长：s\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "服务时长：s",
           "example": "86400",
           "member": "string",
           "name": "Duration",
-          "required": false,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "剩余天数：天\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "剩余天数：天",
           "example": "30",
           "member": "int64",
           "name": "RemainDay",
-          "required": false,
+          "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "该类型的licenseId列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "该类型的licenseId列表",
+          "example": "[ \"478c67c3-19a1-4e5d-ae11-ad68883793ec\",                     \"6d05a06f-db82-4f61-8dd2-996c3378ec26\" ]",
           "member": "string",
           "name": "LicenseIds",
-          "required": false,
+          "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1928,23 +1929,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "添加关联失败的现场设备ID列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "添加关联失败的现场设备ID列表",
           "example": "无",
           "member": "string",
           "name": "FailedInsertIds",
-          "required": true,
+          "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "解除关联失败的现场设备ID列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "解除关联失败的现场设备ID列表",
           "example": "无",
           "member": "string",
           "name": "FailedDeleteIds",
-          "required": true,
+          "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -2014,63 +2015,63 @@
       "members": [
         {
           "disabled": false,
-          "document": "网卡序号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "网卡序号",
           "example": "0",
           "member": "int64",
           "name": "NetId",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "网卡IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "网卡IP",
           "example": "\"10.211.65.6\"",
           "member": "string",
           "name": "NetIp",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "时延，单位ms\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "时延，单位ms",
           "example": "[10,20,30,20,10]",
           "member": "int64",
           "name": "Rtt",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "丢包率，单位%\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "丢包率，单位%",
           "example": "[10,20,30,20,10]",
           "member": "int64",
           "name": "Lost",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "发送bps，单位kbps\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "发送bps，单位kbps",
           "example": "[10,20,30,20,10]",
           "member": "int64",
           "name": "SendBps",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "接收bps，单位kbps\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "接收bps，单位kbps",
           "example": "[10,20,30,20,10]",
           "member": "int64",
           "name": "RecvBps",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2120,7 +2121,7 @@
           "example": "f3glr49rc96pralw",
           "member": "string",
           "name": "ProjectId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2130,17 +2131,17 @@
           "example": "project1",
           "member": "string",
           "name": "ProjectName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "项目描述",
-          "example": "test",
+          "example": "project1 description",
           "member": "string",
           "name": "ProjectDescription",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2150,7 +2151,7 @@
           "example": "black",
           "member": "string",
           "name": "PolicyMode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2160,7 +2161,7 @@
           "example": "2022-03-25T09:12:11+08:00",
           "member": "datetime_iso",
           "name": "ModifyTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -2173,30 +2174,30 @@
         {
           "disabled": false,
           "document": "会话ID",
-          "example": "xxx",
+          "example": "0a6b3e53-9307-4358-a5b6-76e3e4d027da-0",
           "member": "string",
           "name": "SessionId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "远端设备ID",
-          "example": "xxxxx",
+          "example": "ctrl1",
           "member": "string",
           "name": "RemoteDeviceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "现场设备ID",
-          "example": "xxxxx",
+          "example": "dev1",
           "member": "string",
           "name": "FieldDeviceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2206,7 +2207,7 @@
           "example": "1920*1080",
           "member": "string",
           "name": "Resolution",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2216,7 +2217,7 @@
           "example": "1650000000",
           "member": "uint64",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2226,7 +2227,7 @@
           "example": "1650000060",
           "member": "uint64",
           "name": "LatestUpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -2269,7 +2270,7 @@
         {
           "disabled": false,
           "document": "会话ID",
-          "example": "xxxx",
+          "example": "0a6b3e53-9307-4358-a5b6-76e3e4d027da-1",
           "member": "string",
           "name": "SessionId",
           "output_required": true,
@@ -2359,7 +2360,7 @@
         {
           "disabled": false,
           "document": "项目ID",
-          "example": "xxx",
+          "example": "m82k5408n675phvb",
           "member": "string",
           "name": "ProjectId",
           "output_required": true,
@@ -2369,7 +2370,7 @@
         {
           "disabled": false,
           "document": "设备ID",
-          "example": "xxx",
+          "example": "dev1",
           "member": "string",
           "name": "DeviceId",
           "output_required": true,
@@ -2589,7 +2590,7 @@
         {
           "disabled": false,
           "document": "多网卡信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[                     {                         \"NetId\": 0,                         \"NetIp\": \"192.168.12.4\",                         \"Rtt\": [                             132,                             126                         ],                         \"Lost\": [                             0,                             0                         ],                         \"SendBps\": [                             300,                             847                         ],                         \"RecvBps\": [                             202,                             75                         ]                     },                     {                         \"NetId\": 1,                         \"NetIp\": \"192.168.21.2\",                         \"Rtt\": [                             0,                             0                         ],                         \"Lost\": [                             0,                             1                         ],                         \"SendBps\": [                             7,                             2                         ],                         \"RecvBps\": [                             0,                             10                         ]                     }                 ]",
           "member": "MultiNet",
           "name": "MultiNet",
           "output_required": false,
@@ -2605,30 +2606,30 @@
         {
           "disabled": false,
           "document": "会话ID",
-          "example": "xxx",
+          "example": "6c03e6d8-cac1-44bd-3c17-90148b37d1a8-0",
           "member": "string",
           "name": "SessionId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "远端设备ID",
-          "example": "xxxxx",
+          "example": "ctrl1",
           "member": "string",
           "name": "RemoteDeviceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "现场设备ID",
-          "example": "xxxxx",
+          "example": "dev1",
           "member": "string",
           "name": "FieldDeviceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2638,7 +2639,7 @@
           "example": "1920*1080",
           "member": "string",
           "name": "Resolution",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2648,7 +2649,7 @@
           "example": "1650000000",
           "member": "uint64",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2658,7 +2659,7 @@
           "example": "1650000060",
           "member": "uint64",
           "name": "EndTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2668,7 +2669,7 @@
           "example": "good",
           "member": "string",
           "name": "Quality",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }

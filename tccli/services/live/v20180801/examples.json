@@ -16,6 +16,14 @@
         "title": "添加域名"
       }
     ],
+    "AddLiveDomainInner": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddLiveDomain\n<公共请求参数>\n\n{\n    \"DomainType\": \"0\",\n    \"DomainName\": \"www.test.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "添加域名"
+      }
+    ],
     "AddLiveWatermark": [
       {
         "document": "添加水印",
@@ -25,6 +33,14 @@
       }
     ],
     "AuthenticateDomainOwner": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AuthenticateDomainOwner\n<公共请求参数>\n\n{\n    \"VerifyType\": \"dnsCheck\",\n    \"DomainName\": \"akxynt.cn\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Content\": \"cssauth_da06159efa92c365182ba5d453a7b65b\",\n        \"MainDomain\": \"akxynt.cn\",\n        \"RequestId\": \"20a9d1c1-7b2a-48b5-9a78-c0bccab3dfb6\",\n        \"Status\": 0\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "AuthenticateDomainOwnerInner": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AuthenticateDomainOwner\n<公共请求参数>\n\n{\n    \"VerifyType\": \"dnsCheck\",\n    \"DomainName\": \"akxynt.cn\"\n}",
@@ -265,6 +281,14 @@
       }
     ],
     "DeleteLiveDomain": [
+      {
+        "document": "",
+        "input": "https://live.tencentcloudapi.com/?Action=DeleteLiveDomain\n&DomainName=www.test.com\n&DomainType=0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "删除域名"
+      }
+    ],
+    "DeleteLiveDomainInner": [
       {
         "document": "",
         "input": "https://live.tencentcloudapi.com/?Action=DeleteLiveDomain\n&DomainName=www.test.com\n&DomainType=0\n&<公共请求参数>",
@@ -568,6 +592,14 @@
         "title": "请求示例"
       }
     ],
+    "DescribeLiveDomainInner": [
+      {
+        "document": "",
+        "input": "https://live.tencentcloudapi.com/?Action=DescribeLiveDomain\n&DomainName=yourdomain.test.com\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"DomainInfo\": {\n            \"Name\": \"abc.com\",\n            \"Type\": 1,\n            \"Status\": 1,\n            \"CreateTime\": \"2018-08-29 10:00:00\",\n            \"IsMiniProgramLive\": 0,\n            \"BCName\": 1,\n            \"TargetDomain\": \"yourdomain.test2.com\",\n            \"CurrentCName\": \"yourdomain.test.com\",\n            \"IsDelayLive\": 0,\n            \"RentTag\": 0,\n            \"PlayType\": 0,\n            \"RentExpireTime\": \"0000-00-00 00:00:00\"\n        }\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
     "DescribeLiveDomainPlayInfoList": [
       {
         "document": "",
@@ -587,6 +619,14 @@
     "DescribeLiveDomains": [
       {
         "document": "接入标签鉴权。",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLiveDomains\n<公共请求参数>\n\n{\n    \"IsDelayLive\": \"0\",\n    \"PageSize\": \"10\",\n    \"PageNum\": \"1\",\n    \"DomainStatus\": \"1\",\n    \"DomainType\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"AllCount\": 2,\n        \"CreateLimitCount\": 0,\n        \"PlayTypeCount\": [\n            1,\n            2,\n            3\n        ],\n        \"DomainList\": [\n            {\n                \"Name\": \"abc.com\",\n                \"IsMiniProgramLive\": 0,\n                \"Type\": 1,\n                \"Status\": 1,\n                \"PlayType\": 1,\n                \"IsDelayLive\": 0,\n                \"CreateTime\": \"2018-08-29 10:00:00\",\n                \"BCName\": 1,\n                \"CurrentCName\": \"\",\n                \"TargetDomain\": \"abc.com.liveplay.myqcloud.com\",\n                \"RentTag\": 0,\n                \"RentExpireTime\": \"0000-00-00 00:00:00\"\n            }\n        ]\n    }\n}",
+        "title": "查询域名列表"
+      }
+    ],
+    "DescribeLiveDomainsInner": [
+      {
+        "document": "",
         "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLiveDomains\n<公共请求参数>\n\n{\n    \"IsDelayLive\": \"0\",\n    \"PageSize\": \"10\",\n    \"PageNum\": \"1\",\n    \"DomainStatus\": \"1\",\n    \"DomainType\": \"1\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"AllCount\": 2,\n        \"CreateLimitCount\": 0,\n        \"PlayTypeCount\": [\n            1,\n            2,\n            3\n        ],\n        \"DomainList\": [\n            {\n                \"Name\": \"abc.com\",\n                \"IsMiniProgramLive\": 0,\n                \"Type\": 1,\n                \"Status\": 1,\n                \"PlayType\": 1,\n                \"IsDelayLive\": 0,\n                \"CreateTime\": \"2018-08-29 10:00:00\",\n                \"BCName\": 1,\n                \"CurrentCName\": \"\",\n                \"TargetDomain\": \"abc.com.liveplay.myqcloud.com\",\n                \"RentTag\": 0,\n                \"RentExpireTime\": \"0000-00-00 00:00:00\"\n            }\n        ]\n    }\n}",
         "title": "查询域名列表"
@@ -1206,6 +1246,14 @@
         "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPullStreamStatus\n<公共请求参数>\n\n{\n    \"Status\": \"2\",\n    \"ConfigIds\": [\n        \"456\",\n        \"123\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "请求示例"
+      }
+    ],
+    "OpenLiveServiceInner": [
+      {
+        "document": "",
+        "input": "https://live.tencentcloudapi.com/?Action=OpenLiveServiceInner\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "开通直播服务"
       }
     ],
     "RestartLivePullStreamTask": [

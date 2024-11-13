@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli fmu CreateModel --cli-unfold-argument  \
-    --LUTFile xxxxx \
+    --LUTFile /9j/4AAQSkZJRgABAQAAAQABAAD/4gIo...lftXF/DjFZNXoSP5V2U0HMt/1FQf/Z \
     --Description 红色
 ```
 
@@ -31,7 +31,7 @@ Input:
 
 ```
 tccli fmu CreateModel --cli-unfold-argument  \
-    --LUTFile xxxxx \
+    --LUTFile /9j/4AAQSkZJRgABAQAAAQABAAD/4gIo...lftXF/DjFZNXoSP5V2U0HMt/1FQf/Z \
     --Description 红色
 ```
 
@@ -39,7 +39,7 @@ Output:
 ```
 {
     "Response": {
-        "ModelId": "id",
+        "ModelId": "mo_0_1731389015111_1259088222_3",
         "RequestId": "3c140219-cfe9-470e-b241-907877d6fb03"
     }
 }

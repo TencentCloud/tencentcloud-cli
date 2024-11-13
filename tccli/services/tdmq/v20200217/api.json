@@ -2958,6 +2958,24 @@
           "name": "RequestToken",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启标识可用区，true 开启，不传入或者 false 表示不开启",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableZone",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "可用区 Id，比如ap-beijing-4",
+          "example": "ap-beijing-4",
+          "member": "string",
+          "name": "ZoneName",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

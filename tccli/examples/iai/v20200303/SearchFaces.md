@@ -1,6 +1,6 @@
 **Example 1: 错误示例**
 
-MaxFaceNum不能大于10
+MaxFaceNum不能大于10。
 
 Input: 
 
@@ -26,7 +26,7 @@ Output:
 
 **Example 2: 错误示例-2**
 
-图片URL错误
+图片URL错误。
 
 Input: 
 
@@ -51,7 +51,7 @@ Output:
 
 **Example 3: 人脸搜索接口**
 
-
+人脸搜索。
 
 Input: 
 

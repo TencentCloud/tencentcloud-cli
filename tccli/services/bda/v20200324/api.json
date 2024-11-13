@@ -113,7 +113,7 @@
       "status": "online"
     },
     "SegmentPortraitPic": {
-      "document": "即二分类人像分割，识别传入图片中人体的完整轮廓，进行抠像。\n",
+      "document": "即二分类人像分割，识别传入图片中人体的完整轮廓，进行抠像。",
       "input": "SegmentPortraitPicRequest",
       "name": "人像分割",
       "output": "SegmentPortraitPicResponse",
@@ -672,7 +672,7 @@
         {
           "disabled": false,
           "document": "需要分割的视频URL，可外网访问。",
-          "example": "test.video.url",
+          "example": "https://liudehua-9527.cos.ap-guangzhou.myqcloud.com/input.mp4",
           "member": "string",
           "name": "VideoUrl",
           "required": true,
@@ -681,7 +681,7 @@
         {
           "disabled": false,
           "document": "背景图片URL。 \n可以将视频背景替换为输入的图片。 \n如果不输入背景图片，则输出人像区域mask。",
-          "example": "test.image.url",
+          "example": "https://liudehua-9527.cos.ap-guangzhou.myqcloud.com/input.jpeg",
           "member": "string",
           "name": "BackgroundImageUrl",
           "required": false,
@@ -690,7 +690,7 @@
         {
           "disabled": false,
           "document": "预留字段，后期用于展示更多识别信息。",
-          "example": "无",
+          "example": "{\"X-TEST\": \"test\"}",
           "member": "string",
           "name": "Config",
           "required": false,
@@ -705,10 +705,10 @@
         {
           "disabled": false,
           "document": "任务标识ID,可以用与追溯任务状态，查看任务结果",
-          "example": "fakeTaskID",
+          "example": "1243358054699911111",
           "member": "string",
           "name": "TaskID",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -718,7 +718,7 @@
           "example": "30",
           "member": "float",
           "name": "EstimatedProcessingTime",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -867,7 +867,7 @@
         {
           "disabled": false,
           "document": "在提交分割任务成功时返回的任务标识ID。",
-          "example": "",
+          "example": "12433580546999111111",
           "member": "string",
           "name": "TaskID",
           "required": true,
@@ -882,45 +882,50 @@
         {
           "disabled": false,
           "document": "当前任务状态：\nQUEUING 排队中\nPROCESSING 处理中\nFINISHED 处理完成",
-          "example": "",
+          "example": "PROCESSING",
           "member": "string",
           "name": "TaskStatus",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "分割后视频URL, 存储于腾讯云COS\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "https://liudehua-9527.cos.ap-guangzhou.myqcloud.com/result.mp4?q-sign-algorithm=sha1&q-ak=AKID********EXAMPLE&q-sign-time=8888;9999&q-key-time=8888;9999&q-header-list=&q-url-param-list=&q-signature=7de87f7bf9cfd23df9da32f46661e7cf97a5603c",
           "member": "string",
           "name": "ResultVideoUrl",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "分割后视频MD5，用于校验\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "4972F083D7F05E9474FDFA52AA616DEE",
           "member": "string",
           "name": "ResultVideoMD5",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "视频基本信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "{\"FrameWidth\":720,\"FrameHeight\":1280,\"FramesPerSecond\":29,\"Duration\":0,\"TotalFrames\":439}",
           "member": "VideoBasicInformation",
           "name": "VideoBasicInformation",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "分割任务错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "video error",
           "member": "string",
           "name": "ErrorMsg",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1778,7 +1783,7 @@
         {
           "disabled": false,
           "document": "此参数为分割选项，请根据需要选择自己所想从图片中分割的部分。注意所有选项均为非必选，如未选择则值默认为false, 但是必须要保证多于一个选项的描述为true。",
-          "example": "{",
+          "example": "{\"Background\": false}",
           "member": "SegmentationOptions",
           "name": "SegmentationOptions",
           "required": true,
@@ -1787,7 +1792,7 @@
         {
           "disabled": false,
           "document": "图片 base64 数据，base64 编码后大小不可超过5M。\n图片分辨率须小于2000*2000。 \n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
-          "example": "base64",
+          "example": "/9j/4AAQSkZJRgABAQAAAQABAAD/4gIo...lftXF/DjFZNXoSP5V2U0HMt/1FQf/Z",
           "member": "string",
           "name": "Image",
           "required": false,
@@ -1796,7 +1801,7 @@
         {
           "disabled": false,
           "document": "图片的 Url 。\nUrl、Image必须提供一个，如果都提供，只使用 Url。\n图片分辨率须小于2000*2000 ，图片 base64 编码后大小不可超过5M。 \n图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。  \n非腾讯云存储的Url速度和稳定性可能受一定影响。 \n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
-          "example": "test.jpg",
+          "example": "https://liudehua-9527.cos.ap-guangzhou.myqcloud.com/input.jpeg",
           "member": "string",
           "name": "Url",
           "required": false,
@@ -1811,27 +1816,30 @@
         {
           "disabled": false,
           "document": "根据指定标签分割输出的透明背景人像图片的 base64 数据。",
-          "example": "base64",
+          "example": "/9j/4AAQSkZJRgABAQAAAQABAAD/4gIo...lftXF/DjFZNXoSP5V2U0HMt/1FQf/Z",
           "member": "string",
           "name": "PortraitImage",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "指定标签处理后的Mask。一个通过 Base64 编码的文件，解码后文件由 Float 型浮点数组成。这些浮点数代表原图从左上角开始的每一行的每一个像素点，每一个浮点数的值是原图相应像素点位于人体轮廓内的置信度（0-1）转化的灰度值（0-255）",
-          "example": "base64",
+          "example": "/9j/4AAQSkZJRgABAQAAAQABAAD/4gIo...lftXF/DjFZNXoSP5V2U0HMt/1FQf/Z",
           "member": "string",
           "name": "MaskImage",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "坐标信息。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[{",
+          "example": "[{\"Y\":1,\"X\":2,\"Height\":3,\"Width\":4,\"Label\":\"Head\"}]",
           "member": "ImageRect",
           "name": "ImageRects",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1850,7 +1858,7 @@
         {
           "disabled": false,
           "document": "图片 base64 数据，base64 编码后大小不可超过5M。\n图片分辨率须小于2000*2000。 \n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
-          "example": "xxxxx",
+          "example": "/9j/4AAQSkZJRgABAQAAAQABAAD/4gIo...lftXF/DjFZNXoSP5V2U0HMt/1FQf/Z",
           "member": "string",
           "name": "Image",
           "required": false,
@@ -1859,7 +1867,7 @@
         {
           "disabled": false,
           "document": "图片的 Url 。\nUrl、Image必须提供一个，如果都提供，只使用 Url。\n图片分辨率须小于2000*2000 ，图片 base64 编码后大小不可超过5M。 \n图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。  \n非腾讯云存储的Url速度和稳定性可能受一定影响。 \n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
-          "example": "IamNotAUrl",
+          "example": "https://liudehua-9527.cos.ap-guangzhou.myqcloud.com/input.jpeg",
           "member": "string",
           "name": "Url",
           "required": false,
@@ -1892,20 +1900,20 @@
         {
           "disabled": false,
           "document": "处理后的图片 base64 数据，透明背景图。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "******",
+          "example": "/9j/4AAQSkZJRgABAQAAAQABAAD/4gIo...lftXF/DjFZNXoSP5V2U0HMt/1FQf/Z",
           "member": "string",
           "name": "ResultImage",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "一个通过 base64 编码的文件，解码后文件由 Float 型浮点数组成。这些浮点数代表原图从左上角开始的每一行的每一个像素点，每一个浮点数的值是原图相应像素点位于人体轮廓内的置信度（0-1）转化的灰度值（0-255）。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "******",
+          "example": "/9j/4AAQSkZJRgABAQAAAQABAAD/4gIo...lftXF/DjFZNXoSP5V2U0HMt/1FQf/Z",
           "member": "string",
           "name": "ResultMask",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1915,27 +1923,27 @@
           "example": "false",
           "member": "bool",
           "name": "HasForeground",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "支持将处理过的图片 base64 数据，透明背景图以Url的形式返回值，Url有效期为30分钟。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "https://liudehua-9527.cos.ap-guangzhou.myqcloud.com/result.mp4?q-sign-algorithm=sha1&q-ak=AKID********EXAMPLE&q-sign-time=8888;9999&q-key-time=8888;9999&q-header-list=&q-url-param-list=&q-signature=7de87f7bf9cfd23df9da32f46661e7cf97a5603c",
           "member": "string",
           "name": "ResultImageUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "一个通过 base64 编码的文件，解码后文件由 Float 型浮点数组成。支持以Url形式的返回值；Url有效期为30分钟。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "“”",
+          "example": "https://liudehua-9527.cos.ap-guangzhou.myqcloud.com/mask.mp4?q-sign-algorithm=sha1&q-ak=AKID********EXAMPLE&q-sign-time=8888;9999&q-key-time=8888;9999&q-header-list=&q-url-param-list=&q-signature=7de87f7bf9cfd23df9da32f46661e7cf97a5603c",
           "member": "string",
           "name": "ResultMaskUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2170,7 +2178,7 @@
         {
           "disabled": false,
           "document": "在提交分割任务成功时返回的任务标识ID。",
-          "example": "",
+          "example": "12433580546999111111",
           "member": "string",
           "name": "TaskID",
           "required": true,

@@ -6,11 +6,13 @@ Input:
 
 ```
 tccli fmu TryLipstickPic --cli-unfold-argument  \
-    --Image xxxxx \
-    --LipColorInfos.0.RGBA.R 200 \
-    --LipColorInfos.0.RGBA.G 0 \
-    --LipColorInfos.0.RGBA.B 0 \
-    --LipColorInfos.0.RGBA.A 50
+    --Image /9j/4AAQSkZJRgABAQAAAQABAAD/4gIo...lftXF/DjFZNXoSP5V2U0HMt/1FQf/Z \
+    --LipColorInfos.0.RGBA.R 220 \
+    --LipColorInfos.0.RGBA.G 2 \
+    --LipColorInfos.0.RGBA.B 44 \
+    --LipColorInfos.0.RGBA.A 50 \
+    --LipColorInfos.0.ModelAlpha 50 \
+    --RspImgType base64
 ```
 
 Output: 
@@ -34,18 +36,21 @@ Input:
 
 ```
 tccli fmu TryLipstickPic --cli-unfold-argument  \
-    --Image xxxxx \
-    --LipColorInfos.0.RGBA.R 200 \
-    --LipColorInfos.0.RGBA.G 0 \
-    --LipColorInfos.0.RGBA.B 0 \
-    --LipColorInfos.0.RGBA.A 50
+    --Image /9j/4AAQSkZJRgABAQAAAQABAAD/4gIo...lftXF/DjFZNXoSP5V2U0HMt/1FQf/Z \
+    --LipColorInfos.0.RGBA.R 220 \
+    --LipColorInfos.0.RGBA.G 2 \
+    --LipColorInfos.0.RGBA.B 44 \
+    --LipColorInfos.0.RGBA.A 50 \
+    --LipColorInfos.0.ModelAlpha 50 \
+    --RspImgType base64
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "ResultImage": "base64编码的图片",
+        "ResultImage": "/9j/4AAQSkZJRgABAQAAAQABAAD/4gIo...lftXF/DjFZNXoSP5V2U0HMt/1FQf/Z",
+        "ResultUrl": "",
         "RequestId": "3c140219-cfe9-470e-b241-907877d6fb03"
     }
 }
@@ -59,15 +64,17 @@ Input:
 
 ```
 tccli fmu TryLipstickPic --cli-unfold-argument  \
-    --Image xxxxx \
-    --LipColorInfos.0.ModelId xxx
+    --Image /9j/4AAQSkZJRgABAQAAAQABAAD/4gIo...lftXF/DjFZNXoSP5V2U0HMt/1FQf/Z \
+    --LipColorInfos.0.ModelId mo_0_1622620141111_1259088111_1 \
+    --RspImgType base64
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "ResultImage": "base64编码的图片",
+        "ResultImage": "/9j/4AAQSkZJRgABAQAAAQABAAD/4gIo...lftXF/DjFZNXoSP5V2U0HMt/1FQf/Z",
+        "ResultUrl": "",
         "RequestId": "3c140219-cfe9-470e-b241-907877d6fb03"
     }
 }
@@ -81,24 +88,18 @@ Input:
 
 ```
 tccli fmu TryLipstickPic --cli-unfold-argument  \
-    --Image xxxxx \
-    --LipColorInfos.0.ModelId xxx \
-    --LipColorInfos.0.FaceRect.X 整型 \
-    --LipColorInfos.0.FaceRect.Y 整型 \
-    --LipColorInfos.0.FaceRect.Width 整型 \
-    --LipColorInfos.0.FaceRect.Height 整型 \
-    --LipColorInfos.1.ModelId xxx \
-    --LipColorInfos.1.FaceRect.X 整型 \
-    --LipColorInfos.1.FaceRect.Y 整型 \
-    --LipColorInfos.1.FaceRect.Width 整型 \
-    --LipColorInfos.1.FaceRect.Height 整型
+    --Image /9j/4AAQSkZJRgABAQAAAQABAAD/4gIo...lftXF/DjFZNXoSP5V2U0HMt/1FQf/Z \
+    --LipColorInfos.0.ModelId mo_0_1622620141111_1259088111_1 \
+    --LipColorInfos.1.ModelId mo_0_1622620141238_1259088111_2 \
+    --RspImgType base64
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "ResultImage": "base64编码的图片",
+        "ResultImage": "/9j/4AAQSkZJRgABAQAAAQABAAD/4gIo...lftXF/DjFZNXoSP5V2U0HMt/1FQf/Z",
+        "ResultUrl": "",
         "RequestId": "3c140219-cfe9-470e-b241-907877d6fb03"
     }
 }

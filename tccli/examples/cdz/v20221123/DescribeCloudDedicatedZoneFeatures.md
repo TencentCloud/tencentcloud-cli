@@ -25,7 +25,7 @@ Output:
                 "FeatureKey": "CDZ_CLB_PUSH_SWITCH",
                 "FeatureValue": "0",
                 "FeatureName": "负载均衡CLB不推量",
-                "FeatureDescription": ""
+                "FeatureDescription": "负载均衡CLB不推量"
             }
         ],
         "RequestId": "2628d149-a59c-4cf0-abc7-79ba9dc78522"

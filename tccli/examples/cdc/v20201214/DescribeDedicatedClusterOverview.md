@@ -62,8 +62,8 @@ Output:
         "HostNormalCount": 15,
         "HostStandbyCount": 0,
         "LocalNetInfo": {
-            "BGPRoute": "",
-            "LocalIp": "-",
+            "BGPRoute": "10.0.0.0/24",
+            "LocalIp": "10.0.0.0",
             "Protocol": "BGP",
             "VpcId": "vpc-0eyxjlsz"
         },

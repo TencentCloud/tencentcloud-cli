@@ -6,8 +6,9 @@ Input:
 
 ```
 tccli ft FaceCartoonPic --cli-unfold-argument  \
-    --Image xxxxx \
-    --Url xxxxx
+    --Image /9j/4AAQSkZJRgABAQAAAQABAAD/4gIo...lftXF/DjFZNXoSP5V2U0HMt/1FQf/Z \
+    --Url https://liudehua-9527.cos.ap-guangzhou.myqcloud.com/input.jpeg \
+    --RspImgType url
 ```
 
 Output: 
@@ -31,16 +32,17 @@ Input:
 
 ```
 tccli ft FaceCartoonPic --cli-unfold-argument  \
-    --Image xxxxx \
-    --Url xxxxx
+    --Image /9j/4AAQSkZJRgABAQAAAQABAAD/4gIo...lftXF/DjFZNXoSP5V2U0HMt/1FQf/Z \
+    --Url https://cos.ap-singapore.myqcloud.com/input.png \
+    --RspImgType url
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "ResultImage": "base64编码的图片",
-        "ResultUrl": "",
+        "ResultImage": "",
+        "ResultUrl": "https://liudehua-9527.cos.ap-guangzhou.myqcloud.com/result.jpeg?q-sign-algorithm=sha1&q-ak=AKID********EXAMPLE&q-sign-time=8888;9999&q-key-time=8888;9999&q-header-list=&q-url-param-list=&q-signature=7de87f7bf9cfd23df9da32f46661e7cf97a5603c",
         "RequestId": "3c140219-cfe9-470e-b241-907877d6fb03"
     }
 }

@@ -218,10 +218,22 @@
     ],
     "DetectAuth": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: faceid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetectAuth\n<公共请求参数>\n\n{\n    \"RuleId\": \"0\"\n}",
+        "document": "微信小程序获取BizToken。",
+        "input": "POST / HTTP/1.1\nHost: faceid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetectAuth\n<公共请求参数>\n\n{\n    \"RuleId\": \"0\",\n    \"IdCard\": \"11204416541220243X\",\n    \"Name\": \"韦小宝\"\n}",
         "output": "{\n    \"Response\": {\n        \"BizToken\": \"CE661F1A-0F1E-45BD-BE13-34C05CEA7681\",\n        \"Url\": \"https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx2cca36a86d5035ae&redirect_uri=http%3A%2F%2Fopen.faceid.qq.com%2Fv1%2Fapi%2FgetCode%3FbizRedirect%3Dhttp%253A%252F%252Ffaceid.qq.com%252Fapi%252Fauth%252FgetOpenidAndSaveToken%253Ftoken%253DCE661F1A-0F1E-45BD-BE13-34C05CEA7681&response_type=code&scope=snsapi_base&state=&component_appid=wx9802ee81e68d6dee#wechat_redirect\",\n        \"RequestId\": \"f904f4cf-75db-4f8f-a5ec-dc4f942c7f7a\"\n    }\n}",
-        "title": "鉴权操作 [前往调试工具](https://console.cloud.tencent.com/api/explorer?Product=faceid&Version=2018-03-01&Action=DetectAuth&SignVersion=)"
+        "title": "微信小程序获取BizToken成功"
+      },
+      {
+        "document": "H5获取BizToken。",
+        "input": "POST / HTTP/1.1\nHost: faceid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetectAuth\n<公共请求参数>\n\n{\n    \"RuleId\": \"0\",\n    \"IdCard\": \"11204416541220243X\",\n    \"Name\": \"韦小宝\",\n    \"Extra\": \"Orderid=f904f4cf75db4f8fdc4f942c7f7a\",\n    \"RedirectUrl\": \"http://www.qq.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BizToken\": \"CE661F1A-0F1E-45BD-BE13-34C05CEA7681\",\n        \"Url\": \"https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx2cca36a86d5035ae&redirect_uri=http%3A%2F%2Fopen.faceid.qq.com%2Fv1%2Fapi%2FgetCode%3FbizRedirect%3Dhttp%253A%252F%252Ffaceid.qq.com%252Fapi%252Fauth%252FgetOpenidAndSaveToken%253Ftoken%253DCE661F1A-0F1E-45BD-BE13-34C05CEA7681&response_type=code&scope=snsapi_base&state=&component_appid=wx9802ee81e68d6dee#wechat_redirect\",\n        \"RequestId\": \"f904f4cf-75db-4f8f-a5ec-dc4f942c7f7a\"\n    }\n}",
+        "title": "H5获取BizToken成功"
+      },
+      {
+        "document": "传入非本账号所申请的Ruleid。",
+        "input": "POST / HTTP/1.1\nHost: faceid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetectAuth\n<公共请求参数>\n\n{\n    \"RuleId\": \"999\",\n    \"IdCard\": \"11204416541220243X\",\n    \"Name\": \"韦小宝\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue.RuleIdNotExist\",\n            \"Message\": \"RuleId不存在，请到人脸核身控制台申请。\"\n        },\n        \"RequestId\": \"e90c9abf-dcb3-4efa-97fc-5c4501b8182c\"\n    }\n}",
+        "title": "获取Biztoken失败"
       }
     ],
     "DetectReflectLivenessAndCompare": [
@@ -294,10 +306,16 @@
     ],
     "GetDetectInfoEnhanced": [
       {
-        "document": "",
+        "document": "成功获取所有类型的信息。",
         "input": "POST / HTTP/1.1\nHost: faceid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetDetectInfoEnhanced\n<公共请求参数>\n\n{\n    \"InfoType\": \"1\",\n    \"BizToken\": \"CE661F1A-0F1E-45BD-BE13-34C05CEA7681\",\n    \"RuleId\": \"0\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Text\": {\n            \"ErrCode\": 0,\n            \"ErrMsg\": \"成功\",\n            \"UseIDType\": 0,\n            \"IdCard\": \"440111111111111111\",\n            \"Name\": \"爱新觉罗永琪\",\n            \"OcrNation\": null,\n            \"OcrAddress\": null,\n            \"OcrBirth\": null,\n            \"OcrAuthority\": null,\n            \"OcrValidDate\": null,\n            \"OcrName\": \"爱新觉罗永琪\",\n            \"OcrIdCard\": \"440111111111111111\",\n            \"OcrGender\": null,\n            \"IdInfoFrom\": \"abc\",\n            \"LivenessMode\": 0,\n            \"LiveStatus\": 0,\n            \"LiveMsg\": \"成功\",\n            \"Comparestatus\": 0,\n            \"Comparemsg\": \"成功\",\n            \"CompareLibType\": \"权威库\",\n            \"Sim\": \"76.52\",\n            \"Location\": null,\n            \"Mobile\": null,\n            \"Extra\": \"\",\n            \"NFCRequestIds\": [\n                \"abc\"\n            ],\n            \"NFCBillingCounts\": 0,\n            \"PassNo\": \"abc\",\n            \"VisaNum\": \"abc\",\n            \"LivenessDetail\": [\n                {\n                    \"ReqTime\": \"1577179388135\",\n                    \"Seq\": \"3d12da91-db34-4e55-81c3-993a41d7ccb7\",\n                    \"Idcard\": \"440111111111111111\",\n                    \"Name\": \"爱新觉罗永琪\",\n                    \"CompareLibType\": \"权威库\",\n                    \"Sim\": \"76.52\",\n                    \"IsNeedCharge\": true,\n                    \"Errcode\": 0,\n                    \"Errmsg\": \"成功\",\n                    \"LivenessMode\": 0,\n                    \"Livestatus\": 0,\n                    \"Livemsg\": \"成功\",\n                    \"Comparestatus\": 0,\n                    \"Comparemsg\": \"成功\"\n                }\n            ]\n        },\n        \"IdCardData\": {\n            \"ProcessedBackImage\": \"base64\",\n            \"ProcessedFrontImage\": \"base64\",\n            \"OcrFront\": \"base64\",\n            \"OcrBack\": \"base64\",\n            \"Avatar\": \"base64\",\n            \"WarnInfos\": [],\n            \"BackWarnInfos\": []\n        },\n        \"IntentionVerifyData\": {\n            \"IntentionVerifyVideo\": \"base64\",\n            \"ErrorCode\": 0,\n            \"ErrorMessage\": \"成功\",\n            \"AsrResult\": \"同意\",\n            \"AsrResultSimilarity\": \"0\",\n            \"IntentionVerifyBestFrame\": \"base64\"\n        },\n        \"IntentionActionResult\": {\n            \"FinalResultDetailCode\": 0,\n            \"FinalResultMessage\": \"abc\",\n            \"Details\": [\n                {\n                    \"Video\": \"abc\",\n                    \"ScreenShot\": [\n                        \"abc\"\n                    ]\n                }\n            ]\n        },\n        \"IntentionQuestionResult\": {\n            \"FinalResultDetailCode\": 0,\n            \"FinalResultMessage\": \"abc\",\n            \"AsrResult\": [\n                \"同意\"\n            ],\n            \"ResultCode\": [\n                \"0\"\n            ],\n            \"Audios\": [\n                \"base64\"\n            ],\n            \"Video\": \"base64\",\n            \"ScreenShot\": [\n                \"base64\"\n            ],\n            \"FinalResultCode\": \"0\"\n        },\n        \"BestFrame\": {\n            \"BestFrame\": \"base64\",\n            \"BestFrames\": [\n                \"base64\"\n            ]\n        },\n        \"VideoData\": {\n            \"LivenessVideo\": \"base64\"\n        },\n        \"Encryption\": {\n            \"Iv\": \"iv\",\n            \"EncryptList\": [\n                \"Response.Text.Name\"\n            ],\n            \"CiphertextBlob\": \"CiphertextBlob\"\n        },\n        \"EncryptedBody\": \"abc\",\n        \"RequestId\": \"f52bac9a-0aee-4fe6-8d34-7de4bce89473\"\n    }\n}",
-        "title": "获取所有类型的信息"
+        "output": "{\n    \"Response\": {\n        \"BestFrame\": {\n            \"BestFrame\": \"/9j/4AAQSk...JKD2A//9k=\",\n            \"BestFrames\": [\n                \"/9j/4AAQSk...002dgP/9k=\",\n                \"/9j/4AAQSk...vx+YH/2Q==\",\n                \"/9j/4AAQSk...n6fj5Af//Z\",\n                \"/9j/4AAQSk...dzlFFagf/Z\"\n            ]\n        },\n        \"EncryptedBody\": \"\",\n        \"Encryption\": {\n            \"Algorithm\": \"\",\n            \"CiphertextBlob\": \"\",\n            \"EncryptList\": [],\n            \"Iv\": \"\",\n            \"TagList\": []\n        },\n        \"IdCardData\": {\n            \"Avatar\": null,\n            \"BackWarnInfos\": null,\n            \"OcrBack\": null,\n            \"OcrFront\": null,\n            \"ProcessedBackImage\": null,\n            \"ProcessedFrontImage\": null,\n            \"WarnInfos\": null\n        },\n        \"IntentionActionResult\": null,\n        \"IntentionQuestionResult\": {\n            \"AsrResult\": [],\n            \"Audios\": [],\n            \"FinalResultCode\": null,\n            \"FinalResultDetailCode\": null,\n            \"FinalResultMessage\": null,\n            \"ResultCode\": [],\n            \"ScreenShot\": [],\n            \"Video\": null\n        },\n        \"IntentionVerifyData\": {\n            \"AsrResult\": null,\n            \"AsrResultSimilarity\": null,\n            \"ErrorCode\": null,\n            \"ErrorMessage\": null,\n            \"IntentionVerifyBestFrame\": null,\n            \"IntentionVerifyVideo\": null\n        },\n        \"RequestId\": \"91173d84-e461-4da4-a270-2b8d48a2e136\",\n        \"Text\": {\n            \"CompareLibType\": \"权威库\",\n            \"Comparemsg\": \"成功\",\n            \"Comparestatus\": 0,\n            \"ErrCode\": 0,\n            \"ErrMsg\": \"成功\",\n            \"Extra\": \"\",\n            \"IdCard\": \"4****************7\",\n            \"IdInfoFrom\": \"其他\",\n            \"LiveMsg\": \"成功\",\n            \"LiveStatus\": 0,\n            \"LivenessDetail\": [\n                {\n                    \"CompareLibType\": \"权威库\",\n                    \"Comparemsg\": \"成功\",\n                    \"Comparestatus\": 0,\n                    \"Errcode\": 0,\n                    \"Errmsg\": \"成功\",\n                    \"Idcard\": \"4****************7\",\n                    \"IsNeedCharge\": true,\n                    \"Livemsg\": \"成功\",\n                    \"LivenessMode\": 1,\n                    \"Livestatus\": 0,\n                    \"Name\": \"韦**\",\n                    \"ReqTime\": \"1730444265275\",\n                    \"Seq\": \"1f330eea-f5db-4726-a7b4-38cdf1aefb02\",\n                    \"Sim\": \"95.51\"\n                }\n            ],\n            \"LivenessInfoTag\": null,\n            \"LivenessMode\": 1,\n            \"Location\": null,\n            \"Mobile\": \"\",\n            \"NFCBillingCounts\": 0,\n            \"NFCRequestIds\": [],\n            \"Name\": \"韦**\",\n            \"OcrAddress\": null,\n            \"OcrAuthority\": null,\n            \"OcrBirth\": null,\n            \"OcrGender\": null,\n            \"OcrIdCard\": \"\",\n            \"OcrName\": \"\",\n            \"OcrNation\": null,\n            \"OcrValidDate\": null,\n            \"PassNo\": null,\n            \"Sim\": \"95.51\",\n            \"UseIDType\": 0,\n            \"VisaNum\": null\n        },\n        \"VideoData\": {\n            \"LivenessVideo\": \"AAAAGGZ0eX...VyYWxidW0h\"\n        }\n    }\n}",
+        "title": "获取所有类型的信息成功示例"
+      },
+      {
+        "document": "获取所有类型的信息成失败，传入非法BizToken。",
+        "input": "POST / HTTP/1.1\nHost: faceid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetDetectInfoEnhanced\n<公共请求参数>\n\n{\n    \"InfoType\": \"2\",\n    \"BizToken\": \"4237FAC9-1AE4-4954-B495-FB07D91141CA\",\n    \"RuleId\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameter\",\n            \"Message\": \"非法BizToken。\"\n        },\n        \"RequestId\": \"0832c071-0c3e-4a1f-b7d3-4910221a1e18\"\n    }\n}",
+        "title": "获取所有类型的信息成失败示例"
       }
     ],
     "GetDeviceInfo": [
@@ -310,26 +328,44 @@
     ],
     "GetEidResult": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: faceid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetEidResult\n<公共请求参数>\n\n{\n    \"InfoType\": \"1\",\n    \"EidToken\": \"CE661F1A-0F1E-45BD-BE13-34C05CEA7681\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Text\": {\n            \"ErrCode\": 0,\n            \"ErrMsg\": \"成功\",\n            \"IdCard\": \"\",\n            \"Name\": \"\",\n            \"UseIDType\": 1,\n            \"OcrNation\": null,\n            \"OcrAddress\": null,\n            \"OcrBirth\": null,\n            \"OcrAuthority\": null,\n            \"OcrValidDate\": null,\n            \"OcrName\": \"爱新觉罗永琪\",\n            \"OcrIdCard\": \"440111111111111111\",\n            \"OcrGender\": null,\n            \"IdInfoFrom\": \"abc\",\n            \"LiveStatus\": 0,\n            \"LiveMsg\": \"成功\",\n            \"Comparestatus\": 0,\n            \"Comparemsg\": \"成功\",\n            \"CompareLibType\": \"abc\",\n            \"Sim\": \"76.52\",\n            \"Location\": null,\n            \"Mobile\": \"13800000000\",\n            \"Extra\": \"\",\n            \"LivenessDetail\": [\n                {\n                    \"ReqTime\": \"1577179388135\",\n                    \"Seq\": \"3d12da91-db34-4e55-81c3-993a41d7ccb7\",\n                    \"Idcard\": \"\",\n                    \"Name\": \"\",\n                    \"CompareLibType\": \"公安商业库\",\n                    \"Sim\": \"76.52\",\n                    \"IsNeedCharge\": true,\n                    \"Errcode\": 0,\n                    \"Errmsg\": \"成功\",\n                    \"Livestatus\": 0,\n                    \"Livemsg\": \"成功\",\n                    \"LivenessMode\": 1,\n                    \"Comparestatus\": 0,\n                    \"Comparemsg\": \"成功\"\n                }\n            ],\n            \"LivenessMode\": 1,\n            \"NFCRequestIds\": [\n                \"abc\"\n            ],\n            \"NFCBillingCounts\": 0,\n            \"PassNo\": \"abc\",\n            \"VisaNum\": \"abc\"\n        },\n        \"IdCardData\": {\n            \"ProcessedBackImage\": \"base64\",\n            \"ProcessedFrontImage\": \"base64\",\n            \"OcrFront\": \"base64\",\n            \"OcrBack\": \"base64\",\n            \"Avatar\": \"base64\",\n            \"WarnInfos\": [\n                0\n            ],\n            \"BackWarnInfos\": [\n                0\n            ]\n        },\n        \"BestFrame\": {\n            \"BestFrame\": \"base64\",\n            \"BestFrames\": [\n                \"base64\"\n            ]\n        },\n        \"IntentionVerifyData\": {\n            \"IntentionVerifyVideo\": \"base64\",\n            \"ErrorCode\": 0,\n            \"ErrorMessage\": \"成功\",\n            \"AsrResult\": \"\",\n            \"IntentionVerifyBestFrame\": \"base64\",\n            \"AsrResultSimilarity\": \"0\"\n        },\n        \"EidInfo\": {\n            \"EidCode\": \"\",\n            \"EidSign\": \"\",\n            \"DesKey\": \"\",\n            \"UserInfo\": \"\"\n        },\n        \"IntentionQuestionResult\": {\n            \"ScreenShot\": [\n                \"base64\"\n            ],\n            \"FinalResultCode\": \"0\",\n            \"AsrResult\": [\n                \"\"\n            ],\n            \"Audios\": [\n                \"base64\"\n            ],\n            \"Video\": \"base64\",\n            \"FinalResultDetailCode\": 0,\n            \"FinalResultMessage\": \"Success\",\n            \"ResultCode\": [\n                \"\"\n            ]\n        },\n        \"IntentionActionResult\": {\n            \"FinalResultDetailCode\": 0,\n            \"FinalResultMessage\": \"abc\",\n            \"Details\": [\n                {\n                    \"Video\": \"abc\",\n                    \"ScreenShot\": [\n                        \"abc\"\n                    ]\n                }\n            ]\n        },\n        \"RequestId\": \"f52bac9a-0aee-4fe6-8d34-7de4bce89473\"\n    }\n}",
-        "title": "获取所有类型的信息"
+        "document": "成功获取E证通结果信息。",
+        "input": "POST / HTTP/1.1\nHost: faceid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetEidResult\n<公共请求参数>\n\n{\n    \"InfoType\": \"1\",\n    \"EidToken\": \"CE661F1A-0F1E-45BD-BE133-34C05CEA76812\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BestFrame\": {\n            \"BestFrame\": \"/9j/4AAQSk...UVoYn/2Q==\",\n            \"BestFrames\": [\n                \"/9j/4AAQSk...AT/U//2Q==\"\n            ]\n        },\n        \"EidInfo\": {\n            \"DesKey\": \"\",\n            \"EidCode\": \"OMKhJ5hkbPnA5PKGrzD1oKZ/e8W9w2g1yAOUIry7G/4xMDAw\",\n            \"EidSign\": \"MEQCIDt0Xa...YygK4Fhw==\",\n            \"UserInfo\": \"\"\n        },\n        \"IdCardData\": {\n            \"Avatar\": \"\",\n            \"BackWarnInfos\": null,\n            \"OcrBack\": \"\",\n            \"OcrFront\": \"\",\n            \"ProcessedBackImage\": \"\",\n            \"ProcessedFrontImage\": \"\",\n            \"WarnInfos\": null\n        },\n        \"IntentionActionResult\": null,\n        \"IntentionQuestionResult\": {\n            \"AsrResult\": null,\n            \"Audios\": null,\n            \"FinalResultCode\": \"\",\n            \"FinalResultDetailCode\": null,\n            \"FinalResultMessage\": null,\n            \"ResultCode\": null,\n            \"ScreenShot\": null,\n            \"Video\": \"\"\n        },\n        \"IntentionVerifyData\": {\n            \"AsrResult\": \"\",\n            \"AsrResultSimilarity\": \"\",\n            \"ErrorCode\": 0,\n            \"ErrorMessage\": \"\",\n            \"IntentionVerifyBestFrame\": \"\",\n            \"IntentionVerifyVideo\": \"\"\n        },\n        \"RequestId\": \"29a30ec8-0c15-4566-a5ab-99f88a3f0821\",\n        \"Text\": {\n            \"CompareLibType\": \"权威库\",\n            \"Comparemsg\": \"成功\",\n            \"Comparestatus\": 0,\n            \"ErrCode\": 0,\n            \"ErrMsg\": \"成功\",\n            \"Extra\": \"\",\n            \"IdCard\": \"\",\n            \"IdInfoFrom\": \"其他\",\n            \"LiveMsg\": \"成功\",\n            \"LiveStatus\": 0,\n            \"LivenessInfoTag\": [\n                \"01\"\n            ],\n            \"LivenessDetail\": [\n                {\n                    \"CompareLibType\": \"权威库\",\n                    \"Comparemsg\": \"成功\",\n                    \"Comparestatus\": 0,\n                    \"Errcode\": 0,\n                    \"Errmsg\": \"成功\",\n                    \"Idcard\": \"\",\n                    \"IsNeedCharge\": true,\n                    \"Livemsg\": \"成功\",\n                    \"LivenessMode\": 4,\n                    \"Livestatus\": 0,\n                    \"Name\": \"\",\n                    \"ReqTime\": \"1730451371368\",\n                    \"Seq\": \"092ff8ca-4d1c-4c2122-b513-ec8ced564c9a\",\n                    \"Sim\": \"97.31\"\n                }\n            ],\n            \"LivenessMode\": 4,\n            \"Location\": \"\",\n            \"Mobile\": \"\",\n            \"NFCBillingCounts\": 0,\n            \"NFCRequestIds\": null,\n            \"Name\": \"\",\n            \"OcrAddress\": \"\",\n            \"OcrAuthority\": \"\",\n            \"OcrBirth\": \"\",\n            \"OcrGender\": \"\",\n            \"OcrIdCard\": \"\",\n            \"OcrName\": \"\",\n            \"OcrNation\": \"\",\n            \"OcrValidDate\": \"\",\n            \"PassNo\": \"\",\n            \"Sim\": \"97.31\",\n            \"UseIDType\": 0,\n            \"VisaNum\": \"\"\n        }\n    }\n}",
+        "title": "获取E证通结果信息成功示例"
+      },
+      {
+        "document": "获取E证通结果信息失败，传入过期BizToken。",
+        "input": "POST / HTTP/1.1\nHost: faceid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetEidResult\n<公共请求参数>\n\n{\n    \"InfoType\": \"1\",\n    \"EidToken\": \"CE661F1A-0F1E-45B1D-BE133-34C05CEA76812\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue.BizTokenExpired\",\n            \"Message\": \"BizToken过期。\"\n        },\n        \"RequestId\": \"19f36e49-d419-48a7-b86a-edcb81e71909\"\n    }\n}",
+        "title": "获取E证通结果信息失败示例"
       }
     ],
     "GetEidToken": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: faceid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetEidToken\n<公共请求参数>\n\n{\n    \"MerchantId\": \"3232\"\n}",
-        "output": "{\n    \"Response\": {\n        \"EidToken\": \"CE661F1A-0F1E-45BD-BE13-34C05CEA7681\",\n        \"RequestId\": \"f904f4cf-75db-4f8f-a5ec-dc4f942c7f7a\",\n        \"Url\": \"https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxa50a8ac379585f53&redirect_uri=https%3A%2F%2Feid.faceid.qq.com%2Fapi%2Fv1%2FGetOpenId%3Ftoken%3DCE661F1A-0F1E-45BD-BE13-34C05CEA7681&response_type=code&scope=snsapi_base&state=&component_appid=wx9802ee81e68d6dee#wechat_redirect\"\n    }\n}",
-        "title": "鉴权操作"
+        "document": "成功获取E证通Token。",
+        "input": "POST / HTTP/1.1\nHost: faceid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetEidToken\n<公共请求参数>\n\n{\n    \"MerchantId\": \"0NSJ240626160443125212\"\n}",
+        "output": "{\n    \"Response\": {\n        \"EidToken\": \"CE661F1A-0F1E-45BD-BE13-34C05CEA7681\",\n        \"RequestId\": \"f904f4cf-75db-4f8f-a5ec-dc4f942c7f7a\",\n        \"Url\": \"https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxa50a8ac37958245f53&redirect_uri=https%3A%2F%2Feid.faceid.qq.com%2Fapi%2Fv1%2FGetOpenId%3Ftoken%3DCE3661F1A-0F1E-45BD-BE113-34C05CEA7681&response_type=code&scope=snsapi_base&state=&component_appid=wx9802ee81e68d6dee#wechat_redirect\"\n    }\n}",
+        "title": "获取E证通Token成功示例"
+      },
+      {
+        "document": "获取E证通Token失败，未注册E证通。",
+        "input": "POST / HTTP/1.1\nHost: faceid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetEidToken\n<公共请求参数>\n\n{\n    \"MerchantId\": \"0NSJ240615216044312521\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"FailedOperation.UnregisteredEid\",\n            \"Message\": \"该用户未注册E证通，请先注册并跟公安库核验。\"\n        },\n        \"RequestId\": \"dc401e69-32bf-4002-83ca-3a12f62f2e4b\"\n    }\n}",
+        "title": "获取E证通Token失败示例"
       }
     ],
     "GetFaceIdResult": [
       {
-        "document": "",
-        "input": "https://faceid.tencentcloudapi.com/?Action=GetFaceIdResult\n&FaceIdToken=CE661F1A-0F1E-45BD-BE13-34C05CEA7681\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Result\": \"0\",\n        \"Description\": \"成功\",\n        \"IdCard\": \"23232323232\",\n        \"Name\": \"王五\",\n        \"Similarity\": 97.7,\n        \"RequestId\": \"0f96cf39-a183-485c-ab29-8427ab81f9ae\",\n        \"Extra\": \"\",\n        \"VideoBase64\": \"\",\n        \"BestFrameBase64\": \"\",\n        \"DeviceInfoTag\": \"01\",\n        \"RiskInfoTag\": \"02\",\n        \"LivenessInfoTag\": \"01\",\n        \"DeviceInfoLevel\": \"1\"\n    }\n}",
-        "title": "获取结果成功时"
+        "document": "获取SDK核验结果成功。",
+        "input": "https://faceid.tencentcloudapi.com/?Action=GetFaceIdResult\n&FaceIdToken=CE661F1A-0F1E-45BD-BE113-34C05CEA76811\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"BestFrameBase64\": \"/9j/4AAQSk...1Udr+R/9k=\",\n        \"Description\": \"成功\",\n        \"DeviceInfoLevel\": null,\n        \"DeviceInfoTag\": null,\n        \"Extra\": \"\",\n        \"IdCard\": \"\",\n        \"LivenessInfoTag\": null,\n        \"Name\": \"\",\n        \"RequestId\": \"13c51421-3b1d-4b40-8206-8dacedec2d32\",\n        \"Result\": \"0\",\n        \"RiskInfoTag\": \"\",\n        \"Similarity\": 0,\n        \"VideoBase64\": \"\"\n    }\n}",
+        "title": "获取SDK核验结果成功示例"
+      },
+      {
+        "document": "获取SDK核验结果人脸检测失败。",
+        "input": "https://faceid.tencentcloudapi.com/?Action=GetFaceIdResult\n&FaceIdToken=CE661F1A-0F1E-45BD-BE113-34C05CEA76831\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"BestFrameBase64\": \"/9j/4AAQSk...9Dl1t//9k=\",\n        \"Description\": \"人脸检测失败，无法提取比对照\",\n        \"DeviceInfoLevel\": null,\n        \"DeviceInfoTag\": null,\n        \"Extra\": \"\",\n        \"IdCard\": \"\",\n        \"LivenessInfoTag\": null,\n        \"Name\": \"\",\n        \"RequestId\": \"391e4084-43dd-4b03-b31c-c92a519d40bd\",\n        \"Result\": \"1004\",\n        \"RiskInfoTag\": \"\",\n        \"Similarity\": 0,\n        \"VideoBase64\": \"AAAAGGZ0eX...AAAAAAAAA=\"\n    }\n}",
+        "title": "获取SDK核验结果人脸检测失败示例"
       }
     ],
     "GetFaceIdResultIntl": [
@@ -342,18 +378,24 @@
     ],
     "GetFaceIdRiskInfo": [
       {
-        "document": "获取结果成功",
-        "input": "POST / HTTP/1.1\nHost: faceid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetFaceIdRiskInfo\n<公共请求参数>\n\n{\n    \"FaceIdToken\": \"CE661F1A-0F1E-45BD-BE13-34C05CEA7681\"\n}",
-        "output": "{\n    \"Response\": {\n        \"CameraInfoLevel\": null,\n        \"CameraInfoTag\": null,\n        \"DeviceInfoLevel\": 1,\n        \"DeviceInfoTag\": null,\n        \"Extra\": null,\n        \"OpenId\": \"9B0104204DAB86054F6C9E38\",\n        \"RequestId\": \"dbabb231-4adc-4e88-b763-b3dfd9476923\"\n    }\n}",
+        "document": "获取结果成功。",
+        "input": "POST / HTTP/1.1\nHost: faceid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetFaceIdRiskInfo\n<公共请求参数>\n\n{\n    \"FaceIdToken\": \"CE661F1A-0F1E-45BD-BE13-34C05CEA761281\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CameraInfoLevel\": null,\n        \"CameraInfoTag\": null,\n        \"DeviceInfoLevel\": 1,\n        \"DeviceInfoTag\": null,\n        \"Extra\": null,\n        \"OpenId\": \"9B0104204DAB86054F6CV19E38\",\n        \"RequestId\": \"dbabb231-4adc-4e88-b763-b3dfd9476923\"\n    }\n}",
         "title": "获取结果成功"
       }
     ],
     "GetFaceIdToken": [
       {
-        "document": "获取 SDK 核验 token",
-        "input": "POST / HTTP/1.1\nHost: faceid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetFaceIdToken\n<公共请求参数>\n\n{\n    \"CompareLib\": \"BUSINESS\",\n    \"IdCard\": \"xxxxxxxxxxxxxxxxx\",\n    \"Name\": \"xxxxxxxxxxxxxxxxx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"FaceIdToken\": \"asdasdadasdasd\",\n        \"RequestId\": \"94b54cdf-d975-4718-b091-32f8d79d6397\"\n    }\n}",
-        "title": "获取token成功"
+        "document": "获取 SDK 核验 token。",
+        "input": "POST / HTTP/1.1\nHost: faceid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetFaceIdToken\n<公共请求参数>\n\n{\n    \"CompareLib\": \"BUSINESS\",\n    \"IdCard\": \"11204416541220243X\",\n    \"Name\": \"韦小宝\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FaceIdToken\": \"42S41B31D-5974-4674-EABB-8FFF1EC99F819\",\n        \"RequestId\": \"94b54cdf-d975-4718-b091-32f8d79d6397\"\n    }\n}",
+        "title": "获取 SDK 核验 token成功"
+      },
+      {
+        "document": "获取 SDK 核验 token失败，传入图片尺寸过大。",
+        "input": "POST / HTTP/1.1\nHost: faceid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetFaceIdToken\n<公共请求参数>\n\n{\n    \"CompareLib\": \"BUSINESS\",\n    \"IdCard\": \"440305199505132561\",\n    \"Name\": \"刘洋\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"FailedOperation.ImageSizeTooLarge\",\n            \"Message\": \"图片尺寸过大。\"\n        },\n        \"RequestId\": \"ae8fbee0-f20e-4651-896e-e21e80d3822a\"\n    }\n}",
+        "title": "获取 SDK 核验 token失败"
       }
     ],
     "GetFaceIdTokenIntl": [
@@ -366,9 +408,9 @@
     ],
     "GetFaceidRiskInfoToken": [
       {
-        "document": "获取 SDK 核验 token",
+        "document": "获取 SDK 核验 token。",
         "input": "POST / HTTP/1.1\nHost: faceid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetFaceidRiskInfoToken\n<公共请求参数>\n\n{\n    \"Meta\": \"\",\n    \"Extra\": \"\"\n}",
-        "output": "{\n    \"Response\": {\n        \"FaceIdToken\": \"224C8901-0D1B-4350-914A-CFD74E54D940\",\n        \"RequestId\": \"63013220-4d82-4e2f-b508-a34286baac26\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"FaceIdToken\": \"224C8901-0D1B-4350-914A-CFD714E54D940\",\n        \"RequestId\": \"63013220-4d82-4e2f-b508-a34286baac26\"\n    }\n}",
         "title": "获取 SDK 核验 token"
       }
     ],
@@ -477,9 +519,15 @@
     "ImageRecognitionV2": [
       {
         "document": "",
-        "input": "https://faceid.tencentcloudapi.com/?Action=ImageRecognitionV2\n&IdCard=11204416541220243X\n&Name=韦小宝\n&ImageBase64=<ImageBase64>\n&<公共请求参数>",
+        "input": "https://faceid.tencentcloudapi.com/?Action=ImageRecognitionV2\n&IdCard=11204416541220243X\n&Name=韦小宝\n&ImageBase64=/9j/4AAQSkZJRg.....s97n//2Q==\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Result\": \"Success\",\n        \"Description\": \"成功\",\n        \"Sim\": 89.88,\n        \"RequestId\": \"f904f4cf-75db-4f8f-a5ec-dc4f942c7f7a\"\n    }\n}",
-        "title": "照片人脸核身 [前往调试工具](https://console.cloud.tencent.com/api/explorer?Product=faceid&Version=2018-03-01&Action=ImageRecognitionV2)"
+        "title": "照片人脸核身成功示例 [前往调试工具](https://console.cloud.tencent.com/api/explorer?Product=faceid&Version=2018-03-01&Action=ImageRecognitionV2)"
+      },
+      {
+        "document": "",
+        "input": "https://faceid.tencentcloudapi.com/?Action=ImageRecognitionV2\n&IdCard=11204416541220243X\n&Name=韦小宝\n&ImageBase64=/9j/4AAQSkZJRg.....s97n//2Q==\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Description\": \"比对相似度未达到通过标准\",\n        \"RequestId\": \"e9e198e4-4fa8-49f0-a67e-f8053bc49201\",\n        \"Result\": \"FailedOperation.CompareLowSimilarity\",\n        \"Sim\": 26.04\n    }\n}",
+        "title": "照片人脸核身失败示例"
       }
     ],
     "Liveness": [
@@ -507,9 +555,15 @@
     "LivenessRecognition": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: faceid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: LivenessRecognition\n<公共请求参数>\n\n{\n    \"IdCard\": \"11204416541220243X\",\n    \"LivenessType\": \"SILENT\",\n    \"Name\": \"韦小宝\",\n    \"VideoBase64\": \"<VideoBase64>\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Result\": \"Success\",\n        \"Description\": \"成功\",\n        \"BestFrameBase64\": \"<Imagebase64>\",\n        \"BestFrameList\": [\n            \"123\"\n        ],\n        \"Sim\": 89.88,\n        \"RequestId\": \"f904f4cf-75db-4f8f-a5ec-dc4f942c7f7a\"\n    }\n}",
-        "title": "静默活体人脸核身"
+        "input": "POST / HTTP/1.1\nHost: faceid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: LivenessRecognition\n<公共请求参数>\n\n{\n    \"IdCard\": \"11204416541220243X\",\n    \"LivenessType\": \"SILENT\",\n    \"Name\": \"韦小宝\",\n    \"VideoBase64\": \"AAAAIGZ0eX...0tLS0tLS8=\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"Success\",\n        \"Description\": \"成功\",\n        \"BestFrameBase64\": \"/9j/4AAQSkZJRg.....s97n//2Q==\",\n        \"BestFrameList\": [\n            \"/9j/4AAQSk...ZpGq7an//Z\"\n        ],\n        \"Sim\": 89.88,\n        \"RequestId\": \"f904f4cf-75db-4f8f-a5ec-dc4f942c7f7a\"\n    }\n}",
+        "title": "静默活体人脸核身成功示例"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: faceid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: LivenessRecognition\n<公共请求参数>\n\n{\n    \"IdCard\": \"11204416541220243X\",\n    \"LivenessType\": \"SILENT\",\n    \"Name\": \"韦小宝\",\n    \"VideoBase64\": \"AAAAIGZ0eX...0tLS0tLS8=\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BestFrameBase64\": \"/9j/4AAQSk...ZpGq7an//Z\",\n        \"BestFrameList\": [],\n        \"Description\": \"声音识别失败\",\n        \"RequestId\": \"0187d319-86ac-4687-807f-7733d54ba0c0\",\n        \"Result\": \"FailedOperation.LipVoiceRecognize\",\n        \"Sim\": 0\n    }\n}",
+        "title": "静默活体人脸核身失败示例"
       }
     ],
     "MinorsVerification": [
@@ -556,10 +610,10 @@
     ],
     "ParseNfcData": [
       {
-        "document": "",
+        "document": "解析SDK获取到的证件NFC数据。",
         "input": "POST / HTTP/1.1\nHost: faceid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ParseNfcData\n<公共请求参数>\n\n{\n    \"ReqId\": \"eyJyZXFJZCI6IjEyMzEiLCJkZXZpY2VJZCI6IjQ1NiJ9\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Address\": \"北京**********\",\n        \"BeginTime\": \"20******\",\n        \"BirthDate\": \"19******\",\n        \"CheckMRTD\": \"\",\n        \"EnName\": \"\",\n        \"EndTime\": \"20******\",\n        \"IdNum\": \"3****************6\",\n        \"IdType\": \"\",\n        \"ImageA\": \"/9j/4A\",\n        \"ImageB\": \"/9j/4A\",\n        \"Name\": \"*四\",\n        \"Nation\": \"汉\",\n        \"Nationality\": \"\",\n        \"OtherIdNum\": \"\",\n        \"PersonalNumber\": \"\",\n        \"Picture\": \"iVBORw\",\n        \"RequestId\": \"cdd7a769-d288-42a5-8e2e-6a5e5c9c08ae\",\n        \"ResultCode\": \"0\",\n        \"Sex\": \"男\",\n        \"SigningOrganization\": \"*******阳分局\",\n        \"ResultDescription\": \"首次查询成功\"\n    }\n}",
-        "title": "success"
+        "output": "{\n    \"Response\": {\n        \"Address\": \"北京市东城区景山前街4号紫禁城敬事房\",\n        \"BeginTime\": \"20170405\",\n        \"BirthDate\": \"19890604\",\n        \"CheckMRTD\": \"\",\n        \"EnName\": \"\",\n        \"EndTime\": \"20260704\",\n        \"IdNum\": \"11204416541220243X\",\n        \"IdType\": \"\",\n        \"ImageA\": \"/9j/4AAQSkZJRg.....s97n//2Q==\",\n        \"ImageB\": \"/9j/4AAQSk...mA7pvm5g==\",\n        \"Name\": \"韦小宝\",\n        \"Nation\": \"汉\",\n        \"Nationality\": \"\",\n        \"OtherIdNum\": \"\",\n        \"PersonalNumber\": \"\",\n        \"Picture\": \"Qk3OlwAAAA...7+/v7+/pAA\",\n        \"RequestId\": \"cdd7a769-d288-42a5-8e2e-6a5e5c9c08ae\",\n        \"ResultCode\": \"0\",\n        \"Sex\": \"男\",\n        \"SigningOrganization\": \"北京市东城区分局\",\n        \"ResultDescription\": \"首次查询成功\"\n    }\n}",
+        "title": "解析SDK获取到的证件NFC数据"
       }
     ],
     "PhoneVerification": [

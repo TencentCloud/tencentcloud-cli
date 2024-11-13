@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cdz DescribeUserAvailableCloudDedicatedZones --cli-unfold-argument  \
-    --CheckUin abc \
+    --CheckUin 700000775535 \
     --RegionId 1
 ```
 
@@ -15,9 +15,9 @@ Output:
 {
     "Response": {
         "ZoneIdSet": [
-            "123"
+            "100001"
         ],
-        "RequestId": "123"
+        "RequestId": "fa1ec983-3f83-4353-9ae7-1bd7aa60d77c"
     }
 }
 ```

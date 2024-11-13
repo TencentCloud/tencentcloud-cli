@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli fmu DeleteModel --cli-unfold-argument  \
-    --ModelId xxxxx
+    --ModelId mo_0_1731389015111_1259088222_3
 ```
 
 Output: 
@@ -30,7 +30,7 @@ Input:
 
 ```
 tccli fmu DeleteModel --cli-unfold-argument  \
-    --ModelId xxxxx
+    --ModelId mo_0_1731389015111_1259088222_3
 ```
 
 Output: 

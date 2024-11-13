@@ -308,6 +308,13 @@
       "output": "DescribeFwEdgeIpsResponse",
       "status": "online"
     },
+    "DescribeFwEngineZoneList": {
+      "document": "查询用户带宽使用情况 用于判断带宽使用是否超量",
+      "input": "DescribeFwEngineZoneListRequest",
+      "name": "查询云防引擎可用区信息",
+      "output": "DescribeFwEngineZoneListResponse",
+      "status": "online"
+    },
     "DescribeFwGroupInstanceInfo": {
       "document": "获取租户所有VPC防火墙(组)及VPC防火墙实例卡片信息",
       "input": "DescribeFwGroupInstanceInfoRequest",
@@ -467,6 +474,13 @@
       "input": "DescribeUnHandleEventTabListRequest",
       "name": "告警中心伪攻击链事件未处置接口",
       "output": "DescribeUnHandleEventTabListResponse",
+      "status": "online"
+    },
+    "DescribeUserBandwidthUsage": {
+      "document": "查询用户带宽使用情况 用于判断带宽使用是否超量",
+      "input": "DescribeUserBandwidthUsageRequest",
+      "name": "查询用户流量带宽使用情况",
+      "output": "DescribeUserBandwidthUsageResponse",
       "status": "online"
     },
     "DescribeVpcAcRule": {
@@ -6260,6 +6274,33 @@
       ],
       "type": "object"
     },
+    "DescribeFwEngineZoneListRequest": {
+      "document": "DescribeFwEngineZoneList请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeFwEngineZoneListResponse": {
+      "document": "DescribeFwEngineZoneList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "引擎区域信息列表",
+          "example": "{\"FwEnginType\":\"VPC防火墙实例\",\"InstanceId\":\"cfwew-03198ed3\",\"InstanceName\":\"测试多点-实例1\",\"IsSingleZone\":true,\"RegionList\":[\"ap-beijing\"],\"ZoneList\":[\"ap-beijing-3\"],\"ZoneNameList\":[\"北京三区\"]}",
+          "member": "UserEngineZoneInfo",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeFwGroupInstanceInfoRequest": {
       "document": "DescribeFwGroupInstanceInfo请求参数结构体",
       "members": [
@@ -8042,6 +8083,52 @@
           "name": "ReturnMsg",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserBandwidthUsageRequest": {
+      "document": "DescribeUserBandwidthUsage请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "带宽统计开始时间 默认为三天前",
+          "example": "2000-01-01 00:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "带宽统计结束时间 默认为当前时间",
+          "example": "2000-01-04 00:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserBandwidthUsageResponse": {
+      "document": "DescribeUserBandwidthUsage返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "带宽数据列表",
+          "example": "{\"FwEnginType\":\"NAT防火墙实例\",\"InstanceId\":\"cfwnat-ef74fdaf\",\"InstanceName\":\"[autotest][勿删]自动化测试\",\"Percent\":82.19,\"Quota\":40,\"Region\":\"ap-shanghai\",\"RegionName\":\"上海\",\"UsedWidth\":32.88}",
+          "member": "UserBandwidthUsage",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -14257,6 +14344,168 @@
           "name": "Total",
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "UserBandwidthUsage": {
+      "document": "租户带宽使用情况统计",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例id",
+          "example": "cfwedge-ff59e4cf",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例地域名称",
+          "example": "广州",
+          "member": "string",
+          "name": "RegionName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "引擎实例类型",
+          "example": "串行防火墙",
+          "member": "string",
+          "name": "FwEnginType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "使用带宽情况 单位是Mbps",
+          "example": "23.5",
+          "member": "float",
+          "name": "UsedWidth",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "带宽规格 单位是Mbps",
+          "example": "20",
+          "member": "float",
+          "name": "Quota",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "使用百分比",
+          "example": "115",
+          "member": "float",
+          "name": "Percent",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例名称",
+          "example": "andy的nat防火墙",
+          "member": "string",
+          "name": "InstanceName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "UserEngineZoneInfo": {
+      "document": "用户引擎的可用区信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "引擎实例id",
+          "example": "cfwnat-dce8698e",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "引擎实例类型",
+          "example": "NAT防火墙实例",
+          "member": "string",
+          "name": "FwEnginType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "地域列表",
+          "example": "[“ap-guangzhou”]",
+          "member": "string",
+          "name": "RegionList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可用区列表",
+          "example": "[”ap-guangzhou-1”]",
+          "member": "string",
+          "name": "ZoneList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否在单区域",
+          "example": "true",
+          "member": "bool",
+          "name": "IsSingleZone",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可用区名称列表",
+          "example": "[\"重庆一区“]",
+          "member": "string",
+          "name": "ZoneNameList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例名称",
+          "example": "NAT防火墙实例",
+          "member": "string",
+          "name": "InstanceName",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

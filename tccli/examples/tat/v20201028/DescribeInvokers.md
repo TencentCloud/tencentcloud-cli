@@ -29,8 +29,8 @@ Output:
                 ],
                 "Enable": false,
                 "ScheduleSettings": {
-                    "Policy": "ONCE",
-                    "Recurrence": "",
+                    "Policy": "SCHEDULE",
+                    "Recurrence": "0 0 1 * *",
                     "InvokeTime": "2021-08-30T06:42:02Z"
                 },
                 "CreatedTime": "2021-08-30T06:42:02Z",

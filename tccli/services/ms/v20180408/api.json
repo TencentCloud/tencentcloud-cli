@@ -36,11 +36,11 @@
       "status": "online"
     },
     "CreateResourceInstances": {
-      "document": "用户可以使用该接口自建资源，只支持白名单用户",
+      "document": "不再使用\n\n用户可以使用该接口自建资源，只支持白名单用户",
       "input": "CreateResourceInstancesRequest",
       "name": "创建资源",
       "output": "CreateResourceInstancesResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateShieldInstance": {
       "document": "用户通过该接口提交应用进行应用加固，加固后需通过DescribeShieldResult接口查询加固结果。（注意：根据国家互联网用户实名制相关要求，使用该产品前，需先完成实名认证。）",

@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli trro GetDeviceLicense --cli-unfold-argument  \
-    --ProjectId abc \
-    --DeviceId abc
+    --ProjectId m82k5408n675phvb \
+    --DeviceId dev1
 ```
 
 Output: 

@@ -390,7 +390,7 @@
         {
           "disabled": false,
           "document": "命令执行路径。",
-          "example": "/",
+          "example": "/root",
           "member": "string",
           "name": "WorkingDirectory",
           "output_required": true,
@@ -490,7 +490,7 @@
         {
           "disabled": false,
           "document": "命令关联的标签列表。",
-          "example": "无",
+          "example": "[]",
           "member": "Tag",
           "name": "Tags",
           "output_required": true,
@@ -2057,7 +2057,7 @@
         {
           "disabled": false,
           "document": "执行任务信息列表。",
-          "example": "无",
+          "example": "[           {        \"InstanceId\": \"lhins-71itjmdd\",             \"InvocationTaskId\": \"invt-bd1w17gx22\",             \"TaskStatus\": \"FAILED\"           }         ],         \"OutputCOSBucketUrl\": \"\",         \"OutputCOSKeyPrefix\": \"\",         \"Parameters\": \"{}\",         \"StartTime\": \"2024-11-13T00:20:32Z\",         \"Timeout\": 600,         \"UpdatedTime\": \"2024-11-13T00:20:32Z\",         \"Username\": \"root\",         \"WorkingDirectory\": \"/data\"       }     ]",
           "member": "InvocationTaskBasicInfo",
           "name": "InvocationTaskBasicInfoSet",
           "output_required": true,
@@ -2283,7 +2283,7 @@
         {
           "disabled": false,
           "document": "执行结果。",
-          "example": "无",
+          "example": "{           \"Dropped\": 0,           \"ExecEndTime\": \"2024-11-13T02:10:32Z\",           \"ExecStartTime\": \"2024-11-13T02:10:32Z\",           \"ExitCode\": 7,           \"Output\": \"\",           \"OutputUploadCOSErrorInfo\": \"\",           \"OutputUrl\": \"\"         }",
           "member": "TaskResult",
           "name": "TaskResult",
           "output_required": true,
@@ -2333,7 +2333,7 @@
         {
           "disabled": false,
           "document": "执行任务所执行的命令详情。",
-          "example": "无",
+          "example": "{           \"CommandType\": \"SHELL\",           \"Content\": \"cHdk\",           \"OutputCOSBucketUrl\": \"\",           \"OutputCOSKeyPrefix\": \"prefix\",           \"Timeout\": 600,           \"Username\": \"root\",           \"WorkingDirectory\": \"/data\"         }",
           "member": "CommandDocument",
           "name": "CommandDocument",
           "output_required": true,

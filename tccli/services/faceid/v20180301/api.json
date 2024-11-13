@@ -2493,8 +2493,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "用于细分客户使用场景，申请开通服务后，可以在腾讯云慧眼人脸核身控制台（https://console.cloud.tencent.com/faceid） 自助接入里面创建，审核通过后即可调用。如有疑问，请添加[腾讯云人脸核身小助手](https://cloud.tencent.com/document/product/1007/56130)进行咨询。",
-          "example": "0",
+          "document": "业务流程ID。\n- 用于细分客户使用场景, 可为业务配置不同的业务流程。\n- 申请开通服务后，登录腾讯云[慧眼人脸核身控制](https://console.cloud.tencent.com/faceid)进行创建，审核通过后即可调用。\n- 如有疑问，请添加[腾讯云人脸核身小助手](https://cloud.tencent.com/document/product/1007/56130)进行咨询。",
+          "example": "1",
           "member": "string",
           "name": "RuleId",
           "required": true,
@@ -2511,8 +2511,8 @@
         },
         {
           "disabled": false,
-          "document": "身份标识（是否必传基于[控制台](https://console.cloud.tencent.com/faceid/access)申请业务流程时配置的提示）。\n规则：a-z，A-Z，0-9组合。最长长度32位。",
-          "example": "无",
+          "document": "验证人的身份证号码。\n- 是否必传基于[控制台](https://console.cloud.tencent.com/faceid/access)申请业务流程时配置的提示。\n",
+          "example": "11204416541220243X",
           "member": "string",
           "name": "IdCard",
           "required": false,
@@ -2520,8 +2520,8 @@
         },
         {
           "disabled": false,
-          "document": "姓名。（是否必传基于[控制台](https://console.cloud.tencent.com/faceid/access)申请业务流程时配置的提示）。\n最长长度32位。中文请使用UTF-8编码。",
-          "example": "无",
+          "document": "验证人的姓名。\n- 是否必传基于[控制台](https://console.cloud.tencent.com/faceid/access)申请业务流程时配置的提示。\n- 最长长度32位。中文请使用UTF-8编码。",
+          "example": "韦小宝",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -2529,8 +2529,8 @@
         },
         {
           "disabled": false,
-          "document": "认证结束后重定向的回调链接地址。最长长度1024位。",
-          "example": "无",
+          "document": "认证结束后重定向的回调链接地址。\n- 最长长度1024位。",
+          "example": "https://www.qq.com",
           "member": "string",
           "name": "RedirectUrl",
           "required": false,
@@ -2539,7 +2539,7 @@
         {
           "disabled": false,
           "document": "透传字段，在获取验证结果时返回。",
-          "example": "无",
+          "example": "Orderid=f904f4cf75db4f8fdc4f942c7f7a",
           "member": "string",
           "name": "Extra",
           "required": false,
@@ -2547,8 +2547,8 @@
         },
         {
           "disabled": false,
-          "document": "用于人脸比对的照片，图片的Base64值；\nBase64编码后的图片数据大小不超过3M，仅支持jpg、png格式。请使用标准的Base64编码方式(带=补位)，编码规范参考RFC4648。",
-          "example": "无",
+          "document": "用于人脸比对的图像数据，使用base64编码。\n- Base64编码后的图片数据大小不超过3M。\n- 仅支持jpg、png格式。\n- 请使用标准的Base64编码方式(带=补位)，编码规范参考RFC4648。",
+          "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
           "member": "string",
           "name": "ImageBase64",
           "required": false,
@@ -2565,7 +2565,7 @@
         },
         {
           "disabled": false,
-          "document": "意愿核身（朗读模式）使用的文案，若未使用意愿核身（朗读模式），则该字段无需传入。默认为空，最长可接受120的字符串长度。",
+          "document": "意愿核身（朗读模式）使用的文案。\n- 若未使用意愿核身（朗读模式），则该字段无需传入。\n- 最长可接受120的字符串长度。",
           "example": "无",
           "member": "string",
           "name": "IntentionVerifyText",
@@ -2574,7 +2574,7 @@
         },
         {
           "disabled": false,
-          "document": "意愿核身语音问答模式（即语音播报+语音回答）使用的文案，包括：系统语音播报的文本、需要核验的标准文本。当前仅支持1轮问答。",
+          "document": "意愿核身（语音播报+语音回答模式）使用的文案。\n- 包括：系统语音播报的文本、需要核验的标准文本。\n- 当前仅支持1轮问答。",
           "example": "无",
           "member": "IntentionQuestion",
           "name": "IntentionQuestions",
@@ -2583,21 +2583,21 @@
         },
         {
           "disabled": false,
-          "document": "RuleId相关配置",
-          "example": "无",
-          "member": "RuleIdConfig",
-          "name": "Config",
-          "required": false,
-          "type": "object"
-        },
-        {
-          "disabled": false,
-          "document": "意愿核身（点头确认模式）使用的文案，若未使用意愿核身（点头确认模式），则该字段无需传入。当前仅支持一个提示文本。",
+          "document": "意愿核身（点头确认模式）使用的文案。\n- 若未使用意愿核身（点头确认模式），则该字段无需传入。\n- 当前仅支持一个提示文本。",
           "example": "无",
           "member": "IntentionActionConfig",
           "name": "IntentionActions",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "意愿核身流程配置。",
+          "example": "无",
+          "member": "RuleIdConfig",
+          "name": "Config",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -2608,7 +2608,7 @@
         {
           "disabled": false,
           "document": "用于发起核身流程的URL，仅微信H5场景使用。",
-          "example": "无",
+          "example": "https://faceid.qq.com?token=81EEF678-28EE-4759-A82E-6CBBBE6BC442",
           "member": "string",
           "name": "Url",
           "output_required": true,
@@ -2617,8 +2617,8 @@
         },
         {
           "disabled": false,
-          "document": "一次核身流程的标识，有效时间为7,200秒；\n完成核身后，可用该标识获取验证结果信息。",
-          "example": "CE661F1A-0F1E-45BD-BE13-34C05CEA7681",
+          "document": "一次核验流程的唯一标识。\n- 有效时间为7,200秒，超过有效期再进行人脸核验会报错，请在有效期内进行核验。\n- 完成人脸核验后，需根据此标识调用[获取实名核身结果信息增强版](https://cloud.tencent.com/document/api/1007/41957)获取用户最终验证结果信息。",
+          "example": "81EEF6178-28EE-4759-A823E-6CBBBE6BC442",
           "member": "string",
           "name": "BizToken",
           "output_required": true,
@@ -2781,25 +2781,25 @@
       "usage": "out"
     },
     "DetectInfoBestFrame": {
-      "document": "核身最佳帧信息",
+      "document": "核身最佳帧信息。",
       "members": [
         {
           "disabled": false,
           "document": "活体比对最佳帧Base64编码。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "/9j/4AAQSk...NFFFJjP//Z",
           "member": "string",
           "name": "BestFrame",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "自截帧Base64编码数组。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"/9j/4AAQSk...7+lc5J/9k=\"]",
           "member": "string",
           "name": "BestFrames",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -2807,12 +2807,12 @@
       "usage": "out"
     },
     "DetectInfoIdCardData": {
-      "document": "核身身份证图片信息",
+      "document": "核身身份证图片信息。",
       "members": [
         {
           "disabled": false,
           "document": "OCR正面照片的base64编码。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
           "member": "string",
           "name": "OcrFront",
           "output_required": true,
@@ -2821,8 +2821,8 @@
         },
         {
           "disabled": false,
-          "document": "OCR反面照片的base64编码\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "document": "OCR反面照片的base64编码。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/9j/4AAQSk.../S7s2f/9k=",
           "member": "string",
           "name": "OcrBack",
           "output_required": true,
@@ -2832,7 +2832,7 @@
         {
           "disabled": false,
           "document": "旋转裁边后的正面照片base64编码。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "/9j/4AAQSk...PnUZx//9k=",
           "member": "string",
           "name": "ProcessedFrontImage",
           "output_required": true,
@@ -2842,7 +2842,7 @@
         {
           "disabled": false,
           "document": "旋转裁边后的背面照片base64编码。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "/9j/4AAQSk...Vr0Ej/2Q==",
           "member": "string",
           "name": "ProcessedBackImage",
           "output_required": true,
@@ -2852,7 +2852,7 @@
         {
           "disabled": false,
           "document": "身份证正面人像图base64编码。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "/9j/4AAQSk...iiiisyz//Z",
           "member": "string",
           "name": "Avatar",
           "output_required": true,
@@ -2861,8 +2861,8 @@
         },
         {
           "disabled": false,
-          "document": "身份证人像面告警码，开启身份证告警功能后才会返回，返回数组中可能出现的告警码如下：\n-9100 身份证有效日期不合法告警，\n-9101 身份证边框不完整告警，\n-9102 身份证复印件告警，\n-9103 身份证翻拍告警，\n-9105 身份证框内遮挡告警，\n-9104 临时身份证告警，\n-9106 身份证 PS 告警（疑似存在PS痕迹），\n-9107 身份证反光告警。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "document": "身份证人像面告警码。\n- 开启身份证告警功能后才会返回。\n- 返回数组中可能出现的告警码如下：\n    - -9100 身份证有效日期不合法告警。\n    - -9101 身份证边框不完整告警。\n    - -9102 身份证复印件告警。\n    - -9103 身份证翻拍告警。\n    - -9105 身份证框内遮挡告警。\n    - -9104 临时身份证告警。\n    - -9106 身份证 PS 告警（疑似存在PS痕迹）。\n    - -9107 身份证反光告警。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"-9100\"]",
           "member": "int64",
           "name": "WarnInfos",
           "output_required": true,
@@ -2871,8 +2871,8 @@
         },
         {
           "disabled": false,
-          "document": "身份证国徽面告警码，开启身份证告警功能后才会返回，返回数组中可能出现的告警码如下：\n-9100 身份证有效日期不合法告警，\n-9101 身份证边框不完整告警，\n-9102 身份证复印件告警，\n-9103 身份证翻拍告警，\n-9105 身份证框内遮挡告警，\n-9104 临时身份证告警，\n-9106 身份证 PS 告警（疑似存在PS痕迹），\n-9107 身份证反光告警。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "document": "身份证国徽面告警码。\n- 开启身份证告警功能后才会返回。\n- 返回数组中可能出现的告警码如下：\n    -   -9100 身份证有效日期不合法告警，\n    -     -9101 身份证边框不完整告警，\n    -     -9102 身份证复印件告警，\n    -     -9103 身份证翻拍告警，\n    -     -9105 身份证框内遮挡告警，\n    -     -9104 临时身份证告警，\n    -     -9106 身份证 PS 告警（疑似存在PS痕迹），\n    -     -9107 身份证反光告警。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"-9100\"]",
           "member": "int64",
           "name": "BackWarnInfos",
           "output_required": true,
@@ -2883,11 +2883,11 @@
       "usage": "out"
     },
     "DetectInfoText": {
-      "document": "核身文本信息",
+      "document": "核身文本信息。",
       "members": [
         {
           "disabled": false,
-          "document": "本次流程最终验证结果。0为成功（仅包含活体人脸核身结果，不包含意愿核身结果）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "本次流程最终验证结果。\n- 取值范围：0为成功。\n- 仅包含活体人脸核身结果，不包含意愿核身结果。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "ErrCode",
@@ -2897,7 +2897,7 @@
         },
         {
           "disabled": false,
-          "document": "本次流程最终验证结果描述。（仅描述用，文案更新时不会通知。）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "本次流程最终验证结果描述。\n- 仅描述用，文案更新时不会通知。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "成功",
           "member": "string",
           "name": "ErrMsg",
@@ -2908,7 +2908,7 @@
         {
           "disabled": false,
           "document": "本次验证使用的身份证号。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "440111111111111111",
+          "example": "11204416541220243X",
           "member": "string",
           "name": "IdCard",
           "output_required": true,
@@ -2917,7 +2917,7 @@
         },
         {
           "disabled": false,
-          "document": "用户认证时使用的证件号码类型：\n0：二代身份证的证件号码\n1：港澳台居住证的证件号码\n2：其他（核验使用的证件号码非合法身份号码）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户认证时使用的证件号码类型。\n- 取值范围：\n    0：二代身份证的证件号码。\n    1：港澳台居住证的证件号码。\n    2：其他（核验使用的证件号码非合法身份号码）。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
           "name": "UseIDType",
@@ -2928,7 +2928,7 @@
         {
           "disabled": false,
           "document": "本次验证使用的姓名。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "爱新觉罗永琪",
+          "example": "韦小宝",
           "member": "string",
           "name": "Name",
           "output_required": true,
@@ -2948,7 +2948,7 @@
         {
           "disabled": false,
           "document": "身份校验环节识别结果：家庭住址。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "广东省",
+          "example": "北京市东城区景山前街4号紫禁城敬事房",
           "member": "string",
           "name": "OcrAddress",
           "output_required": true,
@@ -2957,8 +2957,8 @@
         },
         {
           "disabled": false,
-          "document": "身份校验环节识别结果：生日。格式为：YYYY/M/D\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1999/1/12",
+          "document": "身份校验环节识别结果：生日。\n- 格式为：YYYY/M/D\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1995/5/13",
           "member": "string",
           "name": "OcrBirth",
           "output_required": true,
@@ -2968,7 +2968,7 @@
         {
           "disabled": false,
           "document": "身份校验环节识别结果：签发机关。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "广东省",
+          "example": "北京市",
           "member": "string",
           "name": "OcrAuthority",
           "output_required": true,
@@ -2977,7 +2977,7 @@
         },
         {
           "disabled": false,
-          "document": "身份校验环节识别结果：有效日期。格式为：YYYY.MM.DD-YYYY.MM.DD\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "身份校验环节识别结果：有效日期。\n- 格式为：YYYY.MM.DD-YYYY.MM.DD。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1999.01.01-2009.01.01",
           "member": "string",
           "name": "OcrValidDate",
@@ -2988,7 +2988,7 @@
         {
           "disabled": false,
           "document": "身份校验环节识别结果：姓名。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "爱新觉罗永琪",
+          "example": "韦小宝",
           "member": "string",
           "name": "OcrName",
           "output_required": true,
@@ -2998,7 +2998,7 @@
         {
           "disabled": false,
           "document": "身份校验环节识别结果：身份证号。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "440111111111111111",
+          "example": "11204416541220243X",
           "member": "string",
           "name": "OcrIdCard",
           "output_required": true,
@@ -3008,7 +3008,7 @@
         {
           "disabled": false,
           "document": "身份校验环节识别结果：性别。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "女",
+          "example": "男",
           "member": "string",
           "name": "OcrGender",
           "output_required": true,
@@ -3017,7 +3017,7 @@
         },
         {
           "disabled": false,
-          "document": "身份校验环节采用的信息上传方式。\n取值有\"NFC\"、\"OCR\"、\"手动输入\"、\"其他\"\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "身份校验环节采用的信息上传方式。\n- 取值有\"NFC\"、\"OCR\"、\"手动输入\"、\"其他\"\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "NFC",
           "member": "string",
           "name": "IdInfoFrom",
@@ -3027,7 +3027,7 @@
         },
         {
           "disabled": false,
-          "document": "本次流程最终活体结果。0为成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "本次流程最终活体结果。\n- 0为成功\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "LiveStatus",
@@ -3037,7 +3037,7 @@
         },
         {
           "disabled": false,
-          "document": "本次流程最终活体结果描述。（仅描述用，文案更新时不会通知。）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "本次流程最终活体结果描述。\n- 仅描述用，文案更新时不会通知。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "成功",
           "member": "string",
           "name": "LiveMsg",
@@ -3047,7 +3047,7 @@
         },
         {
           "disabled": false,
-          "document": "本次流程最终一比一结果。0为成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "本次流程最终一比一结果。\n- 0为成功\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "Comparestatus",
@@ -3057,7 +3057,7 @@
         },
         {
           "disabled": false,
-          "document": "本次流程最终一比一结果描述。（仅描述用，文案更新时不会通知。）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "本次流程最终一比一结果描述。\n- 仅描述用，文案更新时不会通知。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "成功",
           "member": "string",
           "name": "Comparemsg",
@@ -3067,7 +3067,7 @@
         },
         {
           "disabled": false,
-          "document": "本次流程活体一比一的分数，取值范围 [0.00, 100.00]。相似度大于等于70时才判断为同一人，也可根据具体场景自行调整阈值（阈值70的误通过率为千分之一，阈值80的误通过率是万分之一）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "本次流程活体一比一的分数。\n- 取值范围 [0.00, 100.00]。\n- 相似度大于等于70时才判断为同一人，也可根据具体场景自行调整阈值。\n- 阈值70的误通过率为千分之一，阈值80的误通过率是万分之一。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "88.3",
           "member": "string",
           "name": "Sim",
@@ -3098,7 +3098,7 @@
         {
           "disabled": false,
           "document": "本次流程进行的活体一比一流水。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{}",
+          "example": "无",
           "member": "DetectDetail",
           "name": "LivenessDetail",
           "output_required": true,
@@ -3107,8 +3107,8 @@
         },
         {
           "disabled": false,
-          "document": "描述当前请求活体阶段被拒绝的详细原因，详情如下：\n01-用户全程闭眼\n02-用户未完成指定动作\n03-疑似翻拍攻击\n04-疑似合成攻击\n05-疑似黑产模版\n06-疑似存在水印\n07-反光校验未通过\n08-疑似中途换人\n09-人脸质量过差\n10-距离校验不通过\n11-疑似对抗样本攻击\n12-嘴巴区域疑似存在攻击痕迹\n13-眼睛区域疑似存在攻击痕迹\n14-眼睛或嘴巴被遮挡\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "document": "描述当前请求活体阶段被拒绝的详细原因，该参数仅限PLUS版本核身服务返回。\n- 详情如下：\n    01-用户全程闭眼\n    02-用户未完成指定动作\n    03-疑似翻拍攻击\n    04-疑似合成攻击\n    05-疑似黑产模版\n    06-疑似存在水印\n    07-反光校验未通过\n    08-疑似中途换人\n    09-人脸质量过差\n    10-距离校验不通过\n    11-疑似对抗样本攻击\n    12-嘴巴区域疑似存在攻击痕迹\n    13-眼睛区域疑似存在攻击痕迹\n    14-眼睛或嘴巴被遮挡\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[01]",
           "member": "string",
           "name": "LivenessInfoTag",
           "output_required": true,
@@ -3118,7 +3118,7 @@
         {
           "disabled": false,
           "document": "手机号码。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
+          "example": "16137688175",
           "member": "string",
           "name": "Mobile",
           "output_required": true,
@@ -3127,7 +3127,7 @@
         },
         {
           "disabled": false,
-          "document": "本次流程最终比对库源类型。包括：\n权威库；\n业务方自有库（用户上传照片、客户的混合库、混合部署库）；\n二次验证库；\n人工审核库；\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "本次流程最终比对库源类型。\n- 取值范围：\n    权威库。\n    业务方自有库（用户上传照片、客户的混合库、混合部署库）。\n    二次验证库。\n    人工审核库。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "权威库",
           "member": "string",
           "name": "CompareLibType",
@@ -3137,7 +3137,7 @@
         },
         {
           "disabled": false,
-          "document": "本次流程最终活体类型。包括：\n0：未知\n1：数字活体\n2：动作活体\n3：静默活体\n4：一闪活体（动作+光线）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "本次流程最终活体类型。\n- 取值范围：\n    0：未知\n    1：数字活体\n    2：动作活体\n    3：静默活体\n    4：一闪活体（动作+光线）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
           "name": "LivenessMode",
@@ -3147,8 +3147,8 @@
         },
         {
           "disabled": false,
-          "document": "nfc重复计费requestId列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[\"\"]",
+          "document": "nfc重复计费requestId列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"5bd763c5-3dd9-4d40-8043-00f90fe75acb\"]",
           "member": "string",
           "name": "NFCRequestIds",
           "output_required": true,
@@ -3157,7 +3157,7 @@
         },
         {
           "disabled": false,
-          "document": "nfc重复计费计数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "nfc重复计费计数。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "NFCBillingCounts",
@@ -3167,8 +3167,8 @@
         },
         {
           "disabled": false,
-          "document": "港澳台居住证通行证号码\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
+          "document": "港澳台居住证通行证号码。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "08320271",
           "member": "string",
           "name": "PassNo",
           "output_required": true,
@@ -3177,8 +3177,8 @@
         },
         {
           "disabled": false,
-          "document": "港澳台居住证签发次数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
+          "document": "港澳台居住证签发次数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "02",
           "member": "string",
           "name": "VisaNum",
           "output_required": true,
@@ -3189,15 +3189,15 @@
       "usage": "out"
     },
     "DetectInfoVideoData": {
-      "document": "核身视频信息",
+      "document": "核身视频信息。",
       "members": [
         {
           "disabled": false,
-          "document": "活体视频的base64编码\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "活体视频的base64编码。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
           "member": "string",
           "name": "LivenessVideo",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -3349,41 +3349,41 @@
       "members": [
         {
           "disabled": false,
-          "document": "商户方 appeIDcode 的数字证书",
-          "example": "1",
+          "document": "商户方 appeIDcode 的数字证书。",
+          "example": "DtROLOW1......UJWtn+4UNOPrC10wO/bWkP0xPDAw",
           "member": "string",
           "name": "EidCode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "Eid中心针对商户方EidCode的电子签名",
-          "example": "1",
+          "document": "Eid中心针对商户方EidCode的电子签名。",
+          "example": "RFQSPB8CxI...qi5fVVyQ==",
           "member": "string",
           "name": "EidSign",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "商户方公钥加密的会话密钥的base64字符串，[指引详见](https://cloud.tencent.com/document/product/1007/63370)",
-          "example": "saus+9hdsdks=",
+          "document": "商户方公钥加密的会话密钥的base64字符串，[指引详见](https://cloud.tencent.com/document/product/1007/63370)。",
+          "example": "VDsTCWy/VU...lf26IlaWD=",
           "member": "string",
           "name": "DesKey",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "会话密钥sm2加密后的base64字符串，[指引详见](https://cloud.tencent.com/document/product/1007/63370)",
-          "example": "ug7gdwsg7898shs9=",
+          "document": "会话密钥sm2加密后的base64字符串，[指引详见](https://cloud.tencent.com/document/product/1007/63370)。",
+          "example": "Py6yFkw90h...VenILSag==",
           "member": "string",
           "name": "UserInfo",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -4073,7 +4073,7 @@
         {
           "disabled": false,
           "document": "人脸核身流程的标识，调用DetectAuth接口时生成。",
-          "example": "CE661F1A-0F1E-45BD-BE13-34C05CEA7681",
+          "example": "CF742D11-BD49-4704-A33F-B9372D6322D6",
           "member": "string",
           "name": "BizToken",
           "required": true,
@@ -4082,7 +4082,7 @@
         {
           "disabled": false,
           "document": "用于细分客户使用场景，由腾讯侧在线下对接时分配。",
-          "example": "0",
+          "example": "5",
           "member": "string",
           "name": "RuleId",
           "required": true,
@@ -4090,8 +4090,8 @@
         },
         {
           "disabled": false,
-          "document": "指定拉取的结果信息，取值（0：全部；1：文本类；2：身份证信息；3：视频最佳截图信息）。\n如 13表示拉取文本类、视频最佳截图信息。\n默认值：0",
-          "example": "1",
+          "document": "指定拉取的结果信息。\n- 取值（0：全部；1：文本类；2：身份证信息；3：视频最佳截图信息）。\n- 例如 13 表示拉取文本类、视频最佳截图信息。\n- 默认值：0",
+          "example": "13",
           "member": "string",
           "name": "InfoType",
           "required": false,
@@ -4099,8 +4099,8 @@
         },
         {
           "disabled": false,
-          "document": "从活体视频中截取一定张数的最佳帧（仅部分服务支持，若需使用请与慧眼小助手沟通）。默认为0，最大为10，超出10的最多只给10张。（InfoType需要包含3）",
-          "example": "0",
+          "document": "从活体视频中截取一定张数的最佳帧。\n- 仅部分服务支持，若需使用请与慧眼小助手沟通。\n- 默认值为0，最大值为10，超出10的最多只给10张。\n- InfoType需要包含3。",
+          "example": "1",
           "member": "uint64",
           "name": "BestFramesCount",
           "required": false,
@@ -4108,7 +4108,7 @@
         },
         {
           "disabled": false,
-          "document": "是否对身份证照片进行裁边。默认为false。（InfoType需要包含2）",
+          "document": "是否对身份证照片进行裁边。\n- 默认为false。\n- InfoType需要包含2。",
           "example": "false",
           "member": "bool",
           "name": "IsCutIdCardImage",
@@ -4117,7 +4117,7 @@
         },
         {
           "disabled": false,
-          "document": "是否需要从身份证中抠出头像。默认为false。（InfoType需要包含2）",
+          "document": "是否需要从身份证中抠出头像。\n- 默认为false。\n- InfoType需要包含2。",
           "example": "false",
           "member": "bool",
           "name": "IsNeedIdCardAvatar",
@@ -4135,7 +4135,7 @@
         },
         {
           "disabled": false,
-          "document": "是否需要对返回中的敏感信息进行加密。仅指定加密算法Algorithm即可，其余字段传入默认值。其中敏感信息包括：Response.Text.IdCard、Response.Text.Name、Response.Text.OcrIdCard、Response.Text.OcrName",
+          "document": "是否需要对返回中的敏感信息进行加密。\n- 只需指定加密算法Algorithm即可，其余字段传入默认值。\n- 敏感信息包括：Response.Text.IdCard、Response.Text.Name、Response.Text.OcrIdCard、Response.Text.OcrName。",
           "example": "无",
           "member": "Encryption",
           "name": "Encryption",
@@ -4144,8 +4144,8 @@
         },
         {
           "disabled": false,
-          "document": "是否对回包整体进行加密",
-          "example": "无",
+          "document": "是否对回包整体进行加密。",
+          "example": "false",
           "member": "bool",
           "name": "IsEncryptResponse",
           "required": false,
@@ -4209,7 +4209,7 @@
         },
         {
           "disabled": false,
-          "document": "意愿核身朗读模式结果信息。若未使用意愿核身功能，该字段返回值可以不处理。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "意愿核身朗读模式结果信息。\n- 若未使用意愿核身功能，该字段返回值可以不处理。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "IntentionVerifyData",
           "name": "IntentionVerifyData",
@@ -4219,7 +4219,7 @@
         },
         {
           "disabled": false,
-          "document": "意愿核身问答模式结果。若未使用该意愿核身功能，该字段返回值可以不处理。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "意愿核身问答模式结果。\n\n- 若未使用该意愿核身功能，该字段返回值可以不处理。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "IntentionQuestionResult",
           "name": "IntentionQuestionResult",
@@ -4229,7 +4229,7 @@
         },
         {
           "disabled": false,
-          "document": "意愿核身点头确认模式的结果信息，若未使用该意愿核身功能，该字段返回值可以不处理。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "意愿核身点头确认模式的结果信息。\n- 若未使用该意愿核身功能，该字段返回值可以不处理。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "IntentionActionResult",
           "name": "IntentionActionResult",
@@ -4239,8 +4239,8 @@
         },
         {
           "disabled": false,
-          "document": "加密后的数据\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "加密后的数据。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0hMvx6fX6n...gXE0adJA==",
           "member": "string",
           "name": "EncryptedBody",
           "output_required": true,
@@ -4364,7 +4364,7 @@
         {
           "disabled": false,
           "document": "E证通流程的唯一标识，调用GetEidToken接口时生成。",
-          "example": "CE661F1A-0F1E-45BD-BE13-34C05CEA7681",
+          "example": "CE661F1A-0F1E-45BD-BE133-34C05CEA76812",
           "member": "string",
           "name": "EidToken",
           "required": true,
@@ -4372,7 +4372,7 @@
         },
         {
           "disabled": false,
-          "document": "指定拉取的结果信息，取值（0：全部；1：文本类；2：身份证信息；3：最佳截图信息；5：意愿核身朗读模式相关结果；6：意愿核身问答模式相关结果）。\n如 13表示拉取文本类、最佳截图信息。\n默认值：0",
+          "document": "指定拉取的结果信息。\n- 取值范围：\n     0：全部。\n    1：文本类。\n    2：身份证信息。\n    3：最佳截图信息。\n    5：意愿核身朗读模式相关结果。\n    6：意愿核身问答模式相关结果。\n- 例如 13表示拉取文本类、最佳截图信息。\n- 默认值：0",
           "example": "1",
           "member": "string",
           "name": "InfoType",
@@ -4381,7 +4381,7 @@
         },
         {
           "disabled": false,
-          "document": "从活体视频中截取一定张数的最佳帧。默认为0，最大为3，超出3的最多只给3张。（InfoType需要包含3）",
+          "document": "从活体视频中截取一定张数的最佳帧。\n- 默认为0，最大为3，超出3的最多只给3张。\n- InfoType需要包含3。",
           "example": "1",
           "member": "uint64",
           "name": "BestFramesCount",
@@ -4390,7 +4390,7 @@
         },
         {
           "disabled": false,
-          "document": "是否对身份证照片进行裁边。默认为false。（InfoType需要包含2）",
+          "document": "是否对身份证照片进行裁边。\n- 默认为false。\n- InfoType需要包含2。",
           "example": "false",
           "member": "bool",
           "name": "IsCutIdCardImage",
@@ -4399,7 +4399,7 @@
         },
         {
           "disabled": false,
-          "document": "是否需要从身份证中抠出头像。默认为false。（InfoType需要包含2）",
+          "document": "是否需要从身份证中抠出头像。\n- 默认为false。\n- InfoType需要包含2。",
           "example": "false",
           "member": "bool",
           "name": "IsNeedIdCardAvatar",
@@ -4414,7 +4414,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "文本类信息。（基于对敏感信息的保护，验证使用的姓名和身份证号统一通过加密后从Eidinfo参数中返回，如需获取请在控制台申请返回身份信息，详见[E证通获取实名信息指引](https://cloud.tencent.com/document/product/1007/63370)）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文本类信息。\n- 基于对敏感信息的保护，验证使用的姓名和身份证号统一通过加密后从EidInfo参数中返回。\n- 如需获取请在控制台申请返回身份信息，详见[E证通获取实名信息指引](https://cloud.tencent.com/document/product/1007/63370)。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DetectInfoText",
           "name": "Text",
@@ -4444,7 +4444,7 @@
         },
         {
           "disabled": false,
-          "document": "Eid信息。（包括商户下用户唯一标识以及加密后的姓名、身份证号信息。解密方式详见[E证通获取实名信息指引](https://cloud.tencent.com/document/product/1007/63370)）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Eid信息。\n- 包括商户下用户唯一标识以及加密后的姓名、身份证号信息。\n- 解密方式详见[E证通获取实名信息指引](https://cloud.tencent.com/document/product/1007/63370)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "EidInfo",
           "name": "EidInfo",
@@ -4454,7 +4454,7 @@
         },
         {
           "disabled": false,
-          "document": "意愿核身朗读模式相关信息。若未使用意愿核身朗读功能，该字段返回值可以不处理。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "意愿核身朗读模式相关信息。\n- 若未使用意愿核身朗读功能，该字段返回值可以不处理。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "IntentionVerifyData",
           "name": "IntentionVerifyData",
@@ -4464,7 +4464,7 @@
         },
         {
           "disabled": false,
-          "document": "意愿核身问答模式相关信息。若未使用意愿核身问答模式功能，该字段返回值可以不处理。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "意愿核身问答模式相关信息。\n- 若未使用意愿核身问答模式功能，该字段返回值可以不处理。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "IntentionQuestionResult",
           "name": "IntentionQuestionResult",
@@ -4474,7 +4474,7 @@
         },
         {
           "disabled": false,
-          "document": "意愿核身点头确认模式的结果信息，若未使用该意愿核身功能，该字段返回值可以不处理。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "意愿核身点头确认模式的结果信息。\n- 若未使用该意愿核身功能，该字段返回值可以不处理。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "IntentionActionResult",
           "name": "IntentionActionResult",
@@ -4496,7 +4496,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "姓名身份证输入方式。\n1：传身份证正反面OCR   \n2：传身份证正面OCR  \n3：用户手动输入  \n4：客户后台传入  \n默认1\n注：使用OCR时仅支持用户修改结果中的姓名",
+          "document": "姓名身份证输入方式。\n- 取值范围：\n1：传身份证正反面OCR。\n2：传身份证正面OCR。\n3：用户手动输入。\n4：客户后台传入。\n- 默认值：1。\n- 注意：使用OCR时仅支持用户修改结果中的姓名。",
           "example": "1",
           "member": "string",
           "name": "InputType",
@@ -4505,7 +4505,7 @@
         },
         {
           "disabled": false,
-          "document": "是否使用意愿核身，默认不使用。注意：如开启使用，则计费标签按【意愿核身】计费标签计价；如不开启，则计费标签按【E证通】计费标签计价，价格详见：[价格说明](https://cloud.tencent.com/document/product/1007/56804)。",
+          "document": "是否使用意愿核身。\n\n- 默认不使用。\n- 注意：如开启使用，则计费标签按【意愿核身】计费标签计价；如不开启，则计费标签按【E证通】计费标签计价，价格详见：[价格说明](https://cloud.tencent.com/document/product/1007/56804)。",
           "example": "true",
           "member": "bool",
           "name": "UseIntentionVerify",
@@ -4514,7 +4514,7 @@
         },
         {
           "disabled": false,
-          "document": "意愿核身模式。枚举值：1( 语音朗读模式)，2（语音问答模式） ，3（点头确认模式）。默认值为1。",
+          "document": "意愿核身模式。\n- 取值范围：\n1：语音朗读模式。\n2：语音问答模式。\n3：点头确认模式。\n- 默认值为1。",
           "example": "1",
           "member": "string",
           "name": "IntentionMode",
@@ -4523,8 +4523,8 @@
         },
         {
           "disabled": false,
-          "document": "意愿核身朗读模式使用的文案，若未使用意愿核身朗读功能，该字段无需传入。默认为空，最长可接受120的字符串长度。",
-          "example": "无",
+          "document": "意愿核身朗读模式使用的文案。\n- 若未使用意愿核身朗读功能，该字段无需传入。\n- 默认为空，最长可接受120的字符串长度。",
+          "example": "\"\"",
           "member": "string",
           "name": "IntentionVerifyText",
           "required": false,
@@ -4532,7 +4532,7 @@
         },
         {
           "disabled": false,
-          "document": "意愿核身问答模式的配置列表。当前仅支持一个问答。",
+          "document": "意愿核身问答模式的配置列表。\n- 当前仅支持一个问答。",
           "example": "无",
           "member": "IntentionQuestion",
           "name": "IntentionQuestions",
@@ -4541,7 +4541,7 @@
         },
         {
           "disabled": false,
-          "document": "意愿核身（点头确认模式）使用的文案，若未使用意愿核身（点头确认模式），则该字段无需传入。默认为空，最长可接受150的字符串长度。",
+          "document": "意愿核身（点头确认模式）使用的文案。\n- 若未使用意愿核身（点头确认模式），则该字段无需传入。\n- 默认为空，最长可接受150的字符串长度。",
           "example": "无",
           "member": "IntentionActionConfig",
           "name": "IntentionActions",
@@ -4550,7 +4550,7 @@
         },
         {
           "disabled": false,
-          "document": "意愿核身过程中识别用户的回答意图，开启后除了IntentionQuestions的Answers列表中的标准回答会通过，近似意图的回答也会通过，默认开启。",
+          "document": "意愿核身过程中识别用户的回答意图。\n- 开启后除了IntentionQuestions的Answers列表中的标准回答会通过，近似意图的回答也会通过。\n- 默认开启。",
           "example": "true",
           "member": "bool",
           "name": "IntentionRecognition",
@@ -4559,7 +4559,7 @@
         },
         {
           "disabled": false,
-          "document": "是否支持港澳台居住证识别",
+          "document": "是否支持港澳台居住证识别。",
           "example": "false",
           "member": "bool",
           "name": "IsSupportHMTResidentPermitOCR",
@@ -4568,7 +4568,7 @@
         },
         {
           "disabled": false,
-          "document": "用户语音回答过程中是否开启张嘴识别检测，默认不开启，仅在意愿核身问答模式中使用。",
+          "document": "用户语音回答过程中是否开启张嘴识别检测。\n- 默认不开启。\n- 仅在意愿核身问答模式中使用。",
           "example": "false",
           "member": "bool",
           "name": "MouthOpenRecognition",
@@ -4577,7 +4577,7 @@
         },
         {
           "disabled": false,
-          "document": "意愿核身语音播报速度，配置后问答模式和点头模式的语音播报环节都会生效，默认值为0： 0：智能语速（根据播报文案的长度自动调整语音播报速度） 1：固定1倍速 2：固定1.2倍速 3：固定1.5倍速",
+          "document": "意愿核身语音播报速度。\n- 配置后问答模式和点头模式的语音播报环节都会生效。\n- 默认值为0。\n- 取值范围： \n0：智能语速（根据播报文案的长度自动调整语音播报速度）。\n1：固定1倍速。\n2：固定1.2倍速。\n3：固定1.5倍速。",
           "example": "0",
           "member": "uint64",
           "name": "Speed",
@@ -4592,8 +4592,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "EID商户id，字段长度最长50位。",
-          "example": "3232",
+          "document": "EID商户id。\n- 字段长度最长50位。",
+          "example": "0NSJ243206261600932123",
           "member": "string",
           "name": "MerchantId",
           "required": true,
@@ -4601,8 +4601,8 @@
         },
         {
           "disabled": false,
-          "document": "身份标识（未使用OCR服务时，必须传入）。\n规则：a-z，A-Z，0-9组合。最长长度32位。",
-          "example": "无",
+          "document": "身份标识。\n- 未使用OCR服务时，必须传入。\n- 规则：a-z，A-Z，0-9组合。\n- 最长长度32位。",
+          "example": "11204416541220243X",
           "member": "string",
           "name": "IdCard",
           "required": false,
@@ -4610,8 +4610,8 @@
         },
         {
           "disabled": false,
-          "document": "姓名。（未使用OCR服务时，必须传入）最长长度32位。中文请使用UTF-8编码。",
-          "example": "无",
+          "document": "姓名。\n- 未使用OCR服务时，必须传入。\n- 最长长度32位。\n- 中文请使用UTF-8编码。",
+          "example": "韦小宝",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -4619,8 +4619,8 @@
         },
         {
           "disabled": false,
-          "document": "透传字段，在获取验证结果时返回。最长长度1024位。",
-          "example": "无",
+          "document": "透传字段，在获取验证结果时返回。\n- 最长长度1024位。",
+          "example": "202411011707591990200060000",
           "member": "string",
           "name": "Extra",
           "required": false,
@@ -4637,8 +4637,8 @@
         },
         {
           "disabled": false,
-          "document": "最长长度1024位。用户从Url中进入核身认证结束后重定向的回调链接地址。EidToken会在该链接的query参数中。",
-          "example": "无",
+          "document": "用户从Url中进入核身认证结束后重定向的回调链接地址。\n- 最长长度1024位。\n- EidToken会在该链接的query参数中。",
+          "example": "https://faceid.qq.com",
           "member": "string",
           "name": "RedirectUrl",
           "required": false,
@@ -4646,7 +4646,7 @@
         },
         {
           "disabled": false,
-          "document": "敏感数据加密信息。对传入信息（姓名、身份证号）有加密需求的用户可使用此参数，详情请点击左侧链接。",
+          "document": "敏感数据加密信息。\n- 对传入信息（姓名、身份证号）有加密需求的用户可使用此参数，详情请点击左侧链接。",
           "example": "无",
           "member": "Encryption",
           "name": "Encryption",
@@ -4661,8 +4661,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "一次核身流程的标识，有效时间为600秒；\n完成核身后，可用该标识获取验证结果信息。",
-          "example": "CE661F1A-0F1E-45BD-BE13-34C05CEA7681",
+          "document": "一次核身流程的标识。\n- 有效时间为600秒。\n- 完成核身后，可用该标识获取验证结果信息。",
+          "example": "CE6621F1A-0F1E-45BD-BE13-34C045CEA7681",
           "member": "string",
           "name": "EidToken",
           "output_required": true,
@@ -4671,8 +4671,8 @@
         },
         {
           "disabled": false,
-          "document": "发起核身流程的URL，用于H5场景核身。",
-          "example": "https://www.qq.com",
+          "document": "发起核身流程的URL。\n- 用于H5场景核身。",
+          "example": "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxa50a8f2ac379585f53&redirect_uri=https%3A%2F%2Feid.faceid.qq.com%2Fapi%2Fv1%2FGetOpenId%3Ftoken%3DCE6611F1A-0F1E-455BD-BE13-34C05CEA7681&response_type=code&scope=snsapi_base&state=&component_appid=wx9802ee81e68d6dee#wechat_redirec",
           "member": "string",
           "name": "Url",
           "output_required": true,
@@ -4774,8 +4774,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "SDK人脸核身流程的标识，调用GetFaceIdToken接口时生成。",
-          "example": "CE661F1A-0F1E-45BD-BE13-34C05CEA7681",
+          "document": "SDK人脸核身流程的标识。\n- 调用GetFaceIdToken接口时生成。",
+          "example": "CE6613F1A-0F1E-45BD-BE13-34C05CEA76181",
           "member": "string",
           "name": "FaceIdToken",
           "required": true,
@@ -4783,7 +4783,7 @@
         },
         {
           "disabled": false,
-          "document": "是否需要拉取视频，默认false不需要",
+          "document": "是否需要拉取视频。\n- 默认false：不需要。",
           "example": "false",
           "member": "bool",
           "name": "IsNeedVideo",
@@ -4792,7 +4792,7 @@
         },
         {
           "disabled": false,
-          "document": "是否需要拉取截帧，默认false不需要",
+          "document": "是否需要拉取截帧。\n- 默认false：不需要。",
           "example": "false",
           "member": "bool",
           "name": "IsNeedBestFrame",
@@ -4807,8 +4807,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "身份证",
-          "example": "23232323232",
+          "document": "身份证。",
+          "example": "11204416541220243X",
           "member": "string",
           "name": "IdCard",
           "output_required": true,
@@ -4817,8 +4817,8 @@
         },
         {
           "disabled": false,
-          "document": "姓名",
-          "example": "王五",
+          "document": "姓名。",
+          "example": "韦小宝",
           "member": "string",
           "name": "Name",
           "output_required": true,
@@ -4827,7 +4827,7 @@
         },
         {
           "disabled": false,
-          "document": "业务核验结果，参考https://cloud.tencent.com/document/product/1007/47912",
+          "document": "业务核验结果。\n- 参考：https://cloud.tencent.com/document/product/1007/47912。",
           "example": "0",
           "member": "string",
           "name": "Result",
@@ -4837,7 +4837,7 @@
         },
         {
           "disabled": false,
-          "document": "业务核验描述",
+          "document": "业务核验描述。",
           "example": "成功",
           "member": "string",
           "name": "Description",
@@ -4847,7 +4847,7 @@
         },
         {
           "disabled": false,
-          "document": "相似度，0-100，数值越大相似度越高",
+          "document": "相似度。\n- 取值：0-100。\n- 数值越大相似度越高。",
           "example": "97.7",
           "member": "float",
           "name": "Similarity",
@@ -4857,8 +4857,8 @@
         },
         {
           "disabled": false,
-          "document": "用户核验的视频base64，如果选择了使用cos，返回完整cos地址如https://bucket.cos.ap-guangzhou.myqcloud.com/objectKey\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xx",
+          "document": "用户核验的视频base64。\n- 如果选择了使用cos，返回完整cos地址，如https://bucket.cos.ap-guangzhou.myqcloud.com/objectKey。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "AAAAGGZ0eX...5Zin4btI4A",
           "member": "string",
           "name": "VideoBase64",
           "output_required": true,
@@ -4867,8 +4867,8 @@
         },
         {
           "disabled": false,
-          "document": "用户核验视频的截帧base64，如果选择了使用cos，返回完整cos地址如https://bucket.cos.ap-guangzhou.myqcloud.com/objectKey\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xx",
+          "document": "用户核验视频的截帧base64。\n- 如果选择了使用cos，返回完整cos地址如https://bucket.cos.ap-guangzhou.myqcloud.com/objectKey。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/9j/4AAQSk...TYkEBjj//Z",
           "member": "string",
           "name": "BestFrameBase64",
           "output_required": true,
@@ -4877,8 +4877,8 @@
         },
         {
           "disabled": false,
-          "document": "获取token时透传的信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xx",
+          "document": "获取token时透传的信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "202411011707591990200060000",
           "member": "string",
           "name": "Extra",
           "output_required": true,
@@ -4887,7 +4887,7 @@
         },
         {
           "disabled": false,
-          "document": "plus版：描述当前请求所在设备的风险标签，详情如下：\n01-设备疑似被Root/设备疑似越狱\n02-设备疑似被注入\n03-设备疑似为模拟器\n04-设备疑似存在风险操作\n05-摄像头疑似被劫持\n06-疑似黑产设备\nnull-无设备风险\n增强版：此字段不生效，默认为null\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "plus版：描述当前请求所在设备的风险标签。\n- 详情如下：\n01-设备疑似被Root/设备疑似越狱。\n02-设备疑似被注入。\n03-设备疑似为模拟器。\n04-设备疑似存在风险操作。\n05-摄像头疑似被劫持。\n06-疑似黑产设备。\nnull-无设备风险。\n- 增强版：此字段不生效，默认为null。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "01",
           "member": "string",
           "name": "DeviceInfoTag",
@@ -4897,7 +4897,7 @@
         },
         {
           "disabled": false,
-          "document": "行为风险标签，仅错误码返回1007（设备疑似被劫持）时返回风险标签。标签说明：\n02：攻击风险\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "行为风险标签。\n- 仅错误码返回1007（设备疑似被劫持）时返回风险标签。\n- 标签说明：\n02：攻击风险\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "02",
           "member": "string",
           "name": "RiskInfoTag",
@@ -4907,7 +4907,7 @@
         },
         {
           "disabled": false,
-          "document": "plus版：描述当前请求活体阶段被拒绝的详细原因，详情如下：01-用户全程闭眼02-用户未完成指定动作03-疑似翻拍攻击04-疑似合成图片05-疑似合成视频06-疑似合成动作07-疑似黑产模板08-疑似存在水印09-反光校验未通过10-最佳帧校验未通过11-人脸质量过差12-人脸距离不匹配13-疑似对抗样本攻击null-无增强版：此字段不生效，默认为null\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "plus版：描述当前请求活体阶段被拒绝的详细原因。\n- 详情如下：\n01-用户全程闭眼。\n02-用户未完成指定动作。\n03-疑似翻拍攻击。\n04-疑似合成图片。\n05-疑似合成视频。\n06-疑似合成动作。\n07-疑似黑产模板。\n08-疑似存在水印。\n09-反光校验未通过。\n10-最佳帧校验未通过。\n11-人脸质量过差。\n12-人脸距离不匹配。\n13-疑似对抗样本攻击。\nnull-无。\n- 增强版：此字段不生效，默认为null。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "01",
           "member": "string",
           "name": "LivenessInfoTag",
@@ -4917,7 +4917,7 @@
         },
         {
           "disabled": false,
-          "document": "plus版：描述当前请求所在设备的风险等级，共4级，详情如下：\n1 - 安全\n2 - 低风险\n3 - 中风险\n4 - 高危\nnull - 未获取到风险等级\n增强版：此字段不生效，默认为null\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "plus版：描述当前请求所在设备的风险等级，共4级。\n- 详情如下：\n1 - 安全。\n2 - 低风险。\n3 - 中风险。\n4 - 高危。\nnull - 未获取到风险等级。\n- 增强版：此字段不生效，默认为null。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
           "name": "DeviceInfoLevel",
@@ -4940,7 +4940,7 @@
         {
           "disabled": false,
           "document": "SDK人脸核身流程的标识，调用GetFaceidRiskInfoToken接口时生成。",
-          "example": "CE661F1A-0F1E-45BD-BE13-34C05CEA7681",
+          "example": "CE6621F1A-0F1E-45BD-BE13-34C025CEA7681",
           "member": "string",
           "name": "FaceIdToken",
           "required": true,
@@ -4954,7 +4954,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "描述当前请求所在设备的风险标签，详情如下： 01-设备疑似被Root/设备疑似越狱 02-设备疑似被注入 03-设备疑似为模拟器 04-设备疑似存在风险操作 05-摄像头疑似被劫持 06-疑似黑产设备\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "描述当前请求所在设备的风险标签\n- 详情如下：\n01-设备疑似被Root/设备疑似越狱。\n02-设备疑似被注入。\n03-设备疑似为模拟器。\n04-设备疑似存在风险操作。\n05-摄像头疑似被劫持。\n06-疑似黑产设备。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "01_03",
           "member": "string",
           "name": "DeviceInfoTag",
@@ -4964,7 +4964,7 @@
         },
         {
           "disabled": false,
-          "document": "描述当前请求所在设备的风险等级，共4级，详情如下： 1 - 低风险 2 - 中风险 3 - 高风险 4 - 攻击 ，-1表示未获取到风险等级\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "描述当前请求所在设备的风险等级，共4级。\n- 详情如下：\n 1 - 低风险。\n 2 - 中风险。\n 3 - 高风险。\n 4 - 攻击。 \n-1表示未获取到风险等级。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "DeviceInfoLevel",
@@ -4974,8 +4974,8 @@
         },
         {
           "disabled": false,
-          "document": "设备id标识\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "设备id标识。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "DB1904203FA986234030BDFAB",
           "member": "string",
           "name": "OpenId",
           "output_required": true,
@@ -4984,7 +4984,7 @@
         },
         {
           "disabled": false,
-          "document": "描述当前请求所在设备的相机指纹风险等级，共4级，详情如下： 1 - 低风险 2 - 中风险 3 - 高风险 4 - 攻击 ，-1表示未获取到风险等级\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "描述当前请求所在设备的相机指纹风险等级，共4级。\n- 详情如下：\n 1 - 低风险。\n 2 - 中风险。\n 3 - 高风险。\n 4 - 攻击。\n -1表示未获取到风险等级。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "CameraInfoLevel",
@@ -4994,7 +4994,7 @@
         },
         {
           "disabled": false,
-          "document": "描述当前请求所在设备的相机指纹风险标签，详情如下： 01-设备疑似被Root/设备疑似越狱 02-设备疑似被注入 03-设备疑似为模拟器 04-设备疑似存在风险操作 05-摄像头疑似被劫持 06-疑似黑产设备，空表示没有相机指纹风险\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "描述当前请求所在设备的相机指纹风险标签。\n\n- 详情如下：\n 01-设备疑似被Root/设备疑似越狱。\n 02-设备疑似被注入。\n 03-设备疑似为模拟器。\n 04-设备疑似存在风险操作。\n 05-摄像头疑似被劫持。\n 06-疑似黑产设备。\n 空表示没有相机指纹风险。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "01_03",
           "member": "string",
           "name": "CameraInfoTag",
@@ -5004,7 +5004,7 @@
         },
         {
           "disabled": false,
-          "document": "获取token时透传的信息\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "获取token时透传的信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "Extra",
@@ -5099,7 +5099,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "本地上传照片(LOCAL)、商业库(BUSINESS)",
+          "document": "比对库。\n- 取值范围：\nLOCAL：本地上传照片。\nBUSINESS：商业库。",
           "example": "BUSINESS",
           "member": "string",
           "name": "CompareLib",
@@ -5108,8 +5108,8 @@
         },
         {
           "disabled": false,
-          "document": "CompareLib为商业库时必传。",
-          "example": "xxxxxxxxxxxxxxxxx",
+          "document": "身份证。\n- CompareLib为商业库时必传。",
+          "example": "11204416541220243X",
           "member": "string",
           "name": "IdCard",
           "required": false,
@@ -5117,8 +5117,8 @@
         },
         {
           "disabled": false,
-          "document": "CompareLib为商业库时必传。",
-          "example": "xxxxxxxxxxxxxxxxx",
+          "document": "姓名。\n- CompareLib为商业库时必传。",
+          "example": "韦小宝",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -5126,8 +5126,8 @@
         },
         {
           "disabled": false,
-          "document": "CompareLib为上传照片比对时必传，Base64后图片最大8MB。\n请使用标准的Base64编码方式(带=补位)，编码规范参考RFC4648。",
-          "example": "1",
+          "document": "图片的Base64。\n- CompareLib为上传照片比对时必传。\n- Base64后图片最大8MB。\n- 请使用标准的Base64编码方式(带=补位)，编码规范参考RFC4648。",
+          "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
           "member": "string",
           "name": "ImageBase64",
           "required": false,
@@ -5135,8 +5135,8 @@
         },
         {
           "disabled": false,
-          "document": "SDK中生成的Meta字符串",
-          "example": "1",
+          "document": "SDK中生成的Meta字符串。",
+          "example": "\"\"",
           "member": "string",
           "name": "Meta",
           "required": false,
@@ -5144,8 +5144,8 @@
         },
         {
           "disabled": false,
-          "document": "透传参数 1000长度字符串",
-          "example": "1",
+          "document": "透传参数。\n- 1000长度字符串",
+          "example": "\"\"",
           "member": "string",
           "name": "Extra",
           "required": false,
@@ -5153,7 +5153,7 @@
         },
         {
           "disabled": false,
-          "document": "默认为false，设置该参数为true后，核身过程中的视频图片将会存储在人脸核身控制台授权cos的bucket中，拉取结果时会返回对应资源完整cos地址。开通地址见https://console.cloud.tencent.com/faceid/cos\n【注意】选择该参数为true后将不返回base64数据，请根据接入情况谨慎修改。",
+          "document": "是否使用cos桶。\n- 默认为false。\n- 设置该参数为true后，核身过程中的视频图片将会存储在人脸核身控制台授权cos的bucket中，拉取结果时会返回对应资源完整cos地址。\n- 开通地址见https://console.cloud.tencent.com/faceid/cos\n- 【注意】选择该参数为true后将不返回base64数据，请根据接入情况谨慎修改。",
           "example": "true",
           "member": "bool",
           "name": "UseCos",
@@ -5171,8 +5171,8 @@
         },
         {
           "disabled": false,
-          "document": "用于细分客户使用场景，申请开通服务后，可以在腾讯云慧眼人脸核身控制台（https://console.cloud.tencent.com/faceid） 自助接入里面创建，审核通过后即可调用。如有疑问，请添加腾讯云人脸核身小助手进行咨询。\n示例值：1",
-          "example": "1",
+          "document": "用于细分客户使用场景。\n- 申请开通服务后，可以在腾讯云慧眼人脸核身控制台（https://console.cloud.tencent.com/faceid） 自助接入里面创建，审核通过后即可调用。\n- 如有疑问，请添加腾讯云人脸核身小助手进行咨询。",
+          "example": "12",
           "member": "string",
           "name": "RuleId",
           "required": false,
@@ -5186,8 +5186,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "有效期 10分钟。只能完成1次核身。",
-          "example": "asdasdadasdasd",
+          "document": "token值。- 有效期 10分钟。- 只能完成1次核身。",
+          "example": "42S4B131D-5974-4674-EABB-8FFF1EC99F189",
           "member": "string",
           "name": "FaceIdToken",
           "output_required": true,
@@ -5208,8 +5208,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "SDK中生成的Meta字符串",
-          "example": "1",
+          "document": "SDK中生成的Meta字符串。",
+          "example": "\"\"",
           "member": "string",
           "name": "Meta",
           "required": false,
@@ -5217,8 +5217,8 @@
         },
         {
           "disabled": false,
-          "document": "透传参数 1000长度字符串",
-          "example": "1",
+          "document": "透传参数 1000长度字符串。",
+          "example": "\"\"",
           "member": "string",
           "name": "Extra",
           "required": false,
@@ -5233,7 +5233,7 @@
         {
           "disabled": false,
           "document": "有效期 10分钟。只能完成1次核身。",
-          "example": "9C6677E5-053C-425C-B5C3-D378427DFE28",
+          "example": "9C66717E5-053C-425C-B5C3-D3784271DFE28",
           "member": "string",
           "name": "FaceIdToken",
           "output_required": true,
@@ -6197,7 +6197,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "身份证号",
+          "document": "身份证号。",
           "example": "11204416541220243X",
           "member": "string",
           "name": "IdCard",
@@ -6206,7 +6206,7 @@
         },
         {
           "disabled": false,
-          "document": "姓名。中文请使用UTF-8编码。",
+          "document": "姓名。\n- 中文请使用UTF-8编码。",
           "example": "韦小宝",
           "member": "string",
           "name": "Name",
@@ -6216,7 +6216,7 @@
         {
           "disabled": false,
           "document": "用于人脸比对的照片，图片的Base64值；\nBase64编码后的图片数据大小不超过3M，仅支持jpg、png格式。\n请使用标准的Base64编码方式(带=补位)，编码规范参考RFC4648。",
-          "example": "<ImageBase64>",
+          "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
           "member": "string",
           "name": "ImageBase64",
           "required": true,
@@ -6233,7 +6233,7 @@
         },
         {
           "disabled": false,
-          "document": "敏感数据加密信息。对传入信息（姓名、身份证号）有加密需求的用户可使用此参数，详情请点击左侧链接。",
+          "document": "敏感数据加密信息。\n- 对传入信息（姓名、身份证号）有加密需求的用户可使用此参数，详情请点击左侧链接。",
           "example": "无",
           "member": "Encryption",
           "name": "Encryption",
@@ -6248,7 +6248,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "相似度，取值范围 [0.00, 100.00]。推荐相似度大于等于70时可判断为同一人，可根据具体场景自行调整阈值（阈值70的误通过率为千分之一，阈值80的误通过率是万分之一）",
+          "document": "相似度。\n- 取值范围 [0.00, 100.00]。\n- 推荐相似度大于等于70时可判断为同一人，可根据具体场景自行调整阈值（阈值70的误通过率为千分之一，阈值80的误通过率是万分之一）",
           "example": "89.88",
           "member": "float",
           "name": "Sim",
@@ -6258,7 +6258,7 @@
         },
         {
           "disabled": false,
-          "document": "业务错误码，成功情况返回Success, 错误情况请参考下方错误码 列表中FailedOperation部分",
+          "document": "业务错误码。\n- 成功情况返回Success。\n- 错误情况请参考下方错误码 列表中FailedOperation部分",
           "example": "Success",
           "member": "string",
           "name": "Result",
@@ -6629,7 +6629,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "当选择语音问答模式时，系统自动播报的问题文本，最大长度为150个字符。",
+          "document": "当选择语音问答模式时，系统自动播报的问题文本。\n- 最大长度为150个字符。",
           "example": "请问您本次业务是本人自愿办理吗？如是，请回复“我同意”。",
           "member": "string",
           "name": "Question",
@@ -6638,7 +6638,7 @@
         },
         {
           "disabled": false,
-          "document": "当选择语音问答模式时，用于判断用户回答是否通过的标准答案列表，传入后可自动判断用户回答文本是否在标准文本列表中。列表长度最大为50，单个答案长度限制10个字符。",
+          "document": "当选择语音问答模式时，用于判断用户回答是否通过的标准答案列表。\n- 传入后可自动判断用户回答文本是否在标准文本列表中。\n- 列表长度最大为50，单个答案长度限制10个字符。",
           "example": "“同意”，“我同意”，“确认”，“我确认”",
           "member": "string",
           "name": "Answers",
@@ -6649,12 +6649,12 @@
       "usage": "in"
     },
     "IntentionQuestionResult": {
-      "document": "意愿核身问答模式结果",
+      "document": "意愿核身问答模式结果。",
       "members": [
         {
           "disabled": false,
-          "document": "意愿核身错误码：\n0: \"成功\"       \n-1: \"参数错误\"    \n-2: \"系统异常\"    \n-101: \"请保持人脸在框内\"    \n-102: \"检测到多张人脸\"   \n-103: \"人脸检测失败\"   \n-104: \"人脸检测不完整\"   \n-105: \"请勿遮挡眼睛\"    \n-106: \"请勿遮挡嘴巴\"     \n-107: \"请勿遮挡鼻子\"     \n-201: \"人脸比对相似度低\"    \n-202: \"人脸比对失败\"    \n-301: \"意愿核验不通过\"       \n-302: \"用户回答阶段未检测到张嘴动作\"  \n-800: \"前端不兼容错误\"    \n-801: \"用户未授权摄像头和麦克风权限\"   \n-802: \"核验流程异常中断，请勿切屏或进行其他操作\"   \n-803: \"用户主动关闭链接/异常断开链接\"   \n-998: \"系统数据异常\"   \n-999: \"系统未知错误，请联系人工核实\"   \n若在人脸核身过程失败、未进入意愿确认过程，则该参数返回为空，请参考人脸核身错误码结果（DetectInfoText.ErrCode)\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "意愿核身错误码。\n- 取值范围：\n    0: \"成功\"       \n    -1: \"参数错误\"    \n    -2: \"系统异常\"    \n    -101: \"请保持人脸在框内\"    \n    -102: \"检测到多张人脸\"   \n    -103: \"人脸检测失败\"   \n    -104: \"人脸检测不完整\"   \n    -105: \"请勿遮挡眼睛\"    \n    -106: \"请勿遮挡嘴巴\"     \n    -107: \"请勿遮挡鼻子\"     \n    -201: \"人脸比对相似度低\"    \n    -202: \"人脸比对失败\"    \n    -301: \"意愿核验不通过\"       \n    -302: \"用户回答阶段未检测到张嘴动作\"  \n    -800: \"前端不兼容错误\"    \n    -801: \"用户未授权摄像头和麦克风权限\"   \n    -802: \"核验流程异常中断，请勿切屏或进行其他操作\"   \n    -803: \"用户主动关闭链接/异常断开链接\"   \n    -998: \"系统数据异常\"   \n    -999: \"系统未知错误，请联系人工核实\"   \n- 若在人脸核身过程失败、未进入意愿确认过程，则该参数返回为空，请参考人脸核身错误码结果（DetectInfoText.ErrCode)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"-202\"",
           "member": "int64",
           "name": "FinalResultDetailCode",
           "output_required": true,
@@ -6663,8 +6663,8 @@
         },
         {
           "disabled": false,
-          "document": "意愿核身错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "意愿核身错误信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "人脸比对失败",
           "member": "string",
           "name": "FinalResultMessage",
           "output_required": true,
@@ -6673,8 +6673,8 @@
         },
         {
           "disabled": false,
-          "document": "视频base64（其中包含全程问题和回答音频，mp4格式）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "视频base64。\n- 其中包含全程问题和回答音频，mp4格式。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/9j/4AAQSk...1fp8+5/9k=",
           "member": "string",
           "name": "Video",
           "output_required": true,
@@ -6683,8 +6683,8 @@
         },
         {
           "disabled": false,
-          "document": "屏幕截图base64列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "屏幕截图base64列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"/9j/4AAQSkZJRg.....s97n//2Q==\"]",
           "member": "string",
           "name": "ScreenShot",
           "output_required": true,
@@ -6693,7 +6693,7 @@
         },
         {
           "disabled": false,
-          "document": "和答案匹配结果列表\n0：成功，-1：不匹配\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "和答案匹配结果列表。\n- 取值范围（0：成功；-1：不匹配）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "string",
           "name": "ResultCode",
@@ -6703,8 +6703,8 @@
         },
         {
           "disabled": false,
-          "document": "回答问题语音识别结果列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "回答问题语音识别结果列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
           "member": "string",
           "name": "AsrResult",
           "output_required": true,
@@ -6713,8 +6713,8 @@
         },
         {
           "disabled": false,
-          "document": "答案录音音频\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "答案录音音频。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
           "member": "string",
           "name": "Audios",
           "output_required": true,
@@ -6723,7 +6723,7 @@
         },
         {
           "disabled": false,
-          "document": "意愿核身最终结果：\n0：认证通过，-1：认证未通过，-2：浏览器内核不兼容，无法进行意愿校验。建议使用“FinalResultDetailCode”参数获取详细的错误码信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "意愿核身最终结果。\n- 取值范围：\n0：认证通过。\n-1：认证未通过。\n-2：浏览器内核不兼容，无法进行意愿校验。\n- 建议使用“FinalResultDetailCode”参数获取详细的错误码信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "string",
           "name": "FinalResultCode",
@@ -6735,12 +6735,12 @@
       "usage": "out"
     },
     "IntentionVerifyData": {
-      "document": "意愿核身相关结果",
+      "document": "意愿核身相关结果。",
       "members": [
         {
           "disabled": false,
-          "document": "意愿确认环节中录制的视频（base64）。若不存在则为空字符串。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "意愿确认环节中录制的视频（base64）。\n- 若不存在则为空字符串。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
           "member": "string",
           "name": "IntentionVerifyVideo",
           "output_required": true,
@@ -6749,8 +6749,8 @@
         },
         {
           "disabled": false,
-          "document": "意愿确认环节中用户语音转文字的识别结果。若不存在则为空字符串。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "意愿确认环节中用户语音转文字的识别结果。\n- 若不存在则为空字符串。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
           "member": "string",
           "name": "AsrResult",
           "output_required": true,
@@ -6759,7 +6759,7 @@
         },
         {
           "disabled": false,
-          "document": "意愿确认环节的结果码。当该结果码为0时，语音朗读的视频与语音识别结果才会返回。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "意愿确认环节的结果码。\n- 当该结果码为0时，语音朗读的视频与语音识别结果才会返回。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "ErrorCode",
@@ -6770,7 +6770,7 @@
         {
           "disabled": false,
           "document": "意愿确认环节的结果信息。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "\"\"",
           "member": "string",
           "name": "ErrorMessage",
           "output_required": true,
@@ -6779,8 +6779,8 @@
         },
         {
           "disabled": false,
-          "document": "意愿确认环节中录制视频的最佳帧（base64）。若不存在则为空字符串。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "意愿确认环节中录制视频的最佳帧（base64）。\n- 若不存在则为空字符串。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/9j/4AAQSk...+0s8R/ef/Z",
           "member": "string",
           "name": "IntentionVerifyBestFrame",
           "output_required": true,
@@ -7118,7 +7118,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "身份证号",
+          "document": "身份证号。",
           "example": "11204416541220243X",
           "member": "string",
           "name": "IdCard",
@@ -7127,7 +7127,7 @@
         },
         {
           "disabled": false,
-          "document": "姓名。中文请使用UTF-8编码。",
+          "document": "姓名。\n- 中文请使用UTF-8编码。",
           "example": "韦小宝",
           "member": "string",
           "name": "Name",
@@ -7136,7 +7136,7 @@
         },
         {
           "disabled": false,
-          "document": "活体检测类型，取值：LIP/ACTION/SILENT。\nLIP为数字模式，ACTION为动作模式，SILENT为静默模式，三种模式选择一种传入。",
+          "document": "活体检测类型。\n- 取值：LIP/ACTION/SILENT。\n- LIP为数字模式，ACTION为动作模式，SILENT为静默模式，三种模式选择一种传入。",
           "example": "SILENT",
           "member": "string",
           "name": "LivenessType",
@@ -7146,7 +7146,7 @@
         {
           "disabled": false,
           "document": "用于活体检测的视频，视频的BASE64值；\nBASE64编码后的大小不超过8M，支持mp4、avi、flv格式。",
-          "example": "<VideoBase64>",
+          "example": "AAAAIGZ0eX...0tLS0tLS8=",
           "member": "string",
           "name": "VideoBase64",
           "required": false,
@@ -7154,8 +7154,8 @@
         },
         {
           "disabled": false,
-          "document": "用于活体检测的视频Url 地址。视频下载后经Base64编码不超过 8M，视频下载耗时不超过4S，支持mp4、avi、flv格式。\n\n视频的 VideoUrl、VideoBase64 必须提供一个，如果都提供，只使用 VideoBase64。\n\n建议视频存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议视频存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
-          "example": "无",
+          "document": "用于活体检测的视频Url 地址。\n- 视频下载后经Base64编码不超过 8M，视频下载耗时不超过4S，支持mp4、avi、flv格式。\n- 视频的 VideoUrl、VideoBase64 必须提供一个，如果都提供，只使用 VideoBase64。\n- 建议视频存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议视频存储于腾讯云。\n- 非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "example": "http://www.qq.com/image.jpg",
           "member": "string",
           "name": "VideoUrl",
           "required": false,
@@ -7163,8 +7163,8 @@
         },
         {
           "disabled": false,
-          "document": "数字模式传参：传数字验证码，验证码需先调用<a href=\"https://cloud.tencent.com/document/product/1007/31821\">获取数字验证码接口</a>得到；\n动作模式传参：传动作顺序，动作顺序需先调用<a href=\"https://cloud.tencent.com/document/product/1007/31822\">获取动作顺序接口</a>得到；\n静默模式传参：空。",
-          "example": "1234",
+          "document": "验证数据。\n- 数字模式传参：传数字验证码，验证码需先调用<a href=\"https://cloud.tencent.com/document/product/1007/31821\">获取数字验证码接口</a>得到；\n- 动作模式传参：传动作顺序，动作顺序需先调用<a href=\"https://cloud.tencent.com/document/product/1007/31822\">获取动作顺序接口</a>得到；\n- 静默模式传参：空。",
+          "example": "4903",
           "member": "string",
           "name": "ValidateData",
           "required": false,
@@ -7172,8 +7172,8 @@
         },
         {
           "disabled": false,
-          "document": "额外配置，传入JSON字符串。\n{\n\"BestFrameNum\": 2  //需要返回多张最佳截图，取值范围2-10\n}",
-          "example": "{}",
+          "document": "额外配置，传入JSON字符串。\n- 格式如下：\n{\n\"BestFrameNum\": 2  //需要返回多张最佳截图，取值范围2-10\n}",
+          "example": "{\\\"BestFrameNum\\\":1}",
           "member": "string",
           "name": "Optional",
           "required": false,
@@ -7181,7 +7181,7 @@
         },
         {
           "disabled": false,
-          "document": "敏感数据加密信息。对传入信息（姓名、身份证号）有加密需求的用户可使用此参数，详情请点击左侧链接。",
+          "document": "敏感数据加密信息。\n- 对传入信息（姓名、身份证号）有加密需求的用户可使用此参数，详情请点击左侧链接。",
           "example": "无",
           "member": "Encryption",
           "name": "Encryption",
@@ -7196,8 +7196,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "验证通过后的视频最佳截图照片，照片为BASE64编码后的值，jpg格式。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "<Imagebase64>",
+          "document": "验证通过后的视频最佳截图照片。\n- 照片为BASE64编码后的值，jpg格式。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
           "member": "string",
           "name": "BestFrameBase64",
           "output_required": true,
@@ -7206,7 +7206,7 @@
         },
         {
           "disabled": false,
-          "document": "相似度，取值范围 [0.00, 100.00]。推荐相似度大于等于70时可判断为同一人，可根据具体场景自行调整阈值（阈值70的误通过率为千分之一，阈值80的误通过率是万分之一）",
+          "document": "相似度。\n- 取值范围 [0.00, 100.00]。\n- 推荐相似度大于等于70时可判断为同一人，可根据具体场景自行调整阈值（阈值70的误通过率为千分之一，阈值80的误通过率是万分之一）",
           "example": "89.88",
           "member": "float",
           "name": "Sim",
@@ -7216,7 +7216,7 @@
         },
         {
           "disabled": false,
-          "document": "业务错误码，成功情况返回Success, 错误情况请参考下方错误码 列表中FailedOperation部分",
+          "document": "业务错误码。\n- 成功情况返回Success。\n- 错误情况请参考下方错误码 列表中FailedOperation部分",
           "example": "Success",
           "member": "string",
           "name": "Result",
@@ -7237,7 +7237,7 @@
         {
           "disabled": false,
           "document": "最佳截图列表，仅在配置了返回多张最佳截图时返回。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"/9j/4AAQSk...Kff7/+Af/Z\"]",
           "member": "string",
           "name": "BestFrameList",
           "output_required": true,
@@ -8584,8 +8584,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "前端SDK返回",
-          "example": "ECBEC1E6-F05A-40DE-9CC3-C9EF19F55FE1",
+          "document": "前端SDK返回。",
+          "example": "ECBEC11E6-F05A-40DE-9CC3-C9EF119F55FE1",
           "member": "string",
           "name": "ReqId",
           "required": true,
@@ -8599,121 +8599,121 @@
       "members": [
         {
           "disabled": false,
-          "document": "0为首次查询成功，-1为查询失败。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "结果码。\n- 取值范围：0为首次查询成功，-1为查询失败。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "string",
           "name": "ResultCode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "身份证号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "12345",
+          "document": "身份证号。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "11204416541220243X",
           "member": "string",
           "name": "IdNum",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "姓名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "李四",
+          "document": "姓名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "韦小宝",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "照片\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "照片。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
           "member": "string",
           "name": "Picture",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "出生日期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "出生日期。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "20220222",
           "member": "string",
           "name": "BirthDate",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "有效期起始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "有效期起始时间。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "20220222",
           "member": "string",
           "name": "BeginTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "有效期结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "有效期结束时间。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "20220222",
           "member": "string",
           "name": "EndTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "住址\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "广东省",
+          "document": "住址。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "北京市东城区景山前街4号紫禁城敬事房",
           "member": "string",
           "name": "Address",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "民族\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "民族。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "汉",
           "member": "string",
           "name": "Nation",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "性别\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "性别。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "男",
           "member": "string",
           "name": "Sex",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "身份证 01 中国护照 03 军官证 04 武警证 05 港澳通行证 06 台胞证 07 外国护照 08 士兵证 09 临时身份证 10 户口本 11 警官证 12 外国人永久居留证 13 港澳台居民居住证 14 回乡证 15 大陆居民来往台湾通行证 16 其他证件 99\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "类型。\n- 取值范围：\n01：身份证。 \n03 ：中国护照。\n04 ：军官证。\n05 ：武警证。\n06：港澳通行证 。\n07 ：台胞证 。\n08：外国护照 。\n09 ：士兵证。\n09 ：临时身份证。\n11：户口本  。\n12 ：警官证 。\n13：外国人永久居留证。\n14：港澳台居民居住证。\n15：回乡证。\n16：大陆居民来往台湾通行证。\n99：其他证件。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "01",
           "member": "string",
           "name": "IdType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "英文姓名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "lisi",
+          "document": "英文姓名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "lily",
           "member": "string",
           "name": "EnName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8723,77 +8723,77 @@
           "example": "广东省",
           "member": "string",
           "name": "SigningOrganization",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "港澳台居民居住证，通行证号码\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123",
+          "document": "港澳台居民居住证，通行证号码。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "830000199706020042",
           "member": "string",
           "name": "OtherIdNum",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "旅行证件国籍\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123",
+          "document": "旅行证件国籍。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "英国",
           "member": "string",
           "name": "Nationality",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "旅行证件机读区第二行 29~42 位\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123",
+          "document": "旅行证件机读区第二行 29~42 位。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0602004212071",
           "member": "string",
           "name": "PersonalNumber",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "旅行证件类的核验结果。JSON格式如下：\n{\"result_issuer \":\"签发者证书合法性验证结果 \",\"result_pape r\":\"证件安全对象合法性验证 结果 \",\"result_data\" :\"防数据篡改验证结果 \",\"result_chip\" :\"防证书件芯片被复制验证结果\"} \n 0:验证通过，1: 验证不通过，2: 未验证，3:部分通过，当4项核验结果都为0时，表示证件为真\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123",
+          "document": "旅行证件类的核验结果。\n- JSON格式如下：\n{\"result_issuer \":\"签发者证书合法性验证结果 \",\"result_pape r\":\"证件安全对象合法性验证 结果 \",\"result_data\" :\"防数据篡改验证结果 \",\"result_chip\" :\"防证书件芯片被复制验证结果\"} 。\n- 取值范围： 0:验证通过，1: 验证不通过，2: 未验证，3:部分通过，当4项核验结果都为0时，表示证件为真。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"result_issuer \":\"签发者证书合法性验证结果 \",\"result_pape r\":\"证件安全对象合法性验证 结果 \",\"result_data\" :\"防数据篡改验证结果 \",\"result_chip\" :\"防证书件芯片被复制验证结果\"} ",
           "member": "string",
           "name": "CheckMRTD",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "身份证照片面合成图片\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123",
+          "document": "身份证照片面合成图片。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
           "member": "string",
           "name": "ImageA",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "身份证国徽面合成图片\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123",
+          "document": "身份证国徽面合成图片。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/9j/4AAQSk......j+5QVYZKxU",
           "member": "string",
           "name": "ImageB",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "对result code的结果描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123",
+          "document": "对result code的结果描述。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "首次查询成功",
           "member": "string",
           "name": "ResultDescription",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },

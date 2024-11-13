@@ -1,6 +1,6 @@
 **Example 1: 错误示例**
 
-
+输入不存在的人员库ID。
 
 Input: 
 
@@ -26,7 +26,7 @@ Output:
 
 **Example 2: 获取人员列表接口**
 
-
+获取人员列表。
 
 Input: 
 
@@ -68,7 +68,7 @@ Output:
 
 **Example 3: 获取人员列表接口-2**
 
-
+获取人员列表。
 
 Input: 
 

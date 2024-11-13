@@ -630,70 +630,70 @@
         {
           "disabled": false,
           "document": "专用集群id。如\"cluster-xxxxx\"。",
-          "example": "",
+          "example": "cluster-du3hdu32",
           "member": "string",
           "name": "DedicatedClusterId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "专用集群所属可用区名称。",
-          "example": "",
+          "example": "ap-guangzhou-2",
           "member": "string",
           "name": "Zone",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "专用集群的描述。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "this is a description",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "专用集群的名称。",
-          "example": "",
+          "example": "wechen-first-dc",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "专用集群的生命周期。如\"PENDING\"。",
-          "example": "",
+          "example": "PENDING",
           "member": "string",
           "name": "LifecycleStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "专用集群的创建时间。",
-          "example": "",
+          "example": "2020-12-10T06:15:43Z",
           "member": "datetime_iso",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "专用集群所属的站点id。",
-          "example": "",
+          "example": "site-38d9ck",
           "member": "string",
           "name": "SiteId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -706,160 +706,160 @@
         {
           "disabled": false,
           "document": "可用区",
-          "example": "无",
+          "example": "ap-guangzhou-2",
           "member": "string",
           "name": "Zone",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "规格名称",
-          "example": "无",
+          "example": "S1.SMALL1",
           "member": "string",
           "name": "InstanceType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "网卡类型，例如：25代表25G网卡",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "NetworkCard",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "实例的CPU核数，单位：核。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Cpu",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "实例内存容量，单位：`GB`。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Memory",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "实例机型系列。",
-          "example": "无",
+          "example": "S1",
           "member": "string",
           "name": "InstanceFamily",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "机型名称。",
-          "example": "无",
+          "example": "Standard S1",
           "member": "string",
           "name": "TypeName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "本地存储块数量。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "StorageBlockAmount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "内网带宽，单位Gbps。",
-          "example": "无",
+          "example": "0",
           "member": "float",
           "name": "InstanceBandwidth",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "网络收发包能力，单位万PPS。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "InstancePps",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "处理器型号。",
-          "example": "无",
+          "example": "intel",
           "member": "string",
           "name": "CpuType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "实例的GPU数量。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "Gpu",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "实例的FPGA数量。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "Fpga",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "机型描述",
-          "example": "无",
+          "example": "这是S1机型",
           "member": "string",
           "name": "Remark",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例是否售卖。取值范围： <br><li>SELL：表示实例可购买<br><li>SOLD_OUT：表示实例已售罄。",
-          "example": "无",
+          "document": "实例是否售卖。取值范围： <br><li>SELL：表示实例可购买<br></li><li>SOLD_OUT：表示实例已售罄。</li>",
+          "example": "SOLD_OUT",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "机型剩余数量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "InstanceQuota",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         }
@@ -872,7 +872,7 @@
         {
           "disabled": false,
           "document": "专用集群id",
-          "example": "无",
+          "example": "cluster-xh37dh",
           "member": "string",
           "name": "DedicatedClusterId",
           "output_required": true,
@@ -882,7 +882,7 @@
         {
           "disabled": false,
           "document": "专用集群类型id（移到下一层级，已经废弃，后续将删除）",
-          "example": "无",
+          "example": "dctype-00000000",
           "member": "string",
           "name": "DedicatedClusterTypeId",
           "output_required": true,
@@ -892,7 +892,7 @@
         {
           "disabled": false,
           "document": "支持的存储类型列表（移到下一层级，已经废弃，后续将删除）",
-          "example": "无",
+          "example": "[\"SSD\"]",
           "member": "string",
           "name": "SupportedStorageType",
           "output_required": true,
@@ -902,7 +902,7 @@
         {
           "disabled": false,
           "document": "支持的上连交换机的链路传输速率(GiB)（移到下一层级，已经废弃，后续将删除）",
-          "example": "无",
+          "example": "[10,25,40,100]",
           "member": "int64",
           "name": "SupportedUplinkSpeed",
           "output_required": true,
@@ -912,7 +912,7 @@
         {
           "disabled": false,
           "document": "支持的实例族列表（移到下一层级，已经废弃，后续将删除）",
-          "example": "无",
+          "example": "[\"SA5t\"]",
           "member": "string",
           "name": "SupportedInstanceFamily",
           "output_required": true,
@@ -922,7 +922,7 @@
         {
           "disabled": false,
           "document": "地板承重要求(KG)",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "Weight",
           "output_required": true,
@@ -932,7 +932,7 @@
         {
           "disabled": false,
           "document": "功率要求(KW)",
-          "example": "无",
+          "example": "0",
           "member": "float",
           "name": "PowerDraw",
           "output_required": true,
@@ -942,7 +942,7 @@
         {
           "disabled": false,
           "document": "订单状态",
-          "example": "无",
+          "example": "PENDING",
           "member": "string",
           "name": "OrderStatus",
           "output_required": true,
@@ -952,7 +952,7 @@
         {
           "disabled": false,
           "document": "订单创建的时间",
-          "example": "无",
+          "example": "2024-10-16T07:18:37Z",
           "member": "datetime_iso",
           "name": "CreateTime",
           "output_required": true,
@@ -982,7 +982,7 @@
         {
           "disabled": false,
           "document": "子订单详情列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[           {             \"ComputeFormat\": \"1 SA5t.60XLARGE1076\",             \"Count\": 1,             \"CreateTime\": \"2024-10-16 15:18:37\",             \"DedicatedClusterTypeId\": \"dctype-45ndlenk\",             \"Description\": \"SA5t\",             \"Name\": \"CVM.SA5t.60XLARGE1076\",             \"PowerDraw\": 0,             \"SubOrderId\": \"sord-gfwblx76\",             \"SubOrderPayStatus\": 0,             \"SubOrderStatus\": \"DELIVERED\",             \"SupportedInstanceFamily\": [               \"SA5t\"             ],             \"SupportedStorageType\": [],             \"SupportedUplinkSpeed\": [],             \"TotalCpu\": 240,             \"TotalGpu\": 0,             \"TotalMem\": 1076,             \"TypeFamily\": \"CUSTOM.COMPUTE\",             \"TypeName\": \"CVM.SA5t.60XLARGE1076\",             \"Weight\": 0           }         ]",
           "member": "DedicatedClusterOrderItem",
           "name": "DedicatedClusterOrderItems",
           "output_required": true,
@@ -992,7 +992,7 @@
         {
           "disabled": false,
           "document": "cpu值\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "240",
           "member": "int64",
           "name": "Cpu",
           "output_required": true,
@@ -1002,7 +1002,7 @@
         {
           "disabled": false,
           "document": "mem值\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1076",
           "member": "int64",
           "name": "Mem",
           "output_required": true,
@@ -1012,7 +1012,7 @@
         {
           "disabled": false,
           "document": "gpu值\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "Gpu",
           "output_required": true,
@@ -1122,7 +1122,7 @@
         {
           "disabled": false,
           "document": "订单SLA\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "null",
           "member": "string",
           "name": "OrderSLA",
           "output_required": false,
@@ -1132,7 +1132,7 @@
         {
           "disabled": false,
           "document": "订单支付计划\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "null",
           "member": "string",
           "name": "OrderPayPlan",
           "output_required": false,
@@ -1148,80 +1148,80 @@
         {
           "disabled": false,
           "document": "专用集群类型id",
-          "example": "无",
+          "example": "dctype-01000001",
           "member": "string",
           "name": "DedicatedClusterTypeId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "支持的存储类型列表",
-          "example": "无",
+          "example": "[\"SSD\"]",
           "member": "string",
           "name": "SupportedStorageType",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "支持的上连交换机的链路传输速率(GiB)",
-          "example": "无",
+          "example": "[10,25,40,100]",
           "member": "int64",
           "name": "SupportedUplinkSpeed",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "支持的实例族列表",
-          "example": "无",
+          "example": "[\"S5\"]",
           "member": "string",
           "name": "SupportedInstanceFamily",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "地板承重要求(KG)",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "Weight",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "功率要求(KW)",
-          "example": "无",
+          "example": "0",
           "member": "float",
           "name": "PowerDraw",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "订单状态",
-          "example": "无",
+          "example": "PENDING",
           "member": "string",
           "name": "SubOrderStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "订单创建的时间",
-          "example": "无",
+          "example": "2022-08-15 15:08:12",
           "member": "datetime_iso",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1231,7 +1231,7 @@
           "example": "ord-aijx4ets ",
           "member": "string",
           "name": "SubOrderId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1241,7 +1241,7 @@
           "example": "1",
           "member": "int64",
           "name": "Count",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1251,7 +1251,7 @@
           "example": "通用小型机",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1261,7 +1261,7 @@
           "example": "适用于...场景",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1271,7 +1271,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCpu",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1281,7 +1281,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalMem",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1291,7 +1291,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalGpu",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1301,7 +1301,7 @@
           "example": "CBS.SSD",
           "member": "string",
           "name": "TypeName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1311,7 +1311,7 @@
           "example": "M5.21XLARGE700 4、S5.21XLARGE320 2",
           "member": "string",
           "name": "ComputeFormat",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1321,7 +1321,7 @@
           "example": "COMPUTE",
           "member": "string",
           "name": "TypeFamily",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1331,7 +1331,7 @@
           "example": "0",
           "member": "int64",
           "name": "SubOrderPayStatus",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         }
@@ -1374,7 +1374,7 @@
         {
           "disabled": false,
           "document": "创建配置的时间",
-          "example": "无",
+          "example": "2024-10-30 17:14:13",
           "member": "datetime_iso",
           "name": "CreateTime",
           "output_required": true,
@@ -1821,7 +1821,7 @@
         {
           "disabled": false,
           "document": "支持的实例规格列表",
-          "example": "[{ \t\t\t\"Zone\": \"ap-guangzhou-2\", \t\t\t\"InstanceType\": \"S1.SMALL1\", \t\t\t\"NetworkCard\": 0, \t\t\t\"Cpu\": 1, \t\t\t\"Memory\": 1, \t\t\t\"InstanceFamily\": \"S1\", \t\t\t\"TypeName\": \"Standard S1\", \t\t\t\"StorageBlockAmount\": 0, \t\t\t\"InstanceBandwidth\": 0, \t\t\t\"InstancePps\": 0, \t\t\t\"CpuType\": \"\", \t\t\t\"Gpu\": 0, \t\t\t\"Fpga\": 0, \t\t\t\"Remark\": \"\", \t\t\t\"Status\": \"SOLD_OUT\" \t\t}, { \t\t\t\"Zone\": \"ap-guangzhou-2\", \t\t\t\"InstanceType\": \"S3.SMALL1\", \t\t\t\"NetworkCard\": 0, \t\t\t\"Cpu\": 1, \t\t\t\"Memory\": 1, \t\t\t\"InstanceFamily\": \"S3\", \t\t\t\"TypeName\": \"Standard S3\", \t\t\t\"StorageBlockAmount\": 0, \t\t\t\"InstanceBandwidth\": 0, \t\t\t\"InstancePps\": 0, \t\t\t\"CpuType\": \"\", \t\t\t\"Gpu\": 0, \t\t\t\"Fpga\": 0, \t\t\t\"Remark\": \"\", \t\t\t\"Status\": \"SOLD_OUT\" \t\t}]",
+          "example": "[{ \t\t\t\"Zone\": \"ap-guangzhou-2\", \t\t\t\"InstanceType\": \"S1.SMALL1\", \t\t\t\"NetworkCard\": 0, \t\t\t\"Cpu\": 1, \t\t\t\"Memory\": 1, \t\t\t\"InstanceFamily\": \"S1\", \t\t\t\"TypeName\": \"Standard S1\", \t\t\t\"StorageBlockAmount\": 0, \t\t\t\"InstanceBandwidth\": 0, \t\t\t\"InstancePps\": 0, \t\t\t\"CpuType\": \"intel\", \t\t\t\"Gpu\": 0, \t\t\t\"Fpga\": 0, \t\t\t\"Remark\": \"备注\", \t\t\t\"Status\": \"SOLD_OUT\",                         \"InstanceQuota\": 0 \t\t}]",
           "member": "DedicatedClusterInstanceType",
           "name": "DedicatedClusterInstanceTypeSet",
           "output_required": true,
@@ -1912,7 +1912,7 @@
         {
           "disabled": false,
           "document": "专用集群订单列表",
-          "example": "[       {         \"Action\": \"CREATE\",         \"CheckExpectTime\": \"0000-00-00 00:00:00\",         \"CheckFinishTime\": \"0000-00-00 00:00:00\",         \"CheckStatus\": \"DELIVERING\",         \"Cpu\": 0,         \"CreateTime\": \"2024-10-30T09:14:13Z\",         \"DedicatedClusterId\": \"cluster-262n63e8\",         \"DedicatedClusterOrderId\": \"ord-rd0ty398\",         \"DedicatedClusterOrderItems\": [           {             \"ComputeFormat\": \"\",             \"Count\": 1,             \"CreateTime\": \"2024-10-30 17:14:13\",             \"DedicatedClusterTypeId\": \"dctype-00100001\",             \"Description\": \"基础底座\",             \"Name\": \"基础底座\",             \"PowerDraw\": 0,             \"SubOrderId\": \"sord-e3t9jkm2\",             \"SubOrderPayStatus\": 0,             \"SubOrderStatus\": \"PENDING\",             \"SupportedInstanceFamily\": [],             \"SupportedStorageType\": [],             \"SupportedUplinkSpeed\": [               10,               25,               40,               100             ],             \"TotalCpu\": 0,             \"TotalGpu\": 0,             \"TotalMem\": 0,             \"TypeFamily\": \"CUSTOM\",             \"TypeName\": \"BASE_EQUIPMENT.BASE_FOUNDATION\",             \"Weight\": 0           }         ],         \"DedicatedClusterTypeId\": \"None\",         \"DeliverExpectTime\": \"0000-00-00 00:00:00\",         \"DeliverFinishTime\": \"0000-00-00 00:00:00\",         \"Gpu\": 0,         \"Mem\": 0,         \"OrderPayPlan\": null,         \"OrderSLA\": null,         \"OrderStatus\": \"PENDING\",         \"OrderType\": \"PUSH\",         \"PayStatus\": 0,         \"PayType\": \"ONEOFF\",         \"PowerDraw\": 0,         \"SupportedInstanceFamily\": [           \"None\"         ],         \"SupportedStorageType\": [           \"None\"         ],         \"SupportedUplinkSpeed\": [           -1         ],         \"TimeSpan\": 3,         \"TimeUnit\": \"YEAR\",         \"Weight\": 0       }     ]",
+          "example": "[       {         \"Action\": \"CREATE\",         \"CheckExpectTime\": \"0000-00-00 00:00:00\",         \"CheckFinishTime\": \"0000-00-00 00:00:00\",         \"CheckStatus\": \"DELIVERING\",         \"Cpu\": 0,         \"CreateTime\": \"2024-10-30T09:14:13Z\",         \"DedicatedClusterId\": \"cluster-262n63e8\",         \"DedicatedClusterOrderId\": \"ord-rd0ty398\",         \"DedicatedClusterOrderItems\": [           {             \"ComputeFormat\": \"1 SA5t.60XLARGE1076\",             \"Count\": 1,             \"CreateTime\": \"2024-10-30 17:14:13\",             \"DedicatedClusterTypeId\": \"dctype-00100001\",             \"Description\": \"基础底座\",             \"Name\": \"基础底座\",             \"PowerDraw\": 0,             \"SubOrderId\": \"sord-e3t9jkm2\",             \"SubOrderPayStatus\": 0,             \"SubOrderStatus\": \"PENDING\",             \"SupportedInstanceFamily\": [],             \"SupportedStorageType\": [],             \"SupportedUplinkSpeed\": [               10,               25,               40,               100             ],             \"TotalCpu\": 0,             \"TotalGpu\": 0,             \"TotalMem\": 0,             \"TypeFamily\": \"CUSTOM\",             \"TypeName\": \"BASE_EQUIPMENT.BASE_FOUNDATION\",             \"Weight\": 0           }         ],         \"DedicatedClusterTypeId\": \"None\",         \"DeliverExpectTime\": \"0000-00-00 00:00:00\",         \"DeliverFinishTime\": \"0000-00-00 00:00:00\",         \"Gpu\": 0,         \"Mem\": 0,         \"OrderPayPlan\": null,         \"OrderSLA\": null,         \"OrderStatus\": \"PENDING\",         \"OrderType\": \"PUSH\",         \"PayStatus\": 0,         \"PayType\": \"ONEOFF\",         \"PowerDraw\": 0,         \"SupportedInstanceFamily\": [           \"None\"         ],         \"SupportedStorageType\": [           \"None\"         ],         \"SupportedUplinkSpeed\": [           -1         ],         \"TimeSpan\": 3,         \"TimeUnit\": \"YEAR\",         \"Weight\": 0       }     ]",
           "member": "DedicatedClusterOrder",
           "name": "DedicatedClusterOrderSet",
           "output_required": true,
@@ -1999,7 +1999,7 @@
         {
           "disabled": false,
           "document": "本地网关信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{       \"BGPRoute\": \"\",       \"LocalIp\": \"-\",       \"Protocol\": \"BGP\",       \"VpcId\": \"vpc-0eyxjlsz\"     }",
+          "example": "{       \"BGPRoute\": \"10.0.0.0/24\",       \"LocalIp\": \"10.0.0.0\",       \"Protocol\": \"BGP\",       \"VpcId\": \"vpc-0eyxjlsz\"     }",
           "member": "LocalNetInfo",
           "name": "LocalNetInfo",
           "output_required": true,
@@ -2153,7 +2153,7 @@
         {
           "disabled": false,
           "document": "按照可用区名称过滤",
-          "example": "\"ap-guangzhou\"",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "Zones",
           "required": false,
@@ -2162,7 +2162,7 @@
         {
           "disabled": false,
           "document": "按照站点id过滤",
-          "example": "\"site-378xs3g\"",
+          "example": "site-378xs3g",
           "member": "string",
           "name": "SiteIds",
           "required": false,
@@ -2171,7 +2171,7 @@
         {
           "disabled": false,
           "document": "按照专用集群生命周期过滤",
-          "example": "\"Pending\"",
+          "example": "Pending",
           "member": "string",
           "name": "LifecycleStatuses",
           "required": false,
@@ -2180,7 +2180,7 @@
         {
           "disabled": false,
           "document": "模糊匹配专用集群名称",
-          "example": "\"my-cluster\"",
+          "example": "my-cluster",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -2213,7 +2213,7 @@
         {
           "disabled": false,
           "document": "符合查询条件的专用集群列表",
-          "example": "[{ \t\t\t\"DedicatedClusterId\": \"cluster-e88qh1ue\", \t\t\t\"Zone\": \"ap-guangzhou-2\", \t\t\t\"Description\": \"test\", \t\t\t\"Name\": \"wechen-first-dc\", \t\t\t\"LifecycleStatus\": \"PENDING\", \t\t\t\"CreateTime\": \"2020-12-10T06:15:43Z\", \t\t\t\"SiteId\": \"site-38d9ck\" \t\t}, { \t\t\t\"DedicatedClusterId\": \"cluster-1hza0fbu\", \t\t\t\"Zone\": \"ap-guangzhou-2\", \t\t\t\"Description\": \"test\", \t\t\t\"Name\": \"wechen-first-dc\", \t\t\t\"LifecycleStatus\": \"PENDING\", \t\t\t\"CreateTime\": \"2020-12-10T06:15:50Z\", \t\t\t\"SiteId\": \"site-38d9ck\" \t\t}, { \t\t\t\"DedicatedClusterId\": \"cluster-ptrfvhyw\", \t\t\t\"Zone\": \"ap-guangzhou-2\", \t\t\t\"Description\": \"test\", \t\t\t\"Name\": \"wechen-first-dc\", \t\t\t\"LifecycleStatus\": \"PENDING\", \t\t\t\"CreateTime\": \"2020-12-10T06:17:26Z\", \t\t\t\"SiteId\": \"site-38d9ck\" \t\t}]",
+          "example": "[{ \t\t\t\"DedicatedClusterId\": \"cluster-e88qh1ue\", \t\t\t\"Zone\": \"ap-guangzhou-2\", \t\t\t\"Description\": \"this is a description\", \t\t\t\"Name\": \"wechen-first-dc\", \t\t\t\"LifecycleStatus\": \"PENDING\", \t\t\t\"CreateTime\": \"2020-12-10T06:15:43Z\", \t\t\t\"SiteId\": \"site-38d9ck\" \t\t}]",
           "member": "DedicatedCluster",
           "name": "DedicatedClusterSet",
           "output_required": true,
@@ -2223,7 +2223,7 @@
         {
           "disabled": false,
           "document": "符合条件的专用集群数量。",
-          "example": "20 ",
+          "example": "20",
           "member": "int64",
           "name": "TotalCount",
           "output_required": true,
@@ -2324,7 +2324,7 @@
         {
           "disabled": false,
           "document": "站点详情",
-          "example": "[{ \t\t\t\"SiteId\": \"site-98dj3kd\", \t\t\t\"Name\": \"\", \t\t\t\"Description\": \"\", \t\t\t\"CreateTime\": \"2020-12-25T08:39:57Z\", \t\t\t\"FiberType\": \"MM\", \t\t\t\"UplinkSpeedGbps\": 0, \t\t\t\"UplinkCount\": 0, \t\t\t\"OpticalStandard\": \"MM\", \t\t\t\"RedundantNetworking\": false, \t\t\t\"PowerConnectors\": \"1000Base-SX\", \t\t\t\"PowerFeedDrop\": \"above\", \t\t\t\"PowerDrawKva\": 0.0, \t\t\t\"ConditionRequirement\": false, \t\t\t\"DimensionRequirement\": false, \t\t\t\"NeedHelp\": false, \t\t\t\"BreakerRequirement\": false, \t\t\t\"RedundantPower\": false, \t\t\t\"MaxWeight\": 0, \t\t\t\"AddressLine\": \"Nanshan Road\", \t\t\t\"OptionalAddressLine\": \"\", \t\t\t\"Country\": \"China\", \t\t\t\"Province\": \"guangdong\", \t\t\t\"City\": \"shenzhen\", \t\t\t\"PostalCode\": 518000 \t\t}]",
+          "example": "[{ \t\t\t\"SiteId\": \"site-98dj3kd\", \t\t\t\"Name\": \"sitename\", \t\t\t\"Description\": \"this is a description\", \t\t\t\"CreateTime\": \"2020-12-25T08:39:57Z\", \t\t\t\"FiberType\": \"MM\", \t\t\t\"UplinkSpeedGbps\": 0, \t\t\t\"UplinkCount\": 0, \t\t\t\"OpticalStandard\": \"MM\", \t\t\t\"RedundantNetworking\": false, \t\t\t\"PowerConnectors\": \"1000Base-SX\", \t\t\t\"PowerFeedDrop\": \"above\", \t\t\t\"PowerDrawKva\": 0.0, \t\t\t\"ConditionRequirement\": false, \t\t\t\"DimensionRequirement\": false, \t\t\t\"NeedHelp\": false, \t\t\t\"BreakerRequirement\": false, \t\t\t\"RedundantPower\": false, \t\t\t\"MaxWeight\": 0, \t\t\t\"AddressLine\": \"Nanshan Road\", \t\t\t\"OptionalAddressLine\": \"详细地址\", \t\t\t\"Country\": \"China\", \t\t\t\"Province\": \"guangdong\", \t\t\t\"City\": \"shenzhen\", \t\t\t\"PostalCode\": 518000 \t\t}]",
           "member": "SiteDetail",
           "name": "SiteDetailSet",
           "output_required": true,
@@ -2632,7 +2632,7 @@
         {
           "disabled": false,
           "document": "云服务类型标签\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "''",
+          "example": "STANDBY",
           "member": "string",
           "name": "ServiceTag",
           "output_required": false,
@@ -2728,7 +2728,7 @@
         {
           "disabled": false,
           "document": "cpu详细监控数据\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\"Timestamps\": [1693274400],\"Values\": [0]}",
           "member": "DetailData",
           "name": "CpuDetailData",
           "output_required": false,
@@ -2738,7 +2738,7 @@
         {
           "disabled": false,
           "document": "内存详细数据\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\"Timestamps\": [1693274400],\"Values\": [0]}",
           "member": "DetailData",
           "name": "MemDetailData",
           "output_required": false,
@@ -2748,7 +2748,7 @@
         {
           "disabled": false,
           "document": "网络速率详细数据\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\"Timestamps\": [1693274400],\"Values\": [0]}",
           "member": "DetailData",
           "name": "NetRateDetailData",
           "output_required": false,
@@ -2758,7 +2758,7 @@
         {
           "disabled": false,
           "document": "网速包详细数据\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\"Timestamps\": [1693274400],\"Values\": [0]}",
           "member": "DetailData",
           "name": "NetPacketDetailData",
           "output_required": false,
@@ -3235,17 +3235,17 @@
           "example": "1",
           "member": "int64",
           "name": "RegionId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "ZoneInfo数组",
-          "example": "无",
+          "example": "[{\"Zone\": \"ap-guangzhou-1\",\"ZoneName\": \"广州一区\",\"ZoneId\": \"100001\",\"ZoneState\": \"AVAILABLE\"}]",
           "member": "ZoneInfo",
           "name": "Zones",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -3258,7 +3258,7 @@
         {
           "disabled": false,
           "document": "云硬盘仓库id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "set-mm4hzptu",
           "member": "string",
           "name": "SetId",
           "output_required": false,
@@ -3268,7 +3268,7 @@
         {
           "disabled": false,
           "document": "云硬盘仓库名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "HCBS_GZCDC_Z133_CDCCBS_Y0SH1125G_D0003",
           "member": "string",
           "name": "SetName",
           "output_required": false,
@@ -3278,7 +3278,7 @@
         {
           "disabled": false,
           "document": "云硬盘仓库类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "ssd",
           "member": "string",
           "name": "SetType",
           "output_required": false,
@@ -3288,7 +3288,7 @@
         {
           "disabled": false,
           "document": "云硬盘仓库容量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "33.4",
           "member": "float",
           "name": "SetSize",
           "output_required": false,
@@ -3298,7 +3298,7 @@
         {
           "disabled": false,
           "document": "云硬盘仓库状态\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "RUNNING",
           "member": "string",
           "name": "SetStatus",
           "output_required": false,
@@ -3308,7 +3308,7 @@
         {
           "disabled": false,
           "document": "云硬盘仓库创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2022-12-09 15:20:09",
           "member": "string",
           "name": "CreateTime",
           "output_required": false,
@@ -3318,7 +3318,7 @@
         {
           "disabled": false,
           "document": "读流量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\"Timestamps\": [1693274400],\"Values\": [0]}",
           "member": "DetailData",
           "name": "ReadTraffic",
           "output_required": false,
@@ -3328,7 +3328,7 @@
         {
           "disabled": false,
           "document": "写流量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\"Timestamps\": [1693274400],\"Values\": [0]}",
           "member": "DetailData",
           "name": "WriteTraffic",
           "output_required": false,
@@ -3338,7 +3338,7 @@
         {
           "disabled": false,
           "document": "读IO\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\"Timestamps\": [1693274400],\"Values\": [0]}",
           "member": "DetailData",
           "name": "ReadIO",
           "output_required": false,
@@ -3348,7 +3348,7 @@
         {
           "disabled": false,
           "document": "写IO\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\"Timestamps\": [1693274400],\"Values\": [0]}",
           "member": "DetailData",
           "name": "WriteIO",
           "output_required": false,
@@ -3358,7 +3358,7 @@
         {
           "disabled": false,
           "document": "平均等待时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\"Timestamps\": [1693274400],\"Values\": [0]}",
           "member": "DetailData",
           "name": "Await",
           "output_required": false,
@@ -3368,7 +3368,7 @@
         {
           "disabled": false,
           "document": "利用率\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\"Timestamps\": [1693274400],\"Values\": [0]}",
           "member": "DetailData",
           "name": "Util",
           "output_required": false,
@@ -3384,40 +3384,40 @@
         {
           "disabled": false,
           "document": "站点名称",
-          "example": "",
+          "example": "my-site",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "站点id",
-          "example": "",
+          "example": "site-98dj3kd",
           "member": "string",
           "name": "SiteId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "站点描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "my first site",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "站点创建时间",
-          "example": "",
+          "example": "2020-12-25T08:39:57Z",
           "member": "datetime_iso",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -3433,7 +3433,7 @@
           "example": "\"site-u37d8sh\"",
           "member": "string",
           "name": "SiteId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3443,7 +3443,7 @@
           "example": "\"my-site\"",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3453,7 +3453,7 @@
           "example": "\"this site is good\"",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3463,7 +3463,7 @@
           "example": "\"2020-12-25T10:26:11Z\"",
           "member": "datetime_iso",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3473,7 +3473,7 @@
           "example": "\"MM\"",
           "member": "string",
           "name": "FiberType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3483,7 +3483,7 @@
           "example": "0",
           "member": "int64",
           "name": "UplinkSpeedGbps",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3493,7 +3493,7 @@
           "example": "0",
           "member": "int64",
           "name": "UplinkCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3503,7 +3503,7 @@
           "example": "\"MM\"",
           "member": "string",
           "name": "OpticalStandard",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3513,7 +3513,7 @@
           "example": "false",
           "member": "bool",
           "name": "RedundantNetworking",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -3523,7 +3523,7 @@
           "example": "\"MM\"",
           "member": "string",
           "name": "PowerConnectors",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3533,7 +3533,7 @@
           "example": "\"above\"",
           "member": "string",
           "name": "PowerFeedDrop",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3543,7 +3543,7 @@
           "example": "0.0",
           "member": "float",
           "name": "PowerDrawKva",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -3553,7 +3553,7 @@
           "example": "false",
           "member": "bool",
           "name": "ConditionRequirement",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -3563,7 +3563,7 @@
           "example": "false",
           "member": "bool",
           "name": "DimensionRequirement",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -3573,7 +3573,7 @@
           "example": "0",
           "member": "int64",
           "name": "MaxWeight",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3583,17 +3583,17 @@
           "example": "\"Furong Road\"",
           "member": "string",
           "name": "AddressLine",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "站点所在地区的详细地址信息（补充）",
-          "example": "\"\"",
+          "example": "305号",
           "member": "string",
           "name": "OptionalAddressLine",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3603,7 +3603,7 @@
           "example": "true",
           "member": "bool",
           "name": "NeedHelp",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -3613,7 +3613,7 @@
           "example": "false",
           "member": "bool",
           "name": "BreakerRequirement",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -3623,7 +3623,7 @@
           "example": "false",
           "member": "bool",
           "name": "RedundantPower",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -3633,7 +3633,7 @@
           "example": "\"China\"",
           "member": "string",
           "name": "Country",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3643,7 +3643,7 @@
           "example": "\"Hunan\"",
           "member": "string",
           "name": "Province",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3653,7 +3653,7 @@
           "example": "\"Changsha\"",
           "member": "string",
           "name": "City",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3663,7 +3663,7 @@
           "example": "414012",
           "member": "int64",
           "name": "PostalCode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -3676,20 +3676,20 @@
         {
           "disabled": false,
           "document": "出带宽流量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\"Timestamps\": [1693274400],\"Values\": [0]}",
           "member": "OutBandwidth",
           "name": "OutBandwidth",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "入带宽流量",
-          "example": "无",
+          "example": "{\"Timestamps\": [1693274400],\"Values\": [0]}",
           "member": "InBandwidth",
           "name": "InBandwidth",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         }
@@ -3702,40 +3702,40 @@
         {
           "disabled": false,
           "document": "可用区名称",
-          "example": "",
+          "example": "ap-guangzhou-1",
           "member": "string",
           "name": "Zone",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "可用区描述",
-          "example": "",
+          "example": "广州一区",
           "member": "string",
           "name": "ZoneName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "可用区ID",
-          "example": "",
+          "example": "100001",
           "member": "int64",
           "name": "ZoneId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "可用区状态，包含AVAILABLE和UNAVAILABLE。AVAILABLE代表可用，UNAVAILABLE代表不可用。",
-          "example": "",
+          "example": "AVAILABLE",
           "member": "string",
           "name": "ZoneState",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }

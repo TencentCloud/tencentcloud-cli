@@ -376,6 +376,14 @@
         "title": "串行防火墙开关列表"
       }
     ],
+    "DescribeFwEngineZoneList": [
+      {
+        "document": "查询引擎可用区信息",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFwEngineZoneList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"FwEnginType\": \"VPC防火墙实例\",\n                \"InstanceId\": \"cfwew-03198ed3\",\n                \"InstanceName\": \"测试多点-实例1\",\n                \"IsSingleZone\": true,\n                \"RegionList\": [\n                    \"ap-beijing\"\n                ],\n                \"ZoneList\": [\n                    \"ap-beijing-3\"\n                ],\n                \"ZoneNameList\": [\n                    \"北京三区\"\n                ]\n            }\n        ],\n        \"RequestId\": \"7846e970-cd7b-4ab3-ab70-ce6ac1ded6fa\"\n    }\n}",
+        "title": "实例1 查询引擎可用区信息"
+      }
+    ],
     "DescribeFwGroupInstanceInfo": [
       {
         "document": "获取租户所有VPC防火墙(组)及VPC防火墙实例卡片信息",
@@ -558,6 +566,14 @@
         "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUnHandleEventTabList \n<公共请求参数>\n\n{\n    \"EndTime\": \"2021-05-206 23:59:59\",\n    \"StartTime\": \"2021-05-20 00:00:00\",\n    \"AssetID\": \"ins-0752de63\"\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"EventTableListStruct\": [\n                {\n                    \"EventName\": \"主机失陷\",\n                    \"Total\": 3\n                },\n                {\n                    \"EventName\": \"安全基线（出）\",\n                    \"Total\": 2635\n                }\n            ],\n            \"BaseLineUser\": 1,\n            \"BaseLineInSwitch\": 1,\n            \"BaseLineOutSwitch\": 1\n        },\n        \"RequestId\": \"0752de63-570c-4c2e-bbd2-78574e22a1ae\",\n        \"ReturnCode\": 0,\n        \"ReturnMsg\": \"sccuess\"\n    }\n}",
         "title": "DescribeUnHandleEventTabList"
+      }
+    ],
+    "DescribeUserBandwidthUsage": [
+      {
+        "document": "查询用户带宽流量使用情况",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserBandwidthUsage\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"FwEnginType\": \"NAT防火墙实例\",\n                \"InstanceId\": \"cfwnat-ef74fdaf\",\n                \"InstanceName\": \"[autotest][勿删]自动化测试\",\n                \"Percent\": 82.19,\n                \"Quota\": 40,\n                \"Region\": \"ap-shanghai\",\n                \"RegionName\": \"上海\",\n                \"UsedWidth\": 32.88\n            }\n        ],\n        \"RequestId\": \"535eed3d-4c1e-417a-b1f1-4ee1c6f796e0\"\n    }\n}",
+        "title": "实例1 查询用户带宽流量使用情况"
       }
     ],
     "DescribeVpcAcRule": [

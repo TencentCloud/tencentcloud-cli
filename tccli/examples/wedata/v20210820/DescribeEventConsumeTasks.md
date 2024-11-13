@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli wedata DescribeEventConsumeTasks --cli-unfold-argument  \
-    --EventCaseId 9e2a0e1f870ec340018712b3925f0006 \
+    --EventCaseId 9e2a0e***0006 \
     --PageNumber 1 \
     --PageSize 10
 ```

@@ -485,7 +485,7 @@ def doModifyAssetSync(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifySecurityGroupRule(args, parsed_globals):
+def doDeleteVpcFwGroup(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -514,11 +514,11 @@ def doModifySecurityGroupRule(args, parsed_globals):
     client = mod.CfwClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifySecurityGroupRuleRequest()
+    model = models.DeleteVpcFwGroupRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.ModifySecurityGroupRule(model)
+        rsp = client.DeleteVpcFwGroup(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -1733,7 +1733,7 @@ def doDescribeNatFwInstance(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteVpcFwGroup(args, parsed_globals):
+def doDescribeUserBandwidthUsage(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -1762,11 +1762,11 @@ def doDeleteVpcFwGroup(args, parsed_globals):
     client = mod.CfwClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteVpcFwGroupRequest()
+    model = models.DescribeUserBandwidthUsageRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DeleteVpcFwGroup(model)
+        rsp = client.DescribeUserBandwidthUsage(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -1923,6 +1923,58 @@ def doModifyVpcAcRule(args, parsed_globals):
     start_time = time.time()
     while True:
         rsp = client.ModifyVpcAcRule(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeFwEngineZoneList(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION)             and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID)             and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE)             and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CfwClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeFwEngineZoneListRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.DescribeFwEngineZoneList(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -5113,6 +5165,58 @@ def doModifyRunSyncAsset(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doModifySecurityGroupRule(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION)             and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID)             and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE)             and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CfwClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifySecurityGroupRuleRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.ModifySecurityGroupRule(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doModifyAllVPCSwitchStatus(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -5965,7 +6069,7 @@ ACTION_MAP = {
     "DescribeResourceGroupNew": doDescribeResourceGroupNew,
     "ModifyVpcFwGroup": doModifyVpcFwGroup,
     "ModifyAssetSync": doModifyAssetSync,
-    "ModifySecurityGroupRule": doModifySecurityGroupRule,
+    "DeleteVpcFwGroup": doDeleteVpcFwGroup,
     "AddVpcAcRule": doAddVpcAcRule,
     "AddEnterpriseSecurityGroupRules": doAddEnterpriseSecurityGroupRules,
     "DescribeTableStatus": doDescribeTableStatus,
@@ -5989,10 +6093,11 @@ ACTION_MAP = {
     "ModifyBlockIgnoreRule": doModifyBlockIgnoreRule,
     "DescribeAclRule": doDescribeAclRule,
     "DescribeNatFwInstance": doDescribeNatFwInstance,
-    "DeleteVpcFwGroup": doDeleteVpcFwGroup,
+    "DescribeUserBandwidthUsage": doDescribeUserBandwidthUsage,
     "DeleteAllAccessControlRule": doDeleteAllAccessControlRule,
     "DescribeSecurityGroupList": doDescribeSecurityGroupList,
     "ModifyVpcAcRule": doModifyVpcAcRule,
+    "DescribeFwEngineZoneList": doDescribeFwEngineZoneList,
     "DescribeAssetSync": doDescribeAssetSync,
     "CreateSecurityGroupRules": doCreateSecurityGroupRules,
     "DescribeDefenseSwitch": doDescribeDefenseSwitch,
@@ -6054,6 +6159,7 @@ ACTION_MAP = {
     "ModifyEnterpriseSecurityDispatchStatus": doModifyEnterpriseSecurityDispatchStatus,
     "DescribeTLogInfo": doDescribeTLogInfo,
     "ModifyRunSyncAsset": doModifyRunSyncAsset,
+    "ModifySecurityGroupRule": doModifySecurityGroupRule,
     "ModifyAllVPCSwitchStatus": doModifyAllVPCSwitchStatus,
     "DescribeGuideScanInfo": doDescribeGuideScanInfo,
     "DescribeAddressTemplateList": doDescribeAddressTemplateList,

@@ -1028,7 +1028,7 @@
         {
           "disabled": false,
           "document": "购买实例的时长，单位：月。取值范围：1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 24, 36。",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "Period",
           "required": true,
@@ -1036,8 +1036,8 @@
         },
         {
           "disabled": false,
-          "document": "自动续费标识。取值范围：<br><li>NOTIFY_AND_AUTO_RENEW：通知过期且自动续费<br><li>NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费<br><li>DISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费<br><br>默认取值：NOTIFY_AND_AUTO_RENEW。若该参数指定为NOTIFY_AND_AUTO_RENEW，在账户余额充足的情况下，实例到期后将按月自动续费。",
-          "example": "",
+          "document": "自动续费标识。取值范围：<li>NOTIFY_AND_AUTO_RENEW：通知过期且自动续费</li><li>NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费</li><li>DISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费</li><br>默认取值：NOTIFY_AND_AUTO_RENEW。若该参数指定为NOTIFY_AND_AUTO_RENEW，在账户余额充足的情况下，实例到期后将按月自动续费。",
+          "example": "NOTIFY_AND_AUTO_RENEW",
           "member": "string",
           "name": "RenewFlag",
           "required": false,
@@ -2845,10 +2845,10 @@
         {
           "disabled": false,
           "document": "CHC实例禁止操作信息",
-          "example": "无",
+          "example": "[     {         \"ChcId\": \"chc-1a2b3c4d\",         \"DenyActions\": [             \"ConfigureChcAssistVpc\",             \"RunInstances\"         ],         \"State\": \"INIT\"     },     {         \"ChcId\": \"chc-adf34aft\",         \"DenyActions\": [             \"ConfigureChcAssistVpc\",             \"RunInstances\"         ],         \"State\": \"INIT\"     } ]",
           "member": "ChcHostDeniedActions",
           "name": "ChcHostDeniedActionSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3860,7 +3860,7 @@
         {
           "disabled": false,
           "document": "该参数表示调整配置操作（降配）限制次数查询。",
-          "example": "无",
+          "example": "[     {         \"Operation\": \"INSTANCE_DEGRADE\",         \"InstanceId\": \"ins-r8hr2upy\",         \"CurrentCount\": 0,         \"LimitCount\": 5     } ]",
           "member": "OperationCountLimit",
           "name": "InstanceOperationLimitSet",
           "output_required": true,

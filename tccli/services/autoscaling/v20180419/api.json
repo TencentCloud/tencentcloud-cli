@@ -393,7 +393,7 @@
       "status": "deprecated"
     },
     "UpgradeLifecycleHook": {
-      "document": "本接口（UpgradeLifecycleHook）用于升级生命周期挂钩。\n\n* 本接口用于升级生命周期挂钩，采用“完全覆盖”风格，无论之前参数如何，统一按照接口参数设置为新的配置。对于非必填字段，不填写则按照默认值赋值。\n",
+      "document": "本接口（UpgradeLifecycleHook）用于升级生命周期挂钩。\n\n* 本接口用于升级生命周期挂钩，采用“完全覆盖”风格，无论之前参数如何，统一按照接口参数设置为新的配置。对于非必填字段，不填写则按照默认值赋值。",
       "input": "UpgradeLifecycleHookRequest",
       "name": "升级生命周期挂钩",
       "output": "UpgradeLifecycleHookResponse",
@@ -1114,20 +1114,20 @@
         {
           "disabled": false,
           "document": "伸缩组ID。",
-          "example": "",
+          "example": "asg-djy6etgf",
           "member": "string",
           "name": "AutoScalingGroupId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "伸缩组名称。",
-          "example": "",
+          "example": "as-group-a0",
           "member": "string",
           "name": "AutoScalingGroupName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -3858,22 +3858,20 @@
         {
           "disabled": false,
           "document": "需要过滤的字段。",
-          "example": "",
+          "example": "zone",
           "member": "string",
           "name": "Name",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "字段的过滤值。",
-          "example": "",
+          "example": "ap-guangzhou-6",
           "member": "string",
           "name": "Values",
           "required": true,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         }
       ],
       "usage": "in"
@@ -3884,9 +3882,10 @@
         {
           "disabled": false,
           "document": "负载均衡器ID",
-          "example": "",
+          "example": "lb-fy6te4r5",
           "member": "string",
           "name": "LoadBalancerId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -3894,9 +3893,10 @@
         {
           "disabled": false,
           "document": "应用型负载均衡监听器 ID",
-          "example": "",
+          "example": "lbl-dhyt56rf",
           "member": "string",
           "name": "ListenerId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -3904,9 +3904,10 @@
         {
           "disabled": false,
           "document": "目标规则属性列表",
-          "example": "",
+          "example": "[{\"Port\": 80, \"Weight\": 10}]}]",
           "member": "TargetAttribute",
           "name": "TargetAttributes",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -3914,9 +3915,10 @@
         {
           "disabled": false,
           "document": "转发规则ID，注意：针对七层监听器此参数必填",
-          "example": "",
+          "example": "loc-sj8y6tr4",
           "member": "string",
           "name": "LocationId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -3924,9 +3926,10 @@
         {
           "disabled": false,
           "document": "负载均衡实例所属地域，默认取AS服务所在地域。格式与公共参数Region相同，如：\"ap-guangzhou\"。",
-          "example": "",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -4235,9 +4238,10 @@
         {
           "disabled": false,
           "document": "竞价相关选项",
-          "example": "",
+          "example": "{\"SpotInstanceType\": \"one-time\", \"MaxPrice\": 1000}",
           "member": "SpotMarketOptions",
           "name": "SpotOptions",
+          "output_required": true,
           "required": true,
           "type": "object",
           "value_allowed_null": false
@@ -4245,9 +4249,10 @@
         {
           "disabled": false,
           "document": "市场选项类型，当前只支持取值：spot\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "spot",
           "member": "string",
           "name": "MarketType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -4328,9 +4333,10 @@
         {
           "disabled": false,
           "document": "标签键",
-          "example": "",
+          "example": "as-tag-key-app0",
           "member": "string",
           "name": "Key",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -4338,9 +4344,10 @@
         {
           "disabled": false,
           "document": "标签值",
-          "example": "",
+          "example": "as-tag-value-app0",
           "member": "string",
           "name": "Value",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -5016,10 +5023,10 @@
         {
           "disabled": false,
           "document": "密钥ID列表。",
-          "example": "",
+          "example": "[\"skey-jud75er4\"]",
           "member": "string",
           "name": "KeyIds",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -5031,33 +5038,30 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例登录密码。不同操作系统类型密码复杂度限制不一样，具体如下：<br><li>Linux实例密码必须8到16位，至少包括两项[a-z，A-Z]、[0-9] 和 [( ) ` ~ ! @ # $ % ^ & * - + = | { } [ ] : ; ' , . ? / ]中的特殊符号。<br><li>Windows实例密码必须12到16位，至少包括三项[a-z]，[A-Z]，[0-9] 和 [( ) ` ~ ! @ # $ % ^ & * - + = { } [ ] : ; ' , . ? /]中的特殊符号。<br><br>若不指定该参数，则由系统随机生成密码，并通过站内信方式通知到用户。",
-          "example": "",
+          "document": "实例登录密码。不同操作系统类型密码复杂度限制不一样，具体如下：\n<li>Linux实例密码必须8到16位，至少包括两项[a-z，A-Z]、[0-9] 和 [( ) ` ~ ! @ # $ % ^ & * - + = | { } [ ] : ; ' , . ? / ]中的特殊符号。</li>\n<li>Windows实例密码必须12到16位，至少包括三项[a-z]，[A-Z]，[0-9] 和 [( ) ` ~ ! @ # $ % ^ & * - + = { } [ ] : ; ' , . ? /]中的特殊符号。</li>\n若不指定该参数，则由系统随机生成密码，并通过站内信方式通知到用户。",
+          "example": "passExam@!7862543",
           "member": "string",
           "name": "Password",
           "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "密钥ID列表。关联密钥后，就可以通过对应的私钥来访问实例；KeyId可通过接口DescribeKeyPairs获取，密钥与密码不能同时指定，同时Windows操作系统不支持指定密钥。当前仅支持购买的时候指定一个密钥。",
-          "example": "",
+          "example": "[\"skey-ju7fy6t5\"]",
           "member": "string",
           "name": "KeyIds",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         },
         {
           "disabled": false,
-          "document": "保持镜像的原始设置。该参数与Password或KeyIds.N不能同时指定。只有使用自定义镜像、共享镜像或外部导入镜像创建实例时才能指定该参数为TRUE。取值范围：<br><li>TRUE：表示保持镜像的登录设置<br><li>FALSE：表示不保持镜像的登录设置<br><br>默认取值：FALSE。",
-          "example": "",
+          "document": "保持镜像的原始设置。该参数与Password或KeyIds.N不能同时指定。只有使用自定义镜像、共享镜像或外部导入镜像创建实例时才能指定该参数为TRUE。取值范围：\n<li>TRUE：表示保持镜像的登录设置</li>\n<li>FALSE：表示不保持镜像的登录设置</li>默认取值：FALSE。",
+          "example": "false",
           "member": "bool",
           "name": "KeepImageLogin",
           "required": false,
-          "type": "bool",
-          "value_allowed_null": true
+          "type": "bool"
         }
       ],
       "usage": "in"
@@ -6579,7 +6583,7 @@
         {
           "disabled": false,
           "document": "刷新设置。",
-          "example": "无",
+          "example": "{\"RollingUpdateSettings\": {\"BatchNumber\": 1, \"BatchPause\": \"AUTOMATIC\"}, \"CheckInstanceTargetHealth\": true}",
           "member": "RefreshSettings",
           "name": "RefreshSettings",
           "required": true,
@@ -6588,7 +6592,7 @@
         {
           "disabled": false,
           "document": "原始刷新活动 ID。",
-          "example": "无",
+          "example": "asr-fdsf8u6b",
           "member": "string",
           "name": "OriginRefreshActivityId",
           "required": true,
@@ -7171,9 +7175,10 @@
         {
           "disabled": false,
           "document": "竞价出价，例如“1.05”",
-          "example": "",
+          "example": "1.05",
           "member": "string",
           "name": "MaxPrice",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -7181,9 +7186,10 @@
         {
           "disabled": false,
           "document": "竞价请求类型，当前仅支持类型：one-time，默认值为one-time\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "one-time",
           "member": "string",
           "name": "SpotInstanceType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -7461,9 +7467,10 @@
         {
           "disabled": false,
           "document": "标签键",
-          "example": "",
+          "example": "as-group-tag0",
           "member": "string",
           "name": "Key",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -7471,19 +7478,21 @@
         {
           "disabled": false,
           "document": "标签值",
-          "example": "",
+          "example": "app0",
           "member": "string",
           "name": "Value",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "标签绑定的资源类型，当前支持类型：\"auto-scaling-group\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "标签绑定的资源类型，当前支持类型：\"auto-scaling-group\", \"launch-configuration\"\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "auto-scaling-group",
           "member": "string",
           "name": "ResourceType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -7497,9 +7506,10 @@
         {
           "disabled": false,
           "document": "端口",
-          "example": "",
+          "example": "80",
           "member": "uint64",
           "name": "Port",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -7507,9 +7517,10 @@
         {
           "disabled": false,
           "document": "权重",
-          "example": "",
+          "example": "10",
           "member": "uint64",
           "name": "Weight",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -7784,7 +7795,7 @@
         {
           "disabled": false,
           "document": "弹性伸缩向通知目标发送的附加信息，配置通知时使用，默认值为空字符串\"\"",
-          "example": "\"\"",
+          "example": "as-meta-0",
           "member": "string",
           "name": "NotificationMetadata",
           "required": false,
@@ -7793,7 +7804,7 @@
         {
           "disabled": false,
           "document": "通知目标。NotificationTarget和LifecycleCommand参数互斥，二者不可同时指定。",
-          "example": "无",
+          "example": "{\"QueueName\": \"as-pool\", \"TargetType\": \"TDMQ_CMQ_QUEUE\"}",
           "member": "NotificationTarget",
           "name": "NotificationTarget",
           "required": false,
@@ -7811,7 +7822,7 @@
         {
           "disabled": false,
           "document": "远程命令执行对象。NotificationTarget和LifecycleCommand参数互斥，二者不可同时指定。",
-          "example": "无",
+          "example": "cmd-ju7dt54r",
           "member": "LifecycleCommand",
           "name": "LifecycleCommand",
           "required": false,

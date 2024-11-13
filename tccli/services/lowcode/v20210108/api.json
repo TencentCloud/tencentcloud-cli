@@ -464,7 +464,7 @@
         {
           "disabled": false,
           "document": "数据源 ID",
-          "example": "无",
+          "example": "jl_yy0gs82",
           "member": "string",
           "name": "Id",
           "output_required": true,
@@ -474,7 +474,7 @@
         {
           "disabled": false,
           "document": "数据源名称",
-          "example": "无",
+          "example": "数据源",
           "member": "string",
           "name": "Title",
           "output_required": true,
@@ -484,7 +484,7 @@
         {
           "disabled": false,
           "document": "数据源标识",
-          "example": "无",
+          "example": "jl_yy0gs83",
           "member": "string",
           "name": "Name",
           "output_required": true,
@@ -494,7 +494,7 @@
         {
           "disabled": false,
           "document": "数据源类型",
-          "example": "无",
+          "example": "datasource",
           "member": "string",
           "name": "Type",
           "output_required": true,
@@ -504,7 +504,7 @@
         {
           "disabled": false,
           "document": "数据源描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "描述",
           "member": "string",
           "name": "Description",
           "output_required": true,
@@ -514,7 +514,7 @@
         {
           "disabled": false,
           "document": "数据源配置",
-          "example": "无",
+          "example": "{\"x-primary-column\":\"_id\",\"x-id\":\"7b9e453\",\"title\":\"\",\"type\":\"object\",\"x-index\":1)",
           "member": "string",
           "name": "Schema",
           "output_required": true,
@@ -524,7 +524,7 @@
         {
           "disabled": false,
           "document": "cms 项目状态, 0: 重新获取详情信息，1： 不需要重新获取详情信息",
-          "example": "无",
+          "example": "1",
           "member": "string",
           "name": "CmsProject",
           "output_required": true,
@@ -534,7 +534,7 @@
         {
           "disabled": false,
           "document": "当前为环境 id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "lowcode-we34fvsdf",
           "member": "string",
           "name": "PkgId",
           "output_required": true,
@@ -544,7 +544,7 @@
         {
           "disabled": false,
           "document": "schema 版本信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2.6",
           "member": "string",
           "name": "SchemaVersion",
           "output_required": true,
@@ -554,7 +554,7 @@
         {
           "disabled": false,
           "document": "创建者用户 ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0gs83",
           "member": "string",
           "name": "CreatorId",
           "output_required": true,
@@ -564,7 +564,7 @@
         {
           "disabled": false,
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2024-11-10 12:00:00",
           "member": "string",
           "name": "CreatedAt",
           "output_required": true,
@@ -574,7 +574,7 @@
         {
           "disabled": false,
           "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2024-11-10 12:00:00",
           "member": "string",
           "name": "UpdatedAt",
           "output_required": true,
@@ -584,7 +584,7 @@
         {
           "disabled": false,
           "document": "环境 id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "lowcode-wa2332",
           "member": "string",
           "name": "EnvId",
           "output_required": true,
@@ -594,7 +594,7 @@
         {
           "disabled": false,
           "document": "版本\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2.1",
           "member": "string",
           "name": "DataSourceVersion",
           "output_required": true,
@@ -604,7 +604,7 @@
         {
           "disabled": false,
           "document": "所属应用数组\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\"Id\":\"app-abc\"}",
           "member": "DataSourceLinkApp",
           "name": "AppUsageList",
           "output_required": true,
@@ -614,7 +614,7 @@
         {
           "disabled": false,
           "document": "发布时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2024-11-10 12:00:00",
           "member": "string",
           "name": "PublishedAt",
           "output_required": true,
@@ -624,7 +624,7 @@
         {
           "disabled": false,
           "document": "子数据源ids\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "jl_yy0gs84",
           "member": "string",
           "name": "ChildDataSourceIds",
           "output_required": true,
@@ -634,7 +634,7 @@
         {
           "disabled": false,
           "document": "数据源发布信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\"onlineVersion\": 1, \"previewVersion\": 1, \"onlinePublishAt\": 1704256751993, \"prviewPublishAt\": 1704256745583}",
           "member": "string",
           "name": "Fun",
           "output_required": true,
@@ -644,7 +644,7 @@
         {
           "disabled": false,
           "document": "云函数状态 1 Active 2 Creating 3 Updating 4 Deleting  9 Deleted 11 CreatFailed  12 UpdateFailed 13 DeleteFailed 21 UpdateTimeOut\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "ScfStatus",
           "output_required": true,
@@ -654,7 +654,7 @@
         {
           "disabled": false,
           "document": "自定义方法\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "action1",
           "member": "string",
           "name": "Methods",
           "output_required": true,
@@ -664,7 +664,7 @@
         {
           "disabled": false,
           "document": "子数据源名数组\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"jl_yy0gs85\",\"jl_yy0gs86\"]",
           "member": "string",
           "name": "ChildDataSourceNames",
           "output_required": true,
@@ -674,7 +674,7 @@
         {
           "disabled": false,
           "document": "是否旧数据源 1 新 0 旧\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "IsNewDataSource",
           "output_required": true,
@@ -684,7 +684,7 @@
         {
           "disabled": false,
           "document": "数据源视图id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "234233",
           "member": "string",
           "name": "ViewId",
           "output_required": true,
@@ -694,7 +694,7 @@
         {
           "disabled": false,
           "document": "数据源属性配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "cfg_23sa",
           "member": "string",
           "name": "Configuration",
           "output_required": true,
@@ -704,7 +704,7 @@
         {
           "disabled": false,
           "document": "外部数据源模板code\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "tpl_2sewe32",
           "member": "string",
           "name": "TemplateCode",
           "output_required": true,
@@ -714,7 +714,7 @@
         {
           "disabled": false,
           "document": "外部数据源模板来源 0 空模板 1 腾讯文档 2 腾讯会议 3 企业微信 4 微信电商\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "Source",
           "output_required": true,
@@ -734,7 +734,7 @@
         {
           "disabled": false,
           "document": "发布视图id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2353342",
           "member": "string",
           "name": "PublishViewId",
           "output_required": true,
@@ -744,7 +744,7 @@
         {
           "disabled": false,
           "document": "数据源子类型   \"database\" 标准模型 \"custom-database\" 自定义模型 \"system\" 系统模型 \"connector\" 连接器 \"custom-connector\" 自定义连接器 \"hidden\" 隐藏数据源\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "datasource_type",
           "member": "string",
           "name": "SubType",
           "output_required": true,
@@ -754,7 +754,7 @@
         {
           "disabled": false,
           "document": "授权状态  0 授权无效 1 授权有效\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "AuthStatus",
           "output_required": true,
@@ -764,7 +764,7 @@
         {
           "disabled": false,
           "document": "数据源授权信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\"AuthUser\":\"abc\"}",
           "member": "TicketAuthInfo",
           "name": "AuthInfo",
           "output_required": true,
@@ -774,7 +774,7 @@
         {
           "disabled": false,
           "document": "1发布0未发布\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "PublishStatus",
           "output_required": true,
@@ -784,7 +784,7 @@
         {
           "disabled": false,
           "document": "更新版本\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "UpdateVersion",
           "output_required": true,
@@ -794,7 +794,7 @@
         {
           "disabled": false,
           "document": "模型关联关系字段列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\"Field\":\"abc\"}",
           "member": "RelationField",
           "name": "RelationFieldList",
           "output_required": true,
@@ -814,7 +814,7 @@
         {
           "disabled": false,
           "document": "体验环境db表名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "pre_createA",
           "member": "string",
           "name": "PreviewTableName",
           "output_required": false,
@@ -824,7 +824,7 @@
         {
           "disabled": false,
           "document": "正式环境db表名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "prod_createA",
           "member": "string",
           "name": "PublishedTableName",
           "output_required": false,
@@ -834,7 +834,7 @@
         {
           "disabled": false,
           "document": "DB来源类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "internal_flexdb",
           "member": "string",
           "name": "DbSourceType",
           "output_required": false,
@@ -850,20 +850,20 @@
         {
           "disabled": false,
           "document": "数据详情列表",
-          "example": "无",
+          "example": "[{\"id\":\"jl_yy0gs82\",\"Title\":\"数据源title\"},{\"id\":\"jl_yy0gs83\",\"Title\":\"数据源title3\"}]",
           "member": "DataSourceDetail",
           "name": "Rows",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "数据源列表总个数",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Count",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -1070,22 +1070,20 @@
         {
           "disabled": false,
           "document": "数据源标识模糊匹配",
-          "example": "无",
+          "example": "data-3w6wEhrF",
           "member": "string",
           "name": "LikeName",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "数据源名称模糊匹配",
-          "example": "无",
+          "example": "时间轴区块数据",
           "member": "string",
           "name": "LikeTitle",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -1264,7 +1262,7 @@
         {
           "disabled": false,
           "document": "每页条数",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "PageSize",
           "required": true,
@@ -1273,7 +1271,7 @@
         {
           "disabled": false,
           "document": "页码",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "PageIndex",
           "required": true,
@@ -1282,7 +1280,7 @@
         {
           "disabled": false,
           "document": "环境 id",
-          "example": "无",
+          "example": "lowcode -wa123454",
           "member": "string",
           "name": "EnvId",
           "required": true,
@@ -1291,7 +1289,7 @@
         {
           "disabled": false,
           "document": "应用id数组",
-          "example": "无",
+          "example": "[\"app-wasds\",\"app-wsdfasd\"]",
           "member": "string",
           "name": "Appids",
           "required": false,
@@ -1300,7 +1298,7 @@
         {
           "disabled": false,
           "document": "数据源id数组",
-          "example": "无",
+          "example": "[\"data-zylntekm\",\"data-zylntekn\"]",
           "member": "string",
           "name": "DataSourceIds",
           "required": false,
@@ -1309,7 +1307,7 @@
         {
           "disabled": false,
           "document": "数据源名称数组",
-          "example": "无",
+          "example": "[\"name1\",\"name2\"]",
           "member": "string",
           "name": "DataSourceNames",
           "required": false,
@@ -1318,7 +1316,7 @@
         {
           "disabled": false,
           "document": "数据源类型 database-自建数据源；cloud-integration-自定义数据源",
-          "example": "无",
+          "example": "database",
           "member": "string",
           "name": "DataSourceType",
           "required": false,
@@ -1327,7 +1325,7 @@
         {
           "disabled": false,
           "document": "数据源模糊查询参数",
-          "example": "无",
+          "example": "{\"LikeName\":\"\tdata-3w6wEhrF\",\"LikeTitle\":\"\t时间轴区块数据\"}",
           "member": "DataSourceQueryOption",
           "name": "QueryOption",
           "required": false,
@@ -1336,7 +1334,7 @@
         {
           "disabled": false,
           "document": "数据源视图Id数组",
-          "example": "无",
+          "example": "234233",
           "member": "string",
           "name": "ViewIds",
           "required": false,
@@ -1345,7 +1343,7 @@
         {
           "disabled": false,
           "document": "查询未关联应用的数据源，0:未关联，该参数配合 AppIds 参数一块使用",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "AppLinkStatus",
           "required": false,
@@ -1354,7 +1352,7 @@
         {
           "disabled": false,
           "document": "查询应用绑定数据源: 0: 否,1: 是",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "QueryBindToApp",
           "required": false,
@@ -1363,7 +1361,7 @@
         {
           "disabled": false,
           "document": "查询连接器 0 数据模型 1 连接器 2 自定义连接器",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "QueryConnector",
           "required": false,
@@ -1372,7 +1370,7 @@
         {
           "disabled": false,
           "document": "废弃中",
-          "example": "无",
+          "example": "lowcode -wa123454",
           "member": "string",
           "name": "NotQuerySubTypeList",
           "required": false,
@@ -1381,7 +1379,7 @@
         {
           "disabled": false,
           "document": "查询channelList",
-          "example": "无",
+          "example": "channelList",
           "member": "string",
           "name": "ChannelList",
           "required": false,
@@ -1390,7 +1388,7 @@
         {
           "disabled": false,
           "document": "是否查询数据源关联关系",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "QueryDataSourceRelationList",
           "required": false,
@@ -1408,7 +1406,7 @@
         {
           "disabled": false,
           "document": "数据库表名列表",
-          "example": "无",
+          "example": "database",
           "member": "string",
           "name": "DatabaseTableNames",
           "required": false,
@@ -1417,7 +1415,7 @@
         {
           "disabled": false,
           "document": "是否查询系统模型，默认为true，需要显示设置为False才能过滤系统模型",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "QuerySystemModel",
           "required": false,
@@ -2872,30 +2870,30 @@
         {
           "disabled": false,
           "document": "关联关系字段\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "name",
           "member": "string",
           "name": "Field",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "关联关系格式\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "format_name",
           "member": "string",
           "name": "Format",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "关联数据源名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "sys_department",
           "member": "string",
           "name": "RelateDataSourceName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -2984,10 +2982,10 @@
         {
           "disabled": false,
           "document": "授权用户",
-          "example": "无",
+          "example": "relation_data_depart",
           "member": "string",
           "name": "AuthUser",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }

@@ -4,7 +4,7 @@
       {
         "document": "查询专属可用区可用区级特性",
         "input": "POST / HTTP/1.1\nHost: cdz.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudDedicatedZoneFeatures\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"zone-id\",\n            \"Values\": [\n                \"2000800003\"\n            ]\n        },\n        {\n            \"Name\": \"feature-key\",\n            \"Values\": [\n                \"CDZ_CLB_PUSH_SWITCH\"\n            ]\n        }\n    ],\n    \"Limit\": 1,\n    \"Offset\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"FeatureSet\": [\n            {\n                \"ZoneId\": \"2000800003\",\n                \"FeatureKey\": \"CDZ_CLB_PUSH_SWITCH\",\n                \"FeatureValue\": \"0\",\n                \"FeatureName\": \"负载均衡CLB不推量\",\n                \"FeatureDescription\": \"\"\n            }\n        ],\n        \"RequestId\": \"2628d149-a59c-4cf0-abc7-79ba9dc78522\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"FeatureSet\": [\n            {\n                \"ZoneId\": \"2000800003\",\n                \"FeatureKey\": \"CDZ_CLB_PUSH_SWITCH\",\n                \"FeatureValue\": \"0\",\n                \"FeatureName\": \"负载均衡CLB不推量\",\n                \"FeatureDescription\": \"负载均衡CLB不推量\"\n            }\n        ],\n        \"RequestId\": \"2628d149-a59c-4cf0-abc7-79ba9dc78522\"\n    }\n}",
         "title": "查询专属可用区可用区级特性"
       }
     ],
@@ -28,15 +28,15 @@
       {
         "document": "查询专属可用区白名单信息\n\n",
         "input": "POST / HTTP/1.1\nHost: cdz.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudDedicatedZoneWhiteList\n<公共请求参数>\n\n{\n    \"Limit\": 1,\n    \"Offset\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"ZoneSet\": [\n            {\n                \"CdzId\": \"xx\",\n                \"ZoneId\": \"xx\",\n                \"Uin\": \"xx\",\n                \"AppId\": \"xx\",\n                \"WhiteListKey\": \"xx\",\n                \"RegionId\": \"xx\",\n                \"ZoneName\": \"xx\",\n                \"WhiteList\": [\n                    \"xx\"\n                ]\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"ZoneSet\": [\n            {\n                \"AppId\": \"1318574890\",\n                \"CdzId\": \"cdz-el3pwfik\",\n                \"RegionId\": \"1\",\n                \"Uin\": \"100031808324\",\n                \"WhiteList\": [\n                    \"800000918292\"\n                ],\n                \"WhiteListKey\": \"CDZ_WHITELIST\",\n                \"ZoneId\": \"100002\",\n                \"ZoneName\": \"Some Zone\"\n            }\n        ],\n        \"RequestId\": \"753f3845-637f-4023-b141-3440f20b16d8\"\n    }\n}",
         "title": "查询专属可用区白名单信息"
       }
     ],
     "DescribeUserAvailableCloudDedicatedZones": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdz.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserAvailableCloudDedicatedZones\n<公共请求参数>\n\n{\n    \"CheckUin\": \"abc\",\n    \"RegionId\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"ZoneIdSet\": [\n            \"123\"\n        ],\n        \"RequestId\": \"123\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cdz.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserAvailableCloudDedicatedZones\n<公共请求参数>\n\n{\n    \"CheckUin\": \"700000775535\",\n    \"RegionId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"ZoneIdSet\": [\n            \"100001\"\n        ],\n        \"RequestId\": \"fa1ec983-3f83-4353-9ae7-1bd7aa60d77c\"\n    }\n}",
         "title": "查询用户可使用的专属可用区列表"
       }
     ]

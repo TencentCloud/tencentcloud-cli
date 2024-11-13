@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tat CreateRegisterCode --cli-unfold-argument  \
-    --Description test \
-    --InstanceNamePrefix test \
+    --Description webserver \
+    --InstanceNamePrefix webserver \
     --RegisterLimit 0 \
     --EffectiveTime 0 \
     --IpAddressRange 192.168.10.1/10

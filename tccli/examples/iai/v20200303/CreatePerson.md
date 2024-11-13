@@ -1,6 +1,6 @@
 **Example 1: 错误示例**
 
-人员ID不可重复
+人员ID不可重复。
 
 Input: 
 
@@ -28,7 +28,7 @@ Output:
 
 **Example 2: 错误示例-2**
 
-人员库ID不存在
+人员库ID不存在。
 
 Input: 
 
@@ -56,7 +56,7 @@ Output:
 
 **Example 3: 创建人员接口**
 
-
+创建人员。
 
 Input: 
 
@@ -97,7 +97,7 @@ Output:
 
 **Example 4: 创建人员接口-2**
 
-创建人员
+创建人员。
 
 Input: 
 

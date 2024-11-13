@@ -1,6 +1,6 @@
 **Example 1: 错误示例**
 
-
+组中已包含对应的人员Id。
 
 Input: 
 
@@ -25,7 +25,7 @@ Output:
 
 **Example 2: 复制人员接口**
 
-
+复制人员。
 
 Input: 
 

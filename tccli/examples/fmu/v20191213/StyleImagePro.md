@@ -6,16 +6,18 @@ Input:
 
 ```
 tccli fmu StyleImagePro --cli-unfold-argument  \
-    --Image xxxxx \
-    --FilterType 2 \
-    --FilterDegree 80
+    --FilterType 1 \
+    --Image /9j/4AAQSkZJRgABAQAAAQABAAD/4gIo...lftXF/DjFZNXoSP5V2U0HMt/1FQf/Z \
+    --Url https://liudehua-9527.cos.ap-guangzhou.myqcloud.com/input.jpeg \
+    --FilterDegree 0 \
+    --RspImgType base64
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "ResultImage": "base64编码的图片",
+        "ResultImage": "/9j/4AAQSkZJRgABAQAAAQABAAD/4gIo...lftXF/DjFZNXoSP5V2U0HMt/1FQf/Z",
         "ResultUrl": "",
         "RequestId": "3c140219-cfe9-470e-b241-907877d6fb03"
     }
@@ -30,8 +32,11 @@ Input:
 
 ```
 tccli fmu StyleImagePro --cli-unfold-argument  \
-    --Image xxxxx \
-    --FilterType -1
+    --FilterType 1 \
+    --Image /9j/4AAQSkZJRgABAQAAAQABAAD/4gIo...lftXF/DjFZNXoSP5V2U0HMt/1FQf/Z \
+    --Url https://liudehua-9527.cos.ap-guangzhou.myqcloud.com/input.jpeg \
+    --FilterDegree 0 \
+    --RspImgType base64
 ```
 
 Output: 

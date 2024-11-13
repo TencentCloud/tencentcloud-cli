@@ -6,15 +6,15 @@ Input:
 
 ```
 tccli tat ModifyRegisterInstance --cli-unfold-argument  \
-    --InstanceId abc \
-    --InstanceName abc
+    --InstanceId rins-xfjkunbgax \
+    --InstanceName webserver-01
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "e0f011ac-6949-4726-a7d6-b28540f9d729"
     }
 }
 ```

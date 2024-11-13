@@ -1921,13 +1921,13 @@
         },
         {
           "disabled": false,
-          "document": "录制文件信息。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "录制文件信息。",
+          "example": "[    {  \t\"FileName\": \"1400188366_555666__UserId_s_amVmZjM.__UserId_e_main_audiovideo.m3u8\",          \"UserId\": \"jeff3\",          \"TrackType\": \"audio_video\",          \"BeginTimeStamp\": 1730087526709    } ]",
           "member": "StorageFile",
           "name": "StorageFileList",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -3669,6 +3669,34 @@
         }
       ],
       "type": "object"
+    },
+    "EmulateMobileParams": {
+      "document": "渲染移动模式参数，不渲染移动模式时，请勿设置此参数。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "移动设备类型，\n0: 手机\n1: 平板\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "MobileDeviceType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "屏幕方向，\n0: 竖屏，\n1: 横屏\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "ScreenOrientation",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "EncodeParams": {
       "document": "MCU混流输出流编码参数",
@@ -7864,6 +7892,15 @@
           "name": "ReadyTimeout",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "渲染移动模式参数；不准备渲染移动模式页面时，请勿设置此参数。",
+          "example": "无",
+          "member": "EmulateMobileParams",
+          "name": "EmulateMobileParams",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"

@@ -25,11 +25,12 @@ Output:
                 "StorageBlockAmount": 0,
                 "InstanceBandwidth": 0,
                 "InstancePps": 0,
-                "CpuType": "",
+                "CpuType": "intel",
                 "Gpu": 0,
                 "Fpga": 0,
-                "Remark": "",
-                "Status": "SOLD_OUT"
+                "Remark": "备注",
+                "Status": "SOLD_OUT",
+                "InstanceQuota": 0
             },
             {
                 "Zone": "ap-guangzhou-2",
@@ -42,11 +43,12 @@ Output:
                 "StorageBlockAmount": 0,
                 "InstanceBandwidth": 0,
                 "InstancePps": 0,
-                "CpuType": "",
+                "CpuType": "intel",
                 "Gpu": 0,
                 "Fpga": 0,
-                "Remark": "",
-                "Status": "SOLD_OUT"
+                "Remark": "备注",
+                "Status": "SOLD_OUT",
+                "InstanceQuota": 0
             }
         ],
         "RequestId": "90ddf8cf-168b-4175-99f0-28858e90634a"

@@ -6,21 +6,25 @@ Input:
 
 ```
 tccli lowcode DescribeDataSourceList --cli-unfold-argument  \
-    --PageIndex 1 \
-    --EnvId 字符串 \
-    --QueryOption.LikeTitle 字符串 \
-    --QueryOption.LikeName 字符串 \
-    --PageSize 1 \
-    --DataSourceType 字符串 \
-    --NotQuerySubTypeList 字符串 \
-    --DataSourceNames 字符串 \
-    --ViewIds 字符串 \
-    --QueryBindToApp 1 \
-    --QueryConnector 1 \
-    --DataSourceIds 字符串 \
-    --Appids 字符串 \
-    --ChannelList 字符串 \
-    --AppLinkStatus 1
+    --PageSize 0 \
+    --PageIndex 0 \
+    --EnvId abc \
+    --Appids abc \
+    --DataSourceIds abc \
+    --DataSourceNames abc \
+    --DataSourceType abc \
+    --QueryOption.LikeName abc \
+    --QueryOption.LikeTitle abc \
+    --ViewIds abc \
+    --AppLinkStatus 0 \
+    --QueryBindToApp 0 \
+    --QueryConnector 0 \
+    --NotQuerySubTypeList abc \
+    --ChannelList abc \
+    --QueryDataSourceRelationList True \
+    --DbInstanceType abc \
+    --DatabaseTableNames abc \
+    --QuerySystemModel True
 ```
 
 Output: 

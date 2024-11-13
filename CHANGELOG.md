@@ -1,3 +1,296 @@
+# Release 3.0.1097.1
+
+## 本地专用集群(cdc) 版本：2020-12-14
+
+### 第 7 次发布
+
+发布时间：2024-11-14 01:19:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DedicatedClusterInstanceType](http://document.tencentcloudapi.woa.com/document/product/1676/79502#DedicatedClusterInstanceType)
+
+	* <font color="#dd0000">**修改成员**：</font>InstanceQuota
+
+
+
+
+## 专属可用区(cdz) 版本：2022-11-23
+
+### 第 6 次发布
+
+发布时间：2024-11-14 01:21:15
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeCloudDedicatedZoneResourceSummary](http://document.tencentcloudapi.woa.com/document/product/1727/82868)
+
+	* 新增出参：ExtraInfo
+
+
+新增数据结构：
+
+* [ExtraInfo](http://document.tencentcloudapi.woa.com/document/product/1727/80828#ExtraInfo)
+
+修改数据结构：
+
+* [CloudDedicatedZoneWhiteListInfo](http://document.tencentcloudapi.woa.com/document/product/1727/80828#CloudDedicatedZoneWhiteListInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>CdzId, ZoneId, Uin, AppId, WhiteListKey, RegionId, ZoneName, WhiteList
+
+
+
+
+## 云防火墙(cfw) 版本：2019-09-04
+
+### 第 62 次发布
+
+发布时间：2024-11-14 01:21:53
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeFwEngineZoneList](http://document.tencentcloudapi.woa.com/document/product/1132/85220)
+* [DescribeUserBandwidthUsage](http://document.tencentcloudapi.woa.com/document/product/1132/85219)
+
+新增数据结构：
+
+* [UserBandwidthUsage](http://document.tencentcloudapi.woa.com/document/product/1132/49071#UserBandwidthUsage)
+* [UserEngineZoneInfo](http://document.tencentcloudapi.woa.com/document/product/1132/49071#UserEngineZoneInfo)
+
+
+
+## Cloud Studio（云端 IDE）(cloudstudio) 版本：2023-05-08
+
+### 第 6 次发布
+
+发布时间：2024-11-14 01:25:47
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [WorkspaceStatusInfo](http://document.tencentcloudapi.woa.com/document/product/1640/78594#WorkspaceStatusInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>Icon, StatusReason, WorkspaceType
+
+
+
+
+## Cloud Studio（云端 IDE）(cloudstudio) 版本：2021-05-24
+
+
+
+## 高性能弹性计算底座(cube) 版本：2024-03-04
+
+### 第 3 次发布
+
+发布时间：2024-11-14 01:28:30
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Instance](http://document.tencentcloudapi.woa.com/document/product/1760/83627#Instance)
+
+	* 新增成员：MachineHostIp
+
+
+
+
+## 人脸识别(iai) 版本：2020-03-03
+
+### 第 3 次发布
+
+发布时间：2024-11-14 01:49:31
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [FaceRect](http://document.tencentcloudapi.woa.com/document/product/867/45020#FaceRect)
+
+	* <font color="#dd0000">**修改成员**：</font>X, Y, Width, Height
+
+
+
+
+## 人脸识别(iai) 版本：2018-03-01
+
+
+
+## 云直播CSS(live) 版本：2018-08-01
+
+### 第 65 次发布
+
+发布时间：2024-11-14 01:57:47
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [AddLiveDomainInner](http://document.tencentcloudapi.woa.com/document/product/267/85225)
+* [AuthenticateDomainOwnerInner](http://document.tencentcloudapi.woa.com/document/product/267/85224)
+* [DeleteLiveDomainInner](http://document.tencentcloudapi.woa.com/document/product/267/85223)
+* [DescribeLiveDomainInner](http://document.tencentcloudapi.woa.com/document/product/267/85222)
+* [DescribeLiveDomainsInner](http://document.tencentcloudapi.woa.com/document/product/267/85221)
+* [OpenLiveServiceInner](http://document.tencentcloudapi.woa.com/document/product/267/85227)
+
+
+
+## 云开发低码(lowcode) 版本：2021-01-08
+
+### 第 19 次发布
+
+发布时间：2024-11-14 01:59:19
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [RelationField](http://document.tencentcloudapi.woa.com/document/product/1599/75496#RelationField)
+
+	* <font color="#dd0000">**修改成员**：</font>Field, Format, RelateDataSourceName
+
+
+
+
+## 移动应用安全(ms) 版本：2018-04-08
+
+### 第 11 次发布
+
+发布时间：2024-11-14 02:03:45
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* CreateResourceInstances
+
+
+
+## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+
+### 第 119 次发布
+
+发布时间：2024-11-14 02:19:07
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateClusterInternalAccessPoint](http://document.tencentcloudapi.woa.com/document/product/1179/82709)
+
+	* 新增入参：EnableZone, ZoneName
+
+
+
+
+## 远程实时操控(trro) 版本：2022-03-25
+
+### 第 6 次发布
+
+发布时间：2024-11-14 02:24:36
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [License](http://document.tencentcloudapi.woa.com/document/product/1714/80497#License)
+
+	* <font color="#dd0000">**修改成员**：</font>Count, Status, ExpireTime, Duration, RemainDay, LicenseIds
+
+
+
+
+## 实时音视频(trtc) 版本：2019-07-22
+
+### 第 73 次发布
+
+发布时间：2024-11-14 02:24:52
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [StartWebRecord](http://document.tencentcloudapi.woa.com/document/product/647/83550)
+
+	* 新增入参：EmulateMobileParams
+
+
+新增数据结构：
+
+* [EmulateMobileParams](http://document.tencentcloudapi.woa.com/document/product/647/44055#EmulateMobileParams)
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 169 次发布
+
+发布时间：2024-11-14 02:28:31
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [AllocateAddresses](http://document.tencentcloudapi.woa.com/document/product/215/16699)
+
+	* 新增入参：VipCluster
+
+
+
+
+## Web 应用防火墙(waf) 版本：2018-01-25
+
+### 第 72 次发布
+
+发布时间：2024-11-14 02:32:16
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DomainsPartInfo](http://document.tencentcloudapi.woa.com/document/product/627/53609#DomainsPartInfo)
+
+	* 新增成员：ProbeStatus
+
+
+
+
 # Release 3.0.1096.1
 
 ## 弹性伸缩(as) 版本：2018-04-19

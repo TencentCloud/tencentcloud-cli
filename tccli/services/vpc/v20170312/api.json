@@ -4711,6 +4711,15 @@
         },
         {
           "disabled": false,
+          "document": "指定IP地址申请EIP，每个账户每个月只有三次配额",
+          "example": "['1.1.1.1']",
+          "member": "string",
+          "name": "VipCluster",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "<b>[已废弃]</b> AnycastEIP不再区分是否负载均衡。原参数说明如下：\nAnycastEIP是否用于绑定负载均衡。\n<ul style=\"margin:0\"><li>已开通Anycast公网加速白名单的用户，可选值：<ul><li>TRUE：AnycastEIP可绑定对象为负载均衡</li>\n<li>FALSE：AnycastEIP可绑定对象为云服务器、NAT网关、高可用虚拟IP等</li></ul>默认值：FALSE。</li></ul>",
           "example": "False",
           "member": "bool",
@@ -4757,7 +4766,7 @@
         {
           "disabled": false,
           "document": "网络出口，当前仅支持精品BGP、静态单线，这2种IP 地址类型的指定出口传入，默认值：center_egress1，其它可选值：center_egress2、center_egress3",
-          "example": "无",
+          "example": "center_egress1",
           "member": "string",
           "name": "Egress",
           "required": false,
@@ -4766,7 +4775,7 @@
         {
           "disabled": false,
           "document": "高防包ID， 申请高防IP时，该字段必传。",
-          "example": "无",
+          "example": "bgp-12345678",
           "member": "string",
           "name": "AntiDDoSPackageId",
           "required": false,

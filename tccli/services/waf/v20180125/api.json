@@ -13387,6 +13387,16 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "拨测状态。 0: 禁用拨测, 1: 启用拨测",
+          "example": "1",
+          "member": "int64",
+          "name": "ProbeStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
