@@ -5486,8 +5486,10 @@ def parse_global_arg(parsed_globals):
                 param['interval'] = 5
         param['interval'] = min(param['interval'], param['timeout'])
         g_param['OptionsDefine.WaiterInfo'] = param
+
     if six.PY2:
         for key, value in g_param.items():
             if isinstance(value, six.text_type):
                 g_param[key] = value.encode('utf-8')
     return g_param
+
