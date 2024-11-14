@@ -5396,19 +5396,7 @@ def action_caller():
 
 def parse_global_arg(parsed_globals):
     g_param = parsed_globals
-    # 读命令行参数是否存在凭证
-    cvm_role_flag = True
-    for param in parsed_globals.keys():
-        if param in [OptionsDefine.SecretKey, OptionsDefine.SecretId, OptionsDefine.RoleArn,
-                     OptionsDefine.RoleSessionName]:
-            if parsed_globals[param] is not None:
-                cvm_role_flag = False
-                break
-        if param == OptionsDefine.UseCVMRole.replace('-', '_'):
-            if parsed_globals[param] is True:
-                cvm_role_flag = False
-                break
-    # 读配置文件
+
     is_exist_profile = True
     if not parsed_globals["profile"]:
         is_exist_profile = False
@@ -5434,13 +5422,11 @@ def parse_global_arg(parsed_globals):
     if OptionsDefine.Token not in cred:
         cred[OptionsDefine.Token] = None
 
-    # 没有配置文件，就读环境变量
     if not is_exist_profile:
         if os.environ.get(OptionsDefine.ENV_SECRET_ID) and os.environ.get(OptionsDefine.ENV_SECRET_KEY):
             cred[OptionsDefine.SecretId] = os.environ.get(OptionsDefine.ENV_SECRET_ID)
             cred[OptionsDefine.SecretKey] = os.environ.get(OptionsDefine.ENV_SECRET_KEY)
             cred[OptionsDefine.Token] = os.environ.get(OptionsDefine.ENV_TOKEN)
-            cvm_role_flag = False
 
         if os.environ.get(OptionsDefine.ENV_REGION):
             conf[OptionsDefine.SysParam][OptionsDefine.Region] = os.environ.get(OptionsDefine.ENV_REGION)
@@ -5448,9 +5434,7 @@ def parse_global_arg(parsed_globals):
         if os.environ.get(OptionsDefine.ENV_ROLE_ARN) and os.environ.get(OptionsDefine.ENV_ROLE_SESSION_NAME):
             cred[OptionsDefine.RoleArn] = os.environ.get(OptionsDefine.ENV_ROLE_ARN)
             cred[OptionsDefine.RoleSessionName] = os.environ.get(OptionsDefine.ENV_ROLE_SESSION_NAME)
-            cvm_role_flag = False
 
-    # 补充g_param，如果g_param为空就赋值
     for param in g_param.keys():
         if g_param[param] is None:
             if param in [OptionsDefine.SecretKey, OptionsDefine.SecretId, OptionsDefine.Token]:
@@ -5502,10 +5486,6 @@ def parse_global_arg(parsed_globals):
                 param['interval'] = 5
         param['interval'] = min(param['interval'], param['timeout'])
         g_param['OptionsDefine.WaiterInfo'] = param
-    # 通过flag判断上面g_param里面有没有新东西，没有执行type；优先级：命令行>环境变量>cred文件
-    if cvm_role_flag:
-        if "type" in cred and cred["type"] == "cvm-role":
-            g_param[OptionsDefine.UseCVMRole.replace('-', '_')] = True
     if six.PY2:
         for key, value in g_param.items():
             if isinstance(value, six.text_type):
