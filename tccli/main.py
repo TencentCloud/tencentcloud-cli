@@ -4,14 +4,18 @@ import _locale
 _locale._getdefaultlocale = (lambda *args: ['zh_CN', 'utf8'])
 
 import io
-import os
 import sys
 import six
-import signal
 from tccli.log import init
 from tencentcloud.common.exception.tencent_cloud_sdk_exception import TencentCloudSDKException
 
 try:
+    # cp65001 is utf-8 on windows platform
+    # python2 doesn't support cp65001 codec
+    if getattr(sys.stdin, 'encoding', 'utf-8') == "cp65001":
+        import codecs
+        codecs.register(lambda name: codecs.lookup('utf-8') if name == 'cp65001' else None)
+
     reload(sys)  # Python 2.7
     sys.setdefaultencoding('utf8')
 except NameError:
