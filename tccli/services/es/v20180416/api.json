@@ -7541,6 +7541,24 @@
           "name": "UsrCosModelUrlList",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "客户指定安装的模型名称，可为空，默认为模型文件名",
+          "example": "[******]",
+          "member": "string",
+          "name": "ModelNames",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "模型使用的任务类型，包括：fill_mask, ner, question_answering, text_classification, text_embedding, text_expansion, text_similarity和zero_shot_classification，默认为text_embedding",
+          "example": "[\"text_embedding\"]",
+          "member": "string",
+          "name": "TaskTypes",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

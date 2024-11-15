@@ -130,8 +130,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据盘类型。数据盘类型限制详见[存储概述](https://cloud.tencent.com/document/product/213/4952)。取值范围：<br><li>LOCAL_BASIC：本地硬盘<br><li>LOCAL_SSD：本地SSD硬盘<br><li>LOCAL_NVME：本地NVME硬盘，与InstanceType强相关，不支持指定<br><li>LOCAL_PRO：本地HDD硬盘，与InstanceType强相关，不支持指定<br><li>CLOUD_BASIC：普通云硬盘<br><li>CLOUD_PREMIUM：高性能云硬盘<br><li>CLOUD_SSD：SSD云硬盘<br><li>CLOUD_HSSD：增强型SSD云硬盘<br><li>CLOUD_TSSD：极速型SSD云硬盘<br><li>CLOUD_BSSD：通用型SSD云硬盘<br><br>默认取值：LOCAL_BASIC。<br><br>该参数对`ResizeInstanceDisk`接口无效。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "数据盘类型。数据盘类型限制详见[存储概述](https://cloud.tencent.com/document/product/213/4952)。取值范围：<br><li>LOCAL_BASIC：本地硬盘</li><br><li>LOCAL_SSD：本地SSD硬盘</li><br><li>LOCAL_NVME：本地NVME硬盘，与InstanceType强相关，不支持指定</li><br><li>LOCAL_PRO：本地HDD硬盘，与InstanceType强相关，不支持指定</li><br><li>CLOUD_BASIC：普通云硬盘</li><br><li>CLOUD_PREMIUM：高性能云硬盘</li><br><li>CLOUD_SSD：SSD云硬盘</li><br><li>CLOUD_HSSD：增强型SSD云硬盘</li><br><li>CLOUD_TSSD：极速型SSD云硬盘</li><br><li>CLOUD_BSSD：通用型SSD云硬盘</li><br><br>默认取值：LOCAL_BASIC。<br><br>该参数对`ResizeInstanceDisk`接口无效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CLOUD_PREMIUM",
           "member": "string",
           "name": "DiskType",
           "output_required": false,
@@ -142,7 +142,7 @@
         {
           "disabled": false,
           "document": "数据盘大小，单位：GB。最小调整步长为10G，不同数据盘类型取值范围不同，具体限制详见：[存储概述](https://cloud.tencent.com/document/product/213/4952)。默认值为0，表示不购买数据盘。更多限制详见产品文档。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "50",
           "member": "int64",
           "name": "DiskSize",
           "output_required": false,
@@ -153,7 +153,7 @@
         {
           "disabled": false,
           "document": "数据盘快照ID。选择的数据盘快照大小需小于数据盘大小。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "snap-3q1zhuac",
           "member": "string",
           "name": "SnapshotId",
           "output_required": false,
@@ -163,8 +163,8 @@
         },
         {
           "disabled": false,
-          "document": "数据盘是加密。取值范围：\n<li>TRUE：加密\n<li>FALSE：不加密<br>\n默认取值：FALSE<br>\n该参数目前仅用于 `RunInstances` 接口。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "数据盘是加密。取值范围：\n<li>TRUE：加密</li>\n<li>FALSE：不加密</li><br>\n默认取值：FALSE<br>\n该参数目前仅用于 `RunInstances` 接口。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
           "member": "bool",
           "name": "Encrypt",
           "output_required": false,
@@ -175,7 +175,7 @@
         {
           "disabled": false,
           "document": "自定义CMK对应的ID，取值为UUID或者类似kms-abcd1234。用于加密云盘。\n\n该参数目前仅用于 `RunInstances` 接口。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "kms-jkhoa1ga",
           "member": "string",
           "name": "KmsKeyId",
           "output_required": false,
@@ -185,8 +185,8 @@
         },
         {
           "disabled": false,
-          "document": "数据盘是否随子机销毁。取值范围：\n<li>TRUE：子机销毁时，销毁数据盘，只支持按小时后付费云盘\n<li>FALSE：子机销毁时，保留数据盘<br>\n默认取值：TRUE<br>\n该参数目前仅用于 `RunInstances` 接口。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "数据盘是否随子机销毁。取值范围：\n<li>TRUE：子机销毁时，销毁数据盘，只支持按小时后付费云盘</li>\n<li>FALSE：子机销毁时，保留数据盘</li><br>\n默认取值：TRUE<br>\n该参数目前仅用于 `RunInstances` 接口。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
           "member": "bool",
           "name": "DeleteWithInstance",
           "output_required": false,
@@ -197,7 +197,7 @@
         {
           "disabled": false,
           "document": "数据盘ID。LOCAL_BASIC 和 LOCAL_SSD 类型没有ID，暂时不支持该参数。\n该参数目前仅用于`DescribeInstances`等查询类接口的返回参数，不可用于`RunInstances`等写接口的入参。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "disk-oihu10fe",
           "member": "string",
           "name": "DiskId",
           "output_required": false,
@@ -208,7 +208,7 @@
         {
           "disabled": false,
           "document": "定期快照策略。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "asp-nz3ytdwj",
           "member": "string",
           "name": "AutoSnapshotPolicyId",
           "output_required": false,
@@ -397,7 +397,7 @@
         {
           "disabled": false,
           "document": "预扣包列表。",
-          "example": "[         {             \"ReservedPackId\": \"9e60dee8-fdf8-4afa-b538-d83bdf9c194f\",             \"Zone\": \"ap-shanghai-4\",             \"InstanceType\": \"SA2.MEDIUM4\",             \"InstanceId\": \"\",             \"Pool\": \"qcloud\",             \"DisasterRecoverGroupIds\": [],             \"ReservedPackMatchId\": \"cls-cifbh7vh_eklet-subnet-lo6b5zu9\",             \"Status\": \"active\",             \"ReservedPackName\": \"eksri-hgy2noon\",             \"CreatedTime\": \"2023-04-23T02:55:10Z\"         }     ]",
+          "example": "[{\"ReservedPackId\":\"9e60dee8-fdf8-4afa-b538-d83bdf9c194f\",\"Zone\":\"ap-shanghai-4\",\"InstanceType\":\"SA2.MEDIUM4\",\"InstanceId\":\"eks-0p6isbn5\",\"Pool\":\"qcloud\",\"DisasterRecoverGroupIds\":[],\"ReservedPackMatchId\":\"cls-cifbh7vh_eklet-subnet-lo6b5zu9\",\"Status\":\"active\",\"ReservedPackName\":\"eksri-hgy2noon\",\"CreatedTime\":\"2023-04-23T02:55:10Z\"}]",
           "member": "ReservedPack",
           "name": "ReservedPackSet",
           "output_required": false,
@@ -558,8 +558,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例是否开启透传mwait。取值范围：<br><li>ON：实例开启透传mwait，只有默认开启透传mwait的实例机型支持设置为ON。<br><li>OFF：实例关闭透传mwait，所有实例机型都支持设置为OFF。<br><br>。如果不设置此参数，默认采用实例机型定义的mwait属性。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "实例是否开启透传mwait。取值范围：<br><li>ON：实例开启透传mwait，只有默认开启透传mwait的实例机型支持设置为ON。</li><li>OFF：实例关闭透传mwait，所有实例机型都支持设置为OFF。</li>如果不设置此参数，默认采用实例机型定义的mwait属性。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ON",
           "member": "string",
           "name": "MWAIT",
           "output_required": false,
@@ -569,8 +569,8 @@
         },
         {
           "disabled": false,
-          "document": "实例的 CPU 绑核模式。取值范围：<br><li>PIN_CORE：实例透传绑核信息并做1对1绑核。如果不设置此参数，默认采用实例机型定义的CPUAffinity属性。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "实例的 CPU 绑核模式。取值范围：<br><li>PIN_CORE：实例透传绑核信息并做1对1绑核。如果不设置此参数，默认采用实例机型定义的CPUAffinity属性。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "PIN_CORE",
           "member": "string",
           "name": "CPUAffinity",
           "output_required": false,
@@ -580,8 +580,8 @@
         },
         {
           "disabled": false,
-          "document": "超卖参数，\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "装箱策略。取值范围：<br><li>CPU_GUARANTEED：1对1绑核。</li><li>PREFER_CPU_GUARANTEED：旧代次非DPDK机型1对1绑核。</li><li>USE_RESERVED_RESOURCE_ONLY：仅使用预扣资源。</li><li>USE_LARGE_SCALE_CPU_RESOURCE：可以使用好料资源。</li><li>SCHEDULE_POLICIES_MEM_MATCH_NODE：内存不跨node。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CPU_GUARANTEED",
           "member": "string",
           "name": "SchedulePolicies",
           "output_required": false,
@@ -592,7 +592,7 @@
         {
           "disabled": false,
           "document": "竞价实例按照竞价资源进行成本结算。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "EKS_SPOT_INSTANCE",
           "member": "string",
           "name": "ProductType",
           "output_required": false,
@@ -603,7 +603,7 @@
         {
           "disabled": false,
           "document": " \n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1000",
           "member": "int64",
           "name": "RequestMillicores",
           "output_required": false,
@@ -614,7 +614,7 @@
         {
           "disabled": false,
           "document": " \n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2",
           "member": "int64",
           "name": "SensitiveLevel",
           "output_required": false,
@@ -631,7 +631,7 @@
         {
           "disabled": false,
           "document": "需要过滤的字段。",
-          "example": "无",
+          "example": "zone",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -640,7 +640,7 @@
         {
           "disabled": false,
           "document": "字段的过滤值。",
-          "example": "无",
+          "example": "ap-guangzhou-2",
           "member": "string",
           "name": "Values",
           "required": true,
@@ -655,7 +655,7 @@
         {
           "disabled": false,
           "document": "实例所在的位置。",
-          "example": "无",
+          "example": "{\"Zone\": \"ap-shanghai-3\"}",
           "member": "Placement",
           "name": "Placement",
           "output_required": true,
@@ -694,8 +694,8 @@
         },
         {
           "disabled": false,
-          "document": "123",
-          "example": "无",
+          "document": "实例机型。",
+          "example": "SA3.4XLARGE32",
           "member": "string",
           "name": "InstanceType",
           "output_required": true,
@@ -745,7 +745,7 @@
         {
           "disabled": false,
           "document": "实例所属虚拟私有网络信息。",
-          "example": "无",
+          "example": "{\"VpcId\": \"vpc-mnlwqt3c\", \"SubnetId\": \"subnet-5nrb5f4d\", \"AsVpcGateway\": \"false\", \"Ipv6AddressCount\": \"0\"}",
           "member": "VirtualPrivateCloud",
           "name": "VirtualPrivateCloud",
           "output_required": true,
@@ -808,6 +808,36 @@
           "example": "cluster-gbo27yc4",
           "member": "string",
           "name": "DedicatedClusterId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "市场镜像数字id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "ItemId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自定义镜像数字id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "DeviceImageId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "镜像长id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "img202410241000",
+          "member": "string",
+          "name": "MatrixImageId",
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
@@ -937,7 +967,7 @@
         {
           "disabled": false,
           "document": "实例登录密码。不同操作系统类型密码复杂度限制不一样，具体如下：<br><li>Linux实例密码必须8到30位，至少包括两项[a-z]，[A-Z]、[0-9] 和 [( ) \\` ~ ! @ # $ % ^ & *  - + = | { } [ ] : ; ' , . ? / ]中的特殊符号。</li><br><li>Windows实例密码必须12到30位，至少包括三项[a-z]，[A-Z]，[0-9] 和 [( ) \\` ~ ! @ # $ % ^ & * - + = | { } [ ] : ; ' , . ? /]中的特殊符号。</li><br><br>若不指定该参数，则由系统随机生成密码，并通过站内信方式通知到用户。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "abc",
+          "example": "pwd*****",
           "member": "string",
           "name": "Password",
           "output_required": false,
@@ -948,7 +978,7 @@
         {
           "disabled": false,
           "document": "密钥ID列表。关联密钥后，就可以通过对应的私钥来访问实例；KeyId可通过接口[DescribeKeyPairs](https://cloud.tencent.com/document/api/213/15699)获取，密钥与密码不能同时指定，同时Windows操作系统不支持指定密钥。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "['abc']",
+          "example": "[\"skey-bhfha7ya\"]",
           "member": "string",
           "name": "KeyIds",
           "output_required": false,
@@ -959,7 +989,7 @@
         {
           "disabled": false,
           "document": "保持镜像的原始设置。该参数与Password或KeyIds.N不能同时指定。只有使用自定义镜像、共享镜像或外部导入镜像创建实例时才能指定该参数为TRUE。取值范围：<br><li>TRUE：表示保持镜像的登录设置</li><br><li>FALSE：表示不保持镜像的登录设置</li><br><br>默认取值：FALSE。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "abc",
+          "example": "TRUE",
           "member": "string",
           "name": "KeepImageLogin",
           "output_required": false,
@@ -970,7 +1000,7 @@
         {
           "disabled": false,
           "document": "加密后的密码\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "jklnlklnfa",
+          "example": "cbmpFrGrhnEtl1k9af+ZAElM8+A4VYdm",
           "member": "string",
           "name": "EncryptedWord",
           "output_required": false,
@@ -987,7 +1017,7 @@
         {
           "disabled": false,
           "document": "实例所属的可用区ID。该参数可以通过调用  [DescribeZones](https://cloud.tencent.com/document/product/213/15707) 的返回值中的Zone字段来获取。",
-          "example": "无",
+          "example": "ap-guangzhou-2",
           "member": "string",
           "name": "Zone",
           "output_required": true,
@@ -997,36 +1027,47 @@
         },
         {
           "disabled": false,
-          "document": "实例所属项目ID。该参数可以通过调用 [DescribeProject](https://cloud.tencent.com/document/api/651/78725) 的返回值中的 projectId 字段来获取。不填为默认项目。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "实例所属项目ID。该参数可以通过调用 [DescribeProject](https://cloud.tencent.com/document/api/651/78725) 的返回值中的 projectId 字段来获取。不填为默认项目。",
+          "example": "0",
           "member": "int64",
           "name": "ProjectId",
           "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例所属的专用宿主机ID列表，仅用于入参。如果您有购买专用宿主机并且指定了该参数，则您购买的实例就会随机的部署在这些专用宿主机上。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "实例所属的专用宿主机ID列表，仅用于入参。如果您有购买专用宿主机并且指定了该参数，则您购买的实例就会随机的部署在这些专用宿主机上。",
+          "example": "[\"host-bby4qx3s\"]",
           "member": "string",
           "name": "HostIds",
           "output_required": false,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "指定母机IP生产子机\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "指定母机IP生产子机",
+          "example": "10.132.28.102",
           "member": "string",
           "name": "HostIps",
           "output_required": false,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "指定cxm cdh实例生产子机",
+          "example": "[\"b67a490a-6b8d-41b8-ab2b-b844878ed535\"]",
+          "member": "string",
+          "name": "ShadowHostIds",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -1091,103 +1132,103 @@
       "members": [
         {
           "disabled": false,
-          "document": "预扣包ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "预扣包ID。",
           "example": "9e60dee8-fdf8-4afa-b538-d83bdf9c194f",
           "member": "string",
           "name": "ReservedPackId",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "可用区。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "可用区。",
           "example": "ap-shanghai-4",
           "member": "string",
           "name": "Zone",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "机型规格。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "机型规格。",
           "example": "SA2.MEDIUM4",
           "member": "string",
           "name": "InstanceType",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例ID。",
           "example": "eks-g37bha5m",
           "member": "string",
           "name": "InstanceId",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "母机池。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "母机池。",
           "example": "qcloud",
           "member": "string",
           "name": "Pool",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "置放群组ID列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "置放群组ID列表。",
           "example": "[\"ps-4fz9pfa5\"]",
           "member": "string",
           "name": "DisasterRecoverGroupIds",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "预扣包匹配ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "预扣包匹配ID。",
           "example": "cls-cifbh7vh_eklet-subnet-lo6b5zu9",
           "member": "string",
           "name": "ReservedPackMatchId",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "预扣包状态。取值：\nactive: 已生效。\npending: 创建中。\nfailed: 失败。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "预扣包状态。取值：\nactive: 已生效。\npending: 创建中。\nfailed: 失败。",
           "example": "active",
           "member": "string",
           "name": "Status",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "预扣包别名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "预扣包别名。",
           "example": "eksri-hgy2noon",
           "member": "string",
           "name": "ReservedPackName",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建时间。",
           "example": "2023-04-23T02:55:10Z",
           "member": "datetime_iso",
           "name": "CreatedTime",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1653,8 +1694,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "系统盘类型。系统盘类型限制详见[存储概述](https://cloud.tencent.com/document/product/213/4952)。取值范围：<br><li>LOCAL_BASIC：本地硬盘<br><li>LOCAL_SSD：本地SSD硬盘<br><li>CLOUD_BASIC：普通云硬盘<br><li>CLOUD_SSD：SSD云硬盘<br><li>CLOUD_PREMIUM：高性能云硬盘<br><li>CLOUD_BSSD：通用性SSD云硬盘<br><br>默认取值：当前有库存的硬盘类型。",
-          "example": "无",
+          "document": "系统盘类型。系统盘类型限制详见[存储概述](https://cloud.tencent.com/document/product/213/4952)。取值范围：<br><li>LOCAL_BASIC：本地硬盘</li><br><li>LOCAL_SSD：本地SSD硬盘</li><br><li>CLOUD_BASIC：普通云硬盘</li><br><li>CLOUD_SSD：SSD云硬盘</li><br><li>CLOUD_PREMIUM：高性能云硬盘</li><br><li>CLOUD_BSSD：通用性SSD云硬盘</li><br><br>默认取值：当前有库存的硬盘类型。",
+          "example": "CLOUD_PREMIUM",
           "member": "string",
           "name": "DiskType",
           "output_required": true,
@@ -1665,7 +1706,7 @@
         {
           "disabled": false,
           "document": "系统盘大小，单位：GB。默认值为 50",
-          "example": "无",
+          "example": "100",
           "member": "int64",
           "name": "DiskSize",
           "output_required": true,
@@ -1676,7 +1717,7 @@
         {
           "disabled": false,
           "document": "系统盘ID。LOCAL_BASIC 和 LOCAL_SSD 类型没有ID。暂时不支持该参数。\n该参数目前仅用于`DescribeInstances`等查询类接口的返回参数，不可用于`RunInstances`等写接口的入参。",
-          "example": "无",
+          "example": "disk-oihu10fe",
           "member": "string",
           "name": "DiskId",
           "output_required": true,
@@ -1687,7 +1728,7 @@
         {
           "disabled": false,
           "document": "定期快照策略。",
-          "example": "无",
+          "example": "asp-nz3ytdwj",
           "member": "string",
           "name": "AutoSnapshotPolicyId",
           "output_required": true,
@@ -1865,7 +1906,7 @@
         },
         {
           "disabled": false,
-          "document": "是否用作公网网关。公网网关只有在实例拥有公网IP以及处于私有网络下时才能正常使用。取值范围：<br><li>TRUE：表示用作公网网关<br><li>FALSE：表示不作为公网网关<br><br>默认取值：FALSE。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否用作公网网关。公网网关只有在实例拥有公网IP以及处于私有网络下时才能正常使用。取值范围：<br><li>TRUE：表示用作公网网关</li><br><li>FALSE：表示不作为公网网关</li><br><br>默认取值：FALSE。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "FALSE",
           "member": "bool",
           "name": "AsVpcGateway",
@@ -1899,7 +1940,7 @@
         {
           "disabled": false,
           "document": "eks销毁机器支持保留IP。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"30.10.64.85\"]",
           "member": "string",
           "name": "SpecifyIpAddresses",
           "output_required": false,

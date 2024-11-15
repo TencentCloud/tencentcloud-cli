@@ -1390,14 +1390,6 @@
         "title": "示例1"
       }
     ],
-    "DescribeCloudProtectServiceOrderList": [
-      {
-        "document": "查询云护航服务订单列表",
-        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudProtectServiceOrderList\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"67d7cb74-8055-7704-1610-29786d95e2b1\",\n        \"Data\": [\n            {\n                \"ServiceName\": \"巡检服务\",\n                \"Type\": \"新购\",\n                \"Config\": \"巡检服务: 1次\",\n                \"BeginTime\": \"2022-12-31 00:00:00\",\n                \"ResourceId\": \"cwpinsp-xxxxxxxx\"\n            }\n        ]\n    }\n}",
-        "title": "查询云护航服务订单列表"
-      }
-    ],
     "DescribeComponentStatistics": [
       {
         "document": "获取组件统计列表",

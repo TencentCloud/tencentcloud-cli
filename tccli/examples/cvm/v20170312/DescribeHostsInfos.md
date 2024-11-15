@@ -25,7 +25,6 @@ Output:
                     "Pool": "qcloud",
                     "Zone": "ap-guangzhou-2"
                 },
-                "HostIp": "10.108.118.105",
                 "HostType": "M1",
                 "HostResource": {
                     "CpuTotal": 2400,

@@ -86,7 +86,7 @@
         {
           "disabled": false,
           "document": "工作空间描述, 长度限制 0~255",
-          "example": "this is a worksapce",
+          "example": "this is a workspace",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -209,7 +209,7 @@
         {
           "disabled": false,
           "document": "工作空间名称",
-          "example": "worksapce-name",
+          "example": "workspace-name",
           "member": "string",
           "name": "Name",
           "output_required": true,
@@ -357,7 +357,7 @@
         {
           "disabled": false,
           "document": "工作空间名称过滤条件",
-          "example": "worksapce-name",
+          "example": "workspace-name",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -372,9 +372,10 @@
         {
           "disabled": false,
           "document": "工作空间列表",
-          "example": "[]",
+          "example": "[{\"Id\": 9,\"Name\": \"open_api_test-1\",\"SpaceKey\": \"ryvzki\",...}]",
           "member": "WorkspaceStatusInfo",
           "name": "Data",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -559,7 +560,7 @@
         {
           "disabled": false,
           "document": "工作空间描述",
-          "example": "this is a worksapce",
+          "example": "this is a workspace",
           "member": "string",
           "name": "Description",
           "required": false,

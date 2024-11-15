@@ -1,72 +1,50 @@
-**Example 1: 调用成功**
+**Example 1: 调用失败示例**
 
-
+调用失败示例
 
 Input: 
 
 ```
 tccli tiia CreateImage --cli-unfold-argument  \
-    --CustomContent custom \
-    --ImageUrl http://www.test.com/a.jpg \
-    --EntityId 456 \
-    --GroupId hello \
-    --PicName 456
+    --GroupId test_group \
+    --EntityId test-entity \
+    --PicName test_anme \
+    --ImageUrl https://liudhu-9527.cos.ap-guangzhou.myqcloud.com/input
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Object": {
-            "Box": {
-                "Score": 0,
-                "Rect": {
-                    "Y": 0,
-                    "X": 0,
-                    "Height": 0,
-                    "Width": 0
-                }
-            },
-            "CategoryId": 0
+        "Error": {
+            "Code": "FailedOperation.DownloadError",
+            "Message": "文件下载失败。"
         },
-        "RequestId": "da8eedd6-5977-4db8-9334-3b6b190e242b"
+        "RequestId": "258fb494-54db-4814-80e8-b4d2b75c5c83"
     }
 }
 ```
 
 **Example 2: 调用成功示例**
 
-
+调用成功示例
 
 Input: 
 
 ```
 tccli tiia CreateImage --cli-unfold-argument  \
-    --GroupId 123 \
-    --EntityId 1 \
-    --PicName 1 \
-    --ImageUrl http://www.test.com/a.jpg \
-    --CustomContent test \
-    --Tags {"k": "123"}
+    --GroupId test_group \
+    --EntityId test-entity \
+    --PicName test_anme \
+    --ImageUrl https://liudhu-9527.cos.ap-guangzhou.myqcloud.com/input.jpeg
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Object": {
-            "Box": {
-                "Score": 0,
-                "Rect": {
-                    "Y": 0,
-                    "X": 0,
-                    "Height": 0,
-                    "Width": 0
-                }
-            },
-            "CategoryId": 0
-        },
-        "RequestId": "da8eedd6-5977-4db8-9334-3b6b190e242b"
+        "Object": null,
+        "RequestId": "49120671-d169-4714-a212-cf755e49fad8"
     }
 }
 ```

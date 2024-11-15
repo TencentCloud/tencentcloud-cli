@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tiia RecognizeCarPro --cli-unfold-argument  \
-    --ImageUrl http://www.test.com/a.jpg
+    --ImageUrl https://liudhu-9527.cos.ap-guangzhou.myqcloud.com/input.jpeg
 ```
 
 Output: 
@@ -30,7 +30,7 @@ Input:
 
 ```
 tccli tiia RecognizeCarPro --cli-unfold-argument  \
-    --ImageUrl http://www.test.com/b.jpg
+    --ImageUrl https://liudhu-9527.cos.ap-guangzhou.myqcloud.com/input.jpeg
 ```
 
 Output: 

@@ -356,7 +356,7 @@
         {
           "disabled": false,
           "document": "资源配额。",
-          "example": "无",
+          "example": "{\"CPULimit\": \"30\",\"MemoryLimit\": \"60Gi\",\"Pods\": \"10\"}",
           "member": "ResourceQuota",
           "name": "ResourceQuota",
           "required": false,
@@ -365,7 +365,7 @@
         {
           "disabled": false,
           "document": "限制范围。",
-          "example": "无",
+          "example": "{\"MaxCPU\": \"5\",\"MaxMemory\": \"10Gi\"}",
           "member": "LimitRange",
           "name": "LimitRange",
           "required": false,
@@ -380,7 +380,7 @@
         {
           "disabled": false,
           "document": "环境名称。",
-          "example": "无",
+          "example": "FirstEnvironment",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -389,7 +389,7 @@
         {
           "disabled": false,
           "document": "环境配置信息。",
-          "example": "无",
+          "example": "{\"VPCOption\": {\"SubnetZone\": \"ap-guangzhou-6\",\"VPCCIDRBlock\": \"10.8.0.0/16\",\"SubnetCIDRBlock\": \"10.8.16.0/20\"},\"ClusterOption\": {\"Zone\": \"ap-guangzhou-6\",\"Type\": \"KUBERNETES\",\"ServiceCidr\": \"192.168.0.0/20\",\"ResourceQuota\": {\"CPULimit\": \"30\",\"MemoryLimit\": \"60Gi\",\"Pods\": \"10\"},\"LimitRange\": {\"MaxCPU\": \"5\",\"MaxMemory\": \"10Gi\"}},\"DatabaseOption\": {\"Zone\": \"ap-guangzhou-4\"},\"StorageOption\": {\"StorageType\": \"SD\",\"Capacity\": 40960,\"Zone\": \"ap-guangzhou-6\"},\"CVMOption\": {\"Zone\": \"ap-guangzhou-6\",\"InstanceType\": \"SA3.MEDIUM8\"},\"SecurityGroupOption\": {\"SecurityGroupId\": \"sg-cml3s14x\"}}",
           "member": "EnvironmentConfig",
           "name": "Config",
           "required": true,
@@ -398,7 +398,7 @@
         {
           "disabled": false,
           "document": "环境描述。",
-          "example": "无",
+          "example": "My first environment",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -407,7 +407,7 @@
         {
           "disabled": false,
           "document": "是否为默认环境。",
-          "example": "无",
+          "example": "True",
           "member": "bool",
           "name": "IsDefault",
           "required": false,
@@ -422,7 +422,7 @@
         {
           "disabled": false,
           "document": "环境ID。",
-          "example": "无",
+          "example": "env-lljckw12",
           "member": "string",
           "name": "EnvironmentId",
           "output_required": true,
@@ -432,7 +432,7 @@
         {
           "disabled": false,
           "document": "工作流UUID。",
-          "example": "无",
+          "example": "bc5b790b-407e-42c7-b488-a252fee1dcc7",
           "member": "string",
           "name": "WorkflowUuid",
           "output_required": true,
@@ -454,7 +454,7 @@
         {
           "disabled": false,
           "document": "环境ID。",
-          "example": "无",
+          "example": "env-lljckw12",
           "member": "string",
           "name": "EnvironmentId",
           "required": true,
@@ -463,7 +463,7 @@
         {
           "disabled": false,
           "document": "名称。",
-          "example": "无",
+          "example": "MyFirstVolume",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -472,7 +472,7 @@
         {
           "disabled": false,
           "document": "缓存卷类型，取值范围：\n* SHARED：多点挂载共享存储",
-          "example": "无",
+          "example": "SHARED",
           "member": "string",
           "name": "Type",
           "required": true,
@@ -481,7 +481,7 @@
         {
           "disabled": false,
           "document": "缓存卷规格，取值范围：\n\n- SD：通用标准型\n- HP：通用性能型\n- TB：turbo标准型\n- TP：turbo性能型",
-          "example": "无",
+          "example": "TP",
           "member": "string",
           "name": "Spec",
           "required": true,
@@ -490,7 +490,7 @@
         {
           "disabled": false,
           "document": "描述。",
-          "example": "无",
+          "example": "My first volume",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -499,7 +499,7 @@
         {
           "disabled": false,
           "document": "缓存卷大小（GB），Turbo系列需要指定。",
-          "example": "无",
+          "example": "102400",
           "member": "uint64",
           "name": "Capacity",
           "required": false,
@@ -513,13 +513,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "缓存卷ID。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "缓存卷ID。",
+          "example": "vol-mpcb5xnl",
           "member": "string",
           "name": "VolumeId",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -552,7 +552,7 @@
         {
           "disabled": false,
           "document": "环境ID。",
-          "example": "无",
+          "example": "env-lljckw12",
           "member": "string",
           "name": "EnvironmentId",
           "required": true,
@@ -567,9 +567,10 @@
         {
           "disabled": false,
           "document": "工作流UUID。",
-          "example": "无",
+          "example": "bc5b790b-407e-42c7-b488-a252fee1dcc7",
           "member": "string",
           "name": "WorkflowUuid",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -588,7 +589,7 @@
         {
           "disabled": false,
           "document": "缓存卷ID。",
-          "example": "无",
+          "example": "vol-mpcb5xnl",
           "member": "string",
           "name": "VolumeId",
           "required": true,
@@ -597,7 +598,7 @@
         {
           "disabled": false,
           "document": "需要删除的路径",
-          "example": "无",
+          "example": "/",
           "member": "string",
           "name": "Path",
           "required": true,
@@ -624,7 +625,7 @@
         {
           "disabled": false,
           "document": "缓存卷ID。",
-          "example": "无",
+          "example": "vol-mpcb5xnl",
           "member": "string",
           "name": "VolumeId",
           "required": true,
@@ -695,7 +696,7 @@
         {
           "disabled": false,
           "document": "过滤器，支持过滤字段：\n- EnvironmentId：环境ID\n- Name：名称\n- Status：环境状态",
-          "example": "无",
+          "example": "{\"Name\":[\"test\"]}",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -710,18 +711,20 @@
         {
           "disabled": false,
           "document": "符合条件的数量。",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "环境详情列表。",
-          "example": "无",
+          "example": "[{\"Available\": true,\"CreationTime\": \"2022-12-14T16:14:49+08:00\",\"Description\": \"test description\", \"EnvironmentId\": \"env-lljckw12\",\"LastWorkflowUuid\": \"94922fcd-107e-4220-9a0f-cc3cd84a9a27\", \"Message\": \"\",\"Name\": \"test\",\"Region\": \"ap-guangzhou\",\"ResourceIds\": { \"CFSId\": \"cfs-iwee8gk3\",\"CFSStorageType\": \"SD\",\"CVMId\": \"ins-jcbptifa\",\"EKSId\": \"cls-9j9zh13o\",\"SecurityGroupId\": \"sg-gzsfk3r5\",\"SubnetId\": \"subnet-qdkfn4xe\", \"TDSQLCId\": \"cynosdbmysql-kzwghvxj\", \"VPCId\": \"vpc-8yhq1v63\" },\"Status\": \"RUNNING\",\"Type\": \"KUBERNETES\",\"IsManaged\": false, \"IsDefault\": false}]",
           "member": "Environment",
           "name": "Environments",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1050,7 +1053,7 @@
         {
           "disabled": false,
           "document": "返回数量，默认为20，最大值为100。",
-          "example": "无",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -1059,7 +1062,7 @@
         {
           "disabled": false,
           "document": "偏移量，默认为0。",
-          "example": "无",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -1068,7 +1071,7 @@
         {
           "disabled": false,
           "document": "过滤器，支持过滤字段：\n- Name：名称\n- IsDefault：是否为默认",
-          "example": "无",
+          "example": "{\"IsDefault\": [\"true\"]}",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -1082,23 +1085,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "缓存卷。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "缓存卷。",
           "example": "无",
           "member": "Volume",
           "name": "Volumes",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "符合条件的数量。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "符合条件的数量。",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1115,7 +1118,7 @@
         {
           "disabled": false,
           "document": "环境ID。",
-          "example": "无",
+          "example": "env-lljckw12",
           "member": "string",
           "name": "EnvironmentId",
           "output_required": true,
@@ -1125,7 +1128,7 @@
         {
           "disabled": false,
           "document": "环境名称。",
-          "example": "无",
+          "example": "test",
           "member": "string",
           "name": "Name",
           "output_required": true,
@@ -1135,7 +1138,7 @@
         {
           "disabled": false,
           "document": "环境描述信息。",
-          "example": "无",
+          "example": "test description",
           "member": "string",
           "name": "Description",
           "output_required": true,
@@ -1145,7 +1148,7 @@
         {
           "disabled": false,
           "document": "环境地域。",
-          "example": "无",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
           "output_required": true,
@@ -1155,7 +1158,7 @@
         {
           "disabled": false,
           "document": "环境类型，取值范围：\n- KUBERNETES：Kubernetes容器集群\n- HPC：HPC高性能计算集群",
-          "example": "无",
+          "example": "KUBERNETES",
           "member": "string",
           "name": "Type",
           "output_required": true,
@@ -1165,7 +1168,7 @@
         {
           "disabled": false,
           "document": "环境状态，取值范围：\n- INITIALIZING：创建中\n- INITIALIZATION_ERROR：创建失败\n- RUNNING：运行中\n- ERROR：异常\n- DELETING：正在删除\n- DELETE_ERROR：删除失败",
-          "example": "无",
+          "example": "RUNNING",
           "member": "string",
           "name": "Status",
           "output_required": true,
@@ -1175,7 +1178,7 @@
         {
           "disabled": false,
           "document": "环境是否可用。环境需要可用才能投递计算任务。",
-          "example": "无",
+          "example": "True",
           "member": "bool",
           "name": "Available",
           "output_required": true,
@@ -1185,7 +1188,7 @@
         {
           "disabled": false,
           "document": "环境是否为默认环境。",
-          "example": "无",
+          "example": "False",
           "member": "bool",
           "name": "IsDefault",
           "output_required": true,
@@ -1195,7 +1198,7 @@
         {
           "disabled": false,
           "document": "环境是否为托管环境。",
-          "example": "无",
+          "example": "False",
           "member": "bool",
           "name": "IsManaged",
           "output_required": true,
@@ -1205,7 +1208,7 @@
         {
           "disabled": false,
           "document": "环境信息。",
-          "example": "无",
+          "example": "message",
           "member": "string",
           "name": "Message",
           "output_required": true,
@@ -1215,7 +1218,7 @@
         {
           "disabled": false,
           "document": "云资源ID。",
-          "example": "无",
+          "example": "{\"CFSId\": \"cfs-iwee8gk3\",\"CFSStorageType\": \"SD\",\"CVMId\": \"ins-jcbptifa\",\"EKSId\": \"cls-9j9zh13o\",\"SecurityGroupId\": \"sg-gzsfk3r5\",\"SubnetId\": \"subnet-qdkfn4xe\", \"TDSQLCId\": \"cynosdbmysql-kzwghvxj\", \"VPCId\": \"vpc-8yhq1v63\"}",
           "member": "ResourceIds",
           "name": "ResourceIds",
           "output_required": true,
@@ -1224,23 +1227,23 @@
         },
         {
           "disabled": false,
-          "document": "上个工作流UUID。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "上个工作流UUID。",
+          "example": "94922fcd-107e-4220-9a0f-cc3cd84a9a27",
           "member": "string",
           "name": "LastWorkflowUuid",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "创建时间。",
+          "example": "2022-12-14T16:14:49+08:00",
           "member": "datetime_iso",
           "name": "CreationTime",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1251,7 +1254,7 @@
         {
           "disabled": false,
           "document": "私有网络配置。",
-          "example": "无",
+          "example": "{\"SubnetZone\": \"ap-guangzhou-6\",\"VPCCIDRBlock\": \"10.8.0.0/16\",\"SubnetCIDRBlock\": \"10.8.16.0/20\"}",
           "member": "VPCOption",
           "name": "VPCOption",
           "required": true,
@@ -1260,7 +1263,7 @@
         {
           "disabled": false,
           "document": "计算集群配置。",
-          "example": "无",
+          "example": "{\"Zone\": \"ap-guangzhou-6\",\"Type\": \"KUBERNETES\",\"ServiceCidr\": \"192.168.0.0/20\",\"ResourceQuota\": {\"CPULimit\": \"30\",\"MemoryLimit\": \"60Gi\",\"Pods\": \"10\"},\"LimitRange\": {\"MaxCPU\": \"5\",\"MaxMemory\": \"10Gi\"}}",
           "member": "ClusterOption",
           "name": "ClusterOption",
           "required": true,
@@ -1269,7 +1272,7 @@
         {
           "disabled": false,
           "document": "数据库配置。",
-          "example": "无",
+          "example": "{\"Zone\": \"ap-guangzhou-4\"}",
           "member": "DatabaseOption",
           "name": "DatabaseOption",
           "required": true,
@@ -1278,7 +1281,7 @@
         {
           "disabled": false,
           "document": "存储配置。",
-          "example": "无",
+          "example": "{\"StorageType\": \"SD\",\"Capacity\": 40960,\"Zone\": \"ap-guangzhou-6\"}",
           "member": "StorageOption",
           "name": "StorageOption",
           "required": true,
@@ -1287,7 +1290,7 @@
         {
           "disabled": false,
           "document": "云服务器配置。",
-          "example": "无",
+          "example": "{\"Zone\": \"ap-guangzhou-6\",\"InstanceType\": \"SA3.MEDIUM8\"}",
           "member": "CVMOption",
           "name": "CVMOption",
           "required": true,
@@ -1296,7 +1299,7 @@
         {
           "disabled": false,
           "document": "安全组配置。",
-          "example": "无",
+          "example": "{\"SecurityGroupId\": \"sg-cml3s14x\"}",
           "member": "SecurityGroupOption",
           "name": "SecurityGroupOption",
           "required": false,
@@ -1310,23 +1313,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "地域。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "地域。",
           "example": "无",
           "member": "string",
           "name": "Region",
-          "required": false,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "数量。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数量。",
           "example": "无",
           "member": "uint64",
           "name": "TotalCount",
-          "required": false,
+          "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1373,22 +1376,20 @@
         {
           "disabled": false,
           "document": "过滤字段。",
-          "example": "无",
+          "example": "Name",
           "member": "string",
           "name": "Name",
           "required": true,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "过滤字段值。",
-          "example": "无",
+          "example": "[\"name-1\",\"name-2\"]",
           "member": "string",
           "name": "Values",
           "required": true,
-          "type": "list",
-          "value_allowed_null": true
+          "type": "list"
         }
       ],
       "usage": "in"
@@ -1707,25 +1708,25 @@
       "members": [
         {
           "disabled": false,
-          "document": "最大CPU设置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "最大CPU设置",
+          "example": "5",
           "member": "string",
           "name": "MaxCPU",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "最大内存设置（单位：Mi，Gi，Ti，M，G，T）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "最大内存设置（单位：Mi，Gi，Ti，M，G，T）",
+          "example": "10Gi",
           "member": "string",
           "name": "MaxMemory",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -1852,83 +1853,83 @@
       "members": [
         {
           "disabled": false,
-          "document": "私有网络ID。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "私有网络ID。",
+          "example": "vpc-8yhq1v63",
           "member": "string",
           "name": "VPCId",
-          "required": false,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "子网ID。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "子网ID。",
+          "example": "subnet-qdkfn4xe",
           "member": "string",
           "name": "SubnetId",
-          "required": false,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "安全组ID。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "安全组ID。",
+          "example": "sg-gzsfk3r5",
           "member": "string",
           "name": "SecurityGroupId",
-          "required": false,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "TDSQL-C Mysql版数据库ID。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "TDSQL-C Mysql版数据库ID。",
+          "example": "cynosdbmysql-kzwghvxj",
           "member": "string",
           "name": "TDSQLCId",
-          "required": false,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "文件存储ID。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "文件存储ID。",
+          "example": "cfs-iwee8gk3",
           "member": "string",
           "name": "CFSId",
-          "required": false,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "文件存储类型：取值范围：\n- SD：通用标准型\n- HP：通用性能型\n- TB：turbo标准型\n- TP：turbo性能型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "文件存储类型：取值范围：\n- SD：通用标准型\n- HP：通用性能型\n- TB：turbo标准型\n- TP：turbo性能型",
+          "example": "SD",
           "member": "string",
           "name": "CFSStorageType",
-          "required": false,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "云服务器ID。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "云服务器ID。",
+          "example": "ins-jcbptifa",
           "member": "string",
           "name": "CVMId",
-          "required": false,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "弹性容器集群ID。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "弹性容器集群ID。",
+          "example": "cls-9j9zh13o",
           "member": "string",
           "name": "EKSId",
-          "required": false,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1938,36 +1939,36 @@
       "members": [
         {
           "disabled": false,
-          "document": "CPU Limit设置。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "CPU Limit设置。",
+          "example": "30",
           "member": "string",
           "name": "CPULimit",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "内存Limit设置（单位：Mi，Gi，Ti，M，G，T）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "内存Limit设置（单位：Mi，Gi，Ti，M，G，T）",
+          "example": "60Gi",
           "member": "string",
           "name": "MemoryLimit",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "Pods数量设置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "Pods数量设置",
+          "example": "10",
           "member": "string",
           "name": "Pods",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -3175,7 +3176,7 @@
         {
           "disabled": false,
           "document": "安全组ID。",
-          "example": "无",
+          "example": "sg-cml3s14x",
           "member": "string",
           "name": "SecurityGroupId",
           "required": true,
@@ -3390,7 +3391,7 @@
         {
           "disabled": false,
           "document": "私有网络ID（VPCId和VPCCIDRBlock必选其一。若使用VPCId，则使用现用私有网络；若使用VPCCIDRBlock，则创建新的私有网络）",
-          "example": "无",
+          "example": "vpc-codnv14w",
           "member": "string",
           "name": "VPCId",
           "required": false,
@@ -3399,7 +3400,7 @@
         {
           "disabled": false,
           "document": "子网ID（SubnetId和SubnetZone&SubnetCIDRBlock必选其一。若使用SubnetId，则使用现用子网；若使用SubnetZone&SubnetCIDRBlock，则创建新的子网）",
-          "example": "无",
+          "example": "subnet-schfcd1x",
           "member": "string",
           "name": "SubnetId",
           "required": false,
@@ -3440,123 +3441,123 @@
       "members": [
         {
           "disabled": false,
-          "document": "缓存卷ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "缓存卷ID。",
           "example": "vol-chs8x9",
           "member": "string",
           "name": "VolumeId",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "名称。",
           "example": "默认数据卷",
           "member": "string",
           "name": "Name",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "描述。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "描述。",
           "example": "默认数据卷",
           "member": "string",
           "name": "Description",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "环境ID。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "环境ID。",
+          "example": "env-ctsf73",
           "member": "string",
           "name": "EnvironmentId",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "缓存卷类型，取值范围：\n* SHARED：多点挂载共享存储\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "缓存卷类型，取值范围：\n* SHARED：多点挂载共享存储",
           "example": "SHARED",
           "member": "string",
           "name": "Type",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "缓存卷规格，取值范围：\n\n- SD：通用标准型\n- HP：通用性能型\n- TB：turbo标准型\n- TP：turbo性能型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "缓存卷规格，取值范围：\n\n- SD：通用标准型\n- HP：通用性能型\n- TB：turbo标准型\n- TP：turbo性能型",
           "example": "HP",
           "member": "string",
           "name": "Spec",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "缓存卷大小（GB）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "缓存卷大小（GB）。",
           "example": "1024",
           "member": "uint64",
           "name": "Capacity",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "缓存卷使用量（Byte）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "缓存卷使用量（Byte）。",
           "example": "1024",
           "member": "uint64",
           "name": "Usage",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "缓存卷吞吐上限（MiB/s）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "缓存卷吞吐上限（MiB/s）。",
           "example": "200",
           "member": "float",
           "name": "BandwidthLimit",
           "output_required": false,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "默认挂载路径。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "默认挂载路径。",
           "example": "/vlm-vhs6snl",
           "member": "string",
           "name": "DefaultMountPath",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否为默认缓存卷。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否为默认缓存卷。",
           "example": "true",
           "member": "bool",
           "name": "IsDefault",
           "output_required": false,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "状态。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "状态。",
           "example": "AVAILABLE",
           "member": "string",
           "name": "Status",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

@@ -162,14 +162,14 @@
       "status": "online"
     },
     "CreateDBInstance": {
-      "document": "本接口(CreateDBInstance)用于创建包年包月的云数据库实例（包括主实例、灾备实例和只读实例），可通过传入实例规格、MySQL 版本号、购买时长和数量等信息创建云数据库实例。\n\n该接口为异步接口，您还可以使用 [查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口查询该实例的详细信息。当该实例的 Status 为1，且 TaskStatus 为0，表示实例已经发货成功。\n\n1. 首先请使用 [获取云数据库可售卖规格](https://cloud.tencent.com/document/api/236/17229) 接口查询可创建的实例规格信息，然后请使用 [查询数据库价格](https://cloud.tencent.com/document/api/236/18566) 接口查询可创建实例的售卖价格；\n2. 单次创建实例最大支持 100 个，实例时长最大支持 36 个月；\n3. 支持创建 MySQL 5.5 、 MySQL 5.6 、 MySQL 5.7 、 MySQL 8.0 版本；\n4. 支持创建主实例、只读实例、灾备实例；\n5. 当入参指定 Port 和 ParamTemplateType 参数模板，相关参数才会自动初始化（不支持基础版实例）；\n6. 当入参指定 ParamTemplateId 或 AlarmPolicyList 时，需将SDK提升至最新版本方可支持；",
+      "document": "本接口（CreateDBInstance）用于创建包年包月的云数据库实例（包括主实例、灾备实例和只读实例），可通过传入实例规格、MySQL 版本号、购买时长和数量等信息创建云数据库实例。\n\n该接口为异步接口，您还可以使用 [查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口查询该实例的详细信息。当该实例的 Status 为1，且 TaskStatus 为0，表示实例已经发货成功。\n\n1. 首先请使用 [获取云数据库可售卖规格](https://cloud.tencent.com/document/api/236/17229) 接口查询可创建的实例规格信息，然后请使用 [查询数据库价格](https://cloud.tencent.com/document/api/236/18566) 接口查询可创建实例的售卖价格；\n2. 单次创建实例最大支持 100 个，实例时长最大支持 36 个月；\n3. 支持创建 MySQL 5.5 、 MySQL 5.6 、 MySQL 5.7 、 MySQL 8.0 版本；\n4. 支持创建主实例、只读实例、灾备实例；\n5. 当入参指定 Port 和 ParamTemplateType 参数模板，相关参数才会自动初始化（不支持基础版实例）；\n6. 当入参指定 ParamTemplateId 或 AlarmPolicyList 时，需将SDK提升至最新版本方可支持；",
       "input": "CreateDBInstanceRequest",
       "name": "创建云数据库实例（包年包月）",
       "output": "CreateDBInstanceResponse",
       "status": "online"
     },
     "CreateDBInstanceHour": {
-      "document": "本接口(CreateDBInstanceHour)用于创建按量计费的实例，可通过传入实例规格、MySQL 版本号和数量等信息创建云数据库实例，支持主实例、灾备实例和只读实例的创建。\n\n该接口为异步接口，您还可以使用 [查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口查询该实例的详细信息。当该实例的 Status 为 1，且 TaskStatus 为 0，表示实例已经发货成功。\n\n1. 首先请使用 [获取云数据库可售卖规格](https://cloud.tencent.com/document/api/236/17229) 接口查询可创建的实例规格信息，然后请使用 [查询数据库价格](https://cloud.tencent.com/document/api/236/18566) 接口查询可创建实例的售卖价格；\n2. 单次创建实例最大支持 100 个，实例时长最大支持 36 个月；\n3. 支持创建 MySQL 5.5、MySQL 5.6 、MySQL 5.7 和 MySQL 8.0 版本；\n4. 支持创建主实例、灾备实例和只读实例；\n5. 当入参指定 Port，ParamTemplateType 或 Password 时，该实例会进行初始化操作；",
+      "document": "本接口（CreateDBInstanceHour）用于创建按量计费的实例，可通过传入实例规格、MySQL 版本号和数量等信息创建云数据库实例，支持主实例、灾备实例和只读实例的创建。\n\n该接口为异步接口，您还可以使用 [查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口查询该实例的详细信息。当该实例的 Status 为 1，且 TaskStatus 为 0，表示实例已经发货成功。\n\n1. 首先请使用 [获取云数据库可售卖规格](https://cloud.tencent.com/document/api/236/17229) 接口查询可创建的实例规格信息，然后请使用 [查询数据库价格](https://cloud.tencent.com/document/api/236/18566) 接口查询可创建实例的售卖价格；\n2. 单次创建实例最大支持 100 个，实例时长最大支持 36 个月；\n3. 支持创建 MySQL 5.5、MySQL 5.6 、MySQL 5.7 和 MySQL 8.0 版本；\n4. 支持创建主实例、灾备实例和只读实例；\n5. 当入参指定 Port，ParamTemplateType 或 Password 时，该实例会进行初始化操作；",
       "input": "CreateDBInstanceHourRequest",
       "name": "创建云数据库实例（按量计费）",
       "output": "CreateDBInstanceHourResponse",
@@ -1679,7 +1679,7 @@
         {
           "disabled": false,
           "document": "读写权重分配。如果 WeightMode 传的是 system ，则传入的权重不生效，由系统分配默认权重。",
-          "example": "无",
+          "example": "[{\"Region\":\"ap-guangzhou\",\"Zone\":\"ap-guangzhou-2\",\"ProxyInstance\":[{\"InstanceId\":\"cdb-aykuksx3\",\"Weight\":100}]",
           "member": "ProxyAllocation",
           "name": "ProxyAllocation",
           "required": false,
@@ -1712,7 +1712,7 @@
         {
           "disabled": false,
           "document": "异步任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1312",
+          "example": "a6040589-3b098df5-b551d9e5-81c6bfdc",
           "member": "string",
           "name": "AsyncRequestId",
           "output_required": true,
@@ -5870,7 +5870,7 @@
         {
           "disabled": false,
           "document": "私有网络 ID，如果不传则默认选择基础网络，请使用 [查询私有网络列表](/document/api/215/15778) 。\n说明：如果创建的是集群版实例，此参数为必填且为私有网络类型。",
-          "example": "vpc-***",
+          "example": "vpc-5l7l5q11",
           "member": "string",
           "name": "UniqVpcId",
           "required": false,
@@ -5879,7 +5879,7 @@
         {
           "disabled": false,
           "document": "私有网络下的子网 ID，如果设置了 UniqVpcId，则 UniqSubnetId 必填，请使用 [查询子网列表](/document/api/215/15784)。",
-          "example": "subnet-***",
+          "example": "subnet-b5v6i111",
           "member": "string",
           "name": "UniqSubnetId",
           "required": false,
@@ -5906,7 +5906,7 @@
         {
           "disabled": false,
           "document": "实例 ID，购买只读实例或者灾备实例时必填，该字段表示只读实例或者灾备实例的主实例 ID，请使用 [查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口查询云数据库实例 ID。",
-          "example": "cdb-***",
+          "example": "cdb-q72dno11",
           "member": "string",
           "name": "MasterInstanceId",
           "required": false,
@@ -6005,7 +6005,7 @@
         {
           "disabled": false,
           "document": "只读实例信息。购买只读实例时，该参数必传。",
-          "example": "null",
+          "example": "{\"RoGroupMode\": \"allinone\",\"RoGroupName\": \"jersey\",\"RoMaxDelayTime\": \"5\",\"MinRoInGroup\": \"1\",\"RoOfflineDelay\": \"1\"}",
           "member": "RoGroup",
           "name": "RoGroup",
           "required": false,
@@ -6023,7 +6023,7 @@
         {
           "disabled": false,
           "document": "实例名称。一次购买多个实例命名会用后缀数字区分，例instanceName=db，goodsNum=3，实例命名分别为db1，db2，db3。",
-          "example": "***",
+          "example": "cdbzhang",
           "member": "string",
           "name": "InstanceName",
           "required": false,
@@ -6176,7 +6176,7 @@
         {
           "disabled": false,
           "document": "集群版节点拓扑配置。\n说明：若购买的是集群版实例，此参数为必填，需设置集群版实例的 RW 和 RO 节点拓扑，RO 节点范围是1 - 5个，请至少设置1个 RO 节点。",
-          "example": "无",
+          "example": "{\"ReadWriteNode\":{\"Zone\":\"ap-beijing-6\"},\"ReadOnlyNodes\":[{\"Zone\":\"ap-beijing-6\"}]}",
           "member": "ClusterTopology",
           "name": "ClusterTopology",
           "required": false,
@@ -6203,9 +6203,18 @@
         {
           "disabled": false,
           "document": "加密算法版本号标识。",
-          "example": "无",
+          "example": "134562",
           "member": "string",
           "name": "EncryptMethod",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "集群类型:cage——金融围拢，cdc——CDB ON CDC；dedicate——独享集群",
+          "example": "cage",
+          "member": "string",
+          "name": "ClusterType",
           "required": false,
           "type": "string"
         }
@@ -6295,7 +6304,7 @@
         {
           "disabled": false,
           "document": "私有网络 ID，如果不传则默认选择基础网络，请使用 [查询私有网络列表](/document/api/215/15778)。\n说明：如果创建的是集群版实例，此参数为必填且为私有网络类型。",
-          "example": "vpc-***",
+          "example": "vpc-5l7l5q11",
           "member": "string",
           "name": "UniqVpcId",
           "required": false,
@@ -6304,7 +6313,7 @@
         {
           "disabled": false,
           "document": "私有网络下的子网 ID，如果设置了 UniqVpcId，则 UniqSubnetId 必填，请使用 [查询子网列表](/document/api/215/15784)。",
-          "example": "subnet-***",
+          "example": "subnet-b5v6i111",
           "member": "string",
           "name": "UniqSubnetId",
           "required": false,
@@ -6339,8 +6348,8 @@
         },
         {
           "disabled": false,
-          "document": "实例 ID，购买只读实例时必填，该字段表示只读实例的主实例ID，请使用 [查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口查询云数据库实例 ID。",
-          "example": "cdb-***",
+          "document": "实例 ID，购买只读实例时必填，该字段表示只读实例的主实例 ID，请使用 [查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口查询云数据库实例 ID。",
+          "example": "cdb-q72dnodd",
           "member": "string",
           "name": "MasterInstanceId",
           "required": false,
@@ -6448,7 +6457,7 @@
         {
           "disabled": false,
           "document": "实例名称。一次购买多个实例命名会用后缀数字区分，例instnaceName=db，goodsNum=3，实例命名分别为db1，db2，db3。",
-          "example": "***",
+          "example": "cdbzhang",
           "member": "string",
           "name": "InstanceName",
           "required": false,
@@ -6601,7 +6610,7 @@
         {
           "disabled": false,
           "document": "集群版节点拓扑配置。\n说明：若购买的是集群版实例，此参数为必填，需设置集群版实例的 RW 和 RO 节点拓扑，RO 节点范围是1 - 5个，请至少设置1个 RO 节点。",
-          "example": "无",
+          "example": "{\"ReadWriteNode\":{\"Zone\":\"ap-beijing-6\"},\"ReadOnlyNodes\":[{\"Zone\":\"ap-beijing-6\"}]}",
           "member": "ClusterTopology",
           "name": "ClusterTopology",
           "required": false,
@@ -6628,7 +6637,7 @@
         {
           "disabled": false,
           "document": "不为空，表示仅返回业务调计费的参数，不会真正的发货；值取调用方业务缩写或者对接人。",
-          "example": "无",
+          "example": "andy",
           "member": "string",
           "name": "BillingParameters",
           "required": false,
@@ -6637,9 +6646,18 @@
         {
           "disabled": false,
           "document": "加密算法版本号标识。",
-          "example": "无",
+          "example": "134524",
           "member": "string",
           "name": "EncryptMethod",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "集群类型:cage——金融围拢，cdc——CDB ON CDC；dedicate——独享集群",
+          "example": "cage",
+          "member": "string",
+          "name": "ClusterType",
           "required": false,
           "type": "string"
         }
@@ -6671,13 +6689,13 @@
         },
         {
           "disabled": false,
-          "document": "入参有BillingParameters值时，出参才有值\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "入参有BillingParameters值时，出参才有值",
+          "example": "andy",
           "member": "string",
           "name": "BillingParameters",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -17587,7 +17605,7 @@
         {
           "disabled": false,
           "document": "置放群组 ID。",
-          "example": "test",
+          "example": "172837",
           "member": "string",
           "name": "DeployGroupId",
           "required": true,
@@ -17605,7 +17623,7 @@
         {
           "disabled": false,
           "document": "置放群组描述，最长不能超过200个字符。置放群组名和置放群组描述不能都为空。",
-          "example": "test",
+          "example": "一区群组",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -18261,7 +18279,7 @@
         {
           "disabled": false,
           "document": "参数名",
-          "example": "",
+          "example": "auto_increment",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -18270,7 +18288,7 @@
         {
           "disabled": false,
           "document": "参数值",
-          "example": "",
+          "example": "1",
           "member": "string",
           "name": "Value",
           "required": true,
@@ -18788,6 +18806,7 @@
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -18798,6 +18817,7 @@
           "example": "ap-guangzhou-1",
           "member": "string",
           "name": "Zone",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -18805,9 +18825,10 @@
         {
           "disabled": false,
           "document": "代理实例分布",
-          "example": "无",
+          "example": "[{\"InstanceId\": \"cdb-aykuksx3\",\"InstanceName\": \"cdb37262\",\"InstanceType\": \"1\",\"Status\": \"1\",\"Weight\": \"100\",\"Region\": \"ap-guangzhou\",\"Zone\": \"ap-guangzhou-1\",\"InstNodeId\": \"cbn-ehjshe\",\"InstNodeRole\": \"master\"}]",
           "member": "ProxyInst",
           "name": "ProxyInstance",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -18938,7 +18959,7 @@
         {
           "disabled": false,
           "document": "实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "cdb3874",
           "member": "string",
           "name": "InstanceName",
           "output_required": true,
@@ -19003,25 +19024,25 @@
         },
         {
           "disabled": false,
-          "document": "实例节点ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例节点ID",
           "example": "cbn-test",
           "member": "string",
           "name": "InstNodeId",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "节点角色\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点角色",
           "example": "master",
           "member": "string",
           "name": "InstNodeRole",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -19461,7 +19482,7 @@
         {
           "disabled": false,
           "document": "续费时长，单位：月，可选值包括 [1,2,3,4,5,6,7,8,9,10,11,12,24,36]。",
-          "example": "12",
+          "example": "1",
           "member": "int64",
           "name": "TimeSpan",
           "required": true,
@@ -19488,7 +19509,7 @@
         {
           "disabled": false,
           "document": "不为空，表示仅返回业务调计费的参数，不会真正的发货；值取调用方业务缩写或者对接人。",
-          "example": "test",
+          "example": "andy",
           "member": "string",
           "name": "BillingParameters",
           "required": false,
@@ -19512,13 +19533,13 @@
         },
         {
           "disabled": false,
-          "document": "入参有BillingParameters值时，出参才有值。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "入参有BillingParameters值时，出参才有值。",
+          "example": "andy",
           "member": "string",
           "name": "BillingParameters",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -19618,7 +19639,7 @@
         {
           "disabled": false,
           "document": "实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。",
-          "example": "无",
+          "example": "cdb-c1nl9rpv",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -19627,7 +19648,7 @@
         {
           "disabled": false,
           "document": "手动刷新轮转密码的实例账户名，例如root",
-          "example": "无",
+          "example": "andy",
           "member": "string",
           "name": "User",
           "required": true,
@@ -19636,7 +19657,7 @@
         {
           "disabled": false,
           "document": "手动刷新轮转密码的实例账户域名，例如%",
-          "example": "无",
+          "example": "172.1.1.1",
           "member": "string",
           "name": "Host",
           "required": true,
@@ -22275,9 +22296,10 @@
         {
           "disabled": false,
           "document": "标签键",
-          "example": "无",
+          "example": "name",
           "member": "string",
           "name": "TagKey",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -22285,9 +22307,10 @@
         {
           "disabled": false,
           "document": "标签值",
-          "example": "无",
+          "example": "[\"zhang\",\"li\"]",
           "member": "string",
           "name": "TagValue",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": false

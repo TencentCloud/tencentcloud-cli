@@ -7,7 +7,7 @@ Input:
 ```
 tccli partners DescribeUnbindClientList --cli-unfold-argument  \
     --Status 1 \
-    --UnbindUin xx \
+    --UnbindUin 100002 \
     --ApplyTimeEnd 2020-09-22 \
     --Limit 1 \
     --Offset 1 \
@@ -22,8 +22,8 @@ Output:
         "TotalCount": 1,
         "UnbindClientList": [
             {
-                "Uin": 12345678,
-                "Name": "xxx",
+                "Uin": "100002",
+                "Name": "testname",
                 "Status": 1,
                 "ApplyTime": "2020-09-22 00:00:00",
                 "ActionTime": "2020-09-22 00:00:00"

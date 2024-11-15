@@ -116,6 +116,14 @@
         "title": "查询子客uin列表"
       }
     ],
+    "ForceQN": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: intlpartnersmgt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ForceQN\n<公共请求参数>\n\n{\n    \"ClientUin\": 124,\n    \"Type\": 2\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"string\"\n    }\n}",
+        "title": "账户ForceQN"
+      }
+    ],
     "GetCountryCodes": [
       {
         "document": "",

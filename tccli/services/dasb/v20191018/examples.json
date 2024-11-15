@@ -212,7 +212,7 @@
       {
         "document": "查询运维人员WEB访问入口",
         "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAccessEntry\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"AccessEntrySet\": [\n            \"xx\"\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"AccessEntrySet\": [\n            \"https://jr.bh.cloud.tencent.com/login.html?appTag=\"\n        ],\n        \"IntranetAccessEntry\": \"https://192.1.0.0/login.html\",\n        \"IntranetAccessStatus\": 1,\n        \"RequestId\": \"tv5b7oic-y5ji-5py4-gj76-cmnz71119x1o\"\n    }\n}",
         "title": "查询运维人员WEB访问入口"
       }
     ],

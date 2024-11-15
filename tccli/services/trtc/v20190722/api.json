@@ -1922,7 +1922,7 @@
         {
           "disabled": false,
           "document": "录制文件信息。",
-          "example": "[    {  \t\"FileName\": \"1400188366_555666__UserId_s_amVmZjM.__UserId_e_main_audiovideo.m3u8\",          \"UserId\": \"jeff3\",          \"TrackType\": \"audio_video\",          \"BeginTimeStamp\": 1730087526709    } ]",
+          "example": "[{\"FileName\": \"1400188366_555666__UserId_s_amVmZjM.__UserId_e_main_audiovideo.m3u8\",\"UserId\": \"jeff3\",\"TrackType\": \"audio_video\",\"BeginTimeStamp\": 1730087526709}]",
           "member": "StorageFile",
           "name": "StorageFileList",
           "output_required": true,

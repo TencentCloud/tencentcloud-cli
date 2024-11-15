@@ -41,21 +41,21 @@ Output:
     "Response": {
         "AgentClientSet": [
             {
+                "ApplyTime": 1722396845,
+                "ClientFlag": "b",
+                "ClientName": "测试测试",
+                "ClientUin": "2000002",
+                "HasOverdueBill": 0,
+                "Mail": "dadd*******@qq.com",
+                "Phone": "111****0090",
+                "SalesName": "testname",
+                "SalesUin": "1000001",
                 "Status": 1,
-                "SalesName": "xx",
-                "ClientUin": "xx",
-                "ClientFlag": "xx",
-                "SalesUin": "xx",
-                "Phone": "xx",
-                "ApplyTime": 1,
-                "Uin": "xx",
-                "HasOverdueBill": 1,
-                "Mail": "xx",
-                "ClientName": "xx"
+                "Uin": "1000002"
             }
         ],
         "TotalCount": 1,
-        "RequestId": "xx"
+        "RequestId": "fc90795c-1613-44e4-80ca-ce272a91d891"
     }
 }
 ```

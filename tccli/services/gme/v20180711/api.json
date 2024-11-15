@@ -1153,7 +1153,7 @@
         {
           "disabled": false,
           "document": "应用id",
-          "example": "140014556",
+          "example": "1400000000",
           "member": "uint64",
           "name": "BizId",
           "required": true,
@@ -1161,10 +1161,19 @@
         },
         {
           "disabled": false,
-          "document": "要剔除的用户列表",
+          "document": "要剔除的用户列表（整型）",
           "example": "[\"1\\r\\n\",\"2\\r\\n\"]",
           "member": "string",
           "name": "Uids",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "要剔除的用户列表（字符串类型）",
+          "example": "[\"Andy\",\"John\"]",
+          "member": "string",
+          "name": "StrUids",
           "required": false,
           "type": "list"
         }
@@ -1180,6 +1189,7 @@
           "example": "无",
           "member": "DeleteResult",
           "name": "DeleteResult",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },

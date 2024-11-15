@@ -8,18 +8,18 @@ Input:
 tccli partners AuditApplyClient --cli-unfold-argument  \
     --Note reason \
     --AuditResult accept \
-    --ClientUin 123456
+    --ClientUin 2000002
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx",
-        "AuditResult": "xx",
-        "ClientUin": "xx",
+        "RequestId": "3c140219-cfe9-470e-b241-907877d6fb03",
+        "AuditResult": "qcloudaudit",
+        "ClientUin": "2000002",
         "AgentTime": 1,
-        "Uin": "xx"
+        "Uin": "1000001"
     }
 }
 ```

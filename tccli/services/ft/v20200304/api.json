@@ -56,22 +56,20 @@
         {
           "disabled": false,
           "document": "变化到的人脸年龄 [10,80]。",
-          "example": "",
+          "example": "10",
           "member": "int64",
           "name": "Age",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "人脸框位置。若不输入则选择 Image 或 Url 中面积最大的人脸。  \n您可以通过 [人脸检测与分析](https://cloud.tencent.com/document/api/867/32800)  接口获取人脸框位置信息。",
-          "example": "",
+          "example": "{\"X\": 10, \"Y\": 10, \"Width\": 20, \"Height\": 20}",
           "member": "FaceRect",
           "name": "FaceRect",
           "required": false,
-          "type": "object",
-          "value_allowed_null": false
+          "type": "object"
         }
       ],
       "usage": "in"
@@ -257,30 +255,30 @@
         {
           "disabled": false,
           "document": "人像渐变输出的url\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "https://liudehua-9527.cos.ap-guangzhou.myqcloud.com/result.jpeg?q-sign-algorithm=sha1&q-ak=AKID********EXAMPLE&q-sign-time=8888;9999&q-key-time=8888;9999&q-header-list=&q-url-param-list=&q-signature=7de87f7bf9cfd23df9da32f46661e7cf97a5603c",
           "member": "string",
           "name": "MorphUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "人像渐变输出的结果MD5，用于校验\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "31CDA040BA0F1CE7C59DB3F0B3334AA8",
           "member": "string",
           "name": "MorphMd5",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "人像渐变输出的结果封面图base64字符串\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "https://liudehua-9527.cos.ap-guangzhou.myqcloud.com/input.jpeg",
           "member": "string",
           "name": "CoverImage",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -339,22 +337,20 @@
         {
           "disabled": false,
           "document": "选择转换方向，0：男变女，1：女变男。",
-          "example": "",
+          "example": "1",
           "member": "int64",
           "name": "Gender",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "人脸框位置。若不输入则选择 Image 或 Url 中面积最大的人脸。  \n您可以通过 [人脸检测与分析](https://cloud.tencent.com/document/api/867/32800)  接口获取人脸框位置信息。",
-          "example": "",
+          "example": "{\"X\": 10, \"Y\": 10, \"Width\": 20, \"Height\": 20}",
           "member": "FaceRect",
           "name": "FaceRect",
           "required": false,
-          "type": "object",
-          "value_allowed_null": false
+          "type": "object"
         }
       ],
       "usage": "in"

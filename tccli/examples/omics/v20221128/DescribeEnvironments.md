@@ -35,7 +35,9 @@ Output:
                     "VPCId": "vpc-8yhq1v63"
                 },
                 "Status": "RUNNING",
-                "Type": "KUBERNETES"
+                "Type": "KUBERNETES",
+                "IsDefault": false,
+                "IsManaged": false
             }
         ],
         "RequestId": "1bc7ec7d-5fa9-42af-ac6d-1ef56f3bf625",

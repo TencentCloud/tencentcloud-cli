@@ -15,12 +15,15 @@ Output:
     "Response": {
         "ActionTimers": [
             {
-                "TimerAction": "TerminateInstances",
-                "ActionTime": "2020-02-02 10:00:00",
-                "Externals": {}
+                "ActionTime": "2024-10-23T11:26:40Z",
+                "ActionTimerId": "913d357c-ac08-449d-b283-5999f4fb7965",
+                "Externals": {},
+                "InstanceId": "ins-gs4iu6u3",
+                "Status": "UNDO",
+                "TimerAction": "TerminateInstances"
             }
         ],
-        "RequestId": "af3ab130-244d-4c66-a8a0-03cad009f825"
+        "RequestId": "a247225e-261b-4289-8426-feadc9a3c39c"
     }
 }
 ```

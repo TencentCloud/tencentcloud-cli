@@ -29,9 +29,9 @@
       "status": "online"
     },
     "CreateSLInstance": {
-      "document": "本接口（CreateSLInstance）用于创建 Lite HBase 实例\n- 接口调用成功，会创建Lite HBase实例，创建实例请求成功会返回创建实例的 InstaceId 和请求的 RequestID。\n- 接口为异步接口，接口返回时操作并未立即完成，实例操作结果可以通过调用 DescribeInstancesList 查看当前实例的 StatusDesc 状态。",
+      "document": "本接口（CreateSLInstance）用于创建Serverless HBase实例\n- 接口调用成功，会创建Serverless HBase实例，创建实例请求成功会返回创建实例的InstaceId和请求的 RequestID。\n- 接口为异步接口，接口返回时操作并未立即完成，实例操作结果可以通过调用DescribeInstancesList查看当前实例的StatusDesc状态。",
       "input": "CreateSLInstanceRequest",
-      "name": "Lite HBase 创建实例",
+      "name": "Serverless HBase创建实例",
       "output": "CreateSLInstanceResponse",
       "status": "online"
     },
@@ -225,16 +225,16 @@
       "status": "online"
     },
     "DescribeSLInstance": {
-      "document": "本接口（DescribeSLInstance）用于查询 Lite HBase 实例基本信息",
+      "document": "本接口（DescribeSLInstance）用于查询 Serverless HBase实例基本信息",
       "input": "DescribeSLInstanceRequest",
-      "name": "Lite HBase 查询实例信息",
+      "name": "Serverless HBase查询实例信息",
       "output": "DescribeSLInstanceResponse",
       "status": "online"
     },
     "DescribeSLInstanceList": {
-      "document": "本接口（DescribeSLInstanceList）用于查询 Lite HBase 实例列表详细信息",
+      "document": "本接口（DescribeSLInstanceList）用于查询Serverless HBase实例列表详细信息",
       "input": "DescribeSLInstanceListRequest",
-      "name": "Lite HBase 查询实例列表",
+      "name": "Serverless HBase查询实例列表",
       "output": "DescribeSLInstanceListResponse",
       "status": "online"
     },
@@ -393,9 +393,9 @@
       "status": "online"
     },
     "ModifySLInstance": {
-      "document": "本接口（ModifySLInstance）用于修改Lite HBase 实例节点数。\n- 接口调用成功，会创建Lite HBase实例，创建实例请求成功会返回请求的 RequestID。\n- 接口为异步接口，接口返回时操作并未立即完成，实例操作结果可以通过调用 DescribeInstancesList 查看当前实例的 StatusDesc 状态。",
+      "document": "本接口（ModifySLInstance）用于Serverless HBase变配实例。\n- 接口调用成功，会创建Serverless HBase实例，创建实例请求成功会返回请求的 RequestID。\n- 接口为异步接口，接口返回时操作并未立即完成，实例操作结果可以通过调用DescribeInstancesList查看当前实例的StatusDesc状态。",
       "input": "ModifySLInstanceRequest",
-      "name": "Lite HBase 修改实例节点数",
+      "name": "Serverless HBase变配实例",
       "output": "ModifySLInstanceResponse",
       "status": "online"
     },
@@ -484,9 +484,9 @@
       "status": "online"
     },
     "TerminateSLInstance": {
-      "document": "本接口（TerminateSLInstance）用于销毁 Lite HBase 实例",
+      "document": "本接口（TerminateSLInstance）用于销毁Serverless HBase实例",
       "input": "TerminateSLInstanceRequest",
-      "name": "Lite HBase 销毁实例",
+      "name": "Serverless HBase销毁实例",
       "output": "TerminateSLInstanceResponse",
       "status": "online"
     },
@@ -2987,6 +2987,15 @@
           "name": "Tags",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "预付费参数",
+          "example": "{     \"Period\": {       \"TimeSpan\": 1,       \"TimeUnit\": \"m\"     },     \"AutoRenewFlag\": 2   }",
+          "member": "PrePaySetting",
+          "name": "PrePaySetting",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -5522,6 +5531,16 @@
       "members": [
         {
           "disabled": false,
+          "document": "实例字符串标识。",
+          "example": "emr-xxxxxxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "实例名称。",
           "example": "无",
           "member": "string",
@@ -5533,7 +5552,7 @@
         {
           "disabled": false,
           "document": "实例计费模式。0表示后付费，即按量计费，1表示预付费，即包年包月。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "PayMode",
           "output_required": false,
@@ -5589,6 +5608,96 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例数字标识。",
+          "example": "11111111",
+          "member": "int64",
+          "name": "ClusterId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例区域ID。",
+          "example": "1",
+          "member": "int64",
+          "name": "RegionId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例主可用区。",
+          "example": "ap-guangzhou-2",
+          "member": "string",
+          "name": "Zone",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例过期时间，后付费返回0000-00-00 00:00:00",
+          "example": "0000-00-00 00:00:00",
+          "member": "string",
+          "name": "ExpireTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例隔离时间，未隔离返回0000-00-00 00:00:00。",
+          "example": "0000-00-00 00:00:00",
+          "member": "string",
+          "name": "IsolateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例创建时间。",
+          "example": "0000-00-00 00:00:00",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例状态码，-2:  \"TERMINATED\", 2:   \"RUNNING\", 14:  \"TERMINATING\", 19:  \"ISOLATING\", 22:  \"ADJUSTING\", 201: \"ISOLATED\"。",
+          "example": "2",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自动续费标记， 0：表示通知即将过期，但不自动续费 1：表示通知即将过期，而且自动续费 2：表示不通知即将过期，也不自动续费，若业务无续费概念为0",
+          "example": "0",
+          "member": "int64",
+          "name": "AutoRenewFlag",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例节点总数。",
+          "example": "3",
+          "member": "int64",
+          "name": "NodeNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -12031,6 +12140,34 @@
       ],
       "usage": "out"
     },
+    "Period": {
+      "document": "Serverless HBase包年包月时间",
+      "members": [
+        {
+          "disabled": false,
+          "document": "时间跨度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "TimeSpan",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "时间单位，\"m\"代表月。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "m",
+          "member": "string",
+          "name": "TimeUnit",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "PersistentVolumeContext": {
       "document": "Pod PVC存储方式描述",
       "members": [
@@ -12723,6 +12860,34 @@
         }
       ],
       "usage": "in"
+    },
+    "PrePaySetting": {
+      "document": "Serverless HBase 预付费设置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Period",
+          "name": "Period",
+          "output_required": false,
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自动续费标记，0：表示通知即将过期，但不自动续费 1：表示通知即将过期，而且自动续费 2：表示不通知即将过期，也不自动续费\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "AutoRenewFlag",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "PriceDetail": {
       "document": "价格详情",
@@ -13647,7 +13812,7 @@
       "type": "object"
     },
     "SLInstanceInfo": {
-      "document": "EMR Lite HBase 实例信息",
+      "document": "Serverless HBase 实例信息",
       "members": [
         {
           "disabled": false,
@@ -13798,6 +13963,36 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自动续费标记， 0：表示通知即将过期，但不自动续费 1：表示通知即将过期，而且自动续费 2：表示不通知即将过期，也不自动续费，若业务无续费概念，设置为0",
+          "example": "0",
+          "member": "uint64",
+          "name": "AutoRenewFlag",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "隔离时间，未隔离返回0000-00-00 00:00:00。",
+          "example": "0000-00-00 00:00:00",
+          "member": "string",
+          "name": "IsolateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "过期时间，后付费返回0000-00-00 00:00:00",
+          "example": "0000-00-00 00:00:00",
+          "member": "string",
+          "name": "ExpireTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cdb CreateDBInstanceHour --cli-unfold-argument  \
-    --ResourceTags.0.TagKey marchtest \
-    --ResourceTags.0.TagValue test1 \
+    --ResourceTags.0.TagKey march \
+    --ResourceTags.0.TagValue march1 \
     --Zone ap-guangzhou-3 \
     --UniqVpcId vpc-0akbol5v \
     --ProjectId 0 \

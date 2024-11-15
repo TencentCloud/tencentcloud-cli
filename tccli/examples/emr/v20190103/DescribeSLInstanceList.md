@@ -1,6 +1,6 @@
-**Example 1: Lite HBase 查询实例列表**
+**Example 1: Serverless HBase查询实例列表**
 
-Lite HBase 查询实例列表
+Serverless HBase查询实例列表
 
 Input: 
 

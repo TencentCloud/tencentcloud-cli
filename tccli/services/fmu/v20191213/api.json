@@ -472,42 +472,38 @@
         {
           "disabled": false,
           "document": "人脸框左上角横坐标。",
-          "example": "",
+          "example": "10",
           "member": "int64",
           "name": "X",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "人脸框左上角纵坐标。",
-          "example": "",
+          "example": "10",
           "member": "int64",
           "name": "Y",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "人脸框宽度。",
-          "example": "",
+          "example": "20",
           "member": "int64",
           "name": "Width",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "人脸框高度。",
-          "example": "",
+          "example": "20",
           "member": "int64",
           "name": "Height",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         }
       ],
       "usage": "in"
@@ -574,42 +570,38 @@
         {
           "disabled": false,
           "document": "使用RGBA模型试唇色。",
-          "example": "",
+          "example": "{\"R\":220,\"G\":2,\"B\":44,\"A\":50}",
           "member": "RGBAInfo",
           "name": "RGBA",
           "required": false,
-          "type": "object",
-          "value_allowed_null": false
+          "type": "object"
         },
         {
           "disabled": false,
           "document": "使用已注册的 LUT 文件试唇色。  \nModelId 和 RGBA 两个参数只需提供一个，若都提供只使用 ModelId。",
-          "example": "",
+          "example": "mo_0_1622620141111_1259088111_1",
           "member": "string",
           "name": "ModelId",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "人脸框位置。若不输入则选择 Image 或 Url 中面积最大的人脸。  \n您可以通过 [人脸检测与分析](https://cloud.tencent.com/document/api/867/32800)  接口获取人脸框位置信息。",
-          "example": "",
+          "example": "{\"X\": 10, \"Y\": 10, \"Width\": 20, \"Height\": 20}",
           "member": "FaceRect",
           "name": "FaceRect",
           "required": false,
-          "type": "object",
-          "value_allowed_null": false
+          "type": "object"
         },
         {
           "disabled": false,
           "document": "涂妆浓淡[0,100]。建议取值50。本参数仅控制ModelId对应的涂妆浓淡。",
-          "example": "",
+          "example": "50",
           "member": "int64",
           "name": "ModelAlpha",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         }
       ],
       "usage": "in"
@@ -620,30 +612,30 @@
         {
           "disabled": false,
           "document": "唇色素材ID",
-          "example": "",
+          "example": "mo_0_1622620141111_1259088111_1",
           "member": "string",
           "name": "ModelId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "唇色素材 url 。 LUT 文件 url 5分钟有效。",
-          "example": "",
+          "example": "https://liudehua-9527.cos.ap-guangzhou.myqcloud.com/input.jpeg",
           "member": "string",
           "name": "LUTFileUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "文件描述信息。",
-          "example": "",
+          "example": "图片",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -713,42 +705,38 @@
         {
           "disabled": false,
           "document": "R通道数值。[0,255]。",
-          "example": "",
+          "example": "220",
           "member": "int64",
           "name": "R",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "G通道数值。[0,255]。",
-          "example": "",
+          "example": "2",
           "member": "int64",
           "name": "G",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "B通道数值。[0,255]。",
-          "example": "",
+          "example": "44",
           "member": "int64",
           "name": "B",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "A通道数值。[0,100]。建议取值50。",
-          "example": "",
+          "example": "50",
           "member": "int64",
           "name": "A",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         }
       ],
       "usage": "in"

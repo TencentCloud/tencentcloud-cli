@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli partners DescribeAgentClientGrade --cli-unfold-argument  \
-    --ClientUin 123456
+    --ClientUin 1000002
 ```
 
 Output: 

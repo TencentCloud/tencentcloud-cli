@@ -1,6 +1,6 @@
-**Example 1: Lite Hbase 创建实例**
+**Example 1: Serverless HBase创建实例**
 
-Lite Hbase 创建实例
+Serverless HBase创建实例
 
 Input: 
 

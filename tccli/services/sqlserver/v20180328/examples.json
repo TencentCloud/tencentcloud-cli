@@ -748,7 +748,7 @@
       {
         "document": "",
         "input": "https://sqlserver.tencentcloudapi.com/?Action=DescribeUploadBackupInfo\n&InstanceId=mssql-rdc0gajn\n&BackupMigrationId=mssql-backup-migration-kpl74n9l\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"BucketName\": \"cosbacktest-1254065710\",\n        \"ExpiredTime\": \"1601205149\",\n        \"Path\": \"251006279/sqlserver/mssql-rdc0gajn/migration/backup/mssql-backup-migration-kpl74n9l/\",\n        \"Region\": \"ap-guangzhou\",\n        \"RequestId\": \"6ce2010c-a9c2-474d-860e-f2c8581304eb\",\n        \"StartTime\": \"1601204649\",\n        \"TmpSecretId\": \"AKID44fDXXXXXXXXXXXXXXXXXXXXXXXXX\",\n        \"TmpSecretKey\": \"2jWOoltcvf21JIsNUaXXXXXXXXXXXXXXXXXXXXXXXXX\",\n        \"CosSecurityToken\": \"J6nJk8Q30PaQwyvn4OF4oOezabX61kra1cf794342ff14c39705aa17584f81650YmAxWf4vkrV2ZK2Gcr_-kzjJ7a_fRRCeQtXd547VoWnmbJ2txpX6Kj_SywpVdS4c4sMrIn2aFir1nmTu--k_a9NDyykODaR2O3n-PP_k84qacwjb-XXXXXXXXXXXXXXXXXXXXXXXXX\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"BucketName\": \"cosbacktest-1254065710\",\n        \"ExpiredTime\": \"1601205149\",\n        \"Path\": \"251006279/sqlserver/mssql-rdc0gajn/migration/backup/mssql-backup-migration-kpl74n9l/\",\n        \"Region\": \"ap-guangzhou\",\n        \"RequestId\": \"6ce2010c-a9c2-474d-860e-f2c8581304eb\",\n        \"StartTime\": \"1601204649\",\n        \"TmpSecretId\": \"****************************\",\n        \"TmpSecretKey\": \"*****************************\",\n        \"CosSecurityToken\": \"**********************************\"\n    }\n}",
         "title": "查询全量备份上传密钥"
       }
     ],

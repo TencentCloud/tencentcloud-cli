@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tiia DetectEnvelope --cli-unfold-argument  \
-    --ImageUrl https://test.jpg
+    --ImageUrl https://cos.ap-singapore.myqcloud.com/input.png
 ```
 
 Output: 
@@ -30,7 +30,7 @@ Input:
 
 ```
 tccli tiia DetectEnvelope --cli-unfold-argument  \
-    --ImageUrl http://test.jpg
+    --ImageUrl https://cos.ap-singapore.myqcloud.com/input.png
 ```
 
 Output: 

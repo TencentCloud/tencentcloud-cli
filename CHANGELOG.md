@@ -1,3 +1,489 @@
+# Release 3.0.1098.1
+
+## 云顾问(advisor) 版本：2020-07-21
+
+### 第 18 次发布
+
+发布时间：2024-11-15 01:07:27
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ArchProductInfo](http://document.tencentcloudapi.woa.com/document/product/1660/78752#ArchProductInfo)
+
+	* 新增成员：Category
+
+
+
+
+## 应用性能监控(apm) 版本：2021-06-22
+
+### 第 16 次发布
+
+发布时间：2024-11-15 01:11:21
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateApmInstance](http://document.tencentcloudapi.woa.com/document/product/1463/65347)
+
+	* 新增入参：Free
+
+* [ModifyApmInstance](http://document.tencentcloudapi.woa.com/document/product/1463/77278)
+
+	* 新增入参：Free, IsSqlInjectionAnalysis, IsInstrumentationVulnerabilityScan
+
+
+修改数据结构：
+
+* [ApmInstanceDetail](http://document.tencentcloudapi.woa.com/document/product/1463/64927#ApmInstanceDetail)
+
+	* 新增成员：IsRelatedDashboard, DashboardTopicID, IsInstrumentationVulnerabilityScan, IsSqlInjectionAnalysis
+
+
+
+
+## 批量计算(batch) 版本：2017-03-12
+
+### 第 16 次发布
+
+发布时间：2024-11-15 01:12:36
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [InstanceTypeQuotaItem](http://document.tencentcloudapi.woa.com/document/product/599/15912#InstanceTypeQuotaItem)
+
+	* 新增成员：AcceptMode
+
+
+
+
+## 云拨测(cat) 版本：2018-04-09
+
+### 第 21 次发布
+
+发布时间：2024-11-15 01:16:47
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [UpdateProbeTaskConfigurationList](http://document.tencentcloudapi.woa.com/document/product/280/66201)
+
+	* 新增入参：BatchTasks
+
+
+
+
+## 云硬盘(cbs) 版本：2017-03-12
+
+### 第 37 次发布
+
+发布时间：2024-11-15 01:16:58
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [AutoSnapshotPolicy](http://document.tencentcloudapi.woa.com/document/product/362/15669#AutoSnapshotPolicy)
+
+	* <font color="#dd0000">**修改成员**：</font>DiskIdSet, IsActivated, AutoSnapshotPolicyState, IsPermanent, NextTriggerTime, AutoSnapshotPolicyName, AutoSnapshotPolicyId, Policy, CreateTime, RetentionDays, CopyFromAccountUin, Tags
+
+* [Disk](http://document.tencentcloudapi.woa.com/document/product/362/15669#Disk)
+
+	* <font color="#dd0000">**修改成员**：</font>RenewFlag, DiskType, DiskState, AutoRenewFlagError, Rollbacking, Encrypt, DiskName, InstanceId, AutoSnapshotPolicyIds, DiskId, Placement, IsReturnable, DeadlineTime, Attached, DiskSize, DiskUsage, DiskChargeType, Portable, SnapshotAbility, DeadlineError, RollbackPercent, ReturnFailCode, CreateTime, LastAttachInsId, ErrorPrompt, BurstPerformance
+
+* [PrepayPrice](http://document.tencentcloudapi.woa.com/document/product/362/15669#PrepayPrice)
+
+	* <font color="#dd0000">**修改成员**：</font>DetailPrices
+
+* [Price](http://document.tencentcloudapi.woa.com/document/product/362/15669#Price)
+
+	* <font color="#dd0000">**修改成员**：</font>DiscountPrice, OriginalPrice
+
+* [Snapshot](http://document.tencentcloudapi.woa.com/document/product/362/15669#Snapshot)
+
+	* <font color="#dd0000">**修改成员**：</font>Placement, SnapshotState, IsPermanent, SnapshotName, DeadlineTime, Percent, DiskSize, DiskId, Encrypt, CreateTime, DiskUsage, Tags
+
+
+
+
+## 云联络中心(ccc) 版本：2020-02-10
+
+### 第 69 次发布
+
+发布时间：2024-11-15 01:17:27
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [CompanyStateInfo](http://document.tencentcloudapi.woa.com/document/product/679/47715#CompanyStateInfo)
+
+	* 新增成员：ContractNo
+
+
+
+
+## 云数据库 MySQL(cdb) 版本：2017-03-20
+
+### 第 117 次发布
+
+发布时间：2024-11-15 01:18:07
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateDBInstance](http://document.tencentcloudapi.woa.com/document/product/236/15871)
+
+	* 新增入参：ClusterType
+
+* [CreateDBInstanceHour](http://document.tencentcloudapi.woa.com/document/product/236/15865)
+
+	* 新增入参：ClusterType
+
+
+
+
+## 云防火墙(cfw) 版本：2019-09-04
+
+### 第 63 次发布
+
+发布时间：2024-11-15 01:22:16
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeEngineUpdateDetail](http://document.tencentcloudapi.woa.com/document/product/1132/85228)
+
+新增数据结构：
+
+* [CfwInsUpdateStatus](http://document.tencentcloudapi.woa.com/document/product/1132/49071#CfwInsUpdateStatus)
+* [EngineVersionInfo](http://document.tencentcloudapi.woa.com/document/product/1132/49071#EngineVersionInfo)
+
+
+
+## 消息队列 CKafka 版(ckafka) 版本：2019-08-19
+
+### 第 91 次发布
+
+发布时间：2024-11-15 01:23:48
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreatePostPaidInstance](http://document.tencentcloudapi.woa.com/document/product/597/78116)
+
+	* 新增入参：ElasticBandwidthSwitch
+
+
+修改数据结构：
+
+* [CreateInstancePostData](http://document.tencentcloudapi.woa.com/document/product/597/40861#CreateInstancePostData)
+
+	* <font color="#dd0000">**修改成员**：</font>DealNameInstanceIdMapping
+
+* [DealInstanceDTO](http://document.tencentcloudapi.woa.com/document/product/597/40861#DealInstanceDTO)
+
+	* <font color="#dd0000">**修改成员**：</font>DealName, InstanceIdList
+
+
+
+
+## 云服务器(cvm) 版本：2019-12-12
+
+
+
+## 云服务器(cvm) 版本：2017-03-12
+
+### 第 87 次发布
+
+发布时间：2024-11-15 01:29:13
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeHostsInfos](http://document.tencentcloudapi.woa.com/document/product/213/74898)
+
+	* <font color="#dd0000">**修改出参**：</font>TotalCount, HostInfoSet
+
+
+修改数据结构：
+
+* [ActionTimer](http://document.tencentcloudapi.woa.com/document/product/213/15753#ActionTimer)
+
+	* 新增成员：ActionTimerId, Status, InstanceId
+
+* [InstanceTypeQuotaItem](http://document.tencentcloudapi.woa.com/document/product/213/15753#InstanceTypeQuotaItem)
+
+	* 新增成员：AcceptMode
+
+
+
+
+## 主机安全(cwp) 版本：2018-02-28
+
+### 第 110 次发布
+
+发布时间：2024-11-15 01:30:40
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* DescribeCloudProtectServiceOrderList
+
+<font color="#dd0000">**删除数据结构**：</font>
+
+* CloudProtectService
+
+
+
+## cxm(cxm) 版本：2017-03-12
+
+### 第 8 次发布
+
+发布时间：2024-11-15 01:33:59
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Instance](http://document.tencentcloudapi.woa.com/document/product/1752/82730#Instance)
+
+	* 新增成员：ItemId, DeviceImageId, MatrixImageId
+
+* [Placement](http://document.tencentcloudapi.woa.com/document/product/1752/82730#Placement)
+
+	* 新增成员：ShadowHostIds
+
+
+
+
+## 运维安全中心（堡垒机）(dasb) 版本：2019-10-18
+
+### 第 37 次发布
+
+发布时间：2024-11-15 01:35:27
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeAccessEntry](http://document.tencentcloudapi.woa.com/document/product/1492/81753)
+
+	* 新增出参：IntranetAccessEntry, IntranetAccessStatus, GMAccessStatus, GMAccessEntry
+
+
+修改数据结构：
+
+* [Resource](http://document.tencentcloudapi.woa.com/document/product/1492/74806#Resource)
+
+	* 新增成员：IntranetAccess, IntranetPrivateIpSet, IntranetVpcId, IntranetVpcCidr
+
+
+
+
+## 弹性 MapReduce(emr) 版本：2019-01-03
+
+### 第 69 次发布
+
+发布时间：2024-11-15 01:43:55
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateSLInstance](http://document.tencentcloudapi.woa.com/document/product/589/84849)
+
+	* 新增入参：PrePaySetting
+
+* [DescribeSLInstance](http://document.tencentcloudapi.woa.com/document/product/589/84848)
+
+	* 新增出参：InstanceId, ClusterId, RegionId, Zone, ExpireTime, IsolateTime, CreateTime, Status, AutoRenewFlag, NodeNum
+
+
+新增数据结构：
+
+* [Period](http://document.tencentcloudapi.woa.com/document/product/589/33981#Period)
+* [PrePaySetting](http://document.tencentcloudapi.woa.com/document/product/589/33981#PrePaySetting)
+
+修改数据结构：
+
+* [SLInstanceInfo](http://document.tencentcloudapi.woa.com/document/product/589/33981#SLInstanceInfo)
+
+	* 新增成员：AutoRenewFlag, IsolateTime, ExpireTime
+
+
+
+
+## Elasticsearch Service(es) 版本：2018-04-16
+
+### 第 77 次发布
+
+发布时间：2024-11-15 01:45:01
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [InstallInstanceModel](http://document.tencentcloudapi.woa.com/document/product/845/84784)
+
+	* 新增入参：ModelNames, TaskTypes
+
+
+
+
+## 游戏多媒体引擎(gme) 版本：2018-07-11
+
+### 第 23 次发布
+
+发布时间：2024-11-15 01:49:21
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DeleteRoomMember](http://document.tencentcloudapi.woa.com/document/product/607/75965)
+
+	* 新增入参：StrUids
+
+
+
+
+## 国际合作伙伴管理(intlpartnersmgt) 版本：2022-09-28
+
+### 第 18 次发布
+
+发布时间：2024-11-15 01:52:20
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ForceQN](http://document.tencentcloudapi.woa.com/document/product/1724/85229)
+
+
+
+## 腾讯健康组学平台(omics) 版本：2022-11-28
+
+### 第 15 次发布
+
+发布时间：2024-11-15 02:11:41
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [EnvironmentStatistic](http://document.tencentcloudapi.woa.com/document/product/1725/80781#EnvironmentStatistic)
+
+	* <font color="#dd0000">**修改成员**：</font>Region, TotalCount
+
+* [ResourceIds](http://document.tencentcloudapi.woa.com/document/product/1725/80781#ResourceIds)
+
+	* <font color="#dd0000">**修改成员**：</font>VPCId, SubnetId, SecurityGroupId, TDSQLCId, CFSId, CFSStorageType, CVMId, EKSId
+
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 170 次发布
+
+发布时间：2024-11-15 02:43:43
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateHaVip](http://document.tencentcloudapi.woa.com/document/product/215/30652)
+
+	* 新增入参：Tags, Ipv6Vip, IpAddressType
+
+* [DeleteHaVip](http://document.tencentcloudapi.woa.com/document/product/215/30651)
+
+	* 新增入参：IpAddressType
+
+* [DescribeHaVips](http://document.tencentcloudapi.woa.com/document/product/215/30650)
+
+	* 新增入参：IpAddressType
+
+* [ModifyHaVipAttribute](http://document.tencentcloudapi.woa.com/document/product/215/30647)
+
+	* 新增入参：IpAddressType
+
+
+修改数据结构：
+
+* [AssistantCidr](http://document.tencentcloudapi.woa.com/document/product/215/15824#AssistantCidr)
+
+	* <font color="#dd0000">**修改成员**：</font>Region
+
+* [ConflictItem](http://document.tencentcloudapi.woa.com/document/product/215/15824#ConflictItem)
+
+	* 新增成员：ConflictId
+
+* [IpGeolocationInfo](http://document.tencentcloudapi.woa.com/document/product/215/15824#IpGeolocationInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>Country, Province, City, Region, Isp, AsName, AsId, Comment
+
+* [ItemPrice](http://document.tencentcloudapi.woa.com/document/product/215/15824#ItemPrice)
+
+	* <font color="#dd0000">**修改成员**：</font>UnitPrice, ChargeUnit, OriginalPrice, DiscountPrice
+
+* [Subnet](http://document.tencentcloudapi.woa.com/document/product/215/15824#Subnet)
+
+	* 新增成员：HighPriorityRouteTableId
+
+
+
+
 # Release 3.0.1097.1
 
 ## 本地专用集群(cdc) 版本：2020-12-14

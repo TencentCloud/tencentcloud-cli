@@ -22,11 +22,11 @@ Output:
             {
                 "DeleteWithInstance": false,
                 "Encrypt": false,
-                "DiskType": "CLOUD_BASIC",
+                "DiskType": "CLOUD_BSSD",
                 "AutoRenewFlagError": false,
                 "Rollbacking": false,
                 "RenewFlag": "NOTIFY_AND_MANUAL_RENEW",
-                "DiskName": "test",
+                "DiskName": "my-data-disk",
                 "Tags": [],
                 "InstanceId": "",
                 "DifferDaysOfDeadline": 1,
@@ -34,7 +34,12 @@ Output:
                 "DiskState": "ATTACHED",
                 "Placement": {
                     "ProjectId": 0,
-                    "Zone": "ap-guangzhou-2"
+                    "Zone": "ap-guangzhou-2",
+                    "ProjectName": "默认项目",
+                    "CageId": "cage-bdq5l1mx",
+                    "CdcName": "my-cloud-dedicated-cbs",
+                    "CdcId": "cdc-1648zauv",
+                    "DedicatedClusterId": "cluster-o42khj98"
                 },
                 "IsReturnable": false,
                 "DeadlineTime": "2018-10-26 10:55:43",
@@ -52,7 +57,7 @@ Output:
                 "ThroughputPerformance": 1,
                 "Migrating": true,
                 "InstanceIdList": [
-                    "ins-test1234"
+                    "ins-agp4l0lx"
                 ],
                 "Shareable": true,
                 "MigratePercent": 100,
@@ -63,7 +68,10 @@ Output:
                 "DiskBackupQuota": 1,
                 "DiskBackupCount": 1,
                 "DeleteSnapshot": 0,
-                "InstanceType": "CVM"
+                "InstanceType": "CVM",
+                "BurstPerformance": false,
+                "ErrorPrompt": "Detach disk timeout, please retry later",
+                "LastAttachInsId": "ins-agp4l0lx"
             }
         ]
     }

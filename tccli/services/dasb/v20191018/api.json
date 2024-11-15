@@ -3309,11 +3309,51 @@
         {
           "disabled": false,
           "document": "运维人员WEB访问入口",
-          "example": "无",
+          "example": "[https://jr.bh.cloud.tencent.com/login.html?appTag=]",
           "member": "string",
           "name": "AccessEntrySet",
-          "required": true,
+          "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "运维人员WEB访问内网入口",
+          "example": "[https://192.0.0.1/login.html]",
+          "member": "string",
+          "name": "IntranetAccessEntry",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": " 0 内网访问未开通，1 内网访问正在开通中，2 已开通",
+          "example": "0",
+          "member": "uint64",
+          "name": "IntranetAccessStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "国密访问状态，0：未开通，1：已开通",
+          "example": "1",
+          "member": "uint64",
+          "name": "GMAccessStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "运维人员WEB访问国密入口",
+          "example": "https://gmbh.cloud.tencent.com/login.html?appTag=MpgZ6LZBVdKzYH8Z41955f213dab351e&lang=zh",
+          "member": "string",
+          "name": "GMAccessEntry",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -7538,6 +7578,46 @@
           "name": "DeployModel",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "0 默认值，非内网访问，1 内网访问",
+          "example": "0",
+          "member": "uint64",
+          "name": "IntranetAccess",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内网访问的ip",
+          "example": "[\"127.0.0.1\"]",
+          "member": "string",
+          "name": "IntranetPrivateIpSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "开通内网访问的vpc",
+          "example": "vpc-se23s3rf",
+          "member": "string",
+          "name": "IntranetVpcId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "开通内网访问vpc的网段",
+          "example": "172.9.9.1/0",
+          "member": "string",
+          "name": "IntranetVpcCidr",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

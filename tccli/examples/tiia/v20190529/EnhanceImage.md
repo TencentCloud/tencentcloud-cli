@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tiia EnhanceImage --cli-unfold-argument  \
-    --ImageUrl https://big.jpg
+    --ImageUrl https://liudhu-9527.cos.ap-guangzhou.myqcloud.com/input.jpeg
 ```
 
 Output: 
@@ -30,7 +30,7 @@ Input:
 
 ```
 tccli tiia EnhanceImage --cli-unfold-argument  \
-    --ImageUrl https://123.jpg
+    --ImageUrl https://liudhu-9527.cos.ap-guangzhou.myqcloud.com/input.jpeg
 ```
 
 Output: 
@@ -54,14 +54,14 @@ Input:
 
 ```
 tccli tiia EnhanceImage --cli-unfold-argument  \
-    --ImageUrl https://test.jpg
+    --ImageUrl https://liudhu-9527.cos.ap-guangzhou.myqcloud.com/input.jpeg
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "EnhancedImage": "/9j/4AAQSkZJRgABAQAAAQABA...",
+        "EnhancedImage": "/9j/4AAQSkZJRgABAQAAAQABA...lftXF/DjFZNXoSP5V2U0HMt/1FQf/Z",
         "RequestId": "75ad21c9-1db4-4032-9066-ab03e297349b"
     }
 }

@@ -1692,6 +1692,17 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "合同编号",
+          "example": "12324xxxxx",
+          "member": "string",
+          "name": "ContractNo",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

@@ -7,7 +7,9 @@ Input:
 ```
 tccli es InstallInstanceModel --cli-unfold-argument  \
     --InstanceId abc \
-    --UsrCosModelUrlList abc
+    --UsrCosModelUrlList abc \
+    --ModelNames abc \
+    --TaskTypes text_embedding
 ```
 
 Output: 

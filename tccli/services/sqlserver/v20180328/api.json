@@ -11458,7 +11458,7 @@
         {
           "disabled": false,
           "document": "临时密钥ID",
-          "example": "AKID44fDXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "example": "**************************",
           "member": "string",
           "name": "TmpSecretId",
           "output_required": true,
@@ -11468,7 +11468,7 @@
         {
           "disabled": false,
           "document": "临时密钥Key",
-          "example": "2jWOoltcvf21JIsNUaXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "example": "***************************************************************************",
           "member": "string",
           "name": "TmpSecretKey",
           "output_required": true,
@@ -11478,7 +11478,7 @@
         {
           "disabled": true,
           "document": "临时密钥Token",
-          "example": "J6nJk8Q30PaQwyvn4OF4oOezabX61kra1cf794342ff14c39705aa17584f81650YmAxWf4vkrV2ZK2Gcr_-kzjJ7a_fRRCeQtXd547VoWnmbJ2txpX6Kj_SywpVdS4c4sMrIn2aFir1nmTu--k_a9NDyykODaR2O3n-PP_k84qacwjb-XXXXXXXXXXXXXXXXXXXXXXXXX",
+          "example": "**************************",
           "member": "string",
           "name": "XCosSecurityToken",
           "output_required": true,
@@ -11508,7 +11508,7 @@
         {
           "disabled": false,
           "document": "临时密钥Token",
-          "example": "J6nJk8Q30PaQwyvn4OF4oOezabX61kra1cf794342ff14c39705aa17584f81650YmAxWf4vkrV2ZK2Gcr_-kzjJ7a_fRRCeQtXd547VoWnmbJ2txpX6Kj_SywpVdS4c4sMrIn2aFir1nmTu--k_a9NDyykODaR2O3n-PP_k84qacwjb-XXXXXXXXXXXXXXXXXXXXXXXXX",
+          "example": "********************************************************",
           "member": "string",
           "name": "CosSecurityToken",
           "output_required": false,

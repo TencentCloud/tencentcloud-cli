@@ -5756,7 +5756,7 @@
         },
         {
           "disabled": false,
-          "document": "下载的服务类型: nginx tomcat apache iis jks other root",
+          "document": "必填选项，下载的服务类型: nginx tomcat apache iis jks other root",
           "example": "nginx",
           "member": "string",
           "name": "ServiceType",
@@ -5775,7 +5775,7 @@
           "example": "https://xxxxx.zip",
           "member": "string",
           "name": "DownloadCertificateUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5785,7 +5785,7 @@
           "example": "xxx.com_nginx.zip",
           "member": "string",
           "name": "DownloadFilename",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

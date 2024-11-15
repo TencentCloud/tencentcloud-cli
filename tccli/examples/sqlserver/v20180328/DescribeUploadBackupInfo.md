@@ -20,9 +20,9 @@ Output:
         "Region": "ap-guangzhou",
         "RequestId": "6ce2010c-a9c2-474d-860e-f2c8581304eb",
         "StartTime": "1601204649",
-        "TmpSecretId": "AKID44fDXXXXXXXXXXXXXXXXXXXXXXXXX",
-        "TmpSecretKey": "2jWOoltcvf21JIsNUaXXXXXXXXXXXXXXXXXXXXXXXXX",
-        "CosSecurityToken": "J6nJk8Q30PaQwyvn4OF4oOezabX61kra1cf794342ff14c39705aa17584f81650YmAxWf4vkrV2ZK2Gcr_-kzjJ7a_fRRCeQtXd547VoWnmbJ2txpX6Kj_SywpVdS4c4sMrIn2aFir1nmTu--k_a9NDyykODaR2O3n-PP_k84qacwjb-XXXXXXXXXXXXXXXXXXXXXXXXX"
+        "TmpSecretId": "****************************",
+        "TmpSecretKey": "*****************************",
+        "CosSecurityToken": "**********************************"
     }
 }
 ```

@@ -16,7 +16,7 @@ Output:
     "Response": {
         "Groups": [
             {
-                "Brief": "",
+                "Brief": "简介",
                 "CreateTime": "2023-02-02 18:04:08",
                 "GroupId": "group_test_id",
                 "GroupName": "group_test_id_name",

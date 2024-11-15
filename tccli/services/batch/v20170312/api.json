@@ -3837,6 +3837,16 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "描述机型支持的模糊类型。取值范围\n<li> NON-RESTRICTIVE：表示支持精准和模糊购买</li> \n<li>SPECIFIC：表示仅支持精准购买</li>\n<li> RANDOM：表示仅支持模糊购买</li> \n",
+          "example": "RANDOM",
+          "member": "string",
+          "name": "AcceptMode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -4988,7 +4998,7 @@
         {
           "disabled": false,
           "document": "实例所属的可用区名称。该参数可以通过调用  [DescribeZones](https://cloud.tencent.com/document/product/213/15707) 的返回值中的Zone字段来获取。",
-          "example": "无",
+          "example": "ap-guangzhou-4",
           "member": "string",
           "name": "Zone",
           "output_required": true,
@@ -4999,7 +5009,7 @@
         {
           "disabled": false,
           "document": "实例所属项目ID。该参数可以通过调用 [DescribeProject](https://cloud.tencent.com/document/api/651/78725) 的返回值中的 projectId 字段来获取。不填为默认项目。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "ProjectId",
           "output_required": true,
@@ -5013,7 +5023,7 @@
           "example": "[\"host-o5i742go\"]",
           "member": "string",
           "name": "HostIds",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -5021,10 +5031,10 @@
         {
           "disabled": false,
           "document": "指定母机IP生产子机",
-          "example": "无",
+          "example": "10.0.0.1",
           "member": "string",
           "name": "HostIps",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -5035,7 +5045,7 @@
           "example": "host-o5i742go",
           "member": "string",
           "name": "HostId",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -5332,7 +5342,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "系统盘类型。系统盘类型限制详见[存储概述](https://cloud.tencent.com/document/product/213/4952)。取值范围：<br><li>LOCAL_BASIC：本地硬盘<br><li>LOCAL_SSD：本地SSD硬盘<br><li>CLOUD_BASIC：普通云硬盘<br><li>CLOUD_SSD：SSD云硬盘<br><li>CLOUD_PREMIUM：高性能云硬盘<br><li>CLOUD_BSSD：通用性SSD云硬盘<br><li>CLOUD_HSSD：增强型SSD云硬盘<br><li>CLOUD_TSSD：极速型SSD云硬盘<br><br>默认取值：当前有库存的硬盘类型。",
+          "document": "系统盘类型。系统盘类型限制详见[存储概述](https://cloud.tencent.com/document/product/213/4952)。取值范围：<br>\n<li>LOCAL_BASIC：本地硬盘</li>\n<li>LOCAL_SSD：本地SSD硬盘</li>\n<li>CLOUD_BASIC：普通云硬盘</li>\n<li>CLOUD_SSD：SSD云硬盘</li>\n<li>CLOUD_PREMIUM：高性能云硬盘</li>\n<li>CLOUD_BSSD：通用性SSD云硬盘</li>\n<li>CLOUD_HSSD：增强型SSD云硬盘</li>\n<li>CLOUD_TSSD：极速型SSD云硬盘</li><br>\n默认取值：当前有库存的硬盘类型。",
           "example": "无",
           "member": "string",
           "name": "DiskType",
@@ -5369,7 +5379,7 @@
           "example": "无",
           "member": "string",
           "name": "CdcId",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true

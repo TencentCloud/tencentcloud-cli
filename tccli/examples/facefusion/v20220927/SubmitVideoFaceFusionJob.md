@@ -7,7 +7,7 @@ Input:
 ```
 tccli facefusion SubmitVideoFaceFusionJob --cli-unfold-argument  \
     --ProjectId 100646 \
-    --MergeInfos.0.Url http://i2.sinaimg.cn/ty/nba/2015-07-05/U10236P6T12D7648505F44DT20150705114547.jpg \
+    --MergeInfos.0.Url https://i2.sinaimg.cn/ty/nba/2015-07-05/U10236P6T12D7648505F44DT20150705114547.jpg \
     --ModelId qc_100646_154021_9
 ```
 

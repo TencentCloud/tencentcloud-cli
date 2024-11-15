@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tiia DetectSecurity --cli-unfold-argument  \
-    --ImageUrl https://123.jpg
+    --ImageUrl https://liudhu-9527.cos.ap-guangzhou.myqcloud.com/input.jpeg
 ```
 
 Output: 
@@ -30,7 +30,7 @@ Input:
 
 ```
 tccli tiia DetectSecurity --cli-unfold-argument  \
-    --ImageUrl https://test.jpg
+    --ImageUrl https://liudhu-9527.cos.ap-guangzhou.myqcloud.com/input.jpeg
 ```
 
 Output: 

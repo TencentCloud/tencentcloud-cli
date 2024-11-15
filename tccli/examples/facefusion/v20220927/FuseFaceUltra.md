@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli facefusion FuseFaceUltra --cli-unfold-argument  \
-    --ModelUrl https://host.com/1.jpg \
+    --ModelUrl https://cos.ap-guangzhou.myqcloud.com/facefusion/FuseFaceUltra/model.png \
     --RspImgType base64 \
-    --MergeInfos.0.Url https://host.com/2.jpg \
+    --MergeInfos.0.Url https://cos.ap-guangzhou.myqcloud.com/facefusion/FuseFaceUltra/input.png \
     --FusionUltraParam.WarpRadio 1.2
 ```
 
@@ -33,9 +33,9 @@ Input:
 
 ```
 tccli facefusion FuseFaceUltra --cli-unfold-argument  \
-    --ModelUrl https://host.com/1.jpg \
+    --ModelUrl https://cos.ap-guangzhou.myqcloud.com/facefusion/FuseFaceUltra/model.png \
     --RspImgType url \
-    --MergeInfos.0.Url https://host.com/2.jpg \
+    --MergeInfos.0.Url https://cos.ap-guangzhou.myqcloud.com/facefusion/FuseFaceUltra/input.png \
     --FusionUltraParam.WarpRadio 0.7
 ```
 
@@ -43,7 +43,7 @@ Output:
 ```
 {
     "Response": {
-        "FusedImage": "https://xxxx.cos.ap-guangzhou.myqcloud.com/facefusion/FuseFaceUltra/xxxxx",
+        "FusedImage": "https://cos.ap-guangzhou.myqcloud.com/facefusion/FuseFaceUltra/output.png",
         "RequestId": "06f9b251-fa48-435e-b391-145d67919b2c"
     }
 }

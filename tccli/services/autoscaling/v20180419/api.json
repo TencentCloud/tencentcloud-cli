@@ -523,7 +523,7 @@
         {
           "disabled": false,
           "document": "伸缩活动状态简要描述。",
-          "example": "云主机创建失败",
+          "example": "Success",
           "member": "string",
           "name": "StatusMessageSimplified",
           "output_required": true,
@@ -543,7 +543,7 @@
         {
           "disabled": false,
           "document": "伸缩活动状态详细描述。",
-          "example": "[{\"DetailedStatusMessageSet\": [{\"Code\": \"CvmCreationFailed\", \"Zone\": \"ap-beijing-5\", \"InstanceId\": \"ins-qfcgbumb\", \"InstanceChargeType\": \"PREPAID\", \"SubnetId\": \"subnet-opywjlrx\", \"Message\": \"Failed to launch instance `ins-qfcgbumb`. Instance type: `GNV4.12XLARGE176`, Subnet: `subnet-opywjlrx`, Zone: `ap-beijing-5`, LatestOperationCode: `ResourceInsufficient`.\", \"InstanceType\": \"GNV4.12XLARGE176\"}]",
+          "example": "[{\"[{\"Code\": \"CvmCreationFailed\", \"Zone\": \"ap-beijing-5\", \"InstanceId\": \"ins-qfcgbumb\", \"InstanceChargeType\": \"PREPAID\", \"SubnetId\": \"subnet-opywjlrx\", \"Message\": \"Failed to launch instance `ins-qfcgbumb`. Instance type: `GNV4.12XLARGE176`, Subnet: `subnet-opywjlrx`, Zone: `ap-beijing-5`, LatestOperationCode: `ResourceInsufficient`.\", \"InstanceType\": \"GNV4.12XLARGE176\"}]",
           "member": "DetailedStatusMessage",
           "name": "DetailedStatusMessageSet",
           "output_required": true,
@@ -3904,7 +3904,7 @@
         {
           "disabled": false,
           "document": "目标规则属性列表",
-          "example": "[{\"Port\": 80, \"Weight\": 10}]}]",
+          "example": "[{\"Port\": 80, \"Weight\": 10}]",
           "member": "TargetAttribute",
           "name": "TargetAttributes",
           "output_required": true,
@@ -4637,7 +4637,7 @@
         {
           "disabled": false,
           "document": "实例的市场相关选项，如竞价实例相关参数，若指定实例的付费模式为竞价付费则该参数必传。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"SpotOptions\": {\"SpotInstanceType\": \"one-time\", \"MaxPrice\": 1000}",
+          "example": "{\"SpotOptions\": {\"SpotInstanceType\": \"one-time\", \"MaxPrice\": 1000}, \"MarketType\": \"spot\"}",
           "member": "InstanceMarketOptionsRequest",
           "name": "InstanceMarketOptions",
           "output_required": true,
@@ -6138,7 +6138,7 @@
         {
           "disabled": false,
           "document": "定时任务的重复方式。为标准 Cron 格式<br>此参数与`EndTime`需要同时指定。",
-          "example": "无",
+          "example": "0 18 * * 1,2,3,4,5",
           "member": "string",
           "name": "Recurrence",
           "required": false,

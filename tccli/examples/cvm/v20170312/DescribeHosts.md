@@ -20,27 +20,33 @@ Output:
         "HostSet": [
             {
                 "Placement": {
-                    "Zone": "ap-guangzhou-2",
+                    "Zone": "ap-guangzhou-5",
                     "ProjectId": 0
                 },
-                "HostId": "host-ey16rkyg",
-                "HostType": "HS1",
-                "HostName": "bibibibib-111",
+                "HostId": "host-8th3ybbw",
+                "HostType": "HM50",
+                "HostName": "myHost",
                 "CageId": "",
                 "HostChargeType": "PREPAID",
                 "RenewFlag": "NOTIFY_AND_AUTO_RENEW",
-                "CreatedTime": "2018-01-04T09:45:39Z",
-                "ExpiredTime": "2025-05-04T09:45:42Z",
-                "InstanceIds": [],
+                "CreatedTime": "2024-09-30T03:17:49Z",
+                "ExpiredTime": "2024-11-30T03:17:51Z",
+                "InstanceIds": [
+                    "ins-flx4u4ck",
+                    "ins-p5s3wcq2"
+                ],
                 "HostState": "RUNNING",
+                "Tags": [],
                 "HostResource": {
-                    "CpuTotal": 24,
-                    "CpuAvailable": 24,
-                    "MemTotal": 56.0,
-                    "MemAvailable": 56.0,
-                    "DiskTotal": 1200,
-                    "DiskAvailable": 1200,
-                    "DiskType": "LOCAL_BASIC"
+                    "CpuTotal": 336,
+                    "CpuAvailable": 18,
+                    "MemTotal": 700,
+                    "MemAvailable": 40,
+                    "DiskTotal": 0,
+                    "DiskAvailable": 0,
+                    "DiskType": "",
+                    "GpuTotal": 0,
+                    "GpuAvailable": 0
                 }
             }
         ],

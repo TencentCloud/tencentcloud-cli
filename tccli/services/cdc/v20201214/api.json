@@ -1071,73 +1071,73 @@
         },
         {
           "disabled": false,
-          "document": "验收状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "验收状态",
           "example": "DELIVERING",
           "member": "string",
           "name": "CheckStatus",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "交付预期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "交付预期时间",
           "example": "2024-01-01 12:00:00",
           "member": "string",
           "name": "DeliverExpectTime",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "交付实际完成时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "交付实际完成时间",
           "example": "2024-01-01 12:00:00",
           "member": "string",
           "name": "DeliverFinishTime",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "验收预期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "验收预期时间",
           "example": "2024-01-01 12:00:00",
           "member": "string",
           "name": "CheckExpectTime",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "验收实际完成时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "验收实际完成时间",
           "example": "2024-01-01 12:00:00",
           "member": "string",
           "name": "CheckFinishTime",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "订单SLA\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "订单SLA",
           "example": "null",
           "member": "string",
           "name": "OrderSLA",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "订单支付计划\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "订单支付计划",
           "example": "null",
           "member": "string",
           "name": "OrderPayPlan",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1598,23 +1598,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "云硬盘仓库信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "云硬盘仓库信息",
           "example": "[       {         \"Await\": {           \"Timestamps\": [],           \"Values\": []         },         \"CreateTime\": \"2022-12-09 15:20:09\",         \"ReadIO\": {           \"Timestamps\": [],           \"Values\": []         },         \"ReadTraffic\": {           \"Timestamps\": [],           \"Values\": []         },         \"SetId\": \"set-mm4hzptu\",         \"SetName\": \"HCBS_GZCDC_Z133_CDCCBS_Y0SH1125G_D0003\",         \"SetSize\": 33.4,         \"SetStatus\": \"RUNNING\",         \"SetType\": \"ssd\",         \"Util\": {           \"Timestamps\": [],           \"Values\": []         },         \"WriteIO\": {           \"Timestamps\": [],           \"Values\": []         },         \"WriteTraffic\": {           \"Timestamps\": [],           \"Values\": []         }       }     ]",
           "member": "SetInfo",
           "name": "SetList",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "总数",
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -2018,33 +2018,33 @@
         },
         {
           "disabled": false,
-          "document": "宿主机资源概览信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "宿主机资源概览信息",
           "example": "[       {         \"CpuAvailable\": 646,         \"CpuTotal\": 1008,         \"HostTypeFamily\": \"标准型S5\",         \"MemAvailable\": 54,         \"MemTotal\": 960       },       {         \"CpuAvailable\": 0,         \"CpuTotal\": 384,         \"HostTypeFamily\": \"大数据型BMDK1\",         \"MemAvailable\": 0,         \"MemTotal\": 1536       },       {         \"CpuAvailable\": 144,         \"CpuTotal\": 240,         \"HostTypeFamily\": \"标准型SK1\",         \"MemAvailable\": 672,         \"MemTotal\": 864       },       {         \"CpuAvailable\": 208,         \"CpuTotal\": 540,         \"HostTypeFamily\": \"标准型SA2\",         \"MemAvailable\": 76,         \"MemTotal\": 896       },       {         \"CpuAvailable\": 220,         \"CpuTotal\": 464,         \"HostTypeFamily\": \"标准型SH2\",         \"MemAvailable\": 190,         \"MemTotal\": 884       },       {         \"CpuAvailable\": 102,         \"CpuTotal\": 512,         \"HostTypeFamily\": \"标准型S6\",         \"MemAvailable\": 868,         \"MemTotal\": 1880       }     ]",
           "member": "HostDetailInfo",
           "name": "HostDetailInfo",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "热备宿主机数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "热备宿主机数量",
           "example": "1",
           "member": "uint64",
           "name": "HostStandbyCount",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "普通宿主机数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "普通宿主机数量",
           "example": "1",
           "member": "uint64",
           "name": "HostNormalCount",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -2429,23 +2429,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "时间戳",
           "example": "[0]",
           "member": "float",
           "name": "Timestamps",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "对应的具体值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "对应的具体值",
           "example": "[0]",
           "member": "float",
           "name": "Values",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2455,53 +2455,53 @@
       "members": [
         {
           "disabled": false,
-          "document": "类型族\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "类型族",
           "example": "标准型S5",
           "member": "string",
           "name": "HostTypeFamily",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "总CPU\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "总CPU",
           "example": "64",
           "member": "float",
           "name": "CpuTotal",
           "output_required": false,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "可用CPU\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "可用CPU",
           "example": "64",
           "member": "float",
           "name": "CpuAvailable",
           "output_required": false,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "总内存\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "总内存",
           "example": "320",
           "member": "float",
           "name": "MemTotal",
           "output_required": false,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "可用内存\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "可用内存",
           "example": "320",
           "member": "float",
           "name": "MemAvailable",
           "output_required": false,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2621,23 +2621,23 @@
         },
         {
           "disabled": false,
-          "document": "cpu初始数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "cpu初始数",
           "example": "32",
           "member": "uint64",
           "name": "CpuOrigin",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "云服务类型标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "云服务类型标签",
           "example": "STANDBY",
           "member": "string",
           "name": "ServiceTag",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2697,73 +2697,73 @@
         },
         {
           "disabled": false,
-          "document": "平均cpu负载百分比\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "平均cpu负载百分比",
           "example": "10",
           "member": "float",
           "name": "CpuAverage",
           "output_required": false,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "平均内存使用率百分比\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "平均内存使用率百分比",
           "example": "10",
           "member": "float",
           "name": "MemAverage",
           "output_required": false,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "平均网络流量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "平均网络流量",
           "example": "10",
           "member": "float",
           "name": "NetAverage",
           "output_required": false,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "cpu详细监控数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "cpu详细监控数据",
           "example": "{\"Timestamps\": [1693274400],\"Values\": [0]}",
           "member": "DetailData",
           "name": "CpuDetailData",
           "output_required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "内存详细数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "内存详细数据",
           "example": "{\"Timestamps\": [1693274400],\"Values\": [0]}",
           "member": "DetailData",
           "name": "MemDetailData",
           "output_required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "网络速率详细数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "网络速率详细数据",
           "example": "{\"Timestamps\": [1693274400],\"Values\": [0]}",
           "member": "DetailData",
           "name": "NetRateDetailData",
           "output_required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "网速包详细数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "网速包详细数据",
           "example": "{\"Timestamps\": [1693274400],\"Values\": [0]}",
           "member": "DetailData",
           "name": "NetPacketDetailData",
           "output_required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
