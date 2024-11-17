@@ -4750,7 +4750,7 @@
         {
           "disabled": false,
           "document": "EIP名称，用于申请EIP时用户自定义该EIP的个性化名称，默认值：未命名",
-          "example": "test",
+          "example": "demo",
           "member": "string",
           "name": "AddressName",
           "required": false,
@@ -5419,7 +5419,7 @@
         {
           "disabled": false,
           "document": "指定的`IPv6`地址列表，单次最多指定10个。与入参`Ipv6AddressCount`合并计算配额。与Ipv6AddressCount必填一个。",
-          "example": "无",
+          "example": "[{\"3402:4e00:20:1202:0:8d05:c272:f514\"}]",
           "member": "Ipv6Address",
           "name": "Ipv6Addresses",
           "required": false,
@@ -5437,7 +5437,7 @@
         {
           "disabled": false,
           "document": "用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。",
-          "example": "无",
+          "example": "d7df28fd-dcba-4dbb-82bc-bce3bf4d3562",
           "member": "string",
           "name": "ClientToken",
           "required": false,
@@ -5446,7 +5446,7 @@
         {
           "disabled": false,
           "document": "是否跨租户创建网卡。默认为false。",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "IsCrossTenant",
           "required": false,
@@ -5455,7 +5455,7 @@
         {
           "disabled": false,
           "document": "VPC实例所属APPID。",
-          "example": "无",
+          "example": "100002840660",
           "member": "string",
           "name": "VpcAppId",
           "required": false,
@@ -5464,7 +5464,7 @@
         {
           "disabled": false,
           "document": "VPC实例所属UIN。",
-          "example": "无",
+          "example": "100002840660",
           "member": "string",
           "name": "VpcUin",
           "required": false,
@@ -5473,7 +5473,7 @@
         {
           "disabled": false,
           "document": "VPC实例所属SubAccountUin。",
-          "example": "无",
+          "example": "100002840660",
           "member": "string",
           "name": "VpcSubAccountUin",
           "required": false,
@@ -5488,7 +5488,7 @@
         {
           "disabled": false,
           "document": "分配给弹性网卡的`IPv6`地址列表。",
-          "example": "无",
+          "example": "[{\"Address\": \"3402:4e00:20:1202:0:8d05:c272:f514\", \"AddressId\": \"\", \"Primary\": false, \"Description\": \"\", \"IsWanIpBlocked\": false, \"State\": \"PENDING\"}, {\"Address\": \"3402:4e00:20:1202:0:8d05:c272:f559\", \"AddressId\": \"\", \"Primary\": false, \"Description\": \"\", \"IsWanIpBlocked\": false, \"State\": \"PENDING\"}]",
           "member": "Ipv6Address",
           "name": "Ipv6AddressSet",
           "output_required": true,
@@ -5594,7 +5594,7 @@
         {
           "disabled": false,
           "document": "子网所在私有网络`ID`。形如：`vpc-f49l6u0z`。",
-          "example": "\"vpc-xxxx\"",
+          "example": "vpc-5k6fot41",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -5603,7 +5603,7 @@
         {
           "disabled": false,
           "document": "分配 `IPv6` 子网段列表。",
-          "example": "{ \"SubnetId\": \"subnet-xxxx\", \"Ipv6CidrBlock\": \"2402:4e00:1717:8700::/64\" }",
+          "example": "{ \"SubnetId\": \"subnet-5k6fot41\", \"Ipv6CidrBlock\": \"2402:4e00:1717:8700::/64\" }",
           "member": "Ipv6SubnetCidrBlock",
           "name": "Ipv6SubnetCidrBlocks",
           "required": true,
@@ -5612,7 +5612,7 @@
         {
           "disabled": false,
           "document": "用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。",
-          "example": "无",
+          "example": "d7df28fd-dcba-4dbb-82bc-bce3bf4d3562",
           "member": "string",
           "name": "ClientToken",
           "required": false,
@@ -6292,7 +6292,7 @@
         {
           "disabled": false,
           "document": "用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。\t",
-          "example": "无",
+          "example": "d7df28fd-dcba-4dbb-82bc-bce3bf4d3562",
           "member": "string",
           "name": "ClientToken",
           "required": false,
@@ -9464,7 +9464,7 @@
         {
           "disabled": false,
           "document": "弹性网卡描述，可任意命名，但不得超过60个字符。",
-          "example": "uiui",
+          "example": "demo",
           "member": "string",
           "name": "NetworkInterfaceDescription",
           "required": false,
@@ -9518,7 +9518,7 @@
         {
           "disabled": false,
           "document": "用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。\t",
-          "example": "无",
+          "example": "d7df28fd-dcba-4dbb-82bc-bce3bf4d3562",
           "member": "string",
           "name": "ClientToken",
           "required": false,
@@ -9645,7 +9645,7 @@
         {
           "disabled": false,
           "document": "带宽包名称。",
-          "example": "test",
+          "example": "demo",
           "member": "string",
           "name": "BandwidthPackageName",
           "required": false,
@@ -11437,7 +11437,7 @@
         {
           "disabled": false,
           "document": "`VPC`实例`ID`。形如：`vpc-12345678`。",
-          "example": "vpc-12345678",
+          "example": "vpc-5k6fot41",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -11446,7 +11446,7 @@
         {
           "disabled": false,
           "document": "子网实例ID。形如：subnet-12345678。",
-          "example": "subnet-12345678",
+          "example": "subnet-kgpu7qt2",
           "member": "string",
           "name": "SubnetId",
           "required": true,
@@ -11455,7 +11455,7 @@
         {
           "disabled": false,
           "document": "网络探测名称，最大长度不能超过60个字节。",
-          "example": "test",
+          "example": "demo",
           "member": "string",
           "name": "NetDetectName",
           "required": true,
@@ -11464,7 +11464,7 @@
         {
           "disabled": false,
           "document": "探测目的IPv4地址数组。最多两个。",
-          "example": "[\"10.0.0.2\\r\\n\",\"10.0.0.3\\r\\n\"]",
+          "example": "[\"10.0.0.2\",\"10.0.0.3\"]",
           "member": "string",
           "name": "DetectDestinationIp",
           "required": true,
@@ -11491,11 +11491,20 @@
         {
           "disabled": false,
           "document": "网络探测描述。",
-          "example": "test",
+          "example": "demo",
           "member": "string",
           "name": "NetDetectDescription",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指定绑定的标签列表，例如：[{\"Key\": \"city\", \"Value\": \"shanghai\"}]。",
+          "example": "[]",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -11509,6 +11518,7 @@
           "example": "无",
           "member": "NetDetect",
           "name": "NetDetect",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -18124,6 +18134,7 @@
           "example": "无",
           "member": "CcnRouteTableInputPolicys",
           "name": "PolicySet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -18133,6 +18144,7 @@
           "example": "无",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -21650,7 +21662,7 @@
         {
           "disabled": false,
           "document": "标识 IPV6 的唯一 ID 列表。IPV6 唯一 ID 形如：`eip-11112222`。参数不支持同时指定`Ip6AddressIds`和`Filters`。",
-          "example": "无",
+          "example": "eip-ciel20fd",
           "member": "string",
           "name": "Ip6AddressIds",
           "required": false,
@@ -21668,7 +21680,7 @@
         {
           "disabled": false,
           "document": "偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/11646)中的相关小节。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -21677,7 +21689,7 @@
         {
           "disabled": false,
           "document": "返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/11646)中的相关小节。",
-          "example": "无",
+          "example": "20",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -21692,7 +21704,7 @@
         {
           "disabled": false,
           "document": "符合条件的 IPV6 数量。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "TotalCount",
           "output_required": true,
@@ -21724,7 +21736,7 @@
         {
           "disabled": false,
           "document": "待查询IPV6转换实例的唯一ID列表，形如ip6-xxxxxxxx",
-          "example": "无",
+          "example": "ip6-89defcp0",
           "member": "string",
           "name": "Ip6TranslatorIds",
           "required": false,
@@ -21742,6 +21754,7 @@
           "example": "无",
           "member": "Quota",
           "name": "QuotaSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -21760,7 +21773,7 @@
         {
           "disabled": false,
           "document": "IPV6转换实例唯一ID数组，形如ip6-xxxxxxxx",
-          "example": "无",
+          "example": "ip6-pfkw84ug",
           "member": "string",
           "name": "Ip6TranslatorIds",
           "required": false,
@@ -21768,7 +21781,7 @@
         },
         {
           "disabled": false,
-          "document": "每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。参数不支持同时指定`Ip6TranslatorIds`和`Filters`。详细的过滤条件如下：\n<li> ip6-translator-id - String - 是否必填：否 - （过滤条件）按照IPV6转换实例的唯一ID过滤,形如ip6-xxxxxxx。</li>\n<li> ip6-translator-vip6 - String - 是否必填：否 - （过滤条件）按照IPV6地址过滤。不支持模糊过滤。</li>\n<li> ip6-translator-name - String - 是否必填：否 - （过滤条件）按照IPV6转换实例名称过滤。不支持模糊过滤。</li>\n<li> ip6-translator-status - String - 是否必填：否 - （过滤条件）按照IPV6转换实例的状态过滤。状态取值范围为\"CREATING\",\"RUNNING\",\"DELETING\",\"MODIFYING\"",
+          "document": "每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。参数不支持同时指定`Ip6TranslatorIds`和`Filters`。详细的过滤条件如下：\n<li> ip6-translator-id - String - 是否必填：否 - （过滤条件）按照IPV6转换实例的唯一ID过滤,形如ip6-xxxxxxx。</li>\n<li> ip6-translator-vip6 - String - 是否必填：否 - （过滤条件）按照IPV6地址过滤。不支持模糊过滤。</li>\n<li> ip6-translator-name - String - 是否必填：否 - （过滤条件）按照IPV6转换实例名称过滤。不支持模糊过滤。</li>\n<li> ip6-translator-status - String - 是否必填：否 - （过滤条件）按照IPV6转换实例的状态过滤。状态取值范围为\"CREATING\",\"RUNNING\",\"DELETING\",\"MODIFYING\"。</li>",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -21778,7 +21791,7 @@
         {
           "disabled": false,
           "document": "偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/11646)中的相关小节。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -21787,7 +21800,7 @@
         {
           "disabled": false,
           "document": "返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/11646)中的相关小节。",
-          "example": "无",
+          "example": "20",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -21802,9 +21815,10 @@
         {
           "disabled": false,
           "document": "符合过滤条件的IPV6转换实例数量。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -21814,6 +21828,7 @@
           "example": "无",
           "member": "Ip6Translator",
           "name": "Ip6TranslatorSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -25945,7 +25960,7 @@
         {
           "disabled": false,
           "document": "共享流量包唯一ID",
-          "example": "无",
+          "example": "tfp-jodl89fe",
           "member": "string",
           "name": "TrafficPackageId",
           "required": true,
@@ -25963,7 +25978,7 @@
         {
           "disabled": false,
           "document": "排序条件。该参数仅支持根据抵扣量排序，传值为 deduction",
-          "example": "无",
+          "example": "deduction",
           "member": "string",
           "name": "OrderField",
           "required": false,
@@ -25972,7 +25987,7 @@
         {
           "disabled": false,
           "document": "排序类型，仅支持0和1，0-降序，1-升序。不传默认为0",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "OrderType",
           "required": false,
@@ -26023,7 +26038,7 @@
         {
           "disabled": false,
           "document": "符合查询条件的共享流量包用量明细的总数",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "TotalCount",
           "output_required": true,
@@ -26739,7 +26754,7 @@
         {
           "disabled": false,
           "document": "异步任务ID。TaskId和DealName必填一个参数",
-          "example": "无",
+          "example": "1684395",
           "member": "uint64",
           "name": "TaskId",
           "required": false,
@@ -26748,7 +26763,7 @@
         {
           "disabled": false,
           "document": "计费订单号。TaskId和DealName必填一个参数",
-          "example": "无",
+          "example": "20241112151073025647301",
           "member": "string",
           "name": "DealName",
           "required": false,
@@ -26763,18 +26778,20 @@
         {
           "disabled": false,
           "document": "任务ID",
-          "example": "无",
+          "example": "1684395",
           "member": "uint64",
           "name": "TaskId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "执行结果，包括\"SUCCESS\", \"FAILED\", \"RUNNING\"",
-          "example": "无",
+          "example": "SUCCESS",
           "member": "string",
           "name": "Result",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -36602,7 +36619,7 @@
         {
           "disabled": false,
           "document": "`IPv6`地址，形如：`3402:4e00:20:100:0:8cd9:2a67:71f3`",
-          "example": "无",
+          "example": "3402:4e00:20:1202::1",
           "member": "string",
           "name": "Address",
           "output_required": true,
@@ -36613,7 +36630,7 @@
         {
           "disabled": false,
           "document": "是否是主`IP`。",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "Primary",
           "output_required": true,
@@ -36624,7 +36641,7 @@
         {
           "disabled": false,
           "document": "`EIP`实例`ID`，形如：`eip-hxlqja90`。",
-          "example": "无",
+          "example": "eip-5k6fot41",
           "member": "string",
           "name": "AddressId",
           "output_required": true,
@@ -36635,7 +36652,7 @@
         {
           "disabled": false,
           "document": "描述信息。",
-          "example": "无",
+          "example": "demo",
           "member": "string",
           "name": "Description",
           "output_required": true,
@@ -36646,7 +36663,7 @@
         {
           "disabled": false,
           "document": "公网IP是否被封堵。",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "IsWanIpBlocked",
           "output_required": true,
@@ -36657,7 +36674,7 @@
         {
           "disabled": false,
           "document": "`IPv6`地址状态：\n<li>`PENDING`：生产中</li>\n<li>`MIGRATING`：迁移中</li>\n<li>`DELETING`：删除中</li>\n<li>`AVAILABLE`：可用的</li>",
-          "example": "无",
+          "example": "AVAILABLE",
           "member": "string",
           "name": "State",
           "output_required": true,
@@ -36668,7 +36685,7 @@
         {
           "disabled": false,
           "document": "如果 IPv6地址是 ULA 类型，绑定的公网IP地址。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "3402:4e00:20:1202::2",
           "member": "string",
           "name": "PublicIpAddress",
           "output_required": false,
@@ -36679,7 +36696,7 @@
         {
           "disabled": false,
           "document": "`IPv6`地址的类型: `GUA`, `OTHER`, `ULA`\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "ULA",
           "member": "string",
           "name": "AddressType",
           "output_required": false,
@@ -36696,9 +36713,10 @@
         {
           "disabled": false,
           "document": "子网实例`ID`。形如：`subnet-pxir56ns`。",
-          "example": "无",
+          "example": "subnet-kgpu7qt2",
           "member": "string",
           "name": "SubnetId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -36706,9 +36724,10 @@
         {
           "disabled": false,
           "document": "`IPv6`子网段。形如：`3402:4e00:20:1001::/64`",
-          "example": "无",
+          "example": "3402:4e00:20:1202::/64",
           "member": "string",
           "name": "Ipv6CidrBlock",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -38449,7 +38468,7 @@
         {
           "disabled": false,
           "document": "IPV6转换实例唯一ID，形如ip6-xxxxxxxxx",
-          "example": "ip6-12345678",
+          "example": "ip6-kidc87ap",
           "member": "string",
           "name": "Ip6TranslatorId",
           "required": true,
@@ -38458,7 +38477,7 @@
         {
           "disabled": false,
           "document": "IPV6转换实例修改名称",
-          "example": "test",
+          "example": "demo",
           "member": "string",
           "name": "Ip6TranslatorName",
           "required": false,
@@ -41323,7 +41342,7 @@
         {
           "disabled": false,
           "document": "`VPC`实例`ID`。形如：`vpc-12345678`",
-          "example": "无",
+          "example": "vpc-5k6fot41",
           "member": "string",
           "name": "VpcId",
           "output_required": true,
@@ -41333,7 +41352,7 @@
         {
           "disabled": false,
           "document": "`VPC`实例名称。",
-          "example": "无",
+          "example": "demo",
           "member": "string",
           "name": "VpcName",
           "output_required": true,
@@ -41343,7 +41362,7 @@
         {
           "disabled": false,
           "document": "子网实例ID。形如：subnet-12345678。",
-          "example": "无",
+          "example": "subnet-kgpu7qt2",
           "member": "string",
           "name": "SubnetId",
           "output_required": true,
@@ -41353,7 +41372,7 @@
         {
           "disabled": false,
           "document": "子网实例名称。",
-          "example": "无",
+          "example": "demo",
           "member": "string",
           "name": "SubnetName",
           "output_required": true,
@@ -41363,7 +41382,7 @@
         {
           "disabled": false,
           "document": "网络探测实例ID。形如：netd-12345678。",
-          "example": "无",
+          "example": "netd-csnmo39l",
           "member": "string",
           "name": "NetDetectId",
           "output_required": true,
@@ -41373,7 +41392,7 @@
         {
           "disabled": false,
           "document": "网络探测名称，最大长度不能超过60个字节。",
-          "example": "无",
+          "example": "demo",
           "member": "string",
           "name": "NetDetectName",
           "output_required": true,
@@ -41383,7 +41402,7 @@
         {
           "disabled": false,
           "document": "探测目的IPv4地址数组，最多两个。",
-          "example": "无",
+          "example": "[\"10.0.0.10\"]",
           "member": "string",
           "name": "DetectDestinationIp",
           "output_required": true,
@@ -41393,7 +41412,7 @@
         {
           "disabled": false,
           "document": "系统自动分配的探测源IPv4数组。长度为2。",
-          "example": "无",
+          "example": "[\"10.0.0.12\", \"10.0.0.13\"]",
           "member": "string",
           "name": "DetectSourceIp",
           "output_required": true,
@@ -41403,7 +41422,7 @@
         {
           "disabled": false,
           "document": "下一跳类型，目前我们支持的类型有：\nVPN：VPN网关；\nDIRECTCONNECT：专线网关；\nPEERCONNECTION：对等连接；\nNAT：NAT网关；\nNORMAL_CVM：普通云服务器；\nCCN：云联网网关；\nNONEXTHOP：无下一跳；",
-          "example": "无",
+          "example": "NORMAL_CVM",
           "member": "string",
           "name": "NextHopType",
           "output_required": true,
@@ -41413,7 +41432,7 @@
         {
           "disabled": false,
           "document": "下一跳目的网关，取值与“下一跳类型”相关：\n下一跳类型为VPN，取值VPN网关ID，形如：vpngw-12345678；\n下一跳类型为DIRECTCONNECT，取值专线网关ID，形如：dcg-12345678；\n下一跳类型为PEERCONNECTION，取值对等连接ID，形如：pcx-12345678；\n下一跳类型为NAT，取值Nat网关，形如：nat-12345678；\n下一跳类型为NORMAL_CVM，取值云服务器IPv4地址，形如：10.0.0.12；\n下一跳类型为CCN，取值云联网ID，形如：ccn-12345678；\n下一跳类型为NONEXTHOP，指定网络探测为无下一跳的网络探测，添加和修改时，不需要指定值，查询时值为空字符串；",
-          "example": "无",
+          "example": "10.0.0.4",
           "member": "string",
           "name": "NextHopDestination",
           "output_required": true,
@@ -41423,7 +41442,7 @@
         {
           "disabled": false,
           "document": "下一跳网关名称。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "demo",
           "member": "string",
           "name": "NextHopName",
           "output_required": true,
@@ -41433,7 +41452,7 @@
         {
           "disabled": false,
           "document": "网络探测描述。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "demo",
           "member": "string",
           "name": "NetDetectDescription",
           "output_required": true,
@@ -41443,7 +41462,7 @@
         {
           "disabled": false,
           "document": "创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2019-09-11 10:00:00",
           "member": "datetime",
           "name": "CreateTime",
           "output_required": true,
@@ -41453,7 +41472,7 @@
         {
           "disabled": false,
           "document": "NFV网络探测状态。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "RUNNING",
           "member": "string",
           "name": "Status",
           "output_required": true,
@@ -41463,7 +41482,7 @@
         {
           "disabled": false,
           "document": "标签键值对。\t\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[]",
           "member": "Tag",
           "name": "TagSet",
           "output_required": false,
@@ -43029,7 +43048,7 @@
         {
           "disabled": false,
           "document": "专线网关唯一`ID`\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "['dcg-asdf891z']",
+          "example": "[\"dcg-asdf891z\"]",
           "member": "string",
           "name": "DirectConnectGatewayIds",
           "output_required": true,
@@ -43611,9 +43630,10 @@
         {
           "disabled": false,
           "document": "异步任务TaskId。可以使用[DescribeTaskResult](https://cloud.tencent.com/document/api/215/36271)接口查询任务状态。",
-          "example": "123",
+          "example": "384569",
           "member": "string",
           "name": "TaskId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

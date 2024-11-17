@@ -25,7 +25,7 @@ Output:
                 "EntityId": "work-1",
                 "PicName": "work-1-1",
                 "Score": 100,
-                "Tags": "{}"
+                "Tags": "{\"my_tag\": \"1\"}"
             }
         ],
         "Object": {

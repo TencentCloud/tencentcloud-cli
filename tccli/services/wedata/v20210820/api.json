@@ -45328,8 +45328,8 @@
           "document": "数语的ip",
           "example": "140.xx.xx.xx",
           "member": "string",
-          "name": "Vip",
-          "required": true,
+          "name": "Ip",
+          "required": false,
           "type": "string"
         },
         {
@@ -45337,8 +45337,8 @@
           "document": "数语的端口",
           "example": "18091",
           "member": "uint64",
-          "name": "Vport",
-          "required": true,
+          "name": "Port",
+          "required": false,
           "type": "int"
         },
         {

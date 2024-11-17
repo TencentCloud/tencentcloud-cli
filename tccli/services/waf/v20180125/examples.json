@@ -78,6 +78,14 @@
         "title": "添加SaaS型WAF防护域名"
       }
     ],
+    "BatchOperateUserSignatureRules": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchOperateUserSignatureRules\n<公共请求参数>\n\n{\n    \"Domain\": \"test.waf.com\",\n    \"Status\": \"1\",\n    \"RuleIds\": [\n        \"10000006\",\n        \"10000009\",\n        \"10000011\",\n        \"10000030\"\n    ],\n    \"Reason\": 0,\n    \"SelectedAll\": true,\n    \"Filters\": [\n        {\n            \"ExactMatch\": true,\n            \"Name\": \"MainClassID\",\n            \"Values\": [\n                \"010000000\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"CommonRsp\": {\n            \"Code\": 0,\n            \"Msg\": \"Success\"\n        },\n        \"RequestId\": \"546b2091-1a59-4bd9-818d-47ab565102d9\"\n    }\n}",
+        "title": "批量操作tiga子规则"
+      }
+    ],
     "CreateAccessExport": [
       {
         "document": "",
@@ -776,12 +784,28 @@
         "title": "查询示例"
       }
     ],
+    "DescribeUserSignatureClass": [
+      {
+        "document": "查询Tiga引擎规则类型及状态",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserSignatureClass\n<公共请求参数>\n\n{\n    \"Domain\": \"www.test.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"RuleTypeList\": [\n            {\n                \"TypeID\": \"10000000\",\n                \"Name\": \"rulename\",\n                \"Desc\": \"description\",\n                \"RuleTypeStatus\": 0,\n                \"ActiveRuleCount\": 10,\n                \"TotalRuleCount\": 12\n            }\n        ],\n        \"RequestId\": \"104cf2f9-c733-4a18-8905-372553b6ed80\"\n    }\n}",
+        "title": "查询Tiga引擎规则类型及状态"
+      }
+    ],
     "DescribeUserSignatureRule": [
       {
         "document": "查询示例",
         "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserSignatureRule\n<公共请求参数>\n\n{\n    \"Domain\": \"qcloudwaf.com\",\n    \"Offset\": 1,\n    \"Limit\": 20,\n    \"Order\": \"asc\",\n    \"By\": \"signature_id\",\n    \"Filters\": [\n        {\n            \"Name\": \"MainClassID\",\n            \"Values\": [\n                \"010000000\"\n            ],\n            \"ExactMatch\": false\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"Rules\": [\n            {\n                \"ID\": \"0100000\",\n                \"Status\": 0,\n                \"MainClassID\": \"02000000\",\n                \"SubClassID\": \"03000000\",\n                \"CveID\": \"cve-11111\",\n                \"CreateTime\": \"2020-09-22T00:00:00+00:00\",\n                \"ModifyTime\": \"2020-09-22T00:00:00+00:00\",\n                \"MainClassName\": \"xss\",\n                \"SubClassName\": \"xss-1\",\n                \"Description\": \"xss\",\n                \"Reason\": 0,\n                \"RiskLevel\": 0\n            }\n        ],\n        \"RequestId\": \"xxx-iiiiii\"\n    }\n}",
         "title": "查询示例"
+      }
+    ],
+    "DescribeUserSignatureRuleV2": [
+      {
+        "document": "获取用户特征规则列表",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserSignatureRuleV2\n<公共请求参数>\n\n{\n    \"Domain\": \"abc\",\n    \"Offset\": 1,\n    \"Limit\": 1,\n    \"By\": \"abc\",\n    \"Order\": \"abc\",\n    \"Filters\": [\n        {\n            \"Name\": \"abc\",\n            \"Values\": [\n                \"abc\"\n            ],\n            \"ExactMatch\": true\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"Rules\": [\n            {\n                \"ID\": \"0100000\",\n                \"Status\": 0,\n                \"MainClassID\": \"02000000\",\n                \"SubClassID\": \"02200000\",\n                \"CveID\": \"cve-111111\",\n                \"CreateTime\": \"2020-09-22T00:00:00+00:00\",\n                \"ModifyTime\": \"2020-09-22T00:00:00+00:00\",\n                \"MainClassName\": \"xss\",\n                \"SubClassName\": \"xss-1\",\n                \"Description\": \"\",\n                \"Reason\": 0,\n                \"RiskLevel\": 1\n            }\n        ],\n        \"RequestId\": \"xxxx-aaaa-ddd\"\n    }\n}",
+        "title": "获取用户特征规则列表"
       }
     ],
     "DescribeVipInfo": [

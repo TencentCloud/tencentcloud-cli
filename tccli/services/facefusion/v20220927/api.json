@@ -211,7 +211,7 @@
         {
           "disabled": false,
           "document": "活动 ID，请在<a href=\"https://console.cloud.tencent.com/facefusion\" target=\"_blank\">人脸融合控制台</a>查看。",
-          "example": "300029",
+          "example": "at_1603326187690926080",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -220,7 +220,7 @@
         {
           "disabled": false,
           "document": "素材 ID，请在<a href=\"https://console.cloud.tencent.com/facefusion\" target=\"_blank\">人脸融合控制台</a>查看。",
-          "example": "qc_300029_453345_1",
+          "example": "mt_1603586676924403712_1",
           "member": "string",
           "name": "ModelId",
           "required": true,
@@ -238,7 +238,7 @@
         {
           "disabled": false,
           "document": "用户人脸图片、素材模板图的人脸位置信息。不能超过6个。",
-          "example": "[]",
+          "example": "[{\"Url\":\"https://liudehua-9527.cos.ap-guangzhou.myqcloud.com/image.jpeg\"}]",
           "member": "MergeInfo",
           "name": "MergeInfos",
           "required": true,
@@ -274,7 +274,7 @@
         {
           "disabled": false,
           "document": "标识内容设置。\n默认在融合结果图右下角添加“本图片为AI合成图片”字样，您可根据自身需要替换为其他的Logo图片。",
-          "example": "{}",
+          "example": "{\"LogoUrl\": \"https://cos.ap-guangzhou.myqcloud.com/logo.png\", \"LogoRect\": {\"X\": 10, \"Y\": 10, \"Width\": 20, \"Height\": 20}}",
           "member": "LogoParam",
           "name": "LogoParam",
           "required": false,
@@ -283,7 +283,7 @@
         {
           "disabled": false,
           "document": "融合参数。",
-          "example": "无",
+          "example": "{\"ImageCodecParam\":{\"MetaData\": {\"MetaKey\":\"aigc\",\"MetaValue\":\"1\"}}}",
           "member": "FuseParam",
           "name": "FuseParam",
           "required": false,
@@ -298,7 +298,7 @@
         {
           "disabled": false,
           "document": "RspImgType 为 url 时，返回结果的 url（有效期7天）， RspImgType 为 base64 时返回 base64 数据。",
-          "example": "http://cloud.com/result.png",
+          "example": "https://liudehua-9527.cos.ap-guangzhou.myqcloud.com/result.jpeg",
           "member": "string",
           "name": "FusedImage",
           "output_required": true,

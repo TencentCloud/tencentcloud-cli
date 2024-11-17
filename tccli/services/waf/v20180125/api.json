@@ -63,6 +63,13 @@
       "output": "AddSpartaProtectionResponse",
       "status": "online"
     },
+    "BatchOperateUserSignatureRules": {
+      "document": "批量操作tiga子规则",
+      "input": "BatchOperateUserSignatureRulesRequest",
+      "name": "批量操作Tiga规则",
+      "output": "BatchOperateUserSignatureRulesResponse",
+      "status": "online"
+    },
     "CreateAccessExport": {
       "document": "本接口用于创建访问日志导出",
       "input": "CreateAccessExportRequest",
@@ -658,11 +665,25 @@
       "output": "DescribeUserLevelResponse",
       "status": "online"
     },
+    "DescribeUserSignatureClass": {
+      "document": "查询Tiga引擎规则类型及状态",
+      "input": "DescribeUserSignatureClassRequest",
+      "name": "查询Tiga引擎规则类型及状态",
+      "output": "DescribeUserSignatureClassResponse",
+      "status": "online"
+    },
     "DescribeUserSignatureRule": {
       "document": "获取用户特征规则列表",
       "input": "DescribeUserSignatureRuleRequest",
       "name": "获取用户特征规则列表",
       "output": "DescribeUserSignatureRuleResponse",
+      "status": "online"
+    },
+    "DescribeUserSignatureRuleV2": {
+      "document": "获取用户特征规则列表",
+      "input": "DescribeUserSignatureRuleV2Request",
+      "name": "获取用户特征规则列表V2",
+      "output": "DescribeUserSignatureRuleV2Response",
       "status": "online"
     },
     "DescribeVipInfo": {
@@ -3500,6 +3521,88 @@
       ],
       "usage": "out"
     },
+    "BatchOperateUserSignatureRulesRequest": {
+      "document": "BatchOperateUserSignatureRules请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "testdomain.waf.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "0:关闭，1:开启，2:仅观察",
+          "example": "\"0\"",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "如果SelectedAll为true，则表示反选的规则，否则表示手动选择的规则ID",
+          "example": "[\"10000262\",\"10000261\"]",
+          "member": "string",
+          "name": "RuleIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "仅观察原因",
+          "example": "3",
+          "member": "int64",
+          "name": "Reason",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否全选",
+          "example": "true",
+          "member": "bool",
+          "name": "SelectedAll",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "过滤",
+          "example": "    {         \"Name\":\"MainClassID\",         \"Values\":[\"010000000\"],         \"ExactMatch\":true     }",
+          "member": "FiltersItemNew",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "BatchOperateUserSignatureRulesResponse": {
+      "document": "BatchOperateUserSignatureRules返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "操作结果",
+          "example": "  {Response: {RequestId: \"546b2091-1a59-4bd9-818d-47ab565102d9\"}}",
+          "member": "CommonRspData",
+          "name": "CommonRsp",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "BotPkg": {
       "document": "Bot资源信息",
       "members": [
@@ -4918,6 +5021,32 @@
           "example": "“1”",
           "member": "string",
           "name": "Code",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CommonRspData": {
+      "document": "通用返回",
+      "members": [
+        {
+          "disabled": false,
+          "document": "操作结果",
+          "example": "0",
+          "member": "int64",
+          "name": "Code",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "输出信息",
+          "example": "success",
+          "member": "string",
+          "name": "Msg",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -11936,6 +12065,53 @@
       ],
       "type": "object"
     },
+    "DescribeUserSignatureClassRequest": {
+      "document": "DescribeUserSignatureClass请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询域名",
+          "example": "www.test.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserSignatureClassResponse": {
+      "document": "DescribeUserSignatureClass返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则类型数量",
+          "example": "0",
+          "member": "int64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则类型列表及信息",
+          "example": "[{\"TypeID\": \"010000000\",\"Name\": \"rulename\",\"Desc\": \"description\",\"RuleTypeStatus\": 0,\"ActiveRuleCount\": 10,\"TotalRuleCount\": 12}]",
+          "member": "RuleType",
+          "name": "RuleTypeList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeUserSignatureRuleRequest": {
       "document": "DescribeUserSignatureRule请求参数结构体",
       "members": [
@@ -12018,6 +12194,98 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserSignatureRuleV2Request": {
+      "document": "DescribeUserSignatureRuleV2请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要查询的域名",
+          "example": "test.qcloudwaf.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页容量",
+          "example": "1",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段，支持 signature_id, modify_time",
+          "example": "signature_id",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序方式",
+          "example": "asc",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "筛选条件，支持 MainClassName，SubClassID ,CveID, Status, ID;  ID为规则id",
+          "example": "复杂结构",
+          "member": "FiltersItemNew",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserSignatureRuleV2Response": {
+      "document": "DescribeUserSignatureRuleV2返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "复杂结构",
+          "member": "UserSignatureRule",
+          "name": "Rules",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -20861,6 +21129,78 @@
         }
       ],
       "usage": "out"
+    },
+    "RuleType": {
+      "document": "Tiga规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则ID",
+          "example": "10000001",
+          "member": "string",
+          "name": "TypeID",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则名称",
+          "example": "ruleName",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则类型描述\n",
+          "example": "ruleDescription",
+          "member": "string",
+          "name": "Desc",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则类型状态，即类型生效开关，0：关闭，1：开启",
+          "example": "0",
+          "member": "int64",
+          "name": "RuleTypeStatus",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "类型下生效的规则数量",
+          "example": "10",
+          "member": "int64",
+          "name": "ActiveRuleCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "类型下的规则总数量",
+          "example": "16",
+          "member": "int64",
+          "name": "TotalRuleCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "RuleUpdateLog": {
       "document": "tiga引擎规则更新动态日志",

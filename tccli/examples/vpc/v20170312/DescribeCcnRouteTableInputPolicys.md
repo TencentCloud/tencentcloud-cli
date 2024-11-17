@@ -35,7 +35,7 @@ Output:
                             }
                         ],
                         "Action": "accept",
-                        "Description": ""
+                        "Description": "input-policys"
                     }
                 ],
                 "PolicyVersion": 28,

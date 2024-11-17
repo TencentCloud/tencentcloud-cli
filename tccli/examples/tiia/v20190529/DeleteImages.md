@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tiia DeleteImages --cli-unfold-argument  \
-    --GroupId  \
+    --GroupId test_group \
     --EntityId 7263 \
     --PicName test_pic
 ```

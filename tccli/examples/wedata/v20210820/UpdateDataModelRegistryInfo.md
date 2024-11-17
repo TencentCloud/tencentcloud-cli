@@ -1,6 +1,6 @@
-**Example 1: 更新数语信息，入参传入可以直接访问的公网ip和端口**
+**Example 1: 更新数语信息，入参传入ip和端口**
 
-更新数语信息，入参传入可以直接访问的公网ip和端口
+更新数语信息，入参传入ip和端口
 
 Input: 
 
@@ -9,8 +9,8 @@ tccli wedata UpdateDataModelRegistryInfo --cli-unfold-argument  \
     --CloudappId cloudapp-x3hadra3 \
     --AppCamRole 4000000001321 \
     --AppCamRoleId 4000000001321 \
-    --Vip 10.2.3.4 \
-    --Vport 18091
+    --Ip 10.2.3.4 \
+    --Port 18091
 ```
 
 Output: 

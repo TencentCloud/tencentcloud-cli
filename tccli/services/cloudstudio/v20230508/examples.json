@@ -43,7 +43,7 @@
     "ModifyWorkspace": [
       {
         "document": "修改工作空间",
-        "input": "POST / HTTP/1.1\nHost: cloudstudio.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyWorkspaceAttributes\n<公共请求参数>\n\n{\n    \"SpaceKey\": \"ubbyfp\",\n    \"Name\": \"test\",\n    \"Description\": \"api-test-modify\",\n    \"Specs\": \"Calculation\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cloudstudio.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyWorkspaceAttributes\n<公共请求参数>\n\n{\n    \"SpaceKey\": \"ubbyfp\",\n    \"Name\": \"workspace-name\",\n    \"Description\": \"api-test-modify\",\n    \"Specs\": \"Calculation\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"437093fd-a231-4ec9-83f3-ae38ea917f8e\"\n    }\n}",
         "title": "修改工作空间"
       }

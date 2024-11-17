@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tiia UpdateImage --cli-unfold-argument  \
-    --GroupId  \
+    --GroupId my_group \
     --EntityId entity_297 \
     --PicName my_pic
 ```

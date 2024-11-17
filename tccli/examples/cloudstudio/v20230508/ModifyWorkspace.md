@@ -7,7 +7,7 @@ Input:
 ```
 tccli cloudstudio ModifyWorkspace --cli-unfold-argument  \
     --SpaceKey ubbyfp \
-    --Name test \
+    --Name workspace-name \
     --Description api-test-modify \
     --Specs Calculation
 ```

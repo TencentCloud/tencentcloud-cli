@@ -19491,6 +19491,7 @@
           "example": "xxx",
           "member": "string",
           "name": "Region",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -19501,6 +19502,7 @@
           "example": "xxx",
           "member": "string",
           "name": "InstanceId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -19511,6 +19513,7 @@
           "example": "xxx",
           "member": "string",
           "name": "ClusterId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -19521,6 +19524,7 @@
           "example": "xxx",
           "member": "string",
           "name": "SyncTime",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -19531,6 +19535,7 @@
           "example": "xxx",
           "member": "string",
           "name": "Version",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -19541,6 +19546,7 @@
           "example": "xxx",
           "member": "string",
           "name": "ClusterType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -19551,6 +19557,7 @@
           "example": "xxx",
           "member": "string",
           "name": "InstanceName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -19561,6 +19568,7 @@
           "example": "xxx",
           "member": "string",
           "name": "ClusterName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true

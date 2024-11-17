@@ -1,3 +1,115 @@
+# Release 3.0.1099.1
+
+## 前端性能监控(rum) 版本：2021-06-22
+
+### 第 35 次发布
+
+发布时间：2024-11-18 01:58:50
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeReleaseFileSign](http://document.tencentcloudapi.woa.com/document/product/1464/69216)
+
+	* 新增入参：ID
+
+
+
+
+## 资源编排 TIC(tic) 版本：2020-11-17
+
+### 第 2 次发布
+
+发布时间：2024-11-18 02:10:12
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* ApplyStack
+* CreateStack
+* CreateStackVersion
+* DeleteStack
+* DeleteStackVersion
+* DescribeStackEvent
+* DescribeStackEvents
+* DescribeStackVersions
+* DescribeStacks
+* DestroyStack
+* PlanStack
+* UpdateStack
+* UpdateStackVersion
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 171 次发布
+
+发布时间：2024-11-18 02:16:55
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateNetDetect](http://document.tencentcloudapi.woa.com/document/product/215/38699)
+
+	* 新增入参：Tags
+
+
+
+
+## Web 应用防火墙(waf) 版本：2018-01-25
+
+### 第 73 次发布
+
+发布时间：2024-11-18 02:21:30
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [BatchOperateUserSignatureRules](http://document.tencentcloudapi.woa.com/document/product/627/85232)
+* [DescribeUserSignatureClass](http://document.tencentcloudapi.woa.com/document/product/627/85231)
+* [DescribeUserSignatureRuleV2](http://document.tencentcloudapi.woa.com/document/product/627/85230)
+
+新增数据结构：
+
+* [CommonRspData](http://document.tencentcloudapi.woa.com/document/product/627/53609#CommonRspData)
+* [RuleType](http://document.tencentcloudapi.woa.com/document/product/627/53609#RuleType)
+
+
+
+## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
+
+### 第 72 次发布
+
+发布时间：2024-11-18 02:23:01
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [UpdateDataModelRegistryInfo](http://document.tencentcloudapi.woa.com/document/product/1607/85212)
+
+	* 新增入参：Ip, Port
+
+	* <font color="#dd0000">**删除入参**：</font>Vip, Vport
+
+
+
+
 # Release 3.0.1098.1
 
 ## 云顾问(advisor) 版本：2020-07-21

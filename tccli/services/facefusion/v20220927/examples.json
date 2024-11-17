@@ -11,7 +11,7 @@
     "FuseFace": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: facefusion.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: FuseFace\n<公共请求参数>\n\n{\n    \"LogoParam\": {\n        \"LogoRect\": {\n            \"Y\": 0,\n            \"X\": 0,\n            \"Height\": 0,\n            \"Width\": 0\n        },\n        \"LogoUrl\": \"test1.jpg\"\n    },\n    \"ProjectId\": \"at_1603326187690926080\",\n    \"LogoAdd\": 1,\n    \"RspImgType\": \"url\",\n    \"MergeInfos\": [\n        {\n            \"Url\": \"test.jpg\",\n            \"TemplateFaceID\": \"mt_1603586676924403712_1\"\n        }\n    ],\n    \"ModelId\": \"mt_1603586676924403712\"\n}",
+        "input": "POST / HTTP/1.1\nHost: facefusion.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: FuseFace\n<公共请求参数>\n\n{\n    \"LogoParam\": {\n        \"LogoRect\": {\n            \"Y\": 0,\n            \"X\": 0,\n            \"Height\": 0,\n            \"Width\": 0\n        },\n        \"LogoUrl\": \"test1.jpg\"\n    },\n    \"ProjectId\": \"at_1603326187690926080\",\n    \"LogoAdd\": 1,\n    \"RspImgType\": \"url\",\n    \"MergeInfos\": [\n        {\n            \"Url\": \"https://liudehua-9527.cos.ap-guangzhou.myqcloud.com/image.jpeg\"\n        }\n    ],\n    \"ModelId\": \"mt_1603586676924403712\"\n}",
         "output": "{\n    \"Response\": {\n        \"FusedImage\": \"result.jpg\",\n        \"RequestId\": \"1a2e88a4-3614-48a0-96b9-d09bf6de2fe4\"\n    }\n}",
         "title": "选脸融合"
       }

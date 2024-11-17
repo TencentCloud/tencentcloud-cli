@@ -641,7 +641,7 @@
         {
           "disabled": false,
           "document": "定期快照策略名称。",
-          "example": "test",
+          "example": "定期快照策略_1",
           "member": "string",
           "name": "AutoSnapshotPolicyName",
           "output_required": true,
@@ -691,7 +691,7 @@
         {
           "disabled": false,
           "document": "复制的目标账户ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "null",
+          "example": "100004375290",
           "member": "string",
           "name": "CopyToAccountUin",
           "output_required": true,
@@ -741,7 +741,7 @@
         {
           "disabled": false,
           "document": "该复制快照策略的源端账户ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "null",
+          "example": "100004375289",
           "member": "string",
           "name": "CopyFromAccountUin",
           "output_required": true,

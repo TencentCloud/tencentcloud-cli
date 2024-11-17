@@ -274,20 +274,20 @@
         {
           "disabled": false,
           "document": "属性",
-          "example": "\"\"",
+          "example": "灰色",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "属性详情",
-          "example": "\"\"",
+          "example": "颜色",
           "member": "string",
           "name": "Details",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -336,30 +336,30 @@
         {
           "disabled": false,
           "document": "属性值。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "无厨师服",
           "member": "string",
           "name": "Label",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "置信度，取值0-1之间。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0",
+          "example": "0.608731",
           "member": "float",
           "name": "Confidence",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "属性名称。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "厨师服识别",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -408,70 +408,70 @@
         {
           "disabled": false,
           "document": "车牌信息。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "浙G29999",
           "member": "string",
           "name": "Plate",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "车牌颜色。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "蓝色",
           "member": "string",
           "name": "Color",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "车牌类型，包含：0普通蓝牌，1双层黄牌，2单层黄牌，3新能源车牌，4使馆车牌，5领馆车牌，6澳门车牌，7香港车牌，8警用车牌，9教练车牌，10武警车牌，11军用车牌   -2遮挡污损模糊车牌/异常   其他无牌\n注意：\n此字段可能返回 null，表示取不到有效值。\n此字段结果遮挡污损模糊车牌/异常：包含PlateStatus参数的“遮挡污损模糊车牌”，针对车牌异常，建议参考此字段，更全面\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "普通蓝牌",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "车牌在图片中的坐标信息。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[{\"X\":452,\"Y\":227},{\"X\":452,\"Y\":190},{\"X\":507,\"Y\":190},{\"X\":507,\"Y\":227}]",
           "member": "Coord",
           "name": "PlateLocation",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "判断车牌是否遮挡：“遮挡污损模糊车牌”和\"正常车牌\"。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "正常车牌",
           "member": "string",
           "name": "PlateStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "车牌遮挡的置信度，0-100。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "99",
           "member": "int64",
           "name": "PlateStatusConfidence",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "车牌角度。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "13.560508",
           "member": "float",
           "name": "PlateAngle",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         }
@@ -484,130 +484,130 @@
         {
           "disabled": false,
           "document": "车系",
-          "example": "无",
+          "example": "奔驰GLC级",
           "member": "string",
           "name": "Serial",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "车辆品牌",
-          "example": "无",
+          "example": "奔驰",
           "member": "string",
           "name": "Brand",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "车辆类型",
-          "example": "无",
+          "example": "SUV",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "车辆颜色",
-          "example": "无",
+          "example": "绿",
           "member": "string",
           "name": "Color",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "车系置信度，0-100",
-          "example": "无",
+          "example": "68",
           "member": "int64",
           "name": "Confidence",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "年份，没识别出年份的时候返回0",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "Year",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "车辆在图片中的坐标信息",
-          "example": "无",
+          "example": "[{\"X\":87,\"Y\":291},{\"X\":87,\"Y\":1},{\"X\":540,\"Y\":1},{\"X\":540,\"Y\":291}]",
           "member": "Coord",
           "name": "CarLocation",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "车牌信息，仅车辆识别（增强版）支持\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\"Color\":\"蓝色\",\"Plate\":\"浙G29XY9\",\"PlateAngle\":13.560508,\"PlateLocation\":[{\"X\":452,\"Y\":227},{\"X\":452,\"Y\":190},{\"X\":507,\"Y\":190},{\"X\":507,\"Y\":227}],\"PlateStatus\":\"正常车牌\",\"PlateStatusConfidence\":99,\"Type\":\"普通蓝牌\"}",
           "member": "CarPlateContent",
           "name": "PlateContent",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "车牌信息置信度，0-100，仅车辆识别（增强版）支持\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0",
+          "example": "95",
           "member": "int64",
           "name": "PlateConfidence",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "车辆类型置信度，0-100，仅车辆识别（增强版）支持\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0",
+          "example": "68",
           "member": "int64",
           "name": "TypeConfidence",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "车辆颜色置信度，0-100，仅车辆识别（增强版）支持\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0",
+          "example": "99",
           "member": "int64",
           "name": "ColorConfidence",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "车辆朝向，仅车辆识别（增强版）支持\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "车头",
           "member": "string",
           "name": "Orientation",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "车辆朝向置信度，0-100，仅车辆识别（增强版）支持\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0",
+          "example": "90",
           "member": "int64",
           "name": "OrientationConfidence",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         }
@@ -620,10 +620,10 @@
         {
           "disabled": false,
           "document": "RGB颜色值（16进制），例如：291A18。",
-          "example": "\"\"",
+          "example": "4A3D46",
           "member": "string",
           "name": "Color",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -633,7 +633,7 @@
           "example": "23.1",
           "member": "float",
           "name": "Percentage",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -643,7 +643,7 @@
           "example": "蜜柚色",
           "member": "string",
           "name": "Label",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -656,20 +656,20 @@
         {
           "disabled": false,
           "document": "横坐标x",
-          "example": "",
+          "example": "231",
           "member": "int64",
           "name": "X",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "纵坐标y",
-          "example": "",
+          "example": "200",
           "member": "int64",
           "name": "Y",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -1544,7 +1544,7 @@
         {
           "disabled": false,
           "document": "图片 Base64 编码数据。\n与ImageUrl同时存在时优先使用ImageUrl字段。\n图片限制：\n• 图片格式：PNG、JPG、JPEG、BMP。 \n• 图片大小：经Base64编码后不超过4M。\n**<font color=#1E90FF>注意：图片需要Base64编码，并且要去掉编码头部。</font>**",
-          "example": "无",
+          "example": "/9j/4AAQSkZJRgABAQAAAQABAAD/4gIo...lftXF/DjFZNXoSP5V2U0HMt/1FQf/Z",
           "member": "string",
           "name": "ImageBase64",
           "required": false,
@@ -1983,50 +1983,50 @@
         {
           "disabled": false,
           "document": "图片名称。",
-          "example": "entityId",
+          "example": "work-1",
           "member": "string",
           "name": "EntityId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "用户自定义的内容。",
-          "example": "content",
+          "example": "备注",
           "member": "string",
           "name": "CustomContent",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "图片自定义标签，JSON格式。",
-          "example": "{}",
+          "example": "{\"my_tag\":\"test\"}",
           "member": "string",
           "name": "Tags",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "图片名称。",
-          "example": "name",
+          "example": "my_pic",
           "member": "string",
           "name": "PicName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "相似度。",
-          "example": "10",
+          "example": "90",
           "member": "int64",
           "name": "Score",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -2039,9 +2039,10 @@
         {
           "disabled": false,
           "document": "左上角横坐标。",
-          "example": "",
+          "example": "200",
           "member": "int64",
           "name": "X",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -2049,9 +2050,10 @@
         {
           "disabled": false,
           "document": "左上角纵坐标。",
-          "example": "",
+          "example": "200",
           "member": "int64",
           "name": "Y",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -2059,9 +2061,10 @@
         {
           "disabled": false,
           "document": "宽度。",
-          "example": "",
+          "example": "400",
           "member": "int64",
           "name": "Width",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -2069,9 +2072,10 @@
         {
           "disabled": false,
           "document": "高度。",
-          "example": "",
+          "example": "400",
           "member": "int64",
           "name": "Height",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -2085,10 +2089,10 @@
         {
           "disabled": false,
           "document": "标签内容。",
-          "example": "xxx",
+          "example": "文件封",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2098,7 +2102,7 @@
           "example": "99",
           "member": "float",
           "name": "Confidence",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         }
@@ -2203,70 +2207,70 @@
         {
           "disabled": false,
           "document": "图片中商品的三级分类识别结果，选取所有三级分类中的置信度最大者",
-          "example": "",
+          "example": "男士西服套装",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "三级商品分类对应的一级分类和二级分类，两级之间用“-”（中划线）隔开，例如商品名称是“硬盘”，那么Parents输出为“电脑、办公-电脑配件”",
-          "example": "",
+          "example": "服饰内衣-男装",
           "member": "string",
           "name": "Parents",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "算法对于Name的置信度，0-100之间，值越高，表示对于Name越确定",
-          "example": "",
+          "example": "80",
           "member": "int64",
           "name": "Confidence",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "商品坐标X轴的最小值",
-          "example": "",
+          "example": "336",
           "member": "int64",
           "name": "XMin",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "商品坐标Y轴的最小值",
-          "example": "",
+          "example": "191",
           "member": "int64",
           "name": "YMin",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "商品坐标X轴的最大值",
-          "example": "",
+          "example": "799",
           "member": "int64",
           "name": "XMax",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "商品坐标Y轴的最大值",
-          "example": "",
+          "example": "775",
           "member": "int64",
           "name": "YMax",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
