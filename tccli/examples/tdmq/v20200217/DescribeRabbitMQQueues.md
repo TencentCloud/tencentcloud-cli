@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tdmq DescribeRabbitMQQueues --cli-unfold-argument  \
-    --InstanceId amqp-test \
-    --VirtualHost test
+    --InstanceId amqp-jero744g \
+    --VirtualHost tdmq_data
 ```
 
 Output: 
@@ -17,7 +17,7 @@ Output:
         "RequestId": "a8f28d5e-a7e2-4b0b-afa0-2fba09c077a0",
         "QueueInfoList": [
             {
-                "QueueName": "queue.name",
+                "QueueName": "prod.queue",
                 "Remark": null,
                 "QueueType": "classic",
                 "ConsumerDetail": {

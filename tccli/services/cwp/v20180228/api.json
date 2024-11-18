@@ -1750,6 +1750,13 @@
       "output": "DescribeOverviewStatisticsResponse",
       "status": "online"
     },
+    "DescribePasswordCrackStatus": {
+      "document": "查询密码破解状态",
+      "input": "DescribePasswordCrackStatusRequest",
+      "name": "查询密码破解状态",
+      "output": "DescribePasswordCrackStatusResponse",
+      "status": "online"
+    },
     "DescribePrivilegeEventInfo": {
       "document": "本地提权信息详情",
       "input": "DescribePrivilegeEventInfoRequest",
@@ -29762,6 +29769,43 @@
           "name": "BaseLineNum",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePasswordCrackStatusRequest": {
+      "document": "DescribePasswordCrackStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "SHA256后的密码",
+          "example": "5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5",
+          "member": "string",
+          "name": "Password",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePasswordCrackStatusResponse": {
+      "document": "DescribePasswordCrackStatus返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "密码是否已被破解过",
+          "example": "true",
+          "member": "bool",
+          "name": "HasCracked",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": false
         },
         {

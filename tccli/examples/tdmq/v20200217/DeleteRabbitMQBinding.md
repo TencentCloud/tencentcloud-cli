@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tdmq DeleteRabbitMQBinding --cli-unfold-argument  \
-    --InstanceId amqp-test \
-    --VirtualHost test \
+    --InstanceId amqp-jero744g \
+    --VirtualHost tdmq_data \
     --BindingId 127441
 ```
 
@@ -16,8 +16,8 @@ Output:
 {
     "Response": {
         "RequestId": "a8f28d5e-a7e2-4b0b-afa0-2fba09c077a0",
-        "InstanceId": "amqp-test",
-        "VirtualHost": "test",
+        "InstanceId": "amqp-jero744g",
+        "VirtualHost": "tdmq_data",
         "BindingId": 127441
     }
 }

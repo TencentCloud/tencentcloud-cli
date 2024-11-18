@@ -223,8 +223,8 @@
     "QueryVoucherListByUin": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: intlpartnersmgt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryVoucherListByUin\n<公共请求参数>\n\n{\n    \"ClientUins\": [\n        1\n    ],\n    \"Status\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"ClientUin\": 0,\n                \"TotalCount\": 0,\n                \"Data\": [\n                    {\n                        \"VoucherId\": \"abc\",\n                        \"VoucherStatus\": \"abc\",\n                        \"TotalAmount\": 0,\n                        \"RemainAmount\": 0\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: intlpartnersmgt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryVoucherListByUin\n<公共请求参数>\n\n{\n    \"ClientUins\": [\n        800000190982\n    ],\n    \"Status\": \"Used\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"ClientUin\": 0,\n                \"TotalCount\": 0,\n                \"Data\": [\n                    {\n                        \"VoucherId\": \"TVSYNGAEJTSZX9EWXJ1DK9\",\n                        \"VoucherStatus\": \"Used\",\n                        \"TotalAmount\": 0,\n                        \"RemainAmount\": 0\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "根据客户uin查询代金券列表"
       }
     ],
@@ -232,7 +232,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: intlpartnersmgt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryVoucherPool\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"TotalQuota\": 0.0,\n        \"IssuedNum\": 0,\n        \"RemainingQuota\": 0.0,\n        \"RequestId\": \"xx\",\n        \"AccountType\": 0,\n        \"AgentName\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalQuota\": 0,\n        \"IssuedNum\": 0,\n        \"RemainingQuota\": 0,\n        \"RequestId\": \"11a37bf2-7d12-429f-8d25-c7df44dcc434\",\n        \"AccountType\": 0,\n        \"AgentName\": \"公司名称\"\n    }\n}",
         "title": "查询代金券额度池"
       }
     ],

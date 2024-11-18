@@ -1042,7 +1042,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "TWecall类型： 0-测试激活码； 1-家庭安防场景； 2-穿戴类场景； 3-生活娱乐场景； 4-对讲及其它场景",
+          "document": "TWecall类型：1-家庭安防场景； 2-穿戴类场景； 3-生活娱乐场景； 4-对讲及其它场景",
           "example": "1",
           "member": "int64",
           "name": "PkgType",
@@ -7500,7 +7500,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "模版ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "模板ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "12374tg",
           "member": "string",
           "name": "ModelId",
@@ -12313,7 +12313,7 @@
         },
         {
           "disabled": false,
-          "document": "加密类型。1表示证书认证，2表示秘钥认证，21表示TID认证-SE方式，22表示TID认证-软加固方式",
+          "document": "加密类型。1表示证书认证，2表示密钥认证，21表示TID认证-SE方式，22表示TID认证-软加固方式",
           "example": "0",
           "member": "string",
           "name": "EncryptionType",
@@ -14405,7 +14405,7 @@
         },
         {
           "disabled": false,
-          "document": "模版ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "模板ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "3rfv",
           "member": "string",
           "name": "ModelId",

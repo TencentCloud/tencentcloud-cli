@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli tione StopNotebook --cli-unfold-argument  \
-    --Id xx
+    --Id nb-1188415493581985152
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx"
+        "RequestId": "f7df11d5-58c2-4767-956d-aa7158aab668"
     }
 }
 ```

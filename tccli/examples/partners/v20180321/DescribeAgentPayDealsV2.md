@@ -58,7 +58,7 @@ Output:
                 "PayerMode": "1",
                 "GoodsName": "云硬盘CBS",
                 "SubGoodsName": "高性能云硬盘",
-                "ClientRemark": "test",
+                "ClientRemark": "客户备注",
                 "ClientType": "new",
                 "ProjectType": "platform",
                 "SalesUin": "0",

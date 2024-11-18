@@ -11,12 +11,12 @@ Output:
 ```
 {
     "Response": {
-        "TotalQuota": 0.0,
+        "TotalQuota": 0,
         "IssuedNum": 0,
-        "RemainingQuota": 0.0,
-        "RequestId": "xx",
+        "RemainingQuota": 0,
+        "RequestId": "11a37bf2-7d12-429f-8d25-c7df44dcc434",
         "AccountType": 0,
-        "AgentName": "xx"
+        "AgentName": "公司名称"
     }
 }
 ```

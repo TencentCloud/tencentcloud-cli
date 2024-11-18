@@ -2982,6 +2982,7 @@
           "example": "1",
           "member": "bool",
           "name": "Result",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },

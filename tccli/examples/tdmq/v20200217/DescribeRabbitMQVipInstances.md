@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tdmq DescribeRabbitMQVipInstances --cli-unfold-argument  \
-    --Filters.0.Name instanceName \
-    --Filters.0.Values test \
+    --Filters.0.Name instanceIds \
+    --Filters.0.Values amqp-jero744g \
     --Limit 1 \
     --Offset 0
 ```
@@ -24,7 +24,7 @@ Output:
                 "CreateTime": 1730294244007,
                 "ExceptionInformation": null,
                 "ExpireTime": 1732972644007,
-                "InstanceId": "amqp-test",
+                "InstanceId": "amqp-jero744g",
                 "InstanceName": "test1030",
                 "InstanceVersion": "3.11.8",
                 "MaxBandWidth": 45,
@@ -33,15 +33,15 @@ Output:
                 "NodeCount": 3,
                 "PayMode": 1,
                 "PublicAccessEndpoint": "amqp://106.55.176.111:5672",
-                "Remark": "",
+                "Remark": "生产使用集群",
                 "SpecName": "rabbit-vip-basic-5",
                 "Status": 1,
                 "Vpcs": [
                     {
-                        "SubnetId": "subnet-test",
+                        "SubnetId": "subnet-67y9wil4",
                         "VpcDataStreamEndpointStatus": "ON",
                         "VpcEndpoint": "amqp://10.0.4.10:5672",
-                        "VpcId": "vpc-test"
+                        "VpcId": "vpc-5ghsr4p9"
                     }
                 ]
             }

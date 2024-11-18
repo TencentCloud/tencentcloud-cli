@@ -47,7 +47,8 @@ Output:
                 ],
                 "CreateTime": "0000-00-00 00:00:00",
                 "ServiceType": "CLB",
-                "Region": "ap-guangzhou"
+                "Region": "ap-guangzhou",
+                "CdcId": "cdc-4d8a10a1"
             }
         ],
         "TotalCount": 1,

@@ -22,14 +22,14 @@ Output:
                 "CommandId": "cmd-dvstpcyy",
                 "CommandName": "run-command",
                 "Description": "whoami",
-                "FormattedDescription": "{}",
+                "FormattedDescription": "{\"scenes\": [\"sc-e22tn6f2\",\"sc-gs09bfr0\"]}",
                 "CreatedBy": "USER",
                 "Content": "d2hvYW1p",
                 "CommandType": "SHELL",
                 "WorkingDirectory": "/root/",
                 "Timeout": 60,
                 "EnableParameter": false,
-                "DefaultParameters": "{}",
+                "DefaultParameters": "{\"varA\": \"222\"}",
                 "Username": "root",
                 "Tags": [
                     {

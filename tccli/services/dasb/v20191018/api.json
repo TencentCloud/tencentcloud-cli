@@ -1876,6 +1876,16 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "签名值",
+          "example": "adefad2345",
+          "member": "string",
+          "name": "SignValue",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -3317,7 +3327,7 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "运维人员WEB访问内网入口",
           "example": "[https://192.0.0.1/login.html]",
           "member": "string",
@@ -3327,7 +3337,7 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": " 0 内网访问未开通，1 内网访问正在开通中，2 已开通",
           "example": "0",
           "member": "uint64",
@@ -3354,6 +3364,16 @@
           "name": "GMAccessEntry",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "运维人员WEB访问内网入口",
+          "example": "[{\"VpcId\":\"vpc-fwewf\",\"Url\":\"https://10.0.0.1/login.html\"}]",
+          "member": "IntranetAccessEntry",
+          "name": "IntranetAccessEntrySet",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -5631,6 +5651,62 @@
       ],
       "type": "object"
     },
+    "IntranetAccessEntry": {
+      "document": "内网访问入口",
+      "members": [
+        {
+          "disabled": false,
+          "document": "内网访问url",
+          "example": "https://10.0.0.1/login/html",
+          "member": "string",
+          "name": "Url",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内网访问的vpcid",
+          "example": "vpc-safweij3",
+          "member": "string",
+          "name": "VpcId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内网访问的网段",
+          "example": "10.0.0.1/0",
+          "member": "string",
+          "name": "VpcCidrBlock",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "0 内网未开通，1 内网已开通，2 内网访问开通中，3 内网访问关闭中",
+          "example": "0",
+          "member": "string",
+          "name": "IntranetAccessStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "堡垒机实例id",
+          "example": "bh-saas-sefqwefsd",
+          "member": "string",
+          "name": "ResourceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "LDAPSetting": {
       "document": "LDAP配置信息",
       "members": [
@@ -7086,6 +7162,16 @@
           "output_required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "签名值",
+          "example": "deafe456782",
+          "member": "string",
+          "name": "SignValue",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -7582,7 +7668,7 @@
         },
         {
           "disabled": false,
-          "document": "0 默认值，非内网访问，1 内网访问",
+          "document": "0 默认值，非内网访问，1 内网访问，2 内网访问开通中，3 内网访问关闭中",
           "example": "0",
           "member": "uint64",
           "name": "IntranetAccess",
@@ -8225,6 +8311,16 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "签名值",
+          "example": "dafee235677e",
+          "member": "string",
+          "name": "SignValue",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -8401,6 +8497,16 @@
           "name": "Action",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "签名值",
+          "example": "de13defa",
+          "member": "string",
+          "name": "SignValue",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -8671,6 +8777,16 @@
           "member": "string",
           "name": "FileNew",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "签名值",
+          "example": "aedef2354523",
+          "member": "string",
+          "name": "SignValue",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         }
@@ -9503,6 +9619,17 @@
           "example": "1",
           "member": "uint64",
           "name": "LockStatus",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "ukey绑定状态 0 - 未绑定 1 - 已绑定",
+          "example": "1",
+          "member": "int64",
+          "name": "UKeyStatus",
           "output_required": false,
           "required": false,
           "type": "int",

@@ -7,7 +7,7 @@ Input:
 ```
 tccli tdmq DescribeRabbitMQBindings --cli-unfold-argument  \
     --InstanceId amqp-44w9928j \
-    --VirtualHost test
+    --VirtualHost tdmq_data
 ```
 
 Output: 
@@ -16,8 +16,8 @@ Output:
     "Response": {
         "BindingInfoList": [
             {
-                "BindingId": 123,
-                "VirtualHost": "test",
+                "BindingId": 127469,
+                "VirtualHost": "tdmq_data",
                 "Source": "test-exchange",
                 "DestinationType": "queue",
                 "Destination": "test-queue",

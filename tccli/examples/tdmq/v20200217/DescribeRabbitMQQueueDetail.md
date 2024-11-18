@@ -6,16 +6,16 @@ Input:
 
 ```
 tccli tdmq DescribeRabbitMQQueueDetail --cli-unfold-argument  \
-    --InstanceId amqp-test \
-    --VirtualHost / \
-    --QueueName tdmq_event_handle
+    --InstanceId amqp-jero744g \
+    --VirtualHost tdmq_data \
+    --QueueName prod.queue
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Arguments": "{}",
+        "Arguments": "{\"x-ordered\": false}",
         "AutoDelete": false,
         "AutoExpire": 1000,
         "Consumers": 1,
@@ -26,7 +26,7 @@ Output:
         "DeliveryLimit": null,
         "Durable": true,
         "Exclusive": false,
-        "InstanceId": "amqp-test",
+        "InstanceId": "amqp-jero744g",
         "LazyMode": false,
         "MasterLocator": "client-local",
         "MaxInMemoryBytes": null,
@@ -39,13 +39,13 @@ Output:
         "OverflowBehaviour": "drop-head",
         "Policy": "test-policy",
         "QueueLeaderLocator": null,
-        "QueueName": "tdmq_event_handle",
+        "QueueName": "prod.queue",
         "QueueType": "classic",
         "QuorumInitialGroupSize": null,
         "Remark": "[系统自动批量同步]",
         "RequestId": "bf6ea82d-213b-4d44-be1f-74cd31f9a22b",
         "SingleActiveConsumer": false,
-        "VirtualHost": "/"
+        "VirtualHost": "tdmq_data"
     }
 }
 ```

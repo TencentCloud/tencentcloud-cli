@@ -543,7 +543,7 @@
         {
           "disabled": false,
           "document": "伸缩活动状态详细描述。",
-          "example": "[{\"[{\"Code\": \"CvmCreationFailed\", \"Zone\": \"ap-beijing-5\", \"InstanceId\": \"ins-qfcgbumb\", \"InstanceChargeType\": \"PREPAID\", \"SubnetId\": \"subnet-opywjlrx\", \"Message\": \"Failed to launch instance `ins-qfcgbumb`. Instance type: `GNV4.12XLARGE176`, Subnet: `subnet-opywjlrx`, Zone: `ap-beijing-5`, LatestOperationCode: `ResourceInsufficient`.\", \"InstanceType\": \"GNV4.12XLARGE176\"}]",
+          "example": "[{\"Code\": \"CvmCreationFailed\", \"Zone\": \"ap-beijing-5\", \"InstanceId\": \"ins-qfcgbumb\", \"InstanceChargeType\": \"PREPAID\", \"SubnetId\": \"subnet-opywjlrx\", \"Message\": \"Failed to launch instance `ins-qfcgbumb`. Instance type: `GNV4.12XLARGE176`, Subnet: `subnet-opywjlrx`, Zone: `ap-beijing-5`, LatestOperationCode: `ResourceInsufficient`.\", \"InstanceType\": \"GNV4.12XLARGE176\"}]",
           "member": "DetailedStatusMessage",
           "name": "DetailedStatusMessageSet",
           "output_required": true,
@@ -1811,7 +1811,7 @@
         },
         {
           "disabled": false,
-          "document": "实例计费类型，CVM默认值按照POSTPAID_BY_HOUR处理。\n<li>POSTPAID_BY_HOUR：按小时后付费</li>\n<li>SPOTPAID：竞价付费</li>\n<li>PREPAID：预付费，即包年包月</li>",
+          "document": "实例计费类型，CVM默认值按照POSTPAID_BY_HOUR处理。\n<li>POSTPAID_BY_HOUR：按小时后付费</li>\n<li>SPOTPAID：竞价付费</li>\n<li>PREPAID：预付费，即包年包月</li>\n<li>CDCPAID：专用集群付费</li>",
           "example": "POSTPAID_BY_HOUR",
           "member": "string",
           "name": "InstanceChargeType",
@@ -1941,6 +1941,15 @@
           "example": "test-family",
           "member": "string",
           "name": "ImageFamily",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "本地专用集群ID。",
+          "example": "cluster-gbo27yc4",
+          "member": "string",
+          "name": "DedicatedClusterId",
           "required": false,
           "type": "string"
         }
@@ -4793,6 +4802,16 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "本地专用集群 ID。",
+          "example": "cluster-gbo27yc4",
+          "member": "string",
+          "name": "DedicatedClusterId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -5523,7 +5542,7 @@
         },
         {
           "disabled": false,
-          "document": "实例计费类型。具体取值范围如下：\n<li>POSTPAID_BY_HOUR：按小时后付费</li>\n<li>SPOTPAID：竞价付费</li>\n<li>PREPAID：预付费，即包年包月</li>",
+          "document": "实例计费类型。具体取值范围如下：\n<li>POSTPAID_BY_HOUR：按小时后付费</li>\n<li>SPOTPAID：竞价付费</li>\n<li>PREPAID：预付费，即包年包月</li>\n<li>CDCPAID：专用集群付费</li>",
           "example": "POSTPAID_BY_HOUR",
           "member": "string",
           "name": "InstanceChargeType",
@@ -5662,6 +5681,15 @@
           "example": "test-family",
           "member": "string",
           "name": "ImageFamily",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "本地专用集群ID。",
+          "example": "cluster-gbo27yc4",
+          "member": "string",
+          "name": "DedicatedClusterId",
           "required": false,
           "type": "string"
         }

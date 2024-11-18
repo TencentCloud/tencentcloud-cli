@@ -47,7 +47,7 @@ Output:
                 "PayerMode": "0",
                 "GoodsName": "计费测试商品",
                 "SubGoodsName": "非资源工厂验证预付费子产品（勿动）",
-                "ClientRemark": "test",
+                "ClientRemark": "客户备注",
                 "ClientType": "new",
                 "ProjectType": "platform",
                 "SalesUin": "0",

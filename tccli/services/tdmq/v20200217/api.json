@@ -504,6 +504,13 @@
       "output": "DescribePulsarProInstancesResponse",
       "status": "online"
     },
+    "DescribePurchaseConfig": {
+      "document": "获取购买配置信息，可用区等信息",
+      "input": "DescribePurchaseConfigRequest",
+      "name": "获取购买配置信息",
+      "output": "DescribePurchaseConfigResponse",
+      "status": "online"
+    },
     "DescribeRabbitMQBindings": {
       "document": "查询RabbitMQ路由关系列表",
       "input": "DescribeRabbitMQBindingsRequest",
@@ -3991,7 +3998,7 @@
         {
           "disabled": false,
           "document": "实例Id",
-          "example": "amqp-xxx",
+          "example": "amqp-jero744g",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -3999,8 +4006,8 @@
         },
         {
           "disabled": false,
-          "document": "Vhost参数",
-          "example": "testVhost",
+          "document": "Vhost名称",
+          "example": "tdmq_data",
           "member": "string",
           "name": "VirtualHost",
           "required": true,
@@ -4009,7 +4016,7 @@
         {
           "disabled": false,
           "document": "源exchange",
-          "example": "testSource",
+          "example": "prod.exchange",
           "member": "string",
           "name": "Source",
           "required": true,
@@ -4018,7 +4025,7 @@
         {
           "disabled": false,
           "document": "目标类型,取值queue或exchange",
-          "example": "testDestinationType",
+          "example": "queue",
           "member": "string",
           "name": "DestinationType",
           "required": true,
@@ -4027,7 +4034,7 @@
         {
           "disabled": false,
           "document": "目标",
-          "example": "testDestination",
+          "example": "prod.queue",
           "member": "string",
           "name": "Destination",
           "required": true,
@@ -4035,8 +4042,8 @@
         },
         {
           "disabled": false,
-          "document": "绑定key",
-          "example": "testRoutingKey",
+          "document": "路由键",
+          "example": "permission.created",
           "member": "string",
           "name": "RoutingKey",
           "required": false,
@@ -4051,7 +4058,7 @@
         {
           "disabled": false,
           "document": "实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "amqp-test",
+          "example": "amqp-jero744g",
           "member": "string",
           "name": "InstanceId",
           "output_required": true,
@@ -4060,8 +4067,8 @@
         },
         {
           "disabled": false,
-          "document": "vhost参数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "Vhost1",
+          "document": "vhost名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tdmq_data",
           "member": "string",
           "name": "VirtualHost",
           "output_required": true,
@@ -4071,7 +4078,7 @@
         {
           "disabled": false,
           "document": "路由关系Id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123321",
+          "example": "127469",
           "member": "int64",
           "name": "BindingId",
           "output_required": true,
@@ -4093,7 +4100,7 @@
         {
           "disabled": false,
           "document": "实例 ID",
-          "example": "amqp-xxxx",
+          "example": "amqp-jero744g",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -4248,7 +4255,7 @@
         {
           "disabled": false,
           "document": "私有网络VpcId",
-          "example": "vpc-xxx",
+          "example": "vpc-5ghsr4p9",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -4257,7 +4264,7 @@
         {
           "disabled": false,
           "document": "私有网络SubnetId",
-          "example": "subnet-xxx",
+          "example": "subnet-67y9wil4",
           "member": "string",
           "name": "SubnetId",
           "required": true,
@@ -4266,7 +4273,7 @@
         {
           "disabled": false,
           "document": "集群名称",
-          "example": "testCluster",
+          "example": "prod_rabbitmq",
           "member": "string",
           "name": "ClusterName",
           "required": true,
@@ -5610,7 +5617,7 @@
         {
           "disabled": false,
           "document": "实例Id",
-          "example": "amqp-xxx",
+          "example": "amqp-jero744g",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -5619,7 +5626,7 @@
         {
           "disabled": false,
           "document": "Vhost参数",
-          "example": "testVhost",
+          "example": "tdmq_data",
           "member": "string",
           "name": "VirtualHost",
           "required": true,
@@ -5628,7 +5635,7 @@
         {
           "disabled": false,
           "document": "路由关系Id",
-          "example": "123",
+          "example": "127469",
           "member": "int64",
           "name": "BindingId",
           "required": true,
@@ -5642,8 +5649,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "队列名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "queue1",
+          "document": "实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "amqp-jero744g",
           "member": "string",
           "name": "InstanceId",
           "output_required": true,
@@ -5653,7 +5660,7 @@
         {
           "disabled": false,
           "document": "vhost参数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "Vhost1",
+          "example": "tdmq_data",
           "member": "string",
           "name": "VirtualHost",
           "output_required": true,
@@ -5663,7 +5670,7 @@
         {
           "disabled": false,
           "document": "路由关系Id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123",
+          "example": "127469",
           "member": "int64",
           "name": "BindingId",
           "output_required": true,
@@ -8235,13 +8242,60 @@
       ],
       "type": "object"
     },
+    "DescribePurchaseConfigRequest": {
+      "document": "DescribePurchaseConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "业务类型，0标识Pulsar专享版，1标识RocketMQ专享版，2表示RabbitMQ专享版",
+          "example": "0",
+          "member": "uint64",
+          "name": "Type",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePurchaseConfigResponse": {
+      "document": "DescribePurchaseConfig返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "售卖可用区信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SaleRegion",
+          "name": "Regions",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "售卖商品配置信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SaleProductSpec",
+          "name": "Products",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeRabbitMQBindingsRequest": {
       "document": "DescribeRabbitMQBindings请求参数结构体",
       "members": [
         {
           "disabled": false,
           "document": "实例Id",
-          "example": "amqp-xxx",
+          "example": "amqp-jero744g",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -8249,8 +8303,8 @@
         },
         {
           "disabled": false,
-          "document": "Vhost参数",
-          "example": "testVhost",
+          "document": "Vhost名称",
+          "example": "tdmq_data",
           "member": "string",
           "name": "VirtualHost",
           "required": true,
@@ -8277,7 +8331,7 @@
         {
           "disabled": false,
           "document": "搜索关键词，根据源exchange名称/目标资源名称/绑定key进行模糊搜索",
-          "example": "testSearchWord",
+          "example": "amq",
           "member": "string",
           "name": "SearchWord",
           "required": false,
@@ -8286,7 +8340,7 @@
         {
           "disabled": false,
           "document": "根据源Exchange精准搜索过滤",
-          "example": "srcExchange",
+          "example": "amq.direct",
           "member": "string",
           "name": "SourceExchange",
           "required": false,
@@ -8295,7 +8349,7 @@
         {
           "disabled": false,
           "document": "根据目标QueueName精准搜索过滤，和DestinationExchange过滤不可同时设置",
-          "example": "testQueueName",
+          "example": "prod.queue",
           "member": "string",
           "name": "QueueName",
           "required": false,
@@ -8304,7 +8358,7 @@
         {
           "disabled": false,
           "document": "根据目标Exchange精准搜索过滤，和QueueName过滤不可同时设置",
-          "example": "destExchange",
+          "example": "amq.topic",
           "member": "string",
           "name": "DestinationExchange",
           "required": false,
@@ -8329,7 +8383,7 @@
         {
           "disabled": false,
           "document": "数量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "Vhost1",
+          "example": "10",
           "member": "int64",
           "name": "TotalCount",
           "output_required": true,
@@ -8627,7 +8681,7 @@
         {
           "disabled": false,
           "document": "实例Id",
-          "example": "amqp-xxx",
+          "example": "amqp-jero744g",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -8636,7 +8690,7 @@
         {
           "disabled": false,
           "document": "Vhost参数",
-          "example": "testVhost",
+          "example": "tdmq_data",
           "member": "string",
           "name": "VirtualHost",
           "required": true,
@@ -8645,7 +8699,7 @@
         {
           "disabled": false,
           "document": "队列名称",
-          "example": "testQueue",
+          "example": "prod.queue",
           "member": "string",
           "name": "QueueName",
           "required": true,
@@ -8660,7 +8714,7 @@
         {
           "disabled": false,
           "document": "实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "amqp-test",
+          "example": "amqp-jero744g",
           "member": "string",
           "name": "InstanceId",
           "output_required": true,
@@ -8670,7 +8724,7 @@
         {
           "disabled": false,
           "document": "Vhost参数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "testVhost",
+          "example": "tdmq_data",
           "member": "string",
           "name": "VirtualHost",
           "output_required": true,
@@ -8680,7 +8734,7 @@
         {
           "disabled": false,
           "document": "队列名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "testQueue",
+          "example": "prod.queue",
           "member": "string",
           "name": "QueueName",
           "output_required": true,
@@ -8730,7 +8784,7 @@
         {
           "disabled": false,
           "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "testRemark",
+          "example": "production",
           "member": "string",
           "name": "Remark",
           "output_required": true,
@@ -8850,7 +8904,7 @@
         {
           "disabled": false,
           "document": "MasterLocator参数,classic类型专用\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "testMasterLocator",
+          "example": "client-local",
           "member": "string",
           "name": "MasterLocator",
           "output_required": true,
@@ -8890,7 +8944,7 @@
         {
           "disabled": false,
           "document": "节点\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "rabbit@rabbitmq-broker-0.rabbitmq-broker-internal.amqp-xxx.",
+          "example": "rabbit@rabbitmq-broker-0.rabbitmq-broker-internal.amqp-jero744g",
           "member": "string",
           "name": "Node",
           "output_required": true,
@@ -8940,7 +8994,7 @@
         {
           "disabled": false,
           "document": "生效的策略名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test-policy",
+          "example": "mirror-policy",
           "member": "string",
           "name": "Policy",
           "output_required": false,
@@ -8950,7 +9004,7 @@
         {
           "disabled": false,
           "document": "扩展参数 key-value\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{}",
+          "example": "{\"x-ordered\": false}",
           "member": "string",
           "name": "Arguments",
           "output_required": false,
@@ -8972,7 +9026,7 @@
         {
           "disabled": false,
           "document": "实例Id",
-          "example": "amqp-xxx",
+          "example": "amqp-jero744g",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -8981,7 +9035,7 @@
         {
           "disabled": false,
           "document": "Vhost参数",
-          "example": "testVhost",
+          "example": "tdmq_data",
           "member": "string",
           "name": "VirtualHost",
           "required": false,
@@ -9008,7 +9062,7 @@
         {
           "disabled": false,
           "document": "搜索关键词",
-          "example": "testSearchWord",
+          "example": "prod",
           "member": "string",
           "name": "SearchWord",
           "required": false,
@@ -9271,7 +9325,7 @@
         {
           "disabled": false,
           "document": "查询条件过滤器",
-          "example": "{ \"Name\": \"instanceName\", \"Values\": [ \"test\" ] }",
+          "example": "{ \"Name\": \"instanceIds\", \"Values\": [ \"amqp-jero744g\" ] }",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -9314,7 +9368,7 @@
         {
           "disabled": false,
           "document": "实例信息列表",
-          "example": "{\"AutoRenewFlag\":1,\"ClusterStatus\":1,\"ConfigDisplay\":\"体验型\",\"Container\":true,\"CreateTime\":1730294244007,\"ExceptionInformation\":null,\"ExpireTime\":1732972644007,\"InstanceId\":\"amqp-test\",\"InstanceName\":\"test1030\",\"InstanceVersion\":\"3.11.8\",\"MaxBandWidth\":45,\"MaxStorage\":600,\"MaxTps\":2400,\"NodeCount\":3,\"PayMode\":1,\"PublicAccessEndpoint\":\"amqp://106.55.176.111:5672\",\"Remark\":\"\",\"SpecName\":\"rabbit-vip-basic-5\",\"Status\":1,\"Vpcs\":[{\"SubnetId\":\"subnet-test\",\"VpcDataStreamEndpointStatus\":\"ON\",\"VpcEndpoint\":\"amqp://10.0.4.10:5672\",\"VpcId\":\"vpc-test\"}],\"ZoneIds\":[540001]}",
+          "example": "无",
           "member": "RabbitMQVipInstance",
           "name": "Instances",
           "output_required": true,
@@ -13785,7 +13839,7 @@
         {
           "disabled": false,
           "document": "集群名字",
-          "example": "amqp-xxx",
+          "example": "amqp-jero744g",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -13794,7 +13848,7 @@
         {
           "disabled": false,
           "document": "是否开启",
-          "example": "true/false",
+          "example": "true",
           "member": "bool",
           "name": "PublicNetworkAccessPointStatus",
           "required": true,
@@ -13803,7 +13857,7 @@
         {
           "disabled": false,
           "document": "必填，公网控制台的开关/Vpc控制台的开关，示例值，Public/Vpc",
-          "example": "Public/Vpc",
+          "example": "Public",
           "member": "string",
           "name": "SwitchOwner",
           "required": false,
@@ -13812,7 +13866,7 @@
         {
           "disabled": false,
           "document": "Vpc",
-          "example": "VpcId",
+          "example": "vpc-5ghsr4p9",
           "member": "string",
           "name": "VpcId",
           "required": false,
@@ -13821,7 +13875,7 @@
         {
           "disabled": false,
           "document": "子网",
-          "example": "SubnetId",
+          "example": "subnet-67y9wil4",
           "member": "string",
           "name": "SubnetId",
           "required": false,
@@ -13845,7 +13899,7 @@
         {
           "disabled": false,
           "document": "修改结果",
-          "example": "修改成功/修改失败",
+          "example": "修改成功",
           "member": "string",
           "name": "ModifyResult",
           "output_required": true,
@@ -13948,7 +14002,7 @@
         {
           "disabled": false,
           "document": "实例Id",
-          "example": "amqp-xxx",
+          "example": "amqp-jero744g",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -13957,7 +14011,7 @@
         {
           "disabled": false,
           "document": "集群名称",
-          "example": "test",
+          "example": "prod_rabbitmq",
           "member": "string",
           "name": "ClusterName",
           "required": false,
@@ -13966,7 +14020,7 @@
         {
           "disabled": false,
           "document": "备注",
-          "example": "remark",
+          "example": "生产使用集群",
           "member": "string",
           "name": "Remark",
           "required": false,
@@ -13981,7 +14035,7 @@
         {
           "disabled": false,
           "document": "实例id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "amqp-xxxx",
+          "example": "amqp-jero744g",
           "member": "string",
           "name": "InstanceId",
           "output_required": true,
@@ -15840,7 +15894,7 @@
         {
           "disabled": false,
           "document": "路由关系id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123",
+          "example": "127469",
           "member": "int64",
           "name": "BindingId",
           "output_required": true,
@@ -15850,7 +15904,7 @@
         {
           "disabled": false,
           "document": "Vhost参数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "testVhost",
+          "example": "tdmq_data",
           "member": "string",
           "name": "VirtualHost",
           "output_required": true,
@@ -15880,7 +15934,7 @@
         {
           "disabled": false,
           "document": "目标资源名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "testDestination",
+          "example": "prod.queue",
           "member": "string",
           "name": "Destination",
           "output_required": true,
@@ -15890,7 +15944,7 @@
         {
           "disabled": false,
           "document": "绑定key\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "testRoutingKey",
+          "example": "permission.created",
           "member": "string",
           "name": "RoutingKey",
           "output_required": true,
@@ -15900,7 +15954,7 @@
         {
           "disabled": false,
           "document": "源exchange类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "testSourceExchangeType",
+          "example": "direct",
           "member": "string",
           "name": "SourceExchangeType",
           "output_required": true,
@@ -16072,7 +16126,7 @@
         {
           "disabled": false,
           "document": "集群ID",
-          "example": "amqp-xxxxx",
+          "example": "amqp-jero744g",
           "member": "string",
           "name": "ClusterId",
           "output_required": true,
@@ -16082,7 +16136,7 @@
         {
           "disabled": false,
           "document": "集群名称",
-          "example": "test",
+          "example": "prod_rabbitmq",
           "member": "string",
           "name": "ClusterName",
           "output_required": true,
@@ -16112,7 +16166,7 @@
         {
           "disabled": false,
           "document": "集群说明信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "备注",
+          "example": "生产使用集群",
           "member": "string",
           "name": "Remark",
           "output_required": true,
@@ -16122,7 +16176,7 @@
         {
           "disabled": false,
           "document": "VPC及网络信息",
-          "example": "无",
+          "example": "[{\"VpcId\":\"vpc-5ghsr4p9\",\"SubnetId\":\"subnet-67y9wil4\",\"VpcEndpoint\":\"amqp://127.0.0.1:5672\",\"VpcDataStreamEndpointStatus\":\"ON\"}]",
           "member": "VpcEndpointInfo",
           "name": "Vpcs",
           "output_required": true,
@@ -16232,7 +16286,7 @@
         {
           "disabled": false,
           "document": "集群异常信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "异常信息",
+          "example": "节点[rabbit@rabbitmq-broker-2.rabbitmq-broker-internal.amqp-jero744g.svc.cluster.local]连接异常",
           "member": "string",
           "name": "ExceptionInformation",
           "output_required": true,
@@ -16298,6 +16352,16 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例类型，0 专享版、1 Serverless 版",
+          "example": "0",
+          "member": "uint64",
+          "name": "InstanceType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -16430,7 +16494,7 @@
         {
           "disabled": false,
           "document": "exchange 名",
-          "example": "testExchangeName",
+          "example": "tea-exchange",
           "member": "string",
           "name": "ExchangeName",
           "output_required": true,
@@ -16440,7 +16504,7 @@
         {
           "disabled": false,
           "document": "备注说明\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "testRemark",
+          "example": "茶饮专用",
           "member": "string",
           "name": "Remark",
           "output_required": true,
@@ -16460,7 +16524,7 @@
         {
           "disabled": false,
           "document": "VHost参数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "testVhost",
+          "example": "tdmq_data",
           "member": "string",
           "name": "VirtualHost",
           "output_required": true,
@@ -16550,7 +16614,7 @@
         {
           "disabled": false,
           "document": "交换机所属实例 ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "amqp-xxx",
+          "example": "amqp-jero744g",
           "member": "string",
           "name": "InstanceId",
           "output_required": false,
@@ -16560,7 +16624,7 @@
         {
           "disabled": false,
           "document": "生效的策略名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test-policy",
+          "example": "tea-policy",
           "member": "string",
           "name": "Policy",
           "output_required": false,
@@ -16570,7 +16634,7 @@
         {
           "disabled": false,
           "document": "扩展参数 key-value 对象\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{}",
+          "example": "{\"alternate-exchange\":\"my-ae\"}",
           "member": "string",
           "name": "Arguments",
           "output_required": false,
@@ -16724,7 +16788,7 @@
         {
           "disabled": false,
           "document": "消费者信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\"ConsumersNumber\": 3}",
           "member": "RabbitMQQueueListConsumerDetailInfo",
           "name": "ConsumerDetail",
           "output_required": true,
@@ -16814,7 +16878,7 @@
         {
           "disabled": false,
           "document": "队列所属实例 ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "amqp-xxx",
+          "example": "amqp-jero744g",
           "member": "string",
           "name": "InstanceId",
           "output_required": false,
@@ -16824,7 +16888,7 @@
         {
           "disabled": false,
           "document": "队列所属虚拟主机名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "/",
+          "example": "tdmq_data",
           "member": "string",
           "name": "VirtualHost",
           "output_required": false,
@@ -16844,7 +16908,7 @@
         {
           "disabled": false,
           "document": "生效的策略名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test-policy",
+          "example": "mirror-policy",
           "member": "string",
           "name": "Policy",
           "output_required": false,
@@ -16854,7 +16918,7 @@
         {
           "disabled": false,
           "document": "扩展参数 key-value 对象\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{}",
+          "example": "{\"x-ordered\": false}",
           "member": "string",
           "name": "Arguments",
           "output_required": false,
@@ -16986,7 +17050,7 @@
         {
           "disabled": false,
           "document": "实例id",
-          "example": "amqp-xxxx",
+          "example": "amqp-jero744g",
           "member": "string",
           "name": "InstanceId",
           "output_required": true,
@@ -16996,7 +17060,7 @@
         {
           "disabled": false,
           "document": "实例名称",
-          "example": "test",
+          "example": "prod_rabbitmq",
           "member": "string",
           "name": "InstanceName",
           "output_required": true,
@@ -17106,7 +17170,7 @@
         {
           "disabled": false,
           "document": "备注信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "生产使用集群",
           "member": "string",
           "name": "Remark",
           "output_required": true,
@@ -17126,7 +17190,7 @@
         {
           "disabled": false,
           "document": "集群异常。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "异常信息",
+          "example": "节点[rabbit@rabbitmq-broker-2.rabbitmq-broker-internal.amqp-jero744g.svc.cluster.local]连接异常",
           "member": "string",
           "name": "ExceptionInformation",
           "output_required": true,
@@ -17156,7 +17220,7 @@
         {
           "disabled": false,
           "document": "VPC 接入点列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "无",
           "member": "VpcEndpointInfo",
           "name": "Vpcs",
           "output_required": false,
@@ -17172,6 +17236,16 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例类型，0 专享版、1 Serverless 版",
+          "example": "0",
+          "member": "uint64",
+          "name": "InstanceType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -17670,7 +17744,7 @@
         {
           "disabled": false,
           "document": "实例 ID",
-          "example": "amqp-xxx",
+          "example": "amqp-jero744g",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -19776,6 +19850,340 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SaleProductSpec": {
+      "document": "商品配置信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "商品名称，唯一标识",
+          "example": "basic",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "商品支持的TPS\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10000",
+          "member": "uint64",
+          "name": "Tps",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "商品可支持的topic数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10000",
+          "member": "uint64",
+          "name": "Topic",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "商品可支持的吞吐峰值，Mbps为单位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "uint64",
+          "name": "Throughput",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "基础配置商品code\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "sv_tdmq_pro_c_basic_1",
+          "member": "string",
+          "name": "BasicSvCode",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "节点配置商品code\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "sv_tdmq_pro_c_node_1",
+          "member": "string",
+          "name": "NodeSvCode",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "商品显示名称",
+          "example": "基础型",
+          "member": "string",
+          "name": "DisplayName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备注信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "备注",
+          "member": "string",
+          "name": "Remark",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否推荐\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsRecommended",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "最大可创建命名空间数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "uint64",
+          "name": "MaxNamespaces",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "单机最大可创建主题数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "uint64",
+          "name": "MaxTopics",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "RabbitMQ单机支持的queue数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "uint64",
+          "name": "Queues",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "RabbitMQ单机支持的连接数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "uint64",
+          "name": "Connections",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "部署类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Deployment",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "部署环境\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Environment",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用于区分pulsar计费标签的版本，默认没有是0，PULSAR.P1是PULSAR.P1，PULSAR.P2是PULSAR.P2\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "PULSAR.P1",
+          "member": "string",
+          "name": "BillingLabelVersion",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当前产品最大可选可用区数量，一般是1,2,3 \n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
+          "member": "int64",
+          "name": "MaxZones",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "集群维度最大求和分区数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "int64",
+          "name": "MaxSumPartitions",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SaleRegion": {
+      "document": "可售区域信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "地域ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "RegionId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可用区信息",
+          "example": "无",
+          "member": "SaleZone",
+          "name": "Zones",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最大可售存储空间，GB为单位",
+          "example": "100",
+          "member": "uint64",
+          "name": "MaxStorage",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最低售卖存储空间，GB为单位",
+          "example": "10000",
+          "member": "uint64",
+          "name": "MinStorage",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开放，true表示开放，false表示不开放",
+          "example": "true",
+          "member": "bool",
+          "name": "Available",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SaleZone": {
+      "document": "可用区销售信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "可用区ID",
+          "example": "100001",
+          "member": "uint64",
+          "name": "ZoneId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "该可用区可售商品配置",
+          "example": "无",
+          "member": "SaleZoneProduct",
+          "name": "Products",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SaleZoneProduct": {
+      "document": "可用区产品的销售配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品名称，作为产品标识ID",
+          "example": "basic_1",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最大可购买节点数",
+          "example": "20",
+          "member": "uint64",
+          "name": "MaxNodes",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最少购买节点数",
+          "example": "10",
+          "member": "uint64",
+          "name": "MinNodes",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否已售罄",
+          "example": "false",
+          "member": "bool",
+          "name": "SoldOut",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "单可用区最小可购买节点数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "SingleMinNodes",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "单可用区最大可购买节点数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "SingleMaxNodes",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

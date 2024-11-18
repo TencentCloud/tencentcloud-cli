@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tdmq CreateRabbitMQChaosTask --cli-unfold-argument  \
-    --InstanceId amqp-test \
+    --InstanceId amqp-jero744g \
     --ZoneId 800001 \
     --Type crash
 ```

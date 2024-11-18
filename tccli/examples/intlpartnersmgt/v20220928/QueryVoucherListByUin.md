@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli intlpartnersmgt QueryVoucherListByUin --cli-unfold-argument  \
-    --ClientUins 1 \
-    --Status abc
+    --ClientUins 800000190982 \
+    --Status Used
 ```
 
 Output: 
@@ -20,8 +20,8 @@ Output:
                 "TotalCount": 0,
                 "Data": [
                     {
-                        "VoucherId": "abc",
-                        "VoucherStatus": "abc",
+                        "VoucherId": "TVSYNGAEJTSZX9EWXJ1DK9",
+                        "VoucherStatus": "Used",
                         "TotalAmount": 0,
                         "RemainAmount": 0
                     }

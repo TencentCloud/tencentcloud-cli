@@ -385,7 +385,7 @@
         {
           "disabled": false,
           "document": "经销商账号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "2000111111",
+          "example": "800000448722",
           "member": "int64",
           "name": "PayerAccountId",
           "output_required": true,
@@ -395,7 +395,7 @@
         {
           "disabled": false,
           "document": "子客账号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "2000111111",
+          "example": "800000448824",
           "member": "int64",
           "name": "OwnerAccountId",
           "output_required": true,
@@ -405,7 +405,7 @@
         {
           "disabled": false,
           "document": "操作者账号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "2000111111",
+          "example": "800000448824",
           "member": "int64",
           "name": "OperatorAccountId",
           "output_required": true,
@@ -415,7 +415,7 @@
         {
           "disabled": false,
           "document": "产品名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "cloud block storage",
           "member": "string",
           "name": "ProductName",
           "output_required": true,
@@ -425,7 +425,7 @@
         {
           "disabled": false,
           "document": "计费模式\nMonthly subscription 包年包月\nPay-As-You-Go resources 按量计费\nStandard RI 预留实\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "Pay-As-You-Go resources",
           "member": "string",
           "name": "BillingMode",
           "output_required": true,
@@ -435,7 +435,7 @@
         {
           "disabled": false,
           "document": "项目名称\n\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "default",
           "member": "string",
           "name": "ProjectName",
           "output_required": true,
@@ -445,7 +445,7 @@
         {
           "disabled": false,
           "document": "资源所属区域\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "East China (Shanghai)",
           "member": "string",
           "name": "Region",
           "output_required": true,
@@ -455,7 +455,7 @@
         {
           "disabled": false,
           "document": "资源所属可用区\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "Shanghai Zone 1",
           "member": "string",
           "name": "AvailabilityZone",
           "output_required": true,
@@ -465,7 +465,7 @@
         {
           "disabled": false,
           "document": "实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "disk-ekoob7ok",
           "member": "string",
           "name": "InstanceId",
           "output_required": true,
@@ -475,7 +475,7 @@
         {
           "disabled": false,
           "document": "实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "HDD cloud",
           "member": "string",
           "name": "InstanceName",
           "output_required": true,
@@ -485,7 +485,7 @@
         {
           "disabled": false,
           "document": "子产品名\n\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "HDD cloud block storage",
           "member": "string",
           "name": "SubProductName",
           "output_required": true,
@@ -495,7 +495,7 @@
         {
           "disabled": false,
           "document": "结算类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "Hourly settlement",
           "member": "string",
           "name": "TransactionType",
           "output_required": true,
@@ -505,7 +505,7 @@
         {
           "disabled": false,
           "document": "交易流水ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "20230228722000247298552",
           "member": "string",
           "name": "TransactionId",
           "output_required": true,
@@ -515,7 +515,7 @@
         {
           "disabled": false,
           "document": "结算时间\n\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2023-02-28 13:01:23",
           "member": "string",
           "name": "TransactionTime",
           "output_required": true,
@@ -525,7 +525,7 @@
         {
           "disabled": false,
           "document": "资源开始使用时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2023-02-28 12:00:00",
           "member": "string",
           "name": "UsageStartTime",
           "output_required": true,
@@ -535,7 +535,7 @@
         {
           "disabled": false,
           "document": "资源结束使用时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2023-02-28 12:59:59",
           "member": "string",
           "name": "UsageEndTime",
           "output_required": true,
@@ -545,7 +545,7 @@
         {
           "disabled": false,
           "document": "组件\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "volume size",
           "member": "string",
           "name": "ComponentType",
           "output_required": true,
@@ -555,7 +555,7 @@
         {
           "disabled": false,
           "document": "组件名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "HDD cloud block storage-volume size",
           "member": "string",
           "name": "ComponentName",
           "output_required": true,
@@ -565,7 +565,7 @@
         {
           "disabled": false,
           "document": "组件刊例价\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0.00000003",
           "member": "string",
           "name": "ComponentListPrice",
           "output_required": true,
@@ -575,7 +575,7 @@
         {
           "disabled": false,
           "document": "价格单位\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "USD/GB/Second",
           "member": "string",
           "name": "ComponentPriceMeasurementUnit",
           "output_required": true,
@@ -585,7 +585,7 @@
         {
           "disabled": false,
           "document": "组件用量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "250",
           "member": "string",
           "name": "ComponentUsage",
           "output_required": true,
@@ -595,7 +595,7 @@
         {
           "disabled": false,
           "document": "组件用量单位\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "GB",
           "member": "string",
           "name": "ComponentUsageUnit",
           "output_required": true,
@@ -605,7 +605,7 @@
         {
           "disabled": false,
           "document": "资源使用时长\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "478",
           "member": "string",
           "name": "UsageDuration",
           "output_required": true,
@@ -615,7 +615,7 @@
         {
           "disabled": false,
           "document": "时长单位\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "Second",
           "member": "string",
           "name": "DurationUnit",
           "output_required": true,
@@ -625,7 +625,7 @@
         {
           "disabled": false,
           "document": "原始总价\nOriginal Cost = Component List Price * Component Usage * Usage Duration\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0.003585",
           "member": "string",
           "name": "OriginalCost",
           "output_required": true,
@@ -635,7 +635,7 @@
         {
           "disabled": false,
           "document": "折扣（默认为1）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "string",
           "name": "DiscountRate",
           "output_required": true,
@@ -645,7 +645,7 @@
         {
           "disabled": false,
           "document": "币种\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "USD",
           "member": "string",
           "name": "Currency",
           "output_required": true,
@@ -655,7 +655,7 @@
         {
           "disabled": false,
           "document": "折后总费用\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0.003585",
           "member": "string",
           "name": "TotalAmountAfterDiscount",
           "output_required": true,
@@ -665,7 +665,7 @@
         {
           "disabled": false,
           "document": "代金券扣减金额\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0",
           "member": "string",
           "name": "VoucherDeduction",
           "output_required": true,
@@ -675,7 +675,7 @@
         {
           "disabled": false,
           "document": "= Total Amount After Discount - Voucher Deduction\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0.003585",
           "member": "string",
           "name": "TotalCost",
           "output_required": true,
@@ -685,7 +685,7 @@
         {
           "disabled": false,
           "document": "id标识\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "4998689516778477313",
           "member": "string",
           "name": "Id",
           "output_required": false,
@@ -988,7 +988,7 @@
         {
           "disabled": false,
           "document": "经销商账号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "2000111111",
+          "example": "800000400309",
           "member": "int64",
           "name": "PayerAccountId",
           "output_required": true,
@@ -998,7 +998,7 @@
         {
           "disabled": false,
           "document": "子客账号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "2000111111",
+          "example": "800000425835",
           "member": "int64",
           "name": "OwnerAccountId",
           "output_required": true,
@@ -1008,7 +1008,7 @@
         {
           "disabled": false,
           "document": "操作者账号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "2000111111",
+          "example": "800000425835",
           "member": "int64",
           "name": "OperatorAccountId",
           "output_required": true,
@@ -1018,7 +1018,7 @@
         {
           "disabled": false,
           "document": "产品名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "Cloud Virtual Machine(CVM)",
           "member": "string",
           "name": "ProductName",
           "output_required": true,
@@ -1028,7 +1028,7 @@
         {
           "disabled": false,
           "document": "计费模式\nMonthly subscription 包年包月\nPay-As-You-Go resources 按量计费\nStandard RI 预留实\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "Pay-As-You-Go resources",
           "member": "string",
           "name": "BillingMode",
           "output_required": true,
@@ -1038,7 +1038,7 @@
         {
           "disabled": false,
           "document": "项目名称\n\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "default",
           "member": "string",
           "name": "ProjectName",
           "output_required": true,
@@ -1048,7 +1048,7 @@
         {
           "disabled": false,
           "document": "资源所属区域\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "Southeast Asia (Singapore)",
           "member": "string",
           "name": "Region",
           "output_required": true,
@@ -1058,7 +1058,7 @@
         {
           "disabled": false,
           "document": "资源所属可用区\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "Singapore Zone ",
           "member": "string",
           "name": "AvailabilityZone",
           "output_required": true,
@@ -1068,7 +1068,7 @@
         {
           "disabled": false,
           "document": "实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "ins-kxzoyw6c",
           "member": "string",
           "name": "InstanceId",
           "output_required": true,
@@ -1078,7 +1078,7 @@
         {
           "disabled": false,
           "document": "实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "cdz_i18n_xjp",
           "member": "string",
           "name": "InstanceName",
           "output_required": true,
@@ -1088,7 +1088,7 @@
         {
           "disabled": false,
           "document": "子产品名\n\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "CVM Standard S5",
           "member": "string",
           "name": "SubProductName",
           "output_required": true,
@@ -1098,7 +1098,7 @@
         {
           "disabled": false,
           "document": "结算类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "Hourly settlement",
           "member": "string",
           "name": "TransactionType",
           "output_required": true,
@@ -1108,7 +1108,7 @@
         {
           "disabled": false,
           "document": "交易流水ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "20231024309000174935042",
           "member": "string",
           "name": "TransactionId",
           "output_required": true,
@@ -1118,7 +1118,7 @@
         {
           "disabled": false,
           "document": "结算时间\n\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2023-10-24 20:14:37",
           "member": "string",
           "name": "TransactionTime",
           "output_required": true,
@@ -1128,7 +1128,7 @@
         {
           "disabled": false,
           "document": "资源开始使用时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2023-10-24 13:00:00",
           "member": "string",
           "name": "UsageStartTime",
           "output_required": true,
@@ -1138,7 +1138,7 @@
         {
           "disabled": false,
           "document": "资源结束使用时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2023-10-24 13:59:59",
           "member": "string",
           "name": "UsageEndTime",
           "output_required": true,
@@ -1148,7 +1148,7 @@
         {
           "disabled": false,
           "document": "组件\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "memory",
           "member": "string",
           "name": "ComponentType",
           "output_required": true,
@@ -1158,7 +1158,7 @@
         {
           "disabled": false,
           "document": "组件名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "Memory S5",
           "member": "string",
           "name": "ComponentName",
           "output_required": true,
@@ -1168,7 +1168,7 @@
         {
           "disabled": false,
           "document": "组件刊例价\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0.00000311",
           "member": "string",
           "name": "ComponentListPrice",
           "output_required": true,
@@ -1178,7 +1178,7 @@
         {
           "disabled": false,
           "document": "价格单位\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "USD/GiB/Second",
           "member": "string",
           "name": "ComponentPriceMeasurementUnit",
           "output_required": true,
@@ -1188,7 +1188,7 @@
         {
           "disabled": false,
           "document": "组件用量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "4",
           "member": "string",
           "name": "ComponentUsage",
           "output_required": true,
@@ -1198,7 +1198,7 @@
         {
           "disabled": false,
           "document": "组件用量单位\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "GiB",
           "member": "string",
           "name": "ComponentUsageUnit",
           "output_required": true,
@@ -1208,7 +1208,7 @@
         {
           "disabled": false,
           "document": "资源使用时长\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "3600",
           "member": "string",
           "name": "UsageDuration",
           "output_required": true,
@@ -1218,7 +1218,7 @@
         {
           "disabled": false,
           "document": "时长单位\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "Second",
           "member": "string",
           "name": "DurationUnit",
           "output_required": true,
@@ -1228,7 +1228,7 @@
         {
           "disabled": false,
           "document": "原始总价\nOriginal Cost = Component List Price * Component Usage * Usage Duration\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0.044784",
           "member": "string",
           "name": "OriginalCost",
           "output_required": true,
@@ -1238,7 +1238,7 @@
         {
           "disabled": false,
           "document": "币种\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "USD",
           "member": "string",
           "name": "Currency",
           "output_required": true,
@@ -1248,7 +1248,7 @@
         {
           "disabled": false,
           "document": "= Total Amount After Discount - Voucher Deduction\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0.044784",
           "member": "string",
           "name": "TotalCost",
           "output_required": true,
@@ -1258,7 +1258,7 @@
         {
           "disabled": false,
           "document": "Id标识\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "6383749774386128833",
           "member": "string",
           "name": "Id",
           "output_required": false,
@@ -2858,10 +2858,10 @@
         {
           "disabled": false,
           "document": "子客uin",
-          "example": "123456789",
+          "example": "700001031242",
           "member": "int64",
           "name": "ClientUin",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2871,7 +2871,7 @@
           "example": "1",
           "member": "float",
           "name": "TotalAmount",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -2881,7 +2881,7 @@
           "example": "1",
           "member": "float",
           "name": "RemainAmount",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         }
@@ -2909,7 +2909,7 @@
         {
           "disabled": false,
           "document": "子客代金券额度数据",
-          "example": "[]",
+          "example": "无",
           "member": "QueryVoucherAmountByUinItem",
           "name": "Data",
           "output_required": true,
@@ -2931,10 +2931,10 @@
         {
           "disabled": false,
           "document": "子客uin",
-          "example": "123456789",
+          "example": "800000190982",
           "member": "int64",
           "name": "ClientUin",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2944,7 +2944,7 @@
           "example": "12",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2954,7 +2954,7 @@
           "example": "1",
           "member": "QueryVoucherListByUinVoucherItem",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -2991,7 +2991,7 @@
         {
           "disabled": false,
           "document": "子客代金券数据",
-          "example": "[]",
+          "example": "无",
           "member": "QueryVoucherListByUinItem",
           "name": "Data",
           "output_required": true,
@@ -3013,10 +3013,10 @@
         {
           "disabled": false,
           "document": "券号",
-          "example": "xxx",
+          "example": "OXSFSQSHNUSGCP7BAM87KD",
           "member": "string",
           "name": "VoucherId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3026,7 +3026,7 @@
           "example": "Used",
           "member": "string",
           "name": "VoucherStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3036,7 +3036,7 @@
           "example": "1",
           "member": "float",
           "name": "TotalAmount",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -3046,7 +3046,7 @@
           "example": "1",
           "member": "float",
           "name": "RemainAmount",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         }
@@ -3067,7 +3067,7 @@
           "example": "名字",
           "member": "string",
           "name": "AgentName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3077,7 +3077,7 @@
           "example": "20000",
           "member": "int64",
           "name": "AccountType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3087,7 +3087,7 @@
           "example": "10",
           "member": "float",
           "name": "TotalQuota",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -3097,7 +3097,7 @@
           "example": "10",
           "member": "float",
           "name": "RemainingQuota",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -3107,7 +3107,7 @@
           "example": "1",
           "member": "int64",
           "name": "IssuedNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },

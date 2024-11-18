@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli tdmq ModifyPublicNetworkAccessPoint --cli-unfold-argument  \
-    --ClusterId amqp-test \
+    --ClusterId amqp-jero744g \
     --PublicNetworkAccessPointStatus True \
     --SwitchOwner Public \
     --VpcId vpc-d \
-    --SubnetId subnet-test \
+    --SubnetId subnet-67y9wil4 \
     --SelectIp 10.1.0.1
 ```
 

@@ -1,4 +1,4 @@
-**Example 1: 认证通过示例 [前往调试工具]（https://console.cloud.tencent.com/api/explorer?Product=faceid&Version=2018-03-01&Action=BankCardVerification&Sig**
+**Example 1: 认证通过示例**
 
 认证通过场景。
 
@@ -22,7 +22,7 @@ Output:
 }
 ```
 
-**Example 2: 认证失败示例 [前往调试工具](https://console.cloud.tencent.com/api/explorer?Product=faceid&Version=2018-03-01&Action=BankCardVerification&Sig**
+**Example 2: 认证失败示例**
 
 认证失败场景。
 

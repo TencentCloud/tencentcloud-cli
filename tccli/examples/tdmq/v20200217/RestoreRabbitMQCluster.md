@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tdmq RestoreRabbitMQCluster --cli-unfold-argument  \
-    --InstanceId amqp-test
+    --InstanceId amqp-jero744g
 ```
 
 Output: 

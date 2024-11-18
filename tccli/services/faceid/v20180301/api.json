@@ -6604,7 +6604,7 @@
         {
           "disabled": false,
           "document": "视频base64编码（其中包含全程提示文本和点头音频，mp4格式）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "VideoBase64String",
+          "example": "AAAAIGZ0eX...0tLS0tLS8=",
           "member": "string",
           "name": "Video",
           "output_required": true,
@@ -6614,7 +6614,7 @@
         {
           "disabled": false,
           "document": "屏幕截图base64编码列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "ScreenShotBase64String",
+          "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
           "member": "string",
           "name": "ScreenShot",
           "output_required": true,

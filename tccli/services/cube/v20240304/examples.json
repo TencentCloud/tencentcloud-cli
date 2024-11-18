@@ -1,5 +1,13 @@
 {
   "actions": {
+    "DescribeInstanceHostInfo": [
+      {
+        "document": "获取实例所在裸金属信息",
+        "input": "POST / HTTP/1.1\nHost: cube.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceHostInfo\n<公共请求参数>\n\n{\n    \"InstanceId\": \"ins-e4c2c5be\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CPU\": 256,\n        \"DeviceClass\": \"VSBMSA_3\",\n        \"DeviceId\": 267634210,\n        \"HostIp\": \"30.64.217.68\",\n        \"InstanceFamily\": \"BMSA3\",\n        \"InstanceId\": \"ins-e4c2c5be\",\n        \"InstanceState\": \"RUNNING\",\n        \"InstanceType\": \"BMSA3.64XLARGE512\",\n        \"InstanceUuid\": \"11077e5-be1f-42c6-bfb8-d766b5c85618\",\n        \"RequestId\": \"76ae6914-f51d-43af-93c6-bc02e1670a7b\",\n        \"VirtualCpu\": 25600,\n        \"VirtualNodeQuota\": [\n            12800,\n            12800\n        ]\n    }\n}",
+        "title": "获取实例所在裸金属信息"
+      }
+    ],
     "DescribeInstances": [
       {
         "document": "查看指定vpc 内对应指定私有IP的实例信息，限制返回结果最多为20个",
@@ -8,12 +16,42 @@
         "title": "查看实例"
       }
     ],
+    "DescribeZoneInstanceTypeInventory": [
+      {
+        "document": "查看可用区内所有机型的配额信息",
+        "input": "POST / HTTP/1.1\nHost: cube.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeZoneInstanceTypeInventory\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"ap-chongqing-1\"\n            ],\n            \"Name\": \"zone\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceTypeQuotaSet\": [\n            {\n                \"Zone\": \"ap-chongqing-2\",\n                \"Memory\": 256,\n                \"CpuType\": \"INTEL\"\n            }\n        ],\n        \"RequestId\": \"96ac7e0d-778b-4ed3-95a4-e9b355065292\"\n    }\n}",
+        "title": "获取可用区配额"
+      }
+    ],
+    "RunInstances": [
+      {
+        "document": "创建一个实例",
+        "input": "POST / HTTP/1.1\nHost: cube.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RunInstances\n<公共请求参数>\n\n{\n    \"InstanceIds\": [\n        \"ins-2\"\n    ],\n    \"VirtualPrivateCloud\": {\n        \"SubnetId\": \"subnet-dcs9x3gz\",\n        \"VpcId\": \"vpc-1urkhbj4\",\n        \"PrivateIpAddresses\": [\n            \"10.0.0.17\"\n        ]\n    },\n    \"InstanceCount\": 1,\n    \"Placement\": {\n        \"Zone\": \"ap-shanghai-2\"\n    },\n    \"SystemDisk\": {\n        \"DiskSize\": 50\n    },\n    \"SecurityGroupIds\": [\n        \"sg-arlffnvg\"\n    ],\n    \"ImageId\": \"eks-guestos:0.1\",\n    \"CPU\": 50,\n    \"Memory\": 1024,\n    \"CpuType\": \"INTEL\",\n    \"UserData\": \"TXlVc2VyRGF0YQo=\"\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceIdSet\": [\n            \"ins-1vogaxgk\"\n        ],\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "创建实例"
+      }
+    ],
     "RunProxyCall": [
       {
         "document": "测试请求cube内部接口",
         "input": "POST / HTTP/1.1\nHost: cube.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RunProxyCall\n<公共请求参数>\n\n{\n    \"ProxyProduct\": \"cube\",\n    \"ProxyAction\": \"DescribeInstances\",\n    \"ProxyRequest\": \"{}\",\n    \"ProxyRegion\": \"ap-chongqing\",\n    \"UserAppId\": 123456\n}",
         "output": "{\n    \"Response\": {\n        \"ProxyResult\": \"{\\\"Response\\\":{\\\"InstanceSet\\\":[],\\\"RequestId\\\":\\\"60086dbb-5382-4db7-a831-f96aa5dc0e5b\\\",\\\"TotalCount\\\":2}}\",\n        \"RequestId\": \"79e51a32-a963-45e0-ab84-dadb0de737de\"\n    }\n}",
         "title": "测试请求cube内部接口"
+      }
+    ],
+    "TerminateInstances": [
+      {
+        "document": "用于销毁指定ID的一个或多个实例",
+        "input": "POST / HTTP/1.1\nHost: cube.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TerminateInstances\n<公共请求参数>\n\n{\n    \"InstanceIds\": [\n        \"ins-3jaw1j8m\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9a2f76a2-3b5b-4760-a90b-eff0c611b360\"\n    }\n}",
+        "title": "销毁指定ID实例"
+      },
+      {
+        "document": "强制删除实例",
+        "input": "POST / HTTP/1.1\nHost: cube.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TerminateInstances\n<公共请求参数>\n\n{\n    \"InstanceIds\": [\n        \"eks-1234\"\n    ],\n    \"ForceDestroy\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7b9c2388-fb6d-4fcb-971c-5f9f6a8b7dfc\"\n    }\n}",
+        "title": "删除实例"
       }
     ]
   },

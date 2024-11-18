@@ -2808,6 +2808,33 @@
           "name": "RetryTimes",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "自定义变量",
+          "example": "[{\"Key\":\"foo\",\"Value\":\"bar\"}]",
+          "member": "Variable",
+          "name": "Variables",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "UUI",
+          "example": "foobar",
+          "member": "string",
+          "name": "UUI",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "被叫属性",
+          "example": "[{\"Callee\":\"13012345678\",\"UUI\":\"foobar\",\"Variables\":[{\"Key\":\"foo\":\"Value\":\"bar\"}]}]",
+          "member": "CalleeAttribute",
+          "name": "CalleeAttributes",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -9148,6 +9175,33 @@
           "name": "RetryTimes",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "自定义变量",
+          "example": "[{\"Key\":\"foo\",\"Value\":\"bar\"}]",
+          "member": "Variable",
+          "name": "Variables",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "\tUUI",
+          "example": "foobar",
+          "member": "string",
+          "name": "UUI",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "被叫属性",
+          "example": "[{\"Callee\":\"13012345678\",\"UUI\":\"foobar\",\"Variables\":[{\"Key\":\"foo\":\"Value\":\"bar\"}]}]",
+          "member": "CalleeAttribute",
+          "name": "CalleeAttributes",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -9276,9 +9330,10 @@
         {
           "disabled": false,
           "document": "变量名",
-          "example": "key1",
+          "example": "foo",
           "member": "string",
           "name": "Key",
+          "output_required": false,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -9286,15 +9341,16 @@
         {
           "disabled": false,
           "document": "变量值",
-          "example": "value",
+          "example": "bar",
           "member": "string",
           "name": "Value",
+          "output_required": false,
           "required": true,
           "type": "string",
           "value_allowed_null": false
         }
       ],
-      "usage": "in"
+      "usage": "both"
     }
   },
   "version": "1.0"

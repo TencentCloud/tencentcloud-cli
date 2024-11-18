@@ -29,9 +29,10 @@ Input:
 
 ```
 tccli faceid GetFaceIdToken --cli-unfold-argument  \
-    --CompareLib BUSINESS \
-    --IdCard 440305199505132561 \
-    --Name 刘洋
+    --CompareLib LOCAL \
+    --IdCard 11204416541220243X \
+    --Name 韦小宝 \
+    --ImageBase64 /9j/4AAQSkZJRg.....s97n//2Q==
 ```
 
 Output: 

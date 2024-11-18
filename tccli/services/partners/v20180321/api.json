@@ -1790,7 +1790,7 @@
         {
           "disabled": false,
           "document": "订单数组",
-          "example": "[       {         \"ActionType\": \"purchase\",         \"ActivityId\": \"\",         \"AppId\": \"251255283\",         \"BigDealId\": \"2024012093925000000000\",         \"BillId\": \"2024012093925000111111\",         \"ClientRemark\": \"\",         \"ClientType\": \"old\",         \"CreatTime\": \"2024-10-23 16:57:28\",         \"Creater\": \"2000002\",         \"DealId\": \"293920000\",         \"DealName\": \"20240120939250001222222\",         \"DealStatus\": \"未支付\",         \"GoodsCategoryId\": \"101832\",         \"GoodsName\": \"腾讯会议（SAAS版）\",         \"GoodsNum\": \"1\",         \"GoodsPrice\": {           \"OriginalTotalCost\": 6988000,           \"RealTotalCost\": 6988000         },         \"OverdueTime\": \"2024-02-07 16:57:28\",         \"OwnerUin\": \"1000001\",         \"PayEndTime\": \"2024-01-23 16:57:33\",         \"Payer\": \"1000001\",         \"PayerMode\": \"0\",         \"PaymentMethod\": \"按年：1年\",         \"ProductInfo\": [           {             \"Name\": \"企业版高级账号\",             \"Value\": \"10\"           },           {             \"Name\": \"50方虚拟会议室\",             \"Value\": \"1\"           },           {             \"Name\": \"300方虚拟会议室\",             \"Value\": \"9\"           }         ],         \"ProjectType\": \"\",         \"RefundMap\": [],         \"ResourceIds\": [           \"700000942629_2024012362900000000001\"         ],         \"SalesUin\": \"2000002\",         \"Status\": \"1\",         \"SubGoodsName\": \"腾讯会议（SAAS版企业版）\",         \"UpdateTime\": \"2024-01-23 16:57:35\",         \"VoucherDecline\": \"0\"       }     ]",
+          "example": "[       {         \"ActionType\": \"purchase\",         \"ActivityId\": \"\",         \"AppId\": \"251255283\",         \"BigDealId\": \"2024012093925000000000\",         \"BillId\": \"2024012093925000111111\",         \"ClientRemark\": \"客户备注\",         \"ClientType\": \"old\",         \"CreatTime\": \"2024-10-23 16:57:28\",         \"Creater\": \"2000002\",         \"DealId\": \"293920000\",         \"DealName\": \"20240120939250001222222\",         \"DealStatus\": \"未支付\",         \"GoodsCategoryId\": \"101832\",         \"GoodsName\": \"腾讯会议（SAAS版）\",         \"GoodsNum\": \"1\",         \"GoodsPrice\": {           \"OriginalTotalCost\": 6988000,           \"RealTotalCost\": 6988000         },         \"OverdueTime\": \"2024-02-07 16:57:28\",         \"OwnerUin\": \"1000001\",         \"PayEndTime\": \"2024-01-23 16:57:33\",         \"Payer\": \"1000001\",         \"PayerMode\": \"0\",         \"PaymentMethod\": \"按年：1年\",         \"ProductInfo\": [           {             \"Name\": \"企业版高级账号\",             \"Value\": \"10\"           },           {             \"Name\": \"50方虚拟会议室\",             \"Value\": \"1\"           },           {             \"Name\": \"300方虚拟会议室\",             \"Value\": \"9\"           }         ],         \"ProjectType\": \"\",         \"RefundMap\": [],         \"ResourceIds\": [           \"700000942629_2024012362900000000001\"         ],         \"SalesUin\": \"2000002\",         \"Status\": \"1\",         \"SubGoodsName\": \"腾讯会议（SAAS版企业版）\",         \"UpdateTime\": \"2024-01-23 16:57:35\",         \"VoucherDecline\": \"0\"       }     ]",
           "member": "AgentDealNewElem",
           "name": "AgentDealSet",
           "output_required": true,
@@ -2519,63 +2519,63 @@
       "members": [
         {
           "disabled": false,
-          "document": "代理商账号ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "代理商账号ID",
           "example": "100001",
           "member": "string",
           "name": "Uin",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "返佣月份，如2018-02\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "返佣月份，如2018-02",
           "example": "2018-02",
           "member": "string",
           "name": "RebateMonth",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "返佣金额，单位分\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "返佣金额，单位分",
           "example": "1",
           "member": "uint64",
           "name": "Amt",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "月度业绩，单位分\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "月度业绩，单位分",
           "example": "1",
           "member": "uint64",
           "name": "MonthSales",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "季度业绩，单位分\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "季度业绩，单位分",
           "example": "1",
           "member": "uint64",
           "name": "QuarterSales",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "NORMAL(正常)/HAS_OVERDUE_BILL(欠费)/NO_CONTRACT(缺合同)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "NORMAL(正常)/HAS_OVERDUE_BILL(欠费)/NO_CONTRACT(缺合同)",
           "example": "NORMAL",
           "member": "string",
           "name": "ExceptionFlag",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

@@ -379,8 +379,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "对话的目标模型ID。\n自行部署的开源大模型聊天：部署的模型服务组ID，形如ms-xxyyzz。",
-          "example": "无",
+          "document": "对话的目标模型ID。\n自行部署的开源大模型聊天：部署的模型服务组ID，形如ms-q7pfr29p。",
+          "example": "ms-q7pfr29p",
           "member": "string",
           "name": "Model",
           "required": true,
@@ -397,8 +397,8 @@
         },
         {
           "disabled": false,
-          "document": "仅当模型为自行部署的开源大模型时生效。采样随机值，默认值为1.0，取值范围[0,2]。较高的值(如0.8)将使输出更加随机，而较低的值(如0.2)将使输出更加确定。建议仅修改此参数或TopP，但不建议两者都修改。",
-          "example": "无",
+          "document": "仅当模型为自行部署的开源大模型时生效。采样随机值，默认值为0.7，取值范围[0,2]。较高的值(如0.8)将使输出更加随机，而较低的值(如0.2)将使输出更加确定。建议仅修改此参数或TopP，但不建议两者都修改。",
+          "example": "0.7",
           "member": "float",
           "name": "Temperature",
           "required": false,
@@ -407,7 +407,7 @@
         {
           "disabled": false,
           "document": "仅当模型为自行部署的开源大模型时生效。核采样，默认值为1，取值范围[0,1]。指的是预先设置一个概率界限 p，然后将所有可能生成的token，根据概率大小从高到低排列，依次选取。当这些选取的token的累积概率大于或等于 p 值时停止，然后从已经选取的token中进行采样，生成下一个token。例如top_p为0.1时意味着模型只考虑累积概率为10%的token。建议仅修改此参数或Temperature，不建议两者都修改。",
-          "example": "无",
+          "example": "1",
           "member": "float",
           "name": "TopP",
           "required": false,
@@ -424,8 +424,8 @@
         },
         {
           "disabled": false,
-          "document": "仅当模型为自行部署的开源大模型时生效。最大生成的token数目。默认为无限大。",
-          "example": "无",
+          "document": "仅当模型为自行部署的开源大模型时生效。默认 512，模型可生成内容的最长 token 数量，最大不能超过模型支持的上下文长度。",
+          "example": "512",
           "member": "int64",
           "name": "MaxTokens",
           "required": false,
@@ -439,8 +439,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "部署好的服务Id",
-          "example": "无",
+          "document": "对话的模型服务组ID",
+          "example": "ms-q7pfr29p",
           "member": "string",
           "name": "Model",
           "output_required": false,
@@ -459,23 +459,23 @@
         },
         {
           "disabled": false,
-          "document": "会话Id。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "会话Id。",
+          "example": "86eb3227-06f5-4e2f-8333-4d41ca30195b",
           "member": "string",
           "name": "Id",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "token统计\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "token统计",
           "example": "无",
           "member": "Usage",
           "name": "Usage",
           "output_required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -491,18 +491,18 @@
       "members": [
         {
           "disabled": false,
-          "document": "对话结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "对话结果",
           "example": "无",
           "member": "Message",
           "name": "Message",
           "output_required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "结束理由: stop, length, content_filter, null",
-          "example": "无",
+          "example": "stop",
           "member": "string",
           "name": "FinishReason",
           "output_required": false,
@@ -512,7 +512,7 @@
         {
           "disabled": false,
           "document": "序号",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "Index",
           "output_required": false,
@@ -1172,7 +1172,7 @@
         {
           "disabled": false,
           "document": "名称。不超过60个字符，仅支持中英文、数字、下划线\"_\"、短横\"-\"，只能以中英文、数字开头",
-          "example": "a1",
+          "example": "notebook-test",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -1181,7 +1181,7 @@
         {
           "disabled": false,
           "document": "计算资源付费模式 ，可选值为：\nPREPAID：预付费，即包年包月\nPOSTPAID_BY_HOUR：按小时后付费",
-          "example": "a1",
+          "example": "POSTPAID_BY_HOUR",
           "member": "string",
           "name": "ChargeType",
           "required": true,
@@ -1190,7 +1190,7 @@
         {
           "disabled": false,
           "document": "计算资源配置",
-          "example": "无",
+          "example": " {\"Cpu\": 1000, \"Memory\": 1024, \"Gpu\": 0, \"InstanceType\": \"TI.S.MEDIUM.POST\"}",
           "member": "ResourceConf",
           "name": "ResourceConf",
           "required": true,
@@ -1235,7 +1235,7 @@
         {
           "disabled": false,
           "document": "资源组ID(for预付费)",
-          "example": "a1",
+          "example": "trsg-dwpqnjmk",
           "member": "string",
           "name": "ResourceGroupId",
           "required": false,
@@ -1244,7 +1244,7 @@
         {
           "disabled": false,
           "document": "Vpc-Id",
-          "example": "a1",
+          "example": "vpc-4kq8vlym",
           "member": "string",
           "name": "VpcId",
           "required": false,
@@ -1253,7 +1253,7 @@
         {
           "disabled": false,
           "document": "子网Id",
-          "example": "a1",
+          "example": "subnet-58zkmdob",
           "member": "string",
           "name": "SubnetId",
           "required": false,
@@ -1280,7 +1280,7 @@
         {
           "disabled": false,
           "document": "CFS存储的配置",
-          "example": "无",
+          "example": "{\"id\":\"cfs-9su5kqtv\",\"path\":\"/\",\"mappingPath\":\"/data\"}",
           "member": "CFSConfig",
           "name": "VolumeSourceCFS",
           "required": false,
@@ -1289,7 +1289,7 @@
         {
           "disabled": false,
           "document": "日志配置",
-          "example": "无",
+          "example": "{\"LogsetId\": \"4dd0a097-f629-4afc-9b99-888ef99a178f\", \"TopicId\": \"ea8048db-8f97-4abb-9668-f3532b9b61f8\"}",
           "member": "LogConfig",
           "name": "LogConfig",
           "required": false,
@@ -1298,7 +1298,7 @@
         {
           "disabled": false,
           "document": "生命周期脚本的ID",
-          "example": "a1",
+          "example": "ls-1007228485705742720",
           "member": "string",
           "name": "LifecycleScriptId",
           "required": false,
@@ -1307,7 +1307,7 @@
         {
           "disabled": false,
           "document": "默认GIT存储库的ID",
-          "example": "a1",
+          "example": "cr-1000669213287070080",
           "member": "string",
           "name": "DefaultCodeRepoId",
           "required": false,
@@ -1316,7 +1316,7 @@
         {
           "disabled": false,
           "document": "其他GIT存储库的ID，最多3个",
-          "example": "无",
+          "example": "[\"cr-1000669213287070080\"]",
           "member": "string",
           "name": "AdditionalCodeRepoIds",
           "required": false,
@@ -1334,7 +1334,7 @@
         {
           "disabled": false,
           "document": "标签配置",
-          "example": "无",
+          "example": "[{\"TagKey\": \"test_key\", \"TagValue\": \"good_value\"}]",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -1343,7 +1343,7 @@
         {
           "disabled": false,
           "document": "数据配置，只支持WEDATA_HDFS存储类型",
-          "example": "[]",
+          "example": "[ {\"DataSourceType\": \"CLOUD_PREMIUM\", \"CBSSource\": {\"VolumeSizeInGB\": 50}, \"MappingPath\": \"/home/tione/notebook\"}]",
           "member": "DataConfig",
           "name": "DataConfigs",
           "required": false,
@@ -1352,7 +1352,7 @@
         {
           "disabled": false,
           "document": "镜像信息",
-          "example": "无",
+          "example": "{\"ImageType\":\"SYSTEM\",\"ImageId\":\"35551e3c-b0e3-40dc-8e91-cc10a5613cd3\",\"ImageUrl\":\"tione.tencentcloudcr.com/qcloud-ti-platform/llm-train:24.03-gpu-py310-cu124-tilearn-llm-v1.8.0\",\"RegistryRegion\":\"\",\"RegistryId\":\"\",\"ImageName\":\"tilearn-llm0.9-torch2.3-py3.10-cuda12.4-gpu\",\"AllowSaveAllContent\":true,\"SupportDataPipeline\":false}",
           "member": "ImageInfo",
           "name": "ImageInfo",
           "required": false,
@@ -1361,7 +1361,7 @@
         {
           "disabled": false,
           "document": "镜像类型，包括SYSTEM、TCR、CCR",
-          "example": "无",
+          "example": "System",
           "member": "string",
           "name": "ImageType",
           "required": false,
@@ -1370,7 +1370,7 @@
         {
           "disabled": false,
           "document": "SSH配置信息",
-          "example": "无",
+          "example": " {\"Enable\": false, \"PublicKey\": \"public-key\"}",
           "member": "SSHConfig",
           "name": "SSHConfig",
           "required": false,
@@ -1379,7 +1379,7 @@
         {
           "disabled": false,
           "document": "GooseFS存储配置",
-          "example": "无",
+          "example": "{\"id\":\"x-c60-v747xo7z\",\"gfsType\":\"GooseFSx\",\"path\":\"/\"}",
           "member": "GooseFS",
           "name": "VolumeSourceGooseFS",
           "required": false,
@@ -2783,7 +2783,7 @@
         {
           "disabled": false,
           "document": "notebook id",
-          "example": "a1",
+          "example": "nb-1188415493581985152",
           "member": "string",
           "name": "Id",
           "required": true,
@@ -3976,7 +3976,7 @@
           "example": "无",
           "member": "NotebookDetail",
           "name": "NotebookDetail",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -4054,23 +4054,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "详情",
           "example": "无",
           "member": "NotebookSetItem",
           "name": "NotebookSet",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "总条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "总条数",
           "example": "10",
           "member": "uint64",
           "name": "TotalCount",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -4450,7 +4450,7 @@
         {
           "disabled": false,
           "document": "GooseFSx实例需要挂载的路径\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "/",
+          "example": "/test",
           "member": "string",
           "name": "Path",
           "output_required": false,
@@ -4732,7 +4732,7 @@
         {
           "disabled": false,
           "document": "过滤值",
-          "example": "无",
+          "example": "[\"DataPipeline\"]",
           "member": "string",
           "name": "Values",
           "required": true,
@@ -4741,7 +4741,7 @@
         {
           "disabled": false,
           "document": "是否反选",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "Negative",
           "required": false,
@@ -5315,25 +5315,25 @@
       "members": [
         {
           "disabled": false,
-          "document": "角色名。支持三个角色：system、user、assistant，其中system仅开头可出现一次，也可忽略。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "角色名。支持三个角色：system、user、assistant，其中system仅开头可出现一次，也可忽略。",
           "example": "user",
           "member": "string",
           "name": "Role",
           "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "对话输入内容。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "对话输入内容。",
+          "example": "你好",
           "member": "string",
           "name": "Content",
           "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -6422,7 +6422,7 @@
         {
           "disabled": false,
           "document": "notebook  ID",
-          "example": "a1",
+          "example": "nb-1188415493581985152",
           "member": "string",
           "name": "Id",
           "output_required": true,
@@ -6432,7 +6432,7 @@
         {
           "disabled": false,
           "document": "notebook 名称",
-          "example": "a2",
+          "example": "notebook-test",
           "member": "string",
           "name": "Name",
           "output_required": true,
@@ -6442,7 +6442,7 @@
         {
           "disabled": false,
           "document": "生命周期脚本\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "a3",
+          "example": "ls-1007228485705742720",
           "member": "string",
           "name": "LifecycleScriptId",
           "output_required": true,
@@ -6452,7 +6452,7 @@
         {
           "disabled": false,
           "document": "Pod-Name\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "a4",
+          "example": "nb-1188415493581985152-911m56fdooow",
           "member": "string",
           "name": "PodName",
           "output_required": true,
@@ -6462,7 +6462,7 @@
         {
           "disabled": false,
           "document": "Update-Time",
-          "example": "a5",
+          "example": "2024-11-14T16:58:00+08",
           "member": "string",
           "name": "UpdateTime",
           "output_required": true,
@@ -6482,7 +6482,7 @@
         {
           "disabled": false,
           "document": "预付费专用资源组\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "a9",
+          "example": "trsg-dwpqnjmk",
           "member": "string",
           "name": "ResourceGroupId",
           "output_required": true,
@@ -6492,7 +6492,7 @@
         {
           "disabled": false,
           "document": "标签配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[{\"TagKey\": \"test_key\", \"TagValue\": \"good_value\"}]",
           "member": "Tag",
           "name": "Tags",
           "output_required": true,
@@ -6502,7 +6502,7 @@
         {
           "disabled": false,
           "document": "是否自动停止",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "AutoStopping",
           "output_required": true,
@@ -6512,7 +6512,7 @@
         {
           "disabled": false,
           "document": "其他GIT存储库，最多3个，单个\n长度不超过512字符\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"cr-1000669213287070080\"]",
           "member": "string",
           "name": "AdditionalCodeRepoIds",
           "output_required": true,
@@ -6522,7 +6522,7 @@
         {
           "disabled": false,
           "document": "自动停止时间，单位小时\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "14",
+          "example": "100",
           "member": "int64",
           "name": "AutomaticStopTime",
           "output_required": true,
@@ -6532,7 +6532,7 @@
         {
           "disabled": false,
           "document": "资源配置",
-          "example": "无",
+          "example": " {\"Cpu\": 1000, \"Memory\": 1024, \"Gpu\": 0, \"InstanceType\": \"TI.S.MEDIUM.POST\"}",
           "member": "ResourceConf",
           "name": "ResourceConf",
           "output_required": true,
@@ -6542,7 +6542,7 @@
         {
           "disabled": false,
           "document": "默认GIT存储库，长度不超过512字符",
-          "example": "a17",
+          "example": "cr-1000669213287070080",
           "member": "string",
           "name": "DefaultCodeRepoId",
           "output_required": true,
@@ -6552,7 +6552,7 @@
         {
           "disabled": false,
           "document": "训练输出\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "q18",
+          "example": "2024-11-14T16:58:00+08",
           "member": "string",
           "name": "EndTime",
           "output_required": true,
@@ -6572,7 +6572,7 @@
         {
           "disabled": false,
           "document": "日志配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{ \"TopicId\": \"ea8048db-8f97-4abb-9668-f3532b9b61f8\", \"LogsetId\": \"4dd0a097-f629-4afc-9b99-888ef99a178f\"}",
           "member": "LogConfig",
           "name": "LogConfig",
           "output_required": true,
@@ -6582,7 +6582,7 @@
         {
           "disabled": false,
           "document": "VPC ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "a21",
+          "example": "vpc-4kq8vlym",
           "member": "string",
           "name": "VpcId",
           "output_required": true,
@@ -6592,7 +6592,7 @@
         {
           "disabled": false,
           "document": "子网ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "a22",
+          "example": "subnet-58zkmdob",
           "member": "string",
           "name": "SubnetId",
           "output_required": true,
@@ -6602,7 +6602,7 @@
         {
           "disabled": false,
           "document": "任务状态",
-          "example": "a23",
+          "example": "Running",
           "member": "string",
           "name": "Status",
           "output_required": true,
@@ -6612,7 +6612,7 @@
         {
           "disabled": false,
           "document": "运行时长\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "24",
+          "example": "100",
           "member": "uint64",
           "name": "RuntimeInSeconds",
           "output_required": true,
@@ -6622,7 +6622,7 @@
         {
           "disabled": false,
           "document": "创建时间",
-          "example": "a25",
+          "example": "2024-11-14T16:58:00+08",
           "member": "string",
           "name": "CreateTime",
           "output_required": true,
@@ -6632,7 +6632,7 @@
         {
           "disabled": false,
           "document": "训练开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "a26",
+          "example": "2024-11-14T16:58:00+08",
           "member": "string",
           "name": "StartTime",
           "output_required": true,
@@ -6642,7 +6642,7 @@
         {
           "disabled": false,
           "document": "计费状态，eg：BILLING计费中，ARREARS_STOP欠费停止，NOT_BILLING不在计费中\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "a27",
+          "example": "BILLING",
           "member": "string",
           "name": "ChargeStatus",
           "output_required": true,
@@ -6662,7 +6662,7 @@
         {
           "disabled": false,
           "document": "计贺金额信息，eg:2.00元/小时\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"计算资源计费中：折扣价 0.78 元/小时（原价： 1.38元/小时)\"]",
           "member": "string",
           "name": "BillingInfos",
           "output_required": true,
@@ -6672,7 +6672,7 @@
         {
           "disabled": false,
           "document": "存储卷大小 （单位时GB，最小10GB，必须是10G的倍数）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "30",
+          "example": "100",
           "member": "uint64",
           "name": "VolumeSizeInGB",
           "output_required": true,
@@ -6682,7 +6682,7 @@
         {
           "disabled": false,
           "document": "失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "a31",
+          "example": "errMsg",
           "member": "string",
           "name": "FailureReason",
           "output_required": true,
@@ -6702,7 +6702,7 @@
         {
           "disabled": false,
           "document": "后付费资源规格说明\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "2核4G",
+          "example": "2C4G",
           "member": "string",
           "name": "InstanceTypeAlias",
           "output_required": true,
@@ -6732,7 +6732,7 @@
         {
           "disabled": false,
           "document": "CFS存储的配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\"Id\":\"cfs-abcdefg\",\"Path\":\"/\"}",
           "member": "CFSConfig",
           "name": "VolumeSourceCFS",
           "output_required": true,
@@ -6742,7 +6742,7 @@
         {
           "disabled": false,
           "document": "数据配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "[{\"MappingPath\":\"/home/tione/notebook\",\"DataSourceType\":\"CFS\",\"WeDataHDFSSource\":{\"Id\":0,\"Path\":\"\"},\"CFSSource\":{\"Id\":\"cfs-14cpoxo5\",\"Path\":\"/\"},\"GooseFSSource\":{\"Id\":\"\",\"Type\":\"\",\"Path\":\"\",\"NameSpace\":\"\"},\"LocalDiskSource\":{\"InstanceId\":\"\"},\"CBSSource\":{\"VolumeSizeInGB\":0},\"DataSetSource\":{\"Id\":\"\"}}]",
           "member": "DataConfig",
           "name": "DataConfigs",
           "output_required": true,
@@ -6752,7 +6752,7 @@
         {
           "disabled": false,
           "document": "notebook 信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "message1",
           "member": "string",
           "name": "Message",
           "output_required": true,
@@ -6762,7 +6762,7 @@
         {
           "disabled": false,
           "document": "数据源来源，eg：WeData_HDFS\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "CFS",
           "member": "string",
           "name": "DataSource",
           "output_required": true,
@@ -6772,7 +6772,7 @@
         {
           "disabled": false,
           "document": "镜像信息",
-          "example": "无",
+          "example": "{\"ImageType\":\"SYSTEM\",\"ImageUrl\":\"tione.tencentcloudcr.com/qcloud-ti-platform/llm-train:24.03-gpu-py310-cu124-tilearn-llm-v1.8.0\",\"RegistryRegion\":\"\",\"RegistryId\":\"\",\"AllowSaveAllContent\":true,\"ImageName\":\"tilearn-llm0.9-torch2.3-py3.10-cuda12.4-gpu\",\"SupportDataPipeline\":false,\"ImageSecret\":{\"KeyId\":\"\",\"Username\":\"\",\"Password\":\"\",\"SecretId\":\"\"},\"ImageId\":\"35551e3c-b0e3-40dc-8e91-cc10a5613cd3\"}",
           "member": "ImageInfo",
           "name": "ImageInfo",
           "output_required": true,
@@ -6782,7 +6782,7 @@
         {
           "disabled": false,
           "document": "镜像类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "SYSTEM",
           "member": "string",
           "name": "ImageType",
           "output_required": true,
@@ -6792,7 +6792,7 @@
         {
           "disabled": false,
           "document": "SSH配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\"Enable\":false,\"PublicKey\":\"\",\"Port\":0,\"LoginCommand\":\"\"}",
           "member": "SSHConfig",
           "name": "SSHConfig",
           "output_required": false,
@@ -6802,12 +6802,22 @@
         {
           "disabled": false,
           "document": "GooseFS存储配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\"Id\":\"gs-1234\",\"Type\":\"GooseFSx\",\"Path\":\"/\", \"NameSpace\": \"test\"}",
           "member": "GooseFS",
           "name": "VolumeSourceGooseFS",
           "output_required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "子用户ID",
+          "example": "100032979603",
+          "member": "string",
+          "name": "SubUin",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -6818,7 +6828,7 @@
         {
           "disabled": false,
           "document": "notebook ID",
-          "example": "a",
+          "example": "nb-1188415493581985152",
           "member": "string",
           "name": "Id",
           "output_required": true,
@@ -6828,7 +6838,7 @@
         {
           "disabled": false,
           "document": "notebook 名称",
-          "example": "a",
+          "example": "notebook-test",
           "member": "string",
           "name": "Name",
           "output_required": true,
@@ -6848,7 +6858,7 @@
         {
           "disabled": false,
           "document": "资源配置",
-          "example": "a a",
+          "example": " {\"Cpu\": 1000, \"Memory\": 1024, \"Gpu\": 0, \"InstanceType\": \"TI.S.MEDIUM.POST\"}",
           "member": "ResourceConf",
           "name": "ResourceConf",
           "output_required": true,
@@ -6858,7 +6868,7 @@
         {
           "disabled": false,
           "document": "预付费资源组\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xx",
+          "example": "trsg-dwpqnjmk",
           "member": "string",
           "name": "ResourceGroupId",
           "output_required": true,
@@ -6868,7 +6878,7 @@
         {
           "disabled": false,
           "document": "存储卷大小\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "10",
+          "example": "100",
           "member": "uint64",
           "name": "VolumeSizeInGB",
           "output_required": true,
@@ -6878,7 +6888,7 @@
         {
           "disabled": false,
           "document": "计费金额信息，eg：2.00元/小时 (for后付费)\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "sss",
+          "example": "[\"计算资源计费中：折扣价 0.78 元/小时（原价： 1.38元/小时)\"]",
           "member": "string",
           "name": "BillingInfos",
           "output_required": true,
@@ -6888,7 +6898,7 @@
         {
           "disabled": false,
           "document": "标签配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "[{\"TagKey\": \"test_key\", \"TagValue\": \"good_value\"}]",
           "member": "Tag",
           "name": "Tags",
           "output_required": true,
@@ -6898,7 +6908,7 @@
         {
           "disabled": false,
           "document": "创建时间",
-          "example": "xxx",
+          "example": "2024-11-14T16:58:00+08",
           "member": "string",
           "name": "CreateTime",
           "output_required": true,
@@ -6908,7 +6918,7 @@
         {
           "disabled": false,
           "document": "启动时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "x x x",
+          "example": "2024-11-14T16:58:00+08",
           "member": "string",
           "name": "StartTime",
           "output_required": true,
@@ -6918,7 +6928,7 @@
         {
           "disabled": false,
           "document": "更新时间",
-          "example": "xxx",
+          "example": "2024-11-14T16:58:00+08",
           "member": "string",
           "name": "UpdateTime",
           "output_required": true,
@@ -6938,7 +6948,7 @@
         {
           "disabled": false,
           "document": "计费状态\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xx",
+          "example": "BILLING",
           "member": "string",
           "name": "ChargeStatus",
           "output_required": true,
@@ -6948,7 +6958,7 @@
         {
           "disabled": false,
           "document": "状态",
-          "example": "xx",
+          "example": "Running",
           "member": "string",
           "name": "Status",
           "output_required": true,
@@ -6958,7 +6968,7 @@
         {
           "disabled": false,
           "document": "错误原因\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xx",
+          "example": "errMsg",
           "member": "string",
           "name": "FailureReason",
           "output_required": true,
@@ -6968,7 +6978,7 @@
         {
           "disabled": false,
           "document": "结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "a",
+          "example": "2024-11-14T16:58:00+08",
           "member": "string",
           "name": "EndTime",
           "output_required": true,
@@ -6978,7 +6988,7 @@
         {
           "disabled": false,
           "document": "Pod名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "a",
+          "example": "nb-1188415493581985152-911m56fdooow",
           "member": "string",
           "name": "PodName",
           "output_required": true,
@@ -6988,7 +6998,7 @@
         {
           "disabled": false,
           "document": "后付费资源规格名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "2核4G",
+          "example": "2C4G",
           "member": "string",
           "name": "InstanceTypeAlias",
           "output_required": true,
@@ -7018,7 +7028,7 @@
         {
           "disabled": false,
           "document": "自动停止时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
+          "example": "10",
           "member": "uint64",
           "name": "AutomaticStopTime",
           "output_required": true,
@@ -7038,7 +7048,7 @@
         {
           "disabled": false,
           "document": "CFS存储的配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\"Id\":\"cfs-abcdefg\",\"Path\":\"/\"}",
           "member": "CFSConfig",
           "name": "VolumeSourceCFS",
           "output_required": true,
@@ -7048,7 +7058,7 @@
         {
           "disabled": false,
           "document": "notebook 信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "message1",
           "member": "string",
           "name": "Message",
           "output_required": true,
@@ -7068,7 +7078,7 @@
         {
           "disabled": false,
           "document": "SSH配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\"Enable\":false,\"PublicKey\":\"\",\"Port\":0,\"LoginCommand\":\"\"}",
           "member": "SSHConfig",
           "name": "SSHConfig",
           "output_required": false,
@@ -7078,7 +7088,7 @@
         {
           "disabled": false,
           "document": "GooseFS存储配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\"Id\":\"gs-1234\",\"Type\":\"GooseFSx\",\"Path\":\"/\", \"NameSpace\": \"test\"}",
           "member": "GooseFS",
           "name": "VolumeSourceGooseFS",
           "output_required": false,
@@ -7776,7 +7786,7 @@
         {
           "disabled": false,
           "document": "公钥信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "ssh-rsa AAAAB3**8NYTfO0=",
           "member": "string",
           "name": "PublicKey",
           "output_required": false,
@@ -7804,6 +7814,17 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "登录地址是否改变\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "IsAddressChanged",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
           "value_allowed_null": true
         }
       ],
@@ -9200,7 +9221,7 @@
         {
           "disabled": false,
           "document": "notebook id",
-          "example": "a1",
+          "example": "nb-1188415493581985152",
           "member": "string",
           "name": "Id",
           "required": true,
@@ -9346,7 +9367,7 @@
         {
           "disabled": false,
           "document": "notebook id",
-          "example": "a1",
+          "example": "nb-1188415493581985152",
           "member": "string",
           "name": "Id",
           "required": true,
@@ -10418,33 +10439,33 @@
       "members": [
         {
           "disabled": false,
-          "document": "生成的token数目\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "生成的token数目",
+          "example": "12",
           "member": "int64",
           "name": "CompletionTokens",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "输入的token数目\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "输入的token数目",
+          "example": "4",
           "member": "int64",
           "name": "PromptTokens",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "总共token数目\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "总共token数目",
+          "example": "16",
           "member": "int64",
           "name": "TotalTokens",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
