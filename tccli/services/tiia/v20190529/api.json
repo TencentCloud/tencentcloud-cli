@@ -303,19 +303,19 @@
           "example": "无",
           "member": "ImageRect",
           "name": "Rect",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "人体检测置信度。取值0-1之间，当不开启人体检测开关时默认为0。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "人体检测置信度。取值0-1之间，当不开启人体检测开关时默认为0。",
           "example": "0",
           "member": "float",
           "name": "DetectConfidence",
-          "required": true,
+          "output_required": false,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -323,7 +323,7 @@
           "example": "无",
           "member": "BodyAttributes",
           "name": "Attributes",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -335,33 +335,33 @@
       "members": [
         {
           "disabled": false,
-          "document": "属性值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "属性值。",
           "example": "无厨师服",
           "member": "string",
           "name": "Label",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "置信度，取值0-1之间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "置信度，取值0-1之间。",
           "example": "0.608731",
           "member": "float",
           "name": "Confidence",
-          "output_required": true,
+          "output_required": false,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "属性名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "属性名称。",
           "example": "厨师服识别",
           "member": "string",
           "name": "Name",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -407,33 +407,33 @@
       "members": [
         {
           "disabled": false,
-          "document": "车牌信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "车牌信息。",
           "example": "浙G29999",
           "member": "string",
           "name": "Plate",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "车牌颜色。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "车牌颜色。",
           "example": "蓝色",
           "member": "string",
           "name": "Color",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "车牌类型，包含：0普通蓝牌，1双层黄牌，2单层黄牌，3新能源车牌，4使馆车牌，5领馆车牌，6澳门车牌，7香港车牌，8警用车牌，9教练车牌，10武警车牌，11军用车牌   -2遮挡污损模糊车牌/异常   其他无牌\n注意：\n此字段可能返回 null，表示取不到有效值。\n此字段结果遮挡污损模糊车牌/异常：包含PlateStatus参数的“遮挡污损模糊车牌”，针对车牌异常，建议参考此字段，更全面\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "车牌类型，包含：0普通蓝牌，1双层黄牌，2单层黄牌，3新能源车牌，4使馆车牌，5领馆车牌，6澳门车牌，7香港车牌，8警用车牌，9教练车牌，10武警车牌，11军用车牌   -2遮挡污损模糊车牌/异常   其他无牌\n注意：\n此字段可能返回 null，表示取不到有效值。\n此字段结果遮挡污损模糊车牌/异常：包含PlateStatus参数的“遮挡污损模糊车牌”，针对车牌异常，建议参考此字段，更全面",
           "example": "普通蓝牌",
           "member": "string",
           "name": "Type",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -447,33 +447,33 @@
         },
         {
           "disabled": false,
-          "document": "判断车牌是否遮挡：“遮挡污损模糊车牌”和\"正常车牌\"。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "判断车牌是否遮挡：“遮挡污损模糊车牌”和\"正常车牌\"。",
           "example": "正常车牌",
           "member": "string",
           "name": "PlateStatus",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "车牌遮挡的置信度，0-100。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "车牌遮挡的置信度，0-100。",
           "example": "99",
           "member": "int64",
           "name": "PlateStatusConfidence",
-          "output_required": true,
+          "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "车牌角度。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "车牌角度。",
           "example": "13.560508",
           "member": "float",
           "name": "PlateAngle",
-          "output_required": true,
+          "output_required": false,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -563,53 +563,53 @@
         },
         {
           "disabled": false,
-          "document": "车牌信息置信度，0-100，仅车辆识别（增强版）支持\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "车牌信息置信度，0-100，仅车辆识别（增强版）支持",
           "example": "95",
           "member": "int64",
           "name": "PlateConfidence",
-          "output_required": true,
+          "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "车辆类型置信度，0-100，仅车辆识别（增强版）支持\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "车辆类型置信度，0-100，仅车辆识别（增强版）支持",
           "example": "68",
           "member": "int64",
           "name": "TypeConfidence",
-          "output_required": true,
+          "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "车辆颜色置信度，0-100，仅车辆识别（增强版）支持\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "车辆颜色置信度，0-100，仅车辆识别（增强版）支持",
           "example": "99",
           "member": "int64",
           "name": "ColorConfidence",
-          "output_required": true,
+          "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "车辆朝向，仅车辆识别（增强版）支持\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "车辆朝向，仅车辆识别（增强版）支持",
           "example": "车头",
           "member": "string",
           "name": "Orientation",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "车辆朝向置信度，0-100，仅车辆识别（增强版）支持\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "车辆朝向置信度，0-100，仅车辆识别（增强版）支持",
           "example": "90",
           "member": "int64",
           "name": "OrientationConfidence",
-          "output_required": true,
+          "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1073,13 +1073,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "图库信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "图库信息",
           "example": "无",
           "member": "GroupInfo",
           "name": "Groups",
-          "output_required": true,
+          "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1212,13 +1212,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "识别到的人体属性信息。单个人体属性信息包括人体检测置信度，属性信息，人体检测框。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "识别到的人体属性信息。单个人体属性信息包括人体检测置信度，属性信息，人体检测框。",
           "example": "[{\"Attributes\":[{\"Confidence\":0.6875998,\"Label\":\"无厨师服\",\"Name\":\"厨师服识别\"},{\"Confidence\":0.6875998,\"Label\":\"无厨师服\",\"Name\":\"厨师服识别(酒店版)\"},{\"Confidence\":0.9608861,\"Label\":\"无厨师帽\",\"Name\":\"厨师帽识别\"},{\"Confidence\":0,\"Label\":\"被优选过滤\",\"Name\":\"口罩识别\"},{\"Confidence\":0.99437755,\"Label\":\"赤膊\",\"Name\":\"赤膊识别\"}],\"DetectConfidence\":0.914,\"Rect\":{\"Height\":1110,\"Width\":440,\"X\":217,\"Y\":79}}]",
           "member": "AttributesForBody",
           "name": "Bodies",
-          "output_required": true,
+          "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1314,23 +1314,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "一级标签结果数组。识别是否文件封。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "一级标签结果数组。识别是否文件封。",
           "example": "[{\"Name\":\"非文件封\",\"Confidence\":97.76},{\"Name\":\"文件封\",\"Confidence\":2.24}]",
           "member": "ImageTag",
           "name": "FirstTags",
-          "output_required": true,
+          "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "二级标签结果数组。识别文件封正反面。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "二级标签结果数组。识别文件封正反面。",
           "example": "[{\"Name\":\"非文件封\",\"Confidence\":97.5},{\"Name\":\"非顺丰文件封正面\",\"Confidence\":2.28},{\"Name\":\"顺丰文件封正面\",\"Confidence\":0.09},{\"Name\":\"非顺丰文件封反面\",\"Confidence\":0.07},{\"Name\":\"顺丰文件封反面\",\"Confidence\":0.05}]",
           "member": "ImageTag",
           "name": "SecondTags",
-          "output_required": true,
+          "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1521,13 +1521,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回标签数组。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "返回标签数组。",
           "example": "[{\"Name\": \"塔楼\",\"FirstCategory\": \"场景\",\"SecondCategory\": \"建筑\",\"Confidence\": 81},{\"Name\": \"夜晚\",\"FirstCategory\": \"场景\",\"SecondCategory\": \"自然风光\",\"Confidence\": 79}] ",
           "member": "DetectLabelItem",
           "name": "Labels",
-          "output_required": true,
+          "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1818,13 +1818,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "识别到的人体属性信息。单个人体属性信息包括人体检测置信度，属性信息，人体检测框。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "识别到的人体属性信息。单个人体属性信息包括人体检测置信度，属性信息，人体检测框。",
           "example": "[{\"Attributes\":[{\"Confidence\":0.9608861,\"Label\":\"无安全帽\",\"Name\":\"安全帽识别\"},{\"Confidence\":0.9768763,\"Label\":\"没有电话\",\"Name\":\"玩手机识别\"},{\"Confidence\":0.8206851,\"Label\":\"没有抽烟\",\"Name\":\"抽烟识别\"},{\"Confidence\":0,\"Label\":\"被优选过滤\",\"Name\":\"口罩识别\"},{\"Confidence\":0.9113377,\"Label\":\"无工地安全带\",\"Name\":\"工地安全带识别\"},{\"Confidence\":0.7201198,\"Label\":\"无手套\",\"Name\":\"手套识别\"},{\"Confidence\":0.6875998,\"Label\":\"无工服\",\"Name\":\"工服识别\"},{\"Confidence\":0.611658,\"Label\":\"无护目镜\",\"Name\":\"护目镜识别\"},{\"Confidence\":0.9828068,\"Label\":\"无反光衣\",\"Name\":\"反光衣识别\"}],\"DetectConfidence\":0.914,\"Rect\":{\"Height\":1110,\"Width\":440,\"X\":217,\"Y\":79}}]",
           "member": "AttributesForBody",
           "name": "Bodies",
-          "output_required": true,
+          "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

@@ -1,3 +1,178 @@
+# Release 3.0.1101.1
+
+## 费用中心(billing) 版本：2018-07-09
+
+### 第 71 次发布
+
+发布时间：2024-11-20 01:13:17
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* CreateSavingPlanOrder
+* DescribeSavingPlanOverview
+* DescribeSavingPlanUsage
+
+
+
+## 云数据库 MySQL(cdb) 版本：2017-03-20
+
+### 第 118 次发布
+
+发布时间：2024-11-20 01:17:41
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeDBPrice](http://document.tencentcloudapi.woa.com/document/product/236/18566)
+
+	* 新增入参：DiskType
+
+
+
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 111 次发布
+
+发布时间：2024-11-20 01:42:58
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateOrganizationAuthUrl](http://document.tencentcloudapi.woa.com/document/product/1668/83727)
+
+	* 新增入参：Initialization
+
+
+
+
+## 国际合作伙伴管理(intlpartnersmgt) 版本：2022-09-28
+
+### 第 19 次发布
+
+发布时间：2024-11-20 01:49:09
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ActionSummaryOverviewItem](http://document.tencentcloudapi.woa.com/document/product/1724/80754#ActionSummaryOverviewItem)
+
+	* <font color="#dd0000">**修改成员**：</font>ActionType, ActionTypeName, OriginalCost, VoucherPayAmount, TotalCost
+
+* [BusinessSummaryOverviewItem](http://document.tencentcloudapi.woa.com/document/product/1724/80754#BusinessSummaryOverviewItem)
+
+	* <font color="#dd0000">**修改成员**：</font>BusinessCode, BusinessCodeName, OriginalCost, VoucherPayAmount, TotalCost
+
+
+
+
+## 云直播CSS(live) 版本：2018-08-01
+
+### 第 66 次发布
+
+发布时间：2024-11-20 01:55:15
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeCasterList](http://document.tencentcloudapi.woa.com/document/product/267/85330)
+* [DescribeCasterTransitionTypes](http://document.tencentcloudapi.woa.com/document/product/267/85329)
+* [DescribeCasterUserStatus](http://document.tencentcloudapi.woa.com/document/product/267/85328)
+
+新增数据结构：
+
+* [CasterBriefInfo](http://document.tencentcloudapi.woa.com/document/product/267/20474#CasterBriefInfo)
+* [TransitionTypeInfo](http://document.tencentcloudapi.woa.com/document/product/267/20474#TransitionTypeInfo)
+
+
+
+## 容器服务(tke) 版本：2022-05-01
+
+### 第 7 次发布
+
+发布时间：2024-11-20 02:20:10
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [RebootMachines](http://document.tencentcloudapi.woa.com/document/product/457/85333)
+* [StartMachines](http://document.tencentcloudapi.woa.com/document/product/457/85332)
+* [StopMachines](http://document.tencentcloudapi.woa.com/document/product/457/85331)
+
+
+
+## 容器服务(tke) 版本：2018-05-25
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 173 次发布
+
+发布时间：2024-11-20 02:24:46
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeRouteTables](http://document.tencentcloudapi.woa.com/document/product/215/15763)
+
+	* 新增入参：NeedRouterInfo
+
+* [ModifyNetworkInterfaceAttribute](http://document.tencentcloudapi.woa.com/document/product/215/15815)
+
+	* 新增入参：DeleteOnTermination
+
+
+修改数据结构：
+
+* [SecurityGroupLimitSet](http://document.tencentcloudapi.woa.com/document/product/215/15824#SecurityGroupLimitSet)
+
+	* <font color="#dd0000">**修改成员**：</font>SecurityGroupExtendedPolicyLimit, SecurityGroupReferedCvmAndEniLimit, SecurityGroupReferedSvcLimit
+
+
+
+
+## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
+
+### 第 73 次发布
+
+发布时间：2024-11-20 02:31:30
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateTaskFolder](http://document.tencentcloudapi.woa.com/document/product/1607/83079)
+
+	* 新增入参：TaskNodeType
+
+
+
+
 # Release 3.0.1100.1
 
 ## 弹性伸缩(as) 版本：2018-04-19

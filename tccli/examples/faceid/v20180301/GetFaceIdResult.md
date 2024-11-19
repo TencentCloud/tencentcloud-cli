@@ -1,6 +1,6 @@
 **Example 1: 获取SDK核验结果成功示例**
 
-获取SDK核验结果成功。
+
 
 Input: 
 
@@ -32,7 +32,7 @@ Output:
 
 **Example 2: 获取SDK核验结果人脸检测失败示例**
 
-获取SDK核验结果人脸检测失败。
+
 
 Input: 
 

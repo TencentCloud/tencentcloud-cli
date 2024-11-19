@@ -1215,58 +1215,6 @@ def doCreateClusterRouteTable(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteClusterNodePool(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
-        cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
-        cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
-            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
-        )
-    elif os.getenv(OptionsDefine.ENV_TKE_REGION)             and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID)             and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE)             and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
-        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
-    else:
-        cred = credential.Credential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
-        )
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint],
-        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    if g_param[OptionsDefine.Language]:
-        profile.language = g_param[OptionsDefine.Language]
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TkeClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteClusterNodePoolRequest()
-    model.from_json_string(json.dumps(args))
-    start_time = time.time()
-    while True:
-        rsp = client.DeleteClusterNodePool(model)
-        result = rsp.to_json_string()
-        try:
-            json_obj = json.loads(result)
-        except TypeError as e:
-            json_obj = json.loads(result.decode('utf-8'))  # python3.3
-        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
-            break
-        cur_time = time.time()
-        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
-            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
-            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
-            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
-        else:
-            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
-        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
-    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
 def doGetUpgradeInstanceProgress(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -2463,7 +2411,7 @@ def doModifyClusterVirtualNodePool(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeClusterNodePools(args, parsed_globals):
+def doDescribeAvailableClusterVersion(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -2492,11 +2440,11 @@ def doDescribeClusterNodePools(args, parsed_globals):
     client = mod.TkeClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeClusterNodePoolsRequest()
+    model = models.DescribeAvailableClusterVersionRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DescribeClusterNodePools(model)
+        rsp = client.DescribeAvailableClusterVersion(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -2723,7 +2671,7 @@ def doCreateEdgeLogConfig(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeAvailableClusterVersion(args, parsed_globals):
+def doAcquireClusterAdminRole(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -2752,11 +2700,11 @@ def doDescribeAvailableClusterVersion(args, parsed_globals):
     client = mod.TkeClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeAvailableClusterVersionRequest()
+    model = models.AcquireClusterAdminRoleRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DescribeAvailableClusterVersion(model)
+        rsp = client.AcquireClusterAdminRole(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -3139,7 +3087,7 @@ def doForwardApplicationRequestV3(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeClusterNodePoolDetail(args, parsed_globals):
+def doStartMachines(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -3168,11 +3116,11 @@ def doDescribeClusterNodePoolDetail(args, parsed_globals):
     client = mod.TkeClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeClusterNodePoolDetailRequest()
+    model = models.StartMachinesRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DescribeClusterNodePoolDetail(model)
+        rsp = client.StartMachines(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -3277,6 +3225,58 @@ def doDeletePrometheusTemplateSync(args, parsed_globals):
     start_time = time.time()
     while True:
         rsp = client.DeletePrometheusTemplateSync(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateTKEEdgeCluster(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION)             and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID)             and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE)             and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TkeClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateTKEEdgeClusterRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.CreateTKEEdgeCluster(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -4283,6 +4283,110 @@ def doDeleteReservedInstances(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doRebootMachines(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION)             and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID)             and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE)             and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TkeClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.RebootMachinesRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.RebootMachines(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doForwardTKEEdgeApplicationRequestV3(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION)             and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID)             and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE)             and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TkeClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ForwardTKEEdgeApplicationRequestV3Request()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.ForwardTKEEdgeApplicationRequestV3(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDeletePrometheusTemplate(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -5167,7 +5271,7 @@ def doUpdateEKSContainerInstance(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateTKEEdgeCluster(args, parsed_globals):
+def doStopMachines(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -5196,11 +5300,11 @@ def doCreateTKEEdgeCluster(args, parsed_globals):
     client = mod.TkeClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateTKEEdgeClusterRequest()
+    model = models.StopMachinesRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.CreateTKEEdgeCluster(model)
+        rsp = client.StopMachines(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -8027,7 +8131,7 @@ def doDescribeClusterSecurity(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doRenewReservedInstances(args, parsed_globals):
+def doDescribeClusterNodePoolDetail(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -8056,11 +8160,11 @@ def doRenewReservedInstances(args, parsed_globals):
     client = mod.TkeClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.RenewReservedInstancesRequest()
+    model = models.DescribeClusterNodePoolDetailRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.RenewReservedInstances(model)
+        rsp = client.DescribeClusterNodePoolDetail(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -8131,7 +8235,7 @@ def doCreatePrometheusTemplate(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doAcquireClusterAdminRole(args, parsed_globals):
+def doDeleteClusterNodePool(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -8160,11 +8264,11 @@ def doAcquireClusterAdminRole(args, parsed_globals):
     client = mod.TkeClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.AcquireClusterAdminRoleRequest()
+    model = models.DeleteClusterNodePoolRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.AcquireClusterAdminRole(model)
+        rsp = client.DeleteClusterNodePool(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -8547,7 +8651,7 @@ def doGetMostSuitableImageCache(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeClusterEndpoints(args, parsed_globals):
+def doDescribeClusterNodePools(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -8576,11 +8680,11 @@ def doDescribeClusterEndpoints(args, parsed_globals):
     client = mod.TkeClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeClusterEndpointsRequest()
+    model = models.DescribeClusterNodePoolsRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DescribeClusterEndpoints(model)
+        rsp = client.DescribeClusterNodePools(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -10939,7 +11043,7 @@ def doModifyNodePool(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doForwardTKEEdgeApplicationRequestV3(args, parsed_globals):
+def doRenewReservedInstances(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -10968,11 +11072,11 @@ def doForwardTKEEdgeApplicationRequestV3(args, parsed_globals):
     client = mod.TkeClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ForwardTKEEdgeApplicationRequestV3Request()
+    model = models.RenewReservedInstancesRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.ForwardTKEEdgeApplicationRequestV3(model)
+        rsp = client.RenewReservedInstances(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -11823,6 +11927,58 @@ def doModifyPrometheusConfig(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeClusterEndpoints(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION)             and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID)             and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE)             and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TkeClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeClusterEndpointsRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.DescribeClusterEndpoints(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribePostNodeResources(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -12119,7 +12275,6 @@ ACTION_MAP = {
     "DescribeClusterAsGroups": doDescribeClusterAsGroups,
     "DescribeIPAMD": doDescribeIPAMD,
     "CreateClusterRouteTable": doCreateClusterRouteTable,
-    "DeleteClusterNodePool": doDeleteClusterNodePool,
     "GetUpgradeInstanceProgress": doGetUpgradeInstanceProgress,
     "ModifyPrometheusAgentExternalLabels": doModifyPrometheusAgentExternalLabels,
     "DescribePodsBySpec": doDescribePodsBySpec,
@@ -12143,12 +12298,12 @@ ACTION_MAP = {
     "EnableClusterAudit": doEnableClusterAudit,
     "CreateBackupStorageLocation": doCreateBackupStorageLocation,
     "ModifyClusterVirtualNodePool": doModifyClusterVirtualNodePool,
-    "DescribeClusterNodePools": doDescribeClusterNodePools,
+    "DescribeAvailableClusterVersion": doDescribeAvailableClusterVersion,
     "CreateClusterNodePool": doCreateClusterNodePool,
     "DescribeClusterPendingReleases": doDescribeClusterPendingReleases,
     "DescribeTKEEdgeClusterStatus": doDescribeTKEEdgeClusterStatus,
     "CreateEdgeLogConfig": doCreateEdgeLogConfig,
-    "DescribeAvailableClusterVersion": doDescribeAvailableClusterVersion,
+    "AcquireClusterAdminRole": doAcquireClusterAdminRole,
     "DeleteImageCaches": doDeleteImageCaches,
     "DeleteClusterRouteTable": doDeleteClusterRouteTable,
     "DescribeInstantInspectTask": doDescribeInstantInspectTask,
@@ -12156,9 +12311,10 @@ ACTION_MAP = {
     "DescribeClusterAuthenticationOptions": doDescribeClusterAuthenticationOptions,
     "InstallAddon": doInstallAddon,
     "ForwardApplicationRequestV3": doForwardApplicationRequestV3,
-    "DescribeClusterNodePoolDetail": doDescribeClusterNodePoolDetail,
+    "StartMachines": doStartMachines,
     "DeletePrometheusTemp": doDeletePrometheusTemp,
     "DeletePrometheusTemplateSync": doDeletePrometheusTemplateSync,
+    "CreateTKEEdgeCluster": doCreateTKEEdgeCluster,
     "DescribeHealthCheckTemplate": doDescribeHealthCheckTemplate,
     "CreateClusterInstances": doCreateClusterInstances,
     "ModifyClusterAttribute": doModifyClusterAttribute,
@@ -12178,6 +12334,8 @@ ACTION_MAP = {
     "DescribeClusterEndpointStatus": doDescribeClusterEndpointStatus,
     "CreateReservedInstances": doCreateReservedInstances,
     "DeleteReservedInstances": doDeleteReservedInstances,
+    "RebootMachines": doRebootMachines,
+    "ForwardTKEEdgeApplicationRequestV3": doForwardTKEEdgeApplicationRequestV3,
     "DeletePrometheusTemplate": doDeletePrometheusTemplate,
     "DescribeRegions": doDescribeRegions,
     "AddExistedInstances": doAddExistedInstances,
@@ -12195,7 +12353,7 @@ ACTION_MAP = {
     "DeleteClusterVirtualNodePool": doDeleteClusterVirtualNodePool,
     "DisableEncryptionProtection": doDisableEncryptionProtection,
     "UpdateEKSContainerInstance": doUpdateEKSContainerInstance,
-    "CreateTKEEdgeCluster": doCreateTKEEdgeCluster,
+    "StopMachines": doStopMachines,
     "DescribeTKEEdgeScript": doDescribeTKEEdgeScript,
     "DeleteAddon": doDeleteAddon,
     "CreateEksLogConfig": doCreateEksLogConfig,
@@ -12250,9 +12408,9 @@ ACTION_MAP = {
     "ModifyPrometheusRecordRuleYaml": doModifyPrometheusRecordRuleYaml,
     "DescribeClusterLevelAttribute": doDescribeClusterLevelAttribute,
     "DescribeClusterSecurity": doDescribeClusterSecurity,
-    "RenewReservedInstances": doRenewReservedInstances,
+    "DescribeClusterNodePoolDetail": doDescribeClusterNodePoolDetail,
     "CreatePrometheusTemplate": doCreatePrometheusTemplate,
-    "AcquireClusterAdminRole": doAcquireClusterAdminRole,
+    "DeleteClusterNodePool": doDeleteClusterNodePool,
     "ScaleInClusterMaster": doScaleInClusterMaster,
     "DescribeResourceUsage": doDescribeResourceUsage,
     "UninstallLogAgent": doUninstallLogAgent,
@@ -12260,7 +12418,7 @@ ACTION_MAP = {
     "DescribeECMInstances": doDescribeECMInstances,
     "DeleteTKEEdgeCluster": doDeleteTKEEdgeCluster,
     "GetMostSuitableImageCache": doGetMostSuitableImageCache,
-    "DescribeClusterEndpoints": doDescribeClusterEndpoints,
+    "DescribeClusterNodePools": doDescribeClusterNodePools,
     "CreatePrometheusClusterAgent": doCreatePrometheusClusterAgent,
     "CreatePrometheusConfig": doCreatePrometheusConfig,
     "DescribeEKSClusterCredential": doDescribeEKSClusterCredential,
@@ -12306,7 +12464,7 @@ ACTION_MAP = {
     "DescribeEnableVpcCniProgress": doDescribeEnableVpcCniProgress,
     "DescribePrometheusAlertRule": doDescribePrometheusAlertRule,
     "ModifyNodePool": doModifyNodePool,
-    "ForwardTKEEdgeApplicationRequestV3": doForwardTKEEdgeApplicationRequestV3,
+    "RenewReservedInstances": doRenewReservedInstances,
     "SyncPrometheusTemplate": doSyncPrometheusTemplate,
     "DescribeClusterReleases": doDescribeClusterReleases,
     "UpgradeClusterRelease": doUpgradeClusterRelease,
@@ -12323,6 +12481,7 @@ ACTION_MAP = {
     "RunPrometheusInstance": doRunPrometheusInstance,
     "UpdateEKSCluster": doUpdateEKSCluster,
     "ModifyPrometheusConfig": doModifyPrometheusConfig,
+    "DescribeClusterEndpoints": doDescribeClusterEndpoints,
     "DescribePostNodeResources": doDescribePostNodeResources,
     "InstallLogAgent": doInstallLogAgent,
     "CheckEdgeClusterCIDR": doCheckEdgeClusterCIDR,

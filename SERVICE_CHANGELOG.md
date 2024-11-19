@@ -1,10 +1,28 @@
 # 本版本更新包含以下内容：
 
-## 弹性伸缩(as) 版本：2018-04-19
+## 费用中心(billing) 版本：2018-07-09
 
-### 第 40 次发布
+### 第 71 次发布
 
-发布时间：2024-11-19 01:10:51
+发布时间：2024-11-20 01:13:17
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* CreateSavingPlanOrder
+* DescribeSavingPlanOverview
+* DescribeSavingPlanUsage
+
+
+
+## 云数据库 MySQL(cdb) 版本：2017-03-20
+
+### 第 118 次发布
+
+发布时间：2024-11-20 01:17:41
 
 本次发布包含了以下内容：
 
@@ -12,339 +30,18 @@
 
 修改接口：
 
-* [CreateLaunchConfiguration](http://document.tencentcloudapi.woa.com/document/product/377/20447)
+* [DescribeDBPrice](http://document.tencentcloudapi.woa.com/document/product/236/18566)
 
-	* 新增入参：DedicatedClusterId
-
-* [ModifyLaunchConfigurationAttributes](http://document.tencentcloudapi.woa.com/document/product/377/31298)
-
-	* 新增入参：DedicatedClusterId
-
-
-修改数据结构：
-
-* [LaunchConfiguration](http://document.tencentcloudapi.woa.com/document/product/377/20453#LaunchConfiguration)
-
-	* 新增成员：DedicatedClusterId
-
-
-
-
-## 运维安全中心（堡垒机）(bh) 版本：2023-04-18
-
-### 第 2 次发布
-
-发布时间：2024-11-19 01:12:03
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [AddDeviceGroupMembers](http://document.tencentcloudapi.woa.com/document/product/1780/85254)
-* [AddUserGroupMembers](http://document.tencentcloudapi.woa.com/document/product/1780/85281)
-* [BindDeviceAccountPassword](http://document.tencentcloudapi.woa.com/document/product/1780/85269)
-* [BindDeviceAccountPrivateKey](http://document.tencentcloudapi.woa.com/document/product/1780/85268)
-* [BindDeviceResource](http://document.tencentcloudapi.woa.com/document/product/1780/85267)
-* [CreateAcl](http://document.tencentcloudapi.woa.com/document/product/1780/85297)
-* [CreateAssetSyncJob](http://document.tencentcloudapi.woa.com/document/product/1780/85266)
-* [CreateChangePwdTask](http://document.tencentcloudapi.woa.com/document/product/1780/85307)
-* [CreateCmdTemplate](http://document.tencentcloudapi.woa.com/document/product/1780/85296)
-* [CreateDeviceAccount](http://document.tencentcloudapi.woa.com/document/product/1780/85265)
-* [CreateDeviceGroup](http://document.tencentcloudapi.woa.com/document/product/1780/85253)
-* [CreateResource](http://document.tencentcloudapi.woa.com/document/product/1780/85317)
-* [CreateUser](http://document.tencentcloudapi.woa.com/document/product/1780/85288)
-* [CreateUserGroup](http://document.tencentcloudapi.woa.com/document/product/1780/85280)
-* [DeleteAcls](http://document.tencentcloudapi.woa.com/document/product/1780/85295)
-* [DeleteChangePwdTask](http://document.tencentcloudapi.woa.com/document/product/1780/85306)
-* [DeleteCmdTemplates](http://document.tencentcloudapi.woa.com/document/product/1780/85294)
-* [DeleteDeviceAccounts](http://document.tencentcloudapi.woa.com/document/product/1780/85264)
-* [DeleteDeviceGroupMembers](http://document.tencentcloudapi.woa.com/document/product/1780/85252)
-* [DeleteDeviceGroups](http://document.tencentcloudapi.woa.com/document/product/1780/85251)
-* [DeleteDevices](http://document.tencentcloudapi.woa.com/document/product/1780/85263)
-* [DeleteUserGroupMembers](http://document.tencentcloudapi.woa.com/document/product/1780/85279)
-* [DeleteUserGroups](http://document.tencentcloudapi.woa.com/document/product/1780/85278)
-* [DeleteUsers](http://document.tencentcloudapi.woa.com/document/product/1780/85287)
-* [DeployResource](http://document.tencentcloudapi.woa.com/document/product/1780/85286)
-* [DescribeAcls](http://document.tencentcloudapi.woa.com/document/product/1780/85293)
-* [DescribeAssetSyncStatus](http://document.tencentcloudapi.woa.com/document/product/1780/85262)
-* [DescribeChangePwdTask](http://document.tencentcloudapi.woa.com/document/product/1780/85305)
-* [DescribeChangePwdTaskDetail](http://document.tencentcloudapi.woa.com/document/product/1780/85304)
-* [DescribeCmdTemplates](http://document.tencentcloudapi.woa.com/document/product/1780/85292)
-* [DescribeDeviceAccounts](http://document.tencentcloudapi.woa.com/document/product/1780/85261)
-* [DescribeDeviceGroupMembers](http://document.tencentcloudapi.woa.com/document/product/1780/85250)
-* [DescribeDeviceGroups](http://document.tencentcloudapi.woa.com/document/product/1780/85249)
-* [DescribeDevices](http://document.tencentcloudapi.woa.com/document/product/1780/85260)
-* [DescribeDomains](http://document.tencentcloudapi.woa.com/document/product/1780/85271)
-* [DescribeLoginEvent](http://document.tencentcloudapi.woa.com/document/product/1780/85300)
-* [DescribeOperationEvent](http://document.tencentcloudapi.woa.com/document/product/1780/85299)
-* [DescribeResources](http://document.tencentcloudapi.woa.com/document/product/1780/85316)
-* [DescribeUserGroupMembers](http://document.tencentcloudapi.woa.com/document/product/1780/85277)
-* [DescribeUserGroups](http://document.tencentcloudapi.woa.com/document/product/1780/85276)
-* [DescribeUsers](http://document.tencentcloudapi.woa.com/document/product/1780/85285)
-* [ImportExternalDevice](http://document.tencentcloudapi.woa.com/document/product/1780/85259)
-* [ModifyAcl](http://document.tencentcloudapi.woa.com/document/product/1780/85291)
-* [ModifyChangePwdTask](http://document.tencentcloudapi.woa.com/document/product/1780/85303)
-* [ModifyCmdTemplate](http://document.tencentcloudapi.woa.com/document/product/1780/85290)
-* [ModifyDevice](http://document.tencentcloudapi.woa.com/document/product/1780/85258)
-* [ModifyDeviceGroup](http://document.tencentcloudapi.woa.com/document/product/1780/85319)
-* [ModifyOAuthSetting](http://document.tencentcloudapi.woa.com/document/product/1780/85273)
-* [ModifyResource](http://document.tencentcloudapi.woa.com/document/product/1780/85315)
-* [ModifyUser](http://document.tencentcloudapi.woa.com/document/product/1780/85284)
-* [ModifyUserGroup](http://document.tencentcloudapi.woa.com/document/product/1780/85275)
-* [ResetDeviceAccountPassword](http://document.tencentcloudapi.woa.com/document/product/1780/85257)
-* [ResetDeviceAccountPrivateKey](http://document.tencentcloudapi.woa.com/document/product/1780/85256)
-* [ResetUser](http://document.tencentcloudapi.woa.com/document/product/1780/85283)
-* [RunChangePwdTask](http://document.tencentcloudapi.woa.com/document/product/1780/85302)
-* [SearchAuditLog](http://document.tencentcloudapi.woa.com/document/product/1780/85313)
-* [SearchCommandBySid](http://document.tencentcloudapi.woa.com/document/product/1780/85312)
-* [SearchFile](http://document.tencentcloudapi.woa.com/document/product/1780/85311)
-* [SearchFileBySid](http://document.tencentcloudapi.woa.com/document/product/1780/85310)
-* [SearchSession](http://document.tencentcloudapi.woa.com/document/product/1780/85309)
-* [SearchSessionCommand](http://document.tencentcloudapi.woa.com/document/product/1780/85308)
-
-新增数据结构：
-
-* [ACTemplate](http://document.tencentcloudapi.woa.com/document/product/1780/85236#ACTemplate)
-* [Acl](http://document.tencentcloudapi.woa.com/document/product/1780/85236#Acl)
-* [AssetSyncStatus](http://document.tencentcloudapi.woa.com/document/product/1780/85236#AssetSyncStatus)
-* [ChangePwdTaskDetail](http://document.tencentcloudapi.woa.com/document/product/1780/85236#ChangePwdTaskDetail)
-* [ChangePwdTaskInfo](http://document.tencentcloudapi.woa.com/document/product/1780/85236#ChangePwdTaskInfo)
-* [Clb](http://document.tencentcloudapi.woa.com/document/product/1780/85236#Clb)
-* [CmdTemplate](http://document.tencentcloudapi.woa.com/document/product/1780/85236#CmdTemplate)
-* [Department](http://document.tencentcloudapi.woa.com/document/product/1780/85236#Department)
-* [DepartmentManagerUser](http://document.tencentcloudapi.woa.com/document/product/1780/85236#DepartmentManagerUser)
-* [Device](http://document.tencentcloudapi.woa.com/document/product/1780/85236#Device)
-* [Domain](http://document.tencentcloudapi.woa.com/document/product/1780/85236#Domain)
-* [ExternalDevice](http://document.tencentcloudapi.woa.com/document/product/1780/85236#ExternalDevice)
-* [Filter](http://document.tencentcloudapi.woa.com/document/product/1780/85236#Filter)
-* [Group](http://document.tencentcloudapi.woa.com/document/product/1780/85236#Group)
-* [LoginEvent](http://document.tencentcloudapi.woa.com/document/product/1780/85236#LoginEvent)
-* [OperationEvent](http://document.tencentcloudapi.woa.com/document/product/1780/85236#OperationEvent)
-* [Resource](http://document.tencentcloudapi.woa.com/document/product/1780/85236#Resource)
-* [RunChangePwdTaskDetail](http://document.tencentcloudapi.woa.com/document/product/1780/85236#RunChangePwdTaskDetail)
-* [SearchFileBySidResult](http://document.tencentcloudapi.woa.com/document/product/1780/85236#SearchFileBySidResult)
-* [SearchFileResult](http://document.tencentcloudapi.woa.com/document/product/1780/85236#SearchFileResult)
-* [SearchFileTypeFilter](http://document.tencentcloudapi.woa.com/document/product/1780/85236#SearchFileTypeFilter)
-* [TagFilter](http://document.tencentcloudapi.woa.com/document/product/1780/85236#TagFilter)
-* [User](http://document.tencentcloudapi.woa.com/document/product/1780/85236#User)
-
-修改数据结构：
-
-* [SearchCommandResult](http://document.tencentcloudapi.woa.com/document/product/1780/85236#SearchCommandResult)
-
-	* 新增成员：SignValue
-
-
-
-
-## 云联络中心(ccc) 版本：2020-02-10
-
-### 第 70 次发布
-
-发布时间：2024-11-19 01:16:32
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [CreatePredictiveDialingCampaign](http://document.tencentcloudapi.woa.com/document/product/679/83370)
-
-	* 新增入参：Variables, UUI, CalleeAttributes
-
-* [UpdatePredictiveDialingCampaign](http://document.tencentcloudapi.woa.com/document/product/679/83363)
-
-	* 新增入参：Variables, UUI, CalleeAttributes
-
-
-
-
-## 消息队列 CKafka 版(ckafka) 版本：2019-08-19
-
-### 第 92 次发布
-
-发布时间：2024-11-19 01:21:49
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [CreateInstancePost](http://document.tencentcloudapi.woa.com/document/product/597/76750)
-
-	* 新增入参：ElasticBandwidthSwitch
-
-* [CreateInstancePre](http://document.tencentcloudapi.woa.com/document/product/597/45847)
-
-	* 新增入参：ElasticBandwidthSwitch
-
-
-修改数据结构：
-
-* [CreateInstancePreData](http://document.tencentcloudapi.woa.com/document/product/597/40861#CreateInstancePreData)
-
-	* <font color="#dd0000">**修改成员**：</font>DealNameInstanceIdMapping
-
-* [CreateInstancePreResp](http://document.tencentcloudapi.woa.com/document/product/597/40861#CreateInstancePreResp)
-
-	* <font color="#dd0000">**修改成员**：</font>DeleteRouteTimestamp
-
-* [RouteDTO](http://document.tencentcloudapi.woa.com/document/product/597/40861#RouteDTO)
-
-	* <font color="#dd0000">**修改成员**：</font>RouteId
-
-
-
-
-## 负载均衡(clb) 版本：2023-04-17
-
-
-
-## 负载均衡(clb) 版本：2018-03-17
-
-### 第 75 次发布
-
-发布时间：2024-11-19 01:22:40
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [DescribeTaskStatus](http://document.tencentcloudapi.woa.com/document/product/214/30683)
-
-	* 新增出参：Message
-
-
-修改数据结构：
-
-* [TargetHealth](http://document.tencentcloudapi.woa.com/document/product/214/30694#TargetHealth)
-
-	* 新增成员：TargetGroupId
-
-	* <font color="#dd0000">**修改成员**：</font>HealthStatusDetial
-
-
-
-
-## 高性能弹性计算底座(cube) 版本：2024-03-04
-
-### 第 4 次发布
-
-发布时间：2024-11-19 01:26:18
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [DescribeInstanceHostInfo](http://document.tencentcloudapi.woa.com/document/product/1760/85323)
-* [DescribeZoneInstanceTypeInventory](http://document.tencentcloudapi.woa.com/document/product/1760/85322)
-* [RunInstances](http://document.tencentcloudapi.woa.com/document/product/1760/85321)
-* [TerminateInstances](http://document.tencentcloudapi.woa.com/document/product/1760/85320)
-
-新增数据结构：
-
-* [InstanceTypeQuotaItem](http://document.tencentcloudapi.woa.com/document/product/1760/83627#InstanceTypeQuotaItem)
-
-
-
-## 主机安全(cwp) 版本：2018-02-28
-
-### 第 111 次发布
-
-发布时间：2024-11-19 01:27:16
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [DescribePasswordCrackStatus](http://document.tencentcloudapi.woa.com/document/product/296/85324)
-
-
-
-## 运维安全中心（堡垒机）(dasb) 版本：2019-10-18
-
-### 第 38 次发布
-
-发布时间：2024-11-19 01:31:35
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [DescribeAccessEntry](http://document.tencentcloudapi.woa.com/document/product/1492/81753)
-
-	* 新增出参：IntranetAccessEntrySet
-
-
-新增数据结构：
-
-* [IntranetAccessEntry](http://document.tencentcloudapi.woa.com/document/product/1492/74806#IntranetAccessEntry)
-
-修改数据结构：
-
-* [Command](http://document.tencentcloudapi.woa.com/document/product/1492/74806#Command)
-
-	* 新增成员：SignValue
-
-* [OperationEvent](http://document.tencentcloudapi.woa.com/document/product/1492/74806#OperationEvent)
-
-	* 新增成员：SignValue
-
-* [SearchCommandResult](http://document.tencentcloudapi.woa.com/document/product/1492/74806#SearchCommandResult)
-
-	* 新增成员：SignValue
-
-* [SearchFileBySidResult](http://document.tencentcloudapi.woa.com/document/product/1492/74806#SearchFileBySidResult)
-
-	* 新增成员：SignValue
-
-* [SearchFileResult](http://document.tencentcloudapi.woa.com/document/product/1492/74806#SearchFileResult)
-
-	* 新增成员：SignValue
-
-* [User](http://document.tencentcloudapi.woa.com/document/product/1492/74806#User)
-
-	* 新增成员：UKeyStatus
+	* 新增入参：DiskType
 
 
 
 
 ## 腾讯电子签企业版(ess) 版本：2020-11-11
 
-### 第 110 次发布
+### 第 111 次发布
 
-发布时间：2024-11-19 01:40:14
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [CreateMultiFlowSignQRCode](http://document.tencentcloudapi.woa.com/document/product/1668/79347)
-
-	* 新增入参：FlowNameAppendScannerInfo
-
-
-
-
-## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
-
-### 第 164 次发布
-
-发布时间：2024-11-19 01:41:02
+发布时间：2024-11-20 01:42:58
 
 本次发布包含了以下内容：
 
@@ -352,22 +49,18 @@
 
 修改接口：
 
-* [ChannelCreateMultiFlowSignQRCode](http://document.tencentcloudapi.woa.com/document/product/1595/75252)
+* [CreateOrganizationAuthUrl](http://document.tencentcloudapi.woa.com/document/product/1668/83727)
 
-	* 新增入参：FlowNameAppendScannerInfo
-
-
-
-
-## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+	* 新增入参：Initialization
 
 
 
-## 腾讯云可观测平台(monitor) 版本：2018-07-24
 
-### 第 91 次发布
+## 国际合作伙伴管理(intlpartnersmgt) 版本：2022-09-28
 
-发布时间：2024-11-19 01:54:03
+### 第 19 次发布
+
+发布时间：2024-11-20 01:49:09
 
 本次发布包含了以下内容：
 
@@ -375,63 +68,22 @@
 
 修改数据结构：
 
-* [Condition](http://document.tencentcloudapi.woa.com/document/product/248/30354#Condition)
+* [ActionSummaryOverviewItem](http://document.tencentcloudapi.woa.com/document/product/1724/80754#ActionSummaryOverviewItem)
 
-	* 新增成员：RuleType
+	* <font color="#dd0000">**修改成员**：</font>ActionType, ActionTypeName, OriginalCost, VoucherPayAmount, TotalCost
 
+* [BusinessSummaryOverviewItem](http://document.tencentcloudapi.woa.com/document/product/1724/80754#BusinessSummaryOverviewItem)
 
-
-
-## 腾讯健康组学平台(omics) 版本：2022-11-28
-
-### 第 16 次发布
-
-发布时间：2024-11-19 01:57:24
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增数据结构：
-
-* [CosFileInfo](http://document.tencentcloudapi.woa.com/document/product/1725/80781#CosFileInfo)
-
-修改数据结构：
-
-* [ApplicationVersion](http://document.tencentcloudapi.woa.com/document/product/1725/80781#ApplicationVersion)
-
-	* 新增成员：CosSource
-
-* [ExecutionTime](http://document.tencentcloudapi.woa.com/document/product/1725/80781#ExecutionTime)
-
-	* <font color="#dd0000">**修改成员**：</font>SubmitTime, StartTime, EndTime
-
-* [RunStatusCount](http://document.tencentcloudapi.woa.com/document/product/1725/80781#RunStatusCount)
-
-	* <font color="#dd0000">**修改成员**：</font>Status, Count
-
-* [Table](http://document.tencentcloudapi.woa.com/document/product/1725/80781#Table)
-
-	* 新增成员：CreatorId
-
-	* <font color="#dd0000">**修改成员**：</font>TableId, ProjectId, Name, Description, Columns, CreateTime, Creator
-
-* [TableColumn](http://document.tencentcloudapi.woa.com/document/product/1725/80781#TableColumn)
-
-	* <font color="#dd0000">**修改成员**：</font>Header, DataType
-
-* [TableRow](http://document.tencentcloudapi.woa.com/document/product/1725/80781#TableRow)
-
-	* <font color="#dd0000">**修改成员**：</font>TableRowUuid, Content
+	* <font color="#dd0000">**修改成员**：</font>BusinessCode, BusinessCodeName, OriginalCost, VoucherPayAmount, TotalCost
 
 
 
 
-## 全栈式风控引擎(rce) 版本：2020-11-03
+## 云直播CSS(live) 版本：2018-08-01
 
-### 第 15 次发布
+### 第 66 次发布
 
-发布时间：2024-11-19 02:00:12
+发布时间：2024-11-20 01:55:15
 
 本次发布包含了以下内容：
 
@@ -439,20 +91,22 @@
 
 新增接口：
 
-* [DescribeUserUsageCnt](http://document.tencentcloudapi.woa.com/document/product/1343/85325)
+* [DescribeCasterList](http://document.tencentcloudapi.woa.com/document/product/267/85330)
+* [DescribeCasterTransitionTypes](http://document.tencentcloudapi.woa.com/document/product/267/85329)
+* [DescribeCasterUserStatus](http://document.tencentcloudapi.woa.com/document/product/267/85328)
 
 新增数据结构：
 
-* [OutputDescribeUserUsageCnt](http://document.tencentcloudapi.woa.com/document/product/1343/52566#OutputDescribeUserUsageCnt)
-* [OutputDescribeUserUsageCntData](http://document.tencentcloudapi.woa.com/document/product/1343/52566#OutputDescribeUserUsageCntData)
+* [CasterBriefInfo](http://document.tencentcloudapi.woa.com/document/product/267/20474#CasterBriefInfo)
+* [TransitionTypeInfo](http://document.tencentcloudapi.woa.com/document/product/267/20474#TransitionTypeInfo)
 
 
 
-## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+## 容器服务(tke) 版本：2022-05-01
 
-### 第 120 次发布
+### 第 7 次发布
 
-发布时间：2024-11-19 02:09:36
+发布时间：2024-11-20 02:20:10
 
 本次发布包含了以下内容：
 
@@ -460,90 +114,21 @@
 
 新增接口：
 
-* [DescribePurchaseConfig](http://document.tencentcloudapi.woa.com/document/product/1179/85326)
-
-新增数据结构：
-
-* [SaleProductSpec](http://document.tencentcloudapi.woa.com/document/product/1179/46089#SaleProductSpec)
-* [SaleRegion](http://document.tencentcloudapi.woa.com/document/product/1179/46089#SaleRegion)
-* [SaleZone](http://document.tencentcloudapi.woa.com/document/product/1179/46089#SaleZone)
-* [SaleZoneProduct](http://document.tencentcloudapi.woa.com/document/product/1179/46089#SaleZoneProduct)
-
-修改数据结构：
-
-* [RabbitMQClusterInfo](http://document.tencentcloudapi.woa.com/document/product/1179/46089#RabbitMQClusterInfo)
-
-	* 新增成员：InstanceType
-
-* [RabbitMQVipInstance](http://document.tencentcloudapi.woa.com/document/product/1179/46089#RabbitMQVipInstance)
-
-	* 新增成员：InstanceType
+* [RebootMachines](http://document.tencentcloudapi.woa.com/document/product/457/85333)
+* [StartMachines](http://document.tencentcloudapi.woa.com/document/product/457/85332)
+* [StopMachines](http://document.tencentcloudapi.woa.com/document/product/457/85331)
 
 
 
-
-## TI-ONE 训练平台(tione) 版本：2021-11-11
-
-### 第 69 次发布
-
-发布时间：2024-11-19 02:12:58
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [NotebookDetail](http://document.tencentcloudapi.woa.com/document/product/851/74915#NotebookDetail)
-
-	* 新增成员：SubUin
-
-* [SSHConfig](http://document.tencentcloudapi.woa.com/document/product/851/74915#SSHConfig)
-
-	* 新增成员：IsAddressChanged
-
-
-
-
-## TI-ONE 训练平台(tione) 版本：2019-10-22
-
-
-
-## 机器翻译(tmt) 版本：2018-03-21
-
-### 第 6 次发布
-
-发布时间：2024-11-19 02:14:04
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [TextTranslate](http://document.tencentcloudapi.woa.com/document/product/551/15619)
-
-	* 新增出参：UsedAmount
-
-* [TextTranslateBatch](http://document.tencentcloudapi.woa.com/document/product/551/40566)
-
-	* 新增出参：UsedAmount
-
-
-修改数据结构：
-
-* [GetFileTranslateData](http://document.tencentcloudapi.woa.com/document/product/551/17233#GetFileTranslateData)
-
-	* 新增成员：UsedAmount
-
+## 容器服务(tke) 版本：2018-05-25
 
 
 
 ## 私有网络(vpc) 版本：2017-03-12
 
-### 第 172 次发布
+### 第 173 次发布
 
-发布时间：2024-11-19 02:17:55
+发布时间：2024-11-20 02:24:46
 
 本次发布包含了以下内容：
 
@@ -551,48 +136,39 @@
 
 修改接口：
 
-* [CreateDhcpIp](http://document.tencentcloudapi.woa.com/document/product/215/45092)
+* [DescribeRouteTables](http://document.tencentcloudapi.woa.com/document/product/215/15763)
 
-	* 新增入参：PrivateIpAddressRanges, Tags
+	* 新增入参：NeedRouterInfo
 
-* [CreateLocalGateway](http://document.tencentcloudapi.woa.com/document/product/215/54630)
-
-	* 新增入参：Tags
-
-* [CreateNetworkInterface](http://document.tencentcloudapi.woa.com/document/product/215/15818)
+* [ModifyNetworkInterfaceAttribute](http://document.tencentcloudapi.woa.com/document/product/215/15815)
 
 	* 新增入参：DeleteOnTermination
 
-* [DescribeCrossBorderCompliance](http://document.tencentcloudapi.woa.com/document/product/215/47838)
-
-	* 新增入参：LegalPersonId
-
-
-新增数据结构：
-
-* [PrivateIpAddressRange](http://document.tencentcloudapi.woa.com/document/product/215/15824#PrivateIpAddressRange)
 
 修改数据结构：
 
-* [CdcLDCX](http://document.tencentcloudapi.woa.com/document/product/215/15824#CdcLDCX)
+* [SecurityGroupLimitSet](http://document.tencentcloudapi.woa.com/document/product/215/15824#SecurityGroupLimitSet)
 
-	* 新增成员：IdcIpv6CidrSet, ConnIpv6InfoSet, IpAddressType
+	* <font color="#dd0000">**修改成员**：</font>SecurityGroupExtendedPolicyLimit, SecurityGroupReferedCvmAndEniLimit, SecurityGroupReferedSvcLimit
 
-	* <font color="#dd0000">**修改成员**：</font>ConnIpInfoSet
 
-* [DhcpIp](http://document.tencentcloudapi.woa.com/document/product/215/15824#DhcpIp)
 
-	* 新增成员：TagSet
 
-* [FlowLog](http://document.tencentcloudapi.woa.com/document/product/215/15824#FlowLog)
+## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
 
-	* <font color="#dd0000">**修改成员**：</font>VpcId, FlowLogId, FlowLogName, ResourceType, ResourceId, TrafficType, CloudLogId, CloudLogState, FlowLogDescription, CreatedTime
+### 第 73 次发布
 
-* [VRRP](http://document.tencentcloudapi.woa.com/document/product/215/15824#VRRP)
+发布时间：2024-11-20 02:31:30
 
-	* 新增成员：VipIpv6
+本次发布包含了以下内容：
 
-	* <font color="#dd0000">**修改成员**：</font>Vip
+改善已有的文档。
+
+修改接口：
+
+* [CreateTaskFolder](http://document.tencentcloudapi.woa.com/document/product/1607/83079)
+
+	* 新增入参：TaskNodeType
 
 
 
@@ -7221,93 +6797,93 @@
 
 新增接口：
 
-* [[AddDeviceGroupMembers](http://document.tencentcloudapi.woa.com/document/product/1780/85254)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[AddUserGroupMembers](http://document.tencentcloudapi.woa.com/document/product/1780/85281)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[BindDeviceAccountPassword](http://document.tencentcloudapi.woa.com/document/product/1780/85269)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[BindDeviceAccountPrivateKey](http://document.tencentcloudapi.woa.com/document/product/1780/85268)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[BindDeviceResource](http://document.tencentcloudapi.woa.com/document/product/1780/85267)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[CreateAcl](http://document.tencentcloudapi.woa.com/document/product/1780/85297)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[CreateAssetSyncJob](http://document.tencentcloudapi.woa.com/document/product/1780/85266)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[CreateChangePwdTask](http://document.tencentcloudapi.woa.com/document/product/1780/85307)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[CreateCmdTemplate](http://document.tencentcloudapi.woa.com/document/product/1780/85296)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[CreateDeviceAccount](http://document.tencentcloudapi.woa.com/document/product/1780/85265)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[CreateDeviceGroup](http://document.tencentcloudapi.woa.com/document/product/1780/85253)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[CreateResource](http://document.tencentcloudapi.woa.com/document/product/1780/85317)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[CreateUser](http://document.tencentcloudapi.woa.com/document/product/1780/85288)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[CreateUserGroup](http://document.tencentcloudapi.woa.com/document/product/1780/85280)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DeleteAcls](http://document.tencentcloudapi.woa.com/document/product/1780/85295)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DeleteChangePwdTask](http://document.tencentcloudapi.woa.com/document/product/1780/85306)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DeleteCmdTemplates](http://document.tencentcloudapi.woa.com/document/product/1780/85294)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DeleteDeviceAccounts](http://document.tencentcloudapi.woa.com/document/product/1780/85264)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DeleteDeviceGroupMembers](http://document.tencentcloudapi.woa.com/document/product/1780/85252)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DeleteDeviceGroups](http://document.tencentcloudapi.woa.com/document/product/1780/85251)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DeleteDevices](http://document.tencentcloudapi.woa.com/document/product/1780/85263)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DeleteUserGroupMembers](http://document.tencentcloudapi.woa.com/document/product/1780/85279)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DeleteUserGroups](http://document.tencentcloudapi.woa.com/document/product/1780/85278)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DeleteUsers](http://document.tencentcloudapi.woa.com/document/product/1780/85287)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DeployResource](http://document.tencentcloudapi.woa.com/document/product/1780/85286)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeAcls](http://document.tencentcloudapi.woa.com/document/product/1780/85293)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeAssetSyncStatus](http://document.tencentcloudapi.woa.com/document/product/1780/85262)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeChangePwdTask](http://document.tencentcloudapi.woa.com/document/product/1780/85305)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeChangePwdTaskDetail](http://document.tencentcloudapi.woa.com/document/product/1780/85304)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeCmdTemplates](http://document.tencentcloudapi.woa.com/document/product/1780/85292)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeDeviceAccounts](http://document.tencentcloudapi.woa.com/document/product/1780/85261)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeDeviceGroupMembers](http://document.tencentcloudapi.woa.com/document/product/1780/85250)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeDeviceGroups](http://document.tencentcloudapi.woa.com/document/product/1780/85249)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeDevices](http://document.tencentcloudapi.woa.com/document/product/1780/85260)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeDomains](http://document.tencentcloudapi.woa.com/document/product/1780/85271)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeLoginEvent](http://document.tencentcloudapi.woa.com/document/product/1780/85300)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeOperationEvent](http://document.tencentcloudapi.woa.com/document/product/1780/85299)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeResources](http://document.tencentcloudapi.woa.com/document/product/1780/85316)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeUserGroupMembers](http://document.tencentcloudapi.woa.com/document/product/1780/85277)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeUserGroups](http://document.tencentcloudapi.woa.com/document/product/1780/85276)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeUsers](http://document.tencentcloudapi.woa.com/document/product/1780/85285)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ImportExternalDevice](http://document.tencentcloudapi.woa.com/document/product/1780/85259)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ModifyAcl](http://document.tencentcloudapi.woa.com/document/product/1780/85291)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ModifyChangePwdTask](http://document.tencentcloudapi.woa.com/document/product/1780/85303)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ModifyCmdTemplate](http://document.tencentcloudapi.woa.com/document/product/1780/85290)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ModifyDevice](http://document.tencentcloudapi.woa.com/document/product/1780/85258)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ModifyDeviceGroup](http://document.tencentcloudapi.woa.com/document/product/1780/85319)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ModifyOAuthSetting](http://document.tencentcloudapi.woa.com/document/product/1780/85273)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ModifyResource](http://document.tencentcloudapi.woa.com/document/product/1780/85315)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ModifyUser](http://document.tencentcloudapi.woa.com/document/product/1780/85284)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ModifyUserGroup](http://document.tencentcloudapi.woa.com/document/product/1780/85275)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ResetDeviceAccountPassword](http://document.tencentcloudapi.woa.com/document/product/1780/85257)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ResetDeviceAccountPrivateKey](http://document.tencentcloudapi.woa.com/document/product/1780/85256)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ResetUser](http://document.tencentcloudapi.woa.com/document/product/1780/85283)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[RunChangePwdTask](http://document.tencentcloudapi.woa.com/document/product/1780/85302)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[SearchAuditLog](http://document.tencentcloudapi.woa.com/document/product/1780/85313)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[SearchCommandBySid](http://document.tencentcloudapi.woa.com/document/product/1780/85312)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[SearchFile](http://document.tencentcloudapi.woa.com/document/product/1780/85311)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[SearchFileBySid](http://document.tencentcloudapi.woa.com/document/product/1780/85310)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[SearchSession](http://document.tencentcloudapi.woa.com/document/product/1780/85309)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[SearchSessionCommand](http://document.tencentcloudapi.woa.com/document/product/1780/85308)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [AddDeviceGroupMembers](http://document.tencentcloudapi.woa.com/document/product/1780/85254)
+* [AddUserGroupMembers](http://document.tencentcloudapi.woa.com/document/product/1780/85281)
+* [BindDeviceAccountPassword](http://document.tencentcloudapi.woa.com/document/product/1780/85269)
+* [BindDeviceAccountPrivateKey](http://document.tencentcloudapi.woa.com/document/product/1780/85268)
+* [BindDeviceResource](http://document.tencentcloudapi.woa.com/document/product/1780/85267)
+* [CreateAcl](http://document.tencentcloudapi.woa.com/document/product/1780/85297)
+* [CreateAssetSyncJob](http://document.tencentcloudapi.woa.com/document/product/1780/85266)
+* [CreateChangePwdTask](http://document.tencentcloudapi.woa.com/document/product/1780/85307)
+* [CreateCmdTemplate](http://document.tencentcloudapi.woa.com/document/product/1780/85296)
+* [CreateDeviceAccount](http://document.tencentcloudapi.woa.com/document/product/1780/85265)
+* [CreateDeviceGroup](http://document.tencentcloudapi.woa.com/document/product/1780/85253)
+* [CreateResource](http://document.tencentcloudapi.woa.com/document/product/1780/85317)
+* [CreateUser](http://document.tencentcloudapi.woa.com/document/product/1780/85288)
+* [CreateUserGroup](http://document.tencentcloudapi.woa.com/document/product/1780/85280)
+* [DeleteAcls](http://document.tencentcloudapi.woa.com/document/product/1780/85295)
+* [DeleteChangePwdTask](http://document.tencentcloudapi.woa.com/document/product/1780/85306)
+* [DeleteCmdTemplates](http://document.tencentcloudapi.woa.com/document/product/1780/85294)
+* [DeleteDeviceAccounts](http://document.tencentcloudapi.woa.com/document/product/1780/85264)
+* [DeleteDeviceGroupMembers](http://document.tencentcloudapi.woa.com/document/product/1780/85252)
+* [DeleteDeviceGroups](http://document.tencentcloudapi.woa.com/document/product/1780/85251)
+* [DeleteDevices](http://document.tencentcloudapi.woa.com/document/product/1780/85263)
+* [DeleteUserGroupMembers](http://document.tencentcloudapi.woa.com/document/product/1780/85279)
+* [DeleteUserGroups](http://document.tencentcloudapi.woa.com/document/product/1780/85278)
+* [DeleteUsers](http://document.tencentcloudapi.woa.com/document/product/1780/85287)
+* [DeployResource](http://document.tencentcloudapi.woa.com/document/product/1780/85286)
+* [DescribeAcls](http://document.tencentcloudapi.woa.com/document/product/1780/85293)
+* [DescribeAssetSyncStatus](http://document.tencentcloudapi.woa.com/document/product/1780/85262)
+* [DescribeChangePwdTask](http://document.tencentcloudapi.woa.com/document/product/1780/85305)
+* [DescribeChangePwdTaskDetail](http://document.tencentcloudapi.woa.com/document/product/1780/85304)
+* [DescribeCmdTemplates](http://document.tencentcloudapi.woa.com/document/product/1780/85292)
+* [DescribeDeviceAccounts](http://document.tencentcloudapi.woa.com/document/product/1780/85261)
+* [DescribeDeviceGroupMembers](http://document.tencentcloudapi.woa.com/document/product/1780/85250)
+* [DescribeDeviceGroups](http://document.tencentcloudapi.woa.com/document/product/1780/85249)
+* [DescribeDevices](http://document.tencentcloudapi.woa.com/document/product/1780/85260)
+* [DescribeDomains](http://document.tencentcloudapi.woa.com/document/product/1780/85271)
+* [DescribeLoginEvent](http://document.tencentcloudapi.woa.com/document/product/1780/85300)
+* [DescribeOperationEvent](http://document.tencentcloudapi.woa.com/document/product/1780/85299)
+* [DescribeResources](http://document.tencentcloudapi.woa.com/document/product/1780/85316)
+* [DescribeUserGroupMembers](http://document.tencentcloudapi.woa.com/document/product/1780/85277)
+* [DescribeUserGroups](http://document.tencentcloudapi.woa.com/document/product/1780/85276)
+* [DescribeUsers](http://document.tencentcloudapi.woa.com/document/product/1780/85285)
+* [ImportExternalDevice](http://document.tencentcloudapi.woa.com/document/product/1780/85259)
+* [ModifyAcl](http://document.tencentcloudapi.woa.com/document/product/1780/85291)
+* [ModifyChangePwdTask](http://document.tencentcloudapi.woa.com/document/product/1780/85303)
+* [ModifyCmdTemplate](http://document.tencentcloudapi.woa.com/document/product/1780/85290)
+* [ModifyDevice](http://document.tencentcloudapi.woa.com/document/product/1780/85258)
+* [ModifyDeviceGroup](http://document.tencentcloudapi.woa.com/document/product/1780/85319)
+* [ModifyOAuthSetting](http://document.tencentcloudapi.woa.com/document/product/1780/85273)
+* [ModifyResource](http://document.tencentcloudapi.woa.com/document/product/1780/85315)
+* [ModifyUser](http://document.tencentcloudapi.woa.com/document/product/1780/85284)
+* [ModifyUserGroup](http://document.tencentcloudapi.woa.com/document/product/1780/85275)
+* [ResetDeviceAccountPassword](http://document.tencentcloudapi.woa.com/document/product/1780/85257)
+* [ResetDeviceAccountPrivateKey](http://document.tencentcloudapi.woa.com/document/product/1780/85256)
+* [ResetUser](http://document.tencentcloudapi.woa.com/document/product/1780/85283)
+* [RunChangePwdTask](http://document.tencentcloudapi.woa.com/document/product/1780/85302)
+* [SearchAuditLog](http://document.tencentcloudapi.woa.com/document/product/1780/85313)
+* [SearchCommandBySid](http://document.tencentcloudapi.woa.com/document/product/1780/85312)
+* [SearchFile](http://document.tencentcloudapi.woa.com/document/product/1780/85311)
+* [SearchFileBySid](http://document.tencentcloudapi.woa.com/document/product/1780/85310)
+* [SearchSession](http://document.tencentcloudapi.woa.com/document/product/1780/85309)
+* [SearchSessionCommand](http://document.tencentcloudapi.woa.com/document/product/1780/85308)
 
 新增数据结构：
 
-* [[ACTemplate](http://document.tencentcloudapi.woa.com/document/product/1780/85236#ACTemplate)](http://document.tencentcloudapi.woa.com/document/product/1780/85236#[ACTemplate](http://document.tencentcloudapi.woa.com/document/product/1780/85236#ACTemplate))
-* [[Acl](http://document.tencentcloudapi.woa.com/document/product/1780/85236#Acl)](http://document.tencentcloudapi.woa.com/document/product/1780/85236#[Acl](http://document.tencentcloudapi.woa.com/document/product/1780/85236#Acl))
-* [[AssetSyncStatus](http://document.tencentcloudapi.woa.com/document/product/1780/85236#AssetSyncStatus)](http://document.tencentcloudapi.woa.com/document/product/1780/85236#[AssetSyncStatus](http://document.tencentcloudapi.woa.com/document/product/1780/85236#AssetSyncStatus))
-* [[ChangePwdTaskDetail](http://document.tencentcloudapi.woa.com/document/product/1780/85236#ChangePwdTaskDetail)](http://document.tencentcloudapi.woa.com/document/product/1780/85236#[ChangePwdTaskDetail](http://document.tencentcloudapi.woa.com/document/product/1780/85236#ChangePwdTaskDetail))
-* [[ChangePwdTaskInfo](http://document.tencentcloudapi.woa.com/document/product/1780/85236#ChangePwdTaskInfo)](http://document.tencentcloudapi.woa.com/document/product/1780/85236#[ChangePwdTaskInfo](http://document.tencentcloudapi.woa.com/document/product/1780/85236#ChangePwdTaskInfo))
-* [[Clb](http://document.tencentcloudapi.woa.com/document/product/1780/85236#Clb)](http://document.tencentcloudapi.woa.com/document/product/1780/85236#[Clb](http://document.tencentcloudapi.woa.com/document/product/1780/85236#Clb))
-* [[CmdTemplate](http://document.tencentcloudapi.woa.com/document/product/1780/85236#CmdTemplate)](http://document.tencentcloudapi.woa.com/document/product/1780/85236#[CmdTemplate](http://document.tencentcloudapi.woa.com/document/product/1780/85236#CmdTemplate))
-* [[Department](http://document.tencentcloudapi.woa.com/document/product/1780/85236#Department)](http://document.tencentcloudapi.woa.com/document/product/1780/85236#[Department](http://document.tencentcloudapi.woa.com/document/product/1780/85236#Department))
-* [[DepartmentManagerUser](http://document.tencentcloudapi.woa.com/document/product/1780/85236#DepartmentManagerUser)](http://document.tencentcloudapi.woa.com/document/product/1780/85236#[DepartmentManagerUser](http://document.tencentcloudapi.woa.com/document/product/1780/85236#DepartmentManagerUser))
-* [[Device](http://document.tencentcloudapi.woa.com/document/product/1780/85236#Device)](http://document.tencentcloudapi.woa.com/document/product/1780/85236#[Device](http://document.tencentcloudapi.woa.com/document/product/1780/85236#Device))
-* [[Domain](http://document.tencentcloudapi.woa.com/document/product/1780/85236#Domain)](http://document.tencentcloudapi.woa.com/document/product/1780/85236#[Domain](http://document.tencentcloudapi.woa.com/document/product/1780/85236#Domain))
-* [[ExternalDevice](http://document.tencentcloudapi.woa.com/document/product/1780/85236#ExternalDevice)](http://document.tencentcloudapi.woa.com/document/product/1780/85236#[ExternalDevice](http://document.tencentcloudapi.woa.com/document/product/1780/85236#ExternalDevice))
-* [[Filter](http://document.tencentcloudapi.woa.com/document/product/1780/85236#Filter)](http://document.tencentcloudapi.woa.com/document/product/1780/85236#[Filter](http://document.tencentcloudapi.woa.com/document/product/1780/85236#Filter))
-* [[Group](http://document.tencentcloudapi.woa.com/document/product/1780/85236#Group)](http://document.tencentcloudapi.woa.com/document/product/1780/85236#[Group](http://document.tencentcloudapi.woa.com/document/product/1780/85236#Group))
-* [[LoginEvent](http://document.tencentcloudapi.woa.com/document/product/1780/85236#LoginEvent)](http://document.tencentcloudapi.woa.com/document/product/1780/85236#[LoginEvent](http://document.tencentcloudapi.woa.com/document/product/1780/85236#LoginEvent))
-* [[OperationEvent](http://document.tencentcloudapi.woa.com/document/product/1780/85236#OperationEvent)](http://document.tencentcloudapi.woa.com/document/product/1780/85236#[OperationEvent](http://document.tencentcloudapi.woa.com/document/product/1780/85236#OperationEvent))
-* [[Resource](http://document.tencentcloudapi.woa.com/document/product/1780/85236#Resource)](http://document.tencentcloudapi.woa.com/document/product/1780/85236#[Resource](http://document.tencentcloudapi.woa.com/document/product/1780/85236#Resource))
-* [[RunChangePwdTaskDetail](http://document.tencentcloudapi.woa.com/document/product/1780/85236#RunChangePwdTaskDetail)](http://document.tencentcloudapi.woa.com/document/product/1780/85236#[RunChangePwdTaskDetail](http://document.tencentcloudapi.woa.com/document/product/1780/85236#RunChangePwdTaskDetail))
-* [[SearchFileBySidResult](http://document.tencentcloudapi.woa.com/document/product/1780/85236#SearchFileBySidResult)](http://document.tencentcloudapi.woa.com/document/product/1780/85236#[SearchFileBySidResult](http://document.tencentcloudapi.woa.com/document/product/1780/85236#SearchFileBySidResult))
-* [[SearchFileResult](http://document.tencentcloudapi.woa.com/document/product/1780/85236#SearchFileResult)](http://document.tencentcloudapi.woa.com/document/product/1780/85236#[SearchFileResult](http://document.tencentcloudapi.woa.com/document/product/1780/85236#SearchFileResult))
-* [[SearchFileTypeFilter](http://document.tencentcloudapi.woa.com/document/product/1780/85236#SearchFileTypeFilter)](http://document.tencentcloudapi.woa.com/document/product/1780/85236#[SearchFileTypeFilter](http://document.tencentcloudapi.woa.com/document/product/1780/85236#SearchFileTypeFilter))
-* [[TagFilter](http://document.tencentcloudapi.woa.com/document/product/1780/85236#TagFilter)](http://document.tencentcloudapi.woa.com/document/product/1780/85236#[TagFilter](http://document.tencentcloudapi.woa.com/document/product/1780/85236#TagFilter))
-* [[User](http://document.tencentcloudapi.woa.com/document/product/1780/85236#User)](http://document.tencentcloudapi.woa.com/document/product/1780/85236#[User](http://document.tencentcloudapi.woa.com/document/product/1780/85236#User))
+* [ACTemplate](http://document.tencentcloudapi.woa.com/document/product/1780/85236#ACTemplate)
+* [Acl](http://document.tencentcloudapi.woa.com/document/product/1780/85236#Acl)
+* [AssetSyncStatus](http://document.tencentcloudapi.woa.com/document/product/1780/85236#AssetSyncStatus)
+* [ChangePwdTaskDetail](http://document.tencentcloudapi.woa.com/document/product/1780/85236#ChangePwdTaskDetail)
+* [ChangePwdTaskInfo](http://document.tencentcloudapi.woa.com/document/product/1780/85236#ChangePwdTaskInfo)
+* [Clb](http://document.tencentcloudapi.woa.com/document/product/1780/85236#Clb)
+* [CmdTemplate](http://document.tencentcloudapi.woa.com/document/product/1780/85236#CmdTemplate)
+* [Department](http://document.tencentcloudapi.woa.com/document/product/1780/85236#Department)
+* [DepartmentManagerUser](http://document.tencentcloudapi.woa.com/document/product/1780/85236#DepartmentManagerUser)
+* [Device](http://document.tencentcloudapi.woa.com/document/product/1780/85236#Device)
+* [Domain](http://document.tencentcloudapi.woa.com/document/product/1780/85236#Domain)
+* [ExternalDevice](http://document.tencentcloudapi.woa.com/document/product/1780/85236#ExternalDevice)
+* [Filter](http://document.tencentcloudapi.woa.com/document/product/1780/85236#Filter)
+* [Group](http://document.tencentcloudapi.woa.com/document/product/1780/85236#Group)
+* [LoginEvent](http://document.tencentcloudapi.woa.com/document/product/1780/85236#LoginEvent)
+* [OperationEvent](http://document.tencentcloudapi.woa.com/document/product/1780/85236#OperationEvent)
+* [Resource](http://document.tencentcloudapi.woa.com/document/product/1780/85236#Resource)
+* [RunChangePwdTaskDetail](http://document.tencentcloudapi.woa.com/document/product/1780/85236#RunChangePwdTaskDetail)
+* [SearchFileBySidResult](http://document.tencentcloudapi.woa.com/document/product/1780/85236#SearchFileBySidResult)
+* [SearchFileResult](http://document.tencentcloudapi.woa.com/document/product/1780/85236#SearchFileResult)
+* [SearchFileTypeFilter](http://document.tencentcloudapi.woa.com/document/product/1780/85236#SearchFileTypeFilter)
+* [TagFilter](http://document.tencentcloudapi.woa.com/document/product/1780/85236#TagFilter)
+* [User](http://document.tencentcloudapi.woa.com/document/product/1780/85236#User)
 
 修改数据结构：
 
@@ -7826,6 +7402,20 @@
 
 
 ## 费用中心(billing) 版本：2018-07-09
+
+### 第 71 次发布
+
+发布时间：2024-11-20 01:13:17
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* CreateSavingPlanOrder
+* DescribeSavingPlanOverview
+* DescribeSavingPlanUsage
 
 ### 第 70 次发布
 
@@ -15053,6 +14643,21 @@
 
 
 ## 云数据库 MySQL(cdb) 版本：2017-03-20
+
+### 第 118 次发布
+
+发布时间：2024-11-20 01:17:41
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeDBPrice](http://document.tencentcloudapi.woa.com/document/product/236/18566)
+
+	* 新增入参：DiskType
+
 
 ### 第 117 次发布
 
@@ -33648,14 +33253,14 @@
 
 新增接口：
 
-* [[DescribeInstanceHostInfo](http://document.tencentcloudapi.woa.com/document/product/1760/85323)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeZoneInstanceTypeInventory](http://document.tencentcloudapi.woa.com/document/product/1760/85322)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[RunInstances](http://document.tencentcloudapi.woa.com/document/product/1760/85321)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[TerminateInstances](http://document.tencentcloudapi.woa.com/document/product/1760/85320)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeInstanceHostInfo](http://document.tencentcloudapi.woa.com/document/product/1760/85323)
+* [DescribeZoneInstanceTypeInventory](http://document.tencentcloudapi.woa.com/document/product/1760/85322)
+* [RunInstances](http://document.tencentcloudapi.woa.com/document/product/1760/85321)
+* [TerminateInstances](http://document.tencentcloudapi.woa.com/document/product/1760/85320)
 
 新增数据结构：
 
-* [[InstanceTypeQuotaItem](http://document.tencentcloudapi.woa.com/document/product/1760/83627#InstanceTypeQuotaItem)](http://document.tencentcloudapi.woa.com/document/product/1760/83627#[InstanceTypeQuotaItem](http://document.tencentcloudapi.woa.com/document/product/1760/83627#InstanceTypeQuotaItem))
+* [InstanceTypeQuotaItem](http://document.tencentcloudapi.woa.com/document/product/1760/83627#InstanceTypeQuotaItem)
 
 ### 第 3 次发布
 
@@ -35422,7 +35027,7 @@
 
 新增接口：
 
-* [[DescribePasswordCrackStatus](http://document.tencentcloudapi.woa.com/document/product/296/85324)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribePasswordCrackStatus](http://document.tencentcloudapi.woa.com/document/product/296/85324)
 
 ### 第 110 次发布
 
@@ -41401,7 +41006,7 @@
 
 新增数据结构：
 
-* [[IntranetAccessEntry](http://document.tencentcloudapi.woa.com/document/product/1492/74806#IntranetAccessEntry)](http://document.tencentcloudapi.woa.com/document/product/1492/74806#[IntranetAccessEntry](http://document.tencentcloudapi.woa.com/document/product/1492/74806#IntranetAccessEntry))
+* [IntranetAccessEntry](http://document.tencentcloudapi.woa.com/document/product/1492/74806#IntranetAccessEntry)
 
 修改数据结构：
 
@@ -54326,6 +53931,21 @@
 
 ## 腾讯电子签企业版(ess) 版本：2020-11-11
 
+### 第 111 次发布
+
+发布时间：2024-11-20 01:42:58
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateOrganizationAuthUrl](http://document.tencentcloudapi.woa.com/document/product/1668/83727)
+
+	* 新增入参：Initialization
+
+
 ### 第 110 次发布
 
 发布时间：2024-11-19 01:40:14
@@ -65143,6 +64763,25 @@
 
 ## 国际合作伙伴管理(intlpartnersmgt) 版本：2022-09-28
 
+### 第 19 次发布
+
+发布时间：2024-11-20 01:49:09
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ActionSummaryOverviewItem](http://document.tencentcloudapi.woa.com/document/product/1724/80754#ActionSummaryOverviewItem)
+
+	* <font color="#dd0000">**修改成员**：</font>ActionType, ActionTypeName, OriginalCost, VoucherPayAmount, TotalCost
+
+* [BusinessSummaryOverviewItem](http://document.tencentcloudapi.woa.com/document/product/1724/80754#BusinessSummaryOverviewItem)
+
+	* <font color="#dd0000">**修改成员**：</font>BusinessCode, BusinessCodeName, OriginalCost, VoucherPayAmount, TotalCost
+
+
 ### 第 18 次发布
 
 发布时间：2024-11-15 01:52:20
@@ -71298,6 +70937,25 @@
 
 
 ## 云直播CSS(live) 版本：2018-08-01
+
+### 第 66 次发布
+
+发布时间：2024-11-20 01:55:15
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeCasterList](http://document.tencentcloudapi.woa.com/document/product/267/85330)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeCasterTransitionTypes](http://document.tencentcloudapi.woa.com/document/product/267/85329)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeCasterUserStatus](http://document.tencentcloudapi.woa.com/document/product/267/85328)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[CasterBriefInfo](http://document.tencentcloudapi.woa.com/document/product/267/20474#CasterBriefInfo)](http://document.tencentcloudapi.woa.com/document/product/267/20474#[CasterBriefInfo](http://document.tencentcloudapi.woa.com/document/product/267/20474#CasterBriefInfo))
+* [[TransitionTypeInfo](http://document.tencentcloudapi.woa.com/document/product/267/20474#TransitionTypeInfo)](http://document.tencentcloudapi.woa.com/document/product/267/20474#[TransitionTypeInfo](http://document.tencentcloudapi.woa.com/document/product/267/20474#TransitionTypeInfo))
 
 ### 第 65 次发布
 
@@ -83904,7 +83562,7 @@
 
 新增数据结构：
 
-* [[CosFileInfo](http://document.tencentcloudapi.woa.com/document/product/1725/80781#CosFileInfo)](http://document.tencentcloudapi.woa.com/document/product/1725/80781#[CosFileInfo](http://document.tencentcloudapi.woa.com/document/product/1725/80781#CosFileInfo))
+* [CosFileInfo](http://document.tencentcloudapi.woa.com/document/product/1725/80781#CosFileInfo)
 
 修改数据结构：
 
@@ -87814,12 +87472,12 @@
 
 新增接口：
 
-* [[DescribeUserUsageCnt](http://document.tencentcloudapi.woa.com/document/product/1343/85325)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeUserUsageCnt](http://document.tencentcloudapi.woa.com/document/product/1343/85325)
 
 新增数据结构：
 
-* [[OutputDescribeUserUsageCnt](http://document.tencentcloudapi.woa.com/document/product/1343/52566#OutputDescribeUserUsageCnt)](http://document.tencentcloudapi.woa.com/document/product/1343/52566#[OutputDescribeUserUsageCnt](http://document.tencentcloudapi.woa.com/document/product/1343/52566#OutputDescribeUserUsageCnt))
-* [[OutputDescribeUserUsageCntData](http://document.tencentcloudapi.woa.com/document/product/1343/52566#OutputDescribeUserUsageCntData)](http://document.tencentcloudapi.woa.com/document/product/1343/52566#[OutputDescribeUserUsageCntData](http://document.tencentcloudapi.woa.com/document/product/1343/52566#OutputDescribeUserUsageCntData))
+* [OutputDescribeUserUsageCnt](http://document.tencentcloudapi.woa.com/document/product/1343/52566#OutputDescribeUserUsageCnt)
+* [OutputDescribeUserUsageCntData](http://document.tencentcloudapi.woa.com/document/product/1343/52566#OutputDescribeUserUsageCntData)
 
 ### 第 14 次发布
 
@@ -101463,14 +101121,14 @@
 
 新增接口：
 
-* [[DescribePurchaseConfig](http://document.tencentcloudapi.woa.com/document/product/1179/85326)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribePurchaseConfig](http://document.tencentcloudapi.woa.com/document/product/1179/85326)
 
 新增数据结构：
 
-* [[SaleProductSpec](http://document.tencentcloudapi.woa.com/document/product/1179/46089#SaleProductSpec)](http://document.tencentcloudapi.woa.com/document/product/1179/46089#[SaleProductSpec](http://document.tencentcloudapi.woa.com/document/product/1179/46089#SaleProductSpec))
-* [[SaleRegion](http://document.tencentcloudapi.woa.com/document/product/1179/46089#SaleRegion)](http://document.tencentcloudapi.woa.com/document/product/1179/46089#[SaleRegion](http://document.tencentcloudapi.woa.com/document/product/1179/46089#SaleRegion))
-* [[SaleZone](http://document.tencentcloudapi.woa.com/document/product/1179/46089#SaleZone)](http://document.tencentcloudapi.woa.com/document/product/1179/46089#[SaleZone](http://document.tencentcloudapi.woa.com/document/product/1179/46089#SaleZone))
-* [[SaleZoneProduct](http://document.tencentcloudapi.woa.com/document/product/1179/46089#SaleZoneProduct)](http://document.tencentcloudapi.woa.com/document/product/1179/46089#[SaleZoneProduct](http://document.tencentcloudapi.woa.com/document/product/1179/46089#SaleZoneProduct))
+* [SaleProductSpec](http://document.tencentcloudapi.woa.com/document/product/1179/46089#SaleProductSpec)
+* [SaleRegion](http://document.tencentcloudapi.woa.com/document/product/1179/46089#SaleRegion)
+* [SaleZone](http://document.tencentcloudapi.woa.com/document/product/1179/46089#SaleZone)
+* [SaleZoneProduct](http://document.tencentcloudapi.woa.com/document/product/1179/46089#SaleZoneProduct)
 
 修改数据结构：
 
@@ -111371,6 +111029,20 @@
 
 ## 容器服务(tke) 版本：2022-05-01
 
+### 第 7 次发布
+
+发布时间：2024-11-20 02:20:10
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[RebootMachines](http://document.tencentcloudapi.woa.com/document/product/457/85333)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[StartMachines](http://document.tencentcloudapi.woa.com/document/product/457/85332)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[StopMachines](http://document.tencentcloudapi.woa.com/document/product/457/85331)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
 ### 第 6 次发布
 
 发布时间：2024-11-08 02:22:44
@@ -120501,6 +120173,32 @@
 
 ## 私有网络(vpc) 版本：2017-03-12
 
+### 第 173 次发布
+
+发布时间：2024-11-20 02:24:46
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeRouteTables](http://document.tencentcloudapi.woa.com/document/product/215/15763)
+
+	* 新增入参：NeedRouterInfo
+
+* [ModifyNetworkInterfaceAttribute](http://document.tencentcloudapi.woa.com/document/product/215/15815)
+
+	* 新增入参：DeleteOnTermination
+
+
+修改数据结构：
+
+* [SecurityGroupLimitSet](http://document.tencentcloudapi.woa.com/document/product/215/15824#SecurityGroupLimitSet)
+
+	* <font color="#dd0000">**修改成员**：</font>SecurityGroupExtendedPolicyLimit, SecurityGroupReferedCvmAndEniLimit, SecurityGroupReferedSvcLimit
+
+
 ### 第 172 次发布
 
 发布时间：2024-11-19 02:17:55
@@ -120530,7 +120228,7 @@
 
 新增数据结构：
 
-* [[PrivateIpAddressRange](http://document.tencentcloudapi.woa.com/document/product/215/15824#PrivateIpAddressRange)](http://document.tencentcloudapi.woa.com/document/product/215/15824#[PrivateIpAddressRange](http://document.tencentcloudapi.woa.com/document/product/215/15824#PrivateIpAddressRange))
+* [PrivateIpAddressRange](http://document.tencentcloudapi.woa.com/document/product/215/15824#PrivateIpAddressRange)
 
 修改数据结构：
 
@@ -127503,6 +127201,21 @@
 
 
 ## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
+
+### 第 73 次发布
+
+发布时间：2024-11-20 02:31:30
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateTaskFolder](http://document.tencentcloudapi.woa.com/document/product/1607/83079)
+
+	* 新增入参：TaskNodeType
+
 
 ### 第 72 次发布
 

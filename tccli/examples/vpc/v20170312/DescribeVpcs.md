@@ -89,7 +89,8 @@ Output:
                     {
                         "CidrBlock": "192.168.1.0/24",
                         "AssistantType": 0,
-                        "SubnetSet": []
+                        "SubnetSet": [],
+                        "VpcId": "vpc-p5sf61yj"
                     }
                 ],
                 "DomainName": "aa.bb.cc"

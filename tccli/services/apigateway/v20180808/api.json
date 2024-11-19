@@ -3302,7 +3302,7 @@
         {
           "disabled": false,
           "document": "用户自定义应用名称。",
-          "example": "test",
+          "example": "my-custom-app",
           "member": "string",
           "name": "ApiAppName",
           "required": true,
@@ -3311,7 +3311,7 @@
         {
           "disabled": false,
           "document": "应用描述",
-          "example": "test",
+          "example": "应用描述",
           "member": "string",
           "name": "ApiAppDesc",
           "required": false,
@@ -3326,10 +3326,10 @@
         {
           "disabled": false,
           "document": "新增的应用详情。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{     \"ApiAppName\": \"MyCustomApp\",     \"ApiAppId\": \"app-001\",     \"ApiAppSecret\": \"secret-001\",     \"ApiAppDesc\": \"这是一个自定义的应用程序\",     \"CreatedTime\": \"2023-04-01T12:00:00Z\"   }",
           "member": "ApiAppInfo",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },

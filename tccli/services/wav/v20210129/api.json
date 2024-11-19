@@ -4605,7 +4605,7 @@
         {
           "disabled": false,
           "document": "企业主体对应的外部联系人id列表，列表长度限制最大为50。",
-          "example": "[\"xxxfDFsIsxxxxWDWFFSsds34H07voRw9aDSFzxczxcsfdda\"]",
+          "example": "[\"xxxfDFsIsxxxxWDWFFSsds34H07vosdfs23fsfdsxcsfdda\"]",
           "member": "string",
           "name": "CorpExternalUserIdList",
           "required": true,

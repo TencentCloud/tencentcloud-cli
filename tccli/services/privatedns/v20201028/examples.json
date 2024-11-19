@@ -162,10 +162,10 @@
     ],
     "DescribeEndPointRegion": [
       {
-        "document": "",
+        "document": "查询终端节点可用地域",
         "input": "POST / HTTP/1.1\nHost: privatedns.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEndPointRegion\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5cd964e2-b5e6-8a35-9ce5a1085860c845\",\n        \"RegionSet\": [\n            {\n                \"RegionCode\": \"ap-guangzhou\",\n                \"CnName\": \"广州\",\n                \"EnName\": \"guangzhou\"\n            }\n        ]\n    }\n}",
-        "title": "查询转发规则"
+        "output": "{\n    \"Response\": {\n        \"RegionSet\": [\n            {\n                \"CnName\": \"北京\",\n                \"EnName\": \"bj\",\n                \"RegionCode\": \"ap-beijing\",\n                \"RegionId\": 8\n            },\n            {\n                \"CnName\": \"广州\",\n                \"EnName\": \"gz\",\n                \"RegionCode\": \"ap-guangzhou\",\n                \"RegionId\": 1\n            },\n            {\n                \"CnName\": \"南京\",\n                \"EnName\": \"nj\",\n                \"RegionCode\": \"ap-nanjing\",\n                \"RegionId\": 33\n            },\n            {\n                \"CnName\": \"上海\",\n                \"EnName\": \"sh\",\n                \"RegionCode\": \"ap-shanghai\",\n                \"RegionId\": 4\n            }\n        ],\n        \"RequestId\": \"036e44eb-02af-44cf-b46e-924a0e04ea4a\"\n    }\n}",
+        "title": "查询终端节点可用地域"
       }
     ],
     "DescribeForwardRule": [

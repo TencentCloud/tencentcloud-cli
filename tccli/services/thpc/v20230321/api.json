@@ -183,7 +183,7 @@
         },
         {
           "disabled": false,
-          "document": "集群存储选项。",
+          "document": "集群存储选项；集群已存在的节点和新增节点都会挂载此存储。",
           "example": "无",
           "member": "StorageOption",
           "name": "StorageOption",

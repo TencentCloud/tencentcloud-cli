@@ -986,573 +986,573 @@
       "members": [
         {
           "disabled": false,
-          "document": "AddTimeStamp\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "AddTimeStamp",
+          "example": "2019-11-22 18:01:24",
           "member": "string",
           "name": "AddTimeStamp",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "Alias\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "Alias",
+          "example": "部署",
           "member": "string",
           "name": "Alias",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "AppId\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "AppId",
+          "example": "1300674097",
           "member": "uint64",
           "name": "AppId",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "ApplicationRole\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "ApplicationRole",
+          "example": "adm",
           "member": "string",
           "name": "ApplicationRole",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "AutoRenewFlag\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "AutoRenewFlag",
+          "example": "0",
           "member": "uint64",
           "name": "AutoRenewFlag",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "Bandwidth\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "Bandwidth",
+          "example": "200",
           "member": "uint64",
           "name": "Bandwidth",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "BillId\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "BillId",
+          "example": "0",
           "member": "string",
           "name": "BillId",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "Cpu\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "Cpu",
+          "example": "4",
           "member": "uint64",
           "name": "Cpu",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "CustomId\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "CustomId",
+          "example": "1",
           "member": "uint64",
           "name": "CustomId",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "CvmPayMode\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "CvmPayMode",
+          "example": "1",
           "member": "uint64",
           "name": "CvmPayMode",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "Deadline\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "Deadline",
+          "example": "2020-11-22 18:01:24",
           "member": "string",
           "name": "Deadline",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "DeviceAssetId\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "DeviceAssetId",
+          "example": "C4e46f48-b06b-4277-8248-8687a86cffa6",
           "member": "string",
           "name": "DeviceAssetId",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "DeviceClass\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "DeviceClass",
+          "example": "VSELF4",
           "member": "string",
           "name": "DeviceClass",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "DeviceClassFlag\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "DeviceClassFlag",
+          "example": "0",
           "member": "uint64",
           "name": "DeviceClassFlag",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "DeviceId\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "DeviceId",
+          "example": "682248220",
           "member": "uint64",
           "name": "DeviceId",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "DeviceImageId\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "DeviceImageId",
+          "example": "0",
           "member": "uint64",
           "name": "DeviceImageId",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "DeviceLanIp\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "DeviceLanIp",
+          "example": "172.17.0.11",
           "member": "string",
           "name": "DeviceLanIp",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "DeviceWanIp\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "DeviceWanIp",
+          "example": "106.54.180.250",
           "member": "string",
           "name": "DeviceWanIp",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "Disk\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "Disk",
+          "example": "0",
           "member": "uint64",
           "name": "Disk",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "DiskType\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "DiskType",
+          "example": "6",
           "member": "uint64",
           "name": "DiskType",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "ErrorCode\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "ErrorCode",
+          "example": "0",
           "member": "uint64",
           "name": "ErrorCode",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "ErrorKey\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "ErrorKey",
+          "example": "ResourceNotFound",
           "member": "string",
           "name": "ErrorKey",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "Fpga\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "Fpga",
+          "example": "0",
           "member": "uint64",
           "name": "Fpga",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "Gpu\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "Gpu",
+          "example": "0",
           "member": "uint64",
           "name": "Gpu",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "HypervisorUpdateFlag\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "HypervisorUpdateFlag",
+          "example": "0",
           "member": "uint64",
           "name": "HypervisorUpdateFlag",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "IdcName\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "IdcName",
+          "example": "上海腾讯宝信DC电信7号楼M1-2-3",
           "member": "string",
           "name": "IdcName",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "IsSafeIsolated\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "IsSafeIsolated",
+          "example": "0",
           "member": "uint64",
           "name": "IsSafeIsolated",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "IsVpcGateway\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "IsVpcGateway",
+          "example": "0",
           "member": "uint64",
           "name": "IsVpcGateway",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "IsolateTime\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "IsolateTime",
+          "example": "0000-00-00 00:00:00",
           "member": "string",
           "name": "IsolateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "IspName\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "IspName",
+          "example": "0",
           "member": "string",
           "name": "IspName",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "ItemId\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "ItemId",
+          "example": "腾讯CAP",
           "member": "uint64",
           "name": "ItemId",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "LastOperation\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "LastOperation",
+          "example": "ResetInstancesPassword",
           "member": "string",
           "name": "LastOperation",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "LatestOperation\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "LatestOperation",
+          "example": "ResetInstancesPassword",
           "member": "string",
           "name": "LatestOperation",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "LatestOperationState\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "LatestOperationState",
+          "example": "SUCCESS",
           "member": "string",
           "name": "LatestOperationState",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "LocalEthDev\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "LocalEthDev",
+          "example": "Eth0",
           "member": "string",
           "name": "LocalEthDev",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "Mem\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "Mem",
+          "example": "8",
           "member": "uint64",
           "name": "Mem",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "NetworkPayMode\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "NetworkPayMode",
+          "example": "2",
           "member": "uint64",
           "name": "NetworkPayMode",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "OsName\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "OsName",
+          "example": "Centos7.6.0X64",
           "member": "string",
           "name": "OsName",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "ProjectId\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "ProjectId",
+          "example": "0",
           "member": "uint64",
           "name": "ProjectId",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "RecycleFlag\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "RecycleFlag",
+          "example": "0",
           "member": "uint64",
           "name": "RecycleFlag",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "RegionId\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "RegionId",
+          "example": "4",
           "member": "uint64",
           "name": "RegionId",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "RootSize\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "RootSize",
+          "example": "50",
           "member": "uint64",
           "name": "RootSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "RootType\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "RootType",
+          "example": "6",
           "member": "uint64",
           "name": "RootType",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "Runflag\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "Runflag",
+          "example": "0",
           "member": "uint64",
           "name": "Runflag",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "SafeIsolatedInfo\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "SafeIsolatedInfo",
+          "example": "{}",
           "member": "string",
           "name": "SafeIsolatedInfo",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "State\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "State",
+          "example": "RUNNING",
           "member": "string",
           "name": "State",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "Status\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "Status",
+          "example": "1",
           "member": "uint64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "SubnetId\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "SubnetId",
+          "example": "872305",
           "member": "uint64",
           "name": "SubnetId",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "SwapSize\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "SwapSize",
+          "example": "0",
           "member": "uint64",
           "name": "SwapSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "TmpDeviceId\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "TmpDeviceId",
+          "example": "12753981",
           "member": "uint64",
           "name": "TmpDeviceId",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "UHostId\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "UHostId",
+          "example": "0",
           "member": "string",
           "name": "UHostId",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "UInstanceId\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "UInstanceId",
+          "example": "Ins-05q7204t",
           "member": "string",
           "name": "UInstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "UpdateTimestamp\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "UpdateTimestamp",
+          "example": "2019-11-22 18:02:29",
           "member": "string",
           "name": "UpdateTimestamp",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "Uuid\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "Uuid",
+          "example": "A01e4412-b315-409e-b891-445d3018a0d0",
           "member": "string",
           "name": "Uuid",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "VpcId\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "VpcId",
+          "example": "2897064",
           "member": "uint64",
           "name": "VpcId",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "ZoneId\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "ZoneId",
+          "example": "200002",
           "member": "uint64",
           "name": "ZoneId",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "ZoneName\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "ZoneName",
+          "example": "上海二区",
           "member": "string",
           "name": "ZoneName",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

@@ -3,8 +3,8 @@
     "DescribeMaterialList": [
       {
         "document": "拉起素材列表(对外)",
-        "input": "https://facefusion.tencentcloudapi.com/?Action=DescribeMaterialList\r\n&ActivityId=10\r\n&MaterialId=\"q-materialId-000\"\r\n&Limit=10\r\n&Offset=1\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Count\": 1,\n        \"RequestId\": \"testDescribeMaterialList1589864389240\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: facefusion.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMaterialList\n<公共请求参数>\n\n{\n    \"ActivityId\": \"10\",\n    \"Limit\": \"10\",\n    \"MaterialId\": \"\\\"q-materialId-000\\\"\",\n    \"Offset\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"MaterialInfos\": [\n            {\n                \"MaterialStatus\": 2,\n                \"MaterialId\": \"qc_300232_698652_24\",\n                \"MaterialFaceList\": [\n                    {\n                        \"FaceId\": \"300232_24_1\",\n                        \"FaceInfo\": {\n                            \"X\": 43,\n                            \"Y\": 86,\n                            \"Width\": 127,\n                            \"Height\": 127\n                        }\n                    }\n                ],\n                \"CreateTime\": \"2020-04-09T03:27:02.903Z\",\n                \"UpdateTime\": \"2020-04-09T03:27:02.903Z\",\n                \"BlendParamPtu\": 50,\n                \"BlendParamYoutu\": 50,\n                \"PositionParamPtu\": 50,\n                \"PositionParamYoutu\": 50,\n                \"Url\": \"https://facefusion-test-1254418846.cos.ap-guangzhou.myqcloud.com/251009261/300232/qc_300232_698652_24?q-sign-algorithm=sha1&q-ak=AKIDwPsEPTKPkvyqWIN2iCUeeU9brvnUQIgx&q-sign-time=1589864388;1589864688&q-key-time=1589864388;1589864688&q-header-list=&q-url-param-list=&q-signature=0238eb819c073d889ba056a151cdfe4688c1b5fa\"\n            }\n        ],\n        \"Count\": 1,\n        \"RequestId\": \"testDescribeMaterialList1589864389240\"\n    }\n}",
         "title": "素材列表"
       }
     ],

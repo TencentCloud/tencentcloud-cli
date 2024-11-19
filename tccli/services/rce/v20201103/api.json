@@ -45,7 +45,7 @@
     "DescribeUserUsageCnt": {
       "document": "RCE控制台预付费和后付费次数展示",
       "input": "DescribeUserUsageCntRequest",
-      "name": "RCE控制台资源使用情况",
+      "name": "客户资源用量查询",
       "output": "DescribeUserUsageCntResponse",
       "status": "online"
     },

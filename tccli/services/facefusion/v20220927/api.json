@@ -123,40 +123,40 @@
         {
           "disabled": false,
           "document": "人脸框的横坐标",
-          "example": "1",
+          "example": "273",
           "member": "int64",
           "name": "X",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "人脸框的纵坐标",
-          "example": "1",
+          "example": "153",
           "member": "int64",
           "name": "Y",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "人脸框的宽度",
-          "example": "1",
+          "example": "772",
           "member": "int64",
           "name": "Width",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "人脸框的高度",
-          "example": "1",
+          "example": "634",
           "member": "int64",
           "name": "Height",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -366,7 +366,7 @@
         {
           "disabled": false,
           "document": "保留字段",
-          "example": "无",
+          "example": "Politics",
           "member": "string",
           "name": "Category",
           "output_required": true,
@@ -376,7 +376,7 @@
         {
           "disabled": false,
           "document": "状态码， 0为处理成功，其他值为处理失败",
-          "example": "无",
+          "example": "0",
           "member": "string",
           "name": "Code",
           "output_required": true,
@@ -386,7 +386,7 @@
         {
           "disabled": false,
           "document": "对应状态码信息描述",
-          "example": "无",
+          "example": "OK",
           "member": "string",
           "name": "CodeDescription",
           "output_required": true,
@@ -396,7 +396,7 @@
         {
           "disabled": false,
           "document": "保留字段",
-          "example": "无",
+          "example": "PASS",
           "member": "float",
           "name": "Confidence",
           "output_required": true,
@@ -406,7 +406,7 @@
         {
           "disabled": false,
           "document": "保留字段",
-          "example": "无",
+          "example": "30",
           "member": "string",
           "name": "Suggestion",
           "output_required": true,
@@ -416,7 +416,7 @@
         {
           "disabled": false,
           "document": "审核详细内容",
-          "example": "无",
+          "example": "[{\"Label\": \"丁俊晖\",\"Confidence\": 30,\"Suggestion\": \"PASS\"}]",
           "member": "FuseFaceReviewDetail",
           "name": "DetailSet",
           "output_required": true,
@@ -546,58 +546,58 @@
       "members": [
         {
           "disabled": false,
-          "document": "拉脸强度。主要用于调整生成结果人脸脸型更像素材模板还是用户人脸。取值越大越像用户人脸。\n取值范围：0-1之间。默认取值0.7。\n\n该参数仅对SwapModelType（模型类型）取值1-5生效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "拉脸强度。主要用于调整生成结果人脸脸型更像素材模板还是用户人脸。取值越大越像用户人脸。\n取值范围：0-1之间。默认取值0.7。\n\n该参数仅对SwapModelType（模型类型）取值1-5生效",
           "example": "0.1",
           "member": "float",
           "name": "WarpRadio",
           "output_required": false,
           "required": false,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "人脸增强强度。对整个人脸进行增强，增加清晰度，改善质量。当生成的人脸不够清晰，质感不够好的时候可以设置。取值越大增强强度越大。\n取值范围：0-1之间。默认取值1。\n\n该参数仅对SwapModelType（模型类型）取值1-5生效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "人脸增强强度。对整个人脸进行增强，增加清晰度，改善质量。当生成的人脸不够清晰，质感不够好的时候可以设置。取值越大增强强度越大。\n取值范围：0-1之间。默认取值1。\n\n该参数仅对SwapModelType（模型类型）取值1-5生效",
           "example": "0.8",
           "member": "float",
           "name": "EnhanceRadio",
           "output_required": false,
           "required": false,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "磨皮强度。当生成脸的图像面部显脏时，可进行设置。\n取值范围：0-1之间。默认取值1。\n\n该参数仅对SwapModelType（模型类型）取值1-5生效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "磨皮强度。当生成脸的图像面部显脏时，可进行设置。\n取值范围：0-1之间。默认取值1。\n\n该参数仅对SwapModelType（模型类型）取值1-5生效",
           "example": "0.8",
           "member": "float",
           "name": "MpRadio",
           "output_required": false,
           "required": false,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "人脸模糊开关（暂不支持）\n当生成人脸比较清晰时，将人脸模糊到接近模板的清晰度的程度\n\n该参数仅对SwapModelType（模型类型）取值1-5生效\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "人脸模糊开关（暂不支持）\n当生成人脸比较清晰时，将人脸模糊到接近模板的清晰度的程度\n\n该参数仅对SwapModelType（模型类型）取值1-5生效",
+          "example": "1",
           "member": "float",
           "name": "BlurRadio",
           "output_required": false,
           "required": false,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "牙齿增强开关，默认取值为1\n牙齿增强，修复牙齿。当生成牙齿不好（如牙齿裂开）可以打开此开关\n0：牙齿增强关闭\n1：牙齿增强打开\n该参数仅对SwapModelType（模型类型）取值1-5生效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "牙齿增强开关，默认取值为1\n牙齿增强，修复牙齿。当生成牙齿不好（如牙齿裂开）可以打开此开关\n0：牙齿增强关闭\n1：牙齿增强打开\n该参数仅对SwapModelType（模型类型）取值1-5生效",
           "example": "1",
           "member": "float",
           "name": "TeethEnhanceRadio",
           "output_required": false,
           "required": false,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -757,7 +757,7 @@
         {
           "disabled": false,
           "document": "素材Id",
-          "example": "string",
+          "example": "mt_1858693821665306272",
           "member": "string",
           "name": "MaterialId",
           "output_required": true,
@@ -767,7 +767,7 @@
         {
           "disabled": false,
           "document": "素材状态\n\n字段取值: \n0   审核中\n1   人工审核通过\n2   人工审核失败\n3   申诉中\n11  申诉成功\n12  申诉失败\n21  机器审核通过\n22  机器审核失败\n31  视频素材预处理成功，素材可用\n32  视频素材预处理失败\n33  角色不在视频中",
-          "example": "1",
+          "example": "21",
           "member": "int64",
           "name": "MaterialStatus",
           "output_required": true,
@@ -777,7 +777,7 @@
         {
           "disabled": false,
           "document": "创建时间",
-          "example": "string",
+          "example": "2023-11-19 10:08:34",
           "member": "string",
           "name": "CreateTime",
           "output_required": true,
@@ -787,7 +787,7 @@
         {
           "disabled": false,
           "document": "修改时间",
-          "example": "string",
+          "example": "2023-11-19 10:08:36",
           "member": "string",
           "name": "UpdateTime",
           "output_required": true,
@@ -797,7 +797,7 @@
         {
           "disabled": false,
           "document": "人脸信息",
-          "example": "string",
+          "example": "[{FaceId: \"100\", FaceInfo: {X: 57, Y: 57, Width: 123, Height: 169}}]",
           "member": "MaterialFaces",
           "name": "MaterialFaceList",
           "output_required": true,
@@ -807,7 +807,7 @@
         {
           "disabled": false,
           "document": "素材名",
-          "example": "string",
+          "example": "测试素材",
           "member": "string",
           "name": "MaterialName",
           "output_required": true,
@@ -816,13 +816,13 @@
         },
         {
           "disabled": false,
-          "document": "审核原因\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "string",
+          "document": "审核原因",
+          "example": "\"审核不通过\"",
           "member": "string",
           "name": "AuditResult",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1040,7 +1040,7 @@
         {
           "disabled": false,
           "document": "视频人脸融合输出的视频url地址",
-          "example": "无",
+          "example": "http://bda-video-bodyseg-1254418846.cos.ap-guangzhou.myqcloud.com/video_fusion_test/1.0/251006455/20210119164402_83ecff39-2e4a-41d5-8562-1f8898326565_qc_300314_789050_75_1611045834157_result.mp4",
           "member": "string",
           "name": "VideoUrl",
           "output_required": true,
@@ -1050,7 +1050,7 @@
         {
           "disabled": false,
           "document": "视频人脸融合输出的视频MD5，用于校验",
-          "example": "无",
+          "example": "3AA00F9A2914DF3F2268628C45C4E4CE",
           "member": "string",
           "name": "VideoMD5",
           "output_required": true,
@@ -1060,7 +1060,7 @@
         {
           "disabled": false,
           "document": "视频宽度",
-          "example": "无",
+          "example": "720",
           "member": "int64",
           "name": "Width",
           "output_required": true,
@@ -1070,7 +1070,7 @@
         {
           "disabled": false,
           "document": "视频高度",
-          "example": "无",
+          "example": "1080",
           "member": "int64",
           "name": "Height",
           "output_required": true,
@@ -1080,7 +1080,7 @@
         {
           "disabled": false,
           "document": "每秒传输帧数",
-          "example": "无",
+          "example": "25",
           "member": "int64",
           "name": "FPS",
           "output_required": true,
@@ -1090,7 +1090,7 @@
         {
           "disabled": false,
           "document": "视频播放时长，单位为秒",
-          "example": "无",
+          "example": "15.079999923",
           "member": "float",
           "name": "DurationInSec",
           "output_required": true,
@@ -1100,7 +1100,7 @@
         {
           "disabled": false,
           "document": "帧数",
-          "example": "无",
+          "example": "375",
           "member": "int64",
           "name": "Frame",
           "output_required": true,

@@ -26,7 +26,8 @@ Output:
                 "CreateTime": "2021-10-08 16:09:46",
                 "Enable": true,
                 "BackupType": "operate",
-                "CreateNewCos": false
+                "CreateNewCos": false,
+                "BackupPolicies": []
             }
         ],
         "TotalCount": 1,

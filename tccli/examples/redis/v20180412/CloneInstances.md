@@ -6,40 +6,36 @@ Input:
 
 ```
 tccli redis CloneInstances --cli-unfold-argument  \
-    --InstanceId abc \
+    --InstanceId crs-qddzg*** \
     --GoodsNum 1 \
-    --NoAuth True \
-    --VpcId abc \
-    --SubnetId abc \
-    --ZoneId 1 \
-    --InstanceName abc \
+    --ZoneId 200005 \
     --BillingMode 0 \
     --Period 1 \
-    --Password abc \
-    --AutoRenew 1 \
-    --SecurityGroupIdList abc \
-    --VPort 1 \
-    --BackupId abc \
-    --NodeSet.0.NodeId 0 \
+    --SecurityGroupIdList sg-o0lb0*** \
+    --BackupId 331006369-11071477-******* \
+    --VpcId vpc-c9v9o*** \
+    --SubnetId subnet-7054l*** \
+    --InstanceName InstanceName-redis-preversion \
+    --Password pwd********** \
     --NodeSet.0.NodeType 0 \
-    --NodeSet.0.ZoneId 1 \
-    --NodeSet.0.ZoneName abc \
-    --ProjectId 0 \
-    --ResourceTags.0.TagKey abc \
-    --ResourceTags.0.TagValue abc \
-    --TemplateId abc \
-    --AlarmPolicyList abc
+    --NodeSet.0.ZoneName ap-shanghai-5 \
+    --NodeSet.1.NodeType 1 \
+    --NodeSet.1.ZoneName ap-shanghai-2 \
+    --ProjectId 1 \
+    --ResourceTags.0.TagKey key1 \
+    --ResourceTags.0.TagValue value2 \
+    --AlarmPolicyList policy-r7529***
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "2a836c00-175f-11eb-aeb3-db134c8d8fec",
+        "RequestId": "2a836c00-175f-11eb-aeb3-db134c8dXXXX",
         "InstanceIds": [
             "crs-kic3****"
         ],
-        "DealId": "22716"
+        "DealId": "crs-qd3d3XXX"
     }
 }
 ```

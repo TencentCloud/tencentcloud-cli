@@ -1,4 +1,4 @@
-**Example 1: 照片人脸核身成功示例 [前往调试工具](https://console.cloud.tencent.com/api/explorer?Product=faceid&Version=2018-03-01&Action=ImageRecognitionV2)**
+**Example 1: 照片人脸核身成功示例**
 
 
 
@@ -23,7 +23,7 @@ Output:
 }
 ```
 
-**Example 2: 照片人脸核身失败示例**
+**Example 2: 照片人脸核身比对相似度未达标示例**
 
 
 

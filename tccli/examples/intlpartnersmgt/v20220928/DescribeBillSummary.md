@@ -14,7 +14,7 @@ Input:
 tccli intlpartnersmgt DescribeBillSummary --cli-unfold-argument  \
     --Month 2023-10 \
     --GroupType tag \
-    --TagKey abc
+    --TagKey dev_tag_key
 ```
 
 Output: 
@@ -37,7 +37,7 @@ Output:
                 "VoucherPayAmount": "1.1",
                 "RICost": "1.1",
                 "TotalCost": "2.2",
-                "GroupKey": "abc",
+                "GroupKey": "dev_tag_key",
                 "GroupValue": "default"
             }
         ],

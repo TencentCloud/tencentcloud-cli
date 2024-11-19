@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli redis DescribeInstanceAccount --cli-unfold-argument  \
-    --InstanceId crs-5a4py64p \
+    --InstanceId crs-fswdmXXX \
     --Limit 10 \
     --Offset 0
 ```
@@ -18,17 +18,17 @@ Output:
         "Accounts": [
             {
                 "AccountName": "root",
-                "InstanceId": "crs-mufy7q15",
+                "CreateTime": "",
+                "InstanceId": "crs-fswdmXXX",
                 "Privilege": "rw",
                 "ReadonlyPolicy": [
-                    "master",
-                    "replication"
+                    "master"
                 ],
                 "Remark": "default",
                 "Status": 2
             }
         ],
-        "RequestId": "b97a9706-dee2-4d5c-8f2d-84873bc79629",
+        "RequestId": "10369b9b-b514-48b1-8967-44448fe8XXXXX",
         "TotalCount": 1
     }
 }

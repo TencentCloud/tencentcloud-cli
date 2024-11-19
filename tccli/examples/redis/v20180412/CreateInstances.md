@@ -23,11 +23,11 @@ Output:
 ```
 {
     "Response": {
-        "DealId": "154494263",
+        "DealId": "crs-7xij3fjf",
         "InstanceIds": [
-            "crs-h9sn****"
+            "crs-7xij3fjf"
         ],
-        "RequestId": "d39baee1-e34f-4685-a810-5d27c510acb3"
+        "RequestId": "a974649c-6776-45aa-ab24-7e450cccd275"
     }
 }
 ```
@@ -57,7 +57,7 @@ Output:
         "InstanceIds": [
             "crs-kic39axx"
         ],
-        "DealId": "22716"
+        "DealId": "crs-kic39axx"
     }
 }
 ```

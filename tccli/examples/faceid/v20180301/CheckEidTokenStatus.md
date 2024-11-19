@@ -1,6 +1,6 @@
 **Example 1: 获取E证通Token状态成功示例**
 
-成功获取E证通Token状态。
+
 
 Input: 
 
@@ -21,7 +21,7 @@ Output:
 
 **Example 2: 获取E政通Token状态失败示例**
 
-传入不合法的BizToken，获取E政通Token状态。
+
 
 Input: 
 

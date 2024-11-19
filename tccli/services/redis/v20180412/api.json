@@ -708,7 +708,7 @@
       "status": "online"
     },
     "ModifyReplicationGroup": {
-      "document": "修改复制组信息",
+      "document": "本接口（ModifyReplicationGroup）用于修改复制组信息。",
       "input": "ModifyReplicationGroupRequest",
       "name": "修改复制组信息",
       "output": "ModifyReplicationGroupResponse",
@@ -1969,7 +1969,7 @@
         {
           "disabled": false,
           "document": "请求任务 ID。",
-          "example": "199878234",
+          "example": "\"crs-bzssy0cp,crs-a47h97c1\"",
           "member": "string",
           "name": "DealId",
           "output_required": true,
@@ -1979,7 +1979,7 @@
         {
           "disabled": false,
           "document": "克隆实例的 ID。",
-          "example": "[\"crs-3sz5wdav\"]",
+          "example": "[\"crs-bzssy0cp\",\"crs-a47h97c1\"]",
           "member": "string",
           "name": "InstanceIds",
           "output_required": true,
@@ -2145,7 +2145,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例类型。\n<ul><li>2：Redis 2.8 内存版（标准架构）。</li><li>3：CKV 3.2 内存版（标准架构）。</li><li>4：CKV 3.2 内存版（集群架构）。</li><li>6：Redis 4.0 内存版（标准架构）。</li><li>7：Redis 4.0 内存版（集群架构）。</li><li>8：Redis 5.0 内存版（标准架构）。</li><li>9：Redis 5.0 内存版（集群架构）。</li><li>15：Redis 6.2 内存版（标准架构）。</li><li>16：Redis 6.2 内存版（集群架构）。</li><li>17：Redis 7.0 内存版（标准架构）。</li><li>18：Redis 7.0 内存版（集群架构）。</li></ul>",
+          "document": "实例类型。\n<ul><li>2：Redis 2.8 内存版（标准架构）。</li><li>3：CKV 3.2 内存版（标准架构）。</li><li>4：CKV 3.2 内存版（集群架构）。</li><li>6：Redis 4.0 内存版（标准架构）。</li><li>7：Redis 4.0 内存版（集群架构）。</li><li>8：Redis 5.0 内存版（标准架构）。</li><li>9：Redis 5.0 内存版（集群架构）。</li><li>15：Redis 6.2 内存版（标准架构）。</li><li>16：Redis 6.2 内存版（集群架构）。</li><li>17：Redis 7.0 内存版（标准架构）。</li><li>18：Redis 7.0 内存版（集群架构）。</li>说明：CKV 版本当前有存量用户使用，暂时保留。</ul>",
           "example": "6",
           "member": "uint64",
           "name": "TypeId",
@@ -2199,7 +2199,7 @@
         },
         {
           "disabled": false,
-          "document": "访问实例的密码。\n- 当输入参数**NoAuth**为**true**时，指设置实例为免密码访问，Password可不用配置，否则Password为必填参数。\n- 当实例类型**TypeId**为Redis 2.8 内存版标准架构、Redis 4.0、5.0、6.0内存版标准架构或集群架构时，其密码复杂度要求为：8-30个字符，至少包含小写字母、大写字母、数字和字符()`~!@#$%^&*-+=_|{}[]:;<>,.?/ 中的2种，不能以\"/\"开头。\n- 当实例类型**TypeId**为CKV 3.2 内存版标准架构或集群架构时，其密码复杂度为：8-30个字符，必须包含字母和数字，且 不包含其他字符。",
+          "document": "访问实例的密码。\n- 当输入参数**NoAuth**为**true**时，指设置实例为免密码访问，Password可不用配置，否则Password为必填参数。\n- 当实例类型**TypeId**为Redis 2.8 内存版标准架构、Redis 4.0、5.0、6.0内存版标准架构或集群架构时，其密码复杂度要求为：8-64个字符，至少包含小写字母、大写字母、数字和字符()`~!@#$%^&*-+=_|{}[]:;<>,.?/ 中的2种，不能以\"/\"开头。\n- 当实例类型**TypeId**为CKV 3.2 内存版标准架构或集群架构时，其密码复杂度为：8-30个字符，必须包含字母和数字，且不包含其他字符。",
           "example": "123456MyP@ssword",
           "member": "string",
           "name": "Password",
@@ -2386,7 +2386,7 @@
         {
           "disabled": false,
           "document": "交易的ID。",
-          "example": "199878234",
+          "example": "\"crs-bzssy0cp,crs-a47h97c1\"",
           "member": "string",
           "name": "DealId",
           "output_required": true,
@@ -2396,7 +2396,7 @@
         {
           "disabled": false,
           "document": "实例ID。",
-          "example": "crs-3sz5wdav",
+          "example": "\"crs-bzssy0cp\",\"crs-a47h97c1\"",
           "member": "string",
           "name": "InstanceIds",
           "output_required": true,
@@ -10060,7 +10060,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID。",
+          "document": "实例 ID，请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。",
           "example": "crs-5a4py64p",
           "member": "string",
           "name": "InstanceId",
@@ -10087,7 +10087,7 @@
         },
         {
           "disabled": false,
-          "document": "指修改后的私有网络 ID，当**Operation**为**changeVpc**或**changeBaseToVpc**时，需配置该参数。",
+          "document": "指修改后的私有网络 ID。\n- 当**Operation**为**changeVpc**或**changeBaseToVpc**时，需配置该参数。\n- 请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)，切换至**实例详情**页面，在**网络信息**区域，单击所属网络后面的私有网络名称，获取私有网络 ID。\n",
           "example": "vpc-hu6khgap",
           "member": "string",
           "name": "VpcId",
@@ -10096,7 +10096,7 @@
         },
         {
           "disabled": false,
-          "document": "指修改后的私有网络所属子网 ID，当**Operation**为**changeVpc**或**changeBaseToVpc**时，需配置该参数。",
+          "document": "指修改后的私有网络所属子网 ID。\n- 当**Operation**为**changeVpc**或**changeBaseToVpc**时，需配置该参数。\n- 请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)，切换至**实例详情**页面，在**网络信息**区域，单击所属网络后面的子网名称，获取子网ID。",
           "example": "subnet-6mt7lir6",
           "member": "string",
           "name": "SubnetId",
@@ -10105,7 +10105,7 @@
         },
         {
           "disabled": false,
-          "document": "原内网 IPv4 地址保留时长。\n- 单位：天。\n- 取值范围：0、1、2、3、7、15。\n\n**说明**：设置原地址保留时长需最新版SDK，否则原地址将立即释放，查看SDK版本，请参见 [SDK中心](https://cloud.tencent.com/document/sdk)。",
+          "document": "原内网 IPv4 地址保留时长。\n- 单位：天。\n- 取值范围：0、1、2、3、7、15。\n**说明**：设置原地址保留时长需最新版SDK，否则原地址将立即释放，查看SDK版本，请参见 [SDK中心](https://cloud.tencent.com/document/sdk)。",
           "example": "7",
           "member": "int64",
           "name": "Recycle",
@@ -10169,7 +10169,7 @@
         },
         {
           "disabled": false,
-          "document": "任务 ID。可获取**taskId**，通过接口 **DescribeTaskInfo **查询任务执行状态。",
+          "document": "任务 ID。获取**taskId**，通过接口 [DescribeTaskInfo](https://cloud.tencent.com/document/product/239/30601) 查询任务执行状态。",
           "example": "1",
           "member": "int64",
           "name": "TaskId",
@@ -10245,7 +10245,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "复制组字符串ID",
+          "document": "复制组ID。请登录[Redis控制台的全球复制](https://console.cloud.tencent.com/redis/replication)页面获取复制组 ID。",
           "example": "crs-rpl-qhj4wgcn",
           "member": "string",
           "name": "GroupId",
@@ -10254,7 +10254,7 @@
         },
         {
           "disabled": false,
-          "document": "复制组名称",
+          "document": "修改后的复制组名称。",
           "example": "复制组名称",
           "member": "string",
           "name": "GroupName",
@@ -10263,7 +10263,7 @@
         },
         {
           "disabled": false,
-          "document": "备注",
+          "document": "备注描述。",
           "example": "备注",
           "member": "string",
           "name": "Remark",
@@ -11480,7 +11480,7 @@
         },
         {
           "disabled": false,
-          "document": "实例 ID。",
+          "document": "实例 ID，请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。",
           "example": "crs-5a4py64p",
           "member": "string",
           "name": "InstanceId",

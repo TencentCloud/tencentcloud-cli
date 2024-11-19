@@ -7,15 +7,15 @@ Input:
 ```
 tccli redis ModifyReplicationGroup --cli-unfold-argument  \
     --GroupId crs-rpl-oxsincth \
-    --GroupName abc \
-    --Remark abc
+    --GroupName group-name-1 \
+    --Remark note-XXX
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "b778637c-1c49-46a5-b958-64b6caXXXXXX"
     }
 }
 ```

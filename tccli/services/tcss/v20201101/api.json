@@ -36992,7 +36992,7 @@
         },
         {
           "disabled": false,
-          "document": "标记事件的状态，   \n    EVENT_DEALED:事件处理\n    EVENT_INGNORE\"：事件忽略\n    EVENT_DEL:事件删除\n    EVENT_ADD_WHITE:事件加白\n    EVENT_PENDING: 事件待处理\n\tEVENT_ISOLATE_CONTAINER: 隔离容器\n\tEVENT_RESOTRE_CONTAINER: 恢复容器",
+          "document": "标记事件的状态，       EVENT_DEALED:事件处理    EVENT_IGNORE\"：事件忽略    EVENT_DEL:事件删除    EVENT_ADD_WHITE:事件加白    EVENT_PENDING: 事件待处理\tEVENT_ISOLATE_CONTAINER: 隔离容器\tEVENT_RESOTRE_CONTAINER: 恢复容器",
           "example": "EVENT_DEALED",
           "member": "string",
           "name": "Status",

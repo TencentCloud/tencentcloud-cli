@@ -42,7 +42,7 @@
         {
           "disabled": false,
           "document": "活动Id",
-          "example": "",
+          "example": "300314",
           "member": "int64",
           "name": "ActivityId",
           "required": true,
@@ -51,7 +51,7 @@
         {
           "disabled": false,
           "document": "素材Id",
-          "example": "",
+          "example": "qc_300314_789050_75",
           "member": "string",
           "name": "MaterialId",
           "required": false,
@@ -60,7 +60,7 @@
         {
           "disabled": false,
           "document": "每次拉取条数",
-          "example": "",
+          "example": "20",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -69,7 +69,7 @@
         {
           "disabled": false,
           "document": "偏移量",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -84,18 +84,20 @@
         {
           "disabled": false,
           "document": "素材列表数据",
-          "example": "",
+          "example": "[{\"CreateTime\":\"2022-11-29 18:46:34\",\"MaterialFaceList\":[{\"FaceId\":\"mt_1597542526641664000_1\",\"FaceInfo\":{\"Height\":167,\"Width\":128,\"X\":221,\"Y\":125}}],\"MaterialId\":\"mt_1597542526641664000\",\"MaterialName\":\"test1.png\",\"MaterialStatus\":0,\"UpdateTime\":\"2022-11-29 18:46:34\"},{\"CreateTime\":\"2022-12-15 14:19:51\",\"MaterialFaceList\":[{\"FaceId\":\"mt_1603273612711829504_1\",\"FaceInfo\":{\"Height\":167,\"Width\":128,\"X\":221,\"Y\":125}}],\"MaterialId\":\"mt_1603273612711829504\",\"MaterialName\":\"test2.png\",\"MaterialStatus\":0,\"UpdateTime\":\"2022-12-15 14:19:51\"},{\"CreateTime\":\"2022-11-10 10:28:10\",\"MaterialFaceList\":[{\"FaceId\":\"mt_1590531733435097088_1\",\"FaceInfo\":{\"Height\":167,\"Width\":128,\"X\":221,\"Y\":125}}],\"MaterialId\":\"mt_1590531733435097088\",\"MaterialName\":\"test3.png\",\"MaterialStatus\":1,\"UpdateTime\":\"2022-12-07 17:10:54\"},{\"CreateTime\":\"2022-12-07 16:13:41\",\"MaterialFaceList\":[{\"FaceId\":\"mt_1600403157392855040_1\",\"FaceInfo\":{\"Height\":236,\"Width\":177,\"X\":186,\"Y\":95}}],\"MaterialId\":\"mt_1600403157392855040\",\"MaterialName\":\"test4.png\",\"MaterialStatus\":3,\"UpdateTime\":\"2022-12-07 16:13:52\"},{\"CreateTime\":\"2022-12-15 14:20:21\",\"MaterialFaceList\":[{\"FaceId\":\"mt_1603273738050215936_1\",\"FaceInfo\":{\"Height\":129,\"Width\":119,\"X\":215,\"Y\":69}}],\"MaterialId\":\"mt_1603273738050215936\",\"MaterialName\":\"test5.jpg\",\"MaterialStatus\":3,\"UpdateTime\":\"2022-12-15 14:25:28\"}]",
           "member": "PublicMaterialInfos",
           "name": "MaterialInfos",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "素材条数",
-          "example": "",
+          "example": "10",
           "member": "int64",
           "name": "Count",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -224,40 +226,40 @@
         {
           "disabled": false,
           "document": "人脸框的横坐标",
-          "example": "",
+          "example": "362",
           "member": "int64",
           "name": "X",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "人脸框的纵坐标",
-          "example": "",
+          "example": "56",
           "member": "int64",
           "name": "Y",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "人脸框的宽度",
-          "example": "",
+          "example": "762",
           "member": "int64",
           "name": "Width",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "人脸框的高度",
-          "example": "",
+          "example": "788",
           "member": "int64",
           "name": "Height",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -339,7 +341,7 @@
         {
           "disabled": false,
           "document": "用户人脸图片、素材模板图的人脸位置信息。",
-          "example": "[]",
+          "example": "[{\"Url\":\"https://liudehua-9527.cos.ap-guangzhou.myqcloud.com/image.jpeg\"}]",
           "member": "MergeInfo",
           "name": "MergeInfos",
           "required": true,
@@ -366,7 +368,7 @@
         {
           "disabled": false,
           "document": "0表示不需要不适宜内容识别，1表示需要不适宜内容识别。默认值为0。\n请注意，不适宜内容识别服务开启后，您需要根据返回结果自行判断是否调整您的业务逻辑。例如提示您的用户图片非法，请更换图片。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "CelebrityIdentify",
           "required": false,
@@ -375,7 +377,7 @@
         {
           "disabled": false,
           "document": "融合参数",
-          "example": "无",
+          "example": "{\"ImageCodecParam\":{\"MetaData\": {\"MetaKey\":\"aigc\",\"MetaValue\":\"1\"}}}",
           "member": "FuseParam",
           "name": "FuseParam",
           "required": false,
@@ -390,7 +392,7 @@
         {
           "disabled": false,
           "document": "RspImgType 为 url 时，返回结果的 url， RspImgType 为 base64 时返回 base64 数据。",
-          "example": "/9/tetwtwe",
+          "example": "https://liudehua-9527.cos.ap-guangzhou.myqcloud.com/result.jpeg",
           "member": "string",
           "name": "FusedImage",
           "output_required": true,
@@ -400,7 +402,7 @@
         {
           "disabled": false,
           "document": "不适宜内容识别结果。该数组的顺序和请求中mergeinfo的顺序一致，一一对应\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0",
           "member": "FuseFaceReviewResult",
           "name": "ReviewResultSet",
           "output_required": true,
@@ -468,7 +470,7 @@
         {
           "disabled": false,
           "document": "保留字段",
-          "example": "无",
+          "example": "Politics",
           "member": "string",
           "name": "Category",
           "output_required": true,
@@ -478,7 +480,7 @@
         {
           "disabled": false,
           "document": "状态码， 0为处理成功，其他值为处理失败",
-          "example": "无",
+          "example": "0",
           "member": "string",
           "name": "Code",
           "output_required": true,
@@ -488,7 +490,7 @@
         {
           "disabled": false,
           "document": "对应状态码信息描述",
-          "example": "无",
+          "example": "OK",
           "member": "string",
           "name": "CodeDescription",
           "output_required": true,
@@ -498,7 +500,7 @@
         {
           "disabled": false,
           "document": "保留字段",
-          "example": "无",
+          "example": "30",
           "member": "float",
           "name": "Confidence",
           "output_required": true,
@@ -508,7 +510,7 @@
         {
           "disabled": false,
           "document": "保留字段",
-          "example": "无",
+          "example": "PASS",
           "member": "string",
           "name": "Suggestion",
           "output_required": true,
@@ -518,7 +520,7 @@
         {
           "disabled": false,
           "document": "审核详细内容",
-          "example": "无",
+          "example": "[{\"Label\": \"丁俊晖\",\"Confidence\": 30,\"Suggestion\": \"PASS\"}]",
           "member": "FuseFaceReviewDetail",
           "name": "DetailSet",
           "output_required": true,
@@ -689,100 +691,100 @@
         {
           "disabled": false,
           "document": "素材Id",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "MaterialId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "素材状态",
-          "example": "",
+          "example": "无",
           "member": "int64",
           "name": "MaterialStatus",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "脸型参数P图",
-          "example": "",
+          "example": "无",
           "member": "int64",
           "name": "BlendParamPtu",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "五官参数P图",
-          "example": "",
+          "example": "无",
           "member": "int64",
           "name": "PositionParamPtu",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "脸型参数优图",
-          "example": "",
+          "example": "无",
           "member": "int64",
           "name": "BlendParamYoutu",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "五官参数优图",
-          "example": "",
+          "example": "无",
           "member": "int64",
           "name": "PositionParamYoutu",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "素材COS地址",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Url",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "创建时间",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "修改时间",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "人脸信息",
-          "example": "",
+          "example": "无",
           "member": "MaterialFaceList",
           "name": "MaterialFaceList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -813,7 +815,7 @@
         {
           "disabled": false,
           "document": "用户人脸图片、素材模板图的人脸位置信息。不能超过1个。",
-          "example": "[{",
+          "example": "[{\"Url\": \"https://cos.ap-guangzhou.myqcloud.com/merge.png\"}]",
           "member": "MergeInfo",
           "name": "MergeInfos",
           "required": true,
@@ -831,7 +833,7 @@
         {
           "disabled": false,
           "document": "视频水印Logo参数",
-          "example": "{}",
+          "example": "{\"LogoUrl\": \"https://cos.ap-guangzhou.myqcloud.com/logo.png\", \"LogoRect\": {\"X\": 10, \"Y\": 10, \"Width\": 20, \"Height\": 20}}",
           "member": "LogoParam",
           "name": "LogoParam",
           "required": false,
@@ -840,7 +842,7 @@
         {
           "disabled": false,
           "document": "对象存储预签名地址(PUT方法)，填值则最终融合的视频上传到此地址。\n**<font color=#1E90FF>注意：如果此地址上传失败，则会返回腾讯侧默认兜底的地址。</font>**",
-          "example": "无",
+          "example": "https://cos.ap-guangzhou.myqcloud.com/sign.jpg?q-sign-algorithm=sha1&q-ak=AKIoTFy&q-sign-time=1731412419;1731419619&q-key-time=1731412419;1731419619&q-header-list=&q-url-param-list=&q-signature=380f",
           "member": "string",
           "name": "UserDesignatedUrl",
           "required": false,
@@ -849,7 +851,7 @@
         {
           "disabled": false,
           "document": "用户ip",
-          "example": "string",
+          "example": "111.206.96.1",
           "member": "string",
           "name": "UserIp",
           "required": false,
@@ -858,7 +860,7 @@
         {
           "disabled": false,
           "document": "视频元数据字段",
-          "example": "无",
+          "example": "{\"MetaKey\":\"aigc\",MetaValue:\"1\"}",
           "member": "MetaData",
           "name": "MetaData",
           "required": false,
@@ -903,7 +905,7 @@
         {
           "disabled": false,
           "document": "不适宜内容识别结果。该数组的顺序和请求中mergeinfo的顺序一致，一一对应\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[{\"Category\": \"Politics\",\"Code\": \"0\",\"CodeDescription\": \"OK\",\"Suggestion\": \"PASS\",\"Confidence\": 30,\"DetailSet\": [{\"Label\": \"丁俊晖\",\"Confidence\": 30,\"Suggestion\": \"PASS\"}]}]",
           "member": "FuseFaceReviewResult",
           "name": "ReviewResultSet",
           "output_required": true,

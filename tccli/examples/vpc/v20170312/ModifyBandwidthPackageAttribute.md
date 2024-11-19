@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli vpc ModifyBandwidthPackageAttribute --cli-unfold-argument  \
-    --BandwidthPackageName test \
+    --BandwidthPackageName demo \
     --BandwidthPackageId bwp-e40edw8y
 ```
 
@@ -27,7 +27,7 @@ Input:
 
 ```
 tccli vpc ModifyBandwidthPackageAttribute --cli-unfold-argument  \
-    --BandwidthPackageName test \
+    --BandwidthPackageName demo \
     --BandwidthPackageId bwp-e40edw8y \
     --ChargeType TOP5
 ```

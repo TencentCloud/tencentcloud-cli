@@ -36,7 +36,7 @@
       "status": "online"
     },
     "ChannelCreateBatchQuickSignUrl": {
-      "document": "该接口用于发起合同后，生成个人用户的批量待办链接, 暂时不支持企业端签署。\n**注意：**\n1. 该接口目前仅支持签署人类型是**个人签署方的批量签署场景**(ApproverType=1)。\n2. 该接口可生成C端签署人的批量签署/查看链接，**签署控件仅支持手写签名(控件类型为SIGN_SIGNATURE)和时间类型的签署控件** 。\n3. 该签署链接**有效期为30分钟**，过期后将失效，如需签署可重新创建批量签署链接 。\n4. 该接口返回的签署链接适用于APP集成的场景，支持APP打开或浏览器直接打开，**不支持微信小程序嵌入**。\n跳转到小程序的实现，参考微信官方文档(分为<a href=\"https://developers.weixin.qq.com/miniprogram/dev/api/navigate/wx.navigateToMiniProgram.html\">全屏</a>、<a href=\"https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/openEmbeddedMiniProgram.html\">半屏</a>两种方式)，如何配置也可以请参考: <a href=\"https://qian.tencent.com/developers/company/openwxminiprogram\">跳转电子签小程序配置</a>。\n6. 因h5涉及人脸身份认证能力基于慧眼人脸核身，对Android和iOS系统均有一定要求， 因此<font color='red'>App嵌入H5签署合同需要按照慧眼提供的<a href=\"https://cloud.tencent.com/document/product/1007/61076\">慧眼人脸核身兼容性文档</a>做兼容性适配</font>。",
+      "document": "该接口用于发起合同后，生成个人/企业用户的批量待办链接。\n**注意：**\n1. 该接口可生成签署人的批量、合同组签署/查看链接 。\n2. 该签署链接**有效期为30分钟**，过期后将失效，如需签署可重新创建批量签署链接 。\n4. 该接口返回的签署链接适用于APP集成的场景，支持APP打开或浏览器直接打开，**不支持微信小程序嵌入**。\n跳转到小程序的实现，参考微信官方文档(分为<a href=\"https://developers.weixin.qq.com/miniprogram/dev/api/navigate/wx.navigateToMiniProgram.html\">全屏</a>、<a href=\"https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/openEmbeddedMiniProgram.html\">半屏</a>两种方式)，如何配置也可以请参考: <a href=\"https://qian.tencent.com/developers/company/openwxminiprogram\">跳转电子签小程序配置</a>。\n6. 因h5涉及人脸身份认证能力基于慧眼人脸核身，对Android和iOS系统均有一定要求， 因此<font color='red'>App嵌入H5签署合同需要按照慧眼提供的<a href=\"https://cloud.tencent.com/document/product/1007/61076\">慧眼人脸核身兼容性文档</a>做兼容性适配</font>。",
       "input": "ChannelCreateBatchQuickSignUrlRequest",
       "name": "获取H5批量签署或查看链接",
       "output": "ChannelCreateBatchQuickSignUrlResponse",
@@ -1624,7 +1624,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "批量签署的流程签署人，其中姓名(ApproverName)、参与人类型(ApproverType)必传，手机号(ApproverMobile)和证件信息(ApproverIdCardType、ApproverIdCardNumber)可任选一种或全部传入。\n注:\n`1. ApproverType目前只支持个人类型的签署人。`\n`2. 签署人只能有手写签名和时间类型的签署控件，其他类型的填写控件和签署控件暂时都未支持。`\n`3. 当需要通过短信验证码签署时，手机号ApproverMobile需要与发起合同时填写的用户手机号一致。`",
+          "document": "批量签署的流程签署人，其中姓名(ApproverName)、参与人类型(ApproverType)必传，手机号(ApproverMobile)和证件信息(ApproverIdCardType、ApproverIdCardNumber)可任选一种或全部传入。\n<ul>\n<li>若为个人参与方：ApproverType:\"PERSON\"</li>\n<li>若为企业参与方：ApproverType:\"ORGANIZATION\"。同时若签署方为saas企业员工， OrganizationName 参数需传入参与方企业名称。若签署方为渠道子客企业员工，还需要传 OpenId、OrganizationOpenId。</li>\n</ul>\n\n注:\n`1. 暂不支持签署人拖动签署控件功能，以及签批控件。`\n`2. 当需要通过短信验证码签署时，手机号ApproverMobile需要与发起合同时填写的用户手机号一致。`",
           "example": "无",
           "member": "FlowApproverInfo",
           "name": "FlowApproverInfo",
@@ -1669,7 +1669,7 @@
         },
         {
           "disabled": false,
-          "document": "指定批量签署合同的签名类型，可传递以下值：\n<ul><li>**0**：手写签名(默认)</li>\n<li>**1**：OCR楷体</li>\n<li>**2**：姓名印章</li>\n<li>**3**：图片印章</li>\n<li>**4**：系统签名</li></ul>\n注：\n<ul><li>默认情况下，签名类型为手写签名</li>\n<li>您可以传递多种值，表示可用多种签名类型。</li>\n<li>该参数会覆盖您合同中的签名类型，若您在发起合同时限定了签名类型(赋值签名类型给ComponentTypeLimit)，请将这些签名类型赋予此参数</li></ul>",
+          "document": "指定批量签署合同的签名类型，可传递以下值：\n<ul><li>**0**：手写签名(默认)</li>\n<li>**1**：OCR楷体</li>\n<li>**2**：姓名印章</li>\n<li>**3**：图片印章</li>\n<li>**4**：系统签名</li></ul>\n注：\n<ul><li>默认情况下，签名类型为手写签名</li>\n<li>您可以传递多种值，表示可用多种签名类型。</li>\n<li>该参数会覆盖您合同中的签名类型，若您在发起合同时限定了签名类型(赋值签名类型给ComponentTypeLimit)，请将这些签名类型赋予此参数</li>\n<li>若签署方为企业员工，此参数无效，签名方式将以合同中为准。</li>\n</ul>",
           "example": "[0, 1, 2, 3, 4]",
           "member": "int64",
           "name": "SignatureTypes",
@@ -1696,7 +1696,7 @@
         },
         {
           "disabled": false,
-          "document": "批量签署合同相关信息，指定合同和签署方的信息，用于补充动态签署人。\t",
+          "document": "批量签署合同相关信息，指定合同和签署方的信息，用于补充动态签署人。\t\n\n注: `若签署方为企业员工，暂不支持通过H5端进行动态签署人的补充`",
           "example": "无",
           "member": "FlowBatchUrlInfo",
           "name": "FlowBatchUrlInfo",
@@ -1714,7 +1714,7 @@
         },
         {
           "disabled": false,
-          "document": "缓存签署人信息。在H5签署链接动态领取场景，首次填写后，选择缓存签署人信息，在下次签署人点击领取链接时，会自动将个人信息（姓名、身份证号、手机号）填入，否则需要每次手动填写。",
+          "document": "缓存签署人信息。在H5签署链接动态领取场景，首次填写后，选择缓存签署人信息，在下次签署人点击领取链接时，会自动将个人信息（姓名、身份证号、手机号）填入，否则需要每次手动填写。\n\n注: `若参与方为企业员工时，暂不支持对参与方信息进行缓存`",
           "example": "无",
           "member": "bool",
           "name": "CacheApproverInfo",

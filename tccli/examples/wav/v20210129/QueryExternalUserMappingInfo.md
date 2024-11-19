@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli wav QueryExternalUserMappingInfo --cli-unfold-argument  \
-    --CorpExternalUserIdList wmQIM2CwAAywHqH07voRw9aacKXf09eQ wmAA2CCwAAywHqH07voRw9aacAFEewf
+    --CorpExternalUserIdList sacxhdsfknasddfasdf2332edsad safd32SADFSf23r2fdsfsd
 ```
 
 Output: 

@@ -1,6 +1,6 @@
 **Example 1: 获取E证通Token成功示例**
 
-成功获取E证通Token。
+
 
 Input: 
 
@@ -22,7 +22,7 @@ Output:
 
 **Example 2: 获取E证通Token失败示例**
 
-获取E证通Token失败，未注册E证通。
+
 
 Input: 
 

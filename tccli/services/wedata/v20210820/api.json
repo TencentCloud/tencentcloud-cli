@@ -8736,7 +8736,7 @@
         },
         {
           "disabled": false,
-          "document": "工作量ID",
+          "document": "工作流ID",
           "example": "无",
           "member": "string",
           "name": "WorkflowId",
@@ -8749,6 +8749,15 @@
           "example": "无",
           "member": "string",
           "name": "ParentFolderId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "目录分类",
+          "example": "DLC",
+          "member": "string",
+          "name": "TaskNodeType",
           "required": false,
           "type": "string"
         }

@@ -1,6 +1,6 @@
-**Example 1: 查询转发规则**
+**Example 1: 查询终端节点可用地域**
 
-
+查询终端节点可用地域
 
 Input: 
 
@@ -11,14 +11,33 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "5cd964e2-b5e6-8a35-9ce5a1085860c845",
         "RegionSet": [
             {
-                "RegionCode": "ap-guangzhou",
+                "CnName": "北京",
+                "EnName": "bj",
+                "RegionCode": "ap-beijing",
+                "RegionId": 8
+            },
+            {
                 "CnName": "广州",
-                "EnName": "guangzhou"
+                "EnName": "gz",
+                "RegionCode": "ap-guangzhou",
+                "RegionId": 1
+            },
+            {
+                "CnName": "南京",
+                "EnName": "nj",
+                "RegionCode": "ap-nanjing",
+                "RegionId": 33
+            },
+            {
+                "CnName": "上海",
+                "EnName": "sh",
+                "RegionCode": "ap-shanghai",
+                "RegionId": 4
             }
-        ]
+        ],
+        "RequestId": "036e44eb-02af-44cf-b46e-924a0e04ea4a"
     }
 }
 ```
