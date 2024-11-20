@@ -9,7 +9,7 @@ tccli vpc CreateVpnGatewaySslServer --cli-unfold-argument  \
     --RemoteAddress 172.0.0.0/16 \
     --LocalAddress 10.0.0.0/16 \
     --VpnGatewayId vpngw-awd2451x \
-    --SslVpnServerName test
+    --SslVpnServerName ssl_vpn_server
 ```
 
 Output: 

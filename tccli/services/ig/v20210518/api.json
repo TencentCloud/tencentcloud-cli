@@ -39,7 +39,7 @@
         {
           "disabled": false,
           "document": "产品类型",
-          "example": "yysq",
+          "example": "ig",
           "member": "string",
           "name": "ProductType",
           "required": true,
@@ -57,7 +57,7 @@
         {
           "disabled": false,
           "document": "搜索关键字",
-          "example": "无",
+          "example": "20210512936000413352781",
           "member": "string",
           "name": "KeyWord",
           "required": false,

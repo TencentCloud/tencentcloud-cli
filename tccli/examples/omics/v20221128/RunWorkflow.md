@@ -12,8 +12,8 @@ tccli omics RunWorkflow --cli-unfold-argument  \
     --GitSource.GitHttpPath https://e.coding.net/omics/test/taxprofiler.git \
     --GitSource.Branch master \
     --Type NEXTFLOW \
-    --NFOption.Config  \
-    --NFOption.Profile test \
+    --NFOption.Config {"key": "value"} \
+    --NFOption.Profile tencentcloud \
     --InputCosUri cos://bucket-10000/nextflow/taxprofiler/input/input.json
 ```
 

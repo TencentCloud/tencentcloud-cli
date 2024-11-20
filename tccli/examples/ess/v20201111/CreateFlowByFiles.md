@@ -1683,3 +1683,97 @@ Output:
 }
 ```
 
+**Example 19: 文件发起B2C合同，使用关键字方式，签署方设置签批控件**
+
+注意： 关键字定位的签批控件，子控件的位置，大小是固定的，不能自定义。
+1.通过PDF文件发起合同 
+2.使用关键字模式
+3.指定B端签署方为企业【典子谦示例企业】，经办人为【典子谦】 
+4.指定C端签署方为个人【张三】 
+5.B 端签署人 有两个签署控件， 分别是签名控件和签批控件(SIGN_VIRTUAL_COMBINATION)，其中签批控件包含四个子控件, 在 Component 中的 "ComponentExtra": "{\"ChildrenTypes\":[\"SIGN_SIGNATURE\",\"SIGN_DATE\",\"SIGN_SELECTOR\",\"SIGN_MULTI_LINE_TEXT\"]}" 体现 ， 包括 审批意见(SIGN_SELECTOR)，个人签名(SIGN_SIGNATURE)，签署日期(SIGN_DATE)，批注附言(SIGN_MULTI_LINE_TEXT) ， 但是关键字跟绝对定位的区别在于 关键字方式只用传递SIGN_VIRTUAL_COMBINATION 一个签署控件即可。
+6.C 端签署人 有一个签批控件(SIGN_VIRTUAL_COMBINATION)，其中签批控件包含三个子控件, 在 Component 中的 "ComponentExtra": "{\"ChildrenTypes\":[\"SIGN_SIGNATURE\",\"SIGN_DATE\",\"SIGN_SELECTOR\",\"SIGN_MULTI_LINE_TEXT\"]}"体现 ， 包括 审批意见(SIGN_SELECTOR)，个人签名(SIGN_SIGNATURE)，签署日期(SIGN_DATE)， 但是关键字跟绝对定位的区别在于 关键字方式只用传递SIGN_VIRTUAL_COMBINATION 一个签署控件即可。
+
+Input: 
+
+```
+tccli ess CreateFlowByFiles --cli-unfold-argument  \
+    --Operator.UserId yDxbTUyKQWPt5NUuO4zjEuyFAyOX3v9C \
+    --FlowName 文件发起-签批 \
+    --Approvers.0.ApproverType 0 \
+    --Approvers.0.ApproverName 典子谦 \
+    --Approvers.0.ApproverMobile 13200000000 \
+    --Approvers.0.OrganizationName 典子谦示例企业 \
+    --Approvers.0.SignComponents.0.ComponentId ComponentId_1 \
+    --Approvers.0.SignComponents.0.ComponentPosY 260 \
+    --Approvers.0.SignComponents.0.ComponentWidth 100 \
+    --Approvers.0.SignComponents.0.FileIndex 0 \
+    --Approvers.0.SignComponents.0.ComponentType SIGN_SIGNATURE \
+    --Approvers.0.SignComponents.0.ComponentPage 1 \
+    --Approvers.0.SignComponents.0.ComponentPosX 160 \
+    --Approvers.0.SignComponents.0.ComponentHeight 100 \
+    --Approvers.0.SignComponents.1.ComponentId ComponentId_2 \
+    --Approvers.0.SignComponents.1.ComponentPosY 360 \
+    --Approvers.0.SignComponents.1.ComponentWidth 100 \
+    --Approvers.0.SignComponents.1.FileIndex 0 \
+    --Approvers.0.SignComponents.1.ComponentType SIGN_DATE \
+    --Approvers.0.SignComponents.1.ComponentPage 1 \
+    --Approvers.0.SignComponents.1.ComponentPosX 160 \
+    --Approvers.0.SignComponents.1.ComponentHeight 50 \
+    --Approvers.0.SignComponents.2.ComponentExtra {"ChildrenTypes":["SIGN_SIGNATURE","SIGN_DATE","SIGN_SELECTOR","SIGN_MULTI_LINE_TEXT"]} \
+    --Approvers.0.SignComponents.2.ComponentHeight 211 \
+    --Approvers.0.SignComponents.2.ComponentId ComponentId_26 \
+    --Approvers.0.SignComponents.2.FileIndex 0 \
+    --Approvers.0.SignComponents.2.ComponentName 签批1 \
+    --Approvers.0.SignComponents.2.ComponentPage 1 \
+    --Approvers.0.SignComponents.2.ComponentPosX 180 \
+    --Approvers.0.SignComponents.2.ComponentPosY 478 \
+    --Approvers.0.SignComponents.2.ComponentType SIGN_VIRTUAL_COMBINATION \
+    --Approvers.0.SignComponents.2.ComponentWidth 210 \
+    --Approvers.0.SignComponents.2.ComponentRequired False \
+    --Approvers.1.ApproverType 1 \
+    --Approvers.1.ApproverName 张三 \
+    --Approvers.1.ApproverMobile 18888888888 \
+    --Approvers.1.SignComponents.0.ComponentPosY 260 \
+    --Approvers.1.SignComponents.0.ComponentWidth 100 \
+    --Approvers.1.SignComponents.0.FileIndex 0 \
+    --Approvers.1.SignComponents.0.ComponentType SIGN_SIGNATURE \
+    --Approvers.1.SignComponents.0.ComponentPage 1 \
+    --Approvers.1.SignComponents.0.ComponentPosX 160 \
+    --Approvers.1.SignComponents.0.ComponentHeight 100 \
+    --Approvers.1.SignComponents.1.ComponentExtra {"ChildrenTypes":["SIGN_SIGNATURE","SIGN_DATE","SIGN_SELECTOR","SIGN_MULTI_LINE_TEXT"]} \
+    --Approvers.1.SignComponents.1.ComponentHeight 211 \
+    --Approvers.1.SignComponents.1.ComponentId ComponentId_16 \
+    --Approvers.1.SignComponents.1.ComponentName 签批1 \
+    --Approvers.1.SignComponents.1.FileIndex 0 \
+    --Approvers.1.SignComponents.1.ComponentPage 1 \
+    --Approvers.1.SignComponents.1.ComponentPosX 280 \
+    --Approvers.1.SignComponents.1.ComponentPosY 478 \
+    --Approvers.1.SignComponents.1.ComponentType SIGN_VIRTUAL_COMBINATION \
+    --Approvers.1.SignComponents.1.ComponentWidth 210 \
+    --FileIds yDCWqUUckpve5id3U4f5EL77tlNh6zTZ \
+    --Unordered True
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Approvers": [
+            {
+                "ApproverRoleName": "",
+                "RecipientId": "yDCdmUUckp7lfkotUyvGAviEmENDy2vV",
+                "SignId": "yDCdmUUckp7lfkorUyvGAviC9bfPrgZE"
+            },
+            {
+                "ApproverRoleName": "",
+                "RecipientId": "yDCdmUUckp7lfkoqUyvGAvi1LVH92Jy3",
+                "SignId": "yDCdmUUckp7lfkolUyvGAvi86E6ZjRpX"
+            }
+        ],
+        "FlowId": "yDCdmUUckp7lfko2UyvGAviyHgywsLpt",
+        "PreviewUrl": "",
+        "RequestId": "s1732096342358060984"
+    }
+}
+```
+

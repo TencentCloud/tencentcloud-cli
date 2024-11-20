@@ -15,14 +15,14 @@ Output:
     "Response": {
         "Data": [
             {
-                "CustomerUin": "abc",
-                "Email": "abc",
-                "Phone": "abc",
-                "Mark": "abc",
-                "Name": "abc",
-                "BindTime": "abc",
-                "AccountStatus": "abc",
-                "AuthStatus": "abc"
+                "CustomerUin": "200000000000",
+                "Email": "test@gmail.com",
+                "Phone": "18888888",
+                "Mark": "for test",
+                "Name": "tom",
+                "BindTime": "2020-01-01 08:00:00",
+                "AccountStatus": "0",
+                "AuthStatus": "0"
             }
         ],
         "RequestId": "abc"

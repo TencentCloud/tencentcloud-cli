@@ -7,7 +7,7 @@ Input:
 ```
 tccli vpc DescribeVpcInstances --cli-unfold-argument  \
     --Filters.0.Name vpc-id \
-    --Filters.0.Values vpc-12345678 \
+    --Filters.0.Values vpc-hj3he929 \
     --Offset 0 \
     --Limit 10
 ```
@@ -18,10 +18,10 @@ Output:
     "Response": {
         "InstanceSet": [
             {
-                "VpcId": "vpc-12345678",
-                "SubnetId": "subnet-12345678",
-                "InstanceId": "ins-12345678",
-                "InstanceName": "test",
+                "VpcId": "vpc-hj3he929",
+                "SubnetId": "subnet-nswq8wkq",
+                "InstanceId": "ins-pnpcflil",
+                "InstanceName": "demo",
                 "InstanceState": "RUNNING",
                 "InstanceType": "S2.SMALL2",
                 "CPU": 1,

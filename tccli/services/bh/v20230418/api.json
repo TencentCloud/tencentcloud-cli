@@ -955,7 +955,7 @@
         },
         {
           "disabled": false,
-          "document": "主机账号私钥，最新长度128字节，最大长度8192字节",
+          "document": "主机账号私钥，最小长度128字节，最大长度8192字节",
           "example": "bh-test-key",
           "member": "string",
           "name": "PrivateKey",
@@ -1658,7 +1658,7 @@
         {
           "disabled": false,
           "document": "任务名",
-          "example": "无",
+          "example": "周期改密任务",
           "member": "string",
           "name": "TaskName",
           "required": true,
@@ -1784,7 +1784,7 @@
         {
           "disabled": false,
           "document": "加密压缩文件密码",
-          "example": "123456",
+          "example": "testFilePwd",
           "member": "string",
           "name": "FilePassword",
           "required": false,

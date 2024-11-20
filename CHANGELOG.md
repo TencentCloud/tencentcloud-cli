@@ -1,3 +1,309 @@
+# Release 3.0.1102.1
+
+## 文件存储(cfs) 版本：2019-07-19
+
+### 第 24 次发布
+
+发布时间：2024-11-21 01:21:09
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [TieringDetailInfo](http://document.tencentcloudapi.woa.com/document/product/582/38175#TieringDetailInfo)
+
+	* 新增成员：SecondaryTieringSizeInBytes
+
+
+
+
+## 日志服务(cls) 版本：2020-10-16
+
+### 第 95 次发布
+
+发布时间：2024-11-21 01:25:13
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Ckafka](http://document.tencentcloudapi.woa.com/document/product/614/56471#Ckafka)
+
+	* <font color="#dd0000">**修改成员**：</font>Vip, Vport, InstanceName, TopicId
+
+
+
+
+## 主机安全(cwp) 版本：2018-02-28
+
+### 第 112 次发布
+
+发布时间：2024-11-21 01:28:43
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* DescribeSecurityProtectionStat
+
+
+
+## 人脸融合(facefusion) 版本：2022-09-27
+
+### 第 8 次发布
+
+发布时间：2024-11-21 01:45:15
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [FaceInfo](http://document.tencentcloudapi.woa.com/document/product/670/78443#FaceInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>X, Y, Width, Height
+
+
+
+
+## 人脸融合(facefusion) 版本：2018-12-01
+
+
+
+## 国际合作伙伴管理(intlpartnersmgt) 版本：2022-09-28
+
+### 第 20 次发布
+
+发布时间：2024-11-21 01:49:25
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [PayModeSummaryOverviewItem](http://document.tencentcloudapi.woa.com/document/product/1724/80754#PayModeSummaryOverviewItem)
+
+	* <font color="#dd0000">**修改成员**：</font>PayMode, PayModeName, OriginalCost, Detail, VoucherPayAmount, TotalCost
+
+* [RegionSummaryOverviewItem](http://document.tencentcloudapi.woa.com/document/product/1724/80754#RegionSummaryOverviewItem)
+
+	* <font color="#dd0000">**修改成员**：</font>RegionId, RegionName, OriginalCost, VoucherPayAmount, TotalCost
+
+
+
+
+## 知识引擎原子能力(lkeap) 版本：2024-05-22
+
+### 第 10 次发布
+
+发布时间：2024-11-21 01:56:42
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [GetSplitDocumentResult](http://document.tencentcloudapi.woa.com/document/product/1764/84924)
+
+	* 新增出参：Usage
+
+
+新增数据结构：
+
+* [DocumentUsage](http://document.tencentcloudapi.woa.com/document/product/1764/84021#DocumentUsage)
+
+修改数据结构：
+
+* [ReconstructDocumentSSEConfig](http://document.tencentcloudapi.woa.com/document/product/1764/84021#ReconstructDocumentSSEConfig)
+
+	* 新增成员：ReturnPageFormat, PageFormat
+
+
+
+
+## 云开发低码(lowcode) 版本：2021-01-08
+
+### 第 20 次发布
+
+发布时间：2024-11-21 01:56:51
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeMaterialUploadUrl](http://document.tencentcloudapi.woa.com/document/product/1599/75488)
+
+	* 新增入参：ContentType
+
+
+
+
+## 腾讯云可观测平台(monitor) 版本：2018-07-24
+
+### 第 92 次发布
+
+发布时间：2024-11-21 01:58:37
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [PrometheusClusterAgentBasic](http://document.tencentcloudapi.woa.com/document/product/248/30354#PrometheusClusterAgentBasic)
+
+	* 新增成员：DropAll
+
+
+
+
+## 媒体处理(mps) 版本：2019-06-12
+
+### 第 67 次发布
+
+发布时间：2024-11-21 01:59:58
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [CreateInputRISTSettings](http://document.tencentcloudapi.woa.com/document/product/862/37615#CreateInputRISTSettings)
+* [CreateOutputRistSettings](http://document.tencentcloudapi.woa.com/document/product/862/37615#CreateOutputRistSettings)
+* [DescribeInputRISTSettings](http://document.tencentcloudapi.woa.com/document/product/862/37615#DescribeInputRISTSettings)
+* [DescribeOutputRISTSettings](http://document.tencentcloudapi.woa.com/document/product/862/37615#DescribeOutputRISTSettings)
+* [OutputRISTSourceAddressResp](http://document.tencentcloudapi.woa.com/document/product/862/37615#OutputRISTSourceAddressResp)
+
+修改数据结构：
+
+* [CreateInput](http://document.tencentcloudapi.woa.com/document/product/862/37615#CreateInput)
+
+	* 新增成员：RISTSettings, InputRegion
+
+* [CreateOutputInfo](http://document.tencentcloudapi.woa.com/document/product/862/37615#CreateOutputInfo)
+
+	* 新增成员：OutputType, RISTSettings
+
+* [DescribeInput](http://document.tencentcloudapi.woa.com/document/product/862/37615#DescribeInput)
+
+	* 新增成员：RISTSettings
+
+* [DescribeOutput](http://document.tencentcloudapi.woa.com/document/product/862/37615#DescribeOutput)
+
+	* 新增成员：RISTSettings
+
+* [ModifyInput](http://document.tencentcloudapi.woa.com/document/product/862/37615#ModifyInput)
+
+	* 新增成员：RISTSettings, InputRegion
+
+* [ModifyOutputInfo](http://document.tencentcloudapi.woa.com/document/product/862/37615#ModifyOutputInfo)
+
+	* 新增成员：RISTSettings
+
+
+
+
+## 容器服务(tke) 版本：2022-05-01
+
+### 第 8 次发布
+
+发布时间：2024-11-21 02:20:25
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [NativeNodeInfo](http://document.tencentcloudapi.woa.com/document/product/457/74869#NativeNodeInfo)
+
+	* 新增成员：InstanceId
+
+
+
+
+## 容器服务(tke) 版本：2018-05-25
+
+
+
+## 消息队列 RocketMQ 版(trocket) 版本：2023-03-08
+
+### 第 24 次发布
+
+发布时间：2024-11-21 02:20:57
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DeleteBrokerNode](http://document.tencentcloudapi.woa.com/document/product/1739/85336)
+* [DescribeBrokerStatus](http://document.tencentcloudapi.woa.com/document/product/1739/85335)
+* [ModifyBrokerNode](http://document.tencentcloudapi.woa.com/document/product/1739/85334)
+
+
+
+## 实时音视频(trtc) 版本：2019-07-22
+
+### 第 74 次发布
+
+发布时间：2024-11-21 02:21:35
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [StartStreamIngest](http://document.tencentcloudapi.woa.com/document/product/647/82725)
+
+	* 新增入参：Volume
+
+* [UpdateStreamIngest](http://document.tencentcloudapi.woa.com/document/product/647/84551)
+
+	* 新增入参：Volume
+
+	* <font color="#dd0000">**修改入参**：</font>StreamUrl
+
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 174 次发布
+
+发布时间：2024-11-21 02:25:18
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ModifyIpv6AddressesAttribute](http://document.tencentcloudapi.woa.com/document/product/215/34468)
+
+	* 新增入参：IsCrossTenant, VpcAppId, VpcUin, VpcSubAccountUin
+
+* [ModifyVpcEndPointAttribute](http://document.tencentcloudapi.woa.com/document/product/215/54674)
+
+	* 新增入参：EnableJumbo
+
+
+
+
 # Release 3.0.1101.1
 
 ## 费用中心(billing) 版本：2018-07-09

@@ -23,15 +23,15 @@ Output:
                 "GroupSet": [
                     "sg-tyhgrwet"
                 ],
-                "ServiceName": "测试",
+                "ServiceName": "demo",
                 "State": "PENDING",
                 "ServiceVip": "10.101.1.11",
-                "EndPointName": "节点",
+                "EndPointName": "demo",
                 "VpcId": "vpc-hj3he929",
                 "EndPointOwner": "1302384414",
                 "EndPointId": "vpce-h0fk8lfc",
                 "SubnetId": "subnet-4t7fr3fi",
-                "CreateTime": "0000-00-00 00:00:00",
+                "CreateTime": "2022-06-08 10:00:00",
                 "EndPointServiceId": "vpcsvc-kngiybxl",
                 "EndPointVip": "10.101.1.11"
             }

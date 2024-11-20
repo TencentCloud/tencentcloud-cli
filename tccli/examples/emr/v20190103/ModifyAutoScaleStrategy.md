@@ -9,7 +9,6 @@ tccli emr ModifyAutoScaleStrategy --cli-unfold-argument  \
     --InstanceId emr-123 \
     --StrategyType 0 \
     --LoadAutoScaleStrategies.0.CalmDownTime 60 \
-    --LoadAutoScaleStrategies.0.ConfigGroupAssigned  \
     --LoadAutoScaleStrategies.0.GraceDownFlag False \
     --LoadAutoScaleStrategies.0.GraceDownTime 0 \
     --LoadAutoScaleStrategies.0.LoadMetricsConditions.LoadMetrics.0.Conditions.0.CompareMethod 1 \
@@ -19,7 +18,6 @@ tccli emr ModifyAutoScaleStrategy --cli-unfold-argument  \
     --LoadAutoScaleStrategies.0.LoadMetricsConditions.LoadMetrics.0.StatisticPeriod 60 \
     --LoadAutoScaleStrategies.0.LoadMetricsConditions.LoadMetrics.0.TriggerThreshold 1 \
     --LoadAutoScaleStrategies.0.MeasureMethod INSTANCE \
-    --LoadAutoScaleStrategies.0.PeriodValid  \
     --LoadAutoScaleStrategies.0.Priority 3 \
     --LoadAutoScaleStrategies.0.ProcessMethod 3 \
     --LoadAutoScaleStrategies.0.ScaleAction 2 \
@@ -27,7 +25,6 @@ tccli emr ModifyAutoScaleStrategy --cli-unfold-argument  \
     --LoadAutoScaleStrategies.0.StrategyId 1521 \
     --LoadAutoScaleStrategies.0.StrategyName 负载缩容 \
     --LoadAutoScaleStrategies.0.StrategyStatus 3 \
-    --LoadAutoScaleStrategies.0.YarnNodeLabel  \
     --TimeAutoScaleStrategies.0.CompensateFlag 1 \
     --TimeAutoScaleStrategies.0.ConfigGroupAssigned {"HDFS-2.8.5":-1,"YARN-2.8.5":-1} \
     --TimeAutoScaleStrategies.0.GraceDownFlag False \

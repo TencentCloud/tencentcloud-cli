@@ -56,6 +56,13 @@
       "output": "CreateTopicResponse",
       "status": "online"
     },
+    "DeleteBrokerNode": {
+      "document": "CSM调度平台做故障AZ下Broker的剔除",
+      "input": "DeleteBrokerNodeRequest",
+      "name": "CSM故障调度Broker节点剔除",
+      "output": "DeleteBrokerNodeResponse",
+      "status": "online"
+    },
     "DeleteConsumerGroup": {
       "document": "删除消费组",
       "input": "DeleteConsumerGroupRequest",
@@ -110,6 +117,13 @@
       "input": "DeleteTopicRequest",
       "name": "删除主题",
       "output": "DeleteTopicResponse",
+      "status": "online"
+    },
+    "DescribeBrokerStatus": {
+      "document": "CSM进行节点剔除或者加回时，查看任务状态",
+      "input": "DescribeBrokerStatusRequest",
+      "name": "CSM故障调度Broker节点切换进度查询",
+      "output": "DescribeBrokerStatusResponse",
       "status": "online"
     },
     "DescribeConsumerGroup": {
@@ -278,6 +292,13 @@
       "input": "ImportSourceClusterTopicsRequest",
       "name": "导入 Topic 元数据",
       "output": "ImportSourceClusterTopicsResponse",
+      "status": "online"
+    },
+    "ModifyBrokerNode": {
+      "document": "AZ故障恢复后，加回Broker节点",
+      "input": "ModifyBrokerNodeRequest",
+      "name": "CSM故障调度Broker节点加回接口",
+      "output": "ModifyBrokerNodeResponse",
       "status": "online"
     },
     "ModifyConsumerGroup": {
@@ -1224,6 +1245,52 @@
       ],
       "usage": "both"
     },
+    "DeleteBrokerNodeRequest": {
+      "document": "DeleteBrokerNode请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "rmq-72mo3a9o",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "故障可用区ID",
+          "example": "10001",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteBrokerNodeResponse": {
+      "document": "DeleteBrokerNode返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "5434dff663da",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteConsumerGroupRequest": {
       "document": "DeleteConsumerGroup请求参数结构体",
       "members": [
@@ -1476,6 +1543,52 @@
     "DeleteTopicResponse": {
       "document": "DeleteTopic返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBrokerStatusRequest": {
+      "document": "DescribeBrokerStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "rmq-72mo3a9o",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "4ed3a07b-36ef-4522-968b-5434dff663d1",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBrokerStatusResponse": {
+      "document": "DescribeBrokerStatus返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "切换进度：Waiting调度中、Completed已完成、Failed失败、Unknown 未知",
+          "example": "Completed 已完成",
+          "member": "string",
+          "name": "TaskStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -4893,6 +5006,52 @@
         }
       ],
       "usage": "out"
+    },
+    "ModifyBrokerNodeRequest": {
+      "document": "ModifyBrokerNode请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "rmq-72mo3a9o",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "故障可用区ID",
+          "example": "10001",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyBrokerNodeResponse": {
+      "document": "ModifyBrokerNode返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "4ed3a07b-36ef-4522-968b-5434dff663da",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ModifyConsumerGroupRequest": {
       "document": "ModifyConsumerGroup请求参数结构体",

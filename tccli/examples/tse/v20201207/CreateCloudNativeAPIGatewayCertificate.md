@@ -7,8 +7,8 @@ Input:
 ```
 tccli tse CreateCloudNativeAPIGatewayCertificate --cli-unfold-argument  \
     --GatewayId gateway-9abf3b79 \
-    --Name a \
-    --BindDomains bbc.com \
+    --Name tencent.com \
+    --BindDomains tencent.com \
     --CertId 12412rew43-5fdsf35
 ```
 

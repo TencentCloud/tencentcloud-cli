@@ -21,7 +21,7 @@ Output:
                 "CreatedTime": "2019-05-08 10:48:26",
                 "FlowLogDescription": "",
                 "FlowLogId": "fl-f42uhpkj",
-                "FlowLogName": "test",
+                "FlowLogName": "demo",
                 "ResourceId": "eni-78ysaex1",
                 "ResourceType": "NETWORKINTERFACE",
                 "TrafficType": "ACCEPT",

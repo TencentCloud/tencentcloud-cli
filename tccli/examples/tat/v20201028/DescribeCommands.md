@@ -150,7 +150,7 @@ Output:
                 "CreatedBy": "USER",
                 "Content": "cHM=",
                 "CommandType": "SHELL",
-                "WorkingDirectory": "/",
+                "WorkingDirectory": "/root",
                 "Timeout": 600,
                 "EnableParameter": false,
                 "DefaultParameters": "{\"varA\": \"222\"}",

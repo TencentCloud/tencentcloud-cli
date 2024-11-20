@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli vpc ModifyFlowLogAttribute --cli-unfold-argument  \
-    --FlowLogId fl-xxxxxx \
-    --FlowLogName xxxxx \
-    --VpcId vpc-xxxxx
+    --FlowLogId fl-nswq8wkq \
+    --FlowLogName demo \
+    --VpcId vpc-hj3he929
 ```
 
 Output: 

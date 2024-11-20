@@ -592,7 +592,7 @@
           "example": "[\"123\"]",
           "member": "string",
           "name": "SuccessUserList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -602,7 +602,7 @@
           "example": "[\"123\"]",
           "member": "string",
           "name": "FailedUserList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -2476,7 +2476,7 @@
         {
           "disabled": false,
           "document": "是否开启集群Master节点公网。取值范围：\n<li>NEED_MASTER_WAN：表示开启集群Master节点公网。</li>\n<li>NOT_NEED_MASTER_WAN：表示不开启。</li>默认开启集群Master节点公网。",
-          "example": "无",
+          "example": "NEED_MASTER_WAN",
           "member": "string",
           "name": "NeedMasterWan",
           "required": false,
@@ -2485,7 +2485,7 @@
         {
           "disabled": false,
           "document": "是否开启外网远程登录。（在SecurityGroupId不为空时，该参数无效）不填默认为不开启 取值范围：\n<li>true：表示开启</li>\n<li>false：表示不开启</li>",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "EnableRemoteLoginFlag",
           "required": false,
@@ -2494,7 +2494,7 @@
         {
           "disabled": false,
           "document": "是否开启Kerberos认证。默认不开启 取值范围：\n<li>true：表示开启</li>\n<li>false：表示不开启</li>",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "EnableKerberosFlag",
           "required": false,
@@ -2503,7 +2503,7 @@
         {
           "disabled": false,
           "document": "[自定义软件配置](https://cloud.tencent.com/document/product/589/35655?from_cn_redirect=1)",
-          "example": "无",
+          "example": "`{ \t\t\"serviceName\": \"HDFS\", \t\t\"classification\": \"hdfs-site.xml\", \t\t\"serviceVersion\": \"2.8.4\", \t\t\"properties\": { \t\t\t\"dfs.blocksize\": \"67108864\", \t\t\t\"dfs.client.slow.io.warning.threshold.ms\": \"900000\", \t\t\t\"output.replace-datanode-on-failure\": \"false\" \t\t} \t}`",
           "member": "string",
           "name": "CustomConf",
           "required": false,
@@ -2566,7 +2566,7 @@
         {
           "disabled": false,
           "document": "cos桶路径，创建StarRocks存算分离集群时用到",
-          "example": "无",
+          "example": "test-cos-1258469122",
           "member": "string",
           "name": "CosBucket",
           "required": false,
@@ -3300,7 +3300,7 @@
         {
           "disabled": false,
           "document": "tke/eks集群id，容器集群传",
-          "example": "无",
+          "example": "emr-xxx",
           "member": "string",
           "name": "TkeClusterId",
           "required": false,
@@ -3309,7 +3309,7 @@
         {
           "disabled": false,
           "document": "默认空，容器版传\"native\"",
-          "example": "无",
+          "example": "native",
           "member": "string",
           "name": "DisplayStrategy",
           "required": false,
@@ -3327,7 +3327,7 @@
         {
           "disabled": false,
           "document": "是否删除家目录，只针对cvm集群",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "DeleteHomeDir",
           "required": false,
@@ -3395,7 +3395,7 @@
         {
           "disabled": false,
           "document": "启动流程后的流程ID，可以使用[DescribeClusterFlowStatusDetail](https://cloud.tencent.com/document/product/589/107224)接口来获取流程状态",
-          "example": "无",
+          "example": "38071",
           "member": "uint64",
           "name": "FlowId",
           "output_required": true,
@@ -3721,7 +3721,7 @@
         {
           "disabled": false,
           "document": "任务名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "资源调度-部署生效",
           "member": "string",
           "name": "FlowName",
           "output_required": true,
@@ -3731,7 +3731,7 @@
         {
           "disabled": false,
           "document": "总任务流程进度：\n例如：0.8\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0.36",
           "member": "float",
           "name": "FlowTotalProgress",
           "output_required": true,
@@ -3741,7 +3741,7 @@
         {
           "disabled": false,
           "document": "定义流程总状态：\n0:初始化，\n1:运行中，\n2:完成，\n3:完成（存在跳过步骤），\n-1:失败，\n-3:阻塞，\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2",
           "member": "int64",
           "name": "FlowTotalStatus",
           "output_required": false,
@@ -3892,8 +3892,8 @@
         },
         {
           "disabled": false,
-          "document": "无",
-          "example": "无",
+          "document": "排序字段",
+          "example": "ApplyTime",
           "member": "string",
           "name": "OrderField",
           "required": false,
@@ -3901,8 +3901,8 @@
         },
         {
           "disabled": false,
-          "document": "无",
-          "example": "无",
+          "document": "是否升序，1:升序，0:降序",
+          "example": "1",
           "member": "int64",
           "name": "Asc",
           "required": false,
@@ -3947,7 +3947,7 @@
         {
           "disabled": false,
           "document": "资源类型列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"HOST\",\"MNode\"]",
           "member": "string",
           "name": "HardwareResourceTypeList",
           "output_required": true,
@@ -4062,7 +4062,7 @@
         {
           "disabled": false,
           "document": "过滤的队列名",
-          "example": "[]",
+          "example": "[\"normal\"]",
           "member": "string",
           "name": "Queues",
           "required": false,
@@ -4071,7 +4071,7 @@
         {
           "disabled": false,
           "document": "过滤的用户名",
-          "example": "[]",
+          "example": "[\"testuser\"]",
           "member": "string",
           "name": "Users",
           "required": false,
@@ -4080,7 +4080,7 @@
         {
           "disabled": false,
           "document": "过滤的作业类型",
-          "example": "[]",
+          "example": "[\"MAPREDUCE\",\"SPARK\"]",
           "member": "string",
           "name": "ApplicationTypes",
           "required": false,
@@ -4089,7 +4089,7 @@
         {
           "disabled": false,
           "document": "分组字段，可选：queue, user, applicationType",
-          "example": "[]",
+          "example": "[\"user\"]",
           "member": "string",
           "name": "GroupBy",
           "required": false,
@@ -4348,7 +4348,7 @@
         {
           "disabled": false,
           "document": "最新的资源调度器",
-          "example": "无",
+          "example": "\"fair\"",
           "member": "string",
           "name": "Scheduler",
           "output_required": false,
@@ -5096,7 +5096,7 @@
         {
           "disabled": false,
           "document": "实例关联的标签键列表。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "test-tag",
           "member": "string",
           "name": "TagKeys",
           "output_required": true,
@@ -5216,7 +5216,7 @@
         {
           "disabled": false,
           "document": "总数，分页查询时使用",
-          "example": "1234",
+          "example": "10",
           "member": "int64",
           "name": "TotalCount",
           "output_required": true,
@@ -5804,7 +5804,7 @@
         {
           "disabled": false,
           "document": "过滤条件：维护状态\n0代表所有状态\n1代表正常模式\n2代表维护模式\n",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "MaintainStateId",
           "required": false,
@@ -5813,7 +5813,7 @@
         {
           "disabled": false,
           "document": "过滤条件：操作状态\n0代表所有状态\n1代表已启动\n2代表已停止",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "OperatorStateId",
           "required": false,
@@ -5822,7 +5822,7 @@
         {
           "disabled": false,
           "document": "过滤条件：健康状态\n\"0\"代表不可用\n\"1\"代表良好\n\"-2\"代表未知\n\"-99\"代表所有\n\"-3\"代表存在隐患\n\"-4\"代表未探测",
-          "example": "无",
+          "example": "\"0\"",
           "member": "string",
           "name": "HealthStateId",
           "required": false,
@@ -5831,7 +5831,7 @@
         {
           "disabled": false,
           "document": "服务组件名称，都是大写例如YARN",
-          "example": "无",
+          "example": "\"YARN\"",
           "member": "string",
           "name": "ServiceName",
           "required": false,
@@ -5839,8 +5839,8 @@
         },
         {
           "disabled": false,
-          "document": "节点名称\nmaster\ncore\ntask\ncommon\nrouter\n",
-          "example": "无",
+          "document": "节点名称master,core,task,common,router",
+          "example": "\"master\"",
           "member": "string",
           "name": "NodeTypeName",
           "required": false,
@@ -6068,7 +6068,7 @@
         {
           "disabled": false,
           "document": "总数，分页查询时使用",
-          "example": "1234",
+          "example": "10",
           "member": "int64",
           "name": "TotalCount",
           "output_required": true,
@@ -6418,7 +6418,7 @@
         {
           "disabled": false,
           "document": "总数",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "Total",
           "output_required": true,
@@ -6474,7 +6474,7 @@
         {
           "disabled": false,
           "document": "队列信息。是一个对象转成的json字符串，对应的golang结构体如下所示，例如`QueueWithConfigSetForFairScheduler`的第一个字段`Name`：```Name                         string                               `json:\"name\"` //队列名称```- `Name`：字段名- `string`：字段类型- `json:\"name\"`：表示在序列化和反序列化`json`时，对应的`json key`，下面以`json key`来指代- `//`：后面的注释内容对应页面上看到的名称字段类型以`*`开头的表示取值可能为json规范下的null，不同的语言需要使用能表达null的类型来接收，例如java的包装类型；字段类型以`[]`开头的表示是数组类型；`json key`在调用`ModifyYarnQueueV2 `接口也会使用。- 公平调度器```type QueueWithConfigSetForFairScheduler struct {\tName                         string                               `json:\"name\"` //队列名称\tMyId                         string                  `json:\"myId\"` // 队列id，用于编辑、删除、克隆时使用\tParentId                     string                  `json:\"parentId\"`  // 父队列Id\tType                         *string                              `json:\"type\"` // 队列归属。parent或空，当确定某个队列是父队列，且没有子队列时，才可以设置，通常用来支持放置策略nestedUserQueue\tAclSubmitApps                *AclForYarnQueue                     `json:\"aclSubmitApps\"` // 提交访问控制\tAclAdministerApps            *AclForYarnQueue                     `json:\"aclAdministerApps\"` // 管理访问控制\tMinSharePreemptionTimeout    *int                                 `json:\"minSharePreemptionTimeout\"` // 最小共享优先权超时时间\tFairSharePreemptionTimeout   *int                                 `json:\"fairSharePreemptionTimeout\"` // 公平份额抢占超时时间\tFairSharePreemptionThreshold *float32                             `json:\"fairSharePreemptionThreshold\"` // 公平份额抢占阈值。取值 （0，1]\tAllowPreemptionFrom          *bool                                `json:\"allowPreemptionFrom\"`                                        // 抢占模式\tSchedulingPolicy             *string                              `json:\"schedulingPolicy\"`  // 调度策略，取值有drf、fair、fifo\tIsDefault                    *bool                                `json:\"isDefault\"` // 是否是root.default队列\tIsRoot                       *bool                                `json:\"isRoot\"` // 是否是root队列\tConfigSets                   []ConfigSetForFairScheduler          `json:\"configSets\"` // 配置集设置\tChildren                     []QueueWithConfigSetForFairScheduler `json:\"queues\"` // 子队列信息。递归}type AclForYarnQueue struct {\tUser  *string `json:\"user\"` //用户名\tGroup *string `json:\"group\"`//组名}type ConfigSetForFairScheduler struct {\tName              string        `json:\"name\"` // 配置集名称\tMinResources      *YarnResource `json:\"minResources\"` // 最小资源量\tMaxResources      *YarnResource `json:\"maxResources\"` // 最大资源量\tMaxChildResources *YarnResource `json:\"maxChildResources\"` // 能够分配给为未声明子队列的最大资源量\tMaxRunningApps    *int          `json:\"maxRunningApps\"` // 最高可同时处于运行的App数量\tWeight            *float32      `json:\"weight\"`                   // 权重\tMaxAMShare        *float32      `json:\"maxAMShare\"` // App Master最大份额}type YarnResource struct {\tVcores *int `json:\"vcores\"`\tMemory *int `json:\"memory\"`\tType *string `json:\"type\"` // 当值为`percent`时，表示使用的百分比，否则就是使用的绝对数值}```- 容量调度器```type QueueForCapacitySchedulerV3 struct {\tName                       string                `json:\"name\"` // 队列名称\tMyId                       string                `json:\"myId\"` // 队列id，用于编辑、删除、克隆时使用\tParentId                   string                `json:\"parentId\"` // 父队列Id\tConfigs                    []ConfigForCapacityV3 `json:\"configs\"` //配置集设置\tState                      *string         `json:\"state\"` // 资源池状态\tDefaultNodeLabelExpression *string               `json:\"default-node-label-expression\"` // 默认标签表达式\tAclSubmitApps              *AclForYarnQueue      `json:\"acl_submit_applications\"` // 提交访问控制\tAclAdminQueue              *AclForYarnQueue      `json:\"acl_administer_queue\"` //管理访问控制\tMaxAllocationMB *int32 `json:\"maximum-allocation-mb\"` // 分配Container最大内存数量\tMaxAllocationVcores *int32                         `json:\"maximum-allocation-vcores\"` // Container最大vCore数量\tIsDefault           *bool                          `json:\"isDefault\"`// 是否是root.default队列\tIsRoot              *bool                          `json:\"isRoot\"` // 是否是root队列\tQueues              []*QueueForCapacitySchedulerV3 `json:\"queues\"`//子队列信息。递归}type ConfigForCapacityV3 struct {\tName                string          `json:\"configName\"` // 配置集名称\tLabels              []CapacityLabel `json:\"labels\"` // 标签信息\tMinUserLimitPercent *int32          `json:\"minimum-user-limit-percent\"` // 用户最小容量\tUserLimitFactor     *float32        `json:\"user-limit-factor\" valid:\"rangeExcludeLeft(0|)\"`  // 用户资源因子\tMaxApps *int32 `json:\"maximum-applications\" valid:\"rangeExcludeLeft(0|)\"` // 最大应用数Max-Applications\tMaxAmPercent               *float32 `json:\"maximum-am-resource-percent\"` // 最大AM比例\tDefaultApplicationPriority *int32   `json:\"default-application-priority\"` // 资源池优先级}type CapacityLabel struct {\tName        string   `json:\"labelName\"`\tCapacity    *float32 `json:\"capacity\"`  // 容量\tMaxCapacity *float32 `json:\"maximum-capacity\"` //最大容量}type AclForYarnQueue struct {\tUser  *string `json:\"user\"` //用户名\tGroup *string `json:\"group\"`//组名}```",
-          "example": "无",
+          "example": "{\\\"name\\\":\\\"root\\\",\\\"myId\\\":\\\"root\\\",\\\"parentId\\\":\\\"root\\\",\\\"configs\\\":[...]}",
           "member": "string",
           "name": "Queue",
           "output_required": true,
@@ -6595,7 +6595,7 @@
         {
           "disabled": false,
           "document": "调度类型筛选列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"Capacity Scheduler\",\"Fair Scheduler\"]",
           "member": "string",
           "name": "SchedulerNameList",
           "output_required": true,
@@ -6605,7 +6605,7 @@
         {
           "disabled": false,
           "document": "状态筛选列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[0,1,2,-1]",
           "member": "int64",
           "name": "StateList",
           "output_required": true,
@@ -8584,7 +8584,7 @@
         {
           "disabled": false,
           "document": "购买实例的时间单位。取值范围：\n<li>s：表示秒。PayMode取值为0时，TimeUnit只能取值为s。</li>\n<li>m：表示月份。PayMode取值为1时，TimeUnit只能取值为m。</li>",
-          "example": "无",
+          "example": "s",
           "member": "string",
           "name": "TimeUnit",
           "required": true,
@@ -8593,7 +8593,7 @@
         {
           "disabled": false,
           "document": "购买实例的时长。结合TimeUnit一起使用。\n<li>TimeUnit为s时，该参数只能填写3600，表示按量计费实例。</li>\n<li>TimeUnit为m时，该参数填写的数字表示包年包月实例的购买时长，如1表示购买一个月</li>",
-          "example": "无",
+          "example": "3600",
           "member": "uint64",
           "name": "TimeSpan",
           "required": true,
@@ -8602,7 +8602,7 @@
         {
           "disabled": false,
           "document": "货币种类。取值范围：\n<li>CNY：表示人民币。</li>",
-          "example": "无",
+          "example": "CNY",
           "member": "string",
           "name": "Currency",
           "required": true,
@@ -8611,7 +8611,7 @@
         {
           "disabled": false,
           "document": "实例计费模式。取值范围：\n<li>0：表示按量计费。</li>\n<li>1：表示包年包月。</li>",
-          "example": "无",
+          "example": "0",
           "member": "uint64",
           "name": "PayMode",
           "required": true,
@@ -8620,7 +8620,7 @@
         {
           "disabled": false,
           "document": "是否开启节点高可用。取值范围：\n<li>0：表示不开启节点高可用。</li>\n<li>1：表示开启节点高可用。\u0007</li>",
-          "example": "无",
+          "example": "0",
           "member": "uint64",
           "name": "SupportHA",
           "required": true,
@@ -8629,7 +8629,7 @@
         {
           "disabled": false,
           "document": "部署的组件列表。不同的EMR产品ID（ProductId：具体含义参考入参ProductId字段）需要选择不同的必选组件：<li>ProductId为2(EMR-V2.0.1)的时候，必选组件包括：hdfs-2.7.3,yarn-2.7.3,zookeeper-3.4.9,knox-1.2.0</li><li>ProductId为16(EMR-V2.3.0)的时候，必选组件包括：hdfs-2.8.5,yarn-2.8.5,zookeeper-3.5.5,knox-1.2.0</li><li>ProductId为20(EMR-V2.5.0)的时候，必选组件包括：hdfs-2.8.5,yarn-2.8.5,zookeeper-3.6.1,knox-1.2.0</li><li>ProductId为30(EMR-V2.6.0)的时候，必选组件包括：hdfs-2.8.5,yarn-2.8.5,zookeeper-3.6.1,openldap-2.4.44,knox-1.2.0</li><li>ProductId为38(EMR-V2.7.0)的时候，必选组件包括：hdfs-2.8.5,yarn-2.8.5,zookeeper-3.6.3,openldap-2.4.44,knox-1.6.1</li><li>ProductId为57(EMR-V2.8.0)的时候，必选组件包括：hdfs-2.8.5,yarn-2.8.5,zookeeper-3.6.3,openldap-2.4.44,knox-1.6.1</li><li>ProductId为7(EMR-V3.0.0)的时候，必选组件包括：hdfs-3.1.2,yarn-3.1.2,zookeeper-3.4.9,knox-1.2.0</li><li>ProductId为25(EMR-V3.1.0)的时候，必选组件包括：hdfs-3.1.2,yarn-3.1.2,zookeeper-3.6.1,knox-1.2.0</li><li>ProductId为31(EMR-V3.1.1)的时候，必选组件包括：hdfs-3.1.2,yarn-3.1.2,zookeeper-3.6.1,knox-1.2.0</li><li>ProductId为28(EMR-V3.2.0)的时候，必选组件包括：hdfs-3.2.2,yarn-3.2.2,zookeeper-3.6.1,knox-1.2.0</li><li>ProductId为33(EMR-V3.2.1)的时候，必选组件包括：hdfs-3.2.2,yarn-3.2.2,zookeeper-3.6.1,openldap-2.4.44,knox-1.2.0</li><li>ProductId为34(EMR-V3.3.0)的时候，必选组件包括：hdfs-3.2.2,yarn-3.2.2,zookeeper-3.6.1,openldap-2.4.44,knox-1.2.0</li><li>ProductId为37(EMR-V3.4.0)的时候，必选组件包括：hdfs-3.2.2,yarn-3.2.2,zookeeper-3.6.3,openldap-2.4.44,knox-1.6.1</li><li>ProductId为44(EMR-V3.5.0)的时候，必选组件包括：hdfs-3.2.2,yarn-3.2.2,zookeeper-3.6.3,openldap-2.4.44,knox-1.6.1</li><li>ProductId为53(EMR-V3.6.0)的时候，必选组件包括：hdfs-3.2.2,yarn-3.2.2,zookeeper-3.6.3,openldap-2.4.44,knox-1.6.1</li><li>ProductId为58(EMR-V3.6.1)的时候，必选组件包括：hdfs-3.2.2,yarn-3.2.2,zookeeper-3.6.3,openldap-2.4.46,knox-1.6.1</li><li>ProductId为47(EMR-V4.0.0)的时候，必选组件包括：hdfs-3.2.2,yarn-3.2.2,zookeeper-3.6.3,openldap-2.4.44,knox-1.6.1</li>",
-          "example": "无",
+          "example": "[hdfs-2.7.3]",
           "member": "string",
           "name": "Software",
           "required": true,
@@ -8665,7 +8665,7 @@
         {
           "disabled": false,
           "document": "hive共享元数据库类型。取值范围：\n<li>EMR_NEW_META：表示集群默认创建</li>\n<li>EMR_EXIT_METE：表示集群使用指定EMR-MetaDB。</li>\n<li>USER_CUSTOM_META：表示集群使用自定义MetaDB。</li>",
-          "example": "无",
+          "example": "EMR_NEW_META",
           "member": "string",
           "name": "MetaType",
           "required": false,
@@ -8674,7 +8674,7 @@
         {
           "disabled": false,
           "document": "EMR-MetaDB实例",
-          "example": "无",
+          "example": "cdb-xxx",
           "member": "string",
           "name": "UnifyMetaInstanceId",
           "required": false,
@@ -8692,7 +8692,7 @@
         {
           "disabled": false,
           "document": "产品ID，不同产品ID表示不同的EMR产品版本。取值范围：<li>2：表示EMR-V2.0.1</li><li>16：表示EMR-V2.3.0</li><li>20：表示EMR-V2.5.0</li><li>30：表示EMR-V2.6.0</li><li>38：表示EMR-V2.7.0</li><li>57：表示EMR-V2.8.0</li><li>7：表示EMR-V3.0.0</li><li>25：表示EMR-V3.1.0</li><li>31：表示EMR-V3.1.1</li><li>28：表示EMR-V3.2.0</li><li>33：表示EMR-V3.2.1</li><li>34：表示EMR-V3.3.0</li><li>37：表示EMR-V3.4.0</li><li>44：表示EMR-V3.5.0</li><li>53：表示EMR-V3.6.0</li><li>58：表示EMR-V3.6.1</li><li>47：表示EMR-V4.0.0</li>",
-          "example": "无",
+          "example": "47",
           "member": "uint64",
           "name": "ProductId",
           "required": false,
@@ -8700,8 +8700,8 @@
         },
         {
           "disabled": false,
-          "document": "场景化取值：\nHadoop-Kudu\nHadoop-Zookeeper\nHadoop-Presto\nHadoop-Hbase",
-          "example": "无",
+          "document": "场景化取值：Hadoop-Kudu，Hadoop-Zookeeper，Hadoop-Presto，Hadoop-Hbase",
+          "example": "Hadoop-Hbase",
           "member": "string",
           "name": "SceneName",
           "required": false,
@@ -8719,7 +8719,7 @@
         {
           "disabled": false,
           "document": "当前默认值为0，跨AZ特性支持后为1",
-          "example": "无",
+          "example": "0",
           "member": "uint64",
           "name": "VersionID",
           "required": false,
@@ -8743,7 +8743,7 @@
         {
           "disabled": false,
           "document": "原价，单位为元。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2.54",
           "member": "float",
           "name": "OriginalCost",
           "output_required": true,
@@ -8753,7 +8753,7 @@
         {
           "disabled": false,
           "document": "折扣价，单位为元。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1.52",
           "member": "float",
           "name": "DiscountCost",
           "output_required": true,
@@ -8763,7 +8763,7 @@
         {
           "disabled": false,
           "document": "购买实例的时间单位。取值范围：\n<li>s：表示秒。</li>\n<li>m：表示月份。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "s",
           "member": "string",
           "name": "TimeUnit",
           "output_required": true,
@@ -8773,7 +8773,7 @@
         {
           "disabled": false,
           "document": "购买实例的时长。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "3600",
           "member": "int64",
           "name": "TimeSpan",
           "output_required": true,
@@ -9049,7 +9049,7 @@
         {
           "disabled": false,
           "document": "原价，单位为元。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2.54",
           "member": "string",
           "name": "OriginalCost",
           "output_required": true,
@@ -9059,7 +9059,7 @@
         {
           "disabled": false,
           "document": "折扣价，单位为元。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1.52",
           "member": "string",
           "name": "DiscountCost",
           "output_required": true,
@@ -9069,7 +9069,7 @@
         {
           "disabled": false,
           "document": "扩容的时间单位。取值范围：\n<li>s：表示秒。</li>\n<li>m：表示月份。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "s",
           "member": "string",
           "name": "Unit",
           "output_required": true,
@@ -10792,7 +10792,7 @@
         {
           "disabled": false,
           "document": "错误信息，预留\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "\"ErrorMsg\"",
           "member": "string",
           "name": "ErrorMsg",
           "output_required": true,
@@ -13358,7 +13358,7 @@
         {
           "disabled": false,
           "document": "要重置的配置别名，可选值：\n\n- capacityLabel：重置标签管理的配置\n- fair：重置公平调度的配置\n- capacity：重置容量调度的配置",
-          "example": "test",
+          "example": "capacityLabel",
           "member": "string",
           "name": "Key",
           "required": false,
@@ -13663,7 +13663,7 @@
         {
           "disabled": false,
           "document": "作业名称。",
-          "example": "test",
+          "example": "job-name",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -13699,7 +13699,7 @@
         {
           "disabled": false,
           "document": "只有CreateCluster为true时生效，目前只支持EMR版本，例如EMR-2.2.0，不支持ClickHouse和Druid版本。",
-          "example": "无",
+          "example": "EMR-3.6.0",
           "member": "string",
           "name": "ProductVersion",
           "required": false,
@@ -13708,7 +13708,7 @@
         {
           "disabled": false,
           "document": "只在CreateCluster为true时生效。\ntrue 表示安装kerberos，false表示不安装kerberos。",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "SecurityClusterFlag",
           "required": false,
@@ -13717,7 +13717,7 @@
         {
           "disabled": false,
           "document": "只在CreateCluster为true时生效。\n新建集群时，要安装的软件列表。",
-          "example": "无",
+          "example": "[\"hadoop-2.8.4\\n\",\"zookeeper-3.4.9\\n\",\"knox-1.2.0\\n\"]",
           "member": "string",
           "name": "Software",
           "required": false,
@@ -13744,7 +13744,7 @@
         {
           "disabled": false,
           "document": "作业日志保存地址。",
-          "example": "无",
+          "example": "uri/test",
           "member": "string",
           "name": "LogUri",
           "required": false,
@@ -13753,7 +13753,7 @@
         {
           "disabled": false,
           "document": "只在CreateCluster为false时生效。",
-          "example": "无",
+          "example": "emr-on1234",
           "member": "string",
           "name": "InstanceId",
           "required": false,
@@ -13762,7 +13762,7 @@
         {
           "disabled": false,
           "document": "自定义应用角色，大数据应用访问外部服务时使用的角色，默认为\"EME_QCSRole\"。",
-          "example": "无",
+          "example": "EME_QCSRole",
           "member": "string",
           "name": "ApplicationRole",
           "required": false,
@@ -13771,7 +13771,7 @@
         {
           "disabled": false,
           "document": "重入标签，用来可重入检查，防止在一段时间内，创建相同的流程作业。",
-          "example": "无",
+          "example": "\"test-test\"",
           "member": "string",
           "name": "ClientToken",
           "required": false,
@@ -14219,7 +14219,7 @@
         {
           "disabled": false,
           "document": "扩容部署服务，新增节点将默认继承当前节点类型中所部署服务，部署服务含默认可选服务，该参数仅支持可选服务填写，如：存量task节点已部署HDFS、YARN、impala；使用api扩容task节不部署impala时，部署服务仅填写HDFS、YARN。[组件名对应的映射关系表](https://cloud.tencent.com/document/product/589/98760)。",
-          "example": "无",
+          "example": "[1,2]",
           "member": "int64",
           "name": "SoftDeployInfo",
           "required": false,
@@ -14228,7 +14228,7 @@
         {
           "disabled": false,
           "document": "部署进程，默认部署扩容服务的全部进程，支持修改部署进程，如：当前task节点部署服务为：HDFS、YARN、impala，默认部署服务为：DataNode,NodeManager,ImpalaServer，若用户需修改部署进程信息，部署进程：\tDataNode,NodeManager,ImpalaServerCoordinator或DataNode,NodeManager,ImpalaServerExecutor。[进程名对应的映射关系表](https://cloud.tencent.com/document/product/589/98760)。",
-          "example": "无",
+          "example": "[7]",
           "member": "int64",
           "name": "ServiceNodeInfo",
           "required": false,
@@ -14237,7 +14237,7 @@
         {
           "disabled": false,
           "document": "分散置放群组ID列表，当前只支持指定一个。\n该参数可以通过调用 [DescribeDisasterRecoverGroups](https://cloud.tencent.com/document/product/213/17810)的返回值中的DisasterRecoverGroupId字段来获取。",
-          "example": "无",
+          "example": "[\"ps-ery9dr5n\"]",
           "member": "string",
           "name": "DisasterRecoverGroupIds",
           "required": false,
@@ -14255,7 +14255,7 @@
         {
           "disabled": false,
           "document": "扩容所选资源类型，可选范围为\"host\",\"pod\"，host为普通的CVM资源，Pod为TKE集群或EKS集群提供的资源",
-          "example": "无",
+          "example": "HOST",
           "member": "string",
           "name": "HardwareSourceType",
           "required": false,
@@ -14273,7 +14273,7 @@
         {
           "disabled": false,
           "document": "使用clickhouse集群扩容时，选择的机器分组名称",
-          "example": "无",
+          "example": "name-test",
           "member": "string",
           "name": "ClickHouseClusterName",
           "required": false,
@@ -14282,7 +14282,7 @@
         {
           "disabled": false,
           "document": "使用clickhouse集群扩容时，选择的机器分组类型。new为新增，old为选择旧分组",
-          "example": "无",
+          "example": "new",
           "member": "string",
           "name": "ClickHouseClusterType",
           "required": false,
@@ -14291,7 +14291,7 @@
         {
           "disabled": false,
           "document": "扩容指定 Yarn Node Label",
-          "example": "无",
+          "example": "CLOUD",
           "member": "string",
           "name": "YarnNodeLabel",
           "required": false,
@@ -14300,7 +14300,7 @@
         {
           "disabled": false,
           "document": "扩容后是否启动服务，默认取值否\n<li>true：是</li>\n<li>false：否</li>",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "EnableStartServiceFlag",
           "required": false,
@@ -14318,7 +14318,7 @@
         {
           "disabled": false,
           "document": "实例所属的可用区，例如ap-guangzhou-1。该参数也可以通过调用[DescribeZones](https://cloud.tencent.com/document/product/213/15707) 的返回值中的Zone字段来获取。",
-          "example": "无",
+          "example": "ap-guangzhou-1",
           "member": "string",
           "name": "Zone",
           "required": false,
@@ -14361,7 +14361,7 @@
         {
           "disabled": false,
           "document": "客户端Token。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "testtesttest",
           "member": "string",
           "name": "ClientToken",
           "output_required": true,
@@ -14371,7 +14371,7 @@
         {
           "disabled": false,
           "document": "扩容流程ID。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1928287",
           "member": "int64",
           "name": "FlowId",
           "output_required": true,
@@ -14381,7 +14381,7 @@
         {
           "disabled": false,
           "document": "查询流程状态，流程额外信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1731833622-448635-8003549",
           "member": "string",
           "name": "TraceId",
           "output_required": false,
@@ -14475,7 +14475,7 @@
         {
           "disabled": false,
           "document": "扩容时不需要安装的进程。",
-          "example": "[]",
+          "example": "[53]",
           "member": "uint64",
           "name": "UnNecessaryNodeList",
           "required": false,
@@ -14493,7 +14493,7 @@
         {
           "disabled": false,
           "document": "部署的服务。\n<li>SoftDeployInfo和ServiceNodeInfo是同组参数，和UnNecessaryNodeList参数互斥。</li>\n<li>建议使用SoftDeployInfo和ServiceNodeInfo组合。</li>",
-          "example": "[]",
+          "example": "[1,2,25]",
           "member": "uint64",
           "name": "SoftDeployInfo",
           "required": false,
@@ -14502,7 +14502,7 @@
         {
           "disabled": false,
           "document": "启动的进程。",
-          "example": "[]",
+          "example": "[7]",
           "member": "uint64",
           "name": "ServiceNodeInfo",
           "required": false,
@@ -14511,7 +14511,7 @@
         {
           "disabled": false,
           "document": "分散置放群组ID列表，当前仅支持指定一个。",
-          "example": "[]",
+          "example": "[\"ps-ery9dr5n\"]",
           "member": "string",
           "name": "DisasterRecoverGroupIds",
           "required": false,
@@ -14529,7 +14529,7 @@
         {
           "disabled": false,
           "document": "扩容所选资源类型，可选范围为\"host\",\"pod\"，host为普通的CVM资源，Pod为TKE集群或EKS集群提供的资源",
-          "example": "\"\"",
+          "example": "HOST",
           "member": "string",
           "name": "HardwareResourceType",
           "required": false,
@@ -14547,7 +14547,7 @@
         {
           "disabled": false,
           "document": "使用clickhouse集群扩容时，选择的机器分组名称",
-          "example": "\"\"",
+          "example": "name-test",
           "member": "string",
           "name": "ClickHouseClusterName",
           "required": false,
@@ -14556,7 +14556,7 @@
         {
           "disabled": false,
           "document": "使用clickhouse集群扩容时，选择的机器分组类型。new为新增，old为选择旧分组",
-          "example": "\"\"",
+          "example": "new",
           "member": "string",
           "name": "ClickHouseClusterType",
           "required": false,
@@ -14565,7 +14565,7 @@
         {
           "disabled": false,
           "document": "规则扩容指定 yarn node label",
-          "example": "\"\"",
+          "example": "CLOUD",
           "member": "string",
           "name": "YarnNodeLabel",
           "required": false,
@@ -14619,7 +14619,7 @@
         {
           "disabled": false,
           "document": "预设配置组",
-          "example": "\"\"",
+          "example": "{\\\"HDFS-3.2.2\\\":-1,\\\"YARN-3.2.2\\\":-1}",
           "member": "string",
           "name": "ScaleOutServiceConfAssign",
           "required": false,
@@ -14681,7 +14681,7 @@
         {
           "disabled": false,
           "document": "客户端Token。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "testtesttest",
           "member": "string",
           "name": "ClientToken",
           "output_required": true,
@@ -14701,7 +14701,7 @@
         {
           "disabled": false,
           "document": "大订单号。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "20241118053073481639521",
           "member": "string",
           "name": "BillId",
           "output_required": true,
@@ -14711,7 +14711,7 @@
         {
           "disabled": false,
           "document": "扩容TraceId\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "1731867961-23673-5000362",
           "member": "string",
           "name": "TraceId",
           "output_required": false,
@@ -15979,7 +15979,7 @@
         {
           "disabled": false,
           "document": "当OpType为<li>StopMonitor</li>才有用，true表示进入维护模式但是仍然监控进程但是不拉起进程",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "KeepMonitorButNotRecoverProcess",
           "required": false,
@@ -16348,7 +16348,7 @@
         {
           "disabled": false,
           "document": "优雅缩容开关\n  <li>true:开启</li>\n  <li>false:不开启</li>",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "GraceDownFlag",
           "required": false,
@@ -16357,7 +16357,7 @@
         {
           "disabled": false,
           "document": "优雅缩容等待时间,时间范围60到1800  单位秒",
-          "example": "无",
+          "example": "60",
           "member": "int64",
           "name": "GraceDownTime",
           "required": false,
@@ -16403,7 +16403,7 @@
         {
           "disabled": false,
           "document": "销毁节点ID。该参数为预留参数，用户无需配置。",
-          "example": "无",
+          "example": "[\"id-test\"]",
           "member": "string",
           "name": "ResourceIds",
           "required": false,
@@ -16412,7 +16412,7 @@
         {
           "disabled": false,
           "document": "类型为ComputeResource和EMR以及默认，默认为EMR,类型为EMR时,InstanceId生效,类型为ComputeResource时,使用ComputeResourceId标识",
-          "example": "无",
+          "example": "ComputeResource",
           "member": "string",
           "name": "ResourceBaseType",
           "required": false,
@@ -16421,7 +16421,7 @@
         {
           "disabled": false,
           "document": "计算资源ID",
-          "example": "无",
+          "example": "emr-cr-0xrwm3bb",
           "member": "string",
           "name": "ComputeResourceId",
           "required": false,

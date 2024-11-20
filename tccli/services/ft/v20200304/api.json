@@ -361,22 +361,20 @@
         {
           "disabled": false,
           "document": "图片的展示时长，即单张图片静止不变的时间。GIF默认每张图片0.7s，视频默认每张图片0.5s。最大取值1s。",
-          "example": "",
+          "example": "0.5",
           "member": "float",
           "name": "Tempo",
           "required": false,
-          "type": "float",
-          "value_allowed_null": false
+          "type": "float"
         },
         {
           "disabled": false,
           "document": "人像渐变的最长时间，即单张图片使用渐变特效的时间。 GIF默认值为0.5s，视频默值认为1s。最大取值1s。",
-          "example": "",
+          "example": "0.5",
           "member": "float",
           "name": "MorphTime",
           "required": false,
-          "type": "float",
-          "value_allowed_null": false
+          "type": "float"
         }
       ],
       "usage": "in"

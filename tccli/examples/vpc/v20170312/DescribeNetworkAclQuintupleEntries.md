@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli vpc DescribeNetworkAclQuintupleEntries --cli-unfold-argument  \
-    --NetworkAclId acl-12345678 \
+    --NetworkAclId acl-hj3he929 \
     --Limit 20 \
     --Offset 0
 ```
@@ -19,7 +19,7 @@ Output:
         "NetworkAclQuintupleSet": [
             {
                 "Protocol": "TCP",
-                "Description": "test",
+                "Description": "demo",
                 "SourcePort": "80",
                 "SourceCidr": "192.168.0.0/24",
                 "DestinationPort": "80",
@@ -27,7 +27,8 @@ Output:
                 "Action": "ACCEPT",
                 "CreateTime": "2019-11-11 22:16:17",
                 "NetworkAclQuintupleEntryId": "acli45-q1phngkz",
-                "NetworkAclDirection": "EGRESS"
+                "NetworkAclDirection": "EGRESS",
+                "Priority": 0
             }
         ],
         "RequestId": "cccb2665-5d02-4d87-b9e7-757bb06e5beb"

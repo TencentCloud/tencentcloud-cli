@@ -11,12 +11,12 @@ tccli tse CreateCloudNativeAPIGatewayCanaryRule --cli-unfold-argument  \
     --CanaryRule.Priority 10 \
     --CanaryRule.Enabled True \
     --CanaryRule.ConditionList.0.Type query \
-    --CanaryRule.ConditionList.0.Key q1 \
+    --CanaryRule.ConditionList.0.Key app \
     --CanaryRule.ConditionList.0.Operator == \
-    --CanaryRule.ConditionList.0.Value abc \
+    --CanaryRule.ConditionList.0.Value learn \
     --CanaryRule.BalancedServiceList.0.ServiceID 6abf620f-c6b9-4440-b90c-56c165225cf \
     --CanaryRule.BalancedServiceList.0.ServiceName svc1 \
-    --CanaryRule.BalancedServiceList.0.UpstreamName  \
+    --CanaryRule.BalancedServiceList.0.UpstreamName ups1 \
     --CanaryRule.BalancedServiceList.0.Percent 100
 ```
 

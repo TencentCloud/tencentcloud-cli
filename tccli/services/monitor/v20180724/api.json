@@ -17934,7 +17934,7 @@
         },
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "集群 ID",
           "example": "cls-abc",
           "member": "string",
           "name": "ClusterId",
@@ -17943,7 +17943,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启公网CLB",
+          "document": "是否开启公网 CLB",
           "example": "false",
           "member": "bool",
           "name": "EnableExternal",
@@ -17952,7 +17952,7 @@
         },
         {
           "disabled": false,
-          "document": "集群内部署组件的pod配置",
+          "document": "集群内部署组件的pod 配置",
           "example": "pod配置",
           "member": "PrometheusClusterAgentPodConfig",
           "name": "InClusterPodConfig",
@@ -17970,7 +17970,7 @@
         },
         {
           "disabled": false,
-          "document": "是否安装默认采集配置",
+          "document": "是否安装默认采集 exporter 和采集配置",
           "example": "false",
           "member": "bool",
           "name": "NotInstallBasicScrape",
@@ -17979,10 +17979,19 @@
         },
         {
           "disabled": false,
-          "document": "是否采集指标，true代表drop所有指标，false代表采集默认指标",
+          "document": "是否安装采集配置，true 只安装采集 exporter 不会安装采集配置，false 会同时安装采集配置",
           "example": "false",
           "member": "bool",
           "name": "NotScrape",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否丢弃所有指标，true 代表丢弃所有指标，false 代表采集默认指标",
+          "example": "false",
+          "member": "bool",
+          "name": "DropAll",
           "required": false,
           "type": "bool"
         },

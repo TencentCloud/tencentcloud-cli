@@ -2204,54 +2204,10 @@
       "members": [
         {
           "disabled": false,
-          "document": "Ckafka 的 Vip",
-          "example": "10.10.2.42",
-          "member": "string",
-          "name": "Vip",
-          "output_required": true,
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "Ckafka 的 Vport",
-          "example": "9092",
-          "member": "string",
-          "name": "Vport",
-          "output_required": true,
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
           "document": "Ckafka 的 InstanceId",
           "example": "ckafka-8j4rotest",
           "member": "string",
           "name": "InstanceId",
-          "output_required": true,
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "Ckafka 的 InstanceName",
-          "example": "kafka协议消费监控用",
-          "member": "string",
-          "name": "InstanceName",
-          "output_required": true,
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "Ckafka 的 TopicId",
-          "example": "1254011820-24a0d67e-748b-4e30-9502-78779bcc5test",
-          "member": "string",
-          "name": "TopicId",
           "output_required": true,
           "required": true,
           "type": "string",
@@ -2265,6 +2221,50 @@
           "name": "TopicName",
           "output_required": true,
           "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Ckafka 的 Vip",
+          "example": "10.10.2.42",
+          "member": "string",
+          "name": "Vip",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Ckafka 的 Vport",
+          "example": "9092",
+          "member": "string",
+          "name": "Vport",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Ckafka 的 InstanceName",
+          "example": "kafka协议消费监控用",
+          "member": "string",
+          "name": "InstanceName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Ckafka 的 TopicId",
+          "example": "1254011820-24a0d67e-748b-4e30-9502-78779bcc5test",
+          "member": "string",
+          "name": "TopicId",
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         }

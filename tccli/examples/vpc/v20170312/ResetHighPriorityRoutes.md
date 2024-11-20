@@ -7,11 +7,11 @@ Input:
 ```
 tccli vpc ResetHighPriorityRoutes --cli-unfold-argument  \
     --HighPriorityRouteTableId hprtb-hd4tl8cg \
-    --Name ivan_hprtb \
+    --Name demo \
     --HighPriorityRoutes.0.DestinationCidrBlock 172.20.0.0/18 \
     --HighPriorityRoutes.0.GatewayType NORMAL_CVM \
     --HighPriorityRoutes.0.GatewayId 172.16.0.11 \
-    --HighPriorityRoutes.0.Description test
+    --HighPriorityRoutes.0.Description demo
 ```
 
 Output: 

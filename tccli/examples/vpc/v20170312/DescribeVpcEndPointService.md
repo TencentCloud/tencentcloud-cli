@@ -32,10 +32,10 @@ Output:
                         "GroupSet": [
                             "sg-tyhgrwet"
                         ],
-                        "ServiceName": "测试",
+                        "ServiceName": "demo",
                         "State": "PENDING",
                         "ServiceVip": "10.101.1.11",
-                        "EndPointName": "节点",
+                        "EndPointName": "demo",
                         "VpcId": "vpc-hj3he929",
                         "EndPointOwner": "1302384414",
                         "EndPointId": "vpce-h0fk8lfc",

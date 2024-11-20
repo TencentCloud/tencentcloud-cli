@@ -2164,11 +2164,11 @@
       "status": "online"
     },
     "DescribeSecurityProtectionStat": {
-      "document": "获取安全防护状态汇总",
+      "document": "接口已无效\n\n获取安全防护状态汇总",
       "input": "DescribeSecurityProtectionStatRequest",
       "name": "获取安全防护状态",
       "output": "DescribeSecurityProtectionStatResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeSecurityTrends": {
       "document": "本接口 (DescribeSecurityTrends) 用于获取安全事件统计数据。",

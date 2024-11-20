@@ -2971,7 +2971,7 @@
         {
           "disabled": false,
           "document": "音频数据, base64 编码, 音频时长不能超过30s，数据大小不超过2M",
-          "example": "无",
+          "example": "UklGRka1CQBXQVZFZm10IBAAAAABAAEAgD4E",
           "member": "string",
           "name": "Data",
           "required": true,
@@ -2989,7 +2989,7 @@
         {
           "disabled": false,
           "document": "分组id, 仅支持大小写字母和下划线的组合，不超过128个字符",
-          "example": "无",
+          "example": "group_A",
           "member": "string",
           "name": "GroupId",
           "required": false,

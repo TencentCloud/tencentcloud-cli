@@ -15,7 +15,7 @@ tccli bh ModifyAcl --cli-unfold-argument  \
     --DeviceGroupIdSet 1 \
     --AllowDiskRedirect True \
     --AllowClipFileUp True \
-    --AccountSet aaa \
+    --AccountSet root \
     --AllowAnyAccount True \
     --AllowClipFileDown True \
     --DeviceIdSet 1 \

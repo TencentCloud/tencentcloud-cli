@@ -7,10 +7,8 @@ Input:
 ```
 tccli omics DescribeTables --cli-unfold-argument  \
     --ProjectId prj-aggressive-lime-porcupine-752427 \
-    --Filters.0.Name Name \
-    --Filters.0.Values test \
-    --Filters.1.Name TableId \
-    --Filters.1.Values tab-cold-purple-barnacle-251091
+    --Filters.0.Name TableId \
+    --Filters.0.Values tab-cold-purple-barnacle-251091
 ```
 
 Output: 

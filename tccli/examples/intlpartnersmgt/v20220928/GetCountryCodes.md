@@ -13,21 +13,14 @@ Output:
     "Response": {
         "Data": [
             {
+                "Code": "355",
                 "EnName": "Albania",
-                "Name": "阿尔巴尼亚",
                 "IOS2": "AL",
                 "IOS3": "ALB",
-                "Code": "355"
-            },
-            {
-                "EnName": "Algeria",
-                "Name": "阿尔及利亚",
-                "IOS2": "DZ",
-                "IOS3": "DZA",
-                "Code": "213"
+                "Name": "阿尔巴尼亚"
             }
         ],
-        "RequestId": "a9e390a7-a1af-42cd-8178-13bd046337a7"
+        "RequestId": "e25eaf3f-22e7-45ea-9ecb-ca366ffcfdac"
     }
 }
 ```

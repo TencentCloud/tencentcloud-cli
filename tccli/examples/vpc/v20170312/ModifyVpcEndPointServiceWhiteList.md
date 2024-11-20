@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli vpc ModifyVpcEndPointServiceWhiteList --cli-unfold-argument  \
-    --UserUin 123 \
-    --Description 测试 \
+    --UserUin  \
+    --Description 700000483554 \
     --EndPointServiceId vpcsvc-b2mrmmx7
 ```
 

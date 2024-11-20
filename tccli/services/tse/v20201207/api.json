@@ -3775,7 +3775,7 @@
         {
           "disabled": false,
           "document": "绑定的域名",
-          "example": "[\"abc.com\"]",
+          "example": "[\"tencent.com\"]",
           "member": "string",
           "name": "BindDomains",
           "required": true,
@@ -3793,7 +3793,7 @@
         {
           "disabled": false,
           "document": "证书名称",
-          "example": "test",
+          "example": "tencent.com",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -4436,7 +4436,7 @@
         {
           "disabled": false,
           "document": "请求路径",
-          "example": "/",
+          "example": "/v1/users",
           "member": "string",
           "name": "Path",
           "required": false,
@@ -13857,7 +13857,7 @@
         {
           "disabled": false,
           "document": "四层匹配的目的端口\t",
-          "example": "无",
+          "example": "8000",
           "member": "uint64",
           "name": "DestinationPorts",
           "required": false,
@@ -14010,7 +14010,7 @@
         {
           "disabled": false,
           "document": "请求路径",
-          "example": "/",
+          "example": "/v1/users",
           "member": "string",
           "name": "Path",
           "required": false,
@@ -16197,7 +16197,7 @@
         {
           "disabled": false,
           "document": "绑定的域名列表",
-          "example": "[\"abc.com\"]",
+          "example": "[\"tencent.com\"]",
           "member": "string",
           "name": "BindDomains",
           "required": true,
@@ -16206,7 +16206,7 @@
         {
           "disabled": false,
           "document": "证书名称",
-          "example": "test",
+          "example": "tencent.com",
           "member": "string",
           "name": "Name",
           "required": false,

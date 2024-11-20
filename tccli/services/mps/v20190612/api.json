@@ -8594,7 +8594,7 @@
         },
         {
           "disabled": false,
-          "document": "输入的协议，可选[SRT|RTP|RTMP|RTMP_PULL]。",
+          "document": "输入的协议，可选[SRT|RTP|RTMP|RTMP_PULL|RTSP_PULL|RIST]。",
           "example": "SRT",
           "member": "string",
           "name": "Protocol",
@@ -8699,6 +8699,24 @@
           "name": "Zones",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "输入的RIST配置信息。",
+          "example": "无",
+          "member": "CreateInputRISTSettings",
+          "name": "RISTSettings",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "输入节点的地区",
+          "example": "ap-mumbai",
+          "member": "string",
+          "name": "InputRegion",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -8715,6 +8733,39 @@
           "required": true,
           "type": "list",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "CreateInputRISTSettings": {
+      "document": "创建的输入RIST的配置信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "RIST模式，可选[LISTENER]，默认为LISTENER。",
+          "example": "LISTENER",
+          "member": "string",
+          "name": "Mode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "RIST配置方案，可选[MAIN|SIMPLE]，默认为MAIN。",
+          "example": "MAIN",
+          "member": "string",
+          "name": "Profile",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "RIST缓冲区大小，单位为毫秒。最小值为50毫秒，最大值为5000毫秒。默认值：120",
+          "example": "120",
+          "member": "int64",
+          "name": "Buffer",
+          "required": false,
+          "type": "int"
         }
       ],
       "usage": "in"
@@ -8887,7 +8938,7 @@
         },
         {
           "disabled": false,
-          "document": "输出协议，可选[SRT|RTP|RTMP|RTMP_PULL]。",
+          "document": "输出的转推协议，支持SRT|RTP|RTMP|RTMP_PULL|RTSP|RIST。",
           "example": "SRT",
           "member": "string",
           "name": "Protocol",
@@ -8965,6 +9016,24 @@
           "name": "Zones",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "输出类型：Internet/TencentCSS/StreamLive",
+          "example": "TencentCSS",
+          "member": "string",
+          "name": "OutputType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "输出的RIST的配置。",
+          "example": "无",
+          "member": "CreateOutputRistSettings",
+          "name": "RISTSettings",
+          "required": false,
+          "type": "object"
         }
       ],
       "usage": "in"
@@ -9053,6 +9122,39 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "CreateOutputRistSettings": {
+      "document": "创建媒体传输流的输出的RIST配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "RIST模式，可选[LISTENER|CALLER]，默认为LISTENER。",
+          "example": "LISTENER",
+          "member": "string",
+          "name": "Mode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "RIST配置方案，可选[MAIN|SIMPLE]，默认为MAIN。",
+          "example": "MAIN",
+          "member": "string",
+          "name": "Profile",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "RIST缓冲区大小，单位为毫秒。最小值为50毫秒，最大值为5000毫秒。默认值：120",
+          "example": "120",
+          "member": "int64",
+          "name": "Buffer",
+          "required": false,
+          "type": "int"
         }
       ],
       "usage": "in"
@@ -11674,6 +11776,16 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "输入的RIST配置信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DescribeInputRISTSettings",
+          "name": "RISTSettings",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -11689,6 +11801,42 @@
           "name": "SourceAddresses",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeInputRISTSettings": {
+      "document": "查询输入的RIST配置信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "RIST模式，可选[LISTENER|CALLER]，默认为LISTENER。",
+          "example": "LISTENER",
+          "member": "string",
+          "name": "Mode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "RIST配置方案，可选[MAIN|SIMPLE]，默认为MAIN。",
+          "example": "MAIN",
+          "member": "string",
+          "name": "Profile",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "RIST缓冲区大小，单位为毫秒。最小值为50毫秒，最大值为5000毫秒。默认值：120",
+          "example": "120",
+          "member": "int64",
+          "name": "Buffer",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -12083,6 +12231,16 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "输出的RIST配置信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DescribeOutputRISTSettings",
+          "name": "RISTSettings",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -12113,6 +12271,52 @@
           "member": "DescribeOutputHLSPullServerUrl",
           "name": "ServerUrls",
           "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeOutputRISTSettings": {
+      "document": "查询输出的RIST拉流配置信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "RIST模式，可选[LISTENER|CALLER]，默认为LISTENER。",
+          "example": "LISTENER",
+          "member": "string",
+          "name": "Mode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "RIST配置方案，可选[MAIN|SIMPLE]，默认为MAIN。",
+          "example": "MAIN",
+          "member": "string",
+          "name": "Profile",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "RIST缓冲区大小，单位为毫秒。最小值为50毫秒，最大值为5000毫秒。默认值：120",
+          "example": "120",
+          "member": "int64",
+          "name": "Buffer",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务器监听地址，RIST模式为LISTENER时使用。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OutputRISTSourceAddressResp",
+          "name": "SourceAddresses",
+          "output_required": false,
           "type": "list",
           "value_allowed_null": true
         }
@@ -20938,7 +21142,7 @@
         },
         {
           "disabled": false,
-          "document": "输入的协议，可选[SRT|RTP|RTMP]。\n当输出包含RTP时，输入只能是RTP。\n当输出包含RTMP时，输入可以是SRT/RTMP。\n当输出包含SRT时，输入只能是SRT。",
+          "document": "输入的协议，可选[SRT|RTP|RTMP|RTMP_PULL|RTSP_PULL|RIST]。\n当输出包含RTP时，输入只能是RTP。\n当输出包含RTMP时，输入可以是SRT/RTMP。\n当输出包含SRT时，输入只能是SRT。",
           "example": "SRT",
           "member": "string",
           "name": "Protocol",
@@ -21007,6 +21211,24 @@
           "name": "Zones",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "RIST的配置信息。",
+          "example": "无",
+          "member": "CreateInputRISTSettings",
+          "name": "RISTSettings",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "输入节点的地区",
+          "example": "ap-shanghai",
+          "member": "string",
+          "name": "InputRegion",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -21043,7 +21265,7 @@
         },
         {
           "disabled": false,
-          "document": "输出的转推协议，支持SRT|RTP|RTMP。",
+          "document": "输出的转推协议，支持SRT|RTP|RTMP|RTMP_PULL|RTSP|RIST。",
           "example": "SRT",
           "member": "string",
           "name": "Protocol",
@@ -21112,6 +21334,15 @@
           "name": "Zones",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "转推RIST的配置。",
+          "example": "无",
+          "member": "CreateOutputRistSettings",
+          "name": "RISTSettings",
+          "required": false,
+          "type": "object"
         }
       ],
       "usage": "in"
@@ -22253,6 +22484,32 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "OutputRISTSourceAddressResp": {
+      "document": "RIST输出的监听地址。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "监听IP。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "Ip",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "监听端口。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "65535",
+          "member": "int64",
+          "name": "Port",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

@@ -9,8 +9,8 @@ tccli ig DescribeIgOrderList --cli-unfold-argument  \
     --PageNumber 1 \
     --PageSize 10 \
     --ProductType ig \
-    --KeyWord  \
-    --OrderStatus 0
+    --KeyWord 20210521001000429685321 \
+    --OrderStatus 1
 ```
 
 Output: 

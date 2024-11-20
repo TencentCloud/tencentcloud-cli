@@ -591,6 +591,42 @@
       ],
       "usage": "both"
     },
+    "DocumentUsage": {
+      "document": "文档拆分任务的用量",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文档拆分任务的页数",
+          "example": "10",
+          "member": "int64",
+          "name": "PageNumber",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": true,
+          "document": "文档拆分任务消耗的总token数",
+          "example": "2048",
+          "member": "int64",
+          "name": "TotalToken",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文档拆分任务消耗的总token数",
+          "example": "2048",
+          "member": "int64",
+          "name": "TotalTokens",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ExtractQARequest": {
       "document": "ExtractQA请求参数结构体",
       "members": [
@@ -652,7 +688,7 @@
         {
           "disabled": false,
           "document": "拆分任务ID",
-          "example": "无",
+          "example": "236e51fd-827b-41cb-b303-56003a817ce5",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -666,8 +702,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务状态: Success->执行完成；Processing->执行中；Failed->执行失败；WaitExecute->等待执行；",
-          "example": "无",
+          "document": "任务状态。\n\n- `Success`：执行完成\n- `Processing`：执行中\n- `Failed`：执行失败\n- `WaitExecute`：等待执行",
+          "example": "Success",
           "member": "string",
           "name": "Status",
           "output_required": false,
@@ -676,8 +712,8 @@
         },
         {
           "disabled": false,
-          "document": "拆分结果zip压缩包的临时下载地址，",
-          "example": "无",
+          "document": "拆分结果的临时下载地址。\n文件类型为zip压缩包，下载链接有效期30分钟。\n压缩包内包含\\*.md、\\*.jsonl、\\*mllm.json以及images文件夹。\n\n> **jsonl** 结构说明：\n- `page_content`:\n 用于生成嵌入（embedding）库，以便于检索使用。该字段中的图片将使用占位符替换。\n- `org_data`:\n 表示与 page_content 对应的最小语义完整性块，用于问答模型的处理。\n- `big_data`:\n 表示与 page_content 对应的最大语义完整性块，也用于问答模型的处理。",
+          "example": "https://qidian-qbot-1251316161.cos.ap-guangzhou.myqcloud.com/public/example/example.zip",
           "member": "string",
           "name": "DocumentRecognizeResultUrl",
           "output_required": false,
@@ -685,13 +721,23 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "文档拆分失败的页码",
           "example": "无",
           "member": "SplitDocumentFailedPage",
           "name": "FailedPages",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文档拆分任务的用量",
+          "example": "{\"PageNumber\":10,\"TotalTokens\":2048}",
+          "member": "DocumentUsage",
+          "name": "Usage",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": false
         },
         {
@@ -1031,6 +1077,24 @@
           "example": "0",
           "member": "string",
           "name": "MarkdownImageResponseType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Markdown文件中是否包含页码信息",
+          "example": "true",
+          "member": "bool",
+          "name": "ReturnPageFormat",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "自定义输出页码样式,{{p}}为页码占位符，开启ReturnPageFormat生效。未填默认样式:<page_num>page {{p}}</page_num>",
+          "example": "<page_num>page {{p}}</page_num>",
+          "member": "string",
+          "name": "PageFormat",
           "required": false,
           "type": "string"
         }

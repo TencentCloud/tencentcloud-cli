@@ -2976,7 +2976,7 @@
         {
           "disabled": false,
           "document": "其他信息。",
-          "example": "{}",
+          "example": "{\"key\":\"value\"}",
           "member": "string",
           "name": "Meta",
           "output_required": false,

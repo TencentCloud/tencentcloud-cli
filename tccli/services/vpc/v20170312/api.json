@@ -7490,7 +7490,7 @@
         {
           "disabled": false,
           "document": "云联网路由表名称。",
-          "example": "test",
+          "example": "local",
           "member": "string",
           "name": "Name",
           "output_required": true,
@@ -8466,7 +8466,7 @@
         {
           "disabled": false,
           "document": "交换机和IDC机房互通IPv6网段，路由类型为STATIC且IpAddressType为 DualStack时，该字段必选。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "[\"240d:a000:1058:7d04::/64\"]",
           "member": "string",
           "name": "IdcIpv6CidrSet",
           "output_required": false,
@@ -8477,7 +8477,7 @@
         {
           "disabled": false,
           "document": "IPv6 互联 IP 和掩码，IpAddressType为 DualStack时，该字段必选。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "[\"240d:a000:1058:7d04:0:2d73:9ea3:70a4\"]",
           "member": "ConnIPInfo",
           "name": "ConnIpv6InfoSet",
           "output_required": false,
@@ -9206,30 +9206,30 @@
         {
           "disabled": false,
           "document": "冲突资源ID",
-          "example": "",
+          "example": "rtb-4t7fr3fi",
           "member": "string",
           "name": "ConflictSourceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "冲突资源",
-          "example": "",
+          "example": "10.0.0.0/16",
           "member": "string",
           "name": "SourceItem",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "冲突资源条目信息",
-          "example": "",
+          "example": "[{\"ConflictId\": \"rti-4d8a10a1\", \"DestinationItem\": \"10.0.0.0/16\"}]",
           "member": "ConflictItem",
           "name": "ConflictItemSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -9880,6 +9880,7 @@
           "example": "无",
           "member": "CcnRouteTable",
           "name": "CcnRouteTableSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -20934,7 +20935,7 @@
         {
           "disabled": false,
           "document": "私用网络ID或者统一ID，建议使用统一ID。",
-          "example": "vpc-xxxxxx",
+          "example": "vpc-hj3he929",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -20943,7 +20944,7 @@
         {
           "disabled": false,
           "document": "流日志唯一ID。",
-          "example": "fl-xxxxxx",
+          "example": "fl-nswq8wkq",
           "member": "string",
           "name": "FlowLogId",
           "required": true,
@@ -20958,9 +20959,10 @@
         {
           "disabled": false,
           "document": "流日志信息。",
-          "example": "无",
+          "example": "[{\"FlowLogName\": \"demo\", \"CloudLogId\": \"407e2d94-e285-4778-8e53-c32028467332\", \"VpcId\": \"vpc-hj3he929\", \"FlowLogDescription\": \"demo\", \"ResourceType\": \"NETWORKINTERFACE\", \"ResourceId\": \"eni-h0fk8lfc\", \"Region\": \"ap-guangzhou\", \"CloudLogState\": \"SUCCESS\", \"TrafficType\": \"ACCEPT\", \"StorageType\": \"cls\", \"Enable\": True, \"FlowLogId\": \"fl-nswq8wkq\", \"TagSet\": [{\"Value\": \"tag-key\", \"Key\": \"tag-value\"}], \"CloudLogRegion\": \"ap-guangzhou\", \"CreatedTime\": \"2020-11-19 15:15:23\", \"FlowLogStorage\": {\"StorageId\": \"407e2d94-e285-4778-8e53-c32028467332\"}}]",
           "member": "FlowLog",
           "name": "FlowLog",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -21416,7 +21418,7 @@
         {
           "disabled": false,
           "document": "`HAVIP`唯一`ID`，形如：`havip-9o233uri`。",
-          "example": "[\"havip-bk4275i0\\r\\n\",\"havip-2kce8v4q\\r\\n\"]",
+          "example": "[\"havip-bk4275i0\",\"havip-2kce8v4q\"]",
           "member": "string",
           "name": "HaVipIds",
           "required": false,
@@ -21425,7 +21427,7 @@
         {
           "disabled": false,
           "document": "过滤条件，参数不支持同时指定`HaVipIds`和`Filters`。<li>havip-id - String - `HAVIP`唯一`ID`，形如：`havip-9o233uri`。</li><li>havip-name - String - `HAVIP`名称。</li><li>vpc-id - String - `HAVIP`所在私有网络`ID`。</li><li>subnet-id - String - `HAVIP`所在子网`ID`。</li><li>vip - String - `HAVIP`的地址`VIP`。</li><li>address-ip - String - `HAVIP`绑定的弹性公网`IP`。</li><li>havip-association.instance-id - String - `HAVIP`绑定的子机或网卡。</li><li>havip-association.instance-type - String - `HAVIP`绑定的类型，取值:CVM, ENI。</li><li>check-associate - Bool - 是否开启HaVip飘移时校验绑定的子机或网卡。</li><li>cdc-id - String - CDC实例ID。</li>",
-          "example": "无",
+          "example": "[{\"Name\": \"havip-id\", \"Values\"; [\"havip-bk4275i0\"]}]",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -21467,7 +21469,7 @@
         {
           "disabled": false,
           "document": "符合条件的对象数。",
-          "example": "2",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
           "output_required": true,
@@ -21477,7 +21479,7 @@
         {
           "disabled": false,
           "document": "`HAVIP`对象数组。",
-          "example": "无",
+          "example": "[{\"HaVipId\": \"havip-pnpcflil\", \"HaVipName\": \"demo\", \"VpcId\": \"vpc-nswq8wkq\", \"SubnetId\": \"subnet-21zswllr\", \"NetworkInterfaceId\": \"\", \"InstanceId\": \"\", \"State\": \"AVAILABLE\", \"Business\": \"\", \"CreatedTime\": \"2020-10-28 10:49:39\", \"CdcId\": \"\", \"IsCdc\": False, \"HaVipAssociationSet\": [], \"CheckAssociate\": False, \"Visible\": True, \"FlushedTime\": \"2020-10-28 11:08:40\", \"TagSet\": [], \"Vip\": \"10.0.0.7\", \"AddressIp\": \"\", \"Ipv6Vip\": \"\", \"AddressIpv6\": \"\"}]",
           "member": "HaVip",
           "name": "HaVipSet",
           "output_required": true,
@@ -23277,7 +23279,7 @@
         {
           "disabled": false,
           "document": "网络探测实例`ID`数组。形如：[`netd-12345678`]。",
-          "example": "netd-12345678",
+          "example": "[\"netd-pnpcflil\"]",
           "member": "string",
           "name": "NetDetectIds",
           "required": false,
@@ -23286,7 +23288,7 @@
         {
           "disabled": false,
           "document": "过滤条件，参数不支持同时指定NetDetectIds和Filters。\n<li>vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-12345678</li>\n<li>net-detect-id - String - （过滤条件）网络探测实例ID，形如：netd-12345678</li>\n<li>subnet-id - String - （过滤条件）子网实例ID，形如：subnet-12345678</li>\n<li>net-detect-name - String - （过滤条件）网络探测名称</li>",
-          "example": "无",
+          "example": "[{\"Name\": \"vpc-id\", \"Values\": [\"vpc-kngiybxl\"]}]",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -23319,9 +23321,10 @@
         {
           "disabled": false,
           "document": "符合条件的网络探测对象数组。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[{\"NetDetectId\": \"netd-pnpcflil\", \"NetDetectName\": \"demo\", \"VpcId\": \"vpc-kngiybxl\", \"VpcName\": \"000\", \"SubnetId\": \"subnet-nswq8wkq\", \"DetectSourceIp\": [\"10.0.0.11\", \"10.0.0.12\"], \"DetectDestinationIp\": [\"192.168.0.2\"], \"NetDetectDescription\": \"\", \"CreateTime\": \"2021-06-23 16:30:45\", \"Status\": \"RUNNING\", \"NextHopDestination\": \"ccn-kngiybxl\", \"TagSet\": [], \"NextHopType\": \"CCN\", \"SubnetName\": \"demo\", \"NextHopName\": \"\"}]",
           "member": "NetDetect",
           "name": "NetDetectSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -23331,6 +23334,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -23375,7 +23379,7 @@
         {
           "disabled": false,
           "document": "网络ACL实例ID。形如：acl-12345678。",
-          "example": "acl-12345678",
+          "example": "acl-pnpcflil",
           "member": "string",
           "name": "NetworkAclId",
           "required": true,
@@ -23401,8 +23405,8 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件，参数不支持同时指定`HaVipIds`和`Filters`。\n<li>protocol - String - 协议，形如：`TCP`。</li>\n<li>description - String - 描述。</li>\n<li>destination-cidr - String - 目的CIDR， 形如：'192.168.0.0/24'。</li>\n<li>source-cidr- String - 源CIDR， 形如：'192.168.0.0/24'。</li>\n<li>action - String - 动作，形如ACCEPT或DROP。</li>\n<li>network-acl-quintuple-entry-id - String - 五元组唯一ID，形如：'acli45-ahnu4rv5'。</li>\n<li>network-acl-direction - String - 方向，形如：'INGRESS'或'EGRESS'。</li>",
-          "example": "无",
+          "document": "过滤条件，参数不支持同时指定`NetworkAclId`和`Filters`。\n<li>protocol - String - 协议，形如：`TCP`。</li>\n<li>description - String - 描述。</li>\n<li>destination-cidr - String - 目的CIDR， 形如：'192.168.0.0/24'。</li>\n<li>source-cidr- String - 源CIDR， 形如：'192.168.0.0/24'。</li>\n<li>action - String - 动作，形如ACCEPT或DROP。</li>\n<li>network-acl-quintuple-entry-id - String - 五元组唯一ID，形如：'acli45-ahnu4rv5'。</li>\n<li>network-acl-direction - String - 方向，形如：'INGRESS'或'EGRESS'。</li>",
+          "example": "[{\"Name\": \"network-acl-quintuple-entry-id\", \"Values\": [\"acli45-ahnu4rv5\"]}]",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -23417,10 +23421,10 @@
         {
           "disabled": false,
           "document": "网络ACL条目列表（NetworkAclTuple5Entry）",
-          "example": "无",
+          "example": "[{\"Protocol\": \"tcp\", \"Description\": \"demo\", \"SourceCidr\": \"10.0.0.0/8\", \"DestinationCidr\": \"0.0.0.0/0\", \"Action\": \"ACCEPT\", \"Priority\": 1, \"NetworkAclQuintupleEntryId\": \"acli45-kngiybxl\", \"NetworkAclDirection\": \"INGRESS\", \"CreateTime\": \"2023-10-16 10:32:20\", \"SourcePort\": \"ALL\", \"DestinationPort\": \"80\"}]",
           "member": "NetworkAclQuintupleEntry",
           "name": "NetworkAclQuintupleSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -23430,7 +23434,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -23449,7 +23453,7 @@
         {
           "disabled": false,
           "document": "过滤条件，参数不支持同时指定NetworkAclIds和Filters。\n<li>vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-12345678。</li>\n<li>network-acl-id - String - （过滤条件）网络ACL实例ID，形如：acl-12345678。</li>\n<li>network-acl-name - String - （过滤条件）网络ACL实例名称。</li>",
-          "example": "vpc-qw123456",
+          "example": "vpc-pnpcflil",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -23458,7 +23462,7 @@
         {
           "disabled": false,
           "document": "网络ACL实例ID数组。形如：[acl-12345678]。每次请求的实例的上限为100。参数不支持同时指定NetworkAclIds和Filters。",
-          "example": "[acl-12345678]",
+          "example": "[\"acl-nswq8wkq\"]",
           "member": "string",
           "name": "NetworkAclIds",
           "required": false,
@@ -23485,7 +23489,7 @@
         {
           "disabled": false,
           "document": "是否查询ACL规则的标识。默认查询全部。",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "NeedNetworkAclEntryInfo",
           "required": false,
@@ -23518,7 +23522,7 @@
         {
           "disabled": false,
           "document": "实例详细信息列表。",
-          "example": "无",
+          "example": "[{\"NetworkAclType\": \"1\", \"NetworkAclId\": \"acl-aeyasc3zz\", \"SubnetSet\": [{\"IsShare\": true, \"NetworkAclId\": \"acl-aeyasc3zz\", \"RouteTableId\": \"rtb-hnos32zkc\", \"VpcId\": \"vpc-c1fd6eqe\", \"EnableBroadcast\": true, \"Zone\": \"ap-beijing\", \"IsCdcSubnet\": 0, \"AvailableIpAddressCount\": 1, \"Region\": \"ap-beijing\", \"ISPType\": \"1\", \"LocalZone\": true, \"CdcId\": \"cdc-12312\", \"IsRemoteVpcSnat\": true, \"SubnetName\": \"test_3\", \"TotalIpAddressCount\": 1, \"CreatedTime\": \"2021-02-19 17:52:43\", \"Ipv6CidrBlock\": \"\", \"SubnetId\": \"subnet-ptqwqcjzd\", \"CidrBlock\": \"10.0.0.0/24\", \"TagSet\": [{\"Value\": \"tag-value\", \"Key\": \"tag-key\"}], \"IsDefault\": true}], \"VpcId\": \"vpc-c1fd6eqe\", \"NetworkAclName\": \"demo\", \"TagSet\": [{\"Value\": \"1\", \"Key\": \"businessId\"}], \"CreatedTime\": \"2021-02-19 17:52:43\", \"IngressEntries\": [{\"Protocol\": \"all\", \"Description\": \"\", \"Ipv6CidrBlock\": \"::/0\", \"Priority\": 1, \"ModifyTime\": \"\", \"Action\": \"Accept\", \"NetworkAclIpv6EntryId\": \"acli63-bwi12ozo\"}], \"EgressEntries\": [{\"Protocol\": \"all\", \"Description\": \"\", \"Ipv6CidrBlock\": \"::/0\", \"Priority\": 1, \"ModifyTime\": \"\", \"Action\": \"Accept\", \"NetworkAclIpv6EntryId\": \"acli63-pmh23vc1q\"}]}]",
           "member": "NetworkAcl",
           "name": "NetworkAclSet",
           "output_required": true,
@@ -23706,7 +23710,7 @@
         {
           "disabled": false,
           "document": "实例详细信息列表。",
-          "example": "[{\"MacAddress\": \"20:90:6F:F5:34:C7\", \"VpcId\": \"vpc-2kx9z6h3\", \"SubNetworkInterfaces\": [], \"Zone\": \"ap-guangzhou-2\", \"Business\": \"cvm\", \"NetworkInterfaceId\": \"eni-f1xjkw1b\", \"Primary\": false, \"CdcId\": \"\", \"PrivateIpAddressSet\": [{\"IsWanIpBlocked\": false, \"Primary\": true, \"State\": \"AVAILABLE\", \"PublicIpAddress\": \"\", \"PrivateIpAddress\": \"192.168.0.13\", \"Description\": \"\"}], \"NetworkInterfaceDescription\": \"aaa\", \"Ipv6AddressSet\": [], \"State\": \"AVAILABLE\", \"GroupSet\": [\"sg-c2r7lnxh\"], \"Attachment\": {}, \"TagSet\": [], \"EniType\": 1, \"CreatedTime\": \"2021-01-07 16:32:55\", \"SubnetId\": \"subnet-nao8lfro\", \"NetworkInterfaceName\": \"main\", \"AttachType\": 1}]",
+          "example": "[{\"MacAddress\": \"20:90:6F:F5:34:C7\", \"VpcId\": \"vpc-2kx9z6h3\", \"SubNetworkInterfaces\": [], \"Zone\": \"ap-guangzhou-2\", \"Business\": \"cvm\", \"NetworkInterfaceId\": \"eni-f1xjkw1b\", \"Primary\": false, \"CdcId\": \"\", \"PrivateIpAddressSet\": [{\"IsWanIpBlocked\": false, \"Primary\": true, \"State\": \"AVAILABLE\", \"PublicIpAddress\": \"\", \"PrivateIpAddress\": \"192.168.0.13\", \"Description\": \"\"}], \"NetworkInterfaceDescription\": \"demo\", \"Ipv6AddressSet\": [], \"State\": \"AVAILABLE\", \"GroupSet\": [\"sg-c2r7lnxh\"], \"Attachment\": {}, \"TagSet\": [], \"EniType\": 1, \"CreatedTime\": \"2021-01-07 16:32:55\", \"SubnetId\": \"subnet-nao8lfro\", \"NetworkInterfaceName\": \"main\", \"AttachType\": 1}]",
           "member": "NetworkInterface",
           "name": "NetworkInterfaceSet",
           "output_required": true,
@@ -25179,7 +25183,7 @@
         {
           "disabled": false,
           "document": "安全组对象。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[{'SecurityGroupId': 'sg-pnpcflil', 'SecurityGroupName': 'demo', 'SecurityGroupDesc': 'demo', 'ProjectId': '0', 'IsDefault': False, 'CreatedTime': '2018-08-28 17:53:50', 'UpdateTime': '2018-08-28 17:53:50', 'TagSet': [], 'Region': 'ap-guangzhou'}]",
           "member": "SecurityGroup",
           "name": "SecurityGroupSet",
           "output_required": true,
@@ -25199,7 +25203,7 @@
         {
           "disabled": false,
           "document": "地域资源统计对象。",
-          "example": "无",
+          "example": "[]",
           "member": "RegionStatistics",
           "name": "RegionStatistics",
           "output_required": true,
@@ -25522,7 +25526,7 @@
         {
           "disabled": false,
           "document": "过滤条件。\n<li>service-template-group-name - String - （过滤条件）协议端口模板集合名称。</li>\n<li>service-template-group-id - String - （过滤条件）协议端口模板集合实例ID，例如：ppmg-e6dy460g。</li>",
-          "example": "{\"Name\":\"service-template-group-name\",\"Value\":\"TestName\"}",
+          "example": "{\"Name\":\"service-template-group-name\",\"Value\":\"demo\"}",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -25549,7 +25553,7 @@
         {
           "disabled": false,
           "document": "协议端口模板成员偏移量。",
-          "example": "无",
+          "example": "0",
           "member": "string",
           "name": "MemberOffset",
           "required": false,
@@ -25558,7 +25562,7 @@
         {
           "disabled": false,
           "document": "协议端口模板成员返回数量，默认返回所有。",
-          "example": "无",
+          "example": "20",
           "member": "string",
           "name": "MemberLimit",
           "required": false,
@@ -25592,7 +25596,7 @@
         {
           "disabled": false,
           "document": "协议端口模板集合。",
-          "example": "[{\"ServiceTemplateGroupName\":\"TestName\",\"ServiceTemplateGroupId\":\"ppmg-2klmrefu\",\"ServiceTemplateIdSet\":[\"ppm-529nwwj8\"],\"ServiceTemplateSet\":[{\"ServiceTemplateId\":\"ppm-529nwwj8\",\"ServiceTemplateName\":\"test\"}],\"CreatedTime\":\"2018-04-03 22:05:32\"}]",
+          "example": "[{\"ServiceTemplateGroupName\":\"demo\",\"ServiceTemplateGroupId\":\"ppmg-2klmrefu\",\"ServiceTemplateIdSet\":[\"ppm-529nwwj8\"],\"ServiceTemplateSet\":[{\"ServiceTemplateId\":\"ppm-529nwwj8\",\"ServiceTemplateName\":\"demo\"}],\"CreatedTime\":\"2018-04-03 22:05:32\"}]",
           "member": "ServiceTemplateGroup",
           "name": "ServiceTemplateGroupSet",
           "output_required": true,
@@ -28266,7 +28270,7 @@
         {
           "disabled": false,
           "document": "过滤条件。\n<li> end-point-service-id- String - （过滤条件）终端节点服务ID。</li>\n<li>end-point-name - String - （过滤条件）终端节点实例名称。</li>\n<li> end-point-id- String - （过滤条件）终端节点实例ID。</li>\n<li> vpc-id- String - （过滤条件）VPC实例ID。</li>",
-          "example": "[]",
+          "example": "[{\"Name\": \"vpc-id\", \"Values\": [\"vpc-ahnu4rv5\"]}]",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -28275,7 +28279,7 @@
         {
           "disabled": false,
           "document": "偏移量，默认为0。",
-          "example": "1",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -28284,7 +28288,7 @@
         {
           "disabled": false,
           "document": "单页返回数量，默认为20，最大值为100。",
-          "example": "1",
+          "example": "20",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -28359,7 +28363,7 @@
         {
           "disabled": false,
           "document": "过滤条件。不支持同时传入参数 EndPointServiceIds and Filters。\n<li> service-id - String - （过滤条件）终端节点服务唯一ID。</li>\n<li>service-name - String - （过滤条件）终端节点实例名称。</li>\n<li>service-instance-id - String - （过滤条件）后端服务的唯一ID，比如lb-xxx。</li>\n<li>service-type - String - （过滤条件）后端PAAS服务类型，CLB,CDB,CRS，不填默认查询类型为CLB。</li>",
-          "example": "[]",
+          "example": "[{\"Name\": \"service-type\", \"Values\": [\"CDB\"]}]",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -28377,7 +28381,7 @@
         {
           "disabled": false,
           "document": "单页返回数量，默认为20，最大值为100。",
-          "example": "10",
+          "example": "20",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -28636,7 +28640,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "过滤条件，参数不支持同时指定RouteTableIds和Filters。\n<li>vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。</li>\n<li>instance-id - String - （过滤条件）云主机实例ID。</li>\n<li>instance-name - String - （过滤条件）云主机名称。</li>",
+          "document": "<li>vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。</li>\n<li>instance-id - String - （过滤条件）云主机实例ID。</li>\n<li>instance-name - String - （过滤条件）云主机名称。</li>",
           "example": "{\"Values\":[\"false\"],\"Name\":\"is-default\"}",
           "member": "Filter",
           "name": "Filters",
@@ -28673,6 +28677,7 @@
           "example": "[{\"VpcId\":\"vpc-12345678\",\"SubnetId\":\"subnet-12345678\",\"InstanceId\":\"ins-12345678\",\"InstanceName\":\"test\",\"InstanceState\":\"RUNNING\",\"InstanceType\":\"S2.SMALL2\",\"CPU\":1,\"Memory\":1,\"EniLimit\":2,\"EniIpLimit\":2,\"InstanceEniCount\":1,\"CreatedTime\":\"2020-01-01 10:00:00\"}]",
           "member": "CvmInstance",
           "name": "InstanceSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -28682,6 +28687,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -34256,7 +34262,7 @@
         {
           "disabled": false,
           "document": "终端节点绑定的安全组实例ID列表。",
-          "example": "[]",
+          "example": "[\"sg-nswq8wkq\"]",
           "member": "string",
           "name": "GroupSet",
           "output_required": true,
@@ -34296,7 +34302,7 @@
         {
           "disabled": false,
           "document": "GWLB 关联的EIP\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "[{\"PublicIpAddress\": \"100.123.12.131\", \"AddressId\": \"\teip-4t7fr3fi\"}]",
           "member": "PublicAddressAssociationSet",
           "name": "PublicAddressAssociationSet",
           "output_required": false,
@@ -34356,7 +34362,7 @@
         {
           "disabled": false,
           "document": "标签键值对。\t\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "[{\"Key\": \"tag-key\", \"Value\": \"tag-value\"}]",
           "member": "Tag",
           "name": "TagSet",
           "output_required": false,
@@ -35873,7 +35879,7 @@
         {
           "disabled": false,
           "document": "IPv6 CIdr Block",
-          "example": "\"2402:4e00:1717:8200::/56\",",
+          "example": "2402:4e00:1717:8200::/56",
           "member": "string",
           "name": "IPv6CidrBlock",
           "output_required": true,
@@ -35893,7 +35899,7 @@
         {
           "disabled": false,
           "document": "IPv6 Cidr 的类型，`GUA`, `OTHER`, `ULA`\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"GUA\"",
+          "example": "GUA",
           "member": "string",
           "name": "AddressType",
           "output_required": false,
@@ -37646,7 +37652,7 @@
         {
           "disabled": false,
           "document": "`VPC`实例`ID`。形如：`vpc-6v2ht8q5`。",
-          "example": "vpc-12345678",
+          "example": "vpc-nswq8wkq",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -37655,7 +37661,7 @@
         {
           "disabled": false,
           "document": "待添加的辅助CIDR。CIDR数组，格式如[\"10.0.0.0/16\", \"172.16.0.0/16\"]，入参NewCidrBlocks和OldCidrBlocks至少需要其一。",
-          "example": "[\"172.16.0.0\\/24\\n\"]",
+          "example": "[\"172.16.1.0/24\"]",
           "member": "string",
           "name": "NewCidrBlocks",
           "required": false,
@@ -37664,7 +37670,7 @@
         {
           "disabled": false,
           "document": "待删除的辅助CIDR。CIDR数组，格式如[\"10.0.0.0/16\", \"172.16.0.0/16\"]，入参NewCidrBlocks和OldCidrBlocks至少需要其一。",
-          "example": "[\"172.16.0.0\\/24\\n\"]",
+          "example": "[\"172.16.0.0/24\"]",
           "member": "string",
           "name": "OldCidrBlocks",
           "required": false,
@@ -37679,9 +37685,10 @@
         {
           "disabled": false,
           "document": "辅助CIDR数组。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[{\"VpcId\": \"vpc-nswq8wkq\", \"CidrBlock\": \"172.16.1.0/24\", \"AssistantType\": 0, \"Region\": \"ap-guangzhou\", \"SubnetSet\": []}]",
           "member": "AssistantCidr",
           "name": "AssistantCidrSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -38015,7 +38022,7 @@
         {
           "disabled": false,
           "document": "虚拟连接唯一 Id。",
-          "example": "无",
+          "example": "np-823f905a",
           "member": "string",
           "name": "NetPlaneId",
           "required": true,
@@ -38024,7 +38031,7 @@
         {
           "disabled": false,
           "document": "名称。",
-          "example": "无",
+          "example": "demo",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -38033,7 +38040,7 @@
         {
           "disabled": false,
           "document": "描述。",
-          "example": "无",
+          "example": "demo",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -38042,7 +38049,7 @@
         {
           "disabled": false,
           "document": "更新虚拟连接绑定的 VpcId，如果为[\"\"]表示解绑该虚拟连接所有 VPC。",
-          "example": "无",
+          "example": "[\"vpc-nswq8wkq\"]",
           "member": "string",
           "name": "VpcIds",
           "required": false,
@@ -38632,6 +38639,42 @@
           "name": "Ipv6Addresses",
           "required": true,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否跨租户创建网卡。默认为false。",
+          "example": "false",
+          "member": "bool",
+          "name": "IsCrossTenant",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "VPC实例所属APPID。",
+          "example": "1300224712",
+          "member": "string",
+          "name": "VpcAppId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "VPC实例所属UIN。",
+          "example": "700000376338",
+          "member": "string",
+          "name": "VpcUin",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "VPC实例所属SubAccountUin。\t",
+          "example": "700000376338",
+          "member": "string",
+          "name": "VpcSubAccountUin",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -38978,7 +39021,7 @@
         {
           "disabled": false,
           "document": "网络ACL实例ID。例如：acl-12345678。",
-          "example": "acl-12345678",
+          "example": "acl-hj3he929",
           "member": "string",
           "name": "NetworkAclId",
           "required": true,
@@ -38987,7 +39030,7 @@
         {
           "disabled": false,
           "document": "网络ACL规则集。NetworkAclEntrySet和NetworkAclQuintupleSet只能输入一个。",
-          "example": "无",
+          "example": "{\"Ingress\": [{\"Protocol\": \"all\", \"CidrBlock\": \"10.0.0.0/24\", \"Action\": \"ACCEPT\", \"Description\": \"demo\"}], \"Egress\": [{\"Protocol\": \"all\", \"CidrBlock\": \"0.0.0.0/0\", \"Action\": \"ACCEPT\", \"Description\": \"demo\"}]}",
           "member": "NetworkAclEntrySet",
           "name": "NetworkAclEntrySet",
           "required": false,
@@ -38996,7 +39039,7 @@
         {
           "disabled": false,
           "document": "网络ACL五元组规则集。NetworkAclEntrySet和NetworkAclQuintupleSet只能输入一个。",
-          "example": "无",
+          "example": "[]",
           "member": "NetworkAclQuintupleEntries",
           "name": "NetworkAclQuintupleSet",
           "required": false,
@@ -39005,7 +39048,7 @@
         {
           "disabled": false,
           "document": "三元组的增量更新。该接口的默认语义为全量覆盖。当需要实现增量更新语义时，设置该参数为True。",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "EnableUpdateAclEntries",
           "required": false,
@@ -39895,7 +39938,7 @@
         {
           "disabled": false,
           "document": "参数模板实例ID，支持IP地址、协议端口、IP地址组、协议端口组四种参数模板的实例ID。",
-          "example": "ipm-test1234",
+          "example": "ipm-nswq8wkq",
           "member": "string",
           "name": "TemplateId",
           "required": true,
@@ -39904,7 +39947,7 @@
         {
           "disabled": false,
           "document": "需要修改的参数模板成员信息，支持IP地址、协议端口、IP地址组、协议端口组四种类型，类型需要与TemplateId参数类型一致，修改顺序与TemplateMember参数顺序一一对应，入参长度需要与TemplateMember参数保持一致。",
-          "example": "无",
+          "example": "[{\"Member\": \"8.8.8.10\", \"Description\": \"office_2024-11-13_09:50:12\"}]",
           "member": "MemberInfo",
           "name": "OriginalTemplateMember",
           "required": true,
@@ -39913,7 +39956,7 @@
         {
           "disabled": false,
           "document": "新的参数模板成员信息，支持IP地址、协议端口、IP地址组、协议端口组四种类型，类型需要与TemplateId参数类型一致，修改顺序与OriginalTemplateMember参数顺序一一对应，入参长度需要与OriginalTemplateMember参数保持一致。",
-          "example": "无",
+          "example": "[{\"Member\": \"8.8.8.8\", \"Description\": \"demo\"}]",
           "member": "MemberInfo",
           "name": "TemplateMember",
           "required": true,
@@ -40086,7 +40129,7 @@
         {
           "disabled": false,
           "document": "终端节点ID。",
-          "example": "vpce-8gdaqxi0。",
+          "example": "vpce-nswq8wkq",
           "member": "string",
           "name": "EndPointId",
           "required": true,
@@ -40095,7 +40138,7 @@
         {
           "disabled": false,
           "document": "终端节点名称。",
-          "example": "名称示例。",
+          "example": "demo",
           "member": "string",
           "name": "EndPointName",
           "required": false,
@@ -40104,11 +40147,20 @@
         {
           "disabled": false,
           "document": "安全组ID列表。",
-          "example": "sg-123456。",
+          "example": "[\"sg-hj3he929\"]",
           "member": "string",
           "name": "SecurityGroupIds",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启巨帧转发，false（默认）：否，true：是。",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableJumbo",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -41971,6 +42023,7 @@
           "example": "UDP",
           "member": "string",
           "name": "Protocol",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -41978,9 +42031,10 @@
         {
           "disabled": false,
           "document": "描述。",
-          "example": "TEST",
+          "example": "demo",
           "member": "string",
           "name": "Description",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -41991,6 +42045,7 @@
           "example": "446",
           "member": "string",
           "name": "SourcePort",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -42001,6 +42056,7 @@
           "example": "192.168.0.0/24",
           "member": "string",
           "name": "SourceCidr",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -42011,6 +42067,7 @@
           "example": "446",
           "member": "string",
           "name": "DestinationPort",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -42021,6 +42078,7 @@
           "example": "192.168.0.0/24",
           "member": "string",
           "name": "DestinationCidr",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -42031,6 +42089,7 @@
           "example": "ACCEPT",
           "member": "string",
           "name": "Action",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -42041,6 +42100,7 @@
           "example": "acli45-ahnu4rv5",
           "member": "string",
           "name": "NetworkAclQuintupleEntryId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -42051,6 +42111,7 @@
           "example": "1",
           "member": "int64",
           "name": "Priority",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -42061,6 +42122,7 @@
           "example": "2021-03-02 14:41:15",
           "member": "string",
           "name": "CreateTime",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -42071,6 +42133,7 @@
           "example": "INGRESS",
           "member": "string",
           "name": "NetworkAclDirection",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -42968,7 +43031,7 @@
         {
           "disabled": false,
           "document": "已废弃字段",
-          "example": "[]",
+          "example": "AVAILABLE",
           "member": "string",
           "name": "PrivateIpState",
           "output_required": false,
@@ -43379,7 +43442,7 @@
         {
           "disabled": false,
           "document": "弹性公网ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "eip-12345678",
+          "example": "eip-4t7fr3fi",
           "member": "string",
           "name": "AddressId",
           "output_required": false,
@@ -44413,7 +44476,7 @@
         {
           "disabled": false,
           "document": "高优路由表名称。",
-          "example": " test_ivan_high_priority_rtb",
+          "example": "demo",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -44422,7 +44485,7 @@
         {
           "disabled": false,
           "document": "高优路由表条目信息。",
-          "example": "无",
+          "example": "[{\"DestinationCidrBlock\": \"172.25.0.0/16\", \"Description\": \"demo\", \"Enabled\": false, \"GatewayType\": \"NORMAL_CVM\", \"GatewayId\": \"172.16.0.11\", \"SubnetRouteAlgorithm\": \"ECMP_SOURCE_IP_HASH\"}]",
           "member": "HighPriorityRoute",
           "name": "HighPriorityRoutes",
           "required": true,
@@ -49741,7 +49804,7 @@
         {
           "disabled": false,
           "document": "`DNS`列表。",
-          "example": "[]",
+          "example": "[\"8.8.8.8\"]",
           "member": "string",
           "name": "DnsServerSet",
           "output_required": true,
@@ -49841,7 +49904,7 @@
         {
           "disabled": false,
           "document": "返回多运营商IPv6 Cidr Block\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "[{\"IPv6CidrBlock\": \"2402:4e00:1717:8200::/56\", \"ISPType\": \"BGP\", \"AddressType\": \"GUA\"}]",
           "member": "ISPIPv6CidrBlock",
           "name": "Ipv6CidrBlockSet",
           "output_required": true,

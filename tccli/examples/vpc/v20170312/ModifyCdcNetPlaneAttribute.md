@@ -7,8 +7,8 @@ Input:
 ```
 tccli vpc ModifyCdcNetPlaneAttribute --cli-unfold-argument  \
     --NetPlaneId np-823f905a \
-    --Name 1122 \
-    --VpcIds 
+    --Name demo \
+    --VpcIds vpc-nswq8wkq
 ```
 
 Output: 

@@ -19,7 +19,6 @@ tccli emr AddMetricScaleStrategy --cli-unfold-argument  \
     --LoadAutoScaleStrategy.LoadMetricsConditions.LoadMetrics.0.TriggerThreshold 1 \
     --LoadAutoScaleStrategy.Priority 0 \
     --LoadAutoScaleStrategy.MeasureMethod INSTANCE \
-    --LoadAutoScaleStrategy.PeriodValid  \
     --LoadAutoScaleStrategy.ScaleAction 2 \
     --LoadAutoScaleStrategy.ScaleNum 1 \
     --LoadAutoScaleStrategy.StrategyName 并行负载-re04 \

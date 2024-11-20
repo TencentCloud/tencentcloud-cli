@@ -12,7 +12,7 @@ tccli ccc CreateAICall --cli-unfold-argument  \
     --WelcomeMessage 您好 \
     --LLMType openai \
     --Model gpt-4o-mini \
-    --APIKey sk-proj-roWWEBWMV6q2Uz6LfnzRT3BlbkFJG6dykvrS7exahbIAVrjf \
+    --APIKey sk-proj-xxxxx \
     --APIUrl https://api.openai.com/v1/ \
     --VoiceType ZhiXi \
     --EndFunctionEnable True

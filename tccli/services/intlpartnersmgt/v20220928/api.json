@@ -897,7 +897,7 @@
         {
           "disabled": false,
           "document": "账户密码。\n长度限制：[8,20]。\n需同时包含数字、字母以及特殊符号（!@#$%^&*()等非空格）",
-          "example": "无",
+          "example": "Bejs%2745!",
           "member": "string",
           "name": "Password",
           "required": true,
@@ -906,7 +906,7 @@
         {
           "disabled": false,
           "document": "二次确认密码。必须和Password值相同",
-          "example": "无",
+          "example": "Bejs%2745!",
           "member": "string",
           "name": "ConfirmPassword",
           "required": true,
@@ -942,7 +942,7 @@
         {
           "disabled": false,
           "document": "拓展字段，默认为空",
-          "example": "**********",
+          "example": "other info",
           "member": "string",
           "name": "Extended",
           "required": false,
@@ -951,7 +951,7 @@
         {
           "disabled": false,
           "document": "验证码。2024年10月25日 新增参数，用于验证您提供的手机号码的有效性。 首次请求接口时可以传入空值，接口将通过短信的方式发送一个6位数字的验证码至您传入的手机号码，您收到后需和其他参数一起再次传入。",
-          "example": "123456",
+          "example": "584265",
           "member": "string",
           "name": "VerifyCode",
           "required": false,
@@ -966,7 +966,7 @@
         {
           "disabled": false,
           "document": "账号的uin",
-          "example": "无",
+          "example": "200000000000",
           "member": "string",
           "name": "Uin",
           "output_required": true,
@@ -1778,83 +1778,83 @@
       "members": [
         {
           "disabled": false,
-          "document": "子客uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "子客uin",
           "example": "200000000000",
           "member": "string",
           "name": "CustomerUin",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "联系邮箱\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "联系邮箱",
           "example": "abc@xxx.com",
           "member": "string",
           "name": "Email",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "联系手机号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "联系手机号",
           "example": "1888888888",
           "member": "string",
           "name": "Phone",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "abc",
+          "document": "备注",
+          "example": "for test",
           "member": "string",
           "name": "Mark",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "展示名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "document": "展示名称",
+          "example": "tom",
           "member": "string",
           "name": "Name",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "绑定时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "绑定时间",
           "example": "2000-01-01 19:17:18",
           "member": "string",
           "name": "BindTime",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "账号状态\n0:正常\n1:强制可用(暂不支持该功能)\n2:强制欠费 \n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "账号状态\n0:正常\n1:强制可用(暂不支持该功能)\n2:强制欠费 ",
           "example": "1",
           "member": "string",
           "name": "AccountStatus",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实名状态\n-1：文件未上传\n0：未提交审核\n1：审核中\n2：审核出错\n3：审核通过\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实名状态\n-1：文件未上传\n0：未提交审核\n1：审核中\n2：审核出错\n3：审核通过",
           "example": "1",
           "member": "string",
           "name": "AuthStatus",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1879,13 +1879,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "子客信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "子客信息",
           "example": "无",
           "member": "DescribeCustomerInfoData",
           "name": "Data",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -2035,10 +2035,10 @@
         {
           "disabled": false,
           "document": "国家地区代码列表",
-          "example": "[]",
+          "example": "[       {         \"Code\": \"355\",         \"EnName\": \"Albania\",         \"IOS2\": \"AL\",         \"IOS3\": \"ALB\",         \"Name\": \"阿尔巴尼亚\"       }     ]",
           "member": "CountryCodeItem",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2102,63 +2102,63 @@
       "members": [
         {
           "disabled": false,
-          "document": "付费模式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "付费模式",
           "example": "postPay",
           "member": "string",
           "name": "PayMode",
-          "required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "付费模式名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "付费模式名称",
           "example": "Pay-As-You-Go resources",
           "member": "string",
           "name": "PayModeName",
-          "required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实际总消费，保留8位小数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实际总消费，保留8位小数",
           "example": "100.00000000",
           "member": "string",
           "name": "OriginalCost",
-          "required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "各个付费模式的详细账单信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "各个付费模式的详细账单信息",
           "example": "[{...}]",
           "member": "ActionSummaryOverviewItem",
           "name": "Detail",
-          "required": false,
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "代金券支付金额，保留8位小数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "代金券支付金额，保留8位小数",
           "example": "100.00000000",
           "member": "string",
           "name": "VoucherPayAmount",
-          "required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "总消费，保留8位小数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "总消费，保留8位小数",
           "example": "100.00000000",
           "member": "string",
           "name": "TotalCost",
-          "required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -3128,53 +3128,53 @@
       "members": [
         {
           "disabled": false,
-          "document": "区域ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "区域ID",
           "example": "8",
           "member": "string",
           "name": "RegionId",
-          "required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "区域名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "区域名称",
           "example": "North China (Beijing)",
           "member": "string",
           "name": "RegionName",
-          "required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实际总消费，保留8位小数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实际总消费，保留8位小数",
           "example": "100.00000000",
           "member": "string",
           "name": "OriginalCost",
-          "required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "代金券支付金额，保留8位小数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "代金券支付金额，保留8位小数",
           "example": "100.00000000",
           "member": "string",
           "name": "VoucherPayAmount",
-          "required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "总消费，保留8位小数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "总消费，保留8位小数",
           "example": "100.00000000",
           "member": "string",
           "name": "TotalCost",
-          "required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -3220,73 +3220,73 @@
       "members": [
         {
           "disabled": false,
-          "document": "产品信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "产品信息列表",
           "example": "[{   \"BusinessCodeName\": \"cloud block storage\",   \"BusinessCode\": \"p_cbs\",   \"OriginalCost\": \"0.003585\",   \"VoucherPayAmount\": \"0\",   \"RICost\": \"0\",   \"TotalCost\": \"0.003585\" }]",
           "member": "BusinessInfo",
           "name": "Business",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "原价\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "原价",
           "example": "12.1",
           "member": "string",
           "name": "OriginalCost",
-          "output_required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "代金券金额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "代金券金额",
           "example": "1.1",
           "member": "string",
           "name": "VoucherPayAmount",
-          "output_required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "ri抵扣\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "ri抵扣",
           "example": "1.2",
           "member": "string",
           "name": "RICost",
-          "output_required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "总计金额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "总计金额",
           "example": "123.1",
           "member": "string",
           "name": "TotalCost",
-          "output_required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "分类维度汇总键\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "分类维度汇总键",
           "example": "key",
           "member": "string",
           "name": "GroupKey",
-          "output_required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "分类维度汇总值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "分类维度汇总值",
           "example": "value",
           "member": "string",
           "name": "GroupValue",
-          "output_required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -3296,23 +3296,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "标签key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标签key",
           "example": "key",
           "member": "string",
           "name": "TagKey",
-          "output_required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "标签值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标签值",
           "example": "value",
           "member": "string",
           "name": "TagValue",
-          "output_required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

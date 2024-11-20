@@ -1427,7 +1427,7 @@
         {
           "disabled": false,
           "document": "SafeIsolatedInfo",
-          "example": "{}",
+          "example": "SUCCESS",
           "member": "string",
           "name": "SafeIsolatedInfo",
           "output_required": false,

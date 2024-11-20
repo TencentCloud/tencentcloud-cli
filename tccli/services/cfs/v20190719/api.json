@@ -4200,9 +4200,21 @@
           "example": "100",
           "member": "int64",
           "name": "TieringSizeInBytes",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "冷存储容量",
+          "example": "100",
+          "member": "int64",
+          "name": "SecondaryTieringSizeInBytes",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

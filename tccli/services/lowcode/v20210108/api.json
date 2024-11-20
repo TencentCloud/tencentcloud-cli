@@ -1667,6 +1667,15 @@
           "name": "ExpireDay",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "内容类型",
+          "example": "application",
+          "member": "string",
+          "name": "ContentType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

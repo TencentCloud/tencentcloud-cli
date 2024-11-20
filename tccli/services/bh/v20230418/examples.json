@@ -357,7 +357,7 @@
     "ModifyAcl": [
       {
         "document": "修改访问权限",
-        "input": "POST / HTTP/1.1\nHost: bh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAcl\n<公共请求参数>\n\n{\n    \"AllowClipTextUp\": true,\n    \"MaxFileDownSize\": 1,\n    \"CmdTemplateIdSet\": [\n        1\n    ],\n    \"AllowFileDown\": true,\n    \"Name\": \"test-name\",\n    \"UserGroupIdSet\": [\n        1\n    ],\n    \"DeviceGroupIdSet\": [\n        1\n    ],\n    \"AllowDiskRedirect\": true,\n    \"AllowClipFileUp\": true,\n    \"AccountSet\": [\n        \"aaa\"\n    ],\n    \"AllowAnyAccount\": true,\n    \"AllowClipFileDown\": true,\n    \"DeviceIdSet\": [\n        1\n    ],\n    \"AllowFileUp\": true,\n    \"MaxFileUpSize\": 1,\n    \"UserIdSet\": [\n        1\n    ],\n    \"Id\": 1,\n    \"AllowClipTextDown\": true\n}",
+        "input": "POST / HTTP/1.1\nHost: bh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAcl\n<公共请求参数>\n\n{\n    \"AllowClipTextUp\": true,\n    \"MaxFileDownSize\": 1,\n    \"CmdTemplateIdSet\": [\n        1\n    ],\n    \"AllowFileDown\": true,\n    \"Name\": \"test-name\",\n    \"UserGroupIdSet\": [\n        1\n    ],\n    \"DeviceGroupIdSet\": [\n        1\n    ],\n    \"AllowDiskRedirect\": true,\n    \"AllowClipFileUp\": true,\n    \"AccountSet\": [\n        \"root\"\n    ],\n    \"AllowAnyAccount\": true,\n    \"AllowClipFileDown\": true,\n    \"DeviceIdSet\": [\n        1\n    ],\n    \"AllowFileUp\": true,\n    \"MaxFileUpSize\": 1,\n    \"UserIdSet\": [\n        1\n    ],\n    \"Id\": 1,\n    \"AllowClipTextDown\": true\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ec7676f4-a498-4ef5-ad68-6678b16e45d7\"\n    }\n}",
         "title": "修改访问权限"
       }

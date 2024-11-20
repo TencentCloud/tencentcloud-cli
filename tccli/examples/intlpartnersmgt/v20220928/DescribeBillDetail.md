@@ -37,7 +37,7 @@ Output:
                 "ProjectName": "default",
                 "Region": "East Chinaxa0(Shanghai)",
                 "AvailabilityZone": "Shanghai Zone 1",
-                "InstanceId": "123456",
+                "InstanceId": "disk-4jrmzpvk",
                 "InstanceName": "the name",
                 "SubProductName": "HDD cloud block storage",
                 "TransactionType": "Hourly settlement",

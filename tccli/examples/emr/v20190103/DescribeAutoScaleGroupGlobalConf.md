@@ -33,8 +33,7 @@ Output:
                     "PostPayPercentMin": 0,
                     "ScaleLowerBound": 0,
                     "ScaleUpperBound": 30,
-                    "StrategyType": 0,
-                    "YarnNodeLabel": ""
+                    "StrategyType": 0
                 }
             }
         ],

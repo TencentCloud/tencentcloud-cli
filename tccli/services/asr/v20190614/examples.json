@@ -257,8 +257,8 @@
     "VoicePrintEnroll": [
       {
         "document": "通过一段音频数据进行说话人注册",
-        "input": "POST / HTTP/1.1\nHost: asr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: VoicePrintEnroll\n<公共请求参数>\n\n{\n    \"VoiceFormat\": 0,\n    \"SampleRate\": 16000,\n    \"SpeakerNick\": \"abc\",\n    \"Data\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"VoicePrintId\": \"abc\",\n            \"SpeakerNick\": \"abc\"\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: asr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: VoicePrintEnroll\n<公共请求参数>\n\n{\n    \"VoiceFormat\": 0,\n    \"SampleRate\": 16000,\n    \"SpeakerNick\": \"ross\",\n    \"Data\": \"UklGRka1CQBXQVZFZm10IBAAAAABAAEAgD4E\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"VoicePrintId\": \"db24a3e3-7926-5xxxxxxf01\",\n            \"SpeakerNick\": \"ross\"\n        },\n        \"RequestId\": \"dbxxxxxxe3-7926-5xxxxxxf01\"\n    }\n}",
         "title": "注册说话人"
       }
     ],
