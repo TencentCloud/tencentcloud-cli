@@ -28,7 +28,7 @@ class BasicConfigure(BasicCommand):
             OptionsDefine.Language
         ]
         self.cred_list = [OptionsDefine.SecretId, OptionsDefine.SecretKey, OptionsDefine.Token,
-                          OptionsDefine.RoleArn, OptionsDefine.RoleSessionName]
+                          OptionsDefine.RoleArn, OptionsDefine.RoleSessionName, OptionsDefine.UseCVMRole]
         self.conf_service_list = [OptionsDefine.Version, OptionsDefine.Endpoint]
         self.cli_path = os.path.join(os.path.expanduser("~"), ".tccli")
         self._cli_data = Loader()
@@ -211,6 +211,16 @@ class ConfigureSetCommand(BasicConfigure):
 
         for varname, value in zip(varnames, values):
             if varname in self.cred_list:
+                if varname == OptionsDefine.UseCVMRole:
+                    identifier, bool_value = Utils.is_bool(value)
+                    if identifier:
+                        if bool_value:
+                            cred["type"] = 'cvm-role'
+                        else:
+                            cred["type"] = 'default'
+                    else:
+                        raise ParamError("use-cvm-role must be true or false")
+                    continue
                 cred[varname] = value
             elif varname in self.config_list:
                 if varname == OptionsDefine.Output and value not in ['json', 'text', 'table']:

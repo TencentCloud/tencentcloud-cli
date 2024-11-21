@@ -109,3 +109,11 @@ class Utils(object):
                 return mode
         return None
 
+    @staticmethod
+    def is_bool(s):
+        if s.lower() == 'true':
+            return True, True
+        elif s.lower() == 'false':
+            return True, False
+        else:
+            return False, None
