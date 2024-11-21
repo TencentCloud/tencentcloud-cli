@@ -1,6 +1,6 @@
-**Example 1: 稠密关键点接口**
+**Example 1: 获取稠密关键点成功示例**
 
-获取稠密关键点。
+
 
 Input: 
 
@@ -110,6 +110,31 @@ Output:
         ],
         "FaceModelVersion": "3.0",
         "RequestId": "cebb639a-ec53-4a23-a5a5-fbcc5f0ae2bc"
+    }
+}
+```
+
+**Example 2: 获取稠密关键点失败示例**
+
+
+
+Input: 
+
+```
+tccli iai AnalyzeDenseLandmarks --cli-unfold-argument  \
+    --Mode 0 \
+    --Url http://test.image.myqcloud.com/testB.jpg
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Error": {
+            "Code": "FailedOperation.ImageDecodeFailed",
+            "Message": "图片解码失败。"
+        },
+        "RequestId": "b0d281e1-1df9-461d-8ed4-5ce83b29530c"
     }
 }
 ```

@@ -5745,6 +5745,7 @@
           "example": "无",
           "member": "Concurrency",
           "name": "Concurrency",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -5755,6 +5756,7 @@
           "example": "无",
           "member": "RequestsPerSecond",
           "name": "RequestsPerSecond",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -5765,6 +5767,18 @@
           "example": "无",
           "member": "ScriptOrigin",
           "name": "ScriptOrigin",
+          "output_required": true,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "RPS梯度发压模式的配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RequestsPerSecondStage",
+          "name": "RequestsPerSecondStage",
+          "output_required": false,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -6441,6 +6455,95 @@
           "required": false,
           "type": "int",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "RequestsPerSecondStage": {
+      "document": "RPS梯度发压模式的施压配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "施压配置",
+          "example": "[{\"DurationSeconds\":60,\"TargetRequestPerSecond\":10},{\"DurationSeconds\":60,\"TargetRequestPerSecond\":100}]",
+          "member": "RequestsPerSecondStageItem",
+          "name": "Stages",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源数",
+          "example": "2",
+          "member": "int64",
+          "name": "Resources",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "优雅关停的等待时间",
+          "example": "3",
+          "member": "int64",
+          "name": "GracefulStopSeconds",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "VU数上限",
+          "example": "1000",
+          "member": "int64",
+          "name": "LimitVirtualUsers",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "RPS上限",
+          "example": "8000",
+          "member": "int64",
+          "name": "LimitRequestsPerSecond",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "RequestsPerSecondStageItem": {
+      "document": "RPS梯度发压模式的施压配置项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "持续时间",
+          "example": "60",
+          "member": "int64",
+          "name": "DurationSeconds",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目标RPS",
+          "example": "100",
+          "member": "int64",
+          "name": "TargetRequestsPerSecond",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

@@ -488,6 +488,8 @@ tccli/services/iai/v20180301/api.json
 tccli/services/iai/v20180301/examples.json
 tccli/services/iai/v20200303/api.json
 tccli/services/iai/v20200303/examples.json
+tccli/services/iap/__init__.py
+tccli/services/iap/iap_client.py
 tccli/services/ic/__init__.py
 tccli/services/ic/ic_client.py
 tccli/services/ic/v20190307/api.json

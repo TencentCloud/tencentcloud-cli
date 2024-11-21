@@ -1,14 +1,14 @@
-**Example 1: 请求示例**
+**Example 1: 移除复制组中的实例**
 
-
+移除复制组的实例，数据同步类型为强同步。
 
 Input: 
 
 ```
 tccli redis RemoveReplicationInstance --cli-unfold-argument  \
-    --InstanceId crs-sa5dsfs \
+    --InstanceId crs-sa5**** \
     --SyncType True \
-    --GroupId crs-rpl-sa5dsfs
+    --GroupId crs-rpl-sa5****
 ```
 
 Output: 

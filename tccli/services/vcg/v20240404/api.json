@@ -104,7 +104,7 @@
         {
           "disabled": false,
           "document": "输入视频URL。视频要求：\n- 视频格式：mp4、mov；\n- 视频时长：1～60秒；\n- 视频分辨率：540P~2056P，即长宽像素数均在540px～2056px范围内；\n- 视频大小：不超过200M；\n- 视频FPS：15～60fps。",
-          "example": "https://xxx.mp4",
+          "example": "https://xxx.com/video.mp4",
           "member": "string",
           "name": "VideoUrl",
           "required": true,

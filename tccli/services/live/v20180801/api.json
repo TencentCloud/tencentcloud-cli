@@ -735,6 +735,13 @@
       "output": "DescribeLiveTimeShiftTemplatesResponse",
       "status": "online"
     },
+    "DescribeLiveTimeShiftWriteSizeInfoList": {
+      "document": "支持直播时移写入量数据查询。",
+      "input": "DescribeLiveTimeShiftWriteSizeInfoListRequest",
+      "name": "直播时移写入量数据",
+      "output": "DescribeLiveTimeShiftWriteSizeInfoListResponse",
+      "status": "online"
+    },
     "DescribeLiveTranscodeDetailInfo": {
       "document": "该接口为监控数据接口，数据采集及统计方式与计费数据不同，仅供运营分析使用，不能用于计费对账参考。\n支持查询某天或某段时间的转码详细信息。由于转码数据量较大，如果查询时间跨度太长可能会拉不到数据，可以尝试将查询时间范围缩小些再重试。",
       "input": "DescribeLiveTranscodeDetailInfoRequest",
@@ -8956,6 +8963,97 @@
           "member": "TimeShiftTemplate",
           "name": "Templates",
           "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLiveTimeShiftWriteSizeInfoListRequest": {
+      "document": "DescribeLiveTimeShiftWriteSizeInfoList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "起始时间点，\n使用UTC格式时间，\n例如：2019-01-08T10:00:00Z。\n支持最近六个月的查询，查询开始和结束时间跨度不支持超过31天。",
+          "example": "2022-11-01T00:00:00+08:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间点，\n使用UTC格式时间，\n例如：2019-01-08T10:00:00Z。\n支持最近六个月的查询，查询开始和结束时间跨度不支持超过31天。",
+          "example": "2022-11-01T00:00:00+08:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "域名。",
+          "example": "无",
+          "member": "string",
+          "name": "DomainNames",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "维度\nArea地区、Domain 域名、StorageDays 时移天数",
+          "example": "[\"Time\",\"CountryOrAreaNames\"]",
+          "member": "string",
+          "name": "Dimensions",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "时移天数。",
+          "example": "5",
+          "member": "int64",
+          "name": "StorageDays",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "时间跨度（分钟）\n默认5，可选 5、60或者1440。",
+          "example": "60",
+          "member": "int64",
+          "name": "Granularity",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "区域\n可选Mainland、Oversea。",
+          "example": "Oversea",
+          "member": "string",
+          "name": "MainlandOrOversea",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLiveTimeShiftWriteSizeInfoListResponse": {
+      "document": "DescribeLiveTimeShiftWriteSizeInfoList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "直播时移写入量数据明细。",
+          "example": "无",
+          "member": "TimeShiftWriteSizeData",
+          "name": "DataInfoList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -18169,6 +18267,62 @@
         }
       ],
       "usage": "both"
+    },
+    "TimeShiftWriteSizeData": {
+      "document": "直播时移写入量数据。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "区域。",
+          "example": "中国大陆",
+          "member": "string",
+          "name": "Area",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "时间，格式为：yyyy-mm-ddTHH:MM:SSZ。",
+          "example": "2022-11-18T15:00:00+08:00",
+          "member": "string",
+          "name": "Time",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "写入量（单位：字节）",
+          "example": "370390080",
+          "member": "float",
+          "name": "WriteSize",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "域名。",
+          "example": "5000.livepush.myqcloud.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "时移天数。",
+          "example": "7",
+          "member": "int64",
+          "name": "StorageDays",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "TimeValue": {
       "document": "某个时间点的指标的数值是多少。",

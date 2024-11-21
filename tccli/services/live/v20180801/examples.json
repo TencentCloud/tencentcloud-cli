@@ -864,6 +864,14 @@
         "title": "请求示例"
       }
     ],
+    "DescribeLiveTimeShiftWriteSizeInfoList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLiveTimeShiftWriteSizeInfoList\n<公共请求参数>\n\n{\n    \"StartTime\": \"abc\",\n    \"EndTime\": \"abc\",\n    \"DomainNames\": [\n        \"abc\"\n    ],\n    \"Dimensions\": [\n        \"abc\"\n    ],\n    \"StorageDays\": [\n        0\n    ],\n    \"Granularity\": 0,\n    \"MainlandOrOversea\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DataInfoList\": [\n            {\n                \"Area\": \"abc\",\n                \"Time\": \"abc\",\n                \"WriteSize\": 0,\n                \"Domain\": \"abc\",\n                \"StorageDays\": 0\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
     "DescribeLiveTranscodeDetailInfo": [
       {
         "document": "",

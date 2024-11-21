@@ -29,7 +29,7 @@
       "status": "online"
     },
     "GetUsagePlanUsageAmount": {
-      "document": "该接口可以根据InstanceId查询实例的api的使用情况。\n",
+      "document": "该接口可以根据InstanceId查询实例的api的使用情况。",
       "input": "GetUsagePlanUsageAmountRequest",
       "name": "查询使用计划使用量",
       "output": "GetUsagePlanUsageAmountResponse",
@@ -677,7 +677,7 @@
           "example": "1000",
           "member": "int64",
           "name": "MaxRequestNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -687,7 +687,7 @@
           "example": "500",
           "member": "int64",
           "name": "InUseRequestNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -697,7 +697,7 @@
           "example": "500",
           "member": "int64",
           "name": "RemainingRequestNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },

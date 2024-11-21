@@ -589,7 +589,7 @@
         {
           "disabled": false,
           "document": "订单自增 ID【请勿依赖该字段作为唯一标识】",
-          "example": "202008124664564",
+          "example": "20200812123456",
           "member": "string",
           "name": "DealId",
           "output_required": true,
@@ -599,7 +599,7 @@
         {
           "disabled": false,
           "document": "订单号【订单唯一键】",
-          "example": "202008124664564",
+          "example": "20200812123456",
           "member": "string",
           "name": "DealName",
           "output_required": true,
@@ -769,7 +769,7 @@
         {
           "disabled": false,
           "document": "大订单号",
-          "example": "202008124664564",
+          "example": "20200812123456",
           "member": "string",
           "name": "BigDealId",
           "output_required": true,
@@ -879,7 +879,7 @@
         {
           "disabled": false,
           "document": "退款单的原订单信息。当前仅 DescribeClientDealsByCache 接口会返回该字段",
-          "example": "[{\"DealName\":\"test\",\"RefundAmount\":10001}]",
+          "example": "[{\"DealName\":\"demo\",\"RefundAmount\":10001}]",
           "member": "RefundMap",
           "name": "RefundMap",
           "output_required": false,

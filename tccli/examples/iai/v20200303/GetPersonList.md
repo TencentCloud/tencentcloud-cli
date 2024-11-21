@@ -1,32 +1,6 @@
-**Example 1: 错误示例**
+**Example 1: 获取人员列表成功示例**
 
-输入不存在的人员库ID。
 
-Input: 
-
-```
-tccli iai GetPersonList --cli-unfold-argument  \
-    --GroupId ZhuYuanDormitory \
-    --Offset 0 \
-    --Limit 10
-```
-
-Output: 
-```
-{
-    "Response": {
-        "Error": {
-            "Code": "InvalidParameterValue.GroupIdNotExist",
-            "Message": "人员库ID不存在。"
-        },
-        "RequestId": "b7c0cd81-d621-465f-8fd6-86a6b49e67be"
-    }
-}
-```
-
-**Example 2: 获取人员列表接口**
-
-获取人员列表。
 
 Input: 
 
@@ -66,15 +40,15 @@ Output:
 }
 ```
 
-**Example 3: 获取人员列表接口-2**
+**Example 2: 获取人员列表失败示例**
 
-获取人员列表。
+
 
 Input: 
 
 ```
 tccli iai GetPersonList --cli-unfold-argument  \
-    --GroupId TencentShenZhenEmployee \
+    --GroupId ZhuYuanDormitory \
     --Offset 0 \
     --Limit 10
 ```
@@ -83,26 +57,11 @@ Output:
 ```
 {
     "Response": {
-        "PersonInfos": [
-            {
-                "PersonName": "evanliao",
-                "PersonId": "1001",
-                "Gender": 1,
-                "PersonExDescriptions": [
-                    "云与智慧产业事业群",
-                    "大数据及人工智能产品中心",
-                    "人脸识别产品组"
-                ],
-                "FaceIds": [
-                    "2877242150180891493"
-                ],
-                "CreationTimestamp": 1594642823572
-            }
-        ],
-        "PersonNum": 1,
-        "FaceNum": 1,
-        "FaceModelVersion": "3.0",
-        "RequestId": "aa292f16-27d9-423b-9048-cdd43f6e4156"
+        "Error": {
+            "Code": "InvalidParameterValue.GroupIdNotExist",
+            "Message": "人员库ID不存在。"
+        },
+        "RequestId": "b7c0cd81-d621-465f-8fd6-86a6b49e67be"
     }
 }
 ```

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli intlpartnersmgt CreateAccount --cli-unfold-argument  \
-    --Extended test \
+    --Extended for personal \
     --CountryCode 852 \
     --Area HK \
     --PhoneNum 18888888888 \
