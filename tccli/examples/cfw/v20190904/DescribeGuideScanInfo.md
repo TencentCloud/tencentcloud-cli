@@ -1,6 +1,6 @@
-**Example 1: DescribeGuideScanInfo 新手引导扫描接口**
+**Example 1: DescribeGuideScanInfo新手引导扫描接口信息**
 
-
+DescribeGuideScanInfo新手引导扫描接口信息
 
 Input: 
 
@@ -12,19 +12,19 @@ Output:
 {
     "Response": {
         "Data": {
+            "ScanPercent": 1,
             "ScanResultInfo": {
-                "LeakNum": 1,
-                "IPNum": 1,
-                "PortNum": 1,
+                "BanStatus": true,
+                "IPNum": 34,
                 "IPStatus": true,
                 "IdpStatus": true,
-                "BanStatus": true
+                "LeakNum": 209,
+                "PortNum": 0
             },
-            "ScanStatus": 0,
-            "ScanPercent": 0,
-            "ScanTime": "2023-11-22 11:22:15"
+            "ScanStatus": 1,
+            "ScanTime": "2024-11-01 03:11:01"
         },
-        "RequestId": ""
+        "RequestId": "e2633cf5-9a5f-48d9-84c6-ee4e762dab49"
     }
 }
 ```

@@ -17,16 +17,16 @@ Output:
         "TotalCount": 1,
         "RuleSet": [
             {
-                "UpdateTime": "xx",
+                "UpdateTime": "2022-01-01 00:00:00",
                 "IsEnable": true,
-                "RuleId": "xx",
+                "RuleId": "10001",
                 "EffectImageCount": 1,
-                "EditUserName": "xx",
-                "RuleName": "xx",
+                "EditUserName": "admin",
+                "RuleName": "rule_name",
                 "IsDefault": true
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "8bc803fd-d85d-47b8-9e2b-9644674be677"
     }
 }
 ```

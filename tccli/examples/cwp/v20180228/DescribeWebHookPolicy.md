@@ -24,91 +24,39 @@ Output:
                 ],
                 "Events": [
                     {
-                        "ControlBit": "11",
-                        "Type": 4
-                    },
-                    {
-                        "ControlBit": "11",
-                        "Type": 13
-                    },
-                    {
-                        "ControlBit": "1",
-                        "Type": 14
-                    },
-                    {
-                        "ControlBit": "",
-                        "Type": 22
-                    },
-                    {
-                        "ControlBit": "1",
-                        "Type": 23
-                    },
-                    {
-                        "ControlBit": "",
-                        "Type": 1
-                    },
-                    {
-                        "ControlBit": "11",
-                        "Type": 3
-                    },
-                    {
-                        "ControlBit": "1",
-                        "Type": 7
-                    },
-                    {
-                        "ControlBit": "1",
-                        "Type": 12
-                    },
-                    {
-                        "ControlBit": "1",
-                        "Type": 19
-                    },
-                    {
-                        "ControlBit": "1",
-                        "Type": 20
-                    },
-                    {
-                        "ControlBit": "",
-                        "Type": 25
-                    },
-                    {
-                        "ControlBit": "1",
-                        "Type": 8
-                    },
-                    {
-                        "ControlBit": "1111",
+                        "ControlBit": "1010",
                         "Type": 18
                     },
                     {
-                        "ControlBit": "1111",
+                        "ControlBit": "1010",
                         "Type": 17
                     },
                     {
-                        "ControlBit": "11111",
+                        "ControlBit": "1010",
                         "Type": 2
                     },
                     {
-                        "ControlBit": "111",
+                        "ControlBit": "1010",
                         "Type": 6
                     },
                     {
-                        "ControlBit": "1111",
+                        "ControlBit": "1010",
                         "Type": 9
                     },
                     {
-                        "ControlBit": "1111",
+                        "ControlBit": "1010",
                         "Type": 10
                     },
                     {
-                        "ControlBit": "1111",
+                        "ControlBit": "1010",
                         "Type": 11
                     },
                     {
-                        "ControlBit": "11",
+                        "ControlBit": "1010",
                         "Type": 15
                     },
                     {
-                        "ControlBit": "1111",
+                        "ControlBit": "1010",
                         "Type": 16
                     },
                     {
@@ -125,12 +73,14 @@ Output:
                 "HostLabels": [
                     {
                         "Type": 4,
-                        "Values": []
+                        "Values": [
+                            "Value1"
+                        ]
                     }
                 ],
                 "Id": 38,
                 "IsDisabled": 0,
-                "Name": "只有机器a；文本",
+                "Name": "机器人",
                 "Quuids": [
                     "058e0cf8-ba52-47fc-a100-2fdcc1e73e96",
                     "00e800cb-7202-4d83-90c2-6e920758dd42",
@@ -138,7 +88,7 @@ Output:
                 ],
                 "Receivers": [
                     {
-                        "Addr": "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=d0c2fc25-23a2-4285-ab98-d8a862146a73",
+                        "Addr": "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=d0c2fc25-23a2-4285-ab98-d8a**",
                         "Id": 17,
                         "Name": "企微"
                     }

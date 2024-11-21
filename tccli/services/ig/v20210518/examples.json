@@ -1,0 +1,13 @@
+{
+  "actions": {
+    "DescribeIgOrderList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ig.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIgOrderList\n<公共请求参数>\n\n{\n    \"PageNumber\": 1,\n    \"PageSize\": 10,\n    \"ProductType\": \"ig\",\n    \"KeyWord\": \"20210521001000429685321\",\n    \"OrderStatus\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"bea70601-4f99-4462-86ef-cddaae67bca0\"\n    }\n}",
+        "title": "查询智能导诊订单列表"
+      }
+    ]
+  },
+  "version": "1.0"
+}

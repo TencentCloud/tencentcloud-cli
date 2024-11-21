@@ -17,6 +17,10 @@ Output:
             {
                 "InActivityStatus": "NOT_IN_ACTIVITY",
                 "LoadBalancerIdSet": [],
+                "InstanceNameIndexSettings": {
+                    "BeginIndex": 0,
+                    "Enabled": true
+                },
                 "RetryPolicy": "IMMEDIATE_RETRY",
                 "InServiceInstanceCount": 0,
                 "CreatedTime": "2022-04-21T03:21:14Z",
@@ -52,14 +56,15 @@ Output:
                     }
                 ],
                 "ProjectId": 0,
-                "AutoScalingGroupName": "testasg",
+                "AutoScalingGroupName": "product-asg-001",
                 "MinSize": 0,
                 "ServiceSettings": {
                     "ReplaceMonitorUnhealthy": false,
                     "ReplaceLoadBalancerUnhealthy": false,
-                    "ScalingMode": "CLASSIC_SCALING"
+                    "ScalingMode": "CLASSIC_SCALING",
+                    "ReplaceMode": "RECREATE"
                 },
-                "LaunchConfigurationName": "test",
+                "LaunchConfigurationName": "product-asc-001",
                 "CapacityRebalance": false,
                 "TerminationPolicySet": [
                     "OLDEST_INSTANCE"
@@ -102,6 +107,10 @@ Output:
             {
                 "InActivityStatus": "NOT_IN_ACTIVITY",
                 "LoadBalancerIdSet": [],
+                "InstanceNameIndexSettings": {
+                    "BeginIndex": 0,
+                    "Enabled": true
+                },
                 "RetryPolicy": "IMMEDIATE_RETRY",
                 "InServiceInstanceCount": 0,
                 "CreatedTime": "2019-10-29T02:21:26Z",
@@ -140,7 +149,7 @@ Output:
                             }
                         ],
                         "Region": "ap-shanghai",
-                        "LocationId": "",
+                        "LocationId": "loc-y6t5rew2",
                         "ListenerId": "lbl-aiwdu9bd",
                         "LoadBalancerId": "lb-k264wzwj"
                     },
@@ -163,6 +172,7 @@ Output:
                 "ServiceSettings": {
                     "ReplaceMonitorUnhealthy": false,
                     "ReplaceLoadBalancerUnhealthy": false,
+                    "ReplaceMode": "RECREATE",
                     "ScalingMode": "CLASSIC_SCALING"
                 },
                 "LaunchConfigurationName": "sz-asc",

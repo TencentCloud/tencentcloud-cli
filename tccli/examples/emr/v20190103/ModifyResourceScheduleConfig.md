@@ -16,9 +16,9 @@ Output:
 {
     "Response": {
         "IsDraft": true,
-        "ErrorMsg": "abc",
-        "Data": "abc",
-        "RequestId": "abc"
+        "ErrorMsg": null,
+        "Data": null,
+        "RequestId": "61fb757e-5a86-41ab-8421-b3abc7aff683"
     }
 }
 ```

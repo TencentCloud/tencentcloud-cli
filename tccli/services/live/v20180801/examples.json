@@ -432,6 +432,30 @@
         "title": "请求示例"
       }
     ],
+    "DescribeCasterList": [
+      {
+        "document": "获取某个账号下的所有导播台列表",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCasterList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\",\n        \"CasterList\": [\n            {\n                \"CasterId\": 10,\n                \"CasterName\": \"example\",\n                \"StartBillingTime\": 0,\n                \"StopBillingTime\": 1731964027,\n                \"Description\": \"\",\n                \"CreateTime\": 1603158528,\n                \"Status\": 0,\n                \"ExpireTime\": -1,\n                \"FeeType\": 0\n            }\n        ]\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "DescribeCasterTransitionTypes": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCasterTransitionTypes\n<公共请求参数>\n\n{\n    \"CasterId\": \"10\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\",\n        \"TransitionTypes\": [\n            {\n                \"Index\": 1,\n                \"SourceUrl\": \"http://www.example.com/url/example\",\n                \"TransitionType\": \"heart\"\n            }\n        ]\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "DescribeCasterUserStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCasterUserStatus\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\",\n        \"UserStatus\": 1\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
     "DescribeConcurrentRecordStreamNum": [
       {
         "document": "查询并发录制路数，对慢直播和普通直播适用。",

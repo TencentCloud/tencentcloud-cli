@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli dasb RunChangePwdTask --cli-unfold-argument  \
-    --OperationId ops-xxx
+    --OperationId ops-1a2b3c
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "rid-test"
+        "RequestId": "dfac9070-8b23-499e-83b2-a50e3ca059af"
     }
 }
 ```

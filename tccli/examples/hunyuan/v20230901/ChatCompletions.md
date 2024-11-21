@@ -495,7 +495,8 @@ tccli hunyuan ChatCompletions --cli-unfold-argument  \
     --StreamModeration True \
     --EnableEnhancement True \
     --SearchInfo True \
-    --Citation True
+    --Citation True \
+    --EnableDeepSearch True
 ```
 
 Output: 

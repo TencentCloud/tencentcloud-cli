@@ -1,7 +1,7 @@
 {
   "actions": {
     "AddTimeWindow": {
-      "document": "本接口(AddTimeWindow)用于添加云数据库实例的维护时间窗口，以指定实例在哪些时间段可以自动执行切换访问操作。",
+      "document": "本接口（AddTimeWindow）用于添加云数据库实例的维护时间窗口，以指定实例在哪些时间段可以自动执行切换访问操作。",
       "input": "AddTimeWindowRequest",
       "name": "添加维护时间窗口",
       "output": "AddTimeWindowResponse",
@@ -43,7 +43,7 @@
       "status": "online"
     },
     "CheckMigrateCluster": {
-      "document": "高可用实例一键迁移到集群版校验",
+      "document": "本接口（CheckMigrateCluster）用于高可用实例一键迁移到集群版校验。",
       "input": "CheckMigrateClusterRequest",
       "name": "迁移集群版校验",
       "output": "CheckMigrateClusterResponse",
@@ -155,14 +155,14 @@
       "status": "online"
     },
     "CreateDBInstance": {
-      "document": "本接口(CreateDBInstance)用于创建包年包月的云数据库实例（包括主实例、灾备实例和只读实例），可通过传入实例规格、MySQL 版本号、购买时长和数量等信息创建云数据库实例。\n\n该接口为异步接口，您还可以使用 [查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口查询该实例的详细信息。当该实例的 Status 为1，且 TaskStatus 为0，表示实例已经发货成功。\n\n1. 首先请使用 [获取云数据库可售卖规格](https://cloud.tencent.com/document/api/236/17229) 接口查询可创建的实例规格信息，然后请使用 [查询数据库价格](https://cloud.tencent.com/document/api/236/18566) 接口查询可创建实例的售卖价格；\n2. 单次创建实例最大支持 100 个，实例时长最大支持 36 个月；\n3. 支持创建 MySQL 5.5 、 MySQL 5.6 、 MySQL 5.7 、 MySQL 8.0 版本；\n4. 支持创建主实例、只读实例、灾备实例；\n5. 当入参指定 Port 和 ParamTemplateType 参数模板，相关参数才会自动初始化（不支持基础版实例）；\n6. 当入参指定 ParamTemplateId 或 AlarmPolicyList 时，需将SDK提升至最新版本方可支持；",
+      "document": "本接口（CreateDBInstance）用于创建包年包月的云数据库实例（包括主实例、灾备实例和只读实例），可通过传入实例规格、MySQL 版本号、购买时长和数量等信息创建云数据库实例。\n\n该接口为异步接口，您还可以使用 [查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口查询该实例的详细信息。当该实例的 Status 为1，且 TaskStatus 为0，表示实例已经发货成功。\n\n1. 首先请使用 [获取云数据库可售卖规格](https://cloud.tencent.com/document/api/236/17229) 接口查询可创建的实例规格信息，然后请使用 [查询数据库价格](https://cloud.tencent.com/document/api/236/18566) 接口查询可创建实例的售卖价格；\n2. 单次创建实例最大支持 100 个，实例时长最大支持 36 个月；\n3. 支持创建 MySQL 5.5 、 MySQL 5.6 、 MySQL 5.7 、 MySQL 8.0 版本；\n4. 支持创建主实例、只读实例、灾备实例；\n5. 当入参指定 ParamTemplateId 或 AlarmPolicyList 时，需将SDK提升至最新版本方可支持；",
       "input": "CreateDBInstanceRequest",
       "name": "创建云数据库实例（包年包月）",
       "output": "CreateDBInstanceResponse",
       "status": "online"
     },
     "CreateDBInstanceHour": {
-      "document": "本接口(CreateDBInstanceHour)用于创建按量计费的实例，可通过传入实例规格、MySQL 版本号和数量等信息创建云数据库实例，支持主实例、灾备实例和只读实例的创建。\n\n该接口为异步接口，您还可以使用 [查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口查询该实例的详细信息。当该实例的 Status 为 1，且 TaskStatus 为 0，表示实例已经发货成功。\n\n1. 首先请使用 [获取云数据库可售卖规格](https://cloud.tencent.com/document/api/236/17229) 接口查询可创建的实例规格信息，然后请使用 [查询数据库价格](https://cloud.tencent.com/document/api/236/18566) 接口查询可创建实例的售卖价格；\n2. 单次创建实例最大支持 100 个，实例时长最大支持 36 个月；\n3. 支持创建 MySQL 5.5、MySQL 5.6 、MySQL 5.7 和 MySQL 8.0 版本；\n4. 支持创建主实例、灾备实例和只读实例；\n5. 当入参指定 Port，ParamTemplateType 或 Password 时，该实例会进行初始化操作；",
+      "document": "本接口（CreateDBInstanceHour）用于创建按量计费的实例，可通过传入实例规格、MySQL 版本号和数量等信息创建云数据库实例，支持主实例、灾备实例和只读实例的创建。\n\n该接口为异步接口，您还可以使用 [查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口查询该实例的详细信息。当该实例的 Status 为 1，且 TaskStatus 为 0，表示实例已经发货成功。\n\n1. 首先请使用 [获取云数据库可售卖规格](https://cloud.tencent.com/document/api/236/17229) 接口查询可创建的实例规格信息，然后请使用 [查询数据库价格](https://cloud.tencent.com/document/api/236/18566) 接口查询可创建实例的售卖价格；\n2. 单次创建实例最大支持 100 个，实例时长最大支持 36 个月；\n3. 支持创建 MySQL 5.5、MySQL 5.6 、MySQL 5.7 和 MySQL 8.0 版本；\n4. 支持创建主实例、灾备实例和只读实例；",
       "input": "CreateDBInstanceHourRequest",
       "name": "创建云数据库实例（按量计费）",
       "output": "CreateDBInstanceHourResponse",
@@ -442,7 +442,7 @@
       "status": "online"
     },
     "DescribeClusterInfo": {
-      "document": "本接口(DescribeClusterInfo)用于查询集群版实例信息。",
+      "document": "本接口（DescribeClusterInfo）用于查询集群版实例信息。",
       "input": "DescribeClusterInfoRequest",
       "name": "查询集群版实例信息",
       "output": "DescribeClusterInfoResponse",
@@ -456,7 +456,7 @@
       "status": "online"
     },
     "DescribeDBFeatures": {
-      "document": "本接口(DescribeDBFeatures)用于查询云数据库版本属性，包括是否支持数据库加密、数据库审计等功能。",
+      "document": "本接口（DescribeDBFeatures）用于查询云数据库版本属性，包括是否支持数据库加密、数据库审计等功能。",
       "input": "DescribeDBFeaturesRequest",
       "name": "查询实例版本属性",
       "output": "DescribeDBFeaturesResponse",
@@ -491,7 +491,7 @@
       "status": "online"
     },
     "DescribeDBInstanceInfo": {
-      "document": "查询实例基本信息（实例 ID ，实例名称，是否开通加密 ）",
+      "document": "本接口（DescribeDBInstanceInfo）用于查询实例基本信息（实例 ID，实例名称，是否开通加密）。",
       "input": "DescribeDBInstanceInfoRequest",
       "name": "查询实例基本信息",
       "output": "DescribeDBInstanceInfoResponse",
@@ -505,7 +505,7 @@
       "status": "online"
     },
     "DescribeDBInstanceRebootTime": {
-      "document": "本接口(DescribeDBInstanceRebootTime)用于查询云数据库实例重启预计所需的时间。",
+      "document": "本接口（DescribeDBInstanceRebootTime）用于查询云数据库实例重启预计所需的时间。",
       "input": "DescribeDBInstanceRebootTimeRequest",
       "name": "查询云数据库实例的预期重启时间",
       "output": "DescribeDBInstanceRebootTimeResponse",
@@ -519,7 +519,7 @@
       "status": "online"
     },
     "DescribeDBPrice": {
-      "document": "本接口(DescribeDBPrice)用于查询购买或续费云数据库实例的价格，支持查询按量计费或者包年包月的价格。可传入实例类型、购买时长、购买数量、内存大小、硬盘大小和可用区信息等来查询实例价格。可传入实例名称来查询实例续费价格。\n\n注意：对某个地域进行询价，请使用对应地域的接入点，接入点信息请参照 <a href=\"https://cloud.tencent.com/document/api/236/15832\">服务地址</a> 文档。例如：对广州地域进行询价，请把请求发到：cdb.ap-guangzhou.tencentcloudapi.com。同理对上海地域询价，把请求发到：cdb.ap-shanghai.tencentcloudapi.com。",
+      "document": "本接口（DescribeDBPrice）用于查询购买或续费云数据库实例的价格，支持查询按量计费或者包年包月的价格。可传入实例类型、购买时长、购买数量、内存大小、硬盘大小和可用区信息等来查询实例价格。可传入实例名称来查询实例续费价格。\n\n注意：对某个地域进行询价，请使用对应地域的接入点，接入点信息请参照 <a href=\"https://cloud.tencent.com/document/api/236/15832\">服务地址</a> 文档。例如：对广州地域进行询价，请把请求发到：cdb.ap-guangzhou.tencentcloudapi.com。同理对上海地域询价，把请求发到：cdb.ap-shanghai.tencentcloudapi.com。",
       "input": "DescribeDBPriceRequest",
       "name": "查询数据库价格",
       "output": "DescribeDBPriceResponse",
@@ -582,7 +582,7 @@
       "status": "online"
     },
     "DescribeInstanceAlarmEvents": {
-      "document": "查询实例发生的事件信息",
+      "document": "本接口（DescribeInstanceAlarmEvents）用于查询实例发生的事件信息。",
       "input": "DescribeInstanceAlarmEventsRequest",
       "name": "查询实例发生的事件信息",
       "output": "DescribeInstanceAlarmEventsResponse",
@@ -610,7 +610,7 @@
       "status": "online"
     },
     "DescribeInstanceUpgradeType": {
-      "document": "本接口(DescribeInstanceUpgradeType)用于查询数据库实例升级类型。",
+      "document": "本接口（DescribeInstanceUpgradeType）用于查询数据库实例升级类型。",
       "input": "DescribeInstanceUpgradeTypeRequest",
       "name": "查询数据库实例升级类型",
       "output": "DescribeInstanceUpgradeTypeResponse",
@@ -666,7 +666,7 @@
       "status": "online"
     },
     "DescribeRoGroups": {
-      "document": "本接口(DescribeRoGroups)用于查询云数据库实例的所有的RO组的信息。",
+      "document": "本接口（DescribeRoGroups）用于查询云数据库实例的所有的 RO 组的信息。",
       "input": "DescribeRoGroupsRequest",
       "name": "查询云数据库实例的所有RO组的信息",
       "output": "DescribeRoGroupsResponse",
@@ -763,13 +763,6 @@
       "output": "DisassociateSecurityGroupsResponse",
       "status": "online"
     },
-    "InitDBInstances": {
-      "document": "该接口不再维护，参考CreateDBInstance+API文档，在发货时即可完成初始化。\n\n本接口(InitDBInstances)用于初始化云数据库实例，包括初始化密码、默认字符集、实例端口号等。该接口已经废弃，在发货接口CreateDBInstance、CreateDBInstanceHour可以直接使用参数Password设置密码，使用参数ParamList设置字符集，使用参数Port设置端口号。",
-      "input": "InitDBInstancesRequest",
-      "name": "初始化新实例（该接口已经不再维护，不建议使用）",
-      "output": "InitDBInstancesResponse",
-      "status": "deprecated"
-    },
     "InquiryPriceUpgradeInstances": {
       "document": "本接口(InquiryPriceUpgradeInstances)用于查询云数据库实例升级的价格，支持查询按量计费或者包年包月实例的升级价格，实例类型支持主实例、灾备实例和只读实例。",
       "input": "InquiryPriceUpgradeInstancesRequest",
@@ -848,7 +841,7 @@
       "status": "online"
     },
     "ModifyAutoRenewFlag": {
-      "document": "本接口(ModifyAutoRenewFlag)用于修改云数据库实例的自动续费标记。仅支持包年包月的实例设置自动续费标记。",
+      "document": "本接口（ModifyAutoRenewFlag）用于修改云数据库实例的自动续费标记。仅支持包年包月的实例设置自动续费标记。",
       "input": "ModifyAutoRenewFlagRequest",
       "name": "修改云数据库实例的自动续费标记",
       "output": "ModifyAutoRenewFlagResponse",
@@ -915,6 +908,13 @@
       "input": "ModifyDBInstanceProjectRequest",
       "name": "修改云数据库实例的所属项目",
       "output": "ModifyDBInstanceProjectResponse",
+      "status": "online"
+    },
+    "ModifyDBInstanceReadOnlyStatus": {
+      "document": "本接口（ModifyDBInstanceReadOnlyStatus）用户设置MySQL云数据库实例为只读",
+      "input": "ModifyDBInstanceReadOnlyStatusRequest",
+      "name": "设置MySQL云数据库实例为只读",
+      "output": "ModifyDBInstanceReadOnlyStatusResponse",
       "status": "online"
     },
     "ModifyDBInstanceSecurityGroups": {
@@ -1009,7 +1009,7 @@
       "status": "online"
     },
     "OpenDBInstanceEncryption": {
-      "document": "本接口(OpenDBInstanceEncryption)用于启用实例数据存储加密功能，支持用户指定自定义密钥。\n\n注意，启用实例数据存储加密之前，需要进行以下操作：\n\n1、进行 [实例初始化](https://cloud.tencent.com/document/api/236/15873) 操作；\n\n2、开启 [KMS服务](https://console.cloud.tencent.com/kms2)；\n\n3、对云数据库(MySQL)[授予访问KMS密钥的权限](https://console.cloud.tencent.com/cam/role)，角色名为MySQL_QCSRole，预设策略名为QcloudAccessForMySQLRole；\n\n该 API 耗时可能到10s，客户端可能超时，如果调用 API 返回 InternalError ，请您调用DescribeDBInstanceInfo 确认后端加密是否开通成功。",
+      "document": "本接口（OpenDBInstanceEncryption）用于启用实例数据存储加密功能，支持用户指定自定义密钥。\n\n注意，启用实例数据存储加密之前，需要进行以下操作：\n\n1、进行 [实例初始化](https://cloud.tencent.com/document/api/236/15873) 操作；\n\n2、开启 [KMS服务](https://console.cloud.tencent.com/kms2)；\n\n3、对云数据库(MySQL)[授予访问KMS密钥的权限](https://console.cloud.tencent.com/cam/role)，角色名为MySQL_QCSRole，预设策略名为QcloudAccessForMySQLRole；\n\n该 API 耗时可能到10s，客户端可能超时，如果调用 API 返回 InternalError ，请您调用DescribeDBInstanceInfo 确认后端加密是否开通成功。",
       "input": "OpenDBInstanceEncryptionRequest",
       "name": "启用数据存储加密",
       "output": "OpenDBInstanceEncryptionResponse",
@@ -1072,7 +1072,7 @@
       "status": "online"
     },
     "RestartDBInstances": {
-      "document": "本接口(RestartDBInstances)用于重启云数据库实例。\n\n注意：\n1、本接口只支持主实例进行重启操作；\n2、实例状态必须为正常，并且没有其他异步任务在执行中。",
+      "document": "本接口（RestartDBInstances）用于重启云数据库实例。\n\n注意：\n1、本接口支持主实例、只读实例、灾备实例进行重启操作。\n2、实例状态必须为正常，并且没有其他异步任务在执行中。",
       "input": "RestartDBInstancesRequest",
       "name": "重启实例",
       "output": "RestartDBInstancesResponse",
@@ -1093,7 +1093,7 @@
       "status": "online"
     },
     "StartReplication": {
-      "document": "开启 RO 复制，从主实例同步数据。",
+      "document": "本接口（StartReplication）用于开启 RO 复制，从主实例同步数据。",
       "input": "StartReplicationRequest",
       "name": "开启复制",
       "output": "StartReplicationResponse",
@@ -1114,7 +1114,7 @@
       "status": "online"
     },
     "StopReplication": {
-      "document": "停止 RO 复制，中断从主实例同步数据。",
+      "document": "本接口（StopReplication）用于停止 RO 复制，中断从主实例同步数据。",
       "input": "StopReplicationRequest",
       "name": "停止复制",
       "output": "StopReplicationResponse",
@@ -1149,7 +1149,7 @@
       "status": "online"
     },
     "SwitchDrInstanceToMaster": {
-      "document": "本接口(SwitchDrInstanceToMaster)用于将云数据库灾备实例切换为主实例，注意请求必须发到灾备实例所在的地域。",
+      "document": "本接口（SwitchDrInstanceToMaster）用于将云数据库灾备实例切换为主实例，注意请求必须发到灾备实例所在的地域。",
       "input": "SwitchDrInstanceToMasterRequest",
       "name": "云数据库灾备实例切换为主实例",
       "output": "SwitchDrInstanceToMasterResponse",
@@ -1307,7 +1307,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID，格式如：cdb-c1nl9rpv 或者 cdbro-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。",
+          "document": "实例 ID，格式如：cdb-c1nl9rpv 或者 cdbro-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。",
           "example": "cdb-eb2w7dto",
           "member": "string",
           "name": "InstanceId",
@@ -1317,7 +1317,7 @@
         {
           "disabled": false,
           "document": "星期一的可维护时间段，其中每一个时间段的格式形如：10:00-12:00；起始时间按半个小时对齐；最短半个小时，最长三个小时；可设置多个时间段。 一周中应至少设置一天的时间窗。下同。",
-          "example": "[\"02:00-03:00\\n\"]",
+          "example": "02:00-03:00",
           "member": "string",
           "name": "Monday",
           "required": false,
@@ -1326,7 +1326,7 @@
         {
           "disabled": false,
           "document": "星期二的可维护时间窗口。 一周中应至少设置一天的时间窗。",
-          "example": "无",
+          "example": "02:00-03:00",
           "member": "string",
           "name": "Tuesday",
           "required": false,
@@ -1335,7 +1335,7 @@
         {
           "disabled": false,
           "document": "星期三的可维护时间窗口。 一周中应至少设置一天的时间窗。",
-          "example": "无",
+          "example": "02:00-03:00",
           "member": "string",
           "name": "Wednesday",
           "required": false,
@@ -1344,7 +1344,7 @@
         {
           "disabled": false,
           "document": "星期四的可维护时间窗口。 一周中应至少设置一天的时间窗。",
-          "example": "无",
+          "example": "02:00-03:00",
           "member": "string",
           "name": "Thursday",
           "required": false,
@@ -1353,7 +1353,7 @@
         {
           "disabled": false,
           "document": "星期五的可维护时间窗口。 一周中应至少设置一天的时间窗。",
-          "example": "无",
+          "example": "02:00-03:00",
           "member": "string",
           "name": "Friday",
           "required": false,
@@ -1362,7 +1362,7 @@
         {
           "disabled": false,
           "document": "星期六的可维护时间窗口。 一周中应至少设置一天的时间窗。",
-          "example": "无",
+          "example": "02:00-03:00",
           "member": "string",
           "name": "Saturday",
           "required": false,
@@ -1371,7 +1371,7 @@
         {
           "disabled": false,
           "document": "星期日的可维护时间窗口。 一周中应至少设置一天的时间窗。",
-          "example": "无",
+          "example": "02:00-03:00",
           "member": "string",
           "name": "Sunday",
           "required": false,
@@ -1379,7 +1379,7 @@
         },
         {
           "disabled": false,
-          "document": "最大延迟阈值，仅对主实例和灾备实例有效",
+          "document": "最大延迟阈值，仅对主实例和灾备实例有效。",
           "example": "10",
           "member": "uint64",
           "name": "MaxDelayTime",
@@ -1407,7 +1407,7 @@
         {
           "disabled": false,
           "document": "地址的资源id标识。",
-          "example": "cdb-xxx",
+          "example": "cdb-rqd2jddd",
           "member": "string",
           "name": "ResourceId",
           "output_required": true,
@@ -1417,7 +1417,7 @@
         {
           "disabled": false,
           "document": "地址所在的vpc。",
-          "example": "vpc-xxx",
+          "example": "vpc-1qm52ddd",
           "member": "string",
           "name": "UniqVpcId",
           "output_required": true,
@@ -1427,7 +1427,7 @@
         {
           "disabled": false,
           "document": "地址所在的子网。",
-          "example": "subnet-xxx",
+          "example": "subnet-i1nhbddd",
           "member": "string",
           "name": "UniqSubnetId",
           "output_required": true,
@@ -1437,7 +1437,7 @@
         {
           "disabled": false,
           "document": "地址的vip。",
-          "example": "无",
+          "example": "172.1.1.1",
           "member": "string",
           "name": "Vip",
           "output_required": true,
@@ -1447,7 +1447,7 @@
         {
           "disabled": false,
           "document": "地址的端口。",
-          "example": "无",
+          "example": "3306",
           "member": "int64",
           "name": "VPort",
           "output_required": true,
@@ -1457,7 +1457,7 @@
         {
           "disabled": false,
           "document": "外网地址域名。",
-          "example": "无",
+          "example": "gz-cdb-*******.sql.tencentcdb.com",
           "member": "string",
           "name": "WanDomain",
           "output_required": false,
@@ -1467,7 +1467,7 @@
         {
           "disabled": false,
           "document": "外网地址端口。",
-          "example": "无",
+          "example": "25640",
           "member": "int64",
           "name": "WanPort",
           "output_required": false,
@@ -1582,7 +1582,7 @@
         {
           "disabled": false,
           "document": "读写权重分配。如果 WeightMode 传的是 system ，则传入的权重不生效，由系统分配默认权重。",
-          "example": "无",
+          "example": "[{\"Region\":\"ap-guangzhou\",\"Zone\":\"ap-guangzhou-2\",\"ProxyInstance\":[{\"InstanceId\":\"cdb-aykuksx3\",\"Weight\":100}]",
           "member": "ProxyAllocation",
           "name": "ProxyAllocation",
           "required": false,
@@ -1615,7 +1615,7 @@
         {
           "disabled": false,
           "document": "异步任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1312",
+          "example": "a6040589-3b098df5-b551d9e5-81c6bfdc",
           "member": "string",
           "name": "AsyncRequestId",
           "output_required": true,
@@ -4323,7 +4323,7 @@
         {
           "disabled": false,
           "document": "RW 节点拓扑。",
-          "example": "无",
+          "example": "[{\"Zone\": \"ap-guangzhou-4\",\"NodeId\": \"dbn-73ktfl1j\"}]",
           "member": "ReadWriteNode",
           "name": "ReadWriteNode",
           "required": false,
@@ -4332,7 +4332,7 @@
         {
           "disabled": false,
           "document": "RO 节点拓扑。",
-          "example": "无",
+          "example": "[{\"IsRandomZone\": \"\",\"Zone\": \"ap-guangzhou-2\",\"NodeId\": \"dbn-73ktf111\"}]",
           "member": "ReadonlyNode",
           "name": "ReadOnlyNodes",
           "required": false,
@@ -5594,7 +5594,7 @@
         {
           "disabled": false,
           "document": "私有网络 ID，如果不传则默认选择基础网络，请使用 [查询私有网络列表](/document/api/215/15778) 。\n说明：如果创建的是集群版实例，此参数为必填且为私有网络类型。",
-          "example": "vpc-***",
+          "example": "vpc-5l7l5q11",
           "member": "string",
           "name": "UniqVpcId",
           "required": false,
@@ -5603,7 +5603,7 @@
         {
           "disabled": false,
           "document": "私有网络下的子网 ID，如果设置了 UniqVpcId，则 UniqSubnetId 必填，请使用 [查询子网列表](/document/api/215/15784)。",
-          "example": "subnet-***",
+          "example": "subnet-b5v6i111",
           "member": "string",
           "name": "UniqSubnetId",
           "required": false,
@@ -5620,7 +5620,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区信息，该参数缺省时，系统会自动选择一个可用区，请使用 [获取云数据库可售卖规格](https://cloud.tencent.com/document/api/236/17229) 接口获取可创建的可用区。",
+          "document": "可用区信息，请使用 [获取云数据库可售卖规格](https://cloud.tencent.com/document/api/236/17229) 接口获取可创建的可用区。\n说明：若您创建单节点、双节点、三节点实例，此参数为必填项，请指定可用区，若不指定可用区，则系统会自动选择一个可用区（可能不是您希望部署的可用区）；若您创建集群版实例，此参数不填，请通过参数 ClusterTopology 进行读写节点和只读节点的可用区配置。",
           "example": "ap-beijing-3",
           "member": "string",
           "name": "Zone",
@@ -5630,7 +5630,7 @@
         {
           "disabled": false,
           "document": "实例 ID，购买只读实例或者灾备实例时必填，该字段表示只读实例或者灾备实例的主实例 ID，请使用 [查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口查询云数据库实例 ID。",
-          "example": "cdb-***",
+          "example": "cdb-q72dno11",
           "member": "string",
           "name": "MasterInstanceId",
           "required": false,
@@ -5638,7 +5638,7 @@
         },
         {
           "disabled": false,
-          "document": "实例类型，默认为 master，支持值包括：master - 表示主实例，dr - 表示灾备实例，ro - 表示只读实例。",
+          "document": "实例类型，支持值包括：master - 表示主实例，dr - 表示灾备实例，ro - 表示只读实例。\n说明：必填项。",
           "example": "master",
           "member": "string",
           "name": "InstanceRole",
@@ -5701,7 +5701,7 @@
         },
         {
           "disabled": false,
-          "document": "备库 1 的可用区信息，默认为 Zone 的值，购买主实例时可指定该参数，购买只读实例或者灾备实例时指定该参数无意义。",
+          "document": "备库 1 的可用区信息。\n说明：双节点、三节点实例请指定此参数值，若不指定，则默认为 Zone 的值；集群版实例此参数可不填，请通过参数 ClusterTopology 进行读写节点和只读节点的可用区配置；单节点实例为单可用区，无需指定此参数。",
           "example": "ap-beijing-3",
           "member": "string",
           "name": "SlaveZone",
@@ -5729,7 +5729,7 @@
         {
           "disabled": false,
           "document": "只读实例信息。购买只读实例时，该参数必传。",
-          "example": "null",
+          "example": "{\"RoGroupMode\": \"allinone\",\"RoGroupName\": \"jersey\",\"RoMaxDelayTime\": \"5\",\"MinRoInGroup\": \"1\",\"RoOfflineDelay\": \"1\"}",
           "member": "RoGroup",
           "name": "RoGroup",
           "required": false,
@@ -5747,7 +5747,7 @@
         {
           "disabled": false,
           "document": "实例名称。一次购买多个实例命名会用后缀数字区分，例instanceName=db，goodsNum=3，实例命名分别为db1，db2，db3。",
-          "example": "***",
+          "example": "cdbzhang",
           "member": "string",
           "name": "InstanceName",
           "required": false,
@@ -5900,7 +5900,7 @@
         {
           "disabled": false,
           "document": "集群版节点拓扑配置。\n说明：若购买的是集群版实例，此参数为必填，需设置集群版实例的 RW 和 RO 节点拓扑，RO 节点范围是1 - 5个，请至少设置1个 RO 节点。",
-          "example": "无",
+          "example": "{\"ReadWriteNode\":{\"Zone\":\"ap-beijing-6\"},\"ReadOnlyNodes\":[{\"Zone\":\"ap-beijing-6\"}]}",
           "member": "ClusterTopology",
           "name": "ClusterTopology",
           "required": false,
@@ -5912,6 +5912,15 @@
           "example": "CLOUD_SSD",
           "member": "string",
           "name": "DiskType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "集群类型:cage——金融围拢，cdc——CDB ON CDC；dedicate——独享集群",
+          "example": "cage",
+          "member": "string",
+          "name": "ClusterType",
           "required": false,
           "type": "string"
         }
@@ -5991,7 +6000,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区信息，该参数缺省时，系统会自动选择一个可用区，请使用 [获取云数据库可售卖规格](https://cloud.tencent.com/document/api/236/17229) 接口获取可创建的可用区。",
+          "document": "可用区信息，请使用 [获取云数据库可售卖规格](https://cloud.tencent.com/document/api/236/17229) 接口获取可创建的可用区。\n说明：若您创建单节点、双节点、三节点实例，此参数为必填项，请指定可用区，若不指定可用区，则系统会自动选择一个可用区（可能不是您希望部署的可用区）；若您创建集群版实例，此参数不填，请通过参数 ClusterTopology 进行读写节点和只读节点的可用区配置。",
           "example": "ap-beijing-3",
           "member": "string",
           "name": "Zone",
@@ -6001,7 +6010,7 @@
         {
           "disabled": false,
           "document": "私有网络 ID，如果不传则默认选择基础网络，请使用 [查询私有网络列表](/document/api/215/15778)。\n说明：如果创建的是集群版实例，此参数为必填且为私有网络类型。",
-          "example": "vpc-***",
+          "example": "vpc-5l7l5q11",
           "member": "string",
           "name": "UniqVpcId",
           "required": false,
@@ -6010,7 +6019,7 @@
         {
           "disabled": false,
           "document": "私有网络下的子网 ID，如果设置了 UniqVpcId，则 UniqSubnetId 必填，请使用 [查询子网列表](/document/api/215/15784)。",
-          "example": "subnet-***",
+          "example": "subnet-b5v6i111",
           "member": "string",
           "name": "UniqSubnetId",
           "required": false,
@@ -6036,7 +6045,7 @@
         },
         {
           "disabled": false,
-          "document": "实例类型，默认为 master，支持值包括：master - 表示主实例，dr - 表示灾备实例，ro - 表示只读实例。",
+          "document": "实例类型，支持值包括：master - 表示主实例，dr - 表示灾备实例，ro - 表示只读实例。\n说明：必填项。",
           "example": "master",
           "member": "string",
           "name": "InstanceRole",
@@ -6045,8 +6054,8 @@
         },
         {
           "disabled": false,
-          "document": "实例 ID，购买只读实例时必填，该字段表示只读实例的主实例ID，请使用 [查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口查询云数据库实例 ID。",
-          "example": "cdb-***",
+          "document": "实例 ID，购买只读实例时必填，该字段表示只读实例的主实例 ID，请使用 [查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口查询云数据库实例 ID。",
+          "example": "cdb-q72dnodd",
           "member": "string",
           "name": "MasterInstanceId",
           "required": false,
@@ -6090,7 +6099,7 @@
         },
         {
           "disabled": false,
-          "document": "备库 1 的可用区信息，默认为 Zone 的值。",
+          "document": "备库 1 的可用区信息。\n说明：双节点、三节点实例请指定此参数值，若不指定，则默认为 Zone 的值；集群版实例此参数可不填，请通过参数 ClusterTopology 进行读写节点和只读节点的可用区配置；单节点实例为单可用区，无需指定此参数。",
           "example": "ap-beijing-3",
           "member": "string",
           "name": "SlaveZone",
@@ -6154,7 +6163,7 @@
         {
           "disabled": false,
           "document": "实例名称。一次购买多个实例命名会用后缀数字区分，例instnaceName=db，goodsNum=3，实例命名分别为db1，db2，db3。",
-          "example": "***",
+          "example": "cdbzhang",
           "member": "string",
           "name": "InstanceName",
           "required": false,
@@ -6307,7 +6316,7 @@
         {
           "disabled": false,
           "document": "集群版节点拓扑配置。\n说明：若购买的是集群版实例，此参数为必填，需设置集群版实例的 RW 和 RO 节点拓扑，RO 节点范围是1 - 5个，请至少设置1个 RO 节点。",
-          "example": "无",
+          "example": "{\"ReadWriteNode\":{\"Zone\":\"ap-beijing-6\"},\"ReadOnlyNodes\":[{\"Zone\":\"ap-beijing-6\"}]}",
           "member": "ClusterTopology",
           "name": "ClusterTopology",
           "required": false,
@@ -6748,21 +6757,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "切换时间，格式为：2017-09-03 01:34:31",
-          "example": "",
+          "document": "切换时间，格式为：2017-09-03 01:34:31\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2024-09-03 01:34:31",
           "member": "datetime",
           "name": "SwitchTime",
-          "required": true,
-          "type": "string"
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "切换类型，可能的返回值为：TRANSFER - 数据迁移；MASTER2SLAVE - 主备切换；RECOVERY - 主从恢复",
-          "example": "",
+          "document": "切换类型，可能的返回值为：TRANSFER - 数据迁移；MASTER2SLAVE - 主备切换；RECOVERY - 主从恢复\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "MASTER2SLAVE",
           "member": "string",
           "name": "SwitchType",
-          "required": true,
-          "type": "string"
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -9148,8 +9159,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例id。",
-          "example": "cdb-xxx",
+          "document": "实例 ID。",
+          "example": "cdb-dctw4edd",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -9164,7 +9175,7 @@
         {
           "disabled": false,
           "document": "实例名称。",
-          "example": "无",
+          "example": "cdb38936",
           "member": "string",
           "name": "ClusterName",
           "output_required": false,
@@ -9174,7 +9185,7 @@
         {
           "disabled": false,
           "document": "集群读写地址信息。",
-          "example": "无",
+          "example": "10.1.*.1:3306",
           "member": "AddressInfo",
           "name": "ReadWriteAddress",
           "output_required": false,
@@ -9184,7 +9195,7 @@
         {
           "disabled": false,
           "document": "集群只读地址信息。",
-          "example": "无",
+          "example": "10.1.*.2:3306",
           "member": "AddressInfo",
           "name": "ReadOnlyAddress",
           "output_required": false,
@@ -9194,7 +9205,7 @@
         {
           "disabled": false,
           "document": "集群节点列表信息。",
-          "example": "无",
+          "example": "[{\"NodeId\": \"dbn-qqeo1111\",\"Role\": \"master\",\"Zone\": \"ap-guangzhou-1\",\"Weight\": 1,\"Status\": \"online\"},{\"NodeId\": \"dbn-qqeo2222\",\"Role\": \"slave\",\"Zone\": \"ap-guangzhou-2\",\"Weight\": 1,\"Status\": \"online\"}]",
           "member": "ClusterNodeInfo",
           "name": "NodeList",
           "output_required": false,
@@ -9204,7 +9215,7 @@
         {
           "disabled": false,
           "document": "只读空间保护阈值,单位GB",
-          "example": "无",
+          "example": "2",
           "member": "int64",
           "name": "ReadonlyLimit",
           "output_required": false,
@@ -9214,7 +9225,7 @@
         {
           "disabled": false,
           "document": "实例节点数。",
-          "example": "无",
+          "example": "2",
           "member": "int64",
           "name": "NodeCount",
           "output_required": false,
@@ -9305,63 +9316,70 @@
         {
           "disabled": false,
           "document": "是否支持数据库审计功能。",
-          "example": "1",
+          "example": "true",
           "member": "bool",
           "name": "IsSupportAudit",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "开启审计是否需要升级内核版本。",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "AuditNeedUpgrade",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "是否支持数据库加密功能。",
-          "example": "1",
+          "example": "true",
           "member": "bool",
           "name": "IsSupportEncryption",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "开启加密是否需要升级内核版本。",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "EncryptionNeedUpgrade",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "是否为异地只读实例。",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "IsRemoteRo",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "主实例所在地域。",
-          "example": "无",
+          "document": "主实例所在地域。\n说明：此参数可能返回空值，您可忽略此出参返回值。如需获取实例所在地域详情，您可调用 [查询实例列表](https://cloud.tencent.com/document/product/236/15872) 接口查询。",
+          "example": "ap-beijing",
           "member": "string",
           "name": "MasterRegion",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "是否支持小版本升级。",
-          "example": "1",
+          "example": "true",
           "member": "bool",
           "name": "IsSupportUpdateSubVersion",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -9371,6 +9389,7 @@
           "example": "20190203",
           "member": "string",
           "name": "CurrentSubVersion",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9380,6 +9399,7 @@
           "example": "20190930",
           "member": "string",
           "name": "TargetSubVersion",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9641,7 +9661,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID 。",
+          "document": "实例 ID。",
           "example": "cdb-59dm059k",
           "member": "string",
           "name": "InstanceId",
@@ -9660,7 +9680,7 @@
           "example": "cdb-59dm059k",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9670,7 +9690,7 @@
           "example": "your_cdb_name",
           "member": "string",
           "name": "InstanceName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9680,27 +9700,27 @@
           "example": "NO",
           "member": "string",
           "name": "Encryption",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "加密使用的密钥 ID 。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "''",
+          "example": "***-CDB",
           "member": "string",
           "name": "KeyId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "密钥所在地域。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "''",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "KeyRegion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -9710,7 +9730,7 @@
           "example": "ap-shanghai",
           "member": "string",
           "name": "DefaultKmsRegion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -9784,8 +9804,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例的 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。",
-          "example": "[\"cdb-f35wr6wj\\r\\n\"]",
+          "document": "实例的 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。\n说明：可输入多个实例 ID 进行查询，json 格式如下。\n[\n    \"cdb-30z11v8s\",\n    \"cdb-93h11efg\"\n  ]",
+          "example": "cdb-f35wr6wj",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -9803,17 +9823,17 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "返回的参数信息。",
-          "example": "无",
+          "example": "[{\"TimeInSeconds\": 50,\"InstanceId\": \"cdb-rozjda3j\"}]",
           "member": "InstanceRebootTime",
           "name": "Items",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -10220,7 +10240,7 @@
         },
         {
           "disabled": false,
-          "document": "实例内存大小，单位：MB。InstanceId为空时该参数为必填项。",
+          "document": "实例内存大小，单位：MB。InstanceId 为空时该参数为必填项。为保证传入值有效，请使用 [获取云数据库可售卖规格](https://cloud.tencent.com/document/product/236/17229) 接口获取可售卖的实例内存大小范围。",
           "example": "1000",
           "member": "int64",
           "name": "Memory",
@@ -10229,7 +10249,7 @@
         },
         {
           "disabled": false,
-          "document": "实例硬盘大小，单位：GB。InstanceId为空时该参数为必填项。",
+          "document": "实例硬盘大小，单位：GB。InstanceId 为空时该参数为必填项。为保证传入值有效，请使用 [获取云数据库可售卖规格](https://cloud.tencent.com/document/product/236/17229) 接口获取可售卖的硬盘大小范围。",
           "example": "50",
           "member": "int64",
           "name": "Volume",
@@ -10265,7 +10285,7 @@
         },
         {
           "disabled": false,
-          "document": "实例隔离类型。支持值包括： \"UNIVERSAL\" - 通用型实例， \"EXCLUSIVE\" - 独享型实例， \"BASIC_V2\" - 单节点云盘版实例。 不指定则默认为通用型实例。",
+          "document": "实例隔离类型。支持值包括： \"UNIVERSAL\" - 通用型实例， \"EXCLUSIVE\" - 独享型实例， \"BASIC_V2\" - 单节点云盘版实例。 \"CLOUD_NATIVE_CLUSTER\" - 集群版标准型， \"CLOUD_NATIVE_CLUSTER_EXCLUSIVE\" - 集群版加强型。   不指定则默认为通用型实例。",
           "example": "UNIVERSAL",
           "member": "string",
           "name": "DeviceType",
@@ -10307,6 +10327,15 @@
           "name": "Ladder",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "磁盘类型，查询集群版、单节点云盘版实例价格可以指定该参数。支持值包括： \"CLOUD_SSD\" - SSD云硬盘， \"CLOUD_HSSD\" - 增强型SSD云硬盘。  默认为 SSD云硬盘。",
+          "example": "CLOUD_SSD",
+          "member": "string",
+          "name": "DiskType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -10431,7 +10460,7 @@
         },
         {
           "disabled": false,
-          "document": "分页大小，默认值为 50，最小值为 1，最大值为 2000。",
+          "document": "分页大小，默认值为50，最小值为1，最大值为1000。",
           "example": "10",
           "member": "int64",
           "name": "Limit",
@@ -10450,17 +10479,17 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "实例切换记录详情。",
-          "example": "无",
+          "example": "[{\"SwitchTime\": \"2017-11-07 15:15:48\",\"SwitchType\": \"TRANSFER\"}]",
           "member": "DBSwitchInfo",
           "name": "Items",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -11208,8 +11237,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例id",
-          "example": "cdb-xxx",
+          "document": "实例 ID。",
+          "example": "cdb-2wpip1dd",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -11217,7 +11246,7 @@
         },
         {
           "disabled": false,
-          "document": "目标实例cpu",
+          "document": "目标实例 CPU 的核数。",
           "example": "2",
           "member": "float",
           "name": "DstCpu",
@@ -11226,7 +11255,7 @@
         },
         {
           "disabled": false,
-          "document": "目标实例内存",
+          "document": "目标实例内存大小，单位：MB。",
           "example": "4000",
           "member": "uint64",
           "name": "DstMemory",
@@ -11235,8 +11264,8 @@
         },
         {
           "disabled": false,
-          "document": "目标实例磁盘",
-          "example": "8000",
+          "document": "目标实例磁盘大小，单位：GB。",
+          "example": "1000",
           "member": "uint64",
           "name": "DstDisk",
           "required": true,
@@ -11244,7 +11273,7 @@
         },
         {
           "disabled": false,
-          "document": "目标实例版本",
+          "document": "目标实例数据库版本。",
           "example": "5.7",
           "member": "string",
           "name": "DstVersion",
@@ -11253,7 +11282,7 @@
         },
         {
           "disabled": false,
-          "document": "目标实例部署模型",
+          "document": "目标实例部署模型。",
           "example": "0",
           "member": "int64",
           "name": "DstDeployMode",
@@ -11262,7 +11291,7 @@
         },
         {
           "disabled": false,
-          "document": "目标实例复制类型",
+          "document": "目标实例复制类型。",
           "example": "0",
           "member": "int64",
           "name": "DstProtectMode",
@@ -11271,7 +11300,7 @@
         },
         {
           "disabled": false,
-          "document": "目标实例备机1可用区",
+          "document": "目标实例备机1可用区。",
           "example": "100001",
           "member": "int64",
           "name": "DstSlaveZone",
@@ -11280,7 +11309,7 @@
         },
         {
           "disabled": false,
-          "document": "目标实例备机2可用区",
+          "document": "目标实例备机2可用区。",
           "example": "100001",
           "member": "int64",
           "name": "DstBackupZone",
@@ -11289,7 +11318,7 @@
         },
         {
           "disabled": false,
-          "document": "目标实例类型",
+          "document": "目标实例类型。",
           "example": "CUSTOM",
           "member": "string",
           "name": "DstCdbType",
@@ -11298,7 +11327,7 @@
         },
         {
           "disabled": false,
-          "document": "目标实例主可用区",
+          "document": "目标实例主可用区。",
           "example": "100001",
           "member": "int64",
           "name": "DstZoneId",
@@ -11307,8 +11336,8 @@
         },
         {
           "disabled": false,
-          "document": "独享集群CDB实例的节点分布情况",
-          "example": "无",
+          "document": "独享集群 CDB 实例的节点分布情况。",
+          "example": " [{\"Node\": dch-fexbu7pp,\"SlaveNodeOne\": \"dch-cawss6q\",\"SlaveNodeTwo\": \"dch-bsxj39l\"}]",
           "member": "NodeDistribution",
           "name": "NodeDistribution",
           "required": false,
@@ -11317,7 +11346,7 @@
         {
           "disabled": false,
           "document": "集群版的节点拓扑配置",
-          "example": "无",
+          "example": "{\"ReadWriteNode\":{\"Zone\":\"ap-beijing-6\"},\"ReadOnlyNodes\":[{\"Zone\":\"ap-beijing-6\"}]}",
           "member": "ClusterTopology",
           "name": "ClusterTopology",
           "required": false,
@@ -11331,8 +11360,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例id",
-          "example": "cdb-xxx",
+          "document": "实例 ID。",
+          "example": "cdb-2wpip1dd",
           "member": "string",
           "name": "InstanceId",
           "output_required": true,
@@ -11341,7 +11370,7 @@
         },
         {
           "disabled": false,
-          "document": "实例升级类型",
+          "document": "实例升级类型。",
           "example": "Trsf",
           "member": "string",
           "name": "UpgradeType",
@@ -11909,7 +11938,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID，格式如：cdb-c1nl9rpv或者cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同。",
+          "document": "实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。",
           "example": "cdb-eggz8oj5",
           "member": "string",
           "name": "InstanceId",
@@ -11924,11 +11953,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "RO组信息数组，一个实例可关联多个RO组。",
+          "document": "RO 组信息数组，一个实例可关联多个 RO 组。",
           "example": "无",
           "member": "RoGroup",
           "name": "RoGroups",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -13446,70 +13475,6 @@
       ],
       "usage": "out"
     },
-    "InitDBInstancesRequest": {
-      "document": "InitDBInstances请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同，可使用[查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口获取，其值为输出参数中字段 InstanceId 的值。",
-          "example": "[\"cdb-f35wr6wj\\r\\n\"]",
-          "member": "string",
-          "name": "InstanceIds",
-          "required": true,
-          "type": "list"
-        },
-        {
-          "disabled": false,
-          "document": "实例新的密码，密码规则：8-64个字符，至少包含字母、数字、字符（支持的字符：!@#$%^*()）中的两种。",
-          "example": "Gx18ux23F^X",
-          "member": "string",
-          "name": "NewPassword",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "实例的参数列表，目前支持设置“character_set_server”、“lower_case_table_names”参数。其中，“character_set_server”参数可选值为[\"utf8\",\"latin1\",\"gbk\",\"utf8mb4\"]；“lower_case_table_names”可选值为[“0”,“1”]。",
-          "example": "无",
-          "member": "ParamInfo",
-          "name": "Parameters",
-          "required": true,
-          "type": "list"
-        },
-        {
-          "disabled": false,
-          "document": "实例的端口，取值范围为[1024, 65535]",
-          "example": "无",
-          "member": "int64",
-          "name": "Vport",
-          "required": false,
-          "type": "int"
-        }
-      ],
-      "type": "object"
-    },
-    "InitDBInstancesResponse": {
-      "document": "InitDBInstances返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "异步任务的请求ID数组，可使用此ID查询异步任务的执行结果",
-          "example": "[\"8cd119d4-61ba-11e7-aeff-018cfa1f5560\"]",
-          "member": "string",
-          "name": "AsyncRequestIds",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "InquiryPriceUpgradeInstancesRequest": {
       "document": "InquiryPriceUpgradeInstances请求参数结构体",
       "members": [
@@ -14291,21 +14256,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同",
-          "example": "",
+          "document": "实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cdb-c1nl9rpv",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
-          "type": "string"
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "预期重启时间",
-          "example": "",
+          "document": "预期重启时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "360",
           "member": "int64",
           "name": "TimeInSeconds",
-          "required": true,
-          "type": "int"
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -14972,7 +14939,7 @@
         {
           "disabled": false,
           "document": "全局权限。其中，GlobalPrivileges 中权限的可选值为：\"SELECT\",\"INSERT\",\"UPDATE\",\"DELETE\",\"CREATE\", \"PROCESS\", \"DROP\",\"REFERENCES\",\"INDEX\",\"ALTER\",\"SHOW DATABASES\",\"CREATE TEMPORARY TABLES\",\"LOCK TABLES\",\"EXECUTE\",\"CREATE VIEW\",\"SHOW VIEW\",\"CREATE ROUTINE\",\"ALTER ROUTINE\",\"EVENT\",\"TRIGGER\",\"CREATE USER\",\"RELOAD\",\"REPLICATION CLIENT\",\"REPLICATION SLAVE\"。\n注意，ModifyAction为空时，不传该参数表示清除该权限。",
-          "example": "[\"SELECT\\n\"]",
+          "example": "[\"SELECT\"]",
           "member": "string",
           "name": "GlobalPrivileges",
           "required": false,
@@ -15026,7 +14993,7 @@
           "example": "256117ed-efa08b54-61784d44-91781bbd",
           "member": "string",
           "name": "AsyncRequestId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -15305,8 +15272,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例的 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。",
-          "example": "[\"cdb-f35wr6wj\\r\\n\"]",
+          "document": "实例的 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。\n说明：可输入多个实例 ID 进行修改，json 格式如下。\n[\n    \"cdb-30z11v8s\",\n    \"cdb-93h11efg\"\n  ]",
+          "example": "cdb-f35wr6wj",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -15953,8 +15920,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID 数组，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同，可使用 [查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口获取，其值为输出参数中字段 InstanceId 的值。",
-          "example": "[\"cdb-f35wr6wj\\r\\n\"]",
+          "document": "实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同，可使用 [查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口获取，其值为输出参数中字段 InstanceId 的值。\n说明：可输入多个实例 ID 进行修改，json 格式如下。\n[\n    \"cdb-30z11v8s\",\n    \"cdb-93h11efg\"\n  ]",
+          "example": "cdb-f35wr6wj",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -15962,8 +15929,8 @@
         },
         {
           "disabled": false,
-          "document": "项目的 ID。",
-          "example": "12",
+          "document": "实例所属项目的 ID，可在账号中心下的项目管理页面查询。",
+          "example": "11954",
           "member": "int64",
           "name": "NewProjectId",
           "required": false,
@@ -15974,6 +15941,42 @@
     },
     "ModifyDBInstanceProjectResponse": {
       "document": "ModifyDBInstanceProject返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDBInstanceReadOnlyStatusRequest": {
+      "document": "ModifyDBInstanceReadOnlyStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同，可使用[查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口获取，其值为输出参数中字段 InstanceId 的值。",
+          "example": "cdb-uns231ns",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否设置为只读。其中：1表示设置实例为只读，0表示解除只读状态",
+          "example": "0",
+          "member": "int64",
+          "name": "ReadOnly",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDBInstanceReadOnlyStatusResponse": {
+      "document": "ModifyDBInstanceReadOnlyStatus返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -16353,7 +16356,7 @@
         {
           "disabled": false,
           "document": "置放群组 ID。",
-          "example": "test",
+          "example": "172837",
           "member": "string",
           "name": "DeployGroupId",
           "required": true,
@@ -16371,7 +16374,7 @@
         {
           "disabled": false,
           "document": "置放群组描述，最长不能超过200个字符。置放群组名和置放群组描述不能都为空。",
-          "example": "test",
+          "example": "一区群组",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -16596,8 +16599,8 @@
         },
         {
           "disabled": false,
-          "document": "修改后的可维护时间段，其中每一个时间段的格式形如：10:00-12:00；起止时间按半个小时对齐；最短半个小时，最长三个小时；最多设置两个时间段；起止时间范围为：[00:00, 24:00]。",
-          "example": "[\"03:00-03:30\\r\\n\"]",
+          "document": "修改后的可维护时间段，其中每一个时间段的格式形如：10:00-12:00；起止时间按半个小时对齐；最短半个小时，最长三个小时；最多设置两个时间段；起止时间范围为：[00:00, 24:00]。\n说明：设置两个时间段的 json 示例如下。\n[\n    \"01:00-01:30\",\n    \"02:00-02:30\"\n  ]",
+          "example": "00:00-01:30",
           "member": "string",
           "name": "TimeRanges",
           "required": true,
@@ -16605,8 +16608,8 @@
         },
         {
           "disabled": false,
-          "document": "指定修改哪一天的客户时间段，可能的取值为：monday，tuesday，wednesday，thursday，friday，saturday，sunday。如果不指定该值或者为空，则默认一周七天都修改。",
-          "example": "[\"monday\\r\\n\"]",
+          "document": "指定修改哪一天的可维护时间段，可能的取值为：monday，tuesday，wednesday，thursday，friday，saturday，sunday。如果不指定该值或者为空，则默认一周七天都修改。\n说明：指定修改多天的 json 示例如下。\n[\n    \"monday\",\n    \"tuesday\"\n  ]",
+          "example": "monday",
           "member": "string",
           "name": "Weekdays",
           "required": false,
@@ -16785,8 +16788,8 @@
         },
         {
           "disabled": false,
-          "document": "用户自定义密钥ID，CMK唯一标识符。该值为空时，将使用腾讯云自动生成的密钥KMS-CDB。",
-          "example": "testkey",
+          "document": "用户自定义密钥 ID，CMK 唯一标识符。该值为空时，将使用腾讯云自动生成的密钥 KMS-CDB。",
+          "example": "KMS-CDB",
           "member": "string",
           "name": "KeyId",
           "required": false,
@@ -16794,8 +16797,8 @@
         },
         {
           "disabled": false,
-          "document": "用户自定义密钥的存储地域。如：ap-guangzhou 。KeyId不为空时，该参数必填。",
-          "example": "ap-guangzou",
+          "document": "用户自定义密钥的存储地域。如：ap-guangzhou 。KeyId 不为空时，该参数必填。",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "KeyRegion",
           "required": false,
@@ -17027,7 +17030,7 @@
         {
           "disabled": false,
           "document": "参数名",
-          "example": "",
+          "example": "auto_increment",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -17036,7 +17039,7 @@
         {
           "disabled": false,
           "document": "参数值",
-          "example": "",
+          "example": "1",
           "member": "string",
           "name": "Value",
           "required": true,
@@ -17534,6 +17537,7 @@
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -17544,6 +17548,7 @@
           "example": "ap-guangzhou-1",
           "member": "string",
           "name": "Zone",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -17551,9 +17556,10 @@
         {
           "disabled": false,
           "document": "代理实例分布",
-          "example": "无",
+          "example": "[{\"InstanceId\": \"cdb-aykuksx3\",\"InstanceName\": \"cdb37262\",\"InstanceType\": \"1\",\"Status\": \"1\",\"Weight\": \"100\",\"Region\": \"ap-guangzhou\",\"Zone\": \"ap-guangzhou-1\",\"InstNodeId\": \"cbn-ehjshe\",\"InstNodeRole\": \"master\"}]",
           "member": "ProxyInst",
           "name": "ProxyInstance",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -17684,7 +17690,7 @@
         {
           "disabled": false,
           "document": "实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "cdb3874",
           "member": "string",
           "name": "InstanceName",
           "output_required": true,
@@ -17749,25 +17755,25 @@
         },
         {
           "disabled": false,
-          "document": "实例节点ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例节点ID",
           "example": "cbn-test",
           "member": "string",
           "name": "InstNodeId",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "节点角色\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点角色",
           "example": "master",
           "member": "string",
           "name": "InstNodeRole",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -17943,7 +17949,7 @@
         {
           "disabled": false,
           "document": "指定该节点分布在哪个可用区。",
-          "example": "无",
+          "example": "ap-beijing-3",
           "member": "string",
           "name": "Zone",
           "required": false,
@@ -17952,7 +17958,7 @@
         {
           "disabled": false,
           "document": "升级集群版实例时，如果要调整只读节点可用区，需要指定节点id。",
-          "example": "无",
+          "example": "dbn-h7erp111",
           "member": "string",
           "name": "NodeId",
           "required": false,
@@ -17966,8 +17972,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID 数组，单个实例 ID 格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同，可使用 [查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口获取，其值为输出参数中字段 InstanceId 的值。",
-          "example": "[\"cdb-f35wr6wj\\r\\n\"]",
+          "document": "实例 ID，单个实例 ID 格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同，可使用 [查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口获取，其值为输出参数中字段 InstanceId 的值。\n说明：可输入多个实例 ID 进行操作，json 格式如下。\n[\n    \"cdb-30z11v8s\",\n    \"cdb-93h11efg\"\n  ]",
+          "example": "cdb-f35wr6wj",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -17982,7 +17988,7 @@
         {
           "disabled": false,
           "document": "解隔离操作的结果集。",
-          "example": "无",
+          "example": "[{\"InstanceId\": \"cdb-f35wr6wj\",\"Code\": 0,\"Message\": \"ok\"}]",
           "member": "ReleaseResult",
           "name": "Items",
           "output_required": true,
@@ -18004,30 +18010,30 @@
         {
           "disabled": false,
           "document": "实例 ID。",
-          "example": "",
+          "example": "cdb-4zs10111",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "实例解隔离操作的结果值。返回值为0表示成功。",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "Code",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "实例解隔离操作的错误信息。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Message",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -18151,7 +18157,7 @@
         {
           "disabled": false,
           "document": "续费时长，单位：月，可选值包括 [1,2,3,4,5,6,7,8,9,10,11,12,24,36]。",
-          "example": "12",
+          "example": "1",
           "member": "int64",
           "name": "TimeSpan",
           "required": true,
@@ -18206,7 +18212,7 @@
         {
           "disabled": false,
           "document": "实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。",
-          "example": "无",
+          "example": "cdb-c1nl9rpv",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -18215,7 +18221,7 @@
         {
           "disabled": false,
           "document": "手动刷新轮转密码的实例账户名，例如root",
-          "example": "无",
+          "example": "andy",
           "member": "string",
           "name": "User",
           "required": true,
@@ -18224,7 +18230,7 @@
         {
           "disabled": false,
           "document": "手动刷新轮转密码的实例账户域名，例如%",
-          "example": "无",
+          "example": "172.1.1.1",
           "member": "string",
           "name": "Host",
           "required": true,
@@ -18315,9 +18321,10 @@
         {
           "disabled": false,
           "document": "只读组模式，可选值为：alone-系统自动分配只读组；allinone-新建只读组；join-使用现有只读组。",
-          "example": "''",
+          "example": "alone",
           "member": "string",
           "name": "RoGroupMode",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -18328,6 +18335,7 @@
           "example": "cdbrg-92zkeaq2",
           "member": "string",
           "name": "RoGroupId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -18338,6 +18346,7 @@
           "example": "your_group_name",
           "member": "string",
           "name": "RoGroupName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -18348,6 +18357,7 @@
           "example": "0",
           "member": "int64",
           "name": "RoOfflineDelay",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -18358,6 +18368,7 @@
           "example": "1",
           "member": "int64",
           "name": "RoMaxDelayTime",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -18368,6 +18379,7 @@
           "example": "1",
           "member": "int64",
           "name": "MinRoInGroup",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -18378,6 +18390,7 @@
           "example": "system",
           "member": "string",
           "name": "WeightMode",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -18388,6 +18401,7 @@
           "example": "0",
           "member": "int64",
           "name": "Weight",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -18398,6 +18412,7 @@
           "example": "[]",
           "member": "RoInstanceInfo",
           "name": "RoInstances",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -18408,6 +18423,7 @@
           "example": "10.89.90.66",
           "member": "string",
           "name": "Vip",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -18418,6 +18434,7 @@
           "example": "3306",
           "member": "int64",
           "name": "Vport",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -18428,6 +18445,7 @@
           "example": "vpc-ja6ts123",
           "member": "string",
           "name": "UniqVpcId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -18438,6 +18456,7 @@
           "example": "subnet-njh2bc99",
           "member": "string",
           "name": "UniqSubnetId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -18448,6 +18467,7 @@
           "example": "ap-beijing",
           "member": "string",
           "name": "RoGroupRegion",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -18458,6 +18478,7 @@
           "example": "ap-beijing-3",
           "member": "string",
           "name": "RoGroupZone",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -18468,6 +18489,7 @@
           "example": "1000",
           "member": "int64",
           "name": "DelayReplicationTime",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -18569,7 +18591,7 @@
         {
           "disabled": false,
           "document": "RO实例在RO组内上一次下线的时间",
-          "example": "''",
+          "example": "2024-09-09 16:40:30",
           "member": "string",
           "name": "OfflineTime",
           "output_required": true,
@@ -18646,7 +18668,7 @@
         {
           "disabled": false,
           "document": "RO实例名称",
-          "example": "''",
+          "example": "cdbro-khe2c111",
           "member": "string",
           "name": "InstanceName",
           "output_required": true,
@@ -19815,7 +19837,7 @@
         {
           "disabled": false,
           "document": "实例 ID。仅支持只读实例。",
-          "example": "cdb-test",
+          "example": "cdbro-lsjh9i11",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -19830,10 +19852,10 @@
         {
           "disabled": false,
           "document": "异步任务 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xx",
+          "example": "a6040589-3b098df5-b551d9e5-81c6bfdc",
           "member": "string",
           "name": "AsyncRequestId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -19852,7 +19874,7 @@
         {
           "disabled": false,
           "document": "实例 ID 。",
-          "example": "cdb-test",
+          "example": "cdb-himitj11",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -19867,9 +19889,10 @@
         {
           "disabled": false,
           "document": "异步任务 ID 。可以调用DescribeAsyncRequest 传入该 ID ，进行任务执行进度的查询",
-          "example": "xxxxxxx-xxxxxxxx",
+          "example": "02e874af-e4876fb4-4c672e64-86f17866",
           "member": "string",
           "name": "AsyncRequestId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -19915,7 +19938,7 @@
         {
           "disabled": false,
           "document": "实例 ID。仅支持只读实例。",
-          "example": "cdb-test",
+          "example": "cdb-himitj11",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -19930,10 +19953,10 @@
         {
           "disabled": false,
           "document": "异步任务 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xx",
+          "example": "a6040589-3b098df5-b551d9e5-81c6bfdc",
           "member": "string",
           "name": "AsyncRequestId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -19988,8 +20011,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例D",
-          "example": "\"cdb-g3rbtabc\"",
+          "document": "实例 ID。",
+          "example": "cdb-g3rbtabc",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -19997,8 +20020,8 @@
         },
         {
           "disabled": false,
-          "document": "目标数据库版本",
-          "example": "\"8.0\"",
+          "document": "目标数据库版本。",
+          "example": "8.0",
           "member": "string",
           "name": "DstMysqlVersion",
           "required": true,
@@ -20012,8 +20035,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务ID",
-          "example": "123",
+          "document": "任务 ID",
+          "example": "145",
           "member": "int64",
           "name": "JobId",
           "output_required": true,
@@ -20071,7 +20094,7 @@
         {
           "disabled": false,
           "document": "实例 ID。",
-          "example": "\"cdb-xxx\"",
+          "example": "cdb-rqd2jndd",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -20080,7 +20103,7 @@
         {
           "disabled": false,
           "document": "目标从实例。可选值：\"first\" - 第一备机；\"second\" - 第二备机。默认值为 \"first\"，仅多可用区实例支持设置为 \"second\"。",
-          "example": "\"first\"",
+          "example": "first",
           "member": "string",
           "name": "DstSlave",
           "required": false,
@@ -20106,8 +20129,8 @@
         },
         {
           "disabled": false,
-          "document": "集群版实例指定节点id发起主从切换。",
-          "example": "dbn-xxx",
+          "document": "集群版实例指定节点 ID 发起主从切换。",
+          "example": "dbn-iql06r1s",
           "member": "string",
           "name": "DstNodeId",
           "required": false,
@@ -20122,7 +20145,7 @@
         {
           "disabled": false,
           "document": "异步任务 ID。",
-          "example": "\"\"",
+          "example": "a6040589-3b098df5-b551d9e5-81c6bfdc",
           "member": "string",
           "name": "AsyncRequestId",
           "output_required": true,
@@ -20143,8 +20166,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "灾备实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同。",
-          "example": "cdb-***",
+          "document": "灾备实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。",
+          "example": "cdb-c1nl9rpv",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -20162,7 +20185,7 @@
           "example": "be9f64a6-fa652dc6-f5c878b6-a6a50746",
           "member": "string",
           "name": "AsyncRequestId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -20267,9 +20290,10 @@
         {
           "disabled": false,
           "document": "标签键",
-          "example": "无",
+          "example": "name",
           "member": "string",
           "name": "TagKey",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -20277,9 +20301,10 @@
         {
           "disabled": false,
           "document": "标签值",
-          "example": "无",
+          "example": "[\"zhang\",\"li\"]",
           "member": "string",
           "name": "TagValue",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": false

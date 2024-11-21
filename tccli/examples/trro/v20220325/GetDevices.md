@@ -8,8 +8,8 @@ Input:
 tccli trro GetDevices --cli-unfold-argument  \
     --PageNum 1 \
     --PageSize 10 \
-    --ProjectId abc \
-    --DeviceId abc
+    --ProjectId m82k5408n675phvb \
+    --DeviceId dev1
 ```
 
 Output: 
@@ -19,8 +19,8 @@ Output:
         "RequestId": "468bf31b-b5f7-44c4-8663-8d9548693cf5",
         "Devices": [
             {
-                "DeviceId": "xxx",
-                "DeviceName": "xxx",
+                "DeviceId": "dev1",
+                "DeviceName": "vin234",
                 "LicenseCount": 2,
                 "RemainDay": 30,
                 "ExpireTime": "167840945",
@@ -32,8 +32,8 @@ Output:
                 ]
             },
             {
-                "DeviceId": "xxx",
-                "DeviceName": "xxx",
+                "DeviceId": "dev1",
+                "DeviceName": "vin123",
                 "LicenseCount": 2,
                 "RemainDay": 30,
                 "ExpireTime": "167840945",

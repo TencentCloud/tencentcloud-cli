@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli waf DeleteAttackWhiteRule --cli-unfold-argument  \
-    --Domain  \
+    --Domain www.test.com \
     --Ids 1 2
 ```
 
@@ -17,7 +17,7 @@ Output:
         "FailIds": [
             1
         ],
-        "RequestId": "abc"
+        "RequestId": "1cc54bf4-cfeb-40cc-a823-035e52106df9"
     }
 }
 ```

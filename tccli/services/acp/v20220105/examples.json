@@ -3,7 +3,7 @@
     "CreateAppScanTask": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: acp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAppScanTask\n<公共请求参数>\n\n{\n    \"Remark\": \"备注信息啦\",\n    \"Platform\": \"0\",\n    \"TelNumber\": \"10086\",\n    \"Source\": \"2\",\n    \"SalesPerson\": \"张三\",\n    \"ContactName\": \"老王\",\n    \"TaskType\": \"2\",\n    \"CorpName\": \"测试有限公司\",\n    \"Email\": \"test@test.com\",\n    \"IsAgreePrivacy\": \"1\"\n}",
+        "input": "POST / HTTP/1.1\nHost: acp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAppScanTask\n<公共请求参数>\n\n{\n    \"Remark\": \"Remark备注信息\",\n    \"Platform\": \"0\",\n    \"TelNumber\": \"138XXXXXXXX\",\n    \"Source\": \"2\",\n    \"SalesPerson\": \"张三\",\n    \"ContactName\": \"张三\",\n    \"TaskType\": \"2\",\n    \"CorpName\": \"****科技有限公司\",\n    \"Email\": \"user****@tencent.com\",\n    \"IsAgreePrivacy\": \"1\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6c296e5b-48ad-4cfb-a90d-8010c9951341\",\n        \"Result\": 0,\n        \"TaskID\": \"271***520\"\n    }\n}",
         "title": "本地化任务"
       },
@@ -21,7 +21,7 @@
       },
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: acp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAppScanTask\n<公共请求参数>\n\n{\n    \"PrivacyTextName\": \"腾讯iOA隐私保护指引.txt\",\n    \"AppDownloadUrl\": \"https://bm****OYpo8YKRrbnTofaB.apk\",\n    \"Platform\": \"0\",\n    \"TelNumber\": \"10086\",\n    \"AppName\": \"ioa\",\n    \"PrivacyTextUrl\": \"https://bm****jc7yrar9xIKPYyvpEgVA.txt\",\n    \"AppPackage\": \"com.***.i**oa\",\n    \"Source\": \"2\",\n    \"SalesPerson\": \"张三\",\n    \"ContactName\": \"老王\",\n    \"TaskType\": \"1\",\n    \"CorpName\": \"测试有限企业\",\n    \"Email\": \"test@test.com\",\n    \"IsAgreePrivacy\": \"1\"\n}",
+        "input": "POST / HTTP/1.1\nHost: acp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAppScanTask\n<公共请求参数>\n\n{\n    \"PrivacyTextName\": \"腾讯iOA隐私保护指引.txt\",\n    \"AppDownloadUrl\": \"https://bm****OYpo8YKRrbnTofaB.apk\",\n    \"Platform\": \"0\",\n    \"TelNumber\": \"138XXXXXXXX\",\n    \"AppName\": \"ioa\",\n    \"PrivacyTextUrl\": \"https://bm****jc7yrar9xIKPYyvpEgVA.txt\",\n    \"AppPackage\": \"com.***.i**oa\",\n    \"Source\": \"2\",\n    \"SalesPerson\": \"张三\",\n    \"ContactName\": \"张三\",\n    \"TaskType\": \"1\",\n    \"CorpName\": \"****科技有限公司\",\n    \"Email\": \"user****@tencent.com\",\n    \"IsAgreePrivacy\": \"1\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ab653763-5494-42db-b7d3-4afd9eb76410\",\n        \"Result\": 0,\n        \"TaskID\": \"271***344\"\n    }\n}",
         "title": "App专家版隐私合规诊断示例"
       },

@@ -14,13 +14,14 @@ Output:
         "List": [
             {
                 "Count": 6,
+                "New": false,
                 "DstPort": 8080,
                 "Id": 3,
-                "Location": "",
+                "Location": "北京市-北京市",
                 "MachineExtraInfo": {
-                    "HostName": "",
+                    "HostName": "hn***",
                     "InstanceID": "ins-0cvonrya",
-                    "NetworkName": "",
+                    "NetworkName": "vpc-d7f***",
                     "NetworkType": 0,
                     "PrivateIP": "10.0.0.5",
                     "WanIP": "106.52.29.133"
@@ -38,14 +39,15 @@ Output:
                 "VulSupportDefense": 1
             },
             {
+                "New": false,
                 "Count": 5,
                 "DstPort": 8080,
                 "Id": 2,
                 "Location": "局域网",
                 "MachineExtraInfo": {
-                    "HostName": "",
+                    "HostName": "hn***",
                     "InstanceID": "ins-0cvonrya",
-                    "NetworkName": "",
+                    "NetworkName": "vpc-d7f***",
                     "NetworkType": 0,
                     "PrivateIP": "10.0.0.5",
                     "WanIP": "106.52.29.133"
@@ -68,9 +70,9 @@ Output:
                 "Id": 1,
                 "Location": "局域网",
                 "MachineExtraInfo": {
-                    "HostName": "",
+                    "HostName": "hn***",
                     "InstanceID": "ins-0cvonrya",
-                    "NetworkName": "",
+                    "NetworkName": "vpc-d7f***",
                     "NetworkType": 0,
                     "PrivateIP": "10.0.0.5",
                     "WanIP": "106.52.29.133"
@@ -85,7 +87,8 @@ Output:
                 "VulDefenceStatus": 0,
                 "VulId": 101824,
                 "VulName": "Apache log4j2 远程代码执行漏洞 (CVE-2021-44228)",
-                "VulSupportDefense": 1
+                "VulSupportDefense": 1,
+                "New": false
             }
         ],
         "RequestId": "dcdbc4d6-54c1-45d5-ab8e-4a7c9275c168",

@@ -19,11 +19,11 @@ Output:
                 "Id": 5570,
                 "Uin": "3232323",
                 "Name": "tt1",
-                "Description": "",
+                "Description": "desc",
                 "Status": 1,
                 "IsAll": 0,
-                "IncludeDir": "/",
-                "ExcludeDir": "",
+                "IncludeDir": "/usr",
+                "ExcludeDir": "/bin",
                 "BackupType": 0,
                 "Weekday": "1;2;3;4;5",
                 "Hour": "00:00",
@@ -34,7 +34,7 @@ Output:
             }
         ],
         "TotalCount": 1,
-        "RequestId": "abc"
+        "RequestId": "d73d4495-1895-43a8-95be-f447b02e253d"
     }
 }
 ```

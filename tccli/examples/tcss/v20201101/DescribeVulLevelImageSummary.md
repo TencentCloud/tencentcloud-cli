@@ -18,7 +18,7 @@ Output:
         "MediumLevelVulRegistryImagePercent": 0.0,
         "HighLevelVulRegistryImagePercent": 0.0,
         "MediumLevelVulLocalImagePercent": 0.0,
-        "RequestId": "xx",
+        "RequestId": "8a64a4f9-864c-49c6-adcb-21b483de477a",
         "CriticalLevelVulLocalImagePercent": 0.0,
         "CriticalLevelVulRegistryImagePercent": 0.0,
         "RegistryNewestImageCount": 0

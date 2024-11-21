@@ -9,7 +9,7 @@ tccli waf UpsertSession --cli-unfold-argument  \
     --Domain test.com \
     --Category match \
     --KeyOrStartMat hashId \
-    --EndMat 12 \
+    --EndMat end \
     --Source get \
     --StartOffset -1 \
     --EndOffset -1 \
@@ -21,8 +21,8 @@ Output:
 ```
 {
     "Response": {
-        "Data": "",
-        "RequestId": "abc"
+        "Data": "success",
+        "RequestId": "5029e2b0-493c-4dcc-9e4e-d53ab98ede99"
     }
 }
 ```

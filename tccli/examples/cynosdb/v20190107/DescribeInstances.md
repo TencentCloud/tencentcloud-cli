@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cynosdb DescribeInstances --cli-unfold-argument  \
-    --Limit 0 \
+    --Limit 20 \
     --Offset 0 \
     --OrderBy CREATETIME \
     --OrderByType ASC \
@@ -17,7 +17,7 @@ tccli cynosdb DescribeInstances --cli-unfold-argument  \
     --Filters.0.Operator  \
     --DbType MYSQL \
     --Status running \
-    --InstanceIds cynosdbmysql-ins-1asd45qwe
+    --InstanceIds cynosdbmysql-ins-1asd5qwe
 ```
 
 Output: 
@@ -27,13 +27,13 @@ Output:
         "TotalCount": 0,
         "InstanceSet": [
             {
-                "Uin": "1111111",
-                "AppId": 0,
+                "Uin": "238762734",
+                "AppId": 23762834,
                 "ClusterId": "cynosdbmysql-asd45qwe",
-                "ClusterName": "abc",
+                "ClusterName": "MyClusterName",
                 "InstanceId": "cynosdbmysql-ins-asd45qwe",
-                "InstanceName": "abc",
-                "ProjectId": 0,
+                "InstanceName": "MyInstanceName",
+                "ProjectId": 2342,
                 "Region": "ap-guangzhou",
                 "Zone": "ap-guangzhou-3",
                 "Status": "running",
@@ -49,29 +49,29 @@ Output:
                 "UpdateTime": "2020-09-22 00:00:00",
                 "CreateTime": "2020-09-22 00:00:00",
                 "VpcId": "vpc-12as56",
-                "SubnetId": "subnet-123asd",
-                "Vip": "192.0.0.0",
+                "SubnetId": "subnet-12kasd",
+                "Vip": "192.0.2.1",
                 "Vport": 3306,
                 "PayMode": 0,
                 "PeriodEndTime": "2020-09-22 00:00:00",
-                "DestroyDeadlineText": "abc",
+                "DestroyDeadlineText": "<5 天",
                 "IsolateTime": "2020-09-22 00:00:00",
-                "NetType": 0,
-                "WanDomain": "",
-                "WanIP": "",
-                "WanPort": 0,
-                "WanStatus": "",
-                "DestroyTime": "",
+                "NetType": 1,
+                "WanDomain": "cynosdbpg-bzkxxrmt.wan.domain.com",
+                "WanIP": "3.1.5.2",
+                "WanPort": 3306,
+                "WanStatus": "running",
+                "DestroyTime": "2024-01-04 00:09:10",
                 "CynosVersion": "2.0.10",
-                "ProcessingTask": "",
+                "ProcessingTask": "taskUpgradeStorage",
                 "RenewFlag": 0,
-                "MinCpu": 0,
-                "MaxCpu": 0,
-                "ServerlessStatus": "",
-                "StorageId": "",
+                "MinCpu": 1,
+                "MaxCpu": 8,
+                "ServerlessStatus": "paused",
+                "StorageId": "cynosdbpg-bzkxxrmt",
                 "StoragePayMode": 0,
                 "PhysicalZone": "ap-guangzhou-3",
-                "BusinessType": "",
+                "BusinessType": "bus_a",
                 "Tasks": [
                     {
                         "TaskId": 111110,
@@ -84,8 +84,8 @@ Output:
                 "IsFreeze": "no",
                 "ResourceTags": [
                     {
-                        "TagKey": "abc",
-                        "TagValue": "abc"
+                        "TagKey": "tag_key_1",
+                        "TagValue": "tag_value_1"
                     }
                 ],
                 "MasterZone": "ap-guangzhou-3",
@@ -97,26 +97,27 @@ Output:
                         "InstanceGroupType": "ha",
                         "InstanceGroupId": "cynosdbmysql-grp-asd45qwe",
                         "VpcId": "vpc-12as45",
-                        "SubnetId": "subnet-12as45",
-                        "NetType": 0,
+                        "SubnetId": "subnet-cbhs7ush",
+                        "NetType": 1,
                         "Vip": "192.0.0.0",
                         "Vport": 3306,
-                        "WanDomain": "",
-                        "WanIP": "",
-                        "WanPort": 0,
-                        "WanStatus": ""
+                        "WanDomain": "cynosdbpg-bzkxxrmt.wan,domain,com",
+                        "WanIP": "23.15.5.1",
+                        "WanPort": 3306,
+                        "WanStatus": "running"
                     }
                 ],
                 "ResourcePackages": [
                     {
-                        "PackageId": "",
-                        "PackageType": ""
+                        "DeductionPriority": 0,
+                        "PackageId": "package-bhsy2snc",
+                        "PackageType": "CCU"
                     }
                 ],
-                "InstanceIndexMode": ""
+                "InstanceIndexMode": "onlyRowIndex"
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "fd5759b5-89e9-483c-b79c-d99b27c33192"
     }
 }
 ```

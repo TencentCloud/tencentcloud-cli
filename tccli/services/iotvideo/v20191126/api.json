@@ -98,6 +98,13 @@
       "output": "CreateUploadPathResponse",
       "status": "online"
     },
+    "CreateUploadTest": {
+      "document": "设备申请cos上传证书",
+      "input": "CreateUploadTestRequest",
+      "name": "设备申请cos上传证书",
+      "output": "CreateUploadTestResponse",
+      "status": "online"
+    },
     "CreateUsrToken": {
       "document": "本接口（CreateUsrToken）用于终端用户获取IoT Video平台的accessToken，初始化SDK,连接到IoT Video接入服务器。",
       "input": "CreateUsrTokenRequest",
@@ -399,6 +406,13 @@
       "output": "RefundStorageServiceResponse",
       "status": "online"
     },
+    "RenewUploadTest": {
+      "document": "设备刷新cos上传证书",
+      "input": "RenewUploadTestRequest",
+      "name": "设备刷新cos上传证书",
+      "output": "RenewUploadTestResponse",
+      "status": "online"
+    },
     "RunDevice": {
       "document": "本接口（RunDevice）用于启用设备，可进行批量操作，每次操作最多100台设备。",
       "input": "RunDeviceRequest",
@@ -542,6 +556,52 @@
       ],
       "usage": "out"
     },
+    "CertificateInfo": {
+      "document": "证书信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "SecretId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "SecretId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "SecretKey\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "SecretKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Token\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "Token",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "过期时间，UNIX时间戳，单位秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "uint64",
+          "name": "ExpiredTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "ClearDeviceActiveCodeRequest": {
       "document": "ClearDeviceActiveCode请求参数结构体",
       "members": [
@@ -614,6 +674,62 @@
         }
       ],
       "usage": "both"
+    },
+    "CosCertificate": {
+      "document": "申请上传证书回包",
+      "members": [
+        {
+          "disabled": false,
+          "document": "cos存储桶\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "StorageBucket",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "cos存储园区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "StorageRegion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "存储路径，录制场景下该值为存储目录\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "StoragePath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "证书信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "CertificateInfo",
+          "name": "TempCertificate",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "SessionKey\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "SessionKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "CreateAnonymousAccessTokenRequest": {
       "document": "CreateAnonymousAccessToken请求参数结构体",
@@ -1442,7 +1558,7 @@
         {
           "disabled": false,
           "document": "产品ID",
-          "example": "",
+          "example": "6RI32FUWBS",
           "member": "string",
           "name": "ProductId",
           "required": true,
@@ -1451,7 +1567,7 @@
         {
           "disabled": false,
           "document": "固件文件名",
-          "example": "",
+          "example": "a.zip",
           "member": "string",
           "name": "FileName",
           "required": true,
@@ -1466,10 +1582,56 @@
         {
           "disabled": false,
           "document": "固件上传地址URL，用户可将本地的固件文件通过该URL以PUT的请求方式上传。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "*********",
           "member": "string",
           "name": "Data",
+          "output_required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateUploadTestRequest": {
+      "document": "CreateUploadTest请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "package ID",
+          "example": "",
+          "member": "string",
+          "name": "PkgId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备TID",
+          "example": "",
+          "member": "string",
+          "name": "Tid",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateUploadTestResponse": {
+      "document": "CreateUploadTest返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "申请设备证书返回的信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "CosCertificate",
+          "name": "Data",
+          "type": "object",
           "value_allowed_null": true
         },
         {
@@ -1934,7 +2096,7 @@
           "example": "000001010006aada08000000a68601800a000000a6860100",
           "member": "string",
           "name": "SrcServiceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1944,7 +2106,7 @@
           "example": "0000010100d641410b000000b086018004000000b0860100",
           "member": "string",
           "name": "ServiceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1954,7 +2116,7 @@
           "example": "ap-guangzhou",
           "member": "string",
           "name": "StorageRegion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1964,7 +2126,7 @@
           "example": "xxxx",
           "member": "string",
           "name": "Tid",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1974,7 +2136,7 @@
           "example": "0",
           "member": "int64",
           "name": "ChnNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1984,7 +2146,7 @@
           "example": "9223801602303852555",
           "member": "string",
           "name": "AccessId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1994,7 +2156,7 @@
           "example": "1602662040",
           "member": "int64",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2004,7 +2166,7 @@
           "example": "1605340416",
           "member": "int64",
           "name": "EndTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2014,17 +2176,17 @@
           "example": "1",
           "member": "int64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "新增的云存定单列表",
+          "document": "新增的云存订单列表",
           "example": "无",
           "member": "StorageOrder",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3068,7 +3230,7 @@
           "example": "000001010006aada08000000a68601800a000000a6860100",
           "member": "string",
           "name": "ServiceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3078,7 +3240,7 @@
           "example": "ap-guangzhou",
           "member": "string",
           "name": "StorageRegion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3088,7 +3250,7 @@
           "example": "xxxx",
           "member": "string",
           "name": "Tid",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3098,7 +3260,7 @@
           "example": "0",
           "member": "int64",
           "name": "ChnNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3108,7 +3270,7 @@
           "example": "9223801559354179592",
           "member": "string",
           "name": "AccessId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3118,7 +3280,7 @@
           "example": "1602664844",
           "member": "int64",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3128,7 +3290,7 @@
           "example": "1613292044",
           "member": "int64",
           "name": "EndTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3138,17 +3300,17 @@
           "example": "1",
           "member": "int64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "云存定单列表",
+          "document": "云存订单列表",
           "example": "无",
           "member": "StorageOrder",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4699,6 +4861,76 @@
         }
       ],
       "usage": "out"
+    },
+    "RenewCertificate": {
+      "document": "刷新证书信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "刷新证书信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "CertificateInfo",
+          "name": "TempCertificate",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "RenewUploadTestRequest": {
+      "document": "RenewUploadTest请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "package ID",
+          "example": "",
+          "member": "string",
+          "name": "PkgId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备TID",
+          "example": "",
+          "member": "string",
+          "name": "Tid",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "SessionKeys",
+          "example": "",
+          "member": "string",
+          "name": "SessionKey",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RenewUploadTestResponse": {
+      "document": "RenewUploadTest返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "刷新证书返回的信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "RenewCertificate",
+          "name": "Data",
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "RunDeviceRequest": {
       "document": "RunDevice请求参数结构体",

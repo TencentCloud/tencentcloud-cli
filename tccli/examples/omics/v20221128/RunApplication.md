@@ -8,8 +8,8 @@ Input:
 tccli omics RunApplication --cli-unfold-argument  \
     --ApplicationId app-sweet-cerulean-frog-569111 \
     --ProjectId prj-peaceful-pink-bird-631828 \
-    --Name test \
-    --Description test \
+    --Name test application \
+    --Description test run application \
     --EnvironmentId env-05d0g0w2 \
     --InputBase64 e30K \
     --CacheClearDelay 0 \
@@ -38,8 +38,8 @@ Input:
 tccli omics RunApplication --cli-unfold-argument  \
     --ApplicationId app-sweet-cerulean-frog-569111 \
     --ProjectId prj-peaceful-pink-bird-631828 \
-    --Name test \
-    --Description test \
+    --Name test application \
+    --Description test run application \
     --EnvironmentId env-05d0g0w2 \
     --InputBase64 e30K \
     --TableId tab-rapid-si̇lver-gerbil-971422 \

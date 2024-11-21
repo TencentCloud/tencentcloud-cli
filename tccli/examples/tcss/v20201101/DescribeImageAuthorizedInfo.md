@@ -11,27 +11,27 @@ Output:
 ```
 {
     "Response": {
-        "TotalAuthorizedCnt": 1,
-        "UsedAuthorizedCnt": 1,
-        "ScannedImageCnt": 1,
-        "NotScannedImageCnt": 1,
-        "NotScannedLocalImageCnt": 1,
-        "TrialAuthorizedCnt": 1,
-        "UsedTrialAuthorizedCnt": 1,
-        "PurchasedAuthorizedCnt": 1,
-        "UsedPurchasedAuthorizedCnt": 1,
-        "CanApplyFreeImageAuthorize": true,
+        "CanApplyFreeImageAuthorize": false,
         "ImageScanInquireInfo": {
-            "InquireKey": "abc",
-            "Capcity": 1,
-            "Useage": 1,
-            "StartTime": "abc",
-            "EndTime": "abc",
-            "PurchaseStatus": "abc",
-            "ResourceID": "abc"
+            "Capcity": 18601,
+            "EndTime": "2024-12-24 13:01:18",
+            "InquireKey": "sv_yunjing_cssil_image",
+            "PurchaseStatus": "Normal",
+            "ResourceID": "427c59056cbd64e30b3990e8d7b25c19",
+            "StartTime": "2024-09-24 13:01:18",
+            "Useage": 17365
         },
-        "RepeatImageIdCnt": 1,
-        "RequestId": "abc"
+        "NotScannedImageCnt": 38,
+        "NotScannedLocalImageCnt": 12,
+        "PurchasedAuthorizedCnt": 300000,
+        "RepeatImageIdCnt": 2,
+        "RequestId": "0ad4465e-cf84-411f-bd10-75bbb3a9c9aa",
+        "ScannedImageCnt": 11687,
+        "TotalAuthorizedCnt": 300000,
+        "TrialAuthorizedCnt": 0,
+        "UsedAuthorizedCnt": 300000,
+        "UsedPurchasedAuthorizedCnt": 300000,
+        "UsedTrialAuthorizedCnt": 0
     }
 }
 ```

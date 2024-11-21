@@ -6,16 +6,16 @@ Input:
 
 ```
 tccli tcss DescribeAccessControlEventsExport --cli-unfold-argument  \
-    --ExportField xxx
+    --ExportField filed_name
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "DownloadUrl": "abc",
-        "JobId": "abc",
-        "RequestId": "abc"
+        "DownloadUrl": "",
+        "JobId": "10001",
+        "RequestId": "8bc803fd-d85d-47b8-9e2b-9644674be677"
     }
 }
 ```

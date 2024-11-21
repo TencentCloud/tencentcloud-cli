@@ -15,15 +15,15 @@ Output:
     "Response": {
         "List": [
             {
-                "Level": "xx",
-                "AffectedImageCount": 0,
-                "VulName": "xx",
-                "PocID": "xx",
                 "AffectedContainerCount": 0,
-                "ID": 0
+                "AffectedImageCount": 1,
+                "ID": 1027671,
+                "Level": "HIGH",
+                "PocID": "pcmgr-166817",
+                "VulName": "Telnetd encrypt_keyid: Remote Root function pointer overwrite"
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "ce6b8df8-5cc6-4ab5-8401-1394483c0fec"
     }
 }
 ```

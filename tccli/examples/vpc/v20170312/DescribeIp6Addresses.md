@@ -14,42 +14,42 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 0,
+        "TotalCount": 1,
         "AddressSet": [
             {
-                "AddressId": "abc",
-                "AddressName": "abc",
-                "AddressStatus": "abc",
-                "AddressIp": "abc",
-                "InstanceId": "abc",
+                "AddressId": "eip-lrhy2lpe",
+                "AddressName": "demo",
+                "AddressStatus": "BIND",
+                "AddressIp": "2402:4e00:1000:2d00:0:8f3f:6:9895",
+                "InstanceId": "ins-0cu6wix4",
                 "CreatedTime": "2020-09-22T00:00:00+00:00",
-                "NetworkInterfaceId": "abc",
-                "PrivateAddressIp": "abc",
+                "NetworkInterfaceId": "eni-85sohtb7",
+                "PrivateAddressIp": "2402:4e00:1000:2d00:0:8f3f:6:9895",
                 "IsArrears": true,
                 "IsBlocked": true,
                 "IsEipDirectConnection": true,
-                "AddressType": "abc",
+                "AddressType": "EIP6",
                 "CascadeRelease": true,
                 "EipAlgType": {
                     "Ftp": true,
                     "Sip": true
                 },
-                "InternetServiceProvider": "abc",
+                "InternetServiceProvider": "BGP",
                 "LocalBgp": true,
                 "Bandwidth": 1,
-                "InternetChargeType": "abc",
+                "InternetChargeType": "TRAFFIC_POSTPAID_BY_HOUR",
                 "TagSet": [
                     {
-                        "Key": "abc",
-                        "Value": "abc"
+                        "Key": "role",
+                        "Value": "developer"
                     }
                 ],
                 "DeadlineDate": "2020-09-22",
-                "InstanceType": "abc",
-                "Egress": "abc"
+                "InstanceType": "CVM",
+                "Egress": "center_egress1"
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "64b212c4-d541-44c3-80ff-1131967a77c5"
     }
 }
 ```
@@ -69,42 +69,42 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 0,
+        "TotalCount": 1,
         "AddressSet": [
             {
-                "AddressId": "abc",
-                "AddressName": "abc",
-                "AddressStatus": "abc",
-                "AddressIp": "abc",
-                "InstanceId": "abc",
+                "AddressId": "eip-lrhy2lpe",
+                "AddressName": "demo",
+                "AddressStatus": "BIND",
+                "AddressIp": "2402:4e00:1000:2d00:0:8f3f:6:9895",
+                "InstanceId": "ins-0cu6wix4",
                 "CreatedTime": "2020-09-22T00:00:00+00:00",
-                "NetworkInterfaceId": "abc",
-                "PrivateAddressIp": "abc",
+                "NetworkInterfaceId": "eni-85sohtb7",
+                "PrivateAddressIp": "2402:4e00:1000:2d00:0:8f3f:6:9895",
                 "IsArrears": true,
                 "IsBlocked": true,
                 "IsEipDirectConnection": true,
-                "AddressType": "abc",
+                "AddressType": "EIP6",
                 "CascadeRelease": true,
                 "EipAlgType": {
                     "Ftp": true,
                     "Sip": true
                 },
-                "InternetServiceProvider": "abc",
+                "InternetServiceProvider": "BGP",
                 "LocalBgp": true,
                 "Bandwidth": 1,
-                "InternetChargeType": "abc",
+                "InternetChargeType": "TRAFFIC_POSTPAID_BY_HOUR",
                 "TagSet": [
                     {
-                        "Key": "abc",
-                        "Value": "abc"
+                        "Key": "role",
+                        "Value": "developer"
                     }
                 ],
                 "DeadlineDate": "2020-09-22",
-                "InstanceType": "abc",
-                "Egress": "abc"
+                "InstanceType": "CVM",
+                "Egress": "center_egress1"
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "64b212c4-d541-44c3-80ff-1131967a77c5"
     }
 }
 ```

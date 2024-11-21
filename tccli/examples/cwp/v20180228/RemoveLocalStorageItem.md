@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cwp RemoveLocalStorageItem --cli-unfold-argument  \
-    --Key xxx
+    --Key keyname
 ```
 
 Output: 

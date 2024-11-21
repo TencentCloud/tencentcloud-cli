@@ -1,6 +1,6 @@
 **Example 1: 配置 SSL 证书**
 
-针对站点（ZoneId 为 zone-2fgd17m17xw）下的域名（abc.test.com）配置 SSL 证书（CertId 为 cert-244ffgv7m17xw）。
+针对站点（ZoneId 为 zone-2fgd17m17xw）下的域名（abc.test.com）配置 SSL 证书（CertId 为 J2JqATrt）。
 
 Input: 
 
@@ -9,7 +9,7 @@ tccli teo ModifyHostsCertificate --cli-unfold-argument  \
     --ZoneId zone-2fgd17m17xw \
     --Hosts abc.test.com \
     --Mode sslcert \
-    --ServerCertInfo.0.CertId cert-244ffgv7m17xw
+    --ServerCertInfo.0.CertId J2JqATrt
 ```
 
 Output: 
@@ -45,7 +45,7 @@ Output:
 
 **Example 3: 配置边缘双向认证**
 
-针对站点（ZoneId 为 zone-2fgd17m17xw）下的域名（abc.test.com）配置 边缘双向认证（CertId 为 cert-xxxxx）。
+针对站点（ZoneId 为 zone-2fgd17m17xw）下的域名（abc.test.com）配置 边缘双向认证（CertId 为 J2JqATrt）。
 
 Input: 
 
@@ -54,7 +54,7 @@ tccli teo ModifyHostsCertificate --cli-unfold-argument  \
     --ZoneId zone-2fgd17m17xw \
     --Hosts abc.test.com \
     --ClientCertInfo.Switch on \
-    --ClientCertInfo.CertInfos.0.CertId cert-xxxxx
+    --ClientCertInfo.CertInfos.0.CertId J2JqATrt
 ```
 
 Output: 

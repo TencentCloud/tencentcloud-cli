@@ -364,7 +364,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: pts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateJob\n<公共请求参数>\n\n{\n    \"ProjectId\": \"project-xx\",\n    \"ScenarioId\": \"scenario-xx\",\n    \"Note\": \"this is my note\",\n    \"JobId\": \"job-xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc-123-xyz\"\n    }\n}",
         "title": "创建任务"
       }
     ],

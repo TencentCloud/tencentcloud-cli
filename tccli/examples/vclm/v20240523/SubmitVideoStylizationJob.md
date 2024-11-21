@@ -1,13 +1,14 @@
-**Example 1: 成功调用**
+**Example 1: 成功提交任务**
 
-成功调用
+成功提交视频风格化任务
 
 Input: 
 
 ```
 tccli vclm SubmitVideoStylizationJob --cli-unfold-argument  \
     --StyleId 2d_anime \
-    --VideoUrl http://xxxx.mp4
+    --VideoUrl http://xxxx.mp4 \
+    --StyleStrength medium
 ```
 
 Output: 

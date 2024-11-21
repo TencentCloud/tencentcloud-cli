@@ -20,7 +20,7 @@
       {
         "document": "调整数据库代理地址",
         "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AdjustCdbProxyAddress\n<公共请求参数>\n\n{\n    \"ProxyGroupId\": \"proxy-il2nlsdn\",\n    \"ProxyAddressId\": \"proxy-il2nlsdn\",\n    \"IsKickOut\": true,\n    \"MinCount\": 1,\n    \"MaxDelay\": 10,\n    \"WeightMode\": \"custom\",\n    \"FailOver\": true,\n    \"AutoAddRo\": true,\n    \"ReadOnly\": false,\n    \"TransSplit\": false,\n    \"ConnectionPool\": true,\n    \"ProxyAllocation\": [\n        {\n            \"Region\": \"ap-guangzhou\",\n            \"Zone\": \"ap-guangzhou-2\",\n            \"ProxyInstance\": [\n                {\n                    \"InstanceId\": \"cdb-aykuksx3\",\n                    \"Weight\": 100\n                }\n            ]\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"111-1314-333-2321212\",\n        \"AsyncRequestId\": \"1312\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"111-1314-333-2321212\",\n        \"AsyncRequestId\": \"a6040589-3b098df5-b551d9e5-81c6bfdc\"\n    }\n}",
         "title": "调整数据库代理地址"
       }
     ],
@@ -58,7 +58,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckMigrateCluster\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
         "title": "高可用实例一键迁移到集群版校验"
       }
     ],
@@ -197,13 +197,13 @@
     "CreateDBInstance": [
       {
         "document": "购买主实例",
-        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDBInstance\n<公共请求参数>\n\n{\n    \"ResourceTags\": [\n        {\n            \"TagKey\": \"marchtest\",\n            \"TagValue\": [\n                \"test1\"\n            ]\n        }\n    ],\n    \"Zone\": \"ap-guangzhou-3\",\n    \"UniqVpcId\": \"vpc-0akbol5v\",\n    \"ProjectId\": \"0\",\n    \"InstanceRole\": \"master\",\n    \"GoodsNum\": \"1\",\n    \"Period\": \"1\",\n    \"Volume\": \"25\",\n    \"EngineVersion\": \"5.6\",\n    \"UniqSubnetId\": \"subnet-fyrtjbqw\",\n    \"Memory\": \"1000\",\n    \"InstanceNodes\": \"2\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDBInstance\n<公共请求参数>\n\n{\n    \"ResourceTags\": [\n        {\n            \"TagKey\": \"march\",\n            \"TagValue\": [\n                \"march1\"\n            ]\n        }\n    ],\n    \"Zone\": \"ap-guangzhou-3\",\n    \"UniqVpcId\": \"vpc-0akbol5v\",\n    \"ProjectId\": \"0\",\n    \"InstanceRole\": \"master\",\n    \"GoodsNum\": \"1\",\n    \"Period\": \"1\",\n    \"Volume\": \"25\",\n    \"EngineVersion\": \"5.6\",\n    \"UniqSubnetId\": \"subnet-fyrtjbqw\",\n    \"Memory\": \"1000\",\n    \"InstanceNodes\": \"2\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"InstanceIds\": [\n            \"cdb-pn6gd5jp\"\n        ],\n        \"DealIds\": [\n            \"20171201110011\"\n        ]\n    }\n}",
         "title": "购买主实例"
       },
       {
         "document": "购买只读实例",
-        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDBInstance\n<公共请求参数>\n\n{\n    \"RoGroup\": {\n        \"RoGroupMode\": \"allinone\",\n        \"RoGroupName\": \"jersey_test\",\n        \"RoMaxDelayTime\": \"5\",\n        \"MinRoInGroup\": \"1\",\n        \"RoOfflineDelay\": \"1\"\n    },\n    \"GoodsNum\": \"1\",\n    \"InstanceRole\": \"ro\",\n    \"MasterInstanceId\": \"cdb-fn3f9xpx\",\n    \"Period\": \"1\",\n    \"Volume\": \"100\",\n    \"Memory\": \"4000\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDBInstance\n<公共请求参数>\n\n{\n    \"RoGroup\": {\n        \"RoGroupMode\": \"allinone\",\n        \"RoGroupName\": \"jersey\",\n        \"RoMaxDelayTime\": \"5\",\n        \"MinRoInGroup\": \"1\",\n        \"RoOfflineDelay\": \"1\"\n    },\n    \"GoodsNum\": \"1\",\n    \"InstanceRole\": \"ro\",\n    \"MasterInstanceId\": \"cdb-fn3f9xpx\",\n    \"Period\": \"1\",\n    \"Volume\": \"100\",\n    \"Memory\": \"4000\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"DealIds\": [\n            \"20171205110051\"\n        ],\n        \"InstanceIds\": [\n            \"cdbro-hlpl4ik9\"\n        ]\n    }\n}",
         "title": "购买只读实例"
       }
@@ -211,7 +211,7 @@
     "CreateDBInstanceHour": [
       {
         "document": "创建云数据库实例（按量计费）",
-        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDBInstanceHour\n<公共请求参数>\n\n{\n    \"ResourceTags\": [\n        {\n            \"TagKey\": \"marchtest\",\n            \"TagValue\": [\n                \"test1\"\n            ]\n        }\n    ],\n    \"Zone\": \"ap-guangzhou-3\",\n    \"UniqVpcId\": \"vpc-0akbol5v\",\n    \"ProjectId\": \"0\",\n    \"SlaveZone\": \"ap-guangzhou-3\",\n    \"InstanceRole\": \"master\",\n    \"GoodsNum\": \"1\",\n    \"DeployMode\": \"0\",\n    \"Volume\": \"25\",\n    \"EngineVersion\": \"5.6\",\n    \"UniqSubnetId\": \"subnet-fyrtjbqw\",\n    \"Memory\": \"1000\",\n    \"ProtectMode\": \"0\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDBInstanceHour\n<公共请求参数>\n\n{\n    \"ResourceTags\": [\n        {\n            \"TagKey\": \"march\",\n            \"TagValue\": [\n                \"march1\"\n            ]\n        }\n    ],\n    \"Zone\": \"ap-guangzhou-3\",\n    \"UniqVpcId\": \"vpc-0akbol5v\",\n    \"ProjectId\": \"0\",\n    \"SlaveZone\": \"ap-guangzhou-3\",\n    \"InstanceRole\": \"master\",\n    \"GoodsNum\": \"1\",\n    \"DeployMode\": \"0\",\n    \"Volume\": \"25\",\n    \"EngineVersion\": \"5.6\",\n    \"UniqSubnetId\": \"subnet-fyrtjbqw\",\n    \"Memory\": \"1000\",\n    \"ProtectMode\": \"0\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"InstanceIds\": [\n            \"cdb-03brtubb\"\n        ],\n        \"DealIds\": [\n            \"20171201160000002670226599824833\"\n        ]\n    }\n}",
         "title": "创建云数据库实例（按量计费）"
       }
@@ -543,8 +543,8 @@
     "DescribeClusterInfo": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterInfo\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-xxx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"ClusterName\": \"dbname\",\n        \"ReadWriteAddress\": {\n            \"ResourceId\": \"cdb-xxx\",\n            \"UniqVpcId\": \"vpc-xxx\",\n            \"UniqSubnetId\": \"subnet-xxx\",\n            \"Vip\": \"192.168.3.4\",\n            \"VPort\": 3306,\n            \"WanDomain\": \"\",\n            \"WanPort\": 0\n        },\n        \"ReadOnlyAddress\": [\n            {\n                \"ResourceId\": \"cdb-xxx|readonly\",\n                \"UniqVpcId\": \"vpc-xxx\",\n                \"UniqSubnetId\": \"subnet-xxx\",\n                \"Vip\": \"192.168.3.5\",\n                \"VPort\": 3306,\n                \"WanDomain\": \"\",\n                \"WanPort\": 0\n            }\n        ],\n        \"NodeList\": [\n            {\n                \"NodeId\": \"dbn-xxx\",\n                \"Role\": \"master\",\n                \"Zone\": \"ap-guangzhou-1\",\n                \"Weight\": 1,\n                \"Status\": \"online\"\n            },\n            {\n                \"NodeId\": \"dbn-xxx\",\n                \"Role\": \"slave\",\n                \"Zone\": \"ap-guangzhou-2\",\n                \"Weight\": 1,\n                \"Status\": \"online\"\n            }\n        ],\n        \"ReadonlyLimit\": 10,\n        \"NodeCount\": 2,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterInfo\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-dctw4edd\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ClusterName\": \"dbname\",\n        \"ReadWriteAddress\": {\n            \"ResourceId\": \"cdb-dctw4edd\",\n            \"UniqVpcId\": \"vpc-hendkj\",\n            \"UniqSubnetId\": \"subnet-eushjw\",\n            \"Vip\": \"192.168.3.4\",\n            \"VPort\": 3306,\n            \"WanDomain\": \"gz-cdb-*******.sql.tencentcdb.com\",\n            \"WanPort\": 23356\n        },\n        \"ReadOnlyAddress\": [\n            {\n                \"ResourceId\": \"cdbro-3a1eccdd\",\n                \"UniqVpcId\": \"vpc-ehndjs\",\n                \"UniqSubnetId\": \"subnet-euwhsn\",\n                \"Vip\": \"192.168.3.5\",\n                \"VPort\": 3306,\n                \"WanDomain\": \"gz-cdb-*******.sql.tencentcdb.com\",\n                \"WanPort\": 23356\n            }\n        ],\n        \"NodeList\": [\n            {\n                \"NodeId\": \"dbn-qqeo1111\",\n                \"Role\": \"master\",\n                \"Zone\": \"ap-guangzhou-1\",\n                \"Weight\": 1,\n                \"Status\": \"online\"\n            },\n            {\n                \"NodeId\": \"dbn-qqeo2222\",\n                \"Role\": \"slave\",\n                \"Zone\": \"ap-guangzhou-2\",\n                \"Weight\": 1,\n                \"Status\": \"online\"\n            }\n        ],\n        \"ReadonlyLimit\": 10,\n        \"NodeCount\": 2,\n        \"RequestId\": \"mnksadas-cb0d-4943-9b17-c3306ed3d\"\n    }\n}",
         "title": "查询集群版实例信息"
       }
     ],
@@ -560,7 +560,7 @@
       {
         "document": "查询实例特性，诸如内核小版本、是否开启审计等。",
         "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBFeatures\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-qwerasdf\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"IsSupportAudit\": true,\n        \"AuditNeedUpgrade\": false,\n        \"IsSupportEncryption\": true,\n        \"EncryptionNeedUpgrade\": false,\n        \"IsRemoteRo\": false,\n        \"MasterRegion\": \"\",\n        \"IsSupportUpdateSubVersion\": true,\n        \"CurrentSubVersion\": \"20190203\",\n        \"TargetSubVersion\": \"20190930\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"AuditNeedUpgrade\": false,\n        \"CurrentSubVersion\": \"20230701\",\n        \"EncryptionNeedUpgrade\": false,\n        \"IsRemoteRo\": false,\n        \"IsSupportAudit\": true,\n        \"IsSupportEncryption\": true,\n        \"IsSupportUpdateSubVersion\": true,\n        \"MasterRegion\": \"\",\n        \"RequestId\": \"68782c1e-d613-4451-b993-adef1cc7a3a6\",\n        \"TargetSubVersion\": \"20230702\"\n    }\n}",
         "title": "查询实例版本属性"
       }
     ],
@@ -600,7 +600,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBInstanceInfo\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-oaj9cbla\"\n}",
-        "output": "{\n    \"Response\": {\n        \"DefaultKmsRegion\": \"ap-hongkong\",\n        \"Encryption\": \"NO\",\n        \"InstanceId\": \"cdb-oaj9cbla\",\n        \"InstanceName\": \"cdb_name\",\n        \"KeyId\": \"\",\n        \"KeyRegion\": \"\",\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"DefaultKmsRegion\": \"ap-hongkong\",\n        \"Encryption\": \"NO\",\n        \"InstanceId\": \"cdb-oaj9cbla\",\n        \"InstanceName\": \"cdb_name\",\n        \"KeyId\": \"***-CDB\",\n        \"KeyRegion\": \"ap-hongkong\",\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
         "title": "查询实例信息"
       }
     ],
@@ -741,8 +741,8 @@
     "DescribeInstanceUpgradeType": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceUpgradeType\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-xxxxx\",\n    \"DstCpu\": 1,\n    \"DstMemory\": 1000,\n    \"DstDisk\": 200,\n    \"DstVersion\": \"8.0\",\n    \"DstProtectMode\": 0,\n    \"DstDeployMode\": 0,\n    \"DstSlaveZone\": 100003,\n    \"DstBackupZone\": 0,\n    \"DstCdbType\": \"CUSTOM\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"InstanceId\": \"cdb-xxx\",\n        \"UpgradeType\": \"Trsf\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceUpgradeType\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-2wpip1dd\",\n    \"DstCpu\": 1,\n    \"DstMemory\": 1000,\n    \"DstDisk\": 200,\n    \"DstVersion\": \"8.0\",\n    \"DstProtectMode\": 0,\n    \"DstDeployMode\": 0,\n    \"DstSlaveZone\": 100003,\n    \"DstBackupZone\": 0,\n    \"DstCdbType\": \"CUSTOM\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"InstanceId\": \"cdb-2wpip1dd\",\n        \"UpgradeType\": \"Trsf\"\n    }\n}",
         "title": "查询数据库实例升级类型"
       }
     ],
@@ -805,9 +805,9 @@
     "DescribeRoGroups": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRoGroups\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-eggz8oj5\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"RoGroups\": [\n            {\n                \"RoGroupName\": \"ro_group_172023\",\n                \"RoMaxDelayTime\": 1,\n                \"RoOfflineDelay\": 0,\n                \"RoGroupMode\": \"alone\",\n                \"RoInstances\": [\n                    {\n                        \"Zone\": \"ap-guangzhou-3\",\n                        \"MasterInstanceId\": \"cdb-eggz8oj5\",\n                        \"Memory\": 2000,\n                        \"Status\": 1,\n                        \"VpcId\": 0,\n                        \"InstanceId\": \"cdbro-h9k7cx05\",\n                        \"Volume\": 100,\n                        \"SubnetId\": 0,\n                        \"HourFeeStatus\": 1,\n                        \"RoStatus\": \"online\",\n                        \"OfflineTime\": \"0000-00-00 00:00:00\",\n                        \"Region\": \"ap-guangzhou\",\n                        \"DeadlineTime\": \"2018-01-04 16:48:30\",\n                        \"DeviceType\": \"CUSTOM\",\n                        \"EngineVersion\": \"5.6\",\n                        \"TaskStatus\": 1,\n                        \"InstanceName\": \"cdb_ro_172023\",\n                        \"Weight\": 1,\n                        \"PayType\": 0,\n                        \"InstanceType\": 3,\n                        \"Vip\": \"10.66.199.133\",\n                        \"Qps\": 2400,\n                        \"Vport\": 3306\n                    }\n                ],\n                \"RoGroupId\": \"cdbrg-eb2w7dto\",\n                \"Vip\": \"10.66.199.133\",\n                \"MinRoInGroup\": 1,\n                \"Vport\": 3306,\n                \"WeightMode\": \"system\"\n            }\n        ]\n    }\n}",
-        "title": "查询云数据库实例的所有RO组的信息"
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRoGroups\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-93hvfefg\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e18a101-e6f5-440c-a9d3-3b30aef256e1\",\n        \"RoGroups\": [\n            {\n                \"DelayReplicationTime\": 0,\n                \"MinRoInGroup\": 1,\n                \"RoGroupId\": \"cdbrg-lsj**ijm\",\n                \"RoGroupMode\": \"\",\n                \"RoGroupName\": \"tommy1\",\n                \"RoGroupRegion\": \"ap-beijing\",\n                \"RoGroupZone\": \"ap-beijing-6\",\n                \"RoInstances\": [\n                    {\n                        \"DeadlineTime\": \"2024-11-12 16:11:06\",\n                        \"DeviceType\": \"CUSTOM\",\n                        \"EngineVersion\": \"8.0\",\n                        \"HourFeeStatus\": 1,\n                        \"InstanceId\": \"cdbro-lsjh**jm\",\n                        \"InstanceName\": \"cdb_ro_21**63\",\n                        \"InstanceType\": 3,\n                        \"MasterInstanceId\": \"cdb-93**fefg\",\n                        \"Memory\": 4000,\n                        \"OfflineTime\": \"2024-01-25 15:05:59\",\n                        \"PayType\": 0,\n                        \"Qps\": 4400,\n                        \"Region\": \"ap-beijing\",\n                        \"RoStatus\": \"online\",\n                        \"Status\": 1,\n                        \"SubnetId\": 2738750,\n                        \"TaskStatus\": 0,\n                        \"Vip\": \"172.*.32.13\",\n                        \"Volume\": 60,\n                        \"VpcId\": 7078258,\n                        \"Vport\": 3306,\n                        \"Weight\": 2,\n                        \"Zone\": \"ap-beijing-6\"\n                    }\n                ],\n                \"RoMaxDelayTime\": 10,\n                \"RoOfflineDelay\": 1,\n                \"UniqSubnetId\": \"subnet-jp6**13n\",\n                \"UniqVpcId\": \"vpc-4ko**3u6\",\n                \"Vip\": \"172.*.64.7\",\n                \"Vport\": 3306,\n                \"Weight\": 0,\n                \"WeightMode\": \"system\"\n            }\n        ]\n    }\n}",
+        "title": "查询云数据库实例的所有 RO 组的信息"
       }
     ],
     "DescribeRoMinScale": [
@@ -912,14 +912,6 @@
         "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DisassociateSecurityGroups\n<公共请求参数>\n\n{\n    \"SecurityGroupId\": \"sg-ajr1jzgj\",\n    \"InstanceIds\": [\n        \"cdb-eb2w7dto\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1a42feb9-82087f71-6a0031ac-699a92a8\"\n    }\n}",
         "title": "安全组批量解绑云资源"
-      }
-    ],
-    "InitDBInstances": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InitDBInstances\n<公共请求参数>\n\n{\n    \"NewPassword\": \"xx\",\n    \"Vport\": 0,\n    \"Parameters\": [\n        {\n            \"Name\": \"lower_case_table_names\",\n            \"Value\": \"1\"\n        },\n        {\n            \"Name\": \"character_set_server\",\n            \"Value\": \"utf8\"\n        }\n    ],\n    \"InstanceIds\": [\n        \"cdb-f35wr6wj\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"AsyncRequestIds\": [\n            \"8cd119d4-61ba-11e7-aeff-018cfa1f5560\"\n        ]\n    }\n}",
-        "title": "初始化新实例"
       }
     ],
     "InquiryPriceUpgradeInstances": [
@@ -1085,9 +1077,17 @@
     "ModifyDBInstanceProject": [
       {
         "document": "",
-        "input": "https://cdb.tencentcloudapi.com/?Action=ModifyDBInstanceProject\n&InstanceIds.0=cdb-f35wr6wj\n&NewProjectId=12\n&<公共请求参数>",
+        "input": "https://cdb.tencentcloudapi.com/?Action=ModifyDBInstanceProject\n&InstanceIds.0=cdb-f35wr6wj\n&NewProjectId=11954\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1a42feb9-82087f71-6a0031ac-699a92a8\"\n    }\n}",
         "title": "修改云数据库实例的所属项目"
+      }
+    ],
+    "ModifyDBInstanceReadOnlyStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDBInstanceReadOnlyStatus\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-uns231ns\",\n    \"ReadOnly\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2cf0e063-0f70f622-2d5c3f7c-0e612ab0\"\n    }\n}",
+        "title": "设置MySQL云数据库实例为只读"
       }
     ],
     "ModifyDBInstanceSecurityGroups": [
@@ -1141,7 +1141,7 @@
     "ModifyNameOrDescByDpId": [
       {
         "document": "",
-        "input": "https://cdb.tencentcloudapi.com/?Action=ModifyNameOrDescByDpId\n&DeployGroupName=cdb-ezq1vzem\n&Description=test\n&DeployGroupId=test\n&<公共请求参数>",
+        "input": "https://cdb.tencentcloudapi.com/?Action=ModifyNameOrDescByDpId\n&DeployGroupName=cdb-ezq1vzem\n&Description=一区群组\n&DeployGroupId=172837\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b4a719b5-ffb34ab6-816c43c1-8c6a23eb\"\n    }\n}",
         "title": "修改置放群组的名称或者描述"
       }
@@ -1203,7 +1203,7 @@
     "OpenDBInstanceEncryption": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OpenDBInstanceEncryption\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-qwer1234\",\n    \"KeyId\": \"testkey\",\n    \"KeyRegion\": \"ap-guangzou\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OpenDBInstanceEncryption\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-qwer1234\",\n    \"KeyId\": \"KMS-CDB\",\n    \"KeyRegion\": \"ap-guangzhou\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1ac120c8-744a-4c15-be4e-4431511c0233\"\n    }\n}",
         "title": "开通加密服务"
       }
@@ -1236,7 +1236,7 @@
       {
         "document": "",
         "input": "https://cdb.tencentcloudapi.com/?Action=ReleaseIsolatedDBInstances\n&InstanceIds.0=cdb-f35wr6wj\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eeab769d-0c08-456a-971f-dc24f4c585c8\",\n        \"Items\": [\n            {\n                \"InstanceId\": \"cdb-f35wr6wj\",\n                \"Code\": 0,\n                \"Message\": \"ok\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eeab769d-0c08-456a-971f-dc24f4c585c8\",\n        \"Items\": [\n            {\n                \"InstanceId\": \"cdb-f35wr6wj\",\n                \"Code\": 0,\n                \"Message\": \"\"\n            }\n        ]\n    }\n}",
         "title": "解隔离云数据库实例"
       }
     ],
@@ -1251,7 +1251,7 @@
     "RenewDBInstance": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RenewDBInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-ezq1vzem\",\n    \"TimeSpan\": \"12\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RenewDBInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-ezq1vzem\",\n    \"TimeSpan\": \"1\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"DealId\": \"20170320233333\"\n    }\n}",
         "title": "续费云数据库实例"
       }
@@ -1259,8 +1259,8 @@
     "ResetPassword": [
       {
         "document": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResetPassword\n<公共请求参数>",
-        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResetPassword\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"User\": \"abc\",\n    \"Host\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResetPassword\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-c1nl9rpv\",\n    \"User\": \"andy\",\n    \"Host\": \"172.1.1.1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d5b053f3-d58e-4048-aef9-b8cc9f044951\"\n    }\n}",
         "title": "手动刷新轮转密码"
       }
     ],
@@ -1299,17 +1299,17 @@
     "StartReplication": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartReplication\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-test\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"AsyncRequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartReplication\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdbro-lsjh9i11\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"AsyncRequestId\": \"a6040589-3b098df5-b551d9e5-81c6bfdc\"\n    }\n}",
         "title": "开启 RO 复制"
       }
     ],
     "StopCpuExpand": [
       {
         "document": "用于关闭当前实例的弹性扩容配置。",
-        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopCpuExpand\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"AsyncRequestId\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
-        "title": "停止弹性扩容"
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopCpuExpand\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-himitj11\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AsyncRequestId\": \"02e874af-e4876fb4-4c672e64-86f17866\",\n        \"RequestId\": \"d5b053f3-d58e-4048-aef9-b8cc9f044951\"\n    }\n}",
+        "title": "关闭弹性扩容"
       }
     ],
     "StopDBImportJob": [
@@ -1323,8 +1323,8 @@
     "StopReplication": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopReplication\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-test\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"AsyncRequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopReplication\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-himitj11\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"AsyncRequestId\": \"a6040589-3b098df5-b551d9e5-81c6bfdc\"\n    }\n}",
         "title": "停止 RO 复制"
       }
     ],
@@ -1339,7 +1339,7 @@
     "SubmitInstanceUpgradeCheckJob": [
       {
         "document": "无",
-        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitInstanceUpgradeCheckJob\n<公共请求参数>\n\n{\n    \"InstanceId\": \"037c0b3b-1320-11ee-b0c3-6c92bf629868\",\n    \"DstMysqlVersion\": \"8.0\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitInstanceUpgradeCheckJob\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-g3rbtabc\",\n    \"DstMysqlVersion\": \"8.0\"\n}",
         "output": "{\n    \"Response\": {\n        \"JobId\": 145,\n        \"RequestId\": \"a4b54232-d7af-4df3-8329-5110e3ece9c3\"\n    }\n}",
         "title": "提交实例升级检查任务"
       }
@@ -1355,7 +1355,7 @@
     "SwitchDBInstanceMasterSlave": [
       {
         "document": "",
-        "input": "https://cdb.tencentcloudapi.com/?Action=SwitchDBInstanceMasterSlave\n&InstanceId=cdb-xxxxxxxx\n&DstSlave=second\n&<公共请求参数>",
+        "input": "https://cdb.tencentcloudapi.com/?Action=SwitchDBInstanceMasterSlave\n&InstanceId=cdb-rqd2jndd\n&DstSlave=second\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"faae8d6a-38fb-44de-988e-5a0e78aba4a7\",\n        \"AsyncRequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
         "title": "切换实例主从角色"
       }

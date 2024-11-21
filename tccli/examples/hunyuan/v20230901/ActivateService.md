@@ -1,7 +1,6 @@
-**Example 1: 示例	**
+**Example 1: 调用成功**
 
-示例	
-
+服务开通成功
 
 Input: 
 
@@ -14,7 +13,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "d4e1f224-fa21-40bc-9ee7-4bb13abece6e"
     }
 }
 ```

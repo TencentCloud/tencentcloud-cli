@@ -3,7 +3,7 @@
     "AgentPayDeals": [
       {
         "document": "",
-        "input": "https://partners.tencentcloudapi.com/?Action=AgentPayDeals\n&OwnerUin=123456\n&AgentPay=1\n&DealNames.0=20180204123456\n&<公共请求参数>",
+        "input": "https://partners.tencentcloudapi.com/?Action=AgentPayDeals\n&OwnerUin=100000032030\n&AgentPay=1\n&DealNames.0=20180204123456\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "支付订单"
       }
@@ -19,23 +19,23 @@
     "AssignClientsToSales": [
       {
         "document": "成功分派一批代客给业务员",
-        "input": "POST / HTTP/1.1\nHost: partners.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AssignClientsToSales\n<公共请求参数>\n\n{\n    \"ClientUins\": [\n        12345,\n        12346\n    ],\n    \"SalesUin\": \"12347\",\n    \"AssignClientStatus\": \"normal\",\n    \"AssignActionType\": \"assign\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"da71d659-c1f7-4cc6-9f8d-3ef36b867ffe\",\n        \"FailedUins\": [\n            12346\n        ],\n        \"SucceedUins\": [\n            12345\n        ]\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: partners.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AssignClientsToSales\n<公共请求参数>\n\n{\n    \"ClientUins\": [\n        \"1000002\"\n    ],\n    \"SalesUin\": \"2000002\",\n    \"AssignClientStatus\": \"normal\",\n    \"AssignActionType\": \"assign\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"da71d659-c1f7-4cc6-9f8d-3ef36b867ffe\",\n        \"FailedUins\": [\n            \"1000002\"\n        ],\n        \"SucceedUins\": [\n            \"2000002\"\n        ]\n    }\n}",
         "title": "成功分派一批代客给业务员"
       }
     ],
     "AuditApplyClient": [
       {
         "document": "对待审核某客户，给予审核通过操作",
-        "input": "POST / HTTP/1.1\nHost: partners.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AuditApplyClient\n<公共请求参数>\n\n{\n    \"Note\": \"reason\",\n    \"AuditResult\": \"accept\",\n    \"ClientUin\": \"123456\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"AuditResult\": \"xx\",\n        \"ClientUin\": \"xx\",\n        \"AgentTime\": 1,\n        \"Uin\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: partners.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AuditApplyClient\n<公共请求参数>\n\n{\n    \"Note\": \"reason\",\n    \"AuditResult\": \"accept\",\n    \"ClientUin\": \"2000002\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\",\n        \"AuditResult\": \"qcloudaudit\",\n        \"ClientUin\": \"2000002\",\n        \"AgentTime\": 1,\n        \"Uin\": \"1000001\"\n    }\n}",
         "title": "审核通过某客户"
       }
     ],
     "CreatePayRelationForClient": [
       {
         "document": "创建合作伙伴和客户的强代付关系",
-        "input": "https://partners.tencentcloudapi.com/?Action=CreatePayRelationForClient\n&ClientUin=123\n&<公共请求参数>",
+        "input": "https://partners.tencentcloudapi.com/?Action=CreatePayRelationForClient\n&ClientUin=100000032030\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5da478d6-abf4-47a3-80a6-6660d170eee3\"\n    }\n}",
         "title": "创建强代付关系"
       }
@@ -44,7 +44,7 @@
       {
         "document": "",
         "input": "https://partners.tencentcloudapi.com/?Action=DescribeAgentAuditedClients\n&Offset=0\n&Limit=1\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c5d1d9fc-0ecb-495d-98bb-f8a1eee37a22\",\n        \"AgentClientSet\": [\n            {\n                \"Uin\": \"3286669433\",\n                \"ClientUin\": \"2461871653\",\n                \"ClientRemark\": \"\",\n                \"ClientName\": \"2461871653\",\n                \"ClientFlag\": \"a\",\n                \"AuthType\": \"-1\",\n                \"AgentTime\": \"1476195568\",\n                \"AppId\": \"1252765299\",\n                \"LastMonthAmt\": 0,\n                \"ThisMonthAmt\": 0,\n                \"HasOverdueBill\": 0,\n                \"ClientType\": \"new\",\n                \"ProjectType\": \"self\",\n                \"SalesUin\": \"100009484937\",\n                \"SalesName\": \"sales2\",\n                \"Mail\": \"100*****@qq.com\"\n            }\n        ],\n        \"TotalCount\": 9\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c5d1d9fc-0ecb-495d-98bb-f8a1eee37a22\",\n        \"AgentClientSet\": [\n            {\n                \"Uin\": \"3286669433\",\n                \"ClientUin\": \"2461871653\",\n                \"ClientRemark\": \"测试mark\",\n                \"ClientName\": \"2461871653\",\n                \"ClientFlag\": \"b\",\n                \"AuthType\": \"-1\",\n                \"AgentTime\": \"1476195568\",\n                \"AppId\": \"1252765299\",\n                \"LastMonthAmt\": 0,\n                \"ThisMonthAmt\": 0,\n                \"HasOverdueBill\": 0,\n                \"ClientType\": \"new\",\n                \"ProjectType\": \"self\",\n                \"SalesUin\": \"100009484937\",\n                \"SalesName\": \"sales2\",\n                \"Mail\": \"100*****@qq.com\"\n            }\n        ],\n        \"TotalCount\": 9\n    }\n}",
         "title": "获取已审核客户列表"
       }
     ],
@@ -52,14 +52,14 @@
       {
         "document": "查询某代理商2018年2月份业务明细",
         "input": "https://partners.tencentcloudapi.com/?Action=DescribeAgentBills\n&SettleMonth=2018-02\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"AgentBillSet\": [\n            {\n                \"OrderId\": \"xx\",\n                \"ClientUin\": \"xx\",\n                \"ProjectType\": \"xx\",\n                \"ClientType\": \"xx\",\n                \"PayerMode\": \"xx\",\n                \"ActivityId\": \"xx\",\n                \"Uin\": \"xx\",\n                \"PayMode\": \"xx\",\n                \"ClientRemark\": \"xx\",\n                \"SettleMonth\": \"xx\",\n                \"PayTime\": \"2020-09-22 00:00:00\",\n                \"Amt\": 0,\n                \"GoodsType\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"AgentBillSet\": [\n            {\n                \"ActivityId\": \"0\",\n                \"Amt\": 125,\n                \"ClientRemark\": \"有特批\",\n                \"ClientType\": \"old\",\n                \"ClientUin\": \"2000002\",\n                \"GoodsType\": \"购买云服务\",\n                \"OrderId\": \"202401311730494235252\",\n                \"PayMode\": \"prepay\",\n                \"PayTime\": \"2024-01-31 06:06:46\",\n                \"PayerMode\": \"selfpay\",\n                \"ProjectType\": \"platform\",\n                \"SettleMonth\": \"2024-01\",\n                \"Uin\": \"1000001\"\n            }\n        ],\n        \"RequestId\": \"84a1e38a-95a1-4cc4-ac7d-232a2d872d45\"\n    }\n}",
         "title": "查询代理商指定月份业务明细"
       }
     ],
     "DescribeAgentClientGrade": [
       {
         "document": "",
-        "input": "https://partners.tencentcloudapi.com/?Action=DescribeAgentClientGrade\n&ClientUin=123456\n&<公共请求参数>",
+        "input": "https://partners.tencentcloudapi.com/?Action=DescribeAgentClientGrade\n&ClientUin=1000002\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8272b0b3-96f5-4247-bb6d-da8bb9892068\",\n        \"AuditStatus\": 1,\n        \"AuthState\": 1,\n        \"ClientGrade\": \"T2\",\n        \"ClientType\": 1\n    }\n}",
         "title": "查询客户级别"
       }
@@ -74,7 +74,7 @@
       {
         "document": "请求一个代理商名下代客，只取1个（Limit参数）",
         "input": "https://partners.tencentcloudapi.com/?Action=DescribeAgentClients\n&Offset=0\n&Limit=1\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"AgentClientSet\": [\n            {\n                \"Status\": 1,\n                \"SalesName\": \"xx\",\n                \"ClientUin\": \"xx\",\n                \"ClientFlag\": \"xx\",\n                \"SalesUin\": \"xx\",\n                \"Phone\": \"xx\",\n                \"ApplyTime\": 1,\n                \"Uin\": \"xx\",\n                \"HasOverdueBill\": 1,\n                \"Mail\": \"xx\",\n                \"ClientName\": \"xx\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"AgentClientSet\": [\n            {\n                \"ApplyTime\": 1722396845,\n                \"ClientFlag\": \"b\",\n                \"ClientName\": \"测试测试\",\n                \"ClientUin\": \"2000002\",\n                \"HasOverdueBill\": 0,\n                \"Mail\": \"dadd*******@qq.com\",\n                \"Phone\": \"111****0090\",\n                \"SalesName\": \"testname\",\n                \"SalesUin\": \"1000001\",\n                \"Status\": 1,\n                \"Uin\": \"1000002\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"fc90795c-1613-44e4-80ca-ce272a91d891\"\n    }\n}",
         "title": "成功示例"
       }
     ],
@@ -82,7 +82,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: partners.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAgentDealsByCache\n<公共请求参数>\n\n{\n    \"Limit\": \"1\",\n    \"Offset\": \"0\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"78b52639-8471-41c1-a05a-1ea787a605e0\",\n        \"AgentDealSet\": [\n            {\n                \"DealId\": \"290644558\",\n                \"DealName\": \"20240108121000906445591\",\n                \"BigDealId\": \"20240108121000906445581\",\n                \"GoodsCategoryId\": \"176258\",\n                \"OwnerUin\": \"700000232121\",\n                \"AppId\": \"251205746\",\n                \"GoodsNum\": \"1\",\n                \"GoodsPrice\": {\n                    \"RealTotalCost\": -100000,\n                    \"OriginalTotalCost\": -100000\n                },\n                \"ProductInfo\": [\n                    {\n                        \"Name\": \"计费测试商品新购\",\n                        \"Value\": \"jfcs\"\n                    }\n                ],\n                \"Creater\": \"700000232121\",\n                \"CreatTime\": \"2024-01-08 15:56:08\",\n                \"UpdateTime\": \"2024-01-08 15:56:12\",\n                \"PaymentMethod\": \"按月：个月\",\n                \"Payer\": \"700000232121\",\n                \"BillId\": \"20240108121000906445591\",\n                \"PayEndTime\": \"2024-01-08 15:56:11\",\n                \"Status\": \"6\",\n                \"VoucherDecline\": \"0\",\n                \"PayerMode\": \"0\",\n                \"GoodsName\": \"计费测试商品\",\n                \"SubGoodsName\": \"非资源工厂验证预付费子产品（勿动）\",\n                \"ClientRemark\": \"\",\n                \"ClientType\": \"new\",\n                \"ProjectType\": \"platform\",\n                \"SalesUin\": \"0\",\n                \"DealStatus\": \"已退款\",\n                \"ActionType\": \"refund\",\n                \"ActivityId\": \"\",\n                \"OverdueTime\": \"2024-01-23 15:56:08\",\n                \"ResourceIds\": [\n                    \"4712106445241\"\n                ],\n                \"RefundMap\": [\n                    {\n                        \"DealName\": \"20240108121000906445241\",\n                        \"RefundAmount\": 100000\n                    }\n                ]\n            }\n        ],\n        \"TotalCount\": 23408\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"78b52639-8471-41c1-a05a-1ea787a605e0\",\n        \"AgentDealSet\": [\n            {\n                \"DealId\": \"290644558\",\n                \"DealName\": \"20240108121000906445591\",\n                \"BigDealId\": \"20240108121000906445581\",\n                \"GoodsCategoryId\": \"176258\",\n                \"OwnerUin\": \"700000232121\",\n                \"AppId\": \"251205746\",\n                \"GoodsNum\": \"1\",\n                \"GoodsPrice\": {\n                    \"RealTotalCost\": -100000,\n                    \"OriginalTotalCost\": -100000\n                },\n                \"ProductInfo\": [\n                    {\n                        \"Name\": \"计费测试商品新购\",\n                        \"Value\": \"jfcs\"\n                    }\n                ],\n                \"Creater\": \"700000232121\",\n                \"CreatTime\": \"2024-01-08 15:56:08\",\n                \"UpdateTime\": \"2024-01-08 15:56:12\",\n                \"PaymentMethod\": \"按月：个月\",\n                \"Payer\": \"700000232121\",\n                \"BillId\": \"20240108121000906445591\",\n                \"PayEndTime\": \"2024-01-08 15:56:11\",\n                \"Status\": \"6\",\n                \"VoucherDecline\": \"0\",\n                \"PayerMode\": \"0\",\n                \"GoodsName\": \"计费测试商品\",\n                \"SubGoodsName\": \"非资源工厂验证预付费子产品（勿动）\",\n                \"ClientRemark\": \"客户备注\",\n                \"ClientType\": \"new\",\n                \"ProjectType\": \"platform\",\n                \"SalesUin\": \"0\",\n                \"DealStatus\": \"已退款\",\n                \"ActionType\": \"refund\",\n                \"ActivityId\": \"0\",\n                \"OverdueTime\": \"2024-01-23 15:56:08\",\n                \"ResourceIds\": [\n                    \"4712106445241\"\n                ],\n                \"RefundMap\": [\n                    {\n                        \"DealName\": \"20240108121000906445241\",\n                        \"RefundAmount\": 100000\n                    }\n                ]\n            }\n        ],\n        \"TotalCount\": 23408\n    }\n}",
         "title": "获取某代理商缓存订单"
       }
     ],
@@ -90,7 +90,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: partners.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAgentPayDealsV2\n<公共请求参数>\n\n{\n    \"Limit\": \"1\",\n    \"Offset\": \"0\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"asas\",\n        \"AgentPayDealSet\": [\n            {\n                \"DealId\": \"1078264383\",\n                \"DealName\": \"20240108122000905906371\",\n                \"BigDealId\": \"20240108122000905906361\",\n                \"GoodsCategoryId\": \"100058\",\n                \"OwnerUin\": \"700000232122\",\n                \"AppId\": \"251205747\",\n                \"GoodsNum\": \"1\",\n                \"GoodsPrice\": {\n                    \"RealTotalCost\": 1650,\n                    \"OriginalTotalCost\": 1750\n                },\n                \"ProductInfo\": [\n                    {\n                        \"Name\": \"磁盘属性\",\n                        \"Value\": \"数据盘\"\n                    },\n                    {\n                        \"Name\": \"容量\",\n                        \"Value\": \"50GB\"\n                    },\n                    {\n                        \"Name\": \"磁盘类型\",\n                        \"Value\": \"高性能云硬盘\"\n                    },\n                    {\n                        \"Name\": \"可用区\",\n                        \"Value\": \"广州二区\"\n                    }\n                ],\n                \"Creater\": \"700000232122\",\n                \"CreatTime\": \"2024-01-08 10:13:49\",\n                \"UpdateTime\": \"2024-01-08 10:14:55\",\n                \"PaymentMethod\": \"按月：1个月\",\n                \"Payer\": \"700000413752\",\n                \"BillId\": \"20240108122000905906371\",\n                \"PayEndTime\": \"2024-01-08 10:14:53\",\n                \"Status\": \"4\",\n                \"VoucherDecline\": \"100\",\n                \"PayerMode\": \"1\",\n                \"GoodsName\": \"云硬盘CBS\",\n                \"SubGoodsName\": \"高性能云硬盘\",\n                \"ClientRemark\": \"\",\n                \"ClientType\": \"new\",\n                \"ProjectType\": \"platform\",\n                \"SalesUin\": \"0\",\n                \"DealStatus\": \"分配完成\",\n                \"ActionType\": \"purchase\",\n                \"ActivityId\": \"\",\n                \"OverdueTime\": \"2024-01-23 10:13:48\",\n                \"ResourceIds\": [\n                    \"disk-bos529hc\"\n                ]\n            }\n        ],\n        \"TotalCount\": 154\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2153b1f3-70a5-42e0-9348-b60111c3863d\",\n        \"AgentPayDealSet\": [\n            {\n                \"DealId\": \"1078264383\",\n                \"DealName\": \"20240108122000905906371\",\n                \"BigDealId\": \"20240108122000905906361\",\n                \"GoodsCategoryId\": \"100058\",\n                \"OwnerUin\": \"700000232122\",\n                \"AppId\": \"251205747\",\n                \"GoodsNum\": \"1\",\n                \"GoodsPrice\": {\n                    \"RealTotalCost\": 1650,\n                    \"OriginalTotalCost\": 1750\n                },\n                \"ProductInfo\": [\n                    {\n                        \"Name\": \"磁盘属性\",\n                        \"Value\": \"数据盘\"\n                    },\n                    {\n                        \"Name\": \"容量\",\n                        \"Value\": \"50GB\"\n                    },\n                    {\n                        \"Name\": \"磁盘类型\",\n                        \"Value\": \"高性能云硬盘\"\n                    },\n                    {\n                        \"Name\": \"可用区\",\n                        \"Value\": \"广州二区\"\n                    }\n                ],\n                \"Creater\": \"700000232122\",\n                \"CreatTime\": \"2024-01-08 10:13:49\",\n                \"UpdateTime\": \"2024-01-08 10:14:55\",\n                \"PaymentMethod\": \"按月：1个月\",\n                \"Payer\": \"700000413752\",\n                \"BillId\": \"20240108122000905906371\",\n                \"PayEndTime\": \"2024-01-08 10:14:53\",\n                \"Status\": \"4\",\n                \"VoucherDecline\": \"100\",\n                \"PayerMode\": \"1\",\n                \"GoodsName\": \"云硬盘CBS\",\n                \"SubGoodsName\": \"高性能云硬盘\",\n                \"ClientRemark\": \"客户备注\",\n                \"ClientType\": \"new\",\n                \"ProjectType\": \"platform\",\n                \"SalesUin\": \"0\",\n                \"DealStatus\": \"分配完成\",\n                \"ActionType\": \"purchase\",\n                \"ActivityId\": \"0\",\n                \"OverdueTime\": \"2024-01-23 10:13:48\",\n                \"ResourceIds\": [\n                    \"disk-bos529hc\"\n                ]\n            }\n        ],\n        \"TotalCount\": 154\n    }\n}",
         "title": "获取某代理商代付订单"
       }
     ],
@@ -105,8 +105,8 @@
     "DescribeAgentSelfPayDealsV2": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: partners.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAgentSelfPayDealsV2\n<公共请求参数>\n\n{\n    \"OwnerUin\": \"123456\",\n    \"Limit\": \"1\",\n    \"Offset\": \"0\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"78b52639-8471-41c1-a05a-1ea787a605e0\",\n        \"AgentPayDealSet\": [\n            {\n                \"DealId\": \"1078276337\",\n                \"DealName\": \"20240108121000906445591\",\n                \"BigDealId\": \"20240108121000906445581\",\n                \"GoodsCategoryId\": \"176258\",\n                \"OwnerUin\": \"700000232121\",\n                \"AppId\": \"251205746\",\n                \"GoodsNum\": \"1\",\n                \"GoodsPrice\": {\n                    \"RealTotalCost\": -100000,\n                    \"OriginalTotalCost\": -100000\n                },\n                \"ProductInfo\": [\n                    {\n                        \"Name\": \"计费测试商品新购\",\n                        \"Value\": \"jfcs\"\n                    }\n                ],\n                \"Creater\": \"700000232121\",\n                \"CreatTime\": \"2024-01-08 15:56:09\",\n                \"UpdateTime\": \"2024-01-08 15:56:13\",\n                \"PaymentMethod\": \"按月：个月\",\n                \"Payer\": \"700000232121\",\n                \"BillId\": \"20240108121000906445591\",\n                \"PayEndTime\": \"2024-01-08 15:56:11\",\n                \"Status\": \"6\",\n                \"VoucherDecline\": \"0\",\n                \"PayerMode\": \"0\",\n                \"GoodsName\": \"计费测试商品\",\n                \"SubGoodsName\": \"非资源工厂验证预付费子产品（勿动）\",\n                \"ClientRemark\": \"\",\n                \"ClientType\": \"new\",\n                \"ProjectType\": \"platform\",\n                \"SalesUin\": \"0\",\n                \"DealStatus\": \"已退款\",\n                \"ActionType\": \"refund\",\n                \"ActivityId\": \"\",\n                \"OverdueTime\": \"2024-01-23 15:56:09\",\n                \"ResourceIds\": [\n                    \"4712106445241\"\n                ]\n            }\n        ],\n        \"TotalCount\": 101\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: partners.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAgentSelfPayDealsV2\n<公共请求参数>\n\n{\n    \"OwnerUin\": \"10000001\",\n    \"Limit\": \"1\",\n    \"Offset\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"78b52639-8471-41c1-a05a-1ea787a605e0\",\n        \"AgentPayDealSet\": [\n            {\n                \"DealId\": \"1078276337\",\n                \"DealName\": \"20240108121000906445591\",\n                \"BigDealId\": \"20240108121000906445581\",\n                \"GoodsCategoryId\": \"176258\",\n                \"OwnerUin\": \"700000232121\",\n                \"AppId\": \"251205746\",\n                \"GoodsNum\": \"1\",\n                \"GoodsPrice\": {\n                    \"RealTotalCost\": -100000,\n                    \"OriginalTotalCost\": -100000\n                },\n                \"ProductInfo\": [\n                    {\n                        \"Name\": \"计费测试商品新购\",\n                        \"Value\": \"jfcs\"\n                    }\n                ],\n                \"Creater\": \"700000232121\",\n                \"CreatTime\": \"2024-01-08 15:56:09\",\n                \"UpdateTime\": \"2024-01-08 15:56:13\",\n                \"PaymentMethod\": \"按月：个月\",\n                \"Payer\": \"700000232121\",\n                \"BillId\": \"20240108121000906445591\",\n                \"PayEndTime\": \"2024-01-08 15:56:11\",\n                \"Status\": \"6\",\n                \"VoucherDecline\": \"0\",\n                \"PayerMode\": \"0\",\n                \"GoodsName\": \"计费测试商品\",\n                \"SubGoodsName\": \"非资源工厂验证预付费子产品（勿动）\",\n                \"ClientRemark\": \"客户备注\",\n                \"ClientType\": \"new\",\n                \"ProjectType\": \"platform\",\n                \"SalesUin\": \"0\",\n                \"DealStatus\": \"已退款\",\n                \"ActionType\": \"refund\",\n                \"ActivityId\": \"0\",\n                \"OverdueTime\": \"2024-01-23 15:56:09\",\n                \"ResourceIds\": [\n                    \"4712106445241\"\n                ]\n            }\n        ],\n        \"TotalCount\": 101\n    }\n}",
         "title": "获取某代理商自付订单"
       }
     ],
@@ -138,22 +138,22 @@
       {
         "document": "",
         "input": "https://partners.tencentcloudapi.com/?Action=DescribeSalesmans\n&Offset=0\n&Limit=1\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"92e62a5d-e447-431c-b366-bd84905253f3\",\n        \"AgentSalesmanSet\": [\n            {\n                \"Uin\": \"3286669433\",\n                \"SalesUin\": \"100009339379\",\n                \"SalesName\": \"GR\",\n                \"CreateTime\": \"2019-02-27 16:56:59\"\n            }\n        ],\n        \"TotalCount\": 11\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"92e62a5d-e447-431c-b366-bd84905253f3\",\n        \"AgentSalesmanSet\": [\n            {\n                \"Uin\": \"3286669433\",\n                \"SalesUin\": \"100009339379\",\n                \"SalesName\": \"GR\",\n                \"CreateTime\": \"2019-02-27 16:56:59\"\n            }\n        ],\n        \"TotalCount\": 10\n    }\n}",
         "title": "成功示例"
       }
     ],
     "DescribeUnbindClientList": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: partners.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUnbindClientList\n<公共请求参数>\n\n{\n    \"Status\": 1,\n    \"UnbindUin\": \"xx\",\n    \"ApplyTimeEnd\": \"2020-09-22\",\n    \"Limit\": 1,\n    \"Offset\": 1,\n    \"ApplyTimeStart\": \"2020-09-22\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"78b52639-8471-41c1-a05a-1ea787a605e0\",\n        \"TotalCount\": 1,\n        \"UnbindClientList\": [\n            {\n                \"Uin\": 12345678,\n                \"Name\": \"xxx\",\n                \"Status\": 1,\n                \"ApplyTime\": \"2020-09-22 00:00:00\",\n                \"ActionTime\": \"2020-09-22 00:00:00\"\n            }\n        ]\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: partners.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUnbindClientList\n<公共请求参数>\n\n{\n    \"Status\": 1,\n    \"UnbindUin\": \"100002\",\n    \"ApplyTimeEnd\": \"2020-09-22\",\n    \"Limit\": 1,\n    \"Offset\": 1,\n    \"ApplyTimeStart\": \"2020-09-22\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"78b52639-8471-41c1-a05a-1ea787a605e0\",\n        \"TotalCount\": 1,\n        \"UnbindClientList\": [\n            {\n                \"Uin\": \"100002\",\n                \"Name\": \"testname\",\n                \"Status\": 1,\n                \"ApplyTime\": \"2020-09-22 00:00:00\",\n                \"ActionTime\": \"2020-09-22 00:00:00\"\n            }\n        ]\n    }\n}",
         "title": "获取某代理商的解绑客户列表"
       }
     ],
     "ModifyClientRemark": [
       {
         "document": "代理商对其名下某代客，修改备注名称为xxx",
-        "input": "https://partners.tencentcloudapi.com/?Action=ModifyClientRemark\n&ClientUin=123456789\n&ClientRemark=xxx\n&<公共请求参数>",
+        "input": "https://partners.tencentcloudapi.com/?Action=ModifyClientRemark\n&ClientUin=1000002\n&ClientRemark=testName\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "修改客户备注名称为xxx"
       }
@@ -161,7 +161,7 @@
     "RemovePayRelationForClient": [
       {
         "document": "清除合作伙伴和客户的强代付关系",
-        "input": "https://partners.tencentcloudapi.com/?Action=RemovePayRelationForClient\n&ClientUin=123\n&<公共请求参数>",
+        "input": "https://partners.tencentcloudapi.com/?Action=RemovePayRelationForClient\n&ClientUin=1000002\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5da478d6-abf4-47a3-80a6-6660d170eee3\"\n    }\n}",
         "title": "清除强代付关系"
       }

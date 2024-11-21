@@ -71,16 +71,16 @@
       "status": "online"
     },
     "ListCmqEnableRegion": {
-      "document": "查询云审计支持的cmq的可用区",
+      "document": "查询操作审计支持的cmq的可用区",
       "input": "ListCmqEnableRegionRequest",
-      "name": "查询云审计支持的cmq的可用区",
+      "name": "查询操作审计支持的cmq的可用区",
       "output": "ListCmqEnableRegionResponse",
       "status": "online"
     },
     "ListCosEnableRegion": {
-      "document": "查询云审计支持的cos可用区",
+      "document": "查询操作审计支持的cos可用区",
       "input": "ListCosEnableRegionRequest",
-      "name": "查询云审计支持的cos可用区",
+      "name": "查询操作审计支持的cos可用区",
       "output": "ListCosEnableRegionResponse",
       "status": "online"
     },
@@ -248,52 +248,56 @@
       "members": [
         {
           "disabled": false,
-          "document": "地域描述",
+          "document": "地域描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xx",
           "member": "string",
           "name": "CmqRegionName",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "cmq地域",
+          "document": "cmq地域\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xx",
           "member": "string",
           "name": "CmqRegion",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "CosRegionInfo": {
       "document": "cos地域信息",
       "members": [
         {
           "disabled": false,
-          "document": "cos地域",
+          "document": "cos地域\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xx",
           "member": "string",
           "name": "CosRegion",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "地域描述",
+          "document": "地域描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xx",
           "member": "string",
           "name": "CosRegionName",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "CreateAuditTrackRequest": {
       "document": "CreateAuditTrack请求参数结构体",
@@ -301,11 +305,29 @@
         {
           "disabled": false,
           "document": "跟踪集名称，仅支持大小写字母、数字、-以及_的组合，3-48个字符",
-          "example": "云审计",
+          "example": "操作审计",
           "member": "string",
           "name": "Name",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "跟踪集状态（未开启：0；开启：1）",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "数据投递存储（目前支持 cos、cls）",
+          "example": "cos",
+          "member": "Storage",
+          "name": "Storage",
+          "required": true,
+          "type": "object"
         },
         {
           "disabled": false,
@@ -327,30 +349,12 @@
         },
         {
           "disabled": false,
-          "document": "跟踪集状态（未开启：0；开启：1）",
-          "example": "1",
-          "member": "uint64",
-          "name": "Status",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
           "document": "跟踪事件接口名列表（ResourceType为 * 时，EventNames必须为全部：[\"*\"]；指定ResourceType时，支持全部接口：[\"*\"]；支持部分接口：[\"cos\", \"cls\"]，接口列表上限10个）",
           "example": "[*]",
           "member": "string",
           "name": "EventNames",
           "required": true,
           "type": "list"
-        },
-        {
-          "disabled": false,
-          "document": "数据投递存储（目前支持 cos、cls）",
-          "example": "cos",
-          "member": "Storage",
-          "name": "Storage",
-          "required": true,
-          "type": "object"
         },
         {
           "disabled": false,
@@ -392,7 +396,7 @@
         {
           "disabled": false,
           "document": "跟踪集名称，仅支持大小写字母、数字、-以及_的组合，3-48个字符",
-          "example": "云审计",
+          "example": "操作审计",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -1258,11 +1262,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "云审计支持的cmq的可用区",
+          "document": "操作审计支持的cmq的可用区",
           "example": "xx",
           "member": "CmqRegionInfo",
           "name": "EnableRegions",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1295,11 +1299,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "云审计支持的cos可用区",
+          "document": "操作审计支持的cos可用区",
           "example": "xx",
           "member": "CosRegionInfo",
           "name": "EnableRegions",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1427,7 +1431,7 @@
         },
         {
           "disabled": false,
-          "document": "云审计模式，有效值：standard | quick，其中standard是标准模式，quick是极速模式。默认为标准模式",
+          "document": "操作审计模式，有效值：standard | quick，其中standard是标准模式，quick是极速模式。默认为标准模式",
           "example": "standard ",
           "member": "string",
           "name": "Mode",
@@ -1446,7 +1450,7 @@
           "example": "xxxxxxx",
           "member": "string",
           "name": "NextToken",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1456,7 +1460,7 @@
           "example": "无",
           "member": "Event",
           "name": "Events",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1466,8 +1470,18 @@
           "example": "1",
           "member": "bool",
           "name": "ListOver",
-          "required": true,
+          "output_required": true,
           "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
           "value_allowed_null": true
         },
         {
@@ -1520,7 +1534,7 @@
         {
           "disabled": false,
           "document": "跟踪集名称，仅支持大小写字母、数字、-以及_的组合，3-48个字符",
-          "example": "云审计",
+          "example": "操作审计",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -1610,7 +1624,7 @@
         {
           "disabled": false,
           "document": "跟踪集名称，仅支持大小写字母、数字、-以及_的组合，3-48个字符",
-          "example": "云审计",
+          "example": "操作审计",
           "member": "string",
           "name": "Name",
           "required": false,

@@ -6,12 +6,10 @@ Input:
 
 ```
 tccli tdmq DescribeEnvironments --cli-unfold-argument  \
-    --EnvironmentId abc \
+    --EnvironmentId devNs \
     --Offset 1 \
     --Limit 1 \
-    --ClusterId abc \
-    --Filters.0.Name abc \
-    --Filters.0.Values abc
+    --ClusterId pulsar-xk3ne8k2qkp8
 ```
 
 Output: 
@@ -21,13 +19,13 @@ Output:
         "TotalCount": 1,
         "EnvironmentSet": [
             {
-                "EnvironmentId": "abc",
-                "Remark": "abc",
-                "MsgTTL": 0,
+                "EnvironmentId": "devNs",
+                "Remark": "devDemo",
+                "MsgTTL": 100,
                 "CreateTime": "2020-09-22 00:00:00",
                 "UpdateTime": "2020-09-22 00:00:00",
-                "NamespaceId": "abc",
-                "NamespaceName": "abc",
+                "NamespaceName": "devNs",
+                "NamespaceId": "nsId",
                 "TopicNum": 0,
                 "RetentionPolicy": {
                     "TimeInMinutes": 0,
@@ -36,7 +34,7 @@ Output:
                 "AutoSubscriptionCreation": true
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "1004f1de-6fb8-41d5-965e-3aae8c87183a"
     }
 }
 ```

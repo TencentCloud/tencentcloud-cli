@@ -24,12 +24,12 @@ Output:
             "Version": "0.1.1",
             "Params": [
                 {
-                    "Data": "",
+                    "Data": "idata",
                     "Name": "test-name"
                 }
             ],
             "Path": "/root",
-            "Desc": "",
+            "Desc": "idesc",
             "Size": 1
         }
     }

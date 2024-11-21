@@ -80,6 +80,38 @@
         "title": "创建TDSQL按量计费实例"
       }
     ],
+    "CreateOnlineDDLJob": [
+      {
+        "document": "为 test_tbl 添加字段",
+        "input": "POST / HTTP/1.1\nHost: dcdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOnlineDDLJob\n<公共请求参数>\n\n{\n    \"InstanceId\": \"tdsqlshard-h2yimmox\",\n    \"Alter\": \"alter table test_tbl add column test_add_col  varchar(32) not null default 'test' comment 'test add col';\",\n    \"DbName\": \"test_db\",\n    \"Table\": \"test_tbl\",\n    \"CriticalLoad\": 58,\n    \"CheckAutoInc\": 0,\n    \"MaxDelay\": 10,\n    \"UsePt\": 1,\n    \"User\": \"test_user\",\n    \"Password\": \"test_pwd\",\n    \"StartTime\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": 1140696,\n        \"RequestId\": \"bd07e59f-dee8-4680-9a43-492a8a52c894\"\n    }\n}",
+        "title": "添加字段"
+      },
+      {
+        "document": "为 test_tbl添加索引\n添加唯一索引 ：alter table test_tbl add unique key my_idx(id,name); \n添加普通索引：alter table test_tbl add key my_idx_1(id,name); ",
+        "input": "POST / HTTP/1.1\nHost: dcdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOnlineDDLJob\n<公共请求参数>\n\n{\n    \"InstanceId\": \"tdsql-4z38cfwj\",\n    \"Alter\": \"alter table test_tbl add unique key my_idx(id,name); \",\n    \"DbName\": \"test_db\",\n    \"Table\": \"test_tbl\",\n    \"CriticalLoad\": 58,\n    \"CheckAutoInc\": 0,\n    \"MaxDelay\": 10,\n    \"UsePt\": 1,\n    \"User\": \"test_user\",\n    \"Password\": \"test_pwd\",\n    \"StartTime\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": 1140697,\n        \"RequestId\": \"c5afb15f-70c8-4e71-84b5-688dd326a8c3\"\n    }\n}",
+        "title": "添加索引"
+      },
+      {
+        "document": "从test_tbl删除字段 test_add_col ",
+        "input": "POST / HTTP/1.1\nHost: dcdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOnlineDDLJob\n<公共请求参数>\n\n{\n    \"InstanceId\": \"tdsqlshard-h2yimmox\",\n    \"Alter\": \"alter table test_tbl drop column test_add_col; \",\n    \"DbName\": \"test_db\",\n    \"Table\": \"test_tbl\",\n    \"CriticalLoad\": 58,\n    \"CheckAutoInc\": 0,\n    \"MaxDelay\": 10,\n    \"UsePt\": 1,\n    \"User\": \"test_user\",\n    \"Password\": \"test_pwd\",\n    \"StartTime\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": 1140698,\n        \"RequestId\": \"a9f824be-fc53-41f7-9e24-2aca60457331\"\n    }\n}",
+        "title": "删除字段"
+      },
+      {
+        "document": "将 test_tbl 表字段 test_add_col 从varchar(32) 修改为 varchar(64)",
+        "input": "POST / HTTP/1.1\nHost: dcdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOnlineDDLJob\n<公共请求参数>\n\n{\n    \"InstanceId\": \"tdsqlshard-h2yimmox\",\n    \"Alter\": \"alter table test_tbl modify column test_add_col varchar(64) not null default 'test' comment 'test change type'; \",\n    \"DbName\": \"test_db\",\n    \"Table\": \"test_tbl\",\n    \"CriticalLoad\": 58,\n    \"CheckAutoInc\": 0,\n    \"MaxDelay\": 10,\n    \"UsePt\": 1,\n    \"User\": \"test_user\",\n    \"Password\": \"test_pwd\",\n    \"StartTime\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": 1140699,\n        \"RequestId\": \"7e2e0512-e429-4702-a9a6-d920eebd6536\"\n    }\n}",
+        "title": "修改字段"
+      },
+      {
+        "document": "表空间优化",
+        "input": "POST / HTTP/1.1\nHost: dcdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOnlineDDLJob\n<公共请求参数>\n\n{\n    \"InstanceId\": \"tdsqlshard-h2yimmox\",\n    \"Alter\": \"alter table test_tbl engine=innodb; \",\n    \"DbName\": \"test_db\",\n    \"Table\": \"test_tbl\",\n    \"CriticalLoad\": 58,\n    \"CheckAutoInc\": 0,\n    \"MaxDelay\": 10,\n    \"UsePt\": 1,\n    \"User\": \"test_user\",\n    \"Password\": \"test_pwd\",\n    \"StartTime\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": 1140701,\n        \"RequestId\": \"9df10ff7-9db5-4cad-81e2-3ad742f7bc06\"\n    }\n}",
+        "title": "表空间优化"
+      }
+    ],
     "CreateTmpDCDBInstance": [
       {
         "document": "回档TDSQL分布式数据库实例",

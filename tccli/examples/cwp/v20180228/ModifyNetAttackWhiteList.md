@@ -10,7 +10,7 @@ tccli cwp ModifyNetAttackWhiteList --cli-unfold-argument  \
     --Scope 0 \
     --SrcIp 1.2.3.5 1.1.1.2-1.1.1.4 1.2.3.0/24 \
     --DealOldEvents 0 \
-    --Description  \
+    --Description 接口测试，勿删 \
     --Id 10001
 ```
 

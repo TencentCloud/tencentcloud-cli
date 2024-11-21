@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli dasb ModifyResource --cli-unfold-argument  \
-    --ResourceId bh-saas-xxxxxx
+    --ResourceId bh-saas-resource
 ```
 
 Output: 

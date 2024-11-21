@@ -1,14 +1,15 @@
-**Example 1: 修改版本规格**
+**Example 1: 删除应用弹性策略组合**
 
-修改版本规格
+删除应用弹性策略组合
 
 Input: 
 
 ```
 tccli tem DeleteApplicationAutoscaler --cli-unfold-argument  \
+    --ApplicationId app-xxxxxx \
     --SourceChannel 0 \
-    --ApplicationId xx \
-    --EnvironmentId xx
+    --EnvironmentId en-xxxxxx \
+    --AutoscalerId scaler-xxxxxx
 ```
 
 Output: 
@@ -16,7 +17,7 @@ Output:
 {
     "Response": {
         "Result": true,
-        "RequestId": "xx"
+        "RequestId": "ab-xx"
     }
 }
 ```

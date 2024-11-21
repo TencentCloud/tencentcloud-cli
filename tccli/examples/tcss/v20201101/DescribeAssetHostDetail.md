@@ -13,44 +13,39 @@ Output:
 ```
 {
     "Response": {
-        "UUID": "abc",
-        "UpdateTime": "abc",
-        "HostName": "abc",
-        "Group": "abc",
-        "HostIP": "abc",
-        "OsName": "abc",
-        "AgentVersion": "abc",
-        "KernelVersion": "abc",
-        "DockerVersion": "abc",
-        "DockerAPIVersion": "abc",
-        "DockerGoVersion": "abc",
-        "DockerFileSystemDriver": "abc",
-        "DockerRootDir": "abc",
-        "ImageCnt": 1,
+        "AgentVersion": "5.2.1.105",
+        "ClusterAccessedStatus": "AccessedNone",
+        "ClusterID": "",
+        "ClusterName": "",
         "ContainerCnt": 1,
-        "K8sMasterIP": "abc",
-        "K8sVersion": "abc",
-        "KubeProxyVersion": "abc",
-        "Status": "abc",
-        "IsContainerd": true,
-        "MachineType": "abc",
-        "PublicIp": "abc",
-        "InstanceID": "abc",
-        "RegionID": 0,
+        "DockerAPIVersion": "1.43",
+        "DockerFileSystemDriver": "overlay2",
+        "DockerGoVersion": "go1.20.7",
+        "DockerRootDir": "/var/lib/docker",
+        "DockerVersion": "24.0.6",
+        "Group": "",
+        "HostIP": "1.1.1.1",
+        "HostName": "机器名称",
+        "ImageCnt": 10,
+        "InstanceID": "ins-8bc803fd",
+        "IsContainerd": false,
+        "K8sMasterIP": "",
+        "K8sVersion": "",
+        "KernelVersion": "3.10.0-1160.102.1.el7.x86_64",
+        "KubeProxyVersion": "",
+        "MachineType": "CVM",
+        "OsName": "CentOS Linux release 7.9.2009 (Core)",
         "Project": {
-            "ProjectName": "abc",
-            "ProjectID": 0
+            "ProjectID": 0,
+            "ProjectName": "默认项目"
         },
-        "Tags": [
-            {
-                "TagKey": "abc",
-                "TagValue": "abc"
-            }
-        ],
-        "ClusterID": "abc",
-        "ClusterName": "abc",
-        "ClusterAccessedStatus": "abc",
-        "RequestId": "abc"
+        "PublicIp": "1.1.1.1",
+        "RegionID": 1,
+        "RequestId": "342475fc-76eb-4199-998f-780f9921a5f2",
+        "Status": "ONLINE",
+        "Tags": [],
+        "UUID": "8bc803fd-d85d-47b8-9e2b-9644674be677",
+        "UpdateTime": "2024-10-30 10:26:52"
     }
 }
 ```

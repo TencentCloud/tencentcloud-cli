@@ -6,16 +6,16 @@ Input:
 
 ```
 tccli tdmq ModifyRabbitMQVipInstance --cli-unfold-argument  \
-    --InstanceId amqp-44w9928j \
-    --Remark test
+    --InstanceId amqp-jero744g \
+    --Remark 生产使用集群
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "dgdsfgdsfdghngesfds",
-        "InstanceId": "amqp-44w9928j"
+        "RequestId": "a8f28d5e-a7e2-4b0b-afa0-2fba09c077a0",
+        "InstanceId": "amqp-jero744g"
     }
 }
 ```

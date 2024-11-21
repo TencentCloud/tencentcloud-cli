@@ -6,40 +6,28 @@ Input:
 
 ```
 tccli cfw ModifySecurityGroupRule --cli-unfold-argument  \
-    --SgRuleOriginSequence 1 \
+    --Data.0.BothWay 0 \
+    --Data.0.Detail ignore 88.88.88.88 \
+    --Data.0.OrderIndex 1 \
+    --Data.0.Port -1/-1 \
+    --Data.0.Protocol ANY \
+    --Data.0.SourceId 88.88.88.88 \
+    --Data.0.SourceType 0 \
+    --Data.0.Strategy 2 \
+    --Data.0.TargetId 0.0.0.0/0 \
+    --Data.0.TargetType 9 \
     --Direction 1 \
     --Enable 1 \
-    --Data.0.TargetType 1 \
-    --Data.0.BothWay 1 \
-    --Data.0.SourceId xx \
-    --Data.0.Detail xx \
-    --Data.0.Strategy 1 \
-    --Data.0.Id 1 \
-    --Data.0.Status 1 \
-    --Data.0.Direction 1 \
-    --Data.0.VpcId xx \
-    --Data.0.IsNew 1 \
-    --Data.0.TargetId xx \
-    --Data.0.SubnetId xx \
-    --Data.0.Cidr xx \
-    --Data.0.ServiceTemplateId xx \
-    --Data.0.OrderIndex 1 \
-    --Data.0.InstanceName xx \
-    --Data.0.Protocol xx \
-    --Data.0.SourceType 1 \
-    --Data.0.BothWayInfo xx \
-    --Data.0.PrivateIp xx \
-    --Data.0.PublicIp xx \
-    --Data.0.Port xx
+    --SgRuleOriginSequence 1
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "",
-        "Status": 0,
-        "NewRuleId": 35641
+        "NewRuleId": 51733,
+        "RequestId": "c2baae07-ec29-445c-992f-a30ff49b64ba",
+        "Status": 0
     }
 }
 ```

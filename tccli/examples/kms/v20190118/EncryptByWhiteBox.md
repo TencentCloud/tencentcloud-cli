@@ -6,17 +6,18 @@ Input:
 
 ```
 tccli kms EncryptByWhiteBox --cli-unfold-argument  \
-    --KeyId 244dab8c-6dad-11ea-80c6-5254006d0810 \
-    --PlainText UGxhaW5UZXh0
+    --KeyId 738c7598-6a69-11ef-9d7c-525400dc620c \
+    --InitializationVector 3t+gDx/YmtnJuokqAg+cOw== \
+    --PlainText dGVzdAo=
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "4b3be01e-117a-43f5-aa34-dd5034efe3dd",
-        "InitializationVector": "BQbVImt3p_xr8VQebZaXGQ==",
-        "CipherText": "ZKHH2la4DpwlkwjANQ5hgw=="
+        "CipherText": "StE4p5N11zwKybR3REtaag==",
+        "InitializationVector": "3t+gDx/YmtnJuokqAg+cOw==",
+        "RequestId": "a77183bf-8a95-4167-bd4a-84f02df0d4da"
     }
 }
 ```

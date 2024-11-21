@@ -5,14 +5,17 @@
 Input: 
 
 ```
-tccli tem RevertDeployApplication --cli-unfold-argument ```
+tccli tem RevertDeployApplication --cli-unfold-argument  \
+    --ApplicationId app-xxxxxx \
+    --EnvironmentId en-xxxxxx
+```
 
 Output: 
 ```
 {
     "Response": {
         "Result": true,
-        "RequestId": "xx"
+        "RequestId": "abc-xxx-xxxx"
     }
 }
 ```

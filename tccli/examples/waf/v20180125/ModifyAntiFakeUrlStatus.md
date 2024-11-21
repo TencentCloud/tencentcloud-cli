@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli waf ModifyAntiFakeUrlStatus --cli-unfold-argument  \
-    --Domain test.com \
+    --Domain www.test.com \
     --Status 0 \
-    --Ids 123 345
+    --Ids 1101 1103
 ```
 
 Output: 

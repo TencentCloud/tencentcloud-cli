@@ -1010,6 +1010,24 @@
           "name": "GlobalParam",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "100 不绑定用户  200 单用户单token  300 单用户多token",
+          "example": "100",
+          "member": "int64",
+          "name": "TokenType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "一次创建的token数",
+          "example": "11",
+          "member": "int64",
+          "name": "TokenNum",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -2874,6 +2892,36 @@
           "name": "Intention",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "100 无绑定用户\n200 单用户单token\n300 单用户 多token\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "int64",
+          "name": "TokenType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "token 数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "11",
+          "member": "int64",
+          "name": "TokenNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否单用户多token\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "SingleUserMultiToken",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": true
         }
       ],

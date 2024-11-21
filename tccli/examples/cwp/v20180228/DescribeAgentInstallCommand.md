@@ -7,10 +7,10 @@ Input:
 ```
 tccli cwp DescribeAgentInstallCommand --cli-unfold-argument  \
     --ExpireDate 2020-09-22 \
-    --RegionCode xx \
-    --VpcId xx \
+    --RegionCode gz \
+    --VpcId vpc-12345 \
     --IsCloud True \
-    --NetType xx \
+    --NetType public \
     --TagIds 1
 ```
 
@@ -18,13 +18,13 @@ Output:
 ```
 {
     "Response": {
-        "WindowsCommand": "xx",
-        "LinuxCommand": "xx",
-        "ARMCommand": "xx",
-        "WindowsDownloadUrl": "xx",
-        "RequestId": "xx",
-        "WindowsStepOne": "xx",
-        "WindowsStepTwo": "xx"
+        "WindowsCommand": "ydeyes.exe",
+        "LinuxCommand": "ydeyes.exe",
+        "ARMCommand": "ydeyes.exe",
+        "WindowsDownloadUrl": "ydeyes.exe",
+        "RequestId": "1234-1234-1234",
+        "WindowsStepOne": "ydeyes.exe",
+        "WindowsStepTwo": "ydeyes.exe"
     }
 }
 ```

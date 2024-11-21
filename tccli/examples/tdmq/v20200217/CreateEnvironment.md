@@ -6,20 +6,20 @@ Input:
 
 ```
 tccli tdmq CreateEnvironment --cli-unfold-argument  \
-    --EnvironmentId test1 \
+    --EnvironmentId devNamespace \
     --MsgTTL 100 \
     --AutoSubscriptionCreation True \
-    --ClusterId pulsar-xxxxxxxx
+    --ClusterId pulsar-b843bz38z5mz
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "EnvironmentId": "test1",
+        "EnvironmentId": "devNamespace",
         "NamespaceId": "namespace-8893gp3428",
         "MsgTTL": 100,
-        "Remark": "",
+        "Remark": "devRemark",
         "RequestId": "0843ea4f-d6ba-463b-952c-75708a7e8901"
     }
 }

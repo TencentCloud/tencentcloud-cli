@@ -15,7 +15,7 @@ Output:
 {
     "Response": {
         "TotalCount": 1,
-        "RequestId": "xx",
+        "RequestId": "8bc803fd-d85d-47b8-9e2b-9644674be677",
         "WhiteListSet": [
             {
                 "UpdateTime": "2020-09-22 00:00:00",
@@ -24,11 +24,11 @@ Output:
                     "kill"
                 ],
                 "ImageIds": [
-                    "xx"
+                    "image-id"
                 ],
                 "CreateTime": "2020-09-22 00:00:00",
-                "ProcessPath": "xx",
-                "Id": "xx",
+                "ProcessPath": "/usr/bin/sh",
+                "Id": "10001",
                 "ImageCount": 1,
                 "IsGlobal": true
             }

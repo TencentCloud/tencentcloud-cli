@@ -10,8 +10,8 @@ tccli lke GetLikeDataCount --cli-unfold-argument  \
     --EndTime 1716435550 \
     --AppBizId 1 1778345918658510848 \
     --Type 1 \
-    --LoginUin abc \
-    --LoginSubAccountUin abc
+    --LoginUin 600000562346 \
+    --LoginSubAccountUin 600000562346
 ```
 
 Output: 

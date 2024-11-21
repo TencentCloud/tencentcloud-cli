@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cwp EditPrivilegeRules --cli-unfold-argument  \
-    --ProcessName test \
+    --ProcessName ps \
     --SMode 1 \
     --IsGlobal 0 \
     --Uuids 11 12

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tdmq DescribeBindVpcs --cli-unfold-argument  \
-    --ClusterId pulsar-xxxxxxxx
+    --ClusterId pulsar-xk3ne8k2qkp8
 ```
 
 Output: 
@@ -17,10 +17,10 @@ Output:
             {
                 "UniqueVpcId": "vpc-c96rbu5r",
                 "UniqueSubnetId": "subnet-hiqrqjp6",
-                "RouterId": "pulsar-xxxxxxxx/vpc-c96rbu5r/subnet-hiqrqjp6",
+                "RouterId": "pulsar-xk3ne8k2qkp8/vpc-c96rbu5r/subnet-hiqrqjp6",
                 "Ip": "192.168.0.1",
                 "Port": 6000,
-                "Remark": ""
+                "Remark": "devRemark"
             }
         ],
         "TotalCount": 1,

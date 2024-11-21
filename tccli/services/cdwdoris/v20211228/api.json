@@ -1583,7 +1583,7 @@
           "type": "int"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "选择的星期 逗号分隔\n废弃：使用ScheduleInfo",
           "example": "\"1,2\"",
           "member": "string",
@@ -1592,7 +1592,7 @@
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "执行小时\n废弃：使用ScheduleInfo",
           "example": "1",
           "member": "int64",
@@ -1705,6 +1705,16 @@
     "CreateBackUpScheduleResponse": {
       "document": "CreateBackUpSchedule返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "error",
+          "member": "string",
+          "name": "ErrorMsg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -2172,6 +2182,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "state",
+          "member": "string",
+          "name": "State",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -2450,6 +2470,26 @@
           "name": "BackUpJobs",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
+          "member": "string",
+          "name": "ErrorMsg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": true
         },
         {

@@ -1,22 +1,16 @@
 **Example 1: 回溯消息**
 
-{
-  "EnvironmentId": "abc",
-  "TopicName": "abc",
-  "Subscription": "abc",
-  "ToTimestamp": 1,
-  "ClusterId": "abc"
-}
+
 
 Input: 
 
 ```
 tccli tdmq ResetMsgSubOffsetByTimestamp --cli-unfold-argument  \
-    --EnvironmentId abc \
-    --TopicName abc \
-    --Subscription abc \
-    --ToTimestamp 1 \
-    --ClusterId abc
+    --EnvironmentId devNs \
+    --TopicName devTopic \
+    --Subscription devSub \
+    --ToTimestamp 1730690396152 \
+    --ClusterId pulsar-pnvjp9mbd947
 ```
 
 Output: 

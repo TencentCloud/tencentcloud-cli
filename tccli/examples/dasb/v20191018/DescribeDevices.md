@@ -15,28 +15,28 @@ Output:
         "DeviceSet": [
             {
                 "Id": 1,
-                "InstanceId": "abc",
-                "Name": "abc",
-                "PublicIp": "abc",
-                "PrivateIp": "abc",
-                "ApCode": "abc",
-                "OsName": "abc",
+                "InstanceId": "ins-bhtest",
+                "Name": "test-name",
+                "PublicIp": "10.10.10.10",
+                "PrivateIp": "127.0.0.1",
+                "ApCode": "ap-guangzhou",
+                "OsName": "Linux",
                 "Kind": 1,
                 "Port": 1,
                 "GroupSet": [
                     {
                         "Id": 1,
-                        "Name": "abc",
+                        "Name": "test-group-name",
                         "Department": {
-                            "Id": "abc",
-                            "Name": "abc",
+                            "Id": "1",
+                            "Name": "1",
                             "Managers": [
-                                "abc"
+                                "1"
                             ],
                             "ManagerUsers": [
                                 {
-                                    "ManagerId": "abc",
-                                    "ManagerName": "abc"
+                                    "ManagerId": "1",
+                                    "ManagerName": "test-name"
                                 }
                             ]
                         },
@@ -44,65 +44,65 @@ Output:
                     }
                 ],
                 "AccountCount": 1,
-                "VpcId": "abc",
-                "SubnetId": "abc",
+                "VpcId": "vpc-bhtest",
+                "SubnetId": "subnet-bhtest",
                 "Resource": {
-                    "ResourceId": "abc",
-                    "ApCode": "abc",
-                    "SvArgs": "abc",
-                    "VpcId": "abc",
+                    "ResourceId": "bh-saas-test",
+                    "ApCode": "ap-guangzhou",
+                    "SvArgs": "sv_cds_dasb_saas_standard_50node",
+                    "VpcId": "vpc-bhtest",
                     "Nodes": 1,
                     "RenewFlag": 1,
-                    "ExpireTime": "2020-09-22T00:00:00+00:00",
+                    "ExpireTime": "2020-09-22T00:00:00+08:00",
                     "Status": 1,
-                    "ResourceName": "abc",
+                    "ResourceName": "test-name",
                     "Pid": 1,
-                    "CreateTime": "2020-09-22T00:00:00+00:00",
-                    "ProductCode": "abc",
-                    "SubProductCode": "abc",
-                    "Zone": "abc",
+                    "CreateTime": "2020-09-22T00:00:00+08:00",
+                    "ProductCode": "code",
+                    "SubProductCode": "code",
+                    "Zone": "ap-guangzhou-1",
                     "Expired": true,
                     "Deployed": true,
-                    "VpcName": "abc",
-                    "VpcCidrBlock": "abc",
-                    "SubnetId": "abc",
-                    "SubnetName": "abc",
-                    "CidrBlock": "abc",
+                    "VpcName": "vpc-name",
+                    "VpcCidrBlock": "192.168.11.0/24",
+                    "SubnetId": "subnet-bhtest",
+                    "SubnetName": "test-name",
+                    "CidrBlock": "192.168.11.0/24",
                     "PublicIpSet": [
-                        "abc"
+                        "10.10.10.10"
                     ],
                     "PrivateIpSet": [
-                        "abc"
+                        "192.168.0.1"
                     ],
                     "ModuleSet": [
-                        "abc"
+                        "module1"
                     ],
                     "UsedNodes": 1,
                     "ExtendPoints": 1,
                     "PackageBandwidth": 1,
                     "PackageNode": 1,
-                    "LogDeliveryArgs": "abc",
-                    "LogDelivery": "abc"
+                    "LogDeliveryArgs": "sv_cds_dasb_saas_wafdsd",
+                    "LogDelivery": "sc_cds_dasb_saas_aswafa"
                 },
                 "Department": {
-                    "Id": "abc",
-                    "Name": "abc",
+                    "Id": "1",
+                    "Name": "1",
                     "Managers": [
-                        "abc"
+                        "1"
                     ],
                     "ManagerUsers": [
                         {
-                            "ManagerId": "abc",
-                            "ManagerName": "abc"
+                            "ManagerId": "1",
+                            "ManagerName": "1"
                         }
                     ]
                 },
                 "IpPortSet": [
-                    "abc"
+                    "127.0.0.1:80"
                 ]
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "ec7676f4-a498-4ef5-ad68-6678b16e45d7"
     }
 }
 ```
@@ -116,7 +116,7 @@ Input:
 ```
 tccli dasb DescribeDevices --cli-unfold-argument  \
     --AuthorizedUserIdSet 1 7 8 \
-    --Name xxx
+    --Name bhtest
 ```
 
 Output: 
@@ -127,28 +127,28 @@ Output:
         "DeviceSet": [
             {
                 "Id": 1,
-                "InstanceId": "abc",
-                "Name": "abc",
-                "PublicIp": "abc",
-                "PrivateIp": "abc",
-                "ApCode": "abc",
-                "OsName": "abc",
+                "InstanceId": "ins-bhtest",
+                "Name": "test-device-name",
+                "PublicIp": "10.10.10.10",
+                "PrivateIp": "127.0.0.1",
+                "ApCode": "ap-guangzhou",
+                "OsName": "Linux",
                 "Kind": 1,
                 "Port": 1,
                 "GroupSet": [
                     {
                         "Id": 1,
-                        "Name": "abc",
+                        "Name": "test-group-name",
                         "Department": {
-                            "Id": "abc",
-                            "Name": "abc",
+                            "Id": "1",
+                            "Name": "1",
                             "Managers": [
-                                "abc"
+                                "1"
                             ],
                             "ManagerUsers": [
                                 {
-                                    "ManagerId": "abc",
-                                    "ManagerName": "abc"
+                                    "ManagerId": "1",
+                                    "ManagerName": "test-name"
                                 }
                             ]
                         },
@@ -156,65 +156,65 @@ Output:
                     }
                 ],
                 "AccountCount": 1,
-                "VpcId": "abc",
-                "SubnetId": "abc",
+                "VpcId": "vpc-bhtest",
+                "SubnetId": "subnet-bhtest",
                 "Resource": {
-                    "ResourceId": "abc",
-                    "ApCode": "abc",
-                    "SvArgs": "abc",
-                    "VpcId": "abc",
+                    "ResourceId": "bh-saas-bhtest",
+                    "ApCode": "ap-guangzhou",
+                    "SvArgs": "sv_cds_dasb_saas_standard_50node",
+                    "VpcId": "vpc-bhtest",
                     "Nodes": 1,
                     "RenewFlag": 1,
-                    "ExpireTime": "2020-09-22T00:00:00+00:00",
+                    "ExpireTime": "2020-09-22T00:00:00+08:00",
                     "Status": 1,
-                    "ResourceName": "abc",
+                    "ResourceName": "test-name",
                     "Pid": 1,
-                    "CreateTime": "2020-09-22T00:00:00+00:00",
-                    "ProductCode": "abc",
-                    "SubProductCode": "abc",
-                    "Zone": "abc",
+                    "CreateTime": "2020-09-22T00:00:00+08:00",
+                    "ProductCode": "code",
+                    "SubProductCode": "code",
+                    "Zone": "ap-guangzhou-1",
                     "Expired": true,
                     "Deployed": true,
-                    "VpcName": "abc",
-                    "VpcCidrBlock": "abc",
-                    "SubnetId": "abc",
-                    "SubnetName": "abc",
-                    "CidrBlock": "abc",
+                    "VpcName": "vpc-name",
+                    "VpcCidrBlock": "192.168.11.0/24",
+                    "SubnetId": "subnet-bhtest",
+                    "SubnetName": "test-sub-name",
+                    "CidrBlock": "192.168.11.0/24",
                     "PublicIpSet": [
-                        "abc"
+                        "10.10.10.10"
                     ],
                     "PrivateIpSet": [
-                        "abc"
+                        "192.168.0.1"
                     ],
                     "ModuleSet": [
-                        "abc"
+                        "module2"
                     ],
                     "UsedNodes": 1,
                     "ExtendPoints": 1,
                     "PackageBandwidth": 1,
                     "PackageNode": 1,
-                    "LogDeliveryArgs": "abc",
-                    "LogDelivery": "abc"
+                    "LogDeliveryArgs": "sv_cds_dasb_saas_asdawsdf",
+                    "LogDelivery": "sc_cds_dasb_saas_sadfsdggf"
                 },
                 "Department": {
-                    "Id": "abc",
-                    "Name": "abc",
+                    "Id": "1",
+                    "Name": "1",
                     "Managers": [
-                        "abc"
+                        "1"
                     ],
                     "ManagerUsers": [
                         {
-                            "ManagerId": "abc",
-                            "ManagerName": "abc"
+                            "ManagerId": "1",
+                            "ManagerName": "1"
                         }
                     ]
                 },
                 "IpPortSet": [
-                    "abc"
+                    "172.0.45.65:20"
                 ]
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "ec7676f4-a498-4ef5-ad68-6678b16e45d7"
     }
 }
 ```

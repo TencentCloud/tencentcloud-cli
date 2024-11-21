@@ -11,7 +11,7 @@
     "ImageMask": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: mrs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ImageMask\n<公共请求参数>\n\n{\n    \"Image\": {\n        \"Base64\": \"abc\"\n    },\n    \"MaskFlag\": {\n        \"HospitalFlag\": true,\n        \"DoctorFlag\": true,\n        \"PatientFlag\": true,\n        \"BarFlag\": true\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: mrs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ImageMask\n<公共请求参数>\n\n{\n    \"Image\": {\n        \"Id\": 1,\n        \"Url\": \"abc\",\n        \"Base64\": \"abc\"\n    },\n    \"MaskFlag\": {\n        \"HospitalFlag\": true,\n        \"DoctorFlag\": true,\n        \"PatientFlag\": true,\n        \"BarFlag\": true\n    },\n    \"AutoFixImageDirection\": true\n}",
         "output": "{\n    \"Response\": {\n        \"MaskedImage\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "医疗报告图片脱敏接口示例"
       }
@@ -19,7 +19,7 @@
     "ImageMaskAsync": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: mrs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ImageMaskAsync\n<公共请求参数>\n\n{\n    \"Image\": {\n        \"Base64\": \"abc\"\n    },\n    \"MaskFlag\": {\n        \"HospitalFlag\": true,\n        \"DoctorFlag\": true,\n        \"PatientFlag\": true,\n        \"BarFlag\": true\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: mrs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ImageMaskAsync\n<公共请求参数>\n\n{\n    \"Image\": {\n        \"Id\": 1,\n        \"Url\": \"abc\",\n        \"Base64\": \"abc\"\n    },\n    \"MaskFlag\": {\n        \"HospitalFlag\": true,\n        \"DoctorFlag\": true,\n        \"PatientFlag\": true,\n        \"BarFlag\": true\n    },\n    \"AutoFixImageDirection\": true\n}",
         "output": "{\n    \"Response\": {\n        \"TaskID\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "医疗报告图片脱敏异步接口示例"
       }

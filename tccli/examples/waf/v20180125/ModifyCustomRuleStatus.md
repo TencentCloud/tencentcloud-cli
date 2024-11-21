@@ -7,7 +7,7 @@ Input:
 ```
 tccli waf ModifyCustomRuleStatus --cli-unfold-argument  \
     --Domain "test.qlcoud.com" \
-    --RuleId 12 \
+    --RuleId 1101 \
     --Status 0
 ```
 

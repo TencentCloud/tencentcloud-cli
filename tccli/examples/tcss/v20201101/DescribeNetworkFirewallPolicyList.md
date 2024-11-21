@@ -1,43 +1,4 @@
-**Example 1: 查询结果**
-
-
-
-Input: 
-
-```
-tccli tcss DescribeNetworkFirewallPolicyList --cli-unfold-argument  \
-    --ClusterId cls-ee \
-    --Limit 2 \
-    --Offset 0
-```
-
-Output: 
-```
-{
-    "Response": {
-        "RequestId": "a6405e01-bf4f-4044-abe9-4458783a3066",
-        "TotalCount": 9,
-        "NetPolicy": [
-            {
-                "PolicySourceType": "xx",
-                "FromPolicyRule": 0,
-                "PublishResult": "xx",
-                "Namespace": "xx",
-                "NetworkPolicyPlugin": "xx",
-                "PolicyCreateTime": "xx",
-                "PublishStatus": "xx",
-                "ToPolicyRule": 0,
-                "PodSelector": "xx",
-                "Description": "xx",
-                "Id": 1,
-                "Name": "xx"
-            }
-        ]
-    }
-}
-```
-
-**Example 2: 策略列表**
+**Example 1: 策略列表**
 
 
 

@@ -15,7 +15,7 @@
       "status": "online"
     },
     "CancelInstanceRefresh": {
-      "document": "取消伸缩组的实例刷新活动。\n* 已刷新/正在刷新的批次不受影响，待刷新批次被取消\n* 刷新失败的实例保持备用中状态，需用户手动处理后尝试退出备用中状态或销毁\n* 取消后不允许回滚操作，也不支持恢复操作",
+      "document": "取消伸缩组的实例刷新活动。\n* 已刷新/正在刷新的批次不受影响，待刷新批次被取消\n* 刷新失败的实例保持备用中状态，需用户手动处理后尝试退出备用中状态或销毁\n* 取消后不允许回滚操作，也不支持恢复操作\n* 因 maxSurge 参数而临时扩容的实例在取消后会自动销毁\n* 进行缩容时，所有实例都已经更新完成，此时无法取消",
       "input": "CancelInstanceRefreshRequest",
       "name": "取消实例刷新",
       "output": "CancelInstanceRefreshResponse",
@@ -323,14 +323,14 @@
       "status": "online"
     },
     "ResumeInstanceRefresh": {
-      "document": "恢复暂停状态的实例刷新活动，使其重试当前批次刷新失败实例或继续刷新后续批次，非暂停状态下调用该接口无效。",
+      "document": "恢复暂停状态的实例刷新活动，使其重试当前批次刷新失败实例或继续刷新后续批次，非暂停状态下调用该接口无效。\n\n- 使用 MaxSurge 参数时活动可能会处于扩容或缩容失败导致的暂停状态，也可以使用该接口重试扩缩容。",
       "input": "ResumeInstanceRefreshRequest",
       "name": "恢复实例刷新",
       "output": "ResumeInstanceRefreshResponse",
       "status": "online"
     },
     "RollbackInstanceRefresh": {
-      "document": "回滚操作会生成一个新的实例刷新活动，该活动也支持分批次刷新以及暂停、恢复、取消操作，接口返回回滚活动的 RefreshActivityId。\n* 原活动中待刷新实例变更为已取消，忽略不存在实例，其他状态实例进入回滚流程\n* 原活动中正在刷新的实例不会立刻终止，刷新结束后再执行回滚活动\n* 暂停状态或最近一次成功的刷新活动支持回滚，其他状态不支持回滚\n* 原活动刷新方式为重装实例时，对于 ImageId参数，会自动恢复到回滚前镜像 ID；对于 UserData、EnhancedService、LoginSettings、 HostName 参数，依然会从启动配置中读取，需用户在回滚前自行修改启动配置",
+      "document": "回滚操作会生成一个新的实例刷新活动，该活动也支持分批次刷新以及暂停、恢复、取消操作，接口返回回滚活动的 RefreshActivityId。\n* 原活动中待刷新实例变更为已取消，忽略不存在实例，其他状态实例进入回滚流程\n* 原活动中正在刷新的实例不会立刻终止，刷新结束后再执行回滚活动\n* 暂停状态或最近一次成功的刷新活动支持回滚，其他状态不支持回滚\n* 原活动刷新方式为重装实例时，对于 ImageId参数，会自动恢复到回滚前镜像 ID；对于 UserData、EnhancedService、LoginSettings、 HostName 参数，依然会从启动配置中读取，需用户在回滚前自行修改启动配置\n* 回滚活动暂不支持 MaxSurge 参数",
       "input": "RollbackInstanceRefreshRequest",
       "name": "回滚实例刷新",
       "output": "RollbackInstanceRefreshResponse",
@@ -379,7 +379,7 @@
       "status": "online"
     },
     "StopInstanceRefresh": {
-      "document": "暂停正在执行的实例刷新活动。\n* 暂停状态下，伸缩组也会处于停用中状态\n* 当前正在更新的实例不会暂停，待更新的实例会暂停更新",
+      "document": "暂停正在执行的实例刷新活动。\n* 暂停状态下，伸缩组也会处于停用中状态\n* 当前正在更新或扩容的实例不会暂停，待更新的实例会暂停更新\n* 进行缩容时，所有实例都已经更新完成，此时无法暂停",
       "input": "StopInstanceRefreshRequest",
       "name": "暂停实例刷新",
       "output": "StopInstanceRefreshResponse",
@@ -393,7 +393,7 @@
       "status": "deprecated"
     },
     "UpgradeLifecycleHook": {
-      "document": "本接口（UpgradeLifecycleHook）用于升级生命周期挂钩。\n\n* 本接口用于升级生命周期挂钩，采用“完全覆盖”风格，无论之前参数如何，统一按照接口参数设置为新的配置。对于非必填字段，不填写则按照默认值赋值。\n",
+      "document": "本接口（UpgradeLifecycleHook）用于升级生命周期挂钩。\n\n* 本接口用于升级生命周期挂钩，采用“完全覆盖”风格，无论之前参数如何，统一按照接口参数设置为新的配置。对于非必填字段，不填写则按照默认值赋值。",
       "input": "UpgradeLifecycleHookRequest",
       "name": "升级生命周期挂钩",
       "output": "UpgradeLifecycleHookResponse",
@@ -413,7 +413,7 @@
         {
           "disabled": false,
           "document": "伸缩组ID。",
-          "example": "无",
+          "example": "asg-jub6fr43",
           "member": "string",
           "name": "AutoScalingGroupId",
           "output_required": true,
@@ -423,7 +423,7 @@
         {
           "disabled": false,
           "document": "伸缩活动ID。",
-          "example": "无",
+          "example": "asa-jdh6r43e",
           "member": "string",
           "name": "ActivityId",
           "output_required": true,
@@ -432,8 +432,8 @@
         },
         {
           "disabled": false,
-          "document": "伸缩活动类型。取值如下：<br>\n<li>SCALE_OUT：扩容活动<li>SCALE_IN：缩容活动<li>ATTACH_INSTANCES：添加实例<li>REMOVE_INSTANCES：销毁实例<li>DETACH_INSTANCES：移出实例<li>TERMINATE_INSTANCES_UNEXPECTEDLY：实例在CVM控制台被销毁<li>REPLACE_UNHEALTHY_INSTANCE：替换不健康实例\n<li>START_INSTANCES：开启实例\n<li>STOP_INSTANCES：关闭实例\n<li>INVOKE_COMMAND：执行命令",
-          "example": "无",
+          "document": "伸缩活动类型。取值如下：\n<li>SCALE_OUT：扩容活动</li>\n<li>SCALE_IN：缩容活动</li>\n<li>ATTACH_INSTANCES：添加实例</li>\n<li>REMOVE_INSTANCES：销毁实例</li>\n<li>DETACH_INSTANCES：移出实例</li>\n<li>TERMINATE_INSTANCES_UNEXPECTEDLY：实例在CVM控制台被销毁</li>\n<li>REPLACE_UNHEALTHY_INSTANCE：替换不健康实例</li>\n<li>START_INSTANCES：开启实例</li>\n<li>STOP_INSTANCES：关闭实例</li>\n<li>INVOKE_COMMAND：执行命令</li>",
+          "example": "SCALE_OUT",
           "member": "string",
           "name": "ActivityType",
           "output_required": true,
@@ -442,8 +442,8 @@
         },
         {
           "disabled": false,
-          "document": "伸缩活动状态。取值如下：<br>\n<li>INIT：初始化中\n<li>RUNNING：运行中\n<li>SUCCESSFUL：活动成功\n<li>PARTIALLY_SUCCESSFUL：活动部分成功\n<li>FAILED：活动失败\n<li>CANCELLED：活动取消",
-          "example": "无",
+          "document": "伸缩活动状态。取值如下\n<li>INIT：初始化中</li>\n<li>RUNNING：运行中</li>\n<li>SUCCESSFUL：活动成功</li>\n<li>PARTIALLY_SUCCESSFUL：活动部分成功</li>\n<li>FAILED：活动失败</li>\n<li>CANCELLED：活动取消</li>",
+          "example": "RUNNING",
           "member": "string",
           "name": "StatusCode",
           "output_required": true,
@@ -453,7 +453,7 @@
         {
           "disabled": false,
           "document": "伸缩活动状态描述。",
-          "example": "无",
+          "example": "Success",
           "member": "string",
           "name": "StatusMessage",
           "output_required": true,
@@ -463,7 +463,7 @@
         {
           "disabled": false,
           "document": "伸缩活动起因。",
-          "example": "无",
+          "example": "Activity was launched in response to a difference between desired capacity and actual capacity.",
           "member": "string",
           "name": "Cause",
           "output_required": true,
@@ -473,7 +473,7 @@
         {
           "disabled": false,
           "document": "伸缩活动描述。",
-          "example": "无",
+          "example": "Activity was launched in response to a difference between desired capacity and actual capacity, scale out 1 instance(s).",
           "member": "string",
           "name": "Description",
           "output_required": true,
@@ -483,7 +483,7 @@
         {
           "disabled": false,
           "document": "伸缩活动开始时间。",
-          "example": "无",
+          "example": "2024-11-12T05:30:21Z",
           "member": "datetime_iso",
           "name": "StartTime",
           "output_required": true,
@@ -493,7 +493,7 @@
         {
           "disabled": false,
           "document": "伸缩活动结束时间。",
-          "example": "无",
+          "example": "2024-11-12T05:30:21Z",
           "member": "datetime_iso",
           "name": "EndTime",
           "output_required": true,
@@ -503,7 +503,7 @@
         {
           "disabled": false,
           "document": "伸缩活动创建时间。",
-          "example": "无",
+          "example": "2024-11-12T05:30:21Z",
           "member": "datetime_iso",
           "name": "CreatedTime",
           "output_required": true,
@@ -523,7 +523,7 @@
         {
           "disabled": false,
           "document": "伸缩活动状态简要描述。",
-          "example": "无",
+          "example": "Success",
           "member": "string",
           "name": "StatusMessageSimplified",
           "output_required": true,
@@ -533,7 +533,7 @@
         {
           "disabled": false,
           "document": "伸缩活动中生命周期挂钩的执行结果。",
-          "example": "无",
+          "example": "[{\"NotificationResult\": \"NONE\", \"ResultReason\": \"HEARTBEAT_TIMEOUT\", \"InstanceId\": \"ins-1dcgn84h\", \"InvocationId\": \"\", \"LifecycleActionResult\": \"CONTINUE\", \"InvokeCommandResult\": \"NONE\", \"LifecycleHookId\": \"ash-aadtetfm\"}]",
           "member": "LifecycleActionResultInfo",
           "name": "LifecycleActionResultSet",
           "output_required": true,
@@ -543,7 +543,7 @@
         {
           "disabled": false,
           "document": "伸缩活动状态详细描述。",
-          "example": "无",
+          "example": "[{\"Code\": \"CvmCreationFailed\", \"Zone\": \"ap-beijing-5\", \"InstanceId\": \"ins-qfcgbumb\", \"InstanceChargeType\": \"PREPAID\", \"SubnetId\": \"subnet-opywjlrx\", \"Message\": \"Failed to launch instance `ins-qfcgbumb`. Instance type: `GNV4.12XLARGE176`, Subnet: `subnet-opywjlrx`, Zone: `ap-beijing-5`, LatestOperationCode: `ResourceInsufficient`.\", \"InstanceType\": \"GNV4.12XLARGE176\"}]",
           "member": "DetailedStatusMessage",
           "name": "DetailedStatusMessageSet",
           "output_required": true,
@@ -553,7 +553,7 @@
         {
           "disabled": false,
           "document": "执行命令结果。",
-          "example": "无",
+          "example": "[{\"InstanceId\":\"ins-ju6vr4d3\", \"InvocationId\":\"inv-1sgbq5c1\",\"InvocationTaskId\":\"invt-6x4li1zf\",\"CommandId\":\"cmd-rkk9m8rp\",\"TaskStatus\":\"SUCCESS\",\"ErrorMessage\":\"\"}]",
           "member": "InvocationResult",
           "name": "InvocationResultSet",
           "output_required": true,
@@ -563,7 +563,7 @@
         {
           "disabled": false,
           "document": "伸缩活动相关实例信息集合。",
-          "example": "无",
+          "example": " [{\"InstanceId\": \"ins-qdve9yyr\", \"InstanceStatus\": \"SUCCESSFUL\"}]",
           "member": "RelatedInstance",
           "name": "RelatedInstanceSet",
           "output_required": true,
@@ -588,7 +588,7 @@
         },
         {
           "disabled": false,
-          "document": "实例在伸缩活动中的状态。取值如下：\n<li>INIT：初始化中\n<li>RUNNING：实例操作中\n<li>SUCCESSFUL：活动成功\n<li>FAILED：活动失败",
+          "document": "实例在伸缩活动中的状态。取值如下：<br><li>INIT：初始化中</li><li>RUNNING：实例操作中</li><li>SUCCESSFUL：活动成功</li><li>FAILED：活动失败",
           "example": "无",
           "member": "string",
           "name": "InstanceStatus",
@@ -608,37 +608,37 @@
           "example": "DiskSoldOut",
           "member": "string",
           "name": "Problem",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "问题详情。",
-          "example": "无",
+          "example": "Load balancers `['lb-p4nq0x9e']` are not found.",
           "member": "string",
           "name": "Detail",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "建议解决方案。",
-          "example": "无",
+          "example": "It is recommended to config Auto Scaling Group with valid load balancer.",
           "member": "string",
           "name": "Solution",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "伸缩建议警告级别。取值范围：<br>\n<li>WARNING：警告级别<br>\n<li>CRITICAL：严重级别<br>",
+          "document": "伸缩建议警告级别。取值范围：\n<li>WARNING：警告级别</li>\n<li>CRITICAL：严重级别</li>",
           "example": "WARNING",
           "member": "string",
           "name": "Level",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -715,7 +715,7 @@
         {
           "disabled": false,
           "document": "应用型负载均衡器列表，每个伸缩组绑定应用型负载均衡器数量上限为100，LoadBalancerIds 和 ForwardLoadBalancers 二者同时最多只能指定一个",
-          "example": "无",
+          "example": "[{\"LoadBalancerId\": \"lb-af8li2kn\", \"ListenerId\": \"lbl-akw1lgo7\", \"TargetAttributes\": [{\"Port\": 80, \"Weight\": 10}]}]",
           "member": "ForwardLoadBalancer",
           "name": "ForwardLoadBalancers",
           "required": false,
@@ -733,7 +733,7 @@
           "example": "asa-67izy66g",
           "member": "string",
           "name": "ActivityId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -755,27 +755,27 @@
           "example": "asg-pc2oqu2z",
           "member": "string",
           "name": "AutoScalingGroupId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "伸缩组警告级别。取值范围：<br>\n<li>NORMAL：正常<br>\n<li>WARNING：警告级别<br>\n<li>CRITICAL：严重级别<br>",
+          "document": "伸缩组警告级别。取值范围：\n<li>NORMAL：正常</li>\n<li>WARNING：警告级别</li>\n<li>CRITICAL：严重级别</li>",
           "example": "NORMAL",
           "member": "string",
           "name": "Level",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "伸缩组配置建议集合。",
-          "example": "无",
+          "example": "[{\"Problem\": \"InvalidInstanceType\", \"Detail\": \"Instance Type `SN3ne.LARGE4`(`POSTPAID_BY_HOUR`) in `ap-shanghai-5` is invalid.\", \"Solution\": \"It is recommended to replace the invalid instance type.\", \"Level\": \"WARNING\"}]",
           "member": "Advice",
           "name": "Advices",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -807,7 +807,7 @@
         },
         {
           "disabled": false,
-          "document": "伸缩组当前状态。取值范围：<br>\n<li>NORMAL：正常<br>\n<li>CVM_ABNORMAL：启动配置异常<br>\n<li>LB_ABNORMAL：负载均衡器异常<br>\n<li>LB_LISTENER_ABNORMAL：负载均衡器监听器异常<br>\n<li>LB_LOCATION_ABNORMAL：负载均衡器监听器转发配置异常<br>\n<li>VPC_ABNORMAL：VPC网络异常<br>\n<li>SUBNET_ABNORMAL：VPC子网异常<br>\n<li>INSUFFICIENT_BALANCE：余额不足<br>\n<li>LB_BACKEND_REGION_NOT_MATCH：CLB实例后端地域与AS服务所在地域不匹配<br>\n<li>LB_BACKEND_VPC_NOT_MATCH：CLB实例VPC与伸缩组VPC不匹配",
+          "document": "伸缩组当前状态。取值范围：\n<li>NORMAL：正常</li>\n<li>CVM_ABNORMAL：启动配置异常</li>\n<li>LB_ABNORMAL：负载均衡器异常</li>\n<li>LB_LISTENER_ABNORMAL：负载均衡器监听器异常</li>\n<li>LB_LOCATION_ABNORMAL：负载均衡器监听器转发配置异常</li>\n<li>VPC_ABNORMAL：VPC网络异常</li>\n<li>SUBNET_ABNORMAL：VPC子网异常</li>\n<li>INSUFFICIENT_BALANCE：余额不足</li>\n<li>LB_BACKEND_REGION_NOT_MATCH：CLB实例后端地域与AS服务所在地域不匹配</li>\n<li>LB_BACKEND_VPC_NOT_MATCH：CLB实例VPC与伸缩组VPC不匹配</li>",
           "example": "NORMAL",
           "member": "string",
           "name": "AutoScalingGroupStatus",
@@ -858,7 +858,7 @@
         {
           "disabled": false,
           "document": "应用型负载均衡器列表",
-          "example": "[]",
+          "example": "[{\"LoadBalancerId\": \"lb-af8li2kn\", \"ListenerId\": \"lbl-akw1lgo7\", \"TargetAttributes\": [{\"Port\": 80, \"Weight\": 10}]}]",
           "member": "ForwardLoadBalancer",
           "name": "ForwardLoadBalancerSet",
           "output_required": true,
@@ -908,7 +908,7 @@
         {
           "disabled": false,
           "document": "传统型负载均衡器ID列表",
-          "example": "[]",
+          "example": "[\"lb-ij7ytg54\"]",
           "member": "string",
           "name": "LoadBalancerIdSet",
           "output_required": true,
@@ -978,7 +978,7 @@
         {
           "disabled": false,
           "document": "可用区列表",
-          "example": "[]",
+          "example": "[\"ap-guangzhou-5\"]",
           "member": "string",
           "name": "ZoneSet",
           "output_required": true,
@@ -1008,7 +1008,7 @@
         {
           "disabled": false,
           "document": "伸缩组标签列表",
-          "example": "[]",
+          "example": "[{\"Key\": \"Service_B\", \"Value\": \"pss3\", \"ResourceType\": \"auto-scaling-group\"}]",
           "member": "Tag",
           "name": "Tags",
           "output_required": true,
@@ -1018,7 +1018,7 @@
         {
           "disabled": false,
           "document": "服务设置",
-          "example": "null",
+          "example": "{\"ReplaceMonitorUnhealthy\": false, \"ReplaceLoadBalancerUnhealthy\": false, \"ReplaceMode\": \"RECREATE\", \"ScalingMode\": \"CLASSIC_SCALING\"}",
           "member": "ServiceSettings",
           "name": "ServiceSettings",
           "output_required": true,
@@ -1037,7 +1037,7 @@
         },
         {
           "disabled": false,
-          "document": "多可用区/子网策略。\n<br><li> PRIORITY，按照可用区/子网列表的顺序，作为优先级来尝试创建实例，如果优先级最高的可用区/子网可以创建成功，则总在该可用区/子网创建。\n<br><li> EQUALITY：每次选择当前实例数最少的可用区/子网进行扩容，使得每个可用区/子网都有机会发生扩容，多次扩容出的实例会打散到多个可用区/子网。",
+          "document": "多可用区/子网策略。\n<li> PRIORITY，按照可用区/子网列表的顺序，作为优先级来尝试创建实例，如果优先级最高的可用区/子网可以创建成功，则总在该可用区/子网创建。</li>\n<li> EQUALITY：每次选择当前实例数最少的可用区/子网进行扩容，使得每个可用区/子网都有机会发生扩容，多次扩容出的实例会打散到多个可用区/子网。</li>",
           "example": "PRIORITY",
           "member": "string",
           "name": "MultiZoneSubnetPolicy",
@@ -1047,7 +1047,7 @@
         },
         {
           "disabled": false,
-          "document": "伸缩组实例健康检查类型，取值如下：<br><li>CVM：根据实例网络状态判断实例是否处于不健康状态，不健康的网络状态即发生实例 PING 不可达事件，详细判断标准可参考[实例健康检查](https://cloud.tencent.com/document/product/377/8553)<br><li>CLB：根据 CLB 的健康检查状态判断实例是否处于不健康状态，CLB健康检查原理可参考[健康检查](https://cloud.tencent.com/document/product/214/6097)",
+          "document": "伸缩组实例健康检查类型，取值如下：\n<li>CVM：根据实例网络状态判断实例是否处于不健康状态，不健康的网络状态即发生实例 PING 不可达事件，详细判断标准可参考[实例健康检查](https://cloud.tencent.com/document/product/377/8553)</li>\n<li>CLB：根据 CLB 的健康检查状态判断实例是否处于不健康状态，CLB健康检查原理可参考[健康检查](https://cloud.tencent.com/document/product/214/6097)</li>",
           "example": "CLB",
           "member": "string",
           "name": "HealthCheckType",
@@ -1067,7 +1067,7 @@
         },
         {
           "disabled": false,
-          "document": "实例分配策略，取值包括 LAUNCH_CONFIGURATION 和 SPOT_MIXED。\n<br><li> LAUNCH_CONFIGURATION，代表传统的按照启动配置模式。\n<br><li> SPOT_MIXED，代表竞价混合模式。目前仅支持启动配置为按量计费模式时使用混合模式，混合模式下，伸缩组将根据设定扩容按量或竞价机型。使用混合模式时，关联的启动配置的计费类型不可被修改。",
+          "document": "实例分配策略，取值包括 LAUNCH_CONFIGURATION 和 SPOT_MIXED。\n<li> LAUNCH_CONFIGURATION，代表传统的按照启动配置模式。</li>\n<li> SPOT_MIXED，代表竞价混合模式。目前仅支持启动配置为按量计费模式时使用混合模式，混合模式下，伸缩组将根据设定扩容按量或竞价机型。使用混合模式时，关联的启动配置的计费类型不可被修改。</li>",
           "example": "LAUNCH_CONFIGURATION",
           "member": "string",
           "name": "InstanceAllocationPolicy",
@@ -1078,7 +1078,7 @@
         {
           "disabled": false,
           "document": "竞价混合模式下，各计费类型实例的分配策略。\n仅当 InstanceAllocationPolicy 取 SPOT_MIXED 时才会返回有效值。",
-          "example": "无",
+          "example": "{\"BaseCapacity\": 1, \"CompensateWithBaseInstance\": true, \"OnDemandPercentageAboveBaseCapacity\": 50, \"SpotAllocationStrategy\": \"COST_OPTIMIZED\"}",
           "member": "SpotMixedAllocationPolicy",
           "name": "SpotMixedAllocationPolicy",
           "output_required": true,
@@ -1087,7 +1087,7 @@
         },
         {
           "disabled": false,
-          "document": "容量重平衡功能，仅对伸缩组内的竞价实例有效。取值范围：\n<br><li> TRUE，开启该功能，当伸缩组内的竞价实例即将被竞价实例服务自动回收前，AS 主动发起竞价实例销毁流程，如果有配置过缩容 hook，则销毁前 hook 会生效。销毁流程启动后，AS 会异步开启一个扩容活动，用于补齐期望实例数。\n<br><li> FALSE，不开启该功能，则 AS 等待竞价实例被销毁后才会去扩容补齐伸缩组期望实例数。",
+          "document": "容量重平衡功能，仅对伸缩组内的竞价实例有效。取值范围：\n<li> TRUE，开启该功能，当伸缩组内的竞价实例即将被竞价实例服务自动回收前，AS 主动发起竞价实例销毁流程，如果有配置过缩容 hook，则销毁前 hook 会生效。销毁流程启动后，AS 会异步开启一个扩容活动，用于补齐期望实例数。</li>\n<li> FALSE，不开启该功能，则 AS 等待竞价实例被销毁后才会去扩容补齐伸缩组期望实例数。</li>",
           "example": "false",
           "member": "bool",
           "name": "CapacityRebalance",
@@ -1098,7 +1098,7 @@
         {
           "disabled": false,
           "document": "实例名称序号相关设置。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "null",
+          "example": "{\"BeginIndex\": 0, \"Enabled\": true}",
           "member": "InstanceNameIndexSettings",
           "name": "InstanceNameIndexSettings",
           "output_required": true,
@@ -1114,20 +1114,20 @@
         {
           "disabled": false,
           "document": "伸缩组ID。",
-          "example": "",
+          "example": "asg-djy6etgf",
           "member": "string",
           "name": "AutoScalingGroupId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "伸缩组名称。",
-          "example": "",
+          "example": "as-group-a0",
           "member": "string",
           "name": "AutoScalingGroupName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -1351,7 +1351,7 @@
         {
           "disabled": false,
           "document": "“InstanceId”和“LifecycleActionToken”必须填充其中一个",
-          "example": "无",
+          "example": "34b59a82-6435-4516-90db-c98aeb46769b",
           "member": "string",
           "name": "LifecycleActionToken",
           "required": false,
@@ -1496,7 +1496,7 @@
         {
           "disabled": false,
           "document": "VPC ID，基础网络则填空字符串",
-          "example": "vpc-aaaabbbb",
+          "example": "vpc-uhygtf56",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -1523,7 +1523,7 @@
         {
           "disabled": false,
           "document": "传统负载均衡器ID列表，目前长度上限为20，LoadBalancerIds 和 ForwardLoadBalancers 二者同时最多只能指定一个",
-          "example": "[\"lb-aaaabbbb\"]",
+          "example": "[\"lb-uhygtf56\"]",
           "member": "string",
           "name": "LoadBalancerIds",
           "required": false,
@@ -1541,7 +1541,7 @@
         {
           "disabled": false,
           "document": "应用型负载均衡器列表，目前长度上限为100，LoadBalancerIds 和 ForwardLoadBalancers 二者同时最多只能指定一个",
-          "example": "无",
+          "example": "[{\"LoadBalancerId\": \"lb-af8li2kn\", \"ListenerId\": \"lbl-akw1lgo7\", \"TargetAttributes\": [{\"Port\": 80, \"Weight\": 10}]}]",
           "member": "ForwardLoadBalancer",
           "name": "ForwardLoadBalancers",
           "required": false,
@@ -1550,7 +1550,7 @@
         {
           "disabled": false,
           "document": "子网ID列表，VPC场景下必须指定子网。多个子网以填写顺序为优先级，依次进行尝试，直至可以成功创建实例。",
-          "example": "[\"subnet-xxxxbbbb\"]",
+          "example": "[\"subnet-uhygtf56\"]",
           "member": "string",
           "name": "SubnetIds",
           "required": false,
@@ -1558,8 +1558,8 @@
         },
         {
           "disabled": false,
-          "document": "销毁策略，目前长度上限为1。取值包括 OLDEST_INSTANCE 和 NEWEST_INSTANCE，默认取值为 OLDEST_INSTANCE。\n<br><li> OLDEST_INSTANCE 优先销毁伸缩组中最旧的实例。\n<br><li> NEWEST_INSTANCE，优先销毁伸缩组中最新的实例。",
-          "example": "无",
+          "document": "销毁策略，目前长度上限为1。取值包括 OLDEST_INSTANCE 和 NEWEST_INSTANCE，默认取值为 OLDEST_INSTANCE。\n<li> OLDEST_INSTANCE 优先销毁伸缩组中最旧的实例。</li>\n<li> NEWEST_INSTANCE，优先销毁伸缩组中最新的实例。</li>",
+          "example": "OLDEST_INSTANCE",
           "member": "string",
           "name": "TerminationPolicies",
           "required": false,
@@ -1576,7 +1576,7 @@
         },
         {
           "disabled": false,
-          "document": "重试策略，取值包括 IMMEDIATE_RETRY、 INCREMENTAL_INTERVALS、NO_RETRY，默认取值为 IMMEDIATE_RETRY。部分成功的伸缩活动判定为一次失败活动。\n<br><li> IMMEDIATE_RETRY，立即重试，在较短时间内快速重试，连续失败超过一定次数（5次）后不再重试。\n<br><li> INCREMENTAL_INTERVALS，间隔递增重试，随着连续失败次数的增加，重试间隔逐渐增大，重试间隔从秒级到1天不等。\n<br><li> NO_RETRY，不进行重试，直到再次收到用户调用或者告警信息后才会重试。",
+          "document": "重试策略，取值包括 IMMEDIATE_RETRY、 INCREMENTAL_INTERVALS、NO_RETRY，默认取值为 IMMEDIATE_RETRY。部分成功的伸缩活动判定为一次失败活动。\n<li> IMMEDIATE_RETRY，立即重试，在较短时间内快速重试，连续失败超过一定次数（5次）后不再重试。</li> \n<li> INCREMENTAL_INTERVALS，间隔递增重试，随着连续失败次数的增加，重试间隔逐渐增大。前 10 次重试间隔与立即重试模式相同，后续逐步递增至 10 分钟、30 分钟、60 分钟、一天。</li> \n<li> NO_RETRY，不进行重试，直到再次收到用户调用或者告警信息后才会重试。</li> ",
           "example": "IMMEDIATE_RETRY",
           "member": "string",
           "name": "RetryPolicy",
@@ -1585,7 +1585,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区校验策略，取值包括 ALL 和 ANY，默认取值为ANY。\n<br><li> ALL，所有可用区（Zone）或子网（SubnetId）都可用则通过校验，否则校验报错。\n<br><li> ANY，存在任何一个可用区（Zone）或子网（SubnetId）可用则通过校验，否则校验报错。\n\n可用区或子网不可用的常见原因包括该可用区CVM实例类型售罄、该可用区CBS云盘售罄、该可用区配额不足、该子网IP不足等。\n如果 Zones/SubnetIds 中可用区或者子网不存在，则无论 ZonesCheckPolicy 采用何种取值，都会校验报错。",
+          "document": "可用区校验策略，取值包括 ALL 和 ANY，默认取值为ANY。\n<li> ALL，所有可用区（Zone）或子网（SubnetId）都可用则通过校验，否则校验报错。</li>\n<li> ANY，存在任何一个可用区（Zone）或子网（SubnetId）可用则通过校验，否则校验报错。</li>\n\n可用区或子网不可用的常见原因包括该可用区CVM实例类型售罄、该可用区CBS云盘售罄、该可用区配额不足、该子网IP不足等。\n如果 Zones/SubnetIds 中可用区或者子网不存在，则无论 ZonesCheckPolicy 采用何种取值，都会校验报错。",
           "example": "ALL",
           "member": "string",
           "name": "ZonesCheckPolicy",
@@ -1595,7 +1595,7 @@
         {
           "disabled": false,
           "document": "标签描述列表。通过指定该参数可以支持绑定标签到伸缩组。同时绑定标签到相应的资源实例。每个伸缩组最多支持30个标签。",
-          "example": "无",
+          "example": "[{\"Key\": \"Service_B\", \"Value\": \"pss3\", \"ResourceType\": \"auto-scaling-group\"}]",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -1604,7 +1604,7 @@
         {
           "disabled": false,
           "document": "服务设置，包括云监控不健康替换等服务设置。",
-          "example": "无",
+          "example": "{\"ScalingMode\": \"CLASSIC_SCALING\"}",
           "member": "ServiceSettings",
           "name": "ServiceSettings",
           "required": false,
@@ -1621,7 +1621,7 @@
         },
         {
           "disabled": false,
-          "document": "多可用区/子网策略，取值包括 PRIORITY 和 EQUALITY，默认为 PRIORITY。\n<br><li> PRIORITY，按照可用区/子网列表的顺序，作为优先级来尝试创建实例，如果优先级最高的可用区/子网可以创建成功，则总在该可用区/子网创建。\n<br><li> EQUALITY：扩容出的实例会打散到多个可用区/子网，保证扩容后的各个可用区/子网实例数相对均衡。\n\n与本策略相关的注意点：\n<br><li> 当伸缩组为基础网络时，本策略适用于多可用区；当伸缩组为VPC网络时，本策略适用于多子网，此时不再考虑可用区因素，例如四个子网ABCD，其中ABC处于可用区1，D处于可用区2，此时考虑子网ABCD进行排序，而不考虑可用区1、2。\n<br><li> 本策略适用于多可用区/子网，不适用于启动配置的多机型。多机型按照优先级策略进行选择。\n<br><li> 按照 PRIORITY 策略创建实例时，先保证多机型的策略，后保证多可用区/子网的策略。例如多机型A、B，多子网1、2、3，会按照A1、A2、A3、B1、B2、B3 进行尝试，如果A1售罄，会尝试A2（而非B1）。",
+          "document": "多可用区/子网策略，取值包括 PRIORITY 和 EQUALITY，默认为 PRIORITY。\n<li> PRIORITY，按照可用区/子网列表的顺序，作为优先级来尝试创建实例，如果优先级最高的可用区/子网可以创建成功，则总在该可用区/子网创建。</li>\n<li> EQUALITY：扩容出的实例会打散到多个可用区/子网，保证扩容后的各个可用区/子网实例数相对均衡。</li>\n\n与本策略相关的注意点：\n<li> 当伸缩组为基础网络时，本策略适用于多可用区；当伸缩组为VPC网络时，本策略适用于多子网，此时不再考虑可用区因素，例如四个子网ABCD，其中ABC处于可用区1，D处于可用区2，此时考虑子网ABCD进行排序，而不考虑可用区1、2。</li>\n<li> 本策略适用于多可用区/子网，不适用于启动配置的多机型。多机型按照优先级策略进行选择。</li>\n<li> 按照 PRIORITY 策略创建实例时，先保证多机型的策略，后保证多可用区/子网的策略。例如多机型A、B，多子网1、2、3，会按照A1、A2、A3、B1、B2、B3 进行尝试，如果A1售罄，会尝试A2（而非B1）。</li>",
           "example": "PRIORITY ",
           "member": "string",
           "name": "MultiZoneSubnetPolicy",
@@ -1630,7 +1630,7 @@
         },
         {
           "disabled": false,
-          "document": "伸缩组实例健康检查类型，取值如下：<br><li>CVM：根据实例网络状态判断实例是否处于不健康状态，不健康的网络状态即发生实例 PING 不可达事件，详细判断标准可参考[实例健康检查](https://cloud.tencent.com/document/product/377/8553)<br><li>CLB：根据 CLB 的健康检查状态判断实例是否处于不健康状态，CLB健康检查原理可参考[健康检查](https://cloud.tencent.com/document/product/214/6097) <br>如果选择了`CLB`类型，伸缩组将同时检查实例网络状态与CLB健康检查状态，如果出现实例网络状态不健康，实例将被标记为 UNHEALTHY 状态；如果出现 CLB 健康检查状态异常，实例将被标记为CLB_UNHEALTHY 状态，如果两个异常状态同时出现，实例`HealthStatus`字段将返回 UNHEALTHY|CLB_UNHEALTHY。默认值：CLB",
+          "document": "伸缩组实例健康检查类型，取值如下：\n<li>CVM：根据实例网络状态判断实例是否处于不健康状态，不健康的网络状态即发生实例 PING 不可达事件，详细判断标准可参考[实例健康检查](https://cloud.tencent.com/document/product/377/8553)</li>\n<li>CLB：根据 CLB 的健康检查状态判断实例是否处于不健康状态，CLB健康检查原理可参考[健康检查](https://cloud.tencent.com/document/product/214/6097) </li>\n如果选择了`CLB`类型，伸缩组将同时检查实例网络状态与CLB健康检查状态，如果出现实例网络状态不健康，实例将被标记为 UNHEALTHY 状态；如果出现 CLB 健康检查状态异常，实例将被标记为CLB_UNHEALTHY 状态，如果两个异常状态同时出现，实例`HealthStatus`字段将返回 UNHEALTHY|CLB_UNHEALTHY。默认值：CLB",
           "example": "CLB",
           "member": "string",
           "name": "HealthCheckType",
@@ -1648,7 +1648,7 @@
         },
         {
           "disabled": false,
-          "document": "实例分配策略，取值包括 LAUNCH_CONFIGURATION 和 SPOT_MIXED，默认取 LAUNCH_CONFIGURATION。\n<br><li> LAUNCH_CONFIGURATION，代表传统的按照启动配置模式。\n<br><li> SPOT_MIXED，代表竞价混合模式。目前仅支持启动配置为按量计费模式时使用混合模式，混合模式下，伸缩组将根据设定扩容按量或竞价机型。使用混合模式时，关联的启动配置的计费类型不可被修改。",
+          "document": "实例分配策略，取值包括 LAUNCH_CONFIGURATION 和 SPOT_MIXED，默认取 LAUNCH_CONFIGURATION。\n<li> LAUNCH_CONFIGURATION，代表传统的按照启动配置模式。</li>\n<li> SPOT_MIXED，代表竞价混合模式。目前仅支持启动配置为按量计费模式时使用混合模式，混合模式下，伸缩组将根据设定扩容按量或竞价机型。使用混合模式时，关联的启动配置的计费类型不可被修改。</li>",
           "example": "LAUNCH_CONFIGURATION",
           "member": "string",
           "name": "InstanceAllocationPolicy",
@@ -1658,7 +1658,7 @@
         {
           "disabled": false,
           "document": "竞价混合模式下，各计费类型实例的分配策略。\n仅当 InstanceAllocationPolicy 取 SPOT_MIXED 时可用。",
-          "example": "无",
+          "example": "{\"BaseCapacity\": 1, \"CompensateWithBaseInstance\": true, \"OnDemandPercentageAboveBaseCapacity\": 50, \"SpotAllocationStrategy\": \"COST_OPTIMIZED\"}",
           "member": "SpotMixedAllocationPolicy",
           "name": "SpotMixedAllocationPolicy",
           "required": false,
@@ -1666,7 +1666,7 @@
         },
         {
           "disabled": false,
-          "document": "容量重平衡功能，仅对伸缩组内的竞价实例有效。取值范围：\n<br><li> TRUE，开启该功能，当伸缩组内的竞价实例即将被竞价实例服务自动回收前，AS 主动发起竞价实例销毁流程，如果有配置过缩容 hook，则销毁前 hook 会生效。销毁流程启动后，AS 会异步开启一个扩容活动，用于补齐期望实例数。\n<br><li> FALSE，不开启该功能，则 AS 等待竞价实例被销毁后才会去扩容补齐伸缩组期望实例数。\n\n默认取 FALSE。",
+          "document": "容量重平衡功能，仅对伸缩组内的竞价实例有效。取值范围：\n<li> TRUE，开启该功能，当伸缩组内的竞价实例即将被竞价实例服务自动回收前，AS 主动发起竞价实例销毁流程，如果有配置过缩容 hook，则销毁前 hook 会生效。销毁流程启动后，AS 会异步开启一个扩容活动，用于补齐期望实例数。</li>\n<li> FALSE，不开启该功能，则 AS 等待竞价实例被销毁后才会去扩容补齐伸缩组期望实例数。</li>\n默认取 FALSE。",
           "example": "false",
           "member": "bool",
           "name": "CapacityRebalance",
@@ -1676,7 +1676,7 @@
         {
           "disabled": false,
           "document": "实例名称序号相关设置。若不指定该参数，则默认不开启。开启后为伸缩组内自动创建的实例名称添加递增的数字序号。",
-          "example": "无",
+          "example": "{\"BeginIndex\": 0, \"Enabled\": true}",
           "member": "InstanceNameIndexSettings",
           "name": "InstanceNameIndexSettings",
           "required": false,
@@ -1691,7 +1691,7 @@
         {
           "disabled": false,
           "document": "伸缩组ID",
-          "example": "asg-aaaaqqqq",
+          "example": "asg-y6tf4e3w",
           "member": "string",
           "name": "AutoScalingGroupId",
           "output_required": true,
@@ -1731,7 +1731,7 @@
         {
           "disabled": false,
           "document": "启动配置所属项目ID。不填为默认项目。\n注意：伸缩组内实例所属项目ID取伸缩组项目ID，与这里取值无关。",
-          "example": "无",
+          "example": "0",
           "member": "uint64",
           "name": "ProjectId",
           "required": false,
@@ -1749,7 +1749,7 @@
         {
           "disabled": false,
           "document": "实例系统盘配置信息。若不指定该参数，则按照系统默认值进行分配。",
-          "example": "无",
+          "example": "{\"DiskSize\": 500, \"DiskType\": \"CLOUD_BSSD\"}",
           "member": "SystemDisk",
           "name": "SystemDisk",
           "required": false,
@@ -1758,7 +1758,7 @@
         {
           "disabled": false,
           "document": "实例数据盘配置信息。若不指定该参数，则默认不购买数据盘，最多支持指定11块数据盘。",
-          "example": "无",
+          "example": "[{\"DiskSize\": 200, \"DiskType\": \"CLOUD_BSSD\"}]",
           "member": "DataDisk",
           "name": "DataDisks",
           "required": false,
@@ -1767,7 +1767,7 @@
         {
           "disabled": false,
           "document": "公网带宽相关信息设置。若不指定该参数，则默认公网带宽为0Mbps。",
-          "example": "无",
+          "example": "{\"InternetChargeType\": \"TRAFFIC_POSTPAID_BY_HOUR\", \"InternetMaxBandwidthOut\": 0, \"PublicIpAssigned\": false}",
           "member": "InternetAccessible",
           "name": "InternetAccessible",
           "required": false,
@@ -1776,7 +1776,7 @@
         {
           "disabled": false,
           "document": "实例登录设置。通过该参数可以设置实例的登录方式密码、密钥或保持镜像的原始登录设置。默认情况下会随机生成密码，并以站内信方式知会到用户。",
-          "example": "无",
+          "example": "{\"KeyIds\": [\"skey-alaz9k65\"]}",
           "member": "LoginSettings",
           "name": "LoginSettings",
           "required": false,
@@ -1785,7 +1785,7 @@
         {
           "disabled": false,
           "document": "实例所属安全组。该参数可以通过调用 [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808) 的返回值中的`SecurityGroupId`字段来获取。若不指定该参数，则默认不绑定安全组。",
-          "example": "无",
+          "example": "[\"sg-arrfspxo\"]",
           "member": "string",
           "name": "SecurityGroupIds",
           "required": false,
@@ -1794,7 +1794,7 @@
         {
           "disabled": false,
           "document": "增强服务。通过该参数可以指定是否开启云安全、云监控等服务。若不指定该参数，则默认开启云监控、云安全服务。",
-          "example": "无",
+          "example": "{\"MonitorService\": {\"Enabled\": true}, \"SecurityService\": {\"Enabled\": true}}",
           "member": "EnhancedService",
           "name": "EnhancedService",
           "required": false,
@@ -1803,7 +1803,7 @@
         {
           "disabled": false,
           "document": "经过 Base64 编码后的自定义数据，最大长度不超过16KB。",
-          "example": "无",
+          "example": "IyEvYmluL2Jhc2gKZWNobyAxMjMKCg==",
           "member": "string",
           "name": "UserData",
           "required": false,
@@ -1811,8 +1811,8 @@
         },
         {
           "disabled": false,
-          "document": "实例计费类型，CVM默认值按照POSTPAID_BY_HOUR处理。\n<li>POSTPAID_BY_HOUR：按小时后付费</li>\n<li>SPOTPAID：竞价付费</li>\n<li>PREPAID：预付费，即包年包月</li>",
-          "example": "无",
+          "document": "实例计费类型，CVM默认值按照POSTPAID_BY_HOUR处理。\n<li>POSTPAID_BY_HOUR：按小时后付费</li>\n<li>SPOTPAID：竞价付费</li>\n<li>PREPAID：预付费，即包年包月</li>\n<li>CDCPAID：专用集群付费</li>",
+          "example": "POSTPAID_BY_HOUR",
           "member": "string",
           "name": "InstanceChargeType",
           "required": false,
@@ -1821,7 +1821,7 @@
         {
           "disabled": false,
           "document": "实例的市场相关选项，如竞价实例相关参数，若指定实例的付费模式为竞价付费则该参数必传。",
-          "example": "无",
+          "example": "{\"SpotOptions\": {\"MaxPrice\": 1000}}",
           "member": "InstanceMarketOptionsRequest",
           "name": "InstanceMarketOptions",
           "required": false,
@@ -1830,7 +1830,7 @@
         {
           "disabled": false,
           "document": "实例机型列表，不同实例机型指定了不同的资源规格，最多支持10种实例机型。\n`InstanceType`和`InstanceTypes`参数互斥，二者必填一个且只能填写一个。",
-          "example": "无",
+          "example": "[\"S5.MEDIUM2\", \"S6.MEDIUM2\"]",
           "member": "string",
           "name": "InstanceTypes",
           "required": false,
@@ -1839,7 +1839,7 @@
         {
           "disabled": false,
           "document": "CAM角色名称。可通过DescribeRoleList接口返回值中的roleName获取。",
-          "example": "无",
+          "example": "CVM_QcsRole",
           "member": "string",
           "name": "CamRoleName",
           "required": false,
@@ -1848,7 +1848,7 @@
         {
           "disabled": false,
           "document": "实例类型校验策略，取值包括 ALL 和 ANY，默认取值为ANY。\n<li> ALL，所有实例类型（InstanceType）都可用则通过校验，否则校验报错。</li>\n<li> ANY，存在任何一个实例类型（InstanceType）可用则通过校验，否则校验报错。</li>\n\n实例类型不可用的常见原因包括该实例类型售罄、对应云盘售罄等。\n如果 InstanceTypes 中一款机型不存在或者已下线，则无论 InstanceTypesCheckPolicy 采用何种取值，都会校验报错。",
-          "example": "无",
+          "example": "ANY",
           "member": "string",
           "name": "InstanceTypesCheckPolicy",
           "required": false,
@@ -1857,7 +1857,7 @@
         {
           "disabled": false,
           "document": "标签列表。通过指定该参数，可以为扩容的实例绑定标签。最多支持指定10个标签。",
-          "example": "无",
+          "example": "[{\"Key\": \"server-group-name\", \"Value\": \"as-tencent\"}]",
           "member": "InstanceTag",
           "name": "InstanceTags",
           "required": false,
@@ -1866,7 +1866,7 @@
         {
           "disabled": false,
           "document": "标签描述列表。通过指定该参数可以支持绑定标签到启动配置。每个启动配置最多支持30个标签。",
-          "example": "无",
+          "example": "[{\"Key\": \"CCode\", \"Value\": \"ASTENCENT\", \"ResourceType\": \"launch-configuration\"}]",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -1875,7 +1875,7 @@
         {
           "disabled": false,
           "document": "云服务器主机名（HostName）的相关设置。",
-          "example": "无",
+          "example": "{\"HostName\": \"app-as\", \"HostNameStyle\": \"UNIQUE\"}",
           "member": "HostNameSettings",
           "name": "HostNameSettings",
           "required": false,
@@ -1884,7 +1884,7 @@
         {
           "disabled": false,
           "document": "云服务器实例名（InstanceName）的相关设置。\n如果用户在启动配置中设置此字段，则伸缩组创建出的实例 InstanceName 参照此字段进行设置，并传递给 CVM；如果用户未在启动配置中设置此字段，则伸缩组创建出的实例 InstanceName 按照“as-{{ 伸缩组AutoScalingGroupName }}”进行设置，并传递给 CVM。",
-          "example": "无",
+          "example": "{\"InstanceName\": \"app-as\", \"InstanceNameStyle\": \"UNIQUE\"}",
           "member": "InstanceNameSettings",
           "name": "InstanceNameSettings",
           "required": false,
@@ -1893,7 +1893,7 @@
         {
           "disabled": false,
           "document": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。",
-          "example": "无",
+          "example": "{\"Period\": 1, \"RenewFlag\": \"NOTIFY_AND_AUTO_RENEW\"}",
           "member": "InstanceChargePrepaid",
           "name": "InstanceChargePrepaid",
           "required": false,
@@ -1911,7 +1911,7 @@
         {
           "disabled": false,
           "document": "高性能计算集群ID。<br>\n注意：此字段默认为空。",
-          "example": "无",
+          "example": "hpc-gt4es2q1",
           "member": "string",
           "name": "HpcClusterId",
           "required": false,
@@ -1920,7 +1920,7 @@
         {
           "disabled": false,
           "document": "IPv6公网带宽相关信息设置。若新建实例包含IPv6地址，该参数可为新建实例的IPv6地址分配公网带宽。关联启动配置的伸缩组Ipv6AddressCount参数为0时，该参数不会生效。",
-          "example": "无",
+          "example": "{\"InternetChargeType\": \"TRAFFIC_POSTPAID_BY_HOUR\", \"InternetMaxBandwidthOut\": 1}",
           "member": "IPv6InternetAccessible",
           "name": "IPv6InternetAccessible",
           "required": false,
@@ -1941,6 +1941,15 @@
           "example": "test-family",
           "member": "string",
           "name": "ImageFamily",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "本地专用集群ID。",
+          "example": "cluster-gbo27yc4",
+          "member": "string",
+          "name": "DedicatedClusterId",
           "required": false,
           "type": "string"
         }
@@ -2020,7 +2029,7 @@
         {
           "disabled": false,
           "document": "弹性伸缩向通知目标发送的附加信息，配置通知时使用,默认值为空字符串\"\"。最大长度不能超过1024个字节。",
-          "example": "\"\"",
+          "example": "addtional-info",
           "member": "string",
           "name": "NotificationMetadata",
           "required": false,
@@ -2029,7 +2038,7 @@
         {
           "disabled": false,
           "document": "通知目标。NotificationTarget和LifecycleCommand参数互斥，二者不可同时指定。",
-          "example": "无",
+          "example": "{\"QueueName\": \"as-pool\", \"TargetType\": \"TDMQ_CMQ_QUEUE\"}",
           "member": "NotificationTarget",
           "name": "NotificationTarget",
           "required": false,
@@ -2047,7 +2056,7 @@
         {
           "disabled": false,
           "document": "远程命令执行对象。NotificationTarget和LifecycleCommand参数互斥，二者不可同时指定。",
-          "example": "无",
+          "example": "{\"CommandId\": \"cmd-am4e3hd8\", \"Parameters\": \"{123: 222}\"}",
           "member": "LifecycleCommand",
           "name": "LifecycleCommand",
           "required": false,
@@ -2065,7 +2074,7 @@
           "example": "ash-8azjzxj9",
           "member": "string",
           "name": "LifecycleHookId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2201,7 +2210,7 @@
         },
         {
           "disabled": false,
-          "document": "告警触发后，期望实例数的调整值，仅适用于简单策略。<br><li>当 AdjustmentType 为 CHANGE_IN_CAPACITY 时，AdjustmentValue 为正数表示告警触发后增加实例，为负数表示告警触发后减少实例 </li> <li> 当 AdjustmentType 为 EXACT_CAPACITY 时，AdjustmentValue 的值即为告警触发后新的期望实例数，需要大于或等于0 </li> <li> 当 AdjustmentType 为 PERCENT_CHANGE_IN_CAPACITY 时，AdjusmentValue 为正数表示告警触发后按百分比增加实例，为负数表示告警触发后按百分比减少实例，单位是：%。",
+          "document": "告警触发后，期望实例数的调整值，仅适用于简单策略。\n<li>当 AdjustmentType 为 CHANGE_IN_CAPACITY 时，AdjustmentValue 为正数表示告警触发后增加实例，为负数表示告警触发后减少实例 </li> \n<li> 当 AdjustmentType 为 EXACT_CAPACITY 时，AdjustmentValue 的值即为告警触发后新的期望实例数，需要大于或等于0 </li> \n<li> 当 AdjustmentType 为 PERCENT_CHANGE_IN_CAPACITY 时，AdjusmentValue 为正数表示告警触发后按百分比增加实例，为负数表示告警触发后按百分比减少实例，单位是：%。</li>",
           "example": "1",
           "member": "int64",
           "name": "AdjustmentValue",
@@ -2220,7 +2229,7 @@
         {
           "disabled": false,
           "document": "告警监控指标，仅适用于简单策略。",
-          "example": "无",
+          "example": "{\"ComparisonOperator\": \"GREATER_THAN\", \"ContinuousTime\": 1, \"MetricName\": \"CPU_UTILIZATION\", \"Period\": 60, \"Statistic\": \"AVERAGE\", \"Threshold\": 15}",
           "member": "MetricAlarm",
           "name": "MetricAlarm",
           "required": false,
@@ -2228,7 +2237,7 @@
         },
         {
           "disabled": false,
-          "document": "预定义监控项，仅适用于目标追踪策略。取值范围：<br><li>ASG_AVG_CPU_UTILIZATION：平均CPU使用率</li><li>ASG_AVG_LAN_TRAFFIC_OUT：平均内网出带宽</li><li>ASG_AVG_LAN_TRAFFIC_IN：平均内网入带宽</li><li>ASG_AVG_WAN_TRAFFIC_OUT：平均外网出带宽</li><li>ASG_AVG_WAN_TRAFFIC_IN：平均外网出带宽</li>",
+          "document": "预定义监控项，仅适用于目标追踪策略。取值范围：\n<li>ASG_AVG_CPU_UTILIZATION：平均CPU使用率</li>\n<li>ASG_AVG_LAN_TRAFFIC_OUT：平均内网出带宽</li>\n<li>ASG_AVG_LAN_TRAFFIC_IN：平均内网入带宽</li>\n<li>ASG_AVG_WAN_TRAFFIC_OUT：平均外网出带宽</li>\n<li>ASG_AVG_WAN_TRAFFIC_IN：平均外网出带宽</li>",
           "example": "ASG_AVG_CPU_UTILIZATION",
           "member": "string",
           "name": "PredefinedMetricType",
@@ -2237,7 +2246,7 @@
         },
         {
           "disabled": false,
-          "document": "目标值，仅适用于目标追踪策略。<br><li>ASG_AVG_CPU_UTILIZATION：[1, 100)，单位：%</li><li>ASG_AVG_LAN_TRAFFIC_OUT：>0，单位：Mbps</li><li>ASG_AVG_LAN_TRAFFIC_IN：>0，单位：Mbps</li><li>ASG_AVG_WAN_TRAFFIC_OUT：>0，单位：Mbps</li><li>ASG_AVG_WAN_TRAFFIC_IN：>0，单位：Mbps</li>",
+          "document": "目标值，仅适用于目标追踪策略。\n<li>ASG_AVG_CPU_UTILIZATION：[1, 100)，单位：%</li>\n<li>ASG_AVG_LAN_TRAFFIC_OUT：>0，单位：Mbps</li>\n<li>ASG_AVG_LAN_TRAFFIC_IN：>0，单位：Mbps</li>\n<li>ASG_AVG_WAN_TRAFFIC_OUT：>0，单位：Mbps</li>\n<li>ASG_AVG_WAN_TRAFFIC_IN：>0，单位：Mbps</li>",
           "example": "10",
           "member": "uint64",
           "name": "TargetValue",
@@ -2255,7 +2264,7 @@
         },
         {
           "disabled": false,
-          "document": "是否禁用缩容，仅适用于目标追踪策略，默认值为 false。取值范围：<br><li>true：目标追踪策略仅触发扩容</li><li>false：目标追踪策略触发扩容和缩容</li>",
+          "document": "是否禁用缩容，仅适用于目标追踪策略，默认值为 false。取值范围：\n<li>true：目标追踪策略仅触发扩容</li>\n<li>false：目标追踪策略触发扩容和缩容</li>",
           "example": "false",
           "member": "bool",
           "name": "DisableScaleIn",
@@ -2283,6 +2292,7 @@
           "example": "asp-iir70sxv",
           "member": "string",
           "name": "AutoScalingPolicyId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2364,7 +2374,7 @@
         {
           "disabled": false,
           "document": "定时任务的重复方式。为标准 Cron 格式<br><br>此参数与`EndTime`需要同时指定。",
-          "example": "无",
+          "example": "0 14 */1 * *",
           "member": "string",
           "name": "Recurrence",
           "required": false,
@@ -2382,7 +2392,7 @@
           "example": "asst-chwbkq4c",
           "member": "string",
           "name": "ScheduledActionId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2703,7 +2713,7 @@
         {
           "disabled": false,
           "document": "按照一个或者多个伸缩活动ID查询。伸缩活动ID形如：`asa-5l2ejpfo`。每次请求的上限为100。参数不支持同时指定`ActivityIds`和`Filters`。",
-          "example": "[\"asa-aaaabbbb\"]",
+          "example": "[\"asa-i8d6y5r4\"]",
           "member": "string",
           "name": "ActivityIds",
           "required": false,
@@ -2712,7 +2722,7 @@
         {
           "disabled": false,
           "document": "过滤条件。\n<li> auto-scaling-group-id - String - 是否必填：否 -（过滤条件）按照伸缩组ID过滤。</li>\n<li> activity-status-code - String - 是否必填：否 -（过滤条件）按照伸缩活动状态过滤。（INIT：初始化中|RUNNING：运行中|SUCCESSFUL：活动成功|PARTIALLY_SUCCESSFUL：活动部分成功|FAILED：活动失败|CANCELLED：活动取消）</li>\n<li> activity-type - String - 是否必填：否 -（过滤条件）按照伸缩活动类型过滤。（SCALE_OUT：扩容活动|SCALE_IN：缩容活动|ATTACH_INSTANCES：添加实例|REMOVE_INSTANCES：销毁实例|DETACH_INSTANCES：移出实例|TERMINATE_INSTANCES_UNEXPECTEDLY：实例在CVM控制台被销毁|REPLACE_UNHEALTHY_INSTANCE：替换不健康实例|UPDATE_LOAD_BALANCERS：更新负载均衡器）</li>\n<li> activity-id - String - 是否必填：否 -（过滤条件）按照伸缩活动ID过滤。</li>\n每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。参数不支持同时指定`ActivityIds`和`Filters`。",
-          "example": "无",
+          "example": "[{\"Name\": \"auto-scaling-group-id\", \"Values\": [\"asg-mgmeawez\"]}]",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -2739,7 +2749,7 @@
         {
           "disabled": false,
           "document": "伸缩活动最早的开始时间，如果指定了ActivityIds，此参数将被忽略。取值为`UTC`时间，按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ssZ`。",
-          "example": "无",
+          "example": "2024-11-11T15:29:59Z",
           "member": "datetime_iso",
           "name": "StartTime",
           "required": false,
@@ -2748,7 +2758,7 @@
         {
           "disabled": false,
           "document": "伸缩活动最晚的结束时间，如果指定了ActivityIds，此参数将被忽略。取值为`UTC`时间，按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ssZ`。",
-          "example": "无",
+          "example": "2024-11-11T15:29:59Z",
           "member": "datetime_iso",
           "name": "EndTime",
           "required": false,
@@ -2766,7 +2776,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2776,7 +2786,7 @@
           "example": "无",
           "member": "Activity",
           "name": "ActivitySet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2810,9 +2820,10 @@
         {
           "disabled": false,
           "document": "伸缩组配置建议集合。",
-          "example": "无",
+          "example": "[{\"AutoScalingGroupId\": \"asg-lc2n0mzp\", \"Advices\": [], \"Level\": \"NORMAL\"}]",
           "member": "AutoScalingAdvice",
           "name": "AutoScalingAdviceSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2846,10 +2857,10 @@
         {
           "disabled": false,
           "document": "符合条件的伸缩活动信息集合。说明：伸缩组伸缩活动不存在的则不返回，如传50个伸缩组ID，返回45条数据，说明其中有5个伸缩组伸缩活动不存在。",
-          "example": "无",
+          "example": "[{\"DetailedStatusMessageSet\": [], \"InvocationResultSet\": [], \"Description\": \"Activity was launched in response to a difference between desired capacity and actual capacity, scale out 1 instance(s).\", \"LifecycleActionResultSet\": [], \"AutoScalingGroupId\": \"asg-44xoulwh\", \"RelatedInstanceSet\": [{\"InstanceId\": \"ins-qfve9yyr\", \"InstanceStatus\": \"SUCCESSFUL\"}], \"ActivityType\": \"SCALE_OUT\", \"ActivityId\": \"asa-p9xww1hx\", \"StartTime\": \"2024-11-12T05:30:21Z\", \"CreatedTime\": \"2024-11-12T05:30:21Z\", \"StatusMessageSimplified\": \"Success\", \"EndTime\": \"2024-11-12T05:30:52Z\", \"Cause\": \"Activity was launched in response to a difference between desired capacity and actual capacity.\", \"StatusMessage\": \"Success\", \"StatusCode\": \"SUCCESSFUL\"}]",
           "member": "Activity",
           "name": "ActivitySet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2877,7 +2888,7 @@
         {
           "disabled": false,
           "document": "过滤条件。\n<li> auto-scaling-group-id - String - 是否必填：否 -（过滤条件）按照伸缩组ID过滤。</li>\n<li> auto-scaling-group-name - String - 是否必填：否 -（过滤条件）按照伸缩组名称过滤。</li>\n<li> vague-auto-scaling-group-name - String - 是否必填：否 -（过滤条件）按照伸缩组名称模糊搜索。</li>\n<li> launch-configuration-id - String - 是否必填：否 -（过滤条件）按照启动配置ID过滤。</li>\n<li> tag-key - String - 是否必填：否 -（过滤条件）按照标签键进行过滤。</li>\n<li> tag-value - String - 是否必填：否 -（过滤条件）按照标签值进行过滤。</li>\n<li> tag:tag-key - String - 是否必填：否 -（过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。使用请参考示例2</li>\n每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。参数不支持同时指定`AutoScalingGroupIds`和`Filters`。",
-          "example": "无",
+          "example": "[{\"Name\": \"auto-scaling-group-name\", \"Values\": [\"production-as\"]}]",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -2910,10 +2921,10 @@
         {
           "disabled": false,
           "document": "伸缩组详细信息列表。",
-          "example": "无",
+          "example": "[{\"InActivityStatus\": \"NOT_IN_ACTIVITY\", \"LoadBalancerIdSet\": [], \"RetryPolicy\": \"IMMEDIATE_RETRY\", \"InServiceInstanceCount\": 0, \"CreatedTime\": \"2022-03-19T04:39:52Z\", \"VpcId\": \"vpc-nqayns0m\", \"InstanceAllocationPolicy\": \"LAUNCH_CONFIGURATION\", \"Tags\": [], \"LaunchConfigurationId\": \"asc-rgrdh183\",\"MaxSize\": 500, \"MultiZoneSubnetPolicy\": \"EQUALITY\", \"SubnetIdSet\": [\"subnet-d9gneeoz\",], \"HealthCheckType\": \"CLB\", \"LoadBalancerHealthCheckGracePeriod\": 0, \"ForwardLoadBalancerSet\": [], \"ProjectId\": 0, \"AutoScalingGroupName\": \"tke-np-w\", \"MinSize\": 0, \"ServiceSettings\": {\"ReplaceMonitorUnhealthy\": false, \"ReplaceLoadBalancerUnhealthy\": false, \"ReplaceMode\": \"RECREATE\", \"ScalingMode\": \"CLASSIC_SCALING\"}, \"LaunchConfigurationName\": \"tke-np-ww\", \"CapacityRebalance\": false, \"TerminationPolicySet\": [\"OLDEST_INSTANCE\"], \"AutoScalingGroupStatus\": \"NORMAL\", \"InstanceCount\": 0, \"DesiredCapacity\": 0, \"AutoScalingGroupId\": \"asg-07tasrpr\", \"Ipv6AddressCount\": 0, \"DefaultCooldown\": 300, \"EnabledStatus\": \"ENABLED\", \"ZoneSet\": []}]",
           "member": "AutoScalingGroup",
           "name": "AutoScalingGroupSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2923,7 +2934,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2951,7 +2962,7 @@
         {
           "disabled": false,
           "document": "过滤条件。\n<li> instance-id - String - 是否必填：否 -（过滤条件）按照实例ID过滤。</li>\n<li> auto-scaling-group-id - String - 是否必填：否 -（过滤条件）按照伸缩组ID过滤。</li>\n每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。参数不支持同时指定`InstanceIds`和`Filters`。",
-          "example": "无",
+          "example": "[{\"Name\": \"auto-scaling-group-id\", \"Values\": [\"asg-ewdpp04x\"]}]",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -2984,10 +2995,10 @@
         {
           "disabled": false,
           "document": "实例详细信息列表。",
-          "example": "无",
+          "example": "[{\"ProtectedFromScaleIn\": true, \"Zone\": \"sa-saopaulo-1\", \"CreationType\": \"AUTO_CREATION\", \"AutoScalingGroupId\": \"asg-f7rsts7d\", \"AddTime\": \"2024-07-25T13:16:42Z\", \"WarmupStatus\": \"NO_NEED_WARMUP\", \"LaunchConfigurationId\": \"asc-m4usv5o3\", \"AutoScalingGroupName\": \"tke-np-ss\", \"InstanceId\": \"ins-kajsxfzp\", \"VersionNumber\": 1, \"HealthStatus\": \"HEALTHY\", \"LifeCycleState\": \"IN_SERVICE\", \"LaunchConfigurationName\": \"tke-np-sd\", \"InstanceType\": \"S5.2XLARGE32\"}]",
           "member": "Instance",
           "name": "AutoScalingInstanceSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2997,7 +3008,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3025,7 +3036,7 @@
         {
           "disabled": false,
           "document": "过滤条件。\n<li> launch-configuration-id - String - 是否必填：否 -（过滤条件）按照启动配置ID过滤。</li>\n<li> launch-configuration-name - String - 是否必填：否 -（过滤条件）按照启动配置名称过滤。</li>\n<li> vague-launch-configuration-name - String - 是否必填：否 -（过滤条件）按照启动配置名称模糊搜索。</li>\n<li> tag-key - String - 是否必填：否 -（过滤条件）按照标签键进行过滤。</li>\n<li> tag-value - String - 是否必填：否 -（过滤条件）按照标签值进行过滤。</li>\n<li> tag:tag-key - String - 是否必填：否 -（过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。使用请参考示例3</li>\n每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。参数不支持同时指定`LaunchConfigurationIds`和`Filters`。",
-          "example": "无",
+          "example": "[{\"Name\": \"launch-configuration-name\", \"Values\": [\"DataEngine123\"]}]",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -3068,7 +3079,7 @@
         {
           "disabled": false,
           "document": "启动配置详细信息列表。",
-          "example": "无",
+          "example": "[{\"UpdatedTime\": \"2024-11-08T06:47:44Z\", \"LaunchConfigurationId\": \"asc-6wsiq5pq\", \"LastOperationInstanceTypesCheckPolicy\": \"ANY\", \"LoginSettings\": {\"KeepImageLogin\": false}, \"EnhancedService\": {\"SecurityService\": {\"Enabled\": false}, \"MonitorService\": {\"Enabled\": true}}, \"CreatedTime\": \"2023-06-12T04:31:21Z\", \"DisableHyperThreading\": false, \"InstanceTypes\": [\"S5.2XLARGE32\", \"SA5.2XLARGE32\", \"SA4.2XLARGE32\", \"S8.2XLARGE32\"], \"ImageId\": \"img-eb30mz89\", \"InstanceChargeType\": \"PREPAID\", \"DiskTypePolicy\": \"ORIGINAL\", \"Ipv6InternetAccessible\": {\"InternetMaxBandwidthOut\": 0, \"InternetChargeType\": \"TRAFFIC_POSTPAID_BY_HOUR\"}, \"InstanceType\": \"S5.2XLARGE32\", \"SystemDisk\": {\"DiskSize\": 500, \"DiskType\": \"CLOUD_PREMIUM\"}, \"LaunchConfigurationStatus\": \"NORMAL\", \"ProjectId\": 0, \"SecurityGroupIds\": [\"sg-7sup3wkd\"], \"LaunchConfigurationName\": \"tke-np-ee\", \"Tags\": [], \"InternetAccessible\": {\"PublicIpAssigned\": false, \"InternetMaxBandwidthOut\": 0, \"InternetChargeType\": \"TRAFFIC_POSTPAID_BY_HOUR\"}, \"HpcClusterId\": \"\", \"VersionNumber\": 20, \"InstanceChargePrepaid\": {\"RenewFlag\": \"NOTIFY_AND_AUTO_RENEW\", \"Period\": 1}, \"AutoScalingGroupAbstractSet\": [{\"AutoScalingGroupId\": \"asg-0lwhdp7e\", \"AutoScalingGroupName\": \"tke-np-aa\"}]}]",
           "member": "LaunchConfiguration",
           "name": "LaunchConfigurationSet",
           "output_required": true,
@@ -3090,7 +3101,7 @@
         {
           "disabled": false,
           "document": "按照一个或者多个生命周期挂钩ID查询。生命周期挂钩ID形如：`ash-8azjzxcl`。每次请求的上限为100。参数不支持同时指定`LifecycleHookIds`和`Filters`。",
-          "example": "无",
+          "example": "[\"ash-mzdlwrbt\"],",
           "member": "string",
           "name": "LifecycleHookIds",
           "required": false,
@@ -3099,7 +3110,7 @@
         {
           "disabled": false,
           "document": "过滤条件。\n<li> lifecycle-hook-id - String - 是否必填：否 -（过滤条件）按照生命周期挂钩ID过滤。</li>\n<li> lifecycle-hook-name - String - 是否必填：否 -（过滤条件）按照生命周期挂钩名称过滤。</li>\n<li> auto-scaling-group-id - String - 是否必填：否 -（过滤条件）按照伸缩组ID过滤。</li>\n每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。参数不支持同时指定`LifecycleHookIds `和`Filters`。",
-          "example": "无",
+          "example": "[{\"Name\": \"auto-scaling-group-id\", \"Values\": [\"asg-0xrkdurh\"]}]",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -3108,7 +3119,7 @@
         {
           "disabled": false,
           "document": "返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
-          "example": "无",
+          "example": "20",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -3117,7 +3128,7 @@
         {
           "disabled": false,
           "document": "偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
-          "example": "无",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -3132,10 +3143,10 @@
         {
           "disabled": false,
           "document": "生命周期挂钩数组",
-          "example": "无",
+          "example": "[{\"LifecycleTransitionType\": \"EXTENSION\", \"HeartbeatTimeout\": 180, \"AutoScalingGroupId\": \"asg-mzlvwxtj\", \"LifecycleCommand\": {\"CommandId\": \"\", \"Parameters\": \"\"}, \"LifecycleHookName\": \"plasdd\", \"NotificationMetadata\": \"\", \"NotificationTarget\": {\"TargetType\": \"\", \"EnvironmentId\": \"\", \"ClusterId\": \"\", \"TopicName\": \"\", \"QueueName\": \"\"}, \"CreatedTime\": \"2024-10-09T09:00:21Z\", \"DefaultResult\": \"CONTINUE\", \"LifecycleHookId\": \"ash-06d46xsc\", \"LifecycleTransition\": \"INSTANCE_TERMINATING\"}]",
           "member": "LifecycleHook",
           "name": "LifecycleHookSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3145,7 +3156,7 @@
           "example": "4",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3173,7 +3184,7 @@
         {
           "disabled": false,
           "document": "过滤条件。\n<li> auto-scaling-notification-id - String - 是否必填：否 -（过滤条件）按照通知ID过滤。</li>\n<li> auto-scaling-group-id - String - 是否必填：否 -（过滤条件）按照伸缩组ID过滤。</li>\n每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。参数不支持同时指定`AutoScalingNotificationIds`和`Filters`。",
-          "example": "无",
+          "example": "[{\"Name\": \"auto-scaling-group-id\", \"Values\": [\"asg-hyfg539t\"]}]",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -3209,17 +3220,17 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "弹性伸缩事件通知详细信息列表。",
-          "example": "无",
+          "example": "[{\"TargetType\": \"USER_GROUP\", \"EnvironmentId\": \"\", \"AutoScalingGroupId\": \"asg-nimsv934\", \"ClusterId\": \"\", \"AutoScalingNotificationId\": \"asn-5wswisk2\", \"NotificationTypes\": [\"SCALE_OUT_FAILED\", \"SCALE_IN_SUCCESSFUL\", \"REPLACE_UNHEALTHY_INSTANCE_SUCCESSFUL\", \"REPLACE_UNHEALTHY_INSTANCE_FAILED\", \"SCALE_IN_FAILED\", \"SCALE_OUT_SUCCESSFUL\"], \"QueueName\": \"\", \"NotificationUserGroupIds\": [\"10000079\"], \"TopicName\": \"\"}]",
           "member": "AutoScalingNotification",
           "name": "AutoScalingNotificationSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3246,8 +3257,8 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件。\n<li> auto-scaling-group-id - String - 是否必填：否 -（过滤条件）按照伸缩组ID过滤。</li>\n<li> refresh-activity-status-code - String - 是否必填：否 -（过滤条件）按照刷新活动状态过滤。（INIT：初始化中 | RUNNING：运行中 | SUCCESSFUL：活动成功 | FAILED_PAUSE：失败暂停 | AUTO_PAUSE：自动暂停 | MANUAL_PAUSE：手动暂停 | CANCELLED：活动取消 | FAILED：活动失败）</li>\n<li> refresh-activity-type - String - 是否必填：否 -（过滤条件）按照刷新活动类型过滤。（NORMAL：正常刷新活动 | ROLLBACK：回滚刷新活动）</li>\n<li> refresh-activity-id - String - 是否必填：否 -（过滤条件）按照刷新活动ID过滤。</li>\n<li> 每次请求的Filters的上限为10，Filter.Values的上限为5。参数不支持同时指定RefreshActivityIds和Filters。",
-          "example": "无",
+          "document": "过滤条件。\n<li> auto-scaling-group-id - String - 是否必填：否 -（过滤条件）按照伸缩组ID过滤。</li>\n<li> refresh-activity-status-code - String - 是否必填：否 -（过滤条件）按照刷新活动状态过滤。（INIT：初始化中 | RUNNING：运行中 | SUCCESSFUL：活动成功 | FAILED_PAUSE：失败暂停 | AUTO_PAUSE：自动暂停 | MANUAL_PAUSE：手动暂停 | CANCELLED：活动取消 | FAILED：活动失败）</li>\n<li> refresh-activity-type - String - 是否必填：否 -（过滤条件）按照刷新活动类型过滤。（NORMAL：正常刷新活动 | ROLLBACK：回滚刷新活动）</li>\n<li> refresh-activity-id - String - 是否必填：否 -（过滤条件）按照刷新活动ID过滤。</li>\n<li> 每次请求的Filters的上限为10，Filter.Values的上限为5。参数不支持同时指定RefreshActivityIds和Filters。</li>",
+          "example": "[{\"Name\": \"auto-scaling-group-id\", \"Values\": [\"asg-ewdpp04x\"]}]",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -3290,7 +3301,7 @@
         {
           "disabled": false,
           "document": "符合条件的刷新活动信息集合。",
-          "example": "无",
+          "example": "[{\"Status\": \"SUCCESSFUL\", \"RefreshBatchSet\": [{\"RefreshBatchNum\": 1, \"EndTime\": \"2024-11-06T19:01:08Z\", \"RefreshBatchRelatedInstanceSet\": [{\"InstanceId\": \"ins-me0846cu\", \"InstanceStatusMessage\": \"success\", \"LastActivityId\": \"asa-8ayecku8\", \"InstanceStatus\": \"SUCCESSFUL\"}], \"StartTime\": \"2024-11-06T19:00:14Z\", \"RefreshBatchStatus\": \"SUCCESSFUL\"}], \"RefreshMode\": \"ROLLING_UPDATE_RESET\", \"AutoScalingGroupId\": \"asg-7nfe25uy\", \"ActivityType\": \"NORMAL\", \"RefreshSettings\": {\"CheckInstanceTargetHealth\": true, \"RollingUpdateSettings\": {\"BatchNumber\": 1, \"MaxSurge\": 1, \"BatchPause\": \"AUTOMATIC\"}}, \"OriginRefreshActivityId\": \"\", \"CurrentRefreshBatchNum\": 1, \"RefreshActivityId\": \"asr-1pex1gkq\", \"StartTime\": \"2024-11-06T18:59:20Z\", \"CreatedTime\": \"2024-11-06T18:59:20Z\", \"EndTime\": \"2024-11-06T19:01:15Z\"}]",
           "member": "RefreshActivity",
           "name": "RefreshActivitySet",
           "output_required": true,
@@ -3321,7 +3332,7 @@
         {
           "disabled": false,
           "document": "过滤条件。\n<li> auto-scaling-policy-id - String - 是否必填：否 -（过滤条件）按照告警策略ID过滤。</li>\n<li> auto-scaling-group-id - String - 是否必填：否 -（过滤条件）按照伸缩组ID过滤。</li>\n<li> scaling-policy-name - String - 是否必填：否 -（过滤条件）按照告警策略名称过滤。</li>\n<li> scaling-policy-type - String - 是否必填：否 -（过滤条件）按照告警策略类型过滤，取值范围为SIMPLE，TARGET_TRACKING。</li>\n每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。参数不支持同时指定`AutoScalingPolicyIds`和`Filters`。",
-          "example": "无",
+          "example": "[{\"Name\": \"auto-scaling-group-id\", \"Values\": [\"asg-ewdpp04x\"]}]",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -3357,6 +3368,7 @@
           "example": "无",
           "member": "ScalingPolicy",
           "name": "ScalingPolicySet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3366,6 +3378,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3393,7 +3406,7 @@
         {
           "disabled": false,
           "document": "过滤条件。\n<li> scheduled-action-id - String - 是否必填：否 -（过滤条件）按照定时任务ID过滤。</li>\n<li> scheduled-action-name - String - 是否必填：否 - （过滤条件） 按照定时任务名称过滤。</li>\n<li> auto-scaling-group-id - String - 是否必填：否 - （过滤条件） 按照伸缩组ID过滤。</li>",
-          "example": "无",
+          "example": "[{\"Name\": \"auto-scaling-group-name\", \"Values\": [\"production-as\"]}]",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -3429,17 +3442,17 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "定时任务详细信息列表。",
-          "example": "无",
+          "example": "[{\"Recurrence\": \"* * * * *\", \"ScheduledActionId\": \"asst-9ns4dsr0\", \"AutoScalingGroupId\": \"asg-2q2sim6z\", \"ScheduledType\": \"ONCE\", \"MinSize\": 0, \"MaxSize\": 8, \"ScheduledActionName\": \"scale-out\", \"StartTime\": \"2023-01-03 09:45:00\", \"CreatedTime\": \"2022-01-26T02:46:12Z\", \"EndTime\": \"0000-00-00 00:00:00\", \"DesiredCapacity\": 0}]",
           "member": "ScheduledAction",
           "name": "ScheduledActionSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3522,7 +3535,7 @@
         {
           "disabled": false,
           "document": "应用型负载均衡器标识信息列表，列表长度上限为100，LoadBalancerIds 和 ForwardLoadBalancerIdentifications二者同时最多只能指定一个",
-          "example": "无",
+          "example": "[{\"ListenerId\": \"lbl-mqnrswr0\", \"LoadBalancerId\": \"lb-k7cs98bu\", \"LocationId\": \"loc-ivbajssu\"}]",
           "member": "ForwardLoadBalancerIdentification",
           "name": "ForwardLoadBalancerIdentifications",
           "required": false,
@@ -3540,7 +3553,7 @@
           "example": "asa-67izy66g",
           "member": "string",
           "name": "ActivityId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3562,7 +3575,7 @@
           "example": "InvalidInstanceType",
           "member": "string",
           "name": "Code",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3572,7 +3585,7 @@
           "example": "ap-guangzhou-2",
           "member": "string",
           "name": "Zone",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3582,7 +3595,7 @@
           "example": "ins-yy23daou",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3592,7 +3605,7 @@
           "example": "POSTPAID_BY_HOUR",
           "member": "string",
           "name": "InstanceChargeType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3602,17 +3615,17 @@
           "example": "subnet-gz7j7r3k",
           "member": "string",
           "name": "SubnetId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "错误描述。",
-          "example": "无",
+          "example": "Failed to launch instance `ins-9ojy714a`. Instance type: `S2.MEDIUM2`, Subnet: `subnet-6400tdiy`, Zone: `ap-guangzhou-2`, LatestOperationCode: `ResourceInsufficient`.",
           "member": "string",
           "name": "Message",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3622,7 +3635,7 @@
           "example": "IT5.8XLARGE128",
           "member": "string",
           "name": "InstanceType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -3836,22 +3849,20 @@
         {
           "disabled": false,
           "document": "需要过滤的字段。",
-          "example": "",
+          "example": "zone",
           "member": "string",
           "name": "Name",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "字段的过滤值。",
-          "example": "",
+          "example": "ap-guangzhou-6",
           "member": "string",
           "name": "Values",
           "required": true,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         }
       ],
       "usage": "in"
@@ -3862,9 +3873,10 @@
         {
           "disabled": false,
           "document": "负载均衡器ID",
-          "example": "",
+          "example": "lb-fy6te4r5",
           "member": "string",
           "name": "LoadBalancerId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -3872,9 +3884,10 @@
         {
           "disabled": false,
           "document": "应用型负载均衡监听器 ID",
-          "example": "",
+          "example": "lbl-dhyt56rf",
           "member": "string",
           "name": "ListenerId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -3882,9 +3895,10 @@
         {
           "disabled": false,
           "document": "目标规则属性列表",
-          "example": "",
+          "example": "[{\"Port\": 80, \"Weight\": 10}]",
           "member": "TargetAttribute",
           "name": "TargetAttributes",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -3892,9 +3906,10 @@
         {
           "disabled": false,
           "document": "转发规则ID，注意：针对七层监听器此参数必填",
-          "example": "",
+          "example": "loc-sj8y6tr4",
           "member": "string",
           "name": "LocationId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -3902,9 +3917,10 @@
         {
           "disabled": false,
           "document": "负载均衡实例所属地域，默认取AS服务所在地域。格式与公共参数Region相同，如：\"ap-guangzhou\"。",
-          "example": "",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -3954,7 +3970,7 @@
         {
           "disabled": false,
           "document": "云服务器的主机名。\n<li> 点号（.）和短横线（-）不能作为 HostName 的首尾字符，不能连续使用。</li> \n<li> 不支持 Windows 实例。</li> \n<li> 其他类型（Linux 等）实例：字符长度为[2, 40]，允许支持多个点号，点之间为一段，每段允许字母（不限制大小写）、数字和短横线（-）组成。不允许为纯数字。</li> \n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "aaa",
+          "example": "product-as-host-0",
           "member": "string",
           "name": "HostName",
           "output_required": true,
@@ -4213,9 +4229,10 @@
         {
           "disabled": false,
           "document": "竞价相关选项",
-          "example": "",
+          "example": "{\"SpotInstanceType\": \"one-time\", \"MaxPrice\": 1000}",
           "member": "SpotMarketOptions",
           "name": "SpotOptions",
+          "output_required": true,
           "required": true,
           "type": "object",
           "value_allowed_null": false
@@ -4223,9 +4240,10 @@
         {
           "disabled": false,
           "document": "市场选项类型，当前只支持取值：spot\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "spot",
           "member": "string",
           "name": "MarketType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -4267,7 +4285,7 @@
         {
           "disabled": false,
           "document": "云服务器的实例名。字符长度为[2, 108]。",
-          "example": "test",
+          "example": "product-as-ins-0",
           "member": "string",
           "name": "InstanceName",
           "output_required": true,
@@ -4306,9 +4324,10 @@
         {
           "disabled": false,
           "document": "标签键",
-          "example": "",
+          "example": "as-tag-key-app0",
           "member": "string",
           "name": "Key",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -4316,9 +4335,10 @@
         {
           "disabled": false,
           "document": "标签值",
-          "example": "",
+          "example": "as-tag-value-app0",
           "member": "string",
           "name": "Value",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -4331,10 +4351,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "网络计费类型。取值范围：<br><li>BANDWIDTH_PREPAID：预付费按带宽结算<br><li>TRAFFIC_POSTPAID_BY_HOUR：流量按小时后付费<br><li>BANDWIDTH_POSTPAID_BY_HOUR：带宽按小时后付费<br><li>BANDWIDTH_PACKAGE：带宽包用户<br>默认取值：TRAFFIC_POSTPAID_BY_HOUR。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "网络计费类型。取值范围：<li>BANDWIDTH_PREPAID：预付费按带宽结算</li><li>TRAFFIC_POSTPAID_BY_HOUR：流量按小时后付费</li><li>BANDWIDTH_POSTPAID_BY_HOUR：带宽按小时后付费</li><li>BANDWIDTH_PACKAGE：带宽包用户</li>默认取值：TRAFFIC_POSTPAID_BY_HOUR。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "TRAFFIC_POSTPAID_BY_HOUR",
           "member": "string",
           "name": "InternetChargeType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -4342,19 +4363,21 @@
         {
           "disabled": false,
           "document": "公网出带宽上限，单位：Mbps。默认值：0Mbps。不同机型带宽上限范围不一致，具体限制详见[购买网络带宽](https://cloud.tencent.com/document/product/213/509)。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "0",
           "member": "uint64",
           "name": "InternetMaxBandwidthOut",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "是否分配公网IP。取值范围：<br><li>TRUE：表示分配公网IP<br><li>FALSE：表示不分配公网IP<br><br>当公网带宽大于0Mbps时，可自由选择开通与否，默认开通公网IP；当公网带宽为0，则不允许分配公网IP。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "是否分配公网IP。取值范围：<li>TRUE：表示分配公网IP</li><li>FALSE：表示不分配公网IP</li>当公网带宽大于0Mbps时，可自由选择开通与否，默认开通公网IP；当公网带宽为0，则不允许分配公网IP。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
           "member": "bool",
           "name": "PublicIpAssigned",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": true
@@ -4362,9 +4385,10 @@
         {
           "disabled": false,
           "document": "带宽包ID。可通过[DescribeBandwidthPackages](https://cloud.tencent.com/document/api/215/19209)接口返回值中的`BandwidthPackageId`获取。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "bwp-dss86yt5",
           "member": "string",
           "name": "BandwidthPackageId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -4381,7 +4405,7 @@
           "example": "ins-0lizunus",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4391,7 +4415,7 @@
           "example": "inv-0h9q6ahv",
           "member": "string",
           "name": "InvocationId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4401,7 +4425,7 @@
           "example": "invt-4mqj9ekr",
           "member": "string",
           "name": "InvocationTaskId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4411,7 +4435,7 @@
           "example": "cmd-5l44tu7j",
           "member": "string",
           "name": "CommandId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4421,17 +4445,17 @@
           "example": "SUCCESS",
           "member": "string",
           "name": "TaskStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "执行异常信息。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "InvocationTaskFailed->Invocation task failed.",
           "member": "string",
           "name": "ErrorMessage",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -4484,7 +4508,7 @@
         {
           "disabled": false,
           "document": "实例系统盘配置信息。",
-          "example": "无",
+          "example": "{\"DiskSize\": 500, \"DiskType\": \"CLOUD_BSSD\"}",
           "member": "SystemDisk",
           "name": "SystemDisk",
           "output_required": true,
@@ -4494,7 +4518,7 @@
         {
           "disabled": false,
           "document": "实例数据盘配置信息。",
-          "example": "无",
+          "example": "[{\"DiskSize\": 200, \"DiskType\": \"CLOUD_BSSD\"}]",
           "member": "DataDisk",
           "name": "DataDisks",
           "output_required": true,
@@ -4504,7 +4528,7 @@
         {
           "disabled": false,
           "document": "实例登录设置。",
-          "example": "无",
+          "example": "{\"KeyIds\": [\"skey-sm1dxnap\"]}",
           "member": "LimitedLoginSettings",
           "name": "LoginSettings",
           "output_required": true,
@@ -4514,7 +4538,7 @@
         {
           "disabled": false,
           "document": "公网带宽相关信息设置。",
-          "example": "无",
+          "example": "{\"InternetChargeType\": \"TRAFFIC_POSTPAID_BY_HOUR\", \"InternetMaxBandwidthOut\": 0, \"PublicIpAssigned\": false}",
           "member": "InternetAccessible",
           "name": "InternetAccessible",
           "output_required": true,
@@ -4534,7 +4558,7 @@
         {
           "disabled": false,
           "document": "启动配置关联的伸缩组。",
-          "example": "无",
+          "example": "[{'AutoScalingGroupId': 'asg-1dbjno4d', 'AutoScalingGroupName': 'asg-v000'}]",
           "member": "AutoScalingGroupAbstract",
           "name": "AutoScalingGroupAbstractSet",
           "output_required": true,
@@ -4564,7 +4588,7 @@
         {
           "disabled": false,
           "document": "实例的增强服务启用情况与其设置。",
-          "example": "无",
+          "example": "{\"MonitorService\": {\"Enabled\": true}, \"SecurityService\": {\"Enabled\": true}}",
           "member": "EnhancedService",
           "name": "EnhancedService",
           "output_required": true,
@@ -4604,7 +4628,7 @@
         {
           "disabled": false,
           "document": "实例的市场相关选项，如竞价实例相关参数，若指定实例的付费模式为竞价付费则该参数必传。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\"SpotOptions\": {\"SpotInstanceType\": \"one-time\", \"MaxPrice\": 1000}, \"MarketType\": \"spot\"}",
           "member": "InstanceMarketOptionsRequest",
           "name": "InstanceMarketOptions",
           "output_required": true,
@@ -4624,7 +4648,7 @@
         {
           "disabled": false,
           "document": "实例标签列表。扩容出来的实例会自动带上标签，最多支持10个标签。",
-          "example": "无",
+          "example": "[{\"Key\": \"server-group-name\", \"Value\": \"as-tencent\"}]",
           "member": "InstanceTag",
           "name": "InstanceTags",
           "output_required": true,
@@ -4634,7 +4658,7 @@
         {
           "disabled": false,
           "document": "标签列表。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[{\"Key\": \"CCode\", \"Value\": \"ASTENCENT\", \"ResourceType\": \"launch-configuration\"}]",
           "member": "Tag",
           "name": "Tags",
           "output_required": true,
@@ -4684,7 +4708,7 @@
         {
           "disabled": false,
           "document": "云服务器主机名（HostName）的相关设置。",
-          "example": "无",
+          "example": "{\"HostNameStyle\": \"UNIQUE\", \"HostName\": \"as-host\"}",
           "member": "HostNameSettings",
           "name": "HostNameSettings",
           "output_required": true,
@@ -4694,7 +4718,7 @@
         {
           "disabled": false,
           "document": "云服务器实例名（InstanceName）的相关设置。",
-          "example": "无",
+          "example": "{\"InstanceName\": \"app-as\", \"InstanceNameStyle\": \"UNIQUE\"}",
           "member": "InstanceNameSettings",
           "name": "InstanceNameSettings",
           "output_required": true,
@@ -4704,7 +4728,7 @@
         {
           "disabled": false,
           "document": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。",
-          "example": "无",
+          "example": "{\"Period\": 1, \"RenewFlag\": \"NOTIFY_AND_AUTO_RENEW\"}",
           "member": "InstanceChargePrepaid",
           "name": "InstanceChargePrepaid",
           "output_required": true,
@@ -4734,7 +4758,7 @@
         {
           "disabled": false,
           "document": "IPv6公网带宽相关信息设置。",
-          "example": "无",
+          "example": "{\"InternetChargeType\": \"TRAFFIC_POSTPAID_BY_HOUR\", \"InternetMaxBandwidthOut\": 1}",
           "member": "IPv6InternetAccessible",
           "name": "IPv6InternetAccessible",
           "output_required": true,
@@ -4760,6 +4784,16 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "本地专用集群 ID。",
+          "example": "cluster-gbo27yc4",
+          "member": "string",
+          "name": "DedicatedClusterId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -4846,9 +4880,10 @@
         {
           "disabled": false,
           "document": "远程命令ID。若选择执行命令，则此项必填。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "cmd-xxxxxxxx",
+          "example": "cmd-gt5dre32",
           "member": "string",
           "name": "CommandId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -4856,9 +4891,10 @@
         {
           "disabled": false,
           "document": "自定义参数。字段类型为 json encoded string。如：{\"varA\": \"222\"}。\nkey为自定义参数名称，value为该参数的默认取值。kv均为字符串型。\n如果未提供该参数取值，将使用 Command 的 DefaultParameters 进行替换。\n自定义参数最多20个。自定义参数名称需符合以下规范：字符数目上限64，可选范围【a-zA-Z0-9-_】。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "{\"varA\": \"222\"}",
           "member": "string",
           "name": "Parameters",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -4875,17 +4911,17 @@
           "example": "ash-ck4bkcjt",
           "member": "string",
           "name": "LifecycleHookId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "生命周期挂钩名称",
-          "example": "demo",
+          "example": "as-hook0",
           "member": "string",
           "name": "LifecycleHookName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4895,7 +4931,7 @@
           "example": "asg-lk5nn4xi",
           "member": "string",
           "name": "AutoScalingGroupId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4905,7 +4941,7 @@
           "example": "CONTINUE",
           "member": "string",
           "name": "DefaultResult",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4915,7 +4951,7 @@
           "example": "300",
           "member": "int64",
           "name": "HeartbeatTimeout",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4925,37 +4961,37 @@
           "example": "INSTANCE_TERMINATING",
           "member": "string",
           "name": "LifecycleTransition",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "通知目标的附加信息",
-          "example": "\"\"",
+          "example": "as-metadata-0",
           "member": "string",
           "name": "NotificationMetadata",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "创建时间",
-          "example": "无",
+          "example": "2024-11-11T15:29:59Z",
           "member": "datetime_iso",
           "name": "CreatedTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "通知目标",
-          "example": "无",
+          "example": "{\"QueueName\": \"as-pool\", \"TargetType\": \"TDMQ_CMQ_QUEUE\"}",
           "member": "NotificationTarget",
           "name": "NotificationTarget",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -4965,17 +5001,17 @@
           "example": "NORMAL",
           "member": "string",
           "name": "LifecycleTransitionType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "远程命令执行对象\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\"CommandId\": \"cmd-am4e3hd8\", \"Parameters\": \"{123: 222}\"}",
           "member": "LifecycleCommand",
           "name": "LifecycleCommand",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         }
@@ -4988,10 +5024,10 @@
         {
           "disabled": false,
           "document": "密钥ID列表。",
-          "example": "",
+          "example": "[\"skey-jud75er4\"]",
           "member": "string",
           "name": "KeyIds",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -5003,33 +5039,30 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例登录密码。不同操作系统类型密码复杂度限制不一样，具体如下：<br><li>Linux实例密码必须8到16位，至少包括两项[a-z，A-Z]、[0-9] 和 [( ) ` ~ ! @ # $ % ^ & * - + = | { } [ ] : ; ' , . ? / ]中的特殊符号。<br><li>Windows实例密码必须12到16位，至少包括三项[a-z]，[A-Z]，[0-9] 和 [( ) ` ~ ! @ # $ % ^ & * - + = { } [ ] : ; ' , . ? /]中的特殊符号。<br><br>若不指定该参数，则由系统随机生成密码，并通过站内信方式通知到用户。",
-          "example": "",
+          "document": "实例登录密码。不同操作系统类型密码复杂度限制不一样，具体如下：\n<li>Linux实例密码必须8到16位，至少包括两项[a-z，A-Z]、[0-9] 和 [( ) ` ~ ! @ # $ % ^ & * - + = | { } [ ] : ; ' , . ? / ]中的特殊符号。</li>\n<li>Windows实例密码必须12到16位，至少包括三项[a-z]，[A-Z]，[0-9] 和 [( ) ` ~ ! @ # $ % ^ & * - + = { } [ ] : ; ' , . ? /]中的特殊符号。</li>\n若不指定该参数，则由系统随机生成密码，并通过站内信方式通知到用户。",
+          "example": "passExam@!7862543",
           "member": "string",
           "name": "Password",
           "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "密钥ID列表。关联密钥后，就可以通过对应的私钥来访问实例；KeyId可通过接口DescribeKeyPairs获取，密钥与密码不能同时指定，同时Windows操作系统不支持指定密钥。当前仅支持购买的时候指定一个密钥。",
-          "example": "",
+          "example": "[\"skey-ju7fy6t5\"]",
           "member": "string",
           "name": "KeyIds",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         },
         {
           "disabled": false,
-          "document": "保持镜像的原始设置。该参数与Password或KeyIds.N不能同时指定。只有使用自定义镜像、共享镜像或外部导入镜像创建实例时才能指定该参数为TRUE。取值范围：<br><li>TRUE：表示保持镜像的登录设置<br><li>FALSE：表示不保持镜像的登录设置<br><br>默认取值：FALSE。",
-          "example": "",
+          "document": "保持镜像的原始设置。该参数与Password或KeyIds.N不能同时指定。只有使用自定义镜像、共享镜像或外部导入镜像创建实例时才能指定该参数为TRUE。取值范围：\n<li>TRUE：表示保持镜像的登录设置</li>\n<li>FALSE：表示不保持镜像的登录设置</li>默认取值：FALSE。",
+          "example": "false",
           "member": "bool",
           "name": "KeepImageLogin",
           "required": false,
-          "type": "bool",
-          "value_allowed_null": true
+          "type": "bool"
         }
       ],
       "usage": "in"
@@ -5249,7 +5282,7 @@
         {
           "disabled": false,
           "document": "服务设置，包括云监控不健康替换等服务设置。",
-          "example": "无",
+          "example": "{\"ReplaceLoadBalancerUnhealthy\": \"false\", \"ReplaceMonitorUnhealthy\": \"false\"}",
           "member": "ServiceSettings",
           "name": "ServiceSettings",
           "required": false,
@@ -5303,7 +5336,7 @@
         {
           "disabled": false,
           "document": "竞价混合模式下，各计费类型实例的分配策略。\n仅当 InstanceAllocationPolicy 取 SPOT_MIXED 时可用。",
-          "example": "无",
+          "example": "{\"BaseCapacity\": 1, \"CompensateWithBaseInstance\": true, \"OnDemandPercentageAboveBaseCapacity\": 50, \"SpotAllocationStrategy\": \"COST_OPTIMIZED\"}",
           "member": "SpotMixedAllocationPolicy",
           "name": "SpotMixedAllocationPolicy",
           "required": false,
@@ -5321,7 +5354,7 @@
         {
           "disabled": false,
           "document": "实例名称序号相关设置。开启后为伸缩组内自动创建的实例名称添加递增的数字序号。",
-          "example": "无",
+          "example": "{\"BeginIndex\": 0, \"Enabled\": true}",
           "member": "InstanceNameIndexSettings",
           "name": "InstanceNameIndexSettings",
           "required": false,
@@ -5447,7 +5480,7 @@
         {
           "disabled": false,
           "document": "经过 Base64 编码后的自定义数据，最大长度不超过16KB。如果要清空UserData，则指定其为空字符串。",
-          "example": "\"\"",
+          "example": "IyEvYmluL2Jhc2gKZWNobyAxMjMKCg==",
           "member": "string",
           "name": "UserData",
           "required": false,
@@ -5465,7 +5498,7 @@
         {
           "disabled": false,
           "document": "公网带宽相关信息设置。\n当公网出带宽上限为0Mbps时，不支持修改为开通分配公网IP；相应的，当前为开通分配公网IP时，修改的公网出带宽上限值必须大于0Mbps。",
-          "example": "无",
+          "example": "{\"InternetChargeType\": \"TRAFFIC_POSTPAID_BY_HOUR\", \"InternetMaxBandwidthOut\": 0, \"PublicIpAssigned\": false}",
           "member": "InternetAccessible",
           "name": "InternetAccessible",
           "required": false,
@@ -5473,7 +5506,7 @@
         },
         {
           "disabled": false,
-          "document": "实例计费类型。具体取值范围如下：\n<li>POSTPAID_BY_HOUR：按小时后付费</li>\n<li>SPOTPAID：竞价付费</li>\n<li>PREPAID：预付费，即包年包月</li>",
+          "document": "实例计费类型。具体取值范围如下：\n<li>POSTPAID_BY_HOUR：按小时后付费</li>\n<li>SPOTPAID：竞价付费</li>\n<li>PREPAID：预付费，即包年包月</li>\n<li>CDCPAID：专用集群付费</li>",
           "example": "POSTPAID_BY_HOUR",
           "member": "string",
           "name": "InstanceChargeType",
@@ -5483,7 +5516,7 @@
         {
           "disabled": false,
           "document": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。\n若修改实例的付费模式为预付费，则该参数必传；从预付费修改为其他付费模式时，本字段原信息会自动丢弃。\n当新增该字段时，必须传递购买实例的时长，其它未传递字段会设置为默认值。\n当修改本字段时，当前付费模式必须为预付费。",
-          "example": "无",
+          "example": "{\"Period\": 1, \"RenewFlag\": \"NOTIFY_AND_AUTO_RENEW\"}",
           "member": "InstanceChargePrepaid",
           "name": "InstanceChargePrepaid",
           "required": false,
@@ -5492,7 +5525,7 @@
         {
           "disabled": false,
           "document": "实例的市场相关选项，如竞价实例相关参数。\n若修改实例的付费模式为竞价付费，则该参数必传；从竞价付费修改为其他付费模式时，本字段原信息会自动丢弃。\n当新增该字段时，必须传递竞价相关选项下的竞价出价，其它未传递字段会设置为默认值。\n当修改本字段时，当前付费模式必须为竞价付费。",
-          "example": "无",
+          "example": "{\"SpotOptions\": {\"MaxPrice\": 1000}}",
           "member": "InstanceMarketOptionsRequest",
           "name": "InstanceMarketOptions",
           "required": false,
@@ -5510,7 +5543,7 @@
         {
           "disabled": false,
           "document": "实例系统盘配置信息。",
-          "example": "无",
+          "example": "{\"DiskSize\": 500, \"DiskType\": \"CLOUD_BSSD\"}",
           "member": "SystemDisk",
           "name": "SystemDisk",
           "required": false,
@@ -5519,7 +5552,7 @@
         {
           "disabled": false,
           "document": "实例数据盘配置信息。\n最多支持指定11块数据盘。采取整体修改，因此请提供修改后的全部值。\n数据盘类型默认与系统盘类型保持一致。",
-          "example": "无",
+          "example": "[{\"DiskSize\": 200, \"DiskType\": \"CLOUD_BSSD\"}]",
           "member": "DataDisk",
           "name": "DataDisks",
           "required": false,
@@ -5528,7 +5561,7 @@
         {
           "disabled": false,
           "document": "云服务器主机名（HostName）的相关设置。\n不支持windows实例设置主机名。\n新增该属性时，必须传递云服务器的主机名，其它未传递字段会设置为默认值。",
-          "example": "无",
+          "example": "{\"HostName\": \"app-as\", \"HostNameStyle\": \"UNIQUE\"}",
           "member": "HostNameSettings",
           "name": "HostNameSettings",
           "required": false,
@@ -5537,7 +5570,7 @@
         {
           "disabled": false,
           "document": "云服务器（InstanceName）实例名的相关设置。 \n如果用户在启动配置中设置此字段，则伸缩组创建出的实例 InstanceName 参照此字段进行设置，并传递给 CVM；如果用户未在启动配置中设置此字段，则伸缩组创建出的实例 InstanceName 按照“as-{{ 伸缩组AutoScalingGroupName }}”进行设置，并传递给 CVM。\n新增该属性时，必须传递云服务器的实例名称，其它未传递字段会设置为默认值。",
-          "example": "无",
+          "example": "{\"InstanceName\": \"app-as\", \"InstanceNameStyle\": \"UNIQUE\"}",
           "member": "InstanceNameSettings",
           "name": "InstanceNameSettings",
           "required": false,
@@ -5546,7 +5579,7 @@
         {
           "disabled": false,
           "document": "增强服务。通过该参数可以指定是否开启云安全、云监控等服务。",
-          "example": "无",
+          "example": "{\"MonitorService\": {\"Enabled\": true}, \"SecurityService\": {\"Enabled\": true}}",
           "member": "EnhancedService",
           "name": "EnhancedService",
           "required": false,
@@ -5573,7 +5606,7 @@
         {
           "disabled": false,
           "document": "IPv6公网带宽相关信息设置。若新建实例包含IPv6地址，该参数可为新建实例的IPv6地址分配公网带宽。关联启动配置的伸缩组Ipv6AddressCount参数为0时，该参数不会生效。",
-          "example": "无",
+          "example": "{\"InternetChargeType\": \"TRAFFIC_POSTPAID_BY_HOUR\", \"InternetMaxBandwidthOut\": 1}",
           "member": "IPv6InternetAccessible",
           "name": "IPv6InternetAccessible",
           "required": false,
@@ -5591,7 +5624,7 @@
         {
           "disabled": false,
           "document": "实例登录设置，包括密码、密钥或保持镜像的原始登录设置。<br>请注意，指定新的登录设置会覆盖原有登录设置。例如，如果您之前使用密码登录，使用该参数将登录设置修改为密钥，则原有密码被清除。",
-          "example": "无",
+          "example": "{\"KeyIds\": [\"skey-alaz9k65\"]}",
           "member": "LoginSettings",
           "name": "LoginSettings",
           "required": false,
@@ -5612,6 +5645,15 @@
           "example": "test-family",
           "member": "string",
           "name": "ImageFamily",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "本地专用集群ID。",
+          "example": "cluster-gbo27yc4",
+          "member": "string",
+          "name": "DedicatedClusterId",
           "required": false,
           "type": "string"
         }
@@ -5653,7 +5695,7 @@
         },
         {
           "disabled": false,
-          "document": "进入生命周期挂钩场景，取值包括：\n<li> INSTANCE_LAUNCHING：实例启动后\n<li> INSTANCE_TERMINATING：实例销毁前",
+          "document": "进入生命周期挂钩场景，取值包括：\n<li> INSTANCE_LAUNCHING：实例启动后</li>\n<li> INSTANCE_TERMINATING：实例销毁前</li>",
           "example": "INSTANCE_LAUNCHING",
           "member": "string",
           "name": "LifecycleTransition",
@@ -5662,7 +5704,7 @@
         },
         {
           "disabled": false,
-          "document": "定义伸缩组在生命周期挂钩超时的情况下应采取的操作，取值包括：\n<li> CONTINUE： 超时后继续伸缩活动\n<li> ABANDON：超时后终止伸缩活动",
+          "document": "定义伸缩组在生命周期挂钩超时的情况下应采取的操作，取值包括：\n<li> CONTINUE： 超时后继续伸缩活动</li> \n<li> ABANDON：超时后终止伸缩活动</li> ",
           "example": "CONTINUE",
           "member": "string",
           "name": "DefaultResult",
@@ -5681,7 +5723,7 @@
         {
           "disabled": false,
           "document": "弹性伸缩向通知目标发送的附加信息。",
-          "example": "test",
+          "example": "addtional-info",
           "member": "string",
           "name": "NotificationMetadata",
           "required": false,
@@ -5699,7 +5741,7 @@
         {
           "disabled": false,
           "document": "通知目标信息。",
-          "example": "无",
+          "example": "{\"QueueName\": \"as-pool\", \"TargetType\": \"TDMQ_CMQ_QUEUE\"}",
           "member": "NotificationTarget",
           "name": "NotificationTarget",
           "required": false,
@@ -5708,7 +5750,7 @@
         {
           "disabled": false,
           "document": "远程命令执行对象。",
-          "example": "无",
+          "example": "{\"CommandId\": \"cmd-am4e3hd8\", \"Parameters\": \"{123: 222}\"}",
           "member": "LifecycleCommand",
           "name": "LifecycleCommand",
           "required": false,
@@ -5799,7 +5841,7 @@
         {
           "disabled": false,
           "document": "应用型负载均衡器列表，目前长度上限为100，LoadBalancerIds 和 ForwardLoadBalancers 二者同时最多只能指定一个",
-          "example": "无",
+          "example": "[{\"LoadBalancerId\": \"lb-af8li2kn\", \"ListenerId\": \"lbl-akw1lgo7\", \"TargetAttributes\": [{\"Port\": 80, \"Weight\": 10}]}]",
           "member": "ForwardLoadBalancer",
           "name": "ForwardLoadBalancers",
           "required": false,
@@ -5807,8 +5849,8 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡器校验策略，取值包括 ALL 和 DIFF，默认取值为 ALL。\n<br><li> ALL，所有负载均衡器都合法则通过校验，否则校验报错。\n<br><li> DIFF，仅校验负载均衡器参数中实际变化的部分，如果合法则通过校验，否则校验报错。",
-          "example": "无",
+          "document": "负载均衡器校验策略，取值包括 ALL 和 DIFF，默认取值为 ALL。\n<li> ALL，所有负载均衡器都合法则通过校验，否则校验报错。</li> \n<li> DIFF，仅校验负载均衡器参数中实际变化的部分，如果合法则通过校验，否则校验报错。</li> ",
+          "example": "ALL",
           "member": "string",
           "name": "LoadBalancersCheckPolicy",
           "required": false,
@@ -5826,7 +5868,7 @@
           "example": "asa-67izy66g",
           "member": "string",
           "name": "ActivityId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6088,7 +6130,7 @@
         {
           "disabled": false,
           "document": "定时任务的重复方式。为标准 Cron 格式<br>此参数与`EndTime`需要同时指定。",
-          "example": "无",
+          "example": "0 18 * * 1,2,3,4,5",
           "member": "string",
           "name": "Recurrence",
           "required": false,
@@ -6181,7 +6223,7 @@
         {
           "disabled": false,
           "document": "刷新批次信息列表。",
-          "example": "无",
+          "example": " [{\"RefreshBatchNum\": 1, \"EndTime\": \"2024-11-06T19:01:08Z\", \"RefreshBatchRelatedInstanceSet\": [{\"InstanceId\": \"ins-m30w46cu\", \"InstanceStatusMessage\": \"success\", \"LastActivityId\": \"asa-dayrcku8\", \"InstanceStatus\": \"SUCCESSFUL\"}], \"StartTime\": \"2024-11-06T19:00:14Z\", \"RefreshBatchStatus\": \"SUCCESSFUL\"}]",
           "member": "RefreshBatch",
           "name": "RefreshBatchSet",
           "output_required": true,
@@ -6201,7 +6243,7 @@
         {
           "disabled": false,
           "document": "实例更新设置参数。",
-          "example": "无",
+          "example": "{\"CheckInstanceTargetHealth\": true, \"RollingUpdateSettings\": {\"BatchNumber\": 1, \"MaxSurge\": 1, \"BatchPause\": \"AUTOMATIC\"}}",
           "member": "RefreshSettings",
           "name": "RefreshSettings",
           "output_required": true,
@@ -6210,7 +6252,7 @@
         },
         {
           "disabled": false,
-          "document": "刷新活动类型。取值如下：<br><li>NORMAL：正常刷新活动</li><li>ROLLBACK：回滚刷新活动",
+          "document": "刷新活动类型。取值如下：\n<li>NORMAL：正常刷新活动</li>\n<li>ROLLBACK：回滚刷新活动</li>",
           "example": "NORMAL",
           "member": "string",
           "name": "ActivityType",
@@ -6220,7 +6262,7 @@
         },
         {
           "disabled": false,
-          "document": "刷新活动状态。取值如下：<br><li>INIT：初始化中</li><li>RUNNING：运行中</li><li>SUCCESSFUL：活动成功</li><li>FAILED_PAUSE：因刷新批次失败暂停</li><li>AUTO_PAUSE：因暂停策略自动暂停</li><li>MANUAL_PAUSE：手动暂停</li><li>CANCELLED：活动取消</li><li>FAILED：活动失败",
+          "document": "刷新活动状态。取值如下：\n<li>INIT：初始化中</li>\n<li>RUNNING：运行中</li>\n<li>SUCCESSFUL：活动成功</li>\n<li>FAILED_PAUSE：因刷新批次失败暂停</li>\n<li>AUTO_PAUSE：因暂停策略自动暂停</li>\n<li>MANUAL_PAUSE：手动暂停</li>\n<li>CANCELLED：活动取消</li>\n<li>FAILED：活动失败</li>",
           "example": "RUNNING",
           "member": "string",
           "name": "Status",
@@ -6286,7 +6328,7 @@
         },
         {
           "disabled": false,
-          "document": "刷新批次状态。取值如下：<br><li>WAITING：待刷新</li><li>INIT：初始化中</li><li>RUNNING：刷新中</li><li>FAILED:  刷新失败</li><li>PARTIALLY_SUCCESSFUL：批次部分成功</li><li>CANCELLED：已取消</li><li>SUCCESSFUL：刷新成功",
+          "document": "刷新批次状态。取值如下：<li>WAITING：待刷新</li><li>INIT：初始化中</li><li>RUNNING：刷新中</li><li>FAILED:  刷新失败</li><li>PARTIALLY_SUCCESSFUL：批次部分成功</li><li>CANCELLED：已取消</li><li>SUCCESSFUL：刷新成功</li>",
           "example": "WAITING",
           "member": "string",
           "name": "RefreshBatchStatus",
@@ -6297,7 +6339,7 @@
         {
           "disabled": false,
           "document": "刷新批次关联实例列表。",
-          "example": "无",
+          "example": "[{\"InstanceId\": \"ins-m30w46cu\", \"InstanceStatusMessage\": \"success\", \"LastActivityId\": \"asa-dayrcku8\", \"InstanceStatus\": \"SUCCESSFUL\"}]",
           "member": "RefreshBatchRelatedInstance",
           "name": "RefreshBatchRelatedInstanceSet",
           "output_required": true,
@@ -6379,7 +6421,7 @@
         {
           "disabled": false,
           "document": "滚动更新设置参数。RefreshMode 为滚动更新该参数必须填写。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\"BatchNumber\": 1, \"MaxSurge\": 1, \"BatchPause\": \"AUTOMATIC\"}",
           "member": "RollingUpdateSettings",
           "name": "RollingUpdateSettings",
           "output_required": false,
@@ -6389,7 +6431,7 @@
         },
         {
           "disabled": false,
-          "document": "实例后端服务健康状态检查，默认为 FALSE。仅针对绑定应用型负载均衡器的伸缩组生效，开启该检查后，如刷新后实例未通过检查，负载均衡器端口权重始终为 0，且标记为刷新失败。取值范围如下：<br><li>TRUE：开启检查</li><li>FALSE：不开启检查",
+          "document": "实例后端服务健康状态检查，默认为 FALSE。仅针对绑定应用型负载均衡器的伸缩组生效，开启该检查后，如刷新后实例未通过检查，负载均衡器端口权重始终为 0，且标记为刷新失败。取值范围如下：<li>TRUE：开启检查</li><li>FALSE：不开启检查</li>",
           "example": "TRUE",
           "member": "bool",
           "name": "CheckInstanceTargetHealth",
@@ -6407,7 +6449,7 @@
         {
           "disabled": false,
           "document": "实例ID。",
-          "example": "无",
+          "example": "ins-d7y6drte",
           "member": "string",
           "name": "InstanceId",
           "output_required": true,
@@ -6417,7 +6459,7 @@
         {
           "disabled": false,
           "document": "实例在伸缩活动中的状态。取值如下：\nINIT：初始化中\nRUNNING：实例操作中\nSUCCESSFUL：活动成功\nFAILED：活动失败",
-          "example": "无",
+          "example": "RUNNING",
           "member": "string",
           "name": "InstanceStatus",
           "output_required": true,
@@ -6496,7 +6538,7 @@
         },
         {
           "disabled": false,
-          "document": "当前批次刷新失败实例的恢复方式，如不存在失败实例，该参数无效。默认值为RETRY，取值范围如下：<br><li>RETRY: 重试当前批次刷新失败实例</li><li>CONTINUE: 跳过当前批次刷新失败实例",
+          "document": "当前批次刷新失败实例的恢复方式，如不存在失败实例，该参数无效。默认值为RETRY，取值范围如下：<li>RETRY: 重试当前批次刷新失败实例</li><li>CONTINUE: 跳过当前批次刷新失败实例</li>",
           "example": "RETRY",
           "member": "string",
           "name": "ResumeMode",
@@ -6533,7 +6575,7 @@
         {
           "disabled": false,
           "document": "刷新设置。",
-          "example": "无",
+          "example": "{\"RollingUpdateSettings\": {\"BatchNumber\": 1, \"BatchPause\": \"AUTOMATIC\"}, \"CheckInstanceTargetHealth\": true}",
           "member": "RefreshSettings",
           "name": "RefreshSettings",
           "required": true,
@@ -6542,7 +6584,7 @@
         {
           "disabled": false,
           "document": "原始刷新活动 ID。",
-          "example": "无",
+          "example": "asr-fdsf8u6b",
           "member": "string",
           "name": "OriginRefreshActivityId",
           "required": true,
@@ -6598,13 +6640,24 @@
         },
         {
           "disabled": false,
-          "document": "批次间暂停策略。默认值为 Automatic，取值范围如下：<br><li>FIRST_BATCH_PAUSE：第一批次更新完成后暂停</li><li>BATCH_INTERVAL_PAUSE：批次间暂停</li><li>AUTOMATIC：不暂停",
+          "document": "批次间暂停策略。默认值为 Automatic，取值范围如下：\n<li>FIRST_BATCH_PAUSE：第一批次更新完成后暂停</li>\n<li>BATCH_INTERVAL_PAUSE：批次间暂停</li>\n<li>AUTOMATIC：不暂停</li>",
           "example": "Automatic",
           "member": "string",
           "name": "BatchPause",
           "output_required": true,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最大额外数量。设置该参数后，在滚动更新开始前根据启动配置创建一批按量计费的额外实例，滚动更新完成后销毁额外实例。\n该参数用于保证滚动更新过程中可用实例的数量，最大额外数量不能超过滚动更新单个批次的刷新实例数。回滚流程暂不支持该参数。",
+          "example": "1",
+          "member": "int64",
+          "name": "MaxSurge",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -6631,10 +6684,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否开启[云监控](https://cloud.tencent.com/document/product/248)服务。取值范围：<br><li>TRUE：表示开启云监控服务<br><li>FALSE：表示不开启云监控服务<br><br>默认取值：TRUE。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "是否开启[云监控](https://cloud.tencent.com/document/product/248)服务。取值范围：\n<li>TRUE：表示开启云监控服务</li>\n<li>FALSE：表示不开启云监控服务</li>\n默认取值：TRUE。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"Enabled\": true}",
           "member": "bool",
           "name": "Enabled",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": true
@@ -6647,10 +6701,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否开启[云安全](https://cloud.tencent.com/document/product/296)服务。取值范围：<br><li>TRUE：表示开启云安全服务<br><li>FALSE：表示不开启云安全服务<br><br>默认取值：TRUE。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "是否开启[云安全](https://cloud.tencent.com/document/product/296)服务。取值范围：\n<li>TRUE：表示开启云安全服务</li>\n<li>FALSE：表示不开启云安全服务</li>\n默认取值：TRUE。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"Enabled\": true}",
           "member": "bool",
           "name": "Enabled",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": true
@@ -6758,7 +6813,7 @@
           "example": "asg-12345678",
           "member": "string",
           "name": "AutoScalingGroupId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6768,7 +6823,7 @@
           "example": "asp-12345678",
           "member": "string",
           "name": "AutoScalingPolicyId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6778,7 +6833,7 @@
           "example": "SIMPLE",
           "member": "string",
           "name": "ScalingPolicyType",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6788,7 +6843,7 @@
           "example": "test-asp",
           "member": "string",
           "name": "ScalingPolicyName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6798,7 +6853,7 @@
           "example": "CHANGE_IN_CAPACITY",
           "member": "string",
           "name": "AdjustmentType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6808,7 +6863,7 @@
           "example": "2",
           "member": "int64",
           "name": "AdjustmentValue",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6818,17 +6873,17 @@
           "example": "60",
           "member": "uint64",
           "name": "Cooldown",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "简单告警触发策略告警监控指标，仅适用于简单策略。",
-          "example": "{}",
+          "example": "{\"ComparisonOperator\": \"GREATER_THAN\", \"ContinuousTime\": 1, \"MetricName\": \"CPU_UTILIZATION\", \"Period\": 60, \"Statistic\": \"AVERAGE\", \"Threshold\": 15}",
           "member": "MetricAlarm",
           "name": "MetricAlarm",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -6838,7 +6893,7 @@
           "example": "ASG_AVG_CPU_UTILIZATION",
           "member": "string",
           "name": "PredefinedMetricType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6848,7 +6903,7 @@
           "example": "10",
           "member": "uint64",
           "name": "TargetValue",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -6858,7 +6913,7 @@
           "example": "300",
           "member": "uint64",
           "name": "EstimatedInstanceWarmup",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -6868,27 +6923,27 @@
           "example": "false",
           "member": "bool",
           "name": "DisableScaleIn",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "告警监控指标列表，仅适用于目标追踪策略。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "{\"ComparisonOperator\": \"GREATER_THAN\", \"Period\": 300, \"ContinuousTime\": 1, \"Threshold\": 35, \"Statistic\": \"AVERAGE\", \"PreciseThreshold\": 35.0, \"MetricName\": \"CPU_UTILIZATION\"}",
           "member": "MetricAlarm",
           "name": "MetricAlarms",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "通知组ID，即为用户组ID集合。",
-          "example": "[]",
+          "example": "[\"12001\"]",
           "member": "string",
           "name": "NotificationUserGroupIds",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -6904,17 +6959,17 @@
           "example": "asst-jf898dps",
           "member": "string",
           "name": "ScheduledActionId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "定时任务名称。",
-          "example": "test",
+          "example": "as-sche-action-0",
           "member": "string",
           "name": "ScheduledActionName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6924,7 +6979,7 @@
           "example": "asg-keqt9eg1",
           "member": "string",
           "name": "AutoScalingGroupId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6934,7 +6989,7 @@
           "example": "2022-02-22T16:00:00+08:00",
           "member": "datetime_iso",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6944,7 +6999,7 @@
           "example": "0 23 */1 * *",
           "member": "string",
           "name": "Recurrence",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6954,7 +7009,7 @@
           "example": "2023-02-23T16:00:00+08:00",
           "member": "datetime_iso",
           "name": "EndTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6964,7 +7019,7 @@
           "example": "20",
           "member": "uint64",
           "name": "MaxSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6974,7 +7029,7 @@
           "example": "5",
           "member": "uint64",
           "name": "DesiredCapacity",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6984,7 +7039,7 @@
           "example": "1",
           "member": "uint64",
           "name": "MinSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6994,17 +7049,17 @@
           "example": "2022-02-21T02:19:52Z",
           "member": "datetime_iso",
           "name": "CreatedTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "定时任务的执行类型。取值范围：<br><li>CRONTAB：代表定时任务为重复执行。<br><li>ONCE：代表定时任务为单次执行。",
+          "document": "定时任务的执行类型。取值范围：\n<li>CRONTAB：代表定时任务为重复执行。</li>\n<li>ONCE：代表定时任务为单次执行。</li>",
           "example": "CRONTAB",
           "member": "string",
           "name": "ScheduledType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -7112,9 +7167,10 @@
         {
           "disabled": false,
           "document": "竞价出价，例如“1.05”",
-          "example": "",
+          "example": "1.05",
           "member": "string",
           "name": "MaxPrice",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -7122,9 +7178,10 @@
         {
           "disabled": false,
           "document": "竞价请求类型，当前仅支持类型：one-time，默认值为one-time\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "one-time",
           "member": "string",
           "name": "SpotInstanceType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -7402,9 +7459,10 @@
         {
           "disabled": false,
           "document": "标签键",
-          "example": "",
+          "example": "as-group-tag0",
           "member": "string",
           "name": "Key",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -7412,19 +7470,21 @@
         {
           "disabled": false,
           "document": "标签值",
-          "example": "",
+          "example": "app0",
           "member": "string",
           "name": "Value",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "标签绑定的资源类型，当前支持类型：\"auto-scaling-group\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "标签绑定的资源类型，当前支持类型：\"auto-scaling-group\", \"launch-configuration\"\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "auto-scaling-group",
           "member": "string",
           "name": "ResourceType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -7438,9 +7498,10 @@
         {
           "disabled": false,
           "document": "端口",
-          "example": "",
+          "example": "80",
           "member": "uint64",
           "name": "Port",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -7448,9 +7509,10 @@
         {
           "disabled": false,
           "document": "权重",
-          "example": "",
+          "example": "10",
           "member": "uint64",
           "name": "Weight",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -7725,7 +7787,7 @@
         {
           "disabled": false,
           "document": "弹性伸缩向通知目标发送的附加信息，配置通知时使用，默认值为空字符串\"\"",
-          "example": "\"\"",
+          "example": "as-meta-0",
           "member": "string",
           "name": "NotificationMetadata",
           "required": false,
@@ -7734,7 +7796,7 @@
         {
           "disabled": false,
           "document": "通知目标。NotificationTarget和LifecycleCommand参数互斥，二者不可同时指定。",
-          "example": "无",
+          "example": "{\"QueueName\": \"as-pool\", \"TargetType\": \"TDMQ_CMQ_QUEUE\"}",
           "member": "NotificationTarget",
           "name": "NotificationTarget",
           "required": false,
@@ -7752,7 +7814,7 @@
         {
           "disabled": false,
           "document": "远程命令执行对象。NotificationTarget和LifecycleCommand参数互斥，二者不可同时指定。",
-          "example": "无",
+          "example": "cmd-ju7dt54r",
           "member": "LifecycleCommand",
           "name": "LifecycleCommand",
           "required": false,

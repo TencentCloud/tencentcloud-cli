@@ -19,7 +19,7 @@ Output:
             {
                 "SalesName": "杨过",
                 "UserId": "YangGuo",
-                "ExternalUserId": "wmpqy2CAAATGwpQTxuU1IUfoiOFH2cXA",
+                "ExternalUserId": "fdasfJKDSFN72fdsxxxxATGwdsfasfdDFSNFSDFxxx",
                 "DepartmentIdList": [
                     0,
                     1

@@ -15,7 +15,7 @@ Output:
 {
     "Response": {
         "DownloadUrl": "http://xx/xxx",
-        "RequestId": "abcs12434"
+        "RequestId": "acdd5474-6360-4fd4-bfc7-843162cb8116"
     }
 }
 ```

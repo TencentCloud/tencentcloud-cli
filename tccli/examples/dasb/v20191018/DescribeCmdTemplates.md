@@ -15,13 +15,13 @@ Output:
     "Response": {
         "CmdTemplateSet": [
             {
-                "CmdList": "xx",
-                "Name": "xx",
-                "Id": 1
+                "Id": 1,
+                "Name": "测试模板",
+                "CmdList": "rm -rf"
             }
         ],
         "TotalCount": 1,
-        "RequestId": "xx"
+        "RequestId": "4e7e46fe-c632-4a67-92ac-b9e8228c78ea"
     }
 }
 ```

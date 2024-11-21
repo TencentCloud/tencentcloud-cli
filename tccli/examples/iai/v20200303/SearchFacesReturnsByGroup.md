@@ -1,6 +1,6 @@
 **Example 1: 人脸搜索分库返回接口**
 
-
+输入图片，在人员库中识别出最相似的人员。
 
 Input: 
 
@@ -26,16 +26,16 @@ Output:
                             {
                                 "PersonGroupInfos": [
                                     {
-                                        "GroupId": "abc",
+                                        "GroupId": "1002",
                                         "PersonExDescriptions": [
-                                            "description1",
-                                            "description2"
+                                            "年龄",
+                                            "性别"
                                         ]
                                     }
                                 ],
-                                "PersonId": "1001",
+                                "PersonId": "1002",
                                 "Gender": 0,
-                                "PersonName": "张三",
+                                "PersonName": "韦小宝",
                                 "Score": 100,
                                 "FaceId": "2875093635484912302"
                             }

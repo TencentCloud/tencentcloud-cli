@@ -6,15 +6,15 @@ Input:
 
 ```
 tccli tcss CreateHostExportJob --cli-unfold-argument  \
-    --ExportField xxx
+    --ExportField HostName HostIP PublicIp Group InstanceID MachineType Status DockerVersion ContainerdVersion DockerFileSystemDriver ImageCnt ContainerCnt
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx",
-        "JobId": "xx"
+        "JobId": "73805b97-0e40-4249-8fe5-f1e38de1c28a",
+        "RequestId": "78382c9e-92c7-42bb-8a2a-04d406903d94"
     }
 }
 ```

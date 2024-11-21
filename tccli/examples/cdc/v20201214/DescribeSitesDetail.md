@@ -5,7 +5,9 @@
 Input: 
 
 ```
-tccli cdc DescribeSitesDetail --cli-unfold-argument ```
+tccli cdc DescribeSitesDetail --cli-unfold-argument  \
+    --SiteIds site-98dj3kd
+```
 
 Output: 
 ```
@@ -14,8 +16,8 @@ Output:
         "SiteDetailSet": [
             {
                 "SiteId": "site-98dj3kd",
-                "Name": "",
-                "Description": "",
+                "Name": "sitename",
+                "Description": "this is a description",
                 "CreateTime": "2020-12-25T08:39:57Z",
                 "FiberType": "MM",
                 "UplinkSpeedGbps": 0,
@@ -32,7 +34,7 @@ Output:
                 "RedundantPower": false,
                 "MaxWeight": 0,
                 "AddressLine": "Nanshan Road",
-                "OptionalAddressLine": "",
+                "OptionalAddressLine": "详细地址",
                 "Country": "China",
                 "Province": "guangdong",
                 "City": "shenzhen",

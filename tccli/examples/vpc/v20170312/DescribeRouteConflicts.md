@@ -20,24 +20,19 @@ Output:
                 "DestinationCidrBlock": "192.168.0.0/24",
                 "ConflictSet": [
                     {
+                        "RouteTableId": "rtb-q8o2z892",
                         "RouteId": 20662,
+                        "RouteItemId": "rti-hj3he929",
                         "DestinationCidrBlock": "192.168.0.0/24",
-                        "GatewayId": "135",
-                        "GatewayType": "11",
-                        "RouteDescription": ""
-                    }
-                ]
-            },
-            {
-                "RouteTableId": "rtb-q8o2z892",
-                "DestinationCidrBlock": "10.11.0.0/24",
-                "ConflictSet": [
-                    {
-                        "RouteId": 20661,
-                        "DestinationCidrBlock": "10.11.0.0/24",
-                        "GatewayId": "135",
-                        "GatewayType": "11",
-                        "RouteDescription": ""
+                        "GatewayId": "ccn-h0fk8lfc",
+                        "GatewayType": "CCN",
+                        "RouteDescription": "",
+                        "Enabled": true,
+                        "RouteType": "CCN",
+                        "DestinationIpv6CidrBlock": "",
+                        "PublishedToVbc": true,
+                        "CreatedTime": "2020-09-22 00:00:00",
+                        "CdcId": ""
                     }
                 ]
             }

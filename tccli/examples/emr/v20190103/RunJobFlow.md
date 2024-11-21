@@ -6,22 +6,23 @@ Input:
 
 ```
 tccli emr RunJobFlow --cli-unfold-argument  \
-    --Name test \
-    --CreateCluster false \
-    --InstancePolicy Terminate \
-    --Steps.0.Name MRtest \
-    --Steps.0.ExecutionStep.JobType MR \
-    --Steps.0.ExecutionStep.Args /usr/local/service/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-examples-2.8.5.jar wordcount cosn://testbucket/README.txt cosn://testbucket/output \
+    --Name pop-api-tmp-emr-phs-drug-monitor-daily--20241106115143 \
+    --CreateCluster False \
+    --Steps.0.Name DrugChangeRemindJob_20241106035136 \
+    --Steps.0.ExecutionStep.JobType SPARK \
+    --Steps.0.ExecutionStep.Args --master yarn --deploy-mode cluster --class com.patsnap.app.monitor.job.DrugChangeRemindJob --conf spark.driver.extraJavaOptions=-Dfile.encoding=utf-8 --conf spark.executor.extraJavaOptions=-Dfile.encoding=utf-8 cosn://data-phs-common-dataprod-ash-125000000/spark-jars/drug/drug_change_monitor/v1.0/data-phs-etl-app.jar ${program_config} \
     --Steps.0.ActionOnFailure CONTINUE \
-    --Steps.0.User hadoop
+    --Steps.0.User hadoop \
+    --InstancePolicy Reserve \
+    --InstanceId emr-64e
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "JobFlowId": 42,
-        "RequestId": "ba25bfcf-86d6-451a-b01d-a28762c92b99"
+        "JobFlowId": 16531,
+        "RequestId": "3f63c907-d4e4-4856-b05d-949eedc2151a"
     }
 }
 ```

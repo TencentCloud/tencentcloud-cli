@@ -105,7 +105,7 @@
     "CreateLoadBalancer": [
       {
         "document": "在私有网络中创建一个公网负载均衡",
-        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLoadBalancer\n<公共请求参数>\n\n{\n    \"Forward\": 1,\n    \"ProjectId\": 0,\n    \"LoadBalancerType\": \"OPEN\",\n    \"VpcId\": \"vpc-30xqxt9p\",\n    \"LoadBalancerName\": \"test\"\n}",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLoadBalancer\n<公共请求参数>\n\n{\n    \"Forward\": 1,\n    \"ProjectId\": 0,\n    \"LoadBalancerType\": \"OPEN\",\n    \"VpcId\": \"vpc-30xqxt9p\",\n    \"LoadBalancerName\": \"test-open\"\n}",
         "output": "{\n    \"Response\": {\n        \"LoadBalancerIds\": [\n            \"lb-6efswuxa\"\n        ],\n        \"DealName\": \"20220101660009831340631\",\n        \"RequestId\": \"9b3f0b57-fb64-4918-8dd6-ce02604fb52c\"\n    }\n}",
         "title": "创建一个公网负载均衡实例"
       },

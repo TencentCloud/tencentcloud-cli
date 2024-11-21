@@ -12,7 +12,7 @@ Output:
 {
     "Response": {
         "RequestId": "d09cfcae-fab2-4cb7-a41e-5fd4c12d69f4",
-        "DownloadUrl": "",
+        "DownloadUrl": "https://cwp-1258344***.cos.ap-guangzhou.myqcloud.com/file.txt",
         "TaskId": 1
     }
 }

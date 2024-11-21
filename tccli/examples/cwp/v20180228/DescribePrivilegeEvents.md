@@ -14,11 +14,20 @@ Output:
         "TotalCount": 22,
         "List": [
             {
+                "Pid": 1,
+                "MachineExtraInfo": {
+                    "HostName": "demo-instance",
+                    "InstanceID": "ins-1002",
+                    "NetworkName": "vpc-1002",
+                    "NetworkType": 1,
+                    "PrivateIP": "1.1.1.1",
+                    "WanIP": "1.1.1.1"
+                },
                 "Id": 22,
                 "Uuid": "cf59e3c0-b1cc-11e9-baac-525400ca96ee",
                 "Quuid": "b9821ff5-75f0-4939-b21f-13c8d36a725c",
                 "Hostip": "10.0.0.125",
-                "ProcessName": "a",
+                "ProcessName": "nginx",
                 "FullPath": "/home/ubuntu/a",
                 "CmdLine": "./a ",
                 "UserName": "root",
@@ -31,7 +40,7 @@ Output:
                 "ProcTree": "a(root),bash(ubuntu),sshd(ubuntu),sshd(root),sshd(root),init(root)",
                 "Status": 0,
                 "CreateTime": "2019-08-15 15:27:52",
-                "MachineName": "云鼎_云镜测试机_Linux_4_weikunlin"
+                "MachineName": "测试机_Linux_4_weikunlin"
             }
         ],
         "RequestId": "bd9aa8c8-36b6-4991-8e42-d08e80313616"

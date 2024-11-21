@@ -249,7 +249,7 @@
         {
           "disabled": false,
           "document": "专用集群id",
-          "example": "\"cluster-gbo27yc4\"",
+          "example": "cluster-gbo27yc4",
           "member": "string",
           "name": "DedicatedClusterId",
           "required": true,
@@ -258,7 +258,7 @@
         {
           "disabled": false,
           "document": "order关联的专用集群类型数组",
-          "example": "无",
+          "example": "[{     \"Id\": \"cluster-gbo27yc4\",     \"Count\": 1 }]",
           "member": "DedicatedClusterTypeInfo",
           "name": "DedicatedClusterTypes",
           "required": false,
@@ -267,7 +267,7 @@
         {
           "disabled": false,
           "document": "order关联的cos存储信息",
-          "example": "无",
+          "example": "{     \"Size\": 1,     \"Type\": C05 }",
           "member": "CosInfo",
           "name": "CosInfo",
           "required": false,
@@ -276,7 +276,7 @@
         {
           "disabled": false,
           "document": "order关联的cbs存储信息",
-          "example": "无",
+          "example": "{     \"Size\": 1,     \"Type\": SSD }",
           "member": "CbsInfo",
           "name": "CbsInfo",
           "required": false,
@@ -293,7 +293,7 @@
         },
         {
           "disabled": false,
-          "document": "当调用API接口提交订单时，需要提交DedicatedClusterOrderId",
+          "document": "当调用API接口提交订单时，需要提交DedicatedClusterOrderId，此处DedicatedClusterOrderId是之前创建的订单，可通过DescribeDedicatedClusterOrders接口查询，这里传入DedicatedClusterOrderId用于调整订单和支付。",
           "example": "ord-aijx4ets",
           "member": "string",
           "name": "DedicatedClusterOrderId",
@@ -309,9 +309,10 @@
         {
           "disabled": false,
           "document": "专用集群订单id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"ord-j3f3kdj4\"",
+          "example": "ord-j3f3kdj4",
           "member": "string",
           "name": "DedicatedClusterOrderId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -330,7 +331,7 @@
         {
           "disabled": false,
           "document": "专用集群所属的SiteId",
-          "example": "\"site-98dj3kd\"",
+          "example": "site-98dj3kd",
           "member": "string",
           "name": "SiteId",
           "required": true,
@@ -339,7 +340,7 @@
         {
           "disabled": false,
           "document": "专用集群的名称",
-          "example": "\"my-site\"",
+          "example": "my-site",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -348,7 +349,7 @@
         {
           "disabled": false,
           "document": "专用集群所属的可用区",
-          "example": "\"ap-guangzhou\"",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "Zone",
           "required": true,
@@ -357,7 +358,7 @@
         {
           "disabled": false,
           "document": "专用集群的描述",
-          "example": "\"my dedicated cluster\"",
+          "example": "my dedicated cluster",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -372,9 +373,10 @@
         {
           "disabled": false,
           "document": "创建的专用集群id",
-          "example": "\"cluster-gbo27yc4\"",
+          "example": "cluster-gbo27yc4",
           "member": "string",
           "name": "DedicatedClusterId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -393,7 +395,7 @@
         {
           "disabled": false,
           "document": "站点名称",
-          "example": "\"my-site\"",
+          "example": "my-site",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -429,7 +431,7 @@
         {
           "disabled": false,
           "document": "站点所在地区的详细地址信息",
-          "example": "\"Shennan Road 10000\"",
+          "example": "Shennan Road 10000",
           "member": "string",
           "name": "AddressLine",
           "required": true,
@@ -438,7 +440,7 @@
         {
           "disabled": false,
           "document": "站点描述",
-          "example": "\"this site is good\"",
+          "example": "this site is good",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -447,7 +449,7 @@
         {
           "disabled": false,
           "document": "注意事项",
-          "example": "\"the floor is not very good\"",
+          "example": "the floor is not very good",
           "member": "string",
           "name": "Note",
           "required": false,
@@ -455,8 +457,8 @@
         },
         {
           "disabled": false,
-          "document": "您将使用光纤类型将CDC设备连接到网络。有单模和多模两种选项。",
-          "example": "无",
+          "document": "您将使用光纤类型将CDC设备连接到网络。有单模和多模两种选项。取值范围：\"MM\",\"SM\"",
+          "example": "MM",
           "member": "string",
           "name": "FiberType",
           "required": false,
@@ -465,7 +467,7 @@
         {
           "disabled": false,
           "document": "您将CDC连接到网络时采用的光学标准。此字段取决于上行链路速度、光纤类型和到上游设备的距离。",
-          "example": "无",
+          "example": "1000Base-SX",
           "member": "string",
           "name": "OpticalStandard",
           "required": false,
@@ -474,7 +476,7 @@
         {
           "disabled": false,
           "document": "电源连接器类型",
-          "example": "无",
+          "example": "380VAC3P",
           "member": "string",
           "name": "PowerConnectors",
           "required": false,
@@ -482,8 +484,8 @@
         },
         {
           "disabled": false,
-          "document": "从机架上方还是下方供电。",
-          "example": "无",
+          "document": "从机架上方还是下方供电。取值范围：[\"UP\",\"DOWN\"]",
+          "example": "UP",
           "member": "string",
           "name": "PowerFeedDrop",
           "required": false,
@@ -509,7 +511,7 @@
         },
         {
           "disabled": false,
-          "document": "网络到腾讯云Region区域的上行链路速度",
+          "document": "网络到腾讯云Region区域的上行链路速度(Gbps)",
           "example": "10",
           "member": "int64",
           "name": "UplinkSpeedGbps",
@@ -564,7 +566,7 @@
         {
           "disabled": false,
           "document": "站点所在地区的详细地址信息（补充）",
-          "example": "无",
+          "example": "tengda",
           "member": "string",
           "name": "OptionalAddressLine",
           "required": false,
@@ -606,9 +608,10 @@
         {
           "disabled": false,
           "document": "创建Site生成的id",
-          "example": "\"site-98dj3kd\"",
+          "example": "site-98dj3kd",
           "member": "string",
           "name": "SiteId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -627,70 +630,70 @@
         {
           "disabled": false,
           "document": "专用集群id。如\"cluster-xxxxx\"。",
-          "example": "",
+          "example": "cluster-du3hdu32",
           "member": "string",
           "name": "DedicatedClusterId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "专用集群所属可用区名称。",
-          "example": "",
+          "example": "ap-guangzhou-2",
           "member": "string",
           "name": "Zone",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "专用集群的描述。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "this is a description",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "专用集群的名称。",
-          "example": "",
+          "example": "wechen-first-dc",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "专用集群的生命周期。如\"PENDING\"。",
-          "example": "",
+          "example": "PENDING",
           "member": "string",
           "name": "LifecycleStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "专用集群的创建时间。",
-          "example": "",
+          "example": "2020-12-10T06:15:43Z",
           "member": "datetime_iso",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "专用集群所属的站点id。",
-          "example": "",
+          "example": "site-38d9ck",
           "member": "string",
           "name": "SiteId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -703,150 +706,150 @@
         {
           "disabled": false,
           "document": "可用区",
-          "example": "无",
+          "example": "ap-guangzhou-2",
           "member": "string",
           "name": "Zone",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "规格名称",
-          "example": "无",
+          "example": "S1.SMALL1",
           "member": "string",
           "name": "InstanceType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "网卡类型，例如：25代表25G网卡",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "NetworkCard",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "实例的CPU核数，单位：核。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Cpu",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "实例内存容量，单位：`GB`。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Memory",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "实例机型系列。",
-          "example": "无",
+          "example": "S1",
           "member": "string",
           "name": "InstanceFamily",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "机型名称。",
-          "example": "无",
+          "example": "Standard S1",
           "member": "string",
           "name": "TypeName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "本地存储块数量。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "StorageBlockAmount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "内网带宽，单位Gbps。",
-          "example": "无",
+          "example": "0",
           "member": "float",
           "name": "InstanceBandwidth",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "网络收发包能力，单位万PPS。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "InstancePps",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "处理器型号。",
-          "example": "无",
+          "example": "intel",
           "member": "string",
           "name": "CpuType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "实例的GPU数量。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "Gpu",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "实例的FPGA数量。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "Fpga",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "机型描述",
-          "example": "无",
+          "example": "这是S1机型",
           "member": "string",
           "name": "Remark",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例是否售卖。取值范围： <br><li>SELL：表示实例可购买<br><li>SOLD_OUT：表示实例已售罄。",
-          "example": "无",
+          "document": "实例是否售卖。取值范围： <br><li>SELL：表示实例可购买<br></li><li>SOLD_OUT：表示实例已售罄。</li>",
+          "example": "SOLD_OUT",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -859,7 +862,7 @@
         {
           "disabled": false,
           "document": "专用集群id",
-          "example": "无",
+          "example": "cluster-xh37dh",
           "member": "string",
           "name": "DedicatedClusterId",
           "output_required": true,
@@ -869,7 +872,7 @@
         {
           "disabled": false,
           "document": "专用集群类型id（移到下一层级，已经废弃，后续将删除）",
-          "example": "无",
+          "example": "dctype-00000000",
           "member": "string",
           "name": "DedicatedClusterTypeId",
           "output_required": true,
@@ -879,7 +882,7 @@
         {
           "disabled": false,
           "document": "支持的存储类型列表（移到下一层级，已经废弃，后续将删除）",
-          "example": "无",
+          "example": "[\"SSD\"]",
           "member": "string",
           "name": "SupportedStorageType",
           "output_required": true,
@@ -889,7 +892,7 @@
         {
           "disabled": false,
           "document": "支持的上连交换机的链路传输速率(GiB)（移到下一层级，已经废弃，后续将删除）",
-          "example": "无",
+          "example": "[10,25,40,100]",
           "member": "int64",
           "name": "SupportedUplinkSpeed",
           "output_required": true,
@@ -899,7 +902,7 @@
         {
           "disabled": false,
           "document": "支持的实例族列表（移到下一层级，已经废弃，后续将删除）",
-          "example": "无",
+          "example": "[\"SA5t\"]",
           "member": "string",
           "name": "SupportedInstanceFamily",
           "output_required": true,
@@ -909,7 +912,7 @@
         {
           "disabled": false,
           "document": "地板承重要求(KG)",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "Weight",
           "output_required": true,
@@ -919,7 +922,7 @@
         {
           "disabled": false,
           "document": "功率要求(KW)",
-          "example": "无",
+          "example": "0",
           "member": "float",
           "name": "PowerDraw",
           "output_required": true,
@@ -929,7 +932,7 @@
         {
           "disabled": false,
           "document": "订单状态",
-          "example": "无",
+          "example": "PENDING",
           "member": "string",
           "name": "OrderStatus",
           "output_required": true,
@@ -939,7 +942,7 @@
         {
           "disabled": false,
           "document": "订单创建的时间",
-          "example": "无",
+          "example": "2024-10-16T07:18:37Z",
           "member": "datetime_iso",
           "name": "CreateTime",
           "output_required": true,
@@ -969,7 +972,7 @@
         {
           "disabled": false,
           "document": "子订单详情列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[           {             \"ComputeFormat\": \"1 SA5t.60XLARGE1076\",             \"Count\": 1,             \"CreateTime\": \"2024-10-16 15:18:37\",             \"DedicatedClusterTypeId\": \"dctype-45ndlenk\",             \"Description\": \"SA5t\",             \"Name\": \"CVM.SA5t.60XLARGE1076\",             \"PowerDraw\": 0,             \"SubOrderId\": \"sord-gfwblx76\",             \"SubOrderPayStatus\": 0,             \"SubOrderStatus\": \"DELIVERED\",             \"SupportedInstanceFamily\": [               \"SA5t\"             ],             \"SupportedStorageType\": [],             \"SupportedUplinkSpeed\": [],             \"TotalCpu\": 240,             \"TotalGpu\": 0,             \"TotalMem\": 1076,             \"TypeFamily\": \"CUSTOM.COMPUTE\",             \"TypeName\": \"CVM.SA5t.60XLARGE1076\",             \"Weight\": 0           }         ]",
           "member": "DedicatedClusterOrderItem",
           "name": "DedicatedClusterOrderItems",
           "output_required": true,
@@ -979,7 +982,7 @@
         {
           "disabled": false,
           "document": "cpu值\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "240",
           "member": "int64",
           "name": "Cpu",
           "output_required": true,
@@ -989,7 +992,7 @@
         {
           "disabled": false,
           "document": "mem值\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1076",
           "member": "int64",
           "name": "Mem",
           "output_required": true,
@@ -999,7 +1002,7 @@
         {
           "disabled": false,
           "document": "gpu值\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "Gpu",
           "output_required": true,
@@ -1058,73 +1061,73 @@
         },
         {
           "disabled": false,
-          "document": "验收状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "验收状态",
           "example": "DELIVERING",
           "member": "string",
           "name": "CheckStatus",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "交付预期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "交付预期时间",
           "example": "2024-01-01 12:00:00",
           "member": "string",
           "name": "DeliverExpectTime",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "交付实际完成时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "交付实际完成时间",
           "example": "2024-01-01 12:00:00",
           "member": "string",
           "name": "DeliverFinishTime",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "验收预期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "验收预期时间",
           "example": "2024-01-01 12:00:00",
           "member": "string",
           "name": "CheckExpectTime",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "验收实际完成时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "验收实际完成时间",
           "example": "2024-01-01 12:00:00",
           "member": "string",
           "name": "CheckFinishTime",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "订单SLA\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "订单SLA",
+          "example": "null",
           "member": "string",
           "name": "OrderSLA",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "订单支付计划\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "订单支付计划",
+          "example": "null",
           "member": "string",
           "name": "OrderPayPlan",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1135,80 +1138,80 @@
         {
           "disabled": false,
           "document": "专用集群类型id",
-          "example": "无",
+          "example": "dctype-01000001",
           "member": "string",
           "name": "DedicatedClusterTypeId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "支持的存储类型列表",
-          "example": "无",
+          "example": "[\"SSD\"]",
           "member": "string",
           "name": "SupportedStorageType",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "支持的上连交换机的链路传输速率(GiB)",
-          "example": "无",
+          "example": "[10,25,40,100]",
           "member": "int64",
           "name": "SupportedUplinkSpeed",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "支持的实例族列表",
-          "example": "无",
+          "example": "[\"S5\"]",
           "member": "string",
           "name": "SupportedInstanceFamily",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "地板承重要求(KG)",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "Weight",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "功率要求(KW)",
-          "example": "无",
+          "example": "0",
           "member": "float",
           "name": "PowerDraw",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "订单状态",
-          "example": "无",
+          "example": "PENDING",
           "member": "string",
           "name": "SubOrderStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "订单创建的时间",
-          "example": "无",
+          "example": "2022-08-15 15:08:12",
           "member": "datetime_iso",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1218,7 +1221,7 @@
           "example": "ord-aijx4ets ",
           "member": "string",
           "name": "SubOrderId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1228,7 +1231,7 @@
           "example": "1",
           "member": "int64",
           "name": "Count",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1238,7 +1241,7 @@
           "example": "通用小型机",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1248,7 +1251,7 @@
           "example": "适用于...场景",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1258,7 +1261,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCpu",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1268,7 +1271,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalMem",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1278,7 +1281,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalGpu",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1288,7 +1291,7 @@
           "example": "CBS.SSD",
           "member": "string",
           "name": "TypeName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1298,7 +1301,7 @@
           "example": "M5.21XLARGE700 4、S5.21XLARGE320 2",
           "member": "string",
           "name": "ComputeFormat",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1308,7 +1311,7 @@
           "example": "COMPUTE",
           "member": "string",
           "name": "TypeFamily",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1318,7 +1321,7 @@
           "example": "0",
           "member": "int64",
           "name": "SubOrderPayStatus",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         }
@@ -1361,7 +1364,7 @@
         {
           "disabled": false,
           "document": "创建配置的时间",
-          "example": "无",
+          "example": "2024-10-30 17:14:13",
           "member": "datetime_iso",
           "name": "CreateTime",
           "output_required": true,
@@ -1526,7 +1529,7 @@
         {
           "disabled": false,
           "document": "云硬盘仓库id",
-          "example": "set-xxxxxxxx",
+          "example": "set-mm4hzptu",
           "member": "string",
           "name": "SetId",
           "required": false,
@@ -1544,7 +1547,7 @@
         {
           "disabled": false,
           "document": "结束时间",
-          "example": "2023-01-01 12:00:00",
+          "example": "2023-01-02 12:00:00",
           "member": "string",
           "name": "EndTime",
           "required": false,
@@ -1552,7 +1555,7 @@
         },
         {
           "disabled": false,
-          "document": "时间范围精度，1分钟/5分钟",
+          "document": "时间范围精度，1分钟(ONE_MINUTE)/5分钟(FIVE_MINUTE)",
           "example": "ONE_MINUTE",
           "member": "string",
           "name": "Period",
@@ -1585,23 +1588,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "云硬盘仓库信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "云硬盘仓库信息",
+          "example": "[       {         \"Await\": {           \"Timestamps\": [],           \"Values\": []         },         \"CreateTime\": \"2022-12-09 15:20:09\",         \"ReadIO\": {           \"Timestamps\": [],           \"Values\": []         },         \"ReadTraffic\": {           \"Timestamps\": [],           \"Values\": []         },         \"SetId\": \"set-mm4hzptu\",         \"SetName\": \"HCBS_GZCDC_Z133_CDCCBS_Y0SH1125G_D0003\",         \"SetSize\": 33.4,         \"SetStatus\": \"RUNNING\",         \"SetType\": \"ssd\",         \"Util\": {           \"Timestamps\": [],           \"Values\": []         },         \"WriteIO\": {           \"Timestamps\": [],           \"Values\": []         },         \"WriteTraffic\": {           \"Timestamps\": [],           \"Values\": []         }       }     ]",
           "member": "SetInfo",
           "name": "SetList",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "10",
+          "document": "总数",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1618,7 +1621,7 @@
         {
           "disabled": false,
           "document": "查询的专用集群id",
-          "example": "\"cluster-gbo27yc4\"",
+          "example": "cluster-gbo27yc4",
           "member": "string",
           "name": "DedicatedClusterId",
           "required": true,
@@ -1633,9 +1636,10 @@
         {
           "disabled": false,
           "document": "本集群内cos容量信息，单位：‘GB’",
-          "example": "无",
+          "example": "{       \"TotalCapacity\": 0,       \"TotalFreeCapacity\": 0,       \"TotalUsedCapacity\": 0     }",
           "member": "CosCapacity",
           "name": "CosCapacity",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -1654,7 +1658,7 @@
         {
           "disabled": false,
           "document": "查询的专用集群id",
-          "example": "\"cluster-gbo27yc4\"",
+          "example": "cluster-gbo27yc4",
           "member": "string",
           "name": "DedicatedClusterId",
           "required": true,
@@ -1663,7 +1667,7 @@
         {
           "disabled": false,
           "document": "宿主机id",
-          "example": "host-xxxxxxxx",
+          "example": "host-ro7czflb",
           "member": "string",
           "name": "HostId",
           "required": false,
@@ -1681,7 +1685,7 @@
         {
           "disabled": false,
           "document": "结束时间",
-          "example": "无2023-01-01 12:00:00",
+          "example": "2023-01-02 12:00:00",
           "member": "string",
           "name": "EndTime",
           "required": false,
@@ -1689,7 +1693,7 @@
         },
         {
           "disabled": false,
-          "document": "时间范围精度，1分钟/5分钟",
+          "document": "时间范围精度，1分钟(ONE_MINUTE)/5分钟(FIVE_MINUTE)",
           "example": "ONE_MINUTE",
           "member": "string",
           "name": "Period",
@@ -1705,7 +1709,7 @@
         {
           "disabled": false,
           "document": "该集群内宿主机的统计信息列表",
-          "example": "无",
+          "example": "[     {         \"HostType\": \"S5.21XLARGE320\",         \"HostFamily\": \"S5\",         \"Cpu\": 84,         \"Memory\": 320,         \"Count\": 240,         \"CpuAverage\": 50,         \"MemAverage\": 50,         \"NetAverage\": 100,         \"CpuDetailData\": {             \"Timestamps\": [                 1693274400             ],             \"Values\": [                 0             ]         },         \"MemDetailData\": {             \"Timestamps\": [                 1693274400             ],             \"Values\": [                 0             ]         },         \"NetRateDetailData\": {             \"Timestamps\": [                 1693274400             ],             \"Values\": [                 0             ]         },         \"NetPacketDetailData\": {             \"Timestamps\": [                 1693274400             ],             \"Values\": [                 0             ]         }     } ]",
           "member": "HostStatistic",
           "name": "HostStatisticSet",
           "output_required": true,
@@ -1760,7 +1764,7 @@
         {
           "disabled": false,
           "document": "宿主机信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[             {                  \"HostId\":\"host-0l8k7qm\",                 \"HostIp\": \"50.4.2.2\",                 \"ServiceType\": \"云服务器宿主机\",                 \"HostStatus\": \"PENDING\",                 \"HostType\": \"标准型S5.21XLARGE320\",                 \"RunTime\": \"2022-03-29 16:37:01\",                 \"ExpireTime\": \"2025-03-29 16:37:01\",                 \"CpuAvailable\": 24,                 \"CpuTotal\": 24,                 \"MemAvailable\": 96,                 \"MemTotal\": 96             },             {                \"HostId\":\"host-0l8k7qp\",                 \"HostIp\": \"50.4.2.3\",                 \"ServiceType\": \"云服务器宿主机\",                 \"HostStatus\": \"PENDING\",                 \"HostType\": \"标准型S5.21XLARGE320\",                 \"RunTime\": \"2022-03-30 16:37:01\",                 \"ExpireTime\": \"2025-03-30 16:37:01\",                 \"CpuAvailable\": 24,                 \"CpuTotal\": 24,                 \"MemAvailable\": 96,                 \"MemTotal\": 96             }         ]",
           "member": "HostInfo",
           "name": "HostInfoSet",
           "output_required": true,
@@ -1770,7 +1774,7 @@
         {
           "disabled": false,
           "document": "宿主机总数",
-          "example": "10",
+          "example": "2",
           "member": "uint64",
           "name": "TotalCount",
           "output_required": true,
@@ -1792,7 +1796,7 @@
         {
           "disabled": false,
           "document": "查询的专用集群id",
-          "example": "\"cluster-gbo27yc4\"",
+          "example": "cluster-gbo27yc4",
           "member": "string",
           "name": "DedicatedClusterId",
           "required": true,
@@ -1807,9 +1811,10 @@
         {
           "disabled": false,
           "document": "支持的实例规格列表",
-          "example": "无",
+          "example": "[{ \t\t\t\"Zone\": \"ap-guangzhou-2\", \t\t\t\"InstanceType\": \"S1.SMALL1\", \t\t\t\"NetworkCard\": 0, \t\t\t\"Cpu\": 1, \t\t\t\"Memory\": 1, \t\t\t\"InstanceFamily\": \"S1\", \t\t\t\"TypeName\": \"Standard S1\", \t\t\t\"StorageBlockAmount\": 0, \t\t\t\"InstanceBandwidth\": 0, \t\t\t\"InstancePps\": 0, \t\t\t\"CpuType\": \"intel\", \t\t\t\"Gpu\": 0, \t\t\t\"Fpga\": 0, \t\t\t\"Remark\": \"备注\", \t\t\t\"Status\": \"SOLD_OUT\",                         \"InstanceQuota\": 0 \t\t}]",
           "member": "DedicatedClusterInstanceType",
           "name": "DedicatedClusterInstanceTypeSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1882,7 +1887,7 @@
         {
           "disabled": false,
           "document": "订单类型列表",
-          "example": "无",
+          "example": "[\"PUSH\"]",
           "member": "string",
           "name": "OrderTypes",
           "required": false,
@@ -1897,7 +1902,7 @@
         {
           "disabled": false,
           "document": "专用集群订单列表",
-          "example": "无",
+          "example": "[       {         \"Action\": \"CREATE\",         \"CheckExpectTime\": \"0000-00-00 00:00:00\",         \"CheckFinishTime\": \"0000-00-00 00:00:00\",         \"CheckStatus\": \"DELIVERING\",         \"Cpu\": 0,         \"CreateTime\": \"2024-10-30T09:14:13Z\",         \"DedicatedClusterId\": \"cluster-262n63e8\",         \"DedicatedClusterOrderId\": \"ord-rd0ty398\",         \"DedicatedClusterOrderItems\": [           {             \"ComputeFormat\": \"1 SA5t.60XLARGE1076\",             \"Count\": 1,             \"CreateTime\": \"2024-10-30 17:14:13\",             \"DedicatedClusterTypeId\": \"dctype-00100001\",             \"Description\": \"基础底座\",             \"Name\": \"基础底座\",             \"PowerDraw\": 0,             \"SubOrderId\": \"sord-e3t9jkm2\",             \"SubOrderPayStatus\": 0,             \"SubOrderStatus\": \"PENDING\",             \"SupportedInstanceFamily\": [],             \"SupportedStorageType\": [],             \"SupportedUplinkSpeed\": [               10,               25,               40,               100             ],             \"TotalCpu\": 0,             \"TotalGpu\": 0,             \"TotalMem\": 0,             \"TypeFamily\": \"CUSTOM\",             \"TypeName\": \"BASE_EQUIPMENT.BASE_FOUNDATION\",             \"Weight\": 0           }         ],         \"DedicatedClusterTypeId\": \"None\",         \"DeliverExpectTime\": \"0000-00-00 00:00:00\",         \"DeliverFinishTime\": \"0000-00-00 00:00:00\",         \"Gpu\": 0,         \"Mem\": 0,         \"OrderPayPlan\": null,         \"OrderSLA\": null,         \"OrderStatus\": \"PENDING\",         \"OrderType\": \"PUSH\",         \"PayStatus\": 0,         \"PayType\": \"ONEOFF\",         \"PowerDraw\": 0,         \"SupportedInstanceFamily\": [           \"None\"         ],         \"SupportedStorageType\": [           \"None\"         ],         \"SupportedUplinkSpeed\": [           -1         ],         \"TimeSpan\": 3,         \"TimeUnit\": \"YEAR\",         \"Weight\": 0       }     ]",
           "member": "DedicatedClusterOrder",
           "name": "DedicatedClusterOrderSet",
           "output_required": true,
@@ -1974,7 +1979,7 @@
         {
           "disabled": false,
           "document": "vpn网关监控数据\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{       \"InBandwidth\": {         \"Timestamps\": [           1730620800,           1730624400,           1730628000,           1730631600,           1730635200,           1730638800,           1730642400,           1730646000,           1730649600,           1730653200,           1730656800,           1730660400,           1730664000,           1730667600,           1730671200,           1730674800,           1730678400,           1730682000,           1730685600,           1730689200,           1730692800,           1730696400,           1730700000,           1730703600,           1730707200,           1730710800,           1730714400,           1730718000,           1730721600,           1730725200,           1730728800,           1730732400,           1730736000,           1730739600,           1730743200,           1730746800,           1730750400,           1730754000,           1730757600,           1730761200,           1730764800,           1730768400,           1730772000,           1730775600,           1730779200,           1730782800,           1730786400,           1730790000,           1730793600,           1730797200,           1730800800,           1730804400,           1730808000,           1730811600,           1730815200,           1730818800,           1730822400,           1730826000,           1730829600,           1730833200,           1730836800,           1730840400,           1730844000,           1730847600,           1730851200,           1730854800,           1730858400,           1730862000,           1730865600,           1730869200,           1730872800,           1730876400,           1730880000,           1730883600,           1730887200,           1730890800,           1730894400,           1730898000,           1730901600,           1730905200,           1730908800,           1730912400,           1730916000,           1730919600,           1730923200,           1730926800,           1730930400,           1730934000,           1730937600,           1730941200,           1730944800,           1730948400,           1730952000,           1730955600,           1730959200,           1730962800,           1730966400,           1730970000,           1730973600,           1730977200,           1730980800,           1730984400,           1730988000,           1730991600,           1730995200,           1730998800,           1731002400,           1731006000,           1731009600,           1731013200,           1731016800,           1731020400,           1731024000,           1731027600,           1731031200,           1731034800,           1731038400,           1731042000,           1731045600,           1731049200,           1731052800,           1731056400,           1731060000,           1731063600,           1731067200,           1731070800,           1731074400,           1731078000,           1731081600,           1731085200,           1731088800,           1731092400,           1731096000,           1731099600,           1731103200,           1731106800,           1731110400,           1731114000,           1731117600,           1731121200,           1731124800,           1731128400,           1731132000,           1731135600,           1731139200,           1731142800,           1731146400,           1731150000,           1731153600,           1731157200,           1731160800,           1731164400,           1731168000,           1731171600,           1731175200,           1731178800,           1731182400,           1731186000,           1731189600,           1731193200,           1731196800,           1731200400,           1731204000,           1731207600,           1731211200,           1731214800,           1731218400,           1731222000,           1731225600         ],         \"Values\": [           57513800,           68094611.2,           79186521.6,           60534504,           78897427.2,           63237265.6,           79178713.6,           60393168,           81129268,           51220798.4,           81060523.2,           52434900.8,           78564217.6,           59975670.4,           81873972.8,           80544771.2,           81795468.8,           65186712,           80439569.6,           70954862.4,           79333094.4,           77677355.2,           91380812.8,           56897305.6,           79889120,           49745224,           59596936,           64410828,           309474268.8,           63769486.4,           82992758.4,           65433073.6,           58786961.6,           82539596.8,           64908304,           80435241.6,           70007491.2,           57498075.2,           58827907.2,           66269364.8,           67107579.2,           80139716.8,           66853212.8,           82855864,           65938686.4,           57210636,           78715593.6,           95870603.2,           53011934.4,           81546336,           81019800,           80505835.2,           60604449.6,           81215440,           78220001.6,           82425334.4,           56864844.8,           81018763.2,           81355521.6,           56918340.8,           78134118.4,           79408327.2,           81605227.2,           53292964.8,           79475179.2,           55133446.4,           52500392,           147282484.8,           77581524.8,           52168883.2,           79898684.8,           79855960,           81320417.6,           54317814.4,           80578881.6,           80061288,           82889003.2,           78551977.6,           78345451.2,           78937691.2,           85937094.4,           56158705.6,           77940177.6,           77725707.2,           59669937.6,           58775310.4,           78025105.6,           61351566.4,           56525313.6,           79121019.2,           92959604.8,           59355982.4,           94920427.2,           77243414.4,           94681272,           81153572,           62910486.4,           82772734.4,           65417800,           82540843.2,           64158774.4,           65148057.6,           80479744,           82003993.6,           78950216,           80165797.6,           80415985.6,           74961745.6,           78699220.8,           69556329.6,           68660648,           78437993.6,           70334991.2,           78815097.6,           95033219.2,           89046334.4,           80321555.2,           79508270.4,           79257760,           80480252.8,           87541744,           78998846.4,           78616494.4,           76649696.8,           82663540.8,           74417185.6,           83371833.6,           75758566.4,           81349233.6,           97204876.8,           83409332.8,           63912732.8,           69716824,           62615419.2,           84209148.8,           73905688,           77948118.4,           68794940.8,           79513627.2,           79306006.4,           76419441.6,           64419851.2,           79324332.8,           62255126.4,           59583392,           58508554.4,           56799534.4,           82361259.2,           77848576,           77652697.6,           79184798.4,           76229579.2,           81378388.8,           79585252.8,           80168929.6,           82020480,           67726940.8,           64205820.8,           80931279.2,           72156193.6,           83008113.6,           82825956.8,           74081539.2,           73529696,           86476326.4,           96271894.4,           80897329.6,           76712478.4,           0         ]       },       \"OutBandwidth\": {         \"Timestamps\": [           1730620800,           1730624400,           1730628000,           1730631600,           1730635200,           1730638800,           1730642400,           1730646000,           1730649600,           1730653200,           1730656800,           1730660400,           1730664000,           1730667600,           1730671200,           1730674800,           1730678400,           1730682000,           1730685600,           1730689200,           1730692800,           1730696400,           1730700000,           1730703600,           1730707200,           1730710800,           1730714400,           1730718000,           1730721600,           1730725200,           1730728800,           1730732400,           1730736000,           1730739600,           1730743200,           1730746800,           1730750400,           1730754000,           1730757600,           1730761200,           1730764800,           1730768400,           1730772000,           1730775600,           1730779200,           1730782800,           1730786400,           1730790000,           1730793600,           1730797200,           1730800800,           1730804400,           1730808000,           1730811600,           1730815200,           1730818800,           1730822400,           1730826000,           1730829600,           1730833200,           1730836800,           1730840400,           1730844000,           1730847600,           1730851200,           1730854800,           1730858400,           1730862000,           1730865600,           1730869200,           1730872800,           1730876400,           1730880000,           1730883600,           1730887200,           1730890800,           1730894400,           1730898000,           1730901600,           1730905200,           1730908800,           1730912400,           1730916000,           1730919600,           1730923200,           1730926800,           1730930400,           1730934000,           1730937600,           1730941200,           1730944800,           1730948400,           1730952000,           1730955600,           1730959200,           1730962800,           1730966400,           1730970000,           1730973600,           1730977200,           1730980800,           1730984400,           1730988000,           1730991600,           1730995200,           1730998800,           1731002400,           1731006000,           1731009600,           1731013200,           1731016800,           1731020400,           1731024000,           1731027600,           1731031200,           1731034800,           1731038400,           1731042000,           1731045600,           1731049200,           1731052800,           1731056400,           1731060000,           1731063600,           1731067200,           1731070800,           1731074400,           1731078000,           1731081600,           1731085200,           1731088800,           1731092400,           1731096000,           1731099600,           1731103200,           1731106800,           1731110400,           1731114000,           1731117600,           1731121200,           1731124800,           1731128400,           1731132000,           1731135600,           1731139200,           1731142800,           1731146400,           1731150000,           1731153600,           1731157200,           1731160800,           1731164400,           1731168000,           1731171600,           1731175200,           1731178800,           1731182400,           1731186000,           1731189600,           1731193200,           1731196800,           1731200400,           1731204000,           1731207600,           1731211200,           1731214800,           1731218400,           1731222000,           1731225600         ],         \"Values\": [           36999115.2,           22211576,           26118236,           24996732.8,           26356196,           21585738.4,           23174764.8,           26288543.2,           26900160.8,           99745402.4,           35897952,           23224077.6,           31193186.4,           26717264,           29806122.4,           27018134.4,           24869877.6,           21821033.6,           97160590.4,           1029837471.2,           826950242.4,           27306068,           783213719.2,           735737281.6,           39429408,           367326570.4,           828035058.4,           21186025.6,           108722878.4,           273322955.2,           40808271.2,           100828276.8,           35679386.4,           25438852,           35213413.6,           25728751.2,           40379624,           31101035.2,           28520564.8,           21724843.2,           25904977.6,           25237004,           291225818.4,           231092901.6,           31492640,           287575102.4,           319184240.8,           961222693.6,           110587819.2,           24934650.4,           45784839.2,           232243744.8,           23227712,           290225629.6,           21282664,           30819294.4,           31482244,           24500372.8,           32165135.2,           32049396.8,           37681712,           30539736,           27284070.4,           27414778.4,           30744979.2,           27339835.2,           45225961.6,           37585009.6,           41766510.4,           26610352.8,           27001920.8,           304289661.6,           293225852.8,           332127696.8,           284271099.2,           339752028,           294501792,           293052457.6,           873748238.4,           294181468.8,           305642092.8,           300915957.6,           301319784.8,           292014061.6,           296302379.2,           297040997.6,           296378999.2,           319333328,           303434059.2,           297750983.2,           291683778.4,           315162956,           416917124.8,           309748029.6,           738242148,           700079303.2,           695702679.2,           699579744.8,           473733113.6,           828144643.2,           518231894.4,           301627165.6,           309032832,           313636580.8,           281889774.4,           281066460.8,           283792223.2,           306457615.2,           303149468,           289305379.2,           294973648,           291938220.8,           305713736,           458142682.4,           839144659.2,           813517673.6,           344749780,           292966759.2,           288344075.2,           295100691.2,           857292094.4,           313324036,           287645835.2,           301090163.2,           288435984,           293894850.4,           301641326.4,           295098173.6,           291204644,           320189738.4,           299422432,           275096212.8,           30181125.6,           26611652,           24890440.8,           21409076,           23864282.4,           26384297.6,           21293265.6,           26109288,           46862366.4,           21076459.2,           25791008,           288045636.8,           296784739.2,           303341800,           297660486.4,           289597639.2,           290814651.2,           296367544.8,           298151473.6,           304698419.2,           307828205.6,           289707242.4,           297436875.2,           294823195.2,           305869428.8,           285937694.4,           301310613.6,           294514848.8,           291559908.8,           301528724.8,           296791919.2,           299264318.4,           299598874.4,           301682541.6,           289346253.6,           304087192.8,           0         ]       }     }",
           "member": "VpngwBandwidthData",
           "name": "VpngwBandwidthData",
           "output_required": true,
@@ -1984,7 +1989,7 @@
         {
           "disabled": false,
           "document": "本地网关信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{       \"BGPRoute\": \"10.0.0.0/24\",       \"LocalIp\": \"10.0.0.0\",       \"Protocol\": \"BGP\",       \"VpcId\": \"vpc-0eyxjlsz\"     }",
           "member": "LocalNetInfo",
           "name": "LocalNetInfo",
           "output_required": true,
@@ -1994,7 +1999,7 @@
         {
           "disabled": false,
           "document": "vpn网关通道监控数据\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[       {         \"InBandwidth\": {           \"Timestamps\": [             1730620800,             1730624400,             1730628000,             1730631600,             1730635200,             1730638800,             1730642400,             1730646000,             1730649600,             1730653200,             1730656800,             1730660400,             1730664000,             1730667600,             1730671200,             1730674800,             1730678400,             1730682000,             1730685600,             1730689200,             1730692800,             1730696400,             1730700000,             1730703600,             1730707200,             1730710800,             1730714400,             1730718000,             1730721600,             1730725200,             1730728800,             1730732400,             1730736000,             1730739600,             1730743200,             1730746800,             1730750400,             1730754000,             1730757600,             1730761200,             1730764800,             1730768400,             1730772000,             1730775600,             1730779200,             1730782800,             1730786400,             1730790000,             1730793600,             1730797200,             1730800800,             1730804400,             1730808000,             1730811600,             1730815200,             1730818800,             1730822400,             1730826000,             1730829600,             1730833200,             1730836800,             1730840400,             1730844000,             1730847600,             1730851200,             1730854800,             1730858400,             1730862000,             1730865600,             1730869200,             1730872800,             1730876400,             1730880000,             1730883600,             1730887200,             1730890800,             1730894400,             1730898000,             1730901600,             1730905200,             1730908800,             1730912400,             1730916000,             1730919600,             1730923200,             1730926800,             1730930400,             1730934000,             1730937600,             1730941200,             1730944800,             1730948400,             1730952000,             1730955600,             1730959200,             1730962800,             1730966400,             1730970000,             1730973600,             1730977200,             1730980800,             1730984400,             1730988000,             1730991600,             1730995200,             1730998800,             1731002400,             1731006000,             1731009600,             1731013200,             1731016800,             1731020400,             1731024000,             1731027600,             1731031200,             1731034800,             1731038400,             1731042000,             1731045600,             1731049200,             1731052800,             1731056400,             1731060000,             1731063600,             1731067200,             1731070800,             1731074400,             1731078000,             1731081600,             1731085200,             1731088800,             1731092400,             1731096000,             1731099600,             1731103200,             1731106800,             1731110400,             1731114000,             1731117600,             1731121200,             1731124800,             1731128400,             1731132000,             1731135600,             1731139200,             1731142800,             1731146400,             1731150000,             1731153600,             1731157200,             1731160800,             1731164400,             1731168000,             1731171600,             1731175200,             1731178800,             1731182400,             1731186000,             1731189600,             1731193200,             1731196800,             1731200400,             1731204000,             1731207600,             1731211200,             1731214800,             1731218400,             1731222000,             1731225600           ],           \"Values\": [             3,             3,             3,             3,             3,             2,             3,             2,             3,             3,             3,             2,             2,             3,             3,             3,             3,             3,             3,             3,             2,             2,             3,             3,             3,             3,             2,             3,             3,             3,             3,             3,             3,             3,             3,             3,             3,             3,             3,             3,             3,             3,             3,             3,             2,             3,             3,             3,             3,             3,             3,             2,             3,             3,             3,             3,             3,             3,             2,             3,             3,             3,             3,             3,             2,             3,             3,             2,             3,             3,             3,             3,             3,             3,             3,             3,             3,             2,             2,             3,             2,             2,             2,             2,             3,             3,             3,             2,             3,             3,             3,             3,             3,             2,             2,             2,             3,             3,             2,             3,             3,             2,             2,             2,             3,             2,             2,             2,             2,             3,             2,             2,             3,             2,             3,             3,             3,             3,             3,             3,             3,             3,             3,             3,             2,             3,             2,             3,             3,             3,             3,             3,             3,             3,             3,             3,             3,             3,             3,             2,             2,             2,             3,             3,             3,             3,             3,             3,             3,             3,             3,             2,             3,             3,             3,             3,             2,             3,             2,             2,             2,             2,             3,             2,             2,             2,             3,             2,             0           ]         },         \"OutBandwidth\": {           \"Timestamps\": [             1730620800,             1730624400,             1730628000,             1730631600,             1730635200,             1730638800,             1730642400,             1730646000,             1730649600,             1730653200,             1730656800,             1730660400,             1730664000,             1730667600,             1730671200,             1730674800,             1730678400,             1730682000,             1730685600,             1730689200,             1730692800,             1730696400,             1730700000,             1730703600,             1730707200,             1730710800,             1730714400,             1730718000,             1730721600,             1730725200,             1730728800,             1730732400,             1730736000,             1730739600,             1730743200,             1730746800,             1730750400,             1730754000,             1730757600,             1730761200,             1730764800,             1730768400,             1730772000,             1730775600,             1730779200,             1730782800,             1730786400,             1730790000,             1730793600,             1730797200,             1730800800,             1730804400,             1730808000,             1730811600,             1730815200,             1730818800,             1730822400,             1730826000,             1730829600,             1730833200,             1730836800,             1730840400,             1730844000,             1730847600,             1730851200,             1730854800,             1730858400,             1730862000,             1730865600,             1730869200,             1730872800,             1730876400,             1730880000,             1730883600,             1730887200,             1730890800,             1730894400,             1730898000,             1730901600,             1730905200,             1730908800,             1730912400,             1730916000,             1730919600,             1730923200,             1730926800,             1730930400,             1730934000,             1730937600,             1730941200,             1730944800,             1730948400,             1730952000,             1730955600,             1730959200,             1730962800,             1730966400,             1730970000,             1730973600,             1730977200,             1730980800,             1730984400,             1730988000,             1730991600,             1730995200,             1730998800,             1731002400,             1731006000,             1731009600,             1731013200,             1731016800,             1731020400,             1731024000,             1731027600,             1731031200,             1731034800,             1731038400,             1731042000,             1731045600,             1731049200,             1731052800,             1731056400,             1731060000,             1731063600,             1731067200,             1731070800,             1731074400,             1731078000,             1731081600,             1731085200,             1731088800,             1731092400,             1731096000,             1731099600,             1731103200,             1731106800,             1731110400,             1731114000,             1731117600,             1731121200,             1731124800,             1731128400,             1731132000,             1731135600,             1731139200,             1731142800,             1731146400,             1731150000,             1731153600,             1731157200,             1731160800,             1731164400,             1731168000,             1731171600,             1731175200,             1731178800,             1731182400,             1731186000,             1731189600,             1731193200,             1731196800,             1731200400,             1731204000,             1731207600,             1731211200,             1731214800,             1731218400,             1731222000,             1731225600           ],           \"Values\": [             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             2,             0           ]         }       },       {         \"InBandwidth\": {           \"Timestamps\": [             1730620800,             1730624400,             1730628000,             1730631600,             1730635200,             1730638800,             1730642400,             1730646000,             1730649600,             1730653200,             1730656800,             1730660400,             1730664000,             1730667600,             1730671200,             1730674800,             1730678400,             1730682000,             1730685600,             1730689200,             1730692800,             1730696400,             1730700000,             1730703600,             1730707200,             1730710800,             1730714400,             1730718000,             1730721600,             1730725200,             1730728800,             1730732400,             1730736000,             1730739600,             1730743200,             1730746800,             1730750400,             1730754000,             1730757600,             1730761200,             1730764800,             1730768400,             1730772000,             1730775600,             1730779200,             1730782800,             1730786400,             1730790000,             1730793600,             1730797200,             1730800800,             1730804400,             1730808000,             1730811600,             1730815200,             1730818800,             1730822400,             1730826000,             1730829600,             1730833200,             1730836800,             1730840400,             1730844000,             1730847600,             1730851200,             1730854800,             1730858400,             1730862000,             1730865600,             1730869200,             1730872800,             1730876400,             1730880000,             1730883600,             1730887200,             1730890800,             1730894400,             1730898000,             1730901600,             1730905200,             1730908800,             1730912400,             1730916000,             1730919600,             1730923200,             1730926800,             1730930400,             1730934000,             1730937600,             1730941200,             1730944800,             1730948400,             1730952000,             1730955600,             1730959200,             1730962800,             1730966400,             1730970000,             1730973600,             1730977200,             1730980800,             1730984400,             1730988000,             1730991600,             1730995200,             1730998800,             1731002400,             1731006000,             1731009600,             1731013200,             1731016800,             1731020400,             1731024000,             1731027600,             1731031200,             1731034800,             1731038400,             1731042000,             1731045600,             1731049200,             1731052800,             1731056400,             1731060000,             1731063600,             1731067200,             1731070800,             1731074400,             1731078000,             1731081600,             1731085200,             1731088800,             1731092400,             1731096000,             1731099600,             1731103200,             1731106800,             1731110400,             1731114000,             1731117600,             1731121200,             1731124800,             1731128400,             1731132000,             1731135600,             1731139200,             1731142800,             1731146400,             1731150000,             1731153600,             1731157200,             1731160800,             1731164400,             1731168000,             1731171600,             1731175200,             1731178800,             1731182400,             1731186000,             1731189600,             1731193200,             1731196800,             1731200400,             1731204000,             1731207600,             1731211200,             1731214800,             1731218400,             1731222000,             1731225600           ],           \"Values\": [             27902,             27212,             34068,             35574,             34763,             35373,             29562,             35340,             35225,             34355,             35791,             35595,             34760,             34317,             35281,             34520,             35289,             34290,             34390,             38823,             35067,             35140,             42503,             36539,             34158,             34456,             39232,             35156,             249015,             38536,             35572,             31001,             35056,             35384,             35803,             35833,             35740,             34728,             36121,             34128,             34936,             35885,             35299,             34788,             34992,             35018,             29729,             53373,             32819,             35469,             27599,             35763,             35607,             34508,             34389,             35306,             34701,             35156,             34824,             34725,             26990,             34928,             34544,             34794,             33903,             34865,             35257,             127611,             32624,             34674,             27960,             34319,             35358,             34461,             36056,             34992,             35969,             34758,             34210,             36837,             35938,             33063,             33124,             34617,             34936,             38358,             35416,             35152,             33708,             33658,             35879,             33824,             36567,             43210,             43636,             46429,             35114,             35928,             39920,             34467,             34886,             34723,             39131,             31112,             34796,             37624,             33059,             39443,             37853,             33829,             34404,             36205,             33834,             36399,             41434,             39064,             38236,             33369,             34415,             34783,             40968,             34573,             36284,             33947,             34553,             35586,             34397,             34849,             33322,             37771,             36288,             35050,             29110,             35064,             36701,             34830,             28867,             34549,             34136,             35893,             36196,             34852,             34716,             34749,             34806,             34987,             35181,             35592,             35498,             34400,             34141,             38190,             37542,             34853,             40032,             38876,             41314,             36059,             35347,             25510,             34786,             38482,             34550,             35296,             37584,             38982,             35284,             34912,             0           ]         },         \"OutBandwidth\": {           \"Timestamps\": [             1730620800,             1730624400,             1730628000,             1730631600,             1730635200,             1730638800,             1730642400,             1730646000,             1730649600,             1730653200,             1730656800,             1730660400,             1730664000,             1730667600,             1730671200,             1730674800,             1730678400,             1730682000,             1730685600,             1730689200,             1730692800,             1730696400,             1730700000,             1730703600,             1730707200,             1730710800,             1730714400,             1730718000,             1730721600,             1730725200,             1730728800,             1730732400,             1730736000,             1730739600,             1730743200,             1730746800,             1730750400,             1730754000,             1730757600,             1730761200,             1730764800,             1730768400,             1730772000,             1730775600,             1730779200,             1730782800,             1730786400,             1730790000,             1730793600,             1730797200,             1730800800,             1730804400,             1730808000,             1730811600,             1730815200,             1730818800,             1730822400,             1730826000,             1730829600,             1730833200,             1730836800,             1730840400,             1730844000,             1730847600,             1730851200,             1730854800,             1730858400,             1730862000,             1730865600,             1730869200,             1730872800,             1730876400,             1730880000,             1730883600,             1730887200,             1730890800,             1730894400,             1730898000,             1730901600,             1730905200,             1730908800,             1730912400,             1730916000,             1730919600,             1730923200,             1730926800,             1730930400,             1730934000,             1730937600,             1730941200,             1730944800,             1730948400,             1730952000,             1730955600,             1730959200,             1730962800,             1730966400,             1730970000,             1730973600,             1730977200,             1730980800,             1730984400,             1730988000,             1730991600,             1730995200,             1730998800,             1731002400,             1731006000,             1731009600,             1731013200,             1731016800,             1731020400,             1731024000,             1731027600,             1731031200,             1731034800,             1731038400,             1731042000,             1731045600,             1731049200,             1731052800,             1731056400,             1731060000,             1731063600,             1731067200,             1731070800,             1731074400,             1731078000,             1731081600,             1731085200,             1731088800,             1731092400,             1731096000,             1731099600,             1731103200,             1731106800,             1731110400,             1731114000,             1731117600,             1731121200,             1731124800,             1731128400,             1731132000,             1731135600,             1731139200,             1731142800,             1731146400,             1731150000,             1731153600,             1731157200,             1731160800,             1731164400,             1731168000,             1731171600,             1731175200,             1731178800,             1731182400,             1731186000,             1731189600,             1731193200,             1731196800,             1731200400,             1731204000,             1731207600,             1731211200,             1731214800,             1731218400,             1731222000,             1731225600           ],           \"Values\": [             14743,             13036,             13841,             11986,             14205,             12232,             14241,             11255,             32616,             32911,             14676,             11300,             13258,             14360,             10414,             11934,             12258,             11524,             46844,             618757,             441117,             14550,             621280,             587274,             16082,             285697,             566534,             35427,             17471,             249220,             16333,             43087,             16624,             12179,             21936,             13806,             18801,             13401,             12249,             10875,             11303,             11201,             263156,             73029,             18724,             264555,             449618,             686591,             47155,             15872,             11577,             176658,             13757,             266241,             12524,             12406,             12678,             13477,             15617,             19549,             15652,             16489,             16828,             12518,             12430,             13571,             27827,             14885,             14349,             13194,             11612,             264983,             260379,             286792,             260640,             259787,             263219,             261059,             437908,             271498,             264451,             257998,             259888,             260100,             266845,             262762,             263858,             263620,             262946,             260613,             263291,             280029,             301617,             276933,             360990,             392133,             389615,             349783,             398237,             506978,             409018,             262950,             269338,             258466,             265593,             260187,             262383,             262769,             266388,             266964,             268590,             265538,             264164,             317219,             496280,             604524,             261015,             258793,             263620,             272089,             629272,             289891,             261537,             259547,             262861,             266082,             263891,             263102,             261475,             263224,             261281,             16596,             17447,             13329,             12544,             11800,             11304,             12536,             10488,             12197,             17483,             11364,             11322,             257165,             260621,             260356,             260428,             260607,             260234,             262239,             260919,             259631,             258579,             259974,             260478,             268614,             263499,             260490,             261597,             260948,             261713,             262219,             261705,             254206,             260921,             266181,             262548,             262275,             0           ]         }       }     ]",
           "member": "VpngwBandwidthData",
           "name": "VpnConnectionBandwidthData",
           "output_required": true,
@@ -2003,33 +2008,33 @@
         },
         {
           "disabled": false,
-          "document": "宿主机资源概览信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "宿主机资源概览信息",
+          "example": "[       {         \"CpuAvailable\": 646,         \"CpuTotal\": 1008,         \"HostTypeFamily\": \"标准型S5\",         \"MemAvailable\": 54,         \"MemTotal\": 960       },       {         \"CpuAvailable\": 0,         \"CpuTotal\": 384,         \"HostTypeFamily\": \"大数据型BMDK1\",         \"MemAvailable\": 0,         \"MemTotal\": 1536       },       {         \"CpuAvailable\": 144,         \"CpuTotal\": 240,         \"HostTypeFamily\": \"标准型SK1\",         \"MemAvailable\": 672,         \"MemTotal\": 864       },       {         \"CpuAvailable\": 208,         \"CpuTotal\": 540,         \"HostTypeFamily\": \"标准型SA2\",         \"MemAvailable\": 76,         \"MemTotal\": 896       },       {         \"CpuAvailable\": 220,         \"CpuTotal\": 464,         \"HostTypeFamily\": \"标准型SH2\",         \"MemAvailable\": 190,         \"MemTotal\": 884       },       {         \"CpuAvailable\": 102,         \"CpuTotal\": 512,         \"HostTypeFamily\": \"标准型S6\",         \"MemAvailable\": 868,         \"MemTotal\": 1880       }     ]",
           "member": "HostDetailInfo",
           "name": "HostDetailInfo",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "热备宿主机数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "热备宿主机数量",
           "example": "1",
           "member": "uint64",
           "name": "HostStandbyCount",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "普通宿主机数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "普通宿主机数量",
           "example": "1",
           "member": "uint64",
           "name": "HostNormalCount",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -2046,7 +2051,7 @@
         {
           "disabled": false,
           "document": "模糊匹配专用集群配置名称",
-          "example": "\"my-type\"",
+          "example": "my-type",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -2097,9 +2102,10 @@
         {
           "disabled": false,
           "document": "专用集群配置列表",
-          "example": "无",
+          "example": "[{ \t\t\t\"DedicatedClusterTypeId\": \"dctype-lkm17jbu\", \t\t\t\"Description\": \"first type\", \t\t\t\"Name\": \"yuan dedicated\", \t\t\t\"CreateTime\": \"2020-12-16T06:21:41Z\", \t\t\t\"SupportedStorageType\": [], \t\t\t\"SupportedUplinkGiB\": [40, 100], \t\t\t\"SupportedInstanceFamily\": [\"S5\"], \t\t\t\"Weight\": 3000, \t\t\t\"PowerDrawKva\": \"2000.800000\",                         \"ComputeFormatDesc\": \"M5.21XLARGE700 4、S5.21XLARGE320 2\" \t\t}, { \t\t\t\"DedicatedClusterTypeId\": \"dctype-1yo16f1a\", \t\t\t\"Description\": \"seco type\", \t\t\t\"Name\": \"abc dedicated\", \t\t\t\"CreateTime\": \"2020-12-16T06:33:49Z\", \t\t\t\"SupportedStorageType\": [], \t\t\t\"SupportedUplinkGiB\": [13, 100], \t\t\t\"SupportedInstanceFamily\": [\"S1\", \"S5\"], \t\t\t\"Weight\": 3273, \t\t\t\"PowerDrawKva\": \"4156.700000\",                         \"ComputeFormatDesc\": \"M5.21XLARGE700 4、S5.21XLARGE320 2\" \t\t}, { \t\t\t\"DedicatedClusterTypeId\": \"dctype-b38d7sl6\", \t\t\t\"Description\": \"heynew\", \t\t\t\"Name\": \"type und\", \t\t\t\"CreateTime\": \"2020-12-16T06:33:49Z\", \t\t\t\"SupportedStorageType\": [], \t\t\t\"SupportedUplinkGiB\": [10, 40], \t\t\t\"SupportedInstanceFamily\": [\"S3\"], \t\t\t\"Weight\": 3724, \t\t\t\"PowerDrawKva\": \"3829.100000\",                         \"ComputeFormatDesc\": \"M5.21XLARGE700 4、S5.21XLARGE320 2\" \t\t}, { \t\t\t\"DedicatedClusterTypeId\": \"dctype-z387eu8j\", \t\t\t\"Description\": \"third one\", \t\t\t\"Name\": \"unknow\", \t\t\t\"CreateTime\": \"2020-12-16T06:33:49Z\", \t\t\t\"SupportedStorageType\": [], \t\t\t\"SupportedUplinkGiB\": [10, 40], \t\t\t\"SupportedInstanceFamily\": [], \t\t\t\"Weight\": 3724, \t\t\t\"PowerDrawKva\": \"3829.100000\",                         \"ComputeFormatDesc\": \"M5.21XLARGE700 4、S5.21XLARGE320 2\" \t\t}]",
           "member": "DedicatedClusterType",
           "name": "DedicatedClusterTypeSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2109,6 +2115,7 @@
           "example": "20",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2136,7 +2143,7 @@
         {
           "disabled": false,
           "document": "按照可用区名称过滤",
-          "example": "\"ap-guangzhou\"",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "Zones",
           "required": false,
@@ -2145,7 +2152,7 @@
         {
           "disabled": false,
           "document": "按照站点id过滤",
-          "example": "\"site-378xs3g\"",
+          "example": "site-378xs3g",
           "member": "string",
           "name": "SiteIds",
           "required": false,
@@ -2154,7 +2161,7 @@
         {
           "disabled": false,
           "document": "按照专用集群生命周期过滤",
-          "example": "\"Pending\"",
+          "example": "Pending",
           "member": "string",
           "name": "LifecycleStatuses",
           "required": false,
@@ -2163,7 +2170,7 @@
         {
           "disabled": false,
           "document": "模糊匹配专用集群名称",
-          "example": "\"my-cluster\"",
+          "example": "my-cluster",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -2196,18 +2203,20 @@
         {
           "disabled": false,
           "document": "符合查询条件的专用集群列表",
-          "example": "无",
+          "example": "[{ \t\t\t\"DedicatedClusterId\": \"cluster-e88qh1ue\", \t\t\t\"Zone\": \"ap-guangzhou-2\", \t\t\t\"Description\": \"this is a description\", \t\t\t\"Name\": \"wechen-first-dc\", \t\t\t\"LifecycleStatus\": \"PENDING\", \t\t\t\"CreateTime\": \"2020-12-10T06:15:43Z\", \t\t\t\"SiteId\": \"site-38d9ck\" \t\t}]",
           "member": "DedicatedCluster",
           "name": "DedicatedClusterSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "符合条件的专用集群数量。",
-          "example": "20 ",
+          "example": "20",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2226,7 +2235,7 @@
         {
           "disabled": false,
           "document": "传入region列表",
-          "example": "无",
+          "example": "[4]",
           "member": "int64",
           "name": "Regions",
           "required": false,
@@ -2241,10 +2250,10 @@
         {
           "disabled": false,
           "document": "支持的可用区列表",
-          "example": "无",
+          "example": "[           {             \"Zone\": \"ap-shanghai-1\",             \"ZoneId\": 200001,             \"ZoneName\": \"上海一区\",             \"ZoneState\": \"AVAILABLE\"           },           {             \"Zone\": \"ap-shanghai-2\",             \"ZoneId\": 200002,             \"ZoneName\": \"上海二区\",             \"ZoneState\": \"AVAILABLE\"           },           {             \"Zone\": \"ap-shanghai-3\",             \"ZoneId\": 200003,             \"ZoneName\": \"上海三区\",             \"ZoneState\": \"AVAILABLE\"           },           {             \"Zone\": \"ap-shanghai-4\",             \"ZoneId\": 200004,             \"ZoneName\": \"上海四区\",             \"ZoneState\": \"AVAILABLE\"           },           {             \"Zone\": \"ap-shanghai-5\",             \"ZoneId\": 200005,             \"ZoneName\": \"上海五区\",             \"ZoneState\": \"AVAILABLE\"           },           {             \"Zone\": \"ap-shanghai-6\",             \"ZoneId\": 200006,             \"ZoneName\": \"上海六区\",             \"ZoneState\": \"AVAILABLE\"           },           {             \"Zone\": \"ap-shanghai-7\",             \"ZoneId\": 200007,             \"ZoneName\": \"上海七区\",             \"ZoneState\": \"AVAILABLE\"           }         ]",
           "member": "RegionZoneInfo",
           "name": "ZoneSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2290,7 +2299,7 @@
         {
           "disabled": false,
           "document": "按照站定名称模糊匹配",
-          "example": "\"my-site\"",
+          "example": "my-site",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -2305,9 +2314,10 @@
         {
           "disabled": false,
           "document": "站点详情",
-          "example": "无",
+          "example": "[{ \t\t\t\"SiteId\": \"site-98dj3kd\", \t\t\t\"Name\": \"sitename\", \t\t\t\"Description\": \"this is a description\", \t\t\t\"CreateTime\": \"2020-12-25T08:39:57Z\", \t\t\t\"FiberType\": \"MM\", \t\t\t\"UplinkSpeedGbps\": 0, \t\t\t\"UplinkCount\": 0, \t\t\t\"OpticalStandard\": \"MM\", \t\t\t\"RedundantNetworking\": false, \t\t\t\"PowerConnectors\": \"1000Base-SX\", \t\t\t\"PowerFeedDrop\": \"above\", \t\t\t\"PowerDrawKva\": 0.0, \t\t\t\"ConditionRequirement\": false, \t\t\t\"DimensionRequirement\": false, \t\t\t\"NeedHelp\": false, \t\t\t\"BreakerRequirement\": false, \t\t\t\"RedundantPower\": false, \t\t\t\"MaxWeight\": 0, \t\t\t\"AddressLine\": \"Nanshan Road\", \t\t\t\"OptionalAddressLine\": \"详细地址\", \t\t\t\"Country\": \"China\", \t\t\t\"Province\": \"guangdong\", \t\t\t\"City\": \"shenzhen\", \t\t\t\"PostalCode\": 518000 \t\t}]",
           "member": "SiteDetail",
           "name": "SiteDetailSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2317,6 +2327,7 @@
           "example": "20",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2344,7 +2355,7 @@
         {
           "disabled": false,
           "document": "模糊匹配站点名称",
-          "example": "\"first-site\"",
+          "example": "first-site",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -2377,9 +2388,10 @@
         {
           "disabled": false,
           "document": "符合查询条件的站点列表",
-          "example": "无",
+          "example": "[{ \t\t\t\"SiteId\": \"site-98dj3kd\", \t\t\t\"Name\": \"my-site\", \t\t\t\"Description\": \"my first site\", \t\t\t\"CreateTime\": \"2020-12-25T08:39:57Z\" \t\t}]",
           "member": "Site",
           "name": "SiteSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2389,6 +2401,7 @@
           "example": "20",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2406,23 +2419,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "时间戳",
           "example": "[0]",
           "member": "float",
           "name": "Timestamps",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "对应的具体值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "对应的具体值",
           "example": "[0]",
           "member": "float",
           "name": "Values",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2432,53 +2445,53 @@
       "members": [
         {
           "disabled": false,
-          "document": "类型族\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "类型族",
           "example": "标准型S5",
           "member": "string",
           "name": "HostTypeFamily",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "总CPU\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "总CPU",
           "example": "64",
           "member": "float",
           "name": "CpuTotal",
           "output_required": false,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "可用CPU\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "可用CPU",
           "example": "64",
           "member": "float",
           "name": "CpuAvailable",
           "output_required": false,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "总内存\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "总内存",
           "example": "320",
           "member": "float",
           "name": "MemTotal",
           "output_required": false,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "可用内存\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "可用内存",
           "example": "320",
           "member": "float",
           "name": "MemAvailable",
           "output_required": false,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2654,73 +2667,73 @@
         },
         {
           "disabled": false,
-          "document": "平均cpu负载百分比\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "平均cpu负载百分比",
           "example": "10",
           "member": "float",
           "name": "CpuAverage",
           "output_required": false,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "平均内存使用率百分比\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "平均内存使用率百分比",
           "example": "10",
           "member": "float",
           "name": "MemAverage",
           "output_required": false,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "平均网络流量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "平均网络流量",
           "example": "10",
           "member": "float",
           "name": "NetAverage",
           "output_required": false,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "cpu详细监控数据\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "cpu详细监控数据",
+          "example": "{\"Timestamps\": [1693274400],\"Values\": [0]}",
           "member": "DetailData",
           "name": "CpuDetailData",
           "output_required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "内存详细数据\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "内存详细数据",
+          "example": "{\"Timestamps\": [1693274400],\"Values\": [0]}",
           "member": "DetailData",
           "name": "MemDetailData",
           "output_required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "网络速率详细数据\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "网络速率详细数据",
+          "example": "{\"Timestamps\": [1693274400],\"Values\": [0]}",
           "member": "DetailData",
           "name": "NetRateDetailData",
           "output_required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "网速包详细数据\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "网速包详细数据",
+          "example": "{\"Timestamps\": [1693274400],\"Values\": [0]}",
           "member": "DetailData",
           "name": "NetPacketDetailData",
           "output_required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2874,7 +2887,7 @@
         },
         {
           "disabled": false,
-          "document": "大订单ID",
+          "document": "大订单ID，可以在本地专用集群的基础信息页获取大订单ID",
           "example": "ord-aijx4ets",
           "member": "string",
           "name": "DedicatedClusterOrderId",
@@ -2883,8 +2896,8 @@
         },
         {
           "disabled": false,
-          "document": "小订单ID",
-          "example": "无",
+          "document": "小订单ID，进入大订单的详情页，可以看到小订单ID",
+          "example": "[\"sord-aijxdfasdf\"]",
           "member": "string",
           "name": "SubOrderIds",
           "required": false,
@@ -2946,7 +2959,7 @@
         },
         {
           "disabled": false,
-          "document": "从机架上方还是下方供电。",
+          "document": "从机架上方还是下方供电。取值范围：[\"UP\",\"DOWN\"]",
           "example": "UP",
           "member": "string",
           "name": "PowerFeedDrop",
@@ -2973,7 +2986,7 @@
         },
         {
           "disabled": false,
-          "document": "网络到腾讯云Region区域的上行链路速度",
+          "document": "网络到腾讯云Region区域的上行链路速度(Gbps)",
           "example": "10",
           "member": "int64",
           "name": "UplinkSpeedGbps",
@@ -3192,17 +3205,17 @@
           "example": "1",
           "member": "int64",
           "name": "RegionId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "ZoneInfo数组",
-          "example": "无",
+          "example": "[{\"Zone\": \"ap-guangzhou-1\",\"ZoneName\": \"广州一区\",\"ZoneId\": \"100001\",\"ZoneState\": \"AVAILABLE\"}]",
           "member": "ZoneInfo",
           "name": "Zones",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -3215,7 +3228,7 @@
         {
           "disabled": false,
           "document": "云硬盘仓库id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "set-mm4hzptu",
           "member": "string",
           "name": "SetId",
           "output_required": false,
@@ -3225,7 +3238,7 @@
         {
           "disabled": false,
           "document": "云硬盘仓库名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "HCBS_GZCDC_Z133_CDCCBS_Y0SH1125G_D0003",
           "member": "string",
           "name": "SetName",
           "output_required": false,
@@ -3235,7 +3248,7 @@
         {
           "disabled": false,
           "document": "云硬盘仓库类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "ssd",
           "member": "string",
           "name": "SetType",
           "output_required": false,
@@ -3245,7 +3258,7 @@
         {
           "disabled": false,
           "document": "云硬盘仓库容量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "33.4",
           "member": "float",
           "name": "SetSize",
           "output_required": false,
@@ -3255,7 +3268,7 @@
         {
           "disabled": false,
           "document": "云硬盘仓库状态\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "RUNNING",
           "member": "string",
           "name": "SetStatus",
           "output_required": false,
@@ -3265,7 +3278,7 @@
         {
           "disabled": false,
           "document": "云硬盘仓库创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2022-12-09 15:20:09",
           "member": "string",
           "name": "CreateTime",
           "output_required": false,
@@ -3275,7 +3288,7 @@
         {
           "disabled": false,
           "document": "读流量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\"Timestamps\": [1693274400],\"Values\": [0]}",
           "member": "DetailData",
           "name": "ReadTraffic",
           "output_required": false,
@@ -3285,7 +3298,7 @@
         {
           "disabled": false,
           "document": "写流量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\"Timestamps\": [1693274400],\"Values\": [0]}",
           "member": "DetailData",
           "name": "WriteTraffic",
           "output_required": false,
@@ -3295,7 +3308,7 @@
         {
           "disabled": false,
           "document": "读IO\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\"Timestamps\": [1693274400],\"Values\": [0]}",
           "member": "DetailData",
           "name": "ReadIO",
           "output_required": false,
@@ -3305,7 +3318,7 @@
         {
           "disabled": false,
           "document": "写IO\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\"Timestamps\": [1693274400],\"Values\": [0]}",
           "member": "DetailData",
           "name": "WriteIO",
           "output_required": false,
@@ -3315,7 +3328,7 @@
         {
           "disabled": false,
           "document": "平均等待时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\"Timestamps\": [1693274400],\"Values\": [0]}",
           "member": "DetailData",
           "name": "Await",
           "output_required": false,
@@ -3325,7 +3338,7 @@
         {
           "disabled": false,
           "document": "利用率\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\"Timestamps\": [1693274400],\"Values\": [0]}",
           "member": "DetailData",
           "name": "Util",
           "output_required": false,
@@ -3341,40 +3354,40 @@
         {
           "disabled": false,
           "document": "站点名称",
-          "example": "",
+          "example": "my-site",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "站点id",
-          "example": "",
+          "example": "site-98dj3kd",
           "member": "string",
           "name": "SiteId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "站点描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "my first site",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "站点创建时间",
-          "example": "",
+          "example": "2020-12-25T08:39:57Z",
           "member": "datetime_iso",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -3390,7 +3403,7 @@
           "example": "\"site-u37d8sh\"",
           "member": "string",
           "name": "SiteId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3400,7 +3413,7 @@
           "example": "\"my-site\"",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3410,7 +3423,7 @@
           "example": "\"this site is good\"",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3420,7 +3433,7 @@
           "example": "\"2020-12-25T10:26:11Z\"",
           "member": "datetime_iso",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3430,7 +3443,7 @@
           "example": "\"MM\"",
           "member": "string",
           "name": "FiberType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3440,7 +3453,7 @@
           "example": "0",
           "member": "int64",
           "name": "UplinkSpeedGbps",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3450,7 +3463,7 @@
           "example": "0",
           "member": "int64",
           "name": "UplinkCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3460,7 +3473,7 @@
           "example": "\"MM\"",
           "member": "string",
           "name": "OpticalStandard",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3470,7 +3483,7 @@
           "example": "false",
           "member": "bool",
           "name": "RedundantNetworking",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -3480,7 +3493,7 @@
           "example": "\"MM\"",
           "member": "string",
           "name": "PowerConnectors",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3490,7 +3503,7 @@
           "example": "\"above\"",
           "member": "string",
           "name": "PowerFeedDrop",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3500,7 +3513,7 @@
           "example": "0.0",
           "member": "float",
           "name": "PowerDrawKva",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -3510,7 +3523,7 @@
           "example": "false",
           "member": "bool",
           "name": "ConditionRequirement",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -3520,7 +3533,7 @@
           "example": "false",
           "member": "bool",
           "name": "DimensionRequirement",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -3530,7 +3543,7 @@
           "example": "0",
           "member": "int64",
           "name": "MaxWeight",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3540,17 +3553,17 @@
           "example": "\"Furong Road\"",
           "member": "string",
           "name": "AddressLine",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "站点所在地区的详细地址信息（补充）",
-          "example": "\"\"",
+          "example": "305号",
           "member": "string",
           "name": "OptionalAddressLine",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3560,7 +3573,7 @@
           "example": "true",
           "member": "bool",
           "name": "NeedHelp",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -3570,7 +3583,7 @@
           "example": "false",
           "member": "bool",
           "name": "BreakerRequirement",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -3580,7 +3593,7 @@
           "example": "false",
           "member": "bool",
           "name": "RedundantPower",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -3590,7 +3603,7 @@
           "example": "\"China\"",
           "member": "string",
           "name": "Country",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3600,7 +3613,7 @@
           "example": "\"Hunan\"",
           "member": "string",
           "name": "Province",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3610,7 +3623,7 @@
           "example": "\"Changsha\"",
           "member": "string",
           "name": "City",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3620,7 +3633,7 @@
           "example": "414012",
           "member": "int64",
           "name": "PostalCode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -3633,20 +3646,20 @@
         {
           "disabled": false,
           "document": "出带宽流量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\"Timestamps\": [1693274400],\"Values\": [0]}",
           "member": "OutBandwidth",
           "name": "OutBandwidth",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "入带宽流量",
-          "example": "无",
+          "example": "{\"Timestamps\": [1693274400],\"Values\": [0]}",
           "member": "InBandwidth",
           "name": "InBandwidth",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         }
@@ -3659,40 +3672,40 @@
         {
           "disabled": false,
           "document": "可用区名称",
-          "example": "",
+          "example": "ap-guangzhou-1",
           "member": "string",
           "name": "Zone",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "可用区描述",
-          "example": "",
+          "example": "广州一区",
           "member": "string",
           "name": "ZoneName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "可用区ID",
-          "example": "",
+          "example": "100001",
           "member": "int64",
           "name": "ZoneId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "可用区状态，包含AVAILABLE和UNAVAILABLE。AVAILABLE代表可用，UNAVAILABLE代表不可用。",
-          "example": "",
+          "example": "AVAILABLE",
           "member": "string",
           "name": "ZoneState",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }

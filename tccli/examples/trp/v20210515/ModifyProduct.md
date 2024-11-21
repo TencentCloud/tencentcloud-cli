@@ -8,8 +8,9 @@ Input:
 tccli trp ModifyProduct --cli-unfold-argument  \
     --Name demo5 \
     --ProductId 85tfp1sn78r9m1568i \
-    --Remark  \
-    --Specification 100ml
+    --Remark 商品备注 \
+    --Specification 100ml \
+    --Logo https://xxx.xxx.com/logo.png
 ```
 
 Output: 

@@ -13,8 +13,8 @@ Output:
 ```
 {
     "Response": {
-        "BatchId": "xx",
-        "RequestId": "xx"
+        "BatchId": "d60qv5xp23wk6daw56",
+        "RequestId": "eaa3ccac-d2f5-4df0-a8b3-7b51324e9283"
     }
 }
 ```

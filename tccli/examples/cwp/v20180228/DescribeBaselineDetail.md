@@ -6,7 +6,10 @@ Input:
 
 ```
 tccli cwp DescribeBaselineDetail --cli-unfold-argument  \
-    --BaselineId 5
+    --BaselineId '5
+ 
+
+{"BaselineId":5747}'
 ```
 
 Output: 
@@ -17,9 +20,9 @@ Output:
         "BaselineDetail": {
             "Description": "基线详情描述",
             "Level": 1,
-            "PackageName": "xx",
+            "PackageName": "tename",
             "ParentId": 1,
-            "Name": "xx"
+            "Name": "tename"
         }
     }
 }

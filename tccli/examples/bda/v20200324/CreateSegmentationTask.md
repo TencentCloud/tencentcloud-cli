@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli bda CreateSegmentationTask --cli-unfold-argument  \
-    --VideoUrl test.video.url \
-    --BackgroundImageUrl test.image.url
+    --VideoUrl https://liudehua-9527.cos.ap-guangzhou.myqcloud.com/input.mp4 \
+    --BackgroundImageUrl https://liudehua-9527.cos.ap-guangzhou.myqcloud.com/input.jpeg
 ```
 
 Output: 
@@ -15,7 +15,7 @@ Output:
 {
     "Response": {
         "RequestId": "33c35bff-27b6-408f-9ca7-19191303fa07",
-        "TaskID": "fakeTaskID",
+        "TaskID": "12433580546999611111",
         "EstimatedProcessingTime": 30
     }
 }

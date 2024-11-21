@@ -9,15 +9,15 @@ tccli cfw ModifyEdgeIpSwitch --cli-unfold-argument  \
     --Enable 1 \
     --EdgeIpSwitchLst.0.PublicIp 1.1.1.1 \
     --EdgeIpSwitchLst.0.SubnetId subnet-11111111 \
-    --EdgeIpSwitchLst.0.EndpointIp  \
-    --EdgeIpSwitchLst.0.SwitchMode 0
+    --EdgeIpSwitchLst.0.EndpointIp 1.1.1.2 \
+    --EdgeIpSwitchLst.0.SwitchMode 1
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "11112222"
+        "RequestId": "QZWXECRVTBYN"
     }
 }
 ```

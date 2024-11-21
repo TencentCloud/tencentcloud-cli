@@ -14,43 +14,43 @@ Output:
 ```
 {
     "Response": {
-        "Reason": "xx",
+        "Reason": "success",
         "ResultList": [
             {
-                "SafeType": "xx",
-                "BoutiqueRecommand": "xx",
+                "SafeType": "1",
+                "BoutiqueRecommand": "1",
                 "OptPluginList": [
                     {
-                        "PluginDesc": "xx",
-                        "PluginName": "xx",
-                        "PluginType": "xx"
+                        "PluginDesc": "非广告插件描述",
+                        "PluginName": "非广告插件名称",
+                        "PluginType": "1"
                     }
                 ],
-                "Sid": "xx",
-                "VirusDesc": "xx",
-                "Official": "xx",
-                "Spot": "xx",
-                "Errno": "xx",
-                "SoftName": "xx",
-                "RepackageStatus": "xx",
+                "Sid": "sid-xxxxxx",
+                "VirusDesc": "病毒描述",
+                "Official": "1",
+                "Spot": "0",
+                "Errno": "0",
+                "SoftName": "安装包名称",
+                "RepackageStatus": "0",
                 "PluginList": [
                     {
-                        "PluginDesc": "xx",
-                        "PluginName": "xx",
-                        "PluginType": "xx"
+                        "PluginDesc": "广告插件描述",
+                        "PluginName": "广告插件名称",
+                        "PluginType": "1"
                     }
                 ],
-                "IntegralWall": "xx",
-                "NotifyBar": "xx",
-                "FloatWindows": "xx",
-                "Md5": "xx",
-                "Banner": "xx",
-                "ErrMsg": "xx",
-                "VirusName": "xx"
+                "IntegralWall": "1",
+                "NotifyBar": "1",
+                "FloatWindows": "1",
+                "Md5": "8c7ef86c259abad33f213405a35a13c2",
+                "Banner": "0",
+                "ErrMsg": "success",
+                "VirusName": "病毒名称"
             }
         ],
-        "RequestId": "xx",
-        "Result": "xx"
+        "RequestId": "RequestId-xxxxx",
+        "Result": "Result-xxxxx"
     }
 }
 ```

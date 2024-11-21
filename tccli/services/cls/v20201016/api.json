@@ -56,6 +56,13 @@
       "output": "CreateAlarmShieldResponse",
       "status": "online"
     },
+    "CreateCloudProductLogTask": {
+      "document": "内部云产品接入使用相关接口",
+      "input": "CreateCloudProductLogTaskRequest",
+      "name": "创建云产品日志投递任务",
+      "output": "CreateCloudProductLogTaskResponse",
+      "status": "online"
+    },
     "CreateConfig": {
       "document": "创建采集规则配置",
       "input": "CreateConfigRequest",
@@ -150,7 +157,7 @@
     "CreateNoticeContent": {
       "document": "该接口用于创建通知内容。",
       "input": "CreateNoticeContentRequest",
-      "name": "创建通知内容模版",
+      "name": "创建通知内容模板",
       "output": "CreateNoticeContentResponse",
       "status": "online"
     },
@@ -194,6 +201,13 @@
       "input": "DeleteAlarmShieldRequest",
       "name": "删除告警屏蔽规则",
       "output": "DeleteAlarmShieldResponse",
+      "status": "online"
+    },
+    "DeleteCloudProductLogTask": {
+      "document": "内部云产品接入使用相关接口",
+      "input": "DeleteCloudProductLogTaskRequest",
+      "name": "删除云产品日志投递任务",
+      "output": "DeleteCloudProductLogTaskResponse",
       "status": "online"
     },
     "DeleteConfig": {
@@ -290,7 +304,7 @@
     "DeleteNoticeContent": {
       "document": "该接口用于删除通知内容配置",
       "input": "DeleteNoticeContentRequest",
-      "name": "删除通知内容模版",
+      "name": "删除通知内容模板",
       "output": "DeleteNoticeContentResponse",
       "status": "online"
     },
@@ -341,6 +355,13 @@
       "input": "DescribeAlertRecordHistoryRequest",
       "name": "获取告警历史",
       "output": "DescribeAlertRecordHistoryResponse",
+      "status": "online"
+    },
+    "DescribeCloudProductLogTasks": {
+      "document": "云产品接入使用相关接口",
+      "input": "DescribeCloudProductLogTasksRequest",
+      "name": "查看云产品日志投递任务列表",
+      "output": "DescribeCloudProductLogTasksResponse",
       "status": "online"
     },
     "DescribeConfigExtras": {
@@ -479,7 +500,7 @@
     "DescribeNoticeContents": {
       "document": "获取通知内容列表",
       "input": "DescribeNoticeContentsRequest",
-      "name": "获取通知内容模版",
+      "name": "获取通知内容模板",
       "output": "DescribeNoticeContentsResponse",
       "status": "online"
     },
@@ -551,6 +572,13 @@
       "input": "ModifyAlarmShieldRequest",
       "name": "修改告警屏蔽规则",
       "output": "ModifyAlarmShieldResponse",
+      "status": "online"
+    },
+    "ModifyCloudProductLogTask": {
+      "document": "内部云产品接入使用相关接口",
+      "input": "ModifyCloudProductLogTaskRequest",
+      "name": "修改云产品日志投递任务",
+      "output": "ModifyCloudProductLogTaskResponse",
       "status": "online"
     },
     "ModifyConfig": {
@@ -640,7 +668,7 @@
     "ModifyNoticeContent": {
       "document": "该接口用于修改通知内容配置",
       "input": "ModifyNoticeContentRequest",
-      "name": "修改通知内容模版",
+      "name": "修改通知内容模板",
       "output": "ModifyNoticeContentResponse",
       "status": "online"
     },
@@ -2012,54 +2040,10 @@
       "members": [
         {
           "disabled": false,
-          "document": "Ckafka 的 Vip",
-          "example": "10.10.2.42",
-          "member": "string",
-          "name": "Vip",
-          "output_required": true,
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "Ckafka 的 Vport",
-          "example": "9092",
-          "member": "string",
-          "name": "Vport",
-          "output_required": true,
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
           "document": "Ckafka 的 InstanceId",
           "example": "ckafka-8j4rotest",
           "member": "string",
           "name": "InstanceId",
-          "output_required": true,
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "Ckafka 的 InstanceName",
-          "example": "kafka协议消费监控用",
-          "member": "string",
-          "name": "InstanceName",
-          "output_required": true,
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "Ckafka 的 TopicId",
-          "example": "1254011820-24a0d67e-748b-4e30-9502-78779bcc5test",
-          "member": "string",
-          "name": "TopicId",
           "output_required": true,
           "required": true,
           "type": "string",
@@ -2073,6 +2057,50 @@
           "name": "TopicName",
           "output_required": true,
           "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Ckafka 的 Vip",
+          "example": "10.10.2.42",
+          "member": "string",
+          "name": "Vip",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Ckafka 的 Vport",
+          "example": "9092",
+          "member": "string",
+          "name": "Vport",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Ckafka 的 InstanceName",
+          "example": "kafka协议消费监控用",
+          "member": "string",
+          "name": "InstanceName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Ckafka 的 TopicId",
+          "example": "1254011820-24a0d67e-748b-4e30-9502-78779bcc5test",
+          "member": "string",
+          "name": "TopicId",
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         }
@@ -2105,6 +2133,72 @@
         }
       ],
       "type": "object"
+    },
+    "CloudProductLogTaskInfo": {
+      "document": "云产品日志投递任务信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志服务地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "ClsRegion",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "ins-r8hr2upy",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志集ID",
+          "example": "92cdd6d4-da98-4a6e-9494-175b44338680",
+          "member": "string",
+          "name": "LogsetId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志主题ID",
+          "example": "92cdd6d4-da98-4a6e-9494-175b44338680",
+          "member": "string",
+          "name": "TopicId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志配置拓展信息， 一般用于存储额外的日志投递配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Extend",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "日志类型，支持枚举：CDS-AUDIT、CDS-RISK、CDB-AUDIT、TDSQL-C-AUDIT、MongoDB-AUDIT、MongoDB-SlowLog、MongoDB-ErrorLog、TDMYSQL-SLOW、DCDB-AUDIT、DCDB-SLOW、DCDB-ERROR、MariaDB-AUDIT、MariaDB-SLOW、MariaDB-ERROR、PostgreSQL-SLOW、PostgreSQL-ERROR、PostgreSQL-AUDIT、BH-FILELOG、BH-COMMANDLOG、APIS-ACCESS\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CDB-AUDIT",
+          "member": "string",
+          "name": "LogType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "CollectConfig": {
       "document": "采集配置信息",
@@ -3689,6 +3783,154 @@
       ],
       "type": "object"
     },
+    "CreateCloudProductLogTaskRequest": {
+      "document": "CreateCloudProductLogTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "ins-r8hr2upy",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "云产品标识，支持枚举：CDS、CWP、CDB、TDSQL-C、MongoDB、TDStore、DCDB、MariaDB、PostgreSQL、BH、APIS",
+          "example": "CDB",
+          "member": "string",
+          "name": "AssumerName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "日志类型，支持枚举：CDS-AUDIT、CDS-RISK、CDB-AUDIT、TDSQL-C-AUDIT、MongoDB-AUDIT、MongoDB-SlowLog、MongoDB-ErrorLog、TDMYSQL-SLOW、DCDB-AUDIT、DCDB-SLOW、DCDB-ERROR、MariaDB-AUDIT、MariaDB-SLOW、MariaDB-ERROR、PostgreSQL-SLOW、PostgreSQL-ERROR、PostgreSQL-AUDIT、BH-FILELOG、BH-COMMANDLOG、APIS-ACCESS",
+          "example": "CDB-AUDIT",
+          "member": "string",
+          "name": "LogType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "云产品地域。 不同日志类型(LogType)地域入參格式存在差异， 请参考如下示例：\n- CDS所有日志类型：ap-guangzhou\n- CDB-AUDIT: gz\n- TDSQL-C-AUDIT:  gz\n- MongoDB-AUDIT:  gz\n- MongoDB-SlowLog：ap-guangzhou\n- MongoDB-ErrorLog：ap-guangzhou\n- TDMYSQL-SLOW：gz\n- DCDB所有日志类型：gz\n- MariaDB所有日志类型：gz\n- PostgreSQL所有日志类型：gz\n- BH所有日志类型：overseas-polaris(国内站海外)/fsi-polaris(国内站金融)/general-polaris(国内站普通)/intl-sg-prod(国际站)\n- APIS所有日志类型：gz",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "CloudProductRegion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "CLS目标地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "ClsRegion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "日志集名称，未填LogsetId时必填。若日志集不存在, 将自动创建",
+          "example": "logset",
+          "member": "string",
+          "name": "LogsetName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "日志集ID，若指定则代表选择已有日志集。选择已有日志集时，LogsetName可以不填",
+          "example": "92cdd6d4-da98-4a6e-9494-175b44338680",
+          "member": "string",
+          "name": "LogsetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "日志主题名称，在未填TopicId时必填。 若日志主题不存在，将自动创建",
+          "example": "topic",
+          "member": "string",
+          "name": "TopicName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "日志主题ID，若指定则代表选择已有日志主题，选择已有日志主题时，TopicName可以不填",
+          "example": "92cdd6d4-da98-4a6e-9494-175b44338680",
+          "member": "string",
+          "name": "TopicId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "日志配置拓展信息， 一般用于存储额外的日志投递配置",
+          "example": "无",
+          "member": "string",
+          "name": "Extend",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCloudProductLogTaskResponse": {
+      "document": "CreateCloudProductLogTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志主题ID",
+          "example": "92cdd6d4-da98-4a6e-9494-175b44338680",
+          "member": "string",
+          "name": "TopicId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志主题名称",
+          "example": "test-topic",
+          "member": "string",
+          "name": "TopicName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志集ID",
+          "example": "92cdd6d4-da98-4a6e-9494-175b44338680",
+          "member": "string",
+          "name": "LogsetId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志集名称",
+          "example": "test-logset",
+          "member": "string",
+          "name": "LogsetName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateConfigExtraRequest": {
       "document": "CreateConfigExtra请求参数结构体",
       "members": [
@@ -4927,8 +5169,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "模版名称。",
-          "example": "告警内容模版",
+          "document": "模板名称。",
+          "example": "告警内容模板",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -4936,7 +5178,7 @@
         },
         {
           "disabled": false,
-          "document": "模版内容语言。0：中文1：英文",
+          "document": "模板内容语言。0：中文1：英文",
           "example": "0",
           "member": "uint64",
           "name": "Type",
@@ -4945,7 +5187,7 @@
         },
         {
           "disabled": false,
-          "document": "模版详细配置。",
+          "document": "模板详细配置。",
           "example": "无",
           "member": "NoticeContent",
           "name": "NoticeContents",
@@ -5939,6 +6181,26 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "保留失败日志状态。 1:不保留，2:保留\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "KeepFailureLog",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "失败日志的字段名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ETLParseFailure",
+          "member": "string",
+          "name": "FailureLogKey",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -6023,6 +6285,60 @@
     },
     "DeleteAlarmShieldResponse": {
       "document": "DeleteAlarmShield返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCloudProductLogTaskRequest": {
+      "document": "DeleteCloudProductLogTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "ins-r8hr2upy",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "云产品标识，支持枚举：CDS、CWP、CDB、TDSQL-C、MongoDB、TDStore、DCDB、MariaDB、PostgreSQL、BH、APIS",
+          "example": "CDB",
+          "member": "string",
+          "name": "AssumerName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "日志类型，支持枚举：CDS-AUDIT、CDS-RISK、CDB-AUDIT、TDSQL-C-AUDIT、MongoDB-AUDIT、MongoDB-SlowLog、MongoDB-ErrorLog、TDMYSQL-SLOW、DCDB-AUDIT、DCDB-SLOW、DCDB-ERROR、MariaDB-AUDIT、MariaDB-SLOW、MariaDB-ERROR、PostgreSQL-SLOW、PostgreSQL-ERROR、PostgreSQL-AUDIT、BH-FILELOG、BH-COMMANDLOG、APIS-ACCESS",
+          "example": "CDB-AUDIT",
+          "member": "string",
+          "name": "LogType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "云产品地域。 不同日志类型(LogType)地域入參格式存在差异， 请参考如下示例：\n- CDS所有日志类型：ap-guangzhou\n- CDB-AUDIT: gz\n- TDSQL-C-AUDIT: gz\n- MongoDB-AUDIT: gz\n- MongoDB-SlowLog：ap-guangzhou\n- MongoDB-ErrorLog：ap-guangzhou\n- TDMYSQL-SLOW：gz\n- DCDB所有日志类型：gz\n- MariaDB所有日志类型：gz\n- PostgreSQL所有日志类型：gz\n- BH所有日志类型：overseas-polaris(国内站海外)/fsi-polaris(国内站金融)/general-polaris(国内站普通)/intl-sg-prod(国际站)\n- APIS所有日志类型：gz",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "CloudProductRegion",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCloudProductLogTaskResponse": {
+      "document": "DeleteCloudProductLogTask返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -6416,7 +6732,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "通知内容模版ID",
+          "document": "通知内容模板ID",
           "example": "noticetemplate-d7286784-46d9-4be3-b7ba-2c464e6a5ad1",
           "member": "string",
           "name": "NoticeContentId",
@@ -6852,6 +7168,71 @@
       ],
       "type": "object"
     },
+    "DescribeCloudProductLogTasksRequest": {
+      "document": "DescribeCloudProductLogTasks请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分页的偏移量，默认值为0。",
+          "example": "无",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页单页限制数目，默认值为100，最大值100。",
+          "example": "无",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "- assumerName\n  - 按照【云产品标识】进行过滤。\n  - 类型：String\n  - 必选：否\n  - 枚举：CDS、CWP、CDB、TDSQL-C、MongoDB、TDStore、DCDB、MariaDB、PostgreSQL、BH、APIS\n- logType\n  - 按照【日志类型】进行过滤。\n  - 类型：String\n  - 必选：否\n  - 枚举：CDS-AUDIT、CDS-RISK、CDB-AUDIT、TDSQL-C-AUDIT、MongoDB-AUDIT、MongoDB-SlowLog、MongoDB-ErrorLog、TDMYSQL-SLOW、DCDB-AUDIT、DCDB-SLOW、DCDB-ERROR、MariaDB-AUDIT、MariaDB-SLOW、MariaDB-ERROR、PostgreSQL-SLOW、PostgreSQL-ERROR、PostgreSQL-AUDIT、BH-FILELOG、BH-COMMANDLOG、APIS-ACCESS\n- instanceId\n  - 按照【实例ID】进行过滤。\n  - 类型：String\n  - 必选：否",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudProductLogTasksResponse": {
+      "document": "DescribeCloudProductLogTasks返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志配置详情列表",
+          "example": "无",
+          "member": "CloudProductLogTaskInfo",
+          "name": "Tasks",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志配置总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeConfigExtrasRequest": {
       "document": "DescribeConfigExtras请求参数结构体",
       "members": [
@@ -7068,7 +7449,7 @@
           "example": "true",
           "member": "bool",
           "name": "Effective",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -7078,7 +7459,7 @@
           "example": "true",
           "member": "bool",
           "name": "NeedContent",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -7088,7 +7469,7 @@
           "example": "无",
           "member": "ConsumerContent",
           "name": "Content",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -7098,7 +7479,7 @@
           "example": "无",
           "member": "Ckafka",
           "name": "Ckafka",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -7108,7 +7489,7 @@
           "example": "0",
           "member": "int64",
           "name": "Compression",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -8184,7 +8565,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<li> name\n按照【通知内容模版名称】进行过滤。\n类型：String\n必选：否\n</li>\n<li> noticeContentId\n按照【通知内容模版ID】进行过滤。\n类型：String\n必选：否\n</li>\n每次请求的Filters的上限为10，Filter.Values的上限为100。",
+          "document": "<li> name\n按照【通知内容模板名称】进行过滤。\n类型：String\n必选：否\n</li>\n<li> noticeContentId\n按照【通知内容模板ID】进行过滤。\n类型：String\n必选：否\n</li>\n每次请求的Filters的上限为10，Filter.Values的上限为100。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -8217,7 +8598,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "通知内容模版列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "通知内容模板列表。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "NoticeContentTemplate",
           "name": "NoticeContents",
@@ -8227,7 +8608,7 @@
         },
         {
           "disabled": false,
-          "document": "符合条件的通知内容模版总数。",
+          "document": "符合条件的通知内容模板总数。",
           "example": "0",
           "member": "int64",
           "name": "TotalCount",
@@ -8424,7 +8805,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "- shipperName：按照【投递规则名称】进行过滤。类型：String。必选：否\n- shipperId：按照【投递规则ID】进行过滤。类型：String。必选：否\n- topicId：按照【日志主题】进行过滤。类型：String。必选：否\n\n每次请求的Filters的上限为10，Filter.Values的上限为5。",
+          "document": "- shipperName：按照【投递规则名称】进行过滤。\n    类型：String。\n    必选：否\n- shipperId：按照【投递规则ID】进行过滤。\n    类型：String。\n    必选：否\n- topicId：按照【日志主题】进行过滤。\n    类型：String。\n    必选：否\n- taskStatus\n按照【任务运行状态】进行过滤。 支持`0`：停止，`1`：运行中，`2`：异常\n类型：String\n必选：否\n\n每次请求的Filters的上限为10，Filter.Values的上限为10。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -10733,6 +11114,15 @@
         },
         {
           "disabled": false,
+          "document": "标签描述列表，通过指定该参数可以同时绑定标签到相应的通知渠道组。最大支持10个标签键值对，并且不能有重复的键值对。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "通知渠道组名称。",
           "example": "test",
           "member": "string",
@@ -10760,7 +11150,7 @@
         },
         {
           "disabled": false,
-          "document": "接口回调信息（包括企业微信）。",
+          "document": "接口回调信息（包括企业微信等）。",
           "example": "无",
           "member": "WebCallback",
           "name": "WebCallbacks",
@@ -10775,6 +11165,42 @@
           "name": "NoticeRules",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "调用链接域名。http:// 或者 https:// 开头，不能/结尾",
+          "example": "https://console.cloud.tencent.com",
+          "member": "string",
+          "name": "JumpDomain",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "投递日志开关。\n\n参数值：\n1：关闭；\n\n2：开启 \n",
+          "example": "2",
+          "member": "uint64",
+          "name": "DeliverStatus",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "投递日志配置。",
+          "example": "无",
+          "member": "DeliverConfig",
+          "name": "DeliverConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "免登录操作告警开关。\n\n参数值： \n        1：关闭\n        2：开启（默认开启）",
+          "example": "无",
+          "member": "uint64",
+          "name": "AlarmShieldStatus",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -11069,6 +11495,69 @@
     },
     "ModifyAlarmShieldResponse": {
       "document": "ModifyAlarmShield返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCloudProductLogTaskRequest": {
+      "document": "ModifyCloudProductLogTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "ins-r8hr2upy",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "云产品标识，支持枚举：CDS、CWP、CDB、TDSQL-C、MongoDB、TDStore、DCDB、MariaDB、PostgreSQL、BH、APIS",
+          "example": "CDB",
+          "member": "string",
+          "name": "AssumerName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "日志类型，支持枚举：CDS-AUDIT、CDS-RISK、CDB-AUDIT、TDSQL-C-AUDIT、MongoDB-AUDIT、MongoDB-SlowLog、MongoDB-ErrorLog、TDMYSQL-SLOW、DCDB-AUDIT、DCDB-SLOW、DCDB-ERROR、MariaDB-AUDIT、MariaDB-SLOW、MariaDB-ERROR、PostgreSQL-SLOW、PostgreSQL-ERROR、PostgreSQL-AUDIT、BH-FILELOG、BH-COMMANDLOG、APIS-ACCESS",
+          "example": "CDB-AUDIT",
+          "member": "string",
+          "name": "LogType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "云产品地域。 不同日志类型(LogType)地域入參格式存在差异， 请参考如下示例：\n- CDS所有日志类型：ap-guangzhou\n- CDB-AUDIT: gz\n- TDSQL-C-AUDIT: gz\n- MongoDB-AUDIT: gz\n- MongoDB-SlowLog：ap-guangzhou\n- MongoDB-ErrorLog：ap-guangzhou\n- TDMYSQL-SLOW：gz\n- DCDB所有日志类型：gz\n- MariaDB所有日志类型：gz\n- PostgreSQL所有日志类型：gz\n- BH所有日志类型：overseas-polaris(国内站海外)/fsi-polaris(国内站金融)/general-polaris(国内站普通)/intl-sg-prod(国际站)\n- APIS所有日志类型：gz",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "CloudProductRegion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "日志配置拓展信息， 一般用于存储额外的日志投递配置",
+          "example": "无",
+          "member": "string",
+          "name": "Extend",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCloudProductLogTaskResponse": {
+      "document": "ModifyCloudProductLogTask返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -12119,7 +12608,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "通知内容模版ID。",
+          "document": "通知内容模板ID。",
           "example": "noticetemplate-5b2ea996-4dae-47cc-bbad-5b12888b4c89",
           "member": "string",
           "name": "NoticeContentId",
@@ -12128,7 +12617,7 @@
         },
         {
           "disabled": false,
-          "document": "通知内容模版名称。",
+          "document": "通知内容模板名称。",
           "example": "test",
           "member": "string",
           "name": "Name",
@@ -12146,7 +12635,7 @@
         },
         {
           "disabled": false,
-          "document": "通知内容模版详细信息。",
+          "document": "通知内容模板详细信息。",
           "example": "无",
           "member": "NoticeContent",
           "name": "NoticeContents",
@@ -12649,7 +13138,7 @@
       "usage": "in"
     },
     "NoticeContent": {
-      "document": "通知内容模版详细配置",
+      "document": "通知内容模板详细配置",
       "members": [
         {
           "disabled": false,
@@ -12664,7 +13153,7 @@
         },
         {
           "disabled": false,
-          "document": "告警触发通知内容模版。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "告警触发通知内容模板。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "NoticeContentInfo",
           "name": "TriggerContent",
@@ -12675,7 +13164,7 @@
         },
         {
           "disabled": false,
-          "document": "告警恢复通知内容模版。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "告警恢复通知内容模板。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "NoticeContentInfo",
           "name": "RecoveryContent",

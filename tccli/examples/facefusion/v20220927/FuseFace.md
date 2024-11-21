@@ -14,8 +14,7 @@ tccli facefusion FuseFace --cli-unfold-argument  \
     --ProjectId at_1603326187690926080 \
     --LogoAdd 1 \
     --RspImgType url \
-    --MergeInfos.0.Url test.jpg \
-    --MergeInfos.0.TemplateFaceID mt_1603586676924403712_1 \
+    --MergeInfos.0.Url https://liudehua-9527.cos.ap-guangzhou.myqcloud.com/image.jpeg \
     --ModelId mt_1603586676924403712
 ```
 

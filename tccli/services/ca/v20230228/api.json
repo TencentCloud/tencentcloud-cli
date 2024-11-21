@@ -29,6 +29,57 @@
     "serviceShortName": "ca"
   },
   "objects": {
+    "CertificateIdentityUser": {
+      "document": "证书用户信息和身份鉴别信息。则该字段无需传入，默认为空。对电子签名者身份鉴别类型及措施有特殊展示要求的可使用该字段。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "姓名",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "唯一身份id",
+          "example": "无",
+          "member": "string",
+          "name": "IdentityUniqueId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "身份证号",
+          "example": "无",
+          "member": "string",
+          "name": "IdCardNumber",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "身份鉴别类型\n1：授权金融机构身份鉴别",
+          "example": "1",
+          "member": "string",
+          "name": "IdentificationType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "身份鉴别措施\n1、身份证鉴别\n2、银行卡鉴别\n3、支付账户密码验证\n4、人脸识别验证",
+          "example": "1",
+          "member": "string",
+          "name": "IdentificationMeasures",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
     "CreateVerifyReportRequest": {
       "document": "CreateVerifyReport请求参数结构体",
       "members": [
@@ -85,6 +136,15 @@
           "name": "ApplyEmail",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "证书用户身份及身份鉴别信息",
+          "example": "无",
+          "member": "CertificateIdentityUser",
+          "name": "CertificateIdentityUsers",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

@@ -6,16 +6,14 @@ Input:
 
 ```
 tccli tcss AddNetworkFirewallPolicyDetail --cli-unfold-argument  \
-    --PolicyName xx \
-    --CustomPolicy.0.Peer xx \
-    --CustomPolicy.0.Direction xx \
-    --CustomPolicy.0.Ports xx \
-    --Description xx \
-    --ClusterId xx \
+    --PolicyName test-2 \
+    --CustomPolicy.0.Direction FROM \
+    --Description  \
+    --ClusterId cls-fsdfw \
     --FromPolicyRule 0 \
-    --Namespace xx \
+    --Namespace default \
     --ToPolicyRule 0 \
-    --PodSelector xx
+    --PodSelector a=b
 ```
 
 Output: 

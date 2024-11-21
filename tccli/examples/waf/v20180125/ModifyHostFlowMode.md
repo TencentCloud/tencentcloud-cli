@@ -1,15 +1,15 @@
 **Example 1: 设置负载均衡型WAF防护域名的流量模式**
 
-
+设置负载均衡型WAF防护域名的流量模式，切换镜像模式和清洗模式
 
 Input: 
 
 ```
 tccli waf ModifyHostFlowMode --cli-unfold-argument  \
-    --Domain "www.qcloudwaf.com" \
+    --Domain "watx.qcloudwaf.com" \
     --DomainId "waf-gi944uHt" \
     --FlowMode 1 \
-    --InstanceID "waf_000q6ntyb"
+    --InstanceID "waf_vhhf12q6ntyb"
 ```
 
 Output: 

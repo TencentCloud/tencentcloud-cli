@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tcss DescribeAbnormalProcessRuleDetail --cli-unfold-argument  \
-    --RuleId xxx \
+    --RuleId 6045892534b9a9000c4ae5ba \
     --Limit 10 \
     --Offset 0
 ```
@@ -75,7 +75,7 @@ Input:
 
 ```
 tccli tcss DescribeAbnormalProcessRuleDetail --cli-unfold-argument  \
-    --RuleId xxx \
+    --RuleId 6045892534b9a9000c4ae5ba \
     --Limit 10 \
     --Offset 0
 ```
@@ -158,7 +158,7 @@ Input:
 
 ```
 tccli tcss DescribeAbnormalProcessRuleDetail --cli-unfold-argument  \
-    --ImageId xxx \
+    --ImageId "sha256:300e315adb2f96afe5f0b2780b87f28ae95231fe3bdd1e16b9ba606307728f55" \
     --Limit 10 \
     --Offset 0
 ```
@@ -227,7 +227,7 @@ Input:
 
 ```
 tccli tcss DescribeAbnormalProcessRuleDetail --cli-unfold-argument  \
-    --ImageId xxx \
+    --ImageId "sha256:300e315adb2f96afe5f0b2780b87f28ae95231fe3bdd1e16b9ba606307728f55" \
     --Limit 10 \
     --Offset 0
 ```

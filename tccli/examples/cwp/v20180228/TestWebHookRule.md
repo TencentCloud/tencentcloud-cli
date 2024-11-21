@@ -7,7 +7,7 @@ Input:
 ```
 tccli cwp TestWebHookRule --cli-unfold-argument  \
     --Id 1 \
-    --Data test
+    --Data 接口测试请忽略
 ```
 
 Output: 

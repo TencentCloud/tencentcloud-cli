@@ -21,12 +21,12 @@ Output:
         "EvilType": 0,
         "Level": 0,
         "UrlTypeDesc": "风险网址",
-        "EvilClassDesc": "",
-        "EvilTypeDesc": "",
-        "LevelDesc": "",
+        "EvilClassDesc": "网站",
+        "EvilTypeDesc": "EvilTypeDesc",
+        "LevelDesc": "LevelDesc",
         "DetectTime": 1644834245,
-        "Wording": "",
-        "WordingTitle": ""
+        "Wording": "Wording",
+        "WordingTitle": "WordingTitle"
     }
 }
 ```

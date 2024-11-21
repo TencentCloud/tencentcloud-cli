@@ -48,6 +48,14 @@
         "title": "查询黑白名单详情"
       }
     ],
+    "DescribeUserUsageCnt": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rce.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserUsageCnt\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Code\": 0,\n            \"Message\": \"OK\",\n            \"Value\": {\n                \"PayMode\": 0,\n                \"AfterPayModeThisMonthUsedCnt\": 0,\n                \"CreateTime\": \"2024-11-01 00:00:00\",\n                \"ExpireTime\": \"2025-11-01 00:00:00\",\n                \"AfterPayModeLastMonthUsedCnt\": 0,\n                \"BeforePayModeTotalUsedCnt\": 0,\n                \"BeforePayModeRemainUsedCnt\": 0\n            }\n        },\n        \"RequestId\": \"6ef60bec*****270359fb54a7\"\n    }\n}",
+        "title": "demo数据"
+      }
+    ],
     "ImportNameListData": [
       {
         "document": "",

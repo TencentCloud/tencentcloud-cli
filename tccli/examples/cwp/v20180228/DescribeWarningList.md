@@ -11,7 +11,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "4234234",
+        "RequestId": "req-1002",
         "WarningInfoList": [
             {
                 "Type": 3,
@@ -20,25 +20,9 @@ Output:
                 "EndTime": "23:23",
                 "TimeZone": "Asia/Shanghai",
                 "ControlBit": 0,
-                "ControlBits": "000"
-            },
-            {
-                "Type": 9,
-                "DisablePhoneWarning": 1,
-                "BeginTime": "10:00",
-                "EndTime": "23:23",
-                "TimeZone": "Asia/Shanghai",
-                "ControlBit": 7,
-                "ControlBits": "111"
-            },
-            {
-                "Type": 4,
-                "DisablePhoneWarning": 1,
-                "BeginTime": "01:00",
-                "EndTime": "23:23",
-                "TimeZone": "Asia/Shanghai",
-                "ControlBit": 0,
-                "ControlBits": "000"
+                "ControlBits": "000",
+                "HostRange": 0,
+                "Count": 102
             }
         ]
     }

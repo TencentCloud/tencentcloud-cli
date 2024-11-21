@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cwp DescribeDefenceEventDetail --cli-unfold-argument  \
-    --Id 123
+    --Id 13844
 ```
 
 Output: 
@@ -14,40 +14,42 @@ Output:
 {
     "Response": {
         "Data": {
-            "Id": 10001,
+            "Id": 13844,
             "Status": 1,
-            "Quuid": "05f0bcab-726c-4ea4-8109-bcd03d5598f7",
-            "Alias": "Alias-name",
+            "Quuid": "acdd5474-6360-4fd4-bfc7-843162cb8116",
+            "Alias": "machinename",
             "MachineStatus": "ONLINE",
-            "PrivateIp": "1.1.1.1",
-            "PublicIp": "1.1.1.1.",
-            "CreateTime": "2024-10-23 11:41:10",
-            "MergeTime": "2024-10-23 11:43:52",
-            "VulName": "Apache log4j2 远程代码执行漏洞 (CVE-2021-44228)",
+            "PrivateIp": "10.0.1.233",
+            "PublicIp": "43.138.142.208",
+            "CreateTime": "2024-11-03 00:40:12",
+            "MergeTime": "2024-11-03 16:25:04",
+            "VulName": "ISC BIND 资源管理错误漏洞(CVE-2014-8500)",
             "EventType": 2,
-            "Count": 20,
-            "CveId": "CVE-2021-44228",
-            "SourceIp": "",
-            "City": "",
-            "SourcePort": null,
-            "Description": "腾讯安全注意到，一个Apache Log4j2高危漏洞细节已被公开，Log4j-2<2.15.0的版本中存在JNDI注入漏洞，当程序将用户输入的数据进行日志记录时，即可触发此漏洞，成功利用此漏洞可以在目标服务器上执行任意代码。",
-            "Fix": "请注意，只有 log4j-core JAR 文件受此漏洞影响。仅使用 log4j-api JAR 文件而不使用 log4j-core JAR 文件的应用程序不受此漏洞的影响。腾讯安全专家建议受影响的用户尽快升级到2.16.0及以上版本。\n最新安全版本请参考官方安全通告：https://logging.apache.org/log4j/2.x/security.html\n更新包下载地址：https://logging.apache.org/log4j/2.x/download.html\n漏洞缓解措施 (仍会检出漏洞）：\n（1）从类路径中删除 JndiLookup 类： zip -q -d log4j-core-*.jar org/apache/logging/log4j/core/lookup/JndiLookup.class\n腾讯云WAF和云防火墙均已支持该漏洞防护\nWAF试用：https://cloud.tencent.com/act/pro/clbwafenterprise  \n配置WAF： https://console.cloud.tencent.com/guanjia/tea-instance-new\n云防火墙试用：https://console.cloud.tencent.com/cfw/ips",
-            "NetworkPayload": "OiAK",
-            "Pid": 20545,
-            "MainClass": "org.eclipse.jetty.start.Main",
-            "StackTrace": "org.apache.logging.log4j.core.lookup.JndiLookup.lookup\norg.apache.logging.log4j.core.lookup.Interpolator.lookup\norg.apache.logging.log4j.core.lookup.StrSubstitutor.resolveVariable\norg.apache.logging.log4j.core.lookup.StrSubstitutor.substitute\norg.apache.logging.log4j.core.lookup.StrSubstitutor.substitute\norg.apache.logging.log4j.core.lookup.StrSubstitutor.replace\norg.apache.logging.log4j.core.pattern.MessagePatternConverter.format\norg.apache.logging.log4j.core.pattern.PatternFormatter.format\norg.apache.logging.log4j.core.pattern.MaxLengthConverter.format\norg.apache.logging.log4j.core.pattern.PatternFormatter.format\norg.apache.logging.log4j.core.layout.PatternLayout$PatternSerializer.toSerializable\norg.apache.logging.log4j.core.layout.PatternLayout.toText\norg.apache.logging.log4j.core.layout.PatternLayout.encode\norg.apache.logging.log4j.core.layout.PatternLayout.encode\norg.apache.logging.log4j.core.appender.AbstractOutputStreamAppender.directEncodeEvent\norg.apache.logging.log4j.core.appender.AbstractOutputStreamAppender.tryAppend\norg.apache.logging.log4j.core.appender.AbstractOutputStreamAppender.append\norg.apache.logging.log4j.core.config.AppenderControl.tryCallAppender\norg.apache.logging.log4j.core.config.AppenderControl.callAppender0\norg.apache.logging.log4j.core.config.AppenderControl.callAppenderPreventRecursion\norg.apache.logging.log4j.core.config.AppenderControl.callAppender\norg.apache.logging.log4j.core.config.LoggerConfig.callAppenders\norg.apache.logging.log4j.core.async.AsyncLoggerConfig.callAppenders\norg.apache.logging.log4j.core.config.LoggerConfig.processLogEvent\norg.apache.logging.log4j.core.config.LoggerConfig.log\norg.apache.logging.log4j.core.async.AsyncLoggerConfig.log\norg.apache.logging.log4j.core.async.AsyncLoggerConfig.logToAsyncLoggerConfigsOnCurrentThread\norg.apache.logging.log4j.core.async.AsyncLoggerConfigDisruptor$Log4jEventWrapperHandler.onEvent\norg.apache.logging.log4j.core.async.AsyncLoggerConfigDisruptor$Log4jEventWrapperHandler.onEvent\ncom.lmax.disruptor.BatchEventProcessor.processEvents\ncom.lmax.disruptor.BatchEventProcessor.run\njava.lang.Thread.run\n",
-            "EventDetail": "[{\"name\":\"jndiurl\",\"value\":\"ldap://1.8.0_102.example.com\"}]",
-            "ExceptionPstree": "",
+            "Count": 76,
+            "CveId": "CVE-2014-8500",
+            "SourceIp": "na",
+            "City": "gz",
+            "SourcePort": [
+                80
+            ],
+            "Description": "ISCBIND是美国InternetSystemsConsortium（ISC）公司所维护的一套实现了DNS协议的开源软件。ISCBIND中存在安全漏洞，该漏洞源于程序没有限制授权链。远程攻击者可利用该漏洞造成拒绝服务（内存消耗）。以下版本受到影响：ISCBIND9.0.x至9.8.x版本，9.9.0至9.9.6版本，9.10.0至9.10.1版本。",
+            "Fix": "建议您更新当前系统或软件至最新版，完成漏洞的修复。",
+            "NetworkPayload": "bnVsbDogZXhhbXBsZS5jb20vCm51bGxAI0Bob3N0OiBleGFtcGxlLmNvbQp1c2VyLWFnZW50OiBHby1odHRwLWNsaWVudC8xLjEKYWNjZXB0LWVuY29kaW5nOiBnemlwCmNvbm5lY3Rpb246IGNsb3NlCg==",
+            "Pid": 3380048,
+            "MainClass": "org.apache.catalina.startup.Bootstrap",
+            "StackTrace": "org.apache.catalina.core.ApplicationFilterChain.doFilter\norg.apache.catalina.core.StandardWrapperValve.invoke\norg.apache.catalina.core.StandardContextValve.invoke\norg.apache.catalina.authenticator.AuthenticatorBase.invoke\norg.apache.catalina.core.StandardHostValve.invoke\norg.apache.catalina.valves.ErrorReportValve.invoke\norg.apache.catalina.valves.AbstractAccessLogValve.invoke\norg.apache.catalina.core.StandardEngineValve.invoke\norg.apache.catalina.connector.CoyoteAdapter.service\norg.apache.coyote.http11.Http11Processor.service\norg.apache.coyote.AbstractProcessorLight.process\norg.apache.coyote.AbstractProtocol$ConnectionHandler.process\norg.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun\norg.apache.tomcat.util.net.SocketProcessorBase.run\norg.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker\norg.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run\norg.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run\njava.lang.Thread.run\n",
+            "EventDetail": "[{\"name\":\"hitSignatureID\",\"value\":\"14004\"},{\"name\":\"matches\",\"value\":\"example.com\"}]",
+            "ExceptionPstree": "/bin/bash",
             "MachineExtraInfo": {
-                "WanIP": "1.1.1.1",
-                "PrivateIP": "1.1.1.1",
+                "WanIP": "43.138.142.208",
+                "PrivateIP": "10.0.1.233",
                 "NetworkType": 1,
-                "NetworkName": "vpc-12332112",
-                "InstanceID": "ins-12332112",
-                "HostName": "机器名称"
+                "NetworkName": "vpc-mbgoxtov",
+                "InstanceID": "ins-j7vumfb6",
+                "HostName": "machinename"
             }
         },
-        "RequestId": "be6f6eec-0825-4e67-ab9a-c8568bbf736c"
+        "RequestId": "6e91fa6a-9b0b-49d7-9ecd-679e5569b90e"
     }
 }
 ```

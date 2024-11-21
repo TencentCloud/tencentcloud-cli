@@ -6,17 +6,17 @@ Input:
 
 ```
 tccli waf GetAttackHistogram --cli-unfold-argument  \
-    --Domain abc \
+    --Domain waf.com \
     --StartTime 2020-09-22 00:00:00 \
     --EndTime 2020-09-22 00:00:00 \
-    --QueryString abc
+    --QueryString bot:0
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "abc",
+        "RequestId": "977c060f-4db5-4a48-95a1-bc4c7b141276",
         "Data": [
             {
                 "Count": 0,

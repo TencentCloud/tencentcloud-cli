@@ -1,6 +1,6 @@
 **Example 1: 错误示例**
 
-下标不合法
+人员库ID不存在。
 
 Input: 
 
@@ -8,7 +8,7 @@ Input:
 tccli iai ModifyPersonGroupInfo --cli-unfold-argument  \
     --GroupId TencentShenZhenEmployee \
     --PersonId 1001 \
-    --PersonExDescriptionInfos.0.PersonExDescriptionIndex -1 \
+    --PersonExDescriptionInfos.0.PersonExDescriptionIndex 1 \
     --PersonExDescriptionInfos.0.PersonExDescription 人工智能实验室
 ```
 
@@ -17,8 +17,8 @@ Output:
 {
     "Response": {
         "Error": {
-            "Code": "InvalidParameter",
-            "Message": "The value type of parameter `PersonExDescriptionInfos.0.PersonExDescriptionIndex` is not valid."
+            "Code": "InvalidParameterValue.GroupIdNotExist",
+            "Message": "人员库ID不存在。"
         },
         "RequestId": "f944657d-6260-4a2e-a4d8-9c1845f39e56"
     }
@@ -27,7 +27,7 @@ Output:
 
 **Example 2: 修改人员描述信息接口**
 
-
+修改人员描述信息。
 
 Input: 
 
@@ -50,7 +50,7 @@ Output:
 
 **Example 3: 修改人员描述信息接口-2**
 
-
+修改人员描述信息。
 
 Input: 
 

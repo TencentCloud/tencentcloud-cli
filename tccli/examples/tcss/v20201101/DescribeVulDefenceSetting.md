@@ -15,19 +15,15 @@ Output:
         "Scope": 0,
         "HostCount": 0,
         "ExceptionHostCount": 0,
-        "HostIDs": [
-            "abc"
-        ],
+        "HostIDs": [],
         "HostTotalCount": 0,
         "SupportDefenseVulCount": 0,
         "HostNodeCount": 0,
         "SuperScope": 0,
         "SuperNodeCount": 0,
-        "SuperNodeIds": [
-            "abc"
-        ],
+        "SuperNodeIds": [],
         "NodeTotalCount": 0,
-        "RequestId": "abc"
+        "RequestId": "dc56fda9-58c8-4c4f-9e8c-b7296836c1fe"
     }
 }
 ```

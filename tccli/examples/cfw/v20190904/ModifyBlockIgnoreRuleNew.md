@@ -1,23 +1,23 @@
-**Example 1: 编辑放通列表示例**
+**Example 1: 编辑单条入侵防御封禁列表、放通列表规则（新）**
 
-编辑放通列表示例
+编辑单条入侵防御封禁列表、放通列表规则（新）
 
 Input: 
 
 ```
 tccli cfw ModifyBlockIgnoreRuleNew --cli-unfold-argument  \
-    --Rule.Ioc 100.12.31.2 \
-    --Rule.DirectionList 0,1 \
-    --Rule.EndTime 2025-01-02 14:39:30 \
-    --Rule.Comment test \
-    --RuleType 2
+    --Rule.Comment 放通IP \
+    --Rule.DirectionList 1 \
+    --Rule.EndTime 2024-11-02 18:44:21 \
+    --Rule.Ioc 80.94.95.81 \
+    --RuleType 1
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "9a185559-4d5f-40a4-bb56-c5c4a48f86c1"
+        "RequestId": "scc.alert.aiDisposal-GeMvNInoyVWx"
     }
 }
 ```

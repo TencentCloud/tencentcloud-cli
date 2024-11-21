@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli hunyuan SubmitHunyuanImageJob --cli-unfold-argument  \
-    --Prompt 雪山
+    --Prompt 雨中, 竹林, 小路
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "JobId": "test",
+        "JobId": "251197749-1731412663-d4e1f224-fa21-40bc-9ee7-4bb13abece6e-0",
         "RequestId": "d4e1f224-fa21-40bc-9ee7-4bb13abece6e"
     }
 }

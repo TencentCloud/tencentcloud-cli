@@ -1,6 +1,6 @@
-**Example 1: test111**
+**Example 1: api安全状态变更接口**
 
-weraza
+api安全状态变更接口
 
 Input: 
 
@@ -8,11 +8,11 @@ Input:
 tccli waf ModifyApiSecEventChange --cli-unfold-argument  \
     --UserName ddp \
     --EventIdList api_test \
-    --Remark test \
+    --Remark wafceshi \
     --Mode 2 \
     --ApiNameList.0.Domain www.test.com \
     --ApiNameList.0.Method POST \
-    --ApiNameList.0.ApiName aaa
+    --ApiNameList.0.ApiName waftest
 ```
 
 Output: 

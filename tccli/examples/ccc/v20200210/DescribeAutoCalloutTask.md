@@ -16,8 +16,8 @@ Output:
     "Response": {
         "IvrId": 1,
         "Name": "foobar",
-        "NotBefore": 1,
-        "NotAfter": 0,
+        "NotBefore": 1729905740,
+        "NotAfter": 1729905750,
         "State": 1,
         "Callers": [
             "008610086"

@@ -17,169 +17,99 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 2,
+        "TotalCount": 1,
         "TelCdrList": [
             {
-                "ProtectedCaller": "abc",
-                "EndStatus": 1,
-                "SessionId": "abc",
-                "CustomRecordURL": "abc",
-                "RecordId": "abc",
-                "SkillGroupId": 100,
+                "AcceptTimestamp": 1729756307,
+                "AsrStatus": "Complete",
+                "AsrUrl": "https://xxxxxx",
+                "Callee": "00860200000000",
+                "Caller": "0086075500000",
+                "CallerLocation": "广东深圳固话",
+                "CustomRecordURL": "https://xxxxxxxx.mp3",
                 "Direction": 0,
-                "StartTimestamp": 1590547606,
-                "AsrUrl": "abc",
-                "HungUpSide": "abc",
-                "ServeParticipants": [
+                "Duration": 8,
+                "EndStatus": 1,
+                "EndStatusString": "ok",
+                "EndedTimestamp": 1729756315,
+                "HungUpSide": "seat",
+                "IVRDuration": 15,
+                "IVRKeyPressed": [
+                    "香蕉"
+                ],
+                "IVRKeyPressedEx": [
                     {
-                        "TransferTo": "abc",
-                        "TransferFromType": "abc",
-                        "EndStatusString": "abc",
-                        "RecordURL": "abc",
-                        "TransferToType": "abc",
-                        "AcceptTimestamp": 0,
-                        "RecordId": "abc",
-                        "TransferFrom": "abc",
-                        "EndedTimestamp": 0,
-                        "Sequence": 0,
-                        "Phone": "abc",
-                        "SkillGroupName": "abc",
-                        "Mail": "abc",
-                        "RingTimestamp": 0,
-                        "Type": "abc",
-                        "StartTimestamp": 0,
-                        "CustomRecordURL": "abc",
-                        "SkillGroupId": 0
+                        "Key": "香蕉",
+                        "Label": "香蕉",
+                        "NodeLabel": "语音识别导航",
+                        "OriginalContent": "香蕉。",
+                        "TTSPrompt": "输入您喜欢吃的水果",
+                        "Timestamp": 1729756303211
                     }
                 ],
                 "PostIVRKeyPressed": [
                     {
-                        "Key": "abc",
-                        "Label": "abc"
+                        "Key": "1",
+                        "Label": "不满意",
+                        "NodeLabel": "",
+                        "OriginalContent": "",
+                        "TTSPrompt": "",
+                        "Timestamp": 0
                     }
                 ],
-                "EndStatusString": "abc",
-                "UUI": "abc",
-                "QueuedSkillGroupId": 100,
-                "RingTimestamp": 1590547606,
-                "AcceptTimestamp": 1590547606,
-                "EndedTimestamp": 1590547606,
-                "Caller": "abc",
-                "CallerLocation": "abc",
-                "Time": 1590547606,
-                "Callee": "abc",
+                "ProtectedCallee": "",
+                "ProtectedCaller": "",
+                "QueuedSkillGroupId": 2522,
+                "QueuedSkillGroupName": "test-tel",
+                "QueuedTimestamp": 1729756306,
+                "RecordId": "e9fdbff5-2e35-4480-83f7-81917e723fa5",
+                "RecordURL": "https://xxxxxxx.mp3",
+                "Remark": "skillGroupId--34588",
+                "RingTimestamp": 1729756306,
                 "SeatUser": {
-                    "Name": "abc",
-                    "Phone": "abc",
-                    "UserId": "abc",
-                    "Nick": "abc",
-                    "StaffNumber": "abc",
-                    "Mail": "abc",
+                    "Mail": "xxxxxxx@tencent.com",
+                    "Name": "xiaoming",
+                    "Nick": "guanjia",
+                    "Phone": "00861580000000",
                     "SkillGroupNameList": [
-                        "abc"
-                    ]
+                        "1539",
+                        "2522",
+                        "3551"
+                    ],
+                    "StaffNumber": "20012",
+                    "UserId": "xxxxxxx@tencent.com"
                 },
-                "RecordURL": "abc",
-                "QueuedTimestamp": 1610627284,
-                "ProtectedCallee": "abc",
-                "IVRDuration": 5,
-                "SkillGroup": "abc",
-                "Duration": 60,
-                "IVRKeyPressed": [
-                    "5"
-                ],
-                "IVRKeyPressedEx": [
-                    {
-                        "Key": "abc",
-                        "Label": "abc"
-                    }
-                ],
-                "Remark": "abc",
-                "QueuedSkillGroupName": "abc",
-                "VoicemailRecordURL": [
-                    "abc"
-                ]
-            },
-            {
-                "ProtectedCaller": "abc",
-                "EndStatus": 1,
-                "SessionId": "abc",
-                "CustomRecordURL": "abc",
-                "RecordId": "abc",
-                "SkillGroupId": 100,
-                "Direction": 0,
-                "StartTimestamp": 1590547630,
-                "AsrUrl": "abc",
-                "HungUpSide": "abc",
                 "ServeParticipants": [
                     {
-                        "TransferTo": "abc",
-                        "TransferFromType": "abc",
-                        "RecordURL": "abc",
-                        "TransferToType": "abc",
-                        "AcceptTimestamp": 0,
-                        "RecordId": "abc",
-                        "TransferFrom": "abc",
-                        "EndedTimestamp": 0,
+                        "AcceptTimestamp": 1729756306,
+                        "CustomRecordURL": "https://xxxxx.mp3",
+                        "EndStatusString": "ok",
+                        "EndedTimestamp": 1729756312,
+                        "Mail": "xxxxxx@tencent.com",
+                        "Phone": "",
+                        "RecordId": "96eaa575-be4c-48f1-99b8-9722f2f816ec",
+                        "RecordURL": "https://xxxxxx.mp3",
+                        "RingTimestamp": 1729756306,
                         "Sequence": 0,
-                        "Phone": "abc",
-                        "EndStatusString": "abc",
-                        "SkillGroupName": "abc",
-                        "Mail": "abc",
-                        "RingTimestamp": 0,
-                        "Type": "abc",
-                        "StartTimestamp": 0,
-                        "CustomRecordURL": "abc",
-                        "SkillGroupId": 0
+                        "SkillGroupId": 2522,
+                        "SkillGroupName": "test-tel",
+                        "StartTimestamp": 1729756306,
+                        "TransferFrom": "",
+                        "TransferFromType": "",
+                        "TransferTo": "",
+                        "TransferToType": "",
+                        "Type": "staffSeat"
                     }
                 ],
-                "PostIVRKeyPressed": [
-                    {
-                        "Key": "abc",
-                        "Label": "abc"
-                    }
-                ],
-                "EndStatusString": "abc",
-                "UUI": "abc",
-                "QueuedSkillGroupId": 100,
-                "RingTimestamp": 1590547606,
-                "AcceptTimestamp": 1590547606,
-                "EndedTimestamp": 1590547606,
-                "Caller": "abc",
-                "CallerLocation": "abc",
-                "Time": 1590547630,
-                "Callee": "abc",
-                "SeatUser": {
-                    "Name": "abc",
-                    "Nick": "abc",
-                    "UserId": "abc",
-                    "Phone": "abc",
-                    "StaffNumber": "abc",
-                    "Mail": "abc",
-                    "SkillGroupNameList": [
-                        "abc"
-                    ]
-                },
-                "RecordURL": "abc",
-                "QueuedTimestamp": 1610627284,
-                "ProtectedCallee": "abc",
-                "IVRDuration": 5,
-                "SkillGroup": "abc",
-                "Duration": 62,
-                "IVRKeyPressed": [
-                    "5"
-                ],
-                "IVRKeyPressedEx": [
-                    {
-                        "Key": "abc",
-                        "Label": "abc"
-                    }
-                ],
-                "Remark": "abc",
-                "QueuedSkillGroupName": "abc",
-                "VoicemailRecordURL": [
-                    "abc"
-                ]
+                "SessionId": "0955de87-c86d-4457-aac2-bee3d0a0b67a",
+                "SkillGroup": "test-tel",
+                "SkillGroupId": 2522,
+                "StartTimestamp": 1729756291,
+                "Time": 1729756291,
+                "UUI": "",
+                "Uui": "",
+                "VoicemailAsrURL": [],
+                "VoicemailRecordURL": []
             }
         ],
         "RequestId": "abc"

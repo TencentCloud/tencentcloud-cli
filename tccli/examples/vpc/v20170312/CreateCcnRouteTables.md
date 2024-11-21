@@ -8,7 +8,7 @@ Input:
 tccli vpc CreateCcnRouteTables --cli-unfold-argument  \
     --RouteTable.0.CcnId ccn-8j0phqix \
     --RouteTable.0.Name rubytest \
-    --RouteTable.0.Description test
+    --RouteTable.0.Description rtb-1
 ```
 
 Output: 
@@ -20,7 +20,7 @@ Output:
                 "CcnId": "ccn-8j0phqix",
                 "CcnRouteTableId": "ccnrtb-mnvhfmv9",
                 "RouteTableName": "rubytest",
-                "RouteTableDescription": "test",
+                "RouteTableDescription": "rtb-1",
                 "IsDefaultTable": true,
                 "CreateTime": "2021-05-11 15:47:53"
             }

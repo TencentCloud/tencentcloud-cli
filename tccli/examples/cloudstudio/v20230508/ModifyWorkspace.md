@@ -7,8 +7,8 @@ Input:
 ```
 tccli cloudstudio ModifyWorkspace --cli-unfold-argument  \
     --SpaceKey ubbyfp \
-    --Name openapi_test_m1 \
-    --Description api-test-midofy \
+    --Name workspace-name \
+    --Description api-test-modify \
     --Specs Calculation
 ```
 

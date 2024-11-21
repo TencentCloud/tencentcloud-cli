@@ -19,139 +19,226 @@ Output:
 ```
 {
     "Response": {
-        "TotalCnt": 0,
         "ClusterList": [
             {
-                "Id": 0,
-                "ClusterId": "abc",
-                "Ftitle": "abc",
-                "ClusterName": "abc",
-                "RegionId": 0,
-                "ZoneId": 0,
-                "AppId": 0,
-                "Uin": "abc",
-                "ProjectId": 0,
-                "VpcId": 0,
-                "SubnetId": 0,
-                "Status": 0,
-                "AddTime": "abc",
-                "RunTime": "abc",
-                "Config": {
-                    "SoftInfo": [
-                        "abc"
-                    ],
-                    "MasterNodeSize": 0,
-                    "CoreNodeSize": 0,
-                    "TaskNodeSize": 0,
-                    "ComNodeSize": 0,
-                    "MasterResource": {
-                        "Spec": "abc",
-                        "SpecName": "abc",
-                        "StorageType": 0,
-                        "DiskType": "abc",
-                        "RootSize": 0,
-                        "MemSize": 0,
-                        "Cpu": 0,
-                        "DiskSize": 0,
-                        "InstanceType": "abc"
-                    },
-                    "CoreResource": {
-                        "Spec": "abc",
-                        "SpecName": "abc",
-                        "StorageType": 0,
-                        "DiskType": "abc",
-                        "RootSize": 0,
-                        "MemSize": 0,
-                        "Cpu": 0,
-                        "DiskSize": 0,
-                        "InstanceType": "abc"
-                    },
-                    "TaskResource": {
-                        "Spec": "abc",
-                        "SpecName": "abc",
-                        "StorageType": 0,
-                        "DiskType": "abc",
-                        "RootSize": 0,
-                        "MemSize": 0,
-                        "Cpu": 0,
-                        "DiskSize": 0,
-                        "InstanceType": "abc"
-                    },
-                    "OnCos": true,
-                    "ChargeType": 0,
-                    "RouterNodeSize": 0,
-                    "SupportHA": true,
-                    "SecurityOn": true,
-                    "SecurityGroup": "abc",
-                    "CbsEncrypt": 0,
-                    "ApplicationRole": "abc",
-                    "SecurityGroups": [
-                        "abc"
-                    ],
-                    "PublicKeyId": "abc"
-                },
-                "MasterIp": "abc",
-                "EmrVersion": "abc",
+                "AddTime": "2024-11-05 20:39:44",
+                "AlarmInfo": "",
+                "AliasInfo": "eyJjb21tb24iOiJjb21tb24iLCJjb3JlIjoiY29yZSIsIm1hc3RlciI6Im1hc3RlciIsInRhc2siOiJ0YXNrIn0=",
+                "AppId": 1334143,
                 "ChargeType": 0,
-                "TradeVersion": 0,
-                "ResourceOrderId": 0,
+                "ClusterExternalServiceInfo": null,
+                "ClusterId": "emr-hvijzo6n",
+                "ClusterName": "odinlli_test_1105",
+                "ClusterTitle": "集群运行中",
+                "Config": {
+                    "ApplicationRole": "",
+                    "CbsEncrypt": 0,
+                    "ChargeType": 0,
+                    "ComNodeSize": 0,
+                    "ComResource": {
+                        "Cpu": 0,
+                        "DiskSize": 0,
+                        "DiskType": "",
+                        "InstanceType": "",
+                        "MemSize": 0,
+                        "RootSize": 0,
+                        "Spec": "",
+                        "SpecName": "",
+                        "StorageType": 0
+                    },
+                    "CoreNodeSize": 2,
+                    "CoreResource": {
+                        "Cpu": 4,
+                        "DiskSize": 200,
+                        "DiskType": "CLOUD_SSD",
+                        "InstanceType": "",
+                        "MemSize": 8192,
+                        "RootSize": 70,
+                        "Spec": "CVM.S5",
+                        "SpecName": "EMR标准型S5",
+                        "StorageType": 4
+                    },
+                    "MasterNodeSize": 1,
+                    "MasterResource": {
+                        "Cpu": 8,
+                        "DiskSize": 200,
+                        "DiskType": "CLOUD_SSD",
+                        "InstanceType": "",
+                        "MemSize": 16384,
+                        "RootSize": 70,
+                        "Spec": "CVM.S5",
+                        "SpecName": "EMR标准型S5",
+                        "StorageType": 4
+                    },
+                    "OnCos": false,
+                    "PublicKeyId": "",
+                    "RouterNodeSize": 0,
+                    "SecurityGroup": "sg-jfluz1nt",
+                    "SecurityGroups": [
+                        "sg-jfluz1nt"
+                    ],
+                    "SecurityOn": false,
+                    "SoftInfo": [
+                        "hdfs-3.2.2",
+                        "yarn-3.2.2",
+                        "zookeeper-3.6.3",
+                        "openldap-2.4.44",
+                        "knox-1.6.1"
+                    ],
+                    "SupportHA": false,
+                    "TaskNodeSize": 0,
+                    "TaskResource": {
+                        "Cpu": 0,
+                        "DiskSize": 0,
+                        "DiskType": "",
+                        "InstanceType": "",
+                        "MemSize": 0,
+                        "RootSize": 0,
+                        "Spec": "",
+                        "SpecName": "",
+                        "StorageType": 0
+                    }
+                },
+                "ConfigDetail": {
+                    "ApplicationRole": "",
+                    "CbsEncrypt": 0,
+                    "ChargeType": 0,
+                    "ComNodeSize": 0,
+                    "ComResource": {
+                        "Cpu": 0,
+                        "DiskSize": 0,
+                        "DiskType": "",
+                        "InstanceType": "",
+                        "MemSize": 0,
+                        "RootSize": 0,
+                        "Spec": "",
+                        "SpecName": "",
+                        "StorageType": 0
+                    },
+                    "CoreNodeSize": 2,
+                    "CoreResource": {
+                        "Cpu": 4,
+                        "DiskSize": 200,
+                        "DiskType": "CLOUD_SSD",
+                        "InstanceType": "",
+                        "MemSize": 8192,
+                        "RootSize": 70,
+                        "Spec": "CVM.S5",
+                        "SpecName": "EMR标准型S5",
+                        "StorageType": 4
+                    },
+                    "MasterNodeSize": 1,
+                    "MasterResource": {
+                        "Cpu": 8,
+                        "DiskSize": 200,
+                        "DiskType": "CLOUD_SSD",
+                        "InstanceType": "",
+                        "MemSize": 16384,
+                        "RootSize": 70,
+                        "Spec": "CVM.S5",
+                        "SpecName": "EMR标准型S5",
+                        "StorageType": 4
+                    },
+                    "OnCos": false,
+                    "PublicKeyId": "",
+                    "RouterNodeSize": 0,
+                    "SecurityGroup": "sg-jfluz1nt",
+                    "SecurityGroups": [
+                        "sg-jfluz1nt"
+                    ],
+                    "SecurityOn": false,
+                    "SoftInfo": [
+                        "hdfs-3.2.2",
+                        "yarn-3.2.2",
+                        "zookeeper-3.6.3",
+                        "openldap-2.4.44",
+                        "knox-1.6.1"
+                    ],
+                    "SupportHA": false,
+                    "TaskNodeSize": 0,
+                    "TaskResource": {
+                        "Cpu": 0,
+                        "DiskSize": 0,
+                        "DiskType": "",
+                        "InstanceType": "",
+                        "MemSize": 0,
+                        "RootSize": 0,
+                        "Spec": "",
+                        "SpecName": "",
+                        "StorageType": 0
+                    }
+                },
+                "DisplayName": "默认场景",
+                "EmrVersion": "EMR-V3.5.0",
+                "Ftitle": "集群运行中",
+                "HiveMetaDb": "",
+                "Id": 1113,
+                "IsCvmReplace": false,
+                "IsMultiZoneCluster": false,
                 "IsTradeCluster": 0,
-                "AlarmInfo": "abc",
-                "IsWoodpeckerCluster": 0,
-                "MetaDb": "abc",
-                "Tags": [
-                    {
-                        "TagKey": "abc",
-                        "TagValue": "abc"
-                    }
-                ],
-                "HiveMetaDb": "abc",
-                "ServiceClass": "abc",
-                "AliasInfo": "abc",
-                "ProductId": 0,
-                "Zone": "abc",
-                "SceneName": "abc",
-                "SceneServiceClass": "abc",
-                "SceneEmrVersion": "abc",
-                "DisplayName": "abc",
-                "VpcName": "abc",
-                "SubnetName": "abc",
-                "ClusterExternalServiceInfo": [
-                    {
-                        "DependType": 0,
-                        "Service": "abc",
-                        "ClusterId": "abc",
-                        "ClusterStatus": 0
-                    }
-                ],
-                "UniqVpcId": "abc",
-                "UniqSubnetId": "abc",
+                "IsWoodpeckerCluster": 1,
+                "MasterIp": "0.0.0.0",
+                "MetaDb": "",
+                "ProductId": 44,
+                "ProjectId": 0,
+                "RegionId": 1,
+                "ResourceOrderId": 0,
+                "RunTime": "0天0小时32分钟20秒",
+                "SceneEmrVersion": "EMR-V3.5.0",
+                "SceneName": "Hadoop-Default",
+                "SceneServiceClass": "Hadoop",
+                "ServiceClass": "HADOOP",
+                "Status": 2,
+                "SubnetId": 6131299,
+                "SubnetName": "vigo-subnet",
+                "Tags": [],
                 "TopologyInfoList": [
                     {
-                        "ZoneId": 0,
-                        "Zone": "abc",
-                        "SubnetInfoList": [
-                            {
-                                "SubnetName": "abc",
-                                "SubnetId": "abc"
-                            }
-                        ],
                         "NodeInfoList": [
                             {
-                                "NodeType": "abc",
-                                "NodeSize": 1
+                                "NodeSize": 2,
+                                "NodeType": "Core"
+                            },
+                            {
+                                "NodeSize": 0,
+                                "NodeType": "Task"
+                            },
+                            {
+                                "NodeSize": 0,
+                                "NodeType": "Router"
+                            },
+                            {
+                                "NodeSize": 0,
+                                "NodeType": "Common"
+                            },
+                            {
+                                "NodeSize": 1,
+                                "NodeType": "Master"
                             }
-                        ]
+                        ],
+                        "SubnetInfoList": [
+                            {
+                                "SubnetId": "subnet-ax8z9f1u",
+                                "SubnetName": "vigo-subnet"
+                            }
+                        ],
+                        "Zone": "ap-guangzhou-3",
+                        "ZoneId": 100003
                     }
                 ],
-                "IsMultiZoneCluster": true,
-                "IsCvmReplace": true
+                "TradeVersion": 1,
+                "Uin": "0000000",
+                "UniqSubnetId": "subnet-ax8z9f1u",
+                "UniqVpcId": "vpc-r2g15ki3",
+                "VpcId": 10421586,
+                "VpcName": "vigo-vpc",
+                "Zone": "ap-guangzhou-3",
+                "ZoneId": 100003
             }
         ],
-        "TagKeys": [
-            "abc"
-        ],
-        "RequestId": "abc"
+        "RequestId": "7fd5fb20-1b1f-4425-ad13-1763f0f7f8dc",
+        "TagKeys": [],
+        "TotalCnt": 1
     }
 }
 ```

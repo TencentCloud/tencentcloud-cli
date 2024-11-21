@@ -16,7 +16,7 @@ Output:
 {
     "Response": {
         "RequestId": "36713f94-d07d-4b96-babf-42d139276f23",
-        "ErrorMsg": "xxx"
+        "ErrorMsg": "ack error"
     }
 }
 ```

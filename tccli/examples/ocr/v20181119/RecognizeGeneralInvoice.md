@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ocr RecognizeGeneralInvoice --cli-unfold-argument  \
-    --ImageUrl abc \
+    --ImageUrl https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/invoice/MixedInvoiceDetect/MixedInvoiceDetect1.jpg \
     --EnableMultiplePage True
 ```
 
@@ -21,29 +21,30 @@ Output:
                 "SubType": "VatSpecialInvoice",
                 "TypeDescription": "增值税发票",
                 "SubTypeDescription": "增值税专用发票",
-                "ItemPolygon": [],
                 "Polygon": {
                     "LeftBottom": {
-                        "X": 15,
-                        "Y": 884
+                        "X": 19,
+                        "Y": 888
                     },
                     "LeftTop": {
-                        "X": 15,
+                        "X": 19,
                         "Y": 31
                     },
                     "RightBottom": {
-                        "X": 1354,
-                        "Y": 884
+                        "X": 1347,
+                        "Y": 888
                     },
                     "RightTop": {
-                        "X": 1354,
+                        "X": 1345,
                         "Y": 31
                     }
                 },
-                "Angle": 270,
+                "Angle": 0,
                 "SingleInvoiceInfos": {
                     "AirTransport": null,
                     "BusInvoice": null,
+                    "ElectronicFlightTicketFull": null,
+                    "ElectronicTrainTicketFull": null,
                     "MachinePrintedInvoice": null,
                     "MedicalHospitalizedInvoice": null,
                     "MedicalOutpatientInvoice": null,
@@ -66,8 +67,6 @@ Output:
                     "VatElectronicSpecialInvoiceFull": null,
                     "VatInvoiceRoll": null,
                     "VatSalesList": null,
-                    "ElectronicTrainTicketFull": null,
-                    "ElectronicFlightTicketFull": null,
                     "VatSpecialInvoice": {
                         "AcquisitionMark": 0,
                         "AgentMark": 0,
@@ -81,7 +80,7 @@ Output:
                         "City": "深圳市",
                         "Code": "4403152130",
                         "CodeConfirm": "4403152130",
-                        "CompanySealContent": "深圳市游戏科技有限公司,040400,复票专用章,NDN",
+                        "CompanySealContent": "发票专用章,深圳市游戏科技有限公司,04000,NANDN",
                         "CompanySealMark": 1,
                         "Date": "2016年04月11日",
                         "ElectronicFullMark": 0,
@@ -134,7 +133,8 @@ Output:
                     }
                 },
                 "Page": 1,
-                "CutImage": ""
+                "CutImage": "",
+                "ItemPolygon": []
             },
             {
                 "Code": "OK",
@@ -142,29 +142,30 @@ Output:
                 "SubType": "TollInvoice",
                 "TypeDescription": "过路过桥费发票",
                 "SubTypeDescription": "过路过桥费发票",
-                "ItemPolygon": [],
                 "Polygon": {
                     "LeftBottom": {
-                        "X": 29,
-                        "Y": 1480
+                        "X": 26,
+                        "Y": 1469
                     },
                     "LeftTop": {
-                        "X": 29,
-                        "Y": 900
+                        "X": 26,
+                        "Y": 897
                     },
                     "RightBottom": {
-                        "X": 487,
-                        "Y": 1480
+                        "X": 495,
+                        "Y": 1469
                     },
                     "RightTop": {
-                        "X": 487,
-                        "Y": 900
+                        "X": 497,
+                        "Y": 897
                     }
                 },
-                "Angle": 0.0409967303276062,
+                "Angle": 0,
                 "SingleInvoiceInfos": {
                     "AirTransport": null,
                     "BusInvoice": null,
+                    "ElectronicFlightTicketFull": null,
+                    "ElectronicTrainTicketFull": null,
                     "MachinePrintedInvoice": null,
                     "MedicalHospitalizedInvoice": null,
                     "MedicalOutpatientInvoice": null,
@@ -199,12 +200,11 @@ Output:
                     "VatElectronicSpecialInvoiceFull": null,
                     "VatInvoiceRoll": null,
                     "VatSalesList": null,
-                    "VatSpecialInvoice": null,
-                    "ElectronicFlightTicketFull": null,
-                    "ElectronicTrainTicketFull": null
+                    "VatSpecialInvoice": null
                 },
                 "Page": 1,
-                "CutImage": ""
+                "CutImage": "",
+                "ItemPolygon": []
             },
             {
                 "Code": "OK",
@@ -212,29 +212,30 @@ Output:
                 "SubType": "TrainTicket",
                 "TypeDescription": "火车票",
                 "SubTypeDescription": "火车票",
-                "ItemPolygon": [],
                 "Polygon": {
                     "LeftBottom": {
                         "X": 517,
-                        "Y": 1226
+                        "Y": 1232
                     },
                     "LeftTop": {
                         "X": 517,
                         "Y": 950
                     },
                     "RightBottom": {
-                        "X": 966,
-                        "Y": 1226
+                        "X": 971,
+                        "Y": 1232
                     },
                     "RightTop": {
-                        "X": 966,
+                        "X": 971,
                         "Y": 950
                     }
                 },
-                "Angle": 0.24512287974357605,
+                "Angle": 0,
                 "SingleInvoiceInfos": {
                     "AirTransport": null,
                     "BusInvoice": null,
+                    "ElectronicFlightTicketFull": null,
+                    "ElectronicTrainTicketFull": null,
                     "MachinePrintedInvoice": null,
                     "MedicalHospitalizedInvoice": null,
                     "MedicalOutpatientInvoice": null,
@@ -249,15 +250,16 @@ Output:
                     "TrainTicket": {
                         "AdditionalFare": "",
                         "DateGetOn": "2018年03月06日",
-                        "GateNumber": "",
+                        "GateNumber": "候车室6",
                         "HandlingFee": "",
                         "Kind": "交通",
                         "Name": "周周",
                         "Number": "Z96X089517",
                         "OriginalFare": "",
-                        "PickUpAddress": "上海自",
+                        "PickUpAddress": "上海",
                         "QRCodeMark": 0,
                         "ReceiptNumber": "",
+                        "RefundMark": 0,
                         "ReimburseOnlyMark": 0,
                         "Seat": "新空调硬座",
                         "SeatNumber": "02车016号",
@@ -265,10 +267,10 @@ Output:
                         "StationGetOff": "南京",
                         "StationGetOn": "上海",
                         "TicketChange": "0",
+                        "TicketChangeMark": 0,
                         "TimeGetOn": "18:51",
                         "Title": "",
                         "Total": "46.50",
-                        "RefundMark": 0,
                         "TotalCn": "",
                         "TrainNumber": "Z196",
                         "UserID": "3210231991****6666"
@@ -283,15 +285,14 @@ Output:
                     "VatElectronicSpecialInvoiceFull": null,
                     "VatInvoiceRoll": null,
                     "VatSalesList": null,
-                    "VatSpecialInvoice": null,
-                    "ElectronicTrainTicketFull": null,
-                    "ElectronicFlightTicketFull": null
+                    "VatSpecialInvoice": null
                 },
                 "Page": 1,
-                "CutImage": ""
+                "CutImage": "",
+                "ItemPolygon": []
             }
         ],
-        "RequestId": "b845b64b-38db-4862-8f2c-8d8b21be6e0b",
+        "RequestId": "c129cda9-e306-472e-817b-4e133ac5c706",
         "TotalPDFCount": 1
     }
 }

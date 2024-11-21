@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ocr LicensePlateOCR --cli-unfold-argument  \
-    --ImageUrl https://xx/a.jpg
+    --ImageUrl https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/vehicle/LicensePlateOCR/LicensePlateOCR1.jpg
 ```
 
 Output: 

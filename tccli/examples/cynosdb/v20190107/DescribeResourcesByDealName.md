@@ -19,14 +19,14 @@ Output:
                 "InstanceIds": [
                     "cynosdbmysql-ins-pecl0drs"
                 ],
-                "DealName": "xxx"
+                "DealName": "201302542054"
             },
             {
                 "ClusterId": "cynosdbmysql-hjosrxhu",
                 "InstanceIds": [
                     "cynosdbmysql-ins-7f59pahg"
                 ],
-                "DealName": "xxx"
+                "DealName": "201302542054"
             }
         ],
         "RequestId": "005b862f-f408-4a95-a7e7-26f3e672e081"

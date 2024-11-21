@@ -30,7 +30,7 @@ Output:
                 "MachineName": "test-name",
                 "OsInfo": "CentOs Bit64",
                 "Id": "1024",
-                "Md5": "abcabcabcabcabcabc",
+                "Md5": "fc702c8398071ea3697d449c2b894dae",
                 "Quuid": "24c9be55-c743-4a75-a5c7-2a2912341234",
                 "Uuid": "24c9be55-c743-4a75-a5c7-2a2912341234",
                 "UpdateTime": "2024-10-11 12:23:34",

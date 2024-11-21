@@ -24,6 +24,7 @@ Output:
             "AssociationSet": [],
             "RouteSet": [],
             "Main": false,
+            "CreatedTime": "2020-10-16 10:00:00",
             "LocalCidrForCcn": [
                 {
                     "Cidr": "10.1.0.0/24",

@@ -6,31 +6,33 @@ Input:
 
 ```
 tccli dasb SearchAuditLog --cli-unfold-argument  \
-    --StartTime 2020-01-01T01:01:01Z \
-    --EndTime 2020-01-01T01:01:01Z
+    --StartTime 2020-09-22T00:00:00+08:00 \
+    --EndTime 2020-09-29T00:00:00+08:00 \
+    --Offset 1 \
+    --Limit 1
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "TotalCount": 1,
         "AuditLogSet": [
             {
-                "SubAccountUin": "xx",
-                "DeviceName": "xx",
-                "Protocol": "xx",
-                "InstanceId": "xx",
-                "Sid": "xx",
-                "Uin": "xx",
-                "PublicIp": "xx",
-                "Time": "xx",
-                "Operation": 1,
-                "PrivateIp": "xx",
-                "ClientIp": "xx"
+                "Sid": "qwedssdf",
+                "Uin": "15546822843",
+                "Time": "2020-09-27T00:00:00+08:00",
+                "ClientIp": "10.15.35.41",
+                "Operation": 5,
+                "InstanceId": "ins-tearwsasd",
+                "DeviceName": "readaoe",
+                "Protocol": "SSH",
+                "PrivateIp": "172.45.35.62",
+                "PublicIp": "192.46.36.85",
+                "SubAccountUin": "15847269574"
             }
         ],
-        "RequestId": "xx"
+        "TotalCount": 1,
+        "RequestId": "1d3ef406-46bd-4770-8f0b-dbd4ac3d886e"
     }
 }
 ```

@@ -13,14 +13,34 @@ Output:
     "Response": {
         "LogTypeList": [
             {
-                "LogSet": "xx",
-                "LogType": "xx",
-                "State": true,
-                "Region": "xx",
-                "TopicID": "xx"
+                "LogSet": "",
+                "LogSetName": "",
+                "LogType": "container_bash",
+                "Region": "",
+                "State": false,
+                "TopicID": "",
+                "TopicName": ""
+            },
+            {
+                "LogSet": "",
+                "LogSetName": "",
+                "LogType": "container_launch",
+                "Region": "",
+                "State": false,
+                "TopicID": "",
+                "TopicName": ""
+            },
+            {
+                "LogSet": "",
+                "LogSetName": "",
+                "LogType": "k8s_api",
+                "Region": "",
+                "State": false,
+                "TopicID": "",
+                "TopicName": ""
             }
         ],
-        "RequestId": "29b37d86-f63d-43d1-b21a-640e82965198"
+        "RequestId": "1279ad3b-a5aa-46ea-825d-3124cc19112a"
     }
 }
 ```

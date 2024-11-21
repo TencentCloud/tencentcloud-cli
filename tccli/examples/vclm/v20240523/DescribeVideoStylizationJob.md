@@ -1,6 +1,6 @@
-**Example 1: 成功调用**
+**Example 1: 成功调用-任务完成**
 
-成功调用
+成功调用查询任务接口，任务完成。
 
 Input: 
 
@@ -14,10 +14,10 @@ Output:
 {
     "Response": {
         "JobId": "c5daf8f7077d41a69c13aab31a7164f3",
-        "RequestId": "75530f83-a534-47c6-9506-21e1f06d6c5c",
-        "ResultVideoUrl": "",
-        "StatusCode": "JobRunning",
-        "StatusMsg": "处理中"
+        "RequestId": "c048e3cf-79b3-4080-9892-15bb96a680e5",
+        "ResultVideoUrl": "https://vcg-prod-xxx.cos.ap-guangzhou.tencentcos.cn/xxx.mp4",
+        "StatusCode": "JobSuccess",
+        "StatusMsg": "处理完成"
     }
 }
 ```

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tcss DescribeVulIgnoreLocalImageList --cli-unfold-argument  \
-    --PocID "xx" \
+    --PocID "poc-testid" \
     --Limit 10 \
     --Offset 0
 ```
@@ -15,17 +15,17 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 0,
         "List": [
             {
-                "PocID": "xx",
-                "ID": 0,
-                "ImageName": "xx",
-                "ImageSize": 0,
-                "ImageID": "xx"
+                "ID": 10001,
+                "ImageID": "sha256:84a28c",
+                "ImageName": "image:latest",
+                "ImageSize": 511144459,
+                "PocID": "pcmgr-10001"
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "1549f3da-40f5-4f11-8520-b1e71d33913c",
+        "TotalCount": 1
     }
 }
 ```

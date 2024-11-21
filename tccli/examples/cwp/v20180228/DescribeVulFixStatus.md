@@ -20,7 +20,7 @@ Output:
                 "Status": 1,
                 "SnapshotName": "快照名称",
                 "HostName": "机器名称",
-                "FailReason": "",
+                "FailReason": "success",
                 "Quuid": "05f0bcab-726c-4ea4-8109-bcd03d5598f7",
                 "ModifyTime": "2019-12-25 11:57:15",
                 "SnapshotId": "快照ID",
@@ -47,7 +47,7 @@ Output:
                         "Status": 1,
                         "ModifyTime": "2019-12-25 11:57:15",
                         "HostName": "机器名称",
-                        "FailReason": "",
+                        "FailReason": "修复成功",
                         "Quuid": "05f0bcab-726c-4ea4-8109-bcd03d5598f7",
                         "HostIp": "1.1.1.1"
                     }

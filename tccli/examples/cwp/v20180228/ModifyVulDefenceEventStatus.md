@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cwp ModifyVulDefenceEventStatus --cli-unfold-argument  \
-    --Ids 1 \
+    --Ids 13654 \
     --Status 3
 ```
 
@@ -14,7 +14,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "xx"
+        "RequestId": "935e27b1-d675-4509-80bf-96fbf0764237"
     }
 }
 ```

@@ -1,6 +1,6 @@
-**Example 1: 人脸检测与分析接口**
+**Example 1: 人脸检测与分析接口成功**
 
-人脸检测与分析接口
+检测给定图片中的人脸的位置、相应的面部属性和人脸质量信息。
 
 Input: 
 
@@ -64,9 +64,9 @@ Output:
 }
 ```
 
-**Example 2: 人脸检测与分析接口-2**
+**Example 2: 人脸检测与分析接口成功示例**
 
-人脸检测与分析接口-2
+检测给定图片中的人脸的位置、相应的面部属性和人脸质量信息。
 
 Input: 
 
@@ -126,6 +126,34 @@ Output:
         ],
         "FaceModelVersion": "3.0",
         "RequestId": "bcde47b5-e6d8-446e-a538-bcecffbe306a"
+    }
+}
+```
+
+**Example 3: 人脸检测与分析接口失败示例**
+
+传入无人脸图片，检测人脸的位置、相应的面部属性和人脸质量信息。
+
+Input: 
+
+```
+tccli iai DetectFace --cli-unfold-argument  \
+    --MaxFaceNum 1 \
+    --MinFaceSize 40 \
+    --Url http://test.image.myqcloud.com/testA.jpg \
+    --NeedFaceAttributes 1 \
+    --NeedQualityDetection 1
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "54eedbca-8704-4388-9b1c-4bdf1a4308a4",
+        "Error": {
+            "Code": "InvalidParameterValue.NoFaceInPhoto",
+            "Message": "图片中没有人脸。"
+        }
     }
 }
 ```

@@ -6,7 +6,8 @@ Input:
 
 ```
 tccli csip ModifyOrganizationAccountStatus --cli-unfold-argument  \
-    --Status 0
+    --MemberId mem-5b28e2010c18f07a \
+    --Status 1
 ```
 
 Output: 
@@ -14,7 +15,7 @@ Output:
 {
     "Response": {
         "Status": 0,
-        "RequestId": "abc"
+        "RequestId": "f9184c15-9721-456d-8ca0-4263967b5ead"
     }
 }
 ```

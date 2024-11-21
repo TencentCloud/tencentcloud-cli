@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli bda SegmentPortraitPic --cli-unfold-argument  \
-    --Url IamNotAUrl
+    --Url htttttps://liudehua-9527.cos.ap-guangzhou.myqcloud.com/input.jpeg
 ```
 
 Output: 
@@ -30,7 +30,8 @@ Input:
 
 ```
 tccli bda SegmentPortraitPic --cli-unfold-argument  \
-    --Url test.jpg
+    --Url https://liudehua-9527.cos.ap-guangzhou.myqcloud.com/input.jpeg \
+    --RspImgType base64
 ```
 
 Output: 

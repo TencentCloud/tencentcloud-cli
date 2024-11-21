@@ -1,19 +1,19 @@
-**Example 1: 资产中心资产组删除**
+**Example 1: DeleteResourceGroup-资产中心资产组删除**
 
-
+DeleteResourceGroup-资产中心资产组删除
 
 Input: 
 
 ```
 tccli cfw DeleteResourceGroup --cli-unfold-argument  \
-    --GroupId cfwrg-fb53dc8e6860b732b55f22be44ec9b9f1712804417
+    --GroupId cfwrg-1233413cfeb*************1729753007
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "97865824-6719-eb29-f5d1-a156f7cd307d"
+        "RequestId": "0185cf37-eda2-42c6-8290-c4270aee5c6e"
     }
 }
 ```

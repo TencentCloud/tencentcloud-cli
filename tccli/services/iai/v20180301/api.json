@@ -244,8 +244,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "检测模式。0 为检测所有出现的人脸， 1 为检测面积最大的人脸。 \n默认为 0。 \n最多返回 5 张人脸的五官定位（人脸关键点）具体信息。",
-          "example": "",
+          "document": "检测模式。\n- 取值范围：0 为检测所有出现的人脸， 1 为检测面积最大的人脸。 \n- 默认为 0。 \n- 最多返回 5 张人脸的五官定位（人脸关键点）具体信息。",
+          "example": "1",
           "member": "uint64",
           "name": "Mode",
           "required": false,
@@ -253,8 +253,8 @@
         },
         {
           "disabled": false,
-          "document": "图片 base64 数据，base64 编码后大小不可超过5M。\njpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。  \n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
-          "example": "",
+          "document": "图片 base64 数据。\n- base64 编码后大小不可超过5M。\n- jpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。  \n- 支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
+          "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
           "member": "string",
           "name": "Image",
           "required": false,
@@ -262,8 +262,8 @@
         },
         {
           "disabled": false,
-          "document": "图片的 Url 。对应图片 base64 编码后大小不可超过5M。  \njpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。\nUrl、Image必须提供一个，如果都提供，只使用 Url。  \n图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。  \n非腾讯云存储的Url速度和稳定性可能受一定影响。  \n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
-          "example": "",
+          "document": "图片的 Url 。\n- 对应图片 base64 编码后大小不可超过5M。  \n- jpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。\n- Url、Image必须提供一个，如果都提供，只使用 Url。  \n- 图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。  \n- 非腾讯云存储的Url速度和稳定性可能受一定影响。  \n- 支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
+          "example": "http://test.image.myqcloud.com/testA.jpg",
           "member": "string",
           "name": "Url",
           "required": false,
@@ -272,7 +272,7 @@
         {
           "disabled": false,
           "document": "人脸识别服务所用的算法模型版本。本接口仅支持 “3.0“ 输入。",
-          "example": "",
+          "example": "3.0",
           "member": "string",
           "name": "FaceModelVersion",
           "required": false,
@@ -280,8 +280,8 @@
         },
         {
           "disabled": false,
-          "document": "是否开启图片旋转识别支持。0为不开启，1为开启。默认为0。本参数的作用为，当图片中的人脸被旋转且图片没有exif信息时，如果不开启图片旋转识别支持则无法正确检测、识别图片中的人脸。若您确认图片包含exif信息或者您确认输入图中人脸不会出现被旋转情况，请不要开启本参数。开启后，整体耗时将可能增加数百毫秒。",
-          "example": "",
+          "document": "是否开启图片旋转识别支持。\n- 取值范围：0为不开启，1为开启。\n- 默认为0。\n- 本参数的作用为，当图片中的人脸被旋转且图片没有exif信息时，如果不开启图片旋转识别支持则无法正确检测、识别图片中的人脸。\n- 若您确认图片包含exif信息或者您确认输入图中人脸不会出现被旋转情况，请不要开启本参数。开启后，整体耗时将可能增加数百毫秒。",
+          "example": "0",
           "member": "int64",
           "name": "NeedRotateDetection",
           "required": false,
@@ -296,36 +296,40 @@
         {
           "disabled": false,
           "document": "请求的图片宽度。",
-          "example": "",
+          "example": "98",
           "member": "int64",
           "name": "ImageWidth",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "请求的图片高度。",
-          "example": "",
+          "example": "189",
           "member": "int64",
           "name": "ImageHeight",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "稠密人脸关键点具体信息。",
-          "example": "",
+          "example": "无",
           "member": "DenseFaceShape",
           "name": "DenseFaceShapeSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "人脸识别服务所用的算法模型版本。本接口仅支持 “3.0“ 输入。",
-          "example": "",
+          "example": "3.0",
           "member": "string",
           "name": "FaceModelVersion",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3489,21 +3493,21 @@
       "members": [
         {
           "disabled": false,
-          "document": "x坐标",
-          "example": "",
+          "document": "x坐标。",
+          "example": "78",
           "member": "int64",
           "name": "X",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "Y坐标",
-          "example": "",
+          "document": "Y坐标。",
+          "example": "38",
           "member": "int64",
           "name": "Y",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }

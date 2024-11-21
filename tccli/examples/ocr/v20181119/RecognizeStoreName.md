@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ocr RecognizeStoreName --cli-unfold-argument  \
-    --ImageBase64 
+    --ImageUrl https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/***/fakeurl.jpg
 ```
 
 Output: 

@@ -15,40 +15,40 @@ Output:
         "ClusterSet": [
             {
                 "MaxQps": 10000,
-                "HealthyInfo": "xx",
+                "HealthyInfo": "ok",
                 "MaxTopicNum": 1000,
                 "MaxStorageCapacity": 100,
                 "MaxMessageDelayInSeconds": 0,
-                "Version": "xx",
+                "Version": "v1",
                 "Status": 1,
                 "Tags": [
                     {
-                        "TagKey": "xx",
-                        "TagValue": "xx"
+                        "TagKey": "tag1",
+                        "TagValue": "value1"
                     }
                 ],
-                "ClusterId": "xx",
+                "ClusterId": "pulsar-xk3ne8k2qkp8",
                 "PayMode": 0,
                 "EndPointNum": 0,
                 "Healthy": 1,
                 "TopicNum": 0,
-                "Remark": "xx",
+                "Remark": "beizhu",
                 "NamespaceNum": 0,
-                "PublicEndPoint": "xx",
+                "PublicEndPoint": "http://mq.public.endpoint",
                 "MaxPublishRateInBytes": 0,
-                "VpcEndPoint": "xx",
+                "VpcEndPoint": "http://mq.tencent.vpc.end.point",
                 "MaxDispatchRateInBytes": 0,
                 "PublicAccessEnabled": true,
-                "ClusterName": "xx",
+                "ClusterName": "mq-cluster",
                 "MaxPublishRateInMessages": 0,
                 "UsedStorageBudget": 0,
                 "MessageRetentionTime": 86400,
                 "MaxNamespaceNum": 10,
-                "CreateTime": "xx",
+                "CreateTime": "2024-10-08 11:38:48,068",
                 "MaxDispatchRateInMessages": 0
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "4446732a-8d0a-4549-9fb3-79949a788fc0"
     }
 }
 ```

@@ -191,6 +191,7 @@
           "member": "string",
           "name": "ParamKey",
           "output_required": true,
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -201,6 +202,7 @@
           "member": "string",
           "name": "ParamValue",
           "output_required": true,
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -211,6 +213,7 @@
           "member": "string",
           "name": "ParamKeyName",
           "output_required": true,
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -221,11 +224,12 @@
           "member": "string",
           "name": "ParamValueName",
           "output_required": true,
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "VerifyLicenseRequest": {
       "document": "VerifyLicense请求参数结构体",

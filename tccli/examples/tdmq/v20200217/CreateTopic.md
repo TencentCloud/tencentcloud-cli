@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli tdmq CreateTopic --cli-unfold-argument  \
-    --EnvironmentId abc \
-    --TopicName abc \
+    --EnvironmentId devNs \
+    --TopicName devTopic \
     --Partitions 1 \
-    --Remark abc \
+    --Remark devTest \
     --TopicType 1 \
-    --ClusterId abc \
+    --ClusterId pulsar-5r59xd4vnx \
     --PulsarTopicType 0 \
     --MsgTTL 1
 ```

@@ -6021,6 +6021,7 @@
           "example": "1234568",
           "member": "uint64",
           "name": "Id",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6030,6 +6031,7 @@
           "example": "autoed_instance_58037_20200728011545.bak.tar",
           "member": "string",
           "name": "FileName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6039,6 +6041,7 @@
           "example": "mssql-6upluvd5_202007311206",
           "member": "string",
           "name": "BackupName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6048,6 +6051,7 @@
           "example": "2020-07-31 14:28:51",
           "member": "datetime",
           "name": "StartTime",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6057,6 +6061,7 @@
           "example": "2020-07-31 15:10:27",
           "member": "datetime",
           "name": "EndTime",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6066,6 +6071,7 @@
           "example": "1356532",
           "member": "uint64",
           "name": "Size",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6075,6 +6081,7 @@
           "example": "0",
           "member": "int64",
           "name": "Strategy",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6084,6 +6091,7 @@
           "example": "1",
           "member": "int64",
           "name": "Status",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6093,6 +6101,7 @@
           "example": "0",
           "member": "int64",
           "name": "BackupWay",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6102,24 +6111,27 @@
           "example": "[\"db1\",\"db2\"]",
           "member": "string",
           "name": "DBs",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "内网下载地址，对于单库备份文件只返回第一条记录的内网下载地址；单库备份文件需要通过DescribeBackupFiles接口获取全部记录的下载地址",
-          "example": "https://cosback-appid.cos.ap-guangzhou.myqcloud.com/appid%2fsqlserver%2fmssql-mgq355n0%2fbackup%2fautoed_instance_58037_20200728011545.bak.tar?sign=q-sign-algorithm%3dsha1%26q-ak%3dAKIDpY8YnsLYAbq352rW0KaAnIeqrgJjE0ra%26q-sign-time%3d1596176966%3b1596177266%26q-key-time%3d1596176966%3b1596177266%26q-header-list%3d%26q-url-param-list%3d%26q-signature%3d3ea8139b631fa13d54b2c03313cbf3850d1e0c2c",
+          "example": "https://cosback-appid.cos.ap-guangzhou.myqcloud.com/appid%2fsqlserver%2fmssql-mgq355n0%2fbackup%2fautoed_instance_58037_20200728011545.bak.tar?sign=q-sign-algorithm%3dsha1%26q-ak%3d*************************%3b1596177266%26q-key-time%3d1596176966%3b1596177266%26q-header-list%3d%26q-url-param-list%3d%26q-signature%3d3ea8139b631fa13d54b2c03313cbf3850d1e0c2c",
           "member": "string",
           "name": "InternalAddr",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "外网下载地址，对于单库备份文件只返回第一条记录的外网下载地址；单库备份文件需要通过DescribeBackupFiles接口获取全部记录的下载地址",
-          "example": "https://cosback-appid.cos.ap-guangzhou.myqcloud.com/appid%2fsqlserver%2fmssql-mgq355n0%2fbackup%2fautoed_instance_58037_20200728011545.bak.tar?sign=q-sign-algorithm%3dsha1%26q-ak%3dAKIDpY8YnsLYAbq352rW0KaAnIeqrgJjE0ra%26q-sign-time%3d1596176966%3b1596177266%26q-key-time%3d1596176966%3b1596177266%26q-header-list%3d%26q-url-param-list%3d%26q-signature%3d3ea8139b631fa13d54b2c03313cbf3850d1e0c2c",
+          "example": "https://cosback-appid.cos.ap-guangzhou.myqcloud.com/appid%2fsqlserver%2fmssql-mgq355n0%2fbackup%2fautoed_instance_58037_20200728011545.bak.tar?sign=q-sign-algorithm%3dsha1%26q-ak%3d*************************%26q-sign-time%3d1596176966%3b1596177266%26q-key-time%3d1596176966%3b1596177266%26q-header-list%3d%26q-url-param-list%3d%26q-signature%3d3ea8139b631fa13d54b2c03313cbf3850d1e0c2c",
           "member": "string",
           "name": "ExternalAddr",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6129,6 +6141,7 @@
           "example": "558800",
           "member": "string",
           "name": "GroupId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11203,7 +11216,7 @@
         {
           "disabled": false,
           "document": "临时密钥ID",
-          "example": "AKID44fDXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "example": "**************************",
           "member": "string",
           "name": "TmpSecretId",
           "output_required": true,
@@ -11213,7 +11226,7 @@
         {
           "disabled": false,
           "document": "临时密钥Key",
-          "example": "2jWOoltcvf21JIsNUaXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "example": "***************************************************************************",
           "member": "string",
           "name": "TmpSecretKey",
           "output_required": true,
@@ -11223,7 +11236,7 @@
         {
           "disabled": true,
           "document": "临时密钥Token",
-          "example": "J6nJk8Q30PaQwyvn4OF4oOezabX61kra1cf794342ff14c39705aa17584f81650YmAxWf4vkrV2ZK2Gcr_-kzjJ7a_fRRCeQtXd547VoWnmbJ2txpX6Kj_SywpVdS4c4sMrIn2aFir1nmTu--k_a9NDyykODaR2O3n-PP_k84qacwjb-XXXXXXXXXXXXXXXXXXXXXXXXX",
+          "example": "**************************",
           "member": "string",
           "name": "XCosSecurityToken",
           "output_required": true,
@@ -11253,7 +11266,7 @@
         {
           "disabled": false,
           "document": "临时密钥Token",
-          "example": "J6nJk8Q30PaQwyvn4OF4oOezabX61kra1cf794342ff14c39705aa17584f81650YmAxWf4vkrV2ZK2Gcr_-kzjJ7a_fRRCeQtXd547VoWnmbJ2txpX6Kj_SywpVdS4c4sMrIn2aFir1nmTu--k_a9NDyykODaR2O3n-PP_k84qacwjb-XXXXXXXXXXXXXXXXXXXXXXXXX",
+          "example": "********************************************************",
           "member": "string",
           "name": "CosSecurityToken",
           "output_required": false,
@@ -11338,7 +11351,7 @@
         {
           "disabled": false,
           "document": "临时密钥ID",
-          "example": "AKIDOxJelHkinofTdXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "example": "*************************",
           "member": "string",
           "name": "TmpSecretId",
           "output_required": true,
@@ -11348,7 +11361,7 @@
         {
           "disabled": false,
           "document": "临时密钥Key",
-          "example": "gzfh3Olpe5HKiviXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "example": "*************************",
           "member": "string",
           "name": "TmpSecretKey",
           "output_required": true,

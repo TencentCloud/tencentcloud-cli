@@ -16,22 +16,22 @@ Output:
         "TotalCount": 1,
         "AgentBillSet": [
             {
-                "OrderId": "xx",
-                "ClientUin": "xx",
-                "ProjectType": "xx",
-                "ClientType": "xx",
-                "PayerMode": "xx",
-                "ActivityId": "xx",
-                "Uin": "xx",
-                "PayMode": "xx",
-                "ClientRemark": "xx",
-                "SettleMonth": "xx",
-                "PayTime": "2020-09-22 00:00:00",
-                "Amt": 0,
-                "GoodsType": "xx"
+                "ActivityId": "0",
+                "Amt": 125,
+                "ClientRemark": "有特批",
+                "ClientType": "old",
+                "ClientUin": "2000002",
+                "GoodsType": "购买云服务",
+                "OrderId": "202401311730494235252",
+                "PayMode": "prepay",
+                "PayTime": "2024-01-31 06:06:46",
+                "PayerMode": "selfpay",
+                "ProjectType": "platform",
+                "SettleMonth": "2024-01",
+                "Uin": "1000001"
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "84a1e38a-95a1-4cc4-ac7d-232a2d872d45"
     }
 }
 ```

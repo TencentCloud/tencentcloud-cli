@@ -7,7 +7,10 @@ Input:
 ```
 tccli cwp DeleteNonlocalLoginPlaces --cli-unfold-argument  \
     --DelType Id \
-    --Ids 123 456
+    --Ids 1 '2
+ 
+
+{"DelType":"Ip", "Ids":"1.1.1.1"}'
 ```
 
 Output: 

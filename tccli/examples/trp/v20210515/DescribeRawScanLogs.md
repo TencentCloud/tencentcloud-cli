@@ -19,19 +19,19 @@ Output:
         "ScanLogs": [
             {
                 "LogId": 101,
-                "Openid": "abc",
-                "CreateTime": "2022-01-18T08:27:11.000Z",
-                "Code": "abc",
-                "CorpId": 100,
-                "MerchantId": "abc",
-                "ProductId": "abc",
-                "BatchId": "abc",
+                "Openid": "g3ST2ZYcreGP9jpqgKHOjuB1e0GrlI0t",
+                "CreateTime": "2024-10-30T07:16:21.265Z",
+                "Code": "https://anxin.qq.com/q99j9ovp5c6sok7l5g",
+                "CorpId": 10000,
+                "MerchantId": "pn30msjjxwga",
+                "ProductId": "97zu51y30awe",
+                "BatchId": "20241022112952826",
                 "Province": "广东省",
                 "City": "深圳市",
                 "District": "福田区"
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "eaa3ccac-d2f5-4df0-a8b3-7b51324e9283"
     }
 }
 ```

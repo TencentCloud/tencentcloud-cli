@@ -30,6 +30,7 @@ Output:
                 "Level": 1,
                 "Status": 0,
                 "RuleId": 1,
+                "RuleRemark": "集成测试",
                 "LastScanAt": "2020-09-16 ：00:00:00",
                 "EventId": 1,
                 "Uuid": "Uuid"

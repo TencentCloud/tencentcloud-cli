@@ -7,8 +7,8 @@ Input:
 ```
 tccli cdb OpenDBInstanceEncryption --cli-unfold-argument  \
     --InstanceId cdb-qwer1234 \
-    --KeyId testkey \
-    --KeyRegion ap-guangzou
+    --KeyId KMS-CDB \
+    --KeyRegion ap-guangzhou
 ```
 
 Output: 

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tcss DescribeAccessControlRuleDetail --cli-unfold-argument  \
-    --RuleId xxx \
+    --RuleId 60484042d620f3f9012c521e \
     --Limit 10 \
     --Offset 0
 ```
@@ -35,7 +35,7 @@ Output:
                     "TargetFilePath": "/tmp/test2.txt"
                 },
                 {
-                    "RuleId": "6033081234b9a9000c0897b0",
+                    "RuleId": "6033081114b9a9000c0897b0",
                     "RuleMode": "RULE_MODE_HOLDUP",
                     "ProcessPath": "/usr/bin/coreutils",
                     "TargetFilePath": "/tmp/test.txt"
@@ -84,7 +84,7 @@ Input:
 
 ```
 tccli tcss DescribeAccessControlRuleDetail --cli-unfold-argument  \
-    --RuleId xxx \
+    --RuleId 60484042d620f3f9012c521e \
     --Limit 10 \
     --Offset 0
 ```
@@ -138,7 +138,7 @@ Input:
 
 ```
 tccli tcss DescribeAccessControlRuleDetail --cli-unfold-argument  \
-    --ImageId xxx \
+    --ImageId "sha256:300e315adb2f96afe5f0b2780b87f28ae95231fe3bdd1e16b9ba606307728f55" \
     --Limit 10 \
     --Offset 0
 ```
@@ -167,7 +167,7 @@ Output:
                     "TargetFilePath": "/tmp/test2.txt"
                 },
                 {
-                    "RuleId": "6033081234b9a9000c0897b0",
+                    "RuleId": "6033081114b9a9000c0897b0",
                     "RuleMode": "RULE_MODE_HOLDUP",
                     "ProcessPath": "/usr/bin/coreutils",
                     "TargetFilePath": "/tmp/test.txt"
@@ -216,7 +216,7 @@ Input:
 
 ```
 tccli tcss DescribeAccessControlRuleDetail --cli-unfold-argument  \
-    --RuleId xxx \
+    --RuleId 60484042d620f3f9012c521e \
     --Limit 10 \
     --Offset 0
 ```

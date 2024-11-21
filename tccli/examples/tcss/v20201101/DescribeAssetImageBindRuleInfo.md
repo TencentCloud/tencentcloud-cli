@@ -17,16 +17,16 @@ Output:
         "ImageBindRuleSet": [
             {
                 "ImageSize": 0,
-                "RuleId": "xx",
-                "ScanTime": "xx",
-                "ImageId": "xx",
-                "ImageName": "xx",
-                "RuleName": "xx",
+                "RuleId": "10001",
+                "ScanTime": "2022-01-1 00:00:00",
+                "ImageId": "image-id",
+                "ImageName": "image-name",
+                "RuleName": "rule_name",
                 "ContainerCnt": 0
             }
         ],
         "TotalCount": 1,
-        "RequestId": "xx"
+        "RequestId": "8bc803fd-d85d-47b8-9e2b-9644674be677"
     }
 }
 ```

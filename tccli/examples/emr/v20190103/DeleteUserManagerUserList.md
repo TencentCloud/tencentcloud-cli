@@ -7,7 +7,7 @@ Input:
 ```
 tccli emr DeleteUserManagerUserList --cli-unfold-argument  \
     --InstanceId emr-test \
-    --UserNameList test
+    --UserNameList userTest
 ```
 
 Output: 

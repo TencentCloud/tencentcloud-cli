@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ft MorphFace --cli-unfold-argument  \
-    --Urls http://test.image.myqcloud.com/testA.jpg http://test.image.myqcloud.com/testA.jpg \
+    --Urls https://liudehua-9527.cos.ap-guangzhou.myqcloud.com/input1.jpeg https://liudehua-9527.cos.ap-guangzhou.myqcloud.com/input2.jpeg \
     --GradientInfos.0.Tempo 2 \
     --GradientInfos.0.MorphTime 1 \
     --Fps 10 \

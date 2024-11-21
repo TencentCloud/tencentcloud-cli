@@ -16,7 +16,7 @@ Output:
         "JobStatusCode": 7,
         "JobStatus": "处理完成",
         "FaceMorphOutput": {
-            "MorphUrl": "http://bda-video-bodyseg-1254418846.cos.ap-guangzhou.myqcloud.com/video_morph_test/1/251009261/20200825102457_19635278-0738-4d87-a264-159832228363_result.mp4",
+            "MorphUrl": "https://liudehua-9527.cos.ap-guangzhou.myqcloud.com/result.jpeg?q-sign-algorithm=sha1&q-ak=AKID********EXAMPLE&q-sign-time=8888;9999&q-key-time=8888;9999&q-header-list=&q-url-param-list=&q-signature=7de87f7bf9cfd23df9da32f46661e7cf97a5603c",
             "MorphMd5": "31CDA040BA0F1CE7C59DB3F0B3334AA8",
             "CoverImage": ""
         },

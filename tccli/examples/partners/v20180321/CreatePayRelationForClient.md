@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli partners CreatePayRelationForClient --cli-unfold-argument  \
-    --ClientUin 123
+    --ClientUin 100000032030
 ```
 
 Output: 

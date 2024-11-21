@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cwp DescribeAssetJarInfo --cli-unfold-argument  \
-    --Quuid 24c9be55-c743-4a75-a5c7-2a2912341234 \
-    --Uuid 24c9be55-c743-4a75-a5c7-2a2912341234 \
+    --Quuid acdd5474-6360-4fd4-bfc7-843162cb8116 \
+    --Uuid acdd5474-6360-4fd4-bfc7-843162cb8116 \
     --Id 1024
 ```
 
@@ -35,7 +35,7 @@ Output:
             "Path": "/root",
             "Type": 1,
             "MachineIp": "10.0.0.11",
-            "Md5": "abc"
+            "Md5": "708cae4cf814c3deda4208da228fad4e"
         },
         "RequestId": "37b6df34-68f1-4ab8-a3d8-7b89de604c82"
     }

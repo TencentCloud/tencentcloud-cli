@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli waf DescribeHostLimit --cli-unfold-argument  \
-    --Domain test.com \
-    --InstanceID aabbcc \
+    --Domain randy.qcloudwaf.com \
+    --InstanceID waf_2kxtpov60i9y7i05 \
     --AlbType clb
 ```
 

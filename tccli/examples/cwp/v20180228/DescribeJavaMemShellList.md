@@ -14,21 +14,35 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "d92d723e-4aac-4f4a-bbf9-e5430e29d289",
-        "TotalCount": 1,
         "List": [
             {
-                "Id": 12,
-                "Quuid": "d92d723e-4aac-4f4a-bbf9-e5430e29d289",
-                "Alias": "v_llzlu-PC0",
-                "HostIp": "192.168.255.10",
-                "Type": 1,
-                "Description": "Java (2845)中加载的net...",
-                "CreateTime": "2021-01-20 16:17:11",
-                "RecentFoundTime": "2021-01-20 16:17:11",
-                "Status": 0
+                "Id": 184113,
+                "Quuid": "d4cc302e-09e5-436f-b99b-5ab9c9070323",
+                "Uuid": "d4cc302e-09e5-436f-b99b-5ab9c9070323",
+                "Alias": "machine",
+                "HostIp": "1.1.1.1",
+                "Type": 0,
+                "Description": "检测到java进程921852/org.apache.catalina.startup.Bootstrap start中加载的webshell_filter类中存在木马",
+                "CreateTime": "2024-09-20 15:32:08",
+                "RecentFoundTime": "2024-09-20 15:32:08",
+                "Status": 1,
+                "MachineExtraInfo": {
+                    "WanIP": "1.1.1.1",
+                    "PrivateIP": "1.1.1.1",
+                    "NetworkType": 0,
+                    "NetworkName": "vpc-id",
+                    "InstanceID": "ins-id",
+                    "HostName": "hn"
+                },
+                "ClassName": "webshell_filter",
+                "SuperClassName": "java.my.******",
+                "Interfaces": "javax\\.servlet\\.Filter",
+                "Annotations": "anno",
+                "LoaderClassName": "org\\.apache\\.jsp\\.bebinder_005fshell_jsp\\$U"
             }
-        ]
+        ],
+        "RequestId": "bf4896f8-84ba-405d-bbc9-b4d951f52161",
+        "TotalCount": 1
     }
 }
 ```

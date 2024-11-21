@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli lke ListReleaseDocPreview --cli-unfold-argument  \
-    --BotBizId abc \
-    --Query abc \
+    --BotBizId 1798610639288008723 \
+    --Query  \
     --ReleaseBizId 1 \
     --PageNumber 1 \
     --PageSize 1 \
@@ -20,18 +20,18 @@ Output:
 ```
 {
     "Response": {
-        "Total": "abc",
+        "Total": "1",
         "List": [
             {
-                "FileName": "abc",
-                "FileType": "abc",
-                "UpdateTime": "abc",
+                "FileName": "test.txt",
+                "FileType": "test.txt",
+                "UpdateTime": "1701766219",
                 "Action": 1,
-                "ActionDesc": "abc",
-                "Message": "abc"
+                "ActionDesc": "新增",
+                "Message": ""
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "2314bdbe-da7e-401e-95c4-3e861d5298ee"
     }
 }
 ```

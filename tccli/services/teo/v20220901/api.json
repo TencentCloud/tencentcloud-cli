@@ -1056,7 +1056,7 @@
         },
         {
           "disabled": false,
-          "document": "服务端证书列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "服务端证书列表，相关证书部署在 EO 的入口侧。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CertificateInfo",
           "name": "List",
@@ -1067,10 +1067,21 @@
         },
         {
           "disabled": false,
-          "document": "边缘双向认证配置。",
+          "document": "在边缘双向认证场景下，该字段为客户端的 CA 证书，部署在 EO 节点内，用于 EO 节点认证客户端证书。",
           "example": "无",
           "member": "MutualTLS",
           "name": "ClientCertInfo",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用于 EO 节点回源时携带的证书，源站启用双向认证握手时使用，用于源站认证客户端证书是否有效，确保请求来源于受信任的 EO 节点。",
+          "example": "无",
+          "member": "UpstreamCertInfo",
+          "name": "UpstreamCertInfo",
           "output_required": false,
           "required": false,
           "type": "object",
@@ -7950,7 +7961,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件，Filters.Values的上限为20。不填写时返回当前四层实例下所有的规则信息，详细的过滤条件如下： \n <li>rule-tag：按照规则标签对四层代理实例下的规则进行过滤。</li>\n",
+          "document": "过滤条件，Filters.Values的上限为20。不填写时返回当前四层实例下所有的规则信息，详细的过滤条件如下：  <li>rule-id：按照规则 ID 对四层代理实例下的规则进行过滤。规则 ID 形如：rule-31vv7qig0vjy；</li> <li>rule-tag：按照规则标签对四层代理实例下的规则进行过滤。</li>",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -13289,7 +13300,7 @@
         {
           "disabled": false,
           "document": "站点 ID。",
-          "example": "zone-xxxx",
+          "example": "zone-343vqcswn9zj",
           "member": "string",
           "name": "ZoneId",
           "required": true,
@@ -13298,7 +13309,7 @@
         {
           "disabled": false,
           "document": "需要修改证书配置的加速域名。",
-          "example": "xxx.test.com",
+          "example": "www.test.com",
           "member": "string",
           "name": "Hosts",
           "required": true,
@@ -13316,7 +13327,7 @@
         {
           "disabled": false,
           "document": "SSL 证书配置，本参数仅在 mode 为 sslcert 时生效，传入对应证书的 CertId 即可。您可以前往 [SSL 证书列表](https://console.cloud.tencent.com/ssl) 查看 CertId。",
-          "example": "teo-xxxxx",
+          "example": "J2Jsa2uM",
           "member": "ServerCertInfo",
           "name": "ServerCertInfo",
           "required": false,
@@ -13333,7 +13344,7 @@
         },
         {
           "disabled": false,
-          "document": "在边缘双向认证场景下，该字段为客户端的 CA 证书，部署在 EO 的入口侧，用于客户端对 EO 节点进行认证。不填写表示保持原有配置。",
+          "document": "在边缘双向认证场景下，该字段为客户端的 CA 证书，部署在 EO 节点内，用于客户端对 EO 节点进行认证。默认关闭，不填写表示保持原有配置。",
           "example": "无",
           "member": "MutualTLS",
           "name": "ClientCertInfo",
@@ -15138,7 +15149,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "CNAME 接入，使用 DNS 解析验证时所需的信息。详情参考 [站点/域名归属权验证\n](https://cloud.tencent.com/document/product/1552/70789#7af6ecf8-afca-4e35-8811-b5797ed1bde5)。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "CNAME 、无域名接入时，使用 DNS 解析验证时所需的信息。详情参考 [站点/域名归属权验证\n](https://cloud.tencent.com/document/product/1552/70789#7af6ecf8-afca-4e35-8811-b5797ed1bde5)。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DnsVerification",
           "name": "DnsVerification",
@@ -15148,7 +15159,7 @@
         },
         {
           "disabled": false,
-          "document": "CNAME 接入，使用文件验证时所需的信息。详情参考 [站点/域名归属权验证\n](https://cloud.tencent.com/document/product/1552/70789#7af6ecf8-afca-4e35-8811-b5797ed1bde5)。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "CNAME 、无域名接入时，使用文件验证时所需的信息。详情参考 [站点/域名归属权验证\n](https://cloud.tencent.com/document/product/1552/70789#7af6ecf8-afca-4e35-8811-b5797ed1bde5)。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "FileVerification",
           "name": "FileVerification",
@@ -17996,6 +18007,23 @@
         }
       ],
       "type": "object"
+    },
+    "UpstreamCertInfo": {
+      "document": "用于 EO 节点回源时携带的证书，源站启用双向认证握手时使用，用于源站认证客户端证书是否有效，确保请求来源于受信任的 EO 节点。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "在回源双向认证场景下，该字段为 EO 节点回源时携带的证书（包含公钥、私钥即可），部署在 EO 节点，用于源站对 EO 节点进行认证。在作为入参使用时，不填写表示保持原有配置。",
+          "example": "无",
+          "member": "MutualTLS",
+          "name": "UpstreamMutualTLS",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "UpstreamHttp2": {
       "document": "Http2回源配置",

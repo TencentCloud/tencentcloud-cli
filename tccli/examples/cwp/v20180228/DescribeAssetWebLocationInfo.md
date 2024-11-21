@@ -23,7 +23,7 @@ Output:
             "SafeStatus": 1,
             "User": "root",
             "MainPath": "/root",
-            "Command": "",
+            "Command": "sh ******",
             "Ip": "10.0.0.11",
             "UpdateTime": "2024-10-11 12:23:34"
         },

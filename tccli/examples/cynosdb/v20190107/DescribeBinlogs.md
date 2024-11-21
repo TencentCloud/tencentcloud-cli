@@ -1,4 +1,4 @@
-**Example 1: 查询集群Binlog日志列表**
+**Example 1: 查询集群 Binlog 日志列表**
 
 
 
@@ -6,28 +6,28 @@ Input:
 
 ```
 tccli cynosdb DescribeBinlogs --cli-unfold-argument  \
-    --ClusterId cynosdbmysql-xxxxxxxx \
-    --StartTime 2022-01-01 00:00:00 \
-    --EndTime 2022-01-01 23:59:59 \
-    --Limit 100 \
-    --Offset 100
+    --ClusterId cynosdbmysql-mwg7122d \
+    --StartTime 2024-10-18 11:03:02 \
+    --EndTime 2024-10-25 17:24:50 \
+    --Limit 2 \
+    --Offset 0
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "TotalCount": 1,
-        "RequestId": "xx",
         "Binlogs": [
             {
-                "BinlogId": 10782259,
-                "FileName": "00000002_0010782259_mysql-bin.001002",
-                "FileSize": 479,
-                "FinishTime": "2022-06-16 18:36:14",
-                "StartTime": "2022-06-15 17:19:19"
+                "BinlogId": 3364561,
+                "FileName": "1_mysql-bin.00**02",
+                "FileSize": 815,
+                "FinishTime": "2024-10-25 17:24:50",
+                "StartTime": "2024-10-18 11:03:02"
             }
-        ]
+        ],
+        "RequestId": "9052ff42-8a95-4095-8457-9346eb09dc1a",
+        "TotalCount": 1
     }
 }
 ```

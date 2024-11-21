@@ -13,16 +13,16 @@ Output:
 ```
 {
     "Response": {
-        "PolicyName": "xx",
-        "PolicySourceType": "xx",
-        "NetworkPolicyPlugin": "xx",
-        "PublishResult": "xx",
-        "ClusterId": "xx",
-        "Yaml": "xx",
-        "PublishStatus": "xx",
-        "RequestId": "xx",
-        "PolicyCreateTime": "xx",
-        "Description": "xx"
+        "PolicyName": "test",
+        "PolicySourceType": "System",
+        "NetworkPolicyPlugin": "KubeRouter",
+        "PublishResult": "",
+        "ClusterId": "cls-jvrv0kf2",
+        "Yaml": "YXNkZmFzZGZhZHNmYXNkZmFzZGY=",
+        "PublishStatus": "PublishedNoConfirm",
+        "RequestId": "965c55c5-8ab1-4e32-8425-4c44acb5edec",
+        "PolicyCreateTime": "2024-10-30 14:35:57",
+        "Description": ""
     }
 }
 ```

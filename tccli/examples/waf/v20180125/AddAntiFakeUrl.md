@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli waf AddAntiFakeUrl --cli-unfold-argument  \
-    --Domain www.test1.com \
-    --Name test \
-    --Uri http://www.test1.com/a1.html
+    --Domain www.test.com \
+    --Name rulename \
+    --Uri http://www.test.com/a1.html
 ```
 
 Output: 
@@ -30,7 +30,7 @@ Input:
 ```
 tccli waf AddAntiFakeUrl --cli-unfold-argument  \
     --Domain www.test.com \
-    --Name test \
+    --Name rulename \
     --Uri http://zanyang.qcloudwaf.com/index.html
 ```
 

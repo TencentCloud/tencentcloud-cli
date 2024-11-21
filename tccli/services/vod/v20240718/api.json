@@ -20,7 +20,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<b>点播[应用](/document/product/266/14574) ID。</b>",
+          "document": "<b>点播专业版[应用](/document/product/266/14574) ID。</b>",
           "example": "123456789012",
           "member": "uint64",
           "name": "SubAppId",
@@ -29,8 +29,8 @@
         },
         {
           "disabled": false,
-          "document": "按照下方语法组装好策略后，先序列化为字符串，再做 urlencode，结果作为 Policy 字段入参。服务端会对该字段做 urldecode，并按解析后的策略授予临时访问凭证权限，请按规范传入参数。\n注意： \n1.策略语法参照[访问管理策略](/document/product/598/10603)。\n2.策略中不能包含 principal 元素。\n3.策略的 action 元素仅支持：<li>name/vod:PutObject;</li><li>name/vod:ListParts;</li><li>name/vod:PostObject;</li><li>name/vod:InitiateMultipartUpload;</li><li>name/vod:UploadPart;</li><li>name/vod:CompleteMultipartUpload;</li><li>name/vod:AbortMultipartUpload;</li><li>name/vod:ListMultipartUploads;</li>4.策略的 resource 元素填写格式为：qcs::vod::uid/[账号AppID]:prefix//[子应用ID]/[存储桶ID]/[存储路径]，其中账号AppID、子应用ID、存储桶ID和存储路径要按需填写，其他内容不允许改动，例：qcs::vod::uid/1:prefix//1/1/path。\n",
-          "example": "%7B%22statement%22%3A%5B%7B%22action%22%3A%5B%22name%2Fvod%3APutObject%22%2C%22name%2Fvod%3AListParts%22%2C%22name%2Fvod%3APostObject%22%2C%22name%2Fvod%3AInitiateMultipartUpload%22%2C%22name%2Fvod%3AUploadPart%22%2C%22name%2Fvod%3ACompleteMultipartUpload%22%2C%22name%2Fvod%3AAbortMultipartUpload%22%2C%22name%2Fvod%3AListMultipartUploads%22%5D%2C%22effect%22%3A%22allow%22%2C%22resource%22%3A%5B%22qcs%3A%3Avod%3A%3Auid%2F1%3Aprefix%2F%2F1%2F1%2Fpath%22%5D%7D%5D%2C%22version%22%3A%222.0%22%7D",
+          "document": "按照下方语法组装好策略后，先序列化为字符串，再做 URL Encode，结果作为 Policy 字段入参。服务端会对该字段做 URL Decode，并按解析后的策略授予临时访问凭证权限，请按规范传入参数。\n注意： \n1.策略语法参照[访问管理策略](/document/product/598/10603)。\n2.策略中不能包含 principal 元素。\n3.策略的 action 元素仅支持：<li>name/vod:PutObject;</li><li>name/vod:ListParts;</li><li>name/vod:PostObject;</li><li>name/vod:InitiateMultipartUpload;</li><li>name/vod:UploadPart;</li><li>name/vod:CompleteMultipartUpload;</li><li>name/vod:AbortMultipartUpload;</li><li>name/vod:ListMultipartUploads;</li>4.策略的 resource 元素填写格式为：`qcs::vod:[存储地域]:uid/[账号AppID]:prefix//[点播应用ID]/[存储桶ID]/[存储路径]`，其中存储地域、账号 AppID、点播应用 ID、存储桶 ID 和存储路径要按需填写，其他内容不允许改动，例：`qcs:ap-chongqing:vod::uid/1231456789:prefix//1234567890/2ceds3ew323w3mu/file_path`。\n",
+          "example": "%7B%22statement%22%3A%5B%7B%22action%22%3A%5B%22name%2Fvod%3APutObject%22%2C%22name%2Fvod%3AListParts%22%2C%22name%2Fvod%3APostObject%22%2C%22name%2Fvod%3AInitiateMultipartUpload%22%2C%22name%2Fvod%3AUploadPart%22%2C%22name%2Fvod%3ACompleteMultipartUpload%22%2C%22name%2Fvod%3AAbortMultipartUpload%22%2C%22name%2Fvod%3AListMultipartUploads%22%5D%2C%22effect%22%3A%22allow%22%2C%22resource%22%3A%5B%22qcs%3Aap-chongqing%3Avod%3A%3Auid%2F1231456789%3Aprefix%2F%2F1234567890%2F2ceds3ew323w3mu%2Ffile_path%22%5D%7D%5D%2C%22version%22%3A%222.0%22%7D",
           "member": "string",
           "name": "Policy",
           "required": true,
@@ -71,12 +71,12 @@
       "type": "object"
     },
     "Credentials": {
-      "document": "临时证书。",
+      "document": "临时访问凭证。",
       "members": [
         {
           "disabled": false,
-          "document": "秘钥 ID。",
-          "example": "AKID8GFED7s****QrFXkmb",
+          "document": "访问凭证 ID。",
+          "example": "***********************************",
           "member": "string",
           "name": "AccessKeyId",
           "output_required": false,
@@ -85,8 +85,8 @@
         },
         {
           "disabled": false,
-          "document": "秘钥 Key。",
-          "example": "iDVjy****tNzX",
+          "document": "访问凭证 Key。",
+          "example": "***********************************",
           "member": "string",
           "name": "SecretAccessKey",
           "output_required": false,
@@ -95,8 +95,8 @@
         },
         {
           "disabled": false,
-          "document": "token。token长度和绑定的策略有关，最长不超过4096字节。",
-          "example": "DmDnufzndGdwbCgFOnOdknwD8_uqeFwN0LqvDpfgHA6kBp1uMsIVRAil87ENVCnKZwe5GXUlPr7KTgAzTFf_3duZMpscnGh6Iyg7cjo_Hr4tIcMiZaK6NI8DO_fX5gcLqsI8qKeTaw2cVekzXnynAW",
+          "document": "访问凭证 Token，长度和绑定的策略有关，最长不超过 4096 字节。",
+          "example": "***********************************",
           "member": "string",
           "name": "SessionToken",
           "output_required": false,
@@ -105,7 +105,7 @@
         },
         {
           "disabled": false,
-          "document": "凭据的过期时间。",
+          "document": "访问凭证的过期时间。",
           "example": "1800",
           "member": "datetime_iso",
           "name": "Expiration",

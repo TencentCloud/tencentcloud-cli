@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tdmq DescribeMsgTrace --cli-unfold-argument  \
-    --EnvironmentId default \
+    --EnvironmentId devNs \
     --MsgId 16839:8:-1 \
     --ProduceTime 2020-08-1908:06:19
 ```

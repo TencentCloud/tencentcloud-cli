@@ -33,12 +33,12 @@ Output:
                 "HostName": "功能测试ubuntu18漏洞修复v_txmitan",
                 "SeriousCount": 0,
                 "HighCount": 17,
-                "MediumCount": 123,
+                "MediumCount": "0",
                 "LowCount": 43
             },
             {
                 "HostId": "69796250-2a3a-40ef-b418-676e677019a4",
-                "HostName": "piperpeng-test2",
+                "HostName": "piperpeng",
                 "SeriousCount": 0,
                 "HighCount": 25,
                 "MediumCount": 116,

@@ -6,8 +6,9 @@ Input:
 
 ```
 tccli tem DescribeDeployApplicationDetail --cli-unfold-argument  \
-    --EnvironmentId xx \
-    --ApplicationId xx
+    --ApplicationId app-xxxxxx \
+    --EnvironmentId en-xxxxxx \
+    --VersionId version-xxx
 ```
 
 Output: 
@@ -15,146 +16,107 @@ Output:
 {
     "Response": {
         "Result": {
-            "Status": "xx",
-            "NewVersionPackageInfo": "xx",
-            "NextBatchStartTime": 0,
-            "OldDeployVersion": "xx",
-            "BetaBatchDetail": {
-                "NewPods": [
-                    {
-                        "Webshell": "xx",
-                        "PodStatus": [
-                            "xx"
-                        ],
-                        "Zone": "xx",
-                        "PodId": "xx",
-                        "CreateTime": "xx",
-                        "PodVersion": "xx"
-                    }
-                ],
-                "NewPodList": {
-                    "Webshell": "xx",
-                    "PodStatus": [
-                        "xx"
-                    ],
-                    "Zone": "xx",
-                    "PodId": "xx",
-                    "CreateTime": "xx",
-                    "PodVersion": "xx"
-                },
-                "BatchIndex": 0,
-                "OldPodList": {
-                    "Webshell": "xx",
-                    "PodStatus": [
-                        "xx"
-                    ],
-                    "Zone": "xx",
-                    "PodId": "xx",
-                    "CreateTime": "xx",
-                    "PodVersion": "xx"
-                },
-                "NextBatchStartTime": 0,
-                "OldPods": [
-                    {
-                        "Webshell": "xx",
-                        "PodStatus": [
-                            "xx"
-                        ],
-                        "Zone": "xx",
-                        "PodId": "xx",
-                        "CreateTime": "xx",
-                        "PodVersion": "xx"
-                    }
-                ],
-                "BatchStatus": "xx",
-                "PodNum": 0
-            },
-            "ErrorMessage": "xx",
             "DeployStrategyConf": {
                 "TotalBatchCount": 0,
+                "BetaBatchNum": 0,
                 "DeployStrategyType": 0,
                 "BatchInterval": 0,
-                "BetaBatchNum": 0
+                "MinAvailable": 0,
+                "Force": true
             },
-            "NewDeployVersion": "xx",
-            "StartTime": "xx",
-            "OtherBatchDetail": [
-                {
-                    "NewPods": [
-                        {
-                            "Webshell": "xx",
-                            "PodStatus": [
-                                "xx"
-                            ],
-                            "Zone": "xx",
-                            "PodId": "xx",
-                            "CreateTime": "xx",
-                            "PodVersion": "xx"
-                        }
+            "StartTime": "abc",
+            "EndTime": "abc",
+            "Status": "abc",
+            "BetaBatchDetail": {
+                "OldPodList": {
+                    "PodId": "abc",
+                    "PodStatus": [
+                        "abc"
                     ],
-                    "NewPodList": {
-                        "Webshell": "xx",
-                        "PodStatus": [
-                            "xx"
-                        ],
-                        "Zone": "xx",
-                        "PodId": "xx",
-                        "CreateTime": "xx",
-                        "PodVersion": "xx"
-                    },
-                    "BatchIndex": 0,
-                    "OldPodList": {
-                        "Webshell": "xx",
-                        "PodStatus": [
-                            "xx"
-                        ],
-                        "Zone": "xx",
-                        "PodId": "xx",
-                        "CreateTime": "xx",
-                        "PodVersion": "xx"
-                    },
-                    "NextBatchStartTime": 0,
-                    "OldPods": [
-                        {
-                            "Webshell": "xx",
-                            "PodStatus": [
-                                "xx"
-                            ],
-                            "Zone": "xx",
-                            "PodId": "xx",
-                            "CreateTime": "xx",
-                            "PodVersion": "xx"
-                        }
+                    "PodVersion": "abc",
+                    "CreateTime": "abc",
+                    "Zone": "abc",
+                    "Webshell": "abc",
+                    "Status": "abc"
+                },
+                "NewPodList": {
+                    "PodId": "abc",
+                    "PodStatus": [
+                        "abc"
                     ],
-                    "BatchStatus": "xx",
-                    "PodNum": 0
-                }
-            ],
-            "CurrentBatchIndex": 0,
-            "EndTime": "xx",
-            "CurrentBatchStatus": "xx",
-            "OldVersionPodList": {
-                "TotalCount": 0,
-                "Limit": 0,
-                "RequestId": "xx",
-                "PodList": [
+                    "PodVersion": "abc",
+                    "CreateTime": "abc",
+                    "Zone": "abc",
+                    "Webshell": "abc",
+                    "Status": "abc"
+                },
+                "BatchStatus": "abc",
+                "PodNum": 0,
+                "BatchIndex": 0,
+                "OldPods": [
                     {
-                        "Webshell": "xx",
-                        "Status": "xx",
-                        "RestartCount": 0,
-                        "Zone": "xx",
-                        "PodId": "xx",
-                        "DeployVersion": "xx",
-                        "PodIp": "xx",
-                        "ContainerState": "xx",
-                        "Ready": true,
-                        "CreateTime": "xx"
+                        "PodId": "abc",
+                        "PodStatus": [
+                            "abc"
+                        ],
+                        "PodVersion": "abc",
+                        "CreateTime": "abc",
+                        "Zone": "abc",
+                        "Webshell": "abc",
+                        "Status": "abc"
                     }
                 ],
-                "Offset": 0
-            }
+                "NextBatchStartTime": 0
+            },
+            "OtherBatchDetail": [
+                {
+                    "BatchStatus": "abc",
+                    "PodNum": 0,
+                    "BatchIndex": 0,
+                    "NextBatchStartTime": 0
+                }
+            ],
+            "OldVersionPodList": {
+                "Offset": 0,
+                "Limit": 0,
+                "TotalCount": 0,
+                "RequestId": "abc",
+                "PodList": [
+                    {
+                        "Webshell": "abc",
+                        "PodId": "abc",
+                        "Status": "abc",
+                        "CreateTime": "abc",
+                        "PodIp": "abc",
+                        "Zone": "abc",
+                        "DeployVersion": "abc",
+                        "RestartCount": 0,
+                        "Ready": true,
+                        "ContainerState": "abc",
+                        "NodeInfo": {
+                            "Name": "abc",
+                            "Zone": "abc",
+                            "SubnetId": "abc",
+                            "AvailableIpCount": "abc",
+                            "Cidr": "abc"
+                        },
+                        "StartTime": "abc",
+                        "Unhealthy": true,
+                        "UnhealthyWarningMsg": "abc",
+                        "VersionId": "abc",
+                        "ApplicationName": "abc"
+                    }
+                ]
+            },
+            "CurrentBatchIndex": 0,
+            "ErrorMessage": "abc",
+            "CurrentBatchStatus": "abc",
+            "NewDeployVersion": "abc",
+            "OldDeployVersion": "abc",
+            "NewVersionPackageInfo": "abc",
+            "NextBatchStartTime": 0
         },
-        "RequestId": "xx"
+        "RequestId": "abc-xxx-xxx"
     }
 }
 ```

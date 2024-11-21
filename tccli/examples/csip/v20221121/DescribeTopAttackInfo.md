@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli csip DescribeTopAttackInfo --cli-unfold-argument  \
-    --OperatedMemberId abc
+    --MemberId mem-tencent-1f94db8d0x231e0
 ```
 
 Output: 
@@ -16,10 +16,10 @@ Output:
         "TopAttackInfo": [
             {
                 "Name": "漏洞攻击",
-                "Count": 123
+                "Count": 13
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "ab168264-2afb-4c51-bfb5-d8e24e0a03ac"
     }
 }
 ```

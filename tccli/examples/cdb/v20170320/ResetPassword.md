@@ -10,16 +10,16 @@ Input:
 
 ```
 tccli cdb ResetPassword --cli-unfold-argument  \
-    --InstanceId abc \
-    --User abc \
-    --Host abc
+    --InstanceId cdb-c1nl9rpv \
+    --User andy \
+    --Host 172.1.1.1
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "d5b053f3-d58e-4048-aef9-b8cc9f044951"
     }
 }
 ```

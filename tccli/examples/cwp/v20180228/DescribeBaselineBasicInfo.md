@@ -6,20 +6,22 @@ Input:
 
 ```
 tccli cwp DescribeBaselineBasicInfo --cli-unfold-argument  \
-    --BaselineName "等保二级BCXXX"
+    --BaselineName "等保二级BCX"
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "req-566234234",
+        "RequestId": "ea71992a-b484-4d9c-882a-419fb6d0a5b0",
         "BaselineBasicInfoList": [
             {
+                "Name": "等保二级BCX",
                 "BaselineId": 1,
                 "ParentId": 1
             },
             {
+                "Name": "等保三级BCX",
                 "BaselineId": 2,
                 "ParentId": 2
             }

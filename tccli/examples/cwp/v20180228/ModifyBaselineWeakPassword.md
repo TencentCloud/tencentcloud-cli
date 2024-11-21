@@ -7,7 +7,7 @@ Input:
 ```
 tccli cwp ModifyBaselineWeakPassword --cli-unfold-argument  \
     --Data.0.PasswordId 3432 \
-    --Data.0.WeakPassword 1111
+    --Data.0.WeakPassword 1002passwd
 ```
 
 Output: 

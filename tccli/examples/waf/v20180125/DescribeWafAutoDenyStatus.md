@@ -12,14 +12,16 @@ Output:
 {
     "Response": {
         "WafAutoDenyDetails": {
-            "TimeThreshold": 0,
-            "AttackThreshold": 0,
             "AttackTags": [
-                "123"
+                "idc"
             ],
-            "DefenseStatus": 0
+            "AttackThreshold": 1,
+            "DefenseStatus": 1,
+            "TimeThreshold": 1,
+            "DenyTimeThreshold": 1,
+            "LastUpdateTime": "2020-09-22T00:00:00+00:00"
         },
-        "RequestId": "xx"
+        "RequestId": "053d6b22-87cd-4a12-ad89-8460e819ebf5"
     }
 }
 ```

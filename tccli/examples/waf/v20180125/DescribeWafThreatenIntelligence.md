@@ -18,7 +18,7 @@ Output:
                 "global"
             ]
         },
-        "RequestId": "1234"
+        "RequestId": "req-1234"
     }
 }
 ```

@@ -5161,6 +5161,17 @@
           "required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "job VUM用量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "int64",
+          "name": "Usage",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -5929,6 +5940,7 @@
           "example": "1000",
           "member": "int64",
           "name": "MaxRequestsPerSecond",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -5939,6 +5951,7 @@
           "example": "60",
           "member": "int64",
           "name": "DurationSeconds",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -5949,6 +5962,7 @@
           "example": "30",
           "member": "int64",
           "name": "TargetVirtualUsers",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -5959,6 +5973,7 @@
           "example": "6",
           "member": "int64",
           "name": "Resources",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -5969,6 +5984,7 @@
           "example": "500",
           "member": "int64",
           "name": "StartRequestsPerSecond",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -5979,6 +5995,7 @@
           "example": "500",
           "member": "int64",
           "name": "TargetRequestsPerSecond",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -5989,6 +6006,7 @@
           "example": "3",
           "member": "int64",
           "name": "GracefulStopSeconds",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cynosdb DescribeClusterPasswordComplexity --cli-unfold-argument  \
-    --ClusterId abc
+    --ClusterId cynosdbmysql-mwg7212w
 ```
 
 Output: 

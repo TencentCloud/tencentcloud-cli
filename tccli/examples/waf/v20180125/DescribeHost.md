@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli waf DescribeHost --cli-unfold-argument  \
-    --InstanceID  \
-    --Domain  \
-    --DomainId 
+    --InstanceID waf_in3adnjuasrg \
+    --Domain test.qcloudwaf.com \
+    --DomainId dasfiheigo873uhf8e390fds93
 ```
 
 Output: 
@@ -16,9 +16,9 @@ Output:
 {
     "Response": {
         "Host": {
-            "Domain": "abc",
-            "DomainId": "abc",
-            "MainDomain": "abc",
+            "Domain": "txcloudwaf.qcloudwaf.com",
+            "DomainId": "waf-DhOzNw3D",
+            "MainDomain": "qcloudwaf.com",
             "Mode": 1,
             "Status": 1,
             "State": 1,
@@ -26,37 +26,36 @@ Output:
             "IsCdn": 1,
             "LoadBalancerSet": [
                 {
-                    "LoadBalancerId": "abc",
-                    "LoadBalancerName": "abc",
-                    "ListenerId": "abc",
-                    "ListenerName": "abc",
-                    "Vip": "abc",
+                    "LoadBalancerId": "lb-daiu3grtd",
+                    "LoadBalancerName": "txlb",
+                    "ListenerId": "lbl-daskhe2",
+                    "ListenerName": "80httpport",
+                    "Vip": "35.68.12.3",
                     "Vport": 1,
-                    "Region": "abc",
-                    "Protocol": "abc",
-                    "Zone": "abc",
-                    "NumericalVpcId": 0,
-                    "LoadBalancerType": "abc",
-                    "LoadBalancerDomain": "abc"
+                    "Region": "gz",
+                    "Protocol": "http",
+                    "Zone": "ap-guangzhou",
+                    "NumericalVpcId": 3243,
+                    "LoadBalancerType": "open"
                 }
             ],
-            "Region": "abc",
-            "Edition": "abc",
+            "Region": "gz",
+            "Edition": "clb-waf",
             "FlowMode": 1,
             "ClsStatus": 1,
             "Level": 1,
             "CdcClusters": [
-                "abc"
+                "cluster-o41khj88"
             ],
-            "AlbType": "abc",
+            "AlbType": "clb",
             "IpHeaders": [
-                "abc"
+                "x-myreal-ip"
             ],
             "EngineType": 0,
-            "CloudType": "abc",
-            "Note": "abc"
+            "CloudType": "public",
+            "Note": "备注"
         },
-        "RequestId": "abc"
+        "RequestId": "0ed6569e-f9b5-418d-8338-63eda4f2c0f7"
     }
 }
 ```

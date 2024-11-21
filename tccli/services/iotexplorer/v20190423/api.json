@@ -1028,7 +1028,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "TWecall类型： 0-测试激活码； 1-家庭安防场景； 2-穿戴类场景； 3-生活娱乐场景； 4-对讲及其它场景",
+          "document": "TWecall类型：1-家庭安防场景； 2-穿戴类场景； 3-生活娱乐场景； 4-对讲及其它场景",
           "example": "1",
           "member": "int64",
           "name": "PkgType",
@@ -3919,7 +3919,7 @@
           "example": "3",
           "member": "int64",
           "name": "BatchCnt",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3929,7 +3929,7 @@
           "example": "0",
           "member": "int64",
           "name": "BurnMethod",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3939,17 +3939,17 @@
           "example": "1572233486",
           "member": "int64",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "下载URL。",
-          "example": "https://batch-productions-test-1256872341.cos.ap-guangzhou.myqcloud.com/100000546882%2FR32ONVL0EU_LC-6mgj9akp.csv?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDMUM9hdmn35rHZe72Y6UfliNo1PYQFZln%26q-sign-time%3D1572233867%3B1572234767%26q-key-time%3D1572233867%3B1572234767%26q-header-list%3D%26q-url-param-list%3D%26q-signature%3Da31f6ed1e25d3dc753516b74ee33559d37cbc7f2",
+          "example": "https://batch-productions-*************",
           "member": "string",
           "name": "DownloadUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3959,7 +3959,7 @@
           "example": "0",
           "member": "int64",
           "name": "GenerationMethod",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3969,9 +3969,29 @@
           "example": "无",
           "member": "string",
           "name": "UploadUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "成功数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "int64",
+          "name": "SuccessCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "量产最后失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LastFailedReason",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -7330,7 +7350,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "模版ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "模板ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "12374tg",
           "member": "string",
           "name": "ModelId",
@@ -12042,7 +12062,7 @@
         },
         {
           "disabled": false,
-          "document": "加密类型。1表示证书认证，2表示秘钥认证，21表示TID认证-SE方式，22表示TID认证-软加固方式",
+          "document": "加密类型。1表示证书认证，2表示密钥认证，21表示TID认证-SE方式，22表示TID认证-软加固方式",
           "example": "0",
           "member": "string",
           "name": "EncryptionType",
@@ -13281,7 +13301,7 @@
         {
           "disabled": false,
           "document": "Sn信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "p_d",
           "member": "string",
           "name": "Sn",
           "output_required": false,
@@ -13291,7 +13311,7 @@
         {
           "disabled": false,
           "document": "过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1920000000",
           "member": "int64",
           "name": "ExpireTime",
           "output_required": false,
@@ -14134,7 +14154,7 @@
         },
         {
           "disabled": false,
-          "document": "模版ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "模板ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "3rfv",
           "member": "string",
           "name": "ModelId",

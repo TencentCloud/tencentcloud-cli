@@ -16,8 +16,8 @@ Output:
             {
                 "MachineIp": "10.0.0.11",
                 "MachineWanIp": "110.84.0.11",
-                "Quuid": "24c9be55-c743-4a75-a5c7-2a2912341234",
-                "Uuid": "24c9be55-c743-4a75-a5c7-2a2912341234",
+                "Quuid": "acdd5474-6360-4fd4-bfc7-843162cb8116",
+                "Uuid": "acdd5474-6360-4fd4-bfc7-843162cb8116",
                 "OsInfo": "CentOs Bit64",
                 "ProjectId": 1,
                 "Tag": [
@@ -33,14 +33,14 @@ Output:
                 "Pid": "10011",
                 "User": "root",
                 "StartTime": "2024-10-11 12:23:34",
-                "Param": "",
+                "Param": "iparam",
                 "Tty": "/bin",
                 "Version": "0.1.1.1",
                 "GroupName": "test-name",
-                "Md5": "abcabcabcabcabcabcabc",
+                "Md5": "708cae4cf814c3deda4208da228fad4e",
                 "Ppid": "22",
                 "ParentProcessName": "test-name",
-                "Status": "abc",
+                "Status": "Running",
                 "HasSign": 1,
                 "InstallByPackage": 1,
                 "PackageName": "test-name",
@@ -52,7 +52,7 @@ Output:
                     "WanIP": "110.84.0.11",
                     "PrivateIP": "10.0.0.11",
                     "NetworkType": 0,
-                    "NetworkName": "vpc-12341234",
+                    "NetworkName": "vpc-11",
                     "InstanceID": "ins-aj28fjz",
                     "HostName": "test-name"
                 }

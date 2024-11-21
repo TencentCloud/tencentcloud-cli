@@ -21,8 +21,8 @@ Output:
 ```
 {
     "Response": {
-        "CorpId": 1,
-        "RequestId": "xx"
+        "CorpId": 10000,
+        "RequestId": "eaa3ccac-d2f5-4df0-a8b3-7b51324e9283"
     }
 }
 ```

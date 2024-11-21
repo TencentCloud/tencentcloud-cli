@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli vpc ModifyVpcEndPointAttribute --cli-unfold-argument  \
-    --EndPointName 测试 \
+    --EndPointName demo \
     --EndPointId vpce-h0fk8lfc
 ```
 

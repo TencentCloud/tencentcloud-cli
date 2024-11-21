@@ -64,7 +64,7 @@
       "status": "online"
     },
     "CreateBatchQuickSignUrl": {
-      "document": "该接口用于发起合同后，生成个人用户的批量待办链接, 暂时不支持企业端签署。\n**注意：**\n1. 该接口目前仅支持签署人类型是**个人签署方的批量签署场景**(ApproverType=1)。\n2. 该接口可生成C端签署人的批量签署/查看链接，**签署控件仅支持手写签名(控件类型为SIGN_SIGNATURE)和时间类型的签署控件** 。\n3. 该签署链接**有效期为30分钟**，过期后将失效，如需签署可重新创建批量签署链接 。\n4. 该接口返回的签署链接适用于APP集成的场景，支持APP打开或浏览器直接打开，**不支持微信小程序嵌入**。\n跳转到小程序的实现，参考微信官方文档(分为<a href=\"https://developers.weixin.qq.com/miniprogram/dev/api/navigate/wx.navigateToMiniProgram.html\">全屏</a>、<a href=\"https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/openEmbeddedMiniProgram.html\">半屏</a>两种方式)，如何配置也可以请参考: <a href=\"https://qian.tencent.com/developers/company/openwxminiprogram\">跳转电子签小程序配置</a>。\n6. 因h5涉及人脸身份认证能力基于慧眼人脸核身，对Android和iOS系统均有一定要求， 因此<font color='red'>App嵌入H5签署合同需要按照慧眼提供的<a href=\"https://cloud.tencent.com/document/product/1007/61076\">慧眼人脸核身兼容性文档</a>做兼容性适配</font>。",
+      "document": "该接口用于发起合同后，生成个人/企业用户的批量待办链接。\n**注意：**\n1. 该接口可生成签署人的批量、合同组签署/查看链接 。\n2. 该签署链接**有效期为30分钟**，过期后将失效，如需签署可重新创建批量签署链接 。\n3. 该接口返回的签署链接适用于APP集成的场景，支持APP打开或浏览器直接打开，**不支持微信小程序嵌入**。\n跳转到小程序的实现，参考微信官方文档(分为<a href=\"https://developers.weixin.qq.com/miniprogram/dev/api/navigate/wx.navigateToMiniProgram.html\">全屏</a>、<a href=\"https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/openEmbeddedMiniProgram.html\">半屏</a>两种方式)，如何配置也可以请参考: <a href=\"https://qian.tencent.com/developers/company/openwxminiprogram\">跳转电子签小程序配置</a>。\n4. 因h5涉及人脸身份认证能力基于慧眼人脸核身，对Android和iOS系统均有一定要求， 因此<font color='red'>App嵌入H5签署合同需要按照慧眼提供的<a href=\"https://cloud.tencent.com/document/product/1007/61076\">慧眼人脸核身兼容性文档</a>做兼容性适配</font>。",
       "input": "CreateBatchQuickSignUrlRequest",
       "name": "获取H5批量签署或查看链接",
       "output": "CreateBatchQuickSignUrlResponse",
@@ -127,7 +127,7 @@
       "status": "online"
     },
     "CreateFlowApprovers": {
-      "document": "**适用场景 ：**\n\n当通过模板或文件发起合同时， 签署人不制定， 等合同发起后再指定 可以用下面2种方案\n\n<b><font color=\"red\">1. 或签合同</font>: 若未指定企业签署人信息（只指定企业的名字），合同变成或签合同（个人签署方不支持或签合同）</b>。需调用此接口补充或添加签署人。或签签署人在控制台上的展示样式如下（会带有<b>或签</b>标识）：\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/b2715f0236faee807cfc0521f93cf01b.png)\n\n<b><font color=\"red\">2. 动态签署人合同</font>: 若未指定具体签署人的信息，则合同变成动态签署人合同</b>。需调用此接口补充或添加签署人。可以参考文档    <a href=\"https://qian.tencent.com/developers/company/dynamic_signer/\" target=\"_blank\">动态签署人合同</a>   。动态签署人在控制台上的展示样式如下：\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/2729477978e020c3bbb4d2e767bb78eb.png)\n\n实际签署人需要通过[获取跳转至腾讯电子签小程序的签署链接](https://qian.tencent.com/developers/companyApis/startFlows/CreateSchemeUrl/)生成的链接进入小程序，领取合同并签署。同一签署环节可补充多个员工作为或签署人，最终实际签署人取决于谁先领取合同完成签署。\n\n**接口使用说明**：\n\n1.本接口现已支持批量补充签署人\n\n2.当<a href=\"https://qian.tencent.com/developers/companyApis/dataTypes/#fillapproverinfo/\" target=\"_blank\">补充签署人结构体</a>中指定需要补充的FlowId时，可以对指定合同补充签署人；可以指定多个相同发起方的不同合同在完成批量补充\n\n3.当<a href=\"https://qian.tencent.com/developers/companyApis/operateFlows/CreateFlowApprovers/\" target=\"_blank\">补充签署人接口入参</a>中指定需要补充的FlowId时，是对指定的合同补充多个指定的签署人\n\n4.如果同时指定了<a href=\"https://qian.tencent.com/developers/companyApis/dataTypes/#fillapproverinfo/\" target=\"_blank\">补充签署人结构体</a>中的FlowId和<a href=\"https://qian.tencent.com/developers/companyApis/operateFlows/CreateFlowApprovers/\" target=\"_blank\">补充签署人接口入参</a>中的FlowId，仅使用<a href=\"https://qian.tencent.com/developers/companyApis/dataTypes/#fillapproverinfo/\" target=\"_blank\">补充签署人结构体</a>中的FlowId作为补充的合同\n\n5.如果部分指定了<a href=\"https://qian.tencent.com/developers/companyApis/dataTypes/#fillapproverinfo/\" target=\"_blank\">补充签署人结构体</a>中的FlowId，又指定了<a href=\"https://qian.tencent.com/developers/companyApis/operateFlows/CreateFlowApprovers/\" target=\"_blank\">补充签署人接口入参</a>中的FlowId；那么<a href=\"https://qian.tencent.com/developers/companyApis/dataTypes/#fillapproverinfo/\" target=\"_blank\">补充签署人结构体</a>存在指定的FlowId，则使用<a href=\"https://qian.tencent.com/developers/companyApis/dataTypes/#fillapproverinfo/\" target=\"_blank\">补充签署人结构体</a>中的FlowId，不存在则使用<a href=\"https://qian.tencent.com/developers/companyApis/operateFlows/CreateFlowApprovers/\" target=\"_blank\">补充签署人接口入参</a>中的FlowId作为补充的合同\n\n\n6.如果同时未指定了<a href=\"https://qian.tencent.com/developers/companyApis/dataTypes/#fillapproverinfo/\" target=\"_blank\">补充签署人结构体</a>中的FlowId和<a href=\"https://qian.tencent.com/developers/companyApis/operateFlows/CreateFlowApprovers/\" target=\"_blank\">补充签署人接口入参</a>中的FlowId，则传参错误。\n\n7. 新加入的签署方<font color=\"red\">平台不会发送短信</font>进行签署。请您生成相应的链接，并将其发送给该签署方以便完成签署过程。\n\n**限制条件**：\n\n1.本企业（发起方企业）企业微信签署人仅支持通过企业微信UserId或姓名+手机号进行补充。\n\n2.本企业（发起方企业）非企业微信签署人仅支持通过姓名+手机号进行补充。\n\n3.他方企业仅支持通过姓名+手机号进行补充。\n\n4.个人签署人支持通过姓名+手机号进行补充（若<b>个人用户已完成实名</b>，动态签署人合同也可以可通过姓名+证件号码进行补充）\n\n\n**整体流程如下图：**\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/29a0fba0ceebf9227849459947384862.png)",
+      "document": "**适用场景 ：**\n\n当通过模板或文件发起合同时， 签署人不制定， 等合同发起后再指定 可以用下面2种方案\n\n<b><font color=\"red\">1. 或签合同</font>: 若未指定企业签署人信息（只指定企业的名字），合同变成或签合同（个人签署方不支持或签合同）</b>。需调用此接口补充或添加签署人。或签签署人在控制台上的展示样式如下（会带有<b>或签</b>标识）：\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/b2715f0236faee807cfc0521f93cf01b.png)\n\n<b><font color=\"red\">2. 动态签署人合同</font>: 若未指定具体签署人的信息，则合同变成动态签署人合同</b>。需调用此接口补充或添加签署人。可以参考文档    <a href=\"https://qian.tencent.com/developers/company/dynamic_signer/\" target=\"_blank\">动态签署人合同</a>   。动态签署人在控制台上的展示样式如下：\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/2729477978e020c3bbb4d2e767bb78eb.png)\n\n实际签署人需要通过[获取跳转至腾讯电子签小程序的签署链接](https://qian.tencent.com/developers/companyApis/startFlows/CreateSchemeUrl/)生成的链接进入小程序，领取合同并签署。同一签署环节可补充多个员工作为或签署人，最终实际签署人取决于谁先领取合同完成签署。\n\n**接口使用说明**：\n\n1.本接口现已支持批量补充签署人\n\n2.当<a href=\"https://qian.tencent.com/developers/companyApis/dataTypes/#fillapproverinfo/\" target=\"_blank\">补充签署人结构体</a>中指定需要补充的FlowId时，可以对指定合同补充签署人；可以指定多个相同发起方的不同合同在完成批量补充\n\n3.当<a href=\"https://qian.tencent.com/developers/companyApis/operateFlows/CreateFlowApprovers/\" target=\"_blank\">补充签署人接口入参</a>中指定需要补充的FlowId时，是对指定的合同补充多个指定的签署人\n\n4.如果同时指定了<a href=\"https://qian.tencent.com/developers/companyApis/dataTypes/#fillapproverinfo/\" target=\"_blank\">补充签署人结构体</a>中的FlowId和<a href=\"https://qian.tencent.com/developers/companyApis/operateFlows/CreateFlowApprovers/\" target=\"_blank\">补充签署人接口入参</a>中的FlowId，仅使用<a href=\"https://qian.tencent.com/developers/companyApis/dataTypes/#fillapproverinfo/\" target=\"_blank\">补充签署人结构体</a>中的FlowId作为补充的合同\n\n5.如果部分指定了<a href=\"https://qian.tencent.com/developers/companyApis/dataTypes/#fillapproverinfo/\" target=\"_blank\">补充签署人结构体</a>中的FlowId，又指定了<a href=\"https://qian.tencent.com/developers/companyApis/operateFlows/CreateFlowApprovers/\" target=\"_blank\">补充签署人接口入参</a>中的FlowId；那么<a href=\"https://qian.tencent.com/developers/companyApis/dataTypes/#fillapproverinfo/\" target=\"_blank\">补充签署人结构体</a>存在指定的FlowId，则使用<a href=\"https://qian.tencent.com/developers/companyApis/dataTypes/#fillapproverinfo/\" target=\"_blank\">补充签署人结构体</a>中的FlowId，不存在则使用<a href=\"https://qian.tencent.com/developers/companyApis/operateFlows/CreateFlowApprovers/\" target=\"_blank\">补充签署人接口入参</a>中的FlowId作为补充的合同\n\n\n6.如果同时未指定了<a href=\"https://qian.tencent.com/developers/companyApis/dataTypes/#fillapproverinfo/\" target=\"_blank\">补充签署人结构体</a>中的FlowId和<a href=\"https://qian.tencent.com/developers/companyApis/operateFlows/CreateFlowApprovers/\" target=\"_blank\">补充签署人接口入参</a>中的FlowId，则传参错误。\n\n7.新加入的签署方<font color=\"red\">平台不会发送短信</font>通知。请您生成相应的链接，并将该链接发送给签署方以便完成签署过程。\n\n**限制条件**：\n\n1.本企业（发起方企业）企业微信签署人仅支持通过企业微信UserId或姓名+手机号进行补充。\n\n2.本企业（发起方企业）非企业微信签署人仅支持通过姓名+手机号进行补充。\n\n3.他方企业仅支持通过姓名+手机号进行补充。\n\n4.个人签署人支持通过姓名+手机号进行补充（若<b>个人用户已完成实名</b>，动态签署人合同也可以可通过姓名+证件号码进行补充）\n\n\n**整体流程如下图：**\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/29a0fba0ceebf9227849459947384862.png)",
       "input": "CreateFlowApproversRequest",
       "name": "补充签署流程签署人信息",
       "output": "CreateFlowApproversResponse",
@@ -155,14 +155,14 @@
       "status": "online"
     },
     "CreateFlowGroupByFiles": {
-      "document": "此接口（CreateFlowGroupByFiles）可用于通过多个文件创建合同组签署流程。\n\n适用场景：该接口适用于需要一次性完成多份合同签署的情况，多份合同一般具有关联性，用户以目录的形式查看合同。\n\n注意事项：使用该接口需要先依赖[多文件上传](https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles)接口返回的FileIds。\n\n注：`合同发起后就会扣减合同的额度, 如果未签署完成时撤销合同会返还此额度（过期，拒签，签署完成，解除完成等状态不会返还额度），合同组中每个合同会扣减一个合同额度`",
+      "document": "此接口（CreateFlowGroupByFiles）可用于通过多个文件创建合同组签署流程。使用该接口需要先依赖[多文件上传](https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles)接口返回的FileIds。\n\n- 该接口允许通过PDF资源ID一次性创建多个合同，这些合同被组织在一个合同组中。\n- 每个签署方将收到一个签署链接，通过这个链接可以访问并签署合同组中的所有合同。\n- 合同组中的合同必须作为一个整体进行签署，不能将合同组拆分成单独的合同进行逐一签署。\n\n<img src=\"https://qcloudimg.tencent-cloud.cn/raw/a63074a0293c9ff5bf6c0bb74c0d3b20.png\"   width=\"400\" />\n\n### 2. 适用场景\n\n该接口适用于需要一次性完成多份合同签署的情况，多份合同一般具有关联性，用户以目录的形式查看合同。\n\n\n### 3. 合同额度的扣减与返还\n- **扣减时机**：合同一旦发起，相关的合同额度就会被扣减，合同组下面的每个合同都要扣减一个合同额度。\n- **返还条件**：只有在合同被撤销且没有任何签署方签署过，或者只有自动签署的情况下，合同额度才会被返还。\n- **不返还的情况**：如果合同已过期、被拒签、签署完成或已解除，合同额度将不会被返还。\n\n### 4.合同组暂不支持抄送功能",
       "input": "CreateFlowGroupByFilesRequest",
       "name": "通过多文件创建合同组签署流程",
       "output": "CreateFlowGroupByFilesResponse",
       "status": "online"
     },
     "CreateFlowGroupByTemplates": {
-      "document": "此接口（CreateFlowGroupByTemplates）可用于通过多个模板创建合同组签署流程。\n\n适用场景：该接口适用于需要一次性完成多份合同签署的情况，多份合同一般具有关联性，用户以目录的形式查看合同。\n\n注：`合同发起后就会扣减合同的额度, 如果未签署完成时撤销合同会返还此额度（过期，拒签，签署完成，解除完成等状态不会返还额度），合同组中每个合同会扣减一个合同额度`",
+      "document": "此接口（CreateFlowGroupByTemplates）可用于通过多个模板创建合同组签署流程。\n\n- 该接口允许通过选择多个模板一次性创建多个合同，这些合同被组织在一个合同组中。\n- 每个签署方将收到一个签署链接，通过这个链接可以访问并签署合同组中的所有合同。\n- 合同组中的合同必须作为一个整体进行签署，不能将合同组拆分成单独的合同进行逐一签署。\n\n<img src=\"https://qcloudimg.tencent-cloud.cn/raw/a63074a0293c9ff5bf6c0bb74c0d3b20.png\"   width=\"400\" />\n\n### 2. 适用场景\n\n该接口适用于需要一次性完成多份合同签署的情况，多份合同一般具有关联性，用户以目录的形式查看合同。\n\n\n### 3. 合同额度的扣减与返还\n- **扣减时机**：合同一旦发起，相关的合同额度就会被扣减，合同组下面的每个合同都要扣减一个合同额度。\n- **返还条件**：只有在合同被撤销且没有任何签署方签署过，或者只有自动签署的情况下，合同额度才会被返还。\n- **不返还的情况**：如果合同已过期、被拒签、签署完成或已解除，合同额度将不会被返还。\n\n### 4.合同组暂不支持抄送功能",
       "input": "CreateFlowGroupByTemplatesRequest",
       "name": "通过多模板创建合同组签署流程",
       "output": "CreateFlowGroupByTemplatesResponse",
@@ -267,16 +267,16 @@
       "status": "online"
     },
     "CreateOrganizationInfoChangeUrl": {
-      "document": "此接口（CreateOrganizationInfoChangeUrl）用于创建企业信息变更链接，支持创建企业超管变更链接或企业基础信息变更链接，通过入参ChangeType指定。\n\n\n<h3 id=\"1-企业超管变更\">1. 企业超管变更</h3>\n\n<p>换成企业的其他员工来当超管</p>\n\n<h3 id=\"2-企业基础信息变更\">2. 企业基础信息变更</h3>\n\n<h4 id=\"可以变动\">可以变动</h4>\n\n<ul>\n<li>企业名称<br>\n</li>\n<li>法定代表人姓名(新法人有邀请链接)<br>\n</li>\n<li>企业地址和所在地</li>\n</ul>\n\n<h4 id=\"不可变动\">不可变动</h4>\n\n<ul>\n<li>统一社会信用代码<br>\n</li>\n<li>企业主体类型</li>\n</ul>\n\n<p>如果企业名称变动会引起下面的变动</p>\n\n<ul>\n<li>合同:   老合同不做任何处理,   新发起的合同需要用新的企业名字作为签署方, 否则无法签署</li>\n<li>印章:   会删除所有的印章所有的机构公章和合同专用章,  然后用新企业名称生成新的机构公章 和合同专用章,  而法人章, 财务专用章和人事专用章不会处理</li>\n<li>证书:   企业证书会重新请求CA机构用新企业名称生成新的证书</li>\n</ul>",
+      "document": "此接口（CreateOrganizationInfoChangeUrl）用于创建企业信息变更链接，支持创建企业超管变更链接或企业基础信息变更链接，通过入参ChangeType指定。\n\n 需要企业的<font color=\"red\">现有的超级管理员、法人来点击</font>链接执行变动操作。\n\n### 2. 企业基础信息\n#### A. 可变动的信息\n- **企业名称**\n- **法定代表人姓名**（新法人将收到邀请链接）\n- **企业地址和所在地**\n- **企业超级管理员变更** （此变更将企业超级管理员的职责转移给企业的其他员工）\n\n#### B. 不可变动的信息\n- **统一社会信用代码**\n- **企业主体类型**\n\n### 3.变更影响\n\n如果企业的名字变更将导致下面的影响：\n\n- **合同**：已存在的合同将保持不变。新发起的合同需使用新的企业名称作为签署方，否则无法签署。\n- **印章**：所有现有的机构公章和合同专用章将被删除，并将根据新的企业名称重新生成。法人章、财务专用章和人事专用章将不做处理。\n- **证书**：企业证书将重新由CA机构使用新的企业名称生成。",
       "input": "CreateOrganizationInfoChangeUrlRequest",
       "name": "创建企业信息变更链接",
       "output": "CreateOrganizationInfoChangeUrlResponse",
       "status": "online"
     },
     "CreatePartnerAutoSignAuthUrl": {
-      "document": "创建他方自动签授权链接（他方授权/我方授权），通过该链接可进入小程序进行合作方企业的自动签授权，若授权企业未开通企业自动签，通过该链接会先引导开通本企业自动签。\n该接口效果同控制台： 企业设置-> 扩展服务 -> 企业自动签署 -> 合作企业方授权\n\n\n\n注: \n1. <font color='red'>所在企业的超管、法人才有权限调用此接口</font>(Operator.UserId 需要传递超管或者法人的UserId)\n2. 已经在授权中或者授权成功的企业，无法重复授权\n3. 授权企业和被授权企业必须都是已认证企业",
+      "document": "创建一个用于他方自动签授权的链接（可选择他方授权或我方授权）。通过这个链接，合作方企业可以直接进入小程序，进行自动签授权操作。\n\n如果授权企业尚未开通企业自动签功能，该链接还将引导他们首先开通本企业的自动签服务\n\n注: \n1. <font color='red'>所在企业的超管、法人才有权限调用此接口</font>(Operator.UserId 需要传递超管或者法人的UserId)\n2. 已经在授权中或者授权成功的企业，无法重复授权\n3. 授权企业和被授权企业必须都是已认证企业\n4. <font color='red'>需要授权企业或被授权企业的超管或者法人打开链接</font>走开通逻辑。\n\n\n**该接口效果同控制台： 企业设置-> 扩展服务 -> 企业自动签署 -> 合作企业方授权**\n![image](https://qcloudimg.tencent-cloud.cn/raw/489aa0bf74941469b5e740f428f17c3a.png)",
       "input": "CreatePartnerAutoSignAuthUrlRequest",
-      "name": "创建他方企业自动签授权链接（他方授权，我方授权）",
+      "name": "创建他方自动签授权链接",
       "output": "CreatePartnerAutoSignAuthUrlResponse",
       "status": "online"
     },
@@ -449,7 +449,7 @@
       "status": "online"
     },
     "DescribeFileUrls": {
-      "document": "本接口（DescribeFileUrls）用于查询文件的下载URL。\n适用场景：通过传参合同流程编号，下载对应的合同PDF文件流到本地。\n\n\n**注**：用户创建合同或者提交签署动作后，后台需要1~3秒的时间就进行合同PDF合成或者签名，为了确保您下载的是签署完成的完整合同文件，我们建议采取下面两种方式的一种来<font color=\"red\"><b>确保PDF已经合成完成，然后在调用本接口</b></font>。\n\n**第一种**：请确保您的系统配置了[接收合同完成通知的回调](https://qian.tencent.com/developers/company/callback_types_contracts_sign)功能。一旦所有参与方签署完毕，我们的系统将自动向您提供的回调地址发送完成通知。\n**第二种**：通过调用我们的[获取合同信息](https://qian.tencent.com/developers/companyApis/queryFlows/DescribeFlowBriefs)接口来主动检查合同的签署状态。请仅在确认合同状态为“签署完成”后，进行文件的下载操作。",
+      "document": "本接口（DescribeFileUrls）用于查询文件的下载URL。\n适用场景：通过传参合同流程编号，下载对应的合同PDF文件流到本地。\n\n\n### 2. 确保合同的PDF已经合成后，再调用本接口。\n\n用户创建合同或者提交签署动作后，后台需要1~3秒的时间就进行合同PDF合成或者签名，为了确保您下载的是签署完成的完整合同文件，我们建议采取下面两种方式的一种来<font color=\"red\"><b>确保PDF已经合成完成，然后在调用本接口</b></font>。\n\n**第一种**：请确保您的系统配置了[接收合同完成通知的回调](https://qian.tencent.com/developers/company/callback_types_contracts_sign)功能。一旦所有参与方签署完毕，我们的系统将自动向您提供的回调地址发送完成通知。\n\n**第二种**：通过调用我们的[获取合同信息](https://qian.tencent.com/developers/companyApis/queryFlows/DescribeFlowBriefs)接口来主动检查合同的签署状态。请仅在确认合同状态为“签署完成”后，进行文件的下载操作。\n\n### 3.  链接具有有效期限\n<font color=\"red\"><b>生成的链接是有时间限制的，过期后将无法访问</b></font>。您可以在接口返回的信息中查看具体的过期时间。为避免错误，请确保在链接过期之前进行下载操作。",
       "input": "DescribeFileUrlsRequest",
       "name": "查询文件下载URL",
       "output": "DescribeFileUrlsResponse",
@@ -542,7 +542,7 @@
     "DescribeSignFaceVideo": {
       "document": "该接口用于在使用视频认证方式签署合同后，获取用户的签署人脸认证视频。\n\n1. 该接口**仅适用于在H5端签署**的合同，**在通过视频认证后**获取人脸视频。\n2. 该接口**不支持小程序端**的签署人脸视频获取。\n3. 请在**签署完成后的三天内**获取人脸视频，**过期后将无法获取**。\n\n**注意：该接口需要开通白名单，请联系客户经理开通后使用。**",
       "input": "DescribeSignFaceVideoRequest",
-      "name": "查询签署认证人脸视频",
+      "name": "查询H5签署认证人脸视频",
       "output": "DescribeSignFaceVideoResponse",
       "status": "online"
     },
@@ -589,7 +589,7 @@
       "status": "online"
     },
     "ModifyExtendedService": {
-      "document": "管理企业扩展服务\n\n- **直接开通的情形：** 若在操作过程中接口没有返回跳转链接，这表明无需进行任何跳转操作。此时，相应的企业拓展服务将会直接被开通或关闭。\n\n- **需要法人或者超管签署开通协议的情形：** 当需要开通以下企业拓展服务时， 系统将返回一个操作链接。贵方需要主动联系并通知企业的超级管理员（超管）或法人。由他们点击该链接，完成服务的开通操作。\n  - **OPEN_SERVER_SIGN（企业自动签）**\n  - **OVERSEA_SIGN（企业与港澳台居民签署合同）**\n\n注意： `在调用此接口以管理企业扩展服务时，操作者（入参中的Operator）必须是企业的超级管理员（超管）或法人`\n\n\n对应的扩展服务能力可以在控制台的【扩展服务】中找到\n![image](https://qcloudimg.tencent-cloud.cn/raw/7eb35d2473d6c29784f3b35617bca9a9.png)",
+      "document": "管理企业扩展服务\n\n- **直接开通的情形：** 若在操作过程中接口没有返回跳转链接，这表明无需进行任何跳转操作。此时，相应的企业拓展服务将会直接被开通或关闭。\n\n- **需要法人或者超管签署开通协议的情形：** 当需要开通以下企业拓展服务时， 系统将返回一个操作链接。贵方需要主动联系并通知企业的超级管理员（超管）或法人。由他们点击该链接，完成服务的开通操作。\n  - **OPEN_SERVER_SIGN（企业自动签）**\n\n注意： `在调用此接口以管理企业扩展服务时，操作者（入参中的Operator）必须是企业的超级管理员（超管）或法人`\n\n\n对应的扩展服务能力可以在控制台的【扩展服务】中找到\n![image](https://qcloudimg.tencent-cloud.cn/raw/7eb35d2473d6c29784f3b35617bca9a9.png)",
       "input": "ModifyExtendedServiceRequest",
       "name": "管理企业扩展服务",
       "output": "ModifyExtendedServiceResponse",
@@ -1914,7 +1914,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "**如果是Component填写控件类型，则可选的字段为**：\n\n<ul><li> <b>TEXT</b> : 普通文本控件，输入文本字符串；</li>\n<li> <b>MULTI_LINE_TEXT</b> : 多行文本控件，输入文本字符串；</li>\n<li> <b>CHECK_BOX</b> : 勾选框控件，若选中填写ComponentValue 填写 true或者 false 字符串；</li>\n<li> <b>FILL_IMAGE</b> : 图片控件，ComponentValue 填写图片的资源 ID；</li>\n<li> <b>DYNAMIC_TABLE</b> : 动态表格控件；</li>\n<li> <b>ATTACHMENT</b> : 附件控件,ComponentValue 填写附件图片的资源 ID列表，以逗号分隔；</li>\n<li> <b>SELECTOR</b> : 选择器控件，ComponentValue填写选择的字符串内容；</li>\n<li> <b>DATE</b> : 日期控件；默认是格式化为xxxx年xx月xx日字符串；</li>\n<li> <b>WATERMARK</b> : 水印控件；只能分配给发起方，必须设置ComponentExtra；</li>\n<li> <b>DISTRICT</b> : 省市区行政区控件，ComponentValue填写省市区行政区字符串内容；</li></ul>\n\n**如果是SignComponent签署控件类型，\n需要根据签署人的类型可选的字段为**\n* 企业方\n<ul><li> <b>SIGN_SEAL</b> : 签署印章控件；</li>\n<li> <b>SIGN_DATE</b> : 签署日期控件；</li>\n<li> <b>SIGN_SIGNATURE</b> : 用户签名控件；</li>\n<li> <b>SIGN_PAGING_SEAL</b> : 骑缝章；若文件发起，需要对应填充ComponentPosY、ComponentWidth、ComponentHeight</li>\n<li> <b>SIGN_OPINION</b> : 签署意见控件，用户需要根据配置的签署意见内容，完成对意见内容的确认；</li>\n<li> <b>SIGN_LEGAL_PERSON_SEAL</b> : 企业法定代表人控件。</li></ul>\n\n* 个人方\n<ul><li> <b>SIGN_DATE</b> : 签署日期控件；</li>\n<li> <b>SIGN_SIGNATURE</b> : 用户签名控件；</li></ul>\n \n注：` 表单域的控件不能作为印章和签名控件`",
+          "document": "**如果是Component填写控件类型，则可选的字段为**：\n\n<ul><li> <b>TEXT</b> : 普通文本控件，输入文本字符串；</li>\n<li> <b>MULTI_LINE_TEXT</b> : 多行文本控件，输入文本字符串；</li>\n<li> <b>CHECK_BOX</b> : 勾选框控件，若选中填写ComponentValue 填写 true或者 false 字符串；</li>\n<li> <b>FILL_IMAGE</b> : 图片控件，ComponentValue 填写图片的资源 ID；</li>\n<li> <b>DYNAMIC_TABLE</b> : 动态表格控件；</li>\n<li> <b>ATTACHMENT</b> : 附件控件,ComponentValue 填写附件图片的资源 ID列表，以逗号分隔；</li>\n<li> <b>SELECTOR</b> : 选择器控件，ComponentValue填写选择的字符串内容；</li>\n<li> <b>DATE</b> : 日期控件；默认是格式化为xxxx年xx月xx日字符串；</li>\n<li> <b>WATERMARK</b> : 水印控件；只能分配给发起方，必须设置ComponentExtra；</li>\n<li> <b>DISTRICT</b> : 省市区行政区控件，ComponentValue填写省市区行政区字符串内容；</li></ul>\n\n**如果是SignComponent签署控件类型，\n需要根据签署人的类型可选的字段为**\n* 企业方\n<ul><li> <b>SIGN_SEAL</b> : 签署印章控件；</li>\n<li> <b>SIGN_DATE</b> : 签署日期控件；</li>\n<li> <b>SIGN_SIGNATURE</b> : 用户签名控件；</li>\n<li> <b>SIGN_PAGING_SEAL</b> : 骑缝章；若文件发起，需要对应填充ComponentPosY、ComponentWidth、ComponentHeight</li>\n<li> <b>SIGN_OPINION</b> : 签署意见控件，用户需要根据配置的签署意见内容，完成对意见内容的确认；</li>\n<li> <b>SIGN_LEGAL_PERSON_SEAL</b> : 企业法定代表人控件。</li></ul>\n\n* 个人方\n<ul><li> <b>SIGN_DATE</b> : 签署日期控件；</li>\n<li> <b>SIGN_SIGNATURE</b> : 用户签名控件；</li>\n<li> <b>SIGN_OPINION</b> : 签署意见控件，用户需要根据配置的签署意见内容，完成对意见内容的确认；</li></ul>\n \n注：` 表单域的控件不能作为印章和签名控件`",
           "example": "SIGN_SEAL",
           "member": "string",
           "name": "ComponentType",
@@ -2046,7 +2046,7 @@
         },
         {
           "disabled": false,
-          "document": "**在所有的定位方式下**，控件的扩展参数，为<font color=\"red\">JSON格式</font>，不同类型的控件会有部分非通用参数。\n\n<font color=\"red\">ComponentType为TEXT、MULTI_LINE_TEXT时</font>，支持以下参数：\n<ul><li> <b>Font</b>：目前只支持黑体、宋体</li>\n<li> <b>FontSize</b>： 范围12 :72</li>\n<li> <b>FontAlign</b>： Left/Right/Center，左对齐/居中/右对齐</li>\n<li> <b>FontColor</b>：字符串类型，格式为RGB颜色数字</li></ul>\n<b>参数样例</b>：`{\"FontColor\":\"255,0,0\",\"FontSize\":12}`\n\n<font color=\"red\">ComponentType为DATE时</font>，支持以下参数：\n<ul><li> <b>Font</b>：目前只支持黑体、宋体</li>\n<li> <b>FontSize</b>： 范围12 :72</li></ul>\n<b>参数样例</b>：`{\"FontColor\":\"255,0,0\",\"FontSize\":12}`\n\n<font color=\"red\">ComponentType为WATERMARK时</font>，支持以下参数：\n<ul><li> <b>Font</b>：目前只支持黑体、宋体</li>\n<li> <b>FontSize</b>： 范围6 :24</li>\n<li> <b>Opacity</b>： 透明度，范围0 :1</li>\n<li> <b>Density</b>： 水印样式，1-宽松，2-标准（默认值），3-密集，</li>\n<li> <b>SubType</b>： 水印类型：CUSTOM_WATERMARK-自定义内容，PERSON_INFO_WATERMARK-访问者信息</li></ul>\n<b>参数样例</b>：`\"{\\\"Font\\\":\\\"黑体\\\",\\\"FontSize\\\":20,\\\"Opacity\\\":0.1,\\\"Density\\\":2,\\\"SubType\\\":\\\"PERSON_INFO_WATERMARK\\\"}\"`\n\n<font color=\"red\">ComponentType为FILL_IMAGE时</font>，支持以下参数：\n<ul><li> <b>NotMakeImageCenter</b>：bool。是否设置图片居中。false：居中（默认）。 true : 不居中</li>\n<li> <b>FillMethod</b> : int. 填充方式。0-铺满（默认）；1-等比例缩放</li></ul>\n\n<font color=\"red\">ComponentType为SIGN_SIGNATURE类型时</font>，可以通过**ComponentTypeLimit**参数控制签名方式\n<ul><li> <b>HANDWRITE</b> :  需要实时手写的手写签名</li>\n<li> <b>HANDWRITTEN_ESIGN</b> : 长效手写签名， 是使用保存到个人中心的印章列表的手写签名(并且包含HANDWRITE)</li>\n<li> <b>OCR_ESIGN</b> : AI智能识别手写签名</li>\n<li> <b>ESIGN</b> : 个人印章类型</li>\n<li> <b>SYSTEM_ESIGN</b> : 系统签名（该类型可以在用户签署时根据用户姓名一键生成一个签名来进行签署）</li>\n<li> <b>IMG_ESIGN</b> : 图片印章(该类型支持用户在签署将上传的PNG格式的图片作为签名)</li></ul>\n<b>参考样例</b>：`{\"ComponentTypeLimit\": [\"SYSTEM_ESIGN\"]}`\n印章的对应关系参考下图\n![image](https://qcloudimg.tencent-cloud.cn/raw/ee0498856c060c065628a0c5ba780d6b.jpg)<br><br>\n\n<font color=\"red\">ComponentType为SIGN_SEAL 或者 SIGN_PAGING_SEAL类型时</font>，可以通过**ComponentTypeLimit**参数控制签署方签署时要使用的印章类型，支持指定以下印章类型\n<ul><li> <b>OFFICIAL</b> :  企业公章</li>\n<li> <b>CONTRACT</b> : 合同专用章</li>\n<li> <b>FINANCE</b> : 财务专用章</li>\n<li> <b>PERSONNEL</b> : 人事专用章</li></ul>\n<b>参考样例</b>：`{\\\"ComponentTypeLimit\\\":[\\\"PERSONNEL\\\",\\\"FINANCE\\\"]}` 表示改印章签署区,客户需使用人事专用章或财务专用章盖章签署。<br><br>\n\n<font color=\"red\">ComponentType为SIGN_DATE时</font>，支持以下参数：\n<ul><li> <b>Font</b> :字符串类型目前只支持\"黑体\"、\"宋体\"，如果不填默认为\"黑体\"</li>\n<li> <b>FontSize</b> : 数字类型，范围6-72，默认值为12</li>\n<li> <b>FontAlign</b> : 字符串类型，可取Left/Right/Center，对应左对齐/居中/右对齐</li>\n<li> <b>Format</b> : 字符串类型，日期格式，必须是以下五种之一 “yyyy m d”，”yyyy年m月d日”，”yyyy/m/d”，”yyyy-m-d”，”yyyy.m.d”。</li>\n<li> <b>Gaps</b> : 字符串类型，仅在Format为“yyyy m d”时起作用，格式为用逗号分开的两个整数，例如”2,2”，两个数字分别是日期格式的前后两个空隙中的空格个数</li></ul>\n如果extra参数为空，默认为”yyyy年m月d日”格式的居中日期\n特别地，如果extra中Format字段为空或无法被识别，则extra参数会被当作默认值处理（Font，FontSize，Gaps和FontAlign都不会起效）\n<b>参数样例</b>： ` \"{\"Format\":\"yyyy m d\",\"FontSize\":12,\"Gaps\":\"2,2\", \"FontAlign\":\"Right\"}\"`\n\n<font color=\"red\">ComponentType为SIGN_SEAL类型时</font>，支持以下参数：\n<ul><li> <b>PageRanges</b> :PageRange的数组，通过PageRanges属性设置该印章在PDF所有页面上盖章（适用于标书在所有页面盖章的情况）</li></ul>\n<b>参数样例</b>：` \"{\"PageRanges\":[{\"BeginPage\":1,\"EndPage\":-1}]}\"`\n\n\n<font color=\"red\">关键字模式下支持关键字找不到的情况下不进行报错的设置</font>\n<ul><li> <b>IgnoreKeywordError</b> :1-关键字查找不到时不进行报错</li></ul>\n场景说明：如果使用关键字进行定位，但是指定的PDF文件中又没有设置的关键字时，发起合同会进行关键字是否存在的校验，如果关键字不存在，会进行报错返回。如果不希望进行报错，可以设置\"IgnoreKeywordError\"来忽略错误。请注意，如果关键字签署控件对应的签署方在整个PDF文件中一个签署控件都没有，还是会触发报错逻辑。\n<b>参数样例</b>：` \"{\"IgnoreKeywordError\":1}\"`",
+          "document": "**在所有的定位方式下**，控件的扩展参数，为<font color=\"red\">JSON格式</font>，不同类型的控件会有部分非通用参数。\n\n<font color=\"red\">ComponentType为TEXT、MULTI_LINE_TEXT时</font>，支持以下参数：\n<ul><li> <b>Font</b>：目前只支持黑体、宋体</li>\n<li> <b>FontSize</b>： 范围12 :72</li>\n<li> <b>FontAlign</b>： Left/Right/Center，左对齐/居中/右对齐</li>\n<li> <b>FontColor</b>：字符串类型，格式为RGB颜色数字</li></ul>\n<b>参数样例</b>：`{\"FontColor\":\"255,0,0\",\"FontSize\":12}`\n\n<font color=\"red\">ComponentType为DATE时</font>，支持以下参数：\n<ul><li> <b>Font</b>：目前只支持黑体、宋体</li>\n<li> <b>FontSize</b>： 范围12 :72</li></ul>\n<b>参数样例</b>：`{\"FontColor\":\"255,0,0\",\"FontSize\":12}`\n\n<font color=\"red\">ComponentType为WATERMARK时</font>，支持以下参数：\n<ul><li> <b>Font</b>：目前只支持黑体、宋体</li>\n<li> <b>FontSize</b>： 范围6 :24</li>\n<li> <b>Opacity</b>： 透明度，范围0 :1</li>\n<li> <b>Density</b>： 水印样式，1-宽松，2-标准（默认值），3-密集，</li>\n<li> <b>SubType</b>： 水印类型：CUSTOM_WATERMARK-自定义内容，PERSON_INFO_WATERMARK-访问者信息</li></ul>\n<b>参数样例</b>：`\"{\\\"Font\\\":\\\"黑体\\\",\\\"FontSize\\\":20,\\\"Opacity\\\":0.1,\\\"Density\\\":2,\\\"SubType\\\":\\\"PERSON_INFO_WATERMARK\\\"}\"`\n\n<font color=\"red\">ComponentType为FILL_IMAGE时</font>，支持以下参数：\n<ul><li> <b>NotMakeImageCenter</b>：bool。是否设置图片居中。false：居中（默认）。 true : 不居中</li>\n<li> <b>FillMethod</b> : int. 填充方式。0-铺满（默认）；1-等比例缩放</li></ul>\n\n<font color=\"red\">ComponentType为SIGN_SIGNATURE类型时</font>，可以通过**ComponentTypeLimit**参数控制签名方式\n<ul><li> <b>HANDWRITE</b> :  需要实时手写的手写签名</li>\n<li> <b>HANDWRITTEN_ESIGN</b> : 长效手写签名， 是使用保存到个人中心的印章列表的手写签名(并且包含HANDWRITE)</li>\n<li> <b>OCR_ESIGN</b> : AI智能识别手写签名</li>\n<li> <b>ESIGN</b> : 个人印章类型</li>\n<li> <b>SYSTEM_ESIGN</b> : 系统签名（该类型可以在用户签署时根据用户姓名一键生成一个签名来进行签署）</li>\n<li> <b>IMG_ESIGN</b> : 图片印章(该类型支持用户在签署将上传的PNG格式的图片作为签名)</li></ul>\n<b>参考样例</b>：`{\"ComponentTypeLimit\": [\"SYSTEM_ESIGN\"]}`\n印章的对应关系参考下图\n![image](https://qcloudimg.tencent-cloud.cn/raw/ee0498856c060c065628a0c5ba780d6b.jpg)<br><br>\n\n<font color=\"red\">ComponentType为SIGN_SEAL 或者 SIGN_PAGING_SEAL类型时</font>，可以通过**ComponentTypeLimit**参数控制签署方签署时要使用的印章类型，支持指定以下印章类型\n<ul><li> <b>OFFICIAL</b> :  企业公章</li>\n<li> <b>CONTRACT</b> : 合同专用章</li>\n<li> <b>FINANCE</b> : 财务专用章</li>\n<li> <b>PERSONNEL</b> : 人事专用章</li></ul>\n<b>参考样例</b>：`{\\\"ComponentTypeLimit\\\":[\\\"PERSONNEL\\\",\\\"FINANCE\\\"]}` 表示改印章签署区,客户需使用人事专用章或财务专用章盖章签署。<br><br>\n\n<font color=\"red\">ComponentType为SIGN_DATE时</font>，支持以下参数：\n<ul><li> <b>Font</b> :字符串类型目前只支持\"黑体\"、\"宋体\"，如果不填默认为\"黑体\"</li>\n<li> <b>FontSize</b> : 数字类型，范围6-72，默认值为12</li>\n<li> <b>FontAlign</b> : 字符串类型，可取Left/Right/Center，对应左对齐/居中/右对齐</li>\n<li> <b>Format</b> : 字符串类型，日期格式，必须是以下五种之一 “yyyy m d”，”yyyy年m月d日”，”yyyy/m/d”，”yyyy-m-d”，”yyyy.m.d”。</li>\n<li> <b>Gaps</b> : 字符串类型，仅在Format为“yyyy m d”时起作用，格式为用逗号分开的两个整数，例如”2,2”，两个数字分别是日期格式的前后两个空隙中的空格个数</li></ul>\n如果extra参数为空，默认为”yyyy年m月d日”格式的居中日期\n特别地，如果extra中Format字段为空或无法被识别，则extra参数会被当作默认值处理（Font，FontSize，Gaps和FontAlign都不会起效）\n<b>参数样例</b>： ` \"{\"Format\":\"yyyy m d\",\"FontSize\":12,\"Gaps\":\"2,2\", \"FontAlign\":\"Right\"}\"`\n\n<font color=\"red\">ComponentType为SIGN_SEAL类型时</font>，支持以下参数：\n<ul><li> <b>PageRanges</b> :PageRange的数组，通过PageRanges属性设置该印章在PDF所有页面上盖章（适用于标书在所有页面盖章的情况）</li></ul>\n<b>参数样例</b>：` \"{\"PageRanges\":[{\"BeginPage\":1,\"EndPage\":-1}]}\"`\n\n<font color=\"red\">签署印章透明度功能设置，</font>当ComponentType为SIGN_SIGNATURE、SIGN_SEAL、SIGN_PAGING_SEAL、SIGN_LEGAL_PERSON_SEAL时，可以通过以下参数设置签署印章的透明度：\n<ul><li> <b>Opacity</b>：印章透明度，支持范围：0-1，0.7表示70%的透明度，1表示无透明度</li></ul>\n<b>参数样例</b>：`{\"Opacity\":0.7}`\n\n<font color=\"red\">关键字模式下支持关键字找不到的情况下不进行报错的设置</font>\n<ul><li> <b>IgnoreKeywordError</b> :1-关键字查找不到时不进行报错</li></ul>\n场景说明：如果使用关键字进行定位，但是指定的PDF文件中又没有设置的关键字时，发起合同会进行关键字是否存在的校验，如果关键字不存在，会进行报错返回。如果不希望进行报错，可以设置\"IgnoreKeywordError\"来忽略错误。请注意，如果关键字签署控件对应的签署方在整个PDF文件中一个签署控件都没有，还是会触发报错逻辑。\n<b>参数样例</b>：` \"{\"IgnoreKeywordError\":1}\"`",
           "example": "无",
           "member": "string",
           "name": "ComponentExtra",
@@ -2603,7 +2603,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "批量签署的流程签署人，其中姓名(ApproverName)、参与人类型(ApproverType)必传，手机号(ApproverMobile)和证件信息(ApproverIdCardType、ApproverIdCardNumber)可任选一种或全部传入。\n注:\n`1. ApproverType目前只支持个人类型的签署人。`\n`2. 签署人只能有手写签名和时间类型的签署控件，其他类型的填写控件和签署控件暂时都未支持。`\n`3. 当需要通过短信验证码签署时，手机号ApproverMobile需要与发起合同时填写的用户手机号一致。`",
+          "document": "批量签署的流程签署人，其中姓名(ApproverName)、参与人类型(ApproverType)必传，手机号(ApproverMobile)和证件信息(ApproverIdCardType、ApproverIdCardNumber)可任选一种或全部传入。\n<ul>\n<li>若为个人参与方：ApproverType=1</li>\n<li>若为企业参与方：ApproverType=0。同时 OrganizationName 参数需传入参与方企业名称。 </li>\n</ul>\n注:\n`1. 暂不支持签署人拖动签署控件功能，以及签批控件。`\n`2. 当需要通过短信验证码签署时，手机号ApproverMobile需要与发起合同时填写的用户手机号一致。`",
           "example": "无",
           "member": "FlowCreateApprover",
           "name": "FlowApproverInfo",
@@ -2657,7 +2657,7 @@
         },
         {
           "disabled": false,
-          "document": "指定批量签署合同的签名类型，可传递以下值：\n<ul><li>**0**：手写签名(默认)</li>\n<li>**1**：OCR楷体</li>\n<li>**2**：姓名印章</li>\n<li>**3**：图片印章</li>\n<li>**4**：系统签名</li></ul>\n注：\n<ul><li>默认情况下，签名类型为手写签名</li>\n<li>您可以传递多种值，表示可用多种签名类型。</li>\n<li>该参数会覆盖您合同中的签名类型，若您在发起合同时限定了签名类型(赋值签名类型给ComponentTypeLimit)，请将这些签名类型赋予此参数</li>\n</ul>",
+          "document": "指定批量签署合同的签名类型，可传递以下值：\n<ul><li>**0**：手写签名(默认)</li>\n<li>**1**：OCR楷体</li>\n<li>**2**：姓名印章</li>\n<li>**3**：图片印章</li>\n<li>**4**：系统签名</li></ul>\n注：\n<ul><li>默认情况下，签名类型为手写签名</li>\n<li>您可以传递多种值，表示可用多种签名类型。</li>\n<li>该参数会覆盖您合同中的签名类型，若您在发起合同时限定了签名类型(赋值签名类型给ComponentTypeLimit)，请将这些签名类型赋予此参数</li>\n<li>若签署方为企业员工，此参数无效，签名方式将以合同中为准。</li>\n</ul>",
           "example": "[0, 1, 2, 3, 4]",
           "member": "int64",
           "name": "SignatureTypes",
@@ -2684,7 +2684,7 @@
         },
         {
           "disabled": false,
-          "document": "批量签署合同相关信息，指定合同和签署方的信息，用于补充动态签署人。\t",
+          "document": "批量签署合同相关信息，指定合同和签署方的信息，用于补充动态签署人。\t\n\n注: `若签署方为企业员工，暂不支持通过H5端进行动态签署人的补充`",
           "example": "无",
           "member": "FlowBatchUrlInfo",
           "name": "FlowBatchUrlInfo",
@@ -2693,7 +2693,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>只有在生成H5签署链接的情形下</b>（ 如调用<a href=\"https://qian.tencent.com/developers/partnerApis/operateFlows/ChannelCreateFlowSignUrl\" target=\"_blank\">获取H5签署链接</a>、<a href=\"https://qian.tencent.com/developers/partnerApis/operateFlows/ChannelCreateBatchQuickSignUrl\" target=\"_blank\">获取H5批量签署链接</a>等接口），该配置才会生效。  您可以指定H5签署视频核身的意图配置，选择问答模式或点头模式的语音文本。  注意： 1. 视频认证为<b>白名单功能，使用前请联系对接的客户经理沟通</b>。 2. 使用视频认证时，<b>生成H5签署链接的时候必须将签署认证方式指定为人脸</b>（即ApproverSignTypes设置成人脸签署）。 3. 签署完成后，可以通过<a href=\"https://qian.tencent.com/developers/partnerApis/flows/ChannelDescribeSignFaceVideo\" target=\"_blank\">查询签署认证人脸视频</a>获取到当时的视频。",
+          "document": "<b>只有在生成H5签署链接的情形下</b>（ 如调用<a href=\"https://qian.tencent.com/developers/partnerApis/operateFlows/ChannelCreateFlowSignUrl\" target=\"_blank\">获取H5签署链接</a>、<a href=\"https://qian.tencent.com/developers/partnerApis/operateFlows/ChannelCreateBatchQuickSignUrl\" target=\"_blank\">获取H5批量签署链接</a>等接口），该配置才会生效。  您可以指定H5签署视频核身的意图配置，选择问答模式或点头模式的语音文本。 \n\n 注意： \n1. 视频认证为<b>白名单功能，使用前请联系对接的客户经理沟通</b>。\n2. 使用视频认证时，<b>生成H5签署链接的时候必须将签署认证方式指定为人脸</b>（即ApproverSignTypes设置成人脸签署）。 \n3. 签署完成后，可以通过<a href=\"https://qian.tencent.com/developers/partnerApis/flows/ChannelDescribeSignFaceVideo\" target=\"_blank\">查询签署认证人脸视频</a>获取到当时的视频。",
           "example": "无",
           "member": "Intention",
           "name": "Intention",
@@ -2702,7 +2702,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启缓存签署人信息",
+          "document": "缓存签署人信息。在H5签署链接动态领取场景，首次填写后，选择缓存签署人信息，在下次签署人点击领取链接时，会自动将个人信息（姓名、身份证号、手机号）填入，否则需要每次手动填写。\n\n注: `若参与方为企业员工时，暂不支持对参与方信息进行缓存`",
           "example": "无",
           "member": "bool",
           "name": "CacheApproverInfo",
@@ -3618,7 +3618,7 @@
         },
         {
           "disabled": false,
-          "document": "合同流程的抄送人列表，最多可支持50个抄送人，抄送人可查看合同内容及签署进度，但无需参与合同签署。\n",
+          "document": "合同流程的抄送人列表，最多可支持50个抄送人，抄送人可查看合同内容及签署进度，但无需参与合同签署。\n\n<b>注</b>\n1. 抄送人名单中可以包括自然人以及本企业的员工。\n2. 请确保抄送人列表中的成员不与任何签署人重复。\n",
           "example": "无",
           "member": "CcInfo",
           "name": "CcInfos",
@@ -3945,23 +3945,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "合同(流程)组的合同组Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "合同(流程)组的合同组Id",
           "example": "无",
           "member": "string",
           "name": "FlowGroupId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "合同(流程)组中子合同列表.\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "合同(流程)组中子合同列表.",
           "example": "无",
           "member": "string",
           "name": "FlowIds",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -4456,7 +4456,7 @@
         },
         {
           "disabled": false,
-          "document": "合同流程的抄送人列表，最多可支持50个抄送人，抄送人可查看合同内容及签署进度，但无需参与合同签署。",
+          "document": "合同流程的抄送人列表，最多可支持50个抄送人，抄送人可查看合同内容及签署进度，但无需参与合同签署。\n\n<b>注</b>\n1. 抄送人名单中可以包括自然人以及本企业的员工。\n2. 请确保抄送人列表中的成员不与任何签署人重复。",
           "example": "无",
           "member": "CcInfo",
           "name": "CcInfos",
@@ -5244,6 +5244,15 @@
           "name": "ForbidPersonalMultipleSign",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "合同流程名称是否应包含扫码签署人的信息，且遵循特定格式（flowname-姓名-手机号后四位）。\n例如，通过参数FlowName设定的扫码发起合同名称为“员工入职合同”，当扫码人张三（手机号18800009527）扫码签署时，合同名称将自动生成为“员工入职合同-张三-9527”。",
+          "example": "true",
+          "member": "bool",
+          "name": "FlowNameAppendScannerInfo",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -5453,6 +5462,15 @@
           "name": "Endpoint",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指定企业初始化引导，现在可以配置如下的选项：\n\n<b>1</b>: 启用此选项后，在企业认证的最终步骤将添加创建印章的引导。如下图的位置\n![image](https://qcloudimg.tencent-cloud.cn/raw/88e0b45095a5c589de8995462ad755dc.jpg)",
+          "example": "1",
+          "member": "uint64",
+          "name": "Initialization",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -5754,7 +5772,7 @@
         },
         {
           "disabled": false,
-          "document": "被授企业id/授权方企业id，和AuthorizedOrganizationName二选一传入",
+          "document": "被授企业id/授权方企业id（即OrganizationId），和AuthorizedOrganizationName二选一传入",
           "example": "无",
           "member": "string",
           "name": "AuthorizedOrganizationId",
@@ -5763,7 +5781,7 @@
         },
         {
           "disabled": false,
-          "document": "被授企业名称/授权方企业名称，和AuthorizedOrganizationId二选一传入",
+          "document": "被授企业名称/授权方企业的名字，和AuthorizedOrganizationId二选一传入即可。请确认该名称与企业营业执照中注册的名称一致。\n注: `如果名称中包含英文括号()，请使用中文括号（）代替。`",
           "example": "无",
           "member": "string",
           "name": "AuthorizedOrganizationName",
@@ -5772,7 +5790,7 @@
         },
         {
           "disabled": false,
-          "document": "指定印章类型，指定后只能选择该类型的印章进行授权支持以下印章类型：- OFFICIAL : 企业公章- CONTRACT : 合同专用章- FINANCE : 财务专用章- PERSONNEL : 人事专用章",
+          "document": "在设置印章授权时，可以指定特定的印章类型，以确保在授权过程中只使用相应类型的印章。支持的印章类型包括：\n\n<ul>\n<li><strong>OFFICIAL</strong>：企业公章，用于代表企业对外的正式文件和重要事务的认证。</li>\n<li><strong>CONTRACT</strong>：合同专用章，专门用于签署各类合同。</li>\n<li><strong>FINANCE</strong>：财务专用章，用于企业的财务相关文件，如发票、收据等财务凭证的认证。</li>\n<li><strong>PERSONNEL</strong>：人事专用章，用于人事管理相关文件，如劳动合同、人事任命等。</li>\n</ul>",
           "example": "无",
           "member": "string",
           "name": "SealTypes",
@@ -5781,7 +5799,7 @@
         },
         {
           "disabled": false,
-          "document": "他方授权给我方：\n- false：我方授权他方，AuthorizedOrganizationName代表【被授权方】企业名称\n- true：他方授权我方，AuthorizedOrganizationName代表【授权方】企业名称",
+          "document": "在处理授权关系时，授权的方向\n<ul>\n<li><strong>false</strong>（默认值）：表示我方授权他方。在这种情况下，<code>AuthorizedOrganizationName</code> 代表的是【被授权方】的企业名称，即接收授权的企业。</li>\n<li><strong>true</strong>：表示他方授权我方。在这种情况下，<code>AuthorizedOrganizationName</code> 代表的是【授权方】的企业名称，即提供授权的企业。</li>\n</ul>",
           "example": "无",
           "member": "bool",
           "name": "AuthToMe",
@@ -5918,7 +5936,7 @@
         },
         {
           "disabled": false,
-          "document": "CA供应商下发给用户的证书编号，在证书到期后自动续期后此证书编号会发生变动，且不会合成到个人用户证书证明图片中。\n\n注意：`腾讯电子签接入多家CA供应商以提供容灾能力，不同CA下发的证书编号区别较大，但基本都是由数字和字母组成，长度在200以下。`\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "在数字证书申请过程中，系统会自动生成一个独一无二的序列号。请注意，当证书到期并自动续期时，该序列号将会发生变化。值得注意的是，此序列号不会被合成至个人用户证书的证明图片中。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2206EB**4597742",
           "member": "string",
           "name": "SerialNumber",
@@ -6377,7 +6395,7 @@
         },
         {
           "disabled": false,
-          "document": "替换解除协议的签署人， 如不指定替换签署人,  则使用原流程的签署人。 <br/>\n如需更换原合同中的企业端签署人，可通过指定该签署人的RecipientId编号更换此企业端签署人。(可通过接口<a href=\"https://qian.tencent.com/developers/companyApis/queryFlows/DescribeFlowInfo/\">DescribeFlowInfo</a>查询签署人的RecipientId编号)<br/>\n\n注意：\n`只能更换自己企业的签署人,  不支持更换个人类型或者其他企业的签署人。`\n`可以不指定替换签署人, 使用原流程的签署人 `",
+          "document": "替换解除协议的签署人， 如不指定新的签署人，将继续使用原流程的签署人作为本解除协议的参与方。 <br/>\n如需更换原合同中的企业端签署人，可通过指定该签署人的RecipientId编号更换此企业端签署人。(可通过接口<a href=\"https://qian.tencent.com/developers/companyApis/queryFlows/DescribeFlowInfo/\">DescribeFlowInfo</a>查询签署人的RecipientId编号)<br/>\n\n注：\n1. 支持更换企业的签署人，不支持更换个人类型的签署人。\n2. 己方企业支持自动签署，他方企业不支持自动签署。\n3. <b>仅将需要替换的签署人添加至此列表</b>，无需替换的签署人无需添加进来。",
           "example": "无",
           "member": "ReleasedApprover",
           "name": "ReleasedApprovers",
@@ -12343,7 +12361,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "操作跳转链接\n<ul>\n<li><strong>有效期：</strong> 跳转链接的有效期为24小时。</li>\n<li><strong>无跳转链接返回的情况：</strong> 如果在操作过程中没有返回跳转链接，这意味着无需进行跳转操作。在这种情况下，服务将会直接被开通或关闭。\n<li><strong>有跳转链接返回的情况：</strong> 当操作类型为“OPEN”（开通服务），并且扩展服务类型为以下之一时，  系统将返回一个操作链接。当前操作人（超级管理员或法人）需要点击此链接，以完成服务的开通操作。\n\n<ul>\n<li><strong>OPEN_SERVER_SIGN</strong>（企业自动签署）</li>\n<li><strong>OVERSEA_SIGN</strong>（企业与港澳台居民签署合同）</li>\n</ul></li></li>\n</ul>",
+          "document": "操作跳转链接\n<ul>\n<li><strong>有效期：</strong> 跳转链接的有效期为24小时。</li>\n<li><strong>无跳转链接返回的情况：</strong> 如果在操作过程中没有返回跳转链接，这意味着无需进行跳转操作。在这种情况下，服务将会直接被开通或关闭。\n<li><strong>有跳转链接返回的情况：</strong> 当操作类型为“OPEN”（开通服务），并且扩展服务类型为以下之一时，  系统将返回一个操作链接。当前操作人（超级管理员或法人）需要点击此链接，以完成服务的开通操作。\n\n<ul>\n<li><strong>OPEN_SERVER_SIGN</strong>（企业自动签署）</li>\n</ul></li></li>\n</ul>",
           "example": "https://res.ess.tencent.cn/cdn/h5-activity-dev/jump-mp.html?to=OPEN_SERVER_SIGN&request_token=xxxxx&organizationId=xxxxx&channelType=xxxxx&expired_time=1673428532&login=1&verify=1",
           "member": "string",
           "name": "OperateUrl",
@@ -12974,7 +12992,7 @@
         },
         {
           "disabled": false,
-          "document": "CA供应商下发给用户的证书编号\n\n注意：`腾讯电子签接入多家CA供应商以提供容灾能力，不同CA下发的证书编号区别较大，但基本都是由数字和字母组成，长度在200以下`。",
+          "document": "在数字证书申请过程中，系统会自动生成一个独一无二的序列号。",
           "example": "无",
           "member": "string",
           "name": "CertSn",

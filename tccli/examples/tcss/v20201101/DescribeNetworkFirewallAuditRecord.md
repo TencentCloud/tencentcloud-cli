@@ -17,18 +17,19 @@ Output:
         "TotalCount": 1,
         "AuditList": [
             {
-                "ClusterName": "xx",
-                "Region": "xx",
-                "ClusterId": "xx",
-                "Uin": "xx",
-                "NetworkPolicyName": "xx",
-                "AppId": 0,
-                "Action": "xx",
-                "Operation": "xx",
-                "OperationTime": "xx"
+                "ClusterName": "tke_test",
+                "Region": "ap-guangzhou",
+                "ClusterId": "  cls-jvrv0kf2",
+                "Uin": "10023234334",
+                "NetworkPolicyName": "test",
+                "AppId": 346456456,
+                "PolicyId": "54645",
+                "Action": "add",
+                "Operation": "Running",
+                "OperationTime": "2024-10-30 12:21:51"
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "392f05bd-bf86-4911-8cf9-b8c2ac0f62ab"
     }
 }
 ```

@@ -1,4 +1,4 @@
-**Example 1: 认证通过示例**
+**Example 1: 银行卡二要素核验一致示例**
 
 
 
@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli faceid BankCard2EVerification --cli-unfold-argument  \
-    --Name 张三 \
-    --BankCard 6222222222222222222
+    --Name 韦小宝 \
+    --BankCard ' 6225768888888888'
 ```
 
 Output: 
@@ -21,7 +21,7 @@ Output:
 }
 ```
 
-**Example 2: 认证不通过示例**
+**Example 2: 银行卡二要素核验不一致示例**
 
 
 
@@ -29,8 +29,8 @@ Input:
 
 ```
 tccli faceid BankCard2EVerification --cli-unfold-argument  \
-    --Name 张三 \
-    --BankCard 6222222222222222222
+    --Name 韦小宝 \
+    --BankCard ' 6226090210146748'
 ```
 
 Output: 

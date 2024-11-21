@@ -10,8 +10,8 @@ tccli lke GetAnswerTypeDataCount --cli-unfold-argument  \
     --EndTime 1716454119 \
     --AppBizId 1747088166522585088 1780116741678956544 \
     --Type 4 \
-    --LoginUin abc \
-    --LoginSubAccountUin abc
+    --LoginUin 600000562346 \
+    --LoginSubAccountUin 600000562346
 ```
 
 Output: 

@@ -14,11 +14,11 @@ Output:
 {
     "Response": {
         "FileTamperRuleDetail": {
-            "Id": 11934,
+            "Id": 10001,
             "Uuids": [
-                "1c26308c-5493-4eaf-a817-112ec25f499e"
+                "1ce68339-8828-457f-b358-d5b1b34e4fe9"
             ],
-            "Name": "销售许可测试机器",
+            "Name": "机器名称",
             "Rule": [
                 {
                     "ProcessPath": "*/vi",
@@ -33,7 +33,7 @@ Output:
             "ModifyTime": "2024-10-10T20:38:26+08:00",
             "Level": 1,
             "UuidTotalCount": 1,
-            "AddWhiteType": ""
+            "AddWhiteType": "all"
         },
         "RequestId": "2725aee8-adc4-4501-90cd-ccd77bfd35d5"
     }

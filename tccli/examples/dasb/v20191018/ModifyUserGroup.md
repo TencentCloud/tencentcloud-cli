@@ -7,14 +7,14 @@ Input:
 ```
 tccli dasb ModifyUserGroup --cli-unfold-argument  \
     --Id 1 \
-    --Name xx
+    --Name 运维组
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx"
+        "RequestId": "dfac9070-8b23-499e-83b2-a50e3ca059af"
     }
 }
 ```

@@ -338,3 +338,40 @@ Output:
 }
 ```
 
+**Example 10: 为企业用户，创建合同批量签署链接**
+
+1. 为企业员工生成合同组H5批量签署链接
+2. 使用默认的签署方式
+
+
+Input: 
+
+```
+tccli ess CreateBatchQuickSignUrl --cli-unfold-argument  \
+    --Operator.ClientIp 1.2.3.4 \
+    --Operator.UserId yDxVwUyKQWho8CUuO4zjEyQOAgwvr4Zy \
+    --FlowApproverInfo.ApproverType 1 \
+    --FlowApproverInfo.ApproverMobile 13200000000 \
+    --FlowApproverInfo.ApproverName 典员工 \
+    --FlowApproverInfo.ApproverIdCardNumber 620000198802020000 \
+    --FlowApproverInfo.ApproverIdCardType ID_CARD \
+    --FlowApproverInfo.OrganizationName xxxx公司 \
+    --FlowIds yDSLcUUck****ysv1OQYIe9H ysv1OQYIe9H****yDSLcUUck
+```
+
+Output: 
+```
+{
+    "Response": {
+        "FlowApproverUrlInfo": {
+            "ApproverMobile": "13200000000",
+            "ApproverName": "典员工",
+            "ApproverType": 0,
+            "LongUrl": "https://quick.qian.tencent.cn/guide?Code=yDwi0U**xoK&CodeType=QUICK&shortKey=yDw**S2ATh95&token=Y9b**O",
+            "SignUrl": "https://essurl.cn/Y9b**O"
+        },
+        "RequestId": "s169**68"
+    }
+}
+```
+

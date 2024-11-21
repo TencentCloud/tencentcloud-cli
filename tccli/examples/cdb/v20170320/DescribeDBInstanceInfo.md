@@ -17,8 +17,8 @@ Output:
         "Encryption": "NO",
         "InstanceId": "cdb-oaj9cbla",
         "InstanceName": "cdb_name",
-        "KeyId": "",
-        "KeyRegion": "",
+        "KeyId": "***-CDB",
+        "KeyRegion": "ap-hongkong",
         "RequestId": "6EF60BEC-0242-43AF-BB20-270359FB54A7"
     }
 }

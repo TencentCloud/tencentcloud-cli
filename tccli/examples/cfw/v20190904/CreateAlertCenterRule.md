@@ -11,7 +11,7 @@ tccli cfw CreateAlertCenterRule --cli-unfold-argument  \
     --HandleType 1 \
     --AlertDirection 1 \
     --HandleDirection 1 \
-    --HandleComment test
+    --HandleComment 处置描述
 ```
 
 Output: 
@@ -39,7 +39,7 @@ tccli cfw CreateAlertCenterRule --cli-unfold-argument  \
     --HandleType 3 \
     --AlertDirection 0 \
     --HandleDirection 0 \
-    --HandleComment test
+    --HandleComment 处置描述
 ```
 
 Output: 

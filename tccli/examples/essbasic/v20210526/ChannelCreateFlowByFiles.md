@@ -1252,3 +1252,82 @@ Output:
 }
 ```
 
+**Example 12: 文件发起 使用关键字定位 签署方含有签批控件**
+
+注意： 关键字定位的签批控件，子控件的位置，大小是固定的，不能自定义。
+1.通过PDF文件发起合同 
+2.使用的是关键字定位
+3.指定B端签署方为企业【典子谦示例企业】，经办人为【典子谦】 
+4.指定C端签署方为个人【张三】 
+5.B 端签署人 有两个签署控件， 分别是签名控件和签批控件(SIGN_VIRTUAL_COMBINATION)，其中签批控件包含四个子控件, 在 Component 中的  "ComponentExtra": "{\"ChildrenTypes\":[\"SIGN_SIGNATURE\",\"SIGN_DATE\",\"SIGN_SELECTOR\",\"SIGN_MULTI_LINE_TEXT\"]}" 体现 ， 包括 审批意见(SIGN_SELECTOR)，个人签名(SIGN_SIGNATURE)，签署日期(SIGN_DATE)，批注附言(SIGN_MULTI_LINE_TEXT)， 但是关键字跟绝对定位的区别在于 关键字方式只用传递SIGN_VIRTUAL_COMBINATION 一个签署控件即可
+6.C 端签署人 有一个签批控件(SIGN_VIRTUAL_COMBINATION)，其中签批控件包含三个子控件, 在 Component 中的   "ComponentExtra": "{\"ChildrenTypes\":[\"SIGN_SIGNATURE\",\"SIGN_DATE\",\"SIGN_SELECTOR\",\"SIGN_MULTI_LINE_TEXT\"]}" 体现 ， 包括 审批意见(SIGN_SELECTOR)，个人签名(SIGN_SIGNATURE)，签署日期(SIGN_DATE)， 但是关键字跟绝对定位的区别在于 关键字方式只用传递SIGN_VIRTUAL_COMBINATION 一个签署控件即可
+
+Input: 
+
+```
+tccli essbasic ChannelCreateFlowByFiles --cli-unfold-argument  \
+    --Agent.AppId yDwhxUUckp3gl8j5UuFX33LSNozpRsbi \
+    --Agent.ProxyOrganizationOpenId org_dianziqian \
+    --Agent.ProxyOperator.OpenId n9527 \
+    --FlowName 文件发起-签批 \
+    --FlowApprovers.0.ApproverType ORGANIZATION \
+    --FlowApprovers.0.OrganizationOpenId org_dianziqian \
+    --FlowApprovers.0.OpenId n9527 \
+    --FlowApprovers.0.Name 典子谦 \
+    --FlowApprovers.0.Mobile 13200000000 \
+    --FlowApprovers.0.OrganizationName 典子谦示例企业 \
+    --FlowApprovers.0.SignComponents.0.FileIndex 0 \
+    --FlowApprovers.0.SignComponents.0.GenerateMode KEYWORD \
+    --FlowApprovers.0.SignComponents.0.OffsetX 0 \
+    --FlowApprovers.0.SignComponents.0.OffsetY 0 \
+    --FlowApprovers.0.SignComponents.0.RelativeLocation Right \
+    --FlowApprovers.0.SignComponents.0.ComponentId Test1 \
+    --FlowApprovers.0.SignComponents.0.ComponentExtra {"ChildrenTypes":["SIGN_SIGNATURE","SIGN_DATE","SIGN_SELECTOR","SIGN_MULTI_LINE_TEXT"]} \
+    --FlowApprovers.0.SignComponents.0.ComponentHeight 234 \
+    --FlowApprovers.0.SignComponents.0.ComponentName 签批1 \
+    --FlowApprovers.0.SignComponents.0.ComponentPage 1 \
+    --FlowApprovers.0.SignComponents.0.ComponentType SIGN_VIRTUAL_COMBINATION \
+    --FlowApprovers.0.SignComponents.0.ComponentWidth 210 \
+    --FlowApprovers.0.SignComponents.0.ComponentRequired False \
+    --FlowApprovers.1.ApproverType PERSON \
+    --FlowApprovers.1.Name 张三 \
+    --FlowApprovers.1.Mobile 18888888888 \
+    --FlowApprovers.1.SignComponents.0.FileIndex 0 \
+    --FlowApprovers.1.SignComponents.0.GenerateMode KEYWORD \
+    --FlowApprovers.1.SignComponents.0.OffsetX 0 \
+    --FlowApprovers.1.SignComponents.0.OffsetY 0 \
+    --FlowApprovers.1.SignComponents.0.RelativeLocation Right \
+    --FlowApprovers.1.SignComponents.0.ComponentId Test2 \
+    --FlowApprovers.1.SignComponents.0.ComponentExtra {"ChildrenTypes":["SIGN_SIGNATURE","SIGN_DATE","SIGN_SELECTOR","SIGN_MULTI_LINE_TEXT"]} \
+    --FlowApprovers.1.SignComponents.0.ComponentHeight 234 \
+    --FlowApprovers.1.SignComponents.0.ComponentName 签批1 \
+    --FlowApprovers.1.SignComponents.0.ComponentPage 1 \
+    --FlowApprovers.1.SignComponents.0.ComponentType SIGN_VIRTUAL_COMBINATION \
+    --FlowApprovers.1.SignComponents.0.ComponentWidth 210 \
+    --FlowApprovers.1.SignComponents.0.ComponentRequired False \
+    --FileIds yDCWqUUckpve5id3U4f5EL77tlNh6zTZ \
+    --Unordered True
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Approvers": [
+            {
+                "ApproverRoleName": "",
+                "RecipientId": "yDCdoUUckp7ltep9Uyq2ikIypsCCIqXS",
+                "SignId": "yDCdoUUckp7ltepxUyq2ikIE79iVjD2I"
+            },
+            {
+                "ApproverRoleName": "",
+                "RecipientId": "yDCdoUUckp7ltep7Uyq2ikIuzVkVXNut",
+                "SignId": "yDCdoUUckp7ltep4Uyq2ikI1baBbI9zJ"
+            }
+        ],
+        "FlowId": "yDCdoUUckp7ltepfUyq2ikI8VC2s92zT",
+        "RequestId": "s1732015258075060878"
+    }
+}
+```
+

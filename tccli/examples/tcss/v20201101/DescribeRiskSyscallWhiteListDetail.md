@@ -6,23 +6,23 @@ Input:
 
 ```
 tccli tcss DescribeRiskSyscallWhiteListDetail --cli-unfold-argument  \
-    --WhiteListId xxx
+    --WhiteListId 45645
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx",
+        "RequestId": "8bc803fd-d85d-47b8-9e2b-9644674be677",
         "WhiteListDetailInfo": {
             "SyscallNames": [
                 "chroot"
             ],
             "ImageIds": [
-                "xx"
+                "image-id"
             ],
-            "Id": "xx",
-            "ProcessPath": "xx"
+            "Id": "10001",
+            "ProcessPath": "/bin/sh"
         }
     }
 }

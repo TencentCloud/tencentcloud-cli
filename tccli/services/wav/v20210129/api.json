@@ -567,7 +567,7 @@
           "example": "1397103193143300098",
           "member": "int64",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -577,7 +577,7 @@
           "example": "1",
           "member": "int64",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -587,7 +587,7 @@
           "example": "1",
           "member": "string",
           "name": "Source",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -597,7 +597,7 @@
           "example": "自然到店",
           "member": "string",
           "name": "SourceName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -607,7 +607,7 @@
           "example": "测试企业标签的活码",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -617,7 +617,7 @@
           "example": "[                     1386218784692961300                 ]",
           "member": "int64",
           "name": "UseUserIdList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -627,7 +627,7 @@
           "example": "[                     \"544064e019b53e4791115020ffc68f33\"        ",
           "member": "string",
           "name": "UseUserOpenIdList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -637,7 +637,7 @@
           "example": "[                     {                         \"GroupName\": \"测试",
           "member": "WeComTagDetail",
           "name": "TagList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -647,7 +647,7 @@
           "example": "0",
           "member": "int64",
           "name": "SkipVerify",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -657,7 +657,7 @@
           "example": "0",
           "member": "int64",
           "name": "Friends",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -667,7 +667,7 @@
           "example": "备注",
           "member": "string",
           "name": "Remark",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -677,17 +677,17 @@
           "example": "1397103192673538050",
           "member": "int64",
           "name": "MsgId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "联系我config_id",
-          "example": "13ef26feea8c92e2b0c895db45987fb9",
+          "example": "safds213dsaddasfadfafnaslf",
           "member": "string",
           "name": "ConfigId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -697,7 +697,7 @@
           "example": "https://wework.qpic.cn/wwpic/142302_fc9KKS9RSyS58cp_1621930333/0",
           "member": "string",
           "name": "QrCodeUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -707,7 +707,7 @@
           "example": "0",
           "member": "int64",
           "name": "RecStatus",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -717,7 +717,7 @@
           "example": "LXC",
           "member": "string",
           "name": "AppId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -918,7 +918,7 @@
         {
           "disabled": false,
           "document": "客户在微信生态中唯一识别码",
-          "example": "ozynqsulJFCZ2z1aYeS8h",
+          "example": "ozynxxxxxxxxxx1aYeS8h",
           "member": "string",
           "name": "UnionId",
           "output_required": true,
@@ -2674,10 +2674,10 @@
         {
           "disabled": false,
           "document": "外部联系人的userId",
-          "example": "wmQIM2CwAAE-JSOVGMzsRayI3ow5kGzQ",
+          "example": "safdsafDBFJJDSJFOISDFH234fewfwDSFDSFn",
           "member": "string",
           "name": "ExternalUserId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2687,7 +2687,7 @@
           "example": "1",
           "member": "int64",
           "name": "Gender",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2697,7 +2697,7 @@
           "example": "文",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2707,17 +2707,17 @@
           "example": "1",
           "member": "uint64",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "外部联系人在微信开放平台的唯一身份标识（微信unionid），通过此字段企业可将外部联系人与公众号/小程序用户关联起来。仅当联系人类型是微信用户，且企业或第三方服务商绑定了微信开发者ID有此字段。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "ozynqsulJFCZ2z1aYeS8h-nuasdAAA",
+          "example": "dsnfadjfnsddsafaSDFNDSOFN23423",
           "member": "string",
           "name": "UnionId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2727,7 +2727,7 @@
           "example": "134****3232",
           "member": "string",
           "name": "Phone",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -2766,10 +2766,10 @@
         {
           "disabled": false,
           "document": "外部联系人的userId",
-          "example": "woAJ2GCAAAXtWyujaWJHDDGi0mACAAA",
+          "example": "wSDFDSN8xxxXtWyujaWJHxxxSDFS8324",
           "member": "string",
           "name": "ExternalUserId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2779,7 +2779,7 @@
           "example": "yangGuo",
           "member": "string",
           "name": "UserId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2789,7 +2789,7 @@
           "example": "销售名称",
           "member": "string",
           "name": "SalesName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2799,7 +2799,7 @@
           "example": "[0,1]",
           "member": "int64",
           "name": "DepartmentIdList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -2904,20 +2904,20 @@
         {
           "disabled": false,
           "document": "企业主体对应的外部联系人userId",
-          "example": "wmQIM2CwAAywHqH07voRw9iuAAA09eQ",
+          "example": "safdIDSFNfsdxxxywsdfRwxxfdDXfs",
           "member": "string",
           "name": "CorpExternalUserId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "乐销车应用主体对应的外部联系人, 当不存在好友关系时，该字段值为空\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "wmQIM2CwAAywHqH07voRw9feafe9eQ",
+          "example": "safdIDSFNfsdxxxywsdfRwxxfdDXfs",
           "member": "string",
           "name": "ExternalUserId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -3069,7 +3069,7 @@
           "example": "rocky",
           "member": "string",
           "name": "UserId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3079,7 +3079,7 @@
           "example": "备注",
           "member": "string",
           "name": "Remark",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3089,7 +3089,7 @@
           "example": "描述",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3099,7 +3099,7 @@
           "example": "1618322621",
           "member": "uint64",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3109,17 +3109,17 @@
           "example": "1",
           "member": "int64",
           "name": "AddWay",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "发起添加的userid，如果成员主动添加，为成员的userid；如果是客户主动添加，则为客户的外部联系人userid；如果是内部成员共享/管理员分配，则为对应的成员/管理员userid",
-          "example": "wmQIM2CwAAE-JSOVGMzsRayI3ow5kGzQ",
+          "example": "sadfNDJSNFDSOF23234DSDSNFdsfjkdnf",
           "member": "string",
           "name": "OperUserId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3129,7 +3129,7 @@
           "example": "[]",
           "member": "ExternalContactTag",
           "name": "Tags",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -4400,7 +4400,7 @@
         {
           "disabled": false,
           "document": "外部联系人的userid，注意不是企业成员的账号",
-          "example": "woAJ2GCAAAXtWyujaWJHDDGi0mACHAAA",
+          "example": "sdafsdSDJFBJSDF3424xxfdsfdsF",
           "member": "string",
           "name": "ExternalUserId",
           "required": true,
@@ -4502,7 +4502,7 @@
           "example": "无",
           "member": "ExternalContactSimpleInfo",
           "name": "PageData",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -4512,7 +4512,7 @@
           "example": "2Kgdu51quLaeNJSlwb79im883bftBE9d9Emju5I2MVw",
           "member": "string",
           "name": "NextCursor",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4605,7 +4605,7 @@
         {
           "disabled": false,
           "document": "企业主体对应的外部联系人id列表，列表长度限制最大为50。",
-          "example": "[\"wmQIM2CwAAywHqH07voRw9aacKXf09eQ\"]",
+          "example": "[\"xxxfDFsIsxxxxWDWFFSsds34H07vosdfs23fsfdsxcsfdda\"]",
           "member": "string",
           "name": "CorpExternalUserIdList",
           "required": true,
@@ -4623,7 +4623,7 @@
           "example": "无",
           "member": "ExternalUserMappingInfo",
           "name": "ExternalUserIdMapping",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },

@@ -14,11 +14,60 @@
       "output": "ChatCompletionsResponse",
       "status": "online"
     },
+    "CreateThread": {
+      "document": "腾讯混元大模型是由腾讯研发的大语言模型，具备强大的中文创作能力，复杂语境下的逻辑推理能力，以及可靠的任务执行能力。本接口支持流式或非流式调用，当使用流式调用时为 SSE 协议。\n\n 1. 本接口暂不支持返回图片内容。\n 2. 默认该接口下单账号限制并发数为  5 路，如您有提高并发限制的需求请 [购买](https://buy.cloud.tencent.com/hunyuan) 。\n 3. 请使用 SDK 调用本接口，每种开发语言的 SDK Git 仓库 examples/hunyuan/v20230901/ 目录下有提供示例供参考。SDK 链接在文档下方 “**开发者资源 - SDK**” 部分提供。\n 4. 我们推荐您使用 API Explorer，方便快速地在线调试接口和下载各语言的示例代码，[点击打开](https://console.cloud.tencent.com/api/explorer?Product=hunyuan&Version=2023-09-01&Action=ChatCompletions)。",
+      "input": "CreateThreadRequest",
+      "name": "创建会话",
+      "output": "CreateThreadResponse",
+      "status": "online"
+    },
+    "FilesDeletions": {
+      "document": "删除文件。",
+      "input": "FilesDeletionsRequest",
+      "name": "文件删除",
+      "output": "FilesDeletionsResponse",
+      "status": "online"
+    },
+    "FilesList": {
+      "document": "文件列表。",
+      "input": "FilesListRequest",
+      "name": "文件列表",
+      "output": "FilesListResponse",
+      "status": "online"
+    },
+    "FilesUploads": {
+      "document": "上传用于不同用途的文件。\n当前用途仅支持 hunyuan 等模型的文档理解。",
+      "input": "FilesUploadsRequest",
+      "name": "文件上传",
+      "output": "FilesUploadsResponse",
+      "status": "online"
+    },
     "GetEmbedding": {
       "document": "腾讯混元 Embedding 接口，可以将文本转化为高质量的向量数据。向量维度为1024维。",
       "input": "GetEmbeddingRequest",
       "name": "hunyuan-embedding",
       "output": "GetEmbeddingResponse",
+      "status": "online"
+    },
+    "GetThread": {
+      "document": "腾讯混元大模型是由腾讯研发的大语言模型，具备强大的中文创作能力，复杂语境下的逻辑推理能力，以及可靠的任务执行能力。本接口支持流式或非流式调用，当使用流式调用时为 SSE 协议。\n\n 1. 本接口暂不支持返回图片内容。\n 2. 默认该接口下单账号限制并发数为  5 路，如您有提高并发限制的需求请 [购买](https://buy.cloud.tencent.com/hunyuan) 。\n 3. 请使用 SDK 调用本接口，每种开发语言的 SDK Git 仓库 examples/hunyuan/v20230901/ 目录下有提供示例供参考。SDK 链接在文档下方 “**开发者资源 - SDK**” 部分提供。\n 4. 我们推荐您使用 API Explorer，方便快速地在线调试接口和下载各语言的示例代码，[点击打开](https://console.cloud.tencent.com/api/explorer?Product=hunyuan&Version=2023-09-01&Action=ChatCompletions)。",
+      "input": "GetThreadRequest",
+      "name": "查询会话",
+      "output": "GetThreadResponse",
+      "status": "online"
+    },
+    "GetThreadMessage": {
+      "document": "腾讯混元大模型是由腾讯研发的大语言模型，具备强大的中文创作能力，复杂语境下的逻辑推理能力，以及可靠的任务执行能力。本接口支持流式或非流式调用，当使用流式调用时为 SSE 协议。\n\n 1. 本接口暂不支持返回图片内容。\n 2. 默认该接口下单账号限制并发数为  5 路，如您有提高并发限制的需求请 [购买](https://buy.cloud.tencent.com/hunyuan) 。\n 3. 请使用 SDK 调用本接口，每种开发语言的 SDK Git 仓库 examples/hunyuan/v20230901/ 目录下有提供示例供参考。SDK 链接在文档下方 “**开发者资源 - SDK**” 部分提供。\n 4. 我们推荐您使用 API Explorer，方便快速地在线调试接口和下载各语言的示例代码，[点击打开](https://console.cloud.tencent.com/api/explorer?Product=hunyuan&Version=2023-09-01&Action=ChatCompletions)。",
+      "input": "GetThreadMessageRequest",
+      "name": "获取会话消息",
+      "output": "GetThreadMessageResponse",
+      "status": "online"
+    },
+    "GetThreadMessageList": {
+      "document": "腾讯混元大模型是由腾讯研发的大语言模型，具备强大的中文创作能力，复杂语境下的逻辑推理能力，以及可靠的任务执行能力。本接口支持流式或非流式调用，当使用流式调用时为 SSE 协议。\n\n 1. 本接口暂不支持返回图片内容。\n 2. 默认该接口下单账号限制并发数为  5 路，如您有提高并发限制的需求请 [购买](https://buy.cloud.tencent.com/hunyuan) 。\n 3. 请使用 SDK 调用本接口，每种开发语言的 SDK Git 仓库 examples/hunyuan/v20230901/ 目录下有提供示例供参考。SDK 链接在文档下方 “**开发者资源 - SDK**” 部分提供。\n 4. 我们推荐您使用 API Explorer，方便快速地在线调试接口和下载各语言的示例代码，[点击打开](https://console.cloud.tencent.com/api/explorer?Product=hunyuan&Version=2023-09-01&Action=ChatCompletions)。",
+      "input": "GetThreadMessageListRequest",
+      "name": "会话消息列表",
+      "output": "GetThreadMessageListResponse",
       "status": "online"
     },
     "GetTokenCount": {
@@ -40,6 +89,13 @@
       "input": "QueryHunyuanImageJobRequest",
       "name": "查询混元生图任务",
       "output": "QueryHunyuanImageJobResponse",
+      "status": "online"
+    },
+    "RunThread": {
+      "document": "腾讯混元大模型是由腾讯研发的大语言模型，具备强大的中文创作能力，复杂语境下的逻辑推理能力，以及可靠的任务执行能力。本接口支持流式或非流式调用，当使用流式调用时为 SSE 协议。\n\n 1. 本接口暂不支持返回图片内容。\n 2. 默认该接口下单账号限制并发数为  5 路，如您有提高并发限制的需求请 [购买](https://buy.cloud.tencent.com/hunyuan) 。\n 3. 请使用 SDK 调用本接口，每种开发语言的 SDK Git 仓库 examples/hunyuan/v20230901/ 目录下有提供示例供参考。SDK 链接在文档下方 “**开发者资源 - SDK**” 部分提供。\n 4. 我们推荐您使用 API Explorer，方便快速地在线调试接口和下载各语言的示例代码，[点击打开](https://console.cloud.tencent.com/api/explorer?Product=hunyuan&Version=2023-09-01&Action=ChatCompletions)。",
+      "input": "RunThreadRequest",
+      "name": "执行会话",
+      "output": "RunThreadResponse",
       "status": "online"
     },
     "SetPayMode": {
@@ -110,7 +166,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "模型名称，可选值包括 hunyuan-lite、hunyuan-standard、hunyuan-standard-256K、hunyuan-pro、 hunyuan-code、 hunyuan-role、 hunyuan-functioncall、 hunyuan-vision、 hunyuan-turbo、 hunyuan-turbo-latest。\n各模型介绍请阅读 [产品概述](https://cloud.tencent.com/document/product/1729/104753) 中的说明。\n\n注意：\n不同的模型计费不同，请根据 [购买指南](https://cloud.tencent.com/document/product/1729/97731) 按需调用。",
+          "document": "模型名称，可选值包括 hunyuan-lite、hunyuan-standard、hunyuan-standard-256K、hunyuan-pro、 hunyuan-code、 hunyuan-role、 hunyuan-functioncall、 hunyuan-vision、 hunyuan-turbo、 hunyuan-turbo-latest、 hunyuan-large。\n各模型介绍请阅读 [产品概述](https://cloud.tencent.com/document/product/1729/104753) 中的说明。\n\n注意：\n不同的模型计费不同，请根据 [购买指南](https://cloud.tencent.com/document/product/1729/97731) 按需调用。",
           "example": "hunyuan-pro",
           "member": "string",
           "name": "Model",
@@ -233,6 +289,24 @@
           "name": "EnableMultimedia",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启深度研究该问题，默认是false，在值为true且命中深度研究该问题时，会返回深度研究该问题信息。",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableDeepSearch",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "说明： 1. 确保模型的输出是可复现的。 2. 取值区间为非0正整数，最大值10000。 3. 非必要不建议使用，不合理的取值会影响效果。",
+          "example": "1",
+          "member": "int64",
+          "name": "Seed",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -371,6 +445,16 @@
           "output_required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "索引值，流式调用时使用该字段。",
+          "example": "0",
+          "member": "int64",
+          "name": "Index",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -413,6 +497,63 @@
         }
       ],
       "usage": "both"
+    },
+    "CreateThreadRequest": {
+      "document": "CreateThread请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "CreateThreadResponse": {
+      "document": "CreateThread返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "会话 ID",
+          "example": "thread_OteLtAcmh7prn7tb8uQ3SJzh",
+          "member": "string",
+          "name": "ID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对象类型",
+          "example": "thread",
+          "member": "string",
+          "name": "Object",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间，Unix 时间戳，单位为秒。",
+          "example": "1705634032",
+          "member": "int64",
+          "name": "CreatedAt",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "提供给工具的资源列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"CodeInterpreter\": [\"file-tZ0lWeNW4oNbEiMYGtOXEmEk\"]}",
+          "member": "ThreadToolResources",
+          "name": "ToolResources",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。本接口为流式响应接口，当请求成功时，RequestId 会被放在 HTTP 响应的 Header \"X-TC-RequestId\" 中。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "Delta": {
       "document": "返回的内容（流式返回）",
@@ -538,6 +679,297 @@
       ],
       "usage": "out"
     },
+    "FileObject": {
+      "document": "已上传的文件对象。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件标识符，可在各个API中引用。",
+          "example": "file-YbhlphnNEsjRoKTEXukAqNZZ",
+          "member": "string",
+          "name": "ID",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对象类型，始终为 file。",
+          "example": "file",
+          "member": "string",
+          "name": "Object",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件大小，单位为字节。",
+          "example": "15877",
+          "member": "uint64",
+          "name": "Bytes",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件创建时的 Unix 时间戳（秒）。",
+          "example": "1722325693",
+          "member": "int64",
+          "name": "CreatedAt",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件名。",
+          "example": "test.docx",
+          "member": "string",
+          "name": "Filename",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "上传文件的用途。",
+          "example": "file-extract",
+          "member": "string",
+          "name": "Purpose",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "FilesDeletionsRequest": {
+      "document": "FilesDeletions请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件标识符。",
+          "example": "file-YbhlphnNEsjRoKTEXukAqNZZ",
+          "member": "string",
+          "name": "ID",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "FilesDeletionsResponse": {
+      "document": "FilesDeletions返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件标识符。",
+          "example": "file-YbhlphnNEsjRoKTEXukAqNZZ",
+          "member": "string",
+          "name": "ID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对象类型，始终为 file。",
+          "example": "file",
+          "member": "string",
+          "name": "Object",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否删除成功。",
+          "example": "true",
+          "member": "bool",
+          "name": "Deleted",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。本接口为流式响应接口，当请求成功时，RequestId 会被放在 HTTP 响应的 Header \"X-TC-RequestId\" 中。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "FilesListRequest": {
+      "document": "FilesList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分页偏移量。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页数量，最大 100。",
+          "example": "100",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "FilesListResponse": {
+      "document": "FilesList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件数量。",
+          "example": "100",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对象类型，始终为 list。",
+          "example": "list",
+          "member": "string",
+          "name": "Object",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "FileObject 列表。",
+          "example": "[{\"id\":\"file-YbhlphnNEsjRoKTEXukAqNZZ\",\"object\":\"file\",\"bytes\":15877,\"created_at\":1722325693,\"filename\":\"test.docx\",\"purpose\":\"file-extract\"}]",
+          "member": "FileObject",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。本接口为流式响应接口，当请求成功时，RequestId 会被放在 HTTP 响应的 Header \"X-TC-RequestId\" 中。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "FilesUploadsRequest": {
+      "document": "FilesUploads请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件名。",
+          "example": "云API产品简介.pdf",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "文件链接。目前仅支持 pdf 格式，单文件大小限制为100M。",
+          "example": "https://main.qcloudimg.com/raw/document/product/pdf/1278_46794_cn.pdf",
+          "member": "string",
+          "name": "URL",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "FilesUploadsResponse": {
+      "document": "FilesUploads返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件标识符，可在各个API中引用。",
+          "example": "file-YbhlphnNEsjRoKTEXukAqNZZ",
+          "member": "string",
+          "name": "ID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对象类型，始终为 file。",
+          "example": "file",
+          "member": "string",
+          "name": "Object",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件大小，单位为字节。",
+          "example": "15877",
+          "member": "int64",
+          "name": "Bytes",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件创建时的 Unix 时间戳（秒）。",
+          "example": "1722325693",
+          "member": "int64",
+          "name": "CreatedAt",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件名。",
+          "example": "test.docx",
+          "member": "string",
+          "name": "Filename",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "上传文件的用途。",
+          "example": "file-extract",
+          "member": "string",
+          "name": "Purpose",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。本接口为流式响应接口，当请求成功时，RequestId 会被放在 HTTP 响应的 Header \"X-TC-RequestId\" 中。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "GetEmbeddingRequest": {
       "document": "GetEmbedding请求参数结构体",
       "members": [
@@ -547,8 +979,17 @@
           "example": "无",
           "member": "string",
           "name": "Input",
-          "required": true,
+          "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "输入文本数组。输入数组总长度不超过 200 。",
+          "example": "无",
+          "member": "string",
+          "name": "InputList",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -558,7 +999,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回的 Embedding 信息。当前不支持批量，所以数组元素数目为 1。",
+          "document": "返回的 Embedding 信息。",
           "example": "无",
           "member": "EmbeddingData",
           "name": "Data",
@@ -578,6 +1019,334 @@
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetThreadMessageListRequest": {
+      "document": "GetThreadMessageList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "会话 ID",
+          "example": "thread_OteLtAcmh7prn7tb8uQ3SJzh",
+          "member": "string",
+          "name": "ThreadID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "返回的消息条数，1 - 100 条",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序方式，按创建时间升序（asc）或降序（desc），默认为 desc",
+          "example": "desc",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetThreadMessageListResponse": {
+      "document": "GetThreadMessageList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "消息列表",
+          "example": "[{\"ID\":\"msg_UT0ERwQZyW6uOYsrxl2Fho7f\",\"Object\":\"thread.message\",\"CreatedAt\":1727322128,\"ThreadID\":\"thread_UYvPK1D07EwzgFFXZLB1VGNE\",\"Status\":\"completed\",\"InCompleteDetails\":{\"Reason\":\"\"},\"CompletedAt\":1727322127,\"ImCompleteAt\":1727322127,\"Role\":\"assistant\",\"Content\":\"你好\",\"AssistantID\":\"\",\"RunID\":\"run_zopoDeYLpWNRu7eItUzJxaH1\",\"Attachments\":[],\"Metadata\":{}}]",
+          "member": "ThreadMessage",
+          "name": "Data",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "第一条消息 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "msg_UT0ERwQZyW6uOYsrxl2Fho7f",
+          "member": "string",
+          "name": "FirstID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "最后一条消息 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "msg_kP6Xm8FC0NchARWC5cNF2IU0",
+          "member": "int64",
+          "name": "LastID",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否还有更多消息",
+          "example": "false",
+          "member": "bool",
+          "name": "HasMore",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对象类型",
+          "example": "list",
+          "member": "string",
+          "name": "Object",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。本接口为流式响应接口，当请求成功时，RequestId 会被放在 HTTP 响应的 Header \"X-TC-RequestId\" 中。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetThreadMessageRequest": {
+      "document": "GetThreadMessage请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "会话 ID",
+          "example": "thread_QPH2Z6DpBhc46V3ylE1JEqTv",
+          "member": "string",
+          "name": "ThreadID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "消息 ID",
+          "example": "msg_jtO6oVZmFtIi4T43eswXk6lJ",
+          "member": "string",
+          "name": "MessageID",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetThreadMessageResponse": {
+      "document": "GetThreadMessage返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "消息 ID",
+          "example": "msg_pYmfqfAkOcN5bM1rjdEjbVZV",
+          "member": "string",
+          "name": "ID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对象类型",
+          "example": "thread.message",
+          "member": "string",
+          "name": "Object",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "1727269943",
+          "member": "int64",
+          "name": "CreatedAt",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "会话 ID",
+          "example": "thread_OteLtAcmh7prn7tb8uQ3SJzh",
+          "member": "string",
+          "name": "ThreadID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态，处理中 in_progress，已完成 completed，未完成 incomplete。 ",
+          "example": "completed",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "未完成原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"Reason\": \"\"}",
+          "member": "ThreadMessageInCompleteDetailsObject",
+          "name": "InCompleteDetails",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "完成时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1727264847",
+          "member": "int64",
+          "name": "CompletedAt",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "未完成时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1727264847",
+          "member": "int64",
+          "name": "InCompleteAt",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "角色",
+          "example": "user",
+          "member": "string",
+          "name": "Role",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内容",
+          "example": "你好",
+          "member": "string",
+          "name": "Content",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "助手 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "asst_LhSU47qcQcFEItggpGEx5eh1",
+          "member": "string",
+          "name": "AssistantID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "运行 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "run_SR0cPyidY0vBWy7mcYN5loSR",
+          "member": "string",
+          "name": "RunID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "附件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{\"FileID\":\"file-tMjt0CQnvU25GwUDkih4tU4H\"}]",
+          "member": "ThreadMessageAttachmentObject",
+          "name": "Attachments",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。本接口为流式响应接口，当请求成功时，RequestId 会被放在 HTTP 响应的 Header \"X-TC-RequestId\" 中。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetThreadRequest": {
+      "document": "GetThread请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "会话 ID",
+          "example": "thread_OteLtAcmh7prn7tb8uQ3SJzh",
+          "member": "string",
+          "name": "ThreadID",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetThreadResponse": {
+      "document": "GetThread返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "会话 ID",
+          "example": "thread_OteLtAcmh7prn7tb8uQ3SJzh",
+          "member": "string",
+          "name": "ID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对象类型",
+          "example": "thread",
+          "member": "string",
+          "name": "Object",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间，Unix 时间戳，单位为秒。",
+          "example": "1705634032",
+          "member": "int64",
+          "name": "CreatedAt",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "提供给工具的资源列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"CodeInterpreter\": [\"file-tZ0lWeNW4oNbEiMYGtOXEmEk\"]}",
+          "member": "ThreadToolResources",
+          "name": "ToolResources",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。本接口为流式响应接口，当请求成功时，RequestId 会被放在 HTTP 响应的 Header \"X-TC-RequestId\" 中。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -715,7 +1484,7 @@
         {
           "disabled": false,
           "document": "水印url",
-          "example": "无",
+          "example": "https://xxx.com/logo.jpg",
           "member": "string",
           "name": "LogoUrl",
           "required": false,
@@ -724,7 +1493,7 @@
         {
           "disabled": false,
           "document": "水印base64，url和base64二选一传入",
-          "example": "无",
+          "example": "9j/4QlQaHR0c...N6a2M5ZCI",
           "member": "string",
           "name": "LogoImage",
           "required": false,
@@ -733,7 +1502,7 @@
         {
           "disabled": false,
           "document": "水印图片位于融合结果图中的坐标，将按照坐标对标识图片进行位置和大小的拉伸匹配",
-          "example": "无",
+          "example": "{\"X\": 10, \"Y\": 10, \"Width\": 20, \"Height\": 20}",
           "member": "LogoRect",
           "name": "LogoRect",
           "required": false,
@@ -748,7 +1517,7 @@
         {
           "disabled": false,
           "document": "左上角X坐标",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "X",
           "required": false,
@@ -757,7 +1526,7 @@
         {
           "disabled": false,
           "document": "左上角Y坐标",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "Y",
           "required": false,
@@ -766,7 +1535,7 @@
         {
           "disabled": false,
           "document": "方框宽度",
-          "example": "无",
+          "example": "20",
           "member": "int64",
           "name": "Width",
           "required": false,
@@ -775,7 +1544,7 @@
         {
           "disabled": false,
           "document": "方框高度",
-          "example": "无",
+          "example": "20",
           "member": "int64",
           "name": "Height",
           "required": false,
@@ -840,6 +1609,34 @@
           "output_required": false,
           "required": false,
           "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "Mindmap": {
+      "document": "脑图",
+      "members": [
+        {
+          "disabled": false,
+          "document": "脑图缩略图链接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ThumbUrl",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "脑图图片链接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Url",
+          "output_required": false,
+          "required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -927,7 +1724,7 @@
         {
           "disabled": false,
           "document": "任务 ID。",
-          "example": "无",
+          "example": "1253534368-1731657099-7276788a-a326-11ef-beeb-525400bba60c-0",
           "member": "string",
           "name": "JobId",
           "required": false,
@@ -942,7 +1739,7 @@
         {
           "disabled": false,
           "document": "当前任务状态码：\n1：等待中、2：运行中、4：处理失败、5：处理完成。",
-          "example": "无",
+          "example": "5",
           "member": "string",
           "name": "JobStatusCode",
           "output_required": false,
@@ -952,7 +1749,7 @@
         {
           "disabled": false,
           "document": "当前任务状态：排队中、处理中、处理失败或者处理完成。\n",
-          "example": "无",
+          "example": "处理完成",
           "member": "string",
           "name": "JobStatusMsg",
           "output_required": false,
@@ -962,7 +1759,7 @@
         {
           "disabled": false,
           "document": "任务处理失败错误码。\n",
-          "example": "无",
+          "example": "FailedOperation.DownloadError",
           "member": "string",
           "name": "JobErrorCode",
           "output_required": false,
@@ -972,7 +1769,7 @@
         {
           "disabled": false,
           "document": "任务处理失败错误信息。\n",
-          "example": "无",
+          "example": "文件下载失败。",
           "member": "string",
           "name": "JobErrorMsg",
           "output_required": false,
@@ -982,7 +1779,7 @@
         {
           "disabled": false,
           "document": "本轮对话的 ChatId，ChatId 用于唯一标识一轮对话。\n一个对话组中，最多支持进行100轮对话。\n每轮对话数据有效期为7天，到期后 ChatId 失效，有效期内的历史对话数据可通过 History 查询，如有长期使用需求请及时保存输入输出数据。",
-          "example": "无",
+          "example": "1248907282106990592",
           "member": "string",
           "name": "ChatId",
           "output_required": false,
@@ -992,7 +1789,7 @@
         {
           "disabled": false,
           "document": "生成图 URL 列表，有效期7天，请及时保存。",
-          "example": "无",
+          "example": "[\"https://aiart-xxx.cos.ap-guangzhou.myqcloud.com/xxx?q-sign-algorithm=sha1&q-ak=xxx&q-sign-time=1731657113;1732261913&q-key-time=1731657113;1732261913&q-header-list=host&q-url-param-list=&q-signature=b9c4be16d763664d829d0bfa398f571aa0e75c0e\"]",
           "member": "string",
           "name": "ResultImage",
           "output_required": false,
@@ -1002,7 +1799,7 @@
         {
           "disabled": false,
           "document": "结果 detail 数组，Success 代表成功。\n",
-          "example": "无",
+          "example": "[\"Success\"]",
           "member": "string",
           "name": "ResultDetails",
           "output_required": false,
@@ -1012,7 +1809,7 @@
         {
           "disabled": false,
           "document": "本轮对话前置的历史对话数据（不含生成图）。",
-          "example": "无",
+          "example": "[       {         \"ChatId\": \"1248907282106990592\",         \"Prompt\": \"请画一个苹果在桌子上\",         \"RevisedPrompt\": \"风格为摄影风格，桌子上摆放着一个红润的苹果，镜头为近景镜头\",         \"Seed\": 1549130027       }     ]",
           "member": "History",
           "name": "History",
           "output_required": false,
@@ -1034,7 +1831,7 @@
         {
           "disabled": false,
           "document": "任务 ID。",
-          "example": "无",
+          "example": "251197749-1731412663-d4e1f224-fa21-40bc-9ee7-4bb13abece6e-0",
           "member": "string",
           "name": "JobId",
           "required": true,
@@ -1049,7 +1846,7 @@
         {
           "disabled": false,
           "document": "当前任务状态码：\n1：等待中、2：运行中、4：处理失败、5：处理完成。",
-          "example": "无",
+          "example": "5",
           "member": "string",
           "name": "JobStatusCode",
           "output_required": false,
@@ -1059,7 +1856,7 @@
         {
           "disabled": false,
           "document": "当前任务状态：排队中、处理中、处理失败或者处理完成。\n",
-          "example": "无",
+          "example": "处理完成",
           "member": "string",
           "name": "JobStatusMsg",
           "output_required": false,
@@ -1069,7 +1866,7 @@
         {
           "disabled": false,
           "document": "任务处理失败错误码。\n",
-          "example": "无",
+          "example": "FailedOperation.DownloadError",
           "member": "string",
           "name": "JobErrorCode",
           "output_required": false,
@@ -1079,7 +1876,7 @@
         {
           "disabled": false,
           "document": "任务处理失败错误信息。\n",
-          "example": "无",
+          "example": "文件下载失败。",
           "member": "string",
           "name": "JobErrorMsg",
           "output_required": false,
@@ -1089,7 +1886,7 @@
         {
           "disabled": false,
           "document": "生成图 URL 列表，有效期1小时，请及时保存。\n",
-          "example": "无",
+          "example": "[\"https://aiart-xxx.cos.ap-guangzhou.myqcloud.com/xxx?q-sign-algorithm=sha1&q-ak=xxx&q-sign-time=1731655045;1731658645&q-key-time=1731655045;1731658645&q-header-list=host&q-url-param-list=&q-signature=72776438be444f9a72e04e5e6376aadf51e65655\"]",
           "member": "string",
           "name": "ResultImage",
           "output_required": false,
@@ -1099,7 +1896,7 @@
         {
           "disabled": false,
           "document": "结果 detail 数组，Success 代表成功。\n",
-          "example": "无",
+          "example": "[\"Success\"]",
           "member": "string",
           "name": "ResultDetails",
           "output_required": false,
@@ -1108,8 +1905,8 @@
         },
         {
           "disabled": false,
-          "document": "对应 SubmitTextToImageProJob 接口中 Revise 参数。开启扩写时，返回扩写后的 prompt 文本。 如果关闭扩写，将直接返回原始输入的 prompt。",
-          "example": "无",
+          "document": "对应 SubmitHunyuanImageJob 接口中 Revise 参数。开启扩写时，返回扩写后的 prompt 文本。 如果关闭扩写，将直接返回原始输入的 prompt。",
+          "example": "[\"一条细长的小路穿梭在茂密的竹林中，天空下着细雨，雨水滴答落在翠绿的竹叶上，沿途的小路湿润且闪烁着水光，竹叶摇曳间洒下点点水珠，营造出静谧而清新的氛围\"]",
           "member": "string",
           "name": "RevisedPrompt",
           "output_required": false,
@@ -1124,6 +1921,95 @@
         }
       ],
       "type": "object"
+    },
+    "RelevantEntity": {
+      "document": "相关组织及人物",
+      "members": [
+        {
+          "disabled": false,
+          "document": "相关组织及人物名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "相关组织及人物内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Content",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "相关事件引用文章标号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Reference",
+          "output_required": false,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "RelevantEvent": {
+      "document": "相关事件",
+      "members": [
+        {
+          "disabled": false,
+          "document": "相关事件标题\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Title",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "相关事件内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Content",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "相关事件时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Datetime",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "相关事件引用文章标号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Reference",
+          "output_required": false,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "Replace": {
       "document": "多媒体占位符替换信息",
@@ -1151,6 +2037,123 @@
       ],
       "usage": "out"
     },
+    "RunThreadRequest": {
+      "document": "RunThread请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "会话 ID",
+          "example": "thread_OteLtAcmh7prn7tb8uQ3SJzh",
+          "member": "string",
+          "name": "ThreadID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "助手 ID",
+          "example": "asst_x39o8phGyiIC8llpaVShxVmL",
+          "member": "string",
+          "name": "AssistantID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "模型名称，可选值包括 hunyuan-lite、hunyuan-standard、hunyuan-standard-256K、hunyuan-pro、 hunyuan-code、 hunyuan-role、 hunyuan-functioncall、 hunyuan-vision、 hunyuan-turbo。各模型介绍请阅读 [产品概述](https://cloud.tencent.com/document/product/1729/104753) 中的说明。注意：不同的模型计费不同，请根据 [购买指南](https://cloud.tencent.com/document/product/1729/97731) 按需调用。",
+          "example": "hunyuan-pro",
+          "member": "string",
+          "name": "Model",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "附加消息",
+          "example": "[]",
+          "member": "ThreadAdditionalMessage",
+          "name": "AdditionalMessages",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "说明：1. 影响模型输出多样性，模型已有默认参数，不传值时使用各模型推荐值，不推荐用户修改。2. 取值区间为 [0.0, 2.0]。较高的数值会使输出更加多样化和不可预测，而较低的数值会使其更加集中和确定。",
+          "example": "无",
+          "member": "float",
+          "name": "Temperature",
+          "required": false,
+          "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "说明：1. 影响输出文本的多样性。模型已有默认参数，不传值时使用各模型推荐值，不推荐用户修改。2. 取值区间为 [0.0, 1.0]。取值越大，生成文本的多样性越强。",
+          "example": "无",
+          "member": "float",
+          "name": "TopP",
+          "required": false,
+          "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "是否流式输出，当前只允许 true",
+          "example": "true",
+          "member": "bool",
+          "name": "Stream",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "运行过程中可使用的 token 最大数量。",
+          "example": "0",
+          "member": "int64",
+          "name": "MaxPromptTokens",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "运行过程中可使用的完成 token 的最大数量。",
+          "example": "0",
+          "member": "int64",
+          "name": "MaxCompletionTokens",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "可调用的工具列表，仅对 hunyuan-pro、hunyuan-turbo、hunyuan-functioncall 模型生效。",
+          "example": "无",
+          "member": "Tool",
+          "name": "Tools",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "工具使用选项，可选值包括 none、auto、custom。说明：1. 仅对 hunyuan-pro、hunyuan-turbo、hunyuan-functioncall 模型生效。2. none：不调用工具；auto：模型自行选择生成回复或调用工具；custom：强制模型调用指定的工具。3. 未设置时，默认值为auto",
+          "example": "auto",
+          "member": "string",
+          "name": "ToolChoice",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RunThreadResponse": {
+      "document": "RunThread返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。本接口为流式响应接口，当请求成功时，RequestId 会被放在 HTTP 响应的 Header \"X-TC-RequestId\" 中。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "SearchInfo": {
       "document": "搜索结果信息",
       "members": [
@@ -1160,6 +2163,72 @@
           "example": "无",
           "member": "SearchResult",
           "name": "SearchResults",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "脑图（回复中不一定存在，流式协议中，仅在最后一条流式数据中返回）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Mindmap",
+          "name": "Mindmap",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "相关事件（回复中不一定存在，流式协议中，仅在最后一条流式数据中返回，深度模式下返回）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RelevantEvent",
+          "name": "RelevantEvents",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "相关组织及人物（回复中不一定存在，流式协议中，仅在最后一条流式数据中返回，深度模式下返回）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RelevantEntity",
+          "name": "RelevantEntities",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "时间线（回复中不一定存在，流式协议中，仅在最后一条流式数据中返回，深度模式下返回）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Timeline",
+          "name": "Timeline",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否命中搜索深度模式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "SupportDeepSearch",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "搜索回复大纲（深度模式下返回）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Outline",
           "output_required": false,
           "required": false,
           "type": "list",
@@ -1212,7 +2281,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "设置后付费状态，0：后付费；1：预付费",
+          "document": "设置后付费状态，0：后付费打开；1：后付费关闭",
           "example": "无",
           "member": "int64",
           "name": "PayMode",
@@ -1276,7 +2345,7 @@
         {
           "disabled": false,
           "document": "本轮对话的文本描述。\n提交一个任务请求对应发起一轮生图对话，每轮对话中可输入一条 Prompt，生成一张图像，支持通过多轮输入 Prompt 来不断调整图像内容。\n推荐使用中文，最多可传1024个 utf-8 字符。\n输入示例：\n<li> 第一轮对话：一颗红色的苹果 </li>\n<li> 第二轮对话：将苹果改为绿色 </li>\n<li> 第三轮对话：苹果放在桌子上 </li>",
-          "example": "无",
+          "example": "请画一个苹果在桌子上",
           "member": "string",
           "name": "Prompt",
           "required": true,
@@ -1285,7 +2354,7 @@
         {
           "disabled": false,
           "document": "上传上一轮对话的 ChatId，本轮对话将在指定的上一轮对话结果基础上继续生成图像。\n如果不传代表新建一个对话组，重新开启一轮新的对话。\n一个对话组中，最多支持进行100轮对话。",
-          "example": "无",
+          "example": "1248907282106990592",
           "member": "string",
           "name": "ChatId",
           "required": false,
@@ -1294,7 +2363,7 @@
         {
           "disabled": false,
           "document": "为生成结果图添加显式水印标识的开关，默认为1。  \n1：添加。  \n0：不添加。  \n其他数值：默认按1处理。  \n建议您使用显著标识来提示结果图使用了 AI 绘画技术，是 AI 生成的图片。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "LogoAdd",
           "required": false,
@@ -1303,7 +2372,7 @@
         {
           "disabled": false,
           "document": "标识内容设置。\n默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。",
-          "example": "无",
+          "example": "{\"LogoUrl\": \"https://xxx.com/logo.jpg\", \"LogoRect\": {\"X\": 10, \"Y\": 10, \"Width\": 20, \"Height\": 20}}",
           "member": "LogoParam",
           "name": "LogoParam",
           "required": false,
@@ -1318,7 +2387,7 @@
         {
           "disabled": false,
           "document": "任务 ID。",
-          "example": "无",
+          "example": "1253534368-1731657099-7276788a-a326-11ef-beeb-525400bba60c-0",
           "member": "string",
           "name": "JobId",
           "output_required": false,
@@ -1348,8 +2417,17 @@
         },
         {
           "disabled": false,
+          "document": "反向提示词。 \n推荐使用中文。最多可传1024个 utf-8 字符。",
+          "example": "黑色，雨",
+          "member": "string",
+          "name": "NegativePrompt",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "绘画风格。\n请在 [混元生图风格列表](https://cloud.tencent.com/document/product/1729/105846) 中选择期望的风格，传入风格编号。\n不传默认不指定风格。",
-          "example": "无",
+          "example": "riman",
           "member": "string",
           "name": "Style",
           "required": false,
@@ -1358,7 +2436,7 @@
         {
           "disabled": false,
           "document": "生成图分辨率。\n支持生成以下分辨率的图片：768:768（1:1）、768:1024（3:4）、1024:768（4:3）、1024:1024（1:1）、720:1280（9:16）、1280:720（16:9）、768:1280（3:5）、1280:768（5:3），不传默认使用1024:1024。",
-          "example": "无",
+          "example": "1024:1024",
           "member": "string",
           "name": "Resolution",
           "required": false,
@@ -1367,7 +2445,7 @@
         {
           "disabled": false,
           "document": "图片生成数量。\n支持1 ~ 4张，默认生成1张。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Num",
           "required": false,
@@ -1376,7 +2454,7 @@
         {
           "disabled": false,
           "document": "随机种子，默认随机。\n不传：随机种子生成。\n正数：固定种子生成。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Seed",
           "required": false,
@@ -1385,7 +2463,7 @@
         {
           "disabled": false,
           "document": "prompt 扩写开关。1为开启，0为关闭，不传默认开启。\n开启扩写后，将自动扩写原始输入的 prompt 并使用扩写后的 prompt 生成图片，返回生成图片结果时将一并返回扩写后的 prompt 文本。\n如果关闭扩写，将直接使用原始输入的 prompt 生成图片。\n建议开启，在多数场景下可提升生成图片效果、丰富生成图片细节。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "Revise",
           "required": false,
@@ -1394,7 +2472,7 @@
         {
           "disabled": false,
           "document": "为生成结果图添加显式水印标识的开关，默认为1。  \n1：添加。  \n0：不添加。  \n其他数值：默认按1处理。  \n建议您使用显著标识来提示结果图使用了 AI 绘画技术，是 AI 生成的图片。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "LogoAdd",
           "required": false,
@@ -1403,7 +2481,7 @@
         {
           "disabled": false,
           "document": "标识内容设置。\n默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。",
-          "example": "无",
+          "example": "{\"LogoUrl\": \"https://xxx.com/logo.jpg\", \"LogoRect\": {\"X\": 10, \"Y\": 10, \"Width\": 20, \"Height\": 20}}",
           "member": "LogoParam",
           "name": "LogoParam",
           "required": false,
@@ -1418,7 +2496,7 @@
         {
           "disabled": false,
           "document": "任务 ID。",
-          "example": "无",
+          "example": "251197749-1731412663-5330d0c8-a0ed-11ef-b6bc-52540073409e-0",
           "member": "string",
           "name": "JobId",
           "output_required": false,
@@ -1449,7 +2527,7 @@
         {
           "disabled": false,
           "document": "反向文本描述。\n用于一定程度上从反面引导模型生成的走向，减少生成结果中出现描述内容的可能，但不能完全杜绝。\n推荐使用中文。最多可传256个 utf-8 字符。",
-          "example": "无",
+          "example": "黑色",
           "member": "string",
           "name": "NegativePrompt",
           "required": false,
@@ -1458,7 +2536,7 @@
         {
           "disabled": false,
           "document": "绘画风格。\n请在 [文生图轻量版风格列表](https://cloud.tencent.com/document/product/1729/108992) 中选择期望的风格，传入风格编号。不传默认使用201（日系动漫风格）。",
-          "example": "无",
+          "example": "101",
           "member": "string",
           "name": "Style",
           "required": false,
@@ -1467,7 +2545,7 @@
         {
           "disabled": false,
           "document": "生成图分辨率。\n支持生成以下分辨率的图片：768:768（1:1）、768:1024（3:4）、1024:768（4:3）、1024:1024（1:1）、720:1280（9:16）、1280:720（16:9）、768:1280（3:5）、1280:768（5:3）、1080:1920（9:16）、1920:1080（16:9），不传默认使用768:768。",
-          "example": "无",
+          "example": "768:768",
           "member": "string",
           "name": "Resolution",
           "required": false,
@@ -1476,7 +2554,7 @@
         {
           "disabled": false,
           "document": "为生成结果图添加标识的开关，默认为1。\n1：添加标识。\n0：不添加标识。\n其他数值：默认按0处理。\n建议您使用显著标识来提示结果图使用了 AI 绘画技术，是 AI 生成的图片。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "LogoAdd",
           "required": false,
@@ -1485,7 +2563,7 @@
         {
           "disabled": false,
           "document": "标识内容设置。\n默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。",
-          "example": "无",
+          "example": "{\"LogoUrl\": \"https://xxx.com/logo.jpg\", \"LogoRect\": {\"X\": 10, \"Y\": 10, \"Width\": 20, \"Height\": 20}}",
           "member": "LogoParam",
           "name": "LogoParam",
           "required": false,
@@ -1494,7 +2572,7 @@
         {
           "disabled": false,
           "document": "返回图像方式（base64 或 url) ，二选一，默认为 base64。url 有效期为1小时。",
-          "example": "base64",
+          "example": "url",
           "member": "string",
           "name": "RspImgType",
           "required": false,
@@ -1509,7 +2587,7 @@
         {
           "disabled": false,
           "document": "根据入参 RspImgType 填入不同，返回不同的内容。\n如果传入 base64 则返回生成图 Base64 编码。\n如果传入 url 则返回的生成图 URL , 有效期1小时，请及时保存。",
-          "example": "url",
+          "example": "https://hyimg-xxx.cos.ap-guangzhou.myqcloud.com/xxx.jpg?q-sign-algorithm=sha1&q-ak=xxx&q-sign-time=1731586602;1731590202&q-key-time=1731586602;1731590202&q-header-list=host&q-url-param-list=&q-signature=ebb3f1d327cf4224c798ef328e1babbb41d09326",
           "member": "string",
           "name": "ResultImage",
           "output_required": true,
@@ -1524,6 +2602,281 @@
         }
       ],
       "type": "object"
+    },
+    "ThreadAdditionalMessage": {
+      "document": "会话额外消息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "角色",
+          "example": "user",
+          "member": "string",
+          "name": "Role",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内容",
+          "example": "你好",
+          "member": "string",
+          "name": "Content",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "附件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{\"FileID\":\"file-tMjt0CQnvU25GwUDkih4tU4H\"}]",
+          "member": "ThreadMessageAttachmentObject",
+          "name": "Attachments",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ThreadMessage": {
+      "document": "会话消息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "消息 ID",
+          "example": "msg_pYmfqfAkOcN5bM1rjdEjbVZV",
+          "member": "string",
+          "name": "ID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对象类型",
+          "example": "thread.message",
+          "member": "string",
+          "name": "Object",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "1727269943",
+          "member": "int64",
+          "name": "CreatedAt",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "会话 ID",
+          "example": "thread_OteLtAcmh7prn7tb8uQ3SJzh",
+          "member": "string",
+          "name": "ThreadID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态，处理中 in_progress，已完成 completed，未完成 incomplete。 ",
+          "example": "completed",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "未完成原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"Reason\": \"\"}",
+          "member": "ThreadMessageInCompleteDetailsObject",
+          "name": "InCompleteDetails",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "完成时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1727264847",
+          "member": "int64",
+          "name": "CompletedAt",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "未完成时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1727264847",
+          "member": "int64",
+          "name": "InCompleteAt",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "角色",
+          "example": "user",
+          "member": "string",
+          "name": "Role",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内容",
+          "example": "你好",
+          "member": "string",
+          "name": "Content",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "助手 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "asst_LhSU47qcQcFEItggpGEx5eh1",
+          "member": "string",
+          "name": "AssistantID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "运行 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "run_SR0cPyidY0vBWy7mcYN5loSR",
+          "member": "string",
+          "name": "RunID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "附件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{\"FileID\":\"file-tMjt0CQnvU25GwUDkih4tU4H\"}]",
+          "member": "ThreadMessageAttachmentObject",
+          "name": "Attachments",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ThreadMessageAttachmentObject": {
+      "document": "会话消息附件",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "file-tMjt0CQnvU25GwUDkih4tU4H",
+          "member": "string",
+          "name": "FileID",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ThreadMessageInCompleteDetailsObject": {
+      "document": "会话消息未完成原因",
+      "members": [
+        {
+          "disabled": false,
+          "document": "会话消息未完成原因",
+          "example": "无",
+          "member": "string",
+          "name": "Reason",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ThreadToolResources": {
+      "document": "在会话中提供给助手工具的一系列资源。不同类型的工具会有各自对应的资源。比如代码解释器需要一个文件 ID 的列表，而文件搜索工具则需要一个向量存储 ID 的列表。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件 ID 列表",
+          "example": "[\"file-tZ0lWeNW4oNbEiMYGtOXEmEk\"]",
+          "member": "string",
+          "name": "CodeInterpreter",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "向量存储 ID 列表",
+          "example": "[\"vs_ uf4c5hAL9GosVbmJ4jSUVivy\"]",
+          "member": "string",
+          "name": "VectorStoreIDs",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "Timeline": {
+      "document": "时间线",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标题\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Title",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Datetime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "相关网页链接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Url",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "Tool": {
       "document": "用户指定模型使用的工具",
@@ -1583,6 +2936,17 @@
           "output_required": true,
           "required": true,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "索引值",
+          "example": "0",
+          "member": "int64",
+          "name": "Index",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tdmq SendMsg --cli-unfold-argument  \
-    --EnvironmentId default \
+    --EnvironmentId userNamespace \
     --TopicName cloud_test \
     --MsgContent one_msg
 ```

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tcss DescribeImageComponentList --cli-unfold-argument  \
-    --ImageID xx \
+    --ImageID image-id \
     --Limit 10 \
     --Offset 0
 ```
@@ -18,15 +18,15 @@ Output:
         "TotalCount": 1,
         "List": [
             {
-                "Name": "xx",
-                "ImageID": "xx",
-                "Version": "xx",
-                "VulCount": 1,
-                "Path": "xx",
-                "Type": "xx"
+                "ImageID": "sha256:2ebe27d",
+                "Name": "name",
+                "Path": "",
+                "Type": "SYSTEM_COMPONENT",
+                "Version": "2.2.51-12.el7",
+                "VulCount": 0
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "8bc803fd-d85d-47b8-9e2b-9644674be677"
     }
 }
 ```

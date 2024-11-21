@@ -11,23 +11,23 @@ Output:
 ```
 {
     "Response": {
-        "EnableScan": true,
+        "BeginScanAt": "10:59:00",
+        "ClickTimeout": 0,
         "Cycle": 1,
-        "BeginScanAt": "xx",
-        "ScanPathAll": true,
-        "ScanPathType": 1,
-        "Timeout": 1,
-        "ScanRangeType": 1,
-        "ScanRangeAll": true,
+        "EnableScan": true,
+        "RequestId": "def074cf-2ad4-4895-bc34-e1607b094a4e",
         "ScanIds": [
-            "xx"
+            "ad297b24a4f818d9da49c9bec10d54c179b6751fc362802b077f710b3638e0f0"
         ],
         "ScanPath": [
-            "xx"
+            "/tmp"
         ],
-        "ClickTimeout": 1,
-        "ScanPathMode": "SCAN_PATH_DEFAULT",
-        "RequestId": "xx"
+        "ScanPathAll": false,
+        "ScanPathMode": "SCAN_PATH_USER_DEFINE",
+        "ScanPathType": 0,
+        "ScanRangeAll": false,
+        "ScanRangeType": 0,
+        "Timeout": 5
     }
 }
 ```

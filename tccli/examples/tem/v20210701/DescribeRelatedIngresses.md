@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli tem DescribeRelatedIngresses --cli-unfold-argument  \
-    --EnvironmentId xx \
-    --ClusterNamespace xx \
-    --ApplicationId xx \
+    --EnvironmentId en-xxxxxx \
+    --ClusterNamespace default \
+    --ApplicationId app-xxxxxx \
     --SourceChannel 0
 ```
 
@@ -19,10 +19,13 @@ Output:
         "RequestId": "81f74023-563c-437d-abf7-8139449ef178",
         "Result": [
             {
-                "ClusterId": "cls-9lxt9ic2",
+                "ClusterId": "abc",
+                "IngressName": "abc",
+                "ClusterNamespace": "default",
+                "EnvironmentId": "en-xxxxxx",
                 "AddressIPVersion": "IPV4",
                 "ClbId": "clb-xxxx",
-                "Vip": "10.10.10.10",
+                "Vip": "abc",
                 "Mixed": true,
                 "Rules": [
                     {
@@ -47,7 +50,10 @@ Output:
                         ],
                         "SecretName": "xxx"
                     }
-                ]
+                ],
+                "CreateTime": "abc",
+                "RewriteType": "abc",
+                "Domain": "abc"
             }
         ]
     }

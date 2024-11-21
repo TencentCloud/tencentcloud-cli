@@ -1,6 +1,6 @@
-**Example 1: Lite HBase 修改实例节点数**
+**Example 1: Serverless HBase变配实例**
 
-Lite HBase 修改实例节点数
+Serverless HBase变配实例
 
 Input: 
 

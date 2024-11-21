@@ -13,24 +13,24 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 0,
         "List": [
             {
                 "ComponentList": [
                     {
-                        "Path": "xx",
-                        "Version": "xx",
-                        "Name": "xx",
-                        "FixedVersion": "xx"
+                        "FixedVersion": ">6.0.37,>8.0.0",
+                        "Name": "catalina",
+                        "Path": "tomcat7/apache-tomcat-7.0.34/lib/catalina.jar",
+                        "Version": "7.0.34"
                     }
                 ],
-                "HostCount": 0,
-                "ImageName": "xx",
                 "ContainerCount": 0,
-                "ImageID": "xx"
+                "HostCount": 1,
+                "ImageID": "sha256:5e1476716a780a0bf6d4776d02840254257a6c0711fe0e17a7d693aba0dff8fb",
+                "ImageName": "image"
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "940b7fab-b4fc-4740-a719-6c1dd122af3f",
+        "TotalCount": 1
     }
 }
 ```

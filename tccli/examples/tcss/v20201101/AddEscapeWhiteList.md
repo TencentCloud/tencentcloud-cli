@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tcss AddEscapeWhiteList --cli-unfold-argument  \
-    --ImageIDs xx \
+    --ImageIDs 045513497bb2 \
     --EventType "ESCAPE_DOCKER_API"
 ```
 
@@ -14,7 +14,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "xx"
+        "RequestId": "29b37d86-f63d-43d1-b21a-640e82965198"
     }
 }
 ```

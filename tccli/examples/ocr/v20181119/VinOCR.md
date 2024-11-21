@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli ocr VinOCR --cli-unfold-argument  \
-    --ImageUrl https://xx/a.jpg
+    --ImageUrl https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/vehicle/VinOCR/VinOCR1.jpg
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Vin": "LBV2B25G2E5069977",
+        "Vin": "LSGPC52H9GF125161",
         "RequestId": "c59d9002-6c8c-426d-b57f-a8837dee2c7c"
     }
 }

@@ -19,7 +19,7 @@ Output:
         "Database": {
             "OsInfo": "CentOs Bit64",
             "UpdateTime": "2024-10-11 12:23:34",
-            "MachineWanIp": "110.84.0.11",
+            "MachineWanIp": "1.1.1.1",
             "Uuid": "24c9be55-c743-4a75-a5c7-2a2912341234",
             "Proto": "tcp",
             "ErrorLogPath": "/root",
@@ -27,7 +27,7 @@ Output:
             "Permission": "root",
             "LogPath": "/root",
             "DataPath": "/root",
-            "Param": "",
+            "Param": "--config",
             "ConfigPath": "/root",
             "BinPath": "/root",
             "Version": "0.1.1",

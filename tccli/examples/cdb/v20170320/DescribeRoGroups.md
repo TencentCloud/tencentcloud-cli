@@ -1,4 +1,4 @@
-**Example 1: 查询云数据库实例的所有RO组的信息**
+**Example 1: 查询云数据库实例的所有 RO 组的信息**
 
 
 
@@ -6,51 +6,57 @@ Input:
 
 ```
 tccli cdb DescribeRoGroups --cli-unfold-argument  \
-    --InstanceId cdb-eggz8oj5
+    --InstanceId cdb-93hvfefg
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "6EF60BEC-0242-43AF-BB20-270359FB54A7",
+        "RequestId": "5e18a101-e6f5-440c-a9d3-3b30aef256e1",
         "RoGroups": [
             {
-                "RoGroupName": "ro_group_172023",
-                "RoMaxDelayTime": 1,
-                "RoOfflineDelay": 0,
-                "RoGroupMode": "alone",
+                "DelayReplicationTime": 0,
+                "MinRoInGroup": 1,
+                "RoGroupId": "cdbrg-lsj**ijm",
+                "RoGroupMode": "",
+                "RoGroupName": "tommy1",
+                "RoGroupRegion": "ap-beijing",
+                "RoGroupZone": "ap-beijing-6",
                 "RoInstances": [
                     {
-                        "Zone": "ap-guangzhou-3",
-                        "MasterInstanceId": "cdb-eggz8oj5",
-                        "Memory": 2000,
-                        "Status": 1,
-                        "VpcId": 0,
-                        "InstanceId": "cdbro-h9k7cx05",
-                        "Volume": 100,
-                        "SubnetId": 0,
-                        "HourFeeStatus": 1,
-                        "RoStatus": "online",
-                        "OfflineTime": "0000-00-00 00:00:00",
-                        "Region": "ap-guangzhou",
-                        "DeadlineTime": "2018-01-04 16:48:30",
+                        "DeadlineTime": "2024-11-12 16:11:06",
                         "DeviceType": "CUSTOM",
-                        "EngineVersion": "5.6",
-                        "TaskStatus": 1,
-                        "InstanceName": "cdb_ro_172023",
-                        "Weight": 1,
-                        "PayType": 0,
+                        "EngineVersion": "8.0",
+                        "HourFeeStatus": 1,
+                        "InstanceId": "cdbro-lsjh**jm",
+                        "InstanceName": "cdb_ro_21**63",
                         "InstanceType": 3,
-                        "Vip": "10.66.199.133",
-                        "Qps": 2400,
-                        "Vport": 3306
+                        "MasterInstanceId": "cdb-93**fefg",
+                        "Memory": 4000,
+                        "OfflineTime": "2024-01-25 15:05:59",
+                        "PayType": 0,
+                        "Qps": 4400,
+                        "Region": "ap-beijing",
+                        "RoStatus": "online",
+                        "Status": 1,
+                        "SubnetId": 2738750,
+                        "TaskStatus": 0,
+                        "Vip": "172.*.32.13",
+                        "Volume": 60,
+                        "VpcId": 7078258,
+                        "Vport": 3306,
+                        "Weight": 2,
+                        "Zone": "ap-beijing-6"
                     }
                 ],
-                "RoGroupId": "cdbrg-eb2w7dto",
-                "Vip": "10.66.199.133",
-                "MinRoInGroup": 1,
+                "RoMaxDelayTime": 10,
+                "RoOfflineDelay": 1,
+                "UniqSubnetId": "subnet-jp6**13n",
+                "UniqVpcId": "vpc-4ko**3u6",
+                "Vip": "172.*.64.7",
                 "Vport": 3306,
+                "Weight": 0,
                 "WeightMode": "system"
             }
         ]

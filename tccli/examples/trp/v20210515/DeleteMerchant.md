@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli trp DeleteMerchant --cli-unfold-argument  \
-    --CorpId 0 \
+    --CorpId 10000 \
     --MerchantId awai9jd37ng3de7p3t
 ```
 

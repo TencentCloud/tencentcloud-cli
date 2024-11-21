@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tdmq DeleteCluster --cli-unfold-argument  \
-    --ClusterId pulsar-xxxxxxxx
+    --ClusterId pulsar-5r59xd4vnx
 ```
 
 Output: 

@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli lke ListRejectedQuestionPreview --cli-unfold-argument  \
-    --BotBizId abc \
+    --BotBizId 1798610639288008723 \
     --PageNumber 1 \
     --PageSize 1 \
-    --Query abc \
+    --Query  \
     --ReleaseBizId 1 \
     --Actions 1 \
     --StartTime 1701566284 \
@@ -24,13 +24,13 @@ Output:
         "List": [
             {
                 "Question": "abc",
-                "UpdateTime": "abc",
+                "UpdateTime": "1701766284",
                 "Action": 1,
-                "ActionDesc": "abc",
-                "Message": "abc"
+                "ActionDesc": "新增",
+                "Message": ""
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "2314bdbe-d34e-401e-95c4-3e861d5298ee"
     }
 }
 ```

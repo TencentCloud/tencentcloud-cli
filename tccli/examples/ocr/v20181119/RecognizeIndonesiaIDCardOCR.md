@@ -1,13 +1,13 @@
-**Example 1: RecognizeIndonesiaIDCardOCR**
+**Example 1: RecognizeIndonesiaIDCardOCR调用**
 
-印尼身份证
+RecognizeIndonesiaIDCardOCR调用
 
 Input: 
 
 ```
 tccli ocr RecognizeIndonesiaIDCardOCR --cli-unfold-argument  \
     --ReturnHeadImage false \
-    --ImageUrl https://xx/a.jpg
+    --ImageUrl https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/***/fakeurl.jpg
 ```
 
 Output: 

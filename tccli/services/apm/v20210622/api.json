@@ -589,7 +589,7 @@
         {
           "disabled": false,
           "document": "实例描述信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "实例描述",
           "member": "string",
           "name": "Description",
           "output_required": true,
@@ -759,7 +759,7 @@
         {
           "disabled": false,
           "document": "用户自定义展示标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"custom_key_1\"]",
           "member": "string",
           "name": "CustomShowTags",
           "output_required": true,
@@ -812,6 +812,46 @@
           "example": "0",
           "member": "int64",
           "name": "DefaultTSF",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否关联dashboard： 0 关 1 开\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "IsRelatedDashboard",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "dashboard ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxxxxx",
+          "member": "string",
+          "name": "DashboardTopicID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否开启组件漏洞检测\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "IsInstrumentationVulnerabilityScan",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否开启SQL注入分析\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "IsSqlInjectionAnalysis",
           "output_required": false,
           "type": "int",
           "value_allowed_null": true
@@ -886,7 +926,7 @@
         {
           "disabled": false,
           "document": "实例描述信息",
-          "example": "无",
+          "example": "实例描述",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -904,7 +944,7 @@
         {
           "disabled": false,
           "document": "标签列表",
-          "example": "无",
+          "example": "[]",
           "member": "ApmTag",
           "name": "Tags",
           "required": false,
@@ -925,6 +965,15 @@
           "example": "1",
           "member": "int64",
           "name": "PayMode",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "（0=付费版；1=tsf受限免费版；2=免费版）",
+          "example": "0",
+          "member": "int64",
+          "name": "Free",
           "required": false,
           "type": "int"
         }
@@ -2054,6 +2103,51 @@
           "example": "500",
           "member": "int64",
           "name": "ResponseDurationWarningThreshold",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "（0=付费版；1=tsf受限免费版；2=免费版）",
+          "example": "0",
+          "member": "int64",
+          "name": "Free",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否关联dashboard： 0 关 1 开",
+          "example": "0",
+          "member": "int64",
+          "name": "IsRelatedDashboard",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "dashboard ID",
+          "example": "xxxxx",
+          "member": "string",
+          "name": "DashboardTopicID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启SQL注入检测",
+          "example": "0",
+          "member": "int64",
+          "name": "IsSqlInjectionAnalysis",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启组件漏洞检测",
+          "example": "0",
+          "member": "int64",
+          "name": "IsInstrumentationVulnerabilityScan",
           "required": false,
           "type": "int"
         }

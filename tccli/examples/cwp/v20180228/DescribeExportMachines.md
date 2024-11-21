@@ -11,14 +11,15 @@ tccli cwp DescribeExportMachines --cli-unfold-argument  \
     --Filters.0.Name Keywords \
     --Filters.0.Values 10.0.1.1 \
     --Limit 10 \
-    --Offset 0
+    --Offset '0
+ {}'
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "TaskId": "123",
+        "TaskId": "1",
         "RequestId": "c30f35cb-2f3e-94f5-59ae-316e0f32e660"
     }
 }

@@ -8,7 +8,7 @@ Input:
 tccli cfw ModifyAclRule --cli-unfold-argument  \
     --Rules.0.SourceContent 0.0.0.0/0 \
     --Rules.0.SourceType net \
-    --Rules.0.Description test \
+    --Rules.0.Description pro \
     --Rules.0.TargetContent www.qq.com \
     --Rules.0.TargetType domain \
     --Rules.0.Protocol HTTPS \
@@ -18,7 +18,6 @@ tccli cfw ModifyAclRule --cli-unfold-argument  \
     --Rules.0.OrderIndex 1 \
     --Rules.0.Scope serial \
     --Rules.0.RuleSource 0 \
-    --Rules.0.ParamTemplateId  \
     --Rules.0.Uuid 148195 \
     --Rules.0.Enable true
 ```

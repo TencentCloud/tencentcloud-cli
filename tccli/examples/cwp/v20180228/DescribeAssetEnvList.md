@@ -25,20 +25,20 @@ Output:
                 "Type": 0,
                 "User": "root",
                 "Value": "/run/user/0",
-                "MachineIp": "xx.xx.xx.xx",
-                "MachineWanIp": "1xx.xx.xx.xx",
+                "MachineIp": "1.1.1.1",
+                "MachineWanIp": "1.1.1.1",
                 "MachineName": "销售许可测试机器",
                 "OsInfo": "CentOS 7.9 64位",
                 "UpdateTime": "2024-10-21 23:53:11",
                 "FirstTime": "2024-10-18 14:27:56",
                 "IsNew": 0,
                 "MachineExtraInfo": {
-                    "WanIP": "xx.xx.xx.xx",
-                    "PrivateIP": "xx.xx.xx.xx",
+                    "WanIP": "1.1.1.1",
+                    "PrivateIP": "1.1.1.1",
                     "NetworkType": 0,
-                    "NetworkName": "",
-                    "InstanceID": "ins-wssasw",
-                    "HostName": ""
+                    "NetworkName": "vpc-id",
+                    "InstanceID": "ins-id",
+                    "HostName": "hname"
                 }
             }
         ],

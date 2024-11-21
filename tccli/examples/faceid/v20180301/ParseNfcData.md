@@ -1,6 +1,6 @@
-**Example 1: success**
+**Example 1: 解析SDK获取到的证件NFC数据**
 
-
+解析SDK获取到的证件NFC数据。
 
 Input: 
 
@@ -13,26 +13,26 @@ Output:
 ```
 {
     "Response": {
-        "Address": "北京**********",
-        "BeginTime": "20******",
-        "BirthDate": "19******",
+        "Address": "北京市东城区景山前街4号紫禁城敬事房",
+        "BeginTime": "20170405",
+        "BirthDate": "19890604",
         "CheckMRTD": "",
         "EnName": "",
-        "EndTime": "20******",
-        "IdNum": "3****************6",
+        "EndTime": "20260704",
+        "IdNum": "11204416541220243X",
         "IdType": "",
-        "ImageA": "/9j/4A",
-        "ImageB": "/9j/4A",
-        "Name": "*四",
+        "ImageA": "/9j/4AAQSkZJRg.....s97n//2Q==",
+        "ImageB": "/9j/4AAQSk...mA7pvm5g==",
+        "Name": "韦小宝",
         "Nation": "汉",
         "Nationality": "",
         "OtherIdNum": "",
         "PersonalNumber": "",
-        "Picture": "iVBORw",
+        "Picture": "Qk3OlwAAAA...7+/v7+/pAA",
         "RequestId": "cdd7a769-d288-42a5-8e2e-6a5e5c9c08ae",
         "ResultCode": "0",
         "Sex": "男",
-        "SigningOrganization": "*******阳分局",
+        "SigningOrganization": "北京市东城区分局",
         "ResultDescription": "首次查询成功"
     }
 }

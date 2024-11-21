@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cwp EditBashRules --cli-unfold-argument  \
-    --Name test \
+    --Name yaxte**** \
     --Level 1 \
     --Rule .* \
     --IsGlobal 0 \

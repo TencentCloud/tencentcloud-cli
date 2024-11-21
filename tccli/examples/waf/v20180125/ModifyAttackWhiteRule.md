@@ -9,7 +9,7 @@ tccli waf ModifyAttackWhiteRule --cli-unfold-argument  \
     --Status 1 \
     --Rules.0.MatchField URL \
     --Rules.0.MatchContent /url \
-    --Rules.0.MatchMethod  \
+    --Rules.0.MatchMethod EXACT \
     --Domain www.testwaf.com \
     --SignatureIds 90501998 90501999 \
     --RuleId 1

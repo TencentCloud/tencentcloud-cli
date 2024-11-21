@@ -17,15 +17,15 @@ tccli cfw ModifyAcRule --cli-unfold-argument  \
     --Data.0.IsRegion 0 \
     --Data.0.Country 0 \
     --Data.0.City 0 \
-    --Data.0.CloudCode  \
+    --Data.0.CloudCode tencent \
     --Data.0.SourceType 1 \
     --Data.0.TargetType 1 \
     --Data.0.Direction 1 \
-    --Data.0.CityName  \
-    --Data.0.CountryName  \
-    --EdgeId  \
+    --Data.0.CityName chongqing \
+    --Data.0.CountryName cn \
+    --EdgeId edge-ppt3pi01 \
     --Enable 1 \
-    --Area 
+    --Area ap-guangzhou
 ```
 
 Output: 
@@ -33,7 +33,7 @@ Output:
 {
     "Response": {
         "Status": 0,
-        "Info": "",
+        "Info": "success",
         "RequestId": "5cdfff8d-bd3b-4411-91be-2117d4205f0f"
     }
 }

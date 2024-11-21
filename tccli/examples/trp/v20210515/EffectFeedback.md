@@ -12,7 +12,7 @@ tccli trp EffectFeedback --cli-unfold-argument  \
     --BusinessSecurityData.EncryptMethod 0 \
     --BusinessSecurityData.EncryptMode 0 \
     --BusinessSecurityData.PaddingType 0 \
-    --BusinessSecurityData.EncryptData abc
+    --BusinessSecurityData.EncryptData MjAyNDEwMjIxMTI5NTI4MjY=
 ```
 
 Output: 
@@ -21,10 +21,10 @@ Output:
     "Response": {
         "Data": {
             "Code": 0,
-            "Message": "abc",
-            "Value": "abc"
+            "Message": "操作成功",
+            "Value": "内容"
         },
-        "RequestId": "abc"
+        "RequestId": "eaa3ccac-d2f5-4df0-a8b3-7b51324e9283"
     }
 }
 ```

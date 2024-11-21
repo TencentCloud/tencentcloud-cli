@@ -1,12 +1,12 @@
-**Example 1: 事业单位法人证书识别示例代码**
+**Example 1: InstitutionOCR调用**
 
-事业单位法人证书关键字段识别，包括注册号、有效期、住所、名称、法定代表人等
+
 
 Input: 
 
 ```
 tccli ocr InstitutionOCR --cli-unfold-argument  \
-    --ImageUrl https://xx/a.jpg 
+    --ImageUrl https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/***/fakeurl.jpg
 ```
 
 Output: 

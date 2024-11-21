@@ -13,7 +13,7 @@ Output:
 ```
 {
     "Response": {
-        "AgentVersion": "",
+        "AgentVersion": "1.0.1",
         "FreeMalwaresLeft": 0,
         "FreeVulsLeft": 0,
         "HasAssetScan": 0,

@@ -3333,7 +3333,7 @@
           "example": "https://video-cv-1258344699.cos.ap-guangzhou.myqcloud.com/%2F100",
           "member": "string",
           "name": "ThumbnailURL",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

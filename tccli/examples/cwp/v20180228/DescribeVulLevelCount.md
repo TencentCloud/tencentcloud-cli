@@ -11,7 +11,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "4234234",
+        "RequestId": "req-1002",
         "VulLevelList": [
             {
                 "VulLevel": 3,

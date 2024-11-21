@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli waf DeleteHost --cli-unfold-argument  \
-    --HostsDel.0.Domain test.clb.qcloud.com \
+    --HostsDel.0.Domain txwafclb.qcloudwaf.com \
     --HostsDel.0.DomainId waf-n7GFuVNJ \
     --HostsDel.0.InstanceID waf_2kuil2fm02vqm7z3
 ```

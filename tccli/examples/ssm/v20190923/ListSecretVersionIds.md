@@ -6,23 +6,27 @@ Input:
 
 ```
 tccli ssm ListSecretVersionIds --cli-unfold-argument  \
-    --SecretName test
+    --SecretName test3-secret
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "56fe436b-16ca-402e-a9bb-83c14e9cc9e8",
-        "SecretName": "test",
+        "RequestId": "9877a5cc-208d-4ec0-b4bb-4e62990de2aa",
+        "SecretName": "test3-secret",
         "Versions": [
             {
-                "VersionId": "v2.0",
-                "CreateTime": 1574161372
+                "CreateTime": 1730278717,
+                "VersionId": "v1"
             },
             {
-                "VersionId": "v1.0",
-                "CreateTime": 1574161748
+                "CreateTime": 1730278706,
+                "VersionId": "v2"
+            },
+            {
+                "CreateTime": 1730271414,
+                "VersionId": "v3"
             }
         ]
     }

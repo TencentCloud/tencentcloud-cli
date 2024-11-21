@@ -1,15 +1,15 @@
 **Example 1: DescribeTLogInfo告警中心概况查询**
 
-
+DescribeTLogInfo告警中心概况查询
 
 Input: 
 
 ```
 tccli cfw DescribeTLogInfo --cli-unfold-argument  \
-    --EndTime 2021-09-18 12:00:00 \
-    --SearchValue {country: 1, instance_id:instanceidtest, source:1} \
+    --EndTime 2024-10-31 15:06:18 \
     --QueryType 1 \
-    --StartTime 2021-09-17 12:00:00
+    --SearchValue {"instance_id":"ins-id"} \
+    --StartTime 2024-10-01 15:06:18
 ```
 
 Output: 
@@ -17,14 +17,14 @@ Output:
 {
     "Response": {
         "Data": {
-            "OutNum": 1,
-            "HandleNum": 112,
-            "NetworkNum": 6,
-            "VulNum": 629,
             "BanNum": 0,
-            "BruteForceNum": 0
+            "BruteForceNum": 0,
+            "HandleNum": 0,
+            "NetworkNum": 90,
+            "OutNum": 6,
+            "VulNum": 5751
         },
-        "RequestId": "706bdce3-bdc4-4cfe-8672-ed08cb451ef1"
+        "RequestId": "da5ee2e0-935e-4b82-8a57-610a6255d5a9"
     }
 }
 ```

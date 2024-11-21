@@ -18,8 +18,8 @@ Output:
     "Response": {
         "List": [
             {
-                "HostName": "销售许可测试机器",
-                "HostIp": "xx.xx.xx.xx",
+                "HostName": "DataHub",
+                "HostIp": "1.2.3.4",
                 "Quuid": "1c26308c-5493-4eaf-a817-112ec25f499e",
                 "EventDir": "/root/csipdata/virus/php/1.php",
                 "EventType": 4,
@@ -29,12 +29,12 @@ Output:
                 "Id": 423826,
                 "FileType": 0,
                 "MachineExtraInfo": {
-                    "WanIP": "xx.xx.xx.xx",
-                    "PrivateIP": "xx.xx.xx.xx",
+                    "WanIP": "1.2.3.4",
+                    "PrivateIP": "192.168.10.10",
                     "NetworkType": 0,
-                    "NetworkName": "",
-                    "InstanceID": "ins-1111",
-                    "HostName": ""
+                    "NetworkName": "name",
+                    "InstanceID": "ins-ac13d",
+                    "HostName": "dataHub"
                 }
             }
         ],

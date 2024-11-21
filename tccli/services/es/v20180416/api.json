@@ -5730,6 +5730,24 @@
           "name": "UsrCosModelUrlList",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "客户指定安装的模型名称，可为空，默认为模型文件名",
+          "example": "[******]",
+          "member": "string",
+          "name": "ModelNames",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "模型使用的任务类型，包括：fill_mask, ner, question_answering, text_classification, text_embedding, text_expansion, text_similarity和zero_shot_classification，默认为text_embedding",
+          "example": "[\"text_embedding\"]",
+          "member": "string",
+          "name": "TaskTypes",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -9306,6 +9324,17 @@
           "example": "无",
           "member": "string",
           "name": "SinkCycleAge",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标准存储时长\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3d",
+          "member": "string",
+          "name": "StandardStorageAge",
           "output_required": false,
           "required": false,
           "type": "string",

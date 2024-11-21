@@ -25,10 +25,10 @@ Output:
                 "StorageBlockAmount": 0,
                 "InstanceBandwidth": 0,
                 "InstancePps": 0,
-                "CpuType": "",
+                "CpuType": "intel",
                 "Gpu": 0,
                 "Fpga": 0,
-                "Remark": "",
+                "Remark": "备注",
                 "Status": "SOLD_OUT"
             },
             {
@@ -42,10 +42,10 @@ Output:
                 "StorageBlockAmount": 0,
                 "InstanceBandwidth": 0,
                 "InstancePps": 0,
-                "CpuType": "",
+                "CpuType": "intel",
                 "Gpu": 0,
                 "Fpga": 0,
-                "Remark": "",
+                "Remark": "备注",
                 "Status": "SOLD_OUT"
             }
         ],

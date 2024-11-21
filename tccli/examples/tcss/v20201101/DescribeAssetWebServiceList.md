@@ -13,40 +13,41 @@ Output:
     "Response": {
         "List": [
             {
-                "ServiceID": "abc",
-                "HostID": "abc",
-                "HostIP": "abc",
-                "ContainerName": "abc",
-                "Type": "abc",
-                "Version": "abc",
-                "RunAs": "abc",
+                "AccessLog": "",
+                "Config": "/etc/nginx/nginx.conf",
+                "ContainerId": "dbbd1295d632365",
+                "ContainerName": "/container_name",
+                "DataPath": "",
+                "ErrorLog": "",
+                "Exe": "/usr/sbin/nginx",
+                "HostID": "8bc803fd-d85d-47b8-9e2b-9644674be677",
+                "HostIP": "1.1.1.1",
+                "HostName": "机器名称",
                 "Listen": [
-                    "abc"
+                    "tcp://0.0.0.0:8080"
                 ],
-                "Config": "abc",
-                "ProcessCnt": 1,
-                "AccessLog": "abc",
-                "ErrorLog": "abc",
-                "DataPath": "abc",
-                "WebRoot": "abc",
+                "MainType": "web",
+                "NodeID": "",
+                "NodeType": "NORMAL",
+                "NodeUniqueID": "",
+                "Parameter": "nginx: master process nginx -g daemon off;",
                 "Pids": [
-                    1
+                    1,
+                    2
                 ],
-                "MainType": "abc",
-                "Exe": "abc",
-                "Parameter": "abc",
-                "ContainerId": "abc",
-                "HostName": "abc",
-                "PublicIp": "abc",
-                "NodeID": "abc",
-                "PodIP": "abc",
-                "PodName": "abc",
-                "NodeType": "abc",
-                "NodeUniqueID": "abc"
+                "PodIP": "",
+                "PodName": "",
+                "ProcessCnt": 0,
+                "PublicIp": "1.1.1.1",
+                "RunAs": ":",
+                "ServiceID": "27501aaed5e639693783321219989889",
+                "Type": "Nginx",
+                "Version": "1.22.0",
+                "WebRoot": "/usr/share/nginx/html"
             }
         ],
         "TotalCount": 1,
-        "RequestId": "abc"
+        "RequestId": "8bc803fd-d85d-47b8-9e2b-9644674be677"
     }
 }
 ```

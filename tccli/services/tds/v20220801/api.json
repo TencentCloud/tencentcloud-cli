@@ -770,21 +770,21 @@
       "members": [
         {
           "disabled": false,
-          "document": "风险类型",
+          "document": "风险类型。更多详情请参见：[Android](https://cloud.tencent.com/document/product/1628/85898)、[iOS](https://cloud.tencent.com/document/product/1628/85896)、[H5](https://cloud.tencent.com/document/product/1628/85897)、[小程序](https://cloud.tencent.com/document/product/1628/85895)、[场景风险](https://cloud.tencent.com/document/product/1628/88912)",
           "example": "201",
           "member": "uint64",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "风险等级",
+          "document": "[风险等级](https://cloud.tencent.com/document/product/1628/85308)",
           "example": "1",
           "member": "uint64",
           "name": "Level",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }

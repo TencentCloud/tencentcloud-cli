@@ -2,9 +2,9 @@
   "actions": {
     "AnalyzeDenseLandmarks": [
       {
-        "document": "",
+        "document": "对请求图片进行五官定位，获得人脸的精准信息。",
         "input": "https://iai.tencentcloudapi.com/?Action=AnalyzeDenseLandmarks\n&Mode=0\n&Url=http://test.image.myqcloud.com/testA.jpg\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"ImageWidth\": 550,\n        \"ImageHeight\": 366,\n        \"DenseFaceShapeSet\": [],\n        \"RequestId\": \"e2242360-f30e-4103-b861-e8ba63eacadc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ImageWidth\": 940,\n        \"ImageHeight\": 930,\n        \"DenseFaceShapeSet\": [\n            {\n                \"X\": 450,\n                \"Y\": 230,\n                \"Width\": 340,\n                \"Height\": 540,\n                \"LeftEye\": [\n                    {\n                        \"X\": 20,\n                        \"Y\": 40\n                    }\n                ],\n                \"RightEye\": [\n                    {\n                        \"X\": 80,\n                        \"Y\": 30\n                    }\n                ],\n                \"LeftEyeBrow\": [\n                    {\n                        \"X\": 94,\n                        \"Y\": 90\n                    }\n                ]\n            }\n        ],\n        \"FaceModelVersion\": \"3.0\",\n        \"RequestId\": \"1219c74e7-698e-4ac2-8bc4-4c996cbdda8b\"\n    }\n}",
         "title": "稠密关键点接口"
       }
     ],

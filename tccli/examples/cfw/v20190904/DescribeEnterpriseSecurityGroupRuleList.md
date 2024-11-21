@@ -1,6 +1,6 @@
-**Example 1: 示例1**
+**Example 1: 示例1 查询企业安全组信息**
 
-示例1
+查询企业安全组信息
 
 Input: 
 
@@ -20,28 +20,34 @@ Output:
         "AllTotal": 30,
         "Data": [
             {
-                "AclTags": "云防火墙封禁IP自动下发，请勿删除或修改",
-                "BetaList": [],
-                "Cidr": "",
-                "Detail": "云防火墙封禁IP自动下发，请勿删除或修改",
-                "InstanceName": "",
+                "AclTags": "名称",
+                "BetaList": [
+                    {
+                        "TaskId": "9001",
+                        "TaskName": "autotest",
+                        "LastTime": "1999-01-01 00:00:01"
+                    }
+                ],
+                "Cidr": "192.16.1.0/24",
+                "Detail": "企业安全组描述",
+                "InstanceName": "企业安全组实例",
                 "IsDelay": 0,
                 "IsNew": 1,
                 "OrderIndex": 1,
-                "ParameterName": "",
+                "ParameterName": "参数模版",
                 "Port": "-1/-1",
-                "PrivateIp": "",
+                "PrivateIp": "1.1.1.1",
                 "Protocol": "ANY",
-                "ProtocolPortName": "",
-                "PublicIp": "",
+                "ProtocolPortName": "模版",
+                "PublicIp": "1.1.1.1",
                 "Region": "AllRegion",
                 "RuleUuid": 61257,
-                "ServiceTemplateId": "",
-                "SouCidr": "",
-                "SouInstanceName": "",
-                "SouParameterName": "云防火墙拦截列表IP地址组IN，请勿删除",
-                "SouPrivateIp": "",
-                "SouPublicIp": "",
+                "ServiceTemplateId": "ip-didd011",
+                "SouCidr": "192.168.1.0/24",
+                "SouInstanceName": "模版名称",
+                "SouParameterName": "模版名称",
+                "SouPrivateIp": "1.1.1.1",
+                "SouPublicIp": "1.1.1.1",
                 "SourceId": "ipmg-17hphuxg",
                 "SourceType": 7,
                 "Status": 1,

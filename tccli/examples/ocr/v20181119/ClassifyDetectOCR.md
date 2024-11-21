@@ -1,4 +1,4 @@
-**Example 1: 智能卡证分类示例代码**
+**Example 1: ClassifyDetectOCR调用**
 
 
 
@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ocr ClassifyDetectOCR --cli-unfold-argument  \
-    --ImageUrl https://xx/a.jpg \
+    --ImageUrl https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/***/fakeurl.jpg \
     --DiscernType BankCard
 ```
 

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli trp DescribeScanStats --cli-unfold-argument  \
-    --BatchId batchid \
+    --BatchId 20241022112952826 \
     --CorpId 10000 \
     --PageSize 10 \
     --PageNumber 1

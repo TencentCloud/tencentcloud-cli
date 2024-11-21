@@ -31,10 +31,10 @@ Output:
                         "GroupSet": [
                             "sg-tyhgrwet"
                         ],
-                        "ServiceName": "测试",
+                        "ServiceName": "demo",
                         "State": "PENDING",
                         "ServiceVip": "10.101.1.11",
-                        "EndPointName": "节点",
+                        "EndPointName": "demo",
                         "VpcId": "vpc-hj3he929",
                         "EndPointOwner": "1302384414",
                         "EndPointId": "vpce-h0fk8lfc",
@@ -45,7 +45,8 @@ Output:
                     }
                 ],
                 "CreateTime": "0000-00-00 00:00:00",
-                "ServiceType": "CLB"
+                "ServiceType": "CLB",
+                "CdcId": "cdc-4d8a10a1"
             }
         ],
         "TotalCount": 1,

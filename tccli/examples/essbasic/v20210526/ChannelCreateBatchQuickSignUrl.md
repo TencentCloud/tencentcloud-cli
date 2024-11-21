@@ -330,3 +330,79 @@ Output:
 }
 ```
 
+**Example 10: 为saas企业员工用户生成H5批量签署链接**
+
+1. 为saas企业员工用户生成合同组H5批量签署链接
+2. 使用默认的签署方式
+
+Input: 
+
+```
+tccli essbasic ChannelCreateBatchQuickSignUrl --cli-unfold-argument  \
+    --Agent.ProxyOperator.OpenId dian_yuangong \
+    --Agent.ProxyOrganizationOpenId org_dianziqian \
+    --Agent.AppId yDRSRUUgygj6rq7wUuO4zjECxndqQApl \
+    --FlowApproverInfo.ApproverType ORGANIZATION \
+    --FlowApproverInfo.Mobile 13200000000 \
+    --FlowApproverInfo.Name 典员工 \
+    --FlowApproverInfo.IdCardNumber 620000198802020000 \
+    --FlowApproverInfo.IdCardType ID_CARD \
+    --FlowApproverInfo.OrganizationName xxxx公司 \
+    --FlowIds yDSLcUUck****ysv1OQYIe9H ysv1OQYIe9H****yDSLcUUck
+```
+
+Output: 
+```
+{
+    "Response": {
+        "FlowApproverUrlInfo": {
+            "ApproverType": "ORGANIZATION",
+            "LongUrl": "https://quick.qian.tencent.cn/guide?Code=yDwi0**BWW4MYlpI&CodeType=QUICK&shortKey=yDwi**KF45&token=C**E",
+            "Mobile": "13200000000",
+            "Name": "典员工",
+            "SignUrl": "https://test.essurl.cn/C**E"
+        },
+        "RequestId": "s16986**08"
+    }
+}
+```
+
+**Example 11: 为渠道子客企业员工用户生成H5批量签署链接**
+
+1. 为渠道子客企业员工用户生成合同组H5批量签署链接
+2. 使用默认的签署方式
+
+Input: 
+
+```
+tccli essbasic ChannelCreateBatchQuickSignUrl --cli-unfold-argument  \
+    --Agent.ProxyOperator.OpenId dian_yuangong \
+    --Agent.ProxyOrganizationOpenId org_dianziqian \
+    --Agent.AppId yDRSRUUgygj6rq7wUuO4zjECxndqQApl \
+    --FlowApproverInfo.ApproverType ORGANIZATION \
+    --FlowApproverInfo.Mobile 13200000000 \
+    --FlowApproverInfo.Name 典员工 \
+    --FlowApproverInfo.IdCardNumber 620000198802020000 \
+    --FlowApproverInfo.IdCardType ID_CARD \
+    --FlowApproverInfo.OrganizationName xxxx公司 \
+    --FlowApproverInfo.OrganizationOpenId org_dianziqian \
+    --FlowApproverInfo.OpenId dian_yuangong \
+    --FlowIds yDSLcUUck****ysv1OQYIe9H ysv1OQYIe9H****yDSLcUUck
+```
+
+Output: 
+```
+{
+    "Response": {
+        "FlowApproverUrlInfo": {
+            "ApproverType": "ORGANIZATION",
+            "LongUrl": "https://quick.qian.tencent.cn/guide?Code=yDwi0**BWW4MYlpI&CodeType=QUICK&shortKey=yDwi**KF45&token=C**E",
+            "Mobile": "13200000000",
+            "Name": "典员工",
+            "SignUrl": "https://test.essurl.cn/C**E"
+        },
+        "RequestId": "s16986**08"
+    }
+}
+```
+

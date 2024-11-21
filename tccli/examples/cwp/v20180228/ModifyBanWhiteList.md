@@ -7,7 +7,7 @@ Input:
 ```
 tccli cwp ModifyBanWhiteList --cli-unfold-argument  \
     --Rules.Id 1 \
-    --Rules.Remark test123
+    --Rules.Remark testremark
 ```
 
 Output: 

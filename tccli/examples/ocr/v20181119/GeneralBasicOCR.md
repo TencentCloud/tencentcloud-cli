@@ -1,22 +1,23 @@
-**Example 1: 通用印刷体识别示例代码 [ 前往调试工具](https://console.cloud.tencent.com/api/explorer?Product=ocr&Action=GeneralBasicOCR)**
+**Example 1: GeneralBasicOCR调用**
 
-识别多场景、任意版面下整图文字的识别
+识别多场景、任意版面下整图文字的识别 [ 前往调试工具](https://console.cloud.tencent.com/api/explorer?Product=ocr&Action=GeneralBasicOCR)
 
 Input: 
 
 ```
 tccli ocr GeneralBasicOCR --cli-unfold-argument  \
-    --ImageUrl https://xx/a.jpg
+    --ImageUrl https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/general/GeneralBasicOCR/GeneralBasicOCR1.jpg
 ```
 
 Output: 
 ```
 {
     "Response": {
+        "Angel": 359.989990234375,
         "Angle": 359.989990234375,
         "Language": "zh",
         "PdfPageSize": 0,
-        "RequestId": "f50122de-c766-4fdc-90e5-73a984a259cb",
+        "RequestId": "5d5fbda3-3f47-45a7-8d4b-71bd9d64ab3d",
         "TextDetections": [
             {
                 "AdvancedInfo": "{\"Parag\":{\"ParagNo\":1}}",

@@ -1,14 +1,14 @@
 **Example 1: 创建、选择vpc**
 
-
+创建、选择vpc
 
 Input: 
 
 ```
 tccli cfw CreateChooseVpcs --cli-unfold-argument  \
-    --VpcList xxx \
-    --AllZoneList.0.Zone ap-test-5 \
-    --AllZoneList.0.Region ap-test
+    --VpcList vpc-fue9ikq6 \
+    --AllZoneList.0.Zone ap-guangzhou-5 \
+    --AllZoneList.0.Region ap-guangzhou
 ```
 
 Output: 

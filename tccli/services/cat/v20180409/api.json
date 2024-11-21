@@ -1835,6 +1835,15 @@
           "name": "NodeIpType",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "批量任务名-地址",
+          "example": "TargetAddress: \"www.qq.com\", Name: \"test\"",
+          "member": "ProbeTaskBasicConfiguration",
+          "name": "BatchTasks",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

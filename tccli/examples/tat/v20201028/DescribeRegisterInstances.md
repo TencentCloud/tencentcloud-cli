@@ -7,7 +7,7 @@ Input:
 ```
 tccli tat DescribeRegisterInstances --cli-unfold-argument  \
     --Filters.0.Name instance-name \
-    --Filters.0.Values abc \
+    --Filters.0.Values WebServer-01 \
     --Offset 0 \
     --Limit 0
 ```
@@ -16,23 +16,23 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 0,
+        "TotalCount": 1,
         "RegisterInstanceSet": [
             {
-                "RegisterCodeId": "abc",
-                "InstanceId": "abc",
-                "InstanceName": "abc",
-                "MachineId": "abc",
-                "SystemName": "abc",
-                "HostName": "abc",
-                "LocalIp": "abc",
-                "PublicKey": "abc",
-                "Status": "abc",
-                "CreatedTime": "2020-09-22T00:00:00+00:00",
-                "UpdatedTime": "2020-09-22T00:00:00+00:00"
+                "RegisterCodeId": "4a0f151f-a07a-494d-a2f2-8ea2ec4639eb488f31f9-b656-4f45-823d-5a90b07c7116",
+                "InstanceId": "rins-uf673dgi",
+                "InstanceName": "WebServer-01",
+                "MachineId": "m-i2345678",
+                "SystemName": "Windows",
+                "HostName": "webserver01",
+                "LocalIp": "10.0.0.1",
+                "PublicKey": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC... user@hostname",
+                "Status": "RUNNING",
+                "CreatedTime": "2020-09-22T08:00:00Z",
+                "UpdatedTime": "2020-09-22T08:00:00Z"
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "e28b9a8c-d7d3-4a12-bf8a-0123456789ab"
     }
 }
 ```
@@ -45,7 +45,7 @@ Input:
 
 ```
 tccli tat DescribeRegisterInstances --cli-unfold-argument  \
-    --InstanceIds abc \
+    --InstanceIds rins-uf673dgi \
     --Offset 0 \
     --Limit 0
 ```
@@ -54,23 +54,23 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 0,
+        "TotalCount": 1,
         "RegisterInstanceSet": [
             {
-                "RegisterCodeId": "abc",
-                "InstanceId": "abc",
-                "InstanceName": "abc",
-                "MachineId": "abc",
-                "SystemName": "abc",
-                "HostName": "abc",
-                "LocalIp": "abc",
-                "PublicKey": "abc",
-                "Status": "abc",
-                "CreatedTime": "2020-09-22T00:00:00+00:00",
-                "UpdatedTime": "2020-09-22T00:00:00+00:00"
+                "RegisterCodeId": "4a0f151f-a07a-494d-a2f2-8ea2ec4639eb488f31f9-b656-4f45-823d-5a90b07c7116",
+                "InstanceId": "rins-uf673dgi",
+                "InstanceName": "WebServer-01",
+                "MachineId": "m-i2345678",
+                "SystemName": "Windows",
+                "HostName": "webserver01",
+                "LocalIp": "10.0.0.1",
+                "PublicKey": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC... user@hostname",
+                "Status": "RUNNING",
+                "CreatedTime": "2020-09-22T08:00:00Z",
+                "UpdatedTime": "2020-09-22T08:00:00Z"
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "e28b9a8c-d7d3-4a12-bf8a-0123456789ab"
     }
 }
 ```

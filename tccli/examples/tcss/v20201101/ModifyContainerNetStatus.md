@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tcss ModifyContainerNetStatus --cli-unfold-argument  \
-    --ContainerID xxxx \
+    --ContainerID 289899476e81 \
     --Status EVENT_ISOLATE_CONTAINER
 ```
 

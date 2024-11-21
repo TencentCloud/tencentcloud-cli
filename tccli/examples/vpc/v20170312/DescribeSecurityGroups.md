@@ -20,8 +20,8 @@ Output:
         "SecurityGroupSet": [
             {
                 "SecurityGroupId": "sg-05bb4upy",
-                "SecurityGroupName": "TestGroup",
-                "SecurityGroupDesc": "test-group-desc",
+                "SecurityGroupName": "demo",
+                "SecurityGroupDesc": "demo",
                 "ProjectId": "0",
                 "IsDefault": true,
                 "CreatedTime": "2017-04-18 21:02:30",
@@ -54,7 +54,7 @@ Output:
         "SecurityGroupSet": [
             {
                 "SecurityGroupId": "sg-2got2lcz",
-                "SecurityGroupName": "test",
+                "SecurityGroupName": "demo",
                 "SecurityGroupDesc": "暴露全部端口到公网和内网，有一定安全风险",
                 "ProjectId": "0",
                 "IsDefault": false,

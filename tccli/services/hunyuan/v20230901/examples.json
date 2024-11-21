@@ -2,10 +2,10 @@
   "actions": {
     "ActivateService": [
       {
-        "document": "示例\t\n",
+        "document": "服务开通成功",
         "input": "POST / HTTP/1.1\nHost: hunyuan.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ActivateService\n<公共请求参数>\n\n{\n    \"PayMode\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
-        "title": "示例\t"
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d4e1f224-fa21-40bc-9ee7-4bb13abece6e\"\n    }\n}",
+        "title": "调用成功"
       }
     ],
     "ChatCompletions": [
@@ -65,9 +65,41 @@
       },
       {
         "document": "推荐使用 API Explorer 调用接口，见本文档顶部说明。该示例说明如何使用深度研究。",
-        "input": "POST / HTTP/1.1\nHost: hunyuan.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChatCompletions\n<公共请求参数>\n\n{\n    \"Model\": \"hunyuan-pro\",\n    \"Messages\": [\n        {\n            \"Role\": \"user\",\n            \"Content\": \"黄金价格为什么上涨？\"\n        }\n    ],\n    \"Stream\": true,\n    \"StreamModeration\": true,\n    \"EnableEnhancement\": true,\n    \"SearchInfo\": true,\n    \"Citation\": true\n}",
+        "input": "POST / HTTP/1.1\nHost: hunyuan.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChatCompletions\n<公共请求参数>\n\n{\n    \"Model\": \"hunyuan-pro\",\n    \"Messages\": [\n        {\n            \"Role\": \"user\",\n            \"Content\": \"黄金价格为什么上涨？\"\n        }\n    ],\n    \"Stream\": true,\n    \"StreamModeration\": true,\n    \"EnableEnhancement\": true,\n    \"SearchInfo\": true,\n    \"Citation\": true,\n    \"EnableDeepSearch\": true\n}",
         "output": "HTTP/1.1 200 OK\nCache-Control: no-cache\nConnection: keep-alive\nContent-Type: text/event-stream\nDate: Wed, 23 Oct 2024 06:42:27 GMT\nTransfer-Encoding: chunked\nX-TC-RequestId: 962eac85-9d4d-47d5-87df-0f68e2c54ffe\n\ndata: {\"Note\":\"以上内容为AI生成，不代表开发者立场，请勿删除或修改本标记\",\"Choices\":[{\"Delta\":{\"Role\":\"assistant\",\"Content\":\"黄金\"},\"FinishReason\":\"\"}],\"SearchInfo\":{\"SearchResults\":[{\"Index\":1,\"Title\":\"什么原因导致黄金价格持续上涨呢？－今日头条\",\"Url\":\"https://www.toutiao.com/article/7405795153295835685/\"},{\"Index\":2,\"Title\":\"黄金价格上涨的背后原因－今日头条\",\"Url\":\"https://www.toutiao.com/article/7343060432250749450/\"},{\"Index\":3,\"Title\":\"黄金为何大涨？背后的逻辑你值得深究 近一年以来，经济界 ...\",\"Url\":\"https://xueqiu.com/9543769156/285918720\"},{\"Index\":4,\"Title\":\"金价为何猛涨u3000－u3000财梯网\",\"Url\":\"https://www.cadforex.com/licai/76040.html\"},{\"Index\":5,\"Title\":\"黄金价格暴涨的多维驱动因素分析＿经济＿全球＿市场\",\"Url\":\"https://www.sohu.com/a/792488534_121983853\"},{\"Index\":6,\"Title\":\"黄金价格与通货膨胀率的关联＿因素＿市场＿影响\",\"Url\":\"https://www.sohu.com/a/795813780_122001933\"},{\"Index\":7,\"Title\":\"通货膨胀与金价的关系是怎样的？＿中金在线财经号\",\"Url\":\"http://mp.cnfol.com/58227/article/1724810738-141466711.html\"},{\"Index\":8,\"Title\":\"金价再创新高 地缘政治和美国大选推动避险需求 - 腾讯网\",\"Url\":\"https://new.qq.com/rain/a/20241023A0185900\"},{\"Index\":9,\"Title\":\"中信建投：通胀、货币以及地缘三大因素叠加，构成黄金完美 ...\",\"Url\":\"https://new.qq.com/rain/a/20241023A01G1E00\"},{\"Index\":10,\"Title\":\"黄金价格与美元汇率之间的关系是怎样的－叩富网\",\"Url\":\"https://licai.cofool.com/ask/qa_3396404.html\"},{\"Index\":11,\"Title\":\"金价暴涨释放危险信号：２０２４年，美元要崩？美债央行美元指数美元汇率黄金价格国际金价＿网易订阅\",\"Url\":\"https://www.163.com/dy/article/IMSN07JG0552NMAF.html\"},{\"Index\":12,\"Title\":\"央行购金+投资者配置不足+地缘政治风险，金价明年将涨至 ...\",\"Url\":\"https://finance.sina.com.cn/money/forex/hbfx/2024-10-23/doc-inctnyne0954128.shtml\"},{\"Index\":13,\"Title\":\"黄金价格与全球货币政策的互动＿市场关注＿经济＿中央银行\",\"Url\":\"https://www.sohu.com/a/795813568_122001933\"},{\"Index\":14,\"Title\":\"黄金价格大涨，投资需求显著提升，金价还可以走多远？＿财富号＿东方财富网\",\"Url\":\"https://caifuhao.eastmoney.com/news/20240306084013570039040\"},{\"Index\":15,\"Title\":\"国际金价再创新高！年内累计涨幅已超30%，机构称中长期 ...\",\"Url\":\"https://new.qq.com/rain/a/20241018A012Y300\"},{\"Index\":16,\"Title\":\"从黄金历史牛市分析和预测黄金价格走势黄金＿新浪财经＿新浪网\",\"Url\":\"https://finance.sina.com.cn/money/nmetal/hjzx/2024-08-20/doc-inckiaqw3372603.shtml\"},{\"Index\":17,\"Title\":\"以史为鉴！100年黄金走势图显示：长期策略仍是逢低买入 ...\",\"Url\":\"https://finance.sina.com.cn/money/forex/hbfx/2024-02-19/doc-inaipzvn5400083.shtml\"}],\"Outline\":[\"全球经济不确定性\",\"通货膨胀预期上升\",\"美元汇率波动\",\"投资者需求增加\",\"供应端因素\"]},\"Created\":1729665576,\"Id\":\"962eac85-9d4d-47d5-87df-0f68e2c54ffe\",\"Usage\":{\"PromptTokens\":6,\"CompletionTokens\":2,\"TotalTokens\":8}}\n\ndata: {\"Note\":\"以上内容为AI生成，不代表开发者立场，请勿删除或修改本标记\",\"Choices\":[{\"Delta\":{\"Role\":\"assistant\",\"Content\":\"价格\"},\"FinishReason\":\"\"}],\"SearchInfo\":{\"SearchResults\":[{\"Index\":1,\"Title\":\"什么原因导致黄金价格持续上涨呢？－今日头条\",\"Url\":\"https://www.toutiao.com/article/7405795153295835685/\"},{\"Index\":2,\"Title\":\"黄金价格上涨的背后原因－今日头条\",\"Url\":\"https://www.toutiao.com/article/7343060432250749450/\"},{\"Index\":3,\"Title\":\"黄金为何大涨？背后的逻辑你值得深究 近一年以来，经济界 ...\",\"Url\":\"https://xueqiu.com/9543769156/285918720\"},{\"Index\":4,\"Title\":\"金价为何猛涨u3000－u3000财梯网\",\"Url\":\"https://www.cadforex.com/licai/76040.html\"},{\"Index\":5,\"Title\":\"黄金价格暴涨的多维驱动因素分析＿经济＿全球＿市场\",\"Url\":\"https://www.sohu.com/a/792488534_121983853\"},{\"Index\":6,\"Title\":\"黄金价格与通货膨胀率的关联＿因素＿市场＿影响\",\"Url\":\"https://www.sohu.com/a/795813780_122001933\"},{\"Index\":7,\"Title\":\"通货膨胀与金价的关系是怎样的？＿中金在线财经号\",\"Url\":\"http://mp.cnfol.com/58227/article/1724810738-141466711.html\"},{\"Index\":8,\"Title\":\"金价再创新高 地缘政治和美国大选推动避险需求 - 腾讯网\",\"Url\":\"https://new.qq.com/rain/a/20241023A0185900\"},{\"Index\":9,\"Title\":\"中信建投：通胀、货币以及地缘三大因素叠加，构成黄金完美 ...\",\"Url\":\"https://new.qq.com/rain/a/20241023A01G1E00\"},{\"Index\":10,\"Title\":\"黄金价格与美元汇率之间的关系是怎样的－叩富网\",\"Url\":\"https://licai.cofool.com/ask/qa_3396404.html\"},{\"Index\":11,\"Title\":\"金价暴涨释放危险信号：２０２４年，美元要崩？美债央行美元指数美元汇率黄金价格国际金价＿网易订阅\",\"Url\":\"https://www.163.com/dy/article/IMSN07JG0552NMAF.html\"},{\"Index\":12,\"Title\":\"央行购金+投资者配置不足+地缘政治风险，金价明年将涨至 ...\",\"Url\":\"https://finance.sina.com.cn/money/forex/hbfx/2024-10-23/doc-inctnyne0954128.shtml\"},{\"Index\":13,\"Title\":\"黄金价格与全球货币政策的互动＿市场关注＿经济＿中央银行\",\"Url\":\"https://www.sohu.com/a/795813568_122001933\"},{\"Index\":14,\"Title\":\"黄金价格大涨，投资需求显著提升，金价还可以走多远？＿财富号＿东方财富网\",\"Url\":\"https://caifuhao.eastmoney.com/news/20240306084013570039040\"},{\"Index\":15,\"Title\":\"国际金价再创新高！年内累计涨幅已超30%，机构称中长期 ...\",\"Url\":\"https://new.qq.com/rain/a/20241018A012Y300\"},{\"Index\":16,\"Title\":\"从黄金历史牛市分析和预测黄金价格走势黄金＿新浪财经＿新浪网\",\"Url\":\"https://finance.sina.com.cn/money/nmetal/hjzx/2024-08-20/doc-inckiaqw3372603.shtml\"},{\"Index\":17,\"Title\":\"以史为鉴！100年黄金走势图显示：长期策略仍是逢低买入 ...\",\"Url\":\"https://finance.sina.com.cn/money/forex/hbfx/2024-02-19/doc-inaipzvn5400083.shtml\"}],\"Outline\":[\"全球经济不确定性\",\"通货膨胀预期上升\",\"美元汇率波动\",\"投资者需求增加\",\"供应端因素\"]},\"Created\":1729665576,\"Id\":\"962eac85-9d4d-47d5-87df-0f68e2c54ffe\",\"Usage\":{\"PromptTokens\":6,\"CompletionTokens\":4,\"TotalTokens\":10}}\n\ndata: {\"Note\":\"以上内容为AI生成，不代表开发者立场，请勿删除或修改本标记\",\"Choices\":[{\"Delta\":{\"Role\":\"assistant\",\"Content\":\"\"},\"FinishReason\":\"stop\"}],\"SearchInfo\":{\"SearchResults\":[{\"Index\":1,\"Title\":\"什么原因导致黄金价格持续上涨呢？－今日头条\",\"Url\":\"https://www.toutiao.com/article/7405795153295835685/\"},{\"Index\":2,\"Title\":\"黄金价格上涨的背后原因－今日头条\",\"Url\":\"https://www.toutiao.com/article/7343060432250749450/\"},{\"Index\":3,\"Title\":\"黄金为何大涨？背后的逻辑你值得深究 近一年以来，经济界 ...\",\"Url\":\"https://xueqiu.com/9543769156/285918720\"},{\"Index\":4,\"Title\":\"金价为何猛涨u3000－u3000财梯网\",\"Url\":\"https://www.cadforex.com/licai/76040.html\"},{\"Index\":5,\"Title\":\"黄金价格暴涨的多维驱动因素分析＿经济＿全球＿市场\",\"Url\":\"https://www.sohu.com/a/792488534_121983853\"},{\"Index\":6,\"Title\":\"黄金价格与通货膨胀率的关联＿因素＿市场＿影响\",\"Url\":\"https://www.sohu.com/a/795813780_122001933\"},{\"Index\":7,\"Title\":\"通货膨胀与金价的关系是怎样的？＿中金在线财经号\",\"Url\":\"http://mp.cnfol.com/58227/article/1724810738-141466711.html\"},{\"Index\":8,\"Title\":\"金价再创新高 地缘政治和美国大选推动避险需求 - 腾讯网\",\"Url\":\"https://new.qq.com/rain/a/20241023A0185900\"},{\"Index\":9,\"Title\":\"中信建投：通胀、货币以及地缘三大因素叠加，构成黄金完美 ...\",\"Url\":\"https://new.qq.com/rain/a/20241023A01G1E00\"},{\"Index\":10,\"Title\":\"黄金价格与美元汇率之间的关系是怎样的－叩富网\",\"Url\":\"https://licai.cofool.com/ask/qa_3396404.html\"},{\"Index\":11,\"Title\":\"金价暴涨释放危险信号：２０２４年，美元要崩？美债央行美元指数美元汇率黄金价格国际金价＿网易订阅\",\"Url\":\"https://www.163.com/dy/article/IMSN07JG0552NMAF.html\"},{\"Index\":12,\"Title\":\"央行购金+投资者配置不足+地缘政治风险，金价明年将涨至 ...\",\"Url\":\"https://finance.sina.com.cn/money/forex/hbfx/2024-10-23/doc-inctnyne0954128.shtml\"},{\"Index\":13,\"Title\":\"黄金价格与全球货币政策的互动＿市场关注＿经济＿中央银行\",\"Url\":\"https://www.sohu.com/a/795813568_122001933\"},{\"Index\":14,\"Title\":\"黄金价格大涨，投资需求显著提升，金价还可以走多远？＿财富号＿东方财富网\",\"Url\":\"https://caifuhao.eastmoney.com/news/20240306084013570039040\"},{\"Index\":15,\"Title\":\"国际金价再创新高！年内累计涨幅已超30%，机构称中长期 ...\",\"Url\":\"https://new.qq.com/rain/a/20241018A012Y300\"},{\"Index\":16,\"Title\":\"从黄金历史牛市分析和预测黄金价格走势黄金＿新浪财经＿新浪网\",\"Url\":\"https://finance.sina.com.cn/money/nmetal/hjzx/2024-08-20/doc-inckiaqw3372603.shtml\"},{\"Index\":17,\"Title\":\"以史为鉴！100年黄金走势图显示：长期策略仍是逢低买入 ...\",\"Url\":\"https://finance.sina.com.cn/money/forex/hbfx/2024-02-19/doc-inaipzvn5400083.shtml\"},{\"Index\":18,\"Title\":\"全球央行热衷“购金”！增持意愿达五年新高，高盛看涨金价至 ...\",\"Url\":\"https://news.qq.com/rain/a/20240619A06NQR00\"},{\"Index\":19,\"Title\":\"避险地缘政治冲突，上半年全球央行增持４８３吨黄金创纪录黄金＿新浪财经＿新浪网\",\"Url\":\"https://finance.sina.com.cn/jjxw/2024-08-12/doc-incikrfh1306064.shtml\"},{\"Index\":20,\"Title\":\"黄金热潮：央行增持背后的逻辑与投资机遇黄金价格中国人民银行＿网易订阅\",\"Url\":\"https://www.163.com/dy/article/J1PCM2DH0523Q7MN.html\"},{\"Index\":21,\"Title\":\"金价暴涨，央行为何连续17个月增加黄金储备，后续会加仓吗\",\"Url\":\"https://new.qq.com/rain/a/20240407A08EVY00\"},{\"Index\":22,\"Title\":\"央行增持黄金意味着什么u3000－u3000财梯网\",\"Url\":\"https://www.cadforex.com/huangji/135556.html\"},{\"Index\":23,\"Title\":\"央行增持黄金储备如何影响黄金市场行情－指股网\",\"Url\":\"https://www.zhiguf.com/focusnews_detail/1300594\"},{\"Index\":24,\"Title\":\"连续5个月，央行暂停增持黄金！ - 经济观察网\",\"Url\":\"http://www.eeo.com.cn/2024/1020/692290.shtml\"},{\"Index\":25,\"Title\":\"央行，继续暂停增持黄金 - 腾讯网\",\"Url\":\"https://new.qq.com/rain/a/20241007A04F7B00\"},{\"Index\":26,\"Title\":\"中国央行连续第五个月暂停增持黄金，分析师：空头将寻求金价跌向２６０５＿外汇动态报道＿汇通财经ｗｗｗ．ｆｘ６７８．ｃｏｍ\",\"Url\":\"https://news.fx678.com/202410071146181057.shtml\"},{\"Index\":27,\"Title\":\"央行增持黄金意味着什么u3000－u3000财梯网\",\"Url\":\"https://www.cadforex.com/huangji/135556.html\"},{\"Index\":28,\"Title\":\"中国央行连续15个月增持黄金，去年净购金量居全球之首\",\"Url\":\"https://finance.sina.com.cn/jjxw/2024-02-07/doc-inahfexi2620119.shtml\"},{\"Index\":29,\"Title\":\"中国央行连续15个月增持黄金，去年净购金量居全球之首 ...\",\"Url\":\"https://www.jiemian.com/article/10790382.html\"},{\"Index\":30,\"Title\":\"中国9月末黄金储备7280万盎司 央行连续第五个月暂停增持黄金\",\"Url\":\"https://new.qq.com/rain/a/20241007A02E5O00\"},{\"Index\":31,\"Title\":\"１４连升！我国黄金储备２２３５．４１吨\",\"Url\":\"http://www.gold.org.cn/sc1227/dzsp/202401/t20240108_195543.html\"},{\"Index\":32,\"Title\":\"2264.33吨！中国央行连续第5个月暂停增持黄金储备！原因为何？\",\"Url\":\"https://new.qq.com/rain/a/20241007A077BF00\"}],\"Outline\":[\"全球经济不确定性\",\"通货膨胀预期上升\",\"美元汇率波动\",\"投资者需求增加\",\"供应端因素\"],\"Mindmap\":{\"ThumbUrl\":\"https://hunyuan-plugin-nj-1258344706.cos.ap-nanjing.myqcloud.com/xmind/b70d74171af71b74a9f0b6ea2cb740e0.png\",\"Url\":\"https://hunyuan-plugin-nj-1258344706.cos.ap-nanjing.myqcloud.com/xmind/b70d74171af71b74a9f0b6ea2cb740e0_t.png\"},\"RelevantEvents\":[{\"Title\":\"欧洲央行降息\",\"Content\":\"欧洲央行在今年第三次降息，降息幅度为25个基点，全球货币环境维持宽松，为黄金的购买创造了有利环境，推动金价上涨。\",\"Datetime\":\"2024-10-23\",\"Reference\":[6]},{\"Title\":\"美元汇率走低\",\"Content\":\"美元汇率走低导致美元贬值，以美元计价的黄金价格上涨。此外，全球央行净购黄金创下历史新高，进一步推动了金价上涨。\",\"Datetime\":\"2024-10-13\",\"Reference\":[7,18]},{\"Title\":\"地缘政治紧张局势\",\"Content\":\"俄乌冲突、巴以冲突屡次出现升级迹象，美国大选的不确定性加剧了市场对未来全球经济增长的担忧，推动更多资金流向避险资产黄金。\",\"Datetime\":\"2024-09-21\",\"Reference\":[4]},{\"Title\":\"全球央行大量购金\",\"Content\":\"近两年全球央行开始大量购金，2022年、2023年全球央行及主权机构增持黄金量均超1000吨，约占当年全球黄金产量的三分之一，导致市场供需关系变化，推高了金价。\",\"Datetime\":\"2024-09-01\",\"Reference\":[2,4]},{\"Title\":\"美联储降息预期\",\"Content\":\"随着美国经济下行压力增大，市场普遍预期美联储货币政策将转向宽松周期，降息预期升温，推动黄金价格上涨。\",\"Datetime\":\"2024-09-01\",\"Reference\":[2,4]}],\"RelevantEntities\":[{\"Name\":\"鲍威尔[2](@ref)\",\"Content\":\"美联储主席鲍威尔表示调整货币政策的时机已到，市场对于9月份美联储降息预期更为强烈，这一表态成为黄金价格上涨的重要推手。\",\"Reference\":[2]},{\"Name\":\"特朗普[9](@ref)\",\"Content\":\"特朗普当选的概率上升，市场广泛定价中期通胀中枢上移，特朗普主张的“减税+关税”政策组合导致更高的经济增长、债务增长和通胀前景，推动金价上涨。\",\"Reference\":[9]},{\"Name\":\"国际货币基金组织[5](@ref)\",\"Content\":\"国际货币基金组织长期购买黄金并保持较高储备，提升了其金融安全性，黄金成为最佳的避险资产。\",\"Reference\":[5]},{\"Name\":\"全球央行[2,4](@ref)\",\"Content\":\"近两年全球央行开始大量购金，2022年、2023年全球央行及主权机构增持黄金量均超1000吨，央行购入的黄金作为官方储备资产，推动了黄金价格的长期上涨。\",\"Reference\":[2,4]}],\"Timeline\":[{\"Title\":\"现货黄金一度触及每盎司2450美元再创盘中历史新高\",\"Url\":\"https://new.qq.com/rain/a/20240521A02VPJ00\",\"Datetime\":\"2024-05-21 10:55:22\"},{\"Title\":\"现货黄金涨超1%至2439.19美元/盎司再度刷新历史新高\",\"Url\":\"https://new.qq.com/rain/a/20240520A01GR300\",\"Datetime\":\"2024-05-20 09:12:19\"},{\"Title\":\"现货黄金涨幅扩大至约1.2%重返2370美元/盎司上方\",\"Url\":\"https://new.qq.com/rain/a/20240415A00H6I00\",\"Datetime\":\"2024-04-15 06:42:23\"},{\"Title\":\"现货黄金首次涨穿2300美元/盎司关口\",\"Url\":\"https://new.qq.com/rain/a/20240404A00BDK00\",\"Datetime\":\"2024-04-04 04:48:12\"},{\"Title\":\"现货黄金盘中再创历史新高达2236美元/盎司\",\"Url\":\"https://new.qq.com/rain/a/20240329A00P7I00\",\"Datetime\":\"2024-03-29 07:30:14\"},{\"Title\":\"国内黄金首饰价格突破645元/克\",\"Url\":\"https://new.qq.com/rain/a/20240305A096Z000\",\"Datetime\":\"2024-03-05 20:06:29\"},{\"Title\":\"纽约金价首次收盘站上2100美元\",\"Url\":\"https://new.qq.com/rain/a/20240305A01GFM00\",\"Datetime\":\"2024-03-05 09:18:26\"},{\"Title\":\"CFTC数据显示黄金看涨情绪创三周新高\",\"Url\":\"https://new.qq.com/rain/a/20240302A00ISM00\",\"Datetime\":\"2024-03-02 04:48:30\"}]},\"Created\":1729665606,\"Id\":\"962eac85-9d4d-47d5-87df-0f68e2c54ffe\",\"Usage\":{\"PromptTokens\":6,\"CompletionTokens\":2068,\"TotalTokens\":2074}}",
         "title": "深度研究示例"
+      }
+    ],
+    "CreateThread": [
+      {
+        "document": "创建会话",
+        "input": "POST / HTTP/1.1\nHost: hunyuan.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateThread\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"85f12577-426b-4af2-93a5-03cea153cbe4\",\n        \"ID\": \"thread_QPH2Z6DpBhc46V3ylE1JEqTv\",\n        \"Object\": \"thread\",\n        \"CreatedAt\": 1727331773,\n        \"ToolResources\": {\n            \"CodeInterpreter\": null\n        }\n    }\n}",
+        "title": "创建会话"
+      }
+    ],
+    "FilesDeletions": [
+      {
+        "document": "删除文件。",
+        "input": "POST / HTTP/1.1\nHost: hunyuan.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: FilesDeletions\n<公共请求参数>\n\n{\n    \"ID\": \"file-YbhlphnNEsjRoKTEXukAqNZZ\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c203917d-6c1f-4dd7-84c9-7617947d2abf\",\n        \"ID\": \"file-YbhlphnNEsjRoKTEXukAqNZZ\",\n        \"Object\": \"file\",\n        \"Deleted\": true\n    }\n}",
+        "title": "删除文件。"
+      }
+    ],
+    "FilesList": [
+      {
+        "document": "文件列表。",
+        "input": "POST / HTTP/1.1\nHost: hunyuan.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: FilesList\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c422c508-6d70-4529-83e0-d20ac5125852\",\n        \"Total\": 10,\n        \"Object\": \"list\",\n        \"Data\": [\n            {\n                \"ID\": \"file-YbhlphnNEsjRoKTEXukAqNZZ\",\n                \"Object\": \"file\",\n                \"Bytes\": 422915,\n                \"CreatedAt\": 1722513746,\n                \"Filename\": \"云API产品简介.pdf\",\n                \"Purpose\": \"file-extract\"\n            }\n        ]\n    }\n}",
+        "title": "文件列表。"
+      }
+    ],
+    "FilesUploads": [
+      {
+        "document": "上传文件。",
+        "input": "POST / HTTP/1.1\nHost: hunyuan.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: FilesUploads\n<公共请求参数>\n\n{\n    \"Name\": \"云API产品简介.pdf\",\n    \"URL\": \"https://main.qcloudimg.com/raw/document/product/pdf/1278_46794_cn.pdf\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a5f3568b-45dc-4cc9-9fef-268768b0dbca\",\n        \"ID\": \"file-YbhlphnNEsjRoKTEXukAqNZZ\",\n        \"Object\": \"file\",\n        \"Bytes\": 422915,\n        \"CreatedAt\": 1722513746,\n        \"Filename\": \"云API产品简介.pdf\",\n        \"Purpose\": \"file-extract\"\n    }\n}",
+        "title": "上传文件。"
       }
     ],
     "GetEmbedding": [
@@ -76,6 +108,30 @@
         "input": "POST / HTTP/1.1\nHost: hunyuan.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetEmbedding\n<公共请求参数>\n\n{\n    \"Input\": \"你好\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"658a95a1f824ac766d8261b0\",\n        \"Data\": [\n            {\n                \"Embedding\": [\n                    0.018218994140625,\n                    0.024810791015625\n                ],\n                \"Index\": 0,\n                \"Object\": \"embedding\"\n            }\n        ],\n        \"Usage\": {\n            \"PromptTokens\": 3,\n            \"TotalTokens\": 3\n        }\n    }\n}",
         "title": "请求成功示例"
+      }
+    ],
+    "GetThread": [
+      {
+        "document": "获取会话",
+        "input": "POST / HTTP/1.1\nHost: hunyuan.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetThread\n<公共请求参数>\n\n{\n    \"ThreadID\": \"thread_QPH2Z6DpBhc46V3ylE1JEqTv\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2673f3fd-2039-4eea-a832-63fa1c4d000b\",\n        \"ID\": \"thread_QPH2Z6DpBhc46V3ylE1JEqTv\",\n        \"Object\": \"thread\",\n        \"CreatedAt\": 1727360573,\n        \"ToolResources\": {\n            \"CodeInterpreter\": null\n        }\n    }\n}",
+        "title": "获取会话"
+      }
+    ],
+    "GetThreadMessage": [
+      {
+        "document": "获取会话消息",
+        "input": "POST / HTTP/1.1\nHost: hunyuan.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetThreadMessage\n<公共请求参数>\n\n{\n    \"ThreadID\": \"thread_QPH2Z6DpBhc46V3ylE1JEqTv\",\n    \"MessageID\": \"msg_jtO6oVZmFtIi4T43eswXk6lJ\"\n}",
+        "output": "{\n  \"Response\": {\n    \"RequestId\": \"585adb49-e89c-4f58-868a-ca0438e23a17\",\n    \"ID\": \"msg_jtO6oVZmFtIi4T43eswXk6lJ\",\n    \"Object\": \"thread.message\",\n    \"CreatedAt\": 1727303115,\n    \"ThreadID\": \"thread_QPH2Z6DpBhc46V3ylE1JEqTv\",\n    \"Status\": \"completed\",\n    \"InCompleteDetails\": {\n      \"Reason\": \"\"\n    },\n    \"CompletedAt\": 1727331915,\n    \"InCompleteAt\": null,\n    \"Role\": \"assistant\",\n    \"Content\": [\n      {\n        \"Index\": 0,\n        \"Type\": \"text\",\n        \"Text\": {\n          \"Value\": \"您好！非常高兴与您交流，今天有什么有趣的事情想和我分享呢\"\n        }\n      }\n    ],\n    \"AssistantID\": \"\",\n    \"RunID\": \"run_XmeUGzgrzTE82Yh7p8mZWRcJ\",\n    \"Attachments\": null,\n    \"Metadata\": {}\n  }\n}",
+        "title": "获取会话消息"
+      }
+    ],
+    "GetThreadMessageList": [
+      {
+        "document": "获取会话消息列表",
+        "input": "POST / HTTP/1.1\nHost: hunyuan.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetThreadMessageList\n<公共请求参数>\n\n{\n    \"ThreadID\": \"thread_QPH2Z6DpBhc46V3ylE1JEqTv\"\n}",
+        "output": "{\n  \"Response\": {\n    \"RequestId\": \"4809bed2-f1ca-4d72-b097-bd528184825d\",\n    \"Data\": [\n      {\n        \"ID\": \"msg_jtO6oVZmFtIi4T43eswXk6lJ\",\n        \"Object\": \"thread.message\",\n        \"CreatedAt\": 1727303115,\n        \"ThreadID\": \"thread_QPH2Z6DpBhc46V3ylE1JEqTv\",\n        \"Status\": \"completed\",\n        \"InCompleteDetails\": {\n          \"Reason\": \"\"\n        },\n        \"CompletedAt\": 1727331915,\n        \"InCompleteAt\": null,\n        \"Role\": \"assistant\",\n        \"Content\": [\n          {\n            \"Index\": 0,\n            \"Type\": \"text\",\n            \"Text\": {\n              \"Value\": \"您好！非常高兴与您交流，今天有什么有趣的事情想和我分享呢\"\n            }\n          }\n        ],\n        \"AssistantID\": \"\",\n        \"RunID\": \"run_XmeUGzgrzTE82Yh7p8mZWRcJ\",\n        \"Attachments\": null,\n        \"Metadata\": {}\n      },\n      {\n        \"ID\": \"msg_oJBEpYDXDZw5epfQYNrJEEJa\",\n        \"Object\": \"thread.message\",\n        \"CreatedAt\": 1727303115,\n        \"ThreadID\": \"thread_QPH2Z6DpBhc46V3ylE1JEqTv\",\n        \"Status\": \"completed\",\n        \"InCompleteDetails\": {\n          \"Reason\": \"\"\n        },\n        \"CompletedAt\": 1727331915,\n        \"InCompleteAt\": null,\n        \"Role\": \"user\",\n        \"Content\": [\n          {\n            \"Index\": 0,\n            \"Type\": \"text\",\n            \"Text\": {\n              \"Value\": \"你好\"\n            }\n          }\n        ],\n        \"AssistantID\": \"\",\n        \"RunID\": \"run_XmeUGzgrzTE82Yh7p8mZWRcJ\",\n        \"Attachments\": null,\n        \"Metadata\": {}\n      }\n    ],\n    \"FirstID\": \"msg_jtO6oVZmFtIi4T43eswXk6lJ\",\n    \"LastID\": \"msg_oJBEpYDXDZw5epfQYNrJEEJa\",\n    \"HasMore\": false,\n    \"Object\": \"list\"\n  }\n}",
+        "title": "获取会话消息列表"
       }
     ],
     "GetTokenCount": [
@@ -89,48 +145,56 @@
     "QueryHunyuanImageChatJob": [
       {
         "document": "成功查询",
-        "input": "POST / HTTP/1.1\nHost: hunyuan.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryHunyuanImageChatJob\n<公共请求参数>\n\n{\n    \"JobId\": \"test\"\n}",
-        "output": "{\n    \"Response\": {\n        \"ChatId\": \"1219898325508988928\",\n        \"History\": [\n            {\n                \"ChatId\": \"1219898325508988928\",\n                \"Prompt\": \"雪山\",\n                \"RevisedPrompt\": \"摄影风格，画面主要描述一座雄伟的山峰，山顶覆盖着白雪，阳光照耀下闪耀着光芒，背景是蔚蓝的天空，镜头是全景\",\n                \"Seed\": 1763557528\n            }\n        ],\n        \"JobErrorCode\": \"\",\n        \"JobErrorMsg\": \"\",\n        \"JobStatusCode\": \"5\",\n        \"JobStatusMsg\": \"处理完成\",\n        \"RequestId\": \"da0634c6-7b6b-4115-9081-bd2d20a860ca\",\n        \"ResultDetails\": [\n            \"Success\"\n        ],\n        \"ResultImage\": [\n            \"https:/result.jpg\"\n        ]\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: hunyuan.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryHunyuanImageChatJob\n<公共请求参数>\n\n{\n    \"JobId\": \"1253534368-1731657099-7276788a-a326-11ef-beeb-525400bba60c-0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ChatId\": \"1248907282106990592\",\n        \"History\": [\n            {\n                \"ChatId\": \"1248907282106990592\",\n                \"Prompt\": \"请画一个苹果在桌子上\",\n                \"RevisedPrompt\": \"风格为摄影风格，桌子上摆放着一个红润的苹果，镜头为近景镜头\",\n                \"Seed\": 1549130027\n            }\n        ],\n        \"JobErrorCode\": \"\",\n        \"JobErrorMsg\": \"\",\n        \"JobStatusCode\": \"5\",\n        \"JobStatusMsg\": \"处理完成\",\n        \"RequestId\": \"54c4d31e-234b-44b8-802b-7d10fa2e77dc\",\n        \"ResultDetails\": [\n            \"Success\"\n        ],\n        \"ResultImage\": [\n            \"https://aiart-xxx.cos.ap-guangzhou.myqcloud.com/xxx?q-sign-algorithm=sha1&q-ak=xxx&q-sign-time=1731657113;1732261913&q-key-time=1731657113;1732261913&q-header-list=host&q-url-param-list=&q-signature=b9c4be16d763664d829d0bfa398f571aa0e75c0e\"\n        ]\n    }\n}",
         "title": "成功查询"
       }
     ],
     "QueryHunyuanImageJob": [
       {
         "document": "成功查询",
-        "input": "POST / HTTP/1.1\nHost: hunyuan.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryHunyuanImageJob\n<公共请求参数>\n\n{\n    \"JobId\": \"test\"\n}",
-        "output": "{\n    \"Response\": {\n        \"JobErrorCode\": \"\",\n        \"JobErrorMsg\": \"\",\n        \"JobStatusCode\": \"5\",\n        \"JobStatusMsg\": \"处理完成\",\n        \"RequestId\": \"56b2ecae-46e4-4697-87d2-dc2b3bbbc2c6\",\n        \"ResultDetails\": [\n            \"Success\"\n        ],\n        \"ResultImage\": [\n            \"https:/result.jpg\"\n        ],\n        \"RevisedPrompt\": [\n            \"摄影风格，画面主要描述一座雄伟的山峰，山顶覆盖着白雪，阳光照耀下闪耀着光芒，背景是蔚蓝的天空，镜头是全景\"\n        ]\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: hunyuan.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryHunyuanImageJob\n<公共请求参数>\n\n{\n    \"JobId\": \"251197749-1731412663-d4e1f224-fa21-40bc-9ee7-4bb13abece6e-0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"JobErrorCode\": \"\",\n        \"JobErrorMsg\": \"\",\n        \"JobStatusCode\": \"5\",\n        \"JobStatusMsg\": \"处理完成\",\n        \"RequestId\": \"56b2ecae-46e4-4697-87d2-dc2b3bbbc2c6\",\n        \"ResultDetails\": [\n            \"Success\"\n        ],\n        \"ResultImage\": [\n            \"https://aiart-xxx.cos.ap-guangzhou.myqcloud.com/xxx?q-sign-algorithm=sha1&q-ak=xxx&q-sign-time=1731655045;1731658645&q-key-time=1731655045;1731658645&q-header-list=host&q-url-param-list=&q-signature=72776438be444f9a72e04e5e6376aadf51e65655\"\n        ],\n        \"RevisedPrompt\": [\n            \"一条细长的小路穿梭在茂密的竹林中，天空下着细雨，雨水滴答落在翠绿的竹叶上，沿途的小路湿润且闪烁着水光，竹叶摇曳间洒下点点水珠，营造出静谧而清新的氛围\"\n        ]\n    }\n}",
         "title": "成功查询"
+      }
+    ],
+    "RunThread": [
+      {
+        "document": "执行会话",
+        "input": "POST / HTTP/1.1\nHost: hunyuan.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RunThread\n<公共请求参数>\n\n{\n    \"ThreadID\": \"thread_zqkehzQBog4v4lJxBPQRXtYW\",\n    \"Model\": \"hunyuan-pro\",\n    \"AdditionalMessages\": [\n        {\n            \"Role\": \"user\",\n            \"Content\": \"你是谁\"\n        }\n    ],\n    \"Stream\": true\n}",
+        "output": "{\n\t\"ID\": \"run_cRpe4PGgXxTwwvuee55anOO4\",\n\t\"Object\": \"thread.run\",\n\t\"CreatedAt\": 1727355339,\n\t\"ThreadID\": \"thread_zqkehzQBog4v4lJxBPQRXtYW\",\n\t\"AssistantID\": \"\",\n\t\"Status\": \"created\",\n\t\"RequiredAction\": null,\n\t\"LastError\": null,\n\t\"ExpiresAt\": 0,\n\t\"StartedAt\": 0,\n\t\"CancelledAt\": 0,\n\t\"FailedAt\": 0,\n\t\"CompletedAt\": 0,\n\t\"InCompleteDetails\": null,\n\t\"Model\": \"hunyuan\",\n\t\"Instructions\": \"\",\n\t\"Tools\": [],\n\t\"Metadata\": {},\n\t\"Usage\": null,\n\t\"Temperature\": 0,\n\t\"TopP\": 0,\n\t\"MaxPromptTokens\": 0,\n\t\"MaxCompletionTokens\": 0,\n\t\"TruncationStrategy\": {\n\t\t\"Type\": \"\",\n\t\t\"LastMessages\": null\n\t},\n\t\"ParallelToolCalls\": false,\n\t\"ResponseFormat\": null\n}",
+        "title": "执行会话"
       }
     ],
     "SetPayMode": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: hunyuan.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetPayMode\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
-        "title": "示例\t"
+        "document": "设置关闭后付费",
+        "input": "POST / HTTP/1.1\nHost: hunyuan.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetPayMode\n<公共请求参数>\n\n{\n    \"PayMode\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9723dd95-d217-46ff-a556-2cc760142737\"\n    }\n}",
+        "title": "调用成功"
       }
     ],
     "SubmitHunyuanImageChatJob": [
       {
         "document": "调用成功",
-        "input": "POST / HTTP/1.1\nHost: hunyuan.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitHunyuanImageChatJob\n<公共请求参数>\n\n{\n    \"Prompt\": \"雪山\"\n}",
-        "output": "{\n    \"Response\": {\n        \"JobId\": \"test\",\n        \"RequestId\": \"9723dd95-d217-46ff-a556-2cc760142737\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: hunyuan.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitHunyuanImageChatJob\n<公共请求参数>\n\n{\n    \"Prompt\": \"请画一个苹果在桌子上\"\n}",
+        "output": "{\n    \"Response\": {\n        \"JobId\": \"1253534368-1731657099-7276788a-a326-11ef-beeb-525400bba60c-0\",\n        \"RequestId\": \"7276788a-a326-11ef-beeb-525400bba60c\"\n    }\n}",
         "title": "调用成功"
       }
     ],
     "SubmitHunyuanImageJob": [
       {
         "document": "调用成功",
-        "input": "POST / HTTP/1.1\nHost: hunyuan.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitHunyuanImageJob\n<公共请求参数>\n\n{\n    \"Prompt\": \"雪山\"\n}",
-        "output": "{\n    \"Response\": {\n        \"JobId\": \"test\",\n        \"RequestId\": \"d4e1f224-fa21-40bc-9ee7-4bb13abece6e\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: hunyuan.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitHunyuanImageJob\n<公共请求参数>\n\n{\n    \"Prompt\": \"雨中, 竹林, 小路\"\n}",
+        "output": "{\n    \"Response\": {\n        \"JobId\": \"251197749-1731412663-d4e1f224-fa21-40bc-9ee7-4bb13abece6e-0\",\n        \"RequestId\": \"d4e1f224-fa21-40bc-9ee7-4bb13abece6e\"\n    }\n}",
         "title": "调用成功"
       }
     ],
     "TextToImageLite": [
       {
         "document": "成功调用，并返回生图url",
-        "input": "POST / HTTP/1.1\nHost: hunyuan.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TextToImageLite\n<公共请求参数>\n\n{\n    \"Prompt\": \"冰川，企鹅\",\n    \"RspImgType\": \"url\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"53549a10-0633-4ebe-bf39-466dc51aa2bb\",\n        \"ResultImage\": \"https://rspimg.jpg\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: hunyuan.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TextToImageLite\n<公共请求参数>\n\n{\n    \"Prompt\": \"雨中, 竹林,  小路\",\n    \"RspImgType\": \"url\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"53549a10-0633-4ebe-bf39-466dc51aa2bb\",\n        \"ResultImage\": \"https://hyimg-xxx.cos.ap-guangzhou.myqcloud.com/xxx.jpg?q-sign-algorithm=sha1&q-ak=xxx&q-sign-time=1731586602;1731590202&q-key-time=1731586602;1731590202&q-header-list=host&q-url-param-list=&q-signature=ebb3f1d327cf4224c798ef328e1babbb41d09326\"\n    }\n}",
         "title": "成功调用"
       }
     ]

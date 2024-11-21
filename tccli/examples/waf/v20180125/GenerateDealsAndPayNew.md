@@ -6,20 +6,20 @@ Input:
 
 ```
 tccli waf GenerateDealsAndPayNew --cli-unfold-argument  \
-    --Goods.0.GoodsCategoryId 0 \
-    --Goods.0.GoodsNum 0 \
-    --Goods.0.GoodsDetail.TimeSpan 0 \
-    --Goods.0.GoodsDetail.TimeUnit abc \
-    --Goods.0.GoodsDetail.SubProductCode abc \
+    --Goods.0.GoodsCategoryId 101201 \
+    --Goods.0.GoodsNum 1 \
+    --Goods.0.GoodsDetail.TimeSpan 1 \
+    --Goods.0.GoodsDetail.TimeUnit m \
+    --Goods.0.GoodsDetail.SubProductCode sp_wsm_waf_premium_clb \
     --Goods.0.GoodsDetail.Pid 0 \
-    --Goods.0.GoodsDetail.InstanceName abc \
-    --Goods.0.GoodsDetail.AutoRenewFlag 0 \
-    --Goods.0.GoodsDetail.RealRegion 0 \
-    --Goods.0.GoodsDetail.LabelTypes abc \
-    --Goods.0.GoodsDetail.LabelCounts 0 \
-    --Goods.0.GoodsDetail.CurDeadline abc \
-    --Goods.0.GoodsDetail.InstanceId abc \
-    --Goods.0.RegionId 0
+    --Goods.0.GoodsDetail.InstanceName anquan \
+    --Goods.0.GoodsDetail.AutoRenewFlag 1 \
+    --Goods.0.GoodsDetail.RealRegion 1 \
+    --Goods.0.GoodsDetail.LabelTypes sv_wsm_waf_package_premium_clb \
+    --Goods.0.GoodsDetail.LabelCounts 1 \
+    --Goods.0.GoodsDetail.CurDeadline 2024-07-14 14:24:26 \
+    --Goods.0.GoodsDetail.InstanceId waf_22piczpx8beg7rht \
+    --Goods.0.RegionId 1
 ```
 
 Output: 
@@ -28,14 +28,14 @@ Output:
     "Response": {
         "Data": {
             "DealNames": [
-                "abc"
+                "20211127383000722205671"
             ],
-            "BigDealId": "abc"
+            "BigDealId": "20211127383000722205661"
         },
         "Status": 0,
-        "ReturnMessage": "abc",
-        "InstanceId": "abc",
-        "RequestId": "abc"
+        "ReturnMessage": "success",
+        "InstanceId": "waf_22piczpx8beg7rht",
+        "RequestId": "b705af50-606d-46a7-8cb6-617f7592ed4e"
     }
 }
 ```

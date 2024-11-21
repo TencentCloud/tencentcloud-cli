@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli waf RefreshAccessCheckResult --cli-unfold-argument  \
-    --Domain www.test.com
+    --Domain randy.qcloudwaf.com
 ```
 
 Output: 

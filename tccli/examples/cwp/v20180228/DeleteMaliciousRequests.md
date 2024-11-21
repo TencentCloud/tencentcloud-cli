@@ -6,7 +6,8 @@ Input:
 
 ```
 tccli cwp DeleteMaliciousRequests --cli-unfold-argument  \
-    --Ids 1 2
+    --Ids 1002 \
+    --All True
 ```
 
 Output: 

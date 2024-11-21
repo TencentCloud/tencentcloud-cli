@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cdb SubmitInstanceUpgradeCheckJob --cli-unfold-argument  \
-    --InstanceId 037c0b3b-1320-11ee-b0c3-6c92bf629868 \
+    --InstanceId cdb-g3rbtabc \
     --DstMysqlVersion 8.0
 ```
 

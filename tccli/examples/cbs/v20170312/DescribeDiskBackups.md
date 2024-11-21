@@ -17,7 +17,7 @@ Output:
         "TotalCount": 1,
         "DiskBackupSet": [
             {
-                "DiskBackupName": "11111",
+                "DiskBackupName": "Diskbackup-20240101",
                 "Encrypt": false,
                 "Percent": 100,
                 "DiskBackupId": "dbp-xxxxxxxx",

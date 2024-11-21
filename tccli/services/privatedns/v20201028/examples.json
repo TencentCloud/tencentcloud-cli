@@ -16,6 +16,22 @@
         "title": "创建终端节点"
       }
     ],
+    "CreateEndPointAndEndPointService": [
+      {
+        "document": "输入vpcid，终端节点服务名称， 实例id，服务类型 创建终端节点服务，同时用终端节点名称，以及终端节点服务对应的地域来创建一个终端节点",
+        "input": "POST / HTTP/1.1\nHost: privatedns.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateEndPointAndEndPointService\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-xxxxxxxx\",\n    \"EndPointServiceName\": \"test001\",\n    \"AutoAcceptFlag\": true,\n    \"ServiceInstanceId\": \"lb-xxxxxxxx\",\n    \"ServiceType\": \"clb\",\n    \"EndPointName\": \"test001\",\n    \"EndPointRegion\": \"ap-guangzhou\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5cd964e2-b5e6-8a35-9ce5a1085860c845\",\n        \"EndPointId\": \"eid-scls023kfns\",\n        \"EndPointName\": \"终端节点名\",\n        \"EndPointServiceId\": \"vpcsvc-gtd4gxa1\",\n        \"EndPointVipSet\": [\n            \"10.0.0.13\"\n        ]\n    }\n}",
+        "title": "同时创建终端节点和终端节点服务"
+      }
+    ],
+    "CreateForwardRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: privatedns.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateForwardRule\n<公共请求参数>\n\n{\n    \"RuleType\": \"UP\",\n    \"ZoneId\": \"zone-fadsvas\",\n    \"RuleName\": \"规则1\",\n    \"EndPointId\": \"eid-93kvksadf\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5cd964e2-b5e6-8a35-9ce5a1085860c845\",\n        \"RuleType\": \"UP\",\n        \"RuleId\": \"fid-afdfaf2fsad\",\n        \"ZoneId\": \"zone-fadsvas\",\n        \"EndPointId\": \"eid-93kvksadf\",\n        \"RuleName\": \"规则1\"\n    }\n}",
+        "title": "创建转发规则"
+      }
+    ],
     "CreatePrivateDNSAccount": [
       {
         "document": "",
@@ -58,6 +74,14 @@
         "input": "POST / HTTP/1.1\nHost: privatedns.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteEndPoint\n<公共请求参数>\n\n{\n    \"EndPointId\": \"eid-juygvf672i\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5cd964e2-b5e6-8a35-9ce5a1085860c845\"\n    }\n}",
         "title": "删除终端节点"
+      }
+    ],
+    "DeleteForwardRule": [
+      {
+        "document": "删除转发规则",
+        "input": "POST / HTTP/1.1\nHost: privatedns.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteForwardRule\n<公共请求参数>\n\n{\n    \"RuleIdSet\": [\n        \"fid-123456\",\n        \"fid-789abc\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5cd964e2-b5e6-8a35-9ce5a1085860c845\"\n    }\n}",
+        "title": "删除转发规则"
       }
     ],
     "DeletePrivateDNSAccount": [
@@ -128,6 +152,38 @@
         "title": "获取私有域解析概览"
       }
     ],
+    "DescribeEndPointList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: privatedns.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEndPointList\n<公共请求参数>\n\n{\n    \"Limit\": 200,\n    \"Offset\": 0,\n    \"Filters\": [\n        {\n            \"Name\": \"EndPointName\",\n            \"Values\": [\n                \"终端节点名\"\n            ]\n        },\n        {\n            \"Name\": \"EndPointId\",\n            \"Values\": [\n                \"eid-24ed8e6319\"\n            ]\n        },\n        {\n            \"Name\": \"EndPointServiceId\",\n            \"Values\": [\n                \"vpcsvc-prvrnrlt\"\n            ]\n        },\n        {\n            \"Name\": \"EndPointVip\",\n            \"Values\": [\n                \"11.149.7.14\",\n                \"11.149.7.141\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8a4ea9cc-b1df-f8f8-ffe7efbe98f9ff85\",\n        \"TotalCount\": 5,\n        \"EndPointSet\": [\n            {\n                \"EndPointId\": \"eid-24ed8e6319\",\n                \"EndPointName\": \"名称\",\n                \"EndPointServiceId\": \"vpcsvc-prvrnrlt\",\n                \"EndPointVipSet\": [\n                    \"10.0.0.17:53\"\n                ],\n                \"Tags\": [\n                    {\n                        \"TagKey\": \"abc\",\n                        \"TagValue\": \"abc\"\n                    }\n                ]\n            }\n        ]\n    }\n}",
+        "title": "获取终端节点列表"
+      }
+    ],
+    "DescribeEndPointRegion": [
+      {
+        "document": "查询终端节点可用地域",
+        "input": "POST / HTTP/1.1\nHost: privatedns.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEndPointRegion\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RegionSet\": [\n            {\n                \"CnName\": \"北京\",\n                \"EnName\": \"bj\",\n                \"RegionCode\": \"ap-beijing\",\n                \"RegionId\": 8\n            },\n            {\n                \"CnName\": \"广州\",\n                \"EnName\": \"gz\",\n                \"RegionCode\": \"ap-guangzhou\",\n                \"RegionId\": 1\n            },\n            {\n                \"CnName\": \"南京\",\n                \"EnName\": \"nj\",\n                \"RegionCode\": \"ap-nanjing\",\n                \"RegionId\": 33\n            },\n            {\n                \"CnName\": \"上海\",\n                \"EnName\": \"sh\",\n                \"RegionCode\": \"ap-shanghai\",\n                \"RegionId\": 4\n            }\n        ],\n        \"RequestId\": \"036e44eb-02af-44cf-b46e-924a0e04ea4a\"\n    }\n}",
+        "title": "查询终端节点可用地域"
+      }
+    ],
+    "DescribeForwardRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: privatedns.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeForwardRule\n<公共请求参数>\n\n{\n    \"RuleId\": \"fid-af2f9nkug\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5cd964e2-b5e6-8a35-9ce5a1085860c845\",\n        \"ForwardRule\": {\n            \"Domain\": \"qq.com\",\n            \"ZoneId\": \"zone-s8cs72d9\",\n            \"RuleId\": \"fid-fa2c8misu\",\n            \"ForwardAddress\": [\n                \"1.1.11.1:53\"\n            ],\n            \"RuleType\": \"DOWN\",\n            \"VpcSet\": [\n                {\n                    \"Region\": \"ap-guangzhou\",\n                    \"UniqVpcId\": \"vpc-as3bsfml\"\n                }\n            ],\n            \"EndPointName\": \"终端节点名\",\n            \"EndPointId\": \"eid-fc9iuxhg4\",\n            \"RuleName\": \"转发规则名称\",\n            \"UpdatedAt\": \"2022-09-09 10:45:44\",\n            \"CreatedAt\": \"2022-09-09 10:45:44\"\n        }\n    }\n}",
+        "title": "查询转发规则"
+      }
+    ],
+    "DescribeForwardRuleList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: privatedns.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeForwardRuleList\n<公共请求参数>\n\n{\n    \"Limit\": 200,\n    \"Offset\": 0,\n    \"Filters\": [\n        {\n            \"Name\": \"RuleName\",\n            \"Values\": [\n                \"呵呵\"\n            ]\n        },\n        {\n            \"Name\": \"RuleType\",\n            \"Values\": [\n                \"DOWN\"\n            ]\n        },\n        {\n            \"Name\": \"ZoneId\",\n            \"Values\": [\n                \"zone-04jlawty\"\n            ]\n        },\n        {\n            \"Name\": \"EndPointId\",\n            \"Values\": [\n                \"eid-asdfadaf\"\n            ]\n        },\n        {\n            \"Name\": \"EndPointName\",\n            \"Values\": [\n                \"zdjdhhh\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8a4ea9cc-b1df-f8f8-ffe7efbe98f9ff85\",\n        \"TotalCount\": 5,\n        \"ForwardRuleSet\": [\n            {\n                \"Domain\": \"qq.com\",\n                \"ZoneId\": \"zone-s8cs72d9\",\n                \"RuleId\": \"fid-af2skm96n\",\n                \"ForwardAddress\": [\n                    \"1.1.1.1:53\"\n                ],\n                \"RuleType\": \"UP\",\n                \"VpcSet\": [\n                    {\n                        \"Region\": \"ap-guangzhou\",\n                        \"UniqVpcId\": \"vpc-dus89eks\"\n                    }\n                ],\n                \"EndPointName\": \"终端节点1\",\n                \"EndPointId\": \"eid-fxiuf872bsp\",\n                \"RuleName\": \"转发规则名称\",\n                \"UpdatedAt\": \"2022-09-09 10:45:44\",\n                \"CreatedAt\": \"2022-09-09 10:45:44\",\n                \"Tags\": [\n                    {\n                        \"TagKey\": \"abc\",\n                        \"TagValue\": \"abc\"\n                    }\n                ]\n            }\n        ]\n    }\n}",
+        "title": "获取私有域列表"
+      }
+    ],
     "DescribePrivateDNSAccountList": [
       {
         "document": "",
@@ -182,6 +238,14 @@
         "input": "POST / HTTP/1.1\nHost: privatedns.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRequestData\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"Vpc\",\n            \"Values\": [\n                \"vpc-qxxxxx5\"\n            ]\n        },\n        {\n            \"Name\": \"ZoneId\",\n            \"Values\": [\n                \"vpc-asdfasdf\"\n            ]\n        },\n        {\n            \"Name\": \"Region\",\n            \"Values\": [\n                \"ap-guangzhou\"\n            ]\n        }\n    ],\n    \"TimeRangeBegin\": \"2020-11-22 00:00:00\",\n    \"TimeRangeEnd\": \"2020-11-23 23:59:59\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"e7b6e0f8-df16-afcf-507dea8b6958343d\",\n        \"Data\": [\n            {\n                \"Resource\": \"all\",\n                \"Metric\": \"request_count\",\n                \"MetricCount\": 0,\n                \"DataSet\": [\n                    {\n                        \"Date\": \"2020-11-22 00:00:00\",\n                        \"Value\": 0\n                    },\n                    {\n                        \"Date\": \"2020-11-22 01:00:00\",\n                        \"Value\": 0\n                    }\n                ]\n            }\n        ],\n        \"Interval\": \"hour\"\n    }\n}",
         "title": "获取私有域解析请求量"
+      }
+    ],
+    "ModifyForwardRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: privatedns.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyForwardRule\n<公共请求参数>\n\n{\n    \"RuleName\": \"转发规则名\",\n    \"EndPointId\": \"eid-xlsjc8qojg\",\n    \"RuleId\": \"fid-xiwus89no\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5cd964e2-b5e6-8a35-9ce5a1085860c845\"\n    }\n}",
+        "title": "修改转发规则"
       }
     ],
     "ModifyPrivateZone": [

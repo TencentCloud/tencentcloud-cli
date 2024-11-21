@@ -15,39 +15,40 @@ Output:
     "Response": {
         "CorpQuotas": [
             {
-                "CorpId": 1,
+                "CorpId": 10000,
                 "UsageQuota": {
-                    "SaleCnt": 0,
-                    "UpdateTime": "xx",
-                    "CorpId": 1,
-                    "ChainCnt": 0,
-                    "FactoryCnt": 0,
-                    "RiskCnt": 0,
-                    "TrackCnt": 0,
-                    "ItemCnt": 0
+                    "SaleCnt": 500,
+                    "UpdateTime": "2024-10-30T07:16:21.265Z",
+                    "CorpId": 10000,
+                    "ChainCnt": 50,
+                    "FactoryCnt": 10,
+                    "RiskCnt": 30,
+                    "TrackCnt": 45,
+                    "ItemCnt": 400
                 },
                 "Quota": {
-                    "CorpId": 1,
-                    "TrackQuota": 0,
-                    "FactoryQuota": 0,
-                    "QuotaId": 1,
-                    "SaleQuota": 0,
-                    "Version": "xx",
-                    "ItemQuota": 0,
-                    "StartTime": "xx",
+                    "CorpId": 10000,
+                    "TrackQuota": 1500,
+                    "FactoryQuota": 200,
+                    "QuotaId": 110,
+                    "SaleQuota": 2000,
+                    "Version": "lite",
+                    "ItemQuota": 1800,
+                    "StartTime": "2024-10-01T07:16:21.265Z",
                     "Services": [
-                        "xx"
+                        "track"
                     ],
-                    "RiskQuota": 0,
-                    "EndTime": "xx",
-                    "TrackType": 0,
-                    "ChainQuota": 0
+                    "RiskQuota": 1200,
+                    "EndTime": "2025-10-01T07:16:21.265Z",
+                    "TrackType": 1,
+                    "ChainQuota": 1400,
+                    "ProductCertify": 0
                 },
-                "CorpName": "xx"
+                "CorpName": "企业名称"
             }
         ],
         "Total": 1,
-        "RequestId": "xx"
+        "RequestId": "eaa3ccac-d2f5-4df0-a8b3-7b51324e9283"
     }
 }
 ```

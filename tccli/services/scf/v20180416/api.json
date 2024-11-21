@@ -2331,7 +2331,7 @@
           "example": "无",
           "member": "string",
           "name": "FunctionName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2341,7 +2341,7 @@
           "example": "无",
           "member": "string",
           "name": "RetMsg",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2351,7 +2351,7 @@
           "example": "无",
           "member": "string",
           "name": "RequestId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2361,17 +2361,17 @@
           "example": "无",
           "member": "string",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "函数执行结果，如果是 0 表示执行成功，其他值表示失败",
+          "document": "函数执行结果，如果是 0 表示执行成功，2表示函数运行中，3表示函数执行中断，其他值表示失败",
           "example": "无",
           "member": "int64",
           "name": "RetCode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2381,7 +2381,7 @@
           "example": "无",
           "member": "int64",
           "name": "InvokeFinished",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2391,7 +2391,7 @@
           "example": "无",
           "member": "float",
           "name": "Duration",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -2401,7 +2401,7 @@
           "example": "无",
           "member": "int64",
           "name": "BillDuration",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2411,7 +2411,7 @@
           "example": "无",
           "member": "int64",
           "name": "MemUsage",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2421,7 +2421,7 @@
           "example": "无",
           "member": "string",
           "name": "Log",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2431,7 +2431,7 @@
           "example": "无",
           "member": "string",
           "name": "Level",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2441,7 +2441,7 @@
           "example": "无",
           "member": "string",
           "name": "Source",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2451,7 +2451,7 @@
           "example": "无",
           "member": "uint64",
           "name": "RetryNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -3635,7 +3635,7 @@
         },
         {
           "disabled": false,
-          "document": "版本的描述",
+          "document": "版本的描述信息",
           "example": "demo",
           "member": "string",
           "name": "Description",

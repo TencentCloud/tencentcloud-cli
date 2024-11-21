@@ -17,9 +17,9 @@ Output:
 ```
 {
     "Response": {
-        "ReturnMsg": "xx",
+        "ReturnMsg": "success",
         "ReturnCode": 0,
-        "RequestId": "xx"
+        "RequestId": "9a86c4e3-b926-4244-919b-aba9a7e82686"
     }
 }
 ```

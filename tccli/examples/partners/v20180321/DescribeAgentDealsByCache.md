@@ -46,13 +46,13 @@ Output:
                 "PayerMode": "0",
                 "GoodsName": "计费测试商品",
                 "SubGoodsName": "非资源工厂验证预付费子产品（勿动）",
-                "ClientRemark": "",
+                "ClientRemark": "客户备注",
                 "ClientType": "new",
                 "ProjectType": "platform",
                 "SalesUin": "0",
                 "DealStatus": "已退款",
                 "ActionType": "refund",
-                "ActivityId": "",
+                "ActivityId": "0",
                 "OverdueTime": "2024-01-23 15:56:08",
                 "ResourceIds": [
                     "4712106445241"

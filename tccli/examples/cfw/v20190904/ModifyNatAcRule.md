@@ -17,8 +17,7 @@ tccli cfw ModifyNatAcRule --cli-unfold-argument  \
     --Rules.0.OrderIndex 1 \
     --Rules.0.Uuid 242218 \
     --Rules.0.Enable true \
-    --Rules.0.Description test \
-    --Rules.0.ParamTemplateId  \
+    --Rules.0.Description pro-env \
     --Rules.0.Scope ap-shanghai
 ```
 

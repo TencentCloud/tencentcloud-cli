@@ -89,42 +89,43 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 0,
+        "TotalCount": 1,
         "AddressSet": [
             {
-                "AddressId": "eip-12345678",
-                "AddressName": "abc",
-                "AddressStatus": "UNBIND",
-                "AddressIp": "34.3.4.5.6",
-                "InstanceId": "ins-12345678",
-                "CreatedTime": "2020-09-22T00:00:00+00:00",
-                "NetworkInterfaceId": "eni-12345678",
-                "PrivateAddressIp": "192.2.3.4",
-                "IsArrears": true,
-                "IsBlocked": true,
-                "IsEipDirectConnection": true,
-                "AddressType": "WanIp",
-                "CascadeRelease": true,
+                "AddressId": "eip-93gyo275",
+                "AddressName": "gwlb",
+                "AddressIp": "122.51.235.39",
+                "AddressStatus": "BIND",
+                "AddressType": "WanIP",
+                "InstanceId": "ins-b2mc0ko1",
+                "InstanceType": "CVM",
+                "NetworkInterfaceId": "eni-akohvkv6",
+                "PrivateAddressIp": "10.0.1.9",
+                "IsArrears": false,
+                "IsBlocked": false,
+                "IsEipDirectConnection": false,
                 "EipAlgType": {
                     "Ftp": true,
                     "Sip": true
                 },
-                "InternetServiceProvider": "abc",
-                "LocalBgp": true,
-                "Bandwidth": 1,
-                "InternetChargeType": "TRAFFIC_POSTPAID_BY_HOUR",
+                "LocalBgp": false,
+                "CascadeRelease": false,
+                "Egress": "center_egress1",
+                "CreatedTime": "2024-11-11T07:42:49Z",
                 "TagSet": [
                     {
-                        "Key": "abc",
-                        "Value": "abc"
+                        "Key": "qcs:tag:createdBy",
+                        "Value": "Root:100002840660"
                     }
                 ],
-                "DeadlineDate": "2020-09-22",
-                "InstanceType": "abc",
-                "Egress": "abc"
+                "BandwidthPackageId": null,
+                "InternetChargeType": "TRAFFIC_POSTPAID_BY_HOUR",
+                "Bandwidth": 5,
+                "DeadlineDate": null,
+                "InternetServiceProvider": "BGP"
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "f9b58176-c138-45ba-a0e2-7a55117e2833"
     }
 }
 ```

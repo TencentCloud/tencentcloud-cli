@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli trp ReportBatchCallbackStatus --cli-unfold-argument  \
-    --BusinessSecurityData.IsAuthorized 0 \
-    --BusinessSecurityData.EncryptMethod 0 \
-    --BusinessSecurityData.EncryptMode 0 \
-    --BusinessSecurityData.PaddingType 0 \
-    --BusinessSecurityData.EncryptData abc
+    --BusinessSecurityData.IsAuthorized 1 \
+    --BusinessSecurityData.EncryptMethod 2 \
+    --BusinessSecurityData.EncryptMode 1 \
+    --BusinessSecurityData.PaddingType 1 \
+    --BusinessSecurityData.EncryptData hQDFcd2Gt1
 ```
 
 Output: 
@@ -19,10 +19,10 @@ Output:
     "Response": {
         "Data": {
             "Code": 0,
-            "Message": "abc",
-            "Value": "abc"
+            "Message": "操作成功",
+            "Value": "用户信息已获取"
         },
-        "RequestId": "abc"
+        "RequestId": "eaa3ccac-d2f5-4df0-a8b3-7b51324e9283"
     }
 }
 ```

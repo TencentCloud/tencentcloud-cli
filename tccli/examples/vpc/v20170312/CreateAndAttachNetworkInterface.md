@@ -49,7 +49,10 @@ Output:
                 }
             ],
             "Attachment": {
-                "InstanceId": "ins-12345678"
+                "InstanceId": "ins-12345678",
+                "DeviceIndex": 1,
+                "InstanceAccountId": "251007979",
+                "AttachTime": "2021-06-17 11:24:24"
             },
             "GroupSet": [],
             "Primary": false,

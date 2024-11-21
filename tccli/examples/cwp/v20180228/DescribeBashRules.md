@@ -16,21 +16,23 @@ Output:
         "List": [
             {
                 "Id": 1,
-                "Uuid": "",
+                "Uuid": "69E78F7F-FFC7-47D1-B406-13C9852******",
                 "Name": "反弹shell",
                 "Level": 3,
                 "Rule": "ncat\\s+--ssl.*?\\/bin\\/bash",
-                "Decription": "",
+                "Decription": "desc",
                 "Operator": "root",
                 "IsGlobal": 0,
                 "Status": 0,
                 "CreateTime": "2021-04-10 16:46:55",
                 "ModifyTime": "2021-04-10 16:46:55",
-                "Hostip": "",
+                "Hostip": "10.0.1****",
                 "White": 0,
-                "Uuids": [],
+                "Uuids": [
+                    "d4cc302e-09e5-436f-b99b-5ab9c9070323"
+                ],
                 "DealOldEvents": 0,
-                "Description": ""
+                "Description": "desc"
             }
         ],
         "RequestId": "a0e9ed25-686e-452b-8dd1-ef25440c6543",

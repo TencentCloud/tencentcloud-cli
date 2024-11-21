@@ -6,20 +6,20 @@ Input:
 
 ```
 tccli kms DescribeWhiteBoxDeviceFingerprints --cli-unfold-argument  \
-    --KeyId cd850a3d-9b1b-11ea-a96a-5254006d0810
+    --KeyId 5551ef2e-6742-11ef-8133-525400b2f623
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "f643be96-3ea8-4abe-b148-0cc74436b2c1",
         "DeviceFingerprints": [
             {
-                "Identity": "c19c024c-2ba1-11b2-a85c-96f970f4a8e1",
-                "Description": "desc"
+                "Description": "test1",
+                "Identity": "0177ebba-5ad6930a52d808***03-ddfd218bab945f-0c275b7f7d2c8c68"
             }
-        ]
+        ],
+        "RequestId": "5dc1c93f-8864-4525-a896-f56019aae02b"
     }
 }
 ```

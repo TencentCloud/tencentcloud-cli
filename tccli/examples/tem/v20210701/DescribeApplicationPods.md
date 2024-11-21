@@ -6,13 +6,13 @@ Input:
 
 ```
 tccli tem DescribeApplicationPods --cli-unfold-argument  \
-    --Status xx \
-    --EnvironmentId xx \
+    --Status Running \
+    --EnvironmentId en-xxxxxx \
     --Offset 0 \
     --SourceChannel 0 \
-    --Limit 0 \
-    --PodName xx \
-    --ApplicationId xx
+    --Limit 20 \
+    --PodName pod-name-xxx \
+    --ApplicationId app-xxxxxx
 ```
 
 Output: 
@@ -20,38 +20,38 @@ Output:
 {
     "Response": {
         "Result": {
-            "TotalCount": 0,
+            "Offset": 0,
             "Limit": 0,
-            "RequestId": "xx",
+            "TotalCount": 0,
+            "RequestId": "abc",
             "PodList": [
                 {
-                    "Webshell": "xx",
-                    "Status": "xx",
+                    "Webshell": "https://xxx-xxx-xxxx",
+                    "PodId": "abc",
+                    "Status": "abc",
+                    "CreateTime": "abc",
+                    "PodIp": "abc",
+                    "Zone": "abc",
+                    "DeployVersion": "abc",
                     "RestartCount": 0,
-                    "StartTime": "xx",
-                    "Zone": "xx",
-                    "PodId": "xx",
-                    "NodeInfo": {
-                        "SubnetId": "xx",
-                        "Cidr": "xx",
-                        "AvailableIpCount": "xx",
-                        "Name": "xx",
-                        "Zone": "xx"
-                    },
-                    "VersionId": "xx",
-                    "UnhealthyWarningMsg": "xx",
-                    "DeployVersion": "xx",
-                    "PodIp": "xx",
-                    "ContainerState": "xx",
                     "Ready": true,
-                    "ApplicationName": "xx",
-                    "CreateTime": "xx",
-                    "Unhealthy": true
+                    "ContainerState": "abc",
+                    "NodeInfo": {
+                        "Name": "abc",
+                        "Zone": "abc",
+                        "SubnetId": "abc",
+                        "AvailableIpCount": "abc",
+                        "Cidr": "abc"
+                    },
+                    "StartTime": "abc",
+                    "Unhealthy": true,
+                    "UnhealthyWarningMsg": "abc",
+                    "VersionId": "abc",
+                    "ApplicationName": "abc"
                 }
-            ],
-            "Offset": 0
+            ]
         },
-        "RequestId": "xx"
+        "RequestId": "xxx-xxx-xxx"
     }
 }
 ```

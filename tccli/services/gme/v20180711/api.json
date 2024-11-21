@@ -282,10 +282,10 @@
         {
           "disabled": false,
           "document": "实时语音统计数据\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"MainLandPcu\":0,\"MainLandDuration\":0,\"OverseaPcu\":0,\"OverseaDur",
+          "example": "{\"MainLandPcu\":1,\"OverseaDuration\":1,\"OverseaPcu\":1,\"OverseaDau\":1,\"MainLandDuration\":1,\"MainLandDau\":1}",
           "member": "RealTimeSpeechStatisticsItem",
           "name": "RealtimeSpeechStatisticsItem",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -295,7 +295,7 @@
           "example": "{\"Dau\":1018}",
           "member": "VoiceMessageStatisticsItem",
           "name": "VoiceMessageStatisticsItem",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -305,7 +305,7 @@
           "example": "{\"Duration\" : 18000}",
           "member": "VoiceFilterStatisticsItem",
           "name": "VoiceFilterStatisticsItem",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -315,7 +315,7 @@
           "example": "2022-10-01",
           "member": "date",
           "name": "Date",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -325,7 +325,7 @@
           "example": "{\"Data\":0}",
           "member": "AudioTextStatisticsItem",
           "name": "AudioTextStatisticsItem",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -335,7 +335,7 @@
           "example": "{\"Data\":0}",
           "member": "StreamTextStatisticsItem",
           "name": "StreamTextStatisticsItem",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -345,7 +345,7 @@
           "example": "{\"Data\":0}",
           "member": "OverseaTextStatisticsItem",
           "name": "OverseaTextStatisticsItem",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -355,7 +355,7 @@
           "example": "{\"Data\":0}",
           "member": "RealtimeTextStatisticsItem",
           "name": "RealtimeTextStatisticsItem",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         }
@@ -1143,7 +1143,7 @@
         {
           "disabled": false,
           "document": "应用id",
-          "example": "140014556",
+          "example": "1400000000",
           "member": "uint64",
           "name": "BizId",
           "required": true,
@@ -1151,10 +1151,19 @@
         },
         {
           "disabled": false,
-          "document": "要剔除的用户列表",
+          "document": "要剔除的用户列表（整型）",
           "example": "[\"1\\r\\n\",\"2\\r\\n\"]",
           "member": "string",
           "name": "Uids",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "要剔除的用户列表（字符串类型）",
+          "example": "[\"Andy\",\"John\"]",
+          "member": "string",
+          "name": "StrUids",
           "required": false,
           "type": "list"
         }
@@ -1170,6 +1179,7 @@
           "example": "无",
           "member": "DeleteResult",
           "name": "DeleteResult",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },

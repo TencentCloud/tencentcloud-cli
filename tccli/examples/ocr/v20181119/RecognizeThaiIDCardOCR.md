@@ -1,12 +1,12 @@
-**Example 1: 泰国身份证识别示例代码**
+**Example 1: RecognizeThaiIDCardOCR调用**
 
-泰国身份证识别
+
 
 Input: 
 
 ```
 tccli ocr RecognizeThaiIDCardOCR --cli-unfold-argument  \
-    --ImageUrl https://xx/a.jpg
+    --ImageUrl https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/***/fakeurl.jpg
 ```
 
 Output: 

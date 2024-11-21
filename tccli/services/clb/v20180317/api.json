@@ -64,7 +64,7 @@
       "status": "online"
     },
     "CreateLoadBalancer": {
-      "document": "本接口(CreateLoadBalancer)用来创建负载均衡实例（本接口只支持购买按量计费的负载均衡，包年包月的负载均衡请通过控制台购买）。为了使用负载均衡服务，您必须购买一个或多个负载均衡实例。成功调用该接口后，会返回负载均衡实例的唯一 ID。负载均衡实例的类型分为：公网、内网。详情可参考产品说明中的产品类型。\n注意：(1)指定可用区申请负载均衡、跨zone容灾(仅香港支持)【如果您需要体验该功能，请通过 [工单申请](https://console.cloud.tencent.com/workorder/category)】；(2)目前只有北京、上海、广州支持IPv6；(3)一个账号在每个地域的默认购买配额为：公网100个，内网100个。\n本接口为异步接口，接口成功返回后，可使用 DescribeLoadBalancers 接口查询负载均衡实例的状态（如创建中、正常），以确定是否创建成功。",
+      "document": "本接口(CreateLoadBalancer)用来创建负载均衡实例（本接口只支持购买按量计费的负载均衡，包年包月的负载均衡请通过控制台购买）。为了使用负载均衡服务，您必须购买一个或多个负载均衡实例。成功调用该接口后，会返回负载均衡实例的唯一 ID。负载均衡实例的类型分为：公网、内网。详情可参考产品说明中的产品类型。\n注意：(1)可通过 [DescribeResources](https://cloud.tencent.com/document/api/214/70213) 接口查询一个地域是否支持创建IPv6实例；(2)一个账号在每个地域的默认购买配额为：公网100个，内网100个。\n本接口为异步接口，接口成功返回后，可使用 DescribeLoadBalancers 接口查询负载均衡实例的状态（如创建中、正常），以确定是否创建成功。",
       "input": "CreateLoadBalancerRequest",
       "name": "购买负载均衡实例",
       "output": "CreateLoadBalancerResponse",
@@ -801,7 +801,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "后端服务的类型，可取：CVM、ENI、CCN",
+          "document": "后端服务的类型，可取：CVM、ENI、CCN、EVM、GLOBALROUTE、NAT、SRV等",
           "example": "CVM",
           "member": "string",
           "name": "Type",
@@ -1945,7 +1945,7 @@
         },
         {
           "disabled": false,
-          "document": "仅适用于公网负载均衡。目前仅广州、上海、南京、济南、杭州、福州、北京、石家庄、武汉、长沙、成都、重庆地域支持静态单线 IP 线路类型，如需体验，请联系商务经理申请。申请通过后，即可选择中国移动（CMCC）、中国联通（CUCC）或中国电信（CTCC）的运营商类型，网络计费模式只能使用按带宽包计费(BANDWIDTH_PACKAGE)。 如果不指定本参数，则默认使用BGP。可通过 DescribeResources 接口查询一个地域所支持的Isp。\n示例值：CMCC",
+          "document": "仅适用于公网负载均衡。目前仅广州、上海、南京、济南、杭州、福州、北京、石家庄、武汉、长沙、成都、重庆地域支持静态单线 IP 线路类型，如需体验，请联系商务经理申请。申请通过后，即可选择中国移动（CMCC）、中国联通（CUCC）或中国电信（CTCC）的运营商类型，网络计费模式只能使用按带宽包计费(BANDWIDTH_PACKAGE)。 如果不指定本参数，则默认使用BGP。可通过 DescribeResources 接口查询一个地域所支持的Isp。",
           "example": "CMCC",
           "member": "string",
           "name": "VipIsp",
@@ -2017,8 +2017,8 @@
         },
         {
           "disabled": false,
-          "document": "性能容量型规格。<li>clb.c2.medium（标准型）</li><li>clb.c3.small（高阶型1）</li><li>clb.c3.medium（高阶型2）</li>\n<li>clb.c4.small（超强型1）</li><li>clb.c4.medium（超强型2）</li><li>clb.c4.large（超强型3）</li><li>clb.c4.xlarge（超强型4）</li>",
-          "example": "sla-1",
+          "document": "性能容量型规格。<li>clb.c2.medium（标准型）</li><li>clb.c3.small（高阶型1）</li><li>clb.c3.medium（高阶型2）</li><li>clb.c4.small（超强型1）</li><li>clb.c4.medium（超强型2）</li><li>clb.c4.large（超强型3）</li><li>clb.c4.xlarge（超强型4）</li>",
+          "example": "clb.c2.medium",
           "member": "string",
           "name": "SlaType",
           "required": false,
@@ -2834,7 +2834,7 @@
         {
           "disabled": false,
           "document": "负载均衡实例的名称，只在创建一个实例的时候才会生效。规则：1-60 个英文、汉字、数字、连接线“-”或下划线“_”。\n注意：如果名称与系统中已有负载均衡实例的名称相同，则系统将会自动生成此次创建的负载均衡实例的名称。",
-          "example": "test",
+          "example": "test-cvm-bussiness",
           "member": "string",
           "name": "LoadBalancerName",
           "required": false,
@@ -2887,7 +2887,7 @@
         },
         {
           "disabled": false,
-          "document": "仅适用于公网负载均衡。设置跨可用区容灾时的主可用区ID，例如 100001 或 ap-guangzhou-1\n注：主可用区是需要承载流量的可用区，备可用区默认不承载流量，主可用区不可用时才使用备可用区。目前仅广州、上海、南京、北京、成都、深圳金融、中国香港、首尔、法兰克福、新加坡地域的 IPv4 版本的 CLB 支持主备可用区。可通过 [DescribeResources](https://cloud.tencent.com/document/api/214/70213) 接口查询一个地域的主可用区的列表。",
+          "document": "仅适用于公网且IP版本为IPv4的负载均衡。设置跨可用区容灾时的主可用区ID，例如 100001 或 ap-guangzhou-1\n注：主可用区是需要承载流量的可用区，备可用区默认不承载流量，主可用区不可用时才使用备可用区。目前仅广州、上海、南京、北京、成都、深圳金融、中国香港、首尔、法兰克福、新加坡地域的 IPv4 版本的 CLB 支持主备可用区。可通过 [DescribeResources](https://cloud.tencent.com/document/api/214/70213) 接口查询一个地域的主可用区的列表。【如果您需要体验该功能，请通过 [工单申请](https://console.cloud.tencent.com/workorder/category)】",
           "example": "ap-guangzhou-1",
           "member": "string",
           "name": "MasterZoneId",
@@ -2896,7 +2896,7 @@
         },
         {
           "disabled": false,
-          "document": "仅适用于公网负载均衡。可用区ID，指定可用区以创建负载均衡实例。如：ap-guangzhou-1。",
+          "document": "仅适用于公网且IP版本为IPv4的负载均衡。可用区ID，指定可用区以创建负载均衡实例。如：ap-guangzhou-1。",
           "example": "ap-guangzhou-1",
           "member": "string",
           "name": "ZoneId",
@@ -3005,7 +3005,7 @@
         {
           "disabled": false,
           "document": "Stgw独占集群的标签。",
-          "example": "test",
+          "example": "ziyan",
           "member": "string",
           "name": "ClusterTag",
           "required": false,
@@ -3013,7 +3013,7 @@
         },
         {
           "disabled": false,
-          "document": "仅适用于公网负载均衡。设置跨可用区容灾时的备可用区ID，例如 100001 或 ap-guangzhou-1\n注：备可用区是主可用区故障后，需要承载流量的可用区。可通过 [DescribeResources](https://cloud.tencent.com/document/api/214/70213) 接口查询一个地域的主/备可用区的列表。",
+          "document": "仅适用于公网且IP版本为IPv4的负载均衡。设置跨可用区容灾时的备可用区ID，例如 100001 或 ap-guangzhou-1\n注：备可用区是主可用区故障后，需要承载流量的可用区。可通过 [DescribeResources](https://cloud.tencent.com/document/api/214/70213) 接口查询一个地域的主/备可用区的列表。【如果您需要体验该功能，请通过 [工单申请](https://console.cloud.tencent.com/workorder/category)】",
           "example": "ap-guangzhou-1",
           "member": "string",
           "name": "SlaveZoneId",
@@ -3744,7 +3744,7 @@
         {
           "disabled": false,
           "document": "负载均衡监听器 ID。",
-          "example": "lis-1234tgbh",
+          "example": "lbl-1234tgbh",
           "member": "string",
           "name": "ListenerId",
           "required": true,
@@ -4978,7 +4978,7 @@
         },
         {
           "disabled": false,
-          "document": "当Fields包含TargetId、TargetAddress、TargetPort、TargetWeight、ListenerId、Protocol、Port、LocationId、Domain、Url等Fields时，必选选择导出目标组的Target或者非目标组Target，值范围NODE、GROUP。",
+          "document": "当Fields包含TargetId、TargetAddress、TargetPort、TargetWeight、ListenerId、Protocol、Port、LocationId、Domain、Url等Fields时，必选选择导出目标组的Target或者非目标组Target，取值范围NODE、GROUP。",
           "example": "NODE",
           "member": "string",
           "name": "TargetType",
@@ -5745,6 +5745,7 @@
           "example": "0",
           "member": "int64",
           "name": "Status",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5754,7 +5755,18 @@
           "example": "[\"lb-6efswuxa\"]",
           "member": "string",
           "name": "LoadBalancerIds",
+          "output_required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "辅助描述信息，如失败原因等。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": true
         },
         {
@@ -7190,7 +7202,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡实例的网络类型：\nOPEN：公网属性， INTERNAL：内网属性。",
+          "document": "负载均衡实例的网络类型：\nOPEN：公网属性， INTERNAL：内网属性；对于内网属性的负载均衡，可通过绑定EIP出公网，具体可参考EIP文档。",
           "example": "OPEN",
           "member": "string",
           "name": "LoadBalancerType",
@@ -7810,7 +7822,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡实例的网络类型：\nOPEN：公网属性，INTERNAL：内网属性。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "负载均衡实例的网络类型：\nOPEN：公网属性，INTERNAL：内网属性；对于内网属性的负载均衡，可通过绑定EIP出公网，具体可参考EIP文档。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "OPEN",
           "member": "string",
           "name": "LoadBalancerType",
@@ -8670,7 +8682,7 @@
         {
           "disabled": false,
           "document": "负载均衡监听器ID。",
-          "example": "lis-1234tgbh",
+          "example": "lbl-1234tgbh",
           "member": "string",
           "name": "ListenerId",
           "required": true,
@@ -9184,7 +9196,7 @@
         {
           "disabled": false,
           "document": "TRPC被调服务器路由，ForwardType为TRPC时必填。目前暂未对外开放。",
-          "example": "xyz",
+          "example": "TestCallee",
           "member": "string",
           "name": "TrpcCallee",
           "required": false,
@@ -9193,7 +9205,7 @@
         {
           "disabled": false,
           "document": "TRPC调用服务接口，ForwardType为TRPC时必填。目前暂未对外开放。",
-          "example": "abc",
+          "example": "TestFunc",
           "member": "string",
           "name": "TrpcFunc",
           "required": false,
@@ -9643,7 +9655,7 @@
         {
           "disabled": false,
           "document": "负载均衡监听器 ID。",
-          "example": "lis-1234tgbh",
+          "example": "lbl-1234tgbh",
           "member": "string",
           "name": "ListenerId",
           "required": true,
@@ -11082,7 +11094,7 @@
         },
         {
           "disabled": false,
-          "document": "绑定CVM时需要传入此参数，代表CVM的唯一 ID，可通过 DescribeInstances 接口返回字段中的 InstanceId 字段获取。表示绑定主网卡主IP。\n注意：参数 InstanceId、EniIp 有且只能传入其中一个参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "绑定CVM时需要传入此参数，代表CVM的唯一 ID，可通过 DescribeInstances 接口返回字段中的 InstanceId 字段获取。表示绑定主网卡主IPv4地址；以下场景都不支持指定InstanceId：绑定非CVM，绑定CVM上的辅助网卡IP，通过跨域2.0绑定CVM，以及绑定CVM的IPv6地址等。\n注意：参数 InstanceId、EniIp 有且只能传入其中一个参数。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ins-xxxxxxxx",
           "member": "string",
           "name": "InstanceId",
@@ -11425,7 +11437,7 @@
           "example": "'10.0.0.1'",
           "member": "string",
           "name": "IP",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11435,7 +11447,7 @@
           "example": "80",
           "member": "int64",
           "name": "Port",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11445,7 +11457,7 @@
           "example": "true",
           "member": "bool",
           "name": "HealthStatus",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -11455,17 +11467,17 @@
           "example": "'ins-12345678'",
           "member": "string",
           "name": "TargetId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "当前健康状态的详细信息。如：Alive、Dead、Unknown。Alive状态为健康，Dead状态为异常，Unknown状态包括尚未开始探测、探测中、状态未知。",
+          "document": "当前健康状态的详细信息。如：Alive、Dead、Unknown、Close。Alive状态为健康，Dead状态为异常，Unknown状态包括尚未开始探测、探测中、状态未知，Close表示健康检查关闭或监听器状态停止。",
           "example": "'Alive'",
           "member": "string",
           "name": "HealthStatusDetail",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11475,9 +11487,19 @@
           "example": "'Alive'",
           "member": "string",
           "name": "HealthStatusDetial",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目标组唯一ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "lbtg-xxxxxxxx",
+          "member": "string",
+          "name": "TargetGroupId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

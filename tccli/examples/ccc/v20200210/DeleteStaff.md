@@ -15,7 +15,7 @@ Output:
 {
     "Response": {
         "RequestId": "48edd236-7ef1-45af-9e12-fc376ba355bf",
-        "OnlineStaffList": null
+        "OnlineStaffList": []
     }
 }
 ```

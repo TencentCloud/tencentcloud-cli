@@ -30,19 +30,25 @@ Output:
                 "Port": "-1/-1",
                 "Protocol": "TCP",
                 "RuleAction": "accept",
-                "Description": "test",
+                "Description": "用于测试的规则",
                 "Enable": "true",
                 "Deleted": 0,
                 "EdgeId": "ALL",
-                "EdgeName": "",
+                "EdgeName": "edge名称",
                 "DetectedTimes": 0,
                 "FwGroupId": "ALL",
-                "FwGroupName": "",
-                "BetaList": [],
-                "ParamTemplateId": "",
-                "ParamTemplateName": "",
-                "TargetName": "",
-                "SourceName": "",
+                "FwGroupName": "互联分组",
+                "BetaList": [
+                    {
+                        "TaskId": "9001",
+                        "TaskName": "autotest",
+                        "LastTime": "1999-01-01 00:00:01"
+                    }
+                ],
+                "ParamTemplateId": "pp-ie03er",
+                "ParamTemplateName": "常规端口模版",
+                "TargetName": "模版规则",
+                "SourceName": "模版规则",
                 "IpVersion": 0
             }
         ],
@@ -86,19 +92,25 @@ Output:
                 "Port": "-1/-1",
                 "Protocol": "TCP",
                 "RuleAction": "accept",
-                "Description": "test",
+                "Description": "用于测试的规则",
                 "Enable": "true",
                 "Deleted": 0,
                 "EdgeId": "ALL",
-                "EdgeName": "",
+                "EdgeName": "edge名称",
                 "DetectedTimes": 0,
                 "FwGroupId": "ALL",
-                "FwGroupName": "",
-                "BetaList": [],
-                "ParamTemplateId": "",
-                "ParamTemplateName": "",
-                "TargetName": "",
-                "SourceName": "",
+                "FwGroupName": "互联分组",
+                "BetaList": [
+                    {
+                        "TaskId": "9001",
+                        "TaskName": "autotest",
+                        "LastTime": "1999-01-01 00:00:01"
+                    }
+                ],
+                "ParamTemplateId": "pp-ie03er",
+                "ParamTemplateName": "常规端口模版",
+                "TargetName": "模版规则",
+                "SourceName": "模版规则",
                 "IpVersion": 0
             }
         ],

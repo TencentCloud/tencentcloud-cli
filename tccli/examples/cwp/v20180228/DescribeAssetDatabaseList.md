@@ -14,7 +14,7 @@ Output:
         "Databases": [
             {
                 "MachineIp": "10.0.0.11",
-                "MachineWanIp": "110.84.0.11",
+                "MachineWanIp": "1.1.1.1",
                 "Quuid": "24c9be55-c743-4a75-a5c7-2a2912341234",
                 "Uuid": "24c9be55-c743-4a75-a5c7-2a2912341234",
                 "OsInfo": "CentOs Bit64",
@@ -39,18 +39,18 @@ Output:
                 "ErrorLogPath": "/root",
                 "PlugInPath": "/root",
                 "BinPath": "/root",
-                "Param": "",
+                "Param": "iparam",
                 "Id": "10001",
                 "UpdateTime": "2024-10-11 12:23:34",
                 "FirstTime": "2024-10-11 12:23:34",
                 "IsNew": 0,
                 "MachineName": "test-name",
                 "MachineExtraInfo": {
-                    "WanIP": "110.84.0.11",
+                    "WanIP": "1.1.1.1",
                     "PrivateIP": "10.0.0.11",
                     "NetworkType": 0,
-                    "NetworkName": "vpc-12341234",
-                    "InstanceID": "ins-aj28fjz",
+                    "NetworkName": "vpc-id",
+                    "InstanceID": "ins-id",
                     "HostName": "test-name"
                 }
             }

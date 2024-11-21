@@ -93,6 +93,30 @@
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "更新 TKE 节点池"
       }
+    ],
+    "RebootMachines": [
+      {
+        "document": "该接口支持原生节点重启，重启时限制一次重启的原生节点数量最多为100个",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RebootMachines\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-0dku0jec\",\n    \"MachineNames\": [\n        \"np-5tx2l4dc-4srqm\",\n        \"np-5tx2l4dc-4srqn\"\n    ],\n    \"StopType\": \"soft\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c0b712f-28a8-42a7-a89a-b4448a01421f\"\n    }\n}",
+        "title": "重启原生节点实例"
+      }
+    ],
+    "StartMachines": [
+      {
+        "document": "启动原生节点实例",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartMachines\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-0dku0jec\",\n    \"MachineNames\": [\n        \"np-5tx2l4dc-4srqm\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4f2b3354-ab65-4f1d-9a44-7b95a84f4ce3\"\n    }\n}",
+        "title": "启动原生节点实例"
+      }
+    ],
+    "StopMachines": [
+      {
+        "document": "关闭原生节点实例",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopMachines\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-0dku0jec\",\n    \"MachineNames\": [\n        \"np-5tx2l4dc-4srqm\"\n    ],\n    \"StopType\": \"soft\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a27a0c33-fe13-4373-bc88-863791d68f61\"\n    }\n}",
+        "title": "关闭原生节点实例"
+      }
     ]
   },
   "version": "1.0"

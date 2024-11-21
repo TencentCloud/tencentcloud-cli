@@ -2,64 +2,64 @@
   "actions": {
     "CreateProductSecret": [
       {
-        "document": "",
-        "input": "https://ssm.tencentcloudapi.com/?Action=CreateProductSecret\n&SecretName=testName\n&UserNamePrefix=testPrefix\n&ProductName=Mysql\n&InstanceID=cdb-vosgis\n&Description=test\n&KmsKeyId=2609a8fd-4584-4f89-98be-8c7ae1b81ef4\n&RotationBeginTime=2006-01-02 15:04:05\n&EnableRotation=true\n&RotationFrequency=35\n&Domains.0=%\n&Tags.0.TagKey=tagKey\n&Tags.0.TagValue=tagVal\n&PrivilegesList.0.PrivilegeName=object\n&PrivilegesList.0.Privileges.0=read\n&PrivilegesList.0.Database=testdb\n&PrivilegesList.0.TableName=testtable\n&PrivilegesList.0.ColumnName=testColumn\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2609a8fd-4584-4f89-98be-8c7ae1b81ef4\",\n        \"SecretName\": \"testName\",\n        \"TagCode\": 0,\n        \"TagMsg\": \"success\",\n        \"FlowID\": 123\n    }\n}",
+        "document": "CreateProductSecret创建云产品凭据请求示例",
+        "input": "POST / HTTP/1.1\nHost: ssm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateProductSecret\n<公共请求参数>\n\n{\n    \"SecretName\": \"test3-db-secret\",\n    \"UserNamePrefix\": \"lzctest\",\n    \"ProductName\": \"Mysql\",\n    \"InstanceID\": \"cdb-n4j3y33j\",\n    \"Domains\": [\n        \"%\"\n    ],\n    \"PrivilegesList\": [\n        {\n            \"PrivilegeName\": \"GlobalPrivileges\",\n            \"Privileges\": [\n                \"SELECT\"\n            ]\n        }\n    ],\n    \"Description\": \"测试数据库凭据创建\",\n    \"KmsKeyId\": \"6abd1fdb-86d4-11ef-b72d-52540089bc41\",\n    \"Tags\": [\n        {\n            \"TagKey\": \"env\",\n            \"TagValue\": \"dev\"\n        }\n    ],\n    \"RotationBeginTime\": \"2024-10-31 11:11:00\",\n    \"EnableRotation\": true,\n    \"RotationFrequency\": 30\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowID\": 43415,\n        \"RequestId\": \"0f5fa585-7671-4d4a-bc28-41910b772936\",\n        \"SecretName\": \"test3-db-secret\",\n        \"TagCode\": 0,\n        \"TagMsg\": \"ok\"\n    }\n}",
         "title": "创建云产品凭据"
       }
     ],
     "CreateSSHKeyPairSecret": [
       {
         "document": "创建SSH密钥对凭据",
-        "input": "POST / HTTP/1.1\nHost: ssm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSSHKeyPairSecret\n<公共请求参数>\n\n{\n    \"ProjectId\": 0,\n    \"Tags\": [\n        {\n            \"TagKey\": \"xx\",\n            \"TagValue\": \"xx\"\n        }\n    ],\n    \"KmsKeyId\": \"xx\",\n    \"Description\": \"xx\",\n    \"SecretName\": \"xx\",\n    \"SSHKeyName\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"SSHKeyID\": \"xx\",\n        \"TagMsg\": \"xx\",\n        \"TagCode\": 1,\n        \"RequestId\": \"xx\",\n        \"SecretName\": \"xx\",\n        \"SSHKeyName\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: ssm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSSHKeyPairSecret\n<公共请求参数>\n\n{\n    \"SecretName\": \"test2-sshkey-secret\",\n    \"ProjectId\": 0,\n    \"Description\": \"描述信息\",\n    \"KmsKeyId\": \"6abd1fdb-86d4-11ef-b72d-52540089bc41\",\n    \"Tags\": [\n        {\n            \"TagKey\": \"env\",\n            \"TagValue\": \"dev\"\n        }\n    ],\n    \"SSHKeyName\": \"test2_key\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"591e2b21-20e9-4621-8e4a-2697b89e985a\",\n        \"SSHKeyID\": \"skey-e0vbh2ts\",\n        \"SSHKeyName\": \"test2_key\",\n        \"SecretName\": \"test2-sshkey-secret\",\n        \"TagCode\": 0,\n        \"TagMsg\": \"ok\"\n    }\n}",
         "title": "创建SSH密钥对凭据"
       }
     ],
     "CreateSecret": [
       {
         "document": "创建自定义凭据。",
-        "input": "POST / HTTP/1.1\nHost: ssm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSecret\n<公共请求参数>\n\n{\n    \"VersionId\": \"v1.0\",\n    \"SecretString\": \"test\",\n    \"Description\": \"test create secret\",\n    \"SecretName\": \"test_secret\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9debf284-eff9-465a-97b7-163a8b1cccaf\",\n        \"SecretName\": \"test_secret\",\n        \"VersionId\": \"v1.0\",\n        \"TagCode\": 1,\n        \"TagMsg\": \"success\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: ssm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSecret\n<公共请求参数>\n\n{\n    \"SecretName\": \"test3_secret\",\n    \"VersionId\": \"v2.0\",\n    \"Description\": \"测试自定义凭据创建\",\n    \"KmsKeyId\": \"6abd1fdb-86d4-11ef-b72d-52540089bc41\",\n    \"SecretType\": 0,\n    \"SecretString\": \"凭据value2\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"be7d863d-8d8d-4d28-97b7-3dad7236bb33\",\n        \"SecretName\": \"test2_secret\",\n        \"TagCode\": 0,\n        \"TagMsg\": \"ok\",\n        \"VersionId\": \"v2.0\"\n    }\n}",
         "title": "创建新的凭据信息"
       }
     ],
     "DeleteSecret": [
       {
         "document": "",
-        "input": "https://ssm.tencentcloudapi.com/?Action=DeleteSecret\n&SecretName=test\n&RecoveryWindowInDays=1\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2609a8fd-4584-4f89-98be-8c7ae1b81ef4\",\n        \"SecretName\": \"test\",\n        \"DeleteTime\": 1574247268\n    }\n}",
+        "input": "https://ssm.tencentcloudapi.com/?Action=DeleteSecret\n&SecretName=lzctest\n&RecoveryWindowInDays=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2609a8fd-4584-4f89-98be-8c7ae1b81ef4\",\n        \"SecretName\": \"lzctest\",\n        \"DeleteTime\": 1574247268\n    }\n}",
         "title": "删除凭据信息"
       }
     ],
     "DeleteSecretVersion": [
       {
         "document": "",
-        "input": "https://ssm.tencentcloudapi.com/?Action=DeleteSecretVersion\n&SecretName=test\n&VersionId=v1.0\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c701cf6d-4199-4822-8630-d48ee953f485\",\n        \"SecretName\": \"test\",\n        \"VersionId\": \"v1.0\"\n    }\n}",
+        "input": "https://ssm.tencentcloudapi.com/?Action=DeleteSecretVersion\n&SecretName=lzctest\n&VersionId=v1.0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c701cf6d-4199-4822-8630-d48ee953f485\",\n        \"SecretName\": \"lzctest\",\n        \"VersionId\": \"v1.0\"\n    }\n}",
         "title": "删除指定版本的凭据"
       }
     ],
     "DescribeAsyncRequestInfo": [
       {
         "document": "",
-        "input": "https://ssm.tencentcloudapi.com/?Action=DescribeAsyncRequestInfo\n&FlowID=123\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Description\": \"task is processing\",\n        \"RequestId\": \"2609a8fd-4584-4f89-98be-8c7ae1b81ef4\",\n        \"TaskStatus\": 0\n    }\n}",
+        "input": "https://ssm.tencentcloudapi.com/?Action=DescribeAsyncRequestInfo\n&FlowID=43414\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Description\": \"success\",\n        \"RequestId\": \"a624794f-4fd3-4e92-b00e-ee46eeb51a0c\",\n        \"TaskStatus\": 1\n    }\n}",
         "title": "查询异步任务的执行结果"
       }
     ],
     "DescribeRotationDetail": [
       {
         "document": "",
-        "input": "https://ssm.tencentcloudapi.com/?Action=DescribeRotationDetail\n&SecretName=test\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2609a8fd-4584-4f89-98be-8c7ae1b81ef4\",\n        \"EnableRotation\": true,\n        \"Frequency\": 35,\n        \"LatestRotateTime\": \"2021-01-02 15:04:05\",\n        \"NextRotateBeginTime\": \"2021-02-02 15:04:05\"\n    }\n}",
+        "input": "https://ssm.tencentcloudapi.com/?Action=DescribeRotationDetail\n&SecretName=test3-db-secret\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"EnableRotation\": true,\n        \"Frequency\": 30,\n        \"LatestRotateTime\": \"2024-10-30 16:24:48\",\n        \"NextRotateBeginTime\": \"2024-10-31 11:11:00\",\n        \"RequestId\": \"d44e1c39-1e87-4ebe-ac8f-e06d0885971d\"\n    }\n}",
         "title": "查询凭据轮转详情"
       }
     ],
     "DescribeRotationHistory": [
       {
         "document": "",
-        "input": "https://ssm.tencentcloudapi.com/?Action=DescribeRotationHistory\n&SecretName=test\n&<公共请求参数>",
+        "input": "https://ssm.tencentcloudapi.com/?Action=DescribeRotationHistory\n&SecretName=testlzc\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"VersionIDs\": [\n            \"testId\"\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"2609a8fd-4584-4f89-98be-8c7ae1b81ef4\"\n    }\n}",
         "title": "查询凭据轮转历史版本"
       }
@@ -67,8 +67,8 @@
     "DescribeSecret": [
       {
         "document": "获取凭据详情信息",
-        "input": "https://ssm.tencentcloudapi.com/?Action=DescribeSecret\n&SecretName=test\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Status\": \"Enabled\",\n        \"Description\": \"hello\",\n        \"CreateUin\": 1,\n        \"ResourceID\": \"inst-1\",\n        \"ProductName\": \"redis\",\n        \"RotationStatus\": true,\n        \"KmsKeyId\": \"abc-ddd\",\n        \"RequestId\": \"abc-hhm\",\n        \"SecretType\": 0,\n        \"SecretName\": \"secret-a\",\n        \"RotationFrequency\": 1,\n        \"DeleteTime\": 1,\n        \"CreateTime\": 1,\n        \"ResourceName\": \"db-user1\",\n        \"ProjectID\": 1,\n        \"AssociatedInstanceIDs\": [\n            \"inst-1\"\n        ],\n        \"TargetUin\": 12345,\n        \"AdditionalConfig\": \"{}\"\n    }\n}",
+        "input": "https://ssm.tencentcloudapi.com/?Action=DescribeSecret\n&SecretName=test3-db-secret\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"AdditionalConfig\": \"key1\",\n        \"AssociatedInstanceIDs\": [\n            \"cvm-test\"\n        ],\n        \"CreateTime\": 1730272571,\n        \"CreateUin\": 700001224419,\n        \"DeleteTime\": 0,\n        \"Description\": \"测试数据库凭据创建\",\n        \"KmsKeyId\": \"6abd1fdb-86d4-11ef-b72d-52540089bc41\",\n        \"ProductName\": \"Mysql\",\n        \"ProjectID\": 0,\n        \"RequestId\": \"deb31013-2d0d-4b0c-a9dd-b62d8c3b2465\",\n        \"ResourceID\": \"cdb-n4j3y33j\",\n        \"ResourceName\": \"testresource\",\n        \"RotationFrequency\": 30,\n        \"RotationStatus\": true,\n        \"SecretName\": \"test3-db-secret\",\n        \"SecretType\": 1,\n        \"Status\": \"Enabled\",\n        \"TargetUin\": 0\n    }\n}",
         "title": "获取凭据详情信息"
       }
     ],
@@ -83,16 +83,16 @@
     "DisableSecret": [
       {
         "document": "",
-        "input": "https://ssm.tencentcloudapi.com/?Action=DisableSecret\n&SecretName=test\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"SecretName\": \"test\",\n        \"RequestId\": \"1b580852-1e38-11e9-b129-5cb9019b4b00\"\n    }\n}",
+        "input": "https://ssm.tencentcloudapi.com/?Action=DisableSecret\n&SecretName=lzctest\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"SecretName\": \"lzctest\",\n        \"RequestId\": \"1b580852-1e38-11e9-b129-5cb9019b4b00\"\n    }\n}",
         "title": "停用指定凭据"
       }
     ],
     "EnableSecret": [
       {
         "document": "",
-        "input": "https://ssm.tencentcloudapi.com/?Action=EnableSecret\n&SecretName=test\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"SecretName\": \"test\",\n        \"RequestId\": \"1b580852-1e38-11e9-b129-5cb9019b4b00\"\n    }\n}",
+        "input": "https://ssm.tencentcloudapi.com/?Action=EnableSecret\n&SecretName=test3-secret\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"SecretName\": \"test3-secret\",\n        \"RequestId\": \"1b580852-1e38-11e9-b129-5cb9019b4b00\"\n    }\n}",
         "title": "启用凭据"
       }
     ],
@@ -107,16 +107,16 @@
     "GetSSHKeyPairValue": [
       {
         "document": "获取SSH密钥对凭据明文",
-        "input": "POST / HTTP/1.1\nHost: ssm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetSSHKeyPairValue\n<公共请求参数>\n\n{\n    \"SecretName\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"SSHKeyID\": \"xx\",\n        \"ProjectID\": 0,\n        \"PrivateKey\": \"xx\",\n        \"PublicKey\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"SSHKeyName\": \"xx\",\n        \"SSHKeyDescription\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: ssm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetSSHKeyPairValue\n<公共请求参数>\n\n{\n    \"SecretName\": \"test2-sshkey-secret\"\n}",
+        "output": "{\n    \"Response\": {\n        \"PrivateKey\": \"-----BEGIN RSA PRIVATE KEY-----\\nMIIEowIBAAKC***********NEuTGXFT8sLJ\\n-----END RSA PRIVATE KEY-----\",\n        \"ProjectID\": 0,\n        \"PublicKey\": \"ssh-rsa AAAA********H5TD4ab skey-e0vbh2ts\",\n        \"RequestId\": \"9f436a38-ced1-45f0-9b51-946958b90244\",\n        \"SSHKeyDescription\": \"created by ssm\",\n        \"SSHKeyID\": \"skey-e0vbh2ts\",\n        \"SSHKeyName\": \"test2_key\"\n    }\n}",
         "title": "获取SSH密钥对凭据明文"
       }
     ],
     "GetSecretValue": [
       {
         "document": "获取凭据明文信息",
-        "input": "POST / HTTP/1.1\nHost: ssm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetSecretValue\n<公共请求参数>\n\n{\n    \"VersionId\": \"v1.0\",\n    \"SecretName\": \"test_secret\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b8e6b67f-3ca7-4341-b4fa-a372bdf4e11c\",\n        \"SecretName\": \"test_secret\",\n        \"VersionId\": \"v1.0\",\n        \"SecretBinary\": \"\",\n        \"SecretString\": \"test\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: ssm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetSecretValue\n<公共请求参数>\n\n{\n    \"SecretName\": \"test3-secret\",\n    \"VersionId\": \"v3\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"91cec765-5604-4287-89b1-634357cfcd29\",\n        \"SecretBinary\": \"5Yet5o2udmFsdWUyCg==\",\n        \"SecretName\": \"test3-secret\",\n        \"SecretString\": \"凭据value3\",\n        \"VersionId\": \"v3\"\n    }\n}",
         "title": "获取凭据明文信息"
       }
     ],
@@ -124,62 +124,62 @@
       {
         "document": "",
         "input": "https://ssm.tencentcloudapi.com/?Action=GetServiceStatus\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1a327ad8-5fef-41d5-b1a1-73d58af83d66\",\n        \"ServiceEnabled\": true,\n        \"InvalidType\": 1,\n        \"AccessKeyEscrowEnabled\": true\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"AccessKeyEscrowEnabled\": true,\n        \"ExpireTime\": \"2024-09-10 10:19:21\",\n        \"InvalidType\": 1,\n        \"PayModel\": \"Postpaid_SSM\",\n        \"QPSLimit\": 0,\n        \"RenewFlag\": 0,\n        \"RequestId\": \"b370f1c4-3e1c-4922-8ab2-6f717240f6ad\",\n        \"ResourceId\": \"test-rsid\",\n        \"SecretLimit\": 0,\n        \"ServiceEnabled\": true,\n        \"TotalCount\": 0\n    }\n}",
         "title": "获取服务开启状态"
       }
     ],
     "ListSecretVersionIds": [
       {
         "document": "",
-        "input": "https://ssm.tencentcloudapi.com/?Action=ListSecretVersionIds\n&SecretName=test\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"56fe436b-16ca-402e-a9bb-83c14e9cc9e8\",\n        \"SecretName\": \"test\",\n        \"Versions\": [\n            {\n                \"VersionId\": \"v2.0\",\n                \"CreateTime\": 1574161372\n            },\n            {\n                \"VersionId\": \"v1.0\",\n                \"CreateTime\": 1574161748\n            }\n        ]\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: ssm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListSecretVersionIds\n<公共请求参数>\n\n{\n    \"SecretName\": \"test3-secret\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9877a5cc-208d-4ec0-b4bb-4e62990de2aa\",\n        \"SecretName\": \"test3-secret\",\n        \"Versions\": [\n            {\n                \"CreateTime\": 1730278717,\n                \"VersionId\": \"v1\"\n            },\n            {\n                \"CreateTime\": 1730278706,\n                \"VersionId\": \"v2\"\n            },\n            {\n                \"CreateTime\": 1730271414,\n                \"VersionId\": \"v3\"\n            }\n        ]\n    }\n}",
         "title": "获取指定凭据下的版本列表信息"
       }
     ],
     "ListSecrets": [
       {
         "document": "",
-        "input": "https://ssm.tencentcloudapi.com/?Action=ListSecrets\n&Limit=2\n&SecretType=0\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"SecretMetadatas\": [\n            {\n                \"SecretName\": \"abc\",\n                \"Description\": \"abc\",\n                \"KmsKeyId\": \"abc\",\n                \"CreateUin\": 1,\n                \"Status\": \"abc\",\n                \"DeleteTime\": 1,\n                \"CreateTime\": 1,\n                \"KmsKeyType\": \"abc\",\n                \"RotationStatus\": 0,\n                \"NextRotationTime\": 1,\n                \"SecretType\": 0,\n                \"ProductName\": \"abc\",\n                \"ResourceName\": \"abc\",\n                \"ProjectID\": 0,\n                \"AssociatedInstanceIDs\": [\n                    \"abc\"\n                ],\n                \"TargetUin\": 1,\n                \"RotationFrequency\": 0,\n                \"ResourceID\": \"abc\",\n                \"RotationBeginTime\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: ssm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListSecrets\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 2,\n    \"OrderType\": 1,\n    \"State\": 1,\n    \"SearchSecretName\": \"weijiali\",\n    \"TagFilters\": [\n        {\n            \"TagKey\": \"env\",\n            \"TagValue\": [\n                \"dev\"\n            ]\n        }\n    ],\n    \"SecretType\": 1,\n    \"ProductName\": \"Mysql\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c5ff5231-33e1-44cb-9b77-4d8972bd28ac\",\n        \"SecretMetadatas\": [\n            {\n                \"AssociatedInstanceIDs\": [\n                    \"ins-abfa\"\n                ],\n                \"CreateTime\": 1724816350,\n                \"CreateUin\": 700001028674,\n                \"DeleteTime\": 0,\n                \"Description\": \"Weijiali_test_80008\",\n                \"KmsKeyId\": \"9e46705b-8a1f-11ec-b941-5254008ad78d\",\n                \"KmsKeyType\": \"DEFAULT\",\n                \"NextRotationTime\": 1732796420,\n                \"ProductName\": \"Mysql\",\n                \"ProjectID\": 0,\n                \"ResourceID\": \"cdb-mrhoqymb\",\n                \"ResourceName\": \"testname\",\n                \"RotationBeginTime\": \"2024-08-30 20:20:20\",\n                \"RotationFrequency\": 30,\n                \"RotationStatus\": 1,\n                \"SecretName\": \"weijiali_test_00009\",\n                \"SecretType\": 1,\n                \"Status\": \"Enabled\",\n                \"TargetUin\": 0\n            },\n            {\n                \"AssociatedInstanceIDs\": [\n                    \"ins-affe\"\n                ],\n                \"CreateTime\": 1728713584,\n                \"CreateUin\": 700001028674,\n                \"DeleteTime\": 0,\n                \"Description\": \"yajiada_test_01\",\n                \"KmsKeyId\": \"9e46705b-8a1f-11ec-b941-5254008ad78d\",\n                \"KmsKeyType\": \"DEFAULT\",\n                \"NextRotationTime\": 1731305122,\n                \"ProductName\": \"Mysql\",\n                \"ProjectID\": 0,\n                \"ResourceID\": \"cdb-j6amb083\",\n                \"ResourceName\": \"testName2\",\n                \"RotationBeginTime\": \"2024-10-12 14:05:22\",\n                \"RotationFrequency\": 30,\n                \"RotationStatus\": 1,\n                \"SecretName\": \"yajiada_test_01\",\n                \"SecretType\": 1,\n                \"Status\": \"Enabled\",\n                \"TargetUin\": 0\n            }\n        ],\n        \"TotalCount\": 4\n    }\n}",
         "title": "获取凭据详细信息列表"
       }
     ],
     "PutSecretValue": [
       {
         "document": "",
-        "input": "https://ssm.tencentcloudapi.com/?Action=PutSecretValue\n&SecretName=test\n&VersionId=v2.0\n&SecretString=test v2\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6764f1f5-8229-4033-a831-46180aee30cf\",\n        \"SecretName\": \"test\",\n        \"VersionId\": \"v2.0\"\n    }\n}",
+        "input": "https://ssm.tencentcloudapi.com/?Action=PutSecretValue\n&SecretName=lzctest\n&VersionId=v2.0\n&SecretString=lzctestv2\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6764f1f5-8229-4033-a831-46180aee30cf\",\n        \"SecretName\": \"lzctest\",\n        \"VersionId\": \"v2.0\"\n    }\n}",
         "title": "增加新版本凭据"
       }
     ],
     "RestoreSecret": [
       {
         "document": "",
-        "input": "https://ssm.tencentcloudapi.com/?Action=RestoreSecret\n&SecretName=test\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"bf199317-0d31-4dba-a5e7-217dc37df2d4\",\n        \"SecretName\": \"test\"\n    }\n}",
+        "input": "https://ssm.tencentcloudapi.com/?Action=RestoreSecret\n&SecretName=lzctestss\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"bf199317-0d31-4dba-a5e7-217dc37df2d4\",\n        \"SecretName\": \"lzctestss\"\n    }\n}",
         "title": "恢复计划删除中的凭据"
       }
     ],
     "RotateProductSecret": [
       {
         "document": "",
-        "input": "https://ssm.tencentcloudapi.com/?Action=RotateProductSecret\n&SecretName=test\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2609a8fd-4584-4f89-98be-8c7ae1b81ef4\",\n        \"FlowID\": 0\n    }\n}",
+        "input": "https://ssm.tencentcloudapi.com/?Action=RotateProductSecret\n&SecretName=test3-db-secret\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2609a8fd-4584-4f89-98be-8c7ae1b81ef4\",\n        \"FlowID\": 43416\n    }\n}",
         "title": "轮转云产品凭据"
       }
     ],
     "UpdateDescription": [
       {
         "document": "",
-        "input": "https://ssm.tencentcloudapi.com/?Action=UpdateDescription\n&SecretName=test\n&Description=new desc\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dfa4908b-a586-4d44-8f76-3fad156c1be2\",\n        \"SecretName\": \"test\"\n    }\n}",
+        "input": "https://ssm.tencentcloudapi.com/?Action=UpdateDescription\n&SecretName=lzctests\n&Description=new desc\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dfa4908b-a586-4d44-8f76-3fad156c1be2\",\n        \"SecretName\": \"lzctests\"\n    }\n}",
         "title": "更新凭据描述信息"
       }
     ],
     "UpdateRotationStatus": [
       {
         "document": "",
-        "input": "https://ssm.tencentcloudapi.com/?Action=UpdateRotationStatus\n&SecretName=test\n&EnableRotation=true\n&Frequency=35\n&RotationBeginTime=2006-01-02 15:04:05\n&<公共请求参数>",
+        "input": "https://ssm.tencentcloudapi.com/?Action=UpdateRotationStatus\n&SecretName=lzctests\n&EnableRotation=true\n&Frequency=35\n&RotationBeginTime=2006-01-02 15:04:05\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"2609a8fd-4584-4f89-98be-8c7ae1b81ef4\"\n    }\n}",
         "title": "设置云产品凭据轮转策略"
       }
@@ -187,8 +187,8 @@
     "UpdateSecret": [
       {
         "document": "",
-        "input": "https://ssm.tencentcloudapi.com/?Action=UpdateSecret\n&SecretName=test\n&VersionId=v1.0\n&SecretString=new value\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e6993612-6922-4f2d-bb36-37348f36eba5\",\n        \"SecretName\": \"test\",\n        \"VersionId\": \"v2.0\"\n    }\n}",
+        "input": "https://ssm.tencentcloudapi.com/?Action=UpdateSecret\n&SecretName=lzctestss\n&VersionId=v1.0\n&SecretString=new value\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e6993612-6922-4f2d-bb36-37348f36eba5\",\n        \"SecretName\": \"lzctestss\",\n        \"VersionId\": \"v2.0\"\n    }\n}",
         "title": "更新凭据内容"
       }
     ]

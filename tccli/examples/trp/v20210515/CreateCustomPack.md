@@ -8,7 +8,7 @@ Input:
 tccli trp CreateCustomPack --cli-unfold-argument  \
     --MerchantId eqdmnz7020bmtvi9 \
     --Amount 10 \
-    --CustomId xxxx \
+    --CustomId exfdmnz7020bmt \
     --PackType 0
 ```
 

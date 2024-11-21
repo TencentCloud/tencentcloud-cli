@@ -5,14 +5,17 @@
 Input: 
 
 ```
-tccli cwp ExportJavaMemShellPlugins --cli-unfold-argument ```
+tccli cwp ExportJavaMemShellPlugins --cli-unfold-argument  \
+    --Filters.0.Name Quuid \
+    --Filters.0.Values d4cc302e-09e5-436f-b99b-5ab9c9070323
+```
 
 Output: 
 ```
 {
     "Response": {
         "RequestId": "d92d723e-4aac-4f4a-bbf9-e5430e29d289",
-        "TaskId": "123"
+        "TaskId": "187653"
     }
 }
 ```

@@ -6,27 +6,32 @@ Input:
 
 ```
 tccli tdmq DescribeRabbitMQNodeList --cli-unfold-argument  \
-    --InstanceId amqp-testtesttest \
-    --Limit 1 \
-    --Offset 1
+    --InstanceId amqp-test \
+    --Offset 0 \
+    --Limit 3 \
+    --NodeName rabbit@rabbitmq-broker-1.rabbitmq-broker-internal.amqp-test.svc.cluster.local \
+    --Filters.0.Name nodeStatus \
+    --Filters.0.Values running \
+    --SortElement cpuUsage \
+    --SortOrder descend
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "TotalCount": 1,
         "NodeList": [
             {
-                "NodeName": "abc",
-                "NodeStatus": "abc",
-                "CPUUsage": "abc",
-                "Memory": 1,
-                "DiskUsage": "abc",
-                "ProcessNumber": 1
+                "CPUUsage": "0.000%",
+                "DiskUsage": "3.000%",
+                "Memory": 171,
+                "NodeName": "rabbit@rabbitmq-broker-1.rabbitmq-broker-internal.amqp-test.svc.cluster.local",
+                "NodeStatus": "running",
+                "ProcessNumber": 459
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "a95bfcfd-8388-4f86-8511-ca3be8ed000c",
+        "TotalCount": 1
     }
 }
 ```

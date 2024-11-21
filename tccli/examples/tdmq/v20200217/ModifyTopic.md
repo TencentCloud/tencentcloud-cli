@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli tdmq ModifyTopic --cli-unfold-argument  \
-    --EnvironmentId abc \
-    --TopicName abc \
+    --EnvironmentId devNs \
+    --TopicName devTopic \
     --Partitions 1 \
-    --Remark abc \
-    --ClusterId abc \
+    --Remark devTest \
+    --ClusterId pulsar-5r59xd4vnx \
     --MsgTTL 1
 ```
 

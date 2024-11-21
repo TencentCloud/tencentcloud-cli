@@ -6,24 +6,28 @@ Input:
 
 ```
 tccli tcss UpdateAssetImageRegistryRegistryDetail --cli-unfold-argument  \
-    --Name test \
+    --Name private_aws \
+    --Username AKIAVHDIU6R7C3BD \
+    --Password password \
+    --Url https://dkr.ecr.us-east-119.amazonaws.com \
+    --RegistryType aws \
+    --RegistryVersion V1 \
     --NetType public \
-    --Password xxx \
     --RegistryRegion default \
-    --RegistryType harbor \
-    --RegistryVersion V2 \
-    --Url http://127.0.0.1:8080 \
-    --Username username
+    --SpeedLimit 0 \
+    --Insecure 0 \
+    --ConnDetectConfig.0.Quuid backend \
+    --ConnDetectConfig.0.Uuid backend
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "HealthCheckErr": "abc",
-        "NameRepeatErr": "abc",
-        "RegistryId": 0,
-        "RequestId": "abc"
+        "HealthCheckErr": "",
+        "NameRepeatErr": "",
+        "RegistryId": 29113,
+        "RequestId": "47d03bf3-6ea3-4e79-a7f0-70eae99717bc"
     }
 }
 ```

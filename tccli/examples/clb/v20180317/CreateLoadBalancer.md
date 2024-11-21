@@ -10,7 +10,7 @@ tccli clb CreateLoadBalancer --cli-unfold-argument  \
     --ProjectId 0 \
     --LoadBalancerType OPEN \
     --VpcId vpc-30xqxt9p \
-    --LoadBalancerName test
+    --LoadBalancerName test-open
 ```
 
 Output: 

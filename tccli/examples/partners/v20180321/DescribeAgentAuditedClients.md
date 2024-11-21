@@ -19,9 +19,9 @@ Output:
             {
                 "Uin": "3286669433",
                 "ClientUin": "2461871653",
-                "ClientRemark": "",
+                "ClientRemark": "测试mark",
                 "ClientName": "2461871653",
-                "ClientFlag": "a",
+                "ClientFlag": "b",
                 "AuthType": "-1",
                 "AgentTime": "1476195568",
                 "AppId": "1252765299",

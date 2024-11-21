@@ -6,40 +6,40 @@ Input:
 
 ```
 tccli smop SubmitTaskEvent --cli-unfold-argument  \
-    --AccountId abc \
-    --DeviceId abc \
-    --OrderId abc \
-    --Code abc \
-    --Async 0 \
-    --NotifyURL abc \
-    --ProductId 0
+    --AccountId 5Gsl****VfPd \
+    --DeviceId oPD5****G0zr \
+    --OrderId xFUDBDgn4lv403u5 \
+    --Code addType \
+    --Async 1 \
+    --NotifyURL https://gmall.m.qq.com/api/ReceiveTaskNotify \
+    --ProductId 7999
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "OrderId": "abc",
+        "OrderId": "xFUDBDgn4lv403u5",
         "Code": 0,
-        "Message": "abc",
+        "Message": "success",
         "Data": [
             {
                 "Code": 0,
-                "Message": "abc",
-                "TaskId": 0,
-                "TaskOrderId": "abc",
-                "TaskCode": 0,
-                "TaskCoinNumber": 0,
-                "TaskType": 0,
-                "TotalCoin": 0,
-                "Attach": "abc",
-                "DoneTimes": 0,
-                "TotalTimes": 0,
-                "TaskName": "abc",
-                "GrowScore": 0
+                "Message": "success",
+                "TaskId": 11100,
+                "TaskOrderId": "3772179646188093549",
+                "TaskCode": 1,
+                "TaskCoinNumber": 10,
+                "TaskType": 1151,
+                "TotalCoin": 100,
+                "Attach": "自定义数据说明",
+                "DoneTimes": 1,
+                "TotalTimes": 3,
+                "TaskName": "自定义任务",
+                "GrowScore": 100
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "afc7e79d-b282-154e-5389-f5a6592d2408"
     }
 }
 ```

@@ -11,7 +11,7 @@ tccli tse CreateCloudNativeAPIGatewayRoute --cli-unfold-argument  \
     --RouteName route-demo \
     --Methods GET POST \
     --Hosts www.baidu.com \
-    --Paths / \
+    --Paths /v1/users \
     --PreserveHost True \
     --StripPath False \
     --HttpsRedirectStatusCode 308

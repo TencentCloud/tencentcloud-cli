@@ -5,45 +5,48 @@
 Input: 
 
 ```
-tccli cwp DescribeVulDefenceEvent --cli-unfold-argument ```
+tccli cwp DescribeVulDefenceEvent --cli-unfold-argument  \
+    --Offset 0 \
+    --Limit 10
+```
 
 Output: 
 ```
 {
     "Response": {
+        "RequestId": "356fec3f-0a9e-47c1-bbd0-c47d1496d0ae",
         "TotalCount": 1,
         "List": [
             {
-                "Id": 10001,
-                "Uuid": "05f0bcab-726c-4ea4-8109-bcd03d5598f7",
-                "Quuid": "05f0bcab-726c-4ea4-8109-bcd03d5598f7",
-                "Alias": "harborV2_yancyw",
-                "PrivateIp": "1.1.1.1",
-                "PublicIp": "1.1.1.1",
+                "Id": 13844,
+                "Uuid": "acdd5474-6360-4fd4-bfc7-843162cb8116",
+                "Quuid": "acdd5474-6360-4fd4-bfc7-843162cb8116",
+                "Alias": "v_llzlu微隔离测试(millionlan)",
+                "PrivateIp": "10.0.1.233",
+                "PublicIp": "43.138.142.208",
                 "UpgradeType": 1,
-                "VulId": 101824,
-                "VulName": "Apache log4j2 远程代码执行漏洞 (CVE-2021-44228)",
-                "CveId": "CVE-2021-44228",
-                "FixType": 0,
+                "VulId": 14004,
+                "VulName": "ISC BIND 资源管理错误漏洞(CVE-2014-8500)",
+                "CveId": "CVE-2014-8500",
+                "FixType": 1,
                 "EventType": 2,
-                "SourceIp": "",
-                "City": "",
+                "SourceIp": "na",
+                "City": "beijing",
                 "SourcePort": [],
-                "CreateTime": "2024-10-23 11:41:10",
-                "MergeTime": "2024-10-23 11:43:52",
-                "Count": 20,
+                "CreateTime": "2024-11-03 00:40:12",
+                "MergeTime": "2024-11-03 15:45:16",
+                "Count": 74,
                 "Status": 1,
                 "MachineExtraInfo": {
-                    "WanIP": "1.1.1.1",
-                    "PrivateIP": "1.1.1.1",
+                    "WanIP": "43.138.142.208",
+                    "PrivateIP": "10.0.1.233",
                     "NetworkType": 1,
-                    "NetworkName": "vpc-12332112",
-                    "InstanceID": "ins-12332112",
-                    "HostName": "机器名称"
+                    "NetworkName": "vpc-mbgoxtov",
+                    "InstanceID": "ins-j7vumfb6",
+                    "HostName": "v_llzlu微隔离测试(millionlan)"
                 }
             }
-        ],
-        "RequestId": "be6f6eec-0825-4e67-ab9a-c8568bbf736c"
+        ]
     }
 }
 ```

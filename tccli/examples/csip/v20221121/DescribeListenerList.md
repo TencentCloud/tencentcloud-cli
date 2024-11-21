@@ -13,10 +13,10 @@ Output:
     "Response": {
         "Data": [
             {
-                "Domain": "www.testwaf0420.com,,baidu.com,,baidu.com,,baidu.com,,www.testwaf0420.com,,rn.dzoyzy.top,,www.testwaf0420.com,,baidu.com,,www.testwaf0420.com,,baidu.com,",
+                "Domain": "www.example.tcsip0420.com,www.example.waf0420.com",
                 "ListenerId": "lbl-5n1jiwjo",
                 "ListenerName": "80",
-                "LoadBalancerDomain": "",
+                "LoadBalancerDomain": "lb-d24ssr-142edaa.sg-tencent.comclb.",
                 "LoadBalancerId": "lb-pflq0j2e",
                 "LoadBalancerName": "lb-642137c1",
                 "LoadBalancerType": "OPEN",
@@ -31,7 +31,7 @@ Output:
                 "Domain": "81.71.21.14,,81.71.21.14,,81.71.21.14,,81.71.21.14,,81.71.21.14,,81.71.21.14,,81.71.21.14,,81.71.21.14,",
                 "ListenerId": "lbl-c2tgl6w0",
                 "ListenerName": "web",
-                "LoadBalancerDomain": "",
+                "LoadBalancerDomain": "lb-d24ssr-142edaa.sg-tencent.comclb.",
                 "LoadBalancerId": "lb-meckpdk0",
                 "LoadBalancerName": "lsy",
                 "LoadBalancerType": "OPEN",
@@ -45,10 +45,10 @@ Output:
             {
                 "Domain": "1.15.159.154,,1.15.159.154,,1.15.159.154,,1.15.159.154,,1.15.159.154,,1.15.159.154,,1.15.159.154,,1.15.159.154,",
                 "ListenerId": "lbl-gkydcakh",
-                "ListenerName": "test-alert",
-                "LoadBalancerDomain": "",
+                "ListenerName": "lb-alert",
+                "LoadBalancerDomain": "lb-d24ssr-142edaa.sg-tencent.comclb.",
                 "LoadBalancerId": "lb-bf5sfyqz",
-                "LoadBalancerName": "autotest_HoneyPot",
+                "LoadBalancerName": "autot_HoneyPot",
                 "LoadBalancerType": "OPEN",
                 "NumericalVpcId": 3888171,
                 "Protocol": "HTTP",
@@ -58,10 +58,10 @@ Output:
                 "Zone": "ap-shanghai-2"
             },
             {
-                "Domain": ",",
+                "Domain": "echo.example.com",
                 "ListenerId": "lbl-mlrg4y76",
-                "ListenerName": "test",
-                "LoadBalancerDomain": "",
+                "ListenerName": "lb-foo",
+                "LoadBalancerDomain": "lb-d24ssr-142edaa.sg-tencent.comclb.",
                 "LoadBalancerId": "lb-pflq0j2e",
                 "LoadBalancerName": "lb-642137c1",
                 "LoadBalancerType": "OPEN",

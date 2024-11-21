@@ -29,7 +29,7 @@ Output:
                 ],
                 "LastOperationInstanceTypesCheckPolicy": "ANY",
                 "ImageId": "img-eb30mz89",
-                "ImageFamily": "",
+                "ImageFamily": "ubuntu-f0",
                 "Tags": [],
                 "IPv6InternetAccessible": {
                     "InternetChargeType": "TRAFFIC_POSTPAID_BY_HOUR",
@@ -80,22 +80,22 @@ Output:
                 "InstanceTags": [],
                 "CreatedTime": "2022-03-03T02:36:12Z",
                 "UpdatedTime": "2022-03-03T06:49:31Z",
-                "CamRoleName": "",
+                "CamRoleName": "CVM_QcsRole",
                 "HostNameSettings": {
                     "HostName": null,
                     "HostNameSuffix": null,
                     "HostNameStyle": null
                 },
                 "InstanceNameSettings": {
-                    "InstanceName": "",
+                    "InstanceName": "ins-ubuntu-0",
                     "InstanceNameSuffix": null,
-                    "InstanceNameStyle": ""
+                    "InstanceNameStyle": "UNIQUE"
                 },
                 "InstanceChargePrepaid": {
                     "Period": 0,
-                    "RenewFlag": ""
+                    "RenewFlag": "NOTIFY_AND_AUTO_RENEW"
                 },
-                "HpcClusterId": ""
+                "HpcClusterId": "hpc-u7y5r4e3"
             }
         ],
         "RequestId": "923dd24c-e492-4bdb-90be-1d3bd4bfe8a5"
@@ -174,7 +174,7 @@ Output:
                 },
                 "UserData": null,
                 "InstanceTags": [],
-                "ImageFamily": "",
+                "ImageFamily": "ubuntu-f0",
                 "Tags": [],
                 "IPv6InternetAccessible": {
                     "InternetChargeType": "TRAFFIC_POSTPAID_BY_HOUR",
@@ -184,22 +184,22 @@ Output:
                 "DisasterRecoverGroupIds": [],
                 "CreatedTime": "2022-03-03T02:36:12Z",
                 "UpdatedTime": "2022-03-03T06:49:31Z",
-                "CamRoleName": "",
+                "CamRoleName": "CVM_QcsRole",
                 "HostNameSettings": {
                     "HostName": null,
                     "HostNameSuffix": null,
                     "HostNameStyle": null
                 },
                 "InstanceNameSettings": {
-                    "InstanceName": "",
+                    "InstanceName": "ins-ubuntu-0",
                     "InstanceNameSuffix": null,
-                    "InstanceNameStyle": ""
+                    "InstanceNameStyle": "UNIQUE"
                 },
                 "InstanceChargePrepaid": {
                     "Period": 0,
-                    "RenewFlag": ""
+                    "RenewFlag": "NOTIFY_AND_AUTO_RENEW"
                 },
-                "HpcClusterId": ""
+                "HpcClusterId": "hpc-u7y5r4e3"
             },
             {
                 "ProjectId": 0,
@@ -255,7 +255,7 @@ Output:
                 },
                 "UserData": null,
                 "InstanceTags": [],
-                "ImageFamily": "",
+                "ImageFamily": "ubuntu-f0",
                 "Tags": [],
                 "IPv6InternetAccessible": {
                     "InternetChargeType": "TRAFFIC_POSTPAID_BY_HOUR",
@@ -265,22 +265,22 @@ Output:
                 "DisasterRecoverGroupIds": [],
                 "CreatedTime": "2022-03-02T02:25:12Z",
                 "UpdatedTime": "2022-03-02T02:25:12Z",
-                "CamRoleName": "",
+                "CamRoleName": "CVM_QcsRole",
                 "HostNameSettings": {
                     "HostName": null,
                     "HostNameSuffix": null,
                     "HostNameStyle": null
                 },
                 "InstanceNameSettings": {
-                    "InstanceName": "",
+                    "InstanceName": "ins-ubuntu-0",
                     "InstanceNameSuffix": null,
-                    "InstanceNameStyle": ""
+                    "InstanceNameStyle": "UNIQUE"
                 },
                 "InstanceChargePrepaid": {
                     "Period": 0,
-                    "RenewFlag": ""
+                    "RenewFlag": "NOTIFY_AND_AUTO_RENEW"
                 },
-                "HpcClusterId": ""
+                "HpcClusterId": "hpc-u7y5r4e3"
             }
         ],
         "RequestId": "0d4514d4-e277-4f0f-bc85-8b7377a71980"
@@ -361,7 +361,7 @@ Output:
                 "UserData": null,
                 "Tags": [],
                 "InstanceTags": [],
-                "ImageFamily": "",
+                "ImageFamily": "ubuntu-f0",
                 "IPv6InternetAccessible": {
                     "InternetChargeType": "TRAFFIC_POSTPAID_BY_HOUR",
                     "InternetMaxBandwidthOut": 0,
@@ -370,22 +370,22 @@ Output:
                 "DisasterRecoverGroupIds": [],
                 "CreatedTime": "2022-07-14T06:37:08Z",
                 "UpdatedTime": "2022-07-14T06:37:08Z",
-                "CamRoleName": "",
+                "CamRoleName": "CVM_QcsRole",
                 "HostNameSettings": {
                     "HostName": null,
                     "HostNameSuffix": null,
                     "HostNameStyle": null
                 },
                 "InstanceNameSettings": {
-                    "InstanceName": "",
+                    "InstanceName": "ins-ubuntu-0",
                     "InstanceNameSuffix": null,
-                    "InstanceNameStyle": ""
+                    "InstanceNameStyle": "UNIQUE"
                 },
                 "InstanceChargePrepaid": {
                     "Period": 0,
-                    "RenewFlag": ""
+                    "RenewFlag": "NOTIFY_AND_AUTO_RENEW"
                 },
-                "HpcClusterId": ""
+                "HpcClusterId": "hpc-u7y5r4e3"
             }
         ],
         "RequestId": "8b8047bb-1372-4208-866e-a18e7b7547e9"

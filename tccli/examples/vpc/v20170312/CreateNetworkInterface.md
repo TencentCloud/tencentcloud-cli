@@ -23,61 +23,40 @@ Output:
 {
     "Response": {
         "NetworkInterface": {
-            "NetworkInterfaceId": "abc",
-            "NetworkInterfaceName": "abc",
-            "NetworkInterfaceDescription": "abc",
-            "SubnetId": "abc",
-            "VpcId": "abc",
-            "GroupSet": [
-                "abc"
-            ],
-            "Primary": true,
-            "MacAddress": "abc",
-            "State": "abc",
+            "AttachType": 0,
+            "Attachment": null,
+            "Business": "cvm",
+            "CdcId": "",
+            "CreatedTime": "",
+            "EniType": 0,
+            "GroupSet": [],
+            "Ipv6AddressSet": [],
+            "MacAddress": "20:90:6F:2A:11:3D",
+            "NetworkInterfaceDescription": "",
+            "NetworkInterfaceId": "eni-ndaunxuo",
+            "NetworkInterfaceName": "TEST_ENI",
+            "Primary": false,
             "PrivateIpAddressSet": [
                 {
-                    "PrivateIpAddress": "abc",
+                    "AddressId": "",
+                    "Description": "",
+                    "IsWanIpBlocked": false,
                     "Primary": true,
-                    "PublicIpAddress": "abc",
-                    "AddressId": "abc",
-                    "Description": "abc",
-                    "IsWanIpBlocked": true,
-                    "State": "abc",
-                    "QosLevel": "abc"
+                    "PrivateIpAddress": "10.0.0.3",
+                    "PublicIpAddress": "",
+                    "QosLevel": "PT",
+                    "State": "PENDING"
                 }
             ],
-            "Attachment": {
-                "InstanceId": "abc",
-                "DeviceIndex": 1,
-                "InstanceAccountId": "abc",
-                "AttachTime": "abc"
-            },
-            "Zone": "abc",
-            "CreatedTime": "abc",
-            "Ipv6AddressSet": [
-                {
-                    "Address": "abc",
-                    "Primary": true,
-                    "AddressId": "abc",
-                    "Description": "abc",
-                    "IsWanIpBlocked": true,
-                    "State": "abc"
-                }
-            ],
-            "TagSet": [
-                {
-                    "Key": "abc",
-                    "Value": "abc"
-                }
-            ],
-            "EniType": 1,
-            "Business": "abc",
-            "CdcId": "abc",
-            "AttachType": 1,
-            "ResourceId": "abc",
-            "QosLevel": "abc"
+            "QosLevel": "PT",
+            "ResourceId": null,
+            "State": "PENDING",
+            "SubnetId": "subnet-r8x0gown",
+            "TagSet": [],
+            "VpcId": "vpc-67kr6ava",
+            "Zone": ""
         },
-        "RequestId": "abc"
+        "RequestId": "a5c5cd4d-9024-4465-a8c0-5b0979ec806e"
     }
 }
 ```

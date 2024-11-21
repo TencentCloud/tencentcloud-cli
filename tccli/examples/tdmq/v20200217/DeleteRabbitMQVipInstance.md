@@ -6,16 +6,16 @@ Input:
 
 ```
 tccli tdmq DeleteRabbitMQVipInstance --cli-unfold-argument  \
-    --InstanceId amqp-xxxxxxxx
+    --InstanceId amqp-test
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "TranId": "abc",
-        "InstanceId": "abc",
-        "RequestId": "abc"
+        "TranId": "20230110002025620411234",
+        "InstanceId": "amqp-test",
+        "RequestId": "a8f28d5e-a7e2-4b0b-afa0-2fba09c077a0"
     }
 }
 ```

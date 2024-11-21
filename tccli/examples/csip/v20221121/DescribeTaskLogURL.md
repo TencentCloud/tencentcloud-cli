@@ -6,11 +6,10 @@ Input:
 
 ```
 tccli csip DescribeTaskLogURL --cli-unfold-argument  \
-    --MemberId abc \
-    --ReportItemKeyList.0.TaskLogList abc \
+    --ReportItemKeyList.0.TaskLogList rpt-**** \
     --Type 0 \
-    --ReportTaskIdList.0.AppId abc \
-    --ReportTaskIdList.0.TaskIdList abc
+    --ReportTaskIdList.0.AppId 1302**** \
+    --ReportTaskIdList.0.TaskIdList rmis-****
 ```
 
 Output: 
@@ -19,13 +18,13 @@ Output:
     "Response": {
         "Data": [
             {
-                "URL": "abc",
-                "LogId": "abc",
-                "TaskLogName": "abc",
-                "AppId": "abc"
+                "URL": "https://yuzhi-tasklog-pdf-1300616671.cos.ap-guangzhou.myqcloud.com/****.pdf",
+                "LogId": "rpt-****",
+                "TaskLogName": "标准体检_*****",
+                "AppId": "1302****"
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "7429061e-dabd-e1ee-e135-43364c7bb15d"
     }
 }
 ```

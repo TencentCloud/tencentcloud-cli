@@ -3391,7 +3391,7 @@
           "example": "0",
           "member": "int64",
           "name": "FlowId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3401,27 +3401,27 @@
           "example": "[\"20230608002033882210000\"]",
           "member": "string",
           "name": "DealNames",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "实例Id，当购买多个实例时，默认返回购买的第一个实例 id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "ckafka-e5vjxxxx",
+          "document": "ckafka集群实例Id，当购买多个实例时，默认返回购买的第一个实例 id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ckafka-test",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "订单和购买实例对应映射列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[{\"DealName\":\"20230608002033882210000\",\"InstanceIdList\":[\"ckafka-test\"]}]",
           "member": "DealInstanceDTO",
           "name": "DealNameInstanceIdMapping",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -3433,8 +3433,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例名称，是一个不超过 64 个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)",
-          "example": "testInstance",
+          "document": "ckafka集群实例Name，是一个不超过 64 个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)",
+          "example": "ckafka测试",
           "member": "string",
           "name": "InstanceName",
           "required": true,
@@ -3442,8 +3442,8 @@
         },
         {
           "disabled": false,
-          "document": "创建的实例默认接入点所在的 vpc 对应 vpcId。目前不支持创建基础网络实例，因此该参数必填",
-          "example": "vpc-xxxxxxxx",
+          "document": "私有网络Id 创建的实例默认接入点所在的 vpc 对应 vpcId。目前不支持创建基础网络实例，因此该参数必填",
+          "example": "vpc-test",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -3452,7 +3452,7 @@
         {
           "disabled": false,
           "document": "子网id。创建实例默认接入点所在的子网对应的子网 id",
-          "example": "subnet-xxxxxxxx",
+          "example": "subnet-test",
           "member": "string",
           "name": "SubnetId",
           "required": true,
@@ -3596,11 +3596,20 @@
         {
           "disabled": false,
           "document": "标签",
-          "example": "{tagKey:'kkk',tagValue:'vvv'}",
+          "example": "[{\"tagKey\":\"tagkey-test\",\"tagValue\":\"tagvalue-test\"}]",
           "member": "Tag",
           "name": "Tags",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "弹性带宽开关 0不开启  1开启（0默认）",
+          "example": "0",
+          "member": "int64",
+          "name": "ElasticBandwidthSwitch",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -3614,7 +3623,7 @@
           "example": "0",
           "member": "string",
           "name": "ReturnCode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3624,17 +3633,17 @@
           "example": "success",
           "member": "string",
           "name": "ReturnMessage",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "返回的Data数据\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\"FlowId\":0,\"DealNames\":[\"20230608002033882210000\"],\"InstanceId\":\"ckafka-test\",\"DealNameInstanceIdMapping\":[{\"DealName\":\"20230608002033882210000\",\"InstanceIdList\":[\"ckafka-test\"]}]}",
           "member": "CreateInstancePostData",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         }
@@ -3647,7 +3656,7 @@
         {
           "disabled": false,
           "document": "返回结果",
-          "example": "无",
+          "example": "{\"ReturnCode\":\"0\",\"ReturnMessage\":\"success\"}",
           "member": "JgwOperateResponse",
           "name": "Result",
           "output_required": true,
@@ -3672,7 +3681,7 @@
           "example": "0",
           "member": "int64",
           "name": "FlowId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3682,27 +3691,27 @@
           "example": "[\"20230608002033882210000\"]",
           "member": "string",
           "name": "DealNames",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "实例Id，当购买多个实例时，默认返回购买的第一个实例 id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "ckafka-e5vjxxxx",
+          "document": "ckafka集群实例Id，当购买多个实例时，默认返回购买的第一个实例 id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ckafka-test",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "订单和购买实例对应映射列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[{\"DealName\":\"20230608002033882210000\",\"InstanceIdList\":[\"ckafka-test\"]}]",
           "member": "DealInstanceDTO",
           "name": "DealNameInstanceIdMapping",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -3714,8 +3723,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例名称，是一个不超过 64 个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)",
-          "example": "test",
+          "document": "ckafka集群实例Name，是一个不超过 64 个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)",
+          "example": "ckafka集群实例Name",
           "member": "string",
           "name": "InstanceName",
           "required": true,
@@ -3750,8 +3759,8 @@
         },
         {
           "disabled": false,
-          "document": "vpcId，必填",
-          "example": "vpc-xxx",
+          "document": "私有网络Id，必填",
+          "example": "vpc-test",
           "member": "string",
           "name": "VpcId",
           "required": false,
@@ -3760,7 +3769,7 @@
         {
           "disabled": false,
           "document": "子网id，必填",
-          "example": "subnet-xxx",
+          "example": "subnet-test",
           "member": "string",
           "name": "SubnetId",
           "required": false,
@@ -3787,7 +3796,7 @@
         {
           "disabled": false,
           "document": "预付费自动续费标记，0表示默认状态(用户未设置，即初始状态)， 1表示自动续费，2表示明确不自动续费(用户设置)",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "RenewFlag",
           "required": false,
@@ -3814,7 +3823,7 @@
         {
           "disabled": false,
           "document": "磁盘大小，如果跟控制台规格配比不相符，则无法创建成功",
-          "example": "500GB",
+          "example": "800",
           "member": "int64",
           "name": "DiskSize",
           "required": false,
@@ -3822,8 +3831,8 @@
         },
         {
           "disabled": false,
-          "document": "带宽，如果跟控制台规格配比不相符，则无法创建成功",
-          "example": "40MB",
+          "document": "实例带宽,单位MB/s; 最小值:20MB/s, 高级版最大值:360MB/s,专业版最大值:100000MB/s  标准版固定带宽规格: 40MB/s, 100MB/s, 150MB/s",
+          "example": "20",
           "member": "int64",
           "name": "BandWidth",
           "required": false,
@@ -3841,7 +3850,7 @@
         {
           "disabled": false,
           "document": "标签",
-          "example": "{tagKey:'kkk',tag:Value:'vvv'}",
+          "example": "[{\"tagKey\":\"tagkey-test\",\"tagValue\":\"tagvalue-test\"}]",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -3900,6 +3909,15 @@
           "name": "AutoVoucher",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "弹性带宽开关 0不开启  1开启（0默认）",
+          "example": "0",
+          "member": "int64",
+          "name": "ElasticBandwidthSwitch",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -3913,7 +3931,7 @@
           "example": "0",
           "member": "string",
           "name": "ReturnCode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3923,17 +3941,17 @@
           "example": "success",
           "member": "string",
           "name": "ReturnMessage",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "操作型返回的Data数据\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\"FlowId\":0,\"DealNames\":[\"20230608002033882210000\"],\"InstanceId\":\"ckafka-test\",\"DealNameInstanceIdMapping\":[{\"DealName\":\"20230608002033882210000\",\"InstanceIdList\":[\"ckafka-test\"]}]}",
           "member": "CreateInstancePreData",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -3943,7 +3961,7 @@
           "example": "N/A",
           "member": "string",
           "name": "DeleteRouteTimestamp",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -3956,7 +3974,7 @@
         {
           "disabled": false,
           "document": "返回结果",
-          "example": "无",
+          "example": "{\"ReturnCode\":\"0\",\"ReturnMessage\":\"ok[apply success]\",\"Data\":{\"FlowId\":0,\"DealNames\":[\"20230608002033882210000\"],\"InstanceId\":\"ckafka-test\",\"DealNameInstanceIdMapping\":[{\"DealName\":\"20230608002033882210000\",\"InstanceIdList\":[\"ckafka-test\"]}]},\"DeleteRouteTimestamp\":\"1566144000\"}",
           "member": "CreateInstancePreResp",
           "name": "Result",
           "output_required": true,
@@ -4032,8 +4050,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例名称，是一个不超过 64 个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)",
-          "example": "testInstance",
+          "document": "ckafka集群实例名称，是一个不超过 64 个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)",
+          "example": "ckafka测试",
           "member": "string",
           "name": "InstanceName",
           "required": false,
@@ -4041,8 +4059,8 @@
         },
         {
           "disabled": false,
-          "document": "创建的实例默认接入点所在的 vpc 对应 vpcId。目前不支持创建基础网络实例，因此该参数必填",
-          "example": "vpc-xxxxxxxx",
+          "document": "私有网络Id  创建的实例默认接入点所在的 vpc 对应 vpcId。目前不支持创建基础网络实例，因此该参数必填",
+          "example": "vpc-test",
           "member": "string",
           "name": "VpcId",
           "required": false,
@@ -4051,7 +4069,7 @@
         {
           "disabled": false,
           "document": "子网id。创建实例默认接入点所在的子网对应的子网 id",
-          "example": "subnet-xxxxxxxx",
+          "example": "subnet-test",
           "member": "string",
           "name": "SubnetId",
           "required": false,
@@ -4195,11 +4213,20 @@
         {
           "disabled": false,
           "document": "标签",
-          "example": "{tagKey:'kkk',tagValue:'vvv'}",
+          "example": "[{\"tagKey\":\"tagkey-test\",\"tagValue\":\"tagvalue-test\"}]",
           "member": "Tag",
           "name": "Tags",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "弹性带宽开关 0不开启  1开启（0默认",
+          "example": "0",
+          "member": "int64",
+          "name": "ElasticBandwidthSwitch",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -4210,7 +4237,7 @@
         {
           "disabled": false,
           "document": "返回结果",
-          "example": "无",
+          "example": "{\"ReturnCode\":\"0\",\"ReturnMessage\":\"ok[apply success]\",\"Data\":{\"FlowId\":0,\"DealNames\":[\"20230608002033882210000\"],\"InstanceId\":\"ckafka-test\",\"DealNameInstanceIdMapping\":[{\"DealName\":\"20230608002033882210000\",\"InstanceIdList\":[\"ckafka-test\"]}]},\"DeleteRouteTimestamp\":\"1566144000\"}",
           "member": "CreateInstancePostResp",
           "name": "Result",
           "output_required": true,
@@ -5396,17 +5423,17 @@
           "example": "20230608002033882210000",
           "member": "string",
           "name": "DealName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "订单流水对应购买的 CKafka 实例 id 列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[\"ckafka-na5gxxxx\",\"ckafka-xj4pxxxx\"]",
+          "example": "[\"ckafka-test\"]",
           "member": "string",
           "name": "InstanceIdList",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -7938,8 +7965,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "（过滤条件）按照实例ID过滤",
-          "example": "instance-will-s",
+          "document": "（查询条件）按照ckafka集群实例Id过滤",
+          "example": "ckafka-test",
           "member": "string",
           "name": "InstanceId",
           "required": false,
@@ -7947,8 +7974,8 @@
         },
         {
           "disabled": false,
-          "document": "（过滤条件）按照实例名称过滤，支持模糊查询",
-          "example": "tre",
+          "document": "搜索词   ex:（查询条件）按照实例名称过滤，支持模糊查询",
+          "example": "search-test",
           "member": "string",
           "name": "SearchWord",
           "required": false,
@@ -7956,8 +7983,8 @@
         },
         {
           "disabled": false,
-          "document": "（过滤条件）实例的状态。0：创建中，1：运行中，2：删除中，不填默认返回全部",
-          "example": "[\"0\\r\\n\",\"1\\r\\n\",\"2\\r\\n\"]",
+          "document": "（查询条件）实例的状态  0：创建中，1：运行中，2：删除中，5: 隔离中,  7:升级中 不填默认返回全部",
+          "example": "[1,7]",
           "member": "int64",
           "name": "Status",
           "required": false,
@@ -7984,7 +8011,7 @@
         {
           "disabled": false,
           "document": "已废弃。匹配标签key值。",
-          "example": "1",
+          "example": "tagkey-test",
           "member": "string",
           "name": "TagKey",
           "required": false,
@@ -7992,8 +8019,8 @@
         },
         {
           "disabled": false,
-          "document": "私有网络Id",
-          "example": "vpc-xxx",
+          "document": "（查询条件）私有网络Id",
+          "example": "vpc-test",
           "member": "string",
           "name": "VpcId",
           "required": false,
@@ -8008,7 +8035,7 @@
         {
           "disabled": false,
           "document": "返回的结果",
-          "example": "无",
+          "example": "{\"InstanceList\":[{\"IfCommunity\":true,\"InstanceId\":\"ckafka-test\",\"InstanceName\":\"ckafka测试\",\"Status\":1}],\"TotalCount\":1}",
           "member": "InstanceResponse",
           "name": "Result",
           "output_required": true,
@@ -12153,30 +12180,30 @@
         {
           "disabled": false,
           "document": "返回的code，0为正常，非0为错误",
-          "example": "1",
+          "example": "0",
           "member": "string",
           "name": "ReturnCode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "成功消息",
-          "example": "1",
+          "example": "success",
           "member": "string",
           "name": "ReturnMessage",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "操作型返回的Data数据,可能有flowId等\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
+          "example": "{\"FlowId\": 500201,\"RouteDTO\":{\"RouteId\":301}}",
           "member": "OperateResponseData",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         }
@@ -14885,8 +14912,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "FlowId11\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
+          "document": "流程Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "500201",
           "member": "int64",
           "name": "FlowId",
           "output_required": true,
@@ -14896,7 +14923,7 @@
         {
           "disabled": false,
           "document": "RouteIdDto\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{}",
+          "example": "{\"RouteId\":301}",
           "member": "RouteDTO",
           "name": "RouteDTO",
           "output_required": true,
@@ -15895,11 +15922,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "RouteId11\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
+          "document": "路由Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "301",
           "member": "int64",
           "name": "RouteId",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         }
@@ -16560,9 +16587,10 @@
         {
           "disabled": false,
           "document": "标签的key",
-          "example": "无",
+          "example": "tagkey-test",
           "member": "string",
           "name": "TagKey",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -16570,9 +16598,10 @@
         {
           "disabled": false,
           "document": "标签的值",
-          "example": "无",
+          "example": "tagvalue-test",
           "member": "string",
           "name": "TagValue",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false

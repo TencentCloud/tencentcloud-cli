@@ -1,12 +1,12 @@
-**Example 1: 港澳台来往内地通行证识别示例代码**
+**Example 1: MainlandPermitOCR调用**
 
-港澳台来往内地通行证识别
+MainlandPermitOCR调用
 
 Input: 
 
 ```
 tccli ocr MainlandPermitOCR --cli-unfold-argument  \
-    --ImageUrl https://xx/a.jpg \
+    --ImageUrl https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/card/MainlandPermitOCR/MainlandPermitOCR1.png \
     --RetProfile False
 ```
 
@@ -14,18 +14,25 @@ Output:
 ```
 {
     "Response": {
-        "Name": "李明",
-        "EnglishName": "LIMING",
-        "Number": "C00000000",
-        "Sex": "男",
-        "ValidDate": "2018.10.09-2028.10.08",
-        "IssueAuthority": "公安部出入境管理局",
+        "Birthday": "1986.03.02",
+        "EnglishName": "LI,YOU-TU",
         "IssueAddress": "广东",
-        "Birthday": "1981.08.03",
+        "IssueAuthority": "公安部出入境管理局",
         "IssueNumber": "02",
-        "Type": "台湾居民来往大陆通行证",
+        "MainlandTravelPermitBackInfos": {
+            "HistoryNumber": "",
+            "IDNumber": "",
+            "Name": "",
+            "Type": "台湾居民来往大陆通行证"
+        },
+        "Name": "李优图",
+        "Nationality": "",
+        "Number": "08320271",
         "Profile": "",
-        "RequestId": "3090debe-3662-4ef1-8784-6ef2fb59f75e"
+        "RequestId": "bd8fb0bc-6558-48b5-b057-2b04edacf225",
+        "Sex": "男",
+        "Type": "台湾居民来往大陆通行证",
+        "ValidDate": "2016.02.03-2021.02.02"
     }
 }
 ```

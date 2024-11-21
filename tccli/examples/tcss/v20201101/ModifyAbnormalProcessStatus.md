@@ -6,16 +6,16 @@ Input:
 
 ```
 tccli tcss ModifyAbnormalProcessStatus --cli-unfold-argument  \
-    --EventIdSet xx \
-    --Status xx \
-    --Remark xx
+    --EventIdSet 10001 \
+    --Status ' EVENT_DEALED' \
+    --Remark 无
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx"
+        "RequestId": "8bc803fd-d85d-47b8-9e2b-9644674be677"
     }
 }
 ```

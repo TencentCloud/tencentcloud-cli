@@ -13,7 +13,7 @@ tccli cfw DescribeEnterpriseSecurityGroupRule --cli-unfold-argument  \
     --Enable true \
     --Port 80 \
     --Protocol TCP \
-    --ServiceTemplateId  \
+    --ServiceTemplateId ppmg-jz17vpis \
     --PageNo 1 \
     --PageSize 10 \
     --RuleUuid 1
@@ -33,7 +33,7 @@ Output:
                 "DestType": "net",
                 "Protocol": "TCP",
                 "Port": "80",
-                "ServiceTemplateId": "",
+                "ServiceTemplateId": "ppmg-jz17vpis",
                 "RuleAction": "accept",
                 "Description": "放行规则",
                 "OrderIndex": "1",

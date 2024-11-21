@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli partners RemovePayRelationForClient --cli-unfold-argument  \
-    --ClientUin 123
+    --ClientUin 1000002
 ```
 
 Output: 

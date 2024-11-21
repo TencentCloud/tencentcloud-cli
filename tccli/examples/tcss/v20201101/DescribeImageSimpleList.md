@@ -18,13 +18,13 @@ Output:
         "ImageList": [
             {
                 "Size": 1,
-                "ImageName": "xx",
+                "ImageName": "centos:7.6",
                 "ContainerCnt": 0,
-                "ImageType": "xx",
-                "ImageID": "xx"
+                "ImageType": "",
+                "ImageID": "c826b9fa-68b5-4603-bf25-a5eb9b65c768"
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "965c55c5-8ab1-4e32-8425-4c44acb5edec"
     }
 }
 ```

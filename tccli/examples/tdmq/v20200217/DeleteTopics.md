@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli tdmq DeleteTopics --cli-unfold-argument  \
-    --TopicSets.0.EnvironmentId abc \
-    --TopicSets.0.TopicName abc \
-    --ClusterId abc \
-    --EnvironmentId abc \
+    --TopicSets.0.EnvironmentId devNs \
+    --TopicSets.0.TopicName devTopic \
+    --ClusterId pulsar-xk3ne8k2qkp8 \
+    --EnvironmentId devNs \
     --Force True
 ```
 

@@ -84,6 +84,13 @@
       "output": "CreateClassResponse",
       "status": "online"
     },
+    "CreateComplexAdaptiveDynamicStreamingTask": {
+      "document": "发起复杂自适应码流处理任务，功能包括：\n1. 按指定的自适应码流模板输出 HLS、DASH 自适应码流；\n2. 自适应码流的内容保护方案可选择无加密、Widevine 或 FairPlay；\n3. 支持添加片头片尾；\n4. 输出的自适应码流可包含多语言音频流，每种语言分别来自不同的媒体文件；\n5. 输出的自适应码流可包含多语言字幕流。\n\n注意事项：\n1. 当使用片头时，片头媒体中的视频流需要和音频流对齐，否则将导致输出的内容音画不同步；\n2. 如果输出的自适应码流需要包含主媒体的音频，那么需要在 AudioSet 参数中指定主媒体的 FileId；\n3. 使用字幕时，需要先将字幕添加到主媒体，可通过 ModifyMediaInfo 接口或控制台的音视频详情页进行添加；\n4. 暂不支持极速高清、水印。",
+      "input": "CreateComplexAdaptiveDynamicStreamingTaskRequest",
+      "name": "创建复杂自适应码流任务",
+      "output": "CreateComplexAdaptiveDynamicStreamingTaskResponse",
+      "status": "online"
+    },
     "CreateContentReviewTemplate": {
       "document": "该 API 已经<font color=red>不再维护</font>，新版审核模板支持音视频审核和图片审核，详细请参考 [创建审核模板](https://cloud.tencent.com/document/api/266/84391)。\n创建用户自定义音视频内容审核模板，数量上限：50。",
       "input": "CreateContentReviewTemplateRequest",
@@ -8311,6 +8318,266 @@
       ],
       "type": "object"
     },
+    "ComplexAdaptiveDynamicStreamingTask": {
+      "document": "自适应码流任务信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务 ID。",
+          "example": "1250000000-procedurev2-23b0ab79ee23ba1340b2ee55c7733563tt1",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务状态，取值：\n<li>PROCESSING：处理中；</li>\n<li>FINISH：已完成。</li>\n",
+          "example": "PROCESSING",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自适应码流任务的执行状态与结果，每个元素对应一个自适应码流模版。",
+          "example": "无",
+          "member": "ComplexAdaptiveDynamicStreamingTaskResult",
+          "name": "ComplexAdaptiveDynamicStreamingTaskResultSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ComplexAdaptiveDynamicStreamingTaskAudioInput": {
+      "document": "自适应码流任务多语言音频流输入参数。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "音频源的媒体 ID。固定取该媒体中的首个音频流，视频流和其它音频流（如有）将被忽略。",
+          "example": "1234567890",
+          "member": "string",
+          "name": "FileId",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "输出的自适应码流中的音频流名称，长度限制为16个字符。",
+          "example": "English",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "输出的自适应码流中的音频流语言，长度限制为16个字符。要求符合 RFC5646 规范。",
+          "example": "en-US",
+          "member": "string",
+          "name": "Language",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否设置为自适应码流的默认音频。取值：\n<li>YES：设置为默认音频；</li>\n<li>NO：不设置为默认音频（默认值）。</li>\n",
+          "example": "YES",
+          "member": "string",
+          "name": "Default",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ComplexAdaptiveDynamicStreamingTaskInput": {
+      "document": "自适应码流任务的输入参数。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自适应码流参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ComplexAdaptiveDynamicStreamingTaskStreamPara",
+          "name": "StreamPara",
+          "output_required": true,
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ComplexAdaptiveDynamicStreamingTaskOutput": {
+      "document": "自适应码流任务的输出结果。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自适应码流模版 ID。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Definition",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自适应码流打包格式。可选值：\n<li>HLS；</li>\n<li>MPEG-DASH。</li>",
+          "example": "HLS",
+          "member": "string",
+          "name": "Format",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "DRM 方案类型。可选值：\n<li>空字符串：无加密；</li>\n<li>SimpleAES；</li>\n<li>Widevine；</li>\n<li>FairPlay。</li>",
+          "example": "\"\"",
+          "member": "string",
+          "name": "DrmType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自适应码流的播放地址。",
+          "example": "http://1250000000.vod2.myqcloud.com/cf72b740vodtranscq1250000000/aa2a78091397757895313140803/adp.10.m3u8",
+          "member": "string",
+          "name": "Url",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ComplexAdaptiveDynamicStreamingTaskResult": {
+      "document": "自适应码流任务信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务状态，取值：\n<li>PROCESSING：处理中；</li>\n<li>SUCCESS：已完成；</li>\n<li>FAIL：失败。</li>",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [视频处理类错误码](https://cloud.tencent.com/document/product/266/50368#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "ErrCodeExt",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Message",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "转码进度，取值范围 [0-100] 。",
+          "example": "100",
+          "member": "int64",
+          "name": "Progress",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自适应码流任务的输入。",
+          "example": "无",
+          "member": "ComplexAdaptiveDynamicStreamingTaskInput",
+          "name": "Input",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自适应码流任务的输出。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ComplexAdaptiveDynamicStreamingTaskOutput",
+          "name": "Output",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ComplexAdaptiveDynamicStreamingTaskStreamPara": {
+      "document": "自适应码流任务的流参数。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自适应码流模板 ID。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Definition",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ComplexAdaptiveDynamicStreamingTaskSubtitleInput": {
+      "document": "自适应码流任务多语言字幕的输入参数。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "字幕 ID。该字幕必须归属于自适应码流任务的输入主媒体。",
+          "example": "dYeq82",
+          "member": "string",
+          "name": "Id",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否设置为自适应码流的默认字幕。取值：\n<li>YES：设置为默认字幕；</li>\n<li>NO：不设置为默认字幕（默认值）。</li>",
+          "example": "YES",
+          "member": "string",
+          "name": "Default",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ComposeMediaOutput": {
       "document": "输出的媒体文件信息。",
       "members": [
@@ -9823,6 +10090,88 @@
           "name": "ClassId",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateComplexAdaptiveDynamicStreamingTaskRequest": {
+      "document": "CreateComplexAdaptiveDynamicStreamingTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<b>点播[应用](/document/product/266/14574) ID。</b>",
+          "example": "1250000000",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "主媒体文件的媒体 ID。",
+          "example": "1234567890",
+          "member": "string",
+          "name": "FileId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自适应码流参数，最大支持8个。",
+          "example": "无",
+          "member": "ComplexAdaptiveDynamicStreamingTaskStreamPara",
+          "name": "StreamParaSet",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "片头片尾列表，支持多片头片尾，最大可支持 4 个。\u000b如果填写了该字段，AudioSet 和 SubtitleSet 中指定的媒体的起始时间将会自动调整，和主媒体保持同步。",
+          "example": "无",
+          "member": "HeadTailTaskInput",
+          "name": "HeadTailSet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "多语言音频流参数，最大支持16个。\u000b每个数组元素对应自适应码流中的一条音频流。如果要将主媒体文件中的音频流添加到输出的自适应码流中，那么也需要在此处指定。\u000b数组中元素的顺序将决定自适应码流中的音频流顺序。\u000b如果输入的媒体文件同时带有视频流和音频流，那么视频流将被忽略。",
+          "example": "无",
+          "member": "ComplexAdaptiveDynamicStreamingTaskAudioInput",
+          "name": "AudioSet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "多语言字幕参数，最大可支持16个。\u000b每个数组元素对应自适应码流中的一条字幕流。\u000b数组中元素的顺序将决定自适应码流中的字幕流顺序。",
+          "example": "无",
+          "member": "ComplexAdaptiveDynamicStreamingTaskSubtitleInput",
+          "name": "SubtitleSet",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateComplexAdaptiveDynamicStreamingTaskResponse": {
+      "document": "CreateComplexAdaptiveDynamicStreamingTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务 ID。",
+          "example": "1250000000-procedurev2-463192642364261",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -15345,7 +15694,7 @@
         },
         {
           "disabled": false,
-          "document": "查询视频处理任务类型，目前支持的任务类型包括：\n<li> Transcoding: 普通转码</li>\n<li> Transcoding-TESHD: 极速高清转码</li>\n<li> Editing: 视频编辑</li>\n<li> Editing-TESHD: 极速高清视频编辑</li>\n<li> AdaptiveBitrateStreaming: 自适应码流</li>\n<li> ContentAudit: 内容审核</li>\n<li> ContentRecognition: 内容识别</li>\n<li> RemoveWatermark: 去除水印</li>\n<li> ExtractTraceWatermark: 提取水印</li>\n<li> AddTraceWatermark: 添加水印</li>\n<li> RebuildMedia: 音画质重生</li>\n<li> QualityInspect: 音画质检测</li>\n<li> VideoHighlight: 视频智能集锦</li>\n<li> VideoTag: 视频智能标签</li>\n<li> VideoClassification:  视频智能分类</li>\n<li> VideoCover: 视频智能封面</li>\n<li> VideoSegment: 视频智能拆条</li>\n<li> VideoProduce: 视频制作</li>\n<li> MediaCast: 媒体转推</li>\n<li>Transcode: 转码，包含普通转码、极速高清和视频编辑（不推荐使用）</li>",
+          "document": "查询视频处理任务类型，目前支持的任务类型包括：\n<li> Transcoding: 普通转码</li>\n<li> Transcoding-TESHD: 极速高清转码</li>\n<li> Editing: 视频编辑</li>\n<li> Editing-TESHD: 极速高清视频编辑</li>\n<li> AdaptiveBitrateStreaming: 自适应码流</li>\n<li> ContentAudit: 内容审核</li>\n<li> ContentRecognition: 内容识别</li>\n<li> RemoveWatermark: 去除水印</li>\n<li> ExtractTraceWatermark: 提取水印</li>\n<li> AddTraceWatermark: 添加水印</li>\n<li> RebuildMedia: 音画质重生</li>\n<li> QualityInspect: 音画质检测</li>\n<li> VideoHighlight: 视频智能集锦</li>\n<li> VideoTag: 视频智能标签</li>\n<li> VideoClassification:  视频智能分类</li>\n<li> VideoCover: 视频智能封面</li>\n<li> VideoSegment: 视频智能拆条</li>\n<li> VideoProduce: 视频制作</li>\n<li> MediaCast: 媒体转推</li>\n<li>Transcode: 转码，包含普通转码、极速高清和视频编辑（不推荐使用）</li>\n<li>VoiceTranslation: 语音翻译</li>",
           "example": "Transcoding-TESHD",
           "member": "string",
           "name": "Type",
@@ -16600,7 +16949,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务类型，取值：\n<li>Procedure：视频处理任务；</li>\n<li>EditMedia：视频编辑任务；</li>\n<li>SplitMedia：视频拆条任务；</li>\n<li>ComposeMedia：制作媒体文件任务；</li>\n<li>WechatPublish：微信发布任务；</li>\n<li>WechatMiniProgramPublish：微信小程序视频发布任务；</li>\n<li>PullUpload：拉取上传媒体文件任务；</li>\n<li>FastClipMedia：快速剪辑任务；</li>\n<li>RemoveWatermarkTask：智能去除水印任务；</li>\n<li>DescribeFileAttributesTask：获取文件属性任务；</li>\n<li>RebuildMedia：音画质重生任务（不推荐使用）；</li>\n<li>ReviewAudioVideo：音视频审核任务；</li>\n<li>ExtractTraceWatermark：提取溯源水印任务；</li>\n<li>ExtractCopyRightWatermark：提取版权水印任务；</li>\n<li>QualityInspect：音画质检测任务；</li>\n<li>QualityEnhance：音画质重生任务。</li>",
+          "document": "任务类型，取值：<li>Procedure：视频处理任务；</li><li>EditMedia：视频编辑任务；</li><li>SplitMedia：视频拆条任务；</li><li>ComposeMedia：制作媒体文件任务；</li><li>WechatPublish：微信发布任务；</li><li>WechatMiniProgramPublish：微信小程序视频发布任务；</li><li>PullUpload：拉取上传媒体文件任务；</li><li>FastClipMedia：快速剪辑任务；</li><li>RemoveWatermarkTask：智能去除水印任务；</li><li>DescribeFileAttributesTask：获取文件属性任务；</li><li>RebuildMedia：音画质重生任务（不推荐使用）；</li><li>ReviewAudioVideo：音视频审核任务；</li><li>ExtractTraceWatermark：提取溯源水印任务；</li><li>ExtractCopyRightWatermark：提取版权水印任务；</li><li>QualityInspect：音画质检测任务；</li><li>QualityEnhance：音画质重生任务；</li><li>ComplexAdaptiveDynamicStreaming：复杂自适应码流任务。</li>",
           "example": "Procedure",
           "member": "string",
           "name": "TaskType",
@@ -16854,6 +17203,16 @@
           "example": "无",
           "member": "QualityEnhanceTask",
           "name": "QualityEnhanceTask",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "复杂自适应码流任务信息，仅当 TaskType 为 ComplexAdaptiveDynamicStreaming，该字段有值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ComplexAdaptiveDynamicStreamingTask",
+          "name": "ComplexAdaptiveDynamicStreamingTask",
           "output_required": true,
           "type": "object",
           "value_allowed_null": true
@@ -17442,6 +17801,16 @@
           "example": "无",
           "member": "DomainQUICConfig",
           "name": "QUICConfig",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "IP 访问限制配置信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "IPFilterPolicy",
+          "name": "IPFilterPolicy",
           "output_required": true,
           "type": "object",
           "value_allowed_null": true
@@ -18452,7 +18821,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>支持事件类型：</b>\n<li>NewFileUpload：视频上传完成；</li>\n<li>ProcedureStateChanged：任务流状态变更；</li>\n<li>FileDeleted：视频删除完成；</li>\n<li>RestoreMediaComplete：视频取回完成；</li>\n<li>PullComplete：视频转拉完成；</li>\n<li>EditMediaComplete：视频编辑完成；</li>\n<li>SplitMediaComplete：视频拆分完成；</li>\n<li>ComposeMediaComplete：制作媒体文件完成；</li>\n<li>WechatMiniProgramPublishComplete：微信小程序发布完成。</li>\n<li>RemoveWatermark：智能去除水印完成。</li>\n<li>RebuildMediaComplete：音画质重生完成事件（不推荐使用）。</li>\n<li>ReviewAudioVideoComplete：音视频审核完成；</li>\n<li>ExtractTraceWatermarkComplete：提取溯源水印完成；</li>\n<li>ExtractCopyRightWatermarkComplete：提取版权水印完成；</li>\n<li>DescribeFileAttributesComplete：获取文件属性完成；</li>\n<li>QualityInspectComplete：音画质检测完成；</li>\n<li>QualityEnhanceComplete：音画质重生任务完成；</li>\n<li>PersistenceComplete：剪辑固化完成。</li>\n<b>兼容 2017 版的事件类型：</b>\n<li>TranscodeComplete：视频转码完成；</li>\n<li>ConcatComplete：视频拼接完成；</li>\n<li>ClipComplete：视频剪辑完成；</li>\n<li>CreateImageSpriteComplete：视频截取雪碧图完成；</li>\n<li>CreateSnapshotByTimeOffsetComplete：视频按时间点截图完成。</li>",
+          "document": "<b>支持事件类型：</b>\n<li>NewFileUpload：视频上传完成；</li>\n<li>ProcedureStateChanged：任务流状态变更；</li>\n<li>FileDeleted：视频删除完成；</li>\n<li>RestoreMediaComplete：视频取回完成；</li>\n<li>PullComplete：视频转拉完成；</li>\n<li>EditMediaComplete：视频编辑完成；</li>\n<li>SplitMediaComplete：视频拆分完成；</li>\n<li>ComposeMediaComplete：制作媒体文件完成；</li>\n<li>WechatMiniProgramPublishComplete：微信小程序发布完成。</li>\n<li>RemoveWatermark：智能去除水印完成。</li>\n<li>RebuildMediaComplete：音画质重生完成事件（不推荐使用）。</li>\n<li>ReviewAudioVideoComplete：音视频审核完成；</li>\n<li>ExtractTraceWatermarkComplete：提取溯源水印完成；</li>\n<li>ExtractCopyRightWatermarkComplete：提取版权水印完成；</li>\n<li>DescribeFileAttributesComplete：获取文件属性完成；</li>\n<li>QualityInspectComplete：音画质检测完成；</li>\n<li>QualityEnhanceComplete：音画质重生任务完成；</li>\n<li>PersistenceComplete：剪辑固化完成；</li>\n<li>ComplexAdaptiveDynamicStreamingComplete：复杂自适应码流任务完成。</li>\n<b>兼容 2017 版的事件类型：</b>\n<li>TranscodeComplete：视频转码完成；</li>\n<li>ConcatComplete：视频拼接完成；</li>\n<li>ClipComplete：视频剪辑完成；</li>\n<li>CreateImageSpriteComplete：视频截取雪碧图完成；</li>\n<li>CreateSnapshotByTimeOffsetComplete：视频按时间点截图完成。</li>",
           "example": "null",
           "member": "string",
           "name": "EventType",
@@ -18716,6 +19085,16 @@
           "example": "null",
           "member": "PersistenceCompleteTask",
           "name": "PersistenceCompleteEvent",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自适应码流任务信息，仅当 EventType 为ComplexAdaptiveDynamicStreamingComplete 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "ComplexAdaptiveDynamicStreamingTask",
+          "name": "ComplexAdaptiveDynamicStreamingCompleteEvent",
           "output_required": true,
           "type": "object",
           "value_allowed_null": true
@@ -20085,6 +20464,45 @@
         }
       ],
       "usage": "in"
+    },
+    "IPFilterPolicy": {
+      "document": "IP 访问限制规则，当前支持配置 IP 黑名单和白名单。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "IP 访问限制状态，可选值：\n<li>Enabled：启用；</li>\n<li>Disabled：禁用。</li>",
+          "example": "Enabled",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "IP 访问限制类型：  <li>Black：黑名单方式校验。只有来自 IPList 列表中的 IP 请求会被拦截。</li>\n<li>White：白名单方式校验。只有来自 IPList 列表中的 IP 请求会被放行。</li>当 Status 取值为 Enabled 时，FilterType  必须赋值。",
+          "example": "Black",
+          "member": "string",
+          "name": "FilterType",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "IP 列表，支持 X.X.X.X 格式 IPV4 地址，或 X:X:X:X:X:X:X:X 格式 IPV6 地址，或网段格式 /N（IPV4:1≤N≤32；IPV6:1≤N≤128）；最多可填充 200 个 IP 或网段。当 Status 取值为 Enabled 时，IPList 必须赋值。",
+          "example": "[\"1.1.1.1\"]",
+          "member": "string",
+          "name": "IPList",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "ImageBlur": {
       "document": "图片模糊处理。",
@@ -27062,6 +27480,15 @@
           "example": "无",
           "member": "DomainQUICConfig",
           "name": "QUICConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "IP 访问限制规则。",
+          "example": "无",
+          "member": "IPFilterPolicy",
+          "name": "IPFilterPolicy",
           "required": false,
           "type": "object"
         }
@@ -36226,7 +36653,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务类型。\n<li> Transcoding: 普通转码</li>\n<li> Transcoding-TESHD: 极速高清转码</li>\n<li> Editing: 视频编辑</li>\n<li> Editing-TESHD: 极速高清视频编辑</li>\n<li> AdaptiveBitrateStreaming: 自适应码流</li>\n<li> ContentAudit: 内容审核</li>\n<li> ContentRecognition: 内容识别</li>\n<li> RemoveWatermark: 去水印</li>\n<li> ExtractTraceWatermark: 提取水印</li>\n<li> AddTraceWatermark: 添加水印</li>\n<li> RebuildMedia: 音画质重生</li>\n<li> QualityInspect: 音画质检测</li>\n<li>Transcode: 转码，包含普通转码、极速高清和视频编辑（不推荐使用）</li>",
+          "document": "任务类型。\n<li> Transcoding: 普通转码</li>\n<li> Transcoding-TESHD: 极速高清转码</li>\n<li> Editing: 视频编辑</li>\n<li> Editing-TESHD: 极速高清视频编辑</li>\n<li> AdaptiveBitrateStreaming: 自适应码流</li>\n<li> ContentAudit: 内容审核</li>\n<li> ContentRecognition: 内容识别</li>\n<li> RemoveWatermark: 去水印</li>\n<li> ExtractTraceWatermark: 提取水印</li>\n<li> AddTraceWatermark: 添加水印</li>\n<li> RebuildMedia: 音画质重生</li>\n<li> QualityInspect: 音画质检测</li>\n<li>Transcode: 转码，包含普通转码、极速高清和视频编辑（不推荐使用）</li>\n<li>VoiceTranslation: 语音翻译</li>",
           "example": "Transcoding",
           "member": "string",
           "name": "TaskType",

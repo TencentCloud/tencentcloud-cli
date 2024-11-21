@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli bda DescribeSegmentationTask --cli-unfold-argument  \
-    --TaskID taskID
+    --TaskID 12433580546999111111
 ```
 
 Output: 
@@ -16,7 +16,7 @@ Output:
         "RequestId": "0352ed67-66b0-4515-a04f-ddc0ab129658",
         "TaskStatus": "FINISHED",
         "ErrorMsg": "",
-        "ResultVideoUrl": "http://resulturl.com/a.mp4",
+        "ResultVideoUrl": "https://liudehua-9527.cos.ap-guangzhou.myqcloud.com/result.mp4?q-sign-algorithm=sha1&q-ak=AKID********EXAMPLE&q-sign-time=8888;9999&q-key-time=8888;9999&q-header-list=&q-url-param-list=&q-signature=7de87f7bf9cfd23df9da32f46661e7cf97a5603c",
         "ResultVideoMD5": "somemd5",
         "VideoBasicInformation": {
             "FrameWidth": 1280,

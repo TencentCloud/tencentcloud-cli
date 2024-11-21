@@ -11,15 +11,15 @@ Output:
 ```
 {
     "Response": {
-        "LogSaveMonth": 1,
-        "EndTime": "xxx",
-        "StartTime": "xxx",
-        "BuyStatus": "Pending",
-        "LogCapacity": 10,
-        "TrialCapacity": 10,
-        "ResourceID": "xxx",
-        "IsPurchased": false,
-        "RequestId": "29b37d86-f63d-43d1-b21a-640e82965198"
+        "BuyStatus": "Normal",
+        "EndTime": "2024-11-10 10:29:29",
+        "IsPurchased": true,
+        "LogCapacity": 640,
+        "LogSaveMonth": 13,
+        "RequestId": "ca51f9af-a141-4deb-a69d-0f82062946e8",
+        "ResourceID": "9367de1b00589c31fab4c794a97139bf",
+        "StartTime": "2023-10-10 10:29:29",
+        "TrialCapacity": 10
     }
 }
 ```

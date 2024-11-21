@@ -16,7 +16,7 @@ Output:
 ```
 {
     "Response": {
-        "Data": null,
+        "Data": "success",
         "RequestId": "a0b4e55b-5307-4378-856d-efc22475c77d"
     }
 }
@@ -41,7 +41,7 @@ Output:
 ```
 {
     "Response": {
-        "Data": "",
+        "Data": "success",
         "RequestId": "110a2ef2-74ee-4db1-9b96-7da77283653f"
     }
 }
@@ -65,7 +65,7 @@ Output:
 ```
 {
     "Response": {
-        "Data": "",
+        "Data": "success",
         "RequestId": "c6ae93c9-f71c-473c-ad9b-ba1b59e47059"
     }
 }

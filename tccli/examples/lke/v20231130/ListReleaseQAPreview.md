@@ -10,9 +10,9 @@ tccli lke ListReleaseQAPreview --cli-unfold-argument  \
     --PageNumber 1 \
     --PageSize 10 \
     --Query  \
-    --ReleaseBizId 0 \
-    --StartTime 0 \
-    --EndTime 0
+    --ReleaseBizId 1694923462777761792 \
+    --StartTime 1735056000 \
+    --EndTime 1735142399
 ```
 
 Output: 

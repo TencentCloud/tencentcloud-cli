@@ -7,7 +7,7 @@ Input:
 ```
 tccli waf DeleteCCRule --cli-unfold-argument  \
     --Domain test.com \
-    --Name test \
+    --Name ccrulename \
     --Edition clb-waf
 ```
 
@@ -15,7 +15,7 @@ Output:
 ```
 {
     "Response": {
-        "Data": null,
+        "Data": "success",
         "RequestId": "d29f2d93-b894-4c04-b047-ea6470bc0acd"
     }
 }

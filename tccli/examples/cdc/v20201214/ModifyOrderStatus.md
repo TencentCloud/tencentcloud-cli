@@ -8,7 +8,7 @@ Input:
 tccli cdc ModifyOrderStatus --cli-unfold-argument  \
     --DedicatedClusterOrderId ord-aijx4ets \
     --SubOrderIds sord-aijxdfasdf \
-    --Status 1
+    --Status DELIVERED
 ```
 
 Output: 

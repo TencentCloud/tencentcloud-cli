@@ -14,7 +14,7 @@ Output:
 {
     "Response": {
         "Total": 1,
-        "RequestId": "abc",
+        "RequestId": "eac6b301-a322-493a-8e36-83b295459397",
         "RuleList": [
             {
                 "Id": 1,
@@ -23,7 +23,7 @@ Output:
                     3,
                     4
                 ],
-                "Url": "/abc",
+                "Url": "/test",
                 "Function": "eq",
                 "Time": "2020-08-20 00:00:00",
                 "Status": 1

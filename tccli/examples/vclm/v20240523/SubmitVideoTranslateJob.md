@@ -6,11 +6,12 @@ Input:
 
 ```
 tccli vclm SubmitVideoTranslateJob --cli-unfold-argument  \
-    --VideoUrl https://xxx.com/url/xxx.mp4 \
+    --VideoUrl https://console.cloud.tencent.com/cos/video.mp4 \
     --SrcLang zh \
     --DstLang zh \
     --Confirm 0 \
-    --LipSync 0
+    --LipSync 0 \
+    --VoiceType 701001
 ```
 
 Output: 
@@ -34,11 +35,12 @@ Input:
 
 ```
 tccli vclm SubmitVideoTranslateJob --cli-unfold-argument  \
-    --VideoUrl https://xxx.com/url/xxx.mp4 \
+    --VideoUrl https://console.cloud.tencent.com/cos/video.mp4 \
     --SrcLang zh \
     --DstLang en \
     --Confirm 0 \
-    --LipSync 0
+    --LipSync 1 \
+    --VoiceType 701001
 ```
 
 Output: 
@@ -59,11 +61,11 @@ Input:
 
 ```
 tccli vclm SubmitVideoTranslateJob --cli-unfold-argument  \
-    --VideoUrl https://xxx.com/url/xxx.mp4 \
+    --VideoUrl https://console.cloud.tencent.com/cos/video.mp4 \
     --SrcLang zh \
-    --DstLang de-DE \
+    --DstLang ar \
     --Confirm 0 \
-    --LipSync 0 \
+    --LipSync 1 \
     --VoiceType 701001
 ```
 
@@ -85,11 +87,11 @@ Input:
 
 ```
 tccli vclm SubmitVideoTranslateJob --cli-unfold-argument  \
-    --VideoUrl https://xxx.com/url/xxx.mp4 \
+    --VideoUrl https://console.cloud.tencent.com/cos/video.mp4 \
     --SrcLang zh \
-    --DstLang de-DE \
+    --DstLang ar \
     --Confirm 0 \
-    --LipSync 0
+    --LipSync 1
 ```
 
 Output: 

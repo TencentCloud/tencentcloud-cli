@@ -8,8 +8,8 @@ Input:
 tccli waf DescribeFindDomainList --cli-unfold-argument  \
     --Offset 2 \
     --Limit 5 \
-    --Key  \
-    --IsWafDomain 
+    --Key qcloudwaf.com \
+    --IsWafDomain 1
 ```
 
 Output: 
@@ -21,7 +21,7 @@ Output:
         "List": [
             {
                 "Appid": 251000001,
-                "Domain": "lucasssli3.qcloud.com",
+                "Domain": "lucasssli3.qcloudwaf.com",
                 "Ips": [
                     "159.75.189.237"
                 ],
@@ -33,38 +33,38 @@ Output:
             },
             {
                 "Appid": 251000001,
-                "Domain": "www.atestwaf1.com",
+                "Domain": "wwwtx.qcloudwaf.com",
                 "Ips": [
                     "159.75.189.237"
                 ],
                 "FindTime": "20210730",
-                "InstanceId": "",
+                "InstanceId": "waf_2kuil2fm02vqm7t5",
                 "DomainId": "waf-KsC0pPCo",
                 "Edition": "clb-waf",
                 "IsWafDomain": 1
             },
             {
                 "Appid": 251000001,
-                "Domain": "0613.1314zf.com",
+                "Domain": "0613.qcloudwaf.com",
                 "Ips": [
                     "119.29.47.251"
                 ],
                 "FindTime": "20210730",
-                "InstanceId": "",
-                "DomainId": "",
-                "Edition": "",
+                "InstanceId": "waf_2kuil2fm02vqm7t5",
+                "DomainId": "waf_mfhvyos1",
+                "Edition": "clb-waf",
                 "IsWafDomain": 0
             },
             {
                 "Appid": 251000001,
-                "Domain": "www.atestwaf1.com",
+                "Domain": "txwaf.qcluodwaf.com",
                 "Ips": [
                     "159.75.189.237"
                 ],
                 "FindTime": "20210730",
-                "InstanceId": "",
-                "DomainId": "",
-                "Edition": "",
+                "InstanceId": "waf_2kuil2fm02fsdm1",
+                "DomainId": "waf_vlsdf123m",
+                "Edition": "sparta-waf",
                 "IsWafDomain": 0
             }
         ]

@@ -5,7 +5,13 @@
 Input: 
 
 ```
-tccli dasb DescribeResources --cli-unfold-argument ```
+tccli dasb DescribeResources --cli-unfold-argument  \
+    --ApCode ap-guangzhou \
+    --VpcId vpc-eawasddsd \
+    --ResourceIds bh-sass-wfsddff \
+    --Limit 1 \
+    --Offset 1
+```
 
 Output: 
 ```
@@ -48,7 +54,7 @@ Output:
                 "SvArgs": "sv_cds_dasb_saas_free_2node",
                 "CidrBlock": "192.168.11.0/24",
                 "CreateTime": "2020-09-22T00:00:00+00:00",
-                "LogDeliveryArgs": ""
+                "LogDeliveryArgs": "sv_cds_dasb_saas_sdwedfsgdf"
             }
         ]
     }

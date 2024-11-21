@@ -17,7 +17,7 @@ Output:
         "VulHostCount": 16,
         "IfFirstScan": true,
         "hadAutoFixVul": true,
-        "LastFixTime": "xx",
+        "LastFixTime": "2020-11-21 15:16:00",
         "TaskId": 1
     }
 }

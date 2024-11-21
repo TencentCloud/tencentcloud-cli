@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli emr ResetYarnConfig --cli-unfold-argument  \
-    --InstanceId emr-xxx \
+    --InstanceId emr-1si \
     --Key fair
 ```
 
@@ -14,7 +14,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "28026cdd-41a9-4433-a80d-673ec711bca8"
     }
 }
 ```

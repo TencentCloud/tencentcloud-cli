@@ -22,7 +22,7 @@
       "status": "deprecated"
     },
     "CreateModel": {
-      "document": "在使用LUT素材的modelid实现试唇色前，您需要先上传 LUT 格式的cube文件注册唇色ID。查看 [LUT文件的使用说明](https://cloud.tencent.com/document/product/1172/41701)。\n\n注：您也可以直接使用 [试唇色接口](https://cloud.tencent.com/document/product/1172/40706)，通过输入RGBA模型数值的方式指定唇色，更简单易用。\n",
+      "document": "在使用LUT素材的modelid实现试唇色前，您需要先上传 LUT 格式的cube文件注册唇色ID。查看 [LUT文件的使用说明](https://cloud.tencent.com/document/product/1172/41701)。\n\n注：您也可以直接使用 [试唇色接口](https://cloud.tencent.com/document/product/1172/40706)，通过输入RGBA模型数值的方式指定唇色，更简单易用。",
       "input": "CreateModelRequest",
       "name": "上传唇色素材",
       "output": "CreateModelResponse",
@@ -84,7 +84,7 @@
         {
           "disabled": false,
           "document": "图片 base64 数据，base64 编码后大小不可超过5M。 \n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
-          "example": "string",
+          "example": "/9j/4AAQSkZJRgABAQAAAQABAAD/4gIo...lftXF/DjFZNXoSP5V2U0HMt/1FQf/Z",
           "member": "string",
           "name": "Image",
           "required": false,
@@ -93,7 +93,7 @@
         {
           "disabled": false,
           "document": "图片的 Url 。对应图片 base64 编码后大小不可超过5M。 \nUrl、Image必须提供一个，如果都提供，只使用 Url。  \n图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。  \n非腾讯云存储的Url速度和稳定性可能受一定影响。 \n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
-          "example": "http://i2.sinaimg.cn/ty/nba/2015-07-05/U10236P6T12D7648505F44DT20150705114547.jpg",
+          "example": "https://liudehua-9527.cos.ap-guangzhou.myqcloud.com/input.jpeg",
           "member": "string",
           "name": "Url",
           "required": false,
@@ -138,7 +138,7 @@
         {
           "disabled": false,
           "document": "返回图像方式（base64 或 url ) ，二选一。url有效期为1天。",
-          "example": "string",
+          "example": "base64",
           "member": "string",
           "name": "RspImgType",
           "required": false,
@@ -153,18 +153,20 @@
         {
           "disabled": false,
           "document": "RspImgType 为 base64 时，返回处理后的图片 base64 数据。默认返回base64\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "string",
+          "example": "/9j/4AAQSkZJRgABAQAAAQABAAD/4gIo...lftXF/DjFZNXoSP5V2U0HMt/1FQf/Z",
           "member": "string",
           "name": "ResultImage",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "RspImgType 为 url 时，返回处理后的图片 url 数据。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "string",
+          "example": "https://liudehua-9527.cos.ap-guangzhou.myqcloud.com/result.jpeg?q-sign-algorithm=sha1&q-ak=AKID********EXAMPLE&q-sign-time=8888;9999&q-key-time=8888;9999&q-header-list=&q-url-param-list=&q-signature=7de87f7bf9cfd23df9da32f46661e7cf97a5603c",
           "member": "string",
           "name": "ResultUrl",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -397,7 +399,7 @@
         {
           "disabled": false,
           "document": "图片base64数据，用于试唇色，要求必须是LUT 格式的cube文件转换成512*512的PNG图片。查看 [LUT文件的使用说明](https://cloud.tencent.com/document/product/1172/41701)。了解 [cube文件转png图片小工具](http://yyb.gtimg.com/aiplat/static/qcloud-cube-to-png.html)。",
-          "example": "xxxxx",
+          "example": "/9j/4AAQSkZJRgABAQAAAQABAAD/4gIo...lftXF/DjFZNXoSP5V2U0HMt/1FQf/Z",
           "member": "string",
           "name": "LUTFile",
           "required": true,
@@ -421,10 +423,10 @@
         {
           "disabled": false,
           "document": "唇色素材ID。",
-          "example": "id",
+          "example": "mo_0_1731389015111_1259088222_3",
           "member": "string",
           "name": "ModelId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -443,7 +445,7 @@
         {
           "disabled": false,
           "document": "素材ID。",
-          "example": "",
+          "example": "mo_0_1731389015111_1259088222_3",
           "member": "string",
           "name": "ModelId",
           "required": true,
@@ -470,42 +472,38 @@
         {
           "disabled": false,
           "document": "人脸框左上角横坐标。",
-          "example": "",
+          "example": "10",
           "member": "int64",
           "name": "X",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "人脸框左上角纵坐标。",
-          "example": "",
+          "example": "10",
           "member": "int64",
           "name": "Y",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "人脸框宽度。",
-          "example": "",
+          "example": "20",
           "member": "int64",
           "name": "Width",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "人脸框高度。",
-          "example": "",
+          "example": "20",
           "member": "int64",
           "name": "Height",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         }
       ],
       "usage": "in"
@@ -550,7 +548,7 @@
         {
           "disabled": false,
           "document": "素材数据\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{}",
+          "example": "[{\"ModelId\":\"mo_0_111111140461_1259088222_3\",\"Description\":\"\",\"LUTFileUrl\":\"https://liudehua-9527.cos.ap-guangzhou.myqcloud.com/result.jpeg?q-sign-algorithm=sha1&q-ak=AKID********EXAMPLE&q-sign-time=8888;9999&q-key-time=8888;9999&q-header-list=&q-url-param-list=&q-signature=7de87f7bf9cfd23df9da32f46661e7cf97a5603c\"}]",
           "member": "ModelInfo",
           "name": "ModelInfos",
           "output_required": true,
@@ -572,42 +570,38 @@
         {
           "disabled": false,
           "document": "使用RGBA模型试唇色。",
-          "example": "",
+          "example": "{\"R\":220,\"G\":2,\"B\":44,\"A\":50}",
           "member": "RGBAInfo",
           "name": "RGBA",
           "required": false,
-          "type": "object",
-          "value_allowed_null": false
+          "type": "object"
         },
         {
           "disabled": false,
           "document": "使用已注册的 LUT 文件试唇色。  \nModelId 和 RGBA 两个参数只需提供一个，若都提供只使用 ModelId。",
-          "example": "",
+          "example": "mo_0_1622620141111_1259088111_1",
           "member": "string",
           "name": "ModelId",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "人脸框位置。若不输入则选择 Image 或 Url 中面积最大的人脸。  \n您可以通过 [人脸检测与分析](https://cloud.tencent.com/document/api/867/32800)  接口获取人脸框位置信息。",
-          "example": "",
+          "example": "{\"X\": 10, \"Y\": 10, \"Width\": 20, \"Height\": 20}",
           "member": "FaceRect",
           "name": "FaceRect",
           "required": false,
-          "type": "object",
-          "value_allowed_null": false
+          "type": "object"
         },
         {
           "disabled": false,
           "document": "涂妆浓淡[0,100]。建议取值50。本参数仅控制ModelId对应的涂妆浓淡。",
-          "example": "",
+          "example": "50",
           "member": "int64",
           "name": "ModelAlpha",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         }
       ],
       "usage": "in"
@@ -618,30 +612,30 @@
         {
           "disabled": false,
           "document": "唇色素材ID",
-          "example": "",
+          "example": "mo_0_1622620141111_1259088111_1",
           "member": "string",
           "name": "ModelId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "唇色素材 url 。 LUT 文件 url 5分钟有效。",
-          "example": "",
+          "example": "https://liudehua-9527.cos.ap-guangzhou.myqcloud.com/input.jpeg",
           "member": "string",
           "name": "LUTFileUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "文件描述信息。",
-          "example": "",
+          "example": "图片",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -711,42 +705,38 @@
         {
           "disabled": false,
           "document": "R通道数值。[0,255]。",
-          "example": "",
+          "example": "220",
           "member": "int64",
           "name": "R",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "G通道数值。[0,255]。",
-          "example": "",
+          "example": "2",
           "member": "int64",
           "name": "G",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "B通道数值。[0,255]。",
-          "example": "",
+          "example": "44",
           "member": "int64",
           "name": "B",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "A通道数值。[0,100]。建议取值50。",
-          "example": "",
+          "example": "50",
           "member": "int64",
           "name": "A",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         }
       ],
       "usage": "in"
@@ -766,7 +756,7 @@
         {
           "disabled": false,
           "document": "图片 base64 数据，base64 编码后大小不可超过5M。 \n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
-          "example": "string",
+          "example": "/9j/4AAQSkZJRgABAQAAAQABAAD/4gIo...lftXF/DjFZNXoSP5V2U0HMt/1FQf/Z",
           "member": "string",
           "name": "Image",
           "required": false,
@@ -775,7 +765,7 @@
         {
           "disabled": false,
           "document": "图片的 Url ，对应图片 base64 编码后大小不可超过5M。 \n图片的 Url、Image必须提供一个，如果都提供，只使用 Url。  \n图片存储于腾讯云的 Url 可保障更高下载速度和稳定性，建议图片存储于腾讯云。  \n非腾讯云存储的Url速度和稳定性可能受一定影响。  \n支持PNG、JPG、JPEG、BMP 等图片格式，不支持 GIF 图片。",
-          "example": "string",
+          "example": "https://liudehua-9527.cos.ap-guangzhou.myqcloud.com/input.jpeg",
           "member": "string",
           "name": "Url",
           "required": false,
@@ -808,7 +798,7 @@
         {
           "disabled": false,
           "document": "RspImgType 为 base64 时，返回处理后的图片 base64 数据。默认返回base64\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "string",
+          "example": "/9j/4AAQSkZJRgABAQAAAQABAAD/4gIo...lftXF/DjFZNXoSP5V2U0HMt/1FQf/Z",
           "member": "string",
           "name": "ResultImage",
           "output_required": true,
@@ -818,7 +808,7 @@
         {
           "disabled": false,
           "document": "RspImgType 为 url 时，返回处理后的图片 url 数据。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "string",
+          "example": "https://liudehua-9527.cos.ap-guangzhou.myqcloud.com/result.jpeg?q-sign-algorithm=sha1&q-ak=AKID********EXAMPLE&q-sign-time=8888;9999&q-key-time=8888;9999&q-header-list=&q-url-param-list=&q-signature=7de87f7bf9cfd23df9da32f46661e7cf97a5603c",
           "member": "string",
           "name": "ResultUrl",
           "output_required": true,
@@ -849,7 +839,7 @@
         {
           "disabled": false,
           "document": "图片 base64 数据，base64 编码后大小不可超过5M。 \n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
-          "example": "string",
+          "example": "/9j/4AAQSkZJRgABAQAAAQABAAD/4gIo...lftXF/DjFZNXoSP5V2U0HMt/1FQf/Z",
           "member": "string",
           "name": "Image",
           "required": false,
@@ -858,7 +848,7 @@
         {
           "disabled": false,
           "document": "图片的 Url ，对应图片 base64 编码后大小不可超过5M。 \n图片的 Url、Image必须提供一个，如果都提供，只使用 Url。  \n图片存储于腾讯云的 Url 可保障更高下载速度和稳定性，建议图片存储于腾讯云。  \n非腾讯云存储的Url速度和稳定性可能受一定影响。  \n支持PNG、JPG、JPEG、BMP 等图片格式，不支持 GIF 图片。",
-          "example": "string",
+          "example": "https://liudehua-9527.cos.ap-guangzhou.myqcloud.com/input.jpeg",
           "member": "string",
           "name": "Url",
           "required": false,
@@ -891,7 +881,7 @@
         {
           "disabled": false,
           "document": "RspImgType 为 base64 时，返回处理后的图片 base64 数据。默认返回base64\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "string",
+          "example": "/9j/4AAQSkZJRgABAQAAAQABAAD/4gIo...lftXF/DjFZNXoSP5V2U0HMt/1FQf/Z",
           "member": "string",
           "name": "ResultImage",
           "output_required": true,
@@ -901,7 +891,7 @@
         {
           "disabled": false,
           "document": "RspImgType 为 url 时，返回处理后的图片 url 数据。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "string",
+          "example": "https://liudehua-9527.cos.ap-guangzhou.myqcloud.com/result.jpeg?q-sign-algorithm=sha1&q-ak=AKID********EXAMPLE&q-sign-time=8888;9999&q-key-time=8888;9999&q-header-list=&q-url-param-list=&q-signature=7de87f7bf9cfd23df9da32f46661e7cf97a5603c",
           "member": "string",
           "name": "ResultUrl",
           "output_required": true,
@@ -923,7 +913,7 @@
         {
           "disabled": false,
           "document": "唇色信息。 \n您可以输入最多3个 LipColorInfo 来实现给一张图中的最多3张人脸试唇色。",
-          "example": "",
+          "example": "[{\"RGBA\":{\"R\":220,\"G\":2,\"B\":44,\"A\":50},\"ModelAlpha\":50}]",
           "member": "LipColorInfo",
           "name": "LipColorInfos",
           "required": true,
@@ -932,7 +922,7 @@
         {
           "disabled": false,
           "document": "图片 base64 数据，base64 编码后大小不可超过6M。 \n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
-          "example": "",
+          "example": "/9j/4AAQSkZJRgABAQAAAQABAAD/4gIo...lftXF/DjFZNXoSP5V2U0HMt/1FQf/Z",
           "member": "string",
           "name": "Image",
           "required": false,
@@ -941,7 +931,7 @@
         {
           "disabled": false,
           "document": "图片的 Url ，对应图片 base64 编码后大小不可超过6M。 \n图片的 Url、Image必须提供一个，如果都提供，只使用 Url。 \n图片存储于腾讯云的 Url 可保障更高下载速度和稳定性，建议图片存储于腾讯云。 \n非腾讯云存储的Url速度和稳定性可能受一定影响。 \n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
-          "example": "",
+          "example": "https://liudehua-9527.cos.ap-guangzhou.myqcloud.com/input.jpeg",
           "member": "string",
           "name": "Url",
           "required": false,
@@ -950,7 +940,7 @@
         {
           "disabled": false,
           "document": "返回图像方式（base64 或 url ) ，二选一。url有效期为1天。",
-          "example": "",
+          "example": "base64",
           "member": "string",
           "name": "RspImgType",
           "required": false,
@@ -965,18 +955,20 @@
         {
           "disabled": false,
           "document": "RspImgType 为 base64 时，返回处理后的图片 base64 数据。默认返回base64",
-          "example": "",
+          "example": "/9j/4AAQSkZJRgABAQAAAQABAAD/4gIo...lftXF/DjFZNXoSP5V2U0HMt/1FQf/Z",
           "member": "string",
           "name": "ResultImage",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "RspImgType 为 url 时，返回处理后的图片 url 数据。",
-          "example": "",
+          "example": "https://liudehua-9527.cos.ap-guangzhou.myqcloud.com/result.jpeg?q-sign-algorithm=sha1&q-ak=AKID********EXAMPLE&q-sign-time=8888;9999&q-key-time=8888;9999&q-header-list=&q-url-param-list=&q-signature=7de87f7bf9cfd23df9da32f46661e7cf97a5603c",
           "member": "string",
           "name": "ResultUrl",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

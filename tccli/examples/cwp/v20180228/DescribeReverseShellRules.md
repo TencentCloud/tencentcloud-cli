@@ -16,10 +16,12 @@ Output:
             {
                 "Id": 10001,
                 "DestIp": "127.0.0.1",
-                "DestPort": "",
-                "ProcessName": "aaaaa",
+                "Hostip": "10.0.0.11",
+                "Uuid": "E86E092B-FD69-4D1B-B014-E4FC68A*****",
+                "DestPort": "60132",
+                "ProcessName": "python",
                 "IsGlobal": 0,
-                "Operator": "",
+                "Operator": "operatorA",
                 "Status": 0,
                 "CreateTime": "2024-10-12 11:38:43",
                 "ModifyTime": "2024-10-12 11:38:43"

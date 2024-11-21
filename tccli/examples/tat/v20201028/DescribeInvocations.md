@@ -30,7 +30,7 @@ Output:
                 "InvocationStatus": "SUCCESS",
                 "Description": "Test Invocation",
                 "Parameters": "",
-                "DefaultParameters": "",
+                "DefaultParameters": "{\"k1\":\"v1\"}",
                 "Username": "root",
                 "OutputCOSKeyPrefix": "cosprefix",
                 "OutputCOSBucketUrl": "https://example-123456789.cos.ap-beijing.myqcloud.com",

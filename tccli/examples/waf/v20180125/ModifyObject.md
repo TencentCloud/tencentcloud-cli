@@ -1,4 +1,4 @@
-**Example 1: 修改实例ID**
+**Example 1: 修改防护对象**
 
 
 
@@ -6,12 +6,11 @@ Input:
 
 ```
 tccli waf ModifyObject --cli-unfold-argument  \
-    --ObjectId abc \
+    --ObjectId lb-vsf13vzg \
     --Status 0 \
-    --InstanceId abc \
-    --OpType abc \
-    --Proxy 1 \
-    --IpHeaders abc
+    --InstanceId waf_vxj234vxcfnm \
+    --OpType Status \
+    --Proxy 1
 ```
 
 Output: 

@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli cdc ModifySiteInfo --cli-unfold-argument  \
-    --SiteId site-xxxx \
+    --SiteId site-pjmtpk14 \
     --Name new_name \
     --Description new_description \
     --Note new_note \
     --Country China \
     --Province Guangdong \
     --City Shenzhen \
-    --PostalCode 14353 \
+    --PostalCode 510000 \
     --AddressLine 腾讯滨海大厦
 ```
 

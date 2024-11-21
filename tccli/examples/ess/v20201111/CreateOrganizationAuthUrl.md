@@ -12,7 +12,8 @@ tccli ess CreateOrganizationAuthUrl --cli-unfold-argument  \
     --UniformSocialCreditCode 9144030071526726XG \
     --OrganizationName 典子谦示例企业 \
     --UniformSocialCreditCodeSame True \
-    --OrganizationNameSame True
+    --OrganizationNameSame True \
+    --Initialization 1
 ```
 
 Output: 

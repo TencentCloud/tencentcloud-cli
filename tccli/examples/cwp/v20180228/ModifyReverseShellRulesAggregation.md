@@ -10,7 +10,7 @@ tccli cwp ModifyReverseShellRulesAggregation --cli-unfold-argument  \
     --WhiteType 1 \
     --RuleRegexp sh cmdline \
     --HandleHistory 1 \
-    --GroupID 
+    --GroupID 12
 ```
 
 Output: 

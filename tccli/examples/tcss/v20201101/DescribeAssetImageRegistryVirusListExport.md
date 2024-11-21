@@ -7,7 +7,7 @@ Input:
 ```
 tccli tcss DescribeAssetImageRegistryVirusListExport --cli-unfold-argument  \
     --ExportField Path RiskLevel Category VirusName Tags \
-    --Id 123
+    --Id 1001
 ```
 
 Output: 
@@ -15,7 +15,7 @@ Output:
 {
     "Response": {
         "RequestId": "62e5c0e8-2cae-410a-8240-9cefbd419e08",
-        "DownloadUrl": "https://xxx"
+        "DownloadUrl": "https://download.url"
     }
 }
 ```

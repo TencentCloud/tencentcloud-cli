@@ -12,7 +12,7 @@ tccli cfw ModifyEnterpriseSecurityGroupRule --cli-unfold-argument  \
     --Data.SourceType net \
     --Data.SourceContent 192.168.0.2 \
     --Data.DestType net \
-    --Data.ServiceTemplateId  \
+    --Data.ServiceTemplateId ppm-1ak9u5 \
     --Data.DestContent 192.168.0.3 \
     --Data.RuleAction accept \
     --Data.Port 80 \

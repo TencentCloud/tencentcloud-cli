@@ -1,6 +1,6 @@
-**Example 1: TEST1**
+**Example 1: 获取Api请求详情信息**
 
-TEST1
+获取Api请求详情信息
 
 Input: 
 
@@ -18,14 +18,14 @@ Output:
         "RequestId": "6088f081-3e69-421e-9bbe-b91510af0414",
         "Log": "{\"other\":{}}",
         "ParameterList": [],
-        "Scene": "",
+        "Scene": "waf",
         "SensitiveFields": [],
         "IsActive": false,
         "IpCount": 0,
         "RegionCount": 0,
         "EventCount": 0,
         "SensitiveCount": 0,
-        "RspLog": "{}",
+        "RspLog": "{\"other\":{}}",
         "Level": 0
     }
 }

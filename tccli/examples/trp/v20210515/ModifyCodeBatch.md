@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli trp ModifyCodeBatch --cli-unfold-argument  \
-    --BatchId abc \
+    --BatchId 20121212000001 \
     --Status 1
 ```
 
@@ -14,8 +14,8 @@ Output:
 ```
 {
     "Response": {
-        "BatchId": "abc",
-        "RequestId": "abc"
+        "BatchId": "20121212000001",
+        "RequestId": "eaa3ccac-d2f5-4df0-a8b3-7b51324e9283"
     }
 }
 ```

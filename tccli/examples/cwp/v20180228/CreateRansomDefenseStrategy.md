@@ -16,7 +16,7 @@ tccli cwp CreateRansomDefenseStrategy --cli-unfold-argument  \
     --IsAll 1 \
     --Id 1 \
     --SaveDay 1 \
-    --Name test
+    --Name ada_api****
 ```
 
 Output: 

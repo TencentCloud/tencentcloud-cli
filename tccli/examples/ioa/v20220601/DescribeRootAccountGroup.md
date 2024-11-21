@@ -1,4 +1,4 @@
-**Example 1: https://ioa.test.tencentcloudapi.com/?Action=DescribeRootAccountGroup**
+**Example 1: 查询全网根账号组信息**
 
 
 
@@ -12,27 +12,27 @@ Output:
 {
     "Response": {
         "Data": {
-            "NamePath": "全网账户",
+            "Description": "这里是该分组的描述",
+            "ExtraInfo": "{\"salt\": \"xf681fafy\"}",
+            "Id": 14632,
+            "IdPath": "14632",
             "IdPathArr": [
-                2222
+                14632
             ],
-            "ExtraInfo": "{}",
-            "Utime": "2022-10-09 14:37:05",
-            "ParentId": 0,
-            "OrgId": "0",
-            "Source": 0,
-            "IdPath": "2222",
-            "Itime": "2022-10-09 14:37:05",
-            "ParentOrgId": "0",
-            "Name": "全网账户",
+            "Import": "0",
             "ImportEnable": false,
-            "ImportType": "",
-            "MiniIamId": "",
-            "Id": 2222,
-            "Import": "",
-            "Description": ""
+            "ImportType": "zijian",
+            "Itime": "2023-04-18 23:01:11",
+            "MiniIamId": "1256733004o8vX5K5hVcGCeQKddLZNmf",
+            "Name": "全网账户",
+            "NamePath": "全网账户",
+            "OrgId": "0",
+            "ParentId": 0,
+            "ParentOrgId": "0",
+            "Source": 0,
+            "Utime": "2023-04-18 23:01:11"
         },
-        "RequestId": "e6f9be7b-af66-4a22-b867-94510cf04492"
+        "RequestId": "91b9b2f8-25cb-461c-9f48-2c5495c57f00"
     }
 }
 ```

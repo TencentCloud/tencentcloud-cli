@@ -15,7 +15,7 @@ Output:
             {
                 "ItemId": 2162,
                 "ItemName": "确保配置/etc/shadow的权限",
-                "ItemDesc": "/etc/shadow文件用于存储有关用户帐户的信息，这些信息对于这些帐户的安全性至关重要，例如哈希密码和其他安全信息。",
+                "ItemDesc": "/etc/shadow文件用于存储有关用户账户的信息，这些信息对于这些账户的安全性至关重要，例如哈希密码和其他安全信息。",
                 "FixMethod": "运行以下命令以设置/etc/shadow的权限：\n# chown root:root /etc/shadow# chmod 000 /etc/shadow\n",
                 "RuleId": 13,
                 "RuleName": "国际标准-CentOS 7安全基线检查Level1",
@@ -24,7 +24,7 @@ Output:
                 "LastTime": "2022-07-21 21:25:01",
                 "DetectStatus": 3,
                 "Level": 2,
-                "DetectResult": "",
+                "DetectResult": "result***",
                 "PassedHostCount": 1,
                 "NotPassedHostCount": 0
             },
@@ -40,7 +40,7 @@ Output:
                 "LastTime": "2022-07-21 21:25:01",
                 "DetectStatus": 3,
                 "Level": 2,
-                "DetectResult": "",
+                "DetectResult": "result***",
                 "PassedHostCount": 1,
                 "NotPassedHostCount": 0
             },
@@ -56,7 +56,7 @@ Output:
                 "LastTime": "2022-07-21 21:25:01",
                 "DetectStatus": 3,
                 "Level": 2,
-                "DetectResult": "",
+                "DetectResult": "result***",
                 "PassedHostCount": 1,
                 "NotPassedHostCount": 0
             },
@@ -72,7 +72,7 @@ Output:
                 "LastTime": "2022-07-21 21:25:01",
                 "DetectStatus": 3,
                 "Level": 2,
-                "DetectResult": "",
+                "DetectResult": "result***",
                 "PassedHostCount": 1,
                 "NotPassedHostCount": 0
             },
@@ -88,7 +88,7 @@ Output:
                 "LastTime": "2022-07-21 21:25:01",
                 "DetectStatus": 3,
                 "Level": 2,
-                "DetectResult": "",
+                "DetectResult": "result***",
                 "PassedHostCount": 1,
                 "NotPassedHostCount": 0
             },
@@ -104,7 +104,7 @@ Output:
                 "LastTime": "2022-07-21 21:25:01",
                 "DetectStatus": 3,
                 "Level": 2,
-                "DetectResult": "",
+                "DetectResult": "result***",
                 "PassedHostCount": 1,
                 "NotPassedHostCount": 0
             },
@@ -120,7 +120,7 @@ Output:
                 "LastTime": "2022-07-21 21:25:01",
                 "DetectStatus": 3,
                 "Level": 2,
-                "DetectResult": "",
+                "DetectResult": "result***",
                 "PassedHostCount": 1,
                 "NotPassedHostCount": 0
             },
@@ -136,7 +136,7 @@ Output:
                 "LastTime": "2022-07-21 21:25:01",
                 "DetectStatus": 3,
                 "Level": 2,
-                "DetectResult": "",
+                "DetectResult": "result***",
                 "PassedHostCount": 1,
                 "NotPassedHostCount": 0
             },
@@ -152,7 +152,7 @@ Output:
                 "LastTime": "2022-07-21 21:25:01",
                 "DetectStatus": 3,
                 "Level": 2,
-                "DetectResult": "",
+                "DetectResult": "result***",
                 "PassedHostCount": 1,
                 "NotPassedHostCount": 0
             },
@@ -168,7 +168,7 @@ Output:
                 "LastTime": "2022-07-21 21:25:01",
                 "DetectStatus": 3,
                 "Level": 2,
-                "DetectResult": "",
+                "DetectResult": "result***",
                 "PassedHostCount": 1,
                 "NotPassedHostCount": 0
             }

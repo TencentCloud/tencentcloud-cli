@@ -10,7 +10,7 @@ tccli tat CreateCommand --cli-unfold-argument  \
     --Description hello world \
     --Content bHM= \
     --CommandType SHELL \
-    --WorkingDirectory / \
+    --WorkingDirectory /tmp \
     --Timeout 60
 ```
 

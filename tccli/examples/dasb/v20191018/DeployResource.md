@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli dasb DeployResource --cli-unfold-argument  \
-    --VpcId vpc-xxxxxx \
+    --VpcId vpc-1a2b3c \
     --Zone ap-guangzhou-1 \
-    --ResourceId bh-saas-xxxxxx \
+    --ResourceId bh-saas-1a2b3c \
     --ApCode ap-guangzhou \
-    --SubnetId subnet-xxxxxx \
+    --SubnetId subnet-1a2b3c \
     --CidrBlock 10.10.10.0/32 \
     --VpcName vpc1 \
     --VpcCidrBlock 10.10.0.0/16 \
@@ -21,7 +21,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "dfac9070-8b23-499e-83b2-a50e3ca059af"
     }
 }
 ```

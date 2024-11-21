@@ -15,7 +15,7 @@ Output:
     "Response": {
         "RequestId": "ed202021-696e-4c03-a726-ca459c47c4ea",
         "TaskResult": [
-            "xx"
+            "NameRepeat"
         ],
         "TaskStatus": "Task_Succ"
     }

@@ -76,6 +76,27 @@
       "name": "更新 TKE 节点池",
       "output": "ModifyNodePoolResponse",
       "status": "online"
+    },
+    "RebootMachines": {
+      "document": "重启原生节点实例",
+      "input": "RebootMachinesRequest",
+      "name": "重启原生节点实例",
+      "output": "RebootMachinesResponse",
+      "status": "online"
+    },
+    "StartMachines": {
+      "document": "本接口 (StartMachines) 用于启动一个或多个原生节点实例。\n\n只有状态为 Stopped 的实例才可以进行此操作。\n接口调用成功后，等待一分钟左右，实例会进入 Running 状态。\n支持批量操作。每次请求批量实例的上限为100。\n本接口为同步接口，启动实例请求发送成功后会返回一个RequestId，此时操作并未立即完成。实例操作结果可以通过调用 DescribeClusterInstances 接口查询，如果实例的最新状态为 Running，则代表启动实例操作成功。",
+      "input": "StartMachinesRequest",
+      "name": "启动原生节点实例",
+      "output": "StartMachinesResponse",
+      "status": "online"
+    },
+    "StopMachines": {
+      "document": "本接口 (StopMachines) 用于关闭一个或多个原生节点实例。\n\n只有状态为 Running 的实例才可以进行此操作。\n接口调用成功时，实例会进入 Stopping 状态；关闭实例成功时，实例会进入 Stopped 状态。\n支持强制关闭。强制关机的效果等同于关闭物理计算机的电源开关。强制关机可能会导致数据丢失或文件系统损坏，请仅在服务器不能正常关机时使用。\n支持批量操作。每次请求批量实例的上限为 100。\n本接口为同步接口，关闭实例请求发送成功后会返回一个RequestId，此时操作并未立即完成。实例操作结果可以通过调用 DescribeClusterInstances 接口查询，如果实例的最新状stopped_with_charging，则代表关闭实例操作成功。",
+      "input": "StopMachinesRequest",
+      "name": "关闭原生节点实例",
+      "output": "StopMachinesResponse",
+      "status": "online"
     }
   },
   "metadata": {
@@ -421,6 +442,15 @@
           "name": "KeyIds",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "节点池类型",
+          "example": "NativeCVM或者Native",
+          "member": "string",
+          "name": "MachineType",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -2313,6 +2343,16 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "**原生节点对应的实例 ID**\n\n- ins-q47ofw6 表示这个实例是一个 CVM 的实例\n- eks-f8mvyaep 表示这个实例是一个 CXM 的实例\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ins-q47ofw6r, eks-f8mvyaep",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -2529,6 +2569,16 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "原生节点机型 Native, NativeCVM\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Native",
+          "member": "string",
+          "name": "MachineType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -2725,6 +2775,51 @@
       ],
       "usage": "out"
     },
+    "RebootMachinesRequest": {
+      "document": "RebootMachines请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群 ID",
+          "example": "cls-0dku0jec",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "节点名字列表，一次请求，传入节点数量上限为100个",
+          "example": "[\"np-5tx2l4dc-4tzgqy\", \"np-5tx2l4dc-fb8jl\"]",
+          "member": "string",
+          "name": "MachineNames",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "实例的关闭模式。取值范围：\nsoft_first：表示在正常关闭失败后进行强制关闭\nhard：直接强制关闭\nsoft：仅软关机默认取值：soft。",
+          "example": "soft",
+          "member": "string",
+          "name": "StopType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RebootMachinesResponse": {
+      "document": "RebootMachines返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "RegularNodeInfo": {
       "document": "普通节点信息",
       "members": [
@@ -2906,6 +3001,87 @@
         }
       ],
       "usage": "in"
+    },
+    "StartMachinesRequest": {
+      "document": "StartMachines请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群 ID",
+          "example": "cls-0dku0jec",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "节点名字列表，一次请求，传入节点数量上限为100个",
+          "example": "[\"np-5tx2l4dc-4tzgqy\", \"np-5tx2l4dc-fb8jl\"]",
+          "member": "string",
+          "name": "MachineNames",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "StartMachinesResponse": {
+      "document": "StartMachines返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopMachinesRequest": {
+      "document": "StopMachines请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群 ID",
+          "example": "cls-0dku0jec",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "节点名字列表，一次请求，传入节点数量上限为100个",
+          "example": "[\"np-5tx2l4dc-4tzgqy\", \"np-5tx2l4dc-fb8jl\"]",
+          "member": "string",
+          "name": "MachineNames",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "实例的关闭模式。取值范围：\nsoft_first：表示在正常关闭失败后进行强制关闭\nhard：直接强制关闭\nsoft：仅软关机",
+          "example": "soft",
+          "member": "string",
+          "name": "StopType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopMachinesResponse": {
+      "document": "StopMachines返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "SuperNodeInfo": {
       "document": "超级节点信息",

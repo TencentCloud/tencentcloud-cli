@@ -7,7 +7,7 @@ Input:
 ```
 tccli omics DeleteVolumeData --cli-unfold-argument  \
     --VolumeId vol-mpcb5xnl \
-    --Path /
+    --Path path/to/file
 ```
 
 Output: 

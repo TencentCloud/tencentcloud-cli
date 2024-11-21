@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tdmq DeleteRoles --cli-unfold-argument  \
-    --RoleNames abc \
-    --ClusterId abc
+    --RoleNames test_role_1 \
+    --ClusterId pulsar-xk3ne8k2qkp8
 ```
 
 Output: 
@@ -15,10 +15,9 @@ Output:
 {
     "Response": {
         "RoleNames": [
-            "test_role_1",
-            "test_role_2"
+            "test_role_1"
         ],
-        "RequestId": "gggxxxx"
+        "RequestId": "1004f1de-6fb8-41d5-965e-3aae8c87183a"
     }
 }
 ```

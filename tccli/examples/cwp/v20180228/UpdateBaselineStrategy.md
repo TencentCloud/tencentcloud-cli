@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli cwp UpdateBaselineStrategy --cli-unfold-argument  \
-    --StrategyName "test" \
+    --StrategyName "name1" \
     --ScanCycle 1 \
     --ScanAt "00:00:00" \
     --CategoryIds 1 \
     --IsGlobal 1 \
     --MachineType "CVM" \
     --RegionCode "ab-bj" \
-    --Quuids "123" \
+    --Quuids "935e27b1-d675-4509-80bf-96fbf0764237" \
     --StrategyId 1
 ```
 
@@ -21,7 +21,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "req-566234234"
+        "RequestId": "935e27b1-d675-4509-80bf-96fbf0764237"
     }
 }
 ```

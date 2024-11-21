@@ -22,9 +22,9 @@
       "status": "online"
     },
     "CreateAICall": {
-      "document": "创建ai外呼会话(仅支持高级版座席)",
+      "document": "用于调用AI模型发起外呼通话，仅限自有电话号码使用，目前开通高级版座席**限时**免费体验。\n\n发起通话前，请先确认您的AI模型是否兼容 OpenAI、Azure 或 Minimax 协议，并前往模型服务商网站获取相关鉴权信息。 具体功能说明请参考文档 [腾讯云联络中心AI通话平台](https://cloud.tencent.com/document/product/679/112100)。",
       "input": "CreateAICallRequest",
-      "name": "创建ai会话",
+      "name": "创建AI会话",
       "output": "CreateAICallResponse",
       "status": "online"
     },
@@ -559,23 +559,23 @@
         },
         {
           "disabled": false,
-          "document": "句子开始时间，Unix 毫秒时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "句子开始时间，Unix 毫秒时间戳",
           "example": "1729697242236",
           "member": "int64",
           "name": "Start",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "句子结束时间，Unix 毫秒时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "句子结束时间，Unix 毫秒时间戳",
           "example": "1729697245426",
           "member": "int64",
           "name": "End",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -585,43 +585,43 @@
       "members": [
         {
           "disabled": false,
-          "document": "文件ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文件ID",
           "example": "1",
           "member": "uint64",
           "name": "FileId",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "文件别名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文件别名",
           "example": "欢迎",
           "member": "string",
           "name": "CustomFileName",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "文件名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文件名",
           "example": "xxx.mp3",
           "member": "string",
           "name": "AudioFileName",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "审核状态，0-未审核，1-审核通过，2-审核拒绝\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "审核状态，0-未审核，1-审核通过，2-审核拒绝",
           "example": "1",
           "member": "int64",
           "name": "Status",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -856,7 +856,7 @@
           "example": "0",
           "member": "int64",
           "name": "IvrCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -866,7 +866,7 @@
           "example": "0",
           "member": "int64",
           "name": "QueueCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -876,7 +876,7 @@
           "example": "0",
           "member": "int64",
           "name": "RingCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -886,7 +886,7 @@
           "example": "0",
           "member": "int64",
           "name": "AcceptCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -896,7 +896,7 @@
           "example": "0",
           "member": "int64",
           "name": "TransferOuterCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -906,7 +906,7 @@
           "example": "0",
           "member": "int64",
           "name": "MaxQueueDuration",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -916,7 +916,7 @@
           "example": "0",
           "member": "int64",
           "name": "AvgQueueDuration",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -926,7 +926,7 @@
           "example": "0",
           "member": "int64",
           "name": "MaxRingDuration",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -936,7 +936,7 @@
           "example": "0",
           "member": "int64",
           "name": "AvgRingDuration",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -946,7 +946,7 @@
           "example": "0",
           "member": "int64",
           "name": "MaxAcceptDuration",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -956,7 +956,7 @@
           "example": "0",
           "member": "int64",
           "name": "AvgAcceptDuration",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -1077,7 +1077,7 @@
           "example": "1400000000",
           "member": "uint64",
           "name": "SdkAppId",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1087,7 +1087,7 @@
           "example": "123",
           "member": "uint64",
           "name": "ApplicantId",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1097,7 +1097,7 @@
           "example": "[\"008601012345678\"]",
           "member": "string",
           "name": "Callers",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1107,19 +1107,19 @@
           "example": "[\"008601012345678\"]",
           "member": "string",
           "name": "Callees",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "描述",
           "example": "描述",
           "member": "string",
           "name": "Description",
-          "required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1127,7 +1127,7 @@
           "example": "1",
           "member": "int64",
           "name": "State",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1137,7 +1137,7 @@
           "example": "1668573686",
           "member": "int64",
           "name": "CreateTime",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1147,7 +1147,7 @@
           "example": "1668573686",
           "member": "int64",
           "name": "UpdateTime",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -1159,256 +1159,256 @@
       "members": [
         {
           "disabled": false,
-          "document": "申请人身份，0-公司法定代表人，1-经办人（受法定代表人委托）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "申请人身份，0-公司法定代表人，1-经办人（受法定代表人委托）",
           "example": "1",
           "member": "int64",
           "name": "ApplicantType",
           "output_required": false,
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "企业名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "企业名称",
           "example": "北京XXCC有限责任公司",
           "member": "string",
           "name": "CompanyName",
           "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "统一社会信用代码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "统一社会信用代码",
           "example": "91411111111111111",
           "member": "string",
           "name": "BusinessId",
           "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "营业执照扫描件(加盖公章)。(支持jpg、png、gif、jpeg格式的图片，每张图片应大于50K，不超过5MB，模板参见控制台:https://console.cloud.tencent.com/ccc/enterprise/update)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "营业执照扫描件(加盖公章)。(支持jpg、png、gif、jpeg格式的图片，每张图片应大于50K，不超过5MB，模板参见控制台:https://console.cloud.tencent.com/ccc/enterprise/update)",
           "example": "https://xxxx.com/xxxxx.jpg",
           "member": "string",
           "name": "BusinessIdPicUrl",
           "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "法定代表人名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "法定代表人名称",
           "example": "王某某",
           "member": "string",
           "name": "CorporationName",
           "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "法定代表人身份证号码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "法定代表人身份证号码",
           "example": "610000000000008",
           "member": "string",
           "name": "CorporationId",
           "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "法定代表人身份证正反面扫描件。(支持jpg、png、gif、jpeg格式的图片，每张图片应大于50K，不超过5MB，模板参见控制台:https://console.cloud.tencent.com/ccc/enterprise/update)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "法定代表人身份证正反面扫描件。(支持jpg、png、gif、jpeg格式的图片，每张图片应大于50K，不超过5MB，模板参见控制台:https://console.cloud.tencent.com/ccc/enterprise/update)",
           "example": "https://xxxx.com/xxxxx.jpg\t",
           "member": "string",
           "name": "CorporationIdPicUrl",
           "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "安全合规使用承诺书。(支持jpg、png、gif、jpeg格式的图片，每张图片应大于50K，不超过5MB，模板参见控制台:https://console.cloud.tencent.com/ccc/enterprise/update)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "安全合规使用承诺书。(支持jpg、png、gif、jpeg格式的图片，每张图片应大于50K，不超过5MB，模板参见控制台:https://console.cloud.tencent.com/ccc/enterprise/update)",
           "example": "https://xxxx.com/xxxxx.jpg\t",
           "member": "string",
           "name": "NetworkCommitmentPicUrl",
           "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否与腾讯云账号的资质一致,0-不一致,1-一致\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否与腾讯云账号的资质一致,0-不一致,1-一致",
           "example": "1",
           "member": "int64",
           "name": "IsEqualTencentCloud",
           "output_required": false,
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "法定代表人手机号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "法定代表人手机号",
           "example": "18011111111",
           "member": "string",
           "name": "CorporationMobile",
           "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "法定代表人手机号码实名认证。(支持jpg、png、gif、jpeg格式的图片，每张图片应大于50K，不超过5MB，模板参见控制台:https://console.cloud.tencent.com/ccc/enterprise/update)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "法定代表人手机号码实名认证。(支持jpg、png、gif、jpeg格式的图片，每张图片应大于50K，不超过5MB，模板参见控制台:https://console.cloud.tencent.com/ccc/enterprise/update)",
           "example": "https://xxxx.com/xxxxx.jpg",
           "member": "string",
           "name": "CorporationMobilePicUrl",
           "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "通话话术。(支持doc、docx格式的文档不超过50MB，模板参见控制台:https://console.cloud.tencent.com/ccc/enterprise/update)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "通话话术。(支持doc、docx格式的文档不超过50MB，模板参见控制台:https://console.cloud.tencent.com/ccc/enterprise/update)",
           "example": "https://xxxx.com/xxxxx.jpg",
           "member": "string",
           "name": "UseDescribeFileUrl",
           "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "公司授权函。(支持jpg、png、gif、jpeg格式的图片，每张图片应大于50K，不超过5MB，模板参见控制台:https://console.cloud.tencent.com/ccc/enterprise/update)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "公司授权函。(支持jpg、png、gif、jpeg格式的图片，每张图片应大于50K，不超过5MB，模板参见控制台:https://console.cloud.tencent.com/ccc/enterprise/update)",
           "example": "https://xxxx.com/xxxxx.jpg",
           "member": "string",
           "name": "CompanyAuthLetterPicUrl",
           "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "电话受理单。(支持jpg、png、gif、jpeg格式的图片，每张图片应大于50K，不超过5MB，模板参见控制台:https://console.cloud.tencent.com/ccc/enterprise/update)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "电话受理单。(支持jpg、png、gif、jpeg格式的图片，每张图片应大于50K，不超过5MB，模板参见控制台:https://console.cloud.tencent.com/ccc/enterprise/update)",
           "example": "https://xxxx.com/xxxxx.jpg",
           "member": "string",
           "name": "AcceptPicUrl",
           "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "法定代表人手持身份证照，申请人类型为法定代表人时必填。(支持jpg、png、gif、jpeg格式的图片，每张图片应大于50K，不超过5MB，模板参见控制台:https://console.cloud.tencent.com/ccc/enterprise/update)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "法定代表人手持身份证照，申请人类型为法定代表人时必填。(支持jpg、png、gif、jpeg格式的图片，每张图片应大于50K，不超过5MB，模板参见控制台:https://console.cloud.tencent.com/ccc/enterprise/update)",
           "example": "https://xxxx.com/xxxxx.jpg\t",
           "member": "string",
           "name": "CorporationHoldingOnIdPicUrl",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "经办人名称，申请人类型为经办人时必填。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "经办人名称，申请人类型为经办人时必填。",
           "example": "李某某",
           "member": "string",
           "name": "OperatorName",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "经办人证件号码，申请人类型为经办人时必填。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "经办人证件号码，申请人类型为经办人时必填。",
           "example": "61011111111111111",
           "member": "string",
           "name": "OperatorId",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "经办人身份证正反面扫描件，申请人类型为经办人时必填。(支持jpg、png、gif、jpeg格式的图片，每张图片应大于50K，不超过5MB，模板参见控制台:https://console.cloud.tencent.com/ccc/enterprise/update)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "经办人身份证正反面扫描件，申请人类型为经办人时必填。(支持jpg、png、gif、jpeg格式的图片，每张图片应大于50K，不超过5MB，模板参见控制台:https://console.cloud.tencent.com/ccc/enterprise/update)",
           "example": "https://xxxx.com/xxxxx.jpg\t",
           "member": "string",
           "name": "OperatorIdPicUrl",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "经办人手持身份证照，申请人类型为经办人时必填。(支持jpg、png、gif、jpeg格式的图片，每张图片应大于50K，不超过5MB，模板参见控制台:https://console.cloud.tencent.com/ccc/enterprise/update)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "经办人手持身份证照，申请人类型为经办人时必填。(支持jpg、png、gif、jpeg格式的图片，每张图片应大于50K，不超过5MB，模板参见控制台:https://console.cloud.tencent.com/ccc/enterprise/update)",
           "example": "https://xxxx.com/xxxxx.jpg\t",
           "member": "string",
           "name": "OperatorHoldingOnIdPicUrl",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "委托授权书，申请人类型为经办人时必填。(支持jpg、png、gif、jpeg格式的图片，每张图片应大于50K，不超过5MB，模板参见控制台:https://console.cloud.tencent.com/ccc/enterprise/update)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "委托授权书，申请人类型为经办人时必填。(支持jpg、png、gif、jpeg格式的图片，每张图片应大于50K，不超过5MB，模板参见控制台:https://console.cloud.tencent.com/ccc/enterprise/update)",
           "example": "https://xxxx.com/xxxxx.jpg\t",
           "member": "string",
           "name": "CommissionPicUrl",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "经办人手机号，申请人类型为经办人时必填。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "经办人手机号，申请人类型为经办人时必填。",
           "example": "18022222222",
           "member": "string",
           "name": "OperatorMobile",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "经办人邮箱，申请人类型为经办人时必填。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "经办人邮箱，申请人类型为经办人时必填。",
           "example": "111@qq.com",
           "member": "string",
           "name": "OperatorEmail",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "经办人手机号码实名认证，申请人类型为经办人时必填。(支持jpg、png、gif、jpeg格式的图片，每张图片应大于50K，不超过5MB，模板参见控制台:https://console.cloud.tencent.com/ccc/enterprise/update)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "经办人手机号码实名认证，申请人类型为经办人时必填。(支持jpg、png、gif、jpeg格式的图片，每张图片应大于50K，不超过5MB，模板参见控制台:https://console.cloud.tencent.com/ccc/enterprise/update)",
           "example": "https://xxxx.com/xxxxx.jpg",
           "member": "string",
           "name": "OperatorMobilePicUrl",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -1429,80 +1429,91 @@
         },
         {
           "disabled": false,
-          "document": "公司名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "公司名称",
           "example": "北京XX公司",
           "member": "string",
           "name": "CompanyName",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建时间",
           "example": "1653534444",
           "member": "int64",
           "name": "CreateTime",
           "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "审核时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "审核时间",
           "example": "1653534444",
           "member": "int64",
           "name": "CheckTime",
           "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "审核备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "审核备注",
           "example": "通过了",
           "member": "string",
           "name": "CheckMsg",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "审核状态，1-待审核，2-审核通过，3-驳回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "审核状态，1-待审核，2-审核通过，3-驳回",
           "example": "1",
           "member": "int64",
           "name": "State",
           "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "公司统一社会信用代码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "公司统一社会信用代码",
           "example": "546346435646",
           "member": "string",
           "name": "BusinessId",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "修改时间",
           "example": "1653534444",
           "member": "int64",
           "name": "ModifyTime",
           "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "合同编号",
+          "example": "12324xxxxx",
+          "member": "string",
+          "name": "ContractNo",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -1521,8 +1532,8 @@
         },
         {
           "disabled": false,
-          "document": "被叫",
-          "example": "+8613012345678",
+          "document": "被叫号码",
+          "example": "008613012345678",
           "member": "string",
           "name": "Callee",
           "required": true,
@@ -1530,8 +1541,8 @@
         },
         {
           "disabled": false,
-          "document": "用于设定AI座席人设、说话规则、任务等的全局提示词。",
-          "example": "您是一只AI问答机器人",
+          "document": "用于设定AI人设、说话规则、任务等的全局提示词。示例：## 人设您是人民医院友善、和蔼的随访医生李医生，正在给患者小明的家长打电话，原因是医院要求小明2024-08-08回院复查手术恢复情况，但小明没有来。您需要按照任务流程对小明家长进行电话随访调查。## 要求简洁回复：使用简练语言，每次最多询问一个问题，不要在一个回复中询问多个问题。富有变化：尽量使表达富有变化，表达机械重复。自然亲切：使用日常语言，尽量显得专业并亲切。提到时间时使用口语表述，如下周三、6月18日。积极主动：尝试引导对话，每个回复通常以问题或下一步建议来结尾。询问清楚：如果对方部分回答了您的问题，或者回答很模糊，请通过追问来确保回答的完整明确。遵循任务：当对方的回答偏离了您的任务时，及时引导对方回到任务中。不要从头开始重复，从偏离的地方继续询问。诚实可靠：对于客户的提问，如果不确定请务必不要编造，礼貌告知对方不清楚。不要捏造患者未提及的症状史、用药史、治疗史。其他注意点：避免提到病情恶化、恢复不理想或疾病名称等使用会使患者感到紧张的表述。不要问患者已经直接或间接回答过的问题，例如患者已经说没有不适症状，那就不要再问手术部位是否有红肿疼痛症状的问题。##任务： 1.自我介绍您是人民医院负责随访的李医生，并说明致电的目的。2.询问被叫方是否是小明家长。 - 如果不是小明家长，请礼貌表达歉意，并使用 call_end 挂断电话。- 如果小明家长没空，请礼貌告诉对方稍后会重新致电，并使用 end_call 挂断电话。3.询问小明出院后水肿情况如何，较出院时是否有变化。- 如果水肿变严重，直接跳转步骤7。4.询问出院后是否给小朋友量过体温，是否出现过发烧情况。- 如果没有量过体温，请礼貌告诉家长出院后三个月内需要每天观察体温。- 如果出现过发烧，请直接跳转步骤7。5.询问出院后是否给小朋友按时服药。- 如果没有按时服药，请友善提醒家长严格按医嘱服用药物，避免影响手术效果。6.询问小朋友在饮食上是否做到低盐低脂，适量吃优质蛋白如鸡蛋、牛奶、瘦肉等。- 如果没有做到，请友善提醒家长低盐低脂和优质蛋白有助小朋友尽快恢复。7.告知家长医生要求6月18日回院复查，但没看到有相关复诊记录。提醒家长尽快前往医院体检复查血化验、尿常规。8.询问家长是否有问题需要咨询，如果没有请礼貌道别并用call_end挂断电话。",
+          "example": "无",
           "member": "string",
           "name": "SystemPrompt",
           "required": true,
@@ -1539,7 +1550,7 @@
         },
         {
           "disabled": false,
-          "document": "LLM类型\n目前有两种\nopenai(兼容openai协议的模型)\nazure",
+          "document": "模型接口协议类型，目前兼容三种协议类型：\n\n- OpenAI协议(包括GPT、混元、DeepSeek等)：\"openai\"\n- Azure协议：\"azure\"\n- Minimax协议：\"minimax\"",
           "example": "openai",
           "member": "string",
           "name": "LLMType",
@@ -1548,8 +1559,8 @@
         },
         {
           "disabled": false,
-          "document": "模型（当前仅支持openai协议的模型）",
-          "example": "gpt3",
+          "document": "模型名称，如\n\n- OpenAI协议\n\"gpt-4o-mini\",\"gpt-4o\"，\"hunyuan-standard\", \"hunyuan-turbo\"，\"deepseek-chat\"；\n\n- Azure协议\n\"gpt-4o-mini\", \"gpt-4o\"；\n\n- Minmax协议\n\"deepseek-chat\".",
+          "example": "gpt-4o-mini",
           "member": "string",
           "name": "Model",
           "required": true,
@@ -1557,8 +1568,8 @@
         },
         {
           "disabled": false,
-          "document": "API密钥",
-          "example": "114514",
+          "document": "模型API密钥，获取鉴权信息方式请参见各模型官网\n\n- OpenAI协议：[GPT](https://help.openai.com/en/articles/4936850-where-do-i-find-my-openai-api-key)，[混元](https://cloud.tencent.com/document/product/1729/111008)，[DeepSeek](https://api-docs.deepseek.com/zh-cn/)；\n\n- Azure协议：[Azure GPT](https://learn.microsoft.com/en-us/azure/ai-services/openai/chatgpt-quickstart?tabs=command-line%2Ctypescript%2Cpython-new&pivots=programming-language-studio#key-settings)；\n\n- Minimax：[Minimax](https://platform.minimaxi.com/document/Fast%20access?key=66701cf51d57f38758d581b2)",
+          "example": "sk-proj-xxxx",
           "member": "string",
           "name": "APIKey",
           "required": true,
@@ -1566,8 +1577,8 @@
         },
         {
           "disabled": false,
-          "document": "API URL，仅支持兼容openai协议的模型，填写url时后缀不要带/chat/completions；\nllmType为azure时,URL填写格式需为：https://{your-resource-name}.openai.azure.com?api-version={api-version},填写url时后缀不要带/openai/deployments/{deployment-id}/chat/completions，系统会自动帮您填充后缀",
-          "example": "http://xxx.com/openapi/v1",
+          "document": "模型接口地址\n\n- OpenAI协议\nGPT：\"https://api.openai.com/v1/\"\n混元：\"https://api.hunyuan.cloud.tencent.com/v1\"\nDeepseek：\"https://api.deepseek.com/v1\"\n\n- Azure协议\n \"https://{your-resource-name}.openai.azure.com?api-version={api-version}\"\n\n- Minimax协议\n\"https://api.minimax.chat/v1\"",
+          "example": "https://api.openai.com/v1/",
           "member": "string",
           "name": "APIUrl",
           "required": true,
@@ -1575,8 +1586,8 @@
         },
         {
           "disabled": false,
-          "document": "音色，目前仅支持以下音色:\n汉语：\nZhiMei：智美，客服女声\nZhiXi： 智希 通用女声\nZhiQi：智琪 客服女声\nZhiTian：智甜 女童声\nAiXiaoJing：爱小静 对话女声\n\n英语:\nWeRose：英文女声\nMonika：英文女声\n\n日语：\nNanami\n\n韩语：\nSunHi\n\n印度尼西亚语(印度尼西亚)：\nGadis\n\n马来语（马来西亚）:\nYasmin\n\n 泰米尔语（马来西亚）:\nKani\n\n泰语（泰国）:\nAchara\n\n越南语(越南):\nHoaiMy\n\n",
-          "example": "ZhiMei",
+          "document": "默认提供以下音色参数值可选择，如需自定义音色VoiceType请留空并在参数CustomTTSConfig中配置\n\n汉语：\nZhiMei：智美，客服女声\nZhiXi： 智希 通用女声\nZhiQi：智琪 客服女声\nZhiTian：智甜 女童声\nAiXiaoJing：爱小静 对话女声\n\n英语:\nWeRose：英文女声\nMonika：英文女声\n\n日语：\nNanami\n\n韩语：\nSunHi\n\n印度尼西亚语(印度尼西亚)：\nGadis\n\n马来语（马来西亚）:\nYasmin\n\n 泰米尔语（马来西亚）:\nKani\n\n泰语（泰国）:\nAchara\n\n越南语(越南):\nHoaiMy\n\n",
+          "example": "ZhiQi",
           "member": "string",
           "name": "VoiceType",
           "required": false,
@@ -1585,7 +1596,7 @@
         {
           "disabled": false,
           "document": "主叫号码列表",
-          "example": "无",
+          "example": "[008613912341234, 008613912341235]",
           "member": "string",
           "name": "Callers",
           "required": false,
@@ -1603,7 +1614,7 @@
         {
           "disabled": false,
           "document": "0：使用welcomeMessage(为空时，被叫先说话；不为空时，机器人先说话)\n1:   使用ai根据prompt自动生成welcomeMessage并先说话",
-          "example": "0,1",
+          "example": "0",
           "member": "int64",
           "name": "WelcomeType",
           "required": false,
@@ -1674,7 +1685,7 @@
         },
         {
           "disabled": false,
-          "document": "用户NotifyDuration没说话，ai提示的语句，默认是\"抱歉，我没听清。您可以重复下吗？\"",
+          "document": "用户NotifyDuration没说话，AI提示的语句，默认是\"抱歉，我没听清。您可以重复下吗？\"",
           "example": "抱歉，我没听清。您可以重复下吗？",
           "member": "string",
           "name": "NotifyMessage",
@@ -1683,7 +1694,7 @@
         },
         {
           "disabled": false,
-          "document": "和voiceType字段需要选填一个，这里是使用自己自定义的TTS，voiceType是系统内置的一些音色\n\ntencent TTS:\n{ \n       \"TTSType\": \"tencent\", // String TTS类型, 目前支持\"tencent\" 和 “minixmax”， 其他的厂商支持中\n       \"AppId\": \"您的应用ID\", // String 必填\n       \"SecretId\": \"您的密钥ID\", // String 必填\n       \"SecretKey\":  \"您的密钥Key\", // String 必填\n       \"VoiceType\": 101001, // Integer  必填，音色 ID，包括标准音色与精品音色，精品音色拟真度更高，价格不同于标准音色，请参见语音合成计费概述。完整的音色 ID 列表请参见语音合成音色列表。\n       \"Speed\": 1.25, // Integer 非必填，语速，范围：[-2，6]，分别对应不同语速： -2: 代表0.6倍 -1: 代表0.8倍 0: 代表1.0倍（默认） 1: 代表1.2倍 2: 代表1.5倍  6: 代表2.5倍  如果需要更细化的语速，可以保留小数点后 2 位，例如0.5/1.25/2.81等。 参数值与实际语速转换，可参考 语速转换\n       \"Volume\": 5, // Integer 非必填，音量大小，范围：[0，10]，分别对应11个等级的音量，默认值为0，代表正常音量。\n       \"PrimaryLanguage\": 1, // Integer 可选 主要语言 1-中文（默认） 2-英文 3-日文\n       \"FastVoiceType\": \"xxxx\"   //  可选参数， 快速声音复刻的参数 \n  }\n\n参考：https://cloud.tencent.com/document/product/1073/92668#55924b56-1a73-4663-a7a1-a8dd82d6e823 \n\nminimax TTS\n{\n        \"TTSType\": \"minimax\",  // String TTS类型, \n        \"Model\": \"speech-01-turbo\",\n        \"APIUrl\": \"https://api.minimax.chat/v1/t2a_v2\",\n        \"APIKey\": \"eyxxxx\",\n        \"GroupId\": \"181000000000000\",\n        \"VoiceType\":\"female-tianmei-jingpin\",\n        \"Speed\": 1.2\n}\n\n参考：https://platform.minimaxi.com/document/T2A%20V2?key=66719005a427f0c8a5701643 \n限频参考：https://platform.minimaxi.com/document/Rate%20limits?key=66b19417290299a26b234572   可能会导致回答卡顿\n\n\n\nvolcengine TTS\n{\n    \"TTSType\": \"volcengine\",  // 必填：String TTS类型\n    \"AppId\" : \"xxxxxxxx\",   // 必填：String 火山引擎分配的Appid\n    \"Token\" : \"TY9d4sQXHxxxxxxx\", // 必填： String类型 火山引擎的访问token\n    \"Speed\" : 1.0,            // 可选参数 语速，默认为1.0\n    \"Volume\": 1.0,            // 可选参数， 音量大小， 默认为1.0\n    \"Cluster\" : \"volcano_tts\", // 可选参数，业务集群, 默认是 volcano_tts\n    \"VoiceType\" : \"zh_male_aojiaobazong_moon_bigtts\"   // 音色类型， 默认为大模型语音合成的音色。 如果使用普通语音合成，则需要填写对应的音色类型。 音色类型填写错误会导致没有声音。\n}\n\n\n\n火山引擎音色类型参考：\nhttps://www.volcengine.com/docs/6561/162929 \n语音合成音色列表--语音技术-火山引擎\n大模型语音合成音色列表--语音技术-火山引擎\n\n\nAzure TTS\n{\n    \"TTSType\": \"azure\", // 必填：String TTS类型\n    \"SubscriptionKey\": \"xxxxxxxx\", // 必填：String 订阅的Key\n    \"Region\": \"chinanorth3\",  // 必填：String 订阅的地区\n    \"VoiceName\": \"zh-CN-XiaoxiaoNeural\", // 必填：String 音色名必填\n    \"Language\": \"zh-CN\", // 必填：String 合成的语言  \n    \"Rate\": 1 // 选填：float 语速  0.5～2 默认为 1\n}\n\n参考：\nhttps://docs.azure.cn/zh-cn/ai-services/speech-service/speech-synthesis-markup-voice \n\n\n自定义 TTS \n{\n  \"TTSType\": \"custom\", // String 必填\n  \"APIKey\": \"ApiKey\", // String 必填 用来鉴权\n  \"APIUrl\": \"http://0.0.0.0:8080/stream-audio\" // String，必填，TTS API URL\n  \"AudioFormat\": \"wav\", // String, 非必填，期望输出的音频格式，如mp3， ogg_opus，pcm，wav，默认为 wav，目前只支持pcm和wav，\n  \"SampleRate\": 16000,  // Integer，非必填，音频采样率，默认为16000(16k)，推荐值为16000\n  \"AudioChannel\": 1,    // Integer，非必填，音频通道数，取值：1 或 2  默认为1  \n}\n\n\n具体协议规范： \nhttps://doc.weixin.qq.com/doc/w3_ANQAiAbdAFwHILbJBmtSqSbV1WZ3L?scode=AJEAIQdfAAo5a1xajYANQAiAbdAFw \n\n\n",
+          "document": "<p>和VoiceType字段需要选填一个，这里是使用自己自定义的TTS，VoiceType是系统内置的一些音色</p>\n<ul>\n<li>Tencent TTS<br>\n配置请参考<a href=\"https://cloud.tencent.com/document/product/1073/92668#55924b56-1a73-4663-a7a1-a8dd82d6e823\" target=\"_blank\">腾讯云TTS文档链接</a></li>\n</ul>\n<div><div class=\"v-md-pre-wrapper copy-code-mode v-md-pre-wrapper- extra-class\"><pre class=\"v-md-prism-\"><code>{ \n       &quot;TTSType&quot;: &quot;tencent&quot;, // String TTS类型, 目前支持&quot;tencent&quot; 和 “minixmax”， 其他的厂商支持中\n       &quot;AppId&quot;: &quot;您的应用ID&quot;, // String 必填\n       &quot;SecretId&quot;: &quot;您的密钥ID&quot;, // String 必填\n       &quot;SecretKey&quot;:  &quot;您的密钥Key&quot;, // String 必填\n       &quot;VoiceType&quot;: 101001, // Integer  必填，音色 ID，包括标准音色与精品音色，精品音色拟真度更高，价格不同于标准音色，请参见语音合成计费概述。完整的音色 ID 列表请参见语音合成音色列表。\n       &quot;Speed&quot;: 1.25, // Integer 非必填，语速，范围：[-2，6]，分别对应不同语速： -2: 代表0.6倍 -1: 代表0.8倍 0: 代表1.0倍（默认） 1: 代表1.2倍 2: 代表1.5倍  6: 代表2.5倍  如果需要更细化的语速，可以保留小数点后 2 位，例如0.5/1.25/2.81等。 参数值与实际语速转换，可参考 语速转换\n       &quot;Volume&quot;: 5, // Integer 非必填，音量大小，范围：[0，10]，分别对应11个等级的音量，默认值为0，代表正常音量。\n       &quot;PrimaryLanguage&quot;: 1, // Integer 可选 主要语言 1-中文（默认） 2-英文 3-日文\n       &quot;FastVoiceType&quot;: &quot;xxxx&quot;   //  可选参数， 快速声音复刻的参数 \n  }\n</code></pre>\n\n  </div></div><ul>\n<li>Minimax TTS<br>\n配置请参考<a href=\"https://platform.minimaxi.com/document/T2A%20V2?key=66719005a427f0c8a5701643\" target=\"_blank\">Minimax TTS文档链接</a>。注意Minimax TTS存在频率限制，超频可能会导致回答卡顿，<a href=\"https://platform.minimaxi.com/document/Rate%20limits?key=66b19417290299a26b234572\" target=\"_blank\">Minimax TTS频率限制相关文档链接</a>。</li>\n</ul>\n<div><div class=\"v-md-pre-wrapper copy-code-mode v-md-pre-wrapper- extra-class\"><pre class=\"v-md-prism-\"><code>{\n        &quot;TTSType&quot;: &quot;minimax&quot;,  // String TTS类型, \n        &quot;Model&quot;: &quot;speech-01-turbo&quot;,\n        &quot;APIUrl&quot;: &quot;https://api.minimax.chat/v1/t2a_v2&quot;,\n        &quot;APIKey&quot;: &quot;eyxxxx&quot;,\n        &quot;GroupId&quot;: &quot;181000000000000&quot;,\n        &quot;VoiceType&quot;:&quot;female-tianmei-jingpin&quot;,\n        &quot;Speed&quot;: 1.2\n}\n</code></pre>\n</div></div><ul>\n<li>火山 TTS</li>\n</ul>\n<p>配置音色类型参考<a href=\"https://www.volcengine.com/docs/6561/162929\" target=\"_blank\">火山TTS文档链接</a><br>\n语音合成音色列表–语音技术-火山引擎<br>\n大模型语音合成音色列表–语音技术-火山引擎</p>\n<div><div class=\"v-md-pre-wrapper copy-code-mode v-md-pre-wrapper- extra-class\"><pre class=\"v-md-prism-\"><code>{\n    &quot;TTSType&quot;: &quot;volcengine&quot;,  // 必填：String TTS类型\n    &quot;AppId&quot; : &quot;xxxxxxxx&quot;,   // 必填：String 火山引擎分配的Appid\n    &quot;Token&quot; : &quot;TY9d4sQXHxxxxxxx&quot;, // 必填： String类型 火山引擎的访问token\n    &quot;Speed&quot; : 1.0,            // 可选参数 语速，默认为1.0\n    &quot;Volume&quot;: 1.0,            // 可选参数， 音量大小， 默认为1.0\n    &quot;Cluster&quot; : &quot;volcano_tts&quot;, // 可选参数，业务集群, 默认是 volcano_tts\n    &quot;VoiceType&quot; : &quot;zh_male_aojiaobazong_moon_bigtts&quot;   // 音色类型， 默认为大模型语音合成的音色。 如果使用普通语音合成，则需要填写对应的音色类型。 音色类型填写错误会导致没有声音。\n}\n</code></pre>\n\n</div></div><ul>\n<li>Azure TTS<br>\n配置请参考<a href=\"https://docs.azure.cn/zh-cn/ai-services/speech-service/speech-synthesis-markup-voice\" target=\"_blank\">AzureTTS文档链接</a></li>\n</ul>\n<div><div class=\"v-md-pre-wrapper copy-code-mode v-md-pre-wrapper- extra-class\"><pre class=\"v-md-prism-\"><code>{\n    &quot;TTSType&quot;: &quot;azure&quot;, // 必填：String TTS类型\n    &quot;SubscriptionKey&quot;: &quot;xxxxxxxx&quot;, // 必填：String 订阅的Key\n    &quot;Region&quot;: &quot;chinanorth3&quot;,  // 必填：String 订阅的地区\n    &quot;VoiceName&quot;: &quot;zh-CN-XiaoxiaoNeural&quot;, // 必填：String 音色名必填\n    &quot;Language&quot;: &quot;zh-CN&quot;, // 必填：String 合成的语言  \n    &quot;Rate&quot;: 1 // 选填：float 语速  0.5～2 默认为 1\n}\n</code></pre>\n\n</div></div><ul>\n<li>自定义</li>\n</ul>\n<p>TTS<br>\n具体协议规范请参考<a href=\"https://doc.weixin.qq.com/doc/w3_ANQAiAbdAFwHILbJBmtSqSbV1WZ3L?scode=AJEAIQdfAAo5a1xajYANQAiAbdAFw\" target=\"_blank\">腾讯文档</a></p>\n<div><div class=\"v-md-pre-wrapper copy-code-mode v-md-pre-wrapper- extra-class\"><pre class=\"v-md-prism-\"><code>{\n  &quot;TTSType&quot;: &quot;custom&quot;, // String 必填\n  &quot;APIKey&quot;: &quot;ApiKey&quot;, // String 必填 用来鉴权\n  &quot;APIUrl&quot;: &quot;http://0.0.0.0:8080/stream-audio&quot; // String，必填，TTS API URL\n  &quot;AudioFormat&quot;: &quot;wav&quot;, // String, 非必填，期望输出的音频格式，如mp3， ogg_opus，pcm，wav，默认为 wav，目前只支持pcm和wav，\n  &quot;SampleRate&quot;: 16000,  // Integer，非必填，音频采样率，默认为16000(16k)，推荐值为16000\n  &quot;AudioChannel&quot;: 1,    // Integer，非必填，音频通道数，取值：1 或 2  默认为1  \n}\n</code></pre>\n\n</div></div>",
           "example": "{ \t\"TTSType\": \"azure\", \t\"SubscriptionKey\": \"xxxxxxxx\", \t\"Region\": \"chinanorth3\", \t\"VoiceName\": \"zh-CN-XiaoxiaoNeural\", \t\"Language\": \"zh-CN\", \t\"Rate\": 1 }",
           "member": "string",
           "name": "CustomTTSConfig",
@@ -2167,7 +2178,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "TCCC 实例应用 ID",
+          "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
           "example": "1400000000",
           "member": "uint64",
           "name": "SdkAppId",
@@ -2490,6 +2501,33 @@
           "name": "RetryTimes",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "自定义变量",
+          "example": "[{\"Key\":\"foo\",\"Value\":\"bar\"}]",
+          "member": "Variable",
+          "name": "Variables",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "UUI",
+          "example": "foobar",
+          "member": "string",
+          "name": "UUI",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "被叫属性",
+          "example": "[{\"Callee\":\"13012345678\",\"UUI\":\"foobar\",\"Variables\":[{\"Key\":\"foo\":\"Value\":\"bar\"}]}]",
+          "member": "CalleeAttribute",
+          "name": "CalleeAttributes",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -2629,13 +2667,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "错误坐席列表及错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "错误坐席列表及错误信息",
           "example": "[{ \t\"StaffEmail\": \"foobar@example.com\" }]",
           "member": "ErrStaffItem",
           "name": "ErrorStaffList",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -2715,7 +2753,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "TCCC 实例应用 ID",
+          "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
           "example": "1400000000",
           "member": "uint64",
           "name": "SdkAppId",
@@ -2811,13 +2849,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "无法删除的状态为在线的客服列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "无法删除的状态为在线的客服列表",
           "example": "[\"staff1@xxx.com\",\"staff2@xxx.com\"]",
           "member": "string",
           "name": "OnlineStaffList",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -2962,7 +3000,7 @@
         {
           "disabled": false,
           "document": "任务起始时间戳",
-          "example": "1",
+          "example": "1729905740",
           "member": "int64",
           "name": "NotBefore",
           "output_required": true,
@@ -2972,7 +3010,7 @@
         {
           "disabled": false,
           "document": "任务结束时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "2",
+          "example": "1729905750",
           "member": "int64",
           "name": "NotAfter",
           "output_required": true,
@@ -3217,23 +3255,23 @@
         },
         {
           "disabled": false,
-          "document": "线路维度指标\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[{\"Number\":\"abc\",\"Metrics\":{\"IvrCount\":0,\"QueueCount\":0,\"RingCount\":0,\"AcceptCount\":0,\"TransferOuterCount\":0,\"MaxQueueDuration\":0,\"AvgQueueDuration\":0,\"MaxRingDuration\":0,\"AvgRingDuration\":0,\"MaxAcceptDuration\":0,\"AvgAcceptDuration\":0},\"SkillGroupMetrics\":[{\"SkillGroupId\":0,\"Metrics\":{\"IvrCount\":0,\"QueueCount\":0,\"RingCount\":0,\"AcceptCount\":0,\"TransferOuterCount\":0,\"MaxQueueDuration\":0,\"AvgQueueDuration\":0,\"MaxRingDuration\":0,\"AvgRingDuration\":0,\"MaxAcceptDuration\":0,\"AvgAcceptDuration\":0},\"Name\":\"abc\"}]}]",
+          "document": "线路维度指标",
+          "example": "[{\"Number\":\"021111111\",\"Metrics\":{\"IvrCount\":0,\"QueueCount\":0,\"RingCount\":0,\"AcceptCount\":0,\"TransferOuterCount\":0,\"MaxQueueDuration\":0,\"AvgQueueDuration\":0,\"MaxRingDuration\":0,\"AvgRingDuration\":0,\"MaxAcceptDuration\":0,\"AvgAcceptDuration\":0},\"SkillGroupMetrics\":[{\"SkillGroupId\":0,\"Metrics\":{\"IvrCount\":0,\"QueueCount\":0,\"RingCount\":0,\"AcceptCount\":0,\"TransferOuterCount\":0,\"MaxQueueDuration\":0,\"AvgQueueDuration\":0,\"MaxRingDuration\":0,\"AvgRingDuration\":0,\"MaxAcceptDuration\":0,\"AvgAcceptDuration\":0},\"Name\":\"abc\"}]}]",
           "member": "CallInNumberMetrics",
           "name": "NumberMetrics",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "技能组维度指标\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[{\"SkillGroupId\":0,\"Name\":\"abc\"}]",
+          "document": "技能组维度指标",
+          "example": "[{\"SkillGroupId\":0,\"Name\":\"客服一组\"}]",
           "member": "CallInSkillGroupMetrics",
           "name": "SkillGroupMetrics",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -3402,13 +3440,13 @@
         },
         {
           "disabled": false,
-          "document": "消息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "消息列表",
           "example": "[{\"Timestamp\":1600007226,\"From\":\"John\",\"Messages\":[{\"Type\":\"Text\",\"Content\":\"Hello, how are you?\"},{\"Type\":\"Image\",\"Content\":\"https://example.com/image.jpg\"}]},{\"Timestamp\":1400753150,\"From\":\"Alice\",\"Messages\":[{\"Type\":\"Text\",\"Content\":\"Hi there!\"}]}]",
           "member": "MessageBody",
           "name": "Messages",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -3475,13 +3513,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "总数",
           "example": "12",
           "member": "int64",
           "name": "TotalCount",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3507,7 +3545,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "TCCC 实例应用 ID",
+          "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
           "example": "1400000000",
           "member": "uint64",
           "name": "SdkAppId",
@@ -3593,7 +3631,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "TCCC 实例应用 ID",
+          "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
           "example": "1400000000",
           "member": "uint64",
           "name": "SdkAppId",
@@ -3755,13 +3793,13 @@
         },
         {
           "disabled": false,
-          "document": "服务记录列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[{\"Id\":\"12933\",\"Duration\":100,\"EndStatus\":1,\"Nickname\":\"bar\",\"Type\":2,\"StaffId\":\"foo@tencent.com\",\"Timestamp\":1632814604,\"SessionId\":\"87fa1d7a-4194-4f2a-83dc-d7c293411720\",\"SkillGroupId\":\"1001\",\"SkillGroupName\":\"bar\",\"Satisfaction\":{\"Id\":1,\"Label\":\"满意\"}}]",
+          "document": "服务记录列表",
+          "example": "[{\"Id\":\"12933\",\"Duration\":100,\"EndStatus\":1,\"Nickname\":\"bar\",\"Type\":2,\"StaffId\":\"foo@tencent.com\",\"Timestamp\":1632814604,\"SessionId\":\"87fa1d7a-4194-4f2a-83dc-d7c293411720\",\"SkillGroupId\":\"1001\",\"SkillGroupName\":\"bar\",\"Satisfaction\":{\"Id\":1,\"Label\":\"满意\"},\"ClientUserId\":\"8b997a86199ac962210017263\"}]",
           "member": "IMCdrInfo",
           "name": "IMCdrList",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -4256,83 +4294,83 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务 ID",
           "example": "2569",
           "member": "int64",
           "name": "CampaignId",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "任务名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务名称",
           "example": "新能源SUV推荐",
           "member": "string",
           "name": "Name",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "任务状态 0 待开始 1 进行中 2 已暂停 3 已终止 4 已完成\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务状态 0 待开始 1 进行中 2 已暂停 3 已终止 4 已完成",
           "example": "0",
           "member": "int64",
           "name": "Status",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "任务状态原因 0 正常 1 手动结束 2 超时结束\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务状态原因 0 正常 1 手动结束 2 超时结束",
           "example": "0",
           "member": "int64",
           "name": "StatusReason",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "被叫号码个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "被叫号码个数",
           "example": "1000",
           "member": "int64",
           "name": "CalleeCount",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "已完成的被叫个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "已完成的被叫个数",
           "example": "0",
           "member": "int64",
           "name": "FinishedCalleeCount",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "相同应用内多个任务运行优先级，从高到底 1 - 5\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "相同应用内多个任务运行优先级，从高到底 1 - 5",
           "example": "3",
           "member": "int64",
           "name": "Priority",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "使用的座席技能组 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "使用的座席技能组 ID",
           "example": "255",
           "member": "int64",
           "name": "SkillGroupId",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -4393,23 +4431,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据总量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据总量",
           "example": "66",
           "member": "int64",
           "name": "TotalCount",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据",
           "example": "无",
           "member": "DescribePredictiveDialingCampaignsElement",
           "name": "CampaignList",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -4561,7 +4599,7 @@
         {
           "disabled": true,
           "document": "话单记录",
-          "example": "{\"nonce\":\"123\",\"requestId\":\"456\",\"errorCode\":\"0\",\"msg\":\"OK\",\"numberList\":[{\"id\":1,\"number\":\"0086075512345678\",\"callOutSkillGroup\":[1,2],\"groupIDs\":[1,3],\"calloutAuth\":0,\"maxCallCount\":0,\"maxCallPSec\":0,\"location\":{\"Country\":\"中国\",\"Province\":\"广东\",\"City\":\"深圳\",\"Operator\":\"固话\",\"CityCode\":755,\"NationID\":86}},{\"id\":2,\"number\":\"008601085157015\",\"callOutSkillGroup\":[2,3],\"groupIDs\":[1,2],\"calloutAuth\":0,\"maxCallCount\":0,\"maxCallPSec\":0,\"location\":{\"Country\":\"中国\",\"Province\":\"\",\"City\":\"北京\",\"Operator\":\"固话\",\"CityCode\":10,\"NationID\":86}},{\"id\":3,\"number\":\"008602412345678\",\"callOutSkillGroup\":[1,3],\"groupIDs\":[2,3],\"calloutAuth\":0,\"maxCallCount\":0,\"maxCallPSec\":0,\"location\":{\"Country\":\"中国\",\"Province\":\"辽宁\",\"City\":\"沈阳\",\"Operator\":\"固话\",\"CityCode\":24,\"NationID\":86}},{\"id\":4,\"number\":\"008618926418136\",\"callOutSkillGroup\":[],\"groupIDs\":[],\"calloutAuth\":0,\"maxCallCount\":0,\"maxCallPSec\":0,\"location\":{\"Country\":\"中国\",\"Province\":\"广东\",\"City\":\"深圳\",\"Operator\":\"电信\",\"CityCode\":755,\"NationID\":86}},{\"id\":5,\"number\":\"00819098841234\",\"callOutSkillGroup\":[1,3],\"groupIDs\":[],\"calloutAuth\":0,\"maxCallCount\":0,\"maxCallPSec\":0,\"location\":{\"Country\":\"日本\",\"Province\":\"\",\"City\":\"\",\"Operator\":\"Softbank\",\"CityCode\":0,\"NationID\":81}}]}[{\"ProtectedCaller\":\"abc\",\"EndStatus\":1,\"SessionId\":\"abc\",\"CustomRecordURL\":\"abc\",\"SkillGroupId\":100,\"Direction\":0,\"StartTimestamp\":1590547606,\"AsrUrl\":\"abc\",\"HungUpSide\":\"abc\",\"ServeParticipants\":[{\"TransferTo\":\"abc\",\"TransferFromType\":\"abc\",\"EndStatusString\":\"abc\",\"RecordURL\":\"abc\",\"TransferToType\":\"abc\",\"AcceptTimestamp\":0,\"RecordId\":\"abc\",\"TransferFrom\":\"abc\",\"EndedTimestamp\":0,\"Sequence\":0,\"Phone\":\"abc\",\"SkillGroupName\":\"abc\",\"Mail\":\"abc\",\"RingTimestamp\":0,\"Type\":\"abc\",\"StartTimestamp\":0,\"CustomRecordURL\":\"abc\",\"SkillGroupId\":0}],\"PostIVRKeyPressed\":[{\"Key\":\"abc\",\"Label\":\"abc\"}],\"EndStatusString\":\"abc\",\"UUI\":\"abc\",\"QueuedSkillGroupId\":100,\"RingTimestamp\":1590547606,\"AcceptTimestamp\":1590547606,\"EndedTimestamp\":1590547606,\"Caller\":\"\",\"CallerLocation\":\"abc\",\"Time\":1590547606,\"Callee\":\"\",\"SeatUser\":{\"Name\":\"abc\",\"Phone\":\"abc\",\"UserId\":\"abc\",\"Nick\":\"abc\",\"StaffNumber\":\"abc\",\"Mail\":\"abc\",\"SkillGroupNameList\":[\"abc\"]},\"RecordURL\":\"abc\",\"QueuedTimestamp\":1610627284,\"ProtectedCallee\":\"abc\",\"IVRDuration\":5,\"SkillGroup\":\"abc\",\"Duration\":60,\"IVRKeyPressed\":[\"5\"],\"IVRKeyPressedEx\":[{\"Key\":\"abc\",\"Label\":\"abc\"}],\"QueuedSkillGroupName\":\"abc\",\"Remark\":\"abc\",\"VoicemailRecordURL\":[\"abc\"]},{\"ProtectedCaller\":\"abc\",\"EndStatus\":1,\"SessionId\":\"abc\",\"CustomRecordURL\":\"abc\",\"SkillGroupId\":100,\"Direction\":0,\"StartTimestamp\":1590547630,\"AsrUrl\":\"abc\",\"HungUpSide\":\"abc\",\"ServeParticipants\":[{\"TransferTo\":\"abc\",\"TransferFromType\":\"abc\",\"RecordURL\":\"abc\",\"TransferToType\":\"abc\",\"AcceptTimestamp\":0,\"RecordId\":\"abc\",\"TransferFrom\":\"abc\",\"EndedTimestamp\":0,\"Sequence\":0,\"Phone\":\"abc\",\"EndStatusString\":\"abc\",\"SkillGroupName\":\"abc\",\"Mail\":\"abc\",\"RingTimestamp\":0,\"Type\":\"abc\",\"StartTimestamp\":0,\"CustomRecordURL\":\"abc\",\"SkillGroupId\":0}],\"PostIVRKeyPressed\":[{\"Key\":\"abc\",\"Label\":\"abc\"}],\"EndStatusString\":\"abc\",\"UUI\":\"abc\",\"QueuedSkillGroupId\":100,\"RingTimestamp\":1590547606,\"AcceptTimestamp\":1590547606,\"EndedTimestamp\":1590547606,\"Caller\":\"\",\"CallerLocation\":\"abc\",\"Time\":1590547630,\"Callee\":\"\",\"SeatUser\":{\"Name\":\"abc\",\"Nick\":\"abc\",\"UserId\":\"abc\",\"Phone\":\"abc\",\"StaffNumber\":\"abc\",\"Mail\":\"abc\",\"SkillGroupNameList\":[\"abc\"]},\"RecordURL\":\"abc\",\"QueuedTimestamp\":1610627284,\"ProtectedCallee\":\"abc\",\"IVRDuration\":5,\"SkillGroup\":\"abc\",\"Duration\":62,\"IVRKeyPressed\":[\"5\"],\"IVRKeyPressedEx\":[{\"Key\":\"abc\",\"Label\":\"abc\"}],\"QueuedSkillGroupName\":\"abc\",\"Remark\":\"abc\",\"VoicemailRecordURL\":[\"abc\"]}]",
+          "example": "[{\"AcceptTimestamp\":1729756307,\"AsrStatus\":\"Complete\",\"AsrUrl\":\"https://xxxxxx\",\"Callee\":\"\",\"Caller\":\"\",\"CallerLocation\":\"广东深圳固话\",\"CustomRecordURL\":\"https://xxxxxxxx.mp3\",\"Direction\":0,\"Duration\":8,\"EndStatus\":1,\"EndStatusString\":\"ok\",\"EndedTimestamp\":1729756315,\"HungUpSide\":\"seat\",\"IVRDuration\":15,\"IVRKeyPressed\":[\"香蕉\"],\"IVRKeyPressedEx\":[{\"Key\":\"香蕉\",\"Label\":\"香蕉\",\"NodeLabel\":\"语音识别导航\",\"OriginalContent\":\"香蕉。\",\"TTSPrompt\":\"输入您喜欢吃的水果\",\"Timestamp\":1729756303211}],\"PostIVRKeyPressed\":[{\"Key\":\"1\",\"Label\":\"不满意\",\"NodeLabel\":\"\",\"OriginalContent\":\"\",\"TTSPrompt\":\"\",\"Timestamp\":0}],\"ProtectedCallee\":\"ABABABABA\",\"ProtectedCaller\":\"CDCDCDCDC\",\"QueuedSkillGroupId\":2522,\"QueuedSkillGroupName\":\"test-tel\",\"QueuedTimestamp\":1729756306,\"RecordId\":\"e9fdbff5-2e35-4480-83f7-81917e723fa5\",\"RecordURL\":\"https://xxxxxxx.mp3\",\"Remark\":\"skillGroupId--34588\",\"RingTimestamp\":1729756306,\"SeatUser\":{\"Mail\":\"xxxxxxx@tencent.com\",\"Name\":\"xiaoming\",\"Nick\":\"guanjia\",\"Phone\":\"00861580000000\",\"SkillGroupNameList\":[\"1539\",\"2522\",\"3551\"],\"StaffNumber\":\"20012\",\"UserId\":\"xxxxxxx@tencent.com\"},\"ServeParticipants\":[{\"AcceptTimestamp\":1729756306,\"CustomRecordURL\":\"https://xxxxx.mp3\",\"EndStatusString\":\"ok\",\"EndedTimestamp\":1729756312,\"Mail\":\"xxxxxx@tencent.com\",\"Phone\":\"\",\"RecordId\":\"96eaa575-be4c-48f1-99b8-9722f2f816ec\",\"RecordURL\":\"https://xxxxxx.mp3\",\"RingTimestamp\":1729756306,\"Sequence\":0,\"SkillGroupId\":2522,\"SkillGroupName\":\"test-tel\",\"StartTimestamp\":1729756306,\"TransferFrom\":\"\",\"TransferFromType\":\"\",\"TransferTo\":\"\",\"TransferToType\":\"\",\"Type\":\"staffSeat\"}],\"SessionId\":\"0955de87-c86d-4457-aac2-bee3d0a0b67a\",\"SkillGroup\":\"test-tel\",\"SkillGroupId\":2522,\"StartTimestamp\":1729756291,\"Time\":1729756291,\"UUI\":\"\",\"Uui\":\"\",\"VoicemailAsrURL\":[],\"VoicemailRecordURL\":[]}]",
           "member": "TelCdrInfo",
           "name": "TelCdrs",
           "output_required": true,
@@ -4571,7 +4609,7 @@
         {
           "disabled": false,
           "document": "话单记录",
-          "example": "{\"nonce\":\"123\",\"requestId\":\"456\",\"errorCode\":\"0\",\"msg\":\"OK\",\"numberList\":[{\"id\":1,\"number\":\"0086075512345678\",\"callOutSkillGroup\":[1,2],\"groupIDs\":[1,3],\"calloutAuth\":0,\"maxCallCount\":0,\"maxCallPSec\":0,\"location\":{\"Country\":\"中国\",\"Province\":\"广东\",\"City\":\"深圳\",\"Operator\":\"固话\",\"CityCode\":755,\"NationID\":86}},{\"id\":2,\"number\":\"008601085157015\",\"callOutSkillGroup\":[2,3],\"groupIDs\":[1,2],\"calloutAuth\":0,\"maxCallCount\":0,\"maxCallPSec\":0,\"location\":{\"Country\":\"中国\",\"Province\":\"\",\"City\":\"北京\",\"Operator\":\"固话\",\"CityCode\":10,\"NationID\":86}},{\"id\":3,\"number\":\"008602412345678\",\"callOutSkillGroup\":[1,3],\"groupIDs\":[2,3],\"calloutAuth\":0,\"maxCallCount\":0,\"maxCallPSec\":0,\"location\":{\"Country\":\"中国\",\"Province\":\"辽宁\",\"City\":\"沈阳\",\"Operator\":\"固话\",\"CityCode\":24,\"NationID\":86}},{\"id\":4,\"number\":\"008618926418136\",\"callOutSkillGroup\":[],\"groupIDs\":[],\"calloutAuth\":0,\"maxCallCount\":0,\"maxCallPSec\":0,\"location\":{\"Country\":\"中国\",\"Province\":\"广东\",\"City\":\"深圳\",\"Operator\":\"电信\",\"CityCode\":755,\"NationID\":86}},{\"id\":5,\"number\":\"00819098841234\",\"callOutSkillGroup\":[1,3],\"groupIDs\":[],\"calloutAuth\":0,\"maxCallCount\":0,\"maxCallPSec\":0,\"location\":{\"Country\":\"日本\",\"Province\":\"\",\"City\":\"\",\"Operator\":\"Softbank\",\"CityCode\":0,\"NationID\":81}}]}[{\"ProtectedCaller\":\"abc\",\"EndStatus\":1,\"SessionId\":\"abc\",\"CustomRecordURL\":\"abc\",\"SkillGroupId\":100,\"Direction\":0,\"StartTimestamp\":1590547606,\"AsrUrl\":\"abc\",\"HungUpSide\":\"abc\",\"ServeParticipants\":[{\"TransferTo\":\"abc\",\"TransferFromType\":\"abc\",\"EndStatusString\":\"abc\",\"RecordURL\":\"abc\",\"TransferToType\":\"abc\",\"AcceptTimestamp\":0,\"RecordId\":\"abc\",\"TransferFrom\":\"abc\",\"EndedTimestamp\":0,\"Sequence\":0,\"Phone\":\"abc\",\"SkillGroupName\":\"abc\",\"Mail\":\"abc\",\"RingTimestamp\":0,\"Type\":\"abc\",\"StartTimestamp\":0,\"CustomRecordURL\":\"abc\",\"SkillGroupId\":0}],\"PostIVRKeyPressed\":[{\"Key\":\"abc\",\"Label\":\"abc\"}],\"EndStatusString\":\"abc\",\"UUI\":\"abc\",\"QueuedSkillGroupId\":100,\"RingTimestamp\":1590547606,\"AcceptTimestamp\":1590547606,\"EndedTimestamp\":1590547606,\"Caller\":\"\",\"CallerLocation\":\"abc\",\"Time\":1590547606,\"Callee\":\"\",\"SeatUser\":{\"Name\":\"abc\",\"Phone\":\"abc\",\"UserId\":\"abc\",\"Nick\":\"abc\",\"StaffNumber\":\"abc\",\"Mail\":\"abc\",\"SkillGroupNameList\":[\"abc\"]},\"RecordURL\":\"abc\",\"QueuedTimestamp\":1610627284,\"ProtectedCallee\":\"abc\",\"IVRDuration\":5,\"SkillGroup\":\"abc\",\"Duration\":60,\"IVRKeyPressed\":[\"5\"],\"IVRKeyPressedEx\":[{\"Key\":\"abc\",\"Label\":\"abc\"}],\"QueuedSkillGroupName\":\"abc\",\"Remark\":\"abc\",\"VoicemailRecordURL\":[\"abc\"]},{\"ProtectedCaller\":\"abc\",\"EndStatus\":1,\"SessionId\":\"abc\",\"CustomRecordURL\":\"abc\",\"SkillGroupId\":100,\"Direction\":0,\"StartTimestamp\":1590547630,\"AsrUrl\":\"abc\",\"HungUpSide\":\"abc\",\"ServeParticipants\":[{\"TransferTo\":\"abc\",\"TransferFromType\":\"abc\",\"RecordURL\":\"abc\",\"TransferToType\":\"abc\",\"AcceptTimestamp\":0,\"RecordId\":\"abc\",\"TransferFrom\":\"abc\",\"EndedTimestamp\":0,\"Sequence\":0,\"Phone\":\"abc\",\"EndStatusString\":\"abc\",\"SkillGroupName\":\"abc\",\"Mail\":\"abc\",\"RingTimestamp\":0,\"Type\":\"abc\",\"StartTimestamp\":0,\"CustomRecordURL\":\"abc\",\"SkillGroupId\":0}],\"PostIVRKeyPressed\":[{\"Key\":\"abc\",\"Label\":\"abc\"}],\"EndStatusString\":\"abc\",\"UUI\":\"abc\",\"QueuedSkillGroupId\":100,\"RingTimestamp\":1590547606,\"AcceptTimestamp\":1590547606,\"EndedTimestamp\":1590547606,\"Caller\":\"\",\"CallerLocation\":\"abc\",\"Time\":1590547630,\"Callee\":\"\",\"SeatUser\":{\"Name\":\"abc\",\"Nick\":\"abc\",\"UserId\":\"abc\",\"Phone\":\"abc\",\"StaffNumber\":\"abc\",\"Mail\":\"abc\",\"SkillGroupNameList\":[\"abc\"]},\"RecordURL\":\"abc\",\"QueuedTimestamp\":1610627284,\"ProtectedCallee\":\"abc\",\"IVRDuration\":5,\"SkillGroup\":\"abc\",\"Duration\":62,\"IVRKeyPressed\":[\"5\"],\"IVRKeyPressedEx\":[{\"Key\":\"abc\",\"Label\":\"abc\"}],\"QueuedSkillGroupName\":\"abc\",\"Remark\":\"abc\",\"VoicemailRecordURL\":[\"abc\"]}]",
+          "example": "[{\"AcceptTimestamp\":1729756307,\"AsrStatus\":\"Complete\",\"AsrUrl\":\"https://xxxxxx\",\"Callee\":\"\",\"Caller\":\"\",\"CallerLocation\":\"广东深圳固话\",\"CustomRecordURL\":\"https://xxxxxxxx.mp3\",\"Direction\":0,\"Duration\":8,\"EndStatus\":1,\"EndStatusString\":\"ok\",\"EndedTimestamp\":1729756315,\"HungUpSide\":\"seat\",\"IVRDuration\":15,\"IVRKeyPressed\":[\"香蕉\"],\"IVRKeyPressedEx\":[{\"Key\":\"香蕉\",\"Label\":\"香蕉\",\"NodeLabel\":\"语音识别导航\",\"OriginalContent\":\"香蕉。\",\"TTSPrompt\":\"输入您喜欢吃的水果\",\"Timestamp\":1729756303211}],\"PostIVRKeyPressed\":[{\"Key\":\"1\",\"Label\":\"不满意\",\"NodeLabel\":\"\",\"OriginalContent\":\"\",\"TTSPrompt\":\"\",\"Timestamp\":0}],\"ProtectedCallee\":\"ABABABABA\",\"ProtectedCaller\":\"CDCDCDCDC\",\"QueuedSkillGroupId\":2522,\"QueuedSkillGroupName\":\"test-tel\",\"QueuedTimestamp\":1729756306,\"RecordId\":\"e9fdbff5-2e35-4480-83f7-81917e723fa5\",\"RecordURL\":\"https://xxxxxxx.mp3\",\"Remark\":\"skillGroupId--34588\",\"RingTimestamp\":1729756306,\"SeatUser\":{\"Mail\":\"xxxxxxx@tencent.com\",\"Name\":\"xiaoming\",\"Nick\":\"guanjia\",\"Phone\":\"00861580000000\",\"SkillGroupNameList\":[\"1539\",\"2522\",\"3551\"],\"StaffNumber\":\"20012\",\"UserId\":\"xxxxxxx@tencent.com\"},\"ServeParticipants\":[{\"AcceptTimestamp\":1729756306,\"CustomRecordURL\":\"https://xxxxx.mp3\",\"EndStatusString\":\"ok\",\"EndedTimestamp\":1729756312,\"Mail\":\"xxxxxx@tencent.com\",\"Phone\":\"\",\"RecordId\":\"96eaa575-be4c-48f1-99b8-9722f2f816ec\",\"RecordURL\":\"https://xxxxxx.mp3\",\"RingTimestamp\":1729756306,\"Sequence\":0,\"SkillGroupId\":2522,\"SkillGroupName\":\"test-tel\",\"StartTimestamp\":1729756306,\"TransferFrom\":\"\",\"TransferFromType\":\"\",\"TransferTo\":\"\",\"TransferToType\":\"\",\"Type\":\"staffSeat\"}],\"SessionId\":\"0955de87-c86d-4457-aac2-bee3d0a0b67a\",\"SkillGroup\":\"test-tel\",\"SkillGroupId\":2522,\"StartTimestamp\":1729756291,\"Time\":1729756291,\"UUI\":\"\",\"Uui\":\"\",\"VoicemailAsrURL\":[],\"VoicemailRecordURL\":[]}]",
           "member": "TelCdrInfo",
           "name": "TelCdrList",
           "output_required": true,
@@ -5062,7 +5100,7 @@
         {
           "disabled": true,
           "document": "话单记录",
-          "example": "[{\"ProtectedCaller\":\"abc\",\"EndStatus\":1,\"SessionId\":\"abc\",\"CustomRecordURL\":\"abc\",\"SkillGroupId\":100,\"Direction\":0,\"StartTimestamp\":1590547606,\"AsrUrl\":\"abc\",\"HungUpSide\":\"abc\",\"ServeParticipants\":[{\"TransferTo\":\"abc\",\"TransferFromType\":\"abc\",\"EndStatusString\":\"abc\",\"RecordURL\":\"abc\",\"TransferToType\":\"abc\",\"AcceptTimestamp\":0,\"RecordId\":\"abc\",\"TransferFrom\":\"abc\",\"EndedTimestamp\":0,\"Sequence\":0,\"Phone\":\"abc\",\"SkillGroupName\":\"abc\",\"Mail\":\"abc\",\"RingTimestamp\":0,\"Type\":\"abc\",\"StartTimestamp\":0,\"CustomRecordURL\":\"abc\",\"SkillGroupId\":0}],\"PostIVRKeyPressed\":[{\"Key\":\"abc\",\"Label\":\"abc\"}],\"EndStatusString\":\"abc\",\"UUI\":\"abc\",\"QueuedSkillGroupId\":100,\"RingTimestamp\":1590547606,\"AcceptTimestamp\":1590547606,\"EndedTimestamp\":1590547606,\"Caller\":\"abc\",\"CallerLocation\":\"abc\",\"Time\":1590547606,\"Callee\":\"abc\",\"SeatUser\":{\"Name\":\"abc\",\"Phone\":\"abc\",\"UserId\":\"abc\",\"Nick\":\"abc\",\"StaffNumber\":\"abc\",\"Mail\":\"abc\",\"SkillGroupNameList\":[\"abc\"]},\"RecordURL\":\"abc\",\"QueuedTimestamp\":1610627284,\"ProtectedCallee\":\"abc\",\"IVRDuration\":5,\"SkillGroup\":\"abc\",\"Duration\":60,\"IVRKeyPressed\":[\"5\"],\"IVRKeyPressedEx\":[{\"Key\":\"abc\",\"Label\":\"abc\"}],\"Remark\":\"abc\",\"QueuedSkillGroupName\":\"abc\",\"VoicemailRecordURL\":[\"abc\"]},{\"ProtectedCaller\":\"abc\",\"EndStatus\":1,\"SessionId\":\"abc\",\"CustomRecordURL\":\"abc\",\"SkillGroupId\":100,\"Direction\":0,\"StartTimestamp\":1590547630,\"AsrUrl\":\"abc\",\"HungUpSide\":\"abc\",\"ServeParticipants\":[{\"TransferTo\":\"abc\",\"TransferFromType\":\"abc\",\"RecordURL\":\"abc\",\"TransferToType\":\"abc\",\"AcceptTimestamp\":0,\"RecordId\":\"abc\",\"TransferFrom\":\"abc\",\"EndedTimestamp\":0,\"Sequence\":0,\"Phone\":\"abc\",\"EndStatusString\":\"abc\",\"SkillGroupName\":\"abc\",\"Mail\":\"abc\",\"RingTimestamp\":0,\"Type\":\"abc\",\"StartTimestamp\":0,\"CustomRecordURL\":\"abc\",\"SkillGroupId\":0}],\"PostIVRKeyPressed\":[{\"Key\":\"abc\",\"Label\":\"abc\"}],\"EndStatusString\":\"abc\",\"UUI\":\"abc\",\"QueuedSkillGroupId\":100,\"RingTimestamp\":1590547606,\"AcceptTimestamp\":1590547606,\"EndedTimestamp\":1590547606,\"Caller\":\"abc\",\"CallerLocation\":\"abc\",\"Time\":1590547630,\"Callee\":\"abc\",\"SeatUser\":{\"Name\":\"abc\",\"Nick\":\"abc\",\"UserId\":\"abc\",\"Phone\":\"abc\",\"StaffNumber\":\"abc\",\"Mail\":\"abc\",\"SkillGroupNameList\":[\"abc\"]},\"RecordURL\":\"abc\",\"QueuedTimestamp\":1610627284,\"ProtectedCallee\":\"abc\",\"IVRDuration\":5,\"SkillGroup\":\"abc\",\"Duration\":62,\"IVRKeyPressed\":[\"5\"],\"IVRKeyPressedEx\":[{\"Key\":\"abc\",\"Label\":\"abc\"}],\"Remark\":\"abc\",\"QueuedSkillGroupName\":\"abc\",\"VoicemailRecordURL\":[\"abc\"]}]",
+          "example": "[{\"AcceptTimestamp\":1729756307,\"AsrStatus\":\"Complete\",\"AsrUrl\":\"https://xxxxxx\",\"Callee\":\"00860200000000\",\"Caller\":\"0086075500000\",\"CallerLocation\":\"广东深圳固话\",\"CustomRecordURL\":\"https://xxxxxxxx.mp3\",\"Direction\":0,\"Duration\":8,\"EndStatus\":1,\"EndStatusString\":\"ok\",\"EndedTimestamp\":1729756315,\"HungUpSide\":\"seat\",\"IVRDuration\":15,\"IVRKeyPressed\":[\"香蕉\"],\"IVRKeyPressedEx\":[{\"Key\":\"香蕉\",\"Label\":\"香蕉\",\"NodeLabel\":\"语音识别导航\",\"OriginalContent\":\"香蕉。\",\"TTSPrompt\":\"输入您喜欢吃的水果\",\"Timestamp\":1729756303211}],\"PostIVRKeyPressed\":[{\"Key\":\"1\",\"Label\":\"不满意\",\"NodeLabel\":\"\",\"OriginalContent\":\"\",\"TTSPrompt\":\"\",\"Timestamp\":0}],\"ProtectedCallee\":\"\",\"ProtectedCaller\":\"\",\"QueuedSkillGroupId\":2522,\"QueuedSkillGroupName\":\"test-tel\",\"QueuedTimestamp\":1729756306,\"RecordId\":\"e9fdbff5-2e35-4480-83f7-81917e723fa5\",\"RecordURL\":\"https://xxxxxxx.mp3\",\"Remark\":\"skillGroupId--34588\",\"RingTimestamp\":1729756306,\"SeatUser\":{\"Mail\":\"xxxxxxx@tencent.com\",\"Name\":\"xiaoming\",\"Nick\":\"guanjia\",\"Phone\":\"00861580000000\",\"SkillGroupNameList\":[\"1539\",\"2522\",\"3551\"],\"StaffNumber\":\"20012\",\"UserId\":\"xxxxxxx@tencent.com\"},\"ServeParticipants\":[{\"AcceptTimestamp\":1729756306,\"CustomRecordURL\":\"https://xxxxx.mp3\",\"EndStatusString\":\"ok\",\"EndedTimestamp\":1729756312,\"Mail\":\"xxxxxx@tencent.com\",\"Phone\":\"\",\"RecordId\":\"96eaa575-be4c-48f1-99b8-9722f2f816ec\",\"RecordURL\":\"https://xxxxxx.mp3\",\"RingTimestamp\":1729756306,\"Sequence\":0,\"SkillGroupId\":2522,\"SkillGroupName\":\"test-tel\",\"StartTimestamp\":1729756306,\"TransferFrom\":\"\",\"TransferFromType\":\"\",\"TransferTo\":\"\",\"TransferToType\":\"\",\"Type\":\"staffSeat\"}],\"SessionId\":\"0955de87-c86d-4457-aac2-bee3d0a0b67a\",\"SkillGroup\":\"test-tel\",\"SkillGroupId\":2522,\"StartTimestamp\":1729756291,\"Time\":1729756291,\"UUI\":\"\",\"Uui\":\"\",\"VoicemailAsrURL\":[],\"VoicemailRecordURL\":[]}]",
           "member": "TelCdrInfo",
           "name": "TelCdrs",
           "output_required": true,
@@ -5072,7 +5110,7 @@
         {
           "disabled": false,
           "document": "话单记录",
-          "example": "[{\"ProtectedCaller\":\"abc\",\"EndStatus\":1,\"SessionId\":\"abc\",\"CustomRecordURL\":\"abc\",\"SkillGroupId\":100,\"Direction\":0,\"StartTimestamp\":1590547606,\"AsrUrl\":\"abc\",\"HungUpSide\":\"abc\",\"ServeParticipants\":[{\"TransferTo\":\"abc\",\"TransferFromType\":\"abc\",\"EndStatusString\":\"abc\",\"RecordURL\":\"abc\",\"TransferToType\":\"abc\",\"AcceptTimestamp\":0,\"RecordId\":\"abc\",\"TransferFrom\":\"abc\",\"EndedTimestamp\":0,\"Sequence\":0,\"Phone\":\"abc\",\"SkillGroupName\":\"abc\",\"Mail\":\"abc\",\"RingTimestamp\":0,\"Type\":\"abc\",\"StartTimestamp\":0,\"CustomRecordURL\":\"abc\",\"SkillGroupId\":0}],\"PostIVRKeyPressed\":[{\"Key\":\"abc\",\"Label\":\"abc\"}],\"EndStatusString\":\"abc\",\"UUI\":\"abc\",\"QueuedSkillGroupId\":100,\"RingTimestamp\":1590547606,\"AcceptTimestamp\":1590547606,\"EndedTimestamp\":1590547606,\"Caller\":\"abc\",\"CallerLocation\":\"abc\",\"Time\":1590547606,\"Callee\":\"abc\",\"SeatUser\":{\"Name\":\"abc\",\"Phone\":\"abc\",\"UserId\":\"abc\",\"Nick\":\"abc\",\"StaffNumber\":\"abc\",\"Mail\":\"abc\",\"SkillGroupNameList\":[\"abc\"]},\"RecordURL\":\"abc\",\"QueuedTimestamp\":1610627284,\"ProtectedCallee\":\"abc\",\"IVRDuration\":5,\"SkillGroup\":\"abc\",\"Duration\":60,\"IVRKeyPressed\":[\"5\"],\"IVRKeyPressedEx\":[{\"Key\":\"abc\",\"Label\":\"abc\"}],\"Remark\":\"abc\",\"QueuedSkillGroupName\":\"abc\",\"VoicemailRecordURL\":[\"abc\"]},{\"ProtectedCaller\":\"abc\",\"EndStatus\":1,\"SessionId\":\"abc\",\"CustomRecordURL\":\"abc\",\"SkillGroupId\":100,\"Direction\":0,\"StartTimestamp\":1590547630,\"AsrUrl\":\"abc\",\"HungUpSide\":\"abc\",\"ServeParticipants\":[{\"TransferTo\":\"abc\",\"TransferFromType\":\"abc\",\"RecordURL\":\"abc\",\"TransferToType\":\"abc\",\"AcceptTimestamp\":0,\"RecordId\":\"abc\",\"TransferFrom\":\"abc\",\"EndedTimestamp\":0,\"Sequence\":0,\"Phone\":\"abc\",\"EndStatusString\":\"abc\",\"SkillGroupName\":\"abc\",\"Mail\":\"abc\",\"RingTimestamp\":0,\"Type\":\"abc\",\"StartTimestamp\":0,\"CustomRecordURL\":\"abc\",\"SkillGroupId\":0}],\"PostIVRKeyPressed\":[{\"Key\":\"abc\",\"Label\":\"abc\"}],\"EndStatusString\":\"abc\",\"UUI\":\"abc\",\"QueuedSkillGroupId\":100,\"RingTimestamp\":1590547606,\"AcceptTimestamp\":1590547606,\"EndedTimestamp\":1590547606,\"Caller\":\"abc\",\"CallerLocation\":\"abc\",\"Time\":1590547630,\"Callee\":\"abc\",\"SeatUser\":{\"Name\":\"abc\",\"Nick\":\"abc\",\"UserId\":\"abc\",\"Phone\":\"abc\",\"StaffNumber\":\"abc\",\"Mail\":\"abc\",\"SkillGroupNameList\":[\"abc\"]},\"RecordURL\":\"abc\",\"QueuedTimestamp\":1610627284,\"ProtectedCallee\":\"abc\",\"IVRDuration\":5,\"SkillGroup\":\"abc\",\"Duration\":62,\"IVRKeyPressed\":[\"5\"],\"IVRKeyPressedEx\":[{\"Key\":\"abc\",\"Label\":\"abc\"}],\"Remark\":\"abc\",\"QueuedSkillGroupName\":\"abc\",\"VoicemailRecordURL\":[\"abc\"]}]",
+          "example": "[{\"AcceptTimestamp\":1729756307,\"AsrStatus\":\"Complete\",\"AsrUrl\":\"https://xxxxxx\",\"Callee\":\"00860200000000\",\"Caller\":\"0086075500000\",\"CallerLocation\":\"广东深圳固话\",\"CustomRecordURL\":\"https://xxxxxxxx.mp3\",\"Direction\":0,\"Duration\":8,\"EndStatus\":1,\"EndStatusString\":\"ok\",\"EndedTimestamp\":1729756315,\"HungUpSide\":\"seat\",\"IVRDuration\":15,\"IVRKeyPressed\":[\"香蕉\"],\"IVRKeyPressedEx\":[{\"Key\":\"香蕉\",\"Label\":\"香蕉\",\"NodeLabel\":\"语音识别导航\",\"OriginalContent\":\"香蕉。\",\"TTSPrompt\":\"输入您喜欢吃的水果\",\"Timestamp\":1729756303211}],\"PostIVRKeyPressed\":[{\"Key\":\"1\",\"Label\":\"不满意\",\"NodeLabel\":\"\",\"OriginalContent\":\"\",\"TTSPrompt\":\"\",\"Timestamp\":0}],\"ProtectedCallee\":\"\",\"ProtectedCaller\":\"\",\"QueuedSkillGroupId\":2522,\"QueuedSkillGroupName\":\"test-tel\",\"QueuedTimestamp\":1729756306,\"RecordId\":\"e9fdbff5-2e35-4480-83f7-81917e723fa5\",\"RecordURL\":\"https://xxxxxxx.mp3\",\"Remark\":\"skillGroupId--34588\",\"RingTimestamp\":1729756306,\"SeatUser\":{\"Mail\":\"xxxxxxx@tencent.com\",\"Name\":\"xiaoming\",\"Nick\":\"guanjia\",\"Phone\":\"00861580000000\",\"SkillGroupNameList\":[\"1539\",\"2522\",\"3551\"],\"StaffNumber\":\"20012\",\"UserId\":\"xxxxxxx@tencent.com\"},\"ServeParticipants\":[{\"AcceptTimestamp\":1729756306,\"CustomRecordURL\":\"https://xxxxx.mp3\",\"EndStatusString\":\"ok\",\"EndedTimestamp\":1729756312,\"Mail\":\"xxxxxx@tencent.com\",\"Phone\":\"\",\"RecordId\":\"96eaa575-be4c-48f1-99b8-9722f2f816ec\",\"RecordURL\":\"https://xxxxxx.mp3\",\"RingTimestamp\":1729756306,\"Sequence\":0,\"SkillGroupId\":2522,\"SkillGroupName\":\"test-tel\",\"StartTimestamp\":1729756306,\"TransferFrom\":\"\",\"TransferFromType\":\"\",\"TransferTo\":\"\",\"TransferToType\":\"\",\"Type\":\"staffSeat\"}],\"SessionId\":\"0955de87-c86d-4457-aac2-bee3d0a0b67a\",\"SkillGroup\":\"test-tel\",\"SkillGroupId\":2522,\"StartTimestamp\":1729756291,\"Time\":1729756291,\"UUI\":\"\",\"Uui\":\"\",\"VoicemailAsrURL\":[],\"VoicemailRecordURL\":[]}]",
           "member": "TelCdrInfo",
           "name": "TelCdrList",
           "output_required": true,
@@ -5117,13 +5155,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "录音转文本信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "录音转文本信息",
           "example": "无",
           "member": "AsrData",
           "name": "AsrDataList",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -5408,7 +5446,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "TCCC 实例应用 ID",
+          "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
           "example": "1400000000",
           "member": "uint64",
           "name": "SdkAppId",
@@ -5514,33 +5552,33 @@
         },
         {
           "disabled": false,
-          "document": "会话ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "会话ID",
           "example": "87fa1d7a-4194-4f2a-83dc-d7c293411720",
           "member": "string",
           "name": "SessionId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "技能组ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "技能组ID",
           "example": "1154",
           "member": "string",
           "name": "SkillGroupId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "技能组名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "技能组名称",
           "example": "foo",
           "member": "string",
           "name": "SkillGroupName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5570,23 +5608,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "满意度值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "满意度值",
           "example": "2",
           "member": "int64",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "满意度标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "满意度标签",
           "example": "非常满意",
           "member": "string",
           "name": "Label",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -5596,63 +5634,63 @@
       "members": [
         {
           "disabled": false,
-          "document": "命中的关键字或者按键\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "命中的关键字或者按键",
           "example": "1",
           "member": "string",
           "name": "Key",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "按键关联的标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "按键关联的标签",
           "example": "非常满意",
           "member": "string",
           "name": "Label",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "Unix 毫秒时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Unix 毫秒时间戳",
           "example": "1729697241440",
           "member": "int64",
           "name": "Timestamp",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "节点标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点标签",
           "example": "分支节点",
           "member": "string",
           "name": "NodeLabel",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "用户原始输入\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户原始输入",
           "example": "1",
           "member": "string",
           "name": "OriginalContent",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "TTS 提示音内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "TTS 提示音内容",
           "example": "无",
           "member": "string",
           "name": "TTSPrompt",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -5760,7 +5798,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "TCCC 实例应用 ID",
+          "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
           "example": "1400000000",
           "member": "uint64",
           "name": "SdkAppId",
@@ -6568,7 +6606,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "TCCC 实例应用 ID",
+          "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
           "example": "1400000000",
           "member": "uint64",
           "name": "SdkAppId",
@@ -6700,13 +6738,13 @@
         },
         {
           "disabled": false,
-          "document": "办公电话购买数（还在有效期内）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "办公电话购买数（还在有效期内）",
           "example": "10",
           "member": "int64",
           "name": "SipBuyNum",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -6738,14 +6776,14 @@
         },
         {
           "disabled": false,
-          "document": "工号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "工号",
           "example": "007",
           "member": "string",
           "name": "StaffNumber",
           "output_required": true,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -6782,25 +6820,25 @@
         },
         {
           "disabled": false,
-          "document": "座席关联的技能组列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "座席关联的技能组列表",
           "example": "\"\"",
           "member": "string",
           "name": "SkillGroupNameList",
           "output_required": true,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "1:管理员\n2:质检员\n3:普通座席\nelse:自定义角色ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "1:管理员\n2:质检员\n3:普通座席\nelse:自定义角色ID",
           "example": "1",
           "member": "int64",
           "name": "Role",
           "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -6810,183 +6848,183 @@
       "members": [
         {
           "disabled": false,
-          "document": "座席邮箱\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "座席邮箱",
           "example": "foo@tencent.com",
           "member": "string",
           "name": "Mail",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "座席电话\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "座席电话",
           "example": "008613012345678",
           "member": "string",
           "name": "Phone",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "振铃时间戳，Unix 秒级时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "振铃时间戳，Unix 秒级时间戳",
           "example": "1611631881",
           "member": "int64",
           "name": "RingTimestamp",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "接听时间戳，Unix 秒级时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "接听时间戳，Unix 秒级时间戳",
           "example": "1611631881",
           "member": "int64",
           "name": "AcceptTimestamp",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "结束时间戳，Unix 秒级时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "结束时间戳，Unix 秒级时间戳",
           "example": "1611631891",
           "member": "int64",
           "name": "EndedTimestamp",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "录音 ID，能够索引到座席侧的录音\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "录音 ID，能够索引到座席侧的录音",
           "example": "1611631881",
           "member": "string",
           "name": "RecordId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "参与者类型，\"staffSeat\", \"outboundSeat\", \"staffPhoneSeat\"\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "参与者类型，\"staffSeat\", \"outboundSeat\", \"staffPhoneSeat\"",
           "example": "staffSeat",
           "member": "string",
           "name": "Type",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "转接来源座席信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "转接来源座席信息",
           "example": "bar@tencent.com",
           "member": "string",
           "name": "TransferFrom",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "转接来源参与者类型，取值与 Type 一致\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "转接来源参与者类型，取值与 Type 一致",
           "example": "staffSeat",
           "member": "string",
           "name": "TransferFromType",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "转接去向座席信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "转接去向座席信息",
           "example": "san@tencent.com",
           "member": "string",
           "name": "TransferTo",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "转接去向参与者类型，取值与 Type 一致\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "转接去向参与者类型，取值与 Type 一致",
           "example": "staffSeat",
           "member": "string",
           "name": "TransferToType",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "技能组 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "技能组 ID",
           "example": "1101",
           "member": "int64",
           "name": "SkillGroupId",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "结束状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "结束状态",
           "example": "ok unconnected seatGiveUp seatForward outboundForward ivrGiveUp ",
           "member": "string",
           "name": "EndStatusString",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "录音 URL\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "录音 URL",
           "example": "https://xxxxxxx",
           "member": "string",
           "name": "RecordURL",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "参与者序号，从 0 开始\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "参与者序号，从 0 开始",
           "example": "0",
           "member": "int64",
           "name": "Sequence",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "开始时间戳，Unix 秒级时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "开始时间戳，Unix 秒级时间戳",
           "example": "1611631881",
           "member": "int64",
           "name": "StartTimestamp",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "技能组名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "技能组名称",
           "example": "tel",
           "member": "string",
           "name": "SkillGroupName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "录音转存第三方COS地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "录音转存第三方COS地址",
           "example": "https://xxxxxxx",
           "member": "string",
           "name": "CustomRecordURL",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -7026,63 +7064,63 @@
         },
         {
           "disabled": false,
-          "document": "会话分配策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "会话分配策略",
           "example": "fifo",
           "member": "string",
           "name": "RoutePolicy",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "会话分配是否优先上次服务座席\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "会话分配是否优先上次服务座席",
           "example": "0",
           "member": "int64",
           "name": "UsingLastSeat",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "单客服最大并发数（电话类型默认1）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "单客服最大并发数（电话类型默认1）",
           "example": "1",
           "member": "int64",
           "name": "MaxConcurrency",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "最后修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最后修改时间",
           "example": "1611631881",
           "member": "int64",
           "name": "LastModifyTimestamp",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "技能组类型0-电话，1-在线，3-音频，4-视频\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "技能组类型0-电话，1-在线，3-音频，4-视频\t",
           "example": "1",
           "member": "int64",
           "name": "SkillGroupType",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "技能组内线号码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "技能组内线号码",
           "example": "6666",
           "member": "string",
           "name": "Alias",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -7168,13 +7206,13 @@
         },
         {
           "disabled": false,
-          "document": "购买办公电话数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "购买办公电话数量",
           "example": "12",
           "member": "int64",
           "name": "SipNum",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -7184,13 +7222,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "座席名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "座席名称",
           "example": "xiaowang",
           "member": "string",
           "name": "Name",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -7204,33 +7242,33 @@
         },
         {
           "disabled": false,
-          "document": "座席电话号码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "座席电话号码",
           "example": "18092226822",
           "member": "string",
           "name": "Phone",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "座席昵称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "座席昵称",
           "example": "xiaohong",
           "member": "string",
           "name": "Nick",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "座席工号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "座席工号",
           "example": "101",
           "member": "string",
           "name": "StaffNumber",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -7244,23 +7282,23 @@
         },
         {
           "disabled": false,
-          "document": "所属技能组列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "所属技能组列表",
           "example": "0",
           "member": "SkillGroupItem",
           "name": "SkillGroupList",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "最后修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最后修改时间",
           "example": "1614149408",
           "member": "int64",
           "name": "LastModifyTimestamp",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -7486,8 +7524,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "呼叫中心实例Id",
-          "example": "1",
+          "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
+          "example": "1400000000",
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
@@ -7582,13 +7620,13 @@
         },
         {
           "disabled": false,
-          "document": "录音 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "录音 ID",
           "example": "1611631881",
           "member": "string",
           "name": "RecordId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -7632,163 +7670,163 @@
         },
         {
           "disabled": false,
-          "document": "IVR 阶段耗时\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "IVR 阶段耗时",
           "example": "5",
           "member": "int64",
           "name": "IVRDuration",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "振铃时间戳，UNIX 秒级时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "振铃时间戳，UNIX 秒级时间戳",
           "example": "1611631881",
           "member": "int64",
           "name": "RingTimestamp",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "接听时间戳，UNIX 秒级时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "接听时间戳，UNIX 秒级时间戳",
           "example": "1611631881",
           "member": "int64",
           "name": "AcceptTimestamp",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "结束时间戳，UNIX 秒级时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "结束时间戳，UNIX 秒级时间戳",
           "example": "1611631881",
           "member": "int64",
           "name": "EndedTimestamp",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "IVR 按键信息 ，e.g. [\"1\",\"2\",\"3\"]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "IVR 按键信息 ，e.g. [\"1\",\"2\",\"3\"]",
           "example": "[\"1\",\"2\",\"3\"]",
           "member": "string",
           "name": "IVRKeyPressed",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "挂机方 seat 座席 user 用户 system 系统\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "挂机方 seat 座席 user 用户 system 系统",
           "example": "user",
           "member": "string",
           "name": "HungUpSide",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "服务参与者列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "服务参与者列表",
           "example": "0",
           "member": "ServeParticipant",
           "name": "ServeParticipants",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "技能组ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "技能组ID",
           "example": "110",
           "member": "int64",
           "name": "SkillGroupId",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "EndStatus与EndStatusString一一对应，具体枚举如下：\n\n**场景\t         EndStatus\tEndStatusString\t状态说明**\n\n电话呼入&呼出\t1\t        ok\t                        正常结束\n\n电话呼入&呼出\t0\t        error\t                系统错误\n\n电话呼入\t             102\t        ivrGiveUp\t        IVR 期间用户放弃\n\n电话呼入\t             103\t        waitingGiveUp\t       会话排队期间用户放弃\n\n电话呼入\t             104\t        ringingGiveUp\t       会话振铃期间用户放弃\n\n电话呼入\t             105\t        noSeatOnline\t       无座席在线\n\n电话呼入              106\t       notWorkTime\t       非工作时间   \n\n电话呼入\t            107\t       ivrEnd\t               IVR 后直接结束\n\n电话呼入\t            100\t      blackList 呼入黑名单 \n\n电话呼出               2\t              unconnected\t未接通\n\n电话呼出             108\t        restrictedCallee\t被叫因高风险受限\n\n电话呼出             109\t        tooManyRequest\t    超频\n\n电话呼出             110\t        restrictedArea\t    外呼盲区\n\n电话呼出             111\t        restrictedTime\t外呼时间限制\n                         \n电话呼出             201            unknown\t未知状态\n\n电话呼出             202            notAnswer\t未接听\n\n电话呼出            203\t    userReject\t拒接挂断\n\n电话呼出\t          204\t    powerOff\t关机\n\n电话呼出           205            numberNotExist\t空号\n\n电话呼出\t         206\t           busy\t通话中\n\n电话呼出   \t        207\t           outOfCredit\t欠费\n\n电话呼出\t         208\t           operatorError\t运营商线路异常\n\n电话呼出         \t209\t           callerCancel\t主叫取消\n\n电话呼出\t        210\t           notInService\t不在服务区\n\n电话呼入&呼出\t211    clientError    客户端错误\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "EndStatus与EndStatusString一一对应，具体枚举如下：\n\n**场景\t         EndStatus\tEndStatusString\t状态说明**\n\n电话呼入&呼出\t1\t        ok\t                        正常结束\n\n电话呼入&呼出\t0\t        error\t                系统错误\n\n电话呼入\t             102\t        ivrGiveUp\t        IVR 期间用户放弃\n\n电话呼入\t             103\t        waitingGiveUp\t       会话排队期间用户放弃\n\n电话呼入\t             104\t        ringingGiveUp\t       会话振铃期间用户放弃\n\n电话呼入\t             105\t        noSeatOnline\t       无座席在线\n\n电话呼入              106\t       notWorkTime\t       非工作时间   \n\n电话呼入\t            107\t       ivrEnd\t               IVR 后直接结束\n\n电话呼入\t            100\t      blackList 呼入黑名单 \n\n电话呼出               2\t              unconnected\t未接通\n\n电话呼出             108\t        restrictedCallee\t被叫因高风险受限\n\n电话呼出             109\t        tooManyRequest\t    超频\n\n电话呼出             110\t        restrictedArea\t    外呼盲区\n\n电话呼出             111\t        restrictedTime\t外呼时间限制\n                         \n电话呼出             201            unknown\t未知状态\n\n电话呼出             202            notAnswer\t未接听\n\n电话呼出            203\t    userReject\t拒接挂断\n\n电话呼出\t          204\t    powerOff\t关机\n\n电话呼出           205            numberNotExist\t空号\n\n电话呼出\t         206\t           busy\t通话中\n\n电话呼出   \t        207\t           outOfCredit\t欠费\n\n电话呼出\t         208\t           operatorError\t运营商线路异常\n\n电话呼出         \t209\t           callerCancel\t主叫取消\n\n电话呼出\t        210\t           notInService\t不在服务区\n\n电话呼入&呼出\t211    clientError    客户端错误\n",
           "example": "ok",
           "member": "string",
           "name": "EndStatusString",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "会话开始时间戳，UNIX 秒级时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "会话开始时间戳，UNIX 秒级时间戳",
           "example": "1611631891",
           "member": "int64",
           "name": "StartTimestamp",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "进入排队时间，Unix 秒级时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "进入排队时间，Unix 秒级时间戳",
           "example": "1611631891",
           "member": "int64",
           "name": "QueuedTimestamp",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "后置IVR按键信息（e.g. [{\"Key\":\"1\",\"Label\":\"非常满意\"}]）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "后置IVR按键信息（e.g. [{\"Key\":\"1\",\"Label\":\"非常满意\"}]）",
           "example": "0",
           "member": "IVRKeyPressedElement",
           "name": "PostIVRKeyPressed",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "排队技能组Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "排队技能组Id",
           "example": "110",
           "member": "int64",
           "name": "QueuedSkillGroupId",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "会话 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "会话 ID",
           "example": "c2b303a5-7814-42f4-ab7d-573b7f195d30",
           "member": "string",
           "name": "SessionId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "主叫号码保护ID，开启号码保护映射功能时有效，且Caller字段置空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "主叫号码保护ID，开启号码保护映射功能时有效，且Caller字段置空",
           "example": "008613XXXX5678",
           "member": "string",
           "name": "ProtectedCaller",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "被叫号码保护ID，开启号码保护映射功能时有效，且Callee字段置空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "被叫号码保护ID，开启号码保护映射功能时有效，且Callee字段置空",
           "example": "008613XXXX5678",
           "member": "string",
           "name": "ProtectedCallee",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": true,
@@ -7802,93 +7840,93 @@
         },
         {
           "disabled": false,
-          "document": "客户自定义数据（User-to-User Interface）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "客户自定义数据（User-to-User Interface）",
           "example": "whatever",
           "member": "string",
           "name": "UUI",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "IVR按键信息（e.g. [{\"Key\":\"1\",\"Label\":\"非常满意\"}]）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "IVR按键信息（e.g. [{\"Key\":\"1\",\"Label\":\"非常满意\"}]）",
           "example": "0",
           "member": "IVRKeyPressedElement",
           "name": "IVRKeyPressedEx",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "获取录音ASR文本信息地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "获取录音ASR文本信息地址",
           "example": "https://api.tccc.qcloud.com/tcccadmin/cdr/getAsrText?session_id=",
           "member": "string",
           "name": "AsrUrl",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "AsrUrl的状态：Complete\n已完成;\nProcessing\n正在生成中;\nNotExists\n无记录(未开启生成离线asr或者无套餐包)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "AsrUrl的状态：Complete\n已完成;\nProcessing\n正在生成中;\nNotExists\n无记录(未开启生成离线asr或者无套餐包)",
           "example": "Complete",
           "member": "string",
           "name": "AsrStatus",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "录音转存第三方COS地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "录音转存第三方COS地址",
           "example": "https://xxxxx",
           "member": "string",
           "name": "CustomRecordURL",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "备注",
           "example": "备注",
           "member": "string",
           "name": "Remark",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "排队技能组名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "排队技能组名称",
           "example": "销售组",
           "member": "string",
           "name": "QueuedSkillGroupName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "通话中语音留言录音URL\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "通话中语音留言录音URL",
           "example": "[\"https://xxxxx\"]",
           "member": "string",
           "name": "VoicemailRecordURL",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "通话中语音留言ASR文本信息地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "通话中语音留言ASR文本信息地址",
           "example": "[\"https://xxxxx\"]",
           "member": "string",
           "name": "VoicemailAsrURL",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -8174,6 +8212,33 @@
           "name": "RetryTimes",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "自定义变量",
+          "example": "[{\"Key\":\"foo\",\"Value\":\"bar\"}]",
+          "member": "Variable",
+          "name": "Variables",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "\tUUI",
+          "example": "foobar",
+          "member": "string",
+          "name": "UUI",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "被叫属性",
+          "example": "[{\"Callee\":\"13012345678\",\"UUI\":\"foobar\",\"Variables\":[{\"Key\":\"foo\":\"Value\":\"bar\"}]}]",
+          "member": "CalleeAttribute",
+          "name": "CalleeAttributes",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -8219,23 +8284,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "文件名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文件名",
           "example": "xxx.mp3",
           "member": "string",
           "name": "FileName",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "失败原因",
           "example": "文件内容重复",
           "member": "string",
           "name": "FailedMsg",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -8269,23 +8334,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "上传失败的文件列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "上传失败的文件列表",
           "example": "无",
           "member": "UploadIvrAudioFailedInfo",
           "name": "FailedFileList",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "上传成功文件列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "上传成功文件列表",
           "example": "无",
           "member": "AudioFileInfo",
           "name": "SuccessFileList",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -8302,9 +8367,10 @@
         {
           "disabled": false,
           "document": "变量名",
-          "example": "key1",
+          "example": "foo",
           "member": "string",
           "name": "Key",
+          "output_required": false,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -8312,15 +8378,16 @@
         {
           "disabled": false,
           "document": "变量值",
-          "example": "value",
+          "example": "bar",
           "member": "string",
           "name": "Value",
+          "output_required": false,
           "required": true,
           "type": "string",
           "value_allowed_null": false
         }
       ],
-      "usage": "in"
+      "usage": "both"
     }
   },
   "version": "1.0"

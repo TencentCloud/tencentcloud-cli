@@ -108,8 +108,16 @@
       {
         "document": "",
         "input": "https://iotvideo.tencentcloudapi.com/?Action=CreateUploadPath\n&ProductId=12345678910\n&FileName=a.zip\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Data\": \"https://ota-device-upgrade-1259781373.cos.ap-guangzhou.myqcloud.com/123456789000/a.zip?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDkY2928wGSrRhkx4FZ88IzIXZxSupxRis%26q-sign-time%3D1582081295%3B1582083095%26q-key-time%3D1582081295%3B1582083095%26q-header-list%3D%26q-url-param-list%3D%26q-signature%3D92a03e11de1ceb3b610597555e2a95bfe16dd05a\",\n        \"RequestId\": \"0353288e-2fb9-4a85-b7fa-8519f21aee34\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": \"***********************\",\n        \"RequestId\": \"0353288e-2fb9-4a85-b7fa-8519f21aee34\"\n    }\n}",
         "title": "获取固件上传路径"
+      }
+    ],
+    "CreateUploadTest": [
+      {
+        "document": "",
+        "input": "https://iotvideo.tencentcloudapi.com/?Action=CreateUploadTest\n&PkgId=yc1m3d\n&Tid=********\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4f7cc74f-e442-431d-b447-50020076f725\",\n        \"Data\": {\n            \"StorageBucket\": \"9ba09148vodbj1259781373-10022853\",\n            \"StorageRegion\": \"ap-beijing\",\n            \"StoragePath\": \"/9ba09148vodbj1259781373/97addbdd5285890796668801187/\",\n            \"SessionKey\": \"*******\",\n            \"TempCertificate\": {\n                \"SecretId\": \"*******\",\n                \"SecretKey\": \"*******\",\n                \"Token\": \"************\",\n                \"ExpiredTime\": 1577340790\n            }\n        }\n    }\n}",
+        "title": "设备申请COS上传临时证书"
       }
     ],
     "CreateUsrToken": [
@@ -188,7 +196,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeliverStorageService\n<公共请求参数>\n\n{\n    \"SrcServiceId\": \"3452345\",\n    \"Tid\": \"2345345\",\n    \"ChnNum\": 123,\n    \"AccessId\": \"4564545645\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"43348837-a756-4939-92b6-77c333c1b96e\",\n        \"SrcServiceId\": \"000001010006aada08000000a68601800a000000a6860100\",\n        \"ServiceId\": \"0000010100d641410b000000b086018004000000b0860100\",\n        \"StorageRegion\": \"\",\n        \"Tid\": \"xxxx\",\n        \"ChnNum\": 0,\n        \"AccessId\": \"9223801602303852555\",\n        \"StartTime\": 1602662040,\n        \"EndTime\": 1605340416,\n        \"Status\": 1,\n        \"Data\": [\n            {\n                \"OrderId\": 56,\n                \"PkgId\": \"yc1m3d\",\n                \"Status\": 3,\n                \"StartTime\": 1602662040,\n                \"EndTime\": 1605340416\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"43348837-a756-4939-92b6-77c333c1b96e\",\n        \"SrcServiceId\": \"000001010006aada08000000a68601800a000000a6860100\",\n        \"ServiceId\": \"0000010100d641410b000000b086018004000000b0860100\",\n        \"StorageRegion\": \"\",\n        \"Tid\": \"xxxx\",\n        \"ChnNum\": 0,\n        \"AccessId\": \"9223801602303852555\",\n        \"StartTime\": 1602662040,\n        \"EndTime\": 1605340416,\n        \"Status\": 1,\n        \"Data\": [\n            {\n                \"OrderId\": \"fffffff\",\n                \"PkgId\": \"yc1m3d\",\n                \"Status\": 3,\n                \"StartTime\": 1602662040,\n                \"EndTime\": 1605340416\n            }\n        ]\n    }\n}",
         "title": "将已购买的云存服务转移到另一设备"
       }
     ],
@@ -368,7 +376,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStorageService\n<公共请求参数>\n\n{\n    \"ServiceId\": \"2300001383\",\n    \"GetFinishedOrder\": true\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"43348837-a756-4939-92b6-77c333c1b96e\",\n        \"ServiceId\": \"000001010006aada08000000a68601800a000000a6860100\",\n        \"StorageRegion\": \"ap-guangzhou\",\n        \"Tid\": \"xxxx\",\n        \"ChnNum\": 0,\n        \"AccessId\": \"9223801559354179592\",\n        \"StartTime\": 1602664844,\n        \"EndTime\": 1613292044,\n        \"Status\": 1,\n        \"Data\": [\n            {\n                \"OrderId\": 57,\n                \"PkgId\": \"yc1m3d\",\n                \"Status\": 4,\n                \"StartTime\": 1602664760,\n                \"EndTime\": 1605343160\n            },\n            {\n                \"OrderId\": 58,\n                \"PkgId\": \"yc1m3d\",\n                \"Status\": 1,\n                \"StartTime\": 1602664844,\n                \"EndTime\": 1605343244\n            },\n            {\n                \"OrderId\": 59,\n                \"PkgId\": \"yc1m3d\",\n                \"Status\": 2,\n                \"StartTime\": 1605343244,\n                \"EndTime\": 1607935244\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"43348837-a756-4939-92b6-77c333c1b96e\",\n        \"ServiceId\": \"000001010006aada08000000a68601800a000000a6860100\",\n        \"StorageRegion\": \"ap-guangzhou\",\n        \"Tid\": \"xxxx\",\n        \"ChnNum\": 0,\n        \"AccessId\": \"9223801559354179592\",\n        \"StartTime\": 1602664844,\n        \"EndTime\": 1613292044,\n        \"Status\": 1,\n        \"Data\": [\n            {\n                \"OrderId\": \"jsldkfjiekfj\",\n                \"PkgId\": \"yc1m3d\",\n                \"Status\": 4,\n                \"StartTime\": 1602664760,\n                \"EndTime\": 1605343160\n            },\n            {\n                \"OrderId\": \"dsffffsdf\",\n                \"PkgId\": \"yc1m3d\",\n                \"Status\": 1,\n                \"StartTime\": 1602664844,\n                \"EndTime\": 1605343244\n            },\n            {\n                \"OrderId\": \"iueuriuewoiruoj\",\n                \"PkgId\": \"yc1m3d\",\n                \"Status\": 2,\n                \"StartTime\": 1605343244,\n                \"EndTime\": 1607935244\n            }\n        ]\n    }\n}",
         "title": "查询云存服务"
       }
     ],
@@ -466,6 +474,14 @@
         "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RefundStorageService\n<公共请求参数>\n\n{\n    \"ServiceId\": \"xxxxxx\",\n    \"OrderId\": \"111\"\n}",
         "output": "{\n    \"Response\": {\n        \"Status\": 2,\n        \"ChnNum\": 0,\n        \"AccessId\": \"xx\",\n        \"ServiceId\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"StartTime\": 1602664760,\n        \"Tid\": \"xx\",\n        \"EndTime\": 1605343160,\n        \"Data\": [\n            {\n                \"OrderId\": \"xx\",\n                \"PkgId\": \"xx\",\n                \"EndTime\": 0,\n                \"StartTime\": 0,\n                \"Status\": 0\n            }\n        ],\n        \"StorageRegion\": \"xx\"\n    }\n}",
         "title": "退订已购买的云存服务"
+      }
+    ],
+    "RenewUploadTest": [
+      {
+        "document": "",
+        "input": "https://iotvideo.tencentcloudapi.com/?Action=RenewUploadTest\n&PkgId=yc1m3d\n&Tid=********\n&SessionKey=***********\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0ff2ba1b-0423-438d-8505-d34774072bfe\",\n        \"Data\": {\n            \"TempCertificate\": {\n                \"SecretId\": \"***********\",\n                \"SecretKey\": \"***********\",\n                \"Token\": \"**********\",\n                \"ExpiredTime\": 1577340489\n            }\n        }\n    }\n}",
+        "title": "设备刷新临时证书"
       }
     ],
     "RunDevice": [

@@ -22,7 +22,7 @@ Output:
                 "EnvironmentId": "env-lljckw12",
                 "LastWorkflowUuid": "94922fcd-107e-4220-9a0f-cc3cd84a9a27",
                 "Message": "",
-                "Name": "test",
+                "Name": "test name",
                 "Region": "ap-guangzhou",
                 "ResourceIds": {
                     "CFSId": "cfs-iwee8gk3",
@@ -35,7 +35,9 @@ Output:
                     "VPCId": "vpc-8yhq1v63"
                 },
                 "Status": "RUNNING",
-                "Type": "KUBERNETES"
+                "Type": "KUBERNETES",
+                "IsDefault": false,
+                "IsManaged": false
             }
         ],
         "RequestId": "1bc7ec7d-5fa9-42af-ac6d-1ef56f3bf625",

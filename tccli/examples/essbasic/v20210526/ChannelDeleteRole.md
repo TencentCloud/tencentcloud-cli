@@ -6,17 +6,17 @@ Input:
 
 ```
 tccli essbasic ChannelDeleteRole --cli-unfold-argument  \
-    --Agent.AppId  jsdk812kxkdfjks***k88123123 \
-    --Agent.ProxyOrganizationOpenId test_org_openid \
-    --Agent.ProxyOperator.OpenId test_openid \
-    --RoleIds 123456**89
+    --Agent.AppId  yDRCLUUgygq2xun5UuO4zjEwg0vjoimj \
+    --Agent.ProxyOrganizationOpenId org_dianziqian \
+    --Agent.ProxyOperator.OpenId n9527 \
+    --RoleIds yDxZ1UyKQDSIMfUuO4zjEw2TyqzKEs16
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": " s19ksdjkkds****ldsjfkdfdf"
+        "RequestId": " 49500cb4-ca5e-4da0-93fb-e15f3a710ed7"
     }
 }
 ```

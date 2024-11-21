@@ -15,7 +15,7 @@ Output:
 {
     "Response": {
         "RequestId": "46757c6e-786c-48ca-b5c4-9fa29ece1c9e",
-        "Data": "abc"
+        "Data": "success"
     }
 }
 ```

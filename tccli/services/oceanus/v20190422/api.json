@@ -1233,6 +1233,16 @@
         },
         {
           "disabled": false,
+          "document": "引用资源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SessionClusterRefItem",
+          "name": "ResourceRefs",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
           "document": "JobManager的规格",
           "example": "1",
           "member": "float",
@@ -1279,6 +1289,46 @@
           "name": "UpdateTime",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "JobManagerCpu",
+          "example": "0",
+          "member": "float",
+          "name": "JobManagerCpu",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "JobManagerMem",
+          "example": "0",
+          "member": "float",
+          "name": "JobManagerMem",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "TaskManagerCpu",
+          "example": "0",
+          "member": "float",
+          "name": "TaskManagerCpu",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "TaskManagerMem",
+          "example": "0",
+          "member": "float",
+          "name": "TaskManagerMem",
+          "output_required": false,
+          "type": "float",
           "value_allowed_null": false
         }
       ],
@@ -5388,6 +5438,36 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "0:代表没开启调优任务，1:开启智能调优，2:代表定时调优\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "ScalingType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "使用CPU数目\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "float",
+          "name": "RunningCpu",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "使用内存数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无1",
+          "member": "float",
+          "name": "RunningMem",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -6880,6 +6960,56 @@
         }
       ],
       "usage": "out"
+    },
+    "SessionClusterRefItem": {
+      "document": "session集群引用资源信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "空间唯一标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "WorkspaceId",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源唯一标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceId",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "版本号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Version",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "引用类型，0:用户资源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Type",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "SlotSharingGroup": {
       "document": "SlotSharingGroup 描述",

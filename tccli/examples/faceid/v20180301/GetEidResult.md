@@ -1,133 +1,136 @@
-**Example 1: 获取所有类型的信息**
+**Example 1: 获取E证通结果信息成功示例**
 
-
+成功获取E证通结果信息。
 
 Input: 
 
 ```
 tccli faceid GetEidResult --cli-unfold-argument  \
     --InfoType 1 \
-    --EidToken CE661F1A-0F1E-45BD-BE13-34C05CEA7681
+    --EidToken CE661F1A-0F1E-45BD-BE133-34C05CEA76812
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Text": {
-            "ErrCode": 0,
-            "ErrMsg": "成功",
-            "IdCard": "",
-            "Name": "",
-            "UseIDType": 1,
-            "OcrNation": null,
-            "OcrAddress": null,
-            "OcrBirth": null,
-            "OcrAuthority": null,
-            "OcrValidDate": null,
-            "OcrName": "爱新觉罗永琪",
-            "OcrIdCard": "440111111111111111",
-            "OcrGender": null,
-            "IdInfoFrom": "abc",
-            "LiveStatus": 0,
-            "LiveMsg": "成功",
-            "Comparestatus": 0,
-            "Comparemsg": "成功",
-            "CompareLibType": "abc",
-            "Sim": "76.52",
-            "Location": null,
-            "Mobile": "13800000000",
-            "Extra": "",
-            "LivenessDetail": [
-                {
-                    "ReqTime": "1577179388135",
-                    "Seq": "3d12da91-db34-4e55-81c3-993a41d7ccb7",
-                    "Idcard": "",
-                    "Name": "",
-                    "CompareLibType": "公安商业库",
-                    "Sim": "76.52",
-                    "IsNeedCharge": true,
-                    "Errcode": 0,
-                    "Errmsg": "成功",
-                    "Livestatus": 0,
-                    "Livemsg": "成功",
-                    "LivenessMode": 1,
-                    "Comparestatus": 0,
-                    "Comparemsg": "成功"
-                }
-            ],
-            "LivenessMode": 1,
-            "NFCRequestIds": [
-                "abc"
-            ],
-            "NFCBillingCounts": 0,
-            "PassNo": "abc",
-            "VisaNum": "abc"
-        },
-        "IdCardData": {
-            "ProcessedBackImage": "base64",
-            "ProcessedFrontImage": "base64",
-            "OcrFront": "base64",
-            "OcrBack": "base64",
-            "Avatar": "base64",
-            "WarnInfos": [
-                0
-            ],
-            "BackWarnInfos": [
-                0
-            ]
-        },
         "BestFrame": {
-            "BestFrame": "base64",
+            "BestFrame": "/9j/4AAQSk...UVoYn/2Q==",
             "BestFrames": [
-                "base64"
+                "/9j/4AAQSk...AT/U//2Q=="
             ]
-        },
-        "IntentionVerifyData": {
-            "IntentionVerifyVideo": "base64",
-            "ErrorCode": 0,
-            "ErrorMessage": "成功",
-            "AsrResult": "",
-            "IntentionVerifyBestFrame": "base64",
-            "AsrResultSimilarity": "0"
         },
         "EidInfo": {
-            "EidCode": "",
-            "EidSign": "",
             "DesKey": "",
+            "EidCode": "OMKhJ5hkbPnA5PKGrzD1oKZ/e8W9w2g1yAOUIry7G/4xMDAw",
+            "EidSign": "MEQCIDt0Xa...YygK4Fhw==",
             "UserInfo": ""
         },
+        "IdCardData": {
+            "Avatar": "",
+            "BackWarnInfos": null,
+            "OcrBack": "",
+            "OcrFront": "",
+            "ProcessedBackImage": "",
+            "ProcessedFrontImage": "",
+            "WarnInfos": null
+        },
+        "IntentionActionResult": null,
         "IntentionQuestionResult": {
-            "ScreenShot": [
-                "base64"
-            ],
-            "FinalResultCode": "0",
-            "AsrResult": [
-                ""
-            ],
-            "Audios": [
-                "base64"
-            ],
-            "Video": "base64",
-            "FinalResultDetailCode": 0,
-            "FinalResultMessage": "Success",
-            "ResultCode": [
-                ""
-            ]
+            "AsrResult": null,
+            "Audios": null,
+            "FinalResultCode": "",
+            "FinalResultDetailCode": null,
+            "FinalResultMessage": null,
+            "ResultCode": null,
+            "ScreenShot": null,
+            "Video": ""
         },
-        "IntentionActionResult": {
-            "FinalResultDetailCode": 0,
-            "FinalResultMessage": "abc",
-            "Details": [
+        "IntentionVerifyData": {
+            "AsrResult": "",
+            "AsrResultSimilarity": "",
+            "ErrorCode": 0,
+            "ErrorMessage": "",
+            "IntentionVerifyBestFrame": "",
+            "IntentionVerifyVideo": ""
+        },
+        "RequestId": "29a30ec8-0c15-4566-a5ab-99f88a3f0821",
+        "Text": {
+            "CompareLibType": "权威库",
+            "Comparemsg": "成功",
+            "Comparestatus": 0,
+            "ErrCode": 0,
+            "ErrMsg": "成功",
+            "Extra": "",
+            "IdCard": "",
+            "IdInfoFrom": "其他",
+            "LiveMsg": "成功",
+            "LiveStatus": 0,
+            "LivenessInfoTag": [
+                "01"
+            ],
+            "LivenessDetail": [
                 {
-                    "Video": "abc",
-                    "ScreenShot": [
-                        "abc"
-                    ]
+                    "CompareLibType": "权威库",
+                    "Comparemsg": "成功",
+                    "Comparestatus": 0,
+                    "Errcode": 0,
+                    "Errmsg": "成功",
+                    "Idcard": "",
+                    "IsNeedCharge": true,
+                    "Livemsg": "成功",
+                    "LivenessMode": 4,
+                    "Livestatus": 0,
+                    "Name": "",
+                    "ReqTime": "1730451371368",
+                    "Seq": "092ff8ca-4d1c-4c2122-b513-ec8ced564c9a",
+                    "Sim": "97.31"
                 }
-            ]
+            ],
+            "LivenessMode": 4,
+            "Location": "",
+            "Mobile": "",
+            "NFCBillingCounts": 0,
+            "NFCRequestIds": null,
+            "Name": "",
+            "OcrAddress": "",
+            "OcrAuthority": "",
+            "OcrBirth": "",
+            "OcrGender": "",
+            "OcrIdCard": "",
+            "OcrName": "",
+            "OcrNation": "",
+            "OcrValidDate": "",
+            "PassNo": "",
+            "Sim": "97.31",
+            "UseIDType": 0,
+            "VisaNum": ""
+        }
+    }
+}
+```
+
+**Example 2: 获取E证通结果信息失败示例**
+
+获取E证通结果信息失败，传入过期BizToken。
+
+Input: 
+
+```
+tccli faceid GetEidResult --cli-unfold-argument  \
+    --InfoType 1 \
+    --EidToken CE661F1A-0F1E-45B1D-BE133-34C05CEA76812
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Error": {
+            "Code": "InvalidParameterValue.BizTokenExpired",
+            "Message": "BizToken过期。"
         },
-        "RequestId": "f52bac9a-0aee-4fe6-8d34-7de4bce89473"
+        "RequestId": "19f36e49-d419-48a7-b86a-edcb81e71909"
     }
 }
 ```

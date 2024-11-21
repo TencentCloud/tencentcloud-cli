@@ -14,7 +14,7 @@ Output:
 {
     "Response": {
         "Detail": {
-            "ClusterId": "cynosdbmysql-abcd1243",
+            "ClusterId": "cynosdbmysql-sgvwu2is",
             "ClusterName": "cynodbmysql-自定义用户名",
             "Region": "ap-guangzhou",
             "Zone": "ap-guangzhou-1",
@@ -22,15 +22,15 @@ Output:
             "Status": "running",
             "StatusDesc": "运行中",
             "ServerlessStatus": "运行中",
-            "StorageId": "cynosdbmysql-1234abcd",
+            "StorageId": "cynosdbmysql-sgvwu2is",
             "Storage": 20,
             "MaxStorageSize": 1000,
             "MinStorageSize": 10,
             "StoragePayMode": 0,
-            "VpcName": "vpc-abcd1234",
-            "VpcId": "vpc-abcd1234",
-            "SubnetName": "subnet-1234abcd",
-            "SubnetId": "subnet-1234abcd",
+            "VpcName": "vpc-osjw7wbx",
+            "VpcId": "vpc-osjw7wbx",
+            "SubnetName": "subnet-stbcji8s",
+            "SubnetId": "subnet-stbcji8s",
             "Charset": "utf8mb4",
             "CreateTime": "2020-02-20 20:20:20",
             "DbType": "MYSQL",
@@ -62,7 +62,7 @@ Output:
                     "TaskId": 10,
                     "TaskType": "taskAutoBackup",
                     "TaskStatus": "processing",
-                    "ObjectId": "cynosdbmysql-abcd1234",
+                    "ObjectId": "cynosdbmysql-sgvwu2is",
                     "ObjectType": "taskObjTypeCluster"
                 }
             ],
@@ -72,7 +72,7 @@ Output:
             ],
             "InstanceSet": [
                 {
-                    "InstanceId": "cynosdbmysql-ins-abcd1235",
+                    "InstanceId": "cynosdbmysql-ins-xvs9osn2",
                     "InstanceName": "cynosdbmysql-用户自定义名称",
                     "InstanceType": "rw",
                     "InstanceStatus": "running",
@@ -106,7 +106,7 @@ Output:
             "NetworkStatus": "whole_rdma",
             "ResourcePackages": [
                 {
-                    "PackageId": "package-abcd1234",
+                    "PackageId": "package-xbhsw7wk",
                     "PackageType": "CCU",
                     "DeductionPriority": 1
                 }
@@ -120,7 +120,7 @@ Output:
                 }
             ]
         },
-        "RequestId": "requestId-123456789"
+        "RequestId": "6febb6f0-b0fc-11ee-93cb-73a07daf38c5"
     }
 }
 ```

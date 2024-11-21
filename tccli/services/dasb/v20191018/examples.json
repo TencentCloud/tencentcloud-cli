@@ -4,7 +4,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddDeviceGroupMembers\n<公共请求参数>\n\n{\n    \"Id\": 1,\n    \"MemberIdSet\": [\n        1,\n        2,\n        3\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b8961a60-cee7-46b0-a993-2dd233f413fc\"\n    }\n}",
         "title": "添加资产组成员"
       }
     ],
@@ -12,23 +12,23 @@
       {
         "document": "添加用户组成员",
         "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddUserGroupMembers\n<公共请求参数>\n\n{\n    \"Id\": 1,\n    \"MemberIdSet\": [\n        1,\n        2,\n        3\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b7967a60-cee7-46b0-a993-2dd233f413fc\"\n    }\n}",
         "title": "添加用户组成员"
       }
     ],
     "BindDeviceAccountPassword": [
       {
         "document": "绑定主机账号密码",
-        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindDeviceAccountPassword\n<公共请求参数>\n\n{\n    \"Password\": \"xx\",\n    \"Id\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindDeviceAccountPassword\n<公共请求参数>\n\n{\n    \"Password\": \"4457wewe\",\n    \"Id\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b894457a60-cee7-4640-a993-2dd733f413fc\"\n    }\n}",
         "title": "绑定主机账号密码"
       }
     ],
     "BindDeviceAccountPrivateKey": [
       {
         "document": "绑定主机账号私钥",
-        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindDeviceAccountPrivateKey\n<公共请求参数>\n\n{\n    \"PrivateKey\": \"xx\",\n    \"Id\": 1,\n    \"PrivateKeyPassword\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindDeviceAccountPrivateKey\n<公共请求参数>\n\n{\n    \"PrivateKey\": \"sfefdfsfewsgf\",\n    \"Id\": 1,\n    \"PrivateKeyPassword\": \"4wegdffdew\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b8961a60-cee7-46b0-a993-2dd233f413fc\"\n    }\n}",
         "title": "绑定主机账号私钥"
       }
     ],
@@ -36,15 +36,15 @@
       {
         "document": "修改资产绑定的堡垒机服务",
         "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindDeviceResource\n<公共请求参数>\n\n{\n    \"ResourceId\": \"bh-saas-fphjn2p3\",\n    \"DeviceIdSet\": [\n        5186\n    ],\n    \"DomainId\": \"net-4sovwr11w7\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"sdfsadf-sdfasd-sdfsad-sdf2222\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dfac9070-8b23-499e-83b2-a50e3ca059af\"\n    }\n}",
         "title": "修改资产绑定的堡垒机服务"
       }
     ],
     "CreateAcl": [
       {
         "document": "新建访问权限",
-        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAcl\n<公共请求参数>\n\n{\n    \"CmdTemplateIdSet\": [\n        1\n    ],\n    \"Name\": \"abc\",\n    \"UserGroupIdSet\": [\n        1\n    ],\n    \"DeviceGroupIdSet\": [\n        1\n    ],\n    \"AllowDiskRedirect\": true,\n    \"AccountSet\": [\n        \"abc\"\n    ],\n    \"AllowAnyAccount\": true,\n    \"DeviceIdSet\": [\n        1\n    ],\n    \"UserIdSet\": [\n        1\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"Id\": 1,\n        \"RequestId\": \"31jshapqhxmajh12knskal2\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAcl\n<公共请求参数>\n\n{\n    \"CmdTemplateIdSet\": [\n        1\n    ],\n    \"Name\": \"test-name\",\n    \"UserGroupIdSet\": [\n        1\n    ],\n    \"DeviceGroupIdSet\": [\n        1\n    ],\n    \"AllowDiskRedirect\": true,\n    \"AccountSet\": [\n        \"root\"\n    ],\n    \"AllowAnyAccount\": true,\n    \"DeviceIdSet\": [\n        1\n    ],\n    \"UserIdSet\": [\n        1\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Id\": 1,\n        \"RequestId\": \"dfac9070-8b23-499e-83b2-a50e3ca059af\"\n    }\n}",
         "title": "新建访问权限"
       }
     ],
@@ -52,15 +52,15 @@
       {
         "document": "创建主机资产同步任务",
         "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAssetSyncJob\n<公共请求参数>\n\n{\n    \"Category\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0b84addd-45c0-4f57-b5f4-41bd9b2b5421\"\n    }\n}",
         "title": "创建主机资产同步任务"
       }
     ],
     "CreateChangePwdTask": [
       {
         "document": "创建改密任务成功",
-        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateChangePwdTask\n<公共请求参数>\n\n{\n    \"TaskName\": \"test\",\n    \"DeviceIdSet\": [\n        213\n    ],\n    \"AccountSet\": [\n        \"111\"\n    ],\n    \"ChangeMethod\": 1,\n    \"RunAccount\": \"root\",\n    \"AuthGenerationStrategy\": 3,\n    \"Password\": \"Pw1234567\",\n    \"PasswordLength\": 12,\n    \"SmallLetter\": 1,\n    \"BigLetter\": 1,\n    \"Digit\": 1,\n    \"Symbol\": \"JX4h=\",\n    \"CompleteNotify\": 1,\n    \"NotifyEmails\": [\n        \"112@qq.com\",\n        \"115@qq.com\"\n    ],\n    \"FilePassword\": \"123456\",\n    \"DepartmentId\": \"1\",\n    \"Type\": 4,\n    \"Period\": 14,\n    \"FirstTime\": \"2024-04-27T00:00:00+08:00\"\n}",
-        "output": "{\n    \"Response\": {\n        \"OperationId\": \"ops-xxx\",\n        \"RequestId\": \"f0be45dd-8719-46b5-b7ff-xxxx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateChangePwdTask\n<公共请求参数>\n\n{\n    \"TaskName\": \"改密任务\",\n    \"DeviceIdSet\": [\n        213\n    ],\n    \"AccountSet\": [\n        \"admin\",\n        \"root\"\n    ],\n    \"ChangeMethod\": 1,\n    \"RunAccount\": \"root\",\n    \"AuthGenerationStrategy\": 3,\n    \"Password\": \"Pw12**67\",\n    \"PasswordLength\": 12,\n    \"SmallLetter\": 1,\n    \"BigLetter\": 1,\n    \"Digit\": 1,\n    \"Symbol\": \"JX4h=\",\n    \"CompleteNotify\": 1,\n    \"NotifyEmails\": [\n        \"112@qq.com\",\n        \"115@qq.com\"\n    ],\n    \"FilePassword\": \"12***6\",\n    \"DepartmentId\": \"1\",\n    \"Type\": 4,\n    \"Period\": 14,\n    \"FirstTime\": \"2024-04-27T00:00:00+08:00\"\n}",
+        "output": "{\n    \"Response\": {\n        \"OperationId\": \"ops-1a2b3c\",\n        \"RequestId\": \"dfac9070-8b23-499e-83b2-a50e3ca059af\"\n    }\n}",
         "title": "创建改密任务"
       }
     ],
@@ -68,15 +68,15 @@
       {
         "document": "控制台页面新增高危命令模板",
         "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCmdTemplate\n<公共请求参数>\n\n{\n    \"Name\": \"高危模板1\",\n    \"CmdList\": \"rm -rf /*\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Id\": 1,\n        \"RequestId\": \"as1212j\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Id\": 1,\n        \"RequestId\": \"dfac9070-8b23-499e-83b2-a50e3ca059af\"\n    }\n}",
         "title": "新建高危命令模板"
       }
     ],
     "CreateDeviceAccount": [
       {
         "document": "新建主机账号",
-        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDeviceAccount\n<公共请求参数>\n\n{\n    \"Account\": \"xx\",\n    \"DeviceId\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"Id\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDeviceAccount\n<公共请求参数>\n\n{\n    \"Account\": \"user\",\n    \"DeviceId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Id\": 1,\n        \"RequestId\": \"0b84addd-45c0-4f57-b5f4-41bd9b2b5421\"\n    }\n}",
         "title": "新建主机账号"
       }
     ],
@@ -84,31 +84,31 @@
       {
         "document": "新建资产组",
         "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDeviceGroup\n<公共请求参数>\n\n{\n    \"Name\": \"我的资产组\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Id\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Id\": 1,\n        \"RequestId\": \"0b84addd-45c0-4f57-b5f4-41bd9b2b5421\"\n    }\n}",
         "title": "新建资产组"
       }
     ],
     "CreateResource": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateResource\n<公共请求参数>\n\n{\n    \"DeployRegion\": \"ap-guanghzou\",\n    \"DeployZone\": \"ap-guangzhou-1\",\n    \"VpcId\": \"vpc-xxxxxxxx\",\n    \"SubnetId\": \"subnet-xxxxxxxx\",\n    \"ResourceEdition\": \"free\",\n    \"ResourceNode\": 2,\n    \"TimeUnit\": \"m\",\n    \"TimeSpan\": 1,\n    \"PayMode\": 1,\n    \"AutoRenewFlag\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"ResourceId\": \"bh-saas-xxxxxxxx\",\n        \"RequestId\": \"ffb59145-70f9-45e6-99be-fc0a8db82f45\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateResource\n<公共请求参数>\n\n{\n    \"DeployRegion\": \"ap-guanghzou\",\n    \"DeployZone\": \"ap-guangzhou-1\",\n    \"VpcId\": \"vpc-1n3n4m\",\n    \"SubnetId\": \"subnet-9jy1b\",\n    \"ResourceEdition\": \"free\",\n    \"ResourceNode\": 2,\n    \"TimeUnit\": \"m\",\n    \"TimeSpan\": 1,\n    \"PayMode\": 1,\n    \"AutoRenewFlag\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"ResourceId\": \"bh-saas-resource\",\n        \"RequestId\": \"ffb59145-70f9-45e6-99be-fc0a8db82f45\"\n    }\n}",
         "title": "创建堡垒机实例"
       }
     ],
     "CreateUser": [
       {
         "document": "新建用户",
-        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateUser\n<公共请求参数>\n\n{\n    \"UserName\": \"test\",\n    \"ValidateTo\": \"2020-09-22T00:00:00+00:00\",\n    \"RealName\": \"test\",\n    \"GroupIdSet\": [\n        1,\n        1,\n        1\n    ],\n    \"Phone\": \"13811111111\",\n    \"ValidateFrom\": \"2020-09-22T00:00:00+00:00\",\n    \"Email\": \"test@qq.com\",\n    \"AuthType\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"Id\": 1,\n        \"RequestId\": \"123\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateUser\n<公共请求参数>\n\n{\n    \"UserName\": \"zhangsan\",\n    \"ValidateTo\": \"2020-09-22T00:00:00+00:00\",\n    \"RealName\": \"zhangsan\",\n    \"GroupIdSet\": [\n        1,\n        1,\n        1\n    ],\n    \"Phone\": \"138***\",\n    \"ValidateFrom\": \"2020-09-22T00:00:00+00:00\",\n    \"Email\": \"168***@qq.com\",\n    \"AuthType\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Id\": 1,\n        \"RequestId\": \"dfac9070-8b23-499e-83b2-a50e3ca059af\"\n    }\n}",
         "title": "新建用户"
       }
     ],
     "CreateUserGroup": [
       {
         "document": "新建用户组",
-        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateUserGroup\n<公共请求参数>\n\n{\n    \"Name\": \"研发一部\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Id\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateUserGroup\n<公共请求参数>\n\n{\n    \"Name\": \"研发一部\",\n    \"DepartmentId\": \"1.2\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Id\": 1,\n        \"RequestId\": \"0b84addd-45c0-4f57-b5f4-41bd9b2b5421\"\n    }\n}",
         "title": "新建用户组"
       }
     ],
@@ -116,7 +116,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAcls\n<公共请求参数>\n\n{\n    \"IdSet\": [\n        1\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b8961a60-cee7-46b0-a993-2dd233f413fc\"\n    }\n}",
         "title": "删除访问权限"
       }
     ],
@@ -124,7 +124,7 @@
       {
         "document": "删除改密任务",
         "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteChangePwdTask\n<公共请求参数>\n\n{\n    \"IdSet\": [\n        1\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxxxxx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dfac9070-8b23-499e-83b2-a50e3ca059af\"\n    }\n}",
         "title": "删除改密任务"
       }
     ],
@@ -132,7 +132,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCmdTemplates\n<公共请求参数>\n\n{\n    \"IdSet\": [\n        1\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b8961a60-cee7-46b0-a993-2dd233f413fc\"\n    }\n}",
         "title": "删除高危命令模板"
       }
     ],
@@ -140,7 +140,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDeviceAccounts\n<公共请求参数>\n\n{\n    \"IdSet\": [\n        1\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f1a896ea-cbcf-4b4f-9e05-7ffedaa0f7c7\"\n    }\n}",
         "title": "删除主机账号"
       }
     ],
@@ -148,7 +148,7 @@
       {
         "document": "删除资产组成员",
         "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDeviceGroupMembers\n<公共请求参数>\n\n{\n    \"Id\": 1,\n    \"MemberIdSet\": [\n        1,\n        2,\n        3\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f1a896ea-cbcf-4b4f-9e05-7ffedaa0f7c7\"\n    }\n}",
         "title": "删除资产组成员"
       }
     ],
@@ -156,7 +156,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDeviceGroups\n<公共请求参数>\n\n{\n    \"IdSet\": [\n        1\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f1a896ea-cbcf-4b4f-9e05-7ffedaa0f7c7\"\n    }\n}",
         "title": "删除资产组"
       }
     ],
@@ -164,7 +164,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDevices\n<公共请求参数>\n\n{\n    \"IdSet\": [\n        1\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f1a896ea-cbcf-4b4f-9e05-7ffedaa0f7c7\"\n    }\n}",
         "title": "删除主机"
       }
     ],
@@ -172,7 +172,7 @@
       {
         "document": "删除用户组成员",
         "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteUserGroupMembers\n<公共请求参数>\n\n{\n    \"Id\": 1,\n    \"MemberIdSet\": [\n        1,\n        2,\n        3\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f1a896ea-cbcf-4b4f-9e05-7ffedaa0f7c7\"\n    }\n}",
         "title": "删除用户组成员"
       }
     ],
@@ -180,7 +180,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteUserGroups\n<公共请求参数>\n\n{\n    \"IdSet\": [\n        1\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f1a896ea-cbcf-4b4f-9e05-7ffedaa0f7c7\"\n    }\n}",
         "title": "删除用户组"
       }
     ],
@@ -188,15 +188,15 @@
       {
         "document": "删除用户",
         "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteUsers\n<公共请求参数>\n\n{\n    \"IdSet\": [\n        1\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f1a896ea-cbcf-4b4f-9e05-7ffedaa0f7c7\"\n    }\n}",
         "title": "删除用户"
       }
     ],
     "DeployResource": [
       {
         "document": "开通服务，初始化资源，只针对新购资源",
-        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeployResource\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-xxxxxx\",\n    \"Zone\": \"ap-guangzhou-1\",\n    \"ResourceId\": \"bh-saas-xxxxxx\",\n    \"ApCode\": \"ap-guangzhou\",\n    \"SubnetId\": \"subnet-xxxxxx\",\n    \"CidrBlock\": \"10.10.10.0/32\",\n    \"VpcName\": \"vpc1\",\n    \"VpcCidrBlock\": \"10.10.0.0/16\",\n    \"SubnetName\": \"subnet1\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeployResource\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-1a2b3c\",\n    \"Zone\": \"ap-guangzhou-1\",\n    \"ResourceId\": \"bh-saas-1a2b3c\",\n    \"ApCode\": \"ap-guangzhou\",\n    \"SubnetId\": \"subnet-1a2b3c\",\n    \"CidrBlock\": \"10.10.10.0/32\",\n    \"VpcName\": \"vpc1\",\n    \"VpcCidrBlock\": \"10.10.0.0/16\",\n    \"SubnetName\": \"subnet1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dfac9070-8b23-499e-83b2-a50e3ca059af\"\n    }\n}",
         "title": "开通服务"
       }
     ],
@@ -204,13 +204,13 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAcls\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"AclSet\": [\n            {\n                \"Id\": 224,\n                \"Name\": \"云鼎部门权限\",\n                \"AllowDiskRedirect\": true,\n                \"AllowDiskFileUp\": true,\n                \"AllowDiskFileDown\": true,\n                \"AllowClipFileUp\": true,\n                \"AllowClipFileDown\": true,\n                \"AllowClipTextUp\": true,\n                \"AllowClipTextDown\": true,\n                \"AllowShellFileUp\": true,\n                \"AllowShellFileDown\": true,\n                \"AllowFileUp\": true,\n                \"AllowFileDown\": true,\n                \"AllowFileDel\": false,\n                \"MaxFileUpSize\": 0,\n                \"MaxFileDownSize\": 0,\n                \"AllowAnyAccount\": false,\n                \"ValidateFrom\": \"1970-01-01T08:00:01+08:00\",\n                \"ValidateTo\": \"1970-01-01T08:00:01+08:00\",\n                \"Status\": 1,\n                \"UserSet\": [],\n                \"UserGroupSet\": [],\n                \"DeviceSet\": [],\n                \"DeviceGroupSet\": [],\n                \"AccountSet\": [],\n                \"CmdTemplateSet\": [],\n                \"Department\": {\n                    \"Id\": \"1.3.14\",\n                    \"Name\": \"云鼎实验室\",\n                    \"Managers\": null\n                }\n            }\n        ],\n        \"RequestId\": \"aba1efad-4aa2-4ce4-93ce-538e39b5f1f9\",\n        \"TotalCount\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"AclSet\": [\n            {\n                \"Id\": 224,\n                \"Name\": \"云鼎部门权限\",\n                \"AllowDiskRedirect\": true,\n                \"AllowDiskFileUp\": true,\n                \"AllowDiskFileDown\": true,\n                \"AllowClipFileUp\": true,\n                \"AllowClipFileDown\": true,\n                \"AllowClipTextUp\": true,\n                \"AllowClipTextDown\": true,\n                \"AllowShellFileUp\": true,\n                \"AllowShellFileDown\": true,\n                \"AllowFileUp\": true,\n                \"AllowFileDown\": true,\n                \"AllowFileDel\": false,\n                \"MaxFileUpSize\": 0,\n                \"MaxFileDownSize\": 0,\n                \"AllowAnyAccount\": false,\n                \"ValidateFrom\": \"1970-01-01T08:00:01+08:00\",\n                \"ValidateTo\": \"1970-01-01T08:00:01+08:00\",\n                \"Status\": 1,\n                \"UserSet\": [],\n                \"UserGroupSet\": [],\n                \"DeviceSet\": [],\n                \"DeviceGroupSet\": [],\n                \"AccountSet\": [],\n                \"CmdTemplateSet\": [],\n                \"Department\": {\n                    \"Id\": \"1.3.14\",\n                    \"Name\": \"云鼎实验室\",\n                    \"Managers\": []\n                }\n            }\n        ],\n        \"RequestId\": \"aba1efad-4aa2-4ce4-93ce-538e39b5f1f9\",\n        \"TotalCount\": 1\n    }\n}",
         "title": "查询访问权限列表"
       },
       {
         "document": "根据用户和主机查询对应的权限",
         "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAcls\n<公共请求参数>\n\n{\n    \"AuthorizedUserIdSet\": [\n        1,\n        7,\n        8,\n        238\n    ],\n    \"AuthorizedDeviceIdSet\": [\n        63,\n        64,\n        82,\n        100\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"AclSet\": [\n            {\n                \"Id\": 224,\n                \"Name\": \"云鼎部门权限\",\n                \"AllowDiskRedirect\": true,\n                \"AllowDiskFileUp\": true,\n                \"AllowDiskFileDown\": true,\n                \"AllowClipFileUp\": true,\n                \"AllowClipFileDown\": true,\n                \"AllowClipTextUp\": true,\n                \"AllowClipTextDown\": true,\n                \"AllowShellFileUp\": true,\n                \"AllowShellFileDown\": true,\n                \"AllowFileUp\": true,\n                \"AllowFileDown\": true,\n                \"AllowFileDel\": false,\n                \"MaxFileUpSize\": 0,\n                \"MaxFileDownSize\": 0,\n                \"AllowAnyAccount\": false,\n                \"ValidateFrom\": \"1970-01-01T08:00:01+08:00\",\n                \"ValidateTo\": \"1970-01-01T08:00:01+08:00\",\n                \"Status\": 1,\n                \"UserSet\": [],\n                \"UserGroupSet\": [],\n                \"DeviceSet\": [],\n                \"DeviceGroupSet\": [],\n                \"AccountSet\": [],\n                \"CmdTemplateSet\": [],\n                \"Department\": {\n                    \"Id\": \"1.3.14\",\n                    \"Name\": \"云鼎实验室\",\n                    \"Managers\": null\n                }\n            }\n        ],\n        \"RequestId\": \"aba1efaa-4ac2-4ce3-93ce-538539b5f1f9\",\n        \"TotalCount\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"AclSet\": [\n            {\n                \"Id\": 224,\n                \"Name\": \"云鼎部门权限\",\n                \"AllowDiskRedirect\": true,\n                \"AllowDiskFileUp\": true,\n                \"AllowDiskFileDown\": true,\n                \"AllowClipFileUp\": true,\n                \"AllowClipFileDown\": true,\n                \"AllowClipTextUp\": true,\n                \"AllowClipTextDown\": true,\n                \"AllowShellFileUp\": true,\n                \"AllowShellFileDown\": true,\n                \"AllowFileUp\": true,\n                \"AllowFileDown\": true,\n                \"AllowFileDel\": false,\n                \"MaxFileUpSize\": 0,\n                \"MaxFileDownSize\": 0,\n                \"AllowAnyAccount\": false,\n                \"ValidateFrom\": \"1970-01-01T08:00:01+08:00\",\n                \"ValidateTo\": \"1970-01-01T08:00:01+08:00\",\n                \"Status\": 1,\n                \"UserSet\": [],\n                \"UserGroupSet\": [],\n                \"DeviceSet\": [],\n                \"DeviceGroupSet\": [],\n                \"AccountSet\": [],\n                \"CmdTemplateSet\": [],\n                \"Department\": {\n                    \"Id\": \"1.3.14\",\n                    \"Name\": \"云鼎实验室\",\n                    \"Managers\": []\n                }\n            }\n        ],\n        \"RequestId\": \"aba1efaa-4ac2-4ce3-93ce-538539b5f1f9\",\n        \"TotalCount\": 1\n    }\n}",
         "title": "根据用户和主机查询对应的权限"
       }
     ],
@@ -218,7 +218,7 @@
       {
         "document": "查询主机资产自动同步结果",
         "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetSyncStatus\n<公共请求参数>\n\n{\n    \"Category\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxxxxxx\",\n        \"Status\": {\n            \"LastStatus\": 1,\n            \"LastTime\": \"2021-09-22T15:04:05Z07:00\",\n            \"InProcess\": true\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"79b7b771-368d-44b7-b954-f0cceda748e2\",\n        \"Status\": {\n            \"LastStatus\": 1,\n            \"LastTime\": \"2021-09-22T15:04:05+08:00\",\n            \"InProcess\": true\n        }\n    }\n}",
         "title": "查询主机资产自动同步结果"
       }
     ],
@@ -226,15 +226,15 @@
       {
         "document": "查询修改密码任务信息",
         "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeChangePwdTask\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"TaskName\",\n            \"Values\": [\n                \"task1\"\n            ]\n        }\n    ],\n    \"Limit\": 20,\n    \"Offset\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"rid-test\",\n        \"Tasks\": [\n            {\n                \"Id\": 1,\n                \"TaskName\": \"test-xxx\",\n                \"OperationId\": \"ops-xxx\",\n                \"ChangeMethod\": 1,\n                \"RunAccount\": \"root\",\n                \"AuthGenerationStrategy\": 1,\n                \"PasswordLength\": 12,\n                \"SmallLetter\": 1,\n                \"BigLetter\": 1,\n                \"Digit\": 1,\n                \"Symbol\": \"\",\n                \"CompleteNotify\": 1,\n                \"NotifyEmails\": [\n                    \"11323@qq.com\"\n                ],\n                \"FilePassword\": \"xxx\",\n                \"Type\": 4,\n                \"Period\": 0,\n                \"FirstTime\": null,\n                \"NextTime\": null,\n                \"DeviceSet\": [\n                    {\n                        \"Id\": 1,\n                        \"InstanceId\": \"ins-a3dvgvte\",\n                        \"Name\": \"可用-预发标准版-linux\",\n                        \"PublicIp\": \"\",\n                        \"PrivateIp\": \"172.20.0.17\",\n                        \"ApCode\": \"ap-shanghai-fsi\",\n                        \"OsName\": \"TencentOS Server 3.1 (TK4)\",\n                        \"Kind\": 1,\n                        \"Port\": 22,\n                        \"IpPortSet\": null,\n                        \"VpcId\": \"vpc-test\",\n                        \"SubnetId\": \"subnet-test\",\n                        \"AccountCount\": 0,\n                        \"GroupSet\": [],\n                        \"Resource\": {\n                            \"ResourceId\": \"bh-saas-test\",\n                            \"ResourceName\": \"T-Sec-堡垒机（SaaS型）/专业版\",\n                            \"ApCode\": \"ap-shanghai-fsi\",\n                            \"Zone\": \"ap-shanghai-fsi-1\",\n                            \"Pid\": 10,\n                            \"SvArgs\": \"sv_cds_dasb_saas_ex_pro_xxx\",\n                            \"PackageBandwidth\": 0,\n                            \"PackageNode\": 0,\n                            \"LogDeliveryArgs\": \"\",\n                            \"LogDelivery\": \"\",\n                            \"ProductCode\": \"p_cds_dasb\",\n                            \"SubProductCode\": \"sp_cds_dasb_bh_saas_pro\",\n                            \"VpcId\": \"vpc-test\",\n                            \"VpcName\": \"Default-VPC\",\n                            \"VpcCidrBlock\": \"172.20.0.0/16\",\n                            \"SubnetId\": \"subnet-test\",\n                            \"SubnetName\": \"1qu\",\n                            \"CidrBlock\": \"172.20.50.0/24\",\n                            \"Nodes\": 50,\n                            \"UsedNodes\": 2,\n                            \"PublicIpSet\": [\n                                \"101.35.32.101\"\n                            ],\n                            \"PrivateIpSet\": [\n                                \"172.20.50.50\"\n                            ],\n                            \"RenewFlag\": 2,\n                            \"CreateTime\": \"2024-04-28T11:00:59+08:00\",\n                            \"ExpireTime\": \"2024-05-28T11:00:59+08:00\",\n                            \"Expired\": false,\n                            \"Deployed\": true,\n                            \"Status\": 1,\n                            \"ExtendPoints\": 0,\n                            \"DeployModel\": 0,\n                            \"CdcClusterId\": \"\",\n                            \"ModuleSet\": []\n                        },\n                        \"Department\": {\n                            \"Id\": \"1\",\n                            \"Name\": \"总部\",\n                            \"Managers\": null,\n                            \"ManagerUsers\": null\n                        }\n                    }\n                ],\n                \"AccountSet\": [\n                    \"test042303\",\n                    \"test042304\",\n                    \"test042305\",\n                    \"test092702\"\n                ],\n                \"Department\": {\n                    \"Id\": \"1\",\n                    \"Name\": \"总部\",\n                    \"Managers\": null,\n                    \"ManagerUsers\": null\n                }\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"rid-test\",\n        \"Tasks\": [\n            {\n                \"Id\": 1,\n                \"TaskName\": \"test-asdwasd\",\n                \"OperationId\": \"ops-wesggdsfhfds\",\n                \"ChangeMethod\": 1,\n                \"RunAccount\": \"root\",\n                \"AuthGenerationStrategy\": 1,\n                \"PasswordLength\": 12,\n                \"SmallLetter\": 1,\n                \"BigLetter\": 1,\n                \"Digit\": 1,\n                \"Symbol\": \"&$#@\",\n                \"CompleteNotify\": 1,\n                \"NotifyEmails\": [\n                    \"11323@qq.com\"\n                ],\n                \"FilePassword\": \"dfgdeagdffaersde\",\n                \"Type\": 4,\n                \"Period\": 0,\n                \"FirstTime\": \"2020-09-22T00:00:00+08:00\",\n                \"NextTime\": \"2020-09-22T00:00:00+08:00\",\n                \"DeviceSet\": [\n                    {\n                        \"Id\": 1,\n                        \"InstanceId\": \"ins-a3dvgvte\",\n                        \"Name\": \"可用-预发标准版-linux\",\n                        \"PublicIp\": \"192.168.47.56\",\n                        \"PrivateIp\": \"172.20.0.17\",\n                        \"ApCode\": \"ap-shanghai-fsi\",\n                        \"OsName\": \"TencentOS Server 3.1 (TK4)\",\n                        \"Kind\": 1,\n                        \"Port\": 22,\n                        \"IpPortSet\": [\n                            \"8047\"\n                        ],\n                        \"VpcId\": \"vpc-test\",\n                        \"SubnetId\": \"subnet-test\",\n                        \"AccountCount\": 0,\n                        \"GroupSet\": [],\n                        \"Resource\": {\n                            \"ResourceId\": \"bh-saas-test\",\n                            \"ResourceName\": \"T-Sec-堡垒机（SaaS型）/专业版\",\n                            \"ApCode\": \"ap-shanghai-fsi\",\n                            \"Zone\": \"ap-shanghai-fsi-1\",\n                            \"Pid\": 10,\n                            \"SvArgs\": \"sv_cds_dasb_saas_ex_pro_dfsa\",\n                            \"PackageBandwidth\": 0,\n                            \"PackageNode\": 0,\n                            \"LogDeliveryArgs\": \"sv_cds_dasb_saas_sfwwe\",\n                            \"LogDelivery\": \"sc_cds_dasb_saas_xwad\",\n                            \"ProductCode\": \"p_cds_dasb\",\n                            \"SubProductCode\": \"sp_cds_dasb_bh_saas_pro\",\n                            \"VpcId\": \"vpc-test\",\n                            \"VpcName\": \"Default-VPC\",\n                            \"VpcCidrBlock\": \"172.20.0.0/16\",\n                            \"SubnetId\": \"subnet-test\",\n                            \"SubnetName\": \"1qu\",\n                            \"CidrBlock\": \"172.20.50.0/24\",\n                            \"Nodes\": 50,\n                            \"UsedNodes\": 2,\n                            \"PublicIpSet\": [\n                                \"101.35.32.101\"\n                            ],\n                            \"PrivateIpSet\": [\n                                \"172.20.50.50\"\n                            ],\n                            \"RenewFlag\": 2,\n                            \"CreateTime\": \"2024-04-28T11:00:59+08:00\",\n                            \"ExpireTime\": \"2024-05-28T11:00:59+08:00\",\n                            \"Expired\": false,\n                            \"Deployed\": true,\n                            \"Status\": 1,\n                            \"ExtendPoints\": 0,\n                            \"DeployModel\": 0,\n                            \"CdcClusterId\": \"cdc-dfsed-eda\",\n                            \"ModuleSet\": []\n                        },\n                        \"Department\": {\n                            \"Id\": \"1\",\n                            \"Name\": \"总部\",\n                            \"Managers\": [],\n                            \"ManagerUsers\": []\n                        }\n                    }\n                ],\n                \"AccountSet\": [\n                    \"test042303\",\n                    \"test042304\",\n                    \"test042305\",\n                    \"test092702\"\n                ],\n                \"Department\": {\n                    \"Id\": \"1\",\n                    \"Name\": \"总部\",\n                    \"Managers\": [],\n                    \"ManagerUsers\": []\n                }\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
         "title": "查询修改密码任务信息"
       }
     ],
     "DescribeChangePwdTaskDetail": [
       {
         "document": "查询改密计划详情",
-        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeChangePwdTaskDetail\n<公共请求参数>\n\n{\n    \"OperationId\": \"ops-xxx\",\n    \"Filters\": [\n        {\n            \"Name\": \"InstanceId\",\n            \"Values\": [\n                \"ins-xxx\"\n            ]\n        }\n    ],\n    \"Offset\": 0,\n    \"Limit\": 20\n}",
-        "output": "{\n    \"Response\": {\n        \"Details\": [\n            {\n                \"Device\": {\n                    \"Id\": 1,\n                    \"InstanceId\": \"ins-test\",\n                    \"Name\": \"linux\",\n                    \"PublicIp\": \"\",\n                    \"PrivateIp\": \"172.20.0.1\",\n                    \"ApCode\": \"ap-shanghai-fsi\",\n                    \"OsName\": \"TencentOS Server 3.1 (TK4)\",\n                    \"Kind\": 1,\n                    \"Port\": 22,\n                    \"IpPortSet\": null,\n                    \"VpcId\": \"vpc-test\",\n                    \"SubnetId\": \"subnet-test\",\n                    \"AccountCount\": 0,\n                    \"GroupSet\": [\n                        {\n                            \"Id\": 1,\n                            \"Name\": \"测试\",\n                            \"Department\": {\n                                \"Id\": \"\",\n                                \"Name\": \"\",\n                                \"Managers\": null,\n                                \"ManagerUsers\": null\n                            },\n                            \"Count\": 0\n                        }\n                    ],\n                    \"Resource\": {\n                        \"ResourceId\": \"bh-saas-test\",\n                        \"ResourceName\": \"T-Sec-堡垒机（SaaS型）/专业版\",\n                        \"ApCode\": \"ap-shanghai-fsi\",\n                        \"Zone\": \"ap-shanghai-fsi-1\",\n                        \"Pid\": 10,\n                        \"SvArgs\": \"sv_cds_dasb_saas_ex_pro_xxx\",\n                        \"PackageBandwidth\": 0,\n                        \"PackageNode\": 0,\n                        \"LogDeliveryArgs\": \"\",\n                        \"LogDelivery\": \"\",\n                        \"ProductCode\": \"p_cds_dasb\",\n                        \"SubProductCode\": \"sp_cds_dasb_bh_saas_pro\",\n                        \"VpcId\": \"vpc-test\",\n                        \"VpcName\": \"Default-VPC\",\n                        \"VpcCidrBlock\": \"172.20.0.0/16\",\n                        \"SubnetId\": \"subnet-test\",\n                        \"SubnetName\": \"1qu\",\n                        \"CidrBlock\": \"172.20.50.0/24\",\n                        \"Nodes\": 50,\n                        \"UsedNodes\": 2,\n                        \"PublicIpSet\": [\n                            \"1.1.1.1\"\n                        ],\n                        \"PrivateIpSet\": [\n                            \"172.0.0.1\"\n                        ],\n                        \"RenewFlag\": 2,\n                        \"CreateTime\": \"2024-04-28T11:00:59+08:00\",\n                        \"ExpireTime\": \"2024-05-28T11:00:59+08:00\",\n                        \"Expired\": false,\n                        \"Deployed\": true,\n                        \"Status\": 1,\n                        \"ExtendPoints\": 0,\n                        \"DeployModel\": 0,\n                        \"CdcClusterId\": \"\",\n                        \"ModuleSet\": []\n                    },\n                    \"Department\": {\n                        \"Id\": \"1\",\n                        \"Name\": \"总部\",\n                        \"Managers\": null,\n                        \"ManagerUsers\": null\n                    }\n                },\n                \"Account\": \"worktest\",\n                \"LastChangeStatus\": 1\n            }\n        ],\n        \"RequestId\": \"rid-test\",\n        \"TotalCount\": 1\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeChangePwdTaskDetail\n<公共请求参数>\n\n{\n    \"OperationId\": \"ops-addsfa\",\n    \"Filters\": [\n        {\n            \"Name\": \"InstanceId\",\n            \"Values\": [\n                \"ins-asdfasdffas\"\n            ]\n        }\n    ],\n    \"Offset\": 0,\n    \"Limit\": 20\n}",
+        "output": "{\n    \"Response\": {\n        \"Details\": [\n            {\n                \"Device\": {\n                    \"Id\": 1,\n                    \"InstanceId\": \"ins-bhtest\",\n                    \"Name\": \"linux\",\n                    \"PublicIp\": \"100.10.1.1\",\n                    \"PrivateIp\": \"172.20.0.1\",\n                    \"ApCode\": \"ap-shanghai-fsi\",\n                    \"OsName\": \"TencentOS Server 3.1 (TK4)\",\n                    \"Kind\": 1,\n                    \"Port\": 22,\n                    \"IpPortSet\": [\n                        \"127.0.0.1:80\"\n                    ],\n                    \"VpcId\": \"vpc-bhtest\",\n                    \"SubnetId\": \"subnet-bhtest\",\n                    \"AccountCount\": 0,\n                    \"GroupSet\": [\n                        {\n                            \"Id\": 1,\n                            \"Name\": \"测试组\",\n                            \"Department\": {\n                                \"Id\": \"1.2\",\n                                \"Name\": \"运维部\",\n                                \"Managers\": [],\n                                \"ManagerUsers\": []\n                            },\n                            \"Count\": 1\n                        }\n                    ],\n                    \"Resource\": {\n                        \"ResourceId\": \"bh-saas-test\",\n                        \"ResourceName\": \"T-Sec-堡垒机（SaaS型）/专业版\",\n                        \"ApCode\": \"ap-shanghai-fsi\",\n                        \"Zone\": \"ap-shanghai-fsi-1\",\n                        \"Pid\": 10,\n                        \"SvArgs\": \"sv_cds_dasb_saas_ex_pro_sdfsa\",\n                        \"PackageBandwidth\": 0,\n                        \"PackageNode\": 0,\n                        \"LogDeliveryArgs\": \"sv_cds_dasb_saas_sadsas\",\n                        \"LogDelivery\": \"sc_cds_dasb_saas_asawda\",\n                        \"ProductCode\": \"p_cds_dasb\",\n                        \"SubProductCode\": \"sp_cds_dasb_bh_saas_pro\",\n                        \"VpcId\": \"vpc-test\",\n                        \"VpcName\": \"Default-VPC\",\n                        \"VpcCidrBlock\": \"172.20.0.0/16\",\n                        \"SubnetId\": \"subnet-test\",\n                        \"SubnetName\": \"1qu\",\n                        \"CidrBlock\": \"172.20.50.0/24\",\n                        \"Nodes\": 50,\n                        \"UsedNodes\": 2,\n                        \"PublicIpSet\": [\n                            \"1.1.1.1\"\n                        ],\n                        \"PrivateIpSet\": [\n                            \"172.0.0.1\"\n                        ],\n                        \"RenewFlag\": 2,\n                        \"CreateTime\": \"2024-04-28T11:00:59+08:00\",\n                        \"ExpireTime\": \"2024-05-28T11:00:59+08:00\",\n                        \"Expired\": false,\n                        \"Deployed\": true,\n                        \"Status\": 1,\n                        \"ExtendPoints\": 0,\n                        \"DeployModel\": 0,\n                        \"CdcClusterId\": \"cdc-dfsed-eda\",\n                        \"ModuleSet\": []\n                    },\n                    \"Department\": {\n                        \"Id\": \"1\",\n                        \"Name\": \"总部\",\n                        \"Managers\": [],\n                        \"ManagerUsers\": []\n                    }\n                },\n                \"Account\": \"worktest\",\n                \"LastChangeStatus\": 1\n            }\n        ],\n        \"RequestId\": \"dfac9070-8b23-499e-83b2-a50e3ca059af\",\n        \"TotalCount\": 1\n    }\n}",
         "title": "查询改密计划详情"
       }
     ],
@@ -242,7 +242,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCmdTemplates\n<公共请求参数>\n\n{\n    \"IdSet\": [\n        1\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"CmdTemplateSet\": [\n            {\n                \"CmdList\": \"xx\",\n                \"Name\": \"xx\",\n                \"Id\": 1\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"CmdTemplateSet\": [\n            {\n                \"Id\": 1,\n                \"Name\": \"测试模板\",\n                \"CmdList\": \"rm -rf\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"4e7e46fe-c632-4a67-92ac-b9e8228c78ea\"\n    }\n}",
         "title": "查询命令模板列表"
       }
     ],
@@ -250,15 +250,15 @@
       {
         "document": "",
         "input": "https://dasb.tencentcloudapi.com/?Action=DescribeDasbImageIds\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"BaseImageId\": \"SDFEEF\",\n        \"AiImageId\": \"XXXXX\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"BaseImageId\": \"uV5wX7yZ9a\",\n        \"AiImageId\": \"jK7lM9nO1p\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "获取镜像列表"
       }
     ],
     "DescribeDeviceAccounts": [
       {
         "document": "查询主机账号列表",
-        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDeviceAccounts\n<公共请求参数>\n\n{\n    \"DeviceId\": 1,\n    \"Account\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\",\n        \"DeviceAccountSet\": [\n            {\n                \"BoundPrivateKey\": true,\n                \"Account\": \"xx\",\n                \"Id\": 1,\n                \"BoundPassword\": true,\n                \"DeviceId\": 1\n            }\n        ]\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDeviceAccounts\n<公共请求参数>\n\n{\n    \"DeviceId\": 1,\n    \"Account\": \"root\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"79b7b771-368d-44b7-b954-f0cceda748e2\",\n        \"DeviceAccountSet\": [\n            {\n                \"BoundPrivateKey\": true,\n                \"Account\": \"root\",\n                \"Id\": 1,\n                \"BoundPassword\": true,\n                \"DeviceId\": 1\n            }\n        ]\n    }\n}",
         "title": "查询主机账号列表"
       }
     ],
@@ -266,15 +266,15 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDeviceGroupMembers\n<公共请求参数>\n\n{\n    \"Id\": 1,\n    \"Name\": \"研发主机\",\n    \"Bound\": true\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"DeviceSet\": [\n            {\n                \"Id\": 1,\n                \"InstanceId\": \"abc\",\n                \"Name\": \"abc\",\n                \"PublicIp\": \"abc\",\n                \"PrivateIp\": \"abc\",\n                \"ApCode\": \"abc\",\n                \"OsName\": \"abc\",\n                \"Kind\": 1,\n                \"Port\": 1,\n                \"GroupSet\": [\n                    {\n                        \"Id\": 1,\n                        \"Name\": \"abc\",\n                        \"Department\": {\n                            \"Id\": \"abc\",\n                            \"Name\": \"abc\",\n                            \"Managers\": [\n                                \"abc\"\n                            ],\n                            \"ManagerUsers\": [\n                                {\n                                    \"ManagerId\": \"abc\",\n                                    \"ManagerName\": \"abc\"\n                                }\n                            ]\n                        },\n                        \"Count\": 1\n                    }\n                ],\n                \"AccountCount\": 1,\n                \"VpcId\": \"abc\",\n                \"SubnetId\": \"abc\",\n                \"Resource\": {\n                    \"ResourceId\": \"abc\",\n                    \"ApCode\": \"abc\",\n                    \"SvArgs\": \"abc\",\n                    \"VpcId\": \"abc\",\n                    \"Nodes\": 1,\n                    \"RenewFlag\": 1,\n                    \"ExpireTime\": \"2020-09-22T00:00:00+00:00\",\n                    \"Status\": 1,\n                    \"ResourceName\": \"abc\",\n                    \"Pid\": 1,\n                    \"CreateTime\": \"2020-09-22T00:00:00+00:00\",\n                    \"ProductCode\": \"abc\",\n                    \"SubProductCode\": \"abc\",\n                    \"Zone\": \"abc\",\n                    \"Expired\": true,\n                    \"Deployed\": true,\n                    \"VpcName\": \"abc\",\n                    \"VpcCidrBlock\": \"abc\",\n                    \"SubnetId\": \"abc\",\n                    \"SubnetName\": \"abc\",\n                    \"CidrBlock\": \"abc\",\n                    \"PublicIpSet\": [\n                        \"abc\"\n                    ],\n                    \"PrivateIpSet\": [\n                        \"abc\"\n                    ],\n                    \"ModuleSet\": [\n                        \"abc\"\n                    ],\n                    \"UsedNodes\": 1,\n                    \"ExtendPoints\": 1,\n                    \"PackageBandwidth\": 1,\n                    \"PackageNode\": 1,\n                    \"LogDeliveryArgs\": \"abc\",\n                    \"ClbSet\": [\n                        {\n                            \"ClbIp\": \"abc\"\n                        }\n                    ],\n                    \"DomainCount\": 0,\n                    \"UsedDomainCount\": 1,\n                    \"Trial\": 1,\n                    \"LogDelivery\": \"abc\",\n                    \"CdcClusterId\": \"abc\",\n                    \"DeployModel\": 0\n                },\n                \"Department\": {\n                    \"Id\": \"abc\",\n                    \"Name\": \"abc\",\n                    \"Managers\": [\n                        \"abc\"\n                    ],\n                    \"ManagerUsers\": [\n                        {\n                            \"ManagerId\": \"abc\",\n                            \"ManagerName\": \"abc\"\n                        }\n                    ]\n                },\n                \"IpPortSet\": [\n                    \"abc\"\n                ],\n                \"DomainId\": \"abc\",\n                \"DomainName\": \"abc\",\n                \"EnableSSL\": 0,\n                \"SSLCertName\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"DeviceSet\": [\n            {\n                \"Id\": 1,\n                \"InstanceId\": \"Ins-89j1\",\n                \"Name\": \"运维主机\",\n                \"PublicIp\": \"192.0.2.123\",\n                \"PrivateIp\": \"10.0.0.123\",\n                \"ApCode\": \"ap-guangzhou\",\n                \"OsName\": \"linux\",\n                \"Kind\": 1,\n                \"Port\": 1,\n                \"GroupSet\": [\n                    {\n                        \"Id\": 1,\n                        \"Name\": \"group1213\",\n                        \"Department\": {\n                            \"Id\": \"dept1415\",\n                            \"Name\": \"deptName1617\",\n                            \"Managers\": [\n                                \"manager1819\"\n                            ],\n                            \"ManagerUsers\": [\n                                {\n                                    \"ManagerId\": \"managerId2021\",\n                                    \"ManagerName\": \"managerName2223\"\n                                }\n                            ]\n                        },\n                        \"Count\": 1\n                    }\n                ],\n                \"AccountCount\": 1,\n                \"VpcId\": \"vpc-2425\",\n                \"SubnetId\": \"subnet-2627\",\n                \"Resource\": {\n                    \"ResourceId\": \"bh-saas-resource\",\n                    \"ApCode\": \"ap3031\",\n                    \"SvArgs\": \"sv3233\",\n                    \"VpcId\": \"vpc3435\",\n                    \"Nodes\": 1,\n                    \"RenewFlag\": 1,\n                    \"ExpireTime\": \"2020-09-22T00:00:00+00:00\",\n                    \"Status\": 1,\n                    \"ResourceName\": \"resource3637\",\n                    \"Pid\": 1,\n                    \"CreateTime\": \"2020-09-22T00:00:00+00:00\",\n                    \"ProductCode\": \"product3839\",\n                    \"SubProductCode\": \"subproduct4041\",\n                    \"Zone\": \"zone4243\",\n                    \"Expired\": true,\n                    \"Deployed\": true,\n                    \"VpcName\": \"vpc-4445\",\n                    \"VpcCidrBlock\": \"10.0.0.0/16\",\n                    \"SubnetId\": \"subnet-4647\",\n                    \"SubnetName\": \"subnetName4849\",\n                    \"CidrBlock\": \"10.0.1.0/24\",\n                    \"PublicIpSet\": [\n                        \"192.0.2.123\"\n                    ],\n                    \"PrivateIpSet\": [\n                        \"10.0.0.123\"\n                    ],\n                    \"ModuleSet\": [\n                        \"module5051\"\n                    ],\n                    \"UsedNodes\": 1,\n                    \"ExtendPoints\": 1,\n                    \"PackageBandwidth\": 1,\n                    \"PackageNode\": 1,\n                    \"LogDeliveryArgs\": \"log5253\",\n                    \"ClbSet\": [\n                        {\n                            \"ClbIp\": \"192.0.2.123\"\n                        }\n                    ],\n                    \"DomainCount\": 1,\n                    \"UsedDomainCount\": 1,\n                    \"Trial\": 1,\n                    \"LogDelivery\": \"log5455\",\n                    \"CdcClusterId\": \"cdc5657\",\n                    \"DeployModel\": 1\n                },\n                \"Department\": {\n                    \"Id\": \"dept6061\",\n                    \"Name\": \"deptName6263\",\n                    \"Managers\": [\n                        \"manager6465\"\n                    ],\n                    \"ManagerUsers\": [\n                        {\n                            \"ManagerId\": \"managerId6667\",\n                            \"ManagerName\": \"managerName6869\"\n                        }\n                    ]\n                },\n                \"IpPortSet\": [\n                    \"192.0.2.123:80\"\n                ],\n                \"DomainId\": \"net-default\",\n                \"DomainName\": \"默认网络域\",\n                \"EnableSSL\": 0,\n                \"SSLCertName\": \"bh-test-cert\"\n            }\n        ],\n        \"RequestId\": \"dfac9070-8b23-499e-83b2-a50e3ca059af\"\n    }\n}",
         "title": "查询资产组成员列表"
       }
     ],
     "DescribeDeviceGroups": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDeviceGroups\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"GroupSet\": [\n            {\n                \"Department\": {\n                    \"Managers\": [\n                        \"152017428\"\n                    ],\n                    \"Id\": \"1.2.3.4\",\n                    \"Name\": \"研发部\"\n                },\n                \"Id\": 1,\n                \"Name\": \"运维组\"\n            }\n        ],\n        \"RequestId\": \"cf109eee-b651-4313-9b49-073a9f55732f\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDeviceGroups\n<公共请求参数>\n\n{\n    \"IdSet\": [\n        1\n    ],\n    \"Name\": \"wadw\",\n    \"Offset\": 1,\n    \"Limit\": 1,\n    \"DepartmentId\": \"1.3.5\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"GroupSet\": [\n            {\n                \"Department\": {\n                    \"Managers\": [\n                        \"152017428\"\n                    ],\n                    \"Id\": \"1.2.3.4\",\n                    \"Name\": \"研发部\"\n                },\n                \"Id\": 1,\n                \"Name\": \"运维组\",\n                \"Count\": 1\n            }\n        ],\n        \"RequestId\": \"cf109eee-b651-4313-9b49-073a9f55732f\"\n    }\n}",
         "title": "查询资产组列表"
       }
     ],
@@ -282,61 +282,61 @@
       {
         "document": "查询资产列表",
         "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDevices\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"DeviceSet\": [\n            {\n                \"Id\": 1,\n                \"InstanceId\": \"abc\",\n                \"Name\": \"abc\",\n                \"PublicIp\": \"abc\",\n                \"PrivateIp\": \"abc\",\n                \"ApCode\": \"abc\",\n                \"OsName\": \"abc\",\n                \"Kind\": 1,\n                \"Port\": 1,\n                \"GroupSet\": [\n                    {\n                        \"Id\": 1,\n                        \"Name\": \"abc\",\n                        \"Department\": {\n                            \"Id\": \"abc\",\n                            \"Name\": \"abc\",\n                            \"Managers\": [\n                                \"abc\"\n                            ],\n                            \"ManagerUsers\": [\n                                {\n                                    \"ManagerId\": \"abc\",\n                                    \"ManagerName\": \"abc\"\n                                }\n                            ]\n                        },\n                        \"Count\": 1\n                    }\n                ],\n                \"AccountCount\": 1,\n                \"VpcId\": \"abc\",\n                \"SubnetId\": \"abc\",\n                \"Resource\": {\n                    \"ResourceId\": \"abc\",\n                    \"ApCode\": \"abc\",\n                    \"SvArgs\": \"abc\",\n                    \"VpcId\": \"abc\",\n                    \"Nodes\": 1,\n                    \"RenewFlag\": 1,\n                    \"ExpireTime\": \"2020-09-22T00:00:00+00:00\",\n                    \"Status\": 1,\n                    \"ResourceName\": \"abc\",\n                    \"Pid\": 1,\n                    \"CreateTime\": \"2020-09-22T00:00:00+00:00\",\n                    \"ProductCode\": \"abc\",\n                    \"SubProductCode\": \"abc\",\n                    \"Zone\": \"abc\",\n                    \"Expired\": true,\n                    \"Deployed\": true,\n                    \"VpcName\": \"abc\",\n                    \"VpcCidrBlock\": \"abc\",\n                    \"SubnetId\": \"abc\",\n                    \"SubnetName\": \"abc\",\n                    \"CidrBlock\": \"abc\",\n                    \"PublicIpSet\": [\n                        \"abc\"\n                    ],\n                    \"PrivateIpSet\": [\n                        \"abc\"\n                    ],\n                    \"ModuleSet\": [\n                        \"abc\"\n                    ],\n                    \"UsedNodes\": 1,\n                    \"ExtendPoints\": 1,\n                    \"PackageBandwidth\": 1,\n                    \"PackageNode\": 1,\n                    \"LogDeliveryArgs\": \"abc\",\n                    \"LogDelivery\": \"abc\"\n                },\n                \"Department\": {\n                    \"Id\": \"abc\",\n                    \"Name\": \"abc\",\n                    \"Managers\": [\n                        \"abc\"\n                    ],\n                    \"ManagerUsers\": [\n                        {\n                            \"ManagerId\": \"abc\",\n                            \"ManagerName\": \"abc\"\n                        }\n                    ]\n                },\n                \"IpPortSet\": [\n                    \"abc\"\n                ]\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"DeviceSet\": [\n            {\n                \"Id\": 1,\n                \"InstanceId\": \"ins-bhtest\",\n                \"Name\": \"test-name\",\n                \"PublicIp\": \"10.10.10.10\",\n                \"PrivateIp\": \"127.0.0.1\",\n                \"ApCode\": \"ap-guangzhou\",\n                \"OsName\": \"Linux\",\n                \"Kind\": 1,\n                \"Port\": 1,\n                \"GroupSet\": [\n                    {\n                        \"Id\": 1,\n                        \"Name\": \"test-group-name\",\n                        \"Department\": {\n                            \"Id\": \"1\",\n                            \"Name\": \"1\",\n                            \"Managers\": [\n                                \"1\"\n                            ],\n                            \"ManagerUsers\": [\n                                {\n                                    \"ManagerId\": \"1\",\n                                    \"ManagerName\": \"test-name\"\n                                }\n                            ]\n                        },\n                        \"Count\": 1\n                    }\n                ],\n                \"AccountCount\": 1,\n                \"VpcId\": \"vpc-bhtest\",\n                \"SubnetId\": \"subnet-bhtest\",\n                \"Resource\": {\n                    \"ResourceId\": \"bh-saas-test\",\n                    \"ApCode\": \"ap-guangzhou\",\n                    \"SvArgs\": \"sv_cds_dasb_saas_standard_50node\",\n                    \"VpcId\": \"vpc-bhtest\",\n                    \"Nodes\": 1,\n                    \"RenewFlag\": 1,\n                    \"ExpireTime\": \"2020-09-22T00:00:00+08:00\",\n                    \"Status\": 1,\n                    \"ResourceName\": \"test-name\",\n                    \"Pid\": 1,\n                    \"CreateTime\": \"2020-09-22T00:00:00+08:00\",\n                    \"ProductCode\": \"code\",\n                    \"SubProductCode\": \"code\",\n                    \"Zone\": \"ap-guangzhou-1\",\n                    \"Expired\": true,\n                    \"Deployed\": true,\n                    \"VpcName\": \"vpc-name\",\n                    \"VpcCidrBlock\": \"192.168.11.0/24\",\n                    \"SubnetId\": \"subnet-bhtest\",\n                    \"SubnetName\": \"test-name\",\n                    \"CidrBlock\": \"192.168.11.0/24\",\n                    \"PublicIpSet\": [\n                        \"10.10.10.10\"\n                    ],\n                    \"PrivateIpSet\": [\n                        \"192.168.0.1\"\n                    ],\n                    \"ModuleSet\": [\n                        \"module1\"\n                    ],\n                    \"UsedNodes\": 1,\n                    \"ExtendPoints\": 1,\n                    \"PackageBandwidth\": 1,\n                    \"PackageNode\": 1,\n                    \"LogDeliveryArgs\": \"sv_cds_dasb_saas_wafdsd\",\n                    \"LogDelivery\": \"sc_cds_dasb_saas_aswafa\"\n                },\n                \"Department\": {\n                    \"Id\": \"1\",\n                    \"Name\": \"1\",\n                    \"Managers\": [\n                        \"1\"\n                    ],\n                    \"ManagerUsers\": [\n                        {\n                            \"ManagerId\": \"1\",\n                            \"ManagerName\": \"1\"\n                        }\n                    ]\n                },\n                \"IpPortSet\": [\n                    \"127.0.0.1:80\"\n                ]\n            }\n        ],\n        \"RequestId\": \"ec7676f4-a498-4ef5-ad68-6678b16e45d7\"\n    }\n}",
         "title": "查询资产列表"
       },
       {
         "document": "根据用户查询有访问权限的资产",
-        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDevices\n<公共请求参数>\n\n{\n    \"AuthorizedUserIdSet\": [\n        1,\n        7,\n        8\n    ],\n    \"Name\": \"xxx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"DeviceSet\": [\n            {\n                \"Id\": 1,\n                \"InstanceId\": \"abc\",\n                \"Name\": \"abc\",\n                \"PublicIp\": \"abc\",\n                \"PrivateIp\": \"abc\",\n                \"ApCode\": \"abc\",\n                \"OsName\": \"abc\",\n                \"Kind\": 1,\n                \"Port\": 1,\n                \"GroupSet\": [\n                    {\n                        \"Id\": 1,\n                        \"Name\": \"abc\",\n                        \"Department\": {\n                            \"Id\": \"abc\",\n                            \"Name\": \"abc\",\n                            \"Managers\": [\n                                \"abc\"\n                            ],\n                            \"ManagerUsers\": [\n                                {\n                                    \"ManagerId\": \"abc\",\n                                    \"ManagerName\": \"abc\"\n                                }\n                            ]\n                        },\n                        \"Count\": 1\n                    }\n                ],\n                \"AccountCount\": 1,\n                \"VpcId\": \"abc\",\n                \"SubnetId\": \"abc\",\n                \"Resource\": {\n                    \"ResourceId\": \"abc\",\n                    \"ApCode\": \"abc\",\n                    \"SvArgs\": \"abc\",\n                    \"VpcId\": \"abc\",\n                    \"Nodes\": 1,\n                    \"RenewFlag\": 1,\n                    \"ExpireTime\": \"2020-09-22T00:00:00+00:00\",\n                    \"Status\": 1,\n                    \"ResourceName\": \"abc\",\n                    \"Pid\": 1,\n                    \"CreateTime\": \"2020-09-22T00:00:00+00:00\",\n                    \"ProductCode\": \"abc\",\n                    \"SubProductCode\": \"abc\",\n                    \"Zone\": \"abc\",\n                    \"Expired\": true,\n                    \"Deployed\": true,\n                    \"VpcName\": \"abc\",\n                    \"VpcCidrBlock\": \"abc\",\n                    \"SubnetId\": \"abc\",\n                    \"SubnetName\": \"abc\",\n                    \"CidrBlock\": \"abc\",\n                    \"PublicIpSet\": [\n                        \"abc\"\n                    ],\n                    \"PrivateIpSet\": [\n                        \"abc\"\n                    ],\n                    \"ModuleSet\": [\n                        \"abc\"\n                    ],\n                    \"UsedNodes\": 1,\n                    \"ExtendPoints\": 1,\n                    \"PackageBandwidth\": 1,\n                    \"PackageNode\": 1,\n                    \"LogDeliveryArgs\": \"abc\",\n                    \"LogDelivery\": \"abc\"\n                },\n                \"Department\": {\n                    \"Id\": \"abc\",\n                    \"Name\": \"abc\",\n                    \"Managers\": [\n                        \"abc\"\n                    ],\n                    \"ManagerUsers\": [\n                        {\n                            \"ManagerId\": \"abc\",\n                            \"ManagerName\": \"abc\"\n                        }\n                    ]\n                },\n                \"IpPortSet\": [\n                    \"abc\"\n                ]\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDevices\n<公共请求参数>\n\n{\n    \"AuthorizedUserIdSet\": [\n        1,\n        7,\n        8\n    ],\n    \"Name\": \"bhtest\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"DeviceSet\": [\n            {\n                \"Id\": 1,\n                \"InstanceId\": \"ins-bhtest\",\n                \"Name\": \"test-device-name\",\n                \"PublicIp\": \"10.10.10.10\",\n                \"PrivateIp\": \"127.0.0.1\",\n                \"ApCode\": \"ap-guangzhou\",\n                \"OsName\": \"Linux\",\n                \"Kind\": 1,\n                \"Port\": 1,\n                \"GroupSet\": [\n                    {\n                        \"Id\": 1,\n                        \"Name\": \"test-group-name\",\n                        \"Department\": {\n                            \"Id\": \"1\",\n                            \"Name\": \"1\",\n                            \"Managers\": [\n                                \"1\"\n                            ],\n                            \"ManagerUsers\": [\n                                {\n                                    \"ManagerId\": \"1\",\n                                    \"ManagerName\": \"test-name\"\n                                }\n                            ]\n                        },\n                        \"Count\": 1\n                    }\n                ],\n                \"AccountCount\": 1,\n                \"VpcId\": \"vpc-bhtest\",\n                \"SubnetId\": \"subnet-bhtest\",\n                \"Resource\": {\n                    \"ResourceId\": \"bh-saas-bhtest\",\n                    \"ApCode\": \"ap-guangzhou\",\n                    \"SvArgs\": \"sv_cds_dasb_saas_standard_50node\",\n                    \"VpcId\": \"vpc-bhtest\",\n                    \"Nodes\": 1,\n                    \"RenewFlag\": 1,\n                    \"ExpireTime\": \"2020-09-22T00:00:00+08:00\",\n                    \"Status\": 1,\n                    \"ResourceName\": \"test-name\",\n                    \"Pid\": 1,\n                    \"CreateTime\": \"2020-09-22T00:00:00+08:00\",\n                    \"ProductCode\": \"code\",\n                    \"SubProductCode\": \"code\",\n                    \"Zone\": \"ap-guangzhou-1\",\n                    \"Expired\": true,\n                    \"Deployed\": true,\n                    \"VpcName\": \"vpc-name\",\n                    \"VpcCidrBlock\": \"192.168.11.0/24\",\n                    \"SubnetId\": \"subnet-bhtest\",\n                    \"SubnetName\": \"test-sub-name\",\n                    \"CidrBlock\": \"192.168.11.0/24\",\n                    \"PublicIpSet\": [\n                        \"10.10.10.10\"\n                    ],\n                    \"PrivateIpSet\": [\n                        \"192.168.0.1\"\n                    ],\n                    \"ModuleSet\": [\n                        \"module2\"\n                    ],\n                    \"UsedNodes\": 1,\n                    \"ExtendPoints\": 1,\n                    \"PackageBandwidth\": 1,\n                    \"PackageNode\": 1,\n                    \"LogDeliveryArgs\": \"sv_cds_dasb_saas_asdawsdf\",\n                    \"LogDelivery\": \"sc_cds_dasb_saas_sadfsdggf\"\n                },\n                \"Department\": {\n                    \"Id\": \"1\",\n                    \"Name\": \"1\",\n                    \"Managers\": [\n                        \"1\"\n                    ],\n                    \"ManagerUsers\": [\n                        {\n                            \"ManagerId\": \"1\",\n                            \"ManagerName\": \"1\"\n                        }\n                    ]\n                },\n                \"IpPortSet\": [\n                    \"172.0.45.65:20\"\n                ]\n            }\n        ],\n        \"RequestId\": \"ec7676f4-a498-4ef5-ad68-6678b16e45d7\"\n    }\n}",
         "title": "根据用户查询有访问权限的资产"
       }
     ],
     "DescribeDomains": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDomains\n<公共请求参数>\n\n\n\n\n\n\n\n{\n\n  \"Offset\": 0,\n  \"Limit\": 10,\n  \"Filters\": [{\"Name\": \"Status\",\"Values\": [\"0\"]},{\"Name\": \"Ip\",\"Values\": [\"127.9.9.1\"]}]\n\n}",
-        "output": "{\n    \"Response\": {\n        \"DomainSet\": [\n            {\n                \"Id\": 7,\n                \"DomainId\": \"net-vvr396q5\",\n                \"DomainName\": \"test-name1-9990\",\n                \"Enabled\": 1,\n                \"Status\": 0,\n                \"ResourceId\": \"bh-saas-jtvukub4\",\n                \"CreateTime\": \"2024-04-19T11:11:55+08:00\",\n                \"Default\": 0,\n                \"WhiteIpSet\": [\n                    \"127.9.9.1\",\n                    \"171.0.0.1\"\n                ]\n            }\n        ],\n        \"RequestId\": \"sdfsadf-sdfasd-sdfsad-sdf2222\",\n        \"TotalCount\": 1\n    }\n}",
-        "title": "示例1"
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDomains\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 10,\n    \"Filters\": [\n        {\n            \"Name\": \"Status\",\n            \"Values\": [\n                \"0\"\n            ]\n        },\n        {\n            \"Name\": \"Ip\",\n            \"Values\": [\n                \"127.9.9.1\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"DomainSet\": [\n            {\n                \"Id\": 7,\n                \"DomainId\": \"net-vvr396q5\",\n                \"DomainName\": \"domain-9990\",\n                \"Enabled\": 1,\n                \"Status\": 0,\n                \"ResourceId\": \"bh-saas-jtvukub4\",\n                \"CreateTime\": \"2024-04-19T11:11:55+08:00\",\n                \"Default\": 0,\n                \"WhiteIpSet\": [\n                    \"127.9.9.1\",\n                    \"171.0.0.1\"\n                ]\n            }\n        ],\n        \"RequestId\": \"dfac9070-8b23-499e-83b2-a50e3ca059af\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查询网络域"
       }
     ],
     "DescribeLoginEvent": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLoginEvent\n<公共请求参数>\n\n{\n    \"UserName\": \"xxx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"LoginEventSet\": [\n            {\n                \"UserName\": \"xx\",\n                \"RealName\": \"xx\",\n                \"Result\": 1,\n                \"Time\": \"2020-09-22T00:00:00+00:00\",\n                \"Entry\": 1,\n                \"SourceIp\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLoginEvent\n<公共请求参数>\n\n{\n    \"UserName\": \"Oliver\",\n    \"RealName\": \"Henry\",\n    \"StartTime\": \"2020-09-22T00:00:00+08:00\",\n    \"EndTime\": \"2020-09-22T00:00:00+08:00\",\n    \"SourceIp\": \"127.41.14.47\",\n    \"Entry\": 1,\n    \"Result\": 1,\n    \"Offset\": 1,\n    \"Limit\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"LoginEventSet\": [\n            {\n                \"UserName\": \"Henry\",\n                \"RealName\": \"Oliver\",\n                \"Result\": 1,\n                \"Time\": \"2020-09-22T00:00:00+08:00\",\n                \"Entry\": 1,\n                \"SourceIp\": \"10.45.58.74\"\n            }\n        ],\n        \"RequestId\": \"3bf47843-f8b2-40f7-8963-76d9506eed22\"\n    }\n}",
         "title": "查询登录日志列表"
       }
     ],
     "DescribeOperationEvent": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOperationEvent\n<公共请求参数>\n\n{\n    \"UserName\": \"xxx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"OperationEventSet\": [\n            {\n                \"UserName\": \"xx\",\n                \"Kind\": 1,\n                \"RealName\": \"xx\",\n                \"Result\": 1,\n                \"Time\": \"2020-09-22T00:00:00+00:00\",\n                \"Operation\": \"xx\",\n                \"SourceIp\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOperationEvent\n<公共请求参数>\n\n{\n    \"UserName\": \"Liam\",\n    \"RealName\": \"Noah\",\n    \"StartTime\": \"2020-09-22T00:00:00+00:00\",\n    \"EndTime\": \"2020-09-22T00:00:00+00:00\",\n    \"SourceIp\": \"17.25.24.41\",\n    \"Kind\": 1,\n    \"Result\": 1,\n    \"Offset\": 1,\n    \"Limit\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"OperationEventSet\": [\n            {\n                \"UserName\": \"Liam\",\n                \"Kind\": 1,\n                \"RealName\": \"Noah\",\n                \"Result\": 1,\n                \"Time\": \"2020-09-22T00:00:00+08:00\",\n                \"Operation\": \"新建用户组\",\n                \"SourceIp\": \"10.15.42.47\"\n            }\n        ],\n        \"RequestId\": \"3bf47843-f8b2-40f7-8963-76d9506eed22\"\n    }\n}",
         "title": "查询操作日志列表"
       }
     ],
     "DescribeResources": [
       {
         "document": "查询用户购买的资源信息，包括资源ID，授权点数，vpc，过期时间等。",
-        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeResources\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"rid-test\",\n        \"ResourceSet\": [\n            {\n                \"RenewFlag\": 1,\n                \"Zone\": \"ap-guangzhou-6\",\n                \"SubnetName\": \"subnet-test\",\n                \"Nodes\": 1,\n                \"Status\": 1,\n                \"VpcId\": \"vpc-test\",\n                \"SubProductCode\": \"sp_cds_dasb_bh_saas\",\n                \"ResourceId\": \"bh-saas-test\",\n                \"PackageBandwidth\": 1,\n                \"VpcName\": \"vpc-test\",\n                \"ApCode\": \"ap-guangzhou\",\n                \"SubnetId\": \"subnet-test\",\n                \"ResourceName\": \"T-Sec-堡垒机（SaaS型）/专业版\",\n                \"Expired\": true,\n                \"Deployed\": true,\n                \"ProductCode\": \"p_cds_dasb\",\n                \"PublicIpSet\": [\n                    \"1.1.1.1\"\n                ],\n                \"ModuleSet\": [\n                    \"DB\"\n                ],\n                \"ExtendPoints\": 1,\n                \"UsedNodes\": 1,\n                \"PrivateIpSet\": [\n                    \"1.1.1.1\"\n                ],\n                \"Pid\": 1,\n                \"VpcCidrBlock\": \"192.168.0.0/16\",\n                \"PackageNode\": 1,\n                \"ExpireTime\": \"2020-09-22T00:00:00+00:00\",\n                \"SvArgs\": \"sv_cds_dasb_saas_free_2node\",\n                \"CidrBlock\": \"192.168.11.0/24\",\n                \"CreateTime\": \"2020-09-22T00:00:00+00:00\",\n                \"LogDeliveryArgs\": \"\"\n            }\n        ]\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeResources\n<公共请求参数>\n\n{\n    \"ApCode\": \"ap-guangzhou\",\n    \"VpcId\": \"vpc-eawasddsd\",\n    \"ResourceIds\": [\n        \"bh-sass-wfsddff\"\n    ],\n    \"Limit\": 1,\n    \"Offset\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"rid-test\",\n        \"ResourceSet\": [\n            {\n                \"RenewFlag\": 1,\n                \"Zone\": \"ap-guangzhou-6\",\n                \"SubnetName\": \"subnet-test\",\n                \"Nodes\": 1,\n                \"Status\": 1,\n                \"VpcId\": \"vpc-test\",\n                \"SubProductCode\": \"sp_cds_dasb_bh_saas\",\n                \"ResourceId\": \"bh-saas-test\",\n                \"PackageBandwidth\": 1,\n                \"VpcName\": \"vpc-test\",\n                \"ApCode\": \"ap-guangzhou\",\n                \"SubnetId\": \"subnet-test\",\n                \"ResourceName\": \"T-Sec-堡垒机（SaaS型）/专业版\",\n                \"Expired\": true,\n                \"Deployed\": true,\n                \"ProductCode\": \"p_cds_dasb\",\n                \"PublicIpSet\": [\n                    \"1.1.1.1\"\n                ],\n                \"ModuleSet\": [\n                    \"DB\"\n                ],\n                \"ExtendPoints\": 1,\n                \"UsedNodes\": 1,\n                \"PrivateIpSet\": [\n                    \"1.1.1.1\"\n                ],\n                \"Pid\": 1,\n                \"VpcCidrBlock\": \"192.168.0.0/16\",\n                \"PackageNode\": 1,\n                \"ExpireTime\": \"2020-09-22T00:00:00+00:00\",\n                \"SvArgs\": \"sv_cds_dasb_saas_free_2node\",\n                \"CidrBlock\": \"192.168.11.0/24\",\n                \"CreateTime\": \"2020-09-22T00:00:00+00:00\",\n                \"LogDeliveryArgs\": \"sv_cds_dasb_saas_sdwedfsgdf\"\n            }\n        ]\n    }\n}",
         "title": "查询资源信息"
       }
     ],
     "DescribeUserGroupMembers": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserGroupMembers\n<公共请求参数>\n\n{\n    \"Id\": 1,\n    \"Name\": \"张三\",\n    \"Bound\": true\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"UserSet\": [\n            {\n                \"UserName\": \"xx\",\n                \"AuthType\": 1,\n                \"ValidateTo\": \"2020-09-22T00:00:00+00:00\",\n                \"RealName\": \"xx\",\n                \"ValidateTime\": \"xx\",\n                \"Email\": \"xx\",\n                \"Phone\": \"xx\",\n                \"GroupSet\": [\n                    {\n                        \"Department\": {\n                            \"Managers\": [\n                                \"xx\"\n                            ],\n                            \"Id\": \"xx\",\n                            \"Name\": \"xx\"\n                        },\n                        \"Id\": 1,\n                        \"Name\": \"xx\"\n                    }\n                ],\n                \"DepartmentId\": \"xx\",\n                \"Department\": {\n                    \"Managers\": [\n                        \"xx\"\n                    ],\n                    \"Id\": \"xx\",\n                    \"Name\": \"xx\"\n                },\n                \"ValidateFrom\": \"2020-09-22T00:00:00+00:00\",\n                \"Id\": 1\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserGroupMembers\n<公共请求参数>\n\n{\n    \"Id\": 1,\n    \"Name\": \"张三\",\n    \"Bound\": true,\n    \"Offset\": 1,\n    \"Limit\": 1,\n    \"DepartmentId\": \"1.4\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"UserSet\": [\n            {\n                \"UserName\": \"Aiden\",\n                \"AuthType\": 1,\n                \"ValidateTo\": \"2020-09-22T00:00:00+08:00\",\n                \"RealName\": \"Henry\",\n                \"ValidateTime\": \"2020-09-22T00:00:00+08:00\",\n                \"Email\": \"245***106@163.com\",\n                \"Phone\": \"177****4532\",\n                \"GroupSet\": [\n                    {\n                        \"Department\": {\n                            \"Managers\": [\n                                \"457824365\"\n                            ],\n                            \"Id\": \"10\",\n                            \"Name\": \"测试组\"\n                        },\n                        \"Id\": 1,\n                        \"Name\": \"开发组\",\n                        \"Count\": 1\n                    }\n                ],\n                \"DepartmentId\": \"1.5\",\n                \"Department\": {\n                    \"Managers\": [\n                        \"15478952664\"\n                    ],\n                    \"Id\": \"231\",\n                    \"Name\": \"测试组\"\n                },\n                \"ValidateFrom\": \"2020-09-22T00:00:00+00:00\",\n                \"Id\": 1\n            }\n        ],\n        \"RequestId\": \"557246f9-3ee4-406d-8c36-6885e2ae52d9\"\n    }\n}",
         "title": "查询用户组成员列表"
       }
     ],
     "DescribeUserGroups": [
       {
         "document": "查询用户组列表",
-        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserGroups\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"GroupSet\": [\n            {\n                \"Department\": {\n                    \"Managers\": [\n                        \"121037332\"\n                    ],\n                    \"Id\": \"1.2.3\",\n                    \"Name\": \"研发部\"\n                },\n                \"Id\": 1,\n                \"Name\": \"运维组\"\n            }\n        ],\n        \"RequestId\": \"cf80aeee-b651-4f14-9ba9-073f9f55733f\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserGroups\n<公共请求参数>\n\n{\n    \"IdSet\": [\n        1\n    ],\n    \"Name\": \"测试组\",\n    \"Offset\": 1,\n    \"Limit\": 1,\n    \"DepartmentId\": \"1.3\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"GroupSet\": [\n            {\n                \"Id\": 1,\n                \"Name\": \"研发组\",\n                \"Department\": {\n                    \"Id\": \"1.2\",\n                    \"Name\": \"运营组\",\n                    \"Managers\": [\n                        \"12345642122132\"\n                    ],\n                    \"ManagerUsers\": [\n                        {\n                            \"ManagerId\": \"2457130554035\",\n                            \"ManagerName\": \"carl\"\n                        }\n                    ]\n                },\n                \"Count\": 1\n            }\n        ],\n        \"RequestId\": \"cf80aeee-b651-4f14-9ba9-073f9f55733f\"\n    }\n}",
         "title": "查询用户组列表"
       }
     ],
@@ -344,13 +344,13 @@
       {
         "document": "查询用户列表",
         "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUsers\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"UserSet\": [\n            {\n                \"UserName\": \"jassls\",\n                \"AuthType\": 1,\n                \"ValidateTo\": \"2020-09-22T00:00:00+00:00\",\n                \"RealName\": \"张宏宇\",\n                \"ValidateTime\": \"2020-09-23T00:00:00+00:00\",\n                \"Email\": \"xxx@tencent.com\",\n                \"Phone\": \"+86|13500000001\",\n                \"GroupSet\": [\n                    {\n                        \"Department\": {\n                            \"Managers\": [\n                                \"152017423\"\n                            ],\n                            \"Id\": \"1.2\",\n                            \"Name\": \"研发部\"\n                        },\n                        \"Id\": 1,\n                        \"Name\": \"运维组\",\n                        \"Count\": 1\n                    }\n                ],\n                \"Department\": {\n                    \"Managers\": [\n                        \"152017423\"\n                    ],\n                    \"Id\": \"1.2\",\n                    \"Name\": \"研发部\"\n                },\n                \"ValidateFrom\": \"2020-09-22T00:00:00+00:00\",\n                \"Id\": 1\n            }\n        ],\n        \"RequestId\": \"cf839eee-b651-4ff3-9b49-173f9f55733f\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"UserSet\": [\n            {\n                \"UserName\": \"zhangsan\",\n                \"AuthType\": 1,\n                \"ValidateTo\": \"2020-09-22T00:00:00+00:00\",\n                \"RealName\": \"张三\",\n                \"ValidateTime\": \"2020-09-23T00:00:00+00:00\",\n                \"Email\": \"xxx@qq.com\",\n                \"Phone\": \"+86|135**11\",\n                \"GroupSet\": [\n                    {\n                        \"Department\": {\n                            \"Managers\": [\n                                \"152017423\"\n                            ],\n                            \"Id\": \"1.2\",\n                            \"Name\": \"研发部\"\n                        },\n                        \"Id\": 1,\n                        \"Name\": \"运维组\",\n                        \"Count\": 1\n                    }\n                ],\n                \"Department\": {\n                    \"Managers\": [\n                        \"152017423\"\n                    ],\n                    \"Id\": \"1.2\",\n                    \"Name\": \"研发部\"\n                },\n                \"ValidateFrom\": \"2020-09-22T00:00:00+00:00\",\n                \"Id\": 1,\n                \"DepartmentId\": \"1.2\"\n            }\n        ],\n        \"RequestId\": \"cf839eee-b651-4ff3-9b49-173f9f55733f\"\n    }\n}",
         "title": "查询用户列表"
       },
       {
         "document": "根据主机查询有访问权限的用户信息",
-        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUsers\n<公共请求参数>\n\n{\n    \"AuthorizedDeviceIdSet\": [\n        63,\n        64,\n        82,\n        100\n    ],\n    \"Name\": \"zhanghongyu\"\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"UserSet\": [\n            {\n                \"UserName\": \"jassls\",\n                \"AuthType\": 1,\n                \"ValidateTo\": \"2020-09-22T00:00:00+00:00\",\n                \"RealName\": \"张宏宇\",\n                \"ValidateTime\": \"2020-09-23T00:00:00+00:00\",\n                \"Email\": \"xxx@tencent.com\",\n                \"Phone\": \"+86|13500000001\",\n                \"GroupSet\": [\n                    {\n                        \"Department\": {\n                            \"Managers\": [\n                                \"152017423\"\n                            ],\n                            \"Id\": \"1.2\",\n                            \"Name\": \"研发部\"\n                        },\n                        \"Id\": 1,\n                        \"Name\": \"运维组\",\n                        \"Count\": 1\n                    }\n                ],\n                \"Department\": {\n                    \"Managers\": [\n                        \"152017423\"\n                    ],\n                    \"Id\": \"1.2\",\n                    \"Name\": \"研发部\"\n                },\n                \"ValidateFrom\": \"2020-09-22T00:00:00+00:00\",\n                \"Id\": 1\n            }\n        ],\n        \"RequestId\": \"cf839eee-b651-4ff3-9b49-173f9f55733f\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUsers\n<公共请求参数>\n\n{\n    \"AuthorizedDeviceIdSet\": [\n        63,\n        64,\n        82,\n        100\n    ],\n    \"Name\": \"zhangsan\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"UserSet\": [\n            {\n                \"UserName\": \"zhangsan\",\n                \"AuthType\": 1,\n                \"ValidateTo\": \"2020-09-22T00:00:00+00:00\",\n                \"RealName\": \"张三\",\n                \"ValidateTime\": \"2020-09-23T00:00:00+00:00\",\n                \"Email\": \"xxx@tencent.com\",\n                \"Phone\": \"+86|135**11\",\n                \"GroupSet\": [\n                    {\n                        \"Department\": {\n                            \"Managers\": [\n                                \"152017423\"\n                            ],\n                            \"Id\": \"1.2\",\n                            \"Name\": \"研发部\"\n                        },\n                        \"Id\": 1,\n                        \"Name\": \"运维组\",\n                        \"Count\": 1\n                    }\n                ],\n                \"Department\": {\n                    \"Managers\": [\n                        \"152017423\"\n                    ],\n                    \"Id\": \"1.2\",\n                    \"Name\": \"研发部\"\n                },\n                \"ValidateFrom\": \"2020-09-22T00:00:00+00:00\",\n                \"Id\": 1,\n                \"DepartmentId\": \"1.2\"\n            }\n        ],\n        \"RequestId\": \"cf839eee-b651-4ff3-9b49-173f9f55733f\"\n    }\n}",
         "title": "根据主机查询有访问权限的用户信息"
       }
     ],
@@ -358,38 +358,38 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ImportExternalDevice\n<公共请求参数>\n\n{\n    \"DeviceSet\": [\n        {\n            \"Ip\": \"1.1.1.1\",\n            \"Name\": \"linux设备\",\n            \"OsName\": \"Linux\",\n            \"Port\": 22\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"DeviceIdSet\": [\n            1,\n            2,\n            3\n        ],\n        \"RequestId\": \"request-id-test\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"DeviceIdSet\": [\n            1,\n            2,\n            3\n        ],\n        \"RequestId\": \"dfac9070-8b23-499e-83b2-a50e3ca059af\"\n    }\n}",
         "title": "导入外部资产信息"
       }
     ],
     "ModifyAcl": [
       {
         "document": "修改访问权限",
-        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAcl\n<公共请求参数>\n\n{\n    \"AllowClipTextUp\": true,\n    \"MaxFileDownSize\": 1,\n    \"CmdTemplateIdSet\": [\n        1\n    ],\n    \"AllowFileDown\": true,\n    \"Name\": \"abc\",\n    \"UserGroupIdSet\": [\n        1\n    ],\n    \"DeviceGroupIdSet\": [\n        1\n    ],\n    \"AllowDiskRedirect\": true,\n    \"AllowClipFileUp\": true,\n    \"AccountSet\": [\n        \"aaa\"\n    ],\n    \"AllowAnyAccount\": true,\n    \"AllowClipFileDown\": true,\n    \"DeviceIdSet\": [\n        1\n    ],\n    \"AllowFileUp\": true,\n    \"MaxFileUpSize\": 1,\n    \"UserIdSet\": [\n        1\n    ],\n    \"Id\": 1,\n    \"AllowClipTextDown\": true\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abcd12321aax\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAcl\n<公共请求参数>\n\n{\n    \"AllowClipTextUp\": true,\n    \"MaxFileDownSize\": 1,\n    \"CmdTemplateIdSet\": [\n        1\n    ],\n    \"AllowFileDown\": true,\n    \"Name\": \"主机权限\",\n    \"UserGroupIdSet\": [\n        1\n    ],\n    \"DeviceGroupIdSet\": [\n        1\n    ],\n    \"AllowDiskRedirect\": true,\n    \"AllowClipFileUp\": true,\n    \"AccountSet\": [\n        \"root\"\n    ],\n    \"AllowAnyAccount\": true,\n    \"AllowClipFileDown\": true,\n    \"DeviceIdSet\": [\n        1\n    ],\n    \"AllowFileUp\": true,\n    \"MaxFileUpSize\": 1,\n    \"UserIdSet\": [\n        1\n    ],\n    \"Id\": 1,\n    \"AllowClipTextDown\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dfac9070-8b23-499e-83b2-a50e3ca059af\"\n    }\n}",
         "title": "修改访问权限"
       }
     ],
     "ModifyChangePwdTask": [
       {
         "document": "修改改密任务",
-        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyChangePwdTask\n<公共请求参数>\n\n{\n    \"OperationId\": \"ops-xxx\",\n    \"TaskName\": \"testchangePwd\",\n    \"DeviceIdSet\": [\n        215,\n        213\n    ],\n    \"AccountSet\": [\n        \"1111\"\n    ],\n    \"ModifyType\": 1,\n    \"DepartmentId\": \"1.10\",\n    \"ChangeMethod\": 2,\n    \"RunAccount\": \"\",\n    \"AuthGenerationStrategy\": 1,\n    \"Password\": \"test1234567\",\n    \"PasswordLength\": 12,\n    \"SmallLetter\": 0,\n    \"BigLetter\": 1,\n    \"Digit\": 1,\n    \"Symbol\": \"ISMkJQ==\",\n    \"CompleteNotify\": 1,\n    \"NotifyEmails\": [\n        \"113@qq.com\"\n    ],\n    \"FilePassword\": \"1234567\",\n    \"Type\": 5,\n    \"Period\": 16,\n    \"FirstTime\": \"2023-06-01T00:00:00+08:00\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"rid-test\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyChangePwdTask\n<公共请求参数>\n\n{\n    \"OperationId\": \"ops-1a2b3c\",\n    \"TaskName\": \"改密任务\",\n    \"DeviceIdSet\": [\n        215,\n        213\n    ],\n    \"AccountSet\": [\n        \"admin\"\n    ],\n    \"ModifyType\": 1,\n    \"DepartmentId\": \"1.10\",\n    \"ChangeMethod\": 2,\n    \"RunAccount\": \"root\",\n    \"AuthGenerationStrategy\": 1,\n    \"Password\": \"test1234567\",\n    \"PasswordLength\": 12,\n    \"SmallLetter\": 0,\n    \"BigLetter\": 1,\n    \"Digit\": 1,\n    \"Symbol\": \"ISMkJQ==\",\n    \"CompleteNotify\": 1,\n    \"NotifyEmails\": [\n        \"113**@qq.com\"\n    ],\n    \"FilePassword\": \"12***67\",\n    \"Type\": 5,\n    \"Period\": 16,\n    \"FirstTime\": \"2023-06-01T00:00:00+08:00\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dfac9070-8b23-499e-83b2-a50e3ca059af\"\n    }\n}",
         "title": "修改改密任务"
       }
     ],
     "ModifyCmdTemplate": [
       {
         "document": "修改高危命令模板",
-        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCmdTemplate\n<公共请求参数>\n\n{\n    \"Id\": 1,\n    \"Name\": \"模板a\",\n    \"CmdList\": \"cd /root\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"sada123\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCmdTemplate\n<公共请求参数>\n\n{\n    \"Id\": 1,\n    \"Name\": \"高危命令模板\",\n    \"CmdList\": \"rm -rf\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dfac9070-8b23-499e-83b2-a50e3ca059af\"\n    }\n}",
         "title": "修改高危命令模板"
       }
     ],
     "ModifyDevice": [
       {
         "document": "修改资产信息",
-        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDevice\n<公共请求参数>\n\n{\n    \"GroupIdSet\": [\n        1\n    ],\n    \"Id\": 1,\n    \"Port\": 1\n}",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDevice\n<公共请求参数>\n\n{\n    \"GroupIdSet\": [\n        1\n    ],\n    \"Id\": 1,\n    \"Port\": 80\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"2ba7270b-0596-4700-870a-2602aa0014f9\"\n    }\n}",
         "title": "修改资产信息"
       }
@@ -397,8 +397,8 @@
     "ModifyDeviceGroup": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDeviceGroup\n<公共请求参数>\n\n{\n    \"Id\": 1,\n    \"Name\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDeviceGroup\n<公共请求参数>\n\n{\n    \"Id\": 1,\n    \"Name\": \"windows集群\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3bf47843-f8b2-40f7-8963-76d9506eed22\"\n    }\n}",
         "title": "修改资产组"
       }
     ],
@@ -406,14 +406,14 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyOAuthSetting\n<公共请求参数>\n\n{\n    \"Enable\": true,\n    \"AuthMethod\": \"okta\",\n    \"ClientId\": \"client-id\",\n    \"ClientSecret\": \"client-secret\",\n    \"CodeUrl\": \"https://some-url/oauth2/v1/authorize\",\n    \"TokenUrl\": \"https://some-url/oauth2/v1/token\",\n    \"UserInfoUrl\": \"https://some-url/oauth2/v1/userinfo\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dfac9070-8b23-499e-83b2-a50e3ca059af\"\n    }\n}",
         "title": "设置Okta认证配置"
       }
     ],
     "ModifyResource": [
       {
         "document": "已购买资源变配",
-        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyResource\n<公共请求参数>\n\n{\n    \"ResourceId\": \"bh-saas-xxxxxx\"\n}",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyResource\n<公共请求参数>\n\n{\n    \"ResourceId\": \"bh-saas-resource\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5692639a-8204-0110-ef4c-386acb43a8b0\"\n    }\n}",
         "title": "资源变配"
       }
@@ -421,16 +421,16 @@
     "ModifyUser": [
       {
         "document": "修改用户信息",
-        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyUser\n<公共请求参数>\n\n{\n    \"Id\": 1,\n    \"ValidateTo\": \"2020-09-22T00:00:00+00:00\",\n    \"RealName\": \"test\",\n    \"GroupIdSet\": [\n        1,\n        2,\n        3\n    ],\n    \"Phone\": \"1234567891\",\n    \"ValidateFrom\": \"2020-09-22T00:00:00+00:00\",\n    \"Email\": \"test@qq.com\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"123\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyUser\n<公共请求参数>\n\n{\n    \"Id\": 1,\n    \"ValidateTo\": \"2020-09-22T00:00:00+00:00\",\n    \"RealName\": \"zhangsan\",\n    \"GroupIdSet\": [\n        1,\n        2,\n        3\n    ],\n    \"Phone\": \"183***98\",\n    \"ValidateFrom\": \"2020-09-22T00:00:00+00:00\",\n    \"Email\": \"test@qq.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dfac9070-8b23-499e-83b2-a50e3ca059af\"\n    }\n}",
         "title": "修改用户信息"
       }
     ],
     "ModifyUserGroup": [
       {
         "document": "新建主机成功",
-        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyUserGroup\n<公共请求参数>\n\n{\n    \"Id\": 1,\n    \"Name\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyUserGroup\n<公共请求参数>\n\n{\n    \"Id\": 1,\n    \"Name\": \"运维组\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dfac9070-8b23-499e-83b2-a50e3ca059af\"\n    }\n}",
         "title": "新建主机成功"
       }
     ],
@@ -438,7 +438,7 @@
       {
         "document": "清除设备账号绑定密码",
         "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResetDeviceAccountPassword\n<公共请求参数>\n\n{\n    \"IdSet\": [\n        1\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"20a54445-d6ec-463a-ab94-2ca10c494df6\"\n    }\n}",
         "title": "清除设备账号绑定密码"
       }
     ],
@@ -446,7 +446,7 @@
       {
         "document": "清除设备账号绑定的密钥",
         "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResetDeviceAccountPrivateKey\n<公共请求参数>\n\n{\n    \"IdSet\": [\n        1\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d8160247-749c-4070-88c3-fa3caeae2882\"\n    }\n}",
         "title": "清除设备账号绑定的密钥"
       }
     ],
@@ -454,71 +454,71 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResetUser\n<公共请求参数>\n\n{\n    \"IdSet\": [\n        1\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b8961a60-cee7-46b0-a993-2dd233f413fc\"\n    }\n}",
         "title": "重置用户"
       }
     ],
     "RunChangePwdTask": [
       {
         "document": "执行改密任务成功",
-        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RunChangePwdTask\n<公共请求参数>\n\n{\n    \"OperationId\": \"ops-xxx\",\n    \"Details\": []\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"rid-test\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RunChangePwdTask\n<公共请求参数>\n\n{\n    \"OperationId\": \"ops-1a2b3c\",\n    \"Details\": []\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dfac9070-8b23-499e-83b2-a50e3ca059af\"\n    }\n}",
         "title": "执行改密任务"
       }
     ],
     "SearchAuditLog": [
       {
         "document": "搜索审计日志",
-        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchAuditLog\n<公共请求参数>\n\n{\n    \"StartTime\": \"2020-01-01T01:01:01Z\",\n    \"EndTime\": \"2020-01-01T01:01:01Z\"\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"AuditLogSet\": [\n            {\n                \"SubAccountUin\": \"xx\",\n                \"DeviceName\": \"xx\",\n                \"Protocol\": \"xx\",\n                \"InstanceId\": \"xx\",\n                \"Sid\": \"xx\",\n                \"Uin\": \"xx\",\n                \"PublicIp\": \"xx\",\n                \"Time\": \"xx\",\n                \"Operation\": 1,\n                \"PrivateIp\": \"xx\",\n                \"ClientIp\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchAuditLog\n<公共请求参数>\n\n{\n    \"StartTime\": \"2020-09-22T00:00:00+08:00\",\n    \"EndTime\": \"2020-09-29T00:00:00+08:00\",\n    \"Offset\": 1,\n    \"Limit\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"AuditLogSet\": [\n            {\n                \"Sid\": \"qwedssdf\",\n                \"Uin\": \"15546822843\",\n                \"Time\": \"2020-09-27T00:00:00+08:00\",\n                \"ClientIp\": \"10.15.35.41\",\n                \"Operation\": 5,\n                \"InstanceId\": \"ins-tearwsasd\",\n                \"DeviceName\": \"readaoe\",\n                \"Protocol\": \"SSH\",\n                \"PrivateIp\": \"172.45.35.62\",\n                \"PublicIp\": \"192.46.36.85\",\n                \"SubAccountUin\": \"15847269574\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"1d3ef406-46bd-4770-8f0b-dbd4ac3d886e\"\n    }\n}",
         "title": "搜索审计日志"
       }
     ],
     "SearchCommand": [
       {
         "document": "命令执行检索",
-        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchCommand\n<公共请求参数>\n\n{\n    \"UserName\": \"ac\",\n    \"DeviceName\": \"abc\",\n    \"RealName\": \"abc\",\n    \"InstanceId\": \"asl123\",\n    \"Cmd\": \"abc\",\n    \"AuditAction\": [\n        1\n    ],\n    \"PrivateIp\": \"1.1.1.1\",\n    \"PublicIp\": \"2.2.2.2\",\n    \"Limit\": 1,\n    \"StartTime\": \"2020-09-22T00:00:00+00:00\",\n    \"Offset\": 1,\n    \"EndTime\": \"2020-09-22T00:00:00+00:00\"\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Commands\": [\n            {\n                \"UserName\": \"abc\",\n                \"DeviceName\": \"ab\",\n                \"RealName\": \"cc\",\n                \"InstanceId\": \"abc123\",\n                \"Cmd\": \"rm\",\n                \"PrivateIp\": \"1.1.1.1\",\n                \"PublicIp\": \"2.2.2.2\",\n                \"TimeOffset\": 1,\n                \"Sid\": \"123\",\n                \"Time\": \"2020-09-22T00:00:00+00:00\",\n                \"Action\": 1\n            }\n        ],\n        \"RequestId\": \"x123456x\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchCommand\n<公共请求参数>\n\n{\n    \"UserName\": \"jack\",\n    \"DeviceName\": \"test-name\",\n    \"RealName\": \"test-name\",\n    \"InstanceId\": \"ins-asl123\",\n    \"Cmd\": \"pwd\",\n    \"AuditAction\": [\n        1\n    ],\n    \"PrivateIp\": \"1.1.1.1\",\n    \"PublicIp\": \"2.2.2.2\",\n    \"Limit\": 1,\n    \"StartTime\": \"2020-09-22T00:00:00+08:00\",\n    \"Offset\": 1,\n    \"EndTime\": \"2020-09-22T00:00:00+08:00\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Commands\": [\n            {\n                \"UserName\": \"Charlotte\",\n                \"DeviceName\": \"开发机\",\n                \"RealName\": \"nick\",\n                \"UserDepartmentId\": \"1\",\n                \"DeviceDepartmentId\": \"1\",\n                \"UserDepartmentName\": \"总部\",\n                \"DeviceDepartmentName\": \"总部\",\n                \"InstanceId\": \"ins-1weqqere\",\n                \"Cmd\": \"rm\",\n                \"PrivateIp\": \"1.1.1.1\",\n                \"PublicIp\": \"2.2.2.2\",\n                \"TimeOffset\": 1,\n                \"Account\": \"root\",\n                \"FromIp\": \"192.168.0.1\",\n                \"Sid\": \"wewqew-21dw-wwedfsf\",\n                \"SessTime\": \"2020-09-22T00:00:00+08:00\",\n                \"ConfirmTime\": \"2020-09-22T00:00:00+08:00\",\n                \"Time\": \"2020-09-22T00:00:00+08:00\",\n                \"Action\": 1\n            }\n        ],\n        \"RequestId\": \"aa23ab6a-b9ed-41b2-8fa3-7ab59d3e0b47\"\n    }\n}",
         "title": "命令执行检索"
       }
     ],
     "SearchCommandBySid": [
       {
         "document": "根据会话Id搜索Command",
-        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchCommandBySid\n<公共请求参数>\n\n{\n    \"Sid\": \"123\"\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"abc123\",\n        \"CommandSet\": [\n            {\n                \"TimeOffset\": 1,\n                \"Action\": 0,\n                \"Cmd\": \"rm\",\n                \"Time\": \"2023-04-23T14:24:39+0800\"\n            }\n        ]\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchCommandBySid\n<公共请求参数>\n\n{\n    \"Sid\": \"dfac9070-8b23-499e-83b2-a50e3ca0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"dfac9070-8b23-499e-83b2-a50e3ca059af\",\n        \"CommandSet\": []\n    }\n}",
         "title": "根据会话Id搜索Command"
       }
     ],
     "SearchFile": [
       {
         "document": "搜索session列表",
-        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchFile\n<公共请求参数>\n\n{\n    \"UserName\": \"xx\",\n    \"DeviceName\": \"xx\",\n    \"RealName\": \"xx\",\n    \"PrivateIp\": \"xx\",\n    \"InstanceId\": \"xx\",\n    \"AuditAction\": [\n        0\n    ],\n    \"FileName\": \"xx\",\n    \"PublicIp\": \"xx\",\n    \"Limit\": 1,\n    \"StartTime\": \"2020-09-22T00:00:00+00:00\",\n    \"Offset\": 1,\n    \"EndTime\": \"2020-09-22T00:00:00+00:00\",\n    \"Method\": [\n        1\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"Files\": [\n            {\n                \"UserName\": \"xx\",\n                \"DeviceName\": \"xx\",\n                \"RealName\": \"xx\",\n                \"InstanceId\": \"xx\",\n                \"PrivateIp\": \"xx\",\n                \"PublicIp\": \"xx\",\n                \"Time\": \"xx\",\n                \"Action\": 1,\n                \"Method\": 1\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchFile\n<公共请求参数>\n\n{\n    \"UserName\": \"Joseph\",\n    \"DeviceName\": \"开发机\",\n    \"RealName\": \"Daniel\",\n    \"PrivateIp\": \"192.10.63.14\",\n    \"InstanceId\": \"ins-wedggutfye\",\n    \"AuditAction\": [\n        0\n    ],\n    \"FileName\": \"test.txt\",\n    \"PublicIp\": \"192.16.35.36\",\n    \"Limit\": 1,\n    \"StartTime\": \"2020-09-22T00:00:00+08:00\",\n    \"Offset\": 1,\n    \"EndTime\": \"2020-09-22T00:00:00+08:00\",\n    \"Method\": [\n        1\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Files\": [\n            {\n                \"UserName\": \"Andrew\",\n                \"DeviceName\": \"开发机\",\n                \"RealName\": \"Benjamin\",\n                \"InstanceId\": \"ins-aassdds\",\n                \"PrivateIp\": \"182.64.45.62\",\n                \"PublicIp\": \"192.45.68.15\",\n                \"Time\": \"2020-09-22T00:00:00+08:00\",\n                \"Action\": 1,\n                \"Method\": 1,\n                \"FileCurr\": \"tmp.so\",\n                \"FileNew\": \"/home/1.txt\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"1d3ef406-46bd-4770-8f0b-dbd4ac3d886e\"\n    }\n}",
         "title": "搜索session列表"
       }
     ],
     "SearchFileBySid": [
       {
         "document": "搜索session列表",
-        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchFileBySid\n<公共请求参数>\n\n{\n    \"FileName\": \"1.txt\",\n    \"Offset\": 1,\n    \"Sid\": \"xx\",\n    \"Limit\": 5,\n    \"AuditLog\": true\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 10,\n        \"RequestId\": \"xx\",\n        \"SearchFileBySidResult\": [\n            {\n                \"Time\": \"2020-01-02T01:01:01Z\",\n                \"Method\": 1,\n                \"Protocol\": \"SFTP\",\n                \"FileCurr\": \"/home/1.txt\",\n                \"FileNew\": \"/home/2.txt\"\n            }\n        ]\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchFileBySid\n<公共请求参数>\n\n{\n    \"FileName\": \"1.txt\",\n    \"Offset\": 1,\n    \"Sid\": \"dfac9070-8b23-499e-83b2-a50e3ca\",\n    \"Limit\": 5,\n    \"AuditLog\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 10,\n        \"RequestId\": \"dfac9070-8b23-499e-83b2-a50e3ca059af\",\n        \"SearchFileBySidResult\": [\n            {\n                \"Time\": \"2020-01-02T01:01:01+08:00\",\n                \"Method\": 1,\n                \"Protocol\": \"SFTP\",\n                \"FileCurr\": \"/home/1.txt\",\n                \"FileNew\": \"/home/2.txt\",\n                \"Action\": 1,\n                \"Size\": 1024\n            }\n        ]\n    }\n}",
         "title": "搜索session列表"
       }
     ],
     "SearchSession": [
       {
         "document": "搜索session列表",
-        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchSession\n<公共请求参数>\n\n{\n    \"UserName\": \"user1\",\n    \"Account\": \"admistrator\",\n    \"PrivateIp\": \"127.0.0.1\",\n    \"PublicIp\": \"192.168.12.12\",\n    \"FromIp\": \"192.12.12.12\",\n    \"StartTime\": \"2020-01-02T01:01:01Z\",\n    \"EndTime\": \"2020-01-02T01:02:00Z\",\n    \"Kind\": 1,\n    \"Offset\": 0,\n    \"Limit\": 5\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\",\n        \"SessionSet\": [\n            {\n                \"UserName\": \"xx\",\n                \"DeviceName\": \"xx\",\n                \"Account\": \"xx\",\n                \"Protocol\": \"xx\",\n                \"RealName\": \"xx\",\n                \"Status\": 1,\n                \"InstanceId\": \"xx\",\n                \"FromIp\": \"xx\",\n                \"DangerCount\": 1,\n                \"PublicIp\": \"xx\",\n                \"Count\": 1,\n                \"StartTime\": \"xx\",\n                \"ApCode\": \"xx\",\n                \"Duration\": 0.0,\n                \"PrivateIp\": \"xx\",\n                \"EndTime\": \"xx\",\n                \"Id\": \"xx\",\n                \"Size\": 1\n            }\n        ]\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchSession\n<公共请求参数>\n\n{\n    \"UserName\": \"zhangsan\",\n    \"Account\": \"admistrator\",\n    \"PrivateIp\": \"127.0.0.1\",\n    \"PublicIp\": \"192.168.12.12\",\n    \"FromIp\": \"192.12.12.12\",\n    \"StartTime\": \"2020-12-20T19:51:23+08:00\",\n    \"EndTime\": \"2020-12-20T20:51:23+08:00\",\n    \"Kind\": 1,\n    \"Offset\": 0,\n    \"Limit\": 5\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"SessionSet\": [\n            {\n                \"UserName\": \"zhangsan\",\n                \"RealName\": \"张三\",\n                \"Account\": \"root\",\n                \"StartTime\": \"2020-12-20T19:51:23+08:00\",\n                \"EndTime\": \"2020-12-21T19:51:23+08:00\",\n                \"Size\": 1,\n                \"InstanceId\": \"Ins-1jsa9\",\n                \"DeviceName\": \"运维主机\",\n                \"PrivateIp\": \"192.168.0.31\",\n                \"PublicIp\": \"100.10.1.1\",\n                \"FromIp\": \"1.1.1.1\",\n                \"Duration\": 0,\n                \"Count\": 1,\n                \"DangerCount\": 1,\n                \"Status\": 1,\n                \"Id\": \"1\",\n                \"ApCode\": \"ag-guangzhou\",\n                \"Protocol\": \"SSH\"\n            }\n        ],\n        \"RequestId\": \"dfac9070-8b23-499e-83b2-a50e3ca059af\"\n    }\n}",
         "title": "搜索session列表"
       }
     ],
     "SearchSessionCommand": [
       {
         "document": "命令检索",
-        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchSessionCommand\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 10,\n    \"Cmd\": \"pwd\",\n    \"StartTime\": \"2020-01-01T01:01:01Z\",\n    \"EndTime\": \"2020-01-01T01:01:01Z\"\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"CommandSessionSet\": [\n            {\n                \"UserName\": \"aa\",\n                \"DeviceName\": \"aa\",\n                \"Commands\": [\n                    {\n                        \"TimeOffset\": 1,\n                        \"Action\": 0,\n                        \"Cmd\": \"cd\",\n                        \"Time\": \"2020-01-01T01:01:01Z\"\n                    }\n                ],\n                \"RealName\": \"aa\",\n                \"InstanceId\": \"aa\",\n                \"PrivateIp\": \"aa\",\n                \"PublicIp\": \"aa\",\n                \"Count\": 1,\n                \"StartTime\": \"2020-01-01T01:01:01Z\",\n                \"EndTime\": \"2020-01-01T01:01:01Z\",\n                \"Id\": \"123\",\n                \"ApCode\": \"ap-guangzhou\"\n            }\n        ],\n        \"RequestId\": \"asd123\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchSessionCommand\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 10,\n    \"Cmd\": \"pwd\",\n    \"StartTime\": \"2020-01-01T01:01:01+08:00\",\n    \"EndTime\": \"2020-01-01T01:01:01+08:00\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"CommandSessionSet\": [\n            {\n                \"StartTime\": \"2023-10-04T12:13:45+08:00\",\n                \"EndTime\": \"2023-10-05T12:13:45+08:00\",\n                \"UserName\": \"nick\",\n                \"RealName\": \"roll\",\n                \"DeviceName\": \"linux\",\n                \"PrivateIp\": \"10.42.15.13\",\n                \"PublicIp\": \"172.45.85.62\",\n                \"Commands\": [\n                    {\n                        \"Cmd\": \"rm -rf\",\n                        \"Time\": \"2023-10-04T12:15:45+08:00\",\n                        \"TimeOffset\": 1,\n                        \"Action\": 0,\n                        \"Sid\": \"adsasd-asfasd-aswasa\",\n                        \"UserName\": \"nick\",\n                        \"Account\": \"root\",\n                        \"InstanceId\": \"ins-eaaasdsdaw\",\n                        \"FromIp\": \"10.14.13.52\",\n                        \"SessionTime\": \"2023-10-05T11:13:45+08:00\",\n                        \"SessTime\": \"2023-10-05T11:13:45+08:00\",\n                        \"ConfirmTime\": \"2023-10-05T11:14:45+08:00\",\n                        \"UserDepartmentId\": \"1\",\n                        \"UserDepartmentName\": \"总部\",\n                        \"DeviceDepartmentId\": \"1\",\n                        \"DeviceDepartmentName\": \"总部\",\n                        \"Size\": 1\n                    }\n                ],\n                \"Count\": 1,\n                \"Id\": \"adsasd-asfasd-aswasa\",\n                \"InstanceId\": \"ins-wafafswafdas\",\n                \"ApCode\": \"ap-guangzhou-3\"\n            }\n        ],\n        \"RequestId\": \"27d70f6b-3732-4698-a00f-ee91d3a1fb3\"\n    }\n}",
         "title": "命令检索"
       }
     ]

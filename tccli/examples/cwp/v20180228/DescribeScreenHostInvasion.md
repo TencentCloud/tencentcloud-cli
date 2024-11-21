@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cwp DescribeScreenHostInvasion --cli-unfold-argument  \
-    --Quuid "xxx"
+    --Quuid "1c26308c-5493-4eaf-a817-112ec25f499e"
 ```
 
 Output: 
@@ -15,7 +15,7 @@ Output:
     "Response": {
         "DefendAttackLog": [
             {
-                "DstIp": "xx.xx.xx.xx",
+                "DstIp": "10.1.1.15",
                 "Uuid": "1c26308c-5493-4eaf-a817-112ec25f499e",
                 "VulType": "web",
                 "SrcPort": 1,
@@ -24,7 +24,7 @@ Output:
                 "CreatedTime": " 2019-12-25 11:57:15",
                 "DstPort": 1,
                 "Id": 1,
-                "SrcIp": "xx.xx.xx.xx"
+                "SrcIp": "10.1.1.14"
             }
         ],
         "Vul": [
@@ -59,7 +59,7 @@ Output:
                 "Name": "name"
             }
         ],
-        "RequestId": "xxxxxxxx-1234-5678-9101-yyyyyyyyyy"
+        "RequestId": "1c26308c-1af3-4eaf-a817-112ec25f4dfa"
     }
 }
 ```

@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli trro CreateProject --cli-unfold-argument  \
-    --ProjectName mytest \
-    --ProjectDescription test \
+    --ProjectName my_project \
+    --ProjectDescription project description info \
     --PolicyMode black
 ```
 

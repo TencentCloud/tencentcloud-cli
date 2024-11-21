@@ -23,7 +23,7 @@ Output:
                 "HostScope": 1,
                 "HostIds": [],
                 "Domains": [
-                    ""
+                    "domainsName"
                 ],
                 "IsEnabled": 1,
                 "IsDealOldEvent": 0,

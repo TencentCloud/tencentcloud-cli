@@ -9,7 +9,7 @@ tccli cwp ModifyLogKafkaDeliverType --cli-unfold-argument  \
     --SecurityType 1 \
     --LogType 1 2 \
     --Switch 1 \
-    --TopicId a \
+    --TopicId topic-xdd*** \
     --TopicName n
 ```
 

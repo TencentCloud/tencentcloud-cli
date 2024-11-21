@@ -11,8 +11,8 @@
     "CreateWorkspaceToken": [
       {
         "document": "为工作空间创建临时访问凭证，重复调用会创建新的 Token，旧的 Token 将会自动失效",
-        "input": "POST / HTTP/1.1\nHost: cloudstudio.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateWorkspaceTemporaryToken\n<公共请求参数>\n\n{\n    \"SpaceKey\": \"123\",\n    \"TokenExpiredLimitSec\": 3600\n}",
-        "output": "{\n    \"Response\": {\n        \"Token\": \"83c99d6a03aa94f5e7bbfb4eded0de0b1153f44d05126d34b5f36e8343eca973\",\n        \"ExpiredTime\": \"2023-02-13T12:33:48 GMT+08:00\",\n        \"RequestId\": \"123\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cloudstudio.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateWorkspaceTemporaryToken\n<公共请求参数>\n\n{\n    \"SpaceKey\": \"bpwsmb\",\n    \"TokenExpiredLimitSec\": 3600,\n    \"Policies\": [\n        \"workspace-run-only\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Token\": \"83c99d6a03aa94f5e7bbfb4eded0de0b1153f44d05126d34b5f36e8343eca973\",\n        \"ExpiredTime\": \"2023-02-13T12:33:48 GMT+08:00\",\n        \"RequestId\": \"6e1e1482-cfe6-4462-a508-4fc7053a0c78\"\n    }\n}",
         "title": "为工作空间创建临时访问凭证"
       }
     ],
@@ -36,14 +36,14 @@
       {
         "document": "获取当前用户工作空间列表",
         "input": "POST / HTTP/1.1\nHost: cloudstudio.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWorkspaceStatusList\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Id\": 9,\n                \"Name\": \"open_api_test-1\",\n                \"SpaceKey\": \"ryvzki\",\n                \"Status\": \"CREATING\",\n                \"LastOpsDate\": \"2022-06-10T06:55:45Z\",\n                \"Description\": \"\",\n                \"WorkspaceType\": \"NORMAL\",\n                \"CreateDate\": \"2022-06-10T06:55:45Z\",\n                \"VersionControlUrl\": \"\",\n                \"VersionControlRef\": \"\",\n                \"Cpu\": 0,\n                \"Memory\": 0\n            }\n        ],\n        \"RequestId\": \"ff57bfab-60d0-47ce-883c-f5230245636a\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Id\": 9,\n                \"Name\": \"open_api_test-1\",\n                \"SpaceKey\": \"ryvzki\",\n                \"Status\": \"CREATING\",\n                \"LastOpsDate\": \"2022-06-10T06:55:45Z\",\n                \"Description\": \"this is a description\",\n                \"WorkspaceType\": \"NORMAL\",\n                \"CreateDate\": \"2022-06-10T06:55:45Z\",\n                \"Icon\": \"https://cs-res-1258344699.file.myqcloud.com/workspace/assets/icons/all-in-one.svg\",\n                \"StatusReason\": \"OK\",\n                \"VersionControlUrl\": \"git@github.com:koajs/koa.git\",\n                \"VersionControlRef\": \"refs/heads/main\",\n                \"Cpu\": 2,\n                \"Memory\": 4\n            }\n        ],\n        \"RequestId\": \"ff57bfab-60d0-47ce-883c-f5230245636a\"\n    }\n}",
         "title": "获取当前用户工作空间列表"
       }
     ],
     "ModifyWorkspace": [
       {
         "document": "修改工作空间",
-        "input": "POST / HTTP/1.1\nHost: cloudstudio.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyWorkspaceAttributes\n<公共请求参数>\n\n{\n    \"SpaceKey\": \"ubbyfp\",\n    \"Name\": \"openapi_test_m1\",\n    \"Description\": \"api-test-midofy\",\n    \"Specs\": \"Calculation\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cloudstudio.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyWorkspaceAttributes\n<公共请求参数>\n\n{\n    \"SpaceKey\": \"ubbyfp\",\n    \"Name\": \"workspace-name\",\n    \"Description\": \"api-test-modify\",\n    \"Specs\": \"Calculation\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"437093fd-a231-4ec9-83f3-ae38ea917f8e\"\n    }\n}",
         "title": "修改工作空间"
       }

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ocr ClassifyStoreName --cli-unfold-argument  \
-    --ImageBase64 
+    --ImageBase64 /9j/4AAQSkZJRg.....s97n//2Q==
 ```
 
 Output: 

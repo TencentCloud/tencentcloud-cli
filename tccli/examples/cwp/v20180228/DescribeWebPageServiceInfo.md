@@ -21,7 +21,7 @@ Output:
         "ProtectDirNum": 1,
         "AllAuthorizedMachines": [
             {
-                "HostName": "test机器",
+                "HostName": "机器1",
                 "HostIp": "1.0.0.1",
                 "CreateTime": "2020-10-10 10:10:00",
                 "ExpireTime": "2021-10-10 10:10:00"
@@ -29,7 +29,7 @@ Output:
         ],
         "ExpireAuthorizedMachines": [
             {
-                "HostName": "test机器2",
+                "HostName": "机器2",
                 "HostIp": "1.0.0.2",
                 "SafeguardDirNum": 1
             }

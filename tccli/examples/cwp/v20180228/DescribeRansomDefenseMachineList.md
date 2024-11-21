@@ -43,13 +43,13 @@ Output:
                 "Status": 1,
                 "StrategyId": 5570,
                 "StrategyName": "tt1",
-                "DiskInfo": "",
+                "DiskInfo": "diskId1|diskName1;diskId2|diskName2",
                 "HostVersion": 2,
                 "BackupCount": 128,
                 "BackupSuccessCount": 121,
                 "LastBackupStatus": 1,
                 "LastBackupTime": "2024-10-22 00:04:04",
-                "LastBackupMessage": "",
+                "LastBackupMessage": "success",
                 "RollBackStatus": 0,
                 "RollBackPercent": 0
             }

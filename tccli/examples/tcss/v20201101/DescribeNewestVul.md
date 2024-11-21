@@ -11,12 +11,12 @@ Output:
 ```
 {
     "Response": {
-        "Status": "xx",
-        "CVEID": "xx",
-        "VulName": "xx",
-        "SubmitTime": "xx",
-        "RequestId": "xx",
-        "PocID": "xx"
+        "CVEID": "pcmgr-515959",
+        "PocID": "pcmgr-515959",
+        "RequestId": "5da5a2f4-2945-47d1-8b41-84a151fcc007",
+        "Status": "SCANNED",
+        "SubmitTime": "2024-08-27 09:55:12",
+        "VulName": "Nacos Jraft 远程代码执行漏洞"
     }
 }
 ```

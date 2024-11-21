@@ -27,15 +27,15 @@
     "CreateCloudNativeAPIGateway": [
       {
         "document": "创建云原生API网关实例",
-        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudNativeAPIGateway\n<公共请求参数>\n\n{\n    \"Name\": \"test\",\n    \"Type\": \"kong\",\n    \"GatewayVersion\": \"2.5.1\",\n    \"NodeConfig\": {\n        \"Specification\": \"1c2g\",\n        \"Number\": 2\n    },\n    \"VpcConfig\": {\n        \"VpcId\": \"vpc-xxxxxx\",\n        \"SubnetId\": \"subnet-xxxxxx\"\n    },\n    \"Description\": \"test\",\n    \"Tags\": [\n        {\n            \"TagKey\": \"abc\",\n            \"TagValue\": \"abc\"\n        }\n    ],\n    \"EnableCls\": false,\n    \"FeatureVersion\": \"STANDARD\",\n    \"InternetMaxBandwidthOut\": 1,\n    \"EngineRegion\": \"ap-guangzhou\",\n    \"IngressClassName\": \"abc\",\n    \"TradeType\": 0,\n    \"InternetConfig\": {\n        \"InternetAddressVersion\": \"abc\",\n        \"InternetPayMode\": \"abc\",\n        \"InternetMaxBandwidthOut\": 1,\n        \"Description\": \"abc\",\n        \"SlaType\": \"abc\",\n        \"MultiZoneFlag\": true,\n        \"MasterZoneId\": \"abc\",\n        \"SlaveZoneId\": \"abc\"\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"GatewayId\": \"abc\",\n            \"Status\": \"abc\",\n            \"TaskId\": \"abc\"\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudNativeAPIGateway\n<公共请求参数>\n\n{\n    \"Name\": \"gateway-prod\",\n    \"Type\": \"kong\",\n    \"GatewayVersion\": \"2.5.1\",\n    \"NodeConfig\": {\n        \"Specification\": \"1c2g\",\n        \"Number\": 2\n    },\n    \"VpcConfig\": {\n        \"VpcId\": \"vpc-59cag821\",\n        \"SubnetId\": \"subnet-8tzp8uz1\"\n    },\n    \"Description\": \"公网入口网关，现网环境\",\n    \"Tags\": [\n        {\n            \"TagKey\": \"env\",\n            \"TagValue\": \"prod\"\n        }\n    ],\n    \"EnableCls\": false,\n    \"FeatureVersion\": \"STANDARD\",\n    \"InternetMaxBandwidthOut\": 1,\n    \"EngineRegion\": \"ap-guangzhou\",\n    \"IngressClassName\": \"kong\",\n    \"TradeType\": 0,\n    \"InternetConfig\": {\n        \"InternetAddressVersion\": \"IPV4\",\n        \"InternetPayMode\": \"TRAFFIC\",\n        \"InternetMaxBandwidthOut\": 1,\n        \"Description\": \"公网负载均衡\",\n        \"SlaType\": \"clb.c2.medium\",\n        \"MultiZoneFlag\": true,\n        \"MasterZoneId\": \"ap-guangzhou-3\",\n        \"SlaveZoneId\": \"ap-guangzhou-4\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"GatewayId\": \"gateway-dde03755\",\n            \"Status\": \"Creating\",\n            \"TaskId\": \"task-b2c41103\"\n        },\n        \"RequestId\": \"a02f30b2-6e3d-4efb-9883-1b11b8fa7df2\"\n    }\n}",
         "title": "创建云原生API网关实例"
       }
     ],
     "CreateCloudNativeAPIGatewayCanaryRule": [
       {
         "document": "创建灰度规则",
-        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudNativeAPIGatewayCanaryRule\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-18f786a\",\n    \"ServiceId\": \"6abf620f-c6b9-4440-b90c-56c165225cfc\",\n    \"CanaryRule\": {\n        \"Priority\": 10,\n        \"Enabled\": true,\n        \"ConditionList\": [\n            {\n                \"Type\": \"query\",\n                \"Key\": \"q1\",\n                \"Operator\": \"==\",\n                \"Value\": \"abc\"\n            }\n        ],\n        \"BalancedServiceList\": [\n            {\n                \"ServiceID\": \"6abf620f-c6b9-4440-b90c-56c165225cf\",\n                \"ServiceName\": \"svc1\",\n                \"UpstreamName\": \"\",\n                \"Percent\": 100\n            }\n        ]\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudNativeAPIGatewayCanaryRule\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-18f786a\",\n    \"ServiceId\": \"6abf620f-c6b9-4440-b90c-56c165225cfc\",\n    \"CanaryRule\": {\n        \"Priority\": 10,\n        \"Enabled\": true,\n        \"ConditionList\": [\n            {\n                \"Type\": \"query\",\n                \"Key\": \"app\",\n                \"Operator\": \"==\",\n                \"Value\": \"learn\"\n            }\n        ],\n        \"BalancedServiceList\": [\n            {\n                \"ServiceID\": \"6abf620f-c6b9-4440-b90c-56c165225cf\",\n                \"ServiceName\": \"svc1\",\n                \"UpstreamName\": \"ups1\",\n                \"Percent\": 100\n            }\n        ]\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"741e4e82-371d-48de-a843-867c69ff114d\"\n    }\n}",
         "title": "创建灰度规则"
       }
@@ -43,7 +43,7 @@
     "CreateCloudNativeAPIGatewayCertificate": [
       {
         "document": "创建云原生网关证书",
-        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudNativeAPIGatewayCertificate\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-9abf3b79\",\n    \"Name\": \"a\",\n    \"BindDomains\": [\n        \"bbc.com\"\n    ],\n    \"CertId\": \"12412rew43-5fdsf35\"\n}",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudNativeAPIGatewayCertificate\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-9abf3b79\",\n    \"Name\": \"tencent.com\",\n    \"BindDomains\": [\n        \"tencent.com\"\n    ],\n    \"CertId\": \"12412rew43-5fdsf35\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"741e4e82-371d-48de-a843-867c69ff114d\"\n    }\n}",
         "title": "创建云原生网关证书"
       }
@@ -51,15 +51,15 @@
     "CreateCloudNativeAPIGatewayPublicNetwork": [
       {
         "document": "创建公网网络配置",
-        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudNativeAPIGatewayPublicNetwork\n<公共请求参数>\n\n{\n    \"GatewayId\": \"abc\",\n    \"GroupId\": \"abc\",\n    \"InternetConfig\": {\n        \"InternetAddressVersion\": \"abc\",\n        \"InternetPayMode\": \"abc\",\n        \"InternetMaxBandwidthOut\": 1,\n        \"Description\": \"abc\",\n        \"SlaType\": \"abc\"\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudNativeAPIGatewayPublicNetwork\n<公共请求参数>\n\n{\n    \"GatewayId\": \"abc\",\n    \"GroupId\": \"abc\",\n    \"InternetConfig\": {\n        \"InternetAddressVersion\": \"IPV4\",\n        \"InternetPayMode\": \"TRAFFIC\",\n        \"InternetMaxBandwidthOut\": 1,\n        \"Description\": \"公网负载均衡\",\n        \"SlaType\": \"clb.c4.small\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a02f30b2-6e3d-4efb-9883-1b11b8fa7df2\"\n    }\n}",
         "title": "创建公网网络配置"
       }
     ],
     "CreateCloudNativeAPIGatewayRoute": [
       {
         "document": "创建云原生网关路由",
-        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudNativeAPIGatewayRoute\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-9abf3b79\",\n    \"ServiceID\": \"service-demo\",\n    \"RouteName\": \"route-demo\",\n    \"Methods\": [\n        \"GET\",\n        \"POST\"\n    ],\n    \"Hosts\": [\n        \"www.baidu.com\"\n    ],\n    \"Paths\": [\n        \"/\"\n    ],\n    \"PreserveHost\": true,\n    \"StripPath\": false,\n    \"HttpsRedirectStatusCode\": 308\n}",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudNativeAPIGatewayRoute\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-9abf3b79\",\n    \"ServiceID\": \"service-demo\",\n    \"RouteName\": \"route-demo\",\n    \"Methods\": [\n        \"GET\",\n        \"POST\"\n    ],\n    \"Hosts\": [\n        \"www.baidu.com\"\n    ],\n    \"Paths\": [\n        \"/v1/users\"\n    ],\n    \"PreserveHost\": true,\n    \"StripPath\": false,\n    \"HttpsRedirectStatusCode\": 308\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"741e4e82-371d-48de-a843-867c69ff114d\"\n    }\n}",
         "title": "创建云原生网关路由"
       }
@@ -75,7 +75,7 @@
     "CreateCloudNativeAPIGatewayService": [
       {
         "document": "创建云原生网关服务",
-        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudNativeAPIGatewayService\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-9abf3b79\",\n    \"Name\": \"test-service\",\n    \"Protocol\": \"http\",\n    \"Path\": \"/\",\n    \"Timeout\": 5000,\n    \"Retries\": 3,\n    \"UpstreamType\": \"HostIP\",\n    \"UpstreamInfo\": {\n        \"Host\": \"8.8.8.8\",\n        \"Port\": 60\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudNativeAPIGatewayService\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-9abf3b79\",\n    \"Name\": \"user-service\",\n    \"Protocol\": \"http\",\n    \"Path\": \"/v1/users\",\n    \"Timeout\": 5000,\n    \"Retries\": 3,\n    \"UpstreamType\": \"HostIP\",\n    \"UpstreamInfo\": {\n        \"Host\": \"8.8.8.8\",\n        \"Port\": 60\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"741e4e82-371d-48de-a843-867c69ff114d\"\n    }\n}",
         "title": "创建云原生网关服务"
       }
@@ -83,7 +83,7 @@
     "CreateCloudNativeAPIGatewayServiceRateLimit": [
       {
         "document": "创建云原生网关限流插件(服务)",
-        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudNativeAPIGatewayServiceRateLimit\n<公共请求参数>\n\n{\n    \"GatewayId\": \"abc\",\n    \"Name\": \"abc\",\n    \"LimitDetail\": {\n        \"Enabled\": true,\n        \"QpsThresholds\": [\n            {\n                \"Unit\": \"abc\",\n                \"Max\": 10\n            }\n        ],\n        \"Path\": \"abc\",\n        \"Header\": \"abc\",\n        \"LimitBy\": \"abc\",\n        \"ExternalRedis\": {\n            \"RedisHost\": \"abc\",\n            \"RedisPassword\": \"abc\",\n            \"RedisPort\": 0,\n            \"RedisTimeout\": 0\n        },\n        \"Policy\": \"abc\",\n        \"RateLimitResponse\": {\n            \"Body\": \"abc\",\n            \"Headers\": [\n                {\n                    \"Key\": \"abc\",\n                    \"Value\": \"abc\"\n                }\n            ],\n            \"HttpStatus\": 0\n        },\n        \"RateLimitResponseUrl\": \"abc\",\n        \"ResponseType\": \"abc\",\n        \"HideClientHeaders\": true,\n        \"IsDelay\": true,\n        \"LineUpTime\": 10\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudNativeAPIGatewayServiceRateLimit\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-dde037x1\",\n    \"Name\": \"公网接入网关\",\n    \"LimitDetail\": {\n        \"Enabled\": true,\n        \"QpsThresholds\": [\n            {\n                \"Unit\": \"second\",\n                \"Max\": 10\n            }\n        ],\n        \"Path\": \"/v1/users\",\n        \"Header\": \"X-Api-Version\",\n        \"LimitBy\": \"header\",\n        \"ExternalRedis\": {\n            \"RedisHost\": \"192.168.2.162\",\n            \"RedisPassword\": \"tse@tencent\",\n            \"RedisPort\": 6379,\n            \"RedisTimeout\": 10\n        },\n        \"Policy\": \"redis\",\n        \"RateLimitResponse\": {\n            \"Body\": \"too many requests\",\n            \"Headers\": [\n                {\n                    \"Key\": \"app\",\n                    \"Value\": \"kong\"\n                }\n            ],\n            \"HttpStatus\": 429\n        },\n        \"RateLimitResponseUrl\": \"http://192.168.2.165/downgrade\",\n        \"ResponseType\": \"default\",\n        \"HideClientHeaders\": true,\n        \"IsDelay\": true,\n        \"LineUpTime\": 10\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"741e4e82-371d-48de-a843-867c69ff114d\"\n    }\n}",
         "title": "创建云原生网关限流插件(服务)"
       }
@@ -574,6 +574,14 @@
         "title": "查询治理中心服务列表"
       }
     ],
+    "DescribeInstanceTagInfos": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceTagInfos\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceId\": \"abc\",\n        \"TagInfos\": [\n            {\n                \"TagKey\": \"abc\",\n                \"TagValue\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查看实例标签信息"
+      }
+    ],
     "DescribeNacosReplicas": [
       {
         "document": "查询Nacos类型引擎实例副本信息",
@@ -844,6 +852,14 @@
         "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PublishConfigFiles\n<公共请求参数>\n\n{\n    \"InstanceId\": \"ins-fd191a86\",\n    \"ConfigFileReleases\": {\n        \"Name\": \"ConfigFileReleases test\",\n        \"Namespace\": \"Polaris\",\n        \"Group\": \"group-test-jayhjxu\",\n        \"FileName\": \"config-file-test\",\n        \"Content\": \"I want you to act as a linux terminal. I will type commands and you will reply with what the terminal should show. I want you to only reply with the terminal output inside one unique code block, and nothing else. do not write explanations. do not type commands unless I instruct you to do so. \",\n        \"Comment\": \"test for 1\",\n        \"Version\": 12\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "发布配置文件"
+      }
+    ],
+    "RestartSREInstance": [
+      {
+        "document": "RestartSREInstance",
+        "input": "https://tse.tencentcloudapi.com/?Action=RestartSREInstance\n&InstanceId=sre-12345678\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d996e05507e42d5970cd2e25ed5267a\",\n        \"TaskId\": \"task-123456\"\n    }\n}",
+        "title": "RestartSREInstance"
       }
     ],
     "RollbackConfigFileReleases": [

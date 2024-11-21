@@ -10,7 +10,7 @@ tccli tat ModifyCommand --cli-unfold-argument  \
     --Description hello world! \
     --Content cHM= \
     --CommandType SHELL \
-    --WorkingDirectory / \
+    --WorkingDirectory /root \
     --Timeout 600 \
     --CommandId cmd-63usjhmq
 ```

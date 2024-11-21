@@ -982,6 +982,67 @@
       ],
       "usage": "out"
     },
+    "CertBasicInfo": {
+      "document": "证书基本信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "颁发者",
+          "example": "USERTrust RSA Certification Authority",
+          "member": "string",
+          "name": "Issuer",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "颁发给",
+          "example": "DNSPod RSA DV",
+          "member": "string",
+          "name": "Subject",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "证书指纹",
+          "example": "无",
+          "member": "string",
+          "name": "Fingerprint",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "证书有效期开始时间",
+          "example": "无",
+          "member": "string",
+          "name": "ValidFrom",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "证书有效期结束时间",
+          "example": "无",
+          "member": "string",
+          "name": "ValidTo",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "CertTaskId": {
       "document": "证书异步任务ID",
       "members": [
@@ -4097,6 +4158,16 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
+          "document": "证书链信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CertBasicInfo",
+          "name": "CertChainInfo",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -4920,7 +4991,7 @@
         },
         {
           "disabled": false,
-          "document": "下载的服务类型: nginx tomcat apache iis jks other root",
+          "document": "必填选项，下载的服务类型: nginx tomcat apache iis jks other root",
           "example": "nginx",
           "member": "string",
           "name": "ServiceType",
@@ -4939,7 +5010,7 @@
           "example": "https://xxxxx.zip",
           "member": "string",
           "name": "DownloadCertificateUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4949,7 +5020,7 @@
           "example": "xxx.com_nginx.zip",
           "member": "string",
           "name": "DownloadFilename",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7231,6 +7302,28 @@
           "required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源替换开始时间",
+          "example": "无",
+          "member": "string",
+          "name": "ReplaceStartTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源替换结束时间",
+          "example": "无",
+          "member": "string",
+          "name": "ReplaceEndTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -10522,7 +10615,7 @@
         },
         {
           "disabled": false,
-          "document": "相同的证书是否允许重复上传",
+          "document": "相同的证书是否允许重复上传； true：允许上传相同指纹的证书；  false：不允许上传相同指纹的证书； 默认值：true",
           "example": "true",
           "member": "bool",
           "name": "Repeatable",

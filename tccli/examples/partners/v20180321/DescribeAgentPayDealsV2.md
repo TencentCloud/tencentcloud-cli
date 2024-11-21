@@ -14,7 +14,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "asas",
+        "RequestId": "2153b1f3-70a5-42e0-9348-b60111c3863d",
         "AgentPayDealSet": [
             {
                 "DealId": "1078264383",
@@ -58,13 +58,13 @@ Output:
                 "PayerMode": "1",
                 "GoodsName": "云硬盘CBS",
                 "SubGoodsName": "高性能云硬盘",
-                "ClientRemark": "",
+                "ClientRemark": "客户备注",
                 "ClientType": "new",
                 "ProjectType": "platform",
                 "SalesUin": "0",
                 "DealStatus": "分配完成",
                 "ActionType": "purchase",
-                "ActivityId": "",
+                "ActivityId": "0",
                 "OverdueTime": "2024-01-23 10:13:48",
                 "ResourceIds": [
                     "disk-bos529hc"

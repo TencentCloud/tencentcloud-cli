@@ -23,7 +23,13 @@ Output:
                 "MachineWanIp": "1.1.1.1",
                 "Uuid": "05f0bcab-726c-4ea4-8109-bcd03d5598f7",
                 "MachineIp": "1.1.1.1",
-                "Tags": []
+                "Tags": [
+                    {
+                        "Name": "cwp",
+                        "TagId": 1,
+                        "Rid": 1
+                    }
+                ]
             }
         ],
         "RequestId": "be6f6eec-0825-4e67-ab9a-c8568bbf736c"

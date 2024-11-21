@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tcss DescribeVirusTaskList --cli-unfold-argument  \
-    --TaskId dskaldjskld
+    --TaskId faketaskid
 ```
 
 Output: 

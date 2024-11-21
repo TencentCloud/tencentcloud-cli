@@ -18,7 +18,7 @@ Output:
 {
     "Response": {
         "EventId": 10,
-        "RequestId": "abc"
+        "RequestId": "567356cf-7093-453b-a55c-15d1d36faXXX"
     }
 }
 ```

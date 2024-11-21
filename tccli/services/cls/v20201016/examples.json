@@ -70,6 +70,14 @@
         "title": "创建告警屏蔽"
       }
     ],
+    "CreateCloudProductLogTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\n      Host: xxx.tencentcloudapi.com\n      Content-Type: application/json\n      X-TC-Action: DescribeInstances\n      <公共请求参数>\n      \n     {\n  \"InstanceId\": \"ins-r8hr2upy\",\n  \"AssumerName\": \"cls\",\n  \"LogType\": \"default\",\n  \"CloudProductRegion\": \"ap-guangzhou\",\n  \"ClsRegion\": \"ap-guangzhou\",\n  \"LogsetName\": \"test-logset\",\n  \"TopicName\": \"test-topic\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TopicId\": \"92cdd6d4-da98-4a6e-9494-175b44338680\",\n        \"TopicName\": \"test-topic\",\n        \"LogsetId\": \"92cdd6d4-da98-4a6e-9494-175b44338680\",\n        \"LogsetName\": \"test-logset\",\n        \"RequestId\": \"92cdd6d4-da98-4a6e-9494-175b44338680\"\n    }\n}",
+        "title": "创建云产品日志投递任务"
+      }
+    ],
     "CreateConfig": [
       {
         "document": "FilterKeyRegex：Loglistener日志过滤规则列表（旧版），需要过滤日志的key，及其对应的regex。\n 注意：2.9.3及以上版本LogListener ，建议使用AdvanceFilterRules配置日志过滤规则。\n",
@@ -248,6 +256,14 @@
         "title": "删除告警屏蔽"
       }
     ],
+    "DeleteCloudProductLogTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\n      Host: xxx.tencentcloudapi.com\n      Content-Type: application/json\n      X-TC-Action: DeleteCloudProductLogTask\n      <公共请求参数>\n      \n{\n  \"InstanceId\": \"ins-r8hr2upy\",\n  \"AssumerName\": \"cls\",\n  \"LogType\": \"default\",\n  \"CloudProductRegion\": \"ap-guangzhou\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"18687552-8133-4b7a-8e71-a4c646401ce9\"\n    }\n}",
+        "title": "删除云产品日志投递任务"
+      }
+    ],
     "DeleteConfig": [
       {
         "document": "",
@@ -416,6 +432,14 @@
         "title": "查询未恢复告警"
       }
     ],
+    "DescribeCloudProductLogTasks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\n      Host: xxx.tencentcloudapi.com\n      Content-Type: application/json\n      X-TC-Action: DescribeCloudProductLogTasks\n      <公共请求参数>\n      \n      {\n  \"Offset\": 0,\n  \"Limit\": 0,\n  \"Filters\": [\n    {\n      \"Key\": \"AsummerName\",\n      \"Values\": [\n        \"cls\"\n      ]\n    }\n  ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Tasks\": [\n            {\n                \"ClsRegion\": \"ap-guangzhou\",\n                \"InstanceId\": \"ins-r8hr2upy\",\n                \"LogsetId\": \"92cdd6d4-da98-4a6e-9494-175b44338680\",\n                \"TopicId\": \"92cdd6d4-da98-4a6e-9494-175b44338680\",\n                \"Extend\": \"\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"92cdd6d4-da98-4a6e-9494-175b44338680\"\n    }\n}",
+        "title": "DescribeCloudProductLogTasks"
+      }
+    ],
     "DescribeConfigExtras": [
       {
         "document": "获取特殊采集配置",
@@ -450,9 +474,9 @@
     ],
     "DescribeConsumer": [
       {
-        "document": "",
+        "document": "获取投递配置",
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConsumer\n<公共请求参数>\n\n{\n    \"TopicId\": \"xxx-xxx-xxx-xxx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60xxx-0xxx-4xxx-bxxx-270359fb5xxx\",\n        \"Effective\": true,\n        \"Ckafka\": {\n            \"Vip\": \"10.123.123.123\",\n            \"Vport\": \"8888\",\n            \"InstanceId\": \"xxxxx\",\n            \"InstanceName\": \"myname\",\n            \"TopicId\": \"xxxxx\",\n            \"TopicName\": \"xxxxx\"\n        },\n        \"Content\": {\n            \"EnableTag\": true,\n            \"MetaFields\": [\n                \"__SOURCE__\"\n            ]\n        },\n        \"NeedContent\": true,\n        \"Compression\": 0\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60xxx-0xxx-4xxx-bxxx-270359fb5xxx\",\n        \"Effective\": true,\n        \"Ckafka\": {\n            \"Vip\": \"10.123.123.123\",\n            \"Vport\": \"8088\",\n            \"InstanceId\": \"xx-xx\",\n            \"InstanceName\": \"myname\",\n            \"TopicId\": \"xxxxx-xxx-xxx\",\n            \"TopicName\": \"name\"\n        },\n        \"Content\": {\n            \"EnableTag\": true,\n            \"MetaFields\": [\n                \"__SOURCE__\"\n            ],\n            \"TagJsonNotTiled\": true,\n            \"TimestampAccuracy\": 0,\n            \"JsonType\": 0\n        },\n        \"NeedContent\": true,\n        \"Compression\": 0\n    }\n}",
         "title": "获取投递配置"
       }
     ],
@@ -666,6 +690,14 @@
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAlarmShield\n<公共请求参数>\n\n{\n    \"TaskId\": \"bb42f112-a74d-456e-b3c4-ff5472911b42\",\n    \"AlarmNoticeId\": \"notice-bb42f112-a74d-456e-b3c4-ff5472911b42\",\n    \"StartTime\": 1701872657,\n    \"EndTime\": 1701892657,\n    \"Type\": 1,\n    \"Rule\": \"\",\n    \"Reason\": \"修改原因\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1142f112-a74d-456e-b3c4-ff5472911b11\"\n    }\n}",
         "title": "修改告警屏蔽"
+      }
+    ],
+    "ModifyCloudProductLogTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\n      Host: xxx.tencentcloudapi.com\n      Content-Type: application/json\n      X-TC-Action: ModifyCloudProductLogTask\n      <公共请求参数>\n      \n    {\n  \"InstanceId\": \"ins-r8hr2upy\",\n  \"AssumerName\": \"cls\",\n  \"LogType\": \"default\",\n  \"CloudProductRegion\": \"ap-guangzhou\",\n  \"Extend\": \"{}\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"18687552-8133-4b7a-8e71-a4c646401ce9\"\n    }\n}",
+        "title": "修改云产品日志投递任务"
       }
     ],
     "ModifyConfig": [

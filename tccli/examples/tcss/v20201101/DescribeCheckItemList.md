@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tcss DescribeCheckItemList --cli-unfold-argument  \
-    --Limit 2 \
-    --Offset 0
+    --Offset 0 \
+    --Limit 10
 ```
 
 Output: 
@@ -16,29 +16,29 @@ Output:
     "Response": {
         "ClusterCheckItems": [
             {
-                "CheckItemId": 0,
-                "Name": "abc",
-                "ItemDetail": "abc",
-                "RiskLevel": "abc",
-                "RiskTarget": "abc",
-                "RiskType": "abc",
-                "RiskAttribute": "abc",
-                "RiskProperty": "abc",
-                "CVENumber": "abc",
-                "DiscoverTime": "abc",
-                "Solution": "abc",
-                "CVSS": "abc",
-                "CVSSScore": "abc",
-                "RelateLink": "abc",
-                "AffectedType": "abc",
-                "AffectedVersion": "abc",
+                "AffectedType": "Workload",
+                "AffectedVersion": "所有",
+                "CVENumber": "",
+                "CVSS": "",
+                "CVSSScore": "0",
+                "CheckItemId": 10280,
+                "DiscoverTime": "2023-08-11 11:18:23",
                 "IgnoredAssetNum": 0,
-                "IsIgnored": true,
-                "RiskAssessment": "abc"
+                "IsIgnored": false,
+                "ItemDetail": "default ServiceAccount禁止授予写入/修改权限",
+                "Name": "禁止授予ServiceAccount default写入/修改权限",
+                "RelateLink": "",
+                "RiskAssessment": "",
+                "RiskAttribute": "MaliciousTampering",
+                "RiskLevel": "High",
+                "RiskProperty": "",
+                "RiskTarget": "RBAC",
+                "RiskType": "ConfigRisk",
+                "Solution": "确保 default 名称的ServiceAccount禁止授予写入/修改权限"
             }
         ],
-        "TotalCount": 1,
-        "RequestId": "abc"
+        "RequestId": "3d286d4b-8df0-4247-af69-02b510fac784",
+        "TotalCount": 163
     }
 }
 ```

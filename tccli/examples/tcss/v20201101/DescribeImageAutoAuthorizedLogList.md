@@ -16,14 +16,14 @@ Output:
 {
     "Response": {
         "TotalCount": 1,
-        "RequestId": "xx",
+        "RequestId": "8bc803fd-d85d-47b8-9e2b-9644674be677",
         "List": [
             {
                 "Status": "SUCCESS",
-                "AuthorizedTime": "xx",
-                "ImageName": "xx",
+                "AuthorizedTime": "2022-01-01 00:00:00",
+                "ImageName": "镜像名称",
                 "IsAuthorized": 1,
-                "ImageId": "xx"
+                "ImageId": "镜像id image-id"
             }
         ]
     }

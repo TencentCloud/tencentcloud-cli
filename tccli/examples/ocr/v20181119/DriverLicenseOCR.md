@@ -1,4 +1,4 @@
-**Example 1: 驾驶证识别示例代码1    [前往调试工具](https://console.cloud.tencent.com/api/explorer?Product=ocr&Version=2018-11-19&Action=DriverLicenseOCR)**
+**Example 1: 驾驶证正面识别示例    [前往调试工具](https://console.cloud.tencent.com/api/explorer?Product=ocr&Version=2018-11-19&Action=DriverLicenseOCR)**
 
 驾驶证识别
 
@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ocr DriverLicenseOCR --cli-unfold-argument  \
-    --ImageUrl https://xx/a.jpg \
+    --ImageUrl https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/vehicle/DriverLicenseOCR/DriverLicenseOCR1.jpg \
     --CardSide FRONT
 ```
 
@@ -41,7 +41,7 @@ Output:
 }
 ```
 
-**Example 2: 驾驶证识别示例代码2    [前往调试工具](https://console.cloud.tencent.com/api/explorer?Product=ocr&Version=2018-11-19&Action=DriverLicenseOCR)**
+**Example 2: 驾驶证正面告警识别示例   [前往调试工具](https://console.cloud.tencent.com/api/explorer?Product=ocr&Version=2018-11-19&Action=DriverLicenseOCR)**
 
 驾驶证识别
 
@@ -49,7 +49,7 @@ Input:
 
 ```
 tccli ocr DriverLicenseOCR --cli-unfold-argument  \
-    --ImageUrl https://xx/a.jpg \
+    --ImageUrl https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/vehicle/DriverLicenseOCR/DriverLicenseOCR2.jpg \
     --CardSide FRONT
 ```
 
@@ -88,7 +88,7 @@ Output:
 }
 ```
 
-**Example 3: 驾驶证识别示例代码3    [前往调试工具](https://console.cloud.tencent.com/api/explorer?Product=ocr&Version=2018-11-19&Action=DriverLicenseOCR)**
+**Example 3: 驾驶证反面识别示例    [前往调试工具](https://console.cloud.tencent.com/api/explorer?Product=ocr&Version=2018-11-19&Action=DriverLicenseOCR)**
 
 驾驶证反面
 
@@ -96,7 +96,7 @@ Input:
 
 ```
 tccli ocr DriverLicenseOCR --cli-unfold-argument  \
-    --ImageUrl https://xx/a.jpg \
+    --ImageUrl https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/vehicle/DriverLicenseOCR/DriverLicenseOCR2.jpg \
     --CardSide BACK
 ```
 
@@ -124,48 +124,6 @@ Output:
         "CurrentTime": "",
         "GenerateTime": "",
         "State": "",
-        "BackPageName": "",
-        "BackPageCardCode": "",
-        "DriverLicenseType": ""
-    }
-}
-```
-
-**Example 4: 驾驶证识别示例代码4    [前往调试工具](https://console.cloud.tencent.com/api/explorer?Product=ocr&Version=2018-11-19&Action=DriverLicenseOCR)**
-
-电子驾驶证识别
-
-Input: 
-
-```
-tccli ocr DriverLicenseOCR --cli-unfold-argument  \
-    --ImageUrl https://xx/a.jpg
-```
-
-Output: 
-```
-{
-    "Response": {
-        "Address": "",
-        "ArchivesCode": "321123405123",
-        "CardCode": "321281298512340017",
-        "Class": "C1",
-        "CumulativeScore": "1分",
-        "DateOfBirth": "1995-11-22",
-        "DateOfFirstIssue": "2012-02-19",
-        "EndDate": "2030-07-19",
-        "IssuingAuthority": "",
-        "Name": "冯妙",
-        "Nationality": "中国",
-        "RecognizeWarnCode": [],
-        "RecognizeWarnMsg": [],
-        "Record": "",
-        "RequestId": "4b67dd01-c0ba-43c0-b899-e1088fa314fe",
-        "Sex": "女",
-        "StartDate": "2020-01-20",
-        "CurrentTime": "",
-        "GenerateTime": "",
-        "State": "未处理",
         "BackPageName": "",
         "BackPageCardCode": "",
         "DriverLicenseType": ""

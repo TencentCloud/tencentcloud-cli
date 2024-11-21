@@ -8,7 +8,7 @@ Input:
 tccli dasb ModifyDevice --cli-unfold-argument  \
     --GroupIdSet 1 \
     --Id 1 \
-    --Port 1
+    --Port 80
 ```
 
 Output: 

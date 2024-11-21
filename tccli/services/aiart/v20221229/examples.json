@@ -3,16 +3,16 @@
     "ChangeClothes": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: aiart.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChangeClothes\n<公共请求参数>\n\n{\n    \"ModelUrl\": \"https://xxx.com/test.jpg\",\n    \"ClothesUrl\": \"https://xxx.com/test.jpg\",\n    \"ClothesType\": \"Upper-body\",\n    \"RspImgType\": \"url\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0d0728ed-f777-4861-aa4b-5a6167daa0b6\",\n        \"ResultImage\": \"https://result.jpg\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: aiart.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChangeClothes\n<公共请求参数>\n\n{\n    \"ModelUrl\": \"https://xxx.com/model.jpg\",\n    \"ClothesUrl\": \"https://xxx.com/cloth.jpg\",\n    \"ClothesType\": \"Upper-body\",\n    \"RspImgType\": \"url\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0d0728ed-f777-4861-aa4b-5a6167daa0b6\",\n        \"ResultImage\": \"https://aiart-xxx.cos.ap-guangzhou.myqcloud.com/xxx.jpg?q-sign-algorithm=sha1&q-ak=xxxxx&q-sign-time=1731574045;1731577645&q-key-time=1731574045;1731577645&q-header-list=host&q-url-param-list=&q-signature=31fe75c1c18c3d91db59508961209dd37aaf41c7\"\n    }\n}",
         "title": "成功"
       }
     ],
     "GenerateAvatar": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: aiart.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GenerateAvatar\n<公共请求参数>\n\n{\n    \"InputUrl\": \"http://url\",\n    \"Style\": \"water\"\n}",
-        "output": "{\n    \"Response\": {\n        \"ResultImage\": \"url or base64\",\n        \"RequestId\": \"301bfc25-61ca-4ece-b03e-f6aefb547969\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: aiart.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GenerateAvatar\n<公共请求参数>\n\n{\n    \"InputUrl\": \"https://xxx.com/image.jpg\",\n    \"Style\": \"water\",\n    \"RspImgType\": \"url\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ResultImage\": \"https://aiart-xxx.cos.ap-guangzhou.myqcloud.com/xxx.jpg?q-sign-algorithm=sha1&q-ak=xxxxx&q-sign-time=1731574045;1731577645&q-key-time=1731574045;1731577645&q-header-list=host&q-url-param-list=&q-signature=31fe75c1c18c3d91db59508961209dd37aaf41c7\",\n        \"RequestId\": \"301bfc25-61ca-4ece-b03e-f6aefb547969\"\n    }\n}",
         "title": "调用成功示例"
       }
     ],
@@ -51,16 +51,16 @@
     "ReplaceBackground": [
       {
         "document": "成功调用并生成图片",
-        "input": "POST / HTTP/1.1\nHost: aiart.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReplaceBackground\n<公共请求参数>\n\n{\n    \"ProductUrl\": \"https://xxx.com/test.jpg\",\n    \"MaskUrl\": \"https://xxx.com/test.jpg\",\n    \"Prompt\": \"backpack,real picture quality, fabric texture, fine, cartoon\",\n    \"RspImgType\": \"url\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0d0728ed-f777-4861-aa4b-5a6167daa0b6\",\n        \"ResultImage\": \"https://result.jpg\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: aiart.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReplaceBackground\n<公共请求参数>\n\n{\n    \"ProductUrl\": \"https://xxx.com/product.jpg\",\n    \"MaskUrl\": \"https://xxx.com/mask.jpg\",\n    \"Prompt\": \"backpack,real picture quality, fabric texture, fine, cartoon\",\n    \"RspImgType\": \"url\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0d0728ed-f777-4861-aa4b-5a6167daa0b6\",\n        \"ResultImage\": \"https://aiart-xxx.cos.ap-guangzhou.myqcloud.com/xxx.jpg?q-sign-algorithm=sha1&q-ak=xxxxx&q-sign-time=1731574045;1731577645&q-key-time=1731574045;1731577645&q-header-list=host&q-url-param-list=&q-signature=31fe75c1c18c3d91db59508961209dd37aaf41c7\"\n    }\n}",
         "title": "成功调用并生成图片"
       }
     ],
     "SketchToImage": [
       {
         "document": "成功调用并生成图片",
-        "input": "POST / HTTP/1.1\nHost: aiart.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SketchToImage\n<公共请求参数>\n\n{\n    \"InputUrl\": \"https://xxx.com/test.jpg\",\n    \"Prompt\": \"backpack,real picture quality, fabric texture, fine, cartoon\",\n    \"RspImgType\": \"url\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0d0728ed-f777-4861-aa4b-5a6167daa0b6\",\n        \"ResultImage\": \"https://result.jpg\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: aiart.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SketchToImage\n<公共请求参数>\n\n{\n    \"InputUrl\": \"https://xxx.com/image.jpg\",\n    \"Prompt\": \"backpack,real picture quality, fabric texture, fine, cartoon\",\n    \"RspImgType\": \"url\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0d0728ed-f777-4861-aa4b-5a6167daa0b6\",\n        \"ResultImage\": \"https://aiart-xxx.cos.ap-guangzhou.myqcloud.com/xxx.jpg?q-sign-algorithm=sha1&q-ak=xxxxx&q-sign-time=1731574045;1731577645&q-key-time=1731574045;1731577645&q-header-list=host&q-url-param-list=&q-signature=31fe75c1c18c3d91db59508961209dd37aaf41c7\"\n    }\n}",
         "title": "成功调用并生成图片"
       }
     ],

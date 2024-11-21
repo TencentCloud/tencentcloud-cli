@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ocr VehicleRegCertOCR --cli-unfold-argument  \
-    --ImageUrl https://xx/a.jpg
+    --ImageUrl https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/vehicle/VehicleRegCertOCR/VehicleRegCertOCR1.jpg
 ```
 
 Output: 
@@ -15,24 +15,24 @@ Output:
     "Response": {
         "VehicleRegCertInfos": [
             {
-                "Name": "车辆型号",
-                "Value": "FV7"
+                "Name": "编号",
+                "Value": "*310005169880*"
             },
             {
-                "Name": "发动机号",
-                "Value": "S26"
+                "Name": "机动车所有人1",
+                "Value": "李明"
             },
             {
                 "Name": "车辆识别代号/车架号",
                 "Value": "LFV8"
             },
             {
-                "Name": "制造厂名称",
-                "Value": "一汽大众汽车有限公司"
+                "Name": "身份证明名称1",
+                "Value": "居民身份证"
             },
             {
-                "Name": "机动车所有人/身份证明名称/号码",
-                "Value": "小明/居民身份证/584874705102015"
+                "Name": "号码1",
+                "Value": "339001198706168418"
             }
         ],
         "RequestId": "393fa9e0-3827-4183-9fe7-68ed622028a1"

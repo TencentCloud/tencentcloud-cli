@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli cfw ModifyAllRuleStatus --cli-unfold-argument  \
-    --EdgeId  \
+    --EdgeId edge-ppt3pi01 \
     --Status 1 \
     --Direction 1 \
-    --Area 
+    --Area ap-guangzhou
 ```
 
 Output: 

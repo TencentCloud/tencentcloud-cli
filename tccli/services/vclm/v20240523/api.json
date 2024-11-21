@@ -29,7 +29,7 @@
       "status": "online"
     },
     "DescribeVideoTranslateJob": {
-      "document": "查询视频翻译任务",
+      "document": "查询视频转译任务",
       "input": "DescribeVideoTranslateJobRequest",
       "name": "查询视频转译任务",
       "output": "DescribeVideoTranslateJobResponse",
@@ -57,7 +57,7 @@
       "status": "online"
     },
     "SubmitVideoTranslateJob": {
-      "document": "###### 支持音色种别列表\n| 音色名称                 | 性别 | 目标语言         | 音色ID |\n| ------------------------ | ---- | ---------------- | ------ |\n| Florian Multilingual     | 男 | 德语(德国)       | 701001 |\n| Seraphina                | 女  | 德语(德国)       | 701002 |\n| Ada Multilingual         | 女 | 英语(英国)       | 701003 |\n| Ollie Multilingual       | 男  | 英语(英国)       | 701004 |\n| Ava Multilingual         | 女 | 英语(美国)       | 701005 |\n| Andrew Multilingual      | 男  | 英语(美国)       | 701006 |\n| Emma Multilingual        | 女  | 英语(美国)       | 701007 |\n| Brian Multilingual       | 男  | 英语(美国)       | 701008 |\n| Jenny Multilingual       | 女  | 英语(美国)       | 701009 |\n| Ryan Multilingual        | 男  | 英语(美国)       | 701010 |\n| Adam Multilingual        | 男  | 英语(美国)       | 701011 |\n| AlloyTurbo Multilingual  | 男  | 英语(美国)       | 701012 |\n| Amanda Multilingual      | 女  | 英语(美国)       | 701013 |\n| Brandon Multilingual     | 男  | 英语(美国)       | 701014 |\n| Christopher Multilingual | 男  | 英语(美国)       | 701015 |\n| Cora Multilingual        | 女  | 英语(美国)       | 701016 |\n| Davis Multilingual       | 男  | 英语(美国)       | 701017 |\n| Derek Multilingual       | 男  | 英语(美国)       | 701018 |\n| Dustin Multilingual      | 男  | 英语(美国)       | 701019 |\n| Evelyn Multilingual      | 女  | 英语(美国)       | 701020 |\n| Lewis Multilingual       | 男  | 英语(美国)       | 701021 |\n| Lola Multilingual        | 女  | 英语(美国)       | 701022 |\n| Nancy Multilingual       | 女  | 英语(美国)       | 701023 |\n| NovaTurbo Multilingual   | 女   | 英语(美国)       | 701024 |\n| Phoebe Multilingual      | 女  | 英语(美国)       | 701025 |\n| Samuel Multilingual      | 男  | 英语(美国)       | 701026 |\n| Serena Multilingual      | 女  | 英语(美国)       | 701027 |\n| Steffan Multilingual     | 男  | 英语(美国)       | 701028 |\n| Arabella Multilingual    | 女  | 西班牙语(西班牙) | 701029 |\n| Isidora Multilingual     | 女  | 西班牙语(西班牙) | 701030 |\n| Tristan Multilingual     | 男  | 西班牙语(西班牙) | 701031 |\n| Ximena Multilingual      | 女  | 西班牙语(西班牙) | 701032 |\n| Remy Multilingual        | 男  | 法语(法国)       | 701033 |\n| Vivienne Multilingual    | 女  | 法语(法国)       | 701034 |\n| Lucien Multilingual      | 男  | 法语(法国)       | 701035 |\n| Alessio Multilingual     | 男  | 意大利语(意大利) | 701036 |\n| Giuseppe Multilingual    | 男  | 意大利语(意大利) | 701037 |\n| Isabella Multilingual    | 女  | 意大利语(意大利) | 701038 |\n| Marcello Multilingual    | 男  | 意大利语(意大利) | 701039 |\n| Masaru Multilingual      | 男  | 日语(日本)       | 701040 |\n| Hyunsu Multilingual      | 男  | 韩语(韩国)       | 701041 |\n| Macerio Multilingual     | 男  | 葡萄牙语(巴西)   | 701042 |\n| Thalita Multilingual     | 女  | 葡萄牙语(巴西)   | 701043 |\n| 晓辰 多语言              | 女  | 中文(普通话)     | 701044 |\n| 晓晓 多语言              | 女  | 中文(普通话)     | 701045 |\n| 晓宇 多语言              | 女  | 中文(普通话)     | 701046 |\n| 云逸 多语言              | 男 | 中文(普通话)     | 701047 |\n| Yunfan Multilingual      | 男  | 中文(普通话)     | 701048 |\n| Yunxiao Multilingual     | 男  | 中文(普通话)     | 701049 |\n| 晓晓 方言                | 女  | 中文(普通话)     | 701050 |",
+      "document": "###### 支持音色种别列表\n| 音色名称                 | 性别 | 音色ID |音色试听ID |\n| ------------------------ | ---- | ------ |------ |\n| Florian Multilingual     | 男   | 701001 |\n| Seraphina                | 女   | 701002 |\n| Ada Multilingual         | 女   | 701003 |\n| Ollie Multilingual       | 男   | 701004 |\n| Ava Multilingual         | 女   | 701005 |\n| Andrew Multilingual      | 男   | 701006 |\n| Emma Multilingual        | 女   | 701007 |\n| Brian Multilingual       | 男   | 701008 |\n| Jenny Multilingual       | 女   | 701009 |\n| Ryan Multilingual        | 男   | 701010 |\n| Adam Multilingual        | 男   | 701011 |\n| AlloyTurbo Multilingual  | 男   | 701012 |\n| Amanda Multilingual      | 女   | 701013 |\n| Brandon Multilingual     | 男   | 701014 |\n| Christopher Multilingual | 男   | 701015 |\n| Cora Multilingual        | 女   | 701016 |\n| Davis Multilingual       | 男   | 701017 |\n| Derek Multilingual       | 男   | 701018 |\n| Dustin Multilingual      | 男   | 701019 |\n| Evelyn Multilingual      | 女   | 701020 |\n| Lewis Multilingual       | 男   | 701021 |\n| Lola Multilingual        | 女   | 701022 |\n| Nancy Multilingual       | 女   | 701023 |\n| NovaTurbo Multilingual   | 女   | 701024 |\n| Phoebe Multilingual      | 女   | 701025 |\n| Samuel Multilingual      | 男   | 701026 |\n| Serena Multilingual      | 女   | 701027 |\n| Steffan Multilingual     | 男   | 701028 |\n| Arabella Multilingual    | 女   | 701029 |\n| Isidora Multilingual     | 女   | 701030 |\n| Tristan Multilingual     | 男   | 701031 |\n| Ximena Multilingual      | 女   | 701032 |\n| Remy Multilingual        | 男   | 701033 |\n| Vivienne Multilingual    | 女   | 701034 |\n| Lucien Multilingual      | 男   | 701035 |\n| Alessio Multilingual     | 男   | 701036 |\n| Giuseppe Multilingual    | 男   | 701037 |\n| Isabella Multilingual    | 女   | 701038 |\n| Marcello Multilingual    | 男   | 701039 |\n| Masaru Multilingual      | 男   | 701040 |\n| Hyunsu Multilingual      | 男   | 701041 |\n| Macerio Multilingual     | 男   | 701042 |\n| Thalita Multilingual     | 女   | 701043 |\n| 晓辰 多语言              | 女   | 701044 |\n| 晓晓 多语言              | 女   | 701045 |\n| 晓宇 多语言              | 女   | 701046 |\n| 云逸 多语言              | 男   | 701047 |\n| Yunfan Multilingual      | 男   | 701048 |\n| Yunxiao Multilingual     | 男   | 701049 |\n| 晓晓 方言                | 女   | 701050 |",
       "input": "SubmitVideoTranslateJobRequest",
       "name": "提交视频转译任务",
       "output": "SubmitVideoTranslateJobResponse",
@@ -115,8 +115,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "视频翻译任务 ID",
-          "example": "无",
+          "document": "视频转译任务 ID",
+          "example": "vlSYvQkMM0KwPuoakawm0tPrREwc2p7c",
           "member": "string",
           "name": "JobId",
           "required": true,
@@ -125,7 +125,7 @@
         {
           "disabled": false,
           "document": "待确认文本",
-          "example": "无",
+          "example": "[{\"SourceText\":\"当工作或学习结果不理想，甚至面临被全盘否定的情况时，你会如何应对？可以举例说明当时你是如何处理负面情绪，并找到解决办法的。\",\"TargetText\":\"How do you cope when work or academic results are not ideal, or even when faced with a complete denial of your efforts? Provide an example of how you managed negative emotions and found a solution in such a situation.\"}]",
           "member": "TranslateResult",
           "name": "TranslateResults",
           "required": true,
@@ -139,8 +139,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "视频翻译任务 ID",
-          "example": "无",
+          "document": "视频转译任务 ID。",
+          "example": "vlSYvQkMM0KwPuoakawm0tPrREwc2p7c",
           "member": "string",
           "name": "JobId",
           "output_required": false,
@@ -149,8 +149,8 @@
         },
         {
           "disabled": false,
-          "document": "音频转换任务 ID",
-          "example": "无",
+          "document": "音频转译任务 ID。",
+          "example": "ecaa9680e41441399b4f29759174383f",
           "member": "string",
           "name": "TaskId",
           "output_required": false,
@@ -159,8 +159,8 @@
         },
         {
           "disabled": false,
-          "document": "音频翻译结果确认 session\t",
-          "example": "无",
+          "document": "音频转译结果确认 session。\t",
+          "example": "0bfda02b562d4432be1176904bbcbe68",
           "member": "string",
           "name": "SessionId",
           "output_required": false,
@@ -169,8 +169,8 @@
         },
         {
           "disabled": false,
-          "document": "视频转译任务状态\t",
-          "example": "无",
+          "document": "该字段与 DescribeVideoTranslateJob 接口的 Status 功能相同，均表示任务状态。0：任务初始化。1：音频翻译中。 2：音频翻译失败。 3：音频翻译成功。 4：音频结果待确认。 5：音频结果已确认完毕。6：视频翻译中。 7：视频翻译失败。 8：视频翻译成功。",
+          "example": "5",
           "member": "int64",
           "name": "Status",
           "output_required": false,
@@ -179,8 +179,8 @@
         },
         {
           "disabled": false,
-          "document": "视频转译任务信息\t",
-          "example": "无",
+          "document": "视频转译任务信息。\t",
+          "example": "音频转译结果已确认",
           "member": "string",
           "name": "Message",
           "output_required": false,
@@ -323,7 +323,7 @@
         },
         {
           "disabled": false,
-          "document": "错误码",
+          "document": "任务执行错误码。当任务状态不为FAIL时，该值为\"\"。",
           "example": "FailedOperation.ModerationFailed",
           "member": "string",
           "name": "ErrorCode",
@@ -333,7 +333,7 @@
         },
         {
           "disabled": false,
-          "document": "错误信息",
+          "document": "任务执行错误信息。当任务状态不为FAIL时，该值为\"\"。",
           "example": "审核未通过",
           "member": "string",
           "name": "ErrorMessage",
@@ -343,8 +343,8 @@
         },
         {
           "disabled": false,
-          "document": "生成视频的URL地址\n有效期24小时",
-          "example": "https://***/video.mp4",
+          "document": "生成视频的URL地址。有效期24小时。",
+          "example": "https://vcg-prod-xxx.cos.ap-guangzhou.tencentcos.cn/xxx.mp4",
           "member": "string",
           "name": "ResultVideoUrl",
           "output_required": false,
@@ -366,7 +366,7 @@
         {
           "disabled": false,
           "document": "任务ID",
-          "example": "无",
+          "example": "145fa4a42d9440d191b3035f1beafa01",
           "member": "string",
           "name": "JobId",
           "required": true,
@@ -390,8 +390,8 @@
         },
         {
           "disabled": false,
-          "document": "任务状态码：\nJobInit:  \"初始化中\"\nJobModerationFailed: \"审核失败\",\nJobRunning: \"处理中\",\nJobFailed: \"处理失败\",\nJobSuccess: \"处理完成\"。",
-          "example": "[\"JobInit:\", \"JobModerationFailed\", \"JobRunning\", \"JobFailed\", \"JobSuccess\"]",
+          "document": "任务状态码。取值说明：\nJobInit:  \"初始化中\"；\nJobModerationFailed: \"审核失败\"；\nJobRunning: \"处理中\"；\nJobFailed: \"处理失败\"；\nJobSuccess: \"处理完成\"。",
+          "example": "JobSuccess",
           "member": "string",
           "name": "StatusCode",
           "output_required": false,
@@ -400,8 +400,8 @@
         },
         {
           "disabled": false,
-          "document": "任务状态描述。",
-          "example": "[\"初始化中\", \"审核失败\", \"处理中\", \"处理失败\", \"处理完成\"]",
+          "document": "任务状态描述。取值说明：\nJobInit:  \"初始化中\"；\nJobModerationFailed: \"审核失败\"；\nJobRunning: \"处理中\"；\nJobFailed: \"处理失败\"；\nJobSuccess: \"处理完成\"。",
+          "example": "处理完成",
           "member": "string",
           "name": "StatusMsg",
           "output_required": false,
@@ -411,7 +411,7 @@
         {
           "disabled": false,
           "document": "处理结果视频Url。URL有效期为24小时。",
-          "example": "https://xxx.mp4",
+          "example": "https://vcg-prod-xxx.cos.ap-guangzhou.tencentcos.cn/xxx.mp4",
           "member": "string",
           "name": "ResultVideoUrl",
           "output_required": false,
@@ -433,7 +433,7 @@
         {
           "disabled": false,
           "document": "视频转译任务 ID",
-          "example": "无",
+          "example": "vlSYvQkMM0KwPuoakawm0tPrREwc2p7c",
           "member": "string",
           "name": "JobId",
           "required": true,
@@ -447,8 +447,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务状态。 1：音频翻译中。 2：音频翻译失败。 3：音频翻译成功。 4：音频结果待确认。 5：音频结果已确认完毕。6：视频翻译中。 7：视频翻译失败。 8：视频翻译成功。\t",
-          "example": "无",
+          "document": "任务状态。0: 任务初始化。 1：音频转译中。 2：音频转译失败。 3：音频转译成功。 4：音频结果待确认。 5：音频结果已确认完毕。6：视频转译中。 7：视频转译失败。 8：视频转译成功。\t",
+          "example": "8",
           "member": "int64",
           "name": "JobStatus",
           "output_required": false,
@@ -457,8 +457,8 @@
         },
         {
           "disabled": false,
-          "document": "任务错误码。\t",
-          "example": "无",
+          "document": "本次任务出错的错误码，用来定位问题原因。",
+          "example": "FailedOperation.JobNotExist",
           "member": "string",
           "name": "JobErrorCode",
           "output_required": false,
@@ -467,8 +467,8 @@
         },
         {
           "disabled": false,
-          "document": "任务错误信息。\t",
-          "example": "无",
+          "document": "任务错误信息，错误码出现的原因。",
+          "example": "任务不存在",
           "member": "string",
           "name": "JobErrorMsg",
           "output_required": false,
@@ -477,8 +477,8 @@
         },
         {
           "disabled": false,
-          "document": "视频翻译结果。\t",
-          "example": "无",
+          "document": "视频转译生成结果视频url，有效期1天。当JobStatus为8时，该字段返回视频Url。",
+          "example": "https://tencent.cos.ap-guangzhou.myqcloud.com/video_translate/output/video.mp4",
           "member": "string",
           "name": "ResultVideoUrl",
           "output_required": false,
@@ -487,8 +487,8 @@
         },
         {
           "disabled": false,
-          "document": "音频翻译结果。\t",
-          "example": "无",
+          "document": "音频转译后分句翻译内容，包含分句起始时间、源识别文本以及翻译后文本。\n当JobStatus为3、4时，该字段返回分句翻译数据。",
+          "example": "[{\"SourceText\":\"我的天呐,\",\"TargetText\":\"Oh my God,\"}]",
           "member": "TranslateResult",
           "name": "TranslateResults",
           "output_required": false,
@@ -497,8 +497,8 @@
         },
         {
           "disabled": false,
-          "document": "是否需要确认翻译结果。0：不需要，1：需要\t",
-          "example": "无",
+          "document": "是否需要确认翻译结果。0：不需要，1：需要。\t",
+          "example": "1",
           "member": "int64",
           "name": "JobConfirm",
           "output_required": false,
@@ -507,8 +507,8 @@
         },
         {
           "disabled": false,
-          "document": "音频任务 ID\t",
-          "example": "无",
+          "document": "音频任务 ID。\t",
+          "example": "b4c2e836bf01418a888c8958f06c75fd",
           "member": "string",
           "name": "JobAudioTaskId",
           "output_required": false,
@@ -517,8 +517,8 @@
         },
         {
           "disabled": false,
-          "document": "视频审核任务ID\t",
-          "example": "无",
+          "document": "视频审核任务ID。",
+          "example": "1245282556098985984",
           "member": "string",
           "name": "JobVideoModerationId",
           "output_required": false,
@@ -527,8 +527,8 @@
         },
         {
           "disabled": false,
-          "document": "音频审核任务 ID\t",
-          "example": "无",
+          "document": "音频审核任务 ID。",
+          "example": "1982362556098762761",
           "member": "string",
           "name": "JobAudioModerationId",
           "output_required": false,
@@ -537,8 +537,8 @@
         },
         {
           "disabled": false,
-          "document": "口型驱动任务 ID\t",
-          "example": "无",
+          "document": "口型驱动任务 ID。",
+          "example": "1245339406861418496",
           "member": "string",
           "name": "JobVideoId",
           "output_required": false,
@@ -547,8 +547,8 @@
         },
         {
           "disabled": false,
-          "document": "视频素材原始 URL\t",
-          "example": "无",
+          "document": "视频素材原始 URL。",
+          "example": "https://console.cloud.tencent.com/cos/video.mp4",
           "member": "string",
           "name": "OriginalVideoUrl",
           "output_required": false,
@@ -557,8 +557,8 @@
         },
         {
           "disabled": false,
-          "document": "文本片段及其时间戳\t",
-          "example": "无",
+          "document": "文本片段及其时间戳。",
+          "example": "{\"EndMs\":14080,\"StartMs\":360,\"Text\":\"我的天呐，\"}",
           "member": "AsrTimestamps",
           "name": "AsrTimestamps",
           "output_required": false,
@@ -567,8 +567,8 @@
         },
         {
           "disabled": false,
-          "document": "提交视频翻译任务时的 requestId\t",
-          "example": "无",
+          "document": "提交视频转译任务时的 requestId。",
+          "example": "403fb3f1-c40b-454b-9a68-fbcdefcdce58",
           "member": "string",
           "name": "JobSubmitReqId",
           "output_required": false,
@@ -583,6 +583,95 @@
         }
       ],
       "type": "object"
+    },
+    "LogoParam": {
+      "document": "logo参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "水印 Url",
+          "example": "https://xxx.com/image.jpg",
+          "member": "string",
+          "name": "LogoUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "水印 Base64，Url 和 Base64 二选一传入，如果都提供以 Url 为准",
+          "example": "/9j/4QlQaHR0c...N6a2M5ZCI",
+          "member": "string",
+          "name": "LogoImage",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "水印图片位于生成结果图中的坐标及宽高，将按照坐标对标识图片进行位置和大小的拉伸匹配。",
+          "example": "{   \"X\": -222,   \"Y\": -54,   \"Width\": 202,   \"Height\": 34 }",
+          "member": "LogoRect",
+          "name": "LogoRect",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "LogoRect": {
+      "document": "水印图输入框",
+      "members": [
+        {
+          "disabled": false,
+          "document": "水印图框X坐标值。当值大于0时，坐标轴原点位于原图左侧，方向指右；当值小于0时，坐标轴原点位于原图右侧，方向指左。",
+          "example": "-222",
+          "member": "int64",
+          "name": "X",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "水印图框Y坐标值。当值大于0时，坐标轴原点位于原图上侧，方向指下；当值小于0时，坐标轴原点位于原图下侧，方向指上。",
+          "example": "-54",
+          "member": "int64",
+          "name": "Y",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "水印图框宽度。",
+          "example": "202",
+          "member": "int64",
+          "name": "Width",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "水印图框高度。",
+          "example": "34",
+          "member": "int64",
+          "name": "Height",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "SubmitImageAnimateJobRequest": {
       "document": "SubmitImageAnimateJob请求参数结构体",
@@ -640,6 +729,24 @@
           "name": "EnableSegment",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "为生成视频添加标识的开关，默认为0。\n1：添加标识。\n0：不添加标识。\n其他数值：默认按1处理。\n建议您使用显著标识来提示，该视频是 AI 生成的视频。",
+          "example": "1",
+          "member": "int64",
+          "name": "LogoAdd",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "标识内容设置。\n默认在生成视频的右下角添加“视频由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。",
+          "example": "无",
+          "member": "LogoParam",
+          "name": "LogoParam",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -672,7 +779,7 @@
         {
           "disabled": false,
           "document": "传入音频URL地址，音频要求：\n- 音频时长：2秒 - 60秒\n- 音频格式：mp3、wav、m4a",
-          "example": "https://***/audio.mp3",
+          "example": "https://xxx.com/audio.mp3",
           "member": "string",
           "name": "AudioUrl",
           "required": true,
@@ -680,8 +787,8 @@
         },
         {
           "disabled": false,
-          "document": "传入图片URL地址，图片要求：\n- 图片格式：jpg、jpeg、png、bmp、webp\n- 图片分辨率：192～4096\n- 图片大小：不超过10M\n- 图片宽高比：图片【宽：高】在1:2到2:1范围内\n- 图片内容：避免上传无人脸/宠物脸或脸部过小、不完整、不清晰、偏转角度过大的图片。",
-          "example": "https://***/image.jpg",
+          "document": "传入图片URL地址，图片要求：\n- 图片格式：jpg、jpeg、png、bmp、webp\n- 图片分辨率：192～4096\n- 图片大小：不超过10M\n- 图片宽高比：图片【宽：高】在1:2到2:1范围内\n- 图片内容：避免上传无人脸、无宠物脸或脸部过小、不完整、不清晰、偏转角度过大、嘴部被遮挡的图片。",
+          "example": "https://xxx.com/image.jpg",
           "member": "string",
           "name": "ImageUrl",
           "required": false,
@@ -690,7 +797,7 @@
         {
           "disabled": false,
           "document": "传入图片Base64编码，编码后请求体大小不超过10M。\n图片Base64编码与URL地址必传其一，如果都传以ImageBase64为准。",
-          "example": "MIIHNjCCBh6gAwIBAgIQCVe4E0h49mzI0NcSqMy1+jANBgkqhkiG9w0BAQsFADB1 MQswCQYDVQQGEwJVUzEVMBMG",
+          "example": "/9j/4QlQaHR0c...N6a2M5ZCI",
           "member": "string",
           "name": "ImageBase64",
           "required": false,
@@ -704,6 +811,33 @@
           "name": "Mode",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "生成视频尺寸。可选取值：\"512:512\"。\n\n人像模式下，如果不传该参数，默认生成视频的短边分辨率为512，长边分辨率不固定、由模型根据生成效果自动适配得到。如需固定生成分辨率可传入512:512。\n\n宠物模式下，如果不传该参数，默认将脸部唱演视频回贴原图，生成视频分辨率与原图一致。如不需要脸部回贴，仅保留脸部唱演视频，可传入512:512。",
+          "example": "512:512",
+          "member": "string",
+          "name": "Resolution",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "为生成视频添加标识的开关，默认为0。 \n1：添加标识；\n 0：不添加标识；\n其他数值：默认按1处理。 \n建议您使用显著标识来提示，该视频是 AI 生成的视频。",
+          "example": "0",
+          "member": "int64",
+          "name": "LogoAdd",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "标识内容设置。 默认在生成视频的右下角添加“视频由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。",
+          "example": "无",
+          "member": "LogoParam",
+          "name": "LogoParam",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -713,7 +847,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务ID",
+          "document": "任务ID。任务有效期为48小时。",
           "example": "1199999431088685056",
           "member": "string",
           "name": "JobId",
@@ -735,7 +869,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "风格ID，取值说明：2d_anime 2D动漫；3d_cartoon 3D卡通；3d_china 3D国潮；pixel_art\t像素风。",
+          "document": "风格ID。取值说明：\n2d_anime：2D动漫；\n3d_cartoon：3D卡通；\n3d_china：3D国潮；\npixel_art：像素风。",
           "example": "2d_anime, 3d_cartoon, 3d_china, pixel_art",
           "member": "string",
           "name": "StyleId",
@@ -745,7 +879,7 @@
         {
           "disabled": false,
           "document": "输入视频URL。视频要求：\n- 视频格式：mp4、mov；\n- 视频时长：1～60秒；\n- 视频分辨率：540P~2056P，即长宽像素数均在540px～2056px范围内；\n- 视频大小：不超过200M；\n- 视频FPS：15～60fps。",
-          "example": "https://xxx.mp4",
+          "example": "https://xxx.com/video.mp4",
           "member": "string",
           "name": "VideoUrl",
           "required": true,
@@ -753,7 +887,7 @@
         },
         {
           "disabled": false,
-          "document": "风格化强度 可选参数[\"low\",\"medium\",\"high\"] \n\"low\":风格化强度弱,\"medium\":\"风格化强度中等\",\"high\":\"风格化强度强\" \n默认为medium",
+          "document": "风格化强度。取值说明：\nlow：风格化强度弱；\nmedium：风格化强度中等；\nhigh：风格化强度强。\n默认值为medium。",
           "example": "medium",
           "member": "string",
           "name": "StyleStrength",
@@ -768,8 +902,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务ID",
-          "example": "无",
+          "document": "任务ID。任务有效期为48小时。",
+          "example": "c5daf8f7077d41a69c13aab31a7164f3",
           "member": "string",
           "name": "JobId",
           "output_required": false,
@@ -790,8 +924,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "视频地址URL。\n格式要求：支持 mp4、mov 。\n时长要求：【10-300】秒。\nfps 要求：【15-60】fps\n分辨率要求：单边像素要求在 【540~1920】 之间。\n",
-          "example": "http://xxx/video.mp4",
+          "document": "视频地址URL。\n格式要求：支持 mp4、mov 。\n时长要求：【5-600】秒。\nfps 要求：【15-60】fps\n分辨率要求：单边像素要求在 【360~4096】 之间。\n大小要求：不超过500Mb\n",
+          "example": "http://console.cloud.tencent.com/cos/video.mp4",
           "member": "string",
           "name": "VideoUrl",
           "required": true,
@@ -799,7 +933,7 @@
         },
         {
           "disabled": false,
-          "document": "源语言：zh(中文), en(英文)",
+          "document": "输入视频中音频语种\n目前支持语种范围：zh(中文), en(英文)",
           "example": "zh(中文)",
           "member": "string",
           "name": "SrcLang",
@@ -808,7 +942,16 @@
         },
         {
           "disabled": false,
-          "document": "目标语种：\nzh(简体中文)、en(英语)、ar(阿拉伯语)、de(德语)、es(西班牙语)、fr(法语)、id(印尼语)、it(意大利语)、ja(日语)、ko(韩语)、ms(马来语)、pt(葡萄牙语)、ru(俄语)、th(泰语)、tr(土耳其语)、vi(越南语)",
+          "document": "当音频 URL 不为空时，不经过语音AI处理，直接以视频为素材用音频内容做视频口型驱动。\n格式要求：支持 mp3、m4a、aac、wav 格式。\n时长要求：【5~600】秒，音频时长要匹配视频时长。\n大小要求：不超过 100Mb。",
+          "example": "http://console.cloud.tencent.com/cos/audio.mp3",
+          "member": "string",
+          "name": "AudioUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "输出视频中翻译语种\n目前支持语种范围：zh(简体中文)、en(英语)、ar(阿拉伯语)、de(德语)、es(西班牙语)、fr(法语)、id(印尼语)、it(意大利语)、ja(日语)、ko(韩语)、ms(马来语)、pt(葡萄牙语)、ru(俄语)、th(泰语)、tr(土耳其语)、vi(越南语)",
           "example": "ar(阿拉伯语)",
           "member": "string",
           "name": "DstLang",
@@ -817,12 +960,21 @@
         },
         {
           "disabled": false,
-          "document": "当音频 URL 不为空时，默认以音频驱动视频任务口型。\n格式要求：支持 mp3、m4a、acc、wav 格式。\n时长要求：【10~300】秒\n大小要求：不超过 100M。",
-          "example": "http://xxx/audio.mp3",
+          "document": "翻译语种匹配音色种别，其他说明如下：\n1）默认不填代表克隆输入视频中音频音色；\n2）翻译语种非中英（即zh、en），该项必填；\n\n具体音色种别详见说明“支持音色种别列表”，每个音色都支持 15 个目标语种。\n",
+          "example": "701001",
           "member": "string",
-          "name": "AudioUrl",
+          "name": "VoiceType",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否需要纠正视频中音频识别与翻译内容，取值范围：0-不需要，1-需要，默认0。\n",
+          "example": "1",
+          "member": "int64",
+          "name": "Confirm",
+          "required": false,
+          "type": "int"
         },
         {
           "disabled": false,
@@ -835,16 +987,7 @@
         },
         {
           "disabled": false,
-          "document": "是否需要确认翻译结果0：不需要，1：需要",
-          "example": "1",
-          "member": "int64",
-          "name": "Confirm",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "是否开启口型驱动，0：不开启，1：开启。默认开启。",
+          "document": "是否开启口型驱动，0-不开启，1-开启。默认0。",
           "example": "1",
           "member": "int64",
           "name": "LipSync",
@@ -853,12 +996,12 @@
         },
         {
           "disabled": false,
-          "document": "音色种别：一种音色种别对应一种不同区域的音色\n1）目标语种为小语种(非zh,en)时，该项为必填\n2）目标语种为zh,en时，该项为非必填，若填入，则对应填入的音色\n\n具体音色包含请见“支持音色种别列表”",
-          "example": "701001",
-          "member": "string",
-          "name": "VoiceType",
+          "document": "当 AudioUrl 字段有输入音频时，如果输入音频时长大于输入视频时长，会拼接视频（ 0-正向拼接、1-反向拼接 ）对齐音频时长。默认 0。",
+          "example": "0",
+          "member": "int64",
+          "name": "VideoLoop",
           "required": false,
-          "type": "string"
+          "type": "int"
         }
       ],
       "type": "object"
@@ -868,7 +1011,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "视频转译任务的Job id",
+          "document": "视频转译任务的ID",
           "example": "vlSYvQkMM0KwPuoakawm0tPrREwc2p7c",
           "member": "string",
           "name": "JobId",

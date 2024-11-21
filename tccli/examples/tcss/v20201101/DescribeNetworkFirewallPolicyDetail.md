@@ -13,38 +13,38 @@ Output:
 ```
 {
     "Response": {
-        "PolicyName": "xx",
+        "PolicyName": "test",
         "CustomPolicy": [
             {
                 "Peer": [
                     {
-                        "NamespaceSelector": "xx",
-                        "PeerType": "xx",
-                        "PodSelector": "xx",
-                        "IPBlock": "xx"
+                        "NamespaceSelector": "default",
+                        "PeerType": "",
+                        "PodSelector": "",
+                        "IPBlock": ""
                     }
                 ],
-                "Direction": "xx",
+                "Direction": "FROM",
                 "Ports": [
                     {
-                        "Protocol": "xx",
-                        "Port": "xx"
+                        "Protocol": "tcp",
+                        "Port": "80"
                     }
                 ]
             }
         ],
-        "Description": "xx",
-        "ClusterId": "xx",
+        "Description": "",
+        "ClusterId": "cls-dsfhuisdhfis",
         "FromPolicyRule": 0,
-        "PublishResult": "xx",
-        "Namespace": "xx",
-        "NetworkPolicyPlugin": "xx",
-        "PodSelector": "xx",
-        "PublishStatus": "xx",
+        "PublishResult": "",
+        "Namespace": "default",
+        "NetworkPolicyPlugin": "",
+        "PodSelector": "a=b",
+        "PublishStatus": "running",
         "ToPolicyRule": 0,
-        "RequestId": "xx",
-        "PolicyCreateTime": "xx",
-        "PolicySourceType": "xx"
+        "RequestId": "392f05bd-bf86-4911-8cf9-b8c2ac0f62ab",
+        "PolicyCreateTime": "2024-10-30 12:27:01",
+        "PolicySourceType": ""
     }
 }
 ```

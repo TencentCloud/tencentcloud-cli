@@ -68,7 +68,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateReconstructDocumentFlow\n<公共请求参数>\n\n{\n    \"FileStartPageNumber\": 1,\n    \"FileEndPageNumber\": 1,\n    \"Config\": {\n        \"TableResultType\": \"1\"\n    },\n    \"FileBase64\": \"data:application/pdf;base64,JVBERi0xLjcKXXX...\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1d569fb4-4c9d-4141-bbd7-e1d8735bd1a9\",\n        \"TaskId\": \"123123123\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1d569fb4-4c9d-4141-bbd7-e1d8735bd1a9\",\n        \"TaskId\": \"9e28e561e9a04ef096768d13deffe963\"\n    }\n}",
         "title": "接口请求成功示例"
       }
     ],
@@ -268,13 +268,13 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStorageCredential\n<公共请求参数>\n\n{\n    \"BotBizId\": \"1727231073371148288\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Bucket\": \"qidian-qbot-test-1251316161\",\n        \"CorpUin\": \"0\",\n        \"Credentials\": {\n            \"TmpSecretId\": \"AKIDijguNrgnblHncqBKsJBrPV5_J6NCCuklAAvcQlNUiArDzMWbEA97tmXFbydKx839\",\n            \"TmpSecretKey\": \"tI2ka75Gsqj46xx8/TbqhTa2VmUYm11Gi08EkAbkaVQ=\",\n            \"Token\": \"FS9JPHeDJWa1fjOrV6X0l1XXfwsGUpIa929d1959a6973c640f2248598cf6b21fHmvd_Zw5Geld2CGSAdgsme916AxqAdp3fKBhlKEnTUaUeoFAEUxtiAdL2pL29U9hM8vuRyoY5BJJoH17ucJv5nAoXfR9kaf41NTw0nSUd1XI55EfTzPWUiqOQF7nAyASFeKZZnHq6Capdos04TqSfEYW9ZaODqh0Htc1MCl0rue9Vh9muCJQuMXaH8fkrtigvZHh2fX5yyX4xXJ0mcST1TDbFwFTz5cbUmKMeiwNE_DYXg9Qhbv1LaF9MMFbqCU7UMfWEngpcncHcUL2hPkMYvlZqKAMHjo_SsgaQB8Pg_9gudKUqEDtJhRUzMkyyYYpcZQggGYyPmtbUcGumdugaKPz1HUXiYQWQ_bBVBrqR3V0QiVKWTg8xtgxepJL8RLizOd8q0Oj_cAM9EncPpvjJanaO9xGu7tEjMtD770sbnr0YI2mu16WNgNkhFUucE1OEzeWibshpbCnzi--VArAFuwV30N9ChTobLPd_0rq3J3ekRRobQEMkLxHxS6vcUjCDnYawaVLe9aXtVMD-hy8pVOAydvoB2hxMpczOtHkeyQsy0F-OqCnSI0bhs17OOZfqhoNQhWWR7LI9cSvlP0N-g6QeGpqkAkATTN27W5iLGJoMne49llTDFsD1emH-KTpIL4KcrkPLH_NWN0C52PZByDmAq0xwGCZ5xNU0X9JzUzaMpjVSOlluJDf4_fSzdY8EmBOQCf0EaegY1vDyP3bXTOf8xkRF56AGkYXjm_xpl7zEgXuoojr5yGyOq7iNG4kTCcnkAasZvcbw1ZY9-b6Ae-VlkRnGA5nEUe-v5nsw1UQZAm_YKRDtReQ5vRefZpso76YohBocqbgF1ZF15W__8xVHhX6E4zVrZ9w7Um74fzCyc3_uZH45ockrLr2AH0qjdHE-T397390OXmsON1frQCr7u5Dvkqd4YCLQnuHsPSzB9YO9bXNwzHZU7cGsGliCSi53m1sV2JDu2h07a-i7JyocbHAp4jNW8vIbGjcnjz7qPkOnthztgmScAK1GkeVpOge542a-UEEVxMj6GNWD2D7BMJaxEWV4IG5QsHL13pt3jmlKbSqeovee8OXyn2v4y50zXxwHZdD6i9bVkb7ig\"\n        },\n        \"ExpiredTime\": 1701429243,\n        \"FilePath\": \"/corp/137/doc/\",\n        \"Region\": \"ap-guangzhou\",\n        \"RequestId\": \"87d578f9-6de5-4515-906e-d28e56d33fe0\",\n        \"StartTime\": 1701425643,\n        \"Type\": \"cos\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Bucket\": \"qidian-qbot-test-1251316161\",\n        \"CorpUin\": \"0\",\n        \"Credentials\": {\n            \"TmpSecretId\": \"***************************************************\",\n            \"TmpSecretKey\": \"***************************************************\",\n            \"Token\": \"***************************************************\"\n        },\n        \"ExpiredTime\": 1701429243,\n        \"FilePath\": \"/corp/137/doc/\",\n        \"Region\": \"ap-guangzhou\",\n        \"RequestId\": \"87d578f9-6de5-4515-906e-d28e56d33fe0\",\n        \"StartTime\": 1701425643,\n        \"Type\": \"cos\"\n    }\n}",
         "title": "获取对象存储上传密钥"
       },
       {
         "document": "离线文档",
         "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStorageCredential\n<公共请求参数>\n\n{\n    \"BotBizId\": \"1779863007508561920\",\n    \"FileType\": \"md\",\n    \"TypeKey\": \"offline\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Bucket\": \"qidian-qbot-test-1251316161\",\n        \"CorpUin\": \"0\",\n        \"Credentials\": {\n            \"TmpSecretId\": \"AKIDlL2FKlsigkCspNQyh2s0-IzKd8cBvmEM-r2e3qOu8ilXs66FFH_-CKmHeAZhFeEV\",\n            \"TmpSecretKey\": \"Vlr4JmRzKR4Z1PJxzuSsMZ/O2VlxtmvJCEjPV7s5ruY=\",\n            \"Token\": \"fPEfNWwNoY196OMrLtTdt1zsp8dImhWa14cca3e696eb04ac4dfc6f5f1a3a8b19paI6e-FWHCNPijFmf62yF1pPIhtrLz05W2RsGymutFYnsBGI9RfvYtrKTVScVeX_q-PQ5LXND8L78tPNkb39rakw_58aPIgJfZqpmdqQN-bFeJY0OiOJQgexT2V9doqZvy7LusVERxTQalEsTCnaB9juEBd7h_8O9Jc2GGTAs8hZYRTsqwqxfkrZm4oN5ndH0m53RloH2iSWm1BlplB1VlzbUFLsdxLcklcw8pyD0mzYOtW0HiMLRMVlGlmu0HZpSXtvYWFpLrZ-vRPNfxfuFywpU5ZmqHGubte2b8_3iOFPVPgsnT4zLL8tawSfV2qKLdN_lgAfNzguX6ROC_yP-hP5j7jkkBzWsvIcDzTdJmGvkS2vOgA3-uGkVDJwljsm0oPz1rEfxt-mI05z5YYCT7VVeJ-KVWi8UlH6ww9u1NUa9bKarH1XfDddBnh9Womlxb92uOzfv75q2PqIfvaN9BZWrRmfzooPbdIqE74oFaJw6tyZnMu2zAs0VbYRTN0CdiVB-IggNVaWoQulSFWLL7NRSIGUzjyoUyt_K2XYjV64sYG4Cwpiqe3BteV61p6m_IPEM4hEgb23hhIiytg8JmFWwJZNLJ3Uu6SB8kidb7wjTNGucfFGvDXgzOnqVbcQnTeva0PZ3XkjBNdplYd6RdWl7N54zawxk6R4Ib8pZ1hDuogXTJ5sjwVuQmmMYGUroQY39omyLMGl2zxEXm5uig\"\n        },\n        \"ExpiredTime\": 1717063483,\n        \"FilePath\": \"\",\n        \"ImagePath\": \"\",\n        \"Region\": \"ap-guangzhou\",\n        \"RequestId\": \"11b8fa96-4700-4f11-8eb0-421de37ed48d\",\n        \"StartTime\": 1717062883,\n        \"Type\": \"cos\",\n        \"UploadPath\": \"/corp/1737374499879124992/1779863007508561920/doc/QUiGRdWFAFBkDKjhuxbd-1796118032488595456.md\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Bucket\": \"qidian-qbot-test-1251316161\",\n        \"CorpUin\": \"0\",\n        \"Credentials\": {\n            \"TmpSecretId\": \"*****************************************\",\n            \"TmpSecretKey\": \"***************************************\",\n            \"Token\": \"*******************************************************\"\n        },\n        \"ExpiredTime\": 1717063483,\n        \"FilePath\": \"\",\n        \"ImagePath\": \"\",\n        \"Region\": \"ap-guangzhou\",\n        \"RequestId\": \"11b8fa96-4700-4f11-8eb0-421de37ed48d\",\n        \"StartTime\": 1717062883,\n        \"Type\": \"cos\",\n        \"UploadPath\": \"/corp/1737374499879124992/1779863007508561920/doc/QUiGRdWFAFBkDKjhuxbd-1796118032488595456.md\"\n    }\n}",
         "title": "获取文档上传密钥"
       }
     ],
@@ -337,7 +337,7 @@
     "GetAnswerTypeDataCount": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetAnswerTypeDataCount\n<公共请求参数>\n\n{\n    \"StartTime\": 1716368386,\n    \"EndTime\": 1716454119,\n    \"AppBizId\": [\n        \"1747088166522585088\",\n        \"1780116741678956544\"\n    ],\n    \"Type\": 4,\n    \"LoginUin\": \"abc\",\n    \"LoginSubAccountUin\": \"abc\"\n}",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetAnswerTypeDataCount\n<公共请求参数>\n\n{\n    \"StartTime\": 1716368386,\n    \"EndTime\": 1716454119,\n    \"AppBizId\": [\n        \"1747088166522585088\",\n        \"1780116741678956544\"\n    ],\n    \"Type\": 4,\n    \"LoginUin\": \"600000562346\",\n    \"LoginSubAccountUin\": \"600000562346\"\n}",
         "output": "{\n    \"Response\": {\n        \"ConcurrentLimitCount\": 0,\n        \"ImageUnderstandingCount\": 0,\n        \"KnowledgeCount\": 0,\n        \"ModelReplyCount\": 90,\n        \"RejectCount\": 0,\n        \"RequestId\": \"452f1b7a-58ca-4b0f-9cbf-8ab400684653\",\n        \"SearchEngineCount\": 9,\n        \"SensitiveCount\": 0,\n        \"TaskFlowCount\": 18,\n        \"Total\": 127,\n        \"UnknownIssuesCount\": 10\n    }\n}",
         "title": "回答类型数据统计"
       }
@@ -345,8 +345,8 @@
     "GetAppKnowledgeCount": [
       {
         "document": "获取总数使用",
-        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetAppKnowledgeCount\n<公共请求参数>\n\n{\n    \"AppBizId\": \"\",\n    \"Type\": \"\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Total\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetAppKnowledgeCount\n<公共请求参数>\n\n{\n    \"AppBizId\": \"1849805468254076912\",\n    \"Type\": \"doc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": \"12\",\n        \"RequestId\": \"7814bdbe-da7e-401e-95c4-3e861d52982\"\n    }\n}",
         "title": "GetAppKnowledgeCount"
       }
     ],
@@ -362,7 +362,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetDocPreview\n<公共请求参数>\n\n{\n    \"DocBizId\": \"1681597542412103680\",\n    \"BotBizId\": \"1735129619995951104\"\n}",
-        "output": "{\n    \"Response\": {\n        \"FileName\": \"26种病虫害防治方法.docx\",\n        \"FileType\": \"docx\",\n        \"CosUrl\": \"/corp/1681586131361275904/1681597542412103680/doc/E0dQM9X41QmyAWiTQMkC-7807575532.docx\",\n        \"Url\": \"xxx\",\n        \"Bucket\": \"\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"FileName\": \"26种病虫害防治方法.docx\",\n        \"FileType\": \"docx\",\n        \"CosUrl\": \"/corp/1681586131361275904/1681597542412103680/doc/E0dQM9X41QmyAWiTQMkC-7807575532.docx\",\n        \"Url\": \"https://qi***an-q**t-12***16161.cos.ap-guangzhou.myqcloud.com/%2Fcorp/1737374492379124992/17986106392328008704/doc/pXaeDgJsQEEDjryWEKwU-1806238910230430080.md\",\n        \"Bucket\": \"\",\n        \"RequestId\": \"7814bdbe-da7e-401e-95c4-3e861d5298ee\"\n    }\n}",
         "title": "获取文档预览相关信息"
       }
     ],
@@ -377,7 +377,7 @@
     "GetLikeDataCount": [
       {
         "document": "点赞点踩数据统计",
-        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetLikeDataCount\n<公共请求参数>\n\n{\n    \"StartTime\": 1715396806,\n    \"EndTime\": 1716435550,\n    \"AppBizId\": [\n        \"1\",\n        \"1778345918658510848\"\n    ],\n    \"Type\": 1,\n    \"LoginUin\": \"abc\",\n    \"LoginSubAccountUin\": \"abc\"\n}",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetLikeDataCount\n<公共请求参数>\n\n{\n    \"StartTime\": 1715396806,\n    \"EndTime\": 1716435550,\n    \"AppBizId\": [\n        \"1\",\n        \"1778345918658510848\"\n    ],\n    \"Type\": 1,\n    \"LoginUin\": \"600000562346\",\n    \"LoginSubAccountUin\": \"600000562346\"\n}",
         "output": "{\n    \"Response\": {\n        \"AppraisalTotal\": 7,\n        \"DislikeRate\": 0.57,\n        \"DislikeTotal\": 4,\n        \"LikeRate\": 0.43,\n        \"LikeTotal\": 3,\n        \"ParticipationRate\": 1.75,\n        \"RequestId\": \"cf081be6-ae5f-4840-9324-d60f748d60b6\",\n        \"Total\": 4\n    }\n}",
         "title": "点赞点踩数据统计"
       }
@@ -394,7 +394,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetReconstructDocumentResult\n<公共请求参数>\n\n{\n    \"TaskId\": \"123123123\"\n}",
-        "output": "{\n    \"Response\": {\n        \"DocumentRecognizeResultUrl\": \"https://document-restruction-1258344699.cos.ap-guangzhou.myqcloud.com/doc_parse/output_files/a9c6a9482c72412fa84445a44ss125531.zip?q-sign-algorithm=sha1&q-ak=AKIDlWFaadfHLNbidLwPqOrAKGzXrx40scL7l&q-sign-time=1715503711%3B1718804311&q-key-time=1718855711%3B1718804311&q-header-list=host&q-url-param-list=&q-signature=71b568b8632d7e45gertdc3d235ef68d41fdfe7f8\",\n        \"FailedPages\": [],\n        \"RequestId\": \"a37b0d0b-c3af-44bd-iuiu-632442644a80\",\n        \"Status\": \"Success\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"DocumentRecognizeResultUrl\": \"https://document-restruction-1258344699.cos.ap-guangzhou.myqcloud.com/doc_parse/output_files/a9c6a9482c72412fa84445a44ss125531.zip?q-sign-algorithm=sha1&q-ak=*******l&q-sign-time=1715503711%3B1718804311&q-key-time=1718855711%3B1718804311&q-header-list=host&q-url-param-list=&q-signature=71b568b8632d7e45gertdc3d235ef68d41fdfe7f8\",\n        \"FailedPages\": [],\n        \"RequestId\": \"a37b0d0b-c3af-44bd-iuiu-632442644a80\",\n        \"Status\": \"Success\"\n    }\n}",
         "title": "接口调用成功示例"
       }
     ],
@@ -422,14 +422,8 @@
     ],
     "GroupQA": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GroupQA\n<公共请求参数>\n\n{\n    \"BotBizId\": \"abc\",\n    \"QaBizIds\": [\n        \"abc\"\n    ],\n    \"CateBizId\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
-        "title": "QA分组"
-      },
-      {
         "document": "分组QA",
-        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GroupQA\n<公共请求参数>\n\n{\n    \"BotBizId\": \"1714970520775950336\",\n    \"QaBizIds\": [\n        \"162779\"\n    ],\n    \"CateBizId\": \"1734163509413793792\"\n}",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GroupQA\n<公共请求参数>\n\n{\n    \"BotBizId\": \"1714970520775950336\",\n    \"QaBizIds\": [\n        \"17341635094137912292\"\n    ],\n    \"CateBizId\": \"1734163509413793792\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1a86bd37-eeae-427a-baad-c8aa20eb6252\"\n    }\n}",
         "title": "分组QA"
       }
@@ -517,8 +511,8 @@
     "ListRejectedQuestionPreview": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListRejectedQuestionPreview\n<公共请求参数>\n\n{\n    \"BotBizId\": \"abc\",\n    \"PageNumber\": 1,\n    \"PageSize\": 1,\n    \"Query\": \"abc\",\n    \"ReleaseBizId\": \"1\",\n    \"Actions\": [\n        1\n    ],\n    \"StartTime\": \"1701566284\",\n    \"EndTime\": \"1701766284\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Total\": \"1\",\n        \"List\": [\n            {\n                \"Question\": \"abc\",\n                \"UpdateTime\": \"abc\",\n                \"Action\": 1,\n                \"ActionDesc\": \"abc\",\n                \"Message\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListRejectedQuestionPreview\n<公共请求参数>\n\n{\n    \"BotBizId\": \"1798610639288008723\",\n    \"PageNumber\": 1,\n    \"PageSize\": 1,\n    \"Query\": \"\",\n    \"ReleaseBizId\": \"1\",\n    \"Actions\": [\n        1\n    ],\n    \"StartTime\": \"1701566284\",\n    \"EndTime\": \"1701766284\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": \"1\",\n        \"List\": [\n            {\n                \"Question\": \"abc\",\n                \"UpdateTime\": \"1701766284\",\n                \"Action\": 1,\n                \"ActionDesc\": \"新增\",\n                \"Message\": \"\"\n            }\n        ],\n        \"RequestId\": \"2314bdbe-d34e-401e-95c4-3e861d5298ee\"\n    }\n}",
         "title": "发布拒答问题预览"
       }
     ],
@@ -541,15 +535,15 @@
     "ListReleaseDocPreview": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListReleaseDocPreview\n<公共请求参数>\n\n{\n    \"BotBizId\": \"abc\",\n    \"Query\": \"abc\",\n    \"ReleaseBizId\": \"1\",\n    \"PageNumber\": 1,\n    \"PageSize\": 1,\n    \"StartTime\": \"1701566219\",\n    \"EndTime\": \"1701766219\",\n    \"Actions\": [\n        1\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"Total\": \"abc\",\n        \"List\": [\n            {\n                \"FileName\": \"abc\",\n                \"FileType\": \"abc\",\n                \"UpdateTime\": \"abc\",\n                \"Action\": 1,\n                \"ActionDesc\": \"abc\",\n                \"Message\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListReleaseDocPreview\n<公共请求参数>\n\n{\n    \"BotBizId\": \"1798610639288008723\",\n    \"Query\": \"\",\n    \"ReleaseBizId\": \"1\",\n    \"PageNumber\": 1,\n    \"PageSize\": 1,\n    \"StartTime\": \"1701566219\",\n    \"EndTime\": \"1701766219\",\n    \"Actions\": [\n        1\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": \"1\",\n        \"List\": [\n            {\n                \"FileName\": \"test.txt\",\n                \"FileType\": \"test.txt\",\n                \"UpdateTime\": \"1701766219\",\n                \"Action\": 1,\n                \"ActionDesc\": \"新增\",\n                \"Message\": \"\"\n            }\n        ],\n        \"RequestId\": \"2314bdbe-da7e-401e-95c4-3e861d5298ee\"\n    }\n}",
         "title": "发布文档预览"
       }
     ],
     "ListReleaseQAPreview": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListReleaseQAPreview\n<公共请求参数>\n\n{\n    \"BotBizId\": \"1694921462777761792\",\n    \"PageNumber\": 1,\n    \"PageSize\": 10,\n    \"Query\": \"\",\n    \"ReleaseBizId\": \"0\",\n    \"StartTime\": \"0\",\n    \"EndTime\": \"0\",\n    \"Actions\": [],\n    \"ReleaseStatus\": []\n}",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListReleaseQAPreview\n<公共请求参数>\n\n{\n    \"BotBizId\": \"1694921462777761792\",\n    \"PageNumber\": 1,\n    \"PageSize\": 10,\n    \"Query\": \"\",\n    \"ReleaseBizId\": \"1694923462777761792\",\n    \"StartTime\": \"1735056000\",\n    \"EndTime\": \"1735142399\",\n    \"Actions\": [],\n    \"ReleaseStatus\": []\n}",
         "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"Action\": 3,\n                \"ActionDesc\": \"删除\",\n                \"FileName\": \"\",\n                \"FileType\": \"\",\n                \"Message\": \"\",\n                \"QaBizId\": \"161612\",\n                \"Question\": \"aaaa\",\n                \"ReleaseStatus\": 0,\n                \"Source\": 3,\n                \"SourceDesc\": \"手动录入\",\n                \"UpdateTime\": \"1701264450\"\n            },\n            {\n                \"Action\": 3,\n                \"ActionDesc\": \"删除\",\n                \"FileName\": \"\",\n                \"FileType\": \"\",\n                \"Message\": \"\",\n                \"QaBizId\": \"161738\",\n                \"Question\": \"问题1\",\n                \"ReleaseStatus\": 0,\n                \"Source\": 2,\n                \"SourceDesc\": \"批量导入\",\n                \"UpdateTime\": \"1701422596\"\n            },\n            {\n                \"Action\": 3,\n                \"ActionDesc\": \"删除\",\n                \"FileName\": \"\",\n                \"FileType\": \"\",\n                \"Message\": \"\",\n                \"QaBizId\": \"161739\",\n                \"Question\": \"问题2\",\n                \"ReleaseStatus\": 0,\n                \"Source\": 2,\n                \"SourceDesc\": \"批量导入\",\n                \"UpdateTime\": \"1701427533\"\n            },\n            {\n                \"Action\": 3,\n                \"ActionDesc\": \"删除\",\n                \"FileName\": \"\",\n                \"FileType\": \"\",\n                \"Message\": \"\",\n                \"QaBizId\": \"161740\",\n                \"Question\": \"qq\",\n                \"ReleaseStatus\": 0,\n                \"Source\": 2,\n                \"SourceDesc\": \"批量导入\",\n                \"UpdateTime\": \"1701670093\"\n            },\n            {\n                \"Action\": 1,\n                \"ActionDesc\": \"新增\",\n                \"FileName\": \"深圳市最低生活保障办法.docx\",\n                \"FileType\": \"docx\",\n                \"Message\": \"\",\n                \"QaBizId\": \"162463\",\n                \"Question\": \"深圳市最低生活保障办法何时开始施行？\",\n                \"ReleaseStatus\": 0,\n                \"Source\": 1,\n                \"SourceDesc\": \"深圳市最低生活保障办法.docx\",\n                \"UpdateTime\": \"1700550874\"\n            },\n            {\n                \"Action\": 1,\n                \"ActionDesc\": \"新增\",\n                \"FileName\": \"\",\n                \"FileType\": \"\",\n                \"Message\": \"\",\n                \"QaBizId\": \"1731558661913706496\",\n                \"Question\": \"a\",\n                \"ReleaseStatus\": 0,\n                \"Source\": 3,\n                \"SourceDesc\": \"手动录入\",\n                \"UpdateTime\": \"1701670760\"\n            }\n        ],\n        \"RequestId\": \"0260ac98-913d-4aab-9276-8a045f627e4e\",\n        \"Total\": \"6\"\n    }\n}",
         "title": "发布问答预览"
       }
@@ -693,8 +687,8 @@
     "RetryDocParse": [
       {
         "document": "文档解析重试",
-        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RetryDocParse\n<公共请求参数>\n\n{\n    \"BotBizId\": \"abc\",\n    \"DocBizId\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RetryDocParse\n<公共请求参数>\n\n{\n    \"BotBizId\": \"1849805468212076928\",\n    \"DocBizId\": \"1849805468254056928\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7814b22e-da7e-401e-95c4-3e861d5298ee\"\n    }\n}",
         "title": "文档解析重试"
       }
     ],
@@ -717,8 +711,8 @@
     "StopDocParse": [
       {
         "document": "终止文档解析",
-        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopDocParse\n<公共请求参数>\n\n{\n    \"BotBizId\": \"abc\",\n    \"DocBizId\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopDocParse\n<公共请求参数>\n\n{\n    \"BotBizId\": \"1849805468212076928\",\n    \"DocBizId\": \"1849805468254056928\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7814b22e-da7e-401e-95c4-3e861d5298ee\"\n    }\n}",
         "title": "终止文档解析"
       }
     ],

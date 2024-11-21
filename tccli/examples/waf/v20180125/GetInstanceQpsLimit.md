@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli waf GetInstanceQpsLimit --cli-unfold-argument  \
-    --InstanceId abc
+    --InstanceId waf_22piczpx8beg7rht
 ```
 
 Output: 
@@ -16,9 +16,11 @@ Output:
         "QpsData": {
             "ElasticBillingDefault": 1,
             "ElasticBillingMin": 1,
-            "ElasticBillingMax": 1
+            "ElasticBillingMax": 1,
+            "QPSExtendMax": 1,
+            "QPSExtendIntlMax": 1
         },
-        "RequestId": "abc"
+        "RequestId": "d55b94a8-07bb-4326-b82f-e6678151afe0"
     }
 }
 ```

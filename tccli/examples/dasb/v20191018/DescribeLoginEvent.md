@@ -6,7 +6,15 @@ Input:
 
 ```
 tccli dasb DescribeLoginEvent --cli-unfold-argument  \
-    --UserName xxx
+    --UserName Oliver \
+    --RealName Henry \
+    --StartTime 2020-09-22T00:00:00+08:00 \
+    --EndTime 2020-09-22T00:00:00+08:00 \
+    --SourceIp 127.41.14.47 \
+    --Entry 1 \
+    --Result 1 \
+    --Offset 1 \
+    --Limit 1
 ```
 
 Output: 
@@ -16,15 +24,15 @@ Output:
         "TotalCount": 1,
         "LoginEventSet": [
             {
-                "UserName": "xx",
-                "RealName": "xx",
+                "UserName": "Henry",
+                "RealName": "Oliver",
                 "Result": 1,
-                "Time": "2020-09-22T00:00:00+00:00",
+                "Time": "2020-09-22T00:00:00+08:00",
                 "Entry": 1,
-                "SourceIp": "xx"
+                "SourceIp": "10.45.58.74"
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "3bf47843-f8b2-40f7-8963-76d9506eed22"
     }
 }
 ```

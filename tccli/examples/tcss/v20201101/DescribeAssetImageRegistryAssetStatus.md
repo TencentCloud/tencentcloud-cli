@@ -11,10 +11,10 @@ Output:
 ```
 {
     "Response": {
-        "Status": "abc",
-        "Err": "abc",
-        "LatestSyncSuccessTime": "abc",
-        "RequestId": "abc"
+        "Status": "doing",
+        "Err": "",
+        "LatestSyncSuccessTime": "2006-01-02 15:04:05",
+        "RequestId": "abd55800-ad16-4de8-b319-a6480098e15b"
     }
 }
 ```

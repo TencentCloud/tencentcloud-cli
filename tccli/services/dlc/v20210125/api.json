@@ -10981,7 +10981,7 @@
         },
         {
           "disabled": false,
-          "document": "排序字段，支持如下字段类型，instance-start-time (任务开始时间）, instance-complete-time (任务结束时间）,job-time-sum （单位毫秒，引擎内执行耗时）,task-time-sum （CU资源消耗，单位秒）,input-bytes-sum（数据扫描总大小，单位bytes）,shuffle-read-bytes-sum（数据shuffle总大小，单位bytes）",
+          "document": "排序字段，支持如下字段类型，instance-start-time (任务开始时间）,job-time-sum （单位毫秒，引擎内执行耗时）,task-time-sum （CU资源消耗，单位秒）,input-bytes-sum（数据扫描总大小，单位bytes）,shuffle-read-bytes-sum（数据shuffle总大小，单位bytes）",
           "example": "instance-start-time",
           "member": "string",
           "name": "SortBy",
@@ -10999,7 +10999,7 @@
         },
         {
           "disabled": false,
-          "document": "起始时间点，格式为yyyy-mm-dd HH:MM:SS",
+          "document": "任务开始时间点，格式为yyyy-mm-dd HH:MM:SS时间跨度在(0,30天]，支持最近30天数据查询。默认为当前时刻",
           "example": "2019-01-21 00:00:00",
           "member": "string",
           "name": "StartTime",
@@ -11008,7 +11008,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间点，格式为yyyy-mm-dd HH:MM:SS时间跨度在(0,30天]，支持最近45天数据查询。默认为当前时刻",
+          "document": "结束时间点，格式为yyyy-mm-dd HH:MM:SS时间跨度在(0,30天]，支持最近30天数据查询。默认为当前时刻",
           "example": "2019-01-22 00:00:00",
           "member": "string",
           "name": "EndTime",
@@ -19647,7 +19647,7 @@
           "example": "12",
           "member": "int64",
           "name": "WorkGroupId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -19657,7 +19657,7 @@
           "example": "testGroup",
           "member": "string",
           "name": "WorkGroupName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -19667,7 +19667,7 @@
           "example": "User",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -19677,7 +19677,7 @@
           "example": "无",
           "member": "Users",
           "name": "UserInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -19687,7 +19687,7 @@
           "example": "无",
           "member": "Policys",
           "name": "DataPolicyInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -19697,7 +19697,7 @@
           "example": "无",
           "member": "Policys",
           "name": "EnginePolicyInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -19707,7 +19707,7 @@
           "example": "group for admin",
           "member": "string",
           "name": "WorkGroupDescription",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -19717,7 +19717,17 @@
           "example": "无",
           "member": "Policys",
           "name": "RowFilterInfo",
-          "required": true,
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据目录权限集\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Policy",
+          "name": "CatalogPolicyInfo",
+          "output_required": false,
           "type": "object",
           "value_allowed_null": true
         }

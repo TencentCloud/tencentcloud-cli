@@ -8,11 +8,11 @@ Input:
 tccli tcss DescribeEventEscapeImageList --cli-unfold-argument  \
     --Limit 1 \
     --Offset 1 \
-    --Filters.0.Name abc \
-    --Filters.0.Values abc \
+    --Filters.0.Name EventType \
+    --Filters.0.Values MOUNT_SENSITIVE_PTAH \
     --Filters.0.ExactMatch True \
-    --Order abc \
-    --By abc
+    --Order asc \
+    --By Status
 ```
 
 Output: 
@@ -21,20 +21,22 @@ Output:
     "Response": {
         "List": [
             {
-                "EventType": "abc",
-                "OriginEventType": "abc",
-                "ImageName": "abc",
+                "ImageId": "sha256:9aae1601d6832af6c69ef257f09",
+                "EventType": "local",
+                "OriginEventType": "MOUNT_SENSITIVE_PTAH",
+                "UniqueKey": "1398abd1-98x71134",
+                "ImageName": "centos-7.6",
                 "ContainerCount": 0,
                 "FoundTime": "2020-09-22 00:00:00",
                 "LatestFoundTime": "2020-09-22 00:00:00",
                 "EventCount": 0,
-                "Status": "abc",
-                "Description": "abc",
-                "Solution": "abc"
+                "Status": "EVENT_INGNORE",
+                "Description": "",
+                "Solution": ""
             }
         ],
         "TotalCount": 1,
-        "RequestId": "abc"
+        "RequestId": "dc56fda9-58c8-4c4f-9e8c-b7296836c1fe"
     }
 }
 ```

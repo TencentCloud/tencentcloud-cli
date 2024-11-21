@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ocr MixedInvoiceOCR --cli-unfold-argument  \
-    --ImageUrl https://xx/a.jpg
+    --ImageUrl https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/***/fakeurl.jpg
 ```
 
 Output: 
@@ -297,7 +297,7 @@ Input:
 
 ```
 tccli ocr MixedInvoiceOCR --cli-unfold-argument  \
-    --ImageUrl https://xx/a.jpg \
+    --ImageUrl https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/***/fakeurl.jpg \
     --Types 2
 ```
 

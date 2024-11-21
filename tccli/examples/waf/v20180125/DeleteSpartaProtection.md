@@ -1,4 +1,4 @@
-**Example 1: Saas型WAF删除防护域名**
+**Example 1: SaaS型WAF删除防护域名**
 
 
 
@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli waf DeleteSpartaProtection --cli-unfold-argument  \
-    --Edition sparta-waf \
-    --Domains www.test.com
+    --Domains randy.qcloudwaf.com \
+    --InstanceID waf_2kw60zgy0908e8j3
 ```
 
 Output: 

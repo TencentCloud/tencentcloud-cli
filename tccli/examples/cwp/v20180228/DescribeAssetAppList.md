@@ -31,7 +31,7 @@ Output:
                 "BinPath": "/root",
                 "OsInfo": "CentOs Bit64",
                 "ProcessCount": 1,
-                "Desc": "abc",
+                "Desc": "idesc",
                 "Version": "0.1.1",
                 "ConfigPath": "/root",
                 "FirstTime": "2024-10-11 12:23:34",

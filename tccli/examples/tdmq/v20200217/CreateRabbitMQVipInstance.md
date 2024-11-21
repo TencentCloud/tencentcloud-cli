@@ -10,8 +10,8 @@ tccli tdmq CreateRabbitMQVipInstance --cli-unfold-argument  \
     --NodeSpec rabbit-vip-basic-2 \
     --NodeNum 1 \
     --StorageSize 100 \
-    --VpcId vpc-xxx \
-    --SubnetId subnet-xxx \
+    --VpcId vpc-5ghsr4p9 \
+    --SubnetId subnet-67y9wil4 \
     --ClusterName ApiCreate \
     --EnableCreateDefaultHaMirrorQueue False
 ```
@@ -20,9 +20,9 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "sadasfdsfs",
+        "RequestId": "a8f28d5e-a7e2-4b0b-afa0-2fba09c077a0",
         "TranId": "20230110002025620411234",
-        "InstanceId": "amqp-aegnagjg"
+        "InstanceId": "amqp-jero744g"
     }
 }
 ```

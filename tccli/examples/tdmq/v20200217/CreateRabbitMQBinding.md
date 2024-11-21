@@ -6,21 +6,21 @@ Input:
 
 ```
 tccli tdmq CreateRabbitMQBinding --cli-unfold-argument  \
-    --InstanceId amqp-44w9928j \
-    --VirtualHost test \
+    --InstanceId amqp-jero744g \
+    --VirtualHost tdmq_data \
     --Source amq.direct \
     --DestinationType queue \
-    --Destination test \
-    --RoutingKey hehe1
+    --Destination prod.queue \
+    --RoutingKey permission.created
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "dsfadsa",
-        "InstanceId": "amqp-44w9928j",
-        "VirtualHost": "test",
+        "RequestId": "a8f28d5e-a7e2-4b0b-afa0-2fba09c077a0",
+        "InstanceId": "amqp-jero744g",
+        "VirtualHost": "tdmq_data",
         "BindingId": 127441
     }
 }

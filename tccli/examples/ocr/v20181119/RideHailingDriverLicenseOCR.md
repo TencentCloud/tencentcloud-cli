@@ -6,17 +6,17 @@ Input:
 
 ```
 tccli ocr RideHailingDriverLicenseOCR --cli-unfold-argument  \
-    --ImageUrl https://xx/a.jpg
+    --ImageUrl https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/***/fakeurl.jpg
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Name": "张市学",
-        "LicenseNumber": "130622196402222413",
+        "Name": "张**",
+        "LicenseNumber": "130****13",
         "StartDate": "20190925",
-        "EndDate": "",
+        "EndDate": "20190925",
         "ReleaseDate": "20190925",
         "RequestId": "aa534793deqd1dqq948487"
     }

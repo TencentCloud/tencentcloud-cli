@@ -55,7 +55,7 @@ Output:
                         "State": "AVAILABLE"
                     }
                 ],
-                "NetworkInterfaceDescription": "aaa",
+                "NetworkInterfaceDescription": "demo",
                 "Ipv6AddressSet": [],
                 "State": "AVAILABLE",
                 "GroupSet": [
@@ -72,7 +72,7 @@ Output:
                 "EniType": 1,
                 "CreatedTime": "2021-01-07 16:32:55",
                 "SubnetId": "subnet-nao8lfro",
-                "NetworkInterfaceName": "royhyangtest-main",
+                "NetworkInterfaceName": "main",
                 "AttachType": 1
             }
         ],
@@ -102,7 +102,7 @@ Output:
                 "VpcId": "vpc-709l0i0x",
                 "SubnetId": "subnet-qymfizh2",
                 "NetworkInterfaceId": "eni-p17uqigx",
-                "NetworkInterfaceName": "test",
+                "NetworkInterfaceName": "demo",
                 "NetworkInterfaceDescription": "",
                 "GroupSet": [
                     "sg-hcd8t9xj"
@@ -177,7 +177,7 @@ Output:
                 "TagSet": [
                     {
                         "Key": "Version",
-                        "Value": "TEST"
+                        "Value": "1.0.0"
                     },
                     {
                         "Key": "Compony",

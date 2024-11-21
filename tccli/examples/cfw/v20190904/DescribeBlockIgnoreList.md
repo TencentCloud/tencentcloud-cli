@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli cfw DescribeBlockIgnoreList --cli-unfold-argument  \
-    --Limit 0 \
+    --Limit 10 \
     --Offset 0 \
-    --SearchValue  \
+    --SearchValue {"common":"模糊检索"} \
     --Direction 1 \
     --RuleType 1 \
     --Order desc \
@@ -23,25 +23,17 @@ Output:
             {
                 "Action": 1,
                 "Address": "土耳其伊斯坦布尔省伊斯坦布尔",
-                "Comment": "",
+                "Comment": "阻断黑IP",
                 "Country": "土耳其",
-                "CustomRule": {
-                    "DstIP": "",
-                    "IdsRuleId": "",
-                    "IdsRuleName": "",
-                    "SrcIP": ""
-                },
                 "Direction": 1,
                 "DirectionList": "1",
-                "Domain": "",
+                "Domain": "www.domain.com",
                 "EndTime": "2024-10-23 09:50:59",
                 "EventName": "泛微OA蜜罐探测事件",
                 "FwType": 15,
                 "IP": "1.1.1.1",
                 "IgnoreReason": "0",
                 "Ioc": "1.1.1.1",
-                "IocInfo": "",
-                "IocName": "",
                 "LastHitTime": "2024-10-21 16:59:09",
                 "Level": "高危",
                 "MatchTimes": 563038,

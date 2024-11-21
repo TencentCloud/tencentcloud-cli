@@ -27,7 +27,7 @@ Output:
             "CreateTime": "2024-10-24 16:20:58",
             "Exe": "/usr/bin/base64",
             "ModifyTime": "2024-10-24 16:20:58",
-            "PsTree": "",
+            "PsTree": "/bin/sshd",
             "User": "0:0",
             "Pid": "5747",
             "RegexBashCmd": "base64 -d",

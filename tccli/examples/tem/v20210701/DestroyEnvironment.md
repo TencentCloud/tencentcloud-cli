@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tem DestroyEnvironment --cli-unfold-argument  \
-    --EnvironmentId xx \
+    --EnvironmentId en-xxxxxx \
     --SourceChannel 0
 ```
 

@@ -26,7 +26,7 @@ Output:
             "FullPath": "/tmp/privilege",
             "ParentProcGroup": "1000",
             "ParentProcPath": "/usr/bin/bash",
-            "PsTree": "[]",
+            "PsTree": "[{\"pid\":32528,\"exe\":\"/tmp/a.out\",\"account\":\"root:1002\",\"cmdline\":\"/tmp/a.out\",\"ssh_service\":\"172.16.49.104:22\",\"ssh_source\":\"113.108.77.53:12753\",\"start_time\":1715655696}]",
             "NewCaps": "SYS_RAWIO|DAC_OVERRIDE|DAC_READ_SEARCH|FOWNER|FSETID|KILL|SETGID|SETUID|SETPCAP|LINUX_IMMUTABLE|NET_BIND_SERVICE|NET_BROADCAST|NET_ADMIN|NET_RAW|IPC_LOCK|IPC_OWNER|SYS_MODULE|CHOWN|BLOCK_SUSPEND|WAKE_ALARM|SYSLOG|MAC_ADMIN|MAC_OVERRIDE|SETFCAP|AUDIT_CONTROL|AUDIT_WRITE|LEASE|MKNOD|SYS_TTY_CONFIG|SYS_TIME|SYS_RESOURCE|SYS_NICE|SYS_BOOT|SYS_ADMIN|SYS_PACCT|SYS_PTRACE|SYS_CHROOT",
             "ModifyTime": "2024-09-06 14:17:45",
             "MachineName": "机器名称",

@@ -13,13 +13,13 @@ Output:
 ```
 {
     "Response": {
-        "Sid": "abc",
-        "SrcFileMd5": "abc",
+        "Sid": "uuid",
+        "SrcFileMd5": "8c7ef86c259abad33f213405a35a13c2",
         "SrcFileSize": 0,
-        "SrcFileUrl": "abc",
-        "SrcFileType": "abc",
-        "SrcFileVersion": "abc",
-        "EncryptParam": "abc",
+        "SrcFileUrl": "https://srcfile.url.com/srcfile",
+        "SrcFileType": "release",
+        "SrcFileVersion": "enterprise",
+        "EncryptParam": "release",
         "EncryptState": 0,
         "RequestId": "abc"
     }

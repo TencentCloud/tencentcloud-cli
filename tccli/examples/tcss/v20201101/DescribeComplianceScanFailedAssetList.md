@@ -15,11 +15,11 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "xxxxx",
+        "RequestId": "8a64a4f9-864c-49c6-adcb-21b483de477a",
         "TotalCount": 1,
         "ScanFailedAssetList": [
             {
-                "CustomerAssetId": 123456789,
+                "CustomerAssetId": 111456789,
                 "AssetType": "ASSET_CONTAINDER",
                 "AssetName": "happy-jenkins",
                 "CheckStatus": "CHECK_FINISHED",

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tdmq DescribeRabbitMQVipInstance --cli-unfold-argument  \
-    --ClusterId amqp-dsadasd
+    --ClusterId amqp-test
 ```
 
 Output: 
@@ -14,93 +14,93 @@ Output:
 {
     "Response": {
         "ClusterInfo": {
-            "ClusterId": "amqp-dsadasd",
-            "ClusterName": "abc",
-            "Region": "ap-guangzhou",
-            "CreateTime": 1,
-            "Remark": "abc",
+            "AutoRenewFlag": 1,
+            "ChannelNumber": 1,
+            "ClusterId": "amqp-test",
+            "ClusterName": "test",
+            "ClusterStatus": 1,
+            "ClusterVersion": "3.8.30",
+            "ConnectionNumber": 1,
+            "ConsumerNumber": 1,
+            "CreateTime": 1728982428000,
+            "ExceptionInformation": null,
+            "ExchangeNumber": 10,
+            "ExpireTime": 1731660828257,
+            "MessageConsumeRate": 0,
+            "MessagePublishRate": 0,
+            "MessageStackNumber": 3021165,
+            "MirrorQueuePolicyFlag": 1,
+            "PayMode": 1,
+            "QueueNumber": 1112,
+            "Region": "ap-qingyuan",
+            "Remark": "",
+            "VirtualHostNumber": 1,
             "Vpcs": [
                 {
-                    "VpcId": "abc",
-                    "SubnetId": "abc",
-                    "VpcEndpoint": "abc",
-                    "VpcDataStreamEndpointStatus": "1"
+                    "SubnetId": "subnet-test1",
+                    "VpcDataStreamEndpointStatus": "ON",
+                    "VpcEndpoint": "amqp://10.0.0.4:5672",
+                    "VpcId": "vpc-test1"
+                },
+                {
+                    "SubnetId": "subnet-test2",
+                    "VpcDataStreamEndpointStatus": "ON",
+                    "VpcEndpoint": "amqp://10.0.0.10:5672",
+                    "VpcId": "vpc-test2"
                 }
             ],
             "ZoneIds": [
-                100001
-            ],
-            "VirtualHostNumber": 10,
-            "QueueNumber": 10,
-            "MessagePublishRate": 10.1,
-            "MessageStackNumber": 10,
-            "ExpireTime": 20,
-            "ChannelNumber": 10,
-            "ConnectionNumber": 10,
-            "ConsumerNumber": 10,
-            "ExchangeNumber": 10,
-            "ExceptionInformation": "abc",
-            "ClusterStatus": 1,
-            "AutoRenewFlag": 1,
-            "MirrorQueuePolicyFlag": 1
-        },
-        "ClusterSpecInfo": {
-            "SpecName": "标准版",
-            "NodeCount": 1,
-            "MaxTps": 1,
-            "MaxBandWidth": 3,
-            "MaxStorage": 200,
-            "PublicNetworkTps": 1
+                540001
+            ]
         },
         "ClusterNetInfo": {
-            "WebConsoleDomainEndpoint": "1",
-            "PublicAccessEndpoint": "1.1.1.1",
-            "WebConsoleEndpoint": "1.1.1.1",
-            "WebConsoleUsername": "abc",
-            "WebConsolePassword": "abc",
+            "PrometheusEndpointInfo": {
+                "NodePrometheusAddress": [],
+                "PrometheusEndpointStatus": "OFF",
+                "VpcEndpointInfo": null,
+                "VpcPrometheusEndpoint": []
+            },
+            "PublicAccessEndpoint": "amqp://106.55.176.111:5672",
             "PublicAccessEndpointStatus": true,
             "PublicControlConsoleSwitchStatus": true,
-            "VpcControlConsoleSwitchStatus": true,
-            "VpcWebConsoleEndpoint": "1.1.1.1",
-            "PublicWebConsoleSwitchStatus": "ON",
-            "VpcWebConsoleSwitchStatus": "ON",
             "PublicDataStreamStatus": "ON",
-            "PrometheusEndpointInfo": {
-                "PrometheusEndpointStatus": "ON",
-                "VpcPrometheusEndpoint": [
-                    "abc"
-                ],
-                "NodePrometheusAddress": [
-                    "abc"
-                ],
-                "VpcEndpointInfo": {
-                    "VpcId": "abc",
-                    "SubnetId": "abc",
-                    "VpcEndpoint": "abc",
-                    "VpcDataStreamEndpointStatus": "abc"
-                }
-            }
+            "PublicWebConsoleSwitchStatus": "ON",
+            "VpcControlConsoleSwitchStatus": false,
+            "VpcWebConsoleEndpoint": "http://127.0.0.1:15672",
+            "VpcWebConsoleSwitchStatus": "OFF",
+            "WebConsoleDomainEndpoint": "http://amqp-test.dashboard.rabbitmq.xx.public.tencenttdmq.com:15672",
+            "WebConsoleEndpoint": "http://106.55.176.11:15672",
+            "WebConsolePassword": "Fs98DBo9C1IuN4L0",
+            "WebConsoleUsername": "admin"
+        },
+        "ClusterSpecInfo": {
+            "MaxBandWidth": 15,
+            "MaxStorage": 200,
+            "MaxTps": 800,
+            "NodeCount": 1,
+            "PublicNetworkTps": 5,
+            "SpecName": "体验型"
         },
         "ClusterWhiteListInfo": {
-            "WhiteList": "1.1.1.1",
-            "PublicControlConsoleWhiteList": "1.1.1.1",
-            "PublicDataStreamWhiteList": "1.1.1.1",
+            "PublicControlConsoleWhiteList": "127.0.0.1,171.216.138.56",
             "PublicControlConsoleWhiteListStatus": "ON",
-            "PublicDataStreamWhiteListStatus": "ON"
-        },
-        "VirtualHostQuota": {
-            "MaxVirtualHost": 10,
-            "UsedVirtualHost": 10
+            "PublicDataStreamWhiteList": "127.0.0.1,125.69.38.199",
+            "PublicDataStreamWhiteListStatus": "ON",
+            "WhiteList": "127.0.0.1,171.216.138.56"
         },
         "ExchangeQuota": {
-            "MaxExchange": 10,
+            "MaxExchange": 1000,
             "UsedExchange": 10
         },
         "QueueQuota": {
-            "MaxQueue": 10,
-            "UsedQueue": 10
+            "MaxQueue": 1000,
+            "UsedQueue": 1112
         },
-        "RequestId": "abc"
+        "RequestId": "2a48bbf4-4675-4984-93d9-8ed0f4dfa598",
+        "VirtualHostQuota": {
+            "MaxVirtualHost": 20,
+            "UsedVirtualHost": 1
+        }
     }
 }
 ```

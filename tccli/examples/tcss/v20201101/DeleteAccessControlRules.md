@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli tcss DeleteAccessControlRules --cli-unfold-argument  \
-    --RuleIdSet xxx
+    --RuleIdSet 10001
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx"
+        "RequestId": "8a64a4f9-864c-49c6-adcb-21b483de477a"
     }
 }
 ```

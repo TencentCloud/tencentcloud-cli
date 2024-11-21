@@ -16,20 +16,20 @@ Output:
     "Response": {
         "InstanceShards": [
             {
-                "ShardName": "abc",
-                "ShardId": "abc",
-                "Role": 0,
+                "Connected": 1,
                 "Keys": 0,
-                "Slots": "abc",
-                "Storage": 0,
-                "StorageSlope": 0,
-                "Runid": "abc",
-                "RunId": "abc",
-                "Connected": 0
+                "Role": 0,
+                "RunId": "562cbff8e8a393e2d3d7166f764125a37f5cXXX",
+                "Runid": "562cbff8e8a393e2d3d7166f764125a37f5cXXX",
+                "ShardId": "1",
+                "ShardName": "crs-kp52mXXX-001-01",
+                "Slots": "[\"0-16383\"]",
+                "Storage": 36795120,
+                "StorageSlope": 0
             }
         ],
-        "TotalCount": 0,
-        "RequestId": "abc"
+        "RequestId": "06be2b8b-23f4-473f-b0f8-423552ff7XXX",
+        "TotalCount": 1
     }
 }
 ```

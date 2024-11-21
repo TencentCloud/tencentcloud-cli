@@ -9,7 +9,7 @@ tccli organization ListRoleConfigurations --cli-unfold-argument  \
     --ZoneId z-s9h39sdn2 \
     --NextToken sisndpmfisdnlk \
     --MaxResults 10 \
-    --Filter RoleConfigurationName eqTestRoleConfiguration
+    --Filter test
 ```
 
 Output: 

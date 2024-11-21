@@ -8,7 +8,7 @@ Input:
 tccli cfw DeleteBlockIgnoreRuleList --cli-unfold-argument  \
     --Rules.0.IP 1.1.1.1 \
     --Rules.0.Direction 0 \
-    --Rules.0.Domain  \
+    --Rules.0.Domain www.doamin.com \
     --RuleType 0
 ```
 
@@ -16,7 +16,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": ""
+        "RequestId": "29f9896a-bb5e-49d1-840c-cf3a0177bd2d"
     }
 }
 ```

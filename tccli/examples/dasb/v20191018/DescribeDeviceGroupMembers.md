@@ -19,28 +19,28 @@ Output:
         "DeviceSet": [
             {
                 "Id": 1,
-                "InstanceId": "abc",
-                "Name": "abc",
-                "PublicIp": "abc",
-                "PrivateIp": "abc",
-                "ApCode": "abc",
-                "OsName": "abc",
+                "InstanceId": "Ins-89j1",
+                "Name": "运维主机",
+                "PublicIp": "192.0.2.123",
+                "PrivateIp": "10.0.0.123",
+                "ApCode": "ap-guangzhou",
+                "OsName": "linux",
                 "Kind": 1,
                 "Port": 1,
                 "GroupSet": [
                     {
                         "Id": 1,
-                        "Name": "abc",
+                        "Name": "group1213",
                         "Department": {
-                            "Id": "abc",
-                            "Name": "abc",
+                            "Id": "dept1415",
+                            "Name": "deptName1617",
                             "Managers": [
-                                "abc"
+                                "manager1819"
                             ],
                             "ManagerUsers": [
                                 {
-                                    "ManagerId": "abc",
-                                    "ManagerName": "abc"
+                                    "ManagerId": "managerId2021",
+                                    "ManagerName": "managerName2223"
                                 }
                             ]
                         },
@@ -48,79 +48,79 @@ Output:
                     }
                 ],
                 "AccountCount": 1,
-                "VpcId": "abc",
-                "SubnetId": "abc",
+                "VpcId": "vpc-2425",
+                "SubnetId": "subnet-2627",
                 "Resource": {
-                    "ResourceId": "abc",
-                    "ApCode": "abc",
-                    "SvArgs": "abc",
-                    "VpcId": "abc",
+                    "ResourceId": "bh-saas-resource",
+                    "ApCode": "ap3031",
+                    "SvArgs": "sv3233",
+                    "VpcId": "vpc3435",
                     "Nodes": 1,
                     "RenewFlag": 1,
                     "ExpireTime": "2020-09-22T00:00:00+00:00",
                     "Status": 1,
-                    "ResourceName": "abc",
+                    "ResourceName": "resource3637",
                     "Pid": 1,
                     "CreateTime": "2020-09-22T00:00:00+00:00",
-                    "ProductCode": "abc",
-                    "SubProductCode": "abc",
-                    "Zone": "abc",
+                    "ProductCode": "product3839",
+                    "SubProductCode": "subproduct4041",
+                    "Zone": "zone4243",
                     "Expired": true,
                     "Deployed": true,
-                    "VpcName": "abc",
-                    "VpcCidrBlock": "abc",
-                    "SubnetId": "abc",
-                    "SubnetName": "abc",
-                    "CidrBlock": "abc",
+                    "VpcName": "vpc-4445",
+                    "VpcCidrBlock": "10.0.0.0/16",
+                    "SubnetId": "subnet-4647",
+                    "SubnetName": "subnetName4849",
+                    "CidrBlock": "10.0.1.0/24",
                     "PublicIpSet": [
-                        "abc"
+                        "192.0.2.123"
                     ],
                     "PrivateIpSet": [
-                        "abc"
+                        "10.0.0.123"
                     ],
                     "ModuleSet": [
-                        "abc"
+                        "module5051"
                     ],
                     "UsedNodes": 1,
                     "ExtendPoints": 1,
                     "PackageBandwidth": 1,
                     "PackageNode": 1,
-                    "LogDeliveryArgs": "abc",
+                    "LogDeliveryArgs": "log5253",
                     "ClbSet": [
                         {
-                            "ClbIp": "abc"
+                            "ClbIp": "192.0.2.123"
                         }
                     ],
-                    "DomainCount": 0,
+                    "DomainCount": 1,
                     "UsedDomainCount": 1,
                     "Trial": 1,
-                    "LogDelivery": "abc",
-                    "CdcClusterId": "abc",
-                    "DeployModel": 0
+                    "LogDelivery": "log5455",
+                    "CdcClusterId": "cdc5657",
+                    "DeployModel": 1
                 },
                 "Department": {
-                    "Id": "abc",
-                    "Name": "abc",
+                    "Id": "dept6061",
+                    "Name": "deptName6263",
                     "Managers": [
-                        "abc"
+                        "manager6465"
                     ],
                     "ManagerUsers": [
                         {
-                            "ManagerId": "abc",
-                            "ManagerName": "abc"
+                            "ManagerId": "managerId6667",
+                            "ManagerName": "managerName6869"
                         }
                     ]
                 },
                 "IpPortSet": [
-                    "abc"
+                    "192.0.2.123:80"
                 ],
-                "DomainId": "abc",
-                "DomainName": "abc",
+                "DomainId": "net-default",
+                "DomainName": "默认网络域",
                 "EnableSSL": 0,
-                "SSLCertName": "abc"
+                "SSLCertName": "bh-test-cert"
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "dfac9070-8b23-499e-83b2-a50e3ca059af"
     }
 }
 ```

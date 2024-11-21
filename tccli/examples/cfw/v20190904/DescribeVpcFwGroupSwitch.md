@@ -25,29 +25,17 @@ Output:
         "SwitchList": [
             {
                 "SwitchId": "cfwalls-1448c486f4",
-                "SwitchName": "云连网 leo 测试",
+                "SwitchName": "云联网测试",
                 "SwitchMode": 3,
                 "ConnectType": 0,
-                "ConnectId": "",
-                "ConnectName": "",
+                "ConnectId": "ccn-wxecrvtb",
+                "ConnectName": "云联网1",
                 "SrcInstancesInfo": [
                     {
                         "InstanceId": "vpc-dw314am3",
                         "InstanceName": "冲突sdwan",
                         "InstanceCidr": "10.24.0.0/16",
                         "Region": "ap-nanjing"
-                    },
-                    {
-                        "InstanceId": "vpc-rkm452h0",
-                        "InstanceName": "vpctest",
-                        "InstanceCidr": "172.21.0.0/16,10.254.4.0/24,10.253.0.0/24",
-                        "Region": "ap-beijing"
-                    },
-                    {
-                        "InstanceId": "vpc-qdiryzpe",
-                        "InstanceName": "ill-私有网络",
-                        "InstanceCidr": "192.168.0.0/16",
-                        "Region": "ap-shanghai"
                     }
                 ],
                 "DstInstancesInfo": [
@@ -56,38 +44,30 @@ Output:
                         "InstanceName": "冲突sdwan",
                         "InstanceCidr": "10.24.0.0/16",
                         "Region": "ap-nanjing"
-                    },
-                    {
-                        "InstanceId": "vpc-rkm452h0",
-                        "InstanceName": "vpctest",
-                        "InstanceCidr": "172.21.0.0/16,10.254.4.0/24,10.253.0.0/24",
-                        "Region": "ap-beijing"
-                    },
-                    {
-                        "InstanceId": "vpc-qdiryzpe",
-                        "InstanceName": "ill-私有网络",
-                        "InstanceCidr": "192.168.0.0/16",
-                        "Region": "ap-shanghai"
                     }
                 ],
                 "FwGroupId": "cfwg-03508673",
-                "FwGroupName": "",
+                "FwGroupName": "生产防火墙",
                 "FwInsLst": [
                     {
                         "FwInsId": "cfwew-63a110d9",
-                        "FwInsName": "云连网 leo 测试-南京",
+                        "FwInsName": "云联网测试-南京",
                         "FwInsRegion": "ap-nanjing"
                     }
+                ],
+                "FwInsRegion": [
+                    "ap-nanjing"
                 ],
                 "Enable": 1,
                 "Status": 3,
                 "BypassStatus": 1,
                 "AttachWithEdge": 0,
                 "CrossEdgeStatus": 0,
-                "IpsAction": 0
+                "IpsAction": 0,
+                "IpVersion": 0
             }
         ],
-        "Total": 23
+        "Total": 1
     }
 }
 ```

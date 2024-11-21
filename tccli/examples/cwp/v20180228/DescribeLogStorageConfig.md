@@ -14,8 +14,9 @@ Output:
         "Type": [
             "malware"
         ],
-        "Period": 0,
+        "Period": 30,
         "PeriodModifyCount": 0,
+        "Granularity": "day",
         "RequestId": "1c26308c-5493-4eaf-a817-112ec25f499e"
     }
 }

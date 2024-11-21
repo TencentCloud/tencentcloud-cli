@@ -1,4 +1,4 @@
-**Example 1: 姓名和身份证号一致**
+**Example 1: 身份信息认证一致示例**
 
 
 
@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli faceid IdCardVerification --cli-unfold-argument  \
-    --IdCard xxxxxxxxxxxxxxxxx \
-    --Name xxxxxxxxxxxxxxxxx
+    --IdCard 11204416541220243X \
+    --Name 韦小宝
 ```
 
 Output: 
@@ -21,7 +21,7 @@ Output:
 }
 ```
 
-**Example 2: 姓名和身份证号不一致**
+**Example 2: 身份信息认证不一致示例**
 
 
 
@@ -29,8 +29,8 @@ Input:
 
 ```
 tccli faceid IdCardVerification --cli-unfold-argument  \
-    --IdCard xxxxxxxxxxxxxxxxx \
-    --Name xxxxxxxxxxxxxxxxx
+    --IdCard 440305199505132561 \
+    --Name 刘洋
 ```
 
 Output: 

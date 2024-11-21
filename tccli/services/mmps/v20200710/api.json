@@ -122,7 +122,7 @@
           "example": "wx66e50f1e*******6f",
           "member": "string",
           "name": "AppPackage",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -132,7 +132,7 @@
           "example": "测试小程序",
           "member": "string",
           "name": "AppName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -142,7 +142,7 @@
           "example": "小程序版本",
           "member": "string",
           "name": "AppVersion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -152,7 +152,7 @@
           "example": "2",
           "member": "int64",
           "name": "Platform",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -162,7 +162,7 @@
           "example": "诊断报告下载链接",
           "member": "string",
           "name": "ReportUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -172,7 +172,7 @@
           "example": "诊断报告名称",
           "member": "string",
           "name": "ReportTitle",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -182,7 +182,7 @@
           "example": "诊断堆栈报告下载链接",
           "member": "string",
           "name": "BehaviorUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -192,7 +192,7 @@
           "example": "诊断堆栈报告名称",
           "member": "string",
           "name": "BehaviorTitle",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -202,7 +202,7 @@
           "example": "5",
           "member": "int64",
           "name": "HighRiskCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -212,27 +212,27 @@
           "example": "隐私申明文本.txt",
           "member": "string",
           "name": "PrivacyTextName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "软件MD5\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "c7991677cc57d3b9d4974316db0ac4f9f430593f",
+          "example": "c799****************************593f",
           "member": "string",
           "name": "SoftwareMD5",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "隐私文本MD5\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "3bc1efe919a5245f711071373a2b4523",
+          "example": "3bc1****************************4523",
           "member": "string",
           "name": "PrivacyTextMD5",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -248,7 +248,7 @@
           "example": "1701438134******0",
           "member": "string",
           "name": "TaskID",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -258,7 +258,7 @@
           "example": "0",
           "member": "int64",
           "name": "TaskType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -268,7 +268,7 @@
           "example": "0",
           "member": "int64",
           "name": "TaskStatus",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -278,7 +278,7 @@
           "example": "内部错误",
           "member": "string",
           "name": "TaskErrMsg",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -288,7 +288,7 @@
           "example": "0",
           "member": "int64",
           "name": "Source",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -298,7 +298,7 @@
           "example": " 复杂类型",
           "member": "AppInfoItem",
           "name": "AppInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -308,7 +308,7 @@
           "example": "2021-09-30 10:57:34",
           "member": "string",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -318,17 +318,17 @@
           "example": "2021-10-11 14:53:36",
           "member": "string",
           "name": "EndTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "联系人信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "老王",
+          "example": "张三",
           "member": "string",
           "name": "ContactName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -478,7 +478,7 @@
         {
           "disabled": false,
           "document": "联系人信息",
-          "example": "王某",
+          "example": "张三",
           "member": "string",
           "name": "ContactName",
           "required": false,
@@ -487,7 +487,7 @@
         {
           "disabled": false,
           "document": "联系电话",
-          "example": "13800138000",
+          "example": "138XXXXXXXX",
           "member": "string",
           "name": "TelNumber",
           "required": false,
@@ -496,7 +496,7 @@
         {
           "disabled": false,
           "document": "公司名称",
-          "example": "小程序测试有限公司",
+          "example": "****科技有限公司",
           "member": "string",
           "name": "CorpName",
           "required": false,
@@ -514,7 +514,7 @@
         {
           "disabled": false,
           "document": "公司邮箱",
-          "example": "test@test.com",
+          "example": "user****@tencent.com",
           "member": "string",
           "name": "Email",
           "required": false,
@@ -532,7 +532,7 @@
           "example": "0",
           "member": "int64",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -542,7 +542,7 @@
           "example": "170143813*******360",
           "member": "string",
           "name": "TaskID",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -588,7 +588,7 @@
         {
           "disabled": false,
           "document": "公司名称",
-          "example": "微信小程序有限公司",
+          "example": "****科技有限公司",
           "member": "string",
           "name": "CorpName",
           "required": true,
@@ -597,7 +597,7 @@
         {
           "disabled": false,
           "document": "手机号码",
-          "example": "13800138000",
+          "example": "138XXXXXXXX",
           "member": "string",
           "name": "Mobile",
           "required": true,
@@ -606,7 +606,7 @@
         {
           "disabled": false,
           "document": "电子邮箱",
-          "example": "wechat@tencent.com",
+          "example": "user****@tencent.com",
           "member": "string",
           "name": "Email",
           "required": true,
@@ -615,7 +615,7 @@
         {
           "disabled": false,
           "document": "备注信息",
-          "example": "thanks",
+          "example": "Remark备注信息",
           "member": "string",
           "name": "Remark",
           "required": false,
@@ -633,7 +633,7 @@
           "example": "0",
           "member": "int64",
           "name": "Ret",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -798,7 +798,7 @@
         {
           "disabled": false,
           "document": "手机号码",
-          "example": "13800138000",
+          "example": "138XXXXXXXX",
           "member": "string",
           "name": "Mobile",
           "required": false,
@@ -807,7 +807,7 @@
         {
           "disabled": false,
           "document": "邮箱地址",
-          "example": "wechat@tencent.com",
+          "example": "user****@tencent.com",
           "member": "string",
           "name": "Email",
           "required": false,
@@ -816,7 +816,7 @@
         {
           "disabled": false,
           "document": "商务合作接口人",
-          "example": "王某",
+          "example": "张三",
           "member": "string",
           "name": "SalesPerson",
           "required": false,
@@ -843,7 +843,7 @@
           "example": "0",
           "member": "int64",
           "name": "Ret",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -853,7 +853,7 @@
           "example": "170143813*******360",
           "member": "string",
           "name": "TaskID",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -890,7 +890,7 @@
           "example": "0",
           "member": "int64",
           "name": "Ret",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -900,7 +900,7 @@
           "example": "sv_mps_safety_diagnosis_basic_diagnosis",
           "member": "string",
           "name": "ResourceName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -910,7 +910,7 @@
           "example": "1",
           "member": "int64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -920,7 +920,7 @@
           "example": "1",
           "member": "int64",
           "name": "UnusedCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1491,7 +1491,7 @@
           "example": "0",
           "member": "int64",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1501,7 +1501,7 @@
           "example": "无",
           "member": "AppTaskData",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1511,7 +1511,7 @@
           "example": "1",
           "member": "int64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },

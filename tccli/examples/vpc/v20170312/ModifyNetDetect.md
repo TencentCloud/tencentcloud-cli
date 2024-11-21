@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli vpc ModifyNetDetect --cli-unfold-argument  \
-    --NetDetectId netd-12345678 \
-    --NetDetectName test \
+    --NetDetectId netd-nswq8wkq \
+    --NetDetectName demo \
     --NextHopType NORMAL_CVM \
     --NextHopDestination 10.0.0.4 \
     --DetectDestinationIp 10.0.0.3 10.0.0.2

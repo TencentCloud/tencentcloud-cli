@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli tat DisableRegisterCodes --cli-unfold-argument  \
-    --RegisterCodeIds abc
+    --RegisterCodeIds 8cca2d3b-7ac3-422a-98f0-8a5bc17cdc38
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "e0f011ac-6949-4726-a7d6-b28540f9d729"
     }
 }
 ```

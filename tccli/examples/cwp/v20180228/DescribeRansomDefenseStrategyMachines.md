@@ -42,7 +42,7 @@ Output:
                 "Status": 1,
                 "StrategyId": 5570,
                 "StrategyName": "tt1",
-                "DiskInfo": "",
+                "DiskInfo": "diskId1|diskName1;diskId2|diskName2",
                 "HostVersion": 2
             }
         ],

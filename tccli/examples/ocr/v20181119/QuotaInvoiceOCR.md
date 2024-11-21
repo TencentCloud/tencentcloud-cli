@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ocr QuotaInvoiceOCR --cli-unfold-argument  \
-    --ImageUrl https://xx/a.jpg
+    --ImageUrl https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/***/fakeurl.jpg
 ```
 
 Output: 
@@ -18,8 +18,8 @@ Output:
         "Rate": "伍元",
         "RateNum": "5.00",
         "InvoiceType": "交通",
-        "Province": "上海市",
-        "City": "",
+        "Province": "广东省",
+        "City": "深圳市",
         "HasStamp": "1",
         "RequestId": "c0abae2d-10d6-42ae-af0f-a5cc2c9b1fc5"
     }

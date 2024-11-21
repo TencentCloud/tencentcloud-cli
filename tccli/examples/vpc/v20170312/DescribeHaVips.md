@@ -16,7 +16,7 @@ Output:
         "HaVipSet": [
             {
                 "HaVipId": "havip-2kce8v4q",
-                "HaVipName": "tadfafd",
+                "HaVipName": "demo",
                 "Vip": "10.3.3.15",
                 "VpcId": "vpc-o31qeah3",
                 "SubnetId": "subnet-8qywqc4y",
@@ -29,7 +29,7 @@ Output:
             },
             {
                 "HaVipId": "havip-bk4275i0",
-                "HaVipName": "22",
+                "HaVipName": "demo",
                 "Vip": "10.2.0.14",
                 "VpcId": "vpc-2mcdauzl",
                 "SubnetId": "subnet-mnmm19fg",
@@ -56,7 +56,7 @@ Input:
 ```
 tccli vpc DescribeHaVips --cli-unfold-argument  \
     --Filters.0.Name havip-name \
-    --Filters.0.Values test \
+    --Filters.0.Values demo \
     --Filters.1.Name vpc-id \
     --Filters.1.Values vpc-6v2ht8q5
 ```
@@ -68,7 +68,7 @@ Output:
         "HaVipSet": [
             {
                 "HaVipId": "havip-iyy1ykky",
-                "HaVipName": "test modify",
+                "HaVipName": "demo",
                 "Vip": "10.4.6.17",
                 "VpcId": "vpc-6v2ht8q5",
                 "SubnetId": "subnet-qq51iwr4",

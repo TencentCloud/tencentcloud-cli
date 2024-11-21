@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli ccc UploadIvrAudio --cli-unfold-argument  \
-    --SdkAppId 0 \
-    --AudioList.0.CustomFileName abc \
+    --SdkAppId 140000000 \
+    --AudioList.0.CustomFileName 测试文件名 \
     --AudioList.0.AudioUrl http://xxxx.com/a.mp3
 ```
 

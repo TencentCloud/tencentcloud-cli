@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cwp CheckFileTamperRule --cli-unfold-argument  \
-    --Name xx \
+    --Name rule2 \
     --Id 1
 ```
 

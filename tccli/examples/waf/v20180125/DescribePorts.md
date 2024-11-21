@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli waf DescribePorts --cli-unfold-argument  \
-    --InstanceID test-instance \
-    --Edition sass-waf
+    --InstanceID waf_2kw60zgy0908e8j3 \
+    --Edition sparta-waf
 ```
 
 Output: 

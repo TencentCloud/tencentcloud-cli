@@ -38,7 +38,8 @@ Output:
                     "EncryptedKey": "acmowmeomeo13432a"
                 },
                 "CreateTime": "2019-12-23T07:25:52Z",
-                "QUICConfig": null
+                "QUICConfig": null,
+                "IPFilterPolicy": null
             }
         ],
         "RequestId": "aeomo-133w3-amomow-22"

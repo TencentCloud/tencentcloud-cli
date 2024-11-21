@@ -14,7 +14,7 @@ Output:
 ```
 {
     "Response": {
-        "Data": null,
+        "Data": "success",
         "RequestId": "0746a563-2597-43ec-8aaf-d3267b093efa"
     }
 }

@@ -282,6 +282,14 @@
         "title": "示例"
       }
     ],
+    "DescribeRecord": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRecord\n<公共请求参数>\n\n{\n    \"SdkAppId\": 34234,\n    \"RoomId\": 1242\n}",
+        "output": "{\n    \"Response\": {\n        \"ClassId\": 343121517,\n        \"RecordInfo\": [\n            {\n                \"Duration\": 274,\n                \"FileFormat\": \"mp4\",\n                \"RecordSize\": 3172788,\n                \"RecordUrl\": \"https://10018181/1fe1c5e51397757897946447816/f0.mp4\",\n                \"StartTime\": 1732094036,\n                \"StopTime\": 1732094310,\n                \"TaskId\": \"c2f8969d0d-5971-95f5-a07f6efcecb9\",\n                \"VideoId\": \"1397797946447816\"\n            }\n        ],\n        \"RequestId\": \"cba5909ae-8924-4ae6-850e-099332ffd535\",\n        \"SchoolId\": 3523371\n    }\n}",
+        "title": "查询录制信息"
+      }
+    ],
     "DescribeRecordStream": [
       {
         "document": "获取流信息",
@@ -502,12 +510,28 @@
         "title": "示例"
       }
     ],
+    "StartRecord": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartRecord\n<公共请求参数>\n\n{\n    \"SdkAppId\": 34234,\n    \"RoomId\": 1242\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"23d81-3ebf-41c6-8979-d053198f1841\",\n        \"TaskId\": \"c2239d-490d-5971-95f5-a07f6efcecb9\"\n    }\n}",
+        "title": "StartRecord"
+      }
+    ],
     "StartRoom": [
       {
         "document": "房间不存在示例",
         "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartRoom\n<公共请求参数>\n\n{\n    \"RoomId\": 11111\n}",
         "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"ResourceNotFound.Room\",\n            \"Message\": \"The room does not exist.\"\n        },\n        \"RequestId\": \"0479a5ea-0b81-4d94-845d-f57b23e52e4e\"\n    }\n}",
         "title": "开始房间"
+      }
+    ],
+    "StopRecord": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopRecord\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1,\n    \"RoomId\": 1,\n    \"TaskId\": \"abc-23423423-fcsd\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"34ef3bd6-cd3a-4559-8b44-6cbac805632e\"\n    }\n}",
+        "title": "停止录制"
       }
     ],
     "UnbindDocumentFromRoom": [

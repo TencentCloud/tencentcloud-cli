@@ -14,42 +14,45 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 1,
         "ClusterInfoList": [
             {
-                "ClusterId": "abc",
-                "ClusterName": "abc",
-                "ClusterVersion": "abc",
-                "ClusterOs": "abc",
-                "ClusterType": "abc",
-                "ClusterNodeNum": 1,
-                "Region": "abc",
-                "DefenderStatus": "abc",
-                "ClusterStatus": "abc",
-                "ClusterCheckMode": "abc",
-                "ClusterAutoCheck": true,
-                "DefenderErrorReason": "abc",
-                "UnreadyNodeNum": 1,
-                "SeriousRiskCount": 0,
-                "HighRiskCount": 0,
-                "MiddleRiskCount": 0,
-                "HintRiskCount": 0,
-                "CheckFailReason": "abc",
-                "CheckStatus": "abc",
-                "TaskCreateTime": "abc",
-                "AccessedStatus": "abc",
-                "AccessedSubStatus": "abc",
-                "NodeCount": 1,
-                "OffLineNodeCount": 1,
-                "UnInstallAgentNodeCount": 1,
-                "ChargeCoresCnt": 1,
+                "AccessedStatus": "AccessedPartialDefence",
+                "AccessedSubStatus": "AccessedSubNone",
+                "ChargeCoresCnt": 4000,
+                "CheckFailReason": "SUCCESS",
+                "CheckStatus": "HasRisk",
+                "ClusterAuditFailedInfo": "",
+                "ClusterAuditStatus": "Opened",
+                "ClusterAutoCheck": false,
+                "ClusterCheckMode": "",
+                "ClusterId": "cls-abhq0j4o",
+                "ClusterName": "bx_test_tmp",
+                "ClusterNodeNum": 4,
+                "ClusterOs": "",
+                "ClusterStatus": "CSR_RUNNING",
+                "ClusterSubStatus": "",
+                "ClusterType": "INDEPENDENT_CLUSTER",
+                "ClusterVersion": "1.28.3",
+                "CoresCnt": 12000,
+                "DefenderErrorReason": "",
+                "DefenderStatus": "UnDefended",
+                "HighRiskCount": 6,
+                "HintRiskCount": 3,
                 "MasterAddresses": [
-                    "abc"
+                    "10.0.0.11;10.0.0.14;10.0.0.4;"
                 ],
-                "CoresCnt": 1
+                "MiddleRiskCount": 7,
+                "NodeCount": 4,
+                "OffLineNodeCount": 0,
+                "Region": "ap-guangzhou",
+                "SeriousRiskCount": 1,
+                "TaskCreateTime": "2024-10-30 14:41:25",
+                "UnInstallAgentNodeCount": 1,
+                "UnreadyNodeNum": 3
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "8a64a4f9-864c-49c6-adcb-21b483de477a",
+        "TotalCount": 7
     }
 }
 ```

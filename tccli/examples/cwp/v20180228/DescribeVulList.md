@@ -26,16 +26,16 @@ Output:
                 "Level": 3,
                 "From": 0,
                 "Descript": "Apache Log4j是美国阿帕奇（Apache）基金会的一款基于Java的开源日志记录工具。 \nApache Log4j 1.2存在代码问题漏洞，攻击者可利用该漏洞通过JMSApender反序列化来运行代码。",
-                "PublishTimeWisteria": "",
-                "NameWisteria": "",
-                "DescriptWisteria": "",
+                "PublishTimeWisteria": "public time wisteria",
+                "NameWisteria": "wisteria name",
+                "DescriptWisteria": "description",
                 "CveId": "CVE-2021-4104",
                 "CvssScore": 7.5,
                 "Labels": "远程利用,存在POC",
                 "IsSupportDefense": 0,
                 "FixSwitch": 1,
                 "TaskId": 1,
-                "StatusStr": "",
+                "StatusStr": "1",
                 "DefenseAttackCount": 0,
                 "FirstAppearTime": "2024-10-18T01:22:06+08:00",
                 "VulCategory": 4,
@@ -47,7 +47,7 @@ Output:
         ],
         "TotalCount": 1,
         "FollowVulCount": 1,
-        "RequestId": "abc"
+        "RequestId": "d73d4495-1895-43a8-95be-f447b02e253d"
     }
 }
 ```

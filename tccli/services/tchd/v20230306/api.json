@@ -1,7 +1,7 @@
 {
   "actions": {
     "DescribeEvents": {
-      "document": "本接口用于查询腾讯云健康看板的可用性事件信息，可以通过产品列表、地域列表和事件发生日期进行过滤查询。",
+      "document": "本接口用于查询腾讯云健康看板的可用性事件信息，可以通过产品列表、地域列表和事件发生日期进行过滤查询。\n当查询的产品对应时间内无事件时将返回空结果。\n可以参考健康看板历史事件页面来获取查询案例（链接：https://status.cloud.tencent.com/history）。",
       "input": "DescribeEventsRequest",
       "name": "查看事件列表",
       "output": "DescribeEventsResponse",
@@ -21,7 +21,7 @@
         {
           "disabled": false,
           "document": "事件的发生日期",
-          "example": "2023-06-22",
+          "example": "2024-07-30",
           "member": "date",
           "name": "EventDate",
           "required": true,
@@ -30,7 +30,7 @@
         {
           "disabled": false,
           "document": "1. 不指定产品列表时将查询所有产品。\n2. 产品ID示例：cvm、lb、cdb、cdn、crs",
-          "example": "[\"cvm\",\"clb\"]",
+          "example": "[\"tse\"]",
           "member": "string",
           "name": "ProductIds",
           "required": false,
@@ -39,7 +39,7 @@
         {
           "disabled": false,
           "document": "1. 不指定地域列表时将查询所有地域。\n2. 查询非区域性产品事件时，地域ID指定为：non-regional\n3. 其他地域ID取值请参考：https://cloud.tencent.com/document/api/213/15692",
-          "example": "[\"ap-guangzhou\",\"ap-shanghai\"]",
+          "example": "[\"ap-beijing\"]",
           "member": "string",
           "name": "RegionIds",
           "required": false,
@@ -54,7 +54,7 @@
         {
           "disabled": false,
           "document": "事件详情列表",
-          "example": "{       \"EventList\": [         {           \"ProductId\": \"cvm\",           \"ProductName\": \"云服务器\",           \"RegionId\": \"ap-chongqing\",           \"RegionName\": \"重庆\",           \"StartTime\": \"2023-06-09 14:16:00\",           \"EndTime\": \"2023-06-09 14:28:00\",           \"CurrentStatus\": \"正常\"         }       ]     }",
+          "example": "      \"EventList\": [         {           \"CurrentStatus\": \"正常\",           \"EndTime\": \"2024-07-30 11:23:00\",           \"ProductId\": \"tse\",           \"ProductName\": \"微服务引擎 TSE\",           \"RegionId\": \"ap-beijing\",           \"RegionName\": \"北京\",           \"StartTime\": \"2024-07-30 10:41:00\"         }       ]",
           "member": "ProductEventList",
           "name": "Data",
           "output_required": true,

@@ -16,9 +16,9 @@ Output:
 {
     "Response": {
         "Credentials": {
-            "SessionToken": "kTRt***Jb7m",
-            "AccessKeyId": "AKID****CjE6",
-            "SecretAccessKey": "Eo28***7ps=",
+            "SessionToken": "***********************************",
+            "AccessKeyId": "***********************************",
+            "SecretAccessKey": "***********************************",
             "Expiration": "2024-08-20T13:55:53Z"
         },
         "RequestId": "59a5e07e-4147-4d2e-a808-dca76ac5b3fd"
@@ -44,9 +44,9 @@ Output:
 {
     "Response": {
         "Credentials": {
-            "SessionToken": "kTRt***Jb7m",
-            "AccessKeyId": "AKID****CjE6",
-            "SecretAccessKey": "Eo28***7ps=",
+            "SessionToken": "***********************************",
+            "AccessKeyId": "***********************************",
+            "SecretAccessKey": "***********************************",
             "Expiration": "2024-08-20T13:55:53Z"
         },
         "RequestId": "59a5e07e-4147-4d2e-a808-dca76ac5b3fd"
@@ -72,9 +72,9 @@ Output:
 {
     "Response": {
         "Credentials": {
-            "SessionToken": "kTRt***Jb7m",
-            "AccessKeyId": "AKID****CjE6",
-            "SecretAccessKey": "Eo28***7ps=",
+            "SessionToken": "***********************************",
+            "AccessKeyId": "***********************************",
+            "SecretAccessKey": "***********************************",
             "Expiration": "2024-08-20T13:55:53Z"
         },
         "RequestId": "59a5e07e-4147-4d2e-a808-dca76ac5b3fd"
@@ -100,9 +100,9 @@ Output:
 {
     "Response": {
         "Credentials": {
-            "SessionToken": "kTRt***Jb7m",
-            "AccessKeyId": "AKID****CjE6",
-            "SecretAccessKey": "Eo28***7ps=",
+            "SessionToken": "***********************************",
+            "AccessKeyId": "***********************************",
+            "SecretAccessKey": "***********************************",
             "Expiration": "2024-08-20T13:55:53Z"
         },
         "RequestId": "59a5e07e-4147-4d2e-a808-dca76ac5b3fd"

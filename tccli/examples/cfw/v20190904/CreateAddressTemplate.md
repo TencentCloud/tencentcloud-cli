@@ -17,7 +17,7 @@ Output:
 {
     "Response": {
         "Status": 0,
-        "RequestId": ""
+        "RequestId": "ped5452f-5619-4aad-8db6-cbc8bcda4b3c"
     }
 }
 ```

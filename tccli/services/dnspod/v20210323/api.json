@@ -22,7 +22,7 @@
       "status": "online"
     },
     "CreateDomain": {
-      "document": "添加域名",
+      "document": "添加域名\n\n备注：该接口不支持添加子域名。",
       "input": "CreateDomainRequest",
       "name": "添加域名",
       "output": "CreateDomainResponse",
@@ -56,6 +56,20 @@
       "output": "CreateDomainGroupResponse",
       "status": "online"
     },
+    "CreateLineGroup": {
+      "document": "创建域名的线路分组",
+      "input": "CreateLineGroupRequest",
+      "name": "创建域名的线路分组",
+      "output": "CreateLineGroupResponse",
+      "status": "online"
+    },
+    "CreateLineGroupCopy": {
+      "document": "复制域名的线路分组",
+      "input": "CreateLineGroupCopyRequest",
+      "name": "复制域名的线路分组",
+      "output": "CreateLineGroupCopyResponse",
+      "status": "online"
+    },
     "CreateRecord": {
       "document": "添加记录\n备注：新添加的解析记录存在短暂的索引延迟，如果查询不到新增记录，请在 30 秒后重试",
       "input": "CreateRecordRequest",
@@ -84,6 +98,13 @@
       "output": "CreateSnapshotResponse",
       "status": "online"
     },
+    "CreateTXTRecord": {
+      "document": "添加TXT记录\n备注：新添加的解析记录存在短暂的索引延迟，如果查询不到新增记录，请在 30 秒后重试",
+      "input": "CreateTXTRecordRequest",
+      "name": "添加TXT记录",
+      "output": "CreateTXTRecordResponse",
+      "status": "online"
+    },
     "DeleteDomain": {
       "document": "删除域名",
       "input": "DeleteDomainRequest",
@@ -110,6 +131,13 @@
       "input": "DeleteDomainCustomLineRequest",
       "name": "删除域名的自定义线路",
       "output": "DeleteDomainCustomLineResponse",
+      "status": "online"
+    },
+    "DeleteLineGroup": {
+      "document": "删除域名的线路分组",
+      "input": "DeleteLineGroupRequest",
+      "name": "删除域名的线路分组",
+      "output": "DeleteLineGroupResponse",
       "status": "online"
     },
     "DeleteRecord": {
@@ -243,6 +271,13 @@
       "input": "DescribeDomainWhoisRequest",
       "name": "获取域名Whois信息",
       "output": "DescribeDomainWhoisResponse",
+      "status": "online"
+    },
+    "DescribeLineGroupList": {
+      "document": "获取域名的线路分组列表",
+      "input": "DescribeLineGroupListRequest",
+      "name": "获取域名的线路分组列表",
+      "output": "DescribeLineGroupListResponse",
       "status": "online"
     },
     "DescribePackageDetail": {
@@ -427,6 +462,13 @@
       "output": "ModifyDynamicDNSResponse",
       "status": "online"
     },
+    "ModifyLineGroup": {
+      "document": "修改域名的线路分组",
+      "input": "ModifyLineGroupRequest",
+      "name": "修改域名的线路分组",
+      "output": "ModifyLineGroupResponse",
+      "status": "online"
+    },
     "ModifyPackageAutoRenew": {
       "document": "DNS 解析套餐自动续费设置",
       "input": "ModifyPackageAutoRenewRequest",
@@ -495,6 +537,13 @@
       "input": "ModifySubdomainStatusRequest",
       "name": "暂停子域名的解析记录",
       "output": "ModifySubdomainStatusResponse",
+      "status": "online"
+    },
+    "ModifyTXTRecord": {
+      "document": "修改TXT记录",
+      "input": "ModifyTXTRecordRequest",
+      "name": "修改TXT记录",
+      "output": "ModifyTXTRecordResponse",
       "status": "online"
     },
     "ModifyVasAutoRenewStatus": {
@@ -1508,6 +1557,115 @@
       ],
       "type": "object"
     },
+    "CreateLineGroupCopyRequest": {
+      "document": "CreateLineGroupCopy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "dnspod.cn",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "要复制的域名ID。要从多个域名复制线路分组时，用英文逗号分隔，例如1002,1005",
+          "example": "1002",
+          "member": "string",
+          "name": "DomainIds",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "域名ID，如果传了DomainId，系统将会忽略Domain参数，优先使用DomainId",
+          "example": "1009",
+          "member": "uint64",
+          "name": "DomainId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateLineGroupCopyResponse": {
+      "document": "CreateLineGroupCopy返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateLineGroupRequest": {
+      "document": "CreateLineGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自定义线路分组的名称。",
+          "example": "testgroup99",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义线路分组包含的线路列表，包含多个线路时用英文逗号分隔。例如，铁通,奇虎",
+          "example": "电信,移动",
+          "member": "string",
+          "name": "Lines",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "dnspod.cn",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "域名ID，如果传了DomainId，系统将会忽略Domain参数，优先使用DomainId",
+          "example": "1009",
+          "member": "uint64",
+          "name": "DomainId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateLineGroupResponse": {
+      "document": "CreateLineGroup返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自定义线路分组详情",
+          "example": "无",
+          "member": "LineGroupDetail",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateRecordBatchDetail": {
       "document": "批量添加记录返回结构",
       "members": [
@@ -2008,6 +2166,124 @@
       ],
       "type": "object"
     },
+    "CreateTXTRecordRequest": {
+      "document": "CreateTXTRecord请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "dnspod.cn",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "记录线路，通过 API 记录线路获得，中文，比如：默认。",
+          "example": "默认",
+          "member": "string",
+          "name": "RecordLine",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "记录值，如 IP : 200.200.200.200， CNAME : cname.dnspod.com.， MX : mail.dnspod.com.。",
+          "example": "200.200.200.200",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。",
+          "example": "1923",
+          "member": "uint64",
+          "name": "DomainId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "主机记录，如 www，如果不传，默认为 @。",
+          "example": "www",
+          "member": "string",
+          "name": "SubDomain",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "线路的 ID，通过 API 记录线路获得，英文字符串，比如：10=1。参数RecordLineId优先级高于RecordLine，如果同时传递二者，优先使用RecordLineId参数。",
+          "example": "10=1",
+          "member": "string",
+          "name": "RecordLineId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "TTL，范围1-604800，不同套餐域名最小值不同。",
+          "example": "600",
+          "member": "uint64",
+          "name": "TTL",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "记录初始状态，取值范围为 ENABLE 和 DISABLE 。默认为 ENABLE ，如果传入 DISABLE，解析不会生效，也不会验证负载均衡的限制。",
+          "example": "ENABLE",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "备注",
+          "example": "官网主页",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "记录分组 Id。可以通过接口 DescribeRecordGroupList 接口 GroupId 字段获取。",
+          "example": "123",
+          "member": "uint64",
+          "name": "GroupId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTXTRecordResponse": {
+      "document": "CreateTXTRecord返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "记录ID",
+          "example": "162",
+          "member": "uint64",
+          "name": "RecordId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CustomLineInfo": {
       "document": "自定义线路详情",
       "members": [
@@ -2307,6 +2583,51 @@
     },
     "DeleteDomainResponse": {
       "document": "DeleteDomain返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteLineGroupRequest": {
+      "document": "DeleteLineGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "dnspod.cn",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义线路分组ID",
+          "example": "10",
+          "member": "uint64",
+          "name": "LineGroupId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "域名ID，如果传了DomainId，系统将会忽略Domain参数，优先使用DomainId",
+          "example": "1009",
+          "member": "uint64",
+          "name": "DomainId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteLineGroupResponse": {
+      "document": "DeleteLineGroup返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -3606,6 +3927,87 @@
           "document": "域名Whois信息",
           "example": "无",
           "member": "WhoisInfo",
+          "name": "Info",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLineGroupListRequest": {
+      "document": "DescribeLineGroupList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "dnspod.cn",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认值为0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "限制数量，传0或不传会返回所有。",
+          "example": "20",
+          "member": "uint64",
+          "name": "Length",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "按自定义线路分组名称排序的方向。升序传asc，降序传desc。",
+          "example": "desc",
+          "member": "string",
+          "name": "SortType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "域名ID，如果传了DomainId，系统将会忽略Domain参数，优先使用DomainId",
+          "example": "1009",
+          "member": "uint64",
+          "name": "DomainId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLineGroupListResponse": {
+      "document": "DescribeLineGroupList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自定义线路分组列表",
+          "example": "无",
+          "member": "LineGroupItem",
+          "name": "LineGroups",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自定义线路分组数量信息",
+          "example": "无",
+          "member": "LineGroupSum",
           "name": "Info",
           "type": "object",
           "value_allowed_null": false
@@ -6119,6 +6521,42 @@
       ],
       "usage": "both"
     },
+    "LineGroupDetail": {
+      "document": "自定义线路分组详细信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自定义线路分组ID",
+          "example": "10",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自定线路分组名称",
+          "example": "testgroup99",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自定义线路分组包含的线路列表",
+          "example": "[ \"铁通\",\"奇虎\"]",
+          "member": "string",
+          "name": "Lines",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "LineGroupInfo": {
       "document": "线路分组信息",
       "members": [
@@ -6160,6 +6598,108 @@
           "name": "LineList",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "LineGroupItem": {
+      "document": "自定义线路分组元素",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名ID",
+          "example": "1254",
+          "member": "uint64",
+          "name": "DomainId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自定义线路分组ID",
+          "example": "213",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自定义线路分组名称",
+          "example": "testgroup4",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自定义线路分组包含的线路",
+          "example": "[\"百度\",\"必应\",\"谷歌\"]",
+          "member": "string",
+          "name": "Lines",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2021-04-07 13:34:20",
+          "member": "datetime",
+          "name": "CreatedOn",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间",
+          "example": "2022-04-07 13:34:20",
+          "member": "datetime",
+          "name": "UpdatedOn",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "LineGroupSum": {
+      "document": "自定义线路数量信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "本次请求返回自定义线路分组个数",
+          "example": "3",
+          "member": "uint64",
+          "name": "NowTotal",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自定义线路分组总数",
+          "example": "5",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "还可允许添加的自定义线路分组个数",
+          "example": "1",
+          "member": "uint64",
+          "name": "AvailableCount",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -6725,6 +7265,69 @@
           "type": "int",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLineGroupRequest": {
+      "document": "ModifyLineGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自定义线路分组的名称。",
+          "example": "testgroup99",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义线路分组包含的线路列表，包含多个线路时用英文逗号分隔。例如，铁通,奇虎",
+          "example": "电信,移动",
+          "member": "string",
+          "name": "Lines",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "dnspod.cn",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义线路分组ID",
+          "example": "10",
+          "member": "uint64",
+          "name": "LineGroupId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "域名ID，如果传了DomainId，系统将会忽略Domain参数，优先使用DomainId",
+          "example": "1009",
+          "member": "uint64",
+          "name": "DomainId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLineGroupResponse": {
+      "document": "ModifyLineGroup返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -7488,6 +8091,124 @@
     "ModifySubdomainStatusResponse": {
       "document": "ModifySubdomainStatus返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTXTRecordRequest": {
+      "document": "ModifyTXTRecord请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "dnspod.cn",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "记录线路，通过 API 记录线路获得，中文，比如：默认。",
+          "example": "默认",
+          "member": "string",
+          "name": "RecordLine",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "记录值，如 IP : 200.200.200.200， CNAME : cname.dnspod.com.， MX : mail.dnspod.com.。",
+          "example": "200.200.200.200",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "记录 ID 。可以通过接口DescribeRecordList查到所有的解析记录列表以及对应的RecordId",
+          "example": "162",
+          "member": "uint64",
+          "name": "RecordId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId",
+          "example": "1923",
+          "member": "uint64",
+          "name": "DomainId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "主机记录，如 www，如果不传，默认为 @。",
+          "example": "www",
+          "member": "string",
+          "name": "SubDomain",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "线路的 ID，通过 API 记录线路获得，英文字符串，比如：10=1。参数RecordLineId优先级高于RecordLine，如果同时传递二者，优先使用RecordLineId参数。",
+          "example": "10=1",
+          "member": "string",
+          "name": "RecordLineId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "TTL，范围1-604800，不同等级域名最小值不同。",
+          "example": "600",
+          "member": "uint64",
+          "name": "TTL",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "记录初始状态，取值范围为 ENABLE 和 DISABLE 。默认为 ENABLE ，如果传入 DISABLE，解析不会生效，也不会验证负载均衡的限制。",
+          "example": "ENABLE",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "记录的备注信息。传空删除备注。",
+          "example": "这是备注",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTXTRecordResponse": {
+      "document": "ModifyTXTRecord返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "记录ID",
+          "example": "162",
+          "member": "uint64",
+          "name": "RecordId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

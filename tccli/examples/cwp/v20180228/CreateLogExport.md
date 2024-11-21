@@ -9,7 +9,7 @@ tccli cwp CreateLogExport --cli-unfold-argument  \
     --Sort desc \
     --Count 500 \
     --Format json \
-    --QueryString * \
+    --QueryString dev \
     --StartTime 1656640800000 \
     --EndTime 1656641100000
 ```

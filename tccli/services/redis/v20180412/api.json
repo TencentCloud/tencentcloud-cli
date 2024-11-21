@@ -120,7 +120,7 @@
       "status": "online"
     },
     "DeleteReplicationInstance": {
-      "document": "移除复制组成员 注：接口下线中，请使用 RemoveReplicationInstance",
+      "document": "移除复制组成员。注：该接口下线中，请使用 [RemoveReplicationInstance](https://cloud.tencent.com/document/product/239/90099)。",
       "input": "DeleteReplicationInstanceRequest",
       "name": "删除复制组成员",
       "output": "DeleteReplicationInstanceResponse",
@@ -442,7 +442,7 @@
       "status": "online"
     },
     "DescribeTaskList": {
-      "document": "本接口（DescribeTaskList）用于查询指定实例的任务列表信息。",
+      "document": "本接口（DescribeTaskList）用于查询指定实例的任务列表信息。\n\n- 可查询近30天内任务列表数据。",
       "input": "DescribeTaskListRequest",
       "name": "查询任务列表信息",
       "output": "DescribeTaskListResponse",
@@ -638,7 +638,7 @@
       "status": "online"
     },
     "ModifyReplicationGroup": {
-      "document": "修改复制组信息",
+      "document": "本接口（ModifyReplicationGroup）用于修改复制组信息。",
       "input": "ModifyReplicationGroupRequest",
       "name": "修改复制组信息",
       "output": "ModifyReplicationGroupResponse",
@@ -1802,7 +1802,7 @@
         {
           "disabled": false,
           "document": "请求任务 ID。",
-          "example": "199878234",
+          "example": "\"crs-bzssy0cp,crs-a47h97c1\"",
           "member": "string",
           "name": "DealId",
           "output_required": true,
@@ -1812,7 +1812,7 @@
         {
           "disabled": false,
           "document": "克隆实例的 ID。",
-          "example": "[\"crs-3sz5wdav\"]",
+          "example": "[\"crs-bzssy0cp\",\"crs-a47h97c1\"]",
           "member": "string",
           "name": "InstanceIds",
           "output_required": true,
@@ -1914,7 +1914,7 @@
         },
         {
           "disabled": false,
-          "document": "设置自定义账号的密码。密码复杂度要求如下：\n- 字符个数为[8,32]。\n- 至少包含小写字母、大写字母、数字和字符 ()`~!@#$%^&*-+=_|{}[]:;<>,.?/ 中的两种。\n- 不能以\"/\"开头。\n",
+          "document": "设置自定义账号的密码。密码复杂度要求如下：\n- 字符个数为[8,64]。\n- 至少包含小写字母、大写字母、数字和字符 ()`~!@#$%^&*-+=_|{}[]:;<>,.?/ 中的两种。\n- 不能以\"/\"开头。\n",
           "example": "1234567aA",
           "member": "string",
           "name": "AccountPassword",
@@ -1978,7 +1978,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例类型。\n<ul><li>2：Redis 2.8 内存版（标准架构）。</li><li>3：CKV 3.2 内存版（标准架构）。</li><li>4：CKV 3.2 内存版（集群架构）。</li><li>6：Redis 4.0 内存版（标准架构）。</li><li>7：Redis 4.0 内存版（集群架构）。</li><li>8：Redis 5.0 内存版（标准架构）。</li><li>9：Redis 5.0 内存版（集群架构）。</li><li>15：Redis 6.2 内存版（标准架构）。</li><li>16：Redis 6.2 内存版（集群架构）。</li><li>17：Redis 7.0 内存版（标准架构）。</li><li>18：Redis 7.0 内存版（集群架构）。</li></ul>",
+          "document": "实例类型。\n<ul><li>2：Redis 2.8 内存版（标准架构）。</li><li>3：CKV 3.2 内存版（标准架构）。</li><li>4：CKV 3.2 内存版（集群架构）。</li><li>6：Redis 4.0 内存版（标准架构）。</li><li>7：Redis 4.0 内存版（集群架构）。</li><li>8：Redis 5.0 内存版（标准架构）。</li><li>9：Redis 5.0 内存版（集群架构）。</li><li>15：Redis 6.2 内存版（标准架构）。</li><li>16：Redis 6.2 内存版（集群架构）。</li><li>17：Redis 7.0 内存版（标准架构）。</li><li>18：Redis 7.0 内存版（集群架构）。</li>说明：CKV 版本当前有存量用户使用，暂时保留。</ul>",
           "example": "6",
           "member": "uint64",
           "name": "TypeId",
@@ -2032,7 +2032,7 @@
         },
         {
           "disabled": false,
-          "document": "访问实例的密码。\n- 当输入参数**NoAuth**为**true**时，指设置实例为免密码访问，Password可不用配置，否则Password为必填参数。\n- 当实例类型**TypeId**为Redis 2.8 内存版标准架构、Redis 4.0、5.0、6.0内存版标准架构或集群架构时，其密码复杂度要求为：8-30个字符，至少包含小写字母、大写字母、数字和字符()`~!@#$%^&*-+=_|{}[]:;<>,.?/ 中的2种，不能以\"/\"开头。\n- 当实例类型**TypeId**为CKV 3.2 内存版标准架构或集群架构时，其密码复杂度为：8-30个字符，必须包含字母和数字，且 不包含其他字符。",
+          "document": "访问实例的密码。\n- 当输入参数**NoAuth**为**true**时，指设置实例为免密码访问，Password可不用配置，否则Password为必填参数。\n- 当实例类型**TypeId**为Redis 2.8 内存版标准架构、Redis 4.0、5.0、6.0内存版标准架构或集群架构时，其密码复杂度要求为：8-64个字符，至少包含小写字母、大写字母、数字和字符()`~!@#$%^&*-+=_|{}[]:;<>,.?/ 中的2种，不能以\"/\"开头。\n- 当实例类型**TypeId**为CKV 3.2 内存版标准架构或集群架构时，其密码复杂度为：8-30个字符，必须包含字母和数字，且不包含其他字符。",
           "example": "123456MyP@ssword",
           "member": "string",
           "name": "Password",
@@ -2219,7 +2219,7 @@
         {
           "disabled": false,
           "document": "交易的ID。",
-          "example": "199878234",
+          "example": "\"crs-bzssy0cp,crs-a47h97c1\"",
           "member": "string",
           "name": "DealId",
           "output_required": true,
@@ -2229,7 +2229,7 @@
         {
           "disabled": false,
           "document": "实例ID。",
-          "example": "crs-3sz5wdav",
+          "example": "\"crs-bzssy0cp\",\"crs-a47h97c1\"",
           "member": "string",
           "name": "InstanceIds",
           "output_required": true,
@@ -2842,7 +2842,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID。",
+          "document": "实例 ID，请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。",
           "example": "crs-4y9t57vt",
           "member": "string",
           "name": "InstanceId",
@@ -2860,7 +2860,7 @@
         },
         {
           "disabled": false,
-          "document": "下载备份文件的网络限制类型，如果不配置该参数，则使用用户自定义的配置。\n\n- NoLimit：不限制，腾讯云内外网均可以下载备份文件。\n-  LimitOnlyIntranet：仅腾讯云自动分配的内网地址可下载备份文件。\n- Customize：指用户自定义的私有网络可下载备份文件。",
+          "document": "下载备份文件的网络限制类型，如果不配置该参数，则使用用户自定义的配置。\n- NoLimit：不限制，腾讯云内外网均可以下载备份文件。\n-  LimitOnlyIntranet：仅腾讯云自动分配的内网地址可下载备份文件。\n- Customize：指用户自定义的私有网络可下载备份文件。",
           "example": "NoLimit",
           "member": "string",
           "name": "LimitType",
@@ -2878,7 +2878,7 @@
         },
         {
           "disabled": false,
-          "document": "标识自定义的 LimitIp 地址是否可下载备份文件。\n\n- In: 自定义的 IP 地址可以下载。默认为 In。\n- NotIn: 自定义的 IP 不可以下载。",
+          "document": "标识自定义的 LimitIp 地址是否可下载备份文件。\n- In: 自定义的 IP 地址可以下载。默认为 In。\n- NotIn: 自定义的 IP 不可以下载。",
           "example": "In",
           "member": "string",
           "name": "IpComparisonSymbol",
@@ -3370,7 +3370,7 @@
         },
         {
           "disabled": false,
-          "document": "开始时间，格式如：2017-02-08 16:46:34。查询实例在 [beginTime, endTime] 时间段内开始备份的备份列表。",
+          "document": "开始时间，格式如：2017-02-08 16:46:34。查询实例在 [beginTime, endTime] 时间段内开始备份的备份列表，查询时间最大跨度30天。",
           "example": "2017-02-08 16:46:34",
           "member": "string",
           "name": "BeginTime",
@@ -3379,7 +3379,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间，格式如：2017-02-08 19:09:26。查询实例在 [beginTime, endTime] 时间段内开始备份的备份列表。",
+          "document": "结束时间，格式如：2017-02-08 19:09:26。查询实例在 [beginTime, endTime] 时间段内开始备份的备份列表，查询时间最大跨度30天。",
           "example": "2017-02-08 19:09:26",
           "member": "string",
           "name": "EndTime",
@@ -3674,7 +3674,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "配置查询事件执行计划的起始日期。",
+          "document": "配置查询事件执行计划的起始日期，查询日期最大跨度30天。",
           "example": "2018-09-10",
           "member": "string",
           "name": "ExecutionStartDate",
@@ -3683,7 +3683,7 @@
         },
         {
           "disabled": false,
-          "document": "配置查询事件执行计划的结束日期。",
+          "document": "配置查询事件执行计划的结束日期，查询日期最大跨度30天。",
           "example": "2018-09-10",
           "member": "string",
           "name": "ExecutionEndDate",
@@ -3701,7 +3701,7 @@
         },
         {
           "disabled": false,
-          "document": "输出每页显示事件的数量，默认：10。",
+          "document": "输出每页显示事件的数量，默认：10，最大100。",
           "example": "10",
           "member": "int64",
           "name": "PageSize",
@@ -5291,7 +5291,7 @@
         },
         {
           "disabled": false,
-          "document": "慢查询的开始时间。",
+          "document": "慢查询的开始时间，查询时间最大跨度30天。",
           "example": "2021-02-23 11:06:01",
           "member": "string",
           "name": "BeginTime",
@@ -5300,7 +5300,7 @@
         },
         {
           "disabled": false,
-          "document": "慢查询的结束时间。",
+          "document": "慢查询的结束时间，查询时间最大跨度30天。",
           "example": "2021-02-23 11:08:01",
           "member": "string",
           "name": "EndTime",
@@ -5318,7 +5318,7 @@
         },
         {
           "disabled": false,
-          "document": "分页大小。默认为 20，取值范围[20,1000]。",
+          "document": "每页输出的任务列表大小，默认为 20，最多输出100条。",
           "example": "10",
           "member": "int64",
           "name": "Limit",
@@ -5327,7 +5327,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量，取Limit整数倍。",
+          "document": "分页偏移量，取Limit整数倍，计算公式：offset=limit*(页码-1)。",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -5777,7 +5777,7 @@
         },
         {
           "disabled": false,
-          "document": "预查询慢日志的起始时间。",
+          "document": "预查询慢日志的起始时间，查询时间最大跨度30天。",
           "example": "2019-09-08 12:12:41",
           "member": "string",
           "name": "BeginTime",
@@ -5786,7 +5786,7 @@
         },
         {
           "disabled": false,
-          "document": "预查询慢日志的结束时间。",
+          "document": "预查询慢日志的结束时间，查询时间最大跨度30天",
           "example": "2019-09-09 12:12:41",
           "member": "string",
           "name": "EndTime",
@@ -5804,7 +5804,7 @@
         },
         {
           "disabled": false,
-          "document": "每个页面展示的慢查询条数，默认值为20。取值范围：[20,1000]。",
+          "document": "每个页面展示的慢查询条数，默认值为20，最大100。",
           "example": "20",
           "member": "int64",
           "name": "Limit",
@@ -6005,7 +6005,7 @@
         },
         {
           "disabled": false,
-          "document": "任务执行的起始时间。格式如：2021-12-30 00:00:00。",
+          "document": "任务执行的起始时间，格式如：2021-12-30 00:00:00，支持查询近30天内数据。",
           "example": "2021-12-30 00:00:00",
           "member": "string",
           "name": "BeginTime",
@@ -6014,7 +6014,7 @@
         },
         {
           "disabled": false,
-          "document": "任务运行的终止时间。格式如：2021-12-30 20:59:35",
+          "document": "任务运行的终止时间。格式如：2021-12-30 20:59:35，支持查询近30天内数据。",
           "example": "2021-12-30 20:59:35",
           "member": "string",
           "name": "EndTime",
@@ -6106,7 +6106,7 @@
         },
         {
           "disabled": false,
-          "document": "开始时间：2019-09-08 12:12:41",
+          "document": "开始时间：2019-09-08 12:12:41，查询时间最大跨度30天。",
           "example": "2019-09-08 12:12:41",
           "member": "string",
           "name": "BeginTime",
@@ -6115,7 +6115,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间：2019-09-09 12:12:41",
+          "document": "结束时间：2019-09-09 12:12:41，查询时间最大跨度30天。",
           "example": "2019-09-09 12:12:41",
           "member": "string",
           "name": "EndTime",
@@ -6133,7 +6133,7 @@
         },
         {
           "disabled": false,
-          "document": "页面大小：默认20",
+          "document": "页面大小：默认20，最大100。",
           "example": "20",
           "member": "int64",
           "name": "Limit",
@@ -6142,7 +6142,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量，取Limit整数倍",
+          "document": "分页偏移量，取Limit整数倍。计算公式：offset=limit*(页码-1)。",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -6663,7 +6663,7 @@
         },
         {
           "disabled": false,
-          "document": "实例分片数量。\nRedis2.8标准架构、CKV标准架构、Redis4.0标准架构无需填写。",
+          "document": "实例分片数量。2.8 标准架构无需配置分片，其余版本标准架构需要配置分片数量为1。集群架构需指定需购买的分片数量。",
           "example": "1",
           "member": "int64",
           "name": "RedisShardNum",
@@ -6672,7 +6672,7 @@
         },
         {
           "disabled": false,
-          "document": "实例副本数量。\nRedis2.8标准架构、CKV标准架构无需填写。",
+          "document": "实例副本数量。2.8 标准架构无需配置副本数量。",
           "example": "1",
           "member": "int64",
           "name": "RedisReplicasNum",
@@ -9667,7 +9667,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID。",
+          "document": "实例 ID，请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。",
           "example": "crs-5a4py64p",
           "member": "string",
           "name": "InstanceId",
@@ -9694,7 +9694,7 @@
         },
         {
           "disabled": false,
-          "document": "指修改后的私有网络 ID，当**Operation**为**changeVpc**或**changeBaseToVpc**时，需配置该参数。",
+          "document": "指修改后的私有网络 ID。\n- 当**Operation**为**changeVpc**或**changeBaseToVpc**时，需配置该参数。\n- 请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)，切换至**实例详情**页面，在**网络信息**区域，单击所属网络后面的私有网络名称，获取私有网络 ID。\n",
           "example": "vpc-hu6khgap",
           "member": "string",
           "name": "VpcId",
@@ -9703,7 +9703,7 @@
         },
         {
           "disabled": false,
-          "document": "指修改后的私有网络所属子网 ID，当**Operation**为**changeVpc**或**changeBaseToVpc**时，需配置该参数。",
+          "document": "指修改后的私有网络所属子网 ID。\n- 当**Operation**为**changeVpc**或**changeBaseToVpc**时，需配置该参数。\n- 请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)，切换至**实例详情**页面，在**网络信息**区域，单击所属网络后面的子网名称，获取子网ID。",
           "example": "subnet-6mt7lir6",
           "member": "string",
           "name": "SubnetId",
@@ -9712,7 +9712,7 @@
         },
         {
           "disabled": false,
-          "document": "原内网 IPv4 地址保留时长。\n- 单位：天。\n- 取值范围：0、1、2、3、7、15。\n\n**说明**：设置原地址保留时长需最新版SDK，否则原地址将立即释放，查看SDK版本，请参见 [SDK中心](https://cloud.tencent.com/document/sdk)。",
+          "document": "原内网 IPv4 地址保留时长。\n- 单位：天。\n- 取值范围：0、1、2、3、7、15。\n**说明**：设置原地址保留时长需最新版SDK，否则原地址将立即释放，查看SDK版本，请参见 [SDK中心](https://cloud.tencent.com/document/sdk)。",
           "example": "7",
           "member": "int64",
           "name": "Recycle",
@@ -9776,7 +9776,7 @@
         },
         {
           "disabled": false,
-          "document": "任务 ID。可获取**taskId**，通过接口 **DescribeTaskInfo **查询任务执行状态。",
+          "document": "任务 ID。获取**taskId**，通过接口 [DescribeTaskInfo](https://cloud.tencent.com/document/product/239/30601) 查询任务执行状态。",
           "example": "1",
           "member": "int64",
           "name": "TaskId",
@@ -9852,7 +9852,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "复制组字符串ID",
+          "document": "复制组ID。请登录[Redis控制台的全球复制](https://console.cloud.tencent.com/redis/replication)页面获取复制组 ID。",
           "example": "crs-rpl-qhj4wgcn",
           "member": "string",
           "name": "GroupId",
@@ -9861,7 +9861,7 @@
         },
         {
           "disabled": false,
-          "document": "复制组名称",
+          "document": "修改后的复制组名称。",
           "example": "复制组名称",
           "member": "string",
           "name": "GroupName",
@@ -9870,7 +9870,7 @@
         },
         {
           "disabled": false,
-          "document": "备注",
+          "document": "备注描述。",
           "example": "备注",
           "member": "string",
           "name": "Remark",
@@ -11087,7 +11087,7 @@
         },
         {
           "disabled": false,
-          "document": "实例 ID。",
+          "document": "实例 ID，请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。",
           "example": "crs-5a4py64p",
           "member": "string",
           "name": "InstanceId",

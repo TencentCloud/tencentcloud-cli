@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tem DescribeEnvironmentStatus --cli-unfold-argument  \
-    --EnvironmentIds xx \
+    --EnvironmentIds en-xxxxxx \
     --SourceChannel 0
 ```
 
@@ -16,21 +16,23 @@ Output:
     "Response": {
         "Result": [
             {
-                "EnvironmentId": "xx",
-                "EnvironmentName": "xx",
-                "ClusterId": "xx",
-                "EnvironmentStoppingStatus": {
-                    "StoppedApplicationNum": 0,
-                    "ApplicationNumNeedToStop": 0
-                },
-                "ClusterStatus": "xx",
+                "EnvironmentId": "en-xxxxxx",
+                "EnvironmentName": "abc",
+                "ClusterId": "cls-xxxxxx",
+                "ClusterStatus": "running",
                 "EnvironmentStartingStatus": {
                     "ApplicationNumNeedToStart": 0,
-                    "StartedApplicationNum": 0
+                    "StartedApplicationNum": 0,
+                    "StartFailedApplicationNum": 0
+                },
+                "EnvironmentStoppingStatus": {
+                    "ApplicationNumNeedToStop": 0,
+                    "StoppedApplicationNum": 0,
+                    "StopFailedApplicationNum": 0
                 }
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

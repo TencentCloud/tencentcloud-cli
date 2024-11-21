@@ -496,6 +496,7 @@
           "example": "无",
           "member": "OutputAuthorizedTransfer",
           "name": "Data",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -1278,7 +1279,7 @@
         {
           "disabled": false,
           "document": "企业ID",
-          "example": "1000",
+          "example": "10000",
           "member": "uint64",
           "name": "CorpId",
           "required": false,
@@ -1287,7 +1288,7 @@
         {
           "disabled": false,
           "document": "商户ID",
-          "example": "商户ID",
+          "example": "eqdmnz7020bmtvi9",
           "member": "string",
           "name": "MerchantId",
           "required": false,
@@ -1296,7 +1297,7 @@
         {
           "disabled": false,
           "document": "产品ID",
-          "example": "产品ID",
+          "example": "tz6jpscwky41u23o9b",
           "member": "string",
           "name": "ProductId",
           "required": false,
@@ -1314,7 +1315,7 @@
         {
           "disabled": false,
           "document": "批次ID，留空时系统自动生成",
-          "example": "批次ID",
+          "example": "\"\"",
           "member": "string",
           "name": "BatchId",
           "required": false,
@@ -1640,7 +1641,7 @@
           "example": "1000",
           "member": "uint64",
           "name": "CorpId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1858,7 +1859,7 @@
           "example": "awai9jd37ne73t",
           "member": "string",
           "name": "CustomId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1903,7 +1904,7 @@
         },
         {
           "disabled": false,
-          "document": "码包来源 0:自建, 1:第三发",
+          "document": "码包来源 0:自建, 1:第三方",
           "example": "1",
           "member": "int64",
           "name": "CodeType",
@@ -1931,7 +1932,7 @@
           "example": "awai9jd37ng3de73t",
           "member": "string",
           "name": "MerchantId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1959,7 +1960,7 @@
         {
           "disabled": false,
           "document": "商户ID",
-          "example": "商户ID",
+          "example": "eqdmnz7020bmtvi9",
           "member": "string",
           "name": "MerchantId",
           "required": true,
@@ -2004,7 +2005,7 @@
         {
           "disabled": false,
           "document": "企业ID",
-          "example": "0",
+          "example": "10000",
           "member": "uint64",
           "name": "CorpId",
           "required": false,
@@ -2031,7 +2032,7 @@
           "example": "tz6jpscwky41u23o9b",
           "member": "string",
           "name": "ProductId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2077,7 +2078,7 @@
           "example": "abc",
           "member": "string",
           "name": "TraceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2132,7 +2133,7 @@
           "example": "batchid",
           "member": "string",
           "name": "BatchId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2205,6 +2206,7 @@
           "example": "abc",
           "member": "string",
           "name": "BatchId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2214,6 +2216,7 @@
           "example": "1",
           "member": "uint64",
           "name": "ActiveCnt",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2223,6 +2226,7 @@
           "example": "1",
           "member": "uint64",
           "name": "CodeCnt",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2349,7 +2353,7 @@
           "example": "abc",
           "member": "string",
           "name": "TraceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2464,7 +2468,7 @@
         {
           "disabled": false,
           "document": "企业ID",
-          "example": "1000",
+          "example": "10000",
           "member": "uint64",
           "name": "CorpId",
           "required": false,
@@ -2473,7 +2477,7 @@
         {
           "disabled": false,
           "document": "批次ID",
-          "example": "ccc",
+          "example": "20121212000001",
           "member": "string",
           "name": "BatchId",
           "required": false,
@@ -2488,10 +2492,10 @@
         {
           "disabled": false,
           "document": "批次ID",
-          "example": "abc",
+          "example": "20121212000001",
           "member": "string",
           "name": "BatchId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2537,7 +2541,7 @@
           "example": "\"awai9jd37ng3de7p3t\"",
           "member": "string",
           "name": "MerchantId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2629,7 +2633,7 @@
           "example": "\"awai9jd37ng3de7p3t\"",
           "member": "string",
           "name": "TraceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2729,7 +2733,7 @@
           "example": "无",
           "member": "CodeBatch",
           "name": "CodeBatch",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -2748,7 +2752,7 @@
         {
           "disabled": false,
           "document": "查询商户ID",
-          "example": "商户ID",
+          "example": "eqdmnz7020bmtvi9",
           "member": "string",
           "name": "MerchantId",
           "required": false,
@@ -2757,7 +2761,7 @@
         {
           "disabled": false,
           "document": "查询商品ID",
-          "example": "商品ID",
+          "example": "tz6jpscwky41u23o9b",
           "member": "string",
           "name": "ProductId",
           "required": false,
@@ -2793,7 +2797,7 @@
         {
           "disabled": false,
           "document": "批次类型 0:溯源 1:营销",
-          "example": "无",
+          "example": "0",
           "member": "string",
           "name": "BatchType",
           "required": false,
@@ -2802,7 +2806,7 @@
         {
           "disabled": false,
           "document": "企业ID",
-          "example": "0",
+          "example": "10000",
           "member": "uint64",
           "name": "CorpId",
           "required": false,
@@ -2810,7 +2814,7 @@
         },
         {
           "disabled": false,
-          "document": "批次状态",
+          "document": "批次状态 0: 未激活 1: 已激活 -1: 已冻结",
           "example": "1",
           "member": "uint64",
           "name": "Status",
@@ -3080,7 +3084,7 @@
         {
           "disabled": false,
           "document": "每页数量",
-          "example": "7999",
+          "example": "10",
           "member": "uint64",
           "name": "PageSize",
           "required": false,
@@ -3089,7 +3093,7 @@
         {
           "disabled": false,
           "document": "页数",
-          "example": "7999",
+          "example": "1",
           "member": "uint64",
           "name": "PageNumber",
           "required": false,
@@ -3116,7 +3120,7 @@
         {
           "disabled": false,
           "document": "是否有流水码 0:无 1:有",
-          "example": "number",
+          "example": "0",
           "member": "uint64",
           "name": "SerialType",
           "required": false,
@@ -3125,7 +3129,7 @@
         {
           "disabled": false,
           "document": "资源类型 batch:批次, order_in 入库, order_out: 出入",
-          "example": "无",
+          "example": "batch",
           "member": "string",
           "name": "ResType",
           "required": false,
@@ -3134,7 +3138,7 @@
         {
           "disabled": false,
           "document": "资源ID ResType是 batch 时对应是批次ID, 是 order_in, order_out时，则是订单ID",
-          "example": "无",
+          "example": "20121212000001",
           "member": "string",
           "name": "ResId",
           "required": false,
@@ -3177,7 +3181,7 @@
         {
           "disabled": false,
           "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "131",
+          "example": "10",
           "member": "uint64",
           "name": "TotalCount",
           "output_required": true,
@@ -3290,7 +3294,7 @@
           "example": "[]",
           "member": "CorpQuota",
           "name": "CorpQuotas",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -3300,7 +3304,7 @@
           "example": "22",
           "member": "uint64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3328,7 +3332,7 @@
         {
           "disabled": false,
           "document": "企业ID",
-          "example": "0",
+          "example": "10000",
           "member": "uint64",
           "name": "CorpId",
           "required": false,
@@ -3346,7 +3350,7 @@
           "example": "无",
           "member": "CustomRule",
           "name": "CustomRule",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -3428,7 +3432,7 @@
           "example": "无",
           "member": "CustomRule",
           "name": "CustomRules",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -3438,7 +3442,7 @@
           "example": "10",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3530,7 +3534,7 @@
           "example": "无",
           "member": "Merchant",
           "name": "Merchant",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -3576,7 +3580,7 @@
         {
           "disabled": false,
           "document": "企业ID",
-          "example": "0",
+          "example": "10000",
           "member": "uint64",
           "name": "CorpId",
           "required": false,
@@ -3603,7 +3607,7 @@
           "example": "无",
           "member": "Merchant",
           "name": "Merchants",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -3613,7 +3617,7 @@
           "example": "10",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3836,7 +3840,7 @@
           "example": "无",
           "member": "Product",
           "name": "Product",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -4194,6 +4198,7 @@
           "example": "无",
           "member": "ScanStat",
           "name": "ScanStats",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4230,6 +4235,7 @@
           "example": "AbXtx",
           "member": "string",
           "name": "Token",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4275,6 +4281,7 @@
           "example": "无",
           "member": "TraceCode",
           "name": "TraceCode",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -4284,6 +4291,7 @@
           "example": "无",
           "member": "string",
           "name": "CodePath",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4412,7 +4420,7 @@
           "example": "无",
           "member": "TraceData",
           "name": "TraceData",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -4466,7 +4474,7 @@
         },
         {
           "disabled": false,
-          "document": "二维码",
+          "document": "溯源码",
           "example": "xfetmgoiky2nms6nk8",
           "member": "string",
           "name": "Code",
@@ -4499,21 +4507,21 @@
       "members": [
         {
           "disabled": false,
-          "document": "数量",
+          "document": "溯源阶段数量",
           "example": "10",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "无",
+          "document": "溯源明细",
           "example": "无",
           "member": "TraceData",
           "name": "TraceDataList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4550,6 +4558,7 @@
           "example": "无",
           "member": "OutputAuthorizedTransfer",
           "name": "Data",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -4768,7 +4777,7 @@
         {
           "disabled": false,
           "document": "批次ID",
-          "example": "abc",
+          "example": "20121212000001",
           "member": "string",
           "name": "BatchId",
           "required": true,
@@ -4777,7 +4786,7 @@
         {
           "disabled": false,
           "document": "企业ID",
-          "example": "1",
+          "example": "10000",
           "member": "uint64",
           "name": "CorpId",
           "required": false,
@@ -4795,7 +4804,7 @@
         {
           "disabled": false,
           "document": "模板ID，或者活动ID",
-          "example": "abc",
+          "example": "模板ID",
           "member": "string",
           "name": "MpTpl",
           "required": false,
@@ -4804,7 +4813,7 @@
         {
           "disabled": false,
           "document": "商户ID",
-          "example": "1",
+          "example": "eqdmnz7020bmtvi9",
           "member": "string",
           "name": "MerchantId",
           "required": false,
@@ -4813,7 +4822,7 @@
         {
           "disabled": false,
           "document": "商品ID",
-          "example": "1",
+          "example": "tz6jpscwky41u23o9b",
           "member": "string",
           "name": "ProductId",
           "required": false,
@@ -4822,7 +4831,7 @@
         {
           "disabled": false,
           "document": "备注",
-          "example": "abc",
+          "example": "备注",
           "member": "string",
           "name": "Remark",
           "required": false,
@@ -4840,7 +4849,7 @@
         {
           "disabled": false,
           "document": "有效期",
-          "example": "2023-05-01",
+          "example": "2022-11-12",
           "member": "string",
           "name": "ValidDate",
           "required": false,
@@ -4849,7 +4858,7 @@
         {
           "disabled": false,
           "document": "生产日期",
-          "example": "2023-05-01",
+          "example": "2022-05-12",
           "member": "string",
           "name": "ProductionDate",
           "required": false,
@@ -4867,6 +4876,7 @@
           "example": "abc",
           "member": "string",
           "name": "BatchId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4939,7 +4949,7 @@
           "example": "awai9jd37ne73t",
           "member": "string",
           "name": "CustomId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4994,7 +5004,7 @@
           "example": "awai9jd37ne73t",
           "member": "string",
           "name": "CustomId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5048,7 +5058,7 @@
         },
         {
           "disabled": false,
-          "document": "码包来源 0:自建, 1:第三码包，暂不支持修改",
+          "document": "码包来源 0:自建, 1:第三方码包，暂不支持修改",
           "example": "0",
           "member": "int64",
           "name": "CodeType",
@@ -5076,7 +5086,7 @@
           "example": "awai9jd37ng3de7p3t",
           "member": "string",
           "name": "MerchantId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5131,7 +5141,7 @@
         {
           "disabled": false,
           "document": "商品图片",
-          "example": "[]",
+          "example": "[\"http://xxx.xxx.com/logo.png\"]",
           "member": "string",
           "name": "Logo",
           "required": false,
@@ -5167,7 +5177,7 @@
           "example": "85tfp1sn78r9m1568i",
           "member": "string",
           "name": "ProductId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5351,7 +5361,7 @@
           "example": "abc",
           "member": "string",
           "name": "BatchId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5532,6 +5542,7 @@
           "example": "abc",
           "member": "string",
           "name": "TraceId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6317,6 +6328,7 @@
           "example": "无",
           "member": "OutputAuthorizedTransfer",
           "name": "Data",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -7108,7 +7120,7 @@
           "example": "1",
           "member": "uint64",
           "name": "CorpId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -7118,7 +7130,7 @@
           "example": "10",
           "member": "int64",
           "name": "FactoryCnt",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -7128,7 +7140,7 @@
           "example": "10",
           "member": "int64",
           "name": "ItemCnt",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -7138,7 +7150,7 @@
           "example": "10",
           "member": "int64",
           "name": "TrackCnt",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -7148,7 +7160,7 @@
           "example": "10",
           "member": "int64",
           "name": "SaleCnt",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -7158,17 +7170,17 @@
           "example": "10",
           "member": "int64",
           "name": "ChainCnt",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
-          "disabled": false,
-          "document": "营销风控次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "disabled": true,
+          "document": "风险检测次数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
           "member": "int64",
           "name": "RiskCnt",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -7178,7 +7190,7 @@
           "example": "2020-05-20",
           "member": "string",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }

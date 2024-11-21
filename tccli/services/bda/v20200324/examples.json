@@ -31,8 +31,8 @@
     "CreateSegmentationTask": [
       {
         "document": "创建视频人像分割处理任务成功",
-        "input": "POST / HTTP/1.1\nHost: bda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSegmentationTask\n<公共请求参数>\n\n{\n    \"VideoUrl\": \"test.video.url\",\n    \"BackgroundImageUrl\": \"test.image.url\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"33c35bff-27b6-408f-9ca7-19191303fa07\",\n        \"TaskID\": \"fakeTaskID\",\n        \"EstimatedProcessingTime\": 30\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: bda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSegmentationTask\n<公共请求参数>\n\n{\n    \"VideoUrl\": \"https://liudehua-9527.cos.ap-guangzhou.myqcloud.com/input.mp4\",\n    \"BackgroundImageUrl\": \"https://liudehua-9527.cos.ap-guangzhou.myqcloud.com/input.jpeg\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"33c35bff-27b6-408f-9ca7-19191303fa07\",\n        \"TaskID\": \"12433580546999611111\",\n        \"EstimatedProcessingTime\": 30\n    }\n}",
         "title": "创建任务成功"
       }
     ],
@@ -81,8 +81,8 @@
     "DescribeSegmentationTask": [
       {
         "document": "查询视频人像分割处理任务成功",
-        "input": "POST / HTTP/1.1\nHost: bda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSegmentationTask\n<公共请求参数>\n\n{\n    \"TaskID\": \"taskID\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0352ed67-66b0-4515-a04f-ddc0ab129658\",\n        \"TaskStatus\": \"FINISHED\",\n        \"ErrorMsg\": \"\",\n        \"ResultVideoUrl\": \"http://resulturl.com/a.mp4\",\n        \"ResultVideoMD5\": \"somemd5\",\n        \"VideoBasicInformation\": {\n            \"FrameWidth\": 1280,\n            \"FrameHeight\": 590,\n            \"FramesPerSecond\": 28,\n            \"Duration\": 21,\n            \"TotalFrames\": 630\n        }\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: bda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSegmentationTask\n<公共请求参数>\n\n{\n    \"TaskID\": \"12433580546999111111\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0352ed67-66b0-4515-a04f-ddc0ab129658\",\n        \"TaskStatus\": \"FINISHED\",\n        \"ErrorMsg\": \"\",\n        \"ResultVideoUrl\": \"https://liudehua-9527.cos.ap-guangzhou.myqcloud.com/result.mp4?q-sign-algorithm=sha1&q-ak=AKID********EXAMPLE&q-sign-time=8888;9999&q-key-time=8888;9999&q-header-list=&q-url-param-list=&q-signature=7de87f7bf9cfd23df9da32f46661e7cf97a5603c\",\n        \"ResultVideoMD5\": \"somemd5\",\n        \"VideoBasicInformation\": {\n            \"FrameWidth\": 1280,\n            \"FrameHeight\": 590,\n            \"FramesPerSecond\": 28,\n            \"Duration\": 21,\n            \"TotalFrames\": 630\n        }\n    }\n}",
         "title": "查询任务成功"
       }
     ],
@@ -195,13 +195,13 @@
     "SegmentCustomizedPortraitPic": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: bda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SegmentCustomizedPortraitPic\n<公共请求参数>\n\n{\n    \"Url\": \"IamNotAUrl\",\n    \"SegmentationOptions\": {\n        \"Background\": false\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: bda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SegmentCustomizedPortraitPic\n<公共请求参数>\n\n{\n    \"Url\": \"https://liudehua-9527.cos.ap-guangzhou.myqcloud.com/input.jpeg\",\n    \"SegmentationOptions\": {\n        \"Background\": false\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue.UrlIllegal\",\n            \"Message\": \"URL格式不合法。\"\n        },\n        \"RequestId\": \"46ed6f32-549f-4377-8116-2d55e4574528\"\n    }\n}",
         "title": "调用失败示例"
       },
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: bda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SegmentCustomizedPortraitPic\n<公共请求参数>\n\n{\n    \"Url\": \"test.jpg\",\n    \"SegmentationOptions\": {\n        \"Head\": true\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: bda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SegmentCustomizedPortraitPic\n<公共请求参数>\n\n{\n    \"Url\": \"https://liudehua-9527.cos.ap-guangzhou.myqcloud.com/input.jpeg\",\n    \"SegmentationOptions\": {\n        \"Head\": true\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"PortraitImage\": \"iVBORw0KGgoAAAANSUhEUgAAAoAAAAHJCAYAAAAVcogaAAAgAElEQVR4AdThgZZlRRYYybpH3ELr/f/fNnm2D5FMVCcMXJVUdOvJzIXxGxUVlUNFZa3FoXKpXPqNd2aGo6LiqKiA4YXAoKLycqGicizkUpHfqRyuxVfJHzzEkVBxVFx7+K5ihIpriGOAiqPiGuKqOCquiqviqPgrFUfFVfHfonxS/pLKoXKttXin4h15T+VSOVQuFZW1Fmst1lqowHDsvThUVHBQUTmW37gqjoprZnhv8bNUDpWj4qhQOSoqZoaKimOKY2aomBkqKipUroqrAgcViL+j8vekEVj871J5R+VnVPwMlaOi4lBRgeHb64XGWou9N3tv1lqstVDZe6Oy92bvzVqLtRYqxyTHzDAzPM/D8zw8z0PF8zwcM0PFzFAxMxwzUHFUHCqHispVcVT8lYqr4qioqKj4aiE8IL9TOVQulb+TwzjkcFRcFcfMcFUcFd/14p2KQ+UrlWO/fkFFRWWthcpai6NCRUVF5auRT478TiqM38TMgB8wgR8c8cGK3wzw4lhrsffG...\",\n        \"MaskImage\": \"/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQH/wAALCAHJAoABAREA/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx...\",\n        \"ImageRects\": [\n            {\n                \"Y\": 1,\n                \"X\": 2,\n                \"Height\": 3,\n                \"Width\": 4,\n                \"Label\": \"Head\"\n            }\n        ],\n        \"RequestId\": \"07d71af0-d3af-4d36-8217-1e6836f38007\"\n    }\n}",
         "title": "调用成功示例"
       }
@@ -209,13 +209,13 @@
     "SegmentPortraitPic": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: bda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SegmentPortraitPic\n<公共请求参数>\n\n{\n    \"Url\": \"IamNotAUrl\"\n}",
+        "input": "POST / HTTP/1.1\nHost: bda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SegmentPortraitPic\n<公共请求参数>\n\n{\n    \"Url\": \"htttttps://liudehua-9527.cos.ap-guangzhou.myqcloud.com/input.jpeg\"\n}",
         "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue.UrlIllegal\",\n            \"Message\": \"URL格式不合法。\"\n        },\n        \"RequestId\": \"46ed6f32-549f-4377-8116-2d55e4574528\"\n    }\n}",
         "title": "调用失败示例"
       },
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: bda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SegmentPortraitPic\n<公共请求参数>\n\n{\n    \"Url\": \"test.jpg\"\n}",
+        "input": "POST / HTTP/1.1\nHost: bda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SegmentPortraitPic\n<公共请求参数>\n\n{\n    \"Url\": \"https://liudehua-9527.cos.ap-guangzhou.myqcloud.com/input.jpeg\",\n    \"RspImgType\": \"base64\"\n}",
         "output": "{\n    \"Response\": {\n        \"ResultImage\": \"iVBORw0KGgoAAAANSUhEUgAAAiYAAAFuCAYAAAC1LdPaAAAgAElEQVR4AbTB0ZJlyXUYy4g8DT1hICNl5P9/50WdFdJqWIJ7ioWahnDl7r/99me+MzM8VTwNh39FxWcqS+Wcw3cqLpUnlUtFZamorMPvqaiorJlBReWcg4rKUuk9/DMqKirWaVCpWBUVFRVXRcWTysi3KpbKUlkq68TfqaioLJWZQWWpqCyVz1SeVN7vN/+IgA4UIaui4vp4x1UxHlbFer//ylWxKr5SsSpWRULFk8pSUXlS+YrKUlkqS0VFZVUsFZWOLBUVFRWVpaKiUlGxVFR+eKioqFBRUVGZGb6jsSqeKtbM8KTyJN8757BUVkVFxTrn8KTyVKHypH...\",\n        \"ResultMask\": \"...XWPBHiy5s9MsfGWqRxIlxe+DdQbyLK9a6lDSLpaFbtC21I3GK/okoooooooooooooooooooooooor+Qb/g73/bN1j4HfsbeCP2evCt7qum6x8e9cuDrN5YnT3spfDWi8T6bfrOHvImnnbfHJbKmQMM/av8AMAJJJJOSeST1J9TRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRXV+BvHPi/wCGni3QPHfgPxDqfhXxf4X1K11jQPEGjXUlnqWl6lZyrNbXdrcREPHLFIoYHocYIIJFf7FX/BAn9qf41fthf8E2fgz8Y/j74oXxl8RdRivtL1LxE1lBZXOow6XcPaW096tviOa8aKNTPcbVaaTLsMk1+0dFFFFFFFFFFFFFFFFFFFFFFFf5jX/B5jqOoSft8fCfTZL68fToPg3p88Fg9zO1lDPJqFwJJorUuYI5ZAAHkSMOwADE4r+Oyiiiiv/Z\",\n        \"HasForeground\": true,\n        \"ResultMaskUrl\": \"\",\n        \"ResultImageUrl\": \"\",\n        \"RequestId\": \"9cf173a5-4ae5-46fb-9898-6c876263780d\"\n    }\n}",
         "title": "调用成功示例"
       }
@@ -223,7 +223,7 @@
     "TerminateSegmentationTask": [
       {
         "document": "取消任务成功",
-        "input": "POST / HTTP/1.1\nHost: bda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TerminateSegmentationTask\n<公共请求参数>\n\n{\n    \"TaskID\": \"fakeID\"\n}",
+        "input": "POST / HTTP/1.1\nHost: bda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TerminateSegmentationTask\n<公共请求参数>\n\n{\n    \"TaskID\": \"12433580546999111111\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"0352ed67-66b0-4515-a04f-ddc0ab129658\"\n    }\n}",
         "title": "取消任务成功"
       }

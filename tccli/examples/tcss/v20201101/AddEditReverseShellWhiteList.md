@@ -7,8 +7,8 @@ Input:
 ```
 tccli tcss AddEditReverseShellWhiteList --cli-unfold-argument  \
     --WhiteListInfo.DstIp 127.0.0.1 \
-    --WhiteListInfo.ImageIds sha256:xxxx \
-    --WhiteListInfo.DstPort 12345 \
+    --WhiteListInfo.ImageIds sha256:dabduwouo \
+    --WhiteListInfo.DstPort 12245 \
     --WhiteListInfo.ProcessName test
 ```
 

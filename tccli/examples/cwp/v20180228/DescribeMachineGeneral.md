@@ -1,6 +1,6 @@
 **Example 1: 示例**
 
-
+查询主机资产概览
 
 Input: 
 
@@ -11,26 +11,40 @@ Output:
 ```
 {
     "Response": {
-        "CompareYesterdayNotProtectMachineCnt": 0,
-        "IDCMachineCnt": 0,
-        "CompareYesterdayDeadlineMachineCnt": 0,
-        "OtherCloudMachineCnt": 0,
-        "TencentCloudMachineCnt": 0,
-        "MachineCnt": 0,
-        "BaiduCloudMachineCnt": 0,
-        "ProtectMachineCnt": 0,
         "AliCloudMachineCnt": 0,
-        "BaseMachineCnt": 0,
-        "RequestId": "aa05bbb0-f9c7-4650-b4fe-05685d89b11b",
-        "FlagshipMachineCnt": 0,
-        "RiskMachineCnt": 0,
-        "CompareYesterdayRiskMachineCnt": 0,
-        "SpecialtyMachineCnt": 0,
-        "DeadlineMachineCnt": 0,
-        "NotProtectMachineCnt": 0,
-        "CompareYesterdayMachineCnt": 1,
+        "BaiduCloudMachineCnt": 0,
+        "BaseMachineCnt": 34,
+        "CloudFrom": [
+            {
+                "CloudFrom": 0,
+                "MachineCnt": 124
+            },
+            {
+                "CloudFrom": 1,
+                "MachineCnt": 2
+            },
+            {
+                "CloudFrom": 2,
+                "MachineCnt": 6
+            }
+        ],
+        "CompareYesterdayDeadlineMachineCnt": 2,
+        "CompareYesterdayMachineCnt": 132,
+        "CompareYesterdayNotProtectMachineCnt": 64,
+        "CompareYesterdayRiskMachineCnt": 35,
+        "DeadlineMachineCnt": 2,
+        "FlagshipMachineCnt": 34,
+        "IDCMachineCnt": 0,
         "LHGeneralDiscountCnt": 0,
-        "MachineDestroyAfterOfflineHours": 0
+        "MachineCnt": 132,
+        "MachineDestroyAfterOfflineHours": 1,
+        "NotProtectMachineCnt": 64,
+        "OtherCloudMachineCnt": 0,
+        "ProtectMachineCnt": 34,
+        "RequestId": "9f5fd122-589a-4faa-b004-efd7ef35e240",
+        "RiskMachineCnt": 35,
+        "SpecialtyMachineCnt": 0,
+        "TencentCloudMachineCnt": 0
     }
 }
 ```

@@ -5,7 +5,9 @@
 Input: 
 
 ```
-tccli cdc DescribeDedicatedSupportedZones --cli-unfold-argument ```
+tccli cdc DescribeDedicatedSupportedZones --cli-unfold-argument  \
+    --Regions 1
+```
 
 Output: 
 ```

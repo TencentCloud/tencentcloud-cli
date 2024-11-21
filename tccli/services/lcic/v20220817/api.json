@@ -231,6 +231,13 @@
       "output": "DescribeQuestionListResponse",
       "status": "online"
     },
+    "DescribeRecord": {
+      "document": "查询录制信息",
+      "input": "DescribeRecordRequest",
+      "name": "查询录制信息",
+      "output": "DescribeRecordResponse",
+      "status": "online"
+    },
     "DescribeRecordStream": {
       "document": "录制流查询",
       "input": "DescribeRecordStreamRequest",
@@ -413,11 +420,25 @@
       "output": "SetWatermarkResponse",
       "status": "online"
     },
+    "StartRecord": {
+      "document": "开始录制",
+      "input": "StartRecordRequest",
+      "name": "开启录制",
+      "output": "StartRecordResponse",
+      "status": "online"
+    },
     "StartRoom": {
       "document": "开始房间的直播。 说明：开始房间接口调用之前需要有用户进入课堂初始化课堂信息。",
       "input": "StartRoomRequest",
       "name": "开始房间",
       "output": "StartRoomResponse",
+      "status": "online"
+    },
+    "StopRecord": {
+      "document": "停止录制",
+      "input": "StopRecordRequest",
+      "name": "停止录制",
+      "output": "StopRecordResponse",
       "status": "online"
     },
     "UnbindDocumentFromRoom": {
@@ -1890,6 +1911,100 @@
       ],
       "usage": "both"
     },
+    "CustomRecordInfo": {
+      "document": "自定义录制信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "1234231",
+          "member": "uint64",
+          "name": "StartTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "4323213",
+          "member": "uint64",
+          "name": "StopTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总时长",
+          "example": "32313",
+          "member": "uint64",
+          "name": "Duration",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件格式",
+          "example": "mp4",
+          "member": "string",
+          "name": "FileFormat",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "流url",
+          "example": "http://123.com",
+          "member": "string",
+          "name": "RecordUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "流大小",
+          "example": "2342",
+          "member": "uint64",
+          "name": "RecordSize",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "流ID",
+          "example": "43232423",
+          "member": "string",
+          "name": "VideoId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务Id",
+          "example": "324323e",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "DeleteAppCustomContentRequest": {
       "document": "DeleteAppCustomContent请求参数结构体",
       "members": [
@@ -3096,6 +3211,72 @@
       ],
       "type": "object"
     },
+    "DescribeRecordRequest": {
+      "document": "DescribeRecord请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "学校ID",
+          "example": "123",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "房间ID",
+          "example": "9090",
+          "member": "uint64",
+          "name": "RoomId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRecordResponse": {
+      "document": "DescribeRecord返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "学校ID",
+          "example": "328910",
+          "member": "uint64",
+          "name": "SchoolId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "课堂ID",
+          "example": "123",
+          "member": "uint64",
+          "name": "ClassId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "录制信息",
+          "example": "无",
+          "member": "CustomRecordInfo",
+          "name": "RecordInfo",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeRecordStreamRequest": {
       "document": "DescribeRecordStream请求参数结构体",
       "members": [
@@ -3518,7 +3699,7 @@
         {
           "disabled": false,
           "document": "RTMP推流链接",
-          "example": "https://1101910181.vod2.myqcloud.com/6casjaisjaidcq1101910181/d26589e12312512121842/f0.mp4",
+          "example": "rtmp://rtmp.rtc.qq.com/push/301234567?sdkappid=141234567&userid=abcdefg123456789&usersig=eJwsztFLhTAYBfD-5Xs17Nu3NeegJw1KBkEFSW-W5pxaLDMN4-7vF66*-s7hcP7hxTyn7i*GyYGmm5wQry4WrPuaQxvcBBqoi1K8L8PKfByHD1e0ZpSqlLVH2Os-dmhiDBY0E4ic8YzyIwkeNHz31YaoirV5vH7q5GZ48ioqkajaxsU3d7-3oi-N-FaKh9tjcg6fDjTLOKqciGjXZT*UIpzOAQAA--8wZTch&use_number_room_id=1",
           "member": "string",
           "name": "RTMPStreamingURL",
           "output_required": false,
@@ -6952,6 +7133,52 @@
       ],
       "usage": "both"
     },
+    "StartRecordRequest": {
+      "document": "StartRecord请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "学校ID",
+          "example": "3452141",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "房间ID",
+          "example": "23121",
+          "member": "uint64",
+          "name": "RoomId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "StartRecordResponse": {
+      "document": "StartRecord返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "232313421",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "StartRoomRequest": {
       "document": "StartRoom请求参数结构体",
       "members": [
@@ -6969,6 +7196,51 @@
     },
     "StartRoomResponse": {
       "document": "StartRoom返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopRecordRequest": {
+      "document": "StopRecord请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "学校ID",
+          "example": "134112232",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "房间ID",
+          "example": "31211232",
+          "member": "uint64",
+          "name": "RoomId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "ds12322123",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopRecordResponse": {
+      "document": "StopRecord返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

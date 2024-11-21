@@ -6,16 +6,15 @@ Input:
 
 ```
 tccli tcss ModifyEscapeEventStatus --cli-unfold-argument  \
-    --Status xx \
-    --Remark xx \
-    --EventIdSet xx
+    --Status EVENT_IGNORE \
+    --EventIdSet 33705186
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx"
+        "RequestId": "3c3b5c8a-727b-4e32-b679-bcb5d6530c67"
     }
 }
 ```

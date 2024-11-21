@@ -19,9 +19,9 @@ Output:
     "Response": {
         "Keys": [
             {
-                "Value": "value1",
+                "Value": "root",
                 "Comment": "desc of value1",
-                "EncryptType": ""
+                "EncryptType": "aes"
             }
         ],
         "Total": 1,

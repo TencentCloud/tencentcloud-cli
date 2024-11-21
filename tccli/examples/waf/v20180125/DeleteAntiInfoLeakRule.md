@@ -7,7 +7,7 @@ Input:
 ```
 tccli waf DeleteAntiInfoLeakRule --cli-unfold-argument  \
     --Domain www.test.com \
-    --RuleId 123
+    --RuleId 110233
 ```
 
 Output: 

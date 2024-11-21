@@ -11,18 +11,18 @@ Output:
 ```
 {
     "Response": {
-        "NetworkTotal": 0,
-        "ClbTotal": 0,
-        "NatTotal": 0,
-        "PublicAssetTotal": 0,
-        "CVMAssetTotal": 0,
-        "CFGTotal": 0,
-        "PortTotal": 0,
-        "WebsiteTotal": 0,
-        "ServerTotal": 0,
-        "WeakPasswordTotal": 0,
-        "VULTotal": 0,
-        "RequestId": "abc"
+        "NetworkTotal": 1,
+        "ClbTotal": 1,
+        "NatTotal": 1,
+        "PublicAssetTotal": 1,
+        "CVMAssetTotal": 1,
+        "CFGTotal": 1,
+        "PortTotal": 1,
+        "WebsiteTotal": 1,
+        "ServerTotal": 1,
+        "WeakPasswordTotal": 1,
+        "VULTotal": 1,
+        "RequestId": "f9184c15-9721-456d-8ca0-4263967b5ead"
     }
 }
 ```

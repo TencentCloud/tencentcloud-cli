@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cfw ModifyNatInstance --cli-unfold-argument  \
-    --InstanceName [autotest]【勿动】自动化测试-123 \
+    --InstanceName NAT防火墙 \
     --NatInstanceId cfwnat-f0f1c7c0
 ```
 

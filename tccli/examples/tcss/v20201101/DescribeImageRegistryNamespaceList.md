@@ -14,12 +14,19 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "xxxxx",
-        "TotalCount": 2,
+        "NamespaceDetail": [
+            {
+                "ImageCnt": 54,
+                "Namespace": "os_images",
+                "RegistryCnt": 1,
+                "RiskImageCnt": 50
+            }
+        ],
         "NamespaceList": [
-            "online",
-            "test"
-        ]
+            "adadadadmin"
+        ],
+        "RequestId": "fe6d6a40-fe7e-43d9-818e-e0afd7975663",
+        "TotalCount": 33
     }
 }
 ```

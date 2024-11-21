@@ -21,13 +21,13 @@ Output:
         "Machines": [
             {
                 "MachineName": "test-name",
-                "MachineOs": "abc",
+                "MachineOs": "Windows Server 2022 数据中心版 64位 中文版",
                 "Uuid": "24c9be55-c743-4a75-a5c7-2a2912341234",
                 "Quuid": "24c9be55-c743-4a75-a5c7-2a2912341234",
                 "MachineIp": "10.0.0.11",
                 "IsProVersion": true,
                 "MachineWanIp": "110.84.0.11",
-                "PayMode": "abc",
+                "PayMode": "PREPAY",
                 "Tag": [
                     {
                         "Rid": 0,
@@ -36,31 +36,26 @@ Output:
                     }
                 ],
                 "RegionInfo": {
-                    "Region": "abc",
+                    "Region": "ap-guangzhou",
                     "RegionName": "test-name",
                     "RegionId": 1,
-                    "RegionCode": "abc",
+                    "RegionCode": "gz",
                     "RegionNameEn": "test-name"
                 },
-                "InstanceState": "abc",
+                "InstanceState": "EXPIRED",
                 "ProjectId": 0,
-                "MachineType": "abc",
+                "MachineType": "CVM",
                 "KernelVersion": "0.1.1",
-                "ProtectType": "abc",
+                "ProtectType": "BASIC_VERSION",
                 "LicenseOrder": {
                     "LicenseId": 1,
                     "LicenseType": 1,
                     "Status": 1,
                     "SourceType": 1,
-                    "ResourceId": "abc"
+                    "ResourceId": "uf6iskfrpy4g3xg2k1jm"
                 },
-                "CloudTags": [
-                    {
-                        "TagKey": "abc",
-                        "TagValue": "abc"
-                    }
-                ],
-                "InstanceId": "abc"
+                "CloudTags": [],
+                "InstanceId": "i-uf6iskfrpy4g3xg2k1jm"
             }
         ],
         "TotalCount": 1,

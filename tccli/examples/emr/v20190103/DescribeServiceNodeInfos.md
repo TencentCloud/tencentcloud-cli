@@ -6,71 +6,190 @@ Input:
 
 ```
 tccli emr DescribeServiceNodeInfos --cli-unfold-argument  \
-    --InstanceId emr-3qg9lptu \
-    --ServiceGroupType 1 \
-    --ServiceNodeType 1 \
+    --InstanceId emr-3u \
+    --Limit 999 \
     --Offset 0 \
-    --Limit 10
+    --ServiceName HIVE
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "TotalCnt": 0,
+        "AliasInfo": "13141313",
+        "RequestId": "a90a9922-dc51-45a6-abdd-93f63cf02e57",
         "ServiceNodeList": [
             {
-                "Ip": "abc",
-                "NodeType": 0,
-                "NodeName": "abc",
-                "ServiceStatus": 0,
-                "MonitorStatus": 0,
-                "Status": 0,
-                "PortsInfo": "abc",
-                "LastRestartTime": "abc",
-                "Flag": 0,
-                "ConfGroupId": 0,
-                "ConfGroupName": "abc",
-                "ConfStatus": 0,
-                "ServiceDetectionInfo": [
-                    {
-                        "DetectAlert": "abc",
-                        "DetetcFunctionKey": "abc",
-                        "DetetcFunctionValue": "abc",
-                        "DetetcTime": "abc",
-                        "DetectFunctionKey": "abc",
-                        "DetectFunctionValue": "abc",
-                        "DetectTime": "abc"
-                    }
-                ],
-                "NodeFlagFilter": "abc",
+                "ConfGroupId": 623383,
+                "ConfGroupName": "hive-master-defaultGroup",
+                "ConfStatus": 1,
+                "DataNodeMaintenanceState": 0,
+                "Flag": 1,
+                "HAState": "",
                 "HealthStatus": {
-                    "Code": 0,
-                    "Text": "abc",
-                    "Desc": "abc"
+                    "Code": 1,
+                    "Desc": "端口探测在5s内响应",
+                    "Text": "良好"
                 },
+                "Ip": "10.0.0.0",
+                "IsFederation": false,
                 "IsSupportRoleMonitor": true,
-                "StopPolicies": [
-                    {
-                        "Name": "abc",
-                        "DisplayName": "abc",
-                        "Describe": "abc",
-                        "BatchSizeRange": [
-                            0
-                        ],
-                        "IsDefault": "abc"
-                    }
-                ],
-                "HAState": "abc",
-                "NameService": "abc",
-                "IsFederation": true
+                "LastRestartTime": "2024-08-16 14:13:32",
+                "MonitorStatus": 1,
+                "NameService": "",
+                "NodeFlagFilter": "master",
+                "NodeName": "HiveMetaStore",
+                "NodeType": 30,
+                "PortsInfo": "",
+                "ServiceDetectionInfo": [],
+                "ServiceStatus": 1,
+                "Status": 1,
+                "StopPolicies": null
+            },
+            {
+                "ConfGroupId": 623383,
+                "ConfGroupName": "hive-master-defaultGroup",
+                "ConfStatus": 1,
+                "DataNodeMaintenanceState": 0,
+                "Flag": 1,
+                "HAState": "",
+                "HealthStatus": {
+                    "Code": 1,
+                    "Desc": "端口探测在5s内响应",
+                    "Text": "良好"
+                },
+                "Ip": "10.0.0.0",
+                "IsFederation": false,
+                "IsSupportRoleMonitor": true,
+                "LastRestartTime": "2024-08-16 14:14:24",
+                "MonitorStatus": 1,
+                "NameService": "",
+                "NodeFlagFilter": "master",
+                "NodeName": "HiveMetaStore",
+                "NodeType": 30,
+                "PortsInfo": "",
+                "ServiceDetectionInfo": [],
+                "ServiceStatus": 1,
+                "Status": 1,
+                "StopPolicies": null
+            },
+            {
+                "ConfGroupId": 623383,
+                "ConfGroupName": "hive-master-defaultGroup",
+                "ConfStatus": 1,
+                "DataNodeMaintenanceState": 0,
+                "Flag": 1,
+                "HAState": "",
+                "HealthStatus": {
+                    "Code": 1,
+                    "Desc": "端口探测在5s内响应",
+                    "Text": "良好"
+                },
+                "Ip": "10.0.0.0",
+                "IsFederation": false,
+                "IsSupportRoleMonitor": true,
+                "LastRestartTime": "2024-08-16 14:14:47",
+                "MonitorStatus": 1,
+                "NameService": "",
+                "NodeFlagFilter": "master",
+                "NodeName": "HiveServer2",
+                "NodeType": 31,
+                "PortsInfo": "",
+                "ServiceDetectionInfo": [],
+                "ServiceStatus": 1,
+                "Status": 1,
+                "StopPolicies": null
+            },
+            {
+                "ConfGroupId": 623383,
+                "ConfGroupName": "hive-master-defaultGroup",
+                "ConfStatus": 1,
+                "DataNodeMaintenanceState": 0,
+                "Flag": 1,
+                "HAState": "",
+                "HealthStatus": {
+                    "Code": 1,
+                    "Desc": "端口探测在5s内响应",
+                    "Text": "良好"
+                },
+                "Ip": "10.0.0.0",
+                "IsFederation": false,
+                "IsSupportRoleMonitor": true,
+                "LastRestartTime": "2024-08-16 14:14:54",
+                "MonitorStatus": 1,
+                "NameService": "",
+                "NodeFlagFilter": "master",
+                "NodeName": "HiveServer2",
+                "NodeType": 31,
+                "PortsInfo": "",
+                "ServiceDetectionInfo": [],
+                "ServiceStatus": 1,
+                "Status": 1,
+                "StopPolicies": null
+            },
+            {
+                "ConfGroupId": 623383,
+                "ConfGroupName": "hive-master-defaultGroup",
+                "ConfStatus": 1,
+                "DataNodeMaintenanceState": 0,
+                "Flag": 1,
+                "HAState": "",
+                "HealthStatus": {
+                    "Code": 1,
+                    "Desc": "端口探测在5s内响应",
+                    "Text": "良好"
+                },
+                "Ip": "10.0.0.0",
+                "IsFederation": false,
+                "IsSupportRoleMonitor": true,
+                "LastRestartTime": "2024-08-16 14:15:11",
+                "MonitorStatus": 1,
+                "NameService": "",
+                "NodeFlagFilter": "master",
+                "NodeName": "HiveWebHcat",
+                "NodeType": 32,
+                "PortsInfo": "",
+                "ServiceDetectionInfo": [],
+                "ServiceStatus": 1,
+                "Status": 1,
+                "StopPolicies": null
+            },
+            {
+                "ConfGroupId": 623383,
+                "ConfGroupName": "hive-master-defaultGroup",
+                "ConfStatus": 1,
+                "DataNodeMaintenanceState": 0,
+                "Flag": 1,
+                "HAState": "",
+                "HealthStatus": {
+                    "Code": 1,
+                    "Desc": "端口探测在5s内响应",
+                    "Text": "良好"
+                },
+                "Ip": "10.0.0.0",
+                "IsFederation": false,
+                "IsSupportRoleMonitor": true,
+                "LastRestartTime": "2024-08-16 14:15:39",
+                "MonitorStatus": 1,
+                "NameService": "",
+                "NodeFlagFilter": "master",
+                "NodeName": "HiveWebHcat",
+                "NodeType": 32,
+                "PortsInfo": "",
+                "ServiceDetectionInfo": [],
+                "ServiceStatus": 1,
+                "Status": 1,
+                "StopPolicies": null
             }
         ],
-        "AliasInfo": "abc",
         "SupportNodeFlagFilterList": [
-            "abc"
+            "master",
+            "core",
+            "task",
+            "common",
+            "router"
         ],
-        "RequestId": "abc"
+        "TotalCnt": 6
     }
 }
 ```

@@ -8,8 +8,8 @@ Input:
 tccli asr VoicePrintEnroll --cli-unfold-argument  \
     --VoiceFormat 0 \
     --SampleRate 16000 \
-    --SpeakerNick abc \
-    --Data abc
+    --SpeakerNick ross \
+    --Data UklGRka1CQBXQVZFZm10IBAAAAABAAEAgD4E
 ```
 
 Output: 
@@ -17,10 +17,10 @@ Output:
 {
     "Response": {
         "Data": {
-            "VoicePrintId": "abc",
-            "SpeakerNick": "abc"
+            "VoicePrintId": "db24a3e3-7926-5xxxxxxf01",
+            "SpeakerNick": "ross"
         },
-        "RequestId": "abc"
+        "RequestId": "dbxxxxxxe3-7926-5xxxxxxf01"
     }
 }
 ```

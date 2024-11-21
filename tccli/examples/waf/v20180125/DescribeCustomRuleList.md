@@ -1,28 +1,4 @@
-**Example 1: test1**
-
-
-
-Input: 
-
-```
-tccli waf DescribeCustomRuleList --cli-unfold-argument  \
-    --Domain hzh.qcloud.com \
-    --Limit 10 \
-    --Offset 10
-```
-
-Output: 
-```
-{
-    "Response": {
-        "RequestId": "89d3f512-674f-4ecf-b766-90d2600fa498",
-        "RuleList": [],
-        "TotalCount": "1"
-    }
-}
-```
-
-**Example 2: 获取访问控制规则列表**
+**Example 1: 获取访问控制规则列表**
 
 
 
@@ -42,58 +18,49 @@ Output:
 ```
 {
     "Response": {
+        "RequestId": "6a638b80-87db-458d-9dd8-461bb38d960a",
         "RuleList": [
             {
-                "ActionType": "abc",
-                "Bypass": "abc",
-                "CreateTime": "abc",
-                "ExpireTime": "abc",
-                "Name": "abc",
-                "Redirect": "abc",
-                "RuleId": "abc",
-                "SortId": "abc",
-                "Status": "abc",
+                "ActionType": "1",
+                "Bypass": "cc",
+                "CreateTime": "2024-07-29T18:55:42+08:00",
+                "ExpireTime": "0",
+                "Name": "rulename",
+                "Redirect": "/redirect_url",
+                "RuleId": "1101205922",
+                "SortId": "50",
+                "Status": "1",
                 "Strategies": [
                     {
-                        "Field": "abc",
-                        "CompareFunc": "abc",
-                        "Content": "abc",
-                        "Arg": "abc"
+                        "Field": "COOKIE",
+                        "CompareFunc": "eq",
+                        "Content": "cookie_value",
+                        "Arg": "cookie_key",
+                        "CaseNotSensitive": 0
                     }
                 ],
-                "EventId": "abc",
-                "ModifyTime": "abc",
-                "ValidStatus": 0,
-                "Source": "abc",
-                "JobType": "abc",
+                "EventId": "1101",
+                "ValidStatus": 1,
+                "ModifyTime": "2024-08-28T18:54:25+08:00",
+                "Source": "custom",
+                "JobType": "TimedJob",
                 "JobDateTime": {
                     "Timed": [
                         {
-                            "StartDateTime": 1,
-                            "EndDateTime": 1
+                            "StartDateTime": 0,
+                            "EndDateTime": 0
                         }
                     ],
-                    "Cron": [
-                        {
-                            "Days": [
-                                1
-                            ],
-                            "WDays": [
-                                1
-                            ],
-                            "StartTime": "abc",
-                            "EndTime": "abc"
-                        }
-                    ],
-                    "TimeTZone": "abc"
+                    "Cron": [],
+                    "TimeTZone": "UTC+8"
                 },
-                "CronType": "abc",
-                "Label": "abc",
-                "PageId": "abc"
+                "CronType": "week",
+                "Label": "label",
+                "PageId": "1101",
+                "Domain": "www.testwaf.com"
             }
         ],
-        "TotalCount": "abc",
-        "RequestId": "abc"
+        "TotalCount": "1"
     }
 }
 ```

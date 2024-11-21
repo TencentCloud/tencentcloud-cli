@@ -7,8 +7,8 @@ Input:
 ```
 tccli cwp DescribeJavaMemShellPluginInfo --cli-unfold-argument  \
     --Quuid 05f0bcab-726c-4ea4-8109-bcd03d5598f7 \
-    --Offset 1 \
-    --Limit 1
+    --Offset 0 \
+    --Limit 10
 ```
 
 Output: 
@@ -19,7 +19,7 @@ Output:
         "TotalCount": 1,
         "List": [
             {
-                "Pid": 123,
+                "Pid": 21756,
                 "MainClass": "main.class",
                 "Status": 1,
                 "ErrorLog": "[INFO]libpath..."

@@ -1,23 +1,6 @@
 **Example 1: iOS混淆示例**
 
-POST / HTTP/1.1
-Host: ms.tencentcloudapi.com
-Content-Type: application/json
-X-TC-Action: CreateEncryptInstance
-<公共请求参数>
-
-{
-        "PlatformType": 2,
-        "OrderType": 1,
-        "EncryptOpType": 1,
-        "ResourceId":"xxxxxxxxxxxxxxxxxx",
-  "IOSInfo": {
-    "InfoPListUrl": "http://xxxxxxxxxxxxxxxxxxx.zip",
-    "InfoPListSize": 100,
-    "InfoPListMd5": "881ac0a49b3ae9967022217730cc0da8",
-    "BuildType": "release"
-  }
-}
+iOS混淆示例
 
 Input: 
 
@@ -84,13 +67,13 @@ tccli ms CreateEncryptInstance --cli-unfold-argument  \
     --ResourceId xxxxxxxxxxxxxxxxxx \
     --AndroidAppInfo.AppMd5 881ac0a49b3ae9967022217730cc0da8 \
     --AndroidAppInfo.AppSize 4743475 \
-    --AndroidAppInfo.AppUrl https://xxxxxxx \
-    --AndroidAppInfo.AppName XXX \
-    --AndroidAppInfo.AppPkgName xxx.xx.xx \
-    --AndroidAppInfo.AppFileName xxxx.apk \
+    --AndroidAppInfo.AppUrl https://x.app.url \
+    --AndroidAppInfo.AppName AppName \
+    --AndroidAppInfo.AppPkgName com.tencnent.demo \
+    --AndroidAppInfo.AppFileName demo.apk \
     --AndroidAppInfo.AppVersion 7.8.1 \
     --AndroidAppInfo.AppType apk \
-    --AndroidPlan.AppPkgName xxx.xx.xxr \
+    --AndroidPlan.AppPkgName com.tencnent.demo \
     --AndroidPlan.AppType apk \
     --AndroidPlan.EncryptParam {"dex":{"enable":1,"antiprotect":1,"antirepack":1,"dexsig":1,"antimonitor":1,"ptrace":1}}
 ```

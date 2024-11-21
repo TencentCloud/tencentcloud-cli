@@ -19,20 +19,16 @@ Output:
         "TotalCount": 2,
         "StrategyList": [
             {
-                "StrategyName": "策略名",
-                "StrategyId": "策略id",
+                "StrategyName": "demo-foo",
+                "StrategyId": "10023",
+                "RuleCount": 50,
                 "HostCount": 50,
                 "ScanCycle": 3,
-                "ScanAt": "00,00,00",
-                "Enabled": 1
-            },
-            {
-                "StrategyName": "策略名2",
-                "StrategyId": "策略id",
-                "HostCount": 60,
-                "ScanCycle": 3,
-                "ScanAt": "12,00,00",
-                "Enabled": 1
+                "ScanAt": "00:00:00",
+                "Enabled": 0,
+                "PassRate": 70,
+                "CategoryIds": "1001,1002,1003",
+                "IsDefault": 1
             }
         ]
     }

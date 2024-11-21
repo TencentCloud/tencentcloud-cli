@@ -1,40 +1,4 @@
-**Example 1: 根据Filters查询注册码**
-
-根据Filters查询注册码。
-
-Input: 
-
-```
-tccli tat DescribeRegisterCodes --cli-unfold-argument  \
-    --Offset 0 \
-    --Limit 0
-```
-
-Output: 
-```
-{
-    "Response": {
-        "TotalCount": 0,
-        "RegisterCodeSet": [
-            {
-                "RegisterCodeId": "abc",
-                "Description": "abc",
-                "InstanceNamePrefix": "abc",
-                "RegisterLimit": 0,
-                "ExpiredTime": "2020-09-22T00:00:00+00:00",
-                "IpAddressRange": "abc",
-                "Enabled": true,
-                "RegisteredCount": 0,
-                "CreatedTime": "2020-09-22T00:00:00+00:00",
-                "UpdatedTime": "2020-09-22T00:00:00+00:00"
-            }
-        ],
-        "RequestId": "abc"
-    }
-}
-```
-
-**Example 2: 根据注册码ID查询注册码**
+**Example 1: 根据注册码ID查询注册码**
 
 根据注册码ID查询注册码。
 
@@ -42,7 +6,7 @@ Input:
 
 ```
 tccli tat DescribeRegisterCodes --cli-unfold-argument  \
-    --RegisterCodeIds abc \
+    --RegisterCodeIds 8cca2d3b-7ac3-422a-98f0-8a5bc17cdc38 \
     --Offset 0 \
     --Limit 0
 ```
@@ -51,22 +15,22 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 0,
         "RegisterCodeSet": [
             {
-                "RegisterCodeId": "abc",
-                "Description": "abc",
-                "InstanceNamePrefix": "abc",
-                "RegisterLimit": 0,
-                "ExpiredTime": "2020-09-22T00:00:00+00:00",
-                "IpAddressRange": "abc",
-                "Enabled": true,
-                "RegisteredCount": 0,
-                "CreatedTime": "2020-09-22T00:00:00+00:00",
-                "UpdatedTime": "2020-09-22T00:00:00+00:00"
+                "CreatedTime": "2024-10-26T08:50:45Z",
+                "Description": "HAI instance register code, attach hai-8sclmptu",
+                "Enabled": false,
+                "ExpiredTime": "2024-10-26T12:50:45Z",
+                "InstanceNamePrefix": "HAI-Instance-hai-8sclmptu",
+                "IpAddressRange": "",
+                "RegisterCodeId": "8cca2d3b-7ac3-422a-98f0-8a5bc17cdc38",
+                "RegisterLimit": 10,
+                "RegisteredCount": 1,
+                "UpdatedTime": "2024-10-26T08:50:45Z"
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "e0f011ac-6949-4726-a7d6-b28540f9d729",
+        "TotalCount": 1
     }
 }
 ```

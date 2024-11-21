@@ -7,9 +7,9 @@ Input:
 ```
 tccli tse CreateCloudNativeAPIGatewayService --cli-unfold-argument  \
     --GatewayId gateway-9abf3b79 \
-    --Name test-service \
+    --Name user-service \
     --Protocol http \
-    --Path / \
+    --Path /v1/users \
     --Timeout 5000 \
     --Retries 3 \
     --UpstreamType HostIP \

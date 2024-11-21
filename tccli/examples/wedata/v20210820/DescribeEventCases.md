@@ -31,7 +31,7 @@ Output:
         "Data": {
             "Items": [
                 {
-                    "CaseId": "7b55e80c3a7949428c34b02ab82b09b7",
+                    "CaseId": "7b55e8***09b7",
                     "Description": null,
                     "Dimension": "20240409",
                     "EventBroadcastType": null,

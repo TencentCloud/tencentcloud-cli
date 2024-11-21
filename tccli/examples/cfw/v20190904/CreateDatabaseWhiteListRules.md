@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli cfw CreateDatabaseWhiteListRules --cli-unfold-argument  \
-    --DatabaseWhiteListRuleData.0.SourceIp xx.xx.xx.xx \
+    --DatabaseWhiteListRuleData.0.SourceIp 1.2.6.6 \
     --DatabaseWhiteListRuleData.0.SourceType 1 \
-    --DatabaseWhiteListRuleData.0.TargetIp xx.xx.xx.xx \
+    --DatabaseWhiteListRuleData.0.TargetIp 1.2.6.7 \
     --DatabaseWhiteListRuleData.0.TargetType 1 \
-    --DatabaseWhiteListRuleData.0.Detail test \
+    --DatabaseWhiteListRuleData.0.Detail 规则详情 \
     --DatabaseWhiteListRuleData.0.Enable 1 \
     --DatabaseWhiteListRuleData.0.IsRegionRule 0 \
     --DatabaseWhiteListRuleData.0.IsCloudRule 0

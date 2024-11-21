@@ -18,7 +18,7 @@ Output:
         "Packages": [
             {
                 "Name": "test-name",
-                "Desc": "",
+                "Desc": "idesc",
                 "Version": "0.1.1",
                 "InstallTime": "2024-10-11 12:23:34",
                 "Type": "Web",

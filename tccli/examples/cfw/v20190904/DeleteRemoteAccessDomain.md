@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cfw DeleteRemoteAccessDomain --cli-unfold-argument  \
-    --AccessDomainList cfw.tencentcs.com
+    --AccessDomainList demo.cfw.tencentcs.com
 ```
 
 Output: 

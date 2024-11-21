@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli cfw ModifyResourceGroup --cli-unfold-argument  \
-    --ParentId cfwrg-1300448058masternode \
-    --GroupName auotest勿删11 \
-    --GroupId cfwrg-8c87782c2214d033403cab64d6fbf2581717569270
+    --ParentId cfwrg-masternode \
+    --GroupName 资产分组 \
+    --GroupId cfwrg-8c8********569270
 ```
 
 Output: 

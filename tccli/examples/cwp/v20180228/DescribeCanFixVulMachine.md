@@ -7,7 +7,7 @@ Input:
 ```
 tccli cwp DescribeCanFixVulMachine --cli-unfold-argument  \
     --VulIds 1 \
-    --Quuids xx
+    --Quuids a0770b41-9697-4a1d-8150-b8fa********
 ```
 
 Output: 

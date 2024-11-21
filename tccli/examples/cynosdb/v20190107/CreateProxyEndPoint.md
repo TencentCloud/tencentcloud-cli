@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli cynosdb CreateProxyEndPoint --cli-unfold-argument  \
-    --ClusterId cynosdbmysql-asd \
+    --ClusterId cynosdbmysql-dnofdr2d \
     --UniqueVpcId vpc-azx \
     --UniqueSubnetId subnet-qwe \
     --ConnectionPoolType SessionConnectionPool \
     --OpenConnectionPool yes \
     --ConnectionPoolTimeOut 0 \
     --SecurityGroupIds sg-dtwhs6 \
-    --Description abc \
+    --Description tomnode1 \
     --Vip 1.1.1.1 \
     --WeightMode system \
     --AutoAddRo yes \
@@ -23,7 +23,7 @@ tccli cynosdb CreateProxyEndPoint --cli-unfold-argument  \
     --ConsistencyTimeOut 0 \
     --TransSplit True \
     --AccessMode nearby \
-    --InstanceWeights.0.InstanceId cynosdbmysql-ins-qwe \
+    --InstanceWeights.0.InstanceId cynosdbmysql-ins-c2twj0qf \
     --InstanceWeights.0.Weight 0
 ```
 
@@ -31,10 +31,10 @@ Output:
 ```
 {
     "Response": {
-        "FlowId": 0,
-        "TaskId": 0,
-        "ProxyGroupId": "cynosdbmysql-proxy-asd",
-        "RequestId": "abc"
+        "FlowId": 146737,
+        "TaskId": 187463,
+        "ProxyGroupId": "cynosdbmysql-proxy-4378e0kd",
+        "RequestId": "a5706353-296a-4992-ad07-ac4a48eeba43"
     }
 }
 ```

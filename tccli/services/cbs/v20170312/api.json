@@ -570,7 +570,7 @@
           "example": "[\"disk-pe1vkgim\"]",
           "member": "string",
           "name": "DiskIdSet",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -580,17 +580,17 @@
           "example": "true",
           "member": "bool",
           "name": "IsActivated",
-          "required": false,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "定期快照策略的状态。取值范围：<br><li>NORMAL：正常<br><li>ISOLATED：已隔离。",
+          "document": "定期快照策略的状态。取值范围：\n<ul>\n  <li>NORMAL：正常</li>\n  <li>ISOLATED：已隔离</li>\n</ul>",
           "example": "NORMAL",
           "member": "string",
           "name": "AutoSnapshotPolicyState",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -600,7 +600,7 @@
           "example": "0",
           "member": "uint64",
           "name": "IsCopyToRemote",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -610,7 +610,7 @@
           "example": "false",
           "member": "bool",
           "name": "IsPermanent",
-          "required": false,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -620,17 +620,17 @@
           "example": "2022-05-31 11:00:00",
           "member": "datetime",
           "name": "NextTriggerTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "定期快照策略名称。",
-          "example": "test",
+          "example": "定期快照策略_1",
           "member": "string",
           "name": "AutoSnapshotPolicyName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -640,17 +640,17 @@
           "example": "asp-nz3ytdwj",
           "member": "string",
           "name": "AutoSnapshotPolicyId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "定期快照的执行策略。",
-          "example": "无",
+          "example": "[{   \"Minute\": [10],   \"Hour\": [0, 12],   \"DayOfMonth\": [1, 15]}]",
           "member": "Policy",
           "name": "Policy",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -660,7 +660,7 @@
           "example": "2022-01-11 10:45:51",
           "member": "datetime",
           "name": "CreateTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -670,17 +670,17 @@
           "example": "1",
           "member": "uint64",
           "name": "RetentionDays",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "复制的目标账户ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "null",
+          "example": "100004375290",
           "member": "string",
           "name": "CopyToAccountUin",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -690,7 +690,7 @@
           "example": "[\"ins-og3j7lue\"]",
           "member": "string",
           "name": "InstanceIdSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -700,7 +700,7 @@
           "example": "1",
           "member": "uint64",
           "name": "RetentionMonths",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -710,37 +710,37 @@
           "example": "5",
           "member": "uint64",
           "name": "RetentionAmount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "定期快照高级保留策略。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{Weeks: 3, Days: 3, Months: 2, Years: 2}",
           "member": "AdvancedRetentionPolicy",
           "name": "AdvancedRetentionPolicy",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "该复制快照策略的源端账户ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "null",
+          "example": "100004375289",
           "member": "string",
           "name": "CopyFromAccountUin",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "标签。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "[{'Key': 'test_key', 'Value': 'test_value'}]",
           "member": "Tag",
           "name": "Tags",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -792,17 +792,17 @@
           "example": "cage-xxxxxxxx",
           "member": "string",
           "name": "CageId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "独享集群状态。取值范围：<br><li>NORMAL：正常；<br><li>CLOSED：关闭，此时将不可使用该独享集群创建新的云硬盘；<br><li>FAULT：独享集群状态异常，此时独享集群将不可操作，腾讯云运维团队将会及时修复该集群；<br><li>ISOLATED：因未及时续费导致独享集群被隔离，此时将不可使用该独享集群创建新的云硬盘，对应的云硬盘也将不可操作。",
+          "document": "独享集群状态。取值范围：<br><li>NORMAL：正常；</li><br><li>CLOSED：关闭，此时将不可使用该独享集群创建新的云硬盘；</li><br><li>FAULT：独享集群状态异常，此时独享集群将不可操作，腾讯云运维团队将会及时修复该集群；</li><br><li>ISOLATED：因未及时续费导致独享集群被隔离，此时将不可使用该独享集群创建新的云硬盘，对应的云硬盘也将不可操作。</li>",
           "example": "NORMAL",
           "member": "string",
           "name": "CdcState",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -812,27 +812,27 @@
           "example": "ap-shenzhen-fsi-2",
           "member": "string",
           "name": "Zone",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "独享集群实例名称。",
-          "example": "test",
+          "example": "Untitled Cdc",
           "member": "string",
           "name": "CdcName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "独享集群的资源容量大小。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\"DiskAavilable\":1,\"DiskTotal\":10}",
           "member": "CdcSize",
           "name": "CdcResource",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -842,17 +842,17 @@
           "example": "cdc-xxxxxxxx",
           "member": "string",
           "name": "CdcId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "独享集群类型。取值范围：<br><li>CLOUD_BASIC：表示普通云硬盘集群<br><li>CLOUD_PREMIUM：表示高性能云硬盘集群<br><li>CLOUD_SSD：SSD表示SSD云硬盘集群。",
+          "document": "独享集群类型。取值范围：<br><li>CLOUD_BASIC：表示普通云硬盘集群</li><br><li>CLOUD_PREMIUM：表示高性能云硬盘集群</li><br><li>CLOUD_SSD：SSD表示SSD云硬盘集群。</li>",
           "example": "CLOUD_PREMIUM",
           "member": "string",
           "name": "DiskType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -862,7 +862,7 @@
           "example": "2029-01-01 00:00:00",
           "member": "datetime",
           "name": "ExpiredTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -872,7 +872,7 @@
           "example": "2018-01-01 00:00:00",
           "member": "datetime_iso",
           "name": "CreatedTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -882,7 +882,7 @@
           "example": "1",
           "member": "uint64",
           "name": "DiskNumber",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -1137,7 +1137,7 @@
         {
           "disabled": false,
           "document": "云盘显示名称。不传则默认为“未命名”。最大长度不能超60个字节。",
-          "example": "无",
+          "example": "imc-fs9x0bv9",
           "member": "string",
           "name": "DiskName",
           "required": false,
@@ -1155,7 +1155,7 @@
         {
           "disabled": false,
           "document": "快照ID，如果传入则根据此快照创建云硬盘，快照类型必须为数据盘快照，可通过[DescribeSnapshots](/document/product/362/15647)接口查询快照，见输出参数DiskUsage解释。",
-          "example": "无",
+          "example": "snap-6mzlaea9",
           "member": "string",
           "name": "SnapshotId",
           "required": false,
@@ -1191,7 +1191,7 @@
         {
           "disabled": false,
           "document": "可选参数，默认为False。传入True时，云盘将创建为共享型云盘。",
-          "example": "无",
+          "example": "False",
           "member": "bool",
           "name": "Shareable",
           "required": false,
@@ -1200,7 +1200,7 @@
         {
           "disabled": false,
           "document": "用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。",
-          "example": "无",
+          "example": "cls-juig7fub/pvc-920a4c2f-7e1f-40d5-a475-93c6871b18b4",
           "member": "string",
           "name": "ClientToken",
           "required": false,
@@ -1209,7 +1209,7 @@
         {
           "disabled": false,
           "document": "传入该参数用于创建加密云盘，取值固定为ENCRYPT。",
-          "example": "无",
+          "example": "ENCRYPT",
           "member": "string",
           "name": "Encrypt",
           "required": false,
@@ -1300,7 +1300,7 @@
         {
           "disabled": false,
           "document": "快照名称，不传则新快照名称默认为“未命名”。",
-          "example": "test",
+          "example": "cloud-snap",
           "member": "string",
           "name": "SnapshotName",
           "required": false,
@@ -1597,7 +1597,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件，参数不支持同时指定 DiskBackupIds 和 Filters。过滤条件：<br><li>disk-backup-id - Array of String - 是否必填：否 -（过滤条件）按照备份点的ID过滤。备份点ID形如：dbp-11112222。\n<br><li>disk-id - Array of String - 是否必填：否 -（过滤条件）按照创建备份点的云硬盘ID过滤。\n<br><li>disk-usage - Array of String - 是否必填：否 -（过滤条件）按创建备份点的云硬盘类型过滤。 (SYSTEM_DISK：代表系统盘 | DATA_DISK：代表数据盘。)",
+          "document": "过滤条件，参数不支持同时指定 DiskBackupIds 和 Filters。过滤条件：<br><li>disk-backup-id - Array of String - 是否必填：否 -（过滤条件）按照备份点的ID过滤。备份点ID形如：dbp-11112222。</li><br><li>disk-id - Array of String - 是否必填：否 -（过滤条件）按照创建备份点的云硬盘ID过滤。</li><br><li>disk-usage - Array of String - 是否必填：否 -（过滤条件）按创建备份点的云硬盘类型过滤。 (SYSTEM_DISK：代表系统盘 | DATA_DISK：代表数据盘。)</li>",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -1624,7 +1624,7 @@
         },
         {
           "disabled": false,
-          "document": "输出云硬盘备份点列表的排列顺序。取值范围：<br><li>ASC：升序排列<br><li>DESC：降序排列。",
+          "document": "输出云硬盘备份点列表的排列顺序。取值范围：<br><li>ASC：升序排列</li><br><li>DESC：降序排列。</li>",
           "example": "ASC",
           "member": "string",
           "name": "Order",
@@ -1633,7 +1633,7 @@
         },
         {
           "disabled": false,
-          "document": "云硬盘备份点列表排序的依据字段。取值范围：<br><li>CREATE_TIME：依据云硬盘备份点的创建时间排序<br>默认按创建时间排序。",
+          "document": "云硬盘备份点列表排序的依据字段。取值范围：<br><li>CREATE_TIME：依据云硬盘备份点的创建时间排序</li><br>默认按创建时间排序。",
           "example": "CREATE_TIME",
           "member": "string",
           "name": "OrderField",
@@ -1652,6 +1652,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1661,6 +1662,7 @@
           "example": "无",
           "member": "DiskBackup",
           "name": "DiskBackupSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1868,7 +1870,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "过滤条件。参数不支持同时指定`DiskIds`和`Filters`。<br><li>disk-usage - Array of String - 是否必填：否 -（过滤条件）按云盘类型过滤。 (SYSTEM_DISK：表示系统盘 | DATA_DISK：表示数据盘)<br><li>disk-charge-type - Array of String - 是否必填：否 -（过滤条件）按照云硬盘计费模式过滤。 (PREPAID：表示预付费，即包年包月 | POSTPAID_BY_HOUR：表示后付费，即按量计费。)<br><li>portable - Array of String - 是否必填：否 -（过滤条件）按是否为弹性云盘过滤。 (TRUE：表示弹性云盘 | FALSE：表示非弹性云盘。)<br><li>project-id - Array of Integer - 是否必填：否 -（过滤条件）按云硬盘所属项目ID过滤。<br><li>disk-id - Array of String - 是否必填：否 -（过滤条件）按照云硬盘ID过滤。云盘ID形如：`disk-11112222`。<br><li>disk-name - Array of String - 是否必填：否 -（过滤条件）按照云盘名称过滤。<br><li>disk-type - Array of String - 是否必填：否 -（过滤条件）按照云盘介质类型过滤。(CLOUD_BASIC：表示普通云硬盘 | CLOUD_PREMIUM：表示高性能云硬盘。| CLOUD_SSD：表示SSD云硬盘 | CLOUD_HSSD：表示增强型SSD云硬盘。| CLOUD_TSSD：表示极速型云硬盘。)<br><li>disk-state - Array of String - 是否必填：否 -（过滤条件）按照云盘状态过滤。(UNATTACHED：未挂载 | ATTACHING：挂载中 | ATTACHED：已挂载 | DETACHING：解挂中 | EXPANDING：扩容中 | ROLLBACKING：回滚中 | TORECYCLE：待回收。)<br><li>instance-id - Array of String - 是否必填：否 -（过滤条件）按照云盘挂载的云主机实例ID过滤。可根据此参数查询挂载在指定云主机下的云硬盘。<br><li>zone - Array of String - 是否必填：否 -（过滤条件）按照[可用区](/document/product/213/15753#ZoneInfo)过滤。<br><li>instance-ip-address - Array of String - 是否必填：否 -（过滤条件）按云盘所挂载云主机的内网或外网IP过滤。<br><li>instance-name - Array of String - 是否必填：否 -（过滤条件）按云盘所挂载的实例名称过滤。<br><li>tag-key - Array of String - 是否必填：否 -（过滤条件）按照标签键进行过滤。<br><li>tag-value - Array of String - 是否必填：否 -（过滤条件）照标签值进行过滤。<br><li>tag:tag-key - Array of String - 是否必填：否 -（过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。<br><li>dedicated-cluster-id - Array of String - 是否必填：否 -（过滤条件）按照 CDC 独享集群 ID 进行过滤。<br><li>cluster-group-id - String - 是否必填：否 -（过滤条件）按照 集群群组 ID 进行过滤。",
+          "document": "过滤条件。参数不支持同时指定`DiskIds`和`Filters`。<br> <li>disk-usage - Array of String - 是否必填：否 -（过滤条件）按云盘类型过滤。 (SYSTEM_DISK：表示系统盘 | DATA_DISK：表示数据盘)<br></li> <li>disk-charge-type - Array of String - 是否必填：否 -（过滤条件）按照云硬盘计费模式过滤。 (PREPAID：表示预付费，即包年包月 | POSTPAID_BY_HOUR：表示后付费，即按量计费。)<br></li> <li>portable - Array of String - 是否必填：否 -（过滤条件）按是否为弹性云盘过滤。 (TRUE：表示弹性云盘 | FALSE：表示非弹性云盘。)<br></li> <li>project-id - Array of Integer - 是否必填：否 -（过滤条件）按云硬盘所属项目ID过滤。<br></li> <li>disk-id - Array of String - 是否必填：否 -（过滤条件）按照云硬盘ID过滤。云盘ID形如：`disk-11112222`。<br></li> <li>disk-name - Array of String - 是否必填：否 -（过滤条件）按照云盘名称过滤。<br></li> <li>disk-type - Array of String - 是否必填：否 -（过滤条件）按照云盘介质类型过滤。(CLOUD_BASIC：表示普通云硬盘 | CLOUD_PREMIUM：表示高性能云硬盘。| CLOUD_SSD：表示SSD云硬盘 | CLOUD_HSSD：表示增强型SSD云硬盘。| CLOUD_TSSD：表示极速型云硬盘。)<br></li> <li>disk-state - Array of String - 是否必填：否 -（过滤条件）按照云盘状态过滤。(UNATTACHED：未挂载 | ATTACHING：挂载中 | ATTACHED：已挂载 | DETACHING：解挂中 | EXPANDING：扩容中 | ROLLBACKING：回滚中 | TORECYCLE：待回收。)<br></li> <li>instance-id - Array of String - 是否必填：否 -（过滤条件）按照云盘挂载的云主机实例ID过滤。可根据此参数查询挂载在指定云主机下的云硬盘。<br></li> <li>zone - Array of String - 是否必填：否 -（过滤条件）按照[可用区](/document/product/213/15753#ZoneInfo)过滤。<br></li> <li>instance-ip-address - Array of String - 是否必填：否 -（过滤条件）按云盘所挂载云主机的内网或外网IP过滤。<br></li> <li>instance-name - Array of String - 是否必填：否 -（过滤条件）按云盘所挂载的实例名称过滤。<br></li> <li>tag-key - Array of String - 是否必填：否 -（过滤条件）按照标签键进行过滤。<br></li> <li>tag-value - Array of String - 是否必填：否 -（过滤条件）照标签值进行过滤。<br></li> <li>tag:tag-key - Array of String - 是否必填：否 -（过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。<br></li> <li>dedicated-cluster-id - Array of String - 是否必填：否 -（过滤条件）按照 CDC 独享集群 ID 进行过滤。<br></li> <li>cluster-group-id - String - 是否必填：否 -（过滤条件）按照 集群群组 ID 进行过滤。</li>",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -1886,7 +1888,7 @@
         },
         {
           "disabled": false,
-          "document": "云盘列表排序的依据字段。取值范围：<br><li>CREATE_TIME：依据云盘的创建时间排序<br><li>DEADLINE：依据云盘的到期时间排序<br>默认按云盘创建时间排序。",
+          "document": "云盘列表排序的依据字段。取值范围：<br><li>CREATE_TIME：依据云盘的创建时间排序<br></li><li>DEADLINE：依据云盘的到期时间排序<br>默认按云盘创建时间排序。</li>",
           "example": "CREATE_TIME",
           "member": "string",
           "name": "OrderField",
@@ -1922,7 +1924,7 @@
         },
         {
           "disabled": false,
-          "document": "输出云盘列表的排列顺序。取值范围：<br><li>ASC：升序排列<br><li>DESC：降序排列。",
+          "document": "输出云盘列表的排列顺序。取值范围：<br><li>ASC：升序排列<br></li><li>DESC：降序排列。</li>",
           "example": "ASC",
           "member": "string",
           "name": "Order",
@@ -1941,6 +1943,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1950,6 +1953,7 @@
           "example": "无",
           "member": "Disk",
           "name": "DiskSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2076,9 +2080,10 @@
         {
           "disabled": false,
           "document": "快照的分享信息的集合",
-          "example": "[{\"CreatedTime\":\"2023-02-26 01:21:03\",\"AccountId\":\"123456789\"}]",
+          "example": "[{\"CreatedTime\":\"2023-02-26 01:21:03\",\"AccountId\":\"1044849112\"}]",
           "member": "SharePermission",
           "name": "SharePermissionSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2338,41 +2343,41 @@
       "members": [
         {
           "disabled": false,
-          "document": "云盘是否与挂载的实例一起销毁。<br><li>true:销毁实例时会同时销毁云盘，只支持按小时后付费云盘。<br><li>false：销毁实例时不销毁云盘。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "云盘是否与挂载的实例一起销毁。<br><li>true:销毁实例时会同时销毁云盘，只支持按小时后付费云盘。</li><li>false：销毁实例时不销毁云盘。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
           "name": "DeleteWithInstance",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "自动续费标识。取值范围：<br><li>NOTIFY_AND_AUTO_RENEW：通知过期且自动续费<br><li>NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费<br><li>DISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "自动续费标识。取值范围：<br><li>NOTIFY_AND_AUTO_RENEW：通知过期且自动续费</li><li>NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费</li><li>DISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "NOTIFY_AND_AUTO_RENEW",
           "member": "string",
           "name": "RenewFlag",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "硬盘介质类型。取值范围：<br><li>CLOUD_BASIC：表示普通云硬盘<br><li>CLOUD_PREMIUM：表示高性能云硬盘<br><li>CLOUD_BSSD：表示通用型SSD云硬盘<br><li>CLOUD_SSD：表示SSD云硬盘<br><li>CLOUD_HSSD：表示增强型SSD云硬盘<br><li>CLOUD_TSSD：表示极速型SSD云硬盘。",
+          "document": "硬盘介质类型。取值范围：<br><li>CLOUD_BASIC：表示普通云硬盘</li><li>CLOUD_PREMIUM：表示高性能云硬盘</li><li>CLOUD_BSSD：表示通用型SSD云硬盘</li><li>CLOUD_SSD：表示SSD云硬盘</li><li>CLOUD_HSSD：表示增强型SSD云硬盘</li><li>CLOUD_TSSD：表示极速型SSD云硬盘。</li>",
           "example": "CLOUD_SSD",
           "member": "string",
           "name": "DiskType",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "云盘状态。取值范围：<br><li>UNATTACHED：未挂载<br><li>ATTACHING：挂载中<br><li>ATTACHED：已挂载<br><li>DETACHING：解挂中<br><li>EXPANDING：扩容中<br><li>ROLLBACKING：回滚中<br><li>TORECYCLE：待回收<br><li>DUMPING：拷贝硬盘中。",
+          "document": "云盘状态。取值范围：<br><li>UNATTACHED：未挂载</li><li>ATTACHING：挂载中</li><li>ATTACHED：已挂载</li><li>DETACHING：解挂中</li><li>EXPANDING：扩容中</li><li>ROLLBACKING：回滚中</li><li>TORECYCLE：待回收</li><li>DUMPING：拷贝硬盘中。</li>",
           "example": "UNATTACHED",
           "member": "string",
           "name": "DiskState",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2382,47 +2387,47 @@
           "example": "0",
           "member": "int64",
           "name": "SnapshotCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "云盘已挂载到子机，且子机与云盘都是包年包月。<br><li>true：子机设置了自动续费标识，但云盘未设置<br><li>false：云盘自动续费标识正常。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "云盘已挂载到子机，且子机与云盘都是包年包月。<br><li>true：子机设置了自动续费标识，但云盘未设置</li><li>false：云盘自动续费标识正常。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
           "name": "AutoRenewFlagError",
-          "required": false,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "云盘是否处于快照回滚状态。取值范围：<br><li>false:表示不处于快照回滚状态<br><li>true:表示处于快照回滚状态。",
+          "document": "云盘是否处于快照回滚状态。取值范围：<br><li>false:表示不处于快照回滚状态</li><li>true:表示处于快照回滚状态。</li>",
           "example": "false",
           "member": "bool",
           "name": "Rollbacking",
-          "required": false,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "对于非共享型云盘，该参数为空数组。对于共享型云盘，则表示该云盘当前被挂载到的CVM实例InstanceId",
-          "example": "[]",
+          "example": "[\"ins-k2j8fzqh\"]",
           "member": "string",
           "name": "InstanceIdList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "云盘是否为加密盘。取值范围：<br><li>false:表示非加密盘<br><li>true:表示加密盘。",
+          "document": "云盘是否为加密盘。取值范围：<br><li>false:表示非加密盘</li><li>true:表示加密盘。</li>",
           "example": "false",
           "member": "bool",
           "name": "Encrypt",
-          "required": false,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -2432,7 +2437,7 @@
           "example": "unname",
           "member": "string",
           "name": "DiskName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2442,37 +2447,37 @@
           "example": "true",
           "member": "bool",
           "name": "BackupDisk",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "与云盘绑定的标签，云盘未绑定标签则取值为空。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "[{\"value\": \"常规项目\", \"key\": \"项目类型\"}]",
           "member": "Tag",
           "name": "Tags",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "云硬盘挂载的云主机ID。",
-          "example": "ins-xxxxxxx",
+          "example": "ins-k2j8fzqh",
           "member": "string",
           "name": "InstanceId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "云盘的挂载类型。取值范围：<br><li>PF: PF挂载<br><li>VF: VF挂载\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "云盘的挂载类型。取值范围：<br><li>PF: PF挂载</li><li>VF: VF挂载</li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "PF",
           "member": "string",
           "name": "AttachMode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2482,7 +2487,7 @@
           "example": "null",
           "member": "string",
           "name": "AutoSnapshotPolicyIds",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -2492,27 +2497,27 @@
           "example": "0",
           "member": "uint64",
           "name": "ThroughputPerformance",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "云盘是否处于类型变更中。取值范围：<br><li>false:表示云盘不处于类型变更中<br><li>true:表示云盘已发起类型变更，正处于迁移中。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "云盘是否处于类型变更中。取值范围：<br><li>false:表示云盘不处于类型变更中</li><li>true:表示云盘已发起类型变更，正处于迁移中。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
           "name": "Migrating",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "云硬盘ID。",
-          "example": "disk-xxxxxxxx",
+          "example": "disk-b1f7xvod",
           "member": "string",
           "name": "DiskId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2522,7 +2527,7 @@
           "example": "0",
           "member": "uint64",
           "name": "SnapshotSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2532,17 +2537,17 @@
           "example": "{\"Zone\":\"ap-guangzhou-2\",\"ProjectId\":0}",
           "member": "Placement",
           "name": "Placement",
-          "required": false,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "判断预付费的云盘是否支持主动退还。<br><li>true:支持主动退还<br><li>false:不支持主动退还。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "判断预付费的云盘是否支持主动退还。<br><li>true:支持主动退还</li><li>false:不支持主动退还。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
           "name": "IsReturnable",
-          "required": false,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -2552,17 +2557,17 @@
           "example": "2021-02-01 12:00:00",
           "member": "datetime",
           "name": "DeadlineTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "云盘是否挂载到云主机上。取值范围：<br><li>false:表示未挂载<br><li>true:表示已挂载。",
+          "document": "云盘是否挂载到云主机上。取值范围：<br><li>false:表示未挂载</li><li>true:表示已挂载。</li>",
           "example": "false",
           "member": "bool",
           "name": "Attached",
-          "required": false,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -2572,7 +2577,7 @@
           "example": "50",
           "member": "uint64",
           "name": "DiskSize",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2582,27 +2587,27 @@
           "example": "0",
           "member": "uint64",
           "name": "MigratePercent",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "云硬盘类型。取值范围：<br><li>SYSTEM_DISK：系统盘<br><li>DATA_DISK：数据盘。",
+          "document": "云硬盘类型。取值范围：<br><li>SYSTEM_DISK：系统盘</li><li>DATA_DISK：数据盘。</li>",
           "example": "SYSTEM_DISK",
           "member": "string",
           "name": "DiskUsage",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "付费模式。取值范围：<br><li>PREPAID：预付费，即包年包月<br><li>POSTPAID_BY_HOUR：后付费，即按量计费。",
+          "document": "付费模式。取值范围：<br><li>PREPAID：预付费，即包年包月</li><li>POSTPAID_BY_HOUR：后付费，即按量计费。</li>",
           "example": "PREPAID",
           "member": "string",
           "name": "DiskChargeType",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2612,27 +2617,27 @@
           "example": "true",
           "member": "bool",
           "name": "Portable",
-          "required": false,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "云盘是否具备创建快照的能力。取值范围：<br><li>false表示不具备<br><li>true表示具备。",
+          "document": "云盘是否具备创建快照的能力。取值范围：<br><li>false表示不具备</li><li>true表示具备。</li>",
           "example": "true",
           "member": "bool",
           "name": "SnapshotAbility",
-          "required": false,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "在云盘已挂载到实例，且实例与云盘都是包年包月的条件下，此字段才有意义。<br><li>true:云盘到期时间早于实例。<br><li>false：云盘到期时间晚于实例。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "在云盘已挂载到实例，且实例与云盘都是包年包月的条件下，此字段才有意义。<br><li>true:云盘到期时间早于实例。</li><li>false：云盘到期时间晚于实例。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
           "name": "DeadlineError",
-          "required": false,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -2642,7 +2647,7 @@
           "example": "0",
           "member": "uint64",
           "name": "RollbackPercent",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2652,17 +2657,17 @@
           "example": "20",
           "member": "int64",
           "name": "DifferDaysOfDeadline",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "预付费云盘在不支持主动退还的情况下，该参数表明不支持主动退还的具体原因。取值范围：<br><li>1：云硬盘已经退还<br><li>2：云硬盘已过期<br><li>3：云盘不支持退还<br><li>8：超过可退还数量的限制。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "预付费云盘在不支持主动退还的情况下，该参数表明不支持主动退还的具体原因。取值范围：<br><li>1：云硬盘已经退还</li><li>2：云硬盘已过期</li><li>3：云盘不支持退还</li><li>8：超过可退还数量的限制。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
           "member": "int64",
           "name": "ReturnFailCode",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2672,7 +2677,7 @@
           "example": "false",
           "member": "bool",
           "name": "Shareable",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -2682,7 +2687,7 @@
           "example": "2021-01-01 12:00:00",
           "member": "datetime",
           "name": "CreateTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2692,7 +2697,7 @@
           "example": "0",
           "member": "int64",
           "name": "DeleteSnapshot",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2702,7 +2707,7 @@
           "example": "0",
           "member": "uint64",
           "name": "DiskBackupQuota",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2712,37 +2717,37 @@
           "example": "0",
           "member": "uint64",
           "name": "DiskBackupCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "云硬盘挂载实例的类型。取值范围：<br><li>CVM<br><li>EKS",
+          "document": "云硬盘挂载实例的类型。取值范围：<br><li>CVM</li><li>EKS</li>",
           "example": "CVM",
           "member": "string",
           "name": "InstanceType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "云硬盘最后一次挂载的实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "ins-xxx",
+          "example": "ins-k2j8fzqh",
           "member": "string",
           "name": "LastAttachInsId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "云硬盘最后一次操作错误提示\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "请稍后重试",
           "member": "string",
           "name": "ErrorPrompt",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2752,7 +2757,7 @@
           "example": "false",
           "member": "bool",
           "name": "BurstPerformance",
-          "required": false,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         }
@@ -3023,7 +3028,7 @@
         {
           "disabled": false,
           "document": "过滤键的名称",
-          "example": "无",
+          "example": "snapshot-state",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -3032,7 +3037,7 @@
         {
           "disabled": false,
           "document": "一个或者多个过滤值",
-          "example": "无",
+          "example": "[\"NORMAL\"]",
           "member": "string",
           "name": "Values",
           "required": true,
@@ -3100,20 +3105,20 @@
         {
           "disabled": false,
           "document": "镜像名称。",
-          "example": "test",
+          "example": "镜像名称",
           "member": "string",
           "name": "ImageName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "镜像实例ID。",
-          "example": "img-xxxxxxxx",
+          "example": "img-ju2hzzkj",
           "member": "string",
           "name": "ImageId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -3543,7 +3548,7 @@
         {
           "disabled": false,
           "document": "新的云硬盘名称。",
-          "example": "test",
+          "example": "DataDisk-Production-01",
           "member": "string",
           "name": "DiskName",
           "required": false,
@@ -3849,7 +3854,7 @@
         {
           "disabled": false,
           "document": "操作，包括 SHARE，CANCEL。其中SHARE代表分享操作，CANCEL代表取消分享操作。",
-          "example": "SHARE",
+          "example": "\"SHARE\"",
           "member": "string",
           "name": "Permission",
           "required": true,
@@ -3879,6 +3884,7 @@
           "example": "ap-shanghai-2",
           "member": "string",
           "name": "Zone",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -3889,16 +3895,18 @@
           "example": "cage-xxxxxxxx",
           "member": "string",
           "name": "CageId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "实例所属项目ID。该参数可以通过调用 [DescribeProject](/document/api/378/4400) 的返回值中的 projectId 字段来获取。不填为默认项目。",
+          "document": "实例所属项目ID。不填为默认项目。",
           "example": "0",
           "member": "uint64",
           "name": "ProjectId",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -3909,6 +3917,7 @@
           "example": "Default Project",
           "member": "string",
           "name": "ProjectName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -3919,6 +3928,7 @@
           "example": "CdcName",
           "member": "string",
           "name": "CdcName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -3929,6 +3939,7 @@
           "example": "cdc-xxxxxxxx",
           "member": "string",
           "name": "CdcId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -3939,6 +3950,7 @@
           "example": "cluster-xxxxxxxx",
           "member": "string",
           "name": "DedicatedClusterId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -4001,17 +4013,17 @@
           "example": "1.0",
           "member": "float",
           "name": "DiscountPrice",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "后付费云盘的计价单元，取值范围：<br><li>HOUR：表示后付费云盘的计价单元是按小时计算。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "后付费云盘的计价单元，取值范围：<br><li>HOUR：表示后付费云盘的计价单元是按小时计算。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"h\"",
           "member": "string",
           "name": "ChargeUnit",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4021,7 +4033,7 @@
           "example": "\"1.00\"",
           "member": "string",
           "name": "UnitPriceHigh",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4031,7 +4043,7 @@
           "example": "\"1.00\"",
           "member": "string",
           "name": "OriginalPriceHigh",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4041,7 +4053,7 @@
           "example": "1.0",
           "member": "float",
           "name": "OriginalPrice",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },
@@ -4051,7 +4063,7 @@
           "example": "1.0",
           "member": "float",
           "name": "UnitPriceDiscount",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },
@@ -4061,7 +4073,7 @@
           "example": "\"1.00\"",
           "member": "string",
           "name": "UnitPriceDiscountHigh",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4071,7 +4083,7 @@
           "example": "\"1.00\"",
           "member": "string",
           "name": "DiscountPriceHigh",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4081,17 +4093,17 @@
           "example": "1.0",
           "member": "float",
           "name": "UnitPrice",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "计费项目明细列表。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "{\"PriceTitle\":\"云硬盘空间\",\"DiscountPrice\":2250,\"ChargeUnit\":null,\"UnitPriceHigh\":null,\"OriginalPriceHigh\":null,\"PriceName\":\"DiskSpace\",\"OriginalPrice\":2250,\"UnitPriceDiscountHigh\":null,\"UnitPriceDiscount\":null,\"DiscountPriceHigh\":null,\"UnitPrice\":null}",
           "member": "DetailPrice",
           "name": "DetailPrices",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -4107,7 +4119,7 @@
           "example": "1.0",
           "member": "float",
           "name": "UnitPriceDiscount",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },
@@ -4117,7 +4129,7 @@
           "example": "1.0",
           "member": "float",
           "name": "DiscountPrice",
-          "required": false,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },
@@ -4127,7 +4139,7 @@
           "example": "1.0",
           "member": "float",
           "name": "UnitPrice",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },
@@ -4137,7 +4149,7 @@
           "example": "\"1.00\"",
           "member": "string",
           "name": "UnitPriceHigh",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4147,7 +4159,7 @@
           "example": "\"1.00\"",
           "member": "string",
           "name": "OriginalPriceHigh",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4157,7 +4169,7 @@
           "example": "1.0",
           "member": "float",
           "name": "OriginalPrice",
-          "required": false,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },
@@ -4167,7 +4179,7 @@
           "example": "\"1.00\"",
           "member": "string",
           "name": "DiscountPriceHigh",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4177,17 +4189,17 @@
           "example": "\"1.00\"",
           "member": "string",
           "name": "UnitPriceDiscountHigh",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "后付费云盘的计价单元，取值范围：<br><li>HOUR：表示后付费云盘的计价单元是按小时计算。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "后付费云盘的计价单元，取值范围：<br><li>HOUR：表示后付费云盘的计价单元是按小时计算。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"h\"",
           "member": "string",
           "name": "ChargeUnit",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -4275,17 +4287,17 @@
           "example": "2023-02-26 01:21:03",
           "member": "datetime",
           "name": "CreatedTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "分享的账号Id",
-          "example": "100022975249",
+          "example": "1044849112",
           "member": "string",
           "name": "AccountId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -4298,50 +4310,50 @@
         {
           "disabled": false,
           "document": "快照所在的位置。",
-          "example": "无",
+          "example": "{\"ProjectId\":0,\"Zone\":\"ap-guangzhou-4\"}",
           "member": "Placement",
           "name": "Placement",
-          "required": false,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否为跨地域复制的快照。取值范围：<br><li>true：表示为跨地域复制的快照。<br><li>false:本地域的快照。",
+          "document": "是否为跨地域复制的快照。取值范围：\n<ul>\n    <li>true：表示为跨地域复制的快照。</li>\n    <li>false：本地域的快照。</li>\n</ul>",
           "example": "false",
           "member": "bool",
           "name": "CopyFromRemote",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "快照的状态。取值范围：<br><li>NORMAL：正常<br><li>CREATING：创建中<br><li>ROLLBACKING：回滚中<br><li>COPYING_FROM_REMOTE：跨地域复制中<br><li>CHECKING_COPIED：复制校验中<br><li>TORECYCLE：待回收。",
+          "document": "快照的状态。取值范围：\n<ul>\n    <li>NORMAL：正常</li>\n    <li>CREATING：创建中</li>\n    <li>ROLLBACKING：回滚中</li>\n    <li>COPYING_FROM_REMOTE：跨地域复制中</li>\n    <li>CHECKING_COPIED：复制校验中</li>\n    <li>TORECYCLE：待回收</li>\n</ul>",
           "example": "NORMAL",
           "member": "string",
           "name": "SnapshotState",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否为永久快照。取值范围：<br><li>true：永久快照<br><li>false：非永久快照。",
+          "document": "是否为永久快照。取值范围：\n<ul>\n    <li>true：永久快照</li>\n    <li>false：非永久快照</li>\n</ul>",
           "example": "true",
           "member": "bool",
           "name": "IsPermanent",
-          "required": false,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "快照名称，用户自定义的快照别名。调用[ModifySnapshotAttribute](/document/product/362/15650)可修改此字段。",
-          "example": "test",
+          "example": "auto_disk-ahp9x398",
           "member": "string",
           "name": "SnapshotName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4351,7 +4363,7 @@
           "example": "2021-11-24 16:00:00",
           "member": "datetime",
           "name": "DeadlineTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4361,17 +4373,17 @@
           "example": "100",
           "member": "uint64",
           "name": "Percent",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "快照关联的镜像列表。",
-          "example": "无",
+          "example": "[{\"ImageName\":\"image_win\",\"ImageId\":\"img-ju2hzzik\"}]",
           "member": "Image",
           "name": "Images",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4381,7 +4393,7 @@
           "example": "0",
           "member": "uint64",
           "name": "ShareReference",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4391,7 +4403,7 @@
           "example": "PRIVATE_SNAPSHOT",
           "member": "string",
           "name": "SnapshotType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4401,37 +4413,37 @@
           "example": "10",
           "member": "uint64",
           "name": "DiskSize",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "创建此快照的云硬盘ID。",
-          "example": "disk-xxxxxxxx",
+          "example": "disk-7rftdagm",
           "member": "string",
           "name": "DiskId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "快照正在跨地域复制的目的地域，默认取值为[]。",
-          "example": "[]",
+          "example": "[\"ap-guangzhou\", \"ap-nanjing\"]",
           "member": "string",
           "name": "CopyingToRegions",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否为加密盘创建的快照。取值范围：<br><li>true：该快照为加密盘创建的<br><li>false:非加密盘创建的快照。",
+          "document": "是否为加密盘创建的快照。取值范围：\n<ul>\n    <li>true：该快照为加密盘创建的</li>\n    <li>false：非加密盘创建的快照</li>\n</ul>",
           "example": "false",
           "member": "bool",
           "name": "Encrypt",
-          "required": false,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -4441,7 +4453,7 @@
           "example": "2019-07-15 00:00:00",
           "member": "datetime",
           "name": "CreateTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4451,27 +4463,27 @@
           "example": "0",
           "member": "uint64",
           "name": "ImageCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "创建此快照的云硬盘类型。取值范围：<br><li>SYSTEM_DISK：系统盘<br><li>DATA_DISK：数据盘。",
+          "document": "创建此快照的云硬盘类型。取值范围：\n<ul>\n    <li>SYSTEM_DISK：系统盘</li>\n    <li>DATA_DISK：数据盘</li>\n</ul>\n",
           "example": "SYSTEM_DISK",
           "member": "string",
           "name": "DiskUsage",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "快照ID。",
-          "example": "snap-xxxxxxx",
+          "example": "snap-29ykydfb",
           "member": "string",
           "name": "SnapshotId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4481,17 +4493,17 @@
           "example": "2021-07-15",
           "member": "date",
           "name": "TimeStartShare",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "快照绑定的标签列表。",
-          "example": "无",
+          "example": "[{\"Key\":\"cloud-key\",\"Value\":\"cloud-value\"}]",
           "member": "Tag",
           "name": "Tags",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -4507,17 +4519,17 @@
           "example": "snap-hdbc13ad",
           "member": "string",
           "name": "SnapshotId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "指示具体错误信息，成功时为空字符串。",
-          "example": "\"\"",
+          "example": "\"仅正常生命周期的数据盘快照支持创建云硬盘\"",
           "member": "string",
           "name": "Message",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4527,7 +4539,7 @@
           "example": "\"Success\"",
           "member": "string",
           "name": "Code",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4537,7 +4549,7 @@
           "example": "\"ap-guangzhou\"",
           "member": "string",
           "name": "DestinationRegion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }

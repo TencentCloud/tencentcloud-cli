@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli waf AddAntiInfoLeakRules --cli-unfold-argument  \
-    --Domain www.test1.com \
-    --Name test \
+    --Domain www.test.com \
+    --Name rulename \
     --ActionType 1 \
     --Strategies.0.Field information \
     --Strategies.0.CompareFunc contains \

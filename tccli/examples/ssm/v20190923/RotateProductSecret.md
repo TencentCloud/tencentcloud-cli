@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ssm RotateProductSecret --cli-unfold-argument  \
-    --SecretName test
+    --SecretName test3-db-secret
 ```
 
 Output: 
@@ -14,7 +14,7 @@ Output:
 {
     "Response": {
         "RequestId": "2609a8fd-4584-4f89-98be-8c7ae1b81ef4",
-        "FlowID": 0
+        "FlowID": 43416
     }
 }
 ```

@@ -67,9 +67,9 @@
     "DescribeCloudRecording": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudRecording\n<公共请求参数>\n\n{\n    \"TaskId\": \"abc\",\n    \"SdkAppId\": 1234\n}",
-        "output": "{\n    \"Response\": {\n        \"Status\": \"InProgress\",\n        \"StorageFileList\": [],\n        \"RequestId\": \"aaa\",\n        \"TaskId\": \"abc\"\n    }\n}",
-        "title": "查询SdkAppId 为 1234 TaskId 为 xx 的录制状态。"
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudRecording\n<公共请求参数>\n\n{\n    \"TaskId\": \"m9-bVVU7nhKM5X3GsED6KNGVG********ndibWSn631uT6pbhE4PcPDSsggE.\",\n    \"SdkAppId\": 1400188366\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": \"InProgress\",\n        \"StorageFileList\": [],\n        \"RequestId\": \"c4536bd1-c3ea-4e84-b2dd-a8491d2057e2\",\n        \"TaskId\": \"m9-bVVU7nhKM5X3GsED6KNGVG********ndibWSn631uT6pbhE4PcPDSsggE.\"\n    }\n}",
+        "title": "查询SdkAppId 为 1400***366 TaskId 为 m9-bVVU7nhKM5X3GsED6KNGVG********ndibWSn631uT6pbhE4PcPDSsggE.的录制状态。"
       }
     ],
     "DescribeMixTranscodingUsage": [
@@ -444,14 +444,6 @@
         "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopWebRecord\n<公共请求参数>\n\n{\n    \"TaskId\": \"xxxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "停止页面录制任务"
-      }
-    ],
-    "SummarizeTranscription": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SummarizeTranscription\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
-        "title": "样例"
       }
     ],
     "UpdateAIConversation": [

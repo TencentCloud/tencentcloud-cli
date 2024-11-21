@@ -5,7 +5,9 @@
 Input: 
 
 ```
-tccli csip DescribeDbAssetInfo --cli-unfold-argument ```
+tccli csip DescribeDbAssetInfo --cli-unfold-argument  \
+    --AssetId cdb-nbq22l65
+```
 
 Output: 
 ```
@@ -18,11 +20,16 @@ Output:
             "CFWProtectLevel": 1,
             "CFWStatus": 1,
             "PrivateIp": "192.168.1.11:3306",
-            "PublicIp": "",
+            "PublicIp": "1.1.1.1",
             "Region": "ap-guangzhou",
-            "Tag": null,
+            "Tag": [
+                {
+                    "Name": "andy",
+                    "Value": "1.214"
+                }
+            ],
             "VpcId": "vpc-ds7fl5xn",
-            "VpcName": "illnggao-test01"
+            "VpcName": "illnggao-01"
         },
         "RequestId": "d5a9e4b1-7007-4b6d-a35b-54ebfd16f8fc"
     }

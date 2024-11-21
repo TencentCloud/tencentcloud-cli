@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli cynosdb CreateClusterDatabase --cli-unfold-argument  \
-    --ClusterId abc \
-    --DbName abc \
-    --CharacterSet abc \
-    --CollateRule abc \
-    --UserHostPrivileges.0.DbUserName abc \
-    --UserHostPrivileges.0.DbHost abc \
-    --UserHostPrivileges.0.DbPrivilege abc \
-    --Description abc
+    --ClusterId cynosdbmysql-mwg712en \
+    --DbName tom \
+    --CharacterSet utf8 \
+    --CollateRule utf8_general_ci \
+    --UserHostPrivileges.0.DbUserName root \
+    --UserHostPrivileges.0.DbHost 172.1.1.1 \
+    --UserHostPrivileges.0.DbPrivilege DDL \
+    --Description tomuse
 ```
 
 Output: 

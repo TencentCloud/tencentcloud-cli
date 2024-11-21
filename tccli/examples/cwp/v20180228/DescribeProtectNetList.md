@@ -18,7 +18,7 @@ Output:
                 "Status": 1,
                 "StartTime": "2021-03-29 12:49:55",
                 "EndTime": "--",
-                "ReportPath": ""
+                "ReportPath": "/a/b"
             },
             {
                 "TaskId": "cve2021-1617009909259812569",
@@ -26,10 +26,10 @@ Output:
                 "Status": 0,
                 "StartTime": "--",
                 "EndTime": "--",
-                "ReportPath": ""
+                "ReportPath": "/a/b"
             }
         ],
-        "RequestId": "123456",
+        "RequestId": "F00A8503-6233-452E-913E-DAFEE9******",
         "TotalCount": 2
     }
 }

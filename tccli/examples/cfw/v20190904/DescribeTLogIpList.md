@@ -1,16 +1,16 @@
 **Example 1: DescribeTLogIpList告警中心IP柱形图**
 
-
+DescribeTLogIpList告警中心IP柱形图
 
 Input: 
 
 ```
 tccli cfw DescribeTLogIpList --cli-unfold-argument  \
-    --StartTime 2024-10-14 17:06:30 \
-    --EndTime 2024-10-21 17:06:30 \
-    --Top 10 \
+    --EndTime 2024-10-31 15:06:18 \
     --QueryType 1 \
-    --SearchValue {"instance_id":""}
+    --SearchValue {"instance_id":"ins-id"} \
+    --StartTime 2024-10-01 15:06:18 \
+    --Top 10
 ```
 
 Output: 
@@ -19,87 +19,87 @@ Output:
     "Response": {
         "Data": [
             {
-                "Num": 340,
-                "Port": "",
-                "Address": "",
+                "Address": "广东省深圳市",
+                "InsID": "ins-05b5fbe",
+                "InsName": "内部服务",
+                "Ip": "2001:0db8:3c4d:0015:0000:0000:1a2f:aaaa",
+                "Num": 1000,
+                "Port": "80"
+            },
+            {
+                "Address": "广东省深圳市",
+                "InsID": "ins-05b5fbe",
+                "InsName": "内部服务",
                 "Ip": "129.211.163.253",
-                "InsID": "",
-                "InsName": ""
+                "Num": 703,
+                "Port": "80"
             },
             {
-                "Num": 292,
-                "Port": "",
-                "Address": "",
+                "Address": "广东省深圳市",
+                "InsID": "ins-05b5fbe",
+                "InsName": "内部服务",
                 "Ip": "129.211.166.142",
-                "InsID": "",
-                "InsName": ""
+                "Num": 683,
+                "Port": "80"
             },
             {
-                "Num": 226,
-                "Port": "",
-                "Address": "",
+                "Address": "广东省深圳市",
+                "InsID": "ins-05b5fbe",
+                "InsName": "内部服务",
                 "Ip": "129.211.166.123",
-                "InsID": "",
-                "InsName": ""
+                "Num": 660,
+                "Port": "80"
             },
             {
-                "Num": 177,
-                "Port": "",
-                "Address": "",
+                "Address": "广东省深圳市",
+                "InsID": "ins-05b5fbe",
+                "InsName": "内部服务",
                 "Ip": "129.211.167.200",
-                "InsID": "",
-                "InsName": ""
+                "Num": 466,
+                "Port": "80"
             },
             {
-                "Num": 152,
-                "Port": "",
-                "Address": "",
-                "Ip": "129.211.162.158",
-                "InsID": "",
-                "InsName": ""
-            },
-            {
-                "Num": 137,
-                "Port": "",
-                "Address": "",
-                "Ip": "129.211.162.87",
-                "InsID": "",
-                "InsName": ""
-            },
-            {
-                "Num": 128,
-                "Port": "",
-                "Address": "",
+                "Address": "广东省深圳市",
+                "InsID": "ins-05b5fbe",
+                "InsName": "内部服务",
                 "Ip": "129.211.167.166",
-                "InsID": "",
-                "InsName": ""
+                "Num": 427,
+                "Port": "80"
             },
             {
-                "Num": 125,
-                "Port": "",
-                "Address": "",
+                "Address": "广东省深圳市",
+                "InsID": "ins-05b5fbe",
+                "InsName": "内部服务",
+                "Ip": "129.211.162.87",
+                "Num": 424,
+                "Port": "80"
+            },
+            {
+                "Address": "广东省深圳市",
+                "InsID": "ins-05b5fbe",
+                "InsName": "内部服务",
+                "Ip": "129.211.162.158",
+                "Num": 366,
+                "Port": "80"
+            },
+            {
+                "Address": "广东省深圳市",
+                "InsID": "ins-05b5fbe",
+                "InsName": "内部服务",
                 "Ip": "129.211.166.134",
-                "InsID": "",
-                "InsName": ""
+                "Num": 366,
+                "Port": "80"
             },
             {
-                "Num": 87,
-                "Port": "",
-                "Address": "",
-                "Ip": "103.216.220.22",
-                "InsID": "",
-                "InsName": ""
-            },
-            {
-                "Num": 82,
-                "Port": "",
-                "Address": "",
-                "Ip": "129.211.162.23",
-                "InsID": "",
-                "InsName": ""
+                "Address": "广东省深圳市",
+                "InsID": "ins-05b5fbe",
+                "InsName": "内部服务",
+                "Ip": "44.202.62.73",
+                "Num": 322,
+                "Port": "80"
             }
         ],
-        "RequestId": "0fd1c929-ef54-40d5-b2be-24ebc7296490"
+        "RequestId": "ca4f0361-bbfd-4935-bf0b-16cf161c2427"
     }
 }
 ```

@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli tem DescribeIngress --cli-unfold-argument  \
-    --EnvironmentId xx \
-    --ClusterNamespace xx \
+    --EnvironmentId en-xxxxxx \
+    --ClusterNamespace default \
     --SourceChannel 0 \
-    --IngressName xx
+    --IngressName name-xxx
 ```
 
 Output: 
@@ -17,43 +17,45 @@ Output:
 {
     "Response": {
         "Result": {
-            "Tls": [
-                {
-                    "CertificateId": "xx",
-                    "Hosts": [
-                        "xxx.com"
-                    ],
-                    "SecretName": "xx"
-                }
-            ],
-            "EnvironmentId": "xx",
-            "ClusterNamespace": "xx",
+            "EnvironmentId": "en-xxxxxx",
+            "AddressIPVersion": "abc",
+            "IngressName": "abc-xxx",
             "Rules": [
                 {
-                    "Protocol": "xx",
-                    "Host": "xx",
+                    "Host": "abc",
                     "Http": {
                         "Paths": [
                             {
-                                "Path": "xx",
+                                "Path": "abc",
                                 "Backend": {
-                                    "ServiceName": "xx",
-                                    "ServicePort": 443
+                                    "ServiceName": "abc",
+                                    "ServicePort": 0
                                 }
                             }
                         ]
-                    }
+                    },
+                    "Protocol": "abc"
                 }
             ],
-            "ClbId": "xx",
-            "ClusterId": "xx",
-            "IngressName": "xx",
-            "Vip": "xx",
+            "ClbId": "lb-xxx",
+            "ClusterNamespace": "default",
+            "Tls": [
+                {
+                    "Hosts": [
+                        "abc"
+                    ],
+                    "SecretName": "abc",
+                    "CertificateId": "abc"
+                }
+            ],
+            "ClusterId": "abc",
+            "Vip": "abc",
+            "CreateTime": "abc",
             "Mixed": true,
-            "AddressIPVersion": "xx",
-            "CreateTime": "xx"
+            "RewriteType": "abc",
+            "Domain": "abc"
         },
-        "RequestId": "xx"
+        "RequestId": "abc-xxx-xxx"
     }
 }
 ```

@@ -6,16 +6,14 @@ Input:
 
 ```
 tccli tcss DeleteIgnoreVul --cli-unfold-argument  \
-    --List.0.PocID "xx" \
-    --List.0.ImageIDs "xx" \
-    --List.0.ImageType "xx"
+    --List.0.PocID "poc_id"
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx"
+        "RequestId": "8bc803fd-d85d-47b8-9e2b-9644674be677"
     }
 }
 ```

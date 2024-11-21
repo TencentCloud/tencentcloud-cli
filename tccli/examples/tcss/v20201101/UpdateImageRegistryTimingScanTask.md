@@ -6,29 +6,23 @@ Input:
 
 ```
 tccli tcss UpdateImageRegistryTimingScanTask --cli-unfold-argument  \
-    --ScanPeriod 1 \
-    --ScanType CVE \
-    --Images.0.ImageDigest abc \
-    --Images.0.RegistryType abc \
-    --Images.0.ImageRepoAddress abc \
-    --Images.0.InstanceId abc \
-    --Images.0.InstanceName abc \
-    --Images.0.Namespace abc \
-    --Images.0.ImageName abc \
-    --Images.0.ImageTag abc \
-    --Images.0.Force abc \
-    --All True \
-    --Latest True \
     --Enable True \
-    --ScanTime 04:00:00 \
-    --Id 1
+    --ScanPeriod 1 \
+    --ScanTime 18:10 \
+    --ScanEndTime 20:00 \
+    --ScanScope 2 \
+    --ContainerRunning False \
+    --Namespace tke-images \
+    --RegistryType ccr \
+    --Latest True \
+    --ScanType CVE VIRUS RISK
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "5f2acb2d-2775-4ef4-8230-03df2762b1d1"
     }
 }
 ```

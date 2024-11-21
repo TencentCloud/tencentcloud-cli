@@ -8,8 +8,8 @@ Input:
 tccli cwp DescribeWebHookRules --cli-unfold-argument  \
     --Offset 0 \
     --Limit 1 \
-    --Order  \
-    --By 
+    --Order HostCount \
+    --By asc
 ```
 
 Output: 
@@ -20,8 +20,8 @@ Output:
             {
                 "RuleId": 55,
                 "RuleName": "测试机器人",
-                "HookAddr": "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=abe03861-a7c6-49cf-a12c-443c34be0db5",
-                "RuleRemark": "",
+                "HookAddr": "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=abe03861-a7c6-49cf-a12c-443c34b***",
+                "RuleRemark": "robot remark",
                 "RuleItems": [
                     {
                         "Type": 24,

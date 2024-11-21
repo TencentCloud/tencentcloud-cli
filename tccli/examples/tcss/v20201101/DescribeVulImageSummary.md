@@ -11,16 +11,16 @@ Output:
 ```
 {
     "Response": {
-        "AllAuthorizedImageCount": 0,
-        "VulLibraryUpdateTime": "xx",
-        "WebVulCount": 0,
-        "SupportVulTotalCount": 0,
-        "ScannedImageCount": 0,
-        "VulTotalCount": 0,
-        "EmergencyVulCount": 0,
-        "RequestId": "xx",
-        "SysTemVulCount": 0,
-        "SeriousVulImageCount": 0
+        "AllAuthorizedImageCount": 5703,
+        "EmergencyVulCount": 38,
+        "RequestId": "e06df6e9-3f54-41d0-9857-41ed365623a2",
+        "ScannedImageCount": 2,
+        "SeriousVulImageCount": 2,
+        "SupportVulTotalCount": 70678,
+        "SysTemVulCount": 634,
+        "VulLibraryUpdateTime": "2024-10-29 19:42:56",
+        "VulTotalCount": 2086,
+        "WebVulCount": 1442
     }
 }
 ```

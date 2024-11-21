@@ -1,6 +1,6 @@
 **Example 1: 错误示例**
 
-图片URL错误
+图片URL错误。
 
 Input: 
 
@@ -25,7 +25,7 @@ Output:
 
 **Example 2: 人员搜索接口**
 
-
+输入人脸图片，在人员库中识别出最相似的 TopK 人员。
 
 Input: 
 

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ms DescribeShieldPlanInstance --cli-unfold-argument  \
-    --ResourceId xxx \
+    --ResourceId svmsref_xxxxx \
     --Pid 1
 ```
 
@@ -15,20 +15,20 @@ Output:
 {
     "Response": {
         "BindInfo": {
-            "AppPkgName": "xx",
-            "AppIconUrl": "xx",
-            "AppName": "xx"
+            "AppPkgName": "com.tencent.demo",
+            "AppIconUrl": "https://appicon.url.com/AppIconUrl",
+            "AppName": "AppName"
         },
         "ResourceServiceInfo": {
             "ExpireTime": 1,
-            "ResourceName": "xx",
+            "ResourceName": "应用加固",
             "CreateTime": 1
         },
         "ShieldPlanInfo": {
             "TotalCount": 1,
             "PlanSet": [
                 {
-                    "PlanName": "xx",
+                    "PlanName": "加固策略",
                     "PlanId": 1,
                     "PlanInfo": {
                         "Dex": 1,
@@ -59,7 +59,7 @@ Output:
                 }
             ]
         },
-        "RequestId": "xx"
+        "RequestId": "RequestId-xxxxx"
     }
 }
 ```

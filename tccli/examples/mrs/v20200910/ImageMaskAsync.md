@@ -6,11 +6,14 @@ Input:
 
 ```
 tccli mrs ImageMaskAsync --cli-unfold-argument  \
+    --Image.Id 1 \
+    --Image.Url abc \
     --Image.Base64 abc \
     --MaskFlag.HospitalFlag True \
     --MaskFlag.DoctorFlag True \
     --MaskFlag.PatientFlag True \
-    --MaskFlag.BarFlag True
+    --MaskFlag.BarFlag True \
+    --AutoFixImageDirection True
 ```
 
 Output: 

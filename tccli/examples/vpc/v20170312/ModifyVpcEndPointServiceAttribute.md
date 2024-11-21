@@ -7,7 +7,7 @@ Input:
 ```
 tccli vpc ModifyVpcEndPointServiceAttribute --cli-unfold-argument  \
     --AutoAcceptFlag True \
-    --EndPointServiceName 测试 \
+    --EndPointServiceName demo \
     --EndPointServiceId vpcsvc-kngiybxl \
     --VpcId vpc-hj3he929
 ```

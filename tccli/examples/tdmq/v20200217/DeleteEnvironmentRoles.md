@@ -6,16 +6,16 @@ Input:
 
 ```
 tccli tdmq DeleteEnvironmentRoles --cli-unfold-argument  \
-    --EnvironmentId abc \
-    --RoleNames abc \
-    --ClusterId abc
+    --EnvironmentId devNs \
+    --RoleNames role1 \
+    --ClusterId pulsar-xk3ne8k2qkp8
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "gggxxxx"
+        "RequestId": "1004f1de-6fb8-41d5-965e-3aae8c87183a"
     }
 }
 ```

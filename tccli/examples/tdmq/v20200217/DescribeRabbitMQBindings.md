@@ -7,7 +7,7 @@ Input:
 ```
 tccli tdmq DescribeRabbitMQBindings --cli-unfold-argument  \
     --InstanceId amqp-44w9928j \
-    --VirtualHost test
+    --VirtualHost tdmq_data
 ```
 
 Output: 
@@ -16,19 +16,19 @@ Output:
     "Response": {
         "BindingInfoList": [
             {
-                "BindingId": 0,
-                "VirtualHost": "abc",
-                "Source": "abc",
-                "DestinationType": "abc",
-                "Destination": "abc",
-                "RoutingKey": "abc",
-                "SourceExchangeType": "abc",
-                "CreateTime": "abc",
-                "ModifyTime": "abc"
+                "BindingId": 127469,
+                "VirtualHost": "tdmq_data",
+                "Source": "test-exchange",
+                "DestinationType": "queue",
+                "Destination": "test-queue",
+                "RoutingKey": "test-rk",
+                "SourceExchangeType": "direct",
+                "CreateTime": "2022-12-16 11:19:56",
+                "ModifyTime": "2022-12-16 11:19:56"
             }
         ],
-        "TotalCount": 0,
-        "RequestId": "abc"
+        "TotalCount": 1,
+        "RequestId": "a8f28d5e-a7e2-4b0b-afa0-2fba09c077a0"
     }
 }
 ```

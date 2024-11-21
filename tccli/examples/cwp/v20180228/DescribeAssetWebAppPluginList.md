@@ -22,7 +22,7 @@ Output:
         "Plugins": [
             {
                 "Version": "0.1.1",
-                "Link": "",
+                "Link": "/bin",
                 "Name": "test-name",
                 "Desc": "test app"
             }

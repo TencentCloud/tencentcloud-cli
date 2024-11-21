@@ -52,7 +52,7 @@
   },
   "metadata": {
     "apiVersion": "2021-08-11",
-    "api_brief": "介绍如何使用API对二进制软件成分分析进行操作，包括新建分析、查看分析列表、查看报告等。",
+    "api_brief": "介绍如何使用API对软件成分分析进行操作，包括新建分析、查看分析列表、查看报告等。",
     "serviceNameCN": "软件成分分析",
     "serviceShortName": "bsca"
   },

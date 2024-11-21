@@ -58,10 +58,10 @@ Output:
             "db2"
         ],
         "EndTime": "2020-07-31 15:10:27",
-        "ExternalAddr": "https://cosback-appid.cos.ap-guangzhou.myqcloud.com/appid%2fsqlserver%2fmssql-mgq355n0%2fbackup%2fautoed_instance_58037_20200728011545.bak.tar?sign=q-sign-algorithm%3dsha1%26q-ak%3dAKIDpY8YnsLYAbq352rW0KaAnIeqrgJjE0ra%26q-sign-time%3d1596176966%3b1596177266%26q-key-time%3d1596176966%3b1596177266%26q-header-list%3d%26q-url-param-list%3d%26q-signature%3d3ea8139b631fa13d54b2c03313cbf3850d1e0c2c",
+        "ExternalAddr": "https://cosback-appid.cos.ap-guangzhou.myqcloud.com/appid%2fsqlserver%2fmssql-mgq355n0%2fbackup%2fautoed_instance_58037_20200728011545.bak.tar?sign=q-sign-algorithm%3dsha1%26q-ak%3d*************************%26q-sign-time%3d1596176966%3b1596177266%26q-key-time%3d1596176966%3b1596177266%26q-header-list%3d%26q-url-param-list%3d%26q-signature%3d3ea8139b631fa13d54b2c03313cbf3850d1e0c2c",
         "FileName": "autoed_instance_58037_20200728011545.bak.tar",
         "Id": 1234568,
-        "InternalAddr": "https://cosback-appid.cos.ap-guangzhou.myqcloud.com/appid%2fsqlserver%2fmssql-mgq355n0%2fbackup%2fautoed_instance_58037_20200728011545.bak.tar?sign=q-sign-algorithm%3dsha1%26q-ak%3dAKIDpY8YnsLYAbq352rW0KaAnIeqrgJjE0ra%26q-sign-time%3d1596176966%3b1596177266%26q-key-time%3d1596176966%3b1596177266%26q-header-list%3d%26q-url-param-list%3d%26q-signature%3d3ea8139b631fa13d54b2c03313cbf3850d1e0c2c",
+        "InternalAddr": "https://cosback-appid.cos.ap-guangzhou.myqcloud.com/appid%2fsqlserver%2fmssql-mgq355n0%2fbackup%2fautoed_instance_58037_20200728011545.bak.tar?sign=q-sign-algorithm%3dsha1%26q-ak%3d*************************%26q-sign-time%3d1596176966%3b1596177266%26q-key-time%3d1596176966%3b1596177266%26q-header-list%3d%26q-url-param-list%3d%26q-signature%3d3ea8139b631fa13d54b2c03313cbf3850d1e0c2c",
         "RequestId": "3f49f6d4-692b-414b-999c-55b38922e049",
         "Size": 1356532,
         "StartTime": "2020-07-31 14:28:51",

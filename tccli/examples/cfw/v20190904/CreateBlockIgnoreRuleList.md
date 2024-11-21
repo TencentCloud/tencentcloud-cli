@@ -1,13 +1,12 @@
-**Example 1: 空值返回**
+**Example 1: 添加封禁**
 
-空值返回
+添加封禁
 
 Input: 
 
 ```
 tccli cfw CreateBlockIgnoreRuleList --cli-unfold-argument  \
     --Rules.0.IP 1.1.1.1 \
-    --Rules.0.Domain  \
     --Rules.0.Direction 1 \
     --Rules.0.EndTime 2025-01-01 00:00:00 \
     --Rules.0.Comment 阻断访问 \
@@ -19,7 +18,13 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": ""
+        "List": [
+            {
+                "IP": "1.1.1.1",
+                "Direction": 1
+            }
+        ],
+        "RequestId": "e7c8de24-958f-4200-9d30-ddd186d6ee48"
     }
 }
 ```

@@ -7,7 +7,7 @@ Input:
 ```
 tccli vpc ModifyIp6Translator --cli-unfold-argument  \
     --Ip6TranslatorId ip6-90pt7p9q \
-    --Ip6TranslatorName test
+    --Ip6TranslatorName demo
 ```
 
 Output: 

@@ -1,20 +1,21 @@
-**Example 1: ImageEnhancement**
+**Example 1: ImageEnhancement调用**
 
-图像增强
+
 
 Input: 
 
 ```
 tccli ocr ImageEnhancement --cli-unfold-argument  \
-    --ReturnImage false \
-    --ImageUrl https://xx/a.jpg
+    --ReturnImage preprocess \
+    --TaskType 1 \
+    --ImageUrl https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/tie/static/images/1-1.png
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Image": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQH/2wBDAQEBAQEBAQEBAQEBAQEBAQE",
+        "Image": "/9j/4AAQSkZJRg.....s97n//2Q==",
         "ImageTag": "preprocess",
         "RequestId": "dd443b91-daef-4933-838f-1970b35f0fc9"
     }

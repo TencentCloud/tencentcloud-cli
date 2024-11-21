@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli apigateway DescribeApiKey --cli-unfold-argument  \
-    --AccessKeyId AKID1IGx7Tu5mk150ds6fhbdi1RqD8KlI6dW32MD
+    --AccessKeyId AKID***********************************************
 ```
 
 Output: 
@@ -14,8 +14,8 @@ Output:
 {
     "Response": {
         "Result": {
-            "AccessKeyId": "AKID1IGx7Tu5mk150ds6fhbdi1RqD8KlI6dW32MD",
-            "AccessKeySecret": "hvhuan76de5im5Fa0bqh8aaBcOO9cy6c7yg2ywlf",
+            "AccessKeyId": "AKID***********************************************",
+            "AccessKeySecret": "qYSyjR************************************",
             "AccessKeyType": "auto",
             "SecretName": "dd",
             "Status": 1,

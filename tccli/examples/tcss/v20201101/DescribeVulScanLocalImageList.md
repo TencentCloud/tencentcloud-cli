@@ -17,12 +17,12 @@ Output:
         "List": [
             {
                 "MediumLevelVulCount": 0,
-                "ScanStatus": "xx",
-                "ScanEndTime": "xx",
-                "ScanStartTime": "xx",
-                "ErrorStatus": "xx",
-                "ImageID": "xx",
-                "ImageName": "xx",
+                "ScanStatus": "SCANNING",
+                "ScanEndTime": "2006-01-02 15:04:05",
+                "ScanStartTime": "2006-01-02 15:04:05",
+                "ErrorStatus": "0",
+                "ImageID": "sha256:80beff5ff34259ceb7fbe9cd10b2d94912618f5b5595f234349c5bb0cd4f9211",
+                "ImageName": "ImageName",
                 "CriticalLevelVulCount": 0,
                 "TaskID": 0,
                 "ScanDuration": 0.0,
@@ -31,7 +31,7 @@ Output:
                 "Size": 0.0
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "d1b9dbe2-f78d-491a-b514-f0aa19d8ae4b"
     }
 }
 ```

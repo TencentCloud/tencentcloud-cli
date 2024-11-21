@@ -1,12 +1,12 @@
-**Example 1: 临时身份证告警示例代码**
+**Example 1: 临时身份证告警调用示例**
 
-临时身份证告警示例代码 [前往调试工具](https://console.cloud.tencent.com/api/explorer?Product=ocr&Version=2018-11-19&Action=IDCardOCR)
+临时身份证告警调用示例 [前往调试工具](https://console.cloud.tencent.com/api/explorer?Product=ocr&Version=2018-11-19&Action=IDCardOCR)
 
 Input: 
 
 ```
 tccli ocr IDCardOCR --cli-unfold-argument  \
-    --ImageUrl https://xx/a.jpg \
+    --ImageUrl https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/card/IDCardOCR/IDCardOCR1.jpg \
     --Config {"TempIdWarn":true} \
     --CardSide FRONT
 ```
@@ -15,30 +15,30 @@ Output:
 ```
 {
     "Response": {
-        "Name": "",
-        "Sex": "",
-        "Nation": "",
-        "Birth": "",
-        "Address": "",
-        "IdNum": "",
+        "Address": "广东省深圳市南山区腾讯大厦",
+        "AdvancedInfo": "{\"WarnInfos\":[]}",
         "Authority": "",
-        "ValidDate": "",
+        "Birth": "1995/5/13",
+        "IdNum": "440305199505132561",
+        "Name": "刘洋",
+        "Nation": "汉",
         "ReflectDetailInfos": [],
-        "AdvancedInfo": "{\"WarnInfos\":[-9104]}",
-        "RequestId": "sd33222eqd1dqq948487"
+        "RequestId": "c762a670-c622-408a-865a-da27a9ffa53b",
+        "Sex": "女",
+        "ValidDate": ""
     }
 }
 ```
 
-**Example 2: 身份证识别（人像面）示例代码**
+**Example 2: 身份证识别（人像面）调用示例**
 
-身份证识别（人像面）示例代码 [前往调试工具](https://console.cloud.tencent.com/api/explorer?Product=ocr&Version=2018-11-19&Action=IDCardOCR)
+身份证识别（人像面）调用示例 [前往调试工具](https://console.cloud.tencent.com/api/explorer?Product=ocr&Version=2018-11-19&Action=IDCardOCR)
 
 Input: 
 
 ```
 tccli ocr IDCardOCR --cli-unfold-argument  \
-    --ImageUrl https://xx/a.jpg \
+    --ImageUrl https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/card/IDCardOCR/IDCardOCR1.jpg \
     --CardSide FRONT
 ```
 
@@ -46,30 +46,30 @@ Output:
 ```
 {
     "Response": {
-        "Name": "李明",
-        "Sex": "男",
-        "Nation": "汉",
-        "Birth": "1987/1/1",
-        "Address": "北京市石景山区高新技术园腾讯大楼",
-        "IdNum": "440524198701010014",
+        "Address": "广东省深圳市南山区腾讯大厦",
+        "AdvancedInfo": "{\"WarnInfos\":[]}",
         "Authority": "",
-        "ValidDate": "",
-        "AdvancedInfo": "{}",
+        "Birth": "1995/5/13",
+        "IdNum": "440305199505132561",
+        "Name": "刘洋",
+        "Nation": "汉",
         "ReflectDetailInfos": [],
-        "RequestId": "ab2c132e-9e1c-43d3-b0ef-9b4d80f00330"
+        "RequestId": "c762a670-c622-408a-865a-da27a9ffa53b",
+        "Sex": "女",
+        "ValidDate": ""
     }
 }
 ```
 
-**Example 3: 身份证识别（国徽面）示例代码**
+**Example 3: 身份证识别（国徽面）调用示例**
 
-身份证识别（国徽面）示例代码 [前往调试工具](https://console.cloud.tencent.com/api/explorer?Product=ocr&Version=2018-11-19&Action=IDCardOCR)
+身份证识别（国徽面）调用示例 [前往调试工具](https://console.cloud.tencent.com/api/explorer?Product=ocr&Version=2018-11-19&Action=IDCardOCR)
 
 Input: 
 
 ```
 tccli ocr IDCardOCR --cli-unfold-argument  \
-    --ImageUrl https://xx/a.jpg \
+    --ImageUrl https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/card/IDCardBackOCR/IDCardBackOCR2.jpg \
     --CardSide BACK
 ```
 
@@ -77,30 +77,30 @@ Output:
 ```
 {
     "Response": {
-        "Name": "",
-        "Sex": "",
-        "Nation": "",
-        "Birth": "",
         "Address": "",
-        "IdNum": "",
-        "Authority": "赵县公安局",
-        "ValidDate": "2010.07.21-2020.07.21",
         "AdvancedInfo": "{}",
+        "Authority": "上海市公安局南山分局",
+        "Birth": "",
+        "IdNum": "",
+        "Name": "",
+        "Nation": "",
         "ReflectDetailInfos": [],
-        "RequestId": "0d394478-6d4d-48fc-8b19-552415bf46de"
+        "RequestId": "c058efd9-a469-4256-a18d-bf539fd2231b",
+        "Sex": "",
+        "ValidDate": "2018.08.12-2038.08.12"
     }
 }
 ```
 
-**Example 4: 身份证照片裁剪和人像照片裁剪示例代码**
+**Example 4: 身份证照片裁剪和人像照片裁剪调用示例**
 
-身份证照片裁剪和人像照片裁剪示例代码 [前往调试工具](https://console.cloud.tencent.com/api/explorer?Product=ocr&Version=2018-11-19&Action=IDCardOCR)
+身份证照片裁剪和人像照片裁剪调用示例 [前往调试工具](https://console.cloud.tencent.com/api/explorer?Product=ocr&Version=2018-11-19&Action=IDCardOCR)
 
 Input: 
 
 ```
 tccli ocr IDCardOCR --cli-unfold-argument  \
-    --ImageUrl https://xx/a.jpg \
+    --ImageUrl https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/card/IDCardOCR/IDCardOCR1.jpg \
     --Config {"CropIdCard":true,"CropPortrait":true} \
     --CardSide FRONT
 ```
@@ -118,7 +118,7 @@ Output:
         "Authority": "",
         "ValidDate": "",
         "ReflectDetailInfos": [],
-        "AdvancedInfo": "{\"IdCard\":\"/9j/4AAA.........\",\"Portrait\":\"/9j/4AAQSkZJRBA=...........\"}",
+        "AdvancedInfo": "{\"IdCard\":\"/9j/4AAQSkZJRg.....s97n//2Q==\",\"Portrait\":\"/9j/4AAQSkZJRg.....s97n//2Q==\"}",
         "RequestId": "97c323da-5fd3-4fe6-b0b3-1cf10b04422c"
     }
 }

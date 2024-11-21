@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli tdmq ModifyRole --cli-unfold-argument  \
-    --RoleName abc \
-    --Remark abc \
-    --ClusterId abc \
-    --EnvironmentRoleSets.0.EnvironmentId abc \
-    --EnvironmentRoleSets.0.Permissions abc \
+    --RoleName role1 \
+    --Remark remarkDemo \
+    --ClusterId pulsar-xk3ne8k2qkp8 \
+    --EnvironmentRoleSets.0.EnvironmentId devNs \
+    --EnvironmentRoleSets.0.Permissions produce \
     --UnbindAllEnvironment True
 ```
 
@@ -18,9 +18,9 @@ Output:
 ```
 {
     "Response": {
-        "RoleName": "abc",
-        "Remark": "abc",
-        "RequestId": "abc"
+        "RoleName": "role1",
+        "Remark": "remarkDemo",
+        "RequestId": "1004f1de-6fb8-41d5-965e-3aae8c87183a"
     }
 }
 ```

@@ -158,7 +158,7 @@
       "type": "object"
     },
     "GetFileTranslateData": {
-      "document": "查询文件翻译任务",
+      "document": "文件翻译任务结果",
       "members": [
         {
           "disabled": false,
@@ -172,8 +172,8 @@
         },
         {
           "disabled": false,
-          "document": "状态",
-          "example": "init：任务已初始化；wait：任务等待执行；success：任务执行成功；fail：任务执行失败",
+          "document": "任务状态\n\n- init：任务已初始化\n- wait：任务等待执行\n- success：任务执行成功\n- fail：任务执行失败",
+          "example": "success",
           "member": "string",
           "name": "Status",
           "output_required": true,
@@ -202,11 +202,21 @@
         },
         {
           "disabled": false,
-          "document": "翻译进度",
+          "document": "任务进度",
           "example": "100",
           "member": "int64",
           "name": "Progress",
           "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "本次翻译消耗的字符数\t",
+          "example": "10",
+          "member": "int64",
+          "name": "UsedAmount",
+          "output_required": false,
           "type": "int",
           "value_allowed_null": false
         }
@@ -736,7 +746,7 @@
         {
           "disabled": false,
           "document": "需要使用的术语库列表",
-          "example": "[\"144aed8218c911eb97b88eb0fc7321d4\"]",
+          "example": "[\"144aed******************fc7321d4\"]",
           "member": "string",
           "name": "TermRepoIDList",
           "required": false,
@@ -745,7 +755,7 @@
         {
           "disabled": false,
           "document": "需要使用的例句库列表",
-          "example": "[\"b77f64e518ec11ebb2aabf416d88df30\"]",
+          "example": "[\"b77f64******************6d88df30\"]",
           "member": "string",
           "name": "SentRepoIDList",
           "required": false,
@@ -785,6 +795,16 @@
           "name": "TargetTextList",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "本次翻译消耗的字符数",
+          "example": "10",
+          "member": "int64",
+          "name": "UsedAmount",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -847,7 +867,7 @@
         {
           "disabled": false,
           "document": "需要使用的术语库列表",
-          "example": "[\"144aed8218c911eb97b88eb0fc7321d4\"]",
+          "example": "[\"144aed******************fc7321d4\"]",
           "member": "string",
           "name": "TermRepoIDList",
           "required": false,
@@ -856,7 +876,7 @@
         {
           "disabled": false,
           "document": "需要使用的例句库列表",
-          "example": "[\"b77f64e518ec11ebb2aabf416d88df30\"]",
+          "example": "[\"b77f64******************6d88df30\"]",
           "member": "string",
           "name": "SentRepoIDList",
           "required": false,
@@ -896,6 +916,16 @@
           "name": "Target",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "本次翻译消耗的字符数",
+          "example": "10",
+          "member": "int64",
+          "name": "UsedAmount",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {

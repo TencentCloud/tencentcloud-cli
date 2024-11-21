@@ -6,18 +6,15 @@ Input:
 
 ```
 tccli tcss CreateComponentExportJob --cli-unfold-argument  \
-    --ImageID xx \
-    --Limit 10 \
-    --Offset 0 \
-    --ExportField xxx
+    --ImageID 10001
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx",
-        "JobId": "xx"
+        "RequestId": "8bc803fd-d85d-47b8-9e2b-9644674be677",
+        "JobId": "10001"
     }
 }
 ```

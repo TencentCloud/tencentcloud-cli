@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tdmq DescribeClusterDetail --cli-unfold-argument  \
-    --ClusterId pulsar-xxxxxxxx
+    --ClusterId pulsar-47emajuekabz
 ```
 
 Output: 
@@ -14,22 +14,22 @@ Output:
 {
     "Response": {
         "ClusterSet": {
-            "ClusterId": "abc",
-            "ClusterName": "abc",
-            "Remark": "abc",
+            "ClusterId": "pulsar-47emajuekabz",
+            "ClusterName": "devName",
+            "Remark": "devRemark",
             "EndPointNum": 0,
-            "CreateTime": "abc",
-            "Healthy": 0,
-            "HealthyInfo": "abc",
+            "HealthyInfo": "healthy",
+            "CreateTime": "2023-07-20 10:35:17",
+            "Healthy": 1,
             "Status": 0,
             "MaxNamespaceNum": 0,
             "MaxTopicNum": 0,
             "MaxQps": 0,
             "MessageRetentionTime": 0,
             "MaxStorageCapacity": 0,
-            "Version": "abc",
-            "PublicEndPoint": "abc",
-            "VpcEndPoint": "abc",
+            "Version": "2.9.2",
+            "PublicEndPoint": null,
+            "VpcEndPoint": null,
             "NamespaceNum": 0,
             "UsedStorageBudget": 0,
             "MaxPublishRateInMessages": 0,
@@ -41,15 +41,15 @@ Output:
             "PublicAccessEnabled": true,
             "Tags": [
                 {
-                    "TagKey": "abc",
-                    "TagValue": "abc"
+                    "TagKey": "pulsarTag",
+                    "TagValue": "dev"
                 }
             ],
             "PayMode": 0,
             "ProjectId": 0,
-            "ProjectName": "abc"
+            "ProjectName": "dev"
         },
-        "RequestId": "abc"
+        "RequestId": "5d6c7091-e82c-4a9c-a18f-34d5fc460iuu"
     }
 }
 ```

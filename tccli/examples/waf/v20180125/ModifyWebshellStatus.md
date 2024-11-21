@@ -6,7 +6,8 @@ Input:
 
 ```
 tccli waf ModifyWebshellStatus --cli-unfold-argument  \
-    --Webshell ''{"Domain":"lsd.qcloudwaf.com", "Status":1}''
+    --Webshell.Domain 1218test.qcloudwaf.com \
+    --Webshell.Status 1
 ```
 
 Output: 

@@ -35,7 +35,7 @@ tccli teo CreateAccelerationDomain --cli-unfold-argument  \
     --OriginInfo.Origin test.s3.ap-east-1.amazonaws.com \
     --OriginInfo.PrivateAccess on \
     --OriginInfo.PrivateParameters.0.Name AccessKeyId \
-    --OriginInfo.PrivateParameters.0.Value AKIDdDva7VjFk7LQJ0X5WnbKE7mQTest \
+    --OriginInfo.PrivateParameters.0.Value AKID*********************************************** \
     --OriginInfo.PrivateParameters.1.Name SecretAccessKey \
     --OriginInfo.PrivateParameters.1.Value nMirpdWhhT6bxPsaFwYM1SzQrTest \
     --OriginInfo.PrivateParameters.2.Name SignatureVersion \

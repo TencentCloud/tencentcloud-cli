@@ -1,12 +1,12 @@
-**Example 1: 户口本识别示例代码**
+**Example 1: ResidenceBookletOCR调用**
 
-居民户口簿户主页及成员页关键字段的识别，包括姓名、户别、地址、籍贯、身份证号码等
+
 
 Input: 
 
 ```
 tccli ocr ResidenceBookletOCR --cli-unfold-argument  \
-    --ImageUrl https://xx/a.jpg
+    --ImageUrl https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/***/fakeurl.jpg
 ```
 
 Output: 

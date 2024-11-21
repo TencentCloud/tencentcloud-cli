@@ -6,18 +6,24 @@ Input:
 
 ```
 tccli kms GenerateDataKey --cli-unfold-argument  \
-    --KeyId 23e80852-1e38-11e9-b129-5cb9019b4b01 \
-    --KeySpec AES_256
+    --KeyId 93866e69-9755-11ef-8e65-52540089bc41 \
+    --KeySpec AES_256 \
+    --NumberOfBytes 32 \
+    --EncryptionContext {"key1":"value1"} \
+    --EncryptionPublicKey -----BEGIN PUBLIC KEY-----
+MFkwEwYHKoZIzj0CAQYIKoEcz****srLVydfJiHQuh2Jr9lMspgK58UVMJTvQCAU+Hztyhd6Aw==
+-----END PUBLIC KEY----- \
+    --EncryptionAlgorithm SM2
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "fe11aa29-0cc2-4204-bfea-6ebb30cc00d7",
-        "KeyId": "23e80852-1e38-11e9-b129-5cb9019b4b01",
-        "Plaintext": "uW9wqntw+FAgnfsIrxOpOA==",
-        "CiphertextBlob": "g2F8eQk44QrTbfj09TL17AZyFPgs8BTtZe2j27Wuw1YzTBCxnd0T/gwFQSasmtzxZi6mmvD7DCjCE+LxJmdhXQ==-k-fKVP3WIlGpg8m9LMW4jEkQ==-k-h/nUfRbaTUY7/KWXwuSK1Py+ZFRTK5WQiUz6yQE5XBFUN3UwPOUbl8P3A3caow2rlqTjUw=="
+        "CiphertextBlob": "GPJUsGlmPcSjHKIktXGyzn33yestz+7NteW36M6FuL8hPfJ1xVfdO6Akr8sF69x3yBXMwto4njumJMIsi9WKow==-k-XqqalxTyNKIC1rITRePFGQ==-k-xAL9z9eXIHV/p+WT1RsHP3dm6f43bkomXjwmvWdMXH+JQoFORTThfXgcRh1f9lPNLENK4+fCOiQVG1VvLdA0RvcuRvU=",
+        "KeyId": "93866e69-9755-11ef-8e65-52540089bc41",
+        "Plaintext": "q+EouJ/tGeiZIo9/tIl2baxQOBFxcN0PNn7F6EIEvpDR6kvQmHohD5PTbUCKPkct6K8jOiYpbuaWZthxco0phMRSE4+HpB17rX4jmlW8pw3eHWOZo8yRyq/c7RVVo0+DtZofszwhMirQyjcBTJWhLt7xywtE5zqhDjngeEktAEw=",
+        "RequestId": "044e823a-7a0c-4603-b03c-e99be5df998d"
     }
 }
 ```

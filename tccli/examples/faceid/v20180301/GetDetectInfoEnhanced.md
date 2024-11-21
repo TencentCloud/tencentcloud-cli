@@ -1,4 +1,4 @@
-**Example 1: 获取所有类型的信息**
+**Example 1: 获取结果信息成功示例**
 
 
 
@@ -15,121 +15,130 @@ Output:
 ```
 {
     "Response": {
-        "Text": {
-            "ErrCode": 0,
-            "ErrMsg": "成功",
-            "UseIDType": 0,
-            "IdCard": "440111111111111111",
-            "Name": "爱新觉罗永琪",
-            "OcrNation": null,
-            "OcrAddress": null,
-            "OcrBirth": null,
-            "OcrAuthority": null,
-            "OcrValidDate": null,
-            "OcrName": "爱新觉罗永琪",
-            "OcrIdCard": "440111111111111111",
-            "OcrGender": null,
-            "IdInfoFrom": "abc",
-            "LivenessMode": 0,
-            "LiveStatus": 0,
-            "LiveMsg": "成功",
-            "Comparestatus": 0,
-            "Comparemsg": "成功",
-            "CompareLibType": "权威库",
-            "Sim": "76.52",
-            "Location": null,
-            "Mobile": null,
-            "Extra": "",
-            "NFCRequestIds": [
-                "abc"
-            ],
-            "NFCBillingCounts": 0,
-            "PassNo": "abc",
-            "VisaNum": "abc",
-            "LivenessDetail": [
-                {
-                    "ReqTime": "1577179388135",
-                    "Seq": "3d12da91-db34-4e55-81c3-993a41d7ccb7",
-                    "Idcard": "440111111111111111",
-                    "Name": "爱新觉罗永琪",
-                    "CompareLibType": "权威库",
-                    "Sim": "76.52",
-                    "IsNeedCharge": true,
-                    "Errcode": 0,
-                    "Errmsg": "成功",
-                    "LivenessMode": 0,
-                    "Livestatus": 0,
-                    "Livemsg": "成功",
-                    "Comparestatus": 0,
-                    "Comparemsg": "成功"
-                }
+        "BestFrame": {
+            "BestFrame": "/9j/4AAQSk...JKD2A//9k=",
+            "BestFrames": [
+                "/9j/4AAQSk...002dgP/9k=",
+                "/9j/4AAQSk...vx+YH/2Q==",
+                "/9j/4AAQSk...n6fj5Af//Z",
+                "/9j/4AAQSk...dzlFFagf/Z"
             ]
+        },
+        "EncryptedBody": "",
+        "Encryption": {
+            "Algorithm": "",
+            "CiphertextBlob": "",
+            "EncryptList": [],
+            "Iv": "",
+            "TagList": []
         },
         "IdCardData": {
-            "ProcessedBackImage": "base64",
-            "ProcessedFrontImage": "base64",
-            "OcrFront": "base64",
-            "OcrBack": "base64",
-            "Avatar": "base64",
-            "WarnInfos": [],
-            "BackWarnInfos": []
+            "Avatar": null,
+            "BackWarnInfos": null,
+            "OcrBack": null,
+            "OcrFront": null,
+            "ProcessedBackImage": null,
+            "ProcessedFrontImage": null,
+            "WarnInfos": null
+        },
+        "IntentionActionResult": null,
+        "IntentionQuestionResult": {
+            "AsrResult": [],
+            "Audios": [],
+            "FinalResultCode": null,
+            "FinalResultDetailCode": null,
+            "FinalResultMessage": null,
+            "ResultCode": [],
+            "ScreenShot": [],
+            "Video": null
         },
         "IntentionVerifyData": {
-            "IntentionVerifyVideo": "base64",
-            "ErrorCode": 0,
-            "ErrorMessage": "成功",
-            "AsrResult": "同意",
-            "AsrResultSimilarity": "0",
-            "IntentionVerifyBestFrame": "base64"
+            "AsrResult": null,
+            "AsrResultSimilarity": null,
+            "ErrorCode": null,
+            "ErrorMessage": null,
+            "IntentionVerifyBestFrame": null,
+            "IntentionVerifyVideo": null
         },
-        "IntentionActionResult": {
-            "FinalResultDetailCode": 0,
-            "FinalResultMessage": "abc",
-            "Details": [
+        "RequestId": "91173d84-e461-4da4-a270-2b8d48a2e136",
+        "Text": {
+            "CompareLibType": "权威库",
+            "Comparemsg": "成功",
+            "Comparestatus": 0,
+            "ErrCode": 0,
+            "ErrMsg": "成功",
+            "Extra": "",
+            "IdCard": "11204416541220243X",
+            "IdInfoFrom": "其他",
+            "LiveMsg": "成功",
+            "LiveStatus": 0,
+            "LivenessDetail": [
                 {
-                    "Video": "abc",
-                    "ScreenShot": [
-                        "abc"
-                    ]
+                    "CompareLibType": "权威库",
+                    "Comparemsg": "成功",
+                    "Comparestatus": 0,
+                    "Errcode": 0,
+                    "Errmsg": "成功",
+                    "Idcard": "11204416541220243X",
+                    "IsNeedCharge": true,
+                    "Livemsg": "成功",
+                    "LivenessMode": 1,
+                    "Livestatus": 0,
+                    "Name": "韦小宝",
+                    "ReqTime": "1730444265275",
+                    "Seq": "1f330eea-f5db-4726-a7b4-38cdf1aefb02",
+                    "Sim": "95.51"
                 }
-            ]
-        },
-        "IntentionQuestionResult": {
-            "FinalResultDetailCode": 0,
-            "FinalResultMessage": "abc",
-            "AsrResult": [
-                "同意"
             ],
-            "ResultCode": [
-                "0"
-            ],
-            "Audios": [
-                "base64"
-            ],
-            "Video": "base64",
-            "ScreenShot": [
-                "base64"
-            ],
-            "FinalResultCode": "0"
-        },
-        "BestFrame": {
-            "BestFrame": "base64",
-            "BestFrames": [
-                "base64"
-            ]
+            "LivenessInfoTag": null,
+            "LivenessMode": 1,
+            "Location": null,
+            "Mobile": "",
+            "NFCBillingCounts": 0,
+            "NFCRequestIds": [],
+            "Name": "韦小宝",
+            "OcrAddress": null,
+            "OcrAuthority": null,
+            "OcrBirth": null,
+            "OcrGender": null,
+            "OcrIdCard": "",
+            "OcrName": "",
+            "OcrNation": null,
+            "OcrValidDate": null,
+            "PassNo": null,
+            "Sim": "95.51",
+            "UseIDType": 0,
+            "VisaNum": null
         },
         "VideoData": {
-            "LivenessVideo": "base64"
+            "LivenessVideo": "AAAAGGZ0eX...VyYWxidW0h"
+        }
+    }
+}
+```
+
+**Example 2: 获取结果信息失败示例**
+
+
+
+Input: 
+
+```
+tccli faceid GetDetectInfoEnhanced --cli-unfold-argument  \
+    --InfoType 2 \
+    --BizToken 4237FAC9-1AE4-4954-B495-FB07D91141CA \
+    --RuleId 0
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Error": {
+            "Code": "InvalidParameter",
+            "Message": "非法BizToken。"
         },
-        "Encryption": {
-            "Iv": "iv",
-            "EncryptList": [
-                "Response.Text.Name"
-            ],
-            "CiphertextBlob": "CiphertextBlob"
-        },
-        "EncryptedBody": "abc",
-        "RequestId": "f52bac9a-0aee-4fe6-8d34-7de4bce89473"
+        "RequestId": "0832c071-0c3e-4a1f-b7d3-4910221a1e18"
     }
 }
 ```

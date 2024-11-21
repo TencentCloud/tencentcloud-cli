@@ -18,6 +18,7 @@ Output:
         "Count": 5,
         "MaterialInfos": [
             {
+                "AuditResult": "审核成功",
                 "CreateTime": "2022-11-29 18:46:34",
                 "MaterialFaceList": [
                     {
@@ -36,6 +37,7 @@ Output:
                 "UpdateTime": "2022-11-29 18:46:34"
             },
             {
+                "AuditResult": "审核成功",
                 "CreateTime": "2022-12-15 14:19:51",
                 "MaterialFaceList": [
                     {
@@ -54,6 +56,7 @@ Output:
                 "UpdateTime": "2022-12-15 14:19:51"
             },
             {
+                "AuditResult": "审核成功",
                 "CreateTime": "2022-11-10 10:28:10",
                 "MaterialFaceList": [
                     {
@@ -72,6 +75,7 @@ Output:
                 "UpdateTime": "2022-12-07 17:10:54"
             },
             {
+                "AuditResult": "审核成功",
                 "CreateTime": "2022-12-07 16:13:41",
                 "MaterialFaceList": [
                     {
@@ -90,6 +94,7 @@ Output:
                 "UpdateTime": "2022-12-07 16:13:52"
             },
             {
+                "AuditResult": "审核成功",
                 "CreateTime": "2022-12-15 14:20:21",
                 "MaterialFaceList": [
                     {

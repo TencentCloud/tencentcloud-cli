@@ -43,7 +43,7 @@ Output:
                 "SyncMessage": "",
                 "SyncSolution": "",
                 "SyncStatus": "success",
-                "Url": "https://public.xxx.aws/xxxxxxxx"
+                "Url": "https://public.aws"
             }
         ]
     }

@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli ocr MLIDPassportOCR --cli-unfold-argument  \
-    --ImageBase64 base64编码
+    --ImageBase64 https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/card/MLIDPassportOCR/MLIDPassportOCR1.png
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "AdvancedInfo": "{\"IssuingCountry\":{\"Confidence\":\"0.9500\"},\"Name\":{\"Confidence\":\"0.9500\"},\"ID\":{\"Confidence\":\"0.9500\"},\"Nationality\":{\"Confidence\":\"0.9500\"},\"DateOfBirth\":{\"Confidence\":\"0.9500\"},\"Sex\":{\"Confidence\":\"0.9500\"},\"DateOfExpiration\":{\"Confidence\":\"0.9500\"},\"Surname\":{\"Confidence\":\"0.9500\"},\"GivenName\":{\"Confidence\":\"0.9500\"},\"CodeSet\":{\"Confidence\":\"0.9995\"},\"CodeCrc\":{\"Confidence\":\"0.9997\"}}",
+        "AdvancedInfo": "{\"GivenName\":{\"Confidence\":\"1.0000\"},\"IssuingCountry\":{\"Confidence\":\"1.0000\"},\"Name\":{\"Confidence\":\"1.0000\"},\"Surname\":{\"Confidence\":\"1.0000\"},\"Type\":{\"Confidence\":\"1.0000\"},\"CodeSet\":{\"Confidence\":\"1.0000\"},\"CodeCrc\":{\"Confidence\":\"0.9995\"},\"Nationality\":{\"Confidence\":\"0.9995\"},\"ID\":{\"Confidence\":\"0.9995\"},\"Sex\":{\"Confidence\":\"0.9995\"},\"DateOfBirth\":{\"Confidence\":\"0.9995\"},\"DateOfExpiration\":{\"Confidence\":\"0.9995\"},\"PassportRecognizeInfos\":{\"IssuingCountry\":{\"Confidence\":\"1.0000\"},\"Type\":{\"Confidence\":\"0.9995\"},\"PassportID\":{\"Confidence\":\"0.9961\"},\"Surname\":{\"Confidence\":\"1.0000\"},\"GivenName\":{\"Confidence\":\"1.0000\"},\"Nationality\":{\"Confidence\":\"1.0000\"},\"DateOfBirth\":{\"Confidence\":\"1.0000\"},\"Sex\":{\"Confidence\":\"1.0000\"},\"DateOfIssuance\":{\"Confidence\":\"0.9997\"},\"DateOfExpiration\":{\"Confidence\":\"1.0000\"}}}",
         "CodeCrc": "4567123452USA9004117F2107268713843748<708026",
         "CodeSet": "P<USACARTER<<ESTHER<<<<<<<<<<<<<<<<<<<<<<<<<",
         "DateOfBirth": "19900411",
@@ -24,25 +24,32 @@ Output:
         "IssuingCountry": "USA",
         "Name": "CARTER ESTHER",
         "Nationality": "USA",
-        "RequestId": "9c42cdcf-53df-445d-b45b-ea3eaaf2bb70",
+        "PassportRecognizeInfos": {
+            "DateOfBirth": "11 Apr 1990",
+            "DateOfExpiration": "26 Jul 2021",
+            "DateOfIssuance": "27 Jul 2011",
+            "GivenName": "ESTHER",
+            "IssuePlace": "",
+            "IssuingAuthority": "",
+            "IssuingCountry": "USA",
+            "Name": "",
+            "Nationality": "UNITED STATES OF AMERICA",
+            "PassportID": "456712345",
+            "Sex": "F",
+            "Signature": "",
+            "Surname": "CARTER",
+            "Type": "P"
+        },
+        "RequestId": "dad946b2-1288-4df9-a0b4-6abfaba1e170",
         "Sex": "F",
         "Surname": "CARTER",
-        "Type": "abc",
-        "PassportRecognizeInfos": {
-            "Type": "abc",
-            "IssuingCountry": "abc",
-            "PassportID": "abc",
-            "Surname": "abc",
-            "GivenName": "abc",
-            "Name": "abc",
-            "Nationality": "abc",
-            "DateOfBirth": "abc",
-            "Sex": "abc",
-            "DateOfIssuance": "abc",
-            "DateOfExpiration": "abc"
-        },
+        "Type": "P",
         "Warn": [
+            -9108,
             -9102
+        ],
+        "WarnCardInfos": [
+            -9109
         ]
     }
 }

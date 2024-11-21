@@ -20,12 +20,17 @@ Output:
             "ProductCode": "85tfp1sn78r9m1568i",
             "Name": "demo5",
             "Specification": "100ml",
-            "Remark": "",
-            "Logo": [],
+            "Remark": "desc",
+            "Logo": [
+                "https://xxx.xxx.com/logo.png"
+            ],
             "CreateTime": "2021-11-30T09:00:33.000Z",
-            "UpdateTime": "2021-12-07T02:14:37.000Z",
-            "Ext": {},
-            "MerchantName": "demo"
+            "UpdateTime": "2021-11-30T09:16:23.000Z",
+            "Ext": {
+                "Value": "xxx"
+            },
+            "MerchantName": "demo",
+            "CertState": 1
         },
         "RequestId": "06356857-6961-4b9d-bf1e-df5e0311358e"
     }

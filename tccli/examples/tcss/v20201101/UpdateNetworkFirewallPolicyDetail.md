@@ -7,15 +7,13 @@ Input:
 ```
 tccli tcss UpdateNetworkFirewallPolicyDetail --cli-unfold-argument  \
     --Id 22 \
-    --CustomPolicy.0.Peer xx \
-    --CustomPolicy.0.Direction xx \
-    --CustomPolicy.0.Ports xx \
-    --Description xx \
-    --ClusterId xx \
+    --CustomPolicy.0.Direction FROM \
+    --Description  \
+    --ClusterId cls-sdfdsf \
     --FromPolicyRule 0 \
-    --Namespace xx \
+    --Namespace default \
     --ToPolicyRule 0 \
-    --PodSelector xx
+    --PodSelector a=b
 ```
 
 Output: 

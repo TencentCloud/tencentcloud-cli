@@ -6,17 +6,17 @@ Input:
 
 ```
 tccli kms PostQuantumCryptoEncrypt --cli-unfold-argument  \
-    --KeyId abc \
-    --PlainText abc
+    --KeyId 23e80852-1e38-11e9-b129-5cb9019b4b01 \
+    --PlainText dGVzdAo=
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "CiphertextBlob": "abc",
-        "KeyId": "abc",
-        "RequestId": "abc"
+        "CiphertextBlob": "ZHNhZHNpbzEyMW5uaz1qb2lqMm***********TIxbWExcwo=",
+        "KeyId": "23e80852-1e38-11e9-b129-5cb9019b4b01",
+        "RequestId": "403150d4-1736-4e61-9259-d70bb7799620"
     }
 }
 ```

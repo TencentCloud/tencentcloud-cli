@@ -8,7 +8,9 @@ Input:
 tccli trp CreateMerchant --cli-unfold-argument  \
     --Name demo \
     --Remark demoss \
-    --CorpId 10000
+    --CorpId 10000 \
+    --CodeType 1 \
+    --CodeUrl https://xxx.xxx.com
 ```
 
 Output: 

@@ -32,8 +32,8 @@ Output:
                 "Status": 1,
                 "StartTime": "2020-08-28 15:40:23",
                 "EndTime": "2021-08-28 15:40:23",
-                "HostName": "",
-                "HostIp": "",
+                "HostName": "hn***",
+                "HostIp": "10.0.1.92",
                 "RiskCount": 0
             }
         ],

@@ -36,6 +36,8 @@ Output:
                 "KmsKeyId": "abc",
                 "AppId": 0,
                 "BandwidthLimit": 0,
+                "AutoSnapshotPolicyId": "abc",
+                "SnapStatus": "abc",
                 "Capacity": 1,
                 "Tags": [
                     {
@@ -46,6 +48,11 @@ Output:
                 "TieringState": "abc",
                 "TieringDetail": {
                     "TieringSizeInBytes": 0
+                },
+                "AutoScaleUpRule": {
+                    "Status": "abc",
+                    "ScaleThreshold": 1,
+                    "TargetThreshold": 1
                 }
             }
         ],

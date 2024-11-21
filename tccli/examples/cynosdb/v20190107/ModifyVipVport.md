@@ -6,17 +6,17 @@ Input:
 
 ```
 tccli cynosdb ModifyVipVport --cli-unfold-argument  \
-    --ClusterId xxx \
-    --InstanceGrpId xxx \
-    --Vip xx.xx.xx.xx
+    --ClusterId cynosdbmysql-mwg7121e \
+    --InstanceGrpId cynosdbmysql-grp-o48ssqs5 \
+    --Vip 172.1.1.1
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "128046",
-        "FlowId": "123"
+        "RequestId": "a5706353-296a-4992-ad07-ac4a48eeba43",
+        "FlowId": 134983
     }
 }
 ```

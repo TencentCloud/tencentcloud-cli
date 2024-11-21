@@ -6,22 +6,22 @@ Input:
 
 ```
 tccli tcss DescribeReverseShellWhiteListDetail --cli-unfold-argument  \
-    --WhiteListId xxx
+    --WhiteListId 3hg7edh873hf
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx",
+        "RequestId": "6281f7822403e60601d1dba6",
         "WhiteListDetailInfo": {
             "ImageIds": [
-                "xx"
+                "sha256:80beff5ff34259ceb7fbe9cd10b2d94912618f5b5595f234349c5bb0cd4f9211"
             ],
-            "ProcessName": "xx",
-            "DstIp": "xx",
-            "Id": "xx",
-            "DstPort": "xx"
+            "ProcessName": "/bin/apitest",
+            "DstIp": "1.1.1.1",
+            "Id": "3hg7edh873hf",
+            "DstPort": "1222"
         }
     }
 }

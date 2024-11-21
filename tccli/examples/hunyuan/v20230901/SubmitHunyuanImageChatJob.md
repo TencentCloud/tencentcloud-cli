@@ -6,15 +6,15 @@ Input:
 
 ```
 tccli hunyuan SubmitHunyuanImageChatJob --cli-unfold-argument  \
-    --Prompt 雪山
+    --Prompt 请画一个苹果在桌子上
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "JobId": "test",
-        "RequestId": "9723dd95-d217-46ff-a556-2cc760142737"
+        "JobId": "1253534368-1731657099-7276788a-a326-11ef-beeb-525400bba60c-0",
+        "RequestId": "7276788a-a326-11ef-beeb-525400bba60c"
     }
 }
 ```

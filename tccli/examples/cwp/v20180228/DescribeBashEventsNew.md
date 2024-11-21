@@ -31,10 +31,18 @@ Output:
                 "MachineName": "v_llzlu恶意请求",
                 "DetectBy": 0,
                 "Pid": "0",
-                "Exe": "",
+                "Exe": "/bin/sshd",
                 "ModifyTime": "0001-01-01 00:00:00",
                 "RegexBashCmd": "\\./r3hook_tool moc -var www\\.test123\\.com",
                 "MachineType": 0,
+                "MachineExtraInfo": {
+                    "WanIP": "146.56.21****",
+                    "PrivateIP": "10.206****",
+                    "NetworkType": 0,
+                    "NetworkName": "vpc-3gov****",
+                    "InstanceID": "ins-bask****",
+                    "HostName": "demo_****"
+                },
                 "RuleCategory": 0
             }
         ],

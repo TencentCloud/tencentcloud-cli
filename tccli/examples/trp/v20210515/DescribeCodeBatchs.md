@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli trp DescribeCodeBatchs --cli-unfold-argument  \
-    --MerchantId eqdmnz7020bmtvi9 \
+    --MerchantId pn30msjjxwga \
     --ProductId  \
-    --Keyword 20121212000001 \
+    --Keyword  \
     --PageSize 10 \
     --PageNumber 1
 ```
@@ -19,33 +19,33 @@ Output:
     "Response": {
         "CodeBatchs": [
             {
-                "BatchId": "abc",
-                "CorpId": 0,
-                "BatchCode": "abc",
-                "CodeCnt": 0,
-                "MerchantId": "abc",
-                "ProductId": "abc",
-                "BatchType": 0,
-                "Remark": "abc",
-                "MpTpl": "abc",
-                "Status": 0,
-                "CreateTime": "abc",
-                "UpdateTime": "abc",
-                "MerchantName": "abc",
-                "ProductName": "abc",
+                "BatchId": "20241022112952826",
+                "CorpId": 10000,
+                "BatchCode": "20241022112952826",
+                "CodeCnt": 250,
+                "MerchantId": "pn30msjjxwga",
+                "ProductId": "97zu51y30awe",
+                "BatchType": 1,
+                "Remark": "优质产品批次",
+                "MpTpl": "base",
+                "Status": 1,
+                "CreateTime": "2023-10-01T11:30:50.321Z",
+                "UpdateTime": "2023-10-05T15:50:45.212Z",
+                "MerchantName": "优品商贸",
+                "ProductName": "高档家用电器",
                 "Ext": {},
-                "TplName": "abc",
+                "TplName": "默认",
                 "Job": {
-                    "JobId": 0,
-                    "Status": "abc"
+                    "JobId": 7520,
+                    "Status": "完成"
                 },
-                "ProductionDate": "abc",
-                "ValidDate": "abc",
+                "ProductionDate": "2023-09-30T00:00:00.000Z",
+                "ValidDate": "2023-12-31T00:00:00.000Z",
                 "Attrs": []
             }
         ],
-        "TotalCount": 0,
-        "RequestId": "abc"
+        "TotalCount": 1,
+        "RequestId": "f01dbe8b-09ad-4d75-bbde-30cf67c1f4b7"
     }
 }
 ```

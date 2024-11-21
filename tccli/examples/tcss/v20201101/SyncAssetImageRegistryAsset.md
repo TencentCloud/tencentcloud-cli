@@ -5,7 +5,10 @@
 Input: 
 
 ```
-tccli tcss SyncAssetImageRegistryAsset --cli-unfold-argument ```
+tccli tcss SyncAssetImageRegistryAsset --cli-unfold-argument  \
+    --All False \
+    --RegistryIds 29115
+```
 
 Output: 
 ```

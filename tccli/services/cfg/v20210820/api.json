@@ -2530,6 +2530,7 @@
           "example": "1",
           "member": "int64",
           "name": "TaskGroupActionId",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -2540,6 +2541,7 @@
           "example": "无",
           "member": "TaskGroupInstance",
           "name": "TaskGroupInstances",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -2550,6 +2552,7 @@
           "example": "1",
           "member": "int64",
           "name": "ActionId",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -2560,6 +2563,7 @@
           "example": "1",
           "member": "int64",
           "name": "TaskGroupActionOrder",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -2570,6 +2574,7 @@
           "example": "{}",
           "member": "string",
           "name": "TaskGroupActionGeneralConfiguration",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -2580,6 +2585,7 @@
           "example": "{}",
           "member": "string",
           "name": "TaskGroupActionCustomConfiguration",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -2590,6 +2596,7 @@
           "example": "1",
           "member": "int64",
           "name": "TaskGroupActionStatus",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -2600,6 +2607,7 @@
           "example": "\"2021-08-17 20:05:04\"",
           "member": "string",
           "name": "TaskGroupActionCreateTime",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -2610,6 +2618,7 @@
           "example": "\"2021-08-17 20:05:04\"",
           "member": "string",
           "name": "TaskGroupActionUpdateTime",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -2620,6 +2629,7 @@
           "example": "关机",
           "member": "string",
           "name": "ActionTitle",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -2630,6 +2640,7 @@
           "example": "0",
           "member": "int64",
           "name": "TaskGroupActionStatusType",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -2640,6 +2651,7 @@
           "example": "123456",
           "member": "int64",
           "name": "TaskGroupActionRandomId",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": true
@@ -2650,6 +2662,7 @@
           "example": "123456",
           "member": "int64",
           "name": "TaskGroupActionRecoverId",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": true
@@ -2660,6 +2673,7 @@
           "example": "123456",
           "member": "int64",
           "name": "TaskGroupActionExecuteId",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": true
@@ -2670,6 +2684,7 @@
           "example": "0",
           "member": "int64",
           "name": "ActionApiType",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -2680,6 +2695,7 @@
           "example": "1",
           "member": "int64",
           "name": "ActionAttribute",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -2690,6 +2706,7 @@
           "example": "平台",
           "member": "string",
           "name": "ActionType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -2700,6 +2717,7 @@
           "example": "true",
           "member": "bool",
           "name": "IsExecuteRedo",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": true
@@ -2710,6 +2728,7 @@
           "example": "高风险",
           "member": "string",
           "name": "ActionRisk",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -2720,9 +2739,21 @@
           "example": "10",
           "member": "int64",
           "name": "TaskGroupActionExecuteTime",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "动作开始执行时间",
+          "example": "\"2021-08-17 20:05:04\"",
+          "member": "string",
+          "name": "TaskGroupActionStartTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

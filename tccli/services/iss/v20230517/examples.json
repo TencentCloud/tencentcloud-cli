@@ -124,20 +124,6 @@
         "title": "成功"
       }
     ],
-    "CheckDomain": [
-      {
-        "document": " ",
-        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckDomain\n<公共请求参数>\n\n{\n    \"PlayDomain\": \"testdomain.cn\",\n    \"InternalDomain\": \"*******************************.play-ivc.ap-shanghai.tencentivc.cn\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": true,\n        \"RequestId\": \"e565e8fe-127c-442c-8912-55b0e11d8ab4\"\n    }\n}",
-        "title": "成功"
-      },
-      {
-        "document": "域名存在",
-        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckDomain\n<公共请求参数>\n\n{\n    \"PlayDomain\": \"testdomain.cn\",\n    \"InternalDomain\": \"****************************.play-ivc.ap-shanghai.tencentivc.cn\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue.DomainRepeat\",\n            \"Message\": \"该域名已存在\"\n        },\n        \"RequestId\": \"9e9b6808-0941-41e9-95eb-5a9a827ca4de\"\n    }\n}",
-        "title": "错误"
-      }
-    ],
     "ControlDevicePTZ": [
       {
         "document": " ",

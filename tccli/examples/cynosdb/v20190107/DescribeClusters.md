@@ -21,18 +21,18 @@ Output:
         "ClusterSet": [
             {
                 "Ability": {
-                    "IsSupportManualSnapshot": "",
+                    "IsSupportManualSnapshot": "no",
                     "IsSupportRo": "yes",
                     "IsSupportSlaveZone": "yes",
-                    "IsSupportTransparentDataEncryption": "",
-                    "NoSupportTransparentDataEncryptionReason": "",
-                    "NonsupportRoReason": "",
-                    "NonsupportSlaveZoneReason": ""
+                    "IsSupportTransparentDataEncryption": "no",
+                    "NoSupportTransparentDataEncryptionReason": "current cluster not support transparent data encryption",
+                    "NonsupportRoReason": "yes",
+                    "NonsupportSlaveZoneReason": "current cluster not support ro"
                 },
-                "AppId": 123,
-                "BusinessType": "",
-                "ClusterId": "cynosdbmysql-aaa",
-                "ClusterName": "resource-xxl-job-intl",
+                "AppId": 2372636427,
+                "BusinessType": "bus_a",
+                "ClusterId": "cynosdbmysql-cbsg6tsg",
+                "ClusterName": "MyClusterName",
                 "CreateTime": "2024-05-30 19:26:42",
                 "CynosVersion": "2.1.12",
                 "DbMode": "NORMAL",
@@ -46,54 +46,47 @@ Output:
                 "MinStorageSize": 10,
                 "NetAddrs": [
                     {
-                        "Description": "",
-                        "InstanceGroupId": "",
+                        "Description": "descirption",
+                        "InstanceGroupId": "cynosdbpg-grp-sbh6ywhs",
                         "NetType": "singleRo",
-                        "UniqSubnetId": "subnet-xx",
-                        "UniqVpcId": "vpc-xx",
+                        "UniqSubnetId": "subnet-cnhsb8iu",
+                        "UniqVpcId": "vpc-iskx6ygc",
                         "Vip": "1.1.1.1",
                         "Vport": 3306,
-                        "WanDomain": "",
-                        "WanIP": "",
-                        "WanPort": 0,
+                        "WanDomain": "cynosdbpg-bzbsxrmt.wan.domain.com",
+                        "WanIP": "3.45.1.9",
+                        "WanPort": 3306,
                         "WanStatus": "init"
                     },
                     {
-                        "Description": "",
-                        "InstanceGroupId": "",
+                        "Description": "descirption",
+                        "InstanceGroupId": "cynosdbpg-grp-bc2b3us4",
                         "NetType": "ha",
-                        "UniqSubnetId": "subnet-xx",
-                        "UniqVpcId": "vpc-xx",
+                        "UniqSubnetId": "subnet-7shw8ijc",
+                        "UniqVpcId": "vpc-y7us28sn",
                         "Vip": "1.1.1.1",
                         "Vport": 3306,
-                        "WanDomain": "",
-                        "WanIP": "",
-                        "WanPort": 0,
+                        "WanDomain": "cynosdbpg-bzkxxrmt.wan.domain.com",
+                        "WanIP": "3.23.1.5",
+                        "WanPort": 3306,
                         "WanStatus": "init"
-                    },
-                    {
-                        "Description": "",
-                        "InstanceGroupId": "",
-                        "NetType": "proxy",
-                        "UniqSubnetId": "subnet-xx",
-                        "UniqVpcId": "vpc-xx",
-                        "Vip": "1.1.1.1",
-                        "Vport": 3306,
-                        "WanDomain": "",
-                        "WanIP": "",
-                        "WanPort": 0,
-                        "WanStatus": ""
                     }
                 ],
-                "OrderSource": "",
+                "OrderSource": "lhdb",
                 "PayMode": 1,
                 "PeriodEndTime": "2024-06-30 19:32:51",
                 "PhysicalZone": "ap-singapore-3",
-                "ProcessingTask": "",
-                "ProjectID": 0,
+                "ProcessingTask": "taskUpgradeStorage",
+                "ProjectID": 23,
                 "Region": "ap-singapore",
                 "RenewFlag": 1,
-                "ResourcePackages": [],
+                "ResourcePackages": [
+                    {
+                        "DeductionPriority": 0,
+                        "PackageId": "package-nxuyx1op",
+                        "PackageType": "CCU"
+                    }
+                ],
                 "ResourceTags": [
                     {
                         "TagKey": "运营产品",
@@ -112,22 +105,30 @@ Output:
                         "TagValue": "[license管理][license数据引擎]123"
                     }
                 ],
-                "ServerlessStatus": "",
+                "ServerlessStatus": "paused",
                 "SlaveZones": [
                     "ap-singapore-4"
                 ],
                 "Status": "running",
                 "StatusDesc": "运行中",
                 "Storage": 0,
-                "StorageId": "",
+                "StorageId": "cynosdbpg-bcsu6tsg",
                 "StorageLimit": 30000,
                 "StoragePayMode": 0,
-                "SubnetId": "subnet-xx",
-                "Tasks": [],
-                "Uin": "1234",
+                "SubnetId": "subnet-ybs8jcnw",
+                "Tasks": [
+                    {
+                        "ObjectId": "cynosdbmysql-k5sm8sh3",
+                        "ObjectType": "taskObjTypeCluster",
+                        "TaskId": 1207003,
+                        "TaskStatus": "processing",
+                        "TaskType": "taskDtsLockResource"
+                    }
+                ],
+                "Uin": "237462834",
                 "UpdateTime": "2024-05-30 19:43:06",
                 "Vip": "1.1.1.1",
-                "VpcId": "vpc-xx",
+                "VpcId": "vpc-ybs8ue2y",
                 "Vport": 3306,
                 "Zone": "ap-singapore-3"
             }

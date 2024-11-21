@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli trp DescribeProducts --cli-unfold-argument  \
-    --Name  \
-    --MerchantId  \
+    --Name 商品名称 \
+    --MerchantId 商户ID \
     --PageSize 10 \
     --PageNumber 1 \
-    --CertState -1
+    --CertState 1
 ```
 
 Output: 
@@ -27,32 +27,19 @@ Output:
                 "Specification": "100ml",
                 "Remark": "desc",
                 "Logo": [
-                    "url1"
+                    "https://xxx.xxx.com/logo.png"
                 ],
                 "CreateTime": "2021-11-30T09:00:33.000Z",
                 "UpdateTime": "2021-11-30T09:16:23.000Z",
-                "Ext": {},
+                "Ext": {
+                    "Value": "xxx"
+                },
                 "MerchantName": "demo",
-                "CertState": -1
-            },
-            {
-                "ProductId": "4girpwhw677zdo9c6t",
-                "CorpId": 10000,
-                "MerchantId": "0",
-                "ProductCode": "4girpwhw677zdo9c6t",
-                "Name": "demo",
-                "Specification": "",
-                "Remark": "",
-                "Logo": [],
-                "CreateTime": "2021-11-30T08:50:48.000Z",
-                "UpdateTime": "2021-11-30T08:51:11.000Z",
-                "Ext": {},
-                "MerchantName": "",
-                "CertState": -1
+                "CertState": 1
             }
         ],
-        "TotalCount": 2,
-        "RequestId": "fe9462f4-bded-4b52-a84a-27cf6b2b46b4"
+        "TotalCount": 1,
+        "RequestId": "eaa3ccac-d2f5-4df0-a8b3-7b51324e9283"
     }
 }
 ```

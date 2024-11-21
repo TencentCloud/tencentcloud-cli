@@ -14,22 +14,27 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 0,
+        "TotalCount": 1,
         "List": [
             {
-                "HostName": "abc",
-                "HostIP": "abc",
-                "HostID": "abc",
-                "Status": "abc",
-                "PublicIP": "abc",
-                "CreateTime": "abc",
-                "ModifyTime": "abc",
-                "NodeType": "abc",
-                "NodeSubNetName": "abc",
-                "NodeSubNetCIDR": "abc"
+                "CreateTime": "2023-08-17 15:41:32",
+                "HostID": "8bc803fd-d85d-47b8-9e2b-9644674be677",
+                "HostIP": "1.1.1.1",
+                "HostName": "tcs-test",
+                "ModifyTime": "2024-10-30 14:00:21",
+                "NodeID": "ins-8bc803fd",
+                "NodeSubNetCIDR": "",
+                "NodeSubNetID": "",
+                "NodeSubNetName": "",
+                "NodeType": "NORMAL",
+                "NodeUniqueID": "",
+                "PodIP": "",
+                "PodName": "",
+                "PublicIP": "1.1.1.1",
+                "Status": "SUCCESS"
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "8bc803fd-d85d-47b8-9e2b-9644674be677"
     }
 }
 ```

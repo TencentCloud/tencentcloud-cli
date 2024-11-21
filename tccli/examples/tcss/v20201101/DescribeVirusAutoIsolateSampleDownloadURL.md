@@ -13,8 +13,8 @@ Output:
 ```
 {
     "Response": {
-        "FileUrl": "xx",
-        "RequestId": "xx"
+        "FileUrl": "",
+        "RequestId": "56726fc5-1a50-46ba-ba2a-eb5f7aff4cd3"
     }
 }
 ```

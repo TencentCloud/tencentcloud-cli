@@ -91,7 +91,7 @@
           "example": "true",
           "member": "string",
           "name": "Success",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -101,7 +101,7 @@
           "example": "7c0b5ac4-47a6-448b-b486-18d9774e3264",
           "member": "string",
           "name": "FlowId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -111,7 +111,7 @@
           "example": "无",
           "member": "string",
           "name": "Info",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },

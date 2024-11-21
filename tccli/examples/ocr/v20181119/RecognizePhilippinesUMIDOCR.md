@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli ocr RecognizePhilippinesUMIDOCR --cli-unfold-argument  \
-    --ImageBase64 abc \
-    --ImageUrl abc \
+    --ImageBase64 /9j/4AAQSkZJRg.....s97n//2Q== \
+    --ImageUrl  \
     --ReturnHeadImage True
 ```
 
@@ -18,147 +18,146 @@ Output:
         "Address": {
             "Polygon": [
                 {
-                    "X": 29,
-                    "Y": 98
+                    "X": 299,
+                    "Y": 948
                 },
                 {
-                    "X": 67,
-                    "Y": 98
+                    "X": 653,
+                    "Y": 948
                 },
                 {
-                    "X": 67,
-                    "Y": 103
+                    "X": 654,
+                    "Y": 1007
                 },
                 {
-                    "X": 24,
-                    "Y": 102
+                    "X": 299,
+                    "Y": 1000
                 }
             ],
-            "Value": "19 MOLAVE ST. ROSA-ROSARIOH PHL 4023"
+            "Value": "19 MOLAVE *** LAGUNA PHL ****"
         },
         "Birthday": {
             "Polygon": [
                 {
-                    "X": 41,
-                    "Y": 14
+                    "X": 443,
+                    "Y": 915
                 },
                 {
-                    "X": 91,
-                    "Y": 14
+                    "X": 586,
+                    "Y": 917
                 },
                 {
-                    "X": 52,
-                    "Y": 98
+                    "X": 587,
+                    "Y": 938
                 },
                 {
-                    "X": 41,
-                    "Y": 98
+                    "X": 442,
+                    "Y": 937
                 }
             ],
-            "Value": "1996/06/20"
+            "Value": "1996/03/26"
         },
         "CRN": {
             "Polygon": [
                 {
-                    "X": 449,
-                    "Y": 73
+                    "X": 446,
+                    "Y": 733
                 },
                 {
-                    "X": 653,
-                    "Y": 73
+                    "X": 649,
+                    "Y": 734
                 },
                 {
-                    "X": 65,
-                    "Y": 754
+                    "X": 649,
+                    "Y": 755
                 },
                 {
-                    "X": 44,
+                    "X": 446,
                     "Y": 754
                 }
             ],
-            "Value": "CRN-8884732-0"
+            "Value": "CRN-***-888***-0"
         },
         "GivenName": {
             "Polygon": [
                 {
-                    "X": 26,
-                    "Y": 81
+                    "X": 295,
+                    "Y": 832
                 },
                 {
-                    "X": 41,
-                    "Y": 83
+                    "X": 486,
+                    "Y": 833
                 },
                 {
-                    "X": 41,
-                    "Y": 84
+                    "X": 486,
+                    "Y": 855
                 },
                 {
-                    "X": 26,
-                    "Y": 83
+                    "X": 295,
+                    "Y": 854
                 }
             ],
-            "Value": "ARMAINE"
+            "Value": "ARMAI***YCE"
         },
         "HeadPortrait": {
             "Polygon": [
                 {
                     "X": 16,
-                    "Y": 73
+                    "Y": 731
                 },
                 {
-                    "X": 23,
-                    "Y": 73
+                    "X": 233,
+                    "Y": 731
                 },
                 {
-                    "X": 23,
-                    "Y": 10
+                    "X": 233,
+                    "Y": 1006
                 },
                 {
-                    "X": 1,
-                    "Y": 10
+                    "X": 16,
+                    "Y": 1006
                 }
             ],
-            "Value": "/9j/4AAQSkZp6nI6XG5Dg+oFVdzf32/76oorpSV2Zn//2Q=="
+            "Value": "/9j/4AAQSkZJRg.....s97n//2Q=="
         },
         "MiddleName": {
             "Polygon": [
                 {
-                    "X": 29,
-                    "Y": 89
+                    "X": 296,
+                    "Y": 895
                 },
                 {
-                    "X": 39,
-                    "Y": 89
+                    "X": 400,
+                    "Y": 894
                 },
                 {
-                    "X": 39,
-                    "Y": 91
+                    "X": 401,
+                    "Y": 915
                 },
                 {
-                    "X": 29,
-                    "Y": 91
+                    "X": 296,
+                    "Y": 916
                 }
             ],
-            "Value": "IEGA"
+            "Value": "ZU**EGA"
         },
-        "RequestId": "6790280d-02e8-4bf2-8aa6-9e95c1a5ef97",
         "Sex": {
             "Polygon": [
                 {
-                    "X": 35,
-                    "Y": 95
+                    "X": 324,
+                    "Y": 915
                 },
                 {
-                    "X": 42,
-                    "Y": 15
+                    "X": 341,
+                    "Y": 915
                 },
                 {
                     "X": 342,
-                    "Y": 96
+                    "Y": 936
                 },
                 {
-                    "X": 25,
-                    "Y": 96
+                    "X": 322,
+                    "Y": 935
                 }
             ],
             "Value": "F"
@@ -166,24 +165,25 @@ Output:
         "Surname": {
             "Polygon": [
                 {
-                    "X": 25,
-                    "Y": 74
+                    "X": 292,
+                    "Y": 793
                 },
                 {
-                    "X": 44,
-                    "Y": 74
+                    "X": 415,
+                    "Y": 793
                 },
                 {
-                    "X": 44,
-                    "Y": 84
+                    "X": 415,
+                    "Y": 814
                 },
                 {
-                    "X": 25,
-                    "Y": 84
+                    "X": 292,
+                    "Y": 815
                 }
             ],
-            "Value": "SINO"
-        }
+            "Value": "SAL**INO"
+        },
+        "RequestId": "61d6eff2-418e-4864-b1cf-af0b91c53efb"
     }
 }
 ```

@@ -1,12 +1,12 @@
-**Example 1: 港澳台居住证识别示例代码1**
+**Example 1: HmtResidentPermitOCR调用**
 
-港澳台居住证识别示例代码1
+
 
 Input: 
 
 ```
 tccli ocr HmtResidentPermitOCR --cli-unfold-argument  \
-    --ImageUrl https://xx/a.jpg \
+    --ImageUrl https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/card/HmtResidentPermitOCR/HmtResidentPermitOCR2.png \
     --CardSide FRONT
 ```
 
@@ -14,47 +14,26 @@ Output:
 ```
 {
     "Response": {
-        "Name": "李优优",
-        "Sex": "女",
-        "Birth": "1997/6/2",
-        "Address": "上海市徐汇区古美路1528号A1栋腾讯优图1号",
-        "IdCardNo": "830000199706020042",
-        "CardType": 0,
-        "ValidDate": "",
+        "Address": "合肥市高新区望江西路800号腾讯优图D7栋6号",
         "Authority": "",
-        "VisaNum": "0",
-        "PassNo": "000",
-        "RequestId": "f72e7048-f1e0-42f3-b0bf-f8730d48bb5c"
-    }
-}
-```
-
-**Example 2: 港澳台居住证识别示例代码2**
-
-港澳台居住证识别示例代码2
-
-Input: 
-
-```
-tccli ocr HmtResidentPermitOCR --cli-unfold-argument  \
-    --ImageUrl https://xx/a.jpg
-```
-
-Output: 
-```
-{
-    "Response": {
-        "Name": "",
-        "Sex": "",
-        "Birth": "",
-        "Address": "",
-        "IdCardNo": "",
-        "CardType": 1,
-        "ValidDate": "2018.09.06-2023.09.06",
-        "Authority": "合肥市公安局高新分局",
-        "VisaNum": "0",
-        "PassNo": "000",
-        "RequestId": "182abb0c-b0bd-403a-ab11-3dba21ae89d0"
+        "Birth": "1985/2/1",
+        "CardType": 0,
+        "IdCardNo": "820000198502010022",
+        "Name": "蓝图图",
+        "PassNo": "",
+        "PortraitImageInfo": {
+            "ImageCoordinates": {
+                "X": 0,
+                "Y": 0,
+                "Width": 0,
+                "Height": 0
+            },
+            "PortraitImage": ""
+        },
+        "RequestId": "4685e626-f6ea-4ad8-a099-13933ea4bca9",
+        "Sex": "女",
+        "ValidDate": "",
+        "VisaNum": "0"
     }
 }
 ```

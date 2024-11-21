@@ -14,20 +14,20 @@ Output:
 ```
 {
     "Response": {
-        "Status": "xx",
-        "IgnoreVulCount": 0,
-        "LocalImageScanCount": 1,
-        "ScanEndTime": "xx",
-        "ScanProgress": 0.0,
-        "ScanStartTime": "xx",
-        "RegistryImageScanCount": 1,
-        "RegistryTaskID": 0,
-        "RemainingTime": 0.0,
-        "RegistryFoundVulCount": 0,
-        "RequestId": "xx",
-        "LocalTaskID": 0,
         "FoundRiskImageCount": 0,
-        "FoundVulCount": 0
+        "FoundVulCount": 0,
+        "IgnoreVulCount": 0,
+        "LocalImageScanCount": 0,
+        "LocalTaskID": 0,
+        "RegistryFoundVulCount": 0,
+        "RegistryImageScanCount": 0,
+        "RegistryTaskID": 0,
+        "RemainingTime": 0,
+        "RequestId": "b6cffd6d-b5a4-41d2-8ffc-21e5cbdee3b5",
+        "ScanEndTime": "",
+        "ScanProgress": 0,
+        "ScanStartTime": "",
+        "Status": "NOT_SCAN"
     }
 }
 ```

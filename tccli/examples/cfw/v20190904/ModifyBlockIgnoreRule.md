@@ -7,7 +7,7 @@ Input:
 ```
 tccli cfw ModifyBlockIgnoreRule --cli-unfold-argument  \
     --Rule.IP 1.1.1.1 \
-    --Rule.Domain  \
+    --Rule.Domain www.domain.com \
     --Rule.Direction 0 \
     --Rule.EndTime 2025-01-01 00:00:00 \
     --Rule.Comment 阻断访问 \
@@ -19,7 +19,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": ""
+        "RequestId": "3c442984-c832-43d0-b687-664845ee31b0"
     }
 }
 ```

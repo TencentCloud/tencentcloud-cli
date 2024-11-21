@@ -372,7 +372,7 @@
       {
         "document": "",
         "input": "https://iotexplorer.tencentcloudapi.com/?Action=DescribeBatchProduction\n&ProductId=R32ONVL0EU\n&BatchProductionId=LC-ya6zinv9\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"BatchCnt\": 3,\n        \"BurnMethod\": 0,\n        \"CreateTime\": 1572233486,\n        \"DownloadUrl\": \"https://batch-productions-test-1256872341.cos.ap-guangzhou.myqcloud.com/100000546882%2FR32ONVL0EU_LC-6mgj9akp.csv?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDMUM9hdmn35rHZe72Y6UfliNo1PYQFZln%26q-sign-time%3D1572233867%3B1572234767%26q-key-time%3D1572233867%3B1572234767%26q-header-list%3D%26q-url-param-list%3D%26q-signature%3Da31f6ed1e25d3dc753516b74ee33559d37cbc7f2\",\n        \"GenerationMethod\": 0,\n        \"RequestId\": \"rest-clieet20111026\",\n        \"UploadUrl\": \"\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"BatchCnt\": 3,\n        \"BurnMethod\": 0,\n        \"CreateTime\": 1572233486,\n        \"DownloadUrl\": \"https://batch-productions-*************d37cbc7f2\",\n        \"GenerationMethod\": 0,\n        \"RequestId\": \"rest-clieet20111026\",\n        \"UploadUrl\": \"\"\n    }\n}",
         "title": "获取量产详情"
       }
     ],
@@ -484,7 +484,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudStorageThumbnail\n<公共请求参数>\n\n{\n    \"ProductId\": \"AQTV2839QJ\",\n    \"DeviceName\": \"sp01_32820237_5\",\n    \"Thumbnail\": \"/100008401725/AQTV2839QJ/sp01_32820237_7/events/1615200613.jpg\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c299d2c9-805f-41a5-853d-db32ba1a16b5\",\n        \"ThumbnailURL\": \"https://video-cv-1258344699.cos.ap-guangzhou.myqcloud.com/%2F100008401725%2FAQTV2839QJ%2Fsp01_32820237_5%2Fevents%2F1614908216.jpg?q-sign-algorithm=sha1&q-ak=AKIDAbqpXyZb6KJ6dtvwkRwAqLbfNvIZlYJp&q-sign-time=1614909378%3B1614912978&q-key-time=1614909378%3B1614912978&q-header-list=host&q-url-param-list=&q-signature=59cfa8d69bb77980ba757cb111de62fc6c4880f5\",\n        \"ExpireTime\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c299d2c9-805f-41a5-853d-db32ba1a16b5\",\n        \"ThumbnailURL\": \"*******\",\n        \"ExpireTime\": 1\n    }\n}",
         "title": "拉取云存事件缩略图"
       }
     ],
@@ -676,7 +676,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePackageConsumeTask\n<公共请求参数>\n\n{\n    \"TaskId\": 45\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a9545416-7eac-4e2e-a4a0-9735b0ee7682\",\n        \"URL\": \"https://video-cv-test-1256872341.cos.ap-guangzhou.myqcloud.com/41411451%2FPackageConsume%2F2022-02-11_2022-02-17_1.csv?q-sign-algorithm=sha1&q-ak=AKIDCOZny6BBD4mLnKMPm7HFGHD2iIl6dONI&q-sign-time=1645168502%3B1645172102&q-key-time=1645168502%3B1645172102&q-header-list=host&q-url-param-list=&q-signature=b9d9c7298da29677b7dc45b8c4c0385495290a09\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a9545416-7eac-4e2e-a4a0-9735b0ee7682\",\n        \"URL\": \"************\"\n    }\n}",
         "title": "查询套餐消耗记录详情"
       }
     ],

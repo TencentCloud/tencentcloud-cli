@@ -8,7 +8,7 @@ Input:
 ```
 tccli apigateway BindSecretIds --cli-unfold-argument  \
     --UsagePlanId usagePlan-quqxvett \
-    --AccessKeyIds AKIDmyE2z0gvi2p6***************
+    --AccessKeyIds AKID***********************************************
 ```
 
 Output: 

@@ -40,7 +40,25 @@ Output:
 ```
 {
     "Response": {
-        "Data": null,
+        "Data": {
+            "Status": "0",
+            "Source": "custom",
+            "Areas": [
+                "山东"
+            ],
+            "JobType": "TimedJob",
+            "JobDateTime": {
+                "Timed": [
+                    {
+                        "StartDateTime": 0,
+                        "EndDateTime": 0
+                    }
+                ],
+                "Cron": null,
+                "TimeTZone": "UTC+8"
+            },
+            "CronType": "week"
+        },
         "RequestId": "7b9c4e2b-8282-4a6a-90cf-f64f2caef67a"
     }
 }

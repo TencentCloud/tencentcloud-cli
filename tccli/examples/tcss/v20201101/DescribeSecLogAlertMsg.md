@@ -13,14 +13,8 @@ Output:
 ```
 {
     "Response": {
-        "List": [
-            {
-                "MsgValue": "xx",
-                "MsgType": "xx",
-                "State": true
-            }
-        ],
-        "RequestId": "29b37d86-f63d-43d1-b21a-640e82965198"
+        "List": [],
+        "RequestId": "627c34c0-e564-4352-92f8-98042f99b1f8"
     }
 }
 ```

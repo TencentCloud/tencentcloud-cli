@@ -18,7 +18,7 @@ Output:
                 "Uuid": "05f0bcab-726c-4ea4-8109-bcd03d5598f7",
                 "ProcessName": "privilege",
                 "SMode": 1,
-                "Operator": "",
+                "Operator": "zhangsan",
                 "Status": 0,
                 "IsGlobal": 0,
                 "CreateTime": "2024-08-23 17:13:47",

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cwp EditReverseShellRules --cli-unfold-argument  \
-    --ProcessName test \
+    --ProcessName ps \
     --DestIp 1.2.3.4 \
     --DestPort 8080 \
     --IsGlobal 0 \

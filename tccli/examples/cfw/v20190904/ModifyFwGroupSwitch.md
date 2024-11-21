@@ -8,7 +8,7 @@ Input:
 tccli cfw ModifyFwGroupSwitch --cli-unfold-argument  \
     --Enable 0 \
     --SwitchList.0.SwitchMode 1 \
-    --SwitchList.0.SwitchId cfws-xxxaaacs \
+    --SwitchList.0.SwitchId cfws-wxecrvtb \
     --AllSwitch 0
 ```
 

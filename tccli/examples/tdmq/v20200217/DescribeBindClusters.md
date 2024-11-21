@@ -14,7 +14,7 @@ Output:
         "TotalCount": 1,
         "ClusterSet": [
             {
-                "ClusterName": "xxx"
+                "ClusterName": "devCluster"
             }
         ],
         "RequestId": "32a34a4c-58a8-445f-80ff-7152399b18f7"

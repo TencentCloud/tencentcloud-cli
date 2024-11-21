@@ -7,7 +7,7 @@ Input:
 ```
 tccli cwp ModifyMachineRemark --cli-unfold-argument  \
     --Remark remark for host1 \
-    --Quuid 6cf3c132-aaa-bbbb-b08d-98be9421372a
+    --Quuid 5a540076-d38a-4078-aa98-e7c86371d322
 ```
 
 Output: 

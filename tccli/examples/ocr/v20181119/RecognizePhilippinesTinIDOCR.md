@@ -1,4 +1,4 @@
-**Example 1: 菲律宾TinID识别**
+**Example 1: 菲律宾TinID识别调用**
 
 
 
@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ocr RecognizePhilippinesTinIDOCR --cli-unfold-argument  \
-    --ImageUrl https://xx/a.jpg \
+    --ImageUrl https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/***/fakeurl.jpg \
     --ReturnHeadImage false
 ```
 
@@ -16,7 +16,7 @@ Output:
     "Response": {
         "Address": {
             "Polygon": [],
-            "Value": "18 A KATIPUNAN ST."
+            "Value": "18 A KATIPUNAN ****** RIZAL "
         },
         "Birthday": {
             "Polygon": [
@@ -37,15 +37,32 @@ Output:
                     "Y": 787
                 }
             ],
-            "Value": "August 17,1902"
+            "Value": "August **,1972"
         },
         "FullName": {
             "Polygon": [],
-            "Value": "VERGARA,AMALIA ALBIOR"
+            "Value": "VER******ALBIOR"
         },
         "HeadPortrait": {
-            "Polygon": [],
-            "Value": ""
+            "Polygon": [
+                {
+                    "X": 1118,
+                    "Y": 512
+                },
+                {
+                    "X": 1368,
+                    "Y": 512
+                },
+                {
+                    "X": 1368,
+                    "Y": 808
+                },
+                {
+                    "X": 1118,
+                    "Y": 808
+                }
+            ],
+            "Value": "/9j/4AAQSkZJRg.....s97n//2Q=="
         },
         "IssueDate": {
             "Polygon": [
@@ -66,7 +83,7 @@ Output:
                     "Y": 787
                 }
             ],
-            "Value": "August 17,1902"
+            "Value": "August **,1972"
         },
         "LicenseNumber": {
             "Polygon": [
@@ -87,9 +104,9 @@ Output:
                     "Y": 572
                 }
             ],
-            "Value": "497-881-123-123"
+            "Value": "497-***-***-000"
         },
-        "RequestId": "11111-11111-11111-11111"
+        "RequestId": "df40cc1c-e074-44ab-ab39-cc2c105a5cd4"
     }
 }
 ```

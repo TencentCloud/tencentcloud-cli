@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli emr AddUsersForUserManager --cli-unfold-argument  \
-    --InstanceId xx \
+    --InstanceId emr-dadda \
     --UserManagerUserList.0.UserName test1 \
     --UserManagerUserList.0.UserGroup test1 \
     --UserManagerUserList.0.PassWord test1 \

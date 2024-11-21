@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tdmq DescribeEnvironmentAttributes --cli-unfold-argument  \
-    --EnvironmentId abc \
-    --ClusterId abc
+    --EnvironmentId devNs \
+    --ClusterId pulsar-5r59xd4vnx
 ```
 
 Output: 

@@ -22,7 +22,7 @@ Output:
                 "Status": "S",
                 "Name": "test-name",
                 "Version": "0.1.1",
-                "User": "abc",
+                "User": "root",
                 "StartTime": "2024-10-11 12:23:34",
                 "Path": "/root"
             }

@@ -31,7 +31,7 @@ Output:
                 "IsRiskUser": 0,
                 "Port": 22,
                 "Location": "中国:广东省:深圳市",
-                "Desc": "",
+                "Desc": "idesc",
                 "IsRiskSrcIp": 1,
                 "IsRiskArea": 1,
                 "Quuid": "05f0bcab-726c-4ea4-8109-bcd03d5598f7",
@@ -40,7 +40,7 @@ Output:
                 "MachineExtraInfo": {
                     "WanIP": "1.1.1.1",
                     "InstanceID": "ins-12341234",
-                    "NetworkName": "",
+                    "NetworkName": "vpc-d7f***",
                     "PrivateIP": "1.1.1.1",
                     "NetworkType": 1,
                     "HostName": "机器名称"

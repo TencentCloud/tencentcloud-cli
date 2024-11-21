@@ -4745,7 +4745,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "分页条数，缺省为20",
+          "document": "分页的条数，默认是20条。",
           "example": "20",
           "member": "uint64",
           "name": "Limit",
@@ -4754,7 +4754,7 @@
         },
         {
           "disabled": false,
-          "document": "分页起始值，缺省为0",
+          "document": "分页的起始值，默认从0开始。",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -5561,12 +5561,12 @@
       "type": "object"
     },
     "LoginActionFlag": {
-      "document": "登录和敏感操作flag",
+      "document": "登录和敏感操作flag（校验方式是单选）",
       "members": [
         {
           "disabled": false,
-          "document": "手机",
-          "example": "0",
+          "document": "0: 非安全手机校验 1: 安全手机校验。",
+          "example": "1",
           "member": "uint64",
           "name": "Phone",
           "output_required": true,
@@ -5576,7 +5576,7 @@
         },
         {
           "disabled": false,
-          "document": "硬token",
+          "document": "0: 非硬token校验 1: 硬token校验。",
           "example": "0",
           "member": "uint64",
           "name": "Token",
@@ -5587,7 +5587,7 @@
         },
         {
           "disabled": false,
-          "document": "软token",
+          "document": "0: 非软token校验 1: 软token校验",
           "example": "0",
           "member": "uint64",
           "name": "Stoken",
@@ -5598,7 +5598,7 @@
         },
         {
           "disabled": false,
-          "document": "微信",
+          "document": "0: 非微信校验 1: 微信校验",
           "example": "0",
           "member": "uint64",
           "name": "Wechat",
@@ -5609,7 +5609,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义",
+          "document": "0: 非自定义校验 1: 自定义校验",
           "example": "0",
           "member": "uint64",
           "name": "Custom",
@@ -5620,7 +5620,7 @@
         },
         {
           "disabled": false,
-          "document": "邮箱",
+          "document": "0: 非邮箱校验 1: 邮箱校验",
           "example": "0",
           "member": "uint64",
           "name": "Mail",
@@ -5631,7 +5631,7 @@
         },
         {
           "disabled": false,
-          "document": "u2f硬件token\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "0: 非u2f硬件token 1: u2f硬件token\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
           "name": "U2FToken",

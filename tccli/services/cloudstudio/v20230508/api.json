@@ -86,7 +86,7 @@
         {
           "disabled": false,
           "document": "工作空间描述, 长度限制 0~255",
-          "example": "this is a worksapce",
+          "example": "this is a workspace",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -209,7 +209,7 @@
         {
           "disabled": false,
           "document": "工作空间名称",
-          "example": "worksapce-name",
+          "example": "workspace-name",
           "member": "string",
           "name": "Name",
           "output_required": true,
@@ -308,13 +308,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "配置值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "配置值",
           "example": "\"true\"",
           "member": "string",
           "name": "Data",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -357,7 +357,7 @@
         {
           "disabled": false,
           "document": "工作空间名称过滤条件",
-          "example": "worksapce-name",
+          "example": "workspace-name",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -372,9 +372,10 @@
         {
           "disabled": false,
           "document": "工作空间列表",
-          "example": "[]",
+          "example": "[{\"Id\": 9,\"Name\": \"open_api_test-1\",\"SpaceKey\": \"ryvzki\",...}]",
           "member": "WorkspaceStatusInfo",
           "name": "Data",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -559,7 +560,7 @@
         {
           "disabled": false,
           "document": "工作空间描述",
-          "example": "this is a worksapce",
+          "example": "this is a workspace",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -706,7 +707,7 @@
           "example": "1",
           "member": "int64",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -716,7 +717,7 @@
           "example": "workspace-name",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -726,7 +727,7 @@
           "example": "ubbyfp",
           "member": "string",
           "name": "SpaceKey",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -736,7 +737,7 @@
           "example": "Running",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -746,7 +747,7 @@
           "example": "2",
           "member": "int64",
           "name": "Cpu",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -756,89 +757,89 @@
           "example": "4",
           "member": "int64",
           "name": "Memory",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "工作空间图标\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "工作空间图标",
           "example": "https://cs-res-1258344699.file.myqcloud.com/workspace/assets/icons/all-in-one.svg",
           "member": "string",
           "name": "Icon",
-          "required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "工作空间状态, 异常原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "工作空间状态, 异常原因",
           "example": "OK",
           "member": "string",
           "name": "StatusReason",
-          "required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "工作空间描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "工作空间描述",
           "example": "this is a workspace",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "工作空间类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "工作空间类型",
           "example": "NORMAL",
           "member": "string",
           "name": "WorkspaceType",
-          "required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "Git 仓库 HTTPS 地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Git 仓库 HTTPS 地址",
           "example": "https://github.com/example/example.git",
           "member": "string",
           "name": "VersionControlUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "Git 仓库引用。指定分支使用 /refs/heads/{分支名}, 指定 Tag 用 /refs/tags/{Tag名}\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Git 仓库引用。指定分支使用 /refs/heads/{分支名}, 指定 Tag 用 /refs/tags/{Tag名}",
           "example": "/refs/heads/main",
           "member": "string",
           "name": "VersionControlRef",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "最后操作时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最后操作时间",
           "example": "2023-05-11T08:37:43.109+00:00",
           "member": "string",
           "name": "LastOpsDate",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建时间",
           "example": "2023-05-11T08:37:43.109+00:00",
           "member": "string",
           "name": "CreateDate",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

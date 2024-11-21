@@ -15,24 +15,24 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "xxxxx",
+        "RequestId": "3e6756ce-6512-498d-a9fd-8572ef4ce7d3",
         "TotalCount": 1,
         "PeriodTaskSet": [
             {
-                "PeriodTaskId": 123,
-                "AssetType": "xxxx",
+                "PeriodTaskId": 456,
+                "AssetType": "ASSET_CONTAINER",
                 "PeriodRule": {
-                    "ExecutionTime": "xx",
+                    "ExecutionTime": "2006-01-02 15:04:05",
                     "Frequency": 1
                 },
-                "LastTriggerTime": "YYYY-MM-DD HH:mm:SS",
-                "TotalPolicyItemCount": 123,
+                "LastTriggerTime": "2006-01-02 15:04:05",
+                "TotalPolicyItemCount": 345634,
                 "BenchmarkStandardSet": [
                     {
-                        "StandardId": 12345,
+                        "StandardId": 2342,
                         "Name": "CIS Docker",
                         "Description": "CIS Docker",
-                        "PolicyItemCount": 123,
+                        "PolicyItemCount": 666,
                         "Enabled": true
                     }
                 ]

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ccc StopAutoCalloutTask --cli-unfold-argument  \
-    --SdkAppId 1 \
+    --SdkAppId 1400000000 \
     --TaskId 1
 ```
 

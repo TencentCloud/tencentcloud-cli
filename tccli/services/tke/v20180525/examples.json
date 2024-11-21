@@ -1904,7 +1904,7 @@
       {
         "document": "获取一个addon的版本和参数",
         "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateAddon\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-123deabc\",\n    \"AddonName\": \"cbs\",\n    \"AddonVersion\": \"1.1.0\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f55aaa93-c681-47c9-860a-59ae16ade268\"\n    }\n}",
         "title": "更新一个addon"
       }
     ],

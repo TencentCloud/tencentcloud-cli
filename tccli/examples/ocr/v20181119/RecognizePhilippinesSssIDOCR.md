@@ -1,12 +1,12 @@
-**Example 1: 菲律宾SSSID/UMID识别**
+**Example 1: RecognizePhilippinesSssIDOCR调用**
 
-菲律宾SSSID/UMID识别
+
 
 Input: 
 
 ```
 tccli ocr RecognizePhilippinesSssIDOCR --cli-unfold-argument  \
-    --ImageUrl https://xx/a.jpg \
+    --ImageUrl https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/***/fakeurl.jpg \
     --ReturnHeadImage false
 ```
 
@@ -38,23 +38,23 @@ Output:
         "FullName": {
             "Polygon": [
                 {
-                    "X": 540,
-                    "Y": 609
+                    "X": 82,
+                    "Y": 55
                 },
                 {
-                    "X": 1094,
-                    "Y": 609
+                    "X": 195,
+                    "Y": 55
                 },
                 {
-                    "X": 1094,
-                    "Y": 664
+                    "X": 195,
+                    "Y": 67
                 },
                 {
-                    "X": 540,
-                    "Y": 664
+                    "X": 82,
+                    "Y": 67
                 }
             ],
-            "Value": "JEFFREY"
+            "Value": "PAMELAL OCAMPO"
         },
         "HeadPortrait": {
             "Polygon": [],
@@ -63,25 +63,25 @@ Output:
         "LicenseNumber": {
             "Polygon": [
                 {
-                    "X": 533,
-                    "Y": 736
+                    "X": 82,
+                    "Y": 85
                 },
                 {
-                    "X": 1014,
-                    "Y": 739
+                    "X": 187,
+                    "Y": 85
                 },
                 {
-                    "X": 1014,
-                    "Y": 816
+                    "X": 187,
+                    "Y": 99
                 },
                 {
-                    "X": 533,
-                    "Y": 813
+                    "X": 82,
+                    "Y": 99
                 }
             ],
-            "Value": "33-111111-1"
+            "Value": "04-0751449-0"
         },
-        "RequestId": "11111-11111-11111-11111"
+        "RequestId": "0e20a043-d3da-40e8-b576-59e33fff3b55"
     }
 }
 ```

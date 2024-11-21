@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli waf DescribeDomainDetailsClb --cli-unfold-argument  \
-    --Domain lucasssli3.qcloud.com \
-    --DomainId 20200728142847163546341 \
-    --InstanceId waf_000000002
+    --Domain lucasssli3.qcloudwaf.com \
+    --DomainId waf-xOmbLKVc \
+    --InstanceId waf_00vsdfgh1232
 ```
 
 Output: 
@@ -17,34 +17,33 @@ Output:
     "Response": {
         "RequestId": "b4f13899-561b-46a0-a045-6ba6b72c38f2",
         "DomainsClbPartInfo": {
-            "Domain": "pea.qcloudwaf.com",
+            "Domain": "lucasssli3.qcloudwaf.com",
             "DomainId": "waf-xOmbLKVc",
-            "InstanceId": "waf_0000001ll",
+            "InstanceId": "waf_2kuil1fxvsfm7z3",
             "Edition": "clb-waf",
-            "InstanceName": "3211111",
+            "InstanceName": "gz-Default1",
             "IsCdn": 1,
             "FlowMode": 1,
             "LoadBalancerSet": [
                 {
                     "ListenerId": "lbl-p08ll1la",
-                    "ListenerName": "pea.qcloudwaf.com",
+                    "ListenerName": "http-80",
                     "LoadBalancerId": "lb-azo6s2m8",
                     "LoadBalancerName": "lb-6017c5bd",
                     "Protocol": "HTTP",
                     "Region": "gz",
                     "Vip": "203.195.250.6",
                     "Vport": 5803,
-                    "Zone": "",
                     "NumericalVpcId": 0,
-                    "LoadBalancerType": "abc"
+                    "LoadBalancerType": "OPEN"
                 }
             ],
             "State": 0,
-            "AlbType": "abc",
+            "AlbType": "clb",
             "IpHeaders": [
-                "abc"
+                "1.1.2.4"
             ],
-            "CdcClusters": "abc"
+            "CdcClusters": "cluster-asd"
         }
     }
 }

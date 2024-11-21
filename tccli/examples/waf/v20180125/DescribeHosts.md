@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli waf DescribeHosts --cli-unfold-argument  \
-    --Domain www.qcloudwaf.com \
+    --Domain txwaf.qcloudwaf.com \
     --DomainId waf-u23yt9Hj \
-    --Search aaaa \
-    --InstanceID aaaa
+    --Search txwaf \
+    --InstanceID waf_uadhiu2ads44a
 ```
 
 Output: 
@@ -19,9 +19,9 @@ Output:
         "TotalCount": 1,
         "HostList": [
             {
-                "Domain": "abc",
-                "DomainId": "abc",
-                "MainDomain": "abc",
+                "Domain": "txwaf.qcloudwaf.com",
+                "DomainId": "waf-u23yt9Hj",
+                "MainDomain": "qcloudwaf.com",
                 "Mode": 1,
                 "Status": 1,
                 "State": 1,
@@ -29,38 +29,35 @@ Output:
                 "IsCdn": 1,
                 "LoadBalancerSet": [
                     {
-                        "LoadBalancerId": "abc",
-                        "LoadBalancerName": "abc",
-                        "ListenerId": "abc",
-                        "ListenerName": "abc",
-                        "Vip": "abc",
+                        "LoadBalancerId": "lb-ads3adsa",
+                        "LoadBalancerName": "80http",
+                        "ListenerId": "lbl-das32q",
+                        "ListenerName": "80http",
+                        "Vip": "23.25.123.23",
                         "Vport": 1,
-                        "Region": "abc",
-                        "Protocol": "abc",
-                        "Zone": "abc",
-                        "NumericalVpcId": 0,
-                        "LoadBalancerType": "abc",
-                        "LoadBalancerDomain": "abc"
+                        "Region": "gz",
+                        "Protocol": "http",
+                        "Zone": "ap-guangzhou",
+                        "NumericalVpcId": 54352,
+                        "LoadBalancerType": "open"
                     }
                 ],
-                "Region": "abc",
-                "Edition": "abc",
+                "Region": "gz",
+                "Edition": "clb-waf",
                 "FlowMode": 1,
                 "ClsStatus": 1,
                 "Level": 1,
-                "CdcClusters": [
-                    "abc"
-                ],
-                "AlbType": "abc",
+                "CdcClusters": [],
+                "AlbType": "clb",
                 "IpHeaders": [
-                    "abc"
+                    "x-real-ip"
                 ],
                 "EngineType": 0,
-                "CloudType": "abc",
-                "Note": "abc"
+                "CloudType": "public",
+                "Note": "备注"
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "304cb36f-772a-4fdb-9b25-212d8fe5a553"
     }
 }
 ```

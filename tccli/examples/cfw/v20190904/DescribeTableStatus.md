@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli cfw DescribeTableStatus --cli-unfold-argument  \
-    --Status 0 \
+    --Status 1 \
     --Direction 0 \
-    --EdgeId  \
-    --Area 
+    --EdgeId edge-ppt3pi01 \
+    --Area ap-guangzhou
 ```
 
 Output: 

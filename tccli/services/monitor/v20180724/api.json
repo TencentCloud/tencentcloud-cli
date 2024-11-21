@@ -3002,7 +3002,7 @@
           "example": "7200",
           "member": "int64",
           "name": "AlarmNotifyPeriod",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3012,7 +3012,7 @@
           "example": "0",
           "member": "int64",
           "name": "AlarmNotifyType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3022,7 +3022,7 @@
           "example": "\"1\"",
           "member": "string",
           "name": "CalcType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3032,7 +3032,7 @@
           "example": "\"95\"",
           "member": "string",
           "name": "CalcValue",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3042,7 +3042,7 @@
           "example": "\"300\"",
           "member": "string",
           "name": "ContinueTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3052,7 +3052,7 @@
           "example": "33",
           "member": "int64",
           "name": "MetricID",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3062,7 +3062,7 @@
           "example": "\"CPU利用率\"",
           "member": "string",
           "name": "MetricDisplayName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3072,7 +3072,7 @@
           "example": "60",
           "member": "int64",
           "name": "Period",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3082,7 +3082,7 @@
           "example": "623123",
           "member": "int64",
           "name": "RuleID",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3092,7 +3092,7 @@
           "example": "\"%\"",
           "member": "string",
           "name": "Unit",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3102,7 +3102,7 @@
           "example": "0",
           "member": "int64",
           "name": "IsAdvanced",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3112,7 +3112,7 @@
           "example": "0",
           "member": "int64",
           "name": "IsOpen",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3122,7 +3122,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "ProductId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3132,8 +3132,18 @@
           "example": "无",
           "member": "AlarmHierarchicalValue",
           "name": "HierarchicalValue",
-          "required": true,
+          "output_required": true,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "指标类型，用于区分动态指标\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "DYNAMIC",
+          "member": "string",
+          "name": "RuleType",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -17206,7 +17216,7 @@
         },
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "集群 ID",
           "example": "cls-abc",
           "member": "string",
           "name": "ClusterId",
@@ -17215,7 +17225,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启公网CLB",
+          "document": "是否开启公网 CLB",
           "example": "false",
           "member": "bool",
           "name": "EnableExternal",
@@ -17224,7 +17234,7 @@
         },
         {
           "disabled": false,
-          "document": "集群内部署组件的pod配置",
+          "document": "集群内部署组件的pod 配置",
           "example": "pod配置",
           "member": "PrometheusClusterAgentPodConfig",
           "name": "InClusterPodConfig",
@@ -17242,7 +17252,7 @@
         },
         {
           "disabled": false,
-          "document": "是否安装默认采集配置",
+          "document": "是否安装默认采集 exporter 和采集配置",
           "example": "false",
           "member": "bool",
           "name": "NotInstallBasicScrape",
@@ -17251,10 +17261,19 @@
         },
         {
           "disabled": false,
-          "document": "是否采集指标，true代表drop所有指标，false代表采集默认指标",
+          "document": "是否安装采集配置，true 只安装采集 exporter 不会安装采集配置，false 会同时安装采集配置",
           "example": "false",
           "member": "bool",
           "name": "NotScrape",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否丢弃所有指标，true 代表丢弃所有指标，false 代表采集默认指标",
+          "example": "false",
+          "member": "bool",
+          "name": "DropAll",
           "required": false,
           "type": "bool"
         },
@@ -18773,6 +18792,7 @@
           "example": "xxx",
           "member": "string",
           "name": "Region",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -18783,6 +18803,7 @@
           "example": "xxx",
           "member": "string",
           "name": "InstanceId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -18793,6 +18814,7 @@
           "example": "xxx",
           "member": "string",
           "name": "ClusterId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -18803,6 +18825,7 @@
           "example": "xxx",
           "member": "string",
           "name": "SyncTime",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -18813,6 +18836,7 @@
           "example": "xxx",
           "member": "string",
           "name": "Version",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -18823,6 +18847,7 @@
           "example": "xxx",
           "member": "string",
           "name": "ClusterType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -18833,6 +18858,7 @@
           "example": "xxx",
           "member": "string",
           "name": "InstanceName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -18843,6 +18869,7 @@
           "example": "xxx",
           "member": "string",
           "name": "ClusterName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true

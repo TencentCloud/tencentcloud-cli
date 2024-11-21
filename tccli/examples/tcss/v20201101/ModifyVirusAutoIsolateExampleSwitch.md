@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tcss ModifyVirusAutoIsolateExampleSwitch --cli-unfold-argument  \
-    --MD5 xxxxxxxxxxxx \
+    --MD5 61d7d84e979212bed18ed9aa8748defa \
     --Status True
 ```
 

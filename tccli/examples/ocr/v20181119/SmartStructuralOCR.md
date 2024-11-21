@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli ocr SmartStructuralOCR --cli-unfold-argument  \
-    --ImageUrl https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/document/SmartStructuralOCR/SmartStructuralOCR1.jpg \
-    --ItemNames 姓名 标题
+    --ImageUrl https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/document/SmartStructuralOCR/SmartStructuralPro1.png \
+    --ItemNames 号码
 ```
 
 Output: 
@@ -15,31 +15,21 @@ Output:
 {
     "Response": {
         "Angle": 0,
-        "RequestId": "af25f0c0-5c34-4359-98dd-25da408f5947",
         "StructuralItems": [
             {
-                "Confidence": 94,
+                "Name": "号码",
+                "Value": "176***101",
+                "Confidence": 0,
                 "ItemCoord": {
-                    "Height": 1,
-                    "Width": 1,
-                    "X": 1,
-                    "Y": 0
+                    "X": 0,
+                    "Y": 0,
+                    "Width": 0,
+                    "Height": 0
                 },
-                "Name": "姓名",
-                "Value": "汪晓茹"
-            },
-            {
-                "Confidence": 94,
-                "ItemCoord": {
-                    "Height": 1,
-                    "Width": 1,
-                    "X": 1,
-                    "Y": 1
-                },
-                "Name": "标题",
-                "Value": "大学英语六级考试成绩报告单"
+                "Row": 0
             }
-        ]
+        ],
+        "RequestId": "af25f0c0-5c34-4359-98dd-25da408f5947"
     }
 }
 ```

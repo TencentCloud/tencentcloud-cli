@@ -2,9 +2,9 @@
   "actions": {
     "DescribeEvents": [
       {
-        "document": "查询2023年6月9日发生在广州和上海地域的所有云产品可用性事件",
-        "input": "POST / HTTP/1.1\nHost: tchd.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEvents\n<公共请求参数>\n\n{\n    \"ProductIds\": [\n        \"cvm\"\n    ],\n    \"RegionIds\": [\n        \"ap-guangzhou\",\n        \"ap-shanghai\"\n    ],\n    \"EventDate\": \"2023-06-09\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"EventList\": [\n                {\n                    \"ProductId\": \"cvm\",\n                    \"ProductName\": \"云服务器\",\n                    \"RegionId\": \"ap-chongqing\",\n                    \"RegionName\": \"重庆\",\n                    \"StartTime\": \"2023-06-09 14:16:00\",\n                    \"EndTime\": \"2023-06-09 14:28:00\",\n                    \"CurrentStatus\": \"正常\"\n                }\n            ]\n        },\n        \"RequestId\": \"76a0ee91-c081-4a9c-9ba6-ad7e15f06ce4\"\n    }\n}",
+        "document": "查询2024年07月30日发生在北京地域的 TSE 产品可用性事件",
+        "input": "POST / HTTP/1.1\nHost: tchd.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEvents\n<公共请求参数>\n\n{\n    \"ProductIds\": [\n        \"tse\"\n    ],\n    \"RegionIds\": [\n        \"ap-beijing\"\n    ],\n    \"EventDate\": \"2024-07-30\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"EventList\": [\n                {\n                    \"CurrentStatus\": \"正常\",\n                    \"EndTime\": \"2024-07-30 11:23:00\",\n                    \"ProductId\": \"tse\",\n                    \"ProductName\": \"微服务引擎 TSE\",\n                    \"RegionId\": \"ap-beijing\",\n                    \"RegionName\": \"北京\",\n                    \"StartTime\": \"2024-07-30 10:41:00\"\n                }\n            ]\n        },\n        \"RequestId\": \"6d41b587-0f1d-4104-927d-8a142d7cb90b\"\n    }\n}",
         "title": "查询可用性事件列表"
       }
     ]

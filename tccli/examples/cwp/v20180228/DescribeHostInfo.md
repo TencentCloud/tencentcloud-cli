@@ -17,22 +17,17 @@ Output:
             {
                 "Quuid": "24c9be55-c743-4a75-a5c7-2a2912341234",
                 "TagList": [
-                    "abc"
+                    "tag"
                 ],
                 "HostIp": "10.0.0.11",
                 "AliasName": "test-name",
                 "MachineWanIp": "110.84.0.11",
                 "Uuid": "24c9be55-c743-4a75-a5c7-2a2912341234",
                 "KernelVersion": "0.1.1",
-                "MachineStatus": "abc",
-                "ProtectType": "abc",
+                "MachineStatus": "ONLINE",
+                "ProtectType": "BASIC_VERSION",
                 "VulNum": 0,
-                "CloudTags": [
-                    {
-                        "TagKey": "abc",
-                        "TagValue": "abc"
-                    }
-                ],
+                "CloudTags": [],
                 "InstanceID": "ins-aj28fjz"
             }
         ],

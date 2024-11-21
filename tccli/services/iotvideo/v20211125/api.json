@@ -6497,7 +6497,7 @@
           "example": "https://video-cv-test-1256872341.cos.ap-guangzhou.myqcloud.com/4",
           "member": "string",
           "name": "URL",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

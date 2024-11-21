@@ -192,7 +192,7 @@
   },
   "metadata": {
     "apiVersion": "2020-09-15",
-    "api_brief": "云数据仓库 ClickHouse（CDWCH）是腾讯云提供的云上 ClickHouse 托管服务，为用户提供便捷的 ClickHouse 集群部署、软件安装、配置修改、监控告警、弹性伸缩等功能，为企业及用户提供安全稳定的大数据处理解决方案。",
+    "api_brief": "腾讯云数据仓库 TCHouse-C（ Tencent Cloud TCHouse-C ）是基于开源 OLAP 引擎 ClickHouse 打造的企业级云数据仓库服务，仅需几分钟即可快速搭建起 PB 级实时数据仓库，实现对海量数据的极速实时分析。TChouse-C API 为用户提供便捷的 ClickHouse 集群部署、软件安装、配置修改、监控告警、弹性伸缩等功能，为企业及用户提供安全稳定的大数据处理解决方案。",
     "serviceNameCN": "腾讯云数据仓库TCHouse-C",
     "serviceShortName": "cdwch"
   },

@@ -6,8 +6,10 @@ Input:
 
 ```
 tccli cfw ModifyNatSequenceRules --cli-unfold-argument  \
-    --RuleChangeItems.0.OrderIndex 0 \
-    --RuleChangeItems.0.NewOrderIndex 0 \
+    --RuleChangeItems.0.OrderIndex 1 \
+    --RuleChangeItems.0.NewOrderIndex 2 \
+    --RuleChangeItems.1.OrderIndex 2 \
+    --RuleChangeItems.1.NewOrderIndex 1 \
     --Direction 1
 ```
 
@@ -15,7 +17,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "xx"
+        "RequestId": "985187d2-9a80-4ee7-b519-ad48e75f6588"
     }
 }
 ```

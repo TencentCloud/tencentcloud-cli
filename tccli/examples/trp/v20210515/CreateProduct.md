@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli trp CreateProduct --cli-unfold-argument  \
-    --Remark xx \
-    --Name xx \
-    --Specification xx \
-    --Logo url1 \
-    --MerchantId xx \
-    --MerchantName xx
+    --Remark 商品备注 \
+    --Name 商品名称 \
+    --Specification 100ml \
+    --Logo https://xxx.xxx.com/logo.png \
+    --MerchantId eqdmnz7020bmtvi9 \
+    --MerchantName demo
 ```
 
 Output: 

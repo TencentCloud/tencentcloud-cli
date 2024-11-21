@@ -6,7 +6,10 @@ Input:
 
 ```
 tccli cwp DescribeStrategyExist --cli-unfold-argument  \
-    --StrategyName "策略1"
+    --StrategyName '"策略1"
+
+
+ {}'
 ```
 
 Output: 

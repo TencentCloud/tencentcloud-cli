@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cdb DescribeClusterInfo --cli-unfold-argument  \
-    --InstanceId cdb-xxx
+    --InstanceId cdb-dctw4edd
 ```
 
 Output: 
@@ -15,35 +15,35 @@ Output:
     "Response": {
         "ClusterName": "dbname",
         "ReadWriteAddress": {
-            "ResourceId": "cdb-xxx",
-            "UniqVpcId": "vpc-xxx",
-            "UniqSubnetId": "subnet-xxx",
+            "ResourceId": "cdb-dctw4edd",
+            "UniqVpcId": "vpc-hendkj",
+            "UniqSubnetId": "subnet-eushjw",
             "Vip": "192.168.3.4",
             "VPort": 3306,
-            "WanDomain": "",
-            "WanPort": 0
+            "WanDomain": "gz-cdb-*******.sql.tencentcdb.com",
+            "WanPort": 23356
         },
         "ReadOnlyAddress": [
             {
-                "ResourceId": "cdb-xxx|readonly",
-                "UniqVpcId": "vpc-xxx",
-                "UniqSubnetId": "subnet-xxx",
+                "ResourceId": "cdbro-3a1eccdd",
+                "UniqVpcId": "vpc-ehndjs",
+                "UniqSubnetId": "subnet-euwhsn",
                 "Vip": "192.168.3.5",
                 "VPort": 3306,
-                "WanDomain": "",
-                "WanPort": 0
+                "WanDomain": "gz-cdb-*******.sql.tencentcdb.com",
+                "WanPort": 23356
             }
         ],
         "NodeList": [
             {
-                "NodeId": "dbn-xxx",
+                "NodeId": "dbn-qqeo1111",
                 "Role": "master",
                 "Zone": "ap-guangzhou-1",
                 "Weight": 1,
                 "Status": "online"
             },
             {
-                "NodeId": "dbn-xxx",
+                "NodeId": "dbn-qqeo2222",
                 "Role": "slave",
                 "Zone": "ap-guangzhou-2",
                 "Weight": 1,
@@ -52,7 +52,7 @@ Output:
         ],
         "ReadonlyLimit": 10,
         "NodeCount": 2,
-        "RequestId": "abc"
+        "RequestId": "mnksadas-cb0d-4943-9b17-c3306ed3d"
     }
 }
 ```

@@ -175,6 +175,13 @@
       "output": "CreateCustomFunctionResponse",
       "status": "online"
     },
+    "CreateDataModel": {
+      "document": "创建数据建模，提供给云应用使用，实现“Wedata数据建模”的下单发货",
+      "input": "CreateDataModelRequest",
+      "name": "（仅公有云）创建数据建模，提供给云应用使用，实现\"Wedata数据建模\"的下单发货",
+      "output": "CreateDataModelResponse",
+      "status": "online"
+    },
     "CreateDataSource": {
       "document": "创建数据源",
       "input": "CreateDataSourceRequest",
@@ -292,6 +299,13 @@
       "input": "DeleteCustomFunctionRequest",
       "name": "删除用户自定义函数",
       "output": "DeleteCustomFunctionResponse",
+      "status": "online"
+    },
+    "DeleteDataModel": {
+      "document": "销毁数据建模，提供给云应用使用，实现“Wedata数据建模”的销毁",
+      "input": "DeleteDataModelRequest",
+      "name": "（仅公有云）销毁数据建模，提供给云应用使用，实现Wedata数据建模的销毁",
+      "output": "DeleteDataModelResponse",
       "status": "online"
     },
     "DeleteDataSources": {
@@ -1629,6 +1643,13 @@
       "input": "UnlockIntegrationTaskRequest",
       "name": "解锁集成任务",
       "output": "UnlockIntegrationTaskResponse",
+      "status": "online"
+    },
+    "UpdateDataModelRegistryInfo": {
+      "document": "数语向wedata注册，提供自身cam角色信息，跳转域名、ip、端口信息等",
+      "input": "UpdateDataModelRegistryInfoRequest",
+      "name": "（仅公有云）数语向Wedata注册，更新相关信息",
+      "output": "UpdateDataModelRegistryInfoResponse",
       "status": "online"
     },
     "UpdateWorkflowOwner": {
@@ -7060,6 +7081,88 @@
       ],
       "type": "object"
     },
+    "CreateDataModelRequest": {
+      "document": "CreateDataModel请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云应用的实例id",
+          "example": "cloudapp-x3hadra3",
+          "member": "string",
+          "name": "CloudappId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户的子账号id",
+          "example": "1234567",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Wedata数据建模购买参数，包年包月类型单位，年：y，月：m，默认m",
+          "example": "m",
+          "member": "string",
+          "name": "TimeUnit",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Wedata数据建模购买参数，购买时长，默认1",
+          "example": "1",
+          "member": "int64",
+          "name": "TimeSpan",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "Wedata数据建模购买参数，是否自动续费，是：1，否：0，默认0",
+          "example": "0",
+          "member": "uint64",
+          "name": "AutoRenewFlag",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "Wedata数据建模购买参数，标准版：DATA_MODEL_STANDARD，企业版：DATA_MODEL_PRO，默认DATA_MODEL_STANDARD",
+          "example": "DATA_MODEL_STANDARD",
+          "member": "string",
+          "name": "DataModelVersion",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDataModelResponse": {
+      "document": "CreateDataModel返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "“Wedata数据建模”的实例id",
+          "example": "0b2c0452-b8cc-447b-9c7c-d115ce28e8ea",
+          "member": "string",
+          "name": "Data",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateDataSourceRequest": {
       "document": "CreateDataSource请求参数结构体",
       "members": [
@@ -8487,7 +8590,7 @@
         },
         {
           "disabled": false,
-          "document": "工作量ID",
+          "document": "工作流ID",
           "example": "无",
           "member": "string",
           "name": "WorkflowId",
@@ -8500,6 +8603,15 @@
           "example": "无",
           "member": "string",
           "name": "ParentFolderId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "目录分类",
+          "example": "DLC",
+          "member": "string",
+          "name": "TaskNodeType",
           "required": false,
           "type": "string"
         }
@@ -10009,6 +10121,66 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总表数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "TableCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据源信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "GovDatasourceInfo",
+          "name": "DatasourceList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "采集任务id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CollectJobId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "采集任务名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CollectJobName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "引擎id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "引擎名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -10229,6 +10401,61 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDataModelRequest": {
+      "document": "DeleteDataModel请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云应用的实例id",
+          "example": "cloudapp-x3hadra3",
+          "member": "string",
+          "name": "CloudappId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据建模的实例id",
+          "example": "f4d52408-5cec-4075-b4f4-5b7154e0a4c7",
+          "member": "string",
+          "name": "DataModelId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户的子账号id",
+          "example": "12341",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDataModelResponse": {
+      "document": "DeleteDataModel返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否销毁成功",
+          "example": "true",
+          "member": "bool",
+          "name": "Data",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -14811,11 +15038,38 @@
         },
         {
           "disabled": false,
+          "document": "日志级别，Info/Debug/Warn/Error/All",
+          "example": "无",
+          "member": "string",
+          "name": "LogLevelType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "文件类型,Log/Code",
+          "example": "无",
+          "member": "string",
+          "name": "ExecutionFileType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "统一执行平台执行id",
+          "example": "无",
+          "member": "string",
+          "name": "ExecutionJobId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "服务器Ip",
           "example": "\"172.16.16.16\"",
           "member": "string",
           "name": "BrokerIp",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
@@ -14824,7 +15078,7 @@
           "example": "\"20210602000000-9-all-log-0.20210602222614.log\"",
           "member": "string",
           "name": "OriginFileName",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
@@ -14844,6 +15098,24 @@
           "name": "LineCount",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询日志扩展信息,通过统一执行平台接口分页查询日志时需要带上,第一页时为null",
+          "example": "无",
+          "member": "string",
+          "name": "ExtInfo",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "请求来源，WEB 前端；CLIENT 客户端",
+          "example": "无",
+          "member": "string",
+          "name": "RequestFromSource",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -14902,11 +15174,20 @@
         },
         {
           "disabled": false,
+          "document": "请求来源，WEB 前端；CLIENT 客户端",
+          "example": "无",
+          "member": "string",
+          "name": "RequestFromSource",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "执行机IP",
           "example": "\"172.16.1.119\"",
           "member": "string",
           "name": "BrokerIp",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
@@ -14915,7 +15196,34 @@
           "example": "\"20230309190426-9-all-log-0.20230309190612.log\"",
           "member": "string",
           "name": "OriginFileName",
-          "required": true,
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "执行平台下发执行id",
+          "example": "无",
+          "member": "string",
+          "name": "ExecutionJobId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "日志级别，Info/Debug/Warn/Error/All",
+          "example": "无",
+          "member": "string",
+          "name": "LogLevelType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "文件类型,Log/Code",
+          "example": "无",
+          "member": "string",
+          "name": "ExecutionFileType",
+          "required": false,
           "type": "string"
         }
       ],
@@ -16628,7 +16936,7 @@
           "member": "Filter",
           "name": "Filters",
           "required": false,
-          "type": "object"
+          "type": "list"
         },
         {
           "disabled": false,
@@ -16637,7 +16945,7 @@
           "member": "OrderField",
           "name": "OrderFields",
           "required": false,
-          "type": "object"
+          "type": "list"
         }
       ],
       "type": "object"
@@ -18410,6 +18718,15 @@
       "members": [
         {
           "disabled": false,
+          "document": "请求来源，WEB 前端；CLIENT 客户端",
+          "example": "无",
+          "member": "string",
+          "name": "RequestFromSource",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "实例列表",
           "example": "无",
           "member": "InstanceOpsDto",
@@ -18569,6 +18886,15 @@
           "name": "IsCount",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "项目ID列表，用于多项目实例列表筛选，请注意，该字段传入时 ProjectId 字段也必须传，且传入的 ProjectIds 中的项目ID必须是当前用户有权限的项目ID，否则会由于权限校验失败报错",
+          "example": "无",
+          "member": "string",
+          "name": "ProjectIds",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -18576,6 +18902,16 @@
     "DescribeScheduleInstancesResponse": {
       "document": "DescribeScheduleInstances返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "请求来源，WEB 前端；CLIENT 客户端\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RequestFromSource",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
         {
           "disabled": false,
           "document": "实例结果集",
@@ -24116,6 +24452,15 @@
           "name": "RemotePath",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "地域",
+          "example": "无",
+          "member": "string",
+          "name": "RemoteRegion",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -24412,6 +24757,62 @@
       ],
       "type": "object"
     },
+    "GovDatasourceInfo": {
+      "document": "数据源信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据源id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DatasourceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据源名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DatasourceName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据源集群ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DatasourceClusterId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据源urn\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DatasourceUrn",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据源环境\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DatasourceEnv",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "InstanceApiOpsRequest": {
       "document": "实例查询类型",
       "members": [
@@ -24693,6 +25094,15 @@
           "name": "ExecutorGroupIdList",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "true 只过滤重跑过的实例，false 忽略此过滤条件，结果集过滤条件中不包括是否重跑",
+          "example": "无",
+          "member": "bool",
+          "name": "OnlyRerun",
+          "required": false,
+          "type": "bool"
         }
       ],
       "usage": "in"
@@ -24871,6 +25281,39 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "调度运行方式, 0: 周期调度, 1: 空跑调度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "ScheduleRunType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "统一执行平台，下发执行Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ExecutionJobId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例运行类型: 0: 普通运行, 1: 空跑运行\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "InstanceRunType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -25116,7 +25559,7 @@
           "example": "123",
           "member": "string",
           "name": "FileSize",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -25127,7 +25570,7 @@
           "example": "123_2022-12-12 00:00:00",
           "member": "string",
           "name": "OriginFileName",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -25208,6 +25651,17 @@
           "required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "统一执行平台，下发执行Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ExecutionJobId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -25273,6 +25727,36 @@
           "name": "LineCount",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "统一执行平台日志分页查询参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ExtInfo",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "日志分页查询，是否最后一页\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "IsEnd",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文件大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FileSize",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -26113,6 +26597,28 @@
           "output_required": false,
           "required": false,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "并发策略, 0: 等待并发, 1: kill自身\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "ConcurrentStrategy",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "调度运行方式, 0: 周期调度, 1: 空跑调度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "ScheduleRunType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -31927,6 +32433,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "函数资源文件类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "JAR;PYTHON",
+          "member": "string",
+          "name": "FunctionResourceFileType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -32403,7 +32919,7 @@
           "example": "[]",
           "member": "SystemRole",
           "name": "Roles",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -32413,7 +32929,7 @@
           "example": "名称",
           "member": "string",
           "name": "UserName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -32423,7 +32939,7 @@
           "example": "1",
           "member": "string",
           "name": "UserId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -32433,7 +32949,7 @@
           "example": "1",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -32443,7 +32959,7 @@
           "example": "true",
           "member": "bool",
           "name": "Creator",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -32453,7 +32969,7 @@
           "example": "无",
           "member": "string",
           "name": "DisplayName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -32463,8 +32979,48 @@
           "example": "无",
           "member": "bool",
           "name": "IsProjectAdmin",
-          "required": false,
+          "output_required": true,
           "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "手机号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PhoneNum",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "邮箱\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Email",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "主账号id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OwnerUin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "租户iD\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AppId",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -33178,6 +33734,42 @@
           "example": "无",
           "member": "string",
           "name": "CrontabExpression",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "0：不修改\n1：将任务的上游依赖配置改为默认值 ",
+          "example": "0、1",
+          "member": "string",
+          "name": "ModifyCycleValue",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启日历调度 1 开启 0关闭",
+          "example": "无",
+          "member": "string",
+          "name": "CalendarOpen",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "日历名称",
+          "example": "无",
+          "member": "string",
+          "name": "CalendarName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "日历id",
+          "example": "无",
+          "member": "string",
+          "name": "CalendarId",
           "required": false,
           "type": "string"
         }
@@ -34139,6 +34731,28 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "项目id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "string",
+          "name": "ProjectId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "项目名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "projectName",
+          "member": "string",
+          "name": "ProjectName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -34585,6 +35199,17 @@
           "output_required": true,
           "required": false,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "触发条件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "固定值>1",
+          "member": "string",
+          "name": "TriggerCondition",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -35438,6 +36063,61 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "项目id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "string",
+          "name": "ProjectId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "项目名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "项目1",
+          "member": "string",
+          "name": "ProjectName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "INITIAL",
+          "member": "string",
+          "name": "InstanceStatus",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例运行的开始时间",
+          "example": "yyyy-MM-dd HH:mm:ss",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例运行的结束时间",
+          "example": "yyyy-MM-dd HH:mm:ss",
+          "member": "string",
+          "name": "FinishTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -39148,7 +39828,7 @@
           "example": "1",
           "member": "string",
           "name": "RoleId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -39158,7 +39838,7 @@
           "example": "Name",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -39168,7 +39848,7 @@
           "example": "Name",
           "member": "string",
           "name": "NameCn",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -39178,7 +39858,7 @@
           "example": "描述",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -39188,7 +39868,7 @@
           "example": "[]",
           "member": "RolePrivilege",
           "name": "Privileges",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -39198,7 +39878,7 @@
           "example": "[]",
           "member": "string",
           "name": "MethodPaths",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -39208,7 +39888,7 @@
           "example": "无",
           "member": "string",
           "name": "RoleType",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -39218,7 +39898,7 @@
           "example": "无",
           "member": "bool",
           "name": "SystemInit",
-          "required": false,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -39228,7 +39908,7 @@
           "example": "无",
           "member": "string",
           "name": "Params",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -40882,6 +41562,56 @@
           "name": "Schema",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "关联数据眼信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "GovDatasourceInfo",
+          "name": "CollectDatasourceList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "采集任务id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CollectJobId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "采集任务名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CollectJobName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据源urn\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Urn",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否有修改业务权限\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "HasBizPermission",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": true
         }
       ],
@@ -43793,6 +44523,106 @@
       ],
       "type": "object"
     },
+    "UpdateDataModelRegistryInfoRequest": {
+      "document": "UpdateDataModelRegistryInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云应用的实例id",
+          "example": "cloudapp-x3hadra3",
+          "member": "string",
+          "name": "CloudappId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数语的CAM角色",
+          "example": "Cloudapp_x3HADRA3_Role",
+          "member": "string",
+          "name": "AppCamRole",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数语的ip",
+          "example": "140.xx.xx.xx",
+          "member": "string",
+          "name": "Ip",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数语的端口",
+          "example": "18091",
+          "member": "uint64",
+          "name": "Port",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "数语的CAM角色id",
+          "example": "4000000001321",
+          "member": "string",
+          "name": "AppCamRoleId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务提供方",
+          "example": "shuyu",
+          "member": "string",
+          "name": "Provider",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "租户id",
+          "example": "1234456",
+          "member": "string",
+          "name": "TenantId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "主账号id",
+          "example": "1234456",
+          "member": "string",
+          "name": "OwnId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateDataModelRegistryInfoResponse": {
+      "document": "UpdateDataModelRegistryInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数语向wedata注册成功",
+          "example": "true",
+          "member": "bool",
+          "name": "Data",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "UpdateWorkflowOwnerRequest": {
       "document": "UpdateWorkflowOwner请求参数结构体",
       "members": [
@@ -45093,6 +45923,7 @@
           "example": "无",
           "member": "string",
           "name": "ProjectId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -45103,6 +45934,7 @@
           "example": "无",
           "member": "string",
           "name": "WorkflowId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -45113,6 +45945,7 @@
           "example": "无",
           "member": "string",
           "name": "CreateTime",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -45123,6 +45956,7 @@
           "example": "无",
           "member": "string",
           "name": "Creater",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -45133,6 +45967,7 @@
           "example": "无",
           "member": "string",
           "name": "ModifyTime",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -45143,6 +45978,7 @@
           "example": "无",
           "member": "int64",
           "name": "DelayTime",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -45153,6 +45989,7 @@
           "example": "无",
           "member": "int64",
           "name": "StartupTime",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -45163,6 +46000,7 @@
           "example": "无",
           "member": "string",
           "name": "SelfDepend",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -45173,6 +46011,7 @@
           "example": "无",
           "member": "string",
           "name": "StartTime",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -45183,6 +46022,7 @@
           "example": "无",
           "member": "string",
           "name": "EndTime",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -45193,6 +46033,7 @@
           "example": "无",
           "member": "string",
           "name": "TaskAction",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -45203,6 +46044,7 @@
           "example": "无",
           "member": "string",
           "name": "CycleType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -45213,6 +46055,7 @@
           "example": "无",
           "member": "int64",
           "name": "CycleStep",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -45223,6 +46066,7 @@
           "example": "无",
           "member": "string",
           "name": "CrontabExpression",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -45233,6 +46077,7 @@
           "example": "无",
           "member": "string",
           "name": "ExecutionStartTime",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -45243,6 +46088,7 @@
           "example": "无",
           "member": "string",
           "name": "ExecutionEndTime",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -45253,6 +46099,7 @@
           "example": "无",
           "member": "string",
           "name": "InstanceInitStrategy",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -45263,6 +46110,7 @@
           "example": "无",
           "member": "string",
           "name": "DependencyWorkflow",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -45273,6 +46121,7 @@
           "example": "无",
           "member": "string",
           "name": "SchedulerDesc",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -45283,6 +46132,7 @@
           "example": "无",
           "member": "string",
           "name": "FirstSubmitTime",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -45293,6 +46143,40 @@
           "example": "无",
           "member": "string",
           "name": "LatestSubmitTime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "日历调度是否开启\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CalendarOpen",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "日历调度名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CalendarName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "日历调度id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CalendarId",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true

@@ -22,9 +22,9 @@ Output:
                 "Type": 5,
                 "VpcId": "vpc-406waega",
                 "VpcName": "vpc---",
-                "PublicIp": "",
+                "PublicIp": "1.1.1.1",
                 "Ip": "192.168.0.13,192.168.0.3",
-                "CdbId": "",
+                "CdbId": "cdb-0cc13ab",
                 "SecurityGroupRuleCount": 1,
                 "SecurityGroupCount": 1
             },
@@ -34,9 +34,9 @@ Output:
                 "Type": 5,
                 "VpcId": "vpc-dvc0qmmm",
                 "VpcName": "Dno",
-                "PublicIp": "",
+                "PublicIp": "1.1.1.1",
                 "Ip": "172.21.0.12",
-                "CdbId": "",
+                "CdbId": "cdb-0cc13ab",
                 "SecurityGroupRuleCount": 1,
                 "SecurityGroupCount": 0
             }

@@ -19,7 +19,7 @@ Output:
         ],
         "VulInfo": [
             {
-                "CveId": "cve-xx",
+                "CveId": "cve- ",
                 "CvssScore": 0,
                 "Name": "name",
                 "Reference": "ref",
@@ -43,17 +43,17 @@ Output:
                 "ScanBeginTime": " 2019-12-25 11:57:15",
                 "OsName": "osname",
                 "Quuid": "1c26308c-5493-4eaf-a817-112ec25f499e",
-                "HostIp": "xx.xx.xx.xx",
+                "HostIp": "10.1.1.15",
                 "RiskNum": 1,
                 "Id": 1,
                 "Description": "desc",
-                "MachineWanIp": "xx.xx.xx.xx",
+                "MachineWanIp": "10.1.1.15",
                 "MachineExtraInfo": {
-                    "WanIP": "xx.xx.xx.xx",
-                    "PrivateIP": "xx.xx.xx.xx",
+                    "WanIP": "10.1.1.15",
+                    "PrivateIP": "10.1.1.15",
                     "NetworkType": 0,
                     "NetworkName": "name",
-                    "InstanceID": "ins-xxx",
+                    "InstanceID": "ins-dsf",
                     "HostName": "hostname"
                 }
             }
@@ -64,7 +64,7 @@ Output:
         "ScanLeftTime": 1,
         "ScanBeginTime": " 2019-12-25 11:57:15",
         "TotalCount": 1,
-        "RequestId": "xxxxxxxx-1234-5678-9101-yyyyyyyyyy",
+        "RequestId": "acdd5474-6360-4fd4-bfc7-843162cb8116",
         "RiskEventCount": 1,
         "VulCount": 1,
         "RiskMachineCount": 1,

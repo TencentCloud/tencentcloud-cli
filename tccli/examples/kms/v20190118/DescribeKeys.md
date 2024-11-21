@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli kms DescribeKeys --cli-unfold-argument  \
-    --KeyIds 23e80852-1e38-11e9-b129-5cb9019b4b01 23e80852-1e38-11e9-b129-5cb9019b4b02 23e80852-1e38-11e9-b129-5cb9019b4b03
+    --KeyIds 87ff856e-973c-11ef-947b-525400d834e5 93866e69-9755-11ef-8e65-52540089bc41
 ```
 
 Output: 
@@ -15,55 +15,43 @@ Output:
     "Response": {
         "KeyMetadatas": [
             {
-                "KeyId": "23e80852-1e38-11e9-b129-5cb9019b4b01",
-                "Alias": "myalias",
-                "CreateTime": 1548210729,
-                "Description": "test cmk",
+                "Alias": "test8-lzc",
+                "CreateTime": 1730347170,
+                "CreatorUin": 700001224419,
+                "DeletionDate": 0,
+                "Description": "test描述",
+                "HsmClusterId": "cls-hsm-3dflmo9g",
+                "KeyId": "87ff856e-973c-11ef-947b-525400d834e5",
+                "KeyRotationEnabled": false,
                 "KeyState": "Enabled",
                 "KeyUsage": "ENCRYPT_DECRYPT",
-                "Type": 1,
-                "CreatorUin": 1001,
-                "KeyRotationEnabled": true,
-                "Owner": "user",
-                "NextRotateTime": 1553151489,
-                "DeletionDate": 0,
+                "NextRotateTime": 1761883170,
                 "Origin": "TENCENT_KMS",
+                "Owner": "user",
+                "ResourceId": "creatorUin/700001224419/87ff856e-973c-11ef-947b-525400d834e5",
+                "Type": 4,
                 "ValidTo": 0
             },
             {
-                "KeyId": "23e80852-1e38-11e9-b129-5cb9019b4b02",
-                "Alias": "testalias",
-                "CreateTime": 1548210730,
-                "Description": "test cmk",
-                "KeyState": "Disabled",
-                "KeyUsage": "ENCRYPT_DECRYPT",
-                "Type": 1,
-                "CreatorUin": 1001,
-                "KeyRotationEnabled": true,
-                "Owner": "user",
-                "NextRotateTime": 1553151489,
+                "Alias": "test11-lzc",
+                "CreateTime": 1730357927,
+                "CreatorUin": 700001224419,
                 "DeletionDate": 0,
-                "Origin": "TENCENT_KMS",
-                "ValidTo": 0
-            },
-            {
-                "KeyId": "23e80852-1e38-11e9-b129-5cb9019b4b03",
-                "Alias": "testalias3",
-                "CreateTime": 1548210730,
-                "Description": "test cmk",
-                "KeyState": "PendingDelete",
+                "Description": "倒入外部密钥",
+                "HsmClusterId": "cls-hsm-3dflmo9g",
+                "KeyId": "93866e69-9755-11ef-8e65-52540089bc41",
+                "KeyRotationEnabled": false,
+                "KeyState": "Enabled",
                 "KeyUsage": "ENCRYPT_DECRYPT",
-                "Type": 1,
-                "CreatorUin": 1001,
-                "KeyRotationEnabled": true,
+                "NextRotateTime": 1761893927,
+                "Origin": "EXTERNAL",
                 "Owner": "user",
-                "NextRotateTime": 1553151489,
-                "DeletionDate": 1560580015,
-                "Origin": "TENCENT_KMS",
+                "ResourceId": "creatorUin/700001224419/93866e69-9755-11ef-8e65-52540089bc41",
+                "Type": 4,
                 "ValidTo": 0
             }
         ],
-        "RequestId": "1b580852-1e38-11e9-b129-5cb9019b4b00"
+        "RequestId": "05278c40-eb6c-473d-a1e6-00a8177f9c6a"
     }
 }
 ```

@@ -11,35 +11,34 @@ Output:
 ```
 {
     "Response": {
-        "InstanceList": [
-            {
-                "InstanceID": "xx",
-                "TopicList": [
-                    {
-                        "TopicID": "xx",
-                        "TopicName": "xx"
-                    }
-                ],
-                "RouteList": [
-                    {
-                        "Domain": "xx",
-                        "AccessType": 0,
-                        "RouteID": 0,
-                        "Vip": "xx",
-                        "DomainPort": 1,
-                        "VipType": 0
-                    }
-                ],
-                "InstanceName": "xx"
-            }
-        ],
+        "InstanceList": [],
         "RegionList": [
             {
-                "Region": "ap-guangzhou",
-                "RegionName": "广州"
+                "Region": "ap-bangkok",
+                "RegionName": "亚太东南(曼谷)"
+            },
+            {
+                "Region": "ap-beijing",
+                "RegionName": "华北地区(北京)"
+            },
+            {
+                "Region": "ap-beijing-fsi",
+                "RegionName": "华北地区(北京金融)"
+            },
+            {
+                "Region": "ap-changsha-ec",
+                "RegionName": "华中地区(长沙ec)"
+            },
+            {
+                "Region": "ap-chengdu",
+                "RegionName": "西南地区(成都)"
+            },
+            {
+                "Region": "ap-chongqing",
+                "RegionName": "西南地区(重庆)"
             }
         ],
-        "RequestId": "29b37d86-f63d-43d1-b21a-640e82965198"
+        "RequestId": "a9761df9-00d1-4102-8176-0c9be0e11c59"
     }
 }
 ```

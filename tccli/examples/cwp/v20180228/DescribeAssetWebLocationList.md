@@ -14,8 +14,8 @@ Output:
         "Total": 1,
         "Locations": [
             {
-                "Uuid": "24c9be55-c743-4a75-a5c7-2a2912341234",
-                "Quuid": "24c9be55-c743-4a75-a5c7-2a2912341234",
+                "Uuid": "acdd5474-6360-4fd4-bfc7-843162cb8116",
+                "Quuid": "acdd5474-6360-4fd4-bfc7-843162cb8116",
                 "MachineIp": "10.0.0.11",
                 "MachineWanIp": "110.84.0.11",
                 "MachineName": "test-name",
@@ -23,12 +23,12 @@ Output:
                 "Name": "test-name",
                 "Port": "22",
                 "Proto": "tcp",
-                "ServiceType": "abc",
+                "ServiceType": "nginx",
                 "PathCount": 1,
                 "User": "root",
                 "MainPath": "/root",
                 "MainPathOwner": "/root",
-                "Permission": "abc",
+                "Permission": " ",
                 "ProjectId": 1,
                 "Tag": [
                     {
@@ -37,7 +37,7 @@ Output:
                         "TagId": 1
                     }
                 ],
-                "Id": "abc",
+                "Id": "wfwfw",
                 "UpdateTime": "2024-10-11 12:23:34",
                 "FirstTime": "2024-10-11 12:23:34",
                 "IsNew": 0,
@@ -45,7 +45,7 @@ Output:
                     "WanIP": "110.84.0.11",
                     "PrivateIP": "10.0.0.11",
                     "NetworkType": 0,
-                    "NetworkName": "vpc-12341234",
+                    "NetworkName": "vpc-dsd4",
                     "InstanceID": "ins-aj28fjz",
                     "HostName": "test-name"
                 }

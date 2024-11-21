@@ -812,7 +812,7 @@
           "example": "无",
           "member": "string",
           "name": "EvidenceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -822,7 +822,7 @@
           "example": "无",
           "member": "string",
           "name": "EvidenceCert",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -859,7 +859,7 @@
           "example": "无",
           "member": "string",
           "name": "EvidenceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -869,7 +869,7 @@
           "example": "无",
           "member": "string",
           "name": "EvidenceFile",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

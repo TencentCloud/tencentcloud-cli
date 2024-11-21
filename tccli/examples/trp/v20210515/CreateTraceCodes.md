@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli trp CreateTraceCodes --cli-unfold-argument  \
-    --BatchId xfetmgoiky2nms6nk8 \
+    --BatchId 20241022112952826 \
     --Codes.0.Code https://anxin.m.qq.com/qr/eqdmnz7020bmtvi9_021351149823032923
 ```
 
@@ -14,10 +14,10 @@ Output:
 ```
 {
     "Response": {
-        "BatchId": "abc",
+        "BatchId": "20241022112952826",
         "ActiveCnt": 1,
         "CodeCnt": 1,
-        "RequestId": "abc"
+        "RequestId": "eaa3ccac-d2f5-4df0-a8b3-7b51324e9283"
     }
 }
 ```

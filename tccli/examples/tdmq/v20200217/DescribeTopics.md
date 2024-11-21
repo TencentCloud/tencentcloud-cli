@@ -6,14 +6,12 @@ Input:
 
 ```
 tccli tdmq DescribeTopics --cli-unfold-argument  \
-    --EnvironmentId abc \
-    --TopicName abc \
+    --EnvironmentId devNs \
+    --TopicName devTopic \
     --Offset 1 \
     --Limit 1 \
     --TopicType 1 \
-    --ClusterId abc \
-    --Filters.0.Name abc \
-    --Filters.0.Values abc \
+    --ClusterId pulsar-uahenidn \
     --TopicCreator 1
 ```
 
@@ -22,44 +20,44 @@ Output:
 {
     "Response": {
         "TotalCount": 1,
-        "RequestId": "abc",
+        "RequestId": "bee03397-31dd-4688-8fe0-81c691c3c1ae",
         "TopicSets": [
             {
                 "PulsarTopicType": 0,
                 "TopicType": 1,
-                "ProducerCount": "abc",
-                "ConsumerLimit": "abc",
-                "ConsumerCount": "abc",
+                "ProducerCount": "1",
+                "ConsumerLimit": "1000",
+                "ConsumerCount": "200",
                 "LastLedgerCreatedTimestamp": "14578964532",
-                "MsgThroughputIn": "abc",
+                "MsgThroughputIn": "24",
                 "UpdateTime": "2020-09-22 00:00:00",
-                "AverageMsgSize": "abc",
+                "AverageMsgSize": "20",
                 "Partitions": 1,
-                "Remark": "abc",
-                "LastConfirmedEntry": "abc",
+                "Remark": "devRemark",
+                "LastConfirmedEntry": "23",
                 "TotalSize": "1",
-                "NumberOfEntries": "abc",
-                "MsgRateOut": "abc",
-                "ProducerLimit": "abc",
-                "EnvironmentId": "abc",
-                "TopicName": "abc",
-                "MsgRateIn": "abc",
-                "MsgThroughputOut": "abc",
+                "NumberOfEntries": "12",
+                "MsgRateOut": "10",
+                "ProducerLimit": "10",
+                "EnvironmentId": "devNs",
+                "TopicName": "devTopic",
+                "MsgRateIn": "12",
+                "MsgThroughputOut": "100",
                 "SubTopicSets": [
                     {
                         "TopicType": 1,
                         "ProducerCount": "1",
-                        "LastConfirmedEntry": "abc",
+                        "LastConfirmedEntry": "100",
                         "TotalSize": "1",
-                        "NumberOfEntries": "abc",
+                        "NumberOfEntries": "100",
                         "ConsumerCount": "1",
-                        "MsgRateOut": "abc",
+                        "MsgRateOut": "100",
                         "AverageMsgSize": "1",
-                        "MsgThroughputIn": "abc",
-                        "MsgRateIn": "abc",
+                        "MsgThroughputIn": "100",
+                        "MsgRateIn": "100",
                         "Partitions": 0,
                         "LastLedgerCreatedTimestamp": "124567885324",
-                        "MsgThroughputOut": "abc"
+                        "MsgThroughputOut": "100"
                     }
                 ],
                 "CreateTime": "2020-09-22 00:00:00"

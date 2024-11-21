@@ -21,10 +21,10 @@ Output:
         "Modules": [
             {
                 "Name": "test-name",
-                "Desc": "test",
+                "Desc": "idesc",
                 "Path": "/root",
                 "Version": "0.1.1",
-                "MachineIp": "10.0.0.11",
+                "MachineIp": "1.1.1.1",
                 "MachineName": "test-name",
                 "OsInfo": "CentOs Bit64",
                 "Size": 1,
@@ -36,13 +36,13 @@ Output:
                 "UpdateTime": "2024-10-11 12:23:34",
                 "FirstTime": "2024-10-11 12:23:34",
                 "IsNew": 0,
-                "MachineWanIp": "110.84.0.11",
+                "MachineWanIp": "1.1.1.1",
                 "MachineExtraInfo": {
-                    "WanIP": "110.84.0.11",
-                    "PrivateIP": "10.0.0.11",
+                    "WanIP": "1.1.1.1",
+                    "PrivateIP": "1.1.1.1",
                     "NetworkType": 0,
-                    "NetworkName": "vpc-12341234",
-                    "InstanceID": "ins-aj28fjz",
+                    "NetworkName": "vpc-id",
+                    "InstanceID": "ins-id",
                     "HostName": "test-name"
                 }
             }

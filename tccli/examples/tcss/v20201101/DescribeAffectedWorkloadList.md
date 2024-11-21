@@ -6,16 +6,27 @@ Input:
 
 ```
 tccli tcss DescribeAffectedWorkloadList --cli-unfold-argument  \
-    --CheckItemId 1
+    --CheckItemId 10071 \
+    --Limit 10 \
+    --Offset 0
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "ea73ee35-ec93-4d94-b2fc-979a58f34be1",
-        "TotalCount": 0,
-        "AffectedWorkloadList": []
+        "AffectedWorkloadList": [
+            {
+                "ClusterId": "test-clusterid",
+                "ClusterName": "benben-tcss",
+                "Region": "ap-guangzhou",
+                "VerifyInfo": "yunjing-agent set image tag \"latest\"",
+                "WorkloadName": "tcss/yunjing-agent",
+                "WorkloadType": "DaemonSet"
+            }
+        ],
+        "RequestId": "299deeb1-48aa-449d-980c-1f46e2375cec",
+        "TotalCount": 111
     }
 }
 ```

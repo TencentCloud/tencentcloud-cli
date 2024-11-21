@@ -15,7 +15,7 @@ Output:
             {
                 "DedicatedClusterId": "cluster-e88qh1ue",
                 "Zone": "ap-guangzhou-2",
-                "Description": "test",
+                "Description": "this is a description",
                 "Name": "wechen-first-dc",
                 "LifecycleStatus": "PENDING",
                 "CreateTime": "2020-12-10T06:15:43Z",
@@ -24,7 +24,7 @@ Output:
             {
                 "DedicatedClusterId": "cluster-1hza0fbu",
                 "Zone": "ap-guangzhou-2",
-                "Description": "test",
+                "Description": "this is a description",
                 "Name": "wechen-first-dc",
                 "LifecycleStatus": "PENDING",
                 "CreateTime": "2020-12-10T06:15:50Z",
@@ -33,7 +33,7 @@ Output:
             {
                 "DedicatedClusterId": "cluster-ptrfvhyw",
                 "Zone": "ap-guangzhou-2",
-                "Description": "test",
+                "Description": "this is a description",
                 "Name": "wechen-first-dc",
                 "LifecycleStatus": "PENDING",
                 "CreateTime": "2020-12-10T06:17:26Z",

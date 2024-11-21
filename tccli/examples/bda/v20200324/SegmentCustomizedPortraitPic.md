@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli bda SegmentCustomizedPortraitPic --cli-unfold-argument  \
-    --Url IamNotAUrl \
+    --Url https://liudehua-9527.cos.ap-guangzhou.myqcloud.com/input.jpeg \
     --SegmentationOptions.Background False
 ```
 
@@ -31,7 +31,7 @@ Input:
 
 ```
 tccli bda SegmentCustomizedPortraitPic --cli-unfold-argument  \
-    --Url test.jpg \
+    --Url https://liudehua-9527.cos.ap-guangzhou.myqcloud.com/input.jpeg \
     --SegmentationOptions.Head True
 ```
 
