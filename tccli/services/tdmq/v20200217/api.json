@@ -5885,7 +5885,7 @@
         {
           "disabled": false,
           "document": "协议类型数组",
-          "example": "无",
+          "example": "pulsar",
           "member": "string",
           "name": "Types",
           "required": false,

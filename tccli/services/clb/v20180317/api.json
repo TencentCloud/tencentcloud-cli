@@ -2469,60 +2469,60 @@
         {
           "disabled": false,
           "document": "配置ID",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "UconfigId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "配置类型",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "ConfigType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "配置名字\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "ConfigName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "配置内容",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "ConfigContent",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "增加配置时间",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "CreateTimestamp",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "修改配置时间",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "UpdateTimestamp",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }

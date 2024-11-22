@@ -35,6 +35,20 @@
       "output": "CancelCommonMixStreamResponse",
       "status": "online"
     },
+    "CopyCaster": {
+      "document": "该接口用来复制导播台配置",
+      "input": "CopyCasterRequest",
+      "name": "复制导播台",
+      "output": "CopyCasterResponse",
+      "status": "online"
+    },
+    "CreateCaster": {
+      "document": "该接口用来创建新的导播台",
+      "input": "CreateCasterRequest",
+      "name": "创建新导播台",
+      "output": "CreateCasterResponse",
+      "status": "online"
+    },
     "CreateCommonMixStream": {
       "document": "该接口用来创建通用混流。用法与旧接口 mix_streamv2.start_mix_stream_advanced 基本一致。\n注意：当前最多支持16路混流。\n最佳实践：https://cloud.tencent.com/document/product/267/45566",
       "input": "CreateCommonMixStreamRequest",
@@ -173,6 +187,13 @@
       "input": "CreateScreenshotTaskRequest",
       "name": "创建截图任务",
       "output": "CreateScreenshotTaskResponse",
+      "status": "online"
+    },
+    "DeleteCaster": {
+      "document": "该接口用来删除一个导播台的所有信息。\n注意，调用该接口后，所有的导播台信息将被清除，包括正在直播的内容也将直接中断。",
+      "input": "DeleteCasterRequest",
+      "name": "删除导播台",
+      "output": "DeleteCasterResponse",
       "status": "online"
     },
     "DeleteLiveCallbackRule": {
@@ -357,11 +378,32 @@
       "output": "DescribeCallbackRecordsListResponse",
       "status": "online"
     },
+    "DescribeCaster": {
+      "document": "查询导播台信息接口，用来查询导播台状态、描述、输出长、宽等信息",
+      "input": "DescribeCasterRequest",
+      "name": "查询导播台信息",
+      "output": "DescribeCasterResponse",
+      "status": "online"
+    },
+    "DescribeCasterDisplayInfo": {
+      "document": "查询导播台PVW任务和PGM任务的展示信息，包括使用的布局、水印、字幕等信息。",
+      "input": "DescribeCasterDisplayInfoRequest",
+      "name": "查询导播台展示信息",
+      "output": "DescribeCasterDisplayInfoResponse",
+      "status": "online"
+    },
     "DescribeCasterList": {
       "document": "该接口用来查询账号下所有的导播台列表",
       "input": "DescribeCasterListRequest",
       "name": "查询导播台列表",
       "output": "DescribeCasterListResponse",
+      "status": "online"
+    },
+    "DescribeCasterPlayUrl": {
+      "document": "该接口用来获取导播台视频流的播放url，用来在页面上拉流展示。",
+      "input": "DescribeCasterPlayUrlRequest",
+      "name": "获取导播台视频流播放url",
+      "output": "DescribeCasterPlayUrlResponse",
       "status": "online"
     },
     "DescribeCasterTransitionTypes": {
@@ -679,6 +721,13 @@
       "output": "DescribeLiveTimeShiftTemplatesResponse",
       "status": "online"
     },
+    "DescribeLiveTimeShiftWriteSizeInfoList": {
+      "document": "支持直播时移写入量数据查询。",
+      "input": "DescribeLiveTimeShiftWriteSizeInfoListRequest",
+      "name": "直播时移写入量数据",
+      "output": "DescribeLiveTimeShiftWriteSizeInfoListResponse",
+      "status": "online"
+    },
     "DescribeLiveTranscodeDetailInfo": {
       "document": "该接口为监控数据接口，数据采集及统计方式与计费数据不同，仅供运营分析使用，不能用于计费对账参考。\n支持查询某天或某段时间的转码详细信息。由于转码数据量较大，如果查询时间跨度太长可能会拉不到数据，可以尝试将查询时间范围缩小些再重试。",
       "input": "DescribeLiveTranscodeDetailInfoRequest",
@@ -922,6 +971,13 @@
       "input": "ForbidLiveStreamRequest",
       "name": "禁推直播流",
       "output": "ForbidLiveStreamResponse",
+      "status": "online"
+    },
+    "ModifyCaster": {
+      "document": "该接口用来设置导播台的描述、名称、录制模板id等参数。",
+      "input": "ModifyCasterRequest",
+      "name": "修改导播台信息",
+      "output": "ModifyCasterResponse",
       "status": "online"
     },
     "ModifyLiveCallbackTemplate": {
@@ -2075,6 +2131,265 @@
       ],
       "usage": "out"
     },
+    "CasterDisplayInfo": {
+      "document": "导播台展示信息，包括使用的布局、水印、字幕、转场、音频等信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "布局Index。\n如果使用自定义布局，为自定义布局下标。\n如果使用单输入布局，如使用输入1，则LayoutIndexType=1， 且LayoutIndex=1，以此类推。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "LayoutIndex",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "使用的水印Index列表。\n注：当作为入参使用时，列表中的水印Index需要已经存在。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "MarkPicIndexList",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "使用的文字水印Index列表。\n注：作为入参使用时，列表中的Index需要已经存在。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "MarkWordIndexList",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "使用的转场类型。\n注：支持的转场类型可通过DescribeCasterTransitionTypes接口获取。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TransitionType",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "使用的音频输入Index列表。\n注：当该字段非空时，表示使用布局中对应的输入源的视频，AudioIndexList中对应的输入源的音频。且这些输入源需已存在。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "AudioIndexList",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "作为入参时，表示使用点播输入源，单画面输入时，点播文件是否从头开始播放。\n默认为0。\n有效值，0,1。\n0代表不从头播放\n1代表从头播放\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "InputStartType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "LayoutIndex类型，\n默认值:0\n可选值[0,1]\n0:默认类型，代表普通布局\n1:单输入类型，代表单输入布局\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "LayoutIndexType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "CasterInfo": {
+      "document": "导播台信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "导播台ID",
+          "example": "1234",
+          "member": "uint64",
+          "name": "CasterId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "导播台名称",
+          "example": "example_name",
+          "member": "string",
+          "name": "CasterName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "导播台上一次启动pgm的时间，值为unix时间戳。",
+          "example": "0",
+          "member": "uint64",
+          "name": "StartLiveTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "导播台的描述",
+          "example": "example description",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "导播台创建时间，值为unix时间戳。",
+          "example": "1603158528",
+          "member": "uint64",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "导播台状态 \n0：停止状态，无预监，无主监\n1：无预监，有主监\n2：有预监，无主监\n3：有预监，有主监",
+          "example": "0",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "导播台的过期时间戳。值为-1或unix时间戳。 \n默认值为-1。 当值为-1时，表示该导播台永不过期。 \n当值为正常unix时间戳时，导播台将在该时间过期。 \n导播台过期后，预监与主监画面将自动停止，转推自动停止。 \n点播、直播url将停止转拉，推流url需自行停止推流。",
+          "example": "-1",
+          "member": "int64",
+          "name": "ExpireTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "导播台延时播放时间，单位为秒。 ",
+          "example": "0",
+          "member": "uint64",
+          "name": "DelayTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "导播台主监输出的宽度，单位为像素。",
+          "example": "1280",
+          "member": "uint64",
+          "name": "PgmWidth",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "导播台主监输出的高度，单位为像素。",
+          "example": "720",
+          "member": "uint64",
+          "name": "PgmHeight",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "导播台主监输出的帧率。",
+          "example": "25",
+          "member": "uint64",
+          "name": "PgmFps",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "导播台主监输出的码率，单位为kbps",
+          "example": "2000",
+          "member": "uint64",
+          "name": "PgmBitRate",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "导播台主监输出的音频码率，单位为kbps。",
+          "example": "256",
+          "member": "uint64",
+          "name": "PgmAudioBitRate",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "导播台的计费类型。 \n0 通用型 1 播单型。\n注： 本参数暂无作用。",
+          "example": "0",
+          "member": "int64",
+          "name": "FeeType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "录制模板id。",
+          "example": "1",
+          "member": "uint64",
+          "name": "RecordTemplateId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "录制状态。 \n0：未录制 \n1：录制中",
+          "example": "0",
+          "member": "uint64",
+          "name": "RecordStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "录制接口返回的taskid",
+          "example": "UpTbk5RSVhRQFkAAfHwQCCjcRD0lRFcZ0xTSlNTQltlRVRLU1JAWW9EUb",
+          "member": "string",
+          "name": "RecordTaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "CdnPlayStatData": {
       "document": "下行播放统计指标",
       "members": [
@@ -2612,6 +2927,188 @@
         }
       ],
       "usage": "out"
+    },
+    "CopyCasterRequest": {
+      "document": "CopyCaster请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "源导播台的ID",
+          "example": "1234",
+          "member": "uint64",
+          "name": "CasterId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "复制产生的新导播台名称",
+          "example": "copy_example",
+          "member": "string",
+          "name": "CasterName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "复制产生的导播台推送到云直播的流id\n注意：该流id不能与云直播中的流id重复",
+          "example": "copy_output_example",
+          "member": "string",
+          "name": "OutputStreamId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CopyCasterResponse": {
+      "document": "CopyCaster返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "复制生成的导播台ID",
+          "example": "1235",
+          "member": "uint64",
+          "name": "CasterId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCasterRequest": {
+      "document": "CreateCaster请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "导播台名称",
+          "example": "test",
+          "member": "string",
+          "name": "CasterName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "导播台的描述\n最大允许长度256",
+          "example": "test_caster",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "导播台的过期时间戳。值为-1或unix时间戳。\n默认值为-1。\n当值为-1时，表示该导播台永不过期。\n当值为正常unix时间戳时，导播台将在该时间过期。\n导播台过期后，预监与主监画面将自动停止，转推自动停止。\n点播、直播url将停止转拉，推流url需自行停止推流。",
+          "example": "-1",
+          "member": "int64",
+          "name": "ExpireTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "导播台延时播放时间，单位为秒。\n默认为0，最大支持300秒",
+          "example": "0",
+          "member": "uint64",
+          "name": "DelayTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "导播台转场类型。\n默认为空。\n允许使用通过DescribeCasterTransitionTypes接口中查询到的转场类型。",
+          "example": " heart",
+          "member": "string",
+          "name": "TransitionType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "导播台主监输出的宽度，单位为像素。\n默认为1280，最大允许4096。",
+          "example": "1280",
+          "member": "uint64",
+          "name": "PgmWidth",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "导播台主监输出的高度，单位为像素。\n默认为720，最大允许2160。",
+          "example": "720",
+          "member": "uint64",
+          "name": "PgmHeight",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "导播台主监输出的帧率。\n默认为0，表示随源输出。\n最大支持60。",
+          "example": "25",
+          "member": "uint64",
+          "name": "PgmFps",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "导播台主监输出的码率，单位为kbps。\n默认为0，表示随源的码率输出。\n最大允许10000kbps。",
+          "example": "1500",
+          "member": "uint64",
+          "name": "PgmBitRate",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "导播台的计费类型。\n0 通用型 \n1 播单型。\n注： 本参数暂无作用。",
+          "example": "0",
+          "member": "int64",
+          "name": "FeeType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "导播台主监输出的音频码率，单位为kbps。\n可选项：[0, 128, 192, 256]\n默认值为0，表示随源的音频码率输出。",
+          "example": "128",
+          "member": "uint64",
+          "name": "PgmAudioBitRate",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCasterResponse": {
+      "document": "CreateCaster返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "导播台ID",
+          "example": "10",
+          "member": "uint64",
+          "name": "CasterId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CreateCommonMixStreamRequest": {
       "document": "CreateCommonMixStream请求参数结构体",
@@ -4762,6 +5259,33 @@
       ],
       "usage": "out"
     },
+    "DeleteCasterRequest": {
+      "document": "DeleteCaster请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "待删除的导播台ID",
+          "example": "1234",
+          "member": "uint64",
+          "name": "CasterId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCasterResponse": {
+      "document": "DeleteCaster返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteLiveCallbackRuleRequest": {
       "document": "DeleteLiveCallbackRule请求参数结构体",
       "members": [
@@ -5911,6 +6435,73 @@
       ],
       "type": "object"
     },
+    "DescribeCasterDisplayInfoRequest": {
+      "document": "DescribeCasterDisplayInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "导播台ID",
+          "example": "1234",
+          "member": "uint64",
+          "name": "CasterId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCasterDisplayInfoResponse": {
+      "document": "DescribeCasterDisplayInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "导播台状态\n0：停止状态，无预监，无主监 \n1：无预监，有主监 \n2：有预监，无主监 \n3：有预监，有主监\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "预监使用的展示参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CasterDisplayInfo",
+          "name": "PvwDisplayInfo",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "主监使用的展示参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CasterDisplayInfo",
+          "name": "PgmDisplayInfo",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "启动直播的时间，值为unix时间戳。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1670309219",
+          "member": "uint64",
+          "name": "StartLiveTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeCasterListRequest": {
       "document": "DescribeCasterList请求参数结构体",
       "members": [],
@@ -5928,6 +6519,108 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCasterPlayUrlRequest": {
+      "document": "DescribeCasterPlayUrl请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "导播台ID",
+          "example": "1234",
+          "member": "uint64",
+          "name": "CasterId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "请求播放url的类型。\n取值范围[1，2，3]\n1：获取输入源的播放url\n2：获取pvw的播放url\n3：获取pgm的播放url",
+          "example": "1",
+          "member": "int64",
+          "name": "PlayUrlType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "仅在PlayUrlType为1时生效，此时该参数表示请求的输入源Index。\n注：对应的输入源必须存在。",
+          "example": "1",
+          "member": "int64",
+          "name": "PlayUrlIndex",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCasterPlayUrlResponse": {
+      "document": "DescribeCasterPlayUrl返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "播放url。\n当导播台不存在预监或主监时，若请求预监或主监的播放地址，该字段为空。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http://www.example/live/test.flv",
+          "member": "string",
+          "name": "PlayUrl",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "webrtc协议播放地址。\n当导播台不存在预监或主监时，若请求预监或主监的webrtc播放地址，该字段为空。\n注：webrtc协议播放地址需配合腾讯云快直播播放sdk方可使用。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "webrtc://webrtc.domain.com/live/test",
+          "member": "string",
+          "name": "WebRTCPlayUrl",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCasterRequest": {
+      "document": "DescribeCaster请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需查询的导播台ID",
+          "example": "1234",
+          "member": "uint64",
+          "name": "CasterId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCasterResponse": {
+      "document": "DescribeCaster返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "导播台信息",
+          "example": "无",
+          "member": "CasterInfo",
+          "name": "CasterInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -7331,6 +8024,15 @@
           "name": "PageSize",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "使用指定任务 ID 查询任务信息。\n注意：仅供使用指定 ID 创建的任务查询。",
+          "example": "无",
+          "member": "string",
+          "name": "SpecifyTaskId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -8376,6 +9078,97 @@
           "member": "TimeShiftTemplate",
           "name": "Templates",
           "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLiveTimeShiftWriteSizeInfoListRequest": {
+      "document": "DescribeLiveTimeShiftWriteSizeInfoList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "起始时间点，\n使用UTC格式时间，\n例如：2019-01-08T10:00:00Z。\n支持最近六个月的查询，查询开始和结束时间跨度不支持超过31天。",
+          "example": "2022-11-01T00:00:00+08:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间点，\n使用UTC格式时间，\n例如：2019-01-08T10:00:00Z。\n支持最近六个月的查询，查询开始和结束时间跨度不支持超过31天。",
+          "example": "2022-11-01T00:00:00+08:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "域名。",
+          "example": "无",
+          "member": "string",
+          "name": "DomainNames",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "维度\nArea地区、Domain 域名、StorageDays 时移天数",
+          "example": "[\"Time\",\"CountryOrAreaNames\"]",
+          "member": "string",
+          "name": "Dimensions",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "时移天数。",
+          "example": "5",
+          "member": "int64",
+          "name": "StorageDays",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "时间跨度（分钟）\n默认5，可选 5、60或者1440。",
+          "example": "60",
+          "member": "int64",
+          "name": "Granularity",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "区域\n可选Mainland、Oversea。",
+          "example": "Oversea",
+          "member": "string",
+          "name": "MainlandOrOversea",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLiveTimeShiftWriteSizeInfoListResponse": {
+      "document": "DescribeLiveTimeShiftWriteSizeInfoList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "直播时移写入量数据明细。",
+          "example": "无",
+          "member": "TimeShiftWriteSizeData",
+          "name": "DataInfoList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -12463,6 +13256,159 @@
         }
       ],
       "usage": "in"
+    },
+    "ModifyCasterRequest": {
+      "document": "ModifyCaster请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "导播台ID",
+          "example": "10",
+          "member": "uint64",
+          "name": "CasterId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "导播台名称",
+          "example": "examp;e",
+          "member": "string",
+          "name": "CasterName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "导播台的描述\n最大允许长度256",
+          "example": "example caster",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "录制模板id。\n默认为0。\n当使用直播录制功能时，可将使用的录制模版填入。\n该接口仅保存字段，不涉及任何录制功能。",
+          "example": "1",
+          "member": "uint64",
+          "name": "RecordTemplateId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "录制状态，当调用录制接口后，可通过该字段保存录制状态。\n0：未录制 \n1：录制中\n该接口仅保存字段，不涉及任何录制处理。",
+          "example": "1",
+          "member": "uint64",
+          "name": "RecordStatus",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "导播台的过期时间戳。值为-1或unix时间戳。\n默认值为-1。 \n当值为-1时，表示该导播台永不过期。 \n当值为正常unix时间戳时，导播台将在该时间过期。\n导播台过期后，预监与主监画面将自动停止，转推自动停止。 \n点播、直播url将停止转拉，推流url需自行停止推流。",
+          "example": "-1",
+          "member": "int64",
+          "name": "ExpireTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "导播台延时播放时间，单位为秒。 \n默认为0，最大支持300秒",
+          "example": "0",
+          "member": "uint64",
+          "name": "DelayTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "导播台转场类型。 \n默认为空。 \n允许使用通过DescribeCasterTransitionTypes接口中查询到的转场类型。",
+          "example": "123",
+          "member": "string",
+          "name": "TransitionType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "导播台主监输出的宽度，单位为像素。 \n默认为1280，最大允许4096。",
+          "example": "1280",
+          "member": "uint64",
+          "name": "PgmWidth",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "导播台主监输出的高度，单位为像素。 \n默认为720，最大允许2160。",
+          "example": "720",
+          "member": "uint64",
+          "name": "PgmHeight",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "导播台主监输出的帧率。 \n默认为0，表示随源输出。 最大支持60。",
+          "example": "0",
+          "member": "uint64",
+          "name": "PgmFps",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "导播台主监输出的码率，单位为kbps。 \n默认为0，表示随源的码率输出。 \n最大允许10000kbps。",
+          "example": "0",
+          "member": "uint64",
+          "name": "PgmBitRate",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "导播台的计费类型。 \n0 通用型 \n1 播单型。 \n注： 本参数暂无作用。",
+          "example": "0",
+          "member": "int64",
+          "name": "FeeType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "录制接口返回的taskid\n注：该接口只做字段保存，不涉及录制操作。",
+          "example": "UpTbk5RSVhRQFkAAfHwQCCjcRD0lRFcZ0xTSlNTQltlRVRLU1JAWW9EUb",
+          "member": "string",
+          "name": "RecordTaskId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "导播台主监输出的音频码率，单位为kbps。 \n可选项：[0, 128, 192, 256] \n默认值为0，表示随源的音频码率输出。",
+          "example": "128",
+          "member": "uint64",
+          "name": "PgmAudioBitRate",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCasterResponse": {
+      "document": "ModifyCaster返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ModifyLiveCallbackTemplateRequest": {
       "document": "ModifyLiveCallbackTemplate请求参数结构体",
@@ -17460,6 +18406,62 @@
         }
       ],
       "usage": "both"
+    },
+    "TimeShiftWriteSizeData": {
+      "document": "直播时移写入量数据。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "区域。",
+          "example": "中国大陆",
+          "member": "string",
+          "name": "Area",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "时间，格式为：yyyy-mm-ddTHH:MM:SSZ。",
+          "example": "2022-11-18T15:00:00+08:00",
+          "member": "string",
+          "name": "Time",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "写入量（单位：字节）",
+          "example": "370390080",
+          "member": "float",
+          "name": "WriteSize",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "域名。",
+          "example": "5000.livepush.myqcloud.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "时移天数。",
+          "example": "7",
+          "member": "int64",
+          "name": "StorageDays",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "TimeValue": {
       "document": "某个时间点的指标的数值是多少。",

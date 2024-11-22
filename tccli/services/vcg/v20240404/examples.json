@@ -3,16 +3,16 @@
     "DescribeVideoStylizationJob": [
       {
         "document": "成功请求",
-        "input": "POST / HTTP/1.1\nHost: vcg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVideoStylizationJob\n<公共请求参数>\n\n{\n    \"JobId\": \"\"\n}",
-        "output": "{\n    \"Response\": {\n        \"JobId\": \"\",\n        \"RequestId\": \"\",\n        \"ResultVideoUrl\": \"\",\n        \"StatusCode\": \"JobSuccess\",\n        \"StatusMsg\": \"处理完成\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: vcg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVideoStylizationJob\n<公共请求参数>\n\n{\n    \"JobId\": \"c5daf8f7077d41a69c13aab31a7164f3\"\n}",
+        "output": "{\n    \"Response\": {\n        \"JobId\": \"c5daf8f7077d41a69c13aab31a7164f3\",\n        \"RequestId\": \"c048e3cf-79b3-4080-9892-15bb96a680e5\",\n        \"ResultVideoUrl\": \"https://vcg-prod-xxx.cos.ap-guangzhou.tencentcos.cn/xxx.mp4\",\n        \"StatusCode\": \"JobSuccess\",\n        \"StatusMsg\": \"处理完成\"\n    }\n}",
         "title": "成功请求"
       }
     ],
     "SubmitVideoStylizationJob": [
       {
         "document": "提交成功",
-        "input": "POST / HTTP/1.1\nHost: vcg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitVideoStylizationJob\n<公共请求参数>\n\n{\n    \"StyleId\": \"2d_anime\",\n    \"VideoUrl\": \"\"\n}",
-        "output": "{\n    \"Response\": {\n        \"JobId\": \"\",\n        \"RequestId\": \"\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: vcg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitVideoStylizationJob\n<公共请求参数>\n\n{\n    \"StyleId\": \"2d_anime\",\n    \"VideoUrl\": \"http://xxxx.mp4\"\n}",
+        "output": "{\n    \"Response\": {\n        \"JobId\": \"c5daf8f7077d41a69c13aab31a7164f3\",\n        \"RequestId\": \"b1990ba2-2d71-419d-8c9d-cab8e33f8352\"\n    }\n}",
         "title": "提交成功"
       }
     ]

@@ -18,22 +18,27 @@ Output:
 {
     "Response": {
         "Ready": 1,
-        "RecordNum": 2,
         "Total": {
-            "RealTotalCost": "220.67"
+            "RealTotalCost": "4.20000000"
         },
         "Data": [
             {
-                "BusinessCode": "p_cvm",
-                "BusinessCodeName": "云服务器",
-                "RealTotalCost": "220.67",
+                "BusinessCode": "p_clb",
+                "BusinessCodeName": "负载均衡CLB",
+                "RealTotalCost": "4.20000000",
                 "Trend": {
-                    "Type": "postPay",
-                    "Value": "test"
-                }
+                    "Type": "upward",
+                    "Value": "1.72"
+                },
+                "CashPayAmount": "4.20000000",
+                "IncentivePayAmount": "0.00000000",
+                "VoucherPayAmount": "0.00000000",
+                "TransferPayAmount": "0.00000000",
+                "RegionName": "其他"
             }
         ],
-        "RequestId": "59a408bc-5d95-4d40-bf21-58e5e8d48dd0"
+        "RecordNum": 1,
+        "RequestId": "078ec9c607a2486099e06e04a99502db"
     }
 }
 ```

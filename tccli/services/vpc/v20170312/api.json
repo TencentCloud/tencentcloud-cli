@@ -197,7 +197,7 @@
       "status": "online"
     },
     "CloneSecurityGroup": {
-      "document": "本接口（CloneSecurityGroup）用于根据存量的安全组，克隆创建出同样规则配置的安全组。仅克隆安全组及其规则信息，不会克隆安全组标签信息。",
+      "document": "本接口（CloneSecurityGroup）用于根据存量的安全组，克隆创建出同样规则配置的安全组。默认仅克隆安全组及其规则信息，可通过入参开启克隆安全组标签信息。",
       "input": "CloneSecurityGroupRequest",
       "name": "克隆安全组",
       "output": "CloneSecurityGroupResponse",
@@ -432,6 +432,13 @@
       "input": "CreatePrivateNatGatewayTranslationNatRuleRequest",
       "name": "创建私网NAT网关源端转换规则",
       "output": "CreatePrivateNatGatewayTranslationNatRuleResponse",
+      "status": "online"
+    },
+    "CreateReserveIpAddresses": {
+      "document": "创建内网保留IP",
+      "input": "CreateReserveIpAddressesRequest",
+      "name": "创建保留内网IP",
+      "output": "CreateReserveIpAddressesResponse",
       "status": "online"
     },
     "CreateRouteTable": {
@@ -789,6 +796,13 @@
       "input": "DeletePrivateNatGatewayTranslationNatRuleRequest",
       "name": "删除私网NAT网关源端转换规则",
       "output": "DeletePrivateNatGatewayTranslationNatRuleResponse",
+      "status": "online"
+    },
+    "DeleteReserveIpAddresses": {
+      "document": "删除内网保留IP",
+      "input": "DeleteReserveIpAddressesRequest",
+      "name": "删除内网保留IP",
+      "output": "DeleteReserveIpAddressesResponse",
       "status": "online"
     },
     "DeleteRouteTable": {
@@ -1349,6 +1363,13 @@
       "input": "DescribeProductQuotaRequest",
       "name": "查询网络产品配额信息",
       "output": "DescribeProductQuotaResponse",
+      "status": "online"
+    },
+    "DescribeReserveIpAddresses": {
+      "document": "查询内网保留 IP",
+      "input": "DescribeReserveIpAddressesRequest",
+      "name": "查询内网保留IP",
+      "output": "DescribeReserveIpAddressesResponse",
       "status": "online"
     },
     "DescribeRouteConflicts": {
@@ -2203,6 +2224,13 @@
       "input": "ModifyPrivateNatGatewayTranslationNatRuleRequest",
       "name": "修改私网NAT网关源端转换规则",
       "output": "ModifyPrivateNatGatewayTranslationNatRuleResponse",
+      "status": "online"
+    },
+    "ModifyReserveIpAddress": {
+      "document": "修改内网保留 IP",
+      "input": "ModifyReserveIpAddressRequest",
+      "name": "修改内网保留IP",
+      "output": "ModifyReserveIpAddressResponse",
       "status": "online"
     },
     "ModifyRouteTableAttribute": {
@@ -6592,7 +6620,7 @@
         {
           "disabled": false,
           "document": "安全组名称，可任意命名，但不得超过60个字符。未提供参数时，克隆后的安全组名称和SecurityGroupId对应的安全组名称相同。",
-          "example": "TEST",
+          "example": "demo",
           "member": "string",
           "name": "GroupName",
           "required": false,
@@ -6601,7 +6629,7 @@
         {
           "disabled": false,
           "document": "安全组备注，最多100个字符。未提供参数时，克隆后的安全组备注和SecurityGroupId对应的安全组备注相同。",
-          "example": "TEST",
+          "example": "demo",
           "member": "string",
           "name": "GroupDescription",
           "required": false,
@@ -6610,7 +6638,7 @@
         {
           "disabled": false,
           "document": "项目ID，默认0。可在<a href=\"https://console.cloud.tencent.com/project\">qcloud控制台项目管理页面</a>查询到。",
-          "example": "1",
+          "example": "0",
           "member": "string",
           "name": "ProjectId",
           "required": false,
@@ -6624,6 +6652,15 @@
           "name": "RemoteRegion",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指定绑定的标签列表，例如：[{\"Key\": \"city\", \"Value\": \"shanghai\"}]。\n若指定Tags入参且指定IsCloneTags为true，会合并源安全组的标签和新增的标签。",
+          "example": "[{\"Key\": \"city\", \"Value\": \"shanghai\"}]",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -6633,12 +6670,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "安全组对象。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "安全组对象。",
+          "example": "{\"SecurityGroupId\": \"sg-4esrjvgl\", \"TagSet\": [], \"SecurityGroupName\": \"demo\", \"SecurityGroupDesc\": \"demo\", \"ProjectId\": \"0\", \"CreatedTime\": \"2020-06-08 14:09:58\", \"UpdateTime\": \"2020-06-08 14:09:58\", \"Region\": \"ap-guangzhou\"}",
           "member": "SecurityGroup",
           "name": "SecurityGroup",
+          "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -6962,7 +7000,7 @@
         {
           "disabled": false,
           "document": "`VPC`实例`ID`。形如：`vpc-6v2ht8q5`",
-          "example": "vpc-12345678",
+          "example": "vpc-n0yejvje",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -6971,7 +7009,7 @@
         {
           "disabled": false,
           "document": "CIDR数组，格式如[\"10.0.0.0/16\", \"172.16.0.0/16\"]",
-          "example": "[\"172.16.0.0\\/24\\n\"]",
+          "example": "[\"10.0.0.0/16\"]",
           "member": "string",
           "name": "CidrBlocks",
           "required": true,
@@ -6985,12 +7023,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "辅助CIDR数组。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "辅助CIDR数组。",
+          "example": "[{\"VpcId\": \"vpc-n0yejvje\", \"CidrBlock\": \"10.0.0.0/16\", \"AssistantType\": 0, \"Region\": \"ap-guangzhou\", \"SubnetSet\": []}]",
           "member": "AssistantCidr",
           "name": "AssistantCidrSet",
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -8899,6 +8938,106 @@
       ],
       "type": "object"
     },
+    "CreateReserveIpAddressesRequest": {
+      "document": "CreateReserveIpAddresses请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "VPC唯一 ID。",
+          "example": "vpc-mcqaoy0f",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指定IP申请的内网保留IP地址。",
+          "example": "[\"10.0.1.9\"]",
+          "member": "string",
+          "name": "IpAddresses",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "不指定IP地址，指定个数自动分配保留内网IP。",
+          "example": "1",
+          "member": "uint64",
+          "name": "IpAddressCount",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "子网唯一 ID。",
+          "example": "subnet-j4oluywm",
+          "member": "string",
+          "name": "SubnetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "内网保留 IP名称。",
+          "example": "reserve_ip",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "内网保留 IP描述。",
+          "example": "desc_ivan",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指定绑定的标签列表，例如：[{\"Key\": \"city\", \"Value\": \"shanghai\"}]。",
+          "example": "[             {                 \"Key\": \"ivan_tag\",                 \"Value\": \"hello\"             }         ]",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。",
+          "example": "B1B615C4-9EBE-40FD-BC8D-8E2BE19F0309",
+          "member": "string",
+          "name": "ClientToken",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateReserveIpAddressesResponse": {
+      "document": "CreateReserveIpAddresses返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "内网保留 IP返回信息",
+          "example": "[       {         \"CreatedTime\": \"0000-00-00 00:00:00\",         \"Description\": \"\",         \"IpType\": 0,         \"Name\": \"\",         \"ReserveIpAddress\": \"10.0.5.78\",         \"ReserveIpId\": \"rsvip-krj0sw6y\",         \"ResourceId\": \"\",         \"State\": \"UnBind\",         \"TagSet\": [           {             \"Key\": \"ivan_tag\",             \"Value\": \"hello\"           }         ],         \"VpcId\": \"vpc-mcqaoy0f\"       }     ]",
+          "member": "ReserveIpAddressInfo",
+          "name": "ReserveIpAddressSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateRouteTableRequest": {
       "document": "CreateRouteTable请求参数结构体",
       "members": [
@@ -9025,7 +9164,7 @@
         {
           "disabled": false,
           "document": "安全组规则集合。",
-          "example": "无",
+          "example": "{\"Ingress\": [{\"Protocol\": \"TCP\", \"Port\": \"8080\", \"Action\": \"ACCEPT\", \"CidrBlock\": \"10.0.0.0/24\", \"PolicyIndex\": \"0\"}]}",
           "member": "SecurityGroupPolicySet",
           "name": "SecurityGroupPolicySet",
           "required": true,
@@ -9879,7 +10018,7 @@
         {
           "disabled": false,
           "document": "DNS地址，最多支持4个。",
-          "example": "无",
+          "example": "[\"183.60.83.19\"]",
           "member": "string",
           "name": "DnsServers",
           "required": false,
@@ -9888,7 +10027,7 @@
         {
           "disabled": false,
           "document": "DHCP使用的域名。",
-          "example": "无",
+          "example": "demo",
           "member": "string",
           "name": "DomainName",
           "required": false,
@@ -9897,7 +10036,7 @@
         {
           "disabled": false,
           "document": "指定绑定的标签列表，例如：[{\"Key\": \"city\", \"Value\": \"shanghai\"}]。",
-          "example": "无",
+          "example": "[]",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -9912,7 +10051,7 @@
         {
           "disabled": false,
           "document": "Vpc对象。",
-          "example": "无",
+          "example": "{\"VpcFlag\": 1, \"VpcId\": \"vpc-2ln96dly\", \"IsShare\": true, \"DomainName\": \"TEST\", \"Ipv6CidrBlock\": \"2001::85b:3c51:f5ff:ffdb\", \"Region\": \"ap-guangzhou\", \"EnableRouteVpcPublish\": false, \"Ipv6CidrBlockSet\": [], \"EnableDhcp\": true, \"VpcNumId\": 1, \"DnsServerSet\": [\"183.60.82.98\"], \"EnableMulticast\": false, \"VpcName\": \"TEST\", \"TagSet\": [], \"DhcpOptionsId\": \"dopt-058pu85z\", \"CreatedTime\": \"2020-10-12 10:00:00\", \"CidrBlock\": \"10.0.0.0/16\", \"IsDefault\": false}",
           "member": "Vpc",
           "name": "Vpc",
           "output_required": true,
@@ -12098,6 +12237,42 @@
       ],
       "type": "object"
     },
+    "DeleteReserveIpAddressesRequest": {
+      "document": "DeleteReserveIpAddresses请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "VPC唯一 ID。",
+          "example": "vpc-mcqaoy0f",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "内网保留IP地址列表。",
+          "example": "[\"rsvip-7pg1y5xy\"]",
+          "member": "string",
+          "name": "ReserveIpIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteReserveIpAddressesResponse": {
+      "document": "DeleteReserveIpAddresses返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteRouteTableRequest": {
       "document": "DeleteRouteTable请求参数结构体",
       "members": [
@@ -13019,7 +13194,7 @@
         {
           "disabled": false,
           "document": "过滤条件，参数不支持同时指定VpcIds和Filters。\n<li>vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。</li>",
-          "example": "无",
+          "example": "[{\"Name\": \"vpc-id\", \"Values\": [\"vpc-6v2ht8q5\"]}]",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -13051,12 +13226,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "符合条件的辅助CIDR数组。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "符合条件的辅助CIDR数组。",
+          "example": "[{'VpcId': 'vpc-6v2ht8q5', 'CidrBlock': '10.10.0.0/24', 'AssistantType': 0, 'SubnetSet': [], 'Region': 'ap-guangzhou'}]",
           "member": "AssistantCidr",
           "name": "AssistantCidrSet",
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -13064,6 +13240,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -14370,7 +14547,7 @@
         {
           "disabled": false,
           "document": "过滤条件，参数不支持同时指定DhcpIpIds和Filters。\n<li>vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。</li>\n<li>subnet-id - String - （过滤条件）所属子网实例ID，形如：subnet-f49l6u0z。</li>\n<li>dhcpip-id - String - （过滤条件）DhcpIp实例ID，形如：dhcpip-pxir56ns。</li>\n<li>dhcpip-name - String - （过滤条件）DhcpIp实例名称。</li>\n<li>address-ip - String - （过滤条件）DhcpIp实例的IP，根据IP精确查找。</li>",
-          "example": "无",
+          "example": "[{\"Name\": \"vpc-id\", \"Values\": [\"vpc-n0yejvje\"]}]",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -14403,10 +14580,10 @@
         {
           "disabled": false,
           "document": "实例详细信息列表。",
-          "example": "无",
+          "example": "[{'DhcpIpId': 'dhcpip-pxir56ns', 'VpcId': 'vpc-n0yejvje', 'SubnetId': 'subnet-hj3he929', 'DhcpIpName': 'demo', 'PrivateIpAddress': '10.0.0.10', 'AddressIp': '', 'NetworkInterfaceId': '', 'InstanceId': '', 'State': 'UNBIND', 'CreateTime': '2020-06-08 10:00:00', 'CreatedTime': '2020-06-08 10:00:00', 'TagSet': []}]",
           "member": "DhcpIp",
           "name": "DhcpIpSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -14416,7 +14593,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -14656,7 +14833,7 @@
         {
           "disabled": false,
           "document": "流日志实例名字。",
-          "example": "test_name",
+          "example": "demo",
           "member": "string",
           "name": "FlowLogName",
           "required": false,
@@ -14709,8 +14886,8 @@
         },
         {
           "disabled": false,
-          "document": "按某个字段排序,支持字段：flowLogName,createTime，默认按createTime。",
-          "example": "createTime",
+          "document": "按某个字段排序,支持字段：flowLogName,createTime，默认按CreatedTime。",
+          "example": "CreatedTime",
           "member": "string",
           "name": "OrderField",
           "required": false,
@@ -14718,8 +14895,8 @@
         },
         {
           "disabled": false,
-          "document": "升序（asc）还是降序（desc）,默认：desc。",
-          "example": "desc",
+          "document": "升序（ASC）还是降序（DESC）,默认：DESC。",
+          "example": "DESC",
           "member": "string",
           "name": "OrderDirection",
           "required": false,
@@ -14746,7 +14923,7 @@
         {
           "disabled": false,
           "document": "过滤条件，参数不支持同时指定FlowLogId和Filters。\n<li>tag-key - String -是否必填：否- （过滤条件）按照标签键进行过滤。</li>\n<li>tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。</li>",
-          "example": "无",
+          "example": "[{\"Name\": \"tag-key\", \"Values\": [\"prod\"]}]",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -14770,18 +14947,20 @@
         {
           "disabled": false,
           "document": "流日志实例集合。",
-          "example": "无",
+          "example": "[{\"FlowLogName\": \"demo\", \"ResourceId\": \"eni-78ysaex1\", \"CloudLogId\": \"dfb8f1a2-8522-47c1-8571-67905167ab3f\", \"VpcId\": \"vpc-pq9vxykj\", \"FlowLogDescription\": \"\", \"ResourceType\": \"NETWORKINTERFACE\", \"CloudLogRegion\": \"ap-guangzhou\", \"TrafficType\": \"ACCEPT\", \"StorageType\": \"cls\", \"Enable\": True, \"FlowLogId\": \"fl-2edhcclz\", \"TagSet\": [], \"CloudLogState\": \"SUCCESS\", \"CreatedTime\": \"2019-05-07 18:00:26\", \"FlowLogStorage\": {\"StorageTopic\": \"topic-siqmaox1\", \"StorageId\": \"ckafka-akwiqms1\"}}]",
           "member": "FlowLog",
           "name": "FlowLog",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "流日志总数目。",
-          "example": "2",
+          "example": "1",
           "member": "uint64",
           "name": "TotalNum",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -15878,7 +16057,7 @@
         {
           "disabled": false,
           "document": "网络探测实例`ID`数组。形如：[`netd-12345678`]。",
-          "example": "[\"netd-12345678\"]",
+          "example": "[\"netd-6v2ht8q5\"]",
           "member": "string",
           "name": "NetDetectIds",
           "required": false,
@@ -15887,7 +16066,7 @@
         {
           "disabled": false,
           "document": "过滤条件，参数不支持同时指定NetDetectIds和Filters。\n<li>net-detect-id - String - （过滤条件）网络探测实例ID，形如：netd-12345678。</li>",
-          "example": "无",
+          "example": "[{\"Name\": \"net-detect-id\", \"Values\": [\"netd-6v2ht8q5\"]}]",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -15919,21 +16098,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "符合条件的网络探测验证结果对象数组。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "符合条件的网络探测验证结果对象数组。",
+          "example": "[{\"NetDetectId\": \"netd-6v2ht8q5\", \"NetDetectIpStateSet\": [{\"Delay\": 0, \"PacketLossRate\": 0, \"State\": 0, \"DetectDestinationIp\": \"10.0.0.2\"}, {\"Delay\": 0, \"PacketLossRate\": 0, \"State\": 0, \"DetectDestinationIp\": \"10.0.0.3\"}]}]",
           "member": "NetDetectState",
           "name": "NetDetectStateSet",
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "符合条件的网络探测验证结果对象数量。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "20",
+          "document": "符合条件的网络探测验证结果对象数量。",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -15991,23 +16172,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "符合条件的网络探测对象数组。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "符合条件的网络探测对象数组。",
           "example": "[{\"NetDetectId\": \"netd-pnpcflil\", \"NetDetectName\": \"demo\", \"VpcId\": \"vpc-kngiybxl\", \"VpcName\": \"000\", \"SubnetId\": \"subnet-nswq8wkq\", \"DetectSourceIp\": [\"10.0.0.11\", \"10.0.0.12\"], \"DetectDestinationIp\": [\"192.168.0.2\"], \"NetDetectDescription\": \"\", \"CreateTime\": \"2021-06-23 16:30:45\", \"Status\": \"RUNNING\", \"NextHopDestination\": \"ccn-kngiybxl\", \"TagSet\": [], \"NextHopType\": \"CCN\", \"SubnetName\": \"demo\", \"NextHopName\": \"\"}]",
           "member": "NetDetect",
           "name": "NetDetectSet",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "符合条件的网络探测对象数量。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "符合条件的网络探测对象数量。",
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -16250,43 +16431,43 @@
         },
         {
           "disabled": false,
-          "document": "扩展型网卡配额。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "扩展型网卡配额。",
           "example": "400",
           "member": "int64",
           "name": "ExtendEniQuantity",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "每个扩展型弹性网卡可以分配的IP配额。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "每个扩展型弹性网卡可以分配的IP配额。",
           "example": "20",
           "member": "int64",
           "name": "ExtendEniPrivateIpAddressQuantity",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "中继网卡配额。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "中继网卡配额。",
           "example": "20",
           "member": "int64",
           "name": "SubEniQuantity",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "每个中继网卡可以分配的IP配额。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "每个中继网卡可以分配的IP配额。",
           "example": "10",
           "member": "int64",
           "name": "SubEniPrivateIpAddressQuantity",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -16857,6 +17038,80 @@
       ],
       "type": "object"
     },
+    "DescribeReserveIpAddressesRequest": {
+      "document": "DescribeReserveIpAddresses请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "内网保留IP唯一ID 列表",
+          "example": "[\"rsvip-pvqgv9vi\", \"rsvip-calhlymy\"]",
+          "member": "string",
+          "name": "ReserveIpIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件，参数不支持同时指定ReserveIpIds和Filters。\n\nreserve-ip-id  - String - （过滤条件）内网保留 IP唯一 ID，形如：rsvip-pvqgv9vi。\nvpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。\nsubnet-id - String - （过滤条件）所属子网实例ID，形如：subnet-f49l6u0z。\naddress-ip - String - （过滤条件）内网保留 IP 地址，形如：192.168.0.10。\nip-type - String - （过滤条件）业务类型 ipType，0。\nname - String - （过滤条件）名称。\nstate - String - （过滤条件）状态，可选值：Bind， UnBind。\nresource-id - String - （过滤条件）绑定的实例资源，形如：eni-059qmnif。\ntag-key - String -（过滤条件）按照标签键进行过滤。\ntag:tag-key - String - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。\n",
+          "example": "[             {                 \"Name\": \"state\",                 \"Values\": [ \"UnBind\" ]             }         ]",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "请求对象个数。",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeReserveIpAddressesResponse": {
+      "document": "DescribeReserveIpAddresses返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "内网保留 IP返回信息。",
+          "example": "[       {         \"CreatedTime\": \"2024-11-14 21:26:03\",         \"Description\": \"\",         \"IpType\": 0,         \"Name\": \"\",         \"ReserveIpAddress\": \"10.0.5.44\",         \"ReserveIpId\": \"rsvip-prrua2m6\",         \"ResourceId\": \"\",         \"State\": \"UnBind\",         \"TagSet\": [           {             \"Key\": \"qcs:tag:createdBy\",             \"Value\": \"Root:700000328799\"           },           {             \"Key\": \"ivan_tag\",             \"Value\": \"hello\"           }         ],         \"VpcId\": \"vpc-mcqaoy0f\"       }     ]",
+          "member": "ReserveIpAddressInfo",
+          "name": "ReserveIpAddressSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "返回内网保留IP的个数。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeRouteConflictsRequest": {
       "document": "DescribeRouteConflicts请求参数结构体",
       "members": [
@@ -17386,13 +17641,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "安全组对象。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "安全组对象。",
           "example": "[{'SecurityGroupId': 'sg-pnpcflil', 'SecurityGroupName': 'demo', 'SecurityGroupDesc': 'demo', 'ProjectId': '0', 'IsDefault': False, 'CreatedTime': '2018-08-28 17:53:50', 'UpdateTime': '2018-08-28 17:53:50', 'TagSet': [], 'Region': 'ap-guangzhou'}]",
           "member": "SecurityGroup",
           "name": "SecurityGroupSet",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -18384,7 +18639,7 @@
         {
           "disabled": false,
           "document": "过滤条件，不支持同时指定IpAddresses和Filters参数。 支持的过滤条件如下： <li>ip-addresses：IP地址。</li> <li>resource-id：资源ID。</li>",
-          "example": "无",
+          "example": "[{\"Name\": \"ip-addresses\", \"Values\": [\"10.0.0.10\"]}]",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -18416,23 +18671,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "占用ip地址的资源信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "占用ip地址的资源信息",
+          "example": "[{\"VpcId\": \"vpc-a26u781x\", \"SubnetId\": \"subnet-amqye6ew\", \"IpAddress\": \"10.0.0.10\", \"ResourceType\": \"TKE\", \"ResourceId\": \"cls-n0yejvje-reserved\"}]",
           "member": "IpAddressStates",
           "name": "IpAddressStates",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "返回占用资源的个数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "2",
+          "document": "返回占用资源的个数",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -26016,6 +26271,60 @@
       ],
       "type": "object"
     },
+    "ModifyReserveIpAddressRequest": {
+      "document": "ModifyReserveIpAddress请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "VPC唯一 ID。",
+          "example": "vpc-mcqaoy0f",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "内网保留IP唯一ID。",
+          "example": "rsvip-pvqgv9vi",
+          "member": "string",
+          "name": "ReserveIpId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "内网保留 IP名称。",
+          "example": "name_ivan",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "内网保留 IP描述。",
+          "example": "desc_ivan",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyReserveIpAddressResponse": {
+      "document": "ModifyReserveIpAddress返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyRouteTableAttributeRequest": {
       "document": "ModifyRouteTableAttribute请求参数结构体",
       "members": [
@@ -26136,7 +26445,7 @@
         {
           "disabled": false,
           "document": "安全组名称，可任意命名，但不得超过60个字符。",
-          "example": "test",
+          "example": "demo",
           "member": "string",
           "name": "GroupName",
           "required": false,
@@ -26145,7 +26454,7 @@
         {
           "disabled": false,
           "document": "安全组备注，最多100个字符。",
-          "example": "test",
+          "example": "demo",
           "member": "string",
           "name": "GroupDescription",
           "required": false,
@@ -27028,6 +27337,7 @@
           "example": "12",
           "member": "int64",
           "name": "TaskId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -30035,7 +30345,7 @@
         {
           "disabled": false,
           "document": "安全组规则集合对象。",
-          "example": "无",
+          "example": "{\"Ingress\": [{\"Action\": \"ACCEPT\", \"CidrBlock\": \"10.0.0.0/16\", \"PolicyDescription\": \"\", \"PolicyIndex\": \"0\", \"Port\": \"443\", \"Protocol\": \"TCP\"}], \"Version\": \"1\"}",
           "member": "SecurityGroupPolicySet",
           "name": "SecurityGroupPolicySet",
           "required": true,
@@ -30044,7 +30354,7 @@
         {
           "disabled": false,
           "document": "旧的安全组规则集合对象，可选，日志记录用。",
-          "example": "无",
+          "example": "{\"Ingress\": [{\"Action\": \"ACCEPT\", \"CidrBlock\": \"10.0.0.0/16\", \"ModifyTime\": \"2020-11-13 10:35:07\", \"PolicyIndex\": \"0\", \"Port\": \"80\", \"Protocol\": \"tcp\"}], \"Version\": \"1\"}",
           "member": "SecurityGroupPolicySet",
           "name": "OriginalSecurityGroupPolicySet",
           "required": false,
@@ -30064,6 +30374,122 @@
         }
       ],
       "type": "object"
+    },
+    "ReserveIpAddressInfo": {
+      "document": "内网保留IP数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "内网保留IP唯一 ID。",
+          "example": "rsvip-calhlymy",
+          "member": "string",
+          "name": "ReserveIpId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "VPC唯一 ID。",
+          "example": "vpc-mcqaoy0f",
+          "member": "string",
+          "name": "VpcId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子网唯一 ID。",
+          "example": "subnet-j4oluywm",
+          "member": "string",
+          "name": "SubnetId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内网保留IP地址。",
+          "example": "172.16.0.21",
+          "member": "string",
+          "name": "ReserveIpAddress",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内网保留 IP绑定的资源实例 ID。",
+          "example": "eni-8zugogrv",
+          "member": "string",
+          "name": "ResourceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "产品申请的IpType。",
+          "example": "0",
+          "member": "uint64",
+          "name": "IpType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "绑定状态，UnBind-未绑定， Bind-绑定。",
+          "example": " UnBind",
+          "member": "string",
+          "name": "State",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "保留 IP名称。",
+          "example": "name_ip",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "保留 IP描述。",
+          "example": "desc_ip",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间。",
+          "example": "2021-03-02 14:41:15",
+          "member": "string",
+          "name": "CreatedTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签键值对。",
+          "example": "[ { \"Key\": \"ivan_tag\", \"Value\": \"hello\" } ]",
+          "member": "Tag",
+          "name": "TagSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "ResetAttachCcnInstancesRequest": {
       "document": "ResetAttachCcnInstances请求参数结构体",

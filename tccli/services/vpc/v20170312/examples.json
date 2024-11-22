@@ -281,20 +281,20 @@
     "CloneSecurityGroup": [
       {
         "document": "克隆安全组",
-        "input": "https://vpc.tencentcloudapi.com/?Action=CloneSecurityGroup\n&SecurityGroupId=sg-12345678\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\",\n        \"SecurityGroup\": {\n            \"SecurityGroupId\": \"sg-12341234\",\n            \"SecurityGroupName\": \"TestGroup\",\n            \"SecurityGroupDesc\": \"test-group-desc\",\n            \"ProjectId\": \"0\",\n            \"CreatedTime\": \"2018-01-13 19:26:33\"\n        }\n    }\n}",
+        "input": "https://vpc.tencentcloudapi.com/?Action=CloneSecurityGroup\n&SecurityGroupId=sg-78ysaex1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\",\n        \"SecurityGroup\": {\n            \"SecurityGroupId\": \"sg-4esrjvgl\",\n            \"SecurityGroupName\": \"demo\",\n            \"SecurityGroupDesc\": \"demo\",\n            \"ProjectId\": \"0\",\n            \"CreatedTime\": \"2018-01-13 19:26:33\",\n            \"TagSet\": [\n                {\n                    \"Key\": \"city\",\n                    \"Value\": \"shanghai\"\n                }\n            ],\n            \"UpdateTime\": \"2018-02-13 19:26:33\",\n            \"IsDefault\": false\n        }\n    }\n}",
         "title": "克隆安全组"
       },
       {
         "document": "克隆安全组，指定项目ID",
-        "input": "https://vpc.tencentcloudapi.com/?Action=CloneSecurityGroup\n&SecurityGroupId=sg-12345678\n&ProjectId=1001\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\",\n        \"SecurityGroup\": {\n            \"SecurityGroupId\": \"sg-12341278\",\n            \"SecurityGroupName\": \"TestGroup\",\n            \"SecurityGroupDesc\": \"test-group-desc\",\n            \"ProjectId\": \"1001\",\n            \"CreatedTime\": \"2018-01-13 19:26:33\"\n        }\n    }\n}",
+        "input": "https://vpc.tencentcloudapi.com/?Action=CloneSecurityGroup\n&SecurityGroupId=sg-78ysaex1\n&ProjectId=1001\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\",\n        \"SecurityGroup\": {\n            \"SecurityGroupId\": \"sg-2edhcclz\",\n            \"SecurityGroupName\": \"demo\",\n            \"SecurityGroupDesc\": \"demo\",\n            \"ProjectId\": \"1001\",\n            \"CreatedTime\": \"2018-01-13 19:26:33\",\n            \"TagSet\": [\n                {\n                    \"Key\": \"city\",\n                    \"Value\": \"shanghai\"\n                }\n            ],\n            \"UpdateTime\": \"2018-02-13 19:26:33\",\n            \"IsDefault\": false\n        }\n    }\n}",
         "title": "克隆安全组，指定项目ID"
       },
       {
         "document": "克隆安全组，指定名称和备注",
-        "input": "https://vpc.tencentcloudapi.com/?Action=CloneSecurityGroup\n&SecurityGroupId=sg-12345678\n&GroupName=test\n&GroupDescription=test\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\",\n        \"SecurityGroup\": {\n            \"SecurityGroupId\": \"sg-12341256\",\n            \"SecurityGroupName\": \"test\",\n            \"SecurityGroupDesc\": \"test\",\n            \"ProjectId\": \"0\",\n            \"CreatedTime\": \"2018-01-13 19:26:33\"\n        }\n    }\n}",
+        "input": "https://vpc.tencentcloudapi.com/?Action=CloneSecurityGroup\n&SecurityGroupId=sg-78ysaex1\n&GroupName=demo\n&GroupDescription=demo\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\",\n        \"SecurityGroup\": {\n            \"SecurityGroupId\": \"sg-f42uhpkj\",\n            \"SecurityGroupName\": \"demo\",\n            \"SecurityGroupDesc\": \"demo\",\n            \"ProjectId\": \"0\",\n            \"CreatedTime\": \"2018-01-13 19:26:33\",\n            \"TagSet\": [\n                {\n                    \"Key\": \"city\",\n                    \"Value\": \"shanghai\"\n                }\n            ],\n            \"UpdateTime\": \"2018-02-13 19:26:33\",\n            \"IsDefault\": false\n        }\n    }\n}",
         "title": "克隆安全组，指定名称和备注"
       }
     ],
@@ -326,7 +326,7 @@
       {
         "document": "创建辅助CIDR",
         "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAssistantCidr\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-12345678\",\n    \"CidrBlocks\": [\n        \"172.16.0.0/24\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"AssistantCidrSet\": [\n            {\n                \"VpcId\": \"vpc-12345678\",\n                \"CidrBlock\": \"172.16.0.0/24\",\n                \"AssistantType\": 0\n            }\n        ],\n        \"RequestId\": \"6aa316a4-07d2-4355-b87d-40b7f22972b0\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"AssistantCidrSet\": [\n            {\n                \"VpcId\": \"vpc-12345678\",\n                \"CidrBlock\": \"172.16.0.0/24\",\n                \"AssistantType\": 0,\n                \"SubnetSet\": []\n            }\n        ],\n        \"RequestId\": \"6aa316a4-07d2-4355-b87d-40b7f22972b0\"\n    }\n}",
         "title": "创建辅助CIDR"
       }
     ],
@@ -586,6 +586,14 @@
         "title": "创建私网NAT网关源端转换规则"
       }
     ],
+    "CreateReserveIpAddresses": [
+      {
+        "document": "指定个数，申请自动分配的保留 IP",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateReserveIpAddresses\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-mcqaoy0f\",\n    \"IpAddressCount\": 2,\n    \"Name\": \"name_ivan\",\n    \"Description\": \"desc_ivan\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"14c27c62-fc90-4922-a20c-fca60c6b5330\",\n        \"ReserveIpAddressSet\": [\n            {\n                \"CreatedTime\": \"2024-11-21 16:57:22\",\n                \"Description\": \"desc_ivan\",\n                \"IpType\": 0,\n                \"Name\": \"name_ivan\",\n                \"ReserveIpAddress\": \"10.0.5.99\",\n                \"ReserveIpId\": \"rsvip-eaq2f4pc\",\n                \"ResourceId\": \"\",\n                \"State\": \"UnBind\",\n                \"VpcId\": \"vpc-mcqaoy0f\"\n            },\n            {\n                \"CreatedTime\": \"2024-11-21 16:57:22\",\n                \"Description\": \"desc_ivan\",\n                \"IpType\": 0,\n                \"Name\": \"name_ivan\",\n                \"ReserveIpAddress\": \"10.0.5.50\",\n                \"ReserveIpId\": \"rsvip-2g134x24\",\n                \"ResourceId\": \"\",\n                \"State\": \"UnBind\",\n                \"VpcId\": \"vpc-mcqaoy0f\"\n            }\n        ]\n    }\n}",
+        "title": "指定个数，申请自动分配的保留 IP"
+      }
+    ],
     "CreateRouteTable": [
       {
         "document": "创建路由表",
@@ -613,7 +621,7 @@
     "CreateSecurityGroupPolicies": [
       {
         "document": "安全组添加出站规则",
-        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSecurityGroupPolicies\n<公共请求参数>\n\n{\n    \"SecurityGroupId\": \"sg-ohuuioma\",\n    \"SecurityGroupPolicySet\": {\n        \"Ingress\": [\n            {\n                \"PolicyIndex\": 0,\n                \"Protocol\": \"All\",\n                \"PolicyDescription\": \"测试\",\n                \"AddressTemplate\": {\n                    \"AddressGroupId\": \"ipmg-o8w64jdg\",\n                    \"AddressId\": \"ipm-ngk4c2dw\"\n                },\n                \"Ipv6CidrBlock\": \"::/0\",\n                \"SecurityGroupId\": \"sg-ohuuioma\",\n                \"ModifyTime\": \"2020-12-03 16:12:15\",\n                \"Action\": \"accept\",\n                \"ServiceTemplate\": {\n                    \"ServiceGroupId\": \"sg-ohuuioma\",\n                    \"ServiceId\": \"ppm-f5n1f8da\"\n                },\n                \"CidrBlock\": \"0.0.0.0/0\",\n                \"Port\": \"80\"\n            }\n        ],\n        \"Egress\": [\n            {\n                \"PolicyIndex\": 0,\n                \"Protocol\": \"All\",\n                \"PolicyDescription\": \"测试\",\n                \"AddressTemplate\": {\n                    \"AddressGroupId\": \"ipmg-o8w64jdg\",\n                    \"AddressId\": \"ipm-ngk4c2dw\"\n                },\n                \"Ipv6CidrBlock\": \"::/0\",\n                \"SecurityGroupId\": \"sg-ohuuioma\",\n                \"ModifyTime\": \"2020-12-03 16:12:15\",\n                \"Action\": \"accept\",\n                \"ServiceTemplate\": {\n                    \"ServiceGroupId\": \"sg-ohuuioma\",\n                    \"ServiceId\": \"ppm-f5n1f8da\"\n                },\n                \"CidrBlock\": \"0.0.0.0/0\",\n                \"Port\": \"80\"\n            }\n        ]\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSecurityGroupPolicies\n<公共请求参数>\n\n{\n    \"SecurityGroupId\": \"sg-ohuuioma\",\n    \"SecurityGroupPolicySet\": {\n        \"Ingress\": [\n            {\n                \"PolicyIndex\": 0,\n                \"Protocol\": \"All\",\n                \"PolicyDescription\": \"demo\",\n                \"AddressTemplate\": {\n                    \"AddressGroupId\": \"ipmg-o8w64jdg\",\n                    \"AddressId\": \"ipm-ngk4c2dw\"\n                },\n                \"Ipv6CidrBlock\": \"::/0\",\n                \"SecurityGroupId\": \"sg-ohuuioma\",\n                \"ModifyTime\": \"2020-12-03 16:12:15\",\n                \"Action\": \"accept\",\n                \"ServiceTemplate\": {\n                    \"ServiceGroupId\": \"sg-ohuuioma\",\n                    \"ServiceId\": \"ppm-f5n1f8da\"\n                },\n                \"CidrBlock\": \"0.0.0.0/0\",\n                \"Port\": \"80\"\n            }\n        ],\n        \"Egress\": [\n            {\n                \"PolicyIndex\": 0,\n                \"Protocol\": \"All\",\n                \"PolicyDescription\": \"demo\",\n                \"AddressTemplate\": {\n                    \"AddressGroupId\": \"ipmg-o8w64jdg\",\n                    \"AddressId\": \"ipm-ngk4c2dw\"\n                },\n                \"Ipv6CidrBlock\": \"::/0\",\n                \"SecurityGroupId\": \"sg-ohuuioma\",\n                \"ModifyTime\": \"2020-12-03 16:12:15\",\n                \"Action\": \"accept\",\n                \"ServiceTemplate\": {\n                    \"ServiceGroupId\": \"sg-ohuuioma\",\n                    \"ServiceId\": \"ppm-f5n1f8da\"\n                },\n                \"CidrBlock\": \"0.0.0.0/0\",\n                \"Port\": \"80\"\n            }\n        ]\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"53ee3ed3-c9ed-48ba-8a57-8624b9c0d3b8\"\n    }\n}",
         "title": "安全组添加出站规则"
       }
@@ -1006,6 +1014,14 @@
         "title": "删除私网NAT网关源端转换规则"
       }
     ],
+    "DeleteReserveIpAddresses": [
+      {
+        "document": "删除内网保留IP",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteReserveIpAddresses\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-mcqaoy0f\",\n    \"ReserveIpIds\": [\n        \"rsvip-calhlymy\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"116b4d96-f745-4173-bee5-c464a4363757\"\n    }\n}",
+        "title": "删除内网保留IP"
+      }
+    ],
     "DeleteRouteTable": [
       {
         "document": "删除路由表",
@@ -1258,7 +1274,7 @@
       {
         "document": "查询辅助CIDR列表",
         "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssistantCidr\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"AssistantCidrSet\": [\n            {\n                \"VpcId\": \"vpc-12345678\",\n                \"CidrBlock\": \"172.16.0.0/16\",\n                \"AssistantType\": 0,\n                \"SubnetSet\": []\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"c65ffbe5-512a-44fd-9611-99d12f4e565d\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"AssistantCidrSet\": [\n            {\n                \"VpcId\": \"vpc-6v2ht8q5\",\n                \"CidrBlock\": \"10.10.0.0/24\",\n                \"AssistantType\": 0,\n                \"SubnetSet\": []\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"c65ffbe5-512a-44fd-9611-99d12f4e565d\"\n    }\n}",
         "title": "查询辅助CIDR列表"
       }
     ],
@@ -1450,19 +1466,19 @@
       {
         "document": "",
         "input": "https://vpc.tencentcloudapi.com/?Action=DescribeDhcpIps\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"DhcpIpSet\": [\n            {\n                \"DhcpIpId\": \"dhcpip-12345678\",\n                \"DhcpIpName\": \"test\",\n                \"PrivateIpAddress\": \"10.0.0.13\",\n                \"VpcId\": \"vpc-12345678\",\n                \"SubnetId\": \"subnet-12345678\",\n                \"NetworkInterfaceId\": \"\",\n                \"InstanceId\": \"\",\n                \"AddressIp\": \"\",\n                \"State\": \"UNBIND\",\n                \"CreatedTime\": \"2018-10-10 17:03:09\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"fcb47621-838b-428e-8c33-6e210d93c451\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"DhcpIpSet\": [\n            {\n                \"DhcpIpId\": \"dhcpip-pxir56ns\",\n                \"DhcpIpName\": \"demo\",\n                \"PrivateIpAddress\": \"10.0.0.13\",\n                \"VpcId\": \"vpc-n0yejvje\",\n                \"SubnetId\": \"subnet-hj3he929\",\n                \"NetworkInterfaceId\": \"\",\n                \"InstanceId\": \"\",\n                \"AddressIp\": \"\",\n                \"State\": \"UNBIND\",\n                \"CreatedTime\": \"2018-10-10 17:03:09\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"fcb47621-838b-428e-8c33-6e210d93c451\"\n    }\n}",
         "title": "查询DhcpIp列表"
       },
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=DescribeDhcpIps\n&Filters.0.Name=dhcpip-id\n&Filters.0.Values.0=dhcpip-12345678\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"DhcpIpSet\": [\n            {\n                \"DhcpIpId\": \"dhcpip-12345678\",\n                \"DhcpIpName\": \"test\",\n                \"PrivateIpAddress\": \"10.0.0.13\",\n                \"VpcId\": \"vpc-12345678\",\n                \"SubnetId\": \"subnet-12345678\",\n                \"NetworkInterfaceId\": \"\",\n                \"InstanceId\": \"\",\n                \"AddressIp\": \"\",\n                \"State\": \"UNBIND\",\n                \"CreatedTime\": \"2018-10-10 17:03:09\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"fcb47621-838b-428e-8c33-6e210d93c451\"\n    }\n}",
+        "input": "https://vpc.tencentcloudapi.com/?Action=DescribeDhcpIps\n&Filters.0.Name=dhcpip-id\n&Filters.0.Values.0=dhcpip-pxir56ns\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"DhcpIpSet\": [\n            {\n                \"DhcpIpId\": \"dhcpip-pxir56ns\",\n                \"DhcpIpName\": \"demo\",\n                \"PrivateIpAddress\": \"10.0.0.13\",\n                \"VpcId\": \"vpc-n0yejvje\",\n                \"SubnetId\": \"subnet-hj3he929\",\n                \"NetworkInterfaceId\": \"\",\n                \"InstanceId\": \"\",\n                \"AddressIp\": \"\",\n                \"State\": \"UNBIND\",\n                \"CreatedTime\": \"2018-10-10 17:03:09\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"fcb47621-838b-428e-8c33-6e210d93c451\"\n    }\n}",
         "title": "根据Filters查询DhcpIp列表"
       },
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=DescribeDhcpIps\n&DhcpIpIds.0=dhcpip-12345678\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"DhcpIpSet\": [\n            {\n                \"DhcpIpId\": \"dhcpip-12345678\",\n                \"DhcpIpName\": \"test\",\n                \"PrivateIpAddress\": \"10.0.0.13\",\n                \"VpcId\": \"vpc-12345678\",\n                \"SubnetId\": \"subnet-12345678\",\n                \"NetworkInterfaceId\": \"\",\n                \"InstanceId\": \"\",\n                \"AddressIp\": \"\",\n                \"State\": \"UNBIND\",\n                \"CreatedTime\": \"2018-10-10 17:03:09\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"fcb47621-838b-428e-8c33-6e210d93c451\"\n    }\n}",
+        "input": "https://vpc.tencentcloudapi.com/?Action=DescribeDhcpIps\n&DhcpIpIds.0=dhcpip-pxir56ns\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"DhcpIpSet\": [\n            {\n                \"DhcpIpId\": \"dhcpip-pxir56ns\",\n                \"DhcpIpName\": \"demo\",\n                \"PrivateIpAddress\": \"10.0.0.13\",\n                \"VpcId\": \"vpc-n0yejvje\",\n                \"SubnetId\": \"subnet-hj3he929\",\n                \"NetworkInterfaceId\": \"\",\n                \"InstanceId\": \"\",\n                \"AddressIp\": \"\",\n                \"State\": \"UNBIND\",\n                \"CreatedTime\": \"2018-10-10 17:03:09\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"fcb47621-838b-428e-8c33-6e210d93c451\"\n    }\n}",
         "title": "根据DhcpIpIds查询DhcpIp列表"
       }
     ],
@@ -1500,7 +1516,7 @@
       {
         "document": "查询流日志集合",
         "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFlowLogs\n<公共请求参数>\n\n{\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"FlowLog\": [\n            {\n                \"CloudLogId\": \"dfb8f1a2-8522-47c1-8571-67905167ab3f\",\n                \"CloudLogRegion\": \"ap-guangzhou\",\n                \"CloudLogState\": \"SUCCESS\",\n                \"CreatedTime\": \"2019-05-07 18:00:26\",\n                \"FlowLogDescription\": \"\",\n                \"FlowLogId\": \"fl-2edhcclz\",\n                \"FlowLogName\": \"yuemingtest\",\n                \"ResourceId\": \"eni-78ysaex1\",\n                \"ResourceType\": \"NETWORKINTERFACE\",\n                \"TrafficType\": \"ACCEPT\",\n                \"VpcId\": \"vpc-pq9vxykj\",\n                \"StorageType\": \"cls\",\n                \"FlowLogStorage\": {\n                    \"StorageTopic\": \"topic-siqmaox1\",\n                    \"StorageId\": \"ckafka-akwiqms1\"\n                },\n                \"TagSet\": [],\n                \"Enable\": true\n            },\n            {\n                \"CloudLogId\": \"dfb8f1a2-8522-47c1-8571-67905167ab3f\",\n                \"CloudLogRegion\": \"ap-guangzhou\",\n                \"CloudLogState\": \"SUCCESS\",\n                \"CreatedTime\": \"2019-05-08 10:48:26\",\n                \"FlowLogDescription\": \"\",\n                \"FlowLogId\": \"fl-f42uhpkj\",\n                \"FlowLogName\": \"test\",\n                \"ResourceId\": \"eni-78ysaex1\",\n                \"ResourceType\": \"NETWORKINTERFACE\",\n                \"TrafficType\": \"ACCEPT\",\n                \"VpcId\": \"vpc-pq9vxykj\",\n                \"StorageType\": \"cls\",\n                \"FlowLogStorage\": {\n                    \"StorageTopic\": \"topic-siqmaox1\",\n                    \"StorageId\": \"ckafka-akwiqms1\"\n                },\n                \"TagSet\": [],\n                \"Enable\": true\n            }\n        ],\n        \"TotalNum\": 2,\n        \"RequestId\": \"404428db-f850-40c2-803d-0aae49aba43a\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowLog\": [\n            {\n                \"CloudLogId\": \"dfb8f1a2-8522-47c1-8571-67905167ab3f\",\n                \"CloudLogRegion\": \"ap-guangzhou\",\n                \"CloudLogState\": \"SUCCESS\",\n                \"CreatedTime\": \"2019-05-07 18:00:26\",\n                \"FlowLogDescription\": \"\",\n                \"FlowLogId\": \"fl-2edhcclz\",\n                \"FlowLogName\": \"demo\",\n                \"ResourceId\": \"eni-78ysaex1\",\n                \"ResourceType\": \"NETWORKINTERFACE\",\n                \"TrafficType\": \"ACCEPT\",\n                \"VpcId\": \"vpc-pq9vxykj\",\n                \"StorageType\": \"cls\",\n                \"FlowLogStorage\": {\n                    \"StorageTopic\": \"topic-siqmaox1\",\n                    \"StorageId\": \"ckafka-akwiqms1\"\n                },\n                \"TagSet\": [],\n                \"Enable\": true\n            },\n            {\n                \"CloudLogId\": \"dfb8f1a2-8522-47c1-8571-67905167ab3f\",\n                \"CloudLogRegion\": \"ap-guangzhou\",\n                \"CloudLogState\": \"SUCCESS\",\n                \"CreatedTime\": \"2019-05-08 10:48:26\",\n                \"FlowLogDescription\": \"\",\n                \"FlowLogId\": \"fl-f42uhpkj\",\n                \"FlowLogName\": \"demo\",\n                \"ResourceId\": \"eni-78ysaex1\",\n                \"ResourceType\": \"NETWORKINTERFACE\",\n                \"TrafficType\": \"ACCEPT\",\n                \"VpcId\": \"vpc-pq9vxykj\",\n                \"StorageType\": \"cls\",\n                \"FlowLogStorage\": {\n                    \"StorageTopic\": \"topic-siqmaox1\",\n                    \"StorageId\": \"ckafka-akwiqms1\"\n                },\n                \"TagSet\": [],\n                \"Enable\": true\n            }\n        ],\n        \"TotalNum\": 2,\n        \"RequestId\": \"404428db-f850-40c2-803d-0aae49aba43a\"\n    }\n}",
         "title": "查询流日志集合"
       },
       {
@@ -1670,7 +1686,7 @@
       {
         "document": "根据ID查询网络探测验证结果列表",
         "input": "https://vpc.tencentcloudapi.com/?Action=DescribeNetDetectStates\n&NetDetectIds.0=netd-12345678\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"NetDetectStateSet\": [\n            {\n                \"NetDetectId\": \"netd-12345678\",\n                \"NetDetectIpStateSet\": [\n                    {\n                        \"DetectDestinationIp\": \"10.0.0.2\",\n                        \"State\": 0,\n                        \"Delay\": 0,\n                        \"PacketLossRate\": 0\n                    },\n                    {\n                        \"DetectDestinationIp\": \"10.0.0.3\",\n                        \"State\": 0,\n                        \"Delay\": 0,\n                        \"PacketLossRate\": 0\n                    }\n                ]\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"6aa316a4-07d2-4355-b87d-40b7f22972b0\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"NetDetectStateSet\": [\n            {\n                \"NetDetectId\": \"netd-6v2ht8q5\",\n                \"NetDetectIpStateSet\": [\n                    {\n                        \"DetectDestinationIp\": \"10.0.0.2\",\n                        \"State\": 0,\n                        \"Delay\": 0,\n                        \"PacketLossRate\": 0\n                    },\n                    {\n                        \"DetectDestinationIp\": \"10.0.0.3\",\n                        \"State\": 0,\n                        \"Delay\": 0,\n                        \"PacketLossRate\": 0\n                    }\n                ]\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"6aa316a4-07d2-4355-b87d-40b7f22972b0\"\n    }\n}",
         "title": "根据ID查询网络探测验证结果列表"
       }
     ],
@@ -1806,6 +1822,20 @@
         "input": "https://vpc.tencentcloudapi.com/?Action=DescribeProductQuota\n&Product=\"ccn\"\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 53,\n        \"ProductQuotaSet\": [\n            {\n                \"QuotaId\": \"1\",\n                \"QuotaName\": \"每个开发商可创建的CCN对象个数\",\n                \"QuotaCurrent\": 50,\n                \"QuotaLimit\": 100,\n                \"QuotaRegion\": false\n            },\n            {\n                \"QuotaId\": \"2\",\n                \"QuotaName\": \"每个CCN对象可关联的实例个数\",\n                \"QuotaCurrent\": 25,\n                \"QuotaLimit\": 1000,\n                \"QuotaRegion\": false\n            }\n        ],\n        \"RequestId\": \"a1dfbcc0-947a-44a4-9257-781e9f1e2ad3\"\n    }\n}",
         "title": "查询云联网产品配额信息"
+      }
+    ],
+    "DescribeReserveIpAddresses": [
+      {
+        "document": "查询内网保留 IP",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeReserveIpAddresses\n<公共请求参数>\n\n{\n    \"ReserveIpIds\": [\n        \"rsvip-eaq2f4pc\",\n        \"rsvip-2g134x24\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2d32beeb-0750-4ef9-a2f9-e4e7bbb0ec7f\",\n        \"ReserveIpAddressSet\": [\n            {\n                \"CreatedTime\": \"2024-11-06 12:01:57\",\n                \"Description\": \"desc_ivan\",\n                \"IpType\": 0,\n                \"Name\": \"name_ivan\",\n                \"ReserveIpAddress\": \"10.0.5.99\",\n                \"ReserveIpId\": \"rsvip-eaq2f4pc\",\n                \"ResourceId\": \"\",\n                \"State\": \"UnBind\",\n                \"TagSet\": [],\n                \"VpcId\": \"vpc-mcqaoy0f\"\n            },\n            {\n                \"CreatedTime\": \"2024-11-06 12:01:57\",\n                \"Description\": \"desc_ivan\",\n                \"IpType\": 0,\n                \"Name\": \"name_ivan\",\n                \"ReserveIpAddress\": \"10.0.5.50\",\n                \"ReserveIpId\": \"rsvip-2g134x24\",\n                \"ResourceId\": \"\",\n                \"State\": \"UnBind\",\n                \"TagSet\": [],\n                \"VpcId\": \"vpc-mcqaoy0f\"\n            }\n        ],\n        \"TotalCount\": 2\n    }\n}",
+        "title": "查询内网保留 IP"
+      },
+      {
+        "document": "根据标签过滤查询保留 IP",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeReserveIpAddresses\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"tag-key\",\n            \"Values\": [\n                \"ivan_reserve_ip\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e168d943-d647-4c0a-ada4-50a90015ded8\",\n        \"ReserveIpAddressSet\": [\n            {\n                \"CreatedTime\": \"2024-11-06 17:30:06\",\n                \"Description\": \"desc_ivan\",\n                \"IpType\": 0,\n                \"Name\": \"name_ivan\",\n                \"ReserveIpAddress\": \"10.0.5.89\",\n                \"ReserveIpId\": \"rsvip-du6lo6fu\",\n                \"ResourceId\": \"\",\n                \"State\": \"UnBind\",\n                \"TagSet\": [\n                    {\n                        \"Key\": \"ivan_reserve_ip\",\n                        \"Value\": \"hello\"\n                    }\n                ],\n                \"VpcId\": \"vpc-mcqaoy0f\"\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
+        "title": "根据标签过滤查询保留 IP"
       }
     ],
     "DescribeRouteConflicts": [
@@ -2464,7 +2494,7 @@
       {
         "document": "本接口（InquiryPriceResetVpnGatewayInternetMaxBandwidth）用于调整VPN网关带宽上限询价。",
         "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquiryPriceResetVpnGatewayInternetMaxBandwidth\n<公共请求参数>\n\n{\n    \"VpnGatewayId\": \"vpngw-a4wta21x\",\n    \"InternetMaxBandwidthOut\": 100\n}",
-        "output": "{\n    \"Response\": {\n        \"Price\": {\n            \"InstancePrice\": {\n                \"OriginalPrice\": 1717.86,\n                \"DiscountPrice\": 1717.86,\n                \"UnitPrice\": 0,\n                \"ChargeUnit\": \"\"\n            },\n            \"BandwidthPrice\": {\n                \"OriginalPrice\": 0,\n                \"DiscountPrice\": 0,\n                \"UnitPrice\": 0,\n                \"ChargeUnit\": \"\"\n            }\n        },\n        \"RequestId\": \"e13643de-b578-42b0-8ad3-86b732067292\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Price\": {\n            \"InstancePrice\": {\n                \"OriginalPrice\": 1717.86,\n                \"DiscountPrice\": 1717.86,\n                \"UnitPrice\": 0,\n                \"ChargeUnit\": \"none\"\n            },\n            \"BandwidthPrice\": {\n                \"OriginalPrice\": 0,\n                \"DiscountPrice\": 0,\n                \"UnitPrice\": 0,\n                \"ChargeUnit\": \"none\"\n            }\n        },\n        \"RequestId\": \"e13643de-b578-42b0-8ad3-86b732067292\"\n    }\n}",
         "title": "调整VPN网关带宽上限询价"
       }
     ],
@@ -2874,6 +2904,14 @@
         "title": "修改私网NAT网关源端转换规则"
       }
     ],
+    "ModifyReserveIpAddress": [
+      {
+        "document": "修改内网保留IP",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyReserveIpAddress\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-mcqaoy0f\",\n    \"ReserveIpId\": \"rsvip-jvnifc7o\",\n    \"Name\": \"name_ivan\",\n    \"Description\": \"desc_ivan\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"23575de3-d827-43cb-9ddf-0c1e7eaece50\"\n    }\n}",
+        "title": "修改内网保留IP"
+      }
+    ],
     "ModifyRouteTableAttribute": [
       {
         "document": "修改路由表属性",
@@ -2893,7 +2931,7 @@
     "ModifySecurityGroupAttribute": [
       {
         "document": "修改安全组属性",
-        "input": "https://vpc.tencentcloudapi.com/?Action=ModifySecurityGroupAttribute\n&SecurityGroupId=sg-33ocnj9n\n&GroupName=TestGroupNewName\n&GroupDescription=test-group-desc\n&<公共请求参数>",
+        "input": "https://vpc.tencentcloudapi.com/?Action=ModifySecurityGroupAttribute\n&SecurityGroupId=sg-33ocnj9n\n&GroupName=demo\n&GroupDescription=demo\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\"\n    }\n}",
         "title": "修改安全组属性"
       }
@@ -2991,7 +3029,7 @@
     "ModifyVpcEndPointServiceWhiteList": [
       {
         "document": "修改终端节点服务白名单",
-        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyVpcEndPointServiceWhiteList\n<公共请求参数>\n\n{\n    \"UserUin\": \"\",\n    \"Description\": \"700000483554\",\n    \"EndPointServiceId\": \"vpcsvc-b2mrmmx7\"\n}",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyVpcEndPointServiceWhiteList\n<公共请求参数>\n\n{\n    \"UserUin\": \"700000483554\",\n    \"Description\": \"demo\",\n    \"EndPointServiceId\": \"vpcsvc-b2mrmmx7\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"cccb2665-5d02-4d87-b9e7-757bb06e5beb\"\n    }\n}",
         "title": "修改终端节点服务白名单"
       }
@@ -3039,7 +3077,7 @@
     "ModifyVpnGatewaySslClientCert": [
       {
         "document": "更新sslVpnClient证书",
-        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyVpnGatewaySslClientCert\n<公共请求参数>\n\n{\n    \"SslVpnClientIds\": [\n        \"abc\"\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyVpnGatewaySslClientCert\n<公共请求参数>\n\n{\n    \"SslVpnClientIds\": [\n        \"vpnc-xxxxxxxx\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"e4b16737-b460-429b-b240-d6b621da9eed\",\n        \"TaskId\": 10449\n    }\n}",
         "title": "更新sslVpnClient证书"
       }
@@ -3211,7 +3249,7 @@
     "ReplaceSecurityGroupPolicy": [
       {
         "document": "替换单条安全组路由规则",
-        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReplaceSecurityGroupPolicy\n<公共请求参数>\n\n{\n    \"SecurityGroupId\": \"abc\",\n    \"SecurityGroupPolicySet\": {\n        \"Version\": \"abc\",\n        \"Egress\": [\n            {\n                \"PolicyIndex\": 0,\n                \"Protocol\": \"UDP\",\n                \"Port\": \"20\",\n                \"ServiceTemplate\": {\n                    \"ServiceId\": \"ppm-f5n1f8da\",\n                    \"ServiceGroupId\": \"ppmg-f5n1f8da\"\n                },\n                \"CidrBlock\": \"61.144.138.34\",\n                \"Ipv6CidrBlock\": \"::/0\",\n                \"SecurityGroupId\": \"sg-1wgfnrnd\",\n                \"AddressTemplate\": {\n                    \"AddressId\": \"ipm-2uw6ujo6\",\n                    \"AddressGroupId\": \"ipmg-2uw6ujo6\"\n                },\n                \"Action\": \"accept\",\n                \"PolicyDescription\": \"abc\",\n                \"ModifyTime\": \"2022-06-21 10:46:42\"\n            }\n        ],\n        \"Ingress\": [\n            {\n                \"PolicyIndex\": 0,\n                \"Protocol\": \"UDP\",\n                \"Port\": \"20\",\n                \"ServiceTemplate\": {\n                    \"ServiceId\": \"ppm-f5n1f8da\",\n                    \"ServiceGroupId\": \"ppmg-f5n1f8da\"\n                },\n                \"CidrBlock\": \"61.144.138.34\",\n                \"Ipv6CidrBlock\": \"::/0\",\n                \"SecurityGroupId\": \"sg-1wgfnrnd\",\n                \"AddressTemplate\": {\n                    \"AddressId\": \"ipm-2uw6ujo6\",\n                    \"AddressGroupId\": \"ipmg-2uw6ujo6\"\n                },\n                \"Action\": \"accept\",\n                \"PolicyDescription\": \"abc\",\n                \"ModifyTime\": \"2022-06-21 10:46:42\"\n            }\n        ]\n    },\n    \"OriginalSecurityGroupPolicySet\": {\n        \"Version\": \"abc\",\n        \"Egress\": [\n            {\n                \"PolicyIndex\": 0,\n                \"Protocol\": \"UDP\",\n                \"Port\": \"20\",\n                \"ServiceTemplate\": {\n                    \"ServiceId\": \"ppm-f5n1f8da\",\n                    \"ServiceGroupId\": \"ppmg-f5n1f8da\"\n                },\n                \"CidrBlock\": \"61.144.138.34\",\n                \"Ipv6CidrBlock\": \"::/0\",\n                \"SecurityGroupId\": \"sg-1wgfnrnd\",\n                \"AddressTemplate\": {\n                    \"AddressId\": \"ipm-2uw6ujo6\",\n                    \"AddressGroupId\": \"ipmg-2uw6ujo6\"\n                },\n                \"Action\": \"accept\",\n                \"PolicyDescription\": \"abc\",\n                \"ModifyTime\": \"2022-06-21 10:46:42\"\n            }\n        ]\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReplaceSecurityGroupPolicy\n<公共请求参数>\n\n{\n    \"SecurityGroupId\": \"demo\",\n    \"SecurityGroupPolicySet\": {\n        \"Version\": \"1\",\n        \"Egress\": [\n            {\n                \"PolicyIndex\": 0,\n                \"Protocol\": \"UDP\",\n                \"Port\": \"20\",\n                \"ServiceTemplate\": {\n                    \"ServiceId\": \"ppm-f5n1f8da\",\n                    \"ServiceGroupId\": \"ppmg-f5n1f8da\"\n                },\n                \"CidrBlock\": \"61.144.138.34\",\n                \"Ipv6CidrBlock\": \"::/0\",\n                \"SecurityGroupId\": \"sg-1wgfnrnd\",\n                \"AddressTemplate\": {\n                    \"AddressId\": \"ipm-2uw6ujo6\",\n                    \"AddressGroupId\": \"ipmg-2uw6ujo6\"\n                },\n                \"Action\": \"accept\",\n                \"PolicyDescription\": \"demo\",\n                \"ModifyTime\": \"2022-06-21 10:46:42\"\n            }\n        ],\n        \"Ingress\": [\n            {\n                \"PolicyIndex\": 0,\n                \"Protocol\": \"UDP\",\n                \"Port\": \"20\",\n                \"ServiceTemplate\": {\n                    \"ServiceId\": \"ppm-f5n1f8da\",\n                    \"ServiceGroupId\": \"ppmg-f5n1f8da\"\n                },\n                \"CidrBlock\": \"61.144.138.34\",\n                \"Ipv6CidrBlock\": \"::/0\",\n                \"SecurityGroupId\": \"sg-1wgfnrnd\",\n                \"AddressTemplate\": {\n                    \"AddressId\": \"ipm-2uw6ujo6\",\n                    \"AddressGroupId\": \"ipmg-2uw6ujo6\"\n                },\n                \"Action\": \"accept\",\n                \"PolicyDescription\": \"demo\",\n                \"ModifyTime\": \"2022-06-21 10:46:42\"\n            }\n        ]\n    },\n    \"OriginalSecurityGroupPolicySet\": {\n        \"Version\": \"1\",\n        \"Egress\": [\n            {\n                \"PolicyIndex\": 0,\n                \"Protocol\": \"UDP\",\n                \"Port\": \"20\",\n                \"ServiceTemplate\": {\n                    \"ServiceId\": \"ppm-f5n1f8da\",\n                    \"ServiceGroupId\": \"ppmg-f5n1f8da\"\n                },\n                \"CidrBlock\": \"61.144.138.34\",\n                \"Ipv6CidrBlock\": \"::/0\",\n                \"SecurityGroupId\": \"sg-1wgfnrnd\",\n                \"AddressTemplate\": {\n                    \"AddressId\": \"ipm-2uw6ujo6\",\n                    \"AddressGroupId\": \"ipmg-2uw6ujo6\"\n                },\n                \"Action\": \"accept\",\n                \"PolicyDescription\": \"demo\",\n                \"ModifyTime\": \"2022-06-21 10:46:42\"\n            }\n        ]\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\"\n    }\n}",
         "title": "替换单条安全组路由规则"
       }

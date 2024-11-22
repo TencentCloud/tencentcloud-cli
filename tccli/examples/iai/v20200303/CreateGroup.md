@@ -1,4 +1,4 @@
-**Example 1: 创建人员库接口**
+**Example 1: 创建人员库成功示例**
 
 创建人员库。
 
@@ -23,34 +23,9 @@ Output:
 }
 ```
 
-**Example 2: 创建人员库接口-2**
+**Example 2: 创建人员库错误示例**
 
-创建人员库。
 
-Input: 
-
-```
-tccli iai CreateGroup --cli-unfold-argument  \
-    --GroupName 某某大学竹园宿舍楼1号楼 \
-    --GroupId ZhuYuanDormitoryNo1 \
-    --FaceModelVersion 3.0 \
-    --Tag 全是女生哦 \
-    --GroupExDescriptions 学院名 专业 年级 学号
-```
-
-Output: 
-```
-{
-    "Response": {
-        "FaceModelVersion": "3.0",
-        "RequestId": "1695f3dd-b668-479e-8b87-f37de371a8ec"
-    }
-}
-```
-
-**Example 3: 错误示例-人员库ID不支持中文**
-
-人员库ID不支持中文。
 
 Input: 
 
@@ -73,9 +48,9 @@ Output:
 }
 ```
 
-**Example 4: 错误示例-人员库ID不可重复**
+**Example 3: 创建人员库ID重复错误示例**
 
-人员库ID不可重复
+
 
 Input: 
 

@@ -40,6 +40,22 @@
         "title": "取消示例"
       }
     ],
+    "CopyCaster": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CopyCaster\n<公共请求参数>\n\n{\n    \"CasterId\": \"1234\",\n    \"OutputStreamId\": \"copy_output_example\",\n    \"CasterName\": \"copy_example\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\",\n        \"CasterId\": 1235\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "CreateCaster": [
+      {
+        "document": "请求创建导播台",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCaster\n<公共请求参数>\n\n{\n    \"CasterName\": \"example\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\",\n        \"CasterId\": 1234\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
     "CreateCommonMixStream": [
       {
         "document": "使用混流预置模板混流。",
@@ -222,6 +238,14 @@
         "input": "https://live.tencentcloudapi.com/?Action=CreateScreenshotTask\n&AppName=live\n&DomainName=5000.live.push.com\n&StreamName=livetest\n&StartTime=1589889600\n&EndTime=1589904000\n&TemplateId=0\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"TaskId\": \"UpTbk5RSVhRQFkAAfHwQCCjcRD0lRFcZ0xTSlNTQltlRVRLU1JAWW9EUb\"\n    }\n}",
         "title": "示例"
+      }
+    ],
+    "DeleteCaster": [
+      {
+        "document": "删除导播台",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCaster\n<公共请求参数>\n\n{\n    \"CasterId\": \"1234\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "请求示例"
       }
     ],
     "DeleteLiveCallbackRule": [
@@ -432,11 +456,35 @@
         "title": "请求示例"
       }
     ],
+    "DescribeCaster": [
+      {
+        "document": "当需要查询一个导播台的信息时，可以按如下调用。",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCaster\n<公共请求参数>\n\n{\n    \"CasterId\": \"1234\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CasterInfo\": {\n            \"CasterId\": 1234,\n            \"CasterName\": \"example\",\n            \"StartLiveTime\": 0,\n            \"Description\": \"\",\n            \"CreateTime\": 1603158528,\n            \"Status\": 0,\n            \"ExpireTime\": -1,\n            \"DelayTime\": 0,\n            \"PgmWidth\": 0,\n            \"PgmHeight\": 0,\n            \"PgmFps\": 0,\n            \"PgmBitRate\": 0,\n            \"PgmAudioBitRate\": 256,\n            \"FeeType\": 0,\n            \"RecordTemplateId\": 0,\n            \"RecordStatus\": 0,\n            \"RecordTaskId\": \"\"\n        },\n        \"RequestId\": \"bebdd4e4-4087-411b-ab2e-3692dcfba4c3\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "DescribeCasterDisplayInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCasterDisplayInfo\n<公共请求参数>\n\n{\n    \"CasterId\": 130\n}",
+        "output": "{\n    \"Response\": {\n        \"PvwDisplayInfo\": {\n            \"LayoutIndex\": 0,\n            \"MarkPicIndexList\": [],\n            \"MarkWordIndexList\": [],\n            \"TransitionType\": \"\",\n            \"AudioIndexList\": []\n        },\n        \"PgmDisplayInfo\": {\n            \"LayoutIndex\": 0,\n            \"MarkPicIndexList\": [],\n            \"MarkWordIndexList\": [],\n            \"TransitionType\": \"\",\n            \"AudioIndexList\": []\n        },\n        \"Status\": 0,\n        \"RequestId\": \"uuid\",\n        \"StartLiveTime\": 1670309219\n    }\n}",
+        "title": "查询导播台展示信息"
+      }
+    ],
     "DescribeCasterList": [
       {
         "document": "获取某个账号下的所有导播台列表",
         "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCasterList\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\",\n        \"CasterList\": [\n            {\n                \"CasterId\": 10,\n                \"CasterName\": \"example\",\n                \"StartBillingTime\": 0,\n                \"StopBillingTime\": 1731964027,\n                \"Description\": \"\",\n                \"CreateTime\": 1603158528,\n                \"Status\": 0,\n                \"ExpireTime\": -1,\n                \"FeeType\": 0\n            }\n        ]\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "DescribeCasterPlayUrl": [
+      {
+        "document": "获取某个输入或者预监、主监的播放地址",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCasterPlayUrl\n<公共请求参数>\n\n{\n    \"PlayUrlType\": \"1\",\n    \"CasterId\": \"10\",\n    \"PlayUrlIndex\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\",\n        \"PlayUrl\": \"http://domain/live/test.flv\",\n        \"WebRTCPlayUrl\": \"webrtc://webrtc.domain.com/live/test\"\n    }\n}",
         "title": "请求示例"
       }
     ],
@@ -800,6 +848,14 @@
         "title": "请求示例"
       }
     ],
+    "DescribeLiveTimeShiftWriteSizeInfoList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLiveTimeShiftWriteSizeInfoList\n<公共请求参数>\n\n{\n    \"StartTime\": \"abc\",\n    \"EndTime\": \"abc\",\n    \"DomainNames\": [\n        \"abc\"\n    ],\n    \"Dimensions\": [\n        \"abc\"\n    ],\n    \"StorageDays\": [\n        0\n    ],\n    \"Granularity\": 0,\n    \"MainlandOrOversea\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DataInfoList\": [\n            {\n                \"Area\": \"abc\",\n                \"Time\": \"abc\",\n                \"WriteSize\": 0,\n                \"Domain\": \"abc\",\n                \"StorageDays\": 0\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
     "DescribeLiveTranscodeDetailInfo": [
       {
         "document": "",
@@ -1077,6 +1133,14 @@
         "document": "对直播推流进行封禁。",
         "input": "https://live.tencentcloudapi.com/?Action=ForbidLiveStream\n&DomainName=5000.livepush.myqcloud.com\n&AppName=live\n&StreamName=stream1\n&ResumeTime=2018-11-24T12:00:00Z\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8e50cdb5-56dc-408b-89b0-31818958d424\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "ModifyCaster": [
+      {
+        "document": "请求修改导播台信息",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCaster\n<公共请求参数>\n\n{\n    \"RecordStatus\": \"1\",\n    \"RecordTemplateId\": \"1\",\n    \"CasterId\": \"10\",\n    \"CasterName\": \"Modify Caster\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "请求示例"
       }
     ],

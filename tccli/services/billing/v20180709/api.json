@@ -5992,7 +5992,7 @@
           "example": "p_cvm",
           "member": "string",
           "name": "BusinessCode",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6002,7 +6002,7 @@
           "example": "云服务器",
           "member": "string",
           "name": "BusinessCodeName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6012,7 +6012,7 @@
           "example": "4.00000000",
           "member": "string",
           "name": "TotalCost",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6022,7 +6022,7 @@
           "example": "4.00000000",
           "member": "string",
           "name": "RealTotalCost",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6032,7 +6032,7 @@
           "example": "1.00000000",
           "member": "string",
           "name": "CashPayAmount",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6042,7 +6042,7 @@
           "example": "1.00000000",
           "member": "string",
           "name": "IncentivePayAmount",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6052,7 +6052,7 @@
           "example": "1.00000000",
           "member": "string",
           "name": "VoucherPayAmount",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6062,7 +6062,7 @@
           "example": "1.00000000",
           "member": "string",
           "name": "TransferPayAmount",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -6078,7 +6078,7 @@
           "example": "p_cdn",
           "member": "string",
           "name": "BusinessCode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6088,7 +6088,7 @@
           "example": "内容分发网络 CDN",
           "member": "string",
           "name": "BusinessCodeName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6098,7 +6098,7 @@
           "example": "0.00",
           "member": "string",
           "name": "RealTotalCostRatio",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6108,7 +6108,7 @@
           "example": "0.00",
           "member": "string",
           "name": "RealTotalCost",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6118,7 +6118,7 @@
           "example": "0.00",
           "member": "string",
           "name": "CashPayAmount",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6128,7 +6128,7 @@
           "example": "0.00",
           "member": "string",
           "name": "IncentivePayAmount",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6138,7 +6138,7 @@
           "example": "0.00",
           "member": "string",
           "name": "VoucherPayAmount",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6148,7 +6148,7 @@
           "example": "0.00",
           "member": "string",
           "name": "TransferPayAmount",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6158,7 +6158,7 @@
           "example": "2021-01",
           "member": "string",
           "name": "BillMonth",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6168,7 +6168,7 @@
           "example": "0.00",
           "member": "string",
           "name": "TotalCost",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -6355,8 +6355,7 @@
           "member": "uint64",
           "name": "TimeRange",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -6365,8 +6364,7 @@
           "member": "string",
           "name": "BusinessCode",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -6375,8 +6373,7 @@
           "member": "int64",
           "name": "ProjectId",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -6385,8 +6382,7 @@
           "member": "int64",
           "name": "RegionId",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -6395,8 +6391,7 @@
           "member": "string",
           "name": "PayMode",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -6405,8 +6400,7 @@
           "member": "string",
           "name": "ResourceKeyword",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -6415,8 +6409,7 @@
           "member": "string",
           "name": "BusinessCodes",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         },
         {
           "disabled": false,
@@ -6425,8 +6418,7 @@
           "member": "string",
           "name": "ProductCodes",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         },
         {
           "disabled": false,
@@ -6435,8 +6427,7 @@
           "member": "int64",
           "name": "RegionIds",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         },
         {
           "disabled": false,
@@ -6445,8 +6436,7 @@
           "member": "int64",
           "name": "ProjectIds",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         },
         {
           "disabled": false,
@@ -6455,8 +6445,7 @@
           "member": "string",
           "name": "PayModes",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         },
         {
           "disabled": false,
@@ -6465,8 +6454,7 @@
           "member": "string",
           "name": "ActionTypes",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         },
         {
           "disabled": false,
@@ -6475,8 +6463,7 @@
           "member": "int64",
           "name": "HideFreeCost",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -6485,8 +6472,7 @@
           "member": "string",
           "name": "OrderByCost",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -6495,8 +6481,7 @@
           "member": "string",
           "name": "BillIds",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         },
         {
           "disabled": false,
@@ -6505,8 +6490,7 @@
           "member": "string",
           "name": "ComponentCodes",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         },
         {
           "disabled": false,
@@ -6515,18 +6499,16 @@
           "member": "string",
           "name": "FileIds",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         },
         {
           "disabled": false,
           "document": "文件类型",
-          "example": "-",
+          "example": "[\"CustomizedDosage\"]",
           "member": "string",
           "name": "FileTypes",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         },
         {
           "disabled": false,
@@ -6535,8 +6517,7 @@
           "member": "uint64",
           "name": "Status",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         }
       ],
       "usage": "in"
@@ -6587,7 +6568,7 @@
         {
           "disabled": false,
           "document": "现金\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2.02300000",
           "member": "string",
           "name": "CashPayAmount",
           "output_required": true,
@@ -6597,7 +6578,7 @@
         {
           "disabled": false,
           "document": "赠送金\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "3.12000000",
           "member": "string",
           "name": "IncentivePayAmount",
           "output_required": true,
@@ -6607,7 +6588,7 @@
         {
           "disabled": false,
           "document": "代金券\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1.02200000",
           "member": "string",
           "name": "VoucherPayAmount",
           "output_required": true,
@@ -6617,7 +6598,7 @@
         {
           "disabled": false,
           "document": "分成金\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1.43000000",
           "member": "string",
           "name": "TransferPayAmount",
           "output_required": true,
@@ -6627,7 +6608,7 @@
         {
           "disabled": false,
           "document": "地域名称（仅在地域汇总总展示）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "Asia Pacific (Seoul)",
           "member": "string",
           "name": "RegionName",
           "output_required": false,
@@ -6643,7 +6624,7 @@
         {
           "disabled": false,
           "document": "项目ID",
-          "example": "无",
+          "example": "0",
           "member": "string",
           "name": "ProjectId",
           "output_required": true,
@@ -6653,7 +6634,7 @@
         {
           "disabled": false,
           "document": "项目名称",
-          "example": "无",
+          "example": "默认项目",
           "member": "string",
           "name": "ProjectName",
           "output_required": true,
@@ -6663,7 +6644,7 @@
         {
           "disabled": false,
           "document": "折后总价",
-          "example": "无",
+          "example": "41540.10",
           "member": "string",
           "name": "RealTotalCost",
           "output_required": true,
@@ -6693,7 +6674,7 @@
         {
           "disabled": false,
           "document": "现金\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "146.44115878",
           "member": "string",
           "name": "CashPayAmount",
           "output_required": true,
@@ -6703,7 +6684,7 @@
         {
           "disabled": false,
           "document": "赠送金\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "41388.66792727",
           "member": "string",
           "name": "IncentivePayAmount",
           "output_required": true,
@@ -6713,7 +6694,7 @@
         {
           "disabled": false,
           "document": "代金券\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "4.99265135",
           "member": "string",
           "name": "VoucherPayAmount",
           "output_required": true,
@@ -6723,7 +6704,7 @@
         {
           "disabled": false,
           "document": "分成金\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0.00000000",
           "member": "string",
           "name": "TransferPayAmount",
           "output_required": true,
@@ -6739,7 +6720,7 @@
         {
           "disabled": false,
           "document": "地域ID",
-          "example": "无",
+          "example": "8",
           "member": "string",
           "name": "RegionId",
           "output_required": true,
@@ -6749,7 +6730,7 @@
         {
           "disabled": false,
           "document": "地域名称",
-          "example": "无",
+          "example": "华北地区（北京）",
           "member": "string",
           "name": "RegionName",
           "output_required": true,
@@ -6759,7 +6740,7 @@
         {
           "disabled": false,
           "document": "折后总价",
-          "example": "无",
+          "example": "77916.41",
           "member": "string",
           "name": "RealTotalCost",
           "output_required": true,
@@ -6769,7 +6750,7 @@
         {
           "disabled": false,
           "document": "趋势",
-          "example": "无",
+          "example": "{\"Type\":\"downward\",\"Value\":\"43.97\"}",
           "member": "ConsumptionSummaryTrend",
           "name": "Trend",
           "output_required": true,
@@ -6779,7 +6760,7 @@
         {
           "disabled": false,
           "document": "产品消费详情",
-          "example": "无",
+          "example": "[{\"BusinessCode\":\"p_cvm\",\"BusinessCodeName\":\"云服务器CVM\",\"RegionName\":\"华北地区（北京）\",\"RealTotalCost\":\"39122.58\",\"CashPayAmount\":\"39122.57837976\",\"IncentivePayAmount\":\"0.00000000\",\"VoucherPayAmount\":\"0.00000000\",\"TransferPayAmount\":\"0.00000000\",\"Trend\":{\"Type\":\"downward\",\"Value\":\"34.77\"}}]",
           "member": "ConsumptionBusinessSummaryDataItem",
           "name": "Business",
           "output_required": true,
@@ -6789,7 +6770,7 @@
         {
           "disabled": false,
           "document": "现金\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "77916.41339286",
           "member": "string",
           "name": "CashPayAmount",
           "output_required": false,
@@ -6799,7 +6780,7 @@
         {
           "disabled": false,
           "document": "代金券\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0.00000000",
           "member": "string",
           "name": "VoucherPayAmount",
           "output_required": false,
@@ -6809,7 +6790,7 @@
         {
           "disabled": false,
           "document": "赠送金\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0.00000000",
           "member": "string",
           "name": "IncentivePayAmount",
           "output_required": false,
@@ -6819,7 +6800,7 @@
         {
           "disabled": false,
           "document": "分成金\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0.00000000",
           "member": "string",
           "name": "TransferPayAmount",
           "output_required": false,
@@ -7011,7 +6992,7 @@
         {
           "disabled": false,
           "document": "折前价\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "205.59",
           "member": "string",
           "name": "RealCost",
           "output_required": true,
@@ -7021,7 +7002,7 @@
         {
           "disabled": false,
           "document": "费用起始时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2024-10-01 00:00:00",
           "member": "string",
           "name": "FeeBeginTime",
           "output_required": true,
@@ -7031,7 +7012,7 @@
         {
           "disabled": false,
           "document": "费用结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2024-10-28 23:59:59",
           "member": "string",
           "name": "FeeEndTime",
           "output_required": true,
@@ -7041,7 +7022,7 @@
         {
           "disabled": false,
           "document": "天数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "28",
           "member": "string",
           "name": "DayDiff",
           "output_required": true,
@@ -7051,7 +7032,7 @@
         {
           "disabled": false,
           "document": "每日消耗\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "5.13972603",
           "member": "string",
           "name": "DailyTotalCost",
           "output_required": true,
@@ -7061,7 +7042,7 @@
         {
           "disabled": false,
           "document": "订单号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "202407301234",
           "member": "string",
           "name": "OrderId",
           "output_required": true,
@@ -7071,7 +7052,7 @@
         {
           "disabled": false,
           "document": "代金券\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0.00000000",
           "member": "string",
           "name": "VoucherPayAmount",
           "output_required": true,
@@ -7081,7 +7062,7 @@
         {
           "disabled": false,
           "document": "赠送金\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0.00000000",
           "member": "string",
           "name": "IncentivePayAmount",
           "output_required": true,
@@ -7091,7 +7072,7 @@
         {
           "disabled": false,
           "document": "分成金\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0.00000000",
           "member": "string",
           "name": "TransferPayAmount",
           "output_required": true,
@@ -7101,7 +7082,7 @@
         {
           "disabled": false,
           "document": "支付者UIN：支付者的账号 ID，账号 ID 是用户在腾讯云的唯一账号标识\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1001234",
           "member": "string",
           "name": "PayerUin",
           "output_required": false,
@@ -7111,7 +7092,7 @@
         {
           "disabled": false,
           "document": "使用者UIN：实际使用资源的账号 ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1001234",
           "member": "string",
           "name": "OwnerUin",
           "output_required": false,
@@ -7121,7 +7102,7 @@
         {
           "disabled": false,
           "document": "操作者UIN：操作者账号 ID（预付费资源下单或后付费操作开通资源账号的 ID 或者角色 ID ）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1001234",
           "member": "string",
           "name": "OperateUin",
           "output_required": false,
@@ -7131,7 +7112,7 @@
         {
           "disabled": false,
           "document": "子产品编码\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "sp_dnspackage_standard",
           "member": "string",
           "name": "ProductCode",
           "output_required": false,
@@ -7141,7 +7122,7 @@
         {
           "disabled": false,
           "document": "子产品名称：用户采购的具体产品细分类型，例如：云服务器 CVM-标准型 S1\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "DNS 解析套餐 - 企业版",
           "member": "string",
           "name": "ProductCodeName",
           "output_required": false,
@@ -7151,7 +7132,7 @@
         {
           "disabled": false,
           "document": "地域类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "domestic",
           "member": "string",
           "name": "RegionType",
           "output_required": false,
@@ -7161,7 +7142,7 @@
         {
           "disabled": false,
           "document": "地域类型名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "国内",
           "member": "string",
           "name": "RegionTypeName",
           "output_required": false,
@@ -7171,7 +7152,7 @@
         {
           "disabled": false,
           "document": "扩展字段1\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "extendA",
           "member": "string",
           "name": "Extend1",
           "output_required": false,
@@ -7181,7 +7162,7 @@
         {
           "disabled": false,
           "document": "扩展字段2\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "extendB",
           "member": "string",
           "name": "Extend2",
           "output_required": false,
@@ -7191,7 +7172,7 @@
         {
           "disabled": false,
           "document": "扩展字段3\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "extendC",
           "member": "string",
           "name": "Extend3",
           "output_required": false,
@@ -7201,7 +7182,7 @@
         {
           "disabled": false,
           "document": "扩展字段4\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "extendD",
           "member": "string",
           "name": "Extend4",
           "output_required": false,
@@ -7211,7 +7192,7 @@
         {
           "disabled": false,
           "document": "扩展字段5\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "extendE",
           "member": "string",
           "name": "Extend5",
           "output_required": false,
@@ -7221,7 +7202,7 @@
         {
           "disabled": false,
           "document": "实例类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "exclusiveSale",
           "member": "string",
           "name": "InstanceType",
           "output_required": false,
@@ -7231,7 +7212,7 @@
         {
           "disabled": false,
           "document": "实例类型名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "包销实例",
           "member": "string",
           "name": "InstanceTypeName",
           "output_required": false,
@@ -7241,7 +7222,7 @@
         {
           "disabled": false,
           "document": "扣费时间：结算扣费时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2024-07-30 15:43:39",
           "member": "string",
           "name": "PayTime",
           "output_required": false,
@@ -7251,7 +7232,7 @@
         {
           "disabled": false,
           "document": "可用区：资源所属可用区，如广州三区\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "广州一区",
           "member": "string",
           "name": "ZoneName",
           "output_required": false,
@@ -7261,7 +7242,7 @@
         {
           "disabled": false,
           "document": "配置描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "云解析-企业标准版套餐: 1 个",
           "member": "string",
           "name": "ComponentConfig",
           "output_required": false,
@@ -7271,7 +7252,7 @@
         {
           "disabled": false,
           "document": "标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\"标签键A\":\"标签值A\"}",
           "member": "string",
           "name": "Tags",
           "output_required": false,
@@ -7303,20 +7284,20 @@
         {
           "disabled": false,
           "document": "趋势类型，upward上升/downward下降/none无",
-          "example": "",
+          "example": "upward",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "趋势值，Type为none是该字段值为null\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "1.72",
           "member": "string",
           "name": "Value",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -7405,7 +7386,7 @@
         {
           "disabled": false,
           "document": "组件类型名称",
-          "example": "无",
+          "example": "公网网络-流量",
           "member": "string",
           "name": "ComponentCodeName",
           "output_required": true,
@@ -7415,7 +7396,7 @@
         {
           "disabled": false,
           "document": "组件名称",
-          "example": "无",
+          "example": "公网IP-按流量计费",
           "member": "string",
           "name": "ItemCodeName",
           "output_required": true,
@@ -7425,7 +7406,7 @@
         {
           "disabled": false,
           "document": "刊例价",
-          "example": "无",
+          "example": "0.80000000",
           "member": "string",
           "name": "SinglePrice",
           "output_required": true,
@@ -7435,7 +7416,7 @@
         {
           "disabled": false,
           "document": "刊例价单位",
-          "example": "无",
+          "example": "元/GB/小时",
           "member": "string",
           "name": "PriceUnit",
           "output_required": true,
@@ -7445,7 +7426,7 @@
         {
           "disabled": false,
           "document": "用量",
-          "example": "无",
+          "example": "0.00000099",
           "member": "string",
           "name": "UsedAmount",
           "output_required": true,
@@ -7455,7 +7436,7 @@
         {
           "disabled": false,
           "document": "用量单位",
-          "example": "无",
+          "example": "GB",
           "member": "string",
           "name": "UsedAmountUnit",
           "output_required": true,
@@ -7465,7 +7446,7 @@
         {
           "disabled": false,
           "document": "原价",
-          "example": "无",
+          "example": "0.00000079",
           "member": "string",
           "name": "Cost",
           "output_required": true,
@@ -7475,7 +7456,7 @@
         {
           "disabled": false,
           "document": "折扣",
-          "example": "无",
+          "example": "0.65000000",
           "member": "string",
           "name": "Discount",
           "output_required": true,
@@ -7485,7 +7466,7 @@
         {
           "disabled": false,
           "document": "折后价",
-          "example": "无",
+          "example": "0.00000051",
           "member": "string",
           "name": "RealCost",
           "output_required": true,
@@ -7495,7 +7476,7 @@
         {
           "disabled": false,
           "document": "代金券支付金额",
-          "example": "无",
+          "example": "0.00000051",
           "member": "string",
           "name": "VoucherPayAmount",
           "output_required": true,
@@ -7505,7 +7486,7 @@
         {
           "disabled": false,
           "document": "现金支付金额",
-          "example": "无",
+          "example": "0.00000000",
           "member": "string",
           "name": "CashPayAmount",
           "output_required": true,
@@ -7515,7 +7496,7 @@
         {
           "disabled": false,
           "document": "赠送金支付金额",
-          "example": "无",
+          "example": "0.00000000",
           "member": "string",
           "name": "IncentivePayAmount",
           "output_required": true,
@@ -10553,7 +10534,7 @@
         {
           "disabled": false,
           "document": "是否需要访问列表的总记录数，用于前端分页\n1-表示需要， 0-表示不需要",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "NeedRecordNum",
           "required": false,
@@ -10622,7 +10603,7 @@
         {
           "disabled": false,
           "document": "资源汇总列表",
-          "example": "无",
+          "example": "[{\"PayerUin\":\"909619400\",\"OwnerUin\":\"909619400\",\"OperateUin\":\"909619400\",\"BusinessCodeName\":\"COS 对象存储\",\"ProductCodeName\":\"COS 标准存储\",\"BusinessCode\":\"p_cos\",\"ProductCode\":\"sp_cos_std\",\"PayModeName\":\"按量计费\",\"ProjectName\":\"默认项目\",\"RegionName\":\"华东地区（上海）\",\"RegionId\":4,\"ZoneName\":\"上海一区\",\"ResourceId\":\"sta-19039\",\"ResourceName\":\"sta-3\",\"ActionTypeName\":\"按量计费日结\",\"OrderId\":\"12321-abdef-342132-aac23\",\"PayTime\":\"0000-00-00 00:00:00\",\"FeeBeginTime\":\"2024-11-01 00:00:00\",\"FeeEndTime\":\"2024-11-13 23:59:59\",\"BillMonth\":\"2024-11-01 00:00:00\",\"ConfigDesc\":\"COS 标准存储存储容量: 0.39 GB\",\"ExtendField1\":\"ef 1\",\"ExtendField2\":\"ef 2\",\"ExtendField3\":\"ef 3\",\"ExtendField4\":\"ef 4\",\"ExtendField5\":\"ef 5\",\"TotalCost\":\"0.00007068\",\"Discount\":\"0.232072\",\"ReduceType\":\"折扣\",\"RealTotalCost\":\"0.00124116\",\"VoucherPayAmount\":\"0.00000000\",\"CashPayAmount\":\"0.00000000\",\"IncentivePayAmount\":\"0.00114116\",\"TransferPayAmount\":\"0.00000000\",\"InstanceType\":\"it\",\"OriginalCostWithRI\":\"0.00000000\",\"SPDeduction\":\"0.00000000\",\"OriginalCostWithSP\":\"0.00000000\",\"Tags\":[]}]",
           "member": "BillDistributionResourceSummary",
           "name": "ResourceSummarySet",
           "output_required": true,
@@ -10818,7 +10799,7 @@
         {
           "disabled": false,
           "document": "查询账单数据的用户UIN",
-          "example": "xxx",
+          "example": "909619400",
           "member": "string",
           "name": "PayerUin",
           "required": false,
@@ -10836,15 +10817,17 @@
           "example": "1",
           "member": "uint64",
           "name": "Ready",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "各付费模式花费分布详情\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[{\"businessCode\":\"p_ntp\",\"realTotalCost\":\"6.38000000\",\"totalCost\":\"7.50000000\",\"cashPayAmount\":\"6.38000000\",\"incentivePayAmount\":\"0.00000000\",\"voucherPayAmount\":\"0.00000000\",\"transferPayAmount\":\"0.00000000\",\"billMonth\":\"2023-09\",\"realTotalCostRatio\":\"67.43\",\"businessCodeName\":\"共享流量包\"}]",
           "member": "PayModeSummaryOverviewItem",
           "name": "SummaryOverview",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -10881,7 +10864,7 @@
         {
           "disabled": false,
           "document": "查询账单数据的用户UIN",
-          "example": "xxx",
+          "example": "909619400",
           "member": "string",
           "name": "PayerUin",
           "required": false,
@@ -10908,24 +10891,27 @@
           "example": "1",
           "member": "uint64",
           "name": "Ready",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "总花费详情\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\"realTotalCost\":\"6.72000000\",\"totalCost\":\"6.72000000\",\"voucherPayAmount\":\"0.00000000\",\"incentivePayAmount\":\"0.00000000\",\"cashPayAmount\":\"6.72000000\",\"transferPayAmount\":\"0.00000000\"}",
           "member": "BusinessSummaryTotal",
           "name": "SummaryTotal",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "各产品花费分布\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[{\"businessCode\":\"p_eip\",\"realTotalCost\":\"7.73432921\",\"totalCost\":\"7.73432921\",\"cashPayAmount\":\"7.73432921\",\"incentivePayAmount\":\"0.00000000\",\"voucherPayAmount\":\"0.00000000\",\"transferPayAmount\":\"0.00000000\",\"billMonth\":\"2024-01\",\"realTotalCostRatio\":\"100.00\",\"businessCodeName\":\"公网 IP\"}]",
           "member": "BusinessSummaryOverviewItem",
           "name": "SummaryOverview",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -11027,7 +11013,7 @@
         {
           "disabled": false,
           "document": "查询账单数据的用户UIN",
-          "example": "xxx",
+          "example": "10002011014",
           "member": "string",
           "name": "PayerUin",
           "required": false,
@@ -11045,15 +11031,17 @@
           "example": "1",
           "member": "uint64",
           "name": "Ready",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "各地域花费分布详情\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[{\"ProjectId\":\"0\",\"RealTotalCost\":\"2924616.19000000\",\"TotalCost\":\"6622736.21547221\",\"CashPayAmount\":\"2924616.19000000\",\"IncentivePayAmount\":\"0.00000000\",\"VoucherPayAmount\":\"0.00000000\",\"TransferPayAmount\":\"0.00000000\",\"BillMonth\":\"2024-01\",\"RealTotalCostRatio\":\"100.00\",\"ProjectName\":\"默认项目\"}]",
           "member": "RegionSummaryOverviewItem",
           "name": "SummaryOverview",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -11099,7 +11087,7 @@
         {
           "disabled": false,
           "document": "查询账单数据的用户UIN",
-          "example": "xxx",
+          "example": "10002011014",
           "member": "string",
           "name": "PayerUin",
           "required": false,
@@ -11126,24 +11114,27 @@
           "example": "1",
           "member": "uint64",
           "name": "Ready",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "各标签值花费分布详情\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[{ \t\t\t\"TagValue\": \"prod_data_oceanus_oceanus_oceanus06_oceanus\", \t\t\t\"RealTotalCost\": \"20160.00000000\", \t\t\t\"TotalCost\": \"50400.00000000\", \t\t\t\"CashPayAmount\": \"20160.00000000\", \t\t\t\"IncentivePayAmount\": \"0.00000000\", \t\t\t\"VoucherPayAmount\": \"0.00000000\", \t\t\t\"TransferPayAmount\": \"0.00000000\", \t\t\t\"RealTotalCostRatio\": \"1.47\" \t\t}]",
           "member": "TagSummaryOverviewItem",
           "name": "SummaryOverview",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": " { \t\t\t\"RealTotalCost\": \"1367086.42000000\", \t\t\t\"TotalCost\": \"3656103.49136314\" \t\t}",
           "member": "SummaryTotal",
           "name": "SummaryTotal",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -11205,7 +11196,7 @@
         {
           "disabled": false,
           "document": "账单多维度汇总消费详情",
-          "example": "无",
+          "example": "{\"GroupKey\":\"p_cvm\",\"GroupValue\":\"云服务器\",\"TotalCost\":\"4.00000000\",\"RealTotalCost\":\"4.00000000\",\"CashPayAmount\":\"1.00000000\",\"IncentivePayAmount\":\"1.00000000\",\"VoucherPayAmount\":\"1.00000000\",\"TransferPayAmount\":\"1.00000000\",\"Business\":[{\"BusinessCode\":\"p_cvm\",\"BusinessCodeName\":\"云服务器\",\"TotalCost\":\"4.00000000\",\"RealTotalCost\":\"4.00000000\",\"CashPayAmount\":\"1.00000000\",\"IncentivePayAmount\":\"1.00000000\",\"VoucherPayAmount\":\"1.00000000\",\"TransferPayAmount\":\"1.00000000\"}]}",
           "member": "SummaryDetail",
           "name": "SummaryDetail",
           "output_required": true,
@@ -11270,7 +11261,7 @@
         {
           "disabled": false,
           "document": "账单多维度汇总消费详情",
-          "example": "无",
+          "example": "[{\"tagValue\":\"运维服务-temp\",\"business\":[{\"businessCode\":\"p_cvm\",\"businessCodeName\":\"云服务器CVM\",\"totalCost\":\"385.50\",\"realTotalCost\":\"212.03\",\"cashPayAmount\":\"212.03\",\"incentivePayAmount\":\"0.00\",\"voucherPayAmount\":\"0.00\",\"transferPayAmount\":\"0.00\",\"trend\":{\"type\":\"type_a\",\"value\":\"0.00\",\"preMonthRealTotalCost\":\"212.03\"}}],\"totalCost\":\"385.50\",\"realTotalCost\":\"212.03\",\"cashPayAmount\":\"212.03\",\"incentivePayAmount\":\"0.00\",\"voucherPayAmount\":\"0.00\",\"transferPayAmount\":\"0.00\",\"trend\":{\"type\":\"type_a\",\"value\":\"47.59\",\"preMonthRealTotalCost\":\"404.53\"}}]",
           "member": "SummaryDetail",
           "name": "SummaryDetail",
           "output_required": true,
@@ -11614,7 +11605,7 @@
         {
           "disabled": false,
           "document": "查询账单数据的用户UIN",
-          "example": "无",
+          "example": "10002011014",
           "member": "string",
           "name": "PayerUin",
           "required": false,
@@ -11641,33 +11632,37 @@
           "example": "1",
           "member": "uint64",
           "name": "Ready",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "消耗详情",
-          "example": "无",
+          "example": "{\"RealTotalCost\":\"4.20000000\"}",
           "member": "ConsumptionSummaryTotal",
           "name": "Total",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "消耗按产品汇总详情\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[{ \t\"BusinessCode\": \"p_clb\", \t\"BusinessCodeName\": \"负载均衡CLB\", \t\"RealTotalCost\": \"4.20000000\", \t\"CashPayAmount\": \"4.20000000\", \t\"IncentivePayAmount\": \"0.00000000\", \t\"VoucherPayAmount\": \"0.00000000\", \t\"TransferPayAmount\": \"0.00000000\", \t\"AmountBeforeTax\": \"0.00000000\", \t\"Tax\": \"0.00\", \t\"RegionName\": \"其他\" }]",
           "member": "ConsumptionBusinessSummaryDataItem",
           "name": "Data",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "记录数量，NeedRecordNum为0是返回null\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "记录数量，NeedRecordNum为0时返回null\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
           "member": "uint64",
           "name": "RecordNum",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -11722,7 +11717,7 @@
         {
           "disabled": false,
           "document": "查询账单数据的用户UIN",
-          "example": "无",
+          "example": "10002011014",
           "member": "string",
           "name": "PayerUin",
           "required": false,
@@ -11756,7 +11751,7 @@
         {
           "disabled": false,
           "document": "消耗详情",
-          "example": "无",
+          "example": "{\"RealTotalCost\":\"4.20000000\"}",
           "member": "ConsumptionSummaryTotal",
           "name": "Total",
           "output_required": true,
@@ -11766,7 +11761,7 @@
         {
           "disabled": false,
           "document": "消耗按业务汇总详情",
-          "example": "无",
+          "example": "[{\"ProjectId\":\"0\",\"ProjectName\":\"项目名称\",\"Trend\":{},\"Business\":[{\"BusinessCode\":\"p_clb\",\"BusinessCodeName\":\"负载均衡CLB\",\"RealTotalCost\":\"4.20000000\",\"CashPayAmount\":\"4.20000000\",\"IncentivePayAmount\":\"0.00000000\",\"VoucherPayAmount\":\"0.00000000\",\"TransferPayAmount\":\"0.00000000\",\"AmountBeforeTax\":\"0.00000000\",\"Tax\":\"0.00\",\"RegionName\":\"其他\",\"Trend\":{\"Type\":\"upward\",\"Value\":\"1.72\"}}],\"RealTotalCost\":\"4.20000000\",\"CashPayAmount\":\"4.20000000\",\"IncentivePayAmount\":\"0.00000000\",\"VoucherPayAmount\":\"0.00000000\",\"TransferPayAmount\":\"0.00000000\",\"AmountBeforeTax\":\"0.00000000\",\"Tax\":\"0.00\"}]",
           "member": "ConsumptionProjectSummaryDataItem",
           "name": "Data",
           "output_required": true,
@@ -11834,7 +11829,7 @@
         {
           "disabled": false,
           "document": "查询账单数据的用户UIN",
-          "example": "无",
+          "example": "10002011014",
           "member": "string",
           "name": "PayerUin",
           "required": false,
@@ -11868,7 +11863,7 @@
         {
           "disabled": false,
           "document": "消耗详情",
-          "example": "无",
+          "example": "{\"RealTotalCost\":\"4.20000000\"}",
           "member": "ConsumptionSummaryTotal",
           "name": "Total",
           "output_required": true,
@@ -11878,7 +11873,7 @@
         {
           "disabled": false,
           "document": "消耗按地域汇总详情",
-          "example": "无",
+          "example": "[{\"RegionId\":\"0\",\"RegionName\":\"其他\",\"RealTotalCost\":\"4.20000000\",\"CashPayAmount\":\"4.20000000\",\"IncentivePayAmount\":\"0.00000000\",\"VoucherPayAmount\":\"0.00000000\",\"TransferPayAmount\":\"0.00000000\",\"AmountBeforeTax\":\"0.00000000\",\"Tax\":\"0.00\",\"Trend\":{\"Type\":\"upward\",\"Value\":\"1.72\"},\"Business\":[{\"BusinessCode\":\"p_clb\",\"BusinessCodeName\":\"负载均衡CLB\",\"RealTotalCost\":\"4.20000000\",\"Trend\":{\"Type\":\"upward\",\"Value\":\"1.72\"},\"CashPayAmount\":\"4.20000000\",\"IncentivePayAmount\":\"0.00000000\",\"VoucherPayAmount\":\"0.00000000\",\"TransferPayAmount\":\"0.00000000\",\"AmountBeforeTax\":\"0.00000000\",\"Tax\":\"0.00\",\"RegionName\":\"其他\"}]}]",
           "member": "ConsumptionRegionSummaryDataItem",
           "name": "Data",
           "output_required": true,
@@ -11946,7 +11941,7 @@
         {
           "disabled": false,
           "document": "查询账单数据的用户UIN",
-          "example": "无",
+          "example": "10002011014",
           "member": "string",
           "name": "PayerUin",
           "required": false,
@@ -11955,7 +11950,7 @@
         {
           "disabled": false,
           "document": "是否需要返回记录数量，0不需要，1需要，默认不需要",
-          "example": "无",
+          "example": "10",
           "member": "uint64",
           "name": "NeedRecordNum",
           "required": false,
@@ -11964,7 +11959,7 @@
         {
           "disabled": false,
           "document": "是否需要返回过滤条件，0不需要，1需要，默认不需要",
-          "example": "无",
+          "example": "10",
           "member": "uint64",
           "name": "NeedConditionValue",
           "required": false,
@@ -11973,7 +11968,7 @@
         {
           "disabled": false,
           "document": "过滤条件，只支持ResourceKeyword(资源关键字，支持资源id及资源名称模糊查询)，ProjectIds（项目id），RegionIds(地域id)，PayModes(付费模式，可选prePay和postPay)，HideFreeCost（是否隐藏0元流水，可选0和1），OrderByCost（按费用排序规则，可选desc和asc）",
-          "example": "无",
+          "example": "{\"TimeRange\":6,\"BusinessCode\":\"p_clb\",\"ProjectId\":0,\"RegionId\":0,\"PayMode\":\"postPay\",\"ResourceKeyword\":\"lb-1weg57ny\",\"BusinessCodes\":[\"p_clb\"],\"ProductCodes\":[\"sp_clb\"],\"RegionIds\":[1],\"ProjectIds\":[0],\"PayModes\":[\"postPay\"],\"ActionTypes\":[\"postpay_deduct_h\"],\"HideFreeCost\":1,\"OrderByCost\":\"asc\",\"BillIds\":[\"20211101400077789\"],\"ComponentCodes\":[\"v_clb_ins\"],\"FileIds\":[\"1\"],\"FileTypes\":[\"CustomizedDosage\"],\"Status\":[1]}",
           "member": "Conditions",
           "name": "Conditions",
           "required": false,
@@ -11998,7 +11993,7 @@
         {
           "disabled": false,
           "document": "消耗详情\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\"RealTotalCost\":\"4.20000000\"}",
           "member": "ConsumptionSummaryTotal",
           "name": "Total",
           "output_required": true,
@@ -12008,7 +12003,7 @@
         {
           "disabled": false,
           "document": "过滤条件\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\"Business\":[{\"BusinessCode\":\"p_cvm\",\"BusinessCodeName\":\"云服务器\"}],\"Project\":[{\"ProjectId\":\"0\",\"ProjectName\":\"默认项目\"}],\"Region\":[{\"RegionId\":\"0\",\"RegionName\":\"其他\"}],\"PayMode\":[{\"PayMode\":\"postPay\",\"PayModeName\":\"按量计费\"}]}",
           "member": "ConsumptionResourceSummaryConditionValue",
           "name": "ConditionValue",
           "output_required": true,
@@ -12028,7 +12023,7 @@
         {
           "disabled": false,
           "document": "资源消耗详情\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[{\"OwnerUin\":\"10002011014\",\"PayerUin\":\"10002011014\",\"OperateUin\":\"10002011014\",\"BusinessCode\":\"p_cdn\",\"BusinessCodeName\":\"内容分发网络 CDN\",\"ProductCode\":\"sp_cdn_ov\",\"ProductCodeName\":\"中国境外CDN\",\"ResourceId\":\"1300342678_1002522_102391_sv_cdn_ov_hour_flux_AS1_1\",\"ResourceName\":\"未命名\",\"RealTotalCost\":\"0.07\",\"RealCost\":\"0.08\",\"CashPayAmount\":\"0.06570339\",\"RegionId\":\"1001\",\"RegionName\":\"亚太地区（亚太一区）\",\"RegionType\":\"international\",\"RegionTypeName\":\"国际\",\"PayMode\":\"postPay\",\"PayModeName\":\"按量计费\",\"ProjectId\":\"0\",\"ProjectName\":\"默认项目\",\"FeeBeginTime\":\"2024-11-01 08:00:00\",\"FeeEndTime\":\"2024-11-17 19:59:59\",\"DayDiff\":\"17\",\"DailyTotalCost\":\"0.00386491\",\"ConsumptionTypeName\":\"按量计费小时结\",\"OrderId\":\"-\",\"VoucherPayAmount\":\"0.00000000\",\"IncentivePayAmount\":\"0.00000000\",\"TransferPayAmount\":\"0.00000000\",\"ExtendPayAmount1\":\"0.00000000\",\"ExtendPayAmount3\":\"0.00000000\",\"Extend1\":\"\",\"Extend2\":\"\",\"Extend3\":\"\",\"Extend4\":\"\",\"Extend5\":\"\",\"InstanceType\":\"-\",\"InstanceTypeName\":\"-\",\"PayTime\":\"-\",\"ZoneName\":\"其他\",\"ComponentConfig\":\"海外CDN-按小时结算-流量: 0.00000533 GB, 海外CDN-按小时结算-流量: 0.00143027 GB\",\"Tags\":\"\"}]",
           "member": "ConsumptionResourceSummaryDataItem",
           "name": "Data",
           "output_required": true,
@@ -13930,7 +13925,7 @@
         {
           "disabled": false,
           "document": "实例类型编码\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "XX",
+          "example": "si",
           "member": "string",
           "name": "InstanceType",
           "output_required": true,
@@ -13940,7 +13935,7 @@
         {
           "disabled": false,
           "document": "实例类型：购买的产品服务对应的实例类型，包括资源包、RI、SP、竞价实例。常规实例默认展示“-”\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "XX",
+          "example": "节省计划",
           "member": "string",
           "name": "InstanceTypeName",
           "output_required": true,
@@ -13950,7 +13945,7 @@
         {
           "disabled": false,
           "document": "资源ID：不同产品因资源形态不同，资源内容不完全相同，如云服务器 CVM 为对应的实例 ID； 若该产品被分拆，则展示产品分拆后的分拆项 ID，如 COS 桶 ID，CDN 域名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "XX",
+          "example": "ins-m232g34d",
           "member": "string",
           "name": "ResourceId",
           "output_required": true,
@@ -13960,7 +13955,7 @@
         {
           "disabled": false,
           "document": "实例名称：用户在控制台为资源设置的名称，如未设置默认为空；若该产品被分拆，则展示分拆产品分拆后的分拆项资源别名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "XX",
+          "example": "chongqing1vd-eq22",
           "member": "string",
           "name": "ResourceName",
           "output_required": true,
@@ -13970,7 +13965,7 @@
         {
           "disabled": false,
           "document": "分账单元唯一标识\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "XX",
+          "example": "1010224120-65bb6cdfssasdece",
           "member": "string",
           "name": "TreeNodeUniqKey",
           "output_required": true,
@@ -13980,7 +13975,7 @@
         {
           "disabled": false,
           "document": "分账单元名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "XX",
+          "example": "DiyCamTemp",
           "member": "string",
           "name": "TreeNodeUniqKeyName",
           "output_required": true,
@@ -13990,7 +13985,7 @@
         {
           "disabled": false,
           "document": "资源命中公摊规则ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "XX",
+          "example": "191027",
           "member": "uint64",
           "name": "RuleId",
           "output_required": true,
@@ -14000,7 +13995,7 @@
         {
           "disabled": false,
           "document": "资源命中公摊规则名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "XX",
+          "example": "公共服务公摊",
           "member": "string",
           "name": "RuleName",
           "output_required": true,
@@ -14010,7 +14005,7 @@
         {
           "disabled": false,
           "document": "产品编码\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "XX",
+          "example": "p_cls",
           "member": "string",
           "name": "BusinessCode",
           "output_required": true,
@@ -14020,7 +14015,7 @@
         {
           "disabled": false,
           "document": "产品名称：用户所采购的各类云产品\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "XX",
+          "example": "日志服务CLS",
           "member": "string",
           "name": "BusinessCodeName",
           "output_required": true,
@@ -14030,7 +14025,7 @@
         {
           "disabled": false,
           "document": "组件名称编码\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "XX",
+          "example": "sv_cls_request",
           "member": "string",
           "name": "ItemCode",
           "output_required": true,
@@ -14040,7 +14035,7 @@
         {
           "disabled": false,
           "document": "组件名称：用户购买的产品或服务，所包含的具体组件\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "XX",
+          "example": "日志服务CLS-请求次数",
           "member": "string",
           "name": "ItemCodeName",
           "output_required": true,
@@ -14050,7 +14045,7 @@
         {
           "disabled": false,
           "document": "地域ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "XX",
+          "example": "4",
           "member": "uint64",
           "name": "RegionId",
           "output_required": true,
@@ -14060,7 +14055,7 @@
         {
           "disabled": false,
           "document": "地域名称：资源所属地域\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "XX",
+          "example": "华东地区（上海）",
           "member": "string",
           "name": "RegionName",
           "output_required": true,
@@ -14070,7 +14065,7 @@
         {
           "disabled": false,
           "document": "分账标签：资源绑定的标签\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "XX",
+          "example": "[{\"tagKey\":\"dms-common\",\"tagValue\":\"prod\"}]",
           "member": "BillTag",
           "name": "Tag",
           "output_required": true,
@@ -14080,7 +14075,7 @@
         {
           "disabled": false,
           "document": "优惠后总价：优惠后总价 =（原价 - 预留实例抵扣原价 - 节省计划抵扣原价）* 折扣率\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "XX",
+          "example": "0.31454454",
           "member": "string",
           "name": "RealTotalCost",
           "output_required": true,
@@ -14090,7 +14085,7 @@
         {
           "disabled": false,
           "document": "现金账户支出(元)：通过现金账户支付的金额\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "XX",
+          "example": "0.31454454",
           "member": "string",
           "name": "CashPayAmount",
           "output_required": true,
@@ -14100,7 +14095,7 @@
         {
           "disabled": false,
           "document": "代金券支出(元)：使用各类优惠券（如代金券、现金券等）支付的金额\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "XX",
+          "example": "0.00000000",
           "member": "string",
           "name": "VoucherPayAmount",
           "output_required": true,
@@ -14110,7 +14105,7 @@
         {
           "disabled": false,
           "document": "赠送账户支出(元)：使用赠送金支付的金额\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "XX",
+          "example": "0.00000000",
           "member": "string",
           "name": "IncentivePayAmount",
           "output_required": true,
@@ -14120,7 +14115,7 @@
         {
           "disabled": false,
           "document": "分成账户支出(元)：通过分成金账户支付的金额\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "XX",
+          "example": "0.00000000",
           "member": "string",
           "name": "TransferPayAmount",
           "output_required": true,
@@ -14130,7 +14125,7 @@
         {
           "disabled": false,
           "document": "费用归集类型：费用来源类型，分摊、归集、未分配\n0 - 分摊\n1 - 归集\n-1 - 未分配\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "XX",
+          "example": "1",
           "member": "int64",
           "name": "AllocationType",
           "output_required": true,
@@ -14140,7 +14135,7 @@
         {
           "disabled": false,
           "document": "当前归属单元信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "XX",
+          "example": "{\"TreeNodeUniqKey\":\"1000366-66456debe\",\"TreeNodeUniqKeyName\":\"公共基础服务\"}",
           "member": "AllocationTreeNode",
           "name": "BelongTreeNodeUniqKey",
           "output_required": true,
@@ -14150,7 +14145,7 @@
         {
           "disabled": false,
           "document": "当前资源命中公摊规则信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "XX",
+          "example": "{\"RuleId\":862324,\"RuleName\":\"公摊规则\"}",
           "member": "AllocationRule",
           "name": "BelongRule",
           "output_required": true,
@@ -14160,7 +14155,7 @@
         {
           "disabled": false,
           "document": "其它归属单元信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "XX",
+          "example": "[{\"TreeNodeUniqKey\":\"909619400-67290cae5\",\"TreeNodeUniqKeyName\":\"z-自动创建\"},{\"TreeNodeUniqKey\":\"909619400-447c2c41d\",\"TreeNodeUniqKeyName\":\"f-二组\"}]",
           "member": "AllocationTreeNode",
           "name": "OtherTreeNodeUniqKeys",
           "output_required": true,
@@ -14170,7 +14165,7 @@
         {
           "disabled": false,
           "document": "其他命中规则信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "XX",
+          "example": "[{\"RuleId\":48462324,\"RuleName\":\"公摊规则\"}]",
           "member": "AllocationRule",
           "name": "OtherRules",
           "output_required": true,
@@ -14200,7 +14195,7 @@
         {
           "disabled": false,
           "document": "子产品编码\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xx",
+          "example": "sp_emr_sa5",
           "member": "string",
           "name": "ProductCode",
           "output_required": true,
@@ -14210,7 +14205,7 @@
         {
           "disabled": false,
           "document": "子产品名称：用户采购的具体产品细分类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xx",
+          "example": "弹性MapReduce_标准型SA5",
           "member": "string",
           "name": "ProductCodeName",
           "output_required": true,
@@ -14220,7 +14215,7 @@
         {
           "disabled": false,
           "document": "计费模式编码\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xx",
+          "example": "postPay",
           "member": "string",
           "name": "PayMode",
           "output_required": true,
@@ -14230,7 +14225,7 @@
         {
           "disabled": false,
           "document": "计费模式：资源的计费模式，区分为包年包月和按量计费\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xx",
+          "example": "按量计费",
           "member": "string",
           "name": "PayModeName",
           "output_required": true,

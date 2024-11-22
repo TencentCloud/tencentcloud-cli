@@ -60422,7 +60422,7 @@
         },
         {
           "disabled": false,
-          "document": "漏洞标签 多个逗号分割",
+          "document": "漏洞标签 多个逗号分割\n\n存在EXP:EXP\n在野攻击:KNOWN_EXPLOITED\n本地利用:LOCAL\n必修漏洞:NEED_FIX\n远程利用:NETWORK\n存在POC:POC\n系统重启:RESTART",
           "example": "标签1,标签2",
           "member": "string",
           "name": "Labels",

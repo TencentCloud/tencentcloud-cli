@@ -2307,46 +2307,50 @@
       "members": [
         {
           "disabled": false,
-          "document": "人脸框左上角横坐标。 \n人脸框包含人脸五官位置并在此基础上进行一定的扩展，若人脸框超出图片范围，会导致坐标负值。 \n若需截取完整人脸，可以在完整分completess满足需求的情况下，将负值坐标取0。",
-          "example": "",
+          "document": "人脸框左上角横坐标。 \n- 人脸框包含人脸五官位置并在此基础上进行一定的扩展，若人脸框超出图片范围，会导致坐标负值。 \n- 若需截取完整人脸，可以在完整分completess满足需求的情况下，将负值坐标取0。",
+          "example": "40",
           "member": "int64",
           "name": "X",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "人脸框左上角纵坐标。 \n人脸框包含人脸五官位置并在此基础上进行一定的扩展，若人脸框超出图片范围，会导致坐标负值。 \n若需截取完整人脸，可以在完整分completess满足需求的情况下，将负值坐标取0。",
-          "example": "",
+          "document": "人脸框左上角纵坐标。 \n- 人脸框包含人脸五官位置并在此基础上进行一定的扩展，若人脸框超出图片范围，会导致坐标负值。 \n- 若需截取完整人脸，可以在完整分completess满足需求的情况下，将负值坐标取0。",
+          "example": "60",
           "member": "int64",
           "name": "Y",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "人脸宽度",
-          "example": "",
+          "document": "人脸宽度。",
+          "example": "200",
           "member": "uint64",
           "name": "Width",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "人脸高度",
-          "example": "",
+          "document": "人脸高度。",
+          "example": "150",
           "member": "uint64",
           "name": "Height",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "FaceShape": {
       "document": "五官定位（人脸关键点）具体信息。\n![image](https://iai-face-demo-default-1254418846.cos.ap-guangzhou.myqcloud.com/130pts.jpg)",

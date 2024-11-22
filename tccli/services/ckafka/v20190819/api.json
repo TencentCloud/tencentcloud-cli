@@ -13430,8 +13430,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例名称",
-          "example": "ckafka-xxx",
+          "document": "ckafka集群实例Id",
+          "example": "ckafka-test",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -13440,19 +13440,19 @@
         {
           "disabled": false,
           "document": "预计磁盘，根据磁盘步长，规格向上调整。",
-          "example": "100",
+          "example": "800",
           "member": "int64",
           "name": "DiskSize",
-          "required": true,
+          "required": false,
           "type": "int"
         },
         {
           "disabled": false,
           "document": "预计带宽，根据带宽步长，规格向上调整。",
-          "example": "100",
+          "example": "20",
           "member": "int64",
           "name": "BandWidth",
-          "required": true,
+          "required": false,
           "type": "int"
         },
         {
@@ -13473,7 +13473,7 @@
         {
           "disabled": false,
           "document": "变更预付费实例配置返回结构",
-          "example": "无",
+          "example": "{\"ReturnCode\":\"0\",\"ReturnMessage\":\"ok[apply success]\",\"Data\":{\"FlowId\":0,\"DealNames\":[\"20230608002033882210000\"],\"InstanceId\":\"ckafka-test\",\"DealNameInstanceIdMapping\":[{\"DealName\":\"20230608002033882210000\",\"InstanceIdList\":[\"ckafka-test\"]}]},\"DeleteRouteTimestamp\":\"1566144000\"}",
           "member": "CreateInstancePreResp",
           "name": "Result",
           "output_required": true,

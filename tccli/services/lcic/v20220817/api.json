@@ -1579,7 +1579,7 @@
         },
         {
           "disabled": false,
-          "document": "分辨率。可以有如下取值：\n1 标清\n2 高清\n3 全高清",
+          "document": "头像区域，摄像头视频画面的分辨率。可以有如下取值：\n1 标清\n2 高清\n3 全高清",
           "example": "1",
           "member": "uint64",
           "name": "Resolution",
@@ -3488,7 +3488,7 @@
         },
         {
           "disabled": false,
-          "document": "分辨率。可以有如下取值：\n1 标清\n2 高清\n3 全高清",
+          "document": "头像区域，摄像头视频画面的分辨率。可以有如下取值：\n1 标清\n2 高清\n3 全高清",
           "example": "1",
           "member": "uint64",
           "name": "Resolution",
@@ -6194,7 +6194,7 @@
         },
         {
           "disabled": false,
-          "document": "分辨率。可以有如下取值： 1 标清 2 高清 3 全高清",
+          "document": "头像区域，摄像头视频画面的分辨率。可以有如下取值：\n1 标清\n2 高清\n3 全高清",
           "example": "1",
           "member": "uint64",
           "name": "Resolution",

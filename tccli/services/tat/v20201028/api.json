@@ -653,7 +653,7 @@
         },
         {
           "disabled": false,
-          "document": "启用自定义参数功能时，自定义参数的默认取值。字段类型为json encoded string。如：{\\\"varA\\\": \\\"222\\\"}。\nkey为自定义参数名称，value为该参数的默认取值。kv均为字符串型。\n如果InvokeCommand时未提供参数取值，将使用这里的默认值进行替换。\n自定义参数最多20个。\n自定义参数名称需符合以下规范：字符数目上限64，可选范围【a-zA-Z0-9-_】。",
+          "document": "启用自定义参数功能时，自定义参数的默认取值。字段类型为json encoded string。如：{\"varA\": \"222\"}。\nkey为自定义参数名称，value为该参数的默认取值。kv均为字符串型。\n如果InvokeCommand时未提供参数取值，将使用这里的默认值进行替换。\n自定义参数最多20个。\n自定义参数名称需符合以下规范：字符数目上限64，可选范围【a-zA-Z0-9-_】。",
           "example": "{\"varA\": \"222\"}",
           "member": "string",
           "name": "DefaultParameters",
@@ -2354,7 +2354,7 @@
         },
         {
           "disabled": false,
-          "document": "Command 的自定义参数。字段类型为json encoded string。如：{\\\"varA\\\": \\\"222\\\"}。\nkey为自定义参数名称，value为该参数的默认取值。kv均为字符串型。\n如果未提供该参数取值，将使用 Command 的 DefaultParameters 进行替换。\n自定义参数最多20个。\n自定义参数名称需符合以下规范：字符数目上限64，可选范围【a-zA-Z0-9-_】。",
+          "document": "Command 的自定义参数。字段类型为json encoded string。如：{\"varA\": \"222\"}。\nkey为自定义参数名称，value为该参数的默认取值。kv均为字符串型。\n如果未提供该参数取值，将使用 Command 的 DefaultParameters 进行替换。\n自定义参数最多20个。\n自定义参数名称需符合以下规范：字符数目上限64，可选范围【a-zA-Z0-9-_】。",
           "example": "{\"varA\": \"222\"}",
           "member": "string",
           "name": "Parameters",
@@ -2671,7 +2671,7 @@
         },
         {
           "disabled": false,
-          "document": "启用自定义参数功能时，自定义参数的默认取值。字段类型为json encoded string。如：{\\\"varA\\\": \\\"222\\\"}。\n采取整体全覆盖式修改，即修改时必须提供所有新默认值。\n必须 Command 的 EnableParameter 为 true 时，才允许修改这个值。\nkey为自定义参数名称，value为该参数的默认取值。kv均为字符串型。\n自定义参数最多20个。\n自定义参数名称需符合以下规范：字符数目上限64，可选范围【a-zA-Z0-9-_】。",
+          "document": "启用自定义参数功能时，自定义参数的默认取值。字段类型为json encoded string。如：{\"varA\": \"222\"}。\n采取整体全覆盖式修改，即修改时必须提供所有新默认值。\n必须 Command 的 EnableParameter 为 true 时，才允许修改这个值。\nkey为自定义参数名称，value为该参数的默认取值。kv均为字符串型。\n自定义参数最多20个。\n自定义参数名称需符合以下规范：字符数目上限64，可选范围【a-zA-Z0-9-_】。",
           "example": "{\"varA\": \"222\"}",
           "member": "string",
           "name": "DefaultParameters",
@@ -3254,7 +3254,7 @@
         },
         {
           "disabled": false,
-          "document": "启用自定义参数功能时，自定义参数的默认取值。字段类型为json encoded string。如：{\\\"varA\\\": \\\"222\\\"}。\nkey为自定义参数名称，value为该参数的默认取值。kv均为字符串型。\n如果 Parameters 未提供，将使用这里的默认值进行替换。\n自定义参数最多20个。\n自定义参数名称需符合以下规范：字符数目上限64，可选范围【a-zA-Z0-9-_】。",
+          "document": "启用自定义参数功能时，自定义参数的默认取值。字段类型为json encoded string。如：{\"varA\": \"222\"}。\nkey为自定义参数名称，value为该参数的默认取值。kv均为字符串型。\n如果 Parameters 未提供，将使用这里的默认值进行替换。\n自定义参数最多20个。\n自定义参数名称需符合以下规范：字符数目上限64，可选范围【a-zA-Z0-9-_】。",
           "example": "{\"varA\": \"222\"}",
           "member": "string",
           "name": "DefaultParameters",
@@ -3272,7 +3272,7 @@
         },
         {
           "disabled": false,
-          "document": "Command 的自定义参数。字段类型为json encoded string。如：{\\\"varA\\\": \\\"222\\\"}。\nkey为自定义参数名称，value为该参数的默认取值。kv均为字符串型。\n如果未提供该参数取值，将使用 DefaultParameters 进行替换。\n自定义参数最多20个。\n自定义参数名称需符合以下规范：字符数目上限64，可选范围【a-zA-Z0-9-_】。",
+          "document": "Command 的自定义参数。字段类型为json encoded string。如：{\"varA\": \"222\"}。\nkey为自定义参数名称，value为该参数的默认取值。kv均为字符串型。\n如果未提供该参数取值，将使用 DefaultParameters 进行替换。\n自定义参数最多20个。\n自定义参数名称需符合以下规范：字符数目上限64，可选范围【a-zA-Z0-9-_】。",
           "example": "{\"varA\": \"222\"}",
           "member": "string",
           "name": "Parameters",

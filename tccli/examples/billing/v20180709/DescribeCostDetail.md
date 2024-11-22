@@ -19,41 +19,41 @@ Output:
     "Response": {
         "DetailSet": [
             {
-                "PayerUin": "abc",
-                "BusinessCodeName": "abc",
-                "ProductCodeName": "abc",
-                "PayModeName": "abc",
-                "ProjectName": "abc",
-                "RegionName": "abc",
-                "ZoneName": "abc",
-                "ResourceId": "abc",
-                "ResourceName": "abc",
-                "ActionTypeName": "abc",
-                "OrderId": "abc",
-                "BillId": "abc",
-                "FeeBeginTime": "abc",
-                "FeeEndTime": "abc",
+                "PayerUin": "10002011014",
+                "BusinessCodeName": "COS 对象存储",
+                "ProductCodeName": "COS 流量",
+                "PayModeName": "按量计费",
+                "ProjectName": "默认项目",
+                "RegionName": "华南地区（广州）",
+                "ZoneName": "其他",
+                "ResourceId": "cpn-dev-238-ap-beijing-1000000086",
+                "ResourceName": "cpn-dev-238-ap-beijing",
+                "ActionTypeName": "按量计费日结",
+                "OrderId": "20211009400006732337101",
+                "BillId": "2021100940000673233",
+                "FeeBeginTime": "2021-11-03 00:00:00",
+                "FeeEndTime": "2021-11-03 23:59:59",
                 "ComponentSet": [
                     {
-                        "ComponentCodeName": "abc",
-                        "ItemCodeName": "abc",
-                        "SinglePrice": "abc",
-                        "PriceUnit": "abc",
-                        "UsedAmount": "abc",
-                        "UsedAmountUnit": "abc",
-                        "Cost": "abc",
-                        "Discount": "abc",
-                        "RealCost": "abc",
-                        "VoucherPayAmount": "abc",
-                        "CashPayAmount": "abc",
-                        "IncentivePayAmount": "abc"
+                        "ComponentCodeName": "外网下行流量",
+                        "ItemCodeName": "COS 外网下行流量",
+                        "SinglePrice": "0.50000000",
+                        "PriceUnit": "元/GB/天",
+                        "UsedAmount": "0.0020975",
+                        "UsedAmountUnit": "GB",
+                        "Cost": "0.00104875",
+                        "Discount": "1",
+                        "RealCost": "0.00104875",
+                        "VoucherPayAmount": "0",
+                        "CashPayAmount": "0.00104875",
+                        "IncentivePayAmount": "0"
                     }
                 ],
-                "ProductCode": "abc"
+                "ProductCode": "sp_cos_bw"
             }
         ],
         "Total": 1,
-        "RequestId": "abc"
+        "RequestId": "51db5fda-deac-4d51-8464-d23c32791abd"
     }
 }
 ```

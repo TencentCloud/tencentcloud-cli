@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli vpc ModifyVpnGatewaySslClientCert --cli-unfold-argument  \
-    --SslVpnClientIds abc
+    --SslVpnClientIds vpnc-xxxxxxxx
 ```
 
 Output: 

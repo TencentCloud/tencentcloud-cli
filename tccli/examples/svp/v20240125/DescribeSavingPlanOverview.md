@@ -26,7 +26,8 @@ Output:
                 "SavingAmount": "600",
                 "SpType": "svp_common",
                 "StartTime": "2023-03-30 14:00:00",
-                "Status": 1
+                "Status": 1,
+                "PayType": 1
             }
         ],
         "RequestId": "aa36e003-786e-47aa-aefe-e717d749f964",

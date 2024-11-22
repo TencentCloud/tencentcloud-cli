@@ -19,13 +19,13 @@ Output:
                 "OriginalPrice": 1717.86,
                 "DiscountPrice": 1717.86,
                 "UnitPrice": 0,
-                "ChargeUnit": ""
+                "ChargeUnit": "none"
             },
             "BandwidthPrice": {
                 "OriginalPrice": 0,
                 "DiscountPrice": 0,
                 "UnitPrice": 0,
-                "ChargeUnit": ""
+                "ChargeUnit": "none"
             }
         },
         "RequestId": "e13643de-b578-42b0-8ad3-86b732067292"

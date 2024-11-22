@@ -760,10 +760,10 @@
     ],
     "RemoveReplicationInstance": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RemoveReplicationInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"crs-sa5dsfs\",\n    \"SyncType\": true,\n    \"GroupId\": \"crs-rpl-sa5dsfs\"\n}",
+        "document": "移除复制组的实例，数据同步类型为强同步。",
+        "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RemoveReplicationInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"crs-sa5****\",\n    \"SyncType\": true,\n    \"GroupId\": \"crs-rpl-sa5****\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"c4ed5948-d156-4931-b9c3-10133a0bb6c9\",\n        \"TaskId\": 10856\n    }\n}",
-        "title": "请求示例"
+        "title": "移除复制组中的实例"
       }
     ],
     "RenewInstance": [
