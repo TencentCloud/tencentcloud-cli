@@ -15,7 +15,7 @@ Output:
     "Response": {
         "NetDetectStateSet": [
             {
-                "NetDetectId": "netd-12345678",
+                "NetDetectId": "netd-6v2ht8q5",
                 "NetDetectIpStateSet": [
                     {
                         "DetectDestinationIp": "10.0.0.2",

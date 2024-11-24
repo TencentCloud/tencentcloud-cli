@@ -219,8 +219,8 @@
     "DeleteCloudNativeAPIGatewayRouteRateLimit": [
       {
         "document": "删除云原生网关限流插件(路由)",
-        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCloudNativeAPIGatewayRouteRateLimit\n<公共请求参数>\n\n{\n    \"GatewayId\": \"abc\",\n    \"Id\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCloudNativeAPIGatewayRouteRateLimit\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-dde03767\",\n    \"Id\": \"2a212560-220a-46f6-b139-3238eb8ea041\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ffadafb6-545d-461c-ad8c-baa26c0f8955\"\n    }\n}",
         "title": "删除云原生网关限流插件(路由)"
       }
     ],
@@ -235,8 +235,8 @@
     "DeleteCloudNativeAPIGatewayServiceRateLimit": [
       {
         "document": "删除云原生网关限流插件(服务)",
-        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCloudNativeAPIGatewayServiceRateLimit\n<公共请求参数>\n\n{\n    \"GatewayId\": \"abc\",\n    \"Name\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCloudNativeAPIGatewayServiceRateLimit\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-dde03767\",\n    \"Name\": \"user-service\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ffadafb6-545d-461c-ad8c-baa26c0f8955\"\n    }\n}",
         "title": "删除云原生网关限流插件(服务)"
       }
     ],

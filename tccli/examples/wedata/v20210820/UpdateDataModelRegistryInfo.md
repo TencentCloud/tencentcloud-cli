@@ -7,10 +7,15 @@ Input:
 ```
 tccli wedata UpdateDataModelRegistryInfo --cli-unfold-argument  \
     --CloudappId cloudapp-x3hadra3 \
-    --AppCamRole 4000000001321 \
+    --AppCamRole Cloudapp_x3HADRA3_Role \
     --AppCamRoleId 4000000001321 \
     --Ip 10.2.3.4 \
-    --Port 18091
+    --Port 18091 \
+    --VpcId vpc-96zopisr \
+    --VpcRegion ap-beijing \
+    --Pip 10.2.3.4 \
+    --Pport 18091 \
+    --IsPublic 1
 ```
 
 Output: 

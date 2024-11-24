@@ -232,7 +232,7 @@
         {
           "disabled": false,
           "document": "节省计划使用结束的查询结束时间",
-          "example": "无",
+          "example": "2024-05-11 14:23:57",
           "member": "string",
           "name": "EndEndDate",
           "required": false,
@@ -241,7 +241,7 @@
         {
           "disabled": false,
           "document": "节省计划使用结束的查询开始时间",
-          "example": "无",
+          "example": "2024-05-11 14:23:57",
           "member": "string",
           "name": "EndStartDate",
           "required": false,

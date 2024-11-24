@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli vpc CloneSecurityGroup --cli-unfold-argument  \
-    --SecurityGroupId sg-12345678
+    --SecurityGroupId sg-78ysaex1
 ```
 
 Output: 
@@ -15,11 +15,19 @@ Output:
     "Response": {
         "RequestId": "354f4ac3-8546-4516-8c8a-69e3ab73aa8a",
         "SecurityGroup": {
-            "SecurityGroupId": "sg-12341234",
-            "SecurityGroupName": "TestGroup",
-            "SecurityGroupDesc": "test-group-desc",
+            "SecurityGroupId": "sg-4esrjvgl",
+            "SecurityGroupName": "demo",
+            "SecurityGroupDesc": "demo",
             "ProjectId": "0",
-            "CreatedTime": "2018-01-13 19:26:33"
+            "CreatedTime": "2018-01-13 19:26:33",
+            "TagSet": [
+                {
+                    "Key": "city",
+                    "Value": "shanghai"
+                }
+            ],
+            "UpdateTime": "2018-02-13 19:26:33",
+            "IsDefault": false
         }
     }
 }
@@ -33,7 +41,7 @@ Input:
 
 ```
 tccli vpc CloneSecurityGroup --cli-unfold-argument  \
-    --SecurityGroupId sg-12345678 \
+    --SecurityGroupId sg-78ysaex1 \
     --ProjectId 1001
 ```
 
@@ -43,11 +51,19 @@ Output:
     "Response": {
         "RequestId": "354f4ac3-8546-4516-8c8a-69e3ab73aa8a",
         "SecurityGroup": {
-            "SecurityGroupId": "sg-12341278",
-            "SecurityGroupName": "TestGroup",
-            "SecurityGroupDesc": "test-group-desc",
+            "SecurityGroupId": "sg-2edhcclz",
+            "SecurityGroupName": "demo",
+            "SecurityGroupDesc": "demo",
             "ProjectId": "1001",
-            "CreatedTime": "2018-01-13 19:26:33"
+            "CreatedTime": "2018-01-13 19:26:33",
+            "TagSet": [
+                {
+                    "Key": "city",
+                    "Value": "shanghai"
+                }
+            ],
+            "UpdateTime": "2018-02-13 19:26:33",
+            "IsDefault": false
         }
     }
 }
@@ -61,9 +77,9 @@ Input:
 
 ```
 tccli vpc CloneSecurityGroup --cli-unfold-argument  \
-    --SecurityGroupId sg-12345678 \
-    --GroupName test \
-    --GroupDescription test
+    --SecurityGroupId sg-78ysaex1 \
+    --GroupName demo \
+    --GroupDescription demo
 ```
 
 Output: 
@@ -72,11 +88,19 @@ Output:
     "Response": {
         "RequestId": "354f4ac3-8546-4516-8c8a-69e3ab73aa8a",
         "SecurityGroup": {
-            "SecurityGroupId": "sg-12341256",
-            "SecurityGroupName": "test",
-            "SecurityGroupDesc": "test",
+            "SecurityGroupId": "sg-f42uhpkj",
+            "SecurityGroupName": "demo",
+            "SecurityGroupDesc": "demo",
             "ProjectId": "0",
-            "CreatedTime": "2018-01-13 19:26:33"
+            "CreatedTime": "2018-01-13 19:26:33",
+            "TagSet": [
+                {
+                    "Key": "city",
+                    "Value": "shanghai"
+                }
+            ],
+            "UpdateTime": "2018-02-13 19:26:33",
+            "IsDefault": false
         }
     }
 }

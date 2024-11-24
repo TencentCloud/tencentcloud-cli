@@ -13,11 +13,11 @@ Output:
     "Response": {
         "DhcpIpSet": [
             {
-                "DhcpIpId": "dhcpip-12345678",
-                "DhcpIpName": "test",
+                "DhcpIpId": "dhcpip-pxir56ns",
+                "DhcpIpName": "demo",
                 "PrivateIpAddress": "10.0.0.13",
-                "VpcId": "vpc-12345678",
-                "SubnetId": "subnet-12345678",
+                "VpcId": "vpc-n0yejvje",
+                "SubnetId": "subnet-hj3he929",
                 "NetworkInterfaceId": "",
                 "InstanceId": "",
                 "AddressIp": "",
@@ -40,7 +40,7 @@ Input:
 ```
 tccli vpc DescribeDhcpIps --cli-unfold-argument  \
     --Filters.0.Name dhcpip-id \
-    --Filters.0.Values dhcpip-12345678
+    --Filters.0.Values dhcpip-pxir56ns
 ```
 
 Output: 
@@ -49,11 +49,11 @@ Output:
     "Response": {
         "DhcpIpSet": [
             {
-                "DhcpIpId": "dhcpip-12345678",
-                "DhcpIpName": "test",
+                "DhcpIpId": "dhcpip-pxir56ns",
+                "DhcpIpName": "demo",
                 "PrivateIpAddress": "10.0.0.13",
-                "VpcId": "vpc-12345678",
-                "SubnetId": "subnet-12345678",
+                "VpcId": "vpc-n0yejvje",
+                "SubnetId": "subnet-hj3he929",
                 "NetworkInterfaceId": "",
                 "InstanceId": "",
                 "AddressIp": "",
@@ -75,7 +75,7 @@ Input:
 
 ```
 tccli vpc DescribeDhcpIps --cli-unfold-argument  \
-    --DhcpIpIds dhcpip-12345678
+    --DhcpIpIds dhcpip-pxir56ns
 ```
 
 Output: 
@@ -84,11 +84,11 @@ Output:
     "Response": {
         "DhcpIpSet": [
             {
-                "DhcpIpId": "dhcpip-12345678",
-                "DhcpIpName": "test",
+                "DhcpIpId": "dhcpip-pxir56ns",
+                "DhcpIpName": "demo",
                 "PrivateIpAddress": "10.0.0.13",
-                "VpcId": "vpc-12345678",
-                "SubnetId": "subnet-12345678",
+                "VpcId": "vpc-n0yejvje",
+                "SubnetId": "subnet-hj3he929",
                 "NetworkInterfaceId": "",
                 "InstanceId": "",
                 "AddressIp": "",

@@ -18,8 +18,8 @@ Output:
             {
                 "NetPlaneId": "np-efe0238e",
                 "CdcId": "cluster-d8htgb6k",
-                "Name": "ldcx_111",
-                "Description": "ldcx_222",
+                "Name": "demo",
+                "Description": "demo",
                 "ConnType": "VRRP",
                 "RouteType": "BGP",
                 "VlanId": 3100,
@@ -27,7 +27,7 @@ Output:
                 "UpdateTime": "2024-01-11T13:59:28.022514",
                 "BgpInfo": {
                     "BgpAsn": 100,
-                    "BgpKey": "123456"
+                    "BgpKey": "bgpkey"
                 },
                 "ModeDetect": {
                     "DetectMode": "BFD",

@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli vpc ReplaceSecurityGroupPolicy --cli-unfold-argument  \
-    --SecurityGroupId abc \
-    --SecurityGroupPolicySet.Version abc \
+    --SecurityGroupId demo \
+    --SecurityGroupPolicySet.Version 1 \
     --SecurityGroupPolicySet.Egress.0.PolicyIndex 0 \
     --SecurityGroupPolicySet.Egress.0.Protocol UDP \
     --SecurityGroupPolicySet.Egress.0.Port 20 \
@@ -19,7 +19,7 @@ tccli vpc ReplaceSecurityGroupPolicy --cli-unfold-argument  \
     --SecurityGroupPolicySet.Egress.0.AddressTemplate.AddressId ipm-2uw6ujo6 \
     --SecurityGroupPolicySet.Egress.0.AddressTemplate.AddressGroupId ipmg-2uw6ujo6 \
     --SecurityGroupPolicySet.Egress.0.Action accept \
-    --SecurityGroupPolicySet.Egress.0.PolicyDescription abc \
+    --SecurityGroupPolicySet.Egress.0.PolicyDescription demo \
     --SecurityGroupPolicySet.Egress.0.ModifyTime 2022-06-21 10:46:42 \
     --SecurityGroupPolicySet.Ingress.0.PolicyIndex 0 \
     --SecurityGroupPolicySet.Ingress.0.Protocol UDP \
@@ -32,9 +32,9 @@ tccli vpc ReplaceSecurityGroupPolicy --cli-unfold-argument  \
     --SecurityGroupPolicySet.Ingress.0.AddressTemplate.AddressId ipm-2uw6ujo6 \
     --SecurityGroupPolicySet.Ingress.0.AddressTemplate.AddressGroupId ipmg-2uw6ujo6 \
     --SecurityGroupPolicySet.Ingress.0.Action accept \
-    --SecurityGroupPolicySet.Ingress.0.PolicyDescription abc \
+    --SecurityGroupPolicySet.Ingress.0.PolicyDescription demo \
     --SecurityGroupPolicySet.Ingress.0.ModifyTime 2022-06-21 10:46:42 \
-    --OriginalSecurityGroupPolicySet.Version abc \
+    --OriginalSecurityGroupPolicySet.Version 1 \
     --OriginalSecurityGroupPolicySet.Egress.0.PolicyIndex 0 \
     --OriginalSecurityGroupPolicySet.Egress.0.Protocol UDP \
     --OriginalSecurityGroupPolicySet.Egress.0.Port 20 \
@@ -46,7 +46,7 @@ tccli vpc ReplaceSecurityGroupPolicy --cli-unfold-argument  \
     --OriginalSecurityGroupPolicySet.Egress.0.AddressTemplate.AddressId ipm-2uw6ujo6 \
     --OriginalSecurityGroupPolicySet.Egress.0.AddressTemplate.AddressGroupId ipmg-2uw6ujo6 \
     --OriginalSecurityGroupPolicySet.Egress.0.Action accept \
-    --OriginalSecurityGroupPolicySet.Egress.0.PolicyDescription abc \
+    --OriginalSecurityGroupPolicySet.Egress.0.PolicyDescription demo \
     --OriginalSecurityGroupPolicySet.Egress.0.ModifyTime 2022-06-21 10:46:42
 ```
 

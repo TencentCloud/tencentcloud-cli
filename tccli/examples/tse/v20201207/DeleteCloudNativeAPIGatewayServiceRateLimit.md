@@ -6,15 +6,15 @@ Input:
 
 ```
 tccli tse DeleteCloudNativeAPIGatewayServiceRateLimit --cli-unfold-argument  \
-    --GatewayId abc \
-    --Name abc
+    --GatewayId gateway-dde03767 \
+    --Name user-service
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "ffadafb6-545d-461c-ad8c-baa26c0f8955"
     }
 }
 ```

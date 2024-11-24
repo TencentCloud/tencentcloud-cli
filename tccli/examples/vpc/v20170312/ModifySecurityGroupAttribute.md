@@ -7,8 +7,8 @@ Input:
 ```
 tccli vpc ModifySecurityGroupAttribute --cli-unfold-argument  \
     --SecurityGroupId sg-33ocnj9n \
-    --GroupName TestGroupNewName \
-    --GroupDescription test-group-desc
+    --GroupName demo \
+    --GroupDescription demo
 ```
 
 Output: 

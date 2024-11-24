@@ -1,3 +1,206 @@
+# Release 3.0.1104.1
+
+## 腾讯云数据仓库TCHouse-C(cdwch) 版本：2020-09-15
+
+### 第 15 次发布
+
+发布时间：2024-11-25 01:18:17
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ScaleCNOutUpInstance](http://document.tencentcloudapi.woa.com/document/product/1667/85372)
+
+
+
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+
+### 第 108 次发布
+
+发布时间：2024-11-25 01:27:40
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ClusterInstanceDetail](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ClusterInstanceDetail)
+
+	* 新增成员：DbMode
+
+
+
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 113 次发布
+
+发布时间：2024-11-25 01:37:07
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateBatchInitOrganizationUrl](http://document.tencentcloudapi.woa.com/document/product/1668/84585)
+
+	* 新增入参：AuthorizedOrganizationId
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 166 次发布
+
+发布时间：2024-11-25 01:38:10
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateBatchInitOrganizationUrl](http://document.tencentcloudapi.woa.com/document/product/1595/84586)
+
+	* 新增入参：IsAuthorizePlatformApplication, AuthorizedProxyOrganizationOpenId
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 云直播CSS(live) 版本：2018-08-01
+
+### 第 68 次发布
+
+发布时间：2024-11-25 01:48:31
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CopyCaster](http://document.tencentcloudapi.woa.com/document/product/267/85379)
+* [CreateCaster](http://document.tencentcloudapi.woa.com/document/product/267/85378)
+* [DeleteCaster](http://document.tencentcloudapi.woa.com/document/product/267/85377)
+* [DescribeCaster](http://document.tencentcloudapi.woa.com/document/product/267/85376)
+* [DescribeCasterDisplayInfo](http://document.tencentcloudapi.woa.com/document/product/267/85375)
+* [DescribeCasterPlayUrl](http://document.tencentcloudapi.woa.com/document/product/267/85374)
+* [ModifyCaster](http://document.tencentcloudapi.woa.com/document/product/267/85373)
+
+修改接口：
+
+* [DescribeLivePullStreamTasks](http://document.tencentcloudapi.woa.com/document/product/267/56243)
+
+	* 新增入参：SpecifyTaskId
+
+
+新增数据结构：
+
+* [CasterDisplayInfo](http://document.tencentcloudapi.woa.com/document/product/267/20474#CasterDisplayInfo)
+* [CasterInfo](http://document.tencentcloudapi.woa.com/document/product/267/20474#CasterInfo)
+
+
+
+## 媒体处理(mps) 版本：2019-06-12
+
+### 第 69 次发布
+
+发布时间：2024-11-25 01:52:17
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ProcessImage](http://document.tencentcloudapi.woa.com/document/product/862/85380)
+
+新增数据结构：
+
+* [ImageEncodeConfig](http://document.tencentcloudapi.woa.com/document/product/862/37615#ImageEncodeConfig)
+* [ImageEnhanceConfig](http://document.tencentcloudapi.woa.com/document/product/862/37615#ImageEnhanceConfig)
+* [ImageTaskInput](http://document.tencentcloudapi.woa.com/document/product/862/37615#ImageTaskInput)
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 175 次发布
+
+发布时间：2024-11-25 02:14:56
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateReserveIpAddresses](http://document.tencentcloudapi.woa.com/document/product/215/85384)
+* [CreateTrafficMirror](http://document.tencentcloudapi.woa.com/document/product/215/85392)
+* [DeleteReserveIpAddresses](http://document.tencentcloudapi.woa.com/document/product/215/85383)
+* [DescribeReserveIpAddresses](http://document.tencentcloudapi.woa.com/document/product/215/85382)
+* [DescribeTrafficMirrors](http://document.tencentcloudapi.woa.com/document/product/215/85391)
+* [ModifyReserveIpAddress](http://document.tencentcloudapi.woa.com/document/product/215/85381)
+* [ResetTrafficMirrorFilter](http://document.tencentcloudapi.woa.com/document/product/215/85390)
+* [ResetTrafficMirrorSrcs](http://document.tencentcloudapi.woa.com/document/product/215/85389)
+* [ResetTrafficMirrorTarget](http://document.tencentcloudapi.woa.com/document/product/215/85388)
+* [StopTrafficMirror](http://document.tencentcloudapi.woa.com/document/product/215/85387)
+* [UpdateTrafficMirrorAllFilter](http://document.tencentcloudapi.woa.com/document/product/215/85386)
+
+修改接口：
+
+* [CloneSecurityGroup](http://document.tencentcloudapi.woa.com/document/product/215/51025)
+
+	* 新增入参：Tags
+
+* [CreateSecurityGroupPolicies](http://document.tencentcloudapi.woa.com/document/product/215/15807)
+
+	* 新增入参：BpaasApplicationId
+
+* [ReplaceSecurityGroupPolicy](http://document.tencentcloudapi.woa.com/document/product/215/15811)
+
+	* 新增入参：BpaasApplicationId
+
+
+新增数据结构：
+
+* [ReserveIpAddressInfo](http://document.tencentcloudapi.woa.com/document/product/215/15824#ReserveIpAddressInfo)
+* [TrafficMirror](http://document.tencentcloudapi.woa.com/document/product/215/15824#TrafficMirror)
+* [TrafficMirrorFilter](http://document.tencentcloudapi.woa.com/document/product/215/15824#TrafficMirrorFilter)
+* [TrafficMirrorTarget](http://document.tencentcloudapi.woa.com/document/product/215/15824#TrafficMirrorTarget)
+* [TrafficMirrorTargetResourceInfo](http://document.tencentcloudapi.woa.com/document/product/215/15824#TrafficMirrorTargetResourceInfo)
+
+
+
+## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
+
+### 第 74 次发布
+
+发布时间：2024-11-25 02:22:20
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [UpdateDataModelRegistryInfo](http://document.tencentcloudapi.woa.com/document/product/1607/85212)
+
+	* 新增入参：VpcId, VpcRegion, Pip, Pport, IsPublic
+
+
+
+
 # Release 3.0.1103.1
 
 ## 借贷反欺诈(af) 版本：2020-02-26

@@ -13,8 +13,8 @@ Output:
     "Response": {
         "AssistantCidrSet": [
             {
-                "VpcId": "vpc-12345678",
-                "CidrBlock": "172.16.0.0/16",
+                "VpcId": "vpc-6v2ht8q5",
+                "CidrBlock": "10.10.0.0/24",
                 "AssistantType": 0,
                 "SubnetSet": []
             }
