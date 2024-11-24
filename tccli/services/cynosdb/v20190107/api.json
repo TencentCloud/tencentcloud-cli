@@ -3424,6 +3424,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据库类型",
+          "example": "无",
+          "member": "string",
+          "name": "DbMode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -5786,8 +5796,8 @@
         },
         {
           "disabled": false,
-          "document": "数据库类型，normal，serverless\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "normal",
+          "document": "Db类型：<li>NORMAL</li><li>SERVERLESS</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NORMAL",
           "member": "string",
           "name": "DbMode",
           "output_required": true,

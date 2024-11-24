@@ -707,6 +707,13 @@
       "output": "ParseNotificationResponse",
       "status": "online"
     },
+    "ProcessImage": {
+      "document": "发起图片处理，功能包括：\n1. 格式转换；\n2. 图像增强；",
+      "input": "ProcessImageRequest",
+      "name": "发起图片处理",
+      "output": "ProcessImageResponse",
+      "status": "online"
+    },
     "ProcessLiveStream": {
       "document": "对直播流媒体发起处理任务，功能包括：\n\n* 智能内容审核（画面鉴黄、敏感信息检测、声音鉴黄）；\n* 智能内容识别（人脸、文本全文、文本关键词、语音全文、语音关键词、语音实时翻译、物体识别、游戏打点）。\n* 智能内容分析（新闻实时拆条）。\n* 质检（直播流格式诊断、音画内容检测（抖动、模糊、低光照、过曝光、黑边、白边、黑屏、白屏、花屏、噪点、马赛克、二维码等）、无参考打分）。\n* 录制\n\n直播流处理事件通知支持HTTP回调，也支持实时写入用户指定的消息队列 CMQ 中，用户从消息队列 CMQ 中获取事件通知结果，同时处理过程中存在输出文件的，会写入用户指定的输出文件的目标存储中。",
       "input": "ProcessLiveStreamRequest",
@@ -16239,6 +16246,51 @@
       ],
       "usage": "out"
     },
+    "ImageEncodeConfig": {
+      "document": "图片编码格式参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "图片格式，取值范围：JPG、BMP、GIF、PNG、WebP，缺省为原图格式。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "JPEG",
+          "member": "string",
+          "name": "Format",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "图片的相对质量，取值范围：1 - 100，数值以原图质量为标准，缺省为原图质量。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "50",
+          "member": "int64",
+          "name": "Quality",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ImageEnhanceConfig": {
+      "document": "图片增强参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "超分配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SuperResolutionConfig",
+          "name": "SuperResolution",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "ImageQualityEnhanceConfig": {
       "document": "综合增强配置",
       "members": [
@@ -16481,6 +16533,34 @@
         }
       ],
       "usage": "out"
+    },
+    "ImageTaskInput": {
+      "document": "图片任务输入参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "图片编码配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ImageEncodeConfig",
+          "name": "EncodeConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "图片增强配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ImageEnhanceConfig",
+          "name": "EnhanceConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "ImageWatermarkInput": {
       "document": "图片水印模板输入参数",
@@ -23282,6 +23362,70 @@
         }
       ],
       "usage": "in"
+    },
+    "ProcessImageRequest": {
+      "document": "ProcessImage请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "图片处理的文件输入信息。",
+          "example": "无",
+          "member": "MediaInputInfo",
+          "name": "InputInfo",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "图片处理输出文件的目标存储。不填则继承 InputInfo 中的存储位置。",
+          "example": "无",
+          "member": "TaskOutputStorage",
+          "name": "OutputStorage",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "图片处理生成的文件输出的路径。如果不填表示与 InputInfo 中文件所在的目录一致。如果是目录，如`/image/201907/`，表示继承原文件名输出到该目录。",
+          "example": "无",
+          "member": "string",
+          "name": "OutputDir",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "图片处理参数。",
+          "example": "无",
+          "member": "ImageTaskInput",
+          "name": "ImageTask",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ProcessImageResponse": {
+      "document": "ProcessImage返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务 ID。",
+          "example": "125xxx65-procedurev2-bffb15f07530b57bc1aabb01fac74bca",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ProcessLiveStreamRequest": {
       "document": "ProcessLiveStream请求参数结构体",

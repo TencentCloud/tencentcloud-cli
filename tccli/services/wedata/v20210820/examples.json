@@ -2033,7 +2033,7 @@
     "UpdateDataModelRegistryInfo": [
       {
         "document": "更新数语信息，入参传入ip和端口",
-        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateDataModelRegistryInfo\n<公共请求参数>\n\n{\n    \"CloudappId\": \"cloudapp-x3hadra3\",\n    \"AppCamRole\": \"4000000001321\",\n    \"AppCamRoleId\": \"4000000001321\",\n    \"Ip\": \"10.2.3.4\",\n    \"Port\": 18091\n}",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateDataModelRegistryInfo\n<公共请求参数>\n\n{\n    \"CloudappId\": \"cloudapp-x3hadra3\",\n    \"AppCamRole\": \"Cloudapp_x3HADRA3_Role\",\n    \"AppCamRoleId\": \"4000000001321\",\n    \"Ip\": \"10.2.3.4\",\n    \"Port\": 18091,\n    \"VpcId\": \"vpc-96zopisr\",\n    \"VpcRegion\": \"ap-beijing\",\n    \"Pip\": \"10.2.3.4\",\n    \"Pport\": 18091,\n    \"IsPublic\": 1\n}",
         "output": "{\n    \"RequestId\": \"176da6c4-d9a5-450a-a11b-b64acd4faa60\",\n    \"Response\": {\n        \"Data\": true,\n        \"RequestId\": \"176da6c4-d9a5-450a-a11b-b64acd4faa60\"\n    }\n}",
         "title": "更新数语信息，入参传入ip和端口"
       }

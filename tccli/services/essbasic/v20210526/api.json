@@ -6074,7 +6074,7 @@
         },
         {
           "disabled": false,
-          "document": "初始化操作类型\n<ul><li>CREATE_SEAL : 创建印章</li>\n<li>OPEN_AUTO_SIGN :开通企业自动签署</li></ul>",
+          "document": "初始化操作类型\n<ul>\n<li>CREATE_SEAL : 创建印章</li>\n<li>OPEN_AUTO_SIGN :开通企业自动签署</li>\n<li>PARTNER_AUTO_SIGN_AUTH :合作方企业或应用平台方授权自动签</li>\n</ul>",
           "example": "无",
           "member": "string",
           "name": "OperateTypes",
@@ -6089,6 +6089,24 @@
           "name": "ProxyOrganizationOpenIds",
           "required": true,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "当操作类型包含 PARTNER_AUTO_SIGN_AUTH 且是给应用平台方授权自动签时传true。\n![image](https://qcloudimg.tencent-cloud.cn/raw/f9aba7c999a6d79ada20b4384520e120.png)",
+          "example": "无",
+          "member": "bool",
+          "name": "IsAuthorizePlatformApplication",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "被授权的合作方企业在第三方平台子客企业标识，即ProxyOrganizationOpenId，当操作类型包含 PARTNER_AUTO_SIGN_AUTH 且要进行合作方企业授权自动签时必传。\n\n\n",
+          "example": "无",
+          "member": "string",
+          "name": "AuthorizedProxyOrganizationOpenId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

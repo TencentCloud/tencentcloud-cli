@@ -44546,7 +44546,7 @@
         },
         {
           "disabled": false,
-          "document": "数语的ip",
+          "document": "数语的公网访问ip",
           "example": "140.xx.xx.xx",
           "member": "string",
           "name": "Ip",
@@ -44555,7 +44555,7 @@
         },
         {
           "disabled": false,
-          "document": "数语的端口",
+          "document": "数语的公网访问端口",
           "example": "18091",
           "member": "uint64",
           "name": "Port",
@@ -44597,6 +44597,51 @@
           "name": "OwnId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "VpcId",
+          "example": "vpc-96zopisr",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Vpc地域",
+          "example": "ap-beijing",
+          "member": "string",
+          "name": "VpcRegion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数语的内网访问ip",
+          "example": "10.xx.xx.xx",
+          "member": "string",
+          "name": "Pip",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数语的内网访问端口",
+          "example": "18091",
+          "member": "uint64",
+          "name": "Pport",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否开放公网访问数语, 1:是，0:否，默认1开放",
+          "example": "1",
+          "member": "uint64",
+          "name": "IsPublic",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

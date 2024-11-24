@@ -2324,7 +2324,7 @@
         },
         {
           "disabled": false,
-          "document": "初始化操作类型\n<ul><li>CREATE_SEAL : 创建印章</li>\n<li>AUTH_JOIN_ORGANIZATION_GROUP : 加入集团企业</li>\n<li>OPEN_AUTO_SIGN :开通企业自动签署</li></ul>",
+          "document": "初始化操作类型\n<ul>\n<li>CREATE_SEAL : 创建印章</li>\n<li>AUTH_JOIN_ORGANIZATION_GROUP : 加入集团企业</li>\n<li>OPEN_AUTO_SIGN :开通企业自动签署</li>\n<li>PARTNER_AUTO_SIGN_AUTH :合作方企业授权自动签</li>\n</ul>",
           "example": "无",
           "member": "string",
           "name": "OperateTypes",
@@ -2348,6 +2348,15 @@
           "name": "Agent",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "被授权的合作方企业在电子签的企业电子签账号，当操作类型包含 PARTNER_AUTO_SIGN_AUTH （合作方企业授权自动签）时必传。\n\n企业电子签账号可在[电子签的网页端](https://qian.tencent.com/console/company-settings/company-center) ，于企业设置-企业信息菜单栏下复制获取。\n\n![企业电子签账号](https://qcloudimg.tencent-cloud.cn/raw/4e6b30ee92f00671f7f1c5bd127c27db.png)",
+          "example": "无",
+          "member": "string",
+          "name": "AuthorizedOrganizationId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

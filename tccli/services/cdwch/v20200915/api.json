@@ -175,6 +175,13 @@
       "output": "ResizeDiskResponse",
       "status": "online"
     },
+    "ScaleCNOutUpInstance": {
+      "document": "open-api接口提供弹性伸缩云原生集群能力",
+      "input": "ScaleCNOutUpInstanceRequest",
+      "name": "通过接口弹性伸缩云原生集群(openapi)",
+      "output": "ScaleCNOutUpInstanceResponse",
+      "status": "online"
+    },
     "ScaleOutInstance": {
       "document": "调整clickhouse节点数量",
       "input": "ScaleOutInstanceRequest",
@@ -3662,6 +3669,99 @@
         }
       ],
       "usage": "out"
+    },
+    "ScaleCNOutUpInstanceRequest": {
+      "document": "ScaleCNOutUpInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例唯一ID",
+          "example": "clickhouse-cn-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "warehouse名称",
+          "example": "xxxx",
+          "member": "string",
+          "name": "VirtualCluster",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "子网id",
+          "example": "subnet-xxx",
+          "member": "string",
+          "name": "UserSubnetID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "新的warehouse的个数",
+          "example": "1",
+          "member": "int64",
+          "name": "NewCount",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "集群的规格2X-Small、X-Small、Small",
+          "example": "2X-Small",
+          "member": "string",
+          "name": "NewSpecName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ScaleCNOutUpInstanceResponse": {
+      "document": "ScaleCNOutUpInstance返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "流程ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "string",
+          "name": "FlowId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "clickhouse-cn-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "ErrorMsg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ScaleOutInstanceRequest": {
       "document": "ScaleOutInstance请求参数结构体",
