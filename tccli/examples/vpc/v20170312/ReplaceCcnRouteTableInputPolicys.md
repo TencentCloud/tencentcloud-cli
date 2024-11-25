@@ -12,7 +12,7 @@ tccli vpc ReplaceCcnRouteTableInputPolicys --cli-unfold-argument  \
     --Policys.0.RouteConditions.0.Values VPNGW \
     --Policys.0.RouteConditions.0.MatchPattern 1 \
     --Policys.0.Action accept \
-    --Policys.0.Description 
+    --Policys.0.Description input policys
 ```
 
 Output: 

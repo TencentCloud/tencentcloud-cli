@@ -6,19 +6,19 @@ Input:
 
 ```
 tccli tse ModifyNetworkBasicInfo --cli-unfold-argument  \
-    --GatewayId gatway-xxxxxx \
-    --GroupId group-xxxxxx \
+    --GatewayId gatway-dde03767 \
+    --GroupId group-4se0czf7 \
     --NetworkType Open \
     --Vip 172.10.10.1 \
     --InternetMaxBandwidthOut 1 \
-    --Description test
+    --Description 公网入口负载均衡
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "ffadafb6-545d-461c-ad8c-baa26c0f8955"
     }
 }
 ```

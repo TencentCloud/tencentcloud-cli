@@ -700,6 +700,14 @@
         "title": "发布重试"
       }
     ],
+    "RunReRank": [
+      {
+        "document": "重排",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RunReRank\n<公共请求参数>\n\n{\n    \"Query\": \"知识引擎大模型\",\n    \"Docs\": [\n        \"混元大模型\",\n        \"腾讯知识引擎\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"766383fd-5219-4d13-aa1a-7ae00766640c\",\n        \"ScoreList\": [\n            -9.006162,\n            2.8577538\n        ],\n        \"Usage\": {\n            \"TotalTokens\": 27\n        }\n    }\n}",
+        "title": "重排"
+      }
+    ],
     "SaveDoc": [
       {
         "document": "",

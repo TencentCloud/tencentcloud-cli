@@ -246,7 +246,7 @@
       "status": "online"
     },
     "ChannelDescribeFlowComponents": {
-      "document": "您可以通过合同流程ID查询相关的<font color=\"red\"><b>填写控件</b></font>信息及其内容。这包括控件的归属方、控件的填写状态（是否已填写）以及具体的填写内容。\n\n无论是<font color=\"red\"><b>发起方还是签署方</b></font>填写的控件，均包含在查询结果中。\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/08f6ea50d3ae88b51c280c2b17c2a126.png)\n### 2.  那些控件会出现在结果里边？ \n**A.不返回的控件类型：**\n- 动态表格\n- 附件控件\n- 水印控件\n\n**B.返回的控件类型：**\n- 单行文本\n- 多行文本\n- 勾选框控件\n- 数字控件\n- 日期控件\n- 图片控件（图片下载地址）\n- 邮箱控件\n- 地址控件\n- 学历控件\n- 性别控件\n- 省市区控件\n\n### 3.怎么授权？   \n\n此接口需要授权,  有两种开通权限的途径\n\n**第一种**:   需第三方应用的子企业登录控制台进行授权,  授权在**企业中心**的**授权管理**区域,  界面如下图\n授权过程需要**子企业超管**扫描跳转到电子签小程序签署<<渠道端下载渠道子客合同功能授权委托书>>\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/8b483dfebdeafac85051279406944048.png)\n\n**第二种**: 第三方应用的配置接口打开全第三个应用下的所有自己起开通, 需要**渠道方企业的超管**扫描二维码跳转到电子签小程序签署 <<渠道端下载渠道子客合同功能开通知情同意书>>\n![image](https://qcloudimg.tencent-cloud.cn/raw/238979ef51dd381ccbdbc755a593debc/channel_DescribeResourceUrlsByFlows_appilications2.png)",
+      "document": "您可以通过合同流程ID查询相关的<font color=\"red\"><b>填写控件</b></font>信息及其内容。这包括控件的归属方、控件的填写状态（是否已填写）以及具体的填写内容。\n\n无论是<font color=\"red\"><b>发起方还是签署方</b></font>填写的控件，均包含在查询结果中。\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/08f6ea50d3ae88b51c280c2b17c2a126.png)\n### 2.  哪些控件会出现在结果里边？ \n**A.不返回的控件类型：**\n- 动态表格\n- 附件控件\n- 水印控件\n\n**B.返回的控件类型：**\n- 单行文本\n- 多行文本\n- 勾选框控件\n- 数字控件\n- 日期控件\n- 图片控件（图片下载地址）\n- 邮箱控件\n- 地址控件\n- 学历控件\n- 性别控件\n- 省市区控件\n\n### 3.怎么授权？   \n\n此接口需要授权,  有两种开通权限的途径\n\n**第一种**:   需第三方应用的子企业登录控制台进行授权,  授权在**企业中心**的**授权管理**区域,  界面如下图\n授权过程需要**子企业超管**扫描跳转到电子签小程序签署<<渠道端下载渠道子客合同功能授权委托书>>\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/8b483dfebdeafac85051279406944048.png)\n\n**第二种**: 第三方应用的配置接口打开全第三个应用下的所有自己起开通, 需要**渠道方企业的超管**扫描二维码跳转到电子签小程序签署 <<渠道端下载渠道子客合同功能开通知情同意书>>\n![image](https://qcloudimg.tencent-cloud.cn/raw/238979ef51dd381ccbdbc755a593debc/channel_DescribeResourceUrlsByFlows_appilications2.png)",
       "input": "ChannelDescribeFlowComponentsRequest",
       "name": "获取合同填写控件内容",
       "output": "ChannelDescribeFlowComponentsResponse",
@@ -8540,7 +8540,7 @@
         },
         {
           "disabled": false,
-          "document": "是否获取模板的PDF文件链接。\n\n<ul><li>**false**：不获取（默认）</li>\n<li>**true**：获取</li></ul>\n\n设置为true之后， 返回参数PdfUrl，为模板PDF文件链接，有效期5分钟, 可以用于将PDF文件下载到本地\n\n注: `此功能为白名单功能，使用前请联系对接的客户经理沟通。`",
+          "document": "是否获取模板的PDF文件链接。\n\n<ul><li>**false**：不获取（默认）</li>\n<li>**true**：获取</li></ul>\n\n设置为true之后， 返回参数PdfUrl，为模板PDF文件链接，有效期5分钟, 可以用于将PDF文件下载到本地\n\n注: `此功能需要开通功能白名单【第三方应用集成企业获取模版PDF下载链接】，使用前请联系对接的客户经理沟通。`",
           "example": "无",
           "member": "bool",
           "name": "WithPdfUrl",

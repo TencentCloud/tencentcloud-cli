@@ -10,7 +10,7 @@ tccli tse ModifyCloudNativeAPIGatewayService --cli-unfold-argument  \
     --Name test-service \
     --ID 916462a4-8ce4-4605-a7b7-66cd51c38201 \
     --Protocol http \
-    --Path / \
+    --Path /v1/users \
     --Timeout 5000 \
     --Retries 3 \
     --UpstreamType HostIP \

@@ -6,55 +6,56 @@ Input:
 
 ```
 tccli tse DescribeCloudNativeAPIGatewayRoutes --cli-unfold-argument  \
-    --GatewayId abc \
-    --Limit 0 \
+    --GatewayId gateway-dde03767 \
+    --Limit 20 \
     --Offset 0 \
-    --ServiceName abc \
-    --RouteName abc \
-    --Filters.0.Key abc \
-    --Filters.0.Value abc
+    --ServiceName svc1 \
+    --RouteName route1 \
+    --Filters.0.Key name \
+    --Filters.0.Value global
 ```
 
 Output: 
 ```
 {
     "Response": {
+        "RequestId": "d4dad8c0-7634-474a-ba7b-22e3e5b45911",
         "Result": {
             "RouteList": [
                 {
-                    "Name": "abc",
-                    "ID": "abc",
+                    "Name": "route1",
+                    "ID": "d751b7fa-afcb-479c-818b-d1957432b246",
                     "Methods": [
-                        "abc"
+                        "GET"
                     ],
                     "Paths": [
-                        "abc"
+                        "/v1/users"
                     ],
                     "Hosts": [
-                        "abc"
+                        "tencent.com"
                     ],
                     "Protocols": [
-                        "abc"
+                        "http",
+                        "https"
                     ],
-                    "PreserveHost": true,
-                    "HttpsRedirectStatusCode": 0,
+                    "PreserveHost": false,
+                    "ForceHttps": false,
+                    "HttpsRedirectStatusCode": 426,
                     "StripPath": true,
-                    "CreatedTime": "abc",
-                    "ForceHttps": true,
-                    "ServiceName": "abc",
-                    "ServiceID": "abc",
-                    "DestinationPorts": [
-                        1
-                    ],
-                    "Headers": {
-                        "Key": "abc",
-                        "Value": "abc"
-                    }
+                    "CreatedTime": "2024-11-25 10:49:23",
+                    "DestinationPorts": [],
+                    "ServiceName": "svc1",
+                    "ServiceID": "67695fc9-6d40-4450-83b5-ea57baaaad6d",
+                    "Headers": [
+                        {
+                            "Key": "app",
+                            "Value": "learn"
+                        }
+                    ]
                 }
             ],
-            "TotalCount": 0
-        },
-        "RequestId": "abc"
+            "TotalCount": 1
+        }
     }
 }
 ```

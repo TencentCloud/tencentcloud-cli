@@ -127,7 +127,7 @@
       "status": "online"
     },
     "CreateCdbProxy": {
-      "document": "主实例创建数据库代理",
+      "document": "本接口（CreateCdbProxy）用于主实例创建数据库代理。",
       "input": "CreateCdbProxyRequest",
       "name": "创建数据库代理",
       "output": "CreateCdbProxyResponse",
@@ -5158,8 +5158,8 @@
         },
         {
           "disabled": false,
-          "document": "节点规格配置\n备注：数据库代理支持的节点规格为：2C4000MB、4C8000MB、8C16000MB。\n示例中参数说明：\nNodeCount：节点个数。\nRegion：节点地域。\nZone：节点可用区。\nCpu：单个代理节点核数（单位：核）。\nMem：单个代理节点内存数（单位：MB）。",
-          "example": "{     \"NodeCount\": 2,     \"Region\": \"ap-guangzhou\",     \"Zone\": \"ap-guangzhou-1\",     \"Cpu\": 2,     \"Mem\": 4000     }",
+          "document": "节点规格配置。\n示例中参数说明：\nNodeCount：节点个数。\nRegion：节点地域。\nZone：节点可用区。\nCpu：单个代理节点核数（单位：核）。\nMem：单个代理节点内存数（单位：MB）。\n备注：\n1. 数据库代理支持的节点规格为：2C4000MB、4C8000MB、8C16000MB。\n2. 上述参数项（如节点个数、可用区等）均为必填，在调用接口时如未填写完整，可能会创建失败。",
+          "example": "{\"NodeCount\": 2,\"Region\": \"ap-guangzhou\",\"Zone\": \"ap-guangzhou-1\",\"Cpu\": 2,\"Mem\": 4000}",
           "member": "ProxyNodeCustom",
           "name": "ProxyNodeCustom",
           "required": true,
@@ -5177,7 +5177,7 @@
         {
           "disabled": false,
           "document": "描述",
-          "example": "test",
+          "example": "andy_proxy",
           "member": "string",
           "name": "Desc",
           "required": false,
@@ -5210,7 +5210,7 @@
         {
           "disabled": false,
           "document": "异步任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "adasc-asdas-123",
+          "example": "a6040589-3b098df5-b551d9e5-81c6bfdc",
           "member": "string",
           "name": "AsyncRequestId",
           "output_required": true,

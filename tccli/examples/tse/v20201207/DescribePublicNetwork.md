@@ -6,51 +6,49 @@ Input:
 
 ```
 tccli tse DescribePublicNetwork --cli-unfold-argument  \
-    --GatewayId gateway-xxxxxxxx \
-    --GroupId greoup-xxxxxxxx \
-    --NetworkId network-xxxxxxxx
+    --GatewayId gateway-dde03767 \
+    --GroupId group-4se0czf7 \
+    --NetworkId network-z31df1dz
 ```
 
 Output: 
 ```
 {
     "Response": {
+        "RequestId": "534d0349-0663-4dfa-882e-172fe893608e",
         "Result": {
-            "GatewayId": "abc",
-            "GroupId": "abc",
+            "GatewayId": "gateway-dde03767",
             "PublicNetwork": {
-                "ConsoleType": "abc",
-                "HttpUrl": "abc",
-                "HttpsUrl": "abc",
-                "NetType": "abc",
-                "AdminUser": "abc",
-                "AdminPassword": "abc",
-                "Status": "abc",
+                "ConsoleType": "Konga",
+                "NetType": "Open",
+                "Status": "Open",
                 "AccessControl": {
-                    "Mode": "abc",
+                    "Mode": "Whitelist",
                     "CidrWhiteList": [
-                        "abc"
+                        "0.0.0.0"
                     ],
-                    "CidrBlackList": [
-                        "abc"
-                    ]
+                    "CidrBlackList": []
                 },
-                "SubnetId": "abc",
-                "VpcId": "abc",
-                "Description": "abc",
-                "SlaType": "abc",
-                "SlaName": "abc",
-                "Vip": "abc",
-                "InternetMaxBandwidthOut": 1,
-                "MultiZoneFlag": true,
-                "MasterZoneId": "abc",
-                "SlaveZoneId": "abc",
-                "MasterZoneName": "abc",
-                "SlaveZoneName": "abc",
-                "NetworkId": "abc"
-            }
-        },
-        "RequestId": "abc"
+                "VpcId": "",
+                "SubnetId": "",
+                "HttpUrl": "",
+                "HttpsUrl": "https://gateway-dde03767-konga.gz.apigw.tencentcs.com:1337/",
+                "AdminUser": "admin",
+                "AdminPassword": "husdqwe1zd3sjwSIx4@",
+                "Vip": "",
+                "InternetMaxBandwidthOut": 0,
+                "Description": "",
+                "SlaType": "",
+                "SlaName": "",
+                "MultiZoneFlag": false,
+                "MasterZoneId": "",
+                "SlaveZoneId": "",
+                "MasterZoneName": "",
+                "SlaveZoneName": "",
+                "NetworkId": ""
+            },
+            "GroupId": "group-4se0czf7"
+        }
     }
 }
 ```

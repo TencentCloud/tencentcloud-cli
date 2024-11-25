@@ -302,9 +302,9 @@
       "status": "online"
     },
     "DescribeTopData": {
-      "document": "DescribeTopData 通过入参 Metric 和 Filter 组合不同，可以查询以下排序数据：\n\n+ 依据总流量、总请求数对访问 IP 排序，从大至小返回 TOP 100 IP\n+ 依据总流量、总请求数对访问 Refer 排序，从大至小返回 TOP 100 Refer\n+ 依据总流量、总请求数对访问 设备 排序，从大至小返回 设备类型\n+ 依据总流量、总请求数对访问 操作系统 排序，从大至小返回 操作系统\n+ 依据总流量、总请求数对访问 浏览器 排序，从大至小返回 浏览器\n\n注意：\n+ 仅支持 90 天内数据查询，且从2021年09月20日开始有数据\n+ 本接口为beta版，尚未正式全量发布\n",
+      "document": "DescribeTopData 通过入参 Metric 和 Filter 组合不同，可以查询以下排序数据：\n\n+ 依据总流量、总请求数对访问 IP 排序，从大至小返回 TOP 100 IP\n+ 依据总流量、总请求数对访问 Refer 排序，从大至小返回 TOP 100 Refer\n+ 依据总流量、总请求数对访问 设备 排序，从大至小返回 设备类型\n+ 依据总流量、总请求数对访问 操作系统 排序，从大至小返回 操作系统\n+ 依据总流量、总请求数对访问 浏览器 排序，从大至小返回 浏览器\n\n注意：\n+ 仅支持 90 天内数据查询，且从2021年09月20日开始有数据",
       "input": "DescribeTopDataRequest",
-      "name": "TOP 新版数据查询（beta版）",
+      "name": "TOP 新版数据查询",
       "output": "DescribeTopDataResponse",
       "status": "online"
     },
@@ -7712,7 +7712,7 @@
           "example": "[]",
           "member": "TopDataMore",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

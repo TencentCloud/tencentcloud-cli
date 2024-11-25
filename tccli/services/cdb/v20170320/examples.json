@@ -159,8 +159,8 @@
     "CreateCdbProxy": [
       {
         "document": "主实例创建数据库代理",
-        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCdbProxy\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-aykuksx3\",\n    \"UniqVpcId\": \"vpc-ixw3ll2d\",\n    \"UniqSubnetId\": \"subnet-0z3r56vq\",\n    \"Desc\": \"test\",\n    \"ProxyNodeCustom\": [\n        {\n            \"NodeCount\": 2,\n            \"Region\": \"ap-guangzhou\",\n            \"Zone\": \"ap-guangzhou-1\",\n            \"Cpu\": 1,\n            \"Mem\": 1\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"123-123\",\n        \"AsyncRequestId\": \"123-123-123\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCdbProxy\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-aykuksx3\",\n    \"UniqVpcId\": \"vpc-ixw3ll2d\",\n    \"UniqSubnetId\": \"subnet-0z3r56vq\",\n    \"Desc\": \"andy_proxy\",\n    \"ProxyNodeCustom\": [\n        {\n            \"NodeCount\": 2,\n            \"Region\": \"ap-guangzhou\",\n            \"Zone\": \"ap-guangzhou-1\",\n            \"Cpu\": 1,\n            \"Mem\": 1\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"AsyncRequestId\": \"7EF78BEC-0111-43AF-BB11-111112FB54A7\"\n    }\n}",
         "title": "创建数据库代理"
       }
     ],

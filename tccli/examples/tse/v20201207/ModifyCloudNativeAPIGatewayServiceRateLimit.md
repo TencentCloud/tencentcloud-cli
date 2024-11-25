@@ -6,35 +6,35 @@ Input:
 
 ```
 tccli tse ModifyCloudNativeAPIGatewayServiceRateLimit --cli-unfold-argument  \
-    --GatewayId abc \
-    --Name abc \
+    --GatewayId gateway-dde037x1 \
+    --Name 公网接入网关 \
     --LimitDetail.Enabled True \
     --LimitDetail.QpsThresholds.0.Unit second \
     --LimitDetail.QpsThresholds.0.Max 10 \
-    --LimitDetail.Path abc \
-    --LimitDetail.Header abc \
-    --LimitDetail.LimitBy abc \
-    --LimitDetail.ExternalRedis.RedisHost abc \
-    --LimitDetail.ExternalRedis.RedisPassword abc \
-    --LimitDetail.ExternalRedis.RedisPort 0 \
-    --LimitDetail.ExternalRedis.RedisTimeout 0 \
-    --LimitDetail.Policy abc \
-    --LimitDetail.RateLimitResponse.Body abc \
-    --LimitDetail.RateLimitResponse.Headers.0.Key abc \
-    --LimitDetail.RateLimitResponse.Headers.0.Value abc \
-    --LimitDetail.RateLimitResponse.HttpStatus 0 \
-    --LimitDetail.RateLimitResponseUrl abc \
-    --LimitDetail.ResponseType abc \
+    --LimitDetail.Path /v1/users \
+    --LimitDetail.Header X-Api-Version \
+    --LimitDetail.LimitBy header \
+    --LimitDetail.ExternalRedis.RedisHost 192.168.2.162 \
+    --LimitDetail.ExternalRedis.RedisPassword tse@tencent \
+    --LimitDetail.ExternalRedis.RedisPort 6379 \
+    --LimitDetail.ExternalRedis.RedisTimeout 10 \
+    --LimitDetail.Policy redis \
+    --LimitDetail.RateLimitResponse.Body too many requests \
+    --LimitDetail.RateLimitResponse.Headers.0.Key app \
+    --LimitDetail.RateLimitResponse.Headers.0.Value kong \
+    --LimitDetail.RateLimitResponse.HttpStatus 429 \
+    --LimitDetail.RateLimitResponseUrl http://192.168.2.165/downgrade \
+    --LimitDetail.ResponseType default \
     --LimitDetail.HideClientHeaders True \
-    --LimitDetail.LineUpTime 0 \
-    --LimitDetail.IsDelay True
+    --LimitDetail.IsDelay True \
+    --LimitDetail.LineUpTime 10
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "ffadafb6-545d-461c-ad8c-baa26c0f8955"
     }
 }
 ```

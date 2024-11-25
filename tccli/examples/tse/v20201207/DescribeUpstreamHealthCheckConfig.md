@@ -1,4 +1,4 @@
-**Example 1: demo**
+**Example 1: 获取云原生网关服务健康检查配置**
 
 
 
@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tse DescribeUpstreamHealthCheckConfig --cli-unfold-argument  \
-    --GatewayId abc \
-    --Name abc
+    --GatewayId gateway-dde03767 \
+    --Name 公网入口服务
 ```
 
 Output: 
@@ -19,11 +19,11 @@ Output:
             "ActiveHealthCheck": {
                 "HealthyInterval": 1,
                 "UnHealthyInterval": 1,
-                "HttpPath": "abc"
+                "HttpPath": "/health"
             },
             "EnablePassiveHealthCheck": true,
             "PassiveHealthCheck": {
-                "Type": "abc"
+                "Type": "/health"
             },
             "Successes": 1,
             "Failures": 1,
@@ -35,7 +35,7 @@ Output:
                 1
             ]
         },
-        "RequestId": "abc"
+        "RequestId": "ffadafb6-545d-461c-ad8c-baa26c0f8955"
     }
 }
 ```

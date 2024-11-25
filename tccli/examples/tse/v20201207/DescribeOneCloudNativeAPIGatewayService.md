@@ -14,24 +14,37 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "741e4e82-371d-48de-a843-867c69ff114d",
+        "RequestId": "a4f498d5-4d3a-469b-b47b-bbdf1c7b07a8",
         "Result": {
-            "Name": "test-service",
-            "ID": "77748647-7b59-4c94-853e-5a96b72cab1f",
+            "Name": "service1",
+            "ID": "67695fc9-6d40-4450-83b5-ea57bazzad6d",
             "Protocol": "http",
-            "Path": "/",
-            "Timeout": 5000,
-            "Retries": 3,
+            "Path": null,
+            "Timeout": 60000,
+            "Retries": 5,
             "Tags": [
-                "TSE-Upstream-Type:HostIP"
+                "TSE-Service-Type:IPList",
+                "TSE-Upstream-SlowStart:0",
+                "TSE-Upstream-Algorithm:round-robin"
             ],
             "UpstreamInfo": {
-                "Host": "8.8.8.8",
-                "Port": 60,
-                "Targets": null
+                "Host": "default-67695fc9-6d40-4450-83b5-ea57bazzad6d",
+                "Targets": [
+                    {
+                        "Host": "10.0.0.121",
+                        "Port": 18080,
+                        "Weight": 1000,
+                        "Health": "HEALTHCHECKS_OFF",
+                        "CreatedTime": "2024-11-25 10:51:28",
+                        "Source": ""
+                    }
+                ],
+                "Algorithm": "round-robin",
+                "HealthStatus": "HEALTHCHECKS_OFF"
             },
-            "UpstreamType": "HostIP",
-            "Editable": true
+            "UpstreamType": "IPList",
+            "Editable": true,
+            "CreatedTime": "2024-10-22 16:38:26"
         }
     }
 }

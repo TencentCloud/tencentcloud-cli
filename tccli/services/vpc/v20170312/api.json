@@ -2619,7 +2619,7 @@
       "status": "online"
     },
     "UnlockCcns": {
-      "document": "本接口（UnlockCcns）用于解锁云联网实例\n\n该接口一般用来解封禁出口限速的云联网实例, 目前联通内部运营系统通过云API调用, 因为出口限速无法按地域间解封禁, 只能按更粗的云联网实例粒度解封禁, 如果是地域间限速, 一般可以通过更细的限速实例粒度解封禁（UnlockCcnBandwidths）\n\n如有需要, 可以封禁任意限速实例, 可接入到内部运营系统\n\n",
+      "document": "本接口（UnlockCcns）用于解锁云联网实例\n\n该接口一般用来解封禁出口限速的云联网实例, 目前联通内部运营系统通过云API调用, 因为出口限速无法按地域间解封禁, 只能按更粗的云联网实例粒度解封禁, 如果是地域间限速, 一般可以通过更细的限速实例粒度解封禁（UnlockCcnBandwidths）\n\n如有需要, 可以封禁任意限速实例, 可接入到内部运营系统",
       "input": "UnlockCcnsRequest",
       "name": "安全解锁云联网实例",
       "output": "UnlockCcnsResponse",
@@ -5580,32 +5580,29 @@
         {
           "disabled": false,
           "document": "带宽所属的云联网ID。",
-          "example": "无",
+          "example": "ccn-2caehl6h",
           "member": "string",
           "name": "CcnId",
           "required": true,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "实例所属用户主账号ID。",
-          "example": "无",
+          "example": "201111300001",
           "member": "string",
           "name": "UserAccountID",
           "required": true,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "带宽实例的唯一ID。作为`UnlockCcnBandwidths`接口和`LockCcnBandwidths`接口的入参时，该字段必传。",
-          "example": "无",
+          "example": "fcr-ceah9fdm",
           "member": "string",
           "name": "RegionFlowControlId",
           "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -6231,25 +6228,25 @@
         },
         {
           "disabled": false,
-          "document": "as-path操作\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "as-path操作",
           "example": "无",
           "member": "string",
           "name": "OperateAsPath",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "as-path操作模式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "as-path操作模式",
           "example": "无",
           "member": "string",
           "name": "AsPathOperateMode",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -24681,13 +24678,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "辅助CIDR数组。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "辅助CIDR数组。",
           "example": "[{\"VpcId\": \"vpc-nswq8wkq\", \"CidrBlock\": \"172.16.1.0/24\", \"AssistantType\": 0, \"Region\": \"ap-guangzhou\", \"SubnetSet\": []}]",
           "member": "AssistantCidr",
           "name": "AssistantCidrSet",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

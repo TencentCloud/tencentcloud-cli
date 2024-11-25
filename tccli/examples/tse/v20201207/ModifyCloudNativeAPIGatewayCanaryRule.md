@@ -6,18 +6,18 @@ Input:
 
 ```
 tccli tse ModifyCloudNativeAPIGatewayCanaryRule --cli-unfold-argument  \
-    --GatewayId gateway-18f786a \
+    --GatewayId gateway-dde03767 \
     --ServiceId 6abf620f-c6b9-4440-b90c-56c165225cfc \
     --Priority 10 \
     --CanaryRule.Priority 20 \
     --CanaryRule.Enabled True \
     --CanaryRule.ConditionList.0.Type body \
-    --CanaryRule.ConditionList.0.Key b1 \
+    --CanaryRule.ConditionList.0.Key app \
     --CanaryRule.ConditionList.0.Operator == \
-    --CanaryRule.ConditionList.0.Value abc \
+    --CanaryRule.ConditionList.0.Value learn \
     --CanaryRule.BalancedServiceList.0.ServiceID 6abf620f-c6b9-4440-b90c-56c165225cfc \
     --CanaryRule.BalancedServiceList.0.ServiceName svc1 \
-    --CanaryRule.BalancedServiceList.0.UpstreamName  \
+    --CanaryRule.BalancedServiceList.0.UpstreamName upstream1 \
     --CanaryRule.BalancedServiceList.0.Percent 10
 ```
 

@@ -602,6 +602,13 @@
       "output": "RetryReleaseResponse",
       "status": "online"
     },
+    "RunReRank": {
+      "document": "重排序",
+      "input": "RunReRankRequest",
+      "name": "重排序",
+      "output": "RunReRankResponse",
+      "status": "online"
+    },
     "SaveDoc": {
       "document": "保存文档",
       "input": "SaveDocRequest",
@@ -10500,6 +10507,30 @@
       ],
       "type": "object"
     },
+    "ReRankDataObject": {
+      "document": "重排数据, 计算2段内容的关联性",
+      "members": [
+        {
+          "disabled": false,
+          "document": "第一段内容",
+          "example": "hello",
+          "member": "string",
+          "name": "PromptA",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "第二段内容",
+          "example": "world",
+          "member": "string",
+          "name": "PromptB",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
     "ReconstructDocumentConfig": {
       "document": "ReconstructDocument配置选项",
       "members": [
@@ -11393,6 +11424,89 @@
         }
       ],
       "usage": "both"
+    },
+    "RunReRankRequest": {
+      "document": "RunReRank请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "模型名称, 必填，默认: lke-reranker-base",
+          "example": "lke-reranker-base",
+          "member": "string",
+          "name": "Query",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "文档列表，必填，最多20个",
+          "example": "[\"腾讯知识引擎\",\"知识引擎大模型\"]",
+          "member": "string",
+          "name": "Docs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "模型名称, 非必填，默认: lke-reranker-base",
+          "example": "lke-reranker-base",
+          "member": "string",
+          "name": "Model",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": true,
+          "document": "需要计算关联性的2段内容",
+          "example": "[{\"PromptA\":\"hello\",\"PromptB\":\"world\"},{\"PromptA\":\"hello\",\"PromptB\":\"世界\"}]",
+          "member": "ReRankDataObject",
+          "name": "DataList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": true,
+          "document": "是否在线, 后台异步任务使用离线, 实时任务使用在线, 默认值: false",
+          "example": "false",
+          "member": "bool",
+          "name": "Online",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "RunReRankResponse": {
+      "document": "RunReRank返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "相关性, 数值越大越相关",
+          "example": "[-19.681953, -19.414124]",
+          "member": "float",
+          "name": "ScoreList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消耗量，仅返回TotalToken",
+          "example": "{\"TotalTokens\":3}",
+          "member": "Usage",
+          "name": "Usage",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "SaveDocRequest": {
       "document": "SaveDoc请求参数结构体",
