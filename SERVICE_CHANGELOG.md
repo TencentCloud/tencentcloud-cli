@@ -1,10 +1,33 @@
 # 本版本更新包含以下内容：
 
-## 腾讯云数据仓库TCHouse-C(cdwch) 版本：2020-09-15
+## 腾讯云数据仓库 TCHouse-D(cdwdoris) 版本：2021-12-28
 
-### 第 15 次发布
+### 第 44 次发布
 
-发布时间：2024-11-25 01:18:17
+发布时间：2024-11-26 01:18:30
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeBackUpTables](http://document.tencentcloudapi.woa.com/document/product/1706/84383)
+
+	* 新增出参：Msg, IsUnknownVersion, ErrorMsg
+
+* [DescribeDatabaseAuditRecords](http://document.tencentcloudapi.woa.com/document/product/1706/82865)
+
+	* 新增出参：Records
+
+
+
+
+## 混沌演练平台(cfg) 版本：2021-08-20
+
+### 第 17 次发布
+
+发布时间：2024-11-26 01:19:18
 
 本次发布包含了以下内容：
 
@@ -12,15 +35,41 @@
 
 新增接口：
 
-* [ScaleCNOutUpInstance](http://document.tencentcloudapi.woa.com/document/product/1667/85372)
+* [CreateTaskFromMultiAction](http://document.tencentcloudapi.woa.com/document/product/1694/85393)
+
+新增数据结构：
+
+* [TaskGroupForAction](http://document.tencentcloudapi.woa.com/document/product/1694/79907#TaskGroupForAction)
 
 
 
-## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+## 云防火墙(cfw) 版本：2019-09-04
 
-### 第 108 次发布
+### 第 64 次发布
 
-发布时间：2024-11-25 01:27:40
+发布时间：2024-11-26 01:20:01
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeSerialRegion](http://document.tencentcloudapi.woa.com/document/product/1132/85394)
+* [DescribeVpcFwGroupIns](http://document.tencentcloudapi.woa.com/document/product/1132/85395)
+
+新增数据结构：
+
+* [SerialRegionInfo](http://document.tencentcloudapi.woa.com/document/product/1132/49071#SerialRegionInfo)
+* [VpcFwGroupInsShow](http://document.tencentcloudapi.woa.com/document/product/1132/49071#VpcFwGroupInsShow)
+
+
+
+## 日志服务(cls) 版本：2020-10-16
+
+### 第 96 次发布
+
+发布时间：2024-11-26 01:23:01
 
 本次发布包含了以下内容：
 
@@ -28,116 +77,56 @@
 
 修改数据结构：
 
-* [ClusterInstanceDetail](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ClusterInstanceDetail)
+* [LogRechargeRuleInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#LogRechargeRuleInfo)
+
+	* 新增成员：AdvanceFilterRules
+
+
+
+
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+
+### 第 109 次发布
+
+发布时间：2024-11-26 01:28:29
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [CynosdbInstanceDetail](http://document.tencentcloudapi.woa.com/document/product/1003/48097#CynosdbInstanceDetail)
 
 	* 新增成员：DbMode
 
 
 
 
-## 腾讯电子签企业版(ess) 版本：2020-11-11
+## 微服务引擎(tse) 版本：2020-12-07
 
-### 第 113 次发布
+### 第 75 次发布
 
-发布时间：2024-11-25 01:37:07
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [CreateBatchInitOrganizationUrl](http://document.tencentcloudapi.woa.com/document/product/1668/84585)
-
-	* 新增入参：AuthorizedOrganizationId
-
-
-
-
-## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
-
-### 第 166 次发布
-
-发布时间：2024-11-25 01:38:10
+发布时间：2024-11-26 02:11:30
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改接口：
+修改数据结构：
 
-* [CreateBatchInitOrganizationUrl](http://document.tencentcloudapi.woa.com/document/product/1595/84586)
+* [KongCertificatesPreview](http://document.tencentcloudapi.woa.com/document/product/1364/54942#KongCertificatesPreview)
 
-	* 新增入参：IsAuthorizePlatformApplication, AuthorizedProxyOrganizationOpenId
+	* <font color="#dd0000">**修改成员**：</font>Name, BindDomains, Status, Crt, Key, ExpireTime, CreateTime, IssueTime, CertSource, CertId
 
-
-
-
-## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
-
-
-
-## 云直播CSS(live) 版本：2018-08-01
-
-### 第 68 次发布
-
-发布时间：2024-11-25 01:48:31
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [CopyCaster](http://document.tencentcloudapi.woa.com/document/product/267/85379)
-* [CreateCaster](http://document.tencentcloudapi.woa.com/document/product/267/85378)
-* [DeleteCaster](http://document.tencentcloudapi.woa.com/document/product/267/85377)
-* [DescribeCaster](http://document.tencentcloudapi.woa.com/document/product/267/85376)
-* [DescribeCasterDisplayInfo](http://document.tencentcloudapi.woa.com/document/product/267/85375)
-* [DescribeCasterPlayUrl](http://document.tencentcloudapi.woa.com/document/product/267/85374)
-* [ModifyCaster](http://document.tencentcloudapi.woa.com/document/product/267/85373)
-
-修改接口：
-
-* [DescribeLivePullStreamTasks](http://document.tencentcloudapi.woa.com/document/product/267/56243)
-
-	* 新增入参：SpecifyTaskId
-
-
-新增数据结构：
-
-* [CasterDisplayInfo](http://document.tencentcloudapi.woa.com/document/product/267/20474#CasterDisplayInfo)
-* [CasterInfo](http://document.tencentcloudapi.woa.com/document/product/267/20474#CasterInfo)
-
-
-
-## 媒体处理(mps) 版本：2019-06-12
-
-### 第 69 次发布
-
-发布时间：2024-11-25 01:52:17
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [ProcessImage](http://document.tencentcloudapi.woa.com/document/product/862/85380)
-
-新增数据结构：
-
-* [ImageEncodeConfig](http://document.tencentcloudapi.woa.com/document/product/862/37615#ImageEncodeConfig)
-* [ImageEnhanceConfig](http://document.tencentcloudapi.woa.com/document/product/862/37615#ImageEnhanceConfig)
-* [ImageTaskInput](http://document.tencentcloudapi.woa.com/document/product/862/37615#ImageTaskInput)
 
 
 
 ## 私有网络(vpc) 版本：2017-03-12
 
-### 第 175 次发布
+### 第 176 次发布
 
-发布时间：2024-11-25 02:14:56
+发布时间：2024-11-26 02:15:48
 
 本次发布包含了以下内容：
 
@@ -145,59 +134,8 @@
 
 新增接口：
 
-* [CreateReserveIpAddresses](http://document.tencentcloudapi.woa.com/document/product/215/85384)
-* [CreateTrafficMirror](http://document.tencentcloudapi.woa.com/document/product/215/85392)
-* [DeleteReserveIpAddresses](http://document.tencentcloudapi.woa.com/document/product/215/85383)
-* [DescribeReserveIpAddresses](http://document.tencentcloudapi.woa.com/document/product/215/85382)
-* [DescribeTrafficMirrors](http://document.tencentcloudapi.woa.com/document/product/215/85391)
-* [ModifyReserveIpAddress](http://document.tencentcloudapi.woa.com/document/product/215/85381)
-* [ResetTrafficMirrorFilter](http://document.tencentcloudapi.woa.com/document/product/215/85390)
-* [ResetTrafficMirrorSrcs](http://document.tencentcloudapi.woa.com/document/product/215/85389)
-* [ResetTrafficMirrorTarget](http://document.tencentcloudapi.woa.com/document/product/215/85388)
-* [StopTrafficMirror](http://document.tencentcloudapi.woa.com/document/product/215/85387)
-* [UpdateTrafficMirrorAllFilter](http://document.tencentcloudapi.woa.com/document/product/215/85386)
-
-修改接口：
-
-* [CloneSecurityGroup](http://document.tencentcloudapi.woa.com/document/product/215/51025)
-
-	* 新增入参：Tags
-
-* [CreateSecurityGroupPolicies](http://document.tencentcloudapi.woa.com/document/product/215/15807)
-
-	* 新增入参：BpaasApplicationId
-
-* [ReplaceSecurityGroupPolicy](http://document.tencentcloudapi.woa.com/document/product/215/15811)
-
-	* 新增入参：BpaasApplicationId
-
-
-新增数据结构：
-
-* [ReserveIpAddressInfo](http://document.tencentcloudapi.woa.com/document/product/215/15824#ReserveIpAddressInfo)
-* [TrafficMirror](http://document.tencentcloudapi.woa.com/document/product/215/15824#TrafficMirror)
-* [TrafficMirrorFilter](http://document.tencentcloudapi.woa.com/document/product/215/15824#TrafficMirrorFilter)
-* [TrafficMirrorTarget](http://document.tencentcloudapi.woa.com/document/product/215/15824#TrafficMirrorTarget)
-* [TrafficMirrorTargetResourceInfo](http://document.tencentcloudapi.woa.com/document/product/215/15824#TrafficMirrorTargetResourceInfo)
-
-
-
-## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
-
-### 第 74 次发布
-
-发布时间：2024-11-25 02:22:20
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [UpdateDataModelRegistryInfo](http://document.tencentcloudapi.woa.com/document/product/1607/85212)
-
-	* 新增入参：VpcId, VpcRegion, Pip, Pport, IsPublic
-
+* [DeleteTrafficMirror](http://document.tencentcloudapi.woa.com/document/product/215/85397)
+* [StartTrafficMirror](http://document.tencentcloudapi.woa.com/document/product/215/85396)
 
 
 
@@ -18864,7 +18802,7 @@
 
 新增接口：
 
-* [[ScaleCNOutUpInstance](http://document.tencentcloudapi.woa.com/document/product/1667/85372)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [ScaleCNOutUpInstance](http://document.tencentcloudapi.woa.com/document/product/1667/85372)
 
 ### 第 14 次发布
 
@@ -19175,6 +19113,25 @@
 
 
 ## 腾讯云数据仓库 TCHouse-D(cdwdoris) 版本：2021-12-28
+
+### 第 44 次发布
+
+发布时间：2024-11-26 01:18:30
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeBackUpTables](http://document.tencentcloudapi.woa.com/document/product/1706/84383)
+
+	* 新增出参：Msg, IsUnknownVersion, ErrorMsg
+
+* [DescribeDatabaseAuditRecords](http://document.tencentcloudapi.woa.com/document/product/1706/82865)
+
+	* 新增出参：Records
+
 
 ### 第 43 次发布
 
@@ -20296,6 +20253,22 @@
 
 ## 混沌演练平台(cfg) 版本：2021-08-20
 
+### 第 17 次发布
+
+发布时间：2024-11-26 01:19:18
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[CreateTaskFromMultiAction](http://document.tencentcloudapi.woa.com/document/product/1694/85393)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[TaskGroupForAction](http://document.tencentcloudapi.woa.com/document/product/1694/79907#TaskGroupForAction)](http://document.tencentcloudapi.woa.com/document/product/1694/79907#[TaskGroupForAction](http://document.tencentcloudapi.woa.com/document/product/1694/79907#TaskGroupForAction))
+
 ### 第 16 次发布
 
 发布时间：2024-11-08 01:21:16
@@ -21124,6 +21097,24 @@
 
 
 ## 云防火墙(cfw) 版本：2019-09-04
+
+### 第 64 次发布
+
+发布时间：2024-11-26 01:20:01
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeSerialRegion](http://document.tencentcloudapi.woa.com/document/product/1132/85394)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeVpcFwGroupIns](http://document.tencentcloudapi.woa.com/document/product/1132/85395)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[SerialRegionInfo](http://document.tencentcloudapi.woa.com/document/product/1132/49071#SerialRegionInfo)](http://document.tencentcloudapi.woa.com/document/product/1132/49071#[SerialRegionInfo](http://document.tencentcloudapi.woa.com/document/product/1132/49071#SerialRegionInfo))
+* [[VpcFwGroupInsShow](http://document.tencentcloudapi.woa.com/document/product/1132/49071#VpcFwGroupInsShow)](http://document.tencentcloudapi.woa.com/document/product/1132/49071#[VpcFwGroupInsShow](http://document.tencentcloudapi.woa.com/document/product/1132/49071#VpcFwGroupInsShow))
 
 ### 第 63 次发布
 
@@ -27495,6 +27486,21 @@
 
 
 ## 日志服务(cls) 版本：2020-10-16
+
+### 第 96 次发布
+
+发布时间：2024-11-26 01:23:01
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [LogRechargeRuleInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#LogRechargeRuleInfo)
+
+	* 新增成员：AdvanceFilterRules
+
 
 ### 第 95 次发布
 
@@ -38804,6 +38810,21 @@
 
 
 ## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+
+### 第 109 次发布
+
+发布时间：2024-11-26 01:28:29
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [CynosdbInstanceDetail](http://document.tencentcloudapi.woa.com/document/product/1003/48097#CynosdbInstanceDetail)
+
+	* 新增成员：DbMode
+
 
 ### 第 108 次发布
 
@@ -71203,13 +71224,13 @@
 
 新增接口：
 
-* [[CopyCaster](http://document.tencentcloudapi.woa.com/document/product/267/85379)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[CreateCaster](http://document.tencentcloudapi.woa.com/document/product/267/85378)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DeleteCaster](http://document.tencentcloudapi.woa.com/document/product/267/85377)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeCaster](http://document.tencentcloudapi.woa.com/document/product/267/85376)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeCasterDisplayInfo](http://document.tencentcloudapi.woa.com/document/product/267/85375)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeCasterPlayUrl](http://document.tencentcloudapi.woa.com/document/product/267/85374)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ModifyCaster](http://document.tencentcloudapi.woa.com/document/product/267/85373)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [CopyCaster](http://document.tencentcloudapi.woa.com/document/product/267/85379)
+* [CreateCaster](http://document.tencentcloudapi.woa.com/document/product/267/85378)
+* [DeleteCaster](http://document.tencentcloudapi.woa.com/document/product/267/85377)
+* [DescribeCaster](http://document.tencentcloudapi.woa.com/document/product/267/85376)
+* [DescribeCasterDisplayInfo](http://document.tencentcloudapi.woa.com/document/product/267/85375)
+* [DescribeCasterPlayUrl](http://document.tencentcloudapi.woa.com/document/product/267/85374)
+* [ModifyCaster](http://document.tencentcloudapi.woa.com/document/product/267/85373)
 
 修改接口：
 
@@ -71220,8 +71241,8 @@
 
 新增数据结构：
 
-* [[CasterDisplayInfo](http://document.tencentcloudapi.woa.com/document/product/267/20474#CasterDisplayInfo)](http://document.tencentcloudapi.woa.com/document/product/267/20474#[CasterDisplayInfo](http://document.tencentcloudapi.woa.com/document/product/267/20474#CasterDisplayInfo))
-* [[CasterInfo](http://document.tencentcloudapi.woa.com/document/product/267/20474#CasterInfo)](http://document.tencentcloudapi.woa.com/document/product/267/20474#[CasterInfo](http://document.tencentcloudapi.woa.com/document/product/267/20474#CasterInfo))
+* [CasterDisplayInfo](http://document.tencentcloudapi.woa.com/document/product/267/20474#CasterDisplayInfo)
+* [CasterInfo](http://document.tencentcloudapi.woa.com/document/product/267/20474#CasterInfo)
 
 ### 第 67 次发布
 
@@ -77923,13 +77944,13 @@
 
 新增接口：
 
-* [[ProcessImage](http://document.tencentcloudapi.woa.com/document/product/862/85380)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [ProcessImage](http://document.tencentcloudapi.woa.com/document/product/862/85380)
 
 新增数据结构：
 
-* [[ImageEncodeConfig](http://document.tencentcloudapi.woa.com/document/product/862/37615#ImageEncodeConfig)](http://document.tencentcloudapi.woa.com/document/product/862/37615#[ImageEncodeConfig](http://document.tencentcloudapi.woa.com/document/product/862/37615#ImageEncodeConfig))
-* [[ImageEnhanceConfig](http://document.tencentcloudapi.woa.com/document/product/862/37615#ImageEnhanceConfig)](http://document.tencentcloudapi.woa.com/document/product/862/37615#[ImageEnhanceConfig](http://document.tencentcloudapi.woa.com/document/product/862/37615#ImageEnhanceConfig))
-* [[ImageTaskInput](http://document.tencentcloudapi.woa.com/document/product/862/37615#ImageTaskInput)](http://document.tencentcloudapi.woa.com/document/product/862/37615#[ImageTaskInput](http://document.tencentcloudapi.woa.com/document/product/862/37615#ImageTaskInput))
+* [ImageEncodeConfig](http://document.tencentcloudapi.woa.com/document/product/862/37615#ImageEncodeConfig)
+* [ImageEnhanceConfig](http://document.tencentcloudapi.woa.com/document/product/862/37615#ImageEnhanceConfig)
+* [ImageTaskInput](http://document.tencentcloudapi.woa.com/document/product/862/37615#ImageTaskInput)
 
 ### 第 68 次发布
 
@@ -114497,6 +114518,21 @@
 
 ## 微服务引擎(tse) 版本：2020-12-07
 
+### 第 75 次发布
+
+发布时间：2024-11-26 02:11:30
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [KongCertificatesPreview](http://document.tencentcloudapi.woa.com/document/product/1364/54942#KongCertificatesPreview)
+
+	* <font color="#dd0000">**修改成员**：</font>Name, BindDomains, Status, Crt, Key, ExpireTime, CreateTime, IssueTime, CertSource, CertId
+
+
 ### 第 74 次发布
 
 发布时间：2024-11-22 02:43:36
@@ -120752,6 +120788,19 @@
 
 ## 私有网络(vpc) 版本：2017-03-12
 
+### 第 176 次发布
+
+发布时间：2024-11-26 02:15:48
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DeleteTrafficMirror](http://document.tencentcloudapi.woa.com/document/product/215/85397)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[StartTrafficMirror](http://document.tencentcloudapi.woa.com/document/product/215/85396)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
 ### 第 175 次发布
 
 发布时间：2024-11-25 02:14:56
@@ -120762,17 +120811,17 @@
 
 新增接口：
 
-* [[CreateReserveIpAddresses](http://document.tencentcloudapi.woa.com/document/product/215/85384)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[CreateTrafficMirror](http://document.tencentcloudapi.woa.com/document/product/215/85392)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DeleteReserveIpAddresses](http://document.tencentcloudapi.woa.com/document/product/215/85383)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeReserveIpAddresses](http://document.tencentcloudapi.woa.com/document/product/215/85382)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeTrafficMirrors](http://document.tencentcloudapi.woa.com/document/product/215/85391)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ModifyReserveIpAddress](http://document.tencentcloudapi.woa.com/document/product/215/85381)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ResetTrafficMirrorFilter](http://document.tencentcloudapi.woa.com/document/product/215/85390)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ResetTrafficMirrorSrcs](http://document.tencentcloudapi.woa.com/document/product/215/85389)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ResetTrafficMirrorTarget](http://document.tencentcloudapi.woa.com/document/product/215/85388)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[StopTrafficMirror](http://document.tencentcloudapi.woa.com/document/product/215/85387)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[UpdateTrafficMirrorAllFilter](http://document.tencentcloudapi.woa.com/document/product/215/85386)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [CreateReserveIpAddresses](http://document.tencentcloudapi.woa.com/document/product/215/85384)
+* [CreateTrafficMirror](http://document.tencentcloudapi.woa.com/document/product/215/85392)
+* [DeleteReserveIpAddresses](http://document.tencentcloudapi.woa.com/document/product/215/85383)
+* [DescribeReserveIpAddresses](http://document.tencentcloudapi.woa.com/document/product/215/85382)
+* [DescribeTrafficMirrors](http://document.tencentcloudapi.woa.com/document/product/215/85391)
+* [ModifyReserveIpAddress](http://document.tencentcloudapi.woa.com/document/product/215/85381)
+* [ResetTrafficMirrorFilter](http://document.tencentcloudapi.woa.com/document/product/215/85390)
+* [ResetTrafficMirrorSrcs](http://document.tencentcloudapi.woa.com/document/product/215/85389)
+* [ResetTrafficMirrorTarget](http://document.tencentcloudapi.woa.com/document/product/215/85388)
+* [StopTrafficMirror](http://document.tencentcloudapi.woa.com/document/product/215/85387)
+* [UpdateTrafficMirrorAllFilter](http://document.tencentcloudapi.woa.com/document/product/215/85386)
 
 修改接口：
 
@@ -120791,11 +120840,11 @@
 
 新增数据结构：
 
-* [[ReserveIpAddressInfo](http://document.tencentcloudapi.woa.com/document/product/215/15824#ReserveIpAddressInfo)](http://document.tencentcloudapi.woa.com/document/product/215/15824#[ReserveIpAddressInfo](http://document.tencentcloudapi.woa.com/document/product/215/15824#ReserveIpAddressInfo))
-* [[TrafficMirror](http://document.tencentcloudapi.woa.com/document/product/215/15824#TrafficMirror)](http://document.tencentcloudapi.woa.com/document/product/215/15824#[TrafficMirror](http://document.tencentcloudapi.woa.com/document/product/215/15824#TrafficMirror))
-* [[TrafficMirrorFilter](http://document.tencentcloudapi.woa.com/document/product/215/15824#TrafficMirrorFilter)](http://document.tencentcloudapi.woa.com/document/product/215/15824#[TrafficMirrorFilter](http://document.tencentcloudapi.woa.com/document/product/215/15824#TrafficMirrorFilter))
-* [[TrafficMirrorTarget](http://document.tencentcloudapi.woa.com/document/product/215/15824#TrafficMirrorTarget)](http://document.tencentcloudapi.woa.com/document/product/215/15824#[TrafficMirrorTarget](http://document.tencentcloudapi.woa.com/document/product/215/15824#TrafficMirrorTarget))
-* [[TrafficMirrorTargetResourceInfo](http://document.tencentcloudapi.woa.com/document/product/215/15824#TrafficMirrorTargetResourceInfo)](http://document.tencentcloudapi.woa.com/document/product/215/15824#[TrafficMirrorTargetResourceInfo](http://document.tencentcloudapi.woa.com/document/product/215/15824#TrafficMirrorTargetResourceInfo))
+* [ReserveIpAddressInfo](http://document.tencentcloudapi.woa.com/document/product/215/15824#ReserveIpAddressInfo)
+* [TrafficMirror](http://document.tencentcloudapi.woa.com/document/product/215/15824#TrafficMirror)
+* [TrafficMirrorFilter](http://document.tencentcloudapi.woa.com/document/product/215/15824#TrafficMirrorFilter)
+* [TrafficMirrorTarget](http://document.tencentcloudapi.woa.com/document/product/215/15824#TrafficMirrorTarget)
+* [TrafficMirrorTargetResourceInfo](http://document.tencentcloudapi.woa.com/document/product/215/15824#TrafficMirrorTargetResourceInfo)
 
 ### 第 174 次发布
 

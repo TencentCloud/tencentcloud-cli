@@ -528,6 +528,14 @@
         "title": "查询安全组规则列表"
       }
     ],
+    "DescribeSerialRegion": [
+      {
+        "document": "查询串行防火墙地域带宽分配信息",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSerialRegion\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"SerialRegionLst\": [\n            {\n                \"Region\": \"ap-shanghai\",\n                \"Width\": 100\n            }\n        ],\n        \"UnUsedWidth\": 100,\n        \"UnUsedQuota\": 100,\n        \"RequestId\": \"11122333313\"\n    }\n}",
+        "title": "查询串行防火墙地域带宽分配信息"
+      }
+    ],
     "DescribeSourceAsset": [
       {
         "document": "DescribeSourceAsset-查询全部资产信息",
@@ -596,6 +604,14 @@
         "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVpcAcRule\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"SrcIP\",\n            \"Values\": [\n                \"192.168.1.10\"\n            ],\n            \"OperatorType\": 9\n        },\n        {\n            \"Name\": \"IpVersion\",\n            \"Values\": [\n                \"0\"\n            ],\n            \"OperatorType\": 1\n        }\n    ],\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"Data\": [\n            {\n                \"Uuid\": 221579,\n                \"InternalUuid\": 1729666998976364,\n                \"OrderIndex\": 1,\n                \"SourceContent\": \"mb_1256532032_1666263807415\",\n                \"SourceType\": \"template\",\n                \"DestContent\": \"192.168.1.2\",\n                \"DestType\": \"net\",\n                \"Port\": \"-1/-1\",\n                \"Protocol\": \"TCP\",\n                \"RuleAction\": \"accept\",\n                \"Description\": \"用于测试的规则\",\n                \"Enable\": \"true\",\n                \"Deleted\": 0,\n                \"EdgeId\": \"ALL\",\n                \"EdgeName\": \"edge名称\",\n                \"DetectedTimes\": 0,\n                \"FwGroupId\": \"ALL\",\n                \"FwGroupName\": \"互联分组\",\n                \"BetaList\": [\n                    {\n                        \"TaskId\": \"9001\",\n                        \"TaskName\": \"autotest\",\n                        \"LastTime\": \"1999-01-01 00:00:01\"\n                    }\n                ],\n                \"ParamTemplateId\": \"pp-ie03er\",\n                \"ParamTemplateName\": \"常规端口模版\",\n                \"TargetName\": \"模版规则\",\n                \"SourceName\": \"模版规则\",\n                \"IpVersion\": 0\n            }\n        ],\n        \"RequestId\": \"9afc19d7-0036-4f3d-af1a-80088236f4ed\"\n    }\n}",
         "title": "查询内网间访问控制列表示例2"
+      }
+    ],
+    "DescribeVpcFwGroupIns": [
+      {
+        "document": "查询防火墙(组)ID名称及实例下对应关系",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVpcFwGroupIns\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"FwGroupLst\": [\n            {\n                \"FwGroupId\": \"cfwg-wxecrvtb\",\n                \"FwGroupName\": \"防火墙1\",\n                \"FwInstanceLst\": [\n                    {\n                        \"FwInsId\": \"cfwew-wxecrvtb\",\n                        \"FwInsName\": \"实例1\",\n                        \"FwInsRegion\": \"ap-guangzhou\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"0ea42a70-369b-407e-91e1-ca2d3b0b76b3\"\n    }\n}",
+        "title": "查询防火墙(组)ID名称及实例下对应关系"
       }
     ],
     "DescribeVpcFwGroupSwitch": [

@@ -886,7 +886,7 @@
         {
           "disabled": false,
           "document": "商品ID",
-          "example": "",
+          "example": "116831",
           "member": "uint64",
           "name": "GoodsId",
           "required": true,
@@ -901,9 +901,10 @@
         {
           "disabled": false,
           "document": "CVM的实例信息",
-          "example": "",
+          "example": "无",
           "member": "InstanceDetail",
           "name": "InstanceDetail",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },

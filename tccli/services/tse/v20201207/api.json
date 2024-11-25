@@ -1285,7 +1285,7 @@
         {
           "disabled": false,
           "document": "服务 ID，作为入参时，必填\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxxx",
+          "example": "2a212560-220a-46f6-b139-3238eb8ea041",
           "member": "string",
           "name": "ServiceID",
           "output_required": true,
@@ -1296,7 +1296,7 @@
         {
           "disabled": false,
           "document": "服务名称，作为入参时，无意义\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "service-xxx",
+          "example": "learn",
           "member": "string",
           "name": "ServiceName",
           "output_required": true,
@@ -1307,7 +1307,7 @@
         {
           "disabled": false,
           "document": "Upstream 名称，作为入参时，无意义\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxxx",
+          "example": "learn",
           "member": "string",
           "name": "UpstreamName",
           "output_required": true,
@@ -1379,7 +1379,7 @@
         {
           "disabled": false,
           "document": "归属服务 ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "2a212560-220a-46f6-b139-3238eb8ea041",
           "member": "string",
           "name": "ServiceId",
           "output_required": true,
@@ -1390,7 +1390,7 @@
         {
           "disabled": false,
           "document": "归属服务名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "learn-svc",
           "member": "string",
           "name": "ServiceName",
           "output_required": true,
@@ -1423,7 +1423,7 @@
         {
           "disabled": false,
           "document": "泳道组ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "group-4se0czf7",
           "member": "string",
           "name": "GroupId",
           "output_required": false,
@@ -1434,7 +1434,7 @@
         {
           "disabled": false,
           "document": "泳道组名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "公网入口分组",
           "member": "string",
           "name": "GroupName",
           "output_required": false,
@@ -1445,7 +1445,7 @@
         {
           "disabled": false,
           "document": "泳道ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "4e00e834cc984314a9a33fa4bb08bc5a",
           "member": "string",
           "name": "LaneId",
           "output_required": false,
@@ -1456,7 +1456,7 @@
         {
           "disabled": false,
           "document": "泳道名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "在线学习服务泳道",
           "member": "string",
           "name": "LaneName",
           "output_required": false,
@@ -1467,7 +1467,7 @@
         {
           "disabled": false,
           "document": "泳道匹配规则：严格STRICT｜宽松PERMISSIVE\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "STRICT|PERMISSIVE",
+          "example": "STRICT",
           "member": "string",
           "name": "MatchMode",
           "output_required": false,
@@ -1498,6 +1498,7 @@
           "example": "header",
           "member": "string",
           "name": "Type",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -1508,6 +1509,7 @@
           "example": "x-user-id",
           "member": "string",
           "name": "Key",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1518,6 +1520,7 @@
           "example": "==",
           "member": "string",
           "name": "Operator",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1525,9 +1528,10 @@
         {
           "disabled": false,
           "document": "目标参数值\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "111",
+          "example": "user-stu",
           "member": "string",
           "name": "Value",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1538,6 +1542,7 @@
           "example": ",",
           "member": "string",
           "name": "Delimiter",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1545,9 +1550,10 @@
         {
           "disabled": false,
           "document": "全局配置 Id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "4fe634e9-ea28-4f1e-8461-da89f3b84d28",
           "member": "string",
           "name": "GlobalConfigId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1555,9 +1561,10 @@
         {
           "disabled": false,
           "document": "全局配置名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "global-conf-stu",
           "member": "string",
           "name": "GlobalConfigName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1621,7 +1628,7 @@
         {
           "disabled": false,
           "document": "管理员密码。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123456",
+          "example": "tse@tencent",
           "member": "string",
           "name": "AdminPassword",
           "output_required": true,
@@ -1671,7 +1678,7 @@
         {
           "disabled": false,
           "document": "负载均衡的描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "公网入口",
           "member": "string",
           "name": "Description",
           "output_required": true,
@@ -1681,7 +1688,7 @@
         {
           "disabled": false,
           "document": "负载均衡的规格类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "clb.c4.small",
           "member": "string",
           "name": "SlaType",
           "output_required": true,
@@ -1691,7 +1698,7 @@
         {
           "disabled": false,
           "document": "clb规格名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "超强型1规格",
           "member": "string",
           "name": "SlaName",
           "output_required": false,
@@ -1701,7 +1708,7 @@
         {
           "disabled": false,
           "document": "clb vip\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "152.41.25.2",
           "member": "string",
           "name": "Vip",
           "output_required": false,
@@ -1711,7 +1718,7 @@
         {
           "disabled": false,
           "document": "带宽\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "5",
           "member": "uint64",
           "name": "InternetMaxBandwidthOut",
           "output_required": false,
@@ -1797,7 +1804,7 @@
         {
           "disabled": false,
           "document": "节点 ip",
-          "example": "无",
+          "example": "172.168.2.1",
           "member": "string",
           "name": "NodeIp",
           "output_required": true,
@@ -1807,7 +1814,7 @@
         {
           "disabled": false,
           "document": "Zone id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "100001",
           "member": "string",
           "name": "ZoneId",
           "output_required": true,
@@ -1817,7 +1824,7 @@
         {
           "disabled": false,
           "document": "Zone\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "ap-guangzhou-1",
           "member": "string",
           "name": "Zone",
           "output_required": true,
@@ -1827,7 +1834,7 @@
         {
           "disabled": false,
           "document": "分组ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "group-4se0czf7",
           "member": "string",
           "name": "GroupId",
           "output_required": true,
@@ -1837,7 +1844,7 @@
         {
           "disabled": false,
           "document": "分组名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "公网入口分组",
           "member": "string",
           "name": "GroupName",
           "output_required": true,
@@ -1847,7 +1854,7 @@
         {
           "disabled": false,
           "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "Running",
           "member": "string",
           "name": "Status",
           "output_required": true,
@@ -1857,7 +1864,7 @@
         {
           "disabled": false,
           "document": "节点权重\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "Weight",
           "output_required": false,
@@ -1867,7 +1874,7 @@
         {
           "disabled": false,
           "document": "是否默认权重\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "IsDefaultWeight",
           "output_required": false,
@@ -2092,7 +2099,7 @@
         {
           "disabled": false,
           "document": "策略名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "双十一",
           "member": "string",
           "name": "StrategyName",
           "output_required": true,
@@ -2122,7 +2129,7 @@
         {
           "disabled": false,
           "document": "策略描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "测试",
+          "example": "双十一弹性伸缩策略",
           "member": "string",
           "name": "Description",
           "output_required": true,
@@ -4815,7 +4822,7 @@
         {
           "disabled": false,
           "document": "网关服务ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2a212560-220a-46f6-b139-3238eb8ea041",
           "member": "string",
           "name": "ServiceId",
           "output_required": false,
@@ -6515,6 +6522,7 @@
           "example": "无",
           "member": "KongCertificate",
           "name": "Result",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -6578,6 +6586,7 @@
           "example": "无",
           "member": "KongCertificatesList",
           "name": "Result",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -6992,14 +7001,14 @@
           "example": "无",
           "member": "InstanceTagInfo",
           "name": "Tags",
-          "output_required": true,
+          "output_required": false,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "是否开启 cls 日志\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "EnableCls",
           "output_required": true,
@@ -7122,7 +7131,7 @@
           "example": "无",
           "member": "InstancePort",
           "name": "InstancePort",
-          "output_required": true,
+          "output_required": false,
           "type": "object",
           "value_allowed_null": true
         },
@@ -7139,7 +7148,7 @@
         {
           "disabled": false,
           "document": "公网IP地址列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "145.215.23.2",
           "member": "string",
           "name": "PublicIpAddresses",
           "output_required": false,
@@ -7264,6 +7273,7 @@
           "example": "无",
           "member": "KongServiceRouteList",
           "name": "Result",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -7473,7 +7483,7 @@
           "example": "无",
           "member": "ListCloudNativeAPIGatewayResult",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -10034,7 +10044,7 @@
         {
           "disabled": false,
           "document": "WAF防护域名列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "tencent.com",
           "member": "string",
           "name": "Domains",
           "output_required": false,
@@ -10649,22 +10659,20 @@
         {
           "disabled": false,
           "document": "过滤参数名",
-          "example": "",
+          "example": "filter-name",
           "member": "string",
           "name": "Name",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "过滤参数值",
-          "example": "",
+          "example": "[\"a\",\"b\"]",
           "member": "string",
           "name": "Values",
           "required": true,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         }
       ],
       "usage": "in"
@@ -11986,7 +11994,7 @@
         {
           "disabled": false,
           "document": "监听的 http 端口范围。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "80",
           "member": "string",
           "name": "HttpPort",
           "output_required": false,
@@ -11996,7 +12004,7 @@
         {
           "disabled": false,
           "document": "监听的 https 端口范围。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "443",
           "member": "string",
           "name": "HttpsPort",
           "output_required": false,
@@ -12006,7 +12014,7 @@
         {
           "disabled": false,
           "document": "监听的 tcp 端口范围。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "8000",
           "member": "string",
           "name": "TcpPort",
           "output_required": false,
@@ -12016,7 +12024,7 @@
         {
           "disabled": false,
           "document": "监听的 udp 端口范围。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "7000",
           "member": "string",
           "name": "UdpPort",
           "output_required": false,
@@ -12085,7 +12093,7 @@
         {
           "disabled": false,
           "document": "负载均衡描述",
-          "example": "无",
+          "example": "公网入口",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -12094,7 +12102,7 @@
         {
           "disabled": false,
           "document": "负载均衡的规格类型，支持clb.c2.medium、clb.c3.small、clb.c3.medium、clb.c4.small、clb.c4.medium、clb.c4.large、clb.c4.xlarge，不传为共享型。",
-          "example": "无",
+          "example": "clb.c4.small",
           "member": "string",
           "name": "SlaType",
           "required": false,
@@ -12238,7 +12246,7 @@
         {
           "disabled": false,
           "document": "在 GET HTTP 请求中使用的路径，以作为主动运行状况检查的探测器运行。默认： ”/”。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "/",
+          "example": "/v1/users",
           "member": "string",
           "name": "HttpPath",
           "output_required": false,
@@ -12318,10 +12326,10 @@
         {
           "disabled": false,
           "document": "证书名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "tencent.com",
           "member": "string",
           "name": "Name",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12331,7 +12339,7 @@
           "example": "916462a4-8ce4-4605-a7b7-66cd51c38201",
           "member": "string",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12341,7 +12349,7 @@
           "example": "[\"abc.com\"]",
           "member": "string",
           "name": "BindDomains",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -12351,7 +12359,7 @@
           "example": "expired",
           "member": "string",
           "name": "Status",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12361,7 +12369,7 @@
           "example": "-----BEGIN CERTIFICATE-----\\nMIIBpTCCAUugAwIBAgIUVHl/MMu4SMSqDKEHmagHTg7kHO4wCQYHKoZIzj0EATAx\\nMRAwDgYDVQQDDAdhYmMuY29tMRAwDgYDVQQKDAdhYmMuY29tMQswCQYDVQQGEwJD\\nTjAeFw0yMjA4MTgwMjEwMDBaFw0yMjA4MzEwNTQ1MDBaMFYxCzAJBgNVBAYTAkNO\\nMRIwEAYDVQQIDAlndWFuZ2RvbmcxEzARBgNVBAcMCmd1YW5nemhvdSAxDDAKBgNV\\nBAoMA2FiYzEQMA4GA1UEAwwHYWJjLmNvbTBZMBMGByqGSM49AgEGCCqGSM49AwEH\\nA0IABMlatwY2JpT3hfwkUSiue6uxFJvHRVhPZeqgnIr6DZN1F0NDDy32y70hAPkU\\nBjBH5SHlM14iok2rQNYs5yi9RD6jHTAbMAsGA1UdEQQEMAKCADAMBgNVHRMBAf8E\\nAjAAMAkGByqGSM49BAEDSQAwRgIhAILkENW+azqYYHCdWCMLGjvc5ii3N/57so5o\\nz0T+lKkIAiEA4u+2vUZIjMffqLND3ecLx3lNj+CSo4EF31yBTEEkfMM=\\n-----END CERTIFICATE-----",
           "member": "string",
           "name": "Crt",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12371,7 +12379,7 @@
           "example": "-----BEGIN PRIVATE KEY-----\\nMIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQgokysviOMJk43IY6s\\nQpD6VUUAM8aU5RPyFTNUuJXN+JuhRANCAATJWrcGNiaU94X8JFEornursRSbx0VY\\nT2XqoJyK+g2TdRdDQw8t9su9IQD5FAYwR+Uh5TNeIqJNq0DWLOcovUQ+\\n-----END PRIVATE KEY-----",
           "member": "string",
           "name": "Key",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12381,7 +12389,7 @@
           "example": "2022-08-31 05:45:00",
           "member": "string",
           "name": "ExpireTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12391,7 +12399,7 @@
           "example": "2023-02-21 13:56:20",
           "member": "string",
           "name": "CreateTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12401,7 +12409,7 @@
           "example": "2022-08-21 05:45:00",
           "member": "string",
           "name": "IssueTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12411,7 +12419,7 @@
           "example": "ssl",
           "member": "string",
           "name": "CertSource",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12421,7 +12429,7 @@
           "example": "6767a862a4-8ce4",
           "member": "string",
           "name": "CertId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -12473,7 +12481,7 @@
         {
           "disabled": false,
           "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "GET",
           "member": "string",
           "name": "Methods",
           "output_required": true,
@@ -12484,7 +12492,7 @@
         {
           "disabled": false,
           "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "/v1/users",
           "member": "string",
           "name": "Paths",
           "output_required": true,
@@ -12495,7 +12503,7 @@
         {
           "disabled": false,
           "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "tencent.com",
           "member": "string",
           "name": "Hosts",
           "output_required": true,
@@ -12506,7 +12514,7 @@
         {
           "disabled": false,
           "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "http",
           "member": "string",
           "name": "Protocols",
           "output_required": true,
@@ -12517,7 +12525,7 @@
         {
           "disabled": false,
           "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "PreserveHost",
           "output_required": true,
@@ -12528,7 +12536,7 @@
         {
           "disabled": false,
           "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "426",
           "member": "int64",
           "name": "HttpsRedirectStatusCode",
           "output_required": true,
@@ -12539,7 +12547,7 @@
         {
           "disabled": false,
           "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "StripPath",
           "output_required": true,
@@ -12550,7 +12558,7 @@
         {
           "disabled": false,
           "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2024-11-25 10:49:23",
           "member": "string",
           "name": "CreatedTime",
           "output_required": true,
@@ -12572,7 +12580,7 @@
         {
           "disabled": false,
           "document": "服务名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "learn",
           "member": "string",
           "name": "ServiceName",
           "output_required": true,
@@ -12583,7 +12591,7 @@
         {
           "disabled": false,
           "document": "服务ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2a212560-220a-46f6-b139-3238eb8ea041",
           "member": "string",
           "name": "ServiceID",
           "output_required": true,
@@ -12594,7 +12602,7 @@
         {
           "disabled": false,
           "document": "目的端口\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "8000",
           "member": "uint64",
           "name": "DestinationPorts",
           "output_required": true,
@@ -12625,6 +12633,7 @@
           "example": "916462a4-8ce4-4605-a7b7-66cd51c38201",
           "member": "string",
           "name": "ID",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -12635,6 +12644,7 @@
           "example": "test-service",
           "member": "string",
           "name": "Name",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -12645,6 +12655,7 @@
           "example": "http",
           "member": "string",
           "name": "Protocol",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -12652,9 +12663,10 @@
         {
           "disabled": false,
           "document": "后端路径\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "/",
+          "example": "/v1/users",
           "member": "string",
           "name": "Path",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -12665,6 +12677,7 @@
           "example": "5000",
           "member": "int64",
           "name": "Timeout",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -12675,6 +12688,7 @@
           "example": "0",
           "member": "int64",
           "name": "Retries",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -12685,6 +12699,7 @@
           "example": "[\"test\"]",
           "member": "string",
           "name": "Tags",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -12695,6 +12710,7 @@
           "example": "无",
           "member": "KongUpstreamInfo",
           "name": "UpstreamInfo",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -12705,6 +12721,7 @@
           "example": "HostIP",
           "member": "string",
           "name": "UpstreamType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -12715,6 +12732,7 @@
           "example": "true",
           "member": "bool",
           "name": "Editable",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": true
@@ -12722,9 +12740,10 @@
         {
           "disabled": false,
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2024-11-25 10:49:23",
           "member": "string",
           "name": "CreatedTime",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -12793,7 +12812,7 @@
         {
           "disabled": false,
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2024-11-25 10:49:23",
           "member": "string",
           "name": "CreatedTime",
           "output_required": true,
@@ -12804,7 +12823,7 @@
         {
           "disabled": false,
           "document": "是否可编辑\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "Editable",
           "output_required": true,
@@ -12919,7 +12938,7 @@
         {
           "disabled": false,
           "document": "健康状态\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "HEALTHY",
           "member": "string",
           "name": "Health",
           "output_required": false,
@@ -12930,7 +12949,7 @@
         {
           "disabled": false,
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2024-11-25 10:49:23",
           "member": "string",
           "name": "CreatedTime",
           "output_required": false,
@@ -12941,7 +12960,7 @@
         {
           "disabled": false,
           "document": "Target的来源\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "AutoScaling",
           "member": "string",
           "name": "Source",
           "output_required": false,
@@ -12952,7 +12971,7 @@
         {
           "disabled": false,
           "document": "CVM实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "ins-ze3124da",
           "member": "string",
           "name": "CvmInstanceId",
           "output_required": false,
@@ -12963,7 +12982,7 @@
         {
           "disabled": false,
           "document": "CVM实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "在线学习服务",
           "member": "string",
           "name": "CvmInstanceName",
           "output_required": false,
@@ -12974,7 +12993,7 @@
         {
           "disabled": false,
           "document": "target标签\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "learn",
           "member": "string",
           "name": "Tags",
           "output_required": false,
@@ -13134,7 +13153,7 @@
         {
           "disabled": false,
           "document": "CVM弹性伸缩组ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "as-4se0czf7",
           "member": "string",
           "name": "AutoScalingGroupID",
           "output_required": false,
@@ -13145,7 +13164,7 @@
         {
           "disabled": false,
           "document": "CVM弹性伸缩组端口\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "80",
           "member": "uint64",
           "name": "AutoScalingCvmPort",
           "output_required": false,
@@ -13189,7 +13208,7 @@
         {
           "disabled": false,
           "document": "精确的服务来源类型，新建服务来源时候传入的类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "TKE",
           "member": "string",
           "name": "RealSourceType",
           "output_required": false,
@@ -13200,7 +13219,7 @@
         {
           "disabled": false,
           "document": "upstream健康状态HEALTHY（健康）, UNHEALTHY（异常）, HEALTHCHECKS_OFF（未开启）和NONE（不支持健康检查）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "HEALTHY",
           "member": "string",
           "name": "HealthStatus",
           "output_required": false,
@@ -13434,18 +13453,16 @@
           "member": "string",
           "name": "Key",
           "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "过滤值",
-          "example": "test",
+          "example": "user-stu",
           "member": "string",
           "name": "Value",
           "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -15228,7 +15245,7 @@
         {
           "disabled": false,
           "document": "公网所属分组 id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "group-xxxx1234",
+          "example": "group-4se0czf7",
           "member": "string",
           "name": "GroupId",
           "output_required": false,
@@ -15258,7 +15275,7 @@
         {
           "disabled": false,
           "document": "公网负载均衡描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "公网入口",
           "member": "string",
           "name": "Description",
           "output_required": false,
@@ -16710,7 +16727,7 @@
         {
           "disabled": false,
           "document": "连续健康阈值，单位：次\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "5",
           "member": "uint64",
           "name": "Successes",
           "output_required": false,
@@ -16721,7 +16738,7 @@
         {
           "disabled": false,
           "document": "连续异常阈值，单位：次\t\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "5",
           "member": "uint64",
           "name": "Failures",
           "output_required": false,
@@ -16732,7 +16749,7 @@
         {
           "disabled": false,
           "document": "超时阈值，单位：次\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "5",
           "member": "uint64",
           "name": "Timeouts",
           "output_required": false,
@@ -16743,7 +16760,7 @@
         {
           "disabled": false,
           "document": "健康HTTP状态码\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "200",
           "member": "uint64",
           "name": "HealthyHttpStatuses",
           "output_required": false,
@@ -16754,7 +16771,7 @@
         {
           "disabled": false,
           "document": "异常HTTP状态码\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "500",
           "member": "uint64",
           "name": "UnhealthyHttpStatuses",
           "output_required": false,

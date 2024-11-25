@@ -1572,6 +1572,14 @@
         "title": "添加协议端口组模板成员"
       }
     ],
+    "DeleteTrafficMirror": [
+      {
+        "document": "",
+        "input": "https://vpc.tencentcloudapi.com/?Action=DeleteTrafficMirror\n&TrafficMirrorId=imgf-cvfp7xo8\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"404428db-f850-40c2-803d-0aae49aba43a\"\n    }\n}",
+        "title": "删除流量镜像"
+      }
+    ],
     "DeleteTrafficPackages": [
       {
         "document": "删除共享流量包",
@@ -4225,7 +4233,7 @@
     "ReplaceCcnRouteTableInputPolicys": [
       {
         "document": "替换路由表接收策略",
-        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReplaceCcnRouteTableInputPolicys\n<公共请求参数>\n\n{\n    \"CcnId\": \"ccn-rxz9krjj\",\n    \"RouteTableId\": \"ccnrtb-63ujxv2h\",\n    \"Policys\": [\n        {\n            \"RouteConditions\": [\n                {\n                    \"Name\": \"instance-type\",\n                    \"Values\": [\n                        \"VPNGW\"\n                    ],\n                    \"MatchPattern\": 1\n                }\n            ],\n            \"Action\": \"accept\",\n            \"Description\": \"\"\n        }\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReplaceCcnRouteTableInputPolicys\n<公共请求参数>\n\n{\n    \"CcnId\": \"ccn-rxz9krjj\",\n    \"RouteTableId\": \"ccnrtb-63ujxv2h\",\n    \"Policys\": [\n        {\n            \"RouteConditions\": [\n                {\n                    \"Name\": \"instance-type\",\n                    \"Values\": [\n                        \"VPNGW\"\n                    ],\n                    \"MatchPattern\": 1\n                }\n            ],\n            \"Action\": \"accept\",\n            \"Description\": \"input policys\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"82f40ff4-5ecf-4d7a-8081-18a652f38728\"\n    }\n}",
         "title": "ReplaceCcnRouteTableInputPolicys"
       }
@@ -4418,6 +4426,14 @@
         "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetVpnGatewaysRenewFlag\n<公共请求参数>\n\n{\n    \"AutoRenewFlag\": 0,\n    \"Type\": \"IPSEC\",\n    \"VpnGatewayIds\": [\n        \"vpn-xxxxx\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"2f3d2629-a1f0-435e-86d7-fca86a499897\"\n    }\n}",
         "title": "示例"
+      }
+    ],
+    "StartTrafficMirror": [
+      {
+        "document": "",
+        "input": "https://vpc.tencentcloudapi.com/?Action=StartTrafficMirror\n&TrafficMirrorId=imgf-cvfp7xo8\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"404428db-f850-40c2-803d-0aae49aba43a\"\n    }\n}",
+        "title": "开启流量镜像"
       }
     ],
     "StopTrafficMirror": [

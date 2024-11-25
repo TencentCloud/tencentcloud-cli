@@ -24,12 +24,12 @@ Output:
                     "ConditionList": [
                         {
                             "Type": "query",
-                            "Key": "abc",
+                            "Key": "app",
                             "Operator": "==",
-                            "Value": "abc",
-                            "Delimiter": "abc",
-                            "GlobalConfigId": "abc",
-                            "GlobalConfigName": "abc"
+                            "Value": "learn",
+                            "Delimiter": ",",
+                            "GlobalConfigId": "4fe634e9-ea28-4f1e-8461-da89f3b84d28",
+                            "GlobalConfigName": "global-rule1"
                         }
                     ],
                     "BalancedServiceList": [

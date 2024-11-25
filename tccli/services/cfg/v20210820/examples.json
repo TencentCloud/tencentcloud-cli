@@ -8,6 +8,14 @@
         "title": "从动作创建演练"
       }
     ],
+    "CreateTaskFromMultiAction": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cfg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTaskFromMultiAction\n<公共请求参数>\n\n{\n    \"TaskInstances\": [\n        \"abc\"\n    ],\n    \"TaskTitle\": \"abc\",\n    \"TaskDescription\": \"abc\",\n    \"TaskPauseDuration\": 1,\n    \"TaskAction\": [\n        {\n            \"TaskActionId\": 0,\n            \"TaskActionGeneralConfiguration\": \"abc\",\n            \"TaskActionCustomConfiguration\": \"abc\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f0aee8ac-2ed3-4a7f-a25b-f0d7d228dd30\",\n        \"TaskId\": 50\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "CreateTaskFromTemplate": [
       {
         "document": "通过预创建好的经验模板生成常规化的演练持续使用",

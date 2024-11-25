@@ -441,6 +441,13 @@
       "output": "DescribeSecurityGroupListResponse",
       "status": "online"
     },
+    "DescribeSerialRegion": {
+      "document": "查询串行防火墙地域带宽分配信息",
+      "input": "DescribeSerialRegionRequest",
+      "name": "查询串行防火墙地域带宽分配信息",
+      "output": "DescribeSerialRegionResponse",
+      "status": "online"
+    },
     "DescribeSourceAsset": {
       "document": "DescribeSourceAsset-查询全部资产信息",
       "input": "DescribeSourceAssetRequest",
@@ -495,6 +502,13 @@
       "input": "DescribeVpcAcRuleRequest",
       "name": "查询内网间访问控制列表",
       "output": "DescribeVpcAcRuleResponse",
+      "status": "online"
+    },
+    "DescribeVpcFwGroupIns": {
+      "document": "查询防火墙(组)ID名称及实例下对应关系",
+      "input": "DescribeVpcFwGroupInsRequest",
+      "name": "查询防火墙(组)ID名称及实例下对应关系",
+      "output": "DescribeVpcFwGroupInsResponse",
       "status": "online"
     },
     "DescribeVpcFwGroupSwitch": {
@@ -7776,6 +7790,73 @@
       ],
       "type": "object"
     },
+    "DescribeSerialRegionRequest": {
+      "document": "DescribeSerialRegion请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeSerialRegionResponse": {
+      "document": "DescribeSerialRegion返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "串行地域带宽分配\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SerialRegionInfo",
+          "name": "SerialRegionLst",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "剩余可分配通用带宽 单位M\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000M",
+          "member": "int64",
+          "name": "UnUsedWidth",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "可配置实例个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "UnUsedQuota",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "旁路带宽数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "int64",
+          "name": "BypassWidth",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "赠送的旁路带宽数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "80",
+          "member": "int64",
+          "name": "SendBypassWidth",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeSourceAssetRequest": {
       "document": "DescribeSourceAsset请求参数结构体",
       "members": [
@@ -8440,6 +8521,33 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVpcFwGroupInsRequest": {
+      "document": "DescribeVpcFwGroupIns请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeVpcFwGroupInsResponse": {
+      "document": "DescribeVpcFwGroupIns返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "防火墙(组)列表信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{\"FwGroupId\":\"cfwg-wxecrvtb\",\"FwGroupName\":\"防火墙1\",\"FwInstanceLst\":[{\"FwInsId\":\"cfwew-wxecrvtb\",\"FwInsName\":\"实例1\",\"FwInsRegion\":\"ap-guangzhou\"}]}]",
+          "member": "VpcFwGroupInsShow",
+          "name": "FwGroupLst",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -13925,6 +14033,56 @@
       ],
       "usage": "in"
     },
+    "SerialRegionInfo": {
+      "document": "防火墙串行地域带宽分配情况",
+      "members": [
+        {
+          "disabled": false,
+          "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分配带宽值 单位Mbps\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "int64",
+          "name": "Width",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "弹性开关\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "int64",
+          "name": "ElasticSwitch",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "弹性带宽上限，单位Mbps\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "ElasticBandwidth",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "SetNatFwDnatRuleRequest": {
       "document": "SetNatFwDnatRule请求参数结构体",
       "members": [
@@ -15130,6 +15288,42 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "VpcFwGroupInsShow": {
+      "document": "防火墙(组) 及防火墙实例对应关系",
+      "members": [
+        {
+          "disabled": false,
+          "document": "防火墙(组)ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cfws-xxxxxxx",
+          "member": "string",
+          "name": "FwGroupId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "防火墙(组)名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "防火墙测试",
+          "member": "string",
+          "name": "FwGroupName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "防火墙(组)下防火墙实例\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{\"FwInsId\":\"cfwew-22222222\",\"FwInsName\":\"实例1\",\"FwInsRegion\":\"ap-guangzhou\"}]",
+          "member": "VpcFwInstanceShow",
+          "name": "FwInstanceLst",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

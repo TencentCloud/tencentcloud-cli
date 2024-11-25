@@ -14,31 +14,42 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "adc44984-762c-42e0-b39a-80777e5c3bcc",
+        "RequestId": "67e07f5b-d31a-47b3-8a67-bf10e48fc1a6",
         "Result": {
             "TotalCount": 1,
             "GatewayList": [
                 {
-                    "CreateTime": "2021-09-09 11:52:30",
-                    "Description": "测试",
-                    "GatewayId": "gateway-7bb4fcb0",
-                    "GatewayVersion": "2.4.1",
-                    "Name": "test",
+                    "GatewayId": "gateway-dde03767",
+                    "Name": "公网入口网关",
+                    "IngressClassName": "tse-nginx-ingress",
+                    "Type": "kong",
+                    "GatewayVersion": "2.5.1",
+                    "GatewayMinorVersion": "",
                     "NodeConfig": {
-                        "Number": 2,
-                        "Specification": "1c2g"
+                        "Specification": "1c2g",
+                        "Number": 2
                     },
-                    "Status": "Creating",
-                    "Type": "Kong",
                     "VpcConfig": {
-                        "SubnetId": "subnet-xxx",
-                        "VpcId": "vpc-xxx"
+                        "VpcId": "vpc-83p0o405",
+                        "SubnetId": "subnet-8tzp8ugg"
                     },
-                    "Tags": [
-                        {
-                            "TagKey": "xx",
-                            "TagValue": "xx"
-                        }
+                    "Description": "",
+                    "Status": "Running",
+                    "EnableCls": false,
+                    "CreateTime": "2024-10-08 20:27:38",
+                    "Tags": [],
+                    "TradeType": 0,
+                    "FeatureVersion": "PROFESSIONAL",
+                    "InternetMaxBandwidthOut": 1,
+                    "AutoRenewFlag": 0,
+                    "CurDeadline": "2024-10-08 20:27:38",
+                    "IsolateTime": "2024-10-08 20:27:38",
+                    "EnableInternet": true,
+                    "EngineRegion": "ap-guangzhou",
+                    "InternetPayMode": "TRAFFIC",
+                    "LoadBalancerType": "",
+                    "PublicIpAddresses": [
+                        "193.112.82.224"
                     ]
                 }
             ]

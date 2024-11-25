@@ -1,3 +1,144 @@
+# Release 3.0.1105.1
+
+## 腾讯云数据仓库 TCHouse-D(cdwdoris) 版本：2021-12-28
+
+### 第 44 次发布
+
+发布时间：2024-11-26 01:18:30
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeBackUpTables](http://document.tencentcloudapi.woa.com/document/product/1706/84383)
+
+	* 新增出参：Msg, IsUnknownVersion, ErrorMsg
+
+* [DescribeDatabaseAuditRecords](http://document.tencentcloudapi.woa.com/document/product/1706/82865)
+
+	* 新增出参：Records
+
+
+
+
+## 混沌演练平台(cfg) 版本：2021-08-20
+
+### 第 17 次发布
+
+发布时间：2024-11-26 01:19:18
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateTaskFromMultiAction](http://document.tencentcloudapi.woa.com/document/product/1694/85393)
+
+新增数据结构：
+
+* [TaskGroupForAction](http://document.tencentcloudapi.woa.com/document/product/1694/79907#TaskGroupForAction)
+
+
+
+## 云防火墙(cfw) 版本：2019-09-04
+
+### 第 64 次发布
+
+发布时间：2024-11-26 01:20:01
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeSerialRegion](http://document.tencentcloudapi.woa.com/document/product/1132/85394)
+* [DescribeVpcFwGroupIns](http://document.tencentcloudapi.woa.com/document/product/1132/85395)
+
+新增数据结构：
+
+* [SerialRegionInfo](http://document.tencentcloudapi.woa.com/document/product/1132/49071#SerialRegionInfo)
+* [VpcFwGroupInsShow](http://document.tencentcloudapi.woa.com/document/product/1132/49071#VpcFwGroupInsShow)
+
+
+
+## 日志服务(cls) 版本：2020-10-16
+
+### 第 96 次发布
+
+发布时间：2024-11-26 01:23:01
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [LogRechargeRuleInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#LogRechargeRuleInfo)
+
+	* 新增成员：AdvanceFilterRules
+
+
+
+
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+
+### 第 109 次发布
+
+发布时间：2024-11-26 01:28:29
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [CynosdbInstanceDetail](http://document.tencentcloudapi.woa.com/document/product/1003/48097#CynosdbInstanceDetail)
+
+	* 新增成员：DbMode
+
+
+
+
+## 微服务引擎(tse) 版本：2020-12-07
+
+### 第 75 次发布
+
+发布时间：2024-11-26 02:11:30
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [KongCertificatesPreview](http://document.tencentcloudapi.woa.com/document/product/1364/54942#KongCertificatesPreview)
+
+	* <font color="#dd0000">**修改成员**：</font>Name, BindDomains, Status, Crt, Key, ExpireTime, CreateTime, IssueTime, CertSource, CertId
+
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 176 次发布
+
+发布时间：2024-11-26 02:15:48
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DeleteTrafficMirror](http://document.tencentcloudapi.woa.com/document/product/215/85397)
+* [StartTrafficMirror](http://document.tencentcloudapi.woa.com/document/product/215/85396)
+
+
+
 # Release 3.0.1104.1
 
 ## 腾讯云数据仓库TCHouse-C(cdwch) 版本：2020-09-15

@@ -21,11 +21,12 @@ Output:
                 "RemainingCredit": 100,
                 "Remark": "remark",
                 "Credit": 100,
+                "Force": 0,
                 "AssociationTime": "2022-10-13 20:09:03",
                 "IdentifyType": 1,
                 "Type": "new",
                 "Email": "abcd*********@tencent.com",
-                "Arrears": "-"
+                "Arrears": "固定为-"
             }
         ],
         "RequestId": "2b7c676e-bb4b-449d-89e6-4866132036c4"

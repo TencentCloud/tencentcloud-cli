@@ -338,7 +338,7 @@
         {
           "disabled": false,
           "document": "客户uin",
-          "example": "1234",
+          "example": "800000232018",
           "member": "uint64",
           "name": "ClientUin",
           "required": true,
@@ -356,7 +356,7 @@
           "example": "20",
           "member": "float",
           "name": "TotalCredit",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -366,7 +366,7 @@
           "example": "10.23",
           "member": "float",
           "name": "RemainingCredit",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -2498,7 +2498,7 @@
           "example": "cedarzuo",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2508,7 +2508,7 @@
           "example": "1",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2518,7 +2518,7 @@
           "example": "110",
           "member": "string",
           "name": "Mobile",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2528,17 +2528,17 @@
           "example": "cedarzuo@tencent.com",
           "member": "string",
           "name": "Email",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "欠费标记",
-          "example": "-",
+          "example": "固定为-",
           "member": "string",
           "name": "Arrears",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2548,7 +2548,7 @@
           "example": "2021-08-18",
           "member": "string",
           "name": "AssociationTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2558,17 +2558,17 @@
           "example": "2024-08-18",
           "member": "string",
           "name": "RecentExpiry",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "子客uin",
-          "example": "123456",
+          "example": "234762534723",
           "member": "uint64",
           "name": "ClientUin",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2578,7 +2578,7 @@
           "example": "123456.78",
           "member": "float",
           "name": "Credit",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -2588,7 +2588,7 @@
           "example": "0.01",
           "member": "float",
           "name": "RemainingCredit",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -2598,7 +2598,7 @@
           "example": "1",
           "member": "uint64",
           "name": "IdentifyType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2608,7 +2608,7 @@
           "example": "tencent",
           "member": "string",
           "name": "Remark",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2618,7 +2618,7 @@
           "example": "1",
           "member": "int64",
           "name": "Force",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -2640,7 +2640,7 @@
         {
           "disabled": false,
           "document": "查询条件值",
-          "example": "123456",
+          "example": "partner名称",
           "member": "string",
           "name": "Filter",
           "required": false,
@@ -2681,13 +2681,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "查询客户列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "查询客户列表",
           "example": "{...}",
           "member": "QueryCustomersCreditData",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2695,7 +2695,7 @@
           "example": "12",
           "member": "uint64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },

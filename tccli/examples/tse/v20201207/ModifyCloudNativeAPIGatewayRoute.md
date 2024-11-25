@@ -12,7 +12,7 @@ tccli tse ModifyCloudNativeAPIGatewayRoute --cli-unfold-argument  \
     --RouteID 916462a4-8ce4-4605-a7b7-66cd51c38201 \
     --Methods GET POST \
     --Hosts www.baidu.com \
-    --Paths / \
+    --Paths /v1/users \
     --PreserveHost True \
     --StripPath False \
     --HttpsRedirectStatusCode 308
