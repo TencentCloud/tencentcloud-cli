@@ -553,12 +553,11 @@
         {
           "disabled": false,
           "document": "账户的名称",
-          "example": "test",
+          "example": "db_user",
           "member": "string",
           "name": "User",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -567,8 +566,7 @@
           "member": "string",
           "name": "Host",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -972,42 +970,38 @@
         {
           "disabled": false,
           "document": "数据库名",
-          "example": "test",
+          "example": "pre_oss",
           "member": "string",
           "name": "Database",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "数据库表名",
-          "example": "test",
+          "example": "work_flow",
           "member": "string",
           "name": "Table",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "数据库列名",
-          "example": "test",
+          "example": "input",
           "member": "string",
           "name": "Column",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "权限信息",
-          "example": "[]",
+          "example": "[\"SELECT\", \"ALTER\",\"CREATE\"]",
           "member": "string",
           "name": "Privileges",
           "required": true,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         }
       ],
       "usage": "in"
@@ -2270,90 +2264,90 @@
         {
           "disabled": false,
           "document": "用户名",
-          "example": "无",
+          "example": "oss_user",
           "member": "string",
           "name": "UserName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "用户可以从哪台主机登录（对应 MySQL 用户的 host 字段，UserName + Host 唯一标识一个用户，IP形式，IP段以%结尾；支持填入%；为空默认等于%）",
-          "example": "无",
+          "example": "%",
           "member": "string",
           "name": "Host",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "用户备注信息",
-          "example": "无",
+          "example": "oss测试账号",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "创建时间",
-          "example": "无",
+          "example": "2024-11-19 15:04:00",
           "member": "datetime",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "最后更新时间",
-          "example": "无",
+          "example": "2024-11-19 15:05:00",
           "member": "datetime",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "只读标记，0：否， 1：该账号的sql请求优先选择备机执行，备机不可用时选择主机执行，2：优先选择备机执行，备机不可用时操作失败。",
-          "example": "无",
+          "example": "2",
           "member": "int64",
           "name": "ReadOnly",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "如果备机延迟超过本参数设置值，系统将认为备机发生故障\n建议该参数值大于10。当ReadOnly选择1、2时该参数生效。",
-          "example": "无",
+          "example": "100",
           "member": "int64",
           "name": "DelayThresh",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "针对只读账号，设置策略是否固定备机，0：不固定备机，即备机不满足条件与客户端不断开连接，Proxy选择其他可用备机，1：备机不满足条件断开连接，确保一个连接固定备机。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "SlaveConst",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "用户最大连接数，0代表无限制\t",
-          "example": "无",
+          "example": "1000",
           "member": "int64",
           "name": "MaxUserConnections",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -3186,22 +3180,20 @@
         {
           "disabled": false,
           "document": "权限信息",
-          "example": "[]",
+          "example": "[\"ALTER\", \"INSERT\", \"CREATE\", \"SHOW VIEW\"]",
           "member": "string",
           "name": "Privileges",
           "required": true,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         },
         {
           "disabled": false,
           "document": "数据库名",
-          "example": "test",
+          "example": "pre_oss",
           "member": "string",
           "name": "Database",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -8240,7 +8232,7 @@
         {
           "disabled": false,
           "document": "参数限制",
-          "example": "无",
+          "example": "{\"Enum\":\"\",\"Range\":{\"Max\":\"10\",\"Min\":\"0.05\"},\"String\":\"\",\"Type\":\"section\"}",
           "member": "ParamConstraint",
           "name": "Constraint",
           "output_required": true,
@@ -8657,9 +8649,10 @@
         {
           "disabled": false,
           "document": "标签键key",
-          "example": "无",
+          "example": "qta-tdsql20",
           "member": "string",
           "name": "TagKey",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -8667,9 +8660,10 @@
         {
           "disabled": false,
           "document": "标签值value",
-          "example": "无",
+          "example": "tdsql50",
           "member": "string",
           "name": "TagValue",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -9093,7 +9087,7 @@
         {
           "disabled": false,
           "document": "语句校验和，用于查询详情",
-          "example": "无",
+          "example": "166258302",
           "member": "string",
           "name": "CheckSum",
           "output_required": true,
@@ -9103,7 +9097,7 @@
         {
           "disabled": false,
           "document": "数据库名称",
-          "example": "无",
+          "example": "pre_oss",
           "member": "string",
           "name": "Db",
           "output_required": true,
@@ -9113,7 +9107,7 @@
         {
           "disabled": false,
           "document": "抽象的SQL语句",
-          "example": "无",
+          "example": "select id, f?, sleep(?) from t? where id % ? = ?",
           "member": "string",
           "name": "FingerPrint",
           "output_required": true,
@@ -9123,7 +9117,7 @@
         {
           "disabled": false,
           "document": "平均的锁时间",
-          "example": "无",
+          "example": "0.000101",
           "member": "string",
           "name": "LockTimeAvg",
           "output_required": true,
@@ -9133,7 +9127,7 @@
         {
           "disabled": false,
           "document": "最大锁时间",
-          "example": "无",
+          "example": "0.000101",
           "member": "string",
           "name": "LockTimeMax",
           "output_required": true,
@@ -9143,7 +9137,7 @@
         {
           "disabled": false,
           "document": "最小锁时间",
-          "example": "无",
+          "example": "0.000101",
           "member": "string",
           "name": "LockTimeMin",
           "output_required": true,
@@ -9153,7 +9147,7 @@
         {
           "disabled": false,
           "document": "锁时间总和",
-          "example": "无",
+          "example": "0.000101",
           "member": "string",
           "name": "LockTimeSum",
           "output_required": true,
@@ -9163,7 +9157,7 @@
         {
           "disabled": false,
           "document": "查询次数",
-          "example": "无",
+          "example": "1",
           "member": "string",
           "name": "QueryCount",
           "output_required": true,
@@ -9173,7 +9167,7 @@
         {
           "disabled": false,
           "document": "平均查询时间",
-          "example": "无",
+          "example": "2.00033",
           "member": "string",
           "name": "QueryTimeAvg",
           "output_required": true,
@@ -9183,7 +9177,7 @@
         {
           "disabled": false,
           "document": "最大查询时间",
-          "example": "无",
+          "example": "2.00033",
           "member": "string",
           "name": "QueryTimeMax",
           "output_required": true,
@@ -9193,7 +9187,7 @@
         {
           "disabled": false,
           "document": "最小查询时间",
-          "example": "无",
+          "example": "2.00033",
           "member": "string",
           "name": "QueryTimeMin",
           "output_required": true,
@@ -9203,7 +9197,7 @@
         {
           "disabled": false,
           "document": "查询时间总和",
-          "example": "无",
+          "example": "2.00033",
           "member": "string",
           "name": "QueryTimeSum",
           "output_required": true,
@@ -9213,7 +9207,7 @@
         {
           "disabled": false,
           "document": "扫描行数",
-          "example": "无",
+          "example": "4",
           "member": "string",
           "name": "RowsExaminedSum",
           "output_required": true,
@@ -9223,7 +9217,7 @@
         {
           "disabled": false,
           "document": "发送行数",
-          "example": "无",
+          "example": "2",
           "member": "string",
           "name": "RowsSentSum",
           "output_required": true,
@@ -9233,7 +9227,7 @@
         {
           "disabled": false,
           "document": "最后执行时间",
-          "example": "无",
+          "example": "2022-03-09 19:37:35",
           "member": "string",
           "name": "TsMax",
           "output_required": true,
@@ -9243,7 +9237,7 @@
         {
           "disabled": false,
           "document": "首次执行时间",
-          "example": "无",
+          "example": "2022-03-09 19:37:35",
           "member": "string",
           "name": "TsMin",
           "output_required": true,
@@ -9253,7 +9247,7 @@
         {
           "disabled": false,
           "document": "账号",
-          "example": "无",
+          "example": "user_00",
           "member": "string",
           "name": "User",
           "output_required": true,
@@ -9263,7 +9257,7 @@
         {
           "disabled": false,
           "document": "样例Sql\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "select id, f1, sleep(1) from t1 where id % 2 = 1",
           "member": "string",
           "name": "ExampleSql",
           "output_required": true,
@@ -9528,22 +9522,20 @@
         {
           "disabled": false,
           "document": "数据库名",
-          "example": "test",
+          "example": "pre_oss",
           "member": "string",
           "name": "Database",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "数据库表名",
-          "example": "test",
+          "example": "work_flow",
           "member": "string",
           "name": "Table",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -9552,8 +9544,7 @@
           "member": "string",
           "name": "Privileges",
           "required": true,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         }
       ],
       "usage": "in"
@@ -10222,32 +10213,29 @@
         {
           "disabled": false,
           "document": "数据库名",
-          "example": "test",
+          "example": "pre_oss",
           "member": "string",
           "name": "Database",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "数据库视图名",
-          "example": "test",
+          "example": "work_view",
           "member": "string",
           "name": "View",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "权限信息",
-          "example": "[]",
+          "example": "[\"SELECT\"]",
           "member": "string",
           "name": "Privileges",
           "required": true,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         }
       ],
       "usage": "in"

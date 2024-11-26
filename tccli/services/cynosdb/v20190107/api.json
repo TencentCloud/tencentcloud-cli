@@ -16449,7 +16449,7 @@
         {
           "disabled": false,
           "document": "端口",
-          "example": "1234",
+          "example": "3306",
           "member": "string",
           "name": "Port",
           "required": true,
@@ -16458,7 +16458,7 @@
         {
           "disabled": false,
           "document": "安全组ID ",
-          "example": "[Security1,Security2,Security3]",
+          "example": " [\"sg-nm4bjh11\",\"sg-nm4bjh22\"]",
           "member": "string",
           "name": "SecurityGroupIds",
           "required": false,
@@ -16473,11 +16473,11 @@
         {
           "disabled": false,
           "document": "开启流程ID",
-          "example": "12345",
-          "member": "string",
+          "example": "147287",
+          "member": "int64",
           "name": "FlowId",
           "output_required": true,
-          "type": "string",
+          "type": "int",
           "value_allowed_null": false
         },
         {

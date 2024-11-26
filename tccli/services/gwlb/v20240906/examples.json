@@ -11,7 +11,7 @@
     "CreateGatewayLoadBalancer": [
       {
         "document": "在私有网络中创建一个网关负载均衡",
-        "input": "POST / HTTP/1.1\nHost: gwlb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateGatewayLoadBalancer\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-30xq****\",\n    \"SubnetId\": \"subnet-****\",\n    \"LoadBalancerName\": \"test\"\n}",
+        "input": "POST / HTTP/1.1\nHost: gwlb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateGatewayLoadBalancer\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-30xq****\",\n    \"SubnetId\": \"subnet-****\",\n    \"LoadBalancerName\": \"the_name_of_gwlb\"\n}",
         "output": "{\n    \"Response\": {\n        \"LoadBalancerIds\": [\n            \"gwlb-kmfr****\"\n        ],\n        \"DealName\": \"20211230660009761735781\",\n        \"RequestId\": \"7ffa6830-cd1b-4bc4-8e24-1688885f594a\"\n    }\n}",
         "title": "创建一个网关负载均衡实例"
       }
@@ -43,7 +43,7 @@
     "DeregisterTargetGroupInstances": [
       {
         "document": "",
-        "input": "https://gwlb.tencentcloudapi.com/?Action=DeregisterTargetGroupInstances\n&TargetGroupId=lbtg-815iz538\n&TargetGroupInstances.0.BindIP=172.16.0.34\n&TargetGroupInstances.0.Port=1234\n&<公共请求参数>",
+        "input": "https://gwlb.tencentcloudapi.com/?Action=DeregisterTargetGroupInstances\n&TargetGroupId=lbtg-815iz538\n&TargetGroupInstances.0.BindIP=172.16.0.34\n&TargetGroupInstances.0.Port=8080\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"4b4987ca-58d0-4bad-9ded-344fa4011bda\"\n    }\n}",
         "title": "从目标组中解绑服务器"
       }
@@ -51,8 +51,8 @@
     "DescribeGatewayLoadBalancers": [
       {
         "document": "指定实例ID查询网关负载均衡",
-        "input": "POST / HTTP/1.1\nHost: gwlb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGatewayLoadBalancers\n<公共请求参数>\n\n{\n    \"LoadBalancerIds\": [\n        \"abc\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"LoadBalancerSet\": [\n            {\n                \"LoadBalancerId\": \"abc\",\n                \"LoadBalancerName\": \"abc\",\n                \"Vips\": [\n                    \"abc\"\n                ],\n                \"SubnetId\": \"abc\",\n                \"Status\": 1,\n                \"DeleteProtect\": true,\n                \"TargetGroupId\": \"abc\",\n                \"VpcId\": \"abc\",\n                \"Tags\": [\n                    {\n                        \"TagKey\": \"abc\",\n                        \"TagValue\": \"abc\"\n                    }\n                ],\n                \"CreateTime\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: gwlb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGatewayLoadBalancers\n<公共请求参数>\n\n{\n    \"LoadBalancerIds\": [\n        \"gwlb-9cpkxxxx\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"LoadBalancerSet\": [\n            {\n                \"LoadBalancerId\": \"gwlb-9cpkxxxx\",\n                \"LoadBalancerName\": \"the_name_of_gwlb\",\n                \"Status\": 1,\n                \"SubnetId\": \"subnet-gbi70xxx\",\n                \"TargetGroupId\": null,\n                \"VpcId\": \"vpc-rdiw0xxx\",\n                \"Vips\": [\n                    \"10.0.0.1\"\n                ],\n                \"CreateTime\": \"2024-11-26 16:40:42\",\n                \"Tags\": null,\n                \"DeleteProtect\": false,\n                \"ChargeType\": \"POSTPAID_BY_HOUR\",\n                \"Isolation\": 0,\n                \"IsolatedTime\": null\n            }\n        ],\n        \"RequestId\": \"7c28eba2-f0d0-427e-9bc2-f44c035825b5\"\n    }\n}",
         "title": "指定实例ID查询网关负载均衡"
       }
     ],

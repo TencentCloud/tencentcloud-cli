@@ -1040,7 +1040,7 @@
         {
           "disabled": false,
           "document": "网关分组ID列表",
-          "example": "无",
+          "example": "group-4se0czf7",
           "member": "string",
           "name": "GroupIds",
           "required": true,
@@ -1058,7 +1058,7 @@
           "example": "true",
           "member": "bool",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -1197,7 +1197,7 @@
         {
           "disabled": false,
           "document": "当资源类型 Type 是 Service 或 Route 的时候，传入的服务或路由的列表",
-          "example": "无",
+          "example": "2a212560-220a-46f6-b139-3238eb8ea041",
           "member": "string",
           "name": "List",
           "required": false,
@@ -2297,7 +2297,7 @@
           "example": "group-2e781178",
           "member": "string",
           "name": "GroupId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2307,7 +2307,7 @@
           "example": "无",
           "member": "CloudNativeAPIGatewayNodeConfig",
           "name": "NodeConfig",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -2317,17 +2317,17 @@
           "example": "2021-09-09 11:52:30",
           "member": "string",
           "name": "BindTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "网关分组名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "公网入口",
           "member": "string",
           "name": "GroupName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2337,7 +2337,7 @@
           "example": "bound",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -4974,7 +4974,7 @@
         {
           "disabled": false,
           "document": "子网id",
-          "example": "无",
+          "example": "subnet-a1vba21z",
           "member": "string",
           "name": "SubnetId",
           "required": true,
@@ -5019,6 +5019,7 @@
           "example": "无",
           "member": "CreateCloudNativeAPIGatewayServerGroupResult",
           "name": "Result",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -6039,6 +6040,7 @@
           "example": "无",
           "member": "DeleteNativeGatewayServerGroupResult",
           "name": "Result",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -6211,6 +6213,7 @@
           "example": "无",
           "member": "ListCloudNativeAPIGatewayStrategyResult",
           "name": "Result",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -6274,6 +6277,7 @@
           "example": "无",
           "member": "ListCloudNativeAPIGatewayStrategyBindingGroupInfoResult",
           "name": "Result",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -6722,7 +6726,7 @@
           "example": "无",
           "member": "DescribeCloudNativeAPIGatewayResult",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -9054,7 +9058,7 @@
         },
         {
           "disabled": false,
-          "document": "翻页从第几个开始获取",
+          "document": "偏移量，默认为 0。",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -9063,7 +9067,7 @@
         },
         {
           "disabled": false,
-          "document": "翻页获取多少个",
+          "document": "返回数量，默认为 20。",
           "example": "20",
           "member": "uint64",
           "name": "Limit",
@@ -9072,7 +9076,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤参数",
+          "document": "过滤参数，支持按照分组名称、分组ID（Name、GroupId）筛选",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -9091,7 +9095,7 @@
           "example": "无",
           "member": "NativeGatewayServerGroups",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -9565,7 +9569,7 @@
         {
           "disabled": false,
           "document": "网关ID",
-          "example": "gateway-xxxxxxxx",
+          "example": "gateway-dde03767",
           "member": "string",
           "name": "GatewayId",
           "required": true,
@@ -9574,7 +9578,7 @@
         {
           "disabled": false,
           "document": "网关服务名称",
-          "example": "test",
+          "example": "service1",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -12801,7 +12805,7 @@
         {
           "disabled": false,
           "document": "服务来源的名字\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "tse-polaris",
           "member": "string",
           "name": "SourceName",
           "output_required": false,
@@ -14265,7 +14269,7 @@
         {
           "disabled": false,
           "document": "云原生API网关实例ID。",
-          "example": "gateway-xxxxxx",
+          "example": "gateway-dde03767",
           "member": "string",
           "name": "GatewayId",
           "required": true,
@@ -14274,7 +14278,7 @@
         {
           "disabled": false,
           "document": "分组id",
-          "example": "group-xxx2345s",
+          "example": "group-4se0czf7",
           "member": "string",
           "name": "GroupId",
           "required": true,
@@ -14283,7 +14287,7 @@
         {
           "disabled": false,
           "document": "网络类型：\n- Open 公网ipv4\n- Open-IPv6 公网ipv6\n- Internal 内网",
-          "example": "无",
+          "example": "Open",
           "member": "string",
           "name": "NetworkType",
           "required": true,
@@ -14310,7 +14314,7 @@
         {
           "disabled": false,
           "document": "负载均衡描述",
-          "example": "无",
+          "example": "公网入口",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -14337,7 +14341,7 @@
         {
           "disabled": false,
           "document": "网关实例ID",
-          "example": "gateway-xxxxxxxx",
+          "example": "gateway-dde03767",
           "member": "string",
           "name": "GatewayId",
           "required": true,
@@ -14346,7 +14350,7 @@
         {
           "disabled": false,
           "document": "服务名称",
-          "example": "test",
+          "example": "在线学习服务",
           "member": "string",
           "name": "ServiceName",
           "required": true,
@@ -14718,7 +14722,7 @@
         {
           "disabled": false,
           "document": "当资源类型 Type 是 Service 或 Route 的时候，传入的服务或路由的列表",
-          "example": "无",
+          "example": "2a212560-220a-46f6-b139-3238eb8ea041",
           "member": "string",
           "name": "List",
           "required": false,
@@ -15886,7 +15890,7 @@
         {
           "disabled": false,
           "document": "网关分组ID列表",
-          "example": "无",
+          "example": "group-4se0czf7",
           "member": "string",
           "name": "GroupIds",
           "required": true,
@@ -15904,7 +15908,7 @@
           "example": "true",
           "member": "bool",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -16113,7 +16117,7 @@
         {
           "disabled": false,
           "document": "网关ID",
-          "example": "gateway-xxxxxxxx",
+          "example": "gateway-dde03767",
           "member": "string",
           "name": "GatewayId",
           "required": true,
@@ -16122,7 +16126,7 @@
         {
           "disabled": false,
           "document": "网关服务名称",
-          "example": "test",
+          "example": "service1",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -16168,7 +16172,7 @@
         {
           "disabled": false,
           "document": "网关实例ID",
-          "example": "无",
+          "example": "gateway-dde03767",
           "member": "string",
           "name": "GatewayId",
           "required": true,
@@ -16177,7 +16181,7 @@
         {
           "disabled": false,
           "document": "服务名称或ID",
-          "example": "无",
+          "example": "service1",
           "member": "string",
           "name": "Name",
           "required": true,

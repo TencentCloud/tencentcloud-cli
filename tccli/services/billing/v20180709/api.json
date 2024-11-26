@@ -3918,17 +3918,17 @@
           "example": "全产品通用",
           "member": "string",
           "name": "GoodsName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "postPay后付费/prePay预付费/riPay预留实例/空字符串或者\"*\"表示全部模式。如GoodsName为多个商品名以\",\"分割组成的string，而PayMode为\"*\"，表示每一件商品的模式都为\"*\"。",
-          "example": "*",
+          "example": "postPay",
           "member": "string",
           "name": "PayMode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -13253,7 +13253,7 @@
         {
           "disabled": false,
           "document": "代金券id",
-          "example": "123",
+          "example": "FIQJQDYJLMA221ZFOGJ81R",
           "member": "string",
           "name": "VoucherId",
           "required": false,
@@ -13262,7 +13262,7 @@
         {
           "disabled": false,
           "document": "代金券订单id",
-          "example": "123",
+          "example": "20230627799000283860282011",
           "member": "string",
           "name": "CodeId",
           "required": false,
@@ -13271,7 +13271,7 @@
         {
           "disabled": false,
           "document": "商品码",
-          "example": "a",
+          "example": "p_cvm",
           "member": "string",
           "name": "ProductCode",
           "required": false,
@@ -13280,7 +13280,7 @@
         {
           "disabled": false,
           "document": "活动id",
-          "example": "123",
+          "example": "570",
           "member": "string",
           "name": "ActivityId",
           "required": false,
@@ -13289,7 +13289,7 @@
         {
           "disabled": false,
           "document": "代金券名称",
-          "example": "aa",
+          "example": "代金券二期现金券",
           "member": "string",
           "name": "VoucherName",
           "required": false,
@@ -13343,7 +13343,7 @@
         {
           "disabled": false,
           "document": "付费场景PayMode=postPay时：spotpay-竞价实例,\"settle account\"-普通后付费PayMode=prePay时：purchase-包年包月新购，renew-包年包月续费（自动续费），modify-包年包月配置变更(变配）PayMode=riPay时：oneOffFee-预留实例预付，hourlyFee-预留实例每小时扣费，*-支持全部付费场景",
-          "example": "*",
+          "example": "postPay",
           "member": "string",
           "name": "PayScene",
           "required": false,
@@ -13352,7 +13352,7 @@
         {
           "disabled": false,
           "document": "操作人，默认就是用户uin",
-          "example": "aa",
+          "example": "700000866965",
           "member": "string",
           "name": "Operator",
           "required": false,
@@ -13404,13 +13404,13 @@
         },
         {
           "disabled": false,
-          "document": "代金券相关信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "代金券相关信息",
+          "example": "{\"Status\":\"used\",\"PayScene\":\"all\",\"EndTime\":\"2024-04-22 23:59:59\",\"NominalValue\":2000000,\"VoucherId\":\"JTZFEPHBZMRDH33MM45JGU\",\"BeginTime\":\"2022-04-22 00:00:00\",\"ExcludedProducts\":[{\"PayMode\":\"*\",\"GoodsName\":\"Cloud_Market-One_Time\"},{\"PayMode\":\"*\",\"GoodsName\":\"Customer product training\"},{\"PayMode\":\"*\",\"GoodsName\":\"Cloud_Market-Package\"},{\"PayMode\":\"*\",\"GoodsName\":\"Cloud_Market-Package_Cycle\"},{\"PayMode\":\"*\",\"GoodsName\":\"Saving Plan\"},{\"PayMode\":\"*\",\"GoodsName\":\"marketplace image\"},{\"PayMode\":\"*\",\"GoodsName\":\"market\"}],\"OwnerUin\":\"909619400\",\"Balance\":0,\"PayMode\":\"*\",\"ApplicableProducts\":{\"PayMode\":\"*\",\"GoodsName\":\"Common for all products\"}}",
           "member": "VoucherInfos",
           "name": "VoucherInfos",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -13872,17 +13872,17 @@
           "example": "某产品",
           "member": "string",
           "name": "GoodsName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "postPay后付费/prePay预付费/riPay预留实例/空字符串或者\"*\"表示全部模式。",
-          "example": "*",
+          "example": "postPay",
           "member": "string",
           "name": "PayMode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -15504,10 +15504,10 @@
         {
           "disabled": false,
           "document": "代金券拥有者",
-          "example": "aa",
+          "example": "700000866965",
           "member": "string",
           "name": "OwnerUin",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -15517,7 +15517,7 @@
           "example": "unUsed",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -15527,7 +15527,7 @@
           "example": "10000",
           "member": "int64",
           "name": "NominalValue",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -15537,17 +15537,17 @@
           "example": "10000",
           "member": "int64",
           "name": "Balance",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "代金券id",
-          "example": "aa",
+          "example": "VHPIUDFG9GUZDESWPR4W99",
           "member": "string",
           "name": "VoucherId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -15557,17 +15557,17 @@
           "example": "postPay",
           "member": "string",
           "name": "PayMode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "付费场景PayMode=postPay时：spotpay-竞价实例,\"settle account\"-普通后付费PayMode=prePay时：purchase-包年包月新购，renew-包年包月续费（自动续费），modify-包年包月配置变更(变配）PayMode=riPay时：oneOffFee-预留实例预付，hourlyFee-预留实例每小时扣费，*-支持全部付费场景",
-          "example": "*",
+          "example": "common",
           "member": "string",
           "name": "PayScene",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -15577,7 +15577,7 @@
           "example": "2020-01-01",
           "member": "string",
           "name": "BeginTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -15587,29 +15587,29 @@
           "example": "2020-01-01",
           "member": "string",
           "name": "EndTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "适用商品信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "适用商品信息",
+          "example": "{\"GoodsName\": \"全产品通用\",\"PayMode\": \"postPay\"}",
           "member": "ApplicableProducts",
           "name": "ApplicableProducts",
-          "required": true,
+          "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "不适用商品信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "不适用商品信息",
+          "example": "{\"GoodsName\": \"域名注册\",\"PayMode\": \"postPay\"}",
           "member": "ExcludedProducts",
           "name": "ExcludedProducts",
-          "required": true,
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

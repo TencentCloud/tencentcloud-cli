@@ -19,10 +19,10 @@ Output:
             "StrategyList": [
                 {
                     "StrategyId": "strategy-7bb4fcb0",
-                    "StrategyName": "test",
+                    "StrategyName": "双11弹性策略",
                     "CreateTime": "2021-09-09 11:52:30",
                     "ModifyTime": "2021-09-09 11:52:30",
-                    "Description": "测试",
+                    "Description": "双11弹性策略",
                     "GatewayId": "gateway-4a34cf5f",
                     "Config": {
                         "AutoScalerId": "autoscaler-92aaca7b",

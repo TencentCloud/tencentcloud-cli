@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli tse UpdateCloudNativeAPIGatewaySpec --cli-unfold-argument  \
-    --GatewayId gateway-xxxx1234 \
-    --GroupId abc \
-    --NodeConfig.Specification abc \
-    --NodeConfig.Number 0
+    --GatewayId gateway-dde03767 \
+    --GroupId group-4se0czf7 \
+    --NodeConfig.Specification 1c2g \
+    --NodeConfig.Number 5
 ```
 
 Output: 
@@ -17,11 +17,11 @@ Output:
 {
     "Response": {
         "Result": {
-            "GatewayId": "gateway-xxxx1234",
+            "GatewayId": "gateway-dde03767",
             "Status": "Updating",
-            "TaskId": "task-xxxx1234"
+            "TaskId": "task-z31df1dz"
         },
-        "RequestId": "abc"
+        "RequestId": "ffadafb6-545d-461c-ad8c-baa26c0f8955"
     }
 }
 ```

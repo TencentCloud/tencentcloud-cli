@@ -22,7 +22,7 @@ Output:
             "GroupInfos": [
                 {
                     "GroupId": "group-2e781178",
-                    "GroupName": "test",
+                    "GroupName": "公网入口分组",
                     "NodeConfig": {
                         "Specification": "1c2g",
                         "Number": 2

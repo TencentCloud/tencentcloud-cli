@@ -1,5 +1,26 @@
 {
   "actions": {
+    "AddCasterInputInfo": {
+      "document": "该接口用来向导播台中添加一个输入源，该输入源可以是拉流地址、或是一个文件链接",
+      "input": "AddCasterInputInfoRequest",
+      "name": "新增导播台输入源",
+      "output": "AddCasterInputInfoResponse",
+      "status": "online"
+    },
+    "AddCasterLayoutInfo": {
+      "document": "该接口用来增加导播台的布局参数。",
+      "input": "AddCasterLayoutInfoRequest",
+      "name": "增加导播台布局参数",
+      "output": "AddCasterLayoutInfoResponse",
+      "status": "online"
+    },
+    "AddCasterOutputInfo": {
+      "document": "该接口用来新增导播台推流信息。导播台主监启动后，将会将主监画面推向该接口设置的地址。",
+      "input": "AddCasterOutputInfoRequest",
+      "name": "新增导播台推流信息",
+      "output": "AddCasterOutputInfoResponse",
+      "status": "online"
+    },
     "AddDelayLiveStream": {
       "document": "针对大型活动直播，通过对直播流设置延时来控制现场与观众播放画面的时间间隔，避免突发状况造成影响。\n\n注意：如果在推流前设置延播，需要提前5分钟设置，目前该接口只支持流粒度。",
       "input": "AddDelayLiveStreamRequest",
@@ -47,6 +68,13 @@
       "input": "CreateCasterRequest",
       "name": "创建新导播台",
       "output": "CreateCasterResponse",
+      "status": "online"
+    },
+    "CreateCasterInputPushUrl": {
+      "document": "该接口用来生成导播台推流地址",
+      "input": "CreateCasterInputPushUrlRequest",
+      "name": "生成导播台推流URL",
+      "output": "CreateCasterInputPushUrlResponse",
       "status": "online"
     },
     "CreateCommonMixStream": {
@@ -194,6 +222,27 @@
       "input": "DeleteCasterRequest",
       "name": "删除导播台",
       "output": "DeleteCasterResponse",
+      "status": "online"
+    },
+    "DeleteCasterInputInfo": {
+      "document": "该接口用来删除导播台中的输入源信息。",
+      "input": "DeleteCasterInputInfoRequest",
+      "name": "删除导播台输入源信息",
+      "output": "DeleteCasterInputInfoResponse",
+      "status": "online"
+    },
+    "DeleteCasterLayoutInfo": {
+      "document": "该接口用来将布局信息从导播台中删除",
+      "input": "DeleteCasterLayoutInfoRequest",
+      "name": "删除导播台的布局信息",
+      "output": "DeleteCasterLayoutInfoResponse",
+      "status": "online"
+    },
+    "DeleteCasterOutputInfo": {
+      "document": "该接口用来删除导播台的推流信息。\n注：若删除推流到腾讯云直播源站配置，即OutputIndex为0，OutputType为1的推流配置，在重新启动主监后，系统会自动重新生成一个推流到腾讯云直播源站配置。",
+      "input": "DeleteCasterOutputInfoRequest",
+      "name": "删除导播台推流信息",
+      "output": "DeleteCasterOutputInfoResponse",
       "status": "online"
     },
     "DeleteLiveCallbackRule": {
@@ -392,11 +441,32 @@
       "output": "DescribeCasterDisplayInfoResponse",
       "status": "online"
     },
+    "DescribeCasterInputInfos": {
+      "document": "该接口用来查询导播台的输入源信息列表。",
+      "input": "DescribeCasterInputInfosRequest",
+      "name": "查询导播台输入源信息列表",
+      "output": "DescribeCasterInputInfosResponse",
+      "status": "online"
+    },
+    "DescribeCasterLayoutInfos": {
+      "document": "该接口用来查询某个导播台的布局列表",
+      "input": "DescribeCasterLayoutInfosRequest",
+      "name": "查询导播台的布局列表",
+      "output": "DescribeCasterLayoutInfosResponse",
+      "status": "online"
+    },
     "DescribeCasterList": {
       "document": "该接口用来查询账号下所有的导播台列表",
       "input": "DescribeCasterListRequest",
       "name": "查询导播台列表",
       "output": "DescribeCasterListResponse",
+      "status": "online"
+    },
+    "DescribeCasterOutputInfos": {
+      "document": "该接口用来查询某个导播台的推流信息列表。",
+      "input": "DescribeCasterOutputInfosRequest",
+      "name": "查询导播台的推流信息列表",
+      "output": "DescribeCasterOutputInfosResponse",
       "status": "online"
     },
     "DescribeCasterPlayUrl": {
@@ -980,6 +1050,27 @@
       "output": "ModifyCasterResponse",
       "status": "online"
     },
+    "ModifyCasterInputInfo": {
+      "document": "该接口用来修改已经设置过的输入源信息，如源地址，源类型等。\n设置前，需保证待修改的输入源已经存在。若不存在，需使用AddCasterInputInfo接口。",
+      "input": "ModifyCasterInputInfoRequest",
+      "name": "修改导播台输入源信息",
+      "output": "ModifyCasterInputInfoResponse",
+      "status": "online"
+    },
+    "ModifyCasterLayoutInfo": {
+      "document": "该接口用来修改布局参数",
+      "input": "ModifyCasterLayoutInfoRequest",
+      "name": "修改布局参数",
+      "output": "ModifyCasterLayoutInfoResponse",
+      "status": "online"
+    },
+    "ModifyCasterOutputInfo": {
+      "document": "该接口用来修改导播台的推流信息。\n注：只有在主监启动前设置才生效，主监启动后设置，下次推流生效。",
+      "input": "ModifyCasterOutputInfoRequest",
+      "name": "修改导播台推流信息",
+      "output": "ModifyCasterOutputInfoResponse",
+      "status": "online"
+    },
     "ModifyLiveCallbackTemplate": {
       "document": "修改回调模板。",
       "input": "ModifyLiveCallbackTemplateRequest",
@@ -1177,6 +1268,134 @@
     "serviceShortName": "live"
   },
   "objects": {
+    "AddCasterInputInfoRequest": {
+      "document": "AddCasterInputInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "导播台ID。",
+          "example": "1234",
+          "member": "uint64",
+          "name": "CasterId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "导播台输入源详细信息。",
+          "example": "无",
+          "member": "CasterInputInfo",
+          "name": "InputInfo",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "AddCasterInputInfoResponse": {
+      "document": "AddCasterInputInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "rtmp协议输入源播放地址。\n注：仅可作为预览使用，不可分发。",
+          "example": "rtmp://www.example.com/live/example",
+          "member": "string",
+          "name": "InputPlayUrl",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "webrtc协议播放地址。\n注：\n1. 需配合使用腾讯云快直播播放SDK使用才可正常播放。\n2. 仅作为预览使用，不可分发。",
+          "example": "webrtc://webrtc.example.com/live/example",
+          "member": "string",
+          "name": "InputWebRTCPlayUrl",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddCasterLayoutInfoRequest": {
+      "document": "AddCasterLayoutInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "导播台ID",
+          "example": "1234",
+          "member": "uint64",
+          "name": "CasterId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "导播台布局参数信息。",
+          "example": "无",
+          "member": "CasterLayoutInfo",
+          "name": "LayoutInfo",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "AddCasterLayoutInfoResponse": {
+      "document": "AddCasterLayoutInfo返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddCasterOutputInfoRequest": {
+      "document": "AddCasterOutputInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "导播台ID",
+          "example": "1234",
+          "member": "uint64",
+          "name": "CasterId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "导播台推流参数信息。",
+          "example": "无",
+          "member": "CasterOutputInfo",
+          "name": "OutputInfo",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "AddCasterOutputInfoResponse": {
+      "document": "AddCasterOutputInfo返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "AddDelayLiveStreamRequest": {
       "document": "AddDelayLiveStream请求参数结构体",
       "members": [
@@ -2390,6 +2609,349 @@
       ],
       "usage": "out"
     },
+    "CasterInputInfo": {
+      "document": "导播台输入信息参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "输入源Index。\n范围[1, 20]",
+          "example": "无",
+          "member": "int64",
+          "name": "InputIndex",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "输入源类型。\n范围[0,1,2,3,4]。\n0：推流地址。\n1：点播文件地址。\n2：直播拉流地址。\n3：图片地址。\n4：webrtc协议推流地址。",
+          "example": "无",
+          "member": "int64",
+          "name": "InputType",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "输入源的源地址。\n最大允许长度512。\n当InputType为0（推流地址），2（直播拉流地址），3（图片地址）,4（webrtc推流地址）这几种类型时，URL需填入该字段。\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InputUrl",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "输入源描述。\n最大允许长度256字符。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "点播地址列表。仅当input type为1（点播地址）时，将一个或多个点播地址，填入该字段。\n单个地址最大允许长度512字符。\n最多允许同时填入5个地址。\n注：此时需保持InputUrl字段为空。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InputUrls",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否启用点播无限循环播放。\n注：当前该字段未生效，默认为True。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "LoopEnable",
+          "output_required": true,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "点播循环次数。\n允许值-1或正整数。\n当值为-1时，表示无限循环。\n当值为其他正整数时，表示循环对应次数。\n注：该字段暂未生效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "LoopNumber",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否启用拉取到导播台。\n注：该字段默认强制为true。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "PullPushEnable",
+          "output_required": true,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "输入源音量百分比。\n默认为100。表示音量为原始大小。\n允许值[0,200]。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Volume",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "CasterLayoutInfo": {
+      "document": "导播台布局参数。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "布局Index。",
+          "example": "1",
+          "member": "int64",
+          "name": "LayoutIndex",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "布局模板Id。\n有效值[1，20，21，31，32，41]\n当使用布局模版时，无需LayoutParams参数，导播台将使用模版布局参数。\n",
+          "example": "21",
+          "member": "int64",
+          "name": "LayoutTemplateId",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "布局绑定的输入列表。按布局LayerId从小到大，按顺序排列。\n已有两个画面的布局为例，输入1对应LayerId为1，输入2对应的LayerId为2，该字段应该填入\"1|2\"。",
+          "example": "1|2",
+          "member": "string",
+          "name": "InputIndexList",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "详细的布局参数列表。",
+          "example": "1",
+          "member": "CasterLayoutParam",
+          "name": "LayoutParams",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "布局输出的宽度，单位为像素。\n默认为1280像素。\n注：该值仅在画中画布局，且未设置PgmWidth时生效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1080",
+          "member": "uint64",
+          "name": "LayoutWidth",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "布局输出的高度，单位为像素。\n注：该参数仅在画中画布局，且未设置PgmHeight时生效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1920",
+          "member": "uint64",
+          "name": "LayoutHeight",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "CasterLayoutParam": {
+      "document": "导播台布局详细参数。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "布局层ID。\n在画面最终渲染时，将按ID从小到大的顺序，由下至上渲染。",
+          "example": "1",
+          "member": "int64",
+          "name": "LayerId",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "布局层宽度。\n当该值为大于1的整数值时，单位为像素，允许范围[1,1920]。\n当该值为小于1大于0的小数时，单位为百分比，表示该层在最终画面上所占的比例值。",
+          "example": "1080",
+          "member": "float",
+          "name": "LayerWidth",
+          "output_required": true,
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "布局层高度.\n当该值为大于1的整数值时，单位为像素，允许范围[1,1920]。\n当该值为小于1大于0的小数时，单位为百分比，表示该层在最终画面上所占的比例值。",
+          "example": "1920",
+          "member": "float",
+          "name": "LayerHeight",
+          "output_required": true,
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "布局层位置x坐标。\n当该值为大于1的整数值时，单位为像素，允许范围[1,1920]。\n当该值为小于1大于0的小数时，单位为百分比，表示该层在最终画面上x坐标所占的比例值。",
+          "example": "0",
+          "member": "float",
+          "name": "LayerLocationX",
+          "output_required": true,
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "布局层位置Y坐标。\n当该值为大于1的整数值时，单位为像素，允许范围[1,1920]。\n当该值为小于1大于0的小数时，单位为百分比，表示该层在最终画面Y坐标上所占的比例值。",
+          "example": "0",
+          "member": "float",
+          "name": "LayerLocationY",
+          "output_required": true,
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否启用抠图。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "False",
+          "member": "bool",
+          "name": "UsePortraitSegment",
+          "output_required": true,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "CasterOutputInfo": {
+      "document": "导播台推流信息。\n当导播台主监启动后，系统将自动将主监推流到腾讯云和其他第三方平台。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "推流信息Index。\n当OutputType为1（表示推流到腾讯云直播）时，该值固定为0。\n范围[0,10]。",
+          "example": "0",
+          "member": "uint64",
+          "name": "OutputIndex",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "rtmp协议推流地址。\n最大允许长度512字符。",
+          "example": "rtmp://www.example.com/live/example",
+          "member": "string",
+          "name": "OutputUrl",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "描述信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "example",
+          "member": "string",
+          "name": "Description",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "推流到腾讯云直播源站时，使用的流ID。\n仅当OutputType为1时生效。\n最大允许128字符。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "caster_output",
+          "member": "string",
+          "name": "OutputStreamId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "推流类型。\n范围[1,2]\n1. 推送到腾讯云直播源站。\n2. 推送到第三方源站。",
+          "example": "1",
+          "member": "uint64",
+          "name": "OutputType",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "推到腾讯云直播源站时，使用的域名。\n最大允许128字符，且域名需属于当前账号绑定的云直播推流域名。\n仅在OutputType为1时生效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1234.livepush.myqcloud.com",
+          "member": "string",
+          "name": "OutputDomainName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "推到腾讯云直播源站时，使用的AppName。\n最大允许64字符。\n仅在OutputType为1时生效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "live",
+          "member": "string",
+          "name": "OutputAppName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "推到腾讯云直播源站时需要添加的推流参数。\n最大允许长度256字符。\n仅在OutputType为1时生效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "example_param=xxx",
+          "member": "string",
+          "name": "OutputParam",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "CdnPlayStatData": {
       "document": "下行播放统计指标",
       "members": [
@@ -2972,6 +3534,61 @@
           "name": "CasterId",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCasterInputPushUrlRequest": {
+      "document": "CreateCasterInputPushUrl请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "导播台ID",
+          "example": "1234",
+          "member": "uint64",
+          "name": "CasterId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "请求生成推流地址的输入Index。\n允许范围[1,20]。",
+          "example": "1",
+          "member": "uint64",
+          "name": "InputIndex",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "生成推流地址协议。\n范围[rtmp,webrtc]。\n注：获取webrtc推流地址时，需配合腾讯云快直播推流sdk才可成功推流。",
+          "example": "rtmp",
+          "member": "string",
+          "name": "Protocol",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCasterInputPushUrlResponse": {
+      "document": "CreateCasterInputPushUrl返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "生成可使用的推流地址。",
+          "example": "rtmp://www.example.com/live/stream_id?bizid=xxx",
+          "member": "string",
+          "name": "PushUrl",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -5259,6 +5876,114 @@
       ],
       "usage": "out"
     },
+    "DeleteCasterInputInfoRequest": {
+      "document": "DeleteCasterInputInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "导播台ID",
+          "example": "1234",
+          "member": "uint64",
+          "name": "CasterId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "导播台输入Index。\n范围[0,20]\n注：该Index对应的输入源需存在。",
+          "example": "1",
+          "member": "uint64",
+          "name": "InputIndex",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCasterInputInfoResponse": {
+      "document": "DeleteCasterInputInfo返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCasterLayoutInfoRequest": {
+      "document": "DeleteCasterLayoutInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "导播台ID。",
+          "example": "1234",
+          "member": "uint64",
+          "name": "CasterId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "要删除的布局Index。\n注：待删除的Index对应的布局需存在。",
+          "example": "1",
+          "member": "uint64",
+          "name": "LayoutIndex",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCasterLayoutInfoResponse": {
+      "document": "DeleteCasterLayoutInfo返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCasterOutputInfoRequest": {
+      "document": "DeleteCasterOutputInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "导播台ID。",
+          "example": "1234",
+          "member": "uint64",
+          "name": "CasterId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "待删除的推流信息Index。\n注：删除时，该Index对应的配置需要存在。",
+          "example": "1",
+          "member": "uint64",
+          "name": "OutputIndex",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCasterOutputInfoResponse": {
+      "document": "DeleteCasterOutputInfo返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteCasterRequest": {
       "document": "DeleteCaster请求参数结构体",
       "members": [
@@ -6502,6 +7227,80 @@
       ],
       "type": "object"
     },
+    "DescribeCasterInputInfosRequest": {
+      "document": "DescribeCasterInputInfos请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "导播台ID",
+          "example": "1234",
+          "member": "uint64",
+          "name": "CasterId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCasterInputInfosResponse": {
+      "document": "DescribeCasterInputInfos返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "导播台输入源信息列表。",
+          "example": "无",
+          "member": "CasterInputInfo",
+          "name": "InputInfos",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCasterLayoutInfosRequest": {
+      "document": "DescribeCasterLayoutInfos请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "导播台ID。",
+          "example": "1234",
+          "member": "uint64",
+          "name": "CasterId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCasterLayoutInfosResponse": {
+      "document": "DescribeCasterLayoutInfos返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "导播台的布局列表。",
+          "example": "无",
+          "member": "CasterLayoutInfo",
+          "name": "LayoutInfos",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeCasterListRequest": {
       "document": "DescribeCasterList请求参数结构体",
       "members": [],
@@ -6517,6 +7316,43 @@
           "member": "CasterBriefInfo",
           "name": "CasterList",
           "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCasterOutputInfosRequest": {
+      "document": "DescribeCasterOutputInfos请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "导播台ID。",
+          "example": "1234",
+          "member": "uint64",
+          "name": "CasterId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCasterOutputInfosResponse": {
+      "document": "DescribeCasterOutputInfos返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "导播台的推流信息列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CasterOutputInfo",
+          "name": "OutputInfos",
+          "output_required": false,
           "type": "list",
           "value_allowed_null": true
         },
@@ -13256,6 +14092,134 @@
         }
       ],
       "usage": "in"
+    },
+    "ModifyCasterInputInfoRequest": {
+      "document": "ModifyCasterInputInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "导播台ID。",
+          "example": "1234",
+          "member": "uint64",
+          "name": "CasterId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "修改的导播台输入源信息",
+          "example": "无",
+          "member": "CasterInputInfo",
+          "name": "InputInfo",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCasterInputInfoResponse": {
+      "document": "ModifyCasterInputInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "修改输入源后的预览地址。\n注：该地址仅作为预览使用，不可分发。",
+          "example": "rtmp://www.example.com/live/stream_id",
+          "member": "string",
+          "name": "InputPlayUrl",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "修改后的输入源webrtc预览地址。\n该地址需配合腾讯云快直播播放SDK使用。\n注：该地址仅做预览使用，不可分发。",
+          "example": "webrtc://www.webrtc.example.com/live/stream_id",
+          "member": "string",
+          "name": "InputWebRTCPlayUrl",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCasterLayoutInfoRequest": {
+      "document": "ModifyCasterLayoutInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "导播台ID。",
+          "example": "1234",
+          "member": "uint64",
+          "name": "CasterId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "导播台布局参数信息。",
+          "example": "无",
+          "member": "CasterLayoutInfo",
+          "name": "LayoutInfo",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCasterLayoutInfoResponse": {
+      "document": "ModifyCasterLayoutInfo返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCasterOutputInfoRequest": {
+      "document": "ModifyCasterOutputInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "导播台ID。",
+          "example": "1234",
+          "member": "uint64",
+          "name": "CasterId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "导播台推流参数信息。",
+          "example": "无",
+          "member": "CasterOutputInfo",
+          "name": "OutputInfo",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCasterOutputInfoResponse": {
+      "document": "ModifyCasterOutputInfo返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ModifyCasterRequest": {
       "document": "ModifyCaster请求参数结构体",

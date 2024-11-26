@@ -36,7 +36,7 @@ Output:
                         {
                             "ServiceID": "6abf620f-c6b9-4440-b90c-56c165225cfc",
                             "ServiceName": "svc1",
-                            "UpstreamName": "abc",
+                            "UpstreamName": "upstream1",
                             "Percent": 0
                         }
                     ],

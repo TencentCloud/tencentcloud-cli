@@ -34,10 +34,10 @@
     ],
     "CreateAttributeLabel": [
       {
-        "document": "创建知识标签",
-        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAttributeLabel\n<公共请求参数>\n\n{\n    \"BotBizId\": \"1696822786072117248\",\n    \"AttrKey\": \"test\",\n    \"AttrName\": \"诶皮爱标签\",\n    \"Labels\": [\n        {\n            \"LabelName\": \"你好\",\n            \"SimilarLabels\": [\n                \"车型a\"\n            ]\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"802c3847-9781-4818-959a-aff3035d22fc\"\n    }\n}",
-        "title": "创建知识标签"
+        "document": "创建标签",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAttributeLabel\n<公共请求参数>\n\n{\n    \"BotBizId\": \"1851816552255193088\",\n    \"AttrName\": \"哈哈哈\",\n    \"Labels\": [\n        {\n            \"LabelName\": \"的点点滴滴\",\n            \"SimilarLabels\": [\n                \"dfdf\",\n                \"发的\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"AttrBizId\": \"1856169972235990080\",\n        \"RequestId\": \"044de4f1-8d88-4779-b9f7-b8c0e9f81752\"\n    }\n}",
+        "title": "创建标签"
       }
     ],
     "CreateCorp": [
@@ -156,7 +156,7 @@
       {
         "document": "接口调用折线图",
         "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCallStatsGraph\n<公共请求参数>\n\n{\n    \"ModelName\": \"cs-normal\",\n    \"StartTime\": \"1726070400\",\n    \"EndTime\": \"1726156799\"\n}",
-        "output": "{\n    \"Response\": {\n        \"List\": [],\n        \"RequestId\": \"85e7259e-7810-4301-8f44-cf2d94ec0a0f\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"X\": \"202411190930\",\n                \"Y\": 12\n            },\n            {\n                \"X\": \"202411190915\",\n                \"Y\": 11\n            }\n        ],\n        \"RequestId\": \"85e7259e-7810-4301-8f44-cf2d94ec0a0f\"\n    }\n}",
         "title": "接口调用折线图"
       }
     ],
@@ -172,7 +172,7 @@
       {
         "document": "并发折线图示例",
         "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConcurrencyUsageGraph\n<公共请求参数>\n\n{\n    \"ModelName\": \"cs-normal-70b\",\n    \"StartTime\": \"1724688000\",\n    \"EndTime\": \"1724774400\",\n    \"AppBizIds\": [\n        \"1812732010083385344\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"AvailableY\": [\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0\n        ],\n        \"RequestId\": \"ad439868-ed56-44f5-a716-81cc7402e83e\",\n        \"SuccessCallY\": [\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0\n        ],\n        \"X\": [\n            \"2024082700\",\n            \"2024082701\",\n            \"2024082702\",\n            \"2024082703\",\n            \"2024082704\",\n            \"2024082705\",\n            \"2024082706\",\n            \"2024082707\",\n            \"2024082708\",\n            \"2024082709\",\n            \"2024082710\",\n            \"2024082711\",\n            \"2024082712\",\n            \"2024082713\",\n            \"2024082714\",\n            \"2024082715\",\n            \"2024082716\",\n            \"2024082717\",\n            \"2024082718\",\n            \"2024082719\",\n            \"2024082720\",\n            \"2024082721\",\n            \"2024082722\",\n            \"2024082723\",\n            \"2024082800\"\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"AvailableY\": [\n            5,\n            4,\n            3\n        ],\n        \"RequestId\": \"ad439868-ed56-44f5-a716-81cc7402e83e\",\n        \"SuccessCallY\": [\n            1,\n            2,\n            3\n        ],\n        \"X\": [\n            \"2024082700\",\n            \"2024082701\",\n            \"2024082702\"\n        ]\n    }\n}",
         "title": "并发折线图示例"
       }
     ],
@@ -204,7 +204,7 @@
       {
         "document": "查询知识库容量饼图",
         "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeKnowledgeUsagePieGraph\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"AvailableCharSize\": \"10000000\",\n        \"List\": [\n            {\n                \"AppName\": \"未使用\",\n                \"Proportion\": 0.9953504,\n                \"UsedCharSize\": \"9953504\"\n            },\n            {\n                \"AppName\": \"企点智能客服02\",\n                \"Proportion\": 0.0016738,\n                \"UsedCharSize\": \"16738\"\n            },\n            {\n                \"AppName\": \"测试下\",\n                \"Proportion\": 0.0016717,\n                \"UsedCharSize\": \"16717\"\n            },\n            {\n                \"AppName\": \"无情三刀\",\n                \"Proportion\": 0.0013041,\n                \"UsedCharSize\": \"13041\"\n            }\n        ],\n        \"RequestId\": \"19cfafe1-489d-40e8-b79f-dc9919ce3ccd\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"AvailableCharSize\": \"10000000\",\n        \"List\": [\n            {\n                \"AppName\": \"未使用\",\n                \"Proportion\": 0.9953504,\n                \"UsedCharSize\": \"9953504\"\n            },\n            {\n                \"AppName\": \"智能客服\",\n                \"Proportion\": 0.0016738,\n                \"UsedCharSize\": \"16738\"\n            },\n            {\n                \"AppName\": \"测试下\",\n                \"Proportion\": 0.0016717,\n                \"UsedCharSize\": \"16717\"\n            },\n            {\n                \"AppName\": \"无情三刀\",\n                \"Proportion\": 0.0013041,\n                \"UsedCharSize\": \"13041\"\n            }\n        ],\n        \"RequestId\": \"19cfafe1-489d-40e8-b79f-dc9919ce3ccd\"\n    }\n}",
         "title": "查询知识库容量饼图"
       }
     ],
@@ -252,7 +252,7 @@
       {
         "document": "搜索服务折线图详情",
         "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSearchStatsGraph\n<公共请求参数>\n\n{\n    \"ModelName\": \"cs-normal\",\n    \"StartTime\": \"1726070400\",\n    \"EndTime\": \"1726156799\"\n}",
-        "output": "{\n    \"Response\": {\n        \"List\": [],\n        \"RequestId\": \"b547fd5a-4d82-4fcc-adb8-899e63c166fc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"X\": \"202411190930\",\n                \"Y\": 23\n            },\n            {\n                \"X\": \"202411190915\",\n                \"Y\": 41\n            }\n        ],\n        \"RequestId\": \"b547fd5a-4d82-4fcc-adb8-899e63c166fc\"\n    }\n}",
         "title": "搜索服务折线图详情"
       }
     ],
@@ -282,7 +282,7 @@
       {
         "document": "获取调用统计",
         "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTokenUsage\n<公共请求参数>\n\n{\n    \"UinAccount\": [\n        \"700001187441\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"ApiCallStats\": 0,\n        \"InputTokenUsage\": 0,\n        \"OutputTokenUsage\": 0,\n        \"RequestId\": \"716109cc-ee93-423a-85f0-a21fb7afcc4f\",\n        \"SearchUsage\": 0,\n        \"TotalTokenUsage\": 0\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ApiCallStats\": 10,\n        \"InputTokenUsage\": 1120,\n        \"OutputTokenUsage\": 101,\n        \"RequestId\": \"716109cc-ee93-423a-85f0-a21fb7afcc4f\",\n        \"SearchUsage\": 10,\n        \"TotalTokenUsage\": 1221\n    }\n}",
         "title": "获取调用统计"
       }
     ],
@@ -290,7 +290,7 @@
       {
         "document": "接口调用折线图详情",
         "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTokenUsageGraph\n<公共请求参数>\n\n{\n    \"ModelName\": \"cs-normal\",\n    \"StartTime\": \"1726070400\",\n    \"EndTime\": \"1726156799\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Input\": [],\n        \"Output\": [],\n        \"RequestId\": \"ed825101-ab0f-4f3d-8803-ce43292be7cb\",\n        \"Total\": []\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": [\n            {\n                \"X\": \"202411190930\",\n                \"Y\": 14896\n            },\n            {\n                \"X\": \"202411190915\",\n                \"Y\": 694\n            },\n            {\n                \"X\": \"202411190945\",\n                \"Y\": 14968\n            },\n            {\n                \"X\": \"202411190935\",\n                \"Y\": 36641\n            }\n        ],\n        \"Input\": [\n            {\n                \"X\": \"202411190945\",\n                \"Y\": 14914\n            },\n            {\n                \"X\": \"202411190935\",\n                \"Y\": 36547\n            },\n            {\n                \"X\": \"202411190930\",\n                \"Y\": 14662\n            },\n            {\n                \"X\": \"202411190915\",\n                \"Y\": 268\n            }\n        ],\n        \"Output\": [\n            {\n                \"X\": \"202411190930\",\n                \"Y\": 234\n            },\n            {\n                \"X\": \"202411190915\",\n                \"Y\": 426\n            },\n            {\n                \"X\": \"202411190945\",\n                \"Y\": 54\n            },\n            {\n                \"X\": \"202411190935\",\n                \"Y\": 94\n            }\n        ],\n        \"RequestId\": \"ed825101-ab0f-4f3d-8803-ce43292be7cb\"\n    }\n}",
         "title": "接口调用折线图详情"
       }
     ],
@@ -353,8 +353,8 @@
     "GetAppSecret": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetAppSecret\n<公共请求参数>\n\n{\n    \"AppBizId\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"AppKey\": \"\",\n        \"CreateTime\": \"\",\n        \"IsRelease\": false,\n        \"HasPermission\": true,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetAppSecret\n<公共请求参数>\n\n{\n    \"AppBizId\": \"1801166480814637056\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AppKey\": \"HuLJbSdLZ\",\n        \"CreateTime\": \"1718266528\",\n        \"IsRelease\": false,\n        \"HasPermission\": true,\n        \"RequestId\": \"ee325589-ef62-4aab-8070-01792336d02a\"\n    }\n}",
         "title": "获取应用密钥"
       }
     ],
@@ -386,7 +386,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetMsgRecord\n<公共请求参数>\n\n{\n    \"Type\": 2,\n    \"Count\": 15,\n    \"SessionId\": \"your session id\",\n    \"LastRecordId\": \"\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Records\": [\n            {\n                \"Content\": \"abc\",\n                \"RecordId\": \"abc\",\n                \"RelatedRecordId\": \"abc\",\n                \"IsFromSelf\": true,\n                \"FromName\": \"abc\",\n                \"FromAvatar\": \"abc\",\n                \"Timestamp\": \"abc\",\n                \"HasRead\": true,\n                \"Score\": 1,\n                \"CanRating\": true,\n                \"Type\": 1,\n                \"References\": [\n                    {\n                        \"Id\": \"abc\",\n                        \"Url\": \"abc\",\n                        \"Type\": 1,\n                        \"Name\": \"abc\",\n                        \"DocId\": \"abc\"\n                    }\n                ],\n                \"Reasons\": [\n                    \"abc\"\n                ],\n                \"IsLlmGenerated\": true,\n                \"ImageUrls\": [\n                    \"\"\n                ]\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Records\": [\n            {\n                \"Content\": \"用户查询\",\n                \"RecordId\": \"9415678e-1ac5-4987-ac86-d8f9c001c93c\",\n                \"RelatedRecordId\": \"H9I_20241107_201302_963_b8oJXfpL\",\n                \"IsFromSelf\": true,\n                \"FromName\": \"用户A\",\n                \"FromAvatar\": \"https://qidian-qbot-xxxxxx.cos.ap-guangzhou.myqcloud.com/public/174434244193038090240/1801166482343244637056/image/jNVJvoXsTsBzo2324324121HZdgd-1816016475183120384.png\",\n                \"Timestamp\": \"1730981587\",\n                \"HasRead\": true,\n                \"Score\": 1,\n                \"CanRating\": true,\n                \"Type\": 1,\n                \"References\": [\n                    {\n                        \"Id\": \"1856329177919861888\",\n                        \"Url\": \"\",\n                        \"Type\": 2,\n                        \"Name\": \"我的文档\",\n                        \"DocId\": \"25395\"\n                    }\n                ],\n                \"Reasons\": [\n                    \"原因信息\"\n                ],\n                \"IsLlmGenerated\": true,\n                \"ImageUrls\": [\n                    \"\"\n                ]\n            }\n        ],\n        \"RequestId\": \"47d378d4-49b5-454b-a381-088e7015f411\"\n    }\n}",
         "title": "会话记录"
       }
     ],
@@ -448,7 +448,7 @@
       {
         "document": "获取企业下应用列表",
         "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListApp\n<公共请求参数>\n\n{\n    \"AppType\": \"knowledge_qa\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Total\": \"1\",\n        \"List\": [\n            {\n                \"AppType\": \"abc\",\n                \"AppTypeDesc\": \"abc\",\n                \"AppBizId\": \"abc\",\n                \"Name\": \"abc\",\n                \"Avatar\": \"abc\",\n                \"Desc\": \"abc\",\n                \"AppStatus\": 1,\n                \"AppStatusDesc\": \"abc\",\n                \"UpdateTime\": \"abc\",\n                \"Operator\": \"abc\",\n                \"ModelName\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": \"1\",\n        \"List\": [\n            {\n                \"AppType\": \"knowledge_qa\",\n                \"AppTypeDesc\": \"知识库问答\",\n                \"AppBizId\": \"1801166480814637052\",\n                \"Name\": \"我的应用\",\n                \"Avatar\": \"https://qidian-qbot-xxxxxxx.cos.ap-guangzhou.myqcloud.com/public/174434244193038090240/1801166482343244637056/image/jNVJvoXsTsBzo2324324121HZdgd-1816016475183120384.png\",\n                \"Desc\": \"描述\",\n                \"AppStatus\": 2,\n                \"AppStatusDesc\": \"运行中\",\n                \"UpdateTime\": \"1731407395\",\n                \"Operator\": \"操作人\",\n                \"ModelName\": \"精调知识大模型标准版\"\n            }\n        ],\n        \"RequestId\": \"143a9f30-a21c-4eb3-af82-ccacd4cdcbfd\"\n    }\n}",
         "title": "ListApp"
       }
     ],
@@ -456,7 +456,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListAppCategory\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"Text\": \"\",\n                \"Value\": \"\",\n                \"Logo\": \"\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"Text\": \"知识库问答\",\n                \"Value\": \"knowledge_qa\",\n                \"Logo\": \"https://cdn.xiaowei.qq.com/static/lke/app-icon-knowledge_qa.png\"\n            }\n        ],\n        \"RequestId\": \"ee325589-ef62-4aab-8070-01792336d02a\"\n    }\n}",
         "title": "获取应用类型列表"
       }
     ],
@@ -567,7 +567,7 @@
     "ModifyApp": [
       {
         "document": "修改应用",
-        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyApp\n<公共请求参数>\n\n{\n    \"AppBizId\": \"45454545464646\",\n    \"AppType\": \"knowledge_qa\",\n    \"BaseConfig\": {\n        \"Name\": \"应用\",\n        \"Avatar\": \"头像\",\n        \"Desc\": \"应用描述\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyApp\n<公共请求参数>\n\n{\n    \"AppBizId\": \"1801166480814637056\",\n    \"AppType\": \"knowledge_qa\",\n    \"BaseConfig\": {\n        \"Avatar\": \"头像\",\n        \"Desc\": \"应用描述\",\n        \"Name\": \"我的应用\"\n    },\n    \"AppConfig\": {\n        \"KnowledgeQa\": {\n            \"Greeting\": \"欢迎语\",\n            \"Model\": {\n                \"Name\": \"cs-normal\",\n                \"IsUseContext\": true,\n                \"HistoryLimit\": 1,\n                \"AliasName\": \"精调知识大模型标准版\",\n                \"ContextLimit\": 0,\n                \"Desc\": \"\",\n                \"TokenBalance\": 0\n            },\n            \"Output\": {\n                \"Method\": 1,\n                \"BareAnswer\": \"针对您这个问题，我暂时还无法进行回答，请换一个问题吧。\",\n                \"UseGeneralKnowledge\": false\n            },\n            \"RoleDescription\": \"角色：客服\\n技能：提供客户支持、解决技术问题\\n说法风格：耐心、友好\\n性格特点：专业、细心\\n角色限制：只能回答与产品或服务相关的问题\",\n            \"Search\": [\n                {\n                    \"Confidence\": 0.2,\n                    \"DocTopN\": 3,\n                    \"IsEnabled\": true,\n                    \"QaTopN\": 0,\n                    \"ReplyFlexibility\": 0,\n                    \"ResourceStatus\": 0,\n                    \"ShowSearchEngine\": false,\n                    \"Type\": \"doc\",\n                    \"UseSearchEngine\": false\n                },\n                {\n                    \"Confidence\": 0.9,\n                    \"DocTopN\": 0,\n                    \"IsEnabled\": true,\n                    \"QaTopN\": 2,\n                    \"ReplyFlexibility\": 1,\n                    \"ResourceStatus\": 0,\n                    \"ShowSearchEngine\": false,\n                    \"Type\": \"qa\",\n                    \"UseSearchEngine\": false\n                },\n                {\n                    \"Confidence\": 0,\n                    \"DocTopN\": 0,\n                    \"IsEnabled\": false,\n                    \"QaTopN\": 0,\n                    \"ReplyFlexibility\": 0,\n                    \"ResourceStatus\": 0,\n                    \"ShowSearchEngine\": false,\n                    \"Type\": \"taskflow\",\n                    \"UseSearchEngine\": false\n                },\n                {\n                    \"Confidence\": 0,\n                    \"DocTopN\": 0,\n                    \"IsEnabled\": true,\n                    \"QaTopN\": 0,\n                    \"ReplyFlexibility\": 0,\n                    \"ResourceStatus\": 2,\n                    \"ShowSearchEngine\": false,\n                    \"Type\": \"search\",\n                    \"UseSearchEngine\": true\n                }\n            ],\n            \"SearchRange\": {\n                \"ApiVarAttrInfos\": [\n                    {\n                        \"ApiVarId\": \"7a6d67e0-eff1-406b-b092-3b8072c19570\",\n                        \"AttrBizId\": \"18537d934840613760\"\n                    }\n                ],\n                \"Condition\": \"and\"\n            },\n            \"Workflow\": {\n                \"IsEnabled\": true\n            }\n        }\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"AppBizId\": \"198848848484848\",\n        \"RequestId\": \"dwec-adsdsdsd-sfsfdsfsf\"\n    }\n}",
         "title": "修改应用"
       }

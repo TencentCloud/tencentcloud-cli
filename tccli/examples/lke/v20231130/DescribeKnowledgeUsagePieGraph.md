@@ -19,7 +19,7 @@ Output:
                 "UsedCharSize": "9953504"
             },
             {
-                "AppName": "企点智能客服02",
+                "AppName": "智能客服",
                 "Proportion": 0.0016738,
                 "UsedCharSize": "16738"
             },

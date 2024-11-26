@@ -1,23 +1,23 @@
-**Example 1: 创建知识标签**
+**Example 1: 创建标签**
 
-创建知识标签
+创建标签
 
 Input: 
 
 ```
 tccli lke CreateAttributeLabel --cli-unfold-argument  \
-    --BotBizId 1696822786072117248 \
-    --AttrKey test \
-    --AttrName 诶皮爱标签 \
-    --Labels.0.LabelName 你好 \
-    --Labels.0.SimilarLabels 车型a
+    --BotBizId 1851816552255193088 \
+    --AttrName 哈哈哈 \
+    --Labels.0.LabelName 的点点滴滴 \
+    --Labels.0.SimilarLabels dfdf 发的
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "802c3847-9781-4818-959a-aff3035d22fc"
+        "AttrBizId": "1856169972235990080",
+        "RequestId": "044de4f1-8d88-4779-b9f7-b8c0e9f81752"
     }
 }
 ```

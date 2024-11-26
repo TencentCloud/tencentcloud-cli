@@ -717,10 +717,20 @@
         },
         {
           "disabled": false,
-          "document": "推荐版本，当前版本中的所有漏洞都修复了的版本",
+          "document": "推荐版本，最小无高危/严重漏洞的版本。无法升级到安全版本时的备选方案。",
           "example": "1.1.12",
           "member": "string",
           "name": "RecommendedVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "安全版本（首选），最小无漏洞的版本。当无法升级到安全版本时可考虑使用推荐版本。",
+          "example": "1.1.13",
+          "member": "string",
+          "name": "SecureVersion",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false

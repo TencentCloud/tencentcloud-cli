@@ -15056,7 +15056,7 @@
         },
         {
           "disabled": false,
-          "document": "统一执行平台执行id",
+          "document": "统一执行平台执行id, 注意: ExecutionJobId 跟 \"BrokerIp+OriginFileName\" 必须有一个不为空",
           "example": "无",
           "member": "string",
           "name": "ExecutionJobId",
@@ -15065,7 +15065,7 @@
         },
         {
           "disabled": false,
-          "document": "服务器Ip",
+          "document": "服务器Ip, 注意: \"BrokerIp+OriginFileName\"跟ExecutionJobId必须有一个不为空",
           "example": "\"172.16.16.16\"",
           "member": "string",
           "name": "BrokerIp",
@@ -15074,7 +15074,7 @@
         },
         {
           "disabled": false,
-          "document": "文件Name",
+          "document": "文件Name, 注意: \"BrokerIp+OriginFileName\"跟ExecutionJobId必须有一个不为空",
           "example": "\"20210602000000-9-all-log-0.20210602222614.log\"",
           "member": "string",
           "name": "OriginFileName",

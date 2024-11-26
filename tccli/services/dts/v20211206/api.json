@@ -3560,7 +3560,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据库类型，如mysql",
+          "document": "数据库类型，如mysql,redis等",
           "example": "mysql",
           "member": "string",
           "name": "DatabaseType",

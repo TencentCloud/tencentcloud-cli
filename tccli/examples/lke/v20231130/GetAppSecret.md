@@ -6,18 +6,18 @@ Input:
 
 ```
 tccli lke GetAppSecret --cli-unfold-argument  \
-    --AppBizId abc
+    --AppBizId 1801166480814637056
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "AppKey": "",
-        "CreateTime": "",
+        "AppKey": "HuLJbSdLZ",
+        "CreateTime": "1718266528",
         "IsRelease": false,
         "HasPermission": true,
-        "RequestId": "abc"
+        "RequestId": "ee325589-ef62-4aab-8070-01792336d02a"
     }
 }
 ```

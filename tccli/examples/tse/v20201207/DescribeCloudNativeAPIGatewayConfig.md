@@ -6,51 +6,51 @@ Input:
 
 ```
 tccli tse DescribeCloudNativeAPIGatewayConfig --cli-unfold-argument  \
-    --GatewayId <GatewayId>
+    --GatewayId gateway-dde03767
 ```
 
 Output: 
 ```
 {
     "Response": {
+        "RequestId": "534d0349-0663-4dfa-882e-172fe893608e",
         "Result": {
-            "GatewayId": "abc",
+            "GatewayId": "gateway-dde03767",
             "ConfigList": [
                 {
-                    "ConsoleType": "abc",
-                    "HttpUrl": "abc",
-                    "HttpsUrl": "abc",
-                    "NetType": "abc",
-                    "AdminUser": "abc",
-                    "AdminPassword": "abc",
-                    "Status": "abc",
+                    "ConsoleType": "Konga",
+                    "NetType": "Open",
+                    "Status": "Open",
                     "AccessControl": {
-                        "Mode": "abc",
+                        "Mode": "Whitelist",
                         "CidrWhiteList": [
-                            "abc"
+                            "0.0.0.0"
                         ],
-                        "CidrBlackList": [
-                            "abc"
-                        ]
+                        "CidrBlackList": []
                     },
-                    "SubnetId": "abc",
-                    "VpcId": "abc",
-                    "Description": "abc",
-                    "SlaType": "abc",
-                    "Vip": "abc",
-                    "InternetMaxBandwidthOut": 1,
-                    "MultiZoneFlag": true,
-                    "MasterZoneId": "abc",
-                    "SlaveZoneId": "abc",
-                    "MasterZoneName": "abc",
-                    "SlaveZoneName": "abc",
-                    "NetworkId": "abc"
+                    "VpcId": "",
+                    "SubnetId": "",
+                    "HttpUrl": "",
+                    "HttpsUrl": "https://gateway-dde03767-konga.gz.apigw.tencentcs.com:1337/",
+                    "AdminUser": "admin",
+                    "AdminPassword": "husdqwe1zd3sjwSIx4@",
+                    "Vip": "",
+                    "InternetMaxBandwidthOut": 0,
+                    "Description": "",
+                    "SlaType": "",
+                    "SlaName": "",
+                    "MultiZoneFlag": false,
+                    "MasterZoneId": "",
+                    "SlaveZoneId": "",
+                    "MasterZoneName": "",
+                    "SlaveZoneName": "",
+                    "NetworkId": ""
                 }
             ],
-            "GroupSubnetId": "abc",
-            "GroupVpcId": "abc"
-        },
-        "RequestId": "abc"
+            "GroupVpcId": "vpc-k0dl0rk1",
+            "GroupSubnetId": "subnet-ec94pnyu",
+            "GroupId": "group-d2bdcff3"
+        }
     }
 }
 ```

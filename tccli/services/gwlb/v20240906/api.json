@@ -167,7 +167,7 @@
         {
           "disabled": false,
           "document": "关联到的网关负载均衡实例ID",
-          "example": "无",
+          "example": "gwlb-ca82m***",
           "member": "string",
           "name": "LoadBalancerId",
           "output_required": true,
@@ -177,7 +177,7 @@
         {
           "disabled": false,
           "document": "网关负载均衡实例名称",
-          "example": "无",
+          "example": "the_name_of_gwlb",
           "member": "string",
           "name": "LoadBalancerName",
           "output_required": true,
@@ -501,7 +501,7 @@
         },
         {
           "disabled": false,
-          "document": "查询负载均衡详细信息列表的过滤条件，每次请求的Filters的上限为10，Filter.Values的上限为100。\nFilter.Name和Filter.Values皆为必填项。详细的过滤条件如下：\n- name - String - 是否必填：否 - （过滤条件）按照网关负载均衡实例名称过滤，如“gwlb-xxxx”。\n- VpcId - String - 是否必填：否 - （过滤条件）按照网关负载均衡实例所属的私有网络过滤，如“vpc-bhqk****”。\n",
+          "document": "查询负载均衡详细信息列表的过滤条件，每次请求的Filters的上限为10，Filter.Values的上限为100。\nFilter.Name和Filter.Values皆为必填项。详细的过滤条件如下：\n- VpcId - String - 是否必填：否 - （过滤条件）按照网关负载均衡实例所属的私有网络过滤，如“vpc-bhqk****”。\n- Vips - String  - 是否必填：否 - （过滤条件）按照网关负载均衡实例所属的私有网络过滤，如“10.1.1.1”\n",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -526,7 +526,7 @@
         {
           "disabled": false,
           "document": "满足过滤条件的负载均衡实例总数。此数值与入参中的Limit无关。",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
           "output_required": true,
@@ -911,7 +911,7 @@
         {
           "disabled": false,
           "document": "过滤器的名称",
-          "example": "",
+          "example": "Vips",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -920,7 +920,7 @@
         {
           "disabled": false,
           "document": "过滤器的值数组",
-          "example": "",
+          "example": "[\"1.0.0.1\"]",
           "member": "string",
           "name": "Values",
           "required": true,

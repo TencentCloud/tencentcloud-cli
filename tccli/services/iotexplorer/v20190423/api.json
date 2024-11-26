@@ -13365,10 +13365,10 @@
       "members": [
         {
           "disabled": false,
-          "document": "小程序ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Sn信息，SN格式：产品ID_设备名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
-          "name": "ModelId",
+          "name": "Sn",
           "output_required": false,
           "required": true,
           "type": "string",
@@ -13376,12 +13376,12 @@
         },
         {
           "disabled": false,
-          "document": "Sn信息，SN格式：产品ID_设备名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "小程序ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
-          "name": "Sn",
+          "name": "ModelId",
           "output_required": false,
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },

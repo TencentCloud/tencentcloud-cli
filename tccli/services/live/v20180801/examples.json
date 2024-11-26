@@ -1,5 +1,29 @@
 {
   "actions": {
+    "AddCasterInputInfo": [
+      {
+        "document": "新增一个输入源",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddCasterInputInfo\n<公共请求参数>\n\n{\n    \"InputInfo\": {\n        \"Description\": \"for_example\",\n        \"InputIndex\": \"1\",\n        \"InputType\": \"1\",\n        \"InputUrl\": \"http://www.example.com/vod/example.mp4\"\n    },\n    \"CasterId\": \"1234\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\",\n        \"InputPlayUrl\": \"rtmp://domain/live/input_play\",\n        \"InputWebRTCPlayUrl\": \"webrtc://webrtc.domain/live/input_play\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "AddCasterLayoutInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddCasterLayoutInfo\n<公共请求参数>\n\n{\n    \"LayoutInfo\": {\n        \"LayoutIndex\": \"1\",\n        \"InputIndexList\": \"1|2\",\n        \"LayoutTemplateId\": \"20\"\n    },\n    \"CasterId\": 1234\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "添加布局20，绑定输入1，输入2"
+      }
+    ],
+    "AddCasterOutputInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddCasterOutputInfo\n<公共请求参数>\n\n{\n    \"CasterId\": \"1234\",\n    \"OutputInfo\": {\n        \"OutputIndex\": 1,\n        \"OutputUrl\": \"rtmp://example.third.push.domain/live/push_stream_id\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "新增一个推流到第三方配置"
+      }
+    ],
     "AddDelayLiveStream": [
       {
         "document": "",
@@ -53,6 +77,14 @@
         "document": "请求创建导播台",
         "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCaster\n<公共请求参数>\n\n{\n    \"CasterName\": \"example\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\",\n        \"CasterId\": 1234\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "CreateCasterInputPushUrl": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCasterInputPushUrl\n<公共请求参数>\n\n{\n    \"InputIndex\": \"1\",\n    \"CasterId\": \"1234\"\n}",
+        "output": "{\n    \"Response\": {\n        \"PushUrl\": \"rtmp://www.example.com/live/caster_example_stream_id?example_param=example\",\n        \"RequestId\": \"c8b02a52-1062-4d6d-9837-54d48b17e8f9\"\n    }\n}",
         "title": "请求示例"
       }
     ],
@@ -246,6 +278,30 @@
         "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCaster\n<公共请求参数>\n\n{\n    \"CasterId\": \"1234\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "请求示例"
+      }
+    ],
+    "DeleteCasterInputInfo": [
+      {
+        "document": "删除导播台1234的输入源1。",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCasterInputInfo\n<公共请求参数>\n\n{\n    \"InputIndex\": \"1\",\n    \"CasterId\": \"1234\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "DeleteCasterLayoutInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCasterLayoutInfo\n<公共请求参数>\n\n{\n    \"CasterId\": \"1234\",\n    \"LayoutIndex\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "DeleteCasterOutputInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCasterOutputInfo\n<公共请求参数>\n\n{\n    \"OutputIndex\": 1,\n    \"CasterId\": \"1234\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "请求删除Index为1的推流配置"
       }
     ],
     "DeleteLiveCallbackRule": [
@@ -472,12 +528,36 @@
         "title": "查询导播台展示信息"
       }
     ],
+    "DescribeCasterInputInfos": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCasterInputInfos\n<公共请求参数>\n\n{\n    \"CasterId\": \"1234\"\n}",
+        "output": "{\n    \"Response\": {\n        \"InputInfos\": [\n            {\n                \"InputIndex\": 1,\n                \"InputType\": 1,\n                \"InputUrl\": \"\",\n                \"Description\": \"点播\",\n                \"PullPushEnable\": true,\n                \"LoopEnable\": true,\n                \"LoopNumber\": -1,\n                \"Volume\": 100,\n                \"InputUrls\": [\n                    \"https://www.example.com/vod.mp4\"\n                ]\n            }\n        ],\n        \"RequestId\": \"f505e243-8f0e-4d50-a212-bba4effe7bee\"\n    }\n}",
+        "title": "查询输入源列表"
+      }
+    ],
+    "DescribeCasterLayoutInfos": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCasterLayoutInfos\n<公共请求参数>\n\n{\n    \"CasterId\": 1234\n}",
+        "output": "{\n    \"Response\": {\n        \"LayoutInfos\": [\n            {\n                \"LayoutIndex\": 1,\n                \"InputIndexList\": \"1|2\",\n                \"LayoutTemplateId\": 20,\n                \"LayoutWidth\": 1280,\n                \"LayoutHeight\": 720,\n                \"LayoutParams\": [\n                    {\n                        \"LayerId\": 1,\n                        \"LayerWidth\": 0.5,\n                        \"LayerHeight\": 1,\n                        \"LayerLocationX\": 0,\n                        \"LayerLocationY\": 0,\n                        \"UsePortraitSegment\": false\n                    },\n                    {\n                        \"LayerId\": 2,\n                        \"LayerWidth\": 0.5,\n                        \"LayerHeight\": 1,\n                        \"LayerLocationX\": 0.5,\n                        \"LayerLocationY\": 0,\n                        \"UsePortraitSegment\": false\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"203cd886-18d8-4f42-a9b4-141c182bc920\"\n    }\n}",
+        "title": "查询导播台的布局列表"
+      }
+    ],
     "DescribeCasterList": [
       {
         "document": "获取某个账号下的所有导播台列表",
         "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCasterList\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\",\n        \"CasterList\": [\n            {\n                \"CasterId\": 10,\n                \"CasterName\": \"example\",\n                \"StartBillingTime\": 0,\n                \"StopBillingTime\": 1731964027,\n                \"Description\": \"\",\n                \"CreateTime\": 1603158528,\n                \"Status\": 0,\n                \"ExpireTime\": -1,\n                \"FeeType\": 0\n            }\n        ]\n    }\n}",
         "title": "请求示例"
+      }
+    ],
+    "DescribeCasterOutputInfos": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCasterOutputInfos\n<公共请求参数>\n\n{\n    \"CasterId\": 1234\n}",
+        "output": "{\n    \"Response\": {\n        \"OutputInfos\": [\n            {\n                \"OutputIndex\": 0,\n                \"OutputType\": 1,\n                \"OutputUrl\": \"rtmp://example.tlive.com/live/example_stream_id\",\n                \"Description\": \"\",\n                \"OutputStreamId\": \"example_stream_id\",\n                \"OutputDomainName\": \"example.tlive.com\",\n                \"OutputAppName\": \"live\",\n                \"OutputParam\": \"\"\n            }\n        ],\n        \"RequestId\": \"a25094ea-f516-420a-81d0-5f5c54a9e823\"\n    }\n}",
+        "title": "查询某个导播台的推流信息列表"
       }
     ],
     "DescribeCasterPlayUrl": [
@@ -1142,6 +1222,30 @@
         "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCaster\n<公共请求参数>\n\n{\n    \"RecordStatus\": \"1\",\n    \"RecordTemplateId\": \"1\",\n    \"CasterId\": \"10\",\n    \"CasterName\": \"Modify Caster\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "请求示例"
+      }
+    ],
+    "ModifyCasterInputInfo": [
+      {
+        "document": "将Index为1的输入源修改为一个导播台推流地址",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCasterInputInfo\n<公共请求参数>\n\n{\n    \"InputInfo\": {\n        \"Description\": \"modify example\",\n        \"InputIndex\": \"1\",\n        \"InputType\": \"0\",\n        \"InputUrl\": \"rtmp://caster.push.example.com/live/example\"\n    },\n    \"CasterId\": \"10\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\",\n        \"InputPlayUrl\": \"http://play.example.com/live/example_stream_id\",\n        \"InputWebRTCPlayUrl\": \"webrtc://webrtc.play.example.com/live/example_stream_id\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "ModifyCasterLayoutInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCasterLayoutInfo\n<公共请求参数>\n\n{\n    \"LayoutInfo\": {\n        \"LayoutIndex\": \"1\",\n        \"InputIndexList\": \"2|3\",\n        \"LayoutTemplateId\": \"20\"\n    },\n    \"CasterId\": \"1234\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "修改模版20的布局使用的布局为输入2，输入3"
+      }
+    ],
+    "ModifyCasterOutputInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCasterOutputInfo\n<公共请求参数>\n\n{\n    \"CasterId\": \"1234\",\n    \"OutputInfo\": {\n        \"OutputIndex\": 1,\n        \"OutputUrl\": \"rtmp://another.third.push.domain/live/another_stream_id\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "修改Index为1的推流信息"
       }
     ],
     "ModifyLiveCallbackTemplate": [

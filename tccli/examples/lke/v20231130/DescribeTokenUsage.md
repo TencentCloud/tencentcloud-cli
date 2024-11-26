@@ -13,12 +13,12 @@ Output:
 ```
 {
     "Response": {
-        "ApiCallStats": 0,
-        "InputTokenUsage": 0,
-        "OutputTokenUsage": 0,
+        "ApiCallStats": 10,
+        "InputTokenUsage": 1120,
+        "OutputTokenUsage": 101,
         "RequestId": "716109cc-ee93-423a-85f0-a21fb7afcc4f",
-        "SearchUsage": 0,
-        "TotalTokenUsage": 0
+        "SearchUsage": 10,
+        "TotalTokenUsage": 1221
     }
 }
 ```
