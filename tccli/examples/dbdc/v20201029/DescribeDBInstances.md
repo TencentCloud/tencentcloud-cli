@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli dbdc DescribeDBInstances --cli-unfold-argument  \
-    --InstanceId dbdc-test
+    --InstanceId dbdc-56nsyijj
 ```
 
 Output: 
@@ -15,27 +15,27 @@ Output:
     "Response": {
         "Instances": [
             {
-                "InstanceId": "dbdc-test",
-                "InstanceName": "test",
-                "Status": 1,
-                "StatusDesc": "运行中",
-                "DbVersion": "5.7.17",
-                "DbEngine": "MySQL",
-                "Vip": "10.0.0.1",
-                "Vport": 3306,
-                "UniqueVpcId": "vpc-test",
-                "UniqueSubnetId": "subnet-test",
-                "Shard": 0,
-                "NodeNum": 2,
                 "Cpu": 2,
-                "Memory": 10,
-                "Disk": 10,
-                "ShardNum": 0,
-                "Region": "ap-guangzhou",
-                "Zone": "ap-guangzhou-1",
-                "DbHosts": "svr-test1|svr-test2",
+                "CreateTime": "2018-05-15 10:30:00",
+                "DbEngine": "MariaDB",
+                "DbHosts": "svr-buhfdoz8,svr-d5vaw4us,svr-q87ur6lu",
+                "DbVersion": "10.0.10",
+                "Disk": 50,
                 "HostRole": 0,
-                "CreateTime": "2022-05-20 12:00:00"
+                "InstanceId": "tdsql-3q78d56r",
+                "InstanceName": "tdsql-3q78d56r",
+                "Memory": 4,
+                "NodeNum": 3,
+                "Region": "ap-guangzhou",
+                "Shard": 0,
+                "ShardNum": 0,
+                "Status": 2,
+                "StatusDesc": "运行中",
+                "UniqueSubnetId": "subnet-dlcm2zne",
+                "UniqueVpcId": "vpc-fn7ejibv",
+                "Vip": "10.10.100.59",
+                "Vport": 3306,
+                "Zone": "ap-guangzhou-3"
             }
         ],
         "RequestId": "8cf4daa6-b172-11eb-94d3-525400542aa6",

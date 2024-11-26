@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli dbdc ModifyInstanceName --cli-unfold-argument  \
-    --InstanceId dbdc-test \
-    --InstanceName test
+    --InstanceId dbdc-56nsyijj \
+    --InstanceName excluster-for-user
 ```
 
 Output: 

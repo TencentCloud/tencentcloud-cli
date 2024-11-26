@@ -6,17 +6,17 @@ Input:
 
 ```
 tccli tse DeleteCloudNativeAPIGatewayPublicNetwork --cli-unfold-argument  \
-    --GatewayId abc \
-    --GroupId abc \
-    --InternetAddressVersion abc \
-    --Vip abc
+    --GatewayId gateway-dde03767 \
+    --GroupId group-09ex5ff1 \
+    --InternetAddressVersion IPV4 \
+    --Vip 8.8.8.8
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "7a3a49de-660e-4b4c-aaec-05ddc2c31f48"
     }
 }
 ```

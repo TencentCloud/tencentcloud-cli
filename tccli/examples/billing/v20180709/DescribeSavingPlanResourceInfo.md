@@ -23,11 +23,11 @@ Output:
                 "EndTime": "2023-09-17 10:00:00",
                 "MatchingSavingPlanProductRule": [
                     {
-                        "BillingItemCode": "*",
+                        "BillingItemCode": "v_cvm_cpu",
                         "MatchFlag": "include",
                         "ProductCode": "p_cvm",
-                        "SubBillingItemCode": "*",
-                        "SubProductCode": "*"
+                        "SubBillingItemCode": "sv_cvm_cpu_s2",
+                        "SubProductCode": "sp_cvm_s2"
                     }
                 ],
                 "MatchingSavingPlanRegionRule": [

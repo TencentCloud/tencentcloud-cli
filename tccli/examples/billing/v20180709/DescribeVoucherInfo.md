@@ -21,7 +21,7 @@ Output:
             {
                 "ApplicableProducts": {
                     "GoodsName": "全产品通用",
-                    "PayMode": "*"
+                    "PayMode": "postPay"
                 },
                 "Balance": 12000000000,
                 "BeginTime": "2023-01-10 14:42:17",
@@ -29,28 +29,28 @@ Output:
                 "ExcludedProducts": [
                     {
                         "GoodsName": "域名注册",
-                        "PayMode": "*"
+                        "PayMode": "postPay"
                     },
                     {
                         "GoodsName": "云市场",
-                        "PayMode": "*"
+                        "PayMode": "postPay"
                     },
                     {
                         "GoodsName": "云市场镜像",
-                        "PayMode": "*"
+                        "PayMode": "postPay"
                     },
                     {
                         "GoodsName": "培训服务training",
-                        "PayMode": "*"
+                        "PayMode": "postPay"
                     },
                     {
                         "GoodsName": "节省计划",
-                        "PayMode": "*"
+                        "PayMode": "postPay"
                     }
                 ],
                 "NominalValue": 30000000000,
                 "OwnerUin": "100026601318",
-                "PayMode": "*",
+                "PayMode": "postPay",
                 "PayScene": "settle account",
                 "Status": "unUsed",
                 "VoucherId": "OZRCGNAV5AB9H9ECMP1VVP"
@@ -58,7 +58,7 @@ Output:
             {
                 "ApplicableProducts": {
                     "GoodsName": "全产品通用",
-                    "PayMode": "*"
+                    "PayMode": "postPay"
                 },
                 "Balance": 30000000000,
                 "BeginTime": "2023-02-07 16:40:45",
@@ -66,28 +66,28 @@ Output:
                 "ExcludedProducts": [
                     {
                         "GoodsName": "域名注册",
-                        "PayMode": "*"
+                        "PayMode": "postPay"
                     },
                     {
                         "GoodsName": "云市场",
-                        "PayMode": "*"
+                        "PayMode": "postPay"
                     },
                     {
                         "GoodsName": "云市场镜像",
-                        "PayMode": "*"
+                        "PayMode": "postPay"
                     },
                     {
                         "GoodsName": "培训服务training",
-                        "PayMode": "*"
+                        "PayMode": "postPay"
                     },
                     {
                         "GoodsName": "节省计划",
-                        "PayMode": "*"
+                        "PayMode": "postPay"
                     }
                 ],
                 "NominalValue": 30000000000,
                 "OwnerUin": "100026601318",
-                "PayMode": "*",
+                "PayMode": "postPay",
                 "PayScene": "settle account",
                 "Status": "unUsed",
                 "VoucherId": "OZRCGNAV8D9BMI9KMG1FIQ"

@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tse CreateCloudNativeAPIGatewayPublicNetwork --cli-unfold-argument  \
-    --GatewayId abc \
-    --GroupId abc \
+    --GatewayId gateway-dde03767 \
+    --GroupId group-4se0czf7 \
     --InternetConfig.InternetAddressVersion IPV4 \
     --InternetConfig.InternetPayMode TRAFFIC \
     --InternetConfig.InternetMaxBandwidthOut 1 \

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli gwlb DescribeGatewayLoadBalancers --cli-unfold-argument  \
-    --LoadBalancerIds abc
+    --LoadBalancerIds gwlb-9cpkxxxx
 ```
 
 Output: 
@@ -16,29 +16,28 @@ Output:
         "TotalCount": 1,
         "LoadBalancerSet": [
             {
-                "LoadBalancerId": "abc",
-                "LoadBalancerName": "abc",
-                "Vips": [
-                    "abc"
-                ],
-                "SubnetId": "abc",
+                "LoadBalancerId": "gwlb-9cpkxxxx",
+                "LoadBalancerName": "the_name_of_gwlb",
                 "Status": 1,
-                "InternetMaxBandwidthOut": 0,
-                "DeleteProtect": true,
-                "TargetGroupId": "abc",
-                "VpcId": "abc",
-                "Tags": [
-                    {
-                        "TagKey": "abc",
-                        "TagValue": "abc"
-                    }
+                "SubnetId": "subnet-gbi70xxx",
+                "TargetGroupId": null,
+                "VpcId": "vpc-rdiw0xxx",
+                "Vips": [
+                    "10.0.0.1"
                 ],
-                "Specifications": "abc",
-                "CreateTime": "abc",
-                "AssociateAclGroup": "abc"
+                "JumboFrame": true,
+                "CreateTime": "2024-11-26 16:40:42",
+                "Tags": null,
+                "InternetMaxBandwidthOut": 512000,
+                "AssociateAclGroup": null,
+                "Specifications": null,
+                "DeleteProtect": false,
+                "ChargeType": "POSTPAID_BY_HOUR",
+                "Isolation": 0,
+                "IsolatedTime": null
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "7c28eba2-f0d0-427e-9bc2-f44c035825b5"
     }
 }
 ```

@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tse DeleteNativeGatewayServerGroup --cli-unfold-argument  \
-    --GatewayId gateway-xxx \
-    --GroupId group-xxx
+    --GatewayId gateway-dde03767 \
+    --GroupId group-4se0czf7
 ```
 
 Output: 
@@ -15,12 +15,12 @@ Output:
 {
     "Response": {
         "Result": {
-            "GatewayId": "abc",
-            "GroupId": "abc",
-            "Status": "abc",
-            "TaskId": "abc"
+            "GatewayId": "gateway-dde03767",
+            "GroupId": "group-4se0czf7",
+            "Status": "Deleting",
+            "TaskId": "task-z31df1dz"
         },
-        "RequestId": "abc"
+        "RequestId": "ffadafb6-545d-461c-ad8c-baa26c0f8955"
     }
 }
 ```

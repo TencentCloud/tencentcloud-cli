@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tse DescribeCloudNativeAPIGateway --cli-unfold-argument  \
-    --GatewayId <GatewayId>
+    --GatewayId gateway-dde03767
 ```
 
 Output: 
@@ -14,38 +14,48 @@ Output:
 {
     "Response": {
         "Result": {
-            "Status": "Creating",
-            "EnableCls": true,
-            "TradeType": 0,
-            "Name": "test",
-            "Tags": [
-                {
-                    "TagKey": "xx",
-                    "TagValue": "xx"
-                }
-            ],
-            "FeatureVersion": "xx",
-            "VpcConfig": {
-                "SubnetId": "xx",
-                "VpcId": "xx"
-            },
-            "IsolateTime": "xx",
-            "CurDeadline": "xx",
-            "EnableInternet": true,
-            "GatewayVersion": "2.4.1",
-            "AutoRenewFlag": 0,
+            "GatewayId": "gateway-dde03767",
+            "Status": "Running",
+            "Name": "公网入口网关",
+            "Type": "kong",
+            "GatewayVersion": "2.5.1",
             "NodeConfig": {
                 "Specification": "1c2g",
                 "Number": 2
             },
-            "EngineRegion": "xx",
-            "GatewayId": "gateway-7bb4fcb0",
-            "Type": "Kong",
-            "CreateTime": "2021-09-09 11:52:30",
+            "VpcConfig": {
+                "VpcId": "vpc-83p0o405",
+                "SubnetId": "subnet-8tzp8ugg"
+            },
+            "Description": "公网入口网关",
+            "CreateTime": "2024-10-08 20:27:38",
+            "Tags": [
+                {
+                    "TagKey": "app",
+                    "TagValue": "learn"
+                }
+            ],
+            "EnableCls": true,
+            "TradeType": 0,
+            "FeatureVersion": "STANDARD",
             "InternetMaxBandwidthOut": 1,
-            "Description": "测试"
+            "AutoRenewFlag": 0,
+            "CurDeadline": "2024-12-02 16:11:41",
+            "IsolateTime": "2024-10-08 20:27:38",
+            "EnableInternet": true,
+            "EngineRegion": "ap-guangzhou",
+            "IngressClassName": "kong",
+            "InternetPayMode": "TRAFFIC",
+            "GatewayMinorVersion": "2.5.1.11",
+            "InstancePort": {
+                "HttpPort": "80",
+                "HttpsPort": "443",
+                "TcpPort": "8000",
+                "UdpPort": "7000"
+            },
+            "LoadBalancerType": "L7"
         },
-        "RequestId": "0f2cc04f-0e03-4e70-8df8-c57288b04373"
+        "RequestId": "9b2bc5f8-0c9f-43b4-8517-3e6cf6c6a7a0"
     }
 }
 ```

@@ -8,7 +8,7 @@ Input:
 tccli gwlb CreateGatewayLoadBalancer --cli-unfold-argument  \
     --VpcId vpc-30xq**** \
     --SubnetId subnet-**** \
-    --LoadBalancerName test
+    --LoadBalancerName the_name_of_gwlb
 ```
 
 Output: 

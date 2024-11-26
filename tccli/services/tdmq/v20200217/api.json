@@ -337,11 +337,11 @@
       "status": "online"
     },
     "DescribeAMQPClusters": {
-      "document": "获取amqp集群列表",
+      "document": "历史原因，该接口位于tdmq-manager，目前rabbitmq产品没有使用该接口，当前使用的是DescribeRabbitMQVipInstances。不过从调用链上看，线网还有请求流程，所以走预下线流程。\n\n获取amqp集群列表",
       "input": "DescribeAMQPClustersRequest",
       "name": "获取amqp集群列表",
       "output": "DescribeAMQPClustersResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeAllTenants": {
       "document": "获取某个租户的虚拟集群列表",
@@ -820,11 +820,11 @@
       "status": "online"
     },
     "ModifyAMQPCluster": {
-      "document": "更新Amqp集群信息",
+      "document": "历史原因，该接口位于tdmq-manager，目前rabbitmq产品没有使用该接口，当前使用的是ModifyRabbitMQVipInstance。不过从调用链上看，线网还有请求流程，所以走预下线流程。\n\n更新Amqp集群信息",
       "input": "ModifyAMQPClusterRequest",
       "name": "更新Amqp集群信息",
       "output": "ModifyAMQPClusterResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ModifyCluster": {
       "document": "更新集群信息",

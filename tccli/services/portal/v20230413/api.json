@@ -555,6 +555,42 @@
           "name": "IncludeActivity",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "中文产品名称",
+          "example": "云服务器",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "英文产品名称",
+          "example": "Cloud Virtual Machine",
+          "member": "string",
+          "name": "EnName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "产品简称",
+          "example": "CVM",
+          "member": "string",
+          "name": "Slug",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "产品层级",
+          "example": "L3",
+          "member": "string",
+          "name": "Grade",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

@@ -2607,7 +2607,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件。\n<br><li>UserType - Array of String - 是否必填：否 -（过滤条件）按配额类型过滤。(Uid| Gid )\n<br><li>UserId - Array of String - 是否必填：否 -（过滤条件）按UID/GID过滤。",
+          "document": "过滤条件。\nUserType - Array of String - 是否必填：否 -（过滤条件）按配额类型过滤。(Uid|Gid|Dir )\nUserId- Array of String - 是否必填：否 -（过滤条件）按id过滤。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",

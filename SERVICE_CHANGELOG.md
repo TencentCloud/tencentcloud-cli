@@ -1,10 +1,10 @@
 # 本版本更新包含以下内容：
 
-## 腾讯云数据仓库 TCHouse-D(cdwdoris) 版本：2021-12-28
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
 
-### 第 44 次发布
+### 第 110 次发布
 
-发布时间：2024-11-26 01:18:30
+发布时间：2024-11-27 01:26:51
 
 本次发布包含了以下内容：
 
@@ -12,22 +12,56 @@
 
 修改接口：
 
-* [DescribeBackUpTables](http://document.tencentcloudapi.woa.com/document/product/1706/84383)
+* [OpenClusterReadOnlyInstanceGroupAccess](http://document.tencentcloudapi.woa.com/document/product/1003/81456)
 
-	* 新增出参：Msg, IsUnknownVersion, ErrorMsg
-
-* [DescribeDatabaseAuditRecords](http://document.tencentcloudapi.woa.com/document/product/1706/82865)
-
-	* 新增出参：Records
+	* <font color="#dd0000">**修改出参**：</font>FlowId
 
 
 
 
-## 混沌演练平台(cfg) 版本：2021-08-20
+## TDSQL MySQL 版(dcdb) 版本：2018-04-11
 
-### 第 17 次发布
+### 第 50 次发布
 
-发布时间：2024-11-26 01:19:18
+发布时间：2024-11-27 01:29:45
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DBAccount](http://document.tencentcloudapi.woa.com/document/product/557/16142#DBAccount)
+
+	* <font color="#dd0000">**修改成员**：</font>MaxUserConnections
+
+
+
+
+## 物联网开发平台(iotexplorer) 版本：2019-04-23
+
+### 第 54 次发布
+
+发布时间：2024-11-27 01:42:40
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [TWeCallInfo](http://document.tencentcloudapi.woa.com/document/product/1081/34988#TWeCallInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>ModelId
+
+
+
+
+## 云直播CSS(live) 版本：2018-08-01
+
+### 第 69 次发布
+
+发布时间：2024-11-27 01:47:12
 
 本次发布包含了以下内容：
 
@@ -35,107 +69,62 @@
 
 新增接口：
 
-* [CreateTaskFromMultiAction](http://document.tencentcloudapi.woa.com/document/product/1694/85393)
+* [AddCasterInputInfo](http://document.tencentcloudapi.woa.com/document/product/267/85410)
+* [AddCasterLayoutInfo](http://document.tencentcloudapi.woa.com/document/product/267/85409)
+* [AddCasterOutputInfo](http://document.tencentcloudapi.woa.com/document/product/267/85408)
+* [CreateCasterInputPushUrl](http://document.tencentcloudapi.woa.com/document/product/267/85407)
+* [DeleteCasterInputInfo](http://document.tencentcloudapi.woa.com/document/product/267/85406)
+* [DeleteCasterLayoutInfo](http://document.tencentcloudapi.woa.com/document/product/267/85405)
+* [DeleteCasterOutputInfo](http://document.tencentcloudapi.woa.com/document/product/267/85404)
+* [DescribeCasterInputInfos](http://document.tencentcloudapi.woa.com/document/product/267/85403)
+* [DescribeCasterLayoutInfos](http://document.tencentcloudapi.woa.com/document/product/267/85402)
+* [DescribeCasterOutputInfos](http://document.tencentcloudapi.woa.com/document/product/267/85401)
+* [ModifyCasterInputInfo](http://document.tencentcloudapi.woa.com/document/product/267/85400)
+* [ModifyCasterLayoutInfo](http://document.tencentcloudapi.woa.com/document/product/267/85399)
+* [ModifyCasterOutputInfo](http://document.tencentcloudapi.woa.com/document/product/267/85398)
 
 新增数据结构：
 
-* [TaskGroupForAction](http://document.tencentcloudapi.woa.com/document/product/1694/79907#TaskGroupForAction)
+* [CasterInputInfo](http://document.tencentcloudapi.woa.com/document/product/267/20474#CasterInputInfo)
+* [CasterLayoutInfo](http://document.tencentcloudapi.woa.com/document/product/267/20474#CasterLayoutInfo)
+* [CasterLayoutParam](http://document.tencentcloudapi.woa.com/document/product/267/20474#CasterLayoutParam)
+* [CasterOutputInfo](http://document.tencentcloudapi.woa.com/document/product/267/20474#CasterOutputInfo)
 
 
 
-## 云防火墙(cfw) 版本：2019-09-04
+## 官网(portal) 版本：2023-04-13
 
-### 第 64 次发布
+### 第 12 次发布
 
-发布时间：2024-11-26 01:20:01
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [DescribeSerialRegion](http://document.tencentcloudapi.woa.com/document/product/1132/85394)
-* [DescribeVpcFwGroupIns](http://document.tencentcloudapi.woa.com/document/product/1132/85395)
-
-新增数据结构：
-
-* [SerialRegionInfo](http://document.tencentcloudapi.woa.com/document/product/1132/49071#SerialRegionInfo)
-* [VpcFwGroupInsShow](http://document.tencentcloudapi.woa.com/document/product/1132/49071#VpcFwGroupInsShow)
-
-
-
-## 日志服务(cls) 版本：2020-10-16
-
-### 第 96 次发布
-
-发布时间：2024-11-26 01:23:01
+发布时间：2024-11-27 01:54:37
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改数据结构：
+修改接口：
 
-* [LogRechargeRuleInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#LogRechargeRuleInfo)
+* [DescribeProductDictionaryList](http://document.tencentcloudapi.woa.com/document/product/1732/81368)
 
-	* 新增成员：AdvanceFilterRules
-
-
-
-
-## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
-
-### 第 109 次发布
-
-发布时间：2024-11-26 01:28:29
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [CynosdbInstanceDetail](http://document.tencentcloudapi.woa.com/document/product/1003/48097#CynosdbInstanceDetail)
-
-	* 新增成员：DbMode
+	* 新增入参：Name, EnName, Slug, Grade
 
 
 
 
-## 微服务引擎(tse) 版本：2020-12-07
+## 消息队列 TDMQ(tdmq) 版本：2020-02-17
 
-### 第 75 次发布
+### 第 121 次发布
 
-发布时间：2024-11-26 02:11:30
+发布时间：2024-11-27 02:05:06
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改数据结构：
+<font color="#dd0000">**预下线接口**：</font>
 
-* [KongCertificatesPreview](http://document.tencentcloudapi.woa.com/document/product/1364/54942#KongCertificatesPreview)
-
-	* <font color="#dd0000">**修改成员**：</font>Name, BindDomains, Status, Crt, Key, ExpireTime, CreateTime, IssueTime, CertSource, CertId
-
-
-
-
-## 私有网络(vpc) 版本：2017-03-12
-
-### 第 176 次发布
-
-发布时间：2024-11-26 02:15:48
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [DeleteTrafficMirror](http://document.tencentcloudapi.woa.com/document/product/215/85397)
-* [StartTrafficMirror](http://document.tencentcloudapi.woa.com/document/product/215/85396)
+* DescribeAMQPClusters
+* ModifyAMQPCluster
 
 
 
@@ -20263,11 +20252,11 @@
 
 新增接口：
 
-* [[CreateTaskFromMultiAction](http://document.tencentcloudapi.woa.com/document/product/1694/85393)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [CreateTaskFromMultiAction](http://document.tencentcloudapi.woa.com/document/product/1694/85393)
 
 新增数据结构：
 
-* [[TaskGroupForAction](http://document.tencentcloudapi.woa.com/document/product/1694/79907#TaskGroupForAction)](http://document.tencentcloudapi.woa.com/document/product/1694/79907#[TaskGroupForAction](http://document.tencentcloudapi.woa.com/document/product/1694/79907#TaskGroupForAction))
+* [TaskGroupForAction](http://document.tencentcloudapi.woa.com/document/product/1694/79907#TaskGroupForAction)
 
 ### 第 16 次发布
 
@@ -21108,13 +21097,13 @@
 
 新增接口：
 
-* [[DescribeSerialRegion](http://document.tencentcloudapi.woa.com/document/product/1132/85394)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeVpcFwGroupIns](http://document.tencentcloudapi.woa.com/document/product/1132/85395)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeSerialRegion](http://document.tencentcloudapi.woa.com/document/product/1132/85394)
+* [DescribeVpcFwGroupIns](http://document.tencentcloudapi.woa.com/document/product/1132/85395)
 
 新增数据结构：
 
-* [[SerialRegionInfo](http://document.tencentcloudapi.woa.com/document/product/1132/49071#SerialRegionInfo)](http://document.tencentcloudapi.woa.com/document/product/1132/49071#[SerialRegionInfo](http://document.tencentcloudapi.woa.com/document/product/1132/49071#SerialRegionInfo))
-* [[VpcFwGroupInsShow](http://document.tencentcloudapi.woa.com/document/product/1132/49071#VpcFwGroupInsShow)](http://document.tencentcloudapi.woa.com/document/product/1132/49071#[VpcFwGroupInsShow](http://document.tencentcloudapi.woa.com/document/product/1132/49071#VpcFwGroupInsShow))
+* [SerialRegionInfo](http://document.tencentcloudapi.woa.com/document/product/1132/49071#SerialRegionInfo)
+* [VpcFwGroupInsShow](http://document.tencentcloudapi.woa.com/document/product/1132/49071#VpcFwGroupInsShow)
 
 ### 第 63 次发布
 
@@ -38811,6 +38800,21 @@
 
 ## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
 
+### 第 110 次发布
+
+发布时间：2024-11-27 01:26:51
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [OpenClusterReadOnlyInstanceGroupAccess](http://document.tencentcloudapi.woa.com/document/product/1003/81456)
+
+	* <font color="#dd0000">**修改出参**：</font>FlowId
+
+
 ### 第 109 次发布
 
 发布时间：2024-11-26 01:28:29
@@ -43191,6 +43195,21 @@
 
 
 ## TDSQL MySQL 版(dcdb) 版本：2018-04-11
+
+### 第 50 次发布
+
+发布时间：2024-11-27 01:29:45
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DBAccount](http://document.tencentcloudapi.woa.com/document/product/557/16142#DBAccount)
+
+	* <font color="#dd0000">**修改成员**：</font>MaxUserConnections
+
 
 ### 第 49 次发布
 
@@ -65983,6 +66002,21 @@
 
 ## 物联网开发平台(iotexplorer) 版本：2019-04-23
 
+### 第 54 次发布
+
+发布时间：2024-11-27 01:42:40
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [TWeCallInfo](http://document.tencentcloudapi.woa.com/document/product/1081/34988#TWeCallInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>ModelId
+
+
 ### 第 53 次发布
 
 发布时间：2024-11-07 01:53:19
@@ -71213,6 +71247,37 @@
 
 
 ## 云直播CSS(live) 版本：2018-08-01
+
+### 第 69 次发布
+
+发布时间：2024-11-27 01:47:12
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[AddCasterInputInfo](http://document.tencentcloudapi.woa.com/document/product/267/85410)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[AddCasterLayoutInfo](http://document.tencentcloudapi.woa.com/document/product/267/85409)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[AddCasterOutputInfo](http://document.tencentcloudapi.woa.com/document/product/267/85408)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[CreateCasterInputPushUrl](http://document.tencentcloudapi.woa.com/document/product/267/85407)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DeleteCasterInputInfo](http://document.tencentcloudapi.woa.com/document/product/267/85406)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DeleteCasterLayoutInfo](http://document.tencentcloudapi.woa.com/document/product/267/85405)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DeleteCasterOutputInfo](http://document.tencentcloudapi.woa.com/document/product/267/85404)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeCasterInputInfos](http://document.tencentcloudapi.woa.com/document/product/267/85403)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeCasterLayoutInfos](http://document.tencentcloudapi.woa.com/document/product/267/85402)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeCasterOutputInfos](http://document.tencentcloudapi.woa.com/document/product/267/85401)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[ModifyCasterInputInfo](http://document.tencentcloudapi.woa.com/document/product/267/85400)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[ModifyCasterLayoutInfo](http://document.tencentcloudapi.woa.com/document/product/267/85399)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[ModifyCasterOutputInfo](http://document.tencentcloudapi.woa.com/document/product/267/85398)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[CasterInputInfo](http://document.tencentcloudapi.woa.com/document/product/267/20474#CasterInputInfo)](http://document.tencentcloudapi.woa.com/document/product/267/20474#[CasterInputInfo](http://document.tencentcloudapi.woa.com/document/product/267/20474#CasterInputInfo))
+* [[CasterLayoutInfo](http://document.tencentcloudapi.woa.com/document/product/267/20474#CasterLayoutInfo)](http://document.tencentcloudapi.woa.com/document/product/267/20474#[CasterLayoutInfo](http://document.tencentcloudapi.woa.com/document/product/267/20474#CasterLayoutInfo))
+* [[CasterLayoutParam](http://document.tencentcloudapi.woa.com/document/product/267/20474#CasterLayoutParam)](http://document.tencentcloudapi.woa.com/document/product/267/20474#[CasterLayoutParam](http://document.tencentcloudapi.woa.com/document/product/267/20474#CasterLayoutParam))
+* [[CasterOutputInfo](http://document.tencentcloudapi.woa.com/document/product/267/20474#CasterOutputInfo)](http://document.tencentcloudapi.woa.com/document/product/267/20474#[CasterOutputInfo](http://document.tencentcloudapi.woa.com/document/product/267/20474#CasterOutputInfo))
 
 ### 第 68 次发布
 
@@ -85854,6 +85919,21 @@
 
 
 ## 官网(portal) 版本：2023-04-13
+
+### 第 12 次发布
+
+发布时间：2024-11-27 01:54:37
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeProductDictionaryList](http://document.tencentcloudapi.woa.com/document/product/1732/81368)
+
+	* 新增入参：Name, EnName, Slug, Grade
+
 
 ### 第 11 次发布
 
@@ -101584,6 +101664,19 @@
 
 
 ## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+
+### 第 121 次发布
+
+发布时间：2024-11-27 02:05:06
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* DescribeAMQPClusters
+* ModifyAMQPCluster
 
 ### 第 120 次发布
 
@@ -120798,8 +120891,8 @@
 
 新增接口：
 
-* [[DeleteTrafficMirror](http://document.tencentcloudapi.woa.com/document/product/215/85397)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[StartTrafficMirror](http://document.tencentcloudapi.woa.com/document/product/215/85396)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DeleteTrafficMirror](http://document.tencentcloudapi.woa.com/document/product/215/85397)
+* [StartTrafficMirror](http://document.tencentcloudapi.woa.com/document/product/215/85396)
 
 ### 第 175 次发布
 
