@@ -444,14 +444,6 @@
         "title": "获取集群列表"
       }
     ],
-    "DescribeCmqDeadLetterSourceQueues": [
-      {
-        "document": "",
-        "input": "https://tdmq.tencentcloudapi.com/?Action=DescribeCmqDeadLetterSourceQueues\n&DeadLetterQueueName=test123\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"QueueSet\": [\n            {\n                \"QueueName\": \"test\",\n                \"QueueId\": \"queue-kc7m75to\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"83fce81a-7305-49b4-a154-983dd76204da\"\n    }\n}",
-        "title": "枚举死信队列源队列"
-      }
-    ],
     "DescribeCmqQueueDetail": [
       {
         "document": "获取队列详情",

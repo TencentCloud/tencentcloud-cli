@@ -15534,6 +15534,7 @@
           "example": "off",
           "member": "string",
           "name": "Switch",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -15544,6 +15545,7 @@
           "example": "无",
           "member": "RateLimitUserRule",
           "name": "RateLimitUserRules",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -15554,6 +15556,7 @@
           "example": "无",
           "member": "RateLimitTemplate",
           "name": "RateLimitTemplate",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -15564,6 +15567,7 @@
           "example": "无",
           "member": "RateLimitIntelligence",
           "name": "RateLimitIntelligence",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -15574,6 +15578,7 @@
           "example": "无",
           "member": "RateLimitUserRule",
           "name": "RateLimitCustomizes",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true

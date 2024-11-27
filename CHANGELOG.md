@@ -1,3 +1,232 @@
+# Release 3.0.1107.1
+
+## 费用中心(billing) 版本：2018-07-09
+
+### 第 73 次发布
+
+发布时间：2024-11-28 01:12:22
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [SummaryDetail](http://document.tencentcloudapi.woa.com/document/product/555/19183#SummaryDetail)
+
+	* <font color="#dd0000">**修改成员**：</font>GroupKey, GroupValue, TotalCost, RealTotalCost, CashPayAmount, IncentivePayAmount, VoucherPayAmount, TransferPayAmount, Business
+
+
+
+
+## 磐石(clouddc) 版本：2018-08-30
+
+### 第 11 次发布
+
+发布时间：2024-11-28 01:25:25
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [NodeInfoList](http://document.tencentcloudapi.woa.com/document/product/1626/78427#NodeInfoList)
+
+	* 新增成员：EnAbbreviation
+
+
+
+
+## DNSPod(dnspod) 版本：2021-03-23
+
+### 第 42 次发布
+
+发布时间：2024-11-28 01:35:46
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateSubdomainValidateTXTValue](http://document.tencentcloudapi.woa.com/document/product/1427/85413)
+* [DescribeSubdomainValidateStatus](http://document.tencentcloudapi.woa.com/document/product/1427/85412)
+
+
+
+## 数据加速器 GooseFS(goosefs) 版本：2022-05-19
+
+### 第 12 次发布
+
+发布时间：2024-11-28 01:44:13
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [AddAccountVersion](http://document.tencentcloudapi.woa.com/document/product/1716/85417)
+* [AddVersionImage](http://document.tencentcloudapi.woa.com/document/product/1716/85416)
+* [DescribeImageAttributes](http://document.tencentcloudapi.woa.com/document/product/1716/85415)
+* [SharedVersionImage](http://document.tencentcloudapi.woa.com/document/product/1716/85414)
+
+修改接口：
+
+* [BuildCvmResource](http://document.tencentcloudapi.woa.com/document/product/1716/85110)
+
+	* <font color="#dd0000">**修改入参**：</font>OwnerUin
+
+* [CreateFileSystem](http://document.tencentcloudapi.woa.com/document/product/1716/81453)
+
+	* 新增入参：ClusterPort
+
+* [DescribeCvmResource](http://document.tencentcloudapi.woa.com/document/product/1716/85105)
+
+	* <font color="#dd0000">**修改入参**：</font>OwnerUin
+
+
+新增数据结构：
+
+* [GoosefsxImageAttributes](http://document.tencentcloudapi.woa.com/document/product/1716/81241#GoosefsxImageAttributes)
+
+修改数据结构：
+
+* [GooseFsxCvmResourceAttributes](http://document.tencentcloudapi.woa.com/document/product/1716/81241#GooseFsxCvmResourceAttributes)
+
+	* 新增成员：CvmType
+
+
+
+
+## 轻量应用服务器(lighthouse) 版本：2020-03-24
+
+### 第 62 次发布
+
+发布时间：2024-11-28 01:51:20
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [LoginConfiguration](http://document.tencentcloudapi.woa.com/document/product/1207/47576#LoginConfiguration)
+
+	* 新增成员：LoginType
+
+
+
+
+## 云直播CSS(live) 版本：2018-08-01
+
+### 第 70 次发布
+
+发布时间：2024-11-28 01:52:21
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateCasterPgm](http://document.tencentcloudapi.woa.com/document/product/267/85423)
+* [CreateCasterPgmFromPvw](http://document.tencentcloudapi.woa.com/document/product/267/85422)
+* [CreateCasterPvw](http://document.tencentcloudapi.woa.com/document/product/267/85421)
+* [ReleaseCaster](http://document.tencentcloudapi.woa.com/document/product/267/85420)
+* [StopCasterPgm](http://document.tencentcloudapi.woa.com/document/product/267/85419)
+* [StopCasterPvw](http://document.tencentcloudapi.woa.com/document/product/267/85418)
+
+修改接口：
+
+* [DeleteLivePullStreamTask](http://document.tencentcloudapi.woa.com/document/product/267/56244)
+
+	* 新增入参：SpecifyTaskId
+
+
+
+
+## 媒体处理(mps) 版本：2019-06-12
+
+### 第 70 次发布
+
+发布时间：2024-11-28 01:56:02
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [AiAnalysisTaskSegmentOutput](http://document.tencentcloudapi.woa.com/document/product/862/37615#AiAnalysisTaskSegmentOutput)
+
+	* 新增成员：Abstract
+
+
+
+
+## 流计算 Oceanus(oceanus) 版本：2019-04-22
+
+### 第 58 次发布
+
+发布时间：2024-11-28 01:57:51
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Cluster](http://document.tencentcloudapi.woa.com/document/product/849/52010#Cluster)
+
+	* 新增成员：CrossTenantEniMode
+
+
+
+
+## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+
+### 第 122 次发布
+
+发布时间：2024-11-28 02:10:13
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* DescribeCmqDeadLetterSourceQueues
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 177 次发布
+
+发布时间：2024-11-28 02:17:48
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribePrivateNatGatewayTranslationAclRules](http://document.tencentcloudapi.woa.com/document/product/215/84089)
+
+	* 新增入参：Description
+
+
+修改数据结构：
+
+* [TranslationAclRule](http://document.tencentcloudapi.woa.com/document/product/215/15824#TranslationAclRule)
+
+	* 新增成员：Description
+
+
+
+
 # Release 3.0.1106.1
 
 ## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07

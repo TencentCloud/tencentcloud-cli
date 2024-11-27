@@ -1,11 +1,27 @@
 {
   "actions": {
+    "AddAccountVersion": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddAccountVersion\n<公共请求参数>\n\n{\n    \"VersionName\": \"Storage_Scale_Data_Management-5.2.1.0\",\n    \"NodeType\": 3,\n    \"SetUin\": \"3472213910\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9bd2b006-5922-4724-ab7f-bfab5cd34951\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "AddCrossVpcSubnetSupportForClientNode": [
       {
         "document": "为客户端节点添加跨vpc和子网访问的能力",
         "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddCrossVpcSubnetSupportForClientNode\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"x-c60-r3c4fa1f\",\n    \"SubnetInfo\": {\n        \"VpcId\": \"vpc-a1b2c3d4\",\n        \"SubnetId\": \"subnet-a1b2c3d4\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b3caa32f-5e39-4360-91e4-5724369b78a6\"\n    }\n}",
         "title": "为客户端节点添加跨vpc和子网访问的能力"
+      }
+    ],
+    "AddVersionImage": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddVersionImage\n<公共请求参数>\n\n{\n    \"ImageId\": \"img-lcuq5uv6\",\n    \"VersionName\": \"Storage_Scale_Data_Management-5.2.1.0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"847a9dae-7a55-4f15-9c69-85d7bbf6339a\"\n    }\n}",
+        "title": "示例"
       }
     ],
     "AttachFileSystemBucket": [
@@ -136,6 +152,14 @@
         "title": "罗列文件系统"
       }
     ],
+    "DescribeImageAttributes": [
+      {
+        "document": "示例1",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeImageAttributes\n<公共请求参数>\n\n{\n    \"DescribeUin\": \"3472213910\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ImageList\": [\n            {\n                \"ClusterUsedFlag\": true,\n                \"DefaultFlag\": true,\n                \"GwUsedFlag\": false,\n                \"ImageId\": \"img-7rb34bfw\",\n                \"SharedFlag\": true,\n                \"VersionName\": \"Storage_Scale_Data_Management-5.1.9.1\"\n            },\n            {\n                \"ClusterUsedFlag\": false,\n                \"DefaultFlag\": false,\n                \"GwUsedFlag\": true,\n                \"ImageId\": \"img-ipth2mjw\",\n                \"SharedFlag\": true,\n                \"VersionName\": \"Storage_Scale_Data_Management-5.2.1.0\"\n            }\n        ],\n        \"RequestId\": \"442f3f7b-dde7-4542-be10-8cea41fa4df6\",\n        \"TotalCount\": 2\n    }\n}",
+        "title": "示例1"
+      }
+    ],
     "DetachFileSystemBucket": [
       {
         "document": "解绑文件系统与Bucket的映射",
@@ -182,6 +206,14 @@
         "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryDataRepositoryBandwidth\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"x_c60_123456\"\n}",
         "output": "{\n    \"Response\": {\n        \"Bandwidth\": 600,\n        \"MinBandwidth\": 0,\n        \"BandwidthStatus\": 1,\n        \"RequestId\": \"b3caa32f-5e39-4360-91e4-5724369b78a6\"\n    }\n}",
         "title": "查询数据流动带宽"
+      }
+    ],
+    "SharedVersionImage": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SharedVersionImage\n<公共请求参数>\n\n{\n    \"VersionName\": \"Storage_Scale_Data_Management-5.2.1.0\",\n    \"ShareUin\": \"2832742109\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"540ce224-73bf-4321-abd2-0f7cdf8debd9\"\n    }\n}",
+        "title": "示例"
       }
     ],
     "TerminateCvmResource": [
