@@ -281,7 +281,7 @@
       "status": "online"
     },
     "CreatePersonAuthCertificateImage": {
-      "document": "获取个人用户认证证书图片下载URL\n\n个人用户认证证书图片样式如下图\n\n![image](https://dyn.ess.tencent.cn/guide/capi/CreatePersonAuthCertificateImage.png)\n\n注:  \n<ul>\n<li>只能获取个人用户证明图片, 企业员工的暂不支持</li>\n<li>处方单等特殊场景专用，此接口为白名单功能，使用前请联系对接的客户经理沟通。  </li>\n</ul>",
+      "document": "获取个人用户认证证书图片下载URL\n\n个人用户认证证书图片样式如下图\n\n![image](https://dyn.ess.tencent.cn/guide/capi/CreatePersonAuthCertificateImage.png)\n\n注:  \n<ul>\n<li>只能获取个人用户证明图片, 企业员工的暂不支持</li>\n<li>专为电子处方单（医疗自动签）特定场景使用。在使用前，请务必与您的客户经理联系以确认已经开通电子处方单功能 </li>\n</ul>",
       "input": "CreatePersonAuthCertificateImageRequest",
       "name": "获取个人用户认证证书图片",
       "output": "CreatePersonAuthCertificateImageResponse",
@@ -925,7 +925,7 @@
         },
         {
           "disabled": false,
-          "document": "发起方企业的签署人进行签署操作前，是否需要企业内部走审批流程，取值如下：\n<ul><li>**false**：（默认）不需要审批，直接签署。</li>\n<li>**true**：需要走审批流程。当到对应参与人签署时，会阻塞其签署操作，等待企业内部审批完成。</li></ul>\n企业可以通过CreateFlowSignReview审批接口通知腾讯电子签平台企业内部审批结果\n<ul><li>如果企业通知腾讯电子签平台审核通过，签署方可继续签署动作。</li>\n<li>如果企业通知腾讯电子签平台审核未通过，平台将继续阻塞签署方的签署动作，直到企业通知平台审核通过。</li></ul>\n\n注：`此功能可用于与企业内部的审批流程进行关联，支持手动、静默签署合同`",
+          "document": "此签署人（员工或者个人）签署前，是否需要发起方企业审批，取值如下：\n<ul><li>**false**：（默认）不需要审批，直接签署。</li>\n<li>**true**：需要走审批流程。当到对应参与人签署时，会阻塞其签署操作，等待企业内部审批完成。</li></ul>\n企业可以通过CreateFlowSignReview审批接口通知腾讯电子签平台企业内部审批结果\n<ul><li>如果企业通知腾讯电子签平台审核通过，签署方可继续签署动作。</li>\n<li>如果企业通知腾讯电子签平台审核未通过，平台将继续阻塞签署方的签署动作，直到企业通知平台审核通过。</li></ul>\n\n注：`此功能可用于与发起方企业内部的审批流程进行关联，支持手动、静默签署合同`\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/b14d5188ed0229d1401e74a9a49cab6d.png)",
           "example": "无",
           "member": "bool",
           "name": "ApproverNeedSignReview",
@@ -961,7 +961,7 @@
         },
         {
           "disabled": false,
-          "document": "签署人在合同中的填写控件列表，列表中可支持下列多种填写控件，控件的详细定义参考开发者中心的Component结构体\n<ul><li>单行文本控件</li>\n<li>多行文本控件</li>\n<li>勾选框控件</li>\n<li>数字控件</li>\n<li>图片控件</li>\n<li>数据表格等填写控件</li></ul>\n\n具体使用说明可参考[为签署方指定填写控件](https://qian.tencent.cn/developers/company/createFlowByFiles/#指定签署方填写控件)\n\n注：`此参数仅在通过文件发起合同或者合同组时生效`",
+          "document": "签署人在合同中的填写控件列表，列表中可支持下列多种填写控件，控件的详细定义参考开发者中心的Component结构体\n<ul><li>单行文本控件</li>\n<li>多行文本控件</li>\n<li>勾选框控件</li>\n<li>数字控件</li>\n<li>图片控件</li>\n</ul>\n\n具体使用说明可参考[为签署方指定填写控件](https://qian.tencent.cn/developers/company/createFlowByFiles/#指定签署方填写控件)\n\n注：`此参数仅在通过文件发起合同或者合同组时生效`",
           "example": "无",
           "member": "Component",
           "name": "Components",
@@ -11208,7 +11208,7 @@
         },
         {
           "disabled": false,
-          "document": "发起方企业的签署人进行签署操作前，是否需要企业内部走审批流程，取值如下：\n<ul><li>**false**：（默认）不需要审批，直接签署。</li>\n<li>**true**：需要走审批流程。当到对应参与人签署时，会阻塞其签署操作，等待企业内部审批完成。</li></ul>\n企业可以通过CreateFlowSignReview审批接口通知腾讯电子签平台企业内部审批结果\n<ul><li>如果企业通知腾讯电子签平台审核通过，签署方可继续签署动作。</li>\n<li>如果企业通知腾讯电子签平台审核未通过，平台将继续阻塞签署方的签署动作，直到企业通知平台审核通过。</li></ul>\n\n注：`此功能可用于与企业内部的审批流程进行关联，支持手动、静默签署合同`",
+          "document": "此签署人(员工或者个人)签署时，是否需要发起方企业审批，取值如下：\n<ul><li>**false**：（默认）不需要审批，直接签署。</li>\n<li>**true**：需要走审批流程。当到对应参与人签署时，会阻塞其签署操作，等待企业内部审批完成。</li></ul>\n企业可以通过CreateFlowSignReview审批接口通知腾讯电子签平台企业内部审批结果\n<ul><li>如果企业通知腾讯电子签平台审核通过，签署方可继续签署动作。</li>\n<li>如果企业通知腾讯电子签平台审核未通过，平台将继续阻塞签署方的签署动作，直到企业通知平台审核通过。</li></ul>\n\n注：`此功能可用于与发起方企业内部的审批流程进行关联，支持手动、静默签署合同`\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/b14d5188ed0229d1401e74a9a49cab6d.png)",
           "example": "无",
           "member": "bool",
           "name": "ApproverNeedSignReview",

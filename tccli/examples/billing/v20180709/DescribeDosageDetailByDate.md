@@ -9,7 +9,7 @@ tccli billing DescribeDosageDetailByDate --cli-unfold-argument  \
     --StartDate 2019-01-01 \
     --Domain www.gdxxb.com \
     --EndDate 2019-01-01 \
-    --ProductCode 10181
+    --ProductCode 102383
 ```
 
 Output: 
@@ -17,7 +17,7 @@ Output:
 {
     "Response": {
         "RetCode": 0,
-        "RetMsg": "",
+        "RetMsg": "ok",
         "Unit": "bps",
         "DetailSets": [
             {
@@ -45,9 +45,9 @@ Input:
 ```
 tccli billing DescribeDosageDetailByDate --cli-unfold-argument  \
     --StartDate 2019-01-01 \
-    --Domain  "" \
+    --Domain lb-1zvuxyml \
     --EndDate 2019-01-01 \
-    --ProductCode 10181
+    --ProductCode 102383
 ```
 
 Output: 
@@ -55,11 +55,11 @@ Output:
 {
     "Response": {
         "RetCode": 0,
-        "RetMsg": "",
+        "RetMsg": "ok",
         "Unit": "GB",
         "DetailSets": [
             {
-                "Domain": "",
+                "Domain": "lb-1zvuxyml",
                 "InstanceID": "lb-1zvuxyml",
                 "DetailPoints": [
                     {

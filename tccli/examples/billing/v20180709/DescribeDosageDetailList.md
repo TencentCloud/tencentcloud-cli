@@ -45,7 +45,7 @@ Output:
                 "ProductCode": "p_dsa",
                 "ProductCodeName": "全站加速网络ECDN",
                 "RemainValue": 2206972795,
-                "SdkAppId": "",
+                "SdkAppId": "1",
                 "SheetName": [
                     "全球IP应用加速_1分钟"
                 ],

@@ -12080,6 +12080,15 @@
           "name": "AccelerateArea",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "域名类型，取值有： <li>VOD：使用 VOD 产品分发的域名；</li> <li>EdgeOne：使用 EdgeOne 产品分发的域名。</li>不填默认取值为 VOD 。",
+          "example": "VOD",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -17814,6 +17823,16 @@
           "output_required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "域名类型，取值有： <li>VOD：使用 VOD 产品分发的域名；</li> <li>EdgeOne：使用 EdgeOne 产品分发的域名。</li>",
+          "example": "VOD",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

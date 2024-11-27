@@ -414,7 +414,7 @@
       "status": "online"
     },
     "CreatePersonAuthCertificateImage": {
-      "document": "获取个人用户认证证书图片下载URL\n\n个人用户认证证书图片样式如下图\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/d568bc0f101bef582f7af2cb5ab7a715.png)\n\n注:  \n<ul>\n<li>只能获取个人用户证明图片, 企业员工的暂不支持</li>\n<li>处方单等特殊场景专用，此接口为白名单功能，使用前请联系对接的客户经理沟通。  </li>\n</ul>",
+      "document": "获取个人用户认证证书图片下载URL\n\n个人用户认证证书图片样式如下图\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/d568bc0f101bef582f7af2cb5ab7a715.png)\n\n注:  \n<ul>\n<li>只能获取个人用户证明图片, 企业员工的暂不支持</li>\n<li>专为电子处方单（医疗自动签）特定场景使用。在使用前，请务必与您的客户经理联系以确认已经开通电子处方单功能 </li>\n</ul>",
       "input": "CreatePersonAuthCertificateImageRequest",
       "name": "获取个人用户认证证书图片",
       "output": "CreatePersonAuthCertificateImageResponse",
@@ -9367,7 +9367,7 @@
         },
         {
           "disabled": false,
-          "document": "发起方企业的签署人进行签署操作前，是否需要企业内部走审批流程，取值如下：\n<ul><li>**false**：（默认）不需要审批，直接签署。</li>\n<li>**true**：需要走审批流程。当到对应参与人签署时，会阻塞其签署操作，等待企业内部审批完成。</li></ul>\n企业可以通过ChannelCreateFlowSignReview审批接口通知腾讯电子签平台企业内部审批结果\n<ul><li>如果企业通知腾讯电子签平台审核通过，签署方可继续签署动作。</li>\n<li>如果企业通知腾讯电子签平台审核未通过，平台将继续阻塞签署方的签署动作，直到企业通知平台审核通过。</li></ul>\n\n注：`此功能可用于与企业内部的审批流程进行关联，支持手动、静默签署合同`",
+          "document": "此签署人（员工或者个人）签署前，是否需要发起方企业进行审批，取值如下：\n<ul><li>**false**：（默认）不需要审批，直接签署。</li>\n<li>**true**：需要走审批流程。当到对应参与人签署时，会阻塞其签署操作，等待发起方企业内部审批完成。</li></ul>\n企业可以通过ChannelCreateFlowSignReview审批接口通知腾讯电子签平台企业内部审批结果\n<ul><li>如果企业通知腾讯电子签平台审核通过，签署方可继续签署动作。</li>\n<li>如果企业通知腾讯电子签平台审核未通过，平台将继续阻塞签署方的签署动作，直到企业通知平台审核通过。</li></ul>\n\n注：`此功能可用于与发起方企业内部的审批流程进行关联，支持手动、静默签署合同`\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/b14d5188ed0229d1401e74a9a49cab6d.png)",
           "example": "false",
           "member": "bool",
           "name": "ApproverNeedSignReview",

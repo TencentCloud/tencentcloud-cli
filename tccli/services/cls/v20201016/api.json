@@ -15497,7 +15497,7 @@
         },
         {
           "disabled": false,
-          "document": "主题的存储类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "主题的存储类型\n\n- hot: 标准存储\n- cold: 低频存储\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "hot",
           "member": "string",
           "name": "StorageType",

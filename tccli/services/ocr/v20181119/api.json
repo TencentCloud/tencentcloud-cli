@@ -18289,6 +18289,26 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "住址",
+          "example": "广州省***区",
+          "member": "string",
+          "name": "AddressElectronic",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "发证机关",
+          "example": "广州省***局",
+          "member": "string",
+          "name": "IssueAuthorityElectronic",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -22512,6 +22532,16 @@
           "name": "RecognizeWarnMsg",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "行驶证类型 电子行驶证：Electronic 普通行驶证：Normal",
+          "example": "Normal",
+          "member": "string",
+          "name": "VehicleLicenseType",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {

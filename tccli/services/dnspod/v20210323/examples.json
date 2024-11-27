@@ -118,6 +118,14 @@
         "title": "创建快照"
       }
     ],
+    "CreateSubdomainValidateTXTValue": [
+      {
+        "document": "创建添加子域名 Zone 域解析时所需要的 TXT 记录值",
+        "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSubdomainValidateTXTValue\n<公共请求参数>\n\n{\n    \"DomainZone\": \"sub.dnspod.cn\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Domain\": \"dnspod.cn\",\n        \"Subdomain\": \"dnspodcheck\",\n        \"RecordType\": \"TXT\",\n        \"Value\": \"xxxxxxxxxxxx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "创建添加子域名 Zone 域解析时所需要的 TXT 记录值参数示例"
+      }
+    ],
     "CreateTXTRecord": [
       {
         "document": "添加TXT记录",
@@ -456,6 +464,14 @@
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSubdomainAnalytics\n<公共请求参数>\n\n{\n    \"Domain\": \"example.com\",\n    \"StartDate\": \"2022-06-14\",\n    \"EndDate\": \"2022-06-14\",\n    \"Subdomain\": \"test\"\n}",
         "output": "{\n    \"Response\": {\n        \"AliasData\": [],\n        \"Data\": [\n            {\n                \"DateKey\": \"20221201\",\n                \"HourKey\": null,\n                \"Num\": 0\n            }\n        ],\n        \"Info\": {\n            \"DnsFormat\": \"DATE\",\n            \"DnsTotal\": 0,\n            \"Domain\": \"zhaodapian.com\",\n            \"EndDate\": \"2022-12-01\",\n            \"StartDate\": \"2022-12-01\",\n            \"Subdomain\": \"test\"\n        },\n        \"RequestId\": \"b4aca3e1-c134-4a31-bc07-408d78551449\"\n    }\n}",
         "title": "子域名解析量统计"
+      }
+    ],
+    "DescribeSubdomainValidateStatus": [
+      {
+        "document": "查看添加子域名 Zone 域解析 TXT 记录值验证状态",
+        "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSubdomainValidateStatus\n<公共请求参数>\n\n{\n    \"DomainZone\": \"sub.dnspod.cn\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查看添加子域名 Zone 域解析 TXT 记录值验证状态参数示例"
       }
     ],
     "DescribeUserDetail": [

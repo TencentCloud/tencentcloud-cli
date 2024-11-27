@@ -738,6 +738,15 @@
           "name": "SecurityGroupId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "集群ssh通信端口，默认是22",
+          "example": "22",
+          "member": "uint64",
+          "name": "ClusterPort",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

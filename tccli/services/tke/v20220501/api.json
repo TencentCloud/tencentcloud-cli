@@ -3286,10 +3286,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "标签绑定的资源类型，当前支持类型：\"cluster\"\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标签绑定的资源类型，当前支持类型：\n1.cluster：集群相关接口，TagSpecification 的 ResourceType 传参为 cluster\n2.machine：节点池相关接口，如：CreateNodePool, DescribeNodePools 等，TagSpecification 的 ResourceType 传参为 machine\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cluster",
           "member": "string",
           "name": "ResourceType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -3300,6 +3301,7 @@
           "example": "无",
           "member": "Tag",
           "name": "Tags",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true

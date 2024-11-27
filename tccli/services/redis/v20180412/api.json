@@ -549,7 +549,7 @@
     "ModifyConnectionConfig": {
       "document": "本接口（ModifyConnectionConfig）用于修改实例的连接配置，包括带宽和最大连接数。",
       "input": "ModifyConnectionConfigRequest",
-      "name": "修改实例连接配置",
+      "name": "修改实例连接数与带宽",
       "output": "ModifyConnectionConfigResponse",
       "status": "online"
     },

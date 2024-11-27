@@ -77,6 +77,27 @@
       "output": "CreateCasterInputPushUrlResponse",
       "status": "online"
     },
+    "CreateCasterPgm": {
+      "document": "该接口用来启动主监任务，并将获取主监画面的播放地址。",
+      "input": "CreateCasterPgmRequest",
+      "name": "创建主监任务",
+      "output": "CreateCasterPgmResponse",
+      "status": "online"
+    },
+    "CreateCasterPgmFromPvw": {
+      "document": "该接口用来将预监画面的布局、水印、字幕等配置，复制到主监画面中。\n该接口使用时，预监任务需处于运行状态。",
+      "input": "CreateCasterPgmFromPvwRequest",
+      "name": "复制预监展示信息创建主监",
+      "output": "CreateCasterPgmFromPvwResponse",
+      "status": "online"
+    },
+    "CreateCasterPvw": {
+      "document": "该接口用来启动预监任务，并将获取预监画面的播放地址。",
+      "input": "CreateCasterPvwRequest",
+      "name": "创建预监任务",
+      "output": "CreateCasterPvwResponse",
+      "status": "online"
+    },
     "CreateCommonMixStream": {
       "document": "该接口用来创建通用混流。用法与旧接口 mix_streamv2.start_mix_stream_advanced 基本一致。\n注意：当前最多支持16路混流。\n最佳实践：https://cloud.tencent.com/document/product/267/45566",
       "input": "CreateCommonMixStreamRequest",
@@ -1176,6 +1197,13 @@
       "output": "ModifyPullStreamStatusResponse",
       "status": "online"
     },
+    "ReleaseCaster": {
+      "document": "调用该接口，释放导播台实例，但保留所有的配置。\n执行该接口，预监与主监画面停止，第三方推流停止。\n点播文件与直播地址将停止展示，客户自行推到导播台的流需要手动停止。",
+      "input": "ReleaseCasterRequest",
+      "name": "释放导播台",
+      "output": "ReleaseCasterResponse",
+      "status": "online"
+    },
     "RestartLivePullStreamTask": {
       "document": "将正在运行的拉流转推任务进行重启。\n注意：\n1. 重启任务会造成推流中断。\n2. 点播源任务的重启，会根据VodRefreshType决定是续播还是从头开始播。",
       "input": "RestartLivePullStreamTaskRequest",
@@ -1202,6 +1230,20 @@
       "input": "StartLiveStreamMonitorRequest",
       "name": "启动直播流监播任务",
       "output": "StartLiveStreamMonitorResponse",
+      "status": "online"
+    },
+    "StopCasterPgm": {
+      "document": "该接口用来停止导播台的主监输出。\n停止主监后，对应的推流到腾讯云直播源站和推流到其他第三方平台均将会停止。",
+      "input": "StopCasterPgmRequest",
+      "name": "停止导播台主监任务",
+      "output": "StopCasterPgmResponse",
+      "status": "online"
+    },
+    "StopCasterPvw": {
+      "document": "该接口用来停止导播台的预监任务。",
+      "input": "StopCasterPvwRequest",
+      "name": "停止导播台预监任务",
+      "output": "StopCasterPvwResponse",
       "status": "online"
     },
     "StopLivePadProcessor": {
@@ -3587,6 +3629,205 @@
           "example": "rtmp://www.example.com/live/stream_id?bizid=xxx",
           "member": "string",
           "name": "PushUrl",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCasterPgmFromPvwRequest": {
+      "document": "CreateCasterPgmFromPvw请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "导播台ID。",
+          "example": "1234",
+          "member": "uint64",
+          "name": "CasterId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCasterPgmFromPvwResponse": {
+      "document": "CreateCasterPgmFromPvw返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "主监任务的rtmp协议预览地址。 \n注：该地址仅供预览，不可分发。",
+          "example": "rtmp://www.example.com/live/example_stream_id",
+          "member": "string",
+          "name": "PgmPlayUrl",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "注：该字段已废弃，请结合腾讯云直播播放地址生成策略生成cdn播放地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://example.cdn.com/live/example_stream_id",
+          "member": "string",
+          "name": "CdnPlayUrl",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "主监任务在腾讯云直播侧的流ID。",
+          "example": "example_stream_id",
+          "member": "string",
+          "name": "CdnStreamId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主监任务的webrtc协议播放地址。 \n注：\n1.该预览地址仅作为预览，不可分发。\n2.webrtc播放地址需配合腾讯云快直播播放sdk使用。",
+          "example": "webrtc://webrtc.domain.com/live/example_stream",
+          "member": "string",
+          "name": "PgmWebRTCPlayUrl",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCasterPgmRequest": {
+      "document": "CreateCasterPgm请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "导播台展示信息参数。",
+          "example": "无",
+          "member": "CasterDisplayInfo",
+          "name": "PgmDisplayInfo",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "导播台ID。",
+          "example": "1234",
+          "member": "uint64",
+          "name": "CasterId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCasterPgmResponse": {
+      "document": "CreateCasterPgm返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "主监任务的rtmp协议预览地址。\n注：该地址仅供预览，不可分发。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "rtmp://www.example.com/live/example_stream_id",
+          "member": "string",
+          "name": "PgmPlayUrl",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "注：该字段已废弃，请结合腾讯云直播播放地址生成策略生成cdn播放地址。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://example.cdn.com/live/example_stream_id",
+          "member": "string",
+          "name": "CdnPlayUrl",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "主监任务在腾讯云直播侧的流ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "example_stream_id",
+          "member": "string",
+          "name": "CdnStreamId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "主监任务的webrtc协议播放地址。\n注：\n1. 该预览地址仅作为预览，不可分发。\n2. webrtc播放地址需配合腾讯云快直播播放sdk使用。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "webrtc://webrtc.domain.com/live/example_stream",
+          "member": "string",
+          "name": "PgmWebRTCPlayUrl",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCasterPvwRequest": {
+      "document": "CreateCasterPvw请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "导播台预监展示信息参数",
+          "example": "无",
+          "member": "CasterDisplayInfo",
+          "name": "PvwDisplayInfo",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "导播台ID。",
+          "example": "1234",
+          "member": "uint64",
+          "name": "CasterId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCasterPvwResponse": {
+      "document": "CreateCasterPvw返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "预监任务的画面rtmp协议预览地址。\n注：该预览地址仅供画面预览，不可分发。",
+          "example": "rtmp:/www.example.com/live/example_stream_id",
+          "member": "string",
+          "name": "PvwPlayUrl",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "预监任务的webrtc协议预览画面。\n注：\n1. 该预览地址仅供预览，不可分发。\n2. webrtc播放地址，需配合腾讯云快直播播放sdk使用\n",
+          "example": "webrtc://webrtc.example.com/live/example_stream_id",
+          "member": "string",
+          "name": "PvwWebRTCPlayUrl",
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
@@ -6210,6 +6451,15 @@
           "member": "string",
           "name": "Operator",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指定任务 ID。注意：用于删除使用自定义任务 ID 创建的任务。",
+          "example": "test",
+          "member": "string",
+          "name": "SpecifyTaskId",
+          "required": false,
           "type": "string"
         }
       ],
@@ -17810,6 +18060,33 @@
       ],
       "usage": "out"
     },
+    "ReleaseCasterRequest": {
+      "document": "ReleaseCaster请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "导播台ID。",
+          "example": "1234",
+          "member": "uint64",
+          "name": "CasterId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ReleaseCasterResponse": {
+      "document": "ReleaseCaster返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "RestartLivePullStreamTaskRequest": {
       "document": "RestartLivePullStreamTask请求参数结构体",
       "members": [
@@ -18240,6 +18517,60 @@
     },
     "StartLiveStreamMonitorResponse": {
       "document": "StartLiveStreamMonitor返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopCasterPgmRequest": {
+      "document": "StopCasterPgm请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "导播台ID。",
+          "example": "1234",
+          "member": "uint64",
+          "name": "CasterId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "StopCasterPgmResponse": {
+      "document": "StopCasterPgm返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopCasterPvwRequest": {
+      "document": "StopCasterPvw请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "导播台ID。",
+          "example": "1234",
+          "member": "uint64",
+          "name": "CasterId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "StopCasterPvwResponse": {
+      "document": "StopCasterPvw返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

@@ -2642,9 +2642,19 @@
           "example": "无",
           "member": "SegmentRecognitionItem",
           "name": "SegmentSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "视频摘要，离线场景用。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
+          "member": "string",
+          "name": "Abstract",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

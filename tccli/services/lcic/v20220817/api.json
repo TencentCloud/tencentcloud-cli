@@ -4104,7 +4104,16 @@
           "example": "abc",
           "member": "string",
           "name": "UserId",
-          "required": true,
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "客户端用户 id,如果未指定则为用户 id。",
+          "example": "abc",
+          "member": "string",
+          "name": "OriginId",
+          "required": false,
           "type": "string"
         }
       ],

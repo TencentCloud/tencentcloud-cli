@@ -88,6 +88,30 @@
         "title": "请求示例"
       }
     ],
+    "CreateCasterPgm": [
+      {
+        "document": "创建主监任务",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCasterPgm\n<公共请求参数>\n\n{\n    \"CasterId\": 1234,\n    \"PgmDisplayInfo\": {\n        \"LayoutIndex\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"PgmPlayUrl\": \"rtmp://www.example.com/live/example_stream_id\",\n        \"CdnPlayUrl\": \"https://cdn.example.com/live/example_stream_id\",\n        \"CdnStreamId\": \"example_stream_id\",\n        \"PgmWebRTCPlayUrl\": \"webrtc://webrtc.example.com/live/example_stream_id\",\n        \"RequestId\": \"6a2b5970-ffbb-419e-9667-13595e755143\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "CreateCasterPgmFromPvw": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCasterPgmFromPvw\n<公共请求参数>\n\n{\n    \"CasterId\": 1234\n}",
+        "output": "{\n    \"Response\": {\n        \"PgmPlayUrl\": \"rtmp://www.example.com/live/example_stream_id\",\n        \"PgmWebRTCPlayUrl\": \"webrtc://webrtc.example.com/live/example_stream_id\",\n        \"CdnPlayUrl\": \"https://cdn.example.com/live/example_stream_id\",\n        \"CdnStreamId\": \"example_stream_id\",\n        \"RequestId\": \"84fea7c5-37e7-4d89-ba04-76338dc7b41d\"\n    }\n}",
+        "title": "复制预监的布局配置到主监任务中"
+      }
+    ],
+    "CreateCasterPvw": [
+      {
+        "document": "创建使用布局Index 1的预监任务。",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCasterPvw\n<公共请求参数>\n\n{\n    \"CasterId\": 1234,\n    \"PvwDisplayInfo\": {\n        \"LayoutIndex\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"PvwPlayUrl\": \"rtmp://www.example.com/live/pvw_example\",\n        \"PvwWebRTCPlayUrl\": \"webrtc://webrtc.example.domain/live/pvw_example\",\n        \"RequestId\": \"6a2b5970-ffbb-419e-9667-13595e755143\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
     "CreateCommonMixStream": [
       {
         "document": "使用混流预置模板混流。",
@@ -1368,6 +1392,14 @@
         "title": "请求示例"
       }
     ],
+    "ReleaseCaster": [
+      {
+        "document": "释放导播台",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReleaseCaster\n<公共请求参数>\n\n{\n    \"CasterId\": 1234\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
     "RestartLivePullStreamTask": [
       {
         "document": "",
@@ -1398,6 +1430,22 @@
         "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartLiveStreamMonitor\n<公共请求参数>\n\n{\n    \"MonitorId\": \"1bd5af00-5be5-4e4d-aa75-340ba0f35586\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5a795652-629c-4915-910c-2b220eaaaf91\"\n    }\n}",
         "title": "启动一个直播监播任务"
+      }
+    ],
+    "StopCasterPgm": [
+      {
+        "document": "停止主监任务",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopCasterPgm\n<公共请求参数>\n\n{\n    \"CasterId\": 1234\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "StopCasterPvw": [
+      {
+        "document": "停止预监任务",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopCasterPvw\n<公共请求参数>\n\n{\n    \"CasterId\": 1234\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "请求示例"
       }
     ],
     "StopLivePadProcessor": [

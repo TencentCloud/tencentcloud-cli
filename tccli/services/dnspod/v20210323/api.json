@@ -98,6 +98,13 @@
       "output": "CreateSnapshotResponse",
       "status": "online"
     },
+    "CreateSubdomainValidateTXTValue": {
+      "document": "创建添加子域名 Zone 域解析时所需要的 TXT 记录值",
+      "input": "CreateSubdomainValidateTXTValueRequest",
+      "name": "创建添加子域名 Zone 域解析时所需要的 TXT 记录值",
+      "output": "CreateSubdomainValidateTXTValueResponse",
+      "status": "online"
+    },
     "CreateTXTRecord": {
       "document": "添加TXT记录\n备注：新添加的解析记录存在短暂的索引延迟，如果查询不到新增记录，请在 30 秒后重试",
       "input": "CreateTXTRecordRequest",
@@ -383,6 +390,13 @@
       "input": "DescribeSubdomainAnalyticsRequest",
       "name": "子域名解析量统计",
       "output": "DescribeSubdomainAnalyticsResponse",
+      "status": "online"
+    },
+    "DescribeSubdomainValidateStatus": {
+      "document": "查看添加子域名 Zone 域解析 TXT 记录值验证状态",
+      "input": "DescribeSubdomainValidateStatusRequest",
+      "name": "查看添加子域名 Zone 域解析 TXT 记录值验证状态",
+      "output": "DescribeSubdomainValidateStatusResponse",
       "status": "online"
     },
     "DescribeUserDetail": {
@@ -2157,6 +2171,69 @@
     "CreateSnapshotResponse": {
       "document": "CreateSnapshot返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSubdomainValidateTXTValueRequest": {
+      "document": "CreateSubdomainValidateTXTValue请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "要添加的子域名 Zone 域。",
+          "example": "sub.dnspod.cn",
+          "member": "string",
+          "name": "DomainZone",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSubdomainValidateTXTValueResponse": {
+      "document": "CreateSubdomainValidateTXTValue返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要添加 TXT 记录的域名。",
+          "example": "dnspod.cn",
+          "member": "string",
+          "name": "Domain",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "需要添加 TXT 记录的主机记录。",
+          "example": "dnspodcheck",
+          "member": "string",
+          "name": "Subdomain",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "需要添加记录类型。",
+          "example": "TXT",
+          "member": "string",
+          "name": "RecordType",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "需要添加 TXT 记录的记录值。",
+          "example": "无",
+          "member": "string",
+          "name": "Value",
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -5323,6 +5400,33 @@
           "type": "list",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSubdomainValidateStatusRequest": {
+      "document": "DescribeSubdomainValidateStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "要查看 TXT 记录校验状态的子域名 Zone 域。",
+          "example": "sub.dnspod.cn",
+          "member": "string",
+          "name": "DomainZone",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSubdomainValidateStatusResponse": {
+      "document": "DescribeSubdomainValidateStatus返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

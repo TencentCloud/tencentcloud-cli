@@ -17,19 +17,19 @@ Output:
             {
                 "Id": 616417,
                 "Name": "集团",
-                "TreeNodeUniqKey": "xxxx-63871c5ede811",
+                "TreeNodeUniqKey": "63871****",
                 "Symbol": 0,
                 "Children": [
                     {
                         "Id": 835454,
                         "Name": "财务产品",
-                        "TreeNodeUniqKey": "xxxx-6391da70528fb",
+                        "TreeNodeUniqKey": "63871****",
                         "Symbol": 0,
                         "Children": [
                             {
                                 "Id": 835457,
                                 "Name": "核算组",
-                                "TreeNodeUniqKey": "xxxx-6391da9ae376c",
+                                "TreeNodeUniqKey": "63871****",
                                 "Symbol": 1,
                                 "Children": null,
                                 "Detail": {
@@ -56,7 +56,7 @@ Output:
                             {
                                 "Id": 835458,
                                 "Name": "核算组（新）",
-                                "TreeNodeUniqKey": "xxxx-6391dab1d770f",
+                                "TreeNodeUniqKey": "63871****",
                                 "Symbol": 2,
                                 "Children": null,
                                 "Detail": {
@@ -83,7 +83,7 @@ Output:
                             {
                                 "Id": 835459,
                                 "Name": "资金组",
-                                "TreeNodeUniqKey": "xxxx-6391dabf3a789",
+                                "TreeNodeUniqKey": "63871****",
                                 "Symbol": 1,
                                 "Children": null,
                                 "Detail": {
@@ -110,7 +110,7 @@ Output:
                             {
                                 "Id": 835460,
                                 "Name": "结算组",
-                                "TreeNodeUniqKey": "xxxx-6391dac6c4f72",
+                                "TreeNodeUniqKey": "63871****",
                                 "Symbol": 1,
                                 "Children": null,
                                 "Detail": {
@@ -159,13 +159,13 @@ Output:
                     {
                         "Id": 835455,
                         "Name": "营销产品",
-                        "TreeNodeUniqKey": "xxxx-6391da78a09a4",
+                        "TreeNodeUniqKey": "63871****",
                         "Symbol": 0,
                         "Children": [
                             {
                                 "Id": 835461,
                                 "Name": "主数据组",
-                                "TreeNodeUniqKey": "xxxx-6391dad853206",
+                                "TreeNodeUniqKey": "63871****",
                                 "Symbol": 2,
                                 "Children": null,
                                 "Detail": {
@@ -192,7 +192,7 @@ Output:
                             {
                                 "Id": 835462,
                                 "Name": "客户应用组",
-                                "TreeNodeUniqKey": "xxxx-6391dae9802da",
+                                "TreeNodeUniqKey": "63871****",
                                 "Symbol": 1,
                                 "Children": null,
                                 "Detail": {
@@ -241,13 +241,13 @@ Output:
                     {
                         "Id": 835456,
                         "Name": "数据产品",
-                        "TreeNodeUniqKey": "xxxx-6391da8abb3c7",
+                        "TreeNodeUniqKey": "63871****",
                         "Symbol": 0,
                         "Children": [
                             {
                                 "Id": 835467,
                                 "Name": "数据产品-自动创建",
-                                "TreeNodeUniqKey": "xxxx-63929e07089d0",
+                                "TreeNodeUniqKey": "63871****",
                                 "Symbol": 1,
                                 "Children": null,
                                 "Detail": {
@@ -274,7 +274,7 @@ Output:
                             {
                                 "Id": 835468,
                                 "Name": "1",
-                                "TreeNodeUniqKey": "xxxx-63929e0706e81",
+                                "TreeNodeUniqKey": "63871****",
                                 "Symbol": 0,
                                 "Children": null,
                                 "Detail": {
@@ -345,7 +345,7 @@ Output:
             {
                 "Id": null,
                 "Name": "未分配",
-                "TreeNodeUniqKey": "",
+                "TreeNodeUniqKey": "63871****",
                 "Symbol": 0,
                 "Children": null,
                 "Detail": {
@@ -377,7 +377,7 @@ Output:
             "VoucherPayAmount": "12.00000000",
             "TransferPayAmount": "0.00000000"
         },
-        "RequestId": "xxxx"
+        "RequestId": "d6TeEkLm691234432"
     }
 }
 ```

@@ -3,14 +3,14 @@
     "CheckAttributeLabelExist": {
       "document": "检查属性下的标签名是否存在",
       "input": "CheckAttributeLabelExistRequest",
-      "name": "检查属性下的标签名是否存在",
+      "name": "检查标签下的标签值是否存在",
       "output": "CheckAttributeLabelExistResponse",
       "status": "online"
     },
     "CheckAttributeLabelRefer": {
       "document": "检查属性标签引用",
       "input": "CheckAttributeLabelReferRequest",
-      "name": "检查属性标签引用",
+      "name": "检查标签引用",
       "output": "CheckAttributeLabelReferResponse",
       "status": "online"
     },
@@ -87,7 +87,7 @@
     "DeleteAttributeLabel": {
       "document": "删除属性标签",
       "input": "DeleteAttributeLabelRequest",
-      "name": "删除属性标签",
+      "name": "删除标签",
       "output": "DeleteAttributeLabelResponse",
       "status": "online"
     },
@@ -129,7 +129,7 @@
     "DescribeAttributeLabel": {
       "document": "查询属性标签详情",
       "input": "DescribeAttributeLabelRequest",
-      "name": "查询属性标签详情",
+      "name": "查询标签详情",
       "output": "DescribeAttributeLabelResponse",
       "status": "online"
     },
@@ -262,7 +262,7 @@
     "ExportAttributeLabel": {
       "document": "导出属性标签",
       "input": "ExportAttributeLabelRequest",
-      "name": "导出属性标签",
+      "name": "导出标签",
       "output": "ExportAttributeLabelResponse",
       "status": "online"
     },
@@ -395,7 +395,7 @@
     "ListAttributeLabel": {
       "document": "查询属性标签列表",
       "input": "ListAttributeLabelRequest",
-      "name": "查询属性标签列表",
+      "name": "查询标签列表",
       "output": "ListAttributeLabelResponse",
       "status": "online"
     },
@@ -493,7 +493,7 @@
     "ModifyAttributeLabel": {
       "document": "编辑属性标签",
       "input": "ModifyAttributeLabelRequest",
-      "name": "编辑属性标签",
+      "name": "编辑标签",
       "output": "ModifyAttributeLabelResponse",
       "status": "online"
     },
@@ -626,7 +626,7 @@
     "UploadAttributeLabel": {
       "document": "上传导入属性标签",
       "input": "UploadAttributeLabelRequest",
-      "name": "上传导入属性标签",
+      "name": "上传导入标签",
       "output": "UploadAttributeLabelResponse",
       "status": "online"
     },
@@ -1001,7 +1001,7 @@
       "usage": "out"
     },
     "AttrLabelDetail": {
-      "document": "属性标签详情",
+      "document": "标签详情",
       "members": [
         {
           "disabled": false,
@@ -1051,6 +1051,26 @@
           "name": "IsUpdating",
           "output_required": false,
           "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "状态描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "StatusDesc",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
