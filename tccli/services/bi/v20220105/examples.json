@@ -114,6 +114,14 @@
         "title": "success"
       }
     ],
+    "DescribePageWidgetList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePageWidgetList\n<公共请求参数>\n\n{\n    \"ProjectId\": \"662\",\n    \"PageId\": \"6465\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorInfo\": {\n            \"ErrorTip\": \"abc\",\n            \"ErrorMessage\": \"abc\",\n            \"ErrorLevel\": \"abc\",\n            \"DocLink\": \"abc\",\n            \"FAQ\": \"abc\",\n            \"ReservedField\": \"abc\"\n        },\n        \"Extra\": \"abc\",\n        \"Data\": {\n            \"CorpId\": \"abc\",\n            \"ProjectId\": \"abc\",\n            \"PageId\": \"abc\",\n            \"WidgetList\": [\n                {\n                    \"WidgetId\": \"abc\",\n                    \"WidgetName\": \"abc\"\n                }\n            ]\n        },\n        \"Msg\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "成功"
+      }
+    ],
     "DescribeProjectInfo": [
       {
         "document": "展示项目详情接口示例",
@@ -152,6 +160,14 @@
         "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserRoleProjectList\n<公共请求参数>\n\n{\n    \"PageNo\": 0,\n    \"PageSize\": 0,\n    \"ProjectId\": 0,\n    \"IsOnlyBindAppUser\": true\n}",
         "output": "{\n    \"Response\": {\n        \"ErrorInfo\": {\n            \"ErrorTip\": \"abc\",\n            \"ErrorLevel\": \"abc\",\n            \"DocLink\": \"abc\",\n            \"FAQ\": \"abc\",\n            \"ReservedField\": \"abc\"\n        },\n        \"Extra\": \"abc\",\n        \"Data\": {\n            \"Total\": 0,\n            \"TotalPages\": 0,\n            \"List\": [\n                {\n                    \"Id\": 1,\n                    \"RoleList\": [\n                        {\n                            \"RoleName\": \"abc\",\n                            \"RoleId\": 0,\n                            \"ProjectId\": 0,\n                            \"ProjectName\": \"abc\",\n                            \"ScopeType\": 0,\n                            \"ModuleCollection\": \"abc\"\n                        }\n                    ],\n                    \"RoleIdList\": [\n                        1\n                    ],\n                    \"UserId\": \"abc\",\n                    \"UserName\": \"abc\",\n                    \"CorpId\": \"abc\",\n                    \"Email\": \"abc\",\n                    \"CreatedUser\": \"abc\",\n                    \"CreatedAt\": \"abc\",\n                    \"UpdatedUser\": \"abc\",\n                    \"UpdatedAt\": \"abc\",\n                    \"LastLogin\": \"2020-09-22T00:00:00+00:00\",\n                    \"Status\": 0,\n                    \"PhoneNumber\": \"abc\",\n                    \"AreaCode\": \"abc\",\n                    \"RootAccount\": true,\n                    \"CorpAdmin\": true,\n                    \"AppUserId\": \"abc\",\n                    \"AppUserAliasName\": \"abc\",\n                    \"AppUserName\": \"abc\",\n                    \"InValidateAppRange\": true\n                }\n            ]\n        },\n        \"Msg\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "项目内-用户角色列表"
+      }
+    ],
+    "ExportScreenPage": [
+      {
+        "document": "导出自由画布",
+        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExportScreenPage\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1907\",\n    \"PageId\": \"39618\",\n    \"CanvasType\": \"FREE\",\n    \"PicType\": \"url\",\n    \"WidgetIds\": []\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorInfo\": {\n            \"ErrorTip\": \"abc\",\n            \"ErrorMessage\": \"abc\",\n            \"ErrorLevel\": \"abc\",\n            \"DocLink\": \"abc\",\n            \"FAQ\": \"abc\",\n            \"ReservedField\": \"abc\"\n        },\n        \"Extra\": \"abc\",\n        \"Data\": {\n            \"PicType\": \"abc\",\n            \"List\": [\n                {\n                    \"Content\": \"abc\",\n                    \"WidgetId\": \"abc\"\n                }\n            ],\n            \"TranId\": \"abc\",\n            \"TranStatus\": 0\n        },\n        \"Msg\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "导出自由画布"
       }
     ],
     "ModifyDatasource": [

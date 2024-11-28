@@ -13,41 +13,168 @@ Output:
     "Response": {
         "Business": [
             {
+                "BusinessCode": "p_cvm",
                 "Children": [
-                    {},
-                    {}
-                ]
+                    {
+                        "ProductCode": "sp_cvm_s1",
+                        "ProductCodeName": "云服务器CVM-标准型S1",
+                        "Children": [
+                            {
+                                "ItemCode": "sv_cvm_bandwidth_prepay",
+                                "ItemCodeName": "带宽-按带宽计费"
+                            },
+                            {
+                                "ItemCode": "sv_cvm_rootdisk_cbspremium",
+                                "ItemCodeName": "高效云系统盘"
+                            },
+                            {
+                                "ItemCode": "virtual_v_cvm_compute_s1",
+                                "ItemCodeName": "计算组件"
+                            },
+                            {
+                                "ItemCode": "sv_cvm_rootdisk_local",
+                                "ItemCodeName": "本地系统盘"
+                            }
+                        ]
+                    },
+                    {
+                        "ProductCode": "sp_cvm_s2",
+                        "ProductCodeName": "云服务器CVM-标准型S2",
+                        "Children": [
+                            {
+                                "ItemCode": "virtual_v_cvm_compute_s2",
+                                "ItemCodeName": "计算组件"
+                            },
+                            {
+                                "ItemCode": "sv_cvm_rootdisk_local",
+                                "ItemCodeName": "本地系统盘"
+                            },
+                            {
+                                "ItemCode": "sv_cvm_rootdisk_cbspremium",
+                                "ItemCodeName": "高效云系统盘"
+                            },
+                            {
+                                "ItemCode": "sv_cvm_bandwidth_prepay",
+                                "ItemCodeName": "带宽-按带宽计费"
+                            }
+                        ]
+                    }
+                ],
+                "BusinessCodeName": "云服务器CVM"
             },
             {
+                "BusinessCode": "p_cbs",
                 "Children": [
-                    {}
-                ]
+                    {
+                        "ProductCode": "sp_cbs_premium",
+                        "ProductCodeName": "高性能云硬盘",
+                        "Children": [
+                            {
+                                "ItemCode": "sv_cbs_memspace_premium",
+                                "ItemCodeName": "高性能云硬盘-存储空间"
+                            }
+                        ]
+                    }
+                ],
+                "BusinessCodeName": "云硬盘CBS"
             },
             {
+                "BusinessCode": "p_cos",
                 "Children": [
-                    {}
-                ]
+                    {
+                        "ProductCode": "sp_cos_pkg_std_new",
+                        "ProductCodeName": "COS 标准存储容量包 new",
+                        "Children": [
+                            {
+                                "ItemCode": "sv_cos_pkg_std_new_20",
+                                "ItemCodeName": "COS 标准存储容量包 20GB new"
+                            },
+                            {
+                                "ItemCode": "sv_cos_pkg_std_new_10",
+                                "ItemCodeName": "COS 标准存储容量包 10GB new"
+                            }
+                        ]
+                    }
+                ],
+                "BusinessCodeName": "COS 对象存储"
             },
             {
+                "BusinessCode": "p_rav",
                 "Children": [
-                    {}
-                ]
+                    {
+                        "ProductCode": "sp_rav_audio_video",
+                        "ProductCodeName": "实时音视频-音视频通话",
+                        "Children": [
+                            {
+                                "ItemCode": "sv_rav_audio_video_custom_free",
+                                "ItemCodeName": "音视频通话-赠送套餐包"
+                            },
+                            {
+                                "ItemCode": "sv_rav_audio_video_assign_formal",
+                                "ItemCodeName": "实时音视频-音视频通话-固定套餐包"
+                            }
+                        ]
+                    }
+                ],
+                "BusinessCodeName": "实时音视频"
             },
             {
+                "BusinessCode": "p_cdn",
                 "Children": [
-                    {}
-                ]
+                    {
+                        "ProductCode": "sp_cdn_cn_flux_package",
+                        "ProductCodeName": "中国境内CDN流量包",
+                        "Children": [
+                            {
+                                "ItemCode": "sv_cdn_cn_flux_package",
+                                "ItemCodeName": "CDN流量包-流量"
+                            }
+                        ]
+                    }
+                ],
+                "BusinessCodeName": "内容分发网络CDN"
             },
             {
+                "BusinessCode": "p_ci",
                 "Children": [
-                    {},
-                    {}
-                ]
+                    {
+                        "ProductCode": "sp_ci_pkg_im_com",
+                        "ProductCodeName": "CI 图片压缩资源包",
+                        "Children": [
+                            {
+                                "ItemCode": "sv_ci_pkg_im_com_10",
+                                "ItemCodeName": "CI 图片压缩资源包 10万次"
+                            }
+                        ]
+                    },
+                    {
+                        "ProductCode": "sp_ci_pkg_co_re",
+                        "ProductCodeName": "万象-COS-内容识别资源包",
+                        "Children": [
+                            {
+                                "ItemCode": "sv_ci_pkg_co_re_10",
+                                "ItemCodeName": "万象-COS-内容识别资源包 10万次"
+                            }
+                        ]
+                    }
+                ],
+                "BusinessCodeName": "数据万象CI"
             },
             {
+                "BusinessCode": "p_redis",
                 "Children": [
-                    {}
-                ]
+                    {
+                        "ProductCode": "sp_redis_single",
+                        "ProductCodeName": "云数据库Redis-社区版",
+                        "Children": [
+                            {
+                                "ItemCode": "sv_redis_mem_single",
+                                "ItemCodeName": "云数据库Redis-社区版-内存"
+                            }
+                        ]
+                    }
+                ],
+                "BusinessCodeName": "云数据库Redis"
             }
         ],
         "OwnerUin": [

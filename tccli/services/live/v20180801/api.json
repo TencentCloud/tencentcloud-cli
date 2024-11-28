@@ -8237,9 +8237,10 @@
         {
           "disabled": false,
           "document": "延播信息列表。",
-          "example": "",
+          "example": "空",
           "member": "DelayInfo",
           "name": "DelayInfoList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

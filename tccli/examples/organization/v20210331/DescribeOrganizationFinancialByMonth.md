@@ -17,17 +17,20 @@ Output:
             {
                 "Id": 7,
                 "Month": "2021-06",
-                "TotalCost": 10232.1
+                "TotalCost": 1002.1,
+                "GrowthRate": "33.3"
             },
             {
                 "Id": 5,
                 "Month": "2021-05",
-                "TotalCost": 1002.1
+                "TotalCost": 1002.1,
+                "GrowthRate": "33.3"
             },
             {
                 "Id": 3,
                 "Month": "2021-04",
-                "TotalCost": 1002.1
+                "TotalCost": 1002.1,
+                "GrowthRate": "33.3"
             }
         ],
         "RequestId": "89c5de68-2306-48df-9e81-ad2953447e7a"

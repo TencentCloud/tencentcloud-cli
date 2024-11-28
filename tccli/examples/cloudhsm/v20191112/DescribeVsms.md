@@ -8,7 +8,7 @@ Input:
 tccli cloudhsm DescribeVsms --cli-unfold-argument  \
     --Offset 0 \
     --Limit 10 \
-    --SearchWord xxxxxxx
+    --SearchWord default-hsmName
 ```
 
 Output: 
@@ -45,7 +45,7 @@ Output:
                 "Tags": [
                     {
                         "TagKey": "运营部门",
-                        "TagValue": "测试"
+                        "TagValue": "部门1"
                     }
                 ],
                 "Vip": "172.16.16.89",

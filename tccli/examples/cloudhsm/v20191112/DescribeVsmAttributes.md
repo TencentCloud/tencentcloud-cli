@@ -30,45 +30,33 @@ Output:
                 "InBound": [
                     {
                         "Action": "ACCEPT",
-                        "AddressModule": "",
                         "Desc": "一键放通入站规则",
-                        "Id": "",
                         "Ip": "0.0.0.0/0",
                         "Port": "20,21,22,3389,80,443",
-                        "Proto": "tcp",
-                        "ServiceModule": ""
+                        "Proto": "tcp"
                     },
                     {
                         "Action": "ACCEPT",
-                        "AddressModule": "",
                         "Desc": "一键放通入站规则",
-                        "Id": "",
                         "Ip": "0.0.0.0/0",
                         "Port": "ALL",
-                        "Proto": "ALL",
-                        "ServiceModule": ""
+                        "Proto": "ALL"
                     },
                     {
                         "Action": "ACCEPT",
-                        "AddressModule": "",
-                        "Desc": "",
-                        "Id": "",
+                        "Desc": "desc-test ",
                         "Ip": "172.16.0.0/16",
                         "Port": "ALL",
-                        "Proto": "ALL",
-                        "ServiceModule": ""
+                        "Proto": "ALL"
                     }
                 ],
                 "OutBound": [
                     {
                         "Action": "ACCEPT",
-                        "AddressModule": "",
                         "Desc": "放通所有",
-                        "Id": "",
                         "Ip": "0.0.0.0/0",
                         "Port": "ALL",
-                        "Proto": "ALL",
-                        "ServiceModule": ""
+                        "Proto": "ALL"
                     }
                 ],
                 "SgId": "sg-f51mj0kl",
@@ -84,7 +72,7 @@ Output:
         "Tags": [
             {
                 "TagKey": "运营部门",
-                "TagValue": "测试"
+                "TagValue": "部门1"
             }
         ],
         "Vip": "172.16.16.89",

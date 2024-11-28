@@ -743,7 +743,7 @@
       "status": "online"
     },
     "SearchLog": {
-      "document": "本接口用于检索分析日志，使用该接口时请注意如下事项：\n1. 该接口除受默认接口请求频率限制外，针对单个日志主题，查询并发数不能超过15。\n2. 检索语法建议使用CQL语法规则，请使用SyntaxRule参数，将值设置为1。\n3. API返回数据包最大49MB，建议启用 gzip 压缩（HTTP Request Header Accept-Encoding:gzip）。",
+      "document": "本接口用于检索分析日志，使用该接口时请注意如下事项：\n1. 该接口除受默认接口请求频率限制外，针对单个日志主题，查询并发数不能超过15。\n2. 检索语法建议使用日志服务专用检索语法CQL，请使用SyntaxRule参数，将值设置为1，控制台默认也使用该语法规则。\n3. API返回数据包最大49MB，建议启用 gzip 压缩（HTTP Request Header Accept-Encoding:gzip）。",
       "input": "SearchLogRequest",
       "name": "检索分析日志",
       "output": "SearchLogResponse",
@@ -14729,7 +14729,7 @@
         },
         {
           "disabled": false,
-          "document": "检索语法规则，默认值为0，推荐使用1 (CQL语法)。\n0：Lucene语法，1：CQL语法。\n详细说明参见<a href=\"https://cloud.tencent.com/document/product/614/47044#RetrievesConditionalRules\" target=\"_blank\">检索条件语法规则</a>",
+          "document": "检索语法规则，默认值为0，推荐使用1 。\n\n- 0：Lucene语法\n- 1：CQL语法（日志服务专用检索语法，控制台默认也使用该语法规则）。\n\n详细说明参见<a href=\"https://cloud.tencent.com/document/product/614/47044#RetrievesConditionalRules\" target=\"_blank\">检索条件语法规则</a>",
           "example": "1",
           "member": "uint64",
           "name": "SyntaxRule",

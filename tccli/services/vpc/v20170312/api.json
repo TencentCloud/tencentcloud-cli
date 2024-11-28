@@ -28584,7 +28584,7 @@
         {
           "disabled": false,
           "document": "绑定的安全组。",
-          "example": "[]",
+          "example": "[\"sg-2edhcclz\"]",
           "member": "string",
           "name": "GroupSet",
           "output_required": true,

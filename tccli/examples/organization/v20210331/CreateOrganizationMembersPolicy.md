@@ -8,7 +8,7 @@ Input:
 tccli organization CreateOrganizationMembersPolicy --cli-unfold-argument  \
     --MemberUins 111111111111 \
     --PolicyName policy_name \
-    --IdentityId 11 \
+    --IdentityId 101 \
     --Description description
 ```
 
@@ -16,7 +16,7 @@ Output:
 ```
 {
     "Response": {
-        "PolicyId": 123,
+        "PolicyId": 1001,
         "RequestId": "3840f6f4-3976-4b44-9ecc-cb0578129059"
     }
 }

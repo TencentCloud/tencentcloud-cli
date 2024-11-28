@@ -116,7 +116,7 @@
       {
         "document": "",
         "input": "https://organization.tencentcloudapi.com/?Action=ListOrganizationNodes\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Nodes\": [\n            {\n                \"NodeId\": 1,\n                \"Name\": \"aa\",\n                \"ParentNodeId\": 111,\n                \"MemberCount\": 11\n            }\n        ],\n        \"RequestId\": \"f2b75a7e-fc82-4b00-8426-d04371d9052c\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Nodes\": [\n            {\n                \"NodeId\": 1,\n                \"Name\": \"node_name\",\n                \"ParentNodeId\": 111,\n                \"MemberCount\": 11\n            }\n        ],\n        \"RequestId\": \"f2b75a7e-fc82-4b00-8426-d04371d9052c\"\n    }\n}",
         "title": "获取企业组织单元列表"
       }
     ],
@@ -139,7 +139,7 @@
     "SendOrganizationInvitation": [
       {
         "document": "",
-        "input": "https://organization.tencentcloudapi.com/?Action=SendOrganizationInvitation\n&InviteUin=123\n&Name=\"test\"\n&Remark=\"test\"\n&<公共请求参数>",
+        "input": "https://organization.tencentcloudapi.com/?Action=SendOrganizationInvitation\n&InviteUin=100000000001\n&Name=\"member_name\"\n&Remark=\"invitation member\"\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b46d2afe-6893-4529-bc96-2c82d9214959\"\n    }\n}",
         "title": "发送企业组织邀请"
       }

@@ -112,10 +112,10 @@
         {
           "disabled": false,
           "document": "用户账号",
-          "example": "123456789",
+          "example": "100030647170",
           "member": "string",
           "name": "Uin",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -125,7 +125,7 @@
           "example": "CPU",
           "member": "string",
           "name": "Event",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -135,7 +135,7 @@
           "example": "90",
           "member": "int64",
           "name": "Limit",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -145,7 +145,7 @@
           "example": "0",
           "member": "int64",
           "name": "Status",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -155,7 +155,7 @@
           "example": "00:00:00",
           "member": "string",
           "name": "BeginTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -165,7 +165,7 @@
           "example": "23:59:59",
           "member": "string",
           "name": "EndTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -178,7 +178,7 @@
         {
           "disabled": false,
           "document": "Subnet标识符",
-          "example": "",
+          "example": "subnet-4vxnrlco",
           "member": "string",
           "name": "SubnetId",
           "required": true,
@@ -193,18 +193,20 @@
         {
           "disabled": false,
           "document": "HSM数量",
-          "example": "",
+          "example": "2",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "作为查询条件的SubnetId",
-          "example": "",
+          "example": "subnet-4vxnrlco",
           "member": "string",
           "name": "SubnetId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -223,7 +225,7 @@
         {
           "disabled": false,
           "document": "VPC标识符",
-          "example": "",
+          "example": "vpc-rhx6fnd7",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -238,18 +240,20 @@
         {
           "disabled": false,
           "document": "HSM数量",
-          "example": "",
+          "example": "10",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "作为查询条件的VpcId",
-          "example": "",
+          "example": "vpc-rhx6fnd7",
           "member": "string",
           "name": "VpcId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -286,7 +290,7 @@
         {
           "disabled": false,
           "document": "查询指定VpcId下的子网信息。",
-          "example": "vpc-xxxx",
+          "example": "vpc-nc9yvu5p",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -294,8 +298,8 @@
         },
         {
           "disabled": false,
-          "document": "查找关键字",
-          "example": "subnet-xxxx",
+          "document": "过滤条件",
+          "example": "subnet-4vxnrlco",
           "member": "string",
           "name": "SearchWord",
           "required": false,
@@ -313,19 +317,19 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "返回的子网实例列表。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "返回的子网实例列表。",
+          "example": "[{\"AvailableIpAddressCount\":239,\"CidrBlock\":\"10.0.0.0/24\",\"CreatedTime\":\"2024-05-09 19:51:50\",\"Ipv6CidrBlock\":\"\",\"IsDefault\":false,\"SubnetId\":\"subnet-4vxnrlco\",\"SubnetName\":\"test_5_01\",\"TotalIpAddressCount\":254,\"VpcId\":\"vpc-nc9yvu5p\"}]",
           "member": "Subnet",
           "name": "SubnetList",
-          "required": true,
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -342,7 +346,7 @@
         {
           "disabled": false,
           "document": "Hsm类型，可选值all、virtulization、GHSM、EHSM、SHSM",
-          "example": "virtulization",
+          "example": "all",
           "member": "string",
           "name": "HsmType",
           "required": false,
@@ -356,13 +360,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "当前地域所支持的设备列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "当前地域所支持的设备列表",
+          "example": "[{\"HsmTypes\":[{\"HsmType\":\"EHSM\",\"Model\":\"TASS CRYPTO ENGINE\",\"VsmTypes\":[{\"TypeID\":15,\"TypeName\":\"EHSM\"}]},{\"HsmType\":\"SHSM\",\"Model\":\"TASS CRYPTO ENGINE\",\"VsmTypes\":[{\"TypeID\":47,\"TypeName\":\"SHSM\"}]},{\"HsmType\":\"GHSM\",\"Model\":\"TASS CRYPTO ENGINE\",\"VsmTypes\":[{\"TypeID\":31,\"TypeName\":\"GHSM\"}]},{\"HsmType\":\"virtualization\",\"Model\":\"SJJ1528\",\"VsmTypes\":[{\"TypeID\":49,\"TypeName\":\"SVSM\"},{\"TypeID\":17,\"TypeName\":\"EVSM\"},{\"TypeID\":33,\"TypeName\":\"GVSM\"}]}],\"Manufacturer\":\"TASS\"},{\"HsmTypes\":[{\"HsmType\":\"virtualization\",\"Model\":\"SJJ1601\",\"VsmTypes\":[{\"TypeID\":149,\"TypeName\":\"SVSM\"},{\"TypeID\":117,\"TypeName\":\"EVSM\"},{\"TypeID\":133,\"TypeName\":\"GVSM\"}]}],\"Manufacturer\":\"SANSEC\"}]",
           "member": "DeviceInfo",
           "name": "DeviceTypes",
-          "required": true,
+          "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -396,8 +400,8 @@
         },
         {
           "disabled": false,
-          "document": "搜索关键字",
-          "example": "sg-xxx",
+          "document": "过滤条件，支持安全组id",
+          "example": "sg-p9k0swj3",
           "member": "string",
           "name": "SearchWord",
           "required": false,
@@ -411,13 +415,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "用户的安全组列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{                     \"SgId\":\"SgIdxxxxx\",                     \"S",
+          "document": "用户的安全组列表",
+          "example": "[{\"CreateTime\":\"2024-08-30 10:16:07\",\"SgId\":\"sg-p9k0swj3\",\"SgName\":\"放通22，80，443，3389端口和ICMP协议-2024083010155758656\",\"SgRemark\":\"公网放通云主机常用登录及web服务端口，内网全放通。\"}]",
           "member": "SgUnit",
           "name": "SgList",
-          "required": true,
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -425,7 +429,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -443,8 +447,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "根据安全组Id获取安全组详情",
-          "example": "[\"xxxxxxxxxxxx\\n\"]",
+          "document": "安全组Id列表",
+          "example": "[\"sg-6tjv5yxb\"]",
           "member": "string",
           "name": "SgIds",
           "required": true,
@@ -458,23 +462,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "安全组详情\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "安全组详情",
+          "example": "[{\"CreateTime\":\"2024-02-02 16:53:18\",\"InBound\":[{\"Action\":\"ACCEPT\",\"AddressModule\":\"\",\"Desc\":\"Default rule\",\"Id\":\"\",\"Ip\":\"0.0.0.0/0\",\"Port\":\"ALL\",\"Proto\":\"ALL\",\"ServiceModule\":\"\"}],\"OutBound\":[{\"Action\":\"ACCEPT\",\"AddressModule\":\"\",\"Desc\":\"Default rule\",\"Id\":\"\",\"Ip\":\"0.0.0.0/0\",\"Port\":\"ALL\",\"Proto\":\"ALL\",\"ServiceModule\":\"\"}],\"SgId\":\"sg-6tjv5yxb\",\"SgName\":\"default\",\"SgRemark\":\"System created security group\",\"Version\":1}]",
           "member": "UsgRuleDetail",
           "name": "SgRules",
-          "required": true,
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "安全组详情数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "安全组详情数量",
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -509,7 +513,7 @@
         {
           "disabled": false,
           "document": "搜索关键字",
-          "example": "vpc-xxxx",
+          "example": "vpc-nc9yvu5p",
           "member": "string",
           "name": "SearchWord",
           "required": false,
@@ -527,19 +531,19 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "Vpc对象列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "Vpc对象列表",
+          "example": "[{\"CreatedTime\":\"2024-05-09 19:51:48\",\"IsDefault\":false,\"VpcId\":\"vpc-nc9yvu5p\",\"VpcName\":\"test_5\"}]",
           "member": "Vpc",
           "name": "VpcList",
-          "required": true,
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -556,7 +560,7 @@
         {
           "disabled": false,
           "document": "资源Id",
-          "example": "hsm-xxxx",
+          "example": "hsm-r19rq1b0",
           "member": "string",
           "name": "ResourceId",
           "required": true,
@@ -571,7 +575,7 @@
         {
           "disabled": false,
           "document": "资源Id",
-          "example": "hsm-xxxxx",
+          "example": "hsm-r19rq1b0",
           "member": "string",
           "name": "ResourceId",
           "output_required": true,
@@ -581,7 +585,7 @@
         {
           "disabled": false,
           "document": "资源名称",
-          "example": "xxxxxx",
+          "example": "default-hsmName",
           "member": "string",
           "name": "ResourceName",
           "output_required": true,
@@ -611,7 +615,7 @@
         {
           "disabled": false,
           "document": "资源所属Vpc",
-          "example": "vpc-xxxx",
+          "example": "vpc-nc9yvu5p",
           "member": "string",
           "name": "VpcId",
           "output_required": true,
@@ -621,7 +625,7 @@
         {
           "disabled": false,
           "document": "资源所属子网",
-          "example": "subnet-xxxx",
+          "example": "subnet-4vxnrlco",
           "member": "string",
           "name": "SubnetId",
           "output_required": true,
@@ -680,123 +684,123 @@
         },
         {
           "disabled": false,
-          "document": "安全组详情信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "安全组详情信息,如果未配置字段返回null",
+          "example": "[       {         \"CreateTime\": \"2024-02-02 16:53:18\",         \"InBound\": [           {             \"Action\": \"ACCEPT\",             \"AddressModule\": \"\",             \"Desc\": \"Default rule\",             \"Id\": \"\",             \"Ip\": \"0.0.0.0/0\",             \"Port\": \"ALL\",             \"Proto\": \"ALL\",             \"ServiceModule\": \"\"           }         ],         \"OutBound\": [           {             \"Action\": \"ACCEPT\",             \"AddressModule\": \"\",             \"Desc\": \"Default rule\",             \"Id\": \"\",             \"Ip\": \"0.0.0.0/0\",             \"Port\": \"ALL\",             \"Proto\": \"ALL\",             \"ServiceModule\": \"\"           }         ],         \"SgId\": \"sg-6tjv5yxb\",         \"SgName\": \"default\",         \"SgRemark\": \"System created security group\",         \"Version\": 0       }     ]",
           "member": "UsgRuleDetail",
           "name": "SgList",
-          "output_required": true,
+          "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "子网名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "子网名",
           "example": "Default-Subnet",
           "member": "string",
           "name": "SubnetName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "地域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "地域名",
           "example": "广州",
           "member": "string",
           "name": "RegionName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "区域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "区域名",
           "example": "广州三区",
           "member": "string",
           "name": "ZoneName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例是否已经过期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例是否已经过期",
           "example": "false",
           "member": "bool",
           "name": "Expired",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "为正数表示实例距离过期时间剩余秒数，为负数表示实例已经过期多少秒\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123",
+          "document": "为正数表示实例距离过期时间剩余秒数，为负数表示实例已经过期多少秒",
+          "example": "20",
           "member": "int64",
           "name": "RemainSeconds",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "私有虚拟网络名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "私有虚拟网络名称",
           "example": "VPC-CLOUD-GZ",
           "member": "string",
           "name": "VpcName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "VPC的IPv4 CIDR\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "VPC的IPv4 CIDR",
           "example": "192.168.0.0/16",
           "member": "string",
           "name": "VpcCidrBlock",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "子网的CIDR\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "子网的CIDR",
           "example": "192.168.1.0/24",
           "member": "string",
           "name": "SubnetCidrBlock",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "资源所关联的Tag\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "资源所关联的标签Tag",
+          "example": " [       {         \"TagKey\": \"运营部门\",         \"TagValue\": \"测试\"       }     ]",
           "member": "Tag",
           "name": "Tags",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "资源续费标识，0表示默认状态(用户未设置，即初始状态)， 1表示自动续费，2表示明确不自动续费(用户设置)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源续费标识，0表示默认状态(用户未设置，即初始状态)， 1表示自动续费，2表示明确不自动续费(用户设置)",
           "example": "1",
           "member": "int64",
           "name": "RenewFlag",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "厂商\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "厂商",
           "example": "TASS",
           "member": "string",
           "name": "Manufacturer",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -831,7 +835,7 @@
         {
           "disabled": false,
           "document": "资源ID或者资源名字模糊查询的关键字",
-          "example": "abc",
+          "example": "hsm-r19rq1b0",
           "member": "string",
           "name": "SearchWord",
           "required": false,
@@ -840,7 +844,7 @@
         {
           "disabled": false,
           "document": "标签过滤条件",
-          "example": "无",
+          "example": "[{\"TagKey\":\"env\",\"TagValue\":[\"dev\"]}]",
           "member": "TagFilter",
           "name": "TagFilters",
           "required": false,
@@ -873,7 +877,7 @@
         {
           "disabled": false,
           "document": "获取实例的总个数",
-          "example": "1",
+          "example": "10",
           "member": "int64",
           "name": "TotalCount",
           "output_required": true,
@@ -882,13 +886,13 @@
         },
         {
           "disabled": false,
-          "document": "资源信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "资源信息",
+          "example": "[       {         \"AlarmStatus\": 0,         \"CreateUin\": \"100000007998\",         \"ExpireTime\": 1722255890,         \"Expired\": true,         \"Manufacturer\": \"TASS\",         \"Model\": \"SJJ1528\",         \"RegionId\": 1,         \"RegionName\": \"广州\",         \"RemainSeconds\": -8197142,         \"RenewFlag\": 1,         \"ResourceId\": \"hsm-r19rq1b0\",         \"ResourceName\": \"default-hsmName\",         \"SgList\": [           {             \"CreateTime\": \"2024-02-02 16:53:18\",             \"SgId\": \"sg-6tjv5yxb\",             \"SgName\": \"default\",             \"SgRemark\": \"System created security group\"           }         ]",
           "member": "ResourceInfo",
           "name": "VsmList",
-          "output_required": true,
+          "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -908,17 +912,17 @@
           "example": "TASS",
           "member": "string",
           "name": "Manufacturer",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "此厂商旗下的设备信息列表",
-          "example": "无",
+          "example": "[           {             \"HsmType\": \"virtualization\",             \"Model\": \"SJJ1601\",             \"VsmTypes\": [               {                 \"TypeID\": 149,                 \"TypeName\": \"SVSM\"               },               {                 \"TypeID\": 117,                 \"TypeName\": \"EVSM\"               },               {                 \"TypeID\": 133,                 \"TypeName\": \"GVSM\"               }             ]           }         ]",
           "member": "HsmInfo",
           "name": "HsmTypes",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -935,13 +939,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "用户所有的告警策略\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "用户所有的告警策略",
+          "example": "[       {         \"BeginTime\": \"\",         \"EndTime\": \"\",         \"Event\": \"TCP\",         \"Limit\": 0,         \"Status\": 0,         \"Uin\": \"100000007998\"       },       {         \"BeginTime\": \"\",         \"EndTime\": \"\",         \"Event\": \"MEM\",         \"Limit\": 0,         \"Status\": 0,         \"Uin\": \"100000007998\"       }     ]",
           "member": "AlarmPolicy",
           "name": "AlarmConfig",
-          "output_required": true,
+          "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -982,7 +986,7 @@
         {
           "disabled": false,
           "document": "VSM监控信息",
-          "example": "[\"{\\\"vsm\\\":{\\\"xxx\\\"}}\"]",
+          "example": "json字符串:{\\\"vsm\\\":{\\\"uuid\\\":\\\"C2B7885C-642A-4459-8D8D-D43FD5CFCE35\\\",\\\"version\\\":\\\"1.0.19.0_STD\\\",\\\"status\\\":\\\"ok\\\",\\\"ip\\\":\\\"9.82.42.102\\\",\\\"ip6\\\":\\\"\\\",\\\"token\\\":\\\"\\\",}}",
           "member": "string",
           "name": "MonitorInfo",
           "output_required": true,
@@ -1007,17 +1011,17 @@
           "example": "SJJ1528",
           "member": "string",
           "name": "Model",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "此类型的加密机所支持的VSM类型列表",
-          "example": "无",
+          "example": "[               {                 \"TypeID\": 49,                 \"TypeName\": \"SVSM\"               },               {                 \"TypeID\": 17,                 \"TypeName\": \"EVSM\"               },               {                 \"TypeID\": 33,                 \"TypeName\": \"GVSM\"               }             ]",
           "member": "VsmInfo",
           "name": "VsmTypes",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1027,7 +1031,7 @@
           "example": "virtualization",
           "member": "string",
           "name": "HsmType",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -1108,53 +1112,53 @@
       "members": [
         {
           "disabled": false,
-          "document": "原始总金额，浮点型参数，精确到小数点后两位，如：2000.99\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "原始总金额，浮点型参数，精确到小数点后两位，如：2000.99",
           "example": "20000.0",
           "member": "float",
           "name": "TotalCost",
-          "required": true,
+          "output_required": true,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "购买的实例数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "购买的实例数量",
           "example": "1",
           "member": "int64",
           "name": "GoodsNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "商品的时间大小，整型参数，举例：当TimeSpan为1，TImeUnit为m时，表示询价购买时长为1个月时的价格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "商品的时间大小，整型参数，举例：当TimeSpan为1，TImeUnit为m时，表示询价购买时长为1个月时的价格",
           "example": "1",
           "member": "string",
           "name": "TimeSpan",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "商品的时间单位，m表示月，y表示年\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "商品的时间单位，m表示月，y表示年",
           "example": "m",
           "member": "string",
           "name": "TimeUnit",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "应付总金额，浮点型参数，精确到小数点后两位，如：2000.99\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应付总金额，浮点型参数，精确到小数点后两位，如：2000.99",
           "example": "20000.0",
           "member": "float",
           "name": "OriginalCost",
-          "required": true,
+          "output_required": true,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1314,233 +1318,233 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源Id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "hsm-xxxxxxxx",
+          "document": "资源Id",
+          "example": "hsm-aj8fp8a0",
           "member": "string",
           "name": "ResourceId",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "资源名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源名称",
           "example": "defaultHsmName",
           "member": "string",
           "name": "ResourceName",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "资源状态，1-正常，2-隔离，3-销毁\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源状态，1-正常，2-隔离，3-销毁",
           "example": "1",
           "member": "int64",
           "name": "Status",
-          "output_required": true,
+          "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "资源IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源IP",
           "example": "1.2.3.4",
           "member": "string",
           "name": "Vip",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "资源所属Vpc\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "vpc-xxxxxxxx",
+          "document": "资源所属Vpc",
+          "example": "vpc-7vv1q6x9",
           "member": "string",
           "name": "VpcId",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "资源所属子网\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "subnet-xxxxxxxx",
+          "document": "资源所属子网",
+          "example": "subnet-1xaztwla",
           "member": "string",
           "name": "SubnetId",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "资源所属HSM规格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源所属HSM规格",
           "example": "SJJ1528",
           "member": "string",
           "name": "Model",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "云加密机类型id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "云加密机类型id",
           "example": "17",
           "member": "int64",
           "name": "VsmType",
-          "output_required": true,
+          "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "地域Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "地域Id",
           "example": "1",
           "member": "int64",
           "name": "RegionId",
-          "output_required": true,
+          "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "区域Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "区域Id",
           "example": "100001",
           "member": "int64",
           "name": "ZoneId",
-          "output_required": true,
+          "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "过期时间（Epoch Unix Timestamp）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "过期时间（Epoch Unix Timestamp）",
           "example": "0",
           "member": "int64",
           "name": "ExpireTime",
-          "output_required": true,
+          "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "地域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "地域名",
           "example": "广州",
           "member": "string",
           "name": "RegionName",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "区域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "区域名",
           "example": "广州一区",
           "member": "string",
           "name": "ZoneName",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例的安全组列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "实例的安全组列表",
+          "example": "[           {             \"CreateTime\": \"2023-06-05 10:59:39\",             \"SgId\": \"sg-f51mj0kl\",             \"SgName\": \"casb-proxy-2023060510592885829\",             \"SgRemark\": \"自定义\"           }         ]",
           "member": "SgUnit",
           "name": "SgList",
-          "output_required": true,
+          "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "子网名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "子网名称",
           "example": "Default-Subnet",
           "member": "string",
           "name": "SubnetName",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "当前实例是否已经过期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当前实例是否已经过期",
           "example": "false",
           "member": "bool",
           "name": "Expired",
-          "output_required": true,
+          "output_required": false,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "为正数表示实例距离过期时间还剩余多少秒，为负数表示已经过期多少秒\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0",
+          "document": "为正数表示实例距离过期时间还剩余多少秒，为负数表示已经过期多少秒",
+          "example": "29123420",
           "member": "int64",
           "name": "RemainSeconds",
-          "output_required": true,
+          "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "Vpc名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Vpc名称",
           "example": "VPC-CLOUD-GZ",
           "member": "string",
           "name": "VpcName",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "创建者Uin账号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0",
+          "document": "创建者Uin账号",
+          "example": "2942368751",
           "member": "string",
           "name": "CreateUin",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "自动续费状态标识， 0-手动续费，1-自动续费，2-到期不续\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0",
+          "document": "自动续费状态标识， 0-手动续费，1-自动续费，2-到期不续",
+          "example": "2",
           "member": "int64",
           "name": "RenewFlag",
-          "output_required": true,
+          "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "标签列表",
+          "example": "[           {             \"TagKey\": \"运营部门\",             \"TagValue\": \"测试\"           }         ]",
           "member": "Tag",
           "name": "Tags",
-          "output_required": true,
+          "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "厂商\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "厂商",
           "example": "TASS",
           "member": "string",
           "name": "Manufacturer",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "告警状态，0：停用，1：启用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "告警状态，0：停用，1：启用",
           "example": "0",
           "member": "int64",
           "name": "AlarmStatus",
-          "output_required": true,
+          "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1550,43 +1554,43 @@
       "members": [
         {
           "disabled": false,
-          "document": "安全组Id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "安全组Id",
+          "example": "sg-3qcokmyz",
           "member": "string",
           "name": "SgId",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "安全组名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "安全组名称",
+          "example": "放通部分端口",
           "member": "string",
           "name": "SgName",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "备注",
+          "example": "测试用安全组",
           "member": "string",
           "name": "SgRemark",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "创建时间",
+          "example": "2022-02-10 14:24:04",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1596,93 +1600,93 @@
       "members": [
         {
           "disabled": false,
-          "document": "VPC实例ID。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "VPC实例ID。",
+          "example": "vpc-2at5y1pn",
           "member": "string",
           "name": "VpcId",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "子网实例ID，例如：subnet-bthucmmy。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "子网实例ID，例如：subnet-bthucmmy。",
+          "example": "subnet-otu92seu",
           "member": "string",
           "name": "SubnetId",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "子网名称。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "子网名称。",
+          "example": "默认广州二区子网",
           "member": "string",
           "name": "SubnetName",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "子网的 IPv4 CIDR。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "子网的 IPv4 CIDR。",
+          "example": "172.16.16.0/24",
           "member": "string",
           "name": "CidrBlock",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "创建时间。",
+          "example": "2017-04-20 11:30:48",
           "member": "string",
           "name": "CreatedTime",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "可用IP数。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "可用IP数。",
+          "example": "2",
           "member": "int64",
           "name": "AvailableIpAddressCount",
-          "required": true,
+          "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "子网的 IPv6 CIDR。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "子网的 IPv6 CIDR。",
+          "example": "3402:4e00:20:1201::/64",
           "member": "string",
           "name": "Ipv6CidrBlock",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "总IP数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "总IP数",
+          "example": "254",
           "member": "int64",
           "name": "TotalIpAddressCount",
-          "required": true,
+          "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否为默认Subnet\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "是否为默认Subnet",
+          "example": "false",
           "member": "bool",
           "name": "IsDefault",
-          "required": true,
+          "output_required": false,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1693,9 +1697,10 @@
         {
           "disabled": false,
           "document": "标签键",
-          "example": "",
+          "example": "env",
           "member": "string",
           "name": "TagKey",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1703,9 +1708,10 @@
         {
           "disabled": false,
           "document": "标签值",
-          "example": "",
+          "example": "dev",
           "member": "string",
           "name": "TagValue",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1719,22 +1725,20 @@
         {
           "disabled": false,
           "document": "标签键",
-          "example": "",
+          "example": "env",
           "member": "string",
           "name": "TagKey",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "标签值",
-          "example": "",
+          "example": "dev",
           "member": "string",
           "name": "TagValue",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         }
       ],
       "usage": "in"
@@ -1744,83 +1748,83 @@
       "members": [
         {
           "disabled": false,
-          "document": "cidr格式地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "cidr格式地址",
           "example": "\"0.0.0.0/0\"",
           "member": "string",
           "name": "Ip",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "安全组id代表的地址集合\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "document": "安全组id代表的地址集合",
+          "example": "\"sg-id\"",
           "member": "string",
           "name": "Id",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "地址组id代表的地址集合\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "document": "地址组id代表的地址集合",
+          "example": "\"addr-id\"",
           "member": "string",
           "name": "AddressModule",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "协议\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "协议",
           "example": "\"ALL\"",
           "member": "string",
           "name": "Proto",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "端口",
           "example": "\"ALL\"",
           "member": "string",
           "name": "Port",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "服务组id代表的协议和端口集合\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "document": "服务组id代表的协议和端口集合",
+          "example": "\"svc-id\"",
           "member": "string",
           "name": "ServiceModule",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "备注",
           "example": "\"自定义规则\"",
           "member": "string",
           "name": "Desc",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "匹配后行为:ACCEPT/DROP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "匹配后行为:ACCEPT/DROP",
           "example": "\"ACCEPT\"",
           "member": "string",
           "name": "Action",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1830,73 +1834,73 @@
       "members": [
         {
           "disabled": false,
-          "document": "入站规则\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "入站规则",
+          "example": "[           {             \"Action\": \"ACCEPT\",             \"AddressModule\": \"\",             \"Desc\": \"Default rule\",             \"Id\": \"\",             \"Ip\": \"0.0.0.0/0\",             \"Port\": \"ALL\",             \"Proto\": \"ALL\",             \"ServiceModule\": \"\"           }         ]",
           "member": "UsgPolicy",
           "name": "InBound",
-          "output_required": true,
+          "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "出站规则\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "出站规则",
+          "example": "[           {             \"Action\": \"ACCEPT\",             \"AddressModule\": \"\",             \"Desc\": \"Default rule\",             \"Id\": \"\",             \"Ip\": \"0.0.0.0/0\",             \"Port\": \"ALL\",             \"Proto\": \"ALL\",             \"ServiceModule\": \"\"           }         ]",
           "member": "UsgPolicy",
           "name": "OutBound",
-          "output_required": true,
+          "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "安全组Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "安全组Id",
           "example": "sg-1234abcd",
           "member": "string",
           "name": "SgId",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "安全组名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "安全组名称",
           "example": "default-name",
           "member": "string",
           "name": "SgName",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "自定义",
+          "document": "备注",
+          "example": "System created security group",
           "member": "string",
           "name": "SgRemark",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建时间",
           "example": "2023-06-05 10:59:39",
           "member": "string",
           "name": "CreateTime",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "版本\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0",
+          "document": "版本",
+          "example": "1",
           "member": "int64",
           "name": "Version",
-          "output_required": true,
+          "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1906,43 +1910,43 @@
       "members": [
         {
           "disabled": false,
-          "document": "Vpc名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "Vpc名称",
+          "example": "test_5",
           "member": "string",
           "name": "VpcName",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "VpcId\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "VpcId",
+          "example": "vpc-nc9yvu5p",
           "member": "string",
           "name": "VpcId",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "创建时间",
+          "example": "2024-05-09 19:51:48",
           "member": "string",
           "name": "CreatedTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否为默认VPC\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "是否为默认VPC",
+          "example": "false",
           "member": "bool",
           "name": "IsDefault",
-          "required": true,
+          "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

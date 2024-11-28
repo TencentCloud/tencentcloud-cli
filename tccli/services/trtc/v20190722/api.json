@@ -7,6 +7,13 @@
       "output": "ControlAIConversationResponse",
       "status": "online"
     },
+    "CreateBasicModeration": {
+      "document": "接口说明：\n启动终端审核功能，完成房间内的音频审核。",
+      "input": "CreateBasicModerationRequest",
+      "name": "创建基础审核任务",
+      "output": "CreateBasicModerationResponse",
+      "status": "online"
+    },
     "CreateCloudRecording": {
       "document": "接口说明：\n启动云端录制功能，完成房间内的音视频录制，并上传到指定的云存储。您可以通过此 API 接口把TRTC 房间中的每一路音视频流做单独的录制又或者多路视频画面合流混成一路。\n\n您可以通过此接口实现如下目标：\n* 指定订阅流参数（RecordParams）来指定需要录制的主播的黑名单或者白名单。\n* 指定录制存储参数（StorageParams）来指定上传到您希望的云存储，目前支持腾讯云（云点播VOD、对象存储COS）和第三方AWS\n* 指定合流模式下的音视频转码详细参数（MixTranscodeParams），包括视频分辨率、视频码率、视频帧率、以及声音质量等\n* 指定合流模式各路画面的位置和布局或者也可以指定自动模板的方式来配置。\n\n关键名词：\n* 单流录制：分别录制房间的订阅UserId的音频和视频，录制服务会实时将录制文件上传至您指定的云存储。\n* 合流录制：将房间内订阅UserId的音视频混录成一个视频文件，并将录制文件上传至您指定的云存储。（录制结束后可前往云点播控制台https://console.cloud.tencent.com/vod/media 或 对象存储COS控制台https://console.cloud.tencent.com/cos/bucket查看文件）。",
       "input": "CreateCloudRecordingRequest",
@@ -19,6 +26,13 @@
       "input": "CreatePictureRequest",
       "name": "上传图片",
       "output": "CreatePictureResponse",
+      "status": "online"
+    },
+    "DeleteBasicModeration": {
+      "document": "成功开启审核任务后，可以使用此接口来停止任务。",
+      "input": "DeleteBasicModerationRequest",
+      "name": "停止基础审核任务",
+      "output": "DeleteBasicModerationResponse",
       "status": "online"
     },
     "DeleteCloudRecording": {
@@ -836,6 +850,70 @@
       ],
       "type": "object"
     },
+    "CreateBasicModerationRequest": {
+      "document": "CreateBasicModeration请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "TRTC的[SdkAppId](https://cloud.tencent.com/document/product/647/46351#sdkappid)，和TRTC的房间所对应的SdkAppId相同。",
+          "example": "140056784",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "TRTC的[RoomId](https://cloud.tencent.com/document/product/647/46351#roomid)，为TRTC房间所对应的RoomId。",
+          "example": "67467",
+          "member": "string",
+          "name": "RoomId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "目标审核用户id",
+          "example": "wanjia1",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "TRTC房间号的类型。【*注意】必须和TRTC的房间所对应的RoomId类型相同:0: 字符串类型的RoomId1: 32位整型的RoomId（默认）",
+          "example": "1",
+          "member": "uint64",
+          "name": "RoomIdType",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBasicModerationResponse": {
+      "document": "CreateBasicModeration返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "审核服务分配的任务ID。任务ID是对一次审核任务生命周期过程的唯一标识，结束任务时会失去意义。任务ID需要业务保存下来，作为下次针对这个任务操作的参数",
+          "example": "-npVqpdU7pr3JUbUasDy5PLPQaHPhkPbIkDILoK-2OqyoZWQndibCtH88ztBhkWAhZCH9DwE.",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateCloudRecordingRequest": {
       "document": "CreateCloudRecording请求参数结构体",
       "members": [
@@ -1042,6 +1120,52 @@
           "member": "uint64",
           "name": "PictureId",
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteBasicModerationRequest": {
+      "document": "DeleteBasicModeration请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "TRTC的SDKAppId，和TRTC的房间所对应的SDKAppId相同。",
+          "example": "1400027384",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "审核任务的唯一Id，在启动审核任务成功后会返回。",
+          "example": "-nHp1XlU7mcW54zuscSryY-HYgLlPznbMzm9IYK-4pycoZWQnoT+HczjvK1mvkTPNxnCi14gJVpW6AE.",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteBasicModerationResponse": {
+      "document": "DeleteBasicModeration返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "审核任务的唯一Id，在启动审核任务成功后会返回。",
+          "example": "1234",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -6314,7 +6438,7 @@
         {
           "disabled": false,
           "document": "用于唯一标识转推任务，由腾讯云服务端生成，后续更新和停止请求都需要携带TaskiD参数。",
-          "example": "\"\"",
+          "example": "无",
           "member": "string",
           "name": "TaskId",
           "output_required": true,
@@ -6734,7 +6858,7 @@
         {
           "disabled": false,
           "document": "TRTC的[SdkAppId](https://cloud.tencent.com/document/product/647/46351#sdkappid)，和转推的房间所对应的SdkAppId相同。",
-          "example": "1400188366",
+          "example": "1400000001",
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
@@ -6743,7 +6867,7 @@
         {
           "disabled": false,
           "document": "唯一标识转推任务。",
-          "example": "\"\"",
+          "example": "无",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -6752,7 +6876,7 @@
         {
           "disabled": false,
           "document": "录制任务 key，标识一个录制任务，对应转推任务发起时指定 RecordKey；\n如果填写该参数，表示调用者希望立即结束该录制任务。当RecordKey 指定的录制任务正在录制当前转推任务时，录制任务立即结束，否则录制任务不受影响。\n如果没有填写该参数，但是转推任务发起时填写了 RecordKey，则表示在续录等待时间结束后才结束录制任务，续录等待期间可以使用相同的 RecordKey 发起新的转推任务，和当前转推任务录制到同一文件。",
-          "example": "\"\"",
+          "example": "无",
           "member": "string",
           "name": "RecordKey",
           "required": false,
@@ -6767,7 +6891,7 @@
         {
           "disabled": false,
           "document": "转推任务唯一的String Id",
-          "example": "\"\"",
+          "example": "无",
           "member": "string",
           "name": "TaskId",
           "output_required": true,
@@ -7339,7 +7463,7 @@
         {
           "disabled": false,
           "document": "TRTC的[SdkAppId](https://cloud.tencent.com/document/product/647/46351#sdkappid)，和转推的房间所对应的SdkAppId相同。",
-          "example": "1400188366",
+          "example": "1400000001",
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
@@ -7348,7 +7472,7 @@
         {
           "disabled": false,
           "document": "唯一标识转推任务。",
-          "example": "xxxxxxxx",
+          "example": "无",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -7375,7 +7499,7 @@
         {
           "disabled": false,
           "document": "更新相关参数，只支持更新参与混音的主播列表参数，不支持更新Codec、采样率、码率和声道数。不填表示不更新此参数。",
-          "example": "AudioParams",
+          "example": "无",
           "member": "McuAudioParams",
           "name": "AudioParams",
           "required": false,
@@ -7384,7 +7508,7 @@
         {
           "disabled": false,
           "document": "更新视频相关参数，转码时支持更新除编码类型之外的编码参数，视频布局参数，背景图片和背景颜色参数，水印参数。不填表示不更新此参数。",
-          "example": "VideoParams",
+          "example": "无",
           "member": "McuVideoParams",
           "name": "VideoParams",
           "required": false,
@@ -7393,7 +7517,7 @@
         {
           "disabled": false,
           "document": "更新单流转推的用户上行参数，仅在非转码时有效。不填表示不更新此参数。",
-          "example": "SingleSubscribeParams",
+          "example": "无",
           "member": "SingleSubscribeParams",
           "name": "SingleSubscribeParams",
           "required": false,
@@ -7402,7 +7526,7 @@
         {
           "disabled": false,
           "document": "更新转推的CDN参数。不填表示不更新此参数。",
-          "example": "PublishCdnParams",
+          "example": "无",
           "member": "McuPublishCdnParam",
           "name": "PublishCdnParams",
           "required": false,
@@ -7411,7 +7535,7 @@
         {
           "disabled": false,
           "document": "混流SEI参数",
-          "example": "SeiParams",
+          "example": "无",
           "member": "McuSeiParams",
           "name": "SeiParams",
           "required": false,
@@ -7420,7 +7544,7 @@
         {
           "disabled": false,
           "document": "回推房间信息",
-          "example": "FeedBackRoomParams",
+          "example": "无",
           "member": "McuFeedBackRoomParams",
           "name": "FeedBackRoomParams",
           "required": false,
@@ -7435,7 +7559,7 @@
         {
           "disabled": false,
           "document": "转推任务唯一的String Id",
-          "example": "xxxx",
+          "example": "无",
           "member": "string",
           "name": "TaskId",
           "output_required": true,

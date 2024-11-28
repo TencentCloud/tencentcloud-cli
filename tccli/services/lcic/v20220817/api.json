@@ -224,6 +224,13 @@
       "output": "DescribeGroupMemberListResponse",
       "status": "online"
     },
+    "DescribeMarquee": {
+      "document": "查询跑马灯配置",
+      "input": "DescribeMarqueeRequest",
+      "name": "查询跑马灯配置",
+      "output": "DescribeMarqueeResponse",
+      "status": "online"
+    },
     "DescribeQuestionList": {
       "document": "获取房间提问列表",
       "input": "DescribeQuestionListRequest",
@@ -411,6 +418,13 @@
       "input": "SetAppCustomContentRequest",
       "name": "设置应用自定义内容",
       "output": "SetAppCustomContentResponse",
+      "status": "online"
+    },
+    "SetMarquee": {
+      "document": "设置跑马灯参数设置",
+      "input": "SetMarqueeRequest",
+      "name": "设置跑马灯参数",
+      "output": "SetMarqueeResponse",
       "status": "online"
     },
     "SetWatermark": {
@@ -3148,6 +3162,152 @@
       ],
       "type": "object"
     },
+    "DescribeMarqueeRequest": {
+      "document": "DescribeMarquee请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "学校ID",
+          "example": "38792792",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "房间号",
+          "example": "345214",
+          "member": "uint64",
+          "name": "RoomId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMarqueeResponse": {
+      "document": "DescribeMarquee返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": " 跑马灯类型：1为固定值，2为用户昵称，3为固定值+用户昵称，4为用户ID，5为originId+固定值，6为用户昵称（originId）",
+          "example": "1",
+          "member": "uint64",
+          "name": "MarqueeType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "固定值内容（当MarqueeType=1或5，则展示固定值内容）",
+          "example": "无",
+          "member": "string",
+          "name": "Content",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "字体大小（数字，像素单位，范围：10到24）",
+          "example": "1",
+          "member": "uint64",
+          "name": "FontSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "字体粗细：1为粗体，0为细体",
+          "example": "1",
+          "member": "uint64",
+          "name": "FontWeight",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "字体颜色（十六进制颜色值）",
+          "example": "无",
+          "member": "string",
+          "name": "FontColor",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "字体透明度（数字，范围 0.0 到 1.0）",
+          "example": "0.5",
+          "member": "float",
+          "name": "FontOpacity",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "背景颜色（十六进制颜色值）",
+          "example": "无",
+          "member": "string",
+          "name": "BackgroundColor",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "背景透明度（数字，范围 0.0 到 1.0）",
+          "example": "无",
+          "member": "float",
+          "name": "BackgroundOpacity",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "显示方式：1为滚动，2为闪烁",
+          "example": "112",
+          "member": "uint64",
+          "name": "DisplayMode",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "停留时长（秒，整数，范围 1～10）",
+          "example": "23",
+          "member": "uint64",
+          "name": "Duration",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "跑马灯个数：目前仅支持1或2, 对应显示单排或双排",
+          "example": "98",
+          "member": "uint64",
+          "name": "MarqueeCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeQuestionListRequest": {
       "document": "DescribeQuestionList请求参数结构体",
       "members": [
@@ -4100,7 +4260,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "用户Id。",
+          "document": "用户id。支持通过 user_id 或 OriginId 查询用户信息，优先使用 user_id 进行查询。",
           "example": "abc",
           "member": "string",
           "name": "UserId",
@@ -4109,7 +4269,7 @@
         },
         {
           "disabled": false,
-          "document": "客户端用户 id,如果未指定则为用户 id。",
+          "document": "用户在客户系统的Id。支持通过 user_id 或 OriginId 查询用户信息，优先使用 user_id 进行查询（UserId不为空时，OriginId不生效）。",
           "example": "abc",
           "member": "string",
           "name": "OriginId",
@@ -6883,6 +7043,141 @@
     },
     "SetAppCustomContentResponse": {
       "document": "SetAppCustomContent返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SetMarqueeRequest": {
+      "document": "SetMarquee请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "学校ID",
+          "example": "3290189",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "房间号",
+          "example": "1123",
+          "member": "uint64",
+          "name": "RoomId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": " 跑马灯类型：1为固定值，2为用户昵称，3为固定值+用户昵称，4为用户ID，5为originId+固定值，6为用户昵称（originId）",
+          "example": "1",
+          "member": "uint64",
+          "name": "MarqueeType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "显示方式：1为滚动，2为闪烁",
+          "example": "1",
+          "member": "uint64",
+          "name": "DisplayMode",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "固定值内容（当MarqueeType=1或5，则展示固定值内容）",
+          "example": "直播课堂",
+          "member": "string",
+          "name": "Content",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "字体大小（数字，像素单位，范围：10到24）。",
+          "example": "10",
+          "member": "uint64",
+          "name": "FontSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "字体粗细：1为粗体，0为细体",
+          "example": "1",
+          "member": "uint64",
+          "name": "FontWeight",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "字体颜色（十六进制颜色值，例如：#00FF00（绿色））",
+          "example": "#00FF00",
+          "member": "string",
+          "name": "FontColor",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "字体透明度（数字，范围 0.0 到 1.0）",
+          "example": "0.3",
+          "member": "float",
+          "name": "FontOpacity",
+          "required": false,
+          "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "背景颜色（十六进制颜色值，例如：#FFFF00（黄色））",
+          "example": "#FFFF00",
+          "member": "string",
+          "name": "BackgroundColor",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "背景透明度（数字，范围 0.0 到 1.0）",
+          "example": "0.1",
+          "member": "float",
+          "name": "BackgroundOpacity",
+          "required": false,
+          "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "跑马灯文字移动/闪烁指定像素所需时间，范围：1-10；数值越小，跑马灯滚动/闪烁速度越快",
+          "example": "1",
+          "member": "uint64",
+          "name": "Duration",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "跑马灯个数：目前仅支持1或2, 对应显示单排或双排",
+          "example": "1",
+          "member": "uint64",
+          "name": "MarqueeCount",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "SetMarqueeResponse": {
+      "document": "SetMarquee返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

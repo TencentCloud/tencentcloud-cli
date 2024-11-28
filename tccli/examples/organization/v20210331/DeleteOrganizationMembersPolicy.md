@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli organization DeleteOrganizationMembersPolicy --cli-unfold-argument  \
-    --PolicyId 123
+    --PolicyId 1001
 ```
 
 Output: 

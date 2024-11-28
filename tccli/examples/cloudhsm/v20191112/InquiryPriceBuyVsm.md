@@ -6,23 +6,25 @@ Input:
 
 ```
 tccli cloudhsm InquiryPriceBuyVsm --cli-unfold-argument  \
-    --PayMode 1 \
-    --TimeUnit y \
-    --Type CREATE \
     --GoodsNum 1 \
-    --TimeSpan 1
+    --PayMode 1 \
+    --Currency CNY \
+    --TimeSpan 1 \
+    --TimeUnit m \
+    --Type CREATE \
+    --HsmType GHSM
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "TotalCost": 2000.0,
         "GoodsNum": 1,
-        "TimeSpan": 1,
-        "TimeUnit": "y",
-        "OriginalCost": 2000.0,
-        "RequestId": "20569756-56ba-4a13-b545-e1528d5cb239"
+        "OriginalCost": 3500000,
+        "RequestId": "cebaa3fa-2c01-4ebf-9158-30e9a96a179c",
+        "TimeSpan": "1",
+        "TimeUnit": "m",
+        "TotalCost": 3500000
     }
 }
 ```

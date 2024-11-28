@@ -258,7 +258,7 @@
     ],
     "DescribeSafeAuthFlag": [
       {
-        "document": "",
+        "document": "查询安全设置",
         "input": "https://cam.tencentcloudapi.com/?Action=DescribeSafeAuthFlag\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"LoginFlag\": {\n            \"Phone\": 1,\n            \"Token\": 0,\n            \"Stoken\": 0,\n            \"Wechat\": 0,\n            \"Custom\": 0\n        },\n        \"ActionFlag\": {\n            \"Phone\": 0,\n            \"Token\": 0,\n            \"Stoken\": 0,\n            \"Wechat\": 0,\n            \"Custom\": 0\n        },\n        \"OffsiteFlag\": {\n            \"VerifyFlag\": 0,\n            \"NotifyPhone\": 1,\n            \"NotifyEmail\": 1,\n            \"NotifyWechat\": 1,\n            \"Tips\": 0\n        },\n        \"PromptTrust\": 1,\n        \"RequestId\": \"9626da03-4645-4c54-ba90-74836284af0c\"\n    }\n}",
         "title": "查询安全设置"
@@ -300,7 +300,7 @@
       {
         "document": "查询用户SAML配置",
         "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserSAMLConfig\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"SAMLMetadata\": \"\",\n        \"Status\": 0,\n        \"AuxiliaryDomain\": \"xx.com\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"SAMLMetadata\": \"metadataDocument\",\n        \"Status\": 0,\n        \"AuxiliaryDomain\": \"xx.com\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "查询用户SAML配置"
       }
     ],
@@ -380,13 +380,13 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetRole\n<公共请求参数>\n\n{\n    \"RoleId\": \"4611686018427844696\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RoleInfo\": {\n            \"RoleId\": \"4611686018427844696\",\n            \"RoleName\": \"test_1234544\",\n            \"PolicyDocument\": \"{\\\"version\\\":\\\"2.0\\\",\\\"statement\\\":[{\\\"action\\\":\\\"name/sts:AssumeRole\\\",\\\"effect\\\":\\\"allow\\\",\\\"principal\\\":{\\\"service\\\":[\\\"cloudaudit.cloud.tencent.com\\\",\\\"cls.cloud.tencent.com\\\"]}}]}\",\n            \"Description\": \"abc\",\n            \"AddTime\": \"2019-07-10 11:22:27\",\n            \"UpdateTime\": \"2019-07-10 11:22:27\",\n            \"ConsoleLogin\": 0,\n            \"RoleType\": \"system\",\n            \"SessionDuration\": 43200,\n            \"DeletionTaskId\": \"114\",\n            \"Tags\": [\n                {\n                    \"Value\": \"xx\",\n                    \"Key\": \"xx\"\n                }\n            ]\n        },\n        \"RequestId\": \"87fb9770-0fca-4c5a-b985-1c36b05a95cb\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RoleInfo\": {\n            \"RoleId\": \"4611686018427844696\",\n            \"RoleName\": \"productAdminRole\",\n            \"PolicyDocument\": \"{\\\"version\\\":\\\"2.0\\\",\\\"statement\\\":[{\\\"action\\\":\\\"name/sts:AssumeRole\\\",\\\"effect\\\":\\\"allow\\\",\\\"principal\\\":{\\\"service\\\":[\\\"cloudaudit.cloud.tencent.com\\\",\\\"cls.cloud.tencent.com\\\"]}}]}\",\n            \"Description\": \"产品管理角色\",\n            \"AddTime\": \"2019-07-10 11:22:27\",\n            \"UpdateTime\": \"2019-07-10 11:22:27\",\n            \"ConsoleLogin\": 0,\n            \"RoleType\": \"system\",\n            \"SessionDuration\": 43200,\n            \"DeletionTaskId\": \"114\",\n            \"Tags\": [\n                {\n                    \"Value\": \"管理人员\",\n                    \"Key\": \"运营主管\"\n                }\n            ]\n        },\n        \"RequestId\": \"87fb9770-0fca-4c5a-b985-1c36b05a95cb\"\n    }\n}",
         "title": "获取角色详情"
       },
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetRole\n<公共请求参数>\n\n{\n    \"RoleId\": \"4611686018427411642\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RoleInfo\": {\n            \"RoleId\": \"4611686018427411642\",\n            \"RoleName\": \"byron3214_QcsRole\",\n            \"PolicyDocument\": \"{\\\"version\\\":\\\"2.0\\\",\\\"statement\\\":[{\\\"action\\\":\\\"sts:AssumeRole\\\",\\\"effect\\\":\\\"allow\\\",\\\"principal\\\":{\\\"service\\\":[\\\"ccslinked.qcloud.com\\\"]}}]}\",\n            \"Description\": \"role222\",\n            \"AddTime\": \"2020-03-25 11:03:00\",\n            \"UpdateTime\": \"2020-03-25 11:03:00\",\n            \"ConsoleLogin\": 0,\n            \"RoleType\": \"service_linked\",\n            \"SessionDuration\": 43200,\n            \"DeletionTaskId\": \"114\",\n            \"Tags\": [\n                {\n                    \"Value\": \"xx\",\n                    \"Key\": \"xx\"\n                }\n            ]\n        },\n        \"RequestId\": \"1fb826eb-6d21-42f3-8f6e-9f51360f585d\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RoleInfo\": {\n            \"RoleId\": \"4611686018427411642\",\n            \"RoleName\": \"productAdminRole\",\n            \"PolicyDocument\": \"{\\\"version\\\":\\\"2.0\\\",\\\"statement\\\":[{\\\"action\\\":\\\"sts:AssumeRole\\\",\\\"effect\\\":\\\"allow\\\",\\\"principal\\\":{\\\"service\\\":[\\\"ccslinked.qcloud.com\\\"]}}]}\",\n            \"Description\": \"产品管理角色\",\n            \"AddTime\": \"2020-03-25 11:03:00\",\n            \"UpdateTime\": \"2020-03-25 11:03:00\",\n            \"ConsoleLogin\": 0,\n            \"RoleType\": \"service_linked\",\n            \"SessionDuration\": 43200,\n            \"DeletionTaskId\": \"114\",\n            \"Tags\": [\n                {\n                    \"Value\": \"管理人员\",\n                    \"Key\": \"运营主管\"\n                }\n            ]\n        },\n        \"RequestId\": \"1fb826eb-6d21-42f3-8f6e-9f51360f585d\"\n    }\n}",
         "title": "获取服务相关角色详情"
       }
     ],
@@ -426,7 +426,7 @@
       {
         "document": "查询子用户信息",
         "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetUser\n<公共请求参数>\n\n{\n    \"Name\": \"test124\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Uin\": 100000546533,\n        \"Name\": \"test124\",\n        \"Uid\": 1001774,\n        \"Remark\": \"test\",\n        \"ConsoleLogin\": 1,\n        \"PhoneNum\": \"10086\",\n        \"CountryCode\": \"86\",\n        \"Email\": \"123@qq.com\",\n        \"RecentlyLoginIP\": \"1.1.1.1\",\n        \"RecentlyLoginTime\": \"2023-02-27 14:59:08\",\n        \"RequestId\": \"33674182-e53d-416b-b6ce-bd7e7536b5d6\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Uin\": 100000546533,\n        \"Name\": \"jack\",\n        \"Uid\": 1001774,\n        \"Remark\": \"product manager\",\n        \"ConsoleLogin\": 1,\n        \"PhoneNum\": \"10086\",\n        \"CountryCode\": \"86\",\n        \"Email\": \"1****0@qq.com\",\n        \"RecentlyLoginIP\": \"1.1.1.1\",\n        \"RecentlyLoginTime\": \"2023-02-27 14:59:08\",\n        \"RequestId\": \"33674182-e53d-416b-b6ce-bd7e7536b5d6\"\n    }\n}",
         "title": "查询子用户"
       }
     ],
@@ -490,7 +490,7 @@
       {
         "document": "",
         "input": "https://cam.tencentcloudapi.com/?Action=ListCollaborators\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"ConsoleLogin\": 1,\n                \"CountryCode\": \"86\",\n                \"CreateTime\": \"2022-03-06 14:54:06\",\n                \"Email\": \"123456@qq.com\",\n                \"Name\": \"test\",\n                \"NickName\": \"test\",\n                \"PhoneNum\": \"12222222222\",\n                \"Remark\": \"test\",\n                \"Uid\": 18368010,\n                \"Uin\": 100021154441\n            }\n        ],\n        \"RequestId\": \"25350c03-ca94-45b1-b082-f845dfc7c39b\",\n        \"TotalNum\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalNum\": 1,\n        \"Data\": [\n            {\n                \"Uin\": 100000000001,\n                \"Name\": \"Jack\",\n                \"Uid\": 10000001,\n                \"Remark\": \"productUser\",\n                \"ConsoleLogin\": 1,\n                \"PhoneNum\": \"186****0001\",\n                \"CountryCode\": \"86\",\n                \"Email\": \"186****0001@qq.com\",\n                \"CreateTime\": \"2023-06-01 10:53:48\",\n                \"NickName\": \"Jack\"\n            }\n        ],\n        \"RequestId\": \"3bfc64a0-8935-43f4-91f7-6d16c41886d8\"\n    }\n}",
         "title": "获取协作者列表"
       }
     ],
@@ -522,7 +522,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListPolicies\n<公共请求参数>\n\n{\n    \"Rp\": \"1\",\n    \"Page\": \"10\"\n}",
-        "output": "{\n    \"Response\": {\n        \"ServiceTypeList\": [\n            \"xx\"\n        ],\n        \"List\": [\n            {\n                \"PolicyId\": 16313162,\n                \"PolicyName\": \"QcloudAccessForCDNRole\",\n                \"AddTime\": \"2019-04-19 10:55:31\",\n                \"Type\": 2,\n                \"Description\": \"腾讯云内容分发网络(CDN)操作权限含日志服务(CLS)的增删改查日志集，增删改查日志主题，搜索下载上传日志。\",\n                \"CreateMode\": 2,\n                \"Attachments\": 0,\n                \"ServiceType\": \"cooperator\",\n                \"IsAttached\": 1,\n                \"Deactived\": 1,\n                \"DeactivedDetail\": [\n                    \"cvm\"\n                ],\n                \"IsServiceLinkedPolicy\": 1,\n                \"UpdateTime\": \"2019-04-19 10:55:31\",\n                \"AttachEntityCount\": 0,\n                \"AttachEntityBoundaryCount\": 0\n            }\n        ],\n        \"TotalNum\": 239,\n        \"RequestId\": \"ae2bd2b7-1d55-4b0a-8154-e02407a2b390\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ServiceTypeList\": [\n            \"scf\"\n        ],\n        \"List\": [\n            {\n                \"PolicyId\": 16313162,\n                \"PolicyName\": \"QcloudAccessForCDNRole\",\n                \"AddTime\": \"2019-04-19 10:55:31\",\n                \"Type\": 2,\n                \"Description\": \"腾讯云内容分发网络(CDN)操作权限含日志服务(CLS)的增删改查日志集，增删改查日志主题，搜索下载上传日志。\",\n                \"CreateMode\": 2,\n                \"Attachments\": 0,\n                \"ServiceType\": \"cooperator\",\n                \"IsAttached\": 1,\n                \"Deactived\": 1,\n                \"DeactivedDetail\": [\n                    \"cvm\"\n                ],\n                \"IsServiceLinkedPolicy\": 1,\n                \"UpdateTime\": \"2019-04-19 10:55:31\",\n                \"AttachEntityCount\": 0,\n                \"AttachEntityBoundaryCount\": 0\n            }\n        ],\n        \"TotalNum\": 239,\n        \"RequestId\": \"ae2bd2b7-1d55-4b0a-8154-e02407a2b390\"\n    }\n}",
         "title": "查看策略列表"
       }
     ],
@@ -567,9 +567,9 @@
     "ListUsers": [
       {
         "document": "",
-        "input": "https://cam.tencentcloudapi.com/?Action=ListUsers\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Uin\": 100021969091,\n                \"Name\": \"cam001\",\n                \"Uid\": 11398137,\n                \"Remark\": \"\",\n                \"ConsoleLogin\": 1,\n                \"PhoneNum\": \"\",\n                \"CountryCode\": \"86\",\n                \"Email\": \"\",\n                \"CreateTime\": \"2021-10-28 18:02:00\"\n            }\n        ],\n        \"RequestId\": \"b2c7267c-8ee5-408b-9a88-ac359f13c8b1\"\n    }\n}",
-        "title": "拉取子用户"
+        "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListUsers\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Uin\": 0,\n                \"Name\": \"开发商\",\n                \"Uid\": 1003668,\n                \"Remark\": \"\",\n                \"ConsoleLogin\": 0,\n                \"PhoneNum\": \"15118121005\",\n                \"CountryCode\": \"86\",\n                \"Email\": \"evianwang@personal.com\",\n                \"CreateTime\": \"2021-11-26 16:21:01\",\n                \"NickName\": \"开发商\"\n            }\n        ],\n        \"RequestId\": \"81b595fc-0700-40e3-847e-6bbf711c0d2c\"\n    }\n}",
+        "title": "listUsers"
       }
     ],
     "ListUsersForGroup": [

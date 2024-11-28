@@ -31,6 +31,7 @@
           "example": "name",
           "member": "string",
           "name": "Key",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -41,6 +42,7 @@
           "example": "['v1','v2']",
           "member": "string",
           "name": "Value",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": true
@@ -48,9 +50,10 @@
         {
           "disabled": false,
           "document": "表单参数描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "测试",
+          "example": "产品名称",
           "member": "string",
           "name": "Name",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -67,6 +70,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Type",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -74,9 +78,10 @@
         {
           "disabled": false,
           "document": "审批意见\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "[\"同意\",\"请执行\"]",
           "member": "string",
           "name": "Content",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -112,7 +117,7 @@
         {
           "disabled": false,
           "document": "用户描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "aa",
+          "example": "普通用户",
           "member": "string",
           "name": "Desc",
           "output_required": true,
@@ -123,7 +128,7 @@
         {
           "disabled": false,
           "document": "用户昵称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "aa",
+          "example": "jack",
           "member": "string",
           "name": "Nick",
           "output_required": true,
@@ -134,7 +139,7 @@
         {
           "disabled": false,
           "document": "动态获取Scf\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xx",
+          "example": "get-users",
           "member": "Scf",
           "name": "Scf",
           "output_required": false,
@@ -178,7 +183,7 @@
         {
           "disabled": false,
           "document": "审批组名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "审批组",
           "member": "string",
           "name": "ApproveGroup",
           "output_required": false,
@@ -210,27 +215,30 @@
         {
           "disabled": false,
           "document": "申请人uin",
-          "example": "123123",
+          "example": "1000000001",
           "member": "uint64",
           "name": "ApplyUin",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "申请人主账号",
-          "example": "123123",
+          "example": "1000000001",
           "member": "uint64",
           "name": "ApplyOwnUin",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "申请人昵称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "a",
+          "example": "jack",
           "member": "string",
           "name": "ApplyUinNick",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -240,33 +248,37 @@
           "example": "1",
           "member": "uint64",
           "name": "BpaasId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "审批流名称",
-          "example": "test",
+          "example": "申请mysql",
           "member": "string",
           "name": "BpaasName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "申请参数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[{\"Key\":\"name\",\"Value\":[\"jack\"],\"Name\":\"子用户\"}]",
           "member": "ApplyParam",
           "name": "ApplicationParams",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "申请原因\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "需求上线",
           "member": "string",
           "name": "Reason",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -276,6 +288,7 @@
           "example": "2021-12-12 10:12:10",
           "member": "string",
           "name": "CreateTime",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -285,15 +298,17 @@
           "example": "1",
           "member": "uint64",
           "name": "Status",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "节点信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[{\"NodeId\":\"1\",\"NodeName\":\"管理员审批\",\"NodeType\":1,\"NextNode\":\"2\",\"Opinion\":{\"Type\":1,\"Content\":[\"1\"]},\"ScfName\":\"get-names\",\"SubStatus\":1,\"ApprovedUin\":[1],\"CreateTime\":\"2024-11-27 19:30:29\",\"Msg\":\"同意\",\"Users\":{\"Uin\":1,\"Type\":1,\"Desc\":\"开发用\",\"Nick\":\"jack\",\"Scf\":{\"ScfName\":\"get-approvers\",\"ScfRegion\":\"ap-guangdong\",\"ScfRegionName\":\"广东\",\"Params\":[{\"Key\":\"total\",\"Name\":\"总数\",\"Type\":1,\"Values\":[\"1\"]}]},\"ApproveStatus\":1,\"ApproveMsg\":\"同意\",\"ApproveTime\":\"2024-11-27 19:30:29\",\"ApproveGroup\":\"1\"},\"IsApprove\":true,\"ApproveId\":\"1\",\"ApproveMethod\":1,\"ApproveType\":1,\"CallMethod\":1,\"DataHubId\":\"data94\",\"TaskName\":\"data\",\"CKafkaRegion\":\"ap-guangzhou\",\"ExternalUrl\":\"\",\"ParallelNodes\":\"3-2\",\"RejectedCloudFunctionMsg\":\"\",\"PrevNode\":\"\"}]",
           "member": "StatusNode",
           "name": "Nodes",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -303,6 +318,7 @@
           "example": "1",
           "member": "string",
           "name": "ApprovingNodeId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -312,6 +328,7 @@
           "example": "2021-12-12 10:12:10",
           "member": "string",
           "name": "ModifyTime",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -348,7 +365,7 @@
         {
           "disabled": false,
           "document": "审批意见",
-          "example": "''",
+          "example": "同意",
           "member": "string",
           "name": "Msg",
           "required": false,
@@ -378,6 +395,7 @@
           "example": "1",
           "member": "string",
           "name": "ScfRegion",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -388,6 +406,7 @@
           "example": "ap-guangzhou",
           "member": "string",
           "name": "ScfRegionName",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -395,9 +414,10 @@
         {
           "disabled": false,
           "document": "Scf函数名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "get-user",
           "member": "string",
           "name": "ScfName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -405,9 +425,10 @@
         {
           "disabled": false,
           "document": "Scf函数入参\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "[{\"Key\":\"total\",\"Name\":\"总数\",\"Type\":1,\"Values\":[\"1\"]}]",
           "member": "ScfParam",
           "name": "Params",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -424,6 +445,7 @@
           "example": "name",
           "member": "string",
           "name": "Key",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -434,6 +456,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Type",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -441,9 +464,10 @@
         {
           "disabled": false,
           "document": "参数值",
-          "example": "[]",
+          "example": "[\"order\",\"jack\"]",
           "member": "string",
           "name": "Values",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -454,6 +478,7 @@
           "example": "姓名",
           "member": "string",
           "name": "Name",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -470,17 +495,17 @@
           "example": "1",
           "member": "string",
           "name": "NodeId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "节点名称",
-          "example": "a",
+          "example": "管理员审批",
           "member": "string",
           "name": "NodeName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -490,7 +515,7 @@
           "example": "1",
           "member": "uint64",
           "name": "NodeType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -500,27 +525,27 @@
           "example": "2",
           "member": "string",
           "name": "NextNode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "审批意见模型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\"Type\":1,\"Content\":[\"1\"]}",
           "member": "ApproveOpinion",
           "name": "Opinion",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "scf函数名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "get-user",
           "member": "string",
           "name": "ScfName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -530,17 +555,17 @@
           "example": "0",
           "member": "uint64",
           "name": "SubStatus",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "审批节点审批人\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "[1]",
           "member": "uint64",
           "name": "ApprovedUin",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -550,7 +575,7 @@
           "example": "2021-09-06 10:11:11",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -560,17 +585,17 @@
           "example": "success",
           "member": "string",
           "name": "Msg",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "有权限审批该节点的uin\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "{\"Uin\":1,\"Type\":1,\"Desc\":\"普通用户\",\"Nick\":\"jack\",\"Scf\":{\"ScfName\":\"get-approvers\",\"ScfRegion\":\"ap-guangdong\",\"ScfRegionName\":\"广东\",\"Params\":[{\"Key\":\"total\",\"Name\":\"总数\",\"Type\":1,\"Values\":[\"1\"]}]},\"ApproveStatus\":1,\"ApproveMsg\":\"同意\",\"ApproveTime\":\"2024-11-27 19:30:29\",\"ApproveGroup\":\"1\"}",
           "member": "ApproveUser",
           "name": "Users",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -580,7 +605,7 @@
           "example": "false",
           "member": "bool",
           "name": "IsApprove",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -590,7 +615,7 @@
           "example": "101",
           "member": "string",
           "name": "ApproveId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -600,7 +625,7 @@
           "example": "1",
           "member": "uint64",
           "name": "ApproveMethod",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -610,7 +635,7 @@
           "example": "1",
           "member": "uint64",
           "name": "ApproveType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -620,7 +645,7 @@
           "example": "0",
           "member": "uint64",
           "name": "CallMethod",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -630,7 +655,7 @@
           "example": "datahub-y9xxx",
           "member": "string",
           "name": "DataHubId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -640,7 +665,7 @@
           "example": "TOPIC",
           "member": "string",
           "name": "TaskName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -650,7 +675,7 @@
           "example": "ap-guangzhou",
           "member": "string",
           "name": "CKafkaRegion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -660,7 +685,7 @@
           "example": "https://www.baidu.com/",
           "member": "string",
           "name": "ExternalUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -670,17 +695,17 @@
           "example": "3-4",
           "member": "string",
           "name": "ParallelNodes",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "scf拒绝时返回信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "信息有误，重新申请",
           "member": "string",
           "name": "RejectedCloudFunctionMsg",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -690,7 +715,7 @@
           "example": "0",
           "member": "string",
           "name": "PrevNode",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }

@@ -8,6 +8,14 @@
         "title": "发送播报文本"
       }
     ],
+    "CreateBasicModeration": [
+      {
+        "document": "发起基础审核任务",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBasicModeration\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400188256,\n    \"RoomId\": \"9236\",\n    \"UserId\": \"user_57481060\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"292b38cf-205e-481b-87be-ce7df241223d\",\n        \"TaskId\": \"-nHp1XlU7sqylOUvA81n2e9Dynz7iLHbXHTMIoK-4pycoZWQndibXYkT4K2kvZeN3mIxUf+-RQE.\"\n    }\n}",
+        "title": "发起基础审核任务"
+      }
+    ],
     "CreateCloudRecording": [
       {
         "document": "启动SdkAppId 为 1234 指定房间（房间号为3560）的云端录制。\n\n房间空闲等待时间设置为1分钟。\n录制模式为合流模式。\n录制的流类型为音视频。\n默认订阅所有用户的流。\n录制视频的宽度360，录制视频的高度640，帧率15，比特率500,000bps，默认背景色。\n录制视频布局模式为九宫格布局。\n存储至腾讯云点播VOD",
@@ -22,6 +30,14 @@
         "input": "https://trtc.tencentcloudapi.com/?Action=CreatePicture\n&Content=test\n&Suffix=jpg\n&SdkAppId=123\n&Height=12\n&Width=15\n&XPosition=15\n&YPosition=36\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"PictureId\": 1400297109,\n        \"RequestId\": \"049461e6-f2f5-4168-887e-aca4fbfa5fae\"\n    }\n}",
         "title": "上传图片"
+      }
+    ],
+    "DeleteBasicModeration": [
+      {
+        "document": "停止基础审核任务",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteBasicModeration\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400188256,\n    \"TaskId\": \"-nHp1XlU7sqylOUvA81n2e9Dynz7iLHbXHTMIoK-4pycoZWQndibXYkT4K2kvZeN3mIxUf+-RQE.\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e10855fd-7589-494d-b40e-75e7efc853c4\",\n        \"TaskId\": \"-nHp1XlU7sqylOUvA81n2e9Dynz7iLHbXHTMIoK-4pycoZWQndibXYkT4K2kvZeN3mIxUf+-RQE.\"\n    }\n}",
+        "title": "停止基础审核任务"
       }
     ],
     "DeleteCloudRecording": [

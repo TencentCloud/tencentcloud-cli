@@ -17,10 +17,10 @@ Output:
         "BindId": 1,
         "ApplyTime": "2022-01-13 12:09:08",
         "Email": "123@qq.com",
-        "Phone": "18798765432",
+        "Phone": "18***32",
         "BindStatus": "Success",
         "BindTime": "2022-01-13 18:09:08",
-        "Description": "",
+        "Description": "success",
         "PhoneBind": 0,
         "CountryCode": "86"
     }

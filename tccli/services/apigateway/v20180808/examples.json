@@ -88,6 +88,14 @@
         "title": "CreateApiKey"
       }
     ],
+    "CreateExclusiveInstances": [
+      {
+        "document": "创建专享实例",
+        "input": "POST / HTTP/1.1\nHost: apigateway.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateExclusiveInstances\n<公共请求参数>\n\n{\n    \"Zones\": [\n        \"ap-beijing-5\",\n        \"ap-beijing-6\"\n    ],\n    \"InstanceName\": \"test\",\n    \"InstanceDescription\": \"test\",\n    \"InstanceType\": \"basic\",\n    \"NetworkConfig\": {\n        \"InternetMaxBandwidthOut\": 5000\n    },\n    \"VpcConfig\": {\n        \"UniqVpcId\": \"vpc-6bjypxxxx\",\n        \"UniqSubnetId\": \"subnet-rd2xxxx\"\n    },\n    \"PayMode\": \"POSTPAID\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a6dcc75c-d10f-4b37-bff8-a5cc7be6fa7a\",\n        \"Result\": \"instance-lxxxxxxx\"\n    }\n}",
+        "title": "创建专享实例"
+      }
+    ],
     "CreateIPStrategy": [
       {
         "document": "创建服务IP策略",
@@ -388,6 +396,14 @@
         "input": "https://apigateway.tencentcloudapi.com/?Action=DescribeIPStrategysStatus\n&ServiceId=service-ody35h5e\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"TotalCount\": 0,\n            \"StrategySet\": [\n                {\n                    \"StrategyId\": \"abc\",\n                    \"StrategyName\": \"abc\",\n                    \"StrategyType\": \"abc\",\n                    \"StrategyData\": \"abc\",\n                    \"CreatedTime\": \"2020-09-22T00:00:00+00:00\",\n                    \"ModifiedTime\": \"2020-09-22T00:00:00+00:00\",\n                    \"ServiceId\": \"abc\",\n                    \"BindApiTotalCount\": 0,\n                    \"BindApis\": [\n                        {\n                            \"ServiceId\": \"abc\",\n                            \"ApiId\": \"abc\",\n                            \"ApiDesc\": \"abc\",\n                            \"CreatedTime\": \"2020-09-22T00:00:00+00:00\",\n                            \"ModifiedTime\": \"2020-09-22T00:00:00+00:00\",\n                            \"ApiName\": \"abc\",\n                            \"VpcId\": 0,\n                            \"UniqVpcId\": \"abc\",\n                            \"ApiType\": \"abc\",\n                            \"Protocol\": \"abc\",\n                            \"IsDebugAfterCharge\": true,\n                            \"AuthType\": \"abc\",\n                            \"ApiBusinessType\": \"abc\",\n                            \"AuthRelationApiId\": \"abc\",\n                            \"OauthConfig\": {\n                                \"PublicKey\": \"abc\",\n                                \"TokenLocation\": \"abc\",\n                                \"LoginRedirectUrl\": \"abc\"\n                            },\n                            \"RelationBuniessApiIds\": [\n                                \"abc\"\n                            ],\n                            \"Tags\": [\n                                \"abc\"\n                            ],\n                            \"Path\": \"abc\",\n                            \"Method\": \"abc\"\n                        }\n                    ]\n                }\n            ]\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "DescribeIPStrategysStatus"
+      }
+    ],
+    "DescribeInstancesNetworkConfig": [
+      {
+        "document": "获取专享实例网络配置列表",
+        "input": "POST / HTTP/1.1\nHost: apigateway.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstancesNetworkConfig\n<公共请求参数>\n\n{\n    \"Limit\": 1,\n    \"Offset\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f2bee379-c9e4-4ffb-a18b-56ba15ea6af9\"\n    }\n}",
+        "title": "获取专享实例网络配置列表"
       }
     ],
     "DescribeLogSearch": [

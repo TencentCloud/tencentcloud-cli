@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli organization AddOrganizationNode --cli-unfold-argument  \
-    --Name test \
-    --ParentNodeId 123
+    --Name node_name \
+    --ParentNodeId 101
 ```
 
 Output: 

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli organization DescribeEffectivePolicy --cli-unfold-argument  \
-    --TargetId 111111111111
+    --TargetId 10001
 ```
 
 Output: 

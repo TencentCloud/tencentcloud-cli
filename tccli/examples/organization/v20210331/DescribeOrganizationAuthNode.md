@@ -17,10 +17,10 @@ Output:
         "Items": [
             {
                 "RelationId": 1,
-                "AuthName": "腾讯云",
+                "AuthName": "auth_name",
                 "Manager": {
-                    "MemberUin": 10000036541,
-                    "MemberName": "test1"
+                    "MemberUin": 10000000001,
+                    "MemberName": "member_name"
                 }
             }
         ],

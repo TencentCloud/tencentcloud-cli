@@ -11,22 +11,22 @@ Output:
 ```
 {
     "Response": {
+        "TotalNum": 1,
         "Data": [
             {
+                "Uin": 100000000001,
+                "Name": "Jack",
+                "Uid": 10000001,
+                "Remark": "productUser",
                 "ConsoleLogin": 1,
+                "PhoneNum": "186****0001",
                 "CountryCode": "86",
-                "CreateTime": "2022-03-06 14:54:06",
-                "Email": "123456@qq.com",
-                "Name": "test",
-                "NickName": "test",
-                "PhoneNum": "12222222222",
-                "Remark": "test",
-                "Uid": 18368010,
-                "Uin": 100021154441
+                "Email": "186****0001@qq.com",
+                "CreateTime": "2023-06-01 10:53:48",
+                "NickName": "Jack"
             }
         ],
-        "RequestId": "25350c03-ca94-45b1-b082-f845dfc7c39b",
-        "TotalNum": 1
+        "RequestId": "3bfc64a0-8935-43f4-91f7-6d16c41886d8"
     }
 }
 ```

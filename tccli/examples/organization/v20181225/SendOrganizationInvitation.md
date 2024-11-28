@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli organization SendOrganizationInvitation --cli-unfold-argument  \
-    --InviteUin 123 \
-    --Name "test" \
-    --Remark "test"
+    --InviteUin 100000000001 \
+    --Name "member_name" \
+    --Remark '"invitation member"'
 ```
 
 Output: 

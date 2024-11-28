@@ -274,6 +274,14 @@
         "title": "获取群组成员列表"
       }
     ],
+    "DescribeMarquee": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMarquee\n<公共请求参数>\n\n{\n    \"SdkAppId\": 34442819,\n    \"RoomId\": 353861\n}",
+        "output": "{\n    \"Response\": {\n        \"BackgroundColor\": \"\",\n        \"BackgroundOpacity\": 0.1,\n        \"Content\": \"\",\n        \"DisplayMode\": 1,\n        \"Duration\": 9,\n        \"FontColor\": \"\",\n        \"FontOpacity\": 0.3,\n        \"FontSize\": 11,\n        \"FontWeight\": 1,\n        \"MarqueeCount\": 1,\n        \"MarqueeType\": 1,\n        \"RequestId\": \"5872d14e-d7-4122-990e-44a20e7dd6a5\"\n    }\n}",
+        "title": "查询跑马灯配置"
+      }
+    ],
     "DescribeQuestionList": [
       {
         "document": "获取房间问答提问列表",
@@ -500,6 +508,14 @@
         "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetAppCustomContent\n<公共请求参数>\n\n{\n    \"SdkAppId\": 123,\n    \"CustomContent\": [\n        {\n            \"Scene\": \"default\",\n            \"LogoUrl\": \"https://yourdomain.com/logo.png\",\n            \"HomeUrl\": \"https://yourdomain.com/login\",\n            \"JsUrl\": \"https://yourdomain.com/default.js\",\n            \"CssUrl\": \"https://yourdomain.com/default.css\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"213das\"\n    }\n}",
         "title": "设置应用自定义内容"
+      }
+    ],
+    "SetMarquee": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetMarquee\n<公共请求参数>\n\n{\n    \"SdkAppId\": 34442819,\n    \"RoomId\": 353861,\n    \"MarqueeType\": 1,\n    \"DisplayMode\": 1,\n    \"Content\": \"#FFFF00\",\n    \"FontSize\": 11,\n    \"FontWeight\": 1,\n    \"FontOpacity\": 0.3,\n    \"BackgroundColor\": \"#FFFF00\",\n    \"BackgroundOpacity\": 0.3,\n    \"Duration\": 3,\n    \"MarqueeCount\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"87c8dcd3-5941-4920-a7b6-bcdc13af7c79\"\n    }\n}",
+        "title": "设置跑马灯参数设置"
       }
     ],
     "SetWatermark": [

@@ -15,7 +15,7 @@ Output:
 {
     "Response": {
         "ServiceTypeList": [
-            "xx"
+            "scf"
         ],
         "List": [
             {
