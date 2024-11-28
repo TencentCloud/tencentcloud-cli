@@ -1,3 +1,225 @@
+# Release 3.0.1108.1
+
+## 账号中心(account) 版本：2018-12-25
+
+### 第 15 次发布
+
+发布时间：2024-11-29 01:06:57
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [PhoneData](http://document.tencentcloudapi.woa.com/document/product/1594/75172#PhoneData)
+
+	* <font color="#dd0000">**修改成员**：</font>Mail
+
+* [WeChatData](http://document.tencentcloudapi.woa.com/document/product/1594/75172#WeChatData)
+
+	* <font color="#dd0000">**修改成员**：</font>Nickname
+
+
+
+
+## API 网关(apigateway) 版本：2018-08-08
+
+### 第 38 次发布
+
+发布时间：2024-11-29 01:09:20
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateExclusiveInstances](http://document.tencentcloudapi.woa.com/document/product/628/85425)
+
+新增数据结构：
+
+* [InstanceNetworkConfig](http://document.tencentcloudapi.woa.com/document/product/628/45244#InstanceNetworkConfig)
+
+
+
+## 商业智能分析 BI(bi) 版本：2022-01-05
+
+### 第 20 次发布
+
+发布时间：2024-11-29 01:12:59
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribePageWidgetList](http://document.tencentcloudapi.woa.com/document/product/1707/85427)
+* [ExportScreenPage](http://document.tencentcloudapi.woa.com/document/product/1707/85426)
+
+新增数据结构：
+
+* [PageScreenListVO](http://document.tencentcloudapi.woa.com/document/product/1707/80324#PageScreenListVO)
+* [PageScreenVO](http://document.tencentcloudapi.woa.com/document/product/1707/80324#PageScreenVO)
+* [WidgetListVO](http://document.tencentcloudapi.woa.com/document/product/1707/80324#WidgetListVO)
+* [WidgetVO](http://document.tencentcloudapi.woa.com/document/product/1707/80324#WidgetVO)
+
+
+
+## 费用中心(billing) 版本：2018-07-09
+
+### 第 74 次发布
+
+发布时间：2024-11-29 01:13:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ActionSummaryOverviewItem](http://document.tencentcloudapi.woa.com/document/product/555/19183#ActionSummaryOverviewItem)
+
+	* <font color="#dd0000">**修改成员**：</font>TransferPayAmount
+
+
+
+
+## 商业流程服务(bpaas) 版本：2018-12-17
+
+### 第 6 次发布
+
+发布时间：2024-11-29 01:16:04
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [StatusNode](http://document.tencentcloudapi.woa.com/document/product/1628/78459#StatusNode)
+
+	* <font color="#dd0000">**修改成员**：</font>ParallelNodes, RejectedCloudFunctionMsg, PrevNode
+
+
+
+
+## 磐石(clouddc) 版本：2018-08-30
+
+### 第 12 次发布
+
+发布时间：2024-11-29 01:23:19
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [EOLInfo](http://document.tencentcloudapi.woa.com/document/product/1626/78427#EOLInfo)
+
+修改数据结构：
+
+* [NodeInfo](http://document.tencentcloudapi.woa.com/document/product/1626/78427#NodeInfo)
+
+	* 新增成员：EOLInfo
+
+
+
+
+## 配置审计(config) 版本：2022-08-02
+
+### 第 4 次发布
+
+发布时间：2024-11-29 01:25:30
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeDiscoveredResource](http://document.tencentcloudapi.woa.com/document/product/1751/85430)
+* [ListDiscoveredResources](http://document.tencentcloudapi.woa.com/document/product/1751/85429)
+
+新增数据结构：
+
+* [Filter](http://document.tencentcloudapi.woa.com/document/product/1751/82623#Filter)
+* [ResourceListInfo](http://document.tencentcloudapi.woa.com/document/product/1751/82623#ResourceListInfo)
+
+
+
+## 集团账号管理(organization) 版本：2021-03-31
+
+### 第 47 次发布
+
+发布时间：2024-11-29 02:03:43
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [NotAllowReason](http://document.tencentcloudapi.woa.com/document/product/850/67060#NotAllowReason)
+
+	* <font color="#dd0000">**修改成员**：</font>IsCreateMember, DeletionPermission, IsAssignManager, IsAuthManager, IsShareManager, OperateProcess, BillingPermission, ExistResources, DetectFailedResources
+
+* [OrgMemberFinancial](http://document.tencentcloudapi.woa.com/document/product/850/67060#OrgMemberFinancial)
+
+	* <font color="#dd0000">**修改成员**：</font>Ratio
+
+
+
+
+## 集团账号管理(organization) 版本：2018-12-25
+
+
+
+## 官网(portal) 版本：2023-04-13
+
+### 第 13 次发布
+
+发布时间：2024-11-29 02:07:05
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeDocumentList](http://document.tencentcloudapi.woa.com/document/product/1732/81243)
+
+	* 新增入参：DisableUpdateTimeStart, DisableUpdateTimeEnd, VisibleUpdateTimeStart, VisibleUpdateTimeEnd
+
+
+修改数据结构：
+
+* [DocumentItem](http://document.tencentcloudapi.woa.com/document/product/1732/80923#DocumentItem)
+
+	* 新增成员：DisableUpdateTime, VisibleUpdateTime
+
+
+
+
+## 实时音视频(trtc) 版本：2019-07-22
+
+### 第 75 次发布
+
+发布时间：2024-11-29 02:22:06
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateBasicModeration](http://document.tencentcloudapi.woa.com/document/product/647/85433)
+* [DeleteBasicModeration](http://document.tencentcloudapi.woa.com/document/product/647/85432)
+
+
+
 # Release 3.0.1107.1
 
 ## 费用中心(billing) 版本：2018-07-09

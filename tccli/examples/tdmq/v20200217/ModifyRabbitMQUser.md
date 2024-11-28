@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli tdmq ModifyRabbitMQUser --cli-unfold-argument  \
-    --InstanceId amqp-test \
-    --User test_user \
-    --Password 123Tencent
+    --InstanceId amqp-jero744g \
+    --User admin \
+    --Password Tencent123
 ```
 
 Output: 

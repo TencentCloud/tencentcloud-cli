@@ -18,27 +18,17 @@ Output:
         "Items": [
             {
                 "CreateTime": "2021-07-14 20:22:30",
-                "Description": "test",
+                "Description": "admin policy",
                 "IdentityId": 1,
-                "IdentityRoleAliasName": "登录访问",
+                "IdentityRoleAliasName": "admin",
                 "IdentityRoleName": "OrganizationAccessControlRole",
-                "PolicyId": 27887,
-                "PolicyName": "test3",
+                "PolicyId": 1001,
+                "PolicyName": "policy_name",
                 "UpdateTime": "2021-07-14 20:22:30"
-            },
-            {
-                "CreateTime": "2021-07-14 20:21:21",
-                "Description": "test",
-                "IdentityId": 1,
-                "IdentityRoleAliasName": "登录访问",
-                "IdentityRoleName": "OrganizationAccessControlRole",
-                "PolicyId": 98081,
-                "PolicyName": "test",
-                "UpdateTime": "2021-07-14 20:21:21"
             }
         ],
         "RequestId": "a1525f09-8a00-4b76-9db5-d47aea591dff",
-        "Total": 2
+        "Total": 1
     }
 }
 ```

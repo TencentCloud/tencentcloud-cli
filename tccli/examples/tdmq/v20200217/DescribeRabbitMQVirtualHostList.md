@@ -16,10 +16,10 @@ Output:
 {
     "Response": {
         "TotalCount": 1,
-        "RequestId": "abc",
+        "RequestId": "a8f28d5e-a7e2-4b0b-afa0-2fba09c077a0",
         "VirtualHostList": [
             {
-                "VirtualHostName": "test-vhost",
+                "VirtualHostName": "tdmq_data",
                 "Description": "The virtual host is for test"
             }
         ]

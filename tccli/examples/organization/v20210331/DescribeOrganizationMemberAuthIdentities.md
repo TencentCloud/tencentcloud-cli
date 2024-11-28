@@ -20,7 +20,7 @@ Output:
                 "CreateTime": "2021-07-14 20:17:34",
                 "Description": "AdministratorAccess",
                 "IdentityId": 1,
-                "IdentityRoleAliasName": "登录访问",
+                "IdentityRoleAliasName": "admin",
                 "IdentityRoleName": "OrganizationAccessControlRole",
                 "IdentityType": 1,
                 "UpdateTime": "2021-07-14 20:17:34"

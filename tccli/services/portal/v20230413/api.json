@@ -322,6 +322,42 @@
         },
         {
           "disabled": false,
+          "document": "下线文档筛选开始时间",
+          "example": "2022-08-02",
+          "member": "date",
+          "name": "DisableUpdateTimeStart",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "下线文档筛选结束时间",
+          "example": "2022-08-02",
+          "member": "date",
+          "name": "DisableUpdateTimeEnd",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "隐藏文档筛选开始时间",
+          "example": "2022-08-02",
+          "member": "date",
+          "name": "VisibleUpdateTimeStart",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "隐藏文档筛选结束时间",
+          "example": "2022-08-02",
+          "member": "date",
+          "name": "VisibleUpdateTimeEnd",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "文档语言(zh:中文;en:英文,默认:zh)",
           "example": "无",
           "member": "string",
@@ -1039,6 +1075,26 @@
           "member": "string",
           "name": "Slate",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文章弃用时间",
+          "example": "无",
+          "member": "string",
+          "name": "DisableUpdateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文章隐藏时间",
+          "example": "无",
+          "member": "string",
+          "name": "VisibleUpdateTime",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         }

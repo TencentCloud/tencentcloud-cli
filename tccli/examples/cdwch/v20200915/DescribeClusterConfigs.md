@@ -13,17 +13,17 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "xx",
         "ClusterConfList": [
             {
-                "FilePath": "xx",
-                "OriParam": "xx",
-                "NeedRestart": 1,
-                "FileName": "xx",
-                "FileConf": "xx",
-                "KeyConf": "xx"
+                "FileName": "abc",
+                "FileConf": "abc",
+                "KeyConf": "abc",
+                "OriParam": "abc",
+                "NeedRestart": 0,
+                "FilePath": "abc"
             }
-        ]
+        ],
+        "RequestId": "abc"
     }
 }
 ```

@@ -34,7 +34,7 @@ Output:
             "ProductNum": 1,
             "UpdateTime": "abc",
             "DepartmentIds": [
-                "abc"
+                44689
             ],
             "IntroPageStatus": 1,
             "ReportLevelList": [

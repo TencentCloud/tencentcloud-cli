@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli organization DescribeOrganizationFinancialByProduct --cli-unfold-argument  \
-    --Month 2021-04
+    --Month 2021-01
 ```
 
 Output: 
@@ -28,7 +28,7 @@ Output:
             }
         ],
         "RequestId": "d581d282-3acf-496f-b7ba-0fe640648183",
-        "TotalCost": 1002.1,
+        "TotalCost": 43.35,
         "Total": 2
     }
 }

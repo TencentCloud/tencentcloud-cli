@@ -9055,7 +9055,7 @@
         {
           "disabled": false,
           "document": "集群实例Id",
-          "example": "amqp-xxx",
+          "example": "amqp-jero744g",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -9309,7 +9309,7 @@
         {
           "disabled": false,
           "document": "不适用，默认参数",
-          "example": "amqp-xxx",
+          "example": "amqp-jero744g",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -13840,7 +13840,7 @@
         {
           "disabled": false,
           "document": "集群实例Id",
-          "example": "amqp-xxx",
+          "example": "amqp-jero744g",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -13849,7 +13849,7 @@
         {
           "disabled": false,
           "document": "用户名，登录时使用",
-          "example": "test_user",
+          "example": "admin",
           "member": "string",
           "name": "User",
           "required": true,
@@ -13858,7 +13858,7 @@
         {
           "disabled": false,
           "document": "密码，登录时使用",
-          "example": "abc123",
+          "example": "Tencent123",
           "member": "string",
           "name": "Password",
           "required": true,
@@ -13867,7 +13867,7 @@
         {
           "disabled": false,
           "document": "描述，不传则不修改",
-          "example": "hello",
+          "example": "production",
           "member": "string",
           "name": "Description",
           "required": false,

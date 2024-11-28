@@ -6,13 +6,12 @@ Input:
 
 ```
 tccli organization CreateOrganizationMember --cli-unfold-argument  \
-    --Remark test \
-    --Name name \
+    --Remark create member \
+    --Name member_name \
     --NodeId 1001 \
-    --AccountName test \
+    --AccountName member_name \
     --PermissionIds 1 2 \
     --PolicyType Finical \
-    --PayUin  \
     --IdentityRoleID 1
 ```
 

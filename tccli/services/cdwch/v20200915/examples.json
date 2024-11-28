@@ -76,7 +76,7 @@
       {
         "document": "在xml方式下修改配置文件内容时，获取集群配置文件内容",
         "input": "https://cdwch.tencentcloudapi.com/\n?Action=DescribeClusterConfigs\n&InstanceId=cdwch-xxxx\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"ClusterConfList\": [\n            {\n                \"FilePath\": \"xx\",\n                \"OriParam\": \"xx\",\n                \"NeedRestart\": 1,\n                \"FileName\": \"xx\",\n                \"FileConf\": \"xx\",\n                \"KeyConf\": \"xx\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ClusterConfList\": [\n            {\n                \"FileName\": \"abc\",\n                \"FileConf\": \"abc\",\n                \"KeyConf\": \"abc\",\n                \"OriParam\": \"abc\",\n                \"NeedRestart\": 0,\n                \"FilePath\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "获取集群配置文件内容"
       }
     ],

@@ -15,13 +15,13 @@ Output:
     "Response": {
         "Items": [
             {
-                "MemberName": "test2",
+                "MemberName": "member2",
                 "MemberUin": 111111111111,
                 "TotalCost": 99,
                 "Ratio": "79.5"
             },
             {
-                "MemberName": "test1",
+                "MemberName": "member1",
                 "MemberUin": 222222222222,
                 "TotalCost": 12.22,
                 "Ratio": "20.5"

@@ -7,7 +7,7 @@ Input:
 ```
 tccli organization BindOrganizationMemberAuthAccount --cli-unfold-argument  \
     --MemberUin 111111111111 \
-    --PolicyId 123 \
+    --PolicyId 101 \
     --OrgSubAccountUins 222222222222
 ```
 
