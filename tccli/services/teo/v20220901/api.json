@@ -588,6 +588,13 @@
       "output": "DescribeTopL7CacheDataResponse",
       "status": "online"
     },
+    "DescribeZoneConfigImportResult": {
+      "document": "查询站点配置项导入结果接口，本接口用于站点配置导入接口（ImportZoneConfig）的结果查询。该功能仅支持标准版或企业版套餐的站点使用。",
+      "input": "DescribeZoneConfigImportResultRequest",
+      "name": "查询站点配置导入结果",
+      "output": "DescribeZoneConfigImportResultResponse",
+      "status": "online"
+    },
     "DescribeZoneSetting": {
       "document": "用于查询站点的所有配置信息。",
       "input": "DescribeZoneSettingRequest",
@@ -623,6 +630,13 @@
       "output": "DownloadL7LogsResponse",
       "status": "online"
     },
+    "ExportZoneConfig": {
+      "document": "导出站点配置接口，本接口支持用户根据需要的配置项进行配置导出，导出的配置用于导入站点配置接口（ImportZoneConfig）进行配置导入。该功能仅支持标准版和企业版套餐站点使用。",
+      "input": "ExportZoneConfigRequest",
+      "name": "导出站点配置",
+      "output": "ExportZoneConfigResponse",
+      "status": "online"
+    },
     "HandleFunctionRuntimeEnvironment": {
       "document": "操作边缘函数运行环境，支持环境变量的相关设置。\n设置环境变量后，可在函数代码中使用，具体参考 [边缘函数引入环境变量](https://cloud.tencent.com/document/product/1552/109151#0151fd9a-8b0e-407b-ae37-54553a60ded6)。",
       "input": "HandleFunctionRuntimeEnvironmentRequest",
@@ -635,6 +649,13 @@
       "input": "IdentifyZoneRequest",
       "name": "认证站点",
       "output": "IdentifyZoneResponse",
+      "status": "online"
+    },
+    "ImportZoneConfig": {
+      "document": "导入站点配置接口，本接口支持站点配置文件的快速导入，发起导入后接口会返回对应的任务 ID（TaskId），用户需通过查询站点配置导入结果接口（DescribeZoneConfigImportResult）获取本次导入任务执行的结果。该功能仅支持标准版和企业版套餐站点使用。",
+      "input": "ImportZoneConfigRequest",
+      "name": "导入站点配置",
+      "output": "ImportZoneConfigResponse",
       "status": "online"
     },
     "IncreasePlanQuota": {
@@ -9419,6 +9440,92 @@
       ],
       "type": "object"
     },
+    "DescribeZoneConfigImportResultRequest": {
+      "document": "DescribeZoneConfigImportResult请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "zone-2zpqp7qztest",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "表示需要查询结果的导入配置任务 Id，导入任务 Id 仅支持查询最近 7 天的导入任务。",
+          "example": "33mz68e4gwka",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeZoneConfigImportResultResponse": {
+      "document": "DescribeZoneConfigImportResult返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "本次导入任务的导入状态。取值有：  <li>success：表示配置项导入成功；</li> <li>failure：表示配置项导入失败；</li> <li>doing：表示配置项正在导入中。</li>",
+          "example": "success",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "本次导入任务的状态的提示信息。当配置项导入失败时，可通过本字段查看失败原因。",
+          "example": "success",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "本次导入任务的配置内容。",
+          "example": "{   \"L7AccelerationConfig\": {     \"FormatVersion\": \"1.0\",     \"ZoneConfig\": {       \"SmartRouting\": {         \"Switch\": \"off\"       },       \"Cache\": {         \"NoCache\": {           \"Switch\": \"on\"         },         \"FollowOrigin\": {           \"Switch\": \"off\",           \"DefaultCache\": \"on\",           \"DefaultCacheStrategy\": \"on\",           \"DefaultCacheTime\": 0         },         \"CustomTime\": {           \"Switch\": \"off\",           \"CacheTime\": 2592000         }       },       \"MaxAge\": {         \"FollowOrigin\": \"on\",         \"CacheTime\": 600       },       \"CacheKey\": {         \"FullURLCache\": \"on\",         \"QueryString\": {           \"Switch\": \"off\",           \"Action\": \"includeCustom\"         },         \"IgnoreCase\": \"off\"       },       \"CachePrefresh\": {         \"Switch\": \"off\",         \"CacheTimePercent\": 90       },       \"OfflineCache\": {         \"Switch\": \"on\"       },       \"Compression\": {         \"Switch\": \"on\",         \"Algorithms\": [           \"brotli\",           \"gzip\"         ]       },       \"ForceRedirectHTTPS\": {         \"Switch\": \"off\",         \"RedirectStatusCode\": 302       },       \"HSTS\": {         \"Switch\": \"off\",         \"Timeout\": 0,         \"IncludeSubDomains\": \"off\",         \"Preload\": \"off\"       },       \"TLSConfig\": {         \"Version\": [           \"TLSv1\",           \"TLSv1.1\",           \"TLSv1.2\",           \"TLSv1.3\"         ],         \"CipherSuite\": \"loose-v2023\"       },       \"OCSPStapling\": {         \"Switch\": \"off\"       },       \"HTTP2\": {         \"Switch\": \"off\"       },       \"QUIC\": {         \"Switch\": \"off\"       },       \"UpstreamHTTP2\": {         \"Switch\": \"off\"       },       \"IPv6\": {         \"Switch\": \"off\"       },       \"WebSocket\": {         \"Switch\": \"off\",         \"Timeout\": 30       },       \"PostMaxSize\": {         \"Switch\": \"on\",         \"MaxSize\": 838860800       },       \"ClientIPHeader\": {         \"Switch\": \"off\"       },       \"ClientIPCountry\": {         \"Switch\": \"off\"       },       \"gRPC\": {         \"Switch\": \"off\"       },       \"AccelerateMainland\": {         \"Switch\": \"off\"       },       \"StandardDebug\": {         \"Switch\": \"off\"       }     },     \"Rules\": []   } }",
+          "member": "string",
+          "name": "Content",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "本次导入任务的开始时间。",
+          "example": "2024-10-17 20:12:02",
+          "member": "datetime_iso",
+          "name": "ImportTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "本次导入任务的结束时间。",
+          "example": "2024-10-17 20:14:30",
+          "member": "datetime_iso",
+          "name": "FinishTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeZoneSettingRequest": {
       "document": "DescribeZoneSetting请求参数结构体",
       "members": [
@@ -10497,6 +10604,52 @@
       ],
       "usage": "both"
     },
+    "ExportZoneConfigRequest": {
+      "document": "ExportZoneConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "zone-2zpqp7qztest",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "导出配置项的类型列表，不填表示导出所有类型的配置，当前支持的取值有：<li>L7AccelerationConfig：表示导出七层加速配置，对应控制台「站点加速-全局加速配置」和「站点加速-规则引擎」。</li>\n需注意：后续支持导出的类型会随着迭代增加，导出所有类型时需要注意导出文件大小，建议使用时指定需要导出的配置类型，以便控制请求响应包负载大小。",
+          "example": "L7AccelerationConfig",
+          "member": "string",
+          "name": "Types",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ExportZoneConfigResponse": {
+      "document": "ExportZoneConfig返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "导出的配置的具体内容。以 JSON 格式返回，按照 UTF-8 方式进行编码。配置内容可参考下方示例。",
+          "example": "无",
+          "member": "string",
+          "name": "Content",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "FailReason": {
       "document": "失败原因",
       "members": [
@@ -11535,6 +11688,52 @@
         }
       ],
       "usage": "both"
+    },
+    "ImportZoneConfigRequest": {
+      "document": "ImportZoneConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "zone-2zpqp7qztest",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "待导入的配置内容。要求采用 JSON 格式，按照 UTF-8 方式进行编码。配置内容可通过站点配置导出接口（ExportZoneConfig）获取。您可以单独导入「站点加速-全局加速配置」或「站点加速-规则引擎」，传入对应的字段即可，详情可以参考下方示例。",
+          "example": "无",
+          "member": "string",
+          "name": "Content",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ImportZoneConfigResponse": {
+      "document": "ImportZoneConfig返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "表示该次导入配置的任务 Id，通过查询站点配置导入结果接口（DescribeZoneConfigImportResult）获取本次导入任务执行的结果。注意：导入任务 Id 仅支持查询最近 7 天的导入任务。",
+          "example": "33mz68e4gwka",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "IncreasePlanQuotaRequest": {
       "document": "IncreasePlanQuota请求参数结构体",

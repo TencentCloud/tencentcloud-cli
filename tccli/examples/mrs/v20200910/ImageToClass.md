@@ -1,6 +1,6 @@
-**Example 1: 图片分类**
+**Example 1: 医疗报告图片分类接口示例**
 
-输入一张图片，得到报告分类信息
+医疗报告图片分类接口示例
 
 Input: 
 
@@ -16,8 +16,7 @@ tccli mrs ImageToClass --cli-unfold-argument  \
     --HandleParam.ScaleTargetSize 300000 \
     --HandleParam.AutoOptimizeCoordinate True \
     --HandleParam.RotateTheAngle 0.0 \
-    --ImageInfoList.0.Url https://medres-1254237151.cos.ap-shanghai.myqcloud.com/upload/tNurJ6BitYm6bUk1DnVZw7dF.jpg \
-    --ImageInfoList.0.Base64  \
+    --ImageInfoList.0.Base64 注意替换为 <医疗报告图片base64编码> \
     --ImageInfoList.0.Id 1
 ```
 
@@ -25,22 +24,17 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "cc99532b-3865-4295-a2dd-823749a1d035",
+        "RequestId": "df0804c4-1aa4-4df9-8313-ba24d1d53704",
         "TextTypeList": [
             {
-                "Id": 12,
+                "Id": 13,
                 "Level": 1,
-                "Name": "检查报告"
+                "Name": "医疗文本"
             },
             {
-                "Id": 345,
+                "Id": 29,
                 "Level": 2,
-                "Name": "超声检查"
-            },
-            {
-                "Id": 345,
-                "Level": 3,
-                "Name": "超声检查"
+                "Name": "入院报告"
             }
         ]
     }

@@ -16,6 +16,22 @@
         "title": "添加布局20，绑定输入1，输入2"
       }
     ],
+    "AddCasterMarkPicInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddCasterMarkPicInfo\n<公共请求参数>\n\n{\n    \"MarkPicInfo\": {\n        \"MarkPicIndex\": 1,\n        \"MarkPicHeight\": 0.2,\n        \"MarkPicId\": 0,\n        \"MarkPicLocationX\": 0.2,\n        \"MarkPicLocationY\": 0.2,\n        \"MarkPicWidth\": 0.2\n    },\n    \"CasterId\": 1234\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "AddCasterMarkWordInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddCasterMarkWordInfo\n<公共请求参数>\n\n{\n    \"CasterId\": 1234,\n    \"MarkWordInfo\": {\n        \"MarkWordIndex\": 1,\n        \"MarkWordFontSize\": 15,\n        \"MarkWordText\": \"example\",\n        \"MarkWordFontColor\": \"0x000033\",\n        \"MarkWordLocationY\": 0.2,\n        \"MarkWordLocationX\": 0.2,\n        \"MarkWordFontType\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "请求实例"
+      }
+    ],
     "AddCasterOutputInfo": [
       {
         "document": "",
@@ -320,6 +336,22 @@
         "title": "请求示例"
       }
     ],
+    "DeleteCasterMarkPicInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCasterMarkPicInfo\n<公共请求参数>\n\n{\n    \"CasterId\": 1234,\n    \"MarkPicIndex\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "DeleteCasterMarkWordInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCasterMarkWordInfo\n<公共请求参数>\n\n{\n    \"MarkWordIndex\": 1,\n    \"CasterId\": 1234\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
     "DeleteCasterOutputInfo": [
       {
         "document": "",
@@ -574,6 +606,22 @@
         "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCasterList\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\",\n        \"CasterList\": [\n            {\n                \"CasterId\": 10,\n                \"CasterName\": \"example\",\n                \"StartBillingTime\": 0,\n                \"StopBillingTime\": 1731964027,\n                \"Description\": \"\",\n                \"CreateTime\": 1603158528,\n                \"Status\": 0,\n                \"ExpireTime\": -1,\n                \"FeeType\": 0\n            }\n        ]\n    }\n}",
         "title": "请求示例"
+      }
+    ],
+    "DescribeCasterMarkPicInfos": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCasterMarkPicInfos\n<公共请求参数>\n\n{\n    \"CasterId\": 1234\n}",
+        "output": "{\n    \"Response\": {\n        \"MarkPicInfos\": [\n            {\n                \"MarkPicIndex\": 1,\n                \"MarkPicId\": 0,\n                \"MarkPicUrl\": \"https://www.example.com/pic/example.jpg\",\n                \"MarkPicWidth\": 0.2,\n                \"MarkPicHeight\": 0.2,\n                \"MarkPicLocationX\": 0,\n                \"MarkPicLocationY\": 0.3,\n                \"Description\": \"\",\n                \"IsEqualProportion\": false\n            }\n        ],\n        \"RequestId\": \"4b154257-a7ba-4371-91f2-40f44ee83f5c\"\n    }\n}",
+        "title": "查询导播台的水印列表"
+      }
+    ],
+    "DescribeCasterMarkWordInfos": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCasterMarkWordInfos\n<公共请求参数>\n\n{\n    \"CasterId\": 1234\n}",
+        "output": "{\n    \"Response\": {\n        \"MarkWordInfos\": [\n            {\n                \"MarkWordIndex\": 1,\n                \"MarkWordText\": \"example mark word\",\n                \"MarkWordFontSize\": 52,\n                \"MarkWordFontColor\": \"0xd0021b\",\n                \"MarkWordFontType\": 1,\n                \"MarkWordLocationX\": 0,\n                \"MarkWordLocationY\": 0.5,\n                \"MarkWordRollEnable\": false,\n                \"MarkWordRollDirection\": 0,\n                \"MarkWordRollOnceTime\": 5,\n                \"MarkWordRollStartLocationX\": 0,\n                \"MarkWordRollEndLocationX\": 0.3\n            }\n        ],\n        \"RequestId\": \"d4040a52-8d42-4a76-8f28-ded6b3fa9a6e\"\n    }\n}",
+        "title": "查询导播台文本列表"
       }
     ],
     "DescribeCasterOutputInfos": [
@@ -1262,6 +1310,22 @@
         "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCasterLayoutInfo\n<公共请求参数>\n\n{\n    \"LayoutInfo\": {\n        \"LayoutIndex\": \"1\",\n        \"InputIndexList\": \"2|3\",\n        \"LayoutTemplateId\": \"20\"\n    },\n    \"CasterId\": \"1234\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "修改模版20的布局使用的布局为输入2，输入3"
+      }
+    ],
+    "ModifyCasterMarkPicInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCasterMarkPicInfo\n<公共请求参数>\n\n{\n    \"MarkPicInfo\": {\n        \"MarkPicIndex\": 1,\n        \"MarkPicHeight\": 0.3,\n        \"MarkPicId\": 0,\n        \"MarkPicLocationX\": 0.2,\n        \"MarkPicLocationY\": 0.2,\n        \"MarkPicWidth\": 0.3\n    },\n    \"CasterId\": 1234\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "ModifyCasterMarkWordInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCasterMarkWordInfo\n<公共请求参数>\n\n{\n    \"CasterId\": 1234,\n    \"MarkWordInfo\": {\n        \"MarkWordIndex\": 1,\n        \"MarkWordFontSize\": 18,\n        \"MarkWordText\": \"Modify example\",\n        \"MarkWordFontColor\": \"0x000033\",\n        \"MarkWordLocationY\": 0.15,\n        \"MarkWordLocationX\": 0.15,\n        \"MarkWordFontType\": 2\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "请求示例"
       }
     ],
     "ModifyCasterOutputInfo": [

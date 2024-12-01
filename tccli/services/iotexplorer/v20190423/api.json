@@ -1036,8 +1036,8 @@
           "type": "int"
         },
         {
-          "disabled": false,
-          "document": "appId",
+          "disabled": true,
+          "document": "参数已弃用，不用传参",
           "example": "3edappId",
           "member": "string",
           "name": "MiniProgramAppId",
@@ -7349,7 +7349,7 @@
       "document": "设备激活结果数据",
       "members": [
         {
-          "disabled": false,
+          "disabled": true,
           "document": "模板ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "12374tg",
           "member": "string",
@@ -9574,8 +9574,8 @@
       "document": "GetTWeCallActiveStatus请求参数结构体",
       "members": [
         {
-          "disabled": false,
-          "document": "appId",
+          "disabled": true,
+          "document": "参数已弃用，不用传参",
           "example": "3edappId",
           "member": "string",
           "name": "MiniProgramAppId",
@@ -9620,12 +9620,12 @@
       "document": "GetTWeCallPkgList请求参数结构体",
       "members": [
         {
-          "disabled": false,
+          "disabled": true,
           "document": "appId",
           "example": "3edappId",
           "member": "string",
           "name": "MiniProgramAppId",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
@@ -13289,7 +13289,7 @@
       "document": "TWeCall设备激活信息",
       "members": [
         {
-          "disabled": false,
+          "disabled": true,
           "document": "小程序ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -13375,8 +13375,8 @@
           "value_allowed_null": true
         },
         {
-          "disabled": false,
-          "document": "小程序ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "disabled": true,
+          "document": "小程序ID，参数已弃用，不用传参\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "ModelId",
@@ -13386,7 +13386,7 @@
           "value_allowed_null": true
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "激活数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",

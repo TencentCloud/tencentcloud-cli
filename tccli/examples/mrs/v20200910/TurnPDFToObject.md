@@ -94,7 +94,7 @@ Output:
             "MedDocV2": null,
             "MedicalRecordInfo": null,
             "OcrResult": "健康体检报告\nMEDICAL EXAMINATION REPORT\n             项目号:               性别:男\n                        检查日期:\n                                                1/12\n\n                                  阳性结果和异常情况\n    [1]体重指数增高\n    [2]\n           无高血压病史(本次体检血压增高)\n    [3]\n           轻度脂肪肝\n    [4]气体干扰，胰腺显示欠清\n    [5]\n           左\n              肾结晶\n    [6]红细胞分布宽度-标准差降低\n    [7]\n           丙氨酸氨基转移酶增高;γ-谷氨酰转移酶增高\n    [8]\n          尿酸増高\n    [9]\n            总胆固醇增高;低密度脂蛋白胆固醇增高;甘油三酯增高\n   [10]幽门螺杆菌抗体阳性\n   [11]双眼视力减退原因待查\n                                       专家建议与指导...",
-            "OcrText": "a",
+            "OcrText": "OCR识别后的文本",
             "Pathology": null,
             "PathologyV2": null,
             "PatientInfo": {

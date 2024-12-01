@@ -17,8 +17,7 @@ tccli mrs ImageToObject --cli-unfold-argument  \
     --HandleParam.ScaleTargetSize 300000 \
     --HandleParam.AutoOptimizeCoordinate True \
     --HandleParam.RotateTheAngle 0.0 \
-    --ImageInfoList.0.Url  \
-    --ImageInfoList.0.Base64  \
+    --ImageInfoList.0.Base64 注意替换为医疗报告图片base64编码 \
     --ImageInfoList.0.Id 1
 ```
 

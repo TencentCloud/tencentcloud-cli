@@ -22465,7 +22465,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件。\n<li>StrategyId- Uint64 - 基线策略id</li>\n<li>Status - Uint64 - 处理状态1已通过 0未通过</li>\n<li>Level - Uint64[] - 处理状态1已通过 0未通过</li>BaselineName \n<li>BaselineName  - String - 基线名称</li>\n<li>Quuid- String - 主机quuid</li>\n<li>Uuid- String - 主机uuid</li>",
+          "document": "过滤条件。\n<li>StrategyId- Uint64 - 基线策略id</li>\n<li>Status - Uint64 - 处理状态1已通过 0未通过</li>\n<li>Level - Uint64[] - 威胁等级</li>\n<li>BaselineName  - String - 基线名称</li>\n<li>Quuid- String - 主机quuid</li>\n<li>Uuid- String - 主机uuid</li>",
           "example": "[{\"Name\": \"Strate****\", \"Values\": [null]}]",
           "member": "Filters",
           "name": "Filters",

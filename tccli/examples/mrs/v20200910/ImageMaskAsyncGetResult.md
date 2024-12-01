@@ -13,8 +13,8 @@ Output:
 ```
 {
     "Response": {
-        "MaskedImage": "abc",
-        "RequestId": "abc"
+        "MaskedImage": "脱敏后图片的base64信息",
+        "RequestId": "1cf14582-bd61-4ea2-93ca-c63eaa8d427a"
     }
 }
 ```

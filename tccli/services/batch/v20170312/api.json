@@ -1213,7 +1213,7 @@
         {
           "disabled": false,
           "document": "数据盘大小，单位：GB。最小调整步长为10G，不同数据盘类型取值范围不同，具体限制详见：[存储概述](https://cloud.tencent.com/document/product/213/4952)。默认值为0，表示不购买数据盘。更多限制详见产品文档。",
-          "example": "无",
+          "example": "50",
           "member": "int64",
           "name": "DiskSize",
           "output_required": true,
@@ -1223,8 +1223,8 @@
         },
         {
           "disabled": false,
-          "document": "数据盘类型。数据盘类型限制详见[存储概述](https://cloud.tencent.com/document/product/213/4952)。取值范围：<br />\n<li>\n  LOCAL_BASIC：本地硬盘<br />\n  <li>\n    LOCAL_SSD：本地SSD硬盘<br />\n    <li>\n      LOCAL_NVME：本地NVME硬盘，与InstanceType强相关，不支持指定<br />\n      <li>\n        LOCAL_PRO：本地HDD硬盘，与InstanceType强相关，不支持指定<br />\n        <li>\n          CLOUD_BASIC：普通云硬盘<br />\n          <li>\n            CLOUD_PREMIUM：高性能云硬盘<br />\n            <li>\n              CLOUD_SSD：SSD云硬盘<br />\n              <li>\n                CLOUD_HSSD：增强型SSD云硬盘<br />\n                <li>\n                  CLOUD_TSSD：极速型SSD云硬盘<br />\n                  <li>\n                    CLOUD_BSSD：通用型SSD云硬盘<br /><br />默认取值：LOCAL_BASIC。<br /><br />该参数对`ResizeInstanceDisk`接口无效。\n                  </li>\n                </li>\n              </li>\n            </li>\n          </li>\n        </li>\n      </li>\n    </li>\n  </li>\n</li>",
-          "example": "无",
+          "document": "数据盘类型。数据盘类型限制详见[存储概述](https://cloud.tencent.com/document/product/213/4952)。取值范围：<br /><li>LOCAL_BASIC：本地硬盘<br /> <li>LOCAL_SSD：本地SSD硬盘<br /><li>LOCAL_NVME：本地NVME硬盘，与InstanceType强相关，不支持指定<br /><li>LOCAL_PRO：本地HDD硬盘，与InstanceType强相关，不支持指定<br /><li>CLOUD_BASIC：普通云硬盘<br /><li> CLOUD_PREMIUM：高性能云硬盘<br /><li>CLOUD_SSD：SSD云硬盘<br /><li> CLOUD_HSSD：增强型SSD云硬盘<br /> <li>CLOUD_TSSD：极速型SSD云硬盘<br /><li>CLOUD_BSSD：通用型SSD云硬盘<br /><br />默认取值：LOCAL_BASIC。<br /><br />该参数对`ResizeInstanceDisk`接口无效。</li></li></li> </li> </li></li></li></li></li></li>",
+          "example": "CLOUD_SSD",
           "member": "string",
           "name": "DiskType",
           "output_required": true,
@@ -1235,7 +1235,7 @@
         {
           "disabled": false,
           "document": "数据盘ID。LOCAL_BASIC 和 LOCAL_SSD 类型没有ID，暂时不支持该参数。\n该参数目前仅用于`DescribeInstances`等查询类接口的返回参数，不可用于`RunInstances`等写接口的入参。",
-          "example": "无",
+          "example": "disk-ciezoimt",
           "member": "string",
           "name": "DiskId",
           "output_required": true,
@@ -1245,8 +1245,8 @@
         },
         {
           "disabled": false,
-          "document": "数据盘是否随子机销毁。取值范围：\n<li>TRUE：子机销毁时，销毁数据盘，只支持按小时后付费云盘</li>\n<li>\n  FALSE：子机销毁时，保留数据盘<br />\n  默认取值：TRUE<br />\n  该参数目前仅用于 `RunInstances` 接口。\n</li>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "数据盘是否随子机销毁。取值范围：\n<li>true：子机销毁时，销毁数据盘，只支持按小时后付费云盘</li>\n<li>\n  false：子机销毁时，保留数据盘<br />\n  默认取值：true<br />\n  该参数目前仅用于 `RunInstances` 接口。\n</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
           "member": "bool",
           "name": "DeleteWithInstance",
           "output_required": true,
@@ -1257,7 +1257,7 @@
         {
           "disabled": false,
           "document": "数据盘快照ID。选择的数据盘快照大小需小于数据盘大小。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "snap-6yczrj8x",
           "member": "string",
           "name": "SnapshotId",
           "output_required": true,
@@ -1279,7 +1279,7 @@
         {
           "disabled": false,
           "document": "自定义CMK对应的ID，取值为UUID或者类似kms-abcd1234。用于加密云盘。\n\n该参数目前仅用于 `RunInstances` 接口。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "kms-abcd1234",
           "member": "string",
           "name": "KmsKeyId",
           "output_required": true,
@@ -1290,7 +1290,7 @@
         {
           "disabled": false,
           "document": "云硬盘性能，单位：MB/s\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "20",
           "member": "int64",
           "name": "ThroughputPerformance",
           "output_required": true,
@@ -1301,7 +1301,7 @@
         {
           "disabled": false,
           "document": "所属的独享集群ID。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "cdc-1648zauv",
           "member": "string",
           "name": "CdcId",
           "output_required": true,
@@ -1312,13 +1312,24 @@
         {
           "disabled": false,
           "document": "突发性能\n\n <b>注：内测中。</b>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "BurstPerformance",
           "output_required": false,
           "required": false,
           "type": "bool",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "磁盘名称，长度不超过128 个字符。\n\n该参数正在邀测中，暂未开放使用。",
+          "example": "MyDiskName",
+          "member": "string",
+          "name": "DiskName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -5348,6 +5359,17 @@
           "example": "无",
           "member": "string",
           "name": "CdcId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "磁盘名称，长度不超过128 个字符。\n\n该参数正在邀测中，暂未开放使用。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "name",
+          "member": "string",
+          "name": "DiskName",
           "output_required": false,
           "required": false,
           "type": "string",

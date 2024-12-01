@@ -458,14 +458,6 @@
         "title": "健康码识别示例代码"
       }
     ],
-    "RecognizeKoreanDrivingLicenseOCR": [
-      {
-        "document": "韩国驾驶证识别",
-        "input": "POST / HTTP/1.1\nHost: ocr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RecognizeKoreanDrivingLicenseOCR\n<公共请求参数>\n\n{\n    \"ReturnHeadImage\": \"false\",\n    \"ImageUrl\": \"https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/***/fakeurl.jpg\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Address\": \"주 소 전북 전주 덕진 반월 763-1 -籍 전주월드컵경기장28\",\n        \"AptitudeTesDate\": \"28/02/2020~27/08/2020\",\n        \"Birthday\": \"13/07/1987\",\n        \"DateOfIssue\": \"28/02/2011\",\n        \"ID\": \"7043EX\",\n        \"LicenseNumber\": \"전북 11-006760-90\",\n        \"Name\": \"HUANG BOWEN\",\n        \"Number\": \"870713-5260590\",\n        \"Photo\": \"\",\n        \"RequestId\": \"4fd48a46-b911-4725-a0c4-f4be81866e12\",\n        \"Sex\": \"未知\",\n        \"Type\": \"2종보동\"\n    }\n}",
-        "title": "韩国驾驶证识别"
-      }
-    ],
     "RecognizeMedicalInvoiceOCR": [
       {
         "document": "医疗发票识别示例",

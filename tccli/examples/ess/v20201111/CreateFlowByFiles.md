@@ -1685,13 +1685,12 @@ Output:
 
 **Example 19: 文件发起B2C合同，使用关键字方式，签署方设置签批控件**
 
-注意： 关键字定位的签批控件，子控件的位置，大小是固定的，不能自定义。
 1.通过PDF文件发起合同 
 2.使用关键字模式
 3.指定B端签署方为企业【典子谦示例企业】，经办人为【典子谦】 
 4.指定C端签署方为个人【张三】 
-5.B 端签署人 有两个签署控件， 分别是签名控件和签批控件(SIGN_VIRTUAL_COMBINATION)，其中签批控件包含四个子控件, 在 Component 中的 "ComponentExtra": "{\"ChildrenTypes\":[\"SIGN_SIGNATURE\",\"SIGN_DATE\",\"SIGN_SELECTOR\",\"SIGN_MULTI_LINE_TEXT\"]}" 体现 ， 包括 审批意见(SIGN_SELECTOR)，个人签名(SIGN_SIGNATURE)，签署日期(SIGN_DATE)，批注附言(SIGN_MULTI_LINE_TEXT) ， 但是关键字跟绝对定位的区别在于 关键字方式只用传递SIGN_VIRTUAL_COMBINATION 一个签署控件即可。
-6.C 端签署人 有一个签批控件(SIGN_VIRTUAL_COMBINATION)，其中签批控件包含三个子控件, 在 Component 中的 "ComponentExtra": "{\"ChildrenTypes\":[\"SIGN_SIGNATURE\",\"SIGN_DATE\",\"SIGN_SELECTOR\",\"SIGN_MULTI_LINE_TEXT\"]}"体现 ， 包括 审批意见(SIGN_SELECTOR)，个人签名(SIGN_SIGNATURE)，签署日期(SIGN_DATE)， 但是关键字跟绝对定位的区别在于 关键字方式只用传递SIGN_VIRTUAL_COMBINATION 一个签署控件即可。
+5.B 端签署人 有两个签署控件， 分别是签名控件和签批控件(SIGN_VIRTUAL_COMBINATION)，其中签批控件包含四个子控件通过ComponentExtra指定， 但是关键字跟绝对定位的区别在于 关键字方式只用传递SIGN_VIRTUAL_COMBINATION 一个签署控件即可。
+6.C 端签署人 有一个签批控件(SIGN_VIRTUAL_COMBINATION)，使用默认签批控件
 
 Input: 
 
@@ -1719,17 +1718,18 @@ tccli ess CreateFlowByFiles --cli-unfold-argument  \
     --Approvers.0.SignComponents.1.ComponentPage 1 \
     --Approvers.0.SignComponents.1.ComponentPosX 160 \
     --Approvers.0.SignComponents.1.ComponentHeight 50 \
-    --Approvers.0.SignComponents.2.ComponentExtra {"ChildrenTypes":["SIGN_SIGNATURE","SIGN_DATE","SIGN_SELECTOR","SIGN_MULTI_LINE_TEXT"]} \
-    --Approvers.0.SignComponents.2.ComponentHeight 211 \
-    --Approvers.0.SignComponents.2.ComponentId ComponentId_26 \
-    --Approvers.0.SignComponents.2.FileIndex 0 \
-    --Approvers.0.SignComponents.2.ComponentName 签批1 \
-    --Approvers.0.SignComponents.2.ComponentPage 1 \
-    --Approvers.0.SignComponents.2.ComponentPosX 180 \
-    --Approvers.0.SignComponents.2.ComponentPosY 478 \
+    --Approvers.0.SignComponents.2.ComponentId 甲方（盖章） \
     --Approvers.0.SignComponents.2.ComponentType SIGN_VIRTUAL_COMBINATION \
-    --Approvers.0.SignComponents.2.ComponentWidth 210 \
-    --Approvers.0.SignComponents.2.ComponentRequired False \
+    --Approvers.0.SignComponents.2.ComponentHeight 600 \
+    --Approvers.0.SignComponents.2.ComponentWidth 400 \
+    --Approvers.0.SignComponents.2.ComponentRequired True \
+    --Approvers.0.SignComponents.2.FileIndex 0 \
+    --Approvers.0.SignComponents.2.ComponentPage 7 \
+    --Approvers.0.SignComponents.2.ComponentPosY 0 \
+    --Approvers.0.SignComponents.2.ComponentPosX 0 \
+    --Approvers.0.SignComponents.2.RelativeLocation Below \
+    --Approvers.0.SignComponents.2.ComponentExtra {"ChildrenComponents":[{"ComponentType":"SIGN_SIGNATURE","ComponentName":"个人签名","Placeholder":"请签名","ComponentOffsetX":10,"ComponentOffsetY":30,"ComponentWidth":119,"ComponentHeight":43,"ComponentExtra":"{\"ComponentTypeLimit\":[\"SYSTEM_ESIGN\"]}"},{"ComponentType":"SIGN_SELECTOR","ComponentName":"审批意见","Placeholder":"","ComponentOffsetX":50,"ComponentOffsetY":130,"ComponentWidth":120,"ComponentHeight":43,"ComponentExtra":"{\"Values\":[\"同意\",\"不同意\",\"待定\"],\"FontSize\":12,\"FontAlign\":\"Left\",\"Font\":\"黑体\",\"MultiSelect\":false}"},{"ComponentType":"SIGN_MULTI_LINE_TEXT","ComponentName":"顺便留个言呗","Placeholder":"","ComponentOffsetX":150,"ComponentOffsetY":300,"ComponentWidth":200,"ComponentHeight":86,"ComponentExtra":""}]} \
+    --Approvers.0.SignComponents.2.GenerateMode KEYWORD \
     --Approvers.1.ApproverType 1 \
     --Approvers.1.ApproverName 张三 \
     --Approvers.1.ApproverMobile 18888888888 \
@@ -1740,16 +1740,17 @@ tccli ess CreateFlowByFiles --cli-unfold-argument  \
     --Approvers.1.SignComponents.0.ComponentPage 1 \
     --Approvers.1.SignComponents.0.ComponentPosX 160 \
     --Approvers.1.SignComponents.0.ComponentHeight 100 \
-    --Approvers.1.SignComponents.1.ComponentExtra {"ChildrenTypes":["SIGN_SIGNATURE","SIGN_DATE","SIGN_SELECTOR","SIGN_MULTI_LINE_TEXT"]} \
-    --Approvers.1.SignComponents.1.ComponentHeight 211 \
-    --Approvers.1.SignComponents.1.ComponentId ComponentId_16 \
-    --Approvers.1.SignComponents.1.ComponentName 签批1 \
-    --Approvers.1.SignComponents.1.FileIndex 0 \
-    --Approvers.1.SignComponents.1.ComponentPage 1 \
-    --Approvers.1.SignComponents.1.ComponentPosX 280 \
-    --Approvers.1.SignComponents.1.ComponentPosY 478 \
+    --Approvers.1.SignComponents.1.ComponentId 已方（盖章） \
     --Approvers.1.SignComponents.1.ComponentType SIGN_VIRTUAL_COMBINATION \
-    --Approvers.1.SignComponents.1.ComponentWidth 210 \
+    --Approvers.1.SignComponents.1.ComponentHeight 600 \
+    --Approvers.1.SignComponents.1.ComponentWidth 400 \
+    --Approvers.1.SignComponents.1.FileIndex 0 \
+    --Approvers.1.SignComponents.1.ComponentPage 7 \
+    --Approvers.1.SignComponents.1.ComponentPosY 0 \
+    --Approvers.1.SignComponents.1.ComponentPosX 0 \
+    --Approvers.1.SignComponents.1.ComponentRequired True \
+    --Approvers.1.SignComponents.1.RelativeLocation Below \
+    --Approvers.1.SignComponents.1.GenerateMode KEYWORD \
     --FileIds yDCWqUUckpve5id3U4f5EL77tlNh6zTZ \
     --Unordered True
 ```

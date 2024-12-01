@@ -6,9 +6,8 @@ Input:
 
 ```
 tccli mrs ImageMask --cli-unfold-argument  \
+    --Image.Base64 注意替换为待脱敏图片的base64编码 \
     --Image.Id 1 \
-    --Image.Url abc \
-    --Image.Base64 abc \
     --MaskFlag.HospitalFlag True \
     --MaskFlag.DoctorFlag True \
     --MaskFlag.PatientFlag True \
@@ -20,8 +19,8 @@ Output:
 ```
 {
     "Response": {
-        "MaskedImage": "abc",
-        "RequestId": "abc"
+        "MaskedImage": "脱敏后图片的base64编码",
+        "RequestId": "1cf14582-bd61-4ea2-93ca-c63eaa8d427a"
     }
 }
 ```

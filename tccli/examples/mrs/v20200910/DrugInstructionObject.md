@@ -57,7 +57,7 @@ Output:
                 "Website": "www.astrazeneca.com.cn\t\r\n\r\n                                                    AstraZeneca\r\n                                                                   2003-2020\r\n                            BETALOC和倍他乐克是AstraZeneca公司的商标。\r\n                                                       AstraZeneca"
             },
             "Name": {
-                "BarndName": "倍他乐克",
+                "BrandName": "倍他乐克",
                 "EnName": "MetoprololTartrate Tablets",
                 "GenericName": "酒石酸美托洛尔片",
                 "Pinyin": "Jiushisuan Meituoluoer Pian",

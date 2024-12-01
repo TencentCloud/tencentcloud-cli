@@ -4414,6 +4414,36 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "优惠对象",
+          "example": "用户折扣",
+          "member": "string",
+          "name": "DiscountObject",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "优惠类型",
+          "example": "折扣",
+          "member": "string",
+          "name": "DiscountType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "优惠内容",
+          "example": "0.7",
+          "member": "string",
+          "name": "DiscountContent",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -9213,7 +9243,7 @@
         {
           "disabled": false,
           "document": "分账单元唯一标识，用作筛选\n",
-          "example": "xxx",
+          "example": "909619400-670615a8c8b23",
           "member": "string",
           "name": "TreeNodeUniqKeys",
           "required": false,
@@ -9258,7 +9288,7 @@
         {
           "disabled": true,
           "document": "模糊搜索条件",
-          "example": "xxx",
+          "example": "billIds",
           "member": "string",
           "name": "SearchKey",
           "required": false,
@@ -9273,7 +9303,7 @@
         {
           "disabled": false,
           "document": "总条数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123",
+          "example": "1",
           "member": "uint64",
           "name": "RecordNum",
           "output_required": true,
@@ -9283,7 +9313,7 @@
         {
           "disabled": false,
           "document": "分账账单概览金额汇总\n\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": " {             \"RealTotalCost\": \"75124.77772571\",             \"CashPayAmount\": \"292.52655502\",             \"IncentivePayAmount\": \"74820.04591013\",             \"VoucherPayAmount\": \"12.20526059\",             \"TransferPayAmount\": \"0.00000000\"         }",
           "member": "AllocationOverviewTotal",
           "name": "Total",
           "output_required": true,
@@ -9293,7 +9323,7 @@
         {
           "disabled": false,
           "document": "分账账单按产品汇总明细\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": " {                 \"TreeNodeUniqKey\": null,                 \"GatherCashPayAmount\": \"0.00000000\",                 \"GatherVoucherPayAmount\": \"4.44000000\",                 \"GatherIncentivePayAmount\": \"51108.36000000\",                 \"GatherTransferPayAmount\": \"0.00000000\",                 \"AllocateCashPayAmount\": \"0.00000000\",                 \"AllocateVoucherPayAmount\": \"0.00000000\",                 \"AllocateIncentivePayAmount\": \"0.00000000\",                 \"AllocateTransferPayAmount\": \"0.00000000\",                 \"TotalCashPayAmount\": \"0.00000000\",                 \"TotalVoucherPayAmount\": \"4.44000000\",                 \"TotalIncentivePayAmount\": \"0.00000000\",                 \"TotalTransferPayAmount\": \"51108.36000000\",                 \"GatherRealCost\": \"51112.80000000\",                 \"AllocateRealCost\": \"0.00000000\",                 \"RealTotalCost\": \"51112.80000000\",                 \"BusinessCode\": \"p_cdwch\",                 \"TotalCost\": \"76297.68782592\",                 \"RICost\": \"0.00000000\",                 \"SPCost\": \"0.00000000\",                 \"CashPayAmount\": \"0.00000000\",                 \"VoucherPayAmount\": \"4.44000000\",                 \"IncentivePayAmount\": \"0.00000000\",                 \"TransferPayAmount\": \"51108.36000000\",                 \"AllocationRealTotalCost\": \"51112.80000000\",                 \"BusinessCodeName\": \"\\u817e\\u8baf\\u4e91\\u6570\\u636e\\u4ed3\\u5e93 TCHouse-C\",                 \"TreeNodeUniqKeyName\": \"\\u672a\\u5206\\u914d\",                 \"Ratio\": \"68.04\",                 \"Trend\": \"1.78\",                 \"TrendType\": \"upward\",                 \"BillDate\": null             }",
           "member": "AllocationSummaryByBusiness",
           "name": "Detail",
           "output_required": true,
@@ -10070,7 +10100,7 @@
         {
           "disabled": false,
           "document": "详情列表",
-          "example": "无",
+          "example": "[ \t\t\t{ \t\t\t\t\"ActionType\": \"postpay_deduct_h\", \t\t\t\t\"ActionTypeName\": \"按量计费小时结\", \t\t\t\t\"AssociatedOrder\": null, \t\t\t\t\"BillId\": \"20230816400705427744482\", \t\t\t\t\"BusinessCode\": \"p_nat\", \t\t\t\t\"BusinessCodeName\": \"NAT网关\", \t\t\t\t\"ComponentSet\": [ \t\t\t\t\t{ \t\t\t\t\t\t\"BlendedDiscount\": \"0.68040500\", \t\t\t\t\t\t\"CashPayAmount\": \"0.34020250\", \t\t\t\t\t\t\"ComponentCode\": \"v_nat_hour_instance\", \t\t\t\t\t\t\"ComponentCodeName\": \"实例\", \t\t\t\t\t\t\"ComponentConfig\": [], \t\t\t\t\t\t\"ContractPrice\": \"0.34020250\", \t\t\t\t\t\t\"Cost\": \"0.50000000\", \t\t\t\t\t\t\"DeductedMeasure\": \"-\", \t\t\t\t\t\t\"Discount\": \"0.680405\", \t\t\t\t\t\t\"IncentivePayAmount\": \"0\", \t\t\t\t\t\t\"InstanceType\": \"\", \t\t\t\t\t\t\"ItemCode\": \"sv_nat_hour_instance_small\", \t\t\t\t\t\t\"ItemCodeName\": \"NAT网关-小型实例\", \t\t\t\t\t\t\"OriginalCostWithRI\": \"0.00000000\", \t\t\t\t\t\t\"OriginalCostWithSP\": \"0.00000000\", \t\t\t\t\t\t\"PriceUnit\": \"元/100个/小时\", \t\t\t\t\t\t\"RealCost\": \"0.34020250\", \t\t\t\t\t\t\"RealTotalMeasure\": \"-\", \t\t\t\t\t\t\"ReduceType\": \"折扣\", \t\t\t\t\t\t\"RiTimeSpan\": \"0.00000000\", \t\t\t\t\t\t\"SPDeduction\": \"0.00000000\", \t\t\t\t\t\t\"SPDeductionRate\": \"0.00000000\", \t\t\t\t\t\t\"SinglePrice\": \"0.50000000\", \t\t\t\t\t\t\"SpecifiedPrice\": \"0.50000000\", \t\t\t\t\t\t\"TimeSpan\": \"1\", \t\t\t\t\t\t\"TimeUnitName\": \"小时\", \t\t\t\t\t\t\"TransferPayAmount\": \"0\", \t\t\t\t\t\t\"UsedAmount\": \"100\", \t\t\t\t\t\t\"UsedAmountUnit\": \"个\", \t\t\t\t\t\t\"VoucherPayAmount\": \"0\" \t\t\t\t\t} \t\t\t\t], \t\t\t\t\"FeeBeginTime\": \"2023-08-16 20:00:00\", \t\t\t\t\"FeeEndTime\": \"2023-08-16 20:59:59\", \t\t\t\t\"Formula\": \"-\", \t\t\t\t\"FormulaUrl\": \"https://buy.cloud.tencent.com/price/nat\", \t\t\t\t\"OperateUin\": \"700000686592\", \t\t\t\t\"OrderId\": \"20230816867705427744432\", \t\t\t\t\"OwnerUin\": \"700000686592\", \t\t\t\t\"PayModeName\": \"按量计费\", \t\t\t\t\"PayTime\": \"2023-08-16 21:15:38\", \t\t\t\t\"PriceInfo\": [], \t\t\t\t\"ProductCode\": \"sp_nat\", \t\t\t\t\"ProductCodeName\": \"NAT网关\", \t\t\t\t\"ProjectId\": 0, \t\t\t\t\"ProjectName\": \"默认项目\", \t\t\t\t\"RegionId\": \"4\", \t\t\t\t\"RegionName\": \"华东地区（上海）\", \t\t\t\t\"ResourceId\": \"nat-ftuh6xel\", \t\t\t\t\"ResourceName\": \"migration-nat-test3\", \t\t\t\t\"Tags\": [], \t\t\t\t\"ZoneName\": \"其他\" \t\t\t} \t\t]",
           "member": "DistributionBillDetail",
           "name": "DetailSet",
           "output_required": true,
@@ -10253,7 +10283,7 @@
         {
           "disabled": false,
           "document": "详情列表",
-          "example": "无",
+          "example": "[{\"ActionType\":\"pre_to_post\",\"ActionTypeName\":\"包年包月转按量\",\"AssociatedOrder\":{\"PrepayPurchase\":\"20230707400000442656611\",\"PrepayRenew\":\"20230707400000442695851,20230707400000442708571\"},\"BillDay\":\"2023-07-17 00:00:00\",\"BillId\":\"20230707400000442821061\",\"BusinessCode\":\"p_cvm\",\"BusinessCodeName\":\"云服务器CVM\",\"BillMonth\":\"2023-07-01 00:00:00\",\"ComponentSet\":[{\"BlendedDiscount\":\"1.00000000\",\"CashPayAmount\":\"-80.43264806\",\"ComponentCode\":\"virtual_v_cvm_compute\",\"ComponentCodeName\":\"运算组件\",\"ComponentConfig\":[{\"Name\":\"项目\",\"Value\":\"element_test\"},{\"Name\":\"主机\",\"Value\":\"ins-wxf3fmq8\"},{\"Name\":\"内网IP\",\"Value\":\"10.12.0.42\"},{\"Name\":\"所属网络\",\"Value\":\"私有网络\"},{\"Name\":\"可用区\",\"Value\":\"广州二区\"}],\"ContractPrice\":\"-80.89000000\",\"Cost\":\"-80.89000000\",\"DeductedMeasure\":\"-\",\"Discount\":\"1\",\"IncentivePayAmount\":\"-0.45735194\",\"InstanceType\":\"\",\"ItemCode\":\"virtual_v_cvm_compute_s2\",\"ItemCodeName\":\"运算组件-标准型S2-2核4G\",\"OriginalCostWithRI\":\"0.00000000\",\"OriginalCostWithSP\":\"0.00000000\",\"PriceUnit\":\"元/个/月\",\"RealCost\":\"-80.89000000\",\"RealTotalMeasure\":\"-\",\"ReduceType\":\"折扣\",\"RiTimeSpan\":\"0.00000000\",\"SPDeduction\":\"0.00000000\",\"SPDeductionRate\":\"0.00000000\",\"SinglePrice\":\"-80.89000000\",\"SpecifiedPrice\":\"-80.89000000\",\"TimeSpan\":\"1\",\"TimeUnitName\":\"月\",\"TransferPayAmount\":\"0\",\"UsedAmount\":\"1\",\"UsedAmountUnit\":\"个\",\"VoucherPayAmount\":\"0\"}],\"FeeBeginTime\":\"2023-07-07 16:14:21\",\"FeeEndTime\":\"2023-07-07 16:14:21\",\"Formula\":\"退款：343.12元，现金券： 0元,代金券/折扣券不退（订单号20230707400000442656611：部件cvm:现金支付88.81元-已使用第一阶梯按量:0.02元=剩余88.79元;订单号20230707400000442656611：部件bandwidth:现金支付0元=剩余0元;订单号20230707400000442695851：部件cvm:现金支付172.92元=剩余172.92元;订单号20230707400000442695851：部件bandwidth:现金支付0元=剩余0元;订单号20230707400000442708571：部件cvm:现金支付84.12元-原价95.6*使用时间3.2258%*折扣:88=剩余81.41元;\",\"FormulaUrl\":\"https://buy.cloud.tencent.com/price/cvm\",\"Id\":\"1725547686519644160\",\"OperateUin\":\"909619400\",\"OrderId\":\"20230707400000442821061\",\"OwnerUin\":\"909619400\",\"PayModeName\":\"包年包月\",\"PayTime\":\"2023-07-07 16:14:18\",\"PayerUin\":\"909619400\",\"PriceInfo\":[\"操作系统: linux\",\"连续使用时长T: 不分阶梯\",\"平台: 云平\"],\"ProductCode\":\"sp_cvm_s2\",\"ProductCodeName\":\"云服务器CVM-标准型S2\",\"ProjectId\":1002227,\"ProjectName\":\"element_test\",\"RegionId\":\"1\",\"RegionName\":\"华南地区（广州）\",\"ResourceId\":\"ins-wxf3fmq8\",\"ResourceName\":\"\",\"Tags\":[],\"ZoneName\":\"广州二区\"}]",
           "member": "BillDetail",
           "name": "DetailSet",
           "output_required": true,

@@ -1254,13 +1254,12 @@ Output:
 
 **Example 12: 文件发起 使用关键字定位 签署方含有签批控件**
 
-注意： 关键字定位的签批控件，子控件的位置，大小是固定的，不能自定义。
 1.通过PDF文件发起合同 
 2.使用的是关键字定位
 3.指定B端签署方为企业【典子谦示例企业】，经办人为【典子谦】 
 4.指定C端签署方为个人【张三】 
-5.B 端签署人 有两个签署控件， 分别是签名控件和签批控件(SIGN_VIRTUAL_COMBINATION)，其中签批控件包含四个子控件, 在 Component 中的  "ComponentExtra": "{\"ChildrenTypes\":[\"SIGN_SIGNATURE\",\"SIGN_DATE\",\"SIGN_SELECTOR\",\"SIGN_MULTI_LINE_TEXT\"]}" 体现 ， 包括 审批意见(SIGN_SELECTOR)，个人签名(SIGN_SIGNATURE)，签署日期(SIGN_DATE)，批注附言(SIGN_MULTI_LINE_TEXT)， 但是关键字跟绝对定位的区别在于 关键字方式只用传递SIGN_VIRTUAL_COMBINATION 一个签署控件即可
-6.C 端签署人 有一个签批控件(SIGN_VIRTUAL_COMBINATION)，其中签批控件包含三个子控件, 在 Component 中的   "ComponentExtra": "{\"ChildrenTypes\":[\"SIGN_SIGNATURE\",\"SIGN_DATE\",\"SIGN_SELECTOR\",\"SIGN_MULTI_LINE_TEXT\"]}" 体现 ， 包括 审批意见(SIGN_SELECTOR)，个人签名(SIGN_SIGNATURE)，签署日期(SIGN_DATE)， 但是关键字跟绝对定位的区别在于 关键字方式只用传递SIGN_VIRTUAL_COMBINATION 一个签署控件即可
+5.B 端签署有签批控件(SIGN_VIRTUAL_COMBINATION)，其中签批控件包含四个子控件, 通过在 Component 中的 ComponentExtra:指定, 但是关键字跟绝对定位的区别在于 关键字方式只用传递SIGN_VIRTUAL_COMBINATION 一个签署控件即可
+6.C 端签署人 有一个签批控件(SIGN_VIRTUAL_COMBINATION),未传ComponentExtra,系统自动生成签批子控件.
 
 Input: 
 
@@ -1281,10 +1280,9 @@ tccli essbasic ChannelCreateFlowByFiles --cli-unfold-argument  \
     --FlowApprovers.0.SignComponents.0.OffsetX 0 \
     --FlowApprovers.0.SignComponents.0.OffsetY 0 \
     --FlowApprovers.0.SignComponents.0.RelativeLocation Right \
-    --FlowApprovers.0.SignComponents.0.ComponentId Test1 \
-    --FlowApprovers.0.SignComponents.0.ComponentExtra {"ChildrenTypes":["SIGN_SIGNATURE","SIGN_DATE","SIGN_SELECTOR","SIGN_MULTI_LINE_TEXT"]} \
+    --FlowApprovers.0.SignComponents.0.ComponentId 甲方（盖章） \
+    --FlowApprovers.0.SignComponents.0.ComponentExtra {"ChildrenComponents":[{"ComponentType":"SIGN_SIGNATURE","ComponentName":"个人签名","Placeholder":"请签名","ComponentOffsetX":10,"ComponentOffsetY":30,"ComponentWidth":119,"ComponentHeight":43,"ComponentExtra":"{\"ComponentTypeLimit\":[\"SYSTEM_ESIGN\"]}"},{"ComponentType":"SIGN_SELECTOR","ComponentName":"审批意见","Placeholder":"","ComponentOffsetX":50,"ComponentOffsetY":130,"ComponentWidth":120,"ComponentHeight":43,"ComponentExtra":"{\"Values\":[\"同意\",\"不同意\",\"待定\"],\"FontSize\":12,\"FontAlign\":\"Left\",\"Font\":\"黑体\",\"MultiSelect\":false}"},{"ComponentType":"SIGN_MULTI_LINE_TEXT","ComponentName":"顺便留个言呗","Placeholder":"","ComponentOffsetX":150,"ComponentOffsetY":300,"ComponentWidth":200,"ComponentHeight":86,"ComponentExtra":""}]} \
     --FlowApprovers.0.SignComponents.0.ComponentHeight 234 \
-    --FlowApprovers.0.SignComponents.0.ComponentName 签批1 \
     --FlowApprovers.0.SignComponents.0.ComponentPage 1 \
     --FlowApprovers.0.SignComponents.0.ComponentType SIGN_VIRTUAL_COMBINATION \
     --FlowApprovers.0.SignComponents.0.ComponentWidth 210 \
@@ -1297,10 +1295,8 @@ tccli essbasic ChannelCreateFlowByFiles --cli-unfold-argument  \
     --FlowApprovers.1.SignComponents.0.OffsetX 0 \
     --FlowApprovers.1.SignComponents.0.OffsetY 0 \
     --FlowApprovers.1.SignComponents.0.RelativeLocation Right \
-    --FlowApprovers.1.SignComponents.0.ComponentId Test2 \
-    --FlowApprovers.1.SignComponents.0.ComponentExtra {"ChildrenTypes":["SIGN_SIGNATURE","SIGN_DATE","SIGN_SELECTOR","SIGN_MULTI_LINE_TEXT"]} \
+    --FlowApprovers.1.SignComponents.0.ComponentId 已方（盖章） \
     --FlowApprovers.1.SignComponents.0.ComponentHeight 234 \
-    --FlowApprovers.1.SignComponents.0.ComponentName 签批1 \
     --FlowApprovers.1.SignComponents.0.ComponentPage 1 \
     --FlowApprovers.1.SignComponents.0.ComponentType SIGN_VIRTUAL_COMBINATION \
     --FlowApprovers.1.SignComponents.0.ComponentWidth 210 \
