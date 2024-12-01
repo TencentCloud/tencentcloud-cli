@@ -1,3 +1,171 @@
+# Release 3.0.1109.1
+
+## 弹性伸缩(as) 版本：2018-04-19
+
+### 第 41 次发布
+
+发布时间：2024-12-02 01:10:42
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ServiceSettings](http://document.tencentcloudapi.woa.com/document/product/377/20453#ServiceSettings)
+
+	* 新增成员：AutoUpdateInstanceTags
+
+
+
+
+## 批量计算(batch) 版本：2017-03-12
+
+### 第 17 次发布
+
+发布时间：2024-12-02 01:11:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DataDisk](http://document.tencentcloudapi.woa.com/document/product/599/15912#DataDisk)
+
+	* 新增成员：DiskName
+
+* [SystemDisk](http://document.tencentcloudapi.woa.com/document/product/599/15912#SystemDisk)
+
+	* 新增成员：DiskName
+
+
+
+
+## 费用中心(billing) 版本：2018-07-09
+
+### 第 75 次发布
+
+发布时间：2024-12-02 01:12:49
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [BillDetail](http://document.tencentcloudapi.woa.com/document/product/555/19183#BillDetail)
+
+	* 新增成员：DiscountObject, DiscountType, DiscountContent
+
+* [BillDetailComponent](http://document.tencentcloudapi.woa.com/document/product/555/19183#BillDetailComponent)
+
+	* 新增成员：TaxRate, TaxAmount, Currency
+
+
+
+
+## 边缘计算机器(ecm) 版本：2019-07-19
+
+### 第 23 次发布
+
+发布时间：2024-12-02 01:48:40
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [RunInstances](http://document.tencentcloudapi.woa.com/document/product/1108/43513)
+
+	* 新增入参：CustomerAntiAffinity
+
+
+
+
+## 物联网开发平台(iotexplorer) 版本：2019-04-23
+
+### 第 55 次发布
+
+发布时间：2024-12-02 01:57:35
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ActivateTWeCallLicense](http://document.tencentcloudapi.woa.com/document/product/1081/84004)
+
+* [GetTWeCallActiveStatus](http://document.tencentcloudapi.woa.com/document/product/1081/84000)
+
+* [GetTWeCallPkgList](http://document.tencentcloudapi.woa.com/document/product/1081/83999)
+
+	* <font color="#dd0000">**修改入参**：</font>MiniProgramAppId
+
+
+修改数据结构：
+
+* [DeviceActiveResult](http://document.tencentcloudapi.woa.com/document/product/1081/34988#DeviceActiveResult)
+
+* [TWeCallActiveInfo](http://document.tencentcloudapi.woa.com/document/product/1081/34988#TWeCallActiveInfo)
+
+* [TWeCallInfo](http://document.tencentcloudapi.woa.com/document/product/1081/34988#TWeCallInfo)
+
+
+
+
+## 云直播CSS(live) 版本：2018-08-01
+
+### 第 71 次发布
+
+发布时间：2024-12-02 02:02:24
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [AddCasterMarkPicInfo](http://document.tencentcloudapi.woa.com/document/product/267/85441)
+* [AddCasterMarkWordInfo](http://document.tencentcloudapi.woa.com/document/product/267/85440)
+* [DeleteCasterMarkPicInfo](http://document.tencentcloudapi.woa.com/document/product/267/85439)
+* [DeleteCasterMarkWordInfo](http://document.tencentcloudapi.woa.com/document/product/267/85438)
+* [DescribeCasterMarkPicInfos](http://document.tencentcloudapi.woa.com/document/product/267/85437)
+* [DescribeCasterMarkWordInfos](http://document.tencentcloudapi.woa.com/document/product/267/85436)
+* [ModifyCasterMarkPicInfo](http://document.tencentcloudapi.woa.com/document/product/267/85435)
+* [ModifyCasterMarkWordInfo](http://document.tencentcloudapi.woa.com/document/product/267/85434)
+
+新增数据结构：
+
+* [CasterMarkPicInfo](http://document.tencentcloudapi.woa.com/document/product/267/20474#CasterMarkPicInfo)
+* [CasterMarkWordInfo](http://document.tencentcloudapi.woa.com/document/product/267/20474#CasterMarkWordInfo)
+
+
+
+## 边缘安全加速平台(teo) 版本：2022-09-01
+
+### 第 44 次发布
+
+发布时间：2024-12-02 02:34:34
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeZoneConfigImportResult](http://document.tencentcloudapi.woa.com/document/product/1738/85444)
+* [ExportZoneConfig](http://document.tencentcloudapi.woa.com/document/product/1738/85443)
+* [ImportZoneConfig](http://document.tencentcloudapi.woa.com/document/product/1738/85442)
+
+
+
+## 边缘安全加速平台(teo) 版本：2022-01-06
+
+
+
 # Release 3.0.1108.1
 
 ## 账号中心(account) 版本：2018-12-25

@@ -13442,6 +13442,15 @@
           "name": "DataDisks",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "用于标识是否为客户级别独占子机",
+          "example": "false",
+          "member": "bool",
+          "name": "CustomerAntiAffinity",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
