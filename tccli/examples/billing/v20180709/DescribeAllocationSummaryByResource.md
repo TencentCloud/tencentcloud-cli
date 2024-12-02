@@ -30,7 +30,7 @@ Output:
                 "FeeEndTime": "2024-02-01 23:59:59",
                 "IncentivePayAmount": "0.00000000",
                 "InstanceType": null,
-                "InstanceTypeName": "-",
+                "InstanceTypeName": "",
                 "OperateUin": "909619400",
                 "OwnerUin": "909619400",
                 "PayMode": "postPay",

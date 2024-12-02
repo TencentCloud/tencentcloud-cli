@@ -18,25 +18,25 @@ Output:
         "Result": {
             "Content": [
                 {
-                    "Status": "xx",
+                    "Status": "Running",
                     "ReadyCount": 2,
                     "RestartCount": 0,
-                    "ServiceInstanceStatus": "xx",
-                    "PodId": "xx",
-                    "Ip": "xx",
-                    "Reason": "xx",
-                    "InstanceAvailableStatus": "xx",
-                    "PodName": "xx",
-                    "InstanceStatus": "xx",
-                    "NodeIp": "xx",
-                    "Runtime": "xx",
-                    "NodeInstanceId": "xx",
-                    "CreatedAt": "xx"
+                    "ServiceInstanceStatus": "Running",
+                    "PodId": "pod-sss",
+                    "Ip": "10.0.1.1",
+                    "Reason": "failed",
+                    "InstanceAvailableStatus": "Running",
+                    "PodName": "pod-sss",
+                    "InstanceStatus": "Running",
+                    "NodeIp": "10.0.1.0",
+                    "Runtime": "runtime",
+                    "NodeInstanceId": "id",
+                    "CreatedAt": "time"
                 }
             ],
             "TotalCount": 1
         },
-        "RequestId": "xx"
+        "RequestId": "request-123"
     }
 }
 ```

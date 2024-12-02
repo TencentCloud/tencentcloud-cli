@@ -25,7 +25,8 @@ Output:
                     {
                         "PublishTime": "2017-10-24T12:00:00Z"
                     }
-                ]
+                ],
+                "PushToDelay": 0
             }
         ],
         "TotalNum": 1,

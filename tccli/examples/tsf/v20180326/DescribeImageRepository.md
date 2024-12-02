@@ -21,6 +21,7 @@ Output:
                     "Reponame": "tsf_100010349923/docker-java-provider",
                     "Repotype": "tcr",
                     "TagCount": 0,
+                    "CreateMode": "manual",
                     "IsPublic": 0,
                     "IsUserFavor": false,
                     "IsQcloudOfficial": false,

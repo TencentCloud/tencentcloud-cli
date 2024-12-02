@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cdb StopReplication --cli-unfold-argument  \
-    --InstanceId cdb-himitj11
+    --InstanceId cdbro-himitj11
 ```
 
 Output: 

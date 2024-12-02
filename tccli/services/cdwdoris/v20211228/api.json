@@ -1112,7 +1112,7 @@
         },
         {
           "disabled": false,
-          "document": "改库表是否绑定降冷策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该库表是否绑定降冷策略\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
           "name": "IsOpenCoolDown",
@@ -1120,6 +1120,17 @@
           "required": false,
           "type": "bool",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否置灰",
+          "example": "false",
+          "member": "bool",
+          "name": "IsGray",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

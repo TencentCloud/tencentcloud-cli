@@ -100,7 +100,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateInternalComplaint\n<公共请求参数>\n\n{\n    \"Ctime\": \"2024-11-04 16:50:00\",\n    \"Name\": \"test name\",\n    \"Email\": \"test@qq.com\",\n    \"Domain\": \"test-domain.xyz\",\n    \"Category\": \"test Category\",\n    \"Address\": \"test Address\",\n    \"Company\": \"test Company\",\n    \"CountryName\": \"test CountryName\",\n    \"Describe\": \"test Describe\",\n    \"Attachment\": \"test Attachment\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxx-dwdqw-xxxx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxx-dwdqdw-xxxx\"\n    }\n}",
         "title": "成功"
       }
     ],

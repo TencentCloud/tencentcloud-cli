@@ -22,7 +22,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "xxxx-dwdqw-xxxx"
+        "RequestId": "xxxx-dwdqdw-xxxx"
     }
 }
 ```
