@@ -954,7 +954,7 @@
         },
         {
           "disabled": false,
-          "document": "改库表是否绑定降冷策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该库表是否绑定降冷策略\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
           "name": "IsOpenCoolDown",

@@ -792,6 +792,14 @@
         "title": "查询域名列表"
       }
     ],
+    "DescribeLiveEnhanceInfoList": [
+      {
+        "document": "查询直播增强用量明细。",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLiveEnhanceInfoList\n<公共请求参数>\n\n{\n    \"StartTime\": \"abc\",\n    \"EndTime\": \"abc\",\n    \"Granularity\": 0,\n    \"DomainNames\": [\n        \"abc\"\n    ],\n    \"Type\": [\n        \"abc\"\n    ],\n    \"Resolution\": [\n        \"abc\"\n    ],\n    \"Fps\": [\n        \"abc\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"DataInfoList\": [\n            {\n                \"Domain\": \"abc\",\n                \"Time\": \"abc\",\n                \"Duration\": 0,\n                \"Fps\": \"abc\",\n                \"Resolution\": \"abc\",\n                \"Type\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
     "DescribeLiveForbidStreamList": [
       {
         "document": "",
@@ -948,7 +956,7 @@
       {
         "document": "",
         "input": "https://live.tencentcloudapi.com/?Action=DescribeLiveStreamOnlineList\n&DomainName=5000.livepush.myqcloud.com\n&AppName=live\n&PageNum=1\n&PageSize=10\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"OnlineInfo\": [\n            {\n                \"StreamName\": \"5000_abcdefg\",\n                \"AppName\": \"live\",\n                \"DomainName\": \"5000.livepush.myqcloud.com\",\n                \"PublishTimeList\": [\n                    {\n                        \"PublishTime\": \"2017-10-24T12:00:00Z\"\n                    }\n                ]\n            }\n        ],\n        \"TotalNum\": 1,\n        \"TotalPage\": 1,\n        \"PageNum\": 1,\n        \"PageSize\": 10,\n        \"RequestId\": \"8e50cdb5-56dc-408b-89b0-31818958d424\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"OnlineInfo\": [\n            {\n                \"StreamName\": \"5000_abcdefg\",\n                \"AppName\": \"live\",\n                \"DomainName\": \"5000.livepush.myqcloud.com\",\n                \"PublishTimeList\": [\n                    {\n                        \"PublishTime\": \"2017-10-24T12:00:00Z\"\n                    }\n                ],\n                \"PushToDelay\": 0\n            }\n        ],\n        \"TotalNum\": 1,\n        \"TotalPage\": 1,\n        \"PageNum\": 1,\n        \"PageSize\": 10,\n        \"RequestId\": \"8e50cdb5-56dc-408b-89b0-31818958d424\"\n    }\n}",
         "title": "请求示例"
       }
     ],

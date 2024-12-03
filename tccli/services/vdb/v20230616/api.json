@@ -838,6 +838,26 @@
           "output_required": true,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "旧 ip 保留时长，单位天",
+          "example": "1",
+          "member": "int64",
+          "name": "PreserveDuration",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "旧 ip 到期时间",
+          "example": "2024 10-30 12:00:00",
+          "member": "string",
+          "name": "ExpireTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

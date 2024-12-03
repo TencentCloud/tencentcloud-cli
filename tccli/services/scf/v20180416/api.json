@@ -7104,7 +7104,7 @@
         },
         {
           "disabled": false,
-          "document": "\t路由配置",
+          "document": "路由配置",
           "example": "无",
           "member": "EndpointsConf",
           "name": "EndpointsConfig",

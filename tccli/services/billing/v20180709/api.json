@@ -5872,7 +5872,7 @@
         {
           "disabled": false,
           "document": "标签键",
-          "example": "aaa",
+          "example": "department",
           "member": "string",
           "name": "TagKey",
           "output_required": true,
@@ -5883,7 +5883,7 @@
         {
           "disabled": false,
           "document": "标签值",
-          "example": "aaa",
+          "example": "运营中心",
           "member": "string",
           "name": "TagValue",
           "output_required": true,
@@ -6354,20 +6354,20 @@
         {
           "disabled": false,
           "document": "付费模式",
-          "example": "",
+          "example": "prepay",
           "member": "string",
           "name": "PayMode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "付费模式名称",
-          "example": "",
+          "example": "预付费",
           "member": "string",
           "name": "PayModeName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -6380,20 +6380,20 @@
         {
           "disabled": false,
           "document": "项目ID",
-          "example": "",
+          "example": "10086",
           "member": "string",
           "name": "ProjectId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "项目名称",
-          "example": "",
+          "example": "CRM平台",
           "member": "string",
           "name": "ProjectName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -6406,20 +6406,20 @@
         {
           "disabled": false,
           "document": "地域ID",
-          "example": "",
+          "example": "1",
           "member": "string",
           "name": "RegionId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "地域名称",
-          "example": "",
+          "example": "华南地区（广州）",
           "member": "string",
           "name": "RegionName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -7349,10 +7349,10 @@
         {
           "disabled": false,
           "document": "折后总价",
-          "example": "",
+          "example": "0.00000285",
           "member": "string",
           "name": "RealTotalCost",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -10752,7 +10752,7 @@
         {
           "disabled": false,
           "document": "是否需要访问列表的总记录数，用于前端分页\n1-表示需要， 0-表示不需要",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "NeedRecordNum",
           "required": false,
@@ -10797,7 +10797,7 @@
         {
           "disabled": false,
           "document": "支付者的账号 ID（账号 ID 是用户在腾讯云的唯一账号标识），默认查询本账号账单，如集团管理账号需查询成员账号自付的账单，该字段需入参成员账号UIN",
-          "example": "无",
+          "example": "909619400",
           "member": "string",
           "name": "PayerUin",
           "required": false,
@@ -10830,7 +10830,7 @@
         {
           "disabled": false,
           "document": "资源汇总列表",
-          "example": "无",
+          "example": "[{\"PayerUin\":\"909619400\",\"OwnerUin\":\"909619400\",\"OperateUin\":\"909619400\",\"BusinessCodeName\":\"COS 对象存储\",\"ProductCodeName\":\"COS 标准存储\",\"BusinessCode\":\"p_cos\",\"ProductCode\":\"sp_cos_std\",\"PayModeName\":\"按量计费\",\"ProjectName\":\"默认项目\",\"RegionName\":\"华东地区（上海）\",\"RegionId\":4,\"ZoneName\":\"上海一区\",\"ResourceId\":\"sta-19039\",\"ResourceName\":\"sta-3\",\"ActionTypeName\":\"按量计费日结\",\"OrderId\":\"12321-abdef-342132-aac23\",\"PayTime\":\"0000-00-00 00:00:00\",\"FeeBeginTime\":\"2024-11-01 00:00:00\",\"FeeEndTime\":\"2024-11-13 23:59:59\",\"BillMonth\":\"2024-11-01 00:00:00\",\"ConfigDesc\":\"COS 标准存储存储容量: 0.39 GB\",\"ExtendField1\":\"ef 1\",\"ExtendField2\":\"ef 2\",\"ExtendField3\":\"ef 3\",\"ExtendField4\":\"ef 4\",\"ExtendField5\":\"ef 5\",\"TotalCost\":\"0.00007068\",\"Discount\":\"0.232072\",\"ReduceType\":\"折扣\",\"RealTotalCost\":\"0.00124116\",\"VoucherPayAmount\":\"0.00000000\",\"CashPayAmount\":\"0.00000000\",\"IncentivePayAmount\":\"0.00114116\",\"TransferPayAmount\":\"0.00000000\",\"InstanceType\":\"it\",\"OriginalCostWithRI\":\"0.00000000\",\"SPDeduction\":\"0.00000000\",\"OriginalCostWithSP\":\"0.00000000\",\"Tags\":[]}]",
           "member": "BillResourceSummary",
           "name": "ResourceSummarySet",
           "output_required": true,
@@ -13592,20 +13592,20 @@
         {
           "disabled": false,
           "document": "时间",
-          "example": "",
+          "example": "2019-01-01 00:00:00",
           "member": "string",
           "name": "Time",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "值",
-          "example": "",
+          "example": "18731317843",
           "member": "string",
           "name": "Value",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }

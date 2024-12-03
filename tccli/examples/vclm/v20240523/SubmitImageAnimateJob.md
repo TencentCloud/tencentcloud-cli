@@ -6,9 +6,17 @@ Input:
 
 ```
 tccli vclm SubmitImageAnimateJob --cli-unfold-argument  \
-    --ImageUrl https://xxx/image-animate/user_input/1.png \
+    --ImageUrl https://console.cloud.tencent.com/cos/image.png \
     --TemplateId ke3 \
-    --EnableAudio True
+    --EnableAudio True \
+    --EnableBodyJoins True \
+    --EnableSegment True \
+    --LogoAdd 1 \
+    --LogoParam.LogoUrl https://console.cloud.tencent.com/cos/logo.png \
+    --LogoParam.LogoRect.X -222 \
+    --LogoParam.LogoRect.Y -54 \
+    --LogoParam.LogoRect.Width 202 \
+    --LogoParam.LogoRect.Height 34
 ```
 
 Output: 

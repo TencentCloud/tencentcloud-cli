@@ -1,5 +1,12 @@
 {
   "actions": {
+    "CheckAnimateImageJob": {
+      "document": "检查图片跳舞输入图",
+      "input": "CheckAnimateImageJobRequest",
+      "name": "校验图片跳舞输入图",
+      "output": "CheckAnimateImageJobResponse",
+      "status": "online"
+    },
     "ConfirmVideoTranslateJob": {
       "document": "确认视频转译结果",
       "input": "ConfirmVideoTranslateJobRequest",
@@ -109,6 +116,70 @@
         }
       ],
       "usage": "both"
+    },
+    "CheckAnimateImageJobRequest": {
+      "document": "CheckAnimateImageJob请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "动作模板ID。",
+          "example": "ke3",
+          "member": "string",
+          "name": "TemplateId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "图片格式：支持PNG、JPG、JPEG、BMP、WEBP格式；\n图片分辨率：长边分辨率范围【192，4096】；\n图片大小：不超过10M；\n图片宽高比：【宽：高】数值在 1:2 到 1:1.2 范围内",
+          "example": "https://console.cloud.tencent.com/cos/image.png",
+          "member": "string",
+          "name": "ImageUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "图片base64数据。\n图片格式：支持PNG、JPG、JPEG、BMP、WEBP格式；\n图片分辨率：长边分辨率范围【192，4096】；\n图片大小：不超过10M；\n图片宽高比：【宽：高】数值在 1:2 到 1:1.2 范围内",
+          "example": "MIIHNjCCBh6gAwIBAgIQCVe4E0h49mzI0NcSqMy1",
+          "member": "string",
+          "name": "ImageBase64",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否检测输入图人体12个身体部位（头部、颈部、右肩、右肘、右腕、左肩、左肘、左腕、右髋、左髋,、左膝、右膝）。默认不检测。",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableBodyJoins",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckAnimateImageJobResponse": {
+      "document": "CheckAnimateImageJob返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "输入图是否通过校验。",
+          "example": "true",
+          "member": "bool",
+          "name": "CheckPass",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ConfirmVideoTranslateJobRequest": {
       "document": "ConfirmVideoTranslateJob请求参数结构体",
@@ -678,8 +749,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "图片格式：支持PNG、JPG、JPEG格式；\n图片分辨率：长边分辨率不超过2056；\n图片大小：不超过10M；\n图片宽高比：【宽：高】数值在 1:2 到 1:1.2 范围内",
-          "example": "https://xxx/1.png",
+          "document": "图片格式：支持PNG、JPG、JPEG、BMP、WEBP格式；\n图片分辨率：长边分辨率范围【192，4096】；\n图片大小：不超过10M；\n图片宽高比：【宽：高】数值在 1:2 到 1:1.2 范围内",
+          "example": "https://console.cloud.tencent.com/cos/image.png",
           "member": "string",
           "name": "ImageUrl",
           "required": false,
@@ -687,7 +758,7 @@
         },
         {
           "disabled": false,
-          "document": "图片base64数据。图片格式：支持PNG、JPG、JPEG格式；图片分辨率：长边分辨率不超过2056；图片大小：不超过10M；图片宽高比：【宽：高】数值在 1:2 到 1:1.2 范围内",
+          "document": "图片base64数据。\n图片格式：支持PNG、JPG、JPEG、BMP、WEBP格式；\n图片分辨率：长边分辨率范围【192，4096】；\n图片大小：不超过10M；\n图片宽高比：【宽：高】数值在 1:2 到 1:1.2 范围内",
           "example": "MIIHNjCCBh6gAwIBAgIQCVe4E0h49mzI0NcSqMy1+jANBgkqhkiG9w0BAQsFADB1 MQswCQYDVQQGEwJVUzEVMBMG",
           "member": "string",
           "name": "ImageBase64",
@@ -723,7 +794,7 @@
         },
         {
           "disabled": false,
-          "document": "最终视频是否保留原图的背景（该模式对于tuziwu、huajiangwu不生效）\n",
+          "document": "最终视频是否保留原图的背景，默认不保留。\n",
           "example": "false",
           "member": "bool",
           "name": "EnableSegment",
@@ -756,8 +827,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务ID。",
-          "example": "无",
+          "document": "图片跳舞任务ID。",
+          "example": "1194931538865782784",
           "member": "string",
           "name": "JobId",
           "output_required": false,

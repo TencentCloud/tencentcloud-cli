@@ -1,5 +1,13 @@
 {
   "actions": {
+    "CheckAnimateImageJob": [
+      {
+        "document": "检测输入图成功案例",
+        "input": "POST / HTTP/1.1\nHost: vclm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckAnimateImageJob\n<公共请求参数>\n\n{\n    \"TemplateId\": \"ke3\",\n    \"ImageUrl\": \"https://tencent.cos.ap-guangzhou.myqcloud.com/image-animate/user_input/image.png\",\n    \"EnableBodyJoins\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"CheckPass\": true,\n        \"RequestId\": \"96c02249-a683-4c0b-ac1c-50a2dee71695\"\n    }\n}",
+        "title": "检测输入图成功案例"
+      }
+    ],
     "ConfirmVideoTranslateJob": [
       {
         "document": "确认视频翻译结果正例",
@@ -49,7 +57,7 @@
     "SubmitImageAnimateJob": [
       {
         "document": "调用成功示例",
-        "input": "POST / HTTP/1.1\nHost: vclm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitImageAnimateJob\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://xxx/image-animate/user_input/1.png\",\n    \"TemplateId\": \"ke3\",\n    \"EnableAudio\": true\n}",
+        "input": "POST / HTTP/1.1\nHost: vclm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitImageAnimateJob\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://console.cloud.tencent.com/cos/image.png\",\n    \"TemplateId\": \"ke3\",\n    \"EnableAudio\": true,\n    \"EnableBodyJoins\": true,\n    \"EnableSegment\": true,\n    \"LogoAdd\": 1,\n    \"LogoParam\": {\n        \"LogoUrl\": \"https://console.cloud.tencent.com/cos/logo.png\",\n        \"LogoRect\": {\n            \"X\": -222,\n            \"Y\": -54,\n            \"Width\": 202,\n            \"Height\": 34\n        }\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"JobId\": \"1194931538865782784\",\n        \"RequestId\": \"4e6722ba-367b-454e-add0-681a5c50fe20\"\n    }\n}",
         "title": "调用成功示例"
       }

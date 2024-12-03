@@ -9352,7 +9352,27 @@
           "example": "invalid connection",
           "member": "string",
           "name": "Message",
-          "required": false,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "报错原因",
+          "example": "无",
+          "member": "string",
+          "name": "Reason",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "建议的修复方案",
+          "example": "无",
+          "member": "string",
+          "name": "Solution",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         }

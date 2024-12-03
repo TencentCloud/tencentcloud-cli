@@ -4445,7 +4445,7 @@
         },
         {
           "disabled": false,
-          "document": "状态码。\n- 取值范围：\n0：正常。\n1：停机。\n2：销号。\n3：空号。\n4：不在网。\n99：未知状态。",
+          "document": "状态码。\n- 取值范围：\n0：正常。\n1：停机。\n2：销号。\n4：不在网。\n99：未知状态。",
           "example": "1",
           "member": "int64",
           "name": "StatusCode",

@@ -589,7 +589,7 @@
       "status": "online"
     },
     "DescribeContainerEvents": {
-      "document": "获取容器事件列表",
+      "document": "获取容器事件列表\n参数限制\n\n- 当类型是 instance 时，GroupId是必填项",
       "input": "DescribeContainerEventsRequest",
       "name": "获取容器事件列表",
       "output": "DescribeContainerEventsResponse",
@@ -1868,6 +1868,45 @@
       ],
       "usage": "in"
     },
+    "Affinity": {
+      "document": "亲和规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "-\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Scope",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "-\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Weight",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "-\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CommonOption",
+          "name": "Paths",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "AgentProfile": {
       "document": "部署javaagent的类型、版本信息",
       "members": [
@@ -2879,7 +2918,7 @@
           "example": "无",
           "member": "string",
           "name": "ApplicationId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2889,7 +2928,7 @@
           "example": "无",
           "member": "string",
           "name": "ApplicationName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2899,7 +2938,7 @@
           "example": "无",
           "member": "string",
           "name": "ApplicationDesc",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2909,7 +2948,7 @@
           "example": "无",
           "member": "string",
           "name": "ApplicationType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2919,7 +2958,7 @@
           "example": "无",
           "member": "string",
           "name": "MicroserviceType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2929,7 +2968,7 @@
           "example": "无",
           "member": "string",
           "name": "ProgLang",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2939,7 +2978,7 @@
           "example": "无",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2949,7 +2988,7 @@
           "example": "无",
           "member": "string",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2959,7 +2998,7 @@
           "example": "无",
           "member": "string",
           "name": "ApplicationResourceType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2969,7 +3008,7 @@
           "example": "无",
           "member": "string",
           "name": "ApplicationRuntimeType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2979,7 +3018,7 @@
           "example": "无",
           "member": "string",
           "name": "ApigatewayServiceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2989,7 +3028,7 @@
           "example": "无",
           "member": "string",
           "name": "ApplicationRemarkName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2999,7 +3038,7 @@
           "example": "无",
           "member": "ServiceConfig",
           "name": "ServiceConfigList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -3009,7 +3048,97 @@
           "example": "无",
           "member": "bool",
           "name": "IgnoreCreateImageRepository",
-          "required": false,
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Apm业务系统id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ApmInstanceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Apm业务系统Name\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ApmInstanceName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "同步删除镜像仓库\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "SyncDeleteImageRepository",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "应用微服务子类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "MicroserviceSubType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "应用编程语言类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ProgramLanguage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "开发框架类型[SpringCloud，Dubbo，Go-GRPC，Other]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FrameworkType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "注册配置治理信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ServiceGovernanceConfig",
+          "name": "ServiceGovernanceConfig",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "微服务类型列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "MicroserviceTypeList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否同时创建镜像仓库\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "CreateSameNameImageRepository",
+          "output_required": false,
           "type": "bool",
           "value_allowed_null": true
         }
@@ -3142,6 +3271,45 @@
         }
       ],
       "type": "object"
+    },
+    "AvailableZoneScatterScheduleRule": {
+      "document": "打散调度规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "-\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ScatterDimension",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "-\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "MaxUnbalanceQuantity",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "-\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "IsForceSchedule",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "BindApiGroupRequest": {
       "document": "BindApiGroup请求参数结构体",
@@ -4425,6 +4593,73 @@
       ],
       "usage": "out"
     },
+    "CommonOption": {
+      "document": "通用选项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "-\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LabelName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "-\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Operator",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "-\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LabelValue",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "CommonRef": {
+      "document": "ValueFrom 通用结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Key值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "Config": {
       "document": "配置项",
       "members": [
@@ -4550,6 +4785,45 @@
         }
       ],
       "usage": "out"
+    },
+    "ConfigMapOption": {
+      "document": "ConfigMap可选项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "-\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "-\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Path",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "-\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Mode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "ConfigRelease": {
       "document": "配置项发布信息",
@@ -6802,6 +7076,51 @@
           "name": "ProgramIdList",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "apm业务系统id",
+          "example": "无",
+          "member": "string",
+          "name": "ApmInstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "编程语言",
+          "example": "无",
+          "member": "string",
+          "name": "ProgramLanguage",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开发框架",
+          "example": "无",
+          "member": "string",
+          "name": "FrameworkType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "注册配置治理",
+          "example": "无",
+          "member": "ServiceGovernanceConfig",
+          "name": "ServiceGovernanceConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "是否创建并关联同名镜像仓库",
+          "example": "无",
+          "member": "bool",
+          "name": "CreateSameNameImageRepository",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -6815,7 +7134,7 @@
           "example": "无",
           "member": "string",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7971,6 +8290,15 @@
           "name": "Alias",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "标签列表",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -7984,7 +8312,7 @@
           "example": "group-xxxxxxx",
           "member": "string",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -9203,6 +9531,95 @@
         }
       ],
       "usage": "out"
+    },
+    "CustomPodSchedule": {
+      "document": "自定义Pod调度规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "-\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ForceSchedule",
+          "name": "ForceSchedule",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "-\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TrySchedule",
+          "name": "TrySchedule",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "CustomTolerateSchedule": {
+      "document": "自定义容忍调度规则列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "-\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "-\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Operator",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "-\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "-\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Effect",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "-\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "TolerationSeconds",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "DeleteApiGroupRequest": {
       "document": "DeleteApiGroup请求参数结构体",
@@ -11400,7 +11817,7 @@
         {
           "disabled": false,
           "document": "搜索字段",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "SearchWord",
           "required": false,
@@ -11409,7 +11826,7 @@
         {
           "disabled": false,
           "document": "排序字段",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "OrderBy",
           "required": false,
@@ -11418,7 +11835,7 @@
         {
           "disabled": false,
           "document": "排序类型",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "OrderType",
           "required": false,
@@ -11427,7 +11844,7 @@
         {
           "disabled": false,
           "document": "偏移量",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -11436,7 +11853,7 @@
         {
           "disabled": false,
           "document": "分页个数",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -11445,7 +11862,7 @@
         {
           "disabled": false,
           "document": "应用类型",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "ApplicationType",
           "required": false,
@@ -11454,7 +11871,7 @@
         {
           "disabled": false,
           "document": "应用的微服务类型",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "MicroserviceType",
           "required": false,
@@ -11463,7 +11880,7 @@
         {
           "disabled": false,
           "document": "应用资源类型数组",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "ApplicationResourceTypeList",
           "required": false,
@@ -11472,9 +11889,18 @@
         {
           "disabled": false,
           "document": "IdList",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "ApplicationIdList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "查询多种微服务类型的应用",
+          "example": "无",
+          "member": "string",
+          "name": "MicroserviceTypeList",
           "required": false,
           "type": "list"
         }
@@ -11487,9 +11913,10 @@
         {
           "disabled": false,
           "document": "应用分页列表信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "TsfPageApplication",
           "name": "Result",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -12322,6 +12749,42 @@
           "name": "GroupId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "event的资源kind",
+          "example": "Deployment",
+          "member": "string",
+          "name": "Kind",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "event 的type",
+          "example": "group",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源名称",
+          "example": "groupName-5b6bf7b6c5-d9jnm",
+          "member": "string",
+          "name": "ResourceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "关键词查询",
+          "example": "无",
+          "member": "string",
+          "name": "SearchWord",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -12335,7 +12798,7 @@
           "example": "无",
           "member": "TsfPageContainerEvent",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -13933,7 +14396,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像仓库",
+          "document": "镜像仓库名称",
           "example": "无",
           "member": "string",
           "name": "RepoName",
@@ -15481,6 +15944,24 @@
           "name": "PodNameList",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "新老版本pod批次标识",
+          "example": "old",
+          "member": "string",
+          "name": "DeployVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "task-xxx",
+          "member": "string",
+          "name": "TaskId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -15494,7 +15975,7 @@
           "example": "无",
           "member": "GroupPodResult",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -16152,6 +16633,15 @@
           "name": "DisableProgramAuthCheck",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "查询指定微服务类型的应用列表",
+          "example": "无",
+          "member": "string",
+          "name": "MicroserviceTypeList",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -16165,7 +16655,7 @@
           "example": "无",
           "member": "TsfPageSimpleApplication",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -17653,6 +18143,56 @@
       ],
       "type": "object"
     },
+    "EmptyDirOption": {
+      "document": "空目录选项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "-\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "EnableMemory",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "-\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "StorageCapacity",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "-\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "StorageUnit",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "-\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SizeLimit",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "EnableLaneRuleRequest": {
       "document": "EnableLaneRule请求参数结构体",
       "members": [
@@ -17865,6 +18405,78 @@
           "name": "ValueFrom",
           "required": false,
           "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ExclusiveInstance": {
+      "document": "独占实例",
+      "members": [
+        {
+          "disabled": false,
+          "document": "配置中心类型[Registration、Configuration]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Registration",
+          "member": "string",
+          "name": "CenterType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例类型[Polaris]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Polaris",
+          "member": "string",
+          "name": "InstanceType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例地域id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RegionId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例命名空间ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceNamespaceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -18332,6 +18944,34 @@
       ],
       "usage": "both"
     },
+    "ForceSchedule": {
+      "document": "强制调度配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "-\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Affinity",
+          "name": "AffinityList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "-\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Affinity",
+          "name": "AntiAffinityList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "GatewayApiGroupVo": {
       "document": "网关分组简单信息",
       "members": [
@@ -18400,7 +19040,19 @@
     },
     "GatewayConfig": {
       "document": "TSF Envoy网关服务配置",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "envoy-gateway",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
       "usage": "both"
     },
     "GatewayDeployGroup": {
@@ -19083,7 +19735,7 @@
           "example": "xxx",
           "member": "string",
           "name": "PodName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -19093,7 +19745,7 @@
           "example": "xxx",
           "member": "string",
           "name": "PodId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -19103,7 +19755,7 @@
           "example": "Running",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -19113,7 +19765,7 @@
           "example": "null",
           "member": "string",
           "name": "Reason",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -19123,7 +19775,7 @@
           "example": "10.10.0.1",
           "member": "string",
           "name": "NodeIp",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -19133,7 +19785,7 @@
           "example": "10.10.0.2",
           "member": "string",
           "name": "Ip",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -19143,7 +19795,7 @@
           "example": "0",
           "member": "int64",
           "name": "RestartCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -19153,7 +19805,7 @@
           "example": "1",
           "member": "int64",
           "name": "ReadyCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -19163,7 +19815,7 @@
           "example": "null",
           "member": "string",
           "name": "Runtime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -19173,7 +19825,7 @@
           "example": "null",
           "member": "string",
           "name": "CreatedAt",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -19183,7 +19835,7 @@
           "example": "null",
           "member": "string",
           "name": "ServiceInstanceStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -19193,7 +19845,7 @@
           "example": "null",
           "member": "string",
           "name": "InstanceAvailableStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -19203,7 +19855,7 @@
           "example": "null",
           "member": "string",
           "name": "InstanceStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -19213,7 +19865,17 @@
           "example": "null",
           "member": "string",
           "name": "NodeInstanceId",
-          "required": true,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "预期副本数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "SpecTotalCount",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         }
@@ -19667,7 +20329,7 @@
           "example": "无",
           "member": "string",
           "name": "Reponame",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -19677,7 +20339,7 @@
           "example": "无",
           "member": "string",
           "name": "Repotype",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -19687,7 +20349,7 @@
           "example": "无",
           "member": "int64",
           "name": "TagCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -19697,7 +20359,7 @@
           "example": "无",
           "member": "int64",
           "name": "IsPublic",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -19707,7 +20369,7 @@
           "example": "无",
           "member": "bool",
           "name": "IsUserFavor",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -19717,7 +20379,7 @@
           "example": "无",
           "member": "bool",
           "name": "IsQcloudOfficial",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -19727,7 +20389,7 @@
           "example": "无",
           "member": "int64",
           "name": "FavorCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -19737,7 +20399,7 @@
           "example": "无",
           "member": "int64",
           "name": "PullCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -19747,7 +20409,7 @@
           "example": "无",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -19757,7 +20419,7 @@
           "example": "无",
           "member": "string",
           "name": "CreationTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -19767,7 +20429,7 @@
           "example": "无",
           "member": "string",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -19777,7 +20439,7 @@
           "example": "无",
           "member": "TcrRepoInfo",
           "name": "TcrRepoInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -19787,7 +20449,7 @@
           "example": "无",
           "member": "int64",
           "name": "TcrBindingId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -19797,7 +20459,7 @@
           "example": "无",
           "member": "string",
           "name": "ApplicationId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -19807,7 +20469,7 @@
           "example": "无",
           "member": "ScalableRule",
           "name": "ApplicationName",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -19817,7 +20479,7 @@
           "example": "无",
           "member": "string",
           "name": "ApplicationNameReal",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -19827,8 +20489,28 @@
           "example": "无",
           "member": "int64",
           "name": "Public",
-          "required": false,
+          "output_required": true,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建方式：manual | automatic\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CreateMode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "仓库名，等同reponame字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RepoName",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -22028,6 +22710,33 @@
           "name": "ServiceConfigList",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "应用的微服务类型",
+          "example": "无",
+          "member": "string",
+          "name": "MicroserviceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "注册配置治理信息",
+          "example": "无",
+          "member": "ServiceGovernanceConfig",
+          "name": "ServiceGovernanceConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "应用开发框架",
+          "example": "无",
+          "member": "string",
+          "name": "FrameworkType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -24344,14 +25053,15 @@
       "usage": "out"
     },
     "ProtocolPort": {
-      "document": "\t端口对象",
+      "document": "端口对象",
       "members": [
         {
           "disabled": false,
           "document": "TCP UDP",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Protocol",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -24359,9 +25069,10 @@
         {
           "disabled": false,
           "document": "服务端口",
-          "example": "",
+          "example": "无",
           "member": "int64",
           "name": "Port",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -24369,9 +25080,10 @@
         {
           "disabled": false,
           "document": "容器端口",
-          "example": "",
+          "example": "无",
           "member": "int64",
           "name": "TargetPort",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -24379,11 +25091,23 @@
         {
           "disabled": false,
           "document": "主机端口\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "int64",
           "name": "NodePort",
+          "output_required": true,
           "required": false,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "端口名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "port-0",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -25523,11 +26247,133 @@
         {
           "disabled": false,
           "document": "NONE：不使用调度策略；CROSS_AZ：跨可用区部署\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Type",
+          "output_required": true,
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "-\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "NodeScheduleStrategyType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "-\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CommonOption",
+          "name": "NodeScheduleOptions",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "-\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CommonOption",
+          "name": "StrongAffinityList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "-\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CommonOption",
+          "name": "WeakAffinityList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "-\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "WeakAffinityWeight",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "-\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AvailableZoneScatterScheduleType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "-\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AvailableZoneScatterScheduleRule",
+          "name": "AvailableZoneScatterScheduleRules",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "-\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PodScheduleStrategyType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "-\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CustomPodSchedule",
+          "name": "CustomPodSchedule",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "-\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TolerateScheduleType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "-\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CustomTolerateSchedule",
+          "name": "CustomTolerateSchedules",
+          "output_required": false,
+          "required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -25850,6 +26696,45 @@
       ],
       "usage": "both"
     },
+    "ServiceGovernanceConfig": {
+      "document": "注册配置治理信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否开启服务注册治理\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "EnableGovernance",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "服务治理类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "GovernanceType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "独享实例列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ExclusiveInstance",
+          "name": "ExclusiveInstances",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "ServiceSetting": {
       "document": "容器网络设置。",
       "members": [
@@ -25859,6 +26744,7 @@
           "example": "2",
           "member": "int64",
           "name": "AccessType",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": true
@@ -25869,6 +26755,7 @@
           "example": "[]",
           "member": "ProtocolPort",
           "name": "ProtocolPorts",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": true
@@ -25879,6 +26766,7 @@
           "example": "subnet-d15zonly",
           "member": "string",
           "name": "SubnetId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -25889,6 +26777,7 @@
           "example": "false",
           "member": "bool",
           "name": "DisableService",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": true
@@ -25899,6 +26788,7 @@
           "example": "false",
           "member": "bool",
           "name": "HeadlessService",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": true
@@ -25909,6 +26799,7 @@
           "example": "false",
           "member": "bool",
           "name": "AllowDeleteService",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": true
@@ -25919,6 +26810,7 @@
           "example": "false",
           "member": "bool",
           "name": "OpenSessionAffinity",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": true
@@ -25929,8 +26821,152 @@
           "example": "10800",
           "member": "int64",
           "name": "SessionAffinityTimeoutSeconds",
+          "output_required": true,
           "required": false,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "服务名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "svc-name",
+          "member": "string",
+          "name": "ServiceName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "外部流量策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Local",
+          "member": "string",
+          "name": "ExternalTrafficStrategy",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "外部流量策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Local",
+          "member": "string",
+          "name": "ExternalTrafficPolicy",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "负载均衡提供者\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tgw",
+          "member": "string",
+          "name": "LoadBalancerProvisioner",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "负载均衡类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Intranet",
+          "member": "string",
+          "name": "LoadBalancingType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "k8s负载均衡内网vip\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "192.168.21.2",
+          "member": "string",
+          "name": "ClusterIp",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "禁用服务Int记录\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "DisableServiceInt",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "开启SessionAffinity Int记录\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "OpenSessionAffinityInt",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "开启HeadlessService int记录\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "HeadlessServiceInt",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "服务名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "svc-name",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "VPC网络ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "vpcid",
+          "member": "string",
+          "name": "VpcId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "负载均衡VIP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "loadbalanceIp",
+          "member": "string",
+          "name": "LoadBalancingIp",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "负载均衡id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "loadbalanceId",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -26384,7 +27420,7 @@
           "example": "无",
           "member": "string",
           "name": "ApplicationId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -26394,7 +27430,7 @@
           "example": "无",
           "member": "string",
           "name": "ApplicationName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -26404,7 +27440,7 @@
           "example": "无",
           "member": "string",
           "name": "ApplicationType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -26414,7 +27450,7 @@
           "example": "无",
           "member": "string",
           "name": "MicroserviceType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -26424,7 +27460,7 @@
           "example": "无",
           "member": "string",
           "name": "ApplicationDesc",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -26434,7 +27470,7 @@
           "example": "无",
           "member": "string",
           "name": "ProgLang",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -26444,7 +27480,7 @@
           "example": "无",
           "member": "string",
           "name": "ApplicationResourceType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -26454,7 +27490,7 @@
           "example": "无",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -26464,7 +27500,7 @@
           "example": "无",
           "member": "string",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -26474,7 +27510,7 @@
           "example": "无",
           "member": "string",
           "name": "ApigatewayServiceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -26484,7 +27520,27 @@
           "example": "无",
           "member": "string",
           "name": "ApplicationRuntimeType",
-          "required": true,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Apm业务系统id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AmpInstanceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Apm业务系统Name\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ApmInstanceName",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         }
@@ -26941,6 +27997,32 @@
         }
       ],
       "type": "object"
+    },
+    "Tag": {
+      "document": "标签",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签键\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "TagKey",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "TagValue",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "TaskFlowEdge": {
       "document": "工作流图中的边",
@@ -27552,6 +28634,34 @@
       ],
       "usage": "out"
     },
+    "TrySchedule": {
+      "document": "尽量调度",
+      "members": [
+        {
+          "disabled": false,
+          "document": "-\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Affinity",
+          "name": "AffinityList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "-\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Affinity",
+          "name": "AntiAffinityList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "TsfApiListResponse": {
       "document": "TsfApiListResponse",
       "members": [
@@ -27719,21 +28829,31 @@
         {
           "disabled": false,
           "document": "应用总数目\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "应用信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "ApplicationForPage",
           "name": "Content",
-          "required": true,
+          "output_required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "获取部署组实例列表返回的原始批次个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "SpecTotalCount",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -29399,6 +30519,7 @@
           "example": "无",
           "member": "FieldRef",
           "name": "FieldRef",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -29409,6 +30530,29 @@
           "example": "无",
           "member": "ResourceFieldRef",
           "name": "ResourceFieldRef",
+          "output_required": true,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "k8s env的configMapKeyRef\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CommonRef",
+          "name": "ConfigMapKeyRef",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "k8s env 的 secretKeyRef\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CommonRef",
+          "name": "SecretKeyRef",
+          "output_required": false,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -30113,6 +31257,7 @@
           "example": "emptyDir",
           "member": "string",
           "name": "VolumeType",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -30123,6 +31268,7 @@
           "example": "无",
           "member": "string",
           "name": "VolumeName",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -30133,9 +31279,32 @@
           "example": "无",
           "member": "string",
           "name": "VolumeConfig",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "-\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ConfigMapOption",
+          "name": "ConfigMapOptions",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "-\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "EmptyDirOption",
+          "name": "EmptyDirOption",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

@@ -14,22 +14,27 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "3f39fc04-9a07-4b70-bb56-47ff8eb051df",
         "Result": {
-            "TotalCount": 1,
+            "TotalCount": 0,
             "Content": [
                 {
-                    "ApplicationId": "application-xxxxxxx",
-                    "ApplicationName": "test",
-                    "ApplicationDesc": null,
-                    "ApplicationType": "V",
-                    "MicroserviceType": "N",
-                    "ProgLang": null,
-                    "CreateTime": null,
-                    "UpdateTime": null
+                    "ApplicationId": "abc",
+                    "ApplicationName": "abc",
+                    "ApplicationType": "abc",
+                    "MicroserviceType": "abc",
+                    "ApplicationDesc": "abc",
+                    "ProgLang": "abc",
+                    "ApplicationResourceType": "abc",
+                    "CreateTime": "abc",
+                    "UpdateTime": "abc",
+                    "ApigatewayServiceId": "abc",
+                    "ApplicationRuntimeType": "abc",
+                    "AmpInstanceId": "abc",
+                    "ApmInstanceName": "abc"
                 }
             ]
-        }
+        },
+        "RequestId": "abc"
     }
 }
 ```

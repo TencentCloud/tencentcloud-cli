@@ -70,6 +70,14 @@
         "title": "深度研究示例"
       }
     ],
+    "ChatTranslations": [
+      {
+        "document": "非流式调用翻译接口",
+        "input": "POST / HTTP/1.1\nHost: hunyuan.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChatTranslations\n<公共请求参数>\n\n{\n    \"Model\": \"hunyuan-translation\",\n    \"Stream\": false,\n    \"Text\": \"Playing video games leads to lasting improvements in cognitive abilities.\",\n    \"Source\": \"en\",\n    \"Target\": \"zh\",\n    \"Field\": \"游戏剧情\",\n    \"References\": [\n        {\n            \"Type\": \"sentence\",\n            \"Text\": \"Computer games are a perfect recipe for strengthening our cognitive skills\",\n            \"Translation\": \"电脑游戏是增强我们认知能力的完美秘诀\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e638f0a0-a2a5-4c43-a1c6-798a7cbfbb18\",\n        \"Id\": \"e638f0a0-a2a5-4c43-a1c6-798a7cbfbb18\",\n        \"Created\": 1733133524,\n        \"Choices\": [\n            {\n                \"Index\": 0,\n                \"Message\": {\n                    \"Role\": \"assistant\",\n                    \"Content\": \"玩视频游戏会导致认知能力持久的提升。\"\n                },\n                \"FinishReason\": \"stop\"\n            }\n        ],\n        \"Usage\": {\n            \"PromptTokens\": 96,\n            \"CompletionTokens\": 10,\n            \"TotalTokens\": 106\n        },\n        \"Note\": \"以上内容为AI生成，不代表开发者立场，请勿删除或修改本标记\"\n    }\n}",
+        "title": "非流式调用翻译接口"
+      }
+    ],
     "CreateThread": [
       {
         "document": "创建会话",

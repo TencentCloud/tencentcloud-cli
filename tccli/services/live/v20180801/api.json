@@ -10,21 +10,21 @@
     "AddCasterLayoutInfo": {
       "document": "该接口用来增加导播台的布局参数。",
       "input": "AddCasterLayoutInfoRequest",
-      "name": "增加导播台布局参数",
+      "name": "新增导播台布局",
       "output": "AddCasterLayoutInfoResponse",
       "status": "online"
     },
     "AddCasterMarkPicInfo": {
       "document": "该接口用来新增图片水印。",
       "input": "AddCasterMarkPicInfoRequest",
-      "name": "新增图片水印信息",
+      "name": "新增导播台水印信息",
       "output": "AddCasterMarkPicInfoResponse",
       "status": "online"
     },
     "AddCasterMarkWordInfo": {
       "document": "为导播台添加文本配置。",
       "input": "AddCasterMarkWordInfoRequest",
-      "name": "增加导播台文本配置",
+      "name": "新增导播台文本配置",
       "output": "AddCasterMarkWordInfoResponse",
       "status": "online"
     },
@@ -80,7 +80,7 @@
     "CreateCaster": {
       "document": "该接口用来创建新的导播台",
       "input": "CreateCasterRequest",
-      "name": "创建新导播台",
+      "name": "创建导播台",
       "output": "CreateCasterResponse",
       "status": "online"
     },
@@ -94,21 +94,21 @@
     "CreateCasterPgm": {
       "document": "该接口用来启动主监任务，并将获取主监画面的播放地址。",
       "input": "CreateCasterPgmRequest",
-      "name": "创建主监任务",
+      "name": "创建导播台主监任务",
       "output": "CreateCasterPgmResponse",
       "status": "online"
     },
     "CreateCasterPgmFromPvw": {
       "document": "该接口用来将预监画面的布局、水印、字幕等配置，复制到主监画面中。\n该接口使用时，预监任务需处于运行状态。",
       "input": "CreateCasterPgmFromPvwRequest",
-      "name": "复制预监展示信息创建主监",
+      "name": "复制导播台预监展示信息创建主监任务",
       "output": "CreateCasterPgmFromPvwResponse",
       "status": "online"
     },
     "CreateCasterPvw": {
       "document": "该接口用来启动预监任务，并将获取预监画面的播放地址。",
       "input": "CreateCasterPvwRequest",
-      "name": "创建预监任务",
+      "name": "创建导播台预监任务",
       "output": "CreateCasterPvwResponse",
       "status": "online"
     },
@@ -262,14 +262,14 @@
     "DeleteCasterInputInfo": {
       "document": "该接口用来删除导播台中的输入源信息。",
       "input": "DeleteCasterInputInfoRequest",
-      "name": "删除导播台输入源信息",
+      "name": "删除导播台输入源",
       "output": "DeleteCasterInputInfoResponse",
       "status": "online"
     },
     "DeleteCasterLayoutInfo": {
       "document": "该接口用来将布局信息从导播台中删除",
       "input": "DeleteCasterLayoutInfoRequest",
-      "name": "删除导播台的布局信息",
+      "name": "删除导播台布局",
       "output": "DeleteCasterLayoutInfoResponse",
       "status": "online"
     },
@@ -493,14 +493,14 @@
     "DescribeCasterInputInfos": {
       "document": "该接口用来查询导播台的输入源信息列表。",
       "input": "DescribeCasterInputInfosRequest",
-      "name": "查询导播台输入源信息列表",
+      "name": "查询导播台输入源列表",
       "output": "DescribeCasterInputInfosResponse",
       "status": "online"
     },
     "DescribeCasterLayoutInfos": {
       "document": "该接口用来查询某个导播台的布局列表",
       "input": "DescribeCasterLayoutInfosRequest",
-      "name": "查询导播台的布局列表",
+      "name": "查询导播台布局列表",
       "output": "DescribeCasterLayoutInfosResponse",
       "status": "online"
     },
@@ -514,14 +514,14 @@
     "DescribeCasterMarkPicInfos": {
       "document": "该接口用来查询某个导播台的水印列表。",
       "input": "DescribeCasterMarkPicInfosRequest",
-      "name": "查询导播台的水印信息列表",
+      "name": "查询导播台水印信息列表",
       "output": "DescribeCasterMarkPicInfosResponse",
       "status": "online"
     },
     "DescribeCasterMarkWordInfos": {
       "document": "该接口用来查询某个导播台的文本列表。",
       "input": "DescribeCasterMarkWordInfosRequest",
-      "name": "查询导播台的文本列表",
+      "name": "查询导播台文本配置列表",
       "output": "DescribeCasterMarkWordInfosResponse",
       "status": "online"
     },
@@ -542,7 +542,7 @@
     "DescribeCasterTransitionTypes": {
       "document": "该接口用来获取所有的转场名称及其对应的素材url。",
       "input": "DescribeCasterTransitionTypesRequest",
-      "name": "获取所有的转场列表",
+      "name": "获取导播台转场列表",
       "output": "DescribeCasterTransitionTypesResponse",
       "status": "online"
     },
@@ -670,6 +670,13 @@
       "input": "DescribeLiveDomainsRequest",
       "name": "查询域名列表",
       "output": "DescribeLiveDomainsResponse",
+      "status": "online"
+    },
+    "DescribeLiveEnhanceInfoList": {
+      "document": "查询直播增强用量明细信息。",
+      "input": "DescribeLiveEnhanceInfoListRequest",
+      "name": "查询直播增强用量明细",
+      "output": "DescribeLiveEnhanceInfoListResponse",
       "status": "online"
     },
     "DescribeLiveForbidStreamList": {
@@ -806,7 +813,7 @@
       "status": "online"
     },
     "DescribeLiveStreamOnlineList": {
-      "document": "返回正在直播中的流列表。适用于推流成功后查询在线流信息。\n\n注意：\n1. 该接口仅提供辅助查询在线流列表功能，业务重要场景不可强依赖该接口。\n2. 该接口仅适用于流数少于2万路的情况，对于流数较大用户请联系售后。\n",
+      "document": "返回正在直播中的流列表。适用于推流成功后查询在线流信息。\n\n注意：\n1. 该接口仅提供辅助查询在线流列表功能，业务重要场景不可强依赖该接口。\n2. 该接口仅适用于流数少于2万路的情况，对于流数较大用户请联系售后。",
       "input": "DescribeLiveStreamOnlineListRequest",
       "name": "查询直播中的流",
       "output": "DescribeLiveStreamOnlineListResponse",
@@ -1109,21 +1116,21 @@
     "ModifyCaster": {
       "document": "该接口用来设置导播台的描述、名称、录制模板id等参数。",
       "input": "ModifyCasterRequest",
-      "name": "修改导播台信息",
+      "name": "修改导播台",
       "output": "ModifyCasterResponse",
       "status": "online"
     },
     "ModifyCasterInputInfo": {
       "document": "该接口用来修改已经设置过的输入源信息，如源地址，源类型等。\n设置前，需保证待修改的输入源已经存在。若不存在，需使用AddCasterInputInfo接口。",
       "input": "ModifyCasterInputInfoRequest",
-      "name": "修改导播台输入源信息",
+      "name": "修改导播台输入源",
       "output": "ModifyCasterInputInfoResponse",
       "status": "online"
     },
     "ModifyCasterLayoutInfo": {
       "document": "该接口用来修改布局参数",
       "input": "ModifyCasterLayoutInfoRequest",
-      "name": "修改布局参数",
+      "name": "修改导播台布局",
       "output": "ModifyCasterLayoutInfoResponse",
       "status": "online"
     },
@@ -9170,6 +9177,97 @@
       ],
       "type": "object"
     },
+    "DescribeLiveEnhanceInfoListRequest": {
+      "document": "DescribeLiveEnhanceInfoList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "起始时间点，使用ISO格式时间，\n例如：2019-01-08T10:00:00Z。\n注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见[ISO 日期格式说明](https://cloud.tencent.com/document/product/267/38543#:~:text=I-,ISO,-%E6%97%A5%E6%9C%9F%E6%A0%BC%E5%BC%8F)。\n接口支持最近三个月的查询，开始时间和结束时间查询跨度不能超过三十天。",
+          "example": "2019-03-01T00:00:00+08:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间点，使用ISO格式时间，\n例如：2019-01-08T10:00:00Z。\n注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见[ISO 日期格式说明](https://cloud.tencent.com/document/product/267/38543#:~:text=I-,ISO,-%E6%97%A5%E6%9C%9F%E6%A0%BC%E5%BC%8F)。\n接口支持最近三个月的查询，开始时间和结束时间查询跨度不能超过三十天。",
+          "example": "2019-03-01T12:00:00+08:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询粒度，支持5，60分钟。",
+          "example": "5",
+          "member": "int64",
+          "name": "Granularity",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询域名，如果不填则默认查全部的数据。",
+          "example": "test.com",
+          "member": "string",
+          "name": "DomainNames",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "增强服务类型，如果不填则默认查全部的数据。",
+          "example": "StreamID",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "分辨率，如果不填则默认查全部的数据。",
+          "example": "无",
+          "member": "string",
+          "name": "Resolution",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "帧率，如果不填则默认查全部的数据。",
+          "example": "无",
+          "member": "string",
+          "name": "Fps",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLiveEnhanceInfoListResponse": {
+      "document": "DescribeLiveEnhanceInfoList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "直播增强统计信息列表。",
+          "example": "无",
+          "member": "LiveEnhanceInfo",
+          "name": "DataInfoList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeLiveForbidStreamListRequest": {
       "document": "DescribeLiveForbidStreamList请求参数结构体",
       "members": [
@@ -10248,7 +10346,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -10258,7 +10356,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalPage",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -10268,7 +10366,7 @@
           "example": "1",
           "member": "uint64",
           "name": "PageNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -10278,7 +10376,7 @@
           "example": "10",
           "member": "uint64",
           "name": "PageSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -10288,7 +10386,7 @@
           "example": "无",
           "member": "StreamOnlineInfo",
           "name": "OnlineInfo",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -10307,7 +10405,7 @@
         {
           "disabled": false,
           "document": "您的推流域名。",
-          "example": "",
+          "example": "5000.livepush.com",
           "member": "string",
           "name": "DomainName",
           "required": true,
@@ -10316,7 +10414,7 @@
         {
           "disabled": false,
           "document": "结束时间。\nUTC 格式，例如：2016-06-30T19:00:00Z。\n不超过当前时间。\n注意：EndTime和StartTime相差不可超过30天。",
-          "example": "",
+          "example": "2024-11-23T00:00:00Z",
           "member": "string",
           "name": "EndTime",
           "required": true,
@@ -10325,7 +10423,7 @@
         {
           "disabled": false,
           "document": "起始时间。 \nUTC 格式，例如：2016-06-29T19:00:00Z。\n最长支持查询60天内数据。",
-          "example": "",
+          "example": "2024-11-22T00:00:00Z",
           "member": "string",
           "name": "StartTime",
           "required": true,
@@ -10334,7 +10432,7 @@
         {
           "disabled": false,
           "document": "推流路径，与推流和播放地址中的 AppName 保持一致，默认为 live。不支持模糊匹配。",
-          "example": "",
+          "example": "live",
           "member": "string",
           "name": "AppName",
           "required": false,
@@ -10343,7 +10441,7 @@
         {
           "disabled": false,
           "document": "取得第几页。\n默认值：1。",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "PageNum",
           "required": false,
@@ -10352,7 +10450,7 @@
         {
           "disabled": false,
           "document": "分页大小。\n最大值：100。\n取值范围：10~100 之前的任意整数。\n默认值：10。",
-          "example": "",
+          "example": "10",
           "member": "uint64",
           "name": "PageSize",
           "required": false,
@@ -10361,7 +10459,7 @@
         {
           "disabled": false,
           "document": "流名称，支持模糊匹配。",
-          "example": "",
+          "example": "test",
           "member": "string",
           "name": "StreamName",
           "required": false,
@@ -10376,45 +10474,50 @@
         {
           "disabled": false,
           "document": "推流记录信息。",
-          "example": "",
+          "example": "无",
           "member": "StreamName",
           "name": "PublishInfo",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "分页的页码。",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "PageNum",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "每页大小",
-          "example": "",
+          "example": "10",
           "member": "uint64",
           "name": "PageSize",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "符合条件的总个数。",
-          "example": "",
+          "example": "20",
           "member": "uint64",
           "name": "TotalNum",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "总页数。",
-          "example": "",
+          "example": "2",
           "member": "uint64",
           "name": "TotalPage",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -14300,6 +14403,72 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "LiveEnhanceInfo": {
+      "document": "直播增强计费信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名。",
+          "example": "无",
+          "member": "string",
+          "name": "Domain",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "时间。",
+          "example": "无",
+          "member": "string",
+          "name": "Time",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "计费时长，单位分钟。",
+          "example": "无",
+          "member": "int64",
+          "name": "Duration",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "帧率。",
+          "example": "无",
+          "member": "string",
+          "name": "Fps",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分辨率。",
+          "example": "无",
+          "member": "string",
+          "name": "Resolution",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "增强服务类型。",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
