@@ -6,13 +6,13 @@ Input:
 
 ```
 tccli organization InviteOrganizationMember --cli-unfold-argument  \
-    --Remark  \
+    --Remark invitation member \
     --MemberUin 111111111111 \
     --Name member_name \
     --NodeId 1001 \
     --PermissionIds 1 2 \
     --PolicyType Financial \
-    --PayUin 
+    --PayUin 100000000001
 ```
 
 Output: 

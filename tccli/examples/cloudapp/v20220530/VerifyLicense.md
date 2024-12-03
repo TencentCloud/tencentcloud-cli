@@ -12,29 +12,29 @@ Output:
 {
     "Response": {
         "License": {
-            "LicenseId": "abc",
-            "LicenseMode": "abc",
-            "LicenseStatus": "abc",
+            "LicenseId": "LICENSE_CLOUDAPP_A95275D8",
+            "LicenseMode": "Subscription",
+            "LicenseStatus": "Active",
             "ProviderId": 1,
-            "SoftwarePackageId": "abc",
-            "SoftwarePackageVersion": "abc",
-            "AuthorizedUserUin": "abc",
-            "AuthorizedCloudappId": "abc",
-            "AuthorizedCloudappRoleId": "abc",
+            "SoftwarePackageId": "pkg-kby01bv4",
+            "SoftwarePackageVersion": "1.0.0",
+            "AuthorizedUserUin": "100008888888",
+            "AuthorizedCloudappId": "cloudapp",
+            "AuthorizedCloudappRoleId": "4000008000060000",
             "AuthorizedSpecification": [
                 {
-                    "ParamKey": "abc",
-                    "ParamValue": "abc",
-                    "ParamKeyName": "abc",
-                    "ParamValueName": "abc"
+                    "ParamKey": "user_scale",
+                    "ParamValue": "100",
+                    "ParamKeyName": "用户规模",
+                    "ParamValueName": "100人"
                 }
             ],
-            "BillingMode": 0,
-            "LifeSpan": 0,
+            "BillingMode": 1,
+            "LifeSpan": 1,
             "IssueDate": "2020-09-22T00:00:00+00:00",
             "ActivationDate": "2020-09-22T00:00:00+00:00",
-            "ExpirationDate": "2020-09-22T00:00:00+00:00",
-            "LifeSpanUnit": "abc"
+            "ExpirationDate": "2020-09-23T00:00:00+00:00",
+            "LifeSpanUnit": "D"
         },
         "RequestId": "abc"
     }

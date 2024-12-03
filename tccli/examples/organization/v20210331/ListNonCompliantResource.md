@@ -7,7 +7,7 @@ Input:
 ```
 tccli organization ListNonCompliantResource --cli-unfold-argument  \
     --MaxResults 10 \
-    --PaginationToken  \
+    --PaginationToken fgh363 \
     --MemberUin 1111111111
 ```
 
@@ -17,20 +17,20 @@ Output:
     "Response": {
         "Items": [
             {
-                "Resource": "qcs::vpc::uin/1111111111:subnet/subnet-test1",
+                "Resource": "qcs::vpc::uin/1111111111:subnet/subnet1",
                 "ComplianceDetails": {
                     "ComplianceStatus": true,
                     "KeysWithNonCompliantValues": [
-                        "abc"
+                        "key"
                     ],
                     "NonCompliantKeys": [
-                        "abc"
+                        "key"
                     ]
                 },
                 "Tags": [
                     {
-                        "TagKey": "abc",
-                        "TagValue": "abc"
+                        "TagKey": "key",
+                        "TagValue": "value"
                     }
                 ]
             }

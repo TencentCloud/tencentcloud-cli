@@ -3305,7 +3305,7 @@
         {
           "disabled": false,
           "document": "队列名字，在单个地域同一账号下唯一。队列名称是一个不超过 64 个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)。",
-          "example": "test",
+          "example": "testQueue",
           "member": "string",
           "name": "QueueName",
           "required": true,
@@ -3549,7 +3549,7 @@
         {
           "disabled": false,
           "document": "BindingKey数量不超过5个， 每个BindingKey长度不超过64字节，该字段表示订阅接收消息的过滤策略，每个BindingKey最多含有15个“.”， 即最多16个词组。",
-          "example": "[]",
+          "example": "[\"new\"]",
           "member": "string",
           "name": "BindingKey",
           "required": false,
@@ -5392,7 +5392,7 @@
         {
           "disabled": false,
           "document": "队列名字，在单个地域同一账号下唯一。队列名称是一个不超过64个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)。",
-          "example": "test",
+          "example": "testQueue",
           "member": "string",
           "name": "QueueName",
           "required": true,
@@ -6764,7 +6764,7 @@
         {
           "disabled": false,
           "document": "CMQ 队列名称列表过滤",
-          "example": "test",
+          "example": "testqueue1",
           "member": "string",
           "name": "QueueNameList",
           "required": false,
@@ -7003,7 +7003,7 @@
         {
           "disabled": false,
           "document": "CMQ 主题名称列表过滤",
-          "example": "test",
+          "example": "topic1",
           "member": "string",
           "name": "TopicNameList",
           "required": false,
@@ -13304,7 +13304,7 @@
         {
           "disabled": false,
           "document": "队列名字，在单个地域同一账号下唯一。队列名称是一个不超过 64 个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)。",
-          "example": "xxx",
+          "example": "queue1",
           "member": "string",
           "name": "QueueName",
           "required": true,
@@ -13502,7 +13502,7 @@
         {
           "disabled": false,
           "document": "消息正文。消息标签（用于消息过滤)。标签数量不能超过5个，每个标签不超过16个字符。与(Batch)PublishMessage的MsgTag参数配合使用，规则：1）如果FilterTag没有设置，则无论MsgTag是否有设置，订阅接收所有发布到Topic的消息；2）如果FilterTag数组有值，则只有数组中至少有一个值在MsgTag数组中也存在时（即FilterTag和MsgTag有交集），订阅才接收该发布到Topic的消息；3）如果FilterTag数组有值，但MsgTag没设置，则不接收任何发布到Topic的消息，可以认为是2）的一种特例，此时FilterTag和MsgTag没有交集。规则整体的设计思想是以订阅者的意愿为主。",
-          "example": "[]",
+          "example": "[\"new\"]",
           "member": "string",
           "name": "FilterTags",
           "required": false,
@@ -13511,7 +13511,7 @@
         {
           "disabled": false,
           "document": "BindingKey数量不超过5个， 每个BindingKey长度不超过64字节，该字段表示订阅接收消息的过滤策略，每个BindingKey最多含有15个“.”， 即最多16个词组。",
-          "example": "[]",
+          "example": "[\"aa\"]",
           "member": "string",
           "name": "BindingKey",
           "required": false,
@@ -15054,7 +15054,7 @@
         {
           "disabled": false,
           "document": "消息内容，消息总大小需不大于1024K",
-          "example": "abc",
+          "example": "testmessage",
           "member": "string",
           "name": "MsgContent",
           "required": true,
@@ -17726,7 +17726,7 @@
         {
           "disabled": false,
           "document": "队列名字，在单个地域同一账号下唯一。队列名称是一个不超过64个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)。",
-          "example": "test",
+          "example": "test-queue",
           "member": "string",
           "name": "QueueName",
           "required": true,
@@ -20271,7 +20271,7 @@
         {
           "disabled": false,
           "document": "队列名",
-          "example": "xxx",
+          "example": "test-queue",
           "member": "string",
           "name": "QueueName",
           "required": true,
@@ -20280,7 +20280,7 @@
         {
           "disabled": false,
           "document": "消息内容",
-          "example": "xxx",
+          "example": "testmessage",
           "member": "string",
           "name": "MsgContent",
           "required": true,
@@ -20314,7 +20314,7 @@
         {
           "disabled": false,
           "document": "消息id",
-          "example": "xxx",
+          "example": "09A51113003621B8D17C0DF3DC2403D",
           "member": "string",
           "name": "MsgId",
           "output_required": true,
@@ -21342,7 +21342,7 @@
         {
           "disabled": false,
           "document": "死信策略源队列名称，调用本接口会清空该队列的死信队列策略。",
-          "example": "test",
+          "example": "test-queue",
           "member": "string",
           "name": "SourceQueueName",
           "required": true,

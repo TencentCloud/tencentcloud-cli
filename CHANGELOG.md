@@ -1,3 +1,200 @@
+# Release 3.0.1111.1
+
+## 消息队列 CKafka 版(ckafka) 版本：2019-08-19
+
+### 第 95 次发布
+
+发布时间：2024-12-04 01:22:25
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [BatchModifyTopicInfo](http://document.tencentcloudapi.woa.com/document/product/597/40861#BatchModifyTopicInfo)
+
+	* 新增成员：LogMsgTimestampType
+
+* [Config](http://document.tencentcloudapi.woa.com/document/product/597/40861#Config)
+
+	* 新增成员：LogMsgTimestampType
+
+* [DatahubTopicResp](http://document.tencentcloudapi.woa.com/document/product/597/40861#DatahubTopicResp)
+
+	* <font color="#dd0000">**修改成员**：</font>TopicId
+
+* [GroupResponse](http://document.tencentcloudapi.woa.com/document/product/597/40861#GroupResponse)
+
+	* <font color="#dd0000">**修改成员**：</font>GroupCountQuota
+
+* [InstanceAttributesResponse](http://document.tencentcloudapi.woa.com/document/product/597/40861#InstanceAttributesResponse)
+
+	* 新增成员：CustomCertId
+
+
+
+
+## DNSPod(dnspod) 版本：2021-03-23
+
+### 第 43 次发布
+
+发布时间：2024-12-04 01:40:02
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeBackendDomainsByUin](http://document.tencentcloudapi.woa.com/document/product/1427/85446)
+
+新增数据结构：
+
+* [BackendDomainListItem](http://document.tencentcloudapi.woa.com/document/product/1427/56185#BackendDomainListItem)
+
+
+
+## 弹性 MapReduce(emr) 版本：2019-01-03
+
+### 第 70 次发布
+
+发布时间：2024-12-04 01:44:01
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeCloudInstanceService](http://document.tencentcloudapi.woa.com/document/product/589/85447)
+
+新增数据结构：
+
+* [CloudService](http://document.tencentcloudapi.woa.com/document/product/589/33981#CloudService)
+* [ServiceLayerIn](http://document.tencentcloudapi.woa.com/document/product/589/33981#ServiceLayerIn)
+* [WebUIInfo](http://document.tencentcloudapi.woa.com/document/product/589/33981#WebUIInfo)
+
+
+
+## 物联网开发平台(iotexplorer) 版本：2019-04-23
+
+### 第 56 次发布
+
+发布时间：2024-12-04 01:52:23
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [InvokeCloudStorageAIServiceTask](http://document.tencentcloudapi.woa.com/document/product/1081/85448)
+
+
+
+## 媒体智能标签(ivld) 版本：2021-09-03
+
+### 第 3 次发布
+
+发布时间：2024-12-04 01:55:59
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [AudioData](http://document.tencentcloudapi.woa.com/document/product/1695/79948#AudioData)
+
+	* 新增成员：WebMediaURL
+
+* [AudioMetadata](http://document.tencentcloudapi.woa.com/document/product/1695/79948#AudioMetadata)
+
+	* 新增成员：BitDepth, ShortFormat
+
+* [PersonInfo](http://document.tencentcloudapi.woa.com/document/product/1695/79948#PersonInfo)
+
+	* 新增成员：PersonId
+
+* [TextData](http://document.tencentcloudapi.woa.com/document/product/1695/79948#TextData)
+
+	* 新增成员：WebMediaURL
+
+* [TextMetadata](http://document.tencentcloudapi.woa.com/document/product/1695/79948#TextMetadata)
+
+	* 新增成员：ShortFormat
+
+* [UnknownPerson](http://document.tencentcloudapi.woa.com/document/product/1695/79948#UnknownPerson)
+
+	* 新增成员：AuditClass
+
+
+
+
+## 实时音视频(trtc) 版本：2019-07-22
+
+### 第 77 次发布
+
+发布时间：2024-12-04 02:23:59
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateBasicModeration](http://document.tencentcloudapi.woa.com/document/product/647/85433)
+
+	* 新增入参：AuditStorageParams
+
+
+新增数据结构：
+
+* [AuditStorageParams](http://document.tencentcloudapi.woa.com/document/product/647/44055#AuditStorageParams)
+* [CloudAuditStorage](http://document.tencentcloudapi.woa.com/document/product/647/44055#CloudAuditStorage)
+
+
+
+## 向量数据库(vdb) 版本：2023-06-16
+
+### 第 8 次发布
+
+发布时间：2024-12-04 02:27:10
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeInstances](http://document.tencentcloudapi.woa.com/document/product/1758/83304)
+
+	* 新增入参：ApiVersions
+
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 178 次发布
+
+发布时间：2024-12-04 02:27:29
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeTrafficQosPolicy](http://document.tencentcloudapi.woa.com/document/product/215/85449)
+
+新增数据结构：
+
+* [TrafficQosPolicySet](http://document.tencentcloudapi.woa.com/document/product/215/15824#TrafficQosPolicySet)
+
+
+
 # Release 3.0.1110.1
 
 ## 云数据库 MySQL(cdb) 版本：2017-03-20

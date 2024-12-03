@@ -17,7 +17,10 @@ Output:
     "Response": {
         "Result": {
             "ReturnCode": "0",
-            "ReturnMessage": "ok[apply success]"
+            "ReturnMessage": "ok[apply success]",
+            "Data": {
+                "FlowId": 0
+            }
         },
         "RequestId": "b800c966-083a-40f5-8d54-44f40c6b364f"
     }

@@ -96,6 +96,14 @@
         "title": "获取自动扩缩容规则"
       }
     ],
+    "DescribeCloudInstanceService": [
+      {
+        "document": "DescribeCloudInstanceService",
+        "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudInstanceService\n<公共请求参数>\n\n{\n    \"InstanceId\": \"emr-test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ecee78a4-f0e7-41a2-8f94-5bce64d82892\",\n        \"ServiceLayerIns\": [\n            {\n                \"CloudServices\": [\n                    {\n                        \"AddTime\": \"2023-05-26 11:02:38\",\n                        \"ClusterId\": 37563,\n                        \"DependentClusterId\": \"\",\n                        \"DisPlay\": true,\n                        \"ExternalService\": [\n                            \"emr-bwcabyig-openldap-slapd-inner\"\n                        ],\n                        \"InternalService\": [\n                            \"emr-bwcabyig-openldap-slapd-inner\"\n                        ],\n                        \"IsExternal\": 0,\n                        \"PathsInfo\": \"/usr/libexec/openldap\",\n                        \"ServiceLayer\": \"middleLayer\",\n                        \"ServiceType\": 39,\n                        \"Soft\": \"OPENLDAP-2.4.57\",\n                        \"SoftName\": \"OPENLDAP\",\n                        \"Status\": 0,\n                        \"UserGroup\": \"root\",\n                        \"UserName\": \"root\"\n                    }\n                ],\n                \"ServiceLayer\": \"middleLayer\"\n            }\n        ],\n        \"TotalCnt\": 1\n    }\n}",
+        "title": "DescribeCloudInstanceService"
+      }
+    ],
     "DescribeClusterFlowStatusDetail": [
       {
         "document": "",

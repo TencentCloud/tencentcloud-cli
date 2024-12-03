@@ -52,7 +52,7 @@
   },
   "metadata": {
     "apiVersion": "2018-03-21",
-    "api_brief": "介绍如何使用API对机器翻译进行操作，包括文本翻译、语种识别、图片翻译等。",
+    "api_brief": "介绍如何使用API对机器翻译进行操作，包括文本翻译、文档翻译、图片翻译和语音翻译等。",
     "serviceNameCN": "机器翻译",
     "serviceShortName": "tmt"
   },

@@ -7,7 +7,7 @@ Input:
 ```
 tccli tdmq PublishCmqMsg --cli-unfold-argument  \
     --TopicName test-queue \
-    --MsgContent test
+    --MsgContent testForPublish
 ```
 
 Output: 

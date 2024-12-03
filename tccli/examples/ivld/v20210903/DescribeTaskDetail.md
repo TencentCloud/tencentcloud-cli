@@ -289,7 +289,9 @@ Output:
                     ]
                 },
                 "TitleSet": [],
-                "WebMediaURL": "https://ai-media-251202827.cos.ap-guangzhou.myqcloud.com/%E6%98%9F%E8%A7%86%E9%A2%91.mp4"
+                "WebMediaURL": "https://ai-media-251202827.cos.ap-guangzhou.myqcloud.com/%E6%98%9F%E8%A7%86%E9%A2%91.mp4",
+                "UnknownPersonSet": [],
+                "MultiLevelPersonInfoSet": []
             }
         },
         "TaskInfo": {
@@ -309,8 +311,12 @@ Output:
             "TaskStartTime": "2021-11-04T12:14:18+08:00",
             "TaskStatus": 8,
             "TaskTimeCost": 110,
-            "CallbackURL": "xx",
-            "Label": "xxx"
+            "CallbackURL": "http://example.com/api/callback",
+            "Label": "xxx",
+            "TextMetadata": null,
+            "ImageMetadata": null,
+            "AudioMetadata": null,
+            "Metadata": null
         }
     }
 }

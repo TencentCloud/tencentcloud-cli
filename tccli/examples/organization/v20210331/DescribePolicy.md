@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli organization DescribePolicy --cli-unfold-argument  \
-    --PolicyId 1001
+    --PolicyId 10001
 ```
 
 Output: 
@@ -15,11 +15,11 @@ Output:
     "Response": {
         "RequestId": "152482ca-5968-4557-ac1d-1e7ac28ce0da",
         "AddTime": "2022-08-04 16:04:17",
-        "Description": "test",
+        "Description": "cvm policy",
         "PolicyDocument": "{\"strategyInfo\":{\"version\":\"2.0\",\"statement\":[{\"effect\":\"allow\",\"action\":\"*\",\"resource\":\"qcs::cam::*:*\"}]},\"version\":\"2.0\"}",
-        "PolicyId": 1001,
-        "PolicyName": "test-1",
-        "Type": 3,
+        "PolicyId": 10001,
+        "PolicyName": "policy_name",
+        "Type": 1,
         "UpdateTime": "2022-08-04 17:04:17"
     }
 }

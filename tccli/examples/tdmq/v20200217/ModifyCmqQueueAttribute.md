@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tdmq ModifyCmqQueueAttribute --cli-unfold-argument  \
-    --QueueName test \
+    --QueueName testQueue \
     --MaxMsgSize 1024
 ```
 

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli organization UpdateOrganizationIdentity --cli-unfold-argument  \
-    --Description  \
+    --Description admin identity \
     --IdentityId 1 \
     --IdentityPolicy.0.PolicyId 1 \
     --IdentityPolicy.0.PolicyName AdministratorAccess

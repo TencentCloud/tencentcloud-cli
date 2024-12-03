@@ -232,7 +232,7 @@
         },
         {
           "disabled": false,
-          "document": "是否是用户个人敏感数据。\n\n固定填：1。\n\n示例值：1",
+          "document": "是否是用户个人敏感数据（不推荐使用）。\n\n固定填：1。\n\n示例值：1",
           "example": "无",
           "member": "uint64",
           "name": "IsPersonalData",

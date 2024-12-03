@@ -11,7 +11,7 @@ tccli ivld CreateTask --cli-unfold-argument  \
     --MediaPreknownInfo.MediaLabel 1 \
     --MediaPreknownInfo.MediaType 2 \
     --TaskName demo-task-0 \
-    --MediaId media-a1b2c3d4 \
+    --MediaId media-2aHsU6sj \
     --UploadVideo False
 ```
 

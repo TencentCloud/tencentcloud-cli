@@ -17,8 +17,8 @@ Output:
         "Items": [
             {
                 "IdentityId": 1,
-                "IdentityAliasName": "test",
-                "Description": "",
+                "IdentityAliasName": "identity_name",
+                "Description": "admin identity",
                 "IdentityPolicy": [
                     {
                         "PolicyId": 1,

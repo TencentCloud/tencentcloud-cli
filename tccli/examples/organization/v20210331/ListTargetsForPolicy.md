@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli organization ListTargetsForPolicy --cli-unfold-argument  \
-    --PolicyId 134173928
+    --PolicyId 1001
 ```
 
 Output: 
@@ -16,19 +16,13 @@ Output:
         "List": [
             {
                 "AddTime": "2022-08-09 17:08:35",
-                "Name": "T0",
+                "Name": "member_name",
                 "RelatedType": 1,
-                "Uin": 222222222222
-            },
-            {
-                "AddTime": "2022-08-09 17:11:54",
-                "Name": "33",
-                "RelatedType": 2,
                 "Uin": 111111111111
             }
         ],
         "RequestId": "676ed1a2-8a98-4834-8d7a-19538980ad0e",
-        "TotalNum": 5
+        "TotalNum": 1
     }
 }
 ```

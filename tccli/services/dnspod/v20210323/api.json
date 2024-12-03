@@ -182,6 +182,13 @@
       "output": "DeleteSnapshotResponse",
       "status": "online"
     },
+    "DescribeBackendDomainsByUin": {
+      "document": "根据UIN查询域名列表信息",
+      "input": "DescribeBackendDomainsByUinRequest",
+      "name": "根据UIN查询域名列表信息",
+      "output": "DescribeBackendDomainsByUinResponse",
+      "status": "online"
+    },
     "DescribeBatchTask": {
       "document": "获取任务详情",
       "input": "DescribeBatchTaskRequest",
@@ -750,6 +757,52 @@
         }
       ],
       "usage": "in"
+    },
+    "BackendDomainListItem": {
+      "document": "域名列表项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "45564",
+          "member": "uint64",
+          "name": "DomainId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "dnspod.cn",
+          "member": "string",
+          "name": "Domain",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "域名状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "enable",
+          "member": "string",
+          "name": "DomainStatus",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "解析状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "yes",
+          "member": "string",
+          "name": "DNSStatus",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "BatchRecordInfo": {
       "document": "批量任务中的记录信息",
@@ -3057,6 +3110,89 @@
     "DeleteSnapshotResponse": {
       "document": "DeleteSnapshot返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBackendDomainsByUinRequest": {
+      "document": "DescribeBackendDomainsByUin请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "账号ID",
+          "example": "100000014880",
+          "member": "string",
+          "name": "OwnerUin",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "解析生效状态。取值为yes或者no。yes 已生效 no 未生效",
+          "example": "yes",
+          "member": "string",
+          "name": "DNSStatus",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "域名状态。取值为enable, pause, spam, lock。enable 启用 pause 暂停 spam 封禁 lock 锁定",
+          "example": "enable",
+          "member": "string",
+          "name": "DomainStatus",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "每页大小，用于分页，最大不超过10000",
+          "example": "20",
+          "member": "uint64",
+          "name": "Length",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "最后一次查询的域名ID，用于分页",
+          "example": "0",
+          "member": "uint64",
+          "name": "LastDomainId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBackendDomainsByUinResponse": {
+      "document": "DescribeBackendDomainsByUin返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名数量",
+          "example": "200",
+          "member": "uint64",
+          "name": "DomainTotal",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "域名列表",
+          "example": "无",
+          "member": "BackendDomainListItem",
+          "name": "DomainList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
