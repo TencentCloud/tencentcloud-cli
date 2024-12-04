@@ -1559,7 +1559,7 @@
         {
           "disabled": false,
           "document": "自定义多因子验证Token",
-          "example": "",
+          "example": "mfa_1000000000-a6f836f1",
           "member": "string",
           "name": "MFAToken",
           "required": true,
@@ -2790,7 +2790,7 @@
         {
           "disabled": false,
           "document": "子账号",
-          "example": "1234567",
+          "example": "100000000000",
           "member": "uint64",
           "name": "SubUin",
           "required": true,
@@ -2805,27 +2805,30 @@
         {
           "disabled": false,
           "document": "登录保护设置",
-          "example": "无",
+          "example": "{\"Phone\": 1,\"Token\": 0,\"Stoken\": 0,\"Wechat\": 0,\"Custom\": 0}",
           "member": "LoginActionFlag",
           "name": "LoginFlag",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "敏感操作保护设置",
-          "example": "无",
+          "example": "{\"Phone\": 1,\"Token\": 0,\"Stoken\": 0,\"Wechat\": 0,\"Custom\": 0}",
           "member": "LoginActionFlag",
           "name": "ActionFlag",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "异地登录保护设置",
-          "example": "无",
+          "example": "{\"VerifyFlag\": 0,\"NotifyPhone\": 1,\"NotifyEmail\": 1,\"NotifyWechat\": 1,\"Tips\": 0}",
           "member": "OffsiteFlag",
           "name": "OffsiteFlag",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -2835,6 +2838,7 @@
           "example": "1",
           "member": "int64",
           "name": "PromptTrust",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -5100,7 +5104,7 @@
         {
           "disabled": false,
           "document": "页码。默认为1。",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "Page",
           "required": false,
@@ -5109,7 +5113,7 @@
         {
           "disabled": false,
           "document": "每页数量。默认为20。",
-          "example": "",
+          "example": "20",
           "member": "uint64",
           "name": "Rp",
           "required": false,
@@ -5118,7 +5122,7 @@
         {
           "disabled": false,
           "document": "按用户组名称匹配。",
-          "example": "",
+          "example": "IT",
           "member": "string",
           "name": "Keyword",
           "required": false,
@@ -5133,18 +5137,20 @@
         {
           "disabled": false,
           "document": "用户组总数。",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "TotalNum",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "用户组数组信息。",
-          "example": "",
+          "example": "[{\"GroupId\": 2021,\"GroupName\": \"IT\",\"CreateTime\": \"2019-04-03 15:15:18\",\"Remark\": \"IT\"}]",
           "member": "GroupInfo",
           "name": "GroupInfo",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6423,7 +6429,7 @@
         {
           "disabled": false,
           "document": "登录保护设置",
-          "example": "无",
+          "example": "{\"Phone\":1}",
           "member": "LoginActionMfaFlag",
           "name": "LoginFlag",
           "required": false,
@@ -6432,7 +6438,7 @@
         {
           "disabled": false,
           "document": "操作保护设置",
-          "example": "无",
+          "example": "{\"Phone\":1}",
           "member": "LoginActionMfaFlag",
           "name": "ActionFlag",
           "required": false,
@@ -7005,7 +7011,7 @@
         {
           "disabled": false,
           "document": "用户组描述",
-          "example": "test",
+          "example": "财务管理",
           "member": "string",
           "name": "Remark",
           "required": false,

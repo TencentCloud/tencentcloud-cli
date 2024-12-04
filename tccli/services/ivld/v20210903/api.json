@@ -22,7 +22,7 @@
       "status": "online"
     },
     "CreateCustomPerson": {
-      "document": "创建自定义人物。\n\n输入人物名称，基本信息，分类信息与人脸图片，创建自定义人物\n\n人脸图片可使用图片数据(base64编码的图片数据)或者图片URL(推荐使用COS以减少下载时间，其他地址也支持)，原始图片优先，也即如果同时指定了图片数据和图片URL，接口将仅使用图片数据\n",
+      "document": "创建自定义人物。\n\n输入人物名称，基本信息，分类信息与人脸图片，创建自定义人物\n\n人脸图片可使用图片数据(base64编码的图片数据)或者图片URL(推荐使用COS以减少下载时间，其他地址也支持)，原始图片优先，也即如果同时指定了图片数据和图片URL，接口将仅使用图片数据",
       "input": "CreateCustomPersonRequest",
       "name": "创建自定义人物",
       "output": "CreateCustomPersonResponse",
@@ -36,7 +36,7 @@
       "status": "online"
     },
     "CreateTask": {
-      "document": "创建智能标签任务。\n\n请注意，本接口为异步接口，**返回TaskId只代表任务创建成功，不代表任务执行成功**。\n",
+      "document": "创建智能标签任务。\n\n请注意，本接口为异步接口，**返回TaskId只代表任务创建成功，不代表任务执行成功**。",
       "input": "CreateTaskRequest",
       "name": "创建任务",
       "output": "CreateTaskResponse",
@@ -127,7 +127,7 @@
       "status": "online"
     },
     "DescribeTask": {
-      "document": "描述智能标签任务进度。\n\n请注意，**此接口仅返回任务执行状态信息，不返回任务执行结果**\n\n",
+      "document": "描述智能标签任务进度。\n\n请注意，**此接口仅返回任务执行状态信息，不返回任务执行结果**",
       "input": "DescribeTaskRequest",
       "name": "描述任务",
       "output": "DescribeTaskResponse",
@@ -210,7 +210,7 @@
         {
           "disabled": false,
           "document": "自定义人物Id",
-          "example": "person-a1b2c3",
+          "example": "person-Axgo3FYc",
           "member": "string",
           "name": "PersonId",
           "required": true,
@@ -243,10 +243,10 @@
         {
           "disabled": false,
           "document": "自定义人物Id",
-          "example": "person-a1b2c3",
+          "example": "person-Axgo3FYc",
           "member": "string",
           "name": "PersonId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -256,7 +256,7 @@
           "example": "无",
           "member": "PersonImageInfo",
           "name": "ImageInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -379,7 +379,7 @@
           "example": "无",
           "member": "AudioInfo",
           "name": "AudioInfoSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -389,9 +389,19 @@
           "example": "无",
           "member": "MultiLevelTag",
           "name": "TextTagSet",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "音频下载地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://example-109235.cos.ap-guangzho.myqcloud.com/example.mp3",
+          "member": "string",
+          "name": "WebMediaURL",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -451,7 +461,7 @@
           "example": "1024",
           "member": "int64",
           "name": "FileSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -461,7 +471,7 @@
           "example": "bbc3f6c9fb18d80dedf28239f9a86fac",
           "member": "string",
           "name": "MD5",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -471,7 +481,7 @@
           "example": "20.00",
           "member": "float",
           "name": "Duration",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },
@@ -481,7 +491,7 @@
           "example": "44.1",
           "member": "float",
           "name": "SampleRate",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },
@@ -491,7 +501,7 @@
           "example": "128",
           "member": "int64",
           "name": "BitRate",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -501,7 +511,27 @@
           "example": "mp3",
           "member": "string",
           "name": "Format",
-          "required": true,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Audio Bit Depth: 16/24 bit .etc\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "24",
+          "member": "int64",
+          "name": "BitDepth",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "封装格式短后缀\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "mp3",
+          "member": "string",
+          "name": "ShortFormat",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -564,10 +594,10 @@
         {
           "disabled": false,
           "document": "自定义分类信息ID",
-          "example": "\"123\"",
+          "example": "\"10\"",
           "member": "string",
           "name": "CategoryId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -631,7 +661,7 @@
         {
           "disabled": false,
           "document": "自定义分类ID，如不存在接口会报错",
-          "example": "\"123\"",
+          "example": "\"11\"",
           "member": "string",
           "name": "CategoryId",
           "required": true,
@@ -664,10 +694,10 @@
         {
           "disabled": false,
           "document": "自定义人物Id",
-          "example": "person-a1b2c3",
+          "example": "person-Axgo3FYc",
           "member": "string",
           "name": "PersonId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -677,7 +707,7 @@
           "example": "无",
           "member": "PersonImageInfo",
           "name": "ImageInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -712,8 +742,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "媒资文件ID，最长32B",
-          "example": "\"media-12345678\"",
+          "document": "媒资文件ID",
+          "example": "\"media-2aHsU6sj\"",
           "member": "string",
           "name": "MediaId",
           "required": true,
@@ -749,7 +779,7 @@
         {
           "disabled": false,
           "document": "自定义标签，可用于查询",
-          "example": "tag",
+          "example": "新闻",
           "member": "string",
           "name": "Label",
           "required": false,
@@ -758,7 +788,7 @@
         {
           "disabled": false,
           "document": "任务分析完成的回调地址，该设置优先级高于控制台全局的设置；",
-          "example": "http;//xxx",
+          "example": "http://example.com/api/callback",
           "member": "string",
           "name": "CallbackURL",
           "required": false,
@@ -773,10 +803,10 @@
         {
           "disabled": false,
           "document": "智能标签视频分析任务ID",
-          "example": "\"56789\"",
+          "example": "\"task-g8lqk737\"",
           "member": "string",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -804,7 +834,7 @@
         {
           "disabled": false,
           "document": "待处理的视频的URL，目前只支持*不带签名的*COS地址，长度最长1KB",
-          "example": "cos://bucket/object.mp4",
+          "example": "cos://my-release-9327555674/d833e1e4bb2.mp4",
           "member": "string",
           "name": "VideoURL",
           "required": true,
@@ -813,7 +843,7 @@
         {
           "disabled": false,
           "document": "任务处理完成的回调地址。",
-          "example": "http://xxx",
+          "example": "http://example.com/api/callback",
           "member": "string",
           "name": "CallbackURL",
           "required": false,
@@ -822,7 +852,7 @@
         {
           "disabled": false,
           "document": "如果需要你输出 TTS 或者视频，该字段为转存的cos桶地址且不可为空; 示例：https://${Bucket}-${AppId}.cos.${Region}.myqcloud.com/${PathPrefix}/  (注意，cos路径需要以/分隔符结尾)。\n",
-          "example": "https://bucket/path/",
+          "example": "https://my-release-9327555674.cos.ap-guangzhou.myqcloud.com/writedir/",
           "member": "string",
           "name": "WriteBackCosPath",
           "required": false,
@@ -909,7 +939,7 @@
         {
           "disabled": false,
           "document": "返回的任务 id",
-          "example": "task-xxxx",
+          "example": "task-g8lqk737",
           "member": "string",
           "name": "TaskId",
           "output_required": true,
@@ -931,10 +961,10 @@
         {
           "disabled": false,
           "document": "自定义分类ID",
-          "example": "\"123\"",
+          "example": "\"10\"",
           "member": "string",
           "name": "CategoryId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -944,7 +974,7 @@
           "example": "娱乐明星",
           "member": "string",
           "name": "L1Category",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -954,7 +984,7 @@
           "example": "张三",
           "member": "string",
           "name": "L2Category",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -971,28 +1001,25 @@
           "member": "string",
           "name": "Name",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "待过滤的自定义类型Id数组",
-          "example": "[\"123\", \"456\"]",
+          "example": "[\"10\", \"99\"]",
           "member": "string",
           "name": "CategoryIdSet",
           "required": true,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         },
         {
           "disabled": false,
           "document": "待过滤的自定义人物Id数组",
-          "example": "[\"person-a1\", \"person-a2\"]",
+          "example": "[\"person-Axgo3FYc\", \"person-Bxgo3FYc\"]",
           "member": "string",
           "name": "PersonIdSet",
           "required": true,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         },
         {
           "disabled": false,
@@ -1001,8 +1028,7 @@
           "member": "string",
           "name": "L1CategorySet",
           "required": true,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         }
       ],
       "usage": "in"
@@ -1013,10 +1039,10 @@
         {
           "disabled": false,
           "document": "自定义人物Id",
-          "example": "person-a1b2c3",
+          "example": "person-Axgo3FYc",
           "member": "string",
           "name": "PersonId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1026,7 +1052,7 @@
           "example": "张三",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1036,7 +1062,7 @@
           "example": "著名喜剧明星",
           "member": "string",
           "name": "BasicInfo",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1046,7 +1072,7 @@
           "example": "娱乐明星",
           "member": "string",
           "name": "L1Category",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1056,7 +1082,7 @@
           "example": "喜剧演员",
           "member": "string",
           "name": "L2Category",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1066,7 +1092,7 @@
           "example": "无",
           "member": "PersonImageInfo",
           "name": "ImageInfoSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1076,7 +1102,7 @@
           "example": "2022-01-25 10:35:47",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -1105,7 +1131,7 @@
         {
           "disabled": false,
           "document": "自定义分类ID",
-          "example": "\"123\"",
+          "example": "\"99\"",
           "member": "string",
           "name": "CategoryId",
           "required": true,
@@ -1119,11 +1145,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "123",
+          "document": "自定义分类ID",
           "example": "无",
           "member": "string",
           "name": "CategoryId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1142,7 +1168,7 @@
         {
           "disabled": false,
           "document": "自定义人物Id",
-          "example": "person-a1b2c3",
+          "example": "person-Axgo3FYc",
           "member": "string",
           "name": "PersonId",
           "required": true,
@@ -1151,7 +1177,7 @@
         {
           "disabled": false,
           "document": "自定义人脸图片Id",
-          "example": "image-a1b2c3",
+          "example": "image-Axgo3FYc-GOeV",
           "member": "string",
           "name": "ImageId",
           "required": true,
@@ -1166,20 +1192,20 @@
         {
           "disabled": false,
           "document": "自定义人物Id",
-          "example": "person-a1b2c3",
+          "example": "person-Axgo3FYc",
           "member": "string",
           "name": "PersonId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "已删除的人物图片Id",
-          "example": "image-a1b2c3",
+          "example": "image-Axgo3FYc-GOeV",
           "member": "string",
           "name": "ImageId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1198,7 +1224,7 @@
         {
           "disabled": false,
           "document": "待删除的自定义人物ID",
-          "example": "person-a1b2c3",
+          "example": "person-Axgo3FYc",
           "member": "string",
           "name": "PersonId",
           "required": true,
@@ -1213,10 +1239,10 @@
         {
           "disabled": false,
           "document": "已删除的自定义人物Id",
-          "example": "person-a1b2c3",
+          "example": "person-Axgo3FYc",
           "member": "string",
           "name": "PersonId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1235,7 +1261,7 @@
         {
           "disabled": false,
           "document": "媒资文件在系统中的ID",
-          "example": "\"123456\"",
+          "example": "\"media-2aHsU6sj\"",
           "member": "string",
           "name": "MediaId",
           "required": true,
@@ -1262,7 +1288,7 @@
         {
           "disabled": false,
           "document": "任务Id",
-          "example": "task-abcdef",
+          "example": "task-g8lqk737",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -1324,17 +1350,17 @@
           "example": "100",
           "member": "int64",
           "name": "GroupSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "自定义人物库图片后续所在的存储桶",
-          "example": "Bucket0",
+          "example": "test-251202813.cos.ap-guangzhou.myqcloud.com",
           "member": "string",
           "name": "Bucket",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1353,7 +1379,7 @@
         {
           "disabled": false,
           "document": "自定义人物Id",
-          "example": "person-a1b2c3",
+          "example": "person-Axgo3FYc",
           "member": "string",
           "name": "PersonId",
           "required": true,
@@ -1371,17 +1397,17 @@
           "example": "无",
           "member": "CustomPersonInfo",
           "name": "PersonInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "出现该自定义人物的所有分析人物Id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[\"task-123\"]",
+          "example": "[\"task-g8lqk737\"]",
           "member": "string",
           "name": "TaskIdSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1473,8 +1499,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "导入媒资返回的媒资ID，最长32B",
-          "example": "\"123456\"",
+          "document": "导入媒资返回的媒资ID",
+          "example": "\"media-2aHsU6sj\"",
           "member": "string",
           "name": "MediaId",
           "required": true,
@@ -1492,7 +1518,7 @@
           "example": "无",
           "member": "MediaInfo",
           "name": "MediaInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -1585,7 +1611,7 @@
         {
           "disabled": false,
           "document": "创建任务返回的TaskId",
-          "example": "\"task-12345678\"",
+          "example": "\"task-g8lqk737\"",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -1603,7 +1629,7 @@
           "example": "无",
           "member": "TaskInfo",
           "name": "TaskInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -1613,7 +1639,7 @@
           "example": "无",
           "member": "Data",
           "name": "TaskData",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -1623,7 +1649,7 @@
           "example": "无",
           "member": "ImageData",
           "name": "ImageTaskData",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -1633,7 +1659,7 @@
           "example": "无",
           "member": "AudioData",
           "name": "AudioTaskData",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -1643,7 +1669,7 @@
           "example": "无",
           "member": "TextData",
           "name": "TextTaskData",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -1661,8 +1687,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "CreateTask返回的任务ID，最长32B",
-          "example": "\"task-12345678\"",
+          "document": "CreateTask返回的任务ID",
+          "example": "\"task-g8lqk737\"",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -1680,7 +1706,7 @@
           "example": "无",
           "member": "TaskInfo",
           "name": "TaskInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -1810,7 +1836,7 @@
         {
           "disabled": false,
           "document": "要查询的任务Id",
-          "example": "task-xxxx",
+          "example": "task-g8lqk737",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -2100,8 +2126,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "待分析视频的URL，目前只支持*不带签名的*COS地址，长度最长1KB",
-          "example": "cos://bucket/object.mp4",
+          "document": "待分析视频的URL，目前只支持*不带签名的*COS地址，字段输入内容最大为1KB",
+          "example": "cos://my-release-9327555674/d833e1e4bb2.mp4",
           "member": "string",
           "name": "URL",
           "required": true,
@@ -2109,7 +2135,7 @@
         },
         {
           "disabled": false,
-          "document": "待分析视频的MD5，为空时不做校验，否则会做MD5校验，长度必须为32B",
+          "document": "待分析视频的MD5，为空时不做校验，否则会做MD5校验，长度必须为32",
           "example": "9207adf18198dd5b165aae0bdd8f709d",
           "member": "string",
           "name": "MD5",
@@ -2118,7 +2144,7 @@
         },
         {
           "disabled": false,
-          "document": "待分析视频的名称，指定后可支持筛选，最多64B",
+          "document": "待分析视频的名称，指定后可支持筛选，视频名称的大小长度不能超过64",
           "example": "新闻30分",
           "member": "string",
           "name": "Name",
@@ -2128,7 +2154,7 @@
         {
           "disabled": false,
           "document": "当非本人外部视频地址导入时，该字段为转存的cos桶地址且不可为空; 示例：https://${Bucket}-${AppId}.cos.${Region}.myqcloud.com/${PathPrefix}/  (注意，cos路径需要以/分隔符结尾)。\n推荐采用本主帐号COS桶，如果使用其他帐号COS桶，请确保COS桶可写，否则可导致分析失败",
-          "example": "https://bucket/path/",
+          "example": "https://my-release-9327555674.cos.ap-guangzhou.myqcloud.com/d833e1e4bb2.mp4",
           "member": "string",
           "name": "WriteBackCosPath",
           "required": false,
@@ -2137,7 +2163,7 @@
         {
           "disabled": false,
           "document": "自定义标签，可用于查询",
-          "example": "tag",
+          "example": "新闻",
           "member": "string",
           "name": "Label",
           "required": false,
@@ -2146,7 +2172,7 @@
         {
           "disabled": false,
           "document": "媒资导入完成的回调地址，该设置优先级高于控制台全局的设置；",
-          "example": "http;//xxx",
+          "example": "http://example.com/api/callback",
           "member": "string",
           "name": "CallbackURL",
           "required": false,
@@ -2315,7 +2341,7 @@
       "usage": "out"
     },
     "MediaFilter": {
-      "document": "媒资过滤条件\n\n",
+      "document": "媒资过滤条件",
       "members": [
         {
           "disabled": false,
@@ -2324,8 +2350,7 @@
           "member": "string",
           "name": "MediaNameSet",
           "required": false,
-          "type": "list",
-          "value_allowed_null": true
+          "type": "list"
         },
         {
           "disabled": false,
@@ -2334,28 +2359,25 @@
           "member": "int64",
           "name": "StatusSet",
           "required": false,
-          "type": "list",
-          "value_allowed_null": true
+          "type": "list"
         },
         {
           "disabled": false,
           "document": "媒资ID数组",
-          "example": "[\"123\",\"456\"]",
+          "example": "[\"59\",\"108\"]",
           "member": "string",
           "name": "MediaIdSet",
           "required": false,
-          "type": "list",
-          "value_allowed_null": true
+          "type": "list"
         },
         {
           "disabled": false,
           "document": "媒资自定义标签数组",
-          "example": "[\"tag1\"]",
+          "example": "[\"新闻\"]",
           "member": "string",
           "name": "LabelSet",
           "required": false,
-          "type": "list",
-          "value_allowed_null": true
+          "type": "list"
         },
         {
           "disabled": false,
@@ -2364,8 +2386,7 @@
           "member": "int64",
           "name": "MediaType",
           "required": false,
-          "type": "int",
-          "value_allowed_null": true
+          "type": "int"
         }
       ],
       "usage": "in"
@@ -2376,10 +2397,10 @@
         {
           "disabled": false,
           "document": "媒资ID",
-          "example": "“123456”",
+          "example": "“media-2aHsU6sj”",
           "member": "string",
           "name": "MediaId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2389,7 +2410,7 @@
           "example": "\"新闻30分\"",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2399,7 +2420,7 @@
           "example": "\"http://example-bucket/example-key.mp4\"",
           "member": "string",
           "name": "DownLoadURL",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2409,7 +2430,7 @@
           "example": "3",
           "member": "int64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2419,7 +2440,7 @@
           "example": "\"下载失败\"",
           "member": "string",
           "name": "FailedReason",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2429,7 +2450,7 @@
           "example": "无",
           "member": "MediaMetadata",
           "name": "Metadata",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -2439,7 +2460,7 @@
           "example": "30.0",
           "member": "float",
           "name": "Progress",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },
@@ -2449,17 +2470,17 @@
           "example": "\"tag\"",
           "member": "string",
           "name": "Label",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "媒资导入完成后的回调地址\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"http://callback.com/callback\"",
+          "example": "\"http://example.com/api/callback\"",
           "member": "string",
           "name": "CallbackURL",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2469,7 +2490,7 @@
           "example": "1",
           "member": "int64",
           "name": "MediaType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2479,7 +2500,7 @@
           "example": "无",
           "member": "AudioMetadata",
           "name": "AudioMetadata",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -2489,7 +2510,7 @@
           "example": "无",
           "member": "ImageMetadata",
           "name": "ImageMetadata",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -2499,7 +2520,7 @@
           "example": "无",
           "member": "TextMetadata",
           "name": "TextMetadata",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         }
@@ -2644,7 +2665,7 @@
         {
           "disabled": false,
           "document": "任务分析完成后回调地址",
-          "example": "http://xxxx.com",
+          "example": "http://example.com/api/task/callback",
           "member": "string",
           "name": "TaskFinishNotifyURL",
           "required": true,
@@ -2653,7 +2674,7 @@
         {
           "disabled": false,
           "document": "媒体导入完成后回调地址",
-          "example": "http://xxxx.com",
+          "example": "http://example.com/api/media/callback",
           "member": "string",
           "name": "MediaFinishNotifyURL",
           "required": true,
@@ -2791,7 +2812,7 @@
           "example": "陈好",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2801,7 +2822,7 @@
           "example": "演员",
           "member": "string",
           "name": "Job",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2811,7 +2832,7 @@
           "example": "1",
           "member": "int64",
           "name": "FirstAppear",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2821,7 +2842,7 @@
           "example": "无",
           "member": "AppearInfo",
           "name": "AppearInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -2831,8 +2852,18 @@
           "example": "无",
           "member": "Rectf",
           "name": "AppearRect",
-          "required": true,
+          "output_required": true,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "人物的personId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PersonId",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -2849,20 +2880,20 @@
         {
           "disabled": false,
           "document": "任务分析完成后回调地址",
-          "example": "http://xxxx",
+          "example": "http://example.com/api/task/callback",
           "member": "string",
           "name": "TaskFinishNotifyURL",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "媒体导入完成后回调地址",
-          "example": "http://xxxx",
+          "example": "http://example.com/api/media/callback",
           "member": "string",
           "name": "MediaFinishNotifyURL",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3185,8 +3216,7 @@
           "member": "int64",
           "name": "MediaTypeSet",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         },
         {
           "disabled": false,
@@ -3195,8 +3225,7 @@
           "member": "int64",
           "name": "TaskStatusSet",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         },
         {
           "disabled": false,
@@ -3205,18 +3234,16 @@
           "member": "string",
           "name": "TaskNameSet",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         },
         {
           "disabled": false,
           "document": "TaskId数组",
-          "example": "[\"xyzabcd\", \"xyz1234\"]",
+          "example": "[\"task-g8lqk737\", \"task-b8lqk738\"]",
           "member": "string",
           "name": "TaskIdSet",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         },
         {
           "disabled": false,
@@ -3225,8 +3252,7 @@
           "member": "string",
           "name": "MediaNameSet",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         },
         {
           "disabled": false,
@@ -3235,8 +3261,7 @@
           "member": "int64",
           "name": "MediaLangSet",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         },
         {
           "disabled": false,
@@ -3245,18 +3270,16 @@
           "member": "int64",
           "name": "MediaLabelSet",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         },
         {
           "disabled": false,
           "document": "媒资自定义标签数组",
-          "example": "[\"tag1\"]",
+          "example": "[\"新闻\"]",
           "member": "string",
           "name": "LabelSet",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         }
       ],
       "usage": "in"
@@ -3267,10 +3290,10 @@
         {
           "disabled": false,
           "document": "任务ID",
-          "example": "“34567”",
+          "example": "“task-g8lqk737”",
           "member": "string",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3280,17 +3303,17 @@
           "example": "\"本地新闻\"",
           "member": "string",
           "name": "TaskName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "媒资文件ID",
-          "example": "\"media-12345678\"",
+          "example": "\"media-2aHsU6sj\"",
           "member": "string",
           "name": "MediaId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3300,7 +3323,7 @@
           "example": "1",
           "member": "int64",
           "name": "TaskStatus",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3310,7 +3333,7 @@
           "example": "75",
           "member": "float",
           "name": "TaskProgress",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },
@@ -3320,7 +3343,7 @@
           "example": "300",
           "member": "int64",
           "name": "TaskTimeCost",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3330,7 +3353,7 @@
           "example": "2006-01-02T15:04:05Z07:00",
           "member": "string",
           "name": "TaskCreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3340,7 +3363,7 @@
           "example": "2006-01-02T15:04:05Z07:00",
           "member": "string",
           "name": "TaskStartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3350,7 +3373,7 @@
           "example": "\"分析失败\"",
           "member": "string",
           "name": "FailedReason",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3360,7 +3383,7 @@
           "example": "无",
           "member": "MediaPreknownInfo",
           "name": "MediaPreknownInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -3370,7 +3393,7 @@
           "example": "\"test-video\"",
           "member": "string",
           "name": "MediaName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3380,17 +3403,17 @@
           "example": "\"tag\"",
           "member": "string",
           "name": "Label",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "任务分析完成后的后调地址\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"http://callback.com/callback\"",
+          "example": "\"http://example.com/api/callback\"",
           "member": "string",
           "name": "CallbackURL",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3400,7 +3423,7 @@
           "example": "无",
           "member": "AudioMetadata",
           "name": "AudioMetadata",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -3410,7 +3433,7 @@
           "example": "无",
           "member": "ImageMetadata",
           "name": "ImageMetadata",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -3420,7 +3443,7 @@
           "example": "无",
           "member": "TextMetadata",
           "name": "TextMetadata",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -3430,7 +3453,7 @@
           "example": "无",
           "member": "MediaMetadata",
           "name": "Metadata",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         }
@@ -3482,7 +3505,7 @@
           "example": "“欢迎收看测试新闻”",
           "member": "string",
           "name": "Content",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3492,7 +3515,7 @@
           "example": "“欢迎”",
           "member": "string",
           "name": "Summary",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3502,8 +3525,18 @@
           "example": "无",
           "member": "MultiLevelTag",
           "name": "TextTagSet",
-          "required": true,
+          "output_required": true,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文档下载地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://example-109235.cos.ap-guangzho.myqcloud.com/example.json",
+          "member": "string",
+          "name": "WebMediaURL",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -3564,7 +3597,7 @@
           "example": "1024",
           "member": "int64",
           "name": "FileSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3574,7 +3607,7 @@
           "example": "bbc3f6c9fb18d80dedf28239f9a86fac",
           "member": "string",
           "name": "MD5",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3584,7 +3617,7 @@
           "example": "30",
           "member": "int64",
           "name": "Length",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3594,7 +3627,17 @@
           "example": "txt",
           "member": "string",
           "name": "Format",
-          "required": true,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "封装格式短后缀\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "txt",
+          "member": "string",
+          "name": "ShortFormat",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -3626,18 +3669,28 @@
           "example": "无",
           "member": "VideoAppearInfo",
           "name": "VideoAppearSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "未知人物是否可以入库(只有当未知人物人脸小图质量分符合要求时才可入库)\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "是",
+          "example": "true",
           "member": "bool",
           "name": "PutLibraryAllowed",
-          "required": true,
+          "output_required": true,
           "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "内容审核结果: 0-正常;1-涉政;其他待确定\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "AuditClass",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -3649,7 +3702,7 @@
         {
           "disabled": false,
           "document": "自定义人物类型Id",
-          "example": "\"123456\"",
+          "example": "\"2\"",
           "member": "string",
           "name": "CategoryId",
           "required": true,
@@ -3682,10 +3735,10 @@
         {
           "disabled": false,
           "document": "成功更新的自定义人物类型Id",
-          "example": "\"123456\"",
+          "example": "\"2\"",
           "member": "string",
           "name": "CategoryId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3704,7 +3757,7 @@
         {
           "disabled": false,
           "document": "待更新的自定义人物Id",
-          "example": "person-a1b2c3",
+          "example": "person-Axgo3FYc",
           "member": "string",
           "name": "PersonId",
           "required": true,
@@ -3731,7 +3784,7 @@
         {
           "disabled": false,
           "document": "更新后的分类信息，如为空则不更新",
-          "example": "自定义分类Id",
+          "example": "10",
           "member": "string",
           "name": "CategoryId",
           "required": false,
@@ -3746,10 +3799,10 @@
         {
           "disabled": false,
           "document": "成功更新的自定义人物Id",
-          "example": "person-a1b2c3",
+          "example": "person-Axgo3FYc",
           "member": "string",
           "name": "PersonId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3771,7 +3824,7 @@
           "example": "0.52",
           "member": "float",
           "name": "StartTimeStamp",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -3781,17 +3834,17 @@
           "example": "1.52",
           "member": "float",
           "name": "EndTimeStamp",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "关键词在视觉信息中的封面图片",
-          "example": "cos://bucket/cover0.jpg",
+          "example": "cos://my-release-9327555674/xfyheve9rf5.jpg",
           "member": "string",
           "name": "ImageURL",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }

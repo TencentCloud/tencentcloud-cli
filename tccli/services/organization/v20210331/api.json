@@ -4469,8 +4469,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "策略Id。",
-          "example": "133495775",
+          "document": "策略Id。可以调用[ListPolicies](https://cloud.tencent.com/document/product/850/105311)获取",
+          "example": "10001",
           "member": "uint64",
           "name": "PolicyId",
           "required": true,
@@ -4494,18 +4494,20 @@
         {
           "disabled": false,
           "document": "策略Id。",
-          "example": "10098",
+          "example": "10001",
           "member": "uint64",
           "name": "PolicyId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "策略名称。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test_policy",
+          "example": "policy_name",
           "member": "string",
           "name": "PolicyName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4515,15 +4517,17 @@
           "example": "1",
           "member": "uint64",
           "name": "Type",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "策略描述。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "测试权限",
+          "example": "cvm policy",
           "member": "string",
           "name": "Description",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4533,6 +4537,7 @@
           "example": "{\"version\":\"2.0\",\"statement\":[{\"effect\":\"allow\",\"action\":[\"name\\",
           "member": "string",
           "name": "PolicyDocument",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4542,6 +4547,7 @@
           "example": "2022-07-29 21:18:40",
           "member": "string",
           "name": "UpdateTime",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4551,6 +4557,7 @@
           "example": "2022-07-29 21:18:40",
           "member": "string",
           "name": "AddTime",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5761,7 +5768,7 @@
         {
           "disabled": false,
           "document": "关系策略。取值：Financial",
-          "example": "Finical",
+          "example": "Financial",
           "member": "string",
           "name": "PolicyType",
           "required": true,
@@ -5788,7 +5795,7 @@
         {
           "disabled": false,
           "document": "备注。",
-          "example": "\"\"",
+          "example": "invitation member",
           "member": "string",
           "name": "Remark",
           "required": false,
@@ -5806,7 +5813,7 @@
         {
           "disabled": false,
           "document": "代付者Uin。成员代付费时需要",
-          "example": "\"\"",
+          "example": "100000000001",
           "member": "string",
           "name": "PayUin",
           "required": false,
@@ -5815,7 +5822,7 @@
         {
           "disabled": false,
           "document": "互信实名主体名称。",
-          "example": "\"\"",
+          "example": "company_name",
           "member": "string",
           "name": "RelationAuthName",
           "required": false,
@@ -5824,7 +5831,7 @@
         {
           "disabled": false,
           "document": "互信主体证明文件列表。",
-          "example": "[]",
+          "example": "[{\"Name\":\"file_name\",\"Url\":\"file/file_name.txt\"}]",
           "member": "AuthRelationFile",
           "name": "AuthFile",
           "required": false,
@@ -5833,7 +5840,7 @@
         {
           "disabled": false,
           "document": "成员标签列表。最大10个",
-          "example": "[]",
+          "example": "[{\"Tagkey\":\"key\",\"TagValue\":\"value\"}]",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -6352,7 +6359,7 @@
         {
           "disabled": false,
           "document": "从上一页的响应中获取的下一页的Token值。\n如果是第一次请求，设置为空。",
-          "example": "\"\"",
+          "example": "fgh363",
           "member": "string",
           "name": "PaginationToken",
           "required": false,
@@ -6361,7 +6368,7 @@
         {
           "disabled": false,
           "document": "标签键。",
-          "example": "\"\"",
+          "example": "key",
           "member": "string",
           "name": "TagKey",
           "required": false,
@@ -6375,23 +6382,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源及标签合规信息。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "资源及标签合规信息。",
+          "example": "[{\"Resource\":\"qcs::vpc::uin/1111111111:subnet/subnet1\",\"ComplianceDetails\":{\"ComplianceStatus\":true,\"KeysWithNonCompliantValues\":[\"key\"],\"NonCompliantKeys\":[\"key\"]},\"Tags\":[{\"TagKey\":\"key\",\"TagValue\":\"value\"}]}]",
           "member": "ResourceTagMapping",
           "name": "Items",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "获取的下一页的Token值。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "document": "获取的下一页的Token值。",
+          "example": "fgh363",
           "member": "string",
           "name": "PaginationToken",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -6440,23 +6447,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "总数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "总数。",
           "example": "1",
           "member": "int64",
           "name": "Total",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "委派管理员列表。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "委派管理员列表。",
+          "example": "[{\"ServiceId\":1,\"ProductName\":\"CloudAudit\",\"MemberUin\":111111111111,\"MemberName\":\"mamber_name\",\"UsageStatus\":2,\"CreateTime\":\"2022-03-12 12:19:12\",\"ManagementScope\":1,\"ManagementScopeMembers\":[],\"ManagementScopeNodes\":[]}]",
           "member": "OrganizationServiceAssignMember",
           "name": "Items",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -6491,7 +6498,7 @@
         {
           "disabled": false,
           "document": "名称搜索关键字。",
-          "example": "test",
+          "example": "identity_name",
           "member": "string",
           "name": "SearchKey",
           "required": false,
@@ -6523,23 +6530,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "总数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "总数。",
           "example": "1",
           "member": "int64",
           "name": "Total",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "条目详情。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "条目详情。",
+          "example": "[{\"IdentityId\":1,\"IdentityAliasName\":\"identity_name\",\"Description\":\"\",\"IdentityPolicy\":[{\"PolicyId\":1,\"PolicyName\":\"AdministratorAccess\"}],\"IdentityType\":1,\"UpdateTime\":\"2021-07-15 21:08:38\"}]",
           "member": "OrgIdentity",
           "name": "Items",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -6574,7 +6581,7 @@
         {
           "disabled": false,
           "document": "名称搜索关键字。",
-          "example": "\"\"",
+          "example": "cloudaudit",
           "member": "string",
           "name": "SearchKey",
           "required": false,
@@ -6588,23 +6595,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "总数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "总数。",
           "example": "1",
           "member": "int64",
           "name": "Total",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "集团服务列表。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "集团服务列表。",
+          "example": "[{\"ServiceId\":1,\"ProductName\":\"CloudAudit\",\"IsAssign\":1,\"CanAssignCount\":5,\"Description\":\"\",\"MemberNum\":\"0\",\"Document\":\"\",\"ConsoleUrl\":\"\",\"IsUsageStatus\":2,\"Product\":\"cloudaudit\",\"ServiceGrant\":2,\"GrantStatus\":\"Disabled\",\"IsSetManagementScope\":2}]",
           "member": "OrganizationServiceAssign",
           "name": "Items",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -6827,7 +6834,7 @@
         {
           "disabled": false,
           "document": "搜索关键字。按照策略名称搜索",
-          "example": "testName",
+          "example": "policy_name",
           "member": "string",
           "name": "Keyword",
           "required": false,
@@ -6842,20 +6849,22 @@
         {
           "disabled": false,
           "document": "总数。",
-          "example": "12",
+          "example": "1",
           "member": "uint64",
           "name": "TotalNum",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "目标关联的策略列表。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "目标关联的策略列表。",
+          "example": "[{\"StrategyId\":10001,\"StrategyName\":\"policy_name\",\"AddTime\":\"2022-08-07 20:20:09\",\"UpdateTime\":\"2022-08-07 20:20:09\",\"AttachTime\":\"2022-08-08 14:49:59\",\"Type\":2,\"Remark\":\"deny policy\",\"Uin\":111111111111,\"Name\":\"member_name\"}]",
           "member": "ListPoliciesForTarget",
           "name": "List",
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -6899,7 +6908,7 @@
         {
           "disabled": false,
           "document": "搜索关键字。按照策略名搜索",
-          "example": "test_name",
+          "example": "policy_name",
           "member": "string",
           "name": "Keyword",
           "required": false,
@@ -6923,20 +6932,22 @@
         {
           "disabled": false,
           "document": "策略总数",
-          "example": "12",
+          "example": "1",
           "member": "uint64",
           "name": "TotalNum",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "策略列表数据\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "策略列表数据",
+          "example": "[{\"AddTime\":\"2022-08-04 16:04:17\",\"AttachedTimes\":0,\"Description\":\"deny policy\",\"PolicyId\":10001,\"PolicyName\":\"policy_name\",\"Type\":1,\"UpdateTime\":\"2022-08-04 16:04:17\"}]",
           "member": "ListPolicyNode",
           "name": "List",
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -7542,7 +7553,7 @@
         {
           "disabled": false,
           "document": "策略Id。",
-          "example": "10083",
+          "example": "1001",
           "member": "uint64",
           "name": "PolicyId",
           "required": true,
@@ -7587,7 +7598,7 @@
         {
           "disabled": false,
           "document": "按照多个策略id搜索，空格隔开。",
-          "example": "831 832",
+          "example": "10001 10002",
           "member": "string",
           "name": "Keyword",
           "required": false,
@@ -7602,20 +7613,22 @@
         {
           "disabled": false,
           "document": "总数。",
-          "example": "12",
+          "example": "1",
           "member": "uint64",
           "name": "TotalNum",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "指定SCP策略关联目标列表。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "指定SCP策略关联目标列表。",
+          "example": "[{\"AddTime\":\"2022-08-09 17:08:35\",\"Name\":\"member_name\",\"RelatedType\":1,\"Uin\":111111111111}]",
           "member": "ListTargetsForPolicyNode",
           "name": "List",
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -9569,7 +9582,7 @@
         {
           "disabled": false,
           "document": "企业组织ID",
-          "example": "1234",
+          "example": "101",
           "member": "uint64",
           "name": "OrgId",
           "required": true,
@@ -11299,7 +11312,7 @@
         {
           "disabled": false,
           "document": "身份描述。",
-          "example": "\"\"",
+          "example": "admin identity",
           "member": "string",
           "name": "Description",
           "required": true,
@@ -11308,7 +11321,7 @@
         {
           "disabled": false,
           "document": "身份策略。",
-          "example": "无",
+          "example": "[{\"PolicyId\":1,\"PolicyName\":\"AdministratorAccess\"}]",
           "member": "IdentityPolicy",
           "name": "IdentityPolicy",
           "required": true,
@@ -11407,7 +11420,7 @@
         {
           "disabled": false,
           "document": "成员名称。最大长度为25个字符，支持英文字母、数字、汉字、符号+@、&._[]-:,",
-          "example": "name",
+          "example": "member_name",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -11416,7 +11429,7 @@
         {
           "disabled": false,
           "document": "备注。最大长度为40个字符",
-          "example": "remark",
+          "example": "create member",
           "member": "string",
           "name": "Remark",
           "required": false,
@@ -11425,7 +11438,7 @@
         {
           "disabled": false,
           "document": "关系策略类型。PolicyType不为空，PermissionIds不能为空。取值：Financial",
-          "example": "\"\"",
+          "example": "Financial",
           "member": "string",
           "name": "PolicyType",
           "required": false,
@@ -11434,7 +11447,7 @@
         {
           "disabled": false,
           "document": "成员财务权限ID列表。PermissionIds不为空，PolicyType不能为空。\n取值：1-查看账单、2-查看余额、3-资金划拨、4-合并出账、5-开票、6-优惠继承、7-代付费、8-成本分析，如果有值，1、2 默认必须",
-          "example": "无",
+          "example": "[1,2]",
           "member": "uint64",
           "name": "PermissionIds",
           "required": false,
@@ -11443,7 +11456,7 @@
         {
           "disabled": false,
           "document": "是否允许成员退出组织。取值：Allow-允许、Denied-不允许",
-          "example": "\"\"",
+          "example": "allow",
           "member": "string",
           "name": "IsAllowQuit",
           "required": false,
@@ -11452,7 +11465,7 @@
         {
           "disabled": false,
           "document": "代付者Uin。成员财务权限有代付费时需要，取值为成员对应主体的主体管理员Uin",
-          "example": "\"\"",
+          "example": "100000000001",
           "member": "string",
           "name": "PayUin",
           "required": false,

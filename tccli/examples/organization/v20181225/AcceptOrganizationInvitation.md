@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli organization AcceptOrganizationInvitation --cli-unfold-argument  \
-    --Id 123
+    --Id 1001
 ```
 
 Output: 

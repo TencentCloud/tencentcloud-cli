@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli organization UpdateOrganizationMember --cli-unfold-argument  \
-    --MemberUin 123 \
-    --Name "test" \
-    --Remark "test"
+    --MemberUin 100000000001 \
+    --Name "member_name" \
+    --Remark '"create member"'
 ```
 
 Output: 

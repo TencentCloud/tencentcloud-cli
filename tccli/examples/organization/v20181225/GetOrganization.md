@@ -11,10 +11,10 @@ Output:
 ```
 {
     "Response": {
-        "OrgId": 1,
-        "HostUin": 1,
-        "Nickname": "test",
-        "Mail": "test@qq.com",
+        "OrgId": 101,
+        "HostUin": 100000000001,
+        "Nickname": "host_name",
+        "Mail": "23***@qq.com",
         "OrgType": 1,
         "IsEmpty": 1,
         "RequestId": "629cde15-2b9c-403b-b5f1-033992709327"

@@ -1257,6 +1257,106 @@
       ],
       "usage": "in"
     },
+    "GPUConfig": {
+      "document": "机型名称与GPU相关的参数，包括驱动版本，CUDA版本，cuDNN版本，是否开启MIG以及是否开启Fabric等相关配置信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "机型名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "GN7.2XLARGE40",
+          "member": "string",
+          "name": "InstanceType",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "GPU相关的参数，包括驱动版本，CUDA版本，cuDNN版本，是否开启MIG以及是否开启Fabric等\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "GPUParams",
+          "name": "GPUParams",
+          "output_required": true,
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "GPUParams": {
+      "document": "GPU相关的参数，包括驱动版本，CUDA版本，cuDNN版本，是否开启MIG以及是否开启Fabric",
+      "members": [
+        {
+          "disabled": false,
+          "document": "GPU驱动版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "470.82.01",
+          "member": "string",
+          "name": "Driver",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "CUDA版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "11.4",
+          "member": "string",
+          "name": "CUDA",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "CUDNN版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "7.5.0",
+          "member": "string",
+          "name": "CUDNN",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否启用MIG特性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "MIGEnable",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否启用Fabric特性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "Fabric",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自定义驱动下载地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http://mirrors.tencentyun.com/install/GPU/NVIDIA-Linux-x86_64-525.105.17.run",
+          "member": "string",
+          "name": "CustomGPUDriver",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "HealthCheckPolicy": {
       "document": "健康检测规则",
       "members": [
@@ -3516,6 +3616,15 @@
           "example": "[\"sky-test\",\"sky-test2\"]",
           "member": "string",
           "name": "KeyIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "节点池 GPU 配置",
+          "example": "[{\"InstanceType\":\"GN7Large.32\",\"GPUParams\":{\"Driver\":\"450.104.51\"}}]",
+          "member": "GPUConfig",
+          "name": "GPUConfigs",
           "required": false,
           "type": "list"
         }

@@ -2052,6 +2052,14 @@
         "title": "查询某一个账号所有的共享流量包信息"
       }
     ],
+    "DescribeTrafficQosPolicy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTrafficQosPolicy\n<公共请求参数>\n\n{\n    \"CcnId\": \"ccn-mo8mumi7\",\n    \"LocalRegion\": \"ap-guangzhou\",\n    \"RemoteRegion\": \"ap-chengdu\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TrafficQosPolicySet\": [\n            {\n                \"CcnId\": \"ccn-0puqax1n\",\n                \"QosId\": 1,\n                \"QosPolicyDescription\": \"1\",\n                \"QosPolicyName\": \"1\",\n                \"Bandwidth\": 1\n            }\n        ],\n        \"RequestId\": \"e052b088-c3a4-4efa-96e6-8af897abb369\"\n    }\n}",
+        "title": "查询流量调度规则"
+      }
+    ],
     "DescribeUsedIpAddress": [
       {
         "document": "查询子网下的ip使用情况，查询3个ip,只有2个ip被占用并返回资源信息",

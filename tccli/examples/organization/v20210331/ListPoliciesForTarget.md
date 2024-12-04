@@ -15,29 +15,18 @@ Output:
     "Response": {
         "List": [
             {
-                "StrategyId": 134173928,
-                "StrategyName": "policy-test-1",
+                "StrategyId": 10001,
+                "StrategyName": "policy_name",
                 "AddTime": "2022-08-07 20:20:09",
                 "UpdateTime": "2022-08-07 20:20:09",
                 "AttachTime": "2022-08-08 14:49:59",
                 "Type": 2,
-                "Remark": "test1",
+                "Remark": "deny policy",
                 "Uin": 111111111111,
-                "Name": "test"
-            },
-            {
-                "StrategyId": 1000,
-                "StrategyName": "FullQcloudAccess",
-                "AddTime": "2022-08-08 14:45:50",
-                "UpdateTime": "2022-08-08 14:49:59",
-                "AttachTime": "2022-08-08 14:49:59",
-                "Type": 2,
-                "Remark": "允许授权所有操作，用于企业组织服务控制策略。",
-                "Uin": 111111111111,
-                "Name": "test"
+                "Name": "member_name"
             }
         ],
-        "TotalNum": 2,
+        "TotalNum": 1,
         "RequestId": "2f76e3a5-225f-4deb-8d98-4efb0f1ae0ea"
     }
 }

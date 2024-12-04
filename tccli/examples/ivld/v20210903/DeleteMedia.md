@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ivld DeleteMedia --cli-unfold-argument  \
-    --MediaId media-12345678
+    --MediaId media-2aHsU6sj
 ```
 
 Output: 
@@ -26,7 +26,7 @@ Input:
 
 ```
 tccli ivld DeleteMedia --cli-unfold-argument  \
-    --MediaId media-a1b2c3d4
+    --MediaId media-2aHsU6sj
 ```
 
 Output: 

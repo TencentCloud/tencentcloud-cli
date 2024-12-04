@@ -945,11 +945,11 @@
       "usage": "both"
     },
     "AttrLabel": {
-      "document": "属性标签详情信息",
+      "document": "标签详情信息",
       "members": [
         {
           "disabled": false,
-          "document": "属性标签来源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标签来源\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "uint64",
           "name": "Source",
@@ -959,7 +959,7 @@
         },
         {
           "disabled": false,
-          "document": "属性ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标签ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "AttrBizId",
@@ -969,7 +969,7 @@
         },
         {
           "disabled": false,
-          "document": "属性标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标签标识\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "AttrKey",
@@ -979,7 +979,7 @@
         },
         {
           "disabled": false,
-          "document": "属性名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标签名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "AttrName",
@@ -989,7 +989,7 @@
         },
         {
           "disabled": false,
-          "document": "标签ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标签值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Label",
           "name": "Labels",
@@ -1005,7 +1005,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "属性ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标签ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "AttrBizId",
@@ -1015,7 +1015,7 @@
         },
         {
           "disabled": false,
-          "document": "属性标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标签标识\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "AttrKey",
@@ -1025,7 +1025,7 @@
         },
         {
           "disabled": false,
-          "document": "属性名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标签名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "AttrName",
@@ -1035,7 +1035,7 @@
         },
         {
           "disabled": false,
-          "document": "标签名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标签值名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "LabelNames",
@@ -1045,7 +1045,7 @@
         },
         {
           "disabled": false,
-          "document": "属性标签是否在更新中\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标签是否在更新中\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "bool",
           "name": "IsUpdating",
@@ -1077,11 +1077,11 @@
       "usage": "out"
     },
     "AttrLabelRefer": {
-      "document": "属性标签引用信息",
+      "document": "标签引用信息",
       "members": [
         {
           "disabled": false,
-          "document": "属性标签来源，1：属性标签",
+          "document": "标签来源，1：标签",
           "example": "1",
           "member": "uint64",
           "name": "Source",
@@ -1092,7 +1092,7 @@
         },
         {
           "disabled": false,
-          "document": "属性ID",
+          "document": "标签ID",
           "example": "1",
           "member": "string",
           "name": "AttributeBizId",
@@ -1103,7 +1103,7 @@
         },
         {
           "disabled": false,
-          "document": "标签ID",
+          "document": "标签值ID",
           "example": "[1,2]",
           "member": "string",
           "name": "LabelBizIds",
@@ -1131,11 +1131,11 @@
       "usage": "in"
     },
     "AttributeLabel": {
-      "document": "属性标签",
+      "document": "标签值",
       "members": [
         {
           "disabled": false,
-          "document": "标签ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标准词ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "LabelBizId",
@@ -1146,7 +1146,7 @@
         },
         {
           "disabled": false,
-          "document": "标签名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标准词名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "LabelName",
@@ -1157,7 +1157,7 @@
         },
         {
           "disabled": false,
-          "document": "相似标签名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "同义词名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "SimilarLabels",

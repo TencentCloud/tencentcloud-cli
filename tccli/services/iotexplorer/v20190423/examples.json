@@ -942,6 +942,20 @@
         "title": "继承云存用户"
       }
     ],
+    "InvokeCloudStorageAIServiceTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InvokeCloudStorageAIServiceTask\n<公共请求参数>\n\n{\n    \"ProductId\": \"TSLFHRWDSD\",\n    \"DeviceName\": \"dev002\",\n    \"ServiceType\": \"VideoToText\",\n    \"StartTime\": 1732780832,\n    \"EndTime\": 1732780835,\n    \"VideoURLs\": [\n        \"https://example.com/video.mp4\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Completed\": true,\n        \"RequestId\": \"5acdfd09-5634-4ae3-8ebd-1d4c33bb7dd7\",\n        \"TaskId\": \"019371d2-da8b-7171-a6de-fc077173b205\",\n        \"TaskInfo\": {\n            \"ChannelId\": 0,\n            \"CreateTime\": 1732781464,\n            \"DeviceName\": \"dev002\",\n            \"EndTime\": 1732780835,\n            \"Files\": [],\n            \"ProductId\": \"TSLFHRWDSD\",\n            \"Result\": \"{\\\"DetectedClassifications\\\": [\\\"person\\\"], \\\"Summary\\\": \\\"白衣人走在湿漉漉的路面上\\\"}\",\n            \"ServiceType\": \"VideoToText\",\n            \"StartTime\": 1732780832,\n            \"Status\": 3,\n            \"TaskId\": \"019371d2-da8b-7171-a6de-fc077173b205\",\n            \"UpdateTime\": 1732781466\n        }\n    }\n}",
+        "title": "创建设备云存 AI 分析任务（执行成功）"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InvokeCloudStorageAIServiceTask\n<公共请求参数>\n\n{\n    \"ProductId\": \"TSLFHRWDSD\",\n    \"DeviceName\": \"dev002\",\n    \"ServiceType\": \"VideoToText\",\n    \"StartTime\": 1732780832,\n    \"EndTime\": 1732780835,\n    \"VideoURLs\": [\n        \"https://example.com/video.mp4\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Completed\": false,\n        \"RequestId\": \"5acdfd09-5634-4ae3-8ebd-1d4c33bb7dd7\",\n        \"TaskId\": \"019371d2-da8b-7171-a6de-fc077173b205\",\n        \"TaskInfo\": {\n            \"ChannelId\": 0,\n            \"CreateTime\": 1732781464,\n            \"DeviceName\": \"dev002\",\n            \"EndTime\": 1732780835,\n            \"Files\": [],\n            \"ProductId\": \"TSLFHRWDSD\",\n            \"Result\": \"\",\n            \"ServiceType\": \"VideoToText\",\n            \"StartTime\": 1732780832,\n            \"Status\": 4,\n            \"TaskId\": \"019371d2-da8b-7171-a6de-fc077173b205\",\n            \"UpdateTime\": 1732781464\n        }\n    }\n}",
+        "title": "创建设备云存 AI 分析任务（超时未完成，转异步）"
+      }
+    ],
     "InvokeExternalSourceAIServiceTask": [
       {
         "document": "",

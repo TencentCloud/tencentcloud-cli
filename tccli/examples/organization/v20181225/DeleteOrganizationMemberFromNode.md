@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli organization DeleteOrganizationMemberFromNode --cli-unfold-argument  \
-    --MemberUin 123 \
-    --NodeId 12
+    --MemberUin 100000000001 \
+    --NodeId 1001
 ```
 
 Output: 

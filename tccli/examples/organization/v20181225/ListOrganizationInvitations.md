@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli organization ListOrganizationInvitations --cli-unfold-argument  \
-    --Invited 1 \
+    --Invited 101 \
     --Offset 0 \
     --Limit 10
 ```
@@ -15,20 +15,20 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 0,
+        "TotalCount": 1,
         "Invitations": [
             {
                 "Id": 1,
-                "Uin": 1,
-                "HostUin": 1,
-                "HostName": "aa",
-                "HostMail": "aa@qq.com",
+                "Uin": 1000001,
+                "HostUin": 1000001,
+                "HostName": "host_name",
+                "HostMail": "23**@qq.com",
                 "Status": 1,
-                "Name": "aa",
-                "Remark": "",
+                "Name": "member_name",
+                "Remark": "invitation member",
                 "OrgType": 1,
-                "InviteTime": "2019-10-10 00:00:00",
-                "ExpireTime": "2019-10-10 00:00:00"
+                "InviteTime": "2021-03-04 12:22:21",
+                "ExpireTime": "2021-03-04 12:22:21"
             }
         ],
         "RequestId": "97fd9345-cfd6-4b93-8205-e25d21ecd26e"

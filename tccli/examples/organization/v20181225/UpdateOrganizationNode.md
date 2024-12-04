@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli organization UpdateOrganizationNode --cli-unfold-argument  \
-    --NodeId 123 \
-    --Name "test" \
-    --ParentNodeId 11
+    --NodeId 1001 \
+    --Name "node_name" \
+    --ParentNodeId 101
 ```
 
 Output: 

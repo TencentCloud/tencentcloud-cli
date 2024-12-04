@@ -18213,10 +18213,21 @@
       "members": [
         {
           "disabled": false,
-          "document": "通知类型，默认CMQ，指定URL时HTTP回调推送到 NotifyUrl 指定的地址。\n\n<font color=\"red\"> 注：不填或为空时默认 CMQ，如需采用其他类型需填写对应类型值。 </font>",
+          "document": "通知类型：\n\"CMQ\"：回调消息写入cmq队列； \n\"URL\"： 指定URL时HTTP回调推送到 NotifyUrl 指定的地址，回调协议http+json，包体内容同[解析直播事件通知接口](https://cloud.tencent.com/document/product/862/39229) 的输出参数\n\n<font color=\"red\"> 注：不填或为空时默认 CMQ，如需采用其他类型需填写对应类型值。 </font>",
           "example": "URL",
           "member": "string",
           "name": "NotifyType",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "HTTP回调地址，NotifyType为URL时必填。",
+          "example": "http://www.qq.com/callback",
+          "member": "string",
+          "name": "NotifyUrl",
           "output_required": true,
           "required": false,
           "type": "string",
@@ -18261,17 +18272,6 @@
           "example": "test",
           "member": "string",
           "name": "TopicName",
-          "output_required": true,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "HTTP回调地址，NotifyType为URL时必填。",
-          "example": "http://www.qq.com/callback",
-          "member": "string",
-          "name": "NotifyUrl",
           "output_required": true,
           "required": false,
           "type": "string",

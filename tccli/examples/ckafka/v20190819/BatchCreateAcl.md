@@ -10,9 +10,9 @@ tccli ckafka BatchCreateAcl --cli-unfold-argument  \
     --ResourceType 2 \
     --RuleList.0.Operation 2 \
     --RuleList.0.PermissionType 3 \
-    --RuleList.0.Host * \
+    --RuleList.0.Host 10.1.1.0/24 \
     --RuleList.0.Principal User:* \
-    --ResourceNames ******
+    --ResourceNames rewr topic-1
 ```
 
 Output: 

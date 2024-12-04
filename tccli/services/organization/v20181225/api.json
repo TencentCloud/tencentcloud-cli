@@ -154,7 +154,7 @@
         {
           "disabled": false,
           "document": "邀请ID",
-          "example": "",
+          "example": "1001",
           "member": "uint64",
           "name": "Id",
           "required": true,
@@ -181,7 +181,7 @@
         {
           "disabled": false,
           "document": "父组织单元ID",
-          "example": "",
+          "example": "101",
           "member": "uint64",
           "name": "ParentNodeId",
           "required": true,
@@ -190,7 +190,7 @@
         {
           "disabled": false,
           "document": "组织单元名字",
-          "example": "",
+          "example": "node_name",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -205,9 +205,10 @@
         {
           "disabled": false,
           "document": "组织单元ID",
-          "example": "",
+          "example": "1001",
           "member": "uint64",
           "name": "NodeId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -226,7 +227,7 @@
         {
           "disabled": false,
           "document": "邀请ID",
-          "example": "",
+          "example": "1001",
           "member": "uint64",
           "name": "Id",
           "required": true,
@@ -253,7 +254,7 @@
         {
           "disabled": false,
           "document": "组织类型（目前固定为1）",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "OrgType",
           "required": true,
@@ -268,36 +269,40 @@
         {
           "disabled": false,
           "document": "企业组织ID",
-          "example": "",
+          "example": "101",
           "member": "uint64",
           "name": "OrgId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "创建者昵称",
-          "example": "",
+          "example": "host_name",
           "member": "string",
           "name": "Nickname",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "创建者邮箱",
-          "example": "",
+          "example": "23***.qq.com",
           "member": "string",
           "name": "Mail",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "组织类型",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "OrgType",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -316,7 +321,7 @@
         {
           "disabled": false,
           "document": "被删除成员UIN",
-          "example": "",
+          "example": "100000000001",
           "member": "uint64",
           "name": "MemberUin",
           "required": true,
@@ -325,7 +330,7 @@
         {
           "disabled": false,
           "document": "组织单元ID",
-          "example": "",
+          "example": "1001",
           "member": "uint64",
           "name": "NodeId",
           "required": true,
@@ -379,7 +384,7 @@
         {
           "disabled": false,
           "document": "组织单元ID列表",
-          "example": "",
+          "example": "[1001]",
           "member": "uint64",
           "name": "NodeIds",
           "required": true,
@@ -423,7 +428,7 @@
         {
           "disabled": false,
           "document": "邀请ID",
-          "example": "",
+          "example": "1001",
           "member": "uint64",
           "name": "Id",
           "required": true,
@@ -450,7 +455,7 @@
         {
           "disabled": false,
           "document": "组织成员UIN",
-          "example": "",
+          "example": "100000000001",
           "member": "uint64",
           "name": "MemberUin",
           "required": true,
@@ -465,63 +470,70 @@
         {
           "disabled": false,
           "document": "组织成员UIN",
-          "example": "",
+          "example": "100000000001",
           "member": "uint64",
           "name": "Uin",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "组织成员名称",
-          "example": "",
+          "example": "member_name",
           "member": "string",
           "name": "Name",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "备注",
-          "example": "",
+          "example": "create member",
           "member": "string",
           "name": "Remark",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "加入时间",
-          "example": "",
+          "example": "2020-10-08 12:09:12",
           "member": "datetime",
           "name": "JoinTime",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "组织单元ID",
-          "example": "",
+          "example": "1001",
           "member": "uint64",
           "name": "NodeId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "组织单元名称",
-          "example": "",
+          "example": "node_name",
           "member": "string",
           "name": "NodeName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "父组织单元ID",
-          "example": "",
+          "example": "101",
           "member": "uint64",
           "name": "ParentNodeId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -545,54 +557,60 @@
         {
           "disabled": false,
           "document": "企业组织ID",
-          "example": "",
+          "example": "101",
           "member": "uint64",
           "name": "OrgId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "创建者UIN",
-          "example": "",
+          "example": "100000000001",
           "member": "uint64",
           "name": "HostUin",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "创建者昵称",
-          "example": "",
+          "example": "host_name",
           "member": "string",
           "name": "Nickname",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "创建者邮箱",
-          "example": "",
+          "example": "23***@qq.com",
           "member": "string",
           "name": "Mail",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "企业组织类型",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "OrgType",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "是否为空",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "IsEmpty",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -611,7 +629,7 @@
         {
           "disabled": false,
           "document": "是否被邀请。1：被邀请，0：发出的邀请",
-          "example": "",
+          "example": "101",
           "member": "uint64",
           "name": "Invited",
           "required": true,
@@ -620,7 +638,7 @@
         {
           "disabled": false,
           "document": "偏移量",
-          "example": "",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -629,7 +647,7 @@
         {
           "disabled": false,
           "document": "限制数目",
-          "example": "",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -644,18 +662,20 @@
         {
           "disabled": false,
           "document": "邀请信息列表",
-          "example": "",
+          "example": "[{\"Id\":1,\"Uin\":1000001,\"HostUin\":1000001,\"HostName\":\"host_name\",\"HostMail\":\"23**@qq.com\",\"Status\":1,\"Name\":\"member_name\",\"Remark\":\"invitation member\",\"OrgType\":1,\"InviteTime\":\"2021-03-04 12:22:21\",\"ExpireTime\":\"2021-03-04 12:22:21\"}]",
           "member": "OrgInvitation",
           "name": "Invitations",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "总数目",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -674,7 +694,7 @@
         {
           "disabled": false,
           "document": "偏移量",
-          "example": "",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -683,7 +703,7 @@
         {
           "disabled": false,
           "document": "限制数目",
-          "example": "",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -698,18 +718,20 @@
         {
           "disabled": false,
           "document": "成员列表",
-          "example": "",
+          "example": "[{\"Uin\":100000000001,\"Name\":\"member_name\",\"Remark\":\"invitation member\",\"JoinTime\":\"2023-12-13 12:34:51\"}]",
           "member": "OrgMember",
           "name": "Members",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "总数目",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -728,7 +750,7 @@
         {
           "disabled": false,
           "document": "企业组织单元ID",
-          "example": "",
+          "example": "101",
           "member": "uint64",
           "name": "NodeId",
           "required": true,
@@ -737,7 +759,7 @@
         {
           "disabled": false,
           "document": "偏移量",
-          "example": "",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -746,7 +768,7 @@
         {
           "disabled": false,
           "document": "限制数目",
-          "example": "",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -761,18 +783,20 @@
         {
           "disabled": false,
           "document": "总数目",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "成员列表",
-          "example": "",
+          "example": "[{\"Uin\":100000000001,\"Name\":\"member_name\",\"Remark\":\"invitation member\",\"JoinTime\":\"2023-12-13 12:34:51\"}]",
           "member": "OrgMember",
           "name": "Members",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -818,7 +842,7 @@
         {
           "disabled": false,
           "document": "组织单元ID",
-          "example": "",
+          "example": "101",
           "member": "uint64",
           "name": "NodeId",
           "required": true,
@@ -827,7 +851,7 @@
         {
           "disabled": false,
           "document": "成员UIN列表",
-          "example": "",
+          "example": "100000000001",
           "member": "uint64",
           "name": "Uins",
           "required": true,
@@ -1062,7 +1086,7 @@
         {
           "disabled": false,
           "document": "企业组织ID",
-          "example": "",
+          "example": "101",
           "member": "uint64",
           "name": "OrgId",
           "required": true,
@@ -1134,7 +1158,7 @@
         {
           "disabled": false,
           "document": "成员UIN",
-          "example": "",
+          "example": "100000000001",
           "member": "uint64",
           "name": "MemberUin",
           "required": true,
@@ -1143,7 +1167,7 @@
         {
           "disabled": false,
           "document": "名称",
-          "example": "",
+          "example": "member_name",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -1152,7 +1176,7 @@
         {
           "disabled": false,
           "document": "备注",
-          "example": "",
+          "example": "create member",
           "member": "string",
           "name": "Remark",
           "required": false,
@@ -1179,7 +1203,7 @@
         {
           "disabled": false,
           "document": "企业组织单元ID",
-          "example": "",
+          "example": "1001",
           "member": "uint64",
           "name": "NodeId",
           "required": true,
@@ -1188,7 +1212,7 @@
         {
           "disabled": false,
           "document": "名称",
-          "example": "",
+          "example": "node_name",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -1197,7 +1221,7 @@
         {
           "disabled": false,
           "document": "父单元ID",
-          "example": "",
+          "example": "101",
           "member": "uint64",
           "name": "ParentNodeId",
           "required": false,

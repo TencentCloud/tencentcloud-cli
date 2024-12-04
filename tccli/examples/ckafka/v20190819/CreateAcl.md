@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli ckafka CreateAcl --cli-unfold-argument  \
-    --InstanceId xxx \
+    --InstanceId ckafka-test \
     --ResourceType 2 \
-    --ResourceName test1 \
+    --ResourceName yourresourcetest1 \
     --Operation 2 \
     --PermissionType 2 \
     --Host 1.1.1.1 \

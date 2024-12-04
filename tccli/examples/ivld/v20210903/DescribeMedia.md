@@ -29,7 +29,13 @@ Output:
             },
             "Name": "demo-video-0",
             "Progress": 0,
-            "Status": 8
+            "Label": "",
+            "Status": 8,
+            "CallbackURL": "http://example.com/api/callback",
+            "MediaType": 1,
+            "AudioMetadata": null,
+            "ImageMetadata": null,
+            "TextMetadata": null
         },
         "RequestId": "d4c8bf8e-43ba-482a-a257-b6ac7a6296ec"
     }
@@ -56,20 +62,26 @@ Output:
             "FailedReason": "",
             "MediaId": "media-ly5qgk6j",
             "Metadata": {
-                "BitRate": 0,
-                "Duration": 0,
-                "FPS": 0,
-                "FileSize": 0,
-                "Height": 0,
-                "MD5": "",
-                "NumFrames": 0,
-                "Width": 0
+                "BitRate": 1420,
+                "Duration": 356.024,
+                "FPS": 25,
+                "FileSize": 63195585,
+                "Height": 720,
+                "MD5": "b67489b0f5ca7822c94f4b6102ac7d13",
+                "NumFrames": 8900,
+                "Width": 1280
             },
-            "Name": "demo-video.mp4",
+            "Name": "demo-video-0",
             "Progress": 0,
-            "Status": 5
+            "Label": "",
+            "Status": 8,
+            "CallbackURL": "http://example.com/api/callback",
+            "MediaType": 1,
+            "AudioMetadata": null,
+            "ImageMetadata": null,
+            "TextMetadata": null
         },
-        "RequestId": "7f415981-cba6-426d-92df-331f29f3bb16"
+        "RequestId": "d4c8bf8e-43ba-482a-a257-b6ac7a6296ec"
     }
 }
 ```

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli organization DeleteOrganizationNodes --cli-unfold-argument  \
-    --NodeIds 123
+    --NodeIds 1001
 ```
 
 Output: 
