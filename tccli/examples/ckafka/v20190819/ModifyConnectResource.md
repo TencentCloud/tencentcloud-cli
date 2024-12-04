@@ -6,15 +6,15 @@ Input:
 
 ```
 tccli ckafka ModifyConnectResource --cli-unfold-argument  \
-    --Description xxx \
-    --DtsConnectParam.UserName xxx \
-    --DtsConnectParam.Resource xxx \
-    --DtsConnectParam.GroupId xxx \
-    --DtsConnectParam.Password xxx \
-    --DtsConnectParam.Topic xxx \
+    --Description yourdescription \
+    --DtsConnectParam.UserName user \
+    --DtsConnectParam.Resource resource \
+    --DtsConnectParam.GroupId groupid \
+    --DtsConnectParam.Password yourpassword \
+    --DtsConnectParam.Topic topic-test \
     --DtsConnectParam.Port 0 \
-    --ResourceName xxx \
-    --ResourceId reource-xxx \
+    --ResourceName resource-name \
+    --ResourceId reource-test \
     --Type DTS
 ```
 
@@ -23,9 +23,9 @@ Output:
 {
     "Response": {
         "Result": {
-            "ResourceId": "resource-xx"
+            "ResourceId": "resource-test"
         },
-        "RequestId": "xxx"
+        "RequestId": "84770b4b-df34-4ccf-8e22-41d3b1d0fe0d"
     }
 }
 ```

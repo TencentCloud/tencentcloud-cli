@@ -1346,8 +1346,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID",
-          "example": "rocketmq-xxxx",
+          "document": "集群ID",
+          "example": "rmq-72mo3a9o",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -1355,8 +1355,8 @@
         },
         {
           "disabled": false,
-          "document": "主题",
-          "example": "test",
+          "document": "主题名称",
+          "example": "test_topic",
           "member": "string",
           "name": "Topic",
           "required": true,
@@ -2796,8 +2796,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID",
-          "example": "rocketmq-xxxx",
+          "document": "集群ID",
+          "example": "rmq-72mo3a9o",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -2805,8 +2805,8 @@
         },
         {
           "disabled": false,
-          "document": "主题",
-          "example": "test",
+          "document": "主题名称",
+          "example": "test_topic",
           "member": "string",
           "name": "Topic",
           "required": true,
@@ -2851,7 +2851,7 @@
         {
           "disabled": false,
           "document": "查询结果限制数量",
-          "example": "10",
+          "example": "20",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -3049,8 +3049,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID",
-          "example": "rocketmq-xxxx",
+          "document": "集群ID",
+          "example": "rmq-72mo3a9o",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -3077,7 +3077,7 @@
         {
           "disabled": false,
           "document": "查询结果限制数量",
-          "example": "10",
+          "example": "20",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -3123,8 +3123,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID",
-          "example": "rocketmq-xxxx",
+          "document": "集群ID",
+          "example": "rmq-72mo3a9o",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -3132,8 +3132,8 @@
         },
         {
           "disabled": false,
-          "document": "主题",
-          "example": "test",
+          "document": "主题名称",
+          "example": "test_topic",
           "member": "string",
           "name": "Topic",
           "required": true,
@@ -3642,7 +3642,7 @@
         {
           "disabled": false,
           "document": "VPC ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "vpc-xxx",
+          "example": "vpc-5se8xco1",
           "member": "string",
           "name": "VpcId",
           "output_required": true,
@@ -3652,7 +3652,7 @@
         {
           "disabled": false,
           "document": "子网ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "subnet-xxx",
+          "example": "subnet-pyspldq0",
           "member": "string",
           "name": "SubnetId",
           "output_required": true,
@@ -3697,8 +3697,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "过滤条件名",
-          "example": "key",
+          "document": "过滤条件参数名",
+          "example": "fliter_key",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -3707,7 +3707,7 @@
         {
           "disabled": false,
           "document": "过滤条件的值",
-          "example": "无",
+          "example": "filter_value",
           "member": "string",
           "name": "Values",
           "required": true,
@@ -3722,7 +3722,7 @@
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "rmq-xxxx",
+          "example": "rmq-9j7ooebv",
           "member": "string",
           "name": "InstanceId",
           "output_required": true,
@@ -3732,7 +3732,7 @@
         {
           "disabled": false,
           "document": "实例名称",
-          "example": "test",
+          "example": "test_name",
           "member": "string",
           "name": "InstanceName",
           "output_required": true,
@@ -3752,7 +3752,7 @@
         {
           "disabled": false,
           "document": "实例类型，\nEXPERIMENT，体验版\nBASIC，基础版\nPRO，专业版\nPLATINUM，铂金版",
-          "example": "无",
+          "example": "BASIC",
           "member": "string",
           "name": "InstanceType",
           "output_required": true,
@@ -3762,7 +3762,7 @@
         {
           "disabled": false,
           "document": "实例状态，\nRUNNING, 运行中\nMAINTAINING，维护中\nABNORMAL，异常\nOVERDUE，欠费\nDESTROYED，已删除\nCREATING，创建中\nMODIFYING，变配中\nCREATE_FAILURE，创建失败\nMODIFY_FAILURE，变配失败\nDELETING，删除中",
-          "example": "无",
+          "example": "RUNNING",
           "member": "string",
           "name": "InstanceStatus",
           "output_required": true,
@@ -3812,7 +3812,7 @@
         {
           "disabled": false,
           "document": "备注信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "remark info",
           "member": "string",
           "name": "Remark",
           "output_required": true,
@@ -3822,7 +3822,7 @@
         {
           "disabled": false,
           "document": "主题数量",
-          "example": "无",
+          "example": "100",
           "member": "int64",
           "name": "TopicNum",
           "output_required": true,
@@ -3832,7 +3832,7 @@
         {
           "disabled": false,
           "document": "消费组数量",
-          "example": "无",
+          "example": "1000",
           "member": "int64",
           "name": "GroupNum",
           "output_required": true,
@@ -3842,7 +3842,7 @@
         {
           "disabled": false,
           "document": "标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[     {         \"TagKey\": \"test_key\",         \"TagValue\": \"test_value\"     } ]",
           "member": "Tag",
           "name": "TagList",
           "output_required": true,
@@ -3862,7 +3862,7 @@
         {
           "disabled": false,
           "document": "TPS限流值\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2000",
           "member": "int64",
           "name": "TpsLimit",
           "output_required": true,
@@ -3872,7 +3872,7 @@
         {
           "disabled": false,
           "document": "弹性TPS限流值\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "500",
           "member": "int64",
           "name": "ScaledTpsLimit",
           "output_required": true,
@@ -3882,7 +3882,7 @@
         {
           "disabled": false,
           "document": "消息保留时间，小时为单位\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "72",
           "member": "int64",
           "name": "MessageRetention",
           "output_required": true,
@@ -3892,7 +3892,7 @@
         {
           "disabled": false,
           "document": "延迟消息最大时长，小时为单位\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "960",
           "member": "int64",
           "name": "MaxMessageDelay",
           "output_required": true,
@@ -3902,7 +3902,7 @@
         {
           "disabled": false,
           "document": "是否自动续费\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "RenewFlag",
           "output_required": false,
@@ -3912,7 +3912,7 @@
         {
           "disabled": false,
           "document": "4.x独有数据\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{                     \"IsVip\": true,                     \"InstanceStatus\": 1,                     \"VipInstanceStatus\": 1,                     \"MaxBandWidth\": 80,                     \"NodeCount\": 2,                     \"MaxStorage\": 200,                     \"SpecName\": \"rocket-vip-basic-0\",                     \"MaxRetention\": 168,                     \"MinRetention\": 24                 }",
           "member": "InstanceItemExtraInfo",
           "name": "InstanceItemExtraInfo",
           "output_required": false,
@@ -3922,7 +3922,7 @@
         {
           "disabled": false,
           "document": "预销毁时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1730710586538",
           "member": "int64",
           "name": "DestroyTime",
           "output_required": false,
@@ -3974,7 +3974,7 @@
         {
           "disabled": false,
           "document": "任务ID",
-          "example": "abc",
+          "example": "fe391925-2ed6-43ea-8a53-8a9c1d04a319",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -4020,7 +4020,7 @@
         {
           "disabled": false,
           "document": "实例名称",
-          "example": "test",
+          "example": "test_name",
           "member": "string",
           "name": "InstanceName",
           "output_required": true,
@@ -4100,7 +4100,7 @@
         {
           "disabled": false,
           "document": "备注信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "remark info",
           "member": "string",
           "name": "Remark",
           "output_required": true,
@@ -4110,7 +4110,7 @@
         {
           "disabled": false,
           "document": "主题数量",
-          "example": "1",
+          "example": "100",
           "member": "int64",
           "name": "TopicNum",
           "output_required": true,
@@ -4120,7 +4120,7 @@
         {
           "disabled": false,
           "document": "消费组数量",
-          "example": "2",
+          "example": "1000",
           "member": "int64",
           "name": "GroupNum",
           "output_required": true,
@@ -4130,7 +4130,7 @@
         {
           "disabled": false,
           "document": "标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "[     {         \"TagKey\": \"test_key\",         \"TagValue\": \"test_value\"     } ]",
           "member": "Tag",
           "name": "TagList",
           "output_required": true,
@@ -4180,7 +4180,7 @@
         {
           "disabled": false,
           "document": "延迟消息最大时长，小时为单位\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "24",
+          "example": "960",
           "member": "int64",
           "name": "MaxMessageDelay",
           "output_required": true,
@@ -4206,7 +4206,7 @@
         {
           "disabled": false,
           "document": "是否vip\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "IsVip",
           "output_required": false,
@@ -4216,7 +4216,7 @@
         {
           "disabled": false,
           "document": "4.x专享集群状态\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "VipInstanceStatus",
           "output_required": false,
@@ -4226,7 +4226,7 @@
         {
           "disabled": false,
           "document": "专享集群峰值带宽\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2",
           "member": "int64",
           "name": "MaxBandWidth",
           "output_required": false,
@@ -4236,7 +4236,7 @@
         {
           "disabled": false,
           "document": "专享集群规格\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "rocket-vip-basic-0",
           "member": "string",
           "name": "SpecName",
           "output_required": false,
@@ -4246,7 +4246,7 @@
         {
           "disabled": false,
           "document": "专享集群节点数量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2",
           "member": "int64",
           "name": "NodeCount",
           "output_required": false,
@@ -4256,7 +4256,7 @@
         {
           "disabled": false,
           "document": "专享集群最大存储\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "400",
           "member": "int64",
           "name": "MaxStorage",
           "output_required": false,
@@ -4265,8 +4265,8 @@
         },
         {
           "disabled": false,
-          "document": "专享集群最大保留时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "专享集群最大保留时间，单位：小时\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "72",
           "member": "int64",
           "name": "MaxRetention",
           "output_required": false,
@@ -4275,8 +4275,8 @@
         },
         {
           "disabled": false,
-          "document": "专项集群最大保留时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "专项集群最大保留时间，单位：小时\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "24",
           "member": "int64",
           "name": "MinRetention",
           "output_required": false,
@@ -4285,8 +4285,8 @@
         },
         {
           "disabled": false,
-          "document": "4.0共享集群\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "4.0共享集群状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "int64",
           "name": "InstanceStatus",
           "output_required": false,
@@ -4460,7 +4460,7 @@
         {
           "disabled": false,
           "document": "实例名称",
-          "example": "test",
+          "example": "instance-01",
           "member": "string",
           "name": "InstanceName",
           "output_required": true,
@@ -4510,7 +4510,7 @@
         {
           "disabled": false,
           "document": "备注信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "this is remark",
           "member": "string",
           "name": "Remark",
           "output_required": true,
@@ -4586,7 +4586,7 @@
         {
           "disabled": false,
           "document": "消息ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "15297521000022CF000000000EDF6894",
           "member": "string",
           "name": "MsgId",
           "output_required": true,
@@ -5124,8 +5124,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID",
-          "example": "rocketmq-xxxx",
+          "document": "集群ID",
+          "example": "rmq-72mo3a9o",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -5413,7 +5413,7 @@
         {
           "disabled": false,
           "document": "备注信息",
-          "example": "test",
+          "example": "测试修改",
           "member": "string",
           "name": "Remark",
           "required": false,
@@ -5485,7 +5485,7 @@
         {
           "disabled": false,
           "document": "计价名称",
-          "example": "无",
+          "example": "tps",
           "member": "string",
           "name": "Name",
           "output_required": true,
@@ -5521,7 +5521,7 @@
         {
           "disabled": false,
           "document": "规格代码",
-          "example": "无",
+          "example": "experiment_500",
           "member": "string",
           "name": "SkuCode",
           "output_required": true,
@@ -5531,7 +5531,7 @@
         {
           "disabled": false,
           "document": "TPS上限\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "500",
           "member": "int64",
           "name": "TpsLimit",
           "output_required": true,
@@ -5541,7 +5541,7 @@
         {
           "disabled": false,
           "document": "弹性TPS上限\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "ScaledTpsLimit",
           "output_required": true,
@@ -5551,7 +5551,7 @@
         {
           "disabled": false,
           "document": "主题数量上限默认值\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "50",
           "member": "int64",
           "name": "TopicNumLimit",
           "output_required": true,
@@ -5561,7 +5561,7 @@
         {
           "disabled": false,
           "document": "消费组数量上限\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "500",
           "member": "int64",
           "name": "GroupNumLimit",
           "output_required": true,
@@ -5571,7 +5571,7 @@
         {
           "disabled": false,
           "document": "默认消息保留时间，小时为单位\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "72",
           "member": "int64",
           "name": "DefaultRetention",
           "output_required": true,
@@ -5581,7 +5581,7 @@
         {
           "disabled": false,
           "document": "可调整消息保留时间上限，小时为单位\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "72",
           "member": "int64",
           "name": "RetentionUpperLimit",
           "output_required": true,
@@ -5591,7 +5591,7 @@
         {
           "disabled": false,
           "document": "可调整消息保留时间下限，小时为单位\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "24",
           "member": "int64",
           "name": "RetentionLowerLimit",
           "output_required": true,
@@ -5601,7 +5601,7 @@
         {
           "disabled": false,
           "document": "延时消息最大时长，小时为单位\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "168",
           "member": "int64",
           "name": "MaxMessageDelay",
           "output_required": true,
@@ -5611,7 +5611,7 @@
         {
           "disabled": false,
           "document": "是否可购买",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "OnSale",
           "output_required": true,
@@ -5621,7 +5621,7 @@
         {
           "disabled": false,
           "document": "计费项信息",
-          "example": "无",
+          "example": "[ { \"Name\": \"tps\", \"Code\": \"sv_tdmq_instance_specification_test_500\", \"Category\": \"v_tdmq_instance_specification\", \"Step\": 1 } ]",
           "member": "PriceTag",
           "name": "PriceTags",
           "output_required": true,
@@ -5631,7 +5631,7 @@
         {
           "disabled": false,
           "document": "主题数量上限默认最大值\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "100",
+          "example": "99",
           "member": "int64",
           "name": "TopicNumUpperLimit",
           "output_required": false,
@@ -5669,7 +5669,7 @@
         {
           "disabled": false,
           "document": "备注信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "remark info",
           "member": "string",
           "name": "Remark",
           "output_required": false,
@@ -6183,7 +6183,7 @@
         {
           "disabled": false,
           "document": "标签名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123",
+          "example": "test_key",
           "member": "string",
           "name": "TagKey",
           "output_required": true,
@@ -6194,7 +6194,7 @@
         {
           "disabled": false,
           "document": "标签值\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "abc",
+          "example": "test_value",
           "member": "string",
           "name": "TagValue",
           "output_required": true,
@@ -6211,7 +6211,7 @@
         {
           "disabled": false,
           "document": "标签键名称",
-          "example": "test",
+          "example": "test_key",
           "member": "string",
           "name": "TagKey",
           "required": true,
@@ -6220,7 +6220,7 @@
         {
           "disabled": false,
           "document": "标签值列表",
-          "example": "value1",
+          "example": "test_value",
           "member": "string",
           "name": "TagValues",
           "required": true,

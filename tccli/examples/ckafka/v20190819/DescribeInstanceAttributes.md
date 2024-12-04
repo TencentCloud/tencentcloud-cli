@@ -6,80 +6,96 @@ Input:
 
 ```
 tccli ckafka DescribeInstanceAttributes --cli-unfold-argument  \
-    --InstanceId xxx
+    --InstanceId ckafka-pkwxedpq
 ```
 
 Output: 
 ```
 {
     "Response": {
+        "RequestId": "dc67ed1b-3ada-4dad-9c5e-dc2a3619558e",
         "Result": {
-            "InstanceId": "abc",
-            "InstanceName": "abc",
-            "VipList": [
-                {
-                    "Vip": "abc",
-                    "Vport": "abc"
-                }
-            ],
-            "Vip": "abc",
-            "Vport": "abc",
-            "Status": 0,
-            "Bandwidth": 0,
-            "DiskSize": 0,
-            "ZoneId": 0,
-            "VpcId": "abc",
-            "SubnetId": "abc",
-            "Healthy": 0,
-            "HealthyMessage": "abc",
-            "CreateTime": 1,
-            "MsgRetentionTime": 0,
+            "Bandwidth": 1200,
+            "ClusterType": "CLOUD_EKS_TSE",
             "Config": {
                 "AutoCreateTopicsEnable": true,
-                "DefaultNumPartitions": 0,
-                "DefaultReplicationFactor": 0
+                "DefaultNumPartitions": 10,
+                "DefaultReplicationFactor": 2
             },
-            "RemainderPartitions": 0,
-            "RemainderTopics": 0,
-            "CreatedPartitions": 0,
-            "CreatedTopics": 0,
+            "CreateTime": 1667461825,
+            "CreatedPartitions": 1026,
+            "CreatedTopics": 61,
+            "CustomCertId": "certid",
+            "Cvm": 1,
+            "DeleteRouteTimestamp": "",
+            "DiskSize": 1000,
+            "DynamicDiskConfig": {
+                "DiskQuotaPercentage": 75,
+                "Enable": 1,
+                "MaxDiskSpace": 500000,
+                "StepForwardPercentage": 10
+            },
+            "ElasticFloatBandwidth": 480,
+            "ExpireTime": 1735890625,
+            "Features": [
+                "FEATURE_SUBNET_ACL",
+                "FEATURE_SASL_SSL",
+                "FEATURE_MULIT_SASL_PLAINTEXT",
+                "FEATURE_TOPIC_QUOTA",
+                "FEATURE_SASL_SCRAM_512",
+                "CLOUD_EKS_TSE",
+                "CLOUD_EKS_CROS_ZONE",
+                "FEATURE_SASL_SCRAM"
+            ],
+            "FreePartitionNumber": 1200,
+            "Healthy": 1,
+            "HealthyMessage": "healthy",
+            "InstanceChargeType": "PREPAID",
+            "InstanceId": "ckafka-pkwxedpq",
+            "InstanceName": "【勿删-不要再新建公网域名了，会产生安全工单】spock-test",
+            "InstanceType": "profession",
+            "MaxConnection": 10000,
+            "MaxGroupNum": 200,
+            "MsgRetentionTime": 2880,
+            "PublicNetwork": 6,
+            "RemainderPartitions": 174,
+            "RemainderTopics": 539,
+            "RemainingPartitions": 174,
+            "RemainingTopics": 539,
+            "RetentionTimeConfig": {
+                "BottomRetention": 360,
+                "DiskQuotaPercentage": 75,
+                "Enable": 0,
+                "StepForwardPercentage": 10
+            },
+            "Status": 1,
+            "SubnetId": "subnet-kg07707y",
             "Tags": [
                 {
-                    "TagKey": "abc",
-                    "TagValue": "abc"
+                    "TagKey": "Application",
+                    "TagValue": "underlay-domain"
+                },
+                {
+                    "TagKey": "a",
+                    "TagValue": "555555"
                 }
             ],
-            "ExpireTime": 1,
+            "Version": "2.4.1",
+            "Vip": "172.16.0.17",
+            "VipList": [
+                {
+                    "Vip": "172.16.0.17",
+                    "Vport": "9092"
+                }
+            ],
+            "VpcId": "vpc-apwrtw01",
+            "Vport": "9092",
+            "ZoneId": 100006,
             "ZoneIds": [
-                0
-            ],
-            "Version": "abc",
-            "MaxGroupNum": 0,
-            "Cvm": 0,
-            "InstanceType": "abc",
-            "Features": [
-                "abc"
-            ],
-            "RetentionTimeConfig": {
-                "Enable": 0,
-                "DiskQuotaPercentage": 0,
-                "StepForwardPercentage": 0,
-                "BottomRetention": 0
-            },
-            "MaxConnection": 1,
-            "PublicNetwork": 0,
-            "DeleteRouteTimestamp": "abc",
-            "RemainingPartitions": 0,
-            "RemainingTopics": 0,
-            "DynamicDiskConfig": {
-                "Enable": 0,
-                "StepForwardPercentage": 0,
-                "DiskQuotaPercentage": 0,
-                "MaxDiskSpace": 0
-            },
-            "InstanceChargeType": "abc"
-        },
-        "RequestId": "abc"
+                100006,
+                100007
+            ]
+        }
     }
 }
 ```

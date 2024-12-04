@@ -11471,6 +11471,24 @@
           "name": "PlayBackMode",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "播单唯一标识 ID，长度限制为64个字符，只允许包含大小写英文字母（a-zA-Z）、数字（0-9）和连字符（-）。如果存在相同 RoundPlayId 的播单，返回 InvalidParameterValue.RoundPlayAlreadyExists 错误。默认取值为空，表示由系统分配。",
+          "example": "0127ce97935d43a0aaaf7a6caf10776d",
+          "member": "string",
+          "name": "RoundPlayId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过期时间，格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#52)。过期后的播单将停止播放，“9999-12-31T23:59:59+08:00“表示不过期。默认值：9999-12-31T23:59:59+08:00。",
+          "example": "2025-03-01T00:00:00+08:00",
+          "member": "string",
+          "name": "ExpiredTime",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -26844,6 +26862,15 @@
           "name": "PlayBackMode",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过期时间，格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#52)，过期后将停止播放。“9999-12-31T23:59:59+08:00”表示不过期。",
+          "example": "2025-03-01T00:00:00+08:00",
+          "member": "string",
+          "name": "ExpiredTime",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -34333,6 +34360,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "过期时间，格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#52)，过期后将停止播单的播放。“9999-12-31T23:59:59+08:00”表示永不过期。",
+          "example": "2025-02-01T00:00:00+08:00",
+          "member": "string",
+          "name": "ExpiredTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -34375,7 +34412,7 @@
         },
         {
           "disabled": false,
-          "document": "指定播放的转码模版，当 AudioVideoType 为 Transcode 时必须指定。",
+          "document": "指定播放的转码模板，当 AudioVideoType 为 Transcode 时必须指定。",
           "example": "10",
           "member": "int64",
           "name": "Definition",

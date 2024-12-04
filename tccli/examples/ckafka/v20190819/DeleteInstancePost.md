@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ckafka DeleteInstancePost --cli-unfold-argument  \
-    --InstanceId abc
+    --InstanceId ckafka-test
 ```
 
 Output: 
@@ -16,7 +16,7 @@ Output:
         "Result": {
             "FlowId": 0
         },
-        "RequestId": "abc"
+        "RequestId": "84770b4b-df34-4ccf-8e22-41d3b1d0fe0d"
     }
 }
 ```

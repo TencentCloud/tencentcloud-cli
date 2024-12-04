@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ckafka DescribeUser --cli-unfold-argument  \
-    --InstanceId xxx
+    --InstanceId ckafka-test
 ```
 
 Output: 
@@ -23,7 +23,7 @@ Output:
                 },
                 {
                     "UserId": 40,
-                    "Name": "test",
+                    "Name": "Nametest",
                     "CreateTime": "2019-09-05 00:20:36",
                     "UpdateTime": "2019-09-05 00:20:36"
                 }

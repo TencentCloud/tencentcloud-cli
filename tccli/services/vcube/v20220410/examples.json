@@ -1,0 +1,277 @@
+{
+  "actions": {
+    "CreateActivityLicense": [
+      {
+        "document": "推广活动创建的license",
+        "input": "POST / HTTP/1.1\nHost: vcube.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateActivityLicense\n<公共请求参数>\n\n{\n    \"Activity\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AppId\": \"abc\",\n        \"AppName\": \"abc\",\n        \"BundleId\": \"abc\",\n        \"PackageName\": \"abc\",\n        \"Duration\": 1,\n        \"StartTime\": \"abc\",\n        \"EndTime\": \"abc\",\n        \"LicenseKey\": \"abc\",\n        \"LicenseUrl\": \"abc\",\n        \"ResidueDay\": 1,\n        \"Residue\": 1,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "创建活动license"
+      }
+    ],
+    "CreateApplicationAndBindLicense": [
+      {
+        "document": "创建应用，并开通license、腾讯特效等",
+        "input": "POST / HTTP/1.1\nHost: vcube.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateApplicationAndBindLicense\n<公共请求参数>\n\n{\n    \"AppName\": \"abc\",\n    \"BundleId\": \"abc\",\n    \"PackageName\": \"abc\",\n    \"ResourceIds\": [\n        \"abc\"\n    ],\n    \"CompanyPermit\": \"abc\",\n    \"CompanyType\": \"abc\",\n    \"CompanyName\": \"abc\",\n    \"XMagicResourceIds\": [\n        \"abc\"\n    ],\n    \"MacBundleId\": \"abc\",\n    \"WinProcessName\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"aaa\"\n    }\n}",
+        "title": "创建应用并绑定license"
+      }
+    ],
+    "CreateApplicationAndVideo": [
+      {
+        "document": "创建视频播放license",
+        "input": "POST / HTTP/1.1\nHost: vcube.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateApplicationAndVideo\n<公共请求参数>\n\n{\n    \"AppName\": \"QQ\",\n    \"BundleId\": \"com.company.appName\",\n    \"PackageName\": \"com.company.appName\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "创建视频播放license"
+      }
+    ],
+    "CreateApplicationAndWebPlayerLicense": [
+      {
+        "document": "web播发器需要签发license，这里可以创建基础版license",
+        "input": "POST / HTTP/1.1\nHost: vcube.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateApplicationAndWebPlayerLicense\n<公共请求参数>\n\n{\n    \"AppName\": \"我的应用\",\n    \"DomainList\": [\n        \"abc.com\",\n        \"ddd.cn\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "创建 web 播放器基础版"
+      }
+    ],
+    "CreateLicense": [
+      {
+        "document": "在已有应用下新增license\n",
+        "input": "POST / HTTP/1.1\nHost: vcube.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLicense\n<公共请求参数>\n\n{\n    \"ApplicationId\": \"abc\",\n    \"ResourceIds\": [\n        \"abc\"\n    ],\n    \"Group\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "绑定license"
+      }
+    ],
+    "CreateTestXMagic": [
+      {
+        "document": "申请优图license测试版",
+        "input": "POST / HTTP/1.1\nHost: vcube.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTestXMagic\n<公共请求参数>\n\n{\n    \"ApplicationId\": 1,\n    \"CompanyPermit\": \"abc\",\n    \"CompanyType\": \"abc\",\n    \"CompanyName\": \"abc\",\n    \"PlanList\": [\n        \"abc\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "申请测试版优图"
+      }
+    ],
+    "CreateTrialApplicationAndLicense": [
+      {
+        "document": "创建测试应用并开通测试 license",
+        "input": "POST / HTTP/1.1\nHost: vcube.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTrialApplicationAndLicense\n<公共请求参数>\n\n{\n    \"AppName\": \"QQ\",\n    \"BundleId\": \"com.company.appName\",\n    \"PackageName\": \"com.company.appName\",\n    \"FeatureIds\": [\n        3,\n        16\n    ],\n    \"PlanList\": [\n        \"S1-04\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "创建测试应用并开通测试 license"
+      }
+    ],
+    "CreateTrialLicense": [
+      {
+        "document": "创建测试license",
+        "input": "POST / HTTP/1.1\nHost: vcube.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTrialLicense\n<公共请求参数>\n\n{\n    \"ApplicationId\": \"123\",\n    \"FeatureIds\": [\n        3\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "绑定license"
+      }
+    ],
+    "CreateXMagic": [
+      {
+        "document": "需要优图美视功能的用户，可以开通优图美视功能",
+        "input": "POST / HTTP/1.1\nHost: vcube.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateXMagic\n<公共请求参数>\n\n{\n    \"ApplicationId\": 1,\n    \"CompanyPermit\": \"abc\",\n    \"CompanyType\": \"abc\",\n    \"CompanyName\": \"abc\",\n    \"XMagicResourceIds\": [\n        \"abc\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "开通优图美视"
+      }
+    ],
+    "DescribeFeatureList": [
+      {
+        "document": "查询功能列表",
+        "input": "POST / HTTP/1.1\nHost: vcube.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFeatureList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"FeatureList\": [\n            {\n                \"Id\": 1,\n                \"FeatureId\": 1,\n                \"Name\": \"abc\",\n                \"Type\": \"abc\",\n                \"Trial\": true,\n                \"TrialCount\": 1,\n                \"Duration\": 1,\n                \"CreatedAt\": \"abc\",\n                \"UpdatedAt\": \"abc\"\n            }\n        ],\n        \"XMagicFeatureList\": [\n            {\n                \"Name\": \"abc\",\n                \"TrialCount\": 1,\n                \"Duration\": 1,\n                \"Plan\": \"abc\",\n                \"XMagicType\": \"abc\",\n                \"Trial\": true,\n                \"BizType\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询功能列表"
+      }
+    ],
+    "DescribeLicenseList": [
+      {
+        "document": "查询功能列表",
+        "input": "POST / HTTP/1.1\nHost: vcube.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLicenseList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询功能列表"
+      }
+    ],
+    "DescribeNews": [
+      {
+        "document": "概览页展示视立方产品动态",
+        "input": "POST / HTTP/1.1\nHost: vcube.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNews\n<公共请求参数>\n\n{\n    \"PageNumber\": 0,\n    \"PageSize\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"NewsList\": [\n            {}\n        ],\n        \"Count\": 1,\n        \"RequestId\": \"1111111-2222-3333\"\n    }\n}",
+        "title": "查询视立方产品动态"
+      }
+    ],
+    "DescribeSTS": [
+      {
+        "document": "获取临时秘钥，用于申请腾讯特效上传营业执照",
+        "input": "POST / HTTP/1.1\nHost: vcube.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSTS\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"124\",\n        \"Bucket\": \"live-portal-1258344699\",\n        \"Region\": \"ap-shanghai\",\n        \"StartTime\": 1639482026,\n        \"ExpiredTime\": 1639483826,\n        \"SessionToken\": \"1P49YEmR9Y4NVdd8Dk9ZoF5IRvw1Bzxad259d39e50bb87e79b1a0ddd95e08119HqBCqUsoqugmK62xIsqfmiiVpUNPjFLHjbx1Kq10749gDVGlP-e1lB10xekenknX2t2K03VdYnApi2PbWeWJmzytVZfQH9Q00OEwdAeonbujT_CduTsq3jOxj2-CAxDX-qV_Gv4TvssLG217d3FeshBQ_tL6a3tZPf9pbco_YUtKsKXAbjgeo2T2e_0FpbPje_Y-VCwJCQaYENNfHeem2mhzTNwnZAHnATmHOtazyeXYmxF6Bsdd2RY0i8rNnXS1HWia8se07k6vtrtKVdJ8_2pCffHzWNSatJluSFn49Gcaj_LqyX5vaY0MRZFcRA-1--lXp964H6RuUME48CK29Q\",\n        \"TmpSecretId\": \"AKIDnFOPqA0vO6dHi16X8KaLOgROAyhS_Bf5U0C4ISDqHdihgPn-eZ4dTTeel8137yuq\",\n        \"TmpSecretKey\": \"S4naHXe2ud562M5jkWmgLjYdlgyVpxmKoM+Tiw3aqkw=\",\n        \"Path\": \"ar-effect/test/123/1639482025554/\"\n    }\n}",
+        "title": "获取临时秘钥"
+      }
+    ],
+    "DescribeTrialFeature": [
+      {
+        "document": "查询测试应用可以开通的功能",
+        "input": "POST / HTTP/1.1\nHost: vcube.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTrialFeature\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"FeatureList\": [\n            {\n                \"Id\": 1,\n                \"FeatureId\": 1,\n                \"Name\": \"abc\",\n                \"Type\": \"abc\",\n                \"Trial\": true,\n                \"TrialCount\": 1,\n                \"Duration\": 1,\n                \"CreatedAt\": \"abc\",\n                \"UpdatedAt\": \"abc\"\n            }\n        ],\n        \"XMagicTrial\": {\n            \"Name\": \"abc\",\n            \"TrialCount\": 1,\n            \"Duration\": 1,\n            \"Plan\": \"abc\",\n            \"XMagicType\": \"abc\"\n        },\n        \"XMagicTrialList\": [\n            {\n                \"Name\": \"abc\",\n                \"TrialCount\": 1,\n                \"Duration\": 1,\n                \"Plan\": \"abc\",\n                \"XMagicType\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询测试应用可以开通的功能"
+      }
+    ],
+    "DescribeUserConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vcube.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserConfig\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询用户配置"
+      }
+    ],
+    "DescribeVcubeApplicationAndLicense": [
+      {
+        "document": "查询应用及其license",
+        "input": "POST / HTTP/1.1\nHost: vcube.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVcubeApplicationAndLicense\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"ApplicationInfoList\": [\n            {\n                \"AppName\": \"abc\",\n                \"BundleId\": \"abc\",\n                \"AppType\": \"abc\",\n                \"Licenses\": [\n                    {\n                        \"Type\": \"abc\",\n                        \"Remark\": \"abc\",\n                        \"StartTime\": \"abc\",\n                        \"EndTime\": \"abc\",\n                        \"FeatureId\": 1,\n                        \"LicenseType\": \"abc\",\n                        \"Renewal\": true,\n                        \"LicenseId\": 1,\n                        \"Name\": \"abc\",\n                        \"Update\": true,\n                        \"OldLicenseUrl\": \"abc\",\n                        \"Group\": 1,\n                        \"Expired\": true,\n                        \"RestTime\": 1,\n                        \"CreatedAt\": \"abc\",\n                        \"UpdatedAt\": \"abc\"\n                    }\n                ],\n                \"LicenseKey\": \"abc\",\n                \"PackageName\": \"abc\",\n                \"CreatedAt\": \"abc\",\n                \"UpdatedAt\": \"abc\",\n                \"ApplicationId\": 1,\n                \"LicenseUrl\": \"abc\",\n                \"XMagics\": [\n                    {\n                        \"Id\": 1,\n                        \"CompanyName\": \"abc\",\n                        \"CompanyPermit\": \"abc\",\n                        \"CompanyType\": \"abc\",\n                        \"Plan\": \"abc\",\n                        \"LicenseType\": \"abc\",\n                        \"Status\": 1,\n                        \"Update\": true,\n                        \"StartTime\": \"abc\",\n                        \"EndTime\": \"abc\",\n                        \"RenewalCount\": 1,\n                        \"Reply\": [\n                            \"abc\"\n                        ],\n                        \"CreatedAt\": \"abc\",\n                        \"UpdatedAt\": \"abc\",\n                        \"UpdateTime\": \"abc\",\n                        \"Expired\": true,\n                        \"RestTime\": 1,\n                        \"XMagicType\": \"abc\",\n                        \"Name\": \"abc\"\n                    }\n                ],\n                \"MacBundleId\": \"abc\",\n                \"WinProcessName\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询应用及其license"
+      }
+    ],
+    "DescribeVcubeApplicationAndPlayList": [
+      {
+        "document": "查询视立方应用及播放类license",
+        "input": "POST / HTTP/1.1\nHost: vcube.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVcubeApplicationAndPlayList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"ApplicationInfoList\": [\n            {\n                \"AppName\": \"abc\",\n                \"BundleId\": \"abc\",\n                \"AppType\": \"abc\",\n                \"Licenses\": [\n                    {\n                        \"Type\": \"abc\",\n                        \"Remark\": \"abc\",\n                        \"StartTime\": \"abc\",\n                        \"EndTime\": \"abc\",\n                        \"FeatureId\": 1,\n                        \"LicenseType\": \"abc\",\n                        \"Renewal\": true,\n                        \"LicenseId\": 1,\n                        \"Name\": \"abc\",\n                        \"Update\": true,\n                        \"OldLicenseUrl\": \"abc\",\n                        \"Group\": 1,\n                        \"Expired\": true,\n                        \"RestTime\": 1,\n                        \"CreatedAt\": \"abc\",\n                        \"UpdatedAt\": \"abc\"\n                    }\n                ],\n                \"LicenseKey\": \"abc\",\n                \"PackageName\": \"abc\",\n                \"CreatedAt\": \"abc\",\n                \"UpdatedAt\": \"abc\",\n                \"ApplicationId\": 1,\n                \"LicenseUrl\": \"abc\",\n                \"XMagics\": [\n                    {\n                        \"Id\": 1,\n                        \"CompanyName\": \"abc\",\n                        \"CompanyPermit\": \"abc\",\n                        \"CompanyType\": \"abc\",\n                        \"Plan\": \"abc\",\n                        \"LicenseType\": \"abc\",\n                        \"Status\": 1,\n                        \"Update\": true,\n                        \"StartTime\": \"abc\",\n                        \"EndTime\": \"abc\",\n                        \"RenewalCount\": 1,\n                        \"Reply\": [\n                            \"abc\"\n                        ],\n                        \"CreatedAt\": \"abc\",\n                        \"UpdatedAt\": \"abc\",\n                        \"UpdateTime\": \"abc\",\n                        \"Expired\": true,\n                        \"RestTime\": 1,\n                        \"XMagicType\": \"abc\",\n                        \"Name\": \"abc\"\n                    }\n                ],\n                \"MacBundleId\": \"abc\",\n                \"WinProcessName\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询视立方应用及播放类license"
+      }
+    ],
+    "DescribeVcubeApplicationAndXMagicList": [
+      {
+        "document": "查询视立方应用及优图license",
+        "input": "POST / HTTP/1.1\nHost: vcube.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVcubeApplicationAndXMagicList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"ApplicationInfoList\": [\n            {\n                \"AppName\": \"abc\",\n                \"BundleId\": \"abc\",\n                \"AppType\": \"abc\",\n                \"Licenses\": [\n                    {\n                        \"Type\": \"abc\",\n                        \"Remark\": \"abc\",\n                        \"StartTime\": \"abc\",\n                        \"EndTime\": \"abc\",\n                        \"FeatureId\": 1,\n                        \"LicenseType\": \"abc\",\n                        \"Renewal\": true,\n                        \"LicenseId\": 1,\n                        \"Name\": \"abc\",\n                        \"Update\": true,\n                        \"OldLicenseUrl\": \"abc\",\n                        \"Group\": 1,\n                        \"Expired\": true,\n                        \"RestTime\": 1,\n                        \"CreatedAt\": \"abc\",\n                        \"UpdatedAt\": \"abc\"\n                    }\n                ],\n                \"LicenseKey\": \"abc\",\n                \"PackageName\": \"abc\",\n                \"CreatedAt\": \"abc\",\n                \"UpdatedAt\": \"abc\",\n                \"ApplicationId\": 1,\n                \"LicenseUrl\": \"abc\",\n                \"XMagics\": [\n                    {\n                        \"Id\": 1,\n                        \"CompanyName\": \"abc\",\n                        \"CompanyPermit\": \"abc\",\n                        \"CompanyType\": \"abc\",\n                        \"Plan\": \"abc\",\n                        \"LicenseType\": \"abc\",\n                        \"Status\": 1,\n                        \"Update\": true,\n                        \"StartTime\": \"abc\",\n                        \"EndTime\": \"abc\",\n                        \"RenewalCount\": 1,\n                        \"Reply\": [\n                            \"abc\"\n                        ],\n                        \"CreatedAt\": \"abc\",\n                        \"UpdatedAt\": \"abc\",\n                        \"UpdateTime\": \"abc\",\n                        \"Expired\": true,\n                        \"RestTime\": 1,\n                        \"XMagicType\": \"abc\",\n                        \"Name\": \"abc\"\n                    }\n                ],\n                \"MacBundleId\": \"abc\",\n                \"WinProcessName\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询视立方应用及优图license"
+      }
+    ],
+    "DescribeVcubeResources": [
+      {
+        "document": "查询视立方 license 资源",
+        "input": "POST / HTTP/1.1\nHost: vcube.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVcubeResources\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"ResourceList\": [\n            {\n                \"Id\": 1,\n                \"AppId\": \"abc\",\n                \"Duration\": \"abc\",\n                \"FeatureId\": 1,\n                \"StartTime\": \"abc\",\n                \"EndTime\": \"abc\",\n                \"CreatedAt\": \"abc\",\n                \"UpdatedAt\": \"abc\",\n                \"IsUse\": true,\n                \"Status\": 1,\n                \"IsolatedTimestamp\": \"abc\",\n                \"Name\": \"abc\",\n                \"Type\": \"abc\",\n                \"Package\": {\n                    \"Id\": 0,\n                    \"BizResourceId\": \"abc\",\n                    \"Site\": \"abc\",\n                    \"StartTime\": \"abc\",\n                    \"EndTime\": \"abc\",\n                    \"RefundTime\": \"abc\",\n                    \"Name\": \"abc\",\n                    \"Type\": \"abc\"\n                }\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询视立方 license 资源"
+      }
+    ],
+    "DescribeVcubeResourcesList": [
+      {
+        "document": "查询视立方 license 资源列表",
+        "input": "POST / HTTP/1.1\nHost: vcube.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVcubeResourcesList\n<公共请求参数>\n\n{\n    \"PageNumber\": 1,\n    \"PageSize\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"ResourceList\": [\n            {\n                \"Id\": 1,\n                \"AppId\": \"abc\",\n                \"Duration\": \"abc\",\n                \"FeatureId\": 1,\n                \"StartTime\": \"abc\",\n                \"EndTime\": \"abc\",\n                \"CreatedAt\": \"abc\",\n                \"UpdatedAt\": \"abc\",\n                \"IsUse\": true,\n                \"Status\": 1,\n                \"IsolatedTimestamp\": \"abc\",\n                \"Name\": \"abc\",\n                \"Type\": \"abc\",\n                \"Package\": {\n                    \"Id\": 0,\n                    \"BizResourceId\": \"abc\",\n                    \"Site\": \"abc\",\n                    \"StartTime\": \"abc\",\n                    \"EndTime\": \"abc\",\n                    \"RefundTime\": \"abc\",\n                    \"Name\": \"abc\",\n                    \"Type\": \"abc\"\n                },\n                \"Application\": {\n                    \"Id\": 1,\n                    \"AppId\": \"abc\",\n                    \"AppName\": \"abc\",\n                    \"BundleId\": \"abc\",\n                    \"PackageName\": \"abc\",\n                    \"AppType\": \"abc\",\n                    \"CreatedAt\": \"abc\",\n                    \"UpdatedAt\": \"abc\",\n                    \"MacBundleId\": \"abc\",\n                    \"WinProcessName\": \"abc\",\n                    \"DomainList\": [\n                        \"abc\"\n                    ]\n                },\n                \"ResourceId\": \"abc\",\n                \"AutoRenewFlag\": 1\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询视立方 license 资源列表"
+      }
+    ],
+    "DescribeXMagicResource": [
+      {
+        "document": "获取优图资源包",
+        "input": "POST / HTTP/1.1\nHost: vcube.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeXMagicResource\n<公共请求参数>\n\n{\n    \"PageNumber\": 1,\n    \"PageSize\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Resources\": [\n            {\n                \"Id\": 1,\n                \"AppId\": \"abc\",\n                \"Plan\": \"abc\",\n                \"Duration\": \"abc\",\n                \"CreatedAt\": \"abc\",\n                \"UpdatedAt\": \"abc\",\n                \"XMagic\": true,\n                \"StartTime\": \"abc\",\n                \"EndTime\": \"abc\",\n                \"Expired\": true,\n                \"Name\": \"abc\",\n                \"XMagicType\": \"abc\",\n                \"BizType\": \"abc\",\n                \"ResourceId\": \"abc\"\n            }\n        ],\n        \"Count\": 1,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "获取优图资源包"
+      }
+    ],
+    "DescribeXMagicResourceList": [
+      {
+        "document": "视立方获取资源列表",
+        "input": "POST / HTTP/1.1\nHost: vcube.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeXMagicResourceList\n<公共请求参数>\n\n{\n    \"PageNumber\": 1,\n    \"PageSize\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Resources\": [\n            {\n                \"Id\": 1,\n                \"AppId\": \"abc\",\n                \"Plan\": \"abc\",\n                \"Duration\": \"abc\",\n                \"CreatedAt\": \"abc\",\n                \"UpdatedAt\": \"abc\",\n                \"StartTime\": \"abc\",\n                \"EndTime\": \"abc\",\n                \"Application\": {\n                    \"Id\": 1,\n                    \"AppId\": \"abc\",\n                    \"AppName\": \"abc\",\n                    \"BundleId\": \"abc\",\n                    \"PackageName\": \"abc\",\n                    \"AppType\": \"abc\",\n                    \"CreatedAt\": \"abc\",\n                    \"UpdatedAt\": \"abc\",\n                    \"MacBundleId\": \"abc\",\n                    \"WinProcessName\": \"abc\"\n                },\n                \"XMagic\": {\n                    \"Id\": 1,\n                    \"Status\": 1\n                },\n                \"Status\": 1,\n                \"Operation\": [\n                    \"abc\"\n                ],\n                \"IsUse\": true,\n                \"XMagicType\": \"abc\",\n                \"Name\": \"abc\",\n                \"BizType\": \"abc\",\n                \"ResourceId\": \"abc\"\n            }\n        ],\n        \"Count\": 1,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "获取优图资源列表"
+      }
+    ],
+    "ModifyApplication": [
+      {
+        "document": "修改应用名称、修改mobile和pc包名信息、追加web播放器域名",
+        "input": "POST / HTTP/1.1\nHost: vcube.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyApplication\n<公共请求参数>\n\n{\n    \"ApplicationId\": 123,\n    \"AppName\": \"QQ\",\n    \"BundleId\": \"com.company.appName\",\n    \"PackageName\": \"com.company.appName\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "编辑更改应用"
+      }
+    ],
+    "ModifyFormalApplication": [
+      {
+        "document": "修改正式应用AppName，国际站专有",
+        "input": "POST / HTTP/1.1\nHost: vcube.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyFormalApplication\n<公共请求参数>\n\n{\n    \"AppName\": \"abc\",\n    \"BundleId\": \"abc\",\n    \"PackageName\": \"abc\",\n    \"ApplicationId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "修改正式应用包名"
+      }
+    ],
+    "ModifyLicense": [
+      {
+        "document": "正式license 升降配，点播精简版、基础版\n 两种情况可以变更：\n 1. 精简版可以升级到基础版\n 2. 基础版即将过期的时候可以降级到精简版 （7天）",
+        "input": "POST / HTTP/1.1\nHost: vcube.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLicense\n<公共请求参数>\n\n{\n    \"LicenseId\": \"123\",\n    \"ResourceId\": \"123\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "更新license"
+      }
+    ],
+    "ModifyPresetApplication": [
+      {
+        "document": "修改活动内置应用报名信息",
+        "input": "POST / HTTP/1.1\nHost: vcube.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPresetApplication\n<公共请求参数>\n\n{\n    \"ApplicationId\": 1,\n    \"AppName\": \"abc\",\n    \"BundleId\": \"abc\",\n    \"PackageName\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1111111-2222-3333\"\n    }\n}",
+        "title": "修改内置应用"
+      }
+    ],
+    "ModifyTrialLicense": [
+      {
+        "document": "测试license续期",
+        "input": "POST / HTTP/1.1\nHost: vcube.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTrialLicense\n<公共请求参数>\n\n{\n    \"LicenseId\": \"123\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "测试license续期"
+      }
+    ],
+    "ModifyXMagic": [
+      {
+        "document": "更新优图资源，更新资源、升降配等，需要先购买资源",
+        "input": "POST / HTTP/1.1\nHost: vcube.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyXMagic\n<公共请求参数>\n\n{\n    \"ResourceId\": \"abc\",\n    \"XMagicId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "更新优图资源"
+      }
+    ],
+    "RenewLicense": [
+      {
+        "document": "正式license替换对应资源，如资源开通了自动续期则需要先关闭自动续期后再替换",
+        "input": "POST / HTTP/1.1\nHost: vcube.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RenewLicense\n<公共请求参数>\n\n{\n    \"LicenseId\": \"123\",\n    \"ResourceId\": \"123\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "更新license"
+      }
+    ],
+    "RenewTestXMagic": [
+      {
+        "document": "续期测试版本优图",
+        "input": "POST / HTTP/1.1\nHost: vcube.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RenewTestXMagic\n<公共请求参数>\n\n{\n    \"XMagicId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx\"\n    }\n}",
+        "title": "续期测试版本优图"
+      }
+    ],
+    "RenewVideo": [
+      {
+        "document": "续期视频播放license",
+        "input": "POST / HTTP/1.1\nHost: vcube.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RenewVideo\n<公共请求参数>\n\n{\n    \"LicenseId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "续期视频播放license"
+      }
+    ],
+    "UpdateTestXMagic": [
+      {
+        "document": "按照测试版包名信息创建一个正式版腾讯特效",
+        "input": "POST / HTTP/1.1\nHost: vcube.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateTestXMagic\n<公共请求参数>\n\n{\n    \"XMagicId\": 1,\n    \"ResourceId\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "升级测试版到正式版"
+      }
+    ],
+    "UpdateTrialLicense": [
+      {
+        "document": "按照测试版的包名信息创建一个正式版的基础license",
+        "input": "POST / HTTP/1.1\nHost: vcube.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateTrialLicense\n<公共请求参数>\n\n{\n    \"LicenseId\": \"123\",\n    \"ResourceId\": \"123\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "测试license升级成license"
+      }
+    ],
+    "UpdateXMagic": [
+      {
+        "document": "更新xmagic申请信息，  Status 为2，3的时候可用",
+        "input": "POST / HTTP/1.1\nHost: vcube.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateXMagic\n<公共请求参数>\n\n{\n    \"XMagicResourceId\": \"abc\",\n    \"CompanyPermit\": \"abc\",\n    \"CompanyType\": \"abc\",\n    \"CompanyName\": \"abc\",\n    \"XMagicId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "更新xmagic"
+      }
+    ]
+  },
+  "version": "1.0"
+}

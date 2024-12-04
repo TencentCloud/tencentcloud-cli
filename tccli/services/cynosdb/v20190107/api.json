@@ -364,6 +364,13 @@
       "output": "DescribeClusterPasswordComplexityResponse",
       "status": "online"
     },
+    "DescribeClusterTransparentEncryptInfo": {
+      "document": "查询集群透明加密信息",
+      "input": "DescribeClusterTransparentEncryptInfoRequest",
+      "name": "查询集群透明加密信息",
+      "output": "DescribeClusterTransparentEncryptInfoResponse",
+      "status": "online"
+    },
     "DescribeClusters": {
       "document": "本接口（DescribeClusters）用于查询集群列表。",
       "input": "DescribeClustersRequest",
@@ -859,6 +866,13 @@
       "input": "OpenClusterReadOnlyInstanceGroupAccessRequest",
       "name": "开启只读实例组接入",
       "output": "OpenClusterReadOnlyInstanceGroupAccessResponse",
+      "status": "online"
+    },
+    "OpenClusterTransparentEncrypt": {
+      "document": "开通集群透明加密",
+      "input": "OpenClusterTransparentEncryptRequest",
+      "name": "开通集群透明加密",
+      "output": "OpenClusterTransparentEncryptResponse",
       "status": "online"
     },
     "OpenReadOnlyInstanceExclusiveAccess": {
@@ -9792,6 +9806,53 @@
       ],
       "type": "object"
     },
+    "DescribeClusterTransparentEncryptInfoRequest": {
+      "document": "DescribeClusterTransparentEncryptInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群id",
+          "example": "cynosdbmysql-6oo0qjvo",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterTransparentEncryptInfoResponse": {
+      "document": "DescribeClusterTransparentEncryptInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "加密秘钥id",
+          "example": "无",
+          "member": "string",
+          "name": "KeyId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "加密秘钥地域\n",
+          "example": "无",
+          "member": "string",
+          "name": "KeyRegion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeClustersRequest": {
       "document": "DescribeClusters请求参数结构体",
       "members": [
@@ -16477,6 +16538,70 @@
           "member": "int64",
           "name": "FlowId",
           "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "OpenClusterTransparentEncryptRequest": {
+      "document": "OpenClusterTransparentEncrypt请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群id",
+          "example": "cynosdbmysql-6oo0qjvo",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "秘钥类型(cloud,custom)",
+          "example": "cloud",
+          "member": "string",
+          "name": "KeyType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "秘钥Id",
+          "example": "9d112608-76f7-11ee-a86f-525400368ae8",
+          "member": "string",
+          "name": "KeyId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "秘钥地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "KeyRegion",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "OpenClusterTransparentEncryptResponse": {
+      "document": "OpenClusterTransparentEncrypt返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "异步任务id\n",
+          "example": "12345",
+          "member": "int64",
+          "name": "TaskId",
+          "output_required": false,
           "type": "int",
           "value_allowed_null": false
         },

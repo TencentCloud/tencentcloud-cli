@@ -7853,6 +7853,24 @@
           "name": "Tags",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "HaVip绑定的子机或网卡。最多支持10个实例。",
+          "example": "[{\"InstanceType\": \"CVM\", \"InstanceId\": \"ins-mdunqeb6\"}]",
+          "member": "HaVipAssociation",
+          "name": "HaVipAssociationSet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。",
+          "example": "d7df28fd-dcba-4dbb-82bc-bce3bf4d3562",
+          "member": "string",
+          "name": "ClientToken",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -12967,7 +12985,7 @@
         {
           "disabled": false,
           "document": "过滤条件。\n<li>address-template-group-name - String - （过滤条件）IP地址模板集合名称。</li>\n<li>address-template-group-id - String - （过滤条件）IP地址模板实集合例ID，例如：ipmg-mdunqeb6。</li>",
-          "example": "无",
+          "example": "[{\"Name\": \"address-template-group-id\", \"Values\": [\"ipmg-mdunqeb6\"]}]",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -12994,7 +13012,7 @@
         {
           "disabled": false,
           "document": "是否查询IP地址模板成员标识。",
-          "example": "False",
+          "example": "false",
           "member": "bool",
           "name": "NeedMemberInfo",
           "required": false,
@@ -13009,7 +13027,7 @@
         {
           "disabled": false,
           "document": "符合条件的实例数量。",
-          "example": "10",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
           "output_required": true,
@@ -13019,7 +13037,7 @@
         {
           "disabled": false,
           "document": "IP地址模板。",
-          "example": "无",
+          "example": "[{\"CreatedTime\": \"2022-12-06 20:00:00\", \"AddressTemplateGroupName\": \"demo\", \"AddressTemplateIdSet\": [\"ipm-xxxxxxxx\", \"ipm-yyyyyyyy\"], \"AddressTemplateSet\": [{\"AddressTemplateName\": \"ipm demo\", \"AddressTemplateId\": \"ipm-siqmaox1\"}], \"AddressTemplateGroupId\": \"ipmg-mdunqeb6\"}]",
           "member": "AddressTemplateGroup",
           "name": "AddressTemplateGroupSet",
           "output_required": true,
@@ -19380,7 +19398,7 @@
           "example": "SUCCESS",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -19390,19 +19408,19 @@
           "example": "SUCCESS",
           "member": "string",
           "name": "Output",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "异步任务详细结果。只用于特殊场景，如批量删除弹性网卡时查询成功的网卡列表和失败的列表。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "异步任务详细结果。只用于特殊场景，如批量删除弹性网卡时查询成功的网卡列表和失败的列表。",
+          "example": "[]",
           "member": "VpcTaskResultDetailInfo",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -25297,7 +25315,7 @@
           "example": "demo",
           "member": "string",
           "name": "HaVipName",
-          "required": true,
+          "required": false,
           "type": "string"
         }
       ],

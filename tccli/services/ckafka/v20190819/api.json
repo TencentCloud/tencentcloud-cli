@@ -9405,7 +9405,7 @@
           "example": "0",
           "member": "int64",
           "name": "Enable",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -9416,7 +9416,7 @@
           "example": "75",
           "member": "int64",
           "name": "DiskQuotaPercentage",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -9427,7 +9427,7 @@
           "example": "10",
           "member": "int64",
           "name": "StepForwardPercentage",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -9438,7 +9438,7 @@
           "example": "360",
           "member": "int64",
           "name": "BottomRetention",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "int",
           "value_allowed_null": true

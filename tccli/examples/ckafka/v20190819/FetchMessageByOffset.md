@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli ckafka FetchMessageByOffset --cli-unfold-argument  \
-    --InstanceId xxx \
-    --Topic xxx \
+    --InstanceId ckafka \
+    --Topic topic-test \
     --Partition 1 \
     --Offset 1
 ```
@@ -17,15 +17,15 @@ Output:
 {
     "Response": {
         "Result": {
-            "Topic": "abc",
+            "Topic": "topic-test",
             "Partition": 0,
             "Offset": 0,
-            "Key": "abc",
-            "Value": "abc",
+            "Key": "key",
+            "Value": "value",
             "Timestamp": 0,
-            "Headers": "abc"
+            "Headers": "head"
         },
-        "RequestId": "abc"
+        "RequestId": "4a88011d-763d-446d-802e-fcbe970a4043"
     }
 }
 ```

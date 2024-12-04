@@ -48,6 +48,14 @@
         "title": "集成商创建企业"
       }
     ],
+    "CreateDocCate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDocCate\n<公共请求参数>\n\n{\n    \"BotBizId\": \"1714970520775950336\",\n    \"ParentBizId\": \"1733053612030808064\",\n    \"Name\": \"哈哈哈哈\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CanAdd\": true,\n        \"CanDelete\": true,\n        \"CanEdit\": true,\n        \"CateBizId\": \"1734144647474577408\",\n        \"RequestId\": \"39db6689-ceab-4ae7-87a9-f926774255d7\"\n    }\n}",
+        "title": "创建Doc分类"
+      }
+    ],
     "CreateQA": [
       {
         "document": "创建问答",
@@ -110,6 +118,14 @@
         "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDoc\n<公共请求参数>\n\n{\n    \"DocBizIds\": [\n        \"1727266196004143104\"\n    ],\n    \"BotBizId\": \"1714970520775950336\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"7e0e00a7-1505-4d4e-9fc2-e88e9c700aa4\"\n    }\n}",
         "title": "删除文档"
+      }
+    ],
+    "DeleteDocCate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDocCate\n<公共请求参数>\n\n{\n    \"BotBizId\": \"1714970520775950336\",\n    \"CateBizId\": \"1734144647474577408\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4478d155-4b10-40d8-a1dd-5ea045259966\"\n    }\n}",
+        "title": "Doc分类删除"
       }
     ],
     "DeleteQA": [
@@ -420,6 +436,14 @@
         "title": "获取 WS Token"
       }
     ],
+    "GroupDoc": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GroupDoc\n<公共请求参数>\n\n{\n    \"BotBizId\": \"1714970520775950336\",\n    \"BizIds\": [\n        \"17341635094137912292\"\n    ],\n    \"CateBizId\": \"1734163509413793792\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1a86bd37-eeae-427a-baad-c8aa20eb6252\"\n    }\n}",
+        "title": "Doc分组"
+      }
+    ],
     "GroupQA": [
       {
         "document": "分组QA",
@@ -460,6 +484,20 @@
         "title": "获取应用类型列表"
       }
     ],
+    "ListAppKnowledgeDetail": [
+      {
+        "document": "列表查询知识库容量详情",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListAppKnowledgeDetail\n<公共请求参数>\n\n{\n    \"PageNumber\": 1,\n    \"PageSize\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [],\n        \"RequestId\": \"94d7732a-0b85-45a8-9f3f-2c73e750ba67\",\n        \"Total\": 6\n    }\n}",
+        "title": "列表查询知识库容量详情"
+      },
+      {
+        "document": "列表查询应用知识库容量使用详情",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListAppKnowledgeDetail\n<公共请求参数>\n\n{\n    \"PageNumber\": 1,\n    \"PageSize\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [],\n        \"RequestId\": \"99007a19-557c-43ec-9bdc-2f8587b461cf\",\n        \"Total\": 0\n    }\n}",
+        "title": "列表查询应用知识库容量使用详情"
+      }
+    ],
     "ListAttributeLabel": [
       {
         "document": "知识标签列表",
@@ -474,6 +512,14 @@
         "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListDoc\n<公共请求参数>\n\n{\n    \"BotBizId\": \"1727231073371148288\",\n    \"PageNumber\": 1,\n    \"PageSize\": 10\n}",
         "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"AttrLabels\": [],\n                \"AttrRange\": 1,\n                \"CosUrl\": \"/corp/137/doc/jkadslfjalkdfjaklsdfla.docx\",\n                \"DocBizId\": \"1729099536210460672\",\n                \"DocCharSize\": \"5\",\n                \"FileName\": \"jkadslfjalkdfjaklsdfla.docx\",\n                \"FileType\": \"docx\",\n                \"IsAllowDelete\": true,\n                \"IsAllowEdit\": true,\n                \"IsAllowRefer\": true,\n                \"IsAllowRestart\": true,\n                \"IsCreatedQa\": true,\n                \"IsCreatingQa\": false,\n                \"IsDeleted\": false,\n                \"IsDeletedQa\": false,\n                \"IsRefer\": false,\n                \"QaNum\": 2,\n                \"Reason\": \"生成问答成功\",\n                \"Source\": 1,\n                \"SourceDesc\": \"网页导入\",\n                \"Status\": 12,\n                \"StatusDesc\": \"已发布\",\n                \"WebUrl\": \"\",\n                \"ReferUrlType\": 0,\n                \"UpdateTime\": \"1701425246\"\n            }\n        ],\n        \"RequestId\": \"5526c65b-308d-4e84-b6b3-6b21d5c106b2\",\n        \"Total\": \"1\"\n    }\n}",
         "title": "文档列表"
+      }
+    ],
+    "ListDocCate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListDocCate\n<公共请求参数>\n\n{\n    \"BotBizId\": \"1714970520775950336\"\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"CanAdd\": true,\n                \"CanDelete\": false,\n                \"CanEdit\": false,\n                \"CateBizId\": \"0\",\n                \"Children\": [\n                    {\n                        \"CanAdd\": false,\n                        \"CanDelete\": false,\n                        \"CanEdit\": false,\n                        \"CateBizId\": \"54554\",\n                        \"Children\": [],\n                        \"Name\": \"未分类\",\n                        \"Total\": 4\n                    }\n                ],\n                \"Name\": \"全部分类\",\n                \"Total\": 4\n            }\n        ],\n        \"RequestId\": \"b6a45aaf-571d-48bd-988d-b0063d5e1a8b\"\n    }\n}",
+        "title": "获取Doc分类"
       }
     ],
     "ListModel": [
@@ -564,6 +610,14 @@
         "title": "查询不满意回复列表"
       }
     ],
+    "ListUsageCallDetail": [
+      {
+        "document": "列表查询单次调用明细",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListUsageCallDetail\n<公共请求参数>\n\n{\n    \"CallType\": \"AllCallType\",\n    \"ModelName\": \"cs-normal-70b\",\n    \"StartTime\": \"1723564800\",\n    \"EndTime\": \"1726156799\",\n    \"PageNumber\": 1,\n    \"PageSize\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"AppName\": \"\",\n                \"CallTime\": \"1724946200\",\n                \"CallType\": \"对话调用\",\n                \"Id\": \"e8h_20240701_194330_474_XRMUA92T\",\n                \"InputTokenUsage\": 471,\n                \"ModelName\": \"精调知识大模型高级版\",\n                \"OutputTokenUsage\": 886,\n                \"SearchUsage\": 0,\n                \"TotalTokenUsage\": 1357,\n                \"UinAccount\": \"600000562455\"\n            }\n        ],\n        \"RequestId\": \"9332ab9b-dec8-481e-87a8-af6983ac9fe7\",\n        \"Total\": 1\n    }\n}",
+        "title": "列表查询单次调用明细"
+      }
+    ],
     "ModifyApp": [
       {
         "document": "修改应用",
@@ -594,6 +648,14 @@
         "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SaveDoc\n<公共请求参数>\n\n{\n    \"BotBizId\": \"1742501052613230592\",\n    \"DocBizIds\": [\n        \"1747174616331976704\"\n    ],\n    \"AttrLabels\": [\n        {\n            \"AttributeBizId\": \"1759039436899221504\",\n            \"Source\": 1,\n            \"LabelBizIds\": [\n                \"0\"\n            ]\n        }\n    ],\n    \"AttrRange\": 2\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"e3338103-3165-49c0-b218-245be865cca5\"\n    }\n}",
         "title": "批量修改文档的适用范围"
+      }
+    ],
+    "ModifyDocCate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDocCate\n<公共请求参数>\n\n{\n    \"BotBizId\": \"1714970520775950336\",\n    \"Name\": \"1733038\",\n    \"CateBizId\": \"1733038348326273024\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f28a91f9-11ec-451c-a09e-3c8552f6fd29\"\n    }\n}",
+        "title": "修改Doc分类"
       }
     ],
     "ModifyQA": [

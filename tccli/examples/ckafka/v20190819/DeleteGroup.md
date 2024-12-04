@@ -7,7 +7,7 @@ Input:
 ```
 tccli ckafka DeleteGroup --cli-unfold-argument  \
     --InstanceId ckafka-6er88krk \
-    --Group test
+    --Group grouptest
 ```
 
 Output: 

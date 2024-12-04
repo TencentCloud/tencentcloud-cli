@@ -434,6 +434,14 @@
         "title": "查看集群密码复杂度详情"
       }
     ],
+    "DescribeClusterTransparentEncryptInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterTransparentEncryptInfo\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-3pd4zrvn\"\n}",
+        "output": "{\n    \"Response\": {\n        \"KeyId\": \"9d112608-76f7-11ee-a86f-525400368ae8\",\n        \"KeyRegion\": \"ap-guangzhou\",\n        \"RequestId\": \"c66ada1a-0098-4787-8db8-42be0cee52cd\"\n    }\n}",
+        "title": "查询集群加密信息"
+      }
+    ],
     "DescribeClusters": [
       {
         "document": "查询集群列表",
@@ -1006,6 +1014,14 @@
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OpenClusterReadOnlyInstanceGroupAccess\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-abcd1234\",\n    \"Port\": \"3306\",\n    \"SecurityGroupIds\": [\n        \"SecurityGroupIds1\",\n        \"SecurityGroupIds2\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"FlowId\": \"12345\",\n        \"RequestId\": \"qwertyuiop\"\n    }\n}",
         "title": "ex:"
+      }
+    ],
+    "OpenClusterTransparentEncrypt": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OpenClusterTransparentEncrypt\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-3pd4zrvn\",\n    \"KeyType\": \"cloud\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c66ada1a-0098-4787-8db8-42be0cee52cd\",\n        \"TaskId\": 283\n    }\n}",
+        "title": "使用云产品开启透明加密"
       }
     ],
     "OpenReadOnlyInstanceExclusiveAccess": [

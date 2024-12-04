@@ -11,7 +11,7 @@ tccli trocket CreateConsumerGroup --cli-unfold-argument  \
     --MaxRetryTimes 16 \
     --ConsumeEnable True \
     --ConsumeMessageOrderly True \
-    --Remark test
+    --Remark remark info
 ```
 
 Output: 

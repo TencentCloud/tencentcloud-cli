@@ -42,6 +42,13 @@
       "output": "CreateCorpResponse",
       "status": "online"
     },
+    "CreateDocCate": {
+      "document": "创建Doc分类",
+      "input": "CreateDocCateRequest",
+      "name": "创建Doc分类",
+      "output": "CreateDocCateResponse",
+      "status": "online"
+    },
     "CreateQA": {
       "document": "录入问答",
       "input": "CreateQARequest",
@@ -96,6 +103,13 @@
       "input": "DeleteDocRequest",
       "name": "删除文档",
       "output": "DeleteDocResponse",
+      "status": "online"
+    },
+    "DeleteDocCate": {
+      "document": "Doc分类删除",
+      "input": "DeleteDocCateRequest",
+      "name": "Doc分类删除",
+      "output": "DeleteDocCateResponse",
       "status": "online"
     },
     "DeleteQA": {
@@ -357,6 +371,13 @@
       "output": "GetWsTokenResponse",
       "status": "online"
     },
+    "GroupDoc": {
+      "document": "Doc分组",
+      "input": "GroupDocRequest",
+      "name": "Doc分组",
+      "output": "GroupDocResponse",
+      "status": "online"
+    },
     "GroupQA": {
       "document": "QA分组",
       "input": "GroupQARequest",
@@ -392,6 +413,13 @@
       "output": "ListAppCategoryResponse",
       "status": "online"
     },
+    "ListAppKnowledgeDetail": {
+      "document": "列表查询知识库容量详情",
+      "input": "ListAppKnowledgeDetailRequest",
+      "name": "列表查询知识库容量详情",
+      "output": "ListAppKnowledgeDetailResponse",
+      "status": "online"
+    },
     "ListAttributeLabel": {
       "document": "查询属性标签列表",
       "input": "ListAttributeLabelRequest",
@@ -404,6 +432,13 @@
       "input": "ListDocRequest",
       "name": "文档列表",
       "output": "ListDocResponse",
+      "status": "online"
+    },
+    "ListDocCate": {
+      "document": "获取Doc分类",
+      "input": "ListDocCateRequest",
+      "name": "获取文档分类",
+      "output": "ListDocCateResponse",
       "status": "online"
     },
     "ListModel": {
@@ -483,6 +518,13 @@
       "output": "ListUnsatisfiedReplyResponse",
       "status": "online"
     },
+    "ListUsageCallDetail": {
+      "document": "列表查询单次调用明细",
+      "input": "ListUsageCallDetailRequest",
+      "name": "列表查询单次调用明细",
+      "output": "ListUsageCallDetailResponse",
+      "status": "online"
+    },
     "ModifyApp": {
       "document": "修改应用请求结构体",
       "input": "ModifyAppRequest",
@@ -509,6 +551,13 @@
       "input": "ModifyDocAttrRangeRequest",
       "name": "批量修改文档适用范围",
       "output": "ModifyDocAttrRangeResponse",
+      "status": "online"
+    },
+    "ModifyDocCate": {
+      "document": "修改Doc分类",
+      "input": "ModifyDocCateRequest",
+      "name": "修改Doc分类",
+      "output": "ModifyDocCateResponse",
       "status": "online"
     },
     "ModifyQA": {
@@ -1208,6 +1257,208 @@
       ],
       "usage": "both"
     },
+    "CallDetail": {
+      "document": "调用类型",
+      "members": [
+        {
+          "disabled": false,
+          "document": "关联ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Id",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "调用时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CallTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总token消耗\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "TotalTokenUsage",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "输入token消耗\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "InputTokenUsage",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "输出token消耗\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "OutputTokenUsage",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "搜索服务调用次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "SearchUsage",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "模型名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ModelName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "调用类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CallType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "账号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UinAccount",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "应用名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AppName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总消耗页数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "PageUsage",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "筛选子场景\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SubScene",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "CateInfo": {
+      "document": "分类信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分类ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CateBizId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分类名称\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分类下的Record（如文档、同义词等）数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否可新增\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "CanAdd",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否可编辑\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "CanEdit",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否可删除\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "CanDelete",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "子分类\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CateInfo",
+          "name": "Children",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "CheckAttributeLabelExistRequest": {
       "document": "CheckAttributeLabelExist请求参数结构体",
       "members": [
@@ -1809,6 +2060,91 @@
       ],
       "type": "object"
     },
+    "CreateDocCateRequest": {
+      "document": "CreateDocCate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用ID",
+          "example": "无",
+          "member": "string",
+          "name": "BotBizId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "父级业务ID",
+          "example": "无",
+          "member": "string",
+          "name": "ParentBizId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分类名称\n",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDocCateResponse": {
+      "document": "CreateDocCate返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否可新增\n",
+          "example": "无",
+          "member": "bool",
+          "name": "CanAdd",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否可编辑",
+          "example": "无",
+          "member": "bool",
+          "name": "CanEdit",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否可删除\n",
+          "example": "无",
+          "member": "bool",
+          "name": "CanDelete",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分类业务ID",
+          "example": "无",
+          "member": "string",
+          "name": "CateBizId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateQACateRequest": {
       "document": "CreateQACate请求参数结构体",
       "members": [
@@ -2352,6 +2688,42 @@
     },
     "DeleteAttributeLabelResponse": {
       "document": "DeleteAttributeLabel返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDocCateRequest": {
+      "document": "DeleteDocCate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用ID",
+          "example": "无",
+          "member": "string",
+          "name": "BotBizId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分类业务ID",
+          "example": "无",
+          "member": "string",
+          "name": "CateBizId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDocCateResponse": {
+      "document": "DeleteDocCate返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -4271,7 +4643,7 @@
         },
         {
           "disabled": false,
-          "document": "IsPublic用于上传文件或图片时选择场景，当上传为对话端图片时IsPublic为true，上传文件（包括文档库文件和对话端文件）时IsPublic为false",
+          "document": "IsPublic用于上传文件或图片时选择场景，当上传对话端图片时IsPublic为true，上传文件（包括文档库文件/图片等和对话端文件）时IsPublic为false\n",
           "example": "false",
           "member": "bool",
           "name": "IsPublic",
@@ -6266,6 +6638,51 @@
       ],
       "type": "object"
     },
+    "GroupDocRequest": {
+      "document": "GroupDoc请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用ID",
+          "example": "无",
+          "member": "string",
+          "name": "BotBizId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "操作对象的业务ID列表",
+          "example": "无",
+          "member": "string",
+          "name": "BizIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "分组 ID",
+          "example": "无",
+          "member": "string",
+          "name": "CateBizId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GroupDocResponse": {
+      "document": "GroupDoc返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "GroupQARequest": {
       "document": "GroupQA请求参数结构体",
       "members": [
@@ -6607,6 +7024,56 @@
         }
       ],
       "usage": "out"
+    },
+    "KnowledgeDetail": {
+      "document": "应用使用知识库容量详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AppName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "已用字符数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UsedCharSize",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "使用占比\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "Proportion",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "超量字符数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ExceedCharSize",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "KnowledgeQaConfig": {
       "document": "知识问答配置",
@@ -7013,6 +7480,71 @@
       ],
       "usage": "out"
     },
+    "ListAppKnowledgeDetailRequest": {
+      "document": "ListAppKnowledgeDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "页码",
+          "example": "无",
+          "member": "uint64",
+          "name": "PageNumber",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "页面大小",
+          "example": "无",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "应用ID列表",
+          "example": "无",
+          "member": "string",
+          "name": "AppBizIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ListAppKnowledgeDetailResponse": {
+      "document": "ListAppKnowledgeDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "列表总数",
+          "example": "无",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用使用知识库容量详情",
+          "example": "无",
+          "member": "KnowledgeDetail",
+          "name": "List",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ListAppRequest": {
       "document": "ListApp请求参数结构体",
       "members": [
@@ -7174,6 +7706,43 @@
           "document": "列表",
           "example": "无",
           "member": "AttrLabelDetail",
+          "name": "List",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListDocCateRequest": {
+      "document": "ListDocCate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用ID",
+          "example": "无",
+          "member": "string",
+          "name": "BotBizId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListDocCateResponse": {
+      "document": "ListDocCate返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "列表",
+          "example": "无",
+          "member": "CateInfo",
           "name": "List",
           "output_required": false,
           "type": "list",
@@ -8909,6 +9478,125 @@
       ],
       "type": "object"
     },
+    "ListUsageCallDetailRequest": {
+      "document": "ListUsageCallDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "模型标识",
+          "example": "无",
+          "member": "string",
+          "name": "ModelName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "无",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "无",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "页码",
+          "example": "无",
+          "member": "uint64",
+          "name": "PageNumber",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页数量",
+          "example": "无",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "uin列表",
+          "example": "无",
+          "member": "string",
+          "name": "UinAccount",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "应用ID列表",
+          "example": "无",
+          "member": "string",
+          "name": "AppBizIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "调用类型列表",
+          "example": "无",
+          "member": "string",
+          "name": "CallType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "筛选子场景",
+          "example": "无",
+          "member": "string",
+          "name": "SubScenes",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ListUsageCallDetailResponse": {
+      "document": "ListUsageCallDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "列表总数",
+          "example": "无",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "列表",
+          "example": "无",
+          "member": "CallDetail",
+          "name": "List",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "Message": {
       "document": "一条message代表一条对话记录\nrole表示角色  user或者assistant\ncontent表示对话内容",
       "members": [
@@ -9297,6 +9985,51 @@
     },
     "ModifyDocAttrRangeResponse": {
       "document": "ModifyDocAttrRange返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDocCateRequest": {
+      "document": "ModifyDocCate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用ID",
+          "example": "无",
+          "member": "string",
+          "name": "BotBizId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分类名称\n",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分类业务ID",
+          "example": "无",
+          "member": "string",
+          "name": "CateBizId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDocCateResponse": {
+      "document": "ModifyDocCate返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

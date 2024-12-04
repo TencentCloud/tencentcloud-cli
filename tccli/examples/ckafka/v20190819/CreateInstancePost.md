@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli ckafka CreateInstancePost --cli-unfold-argument  \
-    --InstanceName test45 \
-    --VpcId vpc-xxxxxxxx \
-    --SubnetId subnet-xxxxxxxx \
+    --InstanceName yourtest45 \
+    --VpcId vpc-test \
+    --SubnetId subnet-test \
     --KafkaVersion 2.4.2 \
     --SpecificationsType profession \
     --DiskType CLOUD_BASIC \
@@ -24,8 +24,8 @@ Output:
 {
     "Response": {
         "Result": {
-            "ReturnCode": "abc",
-            "ReturnMessage": "abc",
+            "ReturnCode": "0",
+            "ReturnMessage": "ok[apply success]",
             "Data": {
                 "FlowId": 0,
                 "RouteDTO": {
@@ -33,7 +33,7 @@ Output:
                 }
             }
         },
-        "RequestId": "abc"
+        "RequestId": "84770b4b-df34-4ccf-8e22-41d3b1d0fe0d"
     }
 }
 ```

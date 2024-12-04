@@ -1117,7 +1117,7 @@
         {
           "disabled": false,
           "document": "传入的类型。\n- 取值范围：\n1：传入的是图片类型。\n2：传入的是视频类型。\n其他：返回错误码InvalidParameter。",
-          "example": "true",
+          "example": "1",
           "member": "int64",
           "name": "FaceInputType",
           "required": false,

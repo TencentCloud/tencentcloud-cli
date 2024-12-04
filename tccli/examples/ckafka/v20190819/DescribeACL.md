@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli ckafka DescribeACL --cli-unfold-argument  \
-    --InstanceId xxx \
+    --InstanceId ckafka-test \
     --ResourceType 2 \
-    --ResourceName xxx
+    --ResourceName resourcename
 ```
 
 Output: 
@@ -20,9 +20,9 @@ Output:
             "AclList": [
                 {
                     "ResourceType": 2,
-                    "ResourceName": "test",
+                    "ResourceName": "ResourcetTest",
                     "Principal": "User:test",
-                    "Host": "*",
+                    "Host": "10.1.2.4",
                     "Operation": 3,
                     "PermissionType": 3
                 }

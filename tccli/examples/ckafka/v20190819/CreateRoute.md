@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ckafka CreateRoute --cli-unfold-argument  \
-    --InstanceId xxx \
+    --InstanceId ckafka-test \
     --VipType 1
 ```
 

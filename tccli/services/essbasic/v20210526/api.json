@@ -7516,7 +7516,7 @@
         },
         {
           "disabled": false,
-          "document": "签署链接类型,可以设置的参数如下\n<ul><li> **WEIXINAPP** :(默认)跳转电子签小程序的http_url, 短信通知或者H5跳转适合此类型 ，此时返回短链</li>\n<li> **CHANNEL** :带有H5引导页的跳转电子签小程序的链接</li>\n<li> **APP** :第三方App或小程序跳转电子签小程序的path, App或者小程序跳转适合此类型</li>\n<li> **LONGURL2WEIXINAPP** :跳转电子签小程序的链接, H5跳转适合此类型，此时返回长链</li></ul>\n\n**注：**动态签署人场景，如果签署链接类型设置为`APP`，则仅支持跳转到封面页。\n\n详细使用场景可以参考接口描述说明中的 **主要使用场景EndPoint分类**\n",
+          "document": "签署链接类型,可以设置的参数如下\n<ul><li> **WEIXINAPP** :(默认)跳转电子签小程序的http_url, 短信通知或者H5跳转适合此类型 ，此时返回短链</li>\n<li> **CHANNEL** :带有H5引导页的跳转电子签小程序的链接(<b>GenerateType非ALL时候不能设置成CHANNEL</b>)</li>\n<li> **APP** :第三方App或小程序跳转电子签小程序的path, App或者小程序跳转适合此类型</li>\n<li> **LONGURL2WEIXINAPP** :跳转电子签小程序的链接, H5跳转适合此类型，此时返回长链</li></ul>\n\n**注：**动态签署人场景，如果签署链接类型设置为`APP`，则仅支持跳转到封面页。\n\n详细使用场景可以参考接口描述说明中的 **主要使用场景EndPoint分类**\n",
           "example": "”WEIXINAPP“",
           "member": "string",
           "name": "Endpoint",
@@ -9454,6 +9454,15 @@
           "name": "Intention",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "进入签署流程的限制，目前支持以下选项：\n<ul><li> <b>空值（默认）</b> :无限制，可在任何场景进入签署流程。</li><li> <b>link</b> :选择此选项后，将无法通过控制台或电子签小程序列表进入填写或签署操作，仅可预览合同。填写或签署流程只能通过短信或发起方提供的专用链接进行。</li></ul>",
+          "example": "[\"link\"]",
+          "member": "string",
+          "name": "SignEndpoints",
+          "required": false,
+          "type": "list"
         }
       ],
       "usage": "in"

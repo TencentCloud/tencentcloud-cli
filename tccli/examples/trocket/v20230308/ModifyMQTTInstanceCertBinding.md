@@ -7,8 +7,8 @@ Input:
 ```
 tccli trocket ModifyMQTTInstanceCertBinding --cli-unfold-argument  \
     --InstanceId mqtt-rvb5xxrn \
-    --SSLServerCertId   \
-    --SSLCaCertId  
+    --SSLServerCertId kvnadv4 \
+    --SSLCaCertId kvnadv4
 ```
 
 Output: 

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ckafka ModifyInstancePre --cli-unfold-argument  \
-    --InstanceId ckafka-xxxx \
+    --InstanceId ckafka-test \
     --BandWidth 40 \
     --DiskSize 600
 ```
@@ -16,26 +16,26 @@ Output:
 {
     "Response": {
         "Result": {
-            "ReturnCode": "abc",
-            "ReturnMessage": "abc",
+            "ReturnCode": "0",
+            "ReturnMessage": "ok",
             "Data": {
                 "FlowId": 0,
                 "DealNames": [
-                    "abc"
+                    "name"
                 ],
-                "InstanceId": "abc",
+                "InstanceId": "ckafka-test",
                 "DealNameInstanceIdMapping": [
                     {
-                        "DealName": "abc",
+                        "DealName": "name",
                         "InstanceIdList": [
-                            "abc"
+                            "name"
                         ]
                     }
                 ]
             },
-            "DeleteRouteTimestamp": "abc"
+            "DeleteRouteTimestamp": "2024-12-02 12:21:23"
         },
-        "RequestId": "abc"
+        "RequestId": "84770b4b-df34-4ccf-8e22-41d3b1d0fe0d"
     }
 }
 ```

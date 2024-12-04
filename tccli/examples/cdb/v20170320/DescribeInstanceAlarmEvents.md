@@ -5,13 +5,30 @@
 Input: 
 
 ```
-tccli cdb DescribeInstanceAlarmEvents --cli-unfold-argument ```
+tccli cdb DescribeInstanceAlarmEvents --cli-unfold-argument  \
+    --InstanceId cdb-fbd5agyt \
+    --StartTime 2024-11-15 00:00:00 \
+    --EndTime 2024-12-15 00:00:00 \
+    --EventName PlannedSwitch \
+    --EventStatus - \
+    --Limit 100
+```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "mnksadas-cb0d-4943-9b17-c3306ed3d"
+        "Items": [
+            {
+                "EventName": "PlannedSwitch",
+                "EventStatus": "-",
+                "InstanceId": "cdb-fbd5agyt",
+                "NodeId": "",
+                "OccurTime": "2024-11-25 14:46:42"
+            }
+        ],
+        "RequestId": "971e2860-c55b-4323-a831-0001",
+        "TotalCount": 1
     }
 }
 ```

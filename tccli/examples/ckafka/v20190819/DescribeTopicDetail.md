@@ -13,47 +13,74 @@ Output:
 ```
 {
     "Response": {
+        "RequestId": "071db315-27d5-4a7c-8bb3-e05c23e7a69c",
         "Result": {
             "TopicList": [
                 {
-                    "TopicName": "abc",
-                    "TopicId": "abc",
-                    "PartitionNum": 0,
-                    "ReplicaNum": 0,
-                    "Note": "abc",
-                    "CreateTime": 0,
-                    "EnableWhiteList": true,
-                    "IpWhiteListCount": 0,
-                    "ForwardCosBucket": "abc",
-                    "ForwardStatus": 0,
-                    "ForwardInterval": 0,
                     "Config": {
-                        "Retention": 0,
-                        "MinInsyncReplicas": 0,
-                        "CleanUpPolicy": "abc",
-                        "SegmentMs": 0,
-                        "UncleanLeaderElectionEnable": 0,
-                        "SegmentBytes": 0,
-                        "MaxMessageBytes": 0,
-                        "RetentionBytes": 0
+                        "CleanUpPolicy": "delete",
+                        "LogMsgTimestampType": null,
+                        "MaxMessageBytes": 8388608,
+                        "MinInsyncReplicas": 1,
+                        "Retention": 259200000,
+                        "RetentionBytes": null,
+                        "SegmentBytes": null,
+                        "SegmentMs": null,
+                        "UncleanLeaderElectionEnable": 1
                     },
+                    "CreateTime": 1716452124,
+                    "EnableWhiteList": false,
+                    "ForwardCosBucket": "",
+                    "ForwardInterval": 0,
+                    "ForwardStatus": 1,
+                    "IpWhiteListCount": 0,
+                    "Note": "",
+                    "PartitionNum": 10,
+                    "ReplicaNum": 2,
                     "RetentionTimeConfig": {
-                        "Expect": 0,
-                        "Current": 0,
-                        "ModTimeStamp": 0
+                        "Current": 4320,
+                        "Expect": 4320,
+                        "ModTimeStamp": 1716452125000
                     },
                     "Status": 0,
-                    "Tags": [
-                        {
-                            "TagKey": "abc",
-                            "TagValue": "abc"
-                        }
-                    ]
+                    "Tags": null,
+                    "TopicId": "topic-4mi2t5w2",
+                    "TopicName": "abc"
+                },
+                {
+                    "Config": {
+                        "CleanUpPolicy": "delete",
+                        "LogMsgTimestampType": null,
+                        "MaxMessageBytes": 8388608,
+                        "MinInsyncReplicas": 1,
+                        "Retention": 86400000,
+                        "RetentionBytes": null,
+                        "SegmentBytes": null,
+                        "SegmentMs": null,
+                        "UncleanLeaderElectionEnable": 1
+                    },
+                    "CreateTime": 1720525148,
+                    "EnableWhiteList": false,
+                    "ForwardCosBucket": "",
+                    "ForwardInterval": 0,
+                    "ForwardStatus": 1,
+                    "IpWhiteListCount": 0,
+                    "Note": "",
+                    "PartitionNum": 1,
+                    "ReplicaNum": 2,
+                    "RetentionTimeConfig": {
+                        "Current": 1440,
+                        "Expect": 1440,
+                        "ModTimeStamp": 1720525149000
+                    },
+                    "Status": 0,
+                    "Tags": null,
+                    "TopicId": "topic-24gugwns",
+                    "TopicName": "test-shilinlu"
                 }
             ],
-            "TotalCount": 0
-        },
-        "RequestId": "abc"
+            "TotalCount": 2
+        }
     }
 }
 ```

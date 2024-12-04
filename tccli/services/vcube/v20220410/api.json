@@ -1,0 +1,4168 @@
+{
+  "actions": {
+    "CreateActivityLicense": {
+      "document": "创建活动license",
+      "input": "CreateActivityLicenseRequest",
+      "name": "创建活动license",
+      "output": "CreateActivityLicenseResponse",
+      "status": "online"
+    },
+    "CreateApplicationAndBindLicense": {
+      "document": "创建应用并绑定license或者XMagic",
+      "input": "CreateApplicationAndBindLicenseRequest",
+      "name": "创建应用并绑定license或者XMagic",
+      "output": "CreateApplicationAndBindLicenseResponse",
+      "status": "online"
+    },
+    "CreateApplicationAndVideo": {
+      "document": "创建应用和视频播放license 目前只有国际站可以用",
+      "input": "CreateApplicationAndVideoRequest",
+      "name": "创建视频播放license",
+      "output": "CreateApplicationAndVideoResponse",
+      "status": "online"
+    },
+    "CreateApplicationAndWebPlayerLicense": {
+      "document": "创建 web 播放器基础版",
+      "input": "CreateApplicationAndWebPlayerLicenseRequest",
+      "name": "创建播发器web基础版",
+      "output": "CreateApplicationAndWebPlayerLicenseResponse",
+      "status": "online"
+    },
+    "CreateLicense": {
+      "document": "绑定license",
+      "input": "CreateLicenseRequest",
+      "name": "绑定license",
+      "output": "CreateLicenseResponse",
+      "status": "online"
+    },
+    "CreateTestXMagic": {
+      "document": "申请开通测试版优图",
+      "input": "CreateTestXMagicRequest",
+      "name": "创建测试XMagic",
+      "output": "CreateTestXMagicResponse",
+      "status": "online"
+    },
+    "CreateTrialApplicationAndLicense": {
+      "document": "创建测试应用并开通测试 license",
+      "input": "CreateTrialApplicationAndLicenseRequest",
+      "name": "创建测试应用并开通测试 license",
+      "output": "CreateTrialApplicationAndLicenseResponse",
+      "status": "online"
+    },
+    "CreateTrialLicense": {
+      "document": "开通测试license",
+      "input": "CreateTrialLicenseRequest",
+      "name": "开通测试license",
+      "output": "CreateTrialLicenseResponse",
+      "status": "online"
+    },
+    "CreateXMagic": {
+      "document": "x08开通正式版优图美视功能，针对已经有Application的情况",
+      "input": "CreateXMagicRequest",
+      "name": "创建Xmagic",
+      "output": "CreateXMagicResponse",
+      "status": "online"
+    },
+    "DescribeFeatureList": {
+      "document": "查询功能列表",
+      "input": "DescribeFeatureListRequest",
+      "name": "查询功能列表",
+      "output": "DescribeFeatureListResponse",
+      "status": "online"
+    },
+    "DescribeLicenseList": {
+      "document": "总览页查询临期License列表，和统计数据",
+      "input": "DescribeLicenseListRequest",
+      "name": "查询临期License列表",
+      "output": "DescribeLicenseListResponse",
+      "status": "online"
+    },
+    "DescribeNews": {
+      "document": "查询产品动态",
+      "input": "DescribeNewsRequest",
+      "name": "查询产品动态",
+      "output": "DescribeNewsResponse",
+      "status": "online"
+    },
+    "DescribeSTS": {
+      "document": "获取临时秘钥，用于图片，特效包上传",
+      "input": "DescribeSTSRequest",
+      "name": "查询cos临时秘钥",
+      "output": "DescribeSTSResponse",
+      "status": "online"
+    },
+    "DescribeTrialFeature": {
+      "document": "查询测试应用可以开通的功能",
+      "input": "DescribeTrialFeatureRequest",
+      "name": "查询测试应用可以开通的功能",
+      "output": "DescribeTrialFeatureResponse",
+      "status": "online"
+    },
+    "DescribeUserConfig": {
+      "document": "查询用户个性配置",
+      "input": "DescribeUserConfigRequest",
+      "name": "查询用户配置",
+      "output": "DescribeUserConfigResponse",
+      "status": "online"
+    },
+    "DescribeVcubeApplicationAndLicense": {
+      "document": "查询用户license， 按照应用分类",
+      "input": "DescribeVcubeApplicationAndLicenseRequest",
+      "name": "查询视立方应用及其license",
+      "output": "DescribeVcubeApplicationAndLicenseResponse",
+      "status": "online"
+    },
+    "DescribeVcubeApplicationAndPlayList": {
+      "document": "查询用户点播直播等license， 按照应用分类,国际站专用",
+      "input": "DescribeVcubeApplicationAndPlayListRequest",
+      "name": "查询视立方应用及播放类license",
+      "output": "DescribeVcubeApplicationAndPlayListResponse",
+      "status": "online"
+    },
+    "DescribeVcubeApplicationAndXMagicList": {
+      "document": "查询用户优图license， 按照应用分类",
+      "input": "DescribeVcubeApplicationAndXMagicListRequest",
+      "name": "查询视立方应用及优图license",
+      "output": "DescribeVcubeApplicationAndXMagicListResponse",
+      "status": "online"
+    },
+    "DescribeVcubeResources": {
+      "document": "查询视立方 license 资源，所有的资源包",
+      "input": "DescribeVcubeResourcesRequest",
+      "name": "查询视立方 license 资源",
+      "output": "DescribeVcubeResourcesResponse",
+      "status": "online"
+    },
+    "DescribeVcubeResourcesList": {
+      "document": "查询视立方 license 资源，包括资源包赠送和直接购买的资源",
+      "input": "DescribeVcubeResourcesListRequest",
+      "name": "查询视立方 license 资源列表",
+      "output": "DescribeVcubeResourcesListResponse",
+      "status": "online"
+    },
+    "DescribeXMagicResource": {
+      "document": "用途美视资源包用于开通正式优图美视",
+      "input": "DescribeXMagicResourceRequest",
+      "name": "查询优图美视资源包",
+      "output": "DescribeXMagicResourceResponse",
+      "status": "online"
+    },
+    "DescribeXMagicResourceList": {
+      "document": "用于优图美视资源列表展示",
+      "input": "DescribeXMagicResourceListRequest",
+      "name": "查询优图美视资源包列表",
+      "output": "DescribeXMagicResourceListResponse",
+      "status": "online"
+    },
+    "ModifyApplication": {
+      "document": "编辑更改应用",
+      "input": "ModifyApplicationRequest",
+      "name": "编辑更改应用",
+      "output": "ModifyApplicationResponse",
+      "status": "online"
+    },
+    "ModifyFormalApplication": {
+      "document": "修改正式应用的包名称",
+      "input": "ModifyFormalApplicationRequest",
+      "name": "修改正式应用包名",
+      "output": "ModifyFormalApplicationResponse",
+      "status": "online"
+    },
+    "ModifyLicense": {
+      "document": "正式license 升降配，点播精简版、基础版",
+      "input": "ModifyLicenseRequest",
+      "name": "license变配",
+      "output": "ModifyLicenseResponse",
+      "status": "online"
+    },
+    "ModifyPresetApplication": {
+      "document": "修改内置应用包名",
+      "input": "ModifyPresetApplicationRequest",
+      "name": "修改内置应用",
+      "output": "ModifyPresetApplicationResponse",
+      "status": "online"
+    },
+    "ModifyTrialLicense": {
+      "document": "续期测试license",
+      "input": "ModifyTrialLicenseRequest",
+      "name": "续期测试license",
+      "output": "ModifyTrialLicenseResponse",
+      "status": "online"
+    },
+    "ModifyXMagic": {
+      "document": "使用一个腾讯特效资源，更新现在的腾讯特效license，license功能和到期时间会以新的资源为准，老资源会被替换下来",
+      "input": "ModifyXMagicRequest",
+      "name": "更新变配腾讯特效资源",
+      "output": "ModifyXMagicResponse",
+      "status": "online"
+    },
+    "RenewLicense": {
+      "document": "正式license 续期与变更有效期",
+      "input": "RenewLicenseRequest",
+      "name": "license续期",
+      "output": "RenewLicenseResponse",
+      "status": "online"
+    },
+    "RenewTestXMagic": {
+      "document": "续期测试版优图美视",
+      "input": "RenewTestXMagicRequest",
+      "name": "续期测试版优图美视",
+      "output": "RenewTestXMagicResponse",
+      "status": "online"
+    },
+    "RenewVideo": {
+      "document": "续期国际站视频播放功能和中国站web基础版",
+      "input": "RenewVideoRequest",
+      "name": "续期视频播放license",
+      "output": "RenewVideoResponse",
+      "status": "online"
+    },
+    "UpdateTestXMagic": {
+      "document": "将测试xmagic升级到正式版",
+      "input": "UpdateTestXMagicRequest",
+      "name": "升级到正式版",
+      "output": "UpdateTestXMagicResponse",
+      "status": "online"
+    },
+    "UpdateTrialLicense": {
+      "document": "测试 license 升级为正式 license",
+      "input": "UpdateTrialLicenseRequest",
+      "name": "测试 license 升级为正式 license",
+      "output": "UpdateTrialLicenseResponse",
+      "status": "online"
+    },
+    "UpdateXMagic": {
+      "document": "更新优图美视的申请信息 Status 为2，3的时候可用",
+      "input": "UpdateXMagicRequest",
+      "name": "更新优图申请信息",
+      "output": "UpdateXMagicResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2022-04-10",
+    "api_brief": "提供音视频终端引擎能力",
+    "serviceNameCN": "音视频终端引擎",
+    "serviceShortName": "vcube"
+  },
+  "objects": {
+    "AppInfo": {
+      "document": "应用包名信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用Id",
+          "example": "1",
+          "member": "uint64",
+          "name": "Id",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户appid",
+          "example": "123",
+          "member": "string",
+          "name": "AppId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "云智",
+          "member": "string",
+          "name": "AppName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Ios 包名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "com.tencent",
+          "member": "string",
+          "name": "BundleId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Andorid 包名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "com.tenent",
+          "member": "string",
+          "name": "PackageName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "应用详情",
+          "example": "fromal",
+          "member": "string",
+          "name": "AppType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2022-04-29T07:16:04.441Z",
+          "member": "string",
+          "name": "CreatedAt",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间",
+          "example": "2022-04-29T07:16:04.441Z",
+          "member": "string",
+          "name": "UpdatedAt",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Mac 进程名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "com.tenent",
+          "member": "string",
+          "name": "MacBundleId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "windows 进程名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "com.tenent",
+          "member": "string",
+          "name": "WinProcessName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "允许的web域名列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"tencent.com\"]",
+          "member": "string",
+          "name": "DomainList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ApplicationInfo": {
+      "document": "视立方license用户 应用结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用名称",
+          "example": "视立方应用",
+          "member": "string",
+          "name": "AppName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Ios应用的唯一标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test.ios.com",
+          "member": "string",
+          "name": "BundleId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "应用类型，formal： 正式应用，test：测试应用",
+          "example": "formal",
+          "member": "string",
+          "name": "AppType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "license数组",
+          "example": "无",
+          "member": "License",
+          "name": "Licenses",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "license 秘钥\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2hfais73whfasf23",
+          "member": "string",
+          "name": "LicenseKey",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "安卓应用的唯一标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test.Android.com",
+          "member": "string",
+          "name": "PackageName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-07-07T11:24:41.995Z",
+          "member": "string",
+          "name": "CreatedAt",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-07-07T11:24:41.995Z",
+          "member": "string",
+          "name": "UpdatedAt",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户应用Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "ApplicationId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "视立方下载license的url\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http://host/license/v2/appid_group/v_cube.license",
+          "member": "string",
+          "name": "LicenseUrl",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "优图美视信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "XMagicInfo",
+          "name": "XMagics",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Mac  进程名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "MacBundleId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "windows 进程名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "WinProcessName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "web端Domain列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DomainList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "账号AppId",
+          "example": "251250924",
+          "member": "string",
+          "name": "AppId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CreateActivityLicenseRequest": {
+      "document": "CreateActivityLicense请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "活动Id",
+          "example": "872644585",
+          "member": "string",
+          "name": "Activity",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateActivityLicenseResponse": {
+      "document": "CreateActivityLicense返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户appid",
+          "example": "123",
+          "member": "string",
+          "name": "AppId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "app名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "连麦测试License",
+          "member": "string",
+          "name": "AppName",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "ios包名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "com.tencent.mlvb.apiexample",
+          "member": "string",
+          "name": "BundleId",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "安卓包名",
+          "example": "com.tencent.mlvb.apiexample",
+          "member": "string",
+          "name": "PackageName",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "有效时长\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "14",
+          "member": "uint64",
+          "name": "Duration",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "2022-03-25 17:49:10",
+          "member": "string",
+          "name": "StartTime",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "2022-04-09 17:49:10",
+          "member": "string",
+          "name": "EndTime",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "license秘钥",
+          "example": "3294979b75e46fb218f23460",
+          "member": "string",
+          "name": "LicenseKey",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "license 授权文件下载链接",
+          "example": "https://license-test.vod2.myqcloud.com/license/testV2/124_1/v_cu",
+          "member": "string",
+          "name": "LicenseUrl",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "license剩余天数，最后一天以及过期显示0\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12",
+          "member": "uint64",
+          "name": "ResidueDay",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "license剩余秒数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "424324",
+          "member": "uint64",
+          "name": "Residue",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateApplicationAndBindLicenseRequest": {
+      "document": "CreateApplicationAndBindLicense请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用名",
+          "example": "QQ",
+          "member": "string",
+          "name": "AppName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "应用ID",
+          "example": "com.company.appName",
+          "member": "string",
+          "name": "BundleId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "包名",
+          "example": "com.company.appName",
+          "member": "string",
+          "name": "PackageName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源包ID",
+          "example": "123",
+          "member": "string",
+          "name": "ResourceIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "营业执照",
+          "example": "http://xxx",
+          "member": "string",
+          "name": "CompanyPermit",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "公司类型",
+          "example": "教育",
+          "member": "string",
+          "name": "CompanyType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "公司名称",
+          "example": "微店",
+          "member": "string",
+          "name": "CompanyName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "优图资源id列表",
+          "example": "[12]",
+          "member": "string",
+          "name": "XMagicResourceIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "Mac 进程名",
+          "example": "com.company",
+          "member": "string",
+          "name": "MacBundleId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Windows 进程名",
+          "example": "com.company",
+          "member": "string",
+          "name": "WinProcessName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "要开通的域名列表",
+          "example": "[\"tencent.com\",\"xxx.cn\"]",
+          "member": "string",
+          "name": "DomainList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "要开通的端，web/mobile/pc",
+          "example": "web",
+          "member": "string",
+          "name": "Platform",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateApplicationAndBindLicenseResponse": {
+      "document": "CreateApplicationAndBindLicense返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateApplicationAndVideoRequest": {
+      "document": "CreateApplicationAndVideo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用名称",
+          "example": "tencent",
+          "member": "string",
+          "name": "AppName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Ios 包名",
+          "example": "com.tencent",
+          "member": "string",
+          "name": "BundleId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Android 包名",
+          "example": "com.tencent",
+          "member": "string",
+          "name": "PackageName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateApplicationAndVideoResponse": {
+      "document": "CreateApplicationAndVideo返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateApplicationAndWebPlayerLicenseRequest": {
+      "document": "CreateApplicationAndWebPlayerLicense请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用名称",
+          "example": "腾讯云",
+          "member": "string",
+          "name": "AppName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "域名列表",
+          "example": "[tencentcloud.com]",
+          "member": "string",
+          "name": "DomainList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateApplicationAndWebPlayerLicenseResponse": {
+      "document": "CreateApplicationAndWebPlayerLicense返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateLicenseRequest": {
+      "document": "CreateLicense请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用ID",
+          "example": "12345",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源包ID",
+          "example": "[1]",
+          "member": "string",
+          "name": "ResourceIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "url地址分组",
+          "example": "1",
+          "member": "uint64",
+          "name": "Group",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateLicenseResponse": {
+      "document": "CreateLicense返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTestXMagicRequest": {
+      "document": "CreateTestXMagic请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用id",
+          "example": "1",
+          "member": "uint64",
+          "name": "ApplicationId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "营业执照",
+          "example": "http://xxx",
+          "member": "string",
+          "name": "CompanyPermit",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "公司类型",
+          "example": "教育",
+          "member": "string",
+          "name": "CompanyType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "公司名称",
+          "example": "能成",
+          "member": "string",
+          "name": "CompanyName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "测试套餐名称",
+          "example": "[\"S1-04\"]",
+          "member": "string",
+          "name": "PlanList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTestXMagicResponse": {
+      "document": "CreateTestXMagic返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTrialApplicationAndLicenseRequest": {
+      "document": "CreateTrialApplicationAndLicense请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用名",
+          "example": "QQ",
+          "member": "string",
+          "name": "AppName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "应用ID",
+          "example": "com.company.appName",
+          "member": "string",
+          "name": "BundleId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "包名",
+          "example": "com.company.appName",
+          "member": "string",
+          "name": "PackageName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "功能 id 数组",
+          "example": "[3,16]",
+          "member": "int64",
+          "name": "FeatureIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否要开通优图功能",
+          "example": "true",
+          "member": "bool",
+          "name": "XMagic",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "营业执照",
+          "example": "http://xxx",
+          "member": "string",
+          "name": "CompanyPermit",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "公司类型",
+          "example": "教育",
+          "member": "string",
+          "name": "CompanyType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "公司名称",
+          "example": "能成",
+          "member": "string",
+          "name": "CompanyName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "要开通的测试功能名称，基础套餐只能有一个",
+          "example": "[\"S1-04\",\"sticker_ar\"]",
+          "member": "string",
+          "name": "PlanList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "Mac 进程名",
+          "example": "com.company",
+          "member": "string",
+          "name": "MacBundleId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Windows 进程名",
+          "example": "com.company",
+          "member": "string",
+          "name": "WinProcessName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "要创建到哪个平台，web、mobile、pc，默认mobile",
+          "example": "mobile",
+          "member": "string",
+          "name": "Platform",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "授权域名列表",
+          "example": "[yunzhi.com]",
+          "member": "string",
+          "name": "DomainList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTrialApplicationAndLicenseResponse": {
+      "document": "CreateTrialApplicationAndLicense返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTrialLicenseRequest": {
+      "document": "CreateTrialLicense请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用ID",
+          "example": "12345",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "功能 ID 数组",
+          "example": "[3]",
+          "member": "uint64",
+          "name": "FeatureIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "Url分组",
+          "example": "1",
+          "member": "uint64",
+          "name": "Group",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTrialLicenseResponse": {
+      "document": "CreateTrialLicense返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateXMagicRequest": {
+      "document": "CreateXMagic请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用ApplicationId",
+          "example": "1",
+          "member": "uint64",
+          "name": "ApplicationId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "营业执照",
+          "example": "http://xxx",
+          "member": "string",
+          "name": "CompanyPermit",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "公司类型",
+          "example": "教育",
+          "member": "string",
+          "name": "CompanyType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "公司名称",
+          "example": "能成",
+          "member": "string",
+          "name": "CompanyName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "优图资源id列表",
+          "example": "[1]",
+          "member": "string",
+          "name": "XMagicResourceIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateXMagicResponse": {
+      "document": "CreateXMagic返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFeatureListRequest": {
+      "document": "DescribeFeatureList请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeFeatureListResponse": {
+      "document": "DescribeFeatureList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "功能列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VideoFeature",
+          "name": "FeatureList",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "优图功能列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "XMagicFeature",
+          "name": "XMagicFeatureList",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLicenseListRequest": {
+      "document": "DescribeLicenseList请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeLicenseListResponse": {
+      "document": "DescribeLicenseList返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNewsRequest": {
+      "document": "DescribeNews请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "页码，从0开始",
+          "example": "0",
+          "member": "uint64",
+          "name": "PageNumber",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页数据量",
+          "example": "10",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNewsResponse": {
+      "document": "DescribeNews返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品动态详情列表",
+          "example": "无",
+          "member": "NewsInfo",
+          "name": "NewsList",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总数据量",
+          "example": "无",
+          "member": "uint64",
+          "name": "Count",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSTSRequest": {
+      "document": "DescribeSTS请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeSTSResponse": {
+      "document": "DescribeSTS返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "桶名称",
+          "example": "live-12341235",
+          "member": "string",
+          "name": "Bucket",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "地区",
+          "example": "ap-shanghai",
+          "member": "string",
+          "name": "Region",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "开始生效时间",
+          "example": "1639482026",
+          "member": "uint64",
+          "name": "StartTime",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "临时token过期时间",
+          "example": "1639483826",
+          "member": "uint64",
+          "name": "ExpiredTime",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "临时token",
+          "example": "1P49YEmR9Y4NVdd8Dk9ZoF5IRvw1Bzxad259d39e50bb87e79b1a0ddd95e08119",
+          "member": "string",
+          "name": "SessionToken",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "临时SecretId",
+          "example": "AKIDnFOPqA0vO6dHi16X8KaLOgROAyhS_Bf5U0C4ISDqHdihgPn",
+          "member": "string",
+          "name": "TmpSecretId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "临时秘钥",
+          "example": "S4naHXe2ud562M5jkWmgLjYdlgyVpxmKoM",
+          "member": "string",
+          "name": "TmpSecretKey",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "上传的根路径，底下可以多层",
+          "example": "ar-effect/test/123/1639482025554/",
+          "member": "string",
+          "name": "Path",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTrialFeatureRequest": {
+      "document": "DescribeTrialFeature请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeTrialFeatureResponse": {
+      "document": "DescribeTrialFeature返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "功能列表",
+          "example": "无",
+          "member": "Feature",
+          "name": "FeatureList",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可以开通的优图测试功能\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "XMagicTrial",
+          "name": "XMagicTrial",
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "可以开通的优图测试功能列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "XMagicTrial",
+          "name": "XMagicTrialList",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserConfigRequest": {
+      "document": "DescribeUserConfig请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeUserConfigResponse": {
+      "document": "DescribeUserConfig返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVcubeApplicationAndLicenseRequest": {
+      "document": "DescribeVcubeApplicationAndLicense请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询对应业务方的license，直播:live 点播：vod",
+          "example": "live",
+          "member": "string",
+          "name": "BizType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "应用类型测试：test，正式：formal",
+          "example": "test",
+          "member": "string",
+          "name": "AppType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "应用名称，模糊查询",
+          "example": "我的应用",
+          "member": "string",
+          "name": "AppName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Ios包名，模糊查询",
+          "example": "tencent",
+          "member": "string",
+          "name": "BundleId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Android 包名，模糊查询",
+          "example": "tencent",
+          "member": "string",
+          "name": "PackageName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "平台信息，pc 或者 mobile",
+          "example": "pc",
+          "member": "string",
+          "name": "Platform",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Mac 进程名",
+          "example": "tencent",
+          "member": "string",
+          "name": "MacBundleId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Windows 进程名",
+          "example": "tencent",
+          "member": "string",
+          "name": "WinProcessName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVcubeApplicationAndLicenseResponse": {
+      "document": "DescribeVcubeApplicationAndLicense返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用license列表",
+          "example": "无",
+          "member": "ApplicationInfo",
+          "name": "ApplicationInfoList",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVcubeApplicationAndPlayListRequest": {
+      "document": "DescribeVcubeApplicationAndPlayList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询对应业务方的license，直播:live 点播：vod",
+          "example": "live",
+          "member": "string",
+          "name": "BizType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "应用类型测试：test，正式：formal",
+          "example": "test",
+          "member": "string",
+          "name": "AppType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "应用名称，模糊查询",
+          "example": "我的应用",
+          "member": "string",
+          "name": "AppName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Ios包名，模糊查询",
+          "example": "tencent",
+          "member": "string",
+          "name": "BundleId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Android 包名，模糊查询",
+          "example": "tencent",
+          "member": "string",
+          "name": "PackageName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "平台信息，pc 或者 mobile",
+          "example": "pc",
+          "member": "string",
+          "name": "Platform",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Mac 进程名",
+          "example": "tencent",
+          "member": "string",
+          "name": "MacBundleId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Windows 进程名",
+          "example": "tencent",
+          "member": "string",
+          "name": "WinProcessName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVcubeApplicationAndPlayListResponse": {
+      "document": "DescribeVcubeApplicationAndPlayList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用license列表",
+          "example": "无",
+          "member": "ApplicationInfo",
+          "name": "ApplicationInfoList",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVcubeApplicationAndXMagicListRequest": {
+      "document": "DescribeVcubeApplicationAndXMagicList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询对应业务方的license，直播:live 点播：vod",
+          "example": "live",
+          "member": "string",
+          "name": "BizType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "应用类型测试：test，正式：formal",
+          "example": "test",
+          "member": "string",
+          "name": "AppType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "应用名称，模糊查询",
+          "example": "我的应用",
+          "member": "string",
+          "name": "AppName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Ios包名，模糊查询",
+          "example": "tencent",
+          "member": "string",
+          "name": "BundleId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Android 包名，模糊查询",
+          "example": "tencent",
+          "member": "string",
+          "name": "PackageName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "平台信息，pc 或者 mobile",
+          "example": "pc",
+          "member": "string",
+          "name": "Platform",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Mac 进程名",
+          "example": "tencent",
+          "member": "string",
+          "name": "MacBundleId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Windows 进程名",
+          "example": "tencent",
+          "member": "string",
+          "name": "WinProcessName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVcubeApplicationAndXMagicListResponse": {
+      "document": "DescribeVcubeApplicationAndXMagicList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用license列表",
+          "example": "无",
+          "member": "ApplicationInfo",
+          "name": "ApplicationInfoList",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVcubeResourcesListRequest": {
+      "document": "DescribeVcubeResourcesList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询资源页码",
+          "example": "1",
+          "member": "uint64",
+          "name": "PageNumber",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页的数据量",
+          "example": "20",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "应用名称，模块查询",
+          "example": "腾讯云",
+          "member": "string",
+          "name": "AppName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源Id，资源包id或者license资源id",
+          "example": "123",
+          "member": "string",
+          "name": "ResourceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源Id、应用名称、包名",
+          "example": "12",
+          "member": "string",
+          "name": "Word",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询资源所属平台，web、mobile",
+          "example": "web",
+          "member": "string",
+          "name": "Platform",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVcubeResourcesListResponse": {
+      "document": "DescribeVcubeResourcesList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源列表",
+          "example": "无",
+          "member": "LicenseResourceInfo",
+          "name": "ResourceList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总数据量",
+          "example": "无",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVcubeResourcesRequest": {
+      "document": "DescribeVcubeResources请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查找那个平台的资源",
+          "example": "web",
+          "member": "string",
+          "name": "Platform",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVcubeResourcesResponse": {
+      "document": "DescribeVcubeResources返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源列表",
+          "example": "无",
+          "member": "LicenseResourceSimpleInfo",
+          "name": "ResourceList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeXMagicResourceListRequest": {
+      "document": "DescribeXMagicResourceList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分页页码 第一页是0",
+          "example": "1",
+          "member": "uint64",
+          "name": "PageNumber",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页数量",
+          "example": "50",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "关联的应用名称",
+          "example": "腾讯云",
+          "member": "string",
+          "name": "AppName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "优图资源Id",
+          "example": "12",
+          "member": "string",
+          "name": "ResourceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询关键字，资源Id、应用名称、包名",
+          "example": "12",
+          "member": "string",
+          "name": "Word",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "平台信息，pc 或者 mobile",
+          "example": "pc",
+          "member": "string",
+          "name": "Platform",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "所属业务，xmagic：优图， avatar：虚拟人，不传查全部",
+          "example": "xmagic",
+          "member": "string",
+          "name": "BizType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeXMagicResourceListResponse": {
+      "document": "DescribeXMagicResourceList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "优图资源包信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "XMagicResourceSimpleInfo",
+          "name": "Resources",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12",
+          "member": "uint64",
+          "name": "Count",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeXMagicResourceRequest": {
+      "document": "DescribeXMagicResource请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分页页码 第一页是0",
+          "example": "1",
+          "member": "uint64",
+          "name": "PageNumber",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页数量",
+          "example": "50",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeXMagicResourceResponse": {
+      "document": "DescribeXMagicResource返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "优图资源包信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "XMagicResource",
+          "name": "Resources",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12",
+          "member": "uint64",
+          "name": "Count",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Feature": {
+      "document": "功能描述模型",
+      "members": [
+        {
+          "disabled": false,
+          "document": "索引",
+          "example": "1",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "功能ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "FeatureId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "功能名称",
+          "example": "短视频SDK lic精简版",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "功能类型",
+          "example": "20015",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否可以申请试用",
+          "example": "false",
+          "member": "bool",
+          "name": "Trial",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可以试用的次数",
+          "example": "2",
+          "member": "uint64",
+          "name": "TrialCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可以试用的时长，单位天",
+          "example": "14",
+          "member": "uint64",
+          "name": "Duration",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-07-05T03:09:46.153Z",
+          "member": "string",
+          "name": "CreatedAt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-07-05T03:09:46.153Z",
+          "member": "string",
+          "name": "UpdatedAt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "License": {
+      "document": "视立方应用license",
+      "members": [
+        {
+          "disabled": false,
+          "document": "license类型",
+          "example": "基础版",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "老系统迁移备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "原短视频基础版",
+          "member": "string",
+          "name": "Remark",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "license生效时间",
+          "example": "2021-06-01",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "license失效时间",
+          "example": "2022-06-01",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "license对应的功能Id",
+          "example": "3",
+          "member": "uint64",
+          "name": "FeatureId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "license是测试：test还是正式：formal",
+          "example": "test",
+          "member": "string",
+          "name": "LicenseType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "测试license 是否可以续期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "Renewal",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "license索引",
+          "example": "123",
+          "member": "uint64",
+          "name": "LicenseId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "license名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "短视频",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "测试license 是否升级\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "Update",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "兼容老的licenseUrl\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http://license.vod2.myqcloud.com/license/v1/13054c22a33fa36b34ba",
+          "member": "string",
+          "name": "OldLicenseUrl",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "视立方url分组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Group",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "过期：true ，未过期：其它\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "Expired",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "返回还有多少秒过期，过期返回0\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "233",
+          "member": "uint64",
+          "name": "RestTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-05-07T10:12:01+08:00",
+          "member": "string",
+          "name": "CreatedAt",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-05-07T10:12:01+08:00",
+          "member": "string",
+          "name": "UpdatedAt",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "计费资源相关信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RenewResource",
+          "name": "Resource",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否为马甲包\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "IsVest",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "LicenseResourceInfo": {
+      "document": "license 资源信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "授权功能Id",
+          "example": "1",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户appid",
+          "example": "10000",
+          "member": "string",
+          "name": "AppId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "有效期时长\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "Duration",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "功能Id",
+          "example": "16",
+          "member": "uint64",
+          "name": "FeatureId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "此license资源的开始生效时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-08-01 00:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "此license资源的生效结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-08-01 00:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2022-04-29T07:19:42.877Z",
+          "member": "string",
+          "name": "CreatedAt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间",
+          "example": "2023-04-29T07:19:42.877Z",
+          "member": "string",
+          "name": "UpdatedAt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "此资源是否可用于续期和更新有效期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsUse",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "此资源的状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "销毁时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-08-01 00:00:00",
+          "member": "string",
+          "name": "IsolatedTimestamp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "功能模块名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "直播",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "功能模块类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "企业版",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源包信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Package",
+          "name": "Package",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "应用信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AppInfo",
+          "name": "Application",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "luv32543dfsdsaf",
+          "member": "string",
+          "name": "ResourceId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自动续费状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "AutoRenewFlag",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "LicenseResourceSimpleInfo": {
+      "document": "license 资源信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "授权功能Id",
+          "example": "1",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户appid",
+          "example": "10000",
+          "member": "string",
+          "name": "AppId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "有效期时长\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "Duration",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "功能Id",
+          "example": "16",
+          "member": "uint64",
+          "name": "FeatureId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "此license资源的开始生效时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-08-01 00:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "此license资源的生效结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-08-01 00:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2022-04-29T07:19:42.877Z",
+          "member": "string",
+          "name": "CreatedAt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间",
+          "example": "2023-04-29T07:19:42.877Z",
+          "member": "string",
+          "name": "UpdatedAt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "此资源是否可用于续期和更新有效期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsUse",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "此资源的状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "销毁时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-08-01 00:00:00",
+          "member": "string",
+          "name": "IsolatedTimestamp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "功能模块名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "直播",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "功能模块类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "企业版",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源包信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Package",
+          "name": "Package",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "lvudaf23adfs4s",
+          "member": "string",
+          "name": "ResourceId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自动续费状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "AutoRenewFlag",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ModifyApplicationRequest": {
+      "document": "ModifyApplication请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用ID",
+          "example": "12345",
+          "member": "uint64",
+          "name": "ApplicationId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "应用名",
+          "example": "QQ",
+          "member": "string",
+          "name": "AppName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "应用ID",
+          "example": "com.company.appName",
+          "member": "string",
+          "name": "BundleId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "包名",
+          "example": "com.company.appName",
+          "member": "string",
+          "name": "PackageName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Windows 进程名",
+          "example": "com.company",
+          "member": "string",
+          "name": "WinProcessName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Mac 进程名",
+          "example": "com.company",
+          "member": "string",
+          "name": "MacBundleId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "要追加的web域名列表",
+          "example": "[\"xxx.com\"]",
+          "member": "string",
+          "name": "DomainList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyApplicationResponse": {
+      "document": "ModifyApplication返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyFormalApplicationRequest": {
+      "document": "ModifyFormalApplication请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用Id",
+          "example": "1223",
+          "member": "uint64",
+          "name": "ApplicationId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "应用名称",
+          "example": "tencent",
+          "member": "string",
+          "name": "AppName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Ios 包名称",
+          "example": "com.tencent",
+          "member": "string",
+          "name": "BundleId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Android  包名称",
+          "example": "com.tencent",
+          "member": "string",
+          "name": "PackageName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyFormalApplicationResponse": {
+      "document": "ModifyFormalApplication返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLicenseRequest": {
+      "document": "ModifyLicense请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "License 功能模块 Id",
+          "example": "1",
+          "member": "string",
+          "name": "LicenseId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源包 Id",
+          "example": "12",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLicenseResponse": {
+      "document": "ModifyLicense返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyPresetApplicationRequest": {
+      "document": "ModifyPresetApplication请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用Id",
+          "example": "12",
+          "member": "uint64",
+          "name": "ApplicationId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "您的app名称",
+          "example": "测试应用",
+          "member": "string",
+          "name": "AppName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "ios包名",
+          "example": "com.tentcent.com",
+          "member": "string",
+          "name": "BundleId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "安卓包名",
+          "example": "com.tencent.com",
+          "member": "string",
+          "name": "PackageName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyPresetApplicationResponse": {
+      "document": "ModifyPresetApplication返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTrialLicenseRequest": {
+      "document": "ModifyTrialLicense请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "执照ID",
+          "example": "12345",
+          "member": "string",
+          "name": "LicenseId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTrialLicenseResponse": {
+      "document": "ModifyTrialLicense返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyXMagicRequest": {
+      "document": "ModifyXMagic请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源Id",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "优图licenseId",
+          "example": "无",
+          "member": "string",
+          "name": "XMagicId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyXMagicResponse": {
+      "document": "ModifyXMagic返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "NewsInfo": {
+      "document": "视立方产品概览页新闻动态",
+      "members": [],
+      "usage": "both"
+    },
+    "Package": {
+      "document": "资源包结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源包Id",
+          "example": "1",
+          "member": "int64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源包资源Id",
+          "example": "100",
+          "member": "string",
+          "name": "BizResourceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "站点 中国站还是国际站",
+          "example": "China",
+          "member": "string",
+          "name": "Site",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源包开始生效时间",
+          "example": "2020-09-01",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源包过期时间",
+          "example": "2021-09-01",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源包退费时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-06-01",
+          "member": "string",
+          "name": "RefundTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源包名称",
+          "example": "10TB点播流量包",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源包类型ID,对应点播：PackageId 对应直播：TypeId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "6",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "RenewLicenseRequest": {
+      "document": "RenewLicense请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "License 功能模块 Id",
+          "example": "1",
+          "member": "string",
+          "name": "LicenseId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源包 Id",
+          "example": "12",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RenewLicenseResponse": {
+      "document": "RenewLicense返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RenewResource": {
+      "document": "自动续期资源info",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "34",
+          "member": "string",
+          "name": "ResourceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自动续期标记，0：默认，1：自动续期，2：不续期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "AutoRenewFlag",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源冻结时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "string",
+          "name": "IsolatedTimestamp",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源销毁状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "Refund",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "子产品码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "sp_vcube_0014417",
+          "member": "string",
+          "name": "SubProductCode",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源到期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-06-01 10:27:32",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "RenewTestXMagicRequest": {
+      "document": "RenewTestXMagic请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "优图美视Id",
+          "example": "1",
+          "member": "uint64",
+          "name": "XMagicId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "RenewTestXMagicResponse": {
+      "document": "RenewTestXMagic返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RenewVideoRequest": {
+      "document": "RenewVideo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "要续期的视频播放license Id",
+          "example": "1",
+          "member": "uint64",
+          "name": "LicenseId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "RenewVideoResponse": {
+      "document": "RenewVideo返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateTestXMagicRequest": {
+      "document": "UpdateTestXMagic请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "优图美视功能Id",
+          "example": "1",
+          "member": "uint64",
+          "name": "XMagicId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "XMagic套餐包Id",
+          "example": "1",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateTestXMagicResponse": {
+      "document": "UpdateTestXMagic返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateTrialLicenseRequest": {
+      "document": "UpdateTrialLicense请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "执照ID",
+          "example": "12345",
+          "member": "string",
+          "name": "LicenseId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源包ID",
+          "example": "12345",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateTrialLicenseResponse": {
+      "document": "UpdateTrialLicense返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateXMagicRequest": {
+      "document": "UpdateXMagic请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "要修改的XMagic Id",
+          "example": "1",
+          "member": "uint64",
+          "name": "XMagicId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "资源id",
+          "example": "1",
+          "member": "string",
+          "name": "XMagicResourceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "营业执照地址",
+          "example": "http://xxx",
+          "member": "string",
+          "name": "CompanyPermit",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "公司类型",
+          "example": "娱乐",
+          "member": "string",
+          "name": "CompanyType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "公司名称",
+          "example": "腾讯云",
+          "member": "string",
+          "name": "CompanyName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateXMagicResponse": {
+      "document": "UpdateXMagic返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "VideoFeature": {
+      "document": "视频功能描述模型",
+      "members": [
+        {
+          "disabled": false,
+          "document": "索引",
+          "example": "1",
+          "member": "uint64",
+          "name": "Id",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "功能ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "FeatureId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "功能名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "短视频SDK lic精简版",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "功能类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20015",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否可以申请试用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "Trial",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "可以试用的次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "uint64",
+          "name": "TrialCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "可以试用的时长，单位天\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "14",
+          "member": "uint64",
+          "name": "Duration",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-07-05T03:09:46.153Z",
+          "member": "string",
+          "name": "CreatedAt",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-07-05T03:09:46.153Z",
+          "member": "string",
+          "name": "UpdatedAt",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "功能所属业务方\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "live",
+          "member": "string",
+          "name": "BizType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "平台类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "mobile",
+          "member": "string",
+          "name": "Platform",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "XMagicFeature": {
+      "document": "优图的的功能，Trial 为true的可以开通测试",
+      "members": [
+        {
+          "disabled": false,
+          "document": "功能名称",
+          "example": "高级套餐",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可以申请的次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "uint64",
+          "name": "TrialCount",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "每次申请的时长单位：天\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "14",
+          "member": "uint64",
+          "name": "Duration",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "功能类别",
+          "example": "S1-04",
+          "member": "string",
+          "name": "Plan",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "single: 原子能力,combined:套餐",
+          "example": "single",
+          "member": "string",
+          "name": "XMagicType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "此功能是否支持开通测试",
+          "example": "true",
+          "member": "bool",
+          "name": "Trial",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "功能所属业务方",
+          "example": "xmagic",
+          "member": "string",
+          "name": "BizType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "XMagicInfo": {
+      "document": "查询返回的优图信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "优图Id",
+          "example": "1",
+          "member": "uint64",
+          "name": "Id",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户公司名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "腾讯云",
+          "member": "string",
+          "name": "CompanyName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "https://cos.xxx\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "营业执照链接",
+          "member": "string",
+          "name": "CompanyPermit",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户公司行业类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "教育",
+          "member": "string",
+          "name": "CompanyType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "优图套餐类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "S1-04",
+          "member": "string",
+          "name": "Plan",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "测试版还是正式版 test | formal",
+          "example": "test",
+          "member": "string",
+          "name": "LicenseType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "0: 预申请，需要补充申请信息\n   1: 审批通过，xmagic已签发，正在生效中\n    2: 提交完申请资料后待运营审核状态\n    3: 申请被驳回，需要重新修改申请资料\n    4: 应用包名被修改后触发xmagic审批，当前xmagic已暂停生效\n    5: 应用修改包名后，审批未通过状态，可以重新修改应用PB，状态会回到4",
+          "example": "0",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "测试license是否已经升级\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "Update",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "优图生效开始时间 Status为1的时候\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-11-24 14:44:46",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "优图生效结束时间 Status为1的时候\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-11-24 14:44:46",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "续期次数， LicenseType=test时有此字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "RenewalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "历次审批的回复\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"请修改包名\"，\"ok\"]",
+          "member": "string",
+          "name": "Reply",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2021-11-24T06:44:46.606Z",
+          "member": "string",
+          "name": "CreatedAt",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "修改时间",
+          "example": "2021-11-24T06:44:46.606Z",
+          "member": "string",
+          "name": "UpdatedAt",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户更新信息的时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-11-24 18:44:46",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否过期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "Expired",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "返回还剩多少秒过期，过期后返回0\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2333",
+          "member": "uint64",
+          "name": "RestTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "single: 原子能力,combined:套餐\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "single",
+          "member": "string",
+          "name": "XMagicType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "优图模块名称，自动中英文\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "人像分割X1-01",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "优图资源信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RenewResource",
+          "name": "Resource",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否是马甲包\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "IsVest",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "XMagicResource": {
+      "document": "优图美视资源包",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源Id",
+          "example": "1",
+          "member": "uint64",
+          "name": "Id",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户appid",
+          "example": "123",
+          "member": "string",
+          "name": "AppId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "套餐类别",
+          "example": "A1-01",
+          "member": "string",
+          "name": "Plan",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "单位：年",
+          "example": "有效时长",
+          "member": "string",
+          "name": "Duration",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2021-11-29 20:40:13",
+          "member": "string",
+          "name": "CreatedAt",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间",
+          "example": "2021-11-29 20:40:13",
+          "member": "string",
+          "name": "UpdatedAt",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源是否已使用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "XMagic",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源开始生效时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-11-29 18:04:45",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源结束生效时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-11-29 18:04:45",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源包是否过期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "Expired",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "功能模块名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "基础套餐A1-04",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "single: 原子能力,combined:套餐\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "combined",
+          "member": "string",
+          "name": "XMagicType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "xmagic:优图， avatar：虚拟人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xmagic",
+          "member": "string",
+          "name": "BizType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "85",
+          "member": "string",
+          "name": "ResourceId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源是否可以使用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsUse",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "XMagicResourceSimpleInfo": {
+      "document": "优图美视资源包",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源Id",
+          "example": "1",
+          "member": "uint64",
+          "name": "Id",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户appid",
+          "example": "123",
+          "member": "string",
+          "name": "AppId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "套餐类别",
+          "example": "A1-01",
+          "member": "string",
+          "name": "Plan",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "单位：年",
+          "example": "有效时长",
+          "member": "string",
+          "name": "Duration",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2021-11-29 20:40:13",
+          "member": "string",
+          "name": "CreatedAt",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间",
+          "example": "2021-11-29 20:40:13",
+          "member": "string",
+          "name": "UpdatedAt",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源开始生效时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-11-29 18:04:45",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源结束生效时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-11-29 18:04:45",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "应用信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AppInfo",
+          "name": "Application",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "开通的优图功能信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "XMagicSimpleInfo",
+          "name": "XMagic",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "优图资源状态",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作日期记录\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"2022-01-01\"]",
+          "member": "string",
+          "name": "Operation",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否可以使用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsUse",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "single: 原子能力,combined:套餐\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "single",
+          "member": "string",
+          "name": "XMagicType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "功能模块名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "高级套餐S1-07",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源所属业务方 xmagic：优图，avatar：虚拟形象 \n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xmagic",
+          "member": "string",
+          "name": "BizType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "85",
+          "member": "string",
+          "name": "ResourceId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源自动续费状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "AutoRenewFlag",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "XMagicSimpleInfo": {
+      "document": "优图简单信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "XMagic 的Id",
+          "example": "1",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "XMagic 状态",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "XMagicTrial": {
+      "document": "可以开通测试的功能",
+      "members": [
+        {
+          "disabled": false,
+          "document": "功能名称",
+          "example": "高级套餐",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可以申请的次数",
+          "example": "2",
+          "member": "uint64",
+          "name": "TrialCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "每次申请的时长单位：天",
+          "example": "14",
+          "member": "uint64",
+          "name": "Duration",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "功能类别",
+          "example": "S1-04",
+          "member": "string",
+          "name": "Plan",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "single: 原子能力,combined:套餐",
+          "example": "single",
+          "member": "string",
+          "name": "XMagicType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

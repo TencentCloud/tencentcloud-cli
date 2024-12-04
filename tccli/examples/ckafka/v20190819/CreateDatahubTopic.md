@@ -16,10 +16,10 @@ Output:
 {
     "Response": {
         "Result": {
-            "TopicName": "abc",
-            "TopicId": "abc"
+            "TopicName": "mytopic",
+            "TopicId": "topic-test"
         },
-        "RequestId": "abc"
+        "RequestId": "84770b4b-df34-4ccf-8e22-41d3b1d0fe0d"
     }
 }
 ```

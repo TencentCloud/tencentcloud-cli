@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli ckafka DescribeAclRule --cli-unfold-argument  \
-    --InstanceId xxx \
-    --RuleName xxx \
-    --PatternType xxx \
+    --InstanceId ckafka-test \
+    --RuleName deny-all \
+    --PatternType PREFIXED \
     --IsSimplified false
 ```
 
@@ -20,10 +20,10 @@ Output:
             "TotalCount": 1,
             "AclRuleList": [
                 {
-                    "RuleName": "test",
+                    "RuleName": "deny-all",
                     "InstanceId": "ckafka-abc",
                     "PatternType": "PRESET",
-                    "Pattern": "",
+                    "Pattern": "topic123",
                     "ResourceType": "Topic",
                     "AclList": "[{\"host\":\"*\",\"operation\":\"Read\",\"permissionType\":\"Allow\",\"principal\":\"User:*\"}]",
                     "CreateTimeStamp": "Thu Jun 06 13:07:13 CST 2024",

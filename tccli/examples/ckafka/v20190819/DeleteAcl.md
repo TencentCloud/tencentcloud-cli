@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ckafka DeleteAcl --cli-unfold-argument  \
-    --InstanceId xxx \
+    --InstanceId ckafka \
     --ResourceType 2 \
     --ResourceName 1 \
     --Operation 2 \

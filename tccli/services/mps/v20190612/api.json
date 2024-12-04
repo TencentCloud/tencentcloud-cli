@@ -12691,7 +12691,7 @@
         {
           "disabled": false,
           "document": "媒体质检模板标识过滤条件，长度限制：64 个字符。",
-          "example": "“”",
+          "example": "\"\"",
           "member": "string",
           "name": "Name",
           "required": false,

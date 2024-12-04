@@ -6,66 +6,49 @@ Input:
 
 ```
 tccli ckafka DescribeTopicAttributes --cli-unfold-argument  \
-    --InstanceId xxx \
-    --TopicName xxx
+    --InstanceId ckafka-na37x9qa \
+    --TopicName test-sh
 ```
 
 Output: 
 ```
 {
     "Response": {
+        "RequestId": "2631ff19-2dd4-41a6-9391-c7543dc22c8a",
         "Result": {
-            "TopicId": "abc",
-            "CreateTime": 0,
-            "Note": "abc",
-            "PartitionNum": 0,
-            "EnableWhiteList": 0,
-            "IpWhiteList": [
-                "abc"
-            ],
+            "AclRuleList": [],
             "Config": {
-                "Retention": 0,
-                "MinInsyncReplicas": 0,
-                "CleanUpPolicy": "abc",
-                "SegmentMs": 0,
-                "UncleanLeaderElectionEnable": 0,
-                "SegmentBytes": 0,
-                "MaxMessageBytes": 0,
-                "RetentionBytes": 0
+                "CleanUpPolicy": "delete",
+                "LogMsgTimestampType": null,
+                "MaxMessageBytes": 8388608,
+                "MinInsyncReplicas": 1,
+                "Retention": 86400000,
+                "RetentionBytes": null,
+                "SegmentBytes": null,
+                "SegmentMs": null,
+                "UncleanLeaderElectionEnable": 1
             },
+            "CreateTime": 1720525148,
+            "EnableAclRule": 0,
+            "EnableWhiteList": 0,
+            "IpWhiteList": [],
+            "Note": "",
+            "PartitionNum": 1,
             "Partitions": [
                 {
-                    "Partition": 0,
+                    "IsrNum": 2,
                     "LeaderStatus": 0,
-                    "IsrNum": 0,
-                    "ReplicaNum": 0
-                }
-            ],
-            "EnableAclRule": 0,
-            "AclRuleList": [
-                {
-                    "RuleName": "abc",
-                    "InstanceId": "abc",
-                    "PatternType": "abc",
-                    "Pattern": "abc",
-                    "ResourceType": "abc",
-                    "AclList": "abc",
-                    "CreateTimeStamp": "abc",
-                    "IsApplied": 0,
-                    "UpdateTimeStamp": "abc",
-                    "Comment": "abc",
-                    "TopicName": "abc",
-                    "TopicCount": 0,
-                    "PatternTypeTitle": "abc"
+                    "Partition": 0,
+                    "ReplicaNum": 2
                 }
             ],
             "QuotaConfig": {
-                "QuotaProducerByteRate": 0,
-                "QuotaConsumerByteRate": 0
+                "QuotaConsumerByteRate": null,
+                "QuotaProducerByteRate": null
             },
-            "ReplicaNum": 0
-        },
-        "RequestId": "abc"
+            "ReplicaNum": 2,
+            "TopicId": "topic-24gugwns"
+        }
     }
 }
 ```

@@ -1490,6 +1490,15 @@
           "name": "BucketPath",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "迁移方向。0: 对象存储迁移至文件系统，1: 文件系统迁移至对象存储。默认 0",
+          "example": "0",
+          "member": "uint64",
+          "name": "Direction",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -3351,6 +3360,16 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "迁移方向。0: 对象存储迁移至文件系统，1: 文件系统迁移至对象存储。默认 0",
+          "example": "0",
+          "member": "uint64",
+          "name": "Direction",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

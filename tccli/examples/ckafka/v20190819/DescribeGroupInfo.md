@@ -29,7 +29,7 @@ Output:
                             "Version": 0,
                             "Topics": [
                                 {
-                                    "Topic": "test",
+                                    "Topic": "topic-test",
                                     "Partitions": [
                                         0
                                     ]

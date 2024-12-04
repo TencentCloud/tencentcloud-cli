@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli ckafka DescribeTopicProduceConnection --cli-unfold-argument  \
-    --InstanceId ckafka-xxxx \
-    --TopicName xxxx
+    --InstanceId ckafka-test \
+    --TopicName topic-name
 ```
 
 Output: 
@@ -16,12 +16,12 @@ Output:
     "Response": {
         "Result": [
             {
-                "IpAddr": "abc",
-                "Time": "abc",
+                "IpAddr": "10.23.1.1",
+                "Time": "2020-08-21 11:15:54",
                 "IsUnSupportVersion": true
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "84770b4b-df34-4ccf-8e22-41d3b1d0fe0d"
     }
 }
 ```

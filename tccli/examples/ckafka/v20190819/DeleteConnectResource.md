@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ckafka DeleteConnectResource --cli-unfold-argument  \
-    --ResourceId reource-xxx
+    --ResourceId reource-test
 ```
 
 Output: 
@@ -14,9 +14,9 @@ Output:
 {
     "Response": {
         "Result": {
-            "ResourceId": "abc"
+            "ResourceId": "reource-test"
         },
-        "RequestId": "abc"
+        "RequestId": "84770b4b-df34-4ccf-8e22-41d3b1d0fe0d"
     }
 }
 ```
