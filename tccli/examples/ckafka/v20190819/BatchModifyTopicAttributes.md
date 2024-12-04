@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli ckafka BatchModifyTopicAttributes --cli-unfold-argument  \
-    --InstanceId abc \
-    --Topic.0.TopicName abc \
+    --InstanceId ckafka-test \
+    --Topic.0.TopicName topic-test \
     --Topic.0.PartitionNum 0 \
     --Topic.0.Note abc \
     --Topic.0.ReplicaNum 0 \
-    --Topic.0.CleanUpPolicy abc \
+    --Topic.0.CleanUpPolicy policy \
     --Topic.0.MinInsyncReplicas 0 \
     --Topic.0.UncleanLeaderElectionEnable True \
     --Topic.0.RetentionMs 0 \
@@ -27,18 +27,18 @@ Output:
         "Result": [
             {
                 "InstanceId": "ckafka-jam3ao99",
-                "TopicName": "test",
+                "TopicName": "topic-test",
                 "ReturnCode": "20018",
                 "Message": "get topic information fail"
             },
             {
                 "InstanceId": "ckafka-jam3ao99",
-                "TopicName": "test1",
+                "TopicName": "topic-test1",
                 "ReturnCode": "20018",
                 "Message": "get topic information fail"
             }
         ],
-        "RequestId": "xxxxxxxx0001"
+        "RequestId": "qwer0001"
     }
 }
 ```

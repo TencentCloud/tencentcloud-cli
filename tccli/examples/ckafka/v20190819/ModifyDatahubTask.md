@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli ckafka ModifyDatahubTask --cli-unfold-argument  \
-    --TaskId abc \
-    --TaskName abc
+    --TaskId task-test \
+    --TaskName taskname
 ```
 
 Output: 
@@ -15,9 +15,9 @@ Output:
 {
     "Response": {
         "Result": {
-            "TaskId": "abc"
+            "TaskId": "task-tes"
         },
-        "RequestId": "abc"
+        "RequestId": "84770b4b-df34-4ccf-8e22-41d3b1d0fe0"
     }
 }
 ```

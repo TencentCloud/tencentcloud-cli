@@ -6,26 +6,26 @@ Input:
 
 ```
 tccli ckafka DescribeDatahubTopic --cli-unfold-argument  \
-    --Name xxx
+    --Name 1300957330-tanxing-qiang-2nd
 ```
 
 Output: 
 ```
 {
     "Response": {
+        "RequestId": "e4edf3bd-b2b1-4add-9a87-d41f35091395",
         "Result": {
-            "Name": "abc",
-            "TopicName": "abc",
-            "TopicId": "abc",
+            "Address": "dip.tencentcloudmq.com:6000",
+            "Name": "1300957330-tanxing-qiang-2nd",
+            "Note": "",
             "PartitionNum": 1,
-            "RetentionMs": 1,
-            "Note": "abc",
-            "UserName": "abc",
-            "Password": "abc",
+            "Password": "923274dd1f22496590f7ff598d773895",
+            "RetentionMs": 86400000,
             "Status": 1,
-            "Address": "abc"
-        },
-        "RequestId": "abc"
+            "TopicId": "topic-g1ntq6se",
+            "TopicName": "1300957330-tanxing-qiang-2nd",
+            "UserName": "ougeml7y4ky0"
+        }
     }
 }
 ```

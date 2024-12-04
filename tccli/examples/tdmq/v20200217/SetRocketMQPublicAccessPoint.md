@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli tdmq SetRocketMQPublicAccessPoint --cli-unfold-argument  \
-    --Rules.0.Remark test \
+    --Rules.0.Remark remark info \
     --Rules.0.IpRule 0.0.0.0/0 \
     --Rules.0.Allow true \
     --PayMode 0 \
-    --Bandwidth 10 \
+    --Bandwidth 2 \
     --InstanceId rocketmq-jxj3wj5j8e7 \
     --Enabled true
 ```

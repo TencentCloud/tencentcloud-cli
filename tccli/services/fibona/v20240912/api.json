@@ -188,6 +188,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "临时秘钥Token",
+          "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJ1c2VyX2lkIjo0OTUsInVzZXJfZ3JvdXBfdW5pcXVlX2lkIjoiVGVzdDIyMzEiLCJzZXNzaW9uX2lkIjo1MCwiY3VzdG9tX2lkZW50aWZ5IjoidGVzdDIzMyIsImV4cCI6MTczMzExOTcwMn0.doPTJGXt_uOUqG7SwfeZS0SPMrm4gqZ34IVoHgKtn9s",
+          "member": "string",
+          "name": "SessionToken",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

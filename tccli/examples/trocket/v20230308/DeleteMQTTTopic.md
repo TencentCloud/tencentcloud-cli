@@ -7,7 +7,7 @@ Input:
 ```
 tccli trocket DeleteMQTTTopic --cli-unfold-argument  \
     --InstanceId mqtt-rvb5xxrn \
-    --Topic 111
+    --Topic topic1
 ```
 
 Output: 

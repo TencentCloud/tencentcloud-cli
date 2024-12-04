@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli ckafka ModifyAclRule --cli-unfold-argument  \
-    --InstanceId xxx \
-    --RuleName xxx \
+    --InstanceId ckafka-test \
+    --RuleName deny-all \
     --IsApplied 1
 ```
 

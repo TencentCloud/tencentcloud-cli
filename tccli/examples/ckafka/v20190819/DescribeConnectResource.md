@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ckafka DescribeConnectResource --cli-unfold-argument  \
-    --ResourceId reource-xxx
+    --ResourceId reource-test
 ```
 
 Output: 
@@ -14,133 +14,39 @@ Output:
 {
     "Response": {
         "Result": {
-            "ResourceId": "abc",
-            "ResourceName": "abc",
-            "Description": "abc",
-            "Type": "abc",
-            "Status": 0,
-            "CreateTime": "abc",
-            "ErrorMessage": "abc",
-            "CurrentStep": "abc",
-            "StepList": [
-                "abc"
-            ],
-            "MySQLConnectParam": {
-                "Port": 0,
-                "ServiceVip": "abc",
-                "UniqVpcId": "abc",
-                "UserName": "abc",
-                "Password": "abc",
-                "Resource": "abc",
-                "IsUpdate": true,
-                "ClusterId": "abc",
-                "SelfBuilt": true
-            },
-            "PostgreSQLConnectParam": {
-                "Port": 0,
-                "ServiceVip": "abc",
-                "UniqVpcId": "abc",
-                "UserName": "abc",
-                "Password": "abc",
-                "Resource": "abc",
-                "ClusterId": "abc",
-                "IsUpdate": true,
-                "SelfBuilt": true
-            },
-            "DtsConnectParam": {
-                "Port": 0,
-                "GroupId": "abc",
-                "UserName": "abc",
-                "Password": "abc",
-                "Resource": "abc",
-                "IsUpdate": true,
-                "Topic": "abc"
-            },
-            "MongoDBConnectParam": {
-                "Port": 0,
-                "ServiceVip": "abc",
-                "UniqVpcId": "abc",
-                "UserName": "abc",
-                "Password": "abc",
-                "Resource": "abc",
-                "SelfBuilt": true,
-                "IsUpdate": true
-            },
-            "EsConnectParam": {
-                "Port": 0,
-                "ServiceVip": "abc",
-                "UniqVpcId": "abc",
-                "UserName": "abc",
-                "Password": "abc",
-                "Resource": "abc",
-                "SelfBuilt": true,
-                "IsUpdate": true
-            },
-            "ClickHouseConnectParam": {
-                "Port": 0,
-                "ServiceVip": "abc",
-                "UniqVpcId": "abc",
-                "UserName": "abc",
-                "Password": "abc",
-                "Resource": "abc",
-                "SelfBuilt": true,
-                "IsUpdate": true
-            },
-            "MariaDBConnectParam": {
-                "Port": 0,
-                "ServiceVip": "abc",
-                "UniqVpcId": "abc",
-                "UserName": "abc",
-                "Password": "abc",
-                "Resource": "abc",
-                "IsUpdate": true
-            },
-            "SQLServerConnectParam": {
-                "Port": 0,
-                "ServiceVip": "abc",
-                "UniqVpcId": "abc",
-                "UserName": "abc",
-                "Password": "abc",
-                "Resource": "abc",
-                "IsUpdate": true
-            },
-            "CtsdbConnectParam": {
-                "Port": 0,
-                "ServiceVip": "abc",
-                "UniqVpcId": "abc",
-                "UserName": "abc",
-                "Password": "abc",
-                "Resource": "abc"
-            },
-            "DorisConnectParam": {
-                "Port": 0,
-                "ServiceVip": "abc",
-                "UniqVpcId": "abc",
-                "UserName": "abc",
-                "Password": "abc",
-                "Resource": "abc",
-                "IsUpdate": true,
-                "SelfBuilt": true,
-                "BePort": 0
-            },
+            "ResourceId": "resource-y9v8e3bl",
+            "ResourceName": "mytest",
+            "Type": "KAFKA",
+            "Description": "",
+            "MongoDBConnectParam": null,
+            "EsConnectParam": null,
+            "ClickHouseConnectParam": null,
+            "DtsConnectParam": null,
+            "MySQLConnectParam": null,
+            "MqttConnectParam": null,
+            "PostgreSQLConnectParam": null,
+            "MariaDBConnectParam": null,
+            "SQLServerConnectParam": null,
+            "CtsdbConnectParam": null,
+            "DorisConnectParam": null,
             "KafkaConnectParam": {
-                "Resource": "abc",
-                "SelfBuilt": true,
-                "IsUpdate": true,
-                "BrokerAddress": "abc",
-                "Region": "abc"
+                "Region": "ap-guangzhou",
+                "BrokerAddress": "11.135.14.76:8568",
+                "SelfBuilt": false,
+                "Resource": "ckafka-wdvgwwx2",
+                "IsUpdate": null
             },
-            "MqttConnectParam": {
-                "UserName": "abc",
-                "Password": "abc",
-                "Resource": "abc",
-                "UniqVpcId": "abc",
-                "SelfBuilt": true,
-                "IsUpdate": true,
-                "Region": "abc"
-            }
+            "Status": 1,
+            "CreateTime": "2024-12-04 16:21:08",
+            "ErrorMessage": "RUNNING",
+            "CurrentStep": "FINISH",
+            "StepList": [
+                "WAIT_CREATE_PRIVATELINK",
+                "WAIT_CONNECT_PORT",
+                "WAIT_CONNECT_RESOURCE"
+            ]
         },
-        "RequestId": "abc"
+        "RequestId": "4cd38c99-9e9a-4a2d-8641-fa7c4015f764"
     }
 }
 ```

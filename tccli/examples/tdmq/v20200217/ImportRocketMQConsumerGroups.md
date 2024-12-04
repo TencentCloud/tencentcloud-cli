@@ -1,30 +1,4 @@
-**Example 1: 标准调用**
-
-标准调用
-
-Input: 
-
-```
-tccli tdmq ImportRocketMQConsumerGroups --cli-unfold-argument  \
-    --Groups.0.Namespace tdmq_default \
-    --Groups.0.GroupName ConsumerGroup_29106 \
-    --Groups.0.ConsumeBroadcastEnable True \
-    --Groups.0.ConsumeEnable True \
-    --TaskId 700000780521-migratetest-d93e34d2
-```
-
-Output: 
-```
-{
-    "Error": null,
-    "RequestId": null,
-    "Response": {
-        "RequestId": "f324d108-56ba-4527-822a-4f73283388b1"
-    }
-}
-```
-
-**Example 2: 导入消费组列表**
+**Example 1: 导入消费组列表**
 
 导入消费组列表
 

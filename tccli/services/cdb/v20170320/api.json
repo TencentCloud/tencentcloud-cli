@@ -11923,7 +11923,7 @@
         },
         {
           "disabled": false,
-          "document": "事件名称。\nOutofmemory - 内存OOM（有状态事件）\nSwitch - 主从切换（有状态事件）\nRoremove - 只读实例剔除（有状态事件）\nBackendInstanceMigration - 服务器故障导致实例迁移（有状态事件）\nMemoryUsedHigh - 内存使用率过高（有状态事件）\n\nCPUExpansion - CPU性能扩容（无状态事件）\nCPUExpansionFailed - CPU性能扩容失败（无状态事件）\nCPUContraction - CPU性能回缩（无状态事件）\n\n具体事件信息描述见：https://cloud.tencent.com/document/product/248/87533",
+          "document": "事件名称。 Outofmemory - 内存OOM（有状态事件）; Switch - 主从切换（有状态事件）; Roremove - 只读实例剔除（有状态事件）; MemoryUsedHigh - 内存使用率过高（有状态事件）; CPUExpansion - CPU性能扩容（无状态事件）; CPUExpansionFailed - CPU性能扩容失败（无状态事件）; CPUContraction - CPU性能回缩（无状态事件）; Restart - 实例重启（有状态事件）; ServerFailureNodeMigration - ServerFailureNodeMigration（有状态事件）; PlannedSwitch - 计划内主备切换（无状态事件）; OverusedReadonlySet - 实例将被锁定（无状态事件）; OverusedReadWriteSet - 实例解除锁定（无状态事件）。",
           "example": "[\"Switch\"]",
           "member": "string",
           "name": "EventName",
@@ -11983,7 +11983,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "无",
+          "document": "事件数。",
           "example": "98",
           "member": "int64",
           "name": "TotalCount",
@@ -11993,13 +11993,13 @@
         },
         {
           "disabled": false,
-          "document": "事件信息。",
-          "example": "[{\"EventName\": \"Switch\",\"EventStatus\": \"1\",\"OccurTime\": \"2024-01-21 06:10:59\"}]",
+          "document": "事件信息。查询不到信息时，Items为null。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "InstEventInfo",
           "name": "Items",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -14823,13 +14823,13 @@
         },
         {
           "disabled": false,
-          "document": "节点ID",
+          "document": "节点ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "dbn-it3iv15s",
           "member": "string",
           "name": "NodeId",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

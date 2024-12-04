@@ -43,7 +43,7 @@
       "status": "online"
     },
     "TextTranslateBatch": {
-      "document": "文本翻译的批量接口",
+      "document": "批量翻译文本的接口",
       "input": "TextTranslateBatchRequest",
       "name": "批量文本翻译",
       "output": "TextTranslateBatchResponse",

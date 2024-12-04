@@ -22,7 +22,8 @@ Output:
         "TargetTextList": [
             "Hello.",
             "What's the weather like today?"
-        ]
+        ],
+        "UsedAmount": 9
     }
 }
 ```
@@ -53,7 +54,8 @@ Output:
         "TargetTextList": [
             "What's up man!",
             "This is your apple"
-        ]
+        ],
+        "UsedAmount": 9
     }
 }
 ```

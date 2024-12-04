@@ -7,7 +7,7 @@ Input:
 ```
 tccli ckafka DescribeTopicSubscribeGroup --cli-unfold-argument  \
     --InstanceId ckafka-kmex0nvv \
-    --TopicName test
+    --TopicName topic-test
 ```
 
 Output: 

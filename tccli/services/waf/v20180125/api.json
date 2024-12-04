@@ -6835,7 +6835,7 @@
         },
         {
           "disabled": false,
-          "document": "目前支持根据ts排序",
+          "document": "目前支持根据create_time、modify_time、id排序",
           "example": "\"ts\"",
           "member": "string",
           "name": "By",

@@ -2042,7 +2042,7 @@
         {
           "disabled": false,
           "document": "集群错误状态告警信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "--",
           "member": "string",
           "name": "AlarmInfo",
           "output_required": true,
@@ -2062,7 +2062,7 @@
         {
           "disabled": false,
           "document": "元数据库信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "cdb-lvz9h3us",
           "member": "string",
           "name": "MetaDb",
           "output_required": true,
@@ -2082,7 +2082,7 @@
         {
           "disabled": false,
           "document": "Hive元数据信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "cdb-8mq5jdt1",
           "member": "string",
           "name": "HiveMetaDb",
           "output_required": true,
@@ -2102,7 +2102,7 @@
         {
           "disabled": false,
           "document": "集群所有节点的别名序列化\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "\"eyJjNrIn0=\"",
           "member": "string",
           "name": "AliasInfo",
           "output_required": true,
@@ -2202,7 +2202,7 @@
         {
           "disabled": false,
           "document": "集群vpcid 字符串类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "vpc-34o0gwhj",
           "member": "string",
           "name": "UniqVpcId",
           "output_required": true,
@@ -2212,7 +2212,7 @@
         {
           "disabled": false,
           "document": "子网id 字符串类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "subnet-1laxlsao",
           "member": "string",
           "name": "UniqSubnetId",
           "output_required": true,
@@ -2277,6 +2277,16 @@
           "name": "CosBucket",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "集群绑定的文件系统数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "BindFileSystemNum",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -8105,18 +8115,7 @@
           "member": "string",
           "name": "ShareType",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "自定义参数集合",
-          "example": "无",
-          "member": "CustomServiceDefine",
-          "name": "CustomServiceDefineList",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -8125,8 +8124,7 @@
           "member": "string",
           "name": "Service",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -8135,8 +8133,16 @@
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义参数集合",
+          "example": "无",
+          "member": "CustomServiceDefine",
+          "name": "CustomServiceDefineList",
+          "required": true,
+          "type": "list"
         }
       ],
       "usage": "in"

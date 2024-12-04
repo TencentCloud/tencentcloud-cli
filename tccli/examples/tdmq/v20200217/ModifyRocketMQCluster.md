@@ -6,9 +6,10 @@ Input:
 
 ```
 tccli tdmq ModifyRocketMQCluster --cli-unfold-argument  \
-    --ClusterId rocketmq-rd3545bkkj49 \
-    --ClusterName test-example \
-    --Remark modified
+    --ClusterId rocketmq-a52qova7x97b \
+    --ClusterName test_name \
+    --Remark remark info \
+    --PublicAccessEnabled False
 ```
 
 Output: 

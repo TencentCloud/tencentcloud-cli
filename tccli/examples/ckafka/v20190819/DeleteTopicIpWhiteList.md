@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli ckafka DeleteTopicIpWhiteList --cli-unfold-argument  \
-    --InstanceId abc \
-    --TopicName abc \
-    --IpWhiteList abc
+    --InstanceId ckafka-test \
+    --TopicName topic-abc \
+    --IpWhiteList 10.1.1.4
 ```
 
 Output: 

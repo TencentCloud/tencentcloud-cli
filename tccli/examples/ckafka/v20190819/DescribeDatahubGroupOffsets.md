@@ -7,7 +7,7 @@ Input:
 ```
 tccli ckafka DescribeDatahubGroupOffsets --cli-unfold-argument  \
     --Group "group" \
-    --Name xxx
+    --Name name
 ```
 
 Output: 
@@ -18,7 +18,7 @@ Output:
             "TotalCount": 1,
             "TopicList": [
                 {
-                    "Topic": "test",
+                    "Topic": "topic-test",
                     "Partitions": [
                         {
                             "Partition": 0,

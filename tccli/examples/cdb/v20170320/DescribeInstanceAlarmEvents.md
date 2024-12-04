@@ -6,14 +6,12 @@ Input:
 
 ```
 tccli cdb DescribeInstanceAlarmEvents --cli-unfold-argument  \
-    --InstanceId cdb-5939glez \
-    --EventName Switch \
-    --EventStatus 1 \
-    --StartTime 2024-01-15 00:00:00 \
-    --EndTime 2024-01-30 00:00:00 \
-    --Order DESC \
-    --Limit 10 \
-    --Offset 0
+    --InstanceId cdb-fbd5agyt \
+    --StartTime 2024-11-15 00:00:00 \
+    --EndTime 2024-12-15 00:00:00 \
+    --EventName PlannedSwitch \
+    --EventStatus - \
+    --Limit 100
 ```
 
 Output: 
@@ -22,23 +20,15 @@ Output:
     "Response": {
         "Items": [
             {
-                "EventName": "Switch",
-                "EventStatus": "1",
-                "OccurTime": "2024-01-21 06:10:59"
-            },
-            {
-                "EventName": "Switch",
-                "EventStatus": "0",
-                "OccurTime": "2024-01-15 21:57:49"
-            },
-            {
-                "EventName": "Switch",
-                "EventStatus": "1",
-                "OccurTime": "2024-01-15 21:57:45"
+                "EventName": "PlannedSwitch",
+                "EventStatus": "-",
+                "InstanceId": "cdb-fbd5agyt",
+                "NodeId": "",
+                "OccurTime": "2024-11-25 14:46:42"
             }
         ],
-        "RequestId": "mnksadas-cb0d-4943-9b17-c3306ed3d",
-        "TotalCount": 3
+        "RequestId": "971e2860-c55b-4323-a831-0001",
+        "TotalCount": 1
     }
 }
 ```

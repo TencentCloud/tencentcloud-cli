@@ -6,24 +6,24 @@ Input:
 
 ```
 tccli ckafka DescribeGroup --cli-unfold-argument  \
-    --InstanceId xxxx
+    --InstanceId ckafka-pkwxedpq
 ```
 
 Output: 
 ```
 {
     "Response": {
+        "RequestId": "5936dc43-9496-44fa-977b-25f3048352be",
         "Result": {
-            "TotalCount": 0,
+            "GroupCountQuota": 200,
             "GroupList": [
                 {
-                    "Group": "abc",
-                    "Protocol": "abc"
+                    "Group": "test-group",
+                    "Protocol": "consumer"
                 }
             ],
-            "GroupCountQuota": 1
-        },
-        "RequestId": "abc"
+            "TotalCount": 1
+        }
     }
 }
 ```

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ckafka ModifyInstanceAttributes --cli-unfold-argument  \
-    --InstanceId 10
+    --InstanceId ckafka-test
 ```
 
 Output: 
@@ -14,8 +14,8 @@ Output:
 {
     "Response": {
         "Result": {
-            "ReturnCode": "abc",
-            "ReturnMessage": "abc",
+            "ReturnCode": "0",
+            "ReturnMessage": "ok",
             "Data": {
                 "FlowId": 0,
                 "RouteDTO": {
@@ -23,7 +23,7 @@ Output:
                 }
             }
         },
-        "RequestId": "abc"
+        "RequestId": "84770b4b-df34-4ccf-8e22-41d3b1d0fe0d"
     }
 }
 ```

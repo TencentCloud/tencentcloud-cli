@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ckafka DescribeTopicFlowRanking --cli-unfold-argument  \
-    --InstanceId ckafka-3inxiic \
+    --InstanceId ckafka-vv7wpp93 \
     --BeginDate 2020-09-22T00:00:00+00:00 \
     --EndDate 2020-09-22T00:00:00+00:00 \
     --RankingType PRO
@@ -19,49 +19,67 @@ Output:
         "Result": {
             "TopicFlow": [
                 {
-                    "TopicId": "abc",
-                    "TopicName": "abc",
-                    "PartitionNum": 1,
-                    "ReplicaNum": 1,
-                    "TopicTraffic": "abc",
-                    "MessageHeap": 1
-                }
-            ],
-            "ConsumeSpeed": [
+                    "TopicName": "test-bing-v1w",
+                    "TopicId": "topic-1jcib81g",
+                    "PartitionNum": 10,
+                    "ReplicaNum": 2,
+                    "TopicTraffic": "0.00",
+                    "MessageHeap": 3135
+                },
                 {
-                    "ConsumerGroupName": "abc",
-                    "Speed": 1
+                    "TopicName": "alert-go-s1",
+                    "TopicId": "topic-o8gy2gta",
+                    "PartitionNum": 3,
+                    "ReplicaNum": 2,
+                    "TopicTraffic": "0.00",
+                    "MessageHeap": 0
+                },
+                {
+                    "TopicName": "alter-go-s2",
+                    "TopicId": "topic-d6t7j7vc",
+                    "PartitionNum": 10,
+                    "ReplicaNum": 2,
+                    "TopicTraffic": "0.00",
+                    "MessageHeap": 0
                 }
             ],
             "TopicMessageHeap": [
                 {
-                    "TopicId": "abc",
-                    "TopicName": "abc",
-                    "PartitionNum": 1,
-                    "ReplicaNum": 1,
-                    "TopicTraffic": "abc",
-                    "MessageHeap": 1
+                    "TopicName": "test-bing-v1w",
+                    "TopicId": "topic-1jcib81g",
+                    "PartitionNum": 10,
+                    "ReplicaNum": 2,
+                    "TopicTraffic": "0.00",
+                    "MessageHeap": 3135
+                },
+                {
+                    "TopicName": "alert-go-s1",
+                    "TopicId": "topic-o8gy2gta",
+                    "PartitionNum": 3,
+                    "ReplicaNum": 2,
+                    "TopicTraffic": "0.00",
+                    "MessageHeap": 0
+                },
+                {
+                    "TopicName": "alter-go-s2",
+                    "TopicId": "topic-d6t7j7vc",
+                    "PartitionNum": 10,
+                    "ReplicaNum": 2,
+                    "TopicTraffic": "0.00",
+                    "MessageHeap": 0
                 }
             ],
+            "ConsumeSpeed": [],
             "BrokerIp": [
-                "abc"
+                "10.0.156.208",
+                "10.0.207.248",
+                "10.0.207.249",
+                "10.0.156.205"
             ],
-            "BrokerTopicData": [
-                {
-                    "TopicName": "abc",
-                    "TopicId": "abc",
-                    "DataSize": 1
-                }
-            ],
-            "BrokerTopicFlowData": [
-                {
-                    "TopicName": "abc",
-                    "TopicId": "abc",
-                    "TopicTraffic": "abc"
-                }
-            ]
+            "BrokerTopicData": [],
+            "BrokerTopicFlowData": []
         },
-        "RequestId": "abc"
+        "RequestId": "6c6d04b5-fa2f-4b4c-913a-2bd4ee111aa4"
     }
 }
 ```

@@ -757,8 +757,8 @@
     "DescribeInstanceAlarmEvents": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceAlarmEvents\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-5939glez\",\n    \"EventName\": [\n        \"Switch\"\n    ],\n    \"EventStatus\": \"1\",\n    \"StartTime\": \"2024-01-15 00:00:00\",\n    \"EndTime\": \"2024-01-30 00:00:00\",\n    \"Order\": \"DESC\",\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"EventName\": \"Switch\",\n                \"EventStatus\": \"1\",\n                \"OccurTime\": \"2024-01-21 06:10:59\"\n            },\n            {\n                \"EventName\": \"Switch\",\n                \"EventStatus\": \"0\",\n                \"OccurTime\": \"2024-01-15 21:57:49\"\n            },\n            {\n                \"EventName\": \"Switch\",\n                \"EventStatus\": \"1\",\n                \"OccurTime\": \"2024-01-15 21:57:45\"\n            }\n        ],\n        \"RequestId\": \"mnksadas-cb0d-4943-9b17-c3306ed3d\",\n        \"TotalCount\": 3\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceAlarmEvents\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-fbd5agyt\",\n    \"StartTime\": \"2024-11-15 00:00:00\",\n    \"EndTime\": \"2024-12-15 00:00:00\",\n    \"EventName\": [\n        \"PlannedSwitch\"\n    ],\n    \"EventStatus\": \"-\",\n    \"Limit\": \"100\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"EventName\": \"PlannedSwitch\",\n                \"EventStatus\": \"-\",\n                \"InstanceId\": \"cdb-fbd5agyt\",\n                \"NodeId\": \"\",\n                \"OccurTime\": \"2024-11-25 14:46:42\"\n            }\n        ],\n        \"RequestId\": \"971e2860-c55b-4323-a831-0001\",\n        \"TotalCount\": 1\n    }\n}",
         "title": "查询实例事件信息"
       }
     ],

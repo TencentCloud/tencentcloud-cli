@@ -716,7 +716,7 @@
         {
           "disabled": false,
           "document": "默认\\*,表示任何host都可以访问，当前ckafka不支持host为\\*，但是后面开源kafka的产品化会直接支持\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "*",
+          "example": "10.0.0.1",
           "member": "string",
           "name": "Host",
           "output_required": true,
@@ -808,7 +808,7 @@
         {
           "disabled": false,
           "document": "表示前缀匹配的前缀的值\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "aclPatt",
           "member": "string",
           "name": "Pattern",
           "output_required": true,
@@ -932,7 +932,7 @@
         {
           "disabled": false,
           "document": "默认为\\*，表示任何host都可以访问，当前ckafka不支持host为\\* 和 ip网段",
-          "example": "*",
+          "example": "10.0.0.6",
           "member": "string",
           "name": "Host",
           "required": true,
@@ -3085,7 +3085,7 @@
         {
           "disabled": false,
           "document": "ACL规则的备注",
-          "example": "test",
+          "example": "acl备注",
           "member": "string",
           "name": "Comment",
           "required": false,
@@ -8288,8 +8288,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID",
-          "example": "ckafka-i18j8cn1",
+          "document": "ckafka集群实例Id",
+          "example": "ckafka-test",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -8298,7 +8298,7 @@
         {
           "disabled": false,
           "document": "搜索关键字",
-          "example": "group",
+          "example": "search-test",
           "member": "string",
           "name": "SearchWord",
           "required": false,
@@ -8321,6 +8321,15 @@
           "name": "Limit",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "仅支持 GroupState 筛选,   支持的筛选状态有 Empty/Stable  注意：该参数只能在2.8/3.2 版本生效",
+          "example": "[{\"Name\":\"GroupState\",\"Values\":[\"Empty\"]}]",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -8330,8 +8339,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回结果集列表",
-          "example": "无",
+          "document": "返回结果",
+          "example": "{\"TotalCount\":1,\"GroupList\":[{\"Group\":\"group-test\",\"Protocol\":\"consumer\"}],\"GroupCountQuota\":300}",
           "member": "GroupResponse",
           "name": "Result",
           "output_required": true,
@@ -8352,8 +8361,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例id",
-          "example": "xxx",
+          "document": "ckafka集群实例Id",
+          "example": "ckafka-test",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -8368,7 +8377,7 @@
         {
           "disabled": false,
           "document": "实例属性返回结果对象。",
-          "example": "无",
+          "example": "{\"AllowDowngrade\":true,\"Bandwidth\":160,\"ClusterType\":\"CLOUD_EKS_TSE\",\"CompressionType\":\"lz4,snappy,gzip\",\"Config\":{\"AutoCreateTopicsEnable\":false,\"DefaultNumPartitions\":0,\"DefaultReplicationFactor\":0},\"CreateTime\":1730107842,\"CreatedPartitions\":90,\"CreatedTopics\":10,\"Cvm\":1,\"DeleteRouteTimestamp\":\"\",\"DiskSize\":200,\"DiskType\":\"CLOUD_SSD\",\"DynamicDiskConfig\":{\"DiskQuotaPercentage\":75,\"Enable\":0,\"MaxDiskSpace\":500000,\"StepForwardPercentage\":10},\"ElasticBandwidthOpenStatus\":1,\"ElasticBandwidthSwitch\":1,\"ElasticFloatBandwidth\":240,\"ExpireTime\":1732786242,\"Features\":[\"FEATURE_TOPIC_QUOTA\",\"CLOUD_EKS_TSE\",\"CLOUD_EKS_CROS_ZONE\",\"FEATURE_SASL_SCRAM\"],\"FreePartitionNumber\":400,\"Healthy\":1,\"HealthyMessage\":\"\",\"InstanceChargeType\":\"PREPAID\",\"InstanceId\":\"ckafka-test\",\"InstanceName\":\"ckafka测试\",\"InstanceType\":\"profession\",\"MaxConnection\":50000,\"MaxGroupNum\":500,\"MaxMessageByte\":8388608,\"MsgRetentionTime\":4320,\"PublicNetwork\":3,\"PublicNetworkChargeType\":\"BANDWIDTH_PREPAID\",\"RemainderPartitions\":310,\"RemainderTopics\":190,\"RemainingPartitions\":310,\"RemainingTopics\":190,\"RetentionTimeConfig\":{\"BottomRetention\":360,\"DiskQuotaPercentage\":75,\"Enable\":1,\"StepForwardPercentage\":10},\"Status\":1,\"StorageBillingType\":\"BILL_BY_MONTH_OR_YEAR\",\"SubnetId\":\"subnet-test\",\"SystemMaintenanceTime\":\"\",\"Tags\":[{\"TagKey\":\"tagkey-test\",\"TagValue\":\"tagvalue-test\"}],\"Version\":\"1.1.1\",\"Vip\":\"10.0.0.5\",\"VipList\":[{\"Vip\":\"10.0.0.5\",\"Vport\":\"9092\"}],\"VpcId\":\"vpc-test\",\"Vport\":\"9092\",\"ZoneId\":100003,\"ZoneIds\":[100003,100004]}",
           "member": "InstanceAttributesResponse",
           "name": "Result",
           "output_required": true,
@@ -8755,8 +8764,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例唯一id",
-          "example": "xxx",
+          "document": "ckafka集群实例Id",
+          "example": "ckafka-test",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -8764,8 +8773,8 @@
         },
         {
           "disabled": false,
-          "document": "路由id",
-          "example": "无",
+          "document": "路由Id",
+          "example": "301",
           "member": "int64",
           "name": "RouteId",
           "required": false,
@@ -8780,7 +8789,7 @@
         {
           "disabled": false,
           "document": "返回的路由信息结果集",
-          "example": "无",
+          "example": "{\"Routers\":[{\"AccessType\":0,\"RouteId\":301,\"VipType\":3,\"VipList\":[{\"Vip\":\"1.0.0.5\",\"Vport\":\"9092\"}],\"Domain\":\"\",\"DomainPort\":0,\"DeleteTimestamp\":1566144000,\"InternalFlag\":0,\"UsedFor\":\"\",\"Subnet\":\"subnet-test\",\"BrokerVipList\":[{\"Vip\":\"1.0.0.5\",\"Vport\":\"9093\"},{\"Vip\":\"1.0.0.5\",\"Vport\":\"9094\"},{\"Vip\":\"1.0.0.5\",\"Vport\":\"9095\"}],\"Processing\":1,\"VpcId\":\"vpc-test\"}]}",
           "member": "RouteResponse",
           "name": "Result",
           "output_required": true,
@@ -8884,8 +8893,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例id",
-          "example": "ckafka-xxooa0",
+          "document": "ckafka集群实例Id",
+          "example": "ckafka-test",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -8894,7 +8903,7 @@
         {
           "disabled": false,
           "document": "（过滤条件）按照topicName过滤，支持模糊查询",
-          "example": "xxx",
+          "example": "search-test",
           "member": "string",
           "name": "SearchWord",
           "required": false,
@@ -8921,11 +8930,38 @@
         {
           "disabled": false,
           "document": "Acl预设策略名称",
-          "example": "xxx",
+          "example": "rulename-test",
           "member": "string",
           "name": "AclRuleName",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "根据特定的属性排序(目前支持PartitionNum/CreateTime)",
+          "example": "PartitionNum/CreateTime",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "0-顺序、1-倒序",
+          "example": "0",
+          "member": "int64",
+          "name": "OrderType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "目前支持 ReplicaNum （副本数）筛选",
+          "example": "[{\"Name\":\"filtername-test\",\"TagValue\":[\"filtervalue-test\"]}]",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -8936,7 +8972,7 @@
         {
           "disabled": false,
           "document": "返回的主题详情实体",
-          "example": "无",
+          "example": "{\"TopicList\":[{\"TopicName\":\"topic-test\",\"TopicId\":\"topic-test\",\"PartitionNum\":1,\"ReplicaNum\":2,\"Note\":\"note-test\",\"CreateTime\":1566144000,\"EnableWhiteList\":true,\"IpWhiteListCount\":0,\"ForwardCosBucket\":\"\",\"ForwardStatus\":0,\"ForwardInterval\":0,\"Config\":{\"Retention\":60000,\"MinInsyncReplicas\":0,\"CleanUpPolicy\":\"delete\",\"SegmentMs\":3600000,\"UncleanLeaderElectionEnable\":0,\"SegmentBytes\":1048576,\"MaxMessageBytes\":1048576,\"RetentionBytes\":1048576},\"Status\":0,\"Tags\":[{\"TagKey\":\"tagkey-test\",\"TagValue\":\"tagvalue-test\"}]}],\"TotalCount\":1}",
           "member": "TopicDetailResponse",
           "name": "Result",
           "output_required": true,
@@ -10030,7 +10066,7 @@
           "example": "0",
           "member": "int64",
           "name": "Enable",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -10041,7 +10077,7 @@
           "example": "75",
           "member": "int64",
           "name": "DiskQuotaPercentage",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -10052,7 +10088,7 @@
           "example": "10",
           "member": "int64",
           "name": "StepForwardPercentage",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -10063,7 +10099,7 @@
           "example": "360",
           "member": "int64",
           "name": "BottomRetention",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -16203,7 +16239,7 @@
         {
           "disabled": false,
           "document": "PostgreSQL的数据表名称，\"*\"为所监听的所有数据库中的非系统表，可以\",\"间隔，监听多个数据表，但数据表需要以\"Schema名.数据表名\"的格式进行填写，需要填入正则表达式时，格式为\"Schema名\\\\.数据表名\"\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "*",
+          "example": "SchemaName.Tabletest",
           "member": "string",
           "name": "Table",
           "output_required": false,
@@ -16852,7 +16888,7 @@
         {
           "disabled": false,
           "document": "域名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "tencent.com",
           "member": "string",
           "name": "Domain",
           "output_required": true,
@@ -17256,7 +17292,7 @@
         {
           "disabled": false,
           "document": "SQLServer的数据表名称，\"*\"为所监听的所有数据库中的非系统表，可以\",\"间隔，监听多个数据表，但数据表需要以\"数据库名.数据表名\"的格式进行填写\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "*",
+          "example": " DatabaseName.Tabletest",
           "member": "string",
           "name": "Table",
           "output_required": false,
@@ -17516,7 +17552,7 @@
         {
           "disabled": false,
           "document": "发送消息内容(单次请求最多500条)",
-          "example": "无",
+          "example": "[{\"Body\":\"body-test\",\"Key\":\"key-test\"}]",
           "member": "BatchContent",
           "name": "Message",
           "required": true,
@@ -17531,9 +17567,10 @@
         {
           "disabled": false,
           "document": "消息ID列表",
-          "example": "无",
+          "example": "[\"messageId-test\"]",
           "member": "string",
           "name": "MessageId",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -17963,8 +18000,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "主题名称",
-          "example": "lobo5",
+          "document": "主题名",
+          "example": "topic-test",
           "member": "string",
           "name": "TopicName",
           "output_required": true,
@@ -17973,8 +18010,8 @@
         },
         {
           "disabled": false,
-          "document": "主题ID",
-          "example": "topic-k3pn5gfm",
+          "document": "主题Id",
+          "example": "topic-test",
           "member": "string",
           "name": "TopicId",
           "output_required": true,
@@ -17993,7 +18030,7 @@
         },
         {
           "disabled": false,
-          "document": "副本数",
+          "document": "topic副本数  最小值 1,最大值 3",
           "example": "2",
           "member": "int64",
           "name": "ReplicaNum",
@@ -18004,7 +18041,7 @@
         {
           "disabled": false,
           "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "note-test",
           "member": "string",
           "name": "Note",
           "output_required": true,
@@ -18014,7 +18051,7 @@
         {
           "disabled": false,
           "document": "创建时间",
-          "example": "1627540967",
+          "example": "1566144000",
           "member": "int64",
           "name": "CreateTime",
           "output_required": true,
@@ -18044,7 +18081,7 @@
         {
           "disabled": false,
           "document": "数据备份cos bucket: 转存到cos 的bucket地址\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "cos-bucket-test",
           "member": "string",
           "name": "ForwardCosBucket",
           "output_required": true,
@@ -18074,20 +18111,20 @@
         {
           "disabled": false,
           "document": "高级配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "Config: {Retention: 86400000, MinInsyncReplicas: 1, CleanUpPolicy: \"delete\"}",
+          "example": "{\"Retention\":86400000,\"MinInsyncReplicas\":1,\"CleanUpPolicy\":\"delete\"}",
           "member": "Config",
           "name": "Config",
-          "output_required": true,
+          "output_required": false,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "消息保留时间配置(用于动态配置变更记录)\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "RetentionTimeConfig: {Expect: 1440, Current: 1440, ModTimeStamp: 1713252318 }",
+          "example": "{\"Expect\":1440,\"Current\":1440,\"ModTimeStamp\":1566144000}",
           "member": "TopicRetentionTimeConfigRsp",
           "name": "RetentionTimeConfig",
-          "output_required": true,
+          "output_required": false,
           "type": "object",
           "value_allowed_null": true
         },
@@ -18104,10 +18141,10 @@
         {
           "disabled": false,
           "document": "标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0",
+          "example": "[{\"TagKey\":\"tagkey-test\",\"TagValue\":\"tagvalue-test\"}]",
           "member": "Tag",
           "name": "Tags",
-          "output_required": true,
+          "output_required": false,
           "type": "list",
           "value_allowed_null": true
         }
@@ -18120,20 +18157,20 @@
         {
           "disabled": false,
           "document": "返回的主题详情列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "[{\"TopicName\":\"topic-test\",\"TopicId\":\"topic-test\",\"PartitionNum\":1,\"ReplicaNum\":2,\"Note\":\"note-test\",\"CreateTime\":1566144000,\"EnableWhiteList\":true,\"IpWhiteListCount\":0,\"ForwardCosBucket\":\"\",\"ForwardStatus\":0,\"ForwardInterval\":0,\"Config\":{\"Retention\":60000,\"MinInsyncReplicas\":0,\"CleanUpPolicy\":\"delete\",\"SegmentMs\":3600000,\"UncleanLeaderElectionEnable\":0,\"SegmentBytes\":1048576,\"MaxMessageBytes\":1048576,\"RetentionBytes\":1048576},\"Status\":0,\"Tags\":[{\"TagKey\":\"tagkey-test\",\"TagValue\":\"tagvalue-test\"}]}]",
           "member": "TopicDetail",
           "name": "TopicList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "符合条件的所有主题详情数量",
-          "example": "0",
+          "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }

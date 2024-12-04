@@ -42,10 +42,10 @@ Output:
                 "MaxMessageDelay": 168,
                 "RenewFlag": 1,
                 "InstanceItemExtraInfo": {
-                    "IsVip": true,
+                    "IsVip": false,
                     "VipInstanceStatus": 0,
                     "MaxBandWidth": 0,
-                    "SpecName": "abc",
+                    "SpecName": "",
                     "NodeCount": 0,
                     "MaxStorage": 0,
                     "MaxRetention": 0,
